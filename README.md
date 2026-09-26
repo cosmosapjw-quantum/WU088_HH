@@ -7,3 +7,6 @@ See [한국어 사용 안내](README_KO.md), [research results](docs/research/RE
 This repository is a non-destructive overlay for the existing local runtime. Five-anchor H order comparisons pass; new-anchor full49 admission and trajectory/production promotion remain blocked. The native performance candidate has component-level checks only and is not installed into the production provider.
 
 The local hardware task is `bash scripts/benchmark_host.sh` after setting `WORK` and `RUNTIME` as described in the Korean guide. It does not regenerate completed anchor pair states.
+
+
+R31M adds topology-aware CPU pinning, an SMT probe, and a host/build-bound tuning profile. See `docs/coding/R31M_HOST_AUTOTUNE.md`. The profile does not automatically promote the candidate native provider.

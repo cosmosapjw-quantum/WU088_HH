@@ -79,10 +79,107 @@ def inspect_host(*, requested_workers: int=12,kernel_threads: int=1,use_smt: boo
         if f.exists(): mem['cgroup_'+key]=f.read_text().strip()
     cpuinfo=Path('/proc/cpuinfo').read_text()
     model=next((x.split(':',1)[1].strip() for x in cpuinfo.splitlines() if x.startswith('model name')),'unknown')
+    meta=read_linux_cpu_metadata(Path('/sys/devices/system/cpu'),allowed)
     r.update(cpu_model=model,platform=platform.platform(),quota_sources=sources,memory=mem,
-             topology={str(k):list(v) for k,v in topology.items()},hardware_benchmark_performed=False)
+             topology={str(k):list(v) for k,v in topology.items()},
+             allowed_logical_cpus=sorted(allowed),
+             thread_siblings={str(k):v for k,v in meta['thread_siblings'].items()},
+             l3_by_cpu={str(k):v for k,v in meta['l3_by_cpu'].items()},
+             l3_groups=meta['l3_groups'],hardware_benchmark_performed=False)
     return r
 
+
+def partition_affinity_groups(topology: dict, allowed: set, *, workers: int, kernel_threads: int,
+                              use_smt: bool=False, l3_by_cpu: dict|None=None) -> list[set[int]]:
+    """Partition an allowed CPU set into disjoint worker affinities.
+
+    Whole worker groups are kept inside one L3 group whenever possible.  With
+    SMT enabled, siblings from the same physical core stay adjacent so a
+    12-thread worker on a 6-core/2-way-SMT CCD consumes that CCD as one unit.
+    """
+    if workers < 1 or kernel_threads < 1 or not allowed or not allowed <= topology.keys():
+        raise ValueError('invalid affinity group request')
+    by_core: dict[tuple, list[int]] = {}
+    for cpu in sorted(allowed):
+        by_core.setdefault(tuple(topology[cpu]), []).append(cpu)
+    core_rows=[]
+    for core,cpus in sorted(by_core.items()):
+        chosen=sorted(cpus) if use_smt else [min(cpus)]
+        if l3_by_cpu is None:
+            l3=('NO_L3',core[0])
+        else:
+            vals={l3_by_cpu[c] for c in chosen}
+            if len(vals)!=1:
+                raise ValueError('physical core spans multiple L3 groups')
+            l3=next(iter(vals))
+        core_rows.append((l3,core,chosen))
+    buckets: dict[object,list[int]]={}
+    for l3,core,cpus in core_rows:
+        buckets.setdefault(l3,[]).extend(cpus)
+    need=workers*kernel_threads
+    available=sum(len(v) for v in buckets.values())
+    if need>available:
+        raise ValueError(f'requested slots {need} exceed available {available}')
+    if not use_smt:
+        for v in buckets.values():
+            v.sort()
+    groups=[]
+    for _ in range(workers):
+        enough=[k for k,v in buckets.items() if len(v)>=kernel_threads]
+        if enough:
+            key=sorted(enough,key=lambda k:(-len(buckets[k]),str(k)))[0]
+            group=set(buckets[key][:kernel_threads]);del buckets[key][:kernel_threads]
+        else:
+            group=set();remaining=kernel_threads
+            for key in sorted(buckets,key=lambda k:(-len(buckets[k]),str(k))):
+                if not remaining:break
+                take=min(remaining,len(buckets[key]))
+                group.update(buckets[key][:take]);del buckets[key][:take];remaining-=take
+            if remaining:
+                raise ValueError('could not form complete affinity group')
+        groups.append(group)
+    if any(len(g)!=kernel_threads for g in groups) or len(set().union(*groups))!=need:
+        raise RuntimeError('affinity partition is not disjoint and complete')
+    return groups
+
+
+def _parse_cpu_list(text:str) -> list[int]:
+    out=[]
+    for field in text.strip().split(','):
+        if not field:continue
+        if '-' in field:
+            a,b=(int(x) for x in field.split('-',1));out.extend(range(a,b+1))
+        else:out.append(int(field))
+    return sorted(set(out))
+
+
+def read_linux_cpu_metadata(sys_cpu_root: Path, allowed: set[int]) -> dict:
+    if not allowed:
+        raise ValueError('empty allowed CPU set')
+    siblings={};l3_by_cpu={}
+    for cpu in sorted(allowed):
+        base=sys_cpu_root/f'cpu{cpu}'
+        sf=base/'topology'/'thread_siblings_list'
+        sib=[x for x in _parse_cpu_list(sf.read_text()) if x in allowed] if sf.exists() else [cpu]
+        siblings[cpu]=sib or [cpu]
+        found=None
+        cache=base/'cache'
+        if cache.exists():
+            for idx in sorted(cache.glob('index*')):
+                try:
+                    if (idx/'level').read_text().strip()!='3':continue
+                    typ=(idx/'type').read_text().strip()
+                    if typ not in ('Unified','Data'):continue
+                    vals=[x for x in _parse_cpu_list((idx/'shared_cpu_list').read_text()) if x in allowed]
+                    if vals:
+                        found=','.join(str(x) for x in vals);break
+                except OSError:
+                    continue
+        if found is None:
+            found=f'cpu{cpu}'
+        l3_by_cpu[cpu]=found
+    unique={tuple(_parse_cpu_list(v)) for v in l3_by_cpu.values()}
+    return dict(thread_siblings=siblings,l3_by_cpu=l3_by_cpu,l3_groups=[list(x) for x in sorted(unique)])
 
 if __name__=='__main__':
     print(json.dumps(inspect_host(),indent=2))
