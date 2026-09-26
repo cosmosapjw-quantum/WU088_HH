@@ -12,6 +12,7 @@ import hashlib
 import importlib.util
 import json
 import math
+import multiprocessing
 import os
 import re
 import sys
@@ -42,7 +43,8 @@ from heavy_numerics_v2 import (
 )
 
 from wu088_hh.scheduler import order_tasks, predict_costs, verify_profile
-from wu088_hh.hardware import inspect_host
+from wu088_hh.hardware import inspect_host, partition_affinity_groups
+from wu088_hh.autotune import validate_tuning_profile
 
 POLICY = "HEAVY_NUMERICS_V2_COST_ORDER_V1"
 PAIR_INTERVAL = 8
@@ -82,21 +84,41 @@ def _next_delta_sequence(delta_dir: Path) -> int:
     return mx + 1
 
 
-def _policy_description(requested_workers: int | None) -> dict:
-    hw = inspect_host(requested_workers=requested_workers or 12)
+def _policy_description(requested_workers: int | None, tuning_profile: dict | None = None) -> dict:
+    if tuning_profile is not None:
+        selected = tuning_profile.get("selected") or {}
+        processes = int(selected.get("processes", 0))
+        threads = int(selected.get("kernel_threads", 0))
+        use_smt = bool(selected.get("use_smt", False))
+        if processes < 1 or threads < 1:
+            raise ValueError("invalid tuning profile selected configuration")
+        build_key = os.environ.get("WU088_R31M_BUILD_KEY", "")
+        hw = inspect_host(requested_workers=processes, kernel_threads=threads, use_smt=use_smt)
+        validate_tuning_profile(tuning_profile, hw, build_key)
+        if requested_workers not in (None, processes):
+            raise ValueError("--workers conflicts with tuning profile")
+        effective = processes
+        kernel_threads = threads
+    else:
+        hw = inspect_host(requested_workers=requested_workers or 12)
+        quota = hw["quota_cores"]
+        affinity = len(hw["cpus"])
+        effective = choose_worker_count(
+            requested_workers,
+            cpu_count=os.cpu_count() or 1,
+            affinity_count=affinity,
+            quota_cores=quota,
+        )
+        kernel_threads = 1
     quota = hw["quota_cores"]
     affinity = len(hw["cpus"])
-    effective = choose_worker_count(
-        requested_workers,
-        cpu_count=os.cpu_count() or 1,
-        affinity_count=affinity,
-        quota_cores=quota,
-    )
     return {
         "policy": POLICY,
         "hardware": hw,
         "requested_workers": requested_workers,
         "effective_workers": effective,
+        "kernel_threads": kernel_threads,
+        "tuning_profile_active": tuning_profile is not None,
         "cpu_count": os.cpu_count(),
         "affinity_count": affinity,
         "quota_cores": quota,
@@ -181,13 +203,17 @@ def _make_parser() -> argparse.ArgumentParser:
     ap.add_argument("--describe", action="store_true")
     ap.add_argument("--policy-describe", action="store_true")
     ap.add_argument("--cost-profile", type=Path, default=REPO_ROOT / "data/pair_cost_profile.json")
+    ap.add_argument("--tuning-profile", type=Path)
     return ap
 
 
 def main(argv: list[str] | None = None) -> int:
     args = _make_parser().parse_args(argv)
     requested = None if args.workers <= 0 else args.workers
-    policy = _policy_description(requested)
+    tuning_profile = None
+    if args.tuning_profile is not None:
+        tuning_profile = json.loads(args.tuning_profile.read_text())
+    policy = _policy_description(requested, tuning_profile)
     if args.policy_describe:
         print(json.dumps(policy, indent=2, sort_keys=True))
         return 0
@@ -348,18 +374,43 @@ def main(argv: list[str] | None = None) -> int:
 
             while tasks:
                 remaining_budget = max(1, args.max_new_pairs - len(new_rows))
-                batch_size = min(workers, remaining_budget, len(tasks))
-                batch, tasks = tasks[:batch_size], tasks[batch_size:]
+                wave_limit = min(remaining_budget, len(tasks))
+                wave, later = tasks[:wave_limit], tasks[wave_limit:]
+                pool_workers = min(workers, len(wave))
                 batch_rows: list[dict] = []
                 batch_started = time.monotonic()
                 first_completed = None
-                with ProcessPoolExecutor(
-                    max_workers=batch_size,
+                next_task = 0
+                stop_scheduling = False
+                executor_kwargs = dict(
+                    max_workers=pool_workers,
                     initializer=legacy.init,
                     initargs=(args.n, args.g, args.z, args.gamma_scale),
-                ) as pool:
-                    futs = [pool.submit(legacy.pair, task) for task in batch]
-                    for fut in as_completed(futs):
+                )
+                if tuning_profile is not None:
+                    if not hasattr(legacy, "tuned_init"):
+                        raise RuntimeError("tuned profile requires legacy.tuned_init")
+                    topology = {int(k): tuple(v) for k, v in policy["hardware"]["topology"].items()}
+                    l3_by_cpu = {int(k): v for k, v in policy["hardware"]["l3_by_cpu"].items()}
+                    groups = partition_affinity_groups(
+                        topology, set(policy["hardware"]["allowed_logical_cpus"]),
+                        workers=pool_workers, kernel_threads=policy["kernel_threads"],
+                        use_smt=bool(tuning_profile["selected"].get("use_smt", False)), l3_by_cpu=l3_by_cpu)
+                    ctx = multiprocessing.get_context("fork")
+                    counter, lock, barrier = ctx.Value("i", 0), ctx.Lock(), ctx.Barrier(pool_workers)
+                    executor_kwargs.update(
+                        initializer=legacy.tuned_init,
+                        initargs=(args.n, args.g, args.z, args.gamma_scale, [sorted(g) for g in groups], counter, lock, barrier),
+                        mp_context=ctx,
+                    )
+                with ProcessPoolExecutor(**executor_kwargs) as pool:
+                    pending = {}
+                    while next_task < len(wave) and len(pending) < pool_workers:
+                        task = wave[next_task]; next_task += 1
+                        pending[pool.submit(legacy.pair, task)] = task
+                    while pending:
+                        fut = next(as_completed(tuple(pending)))
+                        pending.pop(fut)
                         row = fut.result()
                         if first_completed is None:
                             first_completed = time.monotonic()
@@ -375,13 +426,21 @@ def main(argv: list[str] | None = None) -> int:
                             committed_pairs_this_invocation=len(new_rows) + len(batch_rows),
                         )
                         print(json.dumps(row), flush=True)
+                        if time.monotonic() - start >= args.max_wall_seconds:
+                            stop_scheduling = True
+                        if not stop_scheduling and next_task < len(wave):
+                            task = wave[next_task]; next_task += 1
+                            pending[pool.submit(legacy.pair, task)] = task
+                # Any task not submitted because the time budget expired remains pending, in original cost order.
+                tasks = wave[next_task:] + later
                 batch_finished = time.monotonic()
                 _append_event(folder / "ORCHESTRATION_TELEMETRY.jsonl", {
-                    "phase": "COMPUTE_WAVE", "worker_slots": batch_size, "pairs": len(batch_rows),
+                    "phase": "COMPUTE_WAVE", "worker_slots": pool_workers, "pairs": len(batch_rows),
                     "wave_wall_seconds": batch_finished-batch_started,
                     "first_completion_seconds": None if first_completed is None else first_completed-batch_started,
                     "drain_tail_seconds": 0 if first_completed is None else batch_finished-first_completed,
                     "sum_pair_cpu_seconds": sum(float(r.get("cpu_seconds",0)) for r in batch_rows),
+                    "persistent_pool": True, "submitted_pairs": next_task,
                     "timestamp_unix": time.time(), "profile_sha256": scheduling["profile_sha256"],
                 })
                 new_rows.extend(batch_rows)

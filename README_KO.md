@@ -16,7 +16,7 @@ export RUNTIME="$WORK/runtime/WU088_HH_LOCAL_RUNTIME_SEED_20260926_v2"
 source "$WORK/venv/bin/activate"
 ```
 
-## 지금 실행할 로컬 작업: 성능 측정 한 번
+## R31M topology-aware host autotune
 
 저장소 root에서:
 
@@ -24,7 +24,9 @@ source "$WORK/venv/bin/activate"
 bash scripts/benchmark_host.sh
 ```
 
-실제 affinity/core topology/quota/memory를 기록하고, 동일 frozen107의 B32/g80 component와 여러 process/thread 조합을 비교한다. 기존 pair를 덮어쓰거나 candidate .so를 runtime에 설치하지 않는다. 자료는 `$WORK/wu088_hh_bench_<UTC>_<pid>/`에 쓴다. 이 명령은 foreign-component 성능 측정이며 H0/full49/production 성능 인증은 아니다.
+실제 affinity/core/SMT/L3 topology와 quota/memory를 기록하고, 동일 frozen107의 B32/g80 component에서 physical-core 및 SMT process/thread 조합을 비교한다. 각 worker는 disjoint CPU set에 pin한다. 결과는 `$WORK/wu088_hh_bench_<UTC>_<pid>/`에 쓰며 `HOST_TUNING_PROFILE.json`까지 생성한다. 기존 pair를 덮어쓰거나 candidate `.so`를 runtime에 설치하지 않는다. 상세 계약은 `docs/coding/R31M_HOST_AUTOTUNE.md`를 참조한다.
+
+튜닝 profile 생성 뒤 native candidate의 science-resolution exactness는 별도 `scripts/representative_native_regression.py`로 확인한다. 이 gate도 production provider를 자동 승격하지 않는다.
 
 ## 여기서 이미 실행한 가벼운 분석의 재현
 
@@ -66,8 +68,21 @@ python scripts/backup_pending.py \
 
 Linux, GCC C++17/OpenMP, NumPy2.3.5. 기존 runtime grid에는 SciPy1.17.0이 필요하다. 테스트에는 pytest, 선택적인 Boys audit에는 mpmath1.3.0이 필요하다. 이번 실제 검증 환경은 Python3.13.5/GCC14.2.0이며 사용자 Ubuntu/Python3.12/GCC13 조합은 host benchmark 결과로 따로 기록해야 한다. `sudo`는 사용하지 않는다.
 
-## Git 전달 상태
+## Git 작업 흐름
 
-요청된 원격은 `cosmosapjw-quantum/WU088_HH`다. 현재 연결의 조회 동작으로 빈 main 상태를 확인했지만 이 세션에 GitHub write action이 노출되지 않았고 컨테이너 Git 네트워크는 DNS 단계에서 실패했다. 최종 실제 push 시도는 detached publication receipt에 기록한다. 성공 응답 없이 원격 게시 완료라고 표시하지 않는다.
+정본 원격은 `cosmosapjw-quantum/WU088_HH`다. 기능 변경은 별도 branch/PR로 진행하고 `main`에 force push하지 않는다. 로컬에서는 `git pull --ff-only` 후 위 benchmark를 실행한다. 기존 runtime 삭제, 완료된 anchor 재계산, 자동 candidate 설치는 하지 않는다.
 
-초기 bootstrap이 필요할 때만 git bundle로 clone한 뒤 origin을 위 저장소로 설정하고 일반 push한다. 이후에는 `git pull --ff-only`와 위 benchmark 명령을 사용하면 된다. 무조건적인 force push, 기존 runtime 삭제, 전체 과학 재실행은 하지 않는다.
+## R31M scoped tuned heavy route
+
+Host profile과 science-resolution representative exactness gate가 모두 닫힌 이후의 **새 H source run**에서만 tuned sidecar를 사용할 수 있다. 완료된 anchor에는 적용하지 않는다.
+
+```bash
+PROFILE=/path/to/HOST_TUNING_PROFILE.json
+python scripts/run_tuned_heavy.py \
+  --runtime "$RUNTIME" \
+  --tuning-profile "$PROFILE" \
+  --n 160 --g 80 --z 24 \
+  --max-new-pairs 12 --max-wall-seconds 180
+```
+
+이 경로는 원 runtime `.so`를 교체하지 않는다. candidate foreign kernel만 sidecar로 로드하며 H0와 assembler는 frozen R30 authority를 그대로 사용한다. 새 checkpoint identity에는 candidate binary/source, build key, tuning profile, science regression이 모두 기록된다. full49/trajectory/production 승격은 별도다.

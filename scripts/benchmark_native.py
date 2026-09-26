@@ -21,7 +21,7 @@ def main():
     if not 4<=a.n<=192 or not 1<=a.g<=192 or not np.isfinite(a.z) or abs(a.z)>64:ap.error('outside benchmark domain')
     runtime=a.runtime.resolve();driver=runtime/'r31a/wide_hybrid_run.py'
     if sha(driver)!='5add2f769bdaa9721ce1fe90dd02a2c6dd6a2b3c617b6eeec0032bd38849acb6':raise ValueError('scientific driver changed')
-    hw=inspect_host();os.sched_setaffinity(0,hw['cpus']);budget=hw['effective_cpu_budget']
+    hw=inspect_host(use_smt=True);os.sched_setaffinity(0,hw['cpus']);budget=hw['effective_cpu_budget']
     threads=sorted(set(int(x) for x in a.threads.split(',')))
     if not threads or any(t<1 or t>budget for t in threads):ap.error(f'threads must lie within effective budget {budget}')
     profile=json.loads((ROOT/'data/pair_cost_profile.json').read_text())
