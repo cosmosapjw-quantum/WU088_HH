@@ -71,3 +71,18 @@ Linux, GCC C++17/OpenMP, NumPy2.3.5. 기존 runtime grid에는 SciPy1.17.0이 �
 ## Git 작업 흐름
 
 정본 원격은 `cosmosapjw-quantum/WU088_HH`다. 기능 변경은 별도 branch/PR로 진행하고 `main`에 force push하지 않는다. 로컬에서는 `git pull --ff-only` 후 위 benchmark를 실행한다. 기존 runtime 삭제, 완료된 anchor 재계산, 자동 candidate 설치는 하지 않는다.
+
+## R31M scoped tuned heavy route
+
+Host profile과 science-resolution representative exactness gate가 모두 닫힌 이후의 **새 H source run**에서만 tuned sidecar를 사용할 수 있다. 완료된 anchor에는 적용하지 않는다.
+
+```bash
+PROFILE=/path/to/HOST_TUNING_PROFILE.json
+python scripts/run_tuned_heavy.py \
+  --runtime "$RUNTIME" \
+  --tuning-profile "$PROFILE" \
+  --n 160 --g 80 --z 24 \
+  --max-new-pairs 12 --max-wall-seconds 180
+```
+
+이 경로는 원 runtime `.so`를 교체하지 않는다. candidate foreign kernel만 sidecar로 로드하며 H0와 assembler는 frozen R30 authority를 그대로 사용한다. 새 checkpoint identity에는 candidate binary/source, build key, tuning profile, science regression이 모두 기록된다. full49/trajectory/production 승격은 별도다.
