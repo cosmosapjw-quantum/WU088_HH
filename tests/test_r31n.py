@@ -92,3 +92,27 @@ def test_od_contract_reproduces_component_contraction_for_simple_channel():
     assert comp[1,0,0]==4+5j
     assert comp[2,0,0]==6+7j
     assert np.array_equal(summed[:,0,0],np.array([2,4,6],dtype=np.longdouble))
+
+
+def test_jvp_initializer_sanitizes_dynamic_loader_environment_before_native_build(tmp_path, monkeypatch):
+    import importlib.util
+    import os
+    import types
+    from pathlib import Path
+
+    script=Path(__file__).resolve().parents[1]/'scripts'/'r31n_provider_fill.py'
+    spec=importlib.util.spec_from_file_location('r31n_provider_fill_under_test',script)
+    mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+    monkeypatch.setattr(mod,'_worker_slot',lambda *args,**kwargs: None)
+    monkeypatch.setenv('LD_LIBRARY_PATH','/tmp/forbidden-lib')
+    monkeypatch.setenv('LD_PRELOAD','/tmp/forbidden-preload.so')
+
+    class FakeNative:
+        def __init__(self):
+            assert os.environ.get('LD_LIBRARY_PATH') is None
+            assert os.environ.get('LD_PRELOAD') is None
+
+    monkeypatch.setattr(mod.importlib,'import_module',lambda name: types.SimpleNamespace(Native=FakeNative))
+    grid=tmp_path/'cont2c'/'convergence';grid.mkdir(parents=True)
+    np.savez(grid/'frozen_grid_n192.npz',dummy=np.array([1]))
+    mod.init_jvp(str(tmp_path),48,[],None,None,None)

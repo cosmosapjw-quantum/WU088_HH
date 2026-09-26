@@ -77,6 +77,10 @@ def work_od(task):
 def init_jvp(cp4,z,groups,counter,lock,barrier):
     global STATE
     _worker_slot(groups,counter,lock,barrier)
+    # CP4's trusted native builder deliberately refuses dynamic-loader injection.
+    # Sanitize only inside this worker before importing/building the recovered source.
+    for var in ('LD_PRELOAD','LD_LIBRARY_PATH'):
+        os.environ.pop(var,None)
     base=Path(cp4)/'completion/mixed_derivative';sys.path.insert(0,str(base));sys.path.insert(0,str(Path(cp4)/'production/engineering'));sys.path.insert(0,str(Path(cp4)/'foreign_analytic'))
     native=importlib.import_module('native')
     with np.load(Path(cp4)/'cont2c/convergence/frozen_grid_n192.npz',allow_pickle=False) as f:d={k:f[k] for k in f.files}
