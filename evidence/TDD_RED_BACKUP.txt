@@ -1,0 +1,16 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________________ test_providers_progress_concurrently _____________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_providers_progress_concur0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f20768e8510>
+
+    def test_providers_progress_concurrently(tmp_path,monkeypatch):
+        r=run(tmp_path,monkeypatch,SYNC_PEERS='1')
+>       assert r['dual_raw_readback_verified'] is True
+E       assert False is True
+
+tests/test_backup.py:40: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_backup.py::test_providers_progress_concurrently - assert False is True
+1 failed in 0.07s

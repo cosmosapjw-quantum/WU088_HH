@@ -1,0 +1,114 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+___________ test_actual_executor_uses_cost_order_and_stops_at_budget ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_actual_executor_uses_cost0')
+
+    def test_actual_executor_uses_cost_order_and_stops_at_budget(tmp_path):
+        folder,cmd,env=setup_fake(tmp_path)
+        r=subprocess.run(cmd,env=env,capture_output=True,text=True,timeout=20)
+        assert r.returncode==0,r.stderr
+        rows=[json.loads(l) for l in (folder/'events.jsonl').read_text().splitlines()]
+>       assert [(x['ia'],x['ib']) for x in rows]==[(11,11),(10,11)]
+E       assert [(0, 0), (0, 1)] == [(11, 11), (10, 11)]
+E         
+E         At index 0 diff: (0, 0) != (11, 11)
+E         
+E         Full diff:
+E           [
+E               (
+E         -         11,
+E         ?         ^^
+E         +         0,
+E         ?         ^
+E         -         11,
+E         ?         ^^
+E         +         0,
+E         ?         ^
+E               ),
+E               (
+E         -         10,
+E         ?         -
+E         +         0,
+E         -         11,
+E         ?         -
+E         +         1,
+E               ),
+E           ]
+
+tests/test_orchestrator.py:47: AssertionError
+_____________________ test_completed_state_not_reassembled _____________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_completed_state_not_reass0')
+
+    def test_completed_state_not_reassembled(tmp_path):
+        folder,cmd,env=setup_fake(tmp_path)
+        ident={'driver':'a'*64,'model_sha256':'b'*64}
+        ip=folder/'IDENTITY.json';ip.write_text(json.dumps(ident))
+        rows=[]
+        for i in range(12):
+            for j in range(12):
+                p=folder/f'pair_{i:02}_{j:02}.npz';np.savez(p,ia=i,ib=j,value=i*100+j)
+                rows.append(dict(ia=i,ib=j,sha256=hashlib.sha256(p.read_bytes()).hexdigest()))
+        (folder/'events.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in rows))
+        assembled=folder/'ASSEMBLED.npz';np.savez(assembled,H=np.ones((47,2)))
+        result=dict(sha256=hashlib.sha256(assembled.read_bytes()).hexdigest(),identity_sha256=hashlib.sha256(ip.read_bytes()).hexdigest())
+        (folder/'RESULTS.json').write_text(json.dumps(result))
+        before=assembled.read_bytes()
+        r=subprocess.run(cmd,env=env,capture_output=True,text=True,timeout=20)
+>       assert r.returncode==0,r.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "/mnt/data/WU088_HH/scripts/wide_hybrid_orchestrator_cost.py", line 398, in <module>
+E             raise SystemExit(main())
+E                              ~~~~^^
+E           File "/mnt/data/WU088_HH/scripts/wide_hybrid_orchestrator_cost.py", line 364, in main
+E             result = legacy.assemble(folder, args.z)
+E           File "/tmp/pytest-of-root/pytest-2/test_completed_state_not_reass0/fake_legacy.py", line 16, in assemble
+E             def assemble(*args):raise AssertionError('completed scientific assembly must not be repeated')
+E                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         AssertionError: completed scientific assembly must not be repeated
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/opt/pyvenv/bin/python', '/mnt/data/WU088_HH/scripts/wide_hybrid_orchestrator_cost.py', '--n',...^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: completed scientific assembly must not be repeated\n').returncode
+
+tests/test_orchestrator.py:73: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_orchestrator.py::test_actual_executor_uses_cost_order_and_stops_at_budget - assert [(0, 0), (0, 1)] == [(11, 11), (10, 11)]
+  
+  At index 0 diff: (0, 0) != (11, 11)
+  
+  Full diff:
+    [
+        (
+  -         11,
+  ?         ^^
+  +         0,
+  ?         ^
+  -         11,
+  ?         ^^
+  +         0,
+  ?         ^
+        ),
+        (
+  -         10,
+  ?         -
+  +         0,
+  -         11,
+  ?         -
+  +         1,
+        ),
+    ]
+FAILED tests/test_orchestrator.py::test_completed_state_not_reassembled - AssertionError: Traceback (most recent call last):
+    File "/mnt/data/WU088_HH/scripts/wide_hybrid_orchestrator_cost.py", line 398, in <module>
+      raise SystemExit(main())
+                       ~~~~^^
+    File "/mnt/data/WU088_HH/scripts/wide_hybrid_orchestrator_cost.py", line 364, in main
+      result = legacy.assemble(folder, args.z)
+    File "/tmp/pytest-of-root/pytest-2/test_completed_state_not_reass0/fake_legacy.py", line 16, in assemble
+      def assemble(*args):raise AssertionError('completed scientific assembly must not be repeated')
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  AssertionError: completed scientific assembly must not be repeated
+  
+assert 1 == 0
+ +  where 1 = CompletedProcess(args=['/opt/pyvenv/bin/python', '/mnt/data/WU088_HH/scripts/wide_hybrid_orchestrator_cost.py', '--n',...^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: completed scientific assembly must not be repeated\n').returncode
+2 failed in 1.81s

@@ -1,0 +1,22 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________________ test_requested_parallel_team_actually_runs __________________
+
+libs = [<CDLL '/tmp/pytest-of-root/pytest-0/native0/reference.so', handle 3119cdb0 at 0x7f385ce99d30>, <CDLL '/tmp/pytest-of-root/pytest-0/native0/candidate.so', handle 3119f6f0 at 0x7f385f652850>]
+
+    def test_requested_parallel_team_actually_runs(libs):
+        _,c=libs
+        assert c.hh_set_num_threads(2)==0
+        rc,_,_=call(c,inputs())
+        assert rc==0
+>       assert c.hh_last_team_size()==2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = <_FuncPtr object at 0x7f385cf9e210>()
+E        +    where <_FuncPtr object at 0x7f385cf9e210> = <CDLL '/tmp/pytest-of-root/pytest-0/native0/candidate.so', handle 3119f6f0 at 0x7f385f652850>.hh_last_team_size
+
+tests/test_native.py:50: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_native.py::test_requested_parallel_team_actually_runs - AssertionError: assert 1 == 2
+ +  where 1 = <_FuncPtr object at 0x7f385cf9e210>()
+ +    where <_FuncPtr object at 0x7f385cf9e210> = <CDLL '/tmp/pytest-of-root/pytest-0/native0/candidate.so', handle 3119f6f0 at 0x7f385f652850>.hh_last_team_size
+1 failed in 4.08s

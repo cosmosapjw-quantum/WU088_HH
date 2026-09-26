@@ -1,0 +1,222 @@
+{
+  "schema": "WU088_NATIVE_COMPONENT_BENCHMARK_V1",
+  "n": 32,
+  "g": 80,
+  "z": 64.0,
+  "ia": 0,
+  "ib": 0,
+  "grid_source_sha256": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+  "model_sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+  "frozen_original_binary_sha256": "04755d7908c03b8cb3503b0af02f0253d12a79128e695e2c2ec46d1052e5ab1c",
+  "original_rebuilt_reference_equal": true,
+  "build": {
+    "identity": {
+      "compiler": "g++ (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "flags": [
+        "-O3",
+        "-std=c++17",
+        "-fPIC",
+        "-shared",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-fopenmp"
+      ],
+      "sources": {
+        "native/reference/r31a/continuation.hpp": "06f633f20686ad8efbbcdd2ad6e725b394eaf768aeaa895412e60084942c5a84",
+        "native/reference/r31a/hybrid12_wide_h_v2.cpp": "40a53c9a7f34f49f1f18dd1483d442b0a06a7b07c17731bca631ee6231650e1f",
+        "native/reference/radial/analytic_wide.cpp": "05fb68ab805d282890c08899614c801fb14d3580e048dad3dfd1209c2685332f",
+        "native/candidate/r31a/continuation.hpp": "06f633f20686ad8efbbcdd2ad6e725b394eaf768aeaa895412e60084942c5a84",
+        "native/candidate/r31a/hybrid12_wide_h_v2.cpp": "696afa2875490b0ebd82d43fe5e6c2852529d0cb7b5e1544cfa6ed71fff984a2",
+        "native/candidate/radial/analytic_wide.cpp": "05fb68ab805d282890c08899614c801fb14d3580e048dad3dfd1209c2685332f"
+      },
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.41"
+    },
+    "build_key": "81db714b88718ace7c421af4022a520f81e42c9652ffefd06b1e783105136114",
+    "libraries": {
+      "reference": {
+        "path": "/mnt/data/WU088_HH/build/81db714b88718ace7c421af4022a520f81e42c9652ffefd06b1e783105136114/reference.so",
+        "sha256": "f99a58f408062cf509f370c7ca9f9bdd61747ad79ca2d1a0de9a0d10277ce37c",
+        "command": [
+          "g++",
+          "-O3",
+          "-std=c++17",
+          "-fPIC",
+          "-shared",
+          "-fno-fast-math",
+          "-ffp-contract=off",
+          "-fopenmp",
+          "-fopt-info-vec-all=/mnt/data/WU088_HH/build/81db714b88718ace7c421af4022a520f81e42c9652ffefd06b1e783105136114/reference_vectorization.txt",
+          "/mnt/data/WU088_HH/native/reference/r31a/hybrid12_wide_h_v2.cpp",
+          "-o",
+          "/mnt/data/WU088_HH/build/81db714b88718ace7c421af4022a520f81e42c9652ffefd06b1e783105136114/reference.so"
+        ],
+        "vectorization_report": "/mnt/data/WU088_HH/build/81db714b88718ace7c421af4022a520f81e42c9652ffefd06b1e783105136114/reference_vectorization.txt"
+      },
+      "candidate": {
+        "path": "/mnt/data/WU088_HH/build/81db714b88718ace7c421af4022a520f81e42c9652ffefd06b1e783105136114/candidate.so",
+        "sha256": "5d85ca922d441171ed941b74ef3db70e3d4b78f0d05585a6fe00b5def2363270",
+        "command": [
+          "g++",
+          "-O3",
+          "-std=c++17",
+          "-fPIC",
+          "-shared",
+          "-fno-fast-math",
+          "-ffp-contract=off",
+          "-fopenmp",
+          "-fopt-info-vec-all=/mnt/data/WU088_HH/build/81db714b88718ace7c421af4022a520f81e42c9652ffefd06b1e783105136114/candidate_vectorization.txt",
+          "/mnt/data/WU088_HH/native/candidate/r31a/hybrid12_wide_h_v2.cpp",
+          "-o",
+          "/mnt/data/WU088_HH/build/81db714b88718ace7c421af4022a520f81e42c9652ffefd06b1e783105136114/candidate.so"
+        ],
+        "vectorization_report": "/mnt/data/WU088_HH/build/81db714b88718ace7c421af4022a520f81e42c9652ffefd06b1e783105136114/candidate_vectorization.txt"
+      }
+    },
+    "scientific_runtime_mutation": false
+  },
+  "host": {
+    "cpus": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "workers": 4,
+    "kernel_threads": 1,
+    "effective_cpu_budget": 4,
+    "physical_allowed": 5,
+    "logical_allowed": 5,
+    "quota_cores": 4.0,
+    "smt_requested": false,
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "quota_sources": [
+      {
+        "path": "/sys/fs/cgroup/cpu.max",
+        "cores": 4.0
+      }
+    ],
+    "memory": {
+      "MemTotal_bytes": 6236913664,
+      "MemAvailable_bytes": 5104521216,
+      "SwapTotal_bytes": 0,
+      "SwapFree_bytes": 0,
+      "cgroup_memory.max": "4294967296",
+      "cgroup_memory.current": "683827200"
+    },
+    "topology": {
+      "0": [
+        0,
+        0
+      ],
+      "1": [
+        0,
+        1
+      ],
+      "2": [
+        0,
+        2
+      ],
+      "3": [
+        0,
+        3
+      ],
+      "4": [
+        0,
+        4
+      ]
+    },
+    "hardware_benchmark_performed": false
+  },
+  "samples": [
+    {
+      "lane": "reference",
+      "threads": 1,
+      "observed_threads": 1,
+      "numerical_array_exact_equal": true,
+      "max_abs_component_delta": 0.0,
+      "wall_seconds": 2.5389570849999927,
+      "cpu_seconds": 2.5340882900000006
+    },
+    {
+      "lane": "candidate",
+      "threads": 1,
+      "observed_threads": 1,
+      "numerical_array_exact_equal": true,
+      "max_abs_component_delta": 0.0,
+      "wall_seconds": 2.545917994000092,
+      "cpu_seconds": 2.5416056020000006
+    },
+    {
+      "lane": "candidate",
+      "threads": 2,
+      "observed_threads": 2,
+      "numerical_array_exact_equal": true,
+      "max_abs_component_delta": 0.0,
+      "wall_seconds": 1.3741297300000497,
+      "cpu_seconds": 2.620356848
+    },
+    {
+      "lane": "candidate",
+      "threads": 4,
+      "observed_threads": 4,
+      "numerical_array_exact_equal": true,
+      "max_abs_component_delta": 0.0,
+      "wall_seconds": 0.9157703299999866,
+      "cpu_seconds": 3.289092855
+    },
+    {
+      "lane": "candidate",
+      "threads": 1,
+      "observed_threads": 1,
+      "numerical_array_exact_equal": true,
+      "max_abs_component_delta": 0.0,
+      "wall_seconds": 2.6014715829999204,
+      "cpu_seconds": 2.614518666000002
+    },
+    {
+      "lane": "candidate",
+      "threads": 2,
+      "observed_threads": 2,
+      "numerical_array_exact_equal": true,
+      "max_abs_component_delta": 0.0,
+      "wall_seconds": 1.3701460439999664,
+      "cpu_seconds": 2.6158894570000015
+    },
+    {
+      "lane": "candidate",
+      "threads": 4,
+      "observed_threads": 4,
+      "numerical_array_exact_equal": true,
+      "max_abs_component_delta": 0.0,
+      "wall_seconds": 0.927393370000118,
+      "cpu_seconds": 3.3589707309999994
+    },
+    {
+      "lane": "reference",
+      "threads": 1,
+      "observed_threads": 1,
+      "numerical_array_exact_equal": true,
+      "max_abs_component_delta": 0.0,
+      "wall_seconds": 2.669055888999992,
+      "cpu_seconds": 2.682445057999999
+    }
+  ],
+  "median_wall_seconds": {
+    "reference_1": 2.6040064869999924,
+    "candidate_1": 2.5736947885000063,
+    "candidate_2": 1.372137887000008,
+    "candidate_4": 0.9215818500000523
+  },
+  "measured_component_speedup_vs_reference": {
+    "reference_1": 1.0,
+    "candidate_1": 1.0117775031582716,
+    "candidate_2": 1.8977731842193328,
+    "candidate_4": 2.825583519249912
+  },
+  "full94_or_full49_validation": false,
+  "production_admitted": false,
+  "heavy_pair_state_mutation": false,
+  "scope": "actual frozen107 quadrature inputs at specified n/g, one foreign primitive pair; not end-to-end H performance"
+}

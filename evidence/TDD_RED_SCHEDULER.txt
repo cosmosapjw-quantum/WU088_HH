@@ -1,0 +1,94 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+____________________ test_expensive_pair_is_submitted_first ____________________
+
+    def test_expensive_pair_is_submitted_first():
+        tasks=[(0,0,'p0'),(0,1,'p1'),(1,0,'p2')]
+>       assert order_tasks(tasks,{(0,0):1.,(0,1):20.,(1,0):4.}) == [tasks[1],tasks[2],tasks[0]]
+E       AssertionError: assert [(0, 0, 'p0')... (1, 0, 'p2')] == [(0, 1, 'p1')... (0, 0, 'p0')]
+E         
+E         At index 0 diff: (0, 0, 'p0') != (0, 1, 'p1')
+E         
+E         Full diff:
+E           [
+E         +     (
+E         +         0,
+E         +         0,
+E         +         'p0',
+E         +     ),
+E               (
+E                   0,
+E                   1,
+E                   'p1',
+E               ),
+E               (
+E                   1,
+E                   0,
+E                   'p2',
+E               ),
+E         -     (
+E         -         0,
+E         -         0,
+E         -         'p0',
+E         -     ),
+E           ]
+
+tests/test_scheduler.py:15: AssertionError
+__________________ test_affinity_and_physical_core_selection ___________________
+
+    def test_affinity_and_physical_core_selection():
+        r=select_resources(topology(),{1,2,5,6},None,requested_workers=12)
+>       assert r['cpus']==[1,2]
+E       assert [1, 2, 5, 6] == [1, 2]
+E         
+E         Left contains 2 more items, first extra item: 5
+E         
+E         Full diff:
+E           [
+E               1,
+E               2,
+E         +     5,
+E         +     6,
+E           ]
+
+tests/test_hardware.py:11: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_scheduler.py::test_expensive_pair_is_submitted_first - AssertionError: assert [(0, 0, 'p0')... (1, 0, 'p2')] == [(0, 1, 'p1')... (0, 0, 'p0')]
+  
+  At index 0 diff: (0, 0, 'p0') != (0, 1, 'p1')
+  
+  Full diff:
+    [
+  +     (
+  +         0,
+  +         0,
+  +         'p0',
+  +     ),
+        (
+            0,
+            1,
+            'p1',
+        ),
+        (
+            1,
+            0,
+            'p2',
+        ),
+  -     (
+  -         0,
+  -         0,
+  -         'p0',
+  -     ),
+    ]
+FAILED tests/test_hardware.py::test_affinity_and_physical_core_selection - assert [1, 2, 5, 6] == [1, 2]
+  
+  Left contains 2 more items, first extra item: 5
+  
+  Full diff:
+    [
+        1,
+        2,
+  +     5,
+  +     6,
+    ]
+2 failed in 0.10s
