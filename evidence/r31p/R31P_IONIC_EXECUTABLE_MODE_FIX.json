@@ -1,0 +1,19 @@
+{
+  "schema": "WU088_R31P_IONIC_EXECUTABLE_MODE_FIX_V1",
+  "classification": "CP4_ARCHIVE_PERMISSION_METADATA_BLOCKED_NATIVE_EXECUTION",
+  "observed_error": "PermissionError: [Errno 13] Permission denied: completion/ionic/duffy_polar_double",
+  "archive_mode_observed": {
+    "completion/ionic/duffy_polar_double": "0600",
+    "completion/ionic/duffy_polar": "0600"
+  },
+  "admitted_record_provenance_sha256": {
+    "completion/ionic/duffy_polar_double": "16bdcd528c53193ed53bfe371e74b804644c1b3491e014ac6f088f2d3667bf75",
+    "completion/ionic/duffy_polar": "36ed3a81c76ce6fe95bb7fbde43d3931d5e817ed66951ba3ac2ff0aed8d8fb0f"
+  },
+  "archive_bytes_match_admitted_provenance": true,
+  "archive_bytes_are_elf": true,
+  "fix": "verify exact SHA and ELF magic, then add only owner execute bit; re-hash bytes after chmod",
+  "scientific_bytes_changed": false,
+  "interpolation_evaluated": false,
+  "trajectory_runs": 0
+}

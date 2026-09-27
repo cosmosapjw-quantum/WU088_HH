@@ -5,7 +5,7 @@ from pathlib import Path
 import argparse,hashlib,json,os,subprocess,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'src'),str(ROOT/'scripts')]
 import r31n_provider_fill as base
-from wu088_hh.r31p import MIDPOINTS,CP4_REUSED_IONIC
+from wu088_hh.r31p import MIDPOINTS,CP4_REUSED_IONIC,ensure_cp4_ionic_executables
 from wu088_hh.backup import dual_backup,digest
 
 
@@ -42,6 +42,7 @@ def main():
     byz={int(x['z']):x for x in index['nodes']}
     plan={'reuse':sorted(CP4_REUSED_IONIC),'compute':[z for z in MIDPOINTS if z not in CP4_REUSED_IONIC],'threads':a.threads,'interpolation_evaluated':False}
     if a.describe:print(json.dumps({'status':'R31P_IONIC_FILL_READY','cp4_audit':audit,'plan':plan},indent=2));return 0
+    executable_modes=ensure_cp4_ionic_executables(cp4)
     a.out_root.mkdir(parents=True,exist_ok=True);rows=[]
     for z in MIDPOINTS:
         if z in CP4_REUSED_IONIC:
@@ -64,7 +65,7 @@ def main():
             br=backup(seal,a.out_root/f'IONIC_z{z}_DUAL_BACKUP_RECEIPT.json',a.drive,a.dropbox,a.backup_prefix+f'/z{z}');row['backup']=br['status']
         rows.append(row)
     durable=all(r.get('backup') in ('CP4_ARCHIVE_DURABLE_REUSE','DUAL_RAW_READBACK_VERIFIED') for r in rows)
-    summary={'schema':'WU088_R31P_IONIC_FILL_SUMMARY_V1','cp4_sha256':base.CP4_SHA,'plan':plan,'nodes':rows,
+    summary={'schema':'WU088_R31P_IONIC_FILL_SUMMARY_V1','cp4_sha256':base.CP4_SHA,'plan':plan,'executable_modes':executable_modes,'nodes':rows,
              'all_nodes_durable':durable,'interpolation_evaluated':False,'trajectory_admitted':False,'production_admitted':False,
              'status':'R31P_IONIC_FILL_COMPLETE_DURABLE' if durable else 'R31P_IONIC_FILL_COMPLETE_LOCAL_ONLY'}
     base.atomic_json(a.out_root/'R31P_IONIC_FILL_SUMMARY.json',summary);print(json.dumps(summary,indent=2));return 0

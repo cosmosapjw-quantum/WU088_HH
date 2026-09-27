@@ -81,3 +81,40 @@ def test_backed_h_seal_can_be_restored_after_local_overwrite(tmp_path,monkeypatc
     _,identity=mod.reuse_or_restore_backed_seal(local,receipt,folder)
     assert identity==expected
     assert mod.digest(local)==expected
+
+
+def test_cp4_ionic_executable_mode_repair_is_hash_bound_and_byte_preserving(tmp_path):
+    import hashlib,os,stat
+    import wu088_hh.r31p as r31p
+    base=tmp_path/'completion'/'ionic';base.mkdir(parents=True)
+    old=dict(r31p.CP4_IONIC_EXECUTABLE_SHA256)
+    try:
+        payloads={'duffy_polar_double':b'\x7fELFdouble','duffy_polar':b'\x7fELFlongdouble'}
+        r31p.CP4_IONIC_EXECUTABLE_SHA256={k:hashlib.sha256(v).hexdigest() for k,v in payloads.items()}
+        for name,data in payloads.items():
+            p=base/name;p.write_bytes(data);p.chmod(0o600)
+        out=r31p.ensure_cp4_ionic_executables(tmp_path)
+        assert out['status']=='CP4_IONIC_EXECUTABLE_MODES_VERIFIED'
+        for name,data in payloads.items():
+            p=base/name
+            assert hashlib.sha256(p.read_bytes()).hexdigest()==r31p.CP4_IONIC_EXECUTABLE_SHA256[name]
+            assert stat.S_IMODE(p.stat().st_mode)&stat.S_IXUSR
+            assert os.access(p,os.X_OK)
+    finally:
+        r31p.CP4_IONIC_EXECUTABLE_SHA256=old
+
+def test_cp4_ionic_executable_mode_repair_refuses_hash_drift(tmp_path):
+    import hashlib,stat
+    import pytest
+    import wu088_hh.r31p as r31p
+    base=tmp_path/'completion'/'ionic';base.mkdir(parents=True)
+    old=dict(r31p.CP4_IONIC_EXECUTABLE_SHA256)
+    try:
+        r31p.CP4_IONIC_EXECUTABLE_SHA256={'duffy_polar_double':'0'*64,'duffy_polar':'1'*64}
+        for name in r31p.CP4_IONIC_EXECUTABLE_SHA256:
+            p=base/name;p.write_bytes(b'\x7fELFwrong');p.chmod(0o600)
+        with pytest.raises(ValueError,match='hash mismatch'):
+            r31p.ensure_cp4_ionic_executables(tmp_path)
+        assert stat.S_IMODE((base/'duffy_polar_double').stat().st_mode)==0o600
+    finally:
+        r31p.CP4_IONIC_EXECUTABLE_SHA256=old

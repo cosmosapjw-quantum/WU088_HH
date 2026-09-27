@@ -4,12 +4,41 @@ This module records the already-frozen R31J midpoint/interpolation contract.
 It does not evaluate interpolation or admit trajectory/production physics.
 """
 from __future__ import annotations
+import hashlib
 import math
+import os
+from pathlib import Path
+import stat
 import struct
 
 MIDPOINTS=(4,12,24,40,56)
 H_ORDERS=(160,192)
 CP4_REUSED_IONIC=frozenset({4,12,24})
+CP4_IONIC_EXECUTABLE_SHA256={
+    'duffy_polar_double':'16bdcd528c53193ed53bfe371e74b804644c1b3491e014ac6f088f2d3667bf75',
+    'duffy_polar':'36ed3a81c76ce6fe95bb7fbde43d3931d5e817ed66951ba3ac2ff0aed8d8fb0f',
+}
+
+def ensure_cp4_ionic_executables(cp4_root)->dict:
+    """Restore owner execute permission only for provenance-bound CP4 ELF bytes."""
+    base=Path(cp4_root)/'completion/ionic'
+    rows={}
+    for name,expected in CP4_IONIC_EXECUTABLE_SHA256.items():
+        p=base/name
+        if not p.is_file(): raise FileNotFoundError(p)
+        data=p.read_bytes()
+        got=hashlib.sha256(data).hexdigest()
+        if got!=expected: raise ValueError(f'CP4 ionic executable hash mismatch: {name}')
+        if not data.startswith(b'\x7fELF'): raise ValueError(f'CP4 ionic executable is not ELF: {name}')
+        before=stat.S_IMODE(p.stat().st_mode)
+        p.chmod(before|stat.S_IXUSR)
+        after=stat.S_IMODE(p.stat().st_mode)
+        if hashlib.sha256(p.read_bytes()).hexdigest()!=expected:
+            raise RuntimeError(f'CP4 ionic executable bytes changed during mode repair: {name}')
+        if not os.access(p,os.X_OK):
+            raise PermissionError(f'CP4 ionic executable remains non-executable: {name}')
+        rows[name]={'sha256':expected,'mode_before':oct(before),'mode_after':oct(after),'owner_execute_restored':not bool(before&stat.S_IXUSR)}
+    return {'status':'CP4_IONIC_EXECUTABLE_MODES_VERIFIED','executables':rows}
 
 
 def interpolation_contract()->dict:
