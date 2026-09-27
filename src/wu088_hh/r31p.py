@@ -17,6 +17,8 @@ CP4_REUSED_IONIC=frozenset({4,12,24})
 CP4_IONIC_EXECUTABLE_SHA256={
     'duffy_polar_double':'16bdcd528c53193ed53bfe371e74b804644c1b3491e014ac6f088f2d3667bf75',
     'duffy_polar':'36ed3a81c76ce6fe95bb7fbde43d3931d5e817ed66951ba3ac2ff0aed8d8fb0f',
+    'diagonal':'9df0b914fca2d3df26681d3476aec5d878eae199684e580eb9544177d03ff560',
+    'half_hermite':'dfbc2b434beecdfe4354fb18dca28ee3172c6f8e3957050464f4809c48de99ff',
 }
 
 def ensure_cp4_ionic_executables(cp4_root)->dict:

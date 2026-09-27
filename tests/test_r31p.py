@@ -118,3 +118,13 @@ def test_cp4_ionic_executable_mode_repair_refuses_hash_drift(tmp_path):
         assert stat.S_IMODE((base/'duffy_polar_double').stat().st_mode)==0o600
     finally:
         r31p.CP4_IONIC_EXECUTABLE_SHA256=old
+
+
+def test_cp4_ionic_executable_manifest_covers_complete_runtime_call_graph():
+    import wu088_hh.r31p as r31p
+    assert r31p.CP4_IONIC_EXECUTABLE_SHA256 == {
+        'duffy_polar_double':'16bdcd528c53193ed53bfe371e74b804644c1b3491e014ac6f088f2d3667bf75',
+        'duffy_polar':'36ed3a81c76ce6fe95bb7fbde43d3931d5e817ed66951ba3ac2ff0aed8d8fb0f',
+        'diagonal':'9df0b914fca2d3df26681d3476aec5d878eae199684e580eb9544177d03ff560',
+        'half_hermite':'dfbc2b434beecdfe4354fb18dca28ee3172c6f8e3957050464f4809c48de99ff',
+    }
