@@ -1,0 +1,35 @@
+{
+  "schema": "WU088_R31P_HANDOFF_VERIFICATION_V1",
+  "status": "R31P_LOCAL_HEAVY_HANDOFF_VERIFIED",
+  "preregistered_midpoints": [4, 12, 24, 40, 56],
+  "interpolation_contract": {
+    "method": "piecewise_linear_only_after_midpoint_validation",
+    "H_midpoint_max_abs_Eh": 2e-7,
+    "whitened_independent_generator_relative_error": 2e-12,
+    "interpolated_raw_gates_must_also_pass": true,
+    "adaptive_rule": "bisect_only_failing_intervals",
+    "minimum_interval_width_a0": 1.0,
+    "on_failure": "STOP_INTERPOLATION_RESOLUTION_UNRESOLVED"
+  },
+  "planned_direct_sources": {
+    "H_orders": [160, 192],
+    "OD192": [4, 12, 24, 40, 56],
+    "JVP192": [4, 12, 24, 40, 56],
+    "ionic_reuse_CP4": [4, 12, 24],
+    "ionic_compute": [40, 56]
+  },
+  "parallelism": {
+    "H": "R31M host tuned 2x12 SMT",
+    "OD_JVP": "12x1 physical pair-level",
+    "ionic": "serial three-job node admission, max 2 OpenMP threads"
+  },
+  "cp4_describe_audit": "PASS_ALL_EXPECTED_SOURCE_HASHES",
+  "pytest": "53 passed",
+  "python_compile": "PASS",
+  "shell_syntax": "PASS",
+  "interpolation_evaluated": false,
+  "full49_admission_evaluated": false,
+  "trajectory_runs": 0,
+  "trajectory_admitted": false,
+  "production_admitted": false
+}
