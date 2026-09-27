@@ -22,7 +22,8 @@ def target(remote,prefix,name):return remote.rstrip('/')+('' if remote.endswith(
 
 def deterministic_state_seal(folder:Path,out:Path):
     out.parent.mkdir(parents=True,exist_ok=True);tmp=out.with_suffix('.tmp.zip')
-    members=sorted(p for p in folder.rglob('*') if p.is_file() and p.name not in ('RUN.lock',) and not p.name.endswith('.tmp'))
+    volatile={'RUN.lock','RUN_STATE.json'}
+    members=sorted(p for p in folder.rglob('*') if p.is_file() and p.name not in volatile and not p.name.endswith('.tmp'))
     with zipfile.ZipFile(tmp,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as zf:
         for p in members:
             zi=zipfile.ZipInfo(str(p.relative_to(folder)));zi.date_time=(2026,9,27,0,0,0);zi.external_attr=(0o100644<<16);zi.compress_type=zipfile.ZIP_DEFLATED
@@ -39,6 +40,43 @@ def backup_seal(seal:Path,receipt:Path,drive,dropbox,prefix):
     r=dual_backup(seal,dest,receipt)
     if not r['dual_raw_readback_verified']:raise RuntimeError('H seal dual backup incomplete')
     return r
+
+def _verify_seal_scientific_payload(seal:Path,folder:Path):
+    required=[folder/'IDENTITY.json',folder/'RESULTS.json',folder/'ASSEMBLED.npz',*sorted(folder.glob('pair_??_??.npz'))]
+    with zipfile.ZipFile(seal,'r') as zf:
+        names=set(zf.namelist())
+        for p in required:
+            rel=str(p.relative_to(folder))
+            if rel not in names:raise RuntimeError(f'durable H seal missing scientific payload: {rel}')
+            if hashlib.sha256(zf.read(rel)).hexdigest()!=sha(p):raise RuntimeError(f'durable H seal scientific payload drift: {rel}')
+    return True
+
+def reuse_or_restore_backed_seal(seal:Path,receipt:Path,folder:Path,*,rclone_bin='rclone'):
+    old=json.loads(receipt.read_text())
+    if old.get('dual_raw_readback_verified') is not True:raise RuntimeError('existing H seal receipt is not dual-readback verified')
+    expected=(str(old.get('source_sha256')),int(old.get('source_bytes',-1)))
+    seal.parent.mkdir(parents=True,exist_ok=True)
+    if seal.is_file() and digest(seal)==expected:
+        _verify_seal_scientific_payload(seal,folder)
+        return old,expected
+    tmp=seal.with_suffix('.restore.tmp')
+    providers=old.get('providers') or {}
+    errors=[]
+    for provider in ('google_drive','dropbox'):
+        target_path=(providers.get(provider) or {}).get('destination')
+        if not target_path:continue
+        try:
+            tmp.unlink(missing_ok=True)
+            cp=subprocess.run([rclone_bin,'copyto',str(target_path),str(tmp)],capture_output=True,text=True,timeout=300)
+            if cp.returncode:raise RuntimeError(f'copyto exit={cp.returncode}: {cp.stderr[-1200:]}')
+            if digest(tmp)!=expected:raise RuntimeError('restored H seal SHA/size mismatch')
+            os.replace(tmp,seal)
+            _verify_seal_scientific_payload(seal,folder)
+            return old,expected
+        except Exception as exc:
+            errors.append(f'{provider}: {exc}')
+    tmp.unlink(missing_ok=True)
+    raise RuntimeError('cannot restore existing dual-backed H seal: '+' | '.join(errors))
 
 def verify_h_state(folder:Path):
     pairs=sorted(folder.glob('pair_??_??.npz'))
@@ -71,6 +109,7 @@ def run_cmd(cmd,*,env=None,allowed=(0,),capture=False):
     return p,wall
 
 def ack_pending(folder:Path,receipts:Path,drive,dropbox,prefix):
+    if not pending_delta_hashes(folder):return
     receipts.mkdir(parents=True,exist_ok=True)
     cmd=[sys.executable,str(ROOT/'scripts/backup_pending.py'),'--folder',str(folder),'--drive',drive,'--dropbox',dropbox,'--prefix',prefix,'--receipts',str(receipts)]
     run_cmd(cmd)
@@ -91,8 +130,12 @@ def close_h_basis(*,work:Path,runtime:Path,z:int,n:int,profile:Path,regression:P
         p,wall=run_cmd(cmd,allowed=(0,74));compute_wall+=wall
         if folder.exists():ack_pending(folder,receipts,drive,dropbox,prefix)
     state=verify_h_state(folder);state['bounded_invocations']=attempts;state['wrapper_compute_wall_seconds']=compute_wall
-    seal=out/'h_seals'/f'R31P_H_z{z}_B{n}_PAIR_STATE.zip';ss,nb=deterministic_state_seal(folder,seal)
-    br=backup_seal(seal,out/'h_seals'/f'R31P_H_z{z}_B{n}_DUAL_BACKUP_RECEIPT.json',drive,dropbox,prefix+'/final')
+    seal=out/'h_seals'/f'R31P_H_z{z}_B{n}_PAIR_STATE.zip';receipt=out/'h_seals'/f'R31P_H_z{z}_B{n}_DUAL_BACKUP_RECEIPT.json'
+    if receipt.exists():
+        br,(ss,nb)=reuse_or_restore_backed_seal(seal,receipt,folder)
+    else:
+        ss,nb=deterministic_state_seal(folder,seal)
+        br=backup_seal(seal,receipt,drive,dropbox,prefix+'/final')
     state.update(seal=str(seal),seal_sha256=ss,seal_bytes=nb,backup=br['status'])
     return state
 

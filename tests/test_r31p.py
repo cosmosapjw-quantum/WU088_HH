@@ -39,3 +39,45 @@ def test_midpoint_plan_rejects_unregistered_or_missing_reuse_nodes():
     import wu088_hh.r31p as r31p
     with pytest.raises(ValueError,match='ionic reuse'):
         r31p.midpoint_plan(existing_ionic_nodes={4,12,24,40})
+
+
+def _load_r31p_midpoint_script():
+    import importlib.util
+    from pathlib import Path
+    script=Path(__file__).resolve().parents[1]/'scripts'/'r31p_midpoint_direct.py'
+    spec=importlib.util.spec_from_file_location('r31p_midpoint_direct_under_test',script)
+    mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+    return mod
+
+def test_backed_h_seal_is_reused_across_volatile_run_state_changes(tmp_path):
+    import json
+    mod=_load_r31p_midpoint_script()
+    folder=tmp_path/'state';folder.mkdir()
+    for name,data in [('IDENTITY.json',b'i'),('RESULTS.json',b'r'),('ASSEMBLED.npz',b'a'),('pair_00_00.npz',b'p')]:
+        (folder/name).write_bytes(data)
+    (folder/'RUN_STATE.json').write_text('first')
+    seal=tmp_path/'seal.zip';first=mod.deterministic_state_seal(folder,seal)
+    receipt=tmp_path/'receipt.json'
+    receipt.write_text(json.dumps({'source_sha256':first[0],'source_bytes':first[1],'dual_raw_readback_verified':True,'status':'DUAL_RAW_READBACK_VERIFIED','providers':{}}))
+    (folder/'RUN_STATE.json').write_text('second')
+    old,identity=mod.reuse_or_restore_backed_seal(seal,receipt,folder)
+    assert identity==first
+    assert mod.digest(seal)==first
+    assert old['status']=='DUAL_RAW_READBACK_VERIFIED'
+
+def test_backed_h_seal_can_be_restored_after_local_overwrite(tmp_path,monkeypatch):
+    import json,shutil,types
+    mod=_load_r31p_midpoint_script()
+    folder=tmp_path/'state';folder.mkdir()
+    for name,data in [('IDENTITY.json',b'i'),('RESULTS.json',b'r'),('ASSEMBLED.npz',b'a'),('pair_00_00.npz',b'p')]:
+        (folder/name).write_bytes(data)
+    remote=tmp_path/'remote.zip';expected=mod.deterministic_state_seal(folder,remote)
+    receipt=tmp_path/'receipt.json'
+    receipt.write_text(json.dumps({'source_sha256':expected[0],'source_bytes':expected[1],'dual_raw_readback_verified':True,'status':'DUAL_RAW_READBACK_VERIFIED','providers':{'google_drive':{'destination':'fake:seal'}}}))
+    local=tmp_path/'local.zip';local.write_bytes(b'overwritten-local-seal')
+    def fake_run(cmd,**kwargs):
+        shutil.copy2(remote,cmd[-1]);return types.SimpleNamespace(returncode=0,stdout='',stderr='')
+    monkeypatch.setattr(mod.subprocess,'run',fake_run)
+    _,identity=mod.reuse_or_restore_backed_seal(local,receipt,folder)
+    assert identity==expected
+    assert mod.digest(local)==expected
