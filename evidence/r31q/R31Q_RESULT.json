@@ -1,0 +1,204 @@
+{
+  "schema": "WU088_HH_R31Q_MIDPOINT_GATE_V1",
+  "status": "FAIL_INITIAL_INTERPOLATION__BISECTION_REQUIRED",
+  "r31p_direct_status": "R31P_MIDPOINT_DIRECT_COMPLETE_DURABLE",
+  "anchors": [
+    0,
+    8,
+    16,
+    32,
+    48,
+    64
+  ],
+  "midpoints": [
+    4,
+    12,
+    24,
+    40,
+    56
+  ],
+  "H_convergence": [
+    {
+      "z": 4,
+      "max_abs_Eh": 6.925758221019651e-10,
+      "fail_count": 0,
+      "pass": true
+    },
+    {
+      "z": 12,
+      "max_abs_Eh": 4.440491612179633e-10,
+      "fail_count": 0,
+      "pass": true
+    },
+    {
+      "z": 24,
+      "max_abs_Eh": 1.8890307413940552e-10,
+      "fail_count": 0,
+      "pass": true
+    },
+    {
+      "z": 40,
+      "max_abs_Eh": 8.222771866944257e-11,
+      "fail_count": 0,
+      "pass": true
+    },
+    {
+      "z": 56,
+      "max_abs_Eh": 1.8433931091928988e-11,
+      "fail_count": 0,
+      "pass": true
+    }
+  ],
+  "all_H_convergence_pass": true,
+  "midpoint_full49": [
+    {
+      "z": 4,
+      "metric_fail_count": 0,
+      "metric_gap_max": 5.007818132943288e-15,
+      "generator_independent_antihermiticity": 1.0863178821140023e-14,
+      "full_overlap_condition": 9.09061346406532,
+      "authority_all_pass": true
+    },
+    {
+      "z": 12,
+      "metric_fail_count": 0,
+      "metric_gap_max": 9.86238000988425e-14,
+      "generator_independent_antihermiticity": 2.8004885254855563e-13,
+      "full_overlap_condition": 2.6290231118864886,
+      "authority_all_pass": true
+    },
+    {
+      "z": 24,
+      "metric_fail_count": 0,
+      "metric_gap_max": 3.0966056220003155e-14,
+      "generator_independent_antihermiticity": 2.599045329583415e-13,
+      "full_overlap_condition": 1.2886072122808088,
+      "authority_all_pass": true
+    },
+    {
+      "z": 40,
+      "metric_fail_count": 0,
+      "metric_gap_max": 1.4987579814545836e-14,
+      "generator_independent_antihermiticity": 2.6859475867202375e-13,
+      "full_overlap_condition": 1.0591793423142315,
+      "authority_all_pass": true
+    },
+    {
+      "z": 56,
+      "metric_fail_count": 0,
+      "metric_gap_max": 1.799728389859e-13,
+      "generator_independent_antihermiticity": 2.403796612655e-12,
+      "full_overlap_condition": 1.0030432,
+      "authority_all_pass": true
+    }
+  ],
+  "all_midpoint_full49_authority_pass": true,
+  "interpolation_contract": {
+    "method": "piecewise_linear_only_after_midpoint_validation",
+    "H_midpoint_max_abs_Eh": 2e-7,
+    "whitened_independent_generator_relative_error": 2e-12,
+    "interpolated_raw_gates_must_also_pass": true,
+    "adaptive_rule": "bisect_only_failing_intervals",
+    "minimum_interval_width_a0": 1,
+    "on_failure": "STOP_INTERPOLATION_RESOLUTION_UNRESOLVED"
+  },
+  "interpolation": [
+    {
+      "interval": [
+        0,
+        8
+      ],
+      "z": 4,
+      "H": 0.5903055889095886,
+      "G": 0.4810910358399014,
+      "H_threshold": 2e-7,
+      "G_threshold": 2e-12,
+      "H_pass": false,
+      "G_pass": false,
+      "interpolated_raw_all_pass": true,
+      "direct_full49_pass": true,
+      "pass": false
+    },
+    {
+      "interval": [
+        8,
+        16
+      ],
+      "z": 12,
+      "H": 0.08744856587772085,
+      "G": 0.3995885764329577,
+      "H_threshold": 2e-7,
+      "G_threshold": 2e-12,
+      "H_pass": false,
+      "G_pass": false,
+      "interpolated_raw_all_pass": true,
+      "direct_full49_pass": true,
+      "pass": false
+    },
+    {
+      "interval": [
+        16,
+        32
+      ],
+      "z": 24,
+      "H": 0.032919394901333124,
+      "G": 0.3040792922847482,
+      "H_threshold": 2e-7,
+      "G_threshold": 2e-12,
+      "H_pass": false,
+      "G_pass": false,
+      "interpolated_raw_all_pass": true,
+      "direct_full49_pass": true,
+      "pass": false
+    },
+    {
+      "interval": [
+        32,
+        48
+      ],
+      "z": 40,
+      "H": 0.02113389676536541,
+      "G": 0.08656632447320883,
+      "H_threshold": 2e-7,
+      "G_threshold": 2e-12,
+      "H_pass": false,
+      "G_pass": false,
+      "interpolated_raw_all_pass": true,
+      "direct_full49_pass": true,
+      "pass": false
+    },
+    {
+      "interval": [
+        48,
+        64
+      ],
+      "z": 56,
+      "H": 0.0022334005485254937,
+      "G": 0.01589842023175256,
+      "H_threshold": 2e-7,
+      "G_threshold": 2e-12,
+      "H_pass": false,
+      "G_pass": false,
+      "interpolated_raw_all_pass": true,
+      "direct_full49_pass": true,
+      "pass": false
+    }
+  ],
+  "all_initial_intervals_pass": false,
+  "next_direct_nodes": [
+    2,
+    6,
+    10,
+    14,
+    20,
+    28,
+    36,
+    44,
+    52,
+    60
+  ],
+  "trajectory_runs": 0,
+  "trajectory_admitted": false,
+  "production_admitted": false,
+  "evidence_bundle_sha256": "6d1b30777a4a9c1a28b35ad30ae2ef69327a3399a4efa5fb70cfe3afc700e69a"
+}
