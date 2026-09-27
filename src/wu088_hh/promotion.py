@@ -2,6 +2,16 @@
 from __future__ import annotations
 import math
 
+TRUSTED_NATIVE_BLOCKED_LOADER_VARS=('LD_PRELOAD','LD_LIBRARY_PATH')
+
+def sanitize_trusted_native_environment(base_env, **updates):
+    """Return a child-only environment accepted by trusted native builders."""
+    env=dict(base_env)
+    for var in TRUSTED_NATIVE_BLOCKED_LOADER_VARS:
+        env.pop(var,None)
+    env.update({k:str(v) for k,v in updates.items()})
+    return env
+
 
 def validate_science_regression(data: dict, *, profile_sha256: str, build_key: str) -> dict:
     if data.get('schema') != 'WU088_R31M_SCIENCE_RESOLUTION_NATIVE_REGRESSION_V1':

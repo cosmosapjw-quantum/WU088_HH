@@ -1,0 +1,27 @@
+{
+  "schema": "WU088_R31P_H_LOADER_ENV_FIX_V1",
+  "classification": "EXECUTION_ENVIRONMENT_BLOCKED_BEFORE_SCIENTIFIC_PAIR",
+  "observed_error": "RuntimeError: LD_LIBRARY_PATH must be unset",
+  "failing_path": "R31M tuned-H sidecar -> frozen WideReference -> GuardedH -> trusted build_h guard",
+  "scientific_state": {
+    "midpoint_H_pairs_created": 0,
+    "interpolation_evaluated": false,
+    "midpoint_full49_evaluated": false,
+    "trajectory_runs": 0
+  },
+  "fix": {
+    "scope": "child orchestrator environment only",
+    "removed": [
+      "LD_PRELOAD",
+      "LD_LIBRARY_PATH"
+    ],
+    "parent_environment_mutated": false,
+    "scientific_inputs_changed": false,
+    "native_arithmetic_changed": false
+  },
+  "tdd": {
+    "red": "focused import/test failed before helper existed",
+    "green": "4 focused promotion tests passed after helper addition"
+  },
+  "rerun_semantics": "same R31P command; existing create-only/durable states are reused"
+}

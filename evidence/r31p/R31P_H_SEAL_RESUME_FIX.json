@@ -1,0 +1,14 @@
+{
+  "schema": "WU088_R31P_H_SEAL_RESUME_FIX_V1",
+  "classification": "DURABILITY_SEAL_IDENTITY_DRIFT_FROM_VOLATILE_LEASE_STATE",
+  "observed_error": "RuntimeError: existing H seal backup receipt mismatch",
+  "root_cause": "no-op pending-delta backup acquires RunLease and rewrites RUN_STATE.json timestamps; deterministic H state seal previously included RUN_STATE.json and was regenerated before consulting the existing dual-backup receipt",
+  "scientific_state_changed": false,
+  "fix": [
+    "skip backup_pending when pending_delta_hashes is empty",
+    "exclude RUN_STATE.json from newly-created deterministic H pair-state seals",
+    "if a dual-readback seal receipt already exists, reuse the backed seal instead of regenerating it",
+    "if the local seal was overwritten before the mismatch was detected, restore it from a receipt-recorded remote object and verify SHA/size plus scientific pair/aggregate/identity payload"
+  ],
+  "claim_ceiling": "durability/resume repair only; no scientific threshold or arithmetic changes"
+}

@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'src'),str(ROOT/
 from build_native import build
 from wu088_hh.autotune import validate_tuning_profile
 from wu088_hh.hardware import inspect_host
-from wu088_hh.promotion import validate_science_regression
+from wu088_hh.promotion import validate_science_regression, sanitize_trusted_native_environment
 import hashlib
 
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
@@ -21,8 +21,14 @@ def main():
     host=inspect_host(use_smt=bool(selected.get('use_smt',False)),requested_workers=int(selected['processes']),kernel_threads=int(selected['kernel_threads']))
     validate_tuning_profile(profile,host,built['build_key'])
     regression=json.loads(a.regression.read_text());promotion=validate_science_regression(regression,profile_sha256=sha(a.tuning_profile),build_key=built['build_key'])
-    env=dict(os.environ,R31K_RUNTIME_ROOT=str(a.runtime.resolve()),WU088_R31M_CANDIDATE_SO=built['libraries']['candidate']['path'],
-             WU088_R31M_TUNING_PROFILE=str(a.tuning_profile.resolve()),WU088_R31M_REGRESSION=str(a.regression.resolve()),WU088_R31M_BUILD_KEY=built['build_key'])
+    env=sanitize_trusted_native_environment(
+        os.environ,
+        R31K_RUNTIME_ROOT=str(a.runtime.resolve()),
+        WU088_R31M_CANDIDATE_SO=built['libraries']['candidate']['path'],
+        WU088_R31M_TUNING_PROFILE=str(a.tuning_profile.resolve()),
+        WU088_R31M_REGRESSION=str(a.regression.resolve()),
+        WU088_R31M_BUILD_KEY=built['build_key'],
+    )
     cmd=[sys.executable,str(ROOT/'scripts/wide_hybrid_orchestrator_cost.py'),'--n',str(a.n),'--g',str(a.g),'--z',repr(a.z),'--gamma-scale',a.gamma_scale,
          '--max-new-pairs',str(a.max_new_pairs),'--max-wall-seconds',str(a.max_wall_seconds),'--execution-lane','local',
          '--legacy-runner',str(ROOT/'vendor/orchestration/r31m_tuned_local_adapter.py'),'--tuning-profile',str(a.tuning_profile.resolve())]
