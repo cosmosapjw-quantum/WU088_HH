@@ -1,6 +1,6 @@
 import copy
 import pytest
-from wu088_hh.promotion import validate_science_regression
+from wu088_hh.promotion import validate_science_regression, sanitize_trusted_native_environment
 
 
 def good():
@@ -37,3 +37,14 @@ def test_scoped_foreign_promotion_rejects_profile_or_build_drift():
         validate_science_regression(good(),profile_sha256='c'*64,build_key='b'*64)
     with pytest.raises(ValueError,match='build'):
         validate_science_regression(good(),profile_sha256='a'*64,build_key='c'*64)
+
+def test_trusted_native_subprocess_env_removes_only_loader_injection_vars():
+    src={'PATH':'/usr/bin','LD_LIBRARY_PATH':'/tmp/lib','LD_PRELOAD':'/tmp/pre.so','KEEP':'yes'}
+    out=sanitize_trusted_native_environment(src,R31K_RUNTIME_ROOT='/runtime')
+    assert 'LD_LIBRARY_PATH' not in out
+    assert 'LD_PRELOAD' not in out
+    assert out['PATH']=='/usr/bin'
+    assert out['KEEP']=='yes'
+    assert out['R31K_RUNTIME_ROOT']=='/runtime'
+    assert src['LD_LIBRARY_PATH']=='/tmp/lib'
+    assert src['LD_PRELOAD']=='/tmp/pre.so'
