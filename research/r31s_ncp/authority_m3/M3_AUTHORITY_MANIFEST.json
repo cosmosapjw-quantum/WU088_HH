@@ -1,0 +1,58 @@
+{
+  "schema": "WU088_R31T_M3_H0_AUTHORITY_BUNDLE_V1",
+  "status": "SANDBOX_VERIFIED_EXACT_H0_MINIMAL_CLOSURE",
+  "purpose": "Bounded M3 full-pair screen H0 arithmetic authority. Not a production runtime or full CP4 replacement.",
+  "cp4_parent_sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+  "files": {
+    "m3_h0_authority.py": {
+      "bytes": 4653,
+      "sha256": "ced8d7e89d1a87a9fb14a9c9a4edf4a7f9f3d419227c3e0dbf85020e7d6b9db6",
+      "git_blob_sha1": "233a9be2893bc92c8ccb18cbcbe4ae2dbf3c97b4"
+    },
+    "runtime/completion/mixed_h/h0_fused.cpp": {
+      "bytes": 4604,
+      "sha256": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+      "git_blob_sha1": "763f0ffe0ac5d767a31e2e8949218abc35c0b201"
+    },
+    "runtime/completion/radial/radial_wide.cpp": {
+      "bytes": 8433,
+      "sha256": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+      "git_blob_sha1": "d1dea9f777774d1a112ef24ba47b495080997bdf"
+    },
+    "runtime/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz": {
+      "bytes": 5681,
+      "sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+      "git_blob_sha1": "20fc224990c4bb4ffb1570be6a32c663a96476e8"
+    }
+  },
+  "upstream_historical_identity": {
+    "completion/mixed_h/h0_backend.py": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+    "completion/mixed_h/native.py": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+    "completion/mixed_h/production_api.py": "24552c7eb1c7bd9fd296fda17de8e727fdd1992de1154099f72711e077c1bb51",
+    "completion/mixed_h/wide_reference.py": "ba9bea3b58977b19cf993b082e1518dafb9c8122501fc629761db5b90ff6c6e4",
+    "exact_weights/exact_laplace_weights.py": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb"
+  },
+  "historical_correction": {
+    "pr12_reported_r31a_path_is_not_present": true,
+    "wide_reference_actual_cp4_path": "completion/mixed_h/wide_reference.py",
+    "wide_reference_sha256": "ba9bea3b58977b19cf993b082e1518dafb9c8122501fc629761db5b90ff6c6e4"
+  },
+  "adapter_policy": {
+    "use_m3_h0_authority_adapter": true,
+    "do_not_instantiate_historical_WideReference_for_M3_screen": true,
+    "reason": "WideReference inherits Production and performs redundant GuardedH/foreign initialization before overriding h0 with H0Fused. M3 H0 arithmetic is exactly h0_fused.cpp + radial_wide.cpp with the exact frozen model inputs.",
+    "strict_flags": ["-O3","-std=c++17","-fPIC","-shared","-fno-fast-math","-ffp-contract=off"]
+  },
+  "grid_policy": {
+    "use_existing_m2_grid_seed": true,
+    "reason": "The c8 authority refresh already established byte-identical t/W/gs/gw for B160/g80, B192/g80 and B32/g20 against the CP4-derived authority. The M3 H0 adapter consumes the full frozen inputs only for source identity and pref/exponents/v.",
+    "exact_weights_source_sha256": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb"
+  },
+  "sandbox_regression": "M3_H0_SANDBOX_REGRESSION.json",
+  "claim_ceiling": {
+    "m3_authority_blocker_closed": true,
+    "full_pair_equivalence_on_ncp": false,
+    "m3_benchmark_run": false,
+    "production_admitted": false
+  }
+}
