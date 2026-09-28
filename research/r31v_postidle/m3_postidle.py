@@ -132,6 +132,47 @@ def _verify_foreign_build(c, built):
             raise RuntimeError('foreign build binary drift: '+name)
 
 
+def _validate_pilot_receipt(pilot):
+    """Bind the memory pilot to the B192/G80/z=2 benchmark geometry."""
+    private = pilot.get('pilot_private_worker_bytes')
+    configs = pilot.get('configurations')
+    if (pilot.get('stage') != 'pilot' or pilot.get('n') != 192
+        or pilot.get('g') != 80 or pilot.get('z') != 2.0
+        or pilot.get('status') != 'PASS_BOUNDED_PERSISTENT_WORKER_SCREEN'
+        or type(private) is not int or private <= 0
+        or not isinstance(configs, list) or len(configs) != 1):
+        raise ValueError('verified B192/G80/z2 private-memory pilot receipt required')
+    cfg = configs[0]
+    warm = cfg.get('warmup') if isinstance(cfg, dict) else None
+    if (cfg.get('processes') != 1 or cfg.get('threads_per_process') != 1
+        or cfg.get('status') != 'PASS_EXACT_RESOURCE_GATES'
+        or cfg.get('memory_gate_pass') is not True
+        or not isinstance(warm, dict) or warm.get('all_exact') is not True):
+        raise ValueError('pilot receipt lacks the admitted 1x1 exact resource screen')
+    observed = [cfg.get('private_worker_bytes'), warm.get('sum_pss_bytes')]
+    observed = [v for v in observed if type(v) is int and v > 0]
+    if not observed or private < max(observed):
+        raise ValueError('pilot private-memory bound is smaller than recorded observations')
+    return private
+
+
+def _validate_exactness_receipt(exact, context, built, samples):
+    """Require exactness rows from the same fixed n/g/z geometry and identities."""
+    if (exact.get('status') != 'PASS_SAME_HOST_FULL_PAIR_EXACT_NOT_PRODUCTION'
+        or exact.get('all_exact') is not True
+        or exact.get('h0_binary_sha256') != context['h0_binary_sha256']
+        or exact.get('h0_source_sha256') != context['authority_sources']
+        or exact.get('foreign_build_key') != built['build_key']
+        or exact.get('grid_seed_sha256') != context['seed_sha256']):
+        raise RuntimeError('full-pair exactness receipt is not bound to current setup')
+    for n, needed in samples.items():
+        seen = {tuple(row['pair']) for row in exact.get('rows',[])
+                if row.get('n') == n and row.get('g') == 80 and row.get('z') == 2.0
+                and row.get('all_exact') is True}
+        if not set(needed) <= seen:
+            raise RuntimeError('full-pair receipt lacks required n/g/z sample rows')
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--phase', choices=('describe','prepare','benchmark'), default='describe')
@@ -158,11 +199,7 @@ def main(argv=None):
     initial = c.live_resources()
     allocation = c.validate_grant(grant, initial, layouts)
     pilot = json.loads(args.pilot.read_text())
-    private = pilot.get('pilot_private_worker_bytes')
-    if (pilot.get('stage') != 'pilot' or pilot.get('n') != 192
-        or pilot.get('status') != 'PASS_BOUNDED_PERSISTENT_WORKER_SCREEN'
-        or type(private) is not int or private <= 0):
-        raise ValueError('verified B192 private-memory pilot receipt required')
+    private = _validate_pilot_receipt(pilot)
     if any(2*p*private > allocation['memory_available_bytes'] for p,t in layouts):
         raise ValueError('memory gate failed before reference/native/pool preparation')
     state = {'schema':'WU088_R31V_POSTIDLE_V1','status':'IN_PROGRESS','phase':args.phase,
@@ -193,17 +230,7 @@ def main(argv=None):
         h0 = h0mod.H0Authority(args.h0_cache)
         context = _numeric_context(c,m3,h0mod,h0,seed,built,grid)
         exact = json.loads(args.exactness.read_text())
-        if (exact.get('status') != 'PASS_SAME_HOST_FULL_PAIR_EXACT_NOT_PRODUCTION'
-            or exact.get('all_exact') is not True
-            or exact.get('h0_binary_sha256') != context['h0_binary_sha256']
-            or exact.get('h0_source_sha256') != context['authority_sources']
-            or exact.get('foreign_build_key') != built['build_key']
-            or exact.get('grid_seed_sha256') != context['seed_sha256']):
-            raise RuntimeError('full-pair exactness receipt is not bound to current setup')
-        for n, needed in pairmod.SAMPLES.items():
-            seen = {tuple(row['pair']) for row in exact.get('rows',[]) if row.get('n')==n and row.get('all_exact') is True}
-            if not set(needed) <= seen:
-                raise RuntimeError('full-pair receipt lacks required sample rows')
+        _validate_exactness_receipt(exact, context, built, pairmod.SAMPLES)
         profile = json.loads((ROOT/'data/pair_cost_profile.json').read_text())
         m3.verify_profile(profile,driver_sha=c.sha256(ROOT/'vendor/orchestration/wide_hybrid_run.py'),
                           model_sha=c.sha256(h0mod.FROZEN),g=80,gamma_scale='unit')
