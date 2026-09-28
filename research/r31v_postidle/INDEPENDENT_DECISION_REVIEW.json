@@ -1,0 +1,66 @@
+{
+  "schema": "WU088_R31V_INDEPENDENT_DECISION_REVIEW_V1",
+  "review_scope": "remote evidence and code review of bounded B192/M3B execution; no new native or scientific execution",
+  "reviewed_run_id": "20260928T132239Z_r31v",
+  "reviewed_core_commit": "2d352253b0e6d36b04b4e696985276508e684c77",
+  "reviewed_receipt_commit": "ce66c4c695cb9716d76325c59aaed98a4b1e70c8",
+  "reviewed_receipt_tree": "6d83563288d86cb3e7669ebdb2584f8886d286e6",
+  "decision": {
+    "bounded_m3b_evidence": "ACCEPTED_FOR_BOUNDED_B192_PERFORMANCE_SCREEN",
+    "source_build_identity": "CONSISTENT_WITH_RECORDED_BUILD_H0_SEED_EXACTNESS_AND_PILOT",
+    "timed_exactness": "12_OF_12_ROWS_EXACT",
+    "resource_events": "NO_THROTTLING_SWAP_OR_MEMORY_EVENTS_RECORDED",
+    "host_isolation": "NOT_INDEPENDENTLY_CERTIFIED",
+    "production_admission": "CLOSED",
+    "candidate_provider_promotion": "NOT_GRANTED",
+    "new_scientific_nodes": 0
+  },
+  "fixed_workload": {
+    "tasks_per_repetition": 132,
+    "unique_pairs": 12,
+    "repeats_per_pair": 11,
+    "ordered_task_sha256": "a9e725ea97b26f3368f04b434e0ceb53248078451c0ecba6ad2c2f68500667b8",
+    "benchmark_reference_cache_hits": 12,
+    "benchmark_reference_cache_misses": 0
+  },
+  "observed_performance": [
+    {"layout":"32x2","median_tasks_per_second":0.8240526251440508,"mean_tasks_per_second":0.819813607440156,"sample_sd":0.007370415883726875,"cv":0.008990355633081992},
+    {"layout":"30x2","median_tasks_per_second":0.7988149948941909,"mean_tasks_per_second":0.7988316816036036,"sample_sd":0.0034103619110322546,"cv":0.004269187101075124},
+    {"layout":"64x1","median_tasks_per_second":0.7482704577995133,"mean_tasks_per_second":0.7463039066011166,"sample_sd":0.00450225265468731,"cv":0.006032733602041384},
+    {"layout":"4x16","median_tasks_per_second":0.5528319373822932,"mean_tasks_per_second":0.5530670271480601,"sample_sd":0.0005293683046540704,"cv":0.0009571503609314873}
+  ],
+  "comparisons": {
+    "32x2_vs_30x2_median_gain_fraction": 0.03159383638410884,
+    "32x2_vs_64x1_median_gain_fraction": 0.10127643895951067,
+    "32x2_vs_4x16_median_gain_fraction": 0.49060242258435885,
+    "30x2_vs_32x2_throughput_per_logical_slot_gain_fraction": 0.03399868150191088,
+    "all_three_32x2_rates_exceed_all_three_30x2_rates": true
+  },
+  "interpretation": {
+    "exclusive_b192_walltime_candidate": "32x2_PROVISIONAL",
+    "global_or_production_winner": false,
+    "reason_not_final": [
+      "three repetitions per configuration only",
+      "configuration order was fixed rather than interleaved or randomized",
+      "host isolation was observed but not independently certified",
+      "30x2 is more throughput-efficient per logical slot, so the preferred layout depends on the operational objective",
+      "R31T M3A used n=160 and a different task histogram, so its ranking is not transported to B192"
+    ]
+  },
+  "code_review_finding": {
+    "classification": "IMPLEMENTATION_PROVENANCE_BINDING_HARDENING",
+    "completed_run_invalidated": false,
+    "finding": "pre-hardening receipt validators did not explicitly bind exactness rows to g=80,z=2.0 and did not fully bind the pilot to g=80,z=2.0 and its 1x1 exact resource screen; the actual receipts contain the required values",
+    "hardening_commits": [
+      "45ca6b03566307f0946ee883371ff17adeb1cae6",
+      "830390f9bf319d8589f700ad116119c36e335407",
+      "187002d7340079ea582eb841cc6ff3d600e2fd67"
+    ],
+    "hardening_runtime_revalidated_on_ncp": false
+  },
+  "next_minimum_action": {
+    "required": "NCP focused revalidation of the hardening patch; no heavy rerun required merely to preserve the completed M3B evidence",
+    "optional_if_layout_must_be_frozen_for_production": "interleaved 32x2 versus 30x2 confirmation under the same 132-task cache-only workload and same source/build/host gate",
+    "do_not_repeat_by_default": ["64x1","4x16","M3A","scientific nodes","full144","trajectory"]
+  }
+}
