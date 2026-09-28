@@ -1,8 +1,14 @@
 {
+  "authority_manifest_schema": "WU088_R31S_M2_AUTHORITY_SEED_V5",
+  "authority_manifest_sha256": "96a5e571e68eb942948bc01dacbc972bb5ba36068693f7e60d798df06425624a",
+  "authority_refresh_path": "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/AUTHORITY_REFRESH.json",
+  "authority_refresh_status": "ARRAYS_BIT_IDENTICAL_PRIOR_AND_CURRENT_SEED",
   "backup_tier": "NONE",
   "baseline_branch": "r31s-ncp-c64g3-redesign",
-  "baseline_commit": "b90b27d2c886d616df2dff97759da795fa7a926f",
-  "baseline_tree": "e3161f8c03a0d530861a4acd0fbb3dbb066c3fb2",
+  "baseline_commit": "c8c741d8d05e7ad3d31d7eba2c24fc86df0c0a9c",
+  "baseline_merge_commit": "3f1a6402c5da57916e71bf4184374d25c9edf1da",
+  "baseline_merge_tree": "b81bc8a0413f29086ad332f3085e7177ef3d2a25",
+  "baseline_tree": "118a12af23d2b47d0da34f265659b512ea5be93d",
   "bounded_foreign_primitive_pairs_executed": 6,
   "candidate_build": {
     "binary": {
@@ -48,6 +54,29 @@
     "source_sha256": "696afa2875490b0ebd82d43fe5e6c2852529d0cb7b5e1544cfa6ed71fff984a2",
     "status": "BUILT_NOT_PROMOTED"
   },
+  "changed_files": [
+    "research/r31s_ncp/ncp_build.py",
+    "research/r31s_ncp/m2_bridge.py",
+    "research/r31s_ncp/m2_tuning.py",
+    "research/r31s_ncp/tests/test_ncp_build.py",
+    "research/r31s_ncp/tests/test_m2_bridge.py",
+    "research/r31s_ncp/tests/test_m2_tuning.py",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/CANDIDATE_BUILD.json",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/COMMANDS.md",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/ENVIRONMENT.json",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/HOST_PROBE.json",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/HOST_PROBE_SHA256.txt",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_EQUIVALENCE.json",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_TUNING.json",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/MANIFEST.json",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/REFERENCE_BUILD.json",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/RETURN.json",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/SOURCE_AND_BUILD_IDENTITY.json",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/TESTS.json",
+    "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/AUTHORITY_REFRESH.json",
+    "research/r31s_ncp/verify_seed_refresh.py",
+    "research/r31s_ncp/tests/test_verify_seed_refresh.py"
+  ],
   "codex_branch": "codex/r31s-ncp-m1-m2",
   "complex_cancellation_stress": {
     "fixture": "tests/test_native.py inputs(z=8,a=.002,b=.015)",
@@ -200,9 +229,19 @@
     "trajectory",
     "production admission",
     "merge",
-    "force-push"
+    "force-push",
+    "repeat of six B160/B192 foreign primitive samples after c8 authority refresh; prior and current model/grid/weight arrays are byte-identical"
   ],
+  "previous_run_baseline": {
+    "commit": "b90b27d2c886d616df2dff97759da795fa7a926f",
+    "tree": "e3161f8c03a0d530861a4acd0fbb3dbb066c3fb2"
+  },
   "production_admitted": false,
+  "reconstructed_binary64_array_sha256": {
+    "C": "5952ccecafea867f83f1454bf8f338f494770fe0356c7e026eb7222b32067b96",
+    "exponents": "9564bcdfab5fc900321ecc12441b420b723f02d2991e62b3886e40c759c998a5",
+    "v": "918ad765b4ad0f17db43ad69b4df1292cd481eebabba8ef1e3770b5af8aae4ac"
+  },
   "reference_build": {
     "binary": {
       "bytes": 76840,
@@ -446,6 +485,36 @@
       "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py tests/test_native.py",
       "exit_code": 0,
       "result": "47 passed in 5.90s"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py",
+      "exit_code": 0,
+      "result": "3 passed in 0.48s against c8c741d baseline"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "47 passed in 5.90s after baseline merge"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_verify_seed_refresh.py",
+      "exit_code": 1,
+      "result": "RED: verification script absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_verify_seed_refresh.py",
+      "exit_code": 0,
+      "result": "1 passed in 0.62s"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/verify_seed_refresh.py --out research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/AUTHORITY_REFRESH.json",
+      "exit_code": 0,
+      "result": "ARRAYS_BIT_IDENTICAL_PRIOR_AND_CURRENT_SEED"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py research/r31s_ncp/tests/test_verify_seed_refresh.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "48 passed in 6.15s after c8c741d baseline"
     }
   ],
   "trajectory_runs": 0,
