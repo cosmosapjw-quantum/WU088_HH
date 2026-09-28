@@ -1,0 +1,90 @@
+{
+  "commands": [
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_h0_authority.py research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "20 passed in 0.56s"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_full_pair_screen.py",
+      "exit_code": 1,
+      "stderr": "",
+      "stdout": "2 failed: m3_full_pair_screen.py absent (TDD red)"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_full_pair_screen.py",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "2 passed in 0.13s"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m3_full_pair_screen.py --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --h0-cache /root/wu088_hh_ncp_work_v2/m3_h0_build --out research/r31s_ncp/evidence/ncp_host/20260928T092409Z_18dd6940/M3_FULL_PAIR_EQUIVALENCE_RUN.json",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "six full-pair rows exact; run output renamed to M3_FULL_PAIR_EQUIVALENCE.json"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_full_pair_screen.py research/r31s_ncp/tests/test_m3_h0_authority.py research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "22 passed in 0.48s"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_throughput.py",
+      "exit_code": 1,
+      "stderr": "",
+      "stdout": "TDD red: module m3_throughput.py absent"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_throughput.py::test_measured_batch_feeds_high_outer_parallelism",
+      "exit_code": 1,
+      "stderr": "",
+      "stdout": "TDD red: measured_task_count absent"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_throughput.py research/r31s_ncp/tests/test_m3_full_pair_screen.py",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "5 passed in 0.13s"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m3_throughput.py --stage pilot --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --h0-cache /root/wu088_hh_ncp_work_v2/m3_h0_build --probe /root/wu088_m3_probe.GMIpty/HOST_PROBE_M3.json --out research/r31s_ncp/evidence/ncp_host/20260928T092409Z_18dd6940/M3_B192_PILOT.json",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "B192 1x1 pilot complete; private worker memory measured"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m3_throughput.py --stage m3a --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --h0-cache /root/wu088_hh_ncp_work_v2/m3_h0_build --probe /root/wu088_m3_probe.GMIpty/HOST_PROBE_M3.json --configs 64x1 --out research/r31s_ncp/evidence/ncp_host/20260928T092409Z_18dd6940/M3A_64x1.json",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "64x1; 2 exact 128-task repetitions; 64 active workers; no throttle"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m3_throughput.py --stage m3a --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --h0-cache /root/wu088_hh_ncp_work_v2/m3_h0_build --probe /root/wu088_m3_probe.GMIpty/HOST_PROBE_M3.json --configs 60x1,32x2,32x1,16x4,30x2,4x16 --out research/r31s_ncp/evidence/ncp_host/20260928T092409Z_18dd6940/M3A_REMAINING.json",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "six layouts, two exact repetitions each, no throttling"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_throughput.py research/r31s_ncp/tests/test_m3_full_pair_screen.py research/r31s_ncp/tests/test_m3_h0_authority.py research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "25 passed in 0.54s"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m3_throughput.py --stage m3b --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --h0-cache /root/wu088_hh_ncp_work_v2/m3_h0_build --probe /root/wu088_m3_probe.GMIpty/HOST_PROBE_M3.json --configs 64x1,32x2,30x2,4x16 --pilot-private 32454656 --out research/r31s_ncp/evidence/ncp_host/20260928T092409Z_18dd6940/M3B.json",
+      "exit_code": 143,
+      "stderr": "resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown",
+      "stdout": "No valid completed M3B configuration"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_throughput.py research/r31s_ncp/tests/test_m3_full_pair_screen.py research/r31s_ncp/tests/test_m3_h0_authority.py research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "25 passed in 0.89s"
+    }
+  ],
+  "schema": "WU088_R31T_M3_TESTS_V1",
+  "status": "PASS_FOCUSED_TESTS__M3B_RUNTIME_ENVIRONMENT_BLOCKER"
+}

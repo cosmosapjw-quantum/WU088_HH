@@ -1,0 +1,109 @@
+{
+  "configurations": [
+    {
+      "first_batch_wall_seconds": 36.89428181900075,
+      "logical_slots": 1,
+      "median_pairs_per_second": null,
+      "memory_gate_available_bytes": 132331679744,
+      "memory_gate_pass": true,
+      "planned_affinity": [
+        [
+          0
+        ]
+      ],
+      "pool_startup_seconds": 0.16586361300142016,
+      "private_worker_bytes": 31553536,
+      "processes": 1,
+      "repetitions": [],
+      "startup_workers": [
+        {
+          "observed_affinity": [
+            0
+          ],
+          "pid": 59255,
+          "planned_affinity": [
+            0
+          ],
+          "pss_bytes": 31553536,
+          "rss_bytes": 44806144,
+          "slot": 0
+        }
+      ],
+      "status": "PASS_EXACT_RESOURCE_GATES",
+      "threads_per_process": 1,
+      "warmup": {
+        "all_exact": true,
+        "batch_wall_seconds": 36.89428181900075,
+        "cpu_seconds": 36.883529947999996,
+        "cpu_seconds_per_pair": 36.883529947999996,
+        "cpu_stat_delta": {
+          "burst_usec": 0,
+          "core_sched.force_idle_usec": 0,
+          "nr_bursts": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "system_usec": 96075,
+          "throttled_usec": 0,
+          "usage_usec": 37020189,
+          "user_usec": 36924114
+        },
+        "major_faults_max_by_pid": {
+          "59255": 0
+        },
+        "memory_current_after": 8538484736,
+        "memory_current_before": 8545951744,
+        "memory_events_delta": {
+          "high": 0,
+          "low": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_group_kill": 0,
+          "oom_kill": 0
+        },
+        "memory_high": "max",
+        "observed_affinities": [
+          [
+            0
+          ]
+        ],
+        "observed_teams": [
+          1
+        ],
+        "steady_state_pairs_per_second": 0.02710447122689334,
+        "sum_pss_bytes": 32454656,
+        "sum_rss_bytes": 45875200,
+        "swap_after": 0,
+        "swap_before": 0,
+        "tasks_completed": 1,
+        "worker_count_observed": 1
+      }
+    }
+  ],
+  "full_144_pair_node_executed": false,
+  "g": 80,
+  "n": 192,
+  "pair_cost_prediction_scope": {
+    "costs_are_performance_predictions_only": true,
+    "n_scaling": 1.0,
+    "scientific_interpolation": false,
+    "source_n": 192,
+    "source_z": [
+      0.0,
+      16.0
+    ]
+  },
+  "pair_set": [
+    [
+      3,
+      7
+    ]
+  ],
+  "pair_set_semantics": "PERFORMANCE_REPETITION_ONLY__NOT_NEW_SCIENTIFIC_PAIR_STATE",
+  "pilot_private_worker_bytes": 32454656,
+  "production_admitted": false,
+  "reference_precompute_wall_seconds": 37.10995607699806,
+  "schema": "WU088_R31T_M3_PERSISTENT_WORKER_SCREEN_V1",
+  "stage": "pilot",
+  "status": "PASS_BOUNDED_PERSISTENT_WORKER_SCREEN",
+  "z": 2.0
+}

@@ -1,0 +1,74 @@
+{
+  "audit_note": "The exact WideReference source hash and complete transitive H0 dependencies are unknown until authoritative source is restored; they are not inferred.",
+  "cp4_parent_sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+  "fresh_foreign_reference_candidate_build_key": "b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51",
+  "full_pair_runtime_constructed": false,
+  "h0_build": null,
+  "large_host_local_artifacts": [],
+  "m2_authority_manifest_sha256": "96a5e571e68eb942948bc01dacbc972bb5ba36068693f7e60d798df06425624a",
+  "m2_seed_scope": "M2_FOREIGN_KERNEL_REFERENCE_CANDIDATE_ONLY",
+  "minimal_restore_action": "Restore and verify the exact H0 backend/native source, full model/grid/weight inputs, and WideReference dependency closure from CP4 into an isolated M3 work root; audit imports and build identity before any pair execution. No CP4 fetch occurred in this run.",
+  "required_inputs": [
+    {
+      "cp4_relative_path": "completion/mixed_h/h0_backend.py",
+      "expected_sha256": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+      "path_named_in_runtime_source_inventory": false,
+      "present_in_m1_m2_work_root": false,
+      "present_in_repository": false,
+      "why_required": "Provides H0Fused.h0 implementation used by the historical full-pair path; unavailable for import."
+    },
+    {
+      "cp4_relative_path": "completion/mixed_h/h0_fused.cpp",
+      "expected_sha256": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+      "path_named_in_runtime_source_inventory": false,
+      "present_in_m1_m2_work_root": false,
+      "present_in_repository": false,
+      "why_required": "Native H0 arithmetic source required to fresh-build the H0 lane and preserve source identity."
+    },
+    {
+      "cp4_relative_path": "completion/mixed_h/native.py",
+      "expected_sha256": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+      "path_named_in_runtime_source_inventory": false,
+      "present_in_m1_m2_work_root": false,
+      "present_in_repository": false,
+      "why_required": "Authoritative full runtime grid/model loader imported by wide_hybrid_run.py; seed adapter is M2-only."
+    },
+    {
+      "cp4_relative_path": "r31a/wide_reference.py",
+      "expected_sha256": null,
+      "path_named_in_runtime_source_inventory": false,
+      "present_in_m1_m2_work_root": false,
+      "present_in_repository": false,
+      "why_required": "Defines WideReference.h0 imported by wide_hybrid_run.py; exact CP4 byte identity not recorded in current inventory."
+    },
+    {
+      "cp4_relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz",
+      "expected_sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+      "path_named_in_runtime_source_inventory": false,
+      "present_in_m1_m2_work_root": false,
+      "present_in_repository": false,
+      "why_required": "Historical full-pair model source and identity; seed has only C/exponents/v and is not a full-H0 runtime."
+    },
+    {
+      "cp4_relative_path": "exact_weights/exact_laplace_weights.py",
+      "expected_sha256": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb",
+      "path_named_in_runtime_source_inventory": false,
+      "present_in_m1_m2_work_root": false,
+      "present_in_repository": false,
+      "why_required": "Historical grid weight source imported by runtime native.py; source SHA known but full import dependencies have not been audited."
+    }
+  ],
+  "runtime_source_inventory_sha256": "82624c6ee4698f24787e6d02d0c1c8194d6124ed19c5488453eecec8cc2338f7",
+  "schema": "WU088_R31T_M3_RUNTIME_IDENTITY_V1",
+  "source_hashes": {
+    "completion/mixed_h/h0_backend.py": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+    "completion/mixed_h/h0_fused.cpp": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+    "completion/mixed_h/native.py": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+    "exact_weights/exact_laplace_weights.py": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb",
+    "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+    "r31a/wide_reference.py": null
+  },
+  "source_path": "vendor/orchestration/wide_hybrid_run.py",
+  "source_sha256": "5add2f769bdaa9721ce1fe90dd02a2c6dd6a2b3c617b6eeec0032bd38849acb6",
+  "status": "BLOCKED_M3_AUTHORITY_INPUT"
+}
