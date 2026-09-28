@@ -132,6 +132,10 @@ def test_pilot_receipt_bound_to_b192_g80_z2_and_observed_memory():
         with pytest.raises(ValueError):m._validate_pilot_receipt(bad)
     bad=valid_pilot();bad['configurations'][0]['warmup']['sum_pss_bytes']=32454657
     with pytest.raises(ValueError):m._validate_pilot_receipt(bad)
+    bad=valid_pilot();bad['configurations'][0]['processes']=2
+    with pytest.raises(ValueError):m._validate_pilot_receipt(bad)
+    bad=valid_pilot();bad['configurations'][0]['warmup']['all_exact']=False
+    with pytest.raises(ValueError):m._validate_pilot_receipt(bad)
 
 
 def valid_exactness():
