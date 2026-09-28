@@ -82,3 +82,149 @@ M5: host/build/execution admission 후에만 z1 직접점 하나. 남는 자원 
 [P1] https://docs.python.org/3/library/multiprocessing.html
 [G1] https://gcc.gnu.org/onlinedocs/gcc-14.1.0/gcc/x86-Options.html
 [R1] https://rclone.org/flags/
+
+
+## Codex execution governance — M0 반환 이후
+
+2026-09-28 NCP host의 사용자 반환으로 M0 top-level probe는
+`PROBED_NOT_BENCHMARKED`, `planning_cpu_budget=64`,
+`heavy_execution_allowed=false`까지 확인됐다.
+full `HOST_PROBE.json` bytes와 SHA는 아직 repository evidence로 ingest되지 않았다.
+따라서 64는 **planning budget 관측값**이지 selected production configuration이 아니다.
+
+이번부터 구현 분업을 다음으로 고정한다.
+
+### ChatGPT/R31S gate owner
+
+- scientific/physics/mathematical claim gate
+- frozen threshold와 authority 해석
+- provenance/SSOT와 stop condition
+- Codex 반환의 독립 검토
+- M3/M4/M5 진입 승인 여부
+
+### Codex NCP executor
+
+- c64-g3 host-local file/system inspection
+- M1 reproducible environment/build namespace 구현
+- M2 fresh reference/candidate build
+- bounded representative same-host equivalence/tuning probes
+- tests/evidence/commit/push
+- 실패 분류와 return handoff
+
+Codex는 다음을 결정하거나 변경하지 않는다.
+
+- scientific threshold
+- frozen/reference/vendor authority
+- interpolation method claim
+- production admission
+- z=1 scientific execution
+- durability policy promotion
+- previous pair/checkpoint/receipt bytes
+
+### Codex branch discipline
+
+Codex는 `r31s-ncp-c64g3-redesign`에서
+`codex/r31s-ncp-m1-m2`를 새로 만든다.
+기존 R31S branch/PR에 직접 force-push하지 않는다.
+Codex branch의 draft PR base는 `r31s-ncp-c64g3-redesign`이다.
+자동 merge는 하지 않는다.
+
+### M0 ingest contract
+
+Codex 시작 즉시 host-local
+`/root/wu088_ncp_probe.djNQYK/HOST_PROBE.json`을 읽는다.
+
+반드시 기록:
+
+- byte size + SHA-256
+- schema/status
+- allowed logical CPUs
+- planning CPU budget
+- cgroup quota/memory-bound fields
+- guest-reported topology facts
+- compiler version/precision macros
+- filesystem free
+- warnings
+
+보고서에 token/password/credential/private key가 있다면 commit하지 않고
+`BLOCKED_SENSITIVE_EVIDENCE`로 반환한다.
+probe schema상 그런 정보를 수집하지 않지만 실제 bytes를 보고 판단한다.
+
+64 vCPU 표시는 host physical core=64를 뜻하지 않는다.
+guest-reported core/package/L3/NUMA 정보도 KVM 밖의 물리 topology를 독립적으로
+증명한다고 쓰지 않는다.
+
+### M1 admission candidate
+
+fresh work root 예시는 `$HOME/wu088_hh_ncp_work`.
+system Python이나 global packages를 mutate하지 않는다.
+새 venv와 fresh build namespace를 사용한다.
+기존 5900X `.venv`, `.so`, host tuning profile은 production input으로 복사하지 않는다.
+
+system package 설치가 새로 필요하면 자동 apt install하지 말고
+`BLOCKED_MISSING_SYSTEM_DEPENDENCY`와 필요한 최소 package를 반환한다.
+
+loader injection vars는 trusted native child에서 sanitize하고,
+`-fno-fast-math`, `-ffp-contract=off` 및 precision contract를 유지한다.
+
+### M2 bounded native equivalence
+
+same-host reference와 candidate를 **같은 NCP compiler/ABI**에서 fresh build한다.
+cross-host 5900X binary identity를 expected equality target으로 쓰지 않는다.
+
+bounded representative set은 cheap/median/expensive pair를 포함해
+B160/B192, z=2와 기존 complex/cancellation stress를 커버한다.
+전체 144-pair basis는 아직 실행하지 않는다.
+
+same-host scheduling/implementation variant promotion 조건:
+
+- selected sample actual arrays exact equality
+- sumabs/conditioning auxiliary identity도 drift 없음
+- expected OpenMP team/affinity 관측
+- no precision flag drift
+- no source/model/grid identity drift
+
+cross-host previous values와 차이가 나면 자동 tolerance를 만들지 않는다.
+원인을 분리하여 `BLOCKED_CROSS_HOST_NUMERICAL_EQUIVALENCE` 또는 더 정확한
+implementation/environment classification으로 반환한다.
+
+M2 tuning 후보는 64x1,32x2,16x4,8x8,4x16,2x32,1x64 및 half-budget이다.
+하지만 실제 cgroup/affinity budget을 넘는 후보는 실행하지 않는다.
+candidate configuration은 benchmark 결과가 나오기 전 selected로 표기하지 않는다.
+
+### M3/M4/M5 hard stop
+
+M2 반환 전에는 다음을 실행하지 않는다.
+
+- production-shaped full H0+foreign queue benchmark
+- 144-pair B160/B192 scientific basis
+- persistent async production executor
+- real Drive/Dropbox overlap policy
+- z=1 direct scientific node
+- trajectory/production propagation
+
+M2가 닫힌 뒤 ChatGPT review가 다음 단계 범위를 새로 승인한다.
+
+### Codex return schema
+
+최종 답변과 committed evidence는 최소한 다음을 포함한다.
+
+- `status`
+- `baseline_branch`, `baseline_commit`
+- Codex branch, final commit/tree
+- changed files
+- host probe path/SHA/bytes and normalized facts
+- environment versions
+- reference/candidate build keys and binary/source hashes
+- bounded sample identities
+- test commands + exit codes
+- benchmark candidates vs selected distinction
+- numerical equality results
+- measured wall/CPU/RSS/PSS/cgroup throttling if available
+- mutations performed
+- backup tier
+- explicitly NOT performed items
+- failure classification
+- next minimal action
+
+PASS라는 단어는 실제 test/build/equivalence evidence가 있는 범위에만 사용한다.
