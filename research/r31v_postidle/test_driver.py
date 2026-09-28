@@ -109,3 +109,55 @@ def test_foreign_build_rejects_binary_drift(tmp_path, monkeypatch):
     library.write_bytes(b'changed')
     with pytest.raises(RuntimeError,match='binary drift'):
         m._verify_foreign_build(controls,built)
+
+def valid_pilot():
+    return {
+        'stage':'pilot','n':192,'g':80,'z':2.0,
+        'status':'PASS_BOUNDED_PERSISTENT_WORKER_SCREEN',
+        'pilot_private_worker_bytes':32454656,
+        'configurations':[{
+            'processes':1,'threads_per_process':1,
+            'status':'PASS_EXACT_RESOURCE_GATES','memory_gate_pass':True,
+            'private_worker_bytes':31553536,
+            'warmup':{'all_exact':True,'sum_pss_bytes':32454656},
+        }],
+    }
+
+
+def test_pilot_receipt_bound_to_b192_g80_z2_and_observed_memory():
+    m=api()
+    assert m._validate_pilot_receipt(valid_pilot())==32454656
+    for key,value in [('n',160),('g',79),('z',1.0)]:
+        bad=valid_pilot();bad[key]=value
+        with pytest.raises(ValueError):m._validate_pilot_receipt(bad)
+    bad=valid_pilot();bad['configurations'][0]['warmup']['sum_pss_bytes']=32454657
+    with pytest.raises(ValueError):m._validate_pilot_receipt(bad)
+
+
+def valid_exactness():
+    return {
+        'status':'PASS_SAME_HOST_FULL_PAIR_EXACT_NOT_PRODUCTION',
+        'all_exact':True,
+        'h0_binary_sha256':'h0',
+        'h0_source_sha256':{'source':'sha'},
+        'foreign_build_key':'build',
+        'grid_seed_sha256':'seed',
+        'rows':[
+            {'n':160,'g':80,'z':2.0,'pair':[3,7],'all_exact':True},
+            {'n':192,'g':80,'z':2.0,'pair':[10,11],'all_exact':True},
+        ],
+    }
+
+
+def test_exactness_receipt_requires_fixed_geometry_rows():
+    m=api()
+    context={'h0_binary_sha256':'h0','authority_sources':{'source':'sha'},
+             'seed_sha256':'seed'}
+    built={'build_key':'build'}
+    samples={160:[(3,7)],192:[(10,11)]}
+    m._validate_exactness_receipt(valid_exactness(),context,built,samples)
+    for key,value in [('g',81),('z',4.0)]:
+        bad=valid_exactness();bad['rows'][1][key]=value
+        with pytest.raises(RuntimeError,match='lacks required n/g/z'):
+            m._validate_exactness_receipt(bad,context,built,samples)
+
