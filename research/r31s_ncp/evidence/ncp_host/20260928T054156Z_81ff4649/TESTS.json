@@ -64,8 +64,28 @@
       "command": "python3 -m json.tool research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_TUNING.json >/dev/null",
       "exit_code": 0,
       "result": "valid JSON"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m2_bridge.py --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --out research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_EQUIVALENCE.json",
+      "exit_code": null,
+      "result": "six valid exact rows and output JSON; daemon restart lost shell exit status"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_bridge.py::test_bridge_drops_loader_injection_before_native_load",
+      "exit_code": 1,
+      "result": "RED: loader path survived import"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_bridge.py",
+      "exit_code": 0,
+      "result": "3 passed"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "47 passed in 5.90s"
     }
   ],
   "schema": "WU088_R31S_NCP_TESTS_V1",
-  "status": "M2_TUNING_CLOSED"
+  "status": "FINAL_RELEVANT_SUITE_PASS"
 }

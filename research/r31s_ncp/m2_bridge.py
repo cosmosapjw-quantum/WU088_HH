@@ -11,6 +11,9 @@ from pathlib import Path
 import sys
 import time
 
+for key in ('LD_PRELOAD', 'LD_LIBRARY_PATH'):
+    os.environ.pop(key, None)
+
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT/'src'))
 import numpy as np

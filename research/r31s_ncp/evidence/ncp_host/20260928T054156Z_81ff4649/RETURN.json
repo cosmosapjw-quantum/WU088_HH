@@ -1,0 +1,558 @@
+{
+  "backup_tier": "NONE",
+  "baseline_branch": "r31s-ncp-c64g3-redesign",
+  "baseline_commit": "b90b27d2c886d616df2dff97759da795fa7a926f",
+  "baseline_tree": "e3161f8c03a0d530861a4acd0fbb3dbb066c3fb2",
+  "bounded_foreign_primitive_pairs_executed": 6,
+  "candidate_build": {
+    "binary": {
+      "bytes": 81848,
+      "command": [
+        "/usr/bin/g++",
+        "-O3",
+        "-std=c++17",
+        "-fPIC",
+        "-shared",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-fopenmp",
+        "/root/WU088_HH/native/candidate/r31a/hybrid12_wide_h_v2.cpp",
+        "-o",
+        "/root/wu088_hh_ncp_work_v2/build/b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51/candidate.so"
+      ],
+      "generation_command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/ncp_build.py --probe research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/HOST_PROBE.json --work-root /root/wu088_hh_ncp_work_v2",
+      "path": "/root/wu088_hh_ncp_work_v2/build/b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51/candidate.so",
+      "sha256": "c3188126d0367238b8fcef4445727e0735d4206e89c4d7fc6b31893c5a40183d"
+    },
+    "build_key": "b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51",
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "flags": [
+      "-O3",
+      "-std=c++17",
+      "-fPIC",
+      "-shared",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-fopenmp"
+    ],
+    "lane": "candidate",
+    "precision_macros": {
+      "__FLT128_MANT_DIG__": "113",
+      "__LDBL_MANT_DIG__": "64",
+      "__LDBL_MAX_EXP__": "16384",
+      "__SIZEOF_FLOAT128__": "16",
+      "__SIZEOF_LONG_DOUBLE__": "16"
+    },
+    "production_admitted": false,
+    "schema": "WU088_R31S_NCP_NATIVE_BUILD_V1",
+    "source_sha256": "696afa2875490b0ebd82d43fe5e6c2852529d0cb7b5e1544cfa6ed71fff984a2",
+    "status": "BUILT_NOT_PROMOTED"
+  },
+  "codex_branch": "codex/r31s-ncp-m1-m2",
+  "complex_cancellation_stress": {
+    "fixture": "tests/test_native.py inputs(z=8,a=.002,b=.015)",
+    "rows": [
+      {
+        "observed_team": 1,
+        "output_exact": true,
+        "requested_threads": 1,
+        "sumabs_exact": true
+      },
+      {
+        "observed_team": 2,
+        "output_exact": true,
+        "requested_threads": 2,
+        "sumabs_exact": true
+      }
+    ],
+    "scope": "existing synthetic n=4 component fixture, not scientific B160/B192 sample"
+  },
+  "draft_pr_url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/11",
+  "durability_policy_changed": false,
+  "environment": {
+    "as": "GNU assembler (GNU Binutils for Ubuntu) 2.42",
+    "g++": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "ld": "GNU ld (GNU Binutils for Ubuntu) 2.42",
+    "mpmath": "1.3.0",
+    "numpy": "2.3.5",
+    "pytest": "9.1.1",
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "requirements_sha256": "0e9b316f9cc1e081e46610ca0ee53fe53e7bf79d204aa50af6f01c0c6f9322ef",
+    "schema": "WU088_R31S_NCP_ENVIRONMENT_V1",
+    "scipy": "1.17.0",
+    "status": "FRESH_VENV_READY",
+    "system_packages_installed": false,
+    "system_python_mutated": false,
+    "threadpoolctl": "3.7.0",
+    "venv": "/root/wu088_hh_ncp_work_v2/venv",
+    "work_root": "/root/wu088_hh_ncp_work_v2"
+  },
+  "evidence_directory": "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649",
+  "failure_classification": null,
+  "final_commit": null,
+  "final_revision_note": "Final commit/tree are supplied in the final chat and GitHub PR after this self-referential file is committed.",
+  "final_tree": null,
+  "heavy_scientific_nodes_executed": 0,
+  "host_probe": {
+    "allowed_logical_cpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "bytes": 68532,
+    "cgroup_memory_available_upper_bytes": 132752199680,
+    "cgroup_quota_cpu_equivalents": null,
+    "cgroup_visible_hierarchy_only": true,
+    "filesystem_free_bytes": 92311048192,
+    "github_copy_path": "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/HOST_PROBE.json",
+    "guest_physical_core_count": "NOT_ESTABLISHED_BY_GUEST",
+    "original_path": "/root/wu088_ncp_probe.djNQYK/HOST_PROBE.json",
+    "planning_cpu_budget": 64,
+    "schema": "WU088_NCP_READ_ONLY_PROBE_V1",
+    "sha256": "81ff4649892619262c0f2b2717fae098f8e9b591ba7aa6528ccbb8b6afdb8cf1",
+    "status": "PROBED_NOT_BENCHMARKED",
+    "warnings": []
+  },
+  "large_or_prohibited_uncommitted_artifacts": [
+    {
+      "bytes": 76840,
+      "generation_command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/ncp_build.py --probe research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/HOST_PROBE.json --work-root /root/wu088_hh_ncp_work_v2",
+      "host_path": "/root/wu088_hh_ncp_work_v2/build/b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51/reference.so",
+      "reason_not_committed": "Compiled .so and build trees are prohibited from GitHub evidence.",
+      "sha256": "393d04a3e22d2c80d73c8e7eebd5546d08a258e552c6ace5d33ee6d315c57c6f"
+    },
+    {
+      "bytes": 81848,
+      "generation_command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/ncp_build.py --probe research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/HOST_PROBE.json --work-root /root/wu088_hh_ncp_work_v2",
+      "host_path": "/root/wu088_hh_ncp_work_v2/build/b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51/candidate.so",
+      "reason_not_committed": "Compiled .so and build trees are prohibited from GitHub evidence.",
+      "sha256": "c3188126d0367238b8fcef4445727e0735d4206e89c4d7fc6b31893c5a40183d"
+    }
+  ],
+  "next_minimal_action": "Independent review of this draft PR and evidence; decide separately whether any M3/M4/M5 work is authorized.",
+  "not_performed": [
+    "full 144-pair B160/B192 node",
+    "z=1",
+    "M3 production-shaped queue",
+    "M4 persistent async executor",
+    "compute/backup overlap",
+    "trajectory",
+    "production admission",
+    "merge",
+    "force-push"
+  ],
+  "production_admitted": false,
+  "reference_build": {
+    "binary": {
+      "bytes": 76840,
+      "command": [
+        "/usr/bin/g++",
+        "-O3",
+        "-std=c++17",
+        "-fPIC",
+        "-shared",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-fopenmp",
+        "/root/WU088_HH/native/reference/r31a/hybrid12_wide_h_v2.cpp",
+        "-o",
+        "/root/wu088_hh_ncp_work_v2/build/b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51/reference.so"
+      ],
+      "generation_command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/ncp_build.py --probe research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/HOST_PROBE.json --work-root /root/wu088_hh_ncp_work_v2",
+      "path": "/root/wu088_hh_ncp_work_v2/build/b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51/reference.so",
+      "sha256": "393d04a3e22d2c80d73c8e7eebd5546d08a258e552c6ace5d33ee6d315c57c6f"
+    },
+    "build_key": "b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51",
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "flags": [
+      "-O3",
+      "-std=c++17",
+      "-fPIC",
+      "-shared",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-fopenmp"
+    ],
+    "lane": "reference",
+    "precision_macros": {
+      "__FLT128_MANT_DIG__": "113",
+      "__LDBL_MANT_DIG__": "64",
+      "__LDBL_MAX_EXP__": "16384",
+      "__SIZEOF_FLOAT128__": "16",
+      "__SIZEOF_LONG_DOUBLE__": "16"
+    },
+    "production_admitted": false,
+    "schema": "WU088_R31S_NCP_NATIVE_BUILD_V1",
+    "source_sha256": "40a53c9a7f34f49f1f18dd1483d442b0a06a7b07c17731bca631ee6231650e1f",
+    "status": "BUILT_NOT_PROMOTED"
+  },
+  "representative_samples": [
+    {
+      "affinity": [
+        0
+      ],
+      "candidate_wall_seconds": 25.13390245500159,
+      "class": "cheap",
+      "g": 80,
+      "n": 160,
+      "observed_team": 1,
+      "output_exact": true,
+      "pair": [
+        3,
+        7
+      ],
+      "reference_wall_seconds": 25.077265267000257,
+      "sumabs_exact": true,
+      "z": 2.0
+    },
+    {
+      "affinity": [
+        0
+      ],
+      "candidate_wall_seconds": 28.12155553500088,
+      "class": "median",
+      "g": 80,
+      "n": 160,
+      "observed_team": 1,
+      "output_exact": true,
+      "pair": [
+        5,
+        11
+      ],
+      "reference_wall_seconds": 28.25207101599881,
+      "sumabs_exact": true,
+      "z": 2.0
+    },
+    {
+      "affinity": [
+        0
+      ],
+      "candidate_wall_seconds": 24.98945004199959,
+      "class": "expensive",
+      "g": 80,
+      "n": 160,
+      "observed_team": 1,
+      "output_exact": true,
+      "pair": [
+        10,
+        11
+      ],
+      "reference_wall_seconds": 25.077591815999767,
+      "sumabs_exact": true,
+      "z": 2.0
+    },
+    {
+      "affinity": [
+        0
+      ],
+      "candidate_wall_seconds": 36.25066629700086,
+      "class": "cheap",
+      "g": 80,
+      "n": 192,
+      "observed_team": 1,
+      "output_exact": true,
+      "pair": [
+        3,
+        7
+      ],
+      "reference_wall_seconds": 36.182297930999994,
+      "sumabs_exact": true,
+      "z": 2.0
+    },
+    {
+      "affinity": [
+        0
+      ],
+      "candidate_wall_seconds": 41.29734451600052,
+      "class": "median",
+      "g": 80,
+      "n": 192,
+      "observed_team": 1,
+      "output_exact": true,
+      "pair": [
+        4,
+        10
+      ],
+      "reference_wall_seconds": 41.63013776700063,
+      "sumabs_exact": true,
+      "z": 2.0
+    },
+    {
+      "affinity": [
+        0
+      ],
+      "candidate_wall_seconds": 36.662583024000924,
+      "class": "expensive",
+      "g": 80,
+      "n": 192,
+      "observed_team": 1,
+      "output_exact": true,
+      "pair": [
+        10,
+        11
+      ],
+      "reference_wall_seconds": 36.0932197660004,
+      "sumabs_exact": true,
+      "z": 2.0
+    }
+  ],
+  "schema": "WU088_R31S_NCP_M1_M2_RETURN_V1",
+  "selected_configuration": null,
+  "source_and_build_identity_path": "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/SOURCE_AND_BUILD_IDENTITY.json",
+  "status": "M2_BOUNDED_EVIDENCE_READY_FOR_INDEPENDENT_REVIEW",
+  "tests": [
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py",
+      "exit_code": 0,
+      "result": "3 passed in 0.48s"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_bridge.py",
+      "exit_code": 1,
+      "result": "RED: m2_bridge.py absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_bridge.py",
+      "exit_code": 0,
+      "result": "2 passed"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py",
+      "exit_code": 1,
+      "result": "RED: m2_tuning.py absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py::test_reads_linux_smaps_rss_pss_when_available",
+      "exit_code": 1,
+      "result": "RED: RSS/PSS parser missed smaps colon"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py::test_spawn_barrier_is_passed_through_initializer",
+      "exit_code": 1,
+      "result": "RED: spawn initializer absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py::test_pilot_memory_gate_keeps_headroom",
+      "exit_code": 1,
+      "result": "RED: memory gate absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py",
+      "exit_code": 0,
+      "result": "5 passed"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "46 passed in 5.63s"
+    },
+    {
+      "command": "python3 -m json.tool research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_EQUIVALENCE.json >/dev/null",
+      "exit_code": 0,
+      "result": "valid JSON"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m2_tuning.py --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --probe research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/HOST_PROBE.json --out research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_TUNING.json --repeats 3",
+      "exit_code": 0,
+      "result": "39 exact/affinity-valid rows"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "46 passed in 5.62s"
+    },
+    {
+      "command": "python3 -m json.tool research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_TUNING.json >/dev/null",
+      "exit_code": 0,
+      "result": "valid JSON"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m2_bridge.py --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --out research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_EQUIVALENCE.json",
+      "exit_code": null,
+      "result": "six valid exact rows and output JSON; daemon restart lost shell exit status"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_bridge.py::test_bridge_drops_loader_injection_before_native_load",
+      "exit_code": 1,
+      "result": "RED: loader path survived import"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_bridge.py",
+      "exit_code": 0,
+      "result": "3 passed"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "47 passed in 5.90s"
+    }
+  ],
+  "trajectory_runs": 0,
+  "tuning_candidates": [
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 1,
+      "median_batch_wall_seconds": 0.9967557279996981,
+      "processes": 64,
+      "repetitions": 3
+    },
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 2,
+      "median_batch_wall_seconds": 0.6877875990012399,
+      "processes": 32,
+      "repetitions": 3
+    },
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 4,
+      "median_batch_wall_seconds": 0.45532531699973333,
+      "processes": 16,
+      "repetitions": 3
+    },
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 8,
+      "median_batch_wall_seconds": 0.33737949899841624,
+      "processes": 8,
+      "repetitions": 3
+    },
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 16,
+      "median_batch_wall_seconds": 0.28341853600068134,
+      "processes": 4,
+      "repetitions": 3
+    },
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 32,
+      "median_batch_wall_seconds": 0.2550444900007278,
+      "processes": 2,
+      "repetitions": 3
+    },
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 64,
+      "median_batch_wall_seconds": 0.25374333999934606,
+      "processes": 1,
+      "repetitions": 3
+    },
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 1,
+      "median_batch_wall_seconds": 0.814265601000443,
+      "processes": 32,
+      "repetitions": 3
+    },
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 2,
+      "median_batch_wall_seconds": 0.5187219490017014,
+      "processes": 16,
+      "repetitions": 3
+    },
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 4,
+      "median_batch_wall_seconds": 0.35269592499935243,
+      "processes": 8,
+      "repetitions": 3
+    },
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 8,
+      "median_batch_wall_seconds": 0.28480746499917586,
+      "processes": 4,
+      "repetitions": 3
+    },
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 16,
+      "median_batch_wall_seconds": 0.25625994599977275,
+      "processes": 2,
+      "repetitions": 3
+    },
+    {
+      "all_exact_and_affinity_valid": true,
+      "kernel_threads": 32,
+      "median_batch_wall_seconds": 0.2502672470000107,
+      "processes": 1,
+      "repetitions": 3
+    }
+  ],
+  "tuning_rows_path": "research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_TUNING.json",
+  "tuning_workload": {
+    "g": 20,
+    "n": 32,
+    "not_full_science_resolution": true,
+    "one_identical_primitive_per_process": true,
+    "pair": [
+      3,
+      7
+    ],
+    "z": 2.0
+  },
+  "z1_executed": false
+}

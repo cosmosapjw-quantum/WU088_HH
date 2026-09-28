@@ -1,5 +1,9 @@
 import importlib.util
+import json
+import os
 from pathlib import Path
+import subprocess
+import sys
 
 import numpy as np
 
@@ -27,3 +31,12 @@ def test_exact_check_includes_sumabs():
     sumabs = np.array([3], dtype=np.longdouble)
     assert m.exact_pair((value, sumabs), (value.copy(), sumabs.copy()))
     assert not m.exact_pair((value, sumabs), (value.copy(), sumabs + 1))
+
+
+def test_bridge_drops_loader_injection_before_native_load():
+    env = dict(os.environ, LD_LIBRARY_PATH='/tmp/untrusted')
+    p = subprocess.run([sys.executable, '-c',
+                        'import os; import research.r31s_ncp.m2_bridge; '
+                        'print(os.environ.get("LD_LIBRARY_PATH"))'],
+                       env=env, capture_output=True, text=True, check=True)
+    assert p.stdout.strip() == 'None'

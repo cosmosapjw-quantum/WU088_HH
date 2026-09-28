@@ -45,5 +45,6 @@ again before tuning, and its affinity and budget matched the M0 observation.
 | M1 environment and seed test | `codex/r31s-ncp-m1-m2` | `8b15395a02cb6b910a9061e707f39fcf942a46c2` | `c53403e2a3ef014387137bfcb40b875ae6a0ad66` | `ENVIRONMENT.json`, `TESTS.json` |
 | Same-host native builds | `codex/r31s-ncp-m1-m2` | `213c0eeb49f391d2cc11950b182b0f31a453a3f3` | `0a924a48339c29d74be22959298f002c9fa3cb27` | `SOURCE_AND_BUILD_IDENTITY.json`, `REFERENCE_BUILD.json`, `CANDIDATE_BUILD.json` |
 | M2 equivalence | `codex/r31s-ncp-m1-m2` | `54c2fd55cdf7c056bf88559b9f9e7442d41db47b` | `dab838df1f1fa91c35f415619a7d439be4978ea6` | `M2_EQUIVALENCE.json`, `TESTS.json`, `COMMANDS.md` |
+| M2 tuning | `codex/r31s-ncp-m1-m2` | `d3ab89a29032fb0259a81c411cb493fb6e324100` | `dd21f9057cd3f100fbaa85798acb487d96a782db` | `M2_TUNING.json`, `TESTS.json`, `COMMANDS.md` |
 
 Further pushes are recorded in the final return and Git history.
