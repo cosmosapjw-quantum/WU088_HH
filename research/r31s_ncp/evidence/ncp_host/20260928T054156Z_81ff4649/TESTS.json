@@ -4,8 +4,53 @@
       "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py",
       "exit_code": 0,
       "result": "3 passed in 0.48s"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_bridge.py",
+      "exit_code": 1,
+      "result": "RED: m2_bridge.py absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_bridge.py",
+      "exit_code": 0,
+      "result": "2 passed"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py",
+      "exit_code": 1,
+      "result": "RED: m2_tuning.py absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py::test_reads_linux_smaps_rss_pss_when_available",
+      "exit_code": 1,
+      "result": "RED: RSS/PSS parser missed smaps colon"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py::test_spawn_barrier_is_passed_through_initializer",
+      "exit_code": 1,
+      "result": "RED: spawn initializer absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py::test_pilot_memory_gate_keeps_headroom",
+      "exit_code": 1,
+      "result": "RED: memory gate absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py",
+      "exit_code": 0,
+      "result": "5 passed"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "46 passed in 5.63s"
+    },
+    {
+      "command": "python3 -m json.tool research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_EQUIVALENCE.json >/dev/null",
+      "exit_code": 0,
+      "result": "valid JSON"
     }
   ],
   "schema": "WU088_R31S_NCP_TESTS_V1",
-  "status": "IN_PROGRESS"
+  "status": "M2_EQUIVALENCE_CLOSED"
 }
