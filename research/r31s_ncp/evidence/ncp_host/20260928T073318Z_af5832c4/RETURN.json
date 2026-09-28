@@ -1,0 +1,192 @@
+{
+  "baseline": {
+    "branch": "codex/r31s-ncp-m1-m2",
+    "commit": "3b72fd4af65752e020bf5a3699ed2f2341497881",
+    "tree": "18d74d7305a4ed80b2fbb0ba24173ac520b885dc"
+  },
+  "branch": "codex/r31t-ncp-m3-production-screen",
+  "draft_pr": null,
+  "durability_policy_changed": false,
+  "evidence_directory": "research/r31s_ncp/evidence/ncp_host/20260928T073318Z_af5832c4",
+  "failure_classification": "BLOCKED_M3_AUTHORITY_INPUT",
+  "final_commit": null,
+  "final_tree": null,
+  "full_144_pair_nodes_executed": 0,
+  "full_pair_equivalence": {
+    "all_exact": null,
+    "rows": [],
+    "status": "NOT_RUN"
+  },
+  "heavy_scientific_nodes_executed": 0,
+  "host_probe": {
+    "allowed_cpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "bytes": 68561,
+    "planning_cpu_budget": 64,
+    "sha256": "af5832c4a8e6368a1586f06388b511c8ad39a316bd86a3c3c52ffd0f3c49f49f",
+    "warnings": []
+  },
+  "m3a": {
+    "configurations": [],
+    "n": 160
+  },
+  "m3b": {
+    "configurations": [],
+    "n": 192
+  },
+  "manifest_self_hash_policy": "MANIFEST.json lists all other generated evidence files; it cannot contain its own SHA-256 without a circular dependency.",
+  "next_minimal_action": "Restore and verify the exact H0 backend/native source, full model/grid/weight inputs, and WideReference dependency closure from CP4 into an isolated M3 work root; audit imports and build identity before any pair execution. No CP4 fetch occurred in this run.",
+  "not_performed": [
+    "full-pair exactness",
+    "M3A throughput",
+    "M3B throughput",
+    "z=1",
+    "full 144-pair scientific basis",
+    "M4 async durability",
+    "compute/backup overlap",
+    "trajectory",
+    "production admission",
+    "merge",
+    "force-push"
+  ],
+  "production_admitted": false,
+  "profile_candidate": null,
+  "revision_fields_note": "Final Git commit/tree and PR URL are recorded in the final chat return because including a commit SHA inside its own tree is self-referential.",
+  "runtime_authority": {
+    "large_host_local_artifacts": [],
+    "required_inputs": [
+      {
+        "cp4_relative_path": "completion/mixed_h/h0_backend.py",
+        "expected_sha256": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+        "path_named_in_runtime_source_inventory": false,
+        "present_in_m1_m2_work_root": false,
+        "present_in_repository": false,
+        "why_required": "Provides H0Fused.h0 implementation used by the historical full-pair path; unavailable for import."
+      },
+      {
+        "cp4_relative_path": "completion/mixed_h/h0_fused.cpp",
+        "expected_sha256": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+        "path_named_in_runtime_source_inventory": false,
+        "present_in_m1_m2_work_root": false,
+        "present_in_repository": false,
+        "why_required": "Native H0 arithmetic source required to fresh-build the H0 lane and preserve source identity."
+      },
+      {
+        "cp4_relative_path": "completion/mixed_h/native.py",
+        "expected_sha256": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+        "path_named_in_runtime_source_inventory": false,
+        "present_in_m1_m2_work_root": false,
+        "present_in_repository": false,
+        "why_required": "Authoritative full runtime grid/model loader imported by wide_hybrid_run.py; seed adapter is M2-only."
+      },
+      {
+        "cp4_relative_path": "r31a/wide_reference.py",
+        "expected_sha256": null,
+        "path_named_in_runtime_source_inventory": false,
+        "present_in_m1_m2_work_root": false,
+        "present_in_repository": false,
+        "why_required": "Defines WideReference.h0 imported by wide_hybrid_run.py; exact CP4 byte identity not recorded in current inventory."
+      },
+      {
+        "cp4_relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz",
+        "expected_sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+        "path_named_in_runtime_source_inventory": false,
+        "present_in_m1_m2_work_root": false,
+        "present_in_repository": false,
+        "why_required": "Historical full-pair model source and identity; seed has only C/exponents/v and is not a full-H0 runtime."
+      },
+      {
+        "cp4_relative_path": "exact_weights/exact_laplace_weights.py",
+        "expected_sha256": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb",
+        "path_named_in_runtime_source_inventory": false,
+        "present_in_m1_m2_work_root": false,
+        "present_in_repository": false,
+        "why_required": "Historical grid weight source imported by runtime native.py; source SHA known but full import dependencies have not been audited."
+      }
+    ],
+    "source_hashes": {
+      "completion/mixed_h/h0_backend.py": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+      "completion/mixed_h/h0_fused.cpp": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+      "completion/mixed_h/native.py": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+      "exact_weights/exact_laplace_weights.py": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb",
+      "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+      "r31a/wide_reference.py": null
+    },
+    "status": "BLOCKED_M3_AUTHORITY_INPUT"
+  },
+  "schema": "WU088_R31T_M3_RETURN_V1",
+  "status": "BLOCKED_BEFORE_M3_FULL_PAIR_EXECUTION",
+  "tests": [
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py",
+      "exit_code": 0,
+      "result": "18 passed"
+    }
+  ],
+  "trajectory_runs": 0,
+  "z1_executed": false
+}
