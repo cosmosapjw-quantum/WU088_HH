@@ -1,0 +1,112 @@
+{
+  "schema": "WU088_R31V_ADVERSARIAL_REAUDIT_RESULT_V1",
+  "created_utc": "2026-09-28T15:51:35.520657+00:00",
+  "target_commit": "7472171a3ff0e343dab2131cf063082e4740f7ff",
+  "target_tree": "b2bae4e294f06de3a567ef8fdc519f3bfd4385a8",
+  "status": "ADVERSARIAL_REAUDIT_COMPLETE_CONTROLS_FIXED_NCP_REVALIDATION_PENDING",
+  "blinding": "NOT_FULLY_BLIND_PRIOR_EXPOSURE",
+  "independent_review_admitted": false,
+  "external_reviewer": {
+    "engine": "CodeRabbit",
+    "status": "NOT_RUN",
+    "reason": "CLI absent; installation DNS resolution failure"
+  },
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pytest": "9.0.2",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41"
+  },
+  "tests": {
+    "baseline_current_head": 72,
+    "adversarial_red": {
+      "tests": 43,
+      "failed": 40,
+      "passed": 3,
+      "false_acceptances": 32,
+      "misclassified_rejections": 8
+    },
+    "final": {
+      "tests": 133,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 133,
+      "exit": 0
+    },
+    "full_repository_suite": "NOT_RUN_SCOPE_EXCLUDES_HEAVY",
+    "ncp_revalidation": "NOT_RUN"
+  },
+  "findings": [
+    {
+      "id": "F01",
+      "class": "MEASUREMENT_GATE_FAIL_OPEN",
+      "counterexamples": 15,
+      "status": "FIXED_FOCUSED_VERIFIED"
+    },
+    {
+      "id": "F02",
+      "class": "PILOT_OBSERVATION_FILTER_AND_TYPE_VALIDATION",
+      "counterexamples": 17,
+      "status": "FIXED_FOCUSED_VERIFIED"
+    },
+    {
+      "id": "F03",
+      "class": "EXACTNESS_SUMMARY_DETAIL_CONTRADICTION",
+      "counterexamples": 8,
+      "status": "FIXED_FOCUSED_VERIFIED"
+    },
+    {
+      "id": "F04",
+      "class": "COUNTER_DIFFERENCE_NOT_RIGOROUS_INTERFERENCE_BOUND",
+      "status": "CLAIM_RESTRICTED",
+      "negative_root_minus_leaf_rows": 10
+    },
+    {
+      "id": "F05",
+      "class": "HISTORICAL_MANIFEST_NOT_CURRENT_MANIFEST",
+      "status": "LAYERED_MANIFEST_ADDED"
+    },
+    {
+      "id": "F06",
+      "class": "INDEPENDENCE_AND_EXACTNESS_EVIDENCE_CEILING",
+      "status": "CLAIMS_RESTRICTED"
+    }
+  ],
+  "raw_checks": {
+    "return_bound_benchmark": true,
+    "return_bound_reference_prepare": true,
+    "return_bound_host": true,
+    "return_bound_source_build": true,
+    "return_bound_grant": true,
+    "return_bound_review": true,
+    "return_bound_commands": true,
+    "same_workload": true,
+    "same_context_prepare_benchmark": true,
+    "context_hash": true,
+    "cache_payloads_validated": true,
+    "benchmark_cache_only": true,
+    "prep_explicit_references": true,
+    "all_12_rows_revalidated": true,
+    "native_dispatch_accounting": true
+  },
+  "performance_medians": {
+    "64x1": 0.7482704577995133,
+    "32x2": 0.8240526251440508,
+    "30x2": 0.7988149948941909,
+    "4x16": 0.5528319373822932
+  },
+  "runtime_record_preserved": true,
+  "native_calls_this_audit": 0,
+  "new_scientific_nodes": 0,
+  "production_admitted": false,
+  "backup_receipt": "DETACHED_AFTER_PUBLICATION_AND_UPLOAD",
+  "not_claimed": [
+    "independent blind admission",
+    "NCP validation of patch",
+    "runtime reconstruction from archive",
+    "fresh scientific equality",
+    "production optimality"
+  ]
+}

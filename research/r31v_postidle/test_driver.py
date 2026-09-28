@@ -11,7 +11,12 @@ def api():
 
 def sample():
     return dict(all_exact=True, active_worker_count=32, worker_cpu_parallelism=20,
-                nr_throttled_delta=0, effective_cpu_parallelism=21)
+                nr_throttled_delta=0, effective_cpu_parallelism=21,
+                tasks_completed=132, unique_pair_count=12,
+                batch_wall_seconds=10., steady_state_pairs_per_second=13.2,
+                throttled_usec_delta=0, swap_before=0, swap_after=0,
+                memory_events_delta={'high':0,'max':0,'oom':0,'oom_kill':0},
+                ancestor_cpu_deltas={'/synthetic':{'nr_throttled':0,'throttled_usec':0}})
 
 def test_three_measured_calls_not_memoized():
     count=[];checks=[];emitted=[]
@@ -139,7 +144,7 @@ def test_pilot_receipt_bound_to_b192_g80_z2_and_observed_memory():
 
 
 def valid_exactness():
-    return {
+    d = {
         'status':'PASS_SAME_HOST_FULL_PAIR_EXACT_NOT_PRODUCTION',
         'all_exact':True,
         'h0_binary_sha256':'h0',
@@ -151,6 +156,13 @@ def valid_exactness():
             {'n':192,'g':80,'z':2.0,'pair':[10,11],'all_exact':True},
         ],
     }
+    for row in d['rows']:
+        row['components'] = {
+            name: {'exact': True, 'max_abs_delta': 0., 'dtype': dtype, 'shape': shape}
+            for name, dtype, shape in (
+                ('H0','complex256',[2,7,3]), ('H0_sumabs','float128',[2,7,3]),
+                ('foreign','complex256',[2,2,3]), ('foreign_sumabs','float128',[2,2,3]))}
+    return d
 
 
 def test_exactness_receipt_requires_fixed_geometry_rows():

@@ -11,6 +11,7 @@ import ctypes
 import hashlib
 import importlib
 import json
+import math
 import os
 from pathlib import Path
 import platform
@@ -45,6 +46,13 @@ def perform_measured_batches(measure, recheck, checkpoint, processes):
             row['measurement_status'] = 'EXACTNESS_OR_THROTTLING_FAILED'
             checkpoint(row)
             raise RuntimeError('exactness/throttling gate failed')
+        try:
+            _validate_measurement_row(row, processes)
+        except RuntimeError as exc:
+            row['measurement_status'] = 'MEASUREMENT_VALIDATION_FAILED'
+            row['validation_failure'] = str(exc)
+            checkpoint(_failure_checkpoint(row))
+            raise
         row['parallelism_engaged'] = None
         if processes >= 16:
             row['parallelism_engaged'] = (
@@ -132,45 +140,138 @@ def _verify_foreign_build(c, built):
             raise RuntimeError('foreign build binary drift: '+name)
 
 
+def _finite_number(value):
+    return type(value) in (int, float) and math.isfinite(value)
+
+
+def _positive_integer(value):
+    return type(value) is int and value > 0
+
+
 def _validate_pilot_receipt(pilot):
-    """Bind the memory pilot to the B192/G80/z=2 benchmark geometry."""
+    """Check the recorded B192/G80/z2 memory estimate, not a peak-memory proof."""
+    if not isinstance(pilot, dict):
+        raise ValueError('pilot receipt must be an object')
     private = pilot.get('pilot_private_worker_bytes')
     configs = pilot.get('configurations')
-    if (pilot.get('stage') != 'pilot' or pilot.get('n') != 192
-        or pilot.get('g') != 80 or pilot.get('z') != 2.0
+    if (pilot.get('stage') != 'pilot'
+        or type(pilot.get('n')) is not int or pilot['n'] != 192
+        or type(pilot.get('g')) is not int or pilot['g'] != 80
+        or not _finite_number(pilot.get('z')) or pilot['z'] != 2.0
         or pilot.get('status') != 'PASS_BOUNDED_PERSISTENT_WORKER_SCREEN'
-        or type(private) is not int or private <= 0
+        or not _positive_integer(private)
         or not isinstance(configs, list) or len(configs) != 1):
         raise ValueError('verified B192/G80/z2 private-memory pilot receipt required')
     cfg = configs[0]
-    warm = cfg.get('warmup') if isinstance(cfg, dict) else None
-    if (cfg.get('processes') != 1 or cfg.get('threads_per_process') != 1
+    if not isinstance(cfg, dict):
+        raise ValueError('pilot configuration must be an object')
+    warm = cfg.get('warmup')
+    if (type(cfg.get('processes')) is not int or cfg['processes'] != 1
+        or type(cfg.get('threads_per_process')) is not int or cfg['threads_per_process'] != 1
         or cfg.get('status') != 'PASS_EXACT_RESOURCE_GATES'
         or cfg.get('memory_gate_pass') is not True
         or not isinstance(warm, dict) or warm.get('all_exact') is not True):
         raise ValueError('pilot receipt lacks the admitted 1x1 exact resource screen')
     observed = [cfg.get('private_worker_bytes'), warm.get('sum_pss_bytes')]
-    observed = [v for v in observed if type(v) is int and v > 0]
-    if not observed or private < max(observed):
-        raise ValueError('pilot private-memory bound is smaller than recorded observations')
+    if any(not _positive_integer(v) for v in observed) or private < max(observed):
+        raise ValueError('pilot memory observations missing, malformed, or exceed estimate')
     return private
 
 
 def _validate_exactness_receipt(exact, context, built, samples):
-    """Require exactness rows from the same fixed n/g/z geometry and identities."""
-    if (exact.get('status') != 'PASS_SAME_HOST_FULL_PAIR_EXACT_NOT_PRODUCTION'
+    """Check identities, geometry and component records; do not recompute arrays."""
+    if (not isinstance(exact, dict) or not samples
+        or exact.get('status') != 'PASS_SAME_HOST_FULL_PAIR_EXACT_NOT_PRODUCTION'
         or exact.get('all_exact') is not True
         or exact.get('h0_binary_sha256') != context['h0_binary_sha256']
         or exact.get('h0_source_sha256') != context['authority_sources']
         or exact.get('foreign_build_key') != built['build_key']
         or exact.get('grid_seed_sha256') != context['seed_sha256']):
         raise RuntimeError('full-pair exactness receipt is not bound to current setup')
-    for n, needed in samples.items():
-        seen = {tuple(row['pair']) for row in exact.get('rows',[])
-                if row.get('n') == n and row.get('g') == 80 and row.get('z') == 2.0
-                and row.get('all_exact') is True}
-        if not set(needed) <= seen:
+    rows = exact.get('rows')
+    if not isinstance(rows, list):
+        raise RuntimeError('full-pair receipt rows must be a list')
+    required = {(n, tuple(pair)) for n, pairs in samples.items() for pair in pairs}
+    expected_components = {'H0': ('complex256', [2, 7, 3]),
+        'H0_sumabs': ('float128', [2, 7, 3]),
+        'foreign': ('complex256', [2, 2, 3]),
+        'foreign_sumabs': ('float128', [2, 2, 3])}
+    seen = set()
+    for row in rows:
+        if (not isinstance(row, dict) or type(row.get('n')) is not int
+            or type(row.get('g')) is not int or row['g'] != 80
+            or not _finite_number(row.get('z')) or row['z'] != 2.0):
             raise RuntimeError('full-pair receipt lacks required n/g/z sample rows')
+        pair = row.get('pair')
+        if (not isinstance(pair, (list, tuple)) or len(pair) != 2
+            or any(type(v) is not int or v < 0 for v in pair)):
+            raise RuntimeError('malformed full-pair sample index')
+        key = (row['n'], tuple(pair))
+        if key not in required or key in seen or row.get('all_exact') is not True:
+            raise RuntimeError('duplicate, unexpected, or non-exact full-pair sample')
+        components = row.get('components')
+        if not isinstance(components, dict) or set(components) != set(expected_components):
+            raise RuntimeError('missing full-pair component evidence')
+        for name, (dtype, shape) in expected_components.items():
+            comp = components[name]
+            if (not isinstance(comp, dict) or comp.get('exact') is not True
+                or comp.get('dtype') != dtype or comp.get('shape') != shape
+                or not _finite_number(comp.get('max_abs_delta'))
+                or comp['max_abs_delta'] != 0):
+                raise RuntimeError('inconsistent full-pair component evidence: '+name)
+        seen.add(key)
+    if seen != required:
+        raise RuntimeError('full-pair receipt lacks required n/g/z sample rows')
+
+
+def _validate_measurement_row(row, processes):
+    """Fail closed on malformed or adverse fixed-workload observations."""
+    if (row.get('all_exact') is not True
+        or type(row.get('tasks_completed')) is not int or row['tasks_completed'] != 132
+        or type(row.get('unique_pair_count')) is not int or row['unique_pair_count'] != 12
+        or not _positive_integer(row.get('active_worker_count'))
+        or row['active_worker_count'] > processes):
+        raise RuntimeError('invalid fixed-workload count, exactness, or worker observation')
+    wall = row.get('batch_wall_seconds')
+    rate = row.get('steady_state_pairs_per_second')
+    if (not _finite_number(wall) or wall <= 0
+        or not _finite_number(rate) or rate <= 0
+        or not math.isclose(rate, 132/wall, rel_tol=1e-12, abs_tol=0)):
+        raise RuntimeError('invalid or inconsistent measured wall time/throughput')
+    for key in ('worker_cpu_parallelism', 'effective_cpu_parallelism'):
+        if not _finite_number(row.get(key)) or row[key] <= 0:
+            raise RuntimeError('invalid CPU observation: '+key)
+    for key in ('nr_throttled_delta', 'throttled_usec_delta', 'swap_before', 'swap_after'):
+        if type(row.get(key)) is not int or row[key] != 0:
+            raise RuntimeError('missing or adverse resource observation: '+key)
+    events = row.get('memory_events_delta')
+    if (not isinstance(events, dict)
+        or not {'high', 'max', 'oom', 'oom_kill'} <= set(events)
+        or any(type(v) is not int or v != 0 for v in events.values())):
+        raise RuntimeError('missing, malformed, or adverse memory events')
+    ancestors = row.get('ancestor_cpu_deltas')
+    if not isinstance(ancestors, dict) or not ancestors:
+        raise RuntimeError('missing ancestor CPU observations')
+    for path, counters in ancestors.items():
+        if (not isinstance(counters, dict)
+            or any(type(counters.get(k)) is not int or counters[k] != 0
+                   for k in ('nr_throttled', 'throttled_usec'))):
+            raise RuntimeError('missing or adverse ancestor throttling: '+str(path))
+
+
+def _failure_checkpoint(row):
+    """Preserve nonfinite observations explicitly without creating JSON NaN."""
+    def safe(value):
+        if isinstance(value, float) and not math.isfinite(value):
+            return {'__nonfinite_float__': repr(value)}
+        if isinstance(value, dict):
+            return {k: safe(v) for k, v in value.items()}
+        if isinstance(value, (list, tuple)):
+            return [safe(v) for v in value]
+        return value
+    result = safe(row)
+    result['failure_serialization'] = 'EXPLICIT_NONFINITE_TAGS_V1_NOT_NUMERIC_RESULT'
+    return result
 
 
 def main(argv=None):
