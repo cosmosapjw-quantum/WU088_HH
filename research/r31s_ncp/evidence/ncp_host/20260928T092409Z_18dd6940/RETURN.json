@@ -4046,7 +4046,7 @@
   },
   "draft_pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/12",
   "durability_policy_changed": false,
-  "failure_classification": null,
+  "failure_classification": "RUNTIME_ENVIRONMENT_ERROR",
   "final_commit": null,
   "final_tree": null,
   "fresh_h0_build": {
@@ -4573,12 +4573,13 @@
   },
   "m3b": {
     "configurations": [],
-    "n": 192
+    "n": 192,
+    "status": "NOT_RANKED_CONCURRENT_COMPUTE"
   },
+  "m3b_interruption_file": "M3B_INTERRUPTION.json",
   "new_evidence_directory": "research/r31s_ncp/evidence/ncp_host/20260928T092409Z_18dd6940",
-  "next_minimal_action": "Run bounded B192 M3B top three plus control with pilot memory gate; then independent review.",
+  "next_minimal_action": "Once the concurrent BASS F1 workload is gone, rerun only the pilot-gated B192 M3B top-three-plus-control screen; keep M3A evidence and PR #12 unchanged until new evidence is committed.",
   "not_performed": [
-    "M3B",
     "z=1",
     "full 144-pair scientific basis",
     "M4 durability",
@@ -4586,13 +4587,15 @@
     "trajectory",
     "production admission",
     "merge PR",
-    "force-push"
+    "force-push",
+    "valid M3B throughput ranking",
+    "M4 async durability"
   ],
   "old_blocker_evidence_directory": "research/r31s_ncp/evidence/ncp_host/20260928T073318Z_af5832c4",
   "production_admitted": false,
   "profile_candidate": null,
   "schema": "WU088_R31T_M3_RETURN_V1",
-  "status": "M3A_COMPLETE__M3B_PENDING",
+  "status": "M3A_COMPLETE__M3B_BLOCKED_CONCURRENT_COMPUTE",
   "tests": [
     {
       "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_h0_authority.py research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py",
@@ -4665,6 +4668,18 @@
       "exit_code": 0,
       "stderr": "",
       "stdout": "25 passed in 0.54s"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m3_throughput.py --stage m3b --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --h0-cache /root/wu088_hh_ncp_work_v2/m3_h0_build --probe /root/wu088_m3_probe.GMIpty/HOST_PROBE_M3.json --configs 64x1,32x2,30x2,4x16 --pilot-private 32454656 --out research/r31s_ncp/evidence/ncp_host/20260928T092409Z_18dd6940/M3B.json",
+      "exit_code": 143,
+      "stderr": "resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown",
+      "stdout": "No valid completed M3B configuration"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_throughput.py research/r31s_ncp/tests/test_m3_full_pair_screen.py research/r31s_ncp/tests/test_m3_h0_authority.py research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "25 passed in 0.89s"
     }
   ],
   "trajectory_runs": 0,

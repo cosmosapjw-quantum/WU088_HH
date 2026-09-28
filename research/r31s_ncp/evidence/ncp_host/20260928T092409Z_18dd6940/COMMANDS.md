@@ -12,3 +12,5 @@
 - M3A 64x1: exit 0; two 128-task batches, 64 active workers each, effective cgroup parallelism 56.48 and 54.56.
 - Remaining M3A layouts 60x1,32x2,32x1,16x4,30x2,4x16: exit 0; all exact, affinity/team valid, no throttling.
 - Focused M3 tests: exit 0, 25 passed in 0.54s.
+- M3B attempt: exit 143 after a separate 61-child BASS workload appeared in the same session cgroup; no valid M3B configuration accepted. See `M3B_INTERRUPTION.json`.
+- Final focused tests: exit 0, 25 passed in 0.89s.

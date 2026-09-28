@@ -71,8 +71,20 @@
       "exit_code": 0,
       "stderr": "",
       "stdout": "25 passed in 0.54s"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m3_throughput.py --stage m3b --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --h0-cache /root/wu088_hh_ncp_work_v2/m3_h0_build --probe /root/wu088_m3_probe.GMIpty/HOST_PROBE_M3.json --configs 64x1,32x2,30x2,4x16 --pilot-private 32454656 --out research/r31s_ncp/evidence/ncp_host/20260928T092409Z_18dd6940/M3B.json",
+      "exit_code": 143,
+      "stderr": "resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown",
+      "stdout": "No valid completed M3B configuration"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_throughput.py research/r31s_ncp/tests/test_m3_full_pair_screen.py research/r31s_ncp/tests/test_m3_h0_authority.py research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "25 passed in 0.89s"
     }
   ],
   "schema": "WU088_R31T_M3_TESTS_V1",
-  "status": "PASS_M3A_TESTS_AND_BENCHMARK"
+  "status": "PASS_FOCUSED_TESTS__M3B_RUNTIME_ENVIRONMENT_BLOCKER"
 }

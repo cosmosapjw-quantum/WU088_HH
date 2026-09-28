@@ -1,0 +1,27 @@
+{
+  "competing_workload": {
+    "child_process_count_observed": 61,
+    "modified_or_terminated": false,
+    "parent_pid": 66854,
+    "project": "BASS F1 parallel workload",
+    "same_cgroup_as_m3": "/user.slice/user-0.slice/session-2.scope"
+  },
+  "exit_code": 143,
+  "failure_classification": "RUNTIME_ENVIRONMENT_ERROR",
+  "m3a_results_preserved": true,
+  "m3b_ranking_valid": false,
+  "m3b_result_file_created": false,
+  "m3b_stage_at_stop": "B192 reference precompute completed; 64x1 persistent pool started; no completed configuration summary or valid measured result",
+  "next_action": "When the host is free of the competing workload, run only the B192 M3B top-three-plus-control screen; preserve completed M3A results.",
+  "observed_utc": "2026-09-28T10:23:51Z",
+  "our_command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m3_throughput.py --stage m3b --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --h0-cache /root/wu088_hh_ncp_work_v2/m3_h0_build --probe /root/wu088_m3_probe.GMIpty/HOST_PROBE_M3.json --configs 64x1,32x2,30x2,4x16 --pilot-private 32454656 --out research/r31s_ncp/evidence/ncp_host/20260928T092409Z_18dd6940/M3B.json",
+  "our_m3b_parent_pid": 64897,
+  "reason": "A separate active BASS F1 parallel workload on the same VM and same session cgroup launched a large worker pool during B192 reference preparation. The M3B 64x1 pool then began while that workload remained active. Throughput and cgroup CPU deltas would be confounded.",
+  "schema": "WU088_R31T_M3B_INTERRUPTION_V1",
+  "signal_sequence": [
+    "SIGINT to own M3B parent",
+    "SIGTERM to own M3B children and parent"
+  ],
+  "status": "STOPPED_BEFORE_VALID_M3B_BATCH",
+  "stderr_tail": "resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown"
+}
