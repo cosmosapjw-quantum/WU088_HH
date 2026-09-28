@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.169" timestamp="2026-09-29T01:31:37.336923+09:00" hostname="s1a0e5abed09"><testcase classname="research.r31v_postidle.test_driver" name="test_malformed_layout_preserves_preflight_failure" time="0.073"><failure message="FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-root/pytest-111/test_malformed_layout_preserve0/attempt.json'">tmp_path = PosixPath('/tmp/pytest-of-root/pytest-111/test_malformed_layout_preserve0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x72cd7c9b7c80&gt;
+
+    def test_malformed_layout_preserves_preflight_failure(tmp_path, monkeypatch):
+        m = api()
+        monkeypatch.setattr(m, '_runtime', lambda: (_ for _ in ()).throw(
+            AssertionError('native runtime must not load')))
+        out = tmp_path/'attempt.json'
+        missing = tmp_path/'unused.json'
+        args = ['--phase', 'benchmark', '--configs', '64x1,bad']
+        for name in ('build', 'h0-cache', 'grant', 'reference-cache', 'exactness', 'pilot'):
+            args.extend(('--'+name, str(missing)))
+        args.extend(('--out', str(out)))
+        with pytest.raises(ValueError):
+            m.main(args)
+        import json
+&gt;       saved = json.loads(out.read_text())
+                           ^^^^^^^^^^^^^^^
+
+research/r31v_postidle/test_driver.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/tmp/pytest-of-root/pytest-111/test_malformed_layout_preserve0/attempt.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+&gt;       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-root/pytest-111/test_malformed_layout_preserve0/attempt.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError</failure></testcase></testsuite></testsuites>

@@ -1,0 +1,9 @@
+# R31V 게시·백업 후속 명령 및 ACK
+
+- `git -c user.name=Codex -c user.email=codex@openai.com commit -m 'R31V: verify and run bounded post-idle M3B screen'`: exit 0, core commit `2d352253b0e6d36b04b4e696985276508e684c77`, tree `b62098f68455df1ab4a028f6307e094f9dfc2681`. 첫 `git commit`은 author identity 부재로 exit 128, staged 자료는 보존됐다.
+- `git push origin codex/r31v-postidle-controls-20260928`: 첫 시도 exit 128, HTTPS credential helper 부재. `git -c credential.helper='!gh auth git-credential' push origin codex/r31v-postidle-controls-20260928`: exit 0, non-force.
+- `git ls-remote --heads origin codex/r31v-postidle-controls-20260928`: core commit 반환, exit 0. `gh pr view 14 --json number,state,headRefOid,baseRefName,url`: PR OPEN, head core commit 반환, exit 0. 첫 push 직후 PR API는 한 차례 이전 head를 반환했으나 재조회에서 최신 head 확인.
+- `git archive --format=zip --output=/root/WU088_HH_R31V_POSTIDLE_M3B_20260928T132239Z_2d35225_v1.zip HEAD`, 이어서 `zip -j`로 `SOURCE_COMMIT.json` 추가: 모두 exit 0, create-only 경로. `unzip -t`: exit 0. archive bytes 1,143,134; SHA-256 `5c20246ee8dd47a260cf9cb5d57d120b928b2e52c054b92a30e10bf3c7c36523`.
+- `google_drive_upload_file`: completed, id `1i6UaPdObSHZz2ci80qNu8ZdRB0-GmM1c`. `google_drive_get_file_metadata`: 1,143,134 bytes. `google_drive_fetch(download_raw_file=true, include_base64=false)` 후 raw file을 다운로드하여 local SHA-256 및 `unzip -t` 확인: 모두 일치, command exits 0.
+- `dropbox_upload_file` / `dropbox_check_upload_file_status`: completed, id `id:BSpOijBcT10AAAAAADu6fA`. `dropbox_get_file_metadata`: 1,143,134 bytes. `dropbox_download_link`의 provider content hash `3949f2a7a8e518dba79cc472b48206506d51d082d85f2b6441fd26676169cef0`가 local Dropbox block content hash와 일치. raw file을 다운로드해 SHA-256 및 `unzip -t` 확인: 모두 일치, command exits 0.
+- 다운로드 URL과 자격증명은 receipt에 저장하지 않았다. 백업 검증은 archive bytes와 ZIP CRC에 한정하며 scientific runtime 재구성은 하지 않았다.

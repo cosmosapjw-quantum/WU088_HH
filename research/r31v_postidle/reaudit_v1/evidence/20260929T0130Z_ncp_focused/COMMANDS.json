@@ -1,0 +1,105 @@
+{
+  "schema": "WU088_R31V_REAUDIT_NCP_COMMANDS_V1",
+  "recorded_utc": "2026-09-28T16:29:00.749468+00:00",
+  "commands": [
+    {
+      "name": "py_compile",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "-m",
+        "py_compile",
+        "research/r31v_postidle/m3_postidle.py",
+        "research/r31v_postidle/test_driver.py",
+        "research/r31v_postidle/test_adversarial_reaudit.py"
+      ],
+      "cwd": "/root/WU088_HH_R31V_REAUDIT",
+      "env": {
+        "PYTHONPYCACHEPREFIX": "/root/wu088_r31v_reaudit_20260929_GQDmoi/pycache"
+      },
+      "exit_code": 0,
+      "stdout_log": "/root/wu088_r31v_reaudit_20260929_GQDmoi/PY_COMPILE.txt"
+    },
+    {
+      "name": "focused_pytest",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "research/r31v_postidle/test_controls.py",
+        "research/r31v_postidle/test_metric_controls.py",
+        "research/r31v_postidle/test_driver.py",
+        "research/r31v_postidle/test_adversarial_reaudit.py",
+        "research/r31s_ncp/tests/test_m3_throughput.py",
+        "research/r31s_ncp/tests/test_m3_full_pair_screen.py",
+        "research/r31s_ncp/tests/test_m3_h0_authority.py",
+        "research/r31s_ncp/tests/test_authority_seed.py",
+        "research/r31s_ncp/tests/test_ncp_build.py",
+        "--junitxml=/root/wu088_r31v_reaudit_20260929_GQDmoi/PYTEST.xml"
+      ],
+      "cwd": "/root/WU088_HH_R31V_REAUDIT",
+      "env": {
+        "PYTHONPYCACHEPREFIX": "/root/wu088_r31v_reaudit_20260929_GQDmoi/pycache"
+      },
+      "exit_code": 0,
+      "stdout_log": "/root/wu088_r31v_reaudit_20260929_GQDmoi/PYTEST.txt"
+    },
+    {
+      "name": "describe",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "research/r31v_postidle/m3_postidle.py",
+        "--phase",
+        "describe"
+      ],
+      "cwd": "/root/WU088_HH_R31V_REAUDIT",
+      "env": {
+        "PYTHONPYCACHEPREFIX": "/root/wu088_r31v_reaudit_20260929_GQDmoi/pycache"
+      },
+      "exit_code": 0,
+      "stdout_log": "/root/wu088_r31v_reaudit_20260929_GQDmoi/DESCRIBE.json"
+    },
+    {
+      "name": "raw_replay",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "research/r31v_postidle/reaudit_v1/replay_raw.py",
+        "--out",
+        "/root/wu088_r31v_reaudit_20260929_GQDmoi/RAW_REAUDIT.json"
+      ],
+      "cwd": "/root/WU088_HH_R31V_REAUDIT",
+      "env": {
+        "PYTHONPYCACHEPREFIX": "/root/wu088_r31v_reaudit_20260929_GQDmoi/pycache"
+      },
+      "exit_code": 0,
+      "stdout_log": "/root/wu088_r31v_reaudit_20260929_GQDmoi/RAW_REAUDIT.stdout"
+    }
+  ],
+  "pytest_counts": {
+    "tests": 133,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 133
+  },
+  "raw_replay_checks": {
+    "return_bound_benchmark": true,
+    "return_bound_reference_prepare": true,
+    "return_bound_host": true,
+    "return_bound_source_build": true,
+    "return_bound_grant": true,
+    "return_bound_review": true,
+    "return_bound_commands": true,
+    "same_workload": true,
+    "same_context_prepare_benchmark": true,
+    "context_hash": true,
+    "cache_payloads_validated": true,
+    "benchmark_cache_only": true,
+    "prep_explicit_references": true,
+    "all_12_rows_revalidated": true,
+    "native_dispatch_accounting": true
+  },
+  "raw_replay_negative_root_minus_leaf_count": 10,
+  "m3a_m3b_rerun": false,
+  "new_scientific_nodes": 0
+}
