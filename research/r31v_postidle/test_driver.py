@@ -50,6 +50,26 @@ def test_postcheck_failure_keeps_completed_measurement():
     with pytest.raises(ValueError):api().perform_measured_batches(sample,recheck,events.append,32)
     assert len(events)==1 and events[0]['measurement_status']=='POSTCHECK_FAILED'
 
+
+def test_malformed_layout_preserves_preflight_failure(tmp_path, monkeypatch):
+    m = api()
+    monkeypatch.setattr(m, '_runtime', lambda: (_ for _ in ()).throw(
+        AssertionError('native runtime must not load')))
+    out = tmp_path/'attempt.json'
+    missing = tmp_path/'unused.json'
+    args = ['--phase', 'benchmark', '--configs', '64x1,bad']
+    for name in ('build', 'h0-cache', 'grant', 'reference-cache', 'exactness', 'pilot'):
+        args.extend(('--'+name, str(missing)))
+    args.extend(('--out', str(out)))
+    with pytest.raises(ValueError):
+        m.main(args)
+    import json
+    saved = json.loads(out.read_text())
+    assert saved['status'] == 'BLOCKED'
+    assert saved['failure_stage'] == 'preflight'
+    assert saved['failure']['type'] == 'ValueError'
+    assert saved['new_scientific_nodes'] == 0
+
 def test_failed_second_batch_leaves_first_checkpoint():
     events=[];calls=[]
     def batch():
@@ -176,4 +196,3 @@ def test_exactness_receipt_requires_fixed_geometry_rows():
         bad=valid_exactness();bad['rows'][1][key]=value
         with pytest.raises(RuntimeError,match='lacks required n/g/z'):
             m._validate_exactness_receipt(bad,context,built,samples)
-

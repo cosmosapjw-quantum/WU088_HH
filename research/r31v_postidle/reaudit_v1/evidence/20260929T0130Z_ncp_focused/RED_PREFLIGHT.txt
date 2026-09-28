@@ -1,0 +1,49 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+______________ test_malformed_layout_preserves_preflight_failure _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-111/test_malformed_layout_preserve0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x72cd7c9b7c80>
+
+    def test_malformed_layout_preserves_preflight_failure(tmp_path, monkeypatch):
+        m = api()
+        monkeypatch.setattr(m, '_runtime', lambda: (_ for _ in ()).throw(
+            AssertionError('native runtime must not load')))
+        out = tmp_path/'attempt.json'
+        missing = tmp_path/'unused.json'
+        args = ['--phase', 'benchmark', '--configs', '64x1,bad']
+        for name in ('build', 'h0-cache', 'grant', 'reference-cache', 'exactness', 'pilot'):
+            args.extend(('--'+name, str(missing)))
+        args.extend(('--out', str(out)))
+        with pytest.raises(ValueError):
+            m.main(args)
+        import json
+>       saved = json.loads(out.read_text())
+                           ^^^^^^^^^^^^^^^
+
+research/r31v_postidle/test_driver.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/tmp/pytest-of-root/pytest-111/test_malformed_layout_preserve0/attempt.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-root/pytest-111/test_malformed_layout_preserve0/attempt.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+=========================== short test summary info ============================
+FAILED research/r31v_postidle/test_driver.py::test_malformed_layout_preserves_preflight_failure
+1 failed, 11 deselected in 0.17s

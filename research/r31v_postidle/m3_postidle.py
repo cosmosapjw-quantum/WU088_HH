@@ -295,22 +295,24 @@ def main(argv=None):
     for k in ('OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','OMP_NUM_THREADS','NUMEXPR_NUM_THREADS'):
         os.environ[k] = '1'
     import controls as c
-    layouts = [tuple(int(v) for v in token.split('x')) for token in args.configs.split(',')]
-    grant = json.loads(args.grant.read_text())
-    initial = c.live_resources()
-    allocation = c.validate_grant(grant, initial, layouts)
-    pilot = json.loads(args.pilot.read_text())
-    private = _validate_pilot_receipt(pilot)
-    if any(2*p*private > allocation['memory_available_bytes'] for p,t in layouts):
-        raise ValueError('memory gate failed before reference/native/pool preparation')
     state = {'schema':'WU088_R31V_POSTIDLE_V1','status':'IN_PROGRESS','phase':args.phase,
-             'grant_sha256':c.sha256(args.grant),'pilot_sha256':c.sha256(args.pilot),
-             'exactness_sha256':c.sha256(args.exactness),'initial_resources':initial,
              'configs':[],'reference_events':[], 'new_scientific_nodes':0,
              'production_admitted':False,'host_isolation_independently_verified':False}
     c.atomic_json(args.out,state,create_only=True)
-    stage = 'setup'
+    stage = 'preflight'
     try:
+        layouts = [tuple(int(v) for v in token.split('x')) for token in args.configs.split(',')]
+        grant = json.loads(args.grant.read_text())
+        initial = c.live_resources()
+        allocation = c.validate_grant(grant, initial, layouts)
+        pilot = json.loads(args.pilot.read_text())
+        private = _validate_pilot_receipt(pilot)
+        if any(2*p*private > allocation['memory_available_bytes'] for p,t in layouts):
+            raise ValueError('memory gate failed before reference/native/pool preparation')
+        state.update(grant_sha256=c.sha256(args.grant),pilot_sha256=c.sha256(args.pilot),
+                     exactness_sha256=c.sha256(args.exactness),initial_resources=initial)
+        c.atomic_json(args.out,state)
+        stage = 'setup'
         m3 = _runtime()
         h0mod = m3.load_module(ROOT/'research/r31s_ncp/authority_m3/m3_h0_authority.py','r31v_h0')
         seed = m3.load_module(ROOT/'research/r31s_ncp/authority_seed/grid_seed.py','r31v_seed')

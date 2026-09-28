@@ -1,0 +1,88 @@
+{
+  "checks": {
+    "return_bound_benchmark": true,
+    "return_bound_reference_prepare": true,
+    "return_bound_host": true,
+    "return_bound_source_build": true,
+    "return_bound_grant": true,
+    "return_bound_review": true,
+    "return_bound_commands": true,
+    "same_workload": true,
+    "same_context_prepare_benchmark": true,
+    "context_hash": true,
+    "cache_payloads_validated": true,
+    "benchmark_cache_only": true,
+    "prep_explicit_references": true,
+    "all_12_rows_revalidated": true,
+    "native_dispatch_accounting": true
+  },
+  "statistics": [
+    {
+      "layout": "64x1",
+      "rates": [
+        0.7482704577995133,
+        0.7411529234480342,
+        0.7494883385558023
+      ],
+      "median": 0.7482704577995133,
+      "mean": 0.7463039066011166,
+      "sample_sd": 0.00450225265468731,
+      "cv": 0.006032733602041384,
+      "throughput_per_allocated_logical_slot": 0.011691725903117395,
+      "cpu_seconds_per_task_mean": 65.51622921480555
+    },
+    {
+      "layout": "32x2",
+      "rates": [
+        0.8240526251440508,
+        0.8240851921549345,
+        0.8113030050214829
+      ],
+      "median": 0.8240526251440508,
+      "mean": 0.8198136074401561,
+      "sample_sd": 0.007370415883726875,
+      "cv": 0.00899035563308199,
+      "throughput_per_allocated_logical_slot": 0.012875822267875793,
+      "cpu_seconds_per_task_mean": 63.58214640356818
+    },
+    {
+      "layout": "30x2",
+      "rates": [
+        0.7954296936650899,
+        0.7988149948941909,
+        0.8022503562515301
+      ],
+      "median": 0.7988149948941909,
+      "mean": 0.7988316816036036,
+      "sample_sd": 0.0034103619110322546,
+      "cv": 0.004269187101075124,
+      "throughput_per_allocated_logical_slot": 0.013313583248236515,
+      "cpu_seconds_per_task_mean": 62.03917275607576
+    },
+    {
+      "layout": "4x16",
+      "rates": [
+        0.5528319373822932,
+        0.5536732236486591,
+        0.5526959204132279
+      ],
+      "median": 0.5528319373822932,
+      "mean": 0.5530670271480601,
+      "sample_sd": 0.0005293683046540704,
+      "cv": 0.0009571503609314873,
+      "throughput_per_allocated_logical_slot": 0.008637999021598331,
+      "cpu_seconds_per_task_mean": 53.11281810209091
+    }
+  ],
+  "comparisons": {
+    "32x2_over_30x2_gain": 0.03159383638410884,
+    "32x2_over_64x1_gain": 0.10127643895951066,
+    "32x2_over_4x16_gain": 0.4906024225843588,
+    "30x2_slot_efficiency_gain_over_32x2": 0.03399868150191088
+  },
+  "negative_root_minus_leaf_count": 10,
+  "historical_manifest_mismatches": [
+    "m3_postidle.py",
+    "test_driver.py"
+  ]
+}

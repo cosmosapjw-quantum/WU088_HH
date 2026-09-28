@@ -1,0 +1,286 @@
+{
+  "checks": {
+    "benchmark_reference_events_all_cache_read": true,
+    "benchmark_run": false,
+    "cache_entries_context_payload_pair_verified": true,
+    "cache_entries_count": 12,
+    "configuration_summary": [
+      {
+        "all_exact": [
+          true,
+          true,
+          true
+        ],
+        "layout": [
+          64,
+          1
+        ],
+        "leaf_cgroup_cpu_parallelism_range": [
+          48.59351229706948,
+          49.11242389298683
+        ],
+        "median_pairs_per_second": 0.7482704577995133,
+        "memory_events_zero": true,
+        "nr_throttled_delta": [
+          0,
+          0,
+          0
+        ],
+        "parallelism_engaged": [
+          true,
+          true,
+          true
+        ],
+        "repetitions": 3,
+        "tasks_per_repetition": [
+          132,
+          132,
+          132
+        ],
+        "unique_pairs_per_repetition": [
+          12,
+          12,
+          12
+        ],
+        "worker_cpu_parallelism_range": [
+          48.580084354605475,
+          49.097870536383375
+        ]
+      },
+      {
+        "all_exact": [
+          true,
+          true,
+          true
+        ],
+        "layout": [
+          32,
+          2
+        ],
+        "leaf_cgroup_cpu_parallelism_range": [
+          51.845637846530416,
+          52.357287898311185
+        ],
+        "median_pairs_per_second": 0.8240526251440508,
+        "memory_events_zero": true,
+        "nr_throttled_delta": [
+          0,
+          0,
+          0
+        ],
+        "parallelism_engaged": [
+          true,
+          true,
+          true
+        ],
+        "repetitions": 3,
+        "tasks_per_repetition": [
+          132,
+          132,
+          132
+        ],
+        "unique_pairs_per_repetition": [
+          12,
+          12,
+          12
+        ],
+        "worker_cpu_parallelism_range": [
+          51.83322721877825,
+          52.34211423681226
+        ]
+      },
+      {
+        "all_exact": [
+          true,
+          true,
+          true
+        ],
+        "layout": [
+          30,
+          2
+        ],
+        "leaf_cgroup_cpu_parallelism_range": [
+          49.53710935153134,
+          49.62715762639089
+        ],
+        "median_pairs_per_second": 0.7988149948941909,
+        "memory_events_zero": true,
+        "nr_throttled_delta": [
+          0,
+          0,
+          0
+        ],
+        "parallelism_engaged": [
+          true,
+          true,
+          true
+        ],
+        "repetitions": 3,
+        "tasks_per_repetition": [
+          132,
+          132,
+          132
+        ],
+        "unique_pairs_per_repetition": [
+          12,
+          12,
+          12
+        ],
+        "worker_cpu_parallelism_range": [
+          49.51774926001445,
+          49.614799189923
+        ]
+      },
+      {
+        "all_exact": [
+          true,
+          true,
+          true
+        ],
+        "layout": [
+          4,
+          16
+        ],
+        "leaf_cgroup_cpu_parallelism_range": [
+          29.04789219569523,
+          29.745342112232553
+        ],
+        "median_pairs_per_second": 0.5528319373822932,
+        "memory_events_zero": true,
+        "nr_throttled_delta": [
+          0,
+          0,
+          0
+        ],
+        "parallelism_engaged": [
+          null,
+          null,
+          null
+        ],
+        "repetitions": 3,
+        "tasks_per_repetition": [
+          132,
+          132,
+          132
+        ],
+        "unique_pairs_per_repetition": [
+          12,
+          12,
+          12
+        ],
+        "worker_cpu_parallelism_range": [
+          29.038752952278564,
+          29.735822631758264
+        ]
+      }
+    ],
+    "native_kernel_run": false,
+    "prepare_benchmark_context_equal": true,
+    "prepare_benchmark_pair_set_equal": true,
+    "prepare_benchmark_workload_equal": true,
+    "prepare_reference_events_all_compute": true,
+    "prepare_status": "REFERENCE_PREPARATION_COMPLETE_NOT_BENCHMARK",
+    "raw_status": "BOUNDED_COMPARISON_COMPLETE_REVIEW_REQUIRED_NOT_PRODUCTION",
+    "source_code_read": true,
+    "source_mutated": false,
+    "synthetic_checks": [
+      {
+        "method": "Loaded m3_postidle.py without native imports; injected inert controls module because local Python lacks NumPy; called main with all path flags and malformed --configs 64x1,bad.",
+        "name": "malformed_layout_preflight",
+        "result": "ValueError invalid literal for int(), no --out file, no wu088_hh module imported."
+      },
+      {
+        "method": "Ran script with malformed layout using local python3.",
+        "name": "direct_script_attempt",
+        "result": "Blocked at import controls by ModuleNotFoundError: numpy; no inference about layout behavior from this attempt."
+      }
+    ]
+  },
+  "commit_tree_basis": "orchestrator-provided; not independently verified because Git access was forbidden",
+  "conclusion": "Bounded raw measurements and cache consistency check out within their recorded scope. Three review findings concern evidence binding and early failure preservation. No production approval or new reviewer admission is asserted.",
+  "files_sha256": {
+    "AGENTS.md": "55c76ebd3a2a4c0a0d59c71913af54f9d5e4e09dba26b82691d371de3b3df1a0",
+    "research/r31s_ncp/authority_m3/m3_h0_authority.py": "ced8d7e89d1a87a9fb14a9c9a4edf4a7f9f3d419227c3e0dbf85020e7d6b9db6",
+    "research/r31s_ncp/authority_seed/grid_seed.py": "52f5714062e128cbec587dcc1be18b603b9a1102d70be81303ce96e094639e24",
+    "research/r31s_ncp/evidence/ncp_host/20260928T092409Z_18dd6940/M3_B192_PILOT.json": "bb63ffa9a16e718eb73185f806ecedfe4fb344577075bcec7f4e6ae8db09750b",
+    "research/r31s_ncp/evidence/ncp_host/20260928T092409Z_18dd6940/M3_FULL_PAIR_EQUIVALENCE.json": "2bdf93da5b4ebb602d1d82c4f9764846d5cf73468d176e1ca9c520d50de1ef5e",
+    "research/r31s_ncp/m3_full_pair_screen.py": "242ccb66f558b797d4e4ff00cf5c91f76b83dd22632c3aa0ff6f52d358b79738",
+    "research/r31s_ncp/m3_throughput.py": "929ccc62a04483842811367c143704c7bde5df8a55fa1da2478c89715d807101",
+    "research/r31v_postidle/controls.py": "9afd08d125d98a690c9330b92e541d7ea6ed37ed1e877aa4b3270ec8dd56c960",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/GRANT.json": "02c6c6c4c2f0a94352fb72336b60020961026cf5907b4fb3d4d0c25dab112009",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/HOST_INVENTORY.json": "9ceaa8fbd31c7860ade477271483a020c8bc16959ec8ddb96242cbe315a6fed6",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/SOURCE_BUILD_AUDIT.json": "43698f0cf3a063ee6b5ef3a19d33f2e891a9cf9874dbf73ce33e95ad461511ba",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/m3b_132.json": "85e8f6b6226e0037a212987368b0656c6df7170a3a90a9d29a9cddd6d1928a36",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_cache/f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0/pair_0_7.json": "a0afd767675cf1211f5d72a557eb6573f51c67bee04990bdb93fce3da9b551da",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_cache/f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0/pair_10_11.json": "15217f468fbfed0852fd7cc81edaa92b3bcb40671cbf6da948f920afef59e85b",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_cache/f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0/pair_10_9.json": "2cbfc3d341d2466a2d905ea0cd2dcc94304bf5d142a735ac4ebcb949db996b1a",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_cache/f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0/pair_1_11.json": "3d509e3bd866ff9d8ead12afda06b1ac56a97dec5e59c2f6118c64c53af2c16e",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_cache/f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0/pair_1_3.json": "5d6d267c95b4ce0749b6b4e9791a7dd21bd5eda0a9fc4ff7395c78143fa1f4ac",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_cache/f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0/pair_3_10.json": "676842b4ca21dff98d698af80d2801562c4fc738fe068c709b2e465d38ca3673",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_cache/f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0/pair_3_3.json": "c42345edac0491ac9bd70bea4f27d76473ed2c522b55274eeaed31f3c1ec4826",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_cache/f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0/pair_3_7.json": "024034f78235fea3b06ee785253c82115186e0c6dcafe359b53c0e2202d515ab",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_cache/f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0/pair_4_0.json": "f3ec851bd1ac23ef8e54ca58c615ee92d5512c43aeeace4bcf0b7e57f792a719",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_cache/f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0/pair_4_5.json": "ef6e0fafb0b004b8a2eda2dae0ba971f16a53c8bb54739f08e24e3c7ffb157f4",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_cache/f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0/pair_6_4.json": "d3b118cca757cb45fe3c2f203651836d859fa8d36b2ce4767397b78077e7cd78",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_cache/f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0/pair_9_9.json": "d4bb2d4a449532bd6e3d170a75c1061f20eda70a3072f9b0fcb0a9ef715dfd47",
+    "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_prepare.json": "2edd4bb42bef01826766e1168152848566466e9a02baec4d0265d86676cf411d",
+    "research/r31v_postidle/m3_postidle.py": "d40d59ebba44f04faa8ec7fe34881dce99d63f5a9b07ee6b07071c4460159d0d",
+    "research/r31v_postidle/reaudit_v1/BLIND_REVIEW_BRIEF_KO.md": "17dc1f3e878e0b6ee30a385a317f4ff4861b30f28dccde8635ba90e73090989f",
+    "src/wu088_hh/native_candidate.py": "ef019e9171a14f9a4a209d45e67bb870199a7541adfcc7cf855d7691c2fa6127"
+  },
+  "findings": [
+    {
+      "counterexample": "Two versions of m3_postidle.py or controls.py can produce the same numeric_context and run schema because neither script hash nor reviewed commit/tree is included in the recorded state. The run files therefore cannot by themselves identify the exact adapter that generated the measurements.",
+      "id": "BR-01",
+      "impact": "A later independent reviewer cannot establish from the raw run that the measured control path is the reviewed commit, even though legacy arithmetic and binary inputs are pinned.",
+      "location": "research/r31v_postidle/m3_postidle.py:296-310; evidence/ncp_host/20260928T132239Z_r31v/m3b_132.json and reference_prepare.json",
+      "observed_actual_misconduct": false,
+      "required_change": "Record SHA-256 of m3_postidle.py and controls.py and the Git commit/tree in both preparation and benchmark evidence at execution time; independently verify the recorded values before relying on the run.",
+      "severity": "medium"
+    },
+    {
+      "counterexample": "After prepare, a local writer can change a reference cache entry and recompute its unkeyed payload_sha256 while retaining the same context, pair and path. ReferenceCache.read accepts the new finite arrays. Neither the prepare nor benchmark record freezes the per-entry file or payload SHA-256, so the two phases cannot be byte-linked retrospectively.",
+      "id": "BR-02",
+      "impact": "The copied cache is internally consistent, but it is not evidence that benchmark read the exact reference bytes produced during explicit preparation. This is an evidence provenance gap, not evidence that modification occurred.",
+      "location": "research/r31v_postidle/controls.py:210-254; research/r31v_postidle/m3_postidle.py:346-361; reference_prepare.json and m3b_132.json",
+      "observed_actual_misconduct": false,
+      "required_change": "Record the ordered pair-to-cache-file SHA-256 map at completion of prepare and at benchmark read, and require equality; preserve those hashes with the raw record.",
+      "severity": "medium"
+    },
+    {
+      "counterexample": "Calling benchmark with all required path arguments and --configs 64x1,bad raises ValueError before atomic_json creates the output checkpoint. A bounded stub-controls execution reproduced exit with no output file and no native import.",
+      "id": "BR-03",
+      "impact": "Malformed configuration and other errors before state creation leave no failure record under --out, despite the run contract calling for failure preservation.",
+      "location": "research/r31v_postidle/m3_postidle.py:272-298",
+      "observed_actual_misconduct": false,
+      "required_change": "Create a minimal attempted-run checkpoint before fallible layout/grant/pilot preflight, then update it with a precise validation failure without importing native code.",
+      "severity": "low"
+    }
+  ],
+  "reviewed_at_utc": "2026-09-28T16:30:42.617555+00:00",
+  "reviewed_commit": "928470d4cc9e969dac85b5f1524375f816128489",
+  "reviewed_tree": "6b4dbc30b14bfddbed5c1980bef04b0cfd95f442",
+  "schema": "WU088_R31V_BLIND_REVIEW_V1",
+  "scope_limits": [
+    "No independent execution of native H0 or foreign kernels; no compiler, CPU, precision or performance rerun.",
+    "Copied SOURCE_BUILD_AUDIT.json reports source/binary matching, compiler flags and ABI; source and binary objects were outside the copied allowlist and could not be rehashed.",
+    "The six pilot/equality rows are metadata evidence; no archived scalar arrays were recomputed or independently compared.",
+    "Cgroup CPU usage and zero throttling cover visible shared ancestors; neither proves host exclusivity. The grant is an operator assertion with an instantaneous inventory; current admission for a new run was not established.",
+    "The four layouts ran sequentially on one bounded workload. Their medians are descriptive performance observations, not a production or scientific admission.",
+    "The exact Git commit/tree was supplied, not verified against a repository checkout."
+  ],
+  "session": {
+    "codex_session_id": "01a0e802-64fc-7a62-b4bc-92348b99629c",
+    "exposure": [
+      "Orchestrator task supplied exact commit/tree, blind directory and forbidden-source boundary.",
+      "User AGENTS.md contract was visible in the task context and the copied AGENTS.md was read.",
+      "Allowed HOST_INVENTORY.json contains historical Codex process command lines."
+    ],
+    "forbidden_exposure_observed": false,
+    "harness_identity_independently_attested": false,
+    "identity_source": "CODEX_SESSION_ID environment variable observed in this process",
+    "implementation_reports_tests_pr_discussion_read": false,
+    "reviewer_admission": "INDEPENDENT_AGENT_CONTEXT_ONLY__FORMAL_HARNESS_ADMISSION_UNVERIFIED",
+    "uid": 0
+  }
+}
