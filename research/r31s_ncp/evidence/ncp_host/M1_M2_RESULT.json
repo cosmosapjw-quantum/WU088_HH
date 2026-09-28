@@ -1,0 +1,338 @@
+{
+  "backup_tier": "NONE",
+  "blocking_input": "Frozen runtime FROZEN_INPUTS.npz and completion/mixed_h/native.py are absent from host; search /root /mnt and filesystem-wide returned no match.",
+  "build_identity": {
+    "compiler_path": "/usr/bin/g++",
+    "flags": [
+      "-O3",
+      "-std=c++17",
+      "-fPIC",
+      "-shared",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-fopenmp"
+    ],
+    "host_fingerprint": "f983adea5c786f192d7ae7f76ebbedfac9c6add387640cbb63858cca009453e2",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "precision_macros": {
+      "__FLT128_MANT_DIG__": "113",
+      "__LDBL_MANT_DIG__": "64",
+      "__LDBL_MAX_EXP__": "16384",
+      "__SIZEOF_FLOAT128__": "16",
+      "__SIZEOF_LONG_DOUBLE__": "16"
+    },
+    "probe_sha256": "81ff4649892619262c0f2b2717fae098f8e9b591ba7aa6528ccbb8b6afdb8cf1",
+    "sources": {
+      "candidate/r31a/continuation.hpp": "06f633f20686ad8efbbcdd2ad6e725b394eaf768aeaa895412e60084942c5a84",
+      "candidate/r31a/hybrid12_wide_h_v2.cpp": "696afa2875490b0ebd82d43fe5e6c2852529d0cb7b5e1544cfa6ed71fff984a2",
+      "candidate/radial/analytic_wide.cpp": "05fb68ab805d282890c08899614c801fb14d3580e048dad3dfd1209c2685332f",
+      "reference/r31a/continuation.hpp": "06f633f20686ad8efbbcdd2ad6e725b394eaf768aeaa895412e60084942c5a84",
+      "reference/r31a/hybrid12_wide_h_v2.cpp": "40a53c9a7f34f49f1f18dd1483d442b0a06a7b07c17731bca631ee6231650e1f",
+      "reference/radial/analytic_wide.cpp": "05fb68ab805d282890c08899614c801fb14d3580e048dad3dfd1209c2685332f"
+    },
+    "versions": {
+      "as": "GNU assembler (GNU Binutils for Ubuntu) 2.42",
+      "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+      "ld": "GNU ld (GNU Binutils for Ubuntu) 2.42",
+      "numpy": "2.3.5",
+      "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+      "scipy": "1.17.0"
+    }
+  },
+  "build_key": "b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51",
+  "component_stress": {
+    "fixture": "tests/test_native.py inputs(z=8,a=.002,b=.015)",
+    "rows": [
+      {
+        "array_exact": true,
+        "observed_threads": 1,
+        "sumabs_exact": true,
+        "threads": 1
+      },
+      {
+        "array_exact": true,
+        "observed_threads": 2,
+        "sumabs_exact": true,
+        "threads": 2
+      }
+    ],
+    "scope": "existing synthetic component cancellation stress; not B160/B192 scientific sample"
+  },
+  "durability_policy_changed": false,
+  "environment": {
+    "as": "GNU assembler (GNU Binutils for Ubuntu) 2.42",
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "ld": "GNU ld (GNU Binutils for Ubuntu) 2.42",
+    "numpy": "2.3.5",
+    "precision_macros": {
+      "__FLT128_MANT_DIG__": "113",
+      "__LDBL_MANT_DIG__": "64",
+      "__LDBL_MAX_EXP__": "16384",
+      "__SIZEOF_FLOAT128__": "16",
+      "__SIZEOF_LONG_DOUBLE__": "16"
+    },
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "scipy": "1.17.0",
+    "venv": "/root/wu088_hh_ncp_work/venv",
+    "work_root": "/root/wu088_hh_ncp_work"
+  },
+  "heavy_scientific_nodes_executed": 0,
+  "host_probe": {
+    "bytes": 68532,
+    "original_path": "/root/wu088_ncp_probe.djNQYK/HOST_PROBE.json",
+    "planning_cpu_budget": 64,
+    "raw_copy": "research/r31s_ncp/evidence/ncp_host/HOST_PROBE.raw.json",
+    "sha256": "81ff4649892619262c0f2b2717fae098f8e9b591ba7aa6528ccbb8b6afdb8cf1",
+    "status": "PROBED_NOT_BENCHMARKED",
+    "warnings": []
+  },
+  "libraries": {
+    "candidate": {
+      "command": [
+        "/usr/bin/g++",
+        "-O3",
+        "-std=c++17",
+        "-fPIC",
+        "-shared",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-fopenmp",
+        "/root/WU088_HH/native/candidate/r31a/hybrid12_wide_h_v2.cpp",
+        "-o",
+        "/root/wu088_hh_ncp_work/build/b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51/candidate.so"
+      ],
+      "path": "/root/wu088_hh_ncp_work/build/b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51/candidate.so",
+      "sha256": "c3188126d0367238b8fcef4445727e0735d4206e89c4d7fc6b31893c5a40183d"
+    },
+    "reference": {
+      "command": [
+        "/usr/bin/g++",
+        "-O3",
+        "-std=c++17",
+        "-fPIC",
+        "-shared",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "-fopenmp",
+        "/root/WU088_HH/native/reference/r31a/hybrid12_wide_h_v2.cpp",
+        "-o",
+        "/root/wu088_hh_ncp_work/build/b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51/reference.so"
+      ],
+      "path": "/root/wu088_hh_ncp_work/build/b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51/reference.so",
+      "sha256": "393d04a3e22d2c80d73c8e7eebd5546d08a258e552c6ace5d33ee6d315c57c6f"
+    }
+  },
+  "production_admitted": false,
+  "representative_scientific_samples": [],
+  "schema": "WU088_R31S_NCP_M1_M2_EVIDENCE_V1",
+  "selected_configuration": null,
+  "status": "M1_BUILT_M2_BLOCKED_MISSING_FROZEN_RUNTIME",
+  "tests": [
+    {
+      "command": "/root/wu088_hh_ncp_work/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_ncp_build.py",
+      "exit_code": 1,
+      "phase": "RED_FILE_ABSENT"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_ncp_build.py",
+      "exit_code": 0,
+      "phase": "GREEN_4_PASS"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work/venv/bin/python -m pytest -q research/r31s_ncp/tests tests/test_native.py",
+      "exit_code": 2,
+      "phase": "MISSING_VENV_SYMPY"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work/venv/bin/python -m pytest -q research/r31s_ncp/tests tests/test_native.py",
+      "exit_code": 0,
+      "phase": "50_PASS"
+    }
+  ],
+  "trajectory_runs": 0,
+  "tuning_candidates": [
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 1,
+      "logical_slots": 32,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 32,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    },
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 2,
+      "logical_slots": 32,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 16,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    },
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 4,
+      "logical_slots": 32,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 8,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    },
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 8,
+      "logical_slots": 32,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 4,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    },
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 16,
+      "logical_slots": 32,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 2,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    },
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 32,
+      "logical_slots": 32,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 1,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    },
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 1,
+      "logical_slots": 64,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 64,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    },
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 2,
+      "logical_slots": 64,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 32,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    },
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 4,
+      "logical_slots": 64,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 16,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    },
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 8,
+      "logical_slots": 64,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 8,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    },
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 16,
+      "logical_slots": 64,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 4,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    },
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 32,
+      "logical_slots": 64,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 2,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    },
+    {
+      "cpu_seconds": null,
+      "kernel_threads": 64,
+      "logical_slots": 64,
+      "major_faults_delta": null,
+      "measured": false,
+      "memory_events_delta": null,
+      "processes": 1,
+      "pss_bytes": null,
+      "rss_bytes": null,
+      "swap_delta": null,
+      "throttling_delta": null,
+      "wall_seconds": null
+    }
+  ],
+  "z1_executed": false
+}
