@@ -1,5 +1,5 @@
 from pathlib import Path
-import importlib.util
+import importlib.util, hashlib
 import numpy as np
 
 HERE=Path(__file__).resolve().parents[1]/'authority_seed'
@@ -12,6 +12,12 @@ def test_authority_identity_chain():
     assert r['source_frozen_inputs_sha256']=='8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c'
     assert r['cp4_exact_weight_source_sha256']=='8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb'
 
+def test_reconstructed_arrays_match_frozen_array_fingerprints():
+    d=m.inputs()
+    assert hashlib.sha256(d['C'].tobytes()).hexdigest()=='5952ccecafea867f83f1454bf8f338f494770fe0356c7e026eb7222b32067b96'
+    assert hashlib.sha256(d['exponents'].tobytes()).hexdigest()=='9564bcdfab5fc900321ecc12441b420b723f02d2991e62b3886e40c759c998a5'
+    assert hashlib.sha256(np.asarray(d['v']).tobytes()).hexdigest()=='918ad765b4ad0f17db43ad69b4df1292cd481eebabba8ef1e3770b5af8aae4ac'
+
 def test_grid_shapes_for_m2_orders():
     for n in (160,192):
         d,t,W,gs,gw=m.grid(n,80)
@@ -19,7 +25,3 @@ def test_grid_shapes_for_m2_orders():
         assert gs.shape==gw.shape==(80,)
         assert np.isfinite(t).all() and np.isfinite(W).all()
         assert d['exponents'].shape==(12,) and d['C'].shape==(9,9,9)
-
-def test_seed_fields_are_binary64():
-    d=m.inputs()
-    assert d['exponents'].dtype==np.float64 and d['C'].dtype==np.float64 and d['v'].dtype==np.float64
