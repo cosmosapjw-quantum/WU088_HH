@@ -1,0 +1,121 @@
+{
+  "commands": [
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py",
+      "exit_code": 0,
+      "result": "3 passed in 0.48s"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_bridge.py",
+      "exit_code": 1,
+      "result": "RED: m2_bridge.py absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_bridge.py",
+      "exit_code": 0,
+      "result": "2 passed"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py",
+      "exit_code": 1,
+      "result": "RED: m2_tuning.py absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py::test_reads_linux_smaps_rss_pss_when_available",
+      "exit_code": 1,
+      "result": "RED: RSS/PSS parser missed smaps colon"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py::test_spawn_barrier_is_passed_through_initializer",
+      "exit_code": 1,
+      "result": "RED: spawn initializer absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py::test_pilot_memory_gate_keeps_headroom",
+      "exit_code": 1,
+      "result": "RED: memory gate absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_tuning.py",
+      "exit_code": 0,
+      "result": "5 passed"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "46 passed in 5.63s"
+    },
+    {
+      "command": "python3 -m json.tool research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_EQUIVALENCE.json >/dev/null",
+      "exit_code": 0,
+      "result": "valid JSON"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m2_tuning.py --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --probe research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/HOST_PROBE.json --out research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_TUNING.json --repeats 3",
+      "exit_code": 0,
+      "result": "39 exact/affinity-valid rows"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "46 passed in 5.62s"
+    },
+    {
+      "command": "python3 -m json.tool research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_TUNING.json >/dev/null",
+      "exit_code": 0,
+      "result": "valid JSON"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m2_bridge.py --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --out research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_EQUIVALENCE.json",
+      "exit_code": null,
+      "result": "six valid exact rows and output JSON; daemon restart lost shell exit status"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_bridge.py::test_bridge_drops_loader_injection_before_native_load",
+      "exit_code": 1,
+      "result": "RED: loader path survived import"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m2_bridge.py",
+      "exit_code": 0,
+      "result": "3 passed"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "47 passed in 5.90s"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py",
+      "exit_code": 0,
+      "result": "3 passed in 0.48s against c8c741d baseline"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "47 passed in 5.90s after baseline merge"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_verify_seed_refresh.py",
+      "exit_code": 1,
+      "result": "RED: verification script absent"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_verify_seed_refresh.py",
+      "exit_code": 0,
+      "result": "1 passed in 0.62s"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/verify_seed_refresh.py --out research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/AUTHORITY_REFRESH.json",
+      "exit_code": 0,
+      "result": "ARRAYS_BIT_IDENTICAL_PRIOR_AND_CURRENT_SEED"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py research/r31s_ncp/tests/test_verify_seed_refresh.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "48 passed in 6.15s after c8c741d baseline"
+    }
+  ],
+  "schema": "WU088_R31S_NCP_TESTS_V1",
+  "status": "FINAL_RELEVANT_SUITE_PASS_AFTER_C8_BASELINE"
+}
