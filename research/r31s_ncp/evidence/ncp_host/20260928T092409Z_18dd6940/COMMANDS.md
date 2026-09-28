@@ -7,3 +7,6 @@
 - Full-pair TDD: red exit 1 (module absent), green exit 0 (2 passed).
 - Six B160/B192 full-pair reference/candidate rows: exit 0, all components numerically exact.
 - Focused M3 tests: exit 0, 22 passed in 0.48s.
+- M3 throughput helper TDD red/green: red exit 1 twice, green exit 0 (5 passed).
+- B192 1x1 memory pilot: exit 0; private worker memory 32,454,656 bytes.
+- M3A 64x1: exit 0; two 128-task batches, 64 active workers each, effective cgroup parallelism 56.48 and 54.56.
