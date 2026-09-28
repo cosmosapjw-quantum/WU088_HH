@@ -58,7 +58,7 @@ def memory_safe(processes: int, private_bytes: int, available_bytes: int) -> boo
 def measured_task_count(processes: int) -> int:
     if processes < 1:
         raise ValueError('processes must be positive')
-    return max(72, 2*processes)
+    return max(24, 2*processes)
 
 
 def smaps():

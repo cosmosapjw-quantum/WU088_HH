@@ -59,8 +59,20 @@
       "exit_code": 0,
       "stderr": "",
       "stdout": "64x1; 2 exact 128-task repetitions; 64 active workers; no throttle"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m3_throughput.py --stage m3a --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --h0-cache /root/wu088_hh_ncp_work_v2/m3_h0_build --probe /root/wu088_m3_probe.GMIpty/HOST_PROBE_M3.json --configs 60x1,32x2,32x1,16x4,30x2,4x16 --out research/r31s_ncp/evidence/ncp_host/20260928T092409Z_18dd6940/M3A_REMAINING.json",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "six layouts, two exact repetitions each, no throttling"
+    },
+    {
+      "command": "env -u LD_PRELOAD -u LD_LIBRARY_PATH /root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_m3_throughput.py research/r31s_ncp/tests/test_m3_full_pair_screen.py research/r31s_ncp/tests/test_m3_h0_authority.py research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "25 passed in 0.54s"
     }
   ],
   "schema": "WU088_R31T_M3_TESTS_V1",
-  "status": "PASS_FIRST_CPU_ENGAGEMENT_MILESTONE"
+  "status": "PASS_M3A_TESTS_AND_BENCHMARK"
 }

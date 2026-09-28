@@ -10,3 +10,5 @@
 - M3 throughput helper TDD red/green: red exit 1 twice, green exit 0 (5 passed).
 - B192 1x1 memory pilot: exit 0; private worker memory 32,454,656 bytes.
 - M3A 64x1: exit 0; two 128-task batches, 64 active workers each, effective cgroup parallelism 56.48 and 54.56.
+- Remaining M3A layouts 60x1,32x2,32x1,16x4,30x2,4x16: exit 0; all exact, affinity/team valid, no throttling.
+- Focused M3 tests: exit 0, 25 passed in 0.54s.
