@@ -1,0 +1,598 @@
+{
+  "schema": "WU088_R31V_NCP_RETURN_V1",
+  "created_utc": "2026-09-28T14:15:45.150039+00:00",
+  "status": "BOUNDED_M3B_COMPLETE_REVIEW_REQUIRED_NOT_PRODUCTION",
+  "repo": "cosmosapjw-quantum/WU088_HH",
+  "branch": "codex/r31v-postidle-controls-20260928",
+  "draft_pr": 14,
+  "published_baseline_commit": "e7248a2b356392a47bda44d180e0d6ed4f012b20",
+  "published_baseline_tree": "ee48d47da111b46daeba6a037833ca8242c963e6",
+  "run_id": "20260928T132239Z_r31v",
+  "commands": {
+    "path": "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/COMMANDS.md",
+    "bytes": 3904,
+    "sha256": "6ef4e541a2926b52621559962a7a0adcbe40f25992b7bd8a592927efd45f2bc6"
+  },
+  "prepare_exit": 0,
+  "benchmark_exit": 0,
+  "tests": {
+    "prechange_new_focused": 67,
+    "prechange_related_m3": 14,
+    "postchange_combined": 84,
+    "postchange_exit": 0,
+    "full_repository_suite_run": false
+  },
+  "host": {
+    "boot_id": "dd4da6c2-df05-4f9d-a7e3-7aef130569dc",
+    "cpu_model": "Intel(R) Xeon(R) Gold 5220 CPU @ 2.20GHz",
+    "allowed_logical_cpus": 64,
+    "visible_ancestor_quota": [
+      "max 100000",
+      "max 100000",
+      "max 100000"
+    ],
+    "memory_reserve_bytes": 8589934592,
+    "inventory": {
+      "path": "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/HOST_INVENTORY.json",
+      "bytes": 61321,
+      "sha256": "9ceaa8fbd31c7860ade477271483a020c8bc16959ec8ddb96242cbe315a6fed6"
+    },
+    "postrun_process_list": {
+      "path": "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/PROCESS_POSTRUN.txt",
+      "bytes": 49879,
+      "sha256": "15f3a1ee9b8573aecfd58254b766699d11ab0bcf5df6316948b3cfc97cec2275"
+    },
+    "host_isolation_independently_verified": false,
+    "census_interpretation": "Live PID/cgroup census showed no other native pool at inspected times; future exclusion not independently certified. Shared ancestor CPU was kept separate."
+  },
+  "grant": {
+    "path": "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/GRANT.json",
+    "bytes": 1295,
+    "sha256": "02c6c6c4c2f0a94352fb72336b60020961026cf5907b4fb3d4d0c25dab112009"
+  },
+  "source_build": {
+    "path": "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/SOURCE_BUILD_AUDIT.json",
+    "bytes": 3149,
+    "sha256": "43698f0cf3a063ee6b5ef3a19d33f2e891a9cf9874dbf73ce33e95ad461511ba"
+  },
+  "build_key": "b448e28b20c5637eda941141e1f6ef35ed00aab990e704a99fc266fdad0c0f51",
+  "foreign_binary_sha256": {
+    "reference": "393d04a3e22d2c80d73c8e7eebd5546d08a258e552c6ace5d33ee6d315c57c6f",
+    "candidate": "c3188126d0367238b8fcef4445727e0735d4206e89c4d7fc6b31893c5a40183d"
+  },
+  "h0_binary_sha256": "18dd6940289aeca3b4148cabff1898d1c230b72ad053d3d96f9e9e8975f5e720",
+  "h0_sources_sha256": {
+    "FROZEN_INPUTS.npz": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+    "h0_fused.cpp": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+    "radial_wide.cpp": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a"
+  },
+  "grid_seed_sha256": "52f5714062e128cbec587dcc1be18b603b9a1102d70be81303ce96e094639e24",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "flags": [
+    "-O3",
+    "-std=c++17",
+    "-fPIC",
+    "-shared",
+    "-fno-fast-math",
+    "-ffp-contract=off",
+    "-fopenmp"
+  ],
+  "precision_macros": {
+    "__FLT128_MANT_DIG__": "113",
+    "__SIZEOF_LONG_DOUBLE__": "16",
+    "__LDBL_MAX_EXP__": "16384",
+    "__LDBL_MANT_DIG__": "64",
+    "__SIZEOF_FLOAT128__": "16"
+  },
+  "abi": {
+    "python": "3.12.3",
+    "numpy": "2.3.5",
+    "longdouble_nmant": 63,
+    "longdouble_itemsize": 16,
+    "fegetround": 0
+  },
+  "exactness_receipt_sha256": "2bdf93da5b4ebb602d1d82c4f9764846d5cf73468d176e1ca9c520d50de1ef5e",
+  "pilot_receipt_sha256": "bb63ffa9a16e718eb73185f806ecedfe4fb344577075bcec7f4e6ae8db09750b",
+  "pilot_private_worker_bytes": 32454656,
+  "reference_prepare": {
+    "path": "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/reference_prepare.json",
+    "bytes": 5653,
+    "sha256": "2edd4bb42bef01826766e1168152848566466e9a02baec4d0265d86676cf411d"
+  },
+  "benchmark": {
+    "path": "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/m3b_132.json",
+    "bytes": 200056,
+    "sha256": "85e8f6b6226e0037a212987368b0656c6df7170a3a90a9d29a9cddd6d1928a36"
+  },
+  "review": {
+    "path": "research/r31v_postidle/evidence/ncp_host/20260928T132239Z_r31v/MEASUREMENT_REVIEW.json",
+    "bytes": 13629,
+    "sha256": "c0f4b9fa0410c2e46b4d95c4a2e722bd0234ba3ecdd30853b5e30684537edfc3"
+  },
+  "cache": {
+    "prepare_hits": 0,
+    "prepare_misses_computed": 12,
+    "prepare_wall_seconds_sum": 515.133590453006,
+    "benchmark_hits": 12,
+    "benchmark_misses": 0,
+    "context_sha256": "f6639872d9a1ed54ce910599d0d66ea91e478e6d02a0ec5d98286b1bf45a8ed0"
+  },
+  "workload": {
+    "count": 132,
+    "histogram": [
+      {
+        "count": 11,
+        "pair": [
+          0,
+          7
+        ]
+      },
+      {
+        "count": 11,
+        "pair": [
+          1,
+          3
+        ]
+      },
+      {
+        "count": 11,
+        "pair": [
+          1,
+          11
+        ]
+      },
+      {
+        "count": 11,
+        "pair": [
+          3,
+          3
+        ]
+      },
+      {
+        "count": 11,
+        "pair": [
+          3,
+          7
+        ]
+      },
+      {
+        "count": 11,
+        "pair": [
+          3,
+          10
+        ]
+      },
+      {
+        "count": 11,
+        "pair": [
+          4,
+          0
+        ]
+      },
+      {
+        "count": 11,
+        "pair": [
+          4,
+          5
+        ]
+      },
+      {
+        "count": 11,
+        "pair": [
+          6,
+          4
+        ]
+      },
+      {
+        "count": 11,
+        "pair": [
+          9,
+          9
+        ]
+      },
+      {
+        "count": 11,
+        "pair": [
+          10,
+          9
+        ]
+      },
+      {
+        "count": 11,
+        "pair": [
+          10,
+          11
+        ]
+      }
+    ],
+    "ordered_task_sha256": "a9e725ea97b26f3368f04b434e0ceb53248078451c0ecba6ad2c2f68500667b8"
+  },
+  "ranking_by_median": [
+    {
+      "layout": "32x2",
+      "pairs_per_second": 0.8240526251440508
+    },
+    {
+      "layout": "30x2",
+      "pairs_per_second": 0.7988149948941909
+    },
+    {
+      "layout": "64x1",
+      "pairs_per_second": 0.7482704577995133
+    },
+    {
+      "layout": "4x16",
+      "pairs_per_second": 0.5528319373822932
+    }
+  ],
+  "repetitions": [
+    {
+      "processes": 64,
+      "threads": 1,
+      "startup_seconds": 10.416942646996176,
+      "warmup_wall_seconds": 81.48460816899751,
+      "median_pairs_per_second": 0.7482704577995133,
+      "rows": [
+        {
+          "repetition": 1,
+          "wall_seconds": 176.4068040159982,
+          "pairs_per_second": 0.7482704577995133,
+          "sum_worker_cpu_seconds": 8645.145786027,
+          "worker_cpu_parallelism": 49.006872689802705,
+          "leaf_cpu_seconds": 8650.633591,
+          "shared_user_ancestor_cpu_seconds": 8677.923079,
+          "other_session_cpu_upper_seconds": 27.289488000000347,
+          "active_workers": 64,
+          "openmp_team": 1,
+          "throttled_periods": 0,
+          "memory_events": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0
+          },
+          "swap_bytes_before": 0,
+          "swap_bytes_after": 0,
+          "all_exact": true
+        },
+        {
+          "repetition": 2,
+          "wall_seconds": 178.10089635199984,
+          "pairs_per_second": 0.7411529234480342,
+          "sum_worker_cpu_seconds": 8652.156568411,
+          "worker_cpu_parallelism": 48.580084354605475,
+          "leaf_cpu_seconds": 8654.559074,
+          "shared_user_ancestor_cpu_seconds": 8674.36305,
+          "other_session_cpu_upper_seconds": 19.80397599999924,
+          "active_workers": 64,
+          "openmp_team": 1,
+          "throttled_periods": 0,
+          "memory_events": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0
+          },
+          "swap_bytes_before": 0,
+          "swap_bytes_after": 0,
+          "all_exact": true
+        },
+        {
+          "repetition": 3,
+          "wall_seconds": 176.12015185500059,
+          "pairs_per_second": 0.7494883385558023,
+          "sum_worker_cpu_seconds": 8647.124414625,
+          "worker_cpu_parallelism": 49.097870536383375,
+          "leaf_cpu_seconds": 8649.698155,
+          "shared_user_ancestor_cpu_seconds": 8670.256556,
+          "other_session_cpu_upper_seconds": 20.55840100000023,
+          "active_workers": 64,
+          "openmp_team": 1,
+          "throttled_periods": 0,
+          "memory_events": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0
+          },
+          "swap_bytes_before": 0,
+          "swap_bytes_after": 0,
+          "all_exact": true
+        }
+      ]
+    },
+    {
+      "processes": 32,
+      "threads": 2,
+      "startup_seconds": 5.3291551410002285,
+      "warmup_wall_seconds": 41.001033370994264,
+      "median_pairs_per_second": 0.8240526251440508,
+      "rows": [
+        {
+          "repetition": 1,
+          "wall_seconds": 160.18394453500514,
+          "pairs_per_second": 0.8240526251440508,
+          "sum_worker_cpu_seconds": 8361.16496716,
+          "worker_cpu_parallelism": 52.19727227614143,
+          "leaf_cpu_seconds": 8363.480435,
+          "shared_user_ancestor_cpu_seconds": 8382.341313,
+          "other_session_cpu_upper_seconds": 18.86087800000132,
+          "active_workers": 32,
+          "openmp_team": 2,
+          "throttled_periods": 0,
+          "memory_events": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0
+          },
+          "swap_bytes_before": 0,
+          "swap_bytes_after": 0,
+          "all_exact": true
+        },
+        {
+          "repetition": 2,
+          "wall_seconds": 160.17761422799958,
+          "pairs_per_second": 0.8240851921549345,
+          "sum_worker_cpu_seconds": 8384.034982101999,
+          "worker_cpu_parallelism": 52.34211423681226,
+          "leaf_cpu_seconds": 8386.476463,
+          "shared_user_ancestor_cpu_seconds": 8404.698529,
+          "other_session_cpu_upper_seconds": 18.22206599999845,
+          "active_workers": 32,
+          "openmp_team": 2,
+          "throttled_periods": 0,
+          "memory_events": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0
+          },
+          "swap_bytes_before": 0,
+          "swap_bytes_after": 0,
+          "all_exact": true
+        },
+        {
+          "repetition": 3,
+          "wall_seconds": 162.70123392000096,
+          "pairs_per_second": 0.8113030050214829,
+          "sum_worker_cpu_seconds": 8433.330026551,
+          "worker_cpu_parallelism": 51.83322721877825,
+          "leaf_cpu_seconds": 8435.360672,
+          "shared_user_ancestor_cpu_seconds": 8457.93375,
+          "other_session_cpu_upper_seconds": 22.57307799999944,
+          "active_workers": 32,
+          "openmp_team": 2,
+          "throttled_periods": 0,
+          "memory_events": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0
+          },
+          "swap_bytes_before": 0,
+          "swap_bytes_after": 0,
+          "all_exact": true
+        }
+      ]
+    },
+    {
+      "processes": 30,
+      "threads": 2,
+      "startup_seconds": 4.961448793001182,
+      "warmup_wall_seconds": 41.5897665550001,
+      "median_pairs_per_second": 0.7988149948941909,
+      "rows": [
+        {
+          "repetition": 1,
+          "wall_seconds": 165.9480417329978,
+          "pairs_per_second": 0.7954296936650899,
+          "sum_worker_cpu_seconds": 8217.373520725,
+          "worker_cpu_parallelism": 49.51774926001445,
+          "leaf_cpu_seconds": 8220.597162,
+          "shared_user_ancestor_cpu_seconds": 8245.227269,
+          "other_session_cpu_upper_seconds": 24.630107000000862,
+          "active_workers": 30,
+          "openmp_team": 2,
+          "throttled_periods": 0,
+          "memory_events": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0
+          },
+          "swap_bytes_before": 0,
+          "swap_bytes_after": 0,
+          "all_exact": true
+        },
+        {
+          "repetition": 2,
+          "wall_seconds": 165.24476987000526,
+          "pairs_per_second": 0.7988149948941909,
+          "sum_worker_cpu_seconds": 8186.660442793,
+          "worker_cpu_parallelism": 49.54262969553155,
+          "leaf_cpu_seconds": 8188.524154,
+          "shared_user_ancestor_cpu_seconds": 8211.208016,
+          "other_session_cpu_upper_seconds": 22.683862000000772,
+          "active_workers": 30,
+          "openmp_team": 2,
+          "throttled_periods": 0,
+          "memory_events": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0
+          },
+          "swap_bytes_before": 0,
+          "swap_bytes_after": 0,
+          "all_exact": true
+        },
+        {
+          "repetition": 3,
+          "wall_seconds": 164.53716594999423,
+          "pairs_per_second": 0.8022503562515301,
+          "sum_worker_cpu_seconds": 8163.478447887999,
+          "worker_cpu_parallelism": 49.614799189923,
+          "leaf_cpu_seconds": 8165.52275,
+          "shared_user_ancestor_cpu_seconds": 8191.139052,
+          "other_session_cpu_upper_seconds": 25.61630200000036,
+          "active_workers": 30,
+          "openmp_team": 2,
+          "throttled_periods": 0,
+          "memory_events": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0
+          },
+          "swap_bytes_before": 0,
+          "swap_bytes_after": 0,
+          "all_exact": true
+        }
+      ]
+    },
+    {
+      "processes": 4,
+      "threads": 16,
+      "startup_seconds": 0.6817140860002837,
+      "warmup_wall_seconds": 7.141225471001235,
+      "median_pairs_per_second": 0.5528319373822932,
+      "rows": [
+        {
+          "repetition": 1,
+          "wall_seconds": 238.77057578299718,
+          "pairs_per_second": 0.5528319373822932,
+          "sum_worker_cpu_seconds": 7100.039491166,
+          "worker_cpu_parallelism": 29.735822631758264,
+          "leaf_cpu_seconds": 7102.323465,
+          "shared_user_ancestor_cpu_seconds": 7125.115005,
+          "other_session_cpu_upper_seconds": 22.79153999999926,
+          "active_workers": 4,
+          "openmp_team": 16,
+          "throttled_periods": 0,
+          "memory_events": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0
+          },
+          "swap_bytes_before": 0,
+          "swap_bytes_after": 0,
+          "all_exact": true
+        },
+        {
+          "repetition": 2,
+          "wall_seconds": 238.40777260300092,
+          "pairs_per_second": 0.5536732236486591,
+          "sum_worker_cpu_seconds": 6997.330374703999,
+          "worker_cpu_parallelism": 29.350261102250325,
+          "leaf_cpu_seconds": 6999.823084,
+          "shared_user_ancestor_cpu_seconds": 7022.123814,
+          "other_session_cpu_upper_seconds": 22.30072999999993,
+          "active_workers": 4,
+          "openmp_team": 16,
+          "throttled_periods": 0,
+          "memory_events": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0
+          },
+          "swap_bytes_before": 0,
+          "swap_bytes_after": 0,
+          "all_exact": true
+        },
+        {
+          "repetition": 3,
+          "wall_seconds": 238.82933657499962,
+          "pairs_per_second": 0.5526959204132279,
+          "sum_worker_cpu_seconds": 6935.306102558001,
+          "worker_cpu_parallelism": 29.038752952278564,
+          "leaf_cpu_seconds": 6937.499826,
+          "shared_user_ancestor_cpu_seconds": 6959.738228,
+          "other_session_cpu_upper_seconds": 22.23840199999995,
+          "active_workers": 4,
+          "openmp_team": 16,
+          "throttled_periods": 0,
+          "memory_events": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0
+          },
+          "swap_bytes_before": 0,
+          "swap_bytes_after": 0,
+          "all_exact": true
+        }
+      ]
+    }
+  ],
+  "timed_wall_seconds_sum": 2225.4283074199993,
+  "timed_worker_cpu_seconds_sum": 96723.14512470999,
+  "benchmark_command_elapsed_seconds": 2419.3463249206543,
+  "native_call_accounting": {
+    "reference_prepare_full_pair_calls": 12,
+    "benchmark_warmup_full_pair_calls": 130,
+    "benchmark_timed_full_pair_calls": 1584,
+    "h0_native_calls_per_full_pair": 2,
+    "foreign_native_calls_per_full_pair": 1,
+    "new_scientific_nodes": 0
+  },
+  "new_scientific_nodes": 0,
+  "production_admitted": false,
+  "full49_ready": false,
+  "physical_model_adequacy_established": false,
+  "failure_classification": {
+    "scientific_numeric_mismatch": 0,
+    "resource_gate_failure": 0,
+    "timeout_or_interrupt": 0,
+    "preflight_tooling": "system python absent and python3 had no pytest; existing NCP venv passed",
+    "fixed_adapter_defect": "H0 compiler symlink/cache handshake; completed measurement post-fix"
+  },
+  "preserved": {
+    "historical_H0_authority": true,
+    "B160_M3A": true,
+    "B192_pilot": true,
+    "six_full_pair_equality_rows": true,
+    "contaminated_M3B_record": true,
+    "bass_cr_F1_R2_not_rerun": true,
+    "BASS_HE_resume_004_not_rerun": true
+  },
+  "not_run": [
+    "z=1",
+    "z=0.5",
+    "full144",
+    "trajectory",
+    "M5",
+    "production admission",
+    "main merge",
+    "force push",
+    "other owner process kill",
+    "full scientific suite"
+  ],
+  "next_minimal_action": "Independent decision review of fixed 132-task M3B comparison; no automatic provider promotion."
+}

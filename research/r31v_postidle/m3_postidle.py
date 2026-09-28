@@ -34,8 +34,16 @@ def perform_measured_batches(measure, recheck, checkpoint, processes):
     for _ in range(3):
         recheck()
         row = measure()
-        recheck()
+        try:
+            recheck()
+        except BaseException as exc:
+            row['measurement_status'] = 'POSTCHECK_FAILED'
+            row['postcheck_failure'] = {'type': type(exc).__name__, 'message': str(exc)}
+            checkpoint(row)
+            raise
         if not row['all_exact'] or row['nr_throttled_delta'] != 0:
+            row['measurement_status'] = 'EXACTNESS_OR_THROTTLING_FAILED'
+            checkpoint(row)
             raise RuntimeError('exactness/throttling gate failed')
         row['parallelism_engaged'] = None
         if processes >= 16:
@@ -45,8 +53,11 @@ def perform_measured_batches(measure, recheck, checkpoint, processes):
                 and row['effective_cpu_parallelism'] is not None
                 and row['effective_cpu_parallelism'] > 4)
             if not row['parallelism_engaged']:
+                row['measurement_status'] = 'WORKER_ENGAGEMENT_FAILED'
+                checkpoint(row)
                 raise RuntimeError('worker engagement gate failed')
         row['cgroup_cpu_scope'] = 'SHARED_ANCESTOR_UNLESS_SEPARATELY_VERIFIED'
+        row['measurement_status'] = 'RESOURCE_CHECKS_PASSED_REVIEW_REQUIRED'
         rows.append(row)
         checkpoint(row)
     return rows
@@ -99,15 +110,26 @@ def _numeric_context(c, m3, h0mod, h0, seed, built, grid):
 
 def _require_existing_h0_cache(h0mod, cache):
     """Prevent the benchmark's ordinary setup path from compiling a missing H0."""
-    compiler = shutil.which('g++')
-    if compiler is None:
+    compiler_name = shutil.which('g++')
+    if compiler_name is None:
         raise RuntimeError('system compiler identity cannot be checked')
+    compiler = str(Path(compiler_name).resolve())
     spec = {'sources': h0mod.verify_sources(), 'flags': h0mod.FLAGS,
             'compiler_version':subprocess.run([compiler,'--version'],capture_output=True,text=True,check=True).stdout}
     key = hashlib.sha256(json.dumps(spec,sort_keys=True).encode()).hexdigest()
     folder = Path(cache).resolve()/key
     if not (folder/'h0.so').is_file() or not (folder/'BUILD.json').is_file():
         raise RuntimeError('H0 build cache missing; perform explicit preparation first')
+
+
+def _verify_foreign_build(c, built):
+    for relative, recorded in built['identity']['sources'].items():
+        if c.sha256(ROOT/'native'/relative) != recorded:
+            raise RuntimeError('foreign build source drift: '+relative)
+    for name in ('reference', 'candidate'):
+        library = built['libraries'][name]
+        if c.sha256(Path(library['path'])) != library['sha256']:
+            raise RuntimeError('foreign build binary drift: '+name)
 
 
 def main(argv=None):
@@ -165,6 +187,7 @@ def main(argv=None):
         built = json.loads(args.build.read_text())
         if built['identity']['flags'][-3:] != ['-fno-fast-math','-ffp-contract=off','-fopenmp']:
             raise RuntimeError('strict foreign flags absent')
+        _verify_foreign_build(c,built)
         if args.phase == 'benchmark':
             _require_existing_h0_cache(h0mod,args.h0_cache)
         h0 = h0mod.H0Authority(args.h0_cache)
@@ -242,7 +265,13 @@ def main(argv=None):
                 rec['warmup']=m3.batch(pool,warm_tasks,expected,groups,threads,Path(initial['cgroup_path']))
                 recheck();c.atomic_json(args.out,state)
                 def measure():
-                    return m3.batch(pool,tasks,expected,groups,threads,Path(initial['cgroup_path']))
+                    ancestors = [Path(a['path']) for a in initial['ancestors']]
+                    before = {str(path):m3.cgroup_snapshot(path)['cpu_stat'] for path in ancestors}
+                    row = m3.batch(pool,tasks,expected,groups,threads,Path(initial['cgroup_path']))
+                    after = {str(path):m3.cgroup_snapshot(path)['cpu_stat'] for path in ancestors}
+                    row['ancestor_cpu_deltas'] = {path:m3.delta(before[path],after[path]) for path in before}
+                    row['ancestor_cpu_scope'] = 'VISIBLE_ANCESTORS_SHARED_WITH_OTHER_SESSIONS'
+                    return row
                 def checkpoint(row):
                     rec['repetitions'].append(row);c.atomic_json(args.out,state)
                 perform_measured_batches(measure,recheck,checkpoint,processes)
