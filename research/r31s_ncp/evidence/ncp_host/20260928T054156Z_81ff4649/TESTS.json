@@ -49,8 +49,23 @@
       "command": "python3 -m json.tool research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_EQUIVALENCE.json >/dev/null",
       "exit_code": 0,
       "result": "valid JSON"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31s_ncp/m2_tuning.py --build /root/wu088_hh_ncp_work_v2/BUILD_STDOUT.json --probe research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/HOST_PROBE.json --out research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_TUNING.json --repeats 3",
+      "exit_code": 0,
+      "result": "39 exact/affinity-valid rows"
+    },
+    {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q research/r31s_ncp/tests/test_authority_seed.py research/r31s_ncp/tests/test_ncp_probe.py research/r31s_ncp/tests/test_ncp_build.py research/r31s_ncp/tests/test_m2_bridge.py research/r31s_ncp/tests/test_m2_tuning.py tests/test_native.py",
+      "exit_code": 0,
+      "result": "46 passed in 5.62s"
+    },
+    {
+      "command": "python3 -m json.tool research/r31s_ncp/evidence/ncp_host/20260928T054156Z_81ff4649/M2_TUNING.json >/dev/null",
+      "exit_code": 0,
+      "result": "valid JSON"
     }
   ],
   "schema": "WU088_R31S_NCP_TESTS_V1",
-  "status": "M2_EQUIVALENCE_CLOSED"
+  "status": "M2_TUNING_CLOSED"
 }
