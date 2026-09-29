@@ -1,0 +1,67 @@
+{
+  "schema": "WU088_R31AB_AUTHORIZATION_GATE_RETURN_V1",
+  "reviewed_remote": {
+    "branch": "research/r31ab-z1-decision-20260929",
+    "commit": "d44fdb4102553c36d8ccdd1b69fbc8ed386edcc7",
+    "tree": "85c79fd7b6f8544657e588d83f0eaee3a6f9cc03",
+    "successor_to_prior_preflight": true,
+    "diff_from": "2ebdd94325b54125d95578860fd16042c3fea514",
+    "added_files": [
+      "research/r31ab_z1_decision/AUTHORIZATION_DECISION_V2.json",
+      "research/r31ab_z1_decision/AUTHORIZATION_RECOMMENDATION_KO.md",
+      "research/r31ab_z1_decision/CODEX_HANDOFF_AUTHORIZATION_KO.md",
+      "research/r31ab_z1_decision/SCISPACE_VALIDATION_DESIGN.json",
+      "research/r31ab_z1_decision/WOLFRAM_INFORMATION_BOUND.json"
+    ]
+  },
+  "authorization": {
+    "required_token": "AUTHORIZE_Z1_MINIMAL_MIXED_NODE",
+    "token_mentioned_as_condition_in_current_request": true,
+    "explicit_execution_grant_in_current_request": false,
+    "DECISION_execution_authorized": false,
+    "AUTHORIZATION_DECISION_V2_execution_authorized": false,
+    "classification": "NO_EXPLICIT_SCIENCE_NODE_AUTHORIZATION"
+  },
+  "Z1_EXECUTION_STATUS": "AWAITING_EXPLICIT_AUTHORIZATION",
+  "preflight": {
+    "command_file": "GATE_PREFLIGHT.command",
+    "stdout_file": "GATE_PREFLIGHT.stdout",
+    "stderr_file": "GATE_PREFLIGHT.stderr",
+    "exit_code": 0,
+    "result_file": "GATE_PREFLIGHT.json",
+    "all_identity_checks_pass": true,
+    "prior_r31ab_focused_test_replay": "research/r31ab_z1_decision/ncp_followup_20260929/RETURN.json; 3 PASS and replay exit0; no dependency or source changes, not rerun"
+  },
+  "preregistration_sha256": "803b0968bd7f1fab41310469578b455ef03a64aae5beac1f23c1bab8afa19ddb",
+  "R31Z_model_source_sha256": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034",
+  "R31AA_model_source_sha256": "f24d2acc0506e97dbefea107c126e53891d9879311aad60b9dd3b8e9a1be05d5",
+  "prereg_model_metric_rule_sha256": "68b0d4c4b80443f374b9c49fa4c1737a8e2f39ed6b06f7340d052aa8c7c537b6",
+  "comparison_tolerance": 1e-10,
+  "science_producer_commands": [],
+  "science_node_count": 0,
+  "direct_z1_output_identity": null,
+  "direct_z1_output_accessed": false,
+  "primary_secondary_direct_errors": null,
+  "frozen_decision_rule_verdict": "NOT_EVALUATED_NO_DIRECT_Z1_NODE",
+  "independence_status": "NOT_EVALUATED_NO_DIRECT_Z1_NODE",
+  "z3_status": "POST_HOC_TUNING_DATA_NOT_INDEPENDENT_CONFIRMATION",
+  "claim_ceiling": {
+    "interval_wide_accuracy_admitted": false,
+    "transition_error_admitted": false,
+    "trajectory_admitted": false,
+    "full_cell_admitted": false,
+    "H_skip_admitted": false,
+    "production_admitted": false
+  },
+  "fixed_Q": "FIXED_Q_MODEL_DEFINITION_ESTABLISHED; dotQ=0 BY_MODEL_DEFINITION; complete-HH physical invariance unreviewed",
+  "remaining_gates": {
+    "full_cell": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false
+  },
+  "mutation_scope": "new authorization-gate preflight evidence only; existing raw/source/worktree/provider backups preserved",
+  "RESTORE_VERIFIED": false,
+  "stop_condition": "no explicit grant: preflight return only"
+}

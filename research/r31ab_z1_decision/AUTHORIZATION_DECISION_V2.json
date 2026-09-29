@@ -1,0 +1,51 @@
+{
+  "schema": "WU088_R31AB_AUTHORIZATION_RECOMMENDATION_V2",
+  "parent_commit": "2ebdd94325b54125d95578860fd16042c3fea514",
+  "parent_tree": "892e702b3460070c61887b85a9fd3a373da43a9c",
+  "scientific_recommendation": "RECOMMEND_AUTHORIZE_MINIMAL_Z1_MIXED_NODE",
+  "execution_authorized": false,
+  "required_explicit_token": "AUTHORIZE_Z1_MINIMAL_MIXED_NODE",
+  "information_basis": {
+    "K_model_separation_per_ta": 0.2165779475378074,
+    "Dmax_model_separation_per_ta": 0.21927766897126583,
+    "K_truth_independent_half_gap_per_ta": 0.1082889737689037,
+    "Dmax_truth_independent_half_gap_per_ta": 0.10963883448563291,
+    "comparison_tolerance": 1e-10,
+    "K_separation_over_tolerance": 2165779475.378074,
+    "Dmax_separation_over_tolerance": 2192776689.7126584,
+    "winner_prediction": false
+  },
+  "independence": {
+    "z3_for_R31AA": "POST_HOC_TUNING_DATA_NOT_INDEPENDENT_CONFIRMATION",
+    "z1_existing_equivalent_direct_node": "NOT_FOUND_IN_PARENT_CP4_INVENTORY",
+    "z1_preregistration_locked_before_output": true
+  },
+  "minimal_scope": {
+    "z_a0": 1.0,
+    "time_ta": 2.2358772390338113,
+    "radial_order": 192,
+    "required": [
+      "mixed_O_47x2",
+      "mixed_D_col_47x2",
+      "mixed_D_row_2x47",
+      "independent_mixed_dotO_47x2"
+    ],
+    "forbidden": [
+      "H",
+      "neutral47",
+      "ionic2",
+      "full49",
+      "trajectory",
+      "any_other_z_node"
+    ]
+  },
+  "post_result_rule": "evaluate frozen preregistered E_K/E_Dmax Pareto rule once and stop; no retuning or second validation node",
+  "claim_ceiling": {
+    "interval_wide_accuracy": false,
+    "trajectory_accuracy": false,
+    "transition_error_bound": false,
+    "full_cell_admission": false,
+    "H_skip": false,
+    "production": false
+  }
+}

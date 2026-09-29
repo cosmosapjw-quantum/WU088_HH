@@ -1,0 +1,26 @@
+{
+  "schema": "WU088_R31AB_Z1_DECISION_V1",
+  "parent_commit": "0566c65655128f0fffb3794860af23b2c3d1fe66",
+  "parent_tree": "f2638642d85410185beca0a881e0db853adb826a",
+  "decision": "RECOMMEND_AUTHORIZE_MINIMAL_Z1_MIXED_NODE",
+  "execution_authorized": false,
+  "reason_execution_still_false": "current user request asks for research loop and handoff but does not explicitly flip the preregistered execution_authorized=false science-node gate",
+  "information_basis": {
+    "z1_model_separation_K_per_ta": 0.2165779475378074,
+    "z1_model_separation_Dmax_per_ta": 0.21927766897126583,
+    "truth_independent_half_gap_K_per_ta": 0.1082889737689037,
+    "truth_independent_half_gap_Dmax_per_ta": 0.10963883448563291,
+    "comparison_tolerance": 1e-10,
+    "existing_equivalent_z1_mixed_node": "NOT_FOUND_IN_PARENT_CP4_INVENTORY"
+  },
+  "minimal_scope": {
+    "z_a0": 1.0,
+    "time_ta": 2.2358772390338113,
+    "radial_order": 192,
+    "required": ["mixed_O_47x2", "mixed_D_col_47x2", "mixed_D_row_2x47", "independent_mixed_dotO_47x2"],
+    "forbidden": ["H", "neutral47", "ionic2", "full49", "trajectory"]
+  },
+  "post_execution_stop": "compare frozen models with preregistered Pareto rule and return; do not retune or auto-create another node",
+  "full_cell_status": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+  "fixed_Q_status": "FIXED_Q_MODEL_DEFINITION_ESTABLISHED_PHYSICAL_INVARIANCE_UNREVIEWED"
+}
