@@ -1,0 +1,111 @@
+{
+  "schema": "WU088_R31W_NCP_LIGHT_REPLAY_RETURN_V1",
+  "status": "FOCUSED_REPLAY_PASS__AUTHORITY_INPUT_BLOCKED",
+  "reviewed_head": "2442d94e30a29e586927758f0537114d88bd9fe5",
+  "reviewed_tree": "324871aeac9ef8f17d11a6b1a7a66fe9f91c9019",
+  "executed_head": "2442d94e30a29e586927758f0537114d88bd9fe5",
+  "executed_tree": "324871aeac9ef8f17d11a6b1a7a66fe9f91c9019",
+  "parent_head": "b05db60ff8db75ed6bb2497bffea8b87f57617be",
+  "parent_tree": "f90e638d3a33a2dcf5a44b32ab77dc1e03111f7e",
+  "snapshot": {
+    "archive": {
+      "provider": "Google Drive",
+      "object_id": "1Cr3BQN_uoZPNWeP2O-gmDGYvTw_Kjq-7",
+      "path": "WU088_HH_R31W_METRIC_CELL_20260929_v1.zip",
+      "sha256": "4d0638a856e0bd2cf3f8a371b82167d34964d6ed92a37c1ad2b8014303ba5c32",
+      "bytes": 149858
+    },
+    "member": "overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+    "extraction_root": "/root/WU088_R31W_INPUT_20260929",
+    "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+    "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+    "bytes": 71481,
+    "source_commit": "NOT_IN_GIT_ARCHIVED_R31U_SUBSET"
+  },
+  "environment": {
+    "python_executable": "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pytest": "9.1.1",
+    "openblas_num_threads": "1",
+    "omp_num_threads": "1",
+    "pythonpycacheprefix": "/root/WU088_R31W_RUN_20260929.jgagtc/pycache",
+    "host": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39"
+  },
+  "run_directory": "/root/WU088_R31W_RUN_20260929.jgagtc",
+  "commands": {
+    "COMPILE": {
+      "command_file": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31w_metric_cell/ncp_replay_20260929/COMPILE.command",
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m py_compile research/r31w_metric_cell/metric_cell.py research/r31w_metric_cell/replay_snapshot.py research/r31w_metric_cell/test_metric_cell.py research/r31w_metric_cell/test_replay_snapshot.py",
+      "exit": 0,
+      "stdout_stderr_file": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31w_metric_cell/ncp_replay_20260929/COMPILE.log"
+    },
+    "TESTS": {
+      "command_file": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31w_metric_cell/ncp_replay_20260929/TESTS.command",
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q -p no:cacheprovider research/r31w_metric_cell/test_metric_cell.py research/r31w_metric_cell/test_replay_snapshot.py --junitxml=/root/WU088_R31W_RUN_20260929.jgagtc/TESTS.xml",
+      "exit": 0,
+      "stdout_stderr_file": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31w_metric_cell/ncp_replay_20260929/TESTS.log"
+    },
+    "REPLAY": {
+      "command_file": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31w_metric_cell/ncp_replay_20260929/REPLAY.command",
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31w_metric_cell/replay_snapshot.py --input /root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz --out /root/WU088_R31W_RUN_20260929.jgagtc/POINT_REPLAY.json",
+      "exit": 0,
+      "stdout_stderr_file": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31w_metric_cell/ncp_replay_20260929/REPLAY.log"
+    }
+  },
+  "junit": {
+    "path": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31w_metric_cell/ncp_replay_20260929/TESTS.xml",
+    "tests": 33,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 33
+  },
+  "point_replay": {
+    "path": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31w_metric_cell/ncp_replay_20260929/POINT_REPLAY.json",
+    "hybrid_eta_per_ta": 0.6007169417167523,
+    "hybrid_signed_extremes_per_ta": [
+      -0.4831184527967166,
+      0.6007169417167519
+    ],
+    "witness_rate_per_ta": 0.6007169417167527,
+    "witness_relative_eigen_residual": 3.21218978042749e-16,
+    "direct_eta_per_ta": 1.9882948883277214e-14,
+    "max_raw_entry_defect": 0.248069740331951,
+    "neutral_point_dotO_max_entry_per_ta": 0.05039674748828803,
+    "max_eta_frame_difference": 2.6645352591003757e-15,
+    "max_residual_frame_covariance_gap": 1.1751493684537895e-14,
+    "certified": false
+  },
+  "ionic2x2": {
+    "uniform_eta_numeric": 0.03680954714134556,
+    "lower_log_norm_rate": -0.020444583569093948,
+    "upper_log_norm_rate": 0.03680954714134556,
+    "minimum_endpoint_overlap_eigenvalue": 0.7141697311759605,
+    "certified": false,
+    "full_HH_interval_bound": false
+  },
+  "cell_applicability": {
+    "path": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31w_metric_cell/ncp_replay_20260929/CELL_APPLICABILITY.json",
+    "status": "AUTHORITY_INPUT_BLOCKED"
+  },
+  "source_mutation_scope": "ADDITIVE_REPLAY_EVIDENCE_ONLY; no R31W scripts, R31V runner, frozen sources, historical evidence or raw arrays changed",
+  "reproducible_new_script_bug_found": false,
+  "independent_review_admitted": false,
+  "historical_BR01_BR02": "OPEN",
+  "old_NCP134_reused_as_new_pass": false,
+  "unverified": [
+    "physical full25/49 HH interval bound",
+    "physical source affineness",
+    "whole-cell common rank and coordinate/phase contract",
+    "source-error and interval-arithmetic enclosure",
+    "physical transition error",
+    "raw remote restore"
+  ],
+  "native_evaluations": 0,
+  "new_heavy_scientific_nodes": 0,
+  "HH_trajectory": 0,
+  "production_admitted": false,
+  "H_skip_admitted": false
+}
