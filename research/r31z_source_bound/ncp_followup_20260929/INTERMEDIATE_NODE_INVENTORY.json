@@ -1,0 +1,76 @@
+{
+  "schema": "WU088_R31Z_INTERMEDIATE_NODE_INVENTORY_V1",
+  "verdict": "EXISTING_WITHHELD_DIRECT_Z3_AVAILABLE",
+  "archive": {
+    "path": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+    "sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+    "bytes": 267704906
+  },
+  "search_scope": {
+    "recovered_CP4_archive_members": 9695,
+    "provider_backups": "Drive and Dropbox R31Z and parent backup folder listings checked; positive original member is in local recovered CP4 archive",
+    "z1_member_found_in_CP4": false,
+    "z3_member_found_in_CP4": true
+  },
+  "node": {
+    "z_a0": 3.0,
+    "time_ta": 6.707631717101434,
+    "radial_order": 192,
+    "fit_nodes_z_a0": [
+      0,
+      2,
+      4
+    ],
+    "used_in_fit": false,
+    "O_D_source": {
+      "member": "completion/mixed_h/od/B192_z3/ASSEMBLED_OD.npz",
+      "sha256": "47f41c15aba4fc3eb4e9a6b6f08202067cf525503a87431035ee692990b553af",
+      "bytes": 12207
+    },
+    "independent_dotO_source": {
+      "member": "completion/mixed_derivative/B192_z3/ASSEMBLED.npz",
+      "sha256": "9223dfea7956a58a70595ab25dda457be64b966ce247830e5c12a73d87515661",
+      "bytes": 50568
+    },
+    "OD_identity": {
+      "member": "completion/mixed_h/od/B192_z3/IDENTITY.json",
+      "sha256": "500991e28dd8eed4c96ee8f4fb1c8b4feed05a36f06403f37ae7bfba72b5a04c",
+      "bytes": 867
+    },
+    "JVP_identity": {
+      "member": "completion/mixed_derivative/B192_z3/IDENTITY.json",
+      "sha256": "8512e3e0cae4a206986c2c13862c51bd74c629e7c77bd7e7a66d176ed2563b92",
+      "bytes": 702
+    },
+    "joint_bridge": {
+      "member": "completion/mixed_h/od/B192_z3/BRIDGE.json",
+      "sha256": "79e892434ef108562f8aa4228d321cec2d914328990064ac7d99338b70f3ab02",
+      "bytes": 19676
+    },
+    "producer_sources": [
+      {
+        "member": "completion/mixed_h/od_run.py",
+        "sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+        "lines": "21-39: frozen 47 channel order, tau=z/v, phase_E, O/D assembly"
+      },
+      {
+        "member": "completion/mixed_derivative/run.py",
+        "sha256": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+        "lines": "6-11,17-31,50-51: same registry/grid and independent analytic dotO in 1/t_a"
+      }
+    ],
+    "fields": {
+      "O": "47x2, both OD and independent JVP",
+      "D_col": "47x2 OD",
+      "D_row": "2x47 OD",
+      "independent_dotO": "47x2 JVP"
+    },
+    "same_producer_contract": true,
+    "basis_order_phase": "source-bound: both use same frozen n192 grid, 47 channel registry, z=3, tau=z/v, phase_E; BRIDGE binds both array member hashes and reports metric/overlap PASS",
+    "bridge_independent_overlap_max": 3.995446421313683e-19,
+    "bridge_metric_residual_max": 2.8578670718049893e-19
+  },
+  "comparison_file": "WITHHELD_Z3_COMPARISON.json",
+  "new_node_computation": false,
+  "out_of_sample_interpretation": "one withheld point comparison; no interval accuracy/admission threshold preregistered"
+}
