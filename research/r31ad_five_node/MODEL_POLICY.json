@@ -1,0 +1,45 @@
+{
+  "schema": "WU088_R31AD_MODEL_POLICY_V1",
+  "parent_commit": "82d3d076dc229c20236747738f0ed14861a1b741",
+  "training_nodes": {
+    "z0": "TRAINING",
+    "z1": "PRIOR_INDEPENDENT_VALIDATION_CONSUMED_AS_R31AD_TRAINING",
+    "z2": "TRAINING",
+    "z3": "PRIOR_POST_HOC_TUNING_CONSUMED_AS_R31AD_TRAINING",
+    "z4": "TRAINING"
+  },
+  "independent_validation_points": [],
+  "model": {
+    "name": "R31AD_FIVE_NODE_UNIT_CELL_CUBIC_O_LINEAR_K",
+    "cells": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "O": "piecewise cubic Hermite using endpoint O,dotO",
+    "K": "piecewise linear endpoint K=(D_col-D_row^dagger)/2",
+    "D_col": "dotO/2+K",
+    "D_row_dagger": "dotO/2-K",
+    "continuity": "O C1; K and D continuous at internal integer nodes",
+    "metric_compatibility": "algebraic identity in every cell"
+  },
+  "claims": {
+    "validated_between_nodes": false,
+    "interval_wide_accuracy": false,
+    "physical_transition_error": false,
+    "production": false
+  }
+}
