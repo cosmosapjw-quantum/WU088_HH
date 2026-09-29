@@ -1,0 +1,81 @@
+{
+  "schema": "WU088_R31X_MIXED_FRAME_AUTHORITY_V1",
+  "status": "MIXED_FRAME_AUTHORITY_BLOCKED",
+  "reviewed_commit": "9ee51598c3c279dfd9e726255f386198e1d31c07",
+  "snapshot": {
+    "path": "/root/WU088_R31X_INPUT_20260929/EXISTING_METRIC_INPUTS.npz",
+    "bytes": 71481,
+    "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+    "archive_object_id": "1Cr3BQN_uoZPNWeP2O-gmDGYvTw_Kjq-7",
+    "archive_sha256": "4d0638a856e0bd2cf3f8a371b82167d34964d6ed92a37c1ad2b8014303ba5c32",
+    "member": "overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+    "r31x_inherited_archive_sha256": "4d0638a856e0bd2cf3f8a371b82167d34964d6ed92a37c1ad2b8014303ba5c32",
+    "r31x_companion_object_id": "1sapWHjvmCa1zl11JXdp1Tt59DpB7mGDK",
+    "r31x_companion_sha256": "858aaa0961e278b82e6de0b6e9130498186af022aa209c982adf8ce5bda6f8fe"
+  },
+  "evidence": [
+    {
+      "path": "/root/WU088_R31X_INPUT_20260929/EXISTING_METRIC_INPUTS.npz",
+      "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+      "source_commit": "ARCHIVE_ONLY",
+      "read_scope": "z0/z4 mixed O,D,j_dotO array names/shapes; direct z2 O,D,dotO"
+    },
+    {
+      "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/SOURCE_MANIFEST_R31U.json",
+      "sha256": "8959e3761582f3ca50c59eb21d1a990b0151f147056dee1f31de071a067131c0",
+      "source_commit": "ARCHIVE_ONLY",
+      "read_scope": "R31U upstream source archive identities and array shapes"
+    },
+    {
+      "path": "/root/WU088_HH_R31X_REPLAY_20260929/research/r31x_subspace_witness/replay_snapshot.py",
+      "sha256": "771d29a70c27637b9dd60a6f7801d5096abefc8b6310a9fb0e4b184d68126eee",
+      "source_commit": "9ee51598c3c279dfd9e726255f386198e1d31c07",
+      "read_scope": "lines 17-71: construction and secant comparison"
+    },
+    {
+      "path": "/root/WU088_HH_R31X_REPLAY_20260929/research/r31w_metric_cell/ncp_replay_20260929/CELL_APPLICABILITY.json",
+      "sha256": "bd92a69d227a7e621c8c71069c0fa9989942dfd4c86730fbe0235ebd499ee268",
+      "source_commit": "6cb5d023f80301ba3efad4f1af1d25c327600f15",
+      "read_scope": "fields basis_ordering_phase and dotO_actual"
+    },
+    {
+      "path": "/root/WU088_R31X_INPUT_20260929/COMPANION.zip",
+      "sha256": "858aaa0961e278b82e6de0b6e9130498186af022aa209c982adf8ce5bda6f8fe",
+      "source_commit": "ARCHIVE_ONLY",
+      "read_scope": "24-member listing and inherited R31W archive"
+    }
+  ],
+  "upstream_candidates_from_manifest": [
+    {
+      "name": "WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+      "role": "candidate z0 upstream archive; exact member/producer mapping unverified"
+    },
+    {
+      "name": "R31P_OD192_z4_NODE_SEAL.zip",
+      "sha256": "1aee5abdf6bfc0993b5a32dc1a8b8f22c19b26c2ec5795064b03bd0ad860d8e2",
+      "role": "candidate z4 O,D upstream archive; exact member/producer mapping unverified"
+    },
+    {
+      "name": "R31P_JVP192_z4_NODE_SEAL.zip",
+      "sha256": "4a57ead0b4a5f6a9462a7f42585b718a74264991ff648dc7b521d62ac1db555a",
+      "role": "candidate z4 derivative upstream archive; exact j_dotO definition unverified"
+    }
+  ],
+  "available": {
+    "archived_z0_z4_mixed_shapes": "O,D,j_dotO each 47x2",
+    "velocity_a0_per_ta": 0.4472517464474613,
+    "endpoint_dt_ta": 8.943508956135245,
+    "secant_minus_z0_j_dotO_2norm": 0.5495713714162325,
+    "secant_minus_z4_j_dotO_2norm": 0.33156843070467085,
+    "decomposition_closure_2norm": 5.913014929342496e-17
+  },
+  "missing": {
+    "z0_z4_actual_producer_and_member": "missing",
+    "endpoint_basis_order_phase_gauge": "missing",
+    "canonical_z0_to_z4_identification_transport": "missing",
+    "j_dotO_definition_and_units": "missing",
+    "direct_z2_vs_endpoint_common_coordinate_field": "missing"
+  },
+  "verdict": "Secant/derivative mismatch is conditional within archived array representation; physical source nonaffineness is not established. No transport or dephasing fit performed."
+}

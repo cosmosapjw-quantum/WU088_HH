@@ -1,0 +1,79 @@
+{
+  "schema": "WU088_R31X_Q_AUTHORITY_V1",
+  "status": "Q_AUTHORITY_BLOCKED",
+  "reviewed_commit": "9ee51598c3c279dfd9e726255f386198e1d31c07",
+  "snapshot": {
+    "path": "/root/WU088_R31X_INPUT_20260929/EXISTING_METRIC_INPUTS.npz",
+    "bytes": 71481,
+    "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+    "archive_object_id": "1Cr3BQN_uoZPNWeP2O-gmDGYvTw_Kjq-7",
+    "archive_sha256": "4d0638a856e0bd2cf3f8a371b82167d34964d6ed92a37c1ad2b8014303ba5c32",
+    "member": "overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+    "r31x_inherited_archive_sha256": "4d0638a856e0bd2cf3f8a371b82167d34964d6ed92a37c1ad2b8014303ba5c32",
+    "r31x_companion_object_id": "1sapWHjvmCa1zl11JXdp1Tt59DpB7mGDK",
+    "r31x_companion_sha256": "858aaa0961e278b82e6de0b6e9130498186af022aa209c982adf8ce5bda6f8fe"
+  },
+  "evidence": [
+    {
+      "path": "/root/WU088_R31X_INPUT_20260929/EXISTING_METRIC_INPUTS.npz",
+      "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+      "source_commit": "ARCHIVE_ONLY",
+      "read_scope": "direct_Q array bytes/shape/support and numerical Gram checks"
+    },
+    {
+      "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/SOURCE_MANIFEST_R31U.json",
+      "sha256": "8959e3761582f3ca50c59eb21d1a990b0151f147056dee1f31de071a067131c0",
+      "source_commit": "ARCHIVE_ONLY",
+      "read_scope": "source archive names, hashes, array shapes"
+    },
+    {
+      "path": "/root/WU088_HH_R31X_REPLAY_20260929/research/r31x_subspace_witness/replay_snapshot.py",
+      "sha256": "771d29a70c27637b9dd60a6f7801d5096abefc8b6310a9fb0e4b184d68126eee",
+      "source_commit": "9ee51598c3c279dfd9e726255f386198e1d31c07",
+      "read_scope": "lines 17-28 and 88-98"
+    },
+    {
+      "path": "/root/WU088_HH_R31X_REPLAY_20260929/docs/research/MATHEMATICS.md",
+      "sha256": "10d9ffb50638c7ad30e2a09dffe975929fc58e9f2653b0bb1071a37b01f1ea2b",
+      "source_commit": "9ee51598c3c279dfd9e726255f386198e1d31c07",
+      "read_scope": "lines 1-8"
+    },
+    {
+      "path": "/root/WU088_R31X_INPUT_20260929/COMPANION.zip",
+      "sha256": "858aaa0961e278b82e6de0b6e9130498186af022aa209c982adf8ce5bda6f8fe",
+      "source_commit": "ARCHIVE_ONLY",
+      "read_scope": "24-member listing and inherited R31W member"
+    }
+  ],
+  "upstream_source_candidate": {
+    "path_in_R31U_manifest": "/mnt/data/r31u_research/prior/WU088_HH_R31S_NCP_20260928/evidence/z2/R31S_FULL49_z2.npz",
+    "sha256_in_manifest": "e8ee6796082063f04d7754e6917dafa4fc978371d3f4e0a44d64e990e5f6d8da",
+    "bytes_in_manifest": 86445,
+    "producer_source_commit": "NOT_ESTABLISHED",
+    "raw_archive_present_in_inspected_companion_or_inherited_archive": false
+  },
+  "numerical_observations": {
+    "Q_shape": [
+      49,
+      25
+    ],
+    "Q_dtype": "float64",
+    "Q_array_sha256": "b2bf9b50e1f1c2dfd136868ea206bf145f49689a88737707a8f0e15fdc2954e2",
+    "rank": 25,
+    "euclidean_gram_minus_I_2norm": 2.220446049250313e-16,
+    "direct_O_gram_minus_I_2norm": 1.5880465204526686,
+    "column_support": "column 0 singleton row 0; columns 1-23 pair rows i,i+23; column 24 pair rows 47,48",
+    "interpretation": "Numerical Euclidean orthonormal columns at this snapshot; not O-orthonormal for stored direct_O. Pair pattern does not by itself establish physical labels or selection rule."
+  },
+  "authority_fields": {
+    "Q_generation_code": "missing",
+    "source_commit": "missing",
+    "column_physical_meaning": "missing",
+    "basis_channel_ordering": "missing",
+    "O_orthonormalization_rule": "missing; observed direct_O Gram differs from I",
+    "rank_selection_threshold_tolerance": "missing",
+    "valid_z_domain": "ambiguous; only z2 Q stored"
+  },
+  "witness_channel_map_created": false,
+  "claim_ceiling": "Lifted algebraic witness only; no physical/channel component labels inferred."
+}
