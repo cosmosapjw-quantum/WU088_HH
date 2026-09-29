@@ -1,0 +1,110 @@
+{
+  "schema": "WU088_R31Z_FULLCELL_EXISTING_AUTHORITY_V1",
+  "verdict": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+  "archive": {
+    "path": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+    "sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+    "bytes": 267704906
+  },
+  "read_only_scope": {
+    "full_model_NEUTRAL47_npz_members": [
+      "completion/full_model/z0_candidate_v3_final/NEUTRAL47.npz",
+      "completion/full_model/z0_candidate_v3_retry1/NEUTRAL47.npz",
+      "completion/full_model/z0_candidate_v3_review/NEUTRAL47.npz",
+      "completion/full_model/z0_reference_v2_admitted/NEUTRAL47.npz",
+      "completion/full_model/z0_v1/NEUTRAL47.npz",
+      "completion/full_model/z0_v2/NEUTRAL47.npz"
+    ],
+    "full_model_z4_endpoint_members": [],
+    "source_scan": "completion/ and issue_resolution/neutral_derivative/ .py/.md excluding deps and pycache",
+    "source_files_scanned": 200,
+    "dotQ_Qdot_Qz_transport_literal_hits": []
+  },
+  "neutral47": {
+    "status": "CONTINUOUS_SOURCE_AVAILABLE_EXISTING_Z0_ARRAY_AVAILABLE_Z4_ARRAY_MISSING",
+    "z0_array": {
+      "member": "completion/full_model/z0_v2/NEUTRAL47.npz",
+      "sha256": "119c7a9a229d299c220a821d273e2a4ecc0dcf43b5768746b70bb29614ba1744",
+      "bytes": 53400
+    },
+    "z0_report": {
+      "member": "completion/full_model/z0_v2/NEUTRAL47.json",
+      "sha256": "52db195c1eaaabc8d8199137da07a03f71dfbfb9057b7debee0ed1bb570a96c6",
+      "bytes": 1206
+    },
+    "z0_fields": [
+      "O",
+      "H",
+      "D",
+      "dotO",
+      "independent_O",
+      "z",
+      "tau",
+      "phase_E",
+      "channels",
+      "orbitals"
+    ],
+    "continuous_source": {
+      "member": "completion/full_model/neutral_worker.py",
+      "sha256": "c93597f34574add43a3d522afc3d7f4c1f005ef88f0d64384864ccf2d22d7aae",
+      "bytes": 3870
+    },
+    "independent_derivative_source": {
+      "member": "issue_resolution/neutral_derivative/analytic_neutral.py",
+      "sha256": "21f8eb03bc81139d9ee31a255a01f7eaa04e2aea295935055086814b37dda97d",
+      "bytes": 4864
+    },
+    "source_lines": {
+      "completion/full_model/neutral_worker.py": "20-26 finite z and frozen digest; 35-49 frozen registry, tau=z/v, O/H/D and independent dotO; 50-59 bridge and output",
+      "issue_resolution/neutral_derivative/analytic_neutral.py": "85-101 independent derivative formula and phase"
+    },
+    "z4_array_status": "missing in inspected recovered CP4 full_model members",
+    "continuous_source_execution": "not run: would compute new scientific array"
+  },
+  "time_dependent_subspace": {
+    "status": "MISSING",
+    "frozen_Q": "completion/full_model/assemble_v3.py:251-256 projects with model[Q] after raw guards; completion/full_curve/integrate.py:49-59 demands model Q",
+    "dotQ_or_Qz_source": "not found in bounded source scan",
+    "declared_s0_inversion_sector_map": "source-bound in parent R31Y; no complete-HH adequacy or transport admission"
+  },
+  "neutral_H_bridge": {
+    "status": "PARTIAL_SOURCE_LEVEL_ONLY",
+    "basis_order_phase_source": "completion/full_model/neutral_worker.py:35-45 and completion/full_model/assemble_v3.py:244-256",
+    "z0_actual_full49": "archived z0 NODE variants only",
+    "z4_full49_and_neutral_H_endpoint": "missing in inspected recovered CP4 full_model members",
+    "admitted_z0_to_z4_bridge": "not established"
+  },
+  "intended_full49_provider_contract": {
+    "status": "SOURCE_AVAILABLE_INPUTS_NOT_COMPLETE",
+    "assembly": {
+      "member": "completion/full_model/assemble_v3.py",
+      "sha256": "05aaa94b41bf0577b74f9ede90d0b7d6cee319003734b2af836a4dacf8aa7005",
+      "bytes": 21470
+    },
+    "assembly_lines": "191-212 requires same z/order actual mixed H, OD and JVP; 233-259 builds neutral and raw49 then checks before frozen Q projection",
+    "trajectory": {
+      "member": "completion/full_curve/integrate.py",
+      "sha256": "408eac9e254d56b38cf90e8c47efef47137504c2814e33463c7d8ecd228a636a",
+      "bytes": 13981
+    },
+    "trajectory_lines": "46-59 demands admitted actual node map with frozen phase/Q; 120-147 diagnostic spectral trajectory",
+    "contract": {
+      "member": "completion/full_curve/CONTRACT.md",
+      "sha256": "f210cbb87386a73900dee2f3ca63300100bebcf5fb621d4b5f4ab3627606212e",
+      "bytes": 2153
+    },
+    "contract_lines": "9-34 exact nodes, actual V3 full49 at every node; wide H source blocked"
+  },
+  "remaining_gates": [
+    "complete actual source-bound full49 inputs for cell",
+    "time-dependent Q/dotQ or reviewed fixed-sector transport authority",
+    "z0-z4 neutral/H phase-order data bridge",
+    "complete-HH sector physical adequacy independent review",
+    "BR01",
+    "BR02"
+  ],
+  "independent_review_admitted": false,
+  "production_admitted": false,
+  "new_neutral_arrays_generated": false,
+  "dotO_inferred_from_D": false
+}

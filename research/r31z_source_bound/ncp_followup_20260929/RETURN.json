@@ -1,0 +1,158 @@
+{
+  "schema": "WU088_R31Z_NCP_FOLLOWUP_RETURN_V1",
+  "reviewed_remote": {
+    "branch": "research/r31z-source-bound-interp-20260929",
+    "commit": "a8ee959c3165cdd48a8c5f6c2fe72965c275bcfd",
+    "tree": "2c99de92e842593c70b7b089753d653da23627db",
+    "successor_at_start": false
+  },
+  "parent_R31Y": {
+    "commit": "d573e7b40446b07b1a5544644cf3f977b89264a6",
+    "tree": "374a17cff99bed80cc7e356f2e03a1c9d1f1a077"
+  },
+  "environment_file": "ENVIRONMENT.txt",
+  "input_snapshot": {
+    "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+    "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+    "bytes": 71481
+  },
+  "executions": {
+    "COMPILE": {
+      "argv_file": "COMPILE.command",
+      "stdout_file": "COMPILE.stdout",
+      "stderr_file": "COMPILE.stderr",
+      "exit_code": 0
+    },
+    "TESTS": {
+      "argv_file": "TESTS.command",
+      "stdout_file": "TESTS.stdout",
+      "stderr_file": "TESTS.stderr",
+      "exit_code": 0
+    },
+    "REPLAY": {
+      "argv_file": "REPLAY.command",
+      "stdout_file": "REPLAY.stdout",
+      "stderr_file": "REPLAY.stderr",
+      "exit_code": 0
+    },
+    "WITHHELD": {
+      "argv_file": "WITHHELD.command",
+      "stdout_file": "WITHHELD.stdout",
+      "stderr_file": "WITHHELD.stderr",
+      "exit_code": 0
+    }
+  },
+  "junit": {
+    "file": "TESTS.xml",
+    "tests": null,
+    "failures": null,
+    "errors": null,
+    "skipped": null,
+    "time": null
+  },
+  "replay_file": "POINT_INTERPOLATION.json",
+  "source_bound_affine_rejection": {
+    "midpoint_O_chord_error_2norm": 1.1608909908205545,
+    "secant_minus_dotO_z0_2norm": 0.5495713714162325,
+    "secant_minus_dotO_z2_2norm": 0.2910484768338663,
+    "secant_minus_dotO_z4_2norm": 0.33156843070467085,
+    "affine_O_compatible_with_source_nodes": false,
+    "common_frozen_frame_authority": "RECOVERED_SOURCE_AND_ARRAY_BOUND",
+    "authority_parent_commit": "d573e7b40446b07b1a5544644cf3f977b89264a6",
+    "interpretation": "Source-bound represented-array incompatibility; not a physical source-error enclosure."
+  },
+  "curvature_lower_bound": {
+    "endpoint0_per_ta2": 0.1228983778317182,
+    "endpoint1_per_ta2": 0.07414727984975404,
+    "midpoint_per_ta2": 0.11610890661062927,
+    "endpoint_derivative_difference_per_ta2": 0.0603412686243054,
+    "combined_per_ta2": 0.1228983778317182,
+    "combined_per_a02": 0.6143870602870756,
+    "certified_interval_arithmetic": false,
+    "scope": "NECESSARY_C2_CURVATURE_OF_SOURCE_BOUND_REPRESENTED_MIXED_O"
+  },
+  "two_endpoint_cubic_hermite": {
+    "midpoint_O_error_2norm": 0.7456046027649951,
+    "midpoint_dotO_error_2norm": 0.15168609198173066,
+    "passes_direct_midpoint": false,
+    "scope": "UNIQUE_TWO_ENDPOINT_CUBIC_HERMITE"
+  },
+  "quintic_mixed_candidate": {
+    "degree_upper_bound": 5,
+    "highest_coefficient_2norm": 21.705694754556205,
+    "quartic_coefficient_2norm": 58.4152315757618,
+    "max_O_node_error_2norm": 0.0,
+    "max_dotO_node_error_2norm": 3.9551030605613296e-17,
+    "max_D_col_node_error_2norm": 8.947768860794336e-17,
+    "max_D_row_node_error_2norm": 4.933777481199299e-17,
+    "max_metric_compatibility_residual_grid_2norm": 1.6201216774652786e-16,
+    "node_count": 3,
+    "grid_probe_count": 65,
+    "validated_between_nodes": false,
+    "candidate_scope": "SOURCE_NODE_EXACT_STRUCTURE_PRESERVING_MIXED_BLOCK_INTERPOLANT_ONLY"
+  },
+  "node_metric_compatibility": {
+    "z0": 2.827253364237375e-17,
+    "z2": 9.447776145919295e-17,
+    "z4": 2.7413540686698012e-17
+  },
+  "withheld_existing_node": {
+    "inventory_file": "INTERMEDIATE_NODE_INVENTORY.json",
+    "verdict": "EXISTING_WITHHELD_DIRECT_Z3_AVAILABLE",
+    "comparison_file": "WITHHELD_Z3_COMPARISON.json",
+    "comparison": {
+      "schema": "WU088_R31Z_WITHHELD_Z3_COMPARISON_V1",
+      "fit_nodes_z": [
+        0,
+        2,
+        4
+      ],
+      "withheld_z": 3,
+      "withheld_time_ta": 6.707631717101434,
+      "fit_input_sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+      "archive_sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+      "od_member": "completion/mixed_h/od/B192_z3/ASSEMBLED_OD.npz",
+      "od_member_sha256": "47f41c15aba4fc3eb4e9a6b6f08202067cf525503a87431035ee692990b553af",
+      "jvp_member": "completion/mixed_derivative/B192_z3/ASSEMBLED.npz",
+      "jvp_member_sha256": "9223dfea7956a58a70595ab25dda457be64b966ce247830e5c12a73d87515661",
+      "comparison_dtype": "complex128, matching R31Z replay",
+      "source_O_OD_minus_JVP_2norm": 1.789138914138011e-18,
+      "source_metric_identity_2norm": 6.271473368366473e-17,
+      "candidate_O_error_2norm": 0.13213912310643441,
+      "candidate_dotO_error_2norm_per_ta": 0.07262393465956431,
+      "candidate_D_col_error_2norm_per_ta": 0.3073893478614785,
+      "candidate_D_row_error_2norm_per_ta": 0.3192667733603847,
+      "candidate_metric_identity_2norm": 9.463283080315403e-17,
+      "withheld_node_used_in_fit": false,
+      "comparison_only": true,
+      "interval_predictive_validation_admitted": false,
+      "new_scientific_nodes": 0
+    }
+  },
+  "fullcell_existing_authority": {
+    "inventory_file": "FULLCELL_EXISTING_AUTHORITY.json",
+    "verdict": "FULLCELL_AUTHORITY_INPUT_BLOCKED"
+  },
+  "claim_gates": {
+    "between_node_predictive_validation": "one withheld z3 point compared; interval/physical accuracy not admitted",
+    "complete_HH_Q_sector_adequacy": false,
+    "time_dependent_dotQ": false,
+    "whole_cell_sector_preservation": false,
+    "propagation_decoupling": false,
+    "full_cell_bound": false,
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false
+  },
+  "mutation_scope": "new bounded comparison script and evidence only; no raw/source/native/H/node/trajectory mutation",
+  "new_scientific_nodes": 0,
+  "restore_verified": false,
+  "stop_condition": "replay plus two inventories returned; no repeated three-node audit or higher-degree research",
+  "executed_source": {
+    "base_commit": "a8ee959c3165cdd48a8c5f6c2fe72965c275bcfd",
+    "base_tree": "2c99de92e842593c70b7b089753d653da23627db",
+    "withheld_compare_script_sha256": "93c9ff67867f9466cc79de12599c908fa03d81fadea575186fc01c1ba8729ecd",
+    "withheld_script_execution_state": "new worktree file before publication"
+  }
+}
