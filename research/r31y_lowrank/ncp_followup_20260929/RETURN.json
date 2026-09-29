@@ -1,0 +1,137 @@
+{
+  "schema": "WU088_R31Y_NCP_FOLLOWUP_RETURN_V1",
+  "status": "FOCUSED_REPLAY_PASS__TARGETED_PRODUCER_INTAKE_RETURNED",
+  "reviewed_commit": "a26887cdcea2062bc6faf0896f3fe3adef502763",
+  "reviewed_tree": "d072de678326a40dcf5e984b87cc9a8dbbd99291",
+  "remote_head_tree_verified": true,
+  "followup_remote_commit_at_start": false,
+  "snapshot": {
+    "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+    "bytes": 71481,
+    "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+    "unchanged_after_replay": true
+  },
+  "environment": {
+    "python_executable": "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+    "python": "3.12.3",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pytest": "9.1.1",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu": "Intel Xeon Gold 5220",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "WU088_R31Y_INPUT": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+    "PYTHONPYCACHEPREFIX": "/root/WU088_R31Y_SPLIT_STDIO_20260929_C9YhYv/pycache",
+    "working_directory": "/root/WU088_HH_R31Y_FOLLOWUP_20260929",
+    "stdio_capture": "canonical split_stdio/ commands captured stdout and stderr separately; initial merged capture retained at top level"
+  },
+  "commands": {
+    "COMPILE": {
+      "argv_shell_record": "split_stdio/COMPILE.command",
+      "stdout": "split_stdio/COMPILE.stdout",
+      "stderr": "split_stdio/COMPILE.stderr",
+      "exit_record": "split_stdio/COMPILE.exit",
+      "exit_code": 0
+    },
+    "TESTS": {
+      "argv_shell_record": "split_stdio/TESTS.command",
+      "stdout": "split_stdio/TESTS.stdout",
+      "stderr": "split_stdio/TESTS.stderr",
+      "exit_record": "split_stdio/TESTS.exit",
+      "exit_code": 0
+    },
+    "REPLAY": {
+      "argv_shell_record": "split_stdio/REPLAY.command",
+      "stdout": "split_stdio/REPLAY.stdout",
+      "stderr": "split_stdio/REPLAY.stderr",
+      "exit_record": "split_stdio/REPLAY.exit",
+      "exit_code": 0
+    }
+  },
+  "junit": {
+    "path": "split_stdio/TESTS.xml",
+    "tests": 20,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 20
+  },
+  "replay_file": "split_stdio/POINT_REPLAY.json",
+  "lowrank": {
+    "small_eigenvalues_real": [
+      -0.4831184527967173,
+      -0.11540262422575771,
+      0.17743965987509844,
+      0.6007169417167525
+    ],
+    "small_eigenvalues_imag": [
+      4.996003610813204e-16,
+      -1.3204830963978772e-18,
+      2.702733317051986e-17,
+      1.7520707107365752e-16
+    ],
+    "raw_minus_auxiliary_norm": 1.0284145759849785e-14,
+    "whitened_remainder_norm": 1.142235373960423e-14,
+    "raw_overlap_hermiticity_gap": 1.1258883264491431e-14,
+    "raw_residual_hermiticity_gap": 1.3624548514192199e-14,
+    "raw_minus_cholesky_metric_gap": 1.0407005987429578e-14,
+    "small_vs_raw_spectral_gap": 1.162320489932813e-15,
+    "small_vs_auxiliary_spectral_gap": 4.012587419991429e-16,
+    "direct_vs_whitening_QR_gap": 4.909629014005104e-16,
+    "factorization_R0_gap": 9.457100231801864e-17,
+    "auxiliary_exact_hermitian_inertia_theorem": [
+      2,
+      2,
+      45
+    ],
+    "certified": false
+  },
+  "sectors": {
+    "dimensions": [
+      25,
+      24
+    ],
+    "retained_nonzero_real": [
+      -0.48311845279671656,
+      0.6007169417167526
+    ],
+    "complement_nonzero_real": [
+      -0.11540262422575782,
+      0.17743965987509824
+    ],
+    "O_cross_norm": 3.007636595375608e-16,
+    "R_cross_norm": 8.545404554523895e-17,
+    "full_vs_sector_union_gap": 3.2389892319730626e-15,
+    "max_eigenvalue_imag": 3.258172842555393e-15,
+    "scope": "POINTWISE_ALGEBRAIC_SECTORS; NOT_PHYSICAL_PARITY_OR_PROPAGATION_DECOUPLING"
+  },
+  "producer_intake": "PRODUCER_INTAKE.json",
+  "source_mutation": "NONE; additive evidence only",
+  "gates": {
+    "Q_AUTHORITY_BLOCKED_global": true,
+    "MIXED_FRAME_AUTHORITY_BLOCKED_global": true,
+    "full_cell": "AUTHORITY_INPUT_BLOCKED",
+    "historical_BR01_BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false,
+    "provider_admitted": false,
+    "trajectory_admitted": false
+  },
+  "native_evaluations": 0,
+  "new_heavy_scientific_nodes": 0,
+  "new_stored_matrix_linear_algebra": true,
+  "restore_performed": false,
+  "restore_verified": false,
+  "unverified": [
+    "physical Q parity/exchange adequacy for global HH dynamics",
+    "dotQ and whole-cell propagation decoupling",
+    "full-cell interval error and transition bound",
+    "independent decision review",
+    "raw provider restore"
+  ],
+  "initial_merged_stdio_run_directory": "/root/WU088_R31Y_RUN_20260929_HVi0NP",
+  "run_directory": "/root/WU088_R31Y_SPLIT_STDIO_20260929_C9YhYv",
+  "initial_merged_stdio_evidence_retained": true
+}
