@@ -1,0 +1,32 @@
+{
+  "schema": "WU088_R31Z_SOURCE_PINS_V1",
+  "parent_commit": "d573e7b40446b07b1a5544644cf3f977b89264a6",
+  "parent_tree": "374a17cff99bed80cc7e356f2e03a1c9d1f1a077",
+  "producer_intake_path": "research/r31y_lowrank/ncp_followup_20260929/PRODUCER_INTAKE.json",
+  "producer_intake_blob": "4117977269afee6e9c38cd3970b18c0bf49e7ec9",
+  "input_bytes": 71481,
+  "input_sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+  "source_bindings": [
+    {"field":"Q generation and inversion-sector map","member":".../src/vendor/parity_sp.py","lines":"13-23","source_sha256":"a4e65652e7679421af1fc4493fe3023d91c146dcb809ae82650613f5c6f9da7a"},
+    {"field":"Q ionic extension","member":".../src/cusp_ohd.py","lines":"52-56"},
+    {"field":"basis ordering and phase origin","member":".../src/vendor/aocc_sp.py","lines":"25-28,43-67,141-145"},
+    {"field":"frozen Q/model export","member":".../src/r10_blocks.py","lines":"41-51"},
+    {"field":"j_dotO definition and units","member":"completion/mixed_derivative/CONTRACT.json","lines":"3-10"},
+    {"field":"j_dotO implementation","member":"completion/mixed_derivative/run.py","lines":"6-31,50-51"},
+    {"field":"OD endpoint phase/frame","member":"completion/mixed_h/od_run.py","lines":"20-39"},
+    {"field":"full49 composition and order/phase contract","member":"completion/full_model/assemble_v3.py","lines":"205-212,244-259"}
+  ],
+  "array_bindings": {
+    "R31S_Q_equals_R31W_direct_Q": true,
+    "z0_OD_vs_CP4": "exact elementwise",
+    "z4_OD_vs_R31P_OD": "exact elementwise",
+    "z0_j_dotO_vs_CP4": "exact elementwise",
+    "z4_j_dotO_vs_R31P_JVP": "exact elementwise"
+  },
+  "remaining_global_gates": [
+    "independent physical adequacy review of inversion-sector claim in complete HH dynamics",
+    "whole-cell neutral endpoint/dotQ/H contract",
+    "full-cell interval source enclosure and transition error",
+    "independent decision review"
+  ]
+}
