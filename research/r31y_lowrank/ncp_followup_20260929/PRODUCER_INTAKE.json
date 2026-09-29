@@ -1,0 +1,211 @@
+{
+  "schema": "WU088_R31Y_TARGETED_PRODUCER_INTAKE_V1",
+  "status": "EXACT_PRODUCER_ARCHIVES_RECOVERED__SCOPE_LIMITED",
+  "search_scope": [
+    {
+      "location": "local /root and /mnt regular files",
+      "query": "four exact target names plus source snapshot",
+      "result": "target producer archives absent as regular files before retrieval; R31W/X input snapshot found"
+    },
+    {
+      "location": "Google Drive folder 1074Hr5msnAMgIXWU-PmgdMrQvrdV6emM",
+      "query": "direct folder listing top_k=1000",
+      "result": "R31S redesign package and R31U package listed, no four standalone exact producer names in direct children; ZIP-aware folder listing"
+    },
+    {
+      "location": "Dropbox /BASS_DERIVATION_DOSSIERS_20260912/WU088_HH_R31S_NCP_REDESIGN_20260928",
+      "query": "direct child listing recursive=false, has_more=false",
+      "result": "R31S redesign package and R31U package listed; no four standalone exact producer names as direct children"
+    },
+    {
+      "location": "Dropbox global exact filename searches",
+      "query": [
+        "R31S_FULL49_z2.npz",
+        "WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+        "R31P_OD192_z4_NODE_SEAL.zip",
+        "R31P_JVP192_z4_NODE_SEAL.zip"
+      ],
+      "result": "R31S member found inside redesign ZIP; C21 three split parts and two R31P ZIPs found; search excludes no archive evidence inferred"
+    },
+    {
+      "location": "Google Drive global name-equals searches",
+      "query": "four exact names",
+      "result": "empty; not used as absence evidence because ZIP search MIME caveat"
+    }
+  ],
+  "archive_sources": [
+    {
+      "name": "WU088_HH_R31S_NCP_REDESIGN_20260928_v1.zip",
+      "dropbox_id": "id:BSpOijBcT10AAAAAADukMw",
+      "dropbox_path": "/BASS_DERIVATION_DOSSIERS_20260912/WU088_HH_R31S_NCP_REDESIGN_20260928/WU088_HH_R31S_NCP_REDESIGN_20260928_v1.zip",
+      "drive_id": "1kTcvzzMDtHJGoTKaY0vyK3b5rz--HO4v",
+      "bytes": 126420,
+      "sha256": "ba80fa3a520499cb1b1059426fd0f1966d05540e4a8abae23460925cf3eb435f"
+    },
+    {
+      "name": "WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "dropbox_parts": [
+        {
+          "name": "WU088_HH_C21_TRANSFER_CP4_20260923.zip.part01",
+          "id": "id:BSpOijBcT10AAAAAADt2kw",
+          "bytes": 94371840,
+          "sha256": "10eea2916c107c61c7ddcaa3c418b9635eaa06b4e892a5487b62a46bde47057b"
+        },
+        {
+          "name": "WU088_HH_C21_TRANSFER_CP4_20260923.zip.part02",
+          "id": "id:BSpOijBcT10AAAAAADt2lA",
+          "bytes": 94371840,
+          "sha256": "f6b691515b02b3eb2425a0fb2a3b14ee2f9012954e183a053366d470abdbaeb0"
+        },
+        {
+          "name": "WU088_HH_C21_TRANSFER_CP4_20260923.zip.part03",
+          "id": "id:BSpOijBcT10AAAAAADt2lg",
+          "bytes": 78961226,
+          "sha256": "6f16acb6d2bb76c68e6dd5a9b4aaa062b64747f13ef4b344e8c03954ca5426f5"
+        }
+      ],
+      "split_order": "part01 || part02 || part03; matches R31S recover_inputs.py lines 11-14,34-41",
+      "bytes": 267704906,
+      "sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+      "zip_members": 9695
+    },
+    {
+      "name": "R31P_OD192_z4_NODE_SEAL.zip",
+      "dropbox_id": "id:BSpOijBcT10AAAAAADuamg",
+      "dropbox_path": "/BASS_DERIVATION_DOSSIERS_20260912/WU088_HH_R31P_MIDPOINT_DIRECT/OD192_z4/R31P_OD192_z4_NODE_SEAL.zip",
+      "bytes": 204312,
+      "sha256": "1aee5abdf6bfc0993b5a32dc1a8b8f22c19b26c2ec5795064b03bd0ad860d8e2",
+      "assembled_member": "ASSEMBLED_OD.npz",
+      "assembled_sha256": "6ed7d7f2fc27316a3c2a516516a4c681e793b4eb476632f167d27daa34f8c4ea",
+      "identity_member": "IDENTITY.json"
+    },
+    {
+      "name": "R31P_JVP192_z4_NODE_SEAL.zip",
+      "dropbox_id": "id:BSpOijBcT10AAAAAADuanA",
+      "dropbox_path": "/BASS_DERIVATION_DOSSIERS_20260912/WU088_HH_R31P_MIDPOINT_DIRECT/JVP192_z4/R31P_JVP192_z4_NODE_SEAL.zip",
+      "bytes": 178370,
+      "sha256": "4a57ead0b4a5f6a9462a7f42585b718a74264991ff648dc7b521d62ac1db555a",
+      "assembled_member": "ASSEMBLED.npz",
+      "assembled_sha256": "5c0f5eeb4e6788c55ffbb458cceb180b77433eefc228683019708db08f1e7c8e",
+      "identity_member": "IDENTITY.json"
+    }
+  ],
+  "source_bindings": [
+    {
+      "field": "R31S full49 producer",
+      "archive": "WU088_HH_R31S_NCP_REDESIGN_20260928_v1.zip",
+      "member": "WU088_HH_R31S_NCP_20260928/analysis/postprocess_z2.py",
+      "lines": "69-106,123-163",
+      "fact": "z0,z2,z4 H/OD/JVP/ionic providers and frozen Q; z2 raw 49x49 O,H,D,dotO assembled; output NPZ written line 163",
+      "source_sha256": "3774fbf1fea00f9ec91be59f2c1a1baae6d339cf6f8e268bbc778897d55f67c4"
+    },
+    {
+      "field": "R31S full49 array",
+      "archive": "WU088_HH_R31S_NCP_REDESIGN_20260928_v1.zip",
+      "member": "WU088_HH_R31S_NCP_20260928/evidence/z2/R31S_FULL49_z2.npz",
+      "bytes": 86445,
+      "sha256": "e8ee6796082063f04d7754e6917dafa4fc978371d3f4e0a44d64e990e5f6d8da",
+      "fields": [
+        "O",
+        "H",
+        "D",
+        "dotO",
+        "Q",
+        "G_independent"
+      ]
+    },
+    {
+      "field": "Q generation and column meaning",
+      "archive": "WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/src/vendor/parity_sp.py",
+      "lines": "13-23",
+      "fact": "s=0 constant inversion-sector map: column0 row0; orbital a>=1 maps two channel rows with angular sign and 1/sqrt(2); ionic last column comes from cusp_ohd.py lines55-56; labels sourced, not inferred from matrix sparsity",
+      "source_sha256": "a4e65652e7679421af1fc4493fe3023d91c146dcb809ae82650613f5c6f9da7a"
+    },
+    {
+      "field": "Q ionic extension",
+      "archive": "WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/src/cusp_ohd.py",
+      "lines": "52-56",
+      "fact": "49x25 Q neutral 47x24 from ParitySPStaticExchange Q[0], ionic rows47/48 last column 1/sqrt(2); phase_E ionic entries appended"
+    },
+    {
+      "field": "basis ordering and phase origin",
+      "archive": "WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/src/vendor/aocc_sp.py",
+      "lines": "25-28,43-67,141-145",
+      "fact": "deterministic atomic eigenvector sign; orbital groups s,p_x,p_z for mirror_even; channels first centre0 all24, then centre1 excited23; phase_E frozen per channel"
+    },
+    {
+      "field": "frozen Q/model export",
+      "archive": "WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_blocks.py",
+      "lines": "41-51",
+      "fact": "R1 NEUTRAL_BASIS_REPLAY Q and phase_E copied byte values into FROZEN_INPUTS.npz; no recomputed eigensolver phase"
+    },
+    {
+      "field": "j_dotO independent derivative definition and units",
+      "archive": "WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_derivative/CONTRACT.json",
+      "lines": "3-10",
+      "fact": "differentiate actual frozen mixed overlap directly with respect to z, multiply dz/dtau=v, differentiate exact channel phase; no D+Ddagger substitute"
+    },
+    {
+      "field": "j_dotO assembly and endpoint phase",
+      "archive": "WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_derivative/run.py",
+      "lines": "6-31,50-51",
+      "fact": "47 registry=(0,0..23),(1,1..23); tau=z/v; phase exp(i(v*z/2+deltaE*tau)); dotO=v*geometric_JVP+i(v²/2+deltaE)*O; inverse time t_a"
+    },
+    {
+      "field": "OD endpoint phase/frame",
+      "archive": "WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_h/od_run.py",
+      "lines": "20-39",
+      "fact": "OD O and D use same frozen phase_E and tau=z/v; reverse row computed separately"
+    },
+    {
+      "field": "full49 endpoint composition and phase contract",
+      "archive": "WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/full_model/assemble_v3.py",
+      "lines": "205-212,244-259",
+      "fact": "OD/JVP same declared order bridge; neutral47/ionic2/mixed blocks placed without Q first, then Q projection; phase intertwiner checked; no full-model production admission"
+    },
+    {
+      "field": "phase interpolation contract",
+      "archive": "WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/trajectory/CONTRACT.md",
+      "lines": "15-29",
+      "fact": "F(t)=diag(exp(-i E_j t)); reduced phase requires Q orthonormal and diag(E)Q=Q diag(E_reduced); no phase fit or ODE change"
+    }
+  ],
+  "array_bindings": {
+    "R31S_Q_equals_CP4_frozen_Q": true,
+    "R31S_Q_equals_R31W_direct_Q": true,
+    "R1_neutral_basis_Q_equals_R31W_direct_Q": true,
+    "z0_OD_O_Orow_Dcol_Drow_vs_CP4": "exact elementwise",
+    "z4_OD_O_Orow_Dcol_Drow_vs_R31P_OD": "exact elementwise",
+    "z0_j_dotO_vs_CP4_mixed_derivative_B192_z0": "exact elementwise",
+    "z4_j_dotO_vs_R31P_JVP192_z4": "exact elementwise",
+    "z0_ionic_D_dotO_vs_CP4": "exact elementwise",
+    "z4_ionic_D_dotO_vs_CP4": "exact elementwise"
+  },
+  "authority_scope": {
+    "Q_producer_rule_and_order": "RECOVERED_FROM_HASH_VERIFIED_ARCHIVE",
+    "j_dotO_definition_units": "RECOVERED_FROM_HASH_VERIFIED_ARCHIVE",
+    "endpoint_mixed_O_D_j_dotO_common_frozen_basis_and_phase": "SOURCE_AND_ARRAY_BOUND_FOR_Z0_Z4",
+    "physical_Q_and_full_cell": "NOT_INDEPENDENTLY_ADMITTED",
+    "Q_AUTHORITY_BLOCKED_for_unreviewed_physical_or_global_claims": true,
+    "MIXED_FRAME_AUTHORITY_BLOCKED_for_full_cell_transport_or_global_claims": true,
+    "source_git_commit": "NOT_ESTABLISHED; archive member SHA-256 and R31P IDENTITY.json source hashes used instead",
+    "missing_fields": [
+      "independent physical adequacy review of claimed inversion sector in complete HH model",
+      "whole-cell bound including neutral H and dotQ dynamics",
+      "full-cell interval source enclosure and transition error",
+      "independent decision review"
+    ]
+  },
+  "native_evaluations": 0,
+  "new_heavy_scientific_nodes": 0,
+  "restore_performed": false
+}
