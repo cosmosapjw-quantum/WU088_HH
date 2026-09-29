@@ -1,0 +1,1 @@
+/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31ac_z1_authorization/ncp_followup_20260929/gate_preflight.py --repo /root/WU088_HH_R31AC_FOLLOWUP_20260929 --archive /root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip --out /root/WU088_R31AC_RUN_20260929/GATE_PREFLIGHT.json
