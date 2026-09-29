@@ -1,0 +1,67 @@
+{
+  "schema": "WU088_R31AB_PRE_OUTPUT_LOCK_V1",
+  "time_scope": "before any z1 direct output access; no z1 output read in this handoff",
+  "entries": {
+    "input": {
+      "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+      "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+      "bytes": 71481
+    },
+    "prereg": {
+      "path": "research/r31aa_validation/Z1_PREREGISTRATION.json",
+      "sha256": "803b0968bd7f1fab41310469578b455ef03a64aae5beac1f23c1bab8afa19ddb",
+      "bytes": 1224
+    },
+    "prereg_lock": {
+      "path": "research/r31aa_validation/ncp_followup_20260929/Z1_PREREGISTRATION_LOCK.json",
+      "sha256": "8f33b13f5611a4d36ee5fc0160c333a4f444d3957099ce0a199071a3562dfc34",
+      "bytes": 1336
+    },
+    "decision": {
+      "path": "research/r31ab_z1_decision/DECISION.json",
+      "sha256": "495d79c3722da018f05c30fbae115d7fa9123941ef922499380a6a13055da570",
+      "bytes": 1396
+    },
+    "r31z_model": {
+      "path": "research/r31z_source_bound/source_bound.py",
+      "sha256": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034",
+      "bytes": 10154
+    },
+    "r31aa_model": {
+      "path": "research/r31aa_validation/local_candidate.py",
+      "sha256": "f24d2acc0506e97dbefea107c126e53891d9879311aad60b9dd3b8e9a1be05d5",
+      "bytes": 4319
+    },
+    "r31ab_information": {
+      "path": "research/r31ab_z1_decision/z1_information.py",
+      "sha256": "742cd69bf36284b51968f897a4f66b186de1f366cafb80714d80629870bbe684",
+      "bytes": 3256
+    }
+  },
+  "comparison_contract": {
+    "models": [
+      "R31Z_GLOBAL_QUINTIC_O_QUADRATIC_K",
+      "R31AA_LOCAL_PIECEWISE_CUBIC_O_LINEAR_K"
+    ],
+    "primary_metrics": [
+      "E_K",
+      "E_Dmax"
+    ],
+    "secondary_metrics": [
+      "E_O",
+      "E_dotO",
+      "E_D_col",
+      "E_D_row",
+      "metric_identity_residual"
+    ],
+    "comparison_tolerance": 1e-10,
+    "decision_rule": {
+      "PARETO_SUPPORTED_AT_Z1": "local E_K <= global E_K+tol and local E_Dmax <= global E_Dmax+tol and at least one primary metric improves by >tol",
+      "GLOBAL_SUPPORTED_AT_Z1": "reverse primary dominance using same tolerance",
+      "TRADEOFF_UNRESOLVED": "otherwise"
+    }
+  },
+  "comparison_contract_sha256": "68b0d4c4b80443f374b9c49fa4c1737a8e2f39ed6b06f7340d052aa8c7c537b6",
+  "execution_authorized": false,
+  "z1_direct_output_accessed": false
+}

@@ -1,0 +1,126 @@
+{
+  "schema": "WU088_R31AB_NCP_PREFLIGHT_RETURN_V1",
+  "reviewed_remote": {
+    "branch": "research/r31ab-z1-decision-20260929",
+    "commit": "db4c0d6b094439e9b5cedf8b1f138198f214ecd3",
+    "tree": "a734d3c2adb6ebc4046742b35aa51d6240433921",
+    "successor_at_start": false
+  },
+  "parent_R31AA": {
+    "commit": "0566c65655128f0fffb3794860af23b2c3d1fe66",
+    "tree": "f2638642d85410185beca0a881e0db853adb826a"
+  },
+  "environment_file": "ENVIRONMENT.txt",
+  "input": {
+    "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+    "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+    "bytes": 71481
+  },
+  "executions": {
+    "COMPILE": {
+      "argv_file": "COMPILE.command",
+      "stdout_file": "COMPILE.stdout",
+      "stderr_file": "COMPILE.stderr",
+      "exit_code": 0
+    },
+    "TESTS": {
+      "argv_file": "TESTS.command",
+      "stdout_file": "TESTS.stdout",
+      "stderr_file": "TESTS.stderr",
+      "exit_code": 0
+    },
+    "REPLAY": {
+      "argv_file": "REPLAY.command",
+      "stdout_file": "REPLAY.stdout",
+      "stderr_file": "REPLAY.stderr",
+      "exit_code": 0
+    }
+  },
+  "junit": {
+    "file": "TESTS.xml",
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "time": 0.937,
+    "scope": "only R31AB focused tests; byte-identical staged code and symlink to existing hash-locked input"
+  },
+  "pre_output_lock_file": "PREFLIGHT_LOCK.json",
+  "pre_output_hashes_unchanged_after_replay": {
+    "input": true,
+    "prereg": true,
+    "prereg_lock": true,
+    "decision": true,
+    "r31z_model": true,
+    "r31aa_model": true,
+    "r31ab_information": true
+  },
+  "prereg_model_metric_rule_sha256": "68b0d4c4b80443f374b9c49fa4c1737a8e2f39ed6b06f7340d052aa8c7c537b6",
+  "preregistration_sha256": "803b0968bd7f1fab41310469578b455ef03a64aae5beac1f23c1bab8afa19ddb",
+  "model_source_sha256": {
+    "R31Z": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034",
+    "R31AA": "f24d2acc0506e97dbefea107c126e53891d9879311aad60b9dd3b8e9a1be05d5"
+  },
+  "decision_sha256": "495d79c3722da018f05c30fbae115d7fa9123941ef922499380a6a13055da570",
+  "science_producer_source_identity_from_parent": {
+    "archive_sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+    "OD_member": "completion/mixed_h/od_run.py",
+    "OD_sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+    "JVP_member": "completion/mixed_derivative/run.py",
+    "JVP_sha256": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+    "basis_phase_contract": "parent R31Y producer intake and R31AA preregistration lock; no producer executed"
+  },
+  "science_producer_commands": [],
+  "science_output_hashes": null,
+  "science_node_count": 0,
+  "Z1_EXECUTION_STATUS": "AWAITING_EXPLICIT_AUTHORIZATION",
+  "authorization_evidence": {
+    "required_token": "AUTHORIZE_Z1_MINIMAL_MIXED_NODE",
+    "present_in_current_instruction": false,
+    "DECISION_execution_authorized": false,
+    "z1_direct_output_accessed": false
+  },
+  "replay_file": "Z1_INFORMATION_REPLAY.json",
+  "information_preflight": {
+    "model_separation": {
+      "O": 0.12604400117383283,
+      "dotO": 0.009480380748858165,
+      "K": 0.2165779475378074,
+      "Dcol": 0.2139491935471555,
+      "Drow": 0.21927766897126583,
+      "Dmax": 0.21927766897126583
+    },
+    "truth_independent_half_gap_lower_bound": {
+      "K": 0.1082889737689037,
+      "Dcol": 0.10697459677357775,
+      "Drow": 0.10963883448563291,
+      "Dmax": 0.10963883448563291,
+      "logic": "for any truth X, ||G-L|| <= ||G-X||+||L-X||, so at least one model error >= separation/2"
+    },
+    "information_verdict": "HIGH_DISCRIMINATION_EXPECTED",
+    "winner_prediction": false
+  },
+  "primary_secondary_direct_errors": null,
+  "frozen_decision_rule_verdict": "NOT_EVALUATED_NO_DIRECT_Z1_NODE",
+  "independence_status": "NOT_EVALUATED_NO_DIRECT_Z1_NODE",
+  "z3_independent_confirmation": false,
+  "fixed_Q": "dotQ=0 BY_MODEL_DEFINITION; complete-HH physical invariance unreviewed",
+  "claim_ceiling": {
+    "interval_wide_accuracy_admitted": false,
+    "trajectory_accuracy_admitted": false,
+    "transition_error_admitted": false,
+    "production_admitted": false,
+    "H_skip_admitted": false
+  },
+  "remaining_gates": {
+    "full_cell": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "complete_HH_physical_invariant_sector_reviewed": false,
+    "production_admitted": false
+  },
+  "mutation_scope": "preflight evidence only; existing raw/source/worktrees/backups preserved",
+  "restore_verified": false,
+  "stop_condition": "unauthorized: preflight and return only"
+}

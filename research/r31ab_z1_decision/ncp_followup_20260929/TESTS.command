@@ -1,0 +1,1 @@
+/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q -p no:cacheprovider /root/WU088_R31AB_RUN_20260929/test_stage/research/r31ab_z1_decision/test_z1_information.py --junitxml=/root/WU088_R31AB_RUN_20260929/TESTS.xml
