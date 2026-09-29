@@ -1,0 +1,83 @@
+{
+  "schema": "WU088_R31AC_Z1_ONE_SHOT_LEDGER_V1",
+  "created_utc": "2026-09-29T07:15:31.981331+00:00",
+  "authorization": {
+    "schema": "WU088_Z1_MINIMAL_MIXED_AUTHORIZATION_V1",
+    "authorize": true,
+    "action": "AUTHORIZE_Z1_MINIMAL_MIXED_NODE",
+    "scope_sha256": "730cf09525d3b09e3b45fab7b8cec78cce631182b2c87e7008f766a10839787c",
+    "one_shot": true
+  },
+  "authorization_context": "standalone affirmative user directive",
+  "scope_file_sha256": "d86a81457098571deda0b921be3d498be397a47dd58f8f50291c843b5e751eda",
+  "scope_declared_sha256": "730cf09525d3b09e3b45fab7b8cec78cce631182b2c87e7008f766a10839787c",
+  "scope_canonical_rederivation": "UNSPECIFIED_IN_CONTRACT; declared scope ID matches envelope and individual bound hashes verified",
+  "checks": {
+    "prereg": true,
+    "metric_rule": true,
+    "R31Z_model": true,
+    "R31AA_model": true,
+    "archive": true,
+    "envelope_scope": true,
+    "tolerance": true,
+    "z1_absent_OD": true,
+    "z1_absent_JVP": true
+  },
+  "comparison_contract": {
+    "models": [
+      "R31Z_GLOBAL_QUINTIC_O_QUADRATIC_K",
+      "R31AA_LOCAL_PIECEWISE_CUBIC_O_LINEAR_K"
+    ],
+    "primary_metrics": [
+      "E_K",
+      "E_Dmax"
+    ],
+    "secondary_metrics": [
+      "E_O",
+      "E_dotO",
+      "E_D_col",
+      "E_D_row",
+      "metric_identity_residual"
+    ],
+    "comparison_tolerance": 1e-10,
+    "decision_rule": {
+      "PARETO_SUPPORTED_AT_Z1": "local E_K <= global E_K+tol and local E_Dmax <= global E_Dmax+tol and at least one primary metric improves by >tol",
+      "GLOBAL_SUPPORTED_AT_Z1": "reverse primary dominance using same tolerance",
+      "TRADEOFF_UNRESOLVED": "otherwise"
+    }
+  },
+  "comparison_contract_sha256": "68b0d4c4b80443f374b9c49fa4c1737a8e2f39ed6b06f7340d052aa8c7c537b6",
+  "producer_sources": {
+    "completion/mixed_h/od_run.py": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+    "completion/mixed_h/h0_backend.py": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+    "completion/mixed_h/h0_fused.cpp": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+    "completion/mixed_h/native.py": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+    "completion/mixed_derivative/run.py": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+    "completion/mixed_derivative/native.py": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d",
+    "completion/mixed_derivative/jvp.cpp": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+    "completion/mixed_derivative/CONTRACT.json": "f5a10ef22dd5aefade7e9d9dc079066c0b3e0781a9c997411997cb67ba0acb66",
+    "cont2c/convergence/frozen_grid_n192.npz": "e1959e1bbb66b5e27410daa3d3bdb0815885919f11af3a014d86a47f15b96301",
+    "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c"
+  },
+  "runtime": "/root/WU088_R31AC_Z1_RUNTIME_20260929",
+  "run_dir": "/root/WU088_R31AC_Z1_RUN_20260929",
+  "z_a0": 1.0,
+  "tau_ta": 2.2358772390338113,
+  "radial_order": 192,
+  "one_shot_state": "CONSUMED_OUTPUTS_COMPLETE",
+  "science_commands_started": 2,
+  "scientific_output_generated": true,
+  "authorization_consumed": true,
+  "z1_direct_output_accessed": true,
+  "od_started_utc": "2026-09-29T07:16:26.186166+00:00",
+  "first_scientific_output": "/root/WU088_R31AC_Z1_RUNTIME_20260929/completion/mixed_h/od/B192_z1/pair_00_03.npz",
+  "consumed_utc": "2026-09-29T07:16:35.612108+00:00",
+  "od_output_sha256": "020dc2c2c580f7e7f8a2d5d322b771b4957fbcc1166ab4e2c363f5a9c3d06818",
+  "od_output_bytes": 12335,
+  "jvp_started_utc": "2026-09-29T07:19:49.913876+00:00",
+  "jvp_output_sha256": "b6a9926052999c70cc6092c0d47001eff0716d2aefb6ff380edfa18558696819",
+  "jvp_output_bytes": 50424,
+  "comparison_sha256": "451099186934bd431edc3d907bcc6e469ec6a8c8ca615e684bd6a57bdeb57a80",
+  "comparison_verdict": "GLOBAL_SUPPORTED_AT_Z1",
+  "completed_utc": "2026-09-29T07:26:06.739989+00:00"
+}
