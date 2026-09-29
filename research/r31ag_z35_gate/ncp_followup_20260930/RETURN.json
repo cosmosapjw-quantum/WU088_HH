@@ -1,0 +1,53 @@
+{
+  "schema": "WU088_R31AG_Z35_AUTHORIZATION_GATE_RETURN_V1",
+  "reviewed_remote": {
+    "branch": "research/r31ag-z35-validation-gate-20260930",
+    "commit": "ef559f6fd8cffce31999fd360a738dbbf187e0db",
+    "tree": "3a06e9c7c1d26285e32e3e016fb7b93392a1f5a1",
+    "successor_at_start": false
+  },
+  "authorization": {
+    "current_user_envelope_as_affirmative_directive": false,
+    "envelope_present_as_conditional_example": true,
+    "classification": "UNAUTHORIZED_CONDITIONAL_EXAMPLE",
+    "one_shot_authorization_consumed": false
+  },
+  "Z35_EXECUTION_STATUS": "AWAITING_STRUCTURED_AUTHORIZATION",
+  "preflight": {
+    "command_file": "PREFLIGHT.command",
+    "stdout_file": "PREFLIGHT.stdout",
+    "stderr_file": "PREFLIGHT.stderr",
+    "exit_file": "PREFLIGHT.exit",
+    "canonical_scope_sha256": "f43faaf5746a5fda5cd26593ee69e97c0f2be8239727a62081d49357e3c2a9b4",
+    "canonical_scope_hash_matches_contract": true,
+    "parent_hash_locks_match": true,
+    "parent_hash_locks_checked": [
+      "R31AF_engine",
+      "R31AF_adaptive_policy",
+      "R31Z_model",
+      "six_node_manifest",
+      "z35_selection",
+      "decision_rule",
+      "preregistration"
+    ],
+    "comparison_tolerance": 1e-10
+  },
+  "science_producer_commands": [],
+  "science_node_count": 0,
+  "direct_z35_output_accessed": false,
+  "direct_z35_output_identity": null,
+  "comparison_verdict": "NOT_EVALUATED_NO_DIRECT_Z35_NODE",
+  "independent_validation_admitted": false,
+  "remaining_gates": {
+    "z35_new_science_node": "STRUCTURED_AUTHORIZATION_REQUIRED",
+    "full_cell": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "fixed_Q_complete_HH_physical_invariance_reviewed": false,
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false,
+    "H_skip_admitted": false
+  },
+  "RESTORE_VERIFIED": false,
+  "stop_condition": "unauthorized preflight return; no science computation"
+}
