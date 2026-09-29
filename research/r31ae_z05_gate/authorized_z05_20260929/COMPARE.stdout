@@ -1,0 +1,68 @@
+{
+  "schema": "WU088_R31AE_Z05_FROZEN_MODEL_COMPARISON_V1",
+  "z_a0": 0.5,
+  "time_ta": 1.1179386195169057,
+  "radial_order": 192,
+  "training_node_z_a0": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "direct_node_used_in_selection_or_training": false,
+  "frozen_sha256": {
+    "R31AD": "ab220248066580fc77af70c412251dbe3ed643a6fadc266cf5c25a7a3a6651a0",
+    "R31Z": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034",
+    "manifest": "05f4068dffad51080942c466e19943a73c508b004d3d46f3b9a2b69a58cefc49",
+    "selection": "2761664a75d7609c7ac0b1df4daf36a50e01d82a80b28a42885a22c5042a800b",
+    "rule": "835c0a53719849652557737ef61d343c58222d847cf6d1b2ee6fb4831fb656dc",
+    "prereg": "a111005296954c303563be6aaab10379d22694c544576fb1869a37938ab9247d"
+  },
+  "comparison_dtype": "complex128, same as frozen R31AD/R31Z replays; raw complex256 retained",
+  "direct_outputs": {
+    "OD": {
+      "path": "/root/WU088_R31AE_Z05_RUNTIME_20260929/completion/mixed_h/od/B192_z0.5/ASSEMBLED_OD.npz",
+      "sha256": "1505463b2329e9398b92077d51a9704c4b5f2c5d71288cf811571763a672f80a",
+      "bytes": 12560
+    },
+    "JVP": {
+      "path": "/root/WU088_R31AE_Z05_RUNTIME_20260929/completion/mixed_derivative/B192_z0.5/ASSEMBLED.npz",
+      "sha256": "88b44ec142eef45ef7232f7fd050a0c5ca1773db416986a9a5857d60959b5fc3",
+      "bytes": 50434
+    }
+  },
+  "direct_source_O_OD_minus_JVP_raw_max_abs": 2.169462877787276e-19,
+  "direct_source_O_OD_minus_JVP_2norm_complex128": 4.45322078736833e-19,
+  "direct_metric_identity_raw_max_abs": 4.418899730913319e-19,
+  "direct_metric_identity_2norm_complex128": 5.585836134701632e-17,
+  "source_bridge_pass_at_existing_2e_minus_12_tolerance": true,
+  "R31AD_five_node": {
+    "E_O": 0.0875296210906087,
+    "E_dotO_per_ta": 0.06210196649428255,
+    "E_K_per_ta": 0.15030919260543524,
+    "E_Dcol_per_ta": 0.13771728460668747,
+    "E_Drow_per_ta": 0.1677736075942363,
+    "candidate_metric_identity_residual_2norm": 5.969736686610809e-17,
+    "E_Dmax_per_ta": 0.1677736075942363
+  },
+  "R31Z_global": {
+    "E_O": 0.12803431013849245,
+    "E_dotO_per_ta": 0.1500620371912569,
+    "E_K_per_ta": 0.32379090898828017,
+    "E_Dcol_per_ta": 0.32638828306864326,
+    "E_Drow_per_ta": 0.3382471014885593,
+    "candidate_metric_identity_residual_2norm": 4.3571575564963024e-17,
+    "E_Dmax_per_ta": 0.3382471014885593
+  },
+  "primary_comparison_tolerance": 1e-10,
+  "frozen_decision_rule_verdict": "PARETO_SUPPORTED_AT_SELECTED_MIDPOINT",
+  "S_design_score_used_for_final_decision": false,
+  "independent_z05_single_point_validation": true,
+  "interval_wide_accuracy_admitted": false,
+  "transition_error_admitted": false,
+  "trajectory_accuracy_admitted": false,
+  "full_cell_admitted": false,
+  "H_skip_admitted": false,
+  "production_admitted": false
+}

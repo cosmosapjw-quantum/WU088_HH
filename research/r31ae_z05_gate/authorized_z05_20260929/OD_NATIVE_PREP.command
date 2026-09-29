@@ -1,0 +1,1 @@
+/root/wu088_hh_ncp_work_v2/venv/bin/python -c 'import sys,json; sys.path.insert(0,"/root/WU088_R31AE_Z05_RUNTIME_20260929/completion/mixed_h"); from h0_backend import H0Fused; print(json.dumps(H0Fused().identity,sort_keys=True))'
