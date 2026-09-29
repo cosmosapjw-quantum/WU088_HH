@@ -1,0 +1,1 @@
+python3 research/r31ae_z05_gate/ncp_followup_20260929/gate_preflight.py --repo /root/WU088_HH_R31AE_FOLLOWUP_20260929 --out /root/WU088_HH_R31AE_FOLLOWUP_20260929/research/r31ae_z05_gate/ncp_followup_20260929/GATE_PREFLIGHT.json
