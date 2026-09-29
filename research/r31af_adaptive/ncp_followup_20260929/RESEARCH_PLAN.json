@@ -1,0 +1,21 @@
+{
+  "schema": "WU088_R31AF_FROZEN_RESEARCH_PLAN_V1",
+  "created_utc": "2026-09-29T10:30:33.668214+00:00",
+  "question": "Do six existing mixed nodes reproduce the unchanged R31AD interpolation identities, the z0.5 local necessary bounds, and an unaffected z3.5 prediction-only next-validation lock?",
+  "methods": [
+    "M1_HASH_BOUND_SIX_NODE_ASSEMBLY",
+    "M2_FOCUSED_TESTS",
+    "M3_SIX_NODE_REPLAY",
+    "M4_Z05_APOSTERIORI_INDICATOR",
+    "M5_Z35_PREDICTION_AND_PREREG_LOCK"
+  ],
+  "classification": "confirmatory algebraic replay and deterministic selection; no predictive physical validation",
+  "falsifiers": [
+    "source hash or phase/order mismatch",
+    "node reproduction or metric identity failure",
+    "z0.5 indicator mismatch",
+    "z3.5 prediction changes under local refinement",
+    "z3.5 direct output preexisting"
+  ],
+  "stop": "RETURN after replay and z3.5 prereg lock; science_node_count=0"
+}

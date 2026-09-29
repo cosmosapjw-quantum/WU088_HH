@@ -1,0 +1,65 @@
+{
+  "schema": "WU088_R31AF_RESULT_V1",
+  "status": "ADAPTIVE_REFINEMENT_DESIGN_COMPLETE__NCP_SIX_NODE_REPLAY_PENDING",
+  "z05": {
+    "verdict": "PARETO_SUPPORTED_AT_SELECTED_MIDPOINT",
+    "R31AD_E_O": 0.0875296210906087,
+    "R31AD_E_dotO_per_ta": 0.06210196649428255,
+    "R31AD_E_K_per_ta": 0.15030919260543524,
+    "R31AD_E_Dmax_per_ta": 0.1677736075942363,
+    "improvement_fraction_vs_R31Z": {
+      "E_O": 0.3163580840484909,
+      "E_dotO": 0.5861580473205732,
+      "E_K": 0.5357831599562427,
+      "E_Dmax": 0.5039909969489835
+    }
+  },
+  "local_derivative_lower_bounds": {
+    "O_fourth_per_ta4": 1.3449138103246667,
+    "K_second_per_ta3": 0.24053574221790144,
+    "O_fourth_per_a04": 33.611374498793744,
+    "K_second_per_ta_a02": 1.202473540843482
+  },
+  "synthetic_tests": {
+    "passed": 4,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "next_validation": {
+    "schema": "WU088_R31AF_Z35_PREREGISTRATION_V1",
+    "selected_z_a0": 3.5,
+    "selected_time_ta": 7.825570336618339,
+    "radial_order": 192,
+    "selection_status": "FRESH_FUTURE_VALIDATION_NOT_EXECUTED",
+    "selection_reason": "max S among remaining fresh pre-output candidates after z0.5 is consumed as training; R31AF modification is confined to [0,1]",
+    "model_separation": {
+      "DeltaK_per_ta": 0.19122378403347964,
+      "DeltaDmax_per_ta": 0.2095387347094023,
+      "S_design_only_per_ta": 0.2836776637729875,
+      "K_half_gap_per_ta": 0.09561189201673982,
+      "Dmax_half_gap_per_ta": 0.10476936735470115
+    },
+    "required_outputs": [
+      "mixed_O_47x2",
+      "mixed_D_col_47x2",
+      "mixed_D_row_2x47",
+      "independent_mixed_dotO_47x2"
+    ],
+    "primary_metrics": [
+      "E_K",
+      "E_Dmax"
+    ],
+    "verdicts": [
+      "PARETO_SUPPORTED_AT_Z35",
+      "GLOBAL_SUPPORTED_AT_Z35",
+      "TRADEOFF_UNRESOLVED"
+    ],
+    "tolerance": 1e-10,
+    "execution_authorized": false,
+    "direct_z35_output_accessed": false,
+    "claim_ceiling": "single-point relative discrimination only"
+  },
+  "science_node_count": 0,
+  "production_admitted": false
+}

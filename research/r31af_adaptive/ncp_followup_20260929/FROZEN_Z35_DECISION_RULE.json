@@ -1,0 +1,29 @@
+{
+  "schema": "WU088_R31AF_Z35_FUTURE_DECISION_RULE_V1",
+  "z_a0": 3.5,
+  "radial_order": 192,
+  "models": [
+    "R31AF_ADAPTIVE_SIX_NODE_CUBIC_O_LINEAR_K",
+    "R31Z_GLOBAL_QUINTIC_O_QUADRATIC_K"
+  ],
+  "primary_metrics": [
+    "E_K",
+    "E_Dmax"
+  ],
+  "comparison_tolerance": 1e-10,
+  "pareto_rule": {
+    "PARETO_SUPPORTED_AT_Z35": "R31AF E_K <= R31Z E_K+tol and R31AF E_Dmax <= R31Z E_Dmax+tol and at least one improvement >tol",
+    "GLOBAL_SUPPORTED_AT_Z35": "reverse primary dominance with same tol",
+    "TRADEOFF_UNRESOLVED": "otherwise"
+  },
+  "mandatory_secondary": [
+    "E_O",
+    "E_dotO",
+    "E_Dcol",
+    "E_Drow",
+    "direct_metric_identity_residual",
+    "both_candidate_metric_identity_residuals"
+  ],
+  "weighted_score_for_final_decision": false,
+  "execution_authorized": false
+}
