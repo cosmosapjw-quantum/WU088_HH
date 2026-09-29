@@ -1,0 +1,22 @@
+{
+  "schema": "WU088_R31AD_NEXT_VALIDATION_DESIGN_V1",
+  "candidate_z_a0": [
+    0.5,
+    1.5,
+    2.5,
+    3.5
+  ],
+  "rationale": "unit-cell midpoints maximize standard cubic-Hermite and linear-interpolation scalar remainder factors within each cell",
+  "comparator": "R31Z_GLOBAL_QUINTIC_O_QUADRATIC_K",
+  "new_model": "R31AD_FIVE_NODE_UNIT_CELL_CUBIC_O_LINEAR_K",
+  "selection_metric": "sqrt(DeltaK_model^2 + DeltaDmax_model^2)",
+  "tie_break": "lower_z",
+  "direct_output_access_before_selection": false,
+  "execution_authorized": false,
+  "future_primary_metrics": [
+    "E_K",
+    "E_Dmax"
+  ],
+  "future_decision_rule": "Pareto dominance with prelocked tolerance; no weighted score",
+  "science_node_count_this_node": 0
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "WU088_R31AD_FROZEN_RESEARCH_PLAN_V1",
+  "created_utc": "2026-09-29T09:21:50.649554+00:00",
+  "question": "Can the five existing integer mixed nodes reproduce R31AD unit-cell identities and select one fresh future midpoint solely from frozen model separation?",
+  "method_ids": [
+    "M1_HASH_BOUND_FIVE_NODE_ASSEMBLY",
+    "M2_FOCUSED_TESTS",
+    "M3_FIVE_NODE_REPLAY",
+    "M4_MIDPOINT_EXISTING_DATA_INVENTORY",
+    "M5_FROZEN_MODEL_PREDICTIONS_AND_PREREG_LOCK"
+  ],
+  "classification": "confirmatory for algebraic replay and deterministic selection; exploratory for predictive physical adequacy (not tested)",
+  "falsifiers": [
+    "source hash or basis/phase mismatch",
+    "node reconstruction or metric identity failure",
+    "candidate midpoint previously direct-accessed",
+    "prediction rule drift"
+  ],
+  "stop": "RETURN after replay, selection and preregistration; science_node_count=0"
+}

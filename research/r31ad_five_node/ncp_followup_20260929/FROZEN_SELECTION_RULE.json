@@ -1,0 +1,29 @@
+{
+  "schema": "WU088_R31AD_MIDPOINT_SELECTION_RULE_V1",
+  "candidate_z_a0": [
+    0.5,
+    1.5,
+    2.5,
+    3.5
+  ],
+  "exclude_if": "equivalent direct mixed OD+independent dotO exists OR any pre-accessed direct output at candidate z",
+  "model_R31AD": "R31AD_FIVE_NODE_UNIT_CELL_CUBIC_O_LINEAR_K",
+  "model_R31AD_source_sha256": "ab220248066580fc77af70c412251dbe3ed643a6fadc266cf5c25a7a3a6651a0",
+  "model_R31Z": "R31Z_GLOBAL_QUINTIC_O_QUADRATIC_K",
+  "model_R31Z_source_sha256": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034",
+  "prediction_dtype": "complex128 matching prior R31Z replay",
+  "DeltaK_model": "spectral_norm(K_R31AD-K_R31Z)",
+  "DeltaDcol_model": "spectral_norm(Dcol_R31AD-Dcol_R31Z)",
+  "DeltaDrow_model": "spectral_norm(Drow_R31AD-Drow_R31Z)",
+  "DeltaDmax_model": "max(DeltaDcol_model,DeltaDrow_model)",
+  "S": "sqrt(DeltaK_model^2+DeltaDmax_model^2)",
+  "select": "max S among fresh candidates; exact tie -> lower z",
+  "S_role": "experiment design only, not future model-selection score",
+  "future_primary_metrics": [
+    "E_K",
+    "E_Dmax"
+  ],
+  "future_comparison_tolerance": 1e-10,
+  "future_decision": "Pareto dominance on E_K and E_Dmax; no weighted score",
+  "execution_authorized": false
+}

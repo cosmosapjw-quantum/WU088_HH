@@ -1,0 +1,154 @@
+{
+  "schema": "WU088_R31AD_NCP_FIVE_NODE_RETURN_V1",
+  "reviewed_remote": {
+    "branch": "research/r31ad-five-node-unit-cells-20260929",
+    "commit": "c564d35cbab76d070c1f60ada0559f6aac6f5a53",
+    "tree": "d03ed668a791d404c8325e24ccf8e0b66a69d8d1",
+    "successor_at_start": false,
+    "parent_R31AC": "82d3d076dc229c20236747738f0ed14861a1b741"
+  },
+  "executed_against": {
+    "commit": "c564d35cbab76d070c1f60ada0559f6aac6f5a53",
+    "tree": "d03ed668a791d404c8325e24ccf8e0b66a69d8d1"
+  },
+  "environment_file": "ENVIRONMENT.json",
+  "commands": {
+    "COMPILE": {
+      "argv_file": "COMPILE.command",
+      "stdout_file": "COMPILE.stdout",
+      "stderr_file": "COMPILE.stderr",
+      "exit_code": 0
+    },
+    "FOCUSED_TEST": {
+      "argv_file": "FOCUSED_TEST.command",
+      "stdout_file": "FOCUSED_TEST.stdout",
+      "stderr_file": "FOCUSED_TEST.stderr",
+      "exit_code": 0
+    },
+    "REPLAY": {
+      "argv_file": "REPLAY.command",
+      "stdout_file": "REPLAY.stdout",
+      "stderr_file": "REPLAY.stderr",
+      "exit_code": 0
+    }
+  },
+  "junit_file": "JUNIT.xml",
+  "focused_tests": "5 passed",
+  "five_node_input_manifest_file": "FIVE_NODE_INPUT_MANIFEST.json",
+  "five_node_input_manifest_sha256": "05f4068dffad51080942c466e19943a73c508b004d3d46f3b9a2b69a58cefc49",
+  "upstream_source_exact_array_bindings_file": "SOURCE_BINDING_VERIFICATION.json",
+  "upstream_source_exact_array_bindings_all_pass": true,
+  "node_provenance_relabel": {
+    "0": "TRAINING",
+    "1": "PRIOR_INDEPENDENT_VALIDATION_CONSUMED_AS_R31AD_TRAINING",
+    "2": "TRAINING",
+    "3": "PRIOR_POST_HOC_TUNING_CONSUMED_AS_R31AD_TRAINING",
+    "4": "TRAINING"
+  },
+  "R31AD_independent_validation_points": [],
+  "model_replay_file": "R31AD_MODEL_REPLAY.json",
+  "model_replay_sha256": "c1f4b488176e97ef84cbda54f60e8bc2b1e7c8ff52731a1b307825c56a4d5cb7",
+  "model_replay_summary": {
+    "node_reproduction_max_2norm": {
+      "O": 0.0,
+      "dotO": 4.546892278829026e-17,
+      "K": 0.0,
+      "D_col": 8.947768860794336e-17,
+      "D_row": 8.434781588788996e-17
+    },
+    "internal_node_continuity_max_2norm": {
+      "O": 0.0,
+      "dotO": 8.195467818242025e-17,
+      "K": 0.0,
+      "D_col": 7.926302332445572e-17,
+      "D_row": 8.038739945747499e-17
+    },
+    "dense_grid_metric_identity_max_2norm": 1.734985041207067e-16,
+    "source_array_mutation": false
+  },
+  "theoretical_remainder_factors": {
+    "O_cubic_midpoint": "h^4/384",
+    "K_linear_midpoint": "h^2/8",
+    "width_2_to_1_O_coefficient_ratio": 16,
+    "width_2_to_1_K_coefficient_ratio": 4,
+    "empirical_error_reduction_claimed": false
+  },
+  "midpoint_direct_inventory_file": "MIDPOINT_DIRECT_DATA_INVENTORY.json",
+  "midpoint_direct_inventory_sha256": "c58856e9e33664579655ad94abbb7dcc55cb058ff2e2676e20dc4afe559b1443",
+  "local_zip_scan_file": "LOCAL_ARCHIVE_MIDPOINT_SCAN_CORRECTED.json",
+  "local_zip_archives_scanned": 127,
+  "midpoint_inventory_verdict": {
+    "z0.5": "FRESH_IN_SEARCHED_SOURCES",
+    "z1.5": "EXCLUDED_PREEXISTING_OD_ONLY",
+    "z2.5": "FRESH_IN_SEARCHED_SOURCES",
+    "z3.5": "FRESH_IN_SEARCHED_SOURCES",
+    "universal_absence_claimed": false
+  },
+  "model_only_separation_table": [
+    {
+      "z_a0": 0.5,
+      "fresh_candidate": true,
+      "DeltaK_model": 0.19753269207305832,
+      "DeltaDcol_model": 0.2140818408032047,
+      "DeltaDrow_model": 0.19618047363741384,
+      "DeltaDmax_model": 0.2140818408032047,
+      "S_design_only": 0.29129057485493476
+    },
+    {
+      "z_a0": 1.5,
+      "fresh_candidate": false,
+      "excluded_reason": "preexisting direct OD output at z1.5; no independent JVP",
+      "DeltaK_model": null,
+      "DeltaDcol_model": null,
+      "DeltaDrow_model": null,
+      "DeltaDmax_model": null,
+      "S_design_only": null
+    },
+    {
+      "z_a0": 2.5,
+      "fresh_candidate": true,
+      "DeltaK_model": 0.1912237840334797,
+      "DeltaDcol_model": 0.18557809437208567,
+      "DeltaDrow_model": 0.20561180584475613,
+      "DeltaDmax_model": 0.20561180584475613,
+      "S_design_only": 0.280789512416017
+    },
+    {
+      "z_a0": 3.5,
+      "fresh_candidate": true,
+      "DeltaK_model": 0.19122378403347964,
+      "DeltaDcol_model": 0.2095387347094023,
+      "DeltaDrow_model": 0.1838794898576967,
+      "DeltaDmax_model": 0.2095387347094023,
+      "S_design_only": 0.2836776637729875
+    }
+  ],
+  "selected_future_midpoint_z_a0": 0.5,
+  "selected_future_midpoint_time_ta": 1.1179386195169057,
+  "selection_rule_sha256": "835c0a53719849652557737ef61d343c58222d847cf6d1b2ee6fb4831fb656dc",
+  "selection_file": "MIDPOINT_SELECTION.json",
+  "selection_sha256": "2761664a75d7609c7ac0b1df4daf36a50e01d82a80b28a42885a22c5042a800b",
+  "S_role": "experiment design only; not final model-selection score",
+  "next_validation_preregistration_file": "NEXT_VALIDATION_PREREGISTRATION.json",
+  "next_validation_preregistration_sha256": "a111005296954c303563be6aaab10379d22694c544576fb1869a37938ab9247d",
+  "next_validation_execution_authorized": false,
+  "science_node_count": 0,
+  "science_producer_commands": 0,
+  "H_computation_count": 0,
+  "full49_computation_count": 0,
+  "trajectory_count": 0,
+  "R31Z_z1_status": "single-point relative support only; interval-wide adequacy not admitted",
+  "R31AD_predictive_validation": false,
+  "remaining_gates": {
+    "full_cell": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "fixed_Q_complete_HH_physical_invariance_reviewed": false,
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false,
+    "H_skip_admitted": false
+  },
+  "RESTORE_VERIFIED": false,
+  "stop_condition": "five-node replay, midpoint prediction-only selection and prereg lock complete; future direct node requires separate decision",
+  "provider_midpoint_name_search_file": "PROVIDER_MIDPOINT_SEARCH.json"
+}
