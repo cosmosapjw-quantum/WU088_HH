@@ -1,0 +1,68 @@
+{
+  "schema": "WU088_R31AC_NCP_AUTHORIZATION_GATE_RETURN_V1",
+  "reviewed_remote": {
+    "branch": "research/r31ac-z1-authorization-protocol-20260929",
+    "commit": "7a5e3608746c36e5b72cb9506b6585981617f9d9",
+    "tree": "858e0facf4948a65ef21ba7663b39594b7284cc2",
+    "successor_at_start": false,
+    "parent_commit": "91aa8a0aeb4ddd3d89f0ef295cba2ddaac255f27",
+    "parent_tree": "d4dc56edda2a4685c3a666a4b9ea7748428052e8"
+  },
+  "authorization": {
+    "envelope_template_file": "research/r31ac_z1_authorization/AUTHORIZATION_ENVELOPE_TEMPLATE.json",
+    "scope_file": "research/r31ac_z1_authorization/AUTHORIZATION_SCOPE.json",
+    "matching_envelope_present_as_affirmative_directive": false,
+    "envelope_present_as_conditional_example": true,
+    "classification": "UNAUTHORIZED_CONDITIONAL_EXAMPLE",
+    "one_shot_authorization_consumed": false
+  },
+  "Z1_EXECUTION_STATUS": "AWAITING_STRUCTURED_AUTHORIZATION",
+  "preflight": {
+    "command_file": "GATE_PREFLIGHT.command",
+    "stdout_file": "GATE_PREFLIGHT.stdout",
+    "stderr_file": "GATE_PREFLIGHT.stderr",
+    "exit_code": 0,
+    "result_file": "GATE_PREFLIGHT.json",
+    "binding_checks_pass": true,
+    "prior_focused_replay": "research/r31ab_z1_decision/ncp_followup_20260929/RETURN.json; 3 focused tests PASS and replay exit0; source unchanged, not rerun"
+  },
+  "scope_sha256_declared": "730cf09525d3b09e3b45fab7b8cec78cce631182b2c87e7008f766a10839787c",
+  "scope_file_sha256": "d86a81457098571deda0b921be3d498be397a47dd58f8f50291c843b5e751eda",
+  "scope_hash_derivation_note": {
+    "standard_sorted_minified_json_without_digest_sha256": "9ed13ee9acf215e40b6a2d1621e8589a95cf428ac88d1f4e8222022669ee898b",
+    "declared_digest_matches_template_and_handoff": true,
+    "canonical_serialization_procedure_in_contract": false,
+    "independent_digest_rederivation": "UNVERIFIED; no execution authorization and no scope mutation"
+  },
+  "preregistration_sha256": "803b0968bd7f1fab41310469578b455ef03a64aae5beac1f23c1bab8afa19ddb",
+  "metric_rule_sha256": "68b0d4c4b80443f374b9c49fa4c1737a8e2f39ed6b06f7340d052aa8c7c537b6",
+  "R31Z_model_sha256": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034",
+  "R31AA_model_sha256": "f24d2acc0506e97dbefea107c126e53891d9879311aad60b9dd3b8e9a1be05d5",
+  "producer_archive_sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+  "science_producer_commands": [],
+  "science_node_count": 0,
+  "direct_z1_output_accessed": false,
+  "direct_z1_output_identity": null,
+  "frozen_decision_verdict": "NOT_EVALUATED_NO_DIRECT_Z1_NODE",
+  "independent_validation": "NOT_EVALUATED_NO_DIRECT_Z1_NODE",
+  "z3_status": "POST_HOC_TUNING_DATA_NOT_INDEPENDENT_CONFIRMATION",
+  "claim_ceiling": {
+    "interval_wide_accuracy_admitted": false,
+    "trajectory_accuracy_admitted": false,
+    "transition_error_admitted": false,
+    "full_cell_admitted": false,
+    "H_skip_admitted": false,
+    "production_admitted": false
+  },
+  "remaining_gates": {
+    "full_cell": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "complete_HH_physical_invariant_sector_reviewed": false,
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false
+  },
+  "mutation_scope": "authorization-gate evidence only; original raw/source/worktrees/backups preserved",
+  "RESTORE_VERIFIED": false,
+  "stop_condition": "unauthorized: return without science computation"
+}

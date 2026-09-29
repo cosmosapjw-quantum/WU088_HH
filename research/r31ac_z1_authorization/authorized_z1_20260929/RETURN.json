@@ -1,0 +1,139 @@
+{
+  "schema": "WU088_R31AC_AUTHORIZED_Z1_ONE_SHOT_RETURN_V1",
+  "remote_before_work": {
+    "branch": "research/r31ac-z1-authorization-protocol-20260929",
+    "commit": "89afee4b2c615e62b2bbf4decce58bc42d563d7d",
+    "tree": "849eeb7fc8eb47cd0fa08500d81065b2032c75ff",
+    "successor_at_start": false
+  },
+  "authorization": {
+    "classification": "AUTHORIZED_STANDALONE_AFFIRMATIVE_ENVELOPE",
+    "scope_sha256_declared": "730cf09525d3b09e3b45fab7b8cec78cce631182b2c87e7008f766a10839787c",
+    "scope_file_sha256": "d86a81457098571deda0b921be3d498be397a47dd58f8f50291c843b5e751eda",
+    "canonical_serialization_unspecified": true,
+    "independent_scope_digest_rederivation": "UNVERIFIED",
+    "all_individual_scope_bindings_verified": true,
+    "consumed": true,
+    "same_envelope_rerun_allowed": false
+  },
+  "Z1_EXECUTION_STATUS": "ONE_SHOT_EXECUTED_AND_CONSUMED",
+  "science_node_count": 1,
+  "science_producer_command_count": 2,
+  "z_a0": 1.0,
+  "tau_ta": 2.2358772390338113,
+  "radial_order": 192,
+  "runtime": "/root/WU088_R31AC_Z1_RUNTIME_20260929",
+  "environment_file": "ENVIRONMENT.txt",
+  "producer_sources_sha256": {
+    "completion/mixed_h/od_run.py": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+    "completion/mixed_h/h0_backend.py": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+    "completion/mixed_h/h0_fused.cpp": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+    "completion/mixed_h/native.py": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+    "completion/mixed_derivative/run.py": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+    "completion/mixed_derivative/native.py": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d",
+    "completion/mixed_derivative/jvp.cpp": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+    "completion/mixed_derivative/CONTRACT.json": "f5a10ef22dd5aefade7e9d9dc079066c0b3e0781a9c997411997cb67ba0acb66",
+    "cont2c/convergence/frozen_grid_n192.npz": "e1959e1bbb66b5e27410daa3d3bdb0815885919f11af3a014d86a47f15b96301",
+    "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c"
+  },
+  "commands": {
+    "OD_NATIVE_PREP": {
+      "argv_file": "OD_NATIVE_PREP.command",
+      "stdout_file": "OD_NATIVE_PREP.stdout",
+      "stderr_file": "OD_NATIVE_PREP.stderr",
+      "exit_code": 0
+    },
+    "JVP_NATIVE_PREP": {
+      "argv_file": "JVP_NATIVE_PREP.command",
+      "stdout_file": "JVP_NATIVE_PREP.stdout",
+      "stderr_file": "JVP_NATIVE_PREP.stderr",
+      "exit_code": 0
+    },
+    "OD": {
+      "argv_file": "OD.command",
+      "stdout_file": "OD.stdout",
+      "stderr_file": "OD.stderr",
+      "exit_code": 0
+    },
+    "JVP": {
+      "argv_file": "JVP.command",
+      "stdout_file": "JVP.stdout",
+      "stderr_file": "JVP.stderr",
+      "exit_code": 0
+    }
+  },
+  "comparison_command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31ac_z1_authorization/ncp_followup_20260929/z1_compare.py --repo /root/WU088_HH_R31AC_FOLLOWUP_20260929 --input /root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz --od /root/WU088_R31AC_Z1_RUNTIME_20260929/completion/mixed_h/od/B192_z1/ASSEMBLED_OD.npz --jvp /root/WU088_R31AC_Z1_RUNTIME_20260929/completion/mixed_derivative/B192_z1/ASSEMBLED.npz --ledger /root/WU088_R31AC_Z1_RUN_20260929/ONE_SHOT_LEDGER.json --out /root/WU088_R31AC_Z1_RUN_20260929/Z1_COMPARISON.json",
+  "comparison_exit_code": 0,
+  "frozen_input_sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+  "preregistration_sha256": "803b0968bd7f1fab41310469578b455ef03a64aae5beac1f23c1bab8afa19ddb",
+  "metric_rule_sha256": "68b0d4c4b80443f374b9c49fa4c1737a8e2f39ed6b06f7340d052aa8c7c537b6",
+  "frozen_model_sha256": {
+    "R31Z": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034",
+    "R31AA": "f24d2acc0506e97dbefea107c126e53891d9879311aad60b9dd3b8e9a1be05d5"
+  },
+  "direct_output_identity": {
+    "OD": {
+      "path": "/root/WU088_R31AC_Z1_RUNTIME_20260929/completion/mixed_h/od/B192_z1/ASSEMBLED_OD.npz",
+      "sha256": "020dc2c2c580f7e7f8a2d5d322b771b4957fbcc1166ab4e2c363f5a9c3d06818",
+      "bytes": 12335
+    },
+    "JVP": {
+      "path": "/root/WU088_R31AC_Z1_RUNTIME_20260929/completion/mixed_derivative/B192_z1/ASSEMBLED.npz",
+      "sha256": "b6a9926052999c70cc6092c0d47001eff0716d2aefb6ff380edfa18558696819",
+      "bytes": 50424
+    }
+  },
+  "direct_O_source_gap_raw_max_abs": 2.4230417162773035e-19,
+  "direct_metric_identity_raw_max_abs": 5.1686166999111265e-19,
+  "global_R31Z": {
+    "E_O": 0.1434143913780898,
+    "E_dotO_per_ta": 0.16665577052862268,
+    "E_K_per_ta": 0.3650757630525158,
+    "E_Dcol_per_ta": 0.3640452646435257,
+    "E_Drow_per_ta": 0.3846020589552572,
+    "candidate_metric_identity_residual_2norm": 3.773226063841697e-17,
+    "E_Dmax_per_ta": 0.3846020589552572
+  },
+  "local_R31AA": {
+    "E_O": 0.16582143077497558,
+    "E_dotO_per_ta": 0.16857337231144143,
+    "E_K_per_ta": 0.39755079404225363,
+    "E_Dcol_per_ta": 0.39659150496086853,
+    "E_Drow_per_ta": 0.41595304639628755,
+    "candidate_metric_identity_residual_2norm": 4.9601656927470003e-17,
+    "E_Dmax_per_ta": 0.41595304639628755
+  },
+  "decision_tolerance": 1e-10,
+  "frozen_decision_verdict": "GLOBAL_SUPPORTED_AT_Z1",
+  "independent_validation": true,
+  "independence_scope": "z=1 single-point frozen-model comparison only",
+  "z3_status": "POST_HOC_TUNING_DATA_NOT_INDEPENDENT_CONFIRMATION",
+  "raw_evidence": "OD_RAW and JVP_RAW include source-produced assembled arrays and all 144 pair checkpoints each; raw complex256 and float128 retained",
+  "forbidden_outputs_generated": {
+    "H": false,
+    "neutral47": false,
+    "ionic2": false,
+    "full49": false,
+    "trajectory": false,
+    "other_z": false
+  },
+  "claim_ceiling": {
+    "interval_wide_accuracy_admitted": false,
+    "transition_error_admitted": false,
+    "trajectory_accuracy_admitted": false,
+    "full_cell_admitted": false,
+    "H_skip_admitted": false,
+    "production_admitted": false
+  },
+  "remaining_gates": {
+    "full_cell": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "complete_HH_physical_invariant_sector_reviewed": false,
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false
+  },
+  "fixed_Q": "FIXED_Q_MODEL_DEFINITION_ESTABLISHED; dotQ=0 BY_MODEL_DEFINITION; complete-HH physical invariance unproven",
+  "RESTORE_VERIFIED": false,
+  "stop_condition": "z1 node, frozen comparison, evidence publication, dual create-only backup; no model retuning or second node"
+}
