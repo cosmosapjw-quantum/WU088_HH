@@ -1,0 +1,27 @@
+{
+  "schema": "WU088_R31AA_Z1_PREREGISTRATION_V1",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "geometry_z_a0": 1.0,
+  "time_ta": 2.2358772390338113,
+  "radial_order": 192,
+  "required_outputs": ["mixed_O_47x2", "mixed_D_col_47x2", "mixed_D_row_2x47", "independent_mixed_dotO_47x2"],
+  "not_required": ["H", "neutral47", "ionic2", "full49", "trajectory"],
+  "models_frozen_before_execution": [
+    "R31Z_GLOBAL_QUINTIC_O_QUADRATIC_K",
+    "R31AA_LOCAL_PIECEWISE_CUBIC_O_LINEAR_K"
+  ],
+  "primary_metrics": ["E_K", "E_Dmax"],
+  "secondary_metrics": ["E_O", "E_dotO", "E_D_col", "E_D_row", "metric_identity_residual"],
+  "comparison_tolerance": 1e-10,
+  "decision_rule": {
+    "PARETO_SUPPORTED_AT_Z1": "local E_K <= global E_K+tol and local E_Dmax <= global E_Dmax+tol and at least one primary metric improves by >tol",
+    "GLOBAL_SUPPORTED_AT_Z1": "reverse primary dominance using same tolerance",
+    "TRADEOFF_UNRESOLVED": "otherwise"
+  },
+  "claim_ceiling": [
+    "one new point does not validate interval-wide accuracy",
+    "no transition-error or trajectory admission",
+    "z3 is tuning/post-hoc data for R31AA and cannot be recounted as independent confirmation"
+  ],
+  "execution_authorized_by_this_file": false
+}

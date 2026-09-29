@@ -1,0 +1,127 @@
+{
+  "schema": "WU088_R31AA_NCP_FOLLOWUP_RETURN_V1",
+  "reviewed_remote": {
+    "branch": "research/r31aa-validation-design-20260929",
+    "commit": "1938782baf5b6d7558bf576bc0ced6aa0f89351a",
+    "tree": "4cde6a6f3b42fa974ae8cb599d0e430632fd2373",
+    "successor_at_start": false
+  },
+  "parent_R31Z": {
+    "commit": "6e34cfec8971cecce4bbe1c663582e2c5658219b",
+    "tree": "7410169cf96422f77fa00f9e8513cdf88d802eab"
+  },
+  "input": {
+    "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+    "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+    "bytes": 71481
+  },
+  "environment_file": "ENVIRONMENT.txt",
+  "baseline_compile_failure": {
+    "exit_code": 1,
+    "reason": "published focused test source had corrupted trailing bytes and an unterminated string literal at line 55",
+    "files": [
+      "BASELINE_COMPILE.command",
+      "BASELINE_COMPILE.stdout",
+      "BASELINE_COMPILE.stderr",
+      "BASELINE_COMPILE.exit"
+    ],
+    "repair": "replaced only the corrupted final assertion with expected z1_status string"
+  },
+  "executions": {
+    "COMPILE": {
+      "argv_file": "COMPILE.command",
+      "stdout_file": "COMPILE.stdout",
+      "stderr_file": "COMPILE.stderr",
+      "exit_code": 0
+    },
+    "TESTS": {
+      "argv_file": "TESTS.command",
+      "stdout_file": "TESTS.stdout",
+      "stderr_file": "TESTS.stderr",
+      "exit_code": 0
+    },
+    "REPLAY": {
+      "argv_file": "REPLAY.command",
+      "stdout_file": "REPLAY.stdout",
+      "stderr_file": "REPLAY.stderr",
+      "exit_code": 0
+    },
+    "POSTHOC": {
+      "argv_file": "POSTHOC.command",
+      "stdout_file": "POSTHOC.stdout",
+      "stderr_file": "POSTHOC.stderr",
+      "exit_code": 0
+    }
+  },
+  "focused_tests": {
+    "junit_file": "TESTS.xml",
+    "tests": 5,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "time": 0.914,
+    "scope": "only R31AA five focused tests; stage copies byte-identical repaired source and symlinks hash-locked existing snapshot"
+  },
+  "local_replay_file": "LOCAL_REPLAY.json",
+  "local_fit_node_replay": {
+    "candidate": "PIECEWISE_CUBIC_HERMITE_O_PLUS_PIECEWISE_LINEAR_K",
+    "max_O_node_error_2norm": 0.0,
+    "max_dotO_node_error_2norm": 3.9551030605613296e-17,
+    "max_D_col_node_error_2norm": 8.947768860794336e-17,
+    "max_D_row_node_error_2norm": 4.933777481199299e-17,
+    "max_metric_identity_grid_2norm": 1.6201216774652786e-16,
+    "grid_probe_count": 65
+  },
+  "K_error_bounds_per_ta": {
+    "lower": 0.2829548060306026,
+    "upper": 0.3133280606109316,
+    "lower_over_dotO": 3.8961646371405805,
+    "connection_sector_dominates": true,
+    "derivation": "DeltaDc=DeltaDot/2+DeltaK; DeltaDr^dagger=DeltaDot/2-DeltaK"
+  },
+  "z3_posthoc_comparison_file": "Z3_POSTHOC_MODEL_COMPARISON.json",
+  "z3_posthoc_summary": {
+    "global": {
+      "E_O": 0.13213912310643441,
+      "E_dotO_per_ta": 0.07262393465956431,
+      "E_K_per_ta": 0.31135192786034865,
+      "E_Dcol_per_ta": 0.3073893478614785,
+      "E_Drow_per_ta": 0.3192667733603847,
+      "candidate_metric_residual_2norm": 9.463283080315403e-17,
+      "E_Dmax_per_ta": 0.3192667733603847
+    },
+    "local": {
+      "E_O": 0.09901629838600878,
+      "E_dotO_per_ta": 0.07000108037492338,
+      "E_K_per_ta": 0.26200533457534436,
+      "E_Dcol_per_ta": 0.2589749097122614,
+      "E_Drow_per_ta": 0.26929852552753863,
+      "candidate_metric_residual_2norm": 3.816638205543649e-17,
+      "E_Dmax_per_ta": 0.26929852552753863
+    },
+    "independent_validation": false,
+    "z3_reused_as_new_confirmation": false
+  },
+  "z1_preregistration_lock_file": "Z1_PREREGISTRATION_LOCK.json",
+  "z1_preregistration_sha256": "803b0968bd7f1fab41310469578b455ef03a64aae5beac1f23c1bab8afa19ddb",
+  "z1_execution_authorized": false,
+  "fixed_Q_contract_review_file": "FIXED_Q_CONTRACT_REVIEW.json",
+  "fixed_Q_verdict": "FIXED_Q_MODEL_DEFINITION_ESTABLISHED",
+  "dotQ": "0 BY_MODEL_DEFINITION",
+  "FIXED_Q_PHYSICAL_INVARIANCE_REVIEWED": false,
+  "remaining_gates": {
+    "full_cell": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "z4_neutral47": "not generated",
+    "complete_HH_invariant_sector_proof": false,
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false,
+    "trajectory_admitted": false,
+    "H_skip_admitted": false
+  },
+  "mutation_scope": "repaired corrupted test tail; added bounded replay/comparison CLI and evidence; no native/H/node/full49/trajectory computation",
+  "new_scientific_nodes": 0,
+  "restore_verified": false,
+  "stop_condition_met": true
+}

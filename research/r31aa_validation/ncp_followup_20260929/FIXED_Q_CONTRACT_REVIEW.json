@@ -1,0 +1,61 @@
+{
+  "schema": "WU088_R31AA_FIXED_Q_CONTRACT_REVIEW_V1",
+  "verdict": "FIXED_Q_MODEL_DEFINITION_ESTABLISHED",
+  "archive": {
+    "path": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+    "sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+    "bytes": 267704906
+  },
+  "evidence": {
+    "neutral_inversion_sector_producer": {
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/src/vendor/parity_sp.py",
+      "sha256": "a4e65652e7679421af1fc4493fe3023d91c146dcb809ae82650613f5c6f9da7a",
+      "bytes": 2635,
+      "lines": "13-25"
+    },
+    "ionic_extension": {
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/src/cusp_ohd.py",
+      "sha256": "fc7d9980ab7df898b945d9eff47fda23d431b348f9969b8fa27329ede1e33153",
+      "bytes": 7342,
+      "lines": "52-56"
+    },
+    "model_export": {
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_blocks.py",
+      "sha256": "02eed6cb85d1ac96145b2c135ea6967355d369382b376342e22dcc4b73646131",
+      "bytes": 5996,
+      "lines": "41-51"
+    },
+    "frozen_model_array": {
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz",
+      "sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+      "bytes": 5681,
+      "lines": "array Q shape 49x25; SHA fixed"
+    },
+    "node_assembly": {
+      "archive_member": "completion/full_model/assemble_v3.py",
+      "sha256": "05aaa94b41bf0577b74f9ede90d0b7d6cee319003734b2af836a4dacf8aa7005",
+      "bytes": 21470,
+      "lines": "251-259, 272-279"
+    },
+    "full_curve_provider": {
+      "archive_member": "completion/full_curve/integrate.py",
+      "sha256": "408eac9e254d56b38cf90e8c47efef47137504c2814e33463c7d8ecd228a636a",
+      "bytes": 13981,
+      "lines": "46-59, 120-135"
+    }
+  },
+  "source_interpretation": "parity_sp constructor creates fixed s=0 Q; cusp_ohd extends it to 49x25; r10_blocks copies Q into FROZEN_INPUTS; each full49 node uses model[Q]; pack and curve require exact equality to same model Q across z",
+  "dotQ": {
+    "value": 0,
+    "units": "per t_a",
+    "basis": "BY_MODEL_DEFINITION",
+    "source": "fixed represented Q in frozen model, not a separately evaluated dotQ array"
+  },
+  "Q_DYNAMIC_CONTRACT_MISSING": false,
+  "FIXED_Q_PHYSICAL_INVARIANCE_REVIEWED": false,
+  "complete_HH_invariant_sector_proof": "not established by these producer/model/curve members",
+  "whole_cell_sector_preservation_admitted": false,
+  "propagation_decoupling_admitted": false,
+  "full_cell_authority_input_blocked": true,
+  "independent_review_admitted": false
+}
