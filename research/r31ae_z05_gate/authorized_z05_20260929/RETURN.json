@@ -1,0 +1,153 @@
+{
+  "schema": "WU088_R31AE_AUTHORIZED_Z05_ONE_SHOT_RETURN_V1",
+  "remote_before_work": {
+    "branch": "research/r31ae-z05-validation-gate-20260929",
+    "commit": "962de2dec76b355695c865f2cb9ab3e70985d49c",
+    "tree": "3fefae7507e823bd2b39233ed00032dc29fb95c8",
+    "successor_at_start": false
+  },
+  "authorization": {
+    "classification": "AUTHORIZED_STANDALONE_AFFIRMATIVE_ENVELOPE",
+    "scope_sha256": "f9872cb045fef146987829620c669fb99f2417a787d74cde26dfee107153a567",
+    "scope_file_sha256": "2e54738ec765656e704119b8d8f15c2b09f76043138b5a8d7c8c0e84063a1020",
+    "scope_binding_checks": {
+      "R31AD_model_sha256": true,
+      "R31Z_model_sha256": true,
+      "five_node_manifest_sha256": true,
+      "selection_sha256": true,
+      "selection_rule_sha256": true,
+      "preregistration_sha256": true
+    },
+    "consumed": true,
+    "same_envelope_rerun_allowed": false
+  },
+  "Z05_EXECUTION_STATUS": "ONE_SHOT_EXECUTED_AND_CONSUMED",
+  "science_node_count": 1,
+  "science_producer_command_count": 2,
+  "z_a0": 0.5,
+  "tau_ta": 1.1179386195169057,
+  "radial_order": 192,
+  "runtime": "/root/WU088_R31AE_Z05_RUNTIME_20260929",
+  "environment_file": "ENVIRONMENT.txt",
+  "producer_source_sha256": {
+    "completion/mixed_h/od_run.py": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+    "completion/mixed_h/h0_backend.py": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+    "completion/mixed_h/h0_fused.cpp": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+    "completion/mixed_h/native.py": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+    "completion/mixed_derivative/run.py": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+    "completion/mixed_derivative/native.py": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d",
+    "completion/mixed_derivative/jvp.cpp": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+    "completion/mixed_derivative/CONTRACT.json": "f5a10ef22dd5aefade7e9d9dc079066c0b3e0781a9c997411997cb67ba0acb66",
+    "cont2c/convergence/frozen_grid_n192.npz": "e1959e1bbb66b5e27410daa3d3bdb0815885919f11af3a014d86a47f15b96301",
+    "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c"
+  },
+  "producer_archive_sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+  "commands": {
+    "OD_NATIVE_PREP": {
+      "argv_file": "OD_NATIVE_PREP.command",
+      "stdout_file": "OD_NATIVE_PREP.stdout",
+      "stderr_file": "OD_NATIVE_PREP.stderr",
+      "exit_code": 0
+    },
+    "JVP_NATIVE_PREP": {
+      "argv_file": "JVP_NATIVE_PREP.command",
+      "stdout_file": "JVP_NATIVE_PREP.stdout",
+      "stderr_file": "JVP_NATIVE_PREP.stderr",
+      "exit_code": 0
+    },
+    "OD": {
+      "argv_file": "OD.command",
+      "stdout_file": "OD.stdout",
+      "stderr_file": "OD.stderr",
+      "exit_code": 0
+    },
+    "JVP": {
+      "argv_file": "JVP.command",
+      "stdout_file": "JVP.stdout",
+      "stderr_file": "JVP.stderr",
+      "exit_code": 0
+    },
+    "COMPARE": {
+      "argv_file": "COMPARE.command",
+      "stdout_file": "COMPARE.stdout",
+      "stderr_file": "COMPARE.stderr",
+      "exit_code": 0
+    }
+  },
+  "frozen_input_sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+  "frozen_source_hashes": {
+    "R31AD": "ab220248066580fc77af70c412251dbe3ed643a6fadc266cf5c25a7a3a6651a0",
+    "R31Z": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034",
+    "manifest": "05f4068dffad51080942c466e19943a73c508b004d3d46f3b9a2b69a58cefc49",
+    "selection": "2761664a75d7609c7ac0b1df4daf36a50e01d82a80b28a42885a22c5042a800b",
+    "rule": "835c0a53719849652557737ef61d343c58222d847cf6d1b2ee6fb4831fb656dc",
+    "prereg": "a111005296954c303563be6aaab10379d22694c544576fb1869a37938ab9247d"
+  },
+  "direct_output_identity": {
+    "OD": {
+      "path": "/root/WU088_R31AE_Z05_RUNTIME_20260929/completion/mixed_h/od/B192_z0.5/ASSEMBLED_OD.npz",
+      "sha256": "1505463b2329e9398b92077d51a9704c4b5f2c5d71288cf811571763a672f80a",
+      "bytes": 12560
+    },
+    "JVP": {
+      "path": "/root/WU088_R31AE_Z05_RUNTIME_20260929/completion/mixed_derivative/B192_z0.5/ASSEMBLED.npz",
+      "sha256": "88b44ec142eef45ef7232f7fd050a0c5ca1773db416986a9a5857d60959b5fc3",
+      "bytes": 50434
+    }
+  },
+  "source_O_gap_raw_max_abs": 2.169462877787276e-19,
+  "direct_metric_identity_raw_max_abs": 4.418899730913319e-19,
+  "direct_metric_identity_2norm_complex128": 5.585836134701632e-17,
+  "R31AD_five_node": {
+    "E_O": 0.0875296210906087,
+    "E_dotO_per_ta": 0.06210196649428255,
+    "E_K_per_ta": 0.15030919260543524,
+    "E_Dcol_per_ta": 0.13771728460668747,
+    "E_Drow_per_ta": 0.1677736075942363,
+    "candidate_metric_identity_residual_2norm": 5.969736686610809e-17,
+    "E_Dmax_per_ta": 0.1677736075942363
+  },
+  "R31Z_global": {
+    "E_O": 0.12803431013849245,
+    "E_dotO_per_ta": 0.1500620371912569,
+    "E_K_per_ta": 0.32379090898828017,
+    "E_Dcol_per_ta": 0.32638828306864326,
+    "E_Drow_per_ta": 0.3382471014885593,
+    "candidate_metric_identity_residual_2norm": 4.3571575564963024e-17,
+    "E_Dmax_per_ta": 0.3382471014885593
+  },
+  "decision_tolerance": 1e-10,
+  "frozen_decision_verdict": "PARETO_SUPPORTED_AT_SELECTED_MIDPOINT",
+  "independent_validation": true,
+  "independence_scope": "z=0.5 single-point frozen-model comparison only; direct truth was not used for training or selection",
+  "design_score_used_for_final_decision": false,
+  "raw_evidence": "OD_RAW and JVP_RAW preserve source-produced complex256 assembled arrays, diagnostics and all 144 pair checkpoints each",
+  "OD_backend_scope_note": "Unchanged fused OD kernel evaluates internal T/moment intermediates; od_run.py selects O/G1/G2 and stores O/D only. No Hamiltonian matrix block was assembled or stored.",
+  "forbidden_outputs_generated": {
+    "H_matrix": false,
+    "neutral47": false,
+    "ionic2": false,
+    "full49": false,
+    "trajectory": false,
+    "other_z": false
+  },
+  "claim_ceiling": {
+    "interval_wide_accuracy_admitted": false,
+    "transition_error_admitted": false,
+    "trajectory_accuracy_admitted": false,
+    "full_cell_admitted": false,
+    "H_skip_admitted": false,
+    "production_admitted": false
+  },
+  "remaining_gates": {
+    "full_cell": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "fixed_Q_complete_HH_physical_invariance_reviewed": false,
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false
+  },
+  "RESTORE_VERIFIED": false,
+  "stop_condition": "z0.5 node, frozen comparison, evidence publication and dual create-only backup; no retuning or second node",
+  "runtime_isolation": "new copy of prior hash-verified CP4 runtime; existing source/raw preserved"
+}
