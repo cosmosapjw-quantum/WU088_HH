@@ -1,0 +1,1 @@
+/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q -p no:cacheprovider research/r31w_metric_cell/test_metric_cell.py research/r31w_metric_cell/test_replay_snapshot.py --junitxml=/root/WU088_R31W_RUN_20260929.jgagtc/TESTS.xml

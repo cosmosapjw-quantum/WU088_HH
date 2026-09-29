@@ -1,0 +1,222 @@
+{
+  "schema": "WU088_R31W_CELL_APPLICABILITY_V1",
+  "status": "AUTHORITY_INPUT_BLOCKED",
+  "reviewed_head": "2442d94e30a29e586927758f0537114d88bd9fe5",
+  "reviewed_tree": "324871aeac9ef8f17d11a6b1a7a66fe9f91c9019",
+  "snapshot": {
+    "archive": {
+      "provider": "Google Drive",
+      "object_id": "1Cr3BQN_uoZPNWeP2O-gmDGYvTw_Kjq-7",
+      "path": "WU088_HH_R31W_METRIC_CELL_20260929_v1.zip",
+      "sha256": "4d0638a856e0bd2cf3f8a371b82167d34964d6ed92a37c1ad2b8014303ba5c32",
+      "bytes": 149858
+    },
+    "member": "overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+    "extraction_root": "/root/WU088_R31W_INPUT_20260929",
+    "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+    "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+    "bytes": 71481,
+    "source_commit": "NOT_IN_GIT_ARCHIVED_R31U_SUBSET"
+  },
+  "archive_inspection": {
+    "member_count": 40,
+    "list_command": "unzip -l COMPANION.zip",
+    "companion_publication_receipt": {
+      "path": "/root/WU088_R31W_INPUT_20260929/PUBLICATION_RECEIPT.json",
+      "sha256": "d3052a457d08499aa362d886c6351a810f8bfb710b8bdbee9afeb99c78f7976a",
+      "source_commit": "NOT_IN_GIT_ARCHIVED_R31W_COMPANION",
+      "read_scope": "commit/tree/blob scope"
+    },
+    "upstream_manifest": {
+      "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/SOURCE_MANIFEST_R31U.json",
+      "sha256": "8959e3761582f3ca50c59eb21d1a990b0151f147056dee1f31de071a067131c0",
+      "source_commit": "NOT_IN_GIT_ARCHIVED_R31U_SUBSET",
+      "read_scope": "all source entries and array shapes"
+    },
+    "inherited_tar_members": "listed; no R31U endpoint array payload found"
+  },
+  "geometry_coordinate_contract": {
+    "model": "straight-line H-H, impact parameter 2 a0; 47 neutral plus 2 fixed ionic channels",
+    "z_interval_a0": [
+      0,
+      4
+    ],
+    "time_unit": "t_a=hbar/E_h",
+    "rate_unit": "1/t_a",
+    "basis": "complex ETFs; same endpoint coordinate and phase map not established"
+  },
+  "fields": [
+    {
+      "field": "neutral47.O0,O4,D0,D4",
+      "state": "missing",
+      "source": [
+        {
+          "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+          "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+          "source_commit": "NOT_IN_GIT_ARCHIVED_R31U_SUBSET",
+          "read_scope": "NPZ member names, shapes and replay-used arrays"
+        },
+        {
+          "path": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31w_metric_cell/replay_snapshot.py",
+          "sha256": "90b23c8de9311fe4e7f59b58531a5aa79964f4ebfdcd43ec4c160ab5d6e6348a",
+          "source_commit": "2442d94e30a29e586927758f0537114d88bd9fe5",
+          "read_scope": "compute() input keys and block insertion"
+        }
+      ],
+      "observation": "Snapshot has direct z2 49x49 O,D,dotO and z0/z4 mixed 47x2 plus ionic 2x2 O,D; no complete neutral endpoint matrices."
+    },
+    {
+      "field": "neutral47.continuous_provider",
+      "state": "missing",
+      "source": [
+        {
+          "path": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31u_shared_host/RESEARCH_AND_DESIGN_KO.md",
+          "sha256": "ec5c4b9aee1d3399b7c7b3c8ef9df8e90ce8ed2eb1900161b01b42fc9bb9e01c",
+          "source_commit": "2442d94e30a29e586927758f0537114d88bd9fe5",
+          "read_scope": "lines 40-70"
+        },
+        {
+          "path": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31v_postidle/replay_metric.py",
+          "sha256": "58fceedc847f81b70a62e22e5009c6b89cc9dee9e452f6f989558610c56ec17f",
+          "source_commit": "2442d94e30a29e586927758f0537114d88bd9fe5",
+          "read_scope": "lines 21-39"
+        }
+      ],
+      "observation": "Inspected replay paths freeze direct z2 neutral block; no continuous neutral O,D provider or source derivative contract in inspected material."
+    },
+    {
+      "field": "dotO_actual",
+      "state": "partial",
+      "source": [
+        {
+          "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+          "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+          "source_commit": "NOT_IN_GIT_ARCHIVED_R31U_SUBSET",
+          "read_scope": "direct_dotO at z2 and z0/z4 mixed/ionic dotO arrays"
+        },
+        {
+          "path": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31w_metric_cell/replay_snapshot.py",
+          "sha256": "90b23c8de9311fe4e7f59b58531a5aa79964f4ebfdcd43ec4c160ab5d6e6348a",
+          "source_commit": "2442d94e30a29e586927758f0537114d88bd9fe5",
+          "read_scope": "lines 25-39"
+        }
+      ],
+      "observation": "Independent stored direct_dotO exists only for z2 point. Actual derivative of a complete full49 cell function is unavailable; D+D† was not substituted."
+    },
+    {
+      "field": "atomic_time_conversion",
+      "state": "available",
+      "source": [
+        {
+          "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/THEORY_KO.md",
+          "sha256": "fde14442818dcc09783cf812321dcab36ba8058b08bfc64c830288f0de574caa",
+          "source_commit": "NOT_IN_GIT_ARCHIVED_R31W_COMPANION",
+          "read_scope": "lines 11-27"
+        },
+        {
+          "path": "/root/WU088_HH_R31W_REPLAY_20260929/docs/research/MATHEMATICS.md",
+          "sha256": "10d9ffb50638c7ad30e2a09dffe975929fc58e9f2653b0bb1071a37b01f1ea2b",
+          "source_commit": "2442d94e30a29e586927758f0537114d88bd9fe5",
+          "read_scope": "lines 1-8"
+        },
+        {
+          "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+          "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+          "source_commit": "NOT_IN_GIT_ARCHIVED_R31U_SUBSET",
+          "read_scope": "velocity scalar"
+        }
+      ],
+      "contract": {
+        "coordinate": "z in a0",
+        "time": "t_a=hbar/E_h",
+        "velocity_a0_per_ta": 0.4472517464474613,
+        "delta_z_a0": 4,
+        "delta_t_ta": 8.943508956135245
+      }
+    },
+    {
+      "field": "basis_ordering_phase",
+      "state": "ambiguous",
+      "source": [
+        {
+          "path": "/root/WU088_HH_R31W_REPLAY_20260929/docs/research/MATHEMATICS.md",
+          "sha256": "10d9ffb50638c7ad30e2a09dffe975929fc58e9f2653b0bb1071a37b01f1ea2b",
+          "source_commit": "2442d94e30a29e586927758f0537114d88bd9fe5",
+          "read_scope": "lines 1-8, 93-100"
+        },
+        {
+          "path": "/root/WU088_HH_R31W_REPLAY_20260929/research/r31w_metric_cell/replay_snapshot.py",
+          "sha256": "90b23c8de9311fe4e7f59b58531a5aa79964f4ebfdcd43ec4c160ab5d6e6348a",
+          "source_commit": "2442d94e30a29e586927758f0537114d88bd9fe5",
+          "read_scope": "lines 14-33"
+        }
+      ],
+      "observation": "47 neutral + 2 ionic and complex ETF conventions are described, with block indices in replay. A canonical endpoint-to-endpoint basis ordering/phase map is not independently established by these inspected sources."
+    },
+    {
+      "field": "common_retained_subspace_rank",
+      "state": "missing",
+      "source": [
+        {
+          "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+          "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+          "source_commit": "NOT_IN_GIT_ARCHIVED_R31U_SUBSET",
+          "read_scope": "direct_Q shape 49x25 at z2"
+        },
+        {
+          "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/THEORY_KO.md",
+          "sha256": "fde14442818dcc09783cf812321dcab36ba8058b08bfc64c830288f0de574caa",
+          "source_commit": "NOT_IN_GIT_ARCHIVED_R31W_COMPANION",
+          "read_scope": "lines 48-57, 115-120"
+        }
+      ],
+      "observation": "One fixed z2 49x25 Q is available; whole-cell common retained subspace, endpoint SPD/rank and its transport are not evidenced."
+    },
+    {
+      "field": "ionic2x2.endpoints",
+      "state": "available_limited",
+      "source": [
+        {
+          "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+          "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+          "source_commit": "NOT_IN_GIT_ARCHIVED_R31U_SUBSET",
+          "read_scope": "z0_ion_O,D and z4_ion_O,D 2x2"
+        }
+      ],
+      "observation": "Complete stored ionic 2x2 endpoints define a diagnostic affine subblock, not a closed coupled HH evolution."
+    },
+    {
+      "field": "physical_affineness_full_O,D",
+      "state": "missing",
+      "source": [
+        {
+          "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/THEORY_KO.md",
+          "sha256": "fde14442818dcc09783cf812321dcab36ba8058b08bfc64c830288f0de574caa",
+          "source_commit": "NOT_IN_GIT_ARCHIVED_R31W_COMPANION",
+          "read_scope": "lines 59-98 and 115-120"
+        }
+      ],
+      "observation": "Endpoints, even if later obtained, can define an exact affine represented model but do not establish that the physical source functions are affine."
+    }
+  ],
+  "missing_required": [
+    "neutral47.O0",
+    "neutral47.O4",
+    "neutral47.D0",
+    "neutral47.D4",
+    "complete continuous neutral provider or complete defined affine O,D",
+    "actual derivative of complete full49 cell O",
+    "common endpoint-to-endpoint basis ordering/phase map",
+    "whole-cell common retained subspace/rank and endpoint SPD evidence",
+    "independent source and arithmetic error enclosures for physical certificate"
+  ],
+  "defined_ionic2x2_affine_diagnostic_only": true,
+  "exact_affine_model_vs_physical_source": "Distinct; physical affineness not established",
+  "full25_or_49_HH_interval_bound": false,
+  "certified": false,
+  "physical_transition_error_bound": false,
+  "H_skip_admitted": false,
+  "synthetic_24x13_grid_is_interval_proof": false,
+  "new_native_evaluations": 0,
+  "new_heavy_scientific_nodes": 0
+}
