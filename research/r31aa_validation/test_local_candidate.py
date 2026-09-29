@@ -52,4 +52,4 @@ def test_invalid_inputs_rejected():
 def test_claim_ceiling():
     m=api();d=m.replay(INPUT)
     assert d['z3_status']=='CONSUMED_DIAGNOSTIC_NOT_FUTURE_VALIDATION'
-    assert d['z1_status']=='NEW_INDEPENDENT_VALIDATION_REQU%Iœ(€€€…ÍÍ•ÉĞ‘l™Õ±±}•±±}‰½Õ¹t¥Ì…±Í”(€€€…ÍÍ•ÉĞ‘lÁÉ½‘ÕÑ¥½¹}…‘µ¥ÑÑ•t¥Ì…±Í”(€€€…ÍÍ•ÉĞ‘l¹…Ñ¥Ù•}•Ù…±Õ…Ñ¥½¹ÌtôôÀ
+    assert d['z1_status']=='NEW_INDEPENDENT_VALIDATION_REQUIRED'

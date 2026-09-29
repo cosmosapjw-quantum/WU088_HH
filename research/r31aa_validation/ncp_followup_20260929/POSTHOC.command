@@ -1,0 +1,1 @@
+/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31aa_validation/posthoc_compare.py --input /root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz --archive /root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip --out /root/WU088_R31AA_RUN_20260929/Z3_POSTHOC_MODEL_COMPARISON.json
