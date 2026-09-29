@@ -1,0 +1,256 @@
+{
+  "schema": "WU088_R31X_NCP_REPLAY_RETURN_V1",
+  "status": "FOCUSED_REPLAY_PASS__Q_AUTHORITY_BLOCKED__MIXED_FRAME_AUTHORITY_BLOCKED",
+  "reviewed_commit": "9ee51598c3c279dfd9e726255f386198e1d31c07",
+  "reviewed_tree": "4528df476552602129223cabd35b9b37dde361be",
+  "executed_commit": "9ee51598c3c279dfd9e726255f386198e1d31c07",
+  "executed_tree": "4528df476552602129223cabd35b9b37dde361be",
+  "parent_commit": "6cb5d023f80301ba3efad4f1af1d25c327600f15",
+  "snapshot": {
+    "path": "/root/WU088_R31X_INPUT_20260929/EXISTING_METRIC_INPUTS.npz",
+    "bytes": 71481,
+    "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+    "archive_object_id": "1Cr3BQN_uoZPNWeP2O-gmDGYvTw_Kjq-7",
+    "archive_sha256": "4d0638a856e0bd2cf3f8a371b82167d34964d6ed92a37c1ad2b8014303ba5c32",
+    "member": "overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+    "r31x_inherited_archive_sha256": "4d0638a856e0bd2cf3f8a371b82167d34964d6ed92a37c1ad2b8014303ba5c32",
+    "r31x_companion_object_id": "1sapWHjvmCa1zl11JXdp1Tt59DpB7mGDK",
+    "r31x_companion_sha256": "858aaa0961e278b82e6de0b6e9130498186af022aa209c982adf8ce5bda6f8fe"
+  },
+  "environment": {
+    "NCP_python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "NCP_executable": "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pytest": "9.1.1",
+    "validated_exact_fallback_executable": "/root/wu088_hh_ncp_work/venv/bin/python",
+    "validated_exact_fallback_python": "3.12.3",
+    "validated_exact_fallback_sympy": "1.14.0",
+    "OPENBLAS_NUM_THREADS": 1,
+    "OMP_NUM_THREADS": 1,
+    "PYTHONPYCACHEPREFIX": "/root/WU088_R31X_RUN_20260929.b0yfjO/pycache"
+  },
+  "run_directory": "/root/WU088_R31X_RUN_20260929.b0yfjO",
+  "commands": {
+    "COMPILE": {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m py_compile research/r31x_subspace_witness/subspace_witness.py research/r31x_subspace_witness/replay_snapshot.py research/r31x_subspace_witness/test_subspace_witness.py research/r31x_subspace_witness/test_replay_snapshot.py research/r31x_subspace_witness/VERIFY_EXACT_SYMPY.py",
+      "exit": 0,
+      "log": "/root/WU088_HH_R31X_REPLAY_20260929/research/r31x_subspace_witness/ncp_replay_20260929/COMPILE.log"
+    },
+    "TESTS": {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python -m pytest -q -p no:cacheprovider research/r31x_subspace_witness/test_subspace_witness.py research/r31x_subspace_witness/test_replay_snapshot.py --junitxml=/root/WU088_R31X_RUN_20260929.b0yfjO/TESTS.xml",
+      "exit": 0,
+      "log": "/root/WU088_HH_R31X_REPLAY_20260929/research/r31x_subspace_witness/ncp_replay_20260929/TESTS.log"
+    },
+    "REPLAY": {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31x_subspace_witness/replay_snapshot.py --input /root/WU088_R31X_INPUT_20260929/EXISTING_METRIC_INPUTS.npz --out /root/WU088_R31X_RUN_20260929.b0yfjO/POINT_WITNESS.json",
+      "exit": 0,
+      "log": "/root/WU088_HH_R31X_REPLAY_20260929/research/r31x_subspace_witness/ncp_replay_20260929/REPLAY.log"
+    },
+    "EXACT": {
+      "command": "/root/wu088_hh_ncp_work_v2/venv/bin/python research/r31x_subspace_witness/VERIFY_EXACT_SYMPY.py",
+      "exit": 1,
+      "log": "/root/WU088_HH_R31X_REPLAY_20260929/research/r31x_subspace_witness/ncp_replay_20260929/EXACT.log"
+    },
+    "EXACT_VALIDATED": {
+      "command": "/root/wu088_hh_ncp_work/venv/bin/python research/r31x_subspace_witness/VERIFY_EXACT_SYMPY.py",
+      "exit": 0,
+      "log": "/root/WU088_HH_R31X_REPLAY_20260929/research/r31x_subspace_witness/ncp_replay_20260929/EXACT_VALIDATED.log"
+    }
+  },
+  "junit": {
+    "path": "/root/WU088_HH_R31X_REPLAY_20260929/research/r31x_subspace_witness/ncp_replay_20260929/TESTS.xml",
+    "tests": 13,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 13
+  },
+  "point_witness_path": "/root/WU088_HH_R31X_REPLAY_20260929/research/r31x_subspace_witness/ncp_replay_20260929/POINT_WITNESS.json",
+  "full_generalized_eigenvalues": [
+    -0.4831184527967165,
+    -0.11540262422575817,
+    -9.760175004509288e-15,
+    -6.644210894017742e-15,
+    -2.1827777434028102e-15,
+    -1.8855179202806537e-15,
+    -1.7191108826232687e-15,
+    -1.5963816591754998e-15,
+    -8.94243607337612e-16,
+    -7.018402049199488e-16,
+    -6.369029976386732e-16,
+    -5.835798306235449e-16,
+    -5.41121079811253e-16,
+    -5.024821998444707e-16,
+    -4.744417812618702e-16,
+    -4.6174191210266125e-16,
+    -4.12419475395956e-16,
+    -2.9499724873824046e-16,
+    -2.513533068116791e-16,
+    -1.8507378243651903e-16,
+    -1.682144153660469e-16,
+    -6.63944990596687e-17,
+    -2.8896638272125345e-17,
+    -8.696980896397627e-18,
+    1.2615715196209081e-18,
+    1.0392063277097063e-17,
+    6.04150430887778e-17,
+    7.767791902775593e-17,
+    8.742038222715261e-17,
+    1.5581020195128812e-16,
+    2.7921228240783387e-16,
+    3.102788781600804e-16,
+    3.7542280810050585e-16,
+    4.11949521159097e-16,
+    4.474886116656434e-16,
+    4.643673616695485e-16,
+    5.314175146564209e-16,
+    5.470397826976964e-16,
+    6.741010973226662e-16,
+    8.092587674197405e-16,
+    1.052866923711129e-15,
+    1.4365734276171829e-15,
+    1.6466504917892667e-15,
+    1.9620148006940623e-15,
+    2.1640916644861176e-15,
+    8.313488992788487e-15,
+    8.5951501216283e-15,
+    0.17743965987509827,
+    0.6007169417167519
+  ],
+  "reduced_generalized_eigenvalues": [
+    -0.4831184527967165,
+    -1.0142665135069419e-14,
+    -1.90972992436735e-15,
+    -1.5678450421047562e-15,
+    -1.032465646612102e-15,
+    -7.259045571650958e-16,
+    -5.667547581587603e-16,
+    -4.68352555729601e-16,
+    -3.495388675435136e-16,
+    -2.35183920395872e-16,
+    -9.669663014478032e-17,
+    -1.9606442504874814e-17,
+    -1.9215113739141274e-18,
+    4.448644251735768e-17,
+    9.316130809680964e-17,
+    2.055812046574256e-16,
+    3.508801062105376e-16,
+    4.235472957954566e-16,
+    4.930251786316506e-16,
+    6.027884898969536e-16,
+    7.604425061540733e-16,
+    1.5750367613996953e-15,
+    1.9853413943540864e-15,
+    8.927100732699284e-15,
+    0.6007169417167524
+  ],
+  "full_nonzero_eigenvalues_tol1e-12": [
+    -0.4831184527967165,
+    -0.11540262422575817,
+    0.17743965987509827,
+    0.6007169417167519
+  ],
+  "reduced_nonzero_eigenvalues_tol1e-12": [
+    -0.4831184527967165,
+    0.6007169417167524
+  ],
+  "eta_full": 0.6007169417167519,
+  "eta_reduced": 0.6007169417167524,
+  "eta_extremal_equal_to_roundoff": true,
+  "eta_equality_is_full_spectral_equivalence": false,
+  "interlacing_pass": true,
+  "reduced_fail_lifts_to_ambient_full49_fail": true,
+  "witnesses": {
+    "negative": {
+      "vector_sha256_complex128": "48b7ba1c30aa3f09aa3c15fa5d1e391c548f763e98064a01e115471a73d66738",
+      "ambient_rayleigh_real": -0.48311845279671684,
+      "ambient_relative_eigen_residual": 4.750119090287141e-16
+    },
+    "positive": {
+      "vector_sha256_complex128": "543a92241a6e44a4b2cddff41d21a965e6d20388a386b40938e6b31e35feebd0",
+      "ambient_rayleigh_real": 0.6007169417167528,
+      "ambient_relative_eigen_residual": 6.728240908158227e-16
+    }
+  },
+  "full_eta_half_connection_correction": 0.30035847085837597,
+  "connection_correction_is_physical_repair_admission": false,
+  "residual_block_norms": {
+    "neutral_neutral_2norm": 1.0284145653056463e-14,
+    "neutral_ionic_2norm": 0.3649304141812513,
+    "neutral_ionic_singular_values": [
+      0.3649304141812513,
+      0.10269718532148013
+    ],
+    "ionic_ionic_2norm": 0.018498256246365877,
+    "full_R_2norm": 0.3742967326428382
+  },
+  "witness_block_attribution": {
+    "negative": {
+      "neutral_neutral_real": 3.6079127695094774e-16,
+      "neutral_neutral_imag": -3.2663917350670905e-16,
+      "neutral_ionic_cross_real": -0.4640637914925836,
+      "neutral_ionic_cross_imag": 2.7755575615628914e-17,
+      "ionic_ionic_real": -0.01905466130413372,
+      "ionic_ionic_imag": 0.0,
+      "sum_real": -0.48311845279671695
+    },
+    "positive": {
+      "neutral_neutral_real": -1.6246840065292715e-16,
+      "neutral_neutral_imag": 5.801837906292599e-16,
+      "neutral_ionic_cross_real": 0.6244098017137278,
+      "neutral_ionic_cross_imag": 5.551115123125783e-17,
+      "ionic_ionic_real": -0.023692859996974902,
+      "ionic_ionic_imag": 0.0,
+      "sum_real": 0.6007169417167528
+    }
+  },
+  "mixed_decomposition": {
+    "midpoint_O_error_2norm": 1.1608909908205545,
+    "midpoint_D_col_error_2norm": 0.5725386294801356,
+    "midpoint_D_row_error_2norm": 1.173510784764767,
+    "secant_slope_minus_direct_z2_dotO_2norm": 0.2910484768338663,
+    "secant_slope_minus_endpoint_z0_dotO_2norm": 0.5495713714162325,
+    "secant_slope_minus_endpoint_z4_dotO_2norm": 0.33156843070467085,
+    "direct_z2_cross_residual_2norm": 9.447776145919295e-17,
+    "hybrid_cross_residual_2norm": 0.3649304141812512,
+    "derivative_mismatch_term_2norm": 0.2910484768338663,
+    "connection_interpolation_mismatch_term_2norm": 0.6386482736156971,
+    "decomposition_closure_2norm": 5.913014929342496e-17,
+    "affine_endpoint_derivative_compatibility": "FAIL_IN_ARCHIVED_REPRESENTATION_CONDITIONAL_ON_COMMON_ENDPOINT_FRAME",
+    "physical_source_affineness_claim": false,
+    "negative_witness_decomposition": {
+      "derivative_mismatch_real": 0.39099702431038824,
+      "connection_interpolation_mismatch_real": -0.8550608158029718,
+      "direct_z2_residual_real": 1.892122501790856e-17,
+      "hybrid_cross_real": -0.4640637914925836
+    },
+    "positive_witness_decomposition": {
+      "derivative_mismatch_real": -0.37883001382455783,
+      "connection_interpolation_mismatch_real": 1.0032398155382856,
+      "direct_z2_residual_real": 1.696274539091146e-16,
+      "hybrid_cross_real": 0.6244098017137278
+    }
+  },
+  "Q_authority": {
+    "path": "/root/WU088_HH_R31X_REPLAY_20260929/research/r31x_subspace_witness/ncp_replay_20260929/Q_AUTHORITY.json",
+    "status": "Q_AUTHORITY_BLOCKED"
+  },
+  "mixed_frame_authority": {
+    "path": "/root/WU088_HH_R31X_REPLAY_20260929/research/r31x_subspace_witness/ncp_replay_20260929/MIXED_FRAME_AUTHORITY.json",
+    "status": "MIXED_FRAME_AUTHORITY_BLOCKED"
+  },
+  "source_mutation_scope": "ADDITIVE_EVIDENCE_ONLY; research scripts, R31W/R31V source, frozen native, historical raw unchanged",
+  "reproducible_new_bug_found": false,
+  "wolfram": "NOT_RUN_THIS_LOOP; previous R31X report said connector internal error; SymPy fallback executed",
+  "full_cell_status": "AUTHORITY_INPUT_BLOCKED",
+  "independent_review_admitted": false,
+  "historical_BR01_BR02": "OPEN",
+  "new_lightweight_stored_full49_eigensolve": true,
+  "native_evaluations": 0,
+  "new_heavy_scientific_nodes": 0,
+  "HH_trajectory_runs": 0,
+  "production_admitted": false,
+  "H_skip_admitted": false,
+  "restore_verified": false
+}
