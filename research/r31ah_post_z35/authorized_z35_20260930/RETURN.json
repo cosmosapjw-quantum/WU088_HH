@@ -1,0 +1,200 @@
+{
+  "schema": "WU088_R31AG_AUTHORIZED_Z35_ONE_SHOT_RETURN_V1",
+  "publication_branch": "research/r31ah-post-z35-policy-20260930",
+  "remote_before_execution": {
+    "commit": "3802e302ae270bc5190aae30ec6aeb0ab3ac8250",
+    "tree": "1d02feea53e21e7684a59bbeb1c5ce4be8a58382",
+    "successor_at_start": false
+  },
+  "pre_output_lock_publication": {
+    "commit": "d8881b8b28701f7b79b50a396b4240b639e99bb0",
+    "tree": "c1e92f2d23e893c00ffc1861625dff694af65d34",
+    "PRE_OUTPUT_LOCK_sha256": "9f4c0cf4c5233919eebedf1f33f240c7f072db1fc3c8e17c01c34b66f114769e",
+    "compare_script_sha256": "2562ce57def59b60214d37471fb638e488f79b0baa0a3f6fe0f35be2e0d6bac2",
+    "runner_script_sha256": "ce48c2dae28b15a053233528619ba7889d85e9b3e1394110f989b1ead50bfbdc"
+  },
+  "authorization": {
+    "classification": "AUTHORIZED_STANDALONE_AFFIRMATIVE_ENVELOPE",
+    "scope_sha256": "f43faaf5746a5fda5cd26593ee69e97c0f2be8239727a62081d49357e3c2a9b4",
+    "preflight_file": "PREFLIGHT_RUNTIME.json",
+    "preflight_checks_pass": true,
+    "consumed": true,
+    "same_envelope_rerun_allowed": false,
+    "first_output_identity_utc": "2026-09-30T01:31:24.510803+00:00"
+  },
+  "Z35_EXECUTION_STATUS": "ONE_SHOT_EXECUTED_AND_CONSUMED",
+  "science_node_count": 1,
+  "science_producer_command_count": 2,
+  "z_a0": 3.5,
+  "tau_ta": 7.825570336618339,
+  "radial_order": 192,
+  "runtime": "/root/WU088_R31AG_Z35_RUNTIME_20260930",
+  "environment_file": "ENVIRONMENT.json",
+  "commands": {
+    "OD_NATIVE_PREP": {
+      "argv_file": "OD_NATIVE_PREP.argv.json",
+      "stdout_file": "OD_NATIVE_PREP.stdout",
+      "stderr_file": "OD_NATIVE_PREP.stderr",
+      "exit_file": "OD_NATIVE_PREP.exit",
+      "exit_code": 0
+    },
+    "JVP_NATIVE_PREP": {
+      "argv_file": "JVP_NATIVE_PREP.argv.json",
+      "stdout_file": "JVP_NATIVE_PREP.stdout",
+      "stderr_file": "JVP_NATIVE_PREP.stderr",
+      "exit_file": "JVP_NATIVE_PREP.exit",
+      "exit_code": 0
+    },
+    "OD": {
+      "argv_file": "OD.argv.json",
+      "stdout_file": "OD.stdout",
+      "stderr_file": "OD.stderr",
+      "exit_file": "OD.exit",
+      "exit_code": 0
+    },
+    "JVP": {
+      "argv_file": "JVP.argv.json",
+      "stdout_file": "JVP.stdout",
+      "stderr_file": "JVP.stderr",
+      "exit_file": "JVP.exit",
+      "exit_code": 0
+    },
+    "COMPARE": {
+      "argv_file": "COMPARE.argv.json",
+      "stdout_file": "COMPARE.stdout",
+      "stderr_file": "COMPARE.stderr",
+      "exit_file": "COMPARE.exit",
+      "exit_code": 0
+    }
+  },
+  "frozen_hashes": {
+    "engine": "ab220248066580fc77af70c412251dbe3ed643a6fadc266cf5c25a7a3a6651a0",
+    "adaptive_policy": "720b221a9e01ab7fc1bbd482b600ea785fed0b8c6b80b5834c576a75c2b70756",
+    "global_model": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034",
+    "six_node_manifest": "e444e9f1cff7d4cc9425a2f44ff45a6e87199c6bf31ca2b095010364379e7573",
+    "z35_selection": "546026387ecae9952b0397fb0dd26ad0633465739d8bbb82878f0f4c532c545e",
+    "decision_rule": "52b995b2f5516cf586cf1cbcdb681ec521f1b911a7538e3999a11d0f3bd62560",
+    "preregistration": "ec4613f5300ec38a488eae75f5c7267a2f1a166c34e45d54bb9fa8b449537447",
+    "post_z35_policy": "b7d9928e23d1f3cd8abf0fe7be34a5868d6760bfab388ac626bab6c1c524dbc8",
+    "post_z35_policy_helper": "78af28d506edd3e7dedcb3257f10258ee1ed4477a8cabe7d78ecb1945142f6a5"
+  },
+  "producer_source_sha256": {
+    "completion/mixed_h/od_run.py": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+    "completion/mixed_h/h0_backend.py": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+    "completion/mixed_h/h0_fused.cpp": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+    "completion/mixed_h/native.py": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+    "completion/mixed_derivative/run.py": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+    "completion/mixed_derivative/native.py": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d",
+    "completion/mixed_derivative/jvp.cpp": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+    "completion/mixed_derivative/CONTRACT.json": "f5a10ef22dd5aefade7e9d9dc079066c0b3e0781a9c997411997cb67ba0acb66",
+    "cont2c/convergence/frozen_grid_n192.npz": "e1959e1bbb66b5e27410daa3d3bdb0815885919f11af3a014d86a47f15b96301",
+    "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c"
+  },
+  "producer_archive_sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+  "output_identity": {
+    "OD": {
+      "runtime_path": "/root/WU088_R31AG_Z35_RUNTIME_20260930/completion/mixed_h/od/B192_z3.5",
+      "evidence_copy_path": "research/r31ah_post_z35/authorized_z35_20260930/OD_RAW",
+      "file_count": 148,
+      "pair_checkpoint_count": 144,
+      "assembled_sha256": "de730fcb4b6b65e86d5910cc456d35eaf33dab3610d0326939434d0f391d610a",
+      "assembled_bytes": 12151,
+      "all_file_byte_hashes_match_runtime": true
+    },
+    "JVP": {
+      "runtime_path": "/root/WU088_R31AG_Z35_RUNTIME_20260930/completion/mixed_derivative/B192_z3.5",
+      "evidence_copy_path": "research/r31ah_post_z35/authorized_z35_20260930/JVP_RAW",
+      "file_count": 147,
+      "pair_checkpoint_count": 144,
+      "assembled_sha256": "17d3d306f1e104591f91281f0acb8dae3ed6bc743f1d366da5b6bccb96e82a8c",
+      "assembled_bytes": 50585,
+      "all_file_byte_hashes_match_runtime": true
+    }
+  },
+  "raw_identity_verification_file": "RAW_IDENTITY_VERIFICATION.json",
+  "source_contract": {
+    "basis_order": "CP4 B192 neutral rows: centre0 24 then centre1 excited23; ionic columns 2",
+    "phase_time": "phase_E and tau=z/velocity; z=3.5 gives 7.825570336618339 t_a",
+    "OD_source": "runtime completion/mixed_h/od_run.py lines 21-39; mixed O,D_col,D_row; Hamiltonian_included=false",
+    "independent_dotO_source": "runtime completion/mixed_derivative/run.py lines 17-31,50-53; analytic JVP in 1/t_a",
+    "source_O_gap_raw_max_abs": 2.352251824001625e-19,
+    "direct_metric_identity_raw_max_abs": 3.413500740801443e-19,
+    "direct_metric_identity_2norm_complex128": 3.6457305899328984e-17,
+    "existing_source_bridge_tolerance_2e_minus_12_pass": true
+  },
+  "frozen_comparison_file": "Z35_COMPARISON.json",
+  "frozen_comparison_sha256": "10dae8d41ecad3db2283515610fcf586ca57aeb2d1af5e5a6382158abd733e4f",
+  "R31AF_adaptive_six_node": {
+    "E_O": 0.028316443455109017,
+    "E_dotO_per_ta": 0.02180471880970521,
+    "E_Dcol_per_ta": 0.06571264393940968,
+    "E_Drow_per_ta": 0.06827426878354666,
+    "E_K_per_ta": 0.06617406868623811,
+    "candidate_metric_identity_residual_2norm": 3.279721932155278e-17,
+    "E_Dmax_per_ta": 0.06827426878354666
+  },
+  "R31Z_global": {
+    "E_O": 0.07430484151052544,
+    "E_dotO_per_ta": 0.10523038116989783,
+    "E_Dcol_per_ta": 0.26534506458633733,
+    "E_Drow_per_ta": 0.2460908403454184,
+    "E_K_per_ta": 0.2504316158571644,
+    "candidate_metric_identity_residual_2norm": 6.755750459541746e-17,
+    "E_Dmax_per_ta": 0.26534506458633733
+  },
+  "decision_tolerance": 1e-10,
+  "frozen_decision_verdict": "PARETO_SUPPORTED_AT_Z35",
+  "design_score_used_for_final_verdict": false,
+  "independent_validation": true,
+  "independence_scope": "single z3.5 frozen-model relative comparison; truth was not used for R31AF training or selection; hashes locked and published before output access; no post-output model/rule/tolerance change",
+  "R31AH_policy_sha256": "b7d9928e23d1f3cd8abf0fe7be34a5868d6760bfab388ac626bab6c1c524dbc8",
+  "R31AH_action": {
+    "action": "REPORT_SUPPORT_THEN_OPTIONAL_LOCAL_REFINE_RIGHT_CELL",
+    "z35_role_if_successor_built": "PRIOR_INDEPENDENT_VALIDATION_CONSUMED_AS_SUCCESSOR_TRAINING",
+    "next_fresh_validation_z": 2.5,
+    "auto_execute_next_node": false,
+    "auto_retune": false,
+    "model_class_review_required": false
+  },
+  "R31AH_action_limits": {
+    "relative_support_only": true,
+    "z35_residual_used_for_refinement_this_handoff": false,
+    "successor_created": false,
+    "z35_role_if_later_consumed": "PRIOR_INDEPENDENT_VALIDATION_CONSUMED_AS_SUCCESSOR_TRAINING",
+    "only_allowed_future_refinement_cell": [
+      3,
+      4
+    ],
+    "next_fresh_holdout_z_a0": 2.5,
+    "z25_direct_output_accessed": false,
+    "automatic_z25_execution": false,
+    "automatic_model_retuning": false
+  },
+  "forbidden_outputs_generated": {
+    "H_matrix": false,
+    "neutral47": false,
+    "ionic2": false,
+    "full49": false,
+    "trajectory": false,
+    "other_z": false
+  },
+  "OD_backend_scope_note": "Unchanged fused OD kernel evaluates internal T/moment intermediates; od_run.py stores O/D only and no Hamiltonian matrix block.",
+  "claim_ceiling": {
+    "interval_wide_accuracy_admitted": false,
+    "transition_error_admitted": false,
+    "trajectory_accuracy_admitted": false,
+    "full_cell_admitted": false,
+    "H_skip_admitted": false,
+    "production_admitted": false
+  },
+  "remaining_gates": {
+    "full_cell": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "fixed_Q_complete_HH_physical_invariance_reviewed": false,
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false
+  },
+  "RESTORE_VERIFIED": false,
+  "stop_condition": "one authorized z3.5 node, one frozen comparison, R31AH action, evidence publication and dual create-only backup; no successor or second node"
+}

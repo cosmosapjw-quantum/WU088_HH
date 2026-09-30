@@ -1,0 +1,75 @@
+{
+  "schema": "WU088_R31AH_NCP_POST_Z35_POLICY_RETURN_V1",
+  "reviewed_remote": {
+    "branch": "research/r31ah-post-z35-policy-20260930",
+    "commit": "771f5ccc8be4b887d310bdfc348cf22617a00dd9",
+    "tree": "513ab9c7e661d238a9d56934e3407a934e05d92b",
+    "successor_at_start": false,
+    "base_R31AG_commit": "c6d00e79cfd76366af868a3a550aebbee46135cf"
+  },
+  "executed_against": {
+    "commit": "771f5ccc8be4b887d310bdfc348cf22617a00dd9",
+    "tree": "513ab9c7e661d238a9d56934e3407a934e05d92b"
+  },
+  "environment_file": "ENVIRONMENT.json",
+  "commands": {
+    "COMPILE": {"argv_file": "COMPILE.argv.json", "stdout_file": "COMPILE.stdout", "stderr_file": "COMPILE.stderr", "exit_file": "COMPILE.exit", "exit_code": 0},
+    "FOCUSED_TEST": {"argv_file": "FOCUSED_TEST.argv.json", "stdout_file": "FOCUSED_TEST.stdout", "stderr_file": "FOCUSED_TEST.stderr", "exit_file": "FOCUSED_TEST.exit", "exit_code": 0},
+    "REPLAY": {"argv_file": "REPLAY.argv.json", "stdout_file": "REPLAY.stdout", "stderr_file": "REPLAY.stderr", "exit_file": "REPLAY.exit", "exit_code": 0}
+  },
+  "junit_file": "JUNIT.xml",
+  "focused_tests": "7 passed, 0 failed",
+  "policy_file": "research/r31ah_post_z35/POST_Z35_DECISION_POLICY.json",
+  "POST_Z35_DECISION_POLICY_sha256": "b7d9928e23d1f3cd8abf0fe7be34a5868d6760bfab388ac626bab6c1c524dbc8",
+  "helper_sha256": "78af28d506edd3e7dedcb3257f10258ee1ed4477a8cabe7d78ecb1945142f6a5",
+  "policy_replay_file": "POLICY_REPLAY.json",
+  "allowed_verdicts": ["PARETO_SUPPORTED_AT_Z35", "GLOBAL_SUPPORTED_AT_Z35", "TRADEOFF_UNRESOLVED"],
+  "PARETO_SUPPORTED_AT_Z35": {
+    "relative_support_only": true,
+    "z35_residual_as_right_cell_indicator_only_after_verdict": true,
+    "successor_refinement_cell_only": [3, 4],
+    "z35_if_successor_built": "PRIOR_INDEPENDENT_VALIDATION_CONSUMED_AS_SUCCESSOR_TRAINING",
+    "next_fresh_validation_z_a0": 2.5,
+    "automatic_z25_execution": false,
+    "automatic_model_retuning": false
+  },
+  "GLOBAL_SUPPORTED_AT_Z35": "STOP_FOR_MODEL_CLASS_REVIEW",
+  "TRADEOFF_UNRESOLVED": "STOP_FOR_MODEL_CLASS_REVIEW",
+  "local_indicator": {
+    "h_t_ta": 2.2358772390338113,
+    "h_z_a0": 1.0,
+    "O4_lower": "384 E_O / h_t^4",
+    "K2_lower": "8 E_K / h_t^2",
+    "O4_z_lower": "384 E_O",
+    "K2_z_lower": "8 E_K",
+    "conditional_half_cell_remainder_coefficient_factors": {"O_cubic": 0.0625, "K_linear": 0.25},
+    "certified_source_error_enclosure": false,
+    "empirical_HH_error_reduction_claimed": false
+  },
+  "z25_preserved_fresh_preoutput_information": {
+    "DeltaK_per_ta": 0.1912237840334797,
+    "DeltaDmax_per_ta": 0.20561180584475613,
+    "S_design_only_per_ta": 0.280789512416017,
+    "K_half_gap_per_ta": 0.09561189201673985,
+    "Dmax_half_gap_per_ta": 0.10280590292237807
+  },
+  "R31AG_authorization_scope_modified": false,
+  "direct_z35_output_accessed": false,
+  "direct_z25_output_accessed": false,
+  "science_producer_commands": [],
+  "science_node_count": 0,
+  "R31AF_independent_validation_points": [],
+  "successor_z35_independent_validation_if_used_for_tuning": false,
+  "remaining_gates": {
+    "z35_node": "AWAITING_STRUCTURED_AUTHORIZATION",
+    "full_cell": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "fixed_Q_complete_HH_physical_invariance_reviewed": false,
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false,
+    "H_skip_admitted": false
+  },
+  "RESTORE_VERIFIED": false,
+  "stop_condition": "post-z3.5 action tree locked before output; no science node"
+}
