@@ -1,0 +1,11 @@
+{
+ "status":"FROZEN_BEFORE_NEW_TARGETS",
+ "scope":"Independent analytic time derivative of actual frozen mixed 47x2 overlap, for b=2 and v from FROZEN_INPUTS.npz",
+ "model":"Unchanged Gaussian orbitals, 107-term ionic polynomial, ETFs, phase_E, registry and finite-basis normalization",
+ "independence":"Differentiate completed-square primitive overlap and p-orbital prefactors directly with respect to z, then multiply dz/dtau=v and differentiate the exact channel phase. Do not call D,G1,G2 or derive dotO as D+Ddagger.",
+ "representation":"One canonical144pair geometry table gives excited-cusp and excited-remote overlap/JVP; remote contraction uses transposed actual quadrature weights, and orbital exponent indices are exchanged explicitly. Inversion contributes the derived odd-p sign, not post hoc averaging.",
+ "oracle":"Existing independently sampled B192 overlaps at z=0 and3, tau offsets +-1e-5,+-2e-5, combined as mp80 5point derivative; independent mp100 direct hypergeometric overlap derivatives at z8 and32 primitive geometries",
+ "acceptance":"Every mixed entry abs(dotO-reference)<=max(1e-12,1e-10*abs(reference)); primitive derivative natural-scaled error<=128 longdouble epsilon",
+ "resources":"1 CPU initial pilot and full144 only after root allocation; all heavy loops compiled C++, strict FP, no old-file writes",
+ "claim_ceiling":"Independent mixed overlap derivative component; no full-H or whole-trajectory production promotion"
+}

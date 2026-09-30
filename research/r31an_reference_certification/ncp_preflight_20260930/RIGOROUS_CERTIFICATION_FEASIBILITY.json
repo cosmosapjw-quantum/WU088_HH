@@ -1,0 +1,152 @@
+{
+  "verdict": "RIGOROUS_REFERENCE_CERTIFICATION_BLOCKED_BY_MISSING_ERROR_BOUND",
+  "decomposition": "epsilon_ref <= epsilon_order + epsilon_special_function + epsilon_roundoff + epsilon_assembly",
+  "components": [
+    {
+      "component": "epsilon_order",
+      "status": "MISSING",
+      "available": "Mapped Gauss-Legendre / exact analytic Hermite weight formulas and finite-order observations.",
+      "missing": "Uniform transformed-integrand quadrature remainder including endpoint/infinite-tail behavior for all O/D/dotO entries; no project-authoritative bound at B192.",
+      "evidence": [
+        {
+          "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/native.py",
+          "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+          "member": "completion/mixed_h/native.py",
+          "sha256": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+          "lines": [
+            16,
+            20
+          ],
+          "numbered_source": "16: def nodes(n):\n17:  x,w=roots_legendre(n);u=(x+1)/2;return u/(1-u),w/2/(1-u)**2\n18: def grid(n,ng=80):\n19:  d=inputs();t,w=nodes(n);U,V=exact_weights(t,w);W=contract(U,V,d['C']);gs,gw=nodes(ng);gw*=2/np.sqrt(np.pi)\n20:  return d,t,W,gs,gw",
+          "observation": "Finite-order quadrature construction, not continuum bound."
+        },
+        {
+          "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/exact_weights/exact_laplace_weights.py",
+          "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+          "member": "exact_weights/exact_laplace_weights.py",
+          "sha256": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb",
+          "lines": [
+            29,
+            48
+          ],
+          "numbered_source": "29: def exact_weights(t, w, mu=1.0):\n30:     \"\"\"Return U_i and V_i, i=0..8, including positive-axis quadrature weights.\n31: \n32:     H_n are physicists' Hermite polynomials. All arrays here are real.\n33:     This finite-order implementation is intended for the frozen B96--B192 nodes.\n34:     \"\"\"\n35:     t = np.asarray(t, dtype=float)\n36:     w = np.asarray(w, dtype=float)\n37:     if t.shape != w.shape or np.any(t <= 0) or not np.isfinite(t).all() or not np.isfinite(w).all():\n38:         raise ValueError('finite positive nodes and matching finite weights required')\n39:     x = mu / (2 * np.sqrt(t))\n40:     scale = 1 / (2 * np.sqrt(t))\n41:     base = w * np.exp(-x*x) / (np.sqrt(np.pi) * np.sqrt(t))\n42:     ladder = np.stack([base * eval_hermite(i, x) * scale**i for i in range(10)])\n43:     return ladder[1:], ladder[:-1]\n44: \n45: \n46: def contract(U, V, C):\n47:     return np.stack([np.stack([left.T @ C[:, :, k] @ right for k in range(9)])\n48:                      for left, right in ((U, U), (V, U), (U, V))])",
+          "observation": "Density/weight formula, no integration remainder certificate."
+        }
+      ]
+    },
+    {
+      "component": "epsilon_special_function",
+      "status": "PARTIAL_MATH_AUTHORITY_NO_COMPLETE_MATRIX_BOUND",
+      "available": "Exact-arithmetic hypergeometric tail-ratio bound and large-positive-Re Boys tail bounds.",
+      "missing": "Outward-rounded evaluation and propagated uniform mixed block bound through prefactors/fields/weight contractions. Numerical scalar controls are sampled accuracy evidence.",
+      "evidence": [
+        {
+          "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/radial/DERIVATION.md",
+          "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+          "member": "completion/radial/DERIVATION.md",
+          "sha256": "3214cdaf252ce3ea48026df643aaedae37674753f6f99746c9c3aaa30b9bdc70",
+          "lines": [
+            52,
+            79
+          ],
+          "numbered_source": "52: For term k, subsequent series ratios are bounded in the complex l1 norm by\n53: \n54: q = (|Re z|+|Im z|)/(k+1) max(1,(k+a)/(k+b)), once k+a>0.\n55: \n56: The rational factor either decreases to 1 or is bounded by 1. Hence for q<1 the\n57: exact-arithmetic remaining series is at most norm1(term_k) q/(1-q). The code stops\n58: only below eps_binary128*norm1(sum)/8, or rejects after 1024 terms. This proves the\n59: series truncation test in exact arithmetic. It is not a formal interval proof of\n60: all floating-point operations: the separate exact-input mp100 controls measure\n61: roundoff, with mp150 cross-checks and independent defining-integral quadrature.\n62: \n63: The |Im x|<=2 path is unchanged, including its arithmetic order. The full inherited\n64: 1,408-case radial registry is bitwise equal for all requested orders 0,1,2; the\n65: sampled old-domain Boys results are separately checked. No threshold was widened.\n66: \n67: ## 3. Large positive real part\n68: \n69: For a=Re x>=64 the complete-Gamma representation is retained:\n70: C_0=sqrt(pi)/(2sqrt(x)), C_n=(2n-1) C_(n-1)/(2x).\n71: \n72: The missing tail satisfies |F_n-C_n|<=T_n(a), where\n73: T_0<=exp(-a)/(2a), T_n=exp(-a)/(2a)+(2n-1)T_(n-1)/(2a).\n74: This bound follows from integration over [1,infinity] and is valid for any\n75: imaginary part. Therefore the former proof does not assume |Im x|<=2. The same\n76: odd-polynomial derivative omission bounds in production/radial/DERIVATION.md apply\n77: using these T_n and |exp(-x)|=exp(-a). Radial orders need n<=2; foreign even\n78: integrals need n<=9. Actual near-a=64 controls include |Im x|=32. Large x is never\n79: passed to the hypergeometric series and exp(+x) is never evaluated.",
+          "observation": "Tail derivation explicitly excludes all floating-point operations proof."
+        },
+        {
+          "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/radial/radial_wide.cpp",
+          "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+          "member": "completion/radial/radial_wide.cpp",
+          "sha256": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+          "lines": [
+            33,
+            73
+          ],
+          "numbered_source": "33: static int hypergeom_wide(R a,R b,Z z,Z &out){\n34:     QZ term{1,0},sum{1,0},correction{0,0};\n35:     const QZ zz{Q(z.real()),Q(z.imag())};\n36:     const Q eps=Q(ldexpl(1.L,-112));\n37:     for(int k=1;k<=1024;++k){\n38:         const Q ratio=(Q(a)+k-1)/((Q(b)+k-1)*k);\n39:         term=qscale(qmul(term,zz),ratio);\n40:         const QZ y=qsub(term,correction),updated=qadd(sum,y);\n41:         correction=qsub(qsub(updated,sum),y);sum=updated;\n42:         if(Q(k)+a>0){\n43:             Q fac=(Q(k)+a)/(Q(k)+b);if(fac<1)fac=1;\n44:             const Q q=qnorm(zz)/(k+1)*fac;\n45:             // The l1 complex norm is submultiplicative. For subsequent terms,\n46:             // max(1,(k+a)/(k+b)) and 1/(k+1) bound all future ratios.\n47:             if(q<1 && qnorm(term)*q/(1-q)<=eps*qnorm(sum)/8){\n48:                 out=Z(R(sum.r),R(sum.i));return k;\n49:             }\n50:         }\n51:     }\n52:     return -1;\n53: }\n54: \n55: static int hypergeom(R a,R b,Z z,Z &out) {\n56:     if(fabsl(z.imag())>2.L)return hypergeom_wide(a,b,z,out);\n57:     Z term(1,0),sum(1,0),correction(0,0);\n58:     const R eps=std::numeric_limits<R>::epsilon();\n59:     for(int k=1;k<=1024;++k) {\n60:         term *= z*((a+k-1)/((b+k-1)*k));\n61:         const Z y=term-correction;\n62:         const Z updated=sum+y;\n63:         correction=(updated-sum)-y;\n64:         sum=updated;\n65:         if(k+a>0) {\n66:             const R q=std::abs(z)/(k+1)*std::fmax(R(1),(k+a)/(k+b));\n67:             if(q<1 && std::abs(term)*q/(1-q)<=eps*std::abs(sum)/4) {\n68:                 out=sum;\n69:                 return k;\n70:             }\n71:         }\n72:     }\n73:     return -1;",
+          "observation": "Tail stop evaluated in nearest rounding, not interval enclosure."
+        }
+      ]
+    },
+    {
+      "component": "epsilon_roundoff",
+      "status": "MISSING",
+      "available": "Longdouble/binary128 branch definitions, precision and FE_TONEAREST checks, strict compiler flags, compensated sums.",
+      "missing": "Certified library transcendental error, node/weight generation rounding, binary128-to-longdouble casts and accumulated operation-level enclosure; no outward-rounded interval.",
+      "evidence": [
+        {
+          "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/radial/radial_wide.cpp",
+          "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+          "member": "completion/radial/radial_wide.cpp",
+          "sha256": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+          "lines": [
+            7,
+            73
+          ],
+          "numbered_source": "7: static_assert(LDBL_MANT_DIG >= 64, \"64-bit significand required\");\n8: static_assert(LDBL_MAX_EXP >= 4096, \"wide longdouble exponent required\");\n9: \n10: using R=long double;\n11: using Z=std::complex<R>;\n12: \n13: // Numerical contract is frozen in CONTRACT.json. No fast-math permitted.\n14: \n15: // IEEE binary128 is used only for cancellation control in the newly admitted\n16: // compact complex strip. Every series recurrence coefficient is formed in\n17: // binary128. Basic arithmetic is provided by libgcc; no quad transcendental is\n18: // required.  Original longdouble paths remain bit-for-bit unchanged.\n19: #if !defined(__SIZEOF_FLOAT128__) || __FLT128_MANT_DIG__ != 113\n20: #error \"IEEE binary128 basic arithmetic is required for the wide strip\"\n21: #endif\n22: #if defined(__FAST_MATH__) || (defined(__FINITE_MATH_ONLY__) && __FINITE_MATH_ONLY__)\n23: #error \"Strict floating point required\"\n24: #endif\n25: using Q=__float128;\n26: struct QZ {Q r,i;};\n27: static Q qa(Q x){return x<0?-x:x;}\n28: static Q qnorm(QZ x){return qa(x.r)+qa(x.i);}\n29: static QZ qadd(QZ a,QZ b){return {a.r+b.r,a.i+b.i};}\n30: static QZ qsub(QZ a,QZ b){return {a.r-b.r,a.i-b.i};}\n31: static QZ qmul(QZ a,QZ b){return {a.r*b.r-a.i*b.i,a.r*b.i+a.i*b.r};}\n32: static QZ qscale(QZ a,Q b){return {a.r*b,a.i*b};}\n33: static int hypergeom_wide(R a,R b,Z z,Z &out){\n34:     QZ term{1,0},sum{1,0},correction{0,0};\n35:     const QZ zz{Q(z.real()),Q(z.imag())};\n36:     const Q eps=Q(ldexpl(1.L,-112));\n37:     for(int k=1;k<=1024;++k){\n38:         const Q ratio=(Q(a)+k-1)/((Q(b)+k-1)*k);\n39:         term=qscale(qmul(term,zz),ratio);\n40:         const QZ y=qsub(term,correction),updated=qadd(sum,y);\n41:         correction=qsub(qsub(updated,sum),y);sum=updated;\n42:         if(Q(k)+a>0){\n43:             Q fac=(Q(k)+a)/(Q(k)+b);if(fac<1)fac=1;\n44:             const Q q=qnorm(zz)/(k+1)*fac;\n45:             // The l1 complex norm is submultiplicative. For subsequent terms,\n46:             // max(1,(k+a)/(k+b)) and 1/(k+1) bound all future ratios.\n47:             if(q<1 && qnorm(term)*q/(1-q)<=eps*qnorm(sum)/8){\n48:                 out=Z(R(sum.r),R(sum.i));return k;\n49:             }\n50:         }\n51:     }\n52:     return -1;\n53: }\n54: \n55: static int hypergeom(R a,R b,Z z,Z &out) {\n56:     if(fabsl(z.imag())>2.L)return hypergeom_wide(a,b,z,out);\n57:     Z term(1,0),sum(1,0),correction(0,0);\n58:     const R eps=std::numeric_limits<R>::epsilon();\n59:     for(int k=1;k<=1024;++k) {\n60:         term *= z*((a+k-1)/((b+k-1)*k));\n61:         const Z y=term-correction;\n62:         const Z updated=sum+y;\n63:         correction=(updated-sum)-y;\n64:         sum=updated;\n65:         if(k+a>0) {\n66:             const R q=std::abs(z)/(k+1)*std::fmax(R(1),(k+a)/(k+b));\n67:             if(q<1 && std::abs(term)*q/(1-q)<=eps*std::abs(sum)/4) {\n68:                 out=sum;\n69:                 return k;\n70:             }\n71:         }\n72:     }\n73:     return -1;",
+          "observation": "Precision and compensated arithmetic are not error certificates."
+        },
+        {
+          "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/h0_fused.cpp",
+          "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+          "member": "completion/mixed_h/h0_fused.cpp",
+          "sha256": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+          "lines": [
+            7,
+            20
+          ],
+          "numbered_source": "7: struct Sum{Z s=0,c=0;void add(Z x){Z t=s+x;c+=Z(std::abs(s.real())>=std::abs(x.real())?(s.real()-t.real())+x.real():(x.real()-t.real())+s.real(),std::abs(s.imag())>=std::abs(x.imag())?(s.imag()-t.imag())+x.imag():(x.imag()-t.imag())+s.imag());s=t;}Z get()const{return s+c;}};\n8: struct V{Z x;R upper;V(Z a=0,R b=0):x(a),upper(b){}};\n9: V operator+(V a,V b){return {a.x+b.x,a.upper+b.upper};}\n10: V operator-(V a,V b){return {a.x-b.x,a.upper+b.upper};}\n11: V operator*(Z a,V b){return {a*b.x,l1(a)*b.upper};}\n12: V operator*(R a,V b){return Z(a)*b;}\n13: V operator-(V a){return {-a.x,a.upper};}\n14: struct Geo{R A;Z m[3],n[3],base;};\n15: Geo geo(R a,R t,R dx,R dz,R q){Geo g;g.A=a+t;g.m[0]=a*dx/g.A;g.m[1]=0;g.m[2]=Z(a*dz/g.A,q/(2*g.A));g.n[0]=g.m[0]-dx;g.n[1]=0;g.n[2]=g.m[2]-dz;g.base=powl(acosl(-1.L)/g.A,1.5L)*std::exp(Z(-a*t*(dx*dx+dz*dz)/g.A-q*q/(4*g.A),q*a*dz/g.A));return g;}\n16: }\n17: extern \"C\" int mh_h0(std::size_t n,const double*tt,const double*ww,const double*pp,const double*norm,long double*oo,long double*aa)noexcept{\n18:  using namespace h0_fused;\n19:  if(!n||n>192||!tt||!ww||!pp||!norm||!oo||!aa)return -501;\n20:  if(std::fegetround()!=FE_TONEAREST)return -503;",
+          "observation": "Compensated nearest-rounded accumulation, not outward rounding."
+        },
+        {
+          "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/jvp.cpp",
+          "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+          "member": "completion/mixed_derivative/jvp.cpp",
+          "sha256": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+          "lines": [
+            8,
+            9
+          ],
+          "numbered_source": "8: struct Sum{Z s=0,c=0;void add(Z x){Z t=s+x;c+=Z(std::abs(s.real())>=std::abs(x.real())?(s.real()-t.real())+x.real():(x.real()-t.real())+s.real(),std::abs(s.imag())>=std::abs(x.imag())?(s.imag()-t.imag())+x.imag():(x.imag()-t.imag())+s.imag());s=t;}Z get()const{return s+c;}};\n9: template<class T>bool ptr(const T*p){return p&&reinterpret_cast<std::uintptr_t>(p)%alignof(T)==0;}",
+          "observation": "Compensated complex sum."
+        }
+      ]
+    },
+    {
+      "component": "epsilon_assembly",
+      "status": "MISSING",
+      "available": "Unchanged registry/phase and longdouble complex orbital contraction; sumabs diagnostics.",
+      "missing": "Certified coefficient/phase/transcendental errors and assembled block norm upper bounds. sumabs does not contain all errors and is not outward rounded.",
+      "evidence": [
+        {
+          "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/od_run.py",
+          "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+          "member": "completion/mixed_h/od_run.py",
+          "sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+          "lines": [
+            25,
+            38
+          ],
+          "numbered_source": "25:    with np.load(folder/f'pair_{ia:02}_{ib:02}.npz')as f:raw[...,ia,ib]=f['OG'];sa[...,ia,ib]=f['sumabs_upper_diagnostic']\n26:  v=LD(d['v']);ks=[v/2,-v/2];tau=LD(z)/v;reg=[(0,j)for j in range(24)]+[(1,j)for j in range(1,24)];out=np.empty((3,47,2),CD);summed=np.empty((3,47,2),LD);C0=d['s_C'][:,0].astype(LD)\n27:  for ch,(active,j)in enumerate(reg):\n28:   ang=j//8;C=(d['s_C']if ang==0 else d['p_C'])[:,j%8].astype(LD);coeff=C[:,None]*C0[None,:]\n29:   for c in(0,1):\n30:    act=active^c;par=1 if c==0 or ang==0 else-1;cz=(1 if c==0 else-1)*LD(z)/2;phase=np.exp(CD(1j)*(2*ks[c]*cz+(LD(d['phase_E'][ch])-LD(d['phase_E'][47+c]))*tau))\n31:    for field in(0,1,2):\n32:     parity=par*(-1 if c and field else 1);out[field,ch,c]=phase*parity*np.sum(raw[act,field,ang]*coeff,dtype=CD);summed[field,ch,c]=np.sum(sa[act,field,ang]*abs(coeff),dtype=LD)\n33:  O=out[0];Dc=np.empty((47,2),CD);Dr=np.empty((2,47),CD)\n34:  for ch,(active,j)in enumerate(reg):\n35:   for c in(0,1):\n36:    kc=ks[c];ka=ks[active];kb=ks[1-active];G1=out[1,ch,c];G2=out[2,ch,c];Dc[ch,c]=kc*(G1+G2)+CD(1j)*(kc*(2*kc-ka-kb)-LD(d['phase_E'][47+c]))*O[ch,c];Dr[c,ch]=-ka*G1.conj()-kb*G2.conj()-CD(1j)*LD(d['phase_E'][ch])*O[ch,c].conj()\n37:  path=folder/'ASSEMBLED_OD.npz'\n38:  if not path.exists():save(path,O=O,O_row=O.conj().T,D_col=Dc,D_row=Dr,components_OG=out,sumabs_upper_diagnostic=summed,n=n,z=z)",
+          "observation": "Longdouble sum/phase, diagnostic sumabs."
+        },
+        {
+          "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/run.py",
+          "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+          "member": "completion/mixed_derivative/run.py",
+          "sha256": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+          "lines": [
+            17,
+            30
+          ],
+          "numbered_source": "17: def assemble(raw,d,z):\n18:  # raw[electron, O_or_zJVP, angle, canonical_a, canonical_b]. Remote\n19:  # active primitive changes exponent order; no matrix averaging is performed.\n20:  v=LD(d['v']);tau=LD(z)/v;O=np.empty((47,2),CD);dot=np.empty((47,2),CD)\n21:  for ch,(active,j)in enumerate(REG):\n22:   angle=j//8;coeff=(d['s_C']if angle==0 else d['p_C'])[:,j%8].astype(LD);ground=d['s_C'][:,0].astype(LD);ab=coeff[:,None]*ground[None,:]\n23:   for cusp in (0,1):\n24:    canonical_active=active^cusp;tab=raw[canonical_active,:,angle]\n25:    if canonical_active:tab=tab.transpose(0,2,1)\n26:    pair=np.sum(tab*ab[None],axis=(1,2),dtype=CD)\n27:    parity=-1 if cusp and angle else 1\n28:    deltaE=LD(d['phase_E'][ch])-LD(d['phase_E'][47+cusp]);phase=np.exp(CD(1j)*(v*LD(z)/2+deltaE*tau))\n29:    O[ch,cusp]=parity*phase*pair[0]\n30:    dot[ch,cusp]=parity*phase*(v*pair[1]+CD(1j)*(v*v/2+deltaE)*pair[0])",
+          "observation": "Longdouble phase and analytic derivative assembly."
+        }
+      ]
+    }
+  ],
+  "epsilon_ref_upper_bound": null,
+  "historical_H_anchors": "FINITE_ORDER_H_EVIDENCE_NOT_MIXED_OD_DOTO_CERTIFICATE",
+  "rigorous": false,
+  "continuum_certified": false,
+  "source_certified": false,
+  "SOURCE_ACCURACY_BOUND": "SOURCE_ACCURACY_BOUND_UNAVAILABLE"
+}

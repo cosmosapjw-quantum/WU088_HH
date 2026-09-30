@@ -1,0 +1,10 @@
+{
+  "status":"FROZEN_BEFORE_NEW_CONTROLS",
+  "scope":"Drop-in native radial and exact foreign Boys scalar backend over the wider finite complex strip required by the existing b=2 trajectory; unchanged finite physical model",
+  "domain":{"variance":["1e-100","1e100"],"Re_x":["-32","1e12"],"abs_Im_x_max":"32","radial_p":[-1,8],"derivative_order":[0,2],"Boys_n":[0,9]},
+  "method":"Preserve existing |Im x|<=2 evaluation and Re x>=64 complete-Gamma evaluation. For the new compact complex sector evaluate the same hypergeometric series with compensated IEEE binary128 basic arithmetic; no quadmath transcendental dependency. Retain analytic radial derivatives and all ABI/domain/rounding guards.",
+  "acceptance":{"radial_natural_scaled_error":"128*longdouble_epsilon","Boys_natural_scaled_error":"128*longdouble_epsilon","Boys_natural_scale":"max(abs(reference), integral_0^1 t^(2n) exp(-Re(x)*t*t)dt)","independent_oracle":"mpmath 100 decimal digits, exact binary input conversion; selected 150-digit cross-checks and independent quadrature identities","old_domain":"No changes to old formula results; old 1408-case registry compared natively"},
+  "validation_axes":["new-strip boundaries","old/new |Im x|=2 transition","Re x=-0.5 branch transition","Re x=64 asymptotic transition","near-axis and polynomial zeros","extreme variance scaling","actual full frozen exponent and Laplace geometry sentinels at z=0,8,16,32,64","out-of-domain and rounding guards"],
+  "resource_limit":"1 CPU during pilot; heavy loops C++",
+  "claim_ceiling":"New scalar evaluation domain and measured controls only; full H integral convergence and trajectory remain separate gates"
+}

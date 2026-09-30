@@ -1,0 +1,121 @@
+{
+  "schema": "WU088_R31AN_NCP_REFERENCE_PREFLIGHT_RETURN_V1",
+  "created_utc": "2026-09-30T08:35:07.102839+00:00",
+  "reviewed_remote": {
+    "branch": "research/r31an-reference-certification-20260930",
+    "commit": "e00c0a88ea91c0cc58240188f5076da8ba94688b",
+    "tree": "674969053f886c802135e396d05915cfc460f6af",
+    "successor_diff": [],
+    "parent_commit": "34eaa2ab52fc782825235629dade382b2322d2a4",
+    "parent_tree": "f2a43200e79f45b5cfd57b81afd4da99c7d402c3"
+  },
+  "executed_against": {
+    "commit": "e00c0a88ea91c0cc58240188f5076da8ba94688b",
+    "tree": "674969053f886c802135e396d05915cfc460f6af"
+  },
+  "draft_pr": 32,
+  "status": "REFERENCE_ORDER_INPUT_BLOCKED",
+  "source_feasibility": {
+    "file": "PRODUCER_FEASIBILITY.json",
+    "verdict": "REFERENCE_ORDER_INPUT_BLOCKED",
+    "support_closed": false,
+    "OD_B256_guard": "h0_backend.py:27 and h0_fused.cpp:19",
+    "JVP_missing_grid_guard": "mixed_derivative/run.py:7-11"
+  },
+  "freeze_identity": "FREEZE_IDENTITY_VERIFICATION.json",
+  "producer_source_and_existing_binary_identity": "SOURCE_AUTHORITY.json",
+  "existing_output_inventory": "EXISTING_ORDER_OUTPUT_INVENTORY.json",
+  "frozen_order_ladder": "FROZEN_ORDER_LADDER.json",
+  "comparator_lock": {
+    "file": "ORDER_COMPARATOR_LOCK.json",
+    "sha256": "55778182c8ca62156ad21b6671561d311eaae988b5ba0856a04aa7c8c629cfa5",
+    "scope": "Specification and existing helpers/rules/adapters/predictions; future order-array executor is not complete",
+    "full_order_array_comparator_ready": false,
+    "geometry_adapter_sha256": "41a8a67d0b3de90aa22ea4c1f011cbeb0cb48c417dd47b5d958ac26f52f63619",
+    "primary_comparator_sha256": "5443b1ef98b1b70044b8a2e5e8bb065a1d927824066c6a142be3935bfc695394",
+    "secondary_comparator_sha256": "f8fb529fe4f2d6413f34372580e69bc4b7919e2a4e7c6ef2320949d7ca9c430f",
+    "diagnostic_helper_sha256": "31e6f9bf40d2615e6365563a9bb881bcf079fe312685ca2b64043fc140f4e343"
+  },
+  "rigorous_certification": {
+    "file": "RIGOROUS_CERTIFICATION_FEASIBILITY.json",
+    "verdict": "RIGOROUS_REFERENCE_CERTIFICATION_BLOCKED_BY_MISSING_ERROR_BOUND",
+    "epsilon_ref_upper_bound": null,
+    "rigorous": false
+  },
+  "order_differences": "NOT_COMPUTED_NO_B144_B256_DIRECT_OUTPUTS_FOUND",
+  "conditional_asymptotic_diagnostic": {
+    "status": "CONDITIONAL_ASYMPTOTIC_DIAGNOSTIC",
+    "evaluated": false,
+    "rigorous": false,
+    "assumptions": [
+      "Q_n=Q_inf+C*n^-p",
+      "stable matrix error direction"
+    ]
+  },
+  "current_sensitivity_targets_file": "POLICY_ALGEBRA_REPLAY.json",
+  "sensitivity_budgets_are_B192_error_estimates": false,
+  "future_authorization": {
+    "status": "NOT_CREATED__REFERENCE_ORDER_INPUT_BLOCKED",
+    "authorization_scope_sha256": null,
+    "authorization_scope_created": false,
+    "envelope_created": false,
+    "execution_authorized": false,
+    "reason": "Canonical contract section8 and user section9 permit a scope only after producer support is verified. Unchanged OD rejects B256; JVP B144/B256 frozen grids absent from recovered authority.",
+    "not_a_science_authorization": true,
+    "required_next_decision": "Obtain separately authorized producer/order authority resolution; do not alter current frozen producer or launch order study."
+  },
+  "interpolation_model_frozen": true,
+  "z075_consumed_as_training": false,
+  "environment": "ENVIRONMENT.json",
+  "commands": {
+    "COMPILE": {
+      "argv_file": "COMPILE.argv.json",
+      "stdout_file": "COMPILE.stdout",
+      "stderr_file": "COMPILE.stderr",
+      "exit_file": "COMPILE.exit",
+      "exit_code": 0
+    },
+    "FOCUSED_TEST": {
+      "argv_file": "FOCUSED_TEST.argv.json",
+      "stdout_file": "FOCUSED_TEST.stdout",
+      "stderr_file": "FOCUSED_TEST.stderr",
+      "exit_file": "FOCUSED_TEST.exit",
+      "exit_code": 0
+    }
+  },
+  "operational_audit_attempts": "OPERATIONAL_AUDIT_ATTEMPTS.json",
+  "focused_tests": {
+    "passed": 9,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "junit": "JUNIT.xml",
+    "historical_suites_rerun": false
+  },
+  "science_producer_command_count": 0,
+  "science_node_count": 0,
+  "new_native_builds": 0,
+  "new_order_grid_generation": 0,
+  "direct_B144_B256_payload_accessed": false,
+  "remaining_gates": {
+    "SOURCE_ACCURACY_BOUND": "SOURCE_ACCURACY_BOUND_UNAVAILABLE",
+    "full_cell_authority": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "complete_HH_fixed_Q_physical_invariance_reviewed": false,
+    "fixed_Q_model_definition": "ESTABLISHED__DOTQ_ZERO_BY_MODEL_DEFINITION_ONLY",
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false,
+    "H_skip_admitted": false,
+    "interval_wide_accuracy_admitted": false,
+    "all_cell_refinement_gain_admitted": false,
+    "trajectory_admitted": false,
+    "transition_error_bound_admitted": false,
+    "source_certified": false,
+    "continuum_certified": false
+  },
+  "RESTORE_VERIFIED": false,
+  "publication": "SEE_DETACHED_PUBLICATION_RECEIPT",
+  "backup": "SEE_DUAL_BACKUP_RECEIPT",
+  "stop_condition": "Certification preflight returned blocked source contract; conditional authorization scope not created. No automatic science."
+}

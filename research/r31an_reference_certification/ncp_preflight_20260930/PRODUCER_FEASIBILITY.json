@@ -1,0 +1,243 @@
+{
+  "verdict": "REFERENCE_ORDER_INPUT_BLOCKED",
+  "source_modification_permitted": false,
+  "orders": {
+    "144": {
+      "OD_static_capacity": "ACCEPTED_BY_SIZE_GUARD_NOT_EXECUTED",
+      "JVP": "FROZEN_GRID_MISSING",
+      "complete_producer_contract_verified": false
+    },
+    "256": {
+      "OD": "REJECTED_BY_PYTHON_AND_NATIVE_HARD_LIMIT",
+      "JVP": "FROZEN_GRID_MISSING",
+      "complete_producer_contract_verified": false
+    }
+  },
+  "grid_files_present": [
+    {
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/cont2c/convergence/frozen_grid_n128.npz",
+      "sha256": "7b83cf7baf606cb430b576f3661b81cad6c31a686000974a04ba616e5cc59bc9",
+      "bytes": 1010897
+    },
+    {
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/cont2c/convergence/frozen_grid_n160.npz",
+      "sha256": "787d2d58c41e8b67d3d0f0273e46af281ac5ef4bb7bcfd1fef09b1cb844e211c",
+      "bytes": 1621598
+    },
+    {
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/cont2c/convergence/frozen_grid_n192.npz",
+      "sha256": "e1959e1bbb66b5e27410daa3d3bdb0815885919f11af3a014d86a47f15b96301",
+      "bytes": 2389695
+    }
+  ],
+  "support_closed": false,
+  "checks": [
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/od_run.py",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_h/od_run.py",
+      "sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+      "lines": [
+        8,
+        19
+      ],
+      "numbered_source": "8: from native import HERE,ROOT,grid,LD,CD,sha\n9: from h0_backend import H0Fused\n10: from run import save\n11: WORK=None\n12: def init(n,z):\n13:  global WORK\n14:  d,t,W,_,_=grid(n);WORK=(H0Fused(),d,t,W,z)\n15: def calc(task):\n16:  ia,ib,path=task;h,d,t,W,z=WORK;a=float(d['exponents'][ia]);b=float(d['exponents'][ib]);rows=[];absolute=[];st=time.perf_counter()\n17:  for active in(0,1):\n18:   values,sa=h.h0(a,b,t,W,z,float(d['v']),active);rows.append(values[[0,2,3]]);absolute.append(sa[[0,2,3]])\n19:  save(__import__('pathlib').Path(path),OG=np.array(rows),sumabs_upper_diagnostic=np.array(absolute),ia=ia,ib=ib,wall_seconds=time.perf_counter()-st)",
+      "observation": "OD uses grid(n), H0Fused; mixed OG only saved by OD driver."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/h0_backend.py",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_h/h0_backend.py",
+      "sha256": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+      "lines": [
+        20,
+        30
+      ],
+      "numbered_source": "20:  def h0(self,a,b,t,W,z,q,active,sign=1,inverted=False):\n21:   for value in(a,b,z,q):\n22:    if np.iscomplexobj(value)or np.asarray(value).shape!=()or not np.isfinite(value):raise ValueError('finite scalar')\n23:   d=inputs()\n24:   if a not in d['exponents']or b not in d['exponents']or q!=float(d['v'])or abs(z)>64:raise ValueError('frozen target domain')\n25:   if isinstance(active,(bool,np.bool_))or active not in(0,1)or sign not in(-1,1)or not isinstance(inverted,(bool,np.bool_)):raise ValueError('labels')\n26:   t=np.asarray(t);W=np.asarray(W)\n27:   if t.dtype!=np.dtype(np.float64)or t.ndim!=1 or not 0<t.size<=192 or not np.isfinite(t).all()or np.any(t<=0)or W.dtype!=np.dtype(np.float64)or W.shape!=(3,9,t.size,t.size)or not np.isfinite(W).all():raise ValueError('node/weight tensor')\n28:   t=np.require(t,requirements=['C','A']);W=np.require(W,requirements=['C','A']);pars=np.array([a,b,z,q,active,sign,int(inverted)],float);norm=np.sqrt(2)*float(d['pref'])*(2*a/np.pi)**.75*(2*b/np.pi)**.75*np.array([1,2*np.sqrt(a),2*np.sqrt(a)],float);out=np.empty((7,3),CD);sa=np.empty((7,3),LD)\n29:   status=self.lib.mh_h0(t.size,t.ctypes.data_as(DP),W.ctypes.data_as(DP),pars.ctypes.data_as(DP),norm.ctypes.data_as(DP),out.ctypes.data_as(LP),sa.ctypes.data_as(LP))\n30:   if status:raise RuntimeError('h0 status '+str(status))",
+      "observation": "Python OD hard limit 0<t.size<=192; B256 rejected unchanged."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/h0_fused.cpp",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_h/h0_fused.cpp",
+      "sha256": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+      "lines": [
+        17,
+        37
+      ],
+      "numbered_source": "17: extern \"C\" int mh_h0(std::size_t n,const double*tt,const double*ww,const double*pp,const double*norm,long double*oo,long double*aa)noexcept{\n18:  using namespace h0_fused;\n19:  if(!n||n>192||!tt||!ww||!pp||!norm||!oo||!aa)return -501;\n20:  if(std::fegetround()!=FE_TONEAREST)return -503;\n21:  R a=pp[0],b=pp[1],z=pp[2],v=pp[3],sgn=pp[5],inv=pp[6];int active=int(pp[4]);R f=inv?-1:1;\n22:  if(a<=0||b<=0||(active!=0&&active!=1)||(sgn!=1&&sgn!=-1))return -506;\n23:  R d1x=active?-2*f:0,d1z=active?-z*f:0,d2x=active?0:-2*f,d2z=active?0:-z*f;\n24:  R q1=active?v*sgn*f:0,q2=active?0:v*sgn*f,ka=(active?-v/2:v/2)*sgn*f,kb=-ka;\n25:  const Z I(0,1);std::size_t nn=n*n;Sum total[21];R absum[21]{};\n26:  try{\n27:   std::vector<Geo>ga(n),gb(n);for(std::size_t i=0;i<n;i++){if(tt[i]<=0||!std::isfinite(tt[i]))return -506;ga[i]=geo(a,tt[i],d1x,d1z,q1);gb[i]=geo(b,tt[i],d2x,d2z,q2);}\n28:   for(std::size_t i=0;i<n;i++)for(std::size_t j=0;j<n;j++){\n29:    auto g1=ga[i],g2=gb[j];R A=g1.A,B=g2.A,sig=.5L/A+.5L/B;Z base=g1.base*g2.base;if(base==Z(0))continue;\n30:    Z d[3],s=0;for(int k=0;k<3;k++){d[k]=g1.m[k]-g2.m[k];s+=d[k]*d[k];}\n31:    Z rad[30];R sr=s.real(),si=s.imag();int iterations=0;int status=radial_entire(1,&sig,&sr,&si,2,reinterpret_cast<R*>(rad),&iterations);if(status)return status;\n32:    Sum sums[11];R upper[11]{};std::size_t ij=i*n+j;\n33:    for(int p=0;p<9;p++){\n34:     R w=ww[p*nn+ij],w1=ww[(9+p)*nn+ij],w2=ww[(18+p)*nn+ij];\n35:     Z values[11]={rad[p+1],rad[11+p],rad[21+p],rad[p+1],rad[11+p],rad[p+1],rad[11+p],rad[p+1],rad[11+p],rad[p],rad[10+p]};\n36:     R weights[11]={w,w,w,p*w,p*w,w1,w1,w2,w2,w,w};\n37:     for(int c=0;c<11;c++){sums[c].add(weights[c]*values[c]);upper[c]+=std::abs(weights[c])*l1(values[c]);}",
+      "observation": "Native OD n>192 returns -501; dynamic n*n indexing, no grid parity/divisibility requirement observed in this call path."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/run.py",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_derivative/run.py",
+      "sha256": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+      "lines": [
+        6,
+        11
+      ],
+      "numbered_source": "6: REG=[(0,j)for j in range(24)]+[(1,j)for j in range(1,24)]\n7: def grid(n):\n8:  p=ROOT/f'cont2c/convergence/frozen_grid_n{n}.npz'\n9:  if not p.exists():raise ValueError('Use the exact frozen grid file for this version: '+str(p))\n10:  with np.load(p,allow_pickle=False)as f:d={k:f[k]for k in f.files}\n11:  return d,p",
+      "observation": "JVP requires preexisting frozen_grid_n{n}.npz; CLI does not generate missing grids."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/native.py",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_h/native.py",
+      "sha256": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+      "lines": [
+        11,
+        20
+      ],
+      "numbered_source": "11: LD=np.longdouble;CD=np.clongdouble;DP=ctypes.POINTER(ctypes.c_double);LP=ctypes.POINTER(ctypes.c_longdouble)\n12: PARENT=ROOT/'inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1'\n13: def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()\n14: def inputs():\n15:  with np.load(PARENT/'inputs/FROZEN_INPUTS.npz',allow_pickle=False)as f:return {k:f[k]for k in f.files}\n16: def nodes(n):\n17:  x,w=roots_legendre(n);u=(x+1)/2;return u/(1-u),w/2/(1-u)**2\n18: def grid(n,ng=80):\n19:  d=inputs();t,w=nodes(n);U,V=exact_weights(t,w);W=contract(U,V,d['C']);gs,gw=nodes(ng);gw*=2/np.sqrt(np.pi)\n20:  return d,t,W,gs,gw",
+      "observation": "Mapped scipy roots_legendre binary64 nodes/weights; exact Hermite weights contracted from unchanged FROZEN_INPUTS."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/exact_weights/exact_laplace_weights.py",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "exact_weights/exact_laplace_weights.py",
+      "sha256": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb",
+      "lines": [
+        29,
+        48
+      ],
+      "numbered_source": "29: def exact_weights(t, w, mu=1.0):\n30:     \"\"\"Return U_i and V_i, i=0..8, including positive-axis quadrature weights.\n31: \n32:     H_n are physicists' Hermite polynomials. All arrays here are real.\n33:     This finite-order implementation is intended for the frozen B96--B192 nodes.\n34:     \"\"\"\n35:     t = np.asarray(t, dtype=float)\n36:     w = np.asarray(w, dtype=float)\n37:     if t.shape != w.shape or np.any(t <= 0) or not np.isfinite(t).all() or not np.isfinite(w).all():\n38:         raise ValueError('finite positive nodes and matching finite weights required')\n39:     x = mu / (2 * np.sqrt(t))\n40:     scale = 1 / (2 * np.sqrt(t))\n41:     base = w * np.exp(-x*x) / (np.sqrt(np.pi) * np.sqrt(t))\n42:     ladder = np.stack([base * eval_hermite(i, x) * scale**i for i in range(10)])\n43:     return ladder[1:], ladder[:-1]\n44: \n45: \n46: def contract(U, V, C):\n47:     return np.stack([np.stack([left.T @ C[:, :, k] @ right for k in range(9)])\n48:                      for left, right in ((U, U), (V, U), (U, V))])",
+      "observation": "Binary64 Hermite density and contraction; declared intended range frozen B96--B192; exact analytic formula is not exact floating arithmetic."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/cont2c/convergence/run_convergence.py",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "cont2c/convergence/run_convergence.py",
+      "sha256": "71f84707d41f30ce6afde44e50555e556a5bd33fb5d71b93bc3ae420300aa58f",
+      "lines": [
+        91,
+        103
+      ],
+      "numbered_source": "91: def prepare_grid(n,inp):\n92:  # Exact same definitions imported from shared API; only target directory differs.\n93:  t,w=api.nodes(n);U,V=api.exact_weights(t,w);W=api.contract(U,V,inp['C'])[0]\n94:  p=H/f'frozen_grid_n{n}.npz'\n95:  vals=dict(t=t,w=w,W=W,U=U,V=V,**inp)\n96:  if n==128:\n97:   with np.load(A/'frozen_grid_n128.npz',allow_pickle=False) as prior_grid:\n98:    if set(prior_grid.files)!=set(vals) or any(not np.array_equal(prior_grid[k],v) for k,v in vals.items()):raise RuntimeError('Rebuilt n128 bridge grid differs from original n128 grid')\n99:  if p.exists():\n100:   with np.load(p,allow_pickle=False) as d:\n101:    if set(d.files)!=set(vals) or any(not np.array_equal(d[k],v) for k,v in vals.items()):raise RuntimeError(f'Preserved grid differs: {p}')\n102:  else:np.savez_compressed(p,**vals)\n103:  return p",
+      "observation": "Historical generator uses shared API and create-only equality; no B144/B256 preparation run authorized here."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/native.py",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_derivative/native.py",
+      "sha256": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d",
+      "lines": [
+        10,
+        37
+      ],
+      "numbered_source": "10: class Native:\n11:  def __init__(self):\n12:   source={'radial_power.cpp':ROOT/'completion/radial/radial_wide.cpp','analytic.cpp':HERE/'jvp.cpp'}\n13:   self.folder=build_native.build(HERE/'build',sources=source);self.manifest=build_native.checked(self.folder)\n14:   self.identity={'key':self.folder.name,'source_hashes':{str(p.relative_to(ROOT)):sha(p) for p in source.values()},'adapter':sha(__file__)}\n15:   self.lib=ctypes.CDLL(str(self.folder/'analytic.so'))\n16:   self.lib.mj_probe.argtypes=[ctypes.POINTER(ctypes.c_uint64),SZ];self.lib.mj_probe.restype=ctypes.c_int\n17:   self.lib.mj_pair.argtypes=[SZ,DP,SZ,DP,SZ,DP,SZ,LP,SZ,LP,SZ,LP,SZ];self.lib.mj_pair.restype=ctypes.c_int\n18:   self.lib.mj_point.argtypes=[LP,SZ,ctypes.c_int,LP,SZ];self.lib.mj_point.restype=ctypes.c_int\n19:   p=np.zeros(5,np.uint64);rc=self.lib.mj_probe(p.ctypes.data_as(ctypes.POINTER(ctypes.c_uint64)),5)\n20:   if rc or p.tolist()!=[np.dtype(LD).itemsize,np.finfo(LD).nmant+1,np.dtype(CD).itemsize,1,1]:raise RuntimeError('mixed JVP ABI mismatch')\n21:  def point(self,a,b,t,u,z,q,power):\n22:   if type(power)is not int or power not in range(9):raise ValueError('integer power0..8 required')\n23:   par=np.array([a,b,t,u,z,q],LD);out=np.empty((2,2,3),CD)\n24:   rc=self.lib.mj_point(par.ctypes.data_as(LP),par.size,power,out.ctypes.data_as(LP),2*out.size)\n25:   if rc:raise ValueError('mixed JVP status '+str(rc))\n26:   return out\n27:  def pair(self,a,b,t,W,z,q,pref):\n28:   t=np.require(t,dtype=np.float64,requirements=['C','A']);W=np.require(W,dtype=np.float64,requirements=['C','A'])\n29:   if t.ndim!=1 or W.shape!=(9,len(t),len(t)):raise ValueError('grid shape')\n30:   # Same binary64 normalization constants as the frozen primitive assembly.\n31:   a=float(a);b=float(b);pf=float(pref);norm0=np.sqrt(2)*pf*(2*a/np.pi)**.75*(2*b/np.pi)**.75\n32:   norm1=np.sqrt(2)*pf*(2*b/np.pi)**.75*(2*a/np.pi)**.75\n33:   norm=np.array([norm0*np.array([1,2*np.sqrt(a),2*np.sqrt(a)]),norm1*np.array([1,2*np.sqrt(b),2*np.sqrt(b)])],np.float64)\n34:   par=np.array([a,b,z,q],LD);out=np.empty((2,2,3),CD);sa=np.empty((2,2,3),LD)\n35:   rc=self.lib.mj_pair(len(t),t.ctypes.data_as(DP),t.size,W.ctypes.data_as(DP),W.size,norm.ctypes.data_as(DP),norm.size,par.ctypes.data_as(LP),par.size,out.ctypes.data_as(LP),2*out.size,sa.ctypes.data_as(LP),sa.size)\n36:   if rc:raise ValueError('mixed JVP status '+str(rc))\n37:   return out,sa",
+      "observation": "Content-addressed source cache and strict ABI probe; input t,W,norm binary64; geometry/output longdouble/clongdouble."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/jvp.cpp",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_derivative/jvp.cpp",
+      "sha256": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+      "lines": [
+        39,
+        62
+      ],
+      "numbered_source": "39: API int mj_pair(std::size_t n,const double*tt,std::size_t nt,const double*ww,std::size_t nw,const double*norm,std::size_t nnormal,const R*par,std::size_t np,R*output,std::size_t no,R*sumabs,std::size_t na)noexcept{\n40:  using namespace mj;\n41:  if(!ptr(tt)||!ptr(ww)||!ptr(norm)||!ptr(par)||!ptr(output)||!ptr(sumabs))return -401;\n42:  if(!n||n>4096||nt!=n||nw!=9*n*n||nnormal!=6||np!=4||no!=24||na!=12)return -402;\n43:  if(std::fegetround()!=FE_TONEAREST)return -403;\n44:  for(std::size_t k=0;k<nt;++k)if(!std::isfinite(tt[k])||tt[k]<0)return -406;\n45:  for(std::size_t k=0;k<nw;++k)if(!std::isfinite(ww[k]))return -406;\n46:  for(int k=0;k<6;++k)if(!std::isfinite(norm[k]))return -406;\n47:  for(int k=0;k<4;++k)if(!std::isfinite(par[k]))return -406;\n48:  const R a=par[0],b=par[1],z=par[2],q=par[3];if(a<=0||b<=0)return -406;\n49:  try{\n50:   const std::size_t nn=n*n;std::vector<R>v(nn),sr(nn),si(nn),mom(60*nn);int iterations=0;\n51:   for(std::size_t i=0;i<n;++i)for(std::size_t j=0;j<n;++j){std::size_t k=i*n+j;R A=a+tt[i],B=b+tt[j];Z dx=2*b/B,dz=Z(z*b/B,-q/(2*B)),s=dx*dx+dz*dz;v[k]=.5L/A+.5L/B;sr[k]=s.real();si[k]=s.imag();}\n52:   int status=radial_entire(nn,v.data(),sr.data(),si.data(),2,mom.data(),&iterations);if(status)return status;\n53:   const Z*rad=reinterpret_cast<const Z*>(mom.data());Sum sums[12];R absolute[12]{};\n54:   for(std::size_t i=0;i<n;++i)for(std::size_t j=0;j<n;++j){std::size_t k=i*n+j,kt=j*n+i;\n55:    for(int power=0;power<9;++power){\n56:     R weights[2]={ww[power*nn+k],ww[power*nn+kt]};if(weights[0]==0&&weights[1]==0)continue;\n57:     Z f[2][2][3];field(a,b,tt[i],tt[j],z,q,rad+(power+1)*nn+k,rad+(11+power)*nn+k,rad+(21+power)*nn+k,f);\n58:     for(int e=0;e<2;++e)for(int d=0;d<2;++d)for(int angle=0;angle<3;++angle){int loc=6*e+3*d+angle;Z term=f[e][d][angle]*weights[e];if(!good(term))return -407;sums[loc].add(term);absolute[loc]+=std::abs(term);}\n59:    }\n60:   }\n61:   Z temp[12];R sa[12];for(int e=0;e<2;++e)for(int d=0;d<2;++d)for(int angle=0;angle<3;++angle){int loc=6*e+3*d+angle;temp[loc]=sums[loc].get()*R(norm[3*e+angle]);sa[loc]=absolute[loc]*fabsl(norm[3*e+angle]);if(!good(temp[loc])||!std::isfinite(sa[loc]))return -407;}\n62:   std::copy(temp,temp+12,reinterpret_cast<Z*>(output));std::copy(sa,sa+12,sumabs);return 0;",
+      "observation": "Native JVP buffer n<=4096, nw=9*n*n; no n parity/divisibility restriction observed. Kernel capacity does not supply required grid/source authority."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/od_run.py",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_h/od_run.py",
+      "sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+      "lines": [
+        21,
+        39
+      ],
+      "numbered_source": "21: def assemble(folder,n,z):\n22:  d,*_=grid(n);raw=np.empty((2,3,3,12,12),CD);sa=np.empty(raw.shape,LD)\n23:  for ia in range(12):\n24:   for ib in range(12):\n25:    with np.load(folder/f'pair_{ia:02}_{ib:02}.npz')as f:raw[...,ia,ib]=f['OG'];sa[...,ia,ib]=f['sumabs_upper_diagnostic']\n26:  v=LD(d['v']);ks=[v/2,-v/2];tau=LD(z)/v;reg=[(0,j)for j in range(24)]+[(1,j)for j in range(1,24)];out=np.empty((3,47,2),CD);summed=np.empty((3,47,2),LD);C0=d['s_C'][:,0].astype(LD)\n27:  for ch,(active,j)in enumerate(reg):\n28:   ang=j//8;C=(d['s_C']if ang==0 else d['p_C'])[:,j%8].astype(LD);coeff=C[:,None]*C0[None,:]\n29:   for c in(0,1):\n30:    act=active^c;par=1 if c==0 or ang==0 else-1;cz=(1 if c==0 else-1)*LD(z)/2;phase=np.exp(CD(1j)*(2*ks[c]*cz+(LD(d['phase_E'][ch])-LD(d['phase_E'][47+c]))*tau))\n31:    for field in(0,1,2):\n32:     parity=par*(-1 if c and field else 1);out[field,ch,c]=phase*parity*np.sum(raw[act,field,ang]*coeff,dtype=CD);summed[field,ch,c]=np.sum(sa[act,field,ang]*abs(coeff),dtype=LD)\n33:  O=out[0];Dc=np.empty((47,2),CD);Dr=np.empty((2,47),CD)\n34:  for ch,(active,j)in enumerate(reg):\n35:   for c in(0,1):\n36:    kc=ks[c];ka=ks[active];kb=ks[1-active];G1=out[1,ch,c];G2=out[2,ch,c];Dc[ch,c]=kc*(G1+G2)+CD(1j)*(kc*(2*kc-ka-kb)-LD(d['phase_E'][47+c]))*O[ch,c];Dr[c,ch]=-ka*G1.conj()-kb*G2.conj()-CD(1j)*LD(d['phase_E'][ch])*O[ch,c].conj()\n37:  path=folder/'ASSEMBLED_OD.npz'\n38:  if not path.exists():save(path,O=O,O_row=O.conj().T,D_col=Dc,D_row=Dr,components_OG=out,sumabs_upper_diagnostic=summed,n=n,z=z)\n39:  return {'status':'COMPUTED_FINE_OD_NOT_INDEPENDENT_DOT_O','path':str(path.relative_to(ROOT)),'sha256':sha(path),'n':n,'z':z,'fields':['O','O_row','D_col','D_row'],'Hamiltonian_included':False,'independent_dotO_included':False}",
+      "observation": "Frozen 24+23 registry, coefficients, channel phase, tau=z/v and independent directional D assembly."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/run.py",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_derivative/run.py",
+      "sha256": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+      "lines": [
+        17,
+        34
+      ],
+      "numbered_source": "17: def assemble(raw,d,z):\n18:  # raw[electron, O_or_zJVP, angle, canonical_a, canonical_b]. Remote\n19:  # active primitive changes exponent order; no matrix averaging is performed.\n20:  v=LD(d['v']);tau=LD(z)/v;O=np.empty((47,2),CD);dot=np.empty((47,2),CD)\n21:  for ch,(active,j)in enumerate(REG):\n22:   angle=j//8;coeff=(d['s_C']if angle==0 else d['p_C'])[:,j%8].astype(LD);ground=d['s_C'][:,0].astype(LD);ab=coeff[:,None]*ground[None,:]\n23:   for cusp in (0,1):\n24:    canonical_active=active^cusp;tab=raw[canonical_active,:,angle]\n25:    if canonical_active:tab=tab.transpose(0,2,1)\n26:    pair=np.sum(tab*ab[None],axis=(1,2),dtype=CD)\n27:    parity=-1 if cusp and angle else 1\n28:    deltaE=LD(d['phase_E'][ch])-LD(d['phase_E'][47+cusp]);phase=np.exp(CD(1j)*(v*LD(z)/2+deltaE*tau))\n29:    O[ch,cusp]=parity*phase*pair[0]\n30:    dot[ch,cusp]=parity*phase*(v*pair[1]+CD(1j)*(v*v/2+deltaE)*pair[0])\n31:  return O,dot\n32: def evaluate(z,n=192):\n33:  z=LD(z);d,gpath=grid(n);native=Native();folder=HERE/f'B{n}_z{z:g}';folder.mkdir(exist_ok=True)\n34:  identity={'z':str(z),'n':n,'grid':sha(gpath),'native':native.identity,'driver':sha(__file__),'contract':sha(HERE/'CONTRACT.json')}",
+      "observation": "Same registry/phase with independent analytic z-JVP and time derivative v*zJVP + phase derivative, not D+Ddagger."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/radial/radial_wide.cpp",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/radial/radial_wide.cpp",
+      "sha256": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+      "lines": [
+        7,
+        73
+      ],
+      "numbered_source": "7: static_assert(LDBL_MANT_DIG >= 64, \"64-bit significand required\");\n8: static_assert(LDBL_MAX_EXP >= 4096, \"wide longdouble exponent required\");\n9: \n10: using R=long double;\n11: using Z=std::complex<R>;\n12: \n13: // Numerical contract is frozen in CONTRACT.json. No fast-math permitted.\n14: \n15: // IEEE binary128 is used only for cancellation control in the newly admitted\n16: // compact complex strip. Every series recurrence coefficient is formed in\n17: // binary128. Basic arithmetic is provided by libgcc; no quad transcendental is\n18: // required.  Original longdouble paths remain bit-for-bit unchanged.\n19: #if !defined(__SIZEOF_FLOAT128__) || __FLT128_MANT_DIG__ != 113\n20: #error \"IEEE binary128 basic arithmetic is required for the wide strip\"\n21: #endif\n22: #if defined(__FAST_MATH__) || (defined(__FINITE_MATH_ONLY__) && __FINITE_MATH_ONLY__)\n23: #error \"Strict floating point required\"\n24: #endif\n25: using Q=__float128;\n26: struct QZ {Q r,i;};\n27: static Q qa(Q x){return x<0?-x:x;}\n28: static Q qnorm(QZ x){return qa(x.r)+qa(x.i);}\n29: static QZ qadd(QZ a,QZ b){return {a.r+b.r,a.i+b.i};}\n30: static QZ qsub(QZ a,QZ b){return {a.r-b.r,a.i-b.i};}\n31: static QZ qmul(QZ a,QZ b){return {a.r*b.r-a.i*b.i,a.r*b.i+a.i*b.r};}\n32: static QZ qscale(QZ a,Q b){return {a.r*b,a.i*b};}\n33: static int hypergeom_wide(R a,R b,Z z,Z &out){\n34:     QZ term{1,0},sum{1,0},correction{0,0};\n35:     const QZ zz{Q(z.real()),Q(z.imag())};\n36:     const Q eps=Q(ldexpl(1.L,-112));\n37:     for(int k=1;k<=1024;++k){\n38:         const Q ratio=(Q(a)+k-1)/((Q(b)+k-1)*k);\n39:         term=qscale(qmul(term,zz),ratio);\n40:         const QZ y=qsub(term,correction),updated=qadd(sum,y);\n41:         correction=qsub(qsub(updated,sum),y);sum=updated;\n42:         if(Q(k)+a>0){\n43:             Q fac=(Q(k)+a)/(Q(k)+b);if(fac<1)fac=1;\n44:             const Q q=qnorm(zz)/(k+1)*fac;\n45:             // The l1 complex norm is submultiplicative. For subsequent terms,\n46:             // max(1,(k+a)/(k+b)) and 1/(k+1) bound all future ratios.\n47:             if(q<1 && qnorm(term)*q/(1-q)<=eps*qnorm(sum)/8){\n48:                 out=Z(R(sum.r),R(sum.i));return k;\n49:             }\n50:         }\n51:     }\n52:     return -1;\n53: }\n54: \n55: static int hypergeom(R a,R b,Z z,Z &out) {\n56:     if(fabsl(z.imag())>2.L)return hypergeom_wide(a,b,z,out);\n57:     Z term(1,0),sum(1,0),correction(0,0);\n58:     const R eps=std::numeric_limits<R>::epsilon();\n59:     for(int k=1;k<=1024;++k) {\n60:         term *= z*((a+k-1)/((b+k-1)*k));\n61:         const Z y=term-correction;\n62:         const Z updated=sum+y;\n63:         correction=(updated-sum)-y;\n64:         sum=updated;\n65:         if(k+a>0) {\n66:             const R q=std::abs(z)/(k+1)*std::fmax(R(1),(k+a)/(k+b));\n67:             if(q<1 && std::abs(term)*q/(1-q)<=eps*std::abs(sum)/4) {\n68:                 out=sum;\n69:                 return k;\n70:             }\n71:         }\n72:     }\n73:     return -1;",
+      "observation": "Longdouble significand>=64, binary128 series arithmetic for |Im x|>2; compensated series and tail stop, fixed FE_TONEAREST."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/radial/radial_wide.cpp",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/radial/radial_wide.cpp",
+      "sha256": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+      "lines": [
+        91,
+        148
+      ],
+      "numbered_source": "91: static int positive_odd(R v,Z x,int order,Z out[3][5]) {\n92:     static const R pi=acosl(-1.L),c=sqrtl(2/pi);\n93:     const R ac[5][5]={{1,0,0,0,0},{1,2,0,0,0},{3,12,4,0,0},\n94:       {15,90,60,8,0},{105,840,840,224,16}};\n95:     const R bc[5][5]={{0,0,0,0,0},{1,0,0,0,0},{5,2,0,0,0},\n96:       {33,28,4,0,0},{279,370,108,8,0}};\n97:     // For a>=64, omit the exponentially small tail and E terms together.\n98:     // Explicit truncation bounds (all n<=2) are documented in DERIVATION.md.\n99:     // Principal sqrt is single-valued in this half-plane; exp(+x) never occurs.\n100:     Z E,F[3]; int it=0;\n101:     if(x.real()>=64.L) {\n102:       E=Z(0,0);\n103:       F[0]=sqrtl(pi)/(R(2)*std::sqrt(x));\n104:       for(int n=1;n<=order;++n)F[n]=R(2*n-1)*F[n-1]/(R(2)*x);\n105:     } else {\n106:       E=std::exp(-x);\n107:       if(fabsl(x.imag())>2.L){\n108:         for(int n=0;n<=order;++n){\n109:           int local=hypergeom(1,R(1.5L)+n,x,F[n]);if(local<0)return local;\n110:           if(local>it)it=local;F[n]*=E/R(2*n+1);\n111:         }\n112:       }else{\n113:       it=hypergeom(1,R(1.5L)+order,x,F[order]);\n114:       if(it<0)return it;\n115:       F[order]*=E/R(2*order+1);\n116:       for(int n=order-1;n>=0;--n)F[n]=(R(2)*x*F[n+1]+E)/R(2*n+1);\n117:       }\n118:     }\n119:     R scale=c/sqrtl(v);\n120:     for(int k=0;k<5;++k) {\n121:       Z A,Ap,App,B,Bp,Bpp;\n122:       poly_derivatives(ac[k],k,x,A,Ap,App);\n123:       poly_derivatives(bc[k],k? k-1:0,x,B,Bp,Bpp);\n124:       out[0][k]=scale*(A*F[0]+B*E);\n125:       if(order>=1)out[1][k]=scale/(2*v)*(Ap*F[0]-A*F[1]+(Bp-B)*E);\n126:       if(order>=2)out[2][k]=scale/(4*v*v)*(App*F[0]-R(2)*Ap*F[1]+A*F[2]+(Bpp-R(2)*Bp+B)*E);\n127:       if(k<4)scale*=v;\n128:     }\n129:     return it;\n130: }\n131: \n132: extern \"C\" int precision_bits() { return LDBL_MANT_DIG; }\n133: extern \"C\" int radial_entire(std::size_t n,const R* variance,const R* sr,const R* si,\n134:                             int order,R* output,int* maximum_iterations) {\n135:     if(!maximum_iterations)return -4;\n136:     *maximum_iterations=0;\n137:     if(order<0 || order>2)return -4;\n138:     if(n>std::size_t(std::numeric_limits<std::ptrdiff_t>::max())/(60*sizeof(R)))return -4;\n139:     if(n>0 && (!variance || !sr || !si || !output))return -4;\n140:     if(std::fegetround()!=FE_TONEAREST)return -5;\n141:     // All inputs are validated before any output is written, including batched failures.\n142:     for(std::size_t i=0;i<n;++i) {\n143:       const R v=variance[i];\n144:       if(!std::isfinite(v)||v<1e-100L||v>1e100L ||\n145:          !std::isfinite(sr[i])||!std::isfinite(si[i]))return -2;\n146:       const Z x(sr[i]/(2*v),si[i]/(2*v));\n147:       if(!std::isfinite(x.real())||!std::isfinite(x.imag())||\n148:          x.real() < -32 || x.real()>1e12L || fabsl(x.imag())>32)return -2;",
+      "observation": "Large Re>=64 Boys tail omission; scalar domain guards and maximum derivative order2."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/radial/radial_wide.cpp",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/radial/radial_wide.cpp",
+      "sha256": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+      "lines": [
+        150,
+        198
+      ],
+      "numbered_source": "150:     static const R pi=acosl(-1.L),rootpi=sqrtl(pi);\n151:     static const R gamma_ratio[10]={2/rootpi,1,2/rootpi,R(1.5L),4/rootpi,R(3.75L),\n152:                             12/rootpi,R(13.125L),48/rootpi,R(59.0625L)};\n153:     int maxiter=0;\n154:     for(std::size_t i=0;i<n;++i) {\n155:         const R v=variance[i];\n156:         const Z x(sr[i]/(2*v),si[i]/(2*v));\n157:         if(!(v>0) || !std::isfinite(v) || !std::isfinite(x.real()) || !std::isfinite(x.imag())\n158:            || x.real() < -32 || x.real()>1e12L || fabsl(x.imag())>32) return -2;\n159:         Z positive[3][5];\n160:         if(x.real()>=-0.5L) {\n161:           int it=positive_odd(v,x,order,positive);\n162:           if(it<0)return -1;\n163:           if(it>maxiter)maxiter=it;\n164:         }\n165:         // All needed powers are integer recurrences from one square root.\n166:         // Shared-seed odd moments already exist; their generic constants are unused.\n167:         const R twice_v=2*v;\n168:         R powers[10];powers[1]=1;\n169:         for(int idx=3;idx<10;idx+=2)powers[idx]=powers[idx-2]*twice_v;\n170:         const bool shared=x.real()>=-0.5L;\n171:         if(!shared) {\n172:           powers[0]=1/sqrtl(twice_v);\n173:           for(int idx=2;idx<10;idx+=2)powers[idx]=powers[idx-2]*twice_v;\n174:         }\n175:         for(int p=-1;p<=8;++p) {\n176:             const bool is_shared_odd=shared && (p==-1 || p%2==1);\n177:             const R constant=is_shared_odd ? R(0) : powers[p+1]*gamma_ratio[p+1];\n178:             for(int j=0;j<=order;++j) {\n179:                 R prefactor=constant;\n180:                 if(j==1) prefactor*=R(p)/(6*v);\n181:                 if(j==2) prefactor*=R(p*(p-2))/(60*v*v);\n182:                 Z out(0,0);\n183:                 if((p==-1 || p%2==1) && x.real()>=-0.5L) out=positive[j][(p+1)/2];\n184:                 else if(prefactor!=0) {\n185:                     const R a=R(j)-R(p)/2,b=R(1.5L)+j;\n186:                     if(p>=0 && p%2==0) out=polynomial(a,b,-x,p/2-j);\n187:                     else {\n188:                         const bool kummer=x.real()>0;\n189:                         const int it=hypergeom(kummer?R(p+3)/2:a,b,kummer?x:-x,out);\n190:                         if(it<0) return -1;\n191:                         if(it>maxiter) maxiter=it;\n192:                         if(kummer) out*=std::exp(-x);\n193:                     }\n194:                     out*=prefactor;\n195:                 }\n196:                 if(!std::isfinite(out.real()) || !std::isfinite(out.imag())) return -3;\n197:                 const std::size_t loc=2*((std::size_t(j)*10+(p+1))*n+i);\n198:                 output[loc]=out.real();output[loc+1]=out.imag();",
+      "observation": "Shared sector Re>=-0.5; terminating even polynomials; direct/Kummer branch otherwise, finite result guards."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/radial/DERIVATION.md",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/radial/DERIVATION.md",
+      "sha256": "3214cdaf252ce3ea48026df643aaedae37674753f6f99746c9c3aaa30b9bdc70",
+      "lines": [
+        100,
+        109
+      ],
+      "numbered_source": "100: For every frozen primitive pair, all B192 nodes, all gamma>=0, and |z|<=64,\n101: \n102: - Re x >= -25.00426558753802546;\n103: - Re x <= 105204881.034973157875;\n104: - |Im x| <= 28.624111772637522932;\n105: - 1.9485787920035007e-5 <= v <= 500.\n106: \n107: Thus the new guarded scalar domain [-32,1e12]+i[-32,32], variance [1e-100,1e100],\n108: contains the actual requested trajectory for B192. Other B grids must recompute\n109: t_max in the stated enclosure; this is not an automatic unlimited-grid claim.",
+      "observation": "B192 domain enclosure only; other grids require their own t_max enclosure, not unlimited order authority."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/h0_backend.py",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "completion/mixed_h/h0_backend.py",
+      "sha256": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+      "lines": [
+        6,
+        19
+      ],
+      "numbered_source": "6:  def __init__(self):\n7:   sources=[HERE/'h0_fused.cpp',ROOT/'completion/radial/radial_wide.cpp'];self.identity={str(p.relative_to(ROOT)):sha(p)for p in sources};self.identity['adapter_sha256']=sha(__file__);key=hashlib.sha256(json.dumps(self.identity,sort_keys=True).encode()).hexdigest();folder=HERE/'build'/key;folder.mkdir(parents=True,exist_ok=True);lib=folder/'h0.so';manifest=folder/'BUILD.json'\n8:   with(folder/'BUILD.lock').open('a')as lock:\n9:    fcntl.flock(lock.fileno(),fcntl.LOCK_EX)\n10:    if manifest.exists():\n11:     old=json.loads(manifest.read_text())\n12:     if old['identity']!=self.identity or old['binary_sha256']!=sha(lib):raise RuntimeError('h0 cache mismatch')\n13:    else:\n14:     command=['g++','-O3','-std=c++17','-fPIC','-shared','-fno-fast-math','-ffp-contract=off',str(HERE/'h0_fused.cpp'),'-o',str(lib.with_suffix('.tmp.so'))];p=subprocess.run(command,capture_output=True,text=True);(folder/'compile.stderr').write_text(p.stderr);(folder/'compile.stdout').write_text(p.stdout)\n15:     if p.returncode:raise RuntimeError(p.stderr)\n16:     os.replace(lib.with_suffix('.tmp.so'),lib);tmp=folder/'BUILD.tmp.json';tmp.write_text(json.dumps({'identity':self.identity,'command':command,'binary_sha256':sha(lib)},indent=2));os.replace(tmp,manifest)\n17:   self.lib=ctypes.CDLL(str(lib));self.lib.mh_h0.argtypes=[ctypes.c_size_t,DP,DP,DP,DP,LP,LP];self.lib.mh_h0.restype=ctypes.c_int;self.lib.precision_bits.restype=ctypes.c_int\n18:   if self.lib.precision_bits()!=np.finfo(LD).nmant+1:raise RuntimeError('h0 precision mismatch')\n19:   self.identity['binary_sha256']=sha(lib)",
+      "observation": "Source-addressed cache; strict compiler flags and precision check; no binary/cache changes made."
+    },
+    {
+      "source_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/foreign_analytic/build_native.py",
+      "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+      "member": "foreign_analytic/build_native.py",
+      "sha256": "0d47f2f6199c25e12f8a39845e071eb8fc2bef0cdcd1380ebba14445d05b3f08",
+      "lines": [
+        24,
+        58
+      ],
+      "numbered_source": "24: def build(cache,*,sources=None):\n25:  \"\"\"sources override is for isolated fault injection/tests, never untrusted code.\"\"\"\n26:  cache=Path(cache).resolve();cache.mkdir(parents=True,exist_ok=True)\n27:  if platform.system()!='Linux':raise RuntimeError('Linux build profile only')\n28:  for var in ('LD_PRELOAD','LD_LIBRARY_PATH'):\n29:   if os.environ.get(var):raise RuntimeError(var+' must be unset')\n30:  mapping=SOURCES if sources is None else sources\n31:  if set(mapping)!=set(SOURCES):raise ValueError('exact source registry required')\n32:  frozen={name:Path(path).read_bytes() for name,path in mapping.items()};frozen['unit.cpp']=UNIT\n33:  compiler=Path(shutil.which('g++',path=ns.BUILD_ENV['PATH']) or '').resolve()\n34:  if not compiler.is_file():raise RuntimeError('system g++ unavailable')\n35:  with ns.locked(cache/'.build.lock'):\n36:   stage=Path(tempfile.mkdtemp(prefix='.stage-',dir=cache))\n37:   try:\n38:    for name,data in frozen.items():ns.write_synced(stage/name,data)\n39:    dep=ns.run([str(compiler),'-std=c++17','-M','-MT','unit','unit.cpp'],cwd=stage)\n40:    headers={}\n41:    for name in shlex.split(dep.replace('\\\\\\n',' ').split(':',1)[1]):\n42:     p=Path(name)\n43:     if not p.is_absolute():\n44:      if name not in frozen:raise RuntimeError('unsupported project include: '+name)\n45:     else:headers[str(p.resolve())]=ns.sha(p)\n46:    binaries={str(compiler):ns.sha(compiler)}\n47:    for program in ('cc1plus','as','ld'):\n48:     p=ns.run([str(compiler),'-print-prog-name='+program])\n49:     p=Path(shutil.which(p,path=ns.BUILD_ENV['PATH']) or p).resolve();binaries[str(p)]=ns.sha(p)\n50:    identity={'schema':1,'source_sha256':{k:hashlib.sha256(v).hexdigest() for k,v in frozen.items()},\n51:     'builder_sha256':ns.sha(__file__),'shared_utilities_sha256':ns.sha(ns.__file__),\n52:     'flags':list(FLAGS),'compiler_version':ns.run([str(compiler),'--version']),\n53:     'target':ns.run([str(compiler),'-dumpmachine']),'tools':binaries,'headers':headers,\n54:     'build_env':ns.BUILD_ENV,'machine':platform.machine()}\n55:    key=hashlib.sha256(ns.canonical(identity)).hexdigest();dest=cache/key\n56:    if dest.exists():checked(dest);return dest\n57:    argv=[str(compiler),*FLAGS,'unit.cpp','-o','analytic.so']\n58:    cp=subprocess.run(argv,cwd=stage,env=ns.BUILD_ENV,capture_output=True,text=True,timeout=120)",
+      "observation": "JVP cache key includes source/build environment/compiler/headers; order-independent binary identity; no builds invoked."
+    }
+  ],
+  "no_grid_generation": true,
+  "no_producer_or_native_command": true,
+  "new_science_node_count": 0
+}

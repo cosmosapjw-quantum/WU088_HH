@@ -1,0 +1,23 @@
+{
+  "schema": "WU088_R31AN_WOLFRAM_V1",
+  "actual_evaluator": true,
+  "orders": [
+    144,
+    192,
+    256
+  ],
+  "refinement_ratio": 1.3333333333333333,
+  "scalar_power_model": {
+    "p_formula": "Log[d144192/d192256]/Log[4/3]",
+    "E192_formula": "d192256/(1-(3/4)^p)",
+    "E256_formula": "d192256/((4/3)^p-1)",
+    "rigorous_without_asymptotic_model": false
+  },
+  "sensitivity_budgets_per_ta": {
+    "primary_K": 0.15991171777803362,
+    "primary_Dmax": 0.16672847023818352,
+    "secondary_K": 0.028566210013241087,
+    "secondary_Dmax": 0.04391029313990087,
+    "joint": 0.028566210013241087
+  }
+}
