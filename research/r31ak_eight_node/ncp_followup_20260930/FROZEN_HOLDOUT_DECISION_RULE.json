@@ -1,0 +1,27 @@
+{
+  "schema": "WU088_R31AK_FUTURE_HOLDOUT_DECISION_RULE_V1",
+  "models": [
+    "R31AK_ADAPTIVE_EIGHT_NODE_CUBIC_O_LINEAR_K",
+    "R31Z_GLOBAL_QUINTIC_O_QUADRATIC_K"
+  ],
+  "primary_metrics": [
+    "E_K",
+    "E_Dmax"
+  ],
+  "comparison_tolerance_per_ta": 1e-10,
+  "pareto_rule": {
+    "PARETO_SUPPORTED_AT_SELECTED_HOLDOUT": "R31AK E_K <= R31Z E_K+tol and R31AK E_Dmax <= R31Z E_Dmax+tol and at least one improvement >tol",
+    "GLOBAL_SUPPORTED_AT_SELECTED_HOLDOUT": "reverse primary dominance with same tol",
+    "TRADEOFF_UNRESOLVED": "otherwise"
+  },
+  "mandatory_secondary": [
+    "E_O",
+    "E_dotO",
+    "E_Dcol",
+    "E_Drow",
+    "direct_metric_identity_residual",
+    "both_candidate_metric_identity_residuals"
+  ],
+  "weighted_score_for_final_verdict": false,
+  "execution_authorized": false
+}

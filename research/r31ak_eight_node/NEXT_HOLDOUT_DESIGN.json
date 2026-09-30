@@ -1,0 +1,24 @@
+{
+  "schema": "WU088_R31AK_NEXT_HOLDOUT_DESIGN_V1",
+  "provisional_cell_midpoints_z_a0": [0.25, 0.75, 1.5, 2.25, 2.75, 3.25, 3.75],
+  "known_exclusion": {
+    "z_a0": 1.5,
+    "reason": "prior CP4 archive inventory exposed a direct OD-only artifact; not a clean complete holdout"
+  },
+  "provisional_clean_candidates_z_a0": [0.25, 0.75, 2.25, 2.75, 3.25, 3.75],
+  "current_turn_provider_title_search": {
+    "dropbox": "zero results for all provisional candidates; not an absence proof",
+    "google_drive": "zero results for all provisional candidates; not an absence proof"
+  },
+  "selection_inputs": "frozen model predictions only; no direct truth",
+  "models": [
+    "R31AK_ADAPTIVE_EIGHT_NODE_CUBIC_O_LINEAR_K",
+    "R31Z_GLOBAL_QUINTIC_O_QUADRATIC_K"
+  ],
+  "selection_metric": "sqrt(DeltaK_model^2 + DeltaDmax_model^2)",
+  "tie_break": "lower_z",
+  "future_primary_metrics": ["E_K", "E_Dmax"],
+  "future_decision_rule": "Pareto dominance at prelocked tolerance 1e-10/t_a",
+  "execution_authorized": false,
+  "science_node_count_this_design": 0
+}
