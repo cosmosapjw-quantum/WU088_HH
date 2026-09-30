@@ -1,0 +1,84 @@
+name: WU088 missing-source supplement 20261001
+on:
+  push:
+    branches: [research/r31ao-unequal-order-ladder-20260930]
+    paths: [.github/workflows/wu088-literature-supplement-20261001.yml]
+permissions:
+  contents: read
+jobs:
+  acquire_missing_only:
+    if: github.event.head_commit.message == '[archive-only] acquire missing public-source supplement 20261001 once' && github.run_attempt == 1
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - name: Acquire missing author manuscripts and linked documents; no scientific execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          mkdir supplement_work
+          cd supplement_work
+          curl --fail --location --max-time 45 --output collect.py 'https://raw.githubusercontent.com/cosmosapjw-quantum/WU088_HH/b8fb1592a1df48eea7cfb2418faf538472e9eb96/research/r31ao_unequal_ladder/literature_acquisition_20261001/collect.py'
+          echo 'e0ed573242121147b20521e3f6f5e7e0e0af50ff0a2a8b3d02f0ded414862055  collect.py' | sha256sum --check --strict
+          curl --fail --location --max-time 45 --output original_workflow.txt 'https://raw.githubusercontent.com/cosmosapjw-quantum/WU088_HH/933668d66497ebc14955936b100fa942a36e6ea1/.github/workflows/wu088-literature-acquisition-20261001.yml'
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          original=Path('original_workflow.txt').read_text()
+          cert=re.search(r'-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----',original,re.S).group(0)
+          Path('recipient.pem').write_text('\n'.join(s.strip() for s in cert.splitlines())+'\n')
+          exec(compile(Path('collect.py').read_text().split('\nCITED=',1)[0], 'collector_definitions', 'exec'))
+          DEADLINE=time.monotonic()+180
+          specs=[
+            {'id':'P05','title':'Makino Berz Taylor models and other validated functional inclusion methods','wanted':'pdf','scope':'MISSING_REPORT_PAPER','urls':['https://www.ijpam.eu/contents/2003-4-4/2/2.pdf','https://mail.ijpam.eu/contents/2003-4-4/2/2.pdf','https://www.bmtdynamics.org/pub/papers/TMIJPAM03/TMIJPAM03.pdf']},
+            {'id':'P07','title':'Rump Verified bounds for singular values','wanted':'pdf','scope':'MISSING_REPORT_PAPER','urls':['https://www.tuhh.de/ti3/paper/rump/Ru10a.pdf']},
+            {'id':'P04','title':'Petras Self-validating integration and approximation','wanted':'pdf','scope':'MISSING_REPORT_PAPER','urls':['https://doi.org/10.1016/S0377-0427(01)00586-6','https://www.sciencedirect.com/science/article/pii/S0377042701005866/pdf']},
+            {'id':'P06','title':'Gautschi Varga Error Bounds for Gaussian Quadrature of Analytic Functions','wanted':'pdf','scope':'MISSING_REPORT_PAPER','urls':['https://doi.org/10.1137/0720087']},
+            {'id':'S01','title':'Gautschi Varga Crossref bibliographic metadata','wanted':'text','scope':'MISSING_PAPER_METADATA','urls':['https://api.crossref.org/works/10.1137/0720087']},
+            {'id':'S02','title':'Petras Crossref bibliographic metadata','wanted':'text','scope':'MISSING_PAPER_METADATA','urls':['https://api.crossref.org/works/10.1016/S0377-0427(01)00586-6']},
+            {'id':'S03','title':'Gautschi selected works author index','wanted':'html','scope':'AUTHOR_DISCOVERY','urls':['https://www.cs.purdue.edu/homes/wxg/SelectedWorks']},
+            {'id':'S04','title':'Official FLINT download index','wanted':'html','scope':'PINNED_MANUAL_DISCOVERY','urls':['https://flintlib.org/downloads.html']},
+            {'id':'S05','title':'Rump author software index','wanted':'html','scope':'AUTHOR_CODE_DISCOVERY','urls':['https://www.tuhh.de/ti3/rump/']},
+            {'id':'S06','title':'Taylor Models author site','wanted':'html','scope':'AUTHOR_CODE_DISCOVERY','urls':['https://www.bmtdynamics.org/index_TaylorModels.htm']}
+          ]
+          results=[]
+          with cf.ThreadPoolExecutor(max_workers=4) as pool:
+              results=list(pool.map(acquire,specs))
+          for sid in ['S03','S04','S05']:
+              item=next(x for x in results if x['id']==sid)
+              if item['status']!='ACQUIRED':continue
+              raw=(ROOT/item['assets'][-1]['path']).read_text(errors='replace')
+              parser=Links();parser.feed(raw)
+              if sid=='S04':
+                  urls=[urllib.parse.urljoin(item['assets'][-1]['final_url'],h) for h,t in parser.links if 'flint-3.4.0.pdf' in h]
+                  if urls:results.append(acquire({'id':'D01','title':'FLINT 3.4.0 official manual','wanted':'pdf','scope':'MISSING_PINNED_MANUAL','urls':urls[:2]}))
+              elif sid=='S05':
+                  urls=[urllib.parse.urljoin(item['assets'][-1]['final_url'],h) for h,t in parser.links if 'reference implementations' in t.lower()]
+                  for url in urls[:1]:
+                      x=acquire({'id':'C13','title':'Rump accurate sum and dot product reference implementations','wanted':'html','scope':'REPORT_PAPER_CODE','urls':[url]})
+                      results.append(x)
+              elif sid=='S03':
+                  urls=[urllib.parse.urljoin(item['assets'][-1]['final_url'],h) for h,t in parser.links if 'error bounds for gaussian quadrature of analytic' in t.lower() and h.lower().endswith('.pdf')]
+                  if urls:results.append(acquire({'id':'P06_AUTHOR','title':'Gautschi Varga author manuscript','wanted':'pdf','scope':'MISSING_REPORT_PAPER','urls':urls[:1]}))
+          (ROOT/'ACQUISITION_RESULTS.json').write_text(json.dumps(results,indent=2))
+          manifest=[{'path':str(p.relative_to(ROOT)),'bytes':p.stat().st_size,'sha256':sha(p.read_bytes())} for p in sorted(ROOT.rglob('*')) if p.is_file()]
+          (ROOT/'MANIFEST.json').write_text(json.dumps(manifest,indent=2))
+          with zipfile.ZipFile('supplement.zip','x',compression=zipfile.ZIP_DEFLATED,compresslevel=1) as z:
+              for p in sorted(ROOT.rglob('*')):
+                  if p.is_file():z.write(p,p.relative_to(ROOT))
+          subprocess.run(['openssl','cms','-encrypt','-binary','-aes-256-cbc','-in','supplement.zip','-outform','DER','-out','payload.cms','recipient.pem'],check=True)
+          receipt={'schema':'WU088_ARCHIVE_SUPPLEMENT_TRANSPORT_V1','created_utc':now(),'github_run_id':os.getenv('GITHUB_RUN_ID'),'github_sha':os.getenv('GITHUB_SHA'),'plain_archive_bytes':Path('supplement.zip').stat().st_size,'plain_archive_sha256':sha(Path('supplement.zip').read_bytes()),'encrypted_bytes':Path('payload.cms').stat().st_size,'encrypted_sha256':sha(Path('payload.cms').read_bytes()),'result_count':len(results),'science_commands':0,'downloaded_code_executions':0}
+          Path('TRANSPORT.json').write_text(json.dumps(receipt,indent=2))
+          for x in results:print(x['id'],x['status'],flush=True)
+          Path('supplement.zip').unlink();shutil.rmtree(ROOT)
+          PY
+      - name: Upload encrypted supplement only
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: wu088-encrypted-literature-supplement-20261001
+          path: |
+            supplement_work/payload.cms
+            supplement_work/TRANSPORT.json
+          retention-days: 2
+          compression-level: 0
+          if-no-files-found: error
