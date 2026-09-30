@@ -1,0 +1,176 @@
+{
+  "schema": "WU088_R31AI_NCP_SEVEN_NODE_RETURN_V1",
+  "reviewed_remote": {
+    "branch": "research/r31ai-adaptive-seven-node-20260930",
+    "commit": "901416c7de842d135f3e0fbd8849967ed58b27b2",
+    "tree": "20cf67f30a3c69ce84e0743db8a3606a3284832e",
+    "successor_at_start": false,
+    "parent_R31AH": "51eb022eb01445ffaef58e8a0078ecd3b779b30c"
+  },
+  "executed_against": {
+    "commit": "901416c7de842d135f3e0fbd8849967ed58b27b2",
+    "tree": "20cf67f30a3c69ce84e0743db8a3606a3284832e"
+  },
+  "environment_file": "ENVIRONMENT.json",
+  "commands": {
+    "COMPILE": {
+      "argv_file": "COMPILE.argv.json",
+      "stdout_file": "COMPILE.stdout",
+      "stderr_file": "COMPILE.stderr",
+      "exit_file": "COMPILE.exit",
+      "exit_code": 0
+    },
+    "FOCUSED_TEST": {
+      "argv_file": "FOCUSED_TEST.argv.json",
+      "stdout_file": "FOCUSED_TEST.stdout",
+      "stderr_file": "FOCUSED_TEST.stderr",
+      "exit_file": "FOCUSED_TEST.exit",
+      "exit_code": 0
+    },
+    "REPLAY": {
+      "argv_file": "REPLAY.argv.json",
+      "stdout_file": "REPLAY.stdout",
+      "stderr_file": "REPLAY.stderr",
+      "exit_file": "REPLAY.exit",
+      "exit_code": 0
+    }
+  },
+  "junit_file": "JUNIT.xml",
+  "focused_tests": "5 passed, 0 failed",
+  "seven_node_input_manifest_file": "SEVEN_NODE_INPUT_MANIFEST.json",
+  "seven_node_input_manifest_sha256": "57a1379cc7b658fb8f9eebe2f47cb48f806c3f0ca0292e8e52f53d82d703835b",
+  "node_provenance_relabel": {
+    "0.0": "TRAINING",
+    "0.5": "TRAINING",
+    "1.0": "TRAINING",
+    "2.0": "TRAINING",
+    "3.0": "TRAINING",
+    "3.5": "PRIOR_INDEPENDENT_VALIDATION_CONSUMED_AS_R31AI_TRAINING",
+    "4.0": "TRAINING"
+  },
+  "R31AI_independent_validation_points": [],
+  "model_replay_file": "R31AI_MODEL_REPLAY.json",
+  "model_replay_sha256": "f8287146f46c10c19e594726326916e07c41e19b99a2aae89999340145f2bfcf",
+  "model_replay_summary": {
+    "cells_z_a0": [
+      [
+        0,
+        0.5
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3.5
+      ],
+      [
+        3.5,
+        4
+      ]
+    ],
+    "node_reproduction_max_2norm": {
+      "O": 0.0,
+      "dotO": 4.546892278829026e-17,
+      "K": 0.0,
+      "D_col": 8.947768860794336e-17,
+      "D_row": 8.434781588788996e-17
+    },
+    "internal_node_continuity_max_2norm": {
+      "O": 0.0,
+      "dotO": 8.195467818242025e-17,
+      "K": 0.0,
+      "D_col": 7.926302332445572e-17,
+      "D_row": 8.038739945747499e-17
+    },
+    "dense_grid_points": 401,
+    "dense_grid_metric_identity_max_2norm": 1.865411113237405e-16,
+    "source_array_mutation": false
+  },
+  "z35_aposteriori_indicator_file": "Z35_APOSTERIORI_INDICATOR.json",
+  "z35_aposteriori_indicator_sha256": "72457a5a1aecdd39c944070740f9496273e8be095791f736707bdaf689bf724e",
+  "z35_aposteriori_indicator": {
+    "schema": "WU088_R31AI_Z35_APOSTERIORI_INDICATOR_V1",
+    "E_O": 0.028316443455109017,
+    "E_dotO_per_ta": 0.02180471880970521,
+    "E_K_per_ta": 0.06617406868623811,
+    "E_Dmax_per_ta": 0.06827426878354666,
+    "cell_width_ta": 2.2358772390338113,
+    "cell_width_a0": 1.0,
+    "necessary_lower_bounds": {
+      "O_fourth_lower_per_t4": 0.4350890062991451,
+      "K_second_lower_per_t3": 0.1058965752600756,
+      "O_fourth_lower_per_z4": 10.873514286761862,
+      "K_second_lower_per_t_z2": 0.5293925494899049
+    },
+    "R31AF_original_verdict": "PARETO_SUPPORTED_AT_Z35",
+    "R31AF_original_verdict_scope": "single-point relative support only",
+    "direct_point_role": "PRIOR_INDEPENDENT_VALIDATION_CONSUMED_AS_R31AI_TRAINING",
+    "certified_source_error_enclosure": false,
+    "empirical_error_reduction_claimed": false
+  },
+  "R31AF_original_z35_verdict": "PARETO_SUPPORTED_AT_Z35",
+  "R31AF_original_verdict_scope": "single-point relative support only; z35 consumed as R31AI training",
+  "z25_prediction_only_file": "Z25_PREDICTION_ONLY.json",
+  "z25_prediction_only_sha256": "64f47cc6a5e6906071636a10d022d4575f9f458c10c31f59881e1808d7b5fba4",
+  "z25_unchanged_prediction_max_2norm": {
+    "O": 0.0,
+    "dotO": 0.0,
+    "Dcol": 0.0,
+    "Drow": 0.0,
+    "K": 0.0
+  },
+  "z25_model_only_separation": {
+    "DeltaK": 0.1912237840334797,
+    "DeltaDmax": 0.20561180584475613,
+    "S_design_only": 0.280789512416017,
+    "K_half_gap": 0.09561189201673985,
+    "Dmax_half_gap": 0.10280590292237807
+  },
+  "selected_future_validation_z_a0": 2.5,
+  "selected_future_validation_time_ta": 5.589693097584528,
+  "computed_time_ta": 5.5896930975845285,
+  "R31AI_model_aggregate_sha256": "9d78ed48963f2da9d77e85a4466fd09f6f0f243508b887cbfc96121a46c949c5",
+  "R31AI_engine_sha256": "ab220248066580fc77af70c412251dbe3ed643a6fadc266cf5c25a7a3a6651a0",
+  "R31Z_model_sha256": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034",
+  "future_decision_rule_file": "FROZEN_Z25_DECISION_RULE.json",
+  "future_decision_rule_sha256": "c5712e2539a7db7dda02c563c327c51edc27fb30741df180f19d1cee0cb21d86",
+  "next_validation_preregistration_file": "NEXT_VALIDATION_PREREGISTRATION.json",
+  "next_validation_preregistration_sha256": "10d05889a336541c81f2153bb232f254c406ebe45d22da6e5470230b40b1a691",
+  "future_execution_authorized": false,
+  "direct_z25_output_accessed": false,
+  "science_producer_commands": [],
+  "science_node_count": 0,
+  "H_computation_count": 0,
+  "full49_computation_count": 0,
+  "trajectory_count": 0,
+  "claim_ceiling": {
+    "R31AF_z35_relative_support_only": true,
+    "R31AI_predictive_validation": false,
+    "interval_wide_accuracy_admitted": false,
+    "transition_error_admitted": false,
+    "full_cell_admitted": false,
+    "H_skip_admitted": false,
+    "production_admitted": false
+  },
+  "remaining_gates": {
+    "z25_new_science_node": "SEPARATE_AUTHORIZATION_REQUIRED",
+    "full_cell": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "fixed_Q_complete_HH_physical_invariance_reviewed": false,
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false
+  },
+  "RESTORE_VERIFIED": false,
+  "stop_condition": "seven-node existing-data replay and z2.5 prereg lock; no new science node"
+}
