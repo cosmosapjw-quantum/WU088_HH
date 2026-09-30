@@ -1,0 +1,217 @@
+{
+  "schema": "WU088_R31AI_SEVEN_NODE_INPUT_MANIFEST_V1",
+  "nodes": [
+    {
+      "z_a0": 0.0,
+      "time_ta": 0.0,
+      "role": "TRAINING",
+      "source": {
+        "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+        "objects": [
+          "z0_od_O",
+          "z0_od_D_col",
+          "z0_od_D_row",
+          "z0_j_dotO"
+        ],
+        "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+        "bytes": 71481
+      },
+      "fields": {
+        "O": "47x2",
+        "D_col": "47x2",
+        "D_row": "2x47",
+        "independent_dotO": "47x2"
+      },
+      "raw_dtypes": {
+        "O": "complex256",
+        "D_col": "complex256",
+        "D_row": "complex256",
+        "dotO": "complex256"
+      },
+      "raw_metric_identity_max_abs": 4.4151592375630405e-19,
+      "basis_order_phase_contract": "CP4 frozen B192 47 channel order: centre0 24 then centre1 excited23; ionic columns 2; phase_E and tau=z/velocity; independent dotO is analytic JVP in 1/t_a; producer lines pinned in R31Y PRODUCER_INTAKE.json"
+    },
+    {
+      "z_a0": 0.5,
+      "time_ta": 1.1179386195169057,
+      "role": "TRAINING",
+      "source": {
+        "OD_path": "/root/WU088_HH_R31AI_FOLLOWUP_20260930/research/r31ae_z05_gate/authorized_z05_20260929/OD_RAW/ASSEMBLED_OD.npz",
+        "OD_sha256": "1505463b2329e9398b92077d51a9704c4b5f2c5d71288cf811571763a672f80a",
+        "OD_bytes": 12560,
+        "JVP_path": "/root/WU088_HH_R31AI_FOLLOWUP_20260930/research/r31ae_z05_gate/authorized_z05_20260929/JVP_RAW/ASSEMBLED.npz",
+        "JVP_sha256": "88b44ec142eef45ef7232f7fd050a0c5ca1773db416986a9a5857d60959b5fc3",
+        "JVP_bytes": 50434
+      },
+      "fields": {
+        "O": "47x2",
+        "D_col": "47x2",
+        "D_row": "2x47",
+        "independent_dotO": "47x2"
+      },
+      "raw_dtypes": {
+        "O": "complex256",
+        "D_col": "complex256",
+        "D_row": "complex256",
+        "dotO": "complex256"
+      },
+      "raw_metric_identity_max_abs": 4.418899730913319e-19,
+      "basis_order_phase_contract": "CP4 frozen B192 47 channel order: centre0 24 then centre1 excited23; ionic columns 2; phase_E and tau=z/velocity; independent dotO is analytic JVP in 1/t_a; producer lines pinned in R31Y PRODUCER_INTAKE.json",
+      "OD_vs_JVP_O_raw_max_abs": 2.169462877787276e-19
+    },
+    {
+      "z_a0": 1.0,
+      "time_ta": 2.2358772390338113,
+      "role": "TRAINING",
+      "source": {
+        "OD_path": "/root/WU088_HH_R31AI_FOLLOWUP_20260930/research/r31ac_z1_authorization/authorized_z1_20260929/OD_RAW/ASSEMBLED_OD.npz",
+        "OD_sha256": "020dc2c2c580f7e7f8a2d5d322b771b4957fbcc1166ab4e2c363f5a9c3d06818",
+        "OD_bytes": 12335,
+        "JVP_path": "/root/WU088_HH_R31AI_FOLLOWUP_20260930/research/r31ac_z1_authorization/authorized_z1_20260929/JVP_RAW/ASSEMBLED.npz",
+        "JVP_sha256": "b6a9926052999c70cc6092c0d47001eff0716d2aefb6ff380edfa18558696819",
+        "JVP_bytes": 50424
+      },
+      "fields": {
+        "O": "47x2",
+        "D_col": "47x2",
+        "D_row": "2x47",
+        "independent_dotO": "47x2"
+      },
+      "raw_dtypes": {
+        "O": "complex256",
+        "D_col": "complex256",
+        "D_row": "complex256",
+        "dotO": "complex256"
+      },
+      "raw_metric_identity_max_abs": 5.1686166999111265e-19,
+      "basis_order_phase_contract": "CP4 frozen B192 47 channel order: centre0 24 then centre1 excited23; ionic columns 2; phase_E and tau=z/velocity; independent dotO is analytic JVP in 1/t_a; producer lines pinned in R31Y PRODUCER_INTAKE.json",
+      "OD_vs_JVP_O_raw_max_abs": 2.4230417162773035e-19
+    },
+    {
+      "z_a0": 2.0,
+      "time_ta": 4.471754478067623,
+      "role": "TRAINING",
+      "source": {
+        "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+        "objects": [
+          "direct_O[:47,47:]",
+          "direct_D[:47,47:]",
+          "direct_D[47:,:47]",
+          "direct_dotO[:47,47:]"
+        ],
+        "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+        "bytes": 71481,
+        "upstream_member": "WU088_HH_R31S_NCP_20260928/evidence/z2/R31S_FULL49_z2.npz"
+      },
+      "fields": {
+        "O": "47x2",
+        "D_col": "47x2",
+        "D_row": "2x47",
+        "independent_dotO": "47x2"
+      },
+      "raw_dtypes": {
+        "O": "complex128",
+        "D_col": "complex128",
+        "D_row": "complex128",
+        "dotO": "complex128"
+      },
+      "raw_metric_identity_max_abs": 5.551115123125783e-17,
+      "basis_order_phase_contract": "CP4 frozen B192 47 channel order: centre0 24 then centre1 excited23; ionic columns 2; phase_E and tau=z/velocity; independent dotO is analytic JVP in 1/t_a; producer lines pinned in R31Y PRODUCER_INTAKE.json"
+    },
+    {
+      "z_a0": 3.0,
+      "time_ta": 6.707631717101434,
+      "role": "TRAINING",
+      "source": {
+        "archive": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+        "OD_member": "completion/mixed_h/od/B192_z3/ASSEMBLED_OD.npz",
+        "OD_sha256": "47f41c15aba4fc3eb4e9a6b6f08202067cf525503a87431035ee692990b553af",
+        "OD_bytes": 12207,
+        "JVP_member": "completion/mixed_derivative/B192_z3/ASSEMBLED.npz",
+        "JVP_sha256": "9223dfea7956a58a70595ab25dda457be64b966ce247830e5c12a73d87515661",
+        "JVP_bytes": 50568
+      },
+      "fields": {
+        "O": "47x2",
+        "D_col": "47x2",
+        "D_row": "2x47",
+        "independent_dotO": "47x2"
+      },
+      "raw_dtypes": {
+        "O": "complex256",
+        "D_col": "complex256",
+        "D_row": "complex256",
+        "dotO": "complex256"
+      },
+      "raw_metric_identity_max_abs": 2.8578670718049893e-19,
+      "basis_order_phase_contract": "CP4 frozen B192 47 channel order: centre0 24 then centre1 excited23; ionic columns 2; phase_E and tau=z/velocity; independent dotO is analytic JVP in 1/t_a; producer lines pinned in R31Y PRODUCER_INTAKE.json",
+      "OD_vs_JVP_O_raw_max_abs": 3.995446421313683e-19
+    },
+    {
+      "z_a0": 3.5,
+      "time_ta": 7.825570336618339,
+      "role": "PRIOR_INDEPENDENT_VALIDATION_CONSUMED_AS_R31AI_TRAINING",
+      "source": {
+        "OD_path": "/root/WU088_HH_R31AI_FOLLOWUP_20260930/research/r31ah_post_z35/authorized_z35_20260930/OD_RAW/ASSEMBLED_OD.npz",
+        "OD_sha256": "de730fcb4b6b65e86d5910cc456d35eaf33dab3610d0326939434d0f391d610a",
+        "OD_bytes": 12151,
+        "JVP_path": "/root/WU088_HH_R31AI_FOLLOWUP_20260930/research/r31ah_post_z35/authorized_z35_20260930/JVP_RAW/ASSEMBLED.npz",
+        "JVP_sha256": "17d3d306f1e104591f91281f0acb8dae3ed6bc743f1d366da5b6bccb96e82a8c",
+        "JVP_bytes": 50585,
+        "one_shot_parent": "research/r31ah_post_z35/authorized_z35_20260930/RETURN.json"
+      },
+      "fields": {
+        "O": "47x2",
+        "D_col": "47x2",
+        "D_row": "2x47",
+        "independent_dotO": "47x2"
+      },
+      "raw_dtypes": {
+        "O": "complex256",
+        "D_col": "complex256",
+        "D_row": "complex256",
+        "dotO": "complex256"
+      },
+      "raw_metric_identity_max_abs": 3.413500740801443e-19,
+      "basis_order_phase_contract": "CP4 frozen B192 47 channel order: centre0 24 then centre1 excited23; ionic columns 2; phase_E and tau=z/velocity; independent dotO is analytic JVP in 1/t_a; producer lines pinned in R31Y PRODUCER_INTAKE.json",
+      "OD_vs_JVP_O_raw_max_abs": 2.352251824001625e-19
+    },
+    {
+      "z_a0": 4.0,
+      "time_ta": 8.943508956135245,
+      "role": "TRAINING",
+      "source": {
+        "path": "/root/WU088_R31W_INPUT_20260929/overlay/research/r31w_metric_cell/inputs/EXISTING_METRIC_INPUTS.npz",
+        "objects": [
+          "z4_od_O",
+          "z4_od_D_col",
+          "z4_od_D_row",
+          "z4_j_dotO"
+        ],
+        "sha256": "565a9ee6d831f5f9e3e69010270f5319aa3328432950efcfda81cfabf325c079",
+        "bytes": 71481
+      },
+      "fields": {
+        "O": "47x2",
+        "D_col": "47x2",
+        "D_row": "2x47",
+        "independent_dotO": "47x2"
+      },
+      "raw_dtypes": {
+        "O": "complex256",
+        "D_col": "complex256",
+        "D_row": "complex256",
+        "dotO": "complex256"
+      },
+      "raw_metric_identity_max_abs": 9.946211455439423e-18,
+      "basis_order_phase_contract": "CP4 frozen B192 47 channel order: centre0 24 then centre1 excited23; ionic columns 2; phase_E and tau=z/velocity; independent dotO is analytic JVP in 1/t_a; producer lines pinned in R31Y PRODUCER_INTAKE.json"
+    }
+  ],
+  "R31AI_independent_validation_points": [],
+  "comparison_dtype": "complex128; original complex256/complex128 raw arrays preserved",
+  "source_array_mutation": false,
+  "upstream_provenance": [
+    "research/r31y_lowrank/ncp_followup_20260929/PRODUCER_INTAKE.json",
+    "research/r31ah_post_z35/authorized_z35_20260930/RETURN.json"
+  ]
+}
