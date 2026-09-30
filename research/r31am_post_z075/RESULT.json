@@ -1,0 +1,97 @@
+{
+  "schema": "WU088_R31AM_RESULT_V1",
+  "status": "POST_Z075_STOP_POLICY_LOCKED__NO_SCIENCE_EXECUTION",
+  "parent_commit": "799797778d01edf74e73c1faf4dcf15bd41e3df2",
+  "parent_tree": "fb343fab95a3ac087b7e7a90834c59c987019697",
+  "parent_scope_sha256": "2f22f11f279b8d7f98efb2a4bff1fbfb79145f7f5010ce5081ca6ebfcc147357",
+  "policy": {
+    "schema": "WU088_R31AM_POST_Z075_DECISION_POLICY_V1",
+    "frozen_before_direct_z075_output": true,
+    "shared_direct_geometry": true,
+    "primary_secondary_independent_evidence_count": 1,
+    "auto_consume_z075_as_training": false,
+    "auto_add_knot": false,
+    "auto_execute_next_node": false,
+    "primary_verdicts": [
+      "PARETO_SUPPORTED_AT_Z075",
+      "GLOBAL_SUPPORTED_AT_Z075",
+      "TRADEOFF_UNRESOLVED"
+    ],
+    "secondary_verdicts": [
+      "REFINED_PARETO_SUPPORTED_AT_Z075",
+      "COARSE_PARETO_SUPPORTED_AT_Z075",
+      "REFINEMENT_TRADEOFF_UNRESOLVED"
+    ],
+    "action_matrix": [
+      {
+        "primary": "PARETO_SUPPORTED_AT_Z075",
+        "secondary": "REFINED_PARETO_SUPPORTED_AT_Z075",
+        "action": "FREEZE_R31AK_LOCALLY_SUPPORTED__PIVOT_TO_REFERENCE_CERTIFICATION"
+      },
+      {
+        "primary": "PARETO_SUPPORTED_AT_Z075",
+        "secondary": "COARSE_PARETO_SUPPORTED_AT_Z075",
+        "action": "STOP_H_REFINEMENT__REVIEW_LOCAL_KNOT_POLICY"
+      },
+      {
+        "primary": "PARETO_SUPPORTED_AT_Z075",
+        "secondary": "REFINEMENT_TRADEOFF_UNRESOLVED",
+        "action": "FREEZE_R31AK_RELATIVE_SUPPORT__REFINEMENT_GAIN_UNRESOLVED__PIVOT_REFERENCE_REVIEW"
+      },
+      {
+        "primary": "GLOBAL_SUPPORTED_AT_Z075",
+        "secondary": "REFINED_PARETO_SUPPORTED_AT_Z075",
+        "action": "STOP_FOR_MODEL_CLASS_REVIEW"
+      },
+      {
+        "primary": "GLOBAL_SUPPORTED_AT_Z075",
+        "secondary": "COARSE_PARETO_SUPPORTED_AT_Z075",
+        "action": "STOP_FOR_MODEL_CLASS_REVIEW"
+      },
+      {
+        "primary": "GLOBAL_SUPPORTED_AT_Z075",
+        "secondary": "REFINEMENT_TRADEOFF_UNRESOLVED",
+        "action": "STOP_FOR_MODEL_CLASS_REVIEW"
+      },
+      {
+        "primary": "TRADEOFF_UNRESOLVED",
+        "secondary": "REFINED_PARETO_SUPPORTED_AT_Z075",
+        "action": "STOP_EXTERNAL_COMPARATOR_UNRESOLVED__LOCAL_GAIN_ONLY"
+      },
+      {
+        "primary": "TRADEOFF_UNRESOLVED",
+        "secondary": "COARSE_PARETO_SUPPORTED_AT_Z075",
+        "action": "STOP_FOR_MODEL_CLASS_REVIEW"
+      },
+      {
+        "primary": "TRADEOFF_UNRESOLVED",
+        "secondary": "REFINEMENT_TRADEOFF_UNRESOLVED",
+        "action": "STOP_FOR_MODEL_CLASS_REVIEW"
+      }
+    ],
+    "universal_claim_ceiling": {
+      "interval_wide_accuracy": false,
+      "all_cell_refinement_gain": false,
+      "source_accuracy": false,
+      "full_cell": false,
+      "trajectory": false,
+      "H_skip": false,
+      "production": false
+    },
+    "reference_policy": {
+      "source_accuracy_bound_status": "SOURCE_ACCURACY_BOUND_UNAVAILABLE",
+      "conditional_margin_if_external_bound_exists": "delta_true in [delta_observed-2 epsilon, delta_observed+2 epsilon]",
+      "primary_or_secondary_rule_overwritten": false
+    }
+  },
+  "focused_tests": {
+    "passed": 7,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "direct_z075_output_accessed": false,
+  "execution_authorized": false,
+  "science_node_count": 0,
+  "source_accuracy_bound_status": "SOURCE_ACCURACY_BOUND_UNAVAILABLE"
+}
