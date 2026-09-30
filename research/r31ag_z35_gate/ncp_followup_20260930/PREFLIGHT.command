@@ -1,0 +1,1 @@
+python3 -c 'import hashlib,json,pathlib; p=pathlib.Path("research/r31ag_z35_gate/AUTHORIZATION_SCOPE.json"); x=json.loads(p.read_text()); print(hashlib.sha256(json.dumps(x,sort_keys=True,separators=(",",":"),allow_nan=False).encode("utf-8")).hexdigest())'
