@@ -1,0 +1,113 @@
+{
+  "schema": "WU088_R31AL_Z075_SECONDARY_REFINEMENT_PREREGISTRATION_V1",
+  "selected_z_a0": "0.75",
+  "selected_time_ta": "1.6769079292753586",
+  "radial_order": 192,
+  "primary_parent_prereg_sha256": "44b2273afeddb4a6befa73ce485ae84d8f8777a92ac75c4de2fd90d0fea74b81",
+  "primary_rule_sha256": "08ad89d35c31e133bce39da1f5c8b59eb782b647fb1e4e26da522e010ed6d995",
+  "primary_verdict_unchanged": true,
+  "comparison_order": [
+    "parent_primary_R31AK_vs_R31Z",
+    "secondary_R31AK_vs_R31AD"
+  ],
+  "secondary_models": [
+    "R31AK_ADAPTIVE_EIGHT_NODE_CUBIC_O_LINEAR_K",
+    "R31AD_FIVE_NODE_UNIT_CELL_CUBIC_O_LINEAR_K"
+  ],
+  "secondary_metrics": [
+    "E_K",
+    "E_Dmax"
+  ],
+  "secondary_rule_sha256": "e27cc6a0c88dae79999fd46274cad84b4a0e1b10530dde7224f13123f54c6db0",
+  "comparison_tolerance_per_ta": "1e-10",
+  "allowed_secondary_verdicts": [
+    "REFINED_PARETO_SUPPORTED_AT_Z075",
+    "COARSE_PARETO_SUPPORTED_AT_Z075",
+    "REFINEMENT_TRADEOFF_UNRESOLVED"
+  ],
+  "mandatory_secondary_outputs": [
+    "refined_E_O",
+    "refined_E_dotO",
+    "refined_E_K",
+    "refined_E_Dcol",
+    "refined_E_Drow",
+    "refined_E_Dmax",
+    "coarse_E_O",
+    "coarse_E_dotO",
+    "coarse_E_K",
+    "coarse_E_Dcol",
+    "coarse_E_Drow",
+    "coarse_E_Dmax",
+    "direct_metric_identity_residual",
+    "refined_metric_identity_residual",
+    "coarse_metric_identity_residual",
+    "improvement_fractions"
+  ],
+  "R31AK_model_aggregate_sha256": "50a5f0eeda63d6e04795e301f6b07a41fd11a4b145e267cfc608261356d49b30",
+  "R31AK_selected_arrays_sha256": "66ff922f687a796417e23147e5720af9a467ef7d988b490a2709e0a2967c4010",
+  "R31Z_selected_arrays_sha256": "4f7738094bf83c8ad6f01febabdc11f899465957a38a7e65632d63389a68d41c",
+  "R31AD_coarse_arrays_sha256": "cabb469bbfd5a2c7724850d60c6bf065afa538fc5ff277e04cda30a380927029",
+  "secondary_comparator_sha256": "f8fb529fe4f2d6413f34372580e69bc4b7919e2a4e7c6ef2320949d7ca9c430f",
+  "locked_files": {
+    "parent_primary_prereg": {
+      "path": "research/r31ak_eight_node/ncp_followup_20260930/NEXT_VALIDATION_PREREGISTRATION.json",
+      "sha256": "44b2273afeddb4a6befa73ce485ae84d8f8777a92ac75c4de2fd90d0fea74b81"
+    },
+    "parent_primary_rule": {
+      "path": "research/r31ak_eight_node/ncp_followup_20260930/FROZEN_HOLDOUT_DECISION_RULE.json",
+      "sha256": "08ad89d35c31e133bce39da1f5c8b59eb782b647fb1e4e26da522e010ed6d995"
+    },
+    "parent_selection": {
+      "path": "research/r31ak_eight_node/ncp_followup_20260930/HOLDOUT_SELECTION.json",
+      "sha256": "f01460fe12920280f09281d0763c896986574061806eb0568839b50fcccd096e"
+    },
+    "parent_primary_comparator": {
+      "path": "research/r31ak_eight_node/compare_future_holdout.py",
+      "sha256": "5443b1ef98b1b70044b8a2e5e8bb065a1d927824066c6a142be3935bfc695394"
+    },
+    "metadata_adapter": {
+      "path": "research/r31ak_eight_node/metadata_adapter.py",
+      "sha256": "41a8a67d0b3de90aa22ea4c1f011cbeb0cb48c417dd47b5d958ac26f52f63619"
+    },
+    "R31AK_engine": {
+      "path": "research/r31ad_five_node/unit_cell_model.py",
+      "sha256": "ab220248066580fc77af70c412251dbe3ed643a6fadc266cf5c25a7a3a6651a0"
+    },
+    "R31AD_policy": {
+      "path": "research/r31ad_five_node/MODEL_POLICY.json",
+      "sha256": "b656555cd9373398e8bc22c787937c5ea5f9dbaaa9c1f93a0036c08ffe92d355"
+    },
+    "R31Z_model": {
+      "path": "research/r31z_source_bound/source_bound.py",
+      "sha256": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034"
+    },
+    "eight_node_manifest": {
+      "path": "research/r31ak_eight_node/ncp_followup_20260930/EIGHT_NODE_INPUT_MANIFEST.json",
+      "sha256": "d978792bef0c3bf2b670d4e73d70dcea391645f38555f1070323037610162ece"
+    },
+    "R31AK_prediction_npz": {
+      "path": "research/r31ak_eight_node/ncp_followup_20260930/FROZEN_HOLDOUT_PREDICTIONS.npz",
+      "sha256": "6d29acbe1aee9bb34cf3627c04136d67e27b5a44b44ee7b3104cdcd3fe1ff88c"
+    },
+    "R31AD_coarse_npz": {
+      "path": "research/r31al_z075_gate/ncp_followup_20260930/Z075_COARSE_PREDICTION.npz",
+      "sha256": "de876e53bca7aa773f321ed2ecfe24e4a0b1fda57bf42f6e8736bddc1730e107"
+    },
+    "R31AD_coarse_record": {
+      "path": "research/r31al_z075_gate/ncp_followup_20260930/Z075_COARSE_PREDICTION.json",
+      "sha256": "e032808e28020ddba55be7f9e288d0acebb16b5a112683342068b3a9e542dd76"
+    },
+    "refinement_gain_helper": {
+      "path": "research/r31al_z075_gate/refinement_gain.py",
+      "sha256": "a81a386f5aa5138012a26e833d468606a91ce4857dcc94311d878ae7976875c3"
+    },
+    "secondary_rule": {
+      "path": "research/r31al_z075_gate/ncp_followup_20260930/SECONDARY_REFINEMENT_DECISION_RULE.json",
+      "sha256": "e27cc6a0c88dae79999fd46274cad84b4a0e1b10530dde7224f13123f54c6db0"
+    }
+  },
+  "execution_authorized": false,
+  "direct_output_accessed": false,
+  "science_node_count": 0,
+  "source_accuracy_bound_status": "SOURCE_ACCURACY_BOUND_UNAVAILABLE"
+}

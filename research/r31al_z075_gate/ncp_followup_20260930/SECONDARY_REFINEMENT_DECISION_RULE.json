@@ -1,0 +1,40 @@
+{
+  "schema": "WU088_R31AL_SECONDARY_REFINEMENT_DECISION_RULE_V1",
+  "models": [
+    "R31AK_ADAPTIVE_EIGHT_NODE_CUBIC_O_LINEAR_K",
+    "R31AD_FIVE_NODE_UNIT_CELL_CUBIC_O_LINEAR_K"
+  ],
+  "primary_metrics": [
+    "E_K",
+    "E_Dmax"
+  ],
+  "comparison_tolerance_per_ta": 1e-10,
+  "pareto_rule": "both <= competitor+tol and at least one < competitor-tol",
+  "verdicts": [
+    "REFINED_PARETO_SUPPORTED_AT_Z075",
+    "COARSE_PARETO_SUPPORTED_AT_Z075",
+    "REFINEMENT_TRADEOFF_UNRESOLVED"
+  ],
+  "mandatory_outputs": [
+    "refined_E_O",
+    "refined_E_dotO",
+    "refined_E_K",
+    "refined_E_Dcol",
+    "refined_E_Drow",
+    "refined_E_Dmax",
+    "coarse_E_O",
+    "coarse_E_dotO",
+    "coarse_E_K",
+    "coarse_E_Dcol",
+    "coarse_E_Drow",
+    "coarse_E_Dmax",
+    "direct_metric_identity_residual",
+    "refined_metric_identity_residual",
+    "coarse_metric_identity_residual",
+    "improvement_fractions"
+  ],
+  "primary_result_order": "parent_primary_R31AK_vs_R31Z_first_then_secondary_R31AK_vs_R31AD",
+  "overrides_parent_primary_verdict": false,
+  "weighted_or_composite_score": false,
+  "source_accuracy_bound_status": "SOURCE_ACCURACY_BOUND_UNAVAILABLE"
+}
