@@ -1,0 +1,68 @@
+{
+  "schema": "WU088_R31AH_RESULT_V1",
+  "status": "POST_Z35_ACTION_TREE_FROZEN__NO_SCIENCE_NODE",
+  "parent_commit": "c6d00e79cfd76366af868a3a550aebbee46135cf",
+  "parent_tree": "6f935a4ac4284ee317c1575554c81ca74f28f11c",
+  "local_tests": {
+    "passed": 7,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "science_node_count": 0,
+  "direct_z35_output_accessed": false,
+  "action_policy": {
+    "schema": "WU088_R31AH_POST_Z35_DECISION_POLICY_V1",
+    "frozen_before_direct_z35_output": true,
+    "direct_z35_output_accessed": false,
+    "verdicts": {
+      "PARETO_SUPPORTED_AT_Z35": {
+        "action": "REPORT_SUPPORT_THEN_OPTIONAL_LOCAL_REFINE_RIGHT_CELL",
+        "automatic_refinement": false,
+        "if_successor_built_z35_role": "PRIOR_INDEPENDENT_VALIDATION_CONSUMED_AS_SUCCESSOR_TRAINING",
+        "allowed_successor_refinement_cell": [
+          3,
+          4
+        ],
+        "next_fresh_validation_z_a0": 2.5,
+        "next_fresh_execution_authorized": false
+      },
+      "GLOBAL_SUPPORTED_AT_Z35": {
+        "action": "STOP_FOR_MODEL_CLASS_REVIEW",
+        "automatic_refinement": false,
+        "next_fresh_validation_z_a0": null
+      },
+      "TRADEOFF_UNRESOLVED": {
+        "action": "STOP_FOR_MODEL_CLASS_REVIEW",
+        "automatic_refinement": false,
+        "next_fresh_validation_z_a0": null
+      }
+    },
+    "z25_preserved_fresh": {
+      "z_a0": 2.5,
+      "DeltaK_per_ta": 0.1912237840334797,
+      "DeltaDmax_per_ta": 0.20561180584475613,
+      "S_design_only_per_ta": 0.280789512416017,
+      "K_half_gap_per_ta": 0.09561189201673985,
+      "Dmax_half_gap_per_ta": 0.10280590292237807
+    },
+    "auto_execute_any_science_node": false,
+    "claim_ceiling": {
+      "interval_wide_accuracy": false,
+      "transition_error": false,
+      "full_cell": false,
+      "trajectory": false,
+      "H_skip": false,
+      "production": false
+    }
+  },
+  "wolfram": {
+    "midpoint_O4_lower_formula": "384 E_O / h^4",
+    "midpoint_K2_lower_formula": "8 E_K / h^2",
+    "half_cell_O_remainder_factor": 0.0625,
+    "half_cell_K_remainder_factor": 0.25,
+    "z25_S_per_ta": 0.280789512416017
+  },
+  "literature": "SciSpace adaptive holdout/data-reuse + sequential design methodology checked",
+  "production_admitted": false
+}
