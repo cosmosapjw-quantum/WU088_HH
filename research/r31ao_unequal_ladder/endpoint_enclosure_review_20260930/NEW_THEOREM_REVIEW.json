@@ -1,0 +1,140 @@
+{
+  "schema": "WU088_R31AO_NEW_ENDPOINT_THEOREM_REVIEW_V1",
+  "inspected_head": "a5947d79be0234494873b7201233ac9da4b233da",
+  "inspected_tree": "f934cc2e0db7d31b4e5275266ab6d56627f79ad0",
+  "successor_diff": [],
+  "science_execution_authorized": false,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false,
+  "companion_sha256": "199526b5ed88d722b4f7eac10d00a4466ad6bfe55dbfe3c061a91994c0aa0c5a",
+  "reviewed_document": "NEW_THEOREM_REVIEW.md",
+  "theorems": [
+    {
+      "id": "A",
+      "theorem": "finite signed Hermite monomial envelope",
+      "verdict": "ACCEPT_UNDER_PREMISES",
+      "proof": "finite Hermite expansion and triangle inequality",
+      "formula": "U_i=exp(-lambda/t)*sum_r (-1)^r A_ir*t^(-nu_ir); A_ir=(i+1)!*mu^(i+1-2r)/(sqrt(pi)*2^(i+1)*r!*(i+1-2r)!); nu_ir=i+3/2-r",
+      "premises": [
+        "mu>0",
+        "integer i>=0",
+        "unweighted density; weights/Jacobians not applied twice"
+      ],
+      "remaining": [
+        "actual outward envelope constants not evaluated"
+      ],
+      "correction": null
+    },
+    {
+      "id": "B",
+      "theorem": "real Gaussian O/G1/G2 majorant and center polynomial derivative",
+      "verdict": "ACCEPT_UNDER_PREMISES",
+      "proof": "real completed square, unit phase modulus, Gaussian radial moments, positive polynomial majorants",
+      "formula": "|I_F|<=L_ab[P_F]/((a+t)^(3/2)*(b+u)^(3/2))",
+      "polynomials": {
+        "O": "(s+D1)^h*(s+w+D1+D2)^k",
+        "G1": "[delta+2a*(s+D1)^(h+1)]*(s+w+D1+D2)^k",
+        "G2": "2b*(s+D1)^h*(w+D2)*(s+w+D1+D2)^k",
+        "h": "0 for s;1 for px,pz",
+        "delta": "1 for pz;0 otherwise"
+      },
+      "moment": "L_ab[s^r w^q]=(2pi)^2 Gamma((r+3)/2)Gamma((q+3)/2)a^(-r/2)b^(-q/2)",
+      "pz_identity": "-partial_dz[(rz-dz)exp(-a|r-d|^2)]=(1-2a(rz-dz)^2)exp(-a|r-d|^2)",
+      "premises": [
+        "a,b>0",
+        "t,u real positive",
+        "real centers/wave numbers",
+        "finite integer k",
+        "compact center neighborhoods for interchange"
+      ],
+      "remaining": [
+        "HH majorant constants and their practical widths not evaluated"
+      ],
+      "correction": null
+    },
+    {
+      "id": "C",
+      "theorem": "incomplete-gamma/algebraic endpoints and disjoint rectangle complement",
+      "verdict": "ACCEPT_UNDER_PREMISES",
+      "lower": "a^(-3/2)*sum_r A_ir*lambda^(1-nu_ir)*Gamma(nu_ir-1,lambda/l)",
+      "upper": "sum_r A_ir*T^(-nu_ir-1/2)/(nu_ir+1/2)",
+      "whole": "a^(-3/2)*sum_r A_ir*lambda^(1-nu_ir)*Gamma(nu_ir-1)",
+      "interior": "a^(-3/2)*sum_r A_ir*lambda^(1-nu_ir)*[Gamma(nu_ir-1,lambda/T)-Gamma(nu_ir-1,lambda/l)]",
+      "partition": "(E_t x all_u) disjoint union (I_t x E_u)",
+      "complement_bound": "C_F*(S_i*W_j+J_i*S_j)",
+      "premises": [
+        "upper incomplete gamma convention",
+        "nu_ir>1",
+        "0<l<T",
+        "outward finite coefficient/assembly propagation"
+      ],
+      "remaining": [
+        "finite endpoints, gamma differences, all constants/radii unevaluated"
+      ],
+      "T_minus_2": "endpoint majorant exponent only, not quadrature or p_cond",
+      "correction": null
+    },
+    {
+      "id": "D",
+      "theorem": "joint holomorphy and compact product-ellipse Chebyshev tail",
+      "verdict": "ACCEPT_WITH_DOMAIN_CONTRACT",
+      "proof": "compact Gaussian domination, positivity of real parts of reciprocals, Cauchy coefficient bounds",
+      "sigma": "(1/(a+t)+1/(b+u))/2, Re(sigma)>0",
+      "ellipse": "1<rho<(sqrt(T)+sqrt(l))/(sqrt(T)-sqrt(l)); closed neighborhood positive margin required",
+      "coefficient_bound": "|c_mn|<=4M*rho_t^(-m)*rho_u^(-n)",
+      "tail": "4M/[(1-1/rho_t)*(1-1/rho_u)]*[rho_t^(-p-1)+rho_u^(-q-1)-rho_t^(-p-1)*rho_u^(-q-1)]",
+      "premises": [
+        "Re(t),Re(u)>0",
+        "principal powers on cut-free domains",
+        "unregularized 1F1 with fixed positive half-integer b",
+        "certified M and coefficients or interpolation/aliasing bound"
+      ],
+      "remaining": [
+        "actual ellipse margins/M/coefficient balls not evaluated"
+      ],
+      "correction": null,
+      "implementation_clarification": "conj(f(t,u)) is antiholomorphic; preferred Drow conjugation after real-domain O/G integration. Reflected analytic continuation needs separate proof."
+    },
+    {
+      "id": "E",
+      "theorem": "restricted original quadrature moment-defect bound",
+      "verdict": "ACCEPT_WITH_MEASURE_AUTHORITY",
+      "formula": "|If-Qf|<=B_integral_out+B_quadrature_out+(area(Omega)+Q_Omega1)*delta+|I_Omega P-Q_Omega P|",
+      "counterexample": "restricted 2-point GL [0,1] to [1/2,1], P=x gives (3-2sqrt(3))/24 !=0 although fourth derivative zero",
+      "premises": [
+        "actual finite positive base measure",
+        "density remains signed in f",
+        "uniform approximation error delta on rectangle"
+      ],
+      "remaining": [
+        "actual executed OD base-weight identity not established in inspected metadata",
+        "outside quadrature finite sums and moment defects not evaluated"
+      ],
+      "correction": null
+    },
+    {
+      "id": "F",
+      "theorem": "end-to-end D block enclosure and exact represented Gram eta",
+      "verdict": "ACCEPT_WITH_NUMERICAL_PREMISES_OPEN",
+      "epsilon": "||D*-D192||_2<=sqrt(sum_ab (|center_ab-D192_ab|+radius_ab)^2)",
+      "eta": "exact represented 47x2 error Gram a,d,b: norm=sqrt((a+d+sqrt((a-d)^2+4|b|^2))/2); gap intervals yield eta=max(|ghat-gminus|,|ghat-gplus|)",
+      "premises": [
+        "complete valid target entry balls",
+        "exact raw/prediction decoding",
+        "outward modulus/roots/norm/gap intervals",
+        "fixed published decimal gap semantics"
+      ],
+      "remaining": [
+        "decoder ABI/fixtures/serialization",
+        "machine-predicate boundaries",
+        "epsilon/eta actual values"
+      ],
+      "accounting": "end-to-end only; do not add X0..X8 or separate diagnostic cast/SVD errors again",
+      "correction": null
+    }
+  ],
+  "overall": "ACCEPT_UNDER_STATED_PREMISES__NUMERICAL_CERTIFICATE_NOT_EXECUTED",
+  "independent_project_decision_review_admitted": false,
+  "original_machine_labels_and_p_E_modified": false
+}

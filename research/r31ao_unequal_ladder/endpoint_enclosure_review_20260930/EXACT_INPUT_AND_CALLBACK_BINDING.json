@@ -1,0 +1,1010 @@
+{
+  "schema": "WU088_R31AO_EXACT_INPUT_CALLBACK_BINDING_V1",
+  "execution_authorized": false,
+  "inspected_head": "a5947d79be0234494873b7201233ac9da4b233da",
+  "inspected_tree": "f934cc2e0db7d31b4e5275266ab6d56627f79ad0",
+  "source_map": {
+    "path": "/root/WU088_HH_R31AO_FOLLOWUP_20260930/research/r31ao_unequal_ladder/source_functional_review_20260930/SOURCE_FUNCTIONAL_MAP.json",
+    "sha256": "a493ba1dd19c13c7b5b819cb5c9a4e6f939791a46b215489f4b1e0a1e6ad6ad1",
+    "source_review_RETURN_blob": "d1cbf14325d1ad40fb83ab636e042c47343e6cce",
+    "authority_status": "closed source review reused, nineteen sources not reaudited"
+  },
+  "source_contract_lock": {
+    "path": "research/r31ao_unequal_ladder/ncp_preflight_20260930/SOURCE_CONTRACT_LOCK.json",
+    "sha256": "77c7b1d16cdb68154790c2fdcd4a42587e2662d579e81e75c0938ac7b180b998",
+    "reviewed_commit_preserved": "0046d310962878a3563e9e813146188f046d1e69"
+  },
+  "source_references": [
+    {
+      "id": "S01",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/od_run.py",
+      "relative_path": "completion/mixed_h/od_run.py",
+      "bytes": 4404,
+      "sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+      "archive_member": "completion/mixed_h/od_run.py",
+      "functions": [
+        {
+          "function": "calc",
+          "line_start": 15,
+          "line_end": 19,
+          "semantics": "exports only O,G1,G2 from h0"
+        },
+        {
+          "function": "assemble",
+          "line_start": 21,
+          "line_end": 39,
+          "semantics": "registry, contraction, reflection, phase, exact D_col/D_row assembly"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/h0_backend.py",
+      "relative_path": "completion/mixed_h/h0_backend.py",
+      "bytes": 3174,
+      "sha256": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+      "archive_member": "completion/mixed_h/h0_backend.py",
+      "functions": [
+        {
+          "function": "H0Fused.h0",
+          "line_start": 20,
+          "line_end": 32,
+          "semantics": "frozen inputs, binary64 adapter normalizations, shape and domain checks"
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/h0_fused.cpp",
+      "relative_path": "completion/mixed_h/h0_fused.cpp",
+      "bytes": 4604,
+      "sha256": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+      "archive_member": "completion/mixed_h/h0_fused.cpp",
+      "functions": [
+        {
+          "function": "geo",
+          "line_start": 15,
+          "line_end": 15,
+          "semantics": "Gaussian completed square"
+        },
+        {
+          "function": "mh_h0",
+          "line_start": 17,
+          "line_end": 31,
+          "semantics": "geometry and radial call"
+        },
+        {
+          "function": "mh_h0",
+          "line_start": 33,
+          "line_end": 49,
+          "semantics": "UU radial contraction and analytic displacement derivatives"
+        },
+        {
+          "function": "mh_h0",
+          "line_start": 51,
+          "line_end": 59,
+          "semantics": "export field planes, compensated totals and normalization"
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/exact_weights/exact_laplace_weights.py",
+      "relative_path": "exact_weights/exact_laplace_weights.py",
+      "bytes": 10904,
+      "sha256": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb",
+      "archive_member": "exact_weights/exact_laplace_weights.py",
+      "functions": [
+        {
+          "function": "exact_weights",
+          "line_start": 29,
+          "line_end": 43,
+          "semantics": "binary64 weighted Hermite inverse-Laplace densities"
+        },
+        {
+          "function": "contract",
+          "line_start": 46,
+          "line_end": 48,
+          "semantics": "UU/VU/UV monomial coefficient contraction"
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/radial/radial_wide.cpp",
+      "relative_path": "completion/radial/radial_wide.cpp",
+      "bytes": 8433,
+      "sha256": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+      "archive_member": "completion/radial/radial_wide.cpp",
+      "functions": [
+        {
+          "function": "hypergeom_wide",
+          "line_start": 33,
+          "line_end": 52,
+          "semantics": "binary128 basic arithmetic series"
+        },
+        {
+          "function": "hypergeom/polynomial",
+          "line_start": 55,
+          "line_end": 81,
+          "semantics": "longdouble series/even polynomial"
+        },
+        {
+          "function": "positive_odd",
+          "line_start": 91,
+          "line_end": 129,
+          "semantics": "Boys and omitted large-Re tail"
+        },
+        {
+          "function": "radial_entire",
+          "line_start": 133,
+          "line_end": 203,
+          "semantics": "guards, derivative orders 0..2, branch dispatch"
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/radial/DERIVATION.md",
+      "relative_path": "completion/radial/DERIVATION.md",
+      "bytes": 6968,
+      "sha256": "3214cdaf252ce3ea48026df643aaedae37674753f6f99746c9c3aaa30b9bdc70",
+      "archive_member": "completion/radial/DERIVATION.md",
+      "functions": [
+        {
+          "function": "exact representation",
+          "line_start": 8,
+          "line_end": 27,
+          "semantics": "radial moment and analytic derivative formula"
+        },
+        {
+          "function": "series tail",
+          "line_start": 52,
+          "line_end": 61,
+          "semantics": "exact-arithmetic local tail, no roundoff enclosure"
+        },
+        {
+          "function": "large positive tail",
+          "line_start": 67,
+          "line_end": 79,
+          "semantics": "complex Boys omission bound"
+        },
+        {
+          "function": "finite geometry enclosure",
+          "line_start": 81,
+          "line_end": 109,
+          "semantics": "finite-node domain, not continuum quadrature bound"
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/run.py",
+      "relative_path": "completion/mixed_derivative/run.py",
+      "bytes": 3598,
+      "sha256": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+      "archive_member": "completion/mixed_derivative/run.py",
+      "functions": [
+        {
+          "function": "grid",
+          "line_start": 7,
+          "line_end": 11,
+          "semantics": "exact frozen grid requirement"
+        },
+        {
+          "function": "assemble",
+          "line_start": 17,
+          "line_end": 31,
+          "semantics": "independent dotO, exponent transpose, phase"
+        },
+        {
+          "function": "evaluate",
+          "line_start": 32,
+          "line_end": 54,
+          "semantics": "identity and checkpoint contract; not executed here"
+        }
+      ]
+    },
+    {
+      "id": "S09",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/jvp.cpp",
+      "relative_path": "completion/mixed_derivative/jvp.cpp",
+      "bytes": 5153,
+      "sha256": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+      "archive_member": "completion/mixed_derivative/jvp.cpp",
+      "functions": [
+        {
+          "function": "field",
+          "line_start": 13,
+          "line_end": 33,
+          "semantics": "independent analytic z derivative of completed square"
+        },
+        {
+          "function": "mj_pair",
+          "line_start": 39,
+          "line_end": 64,
+          "semantics": "UU/transposed UU contraction and precision guard"
+        }
+      ]
+    },
+    {
+      "id": "S13",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_blocks.py",
+      "relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_blocks.py",
+      "bytes": 5996,
+      "sha256": "02eed6cb85d1ac96145b2c135ea6967355d369382b376342e22dcc4b73646131",
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_blocks.py",
+      "functions": [
+        {
+          "function": "inputs/nodes",
+          "line_start": 20,
+          "line_end": 26,
+          "semantics": "archived input and mapped GL definition"
+        },
+        {
+          "function": "prepare",
+          "line_start": 41,
+          "line_end": 51,
+          "semantics": "direct rational polynomial coefficients, stored normalization/velocity"
+        }
+      ]
+    },
+    {
+      "id": "S16",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/CUSP_TRIAL.json",
+      "relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/CUSP_TRIAL.json",
+      "bytes": 12755,
+      "sha256": "54d0a83934056e4cad71b71272da878784bb0f374b98a4b7d97fff277b0b05a0",
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/CUSP_TRIAL.json",
+      "functions": [
+        {
+          "function": "JSON /polynomial",
+          "line_start": 1,
+          "line_end": null,
+          "semantics": "107 rational direct monomial terms; mu=zeta=1"
+        }
+      ]
+    },
+    {
+      "id": "S17",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/CUSP_CERTIFICATE_90.json",
+      "relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/CUSP_CERTIFICATE_90.json",
+      "bytes": 24648,
+      "sha256": "103c79ae7eb9605e2486030a6edcf71984c9aac3b67405610fa44c69b91e70d0",
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/CUSP_CERTIFICATE_90.json",
+      "functions": [
+        {
+          "function": "JSON /intervals/norm_reduced",
+          "line_start": 1,
+          "line_end": null,
+          "semantics": "donor normalization only"
+        }
+      ]
+    },
+    {
+      "id": "S19",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz",
+      "relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz",
+      "bytes": 5681,
+      "sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz",
+      "functions": []
+    }
+  ],
+  "Frozen107": {
+    "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz",
+    "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz",
+    "bytes": 5681,
+    "sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+    "byte_pin_match": true,
+    "members": [
+      {
+        "member": "exponents.npy",
+        "npy_version": [
+          1,
+          0
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          12
+        ],
+        "payload_bytes": 96,
+        "payload_sha256": "9564bcdfab5fc900321ecc12441b420b723f02d2991e62b3886e40c759c998a5",
+        "finite_binary64_bits_verified": true,
+        "semantic_role": "continuous target input",
+        "positive_exact_dyadics_verified": true,
+        "exact_exponent_bits_hex": [
+          "3f60624dd2f1a9fc",
+          "3f73a29a51212475",
+          "3f87880f29857567",
+          "3f9c33724858171e",
+          "3fb0e6053acc6686",
+          "3fc44074d981715e",
+          "3fd8453c943e0ff4",
+          "3fed1629d09d4bde",
+          "40016ddf8c2d395c",
+          "4014e3446b9a4366",
+          "4029085adb29a63c",
+          "403e000000000000"
+        ]
+      },
+      {
+        "member": "s_C.npy",
+        "npy_version": [
+          1,
+          0
+        ],
+        "descr": "<f8",
+        "fortran_order": true,
+        "shape": [
+          12,
+          12
+        ],
+        "payload_bytes": 1152,
+        "payload_sha256": "458cd8b42e8432a23bfcf2ac46707840285679bce4cd960c5e74899687a2ad8e",
+        "finite_binary64_bits_verified": true,
+        "semantic_role": "continuous target input"
+      },
+      {
+        "member": "p_C.npy",
+        "npy_version": [
+          1,
+          0
+        ],
+        "descr": "<f8",
+        "fortran_order": true,
+        "shape": [
+          12,
+          12
+        ],
+        "payload_bytes": 1152,
+        "payload_sha256": "3d84a0dcb264c9fb43da196939cd3fe1b81b52c02753c96f3111fb45d5377800",
+        "finite_binary64_bits_verified": true,
+        "semantic_role": "continuous target input"
+      },
+      {
+        "member": "s_eps.npy",
+        "npy_version": [
+          1,
+          0
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          12
+        ],
+        "payload_bytes": 96,
+        "payload_sha256": "d1af05eed9361cfab27a744c6bdb5ed9ee81176f812f4ecbe56d20facdc37924",
+        "finite_binary64_bits_verified": true,
+        "semantic_role": "preserved auxiliary input"
+      },
+      {
+        "member": "p_eps.npy",
+        "npy_version": [
+          1,
+          0
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          12
+        ],
+        "payload_bytes": 96,
+        "payload_sha256": "522a9d4a028a82b82b119c61a8535250bb6f28c8f68d93f39dce7a9f3bc69b1f",
+        "finite_binary64_bits_verified": true,
+        "semantic_role": "preserved auxiliary input"
+      },
+      {
+        "member": "phase_E.npy",
+        "npy_version": [
+          1,
+          0
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          49
+        ],
+        "payload_bytes": 392,
+        "payload_sha256": "addef06cc6d3076007cc2fa01086b82299a745fc04e079e573e598d075ce542b",
+        "finite_binary64_bits_verified": true,
+        "semantic_role": "continuous target input"
+      },
+      {
+        "member": "Q.npy",
+        "npy_version": [
+          1,
+          0
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          49,
+          25
+        ],
+        "payload_bytes": 9800,
+        "payload_sha256": "b2bf9b50e1f1c2dfd136868ea206bf145f49689a88737707a8f0e15fdc2954e2",
+        "finite_binary64_bits_verified": true,
+        "semantic_role": "preserved auxiliary input"
+      },
+      {
+        "member": "parity.npy",
+        "npy_version": [
+          1,
+          0
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          49,
+          49
+        ],
+        "payload_bytes": 19208,
+        "payload_sha256": "2e25e5229c142b3a13b112cb986a128120ced9c5af21c5bb6c5c72bc049bb29f",
+        "finite_binary64_bits_verified": true,
+        "semantic_role": "preserved auxiliary input"
+      },
+      {
+        "member": "C.npy",
+        "npy_version": [
+          1,
+          0
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          9,
+          9,
+          9
+        ],
+        "payload_bytes": 5832,
+        "payload_sha256": "5952ccecafea867f83f1454bf8f338f494770fe0356c7e026eb7222b32067b96",
+        "finite_binary64_bits_verified": true,
+        "semantic_role": "continuous target input"
+      },
+      {
+        "member": "pref.npy",
+        "npy_version": [
+          1,
+          0
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [],
+        "payload_bytes": 8,
+        "payload_sha256": "ebcf3f07e2be4a5460af24e9acac55901d0983e3f7de75652d078f7e99081794",
+        "finite_binary64_bits_verified": true,
+        "semantic_role": "continuous target input",
+        "exact_scalar_dyadic": {
+          "bits_hex": "3fbccf6429be65a1",
+          "sign": 1,
+          "integer_significand": "8109328451921313",
+          "binary_exponent": -56
+        }
+      },
+      {
+        "member": "v.npy",
+        "npy_version": [
+          1,
+          0
+        ],
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [],
+        "payload_bytes": 8,
+        "payload_sha256": "918ad765b4ad0f17db43ad69b4df1292cd481eebabba8ef1e3770b5af8aae4ac",
+        "finite_binary64_bits_verified": true,
+        "semantic_role": "continuous target input",
+        "exact_scalar_dyadic": {
+          "bits_hex": "3fdc9fc5ca0486d9",
+          "sign": 1,
+          "integer_significand": "8056971194566361",
+          "binary_exponent": -54
+        }
+      }
+    ],
+    "access_scope": "stdlib header, payload hash and integer binary64 bit decoding only; no scientific callback/integrand or endpoint evaluation"
+  },
+  "exact_lift": {
+    "binary64_normal": "(-1)^sign*(2^52+fraction)*2^(E-1023-52)",
+    "binary64_subnormal": "(-1)^sign*fraction*2^(1-1023-52)",
+    "nonfinite": "reject",
+    "signed_zero": "preserve raw sign provenance; mathematical zero",
+    "Fortran": "retain declared memory layout to indices; s_C and p_C are column-major",
+    "coefficients": "stored C bits are exact dyadics, not replaced by donor rational coefficients or regenerated normalization",
+    "pref_and_v": "exact archived bits, do not recompute",
+    "normalization": "sqrt(2)*pref*(2a/pi)^(3/4)*(2b/pi)^(3/4) multiplied by 1,2sqrt(a),2sqrt(a) for s,px,pz; ideal formula evaluated outward only in future approved workload",
+    "phase": "exp(i*(2*k_c*c_z+(E_N-E_I)*tau)) from exact stored phase_E/v and exact tau=z/v"
+  },
+  "geometry": {
+    "z": "3/4",
+    "transverse": "2",
+    "tau": "exact (3/4)/stored_v",
+    "mu": "1",
+    "active0": {
+      "d1": "(0,0,0)",
+      "d2": "-(2,0,z)",
+      "q1": "0",
+      "q2": "stored_v"
+    },
+    "active1": {
+      "d1": "-(2,0,z)",
+      "d2": "(0,0,0)",
+      "q1": "stored_v",
+      "q2": "0"
+    }
+  },
+  "ordering_assembly": {
+    "rows": "center0 j=0..23 then center1 j=1..23; angular=j//8; orbital=j%8",
+    "columns": "cusp c=0,1",
+    "orbital_contraction": "12x12 stored neutral orbital column times stored ground column",
+    "canonical_active": "active XOR cusp",
+    "reflection": "p channels parity - at cusp1; extra minus for G1/G2 at cusp1",
+    "momentum": "kc=(+v/2,-v/2)_c, ka=(+v/2,-v/2)_active, kb=-ka, cz=(+z/2,-z/2)_c",
+    "Dcol": "kc*(G1+G2)+i*(kc*(2kc-ka-kb)-EI)*O",
+    "Drow": "-ka*conj(G1)-kb*conj(G2)-i*EN*conj(O)",
+    "conjugation_stage": "after real-domain primitive integration, orbital/reflection/phase assembly; literal complex-variable conjugation not an analytic callback",
+    "units": "D blocks 1/t_a, O dimensionless",
+    "Q": "preserved input; no new subspace/physical invariance admission"
+  },
+  "callbacks": {
+    "radial": {
+      "target": "d^r/ds^r M_k(sigma,s) for k=0..8, r=0,1,2",
+      "M": "(2sigma)^(k/2)*Gamma((k+3)/2)/Gamma(3/2)*1F1(-k/2;3/2;-s/(2sigma))",
+      "derivative_factor": "(-k/2)_r/(3/2)_r*(-1/(2sigma))^r; 1F1 parameters shifted by r",
+      "s": "bilinear (m1-m2) dot (m1-m2), not Hermitian norm",
+      "domain": "Re(t),Re(u)>0; Re(sigma)>0; principal powers with certified positive margin",
+      "legacy_source": "S03 geo/mh_h0 and S07 exact representation; S06 floating piecewise routine is not an enclosure callback"
+    },
+    "fields": {
+      "target": "continuous I_{k,l} and G1=-partial_d1z I, G2=-partial_d2z I at fixed q1,q2; U_i(t)U_j(u) weighted by stored C",
+      "center_polynomial": "pz G1 contains +1 term from negative derivative of displacement; no px delta term",
+      "special_function": "unregularized 1F1 (regularized=0), not M/Gamma(b)",
+      "endpoint_gamma": "upper incomplete Gamma(s,z), regularized=0",
+      "density": "signed unweighted Hermite U; no duplicated Jacobian/weight",
+      "primitive_integral": "Integral over R^3 x R^3: |r1-r2|^k P_l(r1-d1) exp[-a|r1-d1|^2-b|r2-d2|^2-t|r1|^2-u|r2|^2+i q1 r1z+i q2 r2z] d^3r1 d^3r2; P_l=1, (r1-d1)x, (r1-d1)z",
+      "completed_square": {
+        "A": "a+t",
+        "B": "b+u",
+        "m1": "a*d1/A+i*q1*zhat/(2A)",
+        "m2": "b*d2/B+i*q2*zhat/(2B)",
+        "sigma": "(1/A+1/B)/2",
+        "s": "(m1-m2) dot (m1-m2)",
+        "base1": "(pi/A)^(3/2)*exp[-a*t*(d1 dot d1)/A-q1^2/(4A)+i*q1*a*d1z/A]",
+        "base2": "analogous B,b,u,d2,q2 expression",
+        "angular_derivatives": "S03 mh_h0 lines33-49 bound by negative center derivatives of the primitive target, including polynomial derivative"
+      }
+    },
+    "integration": {
+      "target": "O/G compact interior integral; tail complement separately enclosed",
+      "order0": "general range enclosure",
+      "order1": "value plus holomorphy on entire requested complex box; not radial r=1",
+      "higher_order": "fail closed unless later explicitly implemented/verified",
+      "nested": "inner integral enclosure uniform over whole outer complex parameter box",
+      "return_code": "reserved by acb_calc; domain failure must supply nonfinite balls and failure log"
+    },
+    "independent_dotO": {
+      "authority": "S08/S09 independent JVP unchanged",
+      "source_certification_in_this_plan": false,
+      "do_not_construct": "dotO=Dcol+Drow dagger"
+    }
+  },
+  "planned_library": {
+    "library": "FLINT",
+    "version": "3.4.0",
+    "api": "C acb/arb",
+    "runtime_backend_verified": false,
+    "build_performed": false,
+    "archive_docs": [
+      {
+        "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/production/literature/code/flint_acb_calc_v3.4.0.rst",
+        "bytes": 17891,
+        "sha256": "c57859a8a3b05fd0dc95a4f8a3f2448f04d70e5655a83bf944faab1d6fcde171",
+        "role": "archived version-labelled library primary documentation/source, not producer substitute"
+      },
+      {
+        "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/production/literature/code/flint_acb_hypgeom_v3.4.0.rst",
+        "bytes": 58537,
+        "sha256": "45edca2cacf731f8c948ad99d08d6ec94e4717f6525e1e44511257f91dafc7d2",
+        "role": "archived version-labelled library primary documentation/source, not producer substitute"
+      },
+      {
+        "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/production/literature/code/flint_m_v3.4.0.c",
+        "bytes": 9414,
+        "sha256": "ff2a60e95352c8a152d7b76306f061a025ab49748598924e3caed241ea38b523",
+        "role": "archived version-labelled library primary documentation/source, not producer substitute"
+      }
+    ],
+    "calls": [
+      "acb_hypgeom_m with regularized=0",
+      "acb_hypgeom_gamma_upper with regularized=0",
+      "acb_calc_integrate"
+    ],
+    "before_execution_required": [
+      "release/source hash",
+      "GMP/MPFR versions and hashes",
+      "compiler/flags/ABI",
+      "library/binary hashes",
+      "precision and finite resource caps",
+      "callback implementation verification"
+    ]
+  },
+  "B192_raw": [
+    {
+      "role": "OD",
+      "preserved_path": "research/r31ao_unequal_ladder/authorized_order_study_20260930/raw/B192_REUSED_OD/ASSEMBLED_OD.npz",
+      "sha256_from_closed_authority": "7e7b5782cc698a364aeac608620e56c7bfdc64035ffe5dfee501608dae7970df",
+      "bytes_from_current_metadata": 12862,
+      "headers": [
+        {
+          "member": "O.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "O_row.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "D_col.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "D_row.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            2,
+            47
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "components_OG.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            3,
+            47,
+            2
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "sumabs_upper_diagnostic.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<f16",
+          "fortran_order": false,
+          "shape": [
+            3,
+            47,
+            2
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "n.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "z.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [],
+          "matrix_payload_read": false
+        }
+      ],
+      "full_payload_rehashed_this_review": false
+    },
+    {
+      "role": "independent_JVP",
+      "preserved_path": "research/r31ao_unequal_ladder/authorized_order_study_20260930/raw/B192_REUSED_JVP/ASSEMBLED.npz",
+      "sha256_from_closed_authority": "53569e92875254e897a7e23b55620cca9c5acf9f86124dc0a73198ad41d1df87",
+      "bytes_from_current_metadata": 50398,
+      "headers": [
+        {
+          "member": "O.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "dotO.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "raw.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            2,
+            2,
+            3,
+            12,
+            12
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "sumabs.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<f16",
+          "fortran_order": false,
+          "shape": [
+            2,
+            2,
+            3,
+            12,
+            12
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "z.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<f16",
+          "fortran_order": false,
+          "shape": [],
+          "matrix_payload_read": false
+        }
+      ],
+      "full_payload_rehashed_this_review": false
+    }
+  ],
+  "frozen_z075_predictions": [
+    {
+      "key": "R31AK_prediction_npz",
+      "path": "research/r31ak_eight_node/ncp_followup_20260930/FROZEN_HOLDOUT_PREDICTIONS.npz",
+      "sha256": "6d29acbe1aee9bb34cf3627c04136d67e27b5a44b44ee7b3104cdcd3fe1ff88c",
+      "identity_origin": "closed source-functional review, not repeated payload access",
+      "selected_headers": [
+        {
+          "member": "z0p75_R31AK_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        }
+      ],
+      "payload_read_this_review": false
+    },
+    {
+      "key": "R31AD_coarse_npz",
+      "path": "research/r31al_z075_gate/ncp_followup_20260930/Z075_COARSE_PREDICTION.npz",
+      "sha256": "de876e53bca7aa773f321ed2ecfe24e4a0b1fda57bf42f6e8736bddc1730e107",
+      "identity_origin": "closed source-functional review, not repeated payload access",
+      "selected_headers": [
+        {
+          "member": "z0p75_R31AD_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AD_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AD_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AD_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z0p75_R31AD_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        }
+      ],
+      "payload_read_this_review": false
+    }
+  ],
+  "raw_decoder": {
+    "status": "NOT_IMPLEMENTED_OR_EXECUTED",
+    "headers_only_read": true,
+    "raw_payload_decoded": false,
+    "expected_format": "c32; two 16-byte components, historical x86_64 longdouble; exact ABI must be established, not inferred from dtype name",
+    "conditional_x87_little_endian": "M bytes0..7; sign/E bytes8..9; padding10..15. Normal value sign*M*2^(E-16383-63). Canonical subnormal sign*M*2^(1-16383-63). Preserve full byte hash/padding; reject unsupported patterns/nonfinite/unproven ABI.",
+    "before_norm_required": "exact synthetic fixtures and historical ABI authority; endian/Fortran/padding/serialization checks"
+  },
+  "stored_rule_optional": {
+    "status": "ACTUAL_OD_BASE_WEIGHT_IDENTITY_NOT_ESTABLISHED_IN_INSPECTED_METADATA",
+    "inspected_identity": "research/r31ao_unequal_ladder/authorized_order_study_20260930/raw/B192_REUSED_OD/IDENTITY.json",
+    "t_sha256": "19d9eab5438e49c0e2d5520b59d4626a73cd483b6ecb844da2b3c5ddec81667a",
+    "W_sha256": "bb22f32953f63103e0988ce811a729b89bfdd3aef955cb07f2ba996d42d6434e",
+    "missing": "actual executed transformed dt/du base-weight bytes/hash and node-to-measure identity; W is contracted density-weight plane, not base weights",
+    "not_absence_proof": true,
+    "JVP_grid_or_regenerated_nodes_substituted": false
+  },
+  "readable_inputs_missing": [],
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false
+}
