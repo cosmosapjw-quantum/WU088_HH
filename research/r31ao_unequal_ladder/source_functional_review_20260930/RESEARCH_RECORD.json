@@ -1,0 +1,158 @@
+{
+  "objective": "Read-only source-functional map, decision-bound derivation, proof obligations; preserve all science results and locks; publish and create-only dual backup.",
+  "source_head": "e89ff30f508731b8e2694d51cef1b3223794af4d",
+  "source_tree": "fc624042129ed3decd9b0e8ed2df64440886cd10",
+  "frozen_methods": [
+    {
+      "id": "M01",
+      "claim": "Trace exact OD/JVP source functional through the locked source and same Frozen107",
+      "falsifier": "required identity missing or source does not justify intended functional"
+    },
+    {
+      "id": "M02",
+      "claim": "Derive epsilon_K, epsilon_Dmax and gap bounds with separate eta and no double count",
+      "falsifier": "logical error or accounting overlap"
+    },
+    {
+      "id": "M03",
+      "claim": "Classify source certification obligations as established/derived/missing",
+      "falsifier": "missing rigor promoted to certificate"
+    }
+  ],
+  "forbidden": [
+    "science producers",
+    "postprocessor or 15 tests rerun",
+    "integration samples/validated integration",
+    "native compile",
+    "source/grid/precision/model/knot changes",
+    "new authorization scope"
+  ],
+  "stop": "Three artifacts and source/gap review complete; publication and ACK+metadata backup done. Missing numerical bounds returned as separately authorized workloads only.",
+  "evidence_log": [
+    {
+      "utc": "2026-09-30T11:42:17.373643+00:00",
+      "observation": "Remote HEAD/tree and RETURN blob exactly match user; no successor diff."
+    },
+    {
+      "id": "E02",
+      "utc": "2026-09-30T12:09:34.503354+00:00",
+      "source": "SOURCE_FUNCTIONAL_MAP.json",
+      "observation": "19 actual functional source/input files mapped, matched CP4 member SHA and existing pins where applicable; missing identities empty."
+    },
+    {
+      "id": "E03",
+      "utc": "2026-09-30T12:09:34.503354+00:00",
+      "source": "PRESERVED_FINITE_ORDER_EVIDENCE.json",
+      "observation": "Original RETURN/replay read only; all 3 order verdict pairs preserved; 5 negative direction alignments transcribed, not recomputed."
+    },
+    {
+      "id": "E04",
+      "utc": "2026-09-30T12:09:34.503354+00:00",
+      "source": "EXACT_DECIMAL_BUDGETS.json",
+      "observation": "M02 exact scalar arithmetic: 4 Fraction budget equalities and 4 limiting threshold equalities passed; no matrix/integration/norm computations."
+    },
+    {
+      "id": "E05",
+      "utc": "2026-09-30T12:09:34.503354+00:00",
+      "source": "PROOF_OBLIGATIONS_AND_STOP.md",
+      "observation": "M03 established source facts distinguished from derived lemmas and missing numerical bounds. No science workload/scope created."
+    },
+    {
+      "id": "E06",
+      "source": "PROTECTED_GIT_IDENTITIES.json",
+      "command_argv": [
+        "python3",
+        "-"
+      ],
+      "method": "Git blob SHA1(header + file bytes) compared to captured ls-tree HEAD baseline; JSON syntax reads",
+      "exit_code": 0,
+      "decisive_output": "All sidecar JSON parses; protected Git blobs unchanged: 1153",
+      "observation": "Original canonical scope/locks, raw/result/comparator/prereg records within protected prefixes remain byte unchanged."
+    },
+    {
+      "id": "E07",
+      "source": "DECISION_BOUND_DERIVATION.md and EXACT_DECIMAL_BUDGETS.json",
+      "command_argv": [
+        "python3",
+        "-"
+      ],
+      "stdin_scalar_core": "tol=Fraction(\"1e-10\"); budget=(Fraction(gap_decimal)-tol)/2; assert budget==Fraction(expected_decimal); assert Fraction(gap_decimal)-2*budget==tol (for each of four published gaps)",
+      "exit_code": 0,
+      "decisive_output": "exact_fraction_budget_checks: 8; new_science_commands: 0",
+      "observation": "Exact scalar budget arithmetic only. Both prediction NPZ headers show complex128; no payload-based model error, norm or integration recomputed."
+    },
+    {
+      "id": "E08",
+      "utc": "2026-09-30T12:15:43.357236+00:00",
+      "source": "VERIFICATION_REVIEW.json",
+      "fingerprint": "2e40a450207393372386aa75685652c55c25890ed703244e25992ae777424839",
+      "observation": "Fresh bounded artifact verifier confirms all planned source/derivation/obligation claims, zero material findings; no project science-review admission."
+    }
+  ],
+  "dead_ends": [
+    {
+      "attempt": "python - for JSON read",
+      "exit": 127,
+      "reason": "python alias absent; python3 used for stdlib reads; no scientific command affected"
+    },
+    {
+      "attempt": "rg research/r31al_z075_gate/Z075_REFINEMENT_PRE_OUTPUT_LOCK.json",
+      "exit": 2,
+      "reason": "record is in ncp_followup_20260930; canonical secondary prereg locked_files used; no substitute lock"
+    },
+    {
+      "attempt": "FLINT acb_calc official documentation retrieval",
+      "reason": "web open failed; primary Johansson paper used for method assumptions only; no installed API/implementation claim"
+    }
+  ],
+  "documentation": [
+    {
+      "topic": "Gaussian derivative remainder",
+      "url": "https://dlmf.nist.gov/3.5.E19",
+      "retrieved_date": "2026-09-30",
+      "version": "mathematical reference; not software API"
+    },
+    {
+      "topic": "Petras analytic ball callback and ellipse premises",
+      "url": "https://arxiv.org/html/1802.07942",
+      "retrieved_date": "2026-09-30",
+      "version": "author paper 2018; no installed FLINT/Arb implementation used"
+    }
+  ],
+  "methods_closed": [
+    {
+      "id": "M01",
+      "status": "completed",
+      "evidence": "SOURCE_FUNCTIONAL_MAP.json"
+    },
+    {
+      "id": "M02",
+      "status": "completed_theoretical_derivation_no_numerical_certificate",
+      "evidence": "DECISION_BOUND_DERIVATION.md / EXACT_DECIMAL_BUDGETS.json"
+    },
+    {
+      "id": "M03",
+      "status": "completed_design_missing_numerical_bounds_returned",
+      "evidence": "PROOF_OBLIGATIONS_AND_STOP.json"
+    }
+  ],
+  "independent_artifact_verification": {
+    "verdict": "confirmed",
+    "evidence": "VERIFICATION_REVIEW.json",
+    "project_decision_review_admitted": false
+  },
+  "companion": {
+    "name": "WU088_HH_R31AO_POST_ORDER_ANALYSIS_20260930_v1.zip",
+    "sha256": "3fdc050618a52c4e31f1f50b228ac967330ea9fbeea19c449d9ad3ab84c1945e",
+    "Drive_object": "1aZ3E2Vc92Wk9zcKUtcWDlLs1gPSaKV2P",
+    "Dropbox_object": "id:BSpOijBcT10AAAAAADwyKA",
+    "downloaded_once_and_local_SHA_verified": true,
+    "role": "secondary mathematical/design context; never substitutes runtime/raw/original authorization"
+  },
+  "post_order_comment": {
+    "id": 5910339378,
+    "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/33#issuecomment-5910339378",
+    "role": "existing analysis context; no comment mutation"
+  },
+  "final_verdict": "Three planned deliverables complete as theoretical/source review; numerical certification blocked by missing error bounds."
+}

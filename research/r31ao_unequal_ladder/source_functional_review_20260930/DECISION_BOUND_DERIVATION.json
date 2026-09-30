@@ -1,0 +1,25 @@
+{
+  "schema": "WU088_R31AO_DECISION_BOUND_DERIVATION_V1",
+  "proof": "DECISION_BOUND_DERIVATION.md",
+  "source_boundary": "exact archived raw C192/R192 bits",
+  "candidate_target": "exact represented frozen prediction arrays",
+  "epsilon_K_formula": "(epsilon_C+epsilon_R)/2",
+  "epsilon_Dmax_formula": "max(epsilon_C,epsilon_R)",
+  "lower_gap_formula": "published_gap_j - 2*epsilon_j - eta_j",
+  "pareto_sufficient_condition": "both lower_gap_j >= -tol AND one lower_gap_j > tol",
+  "certified_epsilon": {
+    "C": null,
+    "R": null,
+    "K": null,
+    "Dmax": null
+  },
+  "certified_eta": {
+    "PRIMARY_K": null,
+    "PRIMARY_Dmax": null,
+    "SECONDARY_K": null,
+    "SECONDARY_Dmax": null
+  },
+  "budget_table": "EXACT_DECIMAL_BUDGETS.json",
+  "raw_producer_errors_not_double_counted_in_eta": true,
+  "rigorous_source_certificate": false
+}
