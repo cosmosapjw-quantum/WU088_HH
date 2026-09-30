@@ -1,0 +1,83 @@
+{
+  "schema": "WU088_R31AJ_Z25_PRE_OUTPUT_LOCK_V1",
+  "created_utc": "2026-09-30T03:26:53.112239+00:00",
+  "remote_before_execution": {
+    "branch": "research/r31aj-z25-scope-robustness-20260930",
+    "commit": "de1702a4be52c7ca4c8deff30a587789b61c2e0d",
+    "tree": "e5083ca08af80d306ec20274d9f7949e6542b08a",
+    "successor": false
+  },
+  "authorization": {
+    "schema": "WU088_R31AI_Z25_MINIMAL_MIXED_AUTHORIZATION_V1",
+    "authorize": true,
+    "action": "AUTHORIZE_R31AI_Z25_MINIMAL_MIXED_NODE",
+    "scope_sha256": "78d960c041536f2baa2160639e5a60878f43f73aadee2e3174ffd5a27d8a68e7",
+    "one_shot": true,
+    "context": "current standalone affirmative user message following corrected envelope"
+  },
+  "frozen_hashes": {
+    "preregistration": "10d05889a336541c81f2153bb232f254c406ebe45d22da6e5470230b40b1a691",
+    "decision_rule": "c5712e2539a7db7dda02c563c327c51edc27fb30741df180f19d1cee0cb21d86",
+    "model_aggregate": "9d78ed48963f2da9d77e85a4466fd09f6f0f243508b887cbfc96121a46c949c5",
+    "engine": "ab220248066580fc77af70c412251dbe3ed643a6fadc266cf5c25a7a3a6651a0",
+    "policy": "f200fd1837938020c4a99673b1a32f6e652cc4bdcb215318f5588530eb6ac388",
+    "helper": "9709bd806d95915c353f5ef95fc36212ac779feedc8c1128818d5c2437b332d3",
+    "seven_node_manifest": "57a1379cc7b658fb8f9eebe2f47cb48f806c3f0ca0292e8e52f53d82d703835b",
+    "global_model": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034",
+    "prediction_only": "64f47cc6a5e6906071636a10d022d4575f9f458c10c31f59881e1808d7b5fba4",
+    "archive": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+    "scope": "78d960c041536f2baa2160639e5a60878f43f73aadee2e3174ffd5a27d8a68e7"
+  },
+  "model_aggregate_serializer": "json.dumps(components,sort_keys=True,separators=(comma,colon)).encode()",
+  "comparator_sha256": "aa42e3e4ff6c728c06b17b0ce11b42593f51eed2bf060b74cbaf1c0ef68f8c73",
+  "prediction_arrays_path": "research/r31aj_z25_validation/Z25_FROZEN_PREDICTIONS.npz",
+  "prediction_arrays_sha256": "b9c2b3a55685b355f650a77f52fe5853550805bf2ff9e0768f436e692a3895ec",
+  "prediction_arrays_bytes": 17548,
+  "time_ta_reported": 5.589693097584528,
+  "time_ta_computed": 5.5896930975845285,
+  "z_a0": 2.5,
+  "radial_order": 192,
+  "primary_metrics": [
+    "E_K",
+    "E_Dmax"
+  ],
+  "comparison_tolerance_per_ta": 1e-10,
+  "allowed_verdicts": [
+    "PARETO_SUPPORTED_AT_Z25",
+    "GLOBAL_SUPPORTED_AT_Z25",
+    "TRADEOFF_UNRESOLVED"
+  ],
+  "producer_runtime": "/root/WU088_R31AJ_Z25_RUNTIME_20260930",
+  "producer_source_sha256": {
+    "completion/mixed_h/od_run.py": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+    "completion/mixed_h/h0_backend.py": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+    "completion/mixed_h/h0_fused.cpp": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+    "completion/mixed_h/native.py": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+    "completion/mixed_derivative/run.py": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+    "completion/mixed_derivative/native.py": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d",
+    "completion/mixed_derivative/jvp.cpp": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+    "completion/mixed_derivative/CONTRACT.json": "f5a10ef22dd5aefade7e9d9dc079066c0b3e0781a9c997411997cb67ba0acb66",
+    "cont2c/convergence/frozen_grid_n192.npz": "e1959e1bbb66b5e27410daa3d3bdb0815885919f11af3a014d86a47f15b96301",
+    "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c"
+  },
+  "OD_native_identity": {
+    "adapter_sha256": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+    "binary_sha256": "1098c9624e6639712354acd159f5c872fe7369c43bc8456e0314026eec54d506",
+    "completion/mixed_h/h0_fused.cpp": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+    "completion/radial/radial_wide.cpp": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a"
+  },
+  "JVP_native_identity": {
+    "adapter": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d",
+    "key": "37475128714402d03f673cb97c872a69ce87f34dc30d9b810742544bf99345b4",
+    "source_hashes": {
+      "completion/mixed_derivative/jvp.cpp": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+      "completion/radial/radial_wide.cpp": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a"
+    }
+  },
+  "prior_z25_archive_members": 0,
+  "prior_z25_runtime_paths": [],
+  "direct_z25_output_accessed": false,
+  "science_commands_started": 0,
+  "authorization_consumed": false,
+  "one_shot_state": "AUTHORIZED_PRE_OUTPUT"
+}
