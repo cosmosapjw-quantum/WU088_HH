@@ -1,0 +1,16 @@
+{
+  "schema": "WU088_R31AJ_Z25_PROTOCOL_DEVIATION_V1",
+  "stage": "post-output frozen comparator metadata check",
+  "frozen_comparator_sha256": "aa42e3e4ff6c728c06b17b0ce11b42593f51eed2bf060b74cbaf1c0ef68f8c73",
+  "first_comparator_exit_code": 1,
+  "first_comparator_stderr_file": "COMPARE.stderr",
+  "cause": "OD IDENTITY.json z is numeric 2.5; independent JVP IDENTITY.json z is string \"2.5\"; frozen comparator compared raw JSON types",
+  "direct_arrays_read_by_failed_comparator": false,
+  "recovery_script_sha256": "7ffc08731a8f187e5bffe58f71817855c48ba2dec58e3669e590b152a2180774",
+  "recovery_change": "parse both producer z identity fields as float; leave frozen predictions, model, primary metrics, tolerance and decision formula unchanged",
+  "recovery_exit_code": 0,
+  "independent_validation_admitted": false,
+  "independence_status": "PRE_OUTPUT_ADAPTER_LOCK_VIOLATED_BY_POST_OUTPUT_METADATA_RECOVERY",
+  "additional_science_execution": false,
+  "z25_training_consumption": false
+}
