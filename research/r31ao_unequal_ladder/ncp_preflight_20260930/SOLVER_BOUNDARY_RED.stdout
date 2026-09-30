@@ -1,0 +1,43 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+________________ test_large_finite_ratio_has_positive_solution _________________
+
+    def test_large_finite_ratio_has_positive_solution():
+>       p=m.solve_positive_order(1e200)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/r31ao_unequal_ladder/test_unequal_order_ladder.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+observed_ratio = 1e+200, tol = 1e-13, max_iter = 200
+
+    def solve_positive_order(observed_ratio: float, *, tol: float=1e-13, max_iter: int=200) -> float:
+        rho=float(observed_ratio)
+        if not math.isfinite(rho) or rho<=THRESHOLD:
+            raise ValueError("no positive-p solution under the conditional power model")
+        lo=0.0
+        hi=1.0
+        while ratio_model(hi) < rho:
+            hi*=2.0
+            if hi>1024:
+>               raise RuntimeError("failed to bracket observed order")
+E               RuntimeError: failed to bracket observed order
+
+research/r31ao_unequal_ladder/unequal_order_ladder.py:22: RuntimeError
+__________________ test_small_positive_power_ratio_is_stable ___________________
+
+    def test_small_positive_power_ratio_is_stable():
+        p=1e-12
+        expected=m.THRESHOLD*(1+(math.log(5/4)+math.log(6/5))*p/2)
+>       assert m.ratio_model(p)==pytest.approx(expected,abs=5e-16,rel=0)
+E       assert 1.2241169305724726 == 1.223901085741793 ± 5.0e-16
+E         
+E         comparison failed
+E         Obtained: 1.2241169305724726
+E         Expected: 1.223901085741793 ± 5.0e-16
+
+research/r31ao_unequal_ladder/test_unequal_order_ladder.py:49: AssertionError
+=========================== short test summary info ============================
+FAILED research/r31ao_unequal_ladder/test_unequal_order_ladder.py::test_large_finite_ratio_has_positive_solution
+FAILED research/r31ao_unequal_ladder/test_unequal_order_ladder.py::test_small_positive_power_ratio_is_stable
+2 failed, 6 deselected in 0.06s

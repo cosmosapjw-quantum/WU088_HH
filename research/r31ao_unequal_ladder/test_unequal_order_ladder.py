@@ -1,6 +1,7 @@
 import importlib.util
 from pathlib import Path
 import pytest
+import math
 
 HERE=Path(__file__).resolve().parent
 spec=importlib.util.spec_from_file_location("m",HERE/"unequal_order_ladder.py")
@@ -37,3 +38,12 @@ def test_authority_ladder():
     assert a["orders"]==[128,160,192]
     assert a["source_modification_required"] is False
     assert a["science_execution_authorized"] is False
+
+def test_large_finite_ratio_has_positive_solution():
+    p=m.solve_positive_order(1e200)
+    assert math.log(m.ratio_model(p))==pytest.approx(math.log(1e200),abs=1e-10)
+
+def test_small_positive_power_ratio_is_stable():
+    p=1e-12
+    expected=m.THRESHOLD*(1+(math.log(5/4)+math.log(6/5))*p/2)
+    assert m.ratio_model(p)==pytest.approx(expected,abs=5e-16,rel=0)

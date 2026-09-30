@@ -1,0 +1,96 @@
+{
+  "schema": "WU088_R31AO_FINITE_ORDER_REPLAY_V1",
+  "order_identities": {
+    "192": {
+      "OD": "7e7b5782cc698a364aeac608620e56c7bfdc64035ffe5dfee501608dae7970df",
+      "JVP": "53569e92875254e897a7e23b55620cca9c5acf9f86124dc0a73198ad41d1df87",
+      "order": 192,
+      "z_decimal": "0.75",
+      "OD_JVP_O_gap_raw_norms": {
+        "spectral_2": "3.204172975312310028e-19",
+        "frobenius": "4.2596074186597993254e-19",
+        "max_abs": "1.5227758462719580751e-19"
+      },
+      "array_contract": {
+        "O": {
+          "shape": [
+            47,
+            2
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "bfc1d2b753381f5dbd682bf1141848a8736c2f2de31c1ca7ff055c65d91e61ea"
+        },
+        "D_col": {
+          "shape": [
+            47,
+            2
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "3225c65b3c5b552104b59219c134fd7305e8412aa39aee84ff7ba57960d0efff"
+        },
+        "D_row": {
+          "shape": [
+            2,
+            47
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "61accb0bd67f885fde209f373e22d818b3314a1bc730910942da1dbdaa80e38c"
+        },
+        "dotO": {
+          "shape": [
+            47,
+            2
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "b75634c38ecc7a47b574e2de76271f8faa539405d80823f864a09d31d2748c7f"
+        }
+      }
+    }
+  },
+  "verdicts": {
+    "192": {
+      "primary_verdict": "PARETO_SUPPORTED_AT_SELECTED_HOLDOUT",
+      "secondary_verdict": "REFINED_PARETO_SUPPORTED_AT_Z075",
+      "model_errors": {
+        "R31AK": {
+          "E_O": 0.009579906030744682,
+          "E_dotO_per_ta": 0.0059819468673832496,
+          "E_Dcol_per_ta": 0.050529592974761145,
+          "E_Drow_per_ta": 0.05457284174805037,
+          "E_K_per_ta": 0.05250496632934204,
+          "candidate_metric_identity_residual_2norm": 4.105534495828866e-17,
+          "E_Dmax_per_ta": 0.05457284174805037
+        },
+        "R31Z": {
+          "E_O": 0.15493322404212043,
+          "E_dotO_per_ta": 0.15682055961392274,
+          "E_Dcol_per_ta": 0.37280840902277684,
+          "E_Drow_per_ta": 0.3880297823244174,
+          "E_K_per_ta": 0.3723284019854093,
+          "candidate_metric_identity_residual_2norm": 6.859479045513906e-17,
+          "E_Dmax_per_ta": 0.3880297823244174
+        },
+        "R31AD": {
+          "E_O": 0.04726608197403247,
+          "E_dotO_per_ta": 0.1241862455278787,
+          "E_Dcol_per_ta": 0.10712579723335088,
+          "E_Drow_per_ta": 0.1423934281278521,
+          "E_K_per_ta": 0.10963738645582422,
+          "candidate_metric_identity_residual_2norm": 4.8087422064849303e-17,
+          "E_Dmax_per_ta": 0.1423934281278521
+        }
+      },
+      "direct_metric_identity_residual_primary_arithmetic": 4.700260169972803e-19,
+      "direct_metric_identity_residual_secondary_arithmetic": 1.15333442561526e-16,
+      "metric_residual_is_source_error_bound": false,
+      "metric_arithmetic": "Unchanged frozen parent complex128 diagnostic comparison; raw order differences and their norms remain complex256/longdouble.",
+      "comparison_tolerance_per_ta": 1e-10,
+      "weighted_score_used": false
+    }
+  },
+  "SOURCE_ACCURACY_BOUND": "SOURCE_ACCURACY_BOUND_UNAVAILABLE",
+  "rigorous": false,
+  "science_producer_commands": 0,
+  "new_science_nodes": 0,
+  "status": "B192_ONLY_REPLAY__FULL_LADDER_NOT_EVALUATED"
+}

@@ -3,31 +3,39 @@ import math
 
 N1,N2,N3=128.0,160.0,192.0
 THRESHOLD=math.log(N2/N1)/math.log(N3/N2)
+A=math.log(N2/N1)
+B=math.log(N3/N2)
 
 def ratio_model(p: float) -> float:
     p=float(p)
     if not math.isfinite(p) or p<=0:
         raise ValueError("p must be positive finite")
-    return ((N2/N1)**p - 1.0)/(1.0-(N2/N3)**p)
+    return math.expm1(A*p)/(-math.expm1(-B*p))
+
+def _log_ratio_model(p):
+    x=A*p
+    numerator_log=x+math.log1p(-math.exp(-x)) if x>50 else math.log(math.expm1(x))
+    return numerator_log-math.log(-math.expm1(-B*p))
 
 def solve_positive_order(observed_ratio: float, *, tol: float=1e-13, max_iter: int=200) -> float:
     rho=float(observed_ratio)
     if not math.isfinite(rho) or rho<=THRESHOLD:
         raise ValueError("no positive-p solution under the conditional power model")
+    if not math.isfinite(tol) or tol<=0 or type(max_iter) is not int or max_iter<=0:
+        raise ValueError("positive finite solver tolerance and iteration budget required")
+    target_log=math.log(rho)
     lo=0.0
     hi=1.0
-    while ratio_model(hi) < rho:
+    while _log_ratio_model(hi) < target_log:
         hi*=2.0
-        if hi>1024:
-            raise RuntimeError("failed to bracket observed order")
     for _ in range(max_iter):
         mid=(lo+hi)/2
         if mid==0:
             mid=math.nextafter(0.0,1.0)
-        val=ratio_model(mid)
-        if abs(val-rho) <= tol*max(1.0,abs(rho)):
+        if hi-lo <= tol*max(mid,math.nextafter(0.0,1.0)):
             return mid
-        if val<rho:
+        below=ratio_model(mid)<rho if A*mid<700 else _log_ratio_model(mid)<target_log
+        if below:
             lo=mid
         else:
             hi=mid
