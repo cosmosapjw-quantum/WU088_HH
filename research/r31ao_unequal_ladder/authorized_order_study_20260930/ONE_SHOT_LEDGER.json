@@ -1,0 +1,148 @@
+{
+  "schema": "WU088_R31AO_ONE_SHOT_ORDER_TRANSACTION_V1",
+  "objective": "Exactly four frozen producer stages at z=0.75, then unchanged comparator, publication and dual backup.",
+  "criteria": [
+    {
+      "id": "locks_and_existing_output_inventory",
+      "status": "claimed",
+      "evidence": "PRE_OUTPUT_VERIFICATION.json"
+    },
+    {
+      "id": "four_producer_stages",
+      "status": "in_progress"
+    },
+    {
+      "id": "frozen_postprocessing",
+      "status": "pending"
+    },
+    {
+      "id": "publication_dual_backup",
+      "status": "pending"
+    }
+  ],
+  "created_utc": "2026-09-30T10:49:45.776052+00:00",
+  "status": "CONSUMED_FOUR_STAGES_COMPLETE",
+  "scope_sha256": "b0abd297847c17741b29a67fae02b9cfd5ddb3fbbe676163867675928cf54a4c",
+  "authorization_consumed": true,
+  "producer_commands_started": 4,
+  "new_order_nodes_completed": 2,
+  "geometries": 1,
+  "stages": [
+    {
+      "stage": "B128_OD",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "completion/mixed_h/od_run.py",
+        "--n",
+        "128",
+        "--z",
+        "0.75",
+        "--workers",
+        "1"
+      ],
+      "cwd": "/root/WU088_R31AL_Z075_RUNTIME_20260930",
+      "started_utc": "2026-09-30T10:50:10.154821+00:00",
+      "pid": 320411,
+      "exit_code": 0,
+      "completed_utc": "2026-09-30T10:51:32.684249+00:00",
+      "wall_seconds": 82.5235938479891,
+      "assembled_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/od/B128_z0.75/ASSEMBLED_OD.npz",
+      "assembled_sha256": "37333301225956e53754caa163416c3cae5a4e8f51cb31b0b3bb77ece9931cc2",
+      "assembled_bytes": 12035,
+      "pair_checkpoint_count": 144
+    },
+    {
+      "stage": "B128_JVP",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "completion/mixed_derivative/run.py",
+        "--n",
+        "128",
+        "--z",
+        "0.75"
+      ],
+      "cwd": "/root/WU088_R31AL_Z075_RUNTIME_20260930",
+      "started_utc": "2026-09-30T10:51:33.778932+00:00",
+      "pid": 320685,
+      "exit_code": 0,
+      "completed_utc": "2026-09-30T10:52:33.164704+00:00",
+      "wall_seconds": 59.37631286898977,
+      "assembled_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/B128_z0.75/ASSEMBLED.npz",
+      "assembled_sha256": "375fa04f213595d6b41bad91dcd5872446d17e4c3a47cbba7b297da3d6132911",
+      "assembled_bytes": 50467,
+      "pair_checkpoint_count": 144
+    },
+    {
+      "stage": "B160_OD",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "completion/mixed_h/od_run.py",
+        "--n",
+        "160",
+        "--z",
+        "0.75",
+        "--workers",
+        "1"
+      ],
+      "cwd": "/root/WU088_R31AL_Z075_RUNTIME_20260930",
+      "started_utc": "2026-09-30T10:52:34.268167+00:00",
+      "pid": 320876,
+      "exit_code": 0,
+      "completed_utc": "2026-09-30T10:54:39.047450+00:00",
+      "wall_seconds": 124.77374093298567,
+      "assembled_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/od/B160_z0.75/ASSEMBLED_OD.npz",
+      "assembled_sha256": "85d93cb9c568c9a1ad66574d79ec500187dd85a7a5288f7db3921a1391bba36c",
+      "assembled_bytes": 12171,
+      "pair_checkpoint_count": 144
+    },
+    {
+      "stage": "B160_JVP",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "completion/mixed_derivative/run.py",
+        "--n",
+        "160",
+        "--z",
+        "0.75"
+      ],
+      "cwd": "/root/WU088_R31AL_Z075_RUNTIME_20260930",
+      "started_utc": "2026-09-30T10:54:40.127441+00:00",
+      "pid": 321175,
+      "exit_code": 0,
+      "completed_utc": "2026-09-30T10:56:10.362142+00:00",
+      "wall_seconds": 90.22874027301441,
+      "assembled_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/B160_z0.75/ASSEMBLED.npz",
+      "assembled_sha256": "3c2fd79a75bd4e4886069a8b5fd3dc3ebeb46386e16017c76a9247d0feebd6cb",
+      "assembled_bytes": 50512,
+      "pair_checkpoint_count": 144
+    }
+  ],
+  "environment": {
+    "LOGNAME": "root",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "USER": "root",
+    "LC_CTYPE": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "PATH": "/root/.codex/packages/app-server-daemon/releases/0.159.2-x86_64-unknown-linux-musl/codex-path:/root/.codex/tmp/arg0/codex-arg0I5xulg:/root/.codex/tmp/arg0/codex-arg0KYP9T4:/root/.codex/packages/app-server-daemon/releases/0.159.1-x86_64-unknown-linux-musl/codex-path:/root/.codex/tmp/arg0/codex-arg0kUN1IR:/root/.codex/packages/app-server-daemon/releases/0.159.0-x86_64-unknown-linux-musl/codex-path:/root/.codex/tmp/arg0/codex-arg032ke8g:/root/.codex/packages/app-server-daemon/releases/0.158.0-x86_64-unknown-linux-musl/codex-path:/root/.codex/tmp/arg0/codex-arg0JVt2GO:/root/.codex/packages/app-server-daemon/releases/0.157.1-x86_64-unknown-linux-musl/codex-path:/root/.codex/tmp/arg0/codex-arg0G4P5KZ:/usr/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+  },
+  "wrapper_sha256": "58e46bd0d28211fce2f0527148232ff87c976ba8001bc75b425c7d639a05944a",
+  "pre_output_verification_sha256": "89d30be566624162f1cc8f874f8857d1aaa4073865b8c2614c64158da348589e",
+  "evidence_log": [
+    {
+      "utc": "2026-09-30T10:49:45.776052+00:00",
+      "observation": "Canonical scope and all component hashes equal; no existing target folders/consumed transaction found."
+    }
+  ],
+  "current_stage": "B160_JVP",
+  "first_scientific_output_identity": {
+    "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/od/B128_z0.75/pair_00_00.npz",
+    "sha256": "78e55d5fd57bb7eb1999a238a8bc7acdda28285c53ca3b58c48d3c60867b8196",
+    "bytes": 1636,
+    "stage": "B128_OD",
+    "output_mtime_ns": 1790765412742508126,
+    "observed_utc": "2026-09-30T10:50:12.770490+00:00"
+  },
+  "authorization_consumed_utc": "2026-09-30T10:50:12.774617+00:00",
+  "completed_utc": "2026-09-30T10:56:10.401824+00:00"
+}
