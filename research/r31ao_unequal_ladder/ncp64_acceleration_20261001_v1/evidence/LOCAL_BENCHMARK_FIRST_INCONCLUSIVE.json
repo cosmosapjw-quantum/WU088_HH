@@ -1,0 +1,349 @@
+{
+  "schema": "WU088_LOCAL_INTEGER_CPU_BENCHMARK_V1",
+  "status": "INCONCLUSIVE",
+  "host": {
+    "affinity_os_cpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "cpus": [
+      {
+        "os_cpu": 0,
+        "package": 0,
+        "core": 0,
+        "thread_siblings": [
+          0
+        ],
+        "numa_nodes": [
+          0
+        ]
+      },
+      {
+        "os_cpu": 1,
+        "package": 0,
+        "core": 1,
+        "thread_siblings": [
+          1
+        ],
+        "numa_nodes": [
+          0
+        ]
+      },
+      {
+        "os_cpu": 2,
+        "package": 0,
+        "core": 2,
+        "thread_siblings": [
+          2
+        ],
+        "numa_nodes": [
+          0
+        ]
+      },
+      {
+        "os_cpu": 3,
+        "package": 0,
+        "core": 3,
+        "thread_siblings": [
+          3
+        ],
+        "numa_nodes": [
+          0
+        ]
+      },
+      {
+        "os_cpu": 4,
+        "package": 0,
+        "core": 4,
+        "thread_siblings": [
+          4
+        ],
+        "numa_nodes": [
+          0
+        ]
+      },
+      {
+        "os_cpu": 5,
+        "package": 0,
+        "core": 5,
+        "thread_siblings": [
+          5
+        ],
+        "numa_nodes": [
+          0
+        ]
+      },
+      {
+        "os_cpu": 6,
+        "package": 0,
+        "core": 6,
+        "thread_siblings": [
+          6
+        ],
+        "numa_nodes": [
+          0
+        ]
+      },
+      {
+        "os_cpu": 7,
+        "package": 0,
+        "core": 7,
+        "thread_siblings": [
+          7
+        ],
+        "numa_nodes": [
+          0
+        ]
+      },
+      {
+        "os_cpu": 8,
+        "package": 0,
+        "core": 8,
+        "thread_siblings": [
+          8
+        ],
+        "numa_nodes": [
+          0
+        ]
+      }
+    ],
+    "memory_total_bytes": 10451464192,
+    "memory_available_bytes": 9235484672,
+    "cgroup": {
+      "ancestors": [
+        {
+          "path": "/sys/fs/cgroup",
+          "version": 2,
+          "quota": "8",
+          "memory_limit": 8589934592,
+          "memory_current": 5620297728
+        }
+      ],
+      "errors": [],
+      "scope": "all visible ancestors through each mounted hierarchy root; hidden host namespace ancestors not observable"
+    },
+    "errors": [],
+    "logical_cpu_count": 9,
+    "physical_cores_in_affinity": 9
+  },
+  "benchmark_resource_plan": {
+    "schema": "WU088_NCP64_HOST_PLAN_V1",
+    "status": "PLAN_READY",
+    "blocked_reasons": [],
+    "mode": "PHYSICAL_ONLY",
+    "rank_count": 8,
+    "worker_count": 7,
+    "coordinator_reserved_ranks": 1,
+    "rank1_mode": "sequential coordinator/worker fallback",
+    "rank_os_cpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "cpu_budget": 8,
+    "quota_cpu_equivalent": "8",
+    "job_memory_budget_bytes": 2969636864,
+    "observed_available_memory_bytes": 2969636864,
+    "reserve_bytes": 0,
+    "worker_bytes": 268435456,
+    "coordinator_bytes": 268435456,
+    "threads_per_worker": 1,
+    "calibration_total_ranks": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "precision_policy": "unchanged manifest/native precision at every calibration rank count",
+    "binding_strategy": "OpenMPI unbound local slots, then rank_guard pins exact OS CPU before exec and records readback",
+    "aggregate_memory_enforcement": "sampled RSS watchdog, not a newly created hard cgroup",
+    "performance_claim": null,
+    "host": {
+      "affinity_os_cpus": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "cpus": [
+        {
+          "os_cpu": 0,
+          "package": 0,
+          "core": 0,
+          "thread_siblings": [
+            0
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 1,
+          "package": 0,
+          "core": 1,
+          "thread_siblings": [
+            1
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 2,
+          "package": 0,
+          "core": 2,
+          "thread_siblings": [
+            2
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 3,
+          "package": 0,
+          "core": 3,
+          "thread_siblings": [
+            3
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 4,
+          "package": 0,
+          "core": 4,
+          "thread_siblings": [
+            4
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 5,
+          "package": 0,
+          "core": 5,
+          "thread_siblings": [
+            5
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 6,
+          "package": 0,
+          "core": 6,
+          "thread_siblings": [
+            6
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 7,
+          "package": 0,
+          "core": 7,
+          "thread_siblings": [
+            7
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 8,
+          "package": 0,
+          "core": 8,
+          "thread_siblings": [
+            8
+          ],
+          "numa_nodes": [
+            0
+          ]
+        }
+      ],
+      "memory_total_bytes": 10451464192,
+      "memory_available_bytes": 9235484672,
+      "cgroup": {
+        "ancestors": [
+          {
+            "path": "/sys/fs/cgroup",
+            "version": 2,
+            "quota": "8",
+            "memory_limit": 8589934592,
+            "memory_current": 5620297728
+          }
+        ],
+        "errors": [],
+        "scope": "all visible ancestors through each mounted hierarchy root; hidden host namespace ancestors not observable"
+      },
+      "errors": [],
+      "logical_cpu_count": 9,
+      "physical_cores_in_affinity": 9
+    }
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "runs": [
+    {
+      "repetition": 1,
+      "workers": 1,
+      "wall_seconds": 4.26651466399926,
+      "executor_wall_seconds": 4.198930736998591,
+      "canonical_payload_digest": "65a2dd1e7527e8604554dd669f3efd0dbd5a74f40c87aa32064c33a827dcac63",
+      "complete_task_count": 16
+    },
+    {
+      "repetition": 1,
+      "workers": 2,
+      "wall_seconds": 2.47382176300016,
+      "executor_wall_seconds": 2.401175314000284,
+      "canonical_payload_digest": "65a2dd1e7527e8604554dd669f3efd0dbd5a74f40c87aa32064c33a827dcac63",
+      "complete_task_count": 16
+    },
+    {
+      "repetition": 1,
+      "workers": 4,
+      "wall_seconds": 1.5907900710008107,
+      "executor_wall_seconds": 1.5180860710024717,
+      "canonical_payload_digest": "65a2dd1e7527e8604554dd669f3efd0dbd5a74f40c87aa32064c33a827dcac63",
+      "complete_task_count": 16
+    },
+    {
+      "repetition": 2,
+      "workers": 4,
+      "wall_seconds": 1.5203245330012578,
+      "executor_wall_seconds": 1.4427162519968988,
+      "canonical_payload_digest": "65a2dd1e7527e8604554dd669f3efd0dbd5a74f40c87aa32064c33a827dcac63",
+      "complete_task_count": 16
+    }
+  ],
+  "NCP_measured": false,
+  "MPI_executed": false,
+  "native_cache_executed": false,
+  "actual_HH_runs": 0,
+  "workload": "16 uneven exact integer sum-of-squares subprocess tasks; closed-form expected output hash per task",
+  "timing_scope": "fresh run_local process including worker spawn, hash verification, exact payload collection; fixture creation excluded",
+  "reason": "execution failed: {'local_execution': {'dispatch_order': [1, 9, 2, 10, 3, 11, 4, 12, 5, 13, 6, 14, 7, 15, 0, 8], 'requested_workers': 1, 'task_statuses': ['COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE', 'COMPLETE'], 'timing_includes': 'dispatch, subprocesses, identity verification and collection; excludes fixture planning/build', 'wall_seconds': 4.018075467000017, 'workers': 1}, 'reason': 'PARTIAL_FAILED_OR_STALE_CHECKPOINT', 'status': 'INCONCLUSIVE'}"
+}

@@ -1,0 +1,21 @@
+test_executor (unittest.loader._FailedTest.test_executor) ... ERROR
+
+======================================================================
+ERROR: test_executor (unittest.loader._FailedTest.test_executor)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_executor
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/ncp64_acceleration_20261001_v1/executor/test_executor.py", line 13, in <module>
+    from core import collect, load_manifest, run_task, ContractError
+ModuleNotFoundError: No module named 'core'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+
+EXIT_STATUS=1

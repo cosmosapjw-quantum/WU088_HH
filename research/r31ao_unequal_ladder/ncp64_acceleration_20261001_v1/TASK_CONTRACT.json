@@ -1,0 +1,47 @@
+{
+  "schema": "WU088_NCP64_ACCURACY_PRESERVING_ACCELERATION_V1",
+  "START_HEAD": "65a82bf149ae2de02e929cb7776a67022ef163c0",
+  "START_TREE": "3ece0431b085dab366bd516dfed9f413167eea7e",
+  "request": "Aggressively optimize the selected high-precision workflow for the user's 64-core/128-GB NCP with OpenMPI, Fortran, vectorization and parallel execution without losing accuracy.",
+  "target_hardware": "User-described NCP capacity; actual affinity, physical cores, SMT, NUMA, quota and available memory must be measured on that host.",
+  "implementation_scope": [
+    "per-invocation exact reusable callback subexpressions",
+    "native baseline/cached equality and benchmark fixtures",
+    "OpenMPI mpi_f08 Fortran dynamic job dispatcher and C process bridge",
+    "complete exact-output job collection, identity-bound restart and failure handling",
+    "topology/memory-aware host planning and controlled concurrency",
+    "integer/control-plane vectorization only when compiler evidence supports it",
+    "fresh bounded tests, independent review, same-branch additive publication and dual backup"
+  ],
+  "invariants": [
+    "No precision downgrade, tolerance relaxation, basis change or symmetrization",
+    "No fast-math, reassociated scientific sums or MPI floating reduction",
+    "Preserve original per-term multiplication and summation order",
+    "Retain complete complex argument boxes and per-task error budgets",
+    "Never use scheduling cost estimates as a numerical error bound",
+    "Do not promote candidate code from synthetic tests to scientific certification",
+    "No modification of old scientific sources or archived evidence",
+    "Existing historical checkpoint and backup ACK policy is not bypassed"
+  ],
+  "execution_scope_this_turn": "Synthetic and implementation/performance checks only; no actual HH array decoding, G7 integral/certificate, completed anchor or B192 recomputation.",
+  "acceptance": [
+    "Cache structurally reuses identical operations and has native exact-ball comparison fixture",
+    "1/2/multiple-worker synthetic results have identical canonical scientific payload identities",
+    "Missing, duplicate, failed, timed-out and identity-mismatched tasks cannot yield a complete result",
+    "Resume never silently reuses different input/backend/precision identities",
+    "Rank/worker budgets respect observed CPU and memory constraints",
+    "Fortran/MPI compile or runtime unavailability is explicitly reported, not called PASS",
+    "Performance claims distinguish operation counts, local synthetic wall time and NCP measured speed"
+  ],
+  "native_backend_scope": "Pinned FLINT 3.4.0 source contract; production remains unadmitted until host binary and exactness gates pass.",
+  "scientific_gates": {
+    "R31AK": "FROZEN",
+    "z075": "HOLDOUT_NOT_TRAINING",
+    "B128_B160": "CONSUMED",
+    "B192": "EXISTING_OUTPUT_REUSE_ONLY",
+    "certified_epsilon": null,
+    "certified_eta": null,
+    "rigorous": false,
+    "production_admitted": false
+  }
+}

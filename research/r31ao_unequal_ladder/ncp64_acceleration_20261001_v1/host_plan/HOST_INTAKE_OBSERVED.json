@@ -1,0 +1,168 @@
+{
+  "plan": {
+    "schema": "WU088_NCP64_HOST_PLAN_V1",
+    "status": "BLOCKED",
+    "blocked_reasons": [
+      "MEMORY_RESERVE_LEAVES_NO_RANK"
+    ],
+    "mode": "PHYSICAL_ONLY",
+    "rank_count": 0,
+    "worker_count": 0,
+    "coordinator_reserved_ranks": 0,
+    "rank1_mode": "sequential coordinator/worker fallback",
+    "rank_os_cpus": [],
+    "cpu_budget": 8,
+    "quota_cpu_equivalent": "8",
+    "job_memory_budget_bytes": 0,
+    "observed_available_memory_bytes": 3325947904,
+    "reserve_bytes": 17179869184,
+    "worker_bytes": 1073741824,
+    "coordinator_bytes": 1073741824,
+    "threads_per_worker": 1,
+    "calibration_total_ranks": [],
+    "precision_policy": "unchanged manifest/native precision at every calibration rank count",
+    "binding_strategy": "OpenMPI unbound local slots, then rank_guard pins exact OS CPU before exec and records readback",
+    "aggregate_memory_enforcement": "sampled RSS watchdog, not a newly created hard cgroup",
+    "performance_claim": null,
+    "host": {
+      "affinity_os_cpus": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "cpus": [
+        {
+          "os_cpu": 0,
+          "package": 0,
+          "core": 0,
+          "thread_siblings": [
+            0
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 1,
+          "package": 0,
+          "core": 1,
+          "thread_siblings": [
+            1
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 2,
+          "package": 0,
+          "core": 2,
+          "thread_siblings": [
+            2
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 3,
+          "package": 0,
+          "core": 3,
+          "thread_siblings": [
+            3
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 4,
+          "package": 0,
+          "core": 4,
+          "thread_siblings": [
+            4
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 5,
+          "package": 0,
+          "core": 5,
+          "thread_siblings": [
+            5
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 6,
+          "package": 0,
+          "core": 6,
+          "thread_siblings": [
+            6
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 7,
+          "package": 0,
+          "core": 7,
+          "thread_siblings": [
+            7
+          ],
+          "numa_nodes": [
+            0
+          ]
+        },
+        {
+          "os_cpu": 8,
+          "package": 0,
+          "core": 8,
+          "thread_siblings": [
+            8
+          ],
+          "numa_nodes": [
+            0
+          ]
+        }
+      ],
+      "memory_total_bytes": 10451464192,
+      "memory_available_bytes": 9499860992,
+      "cgroup": {
+        "ancestors": [
+          {
+            "path": "/sys/fs/cgroup",
+            "version": 2,
+            "quota": "8",
+            "memory_limit": 8589934592,
+            "memory_current": 5263986688
+          }
+        ],
+        "errors": [],
+        "scope": "all visible ancestors through each mounted hierarchy root; hidden host namespace ancestors not observable"
+      },
+      "errors": [],
+      "logical_cpu_count": 9,
+      "physical_cores_in_affinity": 9
+    }
+  },
+  "mpi": {
+    "tools": {},
+    "blocked_reasons": [
+      "MISSING_MPIRUN",
+      "MISSING_MPIFORT"
+    ],
+    "version_scope": "OpenMPI 4 or 5; installation/library ABI still requires native build receipt"
+  }
+}

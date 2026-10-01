@@ -1,0 +1,167 @@
+{
+  "actual_HH_runs": 0,
+  "claim_limits": {
+    "memory": "Per-process address-space/CPU/file-size OS limits; process-group RSS sampled, not hard aggregate cgroup cap.",
+    "native_receipt": "Current supplied-receipt byte adapter, not independently witnessed build or provenance admission.",
+    "performance": "No NCP or native acceleration measurement here. Parent owns final controlled benchmark on fresh storage.",
+    "processes": "Trusted backend descendants remain in same process group; deliberate setsid/group escape and supervisor SIGKILL cleanup are not guaranteed.",
+    "scientific_validity": "No scientific acceptance inferred from process exit, opaque payload hash, or synthetic tests.",
+    "storage": "Final readback is point-in-time. Parent observed later stale RUNNING checkpoints in two preliminary benchmark attempts; cause UNRESOLVED, collector refused, no fabricated atomic-write root cause."
+  },
+  "correctness_claims": {
+    "checkpoint_final_readback_required": true,
+    "collector_rechecks_all_identities": true,
+    "completed_task_not_rerun": true,
+    "duplicate_or_omitted_task_refused": true,
+    "native_ld_library_path_explicit_identity_bound": true,
+    "no_floating_mpi_reduction": true,
+    "opaque_payload_bytes": true,
+    "partial_or_stale_checkpoint_not_repaired": true,
+    "task_id_canonical_order": true
+  },
+  "files": {
+    "FINAL_TESTS.log": {
+      "bytes": 2561,
+      "sha256": "5f6aee5c53ccd2cf814cea9c2db51bc4e8254e3d2835a41607b6d81e82dd4e4a"
+    },
+    "GREEN.log": {
+      "bytes": 1746,
+      "sha256": "f3d73a1f511ad27dba66cf1d926ee996e953af569c9573efd97ae56ab16986e8"
+    },
+    "GREEN_ATTEMPT_1.log": {
+      "bytes": 2269,
+      "sha256": "4428955d8ad99e8f1168dd755cfeae1f85899a67e688fa9f8a77cb80243390fe"
+    },
+    "GREEN_ATTEMPT_2.log": {
+      "bytes": 1587,
+      "sha256": "3040e5835361da3e9f2f4164a877887a4dda6087d375450b0ebd9d5df2ef526e"
+    },
+    "NATIVE_FACTORY_GREEN.log": {
+      "bytes": 775,
+      "sha256": "2baed32d5731057982211153cfe6af11cf94309b3bcae6c900c8286c3b2340b6"
+    },
+    "NATIVE_FACTORY_RED.log": {
+      "bytes": 10977,
+      "sha256": "6948790992e35c75bc55688c1213e9f914d29c0052cd4eaf2ecc42ae1f51e6fa"
+    },
+    "READBACK_RED.log": {
+      "bytes": 965,
+      "sha256": "0db20993deb0b0efcbb85bb5cfa3806f01f66248cc5429ef788b7b9ba9dc5c7c"
+    },
+    "README_KO.md": {
+      "bytes": 12299,
+      "sha256": "1dbf820e1b2d152c97dcffc1c32dbb9013c006322d8a3bbc08da7e93145d4805"
+    },
+    "RED.log": {
+      "bytes": 984,
+      "sha256": "16e087856b2e0750bd120a84e3784c594c9e503905e1da56c21eaa0132108e89"
+    },
+    "collect.py": {
+      "bytes": 372,
+      "sha256": "7bcee21202c9c998a7148688199c802c2f7a6f9ca1eb1a3e3bb3e60a7f68616b"
+    },
+    "core.py": {
+      "bytes": 18873,
+      "sha256": "6189affc01ef41feee6f63a8cd608e5687d417d6bc740985ba385286448dc5f1"
+    },
+    "guard.py": {
+      "bytes": 5370,
+      "sha256": "c6d5c96fe7a66b3a160fafdc4a492d3c50dc85dff0cac33ebc24277e417df3f4"
+    },
+    "make_fixture.py": {
+      "bytes": 10944,
+      "sha256": "9b0cfa25d7b320f60f5154a4d777ae10f95a8304546222eac4859391e98e8656"
+    },
+    "prepare.py": {
+      "bytes": 386,
+      "sha256": "34ff7816be3fddcd985feceb786b0d42df57b6c3832bb996e74d535a963d038f"
+    },
+    "run_local.py": {
+      "bytes": 2036,
+      "sha256": "4aaf4160a0170140615f2b3766f623eda644aa0ab440f93da5c7dee4c69b1a03"
+    },
+    "synthetic_backend.py": {
+      "bytes": 1826,
+      "sha256": "8324b42e79546779de82912127379633555486e49061be4daa944fbbc9726158"
+    },
+    "test_executor.py": {
+      "bytes": 9811,
+      "sha256": "a57a757ed2f1f3e880394b0c17bdf94620454ec36e4b1c0535451e1192f6e039"
+    },
+    "test_make_fixture.py": {
+      "bytes": 5966,
+      "sha256": "ca98fbd9d304d983dc9441444a09d4fcbea821b261b7d70c2b236f73ffc56330"
+    },
+    "worker.py": {
+      "bytes": 515,
+      "sha256": "0e007d82894e459615dd09471815cfc8e455559c79fb815ff3ccb5475e5c7e8e"
+    }
+  },
+  "implementation_status": "SCOPED_IMPLEMENTATION_AND_SYNTHETIC_TESTS_COMPLETE",
+  "independent_review": "../review/ owns independent race probe and C bridge / worker / collector integration evidence; no reviewer result authored by executor.",
+  "interfaces": {
+    "collect": [
+      "PYTHON",
+      "collect.py",
+      "--manifest",
+      "ABS"
+    ],
+    "local": [
+      "PYTHON",
+      "run_local.py",
+      "--manifest",
+      "ABS",
+      "--workers",
+      "N"
+    ],
+    "native_factory": [
+      "PYTHON",
+      "make_fixture.py",
+      "--output-manifest",
+      "ABS",
+      "--output-root",
+      "ABS",
+      "--build-ready",
+      "ABS_BUILD_READY",
+      "--backend-library-path",
+      "ABS_PREFIX_LIB"
+    ],
+    "prepare": [
+      "PYTHON",
+      "prepare.py",
+      "--manifest",
+      "ABS"
+    ],
+    "worker": [
+      "PYTHON",
+      "worker.py",
+      "--manifest",
+      "ABS",
+      "--task-index",
+      "N"
+    ]
+  },
+  "native_builds": 0,
+  "native_runs": 0,
+  "schema": "WU088_NCP64_EXECUTOR_RETURN_V1",
+  "scope": "SYNTHETIC_ONLY",
+  "tests": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "-v",
+      "test_executor",
+      "test_make_fixture"
+    ],
+    "cwd": "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/ncp64_acceleration_20261001_v1/executor",
+    "exit_code": 0,
+    "log": "FINAL_TESTS.log",
+    "test_count": 16,
+    "test_kind_counts": {
+      "native_receipt_metadata_only": 4,
+      "real_python_subprocess": 12
+    }
+  }
+}

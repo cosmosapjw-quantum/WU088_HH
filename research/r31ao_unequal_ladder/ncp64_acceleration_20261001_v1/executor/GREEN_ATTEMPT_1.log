@@ -1,0 +1,29 @@
+test_duplicate_task_and_dispatch_and_traversal_refused (test_executor.ExecutorTests.test_duplicate_task_and_dispatch_and_traversal_refused) ... ok
+test_exact_argv_no_shell_expansion (test_executor.ExecutorTests.test_exact_argv_no_shell_expansion) ... ok
+test_manifest_precision_or_inputs_change_refuses_resume (test_executor.ExecutorTests.test_manifest_precision_or_inputs_change_refuses_resume) ... ok
+test_missing_and_tampered_payload_cannot_collect (test_executor.ExecutorTests.test_missing_and_tampered_payload_cannot_collect) ... ok
+test_partial_and_failed_jobs_are_never_completed (test_executor.ExecutorTests.test_partial_and_failed_jobs_are_never_completed) ... ok
+test_resume_does_not_rerun_completed_backend (test_executor.ExecutorTests.test_resume_does_not_rerun_completed_backend) ... ok
+test_scientific_scope_is_not_enabled (test_executor.ExecutorTests.test_scientific_scope_is_not_enabled) ... ok
+test_serial_parallel_canonical_exact_payloads (test_executor.ExecutorTests.test_serial_parallel_canonical_exact_payloads) ... ok
+test_timeout_descendant_and_sampled_rss_are_inconclusive (test_executor.ExecutorTests.test_timeout_descendant_and_sampled_rss_are_inconclusive) ... FAIL
+test_worker_sigterm_cleans_active_child_group (test_executor.ExecutorTests.test_worker_sigterm_cleans_active_child_group) ... ok
+test_wrong_executable_hash_and_partial_checkpoint_refused (test_executor.ExecutorTests.test_wrong_executable_hash_and_partial_checkpoint_refused) ... ok
+
+======================================================================
+FAIL: test_timeout_descendant_and_sampled_rss_are_inconclusive (test_executor.ExecutorTests.test_timeout_descendant_and_sampled_rss_are_inconclusive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/ncp64_acceleration_20261001_v1/executor/test_executor.py", line 144, in test_timeout_descendant_and_sampled_rss_are_inconclusive
+    self.assertEqual(r["status"], "INCONCLUSIVE")
+AssertionError: 'COMPLETE' != 'INCONCLUSIVE'
+- COMPLETE
++ INCONCLUSIVE
+
+
+----------------------------------------------------------------------
+Ran 11 tests in 4.581s
+
+FAILED (failures=1)
+
+EXIT_STATUS=1

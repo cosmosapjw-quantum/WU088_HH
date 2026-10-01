@@ -1,0 +1,37 @@
+{
+  "scope": "bounded independent fix confirmation; synthetic/control execution only",
+  "independent_review_admitted": false,
+  "actual_HH_runs": 0,
+  "native_callback_runs": 0,
+  "MPI_runs": 0,
+  "checks": [
+    {
+      "finding": "NCP-REV-01",
+      "case": "test_worker_spawn.ShimTests.test_successful_leader_with_live_group_is_failure_and_cleaned",
+      "result": "PASS",
+      "evidence": "C shim returned 1106 for successful leader with live same-group child; original test liveness readback used /proc/namespace_pid and needs namespace-aware amendment",
+      "command": "python -B -m unittest test_worker_spawn.ShimTests.test_successful_leader_with_live_group_is_failure_and_cleaned -v",
+      "test_count": 1,
+      "elapsed_seconds_reported_by_unittest": 0.174,
+      "child_liveness_caveat": "Host /proc mounted from ancestor PID namespace; code killpg is namespace-aware, but original test direct /proc/child_pid lookup does not independently prove liveness closure."
+    },
+    {
+      "finding": "NCP-REV-02",
+      "case": "test_host_plan.HostTests.test_fresh_memory_cap_replaces_stale_snapshot",
+      "result": "PASS",
+      "evidence": "same rank count with 128\u219296 GiB observed memory refreshes cap from 112\u219280 GiB"
+    },
+    {
+      "finding": "NCP-REV-03",
+      "case": "test_host_plan.HostTests.test_collector_is_required_for_complete_status",
+      "result": "PASS",
+      "evidence": "Python control doubles: full count EXECUTION_COMPLETE; missing count COLLECTOR_INCONCLUSIVE; not MPI runtime evidence"
+    }
+  ],
+  "sources": {
+    "mpi_fortran/worker_spawn.c": "6d31c42c34e5f2f183188b8d37d5f295880b002349bbaec8698cc4139c596b5f",
+    "mpi_fortran/test_worker_spawn.py": "6675246cb1616f643b307192680081551771ed3e9d18bb607ba9d3e30d6c8091",
+    "host_plan/launcher.py": "97d5741aa652eae4fbb8d19b40180d5e2acf15a6d3d6b8b256d79a09bb037a20",
+    "host_plan/test_host_plan.py": "d299e07db16ce158f34ae5f9185203f1680e0bea67ce60f31b5b323cae2cb00f"
+  }
+}
