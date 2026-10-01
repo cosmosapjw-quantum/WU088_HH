@@ -1,0 +1,54 @@
+{
+  "schema": "WU088_W1_PARALLEL_SCOPE_V1",
+  "base_commit": "957714bff2d6c97cc5b3541baa3f2f83fdfa3182",
+  "branch": "research/r31ao-unequal-order-ladder-20260930",
+  "new_prefix": "research/r31ao_unequal_ladder/w1_parallel_20261002_v1",
+  "original_prompt_sha256": "70071962a6b3dc3cfc0c01034c0d1b6f57711833957510a77b0bb6c4e453969e",
+  "objective": "Reuse certified W1 tile0; implement trusted resumable parallel range-solver host; bounded missing W1 tiles; exact collection only if complete. Publish same branch and dual backup.",
+  "maximum_new_native_tasks": 15,
+  "maximum_concurrency": 4,
+  "task_index": 0,
+  "limits": {
+    "precision_bits": 128,
+    "relative_goal": 128,
+    "radius_exp": -52,
+    "max_evaluations": 200000,
+    "max_integration_calls": 1024,
+    "wall_seconds": 120,
+    "memory_mib": 1024,
+    "queued_panels": 64,
+    "degree_limit": 64
+  },
+  "campaign_policy": "Increasing tile index; stop new dispatch on first refusal, drain in-flight work; no automatic tolerance/precision/cap changes. Reuse immutable successful tile0, never rerun it.",
+  "invariants": [
+    "all ordered signed107 terms",
+    "exact dyadic inputs and windows",
+    "whole complex balls",
+    "existing final radius gates",
+    "no source arithmetic changes",
+    "no automatic endpoint/normalization admission"
+  ],
+  "resources": {
+    "euid": 0,
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "cpu_max": "800000 100000",
+    "memory_max": "8589934592",
+    "subtree_control": "",
+    "ncp_target": false,
+    "mpi_execution_authorized_by_this_manifest": false
+  },
+  "scientific_admission": false,
+  "production_admission": false,
+  "ncp_performance_claim": false,
+  "all_original_stages_complete": false
+}

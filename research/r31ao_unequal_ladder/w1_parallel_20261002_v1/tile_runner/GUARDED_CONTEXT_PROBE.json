@@ -1,0 +1,34 @@
+{
+  "actual_hh_invocations": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "-c",
+    "import importlib.util,json,resource;from pathlib import Path;s=importlib.util.spec_from_file_location('guarded_probe_runner','/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/w1_parallel_20261002_v1/tile_runner/runner.py');r=importlib.util.module_from_spec(s);s.loader.exec_module(r);c=r.context();m=r.contract(c,3);p=r.validated_plan(c,m,1);print(json.dumps({'status':'PINNED_CONTEXT_AND_TILE_PLAN_VERIFIED','plan_sha256':p['plan_sha256'],'actual_hh_invocations':0,'ru_maxrss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}))"
+  ],
+  "elapsed_wall_ns": 465564654,
+  "exit_code": 0,
+  "host_identity": {
+    "build_manifest_sha256": "25b2483f6ed954da15dcb50617cf378ce3e38f107a7bcfde39b978489d5f2c47",
+    "launcher_sha256": "2a8e1d929d9e5a202476421a112d7f36f17be15e9ae70728dd7b6872a3a971f6",
+    "schema": "WU088_PROCESS_HOST_IDENTITY_V1",
+    "source": {
+      "files": {
+        "guarded_exec.c": "c54de28c90cc5801936f99ae7b6e44c47368ad07587cee3108b5079c615b655c",
+        "host.py": "1274f166132e0fed8af61b71db00f1f4bacae2e9fea1b8c97ba33599dd808c5e"
+      },
+      "sha256": "51f7d3db318c7cda878fdcfff3b48afdb07db09a515ab4b6bd01d39ab345cfe8"
+    }
+  },
+  "memory_mib": 1024,
+  "native_execution_started": false,
+  "runner_sha256": "37f2b99abb6d2f6951243c88feccfb16225cc109eb70748221c905a8c8d9fe29",
+  "schema": "WU088_W1_GUARDED_CONTEXT_PROBE_V1",
+  "stderr": "",
+  "stdout": {
+    "actual_hh_invocations": 0,
+    "plan_sha256": "10fbb0ffbcf2a73f82eb9f8bc7add0459258a916c193269a1e00a8ad12f97104",
+    "ru_maxrss_kib": 34224,
+    "status": "PINNED_CONTEXT_AND_TILE_PLAN_VERIFIED"
+  }
+}

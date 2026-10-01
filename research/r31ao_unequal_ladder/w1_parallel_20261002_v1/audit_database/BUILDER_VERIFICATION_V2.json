@@ -1,0 +1,50 @@
+{
+  "schema": "WU088_W1_AUDIT_BUILDER_VERIFICATION_V2",
+  "status": "OWNER_CONTRACT_TESTS_PASSED",
+  "created_utc": "2026-10-01T19:24:43.069918+00:00",
+  "supersedes_source_review": "BUILDER_VERIFICATION.json",
+  "command": [
+    "python",
+    "-B",
+    "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/w1_parallel_20261002_v1/audit_database/test_w1_db.py"
+  ],
+  "exit_code": 0,
+  "tests": 17,
+  "scientific_kernel_invocations": 0,
+  "final_database_built": false,
+  "review_correction": {
+    "risk": "A historical receipt copied into continuation could be misattributed as a fresh invocation; a newly fabricated prior-path receipt could be counted as reused without prior snapshot identity.",
+    "observed_red_command": [
+      "python",
+      "-B",
+      "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/w1_parallel_20261002_v1/audit_database/test_w1_db.py",
+      "DatabaseContracts.test_historical_receipt_copy_is_not_new_execution",
+      "DatabaseContracts.test_reused_receipt_must_be_in_prior_snapshot"
+    ],
+    "observed_red_exit_code": 1,
+    "observed_red_failures": 2,
+    "observed_red_reason": "ValueError not raised in both attribution regressions",
+    "corrected_behavior": "Historical hashes in prior artifacts/prior_artifact_records cannot count as current; reused path/SHA must match a prior continuation artifact."
+  },
+  "actual_prior_read_only_preflight": {
+    "status": "PASS",
+    "sha256": "63347a8f9b4a04577af442280f9d8b630b82c719c4f4a9dee0039dc4351da118",
+    "bytes": 17944576,
+    "table_count": 7,
+    "G0_G9_JSON_SQLite_match": true,
+    "original_stage_artifact_binding": true,
+    "logical_sha256_new_algorithm": "0a0d526a0ba71b1a196a72de24dca6549a0dead32e1d945606b9f28f90184901"
+  },
+  "source_sha256": {
+    "build_w1_db.py": "230d24f35dd7ccb9afd2c4087f80907df3c8c62b6c82a018e8061eaacd1b2734",
+    "schema.sql": "f5bf5315969d832fb014e1327ffbe6cbec81bac84e2c3008035a805db225a07a",
+    "test_w1_db.py": "303ebc3f25c13efd56fc42d92fc29947ab25bffd72b93507b1192bf64fbc8d12",
+    "README.md": "b5f31c225a3e173ff9a178124caa982eaaff8a32bea1639f22a0285c2286034f",
+    "TEST_LOG_V2.txt": "041e22703a700d0b24ad7f6d946582d4cfb094187573f45dcc3c1edff3234e89"
+  },
+  "limitations": [
+    "Synthetic storage tests do not validate HH numerical enclosures.",
+    "Final source snapshot and final DB are pending root readiness.",
+    "Local SQL restore is not a cloud restore."
+  ]
+}
