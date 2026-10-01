@@ -1,0 +1,149 @@
+{
+  "schema": "WU088_FINAL_READ_ONLY_CLAIM_REVIEW_V1",
+  "created_utc": "2026-10-01T14:18:26.651367+00:00",
+  "status": "PASS_RECONCILED_CLAIMS_NO_CONTRADICTION_FOUND",
+  "scope": "Four final root artifacts against seven exact native receipts and existing independent reviews; no new execution/test or full scientific oracle.",
+  "reviewed_root_artifacts": [
+    {
+      "path": "REPORT_KO.md",
+      "bytes": 8565,
+      "sha256": "a2ff9a75df748eb774afb14c4f3580e9d8d8aac0d676e2642fcaaebed85ee229"
+    },
+    {
+      "path": "VERIFICATION.json",
+      "bytes": 2223,
+      "sha256": "abf1d6c31ea3511cb0bb58a20e2536b7bc196ca8da61718312bc5855c96fc60e"
+    },
+    {
+      "path": "STAGE_DELTA.json",
+      "bytes": 29571,
+      "sha256": "260a9171d64b79519f6a7b3570d692ff67a43a757d387a7be7635fb8fb589f09"
+    },
+    {
+      "path": "runtime/EXECUTION_LEDGER.json",
+      "bytes": 16284,
+      "sha256": "285804c1382794a01e129bc90ca48764b016ecd4933ab5e05a8e1303ed06f0b4"
+    }
+  ],
+  "receipt_files": [
+    {
+      "path": "runtime/LOG2_CENTRAL.json",
+      "bytes": 8789,
+      "sha256": "0465d32773a577aa25f6cae067b72b67cf861725fb28e973f6d4acab7000cb4f"
+    },
+    {
+      "path": "runtime/LOG2_W1.json",
+      "bytes": 8859,
+      "sha256": "f807d0e0d4328eac9804223878917a404cdbd43e8524c76434ac3714351b8a2e"
+    },
+    {
+      "path": "runtime/W1_TILED/raw/00.json",
+      "bytes": 8861,
+      "sha256": "44af0d1d08f22dc9609249f2fbd2885099d1d3db51d01f290f244663e89aab36"
+    },
+    {
+      "path": "runtime/DIAGNOSTIC_TILE00.json",
+      "bytes": 15120,
+      "sha256": "ebbd10d32a4df134263b895fe8e86d8f30ac0f5719565333ec96ea3c376da46d"
+    },
+    {
+      "path": "runtime/RANGE_TILE00.json",
+      "bytes": 14587,
+      "sha256": "7cdfa0c798c774cb55bcef91c13a425d21eaa3e3065567280ba551620011a6ca"
+    },
+    {
+      "path": "runtime/RANGE_TILE00_GOAL128.json",
+      "bytes": 14455,
+      "sha256": "c46b5cf0efb9c234eb79785dea71b91732ae46d9f8f9eb6f675365ea58d99a64"
+    },
+    {
+      "path": "runtime/RANGE_TILE00_COMPLETION.json",
+      "bytes": 16793,
+      "sha256": "89cef714e9758932036854d218330c775920d6131114df8a236cf7d171bc5c5e"
+    }
+  ],
+  "computed_counts": {
+    "actual_hh_integral_invocations": 7,
+    "accepted_integral_invocations": 2,
+    "rejected_integral_invocations": 5,
+    "unique_primitive_indices": 1,
+    "accepted_compact_windows": 2,
+    "accepted_full_domain_primitive_records": 0
+  },
+  "primitive_indices": [
+    0
+  ],
+  "accepted_windows": [
+    {
+      "T_t": "2",
+      "T_u": "2",
+      "l_t": "1",
+      "l_u": "1"
+    },
+    {
+      "T_t": "1/2",
+      "T_u": "1/2",
+      "l_t": "1/16",
+      "l_u": "1/16"
+    }
+  ],
+  "old_tiled_runner": {
+    "attempts": 1,
+    "accepted": 0,
+    "new_corrected_standalone_accepted_tiles": 1,
+    "not_merged_into_old_collection": true,
+    "runner_receipt": {
+      "path": "runtime/W1_TILED/RUN_RESULT.json",
+      "bytes": 1296,
+      "sha256": "f4baa40007d51345bf938e3b47884502fa9b0a842b859b34d53def4b5adc67fa"
+    }
+  },
+  "cross_reference_checks": {
+    "references_in_verification_and_stage_delta": 63,
+    "unique_references": 34,
+    "all_byte_hashes_match": true
+  },
+  "independent_review_files": [
+    {
+      "path": "log_review/ACTUAL_INITIAL_REVIEW.json",
+      "bytes": 4447,
+      "sha256": "4861eea83c1d3e75b2d8cb55e1b00e421c2501b276b7bbedf8776d76a0db95a9"
+    },
+    {
+      "path": "log_review/ACTUAL_TILE_REVIEW.json",
+      "bytes": 1481,
+      "sha256": "09586ad66836b02ea5bcd39479a4a416c082794c3ed4ae5a5fc71f85160023f8"
+    },
+    {
+      "path": "log_review/ACTUAL_DIAGNOSTIC_CAUSAL_REVIEW.json",
+      "bytes": 6118,
+      "sha256": "a9a3b96136831e0cdd227e925e551c01261553d077e3fca2c0bbf2b13612cf7a"
+    },
+    {
+      "path": "log_review/ACTUAL_RANGE_PAIR_REVIEW.json",
+      "bytes": 7587,
+      "sha256": "1f77dcadd467cfe329cbc3ea832fb231b6db0fd86e9c0e4578fca0cd49218ecb"
+    },
+    {
+      "path": "log_review/FINAL_RANGE_COMPLETION_REVIEW.json",
+      "bytes": 5725,
+      "sha256": "d1835ea6aa0c6229dc2121e26cba0eb5d7c3b92d1313adcad01323da240e665d"
+    }
+  ],
+  "exact_accepted_radii_recomputed_from_serialized_endpoints": true,
+  "retained_limitations": [
+    "same primitive0; two compact windows, no full W1/W3 enclosure",
+    "no endpoint composition/normalization/final D/epsilon/gap",
+    "old runner accepted0 is unchanged; corrected standalone tile1 not combined",
+    "current MPI guard binds old native driver; actual cgroup/MPI/NCP runs0",
+    "40.148833522s is one workspace timing, not a speedup benchmark",
+    "successful raw stdout unavailable separately; provenance digest and parsed result only",
+    "delivery receipts are detached and not claimed completed by the reviewed source snapshot"
+  ],
+  "findings": [],
+  "source_or_receipt_files_modified": 0,
+  "numerical_runs": 0,
+  "test_reruns": 0,
+  "scientific_admission": false,
+  "production_admission": false
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "WU088_UNIFORM_ENCLOSURE_CORRECTION_EXPERIMENT_V1",
+  "created_utc": "2026-10-01T13:56:50.326Z",
+  "purpose": "Test source-backed correction of finite uniform-enclosure rejection which starved the outer heap of finite panels",
+  "source_policy": "New range_native_driver only, freeze/review before actual execution",
+  "allowed_actual_HH_integral_invocations": 2,
+  "execution_sequence": [
+    {
+      "id": "RANGE_TILE00",
+      "required": true,
+      "plan_path": "runtime/W1_TILED/plans/00.json",
+      "plan_sha256": "d23c8ad9a349a2111579b6f925879565a01d830f6c172b641c4f85a7986c5230",
+      "radius_exp": -52
+    },
+    {
+      "id": "RANGE_CENTRAL",
+      "only_if": "RANGE_TILE00 accepted; source pin unchanged",
+      "physical_window": "[1,2]^2",
+      "radius_exp": -48,
+      "purpose": "Overlap regression with previous accepted CENTRAL intervals, not performance benchmark"
+    }
+  ],
+  "common_limits": {
+    "precision_bits": 128,
+    "relative_goal": 64,
+    "max_evaluations": 20000,
+    "max_integration_calls": 1024,
+    "degree_limit": 64,
+    "queued_panels": 64,
+    "wall_seconds": 30,
+    "memory_mib": 1024
+  },
+  "invariants": [
+    "Frozen107 exact task/input/order and full complex parameter balls unchanged",
+    "Finite FLINT-success uniform inner range enclosures receive distinct ENCLOSURE_AVAILABLE status",
+    "Uniform numerical absolute tolerance2^20 retained; wide valid bound is not a final radius certificate",
+    "Tight-point achieved radius and final achieved component radius checks retained",
+    "No nonfinite/failed FLINT result or resource/domain-contract error admitted",
+    "No full tile campaign authorized by this contract"
+  ],
+  "scientific_admission": false,
+  "production_admission": false
+}

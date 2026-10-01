@@ -1,0 +1,63 @@
+{
+  "schema": "WU088_MPI_HOST_INDEPENDENT_ADMISSION_REVIEW_V1",
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "real_native_preparation_identity_and_empty_output",
+      "status": "PASS"
+    },
+    {
+      "case": "wrong_external_preparation_sha",
+      "status": "PASS",
+      "observed_refusal": "external file identity mismatch: /workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/wide_domain_20261001_v1/mpi_review/contract_run/bundle/PREPARATION.json"
+    },
+    {
+      "case": "resealed_wrong_task_worklist",
+      "status": "PASS",
+      "observed_refusal": "exact worklist required"
+    },
+    {
+      "case": "resealed_arbitrary_bound_worker",
+      "status": "PASS",
+      "observed_refusal": "fixed bound worker differs from immutable generator"
+    },
+    {
+      "case": "stale_claim_prevents_dispatch",
+      "status": "PASS",
+      "observed_refusal": "existing output/claim refused; no automatic reuse"
+    },
+    {
+      "case": "stale_output_prevents_dispatch",
+      "status": "PASS",
+      "observed_refusal": "existing output/claim refused; no automatic reuse"
+    },
+    {
+      "case": "root_refuses_before_plan_or_cgroup_access",
+      "status": "PASS",
+      "observed_refusal": "NONROOT_REQUIRED_NO_BYPASS"
+    },
+    {
+      "case": "ordinary_directory_cannot_impersonate_cgroup2",
+      "status": "PASS",
+      "observed_refusal": "real cgroup v2 filesystem required"
+    },
+    {
+      "case": "review_bundle_restored_after_mutations",
+      "status": "PASS"
+    }
+  ],
+  "case_count": 9,
+  "source_pins": {
+    "test_host.py": "4e4d49f303387938f268446062ebd27e1b33e8a39f0b8341ad3fef43536eb861",
+    "rank_guard.py": "6931e7cbe16dee423e1d6b6e5e21c3b14b1fd3b9f58307b8faf33151df697308",
+    "containment_probe.py": "7af11b01e4e2a82dfa45d30a0f95580b7be2bce895d038c2e2a62b20e9b048c3",
+    "launcher.py": "ebf75828b66f647c8b4405c29c1045137a7efce99d7e4b81e325ed2b55c216a8",
+    "cgroup_guard.py": "e12cbbb73a78e95f8adbf51bd84758abdd1c816bfb1db66acbe64e8449d6cd77"
+  },
+  "real_input_bindings_checked": true,
+  "native_HH_runs": 0,
+  "MPI_runs": 0,
+  "actual_cgroup_execution": false,
+  "root_bypass": false,
+  "scope": "source and real native bundle authority checks; no containment/runtime certification"
+}

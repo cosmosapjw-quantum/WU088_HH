@@ -1,0 +1,78 @@
+{
+  "schema": "WU088_MPI_HOST_INDEPENDENT_ADMISSION_REVIEW_V1",
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "real_native_preparation_identity_and_empty_output",
+      "status": "PASS"
+    },
+    {
+      "case": "wrong_external_preparation_sha",
+      "status": "PASS",
+      "observed_refusal": "external file identity mismatch: /workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/wide_domain_20261001_v1/mpi_review/contract_run_final/bundle/PREPARATION.json"
+    },
+    {
+      "case": "resealed_wrong_task_worklist",
+      "status": "PASS",
+      "observed_refusal": "exact worklist required"
+    },
+    {
+      "case": "resealed_arbitrary_bound_worker",
+      "status": "PASS",
+      "observed_refusal": "fixed bound worker differs from immutable generator"
+    },
+    {
+      "case": "stale_claim_prevents_dispatch",
+      "status": "PASS",
+      "observed_refusal": "existing output/claim refused; no automatic reuse"
+    },
+    {
+      "case": "stale_output_prevents_dispatch",
+      "status": "PASS",
+      "observed_refusal": "existing output/claim refused; no automatic reuse"
+    },
+    {
+      "case": "root_refuses_before_plan_or_cgroup_access",
+      "status": "PASS",
+      "observed_refusal": "NONROOT_REQUIRED_NO_BYPASS"
+    },
+    {
+      "case": "ordinary_directory_cannot_impersonate_cgroup2",
+      "status": "PASS",
+      "observed_refusal": "real cgroup v2 filesystem required"
+    },
+    {
+      "case": "review_bundle_restored_after_mutations",
+      "status": "PASS"
+    },
+    {
+      "case": "valid_2048_mib_preparation_refused_before_mpi_admission",
+      "status": "PASS",
+      "observed_refusal": "native per-process memory cap exceeds fixed 1024 MiB rank reservation"
+    },
+    {
+      "case": "mock_target_ancestor_limits_and_cpuset_bound_rank_admission",
+      "status": "PASS"
+    },
+    {
+      "case": "probe_imports_and_refuses_root_without_creating_output",
+      "status": "PASS",
+      "observed_refusal": "nonroot probe required; no bypass"
+    }
+  ],
+  "case_count": 12,
+  "source_pins": {
+    "test_host.py": "affac68aa9e0a3a729badd337d9e5a5cf8a56fd871d90016dbe72ddf154d403d",
+    "rank_guard.py": "6931e7cbe16dee423e1d6b6e5e21c3b14b1fd3b9f58307b8faf33151df697308",
+    "containment_probe.py": "798881fa4b6543b4ddf7e3008e11a052e47acba0a7d2506ba3a1efda0c99a02c",
+    "launcher.py": "ec58911792d46cd30f40ee2adb13c9a0bcc048cc5785f8c06f8683a8ff910631",
+    "cgroup_guard.py": "e12cbbb73a78e95f8adbf51bd84758abdd1c816bfb1db66acbe64e8449d6cd77"
+  },
+  "real_input_bindings_checked": true,
+  "native_HH_runs": 0,
+  "MPI_runs": 0,
+  "actual_cgroup_execution": false,
+  "root_bypass": false,
+  "mock_kernel_values_used_only_for_target_resource_policy_test": true,
+  "scope": "source and real native bundle authority checks; no containment/runtime certification"
+}
