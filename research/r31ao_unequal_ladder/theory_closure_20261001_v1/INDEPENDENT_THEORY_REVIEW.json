@@ -1,0 +1,160 @@
+{
+  "schema": "WU088_SINGLE_PASS_INDEPENDENT_THEORY_REVIEW_V1",
+  "reviewer": "/root/review_gram",
+  "conclusion": "CONDITIONALLY_ACCEPTED_UNDER_EXPLICIT_PREMISES",
+  "mathematical_defects_found": [
+    {
+      "id": "T5-R01",
+      "severity": "REQUIRED_FIX_TO_FINITE_ACCURACY_ALLOCATION",
+      "status": "CLOSED_AFTER_AUTHOR_FIX_CONFIRMED_BY_DIRECT_PROOF",
+      "location": "T5 explicit accuracy allocation, equation T5.5",
+      "affected_md_sha256": "092a0d7ecac5f55c1c0ede90a7a5584936b911c9aa7a9cc155a28d5949a7ff41",
+      "fixed_md_sha256": "c1c4a372e83ea161065f580f75f20e705780797d0ce59b4a372d1f5c6746992a",
+      "defect": "The original finite width bound substituted true rho<=sqrt(94)r for computed outward rho_bar without controlling its finite rounding slack. Asymptotic rho_bar->0 did not close that finite allocation.",
+      "counterexample": {
+        "synthetic": true,
+        "m": "1",
+        "radius_each_of_94_entries": "1/160",
+        "target_and_centers": "0",
+        "model_center_residual": "2 I_2 embedded in 47x2",
+        "center_norm_width": "0",
+        "rho_squared": "94/25600",
+        "rho_radical_precision": 1,
+        "rho_outward_interval": [
+          "0",
+          "1/2"
+        ],
+        "resulting_error_interval": [
+          "3/2",
+          "5/2"
+        ],
+        "actual_interval_width": "1",
+        "incorrect_claimed_width": "sqrt(94)/80 < 1/8"
+      },
+      "repair": "Explicitly set exact rational rho_bar_C=rho_bar_R=rho_bar_K=10r; replace gap width bound by 2w+40r.",
+      "fix_confirmation": "rho<=sqrt(94)r<=10r and positive r=m/160,w=m/8 give width<=m/2<m. Inspected final fixed MD and checked this derivation without actual numerical execution."
+    }
+  ],
+  "blocking_findings": [],
+  "source_md_identities": [
+    {
+      "path": "T1_COMPLEX_DOMAIN_BOUNDS.md",
+      "sha256": "481da534e4f48fa9b3557b1881cedfdfce85d0b3e73074e08c5111b145b4c17e",
+      "bytes": 16751
+    },
+    {
+      "path": "T2_UNIFORM_INTERIOR_THEOREM.md",
+      "sha256": "bfe3d4f6b7a8890635fd10b85703b3ba83c8ee406c0f75ebbf347294bc697938",
+      "bytes": 18781
+    },
+    {
+      "path": "T4_CONSTRUCTIVE_TARGET_CERTIFICATION.md",
+      "sha256": "5f2999152d6f39272e7661c7654fe6cfd9e349766fe7e7b5f582fe75e697ead6",
+      "bytes": 13980
+    },
+    {
+      "path": "T5_SHARP_RESIDUAL_CERTIFICATE.md",
+      "sha256": "c1c4a372e83ea161065f580f75f20e705780797d0ce59b4a372d1f5c6746992a",
+      "bytes": 13125
+    }
+  ],
+  "author_json_used_as_authority": false,
+  "interface_reference": {
+    "path": "/workspace/scratch/6cf5f59cd2d1/gap_work/backend_reference/doc/source/acb_calc.rst",
+    "sha256": "c57859a8a3b05fd0dc95a4f8a3f2448f04d70e5655a83bf944faab1d6fcde171",
+    "bytes": 17891,
+    "read_sections": "callback order 0/1 and integration accuracy contract"
+  },
+  "proof_checks": [
+    {
+      "theorem": "T1",
+      "status": "CONDITIONALLY_ACCEPTED",
+      "checked": [
+        "A/B reciprocal real margins and sigma bounds",
+        "density cut condition separate from Gaussian positivity",
+        "independent enclosing-set intersection and outward branch margin",
+        "real-domain Gaussian polynomial O/G majorant including pz derivative",
+        "fixed pointwise domination and joint holomorphy",
+        "finite contractions and real-center versus half-tube Cauchy constants"
+      ]
+    },
+    {
+      "theorem": "T2",
+      "status": "CONDITIONALLY_ACCEPTED",
+      "checked": [
+        "holomorphic parameter integration",
+        "completed adaptive partition uniform enclosure",
+        "full-box order 0/1 conditional Petras soundness",
+        "midpoint 1/4 error coefficient and finite dyadic mesh choice",
+        "point computability as separate premise",
+        "complex half-tube center-plus-Lipschitz fallback",
+        "intrinsic parameter-image width obstruction"
+      ]
+    },
+    {
+      "theorem": "T4",
+      "status": "CONDITIONALLY_ACCEPTED",
+      "checked": [
+        "1F1 exact ratio, geometric remainder and terminating cases",
+        "rational expression point evaluator with root/pi/exp constructions",
+        "gamma half-integer recurrence and effective power-tail decay",
+        "disjoint complement without subtracting unrelated upper bounds",
+        "finite target-entry certificate construction",
+        "strict-margin termination versus equality-boundary limitation",
+        "no inference from exact norm to unverified SVD scalar"
+      ]
+    },
+    {
+      "theorem": "T5",
+      "status": "CONDITIONALLY_ACCEPTED",
+      "checked": [
+        "exact Gram spectral norm and radical-width bound at degenerate spectra",
+        "center residual spectral norm plus shrinking Frobenius uncertainty",
+        "asymptotic sharpness versus fixed nonzero source error",
+        "coupled K center cancellation without uncertainty independence",
+        "independently stored model K",
+        "Dmax, direct target gaps and valid raw-perturbation intersection",
+        "final finite accuracy allocation explicitly sets rho_bar=10r and bounds gap width by 2w+40r"
+      ]
+    }
+  ],
+  "adversarial_boundaries_checked": [
+    "Re A>0 with negative-real t does not admit density cut; excluded by T1.",
+    "Point-only H(midpoint) fails H(T) for H(t)=t/3; T2 derivative enclosure repairs it.",
+    "No fixed image-width refinement can remove genuine parameter variation.",
+    "Zero Pochhammer factors use terminating/zero branches before ratio division.",
+    "Repeated or zero singular values do not require a spectral-gap denominator.",
+    "Shrinking target radii do not imply shrinking fixed raw discrepancy.",
+    "Strict decision acceptance is not universally guaranteed at equality."
+  ],
+  "premises_not_reaudited": [
+    "previously accepted source-functional identity",
+    "radial continuation identity",
+    "finite Hermite density identity",
+    "selected exact stored input interpretation"
+  ],
+  "remaining_execution_data_obligations": [
+    "actual stored-byte decoding and historical ABI",
+    "actual source/normalization/order binding",
+    "actual domain margins and coefficient enclosure values",
+    "native evaluator and backend/runtime implementation admission",
+    "practical bounded resource feasibility",
+    "actual epsilon/eta and model-gap values",
+    "frozen machine scalar authority and T3 admission",
+    "independent project scientific decision review"
+  ],
+  "T3_reviewed": false,
+  "reviewer_tests_executed": 0,
+  "native_builds": 0,
+  "actual_HH_runs": 0,
+  "science_commands": 0,
+  "author_document_mutations": 0,
+  "independent_review_admitted": false,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false,
+  "review_passes": 1,
+  "recursive_review_requested": false,
+  "unresolved_mathematical_findings": 0,
+  "fix_confirmations_within_same_review": 1
+}

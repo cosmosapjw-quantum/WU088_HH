@@ -1,0 +1,138 @@
+{
+  "schema": "WU088_THEORY_VERIFICATION_V1",
+  "fresh_synthetic_checks": 44,
+  "checks_by_theorem": [
+    {
+      "id": "T1",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "t1_test_bounds.py"
+      ],
+      "cwd": "theory_checks",
+      "exit_code": 0,
+      "checks": 8,
+      "wall_seconds": 0.047822820000874344,
+      "log": {
+        "path": "evidence/integration/T1.log",
+        "size": 1070,
+        "sha256": "96a39b2510406a04073dd4830c7e16cc67e68503ddfb43177d96b70f7219b231"
+      }
+    },
+    {
+      "id": "T2",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "t2_exact_checks.py"
+      ],
+      "cwd": "theory_checks",
+      "exit_code": 0,
+      "checks": 7,
+      "wall_seconds": 0.021200576997216558,
+      "log": {
+        "path": "evidence/integration/T2.log",
+        "size": 1668,
+        "sha256": "02db4f29712a790d90e3f9118debbf79a7f625c6e33dd8409ebc181748a0ade4"
+      }
+    },
+    {
+      "id": "T3",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "t3_test_predicate.py"
+      ],
+      "cwd": "theory_checks",
+      "exit_code": 0,
+      "checks": 12,
+      "wall_seconds": 0.1460269099989091,
+      "log": {
+        "path": "evidence/integration/T3.log",
+        "size": 111,
+        "sha256": "52371b1acdcc4ddf39c28f63f13aa12a019274e8a6707d3d85ae163550229c8b"
+      }
+    },
+    {
+      "id": "T4",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "t4_constructive_checks.py"
+      ],
+      "cwd": "theory_checks",
+      "exit_code": 0,
+      "checks": 4,
+      "wall_seconds": 0.061922627999592805,
+      "log": {
+        "path": "evidence/integration/T4.log",
+        "size": 642,
+        "sha256": "5e8680a6fcb85fae20b659e62d3422b7b84e181d7c7abc9bcd2fb9bfc493ce9b"
+      }
+    },
+    {
+      "id": "T5",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "t5_test_sharp_residual.py"
+      ],
+      "cwd": "theory_checks",
+      "exit_code": 0,
+      "checks": 13,
+      "wall_seconds": 0.05658520799988764,
+      "log": {
+        "path": "evidence/integration/T5.log",
+        "size": 1497,
+        "sha256": "87cde3728a31dfd9688fc999977c3088092c5d9444f0766f7594a4795f820381"
+      }
+    }
+  ],
+  "proof_authority": "T1–T5 derivations, not sampled tests",
+  "review_receipts": [
+    {
+      "path": "INDEPENDENT_THEORY_REVIEW.json",
+      "size": 6804,
+      "sha256": "2897eaea33fe0b6d56d0c378e837a1d05f41e9c0ffb382e9e1d906bb7e9cfbee"
+    },
+    {
+      "path": "T3_INDEPENDENT_REVIEW.json",
+      "size": 9276,
+      "sha256": "ea3be3c9bf98c5906b03c190f2874df4a0695bbb2cf250750747fcc9be0487ba"
+    }
+  ],
+  "memory_cap_each_MiB": 256,
+  "cpu_cap_each_seconds": 20,
+  "actual_HH_payload_reads": 0,
+  "actual_HH_evaluations": 0,
+  "native_builds": 0,
+  "proofs": [
+    {
+      "path": "T1_COMPLEX_DOMAIN_BOUNDS.md",
+      "size": 16751,
+      "sha256": "481da534e4f48fa9b3557b1881cedfdfce85d0b3e73074e08c5111b145b4c17e"
+    },
+    {
+      "path": "T2_UNIFORM_INTERIOR_THEOREM.md",
+      "size": 18781,
+      "sha256": "bfe3d4f6b7a8890635fd10b85703b3ba83c8ee406c0f75ebbf347294bc697938"
+    },
+    {
+      "path": "T3_FROZEN_PREDICATE_THEOREM.md",
+      "size": 16251,
+      "sha256": "f623a3ce0580505e5a687673d1103582aac4901fb42e87b0b2ba7e7b3e4da0a1"
+    },
+    {
+      "path": "T4_CONSTRUCTIVE_TARGET_CERTIFICATION.md",
+      "size": 13980,
+      "sha256": "5f2999152d6f39272e7661c7654fe6cfd9e349766fe7e7b5f582fe75e697ead6"
+    },
+    {
+      "path": "T5_SHARP_RESIDUAL_CERTIFICATE.md",
+      "size": 13125,
+      "sha256": "c1c4a372e83ea161065f580f75f20e705780797d0ce59b4a372d1f5c6746992a"
+    }
+  ],
+  "scientific_admission": false,
+  "prior_tests_not_aggregated": true
+}

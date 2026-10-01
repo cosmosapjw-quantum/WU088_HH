@@ -1,0 +1,112 @@
+{
+  "schema": "WU088_T2_UNIFORM_INTERIOR_THEOREM_V1",
+  "loop": "THEORY_CLOSURE_20261001_V1",
+  "start_head": "9462e0b6cd4d27d8401b3268e1dffe158ed55120",
+  "status": "CONSTRUCTIVE_MATHEMATICAL_IMPLICATION_PROVED_WITH_ENUMERATED_T1_T4_PREMISES",
+  "proof_document": "T2_UNIFORM_INTERIOR_THEOREM.md",
+  "premises": [
+    {
+      "id": "P1",
+      "claim": "Selected single-valued source f jointly holomorphic on an open neighborhood of exact extended compact product Kt x Ku",
+      "supplier": "T1_COMPLEX_DOMAIN_BOUNDS.md sections4.4,5,6; actual-input binding remains separate"
+    },
+    {
+      "id": "P2",
+      "claim": "Explicit rational Mhat >= sup_K |f| and positive rational Cauchy margins delta_t,delta_u",
+      "supplier": "T1_COMPLEX_DOMAIN_BOUNDS.md sections4.4,5.2,6.1; rational coarsening permitted"
+    },
+    {
+      "id": "P3",
+      "claim": "For every required exact dyadic point and rational eta>0, finite rational complex enclosure with sum of component radii <=eta",
+      "supplier": "Root T4 finite source-function point-evaluation construction; not inferred from holomorphy alone"
+    }
+  ],
+  "theorems": [
+    {
+      "id": "T2.1",
+      "claim": "H(t)=integral f(t,u)du is holomorphic; derivatives pass under finite real u integral; |H|<=(d-c)Mhat",
+      "proof": "Uniform Cauchy formula on compact product and bounded contour/real integral interchange"
+    },
+    {
+      "id": "T2.2",
+      "claim": "Adaptive partitions may depend on full input box and differ by call while preserving uniform inclusion",
+      "proof": "Finite complete coverage, panelwise uniform inclusion, additivity, outward summation"
+    },
+    {
+      "id": "T2.3",
+      "claim": "Nested Petras enclosure is sound conditional on admitted outer implementation and full-box inner contract",
+      "conditional_implementation_premise_explicit": true,
+      "unconditional_library_verification_claimed": false
+    },
+    {
+      "id": "T2.4",
+      "claim": "For every positive rational epsilon, a finite dyadic rectangular midpoint construction with exact rational accounting returns a certified integral enclosure",
+      "proof": "Cauchy derivative constants, integral midpoint distance h^2/4, geometric grid refinement and finite T4 point oracle",
+      "fixed_resource_cap_success_claimed": false
+    }
+  ],
+  "constructive_algorithm": {
+    "Lt": "Mhat/delta_t",
+    "Lu": "Mhat/delta_u",
+    "area": "(b-a)(d-c)",
+    "panel_error": "area_panel*(Lt*h_t/4 + Lu*h_u/4 + eta_panel)",
+    "uniform_error": "area*(Lt*h_t/4 + Lu*h_u/4 + eta)",
+    "mesh": "h_t=(b-a)/2^nt <= epsilon/(area*Lt) when Lt>0; h_u similarly; zero derivative takes n=0",
+    "evaluation_error": "eta=epsilon/(2*area)",
+    "certificate": "Q=sum exact rational panel_area * certified center; |I-Q|<=E<=epsilon",
+    "stored_rectangle": "Q + [-E,E] + i[-E,E]",
+    "radius_convention_warning": "Disk error E and component radii E differ from whole-rectangle norm radius <=2E; downstream budgets must account for their convention",
+    "calls": "2^(nt+nu), finite but not asserted practically bounded"
+  },
+  "uniform_parameter_contract": {
+    "whole_box_required": true,
+    "midpoint_only_allowed": false,
+    "order1": "value enclosure plus holomorphy on neighborhood of complete input box; order1 is zeroth Taylor coefficient, not derivative",
+    "half_tube_Lt": "2*Mhat/delta_t, not Mhat/delta_t at complex tube boundary",
+    "constructive_inner_box_radius": "scalar inner center error + (d-c)*(2*Mhat/delta_t)*rho_T",
+    "intrinsic_range_width_may_remain_positive": true,
+    "requested_tolerance_is_returned_radius": false
+  },
+  "exact_counterexamples": {
+    "integrand": "f(t,u)=t*u^2; u in[0,1]; H(t)=t/3",
+    "midpoint_only": "T=[0,1], returned singleton1/6 excludes H(0)=0 and H(1)=1/3",
+    "width_obstruction": "T=[1,2]+i[-1,1], image[1/3,2/3]+i[-1/3,1/3], minimum component radii1/6,1/3; cap1/10 impossible"
+  },
+  "synthetic_checks": {
+    "path": "theory_checks/t2_CHECKS.json",
+    "count": 7,
+    "polynomial_grids": 12,
+    "exit_status": 0,
+    "native_builds": 0,
+    "actual_HH_runs": 0,
+    "proof_authority": false
+  },
+  "primary_interface_source": {
+    "library": "FLINT3.4.0",
+    "local_path": "gap_work/backend_reference/doc/source/acb_calc.rst",
+    "sha256": "c57859a8a3b05fd0dc95a4f8a3f2448f04d70e5655a83bf944faab1d6fcde171",
+    "archive_sha256": "108ab51a4dd33918ff3308f0c63a63616ae30a2c174d50c9188676e85011346f",
+    "prior_pin_record": "gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/evidence/PETRAS_API_PIN_CHECK.json",
+    "prior_pin_record_sha256": "7daea0a35f99b129fee58b243f5e1e2dc3bd481a3f06a7612a0574d02cca0ba9",
+    "contract_lines": "14-53 and103-169",
+    "documentation_is_binary_proof": false
+  },
+  "remaining_separate_obligations": [
+    "Actual source and input premise binding",
+    "Actual numerical Mhat/delta/radius/work values",
+    "Native or other implementation verification and resource feasibility",
+    "Scientific decision admission"
+  ],
+  "rigorous": false,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "actual_HH_payloads_read": 0,
+  "actual_HH_integrals": 0,
+  "native_builds": 0,
+  "source_hashes": {
+    "T2_UNIFORM_INTERIOR_THEOREM.md": "bfe3d4f6b7a8890635fd10b85703b3ba83c8ee406c0f75ebbf347294bc697938",
+    "theory_checks/t2_exact_checks.py": "5dfb5f688a41cebe7d9ca3f87529a9ff028281b943d298c3c0d4d4d15304cded",
+    "theory_checks/t2_CHECKS.json": "02db4f29712a790d90e3f9118debbf79a7f625c6e33dd8409ebc181748a0ade4",
+    "theory_checks/t2_EXECUTION.json": "9d116de3e0bd9bf32799942a638fa49bd8f6bb7ceda8ad4370a4d60d0ec573fc"
+  }
+}

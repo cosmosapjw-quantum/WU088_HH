@@ -1,0 +1,229 @@
+{
+  "schema": "WU088_T5_SHARP_RESIDUAL_THEOREM_V1",
+  "theorem_status": "PROVED_UNDER_ENUMERATED_PREMISES",
+  "actual_scientific_certificate_status": "NOT_EVALUATED",
+  "canonical_shapes": {
+    "C": [
+      47,
+      2
+    ],
+    "R": [
+      2,
+      47
+    ],
+    "K": [
+      47,
+      2
+    ]
+  },
+  "fixed_target": "Existing exact continuous target on stored Frozen107 represented inputs; no altered source convention",
+  "premises": {
+    "P1": "Same source-bound C*,R*; K*=(C*-R*adjoint)/2",
+    "P2": "Archived raw C0,R0 exact values, identity/ABI/order admitted; raw K exact from raw D",
+    "P3": "Final entry disks provably contain the same continuous target and all assembly/tail/interior/arithmetic error",
+    "P4": "Exact rational 2x2 Gram center calculation with outward radical norm intervals",
+    "P5": "Fixed authenticated models with independently stored K, not reconstructed from model D",
+    "P6": "For convergence only: final disk Frobenius radii, their computed outward upper bounds, and center-norm enclosure widths all tend to zero, with sufficient resources"
+  },
+  "theorems": [
+    {
+      "id": "T5_RECTANGLE",
+      "formula": "r >= sqrt(hx^2+hy^2)",
+      "claim": "Closed complex rectangle contained in centered disk; outward upper sqrt required"
+    },
+    {
+      "id": "T5_GRAM",
+      "formula": "s=sqrt((a+d+sqrt((a-d)^2+4|b|^2))/2)",
+      "claim": "Exact spectral norm of n-by-2 residual or adjoint of 2-by-n residual"
+    },
+    {
+      "id": "T5_RADICAL_WIDTH",
+      "formula": "w_s <= sqrt(2^(-p)/2)+2*2^(-p)",
+      "claim": "Uniform width convergence even at zero/repeated singular values"
+    },
+    {
+      "id": "T5_1",
+      "formula": "e in [max(0,s_minus(raw-c)-rho_upper),s_plus(raw-c)+rho_upper]",
+      "claim": "Asymptotically sharp source spectral residual interval"
+    },
+    {
+      "id": "T5_2",
+      "formula": "width <= w_s+2*rho_upper",
+      "claim": "Endpoints converge to exact fixed raw-to-target spectral discrepancy, which need not be zero"
+    },
+    {
+      "id": "T5_K",
+      "formula": "cK=(cC-cR_adjoint)/2; rK_ij=(rC_ij+rR_ji)/2",
+      "claim": "Direct K residual preserves center cancellation; min with block triangle upper bound is valid"
+    },
+    {
+      "id": "T5_3",
+      "formula": "direct target gap interval=[L_other-U_local,U_other-L_local]",
+      "claim": "Same fixed stored models; Dmax handled by interval max without active-block assumption"
+    },
+    {
+      "id": "T5_4",
+      "formula": "target gap in direct_interval intersect [raw_gap_lo-2epsilon,raw_gap_hi+2epsilon]",
+      "claim": "Intersect, do not add errors or legacy eta/X terms; empty intersection is inconsistency"
+    },
+    {
+      "id": "T5_5",
+      "formula": "Choose exact rational rho_upper=10r; direct_gap_width <= 2w+40r",
+      "claim": "For genuine positive margin m, r<=m/160 and w<=m/8 imply gap width<=m/2<m and finite sufficient real-rule admission"
+    }
+  ],
+  "irreducible_distinctions": [
+    "Target radius convergence does not imply fixed raw source error tends to zero",
+    "Old Frobenius residual bound tends to Frobenius residual, not spectral residual",
+    "Finite mathematical refinement with positive margin does not guarantee completion under fixed caps",
+    "Threshold equality does not imply finite strict acceptance",
+    "Real mathematical comparison does not replace original frozen machine predicate"
+  ],
+  "synthetic_witnesses": {
+    "orthogonal_columns": {
+      "a": "1/1000",
+      "budget": "1/800",
+      "zero_radius_sharp": {
+        "lo": "1/1000",
+        "hi": "1/1000",
+        "endpoints": "EXACT_RATIONAL"
+      },
+      "old_frobenius_squared": "1/500000",
+      "budget_squared": "1/640000",
+      "spectral_pass": true,
+      "frobenius_pass": false
+    },
+    "positive_radius": {
+      "each_of_four_radii": "1/100000",
+      "rho": "1/50000",
+      "sharp": {
+        "lo": "49/50000",
+        "hi": "51/50000",
+        "endpoints": "EXACT_RATIONAL"
+      },
+      "old_frobenius_squared": "5101/2500000000"
+    },
+    "K_cancellation": {
+      "C_raw": "a I2",
+      "R_raw": "a I2",
+      "targets": "zero",
+      "direct_K_upper": "0",
+      "separate_block_upper": "1/1000",
+      "independent_stored_model_K": "2a I2",
+      "true_model_K_error": "1/500"
+    },
+    "direct_gap": {
+      "target": "zero",
+      "raw": "a I2",
+      "local_model": "zero",
+      "other_model": "2a I2",
+      "raw_gap": "0",
+      "raw_tube": [
+        "-1/500",
+        "1/500"
+      ],
+      "direct_target_gap": [
+        "1/500",
+        "1/500"
+      ]
+    }
+  },
+  "checks": {
+    "command": "python theory_checks/t5_test_sharp_residual.py",
+    "tests": 13,
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "red": "theory_checks/t5_RED.log",
+    "green": "theory_checks/t5_GREEN_FINAL.log",
+    "scope": "SYNTHETIC_EXACT_FRACTION_ONLY",
+    "additional_red": "theory_checks/t5_RADIUS_ALLOCATION_RED.log"
+  },
+  "source_pins": [
+    {
+      "path": "../source_functional_review_20260930/SOURCE_FUNCTIONAL_MAP.md",
+      "sha256": "41e74806741ff3202c3e7cfb29600a6b47b4a88f6d85ddd8787bf0b0e12724a9",
+      "size": 9235
+    },
+    {
+      "path": "../source_functional_review_20260930/SOURCE_FUNCTIONAL_MAP.json",
+      "sha256": "a493ba1dd19c13c7b5b819cb5c9a4e6f939791a46b215489f4b1e0a1e6ad6ad1",
+      "size": 39216
+    },
+    {
+      "path": "../endpoint_enclosure_review_20260930/EXACT_INPUT_AND_CALLBACK_BINDING.json",
+      "sha256": "3ca2c676095898cbe30d6fcc388c0e1d644fccd8b235dfe076be8e4001209ed4",
+      "size": 33077
+    },
+    {
+      "path": "../gap_closure_20261001_g0_g6_v1/exact_gram/engine.py",
+      "sha256": "e10f206d63be1a99a441780108619574605014a9b01b3b327e21fecb18c5b9cc",
+      "size": 18326
+    },
+    {
+      "path": "../gap_closure_20261001_g0_g6_v1/exact_gram/README_PROOF.md",
+      "sha256": "db606674c9d1a9682d0cded706f1a9f21746d2c9c67e80a53b92cd7cabc34935",
+      "size": 9675
+    }
+  ],
+  "artifact_pins": [
+    {
+      "path": "T5_SHARP_RESIDUAL_CERTIFICATE.md",
+      "sha256": "c1c4a372e83ea161065f580f75f20e705780797d0ce59b4a372d1f5c6746992a",
+      "size": 13125
+    },
+    {
+      "path": "theory_checks/t5_sharp_residual.py",
+      "sha256": "9c73275afe2dbb30690f4c6106254489a5b6c91e0662419bbbc6f2cccc40d129",
+      "size": 3677
+    },
+    {
+      "path": "theory_checks/t5_test_sharp_residual.py",
+      "sha256": "63011b208e5d26a23b69c56f9b511df1d2279c93b77efa137824498d2cd9b54d",
+      "size": 6362
+    },
+    {
+      "path": "theory_checks/t5_RED.log",
+      "sha256": "eb6c4af7fb4db4c623c9f5c5a654c14d56d4dbe69ec05176a577db2cb2c33edf",
+      "size": 349
+    },
+    {
+      "path": "theory_checks/t5_GREEN.log",
+      "sha256": "dc2caf3d5ec9d73ff6378b1885eaa7989fe33fabd8573475d4baf4a6c5a918b5",
+      "size": 1383
+    },
+    {
+      "path": "theory_checks/t5_RADIUS_ALLOCATION_RED.log",
+      "sha256": "9cc826195c60a4b5a78ff52c0d7a804657bb33520bcbe0e2358575c9b5dc7e80",
+      "size": 2167
+    },
+    {
+      "path": "theory_checks/t5_GREEN_FINAL.log",
+      "sha256": "14057abcc711e51c854af16ca5c1397b61db7df4ecdfa21e60b938ea925c3cff",
+      "size": 1497
+    },
+    {
+      "path": "theory_checks/t5_INDEPENDENT_REVIEW.json",
+      "sha256": "3c2fd0c35bf9e61569d4be940eddf16a359a02b5fd420eb070c29c7d322701ce",
+      "size": 958
+    }
+  ],
+  "prior_implementation_modified": false,
+  "actual_HH_payloads_read": 0,
+  "actual_HH_evaluations": 0,
+  "native_builds": 0,
+  "rigorous": false,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "review_status": "PASS_AFTER_CORRECTION_UNDER_STATED_PREMISES",
+  "review_finding": {
+    "id": "T5-F01",
+    "severity": "MATHEMATICAL_FINITE_ALLOCATION_GAP",
+    "original_issue": "Actual rho<=sqrt(94)r does not bound a computed outward rho_upper by the same quantity; convergence alone does not supply a finite-stage upper bound.",
+    "fix": "Choose exact rational rho_upper=10r; direct gap width<=2w+40r<=m/2<m under unchanged allocation.",
+    "regression": "test_fixed_shape_rational_radius_allocation",
+    "original_review_corrected": true,
+    "final_fix_confirmed": true
+  },
+  "independent_review": "theory_checks/t5_INDEPENDENT_REVIEW.json"
+}
