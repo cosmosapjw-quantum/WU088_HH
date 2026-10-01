@@ -1,0 +1,66 @@
+{
+  "schema": "WU088_ENDPOINT_TASKS_VERIFICATION_V1",
+  "status": "IMPLEMENTED_SYNTHETIC_VERIFIED_CONDITIONAL_COMPONENT",
+  "tests": 12,
+  "failures": 0,
+  "command": "python -B -m unittest -v test_endpoint_tasks.py",
+  "exit_code": 0,
+  "evidence_contract": "SOURCE_BOUND_ENGINE_OUTPUT_ASSUMED_NOT_INDEPENDENTLY_REPLAYED",
+  "validation_level": "IDENTITY_AND_REPORTED_ARITHMETIC_ONLY",
+  "actual_HH_payload_reads": 0,
+  "actual_HH_endpoint_evaluations": 0,
+  "native_compiles": 0,
+  "scientific_admission": false,
+  "source_semantics": "assembly.cpp primitive_index/canonical_parameters/stored_donor_terms; exact endpoint engine disjoint complement",
+  "fixes": [
+    {
+      "id": "ENDPOINT_WORKER_REQUEST_INDEX",
+      "red": "REQUESTED_INDEX_RED.log",
+      "green": "GREEN_FINAL.log"
+    },
+    {
+      "id": "ENDPOINT_RESOURCE_STATUS",
+      "red": "RESOURCE_STATUS_RED.log",
+      "green": "GREEN_FINAL.log"
+    }
+  ],
+  "limitations": [
+    "Endpoint receipt validation is identity and reported arithmetic only, not independent majorant replay.",
+    "Direct evaluate_task has cooperative caps; run_task adds hard subprocess wall/address-space caps.",
+    "No actual endpoint feasibility or final-D/error/Pareto certificate is established."
+  ],
+  "files": {
+    "planner.py": {
+      "sha256": "fe979174ac77d962dc9877a7ea39c01950421011e495134b52745bba44a5b4e0",
+      "bytes": 22081
+    },
+    "test_endpoint_tasks.py": {
+      "sha256": "cc080092598cd8cb1810c482cef03e30379a37931cd48e79bd2f3823e2f43ef1",
+      "bytes": 8705
+    },
+    "README_KO.md": {
+      "sha256": "ad562806b85156f2679c6ff1d64f47c55d6055f892fa19e71bb3599e80d09c96",
+      "bytes": 7036
+    },
+    "RED.log": {
+      "sha256": "d48539b01c344b446de543f3281ef56f285944cbee81fb38811e0726e6e97182",
+      "bytes": 968
+    },
+    "GREEN_INITIAL.log": {
+      "sha256": "ccc2878e830ed40b3e232d6b7c367a93349f971c4d70ebd5dc69bfba1a657e0f",
+      "bytes": 1543
+    },
+    "RESOURCE_STATUS_RED.log": {
+      "sha256": "ff4998f8d31c54e9be1ff7cac5a73e668294b5ab9375cfe7fd259f17dc797dac",
+      "bytes": 963
+    },
+    "REQUESTED_INDEX_RED.log": {
+      "sha256": "8c30316ce0d40511faaa02d8f7bd55a630c9dae56d78d1dc3391e79d6e352c42",
+      "bytes": 963
+    },
+    "GREEN_FINAL.log": {
+      "sha256": "cc2ce02e59ca4d717e18afc80537e270cff26a43eddd5d88359905dc4dcdeebb",
+      "bytes": 1811
+    }
+  }
+}

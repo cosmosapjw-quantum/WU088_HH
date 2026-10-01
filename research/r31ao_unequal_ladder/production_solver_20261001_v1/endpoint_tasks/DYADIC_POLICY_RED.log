@@ -1,0 +1,47 @@
+test_arithmetic_policy_is_identity_bound (test_endpoint_tasks.EndpointTaskTests.test_arithmetic_policy_is_identity_bound) ... ERROR
+test_complete_index_bijection_and_canonical_parameters (test_endpoint_tasks.EndpointTaskTests.test_complete_index_bijection_and_canonical_parameters) ... ok
+test_complex_absolute_upper_is_outward (test_endpoint_tasks.EndpointTaskTests.test_complex_absolute_upper_is_outward) ... ok
+test_cooperative_resource_refusal_is_not_bound (test_endpoint_tasks.EndpointTaskTests.test_cooperative_resource_refusal_is_not_bound) ... ok
+test_guarded_resource_status_is_preserved (test_endpoint_tasks.EndpointTaskTests.test_guarded_resource_status_is_preserved) ... ok
+test_guarded_run_and_identity_checked_resume (test_endpoint_tasks.EndpointTaskTests.test_guarded_run_and_identity_checked_resume) ... ok
+test_invalid_windows_caps_and_donor (test_endpoint_tasks.EndpointTaskTests.test_invalid_windows_caps_and_donor) ... ok
+test_pinned_scope_cannot_be_self_asserted (test_endpoint_tasks.EndpointTaskTests.test_pinned_scope_cannot_be_self_asserted) ... ok
+test_plan_identity_rejects_parameter_window_and_source_changes (test_endpoint_tasks.EndpointTaskTests.test_plan_identity_rejects_parameter_window_and_source_changes) ... ok
+test_result_identity_incomplete_and_duplicate_coverage (test_endpoint_tasks.EndpointTaskTests.test_result_identity_incomplete_and_duplicate_coverage) ... ok
+test_signed_coefficient_absolute_scaling_and_sum (test_endpoint_tasks.EndpointTaskTests.test_signed_coefficient_absolute_scaling_and_sum) ... ok
+test_source_formula_equivalence_and_disjoint_accounting (test_endpoint_tasks.EndpointTaskTests.test_source_formula_equivalence_and_disjoint_accounting) ... ok
+test_upward_dyadic_domain_and_work_caps (test_endpoint_tasks.EndpointTaskTests.test_upward_dyadic_domain_and_work_caps) ... ERROR
+test_upward_dyadic_independent_inequality_all_scales (test_endpoint_tasks.EndpointTaskTests.test_upward_dyadic_independent_inequality_all_scales) ... ERROR
+test_worker_cannot_substitute_different_task (test_endpoint_tasks.EndpointTaskTests.test_worker_cannot_substitute_different_task) ... ok
+
+======================================================================
+ERROR: test_arithmetic_policy_is_identity_bound (test_endpoint_tasks.EndpointTaskTests.test_arithmetic_policy_is_identity_bound)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/production_solver_20261001_v1/endpoint_tasks/test_endpoint_tasks.py", line 183, in test_arithmetic_policy_is_identity_bound
+    self.assertEqual(self.plan['arithmetic_policy']['version'],'RELATIVE_DYADIC_UPPER_V1')
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'arithmetic_policy'
+
+======================================================================
+ERROR: test_upward_dyadic_domain_and_work_caps (test_endpoint_tasks.EndpointTaskTests.test_upward_dyadic_domain_and_work_caps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/production_solver_20261001_v1/endpoint_tasks/test_endpoint_tasks.py", line 176, in test_upward_dyadic_domain_and_work_caps
+    self.assertEqual(p.upward_dyadic(Q(0),128),0)
+                     ^^^^^^^^^^^^^^^
+AttributeError: module 'planner' has no attribute 'upward_dyadic'
+
+======================================================================
+ERROR: test_upward_dyadic_independent_inequality_all_scales (test_endpoint_tasks.EndpointTaskTests.test_upward_dyadic_independent_inequality_all_scales)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/production_solver_20261001_v1/endpoint_tasks/test_endpoint_tasks.py", line 169, in test_upward_dyadic_independent_inequality_all_scales
+    q=scale*factor;upper=p.upward_dyadic(q,bits)
+                         ^^^^^^^^^^^^^^^
+AttributeError: module 'planner' has no attribute 'upward_dyadic'
+
+----------------------------------------------------------------------
+Ran 15 tests in 2.382s
+
+FAILED (errors=3)

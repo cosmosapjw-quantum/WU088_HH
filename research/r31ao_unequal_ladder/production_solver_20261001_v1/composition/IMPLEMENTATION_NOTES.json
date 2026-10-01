@@ -1,0 +1,28 @@
+{
+  "initial_red": {
+    "test": "test_sharp_identity_counterexample",
+    "exit_code": 1,
+    "error": "ModuleNotFoundError: No module named 'adapter'"
+  },
+  "verification_recorder_attempts": [
+    {
+      "output": "evidence",
+      "tests_passed": 21,
+      "cli_exit_code": 0,
+      "recorder_status": "FAILED_RELATIVE_PATH_MANIFEST",
+      "fix": "resolve output and source paths before relative_to"
+    },
+    {
+      "output": "evidence",
+      "recorder_status": "CREATE_ONLY_EXISTING_PATH_REFUSAL",
+      "observation": "Path was present after prior rename; cause not established."
+    },
+    {
+      "output": "evidence_final",
+      "recorder_status": "PASS",
+      "tests_passed": 21,
+      "cli_exit_code": 0
+    }
+  ],
+  "actual_HH_runs": 0
+}

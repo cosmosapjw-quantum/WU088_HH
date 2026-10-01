@@ -1,0 +1,17 @@
+test_worker_cannot_substitute_different_task (test_endpoint_tasks.EndpointTaskTests.test_worker_cannot_substitute_different_task) ... FAIL
+
+======================================================================
+FAIL: test_worker_cannot_substitute_different_task (test_endpoint_tasks.EndpointTaskTests.test_worker_cannot_substitute_different_task)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/production_solver_20261001_v1/endpoint_tasks/test_endpoint_tasks.py", line 154, in test_worker_cannot_substitute_different_task
+    self.assertEqual(result['status'],'INCONCLUSIVE_EXECUTION')
+AssertionError: 'CONDITIONAL_TAIL_BOUND' != 'INCONCLUSIVE_EXECUTION'
+- CONDITIONAL_TAIL_BOUND
++ INCONCLUSIVE_EXECUTION
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.307s
+
+FAILED (failures=1)
