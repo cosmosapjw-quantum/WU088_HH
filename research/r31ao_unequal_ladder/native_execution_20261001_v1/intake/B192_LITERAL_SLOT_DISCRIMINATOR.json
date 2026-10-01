@@ -1,0 +1,12 @@
+{
+  "schema": "WU088_HISTORICAL_LITERAL_SLOT_DISCRIMINATOR_V1",
+  "member": "independent_JVP_ASSEMBLED.npz::z.npy",
+  "literal_source": "Historical JVP.argv.json --z 0.75; requires serializer-source linkage for authoritative interpretation",
+  "literal_exact_rational": "3/4",
+  "comparison_method": "Byte-pattern equality to independently constructed IEEE/x87 encodings of 3/4; no host float cast",
+  "x87_80_offset0_little_significant_bytes_match": true,
+  "ieee_binary128_little_full_bytes_match": false,
+  "x87_candidate_padding_all_zero": true,
+  "inference": "Conditional on z.npy encoding the locked z=3/4 scalar, this member discriminates x87_80 from IEEE binary128; it does not prove the complex real/imag offsets or NumPy extension custody chain",
+  "historical_layout_admitted": false
+}

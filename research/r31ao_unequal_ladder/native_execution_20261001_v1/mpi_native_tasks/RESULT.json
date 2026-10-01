@@ -1,0 +1,57 @@
+{
+  "schema": "WU088_NATIVE_DISPATCH_ADAPTER_RESULT_V1",
+  "created_utc": "2026-10-01T12:49:16.862787+00:00",
+  "status": "WORKER_CONTRACT_PASS_NATIVE_MPI_GUARD_PENDING",
+  "fixed_api": "NEW/native_driver/driver.run_task",
+  "dispatcher_ABS_WORKER_ABI_compatible": true,
+  "old_synthetic_launcher_compatible": false,
+  "mapping": "ordinal maps to manifest-selected unique native index in0..2591",
+  "trust_anchor": "bound_worker.py literal exact manifest byte SHA and core worker SHA; future launcher must independently pin bound_worker/worklist/manifest",
+  "output_policy": "CREATE_ONLY_REFUSE_EXISTING_OR_CLAIM",
+  "unit_tests": {
+    "passed": 12,
+    "failed": 0,
+    "exit_code": 0,
+    "native_execution_mocked": true,
+    "evidence": "TEST_EXECUTION.json"
+  },
+  "existing_actual_envelope_readback": {
+    "validated": 2,
+    "modes": [
+      "baseline",
+      "cached"
+    ],
+    "full_task_wrapper_command_limit_binding": true,
+    "result_pre_post_hash_unchanged": true,
+    "evidence": "ACTUAL_ENVELOPE_READBACK.json"
+  },
+  "native_runs_by_this_adapter_task": 0,
+  "MPI_executed": false,
+  "root_bypass": false,
+  "oversubscription": false,
+  "source_modifications_outside_mpi_native_tasks": false,
+  "native_host_guard_implemented": false,
+  "independent_review_status": "SOURCE_REVIEW_CLEARED_AFTER_STRICT_LIMIT_FIX",
+  "scientific_admission": false,
+  "production_admission": false,
+  "remaining": [
+    "New native-manifest host admission/descendant guard/collector is required before MPI execution.",
+    "NCP nonroot rank binding/runtime and target-host64core performance remain unverified.",
+    "Existing synthetic launcher cannot consume actual manifest."
+  ],
+  "strict_wrapper_limits": {
+    "red_observed": true,
+    "red_log": "WRAPPER_LIMIT_RED.log",
+    "final_test": "test_bool_cannot_impersonate_unit_resource_cap_in_wrapper",
+    "resolved": true,
+    "scope": "persisted-envelope schema; actual execution limits were already strict"
+  },
+  "source_hashes": {
+    "worker.py": "b4225733844df0971a197172e531c13313b17404c170542d4a6f25db4fa77398",
+    "prepare.py": "e7a1d75af3a3ca3ad017d40009693bdbb95e3f95b60323c6c51356dc8f8330a9",
+    "test_native_tasks.py": "0e0eb64b4164a301f089a4e0506f73a6df0a93a62d4b341d0df6cd22e0848908"
+  },
+  "reviewer_executed_tests": false,
+  "reviewer_executed_native": false,
+  "fixed_driver_scope": "native_execution_20261001_v1/native_driver; refined_native_driver is a separate identity and not automatically admitted"
+}
