@@ -1,0 +1,143 @@
+{
+  "schema": "WU088_R31AO_FROZEN_ADAPTER_INDEPENDENT_ARTIFACT_REVIEW_V1",
+  "status": "ACCEPT_SCOPED_IMPLEMENTATION_AFTER_B14_FIX",
+  "independent_review_admitted": false,
+  "scope": [
+    "NPZ duplicate/path/size/compression/CRC/header boundaries",
+    "Fortran semantic indexing into AssemblyInputs",
+    "rational C++ generation and source pin scope"
+  ],
+  "decoder_kernel_reaudit": false,
+  "native_compile_performed": false,
+  "actual_Frozen107_payload_accessed": false,
+  "findings": [
+    {
+      "id": "B14",
+      "severity": "MEDIUM",
+      "category": "PROVENANCE_PROMOTION",
+      "before_adapter_sha256": "51efc4d02fe55a125aa7c282aa7f70f120dc084ca16e810447e575d88bf1275e",
+      "reproduction": "decode toy under SYNTHETIC_ONLY; replace scope/archive pin and rehash record; generated pinned loader despite toy values",
+      "before_evidence": "pin_scope_spoof_observed.json",
+      "status": "RESOLVED_IMPLEMENTATION_VERIFIED",
+      "fix": "pinned generate_cpp requires source_archive_bytes; canonical archive/member byte pins checked and supplied record must equal fresh decoding",
+      "after_adapter_sha256": "82e6e96157761be7e8423c7908c501bb66086b735374ce0679836ca1b69c7b48",
+      "after_evidence": "pin_scope_spoof_after_fix.json",
+      "actual_pinned_success_path_tested": false
+    }
+  ],
+  "verification": {
+    "adapter_suite": {
+      "tests": 16,
+      "exit_code": 0,
+      "log": "adapter_final.log"
+    },
+    "independent_checks": {
+      "ZIP_refusals": {
+        "same_count_duplicate": "duplicate ZIP member path",
+        "same_count_path_traversal": "missing, extra or noncanonical member path",
+        "symlink_entry": "nonregular ZIP entry",
+        "ratio_budget": "compression ratio cap exceeded",
+        "aggregate_size_budget": "uncompressed archive budget exceeded",
+        "crc_corruption": "malformed or unsupported NPZ/NPY: Bad CRC-32 for file 'pref.npy'"
+      },
+      "rational_token_refusals_after_rehash": [
+        "1\");system(\"x",
+        "0\n#include <x>",
+        "-0",
+        "01",
+        "1/3",
+        "1/0"
+      ],
+      "Fortran_to_assembly_flat_index_checks": 8,
+      "donor_flat_index_checks": 4,
+      "synthetic_record_flags_false": true,
+      "native_compile_performed": false,
+      "actual_Frozen107_bytes_accessed": false
+    },
+    "independent_log": "independent_final.log",
+    "pin_spoof_after_fix": [
+      {
+        "provided_archive": false,
+        "refused": true,
+        "message": "pinned code generation requires original archive bytes"
+      },
+      {
+        "provided_archive": true,
+        "refused": true,
+        "message": "external archive SHA256 mismatch"
+      }
+    ],
+    "last_changes_reviewed": [
+      "NUL/truncated filename rejection",
+      "CLI bounded read(MAX_ARCHIVE+1)"
+    ],
+    "superseded_intermediate_fix_sha": "b251f8233ed02c7ec5702a9ed80072abf7ce0e69676b08e2a01d973003cfbeb2"
+  },
+  "reviewed_identities": [
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/frozen_input/adapter.py",
+      "bytes": 9801,
+      "sha256": "82e6e96157761be7e8423c7908c501bb66086b735374ce0679836ca1b69c7b48"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/frozen_input/test_adapter.py",
+      "bytes": 6608,
+      "sha256": "f6045dbd1af139c2157056e3103131b1c08b513c603ed22a0dec3ce51fae0279"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/validated_callback/assembly.hpp",
+      "bytes": 2149,
+      "sha256": "fb38af6635f444649aa706f2107b8a4a91d2f18d5ab7477c320384414ac0eede"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/validated_callback/callback.cpp",
+      "bytes": 11653,
+      "sha256": "06dabab65432c868190032726853ab92a0d0d504128500cfb352c2a749258964"
+    }
+  ],
+  "claim_limits": [
+    "record self-digest is not archive derivation provenance",
+    "byte pin is not execution authorization",
+    "actual canonical payload success-path decoding remains unexecuted",
+    "native compiler/backend not invoked",
+    "project-level independent decision review not admitted"
+  ],
+  "execution": {
+    "science_commands": 0,
+    "heavy_commands": 0,
+    "numerical_certificate_runs": 0,
+    "implementation_mutations": 0
+  },
+  "evidence_files": [
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_frozen_adapter/REVIEW.md",
+      "bytes": 3414,
+      "sha256": "085e9ab63f0ba983cd0f2c8c7d6a096c54d9cbc8b6ca8946e728b475fc1fad7f"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_frozen_adapter/adapter_final.log",
+      "bytes": 1981,
+      "sha256": "cd9c72b39c57842a5056bfbe38a040954b5c00b7970e218ed849f02628a52284"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_frozen_adapter/independent_checks.py",
+      "bytes": 3370,
+      "sha256": "9a09f5586e6a9bee733c2eb4db1b167d7bfafc417b44af10a2637d5a066ce0ba"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_frozen_adapter/independent_final.log",
+      "bytes": 756,
+      "sha256": "481f87a939df7273d84e7764c532b272a7f3e70dedb4b400a42d439431fdec99"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_frozen_adapter/pin_scope_spoof_after_fix.json",
+      "bytes": 246,
+      "sha256": "bb454d1f3f0831f1a76b596b959b0a70e003df67a11fc2ed1e30709b92758e88"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_frozen_adapter/pin_scope_spoof_observed.json",
+      "bytes": 270,
+      "sha256": "85ff5dd8b5365f4c8f7eb19a7b6e8c1a55f28abcbeab1aad0033fb0e1978438e"
+    }
+  ]
+}

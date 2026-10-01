@@ -1,0 +1,401 @@
+{
+  "schema": "WU088_R31AO_REPRESENTED_GAP_CONTRACT_V1",
+  "grounded_commit": "393eb882f7fbf160cfb465849d9652c7b026b5be",
+  "status": "IMPLEMENTATION_VERIFIED_SYNTHETIC_ONLY",
+  "scope": "G3 exact represented arrays, outward Gram roots and separately bound scalar predicates",
+  "authority_records": [
+    {
+      "path": "research/r31ao_unequal_ladder/source_functional_review_20260930/DECISION_BOUND_DERIVATION.md",
+      "sha256": "0626be8db80c8d378b1694464596a27d392fd81ecf0df5d76e55818e5e46efc4",
+      "bytes": 6606,
+      "line_span": null
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/source_functional_review_20260930/SOURCE_FUNCTIONAL_MAP.md",
+      "sha256": "41e74806741ff3202c3e7cfb29600a6b47b4a88f6d85ddd8787bf0b0e12724a9",
+      "bytes": 9235,
+      "line_span": null
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/endpoint_enclosure_review_20260930/NUMERICAL_CERTIFICATE_IMPLEMENTATION_PLAN.md",
+      "sha256": "a8a468354c3b9a9e2cf6d4f8939cd40989fb5378df1610a4d6c41d8a0394ed51",
+      "bytes": 16744,
+      "line_span": null
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_preflight_20260930/B192_REPLAY_EXECUTED_COMPARATOR.py",
+      "sha256": "43c3edac4d6f32ecb0ebd68619db76d447d40627610e63ec4000c3d5983732c8",
+      "bytes": 10467,
+      "line_span": [
+        93,
+        111
+      ]
+    },
+    {
+      "path": "research/r31al_z075_gate/refinement_gain.py",
+      "sha256": "a81a386f5aa5138012a26e833d468606a91ce4857dcc94311d878ae7976875c3",
+      "bytes": 2445,
+      "line_span": [
+        39,
+        49
+      ]
+    },
+    {
+      "path": "research/r31al_z075_gate/compare_secondary_refinement.py",
+      "sha256": "f8fb529fe4f2d6413f34372580e69bc4b7919e2a4e7c6ef2320949d7ca9c430f",
+      "bytes": 5324,
+      "line_span": [
+        25,
+        37
+      ]
+    }
+  ],
+  "interfaces": {
+    "complex_exact": "tuple[Fraction,Fraction]",
+    "matrix": "finite nested row sequence",
+    "decoder_adapter": "shape plus values_c_order; no ABI or C/Fortran reinterpretation",
+    "required_HH_shapes": {
+      "D_col": [
+        47,
+        2
+      ],
+      "D_row": [
+        2,
+        47
+      ],
+      "stored_prediction_K": [
+        47,
+        2
+      ]
+    },
+    "raw_K": "(C-R_dagger)/2 exact",
+    "prediction_K": "independent stored field, never reconstructed",
+    "model_names": [
+      "R31AK",
+      "R31Z",
+      "R31AD"
+    ],
+    "PRIMARY": "R31Z error minus R31AK error",
+    "SECONDARY": "R31AD error minus R31AK error",
+    "K_identity_distinction": {
+      "raw_constructed_exact_K": "(exact_lift(C192)-exact_lift(R192).dagger)/2",
+      "model_stored_prediction_K": "independent frozen K field, never reconstructed from model D",
+      "legacy_complex128_constructed_K": "old comparator casts C/R then uses rounded subtraction/division; differences covered by legacy eta, not silently equated"
+    }
+  },
+  "backend": {
+    "route": "EXACT_INTEGER_SQRT_RATIONAL_ENCLOSURE",
+    "third_party_runtime_dependencies": [],
+    "sqrt_proof": "k=isqrt(floor(n*2^(2p)/d)); k/2^p <= sqrt(n/d) < (k+1)/2^p; perfect rational roots exact",
+    "rounding_mode_assumption_for_Gram": null,
+    "flint_or_mpfr_executed": false,
+    "validated_callback_FLINT_pin_changed": false,
+    "alternative_role": "mathematically proved integer backend for square-root-only G3; no substitute callback backend claim"
+  },
+  "direct_route": {
+    "name": "DIRECT_REPRESENTED_GAP_LOWER_BOUND",
+    "authoritative_new_arithmetic_route": true,
+    "formula": "L=g_minus-2*epsilon_metric",
+    "eta_added": false
+  },
+  "legacy_route": {
+    "name": "LEGACY_AUDIT_EQUIVALENT",
+    "formula": "eta=max(abs(ghat-g_minus),abs(ghat-g_plus)); L=ghat-eta-2*epsilon",
+    "ghat_representation_required": "explicit exact decimal or recovered binary64; never conflate",
+    "no_separate_cast_svd_double_count": true,
+    "actual_HH_eta": null
+  },
+  "epsilon": {
+    "source": "proven final continuous target disks versus exact raw entries",
+    "entry_distance": "sqrt(dr^2+di^2) upper plus radius",
+    "block_bound": "sqrt(sum(entry_upper^2)) outward Frobenius >= spectral",
+    "K": "(epsilon_C+epsilon_R)/2",
+    "Dmax": "max(epsilon_C,epsilon_R)",
+    "accounting": "END_TO_END_ONLY",
+    "X0_X8_added": false,
+    "target_provenance_admission_implemented_here": false
+  },
+  "real_sufficient_predicate": {
+    "weak": "both L>=-tol",
+    "strict": "at least one L>tol",
+    "ambiguous": "DECISION_BOUND_UNRESOLVED",
+    "success_label": "CERTIFIED_REAL_PARETO_SUFFICIENT_CONDITION",
+    "full_target_certificate_label_emitted": false,
+    "default_tolerance": "7737125245533627/77371252455336267181195264",
+    "default_tolerance_bits": "3ddb7cdfd9d7bdbb",
+    "separate_mathematical_tolerance": "1/10000000000"
+  },
+  "frozen_machine_predicates": {
+    "rounding": "IEEE binary64 nearest ties-to-even",
+    "PRIMARY": {
+      "weak": "local <= RNE(other+tol)",
+      "strict": "RNE(other-local)>tol",
+      "source_lines": [
+        100,
+        101
+      ]
+    },
+    "SECONDARY": {
+      "weak": "local <= RNE(other+tol)",
+      "strict": "local < RNE(other-tol)",
+      "source_lines": [
+        45,
+        46
+      ]
+    },
+    "auditor": "exact integer IEEE rounding; original comparator/SVD never invoked",
+    "blanket_nextafter_adjustment": false,
+    "historical_rounding_mode_admitted": false,
+    "actual_archived_scalar_bit_trace_audited": false,
+    "actual_scalar_provenance_required": true
+  },
+  "unknown_unknown_candidate": {
+    "id": "B08",
+    "name": "PRIMARY_SECONDARY_BINARY64_PREDICATE_INEQUIVALENCE",
+    "evidence_status": "ESTABLISHED_FROM_PINNED_SOURCE_AND_SYNTHETIC_EXACT_WITNESSES",
+    "resolution": "SEPARATE_PRIMARY_SECONDARY_RNE_SCALAR_AUDIT_IMPLEMENTATION_VERIFIED",
+    "remaining_actual_obligation": "authenticate archived error scalar bits and rounding environment; no actual HH audit performed"
+  },
+  "boundary_witnesses": [
+    {
+      "id": "WEAK_BINARY64_ADD_VS_REAL_GAP",
+      "synthetic": true,
+      "local_K_Dmax_bits": [
+        "3ff000000006df38",
+        "0000000000000000"
+      ],
+      "other_K_Dmax_bits": [
+        "3ff0000000000000",
+        "3ff0000000000000"
+      ],
+      "PRIMARY": {
+        "comparison": "PRIMARY",
+        "frozen_binary64_supported": true,
+        "exact_gap_supported": false,
+        "rounding_changes_result": true,
+        "weak_predicates": [
+          true,
+          true
+        ],
+        "strict_predicates": [
+          false,
+          true
+        ],
+        "other_plus_tol_bits": [
+          "3ff000000006df38",
+          "3ff000000006df38"
+        ],
+        "other_minus_local_bits": [
+          "bddb7ce000000000",
+          "3ff0000000000000"
+        ],
+        "other_minus_tol_bits": [
+          "3feffffffff24190",
+          "3feffffffff24190"
+        ],
+        "tolerance_bits": "3ddb7cdfd9d7bdbb",
+        "rounding_mode": "ROUND_TO_NEAREST_TIES_TO_EVEN",
+        "input_provenance_admitted": false
+      },
+      "SECONDARY": {
+        "comparison": "SECONDARY",
+        "frozen_binary64_supported": true,
+        "exact_gap_supported": false,
+        "rounding_changes_result": true,
+        "weak_predicates": [
+          true,
+          true
+        ],
+        "strict_predicates": [
+          false,
+          true
+        ],
+        "other_plus_tol_bits": [
+          "3ff000000006df38",
+          "3ff000000006df38"
+        ],
+        "other_minus_local_bits": [
+          "bddb7ce000000000",
+          "3ff0000000000000"
+        ],
+        "other_minus_tol_bits": [
+          "3feffffffff24190",
+          "3feffffffff24190"
+        ],
+        "tolerance_bits": "3ddb7cdfd9d7bdbb",
+        "rounding_mode": "ROUND_TO_NEAREST_TIES_TO_EVEN",
+        "input_provenance_admitted": false
+      }
+    },
+    {
+      "id": "PRIMARY_SECONDARY_STRICT_INEQUIVALENCE",
+      "synthetic": true,
+      "local_K_Dmax_bits": [
+        "3feffffffff24190",
+        "0000000000000000"
+      ],
+      "other_K_Dmax_bits": [
+        "3ff0000000000000",
+        "0000000000000000"
+      ],
+      "PRIMARY": {
+        "comparison": "PRIMARY",
+        "frozen_binary64_supported": true,
+        "exact_gap_supported": true,
+        "rounding_changes_result": false,
+        "weak_predicates": [
+          true,
+          true
+        ],
+        "strict_predicates": [
+          true,
+          false
+        ],
+        "other_plus_tol_bits": [
+          "3ff000000006df38",
+          "3ddb7cdfd9d7bdbb"
+        ],
+        "other_minus_local_bits": [
+          "3ddb7ce000000000",
+          "0000000000000000"
+        ],
+        "other_minus_tol_bits": [
+          "3feffffffff24190",
+          "bddb7cdfd9d7bdbb"
+        ],
+        "tolerance_bits": "3ddb7cdfd9d7bdbb",
+        "rounding_mode": "ROUND_TO_NEAREST_TIES_TO_EVEN",
+        "input_provenance_admitted": false
+      },
+      "SECONDARY": {
+        "comparison": "SECONDARY",
+        "frozen_binary64_supported": false,
+        "exact_gap_supported": true,
+        "rounding_changes_result": true,
+        "weak_predicates": [
+          true,
+          true
+        ],
+        "strict_predicates": [
+          false,
+          false
+        ],
+        "other_plus_tol_bits": [
+          "3ff000000006df38",
+          "3ddb7cdfd9d7bdbb"
+        ],
+        "other_minus_local_bits": [
+          "3ddb7ce000000000",
+          "0000000000000000"
+        ],
+        "other_minus_tol_bits": [
+          "3feffffffff24190",
+          "bddb7cdfd9d7bdbb"
+        ],
+        "tolerance_bits": "3ddb7cdfd9d7bdbb",
+        "rounding_mode": "ROUND_TO_NEAREST_TIES_TO_EVEN",
+        "input_provenance_admitted": false
+      }
+    },
+    {
+      "id": "SECONDARY_ONE_ULP_LOWER",
+      "synthetic": true,
+      "local_K_Dmax_bits": [
+        "3feffffffff2418f",
+        "0000000000000000"
+      ],
+      "other_K_Dmax_bits": [
+        "3ff0000000000000",
+        "0000000000000000"
+      ],
+      "PRIMARY": {
+        "comparison": "PRIMARY",
+        "frozen_binary64_supported": true,
+        "exact_gap_supported": true,
+        "rounding_changes_result": false,
+        "weak_predicates": [
+          true,
+          true
+        ],
+        "strict_predicates": [
+          true,
+          false
+        ],
+        "other_plus_tol_bits": [
+          "3ff000000006df38",
+          "3ddb7cdfd9d7bdbb"
+        ],
+        "other_minus_local_bits": [
+          "3ddb7ce200000000",
+          "0000000000000000"
+        ],
+        "other_minus_tol_bits": [
+          "3feffffffff24190",
+          "bddb7cdfd9d7bdbb"
+        ],
+        "tolerance_bits": "3ddb7cdfd9d7bdbb",
+        "rounding_mode": "ROUND_TO_NEAREST_TIES_TO_EVEN",
+        "input_provenance_admitted": false
+      },
+      "SECONDARY": {
+        "comparison": "SECONDARY",
+        "frozen_binary64_supported": true,
+        "exact_gap_supported": true,
+        "rounding_changes_result": false,
+        "weak_predicates": [
+          true,
+          true
+        ],
+        "strict_predicates": [
+          true,
+          false
+        ],
+        "other_plus_tol_bits": [
+          "3ff000000006df38",
+          "3ddb7cdfd9d7bdbb"
+        ],
+        "other_minus_local_bits": [
+          "3ddb7ce200000000",
+          "0000000000000000"
+        ],
+        "other_minus_tol_bits": [
+          "3feffffffff24190",
+          "bddb7cdfd9d7bdbb"
+        ],
+        "tolerance_bits": "3ddb7cdfd9d7bdbb",
+        "rounding_mode": "ROUND_TO_NEAREST_TIES_TO_EVEN",
+        "input_provenance_admitted": false
+      }
+    }
+  ],
+  "limits": {
+    "max_precision": 4096,
+    "max_entries": 1024,
+    "max_integer_bits": 131072,
+    "max_work_bits": 270336,
+    "max_operations": 100000
+  },
+  "failure_classification": {
+    "ContractError": "invalid input/domain/provenance boundary not admitted",
+    "ResourceLimit": "CERTIFICATE_INCONCLUSIVE_RESOURCE_LIMIT; no fallback precision downgrade",
+    "wide_interval": "DECISION_BOUND_UNRESOLVED; no R31AK failure inference"
+  },
+  "science_state": {
+    "actual_HH_matrices_decoded_or_evaluated": false,
+    "old_comparator_runs": 0,
+    "science_producer_commands": 0,
+    "certified_epsilon": null,
+    "certified_eta": null,
+    "rigorous": false,
+    "source_gate": "SOURCE_ACCURACY_BOUND_UNAVAILABLE",
+    "reference_gate": "RIGOROUS_REFERENCE_CERTIFICATION_BLOCKED_BY_MISSING_ERROR_BOUND"
+  },
+  "remaining_obligations": [
+    "Actual pinned B192 and prediction exact decoder intake under explicit authorization",
+    "Actual represented error/gap intervals and optional legacy eta evaluation",
+    "Proven target final D disks and admitted end-to-end epsilon",
+    "Actual scalar-token/binary64 and historical rounding-mode audit",
+    "Integrated provenance/authorization/resource and full decision certificate admission",
+    "Independent project-level scientific decision review"
+  ]
+}

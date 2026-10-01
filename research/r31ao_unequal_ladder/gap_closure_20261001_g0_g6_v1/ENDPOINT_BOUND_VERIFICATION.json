@@ -1,0 +1,199 @@
+{
+  "schema": "WU088_R31AO_G5_ENDPOINT_BOUND_VERIFICATION_V1",
+  "status": "CLOSED_IMPLEMENTATION_VERIFIED_SYNTHETIC_ENDPOINT_EVALUATOR",
+  "generated_utc": "2026-10-01T03:13:27.477528+00:00",
+  "suite": {
+    "command": "python -B -m unittest endpoint_bound.test_endpoint endpoint_bound.test_input_contract -v",
+    "exit_code": 0,
+    "unique_tests": 17,
+    "failures": 0,
+    "wall_seconds": 0.4898767430004227,
+    "independent_decimal_diagnostics": 9,
+    "all_decimal_margins_separated": true
+  },
+  "numerical_backend": "Python stdlib Fraction + isqrt + analytically justified outward transcendental bounds",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "proof_reference": "ENDPOINT_SPLIT_OBJECTIVE.md and G1-02/G1-08/G1-09",
+  "proved_adaptations": [
+    "positive finite Hermite absolute envelope",
+    "upper incomplete gamma from positive halfinteger recurrence",
+    "Gaussian scaled-radial polynomial C_F including pz delta",
+    "independent panel supremum J",
+    "disjoint endpoint complement"
+  ],
+  "tests_authority": "implementation checks; analytic proof remains authority for every returned bound",
+  "oracle": {
+    "libraries": [
+      "decimal",
+      "fractions",
+      "math"
+    ],
+    "precision_digits": 90,
+    "pi_algorithm": "AGM, independent of engine Machin identity",
+    "gamma_algorithm": "erf entire series plus halfinteger recurrence",
+    "integration_algorithm": "composite Simpson 256/512 panels on synthetic finite/transformed intervals",
+    "rigorous_quadrature": false,
+    "does_not_replace_enclosure_proof": true
+  },
+  "history": [
+    {
+      "evidence": "endpoint_bound/evidence/RED.json",
+      "preserved": true,
+      "classification": "PRE_IMPLEMENTATION_RED"
+    },
+    {
+      "evidence": "endpoint_bound/evidence/FIRST_IMPLEMENTATION.json",
+      "preserved": true,
+      "classification": [
+        "TEST_DEFECT_INTERVAL_ENDPOINT_EQUALITY",
+        "ENVIRONMENT_MPMATH_UNAVAILABLE"
+      ],
+      "implementation_math_invalidated": false
+    },
+    {
+      "evidence": "endpoint_bound/evidence/RED_INPUT_GUARDS.json",
+      "preserved": true,
+      "classification": "IMPLEMENTATION_EXACT_INPUT_CONTRACT_GAP",
+      "tests": 5,
+      "failing_subtests": 18,
+      "resolution": "reject float/bool/string Interval endpoints, bool degree/panel/cap and over-limit integers; caps validated before trivial returns"
+    }
+  ],
+  "additional_fix": {
+    "finding": "Generic function unconditionally asserted HH_evaluated=false without input provenance authority",
+    "resolution": "Removed unconditional claim; returns unclassified caller input scope and null actual-evaluation assertion"
+  },
+  "resource_caps": {
+    "precision_bits": [
+      16,
+      1024
+    ],
+    "rational_component_bits": 16384,
+    "hermite_degree": [
+      0,
+      8
+    ],
+    "moment_degree": [
+      0,
+      12
+    ],
+    "half_gamma_twice_shape_max": 41,
+    "interior_panels_max": 128,
+    "exp_terms_max": 4096,
+    "exp_squarings_max": 64,
+    "atan_terms_max": 1024,
+    "os_wall_rss_hard_limit_in_this_module": false
+  },
+  "limitations": [
+    "No actual HH/Frozen107 constants, callback, integrals or arrays evaluated",
+    "No HH endpoint split chosen",
+    "No full D assembly or epsilon acquired",
+    "Outward bounds may be too conservative; actual feasibility unmeasured",
+    "Extremely small positive sqrt input can have zero lower endpoint at chosen absolute precision; reciprocal fails closed",
+    "C_F input to complement must be a proved upper bound supplied by the caller"
+  ],
+  "B02_overall_status": "NOT_EVALUATED_ACTUAL_ENDPOINT_INTERIOR_AND_FINAL_D",
+  "B05_actual_status": "UNMEASURED",
+  "actual_hh_inputs_evaluated": 0,
+  "actual_hh_integrals": 0,
+  "numerical_certificate_runs": 0,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false,
+  "files": [
+    {
+      "path": "endpoint_bound/__init__.py",
+      "bytes": 80,
+      "sha256": "8bd519ea7cacb9672f764b33f9e5764191625a63e9776810c593cfa7943a06d6"
+    },
+    {
+      "path": "endpoint_bound/decimal_oracle.py",
+      "bytes": 3237,
+      "sha256": "872cf62da5e9fb8f23541dabcd8e8bac4fd11559b44853c8d1ef6f2264886a25"
+    },
+    {
+      "path": "endpoint_bound/engine.py",
+      "bytes": 9984,
+      "sha256": "227174bce527bd43a823e5fccab54cdf57f66569fb9dafe3ce920d85640f4537"
+    },
+    {
+      "path": "endpoint_bound/evidence/DECIMAL_ORACLE_DIAGNOSTICS.json",
+      "bytes": 21698,
+      "sha256": "18b3e31f5ca7f3537dd8f634cbfc8f9ba8c4228f11f61278ebc522a3ce4b2e58"
+    },
+    {
+      "path": "endpoint_bound/evidence/FIRST_IMPLEMENTATION.json",
+      "bytes": 66,
+      "sha256": "b02516cb6640f99289264096fa8b1487ba9440a3047c4825c74026d055748534"
+    },
+    {
+      "path": "endpoint_bound/evidence/FIRST_IMPLEMENTATION.stderr",
+      "bytes": 2801,
+      "sha256": "b0e7e6ac571f0624f4f82bafcdc9b43b256df4d74d391088489d43dc4af7165a"
+    },
+    {
+      "path": "endpoint_bound/evidence/FIRST_IMPLEMENTATION.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "endpoint_bound/evidence/GREEN.json",
+      "bytes": 231,
+      "sha256": "64bc6262d30ad62b40697e7ac9da7fe7d5635efe2fb4e48dcb0b58fc780cb540"
+    },
+    {
+      "path": "endpoint_bound/evidence/GREEN.stderr",
+      "bytes": 2150,
+      "sha256": "5647f0cd4e8c0179cc32351e732a7f27edd8dbf20b4bcaa8f9e183ddde81f10c"
+    },
+    {
+      "path": "endpoint_bound/evidence/GREEN.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "endpoint_bound/evidence/RED.json",
+      "bytes": 221,
+      "sha256": "a72e96477b23ecce98f8dcb632882a8397151246fd38858bd2abb4ca76461769"
+    },
+    {
+      "path": "endpoint_bound/evidence/RED.stderr",
+      "bytes": 996,
+      "sha256": "5fd3961c4bc73be3f43299e03ff18f68238a306b0581223b2df0d232b49af24b"
+    },
+    {
+      "path": "endpoint_bound/evidence/RED.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "endpoint_bound/evidence/RED_INPUT_GUARDS.json",
+      "bytes": 279,
+      "sha256": "5d7dd23f5884d3510591646d71404428a72c7488bf9260b8a859d5d52f773314"
+    },
+    {
+      "path": "endpoint_bound/evidence/RED_INPUT_GUARDS.stderr",
+      "bytes": 17379,
+      "sha256": "90b473c6040dbfaa1e56db7e8e4118d409614bc9f50b5aaf3dcd0e4fb7a2dce4"
+    },
+    {
+      "path": "endpoint_bound/evidence/RED_INPUT_GUARDS.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "endpoint_bound/test_endpoint.py",
+      "bytes": 5484,
+      "sha256": "4520a2418a97eb6f5dd61bf5973e58103f21cbe491350480ddcebb26bee4d8de"
+    },
+    {
+      "path": "endpoint_bound/test_input_contract.py",
+      "bytes": 1969,
+      "sha256": "b5eb57aa2d6091b5534dac624b6cc747a6a6d2b79d38dc8bc81e28a808618f44"
+    }
+  ],
+  "objective_document": {
+    "path": "ENDPOINT_SPLIT_OBJECTIVE.md",
+    "sha256": "8d60e5d408cce68015cfb3f84c522a45fdff2be847e9fb3e2665dd9a9ff8dc5c"
+  }
+}

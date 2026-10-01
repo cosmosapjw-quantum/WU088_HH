@@ -1,0 +1,534 @@
+{
+  "schema": "WU088_R31AO_G6_METHOD_COMPARISON_ACTUAL_V1",
+  "scope": "SYNTHETIC_IMPLEMENTATION_PILOT_ONLY",
+  "selected_scientific_architecture": "EXACT_CONTINUOUS_TARGET_ENCLOSURE_PLUS_ARCHIVED_RAW_COMPARISON",
+  "HH_feasibility": "UNMEASURED",
+  "method_comparison_is_synthetic_only": true,
+  "methods": [
+    {
+      "method": "FLINT_3_4_0_ARB_PETRAS",
+      "scientific_role": "PRIMARY_PLANNED",
+      "implementation": "NATIVE_DRAFT_WITH_PINNED_API_AND_STRUCTURAL_CHECKS",
+      "native_build_executed": false,
+      "actual_HH_pilot_executed": false,
+      "measured_cases": [],
+      "feasibility_verdict": "UNMEASURED",
+      "blocking_obligations": [
+        "Host backend/compiler/ABI/binary identity",
+        "Validated HH callback verification and domain authority",
+        "Uniform nested complex box range semantics",
+        "Actual authorized pilot with achieved ball radius and work statistics"
+      ],
+      "source_files": [
+        "interior_pilot/petras_host.hpp",
+        "interior_pilot/petras_host.cpp",
+        "interior_pilot/native_petras_synthetic.cpp"
+      ],
+      "native_synthetic_fixtures_executed": false,
+      "written_host_synthetic_fixture_count": 10,
+      "static_structure_tests": 10,
+      "static_structure_exit_code": 0,
+      "pinned_API_check": "interior_pilot/evidence/PETRAS_API_PIN_CHECK.json",
+      "returned_radius_authority": "Finite component radii compared directly; accepted and finite-but-wide radii serialized with mag_dump_str",
+      "nested_uniformity": "Whole outer Acb box passed to inner; point and uniform radius policies separate; speculative analytic trial refusal distinguished from actual domain/resource failure",
+      "host_guide": "interior_pilot/PETRAS_HOST_README.md"
+    },
+    {
+      "method": "EXACT_RATIONAL_RECTANGLE_RANGE_SUM",
+      "scientific_role": "AUXILIARY_SYNTHETIC_FALLBACK_MECHANISM",
+      "implementation": "IMPLEMENTATION_VERIFIED",
+      "native_build_executed": false,
+      "actual_HH_pilot_executed": false,
+      "measured_cases": [
+        {
+          "name": "toy_real_t_squared_width_1/16",
+          "scope": "SYNTHETIC_ONLY",
+          "caps": {
+            "target_width": "1/16",
+            "max_evaluations": 20000,
+            "max_panels": 2048,
+            "max_wall_seconds": 10.0,
+            "max_memory_bytes": 16777216,
+            "max_rational_bits": 32768,
+            "max_depth": 20,
+            "max_stalled_splits": 3,
+            "require_hard_memory_limit": false
+          },
+          "status": "TARGET_WIDTH_MET",
+          "reason": "ACHIEVED_EXACT_RECTANGLE_WIDTH",
+          "enclosure": {
+            "real": [
+              "4995/16384",
+              "5963/16384"
+            ],
+            "imag": [
+              "0",
+              "0"
+            ],
+            "max_width": "121/2048"
+          },
+          "expected_independent_exact": {
+            "real": [
+              "1/3",
+              "1/3"
+            ],
+            "imag": [
+              "0",
+              "0"
+            ],
+            "max_width": "0"
+          },
+          "contains_expected": true,
+          "metrics": {
+            "evaluations": 31,
+            "subdivisions": 15,
+            "peak_live_panels": 17,
+            "peak_tracked_state_bytes": 61285,
+            "live_panels": 0,
+            "live_tracked_state_bytes": 0,
+            "wall_seconds": 0.007418650999170495,
+            "wall_limit_kind": "COOPERATIVE_CALLBACK_BOUNDARIES",
+            "memory_limit_kind": "TRACKED_STATE_ESTIMATE_NOT_PROCESS_HARD_LIMIT",
+            "python_tracemalloc_peak_bytes": 19335,
+            "tracemalloc_scope": "Python allocation peak during this case; not process RSS or hard memory cap"
+          },
+          "no_live_budget_state_remaining": true
+        },
+        {
+          "name": "toy_real_t_squared_width_1/64",
+          "scope": "SYNTHETIC_ONLY",
+          "caps": {
+            "target_width": "1/64",
+            "max_evaluations": 20000,
+            "max_panels": 2048,
+            "max_wall_seconds": 10.0,
+            "max_memory_bytes": 16777216,
+            "max_rational_bits": 32768,
+            "max_depth": 20,
+            "max_stalled_splits": 3,
+            "require_hard_memory_limit": false
+          },
+          "status": "TARGET_WIDTH_MET",
+          "reason": "ACHIEVED_EXACT_RECTANGLE_WIDTH",
+          "enclosure": {
+            "real": [
+              "170737/524288",
+              "178889/524288"
+            ],
+            "imag": [
+              "0",
+              "0"
+            ],
+            "max_width": "1019/65536"
+          },
+          "expected_independent_exact": {
+            "real": [
+              "1/3",
+              "1/3"
+            ],
+            "imag": [
+              "0",
+              "0"
+            ],
+            "max_width": "0"
+          },
+          "contains_expected": true,
+          "metrics": {
+            "evaluations": 119,
+            "subdivisions": 59,
+            "peak_live_panels": 61,
+            "peak_tracked_state_bytes": 220171,
+            "live_panels": 0,
+            "live_tracked_state_bytes": 0,
+            "wall_seconds": 0.029590064001240535,
+            "wall_limit_kind": "COOPERATIVE_CALLBACK_BOUNDARIES",
+            "memory_limit_kind": "TRACKED_STATE_ESTIMATE_NOT_PROCESS_HARD_LIMIT",
+            "python_tracemalloc_peak_bytes": 59224,
+            "tracemalloc_scope": "Python allocation peak during this case; not process RSS or hard memory cap"
+          },
+          "no_live_budget_state_remaining": true
+        },
+        {
+          "name": "toy_real_t_squared_width_1/256",
+          "scope": "SYNTHETIC_ONLY",
+          "caps": {
+            "target_width": "1/256",
+            "max_evaluations": 20000,
+            "max_panels": 2048,
+            "max_wall_seconds": 10.0,
+            "max_memory_bytes": 16777216,
+            "max_rational_bits": 32768,
+            "max_depth": 20,
+            "max_stalled_splits": 3,
+            "require_hard_memory_limit": false
+          },
+          "status": "TARGET_WIDTH_MET",
+          "reason": "ACHIEVED_EXACT_RECTANGLE_WIDTH",
+          "enclosure": {
+            "real": [
+              "44478301/134217728",
+              "45001825/134217728"
+            ],
+            "imag": [
+              "0",
+              "0"
+            ],
+            "max_width": "130881/33554432"
+          },
+          "expected_independent_exact": {
+            "real": [
+              "1/3",
+              "1/3"
+            ],
+            "imag": [
+              "0",
+              "0"
+            ],
+            "max_width": "0"
+          },
+          "contains_expected": true,
+          "metrics": {
+            "evaluations": 477,
+            "subdivisions": 238,
+            "peak_live_panels": 240,
+            "peak_tracked_state_bytes": 867489,
+            "live_panels": 0,
+            "live_tracked_state_bytes": 0,
+            "wall_seconds": 0.12624590399900626,
+            "wall_limit_kind": "COOPERATIVE_CALLBACK_BOUNDARIES",
+            "memory_limit_kind": "TRACKED_STATE_ESTIMATE_NOT_PROCESS_HARD_LIMIT",
+            "python_tracemalloc_peak_bytes": 237736,
+            "tracemalloc_scope": "Python allocation peak during this case; not process RSS or hard memory cap"
+          },
+          "no_live_budget_state_remaining": true
+        },
+        {
+          "name": "toy_uniform_complex_parameter_box",
+          "scope": "SYNTHETIC_ONLY",
+          "caps": {
+            "target_width": "3/4",
+            "max_evaluations": 20000,
+            "max_panels": 2048,
+            "max_wall_seconds": 10.0,
+            "max_memory_bytes": 16777216,
+            "max_rational_bits": 32768,
+            "max_depth": 20,
+            "max_stalled_splits": 3,
+            "require_hard_memory_limit": false
+          },
+          "status": "TARGET_WIDTH_MET",
+          "reason": "ACHIEVED_EXACT_RECTANGLE_WIDTH",
+          "enclosure": {
+            "real": [
+              "9803/32768",
+              "12271/16384"
+            ],
+            "imag": [
+              "-12271/32768",
+              "12271/32768"
+            ],
+            "max_width": "12271/16384"
+          },
+          "expected_independent_exact": {
+            "real": [
+              "1/3",
+              "2/3"
+            ],
+            "imag": [
+              "-1/3",
+              "1/3"
+            ],
+            "max_width": "2/3"
+          },
+          "contains_expected": true,
+          "metrics": {
+            "evaluations": 27,
+            "subdivisions": 13,
+            "peak_live_panels": 15,
+            "peak_tracked_state_bytes": 54183,
+            "live_panels": 0,
+            "live_tracked_state_bytes": 0,
+            "wall_seconds": 0.007112700999641675,
+            "wall_limit_kind": "COOPERATIVE_CALLBACK_BOUNDARIES",
+            "memory_limit_kind": "TRACKED_STATE_ESTIMATE_NOT_PROCESS_HARD_LIMIT",
+            "python_tracemalloc_peak_bytes": 16568,
+            "tracemalloc_scope": "Python allocation peak during this case; not process RSS or hard memory cap"
+          },
+          "no_live_budget_state_remaining": true
+        },
+        {
+          "name": "toy_nested_uniform_integral",
+          "scope": "SYNTHETIC_ONLY",
+          "caps": {
+            "target_width": "1/16",
+            "max_evaluations": 15000,
+            "max_panels": 1024,
+            "max_wall_seconds": 10.0,
+            "max_memory_bytes": 16777216,
+            "max_rational_bits": 32768,
+            "max_depth": 20,
+            "max_stalled_splits": 3,
+            "require_hard_memory_limit": false
+          },
+          "status": "TARGET_WIDTH_MET",
+          "reason": "ACHIEVED_EXACT_RECTANGLE_WIDTH",
+          "enclosure": {
+            "real": [
+              "148337293/1073741824",
+              "53121871/268435456"
+            ],
+            "imag": [
+              "0",
+              "0"
+            ],
+            "max_width": "64150191/1073741824"
+          },
+          "expected_independent_exact": {
+            "real": [
+              "1/6",
+              "1/6"
+            ],
+            "imag": [
+              "0",
+              "0"
+            ],
+            "max_width": "0"
+          },
+          "contains_expected": true,
+          "metrics": {
+            "evaluations": 2194,
+            "subdivisions": 1090,
+            "peak_live_panels": 135,
+            "peak_tracked_state_bytes": 486364,
+            "live_panels": 0,
+            "live_tracked_state_bytes": 0,
+            "wall_seconds": 0.6100499019994459,
+            "wall_limit_kind": "COOPERATIVE_CALLBACK_BOUNDARIES",
+            "memory_limit_kind": "TRACKED_STATE_ESTIMATE_NOT_PROCESS_HARD_LIMIT",
+            "python_tracemalloc_peak_bytes": 123248,
+            "tracemalloc_scope": "Python allocation peak during this case; not process RSS or hard memory cap"
+          },
+          "no_live_budget_state_remaining": true
+        },
+        {
+          "name": "toy_evaluation_cap",
+          "scope": "SYNTHETIC_ONLY",
+          "caps": {
+            "target_width": "1/1000",
+            "max_evaluations": 1,
+            "max_panels": 2048,
+            "max_wall_seconds": 10.0,
+            "max_memory_bytes": 16777216,
+            "max_rational_bits": 32768,
+            "max_depth": 20,
+            "max_stalled_splits": 3,
+            "require_hard_memory_limit": false
+          },
+          "status": "CERTIFICATE_INCONCLUSIVE_RESOURCE_LIMIT",
+          "reason": "MAX_EVALUATIONS",
+          "enclosure": {
+            "real": [
+              "0",
+              "1"
+            ],
+            "imag": [
+              "0",
+              "0"
+            ],
+            "max_width": "1"
+          },
+          "expected_independent_exact": {
+            "real": [
+              "1/3",
+              "1/3"
+            ],
+            "imag": [
+              "0",
+              "0"
+            ],
+            "max_width": "0"
+          },
+          "contains_expected": true,
+          "metrics": {
+            "evaluations": 1,
+            "subdivisions": 0,
+            "peak_live_panels": 3,
+            "peak_tracked_state_bytes": 7695,
+            "live_panels": 0,
+            "live_tracked_state_bytes": 0,
+            "wall_seconds": 0.0003037070000573294,
+            "wall_limit_kind": "COOPERATIVE_CALLBACK_BOUNDARIES",
+            "memory_limit_kind": "TRACKED_STATE_ESTIMATE_NOT_PROCESS_HARD_LIMIT",
+            "python_tracemalloc_peak_bytes": 3648,
+            "tracemalloc_scope": "Python allocation peak during this case; not process RSS or hard memory cap"
+          },
+          "no_live_budget_state_remaining": true
+        },
+        {
+          "name": "toy_width_floor",
+          "scope": "SYNTHETIC_ONLY",
+          "caps": {
+            "target_width": "1/10",
+            "max_evaluations": 20000,
+            "max_panels": 2048,
+            "max_wall_seconds": 10.0,
+            "max_memory_bytes": 16777216,
+            "max_rational_bits": 32768,
+            "max_depth": 20,
+            "max_stalled_splits": 3,
+            "require_hard_memory_limit": false
+          },
+          "status": "CERTIFICATE_INCONCLUSIVE_WIDTH",
+          "reason": "PARAMETER_IMAGE_OR_RANGE_DEPENDENCY_FLOOR",
+          "enclosure": {
+            "real": [
+              "0",
+              "1"
+            ],
+            "imag": [
+              "0",
+              "0"
+            ],
+            "max_width": "1"
+          },
+          "expected_independent_exact": {
+            "real": [
+              "0",
+              "1"
+            ],
+            "imag": [
+              "0",
+              "0"
+            ],
+            "max_width": "1"
+          },
+          "contains_expected": true,
+          "metrics": {
+            "evaluations": 7,
+            "subdivisions": 3,
+            "peak_live_panels": 5,
+            "peak_tracked_state_bytes": 17999,
+            "live_panels": 0,
+            "live_tracked_state_bytes": 0,
+            "wall_seconds": 0.0007258819987328025,
+            "wall_limit_kind": "COOPERATIVE_CALLBACK_BOUNDARIES",
+            "memory_limit_kind": "TRACKED_STATE_ESTIMATE_NOT_PROCESS_HARD_LIMIT",
+            "python_tracemalloc_peak_bytes": 6176,
+            "tracemalloc_scope": "Python allocation peak during this case; not process RSS or hard memory cap"
+          },
+          "no_live_budget_state_remaining": true
+        },
+        {
+          "name": "toy_domain_failure",
+          "scope": "SYNTHETIC_ONLY",
+          "caps": {
+            "target_width": "1/64",
+            "max_evaluations": 20000,
+            "max_panels": 2048,
+            "max_wall_seconds": 10.0,
+            "max_memory_bytes": 16777216,
+            "max_rational_bits": 32768,
+            "max_depth": 20,
+            "max_stalled_splits": 3,
+            "require_hard_memory_limit": false
+          },
+          "status": "CALLBACK_DOMAIN_FAILURE",
+          "reason": "synthetic domain refusal",
+          "enclosure": null,
+          "expected_independent_exact": null,
+          "contains_expected": null,
+          "metrics": {
+            "evaluations": 1,
+            "subdivisions": 0,
+            "peak_live_panels": 1,
+            "peak_tracked_state_bytes": 2048,
+            "live_panels": 0,
+            "live_tracked_state_bytes": 0,
+            "wall_seconds": 7.660499977646396e-05,
+            "wall_limit_kind": "COOPERATIVE_CALLBACK_BOUNDARIES",
+            "memory_limit_kind": "TRACKED_STATE_ESTIMATE_NOT_PROCESS_HARD_LIMIT",
+            "python_tracemalloc_peak_bytes": 2768,
+            "tracemalloc_scope": "Python allocation peak during this case; not process RSS or hard memory cap"
+          },
+          "no_live_budget_state_remaining": true
+        },
+        {
+          "name": "toy_midpoint_only_refusal",
+          "scope": "SYNTHETIC_ONLY",
+          "caps": {
+            "target_width": "1/64",
+            "max_evaluations": 20000,
+            "max_panels": 2048,
+            "max_wall_seconds": 10.0,
+            "max_memory_bytes": 16777216,
+            "max_rational_bits": 32768,
+            "max_depth": 20,
+            "max_stalled_splits": 3,
+            "require_hard_memory_limit": false
+          },
+          "status": "INVALID_RANGE_CONTRACT",
+          "reason": "whole-panel/whole-parameter uniform range witness required",
+          "enclosure": null,
+          "expected_independent_exact": null,
+          "contains_expected": null,
+          "metrics": {
+            "evaluations": 1,
+            "subdivisions": 0,
+            "peak_live_panels": 1,
+            "peak_tracked_state_bytes": 2048,
+            "live_panels": 0,
+            "live_tracked_state_bytes": 0,
+            "wall_seconds": 9.171799865725916e-05,
+            "wall_limit_kind": "COOPERATIVE_CALLBACK_BOUNDARIES",
+            "memory_limit_kind": "TRACKED_STATE_ESTIMATE_NOT_PROCESS_HARD_LIMIT",
+            "python_tracemalloc_peak_bytes": 3064,
+            "tracemalloc_scope": "Python allocation peak during this case; not process RSS or hard memory cap"
+          },
+          "no_live_budget_state_remaining": true
+        }
+      ],
+      "feasibility_verdict": "SYNTHETIC_TOYS_MEASURED_HH_UNMEASURED",
+      "limitations": [
+        "Full parameter image width is distinct from integration approximation error",
+        "No holomorphy acceleration",
+        "No HH-specific dependency/endpoint measurements",
+        "Wall guard cooperative; state-memory estimate not hard process cap"
+      ]
+    },
+    {
+      "method": "PRODUCT_ELLIPSE_CHEBYSHEV",
+      "scientific_role": "PLANNED_FALLBACK",
+      "implementation": "NOT_IMPLEMENTED_IN_THIS_COMPONENT",
+      "actual_HH_pilot_executed": false,
+      "measured_cases": [],
+      "feasibility_verdict": "UNMEASURED",
+      "blocking_obligations": [
+        "Joint holomorphy and product ellipse",
+        "Certified complex sup M",
+        "Coefficient/tail bounds",
+        "Interpolation/aliasing certificate when coefficients sampled"
+      ]
+    },
+    {
+      "method": "TAYLOR_MODELS",
+      "scientific_role": "CONDITIONAL_FALLBACK",
+      "implementation": "NOT_IMPLEMENTED_IN_THIS_COMPONENT",
+      "actual_HH_pilot_executed": false,
+      "measured_cases": [],
+      "feasibility_verdict": "UNMEASURED",
+      "priority_condition": "Measured dependency/wrapping is primary failure cause"
+    },
+    {
+      "method": "MPFR_MPFI_INTERVAL_CROSSCHECK",
+      "scientific_role": "INDEPENDENT_OPTIONAL_CROSSCHECK",
+      "implementation": "NOT_BUILT_OR_EXECUTED",
+      "actual_HH_pilot_executed": false,
+      "measured_cases": [],
+      "feasibility_verdict": "UNMEASURED"
+    }
+  ],
+  "no_measured_HH_method_ranking_claimed": true,
+  "science_commands": 0,
+  "native_builds": 0,
+  "numerical_certificate_runs": 0
+}

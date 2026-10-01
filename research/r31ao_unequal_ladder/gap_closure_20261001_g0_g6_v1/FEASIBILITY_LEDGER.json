@@ -1,0 +1,135 @@
+{
+  "schema": "WU088_R31AO_G6_FEASIBILITY_LEDGER_V1",
+  "G6_synthetic_status": "IMPLEMENTATION_VERIFIED",
+  "B05_actual_HH_status": "UNMEASURED",
+  "B02_actual_HH_status": "NOT_EVALUATED",
+  "measured_synthetic_case_count": 9,
+  "measurement_verified": true,
+  "unit_tests": {
+    "command": "python -B -m unittest interior_pilot.test_interior -v",
+    "tests": 21,
+    "exit_code": 0,
+    "log": "interior_pilot/evidence/FINAL.log"
+  },
+  "tdd_red": {
+    "tests": 18,
+    "errors": 20,
+    "exit_code": 1,
+    "classification": "EXPECTED_NOT_IMPLEMENTED"
+  },
+  "tdd_first_green": {
+    "tests": 18,
+    "exit_code": 0
+  },
+  "synthetic_pilot": {
+    "command": "python -B -m interior_pilot.run_synthetic_pilot",
+    "exit_code": 0,
+    "artifact": "interior_pilot/evidence/SYNTHETIC_PILOT.json"
+  },
+  "resource_policy": {
+    "evaluation_caps": "ENFORCED_IN_SHARED_NESTED_BUDGET",
+    "live_panel_caps": "ENFORCED_IN_SHARED_NESTED_BUDGET",
+    "subdivision_depth_caps": "ENFORCED",
+    "rational_endpoint_bit_caps": "CHECKED_BEFORE_ADMITTING_RETURNED_STATE; NOT_TRANSIENT_ALLOCATION_HARD_LIMIT",
+    "wall": "COOPERATIVE_BEFORE_AFTER_CALLBACK; CANNOT_INTERRUPT_INFLIGHT_CALLBACK",
+    "memory": "TRACKED_STATE_ESTIMATE; NOT_RSS_HARD_LIMIT",
+    "measurement": "tracemalloc Python peak; no RSS claim"
+  },
+  "open_obligations": [
+    {
+      "id": "G6-HH-01",
+      "status": "BLOCKED_PENDING_BACKEND_CALLBACK_AUTHORITY",
+      "closure": "Pinned FLINT/GMP/MPFR host build, backend ABI/binary hashes, domain/uniform callback verification"
+    },
+    {
+      "id": "G6-HH-02",
+      "status": "NOT_EVALUATED",
+      "closure": "Authorized representative actual HH endpoint/interior/entry enclosure with achieved ball widths and work metrics"
+    },
+    {
+      "id": "G6-HOST-03",
+      "status": "EXTERNAL_SINGLE_PROCESS_GUARD_AVAILABLE_HOST_ADMISSION_PENDING",
+      "closure": "Admit host_guard/run_guarded.py for the actual single-process native binary; aggregate process-tree RSS cap remains outside this guard"
+    },
+    {
+      "id": "G6-NATIVE-04",
+      "status": "NOT_COMPILED_OR_RUNTIME_VERIFIED",
+      "closure": "Verified pinned backend build/link identity plus guarded native synthetic acceptance; only then consider authorized actual HH pilot"
+    }
+  ],
+  "science_commands": 0,
+  "heavy_commands": 0,
+  "native_builds": 0,
+  "numerical_certificate_runs": 0,
+  "actual_HH_callback_evaluations": 0,
+  "raw_HH_array_decodes": 0,
+  "independent_review_admitted": false,
+  "artifact_sha256": {
+    "interior_pilot/PETRAS_HOST_README.md": "b9f7f36638f7ccc4257a1847924184a92c7a912775d4f955e987cd87d15f6987",
+    "interior_pilot/README.md": "7df5a1519a35f8bb719dc8621b68c58874b71a60ce0266b858911a9ad8bbf75e",
+    "interior_pilot/__init__.py": "b9e7b43b5b227c2412a7eea081f707b117a42313c8ff816a355d98b2fa5c308b",
+    "interior_pilot/build_petras_host.sh": "71cfa6bddd092f0e440df6de1a04f2374319f725e471b8aa6556b860f801233c",
+    "interior_pilot/check_pinned_api.py": "e722d4e84ae006b3eeead4db63aeb26453e6ec95f0cf1000424316f91fda234d",
+    "interior_pilot/engine.py": "572e27db59d5c9002d5c30a23f354ec97a7cfac325a5b7e3e9b799d2024bfac6",
+    "interior_pilot/evidence/FINAL.log": "25127f51e853b29da492c3aa4989a865bfa5d8c3b6d6290df8a9ff5a4a7619e1",
+    "interior_pilot/evidence/FINAL_COMMAND.json": "99722657eb990915ebb93e78d6f7d20ce8f0f863ebbd356e9fb9dcf21ef6187f",
+    "interior_pilot/evidence/GREEN.json": "b8eae4112b8dd14fb406fbf69ca595ff3fd20a00c454bc645505b297c55f3d2f",
+    "interior_pilot/evidence/GREEN.log": "7eef2eb7f9f871f7545da120a9f6c3b15f1168a247eec8b839d0dd45fd94c54f",
+    "interior_pilot/evidence/NATIVE_DRAFT_GREEN.log": "61d8b7852c5ae2c598d1cac760cf3ecddb8d5814a6060c585817422e0a04de7b",
+    "interior_pilot/evidence/NATIVE_DRAFT_GREEN_COMMAND.json": "550d855662d52d6d5ebf08adfc634bc0dae6fcff15c6a56bac7d8027a50b1ed8",
+    "interior_pilot/evidence/NATIVE_DRAFT_RED.json": "852eb17779b88735f900450805e1619f326fc7517f9928ead2aceba95f9814ac",
+    "interior_pilot/evidence/NATIVE_DRAFT_RED.log": "56c6d0d446466a1b8244e78f25d9a62afc9f4343c01c57ff75d1c71d34b6256d",
+    "interior_pilot/evidence/NATIVE_DRAFT_REVIEW_GREEN.log": "f4a6f3b52f8326742d102e943cc1d8555e903cc78bd1ef518a3a61260de446ba",
+    "interior_pilot/evidence/NATIVE_DRAFT_REVIEW_GREEN_COMMAND.json": "550d855662d52d6d5ebf08adfc634bc0dae6fcff15c6a56bac7d8027a50b1ed8",
+    "interior_pilot/evidence/PETRAS_API_PIN_CHECK.json": "7daea0a35f99b129fee58b243f5e1e2dc3bd481a3f06a7612a0574d02cca0ba9",
+    "interior_pilot/evidence/PETRAS_API_PIN_CHECK_COMMAND.json": "952f46a456d51979a3803d7521b05466c498a911e288e6dc7654996ee0720cb2",
+    "interior_pilot/evidence/PETRAS_API_SCANNER_FALSE_POSITIVE.json": "5b8d5dd9b05927a92a0223660f496de3229be2c61db32c1bf757380f1d951572",
+    "interior_pilot/evidence/PETRAS_BUILD_SHELL_SYNTAX.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "interior_pilot/evidence/PETRAS_BUILD_SHELL_SYNTAX_COMMAND.json": "137699e136702b0bbc263e702ee7636bc3df1e55c21e6d3dc0e57fab5d662441",
+    "interior_pilot/evidence/RED.json": "e2ab630bb959d8393dc79a0a89e537b3e17f678ad68b43c71ba20d080210b08c",
+    "interior_pilot/evidence/RED.log": "7cc99f1655cef38bfef198edbd7ad8bb5d7b1c3b515ba7fa6425ca0f8e4c9fe6",
+    "interior_pilot/evidence/REVIEW_P01_P02_RED.json": "c5ef23fd2eea91d29dc801dc9ae4ad09179bbbc3738418bac5a5eba07c791f8f",
+    "interior_pilot/evidence/REVIEW_P01_P02_RED.log": "43e8e74f1b8c4403637486c2bedb64d894e081afce6c9e12d6cfb3b2aaae0b7e",
+    "interior_pilot/evidence/REVIEW_P03_RED.json": "4862de933792f5b516d159456f60047be9679f0204bf369d21319927ce71f427",
+    "interior_pilot/evidence/REVIEW_P03_RED.log": "165d496381a0b2bbd45e80361bb3e642414012af23eb608706b23ea28793a6d5",
+    "interior_pilot/evidence/SYNTHETIC_PILOT.json": "5d2794c850181f698067aedcd34fcbf70483da7937251c797f0660eceaf3e115",
+    "interior_pilot/evidence/SYNTHETIC_PILOT_COMMAND.json": "07106235b1e33d0fbe33f4d8bb7e3c9f6c1ac0fbe5bb512e0a4acfa390844599",
+    "interior_pilot/native_petras_synthetic.cpp": "ea32c0601bcaebc366c475602d064534f1da1c4d4667a8bd3c4018359d027dec",
+    "interior_pilot/petras_host.cpp": "1bec5e769b367c39d7b40565cc306d24c0eaa0136ce438012e2f060cbde3515b",
+    "interior_pilot/petras_host.hpp": "c7492c04b01f758c94663c4ffc6d591f4cff0309b6cb5f448368c4e94a5c50f2",
+    "interior_pilot/run_synthetic_pilot.py": "098005f6974c7f0eba5c4d81210ef73d8d54810c4e95bd02226aafa2af10d5ab",
+    "interior_pilot/test_interior.py": "18a44142a0fa0cd95c3b8e7e84720814a53b920e6e63f5efacde60996df2ac29",
+    "interior_pilot/test_native_draft.py": "d1c1f6bc43470e834576a71bc7c44768d73a927bcffd1cf8c2111351aee4ffe2",
+    "interior_pilot/toys.py": "6ea533bc87f102382795de2fb4616bae26400eaeb9259f0dd84c2055b9cbf538",
+    "METHOD_COMPARISON_ACTUAL.json": "9145e8b5e46e278bc5ad74aebd2547ba7db3c3d882d8eda16f0a170504e4c887",
+    "INTERIOR_PILOT_REPORT.md": "ec08c4afbcf9af70accf9d735ff603bc66adda83afc0a2f428cf1164cbb36d4d"
+  },
+  "primary_native_draft": {
+    "status": "STATIC_CHECKED_NATIVE_RUNTIME_UNVERIFIED",
+    "files": [
+      "interior_pilot/petras_host.hpp",
+      "interior_pilot/petras_host.cpp",
+      "interior_pilot/native_petras_synthetic.cpp"
+    ],
+    "structural_tests": 10,
+    "structural_exit_code": 0,
+    "API_check_exit_code": 0,
+    "bash_syntax_exit_code": 0,
+    "native_compile_performed": false,
+    "native_synthetic_executed": false,
+    "written_native_fixture_count": 10,
+    "review_repairs": [
+      "P01 nested speculative analytic refusal classification",
+      "P02 rational corner oracle instead of comparing two outward intervals",
+      "P03 actual returned radius diagnostics"
+    ],
+    "review_closure": "P01_P02_P03_CLOSED_STATIC_SOURCE_REVIEW; NATIVE_RUNTIME_NOT_VERIFIED",
+    "guide": "interior_pilot/PETRAS_HOST_README.md",
+    "independent_artifact_review": {
+      "path": "review_petras/REVIEW.json",
+      "sha256": "36d3a03cde2ad15726486924cd966f1a8cdd84ac8c83ff437add89a7f07efc7c",
+      "scope": "BOUNDED_STATIC_SOURCE_REVIEW",
+      "independent_scientific_decision_review_admitted": false
+    }
+  }
+}

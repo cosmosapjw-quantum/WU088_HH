@@ -1,0 +1,306 @@
+{
+  "schema": "WU088_R31AO_GRAM_ENGINE_VERIFICATION_V1",
+  "status": "IMPLEMENTATION_VERIFIED_SYNTHETIC_ONLY",
+  "B04_status": "IMPLEMENTATION_VERIFIED_ACTUAL_HH_GAPS_NOT_EVALUATED",
+  "backend_route": "EXACT_INTEGER_SQRT_RATIONAL_ENCLOSURE",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "implementation": "CPython",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39"
+  },
+  "command": "python -B -m unittest exact_gram.test_engine exact_gram.test_resource_review -v",
+  "cwd_relative_to_repo": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1",
+  "final_exit_code": 0,
+  "test_count": 23,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "final_log": "exact_gram/POST_REVIEW_GREEN.log",
+  "independent_checks": {
+    "Decimal_formula_digits": 160,
+    "Decimal_formula_random_complex_47x2_cases": 24,
+    "Decimal_direct_A_adjoint_A_power_digits": 140,
+    "Decimal_power_cases": 4,
+    "iterations_per_case": 2000,
+    "host_IEEE_rounding_samples": 1000,
+    "separate_PRIMARY_SECONDARY_host_predicate_samples_each": 400,
+    "generic_SVD_primary_authority": false,
+    "high_precision_checks_are_certificates": false,
+    "exact_enclosure_authority": "integer inequalities and exact rational arithmetic proof"
+  },
+  "covered": [
+    "normal/rank-one/zero/repeated eigenvalue",
+    "complex conjugation and n×2/2×n orientation",
+    "exact K and independently stored predicted K",
+    "Dmax maximizing-block switch and interval max",
+    "PRIMARY/SECONDARY gap orientation",
+    "outward exact and irrational roots; adversarial square neighbors",
+    "source complex-disk Frobenius propagation and no X-term double counting",
+    "direct and legacy eta bounds",
+    "strict/weak real Pareto boundaries and interval ambiguity",
+    "binary64 normal/subnormal/tie-to-even rounding",
+    "PRIMARY versus SECONDARY machine-boundary witnesses",
+    "size/work/precision limits and malformed/nonfinite rejection"
+  ],
+  "run_history": [
+    {
+      "log": {
+        "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_RED.txt",
+        "sha256": "b1a5ab0dbd9e2356ffadafb3e706b6d8e98781910ab76e5aca5a213e25f119a0",
+        "bytes": 937
+      },
+      "exit_code": 1,
+      "classification": "expected missing engine module; feature absent"
+    },
+    {
+      "log": {
+        "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_FIRST_IMPLEMENTATION.txt",
+        "sha256": "dc0380928cbefca06285d95a25aa63cef15e3bac8ef3d1a81cce9bfc7422b85e",
+        "bytes": 3451
+      },
+      "exit_code": 1,
+      "classification": "test fixture defect: int 0 violated strict Fraction endpoint contract; corrected"
+    },
+    {
+      "log": {
+        "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_SECOND_IMPLEMENTATION.txt",
+        "sha256": "e11a694f1a8662ab357df00846452e071f0f1a09471e6e027e26565cb201597e",
+        "bytes": 3079
+      },
+      "exit_code": 1,
+      "classification": "environment: optional mpmath absent; no installation; replaced cross-check by independent Decimal power iteration"
+    },
+    {
+      "log": {
+        "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_GREEN.txt",
+        "sha256": "a72d24c805092b875facfc1adbdaec279d3fb2c7788321d5b815a86678ed4e46",
+        "bytes": 2477
+      },
+      "exit_code": 0,
+      "classification": "19 synthetic tests passed"
+    },
+    {
+      "log": {
+        "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_PROPAGATION_RED.txt",
+        "sha256": "baf8ac1ba5293ebf489f105ad47b2a0b1b9dcbf83098ae8244b02a2afd8542a6",
+        "bytes": 1086
+      },
+      "exit_code": 1,
+      "classification": "expected missing propagate_epsilon public helper"
+    },
+    {
+      "log": {
+        "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_GREEN_FINAL.txt",
+        "sha256": "5fefd0777c895d96fd22ed52648cbce657eda00f31c14e4c6dfabf43e1f1bdb7",
+        "bytes": 565
+      },
+      "exit_code": 0,
+      "classification": "command exit 0, but retained redirected log truncated after first four test lines: runtime/artifact anomaly; not used as final evidence",
+      "evidence_accepted": false
+    },
+    {
+      "log": {
+        "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_GREEN_DURABLE.txt",
+        "sha256": "5ef3af0b2e5546989bd537aca8df99a2e69e8093d3be49aca82776f28d4d2caf",
+        "bytes": 2599
+      },
+      "exit_code": 0,
+      "classification": "captured subprocess output atomically retained and read-verified; 20 tests passed",
+      "evidence_accepted": true
+    }
+  ],
+  "source_identities": [
+    {
+      "path": "research/r31ao_unequal_ladder/source_functional_review_20260930/DECISION_BOUND_DERIVATION.md",
+      "sha256": "0626be8db80c8d378b1694464596a27d392fd81ecf0df5d76e55818e5e46efc4",
+      "bytes": 6606,
+      "line_span": null
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/source_functional_review_20260930/SOURCE_FUNCTIONAL_MAP.md",
+      "sha256": "41e74806741ff3202c3e7cfb29600a6b47b4a88f6d85ddd8787bf0b0e12724a9",
+      "bytes": 9235,
+      "line_span": null
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/endpoint_enclosure_review_20260930/NUMERICAL_CERTIFICATE_IMPLEMENTATION_PLAN.md",
+      "sha256": "a8a468354c3b9a9e2cf6d4f8939cd40989fb5378df1610a4d6c41d8a0394ed51",
+      "bytes": 16744,
+      "line_span": null
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_preflight_20260930/B192_REPLAY_EXECUTED_COMPARATOR.py",
+      "sha256": "43c3edac4d6f32ecb0ebd68619db76d447d40627610e63ec4000c3d5983732c8",
+      "bytes": 10467,
+      "line_span": [
+        93,
+        111
+      ]
+    },
+    {
+      "path": "research/r31al_z075_gate/refinement_gain.py",
+      "sha256": "a81a386f5aa5138012a26e833d468606a91ce4857dcc94311d878ae7976875c3",
+      "bytes": 2445,
+      "line_span": [
+        39,
+        49
+      ]
+    },
+    {
+      "path": "research/r31al_z075_gate/compare_secondary_refinement.py",
+      "sha256": "f8fb529fe4f2d6413f34372580e69bc4b7919e2a4e7c6ef2320949d7ca9c430f",
+      "bytes": 5324,
+      "line_span": [
+        25,
+        37
+      ]
+    }
+  ],
+  "actual_HH_array_reads": 0,
+  "actual_HH_integrals_or_callbacks": 0,
+  "old_comparator_execution": 0,
+  "third_party_native_builds": 0,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false,
+  "review_status": "INDEPENDENT_ARTIFACT_REVIEW_COMPLETED_B10_CORRECTED; scientific decision admission false",
+  "limitations": [
+    "B04 actual represented matrix norms/gaps/eta remain NOT_EVALUATED",
+    "historical scalar bits/rounding trace not yet admitted",
+    "deterministic bit/operation caps are not a hard wall-clock/memory limiter",
+    "actual continuous-target ball validity and certificate provenance must be admitted externally"
+  ],
+  "syntax_parse": "PASS",
+  "runtime_artifact_anomaly": "Earlier shell-redirected final log truncated despite command exit 0; new captured subprocess log complete and verified.",
+  "post_review_verification": {
+    "command": "python -B -m unittest exact_gram.test_engine exact_gram.test_resource_review -v",
+    "exit_code": 0,
+    "tests": 23,
+    "log": "exact_gram/POST_REVIEW_GREEN.log",
+    "issue": "B10 RESOURCE_CAP_BOUNDARY",
+    "red_logs": [
+      "exact_gram/RESOURCE_REVIEW_RED.log",
+      "exact_gram/ALIGNMENT_REVIEW_RED.log"
+    ]
+  },
+  "post_review_hashes": {
+    "exact_gram/engine.py": "e10f206d63be1a99a441780108619574605014a9b01b3b327e21fecb18c5b9cc",
+    "exact_gram/test_resource_review.py": "e629af2d507d2cea7c2b79c09bb829bfe81fc679ec2540133ad17d8628bb4d16",
+    "exact_gram/POST_REVIEW_GREEN.log": "edf4bf8bdef27d5aa6e4f837e5feb4219531fef8730d5e16895cbf0c94be70c9"
+  },
+  "pre_review_artifact_identities": [
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/README_PROOF.md",
+      "sha256": "db606674c9d1a9682d0cded706f1a9f21746d2c9c67e80a53b92cd7cabc34935",
+      "bytes": 9675
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_FIRST_IMPLEMENTATION.txt",
+      "sha256": "dc0380928cbefca06285d95a25aa63cef15e3bac8ef3d1a81cce9bfc7422b85e",
+      "bytes": 3451
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_GREEN.txt",
+      "sha256": "a72d24c805092b875facfc1adbdaec279d3fb2c7788321d5b815a86678ed4e46",
+      "bytes": 2477
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_GREEN_DURABLE.txt",
+      "sha256": "5ef3af0b2e5546989bd537aca8df99a2e69e8093d3be49aca82776f28d4d2caf",
+      "bytes": 2599
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_GREEN_FINAL.txt",
+      "sha256": "5fefd0777c895d96fd22ed52648cbce657eda00f31c14e4c6dfabf43e1f1bdb7",
+      "bytes": 565
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_PROPAGATION_RED.txt",
+      "sha256": "baf8ac1ba5293ebf489f105ad47b2a0b1b9dcbf83098ae8244b02a2afd8542a6",
+      "bytes": 1086
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_RED.txt",
+      "sha256": "b1a5ab0dbd9e2356ffadafb3e706b6d8e98781910ab76e5aca5a213e25f119a0",
+      "bytes": 937
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_SECOND_IMPLEMENTATION.txt",
+      "sha256": "e11a694f1a8662ab357df00846452e071f0f1a09471e6e027e26565cb201597e",
+      "bytes": 3079
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/__init__.py",
+      "sha256": "821e14b2ec87d71c75c6fd20e7052229a81966f542995f78a861e97d77a15d07",
+      "bytes": 83
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/engine.py",
+      "sha256": "1b2bdc8d7b0909075027b513bebe69c61e807ef200f90b64a8994e5c935422bc",
+      "bytes": 17847
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/test_engine.py",
+      "sha256": "047775b7b61c45535818aaf6fd9a9cf8625e34b1b0639a7bbd7dd0ec384625ad",
+      "bytes": 12802
+    }
+  ],
+  "artifact_identities": [
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/README_PROOF.md",
+      "sha256": "db606674c9d1a9682d0cded706f1a9f21746d2c9c67e80a53b92cd7cabc34935",
+      "bytes": 9675
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_FIRST_IMPLEMENTATION.txt",
+      "sha256": "dc0380928cbefca06285d95a25aa63cef15e3bac8ef3d1a81cce9bfc7422b85e",
+      "bytes": 3451
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_GREEN.txt",
+      "sha256": "a72d24c805092b875facfc1adbdaec279d3fb2c7788321d5b815a86678ed4e46",
+      "bytes": 2477
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_GREEN_DURABLE.txt",
+      "sha256": "5ef3af0b2e5546989bd537aca8df99a2e69e8093d3be49aca82776f28d4d2caf",
+      "bytes": 2599
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_GREEN_FINAL.txt",
+      "sha256": "5fefd0777c895d96fd22ed52648cbce657eda00f31c14e4c6dfabf43e1f1bdb7",
+      "bytes": 565
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_PROPAGATION_RED.txt",
+      "sha256": "baf8ac1ba5293ebf489f105ad47b2a0b1b9dcbf83098ae8244b02a2afd8542a6",
+      "bytes": 1086
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_RED.txt",
+      "sha256": "b1a5ab0dbd9e2356ffadafb3e706b6d8e98781910ab76e5aca5a213e25f119a0",
+      "bytes": 937
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/TEST_SECOND_IMPLEMENTATION.txt",
+      "sha256": "e11a694f1a8662ab357df00846452e071f0f1a09471e6e027e26565cb201597e",
+      "bytes": 3079
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/__init__.py",
+      "sha256": "821e14b2ec87d71c75c6fd20e7052229a81966f542995f78a861e97d77a15d07",
+      "bytes": 83
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/engine.py",
+      "sha256": "e10f206d63be1a99a441780108619574605014a9b01b3b327e21fecb18c5b9cc",
+      "bytes": 18326
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/test_engine.py",
+      "sha256": "047775b7b61c45535818aaf6fd9a9cf8625e34b1b0639a7bbd7dd0ec384625ad",
+      "bytes": 12802
+    }
+  ],
+  "pre_review_test_count": 20
+}

@@ -1,0 +1,102 @@
+test_empty_fortran_does_not_materialize_dimension_pools (exact_raw_decoder.test_decoder.DecoderTests.test_empty_fortran_does_not_materialize_dimension_pools) ... 
+  test_empty_fortran_does_not_materialize_dimension_pools (exact_raw_decoder.test_decoder.DecoderTests.test_empty_fortran_does_not_materialize_dimension_pools) (shape=(9223372036854775807, 0)) ... FAIL
+  test_empty_fortran_does_not_materialize_dimension_pools (exact_raw_decoder.test_decoder.DecoderTests.test_empty_fortran_does_not_materialize_dimension_pools) (shape=(0, 9223372036854775807)) ... FAIL
+  test_empty_fortran_does_not_materialize_dimension_pools (exact_raw_decoder.test_decoder.DecoderTests.test_empty_fortran_does_not_materialize_dimension_pools) (shape=(9223372036854775807, 0, 3)) ... FAIL
+  test_empty_fortran_does_not_materialize_dimension_pools (exact_raw_decoder.test_decoder.DecoderTests.test_empty_fortran_does_not_materialize_dimension_pools) (shape=(3, 9223372036854775807, 0)) ... FAIL
+
+======================================================================
+FAIL: test_empty_fortran_does_not_materialize_dimension_pools (exact_raw_decoder.test_decoder.DecoderTests.test_empty_fortran_does_not_materialize_dimension_pools) (shape=(9223372036854775807, 0))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 92, in test_empty_fortran_does_not_materialize_dimension_pools
+    decoded = decode_npy_bytes(npy(b'', shape=shape, order=True), max_elements=0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 255, in decode_npy_bytes
+    for index in _storage_indices(header):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 216, in _storage_indices
+    for index in itertools.product(*(range(n) for n in header.shape)):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1198, in _execute_mock_call
+    raise effect
+AssertionError: empty array must bypass Cartesian pools
+
+======================================================================
+FAIL: test_empty_fortran_does_not_materialize_dimension_pools (exact_raw_decoder.test_decoder.DecoderTests.test_empty_fortran_does_not_materialize_dimension_pools) (shape=(0, 9223372036854775807))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 92, in test_empty_fortran_does_not_materialize_dimension_pools
+    decoded = decode_npy_bytes(npy(b'', shape=shape, order=True), max_elements=0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 255, in decode_npy_bytes
+    for index in _storage_indices(header):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 216, in _storage_indices
+    for index in itertools.product(*(range(n) for n in header.shape)):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1198, in _execute_mock_call
+    raise effect
+AssertionError: empty array must bypass Cartesian pools
+
+======================================================================
+FAIL: test_empty_fortran_does_not_materialize_dimension_pools (exact_raw_decoder.test_decoder.DecoderTests.test_empty_fortran_does_not_materialize_dimension_pools) (shape=(9223372036854775807, 0, 3))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 92, in test_empty_fortran_does_not_materialize_dimension_pools
+    decoded = decode_npy_bytes(npy(b'', shape=shape, order=True), max_elements=0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 255, in decode_npy_bytes
+    for index in _storage_indices(header):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 216, in _storage_indices
+    for index in itertools.product(*(range(n) for n in header.shape)):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1198, in _execute_mock_call
+    raise effect
+AssertionError: empty array must bypass Cartesian pools
+
+======================================================================
+FAIL: test_empty_fortran_does_not_materialize_dimension_pools (exact_raw_decoder.test_decoder.DecoderTests.test_empty_fortran_does_not_materialize_dimension_pools) (shape=(3, 9223372036854775807, 0))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 92, in test_empty_fortran_does_not_materialize_dimension_pools
+    decoded = decode_npy_bytes(npy(b'', shape=shape, order=True), max_elements=0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 255, in decode_npy_bytes
+    for index in _storage_indices(header):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 216, in _storage_indices
+    for index in itertools.product(*(range(n) for n in header.shape)):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1198, in _execute_mock_call
+    raise effect
+AssertionError: empty array must bypass Cartesian pools
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (failures=4)

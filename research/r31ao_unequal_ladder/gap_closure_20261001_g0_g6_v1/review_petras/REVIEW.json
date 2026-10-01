@@ -1,0 +1,179 @@
+{
+  "schema": "WU088_G6_PETRAS_SEPARATE_STATIC_REVIEW_V1",
+  "created_utc": "2026-10-01T03:34:17.688436+00:00",
+  "result": "NO_OPEN_STATIC_CORRECTNESS_FINDINGS_IN_FINAL_SCOPED_REVIEW",
+  "review_scope": "petras_host.cpp/.hpp and native synthetic fixture only; pinned source/API and uniform/nested/radius semantics",
+  "reviewer_G1_theory_collaboration": true,
+  "theory_design_independent": false,
+  "implementation_author_reviewer_separated": true,
+  "independent_review_admitted": false,
+  "reviewed_files": [
+    {
+      "path": "interior_pilot/petras_host.cpp",
+      "bytes": 12659,
+      "sha256": "1bec5e769b367c39d7b40565cc306d24c0eaa0136ce438012e2f060cbde3515b"
+    },
+    {
+      "path": "interior_pilot/petras_host.hpp",
+      "bytes": 4028,
+      "sha256": "c7492c04b01f758c94663c4ffc6d591f4cff0309b6cb5f448368c4e94a5c50f2"
+    },
+    {
+      "path": "interior_pilot/native_petras_synthetic.cpp",
+      "bytes": 5930,
+      "sha256": "ea32c0601bcaebc366c475602d064534f1da1c4d4667a8bd3c4018359d027dec"
+    }
+  ],
+  "FLINT_source_archive_sha256": "108ab51a4dd33918ff3308f0c63a63616ae30a2c174d50c9188676e85011346f",
+  "primary_source_evidence": [
+    {
+      "member": "src/acb_calc.h",
+      "sha256": "f3be9484c96bf895033efe97d5f706cdfd96478e533414e931649b6b101f612c"
+    },
+    {
+      "member": "src/acb.h",
+      "sha256": "b453257496d2b4c3d040196a80e09e8d16f0f4803d2bc62302015bad179e7df2"
+    },
+    {
+      "member": "src/arb.h",
+      "sha256": "c7a7d0f28da3bba2a04dd63212be69e9d85e9537211e8b39b305ed79361b0534"
+    },
+    {
+      "member": "src/mag.h",
+      "sha256": "488b445df6d68e49cb29e0b2f65ebea8cd3b41190e7d4320a746fe851f568deb"
+    },
+    {
+      "member": "src/arb_calc.h",
+      "sha256": "a7034ac212a8abeda2fb0d2d929e18e7e1584bc84fbcbc5c56efe70b54a955b2"
+    },
+    {
+      "member": "src/flint.h.in",
+      "sha256": "b2dff3aa7359e9f93b7d0fde40f95c3b2935aa4891abb5883328fa902b490068"
+    },
+    {
+      "member": "src/fmpq.h",
+      "sha256": "6404254ce9838a32a864da7d0e65daf53779a35985b572e7e41581d1bcbd6dfb"
+    },
+    {
+      "member": "src/acb_calc/integrate.c",
+      "sha256": "26503d0fa450020d792d1cdc485ff48cf8c49e3933f38b0d44f3e0f4b84ca1af"
+    },
+    {
+      "member": "src/acb_calc/integrate_gl_auto_deg.c",
+      "sha256": "63a93a1c62f709d3d68f94c0bdc2beeba573d5437c59ff98a322dbe574a707c6"
+    },
+    {
+      "member": "doc/source/acb_calc.rst",
+      "sha256": "c57859a8a3b05fd0dc95a4f8a3f2448f04d70e5655a83bf944faab1d6fcde171"
+    }
+  ],
+  "api_symbols": [
+    {
+      "file": "petras_host.cpp",
+      "symbols": [
+        "acb_calc_integrate",
+        "acb_calc_integrate_opt_init",
+        "acb_imagref",
+        "acb_indeterminate",
+        "acb_is_exact",
+        "acb_is_finite",
+        "acb_realref",
+        "acb_set",
+        "acb_union",
+        "arb_is_zero",
+        "arb_radref",
+        "flint_free",
+        "flint_get_num_threads",
+        "mag_clear",
+        "mag_cmp_2exp_si",
+        "mag_dump_str",
+        "mag_init",
+        "mag_set_ui_2exp_si"
+      ],
+      "missing_symbols": []
+    },
+    {
+      "file": "petras_host.hpp",
+      "symbols": [
+        "acb_clear",
+        "acb_init"
+      ],
+      "missing_symbols": []
+    },
+    {
+      "file": "native_petras_synthetic.cpp",
+      "symbols": [
+        "acb_contains_fmpq",
+        "acb_imagref",
+        "acb_indeterminate",
+        "acb_is_finite",
+        "acb_mul",
+        "acb_mul_2exp_si",
+        "acb_one",
+        "acb_printn",
+        "acb_realref",
+        "acb_set_si",
+        "acb_zero",
+        "arb_add_error_2exp_si",
+        "arb_contains_fmpq",
+        "arb_is_positive",
+        "flint_set_num_threads",
+        "fmpq_clear",
+        "fmpq_init",
+        "fmpq_set_si"
+      ],
+      "missing_symbols": []
+    }
+  ],
+  "findings": [
+    {
+      "id": "P01",
+      "initial_severity": "HIGH_FUNCTIONAL",
+      "status": "RESOLVED_STATICALLY_RUNTIME_PENDING",
+      "resolution": "Propagates speculative outer-parameter trial context through inner order0 callbacks, prechecks entire real inner path on complete outer box, and leaves expected outer order1 domain/nonconvergence/width refusal nonsticky while retaining resource/contract stops.",
+      "native_fixture_added": "invalid outer domain box followed by valid trial on same budget; pending native execution"
+    },
+    {
+      "id": "P02",
+      "initial_severity": "MEDIUM_TEST_CONTRACT",
+      "status": "RESOLVED_STATICALLY_RUNTIME_PENDING",
+      "resolution": "Uniform polynomial image checked using exact rational component endpoints 1/3,2/3,−1/3,1/3 rather than containment of another outward-rounded box."
+    },
+    {
+      "id": "P03",
+      "initial_severity": "MEDIUM_DIAGNOSTIC",
+      "status": "RESOLVED_STATICALLY_RUNTIME_PENDING",
+      "resolution": "Accepted and too-wide finite results serialize both achieved mag radii before any output invalidation; acceptance flag remains false for too-wide result."
+    }
+  ],
+  "confirmed_semantics": [
+    "whole outer acb box copied with both radii",
+    "joint holomorphy and uniform-parameter contract flags plus proof reference required",
+    "inner analytic order is logical OR of outer and inner analytic requests",
+    "point versus uniform inner settings change policy only; neither drops parameter radii",
+    "output acceptance checks actual finite real and imaginary radii, separate from requested tolerance",
+    "FLINT eval limit is approximate; shared dispatched-evaluation cap is checked before dispatch",
+    "queued_panel_limit maps to FLINT queued interval depth_limit",
+    "single FLINT thread and max two simultaneous nested integration levels enforced",
+    "callback return code ignored per pinned API; errors carried by nonfinite output",
+    "resource failures and actual real-path callback errors remain fail closed"
+  ],
+  "limitations": [
+    "No native compile, link, ABI or runtime validation performed",
+    "Full-inner-path prequery may conservatively reject wide but mathematically valid boxes; actual feasibility remains unmeasured",
+    "exact_real_endpoints restricts endpoints to representable dyadics; bind identical endpoints to tail bounds",
+    "Bivariate contract flags/proof reference are caller assertions, not proof verification or provenance admission",
+    "Uniform family range can be wide and costly despite a valid inclusion",
+    "Cooperative wall checks do not interrupt a stalled backend call; external process resource guard remains required",
+    "Returned component radii are rectangular bounds; modulus radius needs the G1 outward Euclidean conversion",
+    "Actual HH source/input binding and enclosure/certificate execution still require authorized runtime"
+  ],
+  "native_compile_performed": false,
+  "native_runtime_tests_executed": false,
+  "actual_hh_evaluations": 0,
+  "code_modified_by_reviewer": false,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false,
+  "report": "review_petras/REVIEW.md"
+}

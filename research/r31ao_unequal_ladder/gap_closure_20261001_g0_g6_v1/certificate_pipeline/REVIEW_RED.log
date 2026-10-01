@@ -1,0 +1,32 @@
+test_model_only_resource_cap_is_classified (certificate_pipeline.test_pipeline.PipelineTests.test_model_only_resource_cap_is_classified) ... ERROR
+
+======================================================================
+ERROR: test_model_only_resource_cap_is_classified (certificate_pipeline.test_pipeline.PipelineTests.test_model_only_resource_cap_is_classified)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/certificate_pipeline/synthetic.py", line 24, in _decode
+    d=decode_npy_bytes(value,max_elements=limits.max_entries)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 247, in decode_npy_bytes
+    header = inspect_npy_header(data, max_elements=max_elements)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 130, in inspect_npy_header
+    raise DecodeError('element cap exceeded')
+exact_raw_decoder.decoder.DecodeError: element cap exceeded
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/certificate_pipeline/test_pipeline.py", line 64, in test_model_only_resource_cap_is_classified
+    evaluate_synthetic_bundle(raw,models,balls,scope='SYNTHETIC_ONLY',limits=Limits(max_entries=4))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/certificate_pipeline/synthetic.py", line 59, in evaluate_synthetic_bundle
+    decoded_models[name][key],identities[name+'.'+key]=_decode(value,limits)
+                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/certificate_pipeline/synthetic.py", line 27, in _decode
+    raise PipelineError('synthetic NPY admission failed: '+str(exc)) from exc
+exact_gram.engine.ContractError: synthetic NPY admission failed: element cap exceeded
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

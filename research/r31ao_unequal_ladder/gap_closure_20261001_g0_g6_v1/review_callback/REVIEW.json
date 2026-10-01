@@ -1,0 +1,275 @@
+{
+  "schema": "WU088_R31AO_G4_SEPARATE_ARTIFACT_REVIEW_V1",
+  "created_utc": "2026-10-01T03:21:15.521491+00:00",
+  "result": "NO_OPEN_STATIC_CORRECTNESS_FINDINGS_WITHIN_REVIEWED_SCOPE",
+  "review_scope": "separate implementation artifact review, source/API/static algebra; not native compilation or runtime validation",
+  "reviewer_participated_in_G1_formula_design": true,
+  "theory_design_independent": false,
+  "implementation_author_and_reviewer_separated": true,
+  "independent_review_admitted": false,
+  "findings": [
+    {
+      "id": "CB01",
+      "severity": "MEDIUM",
+      "initial": "Only first output coefficient invalidated for unsupported higher callback order.",
+      "status": "RESOLVED_STATICALLY",
+      "resolution": "Helper invalidates max(order,1) requested slots in unsupported-order and null-Slice paths.",
+      "runtime_test": "PENDING_PINNED_NATIVE_BUILD"
+    },
+    {
+      "id": "CB02",
+      "severity": "MEDIUM",
+      "initial": "Unbounded rational strings/bit lengths and unbounded max_precision.",
+      "status": "RESOLVED_STATICALLY",
+      "resolution": "8192-character/16384-bit canonical positive-denominator rational guards and 4096-bit precision ceiling added; callback and assembly fmpq-to-ball conversions validate inputs.",
+      "runtime_test": "PENDING_PINNED_NATIVE_BUILD"
+    },
+    {
+      "id": "CB03",
+      "severity": "HIGH_IF_NAIVELY_FIXED",
+      "initial": "Higher-order negative fixture supplied only one coefficient slot.",
+      "status": "RESOLVED_STATICALLY",
+      "resolution": "Native fixture now allocates, initializes and clears acb_struct coefficients[2], checking both slots for ordinary and null-Slice order2 rejection.",
+      "runtime_test": "PENDING_PINNED_NATIVE_BUILD"
+    },
+    {
+      "id": "CB04",
+      "severity": "LOW",
+      "initial": "Rational setter could leave invalid state after rejected input.",
+      "status": "RESOLVED_STATICALLY",
+      "resolution": "Temporary rational parse/canonical/bounds validation followed by fmpq_swap provides strong exception guarantee; synthetic fixture checks preserved 3/7 after 1/0 rejection.",
+      "runtime_test": "PENDING_PINNED_NATIVE_BUILD"
+    }
+  ],
+  "reviewed_files": [
+    {
+      "path": "validated_callback/callback.cpp",
+      "bytes": 11653,
+      "sha256": "06dabab65432c868190032726853ab92a0d0d504128500cfb352c2a749258964"
+    },
+    {
+      "path": "validated_callback/callback.hpp",
+      "bytes": 2482,
+      "sha256": "364705585a7a93da90907497bfd3dcd05ce0fba8920413534aa85f75a6a330f1"
+    },
+    {
+      "path": "validated_callback/assembly.cpp",
+      "bytes": 9413,
+      "sha256": "313abcfe04550f0badc8e48501735a8b15a21d7babdefa63b6aded0ea4a2bede"
+    },
+    {
+      "path": "validated_callback/assembly.hpp",
+      "bytes": 2149,
+      "sha256": "fb38af6635f444649aa706f2107b8a4a91d2f18d5ab7477c320384414ac0eede"
+    },
+    {
+      "path": "validated_callback/native_synthetic.cpp",
+      "bytes": 6169,
+      "sha256": "6d32debd97d6ece892a7e8704bfabc35565146587392094bb0338ac7039a4e15"
+    },
+    {
+      "path": "validated_callback/build_host.sh",
+      "bytes": 1648,
+      "sha256": "74e11701a05fa80180f8c077d99dfc67dab9af10eb5bcdf7cfe7043be53f1467"
+    },
+    {
+      "path": "validated_callback/verify_build_inputs.py",
+      "bytes": 1595,
+      "sha256": "6a7d8585b41392b1ab2751a55ac7a02bb60025b791e1dbed8fc54a07d69c49d1"
+    }
+  ],
+  "canonical_source_evidence": [
+    {
+      "id": "S01",
+      "path": "research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/completion/mixed_h/od_run.py",
+      "sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+      "identity_verified": true
+    },
+    {
+      "id": "S02",
+      "path": "research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/completion/mixed_h/h0_backend.py",
+      "sha256": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+      "identity_verified": true
+    },
+    {
+      "id": "S03",
+      "path": "research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/completion/mixed_h/h0_fused.cpp",
+      "sha256": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+      "identity_verified": true
+    },
+    {
+      "id": "S05",
+      "path": "research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/exact_weights/exact_laplace_weights.py",
+      "sha256": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb",
+      "identity_verified": true
+    }
+  ],
+  "backend_archive_sha256": "108ab51a4dd33918ff3308f0c63a63616ae30a2c174d50c9188676e85011346f",
+  "pinned_header_evidence": [
+    {
+      "header": "acb.h",
+      "archive_member": "flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/acb.h",
+      "sha256": "b453257496d2b4c3d040196a80e09e8d16f0f4803d2bc62302015bad179e7df2",
+      "archive_bytes_equal": true
+    },
+    {
+      "header": "arb.h",
+      "archive_member": "flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/arb.h",
+      "sha256": "c7a7d0f28da3bba2a04dd63212be69e9d85e9537211e8b39b305ed79361b0534",
+      "archive_bytes_equal": true
+    },
+    {
+      "header": "acb_hypgeom.h",
+      "archive_member": "flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/acb_hypgeom.h",
+      "sha256": "ea19d893cb1600685ae47e0f93913fa14deb5b64cb896e06bdafcb63bc6b3040",
+      "archive_bytes_equal": true
+    },
+    {
+      "header": "fmpq.h",
+      "archive_member": "flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/fmpq.h",
+      "sha256": "6404254ce9838a32a864da7d0e65daf53779a35985b572e7e41581d1bcbd6dfb",
+      "archive_bytes_equal": true
+    },
+    {
+      "header": "fmpz.h",
+      "archive_member": "flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/fmpz.h",
+      "sha256": "b8951f76863bcb5b3a5f59e455ebec720c883238cadf0b8b09c6a7782256ce79",
+      "archive_bytes_equal": true
+    }
+  ],
+  "api_static_checks": [
+    {
+      "file": "validated_callback/callback.cpp",
+      "symbols": [
+        "acb_add",
+        "acb_clear",
+        "acb_const_pi",
+        "acb_div",
+        "acb_exp",
+        "acb_hypgeom_gamma",
+        "acb_hypgeom_m",
+        "acb_indeterminate",
+        "acb_init",
+        "acb_is_finite",
+        "acb_mul",
+        "acb_mul_2exp_si",
+        "acb_mul_onei",
+        "acb_neg",
+        "acb_pow",
+        "acb_pow_ui",
+        "acb_realref",
+        "acb_set",
+        "acb_set_fmpq",
+        "acb_set_si",
+        "acb_sub",
+        "acb_swap",
+        "arb_clear",
+        "arb_init",
+        "arb_is_positive",
+        "arb_set_fmpq",
+        "arb_sub",
+        "fmpq_canonicalise",
+        "fmpq_clear",
+        "fmpq_denref",
+        "fmpq_init",
+        "fmpq_is_canonical",
+        "fmpq_neg",
+        "fmpq_numref",
+        "fmpq_set",
+        "fmpq_set_si",
+        "fmpq_set_str",
+        "fmpq_sgn",
+        "fmpq_swap",
+        "fmpz_bits",
+        "fmpz_is_zero",
+        "fmpz_sgn"
+      ],
+      "missing_symbols": []
+    },
+    {
+      "file": "validated_callback/assembly.cpp",
+      "symbols": [
+        "acb_add",
+        "acb_clear",
+        "acb_conj",
+        "acb_const_pi",
+        "acb_div",
+        "acb_exp",
+        "acb_indeterminate",
+        "acb_init",
+        "acb_is_finite",
+        "acb_mul",
+        "acb_mul_2exp_si",
+        "acb_mul_onei",
+        "acb_neg",
+        "acb_pow",
+        "acb_set",
+        "acb_set_fmpq",
+        "acb_set_si",
+        "acb_sqrt",
+        "acb_sub",
+        "acb_swap",
+        "fmpq_equal",
+        "fmpq_neg",
+        "fmpq_sgn"
+      ],
+      "missing_symbols": []
+    },
+    {
+      "file": "validated_callback/native_synthetic.cpp",
+      "symbols": [
+        "acb_add",
+        "acb_clear",
+        "acb_conj",
+        "acb_contains",
+        "acb_contains_fmpq",
+        "acb_contains_zero",
+        "acb_imagref",
+        "acb_init",
+        "acb_is_finite",
+        "acb_mul_2exp_si",
+        "acb_mul_onei",
+        "acb_one",
+        "acb_overlaps",
+        "acb_realref",
+        "acb_set_si",
+        "acb_set_si_si",
+        "arb_add_error_2exp_si",
+        "fmpq_equal",
+        "fmpq_sgn"
+      ],
+      "missing_symbols": []
+    }
+  ],
+  "algebra_checks": {
+    "radial_derivative_and_unregularized_convention": "MATCHES_G1",
+    "signed_density_convention": "MATCHES_S05",
+    "whole_box_t_u_A_B_sigma_guards": "PRESENT",
+    "bilinear_s_no_Hermitian_norm": "CONFIRMED",
+    "callback_conjugation": "ABSENT",
+    "post_real_domain_assembly_conjugation": "PRESENT",
+    "normalization": "MATCHES_S02_IDEAL_FORMULA",
+    "registry": "MATCHES_S01",
+    "phase_exact_lift_tau": "MATCHES_S01_IDEAL_FORMULA",
+    "G1_G2_and_Drow_signs": "MATCHES_S03_S01",
+    "primitive_index_range_and_uniqueness": "EXACT_INTEGER_CHECKED_2592",
+    "registry_integer_check": "47_SOURCE_ROWS",
+    "floating_input_downcast_in_Cpp": "NONE_OBSERVED"
+  },
+  "native_compile_performed": false,
+  "native_tests_executed_by_reviewer": false,
+  "actual_hh_evaluations": 0,
+  "code_modified_by_reviewer": false,
+  "unclosed_gates": [
+    "pinned backend compiler/ABI/linked-binary runtime verification",
+    "native callback and full assembly synthetic execution",
+    "uniform nested integral implementation or independently bound 2D fallback",
+    "Frozen107 source/input/entry provenance binding",
+    "actual endpoint/interior/final-D certificate execution",
+    "project-admitted independent final decision review"
+  ],
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false,
+  "report": "review_callback/REVIEW.md"
+}

@@ -1,0 +1,91 @@
+{
+  "schema": "WU088_R31AO_RAW_DECODER_VERIFICATION_V1",
+  "blocker": "B03",
+  "status": "IMPLEMENTATION_VERIFIED_SYNTHETIC_ONLY",
+  "overall_B03": "RAW_ABI_AUTHORITY_BLOCKED",
+  "command": "python -m unittest exact_raw_decoder.test_decoder -v",
+  "working_directory": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1",
+  "python": "3.12.14",
+  "tdd_red": {
+    "exit_code": 1,
+    "tests": 22,
+    "errors": 51,
+    "classification": "EXPECTED_NOTIMPLEMENTED_ERROR",
+    "log": "exact_raw_decoder/TDD_RED.log"
+  },
+  "first_green": {
+    "exit_code": 0,
+    "tests": 22,
+    "log": "exact_raw_decoder/TDD_GREEN.log"
+  },
+  "final_suite": {
+    "exit_code": 0,
+    "tests": 30,
+    "failures": 0,
+    "errors": 0,
+    "log": "exact_raw_decoder/POST_REVIEW_GREEN.log"
+  },
+  "independent_binary64_oracle": {
+    "method": "stdlib struct.unpack plus float.as_integer_ratio; test code only",
+    "seed": 20261001,
+    "random_patterns": 1000,
+    "finite_patterns_compared": 1000
+  },
+  "hand_encoded_extended_fixtures": [
+    "x87 normal and full 64-bit significand",
+    "x87 min normal/subnormal/max finite",
+    "x87 signed zero/padding/endian/component-order refusals",
+    "binary128 normal/subnormal/max finite/complex big-endian",
+    "x87 pseudo-denormal/unnormal refusal",
+    "Inf and quiet/signaling NaN refusal"
+  ],
+  "fortran_tests": [
+    "asymmetric2x3",
+    "asymmetric2x3x2",
+    "complex2x2 padding provenance"
+  ],
+  "source_hashes": {
+    "decoder.py": "bf1867616af07a670d61cd75c7ca0655c99e0be13fd6a73e9a4654f5fc0986f1",
+    "test_decoder.py": "5bc8e18b55b9711545a767c90545ec6de6b6a2af63c3bf21be404d03b915480c",
+    "__init__.py": "99d80eb4f2707f9e546d1a7b3c8be7486978c5a320f76c0b1af9d05c4148159f",
+    "TDD_RED.log": "4c86e552b64c954eba963795f0b8770f79343260d0ee87f934a442ff3dccd833",
+    "TDD_GREEN.log": "597564b2a033b0568d963a33c7449877221790066ad606d99750cf0811ede94a",
+    "VERIFICATION_FINAL.log": "fde3791a1b9d6701e8a7983653ef5de517d1f791616c8d8baa49b9def4c0eaec",
+    "README.md": "f4e8ffcf5641041f69c2e4d1628a49306df19becb7dab94e78df10a179ac5f50",
+    "HISTORICAL_LAYOUT_CAPTURE_PLAN.md": "ae3382454c03e16d697bb76a76b61405799e0f74a733895e25c3e6b44d8b13b5",
+    "EMPTY_FORTRAN_RED.log": "7122d07056775135c5c69ac1a84ec84c89bf7bb07d924b6623d4ac5012146400",
+    "POST_REVIEW_GREEN.log": "215a964b2e6f695b500944e3be1815112f779116177a512f8ac0e44cc5aaa0bc"
+  },
+  "exact_implementation_uses_host_float": false,
+  "historical_B192_values_decoded": false,
+  "historical_prediction_values_decoded": false,
+  "historical_ABI_authority_closed": false,
+  "new_science_nodes": 0,
+  "science_commands": 0,
+  "heavy_commands": 0,
+  "native_builds": 0,
+  "numerical_certificate_runs": 0,
+  "prior_suite_counts_changed": false,
+  "claim_ceiling": "synthetic implementation verification only; continuous-target accuracy and historical ABI binding not certified",
+  "independent_review_admitted": false,
+  "static_verification": {
+    "syntax_exit_code": 0,
+    "decoder_forbidden_host_float_or_eval_calls": [],
+    "stdlib_only": true
+  },
+  "previous_final_suite": {
+    "exit_code": 0,
+    "tests": 29,
+    "failures": 0,
+    "errors": 0,
+    "log": "exact_raw_decoder/VERIFICATION_FINAL.log"
+  },
+  "review_correction": {
+    "id": "B09",
+    "issue": "zero-element Fortran shape can eagerly allocate enormous Cartesian axis pool",
+    "red": "exact_raw_decoder/EMPTY_FORTRAN_RED.log",
+    "red_exit": 1,
+    "fix": "return immediately for element_count==0",
+    "independent_reviewer": "g3_gram"
+  }
+}
