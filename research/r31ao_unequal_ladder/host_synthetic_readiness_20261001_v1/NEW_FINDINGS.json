@@ -1,0 +1,52 @@
+{
+  "schema": "WU088_HOST_FINDINGS_V1",
+  "findings": [
+    {
+      "id": "B16",
+      "type": "IMPLEMENTATION_PROVENANCE_GAP",
+      "observed": "Previous verifier checked presence of build_log_sha256 but never read/hashed the corresponding log; verified_build_provenance flag could substitute for missing log bytes.",
+      "previous_source": "../gap_closure_20261001_g0_g6_v1/validated_callback/verify_build_inputs.py",
+      "resolution": "New provenance_gate verifies required configure/build/install log bytes, zero exit records, compiler/source/binary identities and runtime linked paths.",
+      "status": "IMPLEMENTATION_VERIFIED_SYNTHETIC",
+      "evidence": [
+        "evidence/provenance/GREEN.log",
+        "evidence/provenance/REVIEW_GREEN.log"
+      ],
+      "ceiling": "Log/identity agreement alone is not independent build-execution authority."
+    },
+    {
+      "id": "B17",
+      "type": "IMPLEMENTATION_NULL_IDENTITY_BYPASS",
+      "observed": "New gate initially passed None to hash-only helper for compiler/binary/log hashes; missing expected identity therefore did not reject the record.",
+      "resolution": "Require lowercase 64-hex SHA256 before every expected compiler/binary/log identity comparison.",
+      "status": "IMPLEMENTATION_VERIFIED_SYNTHETIC",
+      "evidence": [
+        "evidence/provenance/REVIEW_RED.log",
+        "evidence/provenance/REVIEW_GREEN.log"
+      ],
+      "review": "Independent artifact reviewer reproduced three null-identity cases."
+    },
+    {
+      "id": "B18",
+      "type": "BUILD_LOG_STREAM_BINDING_GAP",
+      "observed": "Runner supplies stage-receipt JSON as build_log; checking only that JSON hash does not check actual stdout/stderr referenced by it.",
+      "resolution": "Each stage now supplies mandatory stdout/stderr identities; new gate hashes actual stream bytes in addition to stage receipt.",
+      "status": "IMPLEMENTATION_VERIFIED_SYNTHETIC",
+      "evidence": [
+        "evidence/provenance/STREAM_BINDING_RED.log",
+        "evidence/provenance/STREAM_BINDING_GREEN.log"
+      ],
+      "ceiling": "This closes missing byte checks, not independent execution or scientific authority."
+    }
+  ],
+  "non_findings": [
+    {
+      "classification": "RUNTIME_ENVIRONMENT",
+      "detail": "Current chat environment lacks pkg-config/autoconf/automake/libtoolize; no native build attempted. This is not callback mathematical failure."
+    },
+    {
+      "classification": "EVIDENCE_AUTHORITY",
+      "detail": "Current NumPy witness cannot be promoted to historical serializer authority without contemporaneous linkage."
+    }
+  ]
+}

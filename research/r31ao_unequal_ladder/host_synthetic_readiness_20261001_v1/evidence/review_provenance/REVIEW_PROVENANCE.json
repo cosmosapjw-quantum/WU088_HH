@@ -1,0 +1,94 @@
+{
+  "schema": "WU088_HOST_PROVENANCE_BOUNDED_REVIEW_V1",
+  "reviewer": "/root/review_gram",
+  "scope": [
+    "TASK_CONTRACT.json",
+    "provenance_gate.py",
+    "test_provenance_gate.py"
+  ],
+  "status": "ONE_REQUIRED_IDENTITY_FAIL_OPEN_FINDING",
+  "source_artifacts_at_report": [
+    {
+      "path": "TASK_CONTRACT.json",
+      "sha256": "3b15f8ceee0b0e9b1fd8a1054b61957f7cf5c32600ca506498f0619f9ee6e48e",
+      "bytes": 1373
+    },
+    {
+      "path": "provenance_gate.py",
+      "sha256": "92f4e1fb9c816a0cf67cb0bccea14adf7527e410fce321e004c7707236a3a5d6",
+      "bytes": 8297
+    },
+    {
+      "path": "test_provenance_gate.py",
+      "sha256": "d654da5f0ea5b8ea09432b5727163ff7c4dfa944eac28af32a32ed6b871c3fee",
+      "bytes": 6146
+    }
+  ],
+  "initial_reproduction": {
+    "scope": "SYNTHETIC_FIXTURES_ONLY_PIN_TABLE_PATCHED_BY_TEST_FIXTURE",
+    "source_sha256_before": "c2f689c7071f3c2c7d39d8d0b45367dfdf1e4a64ba2e50fe64638fd67c324dbd",
+    "source_sha256_after": "c2f689c7071f3c2c7d39d8d0b45367dfdf1e4a64ba2e50fe64638fd67c324dbd",
+    "source_stable_during_probe": true,
+    "cases": [
+      {
+        "case": "compiler_null",
+        "accepted": true,
+        "status": "BYTE_CHAIN_VERIFIED"
+      },
+      {
+        "case": "binary_null",
+        "accepted": true,
+        "status": "BYTE_CHAIN_VERIFIED"
+      },
+      {
+        "case": "configure_log_null",
+        "accepted": true,
+        "status": "BYTE_CHAIN_VERIFIED"
+      },
+      {
+        "case": "install_log_null",
+        "accepted": true,
+        "status": "BYTE_CHAIN_VERIFIED"
+      }
+    ],
+    "native_builds": 0,
+    "actual_HH_runs": 0
+  },
+  "findings": [
+    {
+      "id": "PROV-R01",
+      "severity": "P1_PROVENANCE_GATE",
+      "category": "REQUIRED_IDENTITY_FAIL_OPEN",
+      "title": "Explicit null SHA256 disables expected-byte verification",
+      "location": "file_identity(expected=None) and verify_backend compiler/binary/stage-log callers",
+      "observed": "Compiler hash, library binary hash, configure log hash and install log hash set to null each admit altered bytes and return BYTE_CHAIN_VERIFIED.",
+      "source_sha256_at_reproduction": "c2f689c7071f3c2c7d39d8d0b45367dfdf1e4a64ba2e50fe64638fd67c324dbd",
+      "impact": "A record missing mandatory identities is accepted. This is separate from the correctly disclosed inability to independently witness a forged complete build record.",
+      "minimum_fix": "Require each compiler/binary/log expected SHA256 to be a 64-hex string before checking bytes. Distinguish omitted expected hash for pure identity collection from explicitly null expected hash in verification. Add missing/null/malformed identity regressions."
+    }
+  ],
+  "targeted_tests": {
+    "count": 6,
+    "exit_code": 0,
+    "log": "TARGETED_CHECKS.log",
+    "areas": [
+      "limited claim ceiling",
+      "symlink prefix escape rejection",
+      "different runtime backend path rejection",
+      "missing/duplicate dependencies",
+      "actual returned linkage hashes",
+      "unknown extra dependencies"
+    ]
+  },
+  "supported_observations": [
+    "Fixed archive SHA256 and exact length gates are present for the three pinned releases.",
+    "Canonical resolution rejects backend symlink escape from the sidecar prefix.",
+    "ldd parser binds each required soname family to the resolved expected backend path, rejects missing/duplicate/backend-path substitutions and returns check-time byte hashes.",
+    "The verification block explicitly withholds independently witnessed execution, historical ABI admission and scientific promotion.",
+    "The linkage function returns current hashes and assumes filesystem stability; cross-stage comparison remains a caller integration duty and the runner is outside this review."
+  ],
+  "independent_review_admitted": false,
+  "native_builds": 0,
+  "actual_HH_runs": 0,
+  "source_mutations": 0
+}

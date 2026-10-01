@@ -1,0 +1,167 @@
+{
+  "schema": "WU088_ABI_EVIDENCE_RETURN_V1",
+  "loop_id": "HOST_SYNTHETIC_READINESS_20261001_V1",
+  "start_head": "7e9a2ac73f694450d4dd1e95b201d50bace8f25f",
+  "status": "EVIDENCE_COLLECTOR_VERIFIED_CURRENT_SYNTHETIC_ONLY",
+  "B03": "RAW_ABI_AUTHORITY_BLOCKED",
+  "historical_layout_admitted": false,
+  "independent_project_decision_admitted": false,
+  "actual_HH_payloads_read": 0,
+  "native_builds": 0,
+  "scientific_integrations": 0,
+  "rigorous": false,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "source_sha256": {
+    "abi_witness.py": "4ca229ad202a535ccca52b8df6b296b44f25c33fdb7ed0465c113e97b2928125",
+    "test_abi_witness.py": "6b525d4f7a3e6afe8065bcf24707406e019e6e0a46b80fd0c6f1e70cfacdc941",
+    "README_ABI_KO.md": "269d3f919cf37f11a4523c6c3c72185a502f6816611cf0109f1c5ef39531bd5c"
+  },
+  "prior_immutable_authority": {
+    "path": "../gap_closure_20261001_g0_g6_v1/RAW_ABI_AUTHORITY.json",
+    "sha256": "0a710864e659f0c02483649b2267055b7c5f37b7d7cfe604bd1286b422cc888d",
+    "source_pins": [
+      {
+        "id": "C04",
+        "version": "2.3.5",
+        "commit": "c3d60fc8393f3ca3306b8ce8b6453d43737e3d90",
+        "archive_sha256": "49e3441dce6a47cb1c752cae7e23eed2f5900f23bd28a1bf514f7e336f87b242",
+        "archive_hash_verified_this_loop": true,
+        "url": "https://github.com/numpy/numpy/tree/c3d60fc8393f3ca3306b8ce8b6453d43737e3d90",
+        "members": [
+          {
+            "path": "numpy/lib/_format_impl.py",
+            "sha256": "cdc437c57c4f7fb7a992db18adc7416c83ee38287d38f575837801ea085fe2b1",
+            "role": "NPY version/header/endian/order definition"
+          },
+          {
+            "path": "numpy/_core/include/numpy/npy_common.h",
+            "sha256": "fb4e5b6af6e4e382948f2e50faa9cce58cd4df654946fd0df28cdf088fd229c1",
+            "role": "NPY_SIZEOF_LONGDOUBLE can differ from C long double; complex representation is build-dependent"
+          },
+          {
+            "path": "doc/source/user/basics.types.rst",
+            "sha256": "0e288c072dc1b8733326dc3094c11c344d0698cf6e9ff21ff2dd7fb57ccd8d89",
+            "role": "longdouble/complex256 platform dependence and padding"
+          }
+        ]
+      },
+      {
+        "id": "D03",
+        "representation": "ARCHIVED_FULL_PDF",
+        "url": "https://refspecs.linuxfoundation.org/elf/x86_64-abi-0.99.pdf",
+        "sha256": "69e117a13b560b1b957c15f05a61b130ca56828f05dca951e27cb8e2ada14283",
+        "hash_verified_this_loop": true,
+        "version": "Draft0.99.6,2012-07-02",
+        "pages_printed": [
+          12,
+          13
+        ],
+        "pages_pdf": [
+          13,
+          14
+        ]
+      }
+    ]
+  },
+  "current_probe": {
+    "path": "evidence/abi/current_probe_final/WITNESS.json",
+    "sha256": "1be484734ae2961cac67178f93d1699cb665cf69df6ab524361c69f8e90e3bc0",
+    "status": "CURRENT_SYNTHETIC_WITNESS_CAPTURED",
+    "numpy_version": "2.3.5",
+    "synthetic_payloads_generated": 8,
+    "sentinel_bytes_transport": "exact original NPY bytes as ASCII hex; no binary files in publication overlay",
+    "observed_extended_candidate": "little-endian x87_80,16bytecomponents,offset0,real_then_imag",
+    "measurements": {
+      "bytes_written_before_report": 9462,
+      "hashed_bytes": 42433492,
+      "hashed_files": 16,
+      "wall_seconds": 0.08482004500183393
+    },
+    "layout_candidate_validated_against_independent_exact_dyadics": true,
+    "signed_zero_verified": true,
+    "padding_preserved_separately": true,
+    "scope": "Current environment only, not historical evidence admission"
+  },
+  "external_guard": {
+    "path": "evidence/abi/current_probe_final_guard/PROCESS_RECEIPT.json",
+    "sha256": "cbe87a453c84ecb2e8bb56750dc21621adaf02b94e7cd1a86a642756933e284d",
+    "status": "PROCESS_COMPLETED",
+    "child_exit": 0,
+    "wall_seconds": 0.16562071199950879,
+    "wall_budget_seconds": 20.0,
+    "address_space_bytes_per_process": 1073741824,
+    "aggregate_tree_memory_limit": false
+  },
+  "tests": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "-v",
+      "test_abi_witness"
+    ],
+    "cwd": "gap_work/repo/research/r31ao_unequal_ladder/host_synthetic_readiness_20261001_v1",
+    "count": 14,
+    "failures": 0,
+    "errors": 0,
+    "skipped_this_execution": 0,
+    "exit_status": 0,
+    "final_log": "evidence/abi/GREEN_FINAL.log",
+    "final_log_sha256": "7b0bf08491ab12ab910a294e5fd39f2b617a4a0a27ce8faacbeb372ccbc31848",
+    "initial_red_exit_status": 1,
+    "serializer_regression_red_exit_status": 1,
+    "claim_ceiling": "No HH scientific validation or historical ABI closure"
+  },
+  "history_search": {
+    "path": "evidence/abi/HISTORICAL_TEXT_SEARCH.json",
+    "sha256": "319852f9d49dd32ea592d65ebdbdf28de5ba14da9bbb8eac4e40a2cb7e8ca8d3",
+    "new_clue": "R31AL contemporaneous ENVIRONMENT jointly records original runtime/Python path, NumPy2.3.5 and longdouble16byte/64significand; PRE_OUTPUT_LOCK binds producer run/native sources",
+    "recorded_source_files": 3,
+    "exact_git_blobs_verified": 3,
+    "missing": "historical NumPy binary/config identity and preserved serializer-to-output linkage"
+  },
+  "historical_linkage_contract": {
+    "required_role_names": [
+      "contemporaneous_environment",
+      "preserved_numpy_binary_chain",
+      "serializer_to_output_binding",
+      "layout_capture_under_identified_runtime"
+    ],
+    "correct_references_maximum_status": "REFERENCES_STRUCTURALLY_COMPLETE_REVIEW_REQUIRED",
+    "reference_contents_verified": false,
+    "all_missing_wrong_or_self_attested_cases_leave_B03_blocked": true,
+    "closure_capability": false
+  },
+  "runner": {
+    "direct": [
+      "/chosen/python",
+      "-B",
+      "abi_witness.py",
+      "--output-dir",
+      "/existing/parent/new_abi_witness"
+    ],
+    "guarded": "See README_ABI_KO.md; use immutable prior host_guard/run_guarded.py with explicit 20-second wall and 1024-MiB per-process RLIMIT_AS",
+    "numpy_missing": "NUMPY_UNAVAILABLE; exit2; no auto-install",
+    "current_synthetic_success": "exit0; does not close B03"
+  },
+  "remaining": [
+    "Independent review of supplied historical custody/binary/layout/output linkage",
+    "Authorized actual NPY member byte bindings and separately authorized scientific route remain outside this task"
+  ],
+  "superseded_evidence": [
+    "evidence/abi/current_probe",
+    "evidence/abi/current_probe_guard",
+    "evidence/abi/GREEN.log",
+    "evidence/abi/GREEN_ATTEMPT_1.log",
+    "evidence/abi/PROBE_COMMAND.json"
+  ],
+  "independent_implementation_review": {
+    "path": "evidence/review_abi/REVIEW.json",
+    "sha256": "0e355db24355febabc76f248af5dfe8d55b2b37a662855f4797d5daa38892960",
+    "reviewer": "g3_gram",
+    "result": "No material defect on source hashes 4ca229ad202a535ccca52b8df6b296b44f25c33fdb7ed0465c113e97b2928125 / 6b525d4f7a3e6afe8065bcf24707406e019e6e0a46b80fd0c6f1e70cfacdc941",
+    "claim_ceiling": "Independent bounded implementation review only; historical/project scientific admission remains false"
+  }
+}

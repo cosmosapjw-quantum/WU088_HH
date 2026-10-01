@@ -1,0 +1,179 @@
+{
+  "schema": "WU088_HOST_ABI_BOUNDED_INDEPENDENT_REVIEW_V1",
+  "reviewer": "/root/g3_gram",
+  "target": [
+    "abi_witness.py",
+    "test_abi_witness.py",
+    "TASK_CONTRACT.json"
+  ],
+  "source_sha256": {
+    "abi_witness.py": "4ca229ad202a535ccca52b8df6b296b44f25c33fdb7ed0465c113e97b2928125",
+    "test_abi_witness.py": "6b525d4f7a3e6afe8065bcf24707406e019e6e0a46b80fd0c6f1e70cfacdc941",
+    "TASK_CONTRACT.json": "3b15f8ceee0b0e9b1fd8a1054b61957f7cf5c32600ca506498f0619f9ee6e48e"
+  },
+  "supporting_authority": {
+    "path": "../gap_closure_20261001_g0_g6_v1/RAW_ABI_AUTHORITY.json",
+    "sha256": "0a710864e659f0c02483649b2267055b7c5f37b7d7cfe604bd1286b422cc888d",
+    "read_scope": "metadata only; no archived payload bytes"
+  },
+  "verdict": "PASS_BOUNDED_CURRENT_HOST_SYNTHETIC_REVIEW",
+  "specification_verdict": "Pass within explicit evidence-only current-host scope",
+  "engineering_quality_verdict": "Pass within bounded target; no material unresolved defect found",
+  "findings": [],
+  "independence": {
+    "collector_author": "/root/g2_decoder",
+    "reviewer_did_not_modify_target_files": true,
+    "G3_authorship_does_not_extend_independence_to_G3": true,
+    "G3_not_under_review": true,
+    "project_independent_review_admitted": false
+  },
+  "checks": [
+    {
+      "requirement": "Exact dyadics and signed zero",
+      "evidence": "independent_check.log",
+      "result": "PASS; 96 real components independently interpreted as integer bit fields, no G2 call in manual oracle"
+    },
+    {
+      "requirement": "Fortran index and complex real/imag ordering",
+      "evidence": "independent_check.log",
+      "result": "PASS; all 8 locally generated C/F float64/longdouble/complex128/clongdouble arrays"
+    },
+    {
+      "requirement": "Hex transport, raw/payload identity",
+      "evidence": "independent_check.log",
+      "result": "PASS; bytes.fromhex length and raw/payload SHA256 match recorded values"
+    },
+    {
+      "requirement": "Current layout must not admit historical identity",
+      "evidence": "focused_suite.log and independent_check.log",
+      "result": "PASS; even fully populated pinned reference object remains structurally complete / review required; all admission flags false"
+    },
+    {
+      "requirement": "Bounded output and refusal behavior",
+      "evidence": "focused_suite.log and resource_check.log",
+      "result": "PASS; create-only output, per-file/aggregate/file-count caps, manifest cap, UTF8 config byte cap, total output refusal"
+    },
+    {
+      "requirement": "Actual serializer implementation identity",
+      "evidence": "current_probe/WITNESS.json identities",
+      "result": "PASS; _format_impl.py and _npyio_impl.py captured via actual callable code filename; these are current runtime source identities, not historical linkage"
+    }
+  ],
+  "execution": {
+    "focused_tests": 14,
+    "skipped_tests": 0,
+    "independent_sentinels": 8,
+    "independent_real_components": 96,
+    "additional_resource_refusal_cases": 4,
+    "commands": [
+      {
+        "label": "focused_suite",
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "-m",
+          "unittest",
+          "-v",
+          "test_abi_witness.py"
+        ],
+        "cwd": "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/host_synthetic_readiness_20261001_v1",
+        "exit_code": 0,
+        "elapsed_seconds": 0.19768122300229152,
+        "hard_wall_timeout_seconds": 20,
+        "address_space_bytes": 1073741824
+      },
+      {
+        "label": "independent_check",
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/host_synthetic_readiness_20261001_v1/evidence/review_abi/independent_check.py"
+        ],
+        "cwd": "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/host_synthetic_readiness_20261001_v1",
+        "exit_code": 0,
+        "elapsed_seconds": 0.14079847899847664,
+        "hard_wall_timeout_seconds": 20,
+        "address_space_bytes": 1073741824
+      },
+      {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/host_synthetic_readiness_20261001_v1/evidence/review_abi/resource_check.py"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 0.12983361700025853,
+        "hard_wall_timeout_seconds": 20,
+        "address_space_bytes": 1073741824,
+        "source_sha256_before": "4ca229ad202a535ccca52b8df6b296b44f25c33fdb7ed0465c113e97b2928125",
+        "source_sha256_after": "4ca229ad202a535ccca52b8df6b296b44f25c33fdb7ed0465c113e97b2928125"
+      }
+    ],
+    "environment": {
+      "python": {
+        "byteorder": "little",
+        "invoked_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+        "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+      },
+      "numpy_version": "2.3.5"
+    },
+    "hard_guard_each_command": {
+      "wall_timeout_seconds": 20,
+      "address_space_mib": 1024
+    }
+  },
+  "observed_output": {
+    "actual_HH_payloads_read": 0,
+    "byte_orders_exercised": [
+      "little"
+    ],
+    "candidates_exercised": [
+      "IEEE_BINARY64",
+      "x87_80"
+    ],
+    "historical_layout_admitted": false,
+    "independent_review_admitted": false,
+    "independently_bit_decoded_components": 96,
+    "native_builds": 0,
+    "output_bytes_including_report": 59215,
+    "reference_contents_verified": false,
+    "sentinels": 8,
+    "status": "PASS_CURRENT_HOST_SYNTHETIC_ONLY"
+  },
+  "limitations": [
+    "Only this current little-endian x86_64 host was exercised. IEEE binary128 and big-endian runtime production were not exercised.",
+    "Current x87 agreement and matching NumPy source-file hashes do not establish historical runtime/build/serializer identity.",
+    "The collector documents cooperative internal wall checking; hard wall/address-space limits in this review were supplied externally.",
+    "A plausible URI/hash/origin object is not evidence-content verification or independent historical admission.",
+    "No actual HH arrays, constants, integrals, callbacks, frozen payloads, native builds, or scientific comparator were evaluated."
+  ],
+  "historical_layout_admitted": false,
+  "reference_contents_verified": false,
+  "independent_review_admitted": false,
+  "B03": "RAW_ABI_AUTHORITY_BLOCKED",
+  "rigorous": false,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "actual_HH_payloads_read": 0,
+  "native_builds": 0,
+  "evidence_sha256": {
+    "EXECUTION.json": "e982f4113e714d78e390eb0a69f8b2a78e9fb494566b380258264471f1c8696c",
+    "RESOURCE_EXECUTION.json": "290db1ce639adc93a3315b5314b3bf525fc3c2aa9032b9f2bf82a68d95bb6579",
+    "current_probe/WITNESS.json": "278859b8d96b92700014cbb9c3c2a377285e484271869b39b166c26e034a35d0",
+    "current_probe/clongdouble_C.npy.hex": "0f23ce6c3aa0120c25b4645d3623e9d0497c271dd013396e5a5feb227bb6eb72",
+    "current_probe/clongdouble_F.npy.hex": "2bad21762adc428ded2ac46ff9fb6d59ad931b9ccbd53880b71740b2a7e6eef2",
+    "current_probe/complex128_C.npy.hex": "1491993a52f719a85e5985e6c339dfa2b8ef4fd71a864a2ba48ae46f70199990",
+    "current_probe/complex128_F.npy.hex": "7354dcd0e345db591dd91616aedeeefdcc20bb672323571a8321413aa49f1b75",
+    "current_probe/dtype_metadata.json": "dcf0b839507ee597d4bc6e6c7e08f3c299b68e2c1b47828b529f74388f2aa895",
+    "current_probe/float64_C.npy.hex": "ff08072b505ed4f33fa4e4ffe6e9823785f8b2c0022c93656dc92096dc2c19e7",
+    "current_probe/float64_F.npy.hex": "d7b3f8ab8d3a8e06cfeb1e025229aa613226a05fe478efa9cee39531c926854e",
+    "current_probe/longdouble_C.npy.hex": "87ac6a8aa153c16145b4267183e39cdb6987928901b4e5ffd75479a775376179",
+    "current_probe/longdouble_F.npy.hex": "a8acf4e9cc27985a2a6f0cb64d59c33e8de1261d9f78a0ead458a3d6556cecad",
+    "current_probe/numpy_show_config.txt": "d458c673e553c8556cf4904a3955b48e93356e7d85da83d2b28b03f28d237c4d",
+    "current_probe/python_config.json": "12c2a268013866c3c03a49ef72b58cd40d971e41913e7860d333de14e8a66db2",
+    "focused_suite.log": "cb2d45b8c00dbb6fd87499527d58989b29c8bf07f102f21a8f1ee1c107498a6b",
+    "independent_check.log": "8ee6aa22c2b49fcda66e8ca8ee2ef9ab37379cf2058660423a88087a30b01279",
+    "independent_check.py": "6d147ff1f3c9221ed003e09a4f7a9b7e1750f27648d69e0add152db2ce57dd4b",
+    "resource_check.log": "e6cb856ad38c8f9a24d92f53feecd4cdca531eac84e6f4a71c56ed056bdfe11f",
+    "resource_check.py": "2eed768722ff7d6b003318f5a1def7cb257d07de12bcadabd6f285e21fad433e",
+    "run_review.py": "e103f0f7dc5807be20306b692699e15b6af99fb8a500cb4648d6e9a1183c5ee1"
+  }
+}

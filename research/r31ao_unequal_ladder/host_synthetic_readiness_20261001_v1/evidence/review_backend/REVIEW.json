@@ -1,0 +1,119 @@
+{
+  "schema": "WU088_BOUNDED_BACKEND_ARTIFACT_REVIEW_V1",
+  "reviewed_at_utc": "2026-10-01T04:09:19.687015+00:00",
+  "status": "BOUNDED_REVIEW_COMPLETE_NO_OPEN_BLOCKER",
+  "scope": [
+    "new backend_runner.py and test_backend_runner.py",
+    "provenance_gate integration and INPUT_LOCK",
+    "fixed old build scripts and native stdout format",
+    "pinned FLINT archive build instructions"
+  ],
+  "reviewer": "g1_theorems",
+  "reviewer_independent_of_new_runner_implementation": true,
+  "reviewer_prior_native_theory_participation": true,
+  "independent_review_admitted": false,
+  "independence_note": "Separate artifact review of the newly authored runner, not a project-independent scientific decision reviewer or a native build witness.",
+  "source_bindings": [
+    {
+      "path": "backend_runner.py",
+      "sha256": "0749c157640e849194d88173098e8220206f5a4b404e7c6b7a5ffb628e2dc3ac",
+      "size": 25628
+    },
+    {
+      "path": "test_backend_runner.py",
+      "sha256": "6266c87d860fe31a37d744aaeebbd7cfa8cb11bc0832021c005513ffc0cda23d",
+      "size": 6564
+    },
+    {
+      "path": "provenance_gate.py",
+      "sha256": "12857ebed9dbcf6e14484388da491fd407c0af9a997588fe49e2b13048e42c5e",
+      "size": 8722
+    },
+    {
+      "path": "test_provenance_gate.py",
+      "sha256": "e7a5caac84697ad8996383f45059590b9347df5d2041b0d8db690d6dac4924d9",
+      "size": 6840
+    },
+    {
+      "path": "TASK_CONTRACT.json",
+      "sha256": "3b15f8ceee0b0e9b1fd8a1054b61957f7cf5c32600ca506498f0619f9ee6e48e",
+      "size": 1373
+    },
+    {
+      "path": "INPUT_LOCK.json",
+      "sha256": "5bd481e2ae7f441a552824ab5bcbc75de519812e126307e0699aa1fa8ba1bfe5",
+      "size": 9684
+    },
+    {
+      "path": "evidence/backend/TDD_RED_BR01_HOME.log",
+      "sha256": "2ec58dd9e2c6009c7c74e81cb67eadd40152abf044aecf22e3ba232dd0cfa3e8",
+      "size": 4137
+    },
+    {
+      "path": "evidence/backend/TDD_GREEN_03.log",
+      "sha256": "3a3aa46ac201b749ab5b75ca8d4fe3c9defc7af0b50a6f18e3840b451142e8b5",
+      "size": 1521
+    },
+    {
+      "path": "evidence/provenance/STREAM_BINDING_RED.log",
+      "sha256": "1a2914174a0b26b34b64b0e7b2eb96eef90da5bdb81647faf322fbe14b2312ab",
+      "size": 1013
+    },
+    {
+      "path": "evidence/provenance/STREAM_BINDING_GREEN.log",
+      "sha256": "b850b9f61fc6f4573b28ec92aba4acbd357744665b3f9d1218054be5fe90e5a4",
+      "size": 1691
+    },
+    {
+      "path": "evidence/review_backend/review_probes.py",
+      "sha256": "9a8587871efdbbb37587300a5e765d6939df068ebe1dcf03eb23f14df48443a0",
+      "size": 5751
+    },
+    {
+      "path": "evidence/review_backend/PROBES.log",
+      "sha256": "185dbe0dfdc1d4324cd38d0b78680e55c273473fe069ca7e6b62d2b69ebd0cbb",
+      "size": 542
+    }
+  ],
+  "archive_binding": "ARCHIVE_BINDINGS.json",
+  "findings": "FINDINGS.json",
+  "boundary_checks": {
+    "cli": "Default plan only; actual execution requires explicit --execute-host-synthetic. No HH input option or loader.",
+    "source_and_paths": "Three fixed source pins, hash-before-extraction, member/path/type/expansion caps, create-only sidecar and old INPUT_LOCK checks.",
+    "build_plan": "GMP install before MPFR; both before FLINT bootstrap/configure/build/check/install. Dedicated prefix/lib and compatible pinned archive flags.",
+    "stage_guards": "Argv-only subprocesses; finite global/stage wall caps; per-process AS/CPU/file limits; polled log/workspace caps; process group cleanup. Aggregate tree memory and process-group escape containment are not claimed.",
+    "record_gate": "Runner stage receipt plus actual stdout/stderr schema agrees with gate. Parent BR02 fix directly checked with an independent synthetic chain.",
+    "linkage": "ldd under the clean sidecar environment, resolved backend paths/hashes checked, backend chain reverified, library and executable hashes compared immediately before guarded execution.",
+    "fixture_integrity": "Old input lock is rechecked before each native compile. Runner only invokes the two locked build scripts and synthetic binaries.",
+    "native_marker": "BR01 fixed without editing either old fixture; final marker schemas exact in keys, types and values."
+  },
+  "reviewer_probe_result": {
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "exit_code": 0,
+    "log": "PROBES.log",
+    "library_builds": 0,
+    "native_fixture_executions": 0,
+    "actual_HH_runs": 0
+  },
+  "owner_evidence_observed": {
+    "runner_focused_tests": 12,
+    "all_passed": true,
+    "evidence": "evidence/backend/TDD_GREEN_03.log",
+    "not_reexecuted_by_reviewer": true
+  },
+  "limitations": [
+    "No compiler, configure, make, library build or native fixture was executed by this review.",
+    "Host toolchain compatibility, successful native compilation, native numerical behavior and end-to-end acceptance remain runtime-unverified.",
+    "Filesystem stability between immediate hash checks and execution is assumed; this is not an independent execution witness."
+  ],
+  "actual_HH_runs": 0,
+  "native_library_builds_this_review": 0,
+  "native_fixture_executions_this_review": 0,
+  "rigorous": false,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "scientific_promotion": false,
+  "historical_abi_admitted": false
+}

@@ -1,0 +1,32 @@
+test_binary_symlink_escape_rejected (test_provenance_gate.ProvenanceGateTests.test_binary_symlink_escape_rejected) ... ok
+test_boolean_does_not_admit_missing_log (test_provenance_gate.ProvenanceGateTests.test_boolean_does_not_admit_missing_log) ... ok
+test_different_linked_library_rejected (test_provenance_gate.ProvenanceGateTests.test_different_linked_library_rejected) ... ERROR
+test_failed_or_missing_stage_rejected (test_provenance_gate.ProvenanceGateTests.test_failed_or_missing_stage_rejected) ... ok
+test_intact_chain_has_limited_claim (test_provenance_gate.ProvenanceGateTests.test_intact_chain_has_limited_claim) ... ok
+test_linkage_returns_actual_hashes (test_provenance_gate.ProvenanceGateTests.test_linkage_returns_actual_hashes) ... ok
+test_missing_or_duplicated_dependency_rejected (test_provenance_gate.ProvenanceGateTests.test_missing_or_duplicated_dependency_rejected) ... ok
+test_modified_log_rejected (test_provenance_gate.ProvenanceGateTests.test_modified_log_rejected) ... ok
+test_source_or_compiler_tamper_rejected (test_provenance_gate.ProvenanceGateTests.test_source_or_compiler_tamper_rejected) ... ok
+test_unknown_dependency_cannot_hide (test_provenance_gate.ProvenanceGateTests.test_unknown_dependency_cannot_hide) ... ok
+
+======================================================================
+ERROR: test_different_linked_library_rejected (test_provenance_gate.ProvenanceGateTests.test_different_linked_library_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/host_synthetic_readiness_20261001_v1/test_provenance_gate.py", line 98, in test_different_linked_library_rejected
+    with self.assertRaises(ValueError): gate.verify_linkage(text.replace(expected['gmp'], '/usr/lib/libgmp.so.1'), expected)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/host_synthetic_readiness_20261001_v1/provenance_gate.py", line 137, in verify_linkage
+    if backend in found or Path(path).resolve(strict=True) != expected[backend]:
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1240, in resolve
+    s = self._flavour.realpath(self, strict=strict)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 424, in realpath
+  File "<frozen posixpath>", line 468, in _joinrealpath
+FileNotFoundError: [Errno 2] No such file or directory: '/usr/lib/libgmp.so.1'
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.015s
+
+FAILED (errors=1)
