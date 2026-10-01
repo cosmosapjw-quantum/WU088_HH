@@ -1,0 +1,98 @@
+{
+  "schema": "WU088_W3_AUDIT_DATABASE_INDEPENDENT_REVIEW_V1",
+  "reviewer": "/root/w3_audit/audit_review",
+  "owner": "/root/w3_audit",
+  "review_utc": "2026-10-01T22:42:52.183555+00:00",
+  "status": "PASSED_STORAGE_COMPONENT_REVIEW_AFTER_NAMESPACE_FIX",
+  "scope": "Independent changed-seam source inspection, synthetic endpoint accounting/storage tests, namespace-alias adversarial fixture, and read-only prior database identity lookup; no endpoint or native scientific execution",
+  "reviewed_sources": [
+    {
+      "path": "audit_database/build_w3_db.py",
+      "bytes": 20863,
+      "sha256": "eecd211e97f5e0fa831e0cf16f2d34fbe75617102144d9ddcd5cf1631a367cbd"
+    },
+    {
+      "path": "audit_database/schema.sql",
+      "bytes": 1835,
+      "sha256": "a99b5dcb773c8dee28bf617745153201da09b1803a256db73c44cf42af24eb8f"
+    },
+    {
+      "path": "audit_database/test_w3_db.py",
+      "bytes": 10770,
+      "sha256": "4fbaf3d002cbacfee2de2ce08fdffcae30556c007ed9095dd3a36a526b294f1e"
+    },
+    {
+      "path": "audit_database/README.md",
+      "bytes": 3314,
+      "sha256": "6f5dd457f087ad4929f01398dbb36787306af3d03dbecb17e21d2e6db7490137"
+    }
+  ],
+  "commands": [
+    {
+      "command": "python -B -m unittest discover -s audit_database -p test_w3_db.py -v",
+      "cwd": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/w3_design_20261002_v1",
+      "exit_code": 0,
+      "unique_tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "reported_elapsed_seconds": 0.098,
+      "scope": "Synthetic fixture databases only"
+    },
+    {
+      "command": "python -B stdin: load synthetic storage test fixture; symlink common-parent/new_alias to continuation; add inherited:new_alias/selection.json stage evidence; call build in temporary output directory",
+      "before_fix": {
+        "outcome": "UNEXPECTED_ACCEPTANCE",
+        "status": "VERIFIED_LOCAL_APPEND_AND_SQL_RESTORE"
+      },
+      "after_fix": {
+        "outcome": "EXPECTED_REJECTION",
+        "reason": "Evidence symlink component is not supported: new_alias/selection.json",
+        "output_directory_created": false
+      }
+    },
+    {
+      "command": "Read-only SQLite query of pinned W1 database stage artifacts and historical hash tables, plus main-file SHA256",
+      "mode": "mode=ro",
+      "prior_database_bytes": 18092032,
+      "prior_database_sha256": "a27bc17b9406f5fe558376e552381a08fdfe836fdd3ed362d83ad26ae7572ce6",
+      "w1_stage_rows": 10,
+      "w1_stage_json_sha256": "f6f55aaa745396edce2d431f3a8c39b9aecc1324b9f786ae6776f52a45482e1f",
+      "historical_hash_tables_present": [
+        "artifacts",
+        "prior_artifact_records",
+        "w1_artifacts"
+      ],
+      "pinned_identities_match": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "W3-AUDIT-01",
+      "severity_before_fix": "blocking_namespace_boundary",
+      "status": "RESOLVED_AND_INDEPENDENTLY_RETESTED",
+      "problem": "Inherited evidence could alias a continuation file through a symlinked ancestor directory under the ladder parent because the namespace-alias check used the lexical path, while only the final file symlink was refused.",
+      "owner_correction": "Reject every symlink component below the declared namespace root and additionally compare resolved paths against current and prior source roots.",
+      "independent_result": "Original symlink-alias reproducer is rejected before output creation. Owner regressions cover aliases into both continuation and prior trees. Focused suite passes."
+    }
+  ],
+  "source_review": {
+    "accounting": "Only endpoint selection and endpoint crosscheck kinds enter new rows. Strict integer primitive index 0, nonnegative candidate-polynomial count, exactly zero native integration invocations, explicit boolean accepted and observed worker fields are required and compared with the wrapper receipt.",
+    "source_binding": "Ledger receipt and receipt output refs require exact SHA256 and current namespace. Receipt and raw output must differ. Historical hashes from all inherited artifact tables and duplicated receipt/output hashes are rejected; historical source references and host events do not increment endpoint/native execution counters.",
+    "scope_boundary": "The builder checks declared accounting and file identity only. It does not inspect raw output mathematical semantics, prove worker execution authenticity, validate the endpoint theorem, or infer scientific acceptance from database insertion.",
+    "prior_preservation": "Pinned prior SQLite is opened read-only and copied with SQLite backup. All inherited table rows and schema objects are compared by exact canonical logical state after append. Final main-file hash is checked again.",
+    "storage": "Current file inventory and explicit evidence references are checked before append and again after SQL restore. Additional or changed source files invalidate completion. Generated output is create-only and outside current/prior source trees; failures retain output without a successful verification receipt.",
+    "restore": "SQL dump is restored locally into a separate database; integrity, foreign keys and full logical table/schema state are compared. This is not cloud restoration."
+  },
+  "remaining_blocking_findings": [],
+  "limits": {
+    "actual_endpoint_evaluations_by_reviewer": 0,
+    "actual_native_integration_invocations_by_reviewer": 0,
+    "final_database_built_by_reviewer": false,
+    "final_execution_ledger_reviewed": false,
+    "actual_endpoint_output_reviewed": false,
+    "mathematical_validity_reviewed": false,
+    "worker_execution_authenticity_inferred": false,
+    "cloud_restore_tested": false,
+    "component_success_is_scientific_admission": false
+  }
+}

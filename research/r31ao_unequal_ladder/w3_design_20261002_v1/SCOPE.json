@@ -1,0 +1,41 @@
+{
+  "schema": "WU088_W3_ENDPOINT_DESIGN_SCOPE_V1",
+  "base_commit": "b7e90411a155ce230d025871fc18e87e99fd9974",
+  "branch": "research/r31ao-unequal-order-ladder-20260930",
+  "objective": "Separate lower/upper endpoint error contributions and choose a smaller certified upper cutoff before attempting full W3 interior.",
+  "one_priority_step": "B02_B05_ENDPOINT_CUTOFF_COST_DESIGN",
+  "frozen_lower_cutoffs": "1/512",
+  "endpoint_budget": "1/2097152",
+  "budget_meaning": "2^-21 is strictly below the exact prior W3 endpoint bound. Tighten lower cutoff one octave to reduce its floor; do not relax final D or interior tolerances.",
+  "candidate_upper_exponents2": [
+    32,
+    40,
+    48,
+    56,
+    64
+  ],
+  "precision_bits": 128,
+  "actual_endpoint_selection_invocations_cap": 1,
+  "actual_existing_engine_crosschecks_cap": 1,
+  "native_primitive_integral_invocations_cap": 0,
+  "selector_wall_cap_seconds": 60,
+  "existing_engine_wall_cap_seconds": 30,
+  "per_process_memory_mib": 512,
+  "prior_successes_rerun": false,
+  "invariants": [
+    "exactFrozen107inputs",
+    "ordered signed107source",
+    "positiveprovedendpointmajorants",
+    "upwardrationalarithmetic",
+    "existingdisjointcomplementaccounting",
+    "noinnerprecisionortolerancerelaxation",
+    "no newgeometryorbasis"
+  ],
+  "scientific_admission": false,
+  "production_admission": false,
+  "NCP_or_MPI_execution": false,
+  "design_refinement_before_execution": {
+    "prior_proposal_sha256": "60302eedbc9a135cb82731844ed290b73e09e9c9eeea3bf51a0a98e109ebaedf",
+    "reason": "Prior2^-20 was a binary upper bracket, not an established final tolerance. Require a new bound strictly below prior actual W3 bound. No numerical evaluation of rejected proposal performed."
+  }
+}

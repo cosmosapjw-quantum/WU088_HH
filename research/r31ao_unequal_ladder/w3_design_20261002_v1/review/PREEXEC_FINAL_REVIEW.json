@@ -1,0 +1,28 @@
+{
+  "schema": "WU088_W3_PREEXEC_FINAL_REVIEW_V1",
+  "status": "PASS_SCOPED_ENDPOINT_CAMPAIGN_SOURCE_AND_PROCESS_DESIGN",
+  "reviewed_sources": {
+    "crosscheck_worker.py": "75c7aa428d97e4f5ccd1258be65efe8a8204637d8dbd36dcff644fd604c29d8e",
+    "run_bounded.py": "dd77d26029cd39efbe3bd478cf32118bf177825c03d9a16d72c93b9995c67f26",
+    "tail_bound/select_cutoff.py": "7a8a4d9fc10d79ba08d7c9eb015bd814559d9c970ec008404b7e45d1a055a759"
+  },
+  "closed_findings": [
+    "OPTIMIZE_DISABLES_ASSERT_GUARDS"
+  ],
+  "guard_fix": "explicit ValueError source/window/cap predicates independent of Python optimization flags",
+  "bounded_actual_execution_permitted_by_existing_scope": {
+    "selection_invocations": 1,
+    "original_engine_crosscheck_invocations": 1,
+    "native_HH_integrations": 0,
+    "precision_bits": 128,
+    "memory_mib": 512,
+    "wall_seconds_selection": 60,
+    "wall_seconds_crosscheck": 30,
+    "descendant_creation": "DENIED_BY_PINNED_HOST_SECCOMP",
+    "PDEATHSIG": "SIGKILL"
+  },
+  "actual_endpoint_evaluations_by_reviewer": 0,
+  "actual_HH_integrations_by_reviewer": 0,
+  "numerical_result_review": "PENDING_ROOT_EXECUTION",
+  "production_admission": false
+}
