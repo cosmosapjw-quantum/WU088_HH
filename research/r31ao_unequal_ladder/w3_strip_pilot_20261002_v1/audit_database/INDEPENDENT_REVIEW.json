@@ -1,0 +1,137 @@
+{
+  "schema": "WU088_W3_STRIP_AUDIT_DATABASE_INDEPENDENT_REVIEW_V1",
+  "reviewer": "/root/w3_audit/audit_review",
+  "owner": "/root/w3_audit",
+  "review_utc": "2026-10-01T23:30:20.173093+00:00",
+  "status": "PASSED_STORAGE_COMPONENT_REVIEW_AFTER_ACCOUNTING_FIXES",
+  "scope": "Changed-seam source review and bounded synthetic database/accounting tests only. No endpoint or native integration executed, no final strip campaign database built, and no actual pilot output validated by this reviewer.",
+  "reviewed_sources": [
+    {
+      "path": "audit_database/build_w3_strip_db.py",
+      "bytes": 24880,
+      "sha256": "b78074aeaf61f1c3087ffcae992d1f0fbc7a02f4283715838f4205710a975f82"
+    },
+    {
+      "path": "audit_database/schema.sql",
+      "bytes": 2114,
+      "sha256": "013f694f5b080b18fccc52903b727908fdbd278fb1bca2b82c96b43cbcbcb499"
+    },
+    {
+      "path": "audit_database/test_w3_strip_db.py",
+      "bytes": 13720,
+      "sha256": "d86d4ffeda601238e35783f45cd700c70f6a091aed2b162000dd4f7f6bf2dcf0"
+    },
+    {
+      "path": "audit_database/README.md",
+      "bytes": 4613,
+      "sha256": "a25d03809b45c11fd00f28953bcaa82ca90bec31790f4b6bfa4e19dff4299da1"
+    }
+  ],
+  "commands": [
+    {
+      "command": "python -B -m unittest discover -s audit_database -p test_w3_strip_db.py -v",
+      "cwd": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/w3_strip_pilot_20261002_v1",
+      "exit_code": 0,
+      "unique_tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "reported_elapsed_seconds": 0.18,
+      "fixture_scope": "Synthetic records and temporary SQLite only"
+    },
+    {
+      "command": "Independent synthetic probe: missing-output JSON also carries native_execution_observed=true wrapper and valid RESOURCE_LIMIT native_stdout",
+      "before_fix": {
+        "accepted_by_builder": true,
+        "native_dispatch_attempts": 1,
+        "observed_native_integrations": 0
+      },
+      "after_fix": {
+        "accepted_by_builder": false,
+        "reason": "Missing-output evidence cannot also carry native receipt markers",
+        "output_created": false
+      }
+    },
+    {
+      "command": "Independent synthetic probe: unchanged historical w1/00.json is relabeled tile_id=15 in root wrapper and ledger",
+      "before_fix": {
+        "accepted_by_builder": true,
+        "reused_W1_tiles": 1
+      },
+      "after_fix": {
+        "accepted_by_builder": false,
+        "reason": "Reused tile ID does not match its pinned W1 receipt identity",
+        "output_created": false
+      }
+    },
+    {
+      "command": "Independent synthetic probes: raw index=false versus ledger primitive_index=0; raw accepted=1 versus ledger accepted=true",
+      "outcomes": [
+        {
+          "raw_field": "index",
+          "accepted_by_builder": false,
+          "reason": "Ledger primitive_index disagrees with native output",
+          "output_created": false
+        },
+        {
+          "raw_field": "accepted",
+          "accepted_by_builder": false,
+          "reason": "Ledger accepted disagrees with native output",
+          "output_created": false
+        }
+      ]
+    },
+    {
+      "command": "Read-only prior W3 SQLite identity, table count, stage artifact and W1 tile receipt mapping lookup",
+      "mode": "mode=ro",
+      "prior_database_sha256": "73558531543754826eaf7cfe27f6960a055ac17a865509de469f148d3ab84e7c",
+      "prior_database_bytes": 18173952,
+      "table_count": 19,
+      "stage_json_sha256": "c6fb021704d0b872cfab409291096a2b454cf33a065ad546d88dc411cea7d33b",
+      "pinned_identities_match": true,
+      "w1_receipt_sample": {
+        "00": "89cef714e9758932036854d218330c775920d6131114df8a236cf7d171bc5c5e",
+        "01": "fd3fc17b2c9fe390a049e87d6b4318729686ecc5dcfd48d8a6bbd01a92fa6837",
+        "02": "58e229b0515c659608ce7705db79a410cbc5784e96993e7f76505d3d86c9aec7"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "W3STRIP-AUDIT-01",
+      "severity_before_fix": "blocking_accounting_contradiction",
+      "status": "RESOLVED_AND_INDEPENDENTLY_RETESTED",
+      "problem": "A no-output record could also contain affirmative native execution evidence and serialized native stdout, yet receive observed-native count zero.",
+      "owner_correction": "Reject recognized native receipt markers in NO_NATIVE_SCHEMA evidence.",
+      "independent_result": "Original contradictory record now rejected before output creation."
+    },
+    {
+      "id": "W3STRIP-AUDIT-02",
+      "severity_before_fix": "blocking_reused_tile_identity",
+      "status": "RESOLVED_AND_INDEPENDENTLY_RETESTED",
+      "problem": "Historical raw SHA membership alone allowed an accepted original W1 tile receipt to be relabeled as another original tile.",
+      "owner_correction": "Map accepted primitive-0 tile IDs to receipt SHA in the pinned inherited w1_execution_records table and require exact tile-to-SHA agreement.",
+      "independent_result": "Original tile00-to-tile15 relabel now rejected before output creation."
+    }
+  ],
+  "source_review": {
+    "dispatch_and_observation": "Dispatch attempts, observed native command outputs, accepted/rejected current pilots, reused W1 receipts, and host events remain separate. Observed native command count is not the nested integration_calls counter. No-output failure does not assert that no native process ever ran.",
+    "limits_and_types": "Only four declared pilot tile IDs and original W1 IDs 00 through 15 are accepted. Primitive index, acceptance, observed invocation count and zero endpoint-polynomial count use explicit type checks; root wrapper and native output fields are compared without bool/int equivalence.",
+    "source_authority": "New wrappers are SHA-bound current files. Raw current outputs cannot copy historical hashes; reuse requires inherited namespace, known bytes and the pinned original tile-to-receipt binding. Duplicate kind/tile, wrapper hashes and raw hashes are rejected. These checks do not independently authenticate execution or validate current pilot geometry.",
+    "failure_accounting": "Observed rejected native output counts as one observed command. Missing-output evidence counts as a failed dispatch and zero observed native commands only when explicitly declared and free of contradictory native markers. Absent records do not imply successful or attempted work.",
+    "prior_preservation": "Read-only pinned prior SQLite copied by backup API; every inherited table and schema object compared by canonical logical state after append; original main-file SHA rechecked.",
+    "namespace_and_snapshot": "Reject absolute/traversal/noncanonical evidence paths and all symlink components; inherited namespace cannot alias current or immediate prior roots. Current source bytes and file set checked before and after output construction.",
+    "storage_and_restore": "Create-only output outside source trees; integrity/foreign-key checks; local SQL restoration and full logical equality; failed output is retained without successful verification. Cloud restore is not inferred."
+  },
+  "remaining_blocking_findings": [],
+  "limits": {
+    "actual_native_invocations_by_reviewer": 0,
+    "actual_endpoint_evaluations_by_reviewer": 0,
+    "final_campaign_database_built_by_reviewer": false,
+    "final_campaign_ledger_reviewed": false,
+    "actual_pilot_output_reviewed": false,
+    "native_geometry_or_numerical_validity_reviewed": false,
+    "worker_authenticity_inferred": false,
+    "cloud_restore_tested": false,
+    "component_success_is_scientific_admission": false
+  }
+}
