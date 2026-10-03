@@ -1,0 +1,106 @@
+{
+  "schema": "WU088_FROZEN_INPUT_ADAPTER_VERIFICATION_V1",
+  "created_utc": "2026-10-01T03:28:44.981256+00:00",
+  "status": "SYNTHETIC_IMPLEMENTATION_VERIFIED_NATIVE_BRIDGE_DRAFT",
+  "test_command": "python -m unittest frozen_input.test_adapter -v",
+  "tests": 16,
+  "passed": 16,
+  "failed": 0,
+  "skipped": 0,
+  "actual_Frozen107_archive_read": false,
+  "actual_Frozen107_values_decoded": false,
+  "actual_HH_callback_evaluations": 0,
+  "actual_HH_integral_evaluations": 0,
+  "native_compile_or_execution": false,
+  "execution_authorized": false,
+  "scientific_authority": false,
+  "rigorous": false,
+  "source_metadata": {
+    "canonical_binding_path": "research/r31ao_unequal_ladder/endpoint_enclosure_review_20260930/EXACT_INPUT_AND_CALLBACK_BINDING.json",
+    "canonical_binding_sha256": "3ca2c676095898cbe30d6fcc388c0e1d644fccd8b235dfe076be8e4001209ed4",
+    "copied_fields": "archive/member SHA, shape, dtype, Fortran flag only",
+    "derived_header_spec_sha256": "71ff0c2315f4281835ff7c2736553dc9abbe4324e538e4a634bf54430b2534c8"
+  },
+  "reused_decoder": {
+    "path": "exact_raw_decoder/decoder.py",
+    "sha256": "bf1867616af07a670d61cd75c7ca0655c99e0be13fd6a73e9a4654f5fc0986f1"
+  },
+  "native_target_header": {
+    "path": "validated_callback/assembly.hpp",
+    "sha256": "fb38af6635f444649aa706f2107b8a4a91d2f18d5ab7477c320384414ac0eede",
+    "modified_by_this_step": false
+  },
+  "caps": {
+    "archive_bytes": 1048576,
+    "uncompressed_total_bytes": 262144,
+    "member_bytes": 65536,
+    "compression_ratio": 500,
+    "exact_member_count": 11
+  },
+  "checks": [
+    "external expected SHA required",
+    "archive and member pins in FROZEN107_PINNED scope",
+    "duplicate/path/member-set refusal",
+    "size/ratio/compression/symlink refusal",
+    "exact binary64 shape and Fortran layout",
+    "NaN refusal via exact decoder",
+    "semantic C-order rational field records",
+    "signed-zero provenance",
+    "deterministic typed C++ initializer",
+    "rational code injection refusal even with recalculated record digest",
+    "synthetic fixture cannot be admitted as canonical archive",
+    "pinned codegen rebinds actual archive bytes; self-asserted scope/hash/flag spoof refused",
+    "NULL-truncated original ZIP filename rejected; CLI read bounded despite file growth"
+  ],
+  "toy_fixture": {
+    "actual_Frozen107_values_reused": false,
+    "donor_nonzero_count": 729,
+    "107_term_authority_claimed": false
+  },
+  "tdd": {
+    "red": "frozen_input/TDD_RED.txt",
+    "red_reason": "adapter module absent before implementation",
+    "green": "frozen_input/TDD_GREEN.txt"
+  },
+  "files": [
+    {
+      "path": "frozen_input/FROZEN107_HEADER_SPEC.json",
+      "sha256": "71ff0c2315f4281835ff7c2736553dc9abbe4324e538e4a634bf54430b2534c8"
+    },
+    {
+      "path": "frozen_input/README_KO.md",
+      "sha256": "e949d197c1260778c68a4d8abb9451226942aad7a715072a904fd43e6e2b8bec"
+    },
+    {
+      "path": "frozen_input/TDD_GREEN.txt",
+      "sha256": "43a79666b8a52b3ce92e15cda103550167fc1dccca854eee7282ba3a044a5fcb"
+    },
+    {
+      "path": "frozen_input/TDD_RED.txt",
+      "sha256": "c573174d314333f75a24ec722e95356c13730236557fb1c5878731e49f8722e3"
+    },
+    {
+      "path": "frozen_input/__init__.py",
+      "sha256": "0b353a57e22700726ab3951cb35a01623a8b970b3d83f695a4eae29631fb1e3a"
+    },
+    {
+      "path": "frozen_input/adapter.py",
+      "sha256": "82e6e96157761be7e8423c7908c501bb66086b735374ce0679836ca1b69c7b48"
+    },
+    {
+      "path": "frozen_input/test_adapter.py",
+      "sha256": "f6045dbd1af139c2157056e3103131b1c08b513c603ed22a0dec3ce51fae0279"
+    }
+  ],
+  "remaining": [
+    "separately authorize actual archive exact decoding if required",
+    "execute actual payload binding under pinned archive/member identities",
+    "compile generated initializer with verified pinned native backend",
+    "close actual integral/endpoint and certificate obligations"
+  ],
+  "review_fix": {
+    "finding": "self-asserted record scope could select pinned initializer name",
+    "resolution": "original archive bytes required; pinned full re-decode and exact whole-record equality",
+    "native_or_real_payload_execution": false
+  }
+}

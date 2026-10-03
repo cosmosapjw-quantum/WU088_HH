@@ -1,0 +1,15 @@
+# Independent additive refinement-host review
+
+**Pass for the bounded adaptive-refinement correction.** The source `refining_petras.cpp` SHA256 is `4a3b46b925efdb92182d653bb41885f9b518826f83ad842256706676d0bdbeb6`. The immutable earlier host and the successful earlier worker remain unchanged. This is not a full-domain HH or production admission.
+
+The exact source diff has three behavioral changes: a nonfinite value on a nonexact order-zero input may reach FLINT as an indeterminate range enclosure; a nonfinite/nonconvergent/too-wide inner result over a nonexact outer parameter may be refused without globally aborting; and a nonexact outer parameter marks inner queries as speculative range requests even when an inner node is exact. The entire outer box still reaches the integrand unchanged. No returned enclosure is shrunk or replaced by a midpoint.
+
+The existing analytic-order handling, final achieved-radius checks, tolerance settings, source checks, callback exception handling, precision/order validation, shared evaluation/integration/depth/wall budgets and external process limits remain intact. Exact order-zero point failure with no speculative outer parameter remains fatal. With nonzero parameter uncertainty, subdivision may consume the existing budget before a genuine failure becomes clear; exhaustion still rejects the result. This is a feasibility tradeoff, not a weaker acceptance test.
+
+The reviewer freshly compiled an independently written analytical probe against the new host and pinned backend. The previous reproducer `integral(1/t,[2^-8,2^192])` now reaches `RADIUS_MET` after 3,240 dispatched evaluations with an unstopped budget. Its enclosure overlaps both the independently evaluated logarithmic reference and direct FLINT's enclosure. Compilation and execution exit zero; source/library bytes remained unchanged. Details are in `refined_runtime/REVIEW_RUN.json`.
+
+The reviewer also read the author's internal contract harness, verified its source/binary/library identities, and freshly executed that binary. It confirms that exact-point, callback-exception, precision, unsupported-order and resource failures remain fatal, while range, speculative-parameter and outer-width refusals remain refinable. That is an independent replay of a reviewed author fixture, not an independently authored second test suite. Evidence is `REFINED_FATAL_GUARDS_REVIEW.json`.
+
+The targeted Python source-binding test passes and confirms the new driver compiles only the additive host with its own dependency/source identity. An initial invocation from the repository root could not import `test_driver`; the corrected invocation from the driver directory passed. This was a reviewer command-directory error, not an implementation failure.
+
+The review supports a bounded actual HH experiment using the new build identity and unchanged numerical acceptance targets. Full compact-window coverage, endpoint composition, actual D/epsilon/final decision, and production/scientific admission remain separate requirements.

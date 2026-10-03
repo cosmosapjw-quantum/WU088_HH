@@ -1,0 +1,152 @@
+{
+  "schema": "WU088_T1_COMPLEX_DOMAIN_BOUNDS_V1",
+  "created_utc": "2026-10-01T04:52:35.377163+00:00",
+  "status": "MATHEMATICAL_IMPLICATIONS_PROVED_UNDER_EXPLICIT_PREMISES",
+  "task_contract": {
+    "path": "research/r31ao_unequal_ladder/theory_closure_20261001_v1/TASK_CONTRACT.json",
+    "size": 1554,
+    "sha256": "6f6ed47e7a3f63d89fb441a9dadd280a2a78434b15b58576546294136715f689"
+  },
+  "document": {
+    "path": "research/r31ao_unequal_ladder/theory_closure_20261001_v1/T1_COMPLEX_DOMAIN_BOUNDS.md",
+    "size": 16751,
+    "sha256": "481da534e4f48fa9b3557b1881cedfdfce85d0b3e73074e08c5111b145b4c17e"
+  },
+  "source_bindings": [
+    {
+      "path": "research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/completion/mixed_h/h0_fused.cpp",
+      "size": 4604,
+      "sha256": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2"
+    },
+    {
+      "path": "research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/completion/mixed_h/od_run.py",
+      "size": 4404,
+      "sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d"
+    },
+    {
+      "path": "research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/exact_weights/exact_laplace_weights.py",
+      "size": 10904,
+      "sha256": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb"
+    }
+  ],
+  "immutable_prior_theorems": [
+    {
+      "path": "research/r31ao_unequal_ladder/source_functional_review_20260930/SOURCE_FUNCTIONAL_MAP.md",
+      "size": 9235,
+      "sha256": "41e74806741ff3202c3e7cfb29600a6b47b4a88f6d85ddd8787bf0b0e12724a9"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/endpoint_enclosure_review_20260930/NEW_THEOREM_REVIEW.md",
+      "size": 9876,
+      "sha256": "4e1c3f25660e9d614e6d3618ef023cc0e61ba5a43b31245587ebba39661ff8c8"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/THEOREM_CLOSURE.md",
+      "size": 14871,
+      "sha256": "bb6f65e7e8ebb5799be10f393fb7824e66d3815758b9bdc2a508e178364348b4"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/ENDPOINT_SPLIT_OBJECTIVE.md",
+      "size": 9002,
+      "sha256": "8d60e5d408cce68015cfb3f84c522a45fdff2be847e9fb3e2665dd9a9ff8dc5c"
+    }
+  ],
+  "theorems": [
+    {
+      "id": "T1-01",
+      "statement": "Explicit positive real-part and modulus margins for A, B, sigma and inverses on arbitrary finite rectangles with Re A, Re B bounded positively.",
+      "proof_location": "section 2",
+      "status": "PROVED"
+    },
+    {
+      "id": "T1-02",
+      "statement": "Principal real powers are holomorphic and bounded on branch-safe image sets; independent image enclosure intersection is sound before outward numerical representation.",
+      "proof_location": "section 2",
+      "status": "PROVED"
+    },
+    {
+      "id": "T1-03",
+      "statement": "Finite signed Hermite density absolute bounds on compact principal slit-domain rectangles, with sharper positive-halfplane form.",
+      "proof_location": "section 3",
+      "status": "PROVED"
+    },
+    {
+      "id": "T1-04",
+      "statement": "Explicit source-domain O/G compact-product majorants using real Gaussian completion, all source phases, finite positive polynomial moments, and the pz derivative term.",
+      "proof_location": "section 4",
+      "status": "PROVED"
+    },
+    {
+      "id": "T1-05",
+      "statement": "Fixed integrable domination proves joint t/u holomorphy and uniform finite contractions; source phase/conjugation placement preserved.",
+      "proof_location": "section 5",
+      "status": "PROVED"
+    },
+    {
+      "id": "T1-06",
+      "statement": "Constructive dyadic extensions yield finite computable M and mixed Cauchy derivative constants; whole outer parameter box handled uniformly.",
+      "proof_location": "section 6",
+      "status": "PROVED"
+    }
+  ],
+  "premises": {
+    "source": [
+      "a,b,mu positive finite real",
+      "centers and q real finite",
+      "donor degrees nonnegative integers in a finite set",
+      "all weights and normalization data finite exact selected lifts",
+      "assembly v real nonzero, phase data real finite",
+      "s source bilinear dot product",
+      "conjugation only after real-domain integration"
+    ],
+    "compact_domain": [
+      "finite ordered t/u rectangle endpoints",
+      "a+inf Re t>0 and b+inf Re u>0",
+      "t/u rectangles separately avoid principal cut (-infinity,0]",
+      "positive-halfplane dyadic extensions use delta_j<=l_j/4"
+    ],
+    "effective": [
+      "exact rational/dyadic inputs or computable values with certified positive margins",
+      "certified rational upper Mhat obtained from explicit finite arithmetic, root, pi and exp constants",
+      "outward working representation must retain a verified branch-safe margin after image intersection"
+    ]
+  },
+  "core_formulas": {
+    "sigma_lower": "s0=(alpha/Q_A+beta/Q_B)/2 > 0",
+    "sigma_upper": "s1=(1/alpha+1/beta)/2",
+    "general_density": "E_i=exp(lambda*max(0,-xminus)/tau^2)*sum_r A_ir*tau^(-nu_ir)",
+    "positive_density": "E_i_plus=exp(-lambda*xminus/Q_t)*sum_r A_ir*xminus^(-nu_ir)",
+    "general_spatial": "B_F=Za*Zb*alpha^(-3/2)*beta^(-3/2)*L[P_F]",
+    "positive_integrand": "M_Fijk=E_i_plus(T)*E_j_plus(V)*C_F/(alpha^(3/2)*beta^(3/2))",
+    "finite_contraction": "M=sum_n abs(w_n)*M_n",
+    "cauchy": "abs(partial_t^m partial_u^n F)<=m!*n!*M/delta_t^m/delta_u^n"
+  },
+  "overreach_counterexamples": [
+    "A=B=1 at t=u=0 does not regularize U_i",
+    "completed exp(i/A) at A=1+i has modulus exp(1/2)>1",
+    "U_0(n^-2+i*n^-1) is unbounded although Re t>0",
+    "Re((1+2i)^(3/2)) is negative despite Re A>0"
+  ],
+  "review": "theory_checks/t1_REVIEW.json",
+  "exact_checks": "theory_checks/t1_VERIFICATION.json",
+  "remaining_theoretical_obligations_for_this_scope": [],
+  "remaining_external_obligations": [
+    "actual input byte/domain/premise binding",
+    "actual constants and numerical enclosures",
+    "point oracle construction in separate T4 theorem",
+    "actual callback/backend/runtime evidence",
+    "independent final decision reviewer admission"
+  ],
+  "not_claimed": [
+    "fixed-resource host acceptance",
+    "small practical M or feasible runtime",
+    "scientific certificate or physical-model promotion",
+    "correctness of an arbitrary raw branch-crossing ball passed to pow"
+  ],
+  "actual_HH_runs": 0,
+  "native_builds": 0,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false,
+  "independent_review_admitted": false
+}

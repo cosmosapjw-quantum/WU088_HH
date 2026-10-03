@@ -1,0 +1,23 @@
+{
+  "schema": "WU088_MPI_HOST_COMPILE_ACCEPTANCE_V1",
+  "created_utc": "2026-10-01T12:25:28.323088+00:00",
+  "source_immutable": true,
+  "source_directory": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/ncp64_acceleration_20261001_v1/mpi_fortran",
+  "allowed_output": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/native_execution_20261001_v1/mpi_host",
+  "toolchain_sidecar": "native_execution_mpi_tools",
+  "package_limit_bytes": 209715200,
+  "build_jobs_max": 2,
+  "local_MPI_ranks_max": 2,
+  "scientific_execution": false,
+  "production_admitted": false,
+  "NCP_64core_performance_claim": false,
+  "runtime_contract": {
+    "root_bypass": false,
+    "oversubscription": false,
+    "uid": 0,
+    "normal_nonprivileged_subprocess": {
+      "attempt": "subprocess.run(id,user=65534,group=65534,extra_groups=[])",
+      "outcome": "PermissionError errno1 Operation not permitted"
+    }
+  }
+}

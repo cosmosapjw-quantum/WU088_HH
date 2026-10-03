@@ -1,0 +1,11 @@
+{
+  "failure_class": "TEST_HARNESS_COLLECTION_PATH",
+  "affected": [
+    "G1_exact_theorem",
+    "G4_callback_static_exact",
+    "G4_assembly_static_exact"
+  ],
+  "reason": "These pre-existing scoped tests import sibling modules and require component cwd",
+  "fix": "launcher honors component cwd and records it; no scientific/helper implementation changed",
+  "original_exit_code": 1
+}

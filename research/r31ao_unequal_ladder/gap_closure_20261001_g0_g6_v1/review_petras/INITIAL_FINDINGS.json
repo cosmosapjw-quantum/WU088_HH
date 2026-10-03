@@ -1,0 +1,34 @@
+{
+  "schema": "WU088_G6_PETRAS_INITIAL_REVIEW_FINDINGS_V1",
+  "created_utc": "2026-10-01T03:31:12.480910+00:00",
+  "source_hashes_from_ready_api_receipt": {
+    "petras_host.hpp": "aafc5eaa69eeebe923cb24ba267115eff6f9d238c85e57ed23fab21037b80fc8",
+    "petras_host.cpp": "ee9f052fbd7cd3caff942ea26dde9b6a6861e89515ef5fc1cd3e0863272e3c5e",
+    "native_petras_synthetic.cpp": "ad772871296d075d9eb4e9e81f28de73fa7c2b4bbce7d8ddccc5ee26a709f331"
+  },
+  "review_mode": "separate static artifact review after implementer ready; no native compile/execution",
+  "independent_review_admitted": false,
+  "findings": [
+    {
+      "id": "P01",
+      "severity": "HIGH_FUNCTIONAL",
+      "finding": "Outer analytic order1 domain refusal is propagated through inner order0 and made a sticky global nonfinite failure; outer_callback also globally stops on every inner non-success, preventing outer refinement.",
+      "false_certificate_observed": false,
+      "native_failure_observed": false,
+      "reported_to_implementer": true
+    },
+    {
+      "id": "P02",
+      "severity": "MEDIUM_TEST_CONTRACT",
+      "finding": "Uniform toy fixture asserts containment of another outward-rounded rectangle, which is stronger than containing the exact analytic image; should use exact rational corners.",
+      "reported_to_implementer": true
+    },
+    {
+      "id": "P03",
+      "severity": "MEDIUM_DIAGNOSTIC",
+      "finding": "RADIUS_TOO_WIDE clears a valid finite result and retains no achieved radius, preventing actual width diagnostics.",
+      "reported_to_implementer": true
+    }
+  ],
+  "safe_limitation": "Exact real acb endpoints restrict endpoint choices to exactly represented dyadics; non-dyadic rationals must not silently be replaced by midpoints."
+}

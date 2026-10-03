@@ -1,0 +1,83 @@
+{
+  "schema": "WU088_FINAL_ENDPOINT_PROBE_COMPARISON_V1",
+  "actual_input_sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+  "task_index": 0,
+  "final_arithmetic_policy": "RELATIVE_DYADIC_UPPER_CAPPED_INTERIOR_V2",
+  "coarse_endpoint_radius": "310692056595749338567995265885976033104217365750335814543524804777232332013151790012105389493439439187977956396705486867144540701942706747833704491103184485695754173225208222835355139000666779153448270061070268207517664686364135240015188293164885192031777292883368635103762250852867/419427236343291111610392184786109437755824021442593104264618133049312953645713945934154560103744807566280526966239203896163261610566451140998300184349808958743202540474115269673775186732284693170981947188393711377896725670632739741409325637713629554845995564531712",
+  "final_candidates": [
+    {
+      "bound_binary_bracket": {
+        "lower": "2^54",
+        "upper": "2^55",
+        "upper_strict": true
+      },
+      "elapsed_ns": 291313550,
+      "endpoint_radius": "137733949638647885379625956060903164171/4722366482869645213696",
+      "engine_calls": 55,
+      "name": "W1",
+      "plan_sha256": "844b7df830fec1ebe36af239373f66fdc2b4112c55377702c6c1d3cf78524b2c",
+      "reason": null,
+      "result_sha256": "cc7cec19d6ae30ca10e14c68e4871457910c9dd7354a803e872b1ab90a77baf2",
+      "status": "CONDITIONAL_TAIL_BOUND",
+      "window": {
+        "T_t": "256",
+        "T_u": "256",
+        "l_t": "1/16",
+        "l_u": "1/16"
+      },
+      "bound_ratio_to_uncapped_dyadic": "137733949638647885379625956060903164171/138303064430343910885775832579972747662"
+    },
+    {
+      "bound_binary_bracket": {
+        "lower": "2^38",
+        "upper": "2^39",
+        "upper_strict": true
+      },
+      "elapsed_ns": 301513664,
+      "endpoint_radius": "310301874801995749071632047238909559529/618970019642690137449562112",
+      "engine_calls": 55,
+      "name": "W2",
+      "plan_sha256": "38c0bb387c5316d8fe2f9eb25e1d00a06bcc1a2158d6cc01f6e0e18c61169352",
+      "reason": null,
+      "result_sha256": "ad0d7cbb2c15cfd4ab53517fc5f38fa91d474e83f2f0374f306b999710ef4b9d",
+      "status": "CONDITIONAL_TAIL_BOUND",
+      "window": {
+        "T_t": "18446744073709551616",
+        "T_u": "18446744073709551616",
+        "l_t": "1/64",
+        "l_u": "1/64"
+      },
+      "bound_ratio_to_uncapped_dyadic": "310301874801995749071632047238909559529/29414120100786742414503089708803732604347769551880978432"
+    },
+    {
+      "bound_binary_bracket": {
+        "lower": "2^-21",
+        "upper": "2^-20",
+        "upper_strict": true
+      },
+      "elapsed_ns": 368091438,
+      "endpoint_radius": "90690421389980920232708863295172494873/178405961588244985132285746181186892047843328",
+      "engine_calls": 55,
+      "name": "W3",
+      "plan_sha256": "6ae92f39df3d110f39a3c95171780094b2815d8b0699e2e7bf39660e6c8a7936",
+      "reason": null,
+      "result_sha256": "e315678d86ef547259d3605df112323b11d84d2a9578aacf47225856d7bffb96",
+      "status": "CONDITIONAL_TAIL_BOUND",
+      "window": {
+        "T_t": "6277101735386680763835789423207666416102355444464034512896",
+        "T_u": "6277101735386680763835789423207666416102355444464034512896",
+        "l_t": "1/256",
+        "l_u": "1/256"
+      },
+      "bound_ratio_to_uncapped_dyadic": "90690421389980920232708863295172494873/14848211305946187129777027208093548386860606391105370110358315552240873771048565353655899783168"
+    }
+  ],
+  "actual_attempt_count_including_root_coarse": 10,
+  "actual_successful_conditional_bounds": 7,
+  "first_failure_attempts": 3,
+  "chosen_final_D_radius": null,
+  "final_D_epsilon": null,
+  "scientific_admission": false,
+  "no_further_endpoint_campaign": true,
+  "practical_limit": "Last window reaches T=2^192. No compact-interior computation or feasibility measurement exists; endpoint-only improvement does not certify finalD."
+}

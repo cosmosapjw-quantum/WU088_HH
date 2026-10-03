@@ -1,0 +1,47 @@
+{
+  "orders": [
+    128,
+    160,
+    192
+  ],
+  "ratios": [
+    "5/4",
+    "6/5"
+  ],
+  "difference_arrays": [
+    "Q160-Q128",
+    "Q192-Q160"
+  ],
+  "blocks": [
+    "O",
+    "D_col",
+    "D_row",
+    "dotO",
+    "K_derived_from_D"
+  ],
+  "raw_dtype": "complex256",
+  "norm_arithmetic": "Rank<=2 Gram eigenvalue formula, Frobenius norm and max abs in longdouble; decimal strings retained. No source downcast.",
+  "rho": "d128160/d160192",
+  "rho_min": "log(5/4)/log(6/5)",
+  "positive_power_incompatible_if": "rho <= rho_min",
+  "positive_power_status": "CONDITIONAL_UNEQUAL_RATIO_ASYMPTOTIC_DIAGNOSTIC",
+  "E192_cond": "d160192/((6/5)^p-1)",
+  "E160_cond": "d160192/(1-(5/6)^p)",
+  "model_assumptions": [
+    "Q_n=Q_inf+C*n^(-p)",
+    "stable matrix error direction"
+  ],
+  "monotonicity_proof": "Ratio equals integral_0^log(5/4) exp(p*t)dt / integral_-log(6/5)^0 exp(p*t)dt. Log derivative is positive-interval weighted mean minus negative-interval weighted mean, strictly >0. Limit p->0+ is log(5/4)/log(6/5), limit p->infinity is infinity.",
+  "direction_diagnostics": [
+    "normalized real Frobenius alignment",
+    "best positive scalar fit if defined",
+    "scalar-fit residual"
+  ],
+  "direction_certification_threshold": null,
+  "zero_increment_status": "INCREMENT_RATIO_UNDEFINED",
+  "rigorous": false,
+  "p_cond_is_actual_quadrature_order": false,
+  "verdict_stability": "PRIMARY then SECONDARY at each order, same Pareto metrics/rules/tol=1e-10. All three equal existing B192 pair -> B_ORDER_VERDICT_STABLE_OVER_128_160_192 only.",
+  "SOURCE_ACCURACY_BOUND": "SOURCE_ACCURACY_BOUND_UNAVAILABLE",
+  "rigorous_gate": "RIGOROUS_REFERENCE_CERTIFICATION_BLOCKED_BY_MISSING_ERROR_BOUND"
+}

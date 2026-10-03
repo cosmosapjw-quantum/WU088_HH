@@ -1,0 +1,160 @@
+{
+  "schema": "WU088_R31AO_Z075_UNEQUAL_ORDER_STUDY_SCOPE_V1",
+  "repository": "cosmosapjw-quantum/WU088_HH",
+  "branch": "research/r31ao-unequal-order-ladder-20260930",
+  "reviewed_commit": "0046d310962878a3563e9e813146188f046d1e69",
+  "reviewed_tree": "45a7647256ef34e1d41e9fd20c4ad726282e50de",
+  "one_shot": true,
+  "execution_authorized": false,
+  "same_geometry": {
+    "z_a0_decimal": "0.75",
+    "tau_definition": "unchanged producer z/velocity",
+    "tau_ta_B192_producer_decimal": "1.6769079292753585025",
+    "velocity_B192_producer_decimal": "0.44725174644746129582"
+  },
+  "ladder": [
+    128,
+    160,
+    192
+  ],
+  "ratio_128_160": "5/4",
+  "ratio_160_192": "6/5",
+  "new_orders": [
+    128,
+    160
+  ],
+  "reuse_order": 192,
+  "planned_new_order_nodes": 2,
+  "planned_geometries": 1,
+  "planned_producer_commands": 4,
+  "commands": [
+    {
+      "stage": "OD",
+      "n": 128,
+      "driver": "completion/mixed_h/od_run.py",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "completion/mixed_h/od_run.py",
+        "--n",
+        "128",
+        "--z",
+        "0.75",
+        "--workers",
+        "1"
+      ]
+    },
+    {
+      "stage": "JVP",
+      "n": 128,
+      "driver": "completion/mixed_derivative/run.py",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "completion/mixed_derivative/run.py",
+        "--n",
+        "128",
+        "--z",
+        "0.75"
+      ]
+    },
+    {
+      "stage": "OD",
+      "n": 160,
+      "driver": "completion/mixed_h/od_run.py",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "completion/mixed_h/od_run.py",
+        "--n",
+        "160",
+        "--z",
+        "0.75",
+        "--workers",
+        "1"
+      ]
+    },
+    {
+      "stage": "JVP",
+      "n": 160,
+      "driver": "completion/mixed_derivative/run.py",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "completion/mixed_derivative/run.py",
+        "--n",
+        "160",
+        "--z",
+        "0.75"
+      ]
+    }
+  ],
+  "outputs_only": {
+    "O": [
+      47,
+      2
+    ],
+    "D_col": [
+      47,
+      2
+    ],
+    "D_row": [
+      2,
+      47
+    ],
+    "independent_dotO": [
+      47,
+      2
+    ]
+  },
+  "locks": {
+    "authority_sha256": "14580a183a9c31c3237c56ffc8dc1c283611c8bb09e77a417b6d23b7cf7eff18",
+    "source_contract_sha256": "77c7b1d16cdb68154790c2fdcd4a42587e2662d579e81e75c0938ac7b180b998",
+    "order_comparator_lock_sha256": "eae9052a0edf74e70608d98d3b5ed60f236a784ebcc806f6ac24a2bf1a3471b1",
+    "unequal_comparator_sha256": "170d3367ae4533ce6dfab4a02968722117620d32e209c0ee44ed83378efe66db",
+    "metadata_adapter_sha256": "634952d39a91a9647567ee9bc9cf8efa344d55cef77e5f21bc9121c6b109bdf2",
+    "conditional_helper_sha256": "52d6ed7e63f6ae6128fd5f19eba5cf8b7ce28c181b4a8839e1a1619b1218c284",
+    "conditional_diagnostic_contract_sha256": "dd14a44141985325c9fd0113cbdaac1ab08a8ac204079f024044598cc72b9ef7",
+    "R31AK_aggregate_sha256": "50a5f0eeda63d6e04795e301f6b07a41fd11a4b145e267cfc608261356d49b30",
+    "R31Z_model_sha256": "4ba03ba2adbdc9533f6472558b33a7edf86959bfc397e5fc8e3e90f8765ba034",
+    "eight_node_manifest_sha256": "d978792bef0c3bf2b670d4e73d70dcea391645f38555f1070323037610162ece",
+    "B192_OD_sha256": "7e7b5782cc698a364aeac608620e56c7bfdc64035ffe5dfee501608dae7970df",
+    "B192_JVP_sha256": "53569e92875254e897a7e23b55620cca9c5acf9f86124dc0a73198ad41d1df87",
+    "primary_prereg_sha256": "44b2273afeddb4a6befa73ce485ae84d8f8777a92ac75c4de2fd90d0fea74b81",
+    "secondary_prereg_sha256": "956bdbb6a4138f7f1117cbf98b47ce80d8c1cb76fcbf3401a76105cb4873612a",
+    "primary_rule_sha256": "08ad89d35c31e133bce39da1f5c8b59eb782b647fb1e4e26da522e010ed6d995",
+    "secondary_rule_sha256": "e27cc6a0c88dae79999fd46274cad84b4a0e1b10530dde7224f13123f54c6db0",
+    "producer_archive_sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9"
+  },
+  "comparison_tolerance_per_ta_decimal": "1e-10",
+  "primary_metrics": [
+    "E_K",
+    "E_Dmax"
+  ],
+  "comparison_order": [
+    "PRIMARY_R31AK_vs_R31Z",
+    "SECONDARY_REFINED_R31AK_vs_COARSE_R31AD"
+  ],
+  "decision_rule": "Frozen parent Pareto rules, no weighted or composite score.",
+  "order_difference_policy": "Complex256 raw differences, raw byte SHA, spectral/Frobenius/maxabs longdouble diagnostics; parent model-error arithmetic unchanged.",
+  "finite_order_stability_claim": "B_ORDER_VERDICT_STABLE_OVER_128_160_192 only when both verdicts unchanged at all orders.",
+  "diagnostic_scope": "Conditional power model and stable matrix error direction only; never continuum or source certification.",
+  "authorization_consumed_when": "First new-order scientific output artifact identity exists; planned remaining stages belong to the same bounded transaction.",
+  "partial_failure_policy": "Preserve partial evidence and return; no automatic whole-node/order/transaction rerun.",
+  "existing_output_policy": "Recheck metadata before future execution. Reuse authoritative complete existing outputs; never recompute them. If discovery changes the missing-order transaction, return the new inventory before issuing any altered execution scope.",
+  "authorization_semantics": "Only a future affirmative user directive containing the exact structured envelope authorizes this scope. Example/quoted/conditional/negated token usage does not.",
+  "forbidden": [
+    "B144 grid generation",
+    "B256 producer extension",
+    "new geometry",
+    "new interpolation knot",
+    "model/basis-ordering/phase/tolerance modification",
+    "H matrix",
+    "neutral47",
+    "ionic2",
+    "full49",
+    "trajectory",
+    "M3/reference production side work",
+    "automatic extra B order",
+    "post-output model or rule tuning"
+  ],
+  "SOURCE_ACCURACY_BOUND": "SOURCE_ACCURACY_BOUND_UNAVAILABLE",
+  "rigorous_reference_certification": "RIGOROUS_REFERENCE_CERTIFICATION_BLOCKED_BY_MISSING_ERROR_BOUND",
+  "stop_after": "Bounded order-study evidence comparison/publication/backup; no automatic scientific expansion."
+}

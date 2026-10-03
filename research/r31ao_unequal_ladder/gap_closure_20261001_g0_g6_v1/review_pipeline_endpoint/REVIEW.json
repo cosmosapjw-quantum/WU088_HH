@@ -1,0 +1,180 @@
+{
+  "schema": "WU088_R31AO_PIPELINE_ENDPOINT_ARTIFACT_REVIEW_V1",
+  "status": "ACCEPT_SCOPED_IMPLEMENTATION_AFTER_B12_FIX",
+  "reviewer_independence": {
+    "reviewer_authored_G3": true,
+    "G3_kernel_independent_review_claimed": false,
+    "review_scope": [
+      "new certificate_pipeline integration seam",
+      "G5 endpoint proof and implementation"
+    ],
+    "project_level_independent_review_admitted": false
+  },
+  "independent_review_admitted": false,
+  "findings": [
+    {
+      "id": "B12",
+      "severity": "LOW",
+      "category": "RESOURCE_FAILURE_CLASSIFICATION",
+      "before": "valid raw2x2 with modelK3x2 and max_entries=4 raises ContractError instead of ResourceLimit",
+      "wrong_numerical_result_produced": false,
+      "fix_owner": "root",
+      "fix": "common _decode prechecks every raw/model member count",
+      "status": "RESOLVED_IMPLEMENTATION_VERIFIED",
+      "after": "independent model-only reproduction returns ResourceLimit",
+      "root_red_log": "certificate_pipeline/REVIEW_RED.log",
+      "root_green_log": "certificate_pipeline/POST_REVIEW_GREEN.log",
+      "independent_logs": [
+        "pipeline_after_fix.log",
+        "independent_after_resource_fix.log"
+      ]
+    }
+  ],
+  "verification": {
+    "pipeline_initial": {
+      "exit_code": 0,
+      "tests": 7,
+      "log": "pipeline_suite.log"
+    },
+    "pipeline_after_fix": {
+      "exit_code": 0,
+      "tests": 8,
+      "log": "pipeline_after_fix.log"
+    },
+    "endpoint": {
+      "exit_code": 0,
+      "tests": 17,
+      "log": "endpoint_suite.log"
+    },
+    "independent_closed_form_checks": {
+      "gaussian_majorant": 6,
+      "i0_upper_tail": 3,
+      "decimal_digits": 100,
+      "all_passed": true,
+      "are_certificates": false,
+      "evidence": "independent_after_resource_fix.log"
+    },
+    "stored_prediction_K_is_independent_input": {
+      "result": "PASS",
+      "primary_K_lower": "-197/2",
+      "primary_Dmax_lower": "2",
+      "status": "SYNTHETIC_DECISION_BOUND_UNRESOLVED"
+    }
+  },
+  "pipeline_claim_limits": {
+    "scope_string_is_provenance": false,
+    "HH_execution_mode_exposed": false,
+    "target_provenance_admitted": false,
+    "machine_predicate_certified": false,
+    "certified_epsilon": null,
+    "certified_eta": null,
+    "rigorous": false
+  },
+  "endpoint_proof_review": {
+    "validity_error_found": false,
+    "accepted_adaptations": [
+      "positive interval arithmetic and outward quantization",
+      "Machin pi enclosure",
+      "reduced alternating exp enclosure and squaring",
+      "positive half-integer upper gamma recurrence",
+      "lower/upper Hermite mass exponents",
+      "independent panel maximum interior bound",
+      "scaled radial Gaussian moments and pz delta term",
+      "disjoint complement accounting"
+    ],
+    "remaining": [
+      "actual HH endpoint constants and split not evaluated",
+      "full normalized/orbital D contraction not executed",
+      "actual width/cost feasibility unmeasured",
+      "caller must establish C_F upper-bound authority",
+      "OS wall/RSS limits external"
+    ]
+  },
+  "reviewed_artifact_identities": [
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/certificate_pipeline/synthetic.py",
+      "bytes": 3935,
+      "sha256": "c95df94daeccec02b96faee7a757c45b653e249093e39a5addb0d84d2c9f5109"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/certificate_pipeline/test_pipeline.py",
+      "bytes": 3365,
+      "sha256": "fb47fafb6b698419349a285319d39ab70ccd0510626f576bbf3972883073a75d"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/endpoint_bound/engine.py",
+      "bytes": 9984,
+      "sha256": "227174bce527bd43a823e5fccab54cdf57f66569fb9dafe3ce920d85640f4537"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/endpoint_bound/test_endpoint.py",
+      "bytes": 5484,
+      "sha256": "4520a2418a97eb6f5dd61bf5973e58103f21cbe491350480ddcebb26bee4d8de"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/endpoint_bound/test_input_contract.py",
+      "bytes": 1969,
+      "sha256": "b5eb57aa2d6091b5534dac624b6cc747a6a6d2b79d38dc8bc81e28a808618f44"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/endpoint_bound/decimal_oracle.py",
+      "bytes": 3237,
+      "sha256": "872cf62da5e9fb8f23541dabcd8e8bac4fd11559b44853c8d1ef6f2264886a25"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/ENDPOINT_SPLIT_OBJECTIVE.md",
+      "bytes": 9002,
+      "sha256": "8d60e5d408cce68015cfb3f84c522a45fdff2be847e9fb3e2665dd9a9ff8dc5c"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/ENDPOINT_BOUND_VERIFICATION.json",
+      "bytes": 7136,
+      "sha256": "7c9279817ae013a8bf84e3ba92604c1d99f4e0342bf26eb98a4b41c08dd17e03"
+    }
+  ],
+  "execution_scope": {
+    "HH_inputs_arrays_constants_integrals_accessed": false,
+    "old_comparator_executed": false,
+    "science_commands": 0,
+    "heavy_commands": 0,
+    "numerical_certificate_runs": 0,
+    "implementation_files_modified": []
+  },
+  "evidence_files": [
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_pipeline_endpoint/REVIEW.md",
+      "bytes": 4950,
+      "sha256": "976be9dd356f574f2692843999c5a65507bdc5948c2f2fae14e87f7231d100b7"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_pipeline_endpoint/endpoint_suite.log",
+      "bytes": 2150,
+      "sha256": "c0561a4acfe0a5d1bebcb4facb0ce6e83fb92e3c5a476e7eaf70af3238b01401"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_pipeline_endpoint/independent_after_resource_fix.log",
+      "bytes": 1363,
+      "sha256": "059594201792cd1c78e25526066a2ccc353fed5417065dad8f26c99e59ccce99"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_pipeline_endpoint/independent_before_resource_fix.log",
+      "bytes": 1363,
+      "sha256": "059594201792cd1c78e25526066a2ccc353fed5417065dad8f26c99e59ccce99"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_pipeline_endpoint/independent_checks.py",
+      "bytes": 3658,
+      "sha256": "8e9e9f3080cbc8791bac26529ce4319f8c9231e23f11f31df9e174737281248f"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_pipeline_endpoint/pipeline_after_fix.log",
+      "bytes": 1100,
+      "sha256": "21f96168ebe5607909378bd5145725cda4c689e89fc35bfa9e56209ea94aac0a"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_pipeline_endpoint/pipeline_suite.log",
+      "bytes": 956,
+      "sha256": "a560b596dd410fd1cf6121cdc1922fd36c4e1c11a68b48d942911df1fddc1556"
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "schema": "WU088_PINNED_BACKEND_ACTUAL_BUILD_VERIFICATION_V1",
+  "created_utc": "2026-10-01T12:42:03.624540+00:00",
+  "status": "BACKEND_BUILT_AND_SCOPED_NATIVE_TESTS_PASSED",
+  "prefix": "/workspace/scratch/6cf5f59cd2d1/native_execution_build/prefix",
+  "backend_provenance_path": "/workspace/scratch/6cf5f59cd2d1/native_execution_build/BACKEND_BUILD_PROVENANCE.json",
+  "backend_provenance_sha256": "dd013898d2f4cdb4ee85fa92197600f35100446921cda6e57d182c02b880459d",
+  "existing_provenance_gate": "BYTE_CHAIN_VERIFIED",
+  "executed_build_script_sha256": "db291cf9f4196bbda7e0657d96ba86a94e1ed386738e515fda39307ac3e7ac93",
+  "library_versions": {
+    "gmp": "6.3.0",
+    "mpfr": "4.2.2",
+    "flint": "3.4.0"
+  },
+  "original_numerical_source_preservation": {
+    "gmp": {
+      "checked_original_numerical_source_or_header_files": 1932,
+      "changed_or_missing": []
+    },
+    "mpfr": {
+      "checked_original_numerical_source_or_header_files": 507,
+      "changed_or_missing": []
+    },
+    "flint": {
+      "checked_original_numerical_source_or_header_files": 9577,
+      "changed_or_missing": []
+    }
+  },
+  "tests": {
+    "gmp_executables": [
+      "t-addsub",
+      "t-mul",
+      "t-tdiv"
+    ],
+    "mpfr_executables": [
+      "tadd",
+      "tmul",
+      "texp",
+      "tsqrt",
+      "tconst_pi"
+    ],
+    "flint_modules": [
+      "arb",
+      "acb",
+      "acb_hypgeom",
+      "acb_calc"
+    ],
+    "flint_unique_named_tests_passed": 344,
+    "flint_all_modules_suite_run": false,
+    "native_analytical_markers": {
+      "callback": {
+        "payload": {
+          "scope": "SYNTHETIC_ONLY",
+          "native_synthetic_passed": true
+        },
+        "diagnostic_lines": []
+      },
+      "petras": {
+        "payload": {
+          "synthetic_only": true,
+          "native_fixture_checks": 10,
+          "actual_HH_evaluations": 0
+        },
+        "diagnostic_lines": [
+          "one_dimensional_polynomial=[0.33333333333333333333 +/- 4.62e-21]",
+          "nested_polynomial=[0.16666666666666666667 +/- 4.62e-21]"
+        ]
+      }
+    }
+  },
+  "selected_build_modes": {
+    "gmp_assembly_disabled": true,
+    "mpfr_maintainer_mode_disabled": true,
+    "optional_docs_omitted": true
+  },
+  "resources": {
+    "make_jobs": 2,
+    "cpu_affinity_count": 2,
+    "address_space_bytes_per_process": 1073741824,
+    "aggregate_memory_hard_cap": false,
+    "memory_budget_target_bytes": 3221225472,
+    "max_child_rss_kib_reported": 254436,
+    "maxrss_semantics": "Maximum child usage for the observing process lifetime; neither aggregate nor a delta."
+  },
+  "stage_outcomes": {
+    "flint-bootstrap": {
+      "library": "flint",
+      "stage": "bootstrap",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 2.803909503003524,
+      "children_maxrss_kib_process_lifetime": 12800,
+      "attempt": 1
+    },
+    "flint-build": {
+      "library": "flint",
+      "stage": "build",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 197.80129837199638,
+      "children_maxrss_kib_process_lifetime": 170116,
+      "attempt": 1
+    },
+    "flint-check": {
+      "library": "flint",
+      "stage": "check",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 27.032318436002242,
+      "children_maxrss_kib_process_lifetime": 254436,
+      "attempt": 1
+    },
+    "flint-configure": {
+      "library": "flint",
+      "stage": "configure",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 4.40632245499728,
+      "children_maxrss_kib_process_lifetime": 82824,
+      "attempt": 1
+    },
+    "flint-install": {
+      "library": "flint",
+      "stage": "install",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 4.209681822001585,
+      "children_maxrss_kib_process_lifetime": 170116,
+      "attempt": 1
+    },
+    "gmp-build": {
+      "library": "gmp",
+      "stage": "build",
+      "exit_code": 2,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 23.59227511100471,
+      "children_maxrss_kib_process_lifetime": null,
+      "attempt": 1
+    },
+    "gmp-build_attempt2": {
+      "library": "gmp",
+      "stage": "build",
+      "exit_code": 2,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.2040308180003194,
+      "children_maxrss_kib_process_lifetime": 28160,
+      "attempt": 2
+    },
+    "gmp-build_attempt3": {
+      "library": "gmp",
+      "stage": "build",
+      "exit_code": 2,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.20226007599558216,
+      "children_maxrss_kib_process_lifetime": 9024,
+      "attempt": 3
+    },
+    "gmp-build_attempt4": {
+      "library": "gmp",
+      "stage": "build",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 1.402946868998697,
+      "children_maxrss_kib_process_lifetime": 36204,
+      "attempt": 4
+    },
+    "gmp-check-build": {
+      "library": "gmp",
+      "stage": "check-build",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 1.2029566369965323,
+      "children_maxrss_kib_process_lifetime": 39876,
+      "attempt": 1
+    },
+    "gmp-check-build-mpz": {
+      "library": "gmp",
+      "stage": "check-build-mpz",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.6027011600017431,
+      "children_maxrss_kib_process_lifetime": 39876,
+      "attempt": 1
+    },
+    "gmp-check-t-addsub": {
+      "library": "gmp",
+      "stage": "check-t-addsub",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.20243586099968525,
+      "children_maxrss_kib_process_lifetime": 39876,
+      "attempt": 1
+    },
+    "gmp-check-t-mul": {
+      "library": "gmp",
+      "stage": "check-t-mul",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 1.203010193996306,
+      "children_maxrss_kib_process_lifetime": 39876,
+      "attempt": 1
+    },
+    "gmp-check-t-tdiv": {
+      "library": "gmp",
+      "stage": "check-t-tdiv",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 2.204631011998572,
+      "children_maxrss_kib_process_lifetime": 39876,
+      "attempt": 1
+    },
+    "gmp-configure": {
+      "library": "gmp",
+      "stage": "configure",
+      "exit_code": 1,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 7.658504304999951,
+      "children_maxrss_kib_process_lifetime": null,
+      "attempt": null
+    },
+    "gmp-configure_attempt2": {
+      "library": "gmp",
+      "stage": "configure",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 10.2688336229985,
+      "children_maxrss_kib_process_lifetime": null,
+      "attempt": 2
+    },
+    "gmp-configure_attempt4": {
+      "library": "gmp",
+      "stage": "configure",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 10.209894974002964,
+      "children_maxrss_kib_process_lifetime": 28160,
+      "attempt": 4
+    },
+    "gmp-install": {
+      "library": "gmp",
+      "stage": "install",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.40242707400466315,
+      "children_maxrss_kib_process_lifetime": 36204,
+      "attempt": 1
+    },
+    "mpfr-build": {
+      "library": "mpfr",
+      "stage": "build",
+      "exit_code": 2,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 1.005106099000841,
+      "children_maxrss_kib_process_lifetime": 28160,
+      "attempt": 1
+    },
+    "mpfr-build_attempt2": {
+      "library": "mpfr",
+      "stage": "build",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 17.218468674000178,
+      "children_maxrss_kib_process_lifetime": 40056,
+      "attempt": 2
+    },
+    "mpfr-check-build": {
+      "library": "mpfr",
+      "stage": "check-build",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 1.803784085001098,
+      "children_maxrss_kib_process_lifetime": 41436,
+      "attempt": 1
+    },
+    "mpfr-check-tadd": {
+      "library": "mpfr",
+      "stage": "check-tadd",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.8024521010011085,
+      "children_maxrss_kib_process_lifetime": 41436,
+      "attempt": 1
+    },
+    "mpfr-check-tconst_pi": {
+      "library": "mpfr",
+      "stage": "check-tconst_pi",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.20249349000368966,
+      "children_maxrss_kib_process_lifetime": 41436,
+      "attempt": 1
+    },
+    "mpfr-check-texp": {
+      "library": "mpfr",
+      "stage": "check-texp",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.2023578579974128,
+      "children_maxrss_kib_process_lifetime": 41436,
+      "attempt": 1
+    },
+    "mpfr-check-tmul": {
+      "library": "mpfr",
+      "stage": "check-tmul",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.40197213899955386,
+      "children_maxrss_kib_process_lifetime": 41436,
+      "attempt": 1
+    },
+    "mpfr-check-tsqrt": {
+      "library": "mpfr",
+      "stage": "check-tsqrt",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.40250402400124585,
+      "children_maxrss_kib_process_lifetime": 41436,
+      "attempt": 1
+    },
+    "mpfr-configure": {
+      "library": "mpfr",
+      "stage": "configure",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 6.214755884000624,
+      "children_maxrss_kib_process_lifetime": 28160,
+      "attempt": 1
+    },
+    "mpfr-configure_attempt2": {
+      "library": "mpfr",
+      "stage": "configure",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 4.40595195700007,
+      "children_maxrss_kib_process_lifetime": 28160,
+      "attempt": 2
+    },
+    "mpfr-install": {
+      "library": "mpfr",
+      "stage": "install",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.4029941280023195,
+      "children_maxrss_kib_process_lifetime": 40056,
+      "attempt": 1
+    },
+    "native-callback-build": {
+      "library": "native-callback",
+      "stage": "build",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 2.004142313999182,
+      "children_maxrss_kib_process_lifetime": 78608,
+      "attempt": 1
+    },
+    "native-callback-run": {
+      "library": "native-callback",
+      "stage": "run",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.20204042999830563,
+      "children_maxrss_kib_process_lifetime": 78608,
+      "attempt": 1
+    },
+    "native-petras-build": {
+      "library": "native-petras",
+      "stage": "build",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 1.8036567679955624,
+      "children_maxrss_kib_process_lifetime": 85792,
+      "attempt": 1
+    },
+    "native-petras-run": {
+      "library": "native-petras",
+      "stage": "run",
+      "exit_code": 0,
+      "reason": "EXIT_RECORDED",
+      "wall_seconds": 0.20152514099754626,
+      "children_maxrss_kib_process_lifetime": 85792,
+      "attempt": 1
+    }
+  },
+  "unresolved_observations": [
+    {
+      "kind": "GMP_CONFIGURE_ATTEMPT2_LOG_READBACK_MISMATCH",
+      "root_cause": "UNRESOLVED",
+      "handling": "Prior stage refused reuse; byte snapshots retained; fresh configure attempt4 passed and its logs verify."
+    },
+    {
+      "kind": "PROC_PID_NAMESPACE_METRIC_MISMATCH",
+      "handling": "Early /proc RSS values not applicable; final guards use per-process RLIMIT_AS, jobs/wall/log caps and kernel RUSAGE_CHILDREN only."
+    },
+    {
+      "kind": "UPSTREAM_COMPILER_WARNINGS",
+      "handling": "FLINT stderr retained; warnings outside the tested range are not classified harmless. The scoped 344 tests and two native analytical executables passed."
+    }
+  ],
+  "actual_HH_evaluations_in_this_component": 0,
+  "native_HH_worker_acceptance": "OWNED_BY_PARENT_SEPARATE_EVIDENCE",
+  "NCP64_performance_measured": false,
+  "historical_ABI_admission": false,
+  "independent_scientific_admission": false,
+  "production_admission": false
+}

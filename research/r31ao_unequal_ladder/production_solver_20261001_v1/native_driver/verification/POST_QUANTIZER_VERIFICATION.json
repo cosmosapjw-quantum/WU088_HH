@@ -1,0 +1,61 @@
+{
+  "schema": "WU088_NATIVE_DRIVER_POST_QUANTIZER_VERIFICATION_V1",
+  "created_utc": "2026-10-01T11:32:41.659726+00:00",
+  "reason": "Endpoint planner now bounds rational growth by reviewed rigorous upward dyadic quantization; current native dependency pin must match newly bound plan policy.",
+  "changed_pin": {
+    "relative_path": "production_solver_20261001_v1/endpoint_tasks/planner.py",
+    "previous_sha256": "fe979174ac77d962dc9877a7ea39c01950421011e495134b52745bba44a5b4e0",
+    "current_sha256": "bba157ff048a8955c25c140f7d44871d9c627c5197c7d115850428a481cbeaf5"
+  },
+  "previous_source_identity_sha256": "69280ef5c912df6e77b7b22144de0cf2021707c71c6ef007b1b6ce163a7cee04",
+  "source_identity": {
+    "files": {
+      "gap_closure_20261001_g0_g6_v1/validated_callback/callback.hpp": "364705585a7a93da90907497bfd3dcd05ce0fba8920413534aa85f75a6a330f1",
+      "gap_closure_20261001_g0_g6_v1/validated_callback/callback.cpp": "06dabab65432c868190032726853ab92a0d0d504128500cfb352c2a749258964",
+      "gap_closure_20261001_g0_g6_v1/validated_callback/assembly.hpp": "fb38af6635f444649aa706f2107b8a4a91d2f18d5ab7477c320384414ac0eede",
+      "gap_closure_20261001_g0_g6_v1/validated_callback/assembly.cpp": "313abcfe04550f0badc8e48501735a8b15a21d7babdefa63b6aded0ea4a2bede",
+      "gap_closure_20261001_g0_g6_v1/interior_pilot/petras_host.hpp": "c7492c04b01f758c94663c4ffc6d591f4cff0309b6cb5f448368c4e94a5c50f2",
+      "gap_closure_20261001_g0_g6_v1/interior_pilot/petras_host.cpp": "1bec5e769b367c39d7b40565cc306d24c0eaa0136ce438012e2f060cbde3515b",
+      "gap_closure_20261001_g0_g6_v1/frozen_input/adapter.py": "82e6e96157761be7e8423c7908c501bb66086b735374ce0679836ca1b69c7b48",
+      "gap_closure_20261001_g0_g6_v1/frozen_input/FROZEN107_HEADER_SPEC.json": "71ff0c2315f4281835ff7c2736553dc9abbe4324e538e4a634bf54430b2534c8",
+      "gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py": "bf1867616af07a670d61cd75c7ca0655c99e0be13fd6a73e9a4654f5fc0986f1",
+      "host_synthetic_readiness_20261001_v1/provenance_gate.py": "12857ebed9dbcf6e14484388da491fd407c0af9a997588fe49e2b13048e42c5e",
+      "gap_closure_20261001_g0_g6_v1/exact_raw_decoder/__init__.py": "99d80eb4f2707f9e546d1a7b3c8be7486978c5a320f76c0b1af9d05c4148159f",
+      "production_solver_20261001_v1/endpoint_tasks/planner.py": "bba157ff048a8955c25c140f7d44871d9c627c5197c7d115850428a481cbeaf5",
+      "gap_closure_20261001_g0_g6_v1/endpoint_bound/engine.py": "227174bce527bd43a823e5fccab54cdf57f66569fb9dafe3ce920d85640f4537",
+      "production_solver_20261001_v1/native_driver/driver.py": "a7386e5543dd7a95c214f86af4beb875d6be4425bd2bfa93b8cb4e6daf2af515",
+      "production_solver_20261001_v1/native_driver/primitive_worker.cpp": "efec6cfe6e90be4e43626d991655f6b8eb5aec79ac4cfacd83e01b61e39373fc",
+      "production_solver_20261001_v1/native_driver/dependency_pins.json": "8c76d06837320bdcb494a0412b66cde2f1722b022a5d49775b964bfa669ce23e"
+    },
+    "sha256": "7f6e625c66921be84563548a9af315312050db961a5e83d4f1275e60f6c1255c"
+  },
+  "tests": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "native_driver",
+      "-p",
+      "test_driver.py",
+      "-v"
+    ],
+    "unique_tests": 11,
+    "exit_code": 0,
+    "log": "POST_QUANTIZER_TESTS.log"
+  },
+  "native_worker_cpp_changed": false,
+  "native_wrapper_api_changed": false,
+  "actual_input_codegen_changed": false,
+  "historical_evidence_retained": [
+    "VERIFICATION.json",
+    "TESTS.log",
+    "PRE_QUANTIZER_DEPENDENCY_PINS.json"
+  ],
+  "native_compiled": false,
+  "native_primitive_executed": false,
+  "scientific_admission": false,
+  "production_admission": false,
+  "scope": "Source identity coherence and Python boundaries only; old plans remain tied to their preserved old source snapshot."
+}

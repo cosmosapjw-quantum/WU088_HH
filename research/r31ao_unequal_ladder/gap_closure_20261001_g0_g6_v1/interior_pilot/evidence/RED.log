@@ -1,0 +1,263 @@
+test_callback_exception_classification_and_budget_release (interior_pilot.test_interior.InteriorTests.test_callback_exception_classification_and_budget_release) ... ERROR
+test_cooperative_wall_guard_after_callback (interior_pilot.test_interior.InteriorTests.test_cooperative_wall_guard_after_callback) ... ERROR
+test_domain_failure (interior_pilot.test_interior.InteriorTests.test_domain_failure) ... ERROR
+test_evaluation_cap (interior_pilot.test_interior.InteriorTests.test_evaluation_cap) ... ERROR
+test_exact_interval_and_complex_product (interior_pilot.test_interior.InteriorTests.test_exact_interval_and_complex_product) ... ERROR
+test_hard_process_memory_not_claimed (interior_pilot.test_interior.InteriorTests.test_hard_process_memory_not_claimed) ... ERROR
+test_inner_real_exact_one_third (interior_pilot.test_interior.InteriorTests.test_inner_real_exact_one_third) ... ERROR
+test_midpoint_only_inner_claim_rejected (interior_pilot.test_interior.InteriorTests.test_midpoint_only_inner_claim_rejected) ... ERROR
+test_missing_proof_reference_rejected (interior_pilot.test_interior.InteriorTests.test_missing_proof_reference_rejected) ... ERROR
+test_nested_uniform_outer_one_sixth (interior_pilot.test_interior.InteriorTests.test_nested_uniform_outer_one_sixth) ... ERROR
+test_panel_cap (interior_pilot.test_interior.InteriorTests.test_panel_cap) ... ERROR
+test_rational_precision_cap (interior_pilot.test_interior.InteriorTests.test_rational_precision_cap) ... ERROR
+test_reject_float_and_reversed_interval (interior_pilot.test_interior.InteriorTests.test_reject_float_and_reversed_interval) ... 
+  test_reject_float_and_reversed_interval (interior_pilot.test_interior.InteriorTests.test_reject_float_and_reversed_interval) (values=(0.0, 1)) ... ERROR
+  test_reject_float_and_reversed_interval (interior_pilot.test_interior.InteriorTests.test_reject_float_and_reversed_interval) (values=(2, 1)) ... ERROR
+  test_reject_float_and_reversed_interval (interior_pilot.test_interior.InteriorTests.test_reject_float_and_reversed_interval) (values=(False, 1)) ... ERROR
+test_state_memory_estimate_cap (interior_pilot.test_interior.InteriorTests.test_state_memory_estimate_cap) ... ERROR
+test_uniform_complex_parameter_box (interior_pilot.test_interior.InteriorTests.test_uniform_complex_parameter_box) ... ERROR
+test_valid_wide_parameter_image_is_not_failure (interior_pilot.test_interior.InteriorTests.test_valid_wide_parameter_image_is_not_failure) ... ERROR
+test_wrong_parameter_or_panel_claim_rejected (interior_pilot.test_interior.InteriorTests.test_wrong_parameter_or_panel_claim_rejected) ... ERROR
+test_zero_length_integral_and_negative_interval (interior_pilot.test_interior.InteriorTests.test_zero_length_integral_and_negative_interval) ... ERROR
+
+======================================================================
+ERROR: test_callback_exception_classification_and_budget_release (interior_pilot.test_interior.InteriorTests.test_callback_exception_classification_and_budget_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 136, in test_callback_exception_classification_and_budget_release
+    budget=Budget(Caps())
+                  ^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 11, in __init__
+    def __init__(self,*args,**kwargs): raise NotImplementedError('bounded policy missing')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: bounded policy missing
+
+======================================================================
+ERROR: test_cooperative_wall_guard_after_callback (interior_pilot.test_interior.InteriorTests.test_cooperative_wall_guard_after_callback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 99, in test_cooperative_wall_guard_after_callback
+    budget=Budget(Caps(max_wall_seconds=1),clock=lambda:time[0])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 11, in __init__
+    def __init__(self,*args,**kwargs): raise NotImplementedError('bounded policy missing')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: bounded policy missing
+
+======================================================================
+ERROR: test_domain_failure (interior_pilot.test_interior.InteriorTests.test_domain_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 81, in test_domain_failure
+    res = integrate_range(invalid,I(0,1),point(1))
+                                  ^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_evaluation_cap (interior_pilot.test_interior.InteriorTests.test_evaluation_cap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 86, in test_evaluation_cap
+    res = integrate_range(polynomial_range,I(0,1),point(1),caps=Caps(max_evaluations=1,target_width=F(1,1000)))
+                                           ^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_exact_interval_and_complex_product (interior_pilot.test_interior.InteriorTests.test_exact_interval_and_complex_product)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 31, in test_exact_interval_and_complex_product
+    self.assertEqual(I(-2, 3)*I(-5, -1), I(-15, 10))
+                     ^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_hard_process_memory_not_claimed (interior_pilot.test_interior.InteriorTests.test_hard_process_memory_not_claimed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 115, in test_hard_process_memory_not_claimed
+    with self.assertRaises(ValueError): Caps(require_hard_memory_limit=True)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 11, in __init__
+    def __init__(self,*args,**kwargs): raise NotImplementedError('bounded policy missing')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: bounded policy missing
+
+======================================================================
+ERROR: test_inner_real_exact_one_third (interior_pilot.test_interior.InteriorTests.test_inner_real_exact_one_third)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 40, in test_inner_real_exact_one_third
+    res = integrate_range(polynomial_range, I(0, 1), point(1), caps=Caps(target_width=F(1, 64)))
+                                            ^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_midpoint_only_inner_claim_rejected (interior_pilot.test_interior.InteriorTests.test_midpoint_only_inner_claim_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 66, in test_midpoint_only_inner_claim_rejected
+    res = integrate_range(midpoint, I(0, 1), R(I(0, 1), I(0, 0)))
+                                    ^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_missing_proof_reference_rejected (interior_pilot.test_interior.InteriorTests.test_missing_proof_reference_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 76, in test_missing_proof_reference_rejected
+    res = integrate_range(lambda t,z:RangeClaim(point(1),t,z,True,''), I(0, 1), point(1))
+                                                                       ^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_nested_uniform_outer_one_sixth (interior_pilot.test_interior.InteriorTests.test_nested_uniform_outer_one_sixth)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 54, in test_nested_uniform_outer_one_sixth
+    budget = Budget(Caps(target_width=F(1, 16), max_evaluations=15000, max_panels=1024))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 11, in __init__
+    def __init__(self,*args,**kwargs): raise NotImplementedError('bounded policy missing')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: bounded policy missing
+
+======================================================================
+ERROR: test_panel_cap (interior_pilot.test_interior.InteriorTests.test_panel_cap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 93, in test_panel_cap
+    res = integrate_range(polynomial_range,I(0,1),point(1),caps=Caps(max_panels=2,target_width=F(1,1000)))
+                                           ^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_rational_precision_cap (interior_pilot.test_interior.InteriorTests.test_rational_precision_cap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 119, in test_rational_precision_cap
+    res=integrate_range(giant,I(0,1),point(1),caps=Caps(max_rational_bits=64))
+                              ^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_reject_float_and_reversed_interval (interior_pilot.test_interior.InteriorTests.test_reject_float_and_reversed_interval) (values=(0.0, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 37, in test_reject_float_and_reversed_interval
+    I(*values)
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_reject_float_and_reversed_interval (interior_pilot.test_interior.InteriorTests.test_reject_float_and_reversed_interval) (values=(2, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 37, in test_reject_float_and_reversed_interval
+    I(*values)
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_reject_float_and_reversed_interval (interior_pilot.test_interior.InteriorTests.test_reject_float_and_reversed_interval) (values=(False, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 37, in test_reject_float_and_reversed_interval
+    I(*values)
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_state_memory_estimate_cap (interior_pilot.test_interior.InteriorTests.test_state_memory_estimate_cap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 110, in test_state_memory_estimate_cap
+    res=integrate_range(polynomial_range,I(0,1),point(1),caps=Caps(max_memory_bytes=10))
+                                         ^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_uniform_complex_parameter_box (interior_pilot.test_interior.InteriorTests.test_uniform_complex_parameter_box)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 47, in test_uniform_complex_parameter_box
+    z = R(I(1, 2), I(-1, 1))
+          ^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_valid_wide_parameter_image_is_not_failure (interior_pilot.test_interior.InteriorTests.test_valid_wide_parameter_image_is_not_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 124, in test_valid_wide_parameter_image_is_not_failure
+    res=integrate_range(constant_range,I(0,1),R(I(0,1),I(0,0)),caps=Caps(target_width=F(1,10)))
+                                       ^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_wrong_parameter_or_panel_claim_rejected (interior_pilot.test_interior.InteriorTests.test_wrong_parameter_or_panel_claim_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 71, in test_wrong_parameter_or_panel_claim_rejected
+    for wrong_t,wrong_z in ((I(0, 1),point(2)), (I(0, F(1, 2)),point(1))):
+                             ^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+======================================================================
+ERROR: test_zero_length_integral_and_negative_interval (interior_pilot.test_interior.InteriorTests.test_zero_length_integral_and_negative_interval)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/test_interior.py", line 129, in test_zero_length_integral_and_negative_interval
+    zero=integrate_range(constant_range,I(2,2),point(3))
+                                        ^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/engine.py", line 5, in __init__
+    def __init__(self,*args): raise NotImplementedError('rational range engine missing')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: rational range engine missing
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.003s
+
+FAILED (errors=20)

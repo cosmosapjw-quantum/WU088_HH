@@ -1,0 +1,44 @@
+{
+  "schema": "WU088_ENDPOINT_PROBE_DIAGNOSIS_V1",
+  "actual_endpoint_evaluations_in_this_diagnosis": 0,
+  "synthetic_representation_checks": [
+    {
+      "kind": "synthetic rational token exceeds parser length despite valid bit cap",
+      "numerator_bits": 10298,
+      "denominator_bits": 10298,
+      "token_characters": 6203,
+      "observed": "canonical rational string required"
+    },
+    {
+      "kind": "synthetic rational within bit cap exceeds Python decimal conversion cap",
+      "numerator_bits": 1,
+      "denominator_bits": 15001,
+      "python_int_max_str_digits": 4300,
+      "observed": "Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit"
+    }
+  ],
+  "W2_partial_record": {
+    "terms": 90,
+    "max_token_characters": {
+      "coefficient_abs": 39,
+      "field_majorant": 1525,
+      "complement_mass_bound": 6665,
+      "contribution": 7601
+    },
+    "partial_bound_sum_numerator_bits": 14372,
+    "partial_bound_sum_denominator_bits": 14277,
+    "partial_bound_sum_binary_bracket": [
+      "2^95",
+      "2^96"
+    ],
+    "interpretation": "Positive partial sum of reported majorant contributions; not an upper bound on the complete tail or actual integral."
+  },
+  "confirmed_failures": {
+    "W1": "record parser rejects token; source has 6000-character limit inconsistent with permitted 16384-bit rational components",
+    "W2": "exact result bit cap after90 reportedterms; no complete radius",
+    "W3": "worker returned no JSON; stderr was not retained by frozen run_task, precise cause not observed"
+  },
+  "possible_W3_cause": "Python integer decimal rendering cap is narrower than the16384-bit numeric cap; synthetic reproduction establishes risk, not actual stderr identity.",
+  "recommended_next_change": "Additive outward dyadic accumulator/serializer at declared precision with explicit total rounding budget; preserve frozen planner and first failures. Do not raise all caps silently.",
+  "scientific_admission": false
+}

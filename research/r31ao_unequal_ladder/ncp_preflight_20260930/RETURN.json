@@ -1,0 +1,122 @@
+{
+  "schema": "WU088_R31AO_NCP_UNEQUAL_LADDER_PREFLIGHT_RETURN_V1",
+  "created_utc": "2026-09-30T09:42:42.327569+00:00",
+  "reviewed_remote": {
+    "commit": "0046d310962878a3563e9e813146188f046d1e69",
+    "tree": "45a7647256ef34e1d41e9fd20c4ad726282e50de",
+    "branch": "research/r31ao-unequal-order-ladder-20260930",
+    "successor_diff": [],
+    "base_R31AN_commit": "5f2fb0e87d6cf42cd1dd7e9f26b902e06c04b1cf",
+    "base_R31AN_tree": "4f53b7220c453aaf3a93efb772316bec8c925109"
+  },
+  "executed_against": {
+    "base_commit": "0046d310962878a3563e9e813146188f046d1e69",
+    "base_tree": "45a7647256ef34e1d41e9fd20c4ad726282e50de",
+    "code_overlay_sha256": {
+      "unequal_order_ladder.py": "52d6ed7e63f6ae6128fd5f19eba5cf8b7ce28c181b4a8839e1a1619b1218c284",
+      "compare_order_study.py": "170d3367ae4533ce6dfab4a02968722117620d32e209c0ee44ed83378efe66db",
+      "order_metadata_adapter.py": "634952d39a91a9647567ee9bc9cf8efa344d55cef77e5f21bc9121c6b109bdf2"
+    },
+    "B192_executed_comparator_snapshot": "B192_REPLAY_EXECUTED_COMPARATOR.py",
+    "B192_executed_lock": "B192_REPLAY_EXECUTED_LOCK.json"
+  },
+  "authority_verdict": "SOURCE_AUTHORITY_COMPLIANT_UNEQUAL_LADDER",
+  "authority_file": "ALTERNATE_LADDER_AUTHORITY.json",
+  "inventory_file": "B128_B160_OUTPUT_INVENTORY.json",
+  "local_archive_tables": 36,
+  "inventory_complete_outputs_found": {
+    "B128": false,
+    "B160": false
+  },
+  "global_absence_proof": false,
+  "unequal_order_comparator_sha256": "170d3367ae4533ce6dfab4a02968722117620d32e209c0ee44ed83378efe66db",
+  "order_metadata_adapter_sha256": "634952d39a91a9647567ee9bc9cf8efa344d55cef77e5f21bc9121c6b109bdf2",
+  "conditional_helper_sha256": "52d6ed7e63f6ae6128fd5f19eba5cf8b7ce28c181b4a8839e1a1619b1218c284",
+  "comparator_lock_file": "ORDER_COMPARATOR_LOCK.json",
+  "comparator_lock_sha256": "eae9052a0edf74e70608d98d3b5ed60f236a784ebcc806f6ac24a2bf1a3471b1",
+  "conditional_diagnostic_contract": "UNEQUAL_DIAGNOSTIC_CONTRACT.json",
+  "conditional_diagnostics_on_science_order_data_performed": false,
+  "raw_order_difference_arrays_created": false,
+  "finite_order_replay": {
+    "B192": "REPLAYED_AND_EXACTLY_EQUAL_TO_FROZEN_PARENT",
+    "B128": "OUTPUT_NOT_FOUND_NOT_EVALUATED",
+    "B160": "OUTPUT_NOT_FOUND_NOT_EVALUATED",
+    "B_ORDER_VERDICT_STABLE_OVER_128_160_192_admitted": false,
+    "B192_replay_file": "B192_FINITE_REFERENCE_REPLAY.json",
+    "B192_equivalence_file": "B192_FROZEN_COMPARISON_EQUIVALENCE.json"
+  },
+  "future_scope": {
+    "created": true,
+    "scope_file": "ORDER_STUDY_SCOPE.json",
+    "scope_sha256": "b0abd297847c17741b29a67fae02b9cfd5ddb3fbbe676163867675928cf54a4c",
+    "canonical_file": "AUTHORIZATION_SCOPE_CANONICAL.json",
+    "physical_quantity_format": "DECIMAL_STRINGS_ASCII_CANONICAL_JSON",
+    "authorization_template": "AUTHORIZATION_ENVELOPE_TEMPLATE.json",
+    "prompt": "USER_AUTHORIZATION_PROMPT_KO.md",
+    "planned_new_order_nodes": 2,
+    "planned_commands": 4,
+    "execution_authorized": false
+  },
+  "environment": "ENVIRONMENT.json",
+  "compile": {
+    "exit_code": 0,
+    "argv_file": "COMPILE.argv.json",
+    "stdout": "COMPILE.stdout",
+    "stderr": "COMPILE.stderr"
+  },
+  "focused_tests": {
+    "passed": 15,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "argv": "FINAL_FOCUSED_TEST.argv.json",
+    "stdout": "FINAL_FOCUSED_TEST.stdout",
+    "stderr": "FINAL_FOCUSED_TEST.stderr",
+    "junit": "FINAL_JUNIT.xml",
+    "historical_suites_rerun": false
+  },
+  "solver_numerical_stability_fix": {
+    "pre_output_only": true,
+    "red_boundary_tests": "SOLVER_BOUNDARY_RED.stdout",
+    "changes": [
+      "expm1 to avoid small-p cancellation",
+      "log-domain bracket for large finite rho"
+    ],
+    "scientific_models_or_rules_changed": false
+  },
+  "science_producer_command_count": 0,
+  "science_node_count": 0,
+  "B144_grid_generation_count": 0,
+  "B256_producer_extension": false,
+  "new_native_builds": 0,
+  "direct_B128_B160_output_accessed": false,
+  "R31AK_frozen_unchanged": true,
+  "z075_training_consumed": false,
+  "remaining_gates": {
+    "SOURCE_ACCURACY_BOUND": "SOURCE_ACCURACY_BOUND_UNAVAILABLE",
+    "full_cell_authority": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "complete_HH_fixed_Q_physical_invariance_reviewed": false,
+    "fixed_Q_model_definition": "ESTABLISHED__DOTQ_ZERO_BY_MODEL_DEFINITION_ONLY",
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false,
+    "H_skip_admitted": false,
+    "interval_wide_accuracy_admitted": false,
+    "all_cell_refinement_gain_admitted": false,
+    "trajectory_admitted": false,
+    "transition_error_bound_admitted": false,
+    "source_certified": false,
+    "continuum_certified": false
+  },
+  "rigorous_certification_verdict": "RIGOROUS_REFERENCE_CERTIFICATION_BLOCKED_BY_MISSING_ERROR_BOUND",
+  "rigorous": false,
+  "sensitivity_budget_used_as_source_error_estimate": false,
+  "RESTORE_VERIFIED": false,
+  "publication": "SEE_PUBLICATION_RECEIPT",
+  "backup": "SEE_DUAL_BACKUP_RECEIPT",
+  "stop": "Alternate-ladder preflight and future scope locked; no science authorization or execution this handoff.",
+  "independent_new_geometry_validation_count": 0,
+  "primary_secondary_independent_evidence_count": 1
+}

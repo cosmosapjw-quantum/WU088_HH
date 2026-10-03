@@ -1,0 +1,61 @@
+{
+  "schema": "WU088_G4_INITIAL_SEPARATE_ARTIFACT_REVIEW_V1",
+  "utc": "2026-10-01T03:16:54.378308+00:00",
+  "reviewer_scope": "static artifact review; same reviewer collaborated on G1 formula design, so no independent theory-design claim",
+  "independent_review_admitted": false,
+  "native_compile": false,
+  "actual_hh_evaluations": 0,
+  "files": [
+    {
+      "path": "validated_callback/callback.cpp",
+      "sha256": "daaef8d2f28446d7d24ef91a5891c56f56f933a52e6526c813b73331f08a0993"
+    },
+    {
+      "path": "validated_callback/callback.hpp",
+      "sha256": "b7c5abb084730a7e64933db88c30cba38bc43f98d4cc9d23accae950480161f5"
+    },
+    {
+      "path": "validated_callback/assembly.cpp",
+      "sha256": "b0428e43a5c767a66ade21de3d5752a49dab740af596dcb946a71d139c2a5469"
+    },
+    {
+      "path": "validated_callback/assembly.hpp",
+      "sha256": "fb38af6635f444649aa706f2107b8a4a91d2f18d5ab7477c320384414ac0eede"
+    },
+    {
+      "path": "validated_callback/native_synthetic.cpp",
+      "sha256": "ab983f77a02aa3d7eb8b8db4aeb410b677b58dc9cf7be973368bdc8d1417213d"
+    },
+    {
+      "path": "validated_callback/build_host.sh",
+      "sha256": "74e11701a05fa80180f8c077d99dfc67dab9af10eb5bcdf7cfe7043be53f1467"
+    },
+    {
+      "path": "validated_callback/verify_build_inputs.py",
+      "sha256": "6a7d8585b41392b1ab2751a55ac7a02bb60025b791e1dbed8fc54a07d69c49d1"
+    }
+  ],
+  "findings": [
+    {
+      "id": "CB01",
+      "severity": "MEDIUM",
+      "state": "REPORTED_TO_IMPLEMENTER",
+      "finding": "Unsupported callback order>1 and invalid Slice path only invalidate first Taylor coefficient slot.",
+      "scope": "Primary acb_calc_integrate orders0/1 unaffected; higher-order refusal contract incomplete."
+    },
+    {
+      "id": "CB02",
+      "severity": "MEDIUM",
+      "state": "REPORTED_TO_IMPLEMENTER",
+      "finding": "Rational parser length/bit caps and hard callback precision ceiling not enforced.",
+      "scope": "Exact arithmetic target unchanged; bounded-execution/resource contract incomplete."
+    },
+    {
+      "id": "CB03",
+      "severity": "HIGH_IF_NAIVELY_FIXED",
+      "state": "REPORTED_TO_IMPLEMENTER",
+      "finding": "native_synthetic order2 call supplies only one acb_t output slot; an all-slots fix would require matching output buffer allocation.",
+      "scope": "No native code executed; defect is statically observed latent fixture contract violation."
+    }
+  ]
+}

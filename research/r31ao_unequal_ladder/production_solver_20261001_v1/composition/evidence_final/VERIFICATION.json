@@ -1,0 +1,82 @@
+{
+  "actual_HH_runs": 0,
+  "archived_HH_array_reads": 0,
+  "cli_command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/production_solver_20261001_v1/composition/adapter.py",
+    "--input",
+    "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/production_solver_20261001_v1/composition/evidence_final/SYNTHETIC_INPUT.json",
+    "--output",
+    "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/production_solver_20261001_v1/composition/evidence_final/SYNTHETIC_RESULT.json"
+  ],
+  "cli_exit_code": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/production_solver_20261001_v1/composition/verify_component.py",
+    "--outdir",
+    "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/production_solver_20261001_v1/composition/evidence_final"
+  ],
+  "created_utc": "2026-10-01T11:13:25.158749+00:00",
+  "errors": 0,
+  "failures": 0,
+  "file_identities": {
+    "README_KO.md": {
+      "sha256": "eed6338699f0cde7cc25252fbb4c396629e70c3b6d7451052a7691415f4e7aeb",
+      "size": 7072
+    },
+    "adapter.py": {
+      "sha256": "e878c7468c78c909b5cd7a682f856b8908d1555580ea47fc8eedcee55ff493fe",
+      "size": 16677
+    },
+    "evidence_final/CLI_STDERR.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "evidence_final/SYNTHETIC_INPUT.json": {
+      "sha256": "cc7157bc8cd8c94d635b31f06ce5e99847b18e82ca6b412e6cbc3765ea5d7130",
+      "size": 18072
+    },
+    "evidence_final/SYNTHETIC_RESULT.json": {
+      "sha256": "95d58d8098c6b25e92e991ff6161d5d4f102ec96600f39ad22435716f1cdde73",
+      "size": 5924
+    },
+    "evidence_final/TEST_LOG.txt": {
+      "sha256": "e2eb2c45b5ceca96a18fa59204f5a5eafc7369f11495d0503af04efb2056a619",
+      "size": 2766
+    },
+    "test_composition.py": {
+      "sha256": "b9dbf16925dc4405715fd76bcc17091c275862acc04c37690d399205d57a9cd3",
+      "size": 14313
+    },
+    "verify_component.py": {
+      "sha256": "c4b49f9bcff4c4e613d0304841decfd275a48719e6b50c1bc8c1c7efd63531e0",
+      "size": 3935
+    }
+  },
+  "grammar_source_sha256": "e10f206d63be1a99a441780108619574605014a9b01b3b327e21fecb18c5b9cc",
+  "historical_test_suites_rerun": false,
+  "independent_decision_review_admitted": false,
+  "native_backend_runs": 0,
+  "observed_red": {
+    "exit_code": 1,
+    "reason": "ModuleNotFoundError: No module named 'adapter'",
+    "stage": "Test executed before the adapter existed; not a mathematical failure",
+    "test": "test_sharp_identity_counterexample"
+  },
+  "production_admitted": false,
+  "python": "3.12.14",
+  "rigorous": false,
+  "sample_arithmetic_operations": 23317,
+  "sample_epsilon": {
+    "D_col": "1/1000",
+    "D_row": "1/1000",
+    "Dmax": "1/1000",
+    "K": "0"
+  },
+  "schema": "WU088_T5_COMPONENT_VERIFICATION_V1",
+  "scope": "New composition component; analytic synthetic fixed-shape matrices only",
+  "skipped": 0,
+  "status": "PASS",
+  "test_count_semantics": "unique unittest methods; parameter subcases not counted again",
+  "tests_run": 21
+}

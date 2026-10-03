@@ -1,0 +1,113 @@
+{
+  "MPI_execution": false,
+  "NCP64_benchmark": false,
+  "actual_campaign_outcome": "PENDING",
+  "authorized_campaign_gate": {
+    "concurrency": 3,
+    "external_native_wall_seconds": 125,
+    "global_component_radius_exp": -48,
+    "global_window": {
+      "T_t": "256",
+      "T_u": "256",
+      "l_t": "1/16",
+      "l_u": "1/16"
+    },
+    "max_dispatched_evaluations": 3000000,
+    "max_new_native_invocations": 15,
+    "max_worker_wall_seconds": 180,
+    "native_wall_seconds": 120,
+    "precision_bits": 128,
+    "primitive_index": 0,
+    "relative_goal": 128,
+    "reused_tile_ids": [
+      0
+    ],
+    "stop_on_first_rejection": true,
+    "tile_component_radius_exp": -52
+  },
+  "corrected_findings": [
+    {
+      "correction": "Guard exec sets SIGKILL parent-death signal with expected-PPID race check on both worker and native; native seccomp denies fork/vfork/clone/clone3. Full3-level cascade independently confirmed with kernel pidfds.",
+      "finding": "Detached native sessions escape wrapper process-group-only termination.",
+      "id": "B19",
+      "limit": "No MPI/NCP/cgroup or arbitrary hostile-program containment admission; abnormal parent death proves termination, not descendant reaping by coordinator.",
+      "status": "CLOSED_FOR_KNOWN_DIRECT_NATIVE_PROCESS"
+    },
+    {
+      "correction": "Each1GiB wrapper plus1GiB native, three slots, plus2GiB coordinator/host reservation equals8GiB; four workers refused. Wrapper BLAS/OpenMP thread env1. Owner observed guarded context34,224KiB maxRSS, zeroHH.",
+      "finding": "Python worker and native child RLIMIT_AS are independent memory budgets.",
+      "id": "B20",
+      "limit": "Address-space reservation is conservative admission arithmetic, not a measured production memory or NCP throughput result.",
+      "status": "CLOSED_FOR_OBSERVED_8GiB_THREE_WORKER_ADMISSION"
+    },
+    {
+      "correction": "Adapter compares parsed exact retainedstdout to native result, verifies both stream hashes, requires timeoutfalse and source-bound native stdout attestation. Resealed inconsistent evidence refused in independent tests.",
+      "finding": "Self-sealed wrapper/host hashes alone do not link normalized rectangle to retained native stdout; timeout/launch-only evidence must never enter acceptance.",
+      "id": "B21",
+      "status": "CLOSED_FOR_NEW_SUCCESS_RECEIPT_ADMISSION"
+    }
+  ],
+  "endpoint_included": false,
+  "full_W1_complete": false,
+  "full_domain_integral": false,
+  "independent_tests": {
+    "command": "python -B -m unittest discover -s research/r31ao_unequal_ladder/w1_parallel_20261002_v1/review -p 'test_*review.py' -v",
+    "failed": 0,
+    "groups": {
+      "known_process_lifetime_pidfd_and_seccomp": 3,
+      "old_receipt_adoption_and_resealed_tamper": 8,
+      "persisted_stdout_and_timeout_admission": 3
+    },
+    "observed_elapsed_seconds": "2.827",
+    "passed": 14,
+    "review_fixture_correction": "Initial2subtest failures arose from an incorrect expected error-message regex; product correctly refused both records. Reviewer corrected regex only and observed full14PASS."
+  },
+  "normalization_applied": false,
+  "process_host_identity": {
+    "build_manifest_sha256": "25b2483f6ed954da15dcb50617cf378ce3e38f107a7bcfde39b978489d5f2c47",
+    "launcher_sha256": "2a8e1d929d9e5a202476421a112d7f36f17be15e9ae70728dd7b6872a3a971f6",
+    "schema": "WU088_PROCESS_HOST_IDENTITY_V1",
+    "source": {
+      "files": {
+        "guarded_exec.c": "c54de28c90cc5801936f99ae7b6e44c47368ad07587cee3108b5079c615b655c",
+        "host.py": "1274f166132e0fed8af61b71db00f1f4bacae2e9fea1b8c97ba33599dd808c5e"
+      },
+      "sha256": "51f7d3db318c7cda878fdcfff3b48afdb07db09a515ab4b6bd01d39ab345cfe8"
+    }
+  },
+  "production_admission": false,
+  "reviewer_new_HH_executions": 0,
+  "schema": "WU088_W1_INDEPENDENT_PRE_EXECUTION_REVIEW_V1",
+  "scientific_admission": false,
+  "source_review": {
+    "exact_complete16tile_collection_required": true,
+    "first_rejection_stops_future_dispatch_and_drains_inflight": true,
+    "independent_cap_sum": "16 * 2^-52 = 2^-48",
+    "local_plans_rebuilt_and_compared_on_prepare_load": true,
+    "native_math_source_changed": false,
+    "new_stdout_native_parsed_result_exact_crosscheck": true,
+    "old_success_raw_stdout_unavailable_exception_pinned_by_immutable_receipt_hash": true,
+    "read_only_old_tile0_sha256": "89cef714e9758932036854d218330c775920d6131114df8a236cf7d171bc5c5e",
+    "resume_terminal_dispatch_return_raw_renormalization_required": true,
+    "source_bound_input_plan_build_backend_linkage_checked": true,
+    "strict_final_128bit_goal128_radius_minus52_retained": true,
+    "unchanged_native_binary_sha256": "7c1984dcca1b19631a91df1de52acea2eaa61db08c8d2ab1af1f9f1a3ebf3ba9",
+    "unchanged_native_build_manifest_sha256": "13965d2210e976f0d7a190fba58f8c3c1bf366521e8dd1bd5e9a28cdae9e9342",
+    "unresolved_claim_or_dispatch_requires_inspection": true
+  },
+  "source_sha256": {
+    "process_host/build/BUILD.json": "20163815a8a8101d221017fc43a8261d301fdec8d0e474cc44a2662251792130",
+    "process_host/build/guarded_exec": "2a8e1d929d9e5a202476421a112d7f36f17be15e9ae70728dd7b6872a3a971f6",
+    "process_host/guarded_exec.c": "c54de28c90cc5801936f99ae7b6e44c47368ad07587cee3108b5079c615b655c",
+    "process_host/host.py": "1274f166132e0fed8af61b71db00f1f4bacae2e9fea1b8c97ba33599dd808c5e",
+    "review/BASELINE_REVIEW.json": "a029369144becdd59449c31674ca9de44bc42bc3a1a02dee9a6f67f728728431",
+    "review/review_w1.py": "2831a53294543522953414d2cde8bcb3e55e1aa62aa113c1d74f7436dcf3f872",
+    "review/test_adapter_review.py": "76bcf6e3596113d066d493befe8fa06d1dbe2a873ecb197fd99938790df9e37d",
+    "review/test_host_review.py": "b148ba417359d8f8068f955f001183fae51c032b0612124a2ff47a042d5f082e",
+    "review/test_new_stream_review.py": "fbfd65b0537afcdec6eda86af0afc61145ae1ca98934cd8736dda042e1425b1a",
+    "tile_runner/GUARDED_CONTEXT_PROBE.json": "adacde9dea7619c70f8d916001b3a5ea29f5617eb80c342af350a5441d7c01cc",
+    "tile_runner/OWNER_VERIFICATION.json": "72a81564dc624972cd5def65bf4640a29760162d9cb9336ba35486d39623cfa5",
+    "tile_runner/runner.py": "37f2b99abb6d2f6951243c88feccfb16225cc109eb70748221c905a8c8d9fe29"
+  },
+  "status": "PASS_BOUNDED_THREE_PROCESS_W1_CAMPAIGN_GATE"
+}

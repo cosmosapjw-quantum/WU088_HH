@@ -1,0 +1,21 @@
+# Dropbox WU088 데이터베이스 재조사
+
+Canonical R31S 폴더 123개 항목, 상위 dossier 2,316개 직접 항목(4 pages), 추가 WU088 관련 11개 폴더의 476개 descendant를 조회했다. 모든 해당 listing에서 has_more=false까지 확인했다. Global WU088 search는 738개 결과 중 title 관련 718개지만 최신 업로드 일부가 index에 없어서 최신 상태 판정은 folder listing을 우선했다. 전체 Dropbox의 무관한 하위 폴더를 재귀 탐색한 것은 아니다.
+
+현재 확인된 HH 문헌 계보는 v1 acquisition/source archive → v2 recovery(203 canonical members) → v3 acquisition DB다. v2에는 previous_v1 SQLite와 원 Deep Research report JSON/Markdown, 부분 복원 ZIP이 보존돼 있다. v3 DB는 68 source catalog, 66 acquired files, 103 acquisition events, 79 source versions를 기록한 successor acquisition DB다. 원래 잃어버린 Deep Research DB 자체가 아니다.
+
+원 `WU088_HH_R31AO_LITERATURE_DATABASE_20261001.zip`(보고된 SHA256 ab875d3e4fa771b34bdc1026042c38553b473b98f23e00e809d21c3b367948a9)은 exact/title 검색과 알려진 WU088 전체 폴더 inventory에서 발견되지 않았다. 따라서 acquisition completeness를 원 DB의 theorem records/code-module records/fail-closed tests/method comparison/risk-cost-roadmap entities 전체 복구와 혼동하면 안 된다. 다만 이후 repo G0–G6 및 theory closure 산출물이 그 entity별 의무를 별도로 충족했는지는 parent의 source mapping audit로 판단해야 하며, 원 ZIP 부재만으로 채택 route를 자동 폐기할 이유는 없다.
+
+핵심 현재 object는 `DROPBOX_DATABASE_CATALOG.json`에 ID/path/size/date/기존 receipt SHA와 다운로드 필요성을 묶었다. DBv3와 source payload materialization은 Drive 담당자가 한 번 수행하여 중복 다운로드를 피한다. 이 subtask는 Dropbox extracted text 16개와 metadata, Library 원문 2개를 읽었다. 원 Frozen107 회수를 위해 작은 archive 1개를 raw download했으며 외부 write·science execution은 0회다. fetch text에는 원본 대비 개행이 추가되는 사례가 있어 extracted text hash를 원 Dropbox bytes hash로 주장하지 않는다. Raw metadata에는 계정 정보가 있을 수 있으므로 공개 산출물에는 정제 catalog만 사용한다.
+
+구형 R10 production corpus도 발견했다. 137,578,318-byte 최종 ZIP은 두 byte-concatenation parts로 보존되며 receipt는 1,510-file package, 168-row read-only runstore origin audit를 기록한다. 이것은 기존 solver/code/checkpoint 자산이며 현재 rigorous certificate가 아니다. 원 Frozen107이 들어가는 R10 full mixed-block partial archive(2,727,872 bytes)도 별도 object로 존재한다. 이 작은 archive의 실제 bytes와 SHA를 검증하고 요청된 Frozen107 단일 member를 선택 복원했다. 오래된 whole science runtime을 다시 돌릴 필요는 없다.
+
+관련 BASS_HE source DB v3는 39 selected sources, 24 full papers, 6 raw dataset files이며 별도 프로그램이다. 최신 BASS_HE C2 receipt도 FINITE_R_MAGNITUDE_UNRESOLVED/C2_closed=false를 명시한다. 그 프로젝트의 문헌·가속 결과를 HH physical/reference certificate로 이식하지 않는다.
+
+현재 canonical 폴더 최신 RETURN은 2026-10-01T07:19:12Z unified coordinator이고, 이후 실제 HH/native host 실행 RETURN은 조회된 corpus에서 발견되지 않았다. 원 G0–G9 master prompt는 Dropbox title 검색에서는 없었으나 parent가 Library에서 `../ORIGINAL_USER_RESEARCH_PROMPT.txt`로 회수했으므로 해당 원문으로 completion을 판단한다. 기존 G0 input SHA256은 `70071962a6b3dc3cfc0c01034c0d1b6f57711833957510a77b0bb6c4e453969e`이며 새 파일의 실제 hash 비교를 catalog에 기록했다. 현재 사용자의 새 implementation/run 요청은 과거 execution_authorized=false 기록과 별도로 해석해야 하며, 과거 flag는 당시 상태의 증거로 보존한다.
+
+R10 runstore의 exact manifest 경로는 `production/runstore/manifests/final_168.json`, receipt가 결박한 SHA256은 `444f85f67313ac1d70f06989c89271cf1cf29c8b09227a930b6bacd19dc375b1`이다. audit API는 `production/runstore/migrate.py audit --manifest ... --sha256 ... --verify-origin`이며 count=168이다. 보고서 `libfile_de05de1ad5808191811466d707335cd0`와 next-contract `libfile_079dab05239881919e1de889cf8c4797`를 전부 읽었다. 원문은 production HOLD를 명시하고, 제한된 C++ radial component 및 B128/B192 O/D 증거의 재사용이라고 범위를 정한다. legacy 168행은 safe checkpoint writer로 처음부터 작성한 것이 아니라 사후 migration했으며 `runstore/FINAL_RECEIPT.json`, `FINAL_RESEARCH_STATE.json`, `RELEASE_MANIFEST.json`이 관련 경로다. full H 수렴·원 hstar/M2·full49/reduced25·물리 검증은 미완료이고 propagation, reaction probability, cross section을 계산하지 않았다.
+
+작은 두 원문에도 underlying store의 실제 DB 파일명·schema가 나오지 않는다. standalone runstore/manifest 객체는 조사한 Dropbox inventory와 Library 검색에서 발견하지 못했다. 따라서 manifest 원 bytes·DB schema는 archive 직접 검사 전 NOT_INSPECTED로 유지하고, 이를 complete database-content audit 또는 full-HH solver admission으로 표시하지 않는다. schema만을 위해 137 MB 최종 archive를 복원하지 않았다.
+
+실제 고정 입력은 `../inputs/FROZEN_INPUTS.npz`로 회수했다. Dropbox `id:BSpOijBcT10AAAAAADtqAg`의 2,727,872-byte archive SHA256 `a8b8fb45177f0448e2473c85cc254cbe3a9a3e510945a797e08c5b22fee00539`을 검증하고 `WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz` 한 member만 읽어 저장했다. 입력은 5,681 bytes, SHA256 `8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c`로 요청된 원본 identity와 정확히 일치한다. NPZ 평가·scientific execution은 수행하지 않았다. 상세 provenance는 `../inputs/FROZEN_INPUTS_RECOVERY.json`에 기록했다.

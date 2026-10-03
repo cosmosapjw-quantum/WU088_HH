@@ -1,0 +1,26 @@
+{
+  "schema": "WU088_NATIVE_TASKS_INDEPENDENT_SOURCE_REVIEW_V1",
+  "reviewer": "/root/native_solver_driver",
+  "scope": "worker.py prepare.py test_native_tasks.py; read-only source review",
+  "findings": [
+    {
+      "severity": "LOW",
+      "finding": "Python nested dictionary equality allowed True==1 in persisted wrapper.native_limits",
+      "execution_limit_path_already_strict": true,
+      "status": "CLOSED",
+      "fix": "d.limits_checked(wrapper.native_limits) before equality comparison",
+      "regression": "test_bool_cannot_impersonate_unit_resource_cap_in_wrapper recomputes result SHA and targets the type gap"
+    }
+  ],
+  "material_execution_findings": [],
+  "source_review_cleared": true,
+  "MPI_admission": false,
+  "reviewer_test_execution": false,
+  "reviewer_native_execution": false,
+  "independently_verified_hashes": {
+    "worker.py": "b4225733844df0971a197172e531c13313b17404c170542d4a6f25db4fa77398",
+    "prepare.py": "e7a1d75af3a3ca3ad017d40009693bdbb95e3f95b60323c6c51356dc8f8330a9",
+    "test_native_tasks.py": "0e0eb64b4164a301f089a4e0506f73a6df0a93a62d4b341d0df6cd22e0848908"
+  },
+  "remaining": "native MPI host lifecycle/descendant guard unsupported; no MPI admission"
+}

@@ -1,0 +1,375 @@
+{
+  "schema": "WU088_T3_FROZEN_PREDICATE_THEOREM_V1",
+  "status": "CONDITIONAL_MATHEMATICAL_IMPLICATION_CLOSED_IN_PROTECTED_DOMAIN",
+  "theorem_document": "T3_FROZEN_PREDICATE_THEOREM.md",
+  "theorem_document_sha256": "f623a3ce0580505e5a687673d1103582aac4901fb42e87b0b2ba7e7b3e4da0a1",
+  "sources": [
+    {
+      "id": "T3-S1",
+      "path": "research/r31ao_unequal_ladder/ncp_preflight_20260930/B192_REPLAY_EXECUTED_COMPARATOR.py",
+      "lines": [
+        93,
+        105
+      ],
+      "sha256": "43c3edac4d6f32ecb0ebd68619db76d447d40627610e63ec4000c3d5983732c8",
+      "scientific_code_executed": false
+    },
+    {
+      "id": "T3-S2",
+      "path": "research/r31al_z075_gate/refinement_gain.py",
+      "lines": [
+        40,
+        48
+      ],
+      "sha256": "a81a386f5aa5138012a26e833d468606a91ce4857dcc94311d878ae7976875c3",
+      "scientific_code_executed": false
+    },
+    {
+      "id": "T3-S3",
+      "path": "research/r31al_z075_gate/compare_secondary_refinement.py",
+      "lines": [
+        25,
+        36,
+        71,
+        81
+      ],
+      "sha256": "f8fb529fe4f2d6413f34372580e69bc4b7919e2a4e7c6ef2320949d7ca9c430f",
+      "scientific_code_executed": false
+    },
+    {
+      "id": "T3-S4",
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/engine.py",
+      "lines": [
+        309,
+        438
+      ],
+      "sha256": "e10f206d63be1a99a441780108619574605014a9b01b3b327e21fecb18c5b9cc",
+      "scientific_code_executed": false
+    },
+    {
+      "id": "T3-S5",
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/REPRESENTED_GAP_CONTRACT.json",
+      "lines": null,
+      "sha256": "f71febdab692f93208ef6339adb965e633ec7d22ff71753f0c3178da8acd078a",
+      "scientific_code_executed": false
+    }
+  ],
+  "assumptions": [
+    "Finite nonnegative machine binary64 operand values are separately authenticated or enclosed by independently established forward-error bounds.",
+    "Exactly two metric scalars; unchanged source token 0x3ddb7cdfd9d7bdbb.",
+    "Scalar addition/subtraction R is correctly rounded nearest ties-even, gradual underflow, no alternative intermediate precision/double rounding/reassociation.",
+    "Protected finite exact b+tau<=F for every operand pair being certified; reversed comparison rechecks its own domain.",
+    "The threshold neighbor used by a preimage row is finite; secondary strict at a=F is explicitly false.",
+    "Source-ideal target-gap arguments require fixed correctly bound models and common target perturbation bounds."
+  ],
+  "rounding_preimages": {
+    "definition": "m_minus(q)=(pred(q)+q)/2; m_plus(q)=(q+succ(q))/2; E(q)=low significand bit is zero; signed zeros collapsed for comparisons",
+    "RN_x_ge_q": "x>m_minus(q) OR (x==m_minus(q) AND E(q))",
+    "RN_x_gt_q": "x>m_plus(q) OR (x==m_plus(q) AND NOT E(q))",
+    "RN_x_le_q": "x<m_plus(q) OR (x==m_plus(q) AND E(q))",
+    "RN_x_lt_q": "x<m_minus(q) OR (x==m_minus(q) AND NOT E(q))"
+  },
+  "point_gap_predicates": {
+    "gap": "g=b-a exact dyadic",
+    "weak": "g>-tau-h_minus(a) OR (equality AND E(a))",
+    "PRIMARY_strict": "g>=tau+2^-87 for this frozen odd tolerance",
+    "SECONDARY_strict": "g>tau+h_plus(a) OR (equality AND NOT E(a)); false at a=F",
+    "h_minus": "(a-pred(a))/2",
+    "h_plus": "(succ(a)-a)/2",
+    "pareto": "both weak AND at least one comparison-specific strict"
+  },
+  "interval_implication": {
+    "premise": "Machine operands lie in exact rational enclosures, intersected with nonnegative finite binary64 lattice; empty intersections refuse.",
+    "worst_corner": "a=max feasible local scalar; b=min feasible other scalar; apply exact point predicates.",
+    "proof": "All three source predicates are antitone in a and monotone in b.",
+    "claim": "Sufficient for every feasible machine pair; exact universal criterion on Cartesian boxes; unresolved does not mean actual false.",
+    "forward_error_bridge": "If |a-e_a|<=rho_a and e_a in [L,U], then a in [max(0,L-rho_a),U+rho_a].",
+    "norm_correct_rounding_not_assumed": true
+  },
+  "gap_only_implication": {
+    "machine_gap_lower": "B=G-rho_a-rho_b under independently proved scalar error bounds",
+    "common_weak_sufficient": "both B>=-tau",
+    "PRIMARY_strict_sufficient": "at least one B>=tau+2^-87",
+    "SECONDARY_conservative_strict_sufficient": "at least one B>tau+h_plus(A), with separately certified nonnegative representable a<=A<F",
+    "SECONDARY_exact_equality": "Use exact worst-corner/parity theorem, not the conservative gap-only rule."
+  },
+  "exact_target_vs_machine": {
+    "ideal_lower_gap": "G=g_minus-2*epsilon for correctly bound fixed models/common target",
+    "ideal_rule": "both G>=-tau and at least one G>tau",
+    "does_not_automatically_certify": [
+      "Frozen scalar PRIMARY or SECONDARY decision",
+      "Correctly rounded norm/SVD",
+      "Array cast or matrix arithmetic errors",
+      "Historical binary64 scalar values or execution trace",
+      "Historical ABI or continuous-target scientific margin"
+    ]
+  },
+  "counterexamples": [
+    {
+      "id": "IDEAL_TRUE_PRIMARY_FALSE_SECONDARY_TRUE",
+      "local_bits": [
+        "3a88000000000000",
+        "0000000000000000"
+      ],
+      "other_bits": [
+        "3ddb7cdfd9d7bdbc",
+        "0000000000000000"
+      ],
+      "exact_first_gap": "30948500982134509/309485009821345068724781056",
+      "PRIMARY": {
+        "comparison": "PRIMARY",
+        "frozen_binary64_supported": false,
+        "exact_gap_supported": true,
+        "rounding_changes_result": true,
+        "weak_predicates": [
+          true,
+          true
+        ],
+        "strict_predicates": [
+          false,
+          false
+        ],
+        "other_plus_tol_bits": [
+          "3deb7cdfd9d7bdbc",
+          "3ddb7cdfd9d7bdbb"
+        ],
+        "other_minus_local_bits": [
+          "3ddb7cdfd9d7bdbb",
+          "0000000000000000"
+        ],
+        "other_minus_tol_bits": [
+          "3a90000000000000",
+          "bddb7cdfd9d7bdbb"
+        ],
+        "tolerance_bits": "3ddb7cdfd9d7bdbb",
+        "rounding_mode": "ROUND_TO_NEAREST_TIES_TO_EVEN",
+        "input_provenance_admitted": false
+      },
+      "SECONDARY": {
+        "comparison": "SECONDARY",
+        "frozen_binary64_supported": true,
+        "exact_gap_supported": true,
+        "rounding_changes_result": false,
+        "weak_predicates": [
+          true,
+          true
+        ],
+        "strict_predicates": [
+          true,
+          false
+        ],
+        "other_plus_tol_bits": [
+          "3deb7cdfd9d7bdbc",
+          "3ddb7cdfd9d7bdbb"
+        ],
+        "other_minus_local_bits": [
+          "3ddb7cdfd9d7bdbb",
+          "0000000000000000"
+        ],
+        "other_minus_tol_bits": [
+          "3a90000000000000",
+          "bddb7cdfd9d7bdbb"
+        ],
+        "tolerance_bits": "3ddb7cdfd9d7bdbb",
+        "rounding_mode": "ROUND_TO_NEAREST_TIES_TO_EVEN",
+        "input_provenance_admitted": false
+      },
+      "scope": "INVENTED_SYNTHETIC_SCALARS_ONLY"
+    },
+    {
+      "id": "IDEAL_TRUE_PRIMARY_TRUE_SECONDARY_FALSE",
+      "local_bits": [
+        "3feffffffff24190",
+        "0000000000000000"
+      ],
+      "other_bits": [
+        "3ff0000000000000",
+        "0000000000000000"
+      ],
+      "exact_first_gap": "56295/562949953421312",
+      "PRIMARY": {
+        "comparison": "PRIMARY",
+        "frozen_binary64_supported": true,
+        "exact_gap_supported": true,
+        "rounding_changes_result": false,
+        "weak_predicates": [
+          true,
+          true
+        ],
+        "strict_predicates": [
+          true,
+          false
+        ],
+        "other_plus_tol_bits": [
+          "3ff000000006df38",
+          "3ddb7cdfd9d7bdbb"
+        ],
+        "other_minus_local_bits": [
+          "3ddb7ce000000000",
+          "0000000000000000"
+        ],
+        "other_minus_tol_bits": [
+          "3feffffffff24190",
+          "bddb7cdfd9d7bdbb"
+        ],
+        "tolerance_bits": "3ddb7cdfd9d7bdbb",
+        "rounding_mode": "ROUND_TO_NEAREST_TIES_TO_EVEN",
+        "input_provenance_admitted": false
+      },
+      "SECONDARY": {
+        "comparison": "SECONDARY",
+        "frozen_binary64_supported": false,
+        "exact_gap_supported": true,
+        "rounding_changes_result": true,
+        "weak_predicates": [
+          true,
+          true
+        ],
+        "strict_predicates": [
+          false,
+          false
+        ],
+        "other_plus_tol_bits": [
+          "3ff000000006df38",
+          "3ddb7cdfd9d7bdbb"
+        ],
+        "other_minus_local_bits": [
+          "3ddb7ce000000000",
+          "0000000000000000"
+        ],
+        "other_minus_tol_bits": [
+          "3feffffffff24190",
+          "bddb7cdfd9d7bdbb"
+        ],
+        "tolerance_bits": "3ddb7cdfd9d7bdbb",
+        "rounding_mode": "ROUND_TO_NEAREST_TIES_TO_EVEN",
+        "input_provenance_admitted": false
+      },
+      "scope": "INVENTED_SYNTHETIC_SCALARS_ONLY"
+    },
+    {
+      "id": "MACHINE_TRUE_IDEAL_WEAK_FALSE",
+      "local_bits": [
+        "3ff000000006df38",
+        "0000000000000000"
+      ],
+      "other_bits": [
+        "3ff0000000000000",
+        "3ff0000000000000"
+      ],
+      "exact_first_gap": "-56295/562949953421312",
+      "PRIMARY": {
+        "comparison": "PRIMARY",
+        "frozen_binary64_supported": true,
+        "exact_gap_supported": false,
+        "rounding_changes_result": true,
+        "weak_predicates": [
+          true,
+          true
+        ],
+        "strict_predicates": [
+          false,
+          true
+        ],
+        "other_plus_tol_bits": [
+          "3ff000000006df38",
+          "3ff000000006df38"
+        ],
+        "other_minus_local_bits": [
+          "bddb7ce000000000",
+          "3ff0000000000000"
+        ],
+        "other_minus_tol_bits": [
+          "3feffffffff24190",
+          "3feffffffff24190"
+        ],
+        "tolerance_bits": "3ddb7cdfd9d7bdbb",
+        "rounding_mode": "ROUND_TO_NEAREST_TIES_TO_EVEN",
+        "input_provenance_admitted": false
+      },
+      "SECONDARY": {
+        "comparison": "SECONDARY",
+        "frozen_binary64_supported": true,
+        "exact_gap_supported": false,
+        "rounding_changes_result": true,
+        "weak_predicates": [
+          true,
+          true
+        ],
+        "strict_predicates": [
+          false,
+          true
+        ],
+        "other_plus_tol_bits": [
+          "3ff000000006df38",
+          "3ff000000006df38"
+        ],
+        "other_minus_local_bits": [
+          "bddb7ce000000000",
+          "3ff0000000000000"
+        ],
+        "other_minus_tol_bits": [
+          "3feffffffff24190",
+          "3feffffffff24190"
+        ],
+        "tolerance_bits": "3ddb7cdfd9d7bdbb",
+        "rounding_mode": "ROUND_TO_NEAREST_TIES_TO_EVEN",
+        "input_provenance_admitted": false
+      },
+      "scope": "INVENTED_SYNTHETIC_SCALARS_ONLY"
+    }
+  ],
+  "finite_termination": {
+    "point_binary64_operands": "finite exact decision including equality",
+    "shrinking_enclosures": "finite acceptance only under positive separation from necessary guards, or independently exact equality/cell isolation; not unconditional",
+    "fixed_resource_cap_guaranteed": false,
+    "boundary_counterexample": "lower bounds -tau-1/n never certify exact weak equality -tau without additional boundary information"
+  },
+  "verification": {
+    "tests": 12,
+    "failures": 0,
+    "skips": 0,
+    "execution": {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "theory_checks",
+        "-p",
+        "t3_test_predicate.py",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/theory_closure_20261001_v1",
+      "exit_code": 0,
+      "elapsed_seconds": 0.14861882100012735,
+      "hard_timeout_seconds": 20,
+      "address_space_mib": 256,
+      "actual_HH_runs": 0,
+      "native_builds": 0
+    },
+    "evidence_sha256": {
+      "theory_checks/t3_EXECUTION.json": "fec5a17dfc8dbc233b50e696a9e7fb2e6410d195579aeb3d443c7988a64b375e",
+      "theory_checks/t3_GREEN.log": "bdeda4f4b5ea83ae4880fcdade81442eecf0c908d26d95df3682a86aabc3420f",
+      "theory_checks/t3_predicate_checks.py": "8b0e45415abf93f344f6b05612bd6c3913583d827b1ee52a79ec059cb2051b38",
+      "theory_checks/t3_test_predicate.py": "4d72949cd8e1f3689951328a1f4ac0e325745f060d082cf1b3b0f7f4f443b5a1"
+    },
+    "test_oracle": "Immutable exact scalar-only G3 implementation (previously authored by this agent); test agreement is not independent proof or project admission."
+  },
+  "open_actual_premises": [
+    "Authenticated actual scalar bits or full independently certified machine-scalar error bounds",
+    "Historical source/runtime/scalar-operation linkage",
+    "Actual matrix and model binding including stored K vs constructed K",
+    "Actual continuous target bounds and strictly adequate numerical margin",
+    "Independent project decision review"
+  ],
+  "actual_HH_runs": 0,
+  "native_builds": 0,
+  "archived_machine_trace_admitted": false,
+  "historical_layout_admitted": false,
+  "independent_review_admitted": false,
+  "rigorous": false,
+  "certified_epsilon": null,
+  "certified_eta": null
+}

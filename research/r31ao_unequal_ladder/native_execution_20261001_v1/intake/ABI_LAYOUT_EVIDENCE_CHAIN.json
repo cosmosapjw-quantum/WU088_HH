@@ -1,0 +1,128 @@
+{
+  "schema": "WU088_HISTORICAL_ABI_SOURCE_LAYOUT_CHAIN_REVIEW_CANDIDATE_V1",
+  "status": "SOURCE_BOUND_LAYOUT_EVIDENCE_READY_FOR_INDEPENDENT_REVIEW",
+  "original_contract_requires": "Proven actual historical representation/layout and NPY byte identity; no specific wheel-recovery requirement",
+  "historical_numpy_wheel_bytes_recovered": false,
+  "wheel_bytes_mandatory_by_original_contract": false,
+  "sources": [
+    {
+      "local_path": "repo:research/r31ao_unequal_ladder/native_execution_20261001_v1/intake/evidence/pinned_sources/jvp_run.py",
+      "producer_path": "completion/mixed_derivative/run.py",
+      "bytes": 3598,
+      "sha256": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+      "matches_pre_output_lock": true
+    },
+    {
+      "local_path": "repo:research/r31ao_unequal_ladder/native_execution_20261001_v1/intake/evidence/pinned_sources/jvp_native.py",
+      "producer_path": "completion/mixed_derivative/native.py",
+      "bytes": 2729,
+      "sha256": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d",
+      "matches_pre_output_lock": true
+    },
+    {
+      "local_path": "repo:research/r31ao_unequal_ladder/native_execution_20261001_v1/intake/evidence/pinned_sources/od_native.py",
+      "producer_path": "completion/mixed_h/native.py",
+      "bytes": 3436,
+      "sha256": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+      "matches_pre_output_lock": true
+    },
+    {
+      "local_path": "repo:research/r31ao_unequal_ladder/native_execution_20261001_v1/intake/evidence/pinned_sources/od_run_helpers.py",
+      "producer_path": "completion/mixed_h/run.py",
+      "bytes": 6142,
+      "sha256": "924416df3437676213c3f766a602cc43bd53f7e961168faa98e578c85985d633",
+      "matches_pre_output_lock": true
+    },
+    {
+      "local_path": "repo:research/r31ao_unequal_ladder/native_execution_20261001_v1/intake/evidence/pinned_sources/jvp_cpp.cpp",
+      "producer_path": "completion/mixed_derivative/jvp.cpp",
+      "bytes": 5153,
+      "sha256": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+      "matches_pre_output_lock": true
+    },
+    {
+      "local_path": "repo:research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/completion/mixed_h/od_run.py",
+      "producer_path": "completion/mixed_h/od_run.py",
+      "bytes": 4404,
+      "sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+      "matches_pre_output_lock": true
+    },
+    {
+      "local_path": "repo:research/r31ao_unequal_ladder/native_execution_20261001_v1/intake/evidence/pinned_sources/numpy_common.h",
+      "bytes": 32586,
+      "sha256": "fb4e5b6af6e4e382948f2e50faa9cce58cd4df654946fd0df28cdf088fd229c1",
+      "repository": "numpy/numpy",
+      "commit": "c3d60fc8393f3ca3306b8ce8b6453d43737e3d90",
+      "source_role": "Version-pinned NumPy2.3.5 representation/serializer semantics; not a recovered historical extension binary"
+    },
+    {
+      "local_path": "repo:research/r31ao_unequal_ladder/native_execution_20261001_v1/intake/evidence/pinned_sources/numpy_math.h",
+      "bytes": 18858,
+      "sha256": "69e485b3ad106d63f2d6020fc870cfad813189f9b999b0c07233ff98b93f3c5d",
+      "repository": "numpy/numpy",
+      "commit": "c3d60fc8393f3ca3306b8ce8b6453d43737e3d90",
+      "source_role": "Version-pinned NumPy2.3.5 representation/serializer semantics; not a recovered historical extension binary"
+    },
+    {
+      "local_path": "repo:research/r31ao_unequal_ladder/native_execution_20261001_v1/intake/evidence/pinned_sources/numpy_format.py",
+      "bytes": 36865,
+      "sha256": "cdc437c57c4f7fb7a992db18adc7416c83ee38287d38f575837801ea085fe2b1",
+      "repository": "numpy/numpy",
+      "commit": "c3d60fc8393f3ca3306b8ce8b6453d43737e3d90",
+      "source_role": "Version-pinned NumPy2.3.5 representation/serializer semantics; not a recovered historical extension binary"
+    },
+    {
+      "local_path": "repo:research/r31ao_unequal_ladder/native_execution_20261001_v1/intake/evidence/pinned_sources/numpy_npyio.py",
+      "bytes": 99277,
+      "sha256": "92e71acf00ae7e1e26370102c99c447abc6ca9afc6c50333d6462e65444323cb",
+      "repository": "numpy/numpy",
+      "commit": "c3d60fc8393f3ca3306b8ce8b6453d43737e3d90",
+      "source_role": "Version-pinned NumPy2.3.5 representation/serializer semantics; not a recovered historical extension binary"
+    }
+  ],
+  "steps": [
+    {
+      "id": "P1",
+      "evidence": "historical_metadata/ENVIRONMENT.json, OD.argv.json, JVP.argv.json",
+      "claim": "Both original producer invocations use /root/wu088_hh_ncp_work_v2/venv/bin/python. Contemporaneous environment records NumPy2.3.5/Linuxx86_64/GCC13.3, longdouble16bytes/64significand, clongdouble32bytes."
+    },
+    {
+      "id": "P2",
+      "evidence": "PRE_OUTPUT_LOCK.json; POST_OUTPUT_LOCK_VERIFICATION.json; OD_RAW_IDENTITY.json; JVP_RAW_IDENTITY.json",
+      "claim": "Historical source/build and driver hashes are output-linked; fetched exact producer sources match their pins. This is recorded execution provenance, not a current-host recreation."
+    },
+    {
+      "id": "P3",
+      "evidence": "pinned_sources/jvp_run.py:12,33,51 and jvp_native.py:8,19-20",
+      "claim": "JVP parses z as np.longdouble then stores z, LD sumabs and CD raw/O/dotO in one np.savez_compressed call. Native guard checks [16,64,32,1,1] through sizeof/mantissa/rounding metadata."
+    },
+    {
+      "id": "P4",
+      "evidence": "B192_LITERAL_SLOT_DISCRIMINATOR.json",
+      "claim": "Source-bound z=3/4 NPY scalar has x87 little-endian 10-byte significant encoding at offset0; it does not encode binary128 3/4."
+    },
+    {
+      "id": "P5",
+      "evidence": "NumPy2.3.5 npy_common.h:328-336,362-390; npy_math.h:419-445",
+      "claim": "The observed 16byte longdouble has native longdouble semantics; clongdouble stores two longdouble components with real slot0 and imaginary slot1. This excludes inferring binary128 merely from complex256 name."
+    },
+    {
+      "id": "P6",
+      "evidence": "NumPy2.3.5 _npyio_impl.py:769-803; _format_impl.py:703-777",
+      "claim": "np.savez_compressed applies asanyarray then write_array; numeric bytes preserve dtype and recorded C/F order with no forced precision conversion."
+    },
+    {
+      "id": "P7",
+      "evidence": "OD od_run.py:8-10,21-38; od_native.py:11; od_run_helpers.py:11-15",
+      "claim": "OD uses same np.longdouble/np.clongdouble aliases and same np.savez_compressed raw writer under recorded same Python/NumPy environment. O_row is Fortran-contiguous and must use its own NPY header order."
+    },
+    {
+      "id": "P8",
+      "evidence": "B192_MEMBER_BINDINGS.json, B192_SLOT_PATTERN_OBSERVATION.json",
+      "claim": "Both historical archive hashes and all13 NPY bytes are bound; all7159 extended candidate slots are canonical finite x87. Padding, signed zero and C/F layout must be retained by decoder rather than discarded from byte provenance."
+    }
+  ],
+  "remaining_review_question": "Are the original environment/source execution records sufficient provenance for applying the pinned NumPy version semantics to these two exact archives? If yes, bounded layout authority can be justified without requiring a historical wheel hash. If a concrete mismatch exists, retain that specific gap; do not invent wheel-only authority.",
+  "historical_layout_admitted": false,
+  "actual_decode_executed": false
+}

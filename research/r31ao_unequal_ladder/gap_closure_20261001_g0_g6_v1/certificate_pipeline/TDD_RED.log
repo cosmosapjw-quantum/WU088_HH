@@ -1,0 +1,19 @@
+test_pipeline (unittest.loader._FailedTest.test_pipeline) ... ERROR
+
+======================================================================
+ERROR: test_pipeline (unittest.loader._FailedTest.test_pipeline)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_pipeline
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/certificate_pipeline/test_pipeline.py", line 6, in <module>
+    from certificate_pipeline.synthetic import evaluate_synthetic_bundle, PipelineError
+ModuleNotFoundError: No module named 'certificate_pipeline.synthetic'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

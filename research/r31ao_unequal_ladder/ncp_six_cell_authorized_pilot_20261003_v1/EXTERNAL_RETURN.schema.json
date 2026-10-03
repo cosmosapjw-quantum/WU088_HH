@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "properties": {
+        "native_dispatches": {
+          "const": 0
+        },
+        "reason": {
+          "type": "string"
+        },
+        "scope_consumed": {
+          "const": false
+        },
+        "status": {
+          "const": "BLOCKED_BY_RUNTIME"
+        }
+      },
+      "required": [
+        "status",
+        "reason",
+        "native_dispatches",
+        "scope_consumed"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "B22": {
+          "const": "UNDETERMINED_OPEN"
+        },
+        "binding_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "type": "string"
+        },
+        "dispatched_cell_ids": {
+          "items": {
+            "enum": [
+              275,
+              67,
+              288,
+              272,
+              16,
+              0
+            ]
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "endpoint_included": {
+          "const": false
+        },
+        "full_domain_integral": {
+          "const": false
+        },
+        "native_dispatch_attempts": {
+          "maximum": 6,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "native_observed": {
+          "maximum": 6,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "normalization_applied": {
+          "const": false
+        },
+        "production_admission": {
+          "const": false
+        },
+        "schema": {
+          "const": "WU088_W3_FAR_RETURN_V1"
+        },
+        "scientific_admission": {
+          "const": false
+        },
+        "status": {
+          "enum": [
+            "SIX_CELL_PILOT_COMPLETE",
+            "STOPPED_FIRST_REJECTION"
+          ]
+        }
+      },
+      "required": [
+        "schema",
+        "status",
+        "binding_sha256",
+        "native_dispatch_attempts",
+        "native_observed",
+        "dispatched_cell_ids",
+        "not_dispatched_cell_ids",
+        "returns",
+        "coverage",
+        "B22",
+        "endpoint_included",
+        "normalization_applied",
+        "full_domain_integral",
+        "scientific_admission",
+        "production_admission"
+      ],
+      "type": "object"
+    }
+  ],
+  "title": "WU088 bounded pilot return"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "WU088_W3_PREEXEC_INITIAL_REVIEW_V1",
+  "status": "MINOR_CONTRACT_FIX_REQUESTED",
+  "reviewed_sources": {
+    "run_bounded.py": "dd77d26029cd39efbe3bd478cf32118bf177825c03d9a16d72c93b9995c67f26",
+    "crosscheck_worker.py": "439e1c8bd6d2fb3a0b6c6def0d3b5b706a84dd9f1332e3416ba7ebf4c99bc4e8",
+    "tail_bound/select_cutoff.py": "7a8a4d9fc10d79ba08d7c9eb015bd814559d9c970ec008404b7e45d1a055a759"
+  },
+  "finding": {
+    "id": "OPTIMIZE_DISABLES_ASSERT_GUARDS",
+    "classification": "IMPLEMENTATION_CONTRACT_GUARD",
+    "file": "crosscheck_worker.py",
+    "description": "Campaign-specific source/window/cap assertions can be disabled by inherited PYTHONOPTIMIZE; replace with explicit conditional exceptions before actual launch.",
+    "source_or_numerical_error": false
+  },
+  "process_design_review": {
+    "pinned_host_identity_checked": true,
+    "single_process_no_creation_syscalls": true,
+    "PDEATHSIG_parent_race_check": true,
+    "hard_RLIMIT_AS_512MiB": true,
+    "hard_CPU_and_external_wall_bound": true,
+    "direct_evaluate_task_avoids_worker_RLIMIT_raise_conflict": true,
+    "create_only_phase_claim_before_launch": true
+  },
+  "actual_endpoint_evaluations_by_reviewer": 0,
+  "actual_HH_integrations_by_reviewer": 0
+}

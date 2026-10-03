@@ -1,0 +1,110 @@
+{
+  "artifacts": [
+    {
+      "role": "original_deep_research_database",
+      "name": "WU088_HH_R31AO_LITERATURE_DATABASE_20261001.zip",
+      "expected_reported_sha256": "ab875d3e4fa771b34bdc1026042c38553b473b98f23e00e809d21c3b367948a9",
+      "verification_level": "ORIGINAL_BYTES_NOT_LOCATED_IN_AUDITED_SCOPE",
+      "local_path": null,
+      "actual_content_audited": false,
+      "global_nonexistence_claimed": false
+    },
+    {
+      "role": "v1_acquisition_catalog",
+      "library_file_id": "libfile_dcb842bfbf00819189c07151368868a5",
+      "archive_member": "previous_v1/catalog/acquisition.sqlite",
+      "verification_level": "BYTE_VERIFIED_SQLITE_READONLY_AUDITED",
+      "local_path": "/workspace/scratch/6cf5f59cd2d1/production_audit/drive/library_materialized/catalog_v1_candidate/acquisition.sqlite",
+      "bytes": 274432,
+      "sha256": "a2952c1250f33a900983f121bfb1d55eddb31c0f7962e79de391dcf8eb9d1fca",
+      "actual_content_audited": true,
+      "integrity_check": "ok",
+      "foreign_key_violations": 0,
+      "pre_post_hash_equal": true,
+      "tables": {
+        "sources": 67,
+        "assets": 60,
+        "attempts": 20,
+        "relations": 39,
+        "blocker_map": 53,
+        "citation_occurrences": 41,
+        "metadata": 11
+      }
+    },
+    {
+      "role": "v2_acquisition_catalog",
+      "archive_member": "catalog/acquisition.sqlite",
+      "verification_level": "MANIFEST_IDENTITY_ONLY_TRANSPORT_BLOCKED",
+      "local_path": null,
+      "manifest_sha256": "aff168a3a5f0e4584756dcab2f8f621a443f883439833535aeb231dcf780c1c6",
+      "actual_content_audited": false,
+      "integrity_check": null,
+      "foreign_key_violations": null
+    },
+    {
+      "role": "partial_reconstructed_research_database",
+      "library_file_id": "libfile_9786d4ecbda4819192b3404b9fda60c3",
+      "verification_level": "BYTE_VERIFIED_SQLITE_READONLY_AUDITED",
+      "local_path": "/workspace/scratch/6cf5f59cd2d1/production_audit/drive/database_reconstructed_v1/WU088_HH_R31AO_LITERATURE_DATABASE_RECONSTRUCTED_20261001_v1/wu088_r31ao_literature_RECONSTRUCTED.db",
+      "archive_bytes": 29050,
+      "archive_sha256": "34e0b4c81ed2b24f2008d8504f47714aa6e70f6da04bf0afbf65d912e2c9b4f1",
+      "bytes": 86016,
+      "sha256": "64546bb1b31ec3de4588d79e19a3037f573b7c5422f80a8387d8b3e40f164933",
+      "actual_content_audited": true,
+      "integrity_check": "ok",
+      "foreign_key_violations": 0,
+      "pre_post_hash_equal": true,
+      "tables": {
+        "sources": 4,
+        "blockers": 5,
+        "theorems": 0,
+        "code_modules": 0,
+        "tests": 0,
+        "artifacts": 0,
+        "theorem_sources": 0,
+        "module_sources": 0,
+        "blocker_modules": 0,
+        "reconstruction_provenance": 1
+      },
+      "original_equivalence": "UNVERIFIED_NOT_CLAIMED"
+    },
+    {
+      "role": "v3_successor_acquisition_database",
+      "drive_file_id": "169bY3hBm0lo7hQswz4Dv6Qjprh0HGxYw",
+      "verification_level": "BYTE_VERIFIED_SQLITE_READONLY_AUDITED",
+      "local_path": "/workspace/scratch/6cf5f59cd2d1/production_audit/drive/database_v3/WU088_HH_R31AO_DATABASE_20261001_v3/WU088_HH_R31AO_ACQUISITION_DATABASE_20261001_v3.sqlite",
+      "bytes": 1191936,
+      "sha256": "6be04d2337d82a3712c40e910237920568157a1669b2b4ad6595e861d1026694",
+      "actual_content_audited": true,
+      "integrity_check": "ok",
+      "foreign_key_violations": 0,
+      "pre_post_hash_equal": true,
+      "tables": {
+        "source_catalog": 68,
+        "source_versions": 79,
+        "sources": 79,
+        "acquired_files": 66,
+        "assets": 66,
+        "source_file_links": 71,
+        "code_version_policy": 15,
+        "report_sections": 22,
+        "report_example_rows": 9
+      }
+    },
+    {
+      "role": "original_deep_research_report_container",
+      "library_file_id": "libfile_863ccecfd60c81918103b2d48302c7cd",
+      "verification_level": "BYTE_VERIFIED_REPORT_FINAL_BODY_MATCH",
+      "local_path": "/workspace/scratch/6cf5f59cd2d1/production_audit/drive/library_materialized/ORIGINAL_DEEP_RESEARCH_REPORT.json",
+      "bytes": 650126,
+      "sha256": "90021a8379bdd7e077fff33329ce057a6f8fcee35cfab831528ea02802f6dd71",
+      "report_body_bytes": 46605,
+      "report_body_lines": 937,
+      "report_body_sha256": "ae78d5b5a5acd9ff7945874598aee8a7a114dbb88eeb2538cf8465c634aaf5a7",
+      "report_links_are_not_recovered_file_bytes": true
+    }
+  ],
+  "science_executed_by_audit": false,
+  "external_writes": false,
+  "important_distinction": "Missing original database entity rows do not imply missing T1-T5 proof artifacts in the separately recovered repository."
+}

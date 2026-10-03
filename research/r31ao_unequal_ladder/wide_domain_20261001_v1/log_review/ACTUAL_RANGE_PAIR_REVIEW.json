@@ -1,0 +1,245 @@
+{
+  "binary_sha256": "7c1984dcca1b19631a91df1de52acea2eaa61db08c8d2ab1af1f9f1a3ebf3ba9",
+  "build_manifest_sha256": "13965d2210e976f0d7a190fba58f8c3c1bf366521e8dd1bd5e9a28cdae9e9342",
+  "build_source_identity": "de1e32d8a68146a49d269614c2259ec06f10a5294ffa05b15d375239518bcae1",
+  "changed_native_limits_between_pair": [
+    "relative_goal"
+  ],
+  "evidence_sha256": {
+    "wide_domain_20261001_v1/runtime/DIAGNOSTIC_TILE00.json": "ebbd10d32a4df134263b895fe8e86d8f30ac0f5719565333ec96ea3c376da46d",
+    "wide_domain_20261001_v1/runtime/RANGE_CORRECTION_CONTRACT.json": "0826b2a5892437f86ece4d452b868e8066c9d1b467ef952d669a12084c931190",
+    "wide_domain_20261001_v1/runtime/RANGE_GOAL128_CONTRACT.json": "02ccee844a2b191fbdcb33fae4dc27136748a30f96d5830ae3058d977c50f754",
+    "wide_domain_20261001_v1/runtime/RANGE_GOAL128_LIMITS.json": "a77ff1ba0d55a443903937809e43bd2a72696f9ca178153d1a297117fb6e32ee",
+    "wide_domain_20261001_v1/runtime/W1_TILED/plans/00.json": "e9fb73d94614905c1b4e911c99e7b7af5f6a236753bb92ffad9b8d0a60cdbb19",
+    "wide_domain_20261001_v1/runtime/build_range_cached/BUILD.json": "78ffe9e9489bca5997c103d9a0f9d7048217b6c8cfe4cf7d200ae7f4c8dc4b7d"
+  },
+  "findings": [
+    "The range correction removes the previous no-analytic-attempt state: both actual runs make10 outer order1 calls and return15 uniform enclosures.",
+    "Goal64 reaches finite successful point inner outputs but76 fail their unchanged2^-68 achieved radius; one retained finite sample is exactly decoded.",
+    "Changing only relative_goal64 to128 yields64 strict point-inner successes and zero width refusals before the common20k dispatch cap.",
+    "Both receipts reject with RESOURCE_LIMIT, no rectangle, no final accuracy or scientific admission.",
+    "Eight conservative outer analytic preflight refusals remain in both runs; they are handled refinably and are not proven the sole remaining bottleneck.",
+    "More evaluations may be needed, but these receipts do not prove convergence under any larger budget or establish W1 coverage."
+  ],
+  "limitations": [
+    "Source-bound native output and byte identity reviewed without replaying HH.",
+    "Times are single workspace executions, not NCP/MPI throughput or a speedup benchmark.",
+    "No full W1/W3 sum, endpoint composition, normalization, D/epsilon/gap or production solver admission."
+  ],
+  "production_admission": false,
+  "records": {
+    "RANGE_TILE00": {
+      "accepted": false,
+      "counters": {
+        "inner_enclosure_available": 15,
+        "inner_invalid_contract": 0,
+        "inner_no_convergence": 0,
+        "inner_nonfinite": 0,
+        "inner_radius_met": 0,
+        "inner_radius_too_wide": 76,
+        "inner_resource_limit": 1,
+        "nonfinite_order0_exact": 0,
+        "nonfinite_order0_range": 77,
+        "nonfinite_order1": 1277,
+        "outer_fatal_failures": 1,
+        "outer_order0_exact_calls": 0,
+        "outer_order0_exact_failures": 0,
+        "outer_order0_range_calls": 90,
+        "outer_order0_range_failures": 77,
+        "outer_order1_calls": 10,
+        "outer_order1_failures": 8,
+        "outer_refinable_failures": 84,
+        "peak_active_integrations": 2,
+        "preflight_calls": 10,
+        "preflight_nonfinite": 8,
+        "selected_point_inner": 77,
+        "selected_uniform_inner": 23
+      },
+      "dispatched_evaluations": 20000,
+      "elapsed_wall_ns": 9900013078,
+      "exact_point_failure_radius_samples": [
+        {
+          "cap": "1/295147905179352825856",
+          "imag_radius": "246243225/19342813113834066795298816",
+          "imag_radius_to_cap": "246243225/65536",
+          "real_radius": "984972901/77371252455336267181195264",
+          "real_radius_to_cap": "984972901/262144"
+        }
+      ],
+      "inner_outcomes": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            76,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            13
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        ]
+      ],
+      "integration_calls": 93,
+      "receipt_sha256": "7cdfa0c798c774cb55bcef91c13a425d21eaa3e3065567280ba551620011a6ca",
+      "relative_goal": 64,
+      "result_sha256": "d35a2e3ea3030a313831b51d7ff00e5416194b038da2b58df3d0ce43cc9eda7d",
+      "status": "RESOURCE_LIMIT"
+    },
+    "RANGE_TILE00_GOAL128": {
+      "accepted": false,
+      "counters": {
+        "inner_enclosure_available": 15,
+        "inner_invalid_contract": 0,
+        "inner_no_convergence": 0,
+        "inner_nonfinite": 0,
+        "inner_radius_met": 64,
+        "inner_radius_too_wide": 0,
+        "inner_resource_limit": 1,
+        "nonfinite_order0_exact": 0,
+        "nonfinite_order0_range": 1,
+        "nonfinite_order1": 1101,
+        "outer_fatal_failures": 1,
+        "outer_order0_exact_calls": 0,
+        "outer_order0_exact_failures": 0,
+        "outer_order0_range_calls": 78,
+        "outer_order0_range_failures": 1,
+        "outer_order1_calls": 10,
+        "outer_order1_failures": 8,
+        "outer_refinable_failures": 8,
+        "peak_active_integrations": 2,
+        "preflight_calls": 10,
+        "preflight_nonfinite": 8,
+        "selected_point_inner": 65,
+        "selected_uniform_inner": 23
+      },
+      "dispatched_evaluations": 20000,
+      "elapsed_wall_ns": 8949199794,
+      "exact_point_failure_radius_samples": [],
+      "inner_outcomes": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            64,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            13
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        ]
+      ],
+      "integration_calls": 81,
+      "receipt_sha256": "c46b5cf0efb9c234eb79785dea71b91732ae46d9f8f9eb6f675365ea58d99a64",
+      "relative_goal": 128,
+      "result_sha256": "f27cf7735079da4cbcea4a57c1f0ce9885dc332a8a61da61bd9d8912856f32de",
+      "status": "RESOURCE_LIMIT"
+    }
+  },
+  "review_script_sha256": "08d1d1b2e862743e3e9a22da917c18974feb6f7f0442b58a293672167faf8efb",
+  "reviewed_accepted_invocations": 0,
+  "reviewed_actual_invocations": 2,
+  "reviewer_new_hh_integrals": 0,
+  "schema": "WU088_FINITE_UNIFORM_RANGE_ACTUAL_PAIR_REVIEW_V1",
+  "scientific_admission": false,
+  "source_files_checked": 23,
+  "source_review_sha256": "db20ba33cd4317aed1723f926ae8da015edfb64e47731702c1e0b103974b1a4c",
+  "status": "BOUND_RECEIPTS_VERIFIED_BOTH_REJECTED_AT_DISPATCH_CAP"
+}

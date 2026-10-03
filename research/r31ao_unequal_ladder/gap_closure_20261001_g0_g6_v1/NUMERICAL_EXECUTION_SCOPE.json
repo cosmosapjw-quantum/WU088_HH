@@ -1,0 +1,154 @@
+{
+  "schema": "WU088_BOUNDED_NUMERICAL_SCOPE_PROPOSAL_V1",
+  "status": "NUMERICAL_CERTIFICATE_AUTHORIZATION_REQUIRED",
+  "execution_authorized": false,
+  "approval_ready": false,
+  "start_head": "393eb882f7fbf160cfb465849d9652c7b026b5be",
+  "route": "EXACT_CONTINUOUS_TARGET_ENCLOSURE_PLUS_ARCHIVED_RAW_COMPARISON",
+  "reason_not_execution_ready": [
+    "Historical B192 NumPy/serializer ABI binding absent",
+    "Native FLINT callback/assembly/Petras draft not compiled or runtime-verified",
+    "Produced callback/backend binary hashes absent",
+    "Actual HH pilot has not demonstrated feasible widths"
+  ],
+  "exact_inputs": {
+    "Frozen107": {
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz",
+      "bytes": 5681,
+      "sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c"
+    },
+    "B192_OD": {
+      "repository_path": "research/r31ao_unequal_ladder/authorized_order_study_20260930/raw/B192_REUSED_OD/ASSEMBLED_OD.npz",
+      "sha256": "7e7b5782cc698a364aeac608620e56c7bfdc64035ffe5dfee501608dae7970df"
+    },
+    "frozen_predictions": [
+      {
+        "repository_path": "research/r31ak_eight_node/ncp_followup_20260930/FROZEN_HOLDOUT_PREDICTIONS.npz",
+        "sha256": "6d29acbe1aee9bb34cf3627c04136d67e27b5a44b44ee7b3104cdcd3fe1ff88c"
+      },
+      {
+        "repository_path": "research/r31al_z075_gate/ncp_followup_20260930/Z075_COARSE_PREDICTION.npz",
+        "sha256": "de876e53bca7aa773f321ed2ecfe24e4a0b1fda57bf42f6e8736bddc1730e107"
+      }
+    ]
+  },
+  "backend": {
+    "FLINT": "3.4.0",
+    "GMP": "6.3.0",
+    "MPFR": "4.2.2",
+    "source_hash_authority": "BACKEND_IDENTITY.json",
+    "callback_and_assembly_source_hash_authority": "MANIFEST.sha256.json",
+    "callback_binary_sha256": null,
+    "backend_binary_sha256": null,
+    "native_acceptance_receipt": null
+  },
+  "next_host_stage": {
+    "name": "HOST_SYNTHETIC_BUILD_AND_HISTORICAL_ABI_EVIDENCE",
+    "actual_HH_evaluation_allowed": false,
+    "description": "Build pinned sidecar; run native synthetic acceptance under host_guard; retrieve historical serializer evidence. No science-array decode or HH integrand."
+  },
+  "proposed_actual_pilot_after_separate_authorization": {
+    "name": "G6_SINGLE_PRIMITIVE_AT_FROZEN_Z075",
+    "geometry": {
+      "z": "3/4",
+      "transverse": "2",
+      "mu": "1",
+      "v": "exact stored binary64 from pinned Frozen107"
+    },
+    "primitive_indices": {
+      "a_index": 0,
+      "b_index": 0,
+      "active": 0,
+      "angular": "s"
+    },
+    "fields": [
+      "O",
+      "G1",
+      "G2"
+    ],
+    "density_terms": "all stored nonzero donor C terms at the pinned target; no screening",
+    "finite_endpoints": {
+      "l_t": "1/16",
+      "T_t": "16",
+      "l_u": "1/16",
+      "T_u": "16"
+    },
+    "endpoint_choice_status": "PREDECLARED_DESIGN_CANDIDATE_NOT_EVALUATED_OR_OPTIMIZED",
+    "method": "nested FLINT3.4 Acb/Petras with whole outer complex-box inner enclosure",
+    "precision_schedule_bits": [
+      128,
+      256,
+      512
+    ],
+    "max_precision_bits": 512,
+    "max_total_callback_dispatches": 20000,
+    "max_live_panels": 4096,
+    "max_subdivision_depth": 40,
+    "max_wall_seconds": 300,
+    "max_address_space_mib_per_process": 2048,
+    "max_processes": 1,
+    "max_threads": 1,
+    "aggregate_tree_RSS_cap_claimed": false,
+    "target_component_radius": "1/1099511627776",
+    "target_role": "pilot diagnostic in each unnormalized field source unit; not certified epsilon or matrix budget",
+    "target_matrix_entries": [],
+    "full_D_entry_evaluation_authorized": false,
+    "output": "primitive endpoint/interior enclosures, achieved radii, counter/precision/wall/memory/domain failures; no model verdict"
+  },
+  "proposed_represented_array_stage": {
+    "execution_authorized": false,
+    "requires_historical_ABI_binding": true,
+    "archives": "exact_inputs B192_OD and frozen_predictions only; no independent JVP needed for this D-gap route",
+    "members": [
+      "D_col.npy",
+      "D_row.npy",
+      "z0p75_R31AK_Dcol.npy",
+      "z0p75_R31AK_Drow.npy",
+      "z0p75_R31AK_K.npy",
+      "z0p75_R31Z_Dcol.npy",
+      "z0p75_R31Z_Drow.npy",
+      "z0p75_R31Z_K.npy",
+      "z0p75_R31AD_Dcol.npy",
+      "z0p75_R31AD_Drow.npy",
+      "z0p75_R31AD_K.npy"
+    ],
+    "max_total_elements": 20000,
+    "max_wall_seconds": 60,
+    "max_address_space_mib_per_process": 512,
+    "sqrt_precision_bits": 256,
+    "max_sqrt_precision_bits": 512,
+    "outputs": [
+      "exact dyadic member hashes",
+      "exact represented K/Dmax gap intervals",
+      "separate legacy scalar audit if authenticated"
+    ],
+    "comparator_rerun": false
+  },
+  "full_G7_scope": {
+    "execution_authorized": false,
+    "execution_ready": false,
+    "target_D_col_shape": [
+      47,
+      2
+    ],
+    "target_D_row_shape": [
+      2,
+      47
+    ],
+    "final_entry_count": 188,
+    "requires": "close host/backend/ABI gates and inspect bounded pilot before fixing a separate full-G7 work budget and exact binary hashes; no automatic escalation"
+  },
+  "invariants": {
+    "source_mutation": false,
+    "R31AK_retraining": false,
+    "new_order": false,
+    "new_geometry": false,
+    "B192_recomputation": false,
+    "comparator_rerun": false,
+    "X0_X8_added": false,
+    "B128_B160_authorization_reused": false
+  },
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false
+}

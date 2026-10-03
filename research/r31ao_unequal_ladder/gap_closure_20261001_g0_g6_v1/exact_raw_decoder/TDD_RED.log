@@ -1,0 +1,596 @@
+test_asymmetric_fortran_and_c_hash (exact_raw_decoder.test_decoder.DecoderTests.test_asymmetric_fortran_and_c_hash) ... ERROR
+test_asymmetric_three_dimensional_fortran (exact_raw_decoder.test_decoder.DecoderTests.test_asymmetric_three_dimensional_fortran) ... ERROR
+test_authority_required_and_bound (exact_raw_decoder.test_decoder.DecoderTests.test_authority_required_and_bound) ... ERROR
+test_binary128_goldens (exact_raw_decoder.test_decoder.DecoderTests.test_binary128_goldens) ... ERROR
+test_binary64_goldens_all_versions (exact_raw_decoder.test_decoder.DecoderTests.test_binary64_goldens_all_versions) ... 
+  test_binary64_goldens_all_versions (exact_raw_decoder.test_decoder.DecoderTests.test_binary64_goldens_all_versions) (version=(1, 0)) ... ERROR
+  test_binary64_goldens_all_versions (exact_raw_decoder.test_decoder.DecoderTests.test_binary64_goldens_all_versions) (version=(2, 0)) ... ERROR
+  test_binary64_goldens_all_versions (exact_raw_decoder.test_decoder.DecoderTests.test_binary64_goldens_all_versions) (version=(3, 0)) ... ERROR
+test_binary64_independent_oracle (exact_raw_decoder.test_decoder.DecoderTests.test_binary64_independent_oracle) ... ERROR
+test_canonical_known_payload (exact_raw_decoder.test_decoder.DecoderTests.test_canonical_known_payload) ... ERROR
+test_complex128_big_endian (exact_raw_decoder.test_decoder.DecoderTests.test_complex128_big_endian) ... ERROR
+test_header_inspection_does_not_decode_values (exact_raw_decoder.test_decoder.DecoderTests.test_header_inspection_does_not_decode_values) ... ERROR
+test_reject_binary128_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary128_nonfinite) ... 
+  test_reject_binary128_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary128_nonfinite) (frac=0) ... ERROR
+  test_reject_binary128_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary128_nonfinite) (frac=1) ... ERROR
+  test_reject_binary128_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary128_nonfinite) (frac=2596148429267413814265248164610048) ... ERROR
+test_reject_binary64_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary64_nonfinite) ... 
+  test_reject_binary64_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary64_nonfinite) (bits=9218868437227405312) ... ERROR
+  test_reject_binary64_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary64_nonfinite) (bits=18442240474082181120) ... ERROR
+  test_reject_binary64_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary64_nonfinite) (bits=9221120237041090561) ... ERROR
+  test_reject_binary64_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary64_nonfinite) (bits=9218868437227405313) ... ERROR
+test_reject_magic_version_encoding_and_header_length (exact_raw_decoder.test_decoder.DecoderTests.test_reject_magic_version_encoding_and_header_length) ... 
+  test_reject_magic_version_encoding_and_header_length (exact_raw_decoder.test_decoder.DecoderTests.test_reject_magic_version_encoding_and_header_length) (prefix=b"WRONG!\x01\x00v\x00{'") ... ERROR
+  test_reject_magic_version_encoding_and_header_length (exact_raw_decoder.test_decoder.DecoderTests.test_reject_magic_version_encoding_and_header_length) (prefix=b"\x93NUMPY\x04\x00v\x00{'") ... ERROR
+  test_reject_magic_version_encoding_and_header_length (exact_raw_decoder.test_decoder.DecoderTests.test_reject_magic_version_encoding_and_header_length) (prefix=b'\x93NUMPY\x01\x00') ... ERROR
+  test_reject_magic_version_encoding_and_header_length (exact_raw_decoder.test_decoder.DecoderTests.test_reject_magic_version_encoding_and_header_length) (prefix=b"\x93NUMPY\x01\x00\xff\xff{'") ... ERROR
+  test_reject_magic_version_encoding_and_header_length (exact_raw_decoder.test_decoder.DecoderTests.test_reject_magic_version_encoding_and_header_length) (prefix=b"\x93NUMPY\x01\x00v\x00{'") ... ERROR
+test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) ... 
+  test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','descr':'>f8','fortran_order':False,'shape':(1,)}") ... ERROR
+  test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','fortran_order':0,'shape':(1,)}") ... ERROR
+  test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','fortran_order':False,'shape':(-1,)}") ... ERROR
+  test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','fortran_order':False,'shape':(True,)}") ... ERROR
+  test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','fortran_order':False,'shape':[1]}") ... ERROR
+  test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','fortran_order':False,'shape':(1,), 'extra':1}") ... ERROR
+  test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="dict(descr='<f8', fortran_order=False, shape=(1,))") ... ERROR
+  test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','fortran_order':False,'shape':(1,)} # hidden comment") ... ERROR
+test_reject_payload_truncation_and_trailing (exact_raw_decoder.test_decoder.DecoderTests.test_reject_payload_truncation_and_trailing) ... 
+  test_reject_payload_truncation_and_trailing (exact_raw_decoder.test_decoder.DecoderTests.test_reject_payload_truncation_and_trailing) (n=0) ... ERROR
+  test_reject_payload_truncation_and_trailing (exact_raw_decoder.test_decoder.DecoderTests.test_reject_payload_truncation_and_trailing) (n=7) ... ERROR
+  test_reject_payload_truncation_and_trailing (exact_raw_decoder.test_decoder.DecoderTests.test_reject_payload_truncation_and_trailing) (n=9) ... ERROR
+test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) ... 
+  test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='=f8') ... ERROR
+  test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='|f8') ... ERROR
+  test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='<f4') ... ERROR
+  test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='<i8') ... ERROR
+  test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='|O') ... ERROR
+  test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='complex256') ... ERROR
+  test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='<V16') ... ERROR
+test_reject_x87_noncanonical_and_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_x87_noncanonical_and_nonfinite) ... 
+  test_reject_x87_noncanonical_and_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_x87_noncanonical_and_nonfinite) (sig=0, exp=1) ... ERROR
+  test_reject_x87_noncanonical_and_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_x87_noncanonical_and_nonfinite) (sig=9223372036854775808, exp=0) ... ERROR
+  test_reject_x87_noncanonical_and_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_x87_noncanonical_and_nonfinite) (sig=9223372036854775808, exp=32767) ... ERROR
+  test_reject_x87_noncanonical_and_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_x87_noncanonical_and_nonfinite) (sig=9223372036854775809, exp=32767) ... ERROR
+test_resource_caps (exact_raw_decoder.test_decoder.DecoderTests.test_resource_caps) ... ERROR
+test_scalar_and_empty (exact_raw_decoder.test_decoder.DecoderTests.test_scalar_and_empty) ... ERROR
+test_signed_zero_math_hash_and_raw_difference (exact_raw_decoder.test_decoder.DecoderTests.test_signed_zero_math_hash_and_raw_difference) ... ERROR
+test_x87_complex_and_big_endian (exact_raw_decoder.test_decoder.DecoderTests.test_x87_complex_and_big_endian) ... ERROR
+test_x87_goldens_and_padding (exact_raw_decoder.test_decoder.DecoderTests.test_x87_goldens_and_padding) ... ERROR
+test_x87_leading_padding_authority (exact_raw_decoder.test_decoder.DecoderTests.test_x87_leading_padding_authority) ... ERROR
+
+======================================================================
+ERROR: test_asymmetric_fortran_and_c_hash (exact_raw_decoder.test_decoder.DecoderTests.test_asymmetric_fortran_and_c_hash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 67, in test_asymmetric_fortran_and_c_hash
+    a = decode_npy_bytes(npy(words(*b), shape=(2, 3)))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_asymmetric_three_dimensional_fortran (exact_raw_decoder.test_decoder.DecoderTests.test_asymmetric_three_dimensional_fortran)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 77, in test_asymmetric_three_dimensional_fortran
+    d = decode_npy_bytes(npy(p, shape=(2, 3, 2), order=True))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_authority_required_and_bound (exact_raw_decoder.test_decoder.DecoderTests.test_authority_required_and_bound)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 145, in test_authority_required_and_bound
+    with self.assertRaises(DecodeError): decode_npy_bytes(data)
+                                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_binary128_goldens (exact_raw_decoder.test_decoder.DecoderTests.test_binary128_goldens)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 110, in test_binary128_goldens
+    d = decode_npy_bytes(data, authority=authority(data, 'ieee_binary128'))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_binary64_goldens_all_versions (exact_raw_decoder.test_decoder.DecoderTests.test_binary64_goldens_all_versions) (version=(1, 0))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 45, in test_binary64_goldens_all_versions
+    d = decode_npy_bytes(npy(p, shape=(7,), version=version))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_binary64_goldens_all_versions (exact_raw_decoder.test_decoder.DecoderTests.test_binary64_goldens_all_versions) (version=(2, 0))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 45, in test_binary64_goldens_all_versions
+    d = decode_npy_bytes(npy(p, shape=(7,), version=version))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_binary64_goldens_all_versions (exact_raw_decoder.test_decoder.DecoderTests.test_binary64_goldens_all_versions) (version=(3, 0))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 45, in test_binary64_goldens_all_versions
+    d = decode_npy_bytes(npy(p, shape=(7,), version=version))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_binary64_independent_oracle (exact_raw_decoder.test_decoder.DecoderTests.test_binary64_independent_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 53, in test_binary64_independent_oracle
+    d = decode_npy_bytes(npy(words(*bits), shape=(len(bits),)))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_canonical_known_payload (exact_raw_decoder.test_decoder.DecoderTests.test_canonical_known_payload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 118, in test_canonical_known_payload
+    self.assertEqual(decode_npy_bytes(data).canonical_sha256, expected_hash)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_complex128_big_endian (exact_raw_decoder.test_decoder.DecoderTests.test_complex128_big_endian)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 59, in test_complex128_big_endian
+    d = decode_npy_bytes(npy(p, descr='>c16', shape=(2,)))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_header_inspection_does_not_decode_values (exact_raw_decoder.test_decoder.DecoderTests.test_header_inspection_does_not_decode_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 187, in test_header_inspection_does_not_decode_values
+    h = inspect_npy_header(data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 16, in inspect_npy_header
+    raise NotImplementedError('exact NPY header parser not yet implemented')
+NotImplementedError: exact NPY header parser not yet implemented
+
+======================================================================
+ERROR: test_reject_binary128_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary128_nonfinite) (frac=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 141, in test_reject_binary128_nonfinite
+    decode_npy_bytes(data, authority=authority(data, 'ieee_binary128'))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_binary128_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary128_nonfinite) (frac=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 141, in test_reject_binary128_nonfinite
+    decode_npy_bytes(data, authority=authority(data, 'ieee_binary128'))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_binary128_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary128_nonfinite) (frac=2596148429267413814265248164610048)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 141, in test_reject_binary128_nonfinite
+    decode_npy_bytes(data, authority=authority(data, 'ieee_binary128'))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_binary64_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary64_nonfinite) (bits=9218868437227405312)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 129, in test_reject_binary64_nonfinite
+    decode_npy_bytes(npy(words(bits)))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_binary64_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary64_nonfinite) (bits=18442240474082181120)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 129, in test_reject_binary64_nonfinite
+    decode_npy_bytes(npy(words(bits)))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_binary64_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary64_nonfinite) (bits=9221120237041090561)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 129, in test_reject_binary64_nonfinite
+    decode_npy_bytes(npy(words(bits)))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_binary64_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_binary64_nonfinite) (bits=9218868437227405313)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 129, in test_reject_binary64_nonfinite
+    decode_npy_bytes(npy(words(bits)))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_magic_version_encoding_and_header_length (exact_raw_decoder.test_decoder.DecoderTests.test_reject_magic_version_encoding_and_header_length) (prefix=b"WRONG!\x01\x00v\x00{'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 178, in test_reject_magic_version_encoding_and_header_length
+    with self.subTest(prefix=item[:12]), self.assertRaises(DecodeError): decode_npy_bytes(item)
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_magic_version_encoding_and_header_length (exact_raw_decoder.test_decoder.DecoderTests.test_reject_magic_version_encoding_and_header_length) (prefix=b"\x93NUMPY\x04\x00v\x00{'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 178, in test_reject_magic_version_encoding_and_header_length
+    with self.subTest(prefix=item[:12]), self.assertRaises(DecodeError): decode_npy_bytes(item)
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_magic_version_encoding_and_header_length (exact_raw_decoder.test_decoder.DecoderTests.test_reject_magic_version_encoding_and_header_length) (prefix=b'\x93NUMPY\x01\x00')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 178, in test_reject_magic_version_encoding_and_header_length
+    with self.subTest(prefix=item[:12]), self.assertRaises(DecodeError): decode_npy_bytes(item)
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_magic_version_encoding_and_header_length (exact_raw_decoder.test_decoder.DecoderTests.test_reject_magic_version_encoding_and_header_length) (prefix=b"\x93NUMPY\x01\x00\xff\xff{'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 178, in test_reject_magic_version_encoding_and_header_length
+    with self.subTest(prefix=item[:12]), self.assertRaises(DecodeError): decode_npy_bytes(item)
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_magic_version_encoding_and_header_length (exact_raw_decoder.test_decoder.DecoderTests.test_reject_magic_version_encoding_and_header_length) (prefix=b"\x93NUMPY\x01\x00v\x00{'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 178, in test_reject_magic_version_encoding_and_header_length
+    with self.subTest(prefix=item[:12]), self.assertRaises(DecodeError): decode_npy_bytes(item)
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','descr':'>f8','fortran_order':False,'shape':(1,)}")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 172, in test_reject_malformed_headers
+    decode_npy_bytes(npy(b'\0'*8, header=header))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','fortran_order':0,'shape':(1,)}")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 172, in test_reject_malformed_headers
+    decode_npy_bytes(npy(b'\0'*8, header=header))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','fortran_order':False,'shape':(-1,)}")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 172, in test_reject_malformed_headers
+    decode_npy_bytes(npy(b'\0'*8, header=header))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','fortran_order':False,'shape':(True,)}")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 172, in test_reject_malformed_headers
+    decode_npy_bytes(npy(b'\0'*8, header=header))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','fortran_order':False,'shape':[1]}")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 172, in test_reject_malformed_headers
+    decode_npy_bytes(npy(b'\0'*8, header=header))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','fortran_order':False,'shape':(1,), 'extra':1}")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 172, in test_reject_malformed_headers
+    decode_npy_bytes(npy(b'\0'*8, header=header))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="dict(descr='<f8', fortran_order=False, shape=(1,))")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 172, in test_reject_malformed_headers
+    decode_npy_bytes(npy(b'\0'*8, header=header))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_malformed_headers (exact_raw_decoder.test_decoder.DecoderTests.test_reject_malformed_headers) (header="{'descr':'<f8','fortran_order':False,'shape':(1,)} # hidden comment")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 172, in test_reject_malformed_headers
+    decode_npy_bytes(npy(b'\0'*8, header=header))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_payload_truncation_and_trailing (exact_raw_decoder.test_decoder.DecoderTests.test_reject_payload_truncation_and_trailing) (n=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 159, in test_reject_payload_truncation_and_trailing
+    decode_npy_bytes(npy(payload))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_payload_truncation_and_trailing (exact_raw_decoder.test_decoder.DecoderTests.test_reject_payload_truncation_and_trailing) (n=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 159, in test_reject_payload_truncation_and_trailing
+    decode_npy_bytes(npy(payload))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_payload_truncation_and_trailing (exact_raw_decoder.test_decoder.DecoderTests.test_reject_payload_truncation_and_trailing) (n=9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 159, in test_reject_payload_truncation_and_trailing
+    decode_npy_bytes(npy(payload))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='=f8')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 154, in test_reject_unsupported_dtype_endian
+    decode_npy_bytes(npy(b'\0'*8, descr))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='|f8')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 154, in test_reject_unsupported_dtype_endian
+    decode_npy_bytes(npy(b'\0'*8, descr))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='<f4')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 154, in test_reject_unsupported_dtype_endian
+    decode_npy_bytes(npy(b'\0'*8, descr))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='<i8')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 154, in test_reject_unsupported_dtype_endian
+    decode_npy_bytes(npy(b'\0'*8, descr))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='|O')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 154, in test_reject_unsupported_dtype_endian
+    decode_npy_bytes(npy(b'\0'*8, descr))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='complex256')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 154, in test_reject_unsupported_dtype_endian
+    decode_npy_bytes(npy(b'\0'*8, descr))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_unsupported_dtype_endian (exact_raw_decoder.test_decoder.DecoderTests.test_reject_unsupported_dtype_endian) (descr='<V16')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 154, in test_reject_unsupported_dtype_endian
+    decode_npy_bytes(npy(b'\0'*8, descr))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_x87_noncanonical_and_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_x87_noncanonical_and_nonfinite) (sig=0, exp=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 135, in test_reject_x87_noncanonical_and_nonfinite
+    decode_npy_bytes(data, authority=authority(data))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_x87_noncanonical_and_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_x87_noncanonical_and_nonfinite) (sig=9223372036854775808, exp=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 135, in test_reject_x87_noncanonical_and_nonfinite
+    decode_npy_bytes(data, authority=authority(data))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_x87_noncanonical_and_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_x87_noncanonical_and_nonfinite) (sig=9223372036854775808, exp=32767)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 135, in test_reject_x87_noncanonical_and_nonfinite
+    decode_npy_bytes(data, authority=authority(data))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_reject_x87_noncanonical_and_nonfinite (exact_raw_decoder.test_decoder.DecoderTests.test_reject_x87_noncanonical_and_nonfinite) (sig=9223372036854775809, exp=32767)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 135, in test_reject_x87_noncanonical_and_nonfinite
+    decode_npy_bytes(data, authority=authority(data))
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_resource_caps (exact_raw_decoder.test_decoder.DecoderTests.test_resource_caps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 181, in test_resource_caps
+    with self.assertRaises(DecodeError): decode_npy_bytes(npy(words(0), shape=(1,)), max_elements=0)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_scalar_and_empty (exact_raw_decoder.test_decoder.DecoderTests.test_scalar_and_empty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 81, in test_scalar_and_empty
+    self.assertEqual(decode_npy_bytes(npy(words(0x3ff0000000000000), shape=())).values_c_order, (F(1),))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_signed_zero_math_hash_and_raw_difference (exact_raw_decoder.test_decoder.DecoderTests.test_signed_zero_math_hash_and_raw_difference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 121, in test_signed_zero_math_hash_and_raw_difference
+    a = decode_npy_bytes(npy(words(0)))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_x87_complex_and_big_endian (exact_raw_decoder.test_decoder.DecoderTests.test_x87_complex_and_big_endian)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 98, in test_x87_complex_and_big_endian
+    d = decode_npy_bytes(data, authority=authority(data, endian='big'))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_x87_goldens_and_padding (exact_raw_decoder.test_decoder.DecoderTests.test_x87_goldens_and_padding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 87, in test_x87_goldens_and_padding
+    d = decode_npy_bytes(data, authority=authority(data))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+======================================================================
+ERROR: test_x87_leading_padding_authority (exact_raw_decoder.test_decoder.DecoderTests.test_x87_leading_padding_authority)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py", line 103, in test_x87_leading_padding_authority
+    d = decode_npy_bytes(data, authority=authority(data, value_offset=6))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py", line 13, in decode_npy_bytes
+    raise NotImplementedError('exact NPY decoder not yet implemented')
+NotImplementedError: exact NPY decoder not yet implemented
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.007s
+
+FAILED (errors=51)

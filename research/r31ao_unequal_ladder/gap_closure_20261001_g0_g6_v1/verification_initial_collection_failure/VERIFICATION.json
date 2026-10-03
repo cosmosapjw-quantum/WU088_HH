@@ -1,0 +1,734 @@
+{
+  "schema": "WU088_FRESH_SYNTHETIC_INTEGRATION_VERIFICATION_V1",
+  "status": "FAIL",
+  "python": "3.12.14",
+  "suites": [
+    {
+      "suite": "G1_exact_theorem",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "theorem_checks.test_exact_helpers",
+        "-v"
+      ],
+      "exit_code": 1,
+      "tests": 1,
+      "skipped": 0,
+      "wall_seconds": 0.03862660900085757,
+      "log": "G1_exact_theorem.log"
+    },
+    {
+      "suite": "G2_exact_decoder",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "exact_raw_decoder.test_decoder",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 30,
+      "skipped": 0,
+      "wall_seconds": 0.08937082100055704,
+      "log": "G2_exact_decoder.log"
+    },
+    {
+      "suite": "G3_exact_gram",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "exact_gram.test_engine",
+        "exact_gram.test_resource_review",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 23,
+      "skipped": 0,
+      "wall_seconds": 2.3062232960000983,
+      "log": "G3_exact_gram.log"
+    },
+    {
+      "suite": "G4_callback_static_exact",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "validated_callback.test_contract",
+        "-v"
+      ],
+      "exit_code": 1,
+      "tests": 1,
+      "skipped": 0,
+      "wall_seconds": 0.04192820499883965,
+      "log": "G4_callback_static_exact.log"
+    },
+    {
+      "suite": "G4_assembly_static_exact",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "validated_callback.test_assembly",
+        "-v"
+      ],
+      "exit_code": 1,
+      "tests": 1,
+      "skipped": 0,
+      "wall_seconds": 0.04239000999950804,
+      "log": "G4_assembly_static_exact.log"
+    },
+    {
+      "suite": "G4_optional_point_oracle",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "validated_callback.test_high_precision_optional",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 3,
+      "skipped": 3,
+      "wall_seconds": 0.03663709300053597,
+      "log": "G4_optional_point_oracle.log"
+    },
+    {
+      "suite": "G5_endpoint",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "endpoint_bound.test_endpoint",
+        "endpoint_bound.test_input_contract",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 17,
+      "skipped": 0,
+      "wall_seconds": 0.5169770890006475,
+      "log": "G5_endpoint.log"
+    },
+    {
+      "suite": "G6_synthetic_pilot",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "interior_pilot.test_interior",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 21,
+      "skipped": 0,
+      "wall_seconds": 0.2509407520010427,
+      "log": "G6_synthetic_pilot.log"
+    },
+    {
+      "suite": "G6_Petras_draft_static",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "interior_pilot.test_native_draft",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 10,
+      "skipped": 0,
+      "wall_seconds": 0.04462346000036632,
+      "log": "G6_Petras_draft_static.log"
+    },
+    {
+      "suite": "synthetic_pipeline",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "certificate_pipeline.test_pipeline",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 8,
+      "skipped": 0,
+      "wall_seconds": 0.05736184000124922,
+      "log": "synthetic_pipeline.log"
+    },
+    {
+      "suite": "host_process_guard",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "host_guard.test_guard",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 5,
+      "skipped": 0,
+      "wall_seconds": 0.7200215200009552,
+      "log": "host_process_guard.log"
+    },
+    {
+      "suite": "Frozen107_shaped_synthetic_adapter",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "frozen_input.test_adapter",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 16,
+      "skipped": 0,
+      "wall_seconds": 0.3839969670007122,
+      "log": "Frozen107_shaped_synthetic_adapter.log"
+    }
+  ],
+  "syntax": [
+    {
+      "path": "certificate_pipeline/__init__.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "certificate_pipeline/synthetic.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "certificate_pipeline/test_pipeline.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "endpoint_bound/__init__.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "endpoint_bound/decimal_oracle.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "endpoint_bound/engine.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "endpoint_bound/test_endpoint.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "endpoint_bound/test_input_contract.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "exact_gram/__init__.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "exact_gram/engine.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "exact_gram/test_engine.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "exact_gram/test_resource_review.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "exact_raw_decoder/__init__.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "exact_raw_decoder/decoder.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "exact_raw_decoder/test_decoder.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "frozen_input/__init__.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "frozen_input/adapter.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "frozen_input/test_adapter.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "host_guard/__init__.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "host_guard/run_guarded.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "host_guard/test_guard.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "interior_pilot/__init__.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "interior_pilot/build_petras_host.sh",
+      "kind": "BASH_SYNTAX",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "interior_pilot/check_pinned_api.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "interior_pilot/engine.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "interior_pilot/run_synthetic_pilot.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "interior_pilot/test_interior.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "interior_pilot/test_native_draft.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "interior_pilot/toys.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "review_frozen_adapter/independent_checks.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "review_g2_g1/empty_fortran_reproduction.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "review_g2_g1/independent_checks.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "review_gram/alignment_cap_probe.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "review_gram/independent_checks.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "review_gram/sqrt_cap_postfix_probe.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "review_pipeline_endpoint/independent_checks.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "review_runtime/guard_descendant_probe.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "review_runtime/pilot_partial_probe.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "theorem_checks/exact_helpers.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "theorem_checks/test_exact_helpers.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "validated_callback/assembly_exact.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "validated_callback/build_host.sh",
+      "kind": "BASH_SYNTAX",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "validated_callback/synthetic_oracle.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "validated_callback/test_assembly.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "validated_callback/test_contract.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "validated_callback/test_high_precision_optional.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "validated_callback/verify_build_inputs.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    },
+    {
+      "path": "verify_synthetic.py",
+      "kind": "PYTHON_AST",
+      "exit_code": 0
+    }
+  ],
+  "source_identities": [
+    {
+      "path": "certificate_pipeline/__init__.py",
+      "sha256": "5ce85793d5fa2fb9c97d389d608ce779dd91dbcc85fd748e89bc5fab56d7c435",
+      "bytes": 78
+    },
+    {
+      "path": "certificate_pipeline/synthetic.py",
+      "sha256": "c95df94daeccec02b96faee7a757c45b653e249093e39a5addb0d84d2c9f5109",
+      "bytes": 3935
+    },
+    {
+      "path": "certificate_pipeline/test_pipeline.py",
+      "sha256": "fb47fafb6b698419349a285319d39ab70ccd0510626f576bbf3972883073a75d",
+      "bytes": 3365
+    },
+    {
+      "path": "endpoint_bound/__init__.py",
+      "sha256": "8bd519ea7cacb9672f764b33f9e5764191625a63e9776810c593cfa7943a06d6",
+      "bytes": 80
+    },
+    {
+      "path": "endpoint_bound/decimal_oracle.py",
+      "sha256": "872cf62da5e9fb8f23541dabcd8e8bac4fd11559b44853c8d1ef6f2264886a25",
+      "bytes": 3237
+    },
+    {
+      "path": "endpoint_bound/engine.py",
+      "sha256": "227174bce527bd43a823e5fccab54cdf57f66569fb9dafe3ce920d85640f4537",
+      "bytes": 9984
+    },
+    {
+      "path": "endpoint_bound/test_endpoint.py",
+      "sha256": "4520a2418a97eb6f5dd61bf5973e58103f21cbe491350480ddcebb26bee4d8de",
+      "bytes": 5484
+    },
+    {
+      "path": "endpoint_bound/test_input_contract.py",
+      "sha256": "b5eb57aa2d6091b5534dac624b6cc747a6a6d2b79d38dc8bc81e28a808618f44",
+      "bytes": 1969
+    },
+    {
+      "path": "exact_gram/__init__.py",
+      "sha256": "821e14b2ec87d71c75c6fd20e7052229a81966f542995f78a861e97d77a15d07",
+      "bytes": 83
+    },
+    {
+      "path": "exact_gram/engine.py",
+      "sha256": "e10f206d63be1a99a441780108619574605014a9b01b3b327e21fecb18c5b9cc",
+      "bytes": 18326
+    },
+    {
+      "path": "exact_gram/test_engine.py",
+      "sha256": "047775b7b61c45535818aaf6fd9a9cf8625e34b1b0639a7bbd7dd0ec384625ad",
+      "bytes": 12802
+    },
+    {
+      "path": "exact_gram/test_resource_review.py",
+      "sha256": "e629af2d507d2cea7c2b79c09bb829bfe81fc679ec2540133ad17d8628bb4d16",
+      "bytes": 933
+    },
+    {
+      "path": "exact_raw_decoder/__init__.py",
+      "sha256": "99d80eb4f2707f9e546d1a7b3c8be7486978c5a320f76c0b1af9d05c4148159f",
+      "bytes": 284
+    },
+    {
+      "path": "exact_raw_decoder/decoder.py",
+      "sha256": "bf1867616af07a670d61cd75c7ca0655c99e0be13fd6a73e9a4654f5fc0986f1",
+      "bytes": 12820
+    },
+    {
+      "path": "exact_raw_decoder/test_decoder.py",
+      "sha256": "5bc8e18b55b9711545a767c90545ec6de6b6a2af63c3bf21be404d03b915480c",
+      "bytes": 14244
+    },
+    {
+      "path": "frozen_input/__init__.py",
+      "sha256": "0b353a57e22700726ab3951cb35a01623a8b970b3d83f695a4eae29631fb1e3a",
+      "bytes": 85
+    },
+    {
+      "path": "frozen_input/adapter.py",
+      "sha256": "82e6e96157761be7e8423c7908c501bb66086b735374ce0679836ca1b69c7b48",
+      "bytes": 9801
+    },
+    {
+      "path": "frozen_input/test_adapter.py",
+      "sha256": "f6045dbd1af139c2157056e3103131b1c08b513c603ed22a0dec3ce51fae0279",
+      "bytes": 6608
+    },
+    {
+      "path": "host_guard/__init__.py",
+      "sha256": "534f9860e84cd21147e01a9407484f48ce261d1ed6448c44357d2cf2c06c2162",
+      "bytes": 77
+    },
+    {
+      "path": "host_guard/run_guarded.py",
+      "sha256": "fe6be9bcc846433f8a199358e31b6b672b5f5bf776847896cd32746814bb2309",
+      "bytes": 5389
+    },
+    {
+      "path": "host_guard/test_guard.py",
+      "sha256": "3bb298236e014891965577b140c2c6f94519ad61c98f7ee03852f7828cffd2a9",
+      "bytes": 2327
+    },
+    {
+      "path": "interior_pilot/__init__.py",
+      "sha256": "b9e7b43b5b227c2412a7eea081f707b117a42313c8ff816a355d98b2fa5c308b",
+      "bytes": 66
+    },
+    {
+      "path": "interior_pilot/build_petras_host.sh",
+      "sha256": "71cfa6bddd092f0e440df6de1a04f2374319f725e471b8aa6556b860f801233c",
+      "bytes": 1901
+    },
+    {
+      "path": "interior_pilot/check_pinned_api.py",
+      "sha256": "e722d4e84ae006b3eeead4db63aeb26453e6ec95f0cf1000424316f91fda234d",
+      "bytes": 3265
+    },
+    {
+      "path": "interior_pilot/engine.py",
+      "sha256": "572e27db59d5c9002d5c30a23f354ec97a7cfac325a5b7e3e9b799d2024bfac6",
+      "bytes": 11965
+    },
+    {
+      "path": "interior_pilot/native_petras_synthetic.cpp",
+      "sha256": "ea32c0601bcaebc366c475602d064534f1da1c4d4667a8bd3c4018359d027dec",
+      "bytes": 5930
+    },
+    {
+      "path": "interior_pilot/petras_host.cpp",
+      "sha256": "1bec5e769b367c39d7b40565cc306d24c0eaa0136ce438012e2f060cbde3515b",
+      "bytes": 12659
+    },
+    {
+      "path": "interior_pilot/petras_host.hpp",
+      "sha256": "c7492c04b01f758c94663c4ffc6d591f4cff0309b6cb5f448368c4e94a5c50f2",
+      "bytes": 4028
+    },
+    {
+      "path": "interior_pilot/run_synthetic_pilot.py",
+      "sha256": "098005f6974c7f0eba5c4d81210ef73d8d54810c4e95bd02226aafa2af10d5ab",
+      "bytes": 3602
+    },
+    {
+      "path": "interior_pilot/test_interior.py",
+      "sha256": "18a44142a0fa0cd95c3b8e7e84720814a53b920e6e63f5efacde60996df2ac29",
+      "bytes": 7421
+    },
+    {
+      "path": "interior_pilot/test_native_draft.py",
+      "sha256": "d1c1f6bc43470e834576a71bc7c44768d73a927bcffd1cf8c2111351aee4ffe2",
+      "bytes": 3567
+    },
+    {
+      "path": "interior_pilot/toys.py",
+      "sha256": "6ea533bc87f102382795de2fb4616bae26400eaeb9259f0dd84c2055b9cbf538",
+      "bytes": 1333
+    },
+    {
+      "path": "review_frozen_adapter/independent_checks.py",
+      "sha256": "9a09f5586e6a9bee733c2eb4db1b167d7bfafc417b44af10a2637d5a066ce0ba",
+      "bytes": 3370
+    },
+    {
+      "path": "review_g2_g1/empty_fortran_reproduction.py",
+      "sha256": "e38a21bbfcd0a5dfdf8200fd80cab2acbc1c3308ea1dacb1672da861556eafde",
+      "bytes": 475
+    },
+    {
+      "path": "review_g2_g1/independent_checks.py",
+      "sha256": "4d6f5f00a33c58231e49293041bf7202df8b0b1a85aa3d467c1b989e72c0c72d",
+      "bytes": 3196
+    },
+    {
+      "path": "review_gram/alignment_cap_probe.py",
+      "sha256": "05a4adce5d46d6f09c3f6e02cdb6b693ed7f5da034e3b2accfae906187041b49",
+      "bytes": 1813
+    },
+    {
+      "path": "review_gram/independent_checks.py",
+      "sha256": "922924f97d059b06ecbc7be81945f33d899af7566fef6ac3c79feb8045af6cdc",
+      "bytes": 4039
+    },
+    {
+      "path": "review_gram/sqrt_cap_postfix_probe.py",
+      "sha256": "cb86ffd180ae62ba15447bdcb1f0161381caae0c1464c68a7577d33b092299ff",
+      "bytes": 1259
+    },
+    {
+      "path": "review_pipeline_endpoint/independent_checks.py",
+      "sha256": "8e9e9f3080cbc8791bac26529ce4319f8c9231e23f11f31df9e174737281248f",
+      "bytes": 3658
+    },
+    {
+      "path": "review_runtime/guard_descendant_probe.py",
+      "sha256": "8ceb67ff16dc2ad153eb1042d4f601a98f8d2de564b6465de0b34e628e144164",
+      "bytes": 1518
+    },
+    {
+      "path": "review_runtime/pilot_partial_probe.py",
+      "sha256": "0a8aef4f6460aa159d9172d863d4a08f50e11c946563788dec264f86b3446983",
+      "bytes": 1392
+    },
+    {
+      "path": "theorem_checks/exact_helpers.py",
+      "sha256": "1aa28b2a7ea5437f618ca8f812c635f2cea7531c63c4df3c298575c4235730ae",
+      "bytes": 5162
+    },
+    {
+      "path": "theorem_checks/test_exact_helpers.py",
+      "sha256": "005e2be19421363b7341152b3e85b5aefc9614e237ae3b6d8f4afa52db6cac8d",
+      "bytes": 6987
+    },
+    {
+      "path": "validated_callback/assembly.cpp",
+      "sha256": "313abcfe04550f0badc8e48501735a8b15a21d7babdefa63b6aded0ea4a2bede",
+      "bytes": 9413
+    },
+    {
+      "path": "validated_callback/assembly.hpp",
+      "sha256": "fb38af6635f444649aa706f2107b8a4a91d2f18d5ab7477c320384414ac0eede",
+      "bytes": 2149
+    },
+    {
+      "path": "validated_callback/assembly_exact.py",
+      "sha256": "05e97f8f0e4080cfc01a76d8d74fe654388603c586b3e8fae8a565951936dc52",
+      "bytes": 2530
+    },
+    {
+      "path": "validated_callback/build_host.sh",
+      "sha256": "74e11701a05fa80180f8c077d99dfc67dab9af10eb5bcdf7cfe7043be53f1467",
+      "bytes": 1648
+    },
+    {
+      "path": "validated_callback/callback.cpp",
+      "sha256": "06dabab65432c868190032726853ab92a0d0d504128500cfb352c2a749258964",
+      "bytes": 11653
+    },
+    {
+      "path": "validated_callback/callback.hpp",
+      "sha256": "364705585a7a93da90907497bfd3dcd05ce0fba8920413534aa85f75a6a330f1",
+      "bytes": 2482
+    },
+    {
+      "path": "validated_callback/native_synthetic.cpp",
+      "sha256": "6d32debd97d6ece892a7e8704bfabc35565146587392094bb0338ac7039a4e15",
+      "bytes": 6169
+    },
+    {
+      "path": "validated_callback/synthetic_oracle.py",
+      "sha256": "c10e862659af04b3c1adb7ab18b0e19805e707d38c807417843cb457b4f0da27",
+      "bytes": 2141
+    },
+    {
+      "path": "validated_callback/test_assembly.py",
+      "sha256": "2c40f6ed6139e661e67e9acccf0f4e069df21e9c6ce4d5b48813f87e58352aca",
+      "bytes": 3416
+    },
+    {
+      "path": "validated_callback/test_contract.py",
+      "sha256": "0277a54da27531de3ae43384cd0f056addd0e7c4e03d2ffd551cd077ece0a587",
+      "bytes": 2742
+    },
+    {
+      "path": "validated_callback/test_high_precision_optional.py",
+      "sha256": "f57eb1df0eb0452629f4cb609fd1b4d69d74a37e7baa04705ee5e91bcf76e5b3",
+      "bytes": 1733
+    },
+    {
+      "path": "validated_callback/verify_build_inputs.py",
+      "sha256": "6a7d8585b41392b1ab2751a55ac7a02bb60025b791e1dbed8fc54a07d69c49d1",
+      "bytes": 1595
+    },
+    {
+      "path": "verify_synthetic.py",
+      "sha256": "919bca729595a45dd0095befe09744da1ec5c3e0e204570138a270ce94c68658",
+      "bytes": 3759
+    }
+  ],
+  "science_commands": 0,
+  "native_builds": 0,
+  "numerical_certificate_runs": 0,
+  "rigorous": false,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "historical_test_counts_changed": false
+}

@@ -1,0 +1,99 @@
+{
+  "schema": "WU088_W1_AUDIT_DATABASE_INDEPENDENT_REVIEW_V1",
+  "reviewer": "/root/w1_audit/audit_review",
+  "owner": "/root/w1_audit",
+  "review_utc": "2026-10-01T19:25:40.922814+00:00",
+  "status": "PASSED_STORAGE_COMPONENT_REVIEW_AFTER_ACCOUNTING_FIX",
+  "scope": "Independent source inspection, focused synthetic storage tests and one historical-receipt misattribution adversarial fixture; no final campaign database build or actual HH execution",
+  "reviewed_sources": [
+    {
+      "path": "audit_database/build_w1_db.py",
+      "bytes": 19663,
+      "sha256": "230d24f35dd7ccb9afd2c4087f80907df3c8c62b6c82a018e8061eaacd1b2734"
+    },
+    {
+      "path": "audit_database/schema.sql",
+      "bytes": 1570,
+      "sha256": "f5bf5315969d832fb014e1327ffbe6cbec81bac84e2c3008035a805db225a07a"
+    },
+    {
+      "path": "audit_database/test_w1_db.py",
+      "bytes": 10519,
+      "sha256": "303ebc3f25c13efd56fc42d92fc29947ab25bffd72b93507b1192bf64fbc8d12"
+    },
+    {
+      "path": "audit_database/README.md",
+      "bytes": 4703,
+      "sha256": "b5f31c225a3e173ff9a178124caa982eaaff8a32bea1639f22a0285c2286034f"
+    }
+  ],
+  "commands": [
+    {
+      "command": "python -B test_w1_db.py",
+      "cwd": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/w1_parallel_20261002_v1/audit_database",
+      "exit_code": 0,
+      "unique_tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "elapsed_reported_seconds": 0.127,
+      "observed_stdout": "Ran 17 tests in 0.127s; OK"
+    },
+    {
+      "command": "python -B stdin: import focused test fixture; copy prior/reused.json byte-for-byte to continuation/old_copied_as_current.json; replace ledger with one ACTUAL_NATIVE_INVOCATION referring to that copy; call builder in temporary output directory",
+      "fixture_type": "Synthetic storage only",
+      "before_owner_fix": {
+        "observed_status": "VERIFIED_LOCAL_APPEND_AND_SQL_RESTORE",
+        "actual_native_invocations": 1,
+        "reused_accepted_receipts": 0,
+        "copied_receipt_sha256": "2915d6e89f929c147f2cda31997da26b1ce2d9564d85fa76792a8f1a9da9c670"
+      },
+      "after_owner_fix": {
+        "exit_code": 0,
+        "observed_outcome": "EXPECTED_REJECTION",
+        "reason": "A historical receipt cannot count as a new native invocation",
+        "output_directory_created": false
+      }
+    },
+    {
+      "command": "Read-only SQLite metadata lookup: artifacts row for runtime/RANGE_TILE00_COMPLETION.json and prior_artifact_records sha256 column; SHA256 read of prior database",
+      "mode": "mode=ro",
+      "prior_database_sha256": "63347a8f9b4a04577af442280f9d8b630b82c719c4f4a9dee0039dc4351da118",
+      "pinned_sha_matches": true,
+      "inherited_receipt_hash_column_present": true,
+      "prior_accepted_receipt": {
+        "stored_namespace": "continuation",
+        "relative_path": "runtime/RANGE_TILE00_COMPLETION.json",
+        "sha256": "89cef714e9758932036854d218330c775920d6131114df8a236cf7d171bc5c5e"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "AUDIT-01",
+      "severity": "blocking_before_fix",
+      "status": "RESOLVED_AND_INDEPENDENTLY_RETESTED",
+      "problem": "A byte-identical historical receipt copied into the continuation namespace could be counted as a new native invocation when omitted from the reused-record list. Current-ledger duplicate detection alone did not establish fresh execution attribution.",
+      "owner_correction": "Load all artifact hashes from pinned prior artifacts and inherited prior_artifact_records; reject new-invocation receipt hashes already present there. Require reused receipt path and SHA to be present in prior continuation artifact rows.",
+      "independent_result": "Copied historical receipt now rejected before output creation; focused suite passes."
+    }
+  ],
+  "source_review": {
+    "prior_database": "Pinned main-file SHA before and after; read-only SQLite connections; backup API copies prior state",
+    "inherited_schema_and_contents": "Every inherited table plus schema objects is compared by canonical logical state after append",
+    "snapshot": "Current regular-file inventory is checked again after SQL restore; evidence hashes and namespace paths checked; source changes or additions invalidate snapshot",
+    "accounting": "Actual native invocation, reused accepted receipt and host-only event counts remain separate; source receipt fields and supplied counters are cross-checked; historical hashes cannot be promoted to current executions",
+    "restore": "Local SQL dump restored into new SQLite; integrity and foreign-key checks plus complete logical state comparison",
+    "failure_behavior": "Create-only output; generated database restricted outside source trees; failed output is inspectable and is not given successful verification receipt",
+    "proof_scope": "Builder records source identities and declared receipt fields, explicitly delegates numerical validity to runner/reviewer evidence, and does not infer scientific or cloud-restore admission"
+  },
+  "remaining_blocking_findings": [],
+  "limits": {
+    "actual_hh_executions_by_reviewer": 0,
+    "final_campaign_database_built_by_reviewer": false,
+    "final_campaign_ledger_reviewed": false,
+    "numerical_enclosure_validity_reviewed": false,
+    "cloud_restore_tested": false,
+    "prior_database_main_bytes_unchanged_sha_verified": true,
+    "component_test_success_is_scientific_admission": false
+  }
+}

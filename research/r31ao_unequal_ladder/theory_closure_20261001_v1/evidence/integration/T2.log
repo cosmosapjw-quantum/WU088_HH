@@ -1,0 +1,61 @@
+{
+  "schema": "WU088_T2_EXACT_SYNTHETIC_ARITHMETIC_CHECKS_V1",
+  "checks": [
+    {
+      "name": "midpoint_only_fails_whole_parameter_box",
+      "center_value": "1/6",
+      "excluded_exact_values": [
+        "0",
+        "1/3"
+      ],
+      "passed": true
+    },
+    {
+      "name": "intrinsic_complex_parameter_width",
+      "minimum_real_radius": "1/6",
+      "minimum_imag_radius": "1/3",
+      "impossible_radius_cap": "1/10",
+      "passed": true
+    },
+    {
+      "name": "midpoint_quadrature_exact_polynomial_examples",
+      "grids": 12,
+      "passed": true
+    },
+    {
+      "name": "constructive_mesh_and_evaluation_error_budget",
+      "nt": 512,
+      "nu": 512,
+      "point_evaluation_eta": "1/64",
+      "certified_component_radius_bound": "31/1024",
+      "requested_epsilon": "1/32",
+      "passed": true,
+      "note": "mesh arithmetic only; these 262144 evaluations were not run"
+    },
+    {
+      "name": "adaptive_coverage_is_not_optional",
+      "complete_constant_integral": "1",
+      "omitted_panel_result": "7/8",
+      "double_counted_panel_result": "9/8",
+      "passed": true
+    },
+    {
+      "name": "order_one_zeroth_coefficient_distinction",
+      "H_at_three_halves": "1/2",
+      "H_derivative": "1/3",
+      "passed": true
+    },
+    {
+      "name": "finite_existence_does_not_imply_fixed_cap_success",
+      "constructed_point_count": 262144,
+      "example_cap": 1000,
+      "proper_capped_result": "INCONCLUSIVE",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "actual_HH_runs": 0,
+  "native_builds": 0,
+  "theorem_proved_by_tests": false,
+  "authority": "Proof text T2_UNIFORM_INTERIOR_THEOREM.md; examples only"
+}

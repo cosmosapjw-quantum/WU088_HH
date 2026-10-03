@@ -1,0 +1,19 @@
+test_adapter (unittest.loader._FailedTest.test_adapter) ... ERROR
+
+======================================================================
+ERROR: test_adapter (unittest.loader._FailedTest.test_adapter)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_adapter
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/frozen_input/test_adapter.py", line 4, in <module>
+    from .adapter import decode_npz,generate_cpp,AdapterError,SPEC
+ModuleNotFoundError: No module named 'frozen_input.adapter'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

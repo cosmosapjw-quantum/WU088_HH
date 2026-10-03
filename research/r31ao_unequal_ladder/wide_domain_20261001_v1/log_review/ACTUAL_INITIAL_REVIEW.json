@@ -1,0 +1,100 @@
+{
+  "build_manifest_sha256": "1a71c74c73400ec36e9ba21d8f4d9c6655c596dabdc3a3cba3c1378d184e1d50",
+  "build_source_identity": "faf2525e0270d38db7873380f84264a15e89f64568033727fd7724204f5e840c",
+  "evidence_sha256": {
+    "native_execution_20261001_v1/runtime/pilot_plans/CENTRAL_PLAN.json": "8a222a068ec2c32efb691fc6b652aa39af56418fc2eeb886424c94c3a6876d01",
+    "native_execution_20261001_v1/runtime/pilots_baseline/CENTRAL.json": "377260d1a4828af9aa53d45475af4e9804d19bf643834d37a4646ab9d081536f",
+    "native_execution_20261001_v1/runtime/pilots_cached/CENTRAL.json": "620f4b475aee9a9a8d383562baf9aea184e0e4da4f9711237b2540c69bf6e870",
+    "native_execution_20261001_v1/runtime/pilots_refined_cached/CENTRAL.json": "94415760f6d67a6d4abc36f14e01caf5b0f7685b3f16f279909c363b946cd6bb",
+    "production_solver_20261001_v1/runtime/endpoint_cutoff_probe_capped/W1_PLAN.json": "3e0076c6d02ed51a6e879ce996b17fb3d22d96a97f9b9bf44bd701fd5d6c7461",
+    "wide_domain_20261001_v1/runtime/LOG2_CENTRAL.json": "0465d32773a577aa25f6cae067b72b67cf861725fb28e973f6d4acab7000cb4f",
+    "wide_domain_20261001_v1/runtime/LOG2_W1.json": "f807d0e0d4328eac9804223878917a404cdbd43e8524c76434ac3714351b8a2e",
+    "wide_domain_20261001_v1/runtime/build_log_cached/BUILD.json": "279359028523bebffc890d7395af8c36afec27ce490cd354307fa0842f9b9ea6"
+  },
+  "limitations": [
+    "Overlap is consistency evidence, not independently recomputed HH integration.",
+    "Central result covers only [1,2]^2 of one unnormalized primitive.",
+    "W1 remains rejected; its runtime/counters cannot be represented as accepted integration.",
+    "Successful raw stdout was not retained separately; its digest is wrapper provenance, not independently recovered raw bytes.",
+    "Elapsed time is one workspace native process launch/wait measurement, not baseline speedup or NCP benchmark."
+  ],
+  "native_binary_sha256": "bb9d76dd7ad7166d290f3c7a9e8c4e469f91b373139bb78db25f6a59d3d0dbca",
+  "production_admission": false,
+  "records": {
+    "CENTRAL": {
+      "accepted": true,
+      "component_radius": {
+        "imag": "402703753/10141204801825835211973625643008",
+        "real": "805407505/20282409603651670423947251286016"
+      },
+      "dispatched_evaluations": 6074,
+      "elapsed_wall_ns": 2323091076,
+      "flint_status": 0,
+      "integration_calls": 102,
+      "native_callback_calls": 5968,
+      "native_callback_refusals": 298,
+      "native_status": "RADIUS_MET",
+      "raw_success_stdout_retrieved": false,
+      "rectangle": {
+        "imag": {
+          "exponent2": "-141",
+          "lower_mantissa": "-164718004571595056628972190401926032441",
+          "upper_mantissa": "-164718004571595056407583460915658910777"
+        },
+        "real": {
+          "exponent2": "-130",
+          "lower_mantissa": "163605788304416820178494510781839694497",
+          "upper_mantissa": "163605788304416820178602610747274943137"
+        }
+      }
+    },
+    "W1": {
+      "accepted": false,
+      "component_radius": {},
+      "dispatched_evaluations": 3084,
+      "elapsed_wall_ns": 617073115,
+      "flint_status": 2,
+      "integration_calls": 126,
+      "native_callback_calls": 2959,
+      "native_callback_refusals": 936,
+      "native_status": "INTEGRATOR_NO_CONVERGENCE",
+      "raw_success_stdout_retrieved": false,
+      "rectangle": null
+    }
+  },
+  "review_script_sha256": "6a2b356aa5b3f43c399370ab0c2f40a5b6b47e4d7e15f58eb69913febde53319",
+  "reviewed_accepted_invocations": 1,
+  "reviewed_actual_invocations": 2,
+  "reviewer_new_integral_runs": 0,
+  "same_central_target_comparisons": {
+    "baseline": {
+      "component_overlap": {
+        "imag": true,
+        "real": true
+      },
+      "same_target_binding": true,
+      "serialized_rectangle_bit_equal": false
+    },
+    "cached": {
+      "component_overlap": {
+        "imag": true,
+        "real": true
+      },
+      "same_target_binding": true,
+      "serialized_rectangle_bit_equal": false
+    },
+    "refined_cached": {
+      "component_overlap": {
+        "imag": true,
+        "real": true
+      },
+      "same_target_binding": true,
+      "serialized_rectangle_bit_equal": false
+    }
+  },
+  "schema": "WU088_LOG2_ACTUAL_INITIAL_INDEPENDENT_REVIEW_V1",
+  "scientific_admission": false,
+  "scope": "Exact receipt/source/build/plan identity, serialized radius and overlap review; existing executions not repeated.",
+  "source_files_checked": 20,
+  "status": "PASS_SCOPED_RECEIPT_AND_ENCLOSURE_REVIEW"
+}

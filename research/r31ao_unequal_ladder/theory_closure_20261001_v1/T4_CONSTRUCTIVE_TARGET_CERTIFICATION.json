@@ -1,0 +1,69 @@
+{
+  "schema": "theory_closure.v1",
+  "id": "T4",
+  "status": "PROVED_UNDER_EXPLICIT_SYMBOLIC_PREMISES",
+  "proof_file": "T4_CONSTRUCTIVE_TARGET_CERTIFICATION.md",
+  "proof_sha256": "5f2999152d6f39272e7661c7654fe6cfd9e349766fe7e7b5f582fe75e697ead6",
+  "theorems": [
+    {
+      "id": "T4.1",
+      "claim": "Finite effective point evaluation via rational series tails and elementary enclosures",
+      "premises": [
+        "finite exact computable source inputs",
+        "branch and denominator margins T1",
+        "fixed source radial identity"
+      ]
+    },
+    {
+      "id": "T4.2",
+      "claim": "Effective endpoint-tail decay with explicit half-integer gamma majorants",
+      "premises": [
+        "finite signed Hermite expansion",
+        "mu,a>0",
+        "nu>1 half integer"
+      ]
+    },
+    {
+      "id": "T4.3",
+      "claim": "Arbitrarily small full-target entry radii in finite adjustable-resource arithmetic",
+      "premises": [
+        "T1",
+        "T2",
+        "T4.1",
+        "T4.2",
+        "finite source assembly with nonsingular denominators"
+      ]
+    },
+    {
+      "id": "T4.4",
+      "claim": "Robust separated target decisions eventually certifiable; equality cases not uniformly settled by interval refinement",
+      "premises": [
+        "T5 shrinking direct target intervals",
+        "strict margin from boundary",
+        "T3 for actual machine predicates"
+      ]
+    }
+  ],
+  "not_claimed": [
+    "fixed resource-cap success",
+    "actual input/ABI binding",
+    "native backend admission",
+    "epsilon tends to zero",
+    "specific HH undecidability",
+    "physical completeness",
+    "actual numerical decision promotion"
+  ],
+  "actual_HH_runs": 0,
+  "native_builds": 0,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false,
+  "synthetic_check": {
+    "command": "python -B theory_checks/t4_constructive_checks.py",
+    "exit_code": 0,
+    "test_count": 4,
+    "scope": "exact synthetic algebra and failure-boundary transcription only; no proof by tests",
+    "script_sha256": "4379e0d7764f93fb51d6b7243f3f101b5cafebf3aeec109d2041925cc3f37616",
+    "log_sha256": "908b0ce077576efa7e30bcd7fe3672543c6476baf14ea5fbc5f0c132ec571a41"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "WU088_W1_UNKNOWN_UNKNOWN_DELTA_V1",
+  "base_commit": "957714bff2d6c97cc5b3541baa3f2f83fdfa3182",
+  "findings": [
+    {
+      "id": "B19",
+      "severity": "CERTIFICATE_OR_EXECUTION_BOUNDARY",
+      "status": "CLOSED_BOUNDED_IMPLEMENTATION_VERIFIED",
+      "obligation": "DIRECT_WORKER_NATIVE_LIFETIME",
+      "closure_condition": "Checked PDEATHSIG across dispatcher/worker/native, explicit parent-race guard, nativefork/clone prohibition, independent descendantpidfd termination evidence.",
+      "evidence": {
+        "path": "review/PRE_EXECUTION_REVIEW.json",
+        "sha256": "556a374f7919d70af3093b91d70021b6d9c0cbdf03435b5e3e65b4e8ea65ead6"
+      },
+      "general_mpi_or_ncp_admission": false,
+      "scientific_admission": false
+    },
+    {
+      "id": "B20",
+      "severity": "CERTIFICATE_OR_EXECUTION_BOUNDARY",
+      "status": "CLOSED_BOUNDED_IMPLEMENTATION_VERIFIED",
+      "obligation": "COMBINED_PROCESS_MEMORY_ACCOUNTING",
+      "closure_condition": "Each wrapper and native has separate1GiBaddress-space cap;3slots reserve6GiB plus2GiB;4slots failcurrent8GiB admission.",
+      "evidence": {
+        "path": "review/PRE_EXECUTION_REVIEW.json",
+        "sha256": "556a374f7919d70af3093b91d70021b6d9c0cbdf03435b5e3e65b4e8ea65ead6"
+      },
+      "general_mpi_or_ncp_admission": false,
+      "scientific_admission": false
+    },
+    {
+      "id": "B21",
+      "severity": "CERTIFICATE_OR_EXECUTION_BOUNDARY",
+      "status": "CLOSED_BOUNDED_IMPLEMENTATION_VERIFIED",
+      "obligation": "PERSISTED_NATIVE_STREAM_RECEIPT_BINDING",
+      "closure_condition": "New rawstdout is retained and parsed canonical output must match receipt;bothstreamsha resealing andreceipt-only mutation rejected;oldtile0 exactpinned priorreceipt retains historiclimitedstream evidence.",
+      "evidence": {
+        "path": "review/PRE_EXECUTION_REVIEW.json",
+        "sha256": "556a374f7919d70af3093b91d70021b6d9c0cbdf03435b5e3e65b4e8ea65ead6"
+      },
+      "general_mpi_or_ncp_admission": false,
+      "scientific_admission": false
+    },
+    {
+      "id": "B22",
+      "severity": "OPERATIONAL_RESUME_BLOCKER",
+      "status": "EXACT_TERMINAL_CLAIMS_RECONCILED_ROOT_CAUSE_UNRESOLVED",
+      "obligation": "Completed worker/native terminal receipts coexist with six residual raw claimfiles.",
+      "closure_condition": "For this exact campaign preserve sixclaimbytes and verify all terminal/source/rawnormalization evidence before atomic quarantine. Strict resume must pass. General filesystem/lifecycle rootcause remains to be established; no future automatic cleanup admission.",
+      "numerical_result_changed": false,
+      "actual_native_invocations": 0,
+      "root_cause": "UNDETERMINED",
+      "root_cause_closed": false,
+      "evidence": [
+        {
+          "path": "runtime/RESIDUAL_CLAIMS_OBSERVED.json",
+          "sha256": "8cb35493fab8f3d228b792dbdae97f8d7204d06ff83705da496844b5bcaad3e3"
+        },
+        {
+          "path": "review/CLAIM_RECONCILIATION_REVIEW.json",
+          "sha256": "b01b847494b829bc3d4f5532062f00b02c36b19df217b6c88f024c4fda4af44f"
+        },
+        {
+          "path": "runtime/W1_CLAIMS_QUARANTINE_20261002_v1/RECEIPT.json",
+          "sha256": "9fb13f82cd29baf0640ec902a14e51672c28dd47425daac4a99783fc10164b24"
+        },
+        {
+          "path": "runtime/RESUME_READBACK_AFTER_RECONCILIATION.json",
+          "sha256": "dc266cd210b8ce7e4e3a6a2100c1b9dd8462b965b79039a190bf6fa10ceae8fd"
+        }
+      ]
+    }
+  ],
+  "prior_B01_B18_not_overwritten": true
+}
