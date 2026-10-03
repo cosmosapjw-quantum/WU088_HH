@@ -1,0 +1,123 @@
+{
+  "schema": "WU088_NCP_PREP_REMEDIATION_RETURN_R1",
+  "status": "PREPARATION_BLOCKED",
+  "next_action": {
+    "kind": "WORKSPACE_LOCAL_TOOLCHAIN_DEPENDENCY_AND_SEPARATE_BUILD_CONTINUATION",
+    "required": "Provide genuine GNU Automake 1.17, including automake-1.17 and aclocal-1.17, in an explicitly pinned workspace-local tool allowlist/clean PATH. Check both --version and real generated Makefile tooling. Existing distro Automake 1.16.5 does not satisfy the observed versioned command.",
+    "related_warning": "MPFR aclocal.m4 was generated for Autoconf 2.72; observed Autoconf is 2.71. This warning is not the observed fatal failure; assess/pin the compatible Autoconf before the next continuation.",
+    "admin_required": false,
+    "system_global_install_authorized": false,
+    "new_backend_attempt_requires": "Separate reviewed continuation; this R1 one-shot attempt is consumed. Do not rerun the preserved failed prefix.",
+    "forbidden_workarounds": [
+      "automake-1.17 alias pointing to 1.16.5",
+      "touch/mtime regeneration bypass",
+      "MAKEINFO=true",
+      "doc target removal",
+      "precision or numerical flag changes"
+    ]
+  },
+  "remote_start_head": "ddd9e62b3b6d356f1bdc0bb7ec59a7751346eac8",
+  "prompt_sha256": "9557eb6de5235da550c8c5f0c24643d31f43e09904339270fb66c3946b2db49d",
+  "makeinfo_gate": "CLOSED_IN_ACTUAL_BUILDER_CLEAN_ENVIRONMENT",
+  "resource_gate": "CLOSED_FOR_OBSERVED_TASK_PROCESS_PRIVATE_CGROUP_VIEW",
+  "task_memory_max_bytes": 34359738368,
+  "task_cpu_max": "400000 100000",
+  "effective_CPU_quota": 4,
+  "affinity_count": 64,
+  "resource_limit_is_RAM_reservation": false,
+  "execution_identity": "UID/GID 0, initial user namespace, CapPrm/Eff/Bnd/Amb zero, NoNewPrivs=1; native child seccomp filter observed",
+  "job_lifecycle": "Failed user transient unit retained; cgroup/namespace no longer live. Future task must recreate and reobserve; captured inode identities are historical observations.",
+  "backend_attempts": 1,
+  "backend_status": "BUILD_FAILED_MPFR_AUTOMAKE_1_17_MISSING",
+  "backend_stage_exit_status": 2,
+  "completed_stages": [
+    "cc-version",
+    "cxx-version",
+    "gmp-configure",
+    "gmp-build",
+    "gmp-check",
+    "gmp-install",
+    "mpfr-configure"
+  ],
+  "backend_wall_seconds": 118.01896407599997,
+  "GMP_configure_build_check_install": "PASS",
+  "MPFR_configure": "PASS",
+  "MPFR_build": "FAIL_DEPENDENCY",
+  "FLINT": "NOT_REACHED",
+  "worker_compile_link_ABI": "NOT_ATTEMPTED",
+  "science_dispatch_count": 0,
+  "scope_consumed": false,
+  "original_PREPARED_sha256": "0e06c0f959684e808f1ef1f6d8465e00079e0b6401eba311b804e458bac0f3a0",
+  "original_PREPARED_byte_identity": {
+    "path": "/root/WU088_NCP_EXEC_20261003_v2/runtime_work/pilot/PREPARED.json",
+    "name": "PREPARED.json",
+    "bytes": 90589,
+    "sha256": "856cc41d4e6dfc385d840790fefc6007b4c88b4e3e96004e5ef636d9b6a7de00"
+  },
+  "scope_sha256": "91f8f304f2c0aa8668a1d8bc18b1972348768772fa308d8b3c9483cc8c254a5b",
+  "accepted_cells": 20,
+  "missing_cells_unbounded": 269,
+  "epsilon_C": null,
+  "epsilon_R": null,
+  "B22": "OPEN_UNDETERMINED",
+  "scientific_admission": false,
+  "production_admission": false,
+  "claims": [
+    {
+      "path": "/root/WU088_NCP_EXEC_20261003_v2/w3/recovered/repo/research/r31ao_unequal_ladder/w3_strip_pilot_20261002_v1/runtime/raw/105.json.claim",
+      "name": "105.json.claim",
+      "bytes": 2,
+      "sha256": "031b4af5197ec30a926f48cf40e11a7dbc470048a21e4003b7a3c07c5dab1baa",
+      "mtime_ns": 1790897246983280255,
+      "pid_string": "51",
+      "claim_not_modified": true,
+      "no_process_cause_inferred": true
+    },
+    {
+      "path": "/root/WU088_NCP_EXEC_20261003_v2/w3/recovered/repo/research/r31ao_unequal_ladder/w3_strip_pilot_20261002_v1/runtime/raw/057.json.claim",
+      "name": "057.json.claim",
+      "bytes": 2,
+      "sha256": "eb624dbe56eb6620ae62080c10a273cab73ae8eca98ab17b731446a31c79393a",
+      "mtime_ns": 1790897253427419113,
+      "pid_string": "74",
+      "claim_not_modified": true,
+      "no_process_cause_inferred": true
+    }
+  ],
+  "old_evidence_preservation": {
+    "path": "/root/WU088_NCP_EXEC_20261003_v2/prep_r1/evidence/PRESERVATION_AFTER.json",
+    "name": "PRESERVATION_AFTER.json",
+    "bytes": 125,
+    "sha256": "cc810d2dfbdedc27fd156eeaf82ed87e9daea5802cedf68b85d219a59d17f46b"
+  },
+  "original_manifest_recheck": {
+    "path": "/root/WU088_NCP_EXEC_20261003_v2/prep_r1/evidence/ORIGINAL_MANIFEST_RECHECK.json",
+    "name": "ORIGINAL_MANIFEST_RECHECK.json",
+    "bytes": 71309,
+    "sha256": "f47d0334bed3bf70974ea41b56c3e3420a225ca703fc3eefab07a7958fa6c383"
+  },
+  "new_tests": {
+    "proposal_seal_safety_tests": 3,
+    "red_exit": 1,
+    "green_exit": 0,
+    "old_40_contract_tests_rerun": false,
+    "makeinfo_real_conversion_smoke": "PASS",
+    "original_resource_gate": "PASS",
+    "original_nofork_probe": "PASS",
+    "actual_launcher_child_namespace_membership": "PASS"
+  },
+  "absent": {
+    "BINDING_PROPOSAL.json": "Complete pinned backend and worker ABI are prerequisite; MPFR build failed.",
+    "worker/BUILD.json": "Worker compilation withheld because complete backend unavailable.",
+    "backend/BACKEND_BUILD_PROVENANCE.json": "Full GMP/MPFR/FLINT pipeline incomplete.",
+    "EXECUTION_BINDING.json": "Original run was never invoked; not produced in this non-science scope.",
+    "RUN_STARTED.json": "No science run.",
+    "RETURN.json": "No native pilot.",
+    "new raw/normalized/COVERAGE": "No dispatch; retained baseline 20/289 unchanged."
+  },
+  "publication": "DETACHED_DELIVERY_RECEIPT",
+  "dual_backup": "DETACHED_DELIVERY_RECEIPT",
+  "automatic_retry": false,
+  "completed_HH_reruns": 0,
+  "other_repositories_modified": false
+}
