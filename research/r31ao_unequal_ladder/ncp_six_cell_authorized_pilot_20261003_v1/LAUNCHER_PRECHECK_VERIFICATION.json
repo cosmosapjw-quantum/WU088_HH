@@ -1,0 +1,57 @@
+{
+  "negative_checks": [
+    {
+      "check": "invalid_proposal_self_hash",
+      "result": "REJECTED_BEFORE_DISPATCH",
+      "error": "invalid self hash: proposal_sha256"
+    },
+    {
+      "check": "valid_self_hash_but_changed_file_bytes",
+      "result": "REJECTED_BEFORE_DISPATCH",
+      "error": "proposal self/file byte identity changed"
+    },
+    {
+      "check": "missing_authorization",
+      "result": "REJECTED_BEFORE_DISPATCH",
+      "error": "invalid JSON file"
+    },
+    {
+      "check": "consumed_scope_refusal",
+      "result": "REJECTED_BEFORE_DISPATCH",
+      "error": "RECOVERY_REQUIRED_NO_RERUN: existing registry/run/raw/attempt evidence"
+    }
+  ],
+  "negative_check_count": 4,
+  "syntax": "PASS",
+  "original_adapter_run_worker_consume_test_calls": 0,
+  "registry_unchanged": true,
+  "science_dispatch_count": 0,
+  "changed_test_document_is_not_science_input": true,
+  "launcher_sources": [
+    {
+      "path": "/root/WU088_NCP_EXEC_20261003_v2/pilot_exec_20261003_v1/common.py",
+      "bytes": 3480,
+      "sha256": "6d18253d0ebbd26248c36d785a2e8e10c8431cae01d1be2dfdb303f68aa49806"
+    },
+    {
+      "path": "/root/WU088_NCP_EXEC_20261003_v2/pilot_exec_20261003_v1/observe.py",
+      "bytes": 1273,
+      "sha256": "11c90149becb566573ce1453b1f34b0206c3e63ee88e78eb3058b198f86ca179"
+    },
+    {
+      "path": "/root/WU088_NCP_EXEC_20261003_v2/pilot_exec_20261003_v1/execution_entry.py",
+      "bytes": 9258,
+      "sha256": "a19094dc037b9fbe2ef017b49ae779813a6f9c52389336a632c6edbb92cb7a17"
+    },
+    {
+      "path": "/root/WU088_NCP_EXEC_20261003_v2/pilot_exec_20261003_v1/namespace_entry.sh",
+      "bytes": 585,
+      "sha256": "b437dcab644ec506cb1ba307cc7c94538c9b1ee6f8174ed309846e03ff18d1a6"
+    },
+    {
+      "path": "/root/WU088_NCP_EXEC_20261003_v2/pilot_exec_20261003_v1/precheck_verification.py",
+      "bytes": 2158,
+      "sha256": "df93aa08dee3c83ee4e845c74fa18b1cc919456d3852fb9cb093a8d33b6d0b0e"
+    }
+  ]
+}
