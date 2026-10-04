@@ -1,0 +1,290 @@
+{
+  "schema": "atomic_handoff.tasks.v1",
+  "thread": "WU088_HH",
+  "default_lane": "fastest",
+  "first_ready_after_shared_domain": "HH-F1",
+  "external_dependencies": {
+    "REI_DOMAIN_FREEZE": "consumer domain/observable specification; map to global DAG exact id",
+    "REI_ATOMIC_SENSITIVITY_RESULT": "REI-F09 owned combined paired-sensitivity campaign output; HH never dispatches a second campaign"
+  },
+  "producer_consumer_contract": {
+    "producer": "WU088_HH",
+    "consumer": "rei_bianchi",
+    "required_fields": [
+      "process_id",
+      "provider_id",
+      "source_commit_or_doi",
+      "source_sha256",
+      "input_T_K",
+      "rate_cm3_s",
+      "rate_m3_s",
+      "domain",
+      "extrapolation_status",
+      "distribution_assumptions",
+      "stoichiometry",
+      "electron_delta",
+      "pair_convention",
+      "threshold_owner",
+      "thermal_energy_owner",
+      "binding_energy_owner",
+      "derivative_branch",
+      "physical_uncertainty_kind",
+      "numerical_error_kind",
+      "admission"
+    ],
+    "consumer_owns": [
+      "physical domain",
+      "numerical tolerance",
+      "Rust solver",
+      "paired history",
+      "observable claim"
+    ],
+    "producer_owns": [
+      "process semantics",
+      "source provenance",
+      "rate convention",
+      "model scenario definitions"
+    ],
+    "full_HH_certificate_is_dependency": false
+  },
+  "tasks": [
+    {
+      "id": "HH-F0",
+      "deps": [],
+      "title": "Preserve latest legacy and finish analytic prework",
+      "status": "COMPLETED",
+      "inputs": [
+        "current named branch",
+        "Grackle3.4.1 source",
+        "Glover2015",
+        "original convergence plan"
+      ],
+      "outputs": [
+        "PREWORK_KO.md",
+        "PREWORK_CHECKS.json",
+        "legacy_sources/MANIFEST.json"
+      ],
+      "paths": {
+        "package_root": "docs/atomic_reionization_handoff_20261004_v1/threads/WU088_HH/",
+        "outputs_are_proposed": false
+      },
+      "steps": [
+        "read exact sources",
+        "derive species/energy/derivatives",
+        "execute bounded reference checks"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "docs/atomic_reionization_handoff_20261004_v1/threads/WU088_HH/verify_prework.py",
+            "/tmp/hh_prework_result.json"
+          ],
+          "executed_this_chat": true,
+          "actual_chat_path": "atomic_handoff_20261004/threads/WU088_HH/verify_prework.py",
+          "exit_code": 0
+        }
+      ],
+      "acceptance": [
+        "34 finite checks passed",
+        "source byte hashes retained"
+      ],
+      "failures": [
+        "source missing",
+        "wrong process semantics"
+      ],
+      "claimceiling": "Only selected external-provider consumer scope; no promotion of frozen HH matrices, continuous epsilon or scattering rate",
+      "publication": "additive commit on current branch; existing PR33; no automatic merge"
+    },
+    {
+      "id": "HH-F1",
+      "deps": [
+        "HH-F0",
+        "REI_DOMAIN_FREEZE"
+      ],
+      "title": "Freeze external HH provider and cross-repo domain",
+      "status": "PROPOSED",
+      "inputs": [
+        "REI_DOMAIN_FREEZE receipt",
+        "PREWORK_KO.md",
+        "SOURCE_REGISTRY.json"
+      ],
+      "outputs": [
+        "external_rates/hh_provider_registry.json",
+        "external_rates/hh_consumer_interface.json"
+      ],
+      "paths": {
+        "package_root": "docs/atomic_reionization_handoff_20261004_v1/threads/WU088_HH/",
+        "outputs_are_proposed": true
+      },
+      "steps": [
+        "reuse current admitted coefficient if known; otherwise select version-pinned LCS candidate",
+        "record correctedKS as separate scenario",
+        "require actual temperature/density/redshift/SED/distribution and observable budgets from consumer",
+        "make process owner unique",
+        "record cutoff and non-certified model spread"
+      ],
+      "commands": [],
+      "acceptance": [
+        "all cross-repo fields present",
+        "no implicit clipping or extrapolation",
+        "no species double counting"
+      ],
+      "failures": [
+        "WAITING_ON_REI_DOMAIN",
+        "SOURCE_LICENSE_MISSING",
+        "AMBIGUOUS_HEAT_OWNER"
+      ],
+      "claimceiling": "Only selected external-provider consumer scope; no promotion of frozen HH matrices, continuous epsilon or scattering rate",
+      "publication": "additive commit on current branch; existing PR33; no automatic merge"
+    },
+    {
+      "id": "HH-F2",
+      "deps": [
+        "HH-F1"
+      ],
+      "title": "Implement consumer external-rate seam",
+      "status": "PROPOSED",
+      "inputs": [
+        "provider registry",
+        "portable_reference.py",
+        "rei actual Rust source paths"
+      ],
+      "outputs": [
+        "provider adapter in consumer confirmed path",
+        "component receipt with hashes"
+      ],
+      "paths": {
+        "package_root": "docs/atomic_reionization_handoff_20261004_v1/threads/WU088_HH/",
+        "outputs_are_proposed": true
+      },
+      "steps": [
+        "reuse consumer API; do not copy solver",
+        "convert units exactly once",
+        "implement split floor and analytic branches",
+        "track d1/d2 piecewise and envelope certification requirement",
+        "bind source and energy owners",
+        "reject unsupported distribution/domain"
+      ],
+      "commands": [],
+      "acceptance": [
+        "reference parity at interior points and both cutoff sides",
+        "conservation",
+        "zero density",
+        "no extra half",
+        "thermal plus binding closure",
+        "duplicate owner refusal",
+        "numeric uncertainty separate from model error"
+      ],
+      "failures": [
+        "UNSUPPORTED_DISTRIBUTION",
+        "BOUNDARY_NONSMOOTH",
+        "DUPLICATE_OWNER",
+        "NUMERICAL_ENCLOSURE_PENDING"
+      ],
+      "claimceiling": "Only selected external-provider consumer scope; no promotion of frozen HH matrices, continuous epsilon or scattering rate",
+      "publication": "additive commit on current branch; existing PR33; no automatic merge"
+    },
+    {
+      "id": "HH-F3",
+      "deps": [
+        "HH-F2",
+        "REI_ATOMIC_SENSITIVITY_RESULT"
+      ],
+      "title": "Interpret and accept REI-F09 paired physical sensitivity",
+      "status": "PROPOSED",
+      "inputs": [
+        "docs/atomic_reionization_handoff_20261004_v1/runtime_outputs/paired_atomic_sensitivity_v1.json",
+        "HH-F2 provider registry",
+        "consumer observable budget"
+      ],
+      "outputs": [
+        "HH_SENSITIVITY_ACCEPTANCE.json"
+      ],
+      "paths": {
+        "package_root": "docs/atomic_reionization_handoff_20261004_v1/threads/WU088_HH/",
+        "outputs_are_proposed": true
+      },
+      "steps": [
+        "read REI-F09 combined campaign result without rerunning histories",
+        "verify each FLRW/Bianchi pair used same provider curve and fixed IC convention",
+        "check source versions, branch/domain visitation, and model/numerical error ledgers",
+        "interpret deltaobservable change against registered claim and budget",
+        "return acceptance or bounded claim limitation; no independent HH campaign"
+      ],
+      "commands": [],
+      "acceptance": [
+        "matched IC/geometry convention",
+        "same atomic parameters per pair",
+        "consumer numerical gates pass",
+        "claim stability evaluated under registered budget"
+      ],
+      "failures": [
+        "NUMERICAL_GATE_FAIL",
+        "DOMAIN_ESCAPE",
+        "MODEL_SENSITIVITY_DOMINATES_CLAIM"
+      ],
+      "claimceiling": "Only selected external-provider consumer scope; no promotion of frozen HH matrices, continuous epsilon or scattering rate",
+      "publication": "additive commit on current branch; existing PR33; no automatic merge"
+    },
+    {
+      "id": "HH-F4",
+      "deps": [
+        "HH-F3"
+      ],
+      "title": "Close selected consumer and park legacy",
+      "status": "PROPOSED",
+      "inputs": [
+        "paired receipt",
+        "consumer budget"
+      ],
+      "outputs": [
+        "APPLICATION_CLOSEOUT.json",
+        "LEGACY_LINK.json"
+      ],
+      "paths": {
+        "package_root": "docs/atomic_reionization_handoff_20261004_v1/threads/WU088_HH/",
+        "outputs_are_proposed": true
+      },
+      "steps": [
+        "state exact claim and supported domain",
+        "store versioned adoption decision and reopen triggers",
+        "link existing immutable legacy archive"
+      ],
+      "commands": [],
+      "acceptance": [
+        "all consumer dependencies satisfied or explicit conditional claim",
+        "old epsilon remains null unless separately earned"
+      ],
+      "failures": [
+        "CLOSEOUT_PREMATURE",
+        "MISSING_SOURCE_RECEIPT"
+      ],
+      "claimceiling": "Only selected external-provider consumer scope; no promotion of frozen HH matrices, continuous epsilon or scattering rate",
+      "publication": "additive commit on current branch; existing PR33; no automatic merge"
+    }
+  ],
+  "always_forbidden": [
+    "replace missing primitive by zero",
+    "change frozen sources",
+    "reuse consumed FD2 execution scope",
+    "promote application sensitivity to rigorous atomic error enclosure",
+    "run whole scientific suite without dependency change"
+  ],
+  "return_contract": {
+    "schema_path": "../../common/RETURN_CONTRACT.schema.json",
+    "required_fields": [
+      "task_id",
+      "state",
+      "input_identity",
+      "changed_paths",
+      "commands",
+      "artifacts",
+      "claim",
+      "next_task"
+    ],
+    "thread_extension": "extensions.hh_legacy",
+    "unexecuted_command_policy": "executed=false; never imply PASS"
+  }
+}
