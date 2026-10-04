@@ -1,0 +1,108 @@
+[
+  {
+    "label": "compile_test_regression",
+    "command": [
+      "/usr/bin/g++",
+      "-std=c++20",
+      "-O1",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/include",
+      "/root/WU088_NCP_EXEC_20261003_v2/fd2_prep_20261004_v1/input/WU088_HH_FD2_ROOT_CAUSE_20261004_v1/tests/test_regression.cpp",
+      "-L/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/lib",
+      "-Wl,-rpath,/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/lib",
+      "-lflint",
+      "-lmpfr",
+      "-lgmp",
+      "-o",
+      "/root/WU088_NCP_EXEC_20261003_v2/fd2_prep_20261004_v1/scalar_tests/test_regression"
+    ],
+    "exit_status": 0,
+    "wall_seconds": 0.7079340490017785
+  },
+  {
+    "label": "test_regression",
+    "command": [
+      "/root/WU088_NCP_EXEC_20261003_v2/fd2_prep_20261004_v1/scalar_tests/test_regression"
+    ],
+    "exit_status": 0,
+    "wall_seconds": 0.007396225992124528
+  },
+  {
+    "label": "compile_test_properties",
+    "command": [
+      "/usr/bin/g++",
+      "-std=c++20",
+      "-O1",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/include",
+      "/root/WU088_NCP_EXEC_20261003_v2/fd2_prep_20261004_v1/input/WU088_HH_FD2_ROOT_CAUSE_20261004_v1/tests/test_properties.cpp",
+      "-L/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/lib",
+      "-Wl,-rpath,/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/lib",
+      "-lflint",
+      "-lmpfr",
+      "-lgmp",
+      "-o",
+      "/root/WU088_NCP_EXEC_20261003_v2/fd2_prep_20261004_v1/scalar_tests/test_properties"
+    ],
+    "exit_status": 0,
+    "wall_seconds": 1.2925377869978547
+  },
+  {
+    "label": "test_properties",
+    "command": [
+      "/root/WU088_NCP_EXEC_20261003_v2/fd2_prep_20261004_v1/scalar_tests/test_properties"
+    ],
+    "exit_status": 0,
+    "wall_seconds": 0.01920015999348834
+  },
+  {
+    "label": "compile_test_moment",
+    "command": [
+      "/usr/bin/g++",
+      "-std=c++20",
+      "-O1",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/include",
+      "/root/WU088_NCP_EXEC_20261003_v2/fd2_prep_20261004_v1/input/WU088_HH_FD2_ROOT_CAUSE_20261004_v1/tests/test_moment.cpp",
+      "-L/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/lib",
+      "-Wl,-rpath,/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/lib",
+      "-lflint",
+      "-lmpfr",
+      "-lgmp",
+      "-o",
+      "/root/WU088_NCP_EXEC_20261003_v2/fd2_prep_20261004_v1/scalar_tests/test_moment"
+    ],
+    "exit_status": 0,
+    "wall_seconds": 1.0975889359979192
+  },
+  {
+    "label": "test_moment",
+    "command": [
+      "/root/WU088_NCP_EXEC_20261003_v2/fd2_prep_20261004_v1/scalar_tests/test_moment"
+    ],
+    "exit_status": 0,
+    "wall_seconds": 0.006772815992007963
+  },
+  {
+    "label": "test_evidence",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/root/WU088_NCP_EXEC_20261003_v2/fd2_prep_20261004_v1/input/WU088_HH_FD2_ROOT_CAUSE_20261004_v1/tests/test_evidence.py"
+    ],
+    "exit_status": 0,
+    "wall_seconds": 0.28852472100697923
+  }
+]
