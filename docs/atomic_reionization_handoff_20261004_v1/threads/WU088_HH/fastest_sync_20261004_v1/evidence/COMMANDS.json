@@ -1,0 +1,80 @@
+[
+  {
+    "command": [
+      "python3",
+      "-B",
+      "docs/atomic_reionization_handoff_20261004_v1/tools/task_packet.py",
+      "next",
+      "--thread",
+      "WU088_HH"
+    ],
+    "exit_code": 0,
+    "evidence_path": "evidence/TASK_SELECTOR.stdout.json",
+    "executed": true
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/root/WU088_HH_FASTEST_SYNC_20261004_v1/input/WU088_HH_FAST_F1R_20261004_v1/verify_delivery.py"
+    ],
+    "exit_code": 0,
+    "evidence_path": "evidence/INPUT_MANIFEST.stdout.log",
+    "executed": true
+  },
+  {
+    "command": [
+      "gh",
+      "api",
+      "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/fastest_track_chat/REI-CHAT-FT02-20261004/README_KO.md?ref=6e577ec3692f6d19d8ce3a9cae0364d4439f5fcb"
+    ],
+    "exit_code": 0,
+    "evidence_path": "evidence/docs__fastest_track_chat__REI-CHAT-FT02-20261004__README_KO.md",
+    "executed": true,
+    "status": "READ"
+  },
+  {
+    "command": [
+      "gh",
+      "api",
+      "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/fastest_track_chat/REI-CHAT-FT02-20261004/NEXT_HANDOFF_KO.md?ref=6e577ec3692f6d19d8ce3a9cae0364d4439f5fcb"
+    ],
+    "exit_code": 0,
+    "evidence_path": "evidence/docs__fastest_track_chat__REI-CHAT-FT02-20261004__NEXT_HANDOFF_KO.md",
+    "executed": true,
+    "status": "READ"
+  },
+  {
+    "command": [
+      "gh",
+      "api",
+      "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/fastest_track_chat/REI-CHAT-FT02-20261004/TASK_RETURN.json?ref=6e577ec3692f6d19d8ce3a9cae0364d4439f5fcb"
+    ],
+    "exit_code": 0,
+    "evidence_path": "evidence/docs__fastest_track_chat__REI-CHAT-FT02-20261004__TASK_RETURN.json",
+    "executed": true,
+    "status": "READ"
+  },
+  {
+    "command": [
+      "gh",
+      "api",
+      "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/atomic_reionization_handoff_20261004_v1/runtime_inputs/rei_model_lock.json?ref=6e577ec3692f6d19d8ce3a9cae0364d4439f5fcb"
+    ],
+    "exit_code": 1,
+    "evidence_path": "evidence/docs__atomic_reionization_handoff_20261004_v1__runtime_inputs__rei_model_lock.json.stderr.log",
+    "executed": true,
+    "status": "HTTP_404"
+  },
+  {
+    "command": [
+      "gh",
+      "api",
+      "repos/cosmosapjw-quantum/rei_bianchi/contents/configs/rei_fastest_v1/science_scenario_v1.json?ref=6e577ec3692f6d19d8ce3a9cae0364d4439f5fcb"
+    ],
+    "exit_code": 1,
+    "evidence_path": "evidence/configs__rei_fastest_v1__science_scenario_v1.json.stderr.log",
+    "executed": true,
+    "status": "HTTP_404"
+  }
+]

@@ -1,0 +1,214 @@
+{
+  "task_id": "HH-F1",
+  "state": "partial",
+  "input_identity": {
+    "HH_commit": "a9f83ec74963f390e76f0dd11ba65c01812aaf74",
+    "REI_commit": "6e577ec3692f6d19d8ce3a9cae0364d4439f5fcb",
+    "branch": "research/r31ao-unequal-order-ladder-20260930",
+    "verified_F1R_ZIP": {
+      "status": "PASS",
+      "input_cache": "/root/.cache/WU088_HH/sha256/1f/fc/1ffc7930d18fb9fec7d515b9e3d3058b2f4b3cc1081880b4a0720745f994ea65",
+      "bytes": 130243,
+      "sha256": "1ffc7930d18fb9fec7d515b9e3d3058b2f4b3cc1081880b4a0720745f994ea65",
+      "CRC": true,
+      "payloads_verified": 58,
+      "manifest_validator_exit": 0,
+      "git_source_bindings": [
+        {
+          "path": "/root/WU088_NCP_EXEC_20261003_v2/repo/docs/atomic_reionization_handoff_20261004_v1/threads/WU088_HH/external_rates/f1r_20261004_v1/src/hh_external.py",
+          "bytes": 9613,
+          "sha256": "8c02df302adc895be1327cb2e55bae03ebed8ec06ee7496ff4eeda20fdcdc197",
+          "bound_to_verified_ZIP": true
+        },
+        {
+          "path": "/root/WU088_NCP_EXEC_20261003_v2/repo/docs/atomic_reionization_handoff_20261004_v1/threads/WU088_HH/external_rates/f1r_20261004_v1/src/hh_source_jet.py",
+          "bytes": 9683,
+          "sha256": "18cb5f3aa077d4e60ca712b642158133647fcd9fe1a86e37917a15c66510db49",
+          "bound_to_verified_ZIP": true
+        },
+        {
+          "path": "/root/WU088_NCP_EXEC_20261003_v2/repo/docs/atomic_reionization_handoff_20261004_v1/threads/WU088_HH/external_rates/f1r_20261004_v1/tests/test_red_green.py",
+          "bytes": 1547,
+          "sha256": "60f7a81142e85c7414b7d552a114e0d79e5f9f9865bd3f1d9b31df5caa164e80",
+          "bound_to_verified_ZIP": true
+        },
+        {
+          "path": "/root/WU088_NCP_EXEC_20261003_v2/repo/docs/atomic_reionization_handoff_20261004_v1/threads/WU088_HH/external_rates/f1r_20261004_v1/tests/test_reference.py",
+          "bytes": 8549,
+          "sha256": "d309bdc953039533bbbff7ce1fe3797065e6d99e06ad1ac692bb40c52b6345ca",
+          "bound_to_verified_ZIP": true
+        },
+        {
+          "path": "/root/WU088_NCP_EXEC_20261003_v2/repo/docs/atomic_reionization_handoff_20261004_v1/threads/WU088_HH/external_rates/f1r_20261004_v1/requirements-tests.txt",
+          "bytes": 28,
+          "sha256": "96464f405b58137236b9c10c698be08a780ff7d062dd918ac40c0460f1b0831f",
+          "bound_to_verified_ZIP": true
+        }
+      ],
+      "source_suite_reruns": 0,
+      "new_HH_callbacks": 0,
+      "HH_integrations": 0,
+      "source_contract": "/root/WU088_HH_FASTEST_SYNC_20261004_v1/input/WU088_HH_FAST_F1R_20261004_v1/external_rates/hh_source_jet_contract.json"
+    },
+    "chat_thread_url": "https://chatgpt.com/c/6abf9e0b-74c0-83e8-8170-aaa51b03415e"
+  },
+  "changed_paths": [
+    "docs/atomic_reionization_handoff_20261004_v1/threads/WU088_HH/fastest_sync_20261004_v1"
+  ],
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "docs/atomic_reionization_handoff_20261004_v1/tools/task_packet.py",
+        "next",
+        "--thread",
+        "WU088_HH"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/TASK_SELECTOR.stdout.json",
+      "executed": true
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/root/WU088_HH_FASTEST_SYNC_20261004_v1/input/WU088_HH_FAST_F1R_20261004_v1/verify_delivery.py"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/INPUT_MANIFEST.stdout.log",
+      "executed": true
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/fastest_track_chat/REI-CHAT-FT02-20261004/README_KO.md?ref=6e577ec3692f6d19d8ce3a9cae0364d4439f5fcb"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/docs__fastest_track_chat__REI-CHAT-FT02-20261004__README_KO.md",
+      "executed": true,
+      "status": "READ"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/fastest_track_chat/REI-CHAT-FT02-20261004/NEXT_HANDOFF_KO.md?ref=6e577ec3692f6d19d8ce3a9cae0364d4439f5fcb"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/docs__fastest_track_chat__REI-CHAT-FT02-20261004__NEXT_HANDOFF_KO.md",
+      "executed": true,
+      "status": "READ"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/fastest_track_chat/REI-CHAT-FT02-20261004/TASK_RETURN.json?ref=6e577ec3692f6d19d8ce3a9cae0364d4439f5fcb"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/docs__fastest_track_chat__REI-CHAT-FT02-20261004__TASK_RETURN.json",
+      "executed": true,
+      "status": "READ"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/atomic_reionization_handoff_20261004_v1/runtime_inputs/rei_model_lock.json?ref=6e577ec3692f6d19d8ce3a9cae0364d4439f5fcb"
+      ],
+      "exit_code": 1,
+      "evidence_path": "evidence/docs__atomic_reionization_handoff_20261004_v1__runtime_inputs__rei_model_lock.json.stderr.log",
+      "executed": true,
+      "status": "HTTP_404"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/configs/rei_fastest_v1/science_scenario_v1.json?ref=6e577ec3692f6d19d8ce3a9cae0364d4439f5fcb"
+      ],
+      "exit_code": 1,
+      "evidence_path": "evidence/configs__rei_fastest_v1__science_scenario_v1.json.stderr.log",
+      "executed": true,
+      "status": "HTTP_404"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/root/WU088_HH_FASTEST_SYNC_20261004_v1/evidence/INPUT_VERIFICATION.json",
+      "bytes": 2186,
+      "sha256": "5ff711face2292a4ba3aa930fe92c8d5fcc58877ac1128366d448a7b247fea88"
+    },
+    {
+      "path": "/root/WU088_HH_FASTEST_SYNC_20261004_v1/evidence/CONSUMER_READS.json",
+      "bytes": 3132,
+      "sha256": "26ed4af92e0b4df59eaeb25931608308250c24d76ede176df427e6f0b0abb7f2"
+    },
+    {
+      "path": "/root/WU088_HH_FASTEST_SYNC_20261004_v1/evidence/CHATGPT_ACCESS.json",
+      "bytes": 666,
+      "sha256": "234a251f216fa89159db1f0fae767a4ce1018a0d4ee6c0bb9c73e61d000802d4"
+    },
+    {
+      "path": "/root/WU088_HH_FASTEST_SYNC_20261004_v1/CODING_LOOP_STATE.json",
+      "bytes": 2438,
+      "sha256": "98906aa769ba6d9c96e9d613fc4f813ea743e8946650b990725dc0bda34dbb5f"
+    }
+  ],
+  "claim": {
+    "basis": "Latest remote/source-provenance intake and exact artifact validation; latest REI FT02 read without replay",
+    "ceiling": "WAITING_ON_REI_DOMAIN; unchanged exact-fit source jet reused, no new numerical/physical admission"
+  },
+  "next_task": "REI-F07",
+  "blocker": {
+    "kind": "external_domain_and_thread_transport",
+    "reason": "Canonical REI-F07 model-lock/scenario absent at pinned consumer HEAD; FT02 is research-only and physical admission remainsfalse. Direct authenticated chat transport unavailable.",
+    "missing_fields": [
+      "temperature_K",
+      "density_m3",
+      "redshift",
+      "source_sed",
+      "distribution",
+      "observable_budget",
+      "constants_registry",
+      "consumer_commit",
+      "consumer_adapter_path",
+      "domain_receipt",
+      "process_owner",
+      "threshold_owner",
+      "thermal_energy_owner",
+      "binding_energy_owner",
+      "numerical_tolerance"
+    ],
+    "minimum_next_actions": [
+      "REI owner publishes source-bound domain/observable/constant/ownership/coordinate/actual-seam receipt",
+      "Authenticated browser connection for the specified ChatGPT account/thread; do not send credentials"
+    ]
+  },
+  "extensions": {
+    "hh_legacy": {
+      "accepted": 24,
+      "total": 289,
+      "missing_unbounded": 265,
+      "epsilon_C": null,
+      "epsilon_R": null,
+      "B22": "OPEN_UNDETERMINED",
+      "scientific_admission": false,
+      "production_admission": false,
+      "FD1_FD2_pilot_scope": "CONSUMED_PRESERVED"
+    },
+    "execution": {
+      "scientific_runs": 0,
+      "source_tests_rerun": 0,
+      "new_reference_module_builds": 0
+    },
+    "sync": {
+      "direct_thread_read": false,
+      "direct_thread_write": false,
+      "Git_source_sync": true,
+      "background_scheduler": false
+    }
+  }
+}
