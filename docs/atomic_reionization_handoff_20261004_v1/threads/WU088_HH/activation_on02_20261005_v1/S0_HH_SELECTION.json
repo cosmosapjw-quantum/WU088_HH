@@ -1,0 +1,56 @@
+{
+  "task_id": "HH-ON02-20261005",
+  "authorization": "Current user explicitly continues S0 HH selection and optional HH-F1/F2; research activation inherited from HH-ON01.",
+  "canonical_S0": {
+    "repository": "cosmosapjw-quantum/rei_bianchi",
+    "ref": "8e8ea0c664e2ba2f2f8560e0c64266d206fbd50f",
+    "path": "configs/rei_fastest_v1/science_scenario_v1.json",
+    "blob": "e97888b06c59d63acb0f35181163d256a6894ed6",
+    "HH": "OFF_UNCHANGED",
+    "no_negligibility_claim": true
+  },
+  "selected_research_comparison": [
+    {
+      "id": "S0_HH_LCS_RESEARCH_V1",
+      "HH": "ON",
+      "provider": "Lcs91",
+      "role": "named formula scenario, not a preferred physical truth"
+    },
+    {
+      "id": "S0_HH_KS_RESEARCH_V1",
+      "HH": "ON",
+      "provider": "CorrectedKs",
+      "role": "separate named sensitivity scenario, not a rigorous uncertainty bound"
+    }
+  ],
+  "successor_changes_only": [
+    "HH selection",
+    "HH separate event counter R=k*nHI^2",
+    "HH thermal -chi*R and chemical +chi*R; no direct photon/escape source"
+  ],
+  "unchanged_S0_inputs": [
+    "background/shear/tilt",
+    "source and birth spectrum",
+    "initial state",
+    "secondary/HeRCT/CR decisions",
+    "Verner/binding distinction",
+    "all original gate thresholds"
+  ],
+  "status": "RESEARCH_COMPARISON_SELECTED__EXPANDING_S0_NOT_EXECUTED_OR_ADMITTED",
+  "HH_F1_research": "PROFILE_SOURCE_OWNER_AND_DOMAIN_FROZEN",
+  "HH_F1_physical_admission": false,
+  "HH_F2_research": "SOURCE_DERIVED_STATIC_ON_TIME_STEPPER_IMPLEMENTED_AND_FINITE_HISTORY_CHECKED",
+  "HH_F2_REI_production_integration": false,
+  "unmet_gates": {
+    "global_static_energy_target": {
+      "limit": 1e-12,
+      "observed": 1.2812803304029393e-12,
+      "status": "FAIL"
+    },
+    "expanding_S0_time_integrator": "NOT_CONNECTED",
+    "source_empirical_error": "UNQUANTIFIED",
+    "F04_F05_transfer": "FORBIDDEN"
+  },
+  "next_task": "HH-ON03 residual-budgeted whole-interval ledger with production-owner integration proposal; no re-authorization needed",
+  "canonical_TASKS_modified": false
+}
