@@ -1,0 +1,13 @@
+# HH-TH01 이후
+
+기존HH/S0연구활성화승인을계승한다. HH-TH01은이론단위이며ON06이식완료가아니다. START/THEOREMS/RESULT_SUMMARY와sealedZIP의THEORY§2,4-9/CLAIM_LEDGER/SOURCE_BINDING부터읽는다. 새61기호/8exact/4epsilonroot는변경위험없이재실행하지않는다.
+
+ActualON06source를읽고q,qi,qij를point/thermal/별도HHevent와intervalRHS/Jet2/primary_stage_root에같은상수와좌표로결속한다. w단위eV/H와r고정조건을명시한다. 1/ne나1/(1-h)를쓰지않고h=1경계값을보존한다. M0는같은ONcandidate에서평가하고새physicalbox의centerresidual/self-map/contraction을닫는다. d분모배제만으로root존재를주장하지않는다. OFF원본/certificate를ON에전용하지않는다.
+
+정확도이론은parity와C2를구분한다. Actualfitcutoff가관측종료시각을드나드는ε가있으므로전체0..0.01을한smoothbranch라고하지않는다. 개별event의mixedsourcejump와동시event순서,이전slab의continuouserror를보존한다. Binding13.5984는현재retained모형에서두번째physicaljump가아니다. Tobservable은stateerror뿐아니라gradient차이도필요하다.
+
+Ideal4x8moment와nativebinaryarray를구분하며대칭을강제하려고원자료를symmetrize하지않는다. 새runtimeparity나actualC2certificate는아직없다. ActualBI자료가필요하면REI원transaction만회수하고전체campaign을다시실행하지않는다.
+
+현재이론inputHH7495a89a/REI756e1d4f. Remote새ON05B413MB와local첨부153MB는같은이름이어도다른archive다. 이번원선택파일4개는localmanifest대조,remote확장수치는received-only다. 이후sourceHEAD가바뀌면그delta만읽는다.
+
+sameHHbranchappend-only/nonforce,PR33/REIPR83,기존Drive/Dropboxcreate-only. S0OFFcontrol/원criteria/legacy24/289·265unbounded·epsilonnull·B22OPEN·consumedscopes보존. 전체F09는REI소유. 게시ACK/byteidentity/restore/science판정을분리한다.
