@@ -1,0 +1,60 @@
+{
+  "schema": "WU088_PRODUCTION_CONNECTION_DISCOVERED_ISSUES_V1",
+  "scope": "New component defects found and addressed during this implementation; does not silently replace historical B01-B06 ledger",
+  "issues": [
+    {
+      "id": "P01",
+      "title": "Endpoint worker result did not bind requested task index",
+      "found_by": "Independent component review",
+      "risk": "A valid result for another index could be saved under requested output",
+      "resolution": "Require result index equals requested index, test swapped-result refusal",
+      "evidence": "endpoint_tasks/REQUESTED_INDEX_RED.log and final test evidence",
+      "status": "FIXED_COMPONENT_VERIFIED"
+    },
+    {
+      "id": "P02",
+      "title": "Endpoint resource status lost at subprocess boundary",
+      "found_by": "Independent component review",
+      "risk": "Resource exhaustion could be recorded as generic failure",
+      "resolution": "Preserve failed worker status and return-code consistency",
+      "evidence": "endpoint_tasks/RESOURCE_STATUS_RED.log and final test evidence",
+      "status": "FIXED_COMPONENT_VERIFIED"
+    },
+    {
+      "id": "P03",
+      "title": "Existing native output was refused after unnecessary execution",
+      "found_by": "Independent component review",
+      "risk": "Retry could repeat a completed expensive calculation before write refusal",
+      "resolution": "Refuse existing output before work; atomic claim prevents concurrent duplicate launch",
+      "evidence": "native_driver test and review evidence",
+      "status": "FIXED_COMPONENT_VERIFIED"
+    },
+    {
+      "id": "P04",
+      "title": "Persisted native envelope rejected by raw-result validator",
+      "found_by": "Independent primitive-join review",
+      "risk": "Real wrapper outputs could not enter full-domain assembly",
+      "resolution": "Validate exact envelope, then pass only its documented raw-result fields to strict raw validator",
+      "evidence": "primitive_join tests and independent review",
+      "status": "FIXED_COMPONENT_VERIFIED"
+    },
+    {
+      "id": "P05",
+      "title": "Exact rational denominator and decimal serialization growth",
+      "found_by": "Actual Frozen107 cutoff probe at precision128",
+      "risk": "Finite mathematical bounds exceeded rational/string representation limits",
+      "resolution": "Preserve failed attempts and old source; add rigorously upward-rounded positive dyadic significant-bit representation and re-run bounded actual probes",
+      "evidence": "runtime/endpoint_cutoff_probe and endpoint_tasks quantization evidence; final outcome in delivery verification",
+      "status": "FIXED_COMPONENT_AND_BOUNDED_ACTUAL_PROBES_VERIFIED"
+    },
+    {
+      "id": "P06",
+      "title": "Fixed-panel interior mass bound grew artificially with large cutoff",
+      "found_by": "Actual cutoff probes after representation fix",
+      "risk": "A valid but overly conservative J_t E_u term grew with T and prevented useful tail tightening",
+      "resolution": "Use min(J_t,W_t) with independently valid positive-axis bound at fixed pivot1, same donor i/mu/a, cached within task",
+      "evidence": "ENDPOINT_INTERIOR_MASS_CAP_REVIEW.md and runtime/endpoint_cutoff_probe_capped",
+      "status": "FIXED_COMPONENT_AND_BOUNDED_ACTUAL_PROBES_VERIFIED"
+    }
+  ]
+}

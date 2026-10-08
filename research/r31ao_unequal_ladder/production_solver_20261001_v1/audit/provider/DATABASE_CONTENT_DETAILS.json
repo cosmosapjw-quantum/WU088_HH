@@ -1,0 +1,327 @@
+{
+  "original_database": [
+    {
+      "artifact_id": "ORIGINAL_DEEP_RESEARCH_DB",
+      "original_filename": "WU088_HH_R31AO_LITERATURE_DATABASE_20261001.zip",
+      "expected_reported_sha256": "ab875d3e4fa771b34bdc1026042c38553b473b98f23e00e809d21c3b367948a9",
+      "original_bytes_recovered": 0,
+      "reconstruction_equivalence": "UNVERIFIED_NOT_CLAIMED",
+      "reconstruction_filename": "WU088_HH_R31AO_LITERATURE_DATABASE_RECONSTRUCTED_20261001_v1.zip",
+      "reconstruction_sha256": "34e0b4c81ed2b24f2008d8504f47714aa6e70f6da04bf0afbf65d912e2c9b4f1",
+      "reconstruction_bytes": 29050,
+      "recovered_explicit_source_rows": 4,
+      "recovered_explicit_blocker_rows": 5,
+      "unexported_entity_tables_json": "[\"theorems\", \"modules\", \"tests\", \"artifacts\"]",
+      "evidence_origin": "reconstructed_database/WU088_HH_R31AO_LITERATURE_DATABASE_RECONSTRUCTED_20261001_v1.zip"
+    }
+  ],
+  "example_tables": [
+    {
+      "example_table": "blockers",
+      "n": 5
+    },
+    {
+      "example_table": "sources",
+      "n": 4
+    }
+  ],
+  "example_rows": [
+    {
+      "example_table": "sources",
+      "row_number": 1,
+      "row_json": "{\"authority_tier\": \"A\", \"pin_status\": \"PIN_CANDIDATE\", \"source_id\": \"SRC-JOHANSSON-2018\", \"title\": \"Numerical integration in arbitrary-precision ball arithmetic\", \"topics\": \"ball arithmetic;Petras;validated integration\", \"year\": \"2018\"}",
+      "evidence_origin": "reconstructed_database/WU088_HH_R31AO_LITERATURE_DATABASE_RECONSTRUCTED_20261001_v1.zip:sources_EXPLICIT_REPORT_EXAMPLES.csv"
+    },
+    {
+      "example_table": "sources",
+      "row_number": 2,
+      "row_json": "{\"authority_tier\": \"A\", \"pin_status\": \"PIN_CANDIDATE\", \"source_id\": \"SRC-PETRAS-2002\", \"title\": \"Self-validating integration and approximation of piecewise analytic functions\", \"topics\": \"validated integration;piecewise analytic;Gaussian quadrature\", \"year\": \"2002\"}",
+      "evidence_origin": "reconstructed_database/WU088_HH_R31AO_LITERATURE_DATABASE_RECONSTRUCTED_20261001_v1.zip:sources_EXPLICIT_REPORT_EXAMPLES.csv"
+    },
+    {
+      "example_table": "sources",
+      "row_number": 3,
+      "row_json": "{\"authority_tier\": \"A\", \"pin_status\": \"PIN_CANDIDATE\", \"source_id\": \"SRC-DLMF-8.2\", \"title\": \"DLMF §8.2 Definitions and Basic Properties\", \"topics\": \"incomplete gamma;definitions\", \"year\": \"2026\"}",
+      "evidence_origin": "reconstructed_database/WU088_HH_R31AO_LITERATURE_DATABASE_RECONSTRUCTED_20261001_v1.zip:sources_EXPLICIT_REPORT_EXAMPLES.csv"
+    },
+    {
+      "example_table": "sources",
+      "row_number": 4,
+      "row_json": "{\"authority_tier\": \"A\", \"pin_status\": \"PIN_CANDIDATE\", \"source_id\": \"SRC-NUMPY-NPY\", \"title\": \"numpy.lib.format / NPY format\", \"topics\": \"NPY;dtype;Fortran order;endianness\", \"year\": \"2026\"}",
+      "evidence_origin": "reconstructed_database/WU088_HH_R31AO_LITERATURE_DATABASE_RECONSTRUCTED_20261001_v1.zip:sources_EXPLICIT_REPORT_EXAMPLES.csv"
+    },
+    {
+      "example_table": "blockers",
+      "row_number": 1,
+      "row_json": "{\"blocker_id\": \"B01\", \"category\": \"implementation\", \"closure_evidence\": \"Pinned build + analytic-domain audit + callback tests\", \"severity\": \"CRITICAL\", \"status\": \"OPEN\", \"title\": \"Validated callback/backend not implementation-verified\"}",
+      "evidence_origin": "reconstructed_database/WU088_HH_R31AO_LITERATURE_DATABASE_RECONSTRUCTED_20261001_v1.zip:blockers_EXPLICIT_REPORT_EXAMPLES.csv"
+    },
+    {
+      "example_table": "blockers",
+      "row_number": 2,
+      "row_json": "{\"blocker_id\": \"B02\", \"category\": \"numerical\", \"closure_evidence\": \"Entrywise D_col/D_row balls with manifest\", \"severity\": \"CRITICAL\", \"status\": \"OPEN\", \"title\": \"Endpoint/interior enclosure not executed on Frozen107 target\"}",
+      "evidence_origin": "reconstructed_database/WU088_HH_R31AO_LITERATURE_DATABASE_RECONSTRUCTED_20261001_v1.zip:blockers_EXPLICIT_REPORT_EXAMPLES.csv"
+    },
+    {
+      "example_table": "blockers",
+      "row_number": 3,
+      "row_json": "{\"blocker_id\": \"B03\", \"category\": \"format\", \"closure_evidence\": \"Producer ABI manifest + golden raw fixtures\", \"severity\": \"CRITICAL\", \"status\": \"OPEN\", \"title\": \"Raw longdouble/complex decoder ABI not verified\"}",
+      "evidence_origin": "reconstructed_database/WU088_HH_R31AO_LITERATURE_DATABASE_RECONSTRUCTED_20261001_v1.zip:blockers_EXPLICIT_REPORT_EXAMPLES.csv"
+    },
+    {
+      "example_table": "blockers",
+      "row_number": 4,
+      "row_json": "{\"blocker_id\": \"B04\", \"category\": \"numerical\", \"closure_evidence\": \"Exact dyadic Gram logs + outward radical bounds\", \"severity\": \"HIGH\", \"status\": \"OPEN\", \"title\": \"Gram eta / exact represented-gap interval not computed\"}",
+      "evidence_origin": "reconstructed_database/WU088_HH_R31AO_LITERATURE_DATABASE_RECONSTRUCTED_20261001_v1.zip:blockers_EXPLICIT_REPORT_EXAMPLES.csv"
+    },
+    {
+      "example_table": "blockers",
+      "row_number": 5,
+      "row_json": "{\"blocker_id\": \"B05\", \"category\": \"performance\", \"closure_evidence\": \"Pilot width/cost satisfying lower-gap acceptance\", \"severity\": \"HIGH\", \"status\": \"OPEN\", \"title\": \"Enclosure width/performance may miss decision budget\"}",
+      "evidence_origin": "reconstructed_database/WU088_HH_R31AO_LITERATURE_DATABASE_RECONSTRUCTED_20261001_v1.zip:blockers_EXPLICIT_REPORT_EXAMPLES.csv"
+    }
+  ],
+  "missing": [
+    {
+      "gap_id": "MISSING:C11",
+      "source_id": "C11",
+      "artifact_id": null,
+      "gap_scope": "RAW_SOURCE_PACKAGE",
+      "requested_identity": "INTLAB 14.1 source package",
+      "failure_class": "PERSONAL_PAID_LICENSE_REQUIRED",
+      "remaining_gap": "Raw code package unavailable through authorized public routes; licence conditions retained.",
+      "minimum_next_action": "User obtains a personal authorised package and supplies its bytes; no purchase or registration performed.",
+      "evidence_origin": "catalog/missing_sources.json",
+      "prevents_acquisition_completion_all": 1
+    },
+    {
+      "gap_id": "MISSING:C12",
+      "source_id": "C12",
+      "artifact_id": null,
+      "gap_scope": "RAW_SOURCE_PACKAGE",
+      "requested_identity": "COSY INFINITY 10.2 source package",
+      "failure_class": "PERSONAL_REGISTRATION_SIGNED_LICENSE_REQUIRED",
+      "remaining_gap": "Latest documented stable target and official 110-page manual acquired; source is restricted to registered users.",
+      "minimum_next_action": "User supplies personally licensed source; CINTE does not replace COSY.",
+      "evidence_origin": "catalog/missing_sources.json",
+      "prevents_acquisition_completion_all": 1
+    },
+    {
+      "gap_id": "MISSING:ORIGINAL_DEEP_RESEARCH_DB",
+      "source_id": null,
+      "artifact_id": "ORIGINAL_DEEP_RESEARCH_DB",
+      "gap_scope": "ORIGINAL_RESEARCH_DATABASE",
+      "requested_identity": "WU088_HH_R31AO_LITERATURE_DATABASE_20261001.zip",
+      "failure_class": "ORIGINAL_BYTES_NOT_FOUND_IN_ACCESSIBLE_ARTIFACTS",
+      "remaining_gap": "Library exact/short filename searches, Drive search and specified Dropbox folder did not reveal the original ZIP. Partial report/schema reconstruction is explicitly distinct.",
+      "minimum_next_action": "If the originating thread still exposes the ZIP, supply it for exact hash verification.",
+      "evidence_origin": "catalog/missing_sources.json",
+      "prevents_acquisition_completion_all": 1
+    }
+  ],
+  "report_sections": [
+    {
+      "section_id": "REPORT-001",
+      "heading": "WU088_HH R31AO Endpoint Enclosure and Numerical-Certificate Program: Literature Survey, Gap Analysis, and Research Database",
+      "start_line": 1,
+      "end_line": 2
+    },
+    {
+      "section_id": "REPORT-002",
+      "heading": "Executive summary",
+      "start_line": 3,
+      "end_line": 61
+    },
+    {
+      "section_id": "REPORT-003",
+      "heading": "Validated enclosure theory and numerical methods",
+      "start_line": 62,
+      "end_line": 63
+    },
+    {
+      "section_id": "REPORT-004",
+      "heading": "Ball arithmetic and Petras-type validated integration",
+      "start_line": 64,
+      "end_line": 101
+    },
+    {
+      "section_id": "REPORT-005",
+      "heading": "Hermite, Gaussian and incomplete-gamma endpoint structure",
+      "start_line": 102,
+      "end_line": 201
+    },
+    {
+      "section_id": "REPORT-006",
+      "heading": "Complex holomorphy and product ellipses",
+      "start_line": 202,
+      "end_line": 278
+    },
+    {
+      "section_id": "REPORT-007",
+      "heading": "Quadrature pitfalls and tail design",
+      "start_line": 279,
+      "end_line": 321
+    },
+    {
+      "section_id": "REPORT-008",
+      "heading": "Exact data, norm certification, and decision propagation",
+      "start_line": 322,
+      "end_line": 323
+    },
+    {
+      "section_id": "REPORT-009",
+      "heading": "NPY, long double and exact decoding",
+      "start_line": 324,
+      "end_line": 368
+    },
+    {
+      "section_id": "REPORT-010",
+      "heading": "Gram enclosure instead of generic SVD",
+      "start_line": 369,
+      "end_line": 455
+    },
+    {
+      "section_id": "REPORT-011",
+      "heading": "Outward propagation of \\(\\epsilon\\) and Pareto logic",
+      "start_line": 456,
+      "end_line": 530
+    },
+    {
+      "section_id": "REPORT-012",
+      "heading": "Software ecosystem and implementation architecture",
+      "start_line": 531,
+      "end_line": 599
+    },
+    {
+      "section_id": "REPORT-013",
+      "heading": "Reproducible database, test architecture, and provenance",
+      "start_line": 600,
+      "end_line": 603
+    },
+    {
+      "section_id": "REPORT-014",
+      "heading": "Machine-actionable schema",
+      "start_line": 604,
+      "end_line": 715
+    },
+    {
+      "section_id": "REPORT-015",
+      "heading": "CSV-ready examples",
+      "start_line": 716,
+      "end_line": 736
+    },
+    {
+      "section_id": "REPORT-016",
+      "heading": "Entity relationship design",
+      "start_line": 737,
+      "end_line": 796
+    },
+    {
+      "section_id": "REPORT-017",
+      "heading": "Required fail-closed test suite",
+      "start_line": 797,
+      "end_line": 835
+    },
+    {
+      "section_id": "REPORT-018",
+      "heading": "Roadmap, risks, effort, and prioritized literature",
+      "start_line": 836,
+      "end_line": 837
+    },
+    {
+      "section_id": "REPORT-019",
+      "heading": "Literature priority",
+      "start_line": 838,
+      "end_line": 855
+    },
+    {
+      "section_id": "REPORT-020",
+      "heading": "Risk matrix",
+      "start_line": 856,
+      "end_line": 874
+    },
+    {
+      "section_id": "REPORT-021",
+      "heading": "Effort and cost envelope",
+      "start_line": 875,
+      "end_line": 895
+    },
+    {
+      "section_id": "REPORT-022",
+      "heading": "Milestone timeline",
+      "start_line": 896,
+      "end_line": 937
+    }
+  ],
+  "catalog_status": [
+    {
+      "acquisition_status": "ACQUIRED",
+      "n": 58
+    },
+    {
+      "acquisition_status": "ACQUIRED_AUTHOR_MANUSCRIPT",
+      "n": 1
+    },
+    {
+      "acquisition_status": "ACQUIRED_EQUIVALENT_CONTENT_REFERENCE",
+      "n": 5
+    },
+    {
+      "acquisition_status": "ACQUIRED_INSTITUTIONAL_PUBLISHER_SCAN",
+      "n": 1
+    },
+    {
+      "acquisition_status": "ACQUIRED_OFFICIAL_UNVERSIONED_SOURCE_ARCHIVE",
+      "n": 1
+    },
+    {
+      "acquisition_status": "NOT_ACQUIRED_PERSONAL_PAID_LICENSE_REQUIRED",
+      "n": 1
+    },
+    {
+      "acquisition_status": "NOT_ACQUIRED_SOURCE_REGISTRATION_REQUIRED_DOCUMENTATION_ACQUIRED",
+      "n": 1
+    }
+  ],
+  "blockers": [
+    {
+      "blocker": "B01",
+      "n": 11,
+      "sources": "C01,C02,C03,C08,C09,C10,C13,P01,P02,P04,P08"
+    },
+    {
+      "blocker": "B02",
+      "n": 13,
+      "sources": "C01,C05,C06,C07,C12,P01,P03,P04,P05,P06,P09,P10,P11"
+    },
+    {
+      "blocker": "B03",
+      "n": 1,
+      "sources": "C04"
+    },
+    {
+      "blocker": "B04",
+      "n": 8,
+      "sources": "C01,C04,C08,C09,C11,C13,P07,P08"
+    },
+    {
+      "blocker": "B05",
+      "n": 18,
+      "sources": "C01,C02,C03,C05,C06,C07,C10,C11,C12,C13,P01,P02,P03,P04,P05,P08,P09,P11"
+    },
+    {
+      "blocker": "B06",
+      "n": 2,
+      "sources": "P06,P10"
+    }
+  ],
+  "report_documents": [
+    {
+      "document_id": "ORIGINAL_REPORT",
+      "original_package_path": "previous_v1/research_report/DEEP_RESEARCH_REPORT.md",
+      "sha256": "ae78d5b5a5acd9ff7945874598aee8a7a114dbb88eeb2538cf8465c634aaf5a7",
+      "chars": 46034
+    }
+  ],
+  "recovered_databases": []
+}

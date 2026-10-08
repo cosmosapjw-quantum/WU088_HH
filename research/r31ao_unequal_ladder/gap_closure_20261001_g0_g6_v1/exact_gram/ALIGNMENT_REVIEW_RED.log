@@ -1,0 +1,36 @@
+test_binary64_alignment_rejected_before_oversized_shift (exact_gram.test_resource_review.ResourceReviewTests.test_binary64_alignment_rejected_before_oversized_shift) ... 
+  test_binary64_alignment_rejected_before_oversized_shift (exact_gram.test_resource_review.ResourceReviewTests.test_binary64_alignment_rejected_before_oversized_shift) (q=Fraction(1606938044258990275541962092341162602522202993782792835301376, 1)) ... FAIL
+  test_binary64_alignment_rejected_before_oversized_shift (exact_gram.test_resource_review.ResourceReviewTests.test_binary64_alignment_rejected_before_oversized_shift) (q=Fraction(1, 1606938044258990275541962092341162602522202993782792835301376)) ... FAIL
+test_perfect_square_shortcut_obeys_work_bit_cap (exact_gram.test_resource_review.ResourceReviewTests.test_perfect_square_shortcut_obeys_work_bit_cap) ... ok
+test_small_perfect_square_with_sufficient_budget (exact_gram.test_resource_review.ResourceReviewTests.test_small_perfect_square_with_sufficient_budget) ... ok
+
+======================================================================
+FAIL: test_binary64_alignment_rejected_before_oversized_shift (exact_gram.test_resource_review.ResourceReviewTests.test_binary64_alignment_rejected_before_oversized_shift) (q=Fraction(1606938044258990275541962092341162602522202993782792835301376, 1))
+----------------------------------------------------------------------
+exact_gram.engine.ResourceLimit: binary64 rounding shift cap exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/test_resource_review.py", line 18, in test_binary64_alignment_rejected_before_oversized_shift
+    with self.subTest(q=q), self.assertRaisesRegex(ResourceLimit,'alignment'):
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "alignment" does not match "binary64 rounding shift cap exceeded"
+
+======================================================================
+FAIL: test_binary64_alignment_rejected_before_oversized_shift (exact_gram.test_resource_review.ResourceReviewTests.test_binary64_alignment_rejected_before_oversized_shift) (q=Fraction(1, 1606938044258990275541962092341162602522202993782792835301376))
+----------------------------------------------------------------------
+exact_gram.engine.ResourceLimit: binary64 rounding shift cap exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_gram/test_resource_review.py", line 18, in test_binary64_alignment_rejected_before_oversized_shift
+    with self.subTest(q=q), self.assertRaisesRegex(ResourceLimit,'alignment'):
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "alignment" does not match "binary64 rounding shift cap exceeded"
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=2)

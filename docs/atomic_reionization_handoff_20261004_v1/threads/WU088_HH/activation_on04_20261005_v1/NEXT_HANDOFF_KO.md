@@ -1,0 +1,13 @@
+# HH-ON04 -> HH-ON05
+
+현재useractivation을계승한다. 새승인대기로돌아가지않는다. RESULT_SUMMARY,START,S0_SWITCH_DECISION,LATE_REI_ACK부터읽고전체ZIP의REPORT§5/7,THEORY§5,REPRODUCE_KO를사용한다. Git요약폴더는standalonecrate가아니다.
+
+이번8개이력/1600acceptedchildren/66root/31532assertions/14tests는닫힌유한검증이다. 원ON03/ON02/기존F08/FLRW08과같은검사를의존성없이반복하지않는다. 다음에는missingfineOFF또는실제event-awaregrid의changedsource만계산하여matchedHHcontrast를판정한다. fineLCS의trajectory변화만으로HHcontrast오차상계를추론하지않는다.
+
+13.6과13.598434599702eV를구분하고birth/threshold/두기하의공통격자를결속한다. 아래문턱number+energyretained이며이중loss/export없음. localestimator/energyPASS를작은HHdifference의정확도로승격하지않는다. angular/continuousreference는아직미실행이다.
+
+canonicalF08 pointRHS에HH만더하는수정은금지한다. 같은provider의intervalRHS/Jet2/primary_stage_root,별도HHcounter,heat/binding,immutablemodelbudget와checkpointidentity를동시에묶는다. sourcecache와실제latestfixedenergyproducer를혼동하지않는다. owner원F08전체결과는HH-OFF이고이번HH-ON의8%prefix와별개다. source/density/SED/IC/기하/허용오차는임의변경없다.
+
+seal후REI8629a630 FLRW08공통eventgrid계약을수신했다. 다른finitebeam/pulse모형이며그수치목표/보조escapeFAIL을S0HH에전용하지않는다. 이미수신한연구를다시전수실행하지않고필요한원칙만scope를명시해이용한다.
+
+같은HHbranchappend-only/nonforce,기존PR33와REI반환PR83,Drive/Dropboxcreate-only. legacy24/289·265unbounded·epsilonnull·B22OPEN·consumedscopes보존. 전체F09campaign은REI소유,physical/production/root/flowadmission은별도다.

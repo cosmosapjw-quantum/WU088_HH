@@ -1,0 +1,698 @@
+{
+  "schema": "WU088_R31AO_AUTHORIZED_UNEQUAL_ORDER_STUDY_RETURN_V1",
+  "created_utc": "2026-09-30T11:01:05.771100+00:00",
+  "actual_authorization_evidence": "AUTHORIZATION_EVIDENCE.json",
+  "actual_authorization_envelope": {
+    "schema": "WU088_R31AO_Z075_B128_B160_ORDER_STUDY_AUTHORIZATION_V1",
+    "authorize": true,
+    "action": "AUTHORIZE_R31AO_Z075_B128_B160_ORDER_STUDY",
+    "scope_sha256": "b0abd297847c17741b29a67fae02b9cfd5ddb3fbbe676163867675928cf54a4c",
+    "one_shot": true
+  },
+  "authorization_consumed": true,
+  "first_scientific_output_identity": {
+    "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/od/B128_z0.75/pair_00_00.npz",
+    "sha256": "78e55d5fd57bb7eb1999a238a8bc7acdda28285c53ca3b58c48d3c60867b8196",
+    "bytes": 1636,
+    "stage": "B128_OD",
+    "output_mtime_ns": 1790765412742508126,
+    "observed_utc": "2026-09-30T10:50:12.770490+00:00"
+  },
+  "one_shot_state": "CONSUMED_FOUR_STAGES_COMPLETE",
+  "executed_commit": "0a099f8436999331791944170bbe6d113e697fb1",
+  "executed_tree": "4db2c3643f976e1ee1294c531bea4a11153576b4",
+  "reviewed_remote_head_same": true,
+  "successor_diff": [],
+  "scope_reviewed_commit_is_preflight_base_unchanged": "0046d310962878a3563e9e813146188f046d1e69",
+  "pre_output_verification": "PRE_OUTPUT_VERIFICATION.json",
+  "pre_output_scope_sha256": "b0abd297847c17741b29a67fae02b9cfd5ddb3fbbe676163867675928cf54a4c",
+  "canonical_directory_unchanged": "research/r31ao_unequal_ladder/ncp_preflight_20260930",
+  "comparator_lock_unchanged": true,
+  "source_contract_unchanged": true,
+  "producer_binary_source_identity": "PRODUCER_CACHED_BUILD_IDENTITY.json",
+  "environment": "ACTUAL_STAGE_ENVIRONMENT.json",
+  "transaction_argv": "TRANSACTION.argv.json",
+  "transaction_exit": 0,
+  "stages": [
+    {
+      "stage": "B128_OD",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "completion/mixed_h/od_run.py",
+        "--n",
+        "128",
+        "--z",
+        "0.75",
+        "--workers",
+        "1"
+      ],
+      "cwd": "/root/WU088_R31AL_Z075_RUNTIME_20260930",
+      "started_utc": "2026-09-30T10:50:10.154821+00:00",
+      "pid": 320411,
+      "exit_code": 0,
+      "completed_utc": "2026-09-30T10:51:32.684249+00:00",
+      "wall_seconds": 82.5235938479891,
+      "assembled_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/od/B128_z0.75/ASSEMBLED_OD.npz",
+      "assembled_sha256": "37333301225956e53754caa163416c3cae5a4e8f51cb31b0b3bb77ece9931cc2",
+      "assembled_bytes": 12035,
+      "pair_checkpoint_count": 144
+    },
+    {
+      "stage": "B128_JVP",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "completion/mixed_derivative/run.py",
+        "--n",
+        "128",
+        "--z",
+        "0.75"
+      ],
+      "cwd": "/root/WU088_R31AL_Z075_RUNTIME_20260930",
+      "started_utc": "2026-09-30T10:51:33.778932+00:00",
+      "pid": 320685,
+      "exit_code": 0,
+      "completed_utc": "2026-09-30T10:52:33.164704+00:00",
+      "wall_seconds": 59.37631286898977,
+      "assembled_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/B128_z0.75/ASSEMBLED.npz",
+      "assembled_sha256": "375fa04f213595d6b41bad91dcd5872446d17e4c3a47cbba7b297da3d6132911",
+      "assembled_bytes": 50467,
+      "pair_checkpoint_count": 144
+    },
+    {
+      "stage": "B160_OD",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "completion/mixed_h/od_run.py",
+        "--n",
+        "160",
+        "--z",
+        "0.75",
+        "--workers",
+        "1"
+      ],
+      "cwd": "/root/WU088_R31AL_Z075_RUNTIME_20260930",
+      "started_utc": "2026-09-30T10:52:34.268167+00:00",
+      "pid": 320876,
+      "exit_code": 0,
+      "completed_utc": "2026-09-30T10:54:39.047450+00:00",
+      "wall_seconds": 124.77374093298567,
+      "assembled_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/od/B160_z0.75/ASSEMBLED_OD.npz",
+      "assembled_sha256": "85d93cb9c568c9a1ad66574d79ec500187dd85a7a5288f7db3921a1391bba36c",
+      "assembled_bytes": 12171,
+      "pair_checkpoint_count": 144
+    },
+    {
+      "stage": "B160_JVP",
+      "argv": [
+        "/root/wu088_hh_ncp_work_v2/venv/bin/python",
+        "completion/mixed_derivative/run.py",
+        "--n",
+        "160",
+        "--z",
+        "0.75"
+      ],
+      "cwd": "/root/WU088_R31AL_Z075_RUNTIME_20260930",
+      "started_utc": "2026-09-30T10:54:40.127441+00:00",
+      "pid": 321175,
+      "exit_code": 0,
+      "completed_utc": "2026-09-30T10:56:10.362142+00:00",
+      "wall_seconds": 90.22874027301441,
+      "assembled_path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/B160_z0.75/ASSEMBLED.npz",
+      "assembled_sha256": "3c2fd79a75bd4e4886069a8b5fd3dc3ebeb46386e16017c76a9247d0feebd6cb",
+      "assembled_bytes": 50512,
+      "pair_checkpoint_count": 144
+    }
+  ],
+  "stage_evidence": [
+    {
+      "stage": "B128_OD",
+      "argv": "B128_OD.argv.json",
+      "stdout": "B128_OD.stdout",
+      "stderr": "B128_OD.stderr",
+      "exit": "B128_OD.exit",
+      "checkpoint_manifest": "B128_OD.RAW_CHECKPOINT_MANIFEST.json",
+      "preserved_raw_directory": "raw/B128_OD"
+    },
+    {
+      "stage": "B128_JVP",
+      "argv": "B128_JVP.argv.json",
+      "stdout": "B128_JVP.stdout",
+      "stderr": "B128_JVP.stderr",
+      "exit": "B128_JVP.exit",
+      "checkpoint_manifest": "B128_JVP.RAW_CHECKPOINT_MANIFEST.json",
+      "preserved_raw_directory": "raw/B128_JVP"
+    },
+    {
+      "stage": "B160_OD",
+      "argv": "B160_OD.argv.json",
+      "stdout": "B160_OD.stdout",
+      "stderr": "B160_OD.stderr",
+      "exit": "B160_OD.exit",
+      "checkpoint_manifest": "B160_OD.RAW_CHECKPOINT_MANIFEST.json",
+      "preserved_raw_directory": "raw/B160_OD"
+    },
+    {
+      "stage": "B160_JVP",
+      "argv": "B160_JVP.argv.json",
+      "stdout": "B160_JVP.stdout",
+      "stderr": "B160_JVP.stderr",
+      "exit": "B160_JVP.exit",
+      "checkpoint_manifest": "B160_JVP.RAW_CHECKPOINT_MANIFEST.json",
+      "preserved_raw_directory": "raw/B160_JVP"
+    }
+  ],
+  "B192_reused": "B192_REUSE_IDENTITY.json",
+  "B192_producer_commands": 0,
+  "science_producer_command_count": 4,
+  "new_order_nodes": 2,
+  "science_node_count": 2,
+  "science_geometry_count": 1,
+  "new_independent_geometry_validation_count": 0,
+  "primary_secondary_shared_geometry": true,
+  "two_orders_are_not_two_independent_geometry_validations": true,
+  "postprocessing_invocations": 1,
+  "postprocessing_exit": 0,
+  "postprocessing_argv": "POSTPROCESSING.argv.json",
+  "postprocessing_env": "POSTPROCESSING.env.json",
+  "postprocessing_stdout": "POSTPROCESSING.stdout",
+  "postprocessing_stderr": "POSTPROCESSING.stderr",
+  "finite_order_verdict_status": "B_ORDER_VERDICT_STABLE_OVER_128_160_192",
+  "order_primary_secondary_errors_and_residuals": {
+    "128": {
+      "primary_verdict": "PARETO_SUPPORTED_AT_SELECTED_HOLDOUT",
+      "secondary_verdict": "REFINED_PARETO_SUPPORTED_AT_Z075",
+      "model_errors": {
+        "R31AK": {
+          "E_O": 0.009579912209243702,
+          "E_dotO_per_ta": 0.005981954699572535,
+          "E_Dcol_per_ta": 0.05052961080579241,
+          "E_Drow_per_ta": 0.05457288695073427,
+          "E_K_per_ta": 0.052504998177833564,
+          "candidate_metric_identity_residual_2norm": 4.105534495828866e-17,
+          "E_Dmax_per_ta": 0.05457288695073427
+        },
+        "R31Z": {
+          "E_O": 0.1549332384409459,
+          "E_dotO_per_ta": 0.15682057135217448,
+          "E_Dcol_per_ta": 0.3728084397238187,
+          "E_Drow_per_ta": 0.3880298433578648,
+          "E_K_per_ta": 0.3723284479233531,
+          "candidate_metric_identity_residual_2norm": 6.859479045513906e-17,
+          "E_Dmax_per_ta": 0.3880298433578648
+        },
+        "R31AD": {
+          "E_O": 0.04726608864692629,
+          "E_dotO_per_ta": 0.12418625483021963,
+          "E_Dcol_per_ta": 0.10712582450924109,
+          "E_Drow_per_ta": 0.14239347580739511,
+          "E_K_per_ta": 0.10963742810946862,
+          "candidate_metric_identity_residual_2norm": 4.8087422064849303e-17,
+          "E_Dmax_per_ta": 0.14239347580739511
+        }
+      },
+      "direct_metric_identity_residual_primary_arithmetic": 6.822976160477003e-19,
+      "direct_metric_identity_residual_secondary_arithmetic": 8.859231025267866e-17,
+      "metric_residual_is_source_error_bound": false,
+      "metric_arithmetic": "Unchanged frozen parent complex128 diagnostic comparison; raw order differences and their norms remain complex256/longdouble.",
+      "comparison_tolerance_per_ta": 1e-10,
+      "weighted_score_used": false
+    },
+    "160": {
+      "primary_verdict": "PARETO_SUPPORTED_AT_SELECTED_HOLDOUT",
+      "secondary_verdict": "REFINED_PARETO_SUPPORTED_AT_Z075",
+      "model_errors": {
+        "R31AK": {
+          "E_O": 0.009579905968829369,
+          "E_dotO_per_ta": 0.005981946791104986,
+          "E_Dcol_per_ta": 0.05052959279736905,
+          "E_Drow_per_ta": 0.054572841348163335,
+          "E_K_per_ta": 0.0525049660383374,
+          "candidate_metric_identity_residual_2norm": 4.105534495828866e-17,
+          "E_Dmax_per_ta": 0.054572841348163335
+        },
+        "R31Z": {
+          "E_O": 0.15493322390548506,
+          "E_dotO_per_ta": 0.15682055951107762,
+          "E_Dcol_per_ta": 0.37280840873071347,
+          "E_Drow_per_ta": 0.3880297817308315,
+          "E_K_per_ta": 0.37232840154070945,
+          "candidate_metric_identity_residual_2norm": 6.859479045513906e-17,
+          "E_Dmax_per_ta": 0.3880297817308315
+        },
+        "R31AD": {
+          "E_O": 0.04726608188924396,
+          "E_dotO_per_ta": 0.12418624543872027,
+          "E_Dcol_per_ta": 0.10712579696884503,
+          "E_Drow_per_ta": 0.14239342767274085,
+          "E_K_per_ta": 0.10963738605630662,
+          "candidate_metric_identity_residual_2norm": 4.8087422064849303e-17,
+          "E_Dmax_per_ta": 0.14239342767274085
+        }
+      },
+      "direct_metric_identity_residual_primary_arithmetic": 8.340571294422038e-19,
+      "direct_metric_identity_residual_secondary_arithmetic": 8.4926487912358e-17,
+      "metric_residual_is_source_error_bound": false,
+      "metric_arithmetic": "Unchanged frozen parent complex128 diagnostic comparison; raw order differences and their norms remain complex256/longdouble.",
+      "comparison_tolerance_per_ta": 1e-10,
+      "weighted_score_used": false
+    },
+    "192": {
+      "primary_verdict": "PARETO_SUPPORTED_AT_SELECTED_HOLDOUT",
+      "secondary_verdict": "REFINED_PARETO_SUPPORTED_AT_Z075",
+      "model_errors": {
+        "R31AK": {
+          "E_O": 0.009579906030744682,
+          "E_dotO_per_ta": 0.0059819468673832496,
+          "E_Dcol_per_ta": 0.050529592974761145,
+          "E_Drow_per_ta": 0.05457284174805037,
+          "E_K_per_ta": 0.05250496632934204,
+          "candidate_metric_identity_residual_2norm": 4.105534495828866e-17,
+          "E_Dmax_per_ta": 0.05457284174805037
+        },
+        "R31Z": {
+          "E_O": 0.15493322404212043,
+          "E_dotO_per_ta": 0.15682055961392274,
+          "E_Dcol_per_ta": 0.37280840902277684,
+          "E_Drow_per_ta": 0.3880297823244174,
+          "E_K_per_ta": 0.3723284019854093,
+          "candidate_metric_identity_residual_2norm": 6.859479045513906e-17,
+          "E_Dmax_per_ta": 0.3880297823244174
+        },
+        "R31AD": {
+          "E_O": 0.04726608197403247,
+          "E_dotO_per_ta": 0.1241862455278787,
+          "E_Dcol_per_ta": 0.10712579723335088,
+          "E_Drow_per_ta": 0.1423934281278521,
+          "E_K_per_ta": 0.10963738645582422,
+          "candidate_metric_identity_residual_2norm": 4.8087422064849303e-17,
+          "E_Dmax_per_ta": 0.1423934281278521
+        }
+      },
+      "direct_metric_identity_residual_primary_arithmetic": 4.700260169972803e-19,
+      "direct_metric_identity_residual_secondary_arithmetic": 1.15333442561526e-16,
+      "metric_residual_is_source_error_bound": false,
+      "metric_arithmetic": "Unchanged frozen parent complex128 diagnostic comparison; raw order differences and their norms remain complex256/longdouble.",
+      "comparison_tolerance_per_ta": 1e-10,
+      "weighted_score_used": false
+    }
+  },
+  "order_array_source_identities": {
+    "128": {
+      "OD": "37333301225956e53754caa163416c3cae5a4e8f51cb31b0b3bb77ece9931cc2",
+      "JVP": "375fa04f213595d6b41bad91dcd5872446d17e4c3a47cbba7b297da3d6132911",
+      "order": 128,
+      "z_decimal": "0.75",
+      "OD_JVP_O_gap_raw_norms": {
+        "spectral_2": "7.634316743206472937e-19",
+        "frobenius": "1.03996523494529753355e-18",
+        "max_abs": "3.7659093408133185378e-19"
+      },
+      "array_contract": {
+        "O": {
+          "shape": [
+            47,
+            2
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "dbe5469498a08f9086509045699f4e1046d6e24e1a8641936a734dd5c30b87a0"
+        },
+        "D_col": {
+          "shape": [
+            47,
+            2
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "bbed6baa1a7fa8080e0ba52c22cc004fbb5ef34f37d5cfcb3f5b3d7f41200e88"
+        },
+        "D_row": {
+          "shape": [
+            2,
+            47
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "12657dabdafc4126e0feaeadb21ab86e3ae50c49c976aaabcc29a16d06a3d976"
+        },
+        "dotO": {
+          "shape": [
+            47,
+            2
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "3f0f30974a63c10f43a102136fd66ecb7bb7755be54184fd37959d451492b755"
+        }
+      }
+    },
+    "160": {
+      "OD": "85d93cb9c568c9a1ad66574d79ec500187dd85a7a5288f7db3921a1391bba36c",
+      "JVP": "3c2fd79a75bd4e4886069a8b5fd3dc3ebeb46386e16017c76a9247d0feebd6cb",
+      "order": 160,
+      "z_decimal": "0.75",
+      "OD_JVP_O_gap_raw_norms": {
+        "spectral_2": "5.123216412339932454e-19",
+        "frobenius": "6.5458266874630187454e-19",
+        "max_abs": "3.0637780028991455488e-19"
+      },
+      "array_contract": {
+        "O": {
+          "shape": [
+            47,
+            2
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "920e0c896ff053c6d61105f7bbae875783a2260b97b4cd0ab4b19ad7aaf7af60"
+        },
+        "D_col": {
+          "shape": [
+            47,
+            2
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "2e5862554e647de7a4be28e2d3517f7f517dce5a9fcb0ff8ea22446bccd39dd1"
+        },
+        "D_row": {
+          "shape": [
+            2,
+            47
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "26afb851d606cf1e8721893603a710d5bb99565df1a2403348056ed9149bb618"
+        },
+        "dotO": {
+          "shape": [
+            47,
+            2
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "b8bed53664a521233ffbab1e702778064bc739e047156f4766ccc81cace79c2d"
+        }
+      }
+    },
+    "192": {
+      "OD": "7e7b5782cc698a364aeac608620e56c7bfdc64035ffe5dfee501608dae7970df",
+      "JVP": "53569e92875254e897a7e23b55620cca9c5acf9f86124dc0a73198ad41d1df87",
+      "order": 192,
+      "z_decimal": "0.75",
+      "OD_JVP_O_gap_raw_norms": {
+        "spectral_2": "3.204172975312310028e-19",
+        "frobenius": "4.2596074186597993254e-19",
+        "max_abs": "1.5227758462719580751e-19"
+      },
+      "array_contract": {
+        "O": {
+          "shape": [
+            47,
+            2
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "bfc1d2b753381f5dbd682bf1141848a8736c2f2de31c1ca7ff055c65d91e61ea"
+        },
+        "D_col": {
+          "shape": [
+            47,
+            2
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "3225c65b3c5b552104b59219c134fd7305e8412aa39aee84ff7ba57960d0efff"
+        },
+        "D_row": {
+          "shape": [
+            2,
+            47
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "61accb0bd67f885fde209f373e22d818b3314a1bc730910942da1dbdaa80e38c"
+        },
+        "dotO": {
+          "shape": [
+            47,
+            2
+          ],
+          "raw_dtype": "complex256",
+          "array_bytes_sha256": "b75634c38ecc7a47b574e2de76271f8faa539405d80823f864a09d31d2748c7f"
+        }
+      }
+    }
+  },
+  "raw_difference_artifact": {
+    "path": "/root/WU088_HH_R31AO_FOLLOWUP_20260930/research/r31ao_unequal_ladder/authorized_order_study_20260930/FINITE_ORDER_REPLAY.differences.npz",
+    "sha256": "f51fd1687eef5e6ef18d625c70ac99b8e2180d7aafeb3f1cf14d95582e6d3c9f",
+    "bytes": 32726,
+    "dtype": "complex256"
+  },
+  "difference_norms_dtype_hashes_and_diagnostics": {
+    "O": {
+      "Delta128160_norms_longdouble_decimal": {
+        "spectral_2": "2.1157861828032810715e-07",
+        "frobenius": "2.6591879097041286185e-07",
+        "max_abs": "1.1176778548799390418e-07"
+      },
+      "Delta160192_norms_longdouble_decimal": {
+        "spectral_2": "2.6082590407774308009e-09",
+        "frobenius": "3.3517678234969547125e-09",
+        "max_abs": "1.235840448883559687e-09"
+      },
+      "raw_dtype": "complex256",
+      "shape": [
+        47,
+        2
+      ],
+      "Delta128160_array_bytes_sha256": "fa59c57d6567458998ca1319744b6137c331a87a81884a34fc9cca52058366d2",
+      "Delta160192_array_bytes_sha256": "13dcd4b2c1777b54401d1f1bbab674b488738b69a89d84f26e01cab1418c62a0",
+      "conditional": {
+        "rigorous": false,
+        "stable_matrix_error_direction_required": true,
+        "scalar_solver_arithmetic": "binary64 conditional scalar diagnostic; raw norms retained as longdouble decimal strings",
+        "rho_longdouble_decimal": "81.11871366015237529",
+        "status": "CONDITIONAL_UNEQUAL_RATIO_ASYMPTOTIC_DIAGNOSTIC",
+        "rho_norm": 81.11871366015238,
+        "p_conditional": 19.629570706981212,
+        "E192_conditional": 7.4877069024078e-11,
+        "E160_conditional": 2.6831361098015086e-09,
+        "stable_error_direction_required": true
+      },
+      "direction": {
+        "status": "NO_POSITIVE_SCALAR_MINIMIZER",
+        "alignment": "-0.23585613893259104853",
+        "best_positive_scalar_fit": null,
+        "scalar_fit_residual": null,
+        "positive_fit_infimum_frobenius_at_alpha_zero": "2.6591879097041286185e-07",
+        "certification_threshold": null
+      }
+    },
+    "dotO": {
+      "Delta128160_norms_longdouble_decimal": {
+        "spectral_2": "4.2507190686085768612e-08",
+        "frobenius": "5.111882101715988765e-08",
+        "max_abs": "2.2772163098999915438e-08"
+      },
+      "Delta160192_norms_longdouble_decimal": {
+        "spectral_2": "4.677854664916156336e-10",
+        "frobenius": "5.591651238658771022e-10",
+        "max_abs": "2.1512754093510642755e-10"
+      },
+      "raw_dtype": "complex256",
+      "shape": [
+        47,
+        2
+      ],
+      "Delta128160_array_bytes_sha256": "1defa0ad037f8760b69aabf92f062c54c9eca387e608ab81866a0b68cda1d772",
+      "Delta160192_array_bytes_sha256": "d6b6455e2608993024130c0bb07ceab7c6cb47def4159497baa40db5c7d0dcff",
+      "conditional": {
+        "rigorous": false,
+        "stable_matrix_error_direction_required": true,
+        "scalar_solver_arithmetic": "binary64 conditional scalar diagnostic; raw norms retained as longdouble decimal strings",
+        "rho_longdouble_decimal": "90.86898531689985174",
+        "status": "CONDITIONAL_UNEQUAL_RATIO_ASYMPTOTIC_DIAGNOSTIC",
+        "rho_norm": 90.86898531689984,
+        "p_conditional": 20.143574370319584,
+        "E192_conditional": 1.219639574795615e-11,
+        "E160_conditional": 4.799818622395718e-10,
+        "stable_error_direction_required": true
+      },
+      "direction": {
+        "status": "NO_POSITIVE_SCALAR_MINIMIZER",
+        "alignment": "-0.6218401272115578015",
+        "best_positive_scalar_fit": null,
+        "scalar_fit_residual": null,
+        "positive_fit_infimum_frobenius_at_alpha_zero": "5.111882101715988765e-08",
+        "certification_threshold": null
+      }
+    },
+    "D_col": {
+      "Delta128160_norms_longdouble_decimal": {
+        "spectral_2": "1.12152280693467238015e-07",
+        "frobenius": "1.38544956426173875e-07",
+        "max_abs": "5.916177607794772321e-08"
+      },
+      "Delta160192_norms_longdouble_decimal": {
+        "spectral_2": "1.3528480068833743644e-09",
+        "frobenius": "1.7257637216378512009e-09",
+        "max_abs": "6.530088902322793245e-10"
+      },
+      "raw_dtype": "complex256",
+      "shape": [
+        47,
+        2
+      ],
+      "Delta128160_array_bytes_sha256": "5773ff9304e9f547bb291c89a47bb63762fd30cae9c52ed12e42f7c678167b56",
+      "Delta160192_array_bytes_sha256": "004d77ad2dd734ed86110d4ebda17e0555cb6ad09c46d8cc0d32cb02b8527700",
+      "conditional": {
+        "rigorous": false,
+        "stable_matrix_error_direction_required": true,
+        "scalar_solver_arithmetic": "binary64 conditional scalar diagnostic; raw norms retained as longdouble decimal strings",
+        "rho_longdouble_decimal": "82.900872916121762825",
+        "status": "CONDITIONAL_UNEQUAL_RATIO_ASYMPTOTIC_DIAGNOSTIC",
+        "rho_norm": 82.90087291612177,
+        "p_conditional": 19.728013784843824,
+        "E192_conditional": 3.8126817546974886e-11,
+        "E160_conditional": 1.3909748244303491e-09,
+        "stable_error_direction_required": true
+      },
+      "direction": {
+        "status": "NO_POSITIVE_SCALAR_MINIMIZER",
+        "alignment": "-0.21689966695018013967",
+        "best_positive_scalar_fit": null,
+        "scalar_fit_residual": null,
+        "positive_fit_infimum_frobenius_at_alpha_zero": "1.38544956426173875e-07",
+        "certification_threshold": null
+      }
+    },
+    "D_row": {
+      "Delta128160_norms_longdouble_decimal": {
+        "spectral_2": "1.3314781552117060638e-07",
+        "frobenius": "1.6097516183946363244e-07",
+        "max_abs": "6.230160421943271112e-08"
+      },
+      "Delta160192_norms_longdouble_decimal": {
+        "spectral_2": "1.5132195430104859548e-09",
+        "frobenius": "2.0289567614683349067e-09",
+        "max_abs": "7.7545756489569359937e-10"
+      },
+      "raw_dtype": "complex256",
+      "shape": [
+        2,
+        47
+      ],
+      "Delta128160_array_bytes_sha256": "b52184f5b19d0a7740837df492b029cfd1f7552fa4870649c9dd23d0d0a0390a",
+      "Delta160192_array_bytes_sha256": "13eb57f983d5e5466db1ce8e770cc57c6846de7ba5071256dfa7af69ffdfbf02",
+      "conditional": {
+        "rigorous": false,
+        "stable_matrix_error_direction_required": true,
+        "scalar_solver_arithmetic": "binary64 conditional scalar diagnostic; raw norms retained as longdouble decimal strings",
+        "rho_longdouble_decimal": "87.989754121387229395",
+        "status": "CONDITIONAL_UNEQUAL_RATIO_ASYMPTOTIC_DIAGNOSTIC",
+        "rho_norm": 87.98975412138722,
+        "p_conditional": 19.997805273925223,
+        "E192_conditional": 4.054468961124895e-11,
+        "E160_conditional": 1.553764232621735e-09,
+        "stable_error_direction_required": true
+      },
+      "direction": {
+        "status": "NO_POSITIVE_SCALAR_MINIMIZER",
+        "alignment": "-0.3645322158853154079",
+        "best_positive_scalar_fit": null,
+        "scalar_fit_residual": null,
+        "positive_fit_infimum_frobenius_at_alpha_zero": "1.6097516183946363244e-07",
+        "certification_threshold": null
+      }
+    },
+    "K": {
+      "Delta128160_norms_longdouble_decimal": {
+        "spectral_2": "1.2124983342834044804e-07",
+        "frobenius": "1.4798841297427635483e-07",
+        "max_abs": "6.056367377054356316e-08"
+      },
+      "Delta160192_norms_longdouble_decimal": {
+        "spectral_2": "1.4270791706470510179e-09",
+        "frobenius": "1.8626047816098791206e-09",
+        "max_abs": "7.125313318379404998e-10"
+      },
+      "raw_dtype": "complex256",
+      "shape": [
+        47,
+        2
+      ],
+      "Delta128160_array_bytes_sha256": "4aa6ea39e9be09bf512c084aed7f305feb1e5d45ec36b91efab681eed2c0a0f3",
+      "Delta160192_array_bytes_sha256": "17818423b69239c4c70511cbde81241c07fa50d147f0fdb83b43519ccaa77e92",
+      "conditional": {
+        "rigorous": false,
+        "stable_matrix_error_direction_required": true,
+        "scalar_solver_arithmetic": "binary64 conditional scalar diagnostic; raw norms retained as longdouble decimal strings",
+        "rho_longdouble_decimal": "84.96363475991639741",
+        "status": "CONDITIONAL_UNEQUAL_RATIO_ASYMPTOTIC_DIAGNOSTIC",
+        "rho_norm": 84.96363475991639,
+        "p_conditional": 19.839330316254745,
+        "E192_conditional": 3.938851450619672e-11,
+        "E160_conditional": 1.4664676851532478e-09,
+        "stable_error_direction_required": true
+      },
+      "direction": {
+        "status": "NO_POSITIVE_SCALAR_MINIMIZER",
+        "alignment": "-0.29391720089858802768",
+        "best_positive_scalar_fit": null,
+        "scalar_fit_residual": null,
+        "positive_fit_infimum_frobenius_at_alpha_zero": "1.4798841297427635483e-07",
+        "certification_threshold": null
+      }
+    }
+  },
+  "arithmetic_separation": {
+    "order_difference_arrays": "complex256",
+    "order_difference_norms": "longdouble; original spectral/Frobenius/maxabs arithmetic and decimal string records",
+    "model_error_diagnostics": "unchanged parent complex128 diagnostic arithmetic",
+    "conditional_scalar_solver": "unchanged helper binary64; conditional only"
+  },
+  "conditional_diagnostic_status": "CONDITIONAL_UNEQUAL_RATIO_ASYMPTOTIC_DIAGNOSTIC",
+  "all_direction_statuses": {
+    "O": "NO_POSITIVE_SCALAR_MINIMIZER",
+    "dotO": "NO_POSITIVE_SCALAR_MINIMIZER",
+    "D_col": "NO_POSITIVE_SCALAR_MINIMIZER",
+    "D_row": "NO_POSITIVE_SCALAR_MINIMIZER",
+    "K": "NO_POSITIVE_SCALAR_MINIMIZER"
+  },
+  "stable_positive_matrix_error_direction_established": false,
+  "interpretation": "All represented block alignments are negative; no positive scalar minimizer. Normwise p/E values are formal conditional diagnostics only; their stable-direction assumption is not established by these data. They are not actual quadrature order or certified reference error. Common implementation bias can cancel in order differences.",
+  "rigorous": false,
+  "SOURCE_ACCURACY_BOUND": "SOURCE_ACCURACY_BOUND_UNAVAILABLE",
+  "rigorous_reference_certification": "RIGOROUS_REFERENCE_CERTIFICATION_BLOCKED_BY_MISSING_ERROR_BOUND",
+  "missing_rigorous_ingredients": [
+    "quadrature remainder / derivative bound",
+    "special-function enclosure",
+    "certified roundoff / transcendental bound",
+    "outward-rounded assembly bound"
+  ],
+  "conditional_estimates_used_as_rigorous_epsilon": false,
+  "decision_or_bridge_tolerance_or_metric_residual_used_as_epsilon": false,
+  "R31AK_model_frozen": true,
+  "z075_consumed_as_training": false,
+  "new_knot": false,
+  "automatic_successor_created": false,
+  "historical_or_preflight_tests_repeated": false,
+  "new_orders_or_geometries_beyond_scope": false,
+  "remaining_gates": {
+    "SOURCE_ACCURACY_BOUND": "SOURCE_ACCURACY_BOUND_UNAVAILABLE",
+    "full_cell_authority": "FULLCELL_AUTHORITY_INPUT_BLOCKED",
+    "complete_HH_fixed_Q_physical_invariance_reviewed": false,
+    "fixed_Q_model_definition": "ESTABLISHED__DOTQ_ZERO_BY_MODEL_DEFINITION_ONLY",
+    "BR01": "OPEN",
+    "BR02": "OPEN",
+    "independent_review_admitted": false,
+    "production_admitted": false,
+    "H_skip_admitted": false,
+    "interval_wide_accuracy_admitted": false,
+    "all_cell_refinement_gain_admitted": false,
+    "trajectory_admitted": false,
+    "transition_error_bound_admitted": false,
+    "source_certified": false,
+    "continuum_certified": false
+  },
+  "preservation_verification": "PRESERVATION_VERIFICATION.json",
+  "new_native_builds": 0,
+  "raw_restore_performed": false,
+  "RESTORE_VERIFIED": false,
+  "publication": "SEE_PUBLICATION_RECEIPT.json",
+  "backup": "SEE_DUAL_BACKUP_RECEIPT.json",
+  "stop": "Bounded transaction and unchanged postprocessing complete; publish and create-only backup, then stop.",
+  "bounded_execution_evidence_review": "BOUNDED_EXECUTION_EVIDENCE_REVIEW.md",
+  "bounded_execution_evidence_review_admitted_as_project_independent_review": false
+}

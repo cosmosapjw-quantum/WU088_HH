@@ -1,0 +1,92 @@
+{
+  "schema": "WU088_G4_CALLBACK_VERIFICATION_V1",
+  "created_utc": "2026-10-01T02:44:59.314004+00:00",
+  "status": "IMPLEMENTATION_DRAFT_BACKEND_RUNTIME_UNVERIFIED",
+  "B01_callback_part_closed": false,
+  "source_semantic_scope": "signed finite polynomial O/G primitive callback plus ideal exact-lift normalization and source-prescribed full post-real-domain D assembly",
+  "source_bound_formulas": "DERIVED_AND_MATCHED_TO_PINNED_S03",
+  "radial_derivatives": [
+    0,
+    1,
+    2
+  ],
+  "radial_degree_range": [
+    0,
+    8
+  ],
+  "synthetic_exact_static_suite": {
+    "command": "python -m unittest -v test_contract",
+    "tests": 6,
+    "passed": 6,
+    "failures": 0,
+    "independent_cartesian_polynomial_cases": 45,
+    "scope": "Python exact rational oracle and source-text/static contracts; not C++ execution"
+  },
+  "optional_high_precision_point_suite": {
+    "command": "python -m unittest -v test_high_precision_optional",
+    "tests": 3,
+    "passed": 0,
+    "skipped": 3,
+    "reason": "mpmath unavailable",
+    "rigorous": false
+  },
+  "tdd": {
+    "red": "validated_callback/TDD_RED.txt",
+    "red_reason": "implementation module absent before implementation",
+    "green": "validated_callback/TDD_GREEN.txt"
+  },
+  "static_checks": {
+    "pinned_api_names_present": true,
+    "python_ast_parse": true,
+    "shell_bash_n": true,
+    "source_archive_hashes_verified": 3,
+    "cpp_compilation": false
+  },
+  "native_synthetic_suite": {
+    "source": "validated_callback/native_synthetic.cpp",
+    "compiled": false,
+    "run": false,
+    "passed": null
+  },
+  "science_commands": 0,
+  "actual_HH_callback_evaluations": 0,
+  "actual_HH_integral_evaluations": 0,
+  "actual_HH_endpoint_evaluations": 0,
+  "native_builds": 0,
+  "numerical_certificate_runs": 0,
+  "source_mutations": 0,
+  "remaining_obligations": [
+    "Verified FLINT3.4.0 GMP6.3.0 MPFR4.2.2 build provenance and ABI",
+    "Compile and execute native callback and assembly synthetic cases",
+    "Independent odd-degree high-precision point checks (3 skipped; not passed)",
+    "Exact Frozen107 decoder to Rational input binding and sealed parameter identity",
+    "Uniform interior integration plus endpoint balls satisfying unnormalized assembly interface",
+    "Validated output serialization and final epsilon aggregation",
+    "Actual authorized endpoint/interior/full D numerical certificate"
+  ],
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false,
+  "independent_review_admitted": false,
+  "post_integral_assembly": {
+    "implemented": true,
+    "native_compiled": false,
+    "native_executed": false,
+    "synthetic_exact_static_tests": 7,
+    "passed": 7,
+    "failures": 0,
+    "red_log": "validated_callback/ASSEMBLY_TDD_RED.txt",
+    "green_log": "validated_callback/ASSEMBLY_TDD_GREEN.txt",
+    "real_Frozen107_input_binding_executed": false,
+    "final_D_balls_acquired": false,
+    "source_binding": "validated_callback/ASSEMBLY_SOURCE_BINDING.json"
+  },
+  "static_review_fixes": {
+    "unsupported_order_all_coefficients_indeterminate": true,
+    "native_refusal_test_allocates_two_coefficients": true,
+    "rational_parse_strong_exception_guarantee": true,
+    "rational_text_and_bit_limits": true,
+    "precision_hard_cap": 4096,
+    "native_regression_executed": false
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schema": "WU088_NATIVE_MPI_HOST_INCREMENT_V1",
+  "status": "IMPLEMENTED_CONTRACT_TESTED_RUNTIME_BLOCKED",
+  "owner_tests": {
+    "unique_tests": 10,
+    "exit_code": 0,
+    "log": "evidence/TEST_FINAL.log",
+    "scope": "real direct subprocess and detached-session process-group counterexample; cgroup API mocked in supervisor tests"
+  },
+  "syntax_all_python": "PASS",
+  "source_files": {
+    "cgroup_guard.py": {
+      "bytes": 7330,
+      "sha256": "e12cbbb73a78e95f8adbf51bd84758abdd1c816bfb1db66acbe64e8449d6cd77"
+    },
+    "containment_probe.py": {
+      "bytes": 2122,
+      "sha256": "798881fa4b6543b4ddf7e3008e11a052e47acba0a7d2506ba3a1efda0c99a02c"
+    },
+    "launcher.py": {
+      "bytes": 15250,
+      "sha256": "ec58911792d46cd30f40ee2adb13c9a0bcc048cc5785f8c06f8683a8ff910631"
+    },
+    "rank_guard.py": {
+      "bytes": 2306,
+      "sha256": "6931e7cbe16dee423e1d6b6e5e21c3b14b1fd3b9f58307b8faf33151df697308"
+    },
+    "test_host.py": {
+      "bytes": 5726,
+      "sha256": "affac68aa9e0a3a729badd337d9e5a5cf8a56fd871d90016dbe72ddf154d403d"
+    }
+  },
+  "actual_cgroup_containment_runs": 0,
+  "actual_MPI_runs": 0,
+  "actual_HH_runs": 0,
+  "supported_host_probe_required_before_MPI": true,
+  "actual_probe_return": {
+    "status": "BLOCKED",
+    "reason": "nonroot probe required; no bypass",
+    "MPI_executed": false,
+    "actual_HH_runs": 0
+  },
+  "fixed_native_driver": "native_execution_20261001_v1/native_driver",
+  "refined_or_log_driver_connected": false,
+  "scientific_admission": false,
+  "production_admission": false,
+  "known_unverified": [
+    "actual delegated cgroup cap writes and cgroup.kill",
+    "target nonroot OpenMPI launch and runtime ABI",
+    "NCP64 scaling/throughput",
+    "full-domain integral and final D"
+  ],
+  "trust_boundary": "trusted same-UID scientific code, no self-migration; external service manager required for supervisor SIGKILL or host shutdown",
+  "first_failure": "evidence/FIRST_PROBE_SYNTAX_FAILURE.json preserved; syntax fixed and probe import/refusal regression added",
+  "independent_review": "../mpi_review/REVIEW_KO.md and independent receipt; final pins reconciled separately"
+}

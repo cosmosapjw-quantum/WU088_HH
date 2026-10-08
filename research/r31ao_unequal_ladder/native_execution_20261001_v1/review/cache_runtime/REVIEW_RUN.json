@@ -1,0 +1,2132 @@
+{
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "backend_provenance_sha256": "dd013898d2f4cdb4ee85fa92197600f35100446921cda6e57d182c02b880459d",
+  "backend_status": "BYTE_CHAIN_VERIFIED",
+  "backend_unchanged_after": true,
+  "binary_sha256": "13565b9cf04e70aeeaa62b56ce3acf03c71fd7f79abffa9900b48a9b8eaea995",
+  "build_nanoseconds": 2675453517,
+  "build_returncode": 0,
+  "command": [
+    "/usr/bin/g++",
+    "-std=c++17",
+    "-O3",
+    "-fno-fast-math",
+    "-fno-associative-math",
+    "-fno-unsafe-math-optimizations",
+    "-ffp-contract=off",
+    "-Wall",
+    "-Wextra",
+    "-Werror=return-type",
+    "-I/workspace/scratch/6cf5f59cd2d1/native_execution_build/prefix/include",
+    "-I/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/native_execution_20261001_v1/review/generated_input",
+    "-I/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/validated_callback",
+    "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/native_execution_20261001_v1/review/actual_callback_cache_probe.cpp",
+    "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/ncp64_acceleration_20261001_v1/native_cache/cached_callback.cpp",
+    "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/validated_callback/assembly.cpp",
+    "-L/workspace/scratch/6cf5f59cd2d1/native_execution_build/prefix/lib",
+    "-Wl,-rpath,/workspace/scratch/6cf5f59cd2d1/native_execution_build/prefix/lib",
+    "-lflint",
+    "-lmpfr",
+    "-lgmp",
+    "-o",
+    "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/native_execution_20261001_v1/review/cache_runtime/probe"
+  ],
+  "compiler": {
+    "path": "/usr/bin/x86_64-linux-gnu-g++-13",
+    "sha256": "52f1ddb33fe78b9441e0f42e9cd22c571f1101938e046c8a26582494e041cc73",
+    "size": 1027128
+  },
+  "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "flags": [
+    "-std=c++17",
+    "-O3",
+    "-fno-fast-math",
+    "-fno-associative-math",
+    "-fno-unsafe-math-optimizations",
+    "-ffp-contract=off",
+    "-Wall",
+    "-Wextra",
+    "-Werror=return-type"
+  ],
+  "linkage": {
+    "libraries": {
+      "flint": {
+        "path": "/workspace/scratch/6cf5f59cd2d1/native_execution_build/prefix/lib/libflint.so.22.0.0",
+        "sha256": "09cf827f2a0e793fe47a33099463f94088576f141024c6cc48b82606febdf7ee",
+        "size": 57631896
+      },
+      "gmp": {
+        "path": "/workspace/scratch/6cf5f59cd2d1/native_execution_build/prefix/lib/libgmp.so.10.5.0",
+        "sha256": "bff627372f17abb5cb10fddcfdc2143d613958e3c6f3a3b82d75f7e7802af01b",
+        "size": 615848
+      },
+      "mpfr": {
+        "path": "/workspace/scratch/6cf5f59cd2d1/native_execution_build/prefix/lib/libmpfr.so.6.2.2",
+        "sha256": "c6dca0968dfe6abd84b1d4c37105bf5e9bcfb928ccd3405e3febdcd9b1fcabad",
+        "size": 799600
+      }
+    },
+    "limitation": "Path and bytes at check time; host filesystem stability is assumed during immediate execution.",
+    "status": "LINKED_BACKEND_PATHS_VERIFIED",
+    "system_libraries": [
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33",
+        "sha256": "1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11",
+        "size": 2592224,
+        "soname": "libstdc++.so.6"
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1",
+        "sha256": "d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb",
+        "size": 183024,
+        "soname": "libgcc_s.so.1"
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "sha256": "511f825ee075610ac9c0f7f91e2c13de2000d0f7b859f6461137e809a0a009d0",
+        "size": 2125328,
+        "soname": "libc.so.6"
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+        "sha256": "f06f2ce1f1833df5f41cf13b6447ff07bea993ad9b27297d3428c2f70ab3f0e7",
+        "size": 952616,
+        "soname": "libm.so.6"
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+        "sha256": "6222a16be7f2d458d6870efe6e715fc0c8d45766fb79cf7dcc3125538d703e28",
+        "size": 236616,
+        "soname": "ld-linux-x86-64.so.2"
+      }
+    ]
+  },
+  "memory_cap_bytes": 1073741824,
+  "mode": "cache",
+  "production_admission": false,
+  "result": {
+    "actual_HH_integrals": 0,
+    "actual_callback_inputs": true,
+    "benchmark_cases": 8,
+    "flint_version": "3.4.0",
+    "historical_abi_admission": false,
+    "ncp_benchmark": false,
+    "negative_donor_terms": 52,
+    "paired_comparisons": 88,
+    "positive_donor_terms": 55,
+    "production_admission": false,
+    "records": [
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 3956722,
+        "baseline_nanoseconds": [
+          3365803,
+          3956722,
+          6492817
+        ],
+        "benchmark_repeat": 3,
+        "box": "real_point",
+        "cache_median_nanoseconds": 303327,
+        "cache_nanoseconds": [
+          302776,
+          303327,
+          365049
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-7b9a256f6292cfd6886ca02c586159bd -8d b363507 -a1",
+        "orbital": 0,
+        "precision_bits": 128,
+        "real_arb_dump": "8b2799a73e593259d7a98c3c2dd97b45 -82 31569aa3 -98",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 2906532,
+        "baseline_nanoseconds": [
+          2906532
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 290367,
+        "cache_nanoseconds": [
+          290367
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "3c5aca8f03d5f55313ef142e9fc72a69 -99 3f956929 -af",
+        "orbital": 1,
+        "precision_bits": 128,
+        "real_arb_dump": "-d325bc479236af0caf548a1ca3106a6f -90 e7ac229 -a2",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 3015015,
+        "baseline_nanoseconds": [
+          3015015
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 305730,
+        "cache_nanoseconds": [
+          305730
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "b872330f920cdc386472185fa802a685 -8a 32109b7f -9e",
+        "orbital": 2,
+        "precision_bits": 128,
+        "real_arb_dump": "-48970b04f2ab9798808286a794a6fa57 -90 163f7561 -a4",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 3039502,
+        "baseline_nanoseconds": [
+          3039502
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 294423,
+        "cache_nanoseconds": [
+          294423
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-179bedf5b47c86d29160167e4d38f521 -8f 1a4466b9 -a5",
+        "orbital": 0,
+        "precision_bits": 128,
+        "real_arb_dump": "252a849e2e6c5606daa9800a07305175 -97 2e5df84d -ad",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 4040588,
+        "baseline_nanoseconds": [
+          4040588
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 311329,
+        "cache_nanoseconds": [
+          311329
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-9a6d409e22c0cde9e50b592cb4c196ab -9c 2880d913 -b1",
+        "orbital": 1,
+        "precision_bits": 128,
+        "real_arb_dump": "fb2aa0d18b01dc0591372c24dd11e1fb -a4 229e92f -b4",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 3033463,
+        "baseline_nanoseconds": [
+          3033463
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 319751,
+        "cache_nanoseconds": [
+          319751
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-1edaaf927181cb81c473b877a385fc75 -8b 2ee88df3 -a3",
+        "orbital": 2,
+        "precision_bits": 128,
+        "real_arb_dump": "457851dca3862ae78c27948a9e7bbb9 -7d 6593cb9 -95",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 3048605,
+        "baseline_nanoseconds": [
+          3048605
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 295194,
+        "cache_nanoseconds": [
+          295194
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-291bae246c26c58c4b5b80dcb2d34925 -8b 3fe484d -9f",
+        "orbital": 0,
+        "precision_bits": 128,
+        "real_arb_dump": "-6abdd190f304be50111cf2dbd1da4f37 -8a 24d2f823 -a0",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 3012311,
+        "baseline_nanoseconds": [
+          3012311
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 298929,
+        "cache_nanoseconds": [
+          298929
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "a0958b7390eb0c7f4490d5f913861d15 -9a 1413fdc1 -ad",
+        "orbital": 1,
+        "precision_bits": 128,
+        "real_arb_dump": "287a60769691ecb7ed8c83a434a0ffc7 -96 beb92ef -aa",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 4003332,
+        "baseline_nanoseconds": [
+          4003332
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 377819,
+        "cache_nanoseconds": [
+          377819
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-467b95b0ad177dcd574320b46266ce15 -91 14c066af -a5",
+        "orbital": 2,
+        "precision_bits": 128,
+        "real_arb_dump": "-3048dd1ad63f82d8cc43351f07a61887 -8f 3ad7411d -a5",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 3279734,
+        "baseline_nanoseconds": [
+          3279734
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 299791,
+        "cache_nanoseconds": [
+          299791
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-24a066b3d5de00053c6bf8a963389643 -8b 9414e85 -a0",
+        "orbital": 0,
+        "precision_bits": 128,
+        "real_arb_dump": "8a4a9a522940ec1800ba1760d5aa269d -82 2e54c8d7 -98",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 3085882,
+        "baseline_nanoseconds": [
+          3085882
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 329816,
+        "cache_nanoseconds": [
+          329816
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-49243eb4557a0e5522bad901cd6d95d9 -8b 25cc1723 -a1",
+        "orbital": 1,
+        "precision_bits": 128,
+        "real_arb_dump": "8a14020035bafc180a4a8592402cb233 -81 30454713 -97",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 2924059,
+        "baseline_nanoseconds": [
+          2924059
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 296005,
+        "cache_nanoseconds": [
+          296005
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "5f2ada665abe9fb14c4a90c13574c021 -84 13212c61 -99",
+        "orbital": 2,
+        "precision_bits": 128,
+        "real_arb_dump": "cf243f8bc338427c54f8149a9ab3f30d -83 237ed885 -98",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 3036487,
+        "baseline_nanoseconds": [
+          3036487
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 300202,
+        "cache_nanoseconds": [
+          300202
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-30b9c7e27c490645a83a73dbd095a6f3 -8b 13382351 -a1",
+        "orbital": 0,
+        "precision_bits": 128,
+        "real_arb_dump": "-35073b46986052ddf69d8ad0c04798f9 -89 23f5e4e7 -a0",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 3975259,
+        "baseline_nanoseconds": [
+          3975259
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 339080,
+        "cache_nanoseconds": [
+          339080
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-614d921190296f341de2a45d11d6bdc3 -8b 2813ff2f -a1",
+        "orbital": 1,
+        "precision_bits": 128,
+        "real_arb_dump": "-1a7925f694aef8541c14d23d66603e9 -83 96b0d59 -9d",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 3283480,
+        "baseline_nanoseconds": [
+          3283480
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 314213,
+        "cache_nanoseconds": [
+          314213
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-6da2687c0f032df2b26d61fcf3abd157 -8b ba82445 -9f",
+        "orbital": 2,
+        "precision_bits": 128,
+        "real_arb_dump": "22722f21c730f240a3fb79dc0386b305 -80 30cf780f -98",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 2990919,
+        "baseline_nanoseconds": [
+          2990919
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 312120,
+        "cache_nanoseconds": [
+          312120
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-5d77baae826883287b18b43c082b0859 -91 32fddc3f -a6",
+        "orbital": 0,
+        "precision_bits": 128,
+        "real_arb_dump": "8fce62385c723b05a772d912cf4ec3f1 -99 16a32817 -ac",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 3313334,
+        "baseline_nanoseconds": [
+          3313334
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 303396,
+        "cache_nanoseconds": [
+          303396
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-ba8bf01a91917709deecbb5117f5cc7 -8d 1a674299 -a4",
+        "orbital": 1,
+        "precision_bits": 128,
+        "real_arb_dump": "8f80f41e3918732b532bbf9ab88f2ec5 -98 1783316f -ab",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 3148215,
+        "baseline_nanoseconds": [
+          3168626,
+          3127975,
+          3148215
+        ],
+        "benchmark_repeat": 3,
+        "box": "real_point",
+        "cache_median_nanoseconds": 323236,
+        "cache_nanoseconds": [
+          323236,
+          1193716,
+          319941
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 0,
+        "imag_arb_dump": "-8b5aacd73ace7fb4a7dab5404d1d7419 -92 28c3a0f5 -a6",
+        "orbital": 2,
+        "precision_bits": 128,
+        "real_arb_dump": "-bad3bead085042eb333096092962d399 -91 3843a711 -a5",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 3915279,
+        "baseline_nanoseconds": [
+          3691753,
+          3915279,
+          4577946
+        ],
+        "benchmark_repeat": 3,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 400212,
+        "cache_nanoseconds": [
+          400212,
+          386902,
+          403196
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "-4d0b5a069b6f57a0b94e286bba065b53 -92 375c499d -34",
+        "orbital": 0,
+        "precision_bits": 128,
+        "real_arb_dump": "4918c7b8372d3003bf6e1f190d08b213 -88 1bb51f5 -2f",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 3845314,
+        "baseline_nanoseconds": [
+          3845314
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 388664,
+        "cache_nanoseconds": [
+          388664
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "-ddb51de5095352b757fe04378af8b89 -a0 1d5ba35 -3e",
+        "orbital": 1,
+        "precision_bits": 128,
+        "real_arb_dump": "a47396bfb147edda9d09c68bd41bf273 -9d 3ac2e87 -3f",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 3681748,
+        "baseline_nanoseconds": [
+          3681748
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 385931,
+        "cache_nanoseconds": [
+          385931
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "-23ea8d9c6dbcad9a9b56ad8e20b498e7 -95 19d5ff4f -3c",
+        "orbital": 2,
+        "precision_bits": 128,
+        "real_arb_dump": "-8ca9ad7a6caf34e71711ea99f11fbbd1 -9f 33a1e6f9 -3d",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 3780987,
+        "baseline_nanoseconds": [
+          3780987
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 388835,
+        "cache_nanoseconds": [
+          388835
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "86af930a9b838b03c6850ad4faa53d63 -91 18389f57 -36",
+        "orbital": 0,
+        "precision_bits": 128,
+        "real_arb_dump": "83df12a2c5e44198a5a0cbf0520dc005 -99 60cf911 -34",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 4468546,
+        "baseline_nanoseconds": [
+          4468546
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 409025,
+        "cache_nanoseconds": [
+          409025
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "-62504be00b82457c133f0e550bdf465d -9c 23145cf9 -46",
+        "orbital": 1,
+        "precision_bits": 128,
+        "real_arb_dump": "53b640cf8155bda7c25b1ffba39be649 -a3 8c3b257 -44",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 4153448,
+        "baseline_nanoseconds": [
+          4153448
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 432591,
+        "cache_nanoseconds": [
+          432591
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "f32bb58d50eee05f562973e90c52af33 -96 914f831 -36",
+        "orbital": 2,
+        "precision_bits": 128,
+        "real_arb_dump": "5c7e0af53bc066c54428821c03a8c8c3 -8d 245b1d6d -38",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 3943272,
+        "baseline_nanoseconds": [
+          3943272
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 410307,
+        "cache_nanoseconds": [
+          410307
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "-b2e00da31c04d76024f9e7161de3f0df -94 6cb591b -39",
+        "orbital": 0,
+        "precision_bits": 128,
+        "real_arb_dump": "-e02f46c301922c679fb41cf15d4cabf7 -92 3662e7dd -3c",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 5589067,
+        "baseline_nanoseconds": [
+          5589067
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 412831,
+        "cache_nanoseconds": [
+          412831
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "b84b1920b9bdd203687ab54c78b6dacd -a7 374c5807 -4b",
+        "orbital": 1,
+        "precision_bits": 128,
+        "real_arb_dump": "-fdfc61434e475e644a86c81e0d5a4049 -a6 1ba9c1d9 -4a",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 5252321,
+        "baseline_nanoseconds": [
+          5252321
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 438730,
+        "cache_nanoseconds": [
+          438730
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "d77a5ea11b2da0707cf02a2567335e11 -a0 9a90969 -41",
+        "orbital": 2,
+        "precision_bits": 128,
+        "real_arb_dump": "b833f07bf415ff348bb43ba521db4bcb -9e 1353d70b -42",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 13993484,
+        "baseline_nanoseconds": [
+          13993484
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 1967815,
+        "cache_nanoseconds": [
+          1967815
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "-b7814e1eb41c52e9a395dc752ac6a8c1 -93 3e265589 -39",
+        "orbital": 0,
+        "precision_bits": 128,
+        "real_arb_dump": "f8147a1d1b32d53bde9cb2d67ffcb4f3 -92 1f14940d -38",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 6254879,
+        "baseline_nanoseconds": [
+          6254879
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 543718,
+        "cache_nanoseconds": [
+          543718
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "-f7eb3ee84a045b935cfe3044d57b2681 -97 29295881 -3c",
+        "orbital": 1,
+        "precision_bits": 128,
+        "real_arb_dump": "aa63846e973f66b8849a90ef62ce6c97 -95 292b0601 -3c",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 5564110,
+        "baseline_nanoseconds": [
+          5564110
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 724840,
+        "cache_nanoseconds": [
+          724840
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "-915643b5ca03a124ecacea59ac663207 -99 11a6d597 -3c",
+        "orbital": 2,
+        "precision_bits": 128,
+        "real_arb_dump": "8a45c9b3f5b0f4059887f38356f61e71 -96 11a7b0b9 -3c",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 5617560,
+        "baseline_nanoseconds": [
+          5617560
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 526422,
+        "cache_nanoseconds": [
+          526422
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "44206fbd36b1b3894ef10dda08cfe779 -92 2118d077 -37",
+        "orbital": 0,
+        "precision_bits": 128,
+        "real_arb_dump": "-81a16d18b655e4c53eff744b2186bc89 -90 4234d6b -34",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 6479426,
+        "baseline_nanoseconds": [
+          6479426
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 621355,
+        "cache_nanoseconds": [
+          621355
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "ae8710dd4957d90189015ea1a7fa03a5 -97 2c8f4ff3 -3b",
+        "orbital": 1,
+        "precision_bits": 128,
+        "real_arb_dump": "-b055efca6787f9598d080b60fb22371d -94 2c912eb5 -3b",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 6795031,
+        "baseline_nanoseconds": [
+          6795031
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 598621,
+        "cache_nanoseconds": [
+          598621
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "-58783722b73f0a3af9bd2e253f36a40b -96 2714995f -3c",
+        "orbital": 2,
+        "precision_bits": 128,
+        "real_arb_dump": "-65ea326a194dcef5af10e71a07c72ad -92 27147ea7 -3c",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 5527334,
+        "baseline_nanoseconds": [
+          5527334
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 811421,
+        "cache_nanoseconds": [
+          811421
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "-2247662507d8bbff800853847c870517 -9d 264ba2e1 -44",
+        "orbital": 0,
+        "precision_bits": 128,
+        "real_arb_dump": "2ce1b2bebb97e462e9af005332fe6dd3 -9c 264d3a01 -44",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 5903951,
+        "baseline_nanoseconds": [
+          5903951
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 836448,
+        "cache_nanoseconds": [
+          836448
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "-13e7742db662beea6a780266e93a8cab -a0 1a03da23 -47",
+        "orbital": 1,
+        "precision_bits": 128,
+        "real_arb_dump": "6a31a3a5be7c945ef3e72b05fb3521ff -a1 1a04dc7f -47",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 6737374,
+        "baseline_nanoseconds": [
+          6884185,
+          6737374,
+          6150271
+        ],
+        "benchmark_repeat": 3,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 561855,
+        "cache_nanoseconds": [
+          841255,
+          561855,
+          556567
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 0,
+        "imag_arb_dump": "e80d1666475c05c84045f96cc3b94c31 -a6 156e0c1f -48",
+        "orbital": 2,
+        "precision_bits": 128,
+        "real_arb_dump": "bba98953faa0021c06fbe9e66187d413 -a5 2adcb84b -49",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 11495822,
+        "baseline_nanoseconds": [
+          14395924,
+          11495822,
+          9637938
+        ],
+        "benchmark_repeat": 3,
+        "box": "real_point",
+        "cache_median_nanoseconds": 863449,
+        "cache_nanoseconds": [
+          1052493,
+          863449,
+          845391
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-94fc1bc0f0d7f530b3d16ba61e582cc7a63fca2f1dcdeac23ba1113278d89f9 -110 286f4ea7 -128",
+        "orbital": 0,
+        "precision_bits": 256,
+        "real_arb_dump": "e1ec3295974ce5804a0e6a05cd7e489b7ed8b9a9a22d848363e68e9c4ad60a5d -113 387e91b5 -127",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 10374966,
+        "baseline_nanoseconds": [
+          10374966
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 895567,
+        "cache_nanoseconds": [
+          895567
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "adb30b6a9acd5b67c38195d2b58f4a11b6f55c85284a77ba2293c57dbeb7b7e9 -117 3fb3bbb7 -12b",
+        "orbital": 1,
+        "precision_bits": 256,
+        "real_arb_dump": "-82d6a124cceec784c349153a7cd4ec665afc19f418d20f203ff7d8ed285cba7b -115 5de750d -126",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 10932184,
+        "baseline_nanoseconds": [
+          10932184
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 991100,
+        "cache_nanoseconds": [
+          991100
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "862cfc4ce49edb1f9f62026284e065004fe36390c8c753bf225a3c44cd6a3543 -118 19052cfd -12b",
+        "orbital": 2,
+        "precision_bits": 256,
+        "real_arb_dump": "-30e70d83dec39e230596e9b75a470db9a6536f3689eadeb813101057176d7429 -115 22e1cbab -12a",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 9595774,
+        "baseline_nanoseconds": [
+          9595774
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 866384,
+        "cache_nanoseconds": [
+          866384
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-44b2ae3bd967dd23450c8600be08beafd0557c979a4d397434f58c01024172a9 -11f 339e5b81 -134",
+        "orbital": 0,
+        "precision_bits": 256,
+        "real_arb_dump": "3213829352b3d56cedbda14d4f91ac4bcf8f5e74b0a348e6fa13562af995066d -11d 1206c087 -131",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 12746824,
+        "baseline_nanoseconds": [
+          12746824
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 1045743,
+        "cache_nanoseconds": [
+          1045743
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-a1c784a3ac15aa8a21953b1f9c1944b10bdb113234f7260e88ad40b4a2345f5 -11f 12b77bf -131",
+        "orbital": 1,
+        "precision_bits": 256,
+        "real_arb_dump": "77545d5b1fdf57a567966856b731442a4c895bfcf29e378f155355ee180d9085 -121 1a6a60e1 -134",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 11377684,
+        "baseline_nanoseconds": [
+          11377684
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 995548,
+        "cache_nanoseconds": [
+          995548
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-94c454c735df171c26dabaa67bf3e9a5a5a65be72a7608eee27c0a16cc1ae07f -114 293bacbd -128",
+        "orbital": 2,
+        "precision_bits": 256,
+        "real_arb_dump": "e19786e82dff2c91d21bffa2735cbbd5ca10282650f570ab4adfdb5d2768914d -113 e932521 -125",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 12120336,
+        "baseline_nanoseconds": [
+          12120336
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 989158,
+        "cache_nanoseconds": [
+          989158
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "92c9504fbcd3492c403ab8e19bd5b729ec01192322d7816b0718196abeb462e5 -114 3bbdcfdb -127",
+        "orbital": 0,
+        "precision_bits": 256,
+        "real_arb_dump": "-88405a9df8296a85baa5b947b982ef6d6c988764784dfb72e9b99b1dc05ddee7 -111 9e85ffb -123",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 9186348,
+        "baseline_nanoseconds": [
+          9186348
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 995617,
+        "cache_nanoseconds": [
+          995617
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-fb7b401c245f878416ceb7ab1ac5da10840ff6f599d59d5b9ea56a8d502df4bf -118 6b54027 -126",
+        "orbital": 1,
+        "precision_bits": 256,
+        "real_arb_dump": "8cbf7e99a4d2da39cd0d23d8b65ddb8ece5448be7a5d96f886e17431e1cb4d3 -110 209b0b93 -127",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 10511261,
+        "baseline_nanoseconds": [
+          10511261
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 1220186,
+        "cache_nanoseconds": [
+          1220186
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "238011d0540e72d9346ca07af13e3fe89676da6139198f175990cba53bbff3f -113 2e34ef0d -12a",
+        "orbital": 2,
+        "precision_bits": 256,
+        "real_arb_dump": "500ca0196e282f71dc73811910cd279b0a2a3a3a2794ddadac249280fd925973 -116 341d0a53 -129",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 8285303,
+        "baseline_nanoseconds": [
+          8285303
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 549447,
+        "cache_nanoseconds": [
+          549447
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-cec681030aa4a0ffb86b5fff729a6ff32bcc5c550b4bd4ecd7950a9ec753dc65 -114 2b69b659 -129",
+        "orbital": 0,
+        "precision_bits": 256,
+        "real_arb_dump": "5e6247f7446bc339f6fbb2d511c725f3c63d93eadb7d150c1bbf0b418dec7f0b -108 36d04289 -11f",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 4863326,
+        "baseline_nanoseconds": [
+          4863326
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 461704,
+        "cache_nanoseconds": [
+          461704
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-ce74441d7dcfb207fd32257b3c4d8e9bb596ce44dc5df04b76bf02031d4f9f39 -113 2ca58ecf -128",
+        "orbital": 1,
+        "precision_bits": 256,
+        "real_arb_dump": "2f1de085da2d289203ccb01aa837213129fb69eef2fba3f5a3fa478feceb2055 -106 1be9f0d9 -11d",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 5270208,
+        "baseline_nanoseconds": [
+          5270208
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 464218,
+        "cache_nanoseconds": [
+          464218
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "432892784b42a22f576c12950324fa3f1aa12e1a50118bffe5650326eae0cb43 -10a b6aee95 -11f",
+        "orbital": 2,
+        "precision_bits": 256,
+        "real_arb_dump": "46af0f7cea7f1d47aee139ab8cd2302a4b51e7d1d0de2e0a7c2d2db138b0cb91 -108 2c49b357 -11f",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 4895634,
+        "baseline_nanoseconds": [
+          4895634
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 567914,
+        "cache_nanoseconds": [
+          567914
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-226298d10be8c5ed9bcaa356fd7d0efb0060cb9501cf513b4f71bfce58ad7653 -111 302b097f -129",
+        "orbital": 0,
+        "precision_bits": 256,
+        "real_arb_dump": "-4861578a276ba386deb0989f059fdad1864e3e9cb879451a137ddb8fe555de81 -110 2d2e6a2f -127",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 5513053,
+        "baseline_nanoseconds": [
+          5513053
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 557509,
+        "cache_nanoseconds": [
+          557509
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-8953af88c0362b7c81e3ed8341d436143df9e443b4299dadaed3d7fef414e40d -112 c1e077b -126",
+        "orbital": 1,
+        "precision_bits": 256,
+        "real_arb_dump": "-9087975eda5d63660a1958f025bb6cb379d8ef7d1b3c20329d407d11a80782c9 -110 b896b2b -124",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 5342135,
+        "baseline_nanoseconds": [
+          5342135
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 584259,
+        "cache_nanoseconds": [
+          584259
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-4d5d8af9206a4773169f7a94814a6e87c9b2a8d6c9bba7f380c2b55cdc3aff2b -111 1dc84293 -127",
+        "orbital": 2,
+        "precision_bits": 256,
+        "real_arb_dump": "bc11157f7c4688221e8b52f27be846fce1792350f6b81d599f2df9281b010691 -109 39195635 -11f",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 5082225,
+        "baseline_nanoseconds": [
+          5082225
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 701916,
+        "cache_nanoseconds": [
+          701916
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-972af317bfa345f7b1298b874ce4369a805cc2aeab2d2c6db532d65ee38cc4cf -113 2f142ff -11f",
+        "orbital": 0,
+        "precision_bits": 256,
+        "real_arb_dump": "-c811db294024e2f290a9613eb4dbbb299e25cd92a94b4410cd1aad373ca99bb3 -11d 2950e4ab -12a",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 9965000,
+        "baseline_nanoseconds": [
+          9965000
+        ],
+        "benchmark_repeat": 1,
+        "box": "real_point",
+        "cache_median_nanoseconds": 548906,
+        "cache_nanoseconds": [
+          548906
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-127200ebdd3a72c577abb9a676a1f8c73890c6b3a8eebcd1fd7f212213cc3223 -10f 18586e27 -121",
+        "orbital": 1,
+        "precision_bits": 256,
+        "real_arb_dump": "-ddd141bb11065ad3184e3fc7186e75fcf902ba68dbe1af53d471bef5d4149d99 -11c 15b75acf -128",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 8445444,
+        "baseline_nanoseconds": [
+          8921299,
+          8445444,
+          7765340
+        ],
+        "benchmark_repeat": 3,
+        "box": "real_point",
+        "cache_median_nanoseconds": 506832,
+        "cache_nanoseconds": [
+          494474,
+          506832,
+          607324
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 0,
+        "ib": 11,
+        "imag_arb_dump": "-6997ead240b1859f6dd35895f9688e3ca34293cfeff5d910b12e00067864ade3 -113 24925b17 -123",
+        "orbital": 2,
+        "precision_bits": 256,
+        "real_arb_dump": "103ddbdc41f319bc523e50e12215a1feeead59c9319c68d279842944d0a1705 -10d cd5bb6b -120",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 6257011,
+        "baseline_nanoseconds": [
+          8162048,
+          6257011,
+          6127587
+        ],
+        "benchmark_repeat": 3,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 690548,
+        "cache_nanoseconds": [
+          989088,
+          690548,
+          684550
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "-a7c2abda064259283d5c9c8ea113567dbf82cc2298ffb2b5b26f040fdd7691c9 -11b 39b07d45 -42",
+        "orbital": 0,
+        "precision_bits": 256,
+        "real_arb_dump": "84765f31787a7861510adc19891aa8df40288c1c0352ab137d00163e73acb767 -119 39b51b59 -42",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 6096911,
+        "baseline_nanoseconds": [
+          6096911
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 688877,
+        "cache_nanoseconds": [
+          688877
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "c9ab9aece61290bb301c7878d1d58d6a97e103ab8fc22ac35b7caa1a3f346243 -123 206bed33 -48",
+        "orbital": 1,
+        "precision_bits": 256,
+        "real_arb_dump": "-9d81b1cf69930bb7756e1c0b45cc6f241291e537b430fafbef5f09d173d084dd -121 10375239 -47",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 6481249,
+        "baseline_nanoseconds": [
+          6481249
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 1003039,
+        "cache_nanoseconds": [
+          1003039
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "9bf2f79421f94610f04a17bf54d07cd27e73c1832e4583963512a3f31ca5b025 -124 30feb763 -4a",
+        "orbital": 2,
+        "precision_bits": 256,
+        "real_arb_dump": "-eb821ee7684fd28eac4bd6ae08030cf64af6458f4c29f18c3b672644e3c648b3 -123 18815c31 -49",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 8141236,
+        "baseline_nanoseconds": [
+          8141236
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 677098,
+        "cache_nanoseconds": [
+          677098
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "-4919e40d6fecd8d7f0a2bb21afc1ba82ab4642b57db095ae68e0bcd9f56daa8d -11d 2deecbed -44",
+        "orbital": 0,
+        "precision_bits": 256,
+        "real_arb_dump": "6e64fe7c78e56ab2e0c38ca193c16e137323709b2bb3a939bbd859f04ac4f211 -11c 2df28cd9 -44",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 6213586,
+        "baseline_nanoseconds": [
+          6213586
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 920995,
+        "cache_nanoseconds": [
+          920995
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "-9b26d6f50e56cf1086bb72a1a9ccd1565804a592fc6f0d61facb46a252ec2a3f -125 27fa48b5 -4b",
+        "orbital": 1,
+        "precision_bits": 256,
+        "real_arb_dump": "3bce3a093df3a714ca59552a8e2856582c7303ee67213b12612ab28d9ece2f89 -122 27fd9155 -4b",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 9390756,
+        "baseline_nanoseconds": [
+          9390756
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 818111,
+        "cache_nanoseconds": [
+          818111
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "-e14227b69cde5a775ae84403b80462b638b2236938bad74668be0d2f31b6bdaf -120 121ed305 -45",
+        "orbital": 2,
+        "precision_bits": 256,
+        "real_arb_dump": "b531701fe34eb1d040def9ab7d909567cb9159c9838493e4ef04e8b77472ed7 -11a 4880a9 -3f",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 6041437,
+        "baseline_nanoseconds": [
+          6041437
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 656257,
+        "cache_nanoseconds": [
+          656257
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "4d5b246830c534db35c6abb845f9fc092eba2945cead7ef1349d6786c4ce585f -11a 2087763b -40",
+        "orbital": 0,
+        "precision_bits": 256,
+        "real_arb_dump": "-27659338db7d06ede827964a53e7a64ed2f2dc8f089f43f034445292fa05bec3 -116 208a67d3 -40",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 6370382,
+        "baseline_nanoseconds": [
+          6370382
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 719392,
+        "cache_nanoseconds": [
+          719392
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "-405862f46d104d4c8f18a0bd7207f7fb0d9abc262f946f07ff5c90684e96f05b -122 4ce2cf3 -44",
+        "orbital": 1,
+        "precision_bits": 256,
+        "real_arb_dump": "5242d99b341b8b25ac0ea900ecf16f2af8cf660037e9a72066ef725887f249e9 -11f 4cea12d -44",
+        "terms": 107
+      },
+      {
+        "active": 0,
+        "baseline_median_nanoseconds": 6946679,
+        "baseline_nanoseconds": [
+          6946679
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 698711,
+        "cache_nanoseconds": [
+          698711
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "beaecb1d9cf253243830163baeb5a11aa1d2b460b0c31c5caa5d2ad8f2987b11 -125 3abefc0f -4a",
+        "orbital": 2,
+        "precision_bits": 256,
+        "real_arb_dump": "b212ec3032831ade259c9ba09d74810eea67e40a25da0638af9fcc2e49ed551f -123 3ac3946d -4a",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 6879027,
+        "baseline_nanoseconds": [
+          6879027
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 605000,
+        "cache_nanoseconds": [
+          605000
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "-44b1f5cab980e11c32fadbc11d98550cb1796faea9ec72ade85eed73d74c509b -118 15337563 -3f",
+        "orbital": 0,
+        "precision_bits": 256,
+        "real_arb_dump": "2de9e605c2837a20b240adfd4f8be1b479ea590974227066a46565e7317f6e43 -116 2a69a5a1 -40",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 6734951,
+        "baseline_nanoseconds": [
+          6734951
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 720203,
+        "cache_nanoseconds": [
+          720203
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "-b79ae15f51ef8b2ed4151ec822fe8c034dd6e20833da5d7ade5e5a11852ae313 -11d 1ac24a29 -43",
+        "orbital": 1,
+        "precision_bits": 256,
+        "real_arb_dump": "f98d409129ff4e0006723fd6ff0597730131d2019e2bd37d4543c29308c21d27 -11c 1ac3e2b1 -43",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 7262304,
+        "baseline_nanoseconds": [
+          7262304
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 718891,
+        "cache_nanoseconds": [
+          718891
+        ],
+        "exact_acb_equal": true,
+        "field": 0,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "-6b9dda4182b9603eed7755322169c71ccb154d67bb365366b09a18cc27e80f11 -11f 2bb7c0e5 -45",
+        "orbital": 2,
+        "precision_bits": 256,
+        "real_arb_dump": "cadd9be0771f82f7cdbe0e4951ad96a7bc7a131e608fa75cfc20820fee052461 -11d 15dda509 -44",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 6899939,
+        "baseline_nanoseconds": [
+          6899939
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 941927,
+        "cache_nanoseconds": [
+          941927
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "c9c7f93ad51b9475fd3fbfbdfea65555fcc7f1227f05dc608b20ee7ecad31c47 -11a 28fc44dd -3f",
+        "orbital": 0,
+        "precision_bits": 256,
+        "real_arb_dump": "-be2fc2226fad8ac850e22d64bc92bd3d40b271ec7a86ace72c5e79eeef24d20b -117 28ff9577 -3f",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 6623052,
+        "baseline_nanoseconds": [
+          6623052
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 716297,
+        "cache_nanoseconds": [
+          716297
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "1002889ad028c77bac2d71460897b99804b677b5be447df387548020f118571b -11a d2f81db -41",
+        "orbital": 1,
+        "precision_bits": 256,
+        "real_arb_dump": "-8007fe47aa2c787cca8aa5ce28d7f8605d30d3cdfbb4709aecc5b06f33163683 -11a 1a60e957 -42",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 6786688,
+        "baseline_nanoseconds": [
+          6786688
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 660384,
+        "cache_nanoseconds": [
+          660384
+        ],
+        "exact_acb_equal": true,
+        "field": 1,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "-4157fb20caafd4cb1438c02511c94f2fc6f645484b111dc6ae721e7173506669 -11c 3d19d609 -45",
+        "orbital": 2,
+        "precision_bits": 256,
+        "real_arb_dump": "-24863cf5147147aee54024bf2db6fa90fe6ed6893b71b844ac4468d150c1b391 -11b f463ef3 -43",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 6010261,
+        "baseline_nanoseconds": [
+          6010261
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 792552,
+        "cache_nanoseconds": [
+          792552
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "-78e71f48430284dfe8924bfefb4240dcfe2a60d8ddd67d3f77a141ba968abf9f -11c 2185db01 -42",
+        "orbital": 0,
+        "precision_bits": 256,
+        "real_arb_dump": "4d8a8c6a8ad3deb2287931c3138cfc37680506f8ec66e22450554fba7439c235 -11a 218812e9 -42",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 6979047,
+        "baseline_nanoseconds": [
+          6979047
+        ],
+        "benchmark_repeat": 1,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 925973,
+        "cache_nanoseconds": [
+          925973
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "-88d207ea351ba0a69fb8ada44b4662134620837c4834b735c2bef52174aeb461 -120 b493107 -44",
+        "orbital": 1,
+        "precision_bits": 256,
+        "real_arb_dump": "b2915a1c56d92096e85071d0ad98d09cc22fa79496a888f51c8a5dcc2fd60c85 -11f 2d2796bd -46",
+        "terms": 107
+      },
+      {
+        "active": 1,
+        "baseline_median_nanoseconds": 7224537,
+        "baseline_nanoseconds": [
+          6321610,
+          7435044,
+          7224537
+        ],
+        "benchmark_repeat": 3,
+        "box": "complex_box",
+        "cache_median_nanoseconds": 672121,
+        "cache_nanoseconds": [
+          630228,
+          672121,
+          1004291
+        ],
+        "exact_acb_equal": true,
+        "field": 2,
+        "helper_evaluations": [
+          8,
+          8,
+          9
+        ],
+        "ia": 11,
+        "ib": 11,
+        "imag_arb_dump": "d1edf2d7bf3f9bff51695d7c58bef640d9a5d4a401fb3de30171eae594a5fd01 -123 220b51f1 -48",
+        "orbital": 2,
+        "precision_bits": 256,
+        "real_arb_dump": "4a46e763c6707e474026fb04a6bef7948b4f6c72998444887f4c60193f9143c9 -121 220ce251 -48",
+        "terms": 107
+      }
+    ],
+    "schema": "WU088_ACTUAL_FROZEN107_CACHE_REVIEW_V1",
+    "scientific_admission": false,
+    "status": "PASS",
+    "timing_order": "PAIRED_ALTERNATING_THREE_SAMPLES",
+    "unique_callback_cases": 72
+  },
+  "run_nanoseconds": 617684536,
+  "run_returncode": 0,
+  "run_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "run_stdout_sha256": "5ce15c7b65f5cfa590b7a204b9b22506a17c195d3d71a5cfed175dd0d54f4f44",
+  "scientific_admission": false,
+  "source_bytes_unchanged": true,
+  "source_sha256": {
+    "gap_closure_20261001_g0_g6_v1/interior_pilot/petras_host.hpp": "c7492c04b01f758c94663c4ffc6d591f4cff0309b6cb5f448368c4e94a5c50f2",
+    "gap_closure_20261001_g0_g6_v1/validated_callback/assembly.cpp": "313abcfe04550f0badc8e48501735a8b15a21d7babdefa63b6aded0ea4a2bede",
+    "gap_closure_20261001_g0_g6_v1/validated_callback/assembly.hpp": "fb38af6635f444649aa706f2107b8a4a91d2f18d5ab7477c320384414ac0eede",
+    "gap_closure_20261001_g0_g6_v1/validated_callback/callback.cpp": "06dabab65432c868190032726853ab92a0d0d504128500cfb352c2a749258964",
+    "gap_closure_20261001_g0_g6_v1/validated_callback/callback.hpp": "364705585a7a93da90907497bfd3dcd05ce0fba8920413534aa85f75a6a330f1",
+    "host_synthetic_readiness_20261001_v1/provenance_gate.py": "12857ebed9dbcf6e14484388da491fd407c0af9a997588fe49e2b13048e42c5e",
+    "native_execution_20261001_v1/review/actual_callback_cache_probe.cpp": "624b9a86a87a287e740d20d14b1bb424c3e264a83ecb349bfe7299aa7c73fe64",
+    "native_execution_20261001_v1/review/generated_input/frozen107_generated.hpp": "dc11a3c49b811bdabfb63ef9d625472a99860b45e5408a999d13b19500083923",
+    "native_execution_20261001_v1/review/run_native_review_probes.py": "724e11886b688809d0cbb9af22bba2d0da5f2306d0d4725707b9145af4166d9f",
+    "ncp64_acceleration_20261001_v1/native_cache/cached_callback.cpp": "2b29284ed4292bb3e9081553e068cd53fb18c45cd08994063cdd5d1a44d3758f",
+    "ncp64_acceleration_20261001_v1/native_cache/cached_callback.hpp": "d81fa63052ce33c81ac3e71babd394a24a6450256cbecd63326749b2ffab8fdb"
+  },
+  "wall_cap_seconds": 120
+}

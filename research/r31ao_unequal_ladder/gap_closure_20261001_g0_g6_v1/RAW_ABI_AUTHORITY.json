@@ -1,0 +1,521 @@
+{
+  "schema": "WU088_R31AO_RAW_ABI_AUTHORITY_V1",
+  "inspected_commit": "393eb882f7fbf160cfb465849d9652c7b026b5be",
+  "blocker": "B03",
+  "overall_status": "RAW_ABI_AUTHORITY_BLOCKED",
+  "implementation_status": "IMPLEMENTATION_VERIFIED_SYNTHETIC_ONLY",
+  "historical_layout_admitted": false,
+  "actual_payload_decoded": false,
+  "current_host_probe_executed": false,
+  "established": [
+    {
+      "claim": "B192 OD/JVP archive byte identities are fixed by canonical prior records",
+      "evidence_status": "ESTABLISHED_METADATA_IDENTITY"
+    },
+    {
+      "claim": "Prior header-only record reports B192 complex matrices <c32 and extended diagnostics <f16",
+      "evidence_status": "ESTABLISHED_PRIOR_HEADER_RECORD_REUSED"
+    },
+    {
+      "claim": "Inspected producer environment is x86_64 Linux; cached compiler metadata includes GCC13.3 x86_64-linux-gnu",
+      "evidence_status": "ESTABLISHED_METADATA"
+    },
+    {
+      "claim": "SysV ABI long double has 64-bit explicit significand, 15-bit exponent bias16383, 10 significant bytes plus six padding bytes in 16-byte object",
+      "evidence_status": "LITERATURE_SUPPORTED_FORMAT_DEFINITION"
+    }
+  ],
+  "not_established": [
+    "Exact NumPy wheel/build configuration and binary hash used by the B192 serializers, linked to these outputs",
+    "Historical NPY complex real/imag component offsets and longdouble meaningful-byte/padding layout attested under that exact serializer",
+    "Per-NPY-member SHA256 binding after approved payload access",
+    "Independent project decision-review admission"
+  ],
+  "candidate_layout": {
+    "format": "x87_80",
+    "component_bytes": 16,
+    "value_offset": 0,
+    "byte_order": "little",
+    "complex_component_order": "real_imag",
+    "admitted": false,
+    "basis": "SysV x86_64 and historical source metadata are consistent with this candidate, but not sufficient historical NumPy binding"
+  },
+  "sources": [
+    {
+      "id": "C04",
+      "version": "2.3.5",
+      "commit": "c3d60fc8393f3ca3306b8ce8b6453d43737e3d90",
+      "archive_sha256": "49e3441dce6a47cb1c752cae7e23eed2f5900f23bd28a1bf514f7e336f87b242",
+      "archive_hash_verified_this_loop": true,
+      "url": "https://github.com/numpy/numpy/tree/c3d60fc8393f3ca3306b8ce8b6453d43737e3d90",
+      "members": [
+        {
+          "path": "numpy/lib/_format_impl.py",
+          "sha256": "cdc437c57c4f7fb7a992db18adc7416c83ee38287d38f575837801ea085fe2b1",
+          "role": "NPY version/header/endian/order definition"
+        },
+        {
+          "path": "numpy/_core/include/numpy/npy_common.h",
+          "sha256": "fb4e5b6af6e4e382948f2e50faa9cce58cd4df654946fd0df28cdf088fd229c1",
+          "role": "NPY_SIZEOF_LONGDOUBLE can differ from C long double; complex representation is build-dependent"
+        },
+        {
+          "path": "doc/source/user/basics.types.rst",
+          "sha256": "0e288c072dc1b8733326dc3094c11c344d0698cf6e9ff21ff2dd7fb57ccd8d89",
+          "role": "longdouble/complex256 platform dependence and padding"
+        }
+      ]
+    },
+    {
+      "id": "D03",
+      "representation": "ARCHIVED_FULL_PDF",
+      "url": "https://refspecs.linuxfoundation.org/elf/x86_64-abi-0.99.pdf",
+      "sha256": "69e117a13b560b1b957c15f05a61b130ca56828f05dca951e27cb8e2ada14283",
+      "hash_verified_this_loop": true,
+      "version": "Draft0.99.6,2012-07-02",
+      "pages_printed": [
+        12,
+        13
+      ],
+      "pages_pdf": [
+        13,
+        14
+      ]
+    }
+  ],
+  "repo_evidence": [
+    {
+      "path": "research/r31ao_unequal_ladder/authorized_order_study_20260930/B192_REUSE_IDENTITY.json",
+      "sha256": "3415a2825aaf1364bb9be1db49c2d3e31aca5378c9de92a99d6ad339de401c08"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/authorized_order_study_20260930/ENVIRONMENT.json",
+      "sha256": "cd8d112843f42bb591f8c7ff9e4ebcb9dd2b6be9aef3faea13353b7f9b3fc2fe"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/authorized_order_study_20260930/ACTUAL_STAGE_ENVIRONMENT.json",
+      "sha256": "b7126883d47c16d9a502cb06cd40b07a586345701e060146472b17af4cecf11b"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/authorized_order_study_20260930/PRODUCER_CACHED_BUILD_IDENTITY.json",
+      "sha256": "2b164e308974449eca39c3fd9d0e26be6255613721c1384195f70656b0f21ece"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/endpoint_enclosure_review_20260930/EXACT_INPUT_AND_CALLBACK_BINDING.json",
+      "sha256": "3ca2c676095898cbe30d6fcc388c0e1d644fccd8b235dfe076be8e4001209ed4"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_preflight_20260930/FREEZE_IDENTITY.json",
+      "sha256": "012050e648e9f56d14ac3e2554fc81b346e899d491cbf629726874385208a055"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_preflight_20260930/SOURCE_CONTRACT_LOCK.json",
+      "sha256": "77c7b1d16cdb68154790c2fdcd4a42587e2662d579e81e75c0938ac7b180b998"
+    },
+    {
+      "path": "research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/completion/mixed_h/od_run.py",
+      "sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d"
+    }
+  ],
+  "B192_archives": [
+    {
+      "role": "OD",
+      "preserved_path": "research/r31ao_unequal_ladder/authorized_order_study_20260930/raw/B192_REUSED_OD/ASSEMBLED_OD.npz",
+      "sha256_from_closed_authority": "7e7b5782cc698a364aeac608620e56c7bfdc64035ffe5dfee501608dae7970df",
+      "bytes_from_current_metadata": 12862,
+      "headers": [
+        {
+          "member": "O.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "O_row.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "D_col.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "D_row.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            2,
+            47
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "components_OG.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            3,
+            47,
+            2
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "sumabs_upper_diagnostic.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<f16",
+          "fortran_order": false,
+          "shape": [
+            3,
+            47,
+            2
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "n.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "z.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [],
+          "matrix_payload_read": false
+        }
+      ],
+      "full_payload_rehashed_this_review": false
+    },
+    {
+      "role": "independent_JVP",
+      "preserved_path": "research/r31ao_unequal_ladder/authorized_order_study_20260930/raw/B192_REUSED_JVP/ASSEMBLED.npz",
+      "sha256_from_closed_authority": "53569e92875254e897a7e23b55620cca9c5acf9f86124dc0a73198ad41d1df87",
+      "bytes_from_current_metadata": 50398,
+      "headers": [
+        {
+          "member": "O.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "dotO.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "raw.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<c32",
+          "fortran_order": false,
+          "shape": [
+            2,
+            2,
+            3,
+            12,
+            12
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "sumabs.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<f16",
+          "fortran_order": false,
+          "shape": [
+            2,
+            2,
+            3,
+            12,
+            12
+          ],
+          "matrix_payload_read": false
+        },
+        {
+          "member": "z.npy",
+          "npy_version": [
+            1,
+            0
+          ],
+          "descr": "<f16",
+          "fortran_order": false,
+          "shape": [],
+          "matrix_payload_read": false
+        }
+      ],
+      "full_payload_rehashed_this_review": false
+    }
+  ],
+  "frozen_prediction_archives": [
+    {
+      "key": "R31AK_prediction_npz",
+      "path": "research/r31ak_eight_node/ncp_followup_20260930/FROZEN_HOLDOUT_PREDICTIONS.npz",
+      "sha256": "6d29acbe1aee9bb34cf3627c04136d67e27b5a44b44ee7b3104cdcd3fe1ff88c",
+      "identity_origin": "closed source-functional review, not repeated payload access",
+      "selected_headers": [
+        {
+          "member": "z0p75_R31AK_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        }
+      ],
+      "payload_read_this_review": false
+    },
+    {
+      "key": "R31AD_coarse_npz",
+      "path": "research/r31al_z075_gate/ncp_followup_20260930/Z075_COARSE_PREDICTION.npz",
+      "sha256": "de876e53bca7aa773f321ed2ecfe24e4a0b1fda57bf42f6e8736bddc1730e107",
+      "identity_origin": "closed source-functional review, not repeated payload access",
+      "selected_headers": [
+        {
+          "member": "z0p75_R31AD_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AD_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AD_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AD_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z0p75_R31AD_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        }
+      ],
+      "payload_read_this_review": false
+    }
+  ],
+  "closure_condition": "Review historical NumPy/build/layout linkage, obtain NPY member-byte bindings, then decode authorized finite values with synthetic-verified exact decoder; component tests alone do not close B03",
+  "witness_plan": "exact_raw_decoder/HISTORICAL_LAYOUT_CAPTURE_PLAN.md",
+  "actual_decode_scope": {
+    "authorization_status": "NOT_EXECUTED_PENDING_EXPLICIT_SCOPE_AND_ABI_AUTHORITY",
+    "input_archives": [
+      {
+        "path": "research/r31ao_unequal_ladder/authorized_order_study_20260930/raw/B192_REUSED_OD/ASSEMBLED_OD.npz",
+        "sha256": "7e7b5782cc698a364aeac608620e56c7bfdc64035ffe5dfee501608dae7970df"
+      },
+      {
+        "path": "research/r31ao_unequal_ladder/authorized_order_study_20260930/raw/B192_REUSED_JVP/ASSEMBLED.npz",
+        "sha256": "53569e92875254e897a7e23b55620cca9c5acf9f86124dc0a73198ad41d1df87"
+      },
+      {
+        "path": "research/r31ak_eight_node/ncp_followup_20260930/FROZEN_HOLDOUT_PREDICTIONS.npz",
+        "sha256": "6d29acbe1aee9bb34cf3627c04136d67e27b5a44b44ee7b3104cdcd3fe1ff88c"
+      },
+      {
+        "path": "research/r31al_z075_gate/ncp_followup_20260930/Z075_COARSE_PREDICTION.npz",
+        "sha256": "de876e53bca7aa773f321ed2ecfe24e4a0b1fda57bf42f6e8736bddc1730e107"
+      }
+    ],
+    "members": "Only registered floating O/D/dotO/K matrix members needed by exact Gram route; integer n metadata excluded",
+    "max_elements_per_member": 10000,
+    "max_total_elements": 20000,
+    "max_wall_seconds": 60,
+    "max_memory_mib": 256,
+    "new_geometry": false,
+    "new_order": false,
+    "new_producer": false,
+    "retraining": false,
+    "integrals_or_callbacks": false,
+    "comparator_rerun": false,
+    "outputs": [
+      "exact dyadic value arrays",
+      "canonical mathematical hashes",
+      "original NPY/payload hashes",
+      "signed-zero/padding provenance",
+      "exact decoder authority per member"
+    ]
+  },
+  "science_commands": 0,
+  "heavy_commands": 0,
+  "numerical_certificate_runs": 0,
+  "independent_review_admitted": false
+}

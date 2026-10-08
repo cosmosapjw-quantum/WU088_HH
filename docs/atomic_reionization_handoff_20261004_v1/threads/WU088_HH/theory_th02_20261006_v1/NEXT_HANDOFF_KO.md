@@ -1,0 +1,13 @@
+# HH-TH02 다음 이론/적용 단위
+
+HH/S0활성화승인은계승한다. 사용자이론우선요청과samebranch/PR33,REI반환PR83,create-onlyDrive/Dropbox를유지한다. 최신HH/REI를읽고관련delta만검토한다.
+
+읽기:START,THEOREMS,RESULT_SUMMARY,BACKUP_RECEIPT. 전체증명/입력/원로그/verifier는sealedZIP에있다. 두epsilon경계의정확bracket은기하학적realmodel인증이고실제gas/native전체인증이아니다. TH01pointroots로bracket을선택했지만정확부호/전구간G'로새증명을닫았다. 14/53최종검사와이2geometrycertificates를변경위험없이반복하지않는다.
+
+다음이론적용은한terminalsector를선정하여실제ON/OFFendpoint및생존photon의상관구간을받고K_Dh=-|tau'|a[(1-h1)Delta p-p0Delta h]를상계하는것이다. K_DT에는T와Pi의유한차이를함께운반한다. 실제prehistory정칙성/동시eventgroup을확인하며geometryroot만으로cuspamplitude를주장하지않는다. 전구간C2대신c0+regularcurvature+각slopejump의정확적분식을사용한다. 원점localC1과전체C1을혼동하지않는다.
+
+Event-time오차는exactenergyenclosure에서eta를얻고matchedadjointweight차이와곱해야한다. commonmacrogrid가timingerror공유나오차상쇄증거가아니다. 의도된BI-FLRWcrossing차이를numericalerror로세지않는다. 앞slab의continuouserror를rootwidth로reset하지않는다. 실제adjoint/curvature/tube가없으면조건부bound로남긴다.
+
+별도실행우선순위ON06은같은provider의point/thermal/HHcounter와intervalRHS/Jet2/rootbox/model/checkpoint/budgetidentity를작게연결하는것이다. 이TH02는생산코드이식이아니고옛OFFcertificate를ON에붙이지않는다. 새일반toy/historycampaign을추가하거나새activation승인을묻지않는다. F09전체campaign은REI소유.
+
+원native/reference/vendor,기존S0OFFcontrol,1e-12장부와모든기준,24/289·265unbounded·epsilonnull·B22OPEN·consumedscopes보존. 현재proofhelper출력은create-only. 양쪽백업R1은fullrestore/physicalvalidation과별도다. Git/ZIP요약의byte동일성을가정하지말고manifest의실제파일을사용한다.

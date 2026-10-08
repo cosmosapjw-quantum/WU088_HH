@@ -1,0 +1,223 @@
+{
+  "schema": "WU088_R31AO_NONEXECUTING_ENCLOSURE_IMPLEMENTATION_CONTRACT_V1",
+  "inspected_head": "a5947d79be0234494873b7201233ac9da4b233da",
+  "inspected_tree": "f934cc2e0db7d31b4e5275266ab6d56627f79ad0",
+  "successor_diff": [],
+  "science_execution_authorized": false,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false,
+  "implementation_written": false,
+  "numerical_execution_performed": false,
+  "new_authorization_scope_generated": false,
+  "target_path": "EXACT_CONTINUOUS_TARGET_ENCLOSURE_PLUS_ARCHIVED_RAW_COMPARISON",
+  "binding": "EXACT_INPUT_AND_CALLBACK_BINDING.json",
+  "plan_document": "NUMERICAL_CERTIFICATE_IMPLEMENTATION_PLAN.md",
+  "library_pin": {
+    "library": "FLINT",
+    "version": "3.4.0",
+    "api": "C acb/arb",
+    "runtime_backend_verified": false,
+    "build_performed": false,
+    "archive_docs": [
+      {
+        "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/production/literature/code/flint_acb_calc_v3.4.0.rst",
+        "bytes": 17891,
+        "sha256": "c57859a8a3b05fd0dc95a4f8a3f2448f04d70e5655a83bf944faab1d6fcde171",
+        "role": "archived version-labelled library primary documentation/source, not producer substitute"
+      },
+      {
+        "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/production/literature/code/flint_acb_hypgeom_v3.4.0.rst",
+        "bytes": 58537,
+        "sha256": "45edca2cacf731f8c948ad99d08d6ec94e4717f6525e1e44511257f91dafc7d2",
+        "role": "archived version-labelled library primary documentation/source, not producer substitute"
+      },
+      {
+        "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/production/literature/code/flint_m_v3.4.0.c",
+        "bytes": 9414,
+        "sha256": "ff2a60e95352c8a152d7b76306f061a025ab49748598924e3caed241ea38b523",
+        "role": "archived version-labelled library primary documentation/source, not producer substitute"
+      }
+    ],
+    "calls": [
+      "acb_hypgeom_m with regularized=0",
+      "acb_hypgeom_gamma_upper with regularized=0",
+      "acb_calc_integrate"
+    ],
+    "before_execution_required": [
+      "release/source hash",
+      "GMP/MPFR versions and hashes",
+      "compiler/flags/ABI",
+      "library/binary hashes",
+      "precision and finite resource caps",
+      "callback implementation verification"
+    ]
+  },
+  "pipeline": [
+    {
+      "stage": "P0_identity",
+      "input": "binding pins + fixed target",
+      "output": "identities and exact dyadic inputs",
+      "fail_closed": "unknown identity, target drift or nonfinite input"
+    },
+    {
+      "stage": "P1_callbacks",
+      "input": "exact stored exponents/coefficients + source mathematical target",
+      "output": "outward M_k s-derivative balls r=0,1,2 and O/G range/analytic callbacks",
+      "fail_closed": "branch/domain unknown, regularization mismatch, unsupported order or backend identity"
+    },
+    {
+      "stage": "P2_endpoint_interior",
+      "input": "analytic target + finite rational endpoints and approved work caps",
+      "output": "endpoint complement bounds and compact O/G integral balls",
+      "fail_closed": "unproven whole-box range/holomorphy, nonfinite enclosure, unresolved convergence/resource cap"
+    },
+    {
+      "stage": "P3_assembly",
+      "input": "O/G balls + immutable contraction/phase/normalization semantics",
+      "output": "D_col* 47x2 and D_row* 2x47 entry balls with exact units",
+      "fail_closed": "missing term, duplicated radius category or changed semantics"
+    },
+    {
+      "stage": "P4_raw_epsilon",
+      "input": "D entry balls and validated exact raw B192 decoder",
+      "output": "epsilon_C/R outward Frobenius bounds; epsilon_K and epsilon_Dmax derived",
+      "fail_closed": "ABI/decoder failure or input identity drift"
+    },
+    {
+      "stage": "P5_Gram_eta",
+      "input": "exact raw and frozen predictions, fixed published gaps",
+      "output": "exact represented 2x2 Gram/root/norm/Dmax/gap intervals and eta",
+      "fail_closed": "raw decoding or gap serialization ambiguity"
+    },
+    {
+      "stage": "P6_Pareto",
+      "input": "epsilon_K/Dmax, eta, original tol and predicates",
+      "output": "supplementary real-rule sufficient-condition proof; machine boundary proof separately",
+      "fail_closed": "lower-gap ambiguity, predicate boundary not established or budget unmet"
+    }
+  ],
+  "error_accounting": "END_TO_END_ONLY__OLD_X0_X8_FORENSIC_ALTERNATIVE_PRESERVED_NOT_ADDED",
+  "epsilon_propagation": {
+    "K": "(epsilon_C+epsilon_R)/2",
+    "Dmax": "max(epsilon_C,epsilon_R)"
+  },
+  "eta_contract": {
+    "reference": "exact represented B192 raw and frozen prediction matrices",
+    "prediction_K": "use archived prediction K; do not replace with recomputed K",
+    "Dmax": "interval max of lower bounds and upper bounds separately",
+    "gap": "PRIMARY R31Z-R31AK; SECONDARY R31AD-R31AK",
+    "aggregation": "one gap-discrepancy eta; no separate old cast/K/SVD term added",
+    "published_gaps_per_ta": {
+      "PRIMARY_K": "0.31982343565606726",
+      "PRIMARY_Dmax": "0.33345694057636703",
+      "SECONDARY_K": "0.05713242012648218",
+      "SECONDARY_Dmax": "0.08782058637980173"
+    },
+    "serialization": "published gaps exact decimal rationals; original shortest float tokens/binary64 predicate semantics separately retained"
+  },
+  "decision": {
+    "tol_per_ta": "1e-10",
+    "lower_gap": "ghat_j-2*epsilon_j-eta_j",
+    "sufficient": "both lower_gap_j>=-tol and at least one lower_gap_j>tol",
+    "conservative_strict": "both lower_gap_j>tol",
+    "eta_zero_common_budget_reference_per_ta": "0.02856621001324109",
+    "budget_is_actual_bound": false,
+    "strict_boundary_formula": "epsilon < min_j(ghat_j-eta_j-tol)/2 for common epsilon and both-metric strict improvement; retain tol in final outward comparisons",
+    "machine_predicate": "separate binary64 add/sub/rounding boundary audit from archived scalars/source expressions, no SVD/comparator rerun",
+    "ambiguous": "DECISION_BOUND_UNRESOLVED"
+  },
+  "proof_obligations": [
+    {
+      "item": "Finite Hermite envelope, Gaussian majorant, endpoint complement and compact holomorphy",
+      "status": "DERIVED_UNDER_PREMISES",
+      "proof": "NEW_THEOREM_REVIEW A-D",
+      "numerical_bound": null
+    },
+    {
+      "item": "Same Frozen107 exact input bytes/layout/finite and positive exponent premises",
+      "status": "ESTABLISHED_BY_BYTE_AND_BIT_BINDING",
+      "proof": "EXACT_INPUT_AND_CALLBACK_BINDING",
+      "not_claimed": "physical input adequacy or target accuracy"
+    },
+    {
+      "item": "API unregularized M/Gamma and callback order contracts",
+      "status": "ESTABLISHED_DOCUMENTATION_CONVENTION",
+      "proof": "pinned FLINT docs",
+      "not_claimed": "compiled callback correctness"
+    },
+    {
+      "item": "Quadrature/continuous integral remainder and endpoint constants",
+      "status": "MISSING_ACTUAL_ENCLOSURE",
+      "proof": "P2 not executed"
+    },
+    {
+      "item": "Stored node/base-weight error and outside finite rule/moment defect",
+      "status": "OPTIONAL_ROUTE_MISSING_AUTHORITY_AND_ENCLOSURE",
+      "proof": "B06; no regenerated nodes/grid substitution"
+    },
+    {
+      "item": "Special-function, principal power, normalization, phase rounding enclosure",
+      "status": "MISSING_IMPLEMENTATION_AND_EXECUTION",
+      "proof": "P1/P3; old floating routines not balls"
+    },
+    {
+      "item": "Finite summation and contraction",
+      "status": "MISSING_OUTWARD_ASSEMBLY",
+      "proof": "P3 includes once in final D balls; no X0..X8 addition"
+    },
+    {
+      "item": "Exact input/raw/cast/norm/serialization discrepancy",
+      "status": "CONTRACT_DERIVED__DECODER_AND_GRAM_MISSING",
+      "proof": "P0/P4/P5; eta aggregate once"
+    },
+    {
+      "item": "Original machine predicate at IEEE boundaries",
+      "status": "MISSING_BOUNDARY_AUDIT",
+      "proof": "not replaced by tol equality or comparator replay"
+    }
+  ],
+  "exact_remaining_blockers": [
+    {
+      "id": "B01",
+      "status": "MISSING_IMPLEMENTATION_AND_VERIFICATION",
+      "item": "FLINT 3.4.0 pinned build/dependency/binary/ABI identity and outward O/G/radial callback implementation",
+      "not_missing": "mathematical callback target and version-labelled primary docs are bound"
+    },
+    {
+      "id": "B02",
+      "status": "NOT_EVALUATED",
+      "item": "HH endpoint constants, finite endpoints, compact interior validated integral/coefficients, complete final D entry balls"
+    },
+    {
+      "id": "B03",
+      "status": "NOT_IMPLEMENTED_OR_VERIFIED",
+      "item": "exact longdouble decoder, proven historical ABI, synthetic fixtures, padding/endian/Fortran/serialization boundaries"
+    },
+    {
+      "id": "B04",
+      "status": "NOT_EVALUATED",
+      "item": "exact dyadic Gram/root intervals, Dmax/gap eta and original scalar machine-predicate boundary audit"
+    },
+    {
+      "id": "B05",
+      "status": "UNMEASURED",
+      "item": "conservatism, finite resource caps, attainable widths and practical runtime/memory"
+    },
+    {
+      "id": "B06",
+      "status": "OPTIONAL_ROUTE_AUTHORITY_NOT_ESTABLISHED",
+      "item": "actual executed OD transformed base-weight bytes/hash and node-to-measure identity",
+      "search_scope": "B192 OD identity and closed source map only; not exhaustive absence proof; not required for continuous target path"
+    }
+  ],
+  "cost": {
+    "structural_fact": "naive 2 active arrangements * 12^2 primitive pairs * 3 angular channels * 3 fields =2592 scalar integrals before reuse;94 entries/block; Gram2x2",
+    "timing_precision_width_memory": "UNMEASURED",
+    "conservatism": "absolute coefficient sum/endpoint widths/dependency may be large; estimates only, no actual HH constant evaluated"
+  },
+  "future_acceptance": "all identities, complete finite outward enclosures, decoded exact raw, finite epsilon/eta and original Pareto sufficient condition proven; partial/fail labels otherwise",
+  "future_execution": "requires separate explicit user instruction; no new scope or envelope issued",
+  "source_accuracy": "SOURCE_ACCURACY_BOUND_UNAVAILABLE",
+  "rigorous_reference": "RIGOROUS_REFERENCE_CERTIFICATION_BLOCKED_BY_MISSING_ERROR_BOUND"
+}

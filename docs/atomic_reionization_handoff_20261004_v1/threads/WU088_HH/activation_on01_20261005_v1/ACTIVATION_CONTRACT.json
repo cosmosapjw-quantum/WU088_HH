@@ -1,0 +1,64 @@
+{
+  "task_id": "HH-ON01-20261005",
+  "research_profile": "HH_ON01_STATIC_FT03_LCS_KS_V1",
+  "authorization": {
+    "source": "current_user_message",
+    "text": "새 HH 활성화 연구 루프를 이어서 진행해줘.",
+    "scope": "new opt-in research; not an alteration of S0 or production admission"
+  },
+  "HH_parent": "0d80ff00880569dca9db2e19d0719ad316165eef",
+  "REI_source": "7c5469101f8d6ef027c8c3119cc5c053e15ba1d9",
+  "model_basis": "Actual typed FT03 static RHS, not expanding S0, hhe_rhs(&ft03.gas) forbidden",
+  "domain": {
+    "T_K": [35000, 60000],
+    "state": "7 proper CGS coordinates; valid H/He simplex and nonnegative photon densities",
+    "density": "native finite-point study nH=1e-4, nHe=8.3e-6 cm^-3; helper representability checks are not additional physical domain",
+    "frame": "gas rest frame, no tilt",
+    "distribution": "common-temperature isotropic Maxwellian reference",
+    "geometry": "H=0; prescribed static cells",
+    "source": "same 20/35/70 eV FT03 fixed-group control; no cosmological emissivity or S0 change"
+  },
+  "provider_selection": {
+    "default": "Disabled",
+    "research_comparison": ["Lcs91", "CorrectedKs"],
+    "automatic_switch_or_blend": false,
+    "LCS": "Grackle3.4.1 af7939494ce65007887ada7b98d1813df6843346 k57 analytic branch",
+    "KS": "Glover2015 arXiv1504.00514v2 Eq14; legacy symbol KS91 is retained only as alias",
+    "cutoff_policy": "reject outside declared T window; never evaluate, alter or smooth the raw 3000K floor"
+  },
+  "ownership": {
+    "event": "HH separate event R=k*nHI^2",
+    "heat": "-chi_H*R",
+    "binding": "+chi_H*R",
+    "photon": "zero direct HH source; no escape photon",
+    "electron_delta": 1,
+    "pair": "no extra half",
+    "threshold": "gas.threshold_ev[0]*gas.ev_erg, NOT kB*157800"
+  },
+  "scope": {
+    "native_rate": true,
+    "typed_rhs": true,
+    "BE_residual_assembly": true,
+    "new_time_solver": false,
+    "history": false,
+    "canonical_S0_changed": false,
+    "REI_production_changed": false
+  },
+  "preregistered_validation": {
+    "scalar_relative_tolerance": 3e-12,
+    "rate_and_HH_ledger_zero": "exact when a physical zero factor is present",
+    "ledger_scaled_tolerance": 5e-14,
+    "off_baseline": "bitwise equality of every baseline field",
+    "bad_input": "named error; no clamp/zero substitution",
+    "independent_reference": "100-digit mpmath using exact binary64 input values and exact declared fit constants; finite point test, not interval proof"
+  },
+  "admission": {
+    "research_activation": true,
+    "physical_rate_accuracy": false,
+    "production": false,
+    "empirical_uncertainty": "UNQUANTIFIED; two deterministic scenarios are not an error bound"
+  },
+  "stop_condition": "one native provider/RHS/residual unit and independent finite point comparison; no stage/time/history campaign or F04 certificate replay",
+  "next": "HH-ON02 owner-approved stepper update/residual/event seam; then bounded actual coupled integration under an explicit new contract",
+  "physical_support": "UNESTABLISHED_AT_RESEARCH_WINDOW; formula-scenario use only, NOT an empirical validity assertion"
+}

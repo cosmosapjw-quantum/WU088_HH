@@ -1,0 +1,227 @@
+{
+  "schema": "WU088_R31AO_G1_G2_INDEPENDENT_ARTIFACT_REVIEW_V1",
+  "review_role": "G3 author reviewing distinct G1/G2 ownership; excludes self-review of G3",
+  "grounded_parent_commit": "393eb882f7fbf160cfb465849d9652c7b026b5be",
+  "review_status": "ACCEPT_SCOPED_IMPLEMENTATION_AFTER_B09_FIX_WITH_HISTORICAL_ABI_GATE_OPEN",
+  "independent_review_admitted": false,
+  "formal_proof_assistant_verification": false,
+  "files_modified_by_reviewer_outside_review_directory": [],
+  "reviewed_current_identities": [
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/decoder.py",
+      "bytes": 12820,
+      "sha256": "bf1867616af07a670d61cd75c7ca0655c99e0be13fd6a73e9a4654f5fc0986f1"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/exact_raw_decoder/test_decoder.py",
+      "bytes": 14244,
+      "sha256": "5bc8e18b55b9711545a767c90545ec6de6b6a2af63c3bf21be404d03b915480c"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/RAW_ABI_AUTHORITY.json",
+      "bytes": 15313,
+      "sha256": "0a710864e659f0c02483649b2267055b7c5f37b7d7cfe604bd1286b422cc888d"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/RAW_DECODER_VERIFICATION.json",
+      "bytes": 3528,
+      "sha256": "006c48bbdcac33fabb8aa6d8f9000908aacb5982291842875f2ddf0e3c77c07f"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/THEOREM_CLOSURE.md",
+      "bytes": 14871,
+      "sha256": "bb6f65e7e8ebb5799be10f393fb7824e66d3815758b9bdc2a508e178364348b4"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/THEOREM_CLOSURE.json",
+      "bytes": 11553,
+      "sha256": "45a2ffb216b6663e009295eb42142c46164768c3c8168aacbc5e0f426e9c8468"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/REMAINING_THEOREM_OBLIGATIONS.json",
+      "bytes": 4683,
+      "sha256": "c4f14f25ebc404cc73c8d0fafd719c1585a2ee6e8f56152561f823e67000d5a6"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/theorem_checks/exact_helpers.py",
+      "bytes": 5162,
+      "sha256": "1aa28b2a7ea5437f618ca8f812c635f2cea7531c63c4df3c298575c4235730ae"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/theorem_checks/test_exact_helpers.py",
+      "bytes": 6987,
+      "sha256": "005e2be19421363b7341152b3e85b5aefc9614e237ae3b6d8f4afa52db6cac8d"
+    }
+  ],
+  "findings": [
+    {
+      "id": "B09",
+      "severity": "MEDIUM",
+      "category": "IMPLEMENTATION_RESOURCE_CONTRACT",
+      "title": "Empty Fortran shape can bypass element cap during eager Cartesian-product pool creation",
+      "initial_source_sha256_from_pre_fix_verification_record": "c1f252cad7dc7c99e375139ffb888fc35f7ca3a111540136a48e5d1285d61791",
+      "minimal_input": {
+        "shape": [
+          "2**63-1",
+          0
+        ],
+        "fortran_order": true,
+        "max_elements": 0,
+        "payload_bytes": 0,
+        "dtype": "<f8"
+      },
+      "reproduction_limits": {
+        "RLIMIT_AS_bytes": 134217728,
+        "subprocess_timeout_seconds": 5
+      },
+      "before": "MemoryError before any mathematical values produced",
+      "root_fix": "return immediately from _storage_indices if header.element_count==0",
+      "after": "same bounded fixture and (2**63-1,0,2**63-1) return empty values normally",
+      "status": "RESOLVED_IMPLEMENTATION_VERIFIED",
+      "evidence": [
+        "empty_fortran_reproduction.py",
+        "empty_fortran_reproduction.log",
+        "empty_fortran_after_fix.log",
+        "empty_middle_axis_after_fix.log",
+        "decoder_after_fix.log"
+      ]
+    }
+  ],
+  "advisories": [
+    {
+      "id": "REVIEW-A01",
+      "severity": "INFORMATIONAL_REQUIRED_FUTURE_ADMISSION",
+      "topic": "LayoutAuthority consistency is not historical ABI truth",
+      "observed": "synthetic evidence metadata relabeled HISTORICAL_PRODUCER_LAYOUT_REVIEWED is structurally accepted",
+      "is_current_decoder_defect": false,
+      "reason": "explicitly documented caller trust boundary; historical_layout_admitted remains false",
+      "required_future_control": "certificate runner must independently authenticate reviewed historical evidence and exact NPY member binding; never rely on authority_scope string alone"
+    }
+  ],
+  "verification": {
+    "existing_decoder_before_fix": {
+      "tests": 29,
+      "exit_code": 0,
+      "log": "decoder_existing.log"
+    },
+    "existing_decoder_after_fix": {
+      "tests": 30,
+      "exit_code": 0,
+      "log": "decoder_after_fix.log"
+    },
+    "G1_exact_helpers": {
+      "tests": 15,
+      "exit_code": 0,
+      "log": "theorem_existing.log"
+    },
+    "independent_cross_format_checks": {
+      "count": 1600,
+      "exit_code": 0,
+      "normal_binary64_inputs": 200,
+      "formats": [
+        "binary64",
+        "x87_80",
+        "ieee_binary128"
+      ],
+      "endianness": [
+        "little",
+        "big"
+      ],
+      "x87_offsets": [
+        0,
+        3,
+        6
+      ],
+      "log": "independent_checks.log"
+    },
+    "source_record_hash_checks": {
+      "count": 12,
+      "all_match": true,
+      "evidence": "source_identity_check.json"
+    }
+  },
+  "G1_conclusion": {
+    "selected_abstract_implications": "ACCEPT_UNDER_EXPLICIT_PREMISES",
+    "source_map_semantic_disagreement_found": false,
+    "new_callback_equality_proved_here": false,
+    "actual_input_premises_checked": false,
+    "remaining_obligations": "implementation/backend binding, actual domain/constants/enclosures, nested uniformity binding, ABI and actual represented gaps, project independent decision admission"
+  },
+  "G2_conclusion": {
+    "synthetic_decoder": "IMPLEMENTATION_VERIFIED_AFTER_RESOURCE_FIX",
+    "historical_ABI": "RAW_ABI_AUTHORITY_BLOCKED",
+    "current_host_probe_substituted_for_history": false,
+    "actual_HH_payloads_decoded": false
+  },
+  "K_contract_clarification": {
+    "raw_constructed_exact_K": "exact (lift(C192)-lift(R192) dagger)/2",
+    "model_stored_prediction_K": "preserve archived predicted K separately; do not reconstruct from predicted D",
+    "legacy_complex128_constructed_K": "rounded arithmetic after old comparator cast; accounted in legacy eta",
+    "G3_independent_review_claimed_here": false
+  },
+  "execution_scope": {
+    "science_commands": 0,
+    "heavy_commands": 0,
+    "numerical_certificate_runs": 0,
+    "HH_arrays_constants_integrals_accessed": false,
+    "old_comparator_execution": false,
+    "source_mutations": 0
+  },
+  "evidence_files": [
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_g2_g1/REVIEW.md",
+      "bytes": 6267,
+      "sha256": "fad8781084e12a31b3a5bcfe210b0946ae4a767decaae1ce2104131251fceeac"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_g2_g1/decoder_after_fix.log",
+      "bytes": 3939,
+      "sha256": "50945688c9ca653a8f48fa2f8f9c4f31748005b03cf8e0bdd196f7bafe454df1"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_g2_g1/decoder_existing.log",
+      "bytes": 3774,
+      "sha256": "fde3791a1b9d6701e8a7983653ef5de517d1f791616c8d8baa49b9def4c0eaec"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_g2_g1/empty_fortran_after_fix.log",
+      "bytes": 37,
+      "sha256": "42654b907602d847ce692f938093bdb9a25aba24c28ca53882ee4152a4e1dd63"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_g2_g1/empty_fortran_reproduction.log",
+      "bytes": 62,
+      "sha256": "d36891d3784ea04100550ebd8504319d23cbaa4eeb3844ccc366d0a779d7dbe6"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_g2_g1/empty_fortran_reproduction.py",
+      "bytes": 475,
+      "sha256": "e38a21bbfcd0a5dfdf8200fd80cab2acbc1c3308ea1dacb1672da861556eafde"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_g2_g1/empty_middle_axis_after_fix.log",
+      "bytes": 37,
+      "sha256": "42654b907602d847ce692f938093bdb9a25aba24c28ca53882ee4152a4e1dd63"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_g2_g1/independent_checks.log",
+      "bytes": 391,
+      "sha256": "94e8b0ad89cf94ec61ab0265060ff0dd726f011dfb5733e384e800721d45f1d7"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_g2_g1/independent_checks.py",
+      "bytes": 3196,
+      "sha256": "4d6f5f00a33c58231e49293041bf7202df8b0b1a85aa3d467c1b989e72c0c72d"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_g2_g1/source_identity_check.json",
+      "bytes": 3234,
+      "sha256": "0947a09de8b779acf1955d9a7a3790b8712780d853cd37940e82265ebc4151c1"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/review_g2_g1/theorem_existing.log",
+      "bytes": 1959,
+      "sha256": "91ab18f9504483e5546f1096be0d34dd4794a9f36f70c63eb08dd2addbe18dbd"
+    }
+  ]
+}

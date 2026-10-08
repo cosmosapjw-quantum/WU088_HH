@@ -1,0 +1,244 @@
+{
+  "schema": "WU088_R31AO_G1_THEOREM_CLOSURE_V1",
+  "parent_commit": "393eb882f7fbf160cfb465849d9652c7b026b5be",
+  "route": "EXACT_CONTINUOUS_TARGET_ENCLOSURE_PLUS_ARCHIVED_RAW_COMPARISON",
+  "records": [
+    {
+      "id": "G1-01",
+      "theorem": "Continuous target semantic binding",
+      "assumptions": [
+        "finite stored exact inputs; ideal operations defined by canonical map"
+      ],
+      "hh_mapping": "h0_fused radial/derivative fields and od_run assembly",
+      "proved": "Termwise algebra agrees with the pinned source and the declared ideal continuous functional.",
+      "unproved_or_not_claimed": "No equality claim between finite floating producer and continuous integral.",
+      "proof_status": "PROVED",
+      "claim_status": "DERIVED",
+      "adaptation": "Existing accepted source map adapted by inspecting four exact pinned source files.",
+      "implementation_role": "target identity",
+      "proof_location": "THEOREM_CLOSURE.md"
+    },
+    {
+      "id": "G1-02",
+      "theorem": "Center derivative/integral exchange",
+      "assumptions": [
+        "mu>0,a>0,b>0,finite degree; real compact center neighborhood; fixed q"
+      ],
+      "hh_mapping": "G1=-partial_d1z I,G2=-partial_d2z I",
+      "proved": "Common finite Gaussian-polynomial and absolute Hermite domination permits both exchanges.",
+      "unproved_or_not_claimed": "No evaluated actual HH majorant constants.",
+      "proof_status": "PROVED",
+      "claim_status": "DERIVED",
+      "adaptation": "Accepted A/B provide domination; pz derivative retains +1.",
+      "implementation_role": "analytic existence",
+      "proof_location": "THEOREM_CLOSURE.md"
+    },
+    {
+      "id": "G1-03",
+      "theorem": "Complex radial representation",
+      "assumptions": [
+        "Re(A),Re(B),Re(sigma)>0; principal powers; bilinear s"
+      ],
+      "hh_mapping": "complex t,u field callback",
+      "proved": "Parameter-entire identity continuation transfers the real Gaussian radial expression; no spatial absolute-value contour deformation.",
+      "unproved_or_not_claimed": "No validation of legacy floating radial_wide numerical approximation.",
+      "proof_status": "PROVED",
+      "claim_status": "DERIVED",
+      "adaptation": "Identity theorem coordinatewise plus uniform Gaussian parameter domination.",
+      "implementation_role": "analytic representation",
+      "proof_location": "THEOREM_CLOSURE.md"
+    },
+    {
+      "id": "G1-04",
+      "theorem": "Radial s derivatives orders0..2",
+      "assumptions": [
+        "k=0..8,r=0..2,sigma nonzero right half-plane; b=3/2+r"
+      ],
+      "hh_mapping": "M,M_s,M_ss",
+      "proved": "Pochhammer shifted 1F1 derivative formula; zero Pochhammer exact-zero branch; s=0 regular.",
+      "unproved_or_not_claimed": "Arbitrary odd-k backend outputs require G4 implementation tests.",
+      "proof_status": "PROVED",
+      "claim_status": "DERIVED",
+      "adaptation": "Entire series coefficient differentiation, exact formal coefficients and independent Gaussian polynomial checks.",
+      "implementation_role": "special function convention",
+      "proof_location": "THEOREM_CLOSURE.md"
+    },
+    {
+      "id": "G1-05",
+      "theorem": "O/G explicit derivatives",
+      "assumptions": [
+        "center-independent a,b,t,u,q; source geometry"
+      ],
+      "hh_mapping": "O and G1/G2 s/px/pz",
+      "proved": "Product rule yields documented L_j,sp_j,E and derivatives; exact source der[4]/der[5] matches.",
+      "unproved_or_not_claimed": "New callback code equality must be checked in G4.",
+      "proof_status": "PROVED",
+      "claim_status": "DERIVED",
+      "adaptation": "Coefficient-level polynomial derivative tests complement written general chain-rule proof.",
+      "implementation_role": "field algebra",
+      "proof_location": "THEOREM_CLOSURE.md"
+    },
+    {
+      "id": "G1-06",
+      "theorem": "Half-plane branches",
+      "assumptions": [
+        "strict positive lower Re(t),Re(u),Re(A),Re(B),Re(sigma) margins over complete boxes"
+      ],
+      "hh_mapping": "analytic callback",
+      "proved": "Principal powers and positive-half-integer denominator parameters are holomorphic on selected domain.",
+      "unproved_or_not_claimed": "No midpoint-only or finite-node evidence substitutes for whole-box margin.",
+      "proof_status": "PROVED",
+      "claim_status": "DERIVED",
+      "adaptation": "Accepted holomorphy theorem plus reciprocal real-part identity; FLINT D07/D08 API.",
+      "implementation_role": "domain guard",
+      "proof_location": "THEOREM_CLOSURE.md"
+    },
+    {
+      "id": "G1-07",
+      "theorem": "Nested uniform enclosure",
+      "assumptions": [
+        "joint holomorphy on neighborhood of compact product; uniform inner set inclusion"
+      ],
+      "hh_mapping": "Petras nested compact integration",
+      "proved": "Inner output must contain H(Z); uniform set inclusion and integral holomorphy justify outer callback.",
+      "unproved_or_not_claimed": "Actual nested implementation, finite returned widths and resource-cap behavior.",
+      "proof_status": "PROVED",
+      "claim_status": "DERIVED",
+      "adaptation": "Fixed-parameter 1D theorem adapted using uniform parameter family and Gaussian domination.",
+      "implementation_role": "2D adaptation",
+      "proof_location": "THEOREM_CLOSURE.md"
+    },
+    {
+      "id": "G1-08",
+      "theorem": "Upper incomplete gamma and endpoint arithmetic",
+      "assumptions": [
+        "lambda>0,nu>1,0<ell<T; positive halfinteger nu-1"
+      ],
+      "hh_mapping": "endpoint evaluator",
+      "proved": "Lower endpoint uses upper unregularized Gamma; positive recurrence and exponential/sqrt upper envelope are valid; J independently bounded.",
+      "unproved_or_not_claimed": "Actual Frozen107 endpoint constants and chosen split.",
+      "proof_status": "PROVED",
+      "claim_status": "DERIVED",
+      "adaptation": "Change of variable with reversed endpoints; positive halfinteger recurrence; FLINT D08 regularized=0 convention.",
+      "implementation_role": "endpoint convention",
+      "proof_location": "THEOREM_CLOSURE.md"
+    },
+    {
+      "id": "G1-09",
+      "theorem": "Disk/rectangle and disjoint complement",
+      "assumptions": [
+        "nonnegative scalar endpoint upper bounds; finite rectangle radii"
+      ],
+      "hh_mapping": "endpoint residual plus final entry balls",
+      "proved": "Corners counted once; modulus disk safely embeds in ±B real/imag rectangle; reverse radius needs sqrt(rx²+ry²).",
+      "unproved_or_not_claimed": "Target-width practicality after rectangular inflation.",
+      "proof_status": "PROVED",
+      "claim_status": "DERIVED",
+      "adaptation": "Disjoint set partition and Euclidean norm triangle inequality; exact corner counterexample.",
+      "implementation_role": "error geometry",
+      "proof_location": "THEOREM_CLOSURE.md"
+    },
+    {
+      "id": "G1-10",
+      "theorem": "Exact lift normalization and tau",
+      "assumptions": [
+        "finite frozen dyadics,a,b>0,v!=0,z=3/4"
+      ],
+      "hh_mapping": "normalization,orbital coefficients,phase",
+      "proved": "Stored inputs retained; tau exact division and ideal normalization outward evaluation define unchanged continuous target.",
+      "unproved_or_not_claimed": "Code/serialized-input exact binding and backend arithmetic require their own checks.",
+      "proof_status": "PROVED",
+      "claim_status": "DERIVED",
+      "adaptation": "Exact rational definitions; normalization authority distinguished from historical rounded intermediates.",
+      "implementation_role": "input target",
+      "proof_location": "THEOREM_CLOSURE.md"
+    },
+    {
+      "id": "G1-11",
+      "theorem": "Finite contractions and post-integral assembly",
+      "assumptions": [
+        "finitely many entries; valid coefficient and field balls"
+      ],
+      "hh_mapping": "orbital sums,parity,phase,Dcol,Drow",
+      "proved": "Absolute coefficient propagation, ball-product error, isometry of exact parity/phase/conjugation; no double charging.",
+      "unproved_or_not_claimed": "Final D ball computation and useful epsilon.",
+      "proof_status": "PROVED",
+      "claim_status": "DERIVED",
+      "adaptation": "Finite triangle inequality; conjugation performed after real-domain O/G integration.",
+      "implementation_role": "matrix adaptation",
+      "proof_location": "THEOREM_CLOSURE.md"
+    },
+    {
+      "id": "G1-12",
+      "theorem": "Strict Pareto sufficient inequalities",
+      "assumptions": [
+        "exact represented gap lower bounds; valid epsilon per metric; fixed tolerance authority"
+      ],
+      "hh_mapping": "K,Dmax primary/secondary decisions",
+      "proved": "L=g_minus-2epsilon; all L>=-tol and any L>tol suffice; legacy eta path conservative.",
+      "unproved_or_not_claimed": "Actual gap/epsilon; original floating machine-predicate boundaries.",
+      "proof_status": "PROVED",
+      "claim_status": "DERIVED",
+      "adaptation": "Reverse triangle and max Lipschitz bounds; exact strict-boundary fixtures.",
+      "implementation_role": "decision perturbation",
+      "proof_location": "THEOREM_CLOSURE.md"
+    }
+  ],
+  "source_evidence": [
+    {
+      "path": "research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/completion/mixed_h/h0_fused.cpp",
+      "bytes": 4604,
+      "sha256": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+      "bytes_read_this_review": true,
+      "sha256_verified": true
+    },
+    {
+      "path": "research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/completion/mixed_h/od_run.py",
+      "bytes": 4404,
+      "sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+      "bytes_read_this_review": true,
+      "sha256_verified": true
+    },
+    {
+      "path": "research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/exact_weights/exact_laplace_weights.py",
+      "bytes": 10904,
+      "sha256": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb",
+      "bytes_read_this_review": true,
+      "sha256_verified": true
+    },
+    {
+      "path": "research/r31an_reference_certification/ncp_preflight_20260930/source_snapshot/completion/radial/DERIVATION.md",
+      "bytes": 6968,
+      "sha256": "3214cdaf252ce3ea48026df643aaedae37674753f6f99746c9c3aaa30b9bdc70",
+      "bytes_read_this_review": true,
+      "sha256_verified": true
+    },
+    {
+      "acquisition_source_id": "D07",
+      "archive_relative_path": "previous_v1/acquired/documents/D07.text",
+      "sha256": "c57859a8a3b05fd0dc95a4f8a3f2448f04d70e5655a83bf944faab1d6fcde171",
+      "selected_api_sections_read": true,
+      "sha256_verified": true
+    },
+    {
+      "acquisition_source_id": "D08",
+      "archive_relative_path": "previous_v1/acquired/documents/D08.text",
+      "sha256": "45edca2cacf731f8c948ad99d08d6ec94e4717f6525e1e44511257f91dafc7d2",
+      "selected_api_sections_read": true,
+      "sha256_verified": true
+    }
+  ],
+  "selected_mathematical_implications_proved": true,
+  "g1_gate": "PROVED_UNDER_EXPLICIT_DOMAIN_AND_EXACT_INPUT_PREMISES",
+  "code_and_runtime_premises_automatically_discharged": false,
+  "old_accepted_theorems_rebuilt": false,
+  "new_broad_literature_searches": 0,
+  "actual_hh_input_evaluations": 0,
+  "actual_hh_integrand_evaluations": 0,
+  "actual_raw_array_decodes": 0,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false,
+  "independent_final_decision_review_admitted": false,
+  "verification": "theorem_checks/VERIFICATION.json"
+}

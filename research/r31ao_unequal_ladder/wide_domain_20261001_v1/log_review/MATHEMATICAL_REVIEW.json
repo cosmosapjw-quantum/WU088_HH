@@ -1,0 +1,86 @@
+{
+  "findings": [
+    {
+      "description": "Whole-inner exp image does not prove positive for 32/64/200-bit scale spans at both128/256bits; exact endpoints remain enclosed. Monolithic outer preflight can still refuse; finite exact tiles retaining guards are safe alternative.",
+      "id": "LOG-MATH-01",
+      "severity": "nonblocking_feasibility"
+    },
+    {
+      "description": "Transformed/untransformed intervals should overlap but need not be bitwise identical; overlap is consistency evidence, not standalone correctness proof.",
+      "id": "LOG-MATH-02",
+      "severity": "acceptance_requirement"
+    },
+    {
+      "description": "Finite tiles require exact coverage, source/task binding, serialized exact endpoint sum and final width gate; add original global endpoint only once.",
+      "id": "LOG-MATH-03",
+      "severity": "acceptance_requirement"
+    }
+  ],
+  "geometry_cases": 10,
+  "geometry_hh_callback_calls": 0,
+  "geometry_native_integral_runs": 0,
+  "ncp_execution": false,
+  "production_admission": false,
+  "schema": "WU088_LOG_MAP_INDEPENDENT_MATHEMATICAL_REVIEW_V1",
+  "scientific_admission": false,
+  "scope": "Exact log coordinate transform of existing compact primitive; no actual HH integral or final decision",
+  "source_adapter_review": "PENDING_FINAL_SOURCE_FREEZE",
+  "sources": [
+    {
+      "path": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/THEOREM_CLOSURE.md",
+      "sha256": "bb6f65e7e8ebb5799be10f393fb7824e66d3815758b9bdc2a508e178364348b4",
+      "size": 14871
+    },
+    {
+      "path": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/CALLBACK_TARGET_PROOF.md",
+      "sha256": "3a3e2208c674b2df1ce9e1b4a80bc977602c2a11c3e896f691dd3fb4df3dd21b",
+      "size": 5185
+    },
+    {
+      "path": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/validated_callback/callback.cpp",
+      "sha256": "06dabab65432c868190032726853ab92a0d0d504128500cfb352c2a749258964",
+      "size": 11653
+    },
+    {
+      "path": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/validated_callback/callback.hpp",
+      "sha256": "364705585a7a93da90907497bfd3dcd05ce0fba8920413534aa85f75a6a330f1",
+      "size": 2482
+    },
+    {
+      "path": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/interior_pilot/petras_host.hpp",
+      "sha256": "c7492c04b01f758c94663c4ffc6d591f4cff0309b6cb5f448368c4e94a5c50f2",
+      "size": 4028
+    },
+    {
+      "path": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/native_execution_20261001_v1/refining_petras.cpp",
+      "sha256": "4a3b46b925efdb92182d653bb41885f9b518826f83ad842256706676d0bdbeb6",
+      "size": 13208
+    },
+    {
+      "path": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/native_execution_20261001_v1/interior_design/INTERIOR_FEASIBILITY.md",
+      "sha256": "b0f8ce43a12b4373db2117f2e0515d3348c51c54aa6c27e60f625b8336914407",
+      "size": 6417
+    },
+    {
+      "path": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/wide_domain_20261001_v1/log_review/MATHEMATICAL_CONTRACT.md",
+      "sha256": "ab2d0a5f026cd255c6d710f44ad283f2d6b692b7da9c95233c31ab038fcbd3ed",
+      "size": 9628
+    },
+    {
+      "path": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/wide_domain_20261001_v1/log_review/geometry_runtime/REVIEW_RUN.json",
+      "sha256": "a4249c591ba0c7158968446634031e590d00adf3ea6123a58170e495090538d2",
+      "size": 6104
+    },
+    {
+      "path": "/workspace/scratch/6cf5f59cd2d1/native_execution_build/sources/flint/flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/acb_calc/integrate.c",
+      "sha256": "26503d0fa450020d792d1cdc485ff48cf8c49e3933f38b0d44f3e0f4b84ca1af",
+      "size": 9762
+    },
+    {
+      "path": "/workspace/scratch/6cf5f59cd2d1/native_execution_build/sources/flint/flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/acb_calc/integrate_gl_auto_deg.c",
+      "sha256": "63a93a1c62f709d3d68f94c0bdc2beeba573d5437c59ff98a322dbe574a707c6",
+      "size": 10252
+    }
+  ],
+  "status": "CONDITIONAL_MATHEMATICAL_CONTRACT_VALID"
+}

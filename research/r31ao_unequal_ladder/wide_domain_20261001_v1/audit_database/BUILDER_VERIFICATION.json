@@ -1,0 +1,49 @@
+{
+  "schema": "WU088_WIDE_DOMAIN_DB_BUILDER_CONTRACT_VERIFICATION_V1",
+  "status": "PASS_FOCUSED_DATABASE_CONTRACTS",
+  "command": "python -B audit_database/test_wide_domain_db.py",
+  "exit_code": 0,
+  "tests_run": 11,
+  "failures": 0,
+  "errors": 0,
+  "observed_unittest_seconds": 0.825,
+  "test_names": [
+    "changed_source_bytes_detected",
+    "create_only_does_not_modify_prior_output",
+    "late_evidence_detected_then_included_by_fresh_build",
+    "missing_original_stage_refused",
+    "output_inside_current_tree_refused",
+    "prior_stage_mismatch_refused_before_output",
+    "real_sqlite_integrity_fk_sql_restore_and_literal_statuses",
+    "same_source_has_same_logical_identity",
+    "stage_evidence_hash_mismatch_refused_before_output",
+    "symlink_source_refused",
+    "wrong_prior_db_hash_refused_before_output"
+  ],
+  "fixtures": "Real pinned prior SQLite/prompt/stage JSON, synthetic current receipts, actual SQLite/SQL/filesystem operations",
+  "prior_database_sha256": "98d9acd99222a0080118157ce1ec2e71bff9630d310bb594ffac05ad414abb71",
+  "prior_database_hash_unchanged_after_each_test": true,
+  "final_delivery_database_built": false,
+  "scientific_execution_count": 0,
+  "scientific_admission": false,
+  "production_admission": false,
+  "remaining": "Root STAGE_DELTA.json and final source/result freeze must precede a create-only final snapshot",
+  "sources": {
+    "build_wide_domain_db.py": {
+      "bytes": 16961,
+      "sha256": "79d1e9be35b4e27af3adfc4abcb428e48ead0bc007ec9671e106b965d0301c5c"
+    },
+    "schema.sql": {
+      "bytes": 1970,
+      "sha256": "77d97e73351a07c2db7a7e8593ad2fb39f53180da47526220b9c7ffc7a6ea9c2"
+    },
+    "test_wide_domain_db.py": {
+      "bytes": 7870,
+      "sha256": "4d2304c2a865256b2718a4e8747ce4fc8c71a375c5d8e0560c1eea2c96e83177"
+    },
+    "README.md": {
+      "bytes": 4159,
+      "sha256": "599dc51eb25dafcdf1995134febbc08b982fd478a2062d64d1d42b5007f5dc1a"
+    }
+  }
+}

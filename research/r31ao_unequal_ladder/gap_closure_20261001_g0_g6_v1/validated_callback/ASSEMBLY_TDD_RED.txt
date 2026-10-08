@@ -1,0 +1,19 @@
+test_assembly (unittest.loader._FailedTest.test_assembly) ... ERROR
+
+======================================================================
+ERROR: test_assembly (unittest.loader._FailedTest.test_assembly)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_assembly
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/gap_closure_20261001_g0_g6_v1/validated_callback/test_assembly.py", line 5, in <module>
+    from assembly_exact import QC, registry, contract_entry, phase_argument, final_blocks
+ModuleNotFoundError: No module named 'assembly_exact'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

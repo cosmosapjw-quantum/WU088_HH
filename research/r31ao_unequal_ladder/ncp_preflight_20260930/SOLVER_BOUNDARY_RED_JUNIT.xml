@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="0.059" timestamp="2026-09-30T18:16:56.213400+09:00" hostname="s1a0e5abed09"><testcase classname="research.r31ao_unequal_ladder.test_unequal_order_ladder" name="test_large_finite_ratio_has_positive_solution" time="0.000"><failure message="RuntimeError: failed to bracket observed order">def test_large_finite_ratio_has_positive_solution():
+&gt;       p=m.solve_positive_order(1e200)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+research/r31ao_unequal_ladder/test_unequal_order_ladder.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+observed_ratio = 1e+200, tol = 1e-13, max_iter = 200
+
+    def solve_positive_order(observed_ratio: float, *, tol: float=1e-13, max_iter: int=200) -&gt; float:
+        rho=float(observed_ratio)
+        if not math.isfinite(rho) or rho&lt;=THRESHOLD:
+            raise ValueError("no positive-p solution under the conditional power model")
+        lo=0.0
+        hi=1.0
+        while ratio_model(hi) &lt; rho:
+            hi*=2.0
+            if hi&gt;1024:
+&gt;               raise RuntimeError("failed to bracket observed order")
+E               RuntimeError: failed to bracket observed order
+
+research/r31ao_unequal_ladder/unequal_order_ladder.py:22: RuntimeError</failure></testcase><testcase classname="research.r31ao_unequal_ladder.test_unequal_order_ladder" name="test_small_positive_power_ratio_is_stable" time="0.001"><failure message="assert 1.2241169305724726 == 1.223901085741793 ± 5.0e-16&#10;  &#10;  comparison failed&#10;  Obtained: 1.2241169305724726&#10;  Expected: 1.223901085741793 ± 5.0e-16">def test_small_positive_power_ratio_is_stable():
+        p=1e-12
+        expected=m.THRESHOLD*(1+(math.log(5/4)+math.log(6/5))*p/2)
+&gt;       assert m.ratio_model(p)==pytest.approx(expected,abs=5e-16,rel=0)
+E       assert 1.2241169305724726 == 1.223901085741793 ± 5.0e-16
+E         
+E         comparison failed
+E         Obtained: 1.2241169305724726
+E         Expected: 1.223901085741793 ± 5.0e-16
+
+research/r31ao_unequal_ladder/test_unequal_order_ladder.py:49: AssertionError</failure></testcase></testsuite></testsuites>

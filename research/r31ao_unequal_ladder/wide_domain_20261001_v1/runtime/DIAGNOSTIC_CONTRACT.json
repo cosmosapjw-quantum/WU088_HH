@@ -1,0 +1,36 @@
+{
+  "schema": "WU088_INSTRUMENTED_FAILURE_DIAGNOSIS_CONTRACT_V1",
+  "created_utc": "2026-10-01T13:51:06.435Z",
+  "purpose": "Distinguish preflight/domain refusal, inner status/radius, and integrator limits for the already rejected first W1 tile",
+  "allowed_actual_HH_integral_invocations": 1,
+  "primitive_index": 0,
+  "physical_window": {
+    "l_t": "1/16",
+    "T_t": "1/2",
+    "l_u": "1/16",
+    "T_u": "1/2"
+  },
+  "plan_sha256": "d23c8ad9a349a2111579b6f925879565a01d830f6c172b641c4f85a7986c5230",
+  "limits": {
+    "precision_bits": 128,
+    "radius_exp": -52,
+    "relative_goal": 64,
+    "max_evaluations": 20000,
+    "max_integration_calls": 1024,
+    "degree_limit": 64,
+    "queued_panels": 64,
+    "wall_seconds": 30,
+    "memory_mib": 1024
+  },
+  "requirements": [
+    "Additive source path, no frozen source mutation",
+    "Instrument existing algorithm without numerical policy or contract changes",
+    "Pin source/build/binary/limits/exact input before run",
+    "Preserve every success or refusal",
+    "No tile collection or full-window admission from this diagnostic"
+  ],
+  "failure_samples_max": 8,
+  "conditional_corrective_run_authorized_here": false,
+  "scientific_admission": false,
+  "production_admission": false
+}

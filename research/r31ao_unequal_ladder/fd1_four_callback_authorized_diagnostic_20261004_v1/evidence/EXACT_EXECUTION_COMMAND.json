@@ -1,0 +1,21 @@
+{
+  "command": [
+    "systemd-run",
+    "--user",
+    "--unit=wu088-fd1-diagnostic",
+    "--wait",
+    "--pipe",
+    "--property=MemoryMax=34359738368",
+    "--property=CPUQuota=400%",
+    "--property=RuntimeMaxSec=60",
+    "/root/WU088_NCP_EXEC_20261003_v2/fd1_prep_20261003_v3/authorized_namespace.sh",
+    "4f121182611c1609145728cbddfc5c346fdbbdf9c8424527b25534f282ad37be",
+    "/root/WU088_NCP_EXEC_20261003_v2/fd1_exec_20261004_v1/evidence/AUTHORIZATION_RECORD.json",
+    "301a6d07f24e016d8567a19a309335fac3975362b21da764e536b15fcc79136b"
+  ],
+  "adapter_run_attempt_budget": 1,
+  "new_dispatcher": false,
+  "integrations": 0,
+  "retry": false,
+  "expected_max_field_callbacks": 4
+}

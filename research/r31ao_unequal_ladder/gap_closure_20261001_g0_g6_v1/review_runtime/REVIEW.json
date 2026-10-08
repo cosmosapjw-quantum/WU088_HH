@@ -1,0 +1,149 @@
+{
+  "schema": "WU088_BOUNDED_RUNTIME_ARTIFACT_REVIEW_V1",
+  "reviewer": "/root/review_gram",
+  "status": "BOUNDED_ARTIFACT_REVIEW_COMPLETE_DESCENDANT_FINDING_CLOSED",
+  "independent_review_admitted": false,
+  "review_scope": [
+    "host_guard resource/output/process lifetime semantics",
+    "interior_pilot uniform range claim, shared budget, partial-subdivision recovery"
+  ],
+  "excluded": [
+    "native compilation",
+    "actual HH evaluation",
+    "new Petras draft",
+    "broad repeat review"
+  ],
+  "source_artifacts": [
+    {
+      "path": "host_guard/run_guarded.py",
+      "sha256": "fe6be9bcc846433f8a199358e31b6b672b5f5bf776847896cd32746814bb2309",
+      "bytes": 5389
+    },
+    {
+      "path": "host_guard/test_guard.py",
+      "sha256": "3bb298236e014891965577b140c2c6f94519ad61c98f7ee03852f7828cffd2a9",
+      "bytes": 2327
+    },
+    {
+      "path": "interior_pilot/engine.py",
+      "sha256": "572e27db59d5c9002d5c30a23f354ec97a7cfac325a5b7e3e9b799d2024bfac6",
+      "bytes": 11965
+    },
+    {
+      "path": "interior_pilot/toys.py",
+      "sha256": "6ea533bc87f102382795de2fb4616bae26400eaeb9259f0dd84c2055b9cbf538",
+      "bytes": 1333
+    },
+    {
+      "path": "interior_pilot/test_interior.py",
+      "sha256": "18a44142a0fa0cd95c3b8e7e84720814a53b920e6e63f5efacde60996df2ac29",
+      "bytes": 7421
+    },
+    {
+      "path": "interior_pilot/README.md",
+      "sha256": "7df5a1519a35f8bb719dc8621b68c58874b71a60ce0266b858911a9ad8bbf75e",
+      "bytes": 2301
+    }
+  ],
+  "tests": {
+    "existing_guard_tests": 4,
+    "existing_pilot_tests": 21,
+    "exit_code": 0,
+    "log": "review_runtime/existing_suites.log",
+    "incomplete_child_cases": {
+      "scope": "BOUNDED_SYNTHETIC_ONLY",
+      "results": [
+        {
+          "failed_callback": 3,
+          "status": "PASS_LAST_COMPLETE_ENCLOSURE",
+          "enclosure_real": [
+            "0",
+            "1"
+          ],
+          "live_panels": 0,
+          "live_state_bytes": 0
+        },
+        {
+          "failed_callback": 5,
+          "status": "PASS_LAST_COMPLETE_ENCLOSURE",
+          "enclosure_real": [
+            "1/8",
+            "5/8"
+          ],
+          "live_panels": 0,
+          "live_state_bytes": 0
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "RUNTIME-R01",
+      "severity": "P1_FOR_PROCESS_TREE_WALL_GUARD_P2_FOR_DECLARED_SINGLE_PROCESS_SCOPE",
+      "category": "PROCESS_LIFETIME_RESOURCE_CONTRACT",
+      "location": "host_guard/run_guarded.py: process.wait and cleanup",
+      "title": "Normal leader exit returns while same-group descendant continues beyond wall budget",
+      "reproduction": "Synthetic parent spawns a same-group Python child that sleeps .6 s then creates a sentinel; parent exits immediately. Call run_guarded with .2 s wall cap.",
+      "observed": {
+        "scope": "BOUNDED_SYNTHETIC_ONLY",
+        "guard_status": "PROCESS_COMPLETED",
+        "guard_wall_seconds": 0.033255550000831136,
+        "wall_budget_seconds": 0.2,
+        "process_group_alive_after_guard_return": true,
+        "descendant_completed_after_wall_budget": true,
+        "descendant_did_not_escape_process_group": true
+      },
+      "impact": "Guard reports PROCESS_COMPLETED while a non-escaped descendant still runs and mutates output after receipt. RLIMIT_AS and CPU caps are inherited but do not bound a sleeping descendant wall time. Single-process wording does not enforce rejection of this case.",
+      "minimum_fix": "On normal/nonzero leader completion and exception paths, detect/kill remaining process group before output snapshot and receipt. Record descendants cleanup or explicit single-process contract violation. Alternatively supervise group lifetime through the deadline with an appropriate Linux job boundary. Keep escaped-group exclusion and per-process memory disclaimer.",
+      "parent_blocker": "B13_PROCESS_GROUP_LIFETIME",
+      "resolution": "CLOSED_IMPLEMENTATION_VERIFIED_AFTER_ROOT_FIX",
+      "postfix_closure": {
+        "scope": "ONLY_ORIGINAL_BOUNDED_DESCENDANT_REPRODUCTION",
+        "probe": {
+          "scope": "BOUNDED_SYNTHETIC_ONLY",
+          "guard_status": "PROCESS_CONTRACT_VIOLATION",
+          "guard_wall_seconds": 0.032794599001135794,
+          "wall_budget_seconds": 0.2,
+          "process_group_alive_after_guard_return": true,
+          "descendant_completed_after_wall_budget": false,
+          "descendant_did_not_escape_process_group": true
+        },
+        "source_artifacts": [
+          {
+            "path": "host_guard/run_guarded.py",
+            "sha256": "fe6be9bcc846433f8a199358e31b6b672b5f5bf776847896cd32746814bb2309",
+            "bytes": 5389
+          },
+          {
+            "path": "host_guard/test_guard.py",
+            "sha256": "3bb298236e014891965577b140c2c6f94519ad61c98f7ee03852f7828cffd2a9",
+            "bytes": 2327
+          }
+        ],
+        "verified": "Guard rejects successful completion, sends remaining-group SIGKILL, and original delayed sentinel no longer appears. Finally-path group cleanup is present in inspected source.",
+        "measurement_limit": "killpg(pid,0) checks group existence, not runnable state; its true result may include zombies or pending termination. No fully-reaped process-tree claim.",
+        "independent_review_admitted": false,
+        "additional_broad_tests": false
+      },
+      "pre_fix_guard_sha256": null,
+      "pre_fix_guard_sha256_status": "NOT_CAPTURED_BEFORE_CONCURRENT_ROOT_FIX"
+    }
+  ],
+  "verified_semantics": [
+    "RLIMIT_AS is explicitly per-process virtual address space, not aggregate tree RSS.",
+    "RLIMIT_CPU and output RLIMIT_FSIZE are explicitly per-process/per-file; parent reads at most 65536 bytes per output preview.",
+    "Live-leader timeout sends SIGKILL to its process group.",
+    "RangeClaim structurally binds both whole integration panel and whole parameter rectangle, with uniform=True and a nonempty proof reference; callback truth remains externally proved.",
+    "Shared Budget counts nested evaluations and releases owned panel/state reservations on exit.",
+    "Exact endpoint replacement removes the same old endpoints; it does not interval-subtract an uncertain contribution.",
+    "A ResourceLimit during incomplete subdivision preserves the previously complete valid total; invalid/domain/implementation callback failures discard acceptance.",
+    "Nested toy callback supplies a uniform inner image over the full outer panel, independent of unused outer z, and safely accepts wide-but-valid inner enclosures.",
+    "Cooperative time and tracked-state memory are accurately distinguished from hard process caps."
+  ],
+  "actual_HH_evaluations": 0,
+  "native_builds": 0,
+  "science_commands": 0,
+  "original_source_mutations": 0,
+  "rigorous": false,
+  "source_artifacts_capture_note": "The first hash capture for host_guard occurred after the concurrent root fix; its hash is the post-fix identity, not the identity of the earlier failing probe. The original failing behavior is preserved in the probe receipt and earlier source inspection; no pre-fix byte hash was captured."
+}

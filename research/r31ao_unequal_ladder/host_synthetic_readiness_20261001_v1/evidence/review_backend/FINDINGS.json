@@ -1,0 +1,26 @@
+{
+  "findings": [
+    {
+      "id": "BR01",
+      "origin": "separate backend artifact reviewer",
+      "severity": "blocking execution defect",
+      "initial_behavior": "A successful locked Petras fixture prints two diagnostic lines before its final JSON. Parsing the entire stdout using json.loads always fails.",
+      "final_behavior": "parse_native_marker validates the final exact typed JSON and the two expected diagnostic prefixes; the caller refuses truncated stdout. Locked fixture remains unchanged.",
+      "status": "CLOSED_STATIC_AND_SYNTHETIC",
+      "initial_snapshot_preserved_by_reviewer": false,
+      "preserved_owner_red": "evidence/backend/TDD_RED_BR01_HOME.log",
+      "review_reproduction": "review_probes.py::test_br01_locked_diagnostics_and_final_marker"
+    },
+    {
+      "id": "BR02",
+      "origin": "parent integration review",
+      "severity": "material evidence-chain gap",
+      "initial_behavior": "Stage receipt JSON hashes alone did not rehash the actual build stdout/stderr files named inside those receipts.",
+      "final_behavior": "Runner includes stream identity dictionaries and the gate hashes both stream files per build-stage record, in addition to the receipt.",
+      "status": "CLOSED_STATIC_AND_SYNTHETIC",
+      "preserved_parent_red": "evidence/provenance/STREAM_BINDING_RED.log",
+      "review_reproduction": "review_probes.py::test_br02_actual_streams_bound_to_synthetic_chain"
+    }
+  ],
+  "remaining_blocking_findings": []
+}

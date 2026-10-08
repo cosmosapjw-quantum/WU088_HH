@@ -1,0 +1,113 @@
+{
+  "schema": "WU088_PRIOR_IMMUTABILITY_AND_MPI_CLOSURE_REVIEW_V1",
+  "created_utc": "2026-10-01T13:49:35.406353+00:00",
+  "status": "PRIOR_BYTES_AND_MPI_EVIDENCE_PASS_RUNTIME_STILL_BLOCKED",
+  "prior_checkpoint": {
+    "root": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/native_execution_20261001_v1",
+    "source_inventory": {
+      "path": "RECOVERY_INVENTORY.json",
+      "bytes": 105758,
+      "sha256": "9cff2d98fd5f66a10e909364ba61b5461af8cc5fa218c97653a22adbcc7a734d"
+    },
+    "scope": {
+      "path": "SCOPE.json",
+      "bytes": 1379,
+      "sha256": "597b0b325b5cc3cb29109d924caeb51954d2c9f388f63dc34a330ec2d38c986c"
+    },
+    "expected_file_count": 472,
+    "verified_file_count": 472,
+    "missing_or_changed": [],
+    "expected_records_sha256": "8c05bbd44c9542406c1ed551dcabed00ca8e7629d0770369a8b8c9d196272b0d",
+    "observed_records_sha256": "8c05bbd44c9542406c1ed551dcabed00ca8e7629d0770369a8b8c9d196272b0d",
+    "mtime_only_changes": [],
+    "mtime_is_admission_criterion": false
+  },
+  "MPI_evidence": {
+    "source_files_verified": {
+      "test_host.py": "affac68aa9e0a3a729badd337d9e5a5cf8a56fd871d90016dbe72ddf154d403d",
+      "rank_guard.py": "6931e7cbe16dee423e1d6b6e5e21c3b14b1fd3b9f58307b8faf33151df697308",
+      "containment_probe.py": "798881fa4b6543b4ddf7e3008e11a052e47acba0a7d2506ba3a1efda0c99a02c",
+      "launcher.py": "ec58911792d46cd30f40ee2adb13c9a0bcc048cc5785f8c06f8683a8ff910631",
+      "cgroup_guard.py": "e12cbbb73a78e95f8adbf51bd84758abdd1c816bfb1db66acbe64e8449d6cd77"
+    },
+    "source_identity_matches_owner_and_both_final_review_receipts": true,
+    "owner_test_count": 10,
+    "owner_log_tests_match_source_test_names": true,
+    "independent_test_count": 12,
+    "counts_are_separate_suites_not_claimed_unique_union": true,
+    "evidence_files": [
+      {
+        "path": "mpi_native_host/RESULT.json",
+        "bytes": 2157,
+        "sha256": "e768b1cacef15f7b309db2fa9063c1241d9828c9621dfedc825ed996a0e62343"
+      },
+      {
+        "path": "mpi_native_host/evidence/TEST_FINAL.log",
+        "bytes": 1235,
+        "sha256": "540ee9ce297fabd6e40f122d8a58731f87a47a6f73dfc4a3362965798f265e50"
+      },
+      {
+        "path": "mpi_native_host/evidence/ACTUAL_PROBE_REFUSAL.json",
+        "bytes": 123,
+        "sha256": "eb8674658ea165f76952530ffda248ba338fd25b699c97dce3074fb01a84ac36"
+      },
+      {
+        "path": "mpi_native_host/evidence/HOST_OBSERVATION.json",
+        "bytes": 2959,
+        "sha256": "b80a5d7af5d67cbbbb95235f90df9d20e22c4fe6bb63b05abe57a06034a2db49"
+      },
+      {
+        "path": "mpi_review/INDEPENDENT_REVIEW.json",
+        "bytes": 2311,
+        "sha256": "7b471d979c85410469005eebbbe348b177bc8d7999aaafa2ced31b71dc0bd1eb"
+      },
+      {
+        "path": "mpi_review/contract_run_final/REVIEW_RUN.json",
+        "bytes": 2833,
+        "sha256": "336e3e5899fce65dbb5a8fd3e6a710ba8691ef8e04efe02af2fdefff192d3a68"
+      },
+      {
+        "path": "mpi_review/REVIEW_KO.md",
+        "bytes": 4673,
+        "sha256": "e28a32a69193ca34d21d54f8db5534703eed4425e16151c0a80691a98221411a"
+      },
+      {
+        "path": "mpi_review/review_contract.py",
+        "bytes": 7465,
+        "sha256": "b62e60606a27f268c12c6c527fac33cacd909088d11518dbdf5f171aa4938c9f"
+      }
+    ],
+    "status": "SOURCE_AND_BOUNDARY_PASS_RUNTIME_UNVERIFIED",
+    "actual_MPI_runs": 0,
+    "actual_cgroup_containment_runs": 0,
+    "actual_HH_runs": 0,
+    "root_bypass_used": false,
+    "actual_probe_exit_code": 2,
+    "actual_probe_return": {
+      "status": "BLOCKED",
+      "reason": "nonroot probe required; no bypass",
+      "MPI_executed": false,
+      "actual_HH_runs": 0
+    },
+    "prior_host_observed_uid": 0,
+    "prior_host_observed_euid": 0,
+    "fresh_uid": 0,
+    "fresh_euid": 0,
+    "fresh_cgroup_subtree_control": "",
+    "runtime_blockers": [
+      "root execution refused",
+      "current parent does not enable delegated cpu memory pids subtree controls",
+      "actual nonroot containment probe and OpenMPI/NCP execution unverified"
+    ],
+    "fixed_driver": "native_execution_20261001_v1/native_driver",
+    "refined_or_log_driver_connected": false
+  },
+  "actions_this_review": {
+    "prior_files_written": 0,
+    "frozen_MPI_sources_written": 0,
+    "numerical_runs": 0,
+    "test_reruns": 0
+  },
+  "scientific_admission": false,
+  "production_admission": false
+}

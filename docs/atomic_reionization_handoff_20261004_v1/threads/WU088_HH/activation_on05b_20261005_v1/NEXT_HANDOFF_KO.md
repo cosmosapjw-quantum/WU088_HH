@@ -1,0 +1,13 @@
+# HH-ON05B -> HH-ON06 actual F08 source-consistent pilot
+
+기존사용자 HH/S0연구활성화승인을계승한다. WAITING_ON_OPT_IN/PARKED로회귀하지않는다. 같은HHbranch research/r31ao-unequal-order-ladder-20260930,PR33,REI반환PR83. liveHH/REI와변경된sciencepath만읽는다.
+
+START,RESULT_SUMMARY,NUMERICAL_BUDGET_AMENDMENT,BACKUP_RECEIPT,LATE_REI_ACK부터읽는다. 전체유도/원소스/실행명령은복구core의REPORT/THEORY/REPRODUCE와source/test에있다. core는207개원파일과제외raw12개의identity를보존하나원시nativegzip자체는없다. 전체ZIP413950057bytes/SHA117245432848a513d3bc05a73813de148cda42d01149935de23afee2ef3602a7는대화첨부에있고remote전체백업은실패했다. core이중백업과raw전체백업을혼동하지않는다. 원시기록이필요할때만fullZIP을회수한다.
+
+새8완결이력/3444acceptedsource/64고유BEendpoint/70854최종assertions/18tests/1722matchedpairs는의존성변화없이반복하지않는다. 원time-onlybudget거절,referenceprogress실패,compilefailure와timeout을보존한다. 동일archive를다시업로드하거나또다른일반toy연구를만들지않는다.
+
+다음은실제F08의동일provider를pointsource/thermal/dedicatedHHevent와intervalRHS/Jet2/primary_stage_root에동시결속하는작은pilot이다. namedONsource/model/checkpointidentity와immutablebudget의전체시간/eventlist소유권을닫는다. OFF원본은보존하고기존OFFcertificate를ONpoint에붙이지않는다. 실제dispatcher·pilot·근모형·회계가맞을때S0선택을전환한다. liveowner가이미구현했으면그diff와반환만받는다.
+
+미소A_x의coarse/fine2.40696e-13/2.42362e-13근접은globalcontinuous/physical정확도증명이아니다. eventtimes는roundedanalytic이고sourcepartition/budget변경도있다. A의물리claim과모형통합gate는분리한다. sourcebirth/angle/물리입력을결과에맞춰조정하지않는다. 이후정밀화는한축씩한다.
+
+lateREIa2bc41f8은fixed-grid첫FLRWmacro오차계승문서8개뿐으로HHsource변경없다. 그certificate를HHcohort에전용/재실행하지않았다. currentS0OFFcontrol,원criteria,legacy24/289·265unbounded·epsilonnull·B22OPEN·consumedscopes보존. F09전수campaign은REI소유. samebranchappend-only/non-force와create-onlybackup,ACK/byte/restore/science분리.

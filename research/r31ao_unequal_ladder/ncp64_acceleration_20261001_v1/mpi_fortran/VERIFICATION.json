@@ -1,0 +1,156 @@
+{
+  "schema": "WU088_NCP64_MPI_FORTRAN_VERIFICATION_V1",
+  "implementation_status": "C_BRIDGE_VERIFIED_FORTRAN_MPI_UNVERIFIED",
+  "source_files": [
+    "dispatcher.f90",
+    "worker_spawn.c",
+    "worker_spawn.h",
+    "export_worklist.py",
+    "build.py",
+    "host_smoke.py"
+  ],
+  "worker_api": {
+    "worker": "../executor/worker.py",
+    "argv": [
+      "ABS_PYTHON",
+      "ABS_WORKER",
+      "--manifest",
+      "ABS_MANIFEST",
+      "--task-index",
+      "ZERO_BASED_INDEX"
+    ],
+    "success_exit": 0,
+    "other_exit": "failure/inconclusive",
+    "worklist_rows": "N followed by N rows of index and wall_seconds+10; cost descending/task_id ascending permutation",
+    "dispatcher_argv": [
+      "ABS_DISPATCHER",
+      "ABS_PYTHON",
+      "ABS_WORKER",
+      "ABS_MANIFEST",
+      "ABS_WORKLIST"
+    ]
+  },
+  "control_invariants": [
+    "MPI carries only integer task/deadline/status messages.",
+    "No scientific MPI_SUM or floating reduction.",
+    "Task outputs remain exact files for canonical Python collection.",
+    "On task failure stop new dispatch; drain active bounded tasks; STOP each worker and broadcast failure.",
+    "MPI operation errors call MPI_Abort; abrupt MPI rank loss is not recovered by ULFM.",
+    "Only integer initialization and supervisor-budget summation use OpenMP SIMD directives."
+  ],
+  "c_evidence": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "unittest",
+      "-v",
+      "test_worker_spawn.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.4502095580028254,
+    "hard_timeout_seconds": 30,
+    "address_space_mib": 512,
+    "tests": 10,
+    "compiler": "/usr/bin/gcc",
+    "compiler_sha256": "6117c52522997d2aaccb2b52b3c6bf42c0a6c5edb1d718431fed6b2fc5fec234",
+    "compiler_version": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+    "flags": [
+      "-std=c11",
+      "-O3",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pedantic"
+    ],
+    "source_sha256": {
+      "worker_spawn.c": "6d31c42c34e5f2f183188b8d37d5f295880b002349bbaec8698cc4139c596b5f",
+      "worker_spawn.h": "29880ac561f28a0c0b7268a9258f8c8b911b2d552ab68563737fc69ef1eba3c6",
+      "spawn_cli.c": "e370c31e9880b3e380b95daca6b0f6eed29d9fd66a215be5a61fd027a8bbe793",
+      "test_worker_spawn.py": "6675246cb1616f643b307192680081551771ed3e9d18bb607ba9d3e30d6c8091",
+      "export_worklist.py": "972ff652030f37acb933920affa9c7dd02de333bc5749a76e892e03285bf6986"
+    },
+    "Fortran_compiled": false,
+    "MPI_executed": false
+  },
+  "regressions": [
+    {
+      "id": "MPI_C_BRIDGE_REMAINING_GROUP",
+      "finding_owner": "/root/review_gram",
+      "status": "CLOSED_BY_IMPLEMENTATION_AND_REGRESSION",
+      "red": "REVIEW_GROUP_RED.log",
+      "green": "C_SHIM_GREEN.log",
+      "change": "Kill remaining worker process-group members on every return; successful leader plus remaining group returns1106."
+    },
+    {
+      "id": "INHERITED_DESCRIPTOR_BOUNDARY",
+      "status": "VERIFIED",
+      "change": "GNU posix_spawn closefrom action closes descriptors>=3; explicit inheritance regression passes."
+    }
+  ],
+  "fixture_issue": {
+    "log": "TEST_FIXTURE_RED.log",
+    "classification": "test helper class attribute shadowed method; corrected before genuine production RED; not counted as production defect"
+  },
+  "environment": {
+    "tools": {
+      "gcc": "/usr/bin/gcc",
+      "g++": "/usr/bin/g++",
+      "gfortran": null,
+      "mpifort": null,
+      "mpicc": null,
+      "mpirun": null
+    },
+    "build_refusal": "LOCAL_MISSING_TOOLCHAIN/BUILD.json",
+    "platform_requirement": "GNU/Linux glibc>=2.34 and GNU/OpenMPI wrappers"
+  },
+  "host_acceptance": {
+    "command": "ABS_PYTHON ABS_NEW/mpi_fortran/host_smoke.py --mpi-binary ABS_BUILD/ncp64_dispatch --output-dir ABS_NEW_SMOKE",
+    "ranks": [
+      1,
+      2,
+      4
+    ],
+    "factory": "../executor/make_fixture.py",
+    "launch_guard": "../host_plan/launcher.py",
+    "required_result": "all tasks COLLECTED and identical canonical_payload_digest for all three ranks",
+    "executed_here": false
+  },
+  "limitations": [
+    "No Fortran compiler or OpenMPI wrapper/runtime is installed here; native syntax/link/runtime and vectorization report are not verified.",
+    "Python backend process groups are separately owned by executor cleanup; SIGKILL cannot execute cleanup handlers. Outer whole-job descendant guard is mandatory.",
+    "OS uninterruptible waits and MPI rank/transport loss do not have a user-space bounded recovery guarantee.",
+    "Wrapper file hashes are pinned by the build CLI; captured compiler/configuration metadata is not an independently pinned dependency closure.",
+    "No NCP performance or scientific SIMD speedup is claimed."
+  ],
+  "Fortran_compiled": false,
+  "MPI_executed": false,
+  "MPI_1_2_4_rank_payload_equality_verified": false,
+  "scientific_kernels_vectorized": false,
+  "NCP_performance_measured": false,
+  "actual_HH_runs": 0,
+  "production_admitted": false,
+  "independent_review_admitted": false,
+  "rigorous": false,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "artifact_sha256": {
+    "BUILD_REFUSAL.log": "a9cba7a967ed69a71669648eb3aa86a305788ad575bdc3a6eccc3d65cb1622df",
+    "C_SHIM_EXECUTION.json": "b2f8bca1c807804dcb2a2a17c9961dff560b6036a2a67aeed558ede9fd72eac0",
+    "C_SHIM_GREEN.log": "33af791bc2bc6abc303e37caca00aca2644a24a8e9be3ab4930a90286e2c5f0e",
+    "C_SHIM_PRE_FD_GREEN.log": "85e756d36a18f3e93eddd8cea7752d2f07dfde5a61e26a68814a7a57a969b359",
+    "LOCAL_MISSING_TOOLCHAIN/BUILD.json": "0b6ab1ec1c96c2748da58913bbe7f28bbc16b41761f5f260d152000e0a15aa50",
+    "README.md": "ccd9213b1fefe14bfb689332a81f0edd47f85be4f61d3fffbe6921424dc90ba9",
+    "REVIEW_GROUP_RED.log": "072c5ba25e01faf0c677db43e0e7123bfbd3b7bec64d3c8b648b31641d1481f6",
+    "TEST_FIXTURE_RED.log": "b987d21e5c694144ff8dfea7738d4f2a966a0f98e3d7565463458ce83c265856",
+    "build.py": "ef61d784cb330a807543b9c2b3bf8b6d7457dddb5479501bee5117d289c795b6",
+    "dispatcher.f90": "404761facd01e81243c6fbd799b421a5fed3382e140caed7037018583bbd43ec",
+    "export_worklist.py": "972ff652030f37acb933920affa9c7dd02de333bc5749a76e892e03285bf6986",
+    "host_smoke.py": "25555e6632c8f0f5507f2e7bb7cbc79b92f41fe990512bdaba8c92e6292cdfb1",
+    "spawn_cli.c": "e370c31e9880b3e380b95daca6b0f6eed29d9fd66a215be5a61fd027a8bbe793",
+    "test_worker_spawn.py": "6675246cb1616f643b307192680081551771ed3e9d18bb607ba9d3e30d6c8091",
+    "worker_spawn.c": "6d31c42c34e5f2f183188b8d37d5f295880b002349bbaec8698cc4139c596b5f",
+    "worker_spawn.h": "29880ac561f28a0c0b7268a9258f8c8b911b2d552ab68563737fc69ef1eba3c6"
+  }
+}

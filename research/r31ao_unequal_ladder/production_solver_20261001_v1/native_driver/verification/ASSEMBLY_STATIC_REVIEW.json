@@ -1,0 +1,29 @@
+{
+  "schema": "WU088_NATIVE_ASSEMBLY_STATIC_REVIEW_V1",
+  "created_utc": "2026-10-01T11:28:05.959463+00:00",
+  "scope": "source/header/API semantics only; no native compile or execution",
+  "reviewed_source_sha256": {
+    "primitive_join/assembly_exporter.cpp": "a6ca3e7bab454f3db247346f9787b5b408930bbe0e48e2f81930dc2a6a31d8f7",
+    "primitive_join/join.py": "92aa7af9766a91cf1b907d535bf5347f7d8d9efc1c5ca27685d9469f197e661f"
+  },
+  "checks": {
+    "primitive_array_2592_semantic_slots": true,
+    "D_col_shape_47x2_D_row_shape_2x47": true,
+    "immutable_assembly_called_after_full_domain_rectangles": true,
+    "normalization_not_repeated_in_exporter": true,
+    "frozen107_input_record_and_archive_identity_compared": true,
+    "all_final_json_values_serialized_before_success_output": true,
+    "finite_endpoint_serialization_and_allocation_guards": true,
+    "rounded_rational_radius_import_outward_via_arb_get_mag": true
+  },
+  "pinned_api_evidence": {
+    "member": "flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/arb/add_error.c",
+    "sha256": "7f7fe4cc45c7cf2759feb9fb5859918357a4a17570201ef9b83c9844662c6ac1",
+    "semantics": "arb_add_error adds an upper bound on the absolute magnitude of its error ball, preserving outward rational-radius import"
+  },
+  "nonblocking_followup_sent": "prepare_assembly reads header bytes before checking length; owner asked to reject oversized header before allocation",
+  "native_compiled": false,
+  "native_executed": false,
+  "scientific_admission": false,
+  "production_admission": false
+}

@@ -1,0 +1,302 @@
+{
+  "task_id": "HH-F1B-JSON-BOUNDARY-20261005",
+  "state": "completed",
+  "canonical_task": "HH-F1",
+  "canonical_state": "WAITING_ON_REI_DOMAIN",
+  "input_identity": {
+    "HH_intake_head": "5731c27fd49c386bc953f98fb9ad8118f7c35e6c",
+    "HH_current_read_head": "53983df3ff0978ad5027432198ade35e4503990d",
+    "REI_intake_head": "9daef2087cbd40d67d898f8de789f9f00386affe",
+    "REI_current_read_head": "c433eaee7b120a5bfb7c35e802c4b218315bf210",
+    "F1B_archive_sha256": "35c32326413e6bd3d9e3804d70bf325c8c8450800e9d9e38d8d9644859cced73",
+    "original_module_sha256": "eb006d8ee3cf6b3b7365991c9442890a985f9eba011def37390f4dd92a54fa2f",
+    "candidate_module_sha256": "902119d3e90f3569791256e30e09a74cdc4f01aaa436163187e9a62efd7a8422"
+  },
+  "changed_paths": [
+    "src/hh_f03_binding.py",
+    "tests/test_json_boundary.py"
+  ],
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "verify_delivery.py"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/INPUT_MANIFEST.stdout"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/rust/rei_microphysics/src/hhe_events.rs?ref=9daef2087cbd40d67d898f8de789f9f00386affe"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/CONSUMER_READ_00.stdout"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/rust/rei_microphysics/src/microstep.rs?ref=9daef2087cbd40d67d898f8de789f9f00386affe"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/CONSUMER_READ_01.stdout"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/atomic_reionization_handoff_20261004_v1/runtime_inputs/hhe_solver_binding.json?ref=9daef2087cbd40d67d898f8de789f9f00386affe"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/CONSUMER_READ_02.stdout"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/atomic_reionization_handoff_20261004_v1/runtime_returns/REI-F03.json?ref=9daef2087cbd40d67d898f8de789f9f00386affe"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/CONSUMER_READ_03.stdout"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/atomic_reionization_handoff_20261004_v1/runtime_returns/EXECUTION_STATE.json?ref=9daef2087cbd40d67d898f8de789f9f00386affe"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/CONSUMER_READ_04.stdout"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/configs/rei_fastest_v1/science_scenario_v1.json?ref=9daef2087cbd40d67d898f8de789f9f00386affe"
+      ],
+      "exit_code": 1,
+      "evidence_path": "evidence/CONSUMER_READ_05.stdout"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/fastest_track_chat/REI-CHAT-FLRW02-20261005/publication/NEXT_HANDOFF_KO.md?ref=9daef2087cbd40d67d898f8de789f9f00386affe"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/CONSUMER_READ_06.stdout"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/fastest_track_chat/REI-CHAT-FLRW02-20261005/survey/atomic/FINAL_DELTA_REVIEW_KO.md?ref=9daef2087cbd40d67d898f8de789f9f00386affe"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/CONSUMER_READ_07.stdout"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_json_boundary.py",
+        "-v"
+      ],
+      "exit_code": 1,
+      "evidence_path": "evidence/RED.stdout"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_json_boundary.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/GREEN.stdout"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/fastest_track_chat/REI-CHAT-FLRW03-20261005/README_KO.md?ref=c433eaee7b120a5bfb7c35e802c4b218315bf210"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/REI_SUCCESSOR_0.stdout"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/fastest_track_chat/REI-CHAT-FLRW03-20261005/EXPANDING_SUCCESSOR_CONTRACT.json?ref=c433eaee7b120a5bfb7c35e802c4b218315bf210"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/REI_SUCCESSOR_1.stdout"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/fastest_track_chat/REI-CHAT-FLRW03-20261005/NEXT_HANDOFF_KO.md?ref=c433eaee7b120a5bfb7c35e802c4b218315bf210"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/REI_SUCCESSOR_2.stdout"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/cosmosapjw-quantum/rei_bianchi/contents/docs/fastest_track_chat/REI-CHAT-FLRW03-20261005/TASK_RETURN.json?ref=c433eaee7b120a5bfb7c35e802c4b218315bf210"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/REI_SUCCESSOR_3.stdout"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/PREPUBLICATION_HH_HEAD.stdout"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "docs/atomic_reionization_handoff_20261004_v1/tools/task_packet.py",
+        "next",
+        "--thread",
+        "WU088_HH",
+        "--state",
+        "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/FOLLOWUP_EXECUTION_STATE.json"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/TASK_SELECTION.stdout"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_json_boundary.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/INTEGRATED_TESTS.stdout"
+    },
+    {
+      "command": [
+        "git",
+        "ls-remote",
+        "https://github.com/cosmosapjw-quantum/WU088_HH.git",
+        "refs/heads/research/r31ao-unequal-order-ladder-20260930"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/PREPUBLISH_HH.stdout"
+    },
+    {
+      "command": [
+        "git",
+        "ls-remote",
+        "https://github.com/cosmosapjw-quantum/rei_bianchi.git",
+        "refs/heads/forward/rust-reion-kernels-20260922"
+      ],
+      "exit_code": 0,
+      "evidence_path": "evidence/PREPUBLISH_REI.stdout"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/hh_f03_binding.py",
+      "bytes": 7757,
+      "sha256": "902119d3e90f3569791256e30e09a74cdc4f01aaa436163187e9a62efd7a8422"
+    },
+    {
+      "path": "tests/test_json_boundary.py",
+      "bytes": 4655,
+      "sha256": "5105736464c4a6d365f6b93fb6ad751e3c5704adb9cc0f1d191781695d71ed7c"
+    },
+    {
+      "path": "evidence/VERIFICATION.json",
+      "bytes": 741,
+      "sha256": "29f8e5cd170039d022fe885738eefcb2ec4947ea35869bcd32b8b2d0cdd74f32"
+    },
+    {
+      "path": "evidence/GREEN.stderr",
+      "bytes": 688,
+      "sha256": "d6b39209b3a80585fe995797e7b553fe47bf87e1e77cf79a241e5e2e77b1ea59"
+    },
+    {
+      "path": "evidence/INTEGRATED_TESTS.stderr",
+      "bytes": 688,
+      "sha256": "cd1cb859af9efb189be7302595f62ad9e3e1fe53d2e5526789ec1e57373c7df5"
+    }
+  ],
+  "claim": {
+    "basis": "Original public CLI RED reproduction,4 fresh GREEN tests,exact valid-result byte parity and unchanged numeric-function AST/provider bytes",
+    "ceiling": "JSON input-contract repair only; not physical HH adoption, numerical sourcebox accuracy, coupled root certificate or consumer integration"
+  },
+  "next_task": "REI-F07",
+  "blocker": null,
+  "canonical_blocker": "Actual source-bound HH domain/owner/seam/budget receipt remains absent",
+  "verification": {
+    "numeric_source_AST_unchanged": true,
+    "provider_bytes_preserved": true,
+    "provider_sha256": "8c02df302adc895be1327cb2e55bae03ebed8ec06ee7496ff4eeda20fdcdc197",
+    "original_F1B_source_sha256": "eb006d8ee3cf6b3b7365991c9442890a985f9eba011def37390f4dd92a54fa2f",
+    "candidate_source_sha256": "902119d3e90f3569791256e30e09a74cdc4f01aaa436163187e9a62efd7a8422",
+    "functions_added": [
+      "_unique_json_object"
+    ],
+    "function_changed": [
+      "main"
+    ],
+    "new_unique_tests": 4,
+    "RED_failures_subcases": 8,
+    "GREEN_failures": 0,
+    "GREEN_errors": 0,
+    "GREEN_skipped": 0,
+    "original_numeric_suite_repeated": false,
+    "integrated_Git_tests": 4,
+    "integrated_Git_tests_exit_code": 0,
+    "original_Git_sibling_identity_checked": true
+  },
+  "extensions": {
+    "hh_legacy": {
+      "accepted": 24,
+      "total": 289,
+      "missing_unbounded": 265,
+      "epsilon_C": null,
+      "epsilon_R": null,
+      "B22": "OPEN_UNDETERMINED",
+      "scientific_admission": false,
+      "production_admission": false
+    },
+    "HH_F2": "NOT_INTEGRATED",
+    "REI_F04": "PENDING_SEPARATE",
+    "native_field_callbacks": 0,
+    "HH_integrations": 0,
+    "other_repo_mutations": 0
+  }
+}

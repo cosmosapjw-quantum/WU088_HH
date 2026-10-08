@@ -1,0 +1,221 @@
+{
+  "schema": "WU088_G3_INDEPENDENT_ARTIFACT_REVIEW_V1",
+  "reviewer": "/root/review_gram",
+  "role": "READ_ONLY_COMPONENT_ARTIFACT_REVIEW",
+  "status": "MATH_AND_SCALAR_IMPLEMENTATION_SUPPORTED_RESOURCE_FINDING_CLOSED_BY_BOUNDED_RECHECK",
+  "independent_review_admitted": false,
+  "project_scientific_decision_review": false,
+  "source_artifacts": [
+    {
+      "path": "exact_gram/engine.py",
+      "sha256": "1b2bdc8d7b0909075027b513bebe69c61e807ef200f90b64a8994e5c935422bc",
+      "bytes": 17847
+    },
+    {
+      "path": "exact_gram/test_engine.py",
+      "sha256": "047775b7b61c45535818aaf6fd9a9cf8625e34b1b0639a7bbd7dd0ec384625ad",
+      "bytes": 12802
+    },
+    {
+      "path": "exact_gram/README_PROOF.md",
+      "sha256": "db606674c9d1a9682d0cded706f1a9f21746d2c9c67e80a53b92cd7cabc34935",
+      "bytes": 9675
+    },
+    {
+      "path": "REPRESENTED_GAP_CONTRACT.json",
+      "sha256": "9e67f50bfdeba775188fb7ae836729fa7b0dacc842771735d4d76377c53ffd05",
+      "bytes": 12393
+    }
+  ],
+  "authority_bindings": [
+    {
+      "path": "research/r31ao_unequal_ladder/source_functional_review_20260930/DECISION_BOUND_DERIVATION.md",
+      "sha256": "0626be8db80c8d378b1694464596a27d392fd81ecf0df5d76e55818e5e46efc4",
+      "expected_sha256": "0626be8db80c8d378b1694464596a27d392fd81ecf0df5d76e55818e5e46efc4",
+      "bytes": 6606,
+      "matches": true
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/source_functional_review_20260930/SOURCE_FUNCTIONAL_MAP.md",
+      "sha256": "41e74806741ff3202c3e7cfb29600a6b47b4a88f6d85ddd8787bf0b0e12724a9",
+      "expected_sha256": "41e74806741ff3202c3e7cfb29600a6b47b4a88f6d85ddd8787bf0b0e12724a9",
+      "bytes": 9235,
+      "matches": true
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/endpoint_enclosure_review_20260930/NUMERICAL_CERTIFICATE_IMPLEMENTATION_PLAN.md",
+      "sha256": "a8a468354c3b9a9e2cf6d4f8939cd40989fb5378df1610a4d6c41d8a0394ed51",
+      "expected_sha256": "a8a468354c3b9a9e2cf6d4f8939cd40989fb5378df1610a4d6c41d8a0394ed51",
+      "bytes": 16744,
+      "matches": true
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_preflight_20260930/B192_REPLAY_EXECUTED_COMPARATOR.py",
+      "sha256": "43c3edac4d6f32ecb0ebd68619db76d447d40627610e63ec4000c3d5983732c8",
+      "expected_sha256": "43c3edac4d6f32ecb0ebd68619db76d447d40627610e63ec4000c3d5983732c8",
+      "bytes": 10467,
+      "matches": true
+    },
+    {
+      "path": "research/r31al_z075_gate/refinement_gain.py",
+      "sha256": "a81a386f5aa5138012a26e833d468606a91ce4857dcc94311d878ae7976875c3",
+      "expected_sha256": "a81a386f5aa5138012a26e833d468606a91ce4857dcc94311d878ae7976875c3",
+      "bytes": 2445,
+      "matches": true
+    },
+    {
+      "path": "research/r31al_z075_gate/compare_secondary_refinement.py",
+      "sha256": "f8fb529fe4f2d6413f34372580e69bc4b7919e2a4e7c6ef2320949d7ca9c430f",
+      "expected_sha256": "f8fb529fe4f2d6413f34372580e69bc4b7919e2a4e7c6ef2320949d7ca9c430f",
+      "bytes": 5324,
+      "matches": true
+    }
+  ],
+  "existing_suite": {
+    "tests": 20,
+    "exit_code": 0,
+    "log": "review_gram/existing_suite.log"
+  },
+  "independent_checks": {
+    "exact_sqrt_inequalities": {
+      "cases": 800,
+      "status": "PASS"
+    },
+    "full_exponent_binary64_rne": {
+      "cases": 8000,
+      "status": "PASS"
+    },
+    "exact_psd_and_adjoint_norm": {
+      "cases": 100,
+      "status": "PASS"
+    },
+    "custom_work_cap_exact_root": {
+      "max_work_bits": 8,
+      "input_integer_bits": 201,
+      "status": "LIMIT_BYPASSED",
+      "result": "1267650600228229401496703205376",
+      "inferred_shortcut_product_bits": 201
+    },
+    "source_strict_predicate_split": {
+      "status": "PASS"
+    },
+    "actual_HH_evaluations": 0,
+    "old_comparator_executions": 0,
+    "independent_review_admitted": false
+  },
+  "findings": [
+    {
+      "id": "G3-R01",
+      "severity": "P2",
+      "category": "IMPLEMENTATION_RESOURCE_CONTRACT",
+      "location": "exact_gram/engine.py:_sqrt lines 188-191",
+      "title": "Perfect-square shortcut bypasses custom temporary-integer cap",
+      "reproduction": "sqrt_interval(Fraction(2**200), limits=Limits(max_work_bits=8))",
+      "observed": "Returns exact 2**100 after evaluating pn*pn, a 201-bit product, despite declared 8-bit temporary cap.",
+      "impact": "No incorrect norm/enclosure found. Custom bounded-execution contract is not enforced on this path. Default max_integer_bits still bounds work and supplied default limits were not exceeded by tests.",
+      "minimum_fix": "Guard square-test product allocation before pn*pn/pd*pd, or reject internally inconsistent Limits upfront. Apply the same documented cap policy to exponent-comparison shifts in round_binary64 before their allocation; add a custom-small-cap regression.",
+      "blocks": "Claim that every caller-declared temporary work-bit cap is enforced. Does not invalidate the exact-rational enclosure proof.",
+      "parent_blocker": "B10_RESOURCE_CAP_BOUNDARY",
+      "alignment_probe": {
+        "scope": "SYNTHETIC_ONLY_TWO_CASES",
+        "observations": [
+          {
+            "input": "1606938044258990275541962092341162602522202993782792835301376",
+            "max_work_bits": 8,
+            "alignment_line_reached": true,
+            "post_alignment_line_reached": true,
+            "alignment_operand_bits": 201,
+            "exponent": 200,
+            "termination": "RESOURCE_LIMIT_AFTER_ALIGNMENT"
+          },
+          {
+            "input": "1/1606938044258990275541962092341162602522202993782792835301376",
+            "max_work_bits": 8,
+            "alignment_line_reached": true,
+            "post_alignment_line_reached": true,
+            "alignment_operand_bits": 201,
+            "exponent": -200,
+            "termination": "RESOURCE_LIMIT_AFTER_ALIGNMENT"
+          }
+        ]
+      },
+      "alignment_impact": "Both positive and negative exponent alignment shifts allocate 201 bits with a declared 8-bit cap before a later ResourceLimit; output fails closed, but preallocation cap does not.",
+      "resolution": "CLOSED_IMPLEMENTATION_VERIFIED_AFTER_ROOT_FIX",
+      "postfix_closure": {
+        "independent_review_admitted": false,
+        "scope": "ONLY_ORIGINAL_CAP_REPRODUCTIONS_RECHECKED",
+        "additional_broad_tests": false,
+        "sqrt": {
+          "scope": "SYNTHETIC_ONLY_ONE_CASE",
+          "input": "2**200",
+          "max_work_bits": 8,
+          "isqrt_or_square_shortcut_reached": false,
+          "termination": "RESOURCE_LIMIT",
+          "message": "sqrt exact-root work-bit cap exceeded",
+          "status": "PASS_FINDING_CLOSED"
+        },
+        "binary64_alignment": {
+          "scope": "SYNTHETIC_ONLY_TWO_CASES",
+          "observations": [
+            {
+              "input": "1606938044258990275541962092341162602522202993782792835301376",
+              "max_work_bits": 8,
+              "alignment_line_reached": false,
+              "post_alignment_line_reached": false,
+              "termination": "RESOURCE_LIMIT_BEFORE_ALIGNMENT"
+            },
+            {
+              "input": "1/1606938044258990275541962092341162602522202993782792835301376",
+              "max_work_bits": 8,
+              "alignment_line_reached": false,
+              "post_alignment_line_reached": false,
+              "termination": "RESOURCE_LIMIT_BEFORE_ALIGNMENT"
+            }
+          ]
+        },
+        "source_artifacts_after_root_fix": [
+          {
+            "path": "exact_gram/engine.py",
+            "sha256": "e10f206d63be1a99a441780108619574605014a9b01b3b327e21fecb18c5b9cc",
+            "bytes": 18326
+          },
+          {
+            "path": "exact_gram/test_resource_review.py",
+            "sha256": "e629af2d507d2cea7c2b79c09bb829bfe81fc679ec2540133ad17d8628bb4d16",
+            "bytes": 933
+          },
+          {
+            "path": "exact_gram/test_engine.py",
+            "sha256": "047775b7b61c45535818aaf6fd9a9cf8625e34b1b0639a7bbd7dd0ec384625ad",
+            "bytes": 12802
+          },
+          {
+            "path": "exact_gram/README_PROOF.md",
+            "sha256": "db606674c9d1a9682d0cded706f1a9f21746d2c9c67e80a53b92cd7cabc34935",
+            "bytes": 9675
+          },
+          {
+            "path": "REPRESENTED_GAP_CONTRACT.json",
+            "sha256": "9e67f50bfdeba775188fb7ae836729fa7b0dacc842771735d4d76377c53ffd05",
+            "bytes": 12393
+          }
+        ]
+      }
+    }
+  ],
+  "verified_conclusions": [
+    "Exact rational square-root enclosure and two-stage Gram eigenvalue enclosure are valid for n-by-2 and 2-by-n inputs.",
+    "Raw K is constructed exactly; prediction K remains independently stored, matching DECISION_BOUND_DERIVATION.md.",
+    "Dmax=max of column/row errors, model ordering and gap interval subtraction are correct.",
+    "Epsilon is end-to-end; Frobenius disk bound and propagation into K/Dmax avoid producer decomposition double counting.",
+    "Direct gap lower and legacy eta arithmetic are correct and retain the diagnostic-versus-source distinction.",
+    "PRIMARY and SECONDARY scalar expressions match pinned source and differ at the independently checked binary64 witness.",
+    "No actual HH values, archived scalar bits, target disks, ABI, host rounding mode or science decision were admitted."
+  ],
+  "actual_HH_evaluations": 0,
+  "old_comparator_executions": 0,
+  "source_mutations": 0,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false
+}

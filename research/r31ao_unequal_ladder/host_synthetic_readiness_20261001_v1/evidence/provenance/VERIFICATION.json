@@ -1,0 +1,51 @@
+{
+  "schema": "WU088_PROVENANCE_GATE_FAILURE_HISTORY_V1",
+  "initial_missing_implementation": {
+    "log": "evidence/provenance/RED.log",
+    "exit_code": 1,
+    "classification": "NEW_FEATURE_NOT_IMPLEMENTED"
+  },
+  "first_implementation_failure": {
+    "log": "evidence/provenance/INITIAL_FAILURE_PATH_EXCEPTION.log",
+    "exit_code": 1,
+    "classification": "IMPLEMENTATION_EXCEPTION_CLASSIFICATION",
+    "correction": "Normalize unavailable dependency identity errors to ValueError; still fail closed."
+  },
+  "independent_review_failure": {
+    "log": "evidence/provenance/REVIEW_RED.log",
+    "exit_code": 1,
+    "classification": "IMPLEMENTATION_REQUIRED_IDENTITY_FAIL_OPEN",
+    "correction": "Require expected SHA256 strings before hash helper calls."
+  },
+  "corrected_suite": {
+    "log": "evidence/provenance/REVIEW_GREEN.log",
+    "exit_code": 0,
+    "tests": 11,
+    "scope": "Synthetic fixtures with test-only pin table. Not a built backend."
+  },
+  "logs": [
+    {
+      "path": "evidence/provenance/RED.log",
+      "sha256": "1fcd0241148956750c5def6e3007d80801864e0354f996f53e1e5687ccbfe244"
+    },
+    {
+      "path": "evidence/provenance/INITIAL_FAILURE_PATH_EXCEPTION.log",
+      "sha256": "86a2fb552ec18bfbb5996c2c476d1aa4fca195bfad1fcbbcf3374df5486503c9"
+    },
+    {
+      "path": "evidence/provenance/REVIEW_RED.log",
+      "sha256": "fa598a891f8ee837dfcb5c1d0e0bea2914c502cdb8f5109f665bc9b8e55ff001"
+    },
+    {
+      "path": "evidence/provenance/REVIEW_GREEN.log",
+      "sha256": "613a52568449577f022defc3644786c18906a905115cec21e1c293ce2f7a4e8a"
+    }
+  ],
+  "native_builds": 0,
+  "actual_HH_runs": 0,
+  "final_current_suite": {
+    "log": "evidence/provenance/STREAM_BINDING_GREEN.log",
+    "exit_code": 0,
+    "tests": 12
+  }
+}

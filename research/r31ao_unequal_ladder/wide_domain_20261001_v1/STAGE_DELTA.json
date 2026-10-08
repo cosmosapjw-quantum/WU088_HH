@@ -1,0 +1,539 @@
+{
+  "schema": "WU088_WIDE_DOMAIN_STAGE_DELTA_V1",
+  "status": "ROOT_RECONCILED_SOURCE_SNAPSHOT",
+  "created_utc": "2026-10-01T14:15:43.985901+00:00",
+  "base_commit": "449dee7d05c9c055db04f0e7fa730bd4792a385c",
+  "original_prompt_sha256": "70071962a6b3dc3cfc0c01034c0d1b6f57711833957510a77b0bb6c4e453969e",
+  "prior_database_sha256": "98d9acd99222a0080118157ce1ec2e71bff9630d310bb594ffac05ad414abb71",
+  "count_policy": "Explicit reviewed executions in this continuation only. Prepared plans, native nested integration_calls, callback probes, aggregation and database rows are separate categories.",
+  "all_original_stages_complete": false,
+  "scientific_admission": false,
+  "production_admission": false,
+  "independent_review_admitted": false,
+  "stages": [
+    {
+      "id": "G0",
+      "title_ko": "SSOT·데이터베이스 intake",
+      "original_requirement_ko": "문헌 DB와 repo evidence를 연결하고 B01–B06 각각의 authority 또는 명시적 missing-authority label을 유지한다.",
+      "prior_status": "REINVESTIGATED_PROVENANCE_LINKED_RECOVERY_GAPS_EXPLICIT",
+      "current_status": "PINNED_PRIOR_LINEAGE_AND_ADDITIVE_AUDIT_INPUTS_RECONCILED_ORIGINAL_RECOVERY_GAPS_OPEN",
+      "scope": "이전 실제 DB·원 프롬프트·게시 checkpoint와 새 실행 근거를 연결한다. 원 Deep Research DB와 v2 출처 공백은 보존한다.",
+      "observed_delta_ko": [
+        "builder는 이전 SQLite SHA·base commit·원 프롬프트 및 G0–G9 이전 상태를 고정한다.",
+        "create-only·SQL 복원·FK·후발 증거 탐지 등 11개 DB 계약 검사가 통과했다. 과학적 실행이나 provider 재조사는 수행하지 않았다."
+      ],
+      "remaining_gates": [
+        "원 Deep Research DB와 v2의 미복구 원본/출처 공백. 새 감사 DB가 소실된 원 DB를 대체 복원한 것은 아니다."
+      ],
+      "evidence": [
+        {
+          "namespace": "prior",
+          "path": "audit_database/STAGE_RECONCILIATION.json",
+          "sha256": "575a7ad9e121d6c66d3c3614651c0a4baeb72d259f63ad389bf110893b03c609"
+        },
+        {
+          "namespace": "continuation",
+          "path": "RECOVERY_INVENTORY.json",
+          "sha256": "9cff2d98fd5f66a10e909364ba61b5461af8cc5fa218c97653a22adbcc7a734d"
+        },
+        {
+          "namespace": "continuation",
+          "path": "SCOPE.json",
+          "sha256": "597b0b325b5cc3cb29109d924caeb51954d2c9f388f63dc34a330ec2d38c986c"
+        },
+        {
+          "namespace": "continuation",
+          "path": "audit_database/BUILDER_VERIFICATION.json",
+          "sha256": "420481523f405a0efb99a5a7f8eb52016370d6d04a012bed6c295a2266ce307b"
+        }
+      ]
+    },
+    {
+      "id": "G1",
+      "title_ko": "필요 정리와 적용 전제",
+      "original_requirement_ko": "구현에 필요한 theorem premise를 PROVED 또는 LITERATURE_SUPPORTED_WITH_PROVED_ADAPTATION으로 닫고 실제 적용 전제를 분리한다.",
+      "prior_status": "SELECTED_ABSTRACT_THEORY_CLOSED_ACTUAL_FULL_TARGET_PREMISES_OPEN",
+      "current_status": "EXACT_LOG_MAP_AND_FINITE_TILE_CONTRACT_REVIEWED_FULL_TARGET_FEASIBILITY_OPEN",
+      "scope": "정확 로그 좌표·유한 분할과 전체 parameter box에 대한 유한 내부 enclosure 계약을 검토했다. 전체 target의 수렴·비용 전제는 여전히 열려 있다.",
+      "observed_delta_ko": [
+        "t=2^x, u=2^y와 (log 2)^2 t u Jacobian을 outward ball 연산으로 적용하며 원 physical callback/domain guards를 유지한다.",
+        "whole complex parameter image와 ordered signed107 term 계산을 보존한다. transformed/untransformed 구간 overlap은 consistency 증거이며 bitwise equality 조건이 아니다.",
+        "정확 tile coverage·source binding·구간 합·최종 radius gate 및 global endpoint를 한 번만 더하는 계약을 명시했다.",
+        "전체 parameter box를 포함한 유한 uniform inner enclosure와 최종 반경 승인을 분리하는 수학 계약을 독립 검토했다. 불확실성을 제거하거나 중점으로 대체하지 않는다."
+      ],
+      "remaining_gates": [
+        "W1과 전체 필요한 domain의 실제 유한 자원 수렴은 확보되지 않았다.",
+        "T1 일반 full-M evaluator 및 T2/T4 일반 fallback controller의 production 구현 완료로 승격하지 않는다.",
+        "거절 원인을 좁힌 진단은 개선된 solver의 수렴 증거와 구별해야 한다."
+      ],
+      "evidence": [
+        {
+          "namespace": "prior",
+          "path": "audit_database/STAGE_RECONCILIATION.json",
+          "sha256": "575a7ad9e121d6c66d3c3614651c0a4baeb72d259f63ad389bf110893b03c609"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/MATHEMATICAL_REVIEW.json",
+          "sha256": "ea54d6a8206e26ee8ce41009b6372d26320d74de58d52e567ea59f7f16757dc1"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/SOURCE_REVIEW.json",
+          "sha256": "589dfe911ad7a077bcd2399d8886e75e545a273af1bae3e1e7ff99f10d7e71d6"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/TILE_COLLECTION_SOURCE_REVIEW.json",
+          "sha256": "6b11661f9da0afc77746808700700f8c9bd34e62b91e8b8558acca066c2c15cc"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/ACTUAL_INITIAL_REVIEW.json",
+          "sha256": "4861eea83c1d3e75b2d8cb55e1b00e421c2501b276b7bbedf8776d76a0db95a9"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/UNIFORM_ENCLOSURE_CORRECTION_CONTRACT.md",
+          "sha256": "ff43d87a0251a124e399848bfb46e143f7b4c2f17e67de43156df304bfc4d4e6"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/RANGE_SOURCE_REVIEW.json",
+          "sha256": "db20ba33cd4317aed1723f926ae8da015edfb64e47731702c1e0b103974b1a4c"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "title_ko": "정확 raw·역사적 ABI decoding",
+      "original_requirement_ko": "NPY header·byte order·C/F·payload·정확 dyadic·padding을 보존하고 역사적 extended layout을 입증된 범위에서만 허용한다.",
+      "prior_status": "BOUNDED_TWO_ARCHIVE_12_NPY_EXACT_DECODE_INDEPENDENTLY_VERIFIED",
+      "current_status": "BOUNDED_TWO_ARCHIVE_12_NPY_EXACT_DECODE_INDEPENDENTLY_VERIFIED",
+      "scope": "B03의 이 두 archive에 대한 layout·정확 decode gate는 닫힘. universal G2 또는 과학적 admission은 주장하지 않음.",
+      "observed_delta_ko": [
+        "이번에 역사적 raw decode를 새로 실행하지 않았다. 두 B192 archive·12 NPY의 이전 정확 복호화·독립 검토 범위를 그대로 유지한다."
+      ],
+      "remaining_gates": [
+        "이 closure의 범위는 열거된 두 archive/12 NPY다. 다른 모든 역사적 파일·ABI·원 wheel fidelity를 일반 승인하지 않는다.",
+        "decoded represented arrays를 actual Gram/model-gap·machine predicate·연속 표적 오차로 변환하는 이후 단계는 별도로 남아 있다."
+      ],
+      "evidence": [
+        {
+          "namespace": "prior",
+          "path": "audit_database/STAGE_RECONCILIATION.json",
+          "sha256": "575a7ad9e121d6c66d3c3614651c0a4baeb72d259f63ad389bf110893b03c609"
+        },
+        {
+          "namespace": "prior",
+          "path": "review/B192_DECODE_OUTPUT_REVIEW.json",
+          "sha256": "a28771a0547cecc168b7d56bc01bcf82591a9877965a928854c45e3a242b5776"
+        },
+        {
+          "namespace": "prior",
+          "path": "intake/decoded/DECODE_RESULT.json",
+          "sha256": "501508bf80fbea38271e068e2ac842c9c4818d0e6864fe3592e38af7c2869043"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "title_ko": "정확 Gram·gap engine",
+      "original_requirement_ko": "정확 represented arithmetic와 outward radicals로 Gram·norm·gap을 계산하고 direct represented route와 legacy audit route를 구분한다.",
+      "prior_status": "COMPONENT_VERIFIED_ACTUAL_MODEL_GAPS_PENDING",
+      "current_status": "COMPONENT_VERIFIED_ACTUAL_MODEL_GAPS_PENDING",
+      "scope": "generic engine의 component gate는 기존 검증 유지. actual gap 산출 gate는 열림.",
+      "observed_delta_ko": [
+        "새 log compact 적분과 callback 진단은 represented model-gap 계산이 아니다. 실제 model-gap interval은 이번에도 산출되지 않았다."
+      ],
+      "remaining_gates": [
+        "authoritative model matrices와 새 decoded source arrays를 의미·index·source identity까지 연결해 actual represented gap interval을 계산해야 한다.",
+        "historical machine predicate와 수학적 exact represented gap의 bridge는 별도 의무다. generic exact norm만으로 과거 machine error를 인증하지 않는다."
+      ],
+      "evidence": [
+        {
+          "namespace": "prior",
+          "path": "audit_database/STAGE_RECONCILIATION.json",
+          "sha256": "575a7ad9e121d6c66d3c3614651c0a4baeb72d259f63ad389bf110893b03c609"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/ACTUAL_INITIAL_REVIEW.json",
+          "sha256": "4861eea83c1d3e75b2d8cb55e1b00e421c2501b276b7bbedf8776d76a0db95a9"
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "title_ko": "검증된 특수함수·field callback",
+      "original_requirement_ko": "FLINT 3.4.0/GMP/MPFR·compiler/flags/ABI·produced bytes를 묶고 mapped continuous callback과 domain guards를 검증한다.",
+      "prior_status": "PINNED_LOCAL_BACKEND_AND_CALLBACK_NATIVE_CHECKS_PASSED_BOUNDED_ACTUAL_USE",
+      "current_status": "PINNED_BACKEND_LOG_CALLBACK_NATIVE_CHECKS_AND_BOUNDED_ACTUAL_USE_VERIFIED",
+      "scope": "고정 backend와 로그 callback, uniform enclosure/최종 정확도 상태 분리 구현을 실제 두 compact 창에서 사용했다. 전체 target 또는 NCP 검증은 아니다.",
+      "observed_delta_ko": [
+        "원 backend/source bytes를 유지하고 정확 log2 endpoint 변환을 구현했다. boundary22·native analytic7 검사가 통과했고 앞선 두 synthetic 실패 기록도 보존했다.",
+        "실제 CENTRAL은 128-bit에서 component radius2^-48 요구를 통과하고 이전 세 CENTRAL 구간과 성분별 overlap한다. 반환 구간이 bitwise identical하지는 않다.",
+        "완료된 preflight callback range query9개는 모두 finite이며 signed107 term을 완료했다. 이는 적분9회가 아니다.",
+        "별도 진단 host23개·수정 range driver24개 경계 검사를 통과했다. 같은 고진폭 다항식의 goal128 red/green 검사는 기존 비수렴에서 수정본132평가·정확 oracle 포함·반경2^-52 통과로 바뀌었다."
+      ],
+      "remaining_gates": [
+        "whole complex outer trial box에서 발생하는 거절과 nested integration 비수렴 원인을 별도로 확인해야 한다.",
+        "전체 upstream suite·NCP64 재빌드/ABI/성능과 모든 primitive/domain 검증은 여전히 미완료다."
+      ],
+      "evidence": [
+        {
+          "namespace": "prior",
+          "path": "audit_database/STAGE_RECONCILIATION.json",
+          "sha256": "575a7ad9e121d6c66d3c3614651c0a4baeb72d259f63ad389bf110893b03c609"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_native_driver/VERIFICATION.json",
+          "sha256": "5e7160e50e3184d1fd68fbf0ebaacf3f4f77e22a79b3a3f0327845eb87bf24b5"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/SOURCE_REVIEW.json",
+          "sha256": "589dfe911ad7a077bcd2399d8886e75e545a273af1bae3e1e7ff99f10d7e71d6"
+        },
+        {
+          "namespace": "continuation",
+          "path": "runtime/build_log_cached/BUILD.json",
+          "sha256": "279359028523bebffc890d7395af8c36afec27ce490cd354307fa0842f9b9ea6"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/ACTUAL_INITIAL_REVIEW.json",
+          "sha256": "4861eea83c1d3e75b2d8cb55e1b00e421c2501b276b7bbedf8776d76a0db95a9"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/preflight_diagnostic/INTERPRETATION.json",
+          "sha256": "d244201ad169f783d3e9399aaf170c5981a3cc97fca27e13cc81d084927c9fc6"
+        },
+        {
+          "namespace": "continuation",
+          "path": "range_native_driver/VERIFICATION.json",
+          "sha256": "89cce2a7b8ffcceca391d8ae0d9a01239aa2aa8c59d09f8afb5713fa2c7873ed"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/FINAL_RANGE_COMPLETION_REVIEW.json",
+          "sha256": "d1835ea6aa0c6229dc2121e26cba0eb5d7c3b92d1313adcad01323da240e665d"
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "title_ko": "endpoint majorant evaluator",
+      "original_requirement_ko": "Frozen107 exact input에 대해 disjoint complement를 outward 평가하며 tail bound와 최종 producer error를 구분한다.",
+      "prior_status": "ACTUAL_TASK0_ENDPOINT_COMPONENT_OBSERVED_FULL_TARGET_BUDGET_OPEN",
+      "current_status": "ACTUAL_TASK0_ENDPOINT_COMPONENT_OBSERVED_FULL_TARGET_BUDGET_OPEN",
+      "scope": "actual endpoint component evidence 있음. accepted full-domain certificate와 충분한 final epsilon은 없음.",
+      "observed_delta_ko": [
+        "이번 log 및 tile 결과에는 endpoint를 더하지 않았다. 새 endpoint 계산도 없으며 이전 task0 endpoint 증거를 유지한다.",
+        "finite tile collection은 원 global endpoint를 최종 한 번만 결합하도록 제한한다."
+      ],
+      "remaining_gates": [
+        "동일 plan/window/primitive에 맞는 accepted interior와 endpoint를 한 번만 결합해야 한다.",
+        "모든 required primitive의 tail budget 및 source-prescribed contraction 후 최종 D error budget의 충분성을 확보해야 한다. W3 compact interior는 실행·수렴 검증되지 않았다."
+      ],
+      "evidence": [
+        {
+          "namespace": "prior",
+          "path": "audit_database/STAGE_RECONCILIATION.json",
+          "sha256": "575a7ad9e121d6c66d3c3614651c0a4baeb72d259f63ad389bf110893b03c609"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/TILE_COLLECTION_SOURCE_REVIEW.json",
+          "sha256": "6b11661f9da0afc77746808700700f8c9bd34e62b91e8b8558acca066c2c15cc"
+        },
+        {
+          "namespace": "continuation",
+          "path": "runtime/W1_TILED/RUN_RESULT.json",
+          "sha256": "f4baa40007d51345bf938e3b47884502fa9b0a842b859b34d53def4b5adc67fa"
+        }
+      ]
+    },
+    {
+      "id": "G6",
+      "title_ko": "compact interior pilot",
+      "original_requirement_ko": "유한 precision/evaluation/integration/time/memory 한도를 선언하고 실제 representative pilot의 radius·거절·비용을 기록한다.",
+      "prior_status": "CENTRAL_TASK0_ACCEPTED_THREE_VARIANTS_W1_REJECTED_BROADER_FEASIBILITY_OPEN",
+      "current_status": "LOG_CENTRAL_AND_CORRECTED_FIRST_W1_TILE_ACCEPTED_FULL_W1_W3_OPEN",
+      "scope": "이 continuation의 실제 적분7회 중 CENTRAL 및 수정된 첫W1타일2회 accepted. 기존5실패는 보존. primitive index는 하나이고 전체W1/W3는 미완료.",
+      "observed_delta_ko": [
+        "log CENTRAL [1,2]^2: accepted,6074 evaluations,102 integration calls,native launch/wait2323091076ns. 이전 세 CENTRAL 구간과 overlap하며 exact equality는 아니다.",
+        "log W1 [1/16,256]^2: FLINT status2/INTEGRATOR_NO_CONVERGENCE,3084 evaluations,126 calls. accepted rectangle 없음.",
+        "4×4 tile 계획은16개 subwindow를 준비했지만 첫 [1/16,1/2]^2 tile이1770 evaluations/126 calls에서 비수렴하여 즉시 중단했다. per-tile radius2^-52는 global2^-48 budget 분할이며 tolerance 완화가 아니다.",
+        "계측 재실행은 원 첫 타일과1770평가/126호출/437analytic refusals가 같았다. finite FLINT-success inner 결과73개가 중간2^20 반경 gate로 버려져 infinite-error heap 항목이 외부 GL 시도를 막았음을 확인했다.",
+        "수정본 goal64에서는 외부 analytic trial이 시작됐으나76개 point inner 결과가 반경2^-68을 만족하지 못했다. goal128로 강화하자64개 point inner 통과·반경 초과0건을 관측했으며 두 실행 모두20k 평가에서 resource stop했다.",
+        "같은128bit·goal128·반경2^-52에서 평가200k/120초만 허용한 마지막 실행은85915평가·308적분호출·40.148833522초에 성공했다. 284개 point inner 통과, 반경 초과0건이며 real/imag 최종 반경은 각각 약5.724e-25다.",
+        "실제 primitive 적분 호출은 총7회(승인2/거절5). 별도 직접 callback query9회는 포함하지 않는다. 동일 primitive0의 두 compact 창이며 전체W1/W3 성공이 아니다."
+      ],
+      "remaining_gates": [
+        "나머지15개 W1타일 및 필요한 전체 domain/primitive의 coverage와 충분한 achieved radius를 확보해야 한다.",
+        "수정된 첫 타일은 standalone 결과다. 기존 tiled runner의 accepted0/미합산 기록은 변경하지 않았으며 새 source/goal의 검증 adapter를 통해서만 향후 합산할 수 있다.",
+        "W3 전체 finite interior, 전역 endpoint의 단일 적용, 최종 epsilon은 미완료다. 단일40.15초 측정으로 solver speedup/NCP64 scaling을 주장하지 않는다."
+      ],
+      "evidence": [
+        {
+          "namespace": "prior",
+          "path": "audit_database/STAGE_RECONCILIATION.json",
+          "sha256": "575a7ad9e121d6c66d3c3614651c0a4baeb72d259f63ad389bf110893b03c609"
+        },
+        {
+          "namespace": "continuation",
+          "path": "runtime/LOG2_CENTRAL.json",
+          "sha256": "0465d32773a577aa25f6cae067b72b67cf861725fb28e973f6d4acab7000cb4f"
+        },
+        {
+          "namespace": "continuation",
+          "path": "runtime/LOG2_W1.json",
+          "sha256": "f807d0e0d4328eac9804223878917a404cdbd43e8524c76434ac3714351b8a2e"
+        },
+        {
+          "namespace": "continuation",
+          "path": "runtime/W1_TILED/RUN_RESULT.json",
+          "sha256": "f4baa40007d51345bf938e3b47884502fa9b0a842b859b34d53def4b5adc67fa"
+        },
+        {
+          "namespace": "continuation",
+          "path": "runtime/W1_TILED/raw/00.json",
+          "sha256": "44af0d1d08f22dc9609249f2fbd2885099d1d3db51d01f290f244663e89aab36"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/ACTUAL_INITIAL_REVIEW.json",
+          "sha256": "4861eea83c1d3e75b2d8cb55e1b00e421c2501b276b7bbedf8776d76a0db95a9"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/ACTUAL_TILE_REVIEW.json",
+          "sha256": "09586ad66836b02ea5bcd39479a4a416c082794c3ed4ae5a5fc71f85160023f8"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/preflight_diagnostic/INTERPRETATION.json",
+          "sha256": "d244201ad169f783d3e9399aaf170c5981a3cc97fca27e13cc81d084927c9fc6"
+        },
+        {
+          "namespace": "continuation",
+          "path": "runtime/EXECUTION_LEDGER.json",
+          "sha256": "285804c1382794a01e129bc90ca48764b016ecd4933ab5e05a8e1303ed06f0b4"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/ACTUAL_DIAGNOSTIC_CAUSAL_REVIEW.json",
+          "sha256": "a9a3b96136831e0cdd227e925e551c01261553d077e3fca2c0bbf2b13612cf7a"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/ACTUAL_RANGE_PAIR_REVIEW.json",
+          "sha256": "1f77dcadd467cfe329cbc3ea832fb231b6db0fd86e9c0e4578fca0cd49218ecb"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/FINAL_RANGE_COMPLETION_REVIEW.json",
+          "sha256": "d1835ea6aa0c6229dc2121e26cba0eb5d7c3b92d1313adcad01323da240e665d"
+        }
+      ]
+    },
+    {
+      "id": "G7",
+      "title_ko": "전체 D certificate",
+      "original_requirement_ko": "동일 source·plan의 accepted endpoint/interior와 source-prescribed assembly로 actual D_col/D_row balls 및 epsilon을 만든다.",
+      "prior_status": "NATIVE_SYNTHETIC_ASSEMBLY_PASSED_NO_ACTUAL_FULL_2592_OR_D",
+      "current_status": "EXACT_TILE_COLLECTION_AND_VALIDATED_RUNNER_IMPLEMENTED_NO_FULL_2592_OR_D",
+      "scope": "정확 분할 합산과 source-bound runner가 구현되었으나 수정 solver의 한 standalone 타일만 승인됨. 전체2592 primitive·실제D·epsilon은 없음.",
+      "observed_delta_ko": [
+        "collector17개·runner9개 계약 검사와 독립 source 검토가 완료됐다.",
+        "기존 실제 CENTRAL receipt를 readonly normalization하여 one-tile collection을 확인했다. 새로운 HH 적분 실행은 아니다.",
+        "첫 W1 tile 거절을 보존하고 missing15 tile을 collect하지 않았다. 잘못된 complete/global result는 생성하지 않았다.",
+        "수정된 첫 타일 standalone 성공을 새 receipt로 기록했다. 기존 runner 결과를 수정하거나 새 source를 기존 validator로 합산하지 않았다."
+      ],
+      "remaining_gates": [
+        "모든 required primitive/window의 accepted interior와 endpoint를 정확히 한 번 결합하는 complete evidence가 필요하다.",
+        "source-prescribed contraction/parity/phase/post-integral conjugation 뒤 actual D_col/D_row balls 및 epsilon_C/R은 아직 없다.",
+        "collector는 trusted upstream normalized record를 전제로 하므로 source/build/plan 검증을 생략할 수 없다."
+      ],
+      "evidence": [
+        {
+          "namespace": "prior",
+          "path": "audit_database/STAGE_RECONCILIATION.json",
+          "sha256": "575a7ad9e121d6c66d3c3614651c0a4baeb72d259f63ad389bf110893b03c609"
+        },
+        {
+          "namespace": "continuation",
+          "path": "tile_collection/VERIFICATION.json",
+          "sha256": "2e92bd8c1f36b78f56721d0586ee771598219baf5e43fde74d77d9c038ad1380"
+        },
+        {
+          "namespace": "continuation",
+          "path": "tile_runner/VERIFICATION.json",
+          "sha256": "ba8e7950b2d5169fa7e36a4d7895680a9eaafda91a515aa498eca79a03c77ea7"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/TILE_COLLECTION_SOURCE_REVIEW.json",
+          "sha256": "6b11661f9da0afc77746808700700f8c9bd34e62b91e8b8558acca066c2c15cc"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/TILE_RUNNER_SOURCE_REVIEW.json",
+          "sha256": "effe996ee917384b40c2270ad854727e718be465588981ffea5c4f8db0746f4b"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/ACTUAL_TILE_REVIEW.json",
+          "sha256": "09586ad66836b02ea5bcd39479a4a416c082794c3ed4ae5a5fc71f85160023f8"
+        },
+        {
+          "namespace": "continuation",
+          "path": "runtime/EXECUTION_LEDGER.json",
+          "sha256": "285804c1382794a01e129bc90ca48764b016ecd4933ab5e05a8e1303ed06f0b4"
+        }
+      ]
+    },
+    {
+      "id": "G8",
+      "title_ko": "frozen decision certificate",
+      "original_requirement_ko": "actual G3 gap과 G7 epsilon을 결합하고 원 strict/weak Pareto inequality 및 exact binary64 tolerance를 보존한다.",
+      "prior_status": "CONDITIONAL_COMPOSITION_VERIFIED_ACTUAL_DECISION_UNRESOLVED",
+      "current_status": "CONDITIONAL_COMPOSITION_VERIFIED_ACTUAL_DECISION_UNRESOLVED",
+      "scope": "conditional arithmetic 구현 gate만 검증됨. CERTIFIED_PARETO_PRESERVED와 scientific admission은 미발급.",
+      "observed_delta_ko": [
+        "새 compact log 결과는 최종 frozen decision이나 actual epsilon/model-gap 인증이 아니다. comparator tolerance·geometry/order·retraining을 변경하지 않았다."
+      ],
+      "remaining_gates": [
+        "actual model-gap intervals, source-bound final epsilon_C/R, frozen comparator tolerance audit 및 필요한 machine bridge를 확보해야 한다.",
+        "실제 threshold 평가와 최종 판정은 이 입력들이 모두 준비된 뒤 수행한다. tolerance 완화·R31AK 재훈련·geometry/order 변경은 하지 않는다."
+      ],
+      "evidence": [
+        {
+          "namespace": "prior",
+          "path": "audit_database/STAGE_RECONCILIATION.json",
+          "sha256": "575a7ad9e121d6c66d3c3614651c0a4baeb72d259f63ad389bf110893b03c609"
+        },
+        {
+          "namespace": "continuation",
+          "path": "SCOPE.json",
+          "sha256": "597b0b325b5cc3cb29109d924caeb51954d2c9f388f63dc34a330ec2d38c986c"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/ACTUAL_INITIAL_REVIEW.json",
+          "sha256": "4861eea83c1d3e75b2d8cb55e1b00e421c2501b276b7bbedf8776d76a0db95a9"
+        }
+      ]
+    },
+    {
+      "id": "G9",
+      "title_ko": "독립·적대적 검토",
+      "original_requirement_ko": "artifact 검증과 project-level independent scientific decision admission을 분리하고 provenance/backup도 검토한다.",
+      "prior_status": "INDEPENDENT_BOUNDED_COMPONENT_REVIEWS_PRESENT_FINAL_ADMISSION_OPEN",
+      "current_status": "INDEPENDENT_LOG_TILE_MPI_BOUNDARY_REVIEWS_PRESENT_FINAL_ADMISSION_OPEN",
+      "scope": "추가 component·수학 계약·실행 receipt의 독립 검토는 있음. 전체 과학적/물리적 production decision review는 미완료.",
+      "observed_delta_ko": [
+        "log adapter·initial receipts·첫 tile failure accounting·collector/runner·MPI host boundary의 독립 검토가 있다.",
+        "MPI owner10 tests와 independent12 contracts는 source/boundary 검증이다. 실제 delegated cgroup containment·MPI·NCP scaling 실행은 각각0이다.",
+        "root UID와 미위임 cgroup 조건에서 probe가 거절됐고 root bypass는 사용하지 않았다. 새 MPI guard는 old native driver에 고정되어 refined/log driver와 연결되지 않았다.",
+        "이전472개 파일의 SHA/크기 보존을 독립 확인했다.",
+        "진단 원인·수정 source·두 goal 비교·최종 성공 receipt/정확 반경의 독립 검토를 추가했다."
+      ],
+      "remaining_gates": [
+        "actual full certificate 및 최종 과학적/물리적 판정의 독립 검토는 아직 불가능하다.",
+        "비특권·위임된 cgroup이 있는 NCP에서 실제 containment/2rank 및64core 성능을 검증하고, 새 range solver와 MPI adapter의 명시적 결합을 검증해야 한다."
+      ],
+      "evidence": [
+        {
+          "namespace": "prior",
+          "path": "audit_database/STAGE_RECONCILIATION.json",
+          "sha256": "575a7ad9e121d6c66d3c3614651c0a4baeb72d259f63ad389bf110893b03c609"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/SOURCE_REVIEW.json",
+          "sha256": "589dfe911ad7a077bcd2399d8886e75e545a273af1bae3e1e7ff99f10d7e71d6"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/ACTUAL_INITIAL_REVIEW.json",
+          "sha256": "4861eea83c1d3e75b2d8cb55e1b00e421c2501b276b7bbedf8776d76a0db95a9"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/ACTUAL_TILE_REVIEW.json",
+          "sha256": "09586ad66836b02ea5bcd39479a4a416c082794c3ed4ae5a5fc71f85160023f8"
+        },
+        {
+          "namespace": "continuation",
+          "path": "mpi_native_host/RESULT.json",
+          "sha256": "e768b1cacef15f7b309db2fa9063c1241d9828c9621dfedc825ed996a0e62343"
+        },
+        {
+          "namespace": "continuation",
+          "path": "mpi_review/INDEPENDENT_REVIEW.json",
+          "sha256": "7b471d979c85410469005eebbbe348b177bc8d7999aaafa2ced31b71dc0bd1eb"
+        },
+        {
+          "namespace": "continuation",
+          "path": "mpi_native_host/evidence/HOST_OBSERVATION.json",
+          "sha256": "b80a5d7af5d67cbbbb95235f90df9d20e22c4fe6bb63b05abe57a06034a2db49"
+        },
+        {
+          "namespace": "continuation",
+          "path": "closure_review/PRIOR_AND_MPI_REVIEW.json",
+          "sha256": "da9eb129edb8f434bf64f5f9d56e3e630215830730a9e943068b482e28d08265"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/RANGE_SOURCE_REVIEW.json",
+          "sha256": "db20ba33cd4317aed1723f926ae8da015edfb64e47731702c1e0b103974b1a4c"
+        },
+        {
+          "namespace": "continuation",
+          "path": "log_review/FINAL_RANGE_COMPLETION_REVIEW.json",
+          "sha256": "d1835ea6aa0c6229dc2121e26cba0eb5d7c3b92d1313adcad01323da240e665d"
+        }
+      ]
+    }
+  ],
+  "current_counts": {
+    "actual_hh_integral_invocations": 7,
+    "accepted_integral_invocations": 2,
+    "rejected_integral_invocations": 5,
+    "unique_primitive_indices": 1,
+    "accepted_compact_windows": 2,
+    "accepted_full_domain_primitive_records": 0,
+    "required_full_domain_primitive_records": 2592,
+    "actual_full_D_certificates": 0,
+    "original_tile_plan_count": 16,
+    "original_tile_runner_attempts": 1,
+    "original_tile_runner_accepted_tiles": 0,
+    "corrected_standalone_accepted_tiles": 1,
+    "unattempted_tile_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "separate_direct_hh_callback_queries": 9,
+    "actual_MPI_runs": 0,
+    "actual_cgroup_containment_runs": 0,
+    "NCP64_runs": 0
+  },
+  "delivery_verification": "Final SQLite/SQL restore, Git publication, and provider readback recorded in detached delivery artifacts to avoid self-reference."
+}

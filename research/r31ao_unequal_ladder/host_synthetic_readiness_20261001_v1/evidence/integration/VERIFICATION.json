@@ -1,0 +1,122 @@
+{
+  "schema": "WU088_HOST_READINESS_FRESH_INTEGRATION_V1",
+  "status": "PASS",
+  "suites": [
+    {
+      "suite": "test_provenance_gate",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "test_provenance_gate",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/host_synthetic_readiness_20261001_v1",
+      "exit_code": 0,
+      "tests": 12,
+      "skipped": 0,
+      "wall_seconds": 0.13870941099958145,
+      "log": "evidence/integration/test_provenance_gate.log"
+    },
+    {
+      "suite": "test_backend_runner",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "test_backend_runner",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/host_synthetic_readiness_20261001_v1",
+      "exit_code": 0,
+      "tests": 12,
+      "skipped": 0,
+      "wall_seconds": 0.22186503400007496,
+      "log": "evidence/integration/test_backend_runner.log"
+    },
+    {
+      "suite": "test_abi_witness",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "test_abi_witness",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/6cf5f59cd2d1/gap_work/repo/research/r31ao_unequal_ladder/host_synthetic_readiness_20261001_v1",
+      "exit_code": 0,
+      "tests": 14,
+      "skipped": 0,
+      "wall_seconds": 0.2044444189996284,
+      "log": "evidence/integration/test_abi_witness.log"
+    }
+  ],
+  "source_identities": [
+    {
+      "path": "abi_witness.py",
+      "sha256": "4ca229ad202a535ccca52b8df6b296b44f25c33fdb7ed0465c113e97b2928125",
+      "size": 23302
+    },
+    {
+      "path": "backend_runner.py",
+      "sha256": "0749c157640e849194d88173098e8220206f5a4b404e7c6b7a5ffb628e2dc3ac",
+      "size": 25628
+    },
+    {
+      "path": "evidence/review_abi/independent_check.py",
+      "sha256": "6d147ff1f3c9221ed003e09a4f7a9b7e1750f27648d69e0add152db2ce57dd4b",
+      "size": 6285
+    },
+    {
+      "path": "evidence/review_abi/resource_check.py",
+      "sha256": "2eed768722ff7d6b003318f5a1def7cb257d07de12bcadabd6f285e21fad433e",
+      "size": 1182
+    },
+    {
+      "path": "evidence/review_abi/run_review.py",
+      "sha256": "e103f0f7dc5807be20306b692699e15b6af99fb8a500cb4648d6e9a1183c5ee1",
+      "size": 1999
+    },
+    {
+      "path": "evidence/review_backend/review_probes.py",
+      "sha256": "9a8587871efdbbb37587300a5e765d6939df068ebe1dcf03eb23f14df48443a0",
+      "size": 5751
+    },
+    {
+      "path": "evidence/review_provenance/null_identity_probe.py",
+      "sha256": "a55013d1fc01fddb401666598b1e43eacb233b91bb342483790b30ef5fa7a042",
+      "size": 1952
+    },
+    {
+      "path": "provenance_gate.py",
+      "sha256": "12857ebed9dbcf6e14484388da491fd407c0af9a997588fe49e2b13048e42c5e",
+      "size": 8722
+    },
+    {
+      "path": "test_abi_witness.py",
+      "sha256": "6b525d4f7a3e6afe8065bcf24707406e019e6e0a46b80fd0c6f1e70cfacdc941",
+      "size": 6978
+    },
+    {
+      "path": "test_backend_runner.py",
+      "sha256": "6266c87d860fe31a37d744aaeebbd7cfa8cb11bc0832021c005513ffc0cda23d",
+      "size": 6564
+    },
+    {
+      "path": "test_provenance_gate.py",
+      "sha256": "e7a5caac84697ad8996383f45059590b9347df5d2041b0d8db690d6dac4924d9",
+      "size": 6840
+    }
+  ],
+  "old_locked_sources_verified_unchanged": 56,
+  "library_builds": 0,
+  "native_synthetic_executable_runs": 0,
+  "current_host_numpy_synthetic_probes": "separate evidence/abi/current_probe_final",
+  "actual_HH_runs": 0,
+  "historical_ABI_admitted": false,
+  "rigorous": false,
+  "historical_test_counts_changed": false
+}

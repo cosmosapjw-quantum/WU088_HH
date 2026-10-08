@@ -1,0 +1,25 @@
+{
+  "command": [
+    "systemctl",
+    "--user",
+    "show",
+    "wu088-six-cell-pilot-20261003-v1.service",
+    "-p",
+    "Result",
+    "-p",
+    "ExecMainStatus",
+    "-p",
+    "MemoryPeak",
+    "-p",
+    "CPUUsageNSec",
+    "-p",
+    "InvocationID",
+    "-p",
+    "ControlGroup"
+  ],
+  "exit_status": 0,
+  "stdout": "Result=exit-code\nExecMainStatus=2\nControlGroup=\nMemoryPeak=344064\nCPUUsageNSec=28031954000\nInvocationID=919d7634bd8547fb8759b801704b2d56\n",
+  "stderr": "",
+  "running_primitive_workers": [],
+  "limitation": "Transient leaf removed after completed service; MemoryPeak is the systemd-reported value, not an independent whole-campaign profiler"
+}

@@ -1,0 +1,136 @@
+test_duplicate_model_constant_rejected_before_output (test_json_boundary.JsonBoundary.test_duplicate_model_constant_rejected_before_output) ... FAIL
+test_duplicate_provider_cannot_silently_select_another_fit (test_json_boundary.JsonBoundary.test_duplicate_provider_cannot_silently_select_another_fit) ... 
+  test_duplicate_provider_cannot_silently_select_another_fit (test_json_boundary.JsonBoundary.test_duplicate_provider_cannot_silently_select_another_fit) (second_key='"provider"') ... FAIL
+  test_duplicate_provider_cannot_silently_select_another_fit (test_json_boundary.JsonBoundary.test_duplicate_provider_cannot_silently_select_another_fit) (second_key='"provi\\u0064er"') ... FAIL
+test_non_object_root_has_controlled_refusal (test_json_boundary.JsonBoundary.test_non_object_root_has_controlled_refusal) ... 
+  test_non_object_root_has_controlled_refusal (test_json_boundary.JsonBoundary.test_non_object_root_has_controlled_refusal) (text='null') ... FAIL
+  test_non_object_root_has_controlled_refusal (test_json_boundary.JsonBoundary.test_non_object_root_has_controlled_refusal) (text='[]') ... FAIL
+  test_non_object_root_has_controlled_refusal (test_json_boundary.JsonBoundary.test_non_object_root_has_controlled_refusal) (text='"provider"') ... FAIL
+  test_non_object_root_has_controlled_refusal (test_json_boundary.JsonBoundary.test_non_object_root_has_controlled_refusal) (text='0') ... FAIL
+  test_non_object_root_has_controlled_refusal (test_json_boundary.JsonBoundary.test_non_object_root_has_controlled_refusal) (text='true') ... FAIL
+test_valid_inputs_retain_original_bytes_and_output_fence (test_json_boundary.JsonBoundary.test_valid_inputs_retain_original_bytes_and_output_fence) ... ok
+
+======================================================================
+FAIL: test_duplicate_model_constant_rejected_before_output (test_json_boundary.JsonBoundary.test_duplicate_model_constant_rejected_before_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 54, in test_duplicate_model_constant_rejected_before_output
+    self.reject(text, 'DUPLICATE_JSON_FIELD:chi_erg')
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 39, in reject
+    self.assertEqual(r.returncode, 2, r.stderr)
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_duplicate_provider_cannot_silently_select_another_fit (test_json_boundary.JsonBoundary.test_duplicate_provider_cannot_silently_select_another_fit) (second_key='"provider"')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 48, in test_duplicate_provider_cannot_silently_select_another_fit
+    self.reject(body + ',"provider":"LCS91",' + second_key + ':"KS92_corrected_Glover15"}',
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 39, in reject
+    self.assertEqual(r.returncode, 2, r.stderr)
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_duplicate_provider_cannot_silently_select_another_fit (test_json_boundary.JsonBoundary.test_duplicate_provider_cannot_silently_select_another_fit) (second_key='"provi\\u0064er"')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 48, in test_duplicate_provider_cannot_silently_select_another_fit
+    self.reject(body + ',"provider":"LCS91",' + second_key + ':"KS92_corrected_Glover15"}',
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 39, in reject
+    self.assertEqual(r.returncode, 2, r.stderr)
+AssertionError: 0 != 2 : 
+
+======================================================================
+FAIL: test_non_object_root_has_controlled_refusal (test_json_boundary.JsonBoundary.test_non_object_root_has_controlled_refusal) (text='null')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 59, in test_non_object_root_has_controlled_refusal
+    self.reject(text, 'JSON_OBJECT_INPUT_REQUIRED')
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 39, in reject
+    self.assertEqual(r.returncode, 2, r.stderr)
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/input/WU088_HH_FAST_F1B_20261004_v1/src/hh_f03_binding.py", line 141, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/input/WU088_HH_FAST_F1B_20261004_v1/src/hh_f03_binding.py", line 136, in main
+    result=evaluate(data['model'],data['state'],data['provider'])
+                    ~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+
+======================================================================
+FAIL: test_non_object_root_has_controlled_refusal (test_json_boundary.JsonBoundary.test_non_object_root_has_controlled_refusal) (text='[]')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 59, in test_non_object_root_has_controlled_refusal
+    self.reject(text, 'JSON_OBJECT_INPUT_REQUIRED')
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 39, in reject
+    self.assertEqual(r.returncode, 2, r.stderr)
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/input/WU088_HH_FAST_F1B_20261004_v1/src/hh_f03_binding.py", line 141, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/input/WU088_HH_FAST_F1B_20261004_v1/src/hh_f03_binding.py", line 136, in main
+    result=evaluate(data['model'],data['state'],data['provider'])
+                    ~~~~^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+
+
+======================================================================
+FAIL: test_non_object_root_has_controlled_refusal (test_json_boundary.JsonBoundary.test_non_object_root_has_controlled_refusal) (text='"provider"')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 59, in test_non_object_root_has_controlled_refusal
+    self.reject(text, 'JSON_OBJECT_INPUT_REQUIRED')
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 39, in reject
+    self.assertEqual(r.returncode, 2, r.stderr)
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/input/WU088_HH_FAST_F1B_20261004_v1/src/hh_f03_binding.py", line 141, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/input/WU088_HH_FAST_F1B_20261004_v1/src/hh_f03_binding.py", line 136, in main
+    result=evaluate(data['model'],data['state'],data['provider'])
+                    ~~~~^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+
+======================================================================
+FAIL: test_non_object_root_has_controlled_refusal (test_json_boundary.JsonBoundary.test_non_object_root_has_controlled_refusal) (text='0')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 59, in test_non_object_root_has_controlled_refusal
+    self.reject(text, 'JSON_OBJECT_INPUT_REQUIRED')
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 39, in reject
+    self.assertEqual(r.returncode, 2, r.stderr)
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/input/WU088_HH_FAST_F1B_20261004_v1/src/hh_f03_binding.py", line 141, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/input/WU088_HH_FAST_F1B_20261004_v1/src/hh_f03_binding.py", line 136, in main
+    result=evaluate(data['model'],data['state'],data['provider'])
+                    ~~~~^^^^^^^^^
+TypeError: 'int' object is not subscriptable
+
+
+======================================================================
+FAIL: test_non_object_root_has_controlled_refusal (test_json_boundary.JsonBoundary.test_non_object_root_has_controlled_refusal) (text='true')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 59, in test_non_object_root_has_controlled_refusal
+    self.reject(text, 'JSON_OBJECT_INPUT_REQUIRED')
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/tests/test_json_boundary.py", line 39, in reject
+    self.assertEqual(r.returncode, 2, r.stderr)
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/input/WU088_HH_FAST_F1B_20261004_v1/src/hh_f03_binding.py", line 141, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/WU088_HH_F1B_CONTINUATION_20261005_v1/input/WU088_HH_FAST_F1B_20261004_v1/src/hh_f03_binding.py", line 136, in main
+    result=evaluate(data['model'],data['state'],data['provider'])
+                    ~~~~^^^^^^^^^
+TypeError: 'bool' object is not subscriptable
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.508s
+
+FAILED (failures=8)

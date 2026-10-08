@@ -1,0 +1,60 @@
+{
+  "schema": "hh_external_sources.v1",
+  "sources": [
+    {
+      "provider": "Grackle",
+      "version": "3.4.1",
+      "commit": "af7939494ce65007887ada7b98d1813df6843346",
+      "origin_path": "src/clib/rate_functions.c",
+      "url": "https://raw.githubusercontent.com/grackle-project/grackle/grackle-3.4.1/src/clib/rate_functions.c",
+      "bytes": 44970,
+      "sha256": "a900e726413da39bb24fc506846a09f7e0e4addbd5152197ca76d0e22ad02cea",
+      "used_for": "rate",
+      "source_read": true
+    },
+    {
+      "provider": "Grackle",
+      "version": "3.4.1",
+      "commit": "af7939494ce65007887ada7b98d1813df6843346",
+      "origin_path": "src/clib/solve_rate_cool_g.F",
+      "url": "https://raw.githubusercontent.com/grackle-project/grackle/grackle-3.4.1/src/clib/solve_rate_cool_g.F",
+      "bytes": 93566,
+      "sha256": "0a94542b8b35bcb47ebb1865320c3e37a3831818549eaabcbfeb65aab158fe83",
+      "used_for": "network source convention",
+      "source_read": true
+    },
+    {
+      "provider": "Grackle",
+      "version": "3.4.1",
+      "commit": "af7939494ce65007887ada7b98d1813df6843346",
+      "origin_path": "src/clib/grackle_macros.h",
+      "url": "https://raw.githubusercontent.com/grackle-project/grackle/grackle-3.4.1/src/clib/grackle_macros.h",
+      "bytes": 2890,
+      "sha256": "716e17085df3fe3650dca47502739868a8851c8c11690310e74333fb97e30b5e",
+      "used_for": "floor macro",
+      "source_read": true
+    },
+    {
+      "provider": "corrected Kunc-Soon rate reported by Glover2015",
+      "url": "https://arxiv.org/abs/1504.00514",
+      "source_status": "primary paper read in preceding deep research",
+      "fit_expression": "4.65e-21*T_K**1.5*exp(-157800/T_K)",
+      "units": "cm^3 s^-1",
+      "rigorous_error_bound": false
+    }
+  ],
+  "physical_admission": false,
+  "synthetic_or_reference_checks": "PREWORK_CHECKS.json",
+  "floor": {
+    "tiny": 1e-20,
+    "units": 1,
+    "T_K": "<=3000",
+    "derivative_at_3000": "undefined",
+    "silent_smoothing_allowed": false
+  },
+  "license_notice": {
+    "path": "evidence/GRACKLE_3_4_1_LICENSE.txt",
+    "bytes": 4491,
+    "sha256": "a085c6b50d804f73ee99e5ede3dd4390a49a0ff261d1c7cc145d6c029e6f80bb"
+  }
+}

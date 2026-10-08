@@ -1,0 +1,125 @@
+{
+  "schema": "WU088_NATIVE_CACHE_VERIFICATION_V1",
+  "status": "STRUCTURAL_CANDIDATE_NATIVE_EQUALITY_UNVERIFIED",
+  "source_files_verified": 8,
+  "static_exact_model_tests": {
+    "command": "python -B test_static_cache.py",
+    "tests": 10,
+    "failures": 0,
+    "exit_code": 0,
+    "log": "STATIC_CHECKS.log",
+    "native_Arb_equivalence_proven": false
+  },
+  "shell_syntax": {
+    "command": "bash -n build_host.sh",
+    "exit_code": 0
+  },
+  "first_failure": {
+    "log": "STATIC_FIRST_FAILURE.log",
+    "cause": "Incorrect negative-control example: the initial rational interval reassociation fixture happened to produce equal enclosures. Corrected test data after bounded exact synthetic search; no native implementation change."
+  },
+  "native_fixture": {
+    "source": "native_cache_synthetic.cpp",
+    "compiled": false,
+    "executed": false,
+    "equality_passed": null,
+    "benchmark_measured": false,
+    "reason": "Pinned installed FLINT/MPFR pkg-config metadata/development headers unavailable",
+    "valid_cases": [
+      "point107",
+      "complex_point107",
+      "complex_box107"
+    ],
+    "error_case": "errors",
+    "suggested_precisions": [
+      64,
+      128,
+      256
+    ],
+    "equality_requirement": "acb_equal plus exact arb_dump_str real/imag equality; error outputs identical dumps and contract status"
+  },
+  "operation_count_model": {
+    "terms": 107,
+    "baseline_density_calls": 214,
+    "cached_density_evaluations": 18,
+    "baseline_spatial_calls": 107,
+    "cached_spatial_evaluations": 9,
+    "ratio": "107/9",
+    "wall_time_speedup_claimed": false
+  },
+  "invariants": [
+    "whole input boxes",
+    "same precision and margin",
+    "same term multiplication tree",
+    "same sequential summation order",
+    "same original density/spatial functions",
+    "invocation-local caches",
+    "no zero screening",
+    "no scientific floating reduction",
+    "no actual HH loader"
+  ],
+  "source_bindings": {
+    "cached_callback.cpp": {
+      "sha256": "2b29284ed4292bb3e9081553e068cd53fb18c45cd08994063cdd5d1a44d3758f",
+      "size": 4307
+    },
+    "cached_callback.hpp": {
+      "sha256": "d81fa63052ce33c81ac3e71babd394a24a6450256cbecd63326749b2ffab8fdb",
+      "size": 1033
+    },
+    "native_cache_synthetic.cpp": {
+      "sha256": "0e273b5d14afeb46136f2e8359b3a8dada5e0a72aed0341629a254ab41c4bcc5",
+      "size": 16351
+    },
+    "verify_inputs.py": {
+      "sha256": "99d3b85c4d229c66ec49d8c4d0811ee23633ef40b2780d24dfc33079cc4baf1e",
+      "size": 4977
+    },
+    "build_host.sh": {
+      "sha256": "d6405873efde6cd8031a2575e2c61e1c72f839c8d777552ba2b76bc6aebdeac3",
+      "size": 2214
+    },
+    "SOURCE_LOCK.json": {
+      "sha256": "e47192638071f4ce8495f9d2e1dfdf5a018955d10cc83e839e74de8d514025a3",
+      "size": 1932
+    },
+    "test_static_cache.py": {
+      "sha256": "67716779dea1b7b5171a7bbc0fbdf70debfdd25e5b98684897d323c45661dc50",
+      "size": 6073
+    },
+    "STATIC_CHECKS.log": {
+      "sha256": "b6b094d2436f1a30c0bcf49626fafe3c02417dc07e409326e97691ca1704e5a7",
+      "size": 1341
+    },
+    "STATIC_FIRST_FAILURE.log": {
+      "sha256": "53710b3b24159db7e37e03c3d6615ebb3f3163a3ef852ffa60d8beaa06c8f30b",
+      "size": 2049
+    },
+    "CACHE_EQUIVALENCE.md": {
+      "sha256": "b09501e5134d8d17e47bc8068c5a41bb55d81cef0626588665344f0831f18a85",
+      "size": 7070
+    },
+    "README.md": {
+      "sha256": "978152044897cbe70d49905b79ac318e0fa8406563b10e86c42fc699cfd20bb6",
+      "size": 2756
+    },
+    "CAPABILITIES.json": {
+      "sha256": "5f8642832523d70f79be378c1de7cc87fba82b8b55d8cd4cb5775c3d44c609d4",
+      "size": 738
+    }
+  },
+  "new_library_builds": 0,
+  "native_compile_attempts": 0,
+  "native_fixture_runs": 0,
+  "actual_HH_runs": 0,
+  "certified_epsilon": null,
+  "certified_eta": null,
+  "rigorous": false,
+  "production_admitted": false,
+  "independent_review_admitted": false,
+  "root_integration_addendum": {
+    "change": "Native fixture explicitly sets and verifies one FLINT thread; original callback arithmetic unchanged",
+    "final_checks": "See ../evidence/FINAL_VERIFICATION.json after parent run",
+    "native_execution_verified": false
+  }
+}

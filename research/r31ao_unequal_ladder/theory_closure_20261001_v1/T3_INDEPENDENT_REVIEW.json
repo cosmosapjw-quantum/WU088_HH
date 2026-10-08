@@ -1,0 +1,77 @@
+{
+  "schema": "WU088_T3_INDEPENDENT_BOUNDED_REVIEW_V1",
+  "reviewer": "/root/g2_decoder",
+  "status": "APPROVED_BOUNDED_THEOREM_REVIEW_NO_MATERIAL_FINDINGS",
+  "target_hashes": {
+    "T3_FROZEN_PREDICATE_THEOREM.md": "f623a3ce0580505e5a687673d1103582aac4901fb42e87b0b2ba7e7b3e4da0a1",
+    "T3_FROZEN_PREDICATE_THEOREM.json": "e1e2bed3d4008172f83dee2b9931184d45141520d962454e6b4ecae10a48ff71",
+    "theory_checks/t3_predicate_checks.py": "8b0e45415abf93f344f6b05612bd6c3913583d827b1ee52a79ec059cb2051b38",
+    "theory_checks/t3_test_predicate.py": "4d72949cd8e1f3689951328a1f4ac0e325745f060d082cf1b3b0f7f4f443b5a1"
+  },
+  "scope": [
+    "Source expression identity and protected finite scalar domain",
+    "Four rounding-cell preimages including signed zero, parity, subnormal and binade boundaries",
+    "PRIMARY/SECONDARY distinct exact strict cuts and weak sufficiency",
+    "Worst-corner machine-scalar enclosure transfer and equality handling",
+    "Counterexamples, source-ideal/machine separation and semidecision boundary limits",
+    "No assumed correct rounding of norm/SVD or archived scalar provenance"
+  ],
+  "source_identity_checks": {
+    "T3_S1": "MATCH",
+    "T3_S2": "MATCH",
+    "T3_S3": "MATCH",
+    "T3_S4": "MATCH",
+    "T3_S5": "MATCH",
+    "scientific_sources_executed": false
+  },
+  "mathematical_assessment": [
+    "The four preimage formulas follow directly from adjacent midpoint cells and ties-to-even. Negative thresholds use real ordering; zero encodings are correctly merged for comparisons.",
+    "W iff g>-tau-h_minus(a), with equality accepted exactly when a even; PRIMARY strict iff g>=tau+2^-87 because the frozen tau significand is odd.",
+    "SECONDARY strict uses h_plus(a) and equality accepted exactly when a odd; a=F is handled separately as false.",
+    "g>=-tau is sufficient for machine weak by monotonicity, but machine weak does not imply ideal weak. Both nonimplication counterexamples for strict rules are valid.",
+    "Worst local maximum/other minimum is monotone worst corner. The universal Cartesian-box necessity is valid; correlations may make this test conservative.",
+    "Gap-only machine transfer explicitly requires independent forward-error bounds and scale information for the SECONDARY half-spacing. No norm/SVD correctness is inferred from float(norm(...,2)).",
+    "Finite exact point decision and guarded finite semidecision for shrinking analytic bounds are distinguished. Fixed residual scalar errors and resource caps are not assumed to vanish."
+  ],
+  "findings": [
+    {
+      "id": "T3-R1",
+      "severity": "ADVISORY_WORDING_ONLY",
+      "issue": "The old phrase increasing at a power of two overlooked equal subnormal/normal spacing at the minimum normal number.",
+      "impact": "No effect on the nondecreasing half-spacing inequality or sufficient criterion.",
+      "resolution": "Author replaced the wording by nondecreasing across all boundaries, doubling only at normal binade boundaries above the minimum normal; final hashes above include that change.",
+      "status": "RESOLVED"
+    }
+  ],
+  "open_material_findings": 0,
+  "independent_synthetic_verification": {
+    "exit_status": 0,
+    "result": {
+      "method": "independent integer-lattice nearest-neighbor bisection and exact Fraction arithmetic; no author oracle imported",
+      "rounding_preimage_comparisons": 784,
+      "point_predicate_comparisons": 816,
+      "universal_small_box_comparisons": 32,
+      "counterexamples": 3,
+      "explicit_point_source_midpoint_ties": 5,
+      "minimum_normal_spacing_clarification_confirmed": true,
+      "pass": true,
+      "wall_seconds": 0.06373787699703826,
+      "actual_HH_runs": 0,
+      "native_builds": 0,
+      "proof_authority": false
+    },
+    "independence": "No T3 helper or immutable author rounding oracle imported. A separate integer-lattice nearest-neighbor bisection defines rounding and directly checks the formulas.",
+    "proof_authority": false,
+    "standalone_python_source": "from fractions import Fraction as Q\nfrom functools import lru_cache\nimport json, hashlib, time\nfrom pathlib import Path\nSTART=time.monotonic()\nMAX=0x7fefffffffffffff\nSIGN=1<<63\n@lru_cache(None)\ndef val(k):\n    s=-1 if k&SIGN else 1\n    k=k&(~SIGN)\n    e=k>>52\n    m=k&((1<<52)-1)\n    assert e<2047\n    if e:\n        m += 1<<52\n        p=e-1023-52\n    else: p=-1074\n    return s*(Q(m<<p) if p>=0 else Q(m,1<<(-p)))\nF=val(MAX)\ndef round_bits_nonnegative(x):\n    assert Q(0)<=x<=F\n    lo,hi=0,MAX\n    while lo<hi:\n        mid=(lo+hi+1)//2\n        if val(mid)<=x: lo=mid\n        else:hi=mid-1\n    if val(lo)==x or lo==MAX:return lo\n    distance_low=x-val(lo)\n    distance_high=val(lo+1)-x\n    return lo if distance_low<distance_high or (distance_low==distance_high and lo%2==0) else lo+1\ndef rn(x):\n    return val(round_bits_nonnegative(x)) if x>=0 else -val(round_bits_nonnegative(-x))\ndef adjacent(k,step):\n    if val(k)==0:return 1 if step>0 else SIGN|1\n    out=k+(step if not k&SIGN else -step)\n    assert out&(~SIGN)<=MAX\n    return out\ndef midpoint(k,step):return (val(k)+val(adjacent(k,step)))/2\ndef table(x,k,rel):\n    even=not(k&1)\n    lo,hi=midpoint(k,-1),midpoint(k,1)\n    return {'ge':x>lo or (x==lo and even),\n            'gt':x>hi or (x==hi and not even),\n            'le':x<hi or (x==hi and even),\n            'lt':x<lo or (x==lo and not even)}[rel]\ntau_k=0x3ddb7cdfd9d7bdbb\ntau=val(tau_k)\npositive=[0,1,2,3,(1<<52)-1,1<<52,(1<<52)+1,\n          tau_k-1,tau_k,tau_k+1,0x3fefffffffffffff,\n          0x3ff0000000000000,0x3ff0000000000001,MAX-1]\nthresholds=positive+[SIGN|k for k in positive if k]+[SIGN]\npreimage_checks=0\nfor k in thresholds:\n    low,high=midpoint(k,-1),midpoint(k,1)\n    step=min(val(k)-low,high-val(k))/4\n    for x in [low-step,low,low+step,val(k),high-step,high,high+step]:\n        if abs(x)>F:continue\n        got=rn(x)\n        expected={'ge':got>=val(k),'gt':got>val(k),'le':got<=val(k),'lt':got<val(k)}\n        for rel,b in expected.items():\n            assert table(x,k,rel)==b,(k,x,rel)\n            preimage_checks+=1\nassert tau == Q(7737125245533627,77371252455336267181195264)\nassert tau_k%2==1 and val(tau_k+1)-tau==Q(1,1<<86)\ncut=tau+Q(1,1<<87)\nassert rn(cut)>tau\nbits=set(positive+[MAX, round_bits_nonnegative(Q(1)-tau),round_bits_nonnegative(Q(1)+tau)])\npredicate_checks=0\ndef predicates(ak,bk):\n    a,b=val(ak),val(bk)\n    assert a>=0 and b>=0 and b+tau<=F\n    g=b-a\n    wp=g> -tau-(a-val(adjacent(ak,-1)))/2 or (g==-tau-(a-val(adjacent(ak,-1)))/2 and ak%2==0)\n    pp=g>=cut\n    sp=False if ak==MAX else (g>tau+(val(adjacent(ak,1))-a)/2 or (g==tau+(val(adjacent(ak,1))-a)/2 and ak%2==1))\n    return wp,pp,sp\nfor ak in bits:\n    for bk in bits:\n        a,b=val(ak),val(bk)\n        if b+tau>F:continue\n        wp,pp,sp=predicates(ak,bk)\n        assert wp==(a<=rn(b+tau))\n        assert pp==(rn(b-a)>tau)\n        assert sp==(a<rn(b-tau))\n        if b-a>=-tau:assert wp\n        predicate_checks+=3\nu=Q(1,1<<86)\na=3*u/4;b=tau+u\nassert b-a>tau and not(rn(b-a)>tau) and a<rn(b-tau)\na2=rn(Q(1)-tau)\nassert Q(1)-a2>cut and not(a2<rn(Q(1)-tau))\na3=rn(Q(1)+tau)\nassert a3>Q(1)+tau and a3<=rn(Q(1)+tau)\nbox_checks=0\nboxes=[(0,2),(tau_k-1,tau_k+1),(round_bits_nonnegative(Q(1)-tau)-1,round_bits_nonnegative(Q(1)-tau)+1),\n       (0x3ff0000000000000,0x3ff0000000000002)]\nfor al,au in boxes:\n    for bl,bu in boxes:\n        corner=predicates(au,bl)\n        for which in (1,2):\n            corner_answer=corner[0] and corner[which]\n            universal=all((p[0] and p[which]) for ak in range(al,au+1) for bk in range(bl,bu+1) for p in [predicates(ak,bk)])\n            assert corner_answer==universal\n            box_checks+=1\nassert (val(1<<52)-val((1<<52)-1))/2==(val((1<<52)+1)-val(1<<52))/2\n# Explicit source-operand equalities at the delicate cuts.\nak=round_bits_nonnegative(Q(1,1<<87))\nbk=tau_k+1\nassert val(bk)-val(ak)==cut and predicates(ak,bk)[1]\nsource_tie_checks=1\nfor ak in [0x3de0000000000000,0x3de0000000000001]:\n    a=val(ak)\n    bp=a+tau+(val(adjacent(ak,1))-a)/2\n    bk=round_bits_nonnegative(bp)\n    assert val(bk)==bp and predicates(ak,bk)[2]==bool(ak&1)\n    bm=a-tau-(a-val(adjacent(ak,-1)))/2\n    bk=round_bits_nonnegative(bm)\n    assert val(bk)==bm and predicates(ak,bk)[0]==(ak%2==0)\n    source_tie_checks+=2\nprint(json.dumps({\"method\":\"independent integer-lattice nearest-neighbor bisection and exact Fraction arithmetic; no author oracle imported\",\n\"rounding_preimage_comparisons\":preimage_checks,\n\"point_predicate_comparisons\":predicate_checks,\n\"universal_small_box_comparisons\":box_checks,\n\"counterexamples\":3,\"explicit_point_source_midpoint_ties\":source_tie_checks,\"minimum_normal_spacing_clarification_confirmed\":True,\n\"pass\":True,\"wall_seconds\":time.monotonic()-START,\n\"actual_HH_runs\":0,\"native_builds\":0,\"proof_authority\":False},indent=2))\n"
+  },
+  "actual_HH_runs": 0,
+  "native_builds": 0,
+  "actual_arrays_read": 0,
+  "historical_trace_admitted": false,
+  "historical_layout_admitted": false,
+  "norm_correct_rounding_admitted": false,
+  "independent_project_scientific_decision_admitted": false,
+  "rigorous": false,
+  "certified_epsilon": null,
+  "certified_eta": null
+}

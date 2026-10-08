@@ -1,0 +1,52 @@
+{
+  "schema": "WU088_NATIVE_WORKER_PINNED_HEADER_REVIEW_V1",
+  "archive_sha256": "108ab51a4dd33918ff3308f0c63a63616ae30a2c174d50c9188676e85011346f",
+  "status": "STATIC_API_SIGNATURES_MATCH",
+  "native_compiled": false,
+  "native_executed": false,
+  "members": [
+    {
+      "member": "flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/arb.h",
+      "sha256": "c7a7d0f28da3bba2a04dd63212be69e9d85e9537211e8b39b305ed79361b0534",
+      "checked_signatures": [
+        "void arb_get_interval_fmpz_2exp(fmpz_t a, fmpz_t b, fmpz_t exp, const arb_t x);"
+      ]
+    },
+    {
+      "member": "flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/arf.h",
+      "sha256": "78e4f0260e35ac049e1627f001f847d333e74536e2409957e71929badd1f347b",
+      "checked_signatures": [
+        "void arf_get_fmpz_2exp(fmpz_t man, fmpz_t exp, const arf_t x);",
+        "arf_set_fmpz_2exp(arf_t x, const fmpz_t man, const fmpz_t exp)",
+        "arf_set_mag(arf_t y, const mag_t x)"
+      ]
+    },
+    {
+      "member": "flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/fmpz.h",
+      "sha256": "b8951f76863bcb5b3a5f59e455ebec720c883238cadf0b8b09c6a7782256ce79",
+      "checked_signatures": [
+        "flint_bitcnt_t fmpz_val2(const fmpz_t x);",
+        "flint_bitcnt_t fmpz_bits(const fmpz_t f);"
+      ]
+    },
+    {
+      "member": "flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/fmpq.h",
+      "sha256": "6404254ce9838a32a864da7d0e65daf53779a35985b572e7e41581d1bcbd6dfb",
+      "checked_signatures": [
+        "void fmpq_div_2exp(fmpq_t res, const fmpq_t x, flint_bitcnt_t exp);"
+      ]
+    },
+    {
+      "member": "flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/flint.h.in",
+      "sha256": "b2dff3aa7359e9f93b7d0fde40f95c3b2935aa4891abb5883328fa902b490068",
+      "checked_signatures": [
+        "FLINT_DLL extern char flint_version[];"
+      ]
+    },
+    {
+      "member": "flint-2b0788802abf62ec29d8e4a8f917993606e517e0/src/arb/get_interval_fmpz_2exp.c",
+      "sha256": "48ca3e6dd5f43b2b63ea47e3bd4bccb33804a24ae2560c9bcd8a856e0e150344",
+      "review": "exact finite midpoint +/- radius dyadics on common exponent; potential shift allocation checked against worker preconditions"
+    }
+  ]
+}

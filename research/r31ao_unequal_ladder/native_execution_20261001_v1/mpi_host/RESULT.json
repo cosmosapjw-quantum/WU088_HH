@@ -1,0 +1,77 @@
+{
+  "schema": "WU088_NATIVE_MPI_FORTRAN_LOCAL_RESULT_V1",
+  "created_utc": "2026-10-01T12:31:00.584573+00:00",
+  "status": "COMPILE_LINK_PASS_RUNTIME_BLOCKED_ROOT_CONTRACT",
+  "verdict": "PARTIAL",
+  "Fortran_compiled": true,
+  "C_bridge_compiled": true,
+  "MPI_linked": true,
+  "MPI_executed": false,
+  "MPI_ranks_started": 0,
+  "synthetic_protocol_2rank_pass": false,
+  "blocking_runtime_reason": "OpenMPI root refusal; sandbox nonprivileged transition EPERM; no bypass authorized or used",
+  "build_receipt": "build_attempt_4/BUILD.json",
+  "binary": {
+    "invocation_path": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/native_execution_20261001_v1/mpi_host/build_attempt_4/ncp64_dispatch",
+    "resolved_path": "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/native_execution_20261001_v1/mpi_host/build_attempt_4/ncp64_dispatch",
+    "bytes": 35880,
+    "sha256": "747835554a819b08057edd330e4d0f31bc9c7eefae3c9243fe27ff14682797aa"
+  },
+  "compile_environment": {
+    "GNU_Fortran": "13.3.0 Ubuntu13.3.0-6ubuntu2~24.04.1",
+    "GNU_C": "13.3.0 Ubuntu13.3.0-6ubuntu2~24.04",
+    "OpenMPI": "4.1.6 Ubuntu4.1.6-7ubuntu2",
+    "precision_flags": [
+      "-O3",
+      "-fno-fast-math",
+      "-ffp-contract=off"
+    ],
+    "Fortran_flags": [
+      "-fopenmp-simd",
+      "-ffree-line-length-none"
+    ],
+    "old_source_byte_preserved": true,
+    "system_installation": false,
+    "sidecar_wrapper_configuration": "toolchain_provenance/ENVIRONMENT.json",
+    "configured_library_dependencies_resolve": true,
+    "full_toolchain_dependency_pin_claimed": false
+  },
+  "packages": {
+    "count": 23,
+    "bytes": 44749810,
+    "cache_SHA512_all_verified": true,
+    "after_download_SHA256_recorded": true,
+    "package_cap_bytes": 209715200
+  },
+  "integer_SIMD": {
+    "observed": true,
+    "report": "build_attempt_4/integer_vectorization.txt",
+    "source_lines": [
+      61,
+      63
+    ],
+    "vector_width_bytes": 16,
+    "scientific_kernel_vectorization": false
+  },
+  "failed_build_attempts_preserved": [
+    {
+      "attempt": 1,
+      "reason": "sidecar liblto_plugin.so unavailable"
+    },
+    {
+      "attempt": 2,
+      "reason": "sidecar C compiler cc1 absent; returned to existing pinned /usr/bin/gcc"
+    },
+    {
+      "attempt": 3,
+      "reason": "Debian Fortran stub link directory precedence; resolved to same-package actual symbol-bearing OpenMPI libs using recorded OMPI_LDFLAGS"
+    }
+  ],
+  "precision_downgrade": false,
+  "floating_MPI_reduction": false,
+  "scientific_execution": false,
+  "actual_HH_runs": 0,
+  "NCP_64core_performance_claim": false,
+  "production_admitted": false,
+  "next_action": "On ordinary nonroot NCP host, rebuild using host-pinned OpenMPI/GFortran, then run bounded2-rank existing executor/launcher synthetic acceptance before connecting actual backend."
+}

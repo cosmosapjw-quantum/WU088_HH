@@ -1,0 +1,107 @@
+{
+  "schema": "WU088_NCP64_HOST_PLAN_VERIFICATION_V1",
+  "status": "IMPLEMENTED_SYNTHETIC_TESTED_MPI_RUNTIME_UNVERIFIED",
+  "tests": 16,
+  "passed": null,
+  "failed": 0,
+  "skipped": 0,
+  "command": "python -B host_plan/test_host_plan.py",
+  "source_pins": [
+    {
+      "path": "host_plan/planner.py",
+      "sha256": "fff6032637407d13b1936a38d2f8d5f8678d9361ccb9db1bf988868d225acfd0",
+      "bytes": 9365
+    },
+    {
+      "path": "host_plan/launcher.py",
+      "sha256": "556447c77e1e3e5784a6d311f3b120034fb13688c8f94048f6f1cb32916b3ba5",
+      "bytes": 14573
+    },
+    {
+      "path": "host_plan/rank_guard.py",
+      "sha256": "4f5e8ab98325d720b0613ac324bc118cf38c2fba3cb0aed0aff131dffbfbc187",
+      "bytes": 1940
+    },
+    {
+      "path": "host_plan/test_host_plan.py",
+      "sha256": "d9a4c38e8f3acef73a91d48f0890af0271022d62741c3b0b2e6a3664da4e7ad5",
+      "bytes": 11138
+    },
+    {
+      "path": "host_plan/README_KO.md",
+      "sha256": "59d904dc193b050bee7e3691261cf781bfa9cf5a66747f80c30ad733a6124558",
+      "bytes": 8338
+    },
+    {
+      "path": "host_plan/HOST_INTAKE_OBSERVED.json",
+      "sha256": "3422edcff0c9acef1d840fa870a8d93f749ec814922aa5bf69bb12f4f20e9114",
+      "bytes": 3758
+    },
+    {
+      "path": "host_plan/TEST_ACTUAL_EXECUTOR_INTEGRATION.log",
+      "sha256": "7931da9568b6f16be7071a9efadae287a4ff4fa01017ef96a9fd31b8dc7f28f1",
+      "bytes": 1825
+    },
+    {
+      "path": "host_plan/TEST_REVIEW_RED.log",
+      "sha256": "1913d00ab0c6755581443622c88569862e713c7155505d911981c03a0c70f833",
+      "bytes": 2138
+    },
+    {
+      "path": "host_plan/TEST_PID_NAMESPACE_RED.log",
+      "sha256": "d4794fe03a6361353ffea11bcc3b6be381aebcd6c078897f340b4740c79d429c",
+      "bytes": 804
+    },
+    {
+      "path": "host_plan/TEST_PID_NAMESPACE_GREEN.log",
+      "sha256": "1d2edc7ba35cd6628f51a1287261d885d67731af44063e02ca2b52c46690db95",
+      "bytes": 211
+    }
+  ],
+  "observed_affinity_logical_cpus": 9,
+  "observed_physical_cores_in_affinity": 9,
+  "quota_cpu_equivalent": "8",
+  "observed_cgroup_memory_max_bytes": 8589934592,
+  "missing_mpi_tools": [
+    "MISSING_MPIRUN",
+    "MISSING_MPIFORT"
+  ],
+  "python_only_cpu_pinning_readback_verified": true,
+  "python_mpi_dispatch_test_double_with_real_executor_cli": true,
+  "synthetic_first_run_resume_payload_digest_equal": true,
+  "native_mpi_builds": 0,
+  "native_mpi_runs": 0,
+  "actual_HH_runs": 0,
+  "NCP_server_contact": false,
+  "NCP_speedup_claim": null,
+  "scientific_admission": false,
+  "resource_limits_scope": "per-process AS hard; aggregate RSS sampled; visible cgroup ancestors only",
+  "review_fixes": [
+    "fresh resource snapshot and reduced job cap",
+    "collector completeness required for EXECUTION_COMPLETE",
+    "explicit resume identity gate",
+    "same PID namespace NSpid two-pass parent mapping; unsupported mapping blocks before spawn"
+  ],
+  "official_documents": [
+    "https://www.open-mpi.org/doc/v4.1/man1/mpirun.1.php",
+    "https://docs.open-mpi.org/en/v5.0.7/man-openmpi/man1/mpirun.1.html",
+    "https://docs.open-mpi.org/en/v5.0.4/launching-apps/scheduling.html",
+    "https://docs.kernel.org/admin-guide/cgroup-v2.html"
+  ],
+  "tests_defined": 16,
+  "final_full_suite": "PARENT_FINAL_VERIFICATION_PENDING",
+  "validation_runs": [
+    {
+      "tests": 15,
+      "passed": 15,
+      "log": "host_plan/TEST_ACTUAL_EXECUTOR_INTEGRATION.log",
+      "source_scope": "before PID namespace fix"
+    },
+    {
+      "tests": 1,
+      "passed": 1,
+      "log": "host_plan/TEST_PID_NAMESPACE_GREEN.log",
+      "source_scope": "final PID namespace targeted regression"
+    }
+  ]
+}

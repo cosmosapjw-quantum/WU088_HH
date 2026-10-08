@@ -1,0 +1,39 @@
+{
+  "command": [
+    "systemd-run",
+    "--user",
+    "--unit=wu088-fd2-candidate",
+    "--wait",
+    "--pipe",
+    "--property=MemoryMax=34359738368",
+    "--property=CPUQuota=400%",
+    "--property=RuntimeMaxSec=60",
+    "/root/WU088_NCP_EXEC_20261003_v2/fd2_prep_20261004_v2/authorized_namespace.sh",
+    "c7bbb5cb80629d57553a06b835d6b8a81348a2c6f5a3a573cfa1fa9717b59692",
+    "/root/WU088_NCP_EXEC_20261003_v2/fd2_exec_20261004_v1/evidence/AUTHORIZATION_RECORD.json",
+    "448a0163ec9cb0d2b1885241078c2f13f592f3120f7f29495f1f1dd00c2545f7"
+  ],
+  "start": {
+    "utc": "2026-10-04T08:22:31.466747+00:00",
+    "monotonic_ns": 95688709490219
+  },
+  "end": {
+    "utc": "2026-10-04T08:22:32.731230+00:00",
+    "monotonic_ns": 95689973976394
+  },
+  "elapsed_seconds": 1.264486175,
+  "launcher_pid": 246242,
+  "exit_status": 0,
+  "stdout": {
+    "path": "/root/WU088_NCP_EXEC_20261003_v2/fd2_exec_20261004_v1/evidence/original_unit.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "/root/WU088_NCP_EXEC_20261003_v2/fd2_exec_20261004_v1/evidence/original_unit.stderr.log",
+    "bytes": 267,
+    "sha256": "ef17b5528ded8e3361f28ebaea8dc37a789254b582668a808a771a2263f94e1c"
+  },
+  "original_blueprint_attempts": 1,
+  "automatic_retry": false
+}

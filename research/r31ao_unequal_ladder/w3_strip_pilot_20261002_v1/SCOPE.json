@@ -1,0 +1,51 @@
+{
+  "schema": "WU088_W3_STRIP_PILOT_SCOPE_V1",
+  "base_commit": "48443cd754329cd6b76c99f6e9e887081df1e29e",
+  "branch": "research/r31ao-unequal-order-ladder-20260930",
+  "one_priority_step": "W3_NEW_WINDOW_REUSE_CONTRACT_AND_ADJACENT_STRIP_PILOT",
+  "global_window": {
+    "l_t": "1/512",
+    "T_t": "1099511627776",
+    "l_u": "1/512",
+    "T_u": "1099511627776"
+  },
+  "primitive_index": 0,
+  "precision_bits": 128,
+  "planned_total_cells": 289,
+  "reused_W1_cells": 16,
+  "pilot_cell_ids": [
+    20,
+    52,
+    105,
+    57
+  ],
+  "pilot_selection": "Adjacent lower-t/lower-u and upper-t/upper-u strips against log2[-1,2] core; both orientations checked without symmetry assumption. Far tails/corners not sampled.",
+  "max_new_native_invocations": 4,
+  "max_concurrent_workers": 2,
+  "worker_wall_seconds": 180,
+  "worker_memory_mib": 1024,
+  "native_limits": {
+    "precision_bits": 128,
+    "radius_exp": -57,
+    "relative_goal": 128,
+    "max_evaluations": 200000,
+    "max_integration_calls": 1024,
+    "wall_seconds": 120,
+    "queued_panels": 64,
+    "degree_limit": 64,
+    "memory_mib": 1024
+  },
+  "native_hard_wall_seconds": 125,
+  "max_aggregate_native_wall_cap_seconds": 500,
+  "max_aggregate_native_evaluation_cap": 800000,
+  "stop_on_first_rejection": true,
+  "drain_already_running_on_rejection": true,
+  "automatic_retry": false,
+  "completed_W1_rerun": false,
+  "prior_endpoint_recalculation": false,
+  "native_kernel_or_backend_change": false,
+  "NCP_or_MPI_execution": false,
+  "scientific_admission": false,
+  "production_admission": false,
+  "publication_and_dual_backup": "Existing user authorization; same research branch, additive files, nonforce update, create-only Drive/Dropbox artifacts."
+}

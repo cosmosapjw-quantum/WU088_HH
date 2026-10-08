@@ -1,0 +1,23 @@
+# W3 strip pilot audit append
+
+This builder copies the pinned W3 design SQLite with the SQLite backup API, preserves every inherited table/schema object/row, and appends six `w3strip_` tables. It checks integrity and foreign keys, restores the SQL dump into a separate local SQLite database, compares logical contents exactly, rechecks all source bytes and the current source file set, and leaves the prior database byte-identical. Output is create-only, outside source trees, and the SQLite must fit within 32 MiB.
+
+## Accounting contract
+
+The ledger schema is `WU088_W3_STRIP_EXECUTION_LEDGER_V1`; stage schema is `WU088_W3_STRIP_STAGE_DELTA_V1`. Root supplies their pinned base commit, original prompt SHA and prior DB SHA. G0–G9 prior labels must equal both prior W3 JSON and prior SQL rows.
+
+Every record binds a newly written root wrapper by `{namespace:"continuation",path,sha256}`. Ledger and wrapper must agree exactly on `kind`, `tile_id`, `primitive_index=0`, boolean `accepted`, nonempty `status`, boolean `actual_worker_observed`, integer `native_integration_invocations`, and `candidate_polynomial_evaluations=0`. Receipt `output={namespace,path,sha256}` binds a separate raw native receipt or failure evidence file. All path components must be nonsymlink; resolved namespace checks prevent inherited evidence from aliasing current or immediate-prior source trees.
+
+- `ACTUAL_NATIVE_PILOT`: tile IDs are exactly the strings `20`, `52`, `105`, `57`; each appears at most once. `actual_worker_observed=true` records dispatch to the current worker. `native_integration_invocations=1` requires a source-bound native receipt reporting original `wrapper.native_execution_observed=true`, matching `index`, acceptance and native status. A resource-limit/nonconvergence receipt still counts as one observed native command, with rejection preserved. This invocation counter is not the native algorithm's nested `integration_calls` field.
+- Failed current dispatch without an observed source-bound native result: `native_integration_invocations=0` and `accepted=false`. Raw evidence must have schema `WU088_W3_STRIP_NO_NATIVE_OUTPUT_V1`, `native_output_observed=false`, `accepted=false`, `primitive_index=0` and matching status. This evidence must not also contain native receipt markers such as a native wrapper or serialized native stdout; contradictory positive native evidence is rejected. This records lack of observed native output, not proof that no native process ever ran.
+- `REUSED_ACCEPTED_W1_TILE`: original W1 tile IDs are strings `00` through `15`; each appears at most once. `actual_worker_observed=false`, `native_integration_invocations=0`, `accepted=true`. Raw evidence is in the `inherited` namespace and its SHA must already occur in inherited artifact tables and equal the original accepted primitive-0 receipt SHA for that exact tile ID in inherited `w1_execution_records`. Its native receipt still reports actual execution at its historical time. Any W3-cell mapping is separate context and cannot convert reuse into a new execution.
+
+Raw output SHA values must be unique across all records. Copied historical output cannot be classified as a new pilot. The audit never invents records for absent/undispatched tiles; partial and failed work remain explicit. Endpoint selection or candidate-polynomial evaluation cannot be counted in this continuation.
+
+Counters are `native_dispatch_attempts`, `observed_native_integrations`, `accepted_current_pilots`, `rejected_current_pilots`, `reused_W1_tiles`, `candidate_polynomial_evaluations`, and `host_events_not_invocations`. Host events are recorded separately and do not count as dispatches or integrations. No count is inferred by recursively scanning arbitrary JSON files.
+
+## Validation boundary
+
+The builder validates byte identities and explicit wrapper/native fields. It does not revalidate the mathematical kernel, execute scientific work, independently authenticate worker execution, infer scientific admission, or prove continuum/endpoint convergence. Those claims require the execution receipt and separate source/result review. A source hash is not proof that a worker ran. Unit tests use synthetic records only.
+
+Run `python -B build_w3_strip_db.py --root NEW --prior W3_DESIGN --prior-db PINNED_W3_DB --prompt ORIGINAL_PROMPT --output EXTERNAL_CREATE_ONLY_DIRECTORY` only after root freezes all current source files including `PUBLICATION_CONTENTS.json`. Actual append/restore verification is written outside this source tree as `W3_STRIP_DB_VERIFICATION.json`; cloud restoration is never inferred from local SQL restoration.

@@ -1,0 +1,25 @@
+test_minimum_of_two_valid_interior_mass_bounds (test_endpoint_tasks.EndpointTaskTests.test_minimum_of_two_valid_interior_mass_bounds) ... ERROR
+test_synthetic_huge_T_cap_removes_panelwidth_blowup (test_endpoint_tasks.EndpointTaskTests.test_synthetic_huge_T_cap_removes_panelwidth_blowup) ... ERROR
+
+======================================================================
+ERROR: test_minimum_of_two_valid_interior_mass_bounds (test_endpoint_tasks.EndpointTaskTests.test_minimum_of_two_valid_interior_mass_bounds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/production_solver_20261001_v1/endpoint_tasks/test_endpoint_tasks.py", line 199, in test_minimum_of_two_valid_interior_mass_bounds
+    capped=p.capped_complement_mass(parts,Q(5))
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'planner' has no attribute 'capped_complement_mass'
+
+======================================================================
+ERROR: test_synthetic_huge_T_cap_removes_panelwidth_blowup (test_endpoint_tasks.EndpointTaskTests.test_synthetic_huge_T_cap_removes_panelwidth_blowup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6cf5f59cd2d1/recovery/repo/research/r31ao_unequal_ladder/production_solver_20261001_v1/endpoint_tasks/test_endpoint_tasks.py", line 211, in test_synthetic_huge_T_cap_removes_panelwidth_blowup
+    before.append(parts['bound']);after.append(p.capped_complement_mass(parts,whole))
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'planner' has no attribute 'capped_complement_mass'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.091s
+
+FAILED (errors=2)

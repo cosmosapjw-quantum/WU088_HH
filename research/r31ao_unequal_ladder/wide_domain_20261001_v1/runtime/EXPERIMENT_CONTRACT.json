@@ -1,0 +1,24 @@
+{
+  "schema": "WU088_WIDE_DOMAIN_BOUNDED_EXPERIMENT_CONTRACT_V1",
+  "base_commit": "449dee7d05c9c055db04f0e7fa730bd4792a385c",
+  "execution_order": [
+    "LOG2_CENTRAL samephysical[1,2]^2 comparesoverlapwithprior acceptedinterval",
+    "LOG2_W1 samephysical[1/16,256]^2 same128bit/radius-48/20keval30s"
+  ],
+  "each_integral_limits": {
+    "degree_limit": 64,
+    "max_evaluations": 20000,
+    "max_integration_calls": 1024,
+    "memory_mib": 1024,
+    "precision_bits": 128,
+    "queued_panels": 64,
+    "radius_exp": -48,
+    "relative_goal": 64,
+    "wall_seconds": 30
+  },
+  "max_initial_actual_integral_runs": 2,
+  "no_monolithic_W3_attempt": "Independent range-image geometry already fails positivity at128/256bits; geometry subdivision is required first",
+  "conditional_next": "If W1 cannot converge, a separately declared <=16-tile exact coverage experiment may follow with aggregate finite caps and exact outward collection. No repetition of successful oldkernels.",
+  "production_admission": false,
+  "scientific_admission": false
+}

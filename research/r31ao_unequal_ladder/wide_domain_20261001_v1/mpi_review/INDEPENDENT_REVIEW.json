@@ -1,0 +1,54 @@
+{
+  "schema": "WU088_INDEPENDENT_NATIVE_MPI_HOST_REVIEW_V1",
+  "status": "SOURCE_AND_BOUNDARY_PASS_RUNTIME_UNVERIFIED",
+  "source_pins": {
+    "test_host.py": "affac68aa9e0a3a729badd337d9e5a5cf8a56fd871d90016dbe72ddf154d403d",
+    "rank_guard.py": "6931e7cbe16dee423e1d6b6e5e21c3b14b1fd3b9f58307b8faf33151df697308",
+    "containment_probe.py": "798881fa4b6543b4ddf7e3008e11a052e47acba0a7d2506ba3a1efda0c99a02c",
+    "launcher.py": "ec58911792d46cd30f40ee2adb13c9a0bcc048cc5785f8c06f8683a8ff910631",
+    "cgroup_guard.py": "e12cbbb73a78e95f8adbf51bd84758abdd1c816bfb1db66acbe64e8449d6cd77"
+  },
+  "source_freeze_and_owner_receipt_match": true,
+  "independent_contract_cases": 12,
+  "independent_contract_status": "PASS",
+  "test_receipt": {
+    "path": "mpi_review/contract_run_final/REVIEW_RUN.json",
+    "bytes": 2833,
+    "sha256": "336e3e5899fce65dbb5a8fd3e6a710ba8691ef8e04efe02af2fdefff192d3a68"
+  },
+  "review_text": {
+    "path": "mpi_review/REVIEW_KO.md",
+    "bytes": 4673,
+    "sha256": "e28a32a69193ca34d21d54f8db5534703eed4425e16151c0a80691a98221411a"
+  },
+  "review_script": {
+    "path": "mpi_review/review_contract.py",
+    "bytes": 7465,
+    "sha256": "b62e60606a27f268c12c6c527fac33cacd909088d11518dbdf5f171aa4938c9f"
+  },
+  "owner_result": {
+    "path": "mpi_native_host/RESULT.json",
+    "bytes": 2157,
+    "sha256": "e768b1cacef15f7b309db2fa9063c1241d9828c9621dfedc825ed996a0e62343"
+  },
+  "unresolved_blocking_source_findings": [],
+  "resolved_findings": [
+    "native_memory_over_rank_hard_limit_refused_before_launch",
+    "process_start_evidence_not_set_before_Popen",
+    "target_delegated_ancestor_limits_and_cpuset_included"
+  ],
+  "original_source_files_modified": false,
+  "actual_HH_runs": 0,
+  "actual_MPI_runs": 0,
+  "actual_cgroup_containment_runs": 0,
+  "real_native_input_build_and_preparation_checked": true,
+  "mock_target_resource_policy_check_separate_from_kernel_containment": true,
+  "remaining_runtime_gates": [
+    "nonroot delegated-cgroup mandatory detached-session containment probe",
+    "nonroot OpenMPI launch and actual ABI",
+    "NCP64 resource and scaling returns"
+  ],
+  "scientific_admission": false,
+  "production_admission": false,
+  "claim_scope": "fixed old native driver only; no refined/log MPI connection, no complete integral coverage or final D"
+}

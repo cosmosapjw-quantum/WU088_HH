@@ -1,0 +1,41 @@
+{
+  "schema": "wu088.hh_on05b.event_grid_contract.v1",
+  "status": "PROPOSED_EXECUTION_CONTRACT_NOT_IMPLEMENTED",
+  "authorization": "already_active_HH_research",
+  "parents": {
+    "ON04": "1a91c16141ad9d81076835df8fbbaa529180dfa4",
+    "ON05A": "publication receipt"
+  },
+  "scope": "Same8e11s S0-derived moving-cohort model, LCS and OFF, both prescribed geometries. Canonical F08 fixed-energy producer unchanged.",
+  "first_operation": "For each existing base grid freeze nominal accepted-half source birth time/energy/direction/weight before inserting geometry threshold barriers.",
+  "event_union": [
+    "base_macro_barriers",
+    "fixed_source_births",
+    "13.6eV crossings for all represented cohorts in both geometries",
+    "13.598434599702eV crossings for all represented cohorts in both geometries"
+  ],
+  "normalization": "Use the existing binary64 direction construction, then the documented normalization. Do not replace it by ideal arbitrary-precision trigonometry silently.",
+  "birth_policy": "No source injection on new internal event boundaries. Inject each frozen birth once at its original time with its original perH weight. Explicit source quadrature refinement is a separate experiment.",
+  "shared_grid": "Use identical geometry union and substep sequence for both HH selectors; do not accept divergent ON/OFF step histories silently.",
+  "threshold_policy": "Fit cutoff controls sigma; binding controls chemical/thermal energy. Retain below-threshold photon count and energy. No added photon loss or threshold export.",
+  "rejection": "gas,photons,directions,births,time,work,event/source counters remain uncommitted if any required path rejects.",
+  "diagnostics": [
+    "D_g=LCS-OFF on each grid",
+    "A=D_Bianchi-D_FLRW on each grid",
+    "event-only minus original fixed-grid contrast at frozen birth measure",
+    "separate later birth-quadrature and angular refinement"
+  ],
+  "preserved_criteria": {
+    "energy_and_event_target": 1e-12,
+    "local_limit_strict": 0.0002,
+    "public_width_strict": 0.002
+  },
+  "no_new_physical_tolerance_assumed": true,
+  "continuous_certificate": false,
+  "not_allowed": [
+    "switch canonical S0 flag without point+interval binding",
+    "reuse old OFF root certificate for HH ON",
+    "repeat completed unrelated suites",
+    "tune source/IC/temperature/geometry from observed contrasts"
+  ]
+}

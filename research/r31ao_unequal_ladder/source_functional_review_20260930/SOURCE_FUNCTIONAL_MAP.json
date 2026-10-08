@@ -1,0 +1,1235 @@
+{
+  "schema": "WU088_R31AO_SOURCE_FUNCTIONAL_MAP_V1",
+  "runtime_root": "/root/WU088_R31AL_Z075_RUNTIME_20260930",
+  "source_lock": "research/r31ao_unequal_ladder/ncp_preflight_20260930/SOURCE_CONTRACT_LOCK.json",
+  "source_lock_sha256": "77c7b1d16cdb68154790c2fdcd4a42587e2662d579e81e75c0938ac7b180b998",
+  "archive_path": "/root/WU088_R31Y_PRODUCER_INTAKE_20260929/WU088_HH_C21_TRANSFER_CP4_20260923.zip",
+  "archive_sha256": "c10c932a6cdad817982e00920a893733b367827b116d058791bf5aacad517cd9",
+  "target": "Continuous ideal source operations on exact lifts of stored Frozen107 inputs, z=3/4, transverse separation 2, tau=z/v; not complete-HH certification",
+  "records": [
+    {
+      "id": "S01",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/od_run.py",
+      "relative_path": "completion/mixed_h/od_run.py",
+      "bytes": 4404,
+      "sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+      "source_lock_pin": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+      "archive_member": "completion/mixed_h/od_run.py",
+      "archive_member_sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "calc",
+          "line_start": 15,
+          "line_end": 19,
+          "semantics": "exports only O,G1,G2 from h0"
+        },
+        {
+          "function": "assemble",
+          "line_start": 21,
+          "line_end": 39,
+          "semantics": "registry, contraction, reflection, phase, exact D_col/D_row assembly"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/h0_backend.py",
+      "relative_path": "completion/mixed_h/h0_backend.py",
+      "bytes": 3174,
+      "sha256": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+      "source_lock_pin": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+      "archive_member": "completion/mixed_h/h0_backend.py",
+      "archive_member_sha256": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "H0Fused.h0",
+          "line_start": 20,
+          "line_end": 32,
+          "semantics": "frozen inputs, binary64 adapter normalizations, shape and domain checks"
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/h0_fused.cpp",
+      "relative_path": "completion/mixed_h/h0_fused.cpp",
+      "bytes": 4604,
+      "sha256": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+      "source_lock_pin": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+      "archive_member": "completion/mixed_h/h0_fused.cpp",
+      "archive_member_sha256": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "geo",
+          "line_start": 15,
+          "line_end": 15,
+          "semantics": "Gaussian completed square"
+        },
+        {
+          "function": "mh_h0",
+          "line_start": 17,
+          "line_end": 31,
+          "semantics": "geometry and radial call"
+        },
+        {
+          "function": "mh_h0",
+          "line_start": 33,
+          "line_end": 49,
+          "semantics": "UU radial contraction and analytic displacement derivatives"
+        },
+        {
+          "function": "mh_h0",
+          "line_start": 51,
+          "line_end": 59,
+          "semantics": "export field planes, compensated totals and normalization"
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_h/native.py",
+      "relative_path": "completion/mixed_h/native.py",
+      "bytes": 3436,
+      "sha256": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+      "source_lock_pin": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+      "archive_member": "completion/mixed_h/native.py",
+      "archive_member_sha256": "44f784c895730d07e5a40ccc5369534f6a8e81798689a27c98a0bf5fd0a2d778",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "inputs/nodes/grid",
+          "line_start": 14,
+          "line_end": 20,
+          "semantics": "Frozen107, rational map, exact Hermite weights; foreign grid unused for OD"
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/exact_weights/exact_laplace_weights.py",
+      "relative_path": "exact_weights/exact_laplace_weights.py",
+      "bytes": 10904,
+      "sha256": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb",
+      "source_lock_pin": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb",
+      "archive_member": "exact_weights/exact_laplace_weights.py",
+      "archive_member_sha256": "8ad5273551728a3608b5f8d43ea77f732aebeddc96bea767be0f79206fcc39eb",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "exact_weights",
+          "line_start": 29,
+          "line_end": 43,
+          "semantics": "binary64 weighted Hermite inverse-Laplace densities"
+        },
+        {
+          "function": "contract",
+          "line_start": 46,
+          "line_end": 48,
+          "semantics": "UU/VU/UV monomial coefficient contraction"
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/radial/radial_wide.cpp",
+      "relative_path": "completion/radial/radial_wide.cpp",
+      "bytes": 8433,
+      "sha256": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+      "source_lock_pin": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+      "archive_member": "completion/radial/radial_wide.cpp",
+      "archive_member_sha256": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "hypergeom_wide",
+          "line_start": 33,
+          "line_end": 52,
+          "semantics": "binary128 basic arithmetic series"
+        },
+        {
+          "function": "hypergeom/polynomial",
+          "line_start": 55,
+          "line_end": 81,
+          "semantics": "longdouble series/even polynomial"
+        },
+        {
+          "function": "positive_odd",
+          "line_start": 91,
+          "line_end": 129,
+          "semantics": "Boys and omitted large-Re tail"
+        },
+        {
+          "function": "radial_entire",
+          "line_start": 133,
+          "line_end": 203,
+          "semantics": "guards, derivative orders 0..2, branch dispatch"
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/radial/DERIVATION.md",
+      "relative_path": "completion/radial/DERIVATION.md",
+      "bytes": 6968,
+      "sha256": "3214cdaf252ce3ea48026df643aaedae37674753f6f99746c9c3aaa30b9bdc70",
+      "source_lock_pin": null,
+      "archive_member": "completion/radial/DERIVATION.md",
+      "archive_member_sha256": "3214cdaf252ce3ea48026df643aaedae37674753f6f99746c9c3aaa30b9bdc70",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "exact representation",
+          "line_start": 8,
+          "line_end": 27,
+          "semantics": "radial moment and analytic derivative formula"
+        },
+        {
+          "function": "series tail",
+          "line_start": 52,
+          "line_end": 61,
+          "semantics": "exact-arithmetic local tail, no roundoff enclosure"
+        },
+        {
+          "function": "large positive tail",
+          "line_start": 67,
+          "line_end": 79,
+          "semantics": "complex Boys omission bound"
+        },
+        {
+          "function": "finite geometry enclosure",
+          "line_start": 81,
+          "line_end": 109,
+          "semantics": "finite-node domain, not continuum quadrature bound"
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/run.py",
+      "relative_path": "completion/mixed_derivative/run.py",
+      "bytes": 3598,
+      "sha256": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+      "source_lock_pin": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+      "archive_member": "completion/mixed_derivative/run.py",
+      "archive_member_sha256": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "grid",
+          "line_start": 7,
+          "line_end": 11,
+          "semantics": "exact frozen grid requirement"
+        },
+        {
+          "function": "assemble",
+          "line_start": 17,
+          "line_end": 31,
+          "semantics": "independent dotO, exponent transpose, phase"
+        },
+        {
+          "function": "evaluate",
+          "line_start": 32,
+          "line_end": 54,
+          "semantics": "identity and checkpoint contract; not executed here"
+        }
+      ]
+    },
+    {
+      "id": "S09",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/jvp.cpp",
+      "relative_path": "completion/mixed_derivative/jvp.cpp",
+      "bytes": 5153,
+      "sha256": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+      "source_lock_pin": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+      "archive_member": "completion/mixed_derivative/jvp.cpp",
+      "archive_member_sha256": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "field",
+          "line_start": 13,
+          "line_end": 33,
+          "semantics": "independent analytic z derivative of completed square"
+        },
+        {
+          "function": "mj_pair",
+          "line_start": 39,
+          "line_end": 64,
+          "semantics": "UU/transposed UU contraction and precision guard"
+        }
+      ]
+    },
+    {
+      "id": "S10",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/native.py",
+      "relative_path": "completion/mixed_derivative/native.py",
+      "bytes": 2729,
+      "sha256": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d",
+      "source_lock_pin": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d",
+      "archive_member": "completion/mixed_derivative/native.py",
+      "archive_member_sha256": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "Native.pair",
+          "line_start": 29,
+          "line_end": 36,
+          "semantics": "binary64 normalizations and longdouble parameters"
+        }
+      ]
+    },
+    {
+      "id": "S11",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/completion/mixed_derivative/CONTRACT.json",
+      "relative_path": "completion/mixed_derivative/CONTRACT.json",
+      "bytes": 1457,
+      "sha256": "f5a10ef22dd5aefade7e9d9dc079066c0b3e0781a9c997411997cb67ba0acb66",
+      "source_lock_pin": "f5a10ef22dd5aefade7e9d9dc079066c0b3e0781a9c997411997cb67ba0acb66",
+      "archive_member": "completion/mixed_derivative/CONTRACT.json",
+      "archive_member_sha256": "f5a10ef22dd5aefade7e9d9dc079066c0b3e0781a9c997411997cb67ba0acb66",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "JSON contract",
+          "line_start": 1,
+          "line_end": null,
+          "semantics": "independent derivative and model/phase contract"
+        }
+      ]
+    },
+    {
+      "id": "S12",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/cont2c/convergence/run_convergence.py",
+      "relative_path": "cont2c/convergence/run_convergence.py",
+      "bytes": 19312,
+      "sha256": "71f84707d41f30ce6afde44e50555e556a5bd33fb5d71b93bc3ae420300aa58f",
+      "source_lock_pin": "71f84707d41f30ce6afde44e50555e556a5bd33fb5d71b93bc3ae420300aa58f",
+      "archive_member": "cont2c/convergence/run_convergence.py",
+      "archive_member_sha256": "71f84707d41f30ce6afde44e50555e556a5bd33fb5d71b93bc3ae420300aa58f",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "prepare_grid",
+          "line_start": 91,
+          "line_end": 103,
+          "semantics": "frozen grid stores first UU plane from exact weight source"
+        }
+      ]
+    },
+    {
+      "id": "S13",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_blocks.py",
+      "relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_blocks.py",
+      "bytes": 5996,
+      "sha256": "02eed6cb85d1ac96145b2c135ea6967355d369382b376342e22dcc4b73646131",
+      "source_lock_pin": "02eed6cb85d1ac96145b2c135ea6967355d369382b376342e22dcc4b73646131",
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_blocks.py",
+      "archive_member_sha256": "02eed6cb85d1ac96145b2c135ea6967355d369382b376342e22dcc4b73646131",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "inputs/nodes",
+          "line_start": 20,
+          "line_end": 26,
+          "semantics": "archived input and mapped GL definition"
+        },
+        {
+          "function": "prepare",
+          "line_start": 41,
+          "line_end": 51,
+          "semantics": "direct rational polynomial coefficients, stored normalization/velocity"
+        }
+      ]
+    },
+    {
+      "id": "S14",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_kernel.py",
+      "relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_kernel.py",
+      "bytes": 5557,
+      "sha256": "d41a8d64193fa0bcd45478c7b65c7a3ffb14326315a327c0251c058174332542",
+      "source_lock_pin": null,
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_kernel.py",
+      "archive_member_sha256": "d41a8d64193fa0bcd45478c7b65c7a3ffb14326315a327c0251c058174332542",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "source semantic authority",
+          "line_start": 1,
+          "line_end": null,
+          "semantics": "original primitive functional definitions, historical implementation not substituted"
+        }
+      ]
+    },
+    {
+      "id": "S15",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_time.py",
+      "relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_time.py",
+      "bytes": 191,
+      "sha256": "b9745a5a5c2243f23d3200df950261d4496781cd93beeacc32a9a7eb19b64f7b",
+      "source_lock_pin": null,
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/src/r10_time.py",
+      "archive_member_sha256": "b9745a5a5c2243f23d3200df950261d4496781cd93beeacc32a9a7eb19b64f7b",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "source semantic authority",
+          "line_start": 1,
+          "line_end": null,
+          "semantics": "original time/phase derivative convention"
+        }
+      ]
+    },
+    {
+      "id": "S16",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/CUSP_TRIAL.json",
+      "relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/CUSP_TRIAL.json",
+      "bytes": 12755,
+      "sha256": "54d0a83934056e4cad71b71272da878784bb0f374b98a4b7d97fff277b0b05a0",
+      "source_lock_pin": null,
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/CUSP_TRIAL.json",
+      "archive_member_sha256": "54d0a83934056e4cad71b71272da878784bb0f374b98a4b7d97fff277b0b05a0",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "JSON /polynomial",
+          "line_start": 1,
+          "line_end": null,
+          "semantics": "107 rational direct monomial terms; mu=zeta=1"
+        }
+      ]
+    },
+    {
+      "id": "S17",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/CUSP_CERTIFICATE_90.json",
+      "relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/CUSP_CERTIFICATE_90.json",
+      "bytes": 24648,
+      "sha256": "103c79ae7eb9605e2486030a6edcf71984c9aac3b67405610fa44c69b91e70d0",
+      "source_lock_pin": null,
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/CUSP_CERTIFICATE_90.json",
+      "archive_member_sha256": "103c79ae7eb9605e2486030a6edcf71984c9aac3b67405610fa44c69b91e70d0",
+      "archive_equal": true,
+      "functions": [
+        {
+          "function": "JSON /intervals/norm_reduced",
+          "line_start": 1,
+          "line_end": null,
+          "semantics": "donor normalization only"
+        }
+      ]
+    },
+    {
+      "id": "S18",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/NEUTRAL_BASIS_REPLAY.npz",
+      "relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/NEUTRAL_BASIS_REPLAY.npz",
+      "bytes": 4576,
+      "sha256": "b53a4a5e091fa7258f8faf9ef9ffe33ffe8491782e09bda68b0f55296b99fcef",
+      "source_lock_pin": null,
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/parents/r1/WU088_HH_TWO_CENTRE_CUSP_OHD_R1_20260921_v1/inputs/NEUTRAL_BASIS_REPLAY.npz",
+      "archive_member_sha256": "b53a4a5e091fa7258f8faf9ef9ffe33ffe8491782e09bda68b0f55296b99fcef",
+      "archive_equal": true,
+      "functions": []
+    },
+    {
+      "id": "S19",
+      "path": "/root/WU088_R31AL_Z075_RUNTIME_20260930/inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz",
+      "relative_path": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz",
+      "bytes": 5681,
+      "sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+      "source_lock_pin": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+      "archive_member": "inputs/extracted/WU088_HH_R10_FULL_MIXED_BLOCK_OHD_PARTIAL_20260922_v1/inputs/FROZEN_INPUTS.npz",
+      "archive_member_sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+      "archive_equal": true,
+      "functions": []
+    }
+  ],
+  "missing_source_identities": [],
+  "frozen_input_headers": [
+    {
+      "member": "exponents.npy",
+      "descr": "<f8",
+      "fortran_order": false,
+      "shape": [
+        12
+      ]
+    },
+    {
+      "member": "s_C.npy",
+      "descr": "<f8",
+      "fortran_order": true,
+      "shape": [
+        12,
+        12
+      ]
+    },
+    {
+      "member": "p_C.npy",
+      "descr": "<f8",
+      "fortran_order": true,
+      "shape": [
+        12,
+        12
+      ]
+    },
+    {
+      "member": "s_eps.npy",
+      "descr": "<f8",
+      "fortran_order": false,
+      "shape": [
+        12
+      ]
+    },
+    {
+      "member": "p_eps.npy",
+      "descr": "<f8",
+      "fortran_order": false,
+      "shape": [
+        12
+      ]
+    },
+    {
+      "member": "phase_E.npy",
+      "descr": "<f8",
+      "fortran_order": false,
+      "shape": [
+        49
+      ]
+    },
+    {
+      "member": "Q.npy",
+      "descr": "<f8",
+      "fortran_order": false,
+      "shape": [
+        49,
+        25
+      ]
+    },
+    {
+      "member": "parity.npy",
+      "descr": "<f8",
+      "fortran_order": false,
+      "shape": [
+        49,
+        49
+      ]
+    },
+    {
+      "member": "C.npy",
+      "descr": "<f8",
+      "fortran_order": false,
+      "shape": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "member": "pref.npy",
+      "descr": "<f8",
+      "fortran_order": false,
+      "shape": []
+    },
+    {
+      "member": "v.npy",
+      "descr": "<f8",
+      "fortran_order": false,
+      "shape": []
+    }
+  ],
+  "frozen_prediction_headers": [
+    {
+      "key": "R31AK_prediction_npz",
+      "path": "research/r31ak_eight_node/ncp_followup_20260930/FROZEN_HOLDOUT_PREDICTIONS.npz",
+      "sha256": "6d29acbe1aee9bb34cf3627c04136d67e27b5a44b44ee7b3104cdcd3fe1ff88c",
+      "headers": [
+        {
+          "member": "z0p25_R31AK_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p25_R31AK_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p25_R31AK_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p25_R31AK_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z0p25_R31AK_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p25_R31Z_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p25_R31Z_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p25_R31Z_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p25_R31Z_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z0p25_R31Z_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z0p75_R31AK_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z0p75_R31Z_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p25_R31AK_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p25_R31AK_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p25_R31AK_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p25_R31AK_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z2p25_R31AK_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p25_R31Z_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p25_R31Z_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p25_R31Z_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p25_R31Z_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z2p25_R31Z_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p75_R31AK_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p75_R31AK_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p75_R31AK_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p75_R31AK_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z2p75_R31AK_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p75_R31Z_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p75_R31Z_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p75_R31Z_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z2p75_R31Z_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z2p75_R31Z_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p25_R31AK_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p25_R31AK_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p25_R31AK_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p25_R31AK_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z3p25_R31AK_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p25_R31Z_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p25_R31Z_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p25_R31Z_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p25_R31Z_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z3p25_R31Z_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p75_R31AK_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p75_R31AK_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p75_R31AK_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p75_R31AK_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z3p75_R31AK_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p75_R31Z_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p75_R31Z_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p75_R31Z_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z3p75_R31Z_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z3p75_R31Z_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "key": "R31AD_coarse_npz",
+      "path": "research/r31al_z075_gate/ncp_followup_20260930/Z075_COARSE_PREDICTION.npz",
+      "sha256": "de876e53bca7aa773f321ed2ecfe24e4a0b1fda57bf42f6e8736bddc1730e107",
+      "headers": [
+        {
+          "member": "z0p75_R31AD_O.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AD_dotO.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AD_Dcol.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        },
+        {
+          "member": "z0p75_R31AD_Drow.npy",
+          "descr": "<c16",
+          "fortran_order": true,
+          "shape": [
+            2,
+            47
+          ]
+        },
+        {
+          "member": "z0p75_R31AD_K.npy",
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            47,
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "ordering_phase": "Unchanged CP4 FROZEN_INPUTS, 24+23 registry, independent JVP contract; source/shape/dtype locked.",
+  "original_orders": {
+    "128": {
+      "OD_identity": {
+        "source_identity": {
+          "completion/mixed_h/h0_fused.cpp": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+          "completion/radial/radial_wide.cpp": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+          "adapter_sha256": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+          "binary_sha256": "1098c9624e6639712354acd159f5c872fe7369c43bc8456e0314026eec54d506"
+        },
+        "driver_sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+        "model_sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+        "scope": "O/D only; paired independent dotO must use same declared quadrature",
+        "t_sha256": "6ad8f3460d4b929f5d52ec3376d80d877e1dd7fd64d97ac52893d2313ea4378e"
+      },
+      "JVP_identity": {
+        "native": {
+          "key": "37475128714402d03f673cb97c872a69ce87f34dc30d9b810742544bf99345b4",
+          "source_hashes": {
+            "completion/radial/radial_wide.cpp": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+            "completion/mixed_derivative/jvp.cpp": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd"
+          },
+          "adapter": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d"
+        },
+        "driver": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+        "contract": "f5a10ef22dd5aefade7e9d9dc079066c0b3e0781a9c997411997cb67ba0acb66",
+        "grid": "7b83cf7baf606cb430b576f3661b81cad6c31a686000974a04ba616e5cc59bc9"
+      },
+      "frozen_grid_sha256": "7b83cf7baf606cb430b576f3661b81cad6c31a686000974a04ba616e5cc59bc9",
+      "same_geometry_decimal": "0.75"
+    },
+    "160": {
+      "OD_identity": {
+        "source_identity": {
+          "completion/mixed_h/h0_fused.cpp": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+          "completion/radial/radial_wide.cpp": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+          "adapter_sha256": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+          "binary_sha256": "1098c9624e6639712354acd159f5c872fe7369c43bc8456e0314026eec54d506"
+        },
+        "driver_sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+        "model_sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+        "scope": "O/D only; paired independent dotO must use same declared quadrature",
+        "t_sha256": "046c47b2befa224fc58abf5ed546ebf2bb46b6fadd196a803d824f153c0de58f"
+      },
+      "JVP_identity": {
+        "native": {
+          "key": "37475128714402d03f673cb97c872a69ce87f34dc30d9b810742544bf99345b4",
+          "source_hashes": {
+            "completion/radial/radial_wide.cpp": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+            "completion/mixed_derivative/jvp.cpp": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd"
+          },
+          "adapter": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d"
+        },
+        "driver": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+        "contract": "f5a10ef22dd5aefade7e9d9dc079066c0b3e0781a9c997411997cb67ba0acb66",
+        "grid": "787d2d58c41e8b67d3d0f0273e46af281ac5ef4bb7bcfd1fef09b1cb844e211c"
+      },
+      "frozen_grid_sha256": "787d2d58c41e8b67d3d0f0273e46af281ac5ef4bb7bcfd1fef09b1cb844e211c",
+      "same_geometry_decimal": "0.75"
+    },
+    "192": {
+      "OD_identity": {
+        "source_identity": {
+          "completion/mixed_h/h0_fused.cpp": "d019713f8a9c6e864d60cc796104a0cdef629e491e6ab8de757995aa4f3672f2",
+          "completion/radial/radial_wide.cpp": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+          "adapter_sha256": "128e13bd475ce6aeb57e3c601239318e00f6bfbfee6f99a85ba081aa97b1a9e5",
+          "binary_sha256": "1098c9624e6639712354acd159f5c872fe7369c43bc8456e0314026eec54d506"
+        },
+        "driver_sha256": "63c0925ff938340feceb5768aba40da348b3afe323214a9792012e9d0bbc664d",
+        "model_sha256": "8482d2854ab620c58bb1d7a7a45cf88eb71fd75081242263a9ef48927f0a282c",
+        "scope": "O/D only; paired independent dotO must use same declared quadrature",
+        "t_sha256": "19d9eab5438e49c0e2d5520b59d4626a73cd483b6ecb844da2b3c5ddec81667a"
+      },
+      "JVP_identity": {
+        "native": {
+          "key": "37475128714402d03f673cb97c872a69ce87f34dc30d9b810742544bf99345b4",
+          "source_hashes": {
+            "completion/radial/radial_wide.cpp": "2c20c3e3de8a69a64363806512dde8b3dbae6b818c8aec458893906d9b21399a",
+            "completion/mixed_derivative/jvp.cpp": "2ea30233fb959ec916427d672d4b7180347f4689a036ae393da6073078892cbd"
+          },
+          "adapter": "247c9eca3c8cfa35a437f48b4ba72aac98d24dff1bc336b008058141b591a22d"
+        },
+        "driver": "d092d3e81a952d90488f25922c57ea3148b9f036d15a884f7efe51ade09de935",
+        "contract": "f5a10ef22dd5aefade7e9d9dc079066c0b3e0781a9c997411997cb67ba0acb66",
+        "grid": "e1959e1bbb66b5e27410daa3d3bdb0815885919f11af3a014d86a47f15b96301"
+      },
+      "frozen_grid_sha256": "e1959e1bbb66b5e27410daa3d3bdb0815885919f11af3a014d86a47f15b96301",
+      "same_geometry_decimal": "0.75"
+    }
+  },
+  "functional_derivation": "SOURCE_FUNCTIONAL_MAP.md",
+  "certified_source_error": null,
+  "rigorous": false
+}

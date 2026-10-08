@@ -1,0 +1,55 @@
+{
+  "schema": "wu088.hh_f07_dependency_projection.v1",
+  "task_id": "HH-F07-INTAKE-20261005",
+  "projection_not_global_DAG_audit": true,
+  "canonical_files_modified": false,
+  "sources": [
+    "REI_TASKS",
+    "REI_STATE",
+    "HH_TASKS",
+    "F1D handoff/DAG.json"
+  ],
+  "declared_REI_F07_dependencies": [
+    "REI-F03"
+  ],
+  "completed_ids_received": [
+    "HE-P0",
+    "HH-F0",
+    "REI-F00",
+    "REI-F02",
+    "REI-F01",
+    "REI-F03"
+  ],
+  "REI_F07_declared_prerequisites_satisfied": true,
+  "REI_F07_required_scientific_inputs_complete": false,
+  "REI_F07_completed": false,
+  "REI_F04_is_declared_F07_prerequisite": false,
+  "HH_F2_is_declared_F07_prerequisite": false,
+  "owner_next_codex_task_preserved": "REI-F04",
+  "owner_next_chat_task_preserved": "REI-CHAT-FLRW04_EVENT_WEIGHTED_CONSUMER_CONTRACT",
+  "recommendation": "Consumer may prepare F07 scientific input/HH decision alongside F04 without waiting for its certificate. This packet does not schedule or authorize owner execution.",
+  "HH_alias_resolution": {
+    "REI_DOMAIN_FREEZE": "REI-F07",
+    "basis": "inherited F1D handoff; must be satisfied by actual owner receipt, not this mapping"
+  },
+  "projected_dependencies": {
+    "HH-F0": [],
+    "REI-F03": [],
+    "REI-F04": [
+      "REI-F03"
+    ],
+    "REI-F07": [
+      "REI-F03"
+    ],
+    "HH-F1": [
+      "HH-F0",
+      "REI-F07"
+    ],
+    "HH-F2": [
+      "HH-F1"
+    ]
+  },
+  "projection_boundary": "Upstream dependencies of the completed REI-F03 anchor are omitted here; no all-31-node validation claim.",
+  "execution_authorized_by_this_packet": false,
+  "scientific_admission": false
+}
