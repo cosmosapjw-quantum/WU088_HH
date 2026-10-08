@@ -1,0 +1,86 @@
+{
+  "nodes": [
+    {
+      "id": "C0",
+      "dependencies": [],
+      "status": "VERIFIED_EXISTING",
+      "fresh_work": "same binary/backend hashes, live library version probe; live resource binding separate blocker"
+    },
+    {
+      "id": "C1_CONSUMED_STATUS",
+      "dependencies": [
+        "C0"
+      ],
+      "status": "VERIFIED_EXISTING",
+      "fresh_work": "four FD2 original raw pairs hashes match, consumed registries unchanged"
+    },
+    {
+      "id": "C1_SUCCESSOR",
+      "dependencies": [
+        "C1_CONSUMED_STATUS"
+      ],
+      "status": "BLOCKED_AUTHORIZATION",
+      "proposal": "TWO_CELL_NEW_SCOPE_PROPOSAL.json"
+    },
+    {
+      "id": "C2",
+      "dependencies": [
+        "C1_SUCCESSOR"
+      ],
+      "status": "NOT_RUN",
+      "dispatch_count": 0
+    },
+    {
+      "id": "C3",
+      "dependencies": [
+        "C2"
+      ],
+      "status": "NOT_RUN",
+      "full49": false
+    },
+    {
+      "id": "C4_PREFLIGHT_CHECKPOINT",
+      "dependencies": [],
+      "status": "NEW_IMPLEMENTATION_VERIFIED",
+      "tests": 17,
+      "scope": "birth refusal, actual immutable crate compilation, native checkpoint restore/interruption, exact existing array audit"
+    },
+    {
+      "id": "C4_ACTUAL_CHAIN_OWNER",
+      "dependencies": [
+        "C4_PREFLIGHT_CHECKPOINT"
+      ],
+      "status": "BLOCKED_PROVENANCE",
+      "proposal": "ENERGY06_SUCCESSOR_PROPOSAL.json"
+    },
+    {
+      "id": "C5_BOUNDED_VALIDATOR_PARALLELISM",
+      "dependencies": [
+        "C4_PREFLIGHT_CHECKPOINT"
+      ],
+      "status": "DERIVED",
+      "new_native_science_optimization": false,
+      "selected_kernel_configuration": null
+    },
+    {
+      "id": "C6_OWNER_INTAKE",
+      "dependencies": [],
+      "status": "VERIFIED_EXISTING",
+      "evidence": "PEER_LATEST_RETURN.json"
+    },
+    {
+      "id": "DELIVERY",
+      "dependencies": [
+        "C0",
+        "C1_CONSUMED_STATUS",
+        "C4_PREFLIGHT_CHECKPOINT",
+        "C5_BOUNDED_VALIDATOR_PARALLELISM",
+        "C6_OWNER_INTAKE"
+      ],
+      "status": "PARTIAL",
+      "git_backup": "detached receipt after seal"
+    }
+  ],
+  "scientific_DAG_complete": false,
+  "authorized_non_scientific_ready_nodes_executed": true
+}

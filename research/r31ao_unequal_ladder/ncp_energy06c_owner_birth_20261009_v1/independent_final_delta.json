@@ -1,0 +1,132 @@
+{
+  "schema": "WU088_ENERGY06C_INDEPENDENT_FINAL_NARROW_DELTA_V1",
+  "created_utc": "2026-10-08T16:24:13.364240+00:00",
+  "baseline": "/root/WU088_HH_ENERGY06C_20261009/independent_delta_review.json",
+  "scope": "One-line entry validation and three signed guard tests only; no broader science review",
+  "reviewer": {
+    "authored_implementation": false,
+    "source_edits": 0,
+    "science_calls": 0,
+    "donor_suites": 0,
+    "c1_suites": 0,
+    "commit": false,
+    "push": false
+  },
+  "verdict": "NARROW_VALIDATION_FIX_CONFIRMED; TRUSTED_CERTIFICATE_PRECONDITIONER_AND_FAMILY_OPEN",
+  "confirmed": [
+    "Entry loop calls Interval::new for every incoming photon, guard_n and guard_u interval before result allocation or redshift/remap computation. It rejects nonfinite or reversed bounds and permits valid signed bounds. Earlier unchecked guard_n path is closed.",
+    "Fresh independent Cargo run passes26 tests with actual HH_SEED, rustc1.94.1, opt-level3, target-cpu x86-64, isolated target directory and locked/offline flags.",
+    "SIGNED_GUARD_RED exit101 records only invalid_incoming_guard_interval_refused failing; negative export and signed lower-threshold tests already pass. GREEN exit0 passes26. Those two tests are additional coverage, not observed RED-to-GREEN claims.",
+    "Negative-export test checks -1 guard-number and -10*r guard-energy. The straddle test uses h=0, energy10 and signed[-2,3]; outward redshift/energy arithmetic straddles10, checking both zero/export hull paths. It is a synthetic threshold-uncertainty case, not an actual owner scientific family.",
+    "No new mathematically wrong remap bound identified in this narrow delta. Validation changes input admission only, and valid signed interval arithmetic remains unchanged."
+  ],
+  "findings": [],
+  "remaining_limits": [
+    "Trusted root certificate authentication, preconditioner provenance and actual linked tangent/family correctness remain OPEN.",
+    "One mixed-sign cutoff case and one negative-export case do not exhaust every remap/guard boundary or establish conservation, physical admission or production promotion.",
+    "Test target recompiles linked source but calls no scientific endpoint/root/kernel. No science dispatch was performed.",
+    "Latest production audit binary is not re-reviewed here; this narrow review tests source directly. V4 and metadata are separately checked if available; V3 is historical for this delta."
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/root/BASS_HE_runtime/toolchain/cargo-1.94.1-x86_64-unknown-linux-gnu/cargo/bin/cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "--bin",
+        "owner_birth_probe",
+        "-j",
+        "2"
+      ],
+      "cwd": "/root/WU088_HH_ENERGY06C_20261009/cargo",
+      "environment": {
+        "RUSTC": "/root/WU088_HH_ON02_20261005/toolchain/prefix/bin/rustc",
+        "RUSTFLAGS": "-C opt-level=3 -C target-cpu=x86-64",
+        "CARGO_TARGET_DIR": "/root/WU088_HH_ENERGY06C_20261009/independent_review_build",
+        "HH_SEED": "/root/WU088_HH_MASTER_EXEC_20261008/inputs/on06g/HH_ON06G_20261008_v1/seed"
+      },
+      "exit": 0,
+      "stdout": "\nrunning 26 tests\ntest owner::actual_input_tests::native_point_is_not_promoted_to_root_family_defect ... ok\ntest owner::actual_input_tests::no_new_owner_nuclei_or_hh_thermal_factor ... ok\ntest owner::actual_input_tests::photon_tangent_energy_angle_correspondence_required ... ok\ntest owner::actual_input_tests::real_schedule_distinct_birth_nodes_same_binary64_total ... ok\ntest owner::actual_input_tests::threshold_singleton_and_one_sided_hat_preserve_owner_rules ... ok\ntest owner::actual_input_tests::unsupported_parameter_family_cannot_dispatch_or_retry ... ok\ntest owner::contraction_rounding_test::row_norm_cannot_round_down_into_false_contraction ... ok\ntest owner::energy06c_tests::full_diagnostic_never_added_to_accepted_events ... ok\ntest owner::energy06c_tests::incoming_tangent_is_not_reset ... ok\ntest owner::energy06c_tests::unsupported_lambda_rejected ... ok\ntest owner::energy06c_tests::wrong_angle_rejected ... ok\ntest owner::energy06c_tests::wrong_birth_law_rejected ... ok\ntest owner::energy06c_tests::wrong_clock_rejected ... ok\ntest owner::energy06c_tests::wrong_origin_rejected ... ok\ntest owner::actual_input_tests::nonfinite_prepare_dt_refused ... ok\ntest owner::independent_review_regressions::wrong_energy_bits_are_not_canonical_labels ... ok\ntest owner::signed_guard_review_checks::invalid_incoming_guard_interval_refused ... ok\ntest owner::independent_review_regressions::swapped_prebe_nodes_rejected_before_source_preparation ... ok\ntest owner::guard_tangent_checks::below_threshold_stock_derivative_exports_to_owned_guard ... ok\ntest owner::guard_tangent_checks::nonzero_incoming_guard_tangents_are_carried ... ok\ntest owner::independent_review_regressions::canonical_zero_tangent_remap_is_supported ... ok\ntest owner::signed_guard_review_checks::negative_lower_export_preserves_signed_derivative ... ok\ntest owner::actual_input_tests::source_weights_at_half_nodes_keep_actual_direction_identity ... ok\ntest owner::actual_input_tests::birth_added_before_be_in_source_only_transformed_fixture ... ok\ntest owner::signed_guard_review_checks::lower_threshold_straddling_hull_contains_both_signed_paths ... ok\ntest owner::actual_input_tests::original_direction_state_prebirth_boxes_contain_points ... ok\n\ntest result: ok. 26 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s\n\n",
+      "stderr": "   Compiling hh_energy06c_owner_birth v0.1.0 (/root/WU088_HH_ENERGY06C_20261009/cargo)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.55s\n     Running unittests /root/WU088_HH_ENERGY06C_20261009/repo/research/r31ao_unequal_ladder/ncp_energy06c_owner_birth_20261009_v1/src/main.rs (/root/WU088_HH_ENERGY06C_20261009/independent_review_build/debug/deps/owner_birth_probe-ef79a471da17aa65)\n"
+    }
+  ],
+  "recorded_red_green": [
+    {
+      "label": "SIGNED_GUARD_RED",
+      "argv": [
+        "/root/BASS_HE_runtime/toolchain/cargo-1.94.1-x86_64-unknown-linux-gnu/cargo/bin/cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "--bin",
+        "owner_birth_probe",
+        "-j",
+        "2"
+      ],
+      "cwd": "/root/WU088_HH_ENERGY06C_20261009/cargo",
+      "exit": 101,
+      "seconds": 0.4944891929626465,
+      "stdout_sha256": "6dfec09d9c0c8b3273df7773146fee8bacc0ac4bf86a80a1c028794c83d02e75",
+      "stderr_sha256": "981c372f56d3f0e6d9416047e9abb4e4f2f871c8a884f6f722176dc68b9ce925"
+    },
+    {
+      "label": "SIGNED_GUARD_GREEN",
+      "argv": [
+        "/root/BASS_HE_runtime/toolchain/cargo-1.94.1-x86_64-unknown-linux-gnu/cargo/bin/cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "--bin",
+        "owner_birth_probe",
+        "-j",
+        "2"
+      ],
+      "cwd": "/root/WU088_HH_ENERGY06C_20261009/cargo",
+      "exit": 0,
+      "seconds": 1.6464486122131348,
+      "stdout_sha256": "142422ae4a4a3a8e7482ac1b45f6f067658fe445a21ea42b0a8876b3c4eb191d",
+      "stderr_sha256": "4fb873755db08aa340965ab6645738f3d53fde703e049599b2a20085a21e6308"
+    }
+  ],
+  "log_hash_mismatches": [],
+  "reviewed_snapshot": [
+    {
+      "path": "/root/WU088_HH_ENERGY06C_20261009/repo/research/r31ao_unequal_ladder/ncp_energy06c_owner_birth_20261009_v1/src/owner_tests.rs",
+      "bytes": 7700,
+      "sha256": "438f7a135df84511b7f34b376806607a2c8f5dde4edfa916c7f8f9b552ff8708"
+    },
+    {
+      "path": "/root/WU088_HH_ENERGY06C_20261009/repo/research/r31ao_unequal_ladder/ncp_energy06c_owner_birth_20261009_v1/src/owner_birth.rs",
+      "bytes": 15697,
+      "sha256": "fa34b2e6168fb2d2e4fa4d231ed4ed715274a9f856387c4aebc8e6ca22af4b14"
+    },
+    {
+      "path": "/root/WU088_HH_ENERGY06C_20261009/repo/research/r31ao_unequal_ladder/ncp_energy06c_owner_birth_20261009_v1/src/main.rs",
+      "bytes": 197,
+      "sha256": "2045f63b2c72fb974b1f9982d9d87cd00016d2cd2a32261dc54842ac27603124"
+    },
+    {
+      "path": "/root/WU088_HH_ENERGY06C_20261009/cargo/Cargo.lock",
+      "bytes": 265,
+      "sha256": "c92d8ba3fa1179fd7ef252f2a3eb6806a7f9c90dcd15e3d575d7a05a85c68708"
+    },
+    {
+      "path": "/root/WU088_HH_ENERGY06C_20261009/cargo/owner_runtime.rs",
+      "bytes": 24022,
+      "sha256": "1a5c380ea576cf881fd4afe10f0ab2c172c6df2661bcf1a2109f7d9f265795cc"
+    },
+    {
+      "path": "/root/WU088_HH_ENERGY06C_20261009/cargo/hh_paired_compat.rs",
+      "bytes": 23119,
+      "sha256": "8a69454bdc311092c4fd9ea8e6e989763d214dba5c2b80d82926cab23c4b7db6"
+    },
+    {
+      "path": "/root/WU088_HH_ENERGY06C_20261009/cargo/Cargo.toml",
+      "bytes": 400,
+      "sha256": "d932ea45714051f88879b7bc534f7826bae36b7d25d6efe1494c3c13cab6ab65"
+    }
+  ],
+  "binding_v4": "NOT_YET_PRESENT",
+  "metadata_current": "UPDATING_NOT_YET_RELIED_ON"
+}
