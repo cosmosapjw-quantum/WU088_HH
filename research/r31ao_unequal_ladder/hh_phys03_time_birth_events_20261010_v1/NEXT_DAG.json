@@ -1,0 +1,96 @@
+{
+  "schema": "HH-PHYS03-NEXT-DAG-1",
+  "next_loop": "PHYS04",
+  "objective": "Source-ordered mixed quartic and opacity-weighted remap/BE defect with H/He thermal feedback",
+  "nodes": [
+    {
+      "id": "P0",
+      "task": "Check only changes after pinned PHYS03 owner/research heads",
+      "requires": [],
+      "kind": "delta_intake",
+      "no_old_science_rerun": true
+    },
+    {
+      "id": "P1",
+      "task": "Bind common raw initial slice and mathematical amplitude lift; reuse owner four-corner contract",
+      "requires": [
+        "P0"
+      ],
+      "kind": "input_definition",
+      "preBE_aggregate_is_not_raw_predecessor": true
+    },
+    {
+      "id": "P2",
+      "task": "Derive one-sided fixed-grid remap time expansion and opacity commutator at cutoff",
+      "requires": [
+        "P1"
+      ],
+      "kind": "new_physics_algebra"
+    },
+    {
+      "id": "P3",
+      "task": "Derive formal full/two-half mixed quartic preserving density/birth/remap/BE order and prior sensitivities",
+      "requires": [
+        "P2"
+      ],
+      "kind": "new_physics_algebra",
+      "native_BE_root_required": false
+    },
+    {
+      "id": "P4",
+      "task": "Bound source-specific remap and opacity functionals with declared actual leaves and interval algebra",
+      "requires": [
+        "P2"
+      ],
+      "kind": "bounded_operator_evaluation",
+      "trajectory_required": false
+    },
+    {
+      "id": "P5",
+      "task": "Connect augmented endpoint bounds to actual parameter root/tube and linked half1/half2 state",
+      "requires": [
+        "P3",
+        "P4",
+        "external_actual_root_family"
+      ],
+      "kind": "conditional_actual_certificate",
+      "current_state": "KEEP_UNRESOLVED"
+    },
+    {
+      "id": "P6",
+      "task": "Fresh independent decision, report, additive publication and create-only backups",
+      "requires": [
+        "P3",
+        "P4"
+      ],
+      "kind": "closure"
+    }
+  ],
+  "new_owner_already_has": [
+    "four-corner identity proposal",
+    "synthetic isothermal mixed family",
+    "explicit actual-root/tube/half2 gap records"
+  ],
+  "do_not_repeat": [
+    "PHYS02 frozen enclosure",
+    "PHYS03 C_m/kernel/event derivation as the next objective",
+    "old completed suites",
+    "completed adapter-only gap declarations"
+  ],
+  "actual_background_available": true,
+  "native_budget": 0,
+  "physical_admission": false,
+  "production_admission": false,
+  "preserve": {
+    "canonical_S0_HH": "OFF_CONTROL",
+    "HH_research": "ACTIVE",
+    "legacy_C1": "24/289",
+    "legacy_unbounded": 265,
+    "epsilon_C": null,
+    "epsilon_R": null,
+    "B22": "OPEN",
+    "ON06G_accepted_macros": 256,
+    "ON06G_final_time_s": 320000000000,
+    "consumed_scopes": "unchanged"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "HH-PHYS03-MODEL-CORNER-1",
+  "controls": {
+    "a": "lambda, real HH LCS amplitude",
+    "b": "S/Sstar, one specified future photon source amplitude",
+    "Sstar": "exact binary64(5e-15)",
+    "owner_theta": "fixed configuration identity tag; not b; no continuous geometry map implemented"
+  },
+  "corner_observable": "I_x = x(a,b)-x(a,0)-x(0,b)+x(0,0)",
+  "common_initial_state": "same complete gas, photons, guards, compensation and clock for all four corners of each declared comparison",
+  "b_zero_semantics": "remove only the designated future source; preserve old photons",
+  "smooth_reference": "F0(t,z)+a H(t,z)+b Sstar B(t)",
+  "hybrid_reference": "fixed scheduled real-expression remap and additive birth, then differentiable BE branch if it exists",
+  "hybrid_birth_lift": "N_i=T_i P_prev + b B_i^(1); B_i^(1) is held fixed in this mathematical amplitude extension",
+  "native_rounding_family": "not implemented or differentiated; recomputing native rounded source products is not silently identified with the real amplitude lift",
+  "parameters_do_not_change_geometry_or_clock": "conditional on fixed h, q, nodes, energies, source shape and prescribed step schedule",
+  "selected_stage": "previous gas t0 plus endpoint-remapped/born photon numerator and endpoint density t1",
+  "selected_is_native_simultaneous_continuous_state_certificate": false,
+  "source_survey": "inputs/source_survey/SOURCE_SURVEY.json",
+  "owner_common_initial_seed_sha256": "678f967f0d50ad1fff47a73e2e63193429b708246cd84ca8ffc72191c31b522b",
+  "seed_binary_independently_decoded_in_PHYS03": false,
+  "native_common_parameter_family_implemented": false,
+  "native_four_corner_receipts": null,
+  "actual_finite_mixed_sign_certified": false
+}

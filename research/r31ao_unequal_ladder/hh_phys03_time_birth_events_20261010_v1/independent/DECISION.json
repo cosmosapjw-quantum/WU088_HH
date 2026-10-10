@@ -1,0 +1,756 @@
+{
+  "schema": "HH-PHYS03-INDEPENDENT-FINAL-DECISION-1",
+  "candidate_id": "HH-PHYS03-review-v1",
+  "candidate_root": "/workspace/scratch/198b9c7581be/HH_PHYS03_20261010_v1",
+  "decision": "PROMOTE_SCOPED",
+  "decided_at_utc": "2026-10-10T11:38:30.527215+00:00",
+  "reviewer": {
+    "agent": "/root/decision_review",
+    "host_declared_model_label": "GPT-6 Astra Pro",
+    "separate_runtime_model_id": null,
+    "cryptographic_model_attestation": null,
+    "candidate_generation_participation": false,
+    "candidate_validation_design_participation": false,
+    "prior_work": "Independent PHYS02 final review only; no PHYS03 candidate design.",
+    "independence": "New PHYS03 candidate proof/code/evidence reviewed independently; no candidate implementation or document modified."
+  },
+  "review_basis": {
+    "harness": "/workspace/scratch/198b9c7581be/harness/physmath-research-harness-gpt6-astra-v4.0.0-20260908/PROJECT_INSTRUCTIONS.md",
+    "review_method": [
+      "Direct mathematical review of tensor time derivatives, birth kernel, formal BE recurrence and common-time event chain rule.",
+      "Inspection of candidate checker implementations and their preserved execution evidence.",
+      "Direct reading of relevant pinned raw owner source and receipt/family declarations.",
+      "One new exact-fraction stored-certificate and hash/linkage audit; no candidate numerical rerun."
+    ],
+    "primary_literature_check": {
+      "title": "Saltation Matrices: The Essential Tool for Linearizing Hybrid Dynamical Systems",
+      "authors": [
+        "Nathan J. Kong",
+        "J. Joe Payne",
+        "James Zhu",
+        "Aaron M. Johnson"
+      ],
+      "journal": "Proceedings of the IEEE 112(6), 585-608 (2024)",
+      "doi": "10.1109/JPROC.2024.3440211",
+      "primary_url": "https://arxiv.org/html/2306.06862v3",
+      "scope": "First-order saltation limit, Eq. (9), and regularity assumptions; the candidate second mixed formula was reviewed by direct chain rule.",
+      "section": "III-A, Eq. (9)"
+    }
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "decision": "PROMOTE",
+      "allowed_claim": "Nonautonomous cubic/quartic tensor identities and the stated structural cancellations.",
+      "conditions": [
+        "Same parameter-independent initial state at a fixed clock.",
+        "F=F0(t,z)+lambda*H(t,z)+S*B(t), with state-independent birth in a fixed photon subspace.",
+        "HH is photon-independent with no photon component; photo terms are gas-photon bilinear.",
+        "The nonphoto explicit-time cancellation applies only when H_t=B_t=0 and the explicit time variation is photon-independent."
+      ],
+      "ceilings": [
+        "Instantaneous nonphoto values and state derivatives remain in the frozen quartic.",
+        "Density-driven changes to HH and opacity are not covered by that special cancellation.",
+        "Lambda-squared times S may appear at fourth order; a universally nonzero coefficient is not asserted.",
+        "No actual-time finite remainder is evaluated."
+      ],
+      "evidence": [
+        "smooth_theory/PHYS03_SMOOTH_THEORY_KO.md",
+        "smooth_theory/check_nonautonomous.py",
+        "smooth_theory/NONAUTONOMOUS_EXACT_CHECK.json"
+      ]
+    },
+    {
+      "id": "C02",
+      "decision": "PROMOTE",
+      "allowed_claim": "The causal infinitesimal birth-response kernel retains HH tangent accumulated before birth, including the leading -A*q*s*(t-s) mixed-x memory term.",
+      "conditions": [
+        "Baseline first functional derivative in birth strength and first lambda derivative.",
+        "Frozen short-total-time leading expansion with common initial state.",
+        "Finite-strength contrast requires a uniform parameter-rectangle average and remainder."
+      ],
+      "ceilings": [
+        "No actual finite birth-source history response is certified."
+      ],
+      "evidence": [
+        "smooth_theory/PHYS03_SMOOTH_THEORY_KO.md",
+        "smooth_theory/NONAUTONOMOUS_EXACT_CHECK.json"
+      ]
+    },
+    {
+      "id": "C03",
+      "decision": "PROMOTE",
+      "allowed_claim": "For m equal steps with birth before each frozen formal BE map, C_m=(4+Xi)/6+(3+Xi)/(2m)+(5+2Xi)/(6m^2) is the mixed cubic coefficient.",
+      "conditions": [
+        "Common initial state and zero initial parameter tangents for the stated closed formula.",
+        "Any nonzero tangents at an intermediate history state must instead be propagated.",
+        "Formal local power series only."
+      ],
+      "ceilings": [
+        "No nonlinear BE root, accepted branch, finite-step error ratio, or actual convergence certificate."
+      ],
+      "evidence": [
+        "smooth_theory/PHYS03_SMOOTH_THEORY_KO.md",
+        "smooth_theory/check_nonautonomous.py",
+        "smooth_theory/NONAUTONOMOUS_EXACT_CHECK.json"
+      ]
+    },
+    {
+      "id": "C04",
+      "decision": "PROMOTE",
+      "allowed_claim": "The common-observation-time mixed event derivative is correct on a regular C2 chart; fixed affine remap and birth give U+=LU, V+=LV+B_e, W+=LW.",
+      "conditions": [
+        "Same local event sequence and nonzero g_t+g_z*f_minus.",
+        "Required one-sided pre/post flows, guard and reset derivatives exist.",
+        "Geometry, clock and event schedule are fixed for the stated zero event-time-derivative exception.",
+        "BE derivative formulas additionally require an existing differentiable branch and invertible I-delta*J."
+      ],
+      "ceilings": [
+        "No grazing, changed event counts/order, noncommuting simultaneous events, or unpartitioned nonsmooth remap chart.",
+        "The implementation is a point derivative operator, not a global or interval event solver."
+      ],
+      "evidence": [
+        "HYBRID_THEORY_KO.md",
+        "src/hybrid_mixed.py",
+        "tests/test_hybrid_mixed.py",
+        "logs/hybrid_initial.stderr"
+      ]
+    },
+    {
+      "id": "C05",
+      "decision": "PROMOTE",
+      "allowed_claim": "The specified FLRW fixed-grid cutoff basis column has a strictly positive twohalf-minus-full active-opacity weight defect despite number and first-energy-moment conservation.",
+      "exact_identity": "w_twohalf-w_full=K*(K-1)*(1-r)^2>0 on the certified cell",
+      "conditions": [
+        "Exact real expressions over the pinned binary64 leaves.",
+        "The specified index-16 basis packet, fixed grid and HI provider cutoff.",
+        "Certified interior cell membership; no upward return from inactive lower nodes."
+      ],
+      "ceilings": [
+        "One operator column, not the actual full photon distribution or gas history.",
+        "Provider-relative opacity discrepancy, not a true atomic cross-section accuracy claim.",
+        "No per-operation native rounding certificate."
+      ],
+      "evidence": [
+        "CHRONOLOGY_THEORY_KO.md",
+        "src/analyze_chronology.py",
+        "results/CHRONOLOGY_256.json",
+        "inputs/source_survey/SOURCE_LINE_BINDINGS.json"
+      ]
+    },
+    {
+      "id": "C06",
+      "decision": "PROMOTE",
+      "allowed_claim": "The stated free-propagation emission schedules have equal emitted counts but distinct energy moments with E_continuous < E_two_endpoint < E_one_endpoint.",
+      "conditions": [
+        "Specified constant Hubble, birth energy, source amplitude and fixed clocks; exact-real binary64-leaf semantics."
+      ],
+      "ceilings": [
+        "No interacting gas or ionization-error bound."
+      ],
+      "evidence": [
+        "CHRONOLOGY_THEORY_KO.md",
+        "results/CHRONOLOGY_256.json"
+      ]
+    },
+    {
+      "id": "C07",
+      "decision": "PROMOTE",
+      "allowed_claim": "The pinned actual owner background and chronology exist; selected photon inputs match archived member-1 half1 preBE groups; the new common-state native lambda,b source family and required accepted receipt remain unavailable.",
+      "selected_state_meaning": "Previous gas at t0 plus endpoint-remapped/born photon numerator and endpoint density at t1, assembled as a BE-stage aggregate.",
+      "conditions": [
+        "Source and record statements refer to the pinned snapshots and hashes.",
+        "Theta is the fixed owner configuration tag, not the source amplitude b.",
+        "The real amplitude lift keeps B_i^(1) fixed and is not silently equated with recomputing native rounded products.",
+        "The same complete initial checkpoint is required for all four proposed corners."
+      ],
+      "ceilings": [
+        "No new seed-gas binary decode.",
+        "No native simultaneous continuous-state certificate for the selected aggregate.",
+        "Existing point/history evidence does not certify the new parameter family.",
+        "Missing new family evidence does not imply a missing actual background."
+      ],
+      "evidence": [
+        "inputs/source_survey/SOURCE_SURVEY_KO.md",
+        "inputs/source_survey/SOURCE_LINE_BINDINGS.json",
+        "inputs/source_survey/SOURCE_IDENTITY_VERIFICATION.json",
+        "MODEL_AND_CORNER_IDENTITY.json"
+      ]
+    },
+    {
+      "id": "C08",
+      "decision": "PROMOTE",
+      "allowed_claim": "The augmented componentwise comparison gives a sufficient mixed-sign transfer condition B_Wx(t)<m_ref(t) under aligned clocks, parameter semantics and full ordered maps.",
+      "theorem_status": "PROMOTE_CONDITIONAL",
+      "numerical_closure_decision": "KEEP_UNRESOLVED",
+      "actual_B_Wx": null,
+      "conditions": [
+        "Convex domain containing both relevant trajectories or connecting segments and derivative bounds.",
+        "Metzler continuous comparison with off-diagonal absolute derivative bounds and signed diagonal upper bounds.",
+        "Complete augmented discrete maps and discrepancy bounds, including initial tangents, birth, remap, density and BE chronology.",
+        "Uniform parameter-rectangle bound; every time claimed requires its own valid margin comparison."
+      ],
+      "ceilings": [
+        "Inherited PHYS02 endpoint margin is not approved as an actual numerical tolerance.",
+        "Opacity/weight defects cannot be directly compared with the mixed-x margin.",
+        "No actual finite or all-time sign is certified."
+      ],
+      "evidence": [
+        "REMAINDER_TRANSFER_KO.md",
+        "REMAINDER_OR_GAP.json"
+      ]
+    }
+  ],
+  "additional_notation": {
+    "decision": "PROMOTE_SCOPED",
+    "file": {
+      "path": "NOTATION_AND_INTERPRETATION_KO.md",
+      "bytes": 3041,
+      "sha256": "cc17336010bb786dea7879090292f19e1023f555b8ccc8ce66d6d2cc98051b65"
+    },
+    "allowed_claims": [
+      "T_gamma is the equivalent temperature of birth excess energy, not the CMB temperature.",
+      "Xi describes the local thermal and neutral-fraction response in the inherited frozen coefficient.",
+      "A negative mixed contrast is distinct from the sign of the direct HH contribution.",
+      "Inherited point diagnostics are not new actual-history finite certificates."
+    ]
+  },
+  "admission": {
+    "actual_native_source_family": "HOLD",
+    "actual_finite_mixed_sign": "KEEP_UNRESOLVED",
+    "actual_full_twohalf_gas_error": "KEEP_UNRESOLVED",
+    "actual_all_time_sign": "KEEP_UNRESOLVED",
+    "physical": "HOLD",
+    "production": "HOLD",
+    "native_job_authorization_changed": false
+  },
+  "inherited_PHYS02": {
+    "frozen_theorem_retained": true,
+    "completed_audit_rerun": false,
+    "automatic_transfer_to_actual_history": false,
+    "selected_aggregate_semantics_corrected": true
+  },
+  "blockers_for_scoped_promotion": [],
+  "required_candidate_changes": [],
+  "unresolved_before_actual_family_admission": [
+    "A native common-complete-initial-state lambda,b source family with explicit control semantics.",
+    "An accepted half1 entire-checkpoint receipt and exact linked half2 incoming state.",
+    "Trusted roots, parameter tubes and uniform inverse/preconditioner evidence for the chosen branch.",
+    "Complete augmented map derivative and discrepancy bounds with the actual operation chronology.",
+    "A numerical B_Wx that is smaller than a valid aligned reference margin at every time claimed."
+  ],
+  "preserved_candidate_run_evidence": {
+    "nonautonomous_exact_cases": 36,
+    "formal_BE_cases": 10,
+    "exact_event_tests": 8,
+    "chronology_arb_bits": 256,
+    "mpmath_independent_scalar_checks": 9,
+    "reviewer_reran_these_checkers": false,
+    "scope": "Exact nonphysical algebra and specified real-expression chronology evidence, not a native family certificate."
+  },
+  "reviewer_execution": {
+    "command": "python independent/reviewer_checks.py > independent/reviewer_checks.stdout 2> independent/reviewer_checks.stderr",
+    "exit_code": 0,
+    "checker_executions": 1,
+    "critical_hashes_verified": 18,
+    "source_line_byte_hash_bindings_verified": 25,
+    "outward_intervals_verified": 20,
+    "exact_dyadic_endpoints_verified": 40,
+    "saved_mpmath_decimal_witnesses_verified": 9,
+    "archived_positive_binary64_photon_values_verified": 25,
+    "new_transcendental_evaluations": 0,
+    "candidate_checkers_rerun": 0,
+    "native_dispatches": 0,
+    "IVP_trajectory_runs": 0,
+    "nonlinear_BE_roots": 0,
+    "NCP_runs": 0,
+    "old_atomic_integrals": 0,
+    "PHYS02_suite_reruns": 0,
+    "first_failure": null,
+    "script": {
+      "path": "independent/reviewer_checks.py",
+      "bytes": 8141,
+      "sha256": "990b47083ab4cbb7b961fd173331524c338f2bef1f4a3c4be40174da3ee24560"
+    },
+    "stdout": {
+      "path": "independent/reviewer_checks.stdout",
+      "bytes": 246,
+      "sha256": "8592a74cc34fa8a3b2179c358c3b86b8e01f8ae1d611ff919a282524ceec1d15"
+    },
+    "stderr": {
+      "path": "independent/reviewer_checks.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "result": {
+      "path": "independent/REVIEWER_CHECKS.json",
+      "bytes": 19907,
+      "sha256": "958799c0f0d59cb0314d7b2b287dffcb262e985a7fc729ac89d6629fa18314a5"
+    }
+  },
+  "reviewed_hashes": {
+    "manifest": {
+      "path": "independent/REVIEW_TARGETS.json",
+      "bytes": 3180,
+      "sha256": "a8e1a2db21e42db376ee0cae9e5fc8af127cd276e8735f63389db85679da20c5"
+    },
+    "critical_files": [
+      {
+        "path": "REPORT_KO.md",
+        "bytes": 16110,
+        "sha256": "fd574438f0cf5e73e7643c52c36e11341d2c08964ef147f3d87cfd96ec805916",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "SCIENTIFIC_CONTRACT.md",
+        "bytes": 3433,
+        "sha256": "65a8833dbcc643d7ea962e94bc8c3560a140a5d4b1afb8e264a485ecbed1fed1",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "HYBRID_THEORY_KO.md",
+        "bytes": 8528,
+        "sha256": "9093200b2463bef3d6a650eef41656caf77d34ffe583c326af48a804b42ba400",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "CHRONOLOGY_THEORY_KO.md",
+        "bytes": 7296,
+        "sha256": "25136a51c72f489861c759d551cab7b8df33ddf5850af5ca0ac17dbf550128ed",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "REMAINDER_TRANSFER_KO.md",
+        "bytes": 5504,
+        "sha256": "8b54604770825b0f642612ebc5dfad5749dfa8622594799eab539fb49f8afc28",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "CLAIM_LEDGER.json",
+        "bytes": 3030,
+        "sha256": "8c65d73112c9393537aa69e1e27b9532b87cf5d42ed8bc4666866c3000d2a040",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "REMAINDER_OR_GAP.json",
+        "bytes": 1465,
+        "sha256": "ac539c67cfca9724fc3de111edc8ae075f6538aa8ef786448c35a32901f1f369",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "MODEL_AND_CORNER_IDENTITY.json",
+        "bytes": 1742,
+        "sha256": "e31820a5f9041154875a4773511fe310c282e5d4f948051453d08beaf574cd7c",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "src/hybrid_mixed.py",
+        "bytes": 4139,
+        "sha256": "008eb7bd21ae085f50fd48fe38b87ffb64c2b7ebf6c3af7ac1d90ffafb109566",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "tests/test_hybrid_mixed.py",
+        "bytes": 6250,
+        "sha256": "fdfe88eb7402cc694934de5fb675a0c02fb3c435a483a182a67be3cf9731526b",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "src/analyze_chronology.py",
+        "bytes": 9655,
+        "sha256": "a409abb039a6ff0d5d3ec2d1b772b61aee86a0d692a400cca45be5f2a648de3a",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "results/CHRONOLOGY_256.json",
+        "bytes": 15039,
+        "sha256": "aca8b36bd745dce156e514cafd42c228b59d72fc41dd446d2d48769f80378a7c",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "smooth_theory/PHYS03_SMOOTH_THEORY_KO.md",
+        "bytes": 21315,
+        "sha256": "87e05f01c7e7058bf95af9af4ebc87573201ce5e69e358bb7f984c9b13c745d0",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "smooth_theory/check_nonautonomous.py",
+        "bytes": 16132,
+        "sha256": "e23719bf75e9f5f8c4ed659fa3c05add3a4b3d227c6f6aad8dbb6a9b4aa582a6",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "smooth_theory/NONAUTONOMOUS_EXACT_CHECK.json",
+        "bytes": 12919,
+        "sha256": "69f495579cbe82160a1d3d8c6766e8da19547f44601e8c6d93f935ad75a73989",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "inputs/source_survey/SOURCE_SURVEY_KO.md",
+        "bytes": 19863,
+        "sha256": "0ab94eb126a8d561de0b9fc974b326215ed0be18d4d620696e34aed09a15410d",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "inputs/source_survey/SOURCE_LINE_BINDINGS.json",
+        "bytes": 18815,
+        "sha256": "ce6b710a3fd5c3d767aab11974fff8de59596df6fcfc7bacf576a8a3d983fb89",
+        "matches_frozen_target": true
+      },
+      {
+        "path": "inputs/source_survey/SOURCE_IDENTITY_VERIFICATION.json",
+        "bytes": 4099,
+        "sha256": "f2e6dff612acc0e1067d4daf7865d5fe91eb373254dc705758088724b3baec1d",
+        "matches_frozen_target": true
+      }
+    ],
+    "source_segments": [
+      {
+        "id": "fixed_energy_grid",
+        "path": "source/paired_runtime.rs",
+        "lines": [
+          44,
+          55
+        ],
+        "file_sha256": "8322d79609cc535b046b6000dd27bfdfd8859ddbffb5c3adac90ba396d6d2718",
+        "segment_sha256": "b2957b6648f9ff9d7c25a558bdbbf899607ea5a381d50b76b9cc96cd88766b80",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "fixed_q_rays",
+        "path": "source/paired_runtime.rs",
+        "lines": [
+          56,
+          62
+        ],
+        "file_sha256": "8322d79609cc535b046b6000dd27bfdfd8859ddbffb5c3adac90ba396d6d2718",
+        "segment_sha256": "77c7017c61cc9962215ab2ae3ede14f34cfb25268a685822cae3319623f32b03",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "redshift_and_birth_weights",
+        "path": "source/paired_runtime.rs",
+        "lines": [
+          109,
+          132
+        ],
+        "file_sha256": "8322d79609cc535b046b6000dd27bfdfd8859ddbffb5c3adac90ba396d6d2718",
+        "segment_sha256": "8b8cdc96ace70aa74dfa7cb22942a2b6128441f59724f8b2b853527eec88dd32",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "hat_cell_definition",
+        "path": "source/paired_runtime.rs",
+        "lines": [
+          133,
+          160
+        ],
+        "file_sha256": "8322d79609cc535b046b6000dd27bfdfd8859ddbffb5c3adac90ba396d6d2718",
+        "segment_sha256": "98d93b3685e29eca7516aabc0b26b95139ba65abf08a348f57852686142d3ded",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "full_twohalf_roles",
+        "path": "source/hh_paired_extension.rs",
+        "lines": [
+          56,
+          73
+        ],
+        "file_sha256": "f47958a8e185ab02cd7d6c00cb7760be583eb769147ca4ed04ef7b1404e87830",
+        "segment_sha256": "35a023f6c5bdde0126482e2301817dbbf07feac559dd2b72087bbe896c672404",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "transport_before_birth",
+        "path": "source/hh_paired_extension.rs",
+        "lines": [
+          87,
+          129
+        ],
+        "file_sha256": "f47958a8e185ab02cd7d6c00cb7760be583eb769147ca4ed04ef7b1404e87830",
+        "segment_sha256": "9ce84da1d4843f07414024774e13383e9bf2657b3605eb07b6adf41f0605a7c1",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "birth_grouping_old_gas_endpoint_density",
+        "path": "source/hh_paired_extension.rs",
+        "lines": [
+          130,
+          143
+        ],
+        "file_sha256": "f47958a8e185ab02cd7d6c00cb7760be583eb769147ca4ed04ef7b1404e87830",
+        "segment_sha256": "a41a9535807060c17623202a298d47a5fb78bbb7a573514fc7b5f6496ec3b7db",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "fixed_node_opacity_after_remap",
+        "path": "source/hh_paired_extension.rs",
+        "lines": [
+          151,
+          158
+        ],
+        "file_sha256": "f47958a8e185ab02cd7d6c00cb7760be583eb769147ca4ed04ef7b1404e87830",
+        "segment_sha256": "5fec0ef52cc4726ca77d185dfd18666b1f8f682a4488fb9817267e977659fae2",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "native_ledgers_and_return_time",
+        "path": "source/hh_paired_extension.rs",
+        "lines": [
+          161,
+          179
+        ],
+        "file_sha256": "f47958a8e185ab02cd7d6c00cb7760be583eb769147ca4ed04ef7b1404e87830",
+        "segment_sha256": "c4369b6209d251833c1f076eff976098c30d4cec868a7068a4b2f9182484ba7b",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "selected_stage_audit_fields",
+        "path": "source/hh_paired_extension.rs",
+        "lines": [
+          183,
+          194
+        ],
+        "file_sha256": "f47958a8e185ab02cd7d6c00cb7760be583eb769147ca4ed04ef7b1404e87830",
+        "segment_sha256": "a4eb8fc24ad257333669ed997bfb5666170ab3c267207940512d845da34a65ae",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "constant_hubble_analytic_background",
+        "path": "source/bianchi_i.rs",
+        "lines": [
+          67,
+          97
+        ],
+        "file_sha256": "4d7ec027e6074e37d355228c557cdfce54d5bb1da3657e062a556922d6c21f9a",
+        "segment_sha256": "bbbd2a52fb1fa724aebb498269a4b45f6e2e7a34ea645d9fd2c90a00cc61d436",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "characteristic_energy_and_angle",
+        "path": "source/bianchi_i.rs",
+        "lines": [
+          185,
+          209
+        ],
+        "file_sha256": "4d7ec027e6074e37d355228c557cdfce54d5bb1da3657e062a556922d6c21f9a",
+        "segment_sha256": "b01b455d0dcba98a7e0615248dca3a077468c6685fdba6e8180982fff2e5554b",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "provider_threshold",
+        "path": "source/atomic_provider.rs",
+        "lines": [
+          327,
+          353
+        ],
+        "file_sha256": "b0b572d3940a7a1f740e09d5f43c60236ec61511e8bdbcc68e60395ec7e107d3",
+        "segment_sha256": "269ef7188bac4d7a22d99c95e45c07c6b78074dc8c2bf615a180dfda0d0abc25",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "source_law_and_step_clocks",
+        "path": "source/owner_birth.rs",
+        "lines": [
+          1,
+          12
+        ],
+        "file_sha256": "fa34b2e6168fb2d2e4fa4d231ed4ed715274a9f856387c4aebc8e6ca22af4b14",
+        "segment_sha256": "203131de94e7088aee94a464a581c3d7c31c581190501119bf4d53cebf899db4",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "no_native_permit",
+        "path": "source/owner_birth.rs",
+        "lines": [
+          15,
+          30
+        ],
+        "file_sha256": "fa34b2e6168fb2d2e4fa4d231ed4ed715274a9f856387c4aebc8e6ca22af4b14",
+        "segment_sha256": "4120f023b41e7deca66cfce2b99dc5361dcb8b39747d6f539d352907b6b13cf9",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "preBE_exact_input_scope",
+        "path": "source/owner_birth.rs",
+        "lines": [
+          32,
+          42
+        ],
+        "file_sha256": "fa34b2e6168fb2d2e4fa4d231ed4ed715274a9f856387c4aebc8e6ca22af4b14",
+        "segment_sha256": "6af2439c8ad52f494eccbc669428569b16ad8432a24d6d5b6354383160dad54e",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "member_geometry_and_saved_preBE_export",
+        "path": "source/owner_birth.rs",
+        "lines": [
+          102,
+          115
+        ],
+        "file_sha256": "fa34b2e6168fb2d2e4fa4d231ed4ed715274a9f856387c4aebc8e6ca22af4b14",
+        "segment_sha256": "7056b83edea850a134f529fe5278fb241fd4334d2febbf54d7dbb9286c444c56",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "lambda_fixed_geometry_remap",
+        "path": "source/owner_birth.rs",
+        "lines": [
+          150,
+          172
+        ],
+        "file_sha256": "fa34b2e6168fb2d2e4fa4d231ed4ed715274a9f856387c4aebc8e6ca22af4b14",
+        "segment_sha256": "192a6b625713da6416e1c8f3092571d839f166e103d7d00c2cedf0361daeac86",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "theta_fixed_identity",
+        "path": "energy06e/paired_stage_receipt.rs",
+        "lines": [
+          1,
+          24
+        ],
+        "file_sha256": "131287a7ce4e98deec67cac2c1268b441fb6ba6431ab0c2eec899b473ba9974e",
+        "segment_sha256": "75581ef9dc8e3f4324661313a3843da39ea032455f1c96083003e7d96ef7f58c",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "accepted_half1_and_family_gap",
+        "path": "energy06e/paired_stage_receipt.rs",
+        "lines": [
+          25,
+          61
+        ],
+        "file_sha256": "131287a7ce4e98deec67cac2c1268b441fb6ba6431ab0c2eec899b473ba9974e",
+        "segment_sha256": "65f3d12c53a272a41ee96400735b278f145da536eca4f84b65ac15eb224b58ae",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "conditional_stage_fixed_packet_energy",
+        "path": "source/coupled_primary.rs",
+        "lines": [
+          1,
+          95
+        ],
+        "file_sha256": "6386333c3b9478f7fc486c11adf941a35f811595fa42e6f4653cf0dcdac0706e",
+        "segment_sha256": "378a3aaf5ae66a08f80d24e03e8bfa373adae7bcb194c0570a1251a3a939a2ef",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "new_four_corner_input_scope",
+        "path": "latest_owner/MODEL_AND_CORNER_IDENTITY.json",
+        "lines": [
+          18,
+          49
+        ],
+        "file_sha256": "d5265b1628627ce9c890448d3a8e37485556cc6be64fa1aba75ebe6f08e9b623",
+        "segment_sha256": "b55e8473794e9a3b2e55b39692a806081ed2997f329536bdcc0fb6bdbe088361",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "saved_member1_full_preBE",
+        "path": "history/OWNER_PREBE_FINAL_BINARY.jsonl",
+        "lines": [
+          4,
+          4
+        ],
+        "file_sha256": "7879b0acad3c74ae67d93832561021d083a8ffeeaec1af6d09997219f95266df",
+        "segment_sha256": "28bff29477a42acd3528524a8161b735c1b9a132e415ec45a35028e506080f59",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "saved_member1_half1_preBE",
+        "path": "history/OWNER_PREBE_FINAL_BINARY.jsonl",
+        "lines": [
+          5,
+          5
+        ],
+        "file_sha256": "7879b0acad3c74ae67d93832561021d083a8ffeeaec1af6d09997219f95266df",
+        "segment_sha256": "3319cbe07ae846897c1244dda434344d0d042432d964af6a58467762e4c11f0f",
+        "hash_and_line_byte_binding_pass": true
+      },
+      {
+        "id": "saved_member1_half2_weights_only",
+        "path": "history/OWNER_PREBE_FINAL_BINARY.jsonl",
+        "lines": [
+          6,
+          6
+        ],
+        "file_sha256": "7879b0acad3c74ae67d93832561021d083a8ffeeaec1af6d09997219f95266df",
+        "segment_sha256": "05d99772d3bb000acfbc0feda6d6c2f020331931d720d11b9555db74ef8e8f4f",
+        "hash_and_line_byte_binding_pass": true
+      }
+    ],
+    "additional_files": [
+      {
+        "path": "NOTATION_AND_INTERPRETATION_KO.md",
+        "bytes": 3041,
+        "sha256": "cc17336010bb786dea7879090292f19e1023f555b8ccc8ce66d6d2cc98051b65"
+      },
+      {
+        "path": "RUN_LEDGER.json",
+        "bytes": 1199,
+        "sha256": "2bdb133948a4ea92053518ca0253e895c63b5910a0dbc192110d0df5bd674c57"
+      },
+      {
+        "path": "logs/hybrid_initial.stderr",
+        "bytes": 1076,
+        "sha256": "b1e233e7acd9847c914b094fefa1df46784211a0d68a8af0b38f841971cf59a0"
+      },
+      {
+        "path": "logs/chronology_initial.stdout",
+        "bytes": 1110,
+        "sha256": "3dc5887c1fcca238a00a291f6d42e305c4eb1d11398f842b5002c0134b2f5b27"
+      },
+      {
+        "path": "logs/chronology_initial.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "smooth_theory/COMMAND_STATUS.json",
+        "bytes": 178,
+        "sha256": "db47300769eea319061b7d74a47cbf9c38e90d25447c70bcb42263e5aaa28417"
+      },
+      {
+        "path": "smooth_theory/checker.stdout",
+        "bytes": 164,
+        "sha256": "81826c57646656d1ab5d4c0193573b7d6fdd63626b5e386cb817c3d48a7f8483"
+      },
+      {
+        "path": "smooth_theory/checker.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "selected_input": {
+      "path": "inputs/phys02/inputs/SELECTED_SOURCE.json",
+      "bytes": 6299,
+      "sha256": "26a340065a9a99d02903bf0cc008baaf6ade00d2e845beb9d2b0b7d801316494"
+    }
+  },
+  "review_document": {
+    "path": "independent/DECISION_REVIEW_KO.md",
+    "bytes": 18915,
+    "sha256": "a5c78064dfcb75cac77d5c4f93edca18859915401fc5c02120010c99f7c38fcd",
+    "non_LF_control_character_count": 0
+  },
+  "final_freeze": {
+    "critical_files_unchanged_at_decision": true,
+    "candidate_mutations_by_reviewer": [],
+    "reviewer_writes_scope": "candidate independent/ only",
+    "self_hash_excluded": true
+  },
+  "post_review_editorial_corrections": [
+    {
+      "kind": "citation_section",
+      "from": "II.A",
+      "to": "III-A",
+      "verified_primary_url": "https://arxiv.org/html/2306.06862v3",
+      "equation_unchanged": 9,
+      "scientific_decision_changed": false,
+      "candidate_files_changed": false,
+      "closed_at_utc": "2026-10-10T11:39:05.528153+00:00"
+    }
+  ]
+}

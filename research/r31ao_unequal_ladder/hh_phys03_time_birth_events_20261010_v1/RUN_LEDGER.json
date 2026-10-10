@@ -1,0 +1,44 @@
+{
+  "scope": "PHYS03 new source intake and bounded algebra only",
+  "runs": [
+    {
+      "id": "source_identity",
+      "exit_code": 0,
+      "snapshots": 30,
+      "source_segments": 25,
+      "output": "inputs/source_survey/SOURCE_IDENTITY_VERIFICATION.json"
+    },
+    {
+      "id": "smooth_and_formal_BE",
+      "exit_code": 0,
+      "nonautonomous_cases": 36,
+      "formal_BE_cases": 10,
+      "output": "smooth_theory/NONAUTONOMOUS_EXACT_CHECK.json"
+    },
+    {
+      "id": "hybrid_closed_form",
+      "exit_code": 0,
+      "test_methods": 8,
+      "stderr": "logs/hybrid_initial.stderr"
+    },
+    {
+      "id": "chronology",
+      "exit_code": 0,
+      "arb_bits": 256,
+      "independent_mpmath_checks": 9,
+      "output": "results/CHRONOLOGY_256.json"
+    }
+  ],
+  "scientific_checker_first_failure": null,
+  "artifact_write_failures": [
+    "failures/FIRST_ROOT_ARTIFACT_WRITE_FAILURE.json",
+    "failures/SECOND_ROOT_ARTIFACT_WRITE_FAILURE.json",
+    "smooth_theory/FIRST_ARTIFACT_WRITE_FAILURE.json"
+  ],
+  "native_dispatches": 0,
+  "IVP_trajectories": 0,
+  "nonlinear_BE_roots": 0,
+  "NCP_dispatches": 0,
+  "legacy_atomic_integrals": 0,
+  "parent_or_peer_science_suite_reruns": 0
+}
