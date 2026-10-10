@@ -1,0 +1,94 @@
+{
+  "schema": "WU088_HH_PHYS06_REFERENCE_CHECK_V1",
+  "status": "PASS",
+  "arithmetic": "exact Fraction; independent integer radical enclosures and polynomial oracle",
+  "counts": {
+    "assertions": 275,
+    "expected_rejections": 17
+  },
+  "cases": [
+    {
+      "name": "interval_and_nondiagonal_preconditioner",
+      "status": "PASS",
+      "q": "4/25",
+      "box": [
+        {
+          "lo": "35/43",
+          "hi": "51/43"
+        },
+        {
+          "lo": "37/43",
+          "hi": "49/43"
+        }
+      ]
+    },
+    {
+      "name": "uniform_nonlinear_analytic_family",
+      "status": "PASS",
+      "q": "1/16",
+      "root_image_radius": [
+        "9/64"
+      ],
+      "mixed_bound": {
+        "lo": "1511/13500",
+        "hi": "466/3375"
+      },
+      "finite_corner_radical_bound": {
+        "lo": "40908861002402782205191383396550749/332306998946228968225951765070086144",
+        "hi": "20454430501201391102595691698275375/166153499473114484112975882535043072"
+      },
+      "scope": "manufactured mathematical family, not HH"
+    },
+    {
+      "name": "independent_multivariate_polynomial_chain",
+      "status": "PASS",
+      "families_checked": 3,
+      "nonzero_chain_terms": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "energy_ledger_and_helium_curvature",
+      "status": "PASS",
+      "groups_with_all_channels": 2,
+      "signed_directions": 6,
+      "mixed_directions_signs": [
+        -1,
+        1
+      ]
+    },
+    {
+      "name": "point_sign_counterexample_and_observable",
+      "status": "PASS",
+      "point_W": "1",
+      "finite_interaction": "-1",
+      "observable_W": "2"
+    },
+    {
+      "name": "paired_shared_parameter_cancellation",
+      "status": "PASS",
+      "independent_box": {
+        "lo": "-999999/1000000",
+        "hi": "1000001/1000000"
+      },
+      "joint_delta_box": {
+        "lo": "1/1000000",
+        "hi": "1/1000000"
+      },
+      "scope": "analytic witness only; actual HH delta bounds absent"
+    },
+    {
+      "name": "invalid_prerequisites_rejected",
+      "status": "PASS"
+    }
+  ],
+  "native_endpoint_runs": 0,
+  "native_root_runs": 0,
+  "IVP_runs": 0,
+  "historical_suite_replays": 0,
+  "actual_HH_W": null,
+  "actual_HH_I": null,
+  "native_authority": false
+}

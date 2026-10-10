@@ -1,0 +1,98 @@
+{
+  "schema": "WU088_HH_PHYS06_CLAIM_LEDGER_V1",
+  "owner_decision": "PROPOSED_ONLY_PENDING_INDEPENDENT_REVIEW",
+  "claims": [
+    {
+      "id": "P06-C01",
+      "statement": "The explicitly defined exact-real matter-energy row cancels direct HH reaction energy. With exact excess-energy differences it maps photo K_j to E_j*kappa_j; for rounded heat leaves retain sum_a r_aj*epsilon_aj. The transformed residual is defined directly as S*G.",
+      "kind": "EXACT_REAL_SOURCE_COMPONENT_IDENTITY",
+      "evidence": [
+        "theory/ENERGY_COORDINATE_KO.md",
+        "evidence/reference_checks.json"
+      ],
+      "limit": "Not a bitwise copy of native energy() coefficients, sums or event ledgers; rounded heat-leaf corrections and outward S construction matter; not total mixed W_e=0."
+    },
+    {
+      "id": "P06-C02",
+      "statement": "For fixed positive d,E, nonnegative primal N and exact excess-energy differences, affine opacity gives a negative semidefinite gas Hessian of the ideal reduced photo matter energy. A source graph with rounded heat leaves requires its additional defect term; the archived active-HI case is checked separately.",
+      "kind": "EXACT_CONDITIONAL_COMPONENT_THEOREM",
+      "evidence": [
+        "theory/ENERGY_COORDINATE_KO.md",
+        "src/uniform_mixed.py",
+        "evidence/reference_checks.json"
+      ],
+      "limit": "Signed mixed directions and incoming derivatives can have either sign. Generic high-energy multi-species rounded-leaf source is not certified by this ideal theorem; total mixed response remains unknown."
+    },
+    {
+      "id": "P06-C03",
+      "statement": "At the archived common seed, the frozen 33-node photo energy component has only HI-active opacity and a rank-one negative gas Hessian for the two stated diagnostic d values.",
+      "kind": "ARCHIVED_POINT_SCALAR_DIAGNOSTIC",
+      "evidence": [
+        "inputs/ncp_v2/ARCHIVED_COMMON_SEED_POINT_INPUT.json",
+        "diagnostics/archived_energy_point.py",
+        "evidence/archived_energy_point_results.json"
+      ],
+      "limit": "Stored primary packet counts are frozen N, not the next pre-BE input; sigma is a Python source transcription, not a bitwise NCP Rust attestation; no native step executed."
+    },
+    {
+      "id": "P06-C04",
+      "statement": "The actual stored density leaves need fhat=nHe/nH rather than exact stage fHe in the nonphoto energy simplification; Jnorm=(fHe-fhat)*(chiHeI*F_y1+(chiHeI+chiHeII)*F_y2) must remain in the exact-real identity.",
+      "kind": "SOURCE_NORMALIZATION_CORRECTION",
+      "evidence": [
+        "inputs/ncp_v2/SOURCE_DENSITY_LEAF_CORRECTION.json",
+        "theory/ENERGY_COORDINATE_KO.md"
+      ],
+      "limit": "Does not numerically enclose Jnorm or its derivatives on an actual family; native floating point roundoff remains a separate inclusion obligation."
+    },
+    {
+      "id": "P06-C05",
+      "statement": "Truthful uniform residual/Jacobian enclosures, admitted C2 domain and strict fixed-C contraction/invariance imply a unique implicit root family inside X for every parameter in the rectangle; tangent and mixed comparison bounds are sufficient.",
+      "kind": "CONDITIONAL_MATHEMATICAL_THEOREM",
+      "evidence": [
+        "theory/UNIFORM_MIXED_RECTANGLE_KO.md",
+        "src/uniform_mixed.py",
+        "evidence/reference_checks.json"
+      ],
+      "limit": "Caller domain/identity fields are declared assumptions; arithmetic acceptance cannot issue native source authority; no global uniqueness outside X."
+    },
+    {
+      "id": "P06-C06",
+      "statement": "A uniform exact discrete-family W enclosure bounds the finite four-corner interaction by rectangle integration without a separate parameter Taylor remainder; paired delta equations can preserve same-parameter cancellation.",
+      "kind": "EXACT_INTEGRAL_AND_PAIRED_LINEAR_IDENTITY",
+      "evidence": [
+        "theory/UNIFORM_MIXED_RECTANGLE_KO.md",
+        "evidence/reference_checks.json"
+      ],
+      "limit": "Point or formal h-series coefficients do not suffice; continuous-time and h-remainders remain separate; joint delta bounds must be source-derived."
+    },
+    {
+      "id": "P06-C07",
+      "statement": "The supplied standard-library exact rational arithmetic passed the recorded new analytic/polynomial/interval checks and rejects the recorded invalid prerequisite cases.",
+      "kind": "SCOPED_REFERENCE_IMPLEMENTATION_VERIFICATION",
+      "evidence": [
+        "src/uniform_mixed.py",
+        "tests/check_reference.py",
+        "evidence/reference_checks.json",
+        "evidence/reference_first/EXECUTION.json"
+      ],
+      "limit": "No Rust compilation here; no native physics or historical checker execution."
+    },
+    {
+      "id": "P06-C08",
+      "statement": "Actual source-bound W, finite I_h, mixed scheme defect, continuous source-law error and family-tube authority remain unresolved.",
+      "kind": "HOLD",
+      "promotable": false,
+      "actual_values": null,
+      "evidence": [
+        "inputs/ncp_v2/REMAINDER_OR_UNRESOLVED.json",
+        "state/RESEARCH_STATE.json"
+      ]
+    }
+  ],
+  "native_endpoint_runs": 0,
+  "native_root_runs": 0,
+  "IVP_runs": 0,
+  "historical_suite_replays": 0,
+  "physical_status": "HOLD",
+  "production_status": "HOLD"
+}
