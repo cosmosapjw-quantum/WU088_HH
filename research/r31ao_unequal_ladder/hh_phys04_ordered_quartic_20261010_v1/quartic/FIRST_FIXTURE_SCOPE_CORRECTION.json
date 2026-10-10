@@ -1,0 +1,13 @@
+{
+  "classification": "IMPLEMENTATION",
+  "subcategory": "FIXTURE_SCOPE_LABEL_MISMATCH",
+  "scientific_formula_change": false,
+  "observed": "The fixture named frozen retained an explicit t/47 nonphoto cooling coefficient. Exact candidate/oracle agreement was valid, but frozen scope label was inaccurate.",
+  "correction": "Multiply that nonphoto coefficient drift by the existing declared density_drift switch, making it zero in frozen cases.",
+  "old_script_sha256": "9c4625da2896a8e03f9520c194b772e5c4bb6dda0122a0eee4c6cd32731f87f2",
+  "old_script": "ordered_be_quartic_run_01_preserved.py",
+  "old_results": "run_01/EXACT_CHECK.json",
+  "required_recheck": "Same bounded six exact cases under corrected fixture; no native/IVP/root/legacy suite.",
+  "not_a_failed_scientific_assertion": true,
+  "failureclass": "IMPLEMENTATION_FIXTURE_SCOPE_MISMATCH"
+}

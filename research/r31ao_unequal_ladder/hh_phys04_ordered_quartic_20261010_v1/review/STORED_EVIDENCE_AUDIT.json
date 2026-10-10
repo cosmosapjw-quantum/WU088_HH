@@ -1,0 +1,50 @@
+{
+  "schema": "HH_PHYS04_INDEPENDENT_STORED_EVIDENCE_AUDIT_V1",
+  "reviewer": "/root/phys04_decision",
+  "time_utc": "2026-10-10T13:33:35.877952+00:00",
+  "status": "PASS",
+  "manifests": [
+    {
+      "manifest": "REVIEW_CORE_INPUTS.json",
+      "sha256": "cdd5e0c3be8f579b6d3fb7e864885773385425f066c92f60558767b8acff981a",
+      "payload_count": 25,
+      "PASS": true
+    },
+    {
+      "manifest": "quartic/MANIFEST.json",
+      "sha256": "27e5b47dbbf1d9b733d12361536b590a4f370507772a7731fdf4af6607229581",
+      "payload_count": 16,
+      "PASS": true
+    },
+    {
+      "manifest": "inputs/source_survey/SURVEY_MANIFEST.json",
+      "sha256": "af562e45e4730522a31feee5ee8c75d592da8920e7957a99b225cda65efbadf5",
+      "payload_count": 48,
+      "PASS": true
+    }
+  ],
+  "source_bindings_sha256_line_text_git_blob_checked": 25,
+  "quartic_reported_count_consistent": 1152,
+  "quartic_stored_difference_slots_exact": 36,
+  "quartic_stored_specialization_slots_exact": 12,
+  "preserved_scope_correction_diff": [
+    "--- \n",
+    "+++ \n",
+    "@@ -195,3 +195,3 @@\n",
+    "         fv=n*dens*(Q(3,31)*y*el-Q(1,37)*v*el)",
+    "-        fw=n*(-(Q(1,41)+t/47)*w+dens*(x*v/43-w*el/53-w*w/59))-lam*Q(7,3)*q",
+    "+        fw=n*(-(Q(1,41)+self.d*t/47)*w+dens*(x*v/43-w*el/53-w*w/59))-lam*Q(7,3)*q",
+    "         out=[fx,fy,fv,fw,0*p0,0*p1]"
+  ],
+  "rational_boxes_ordered_and_decimal_outward_checked": 48,
+  "stored_decimal_witnesses_inside_rational_boxes": 6,
+  "signed_column_sum_negative_and_encloses_factored_aggregate": true,
+  "positive_left_cell_margins_checked": 9,
+  "stored_guard_moment_residuals_below_declared_threshold": 4,
+  "implicit_reported_counts_and_rejections_consistent": true,
+  "claim_ceiling_and_zero_dispatch_consistent": true,
+  "native_calls": 0,
+  "nonlinear_root_calls": 0,
+  "scientific_suite_replays": 0,
+  "independence_limit": "Stored record integrity and independent rational consistency; no second execution of candidate science or native source attestation."
+}

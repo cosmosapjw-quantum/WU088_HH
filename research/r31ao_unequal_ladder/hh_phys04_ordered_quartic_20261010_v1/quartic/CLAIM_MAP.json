@@ -1,0 +1,158 @@
+{
+  "schema": "HH_PHYS04_ORDERED_QUARTIC_CLAIMS_v1",
+  "role": "candidate_derivation_and_exact_check_design",
+  "independent_final_decision": false,
+  "coefficient_convention": "raw h^k coefficients; kth derivative = k! times coefficient",
+  "state": [
+    "x_HII",
+    "x_HeII",
+    "x_HeIII",
+    "w_eV_per_H",
+    "active_photons_per_H"
+  ],
+  "parameters": {
+    "lambda": "HH amplitude",
+    "b": "designated future photon-source amplitude"
+  },
+  "chronology": "R_delta(t) z -> + b delta B(t+delta) -> implicit delta F(t+delta,z_plus;lambda)",
+  "conditions": [
+    "control-independent clock and geometry",
+    "near-identity one-sided R_0=I chart or declared active quotient",
+    "photon-independent HH with zero photon components",
+    "required joint F/B/R derivatives exist locally",
+    "no substitution of R_delta by exp(delta L)"
+  ],
+  "claims": [
+    {
+      "id": "Q01",
+      "statement": "One-step a1..a4 tensor recurrence",
+      "evidence_status": [
+        "derived",
+        "exactly_checked",
+        "implementation-verified"
+      ],
+      "formula_reference": "PHYS04_ORDERED_QUARTIC_KO.md equation (5)",
+      "decision": "CANDIDATE_FOR_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "Q02",
+      "statement": "Extended-time one-full/two-half quartic composition",
+      "evidence_status": [
+        "derived",
+        "exactly_checked",
+        "implementation-verified"
+      ],
+      "formula_reference": "PHYS04_ORDERED_QUARTIC_KO.md equation (7)",
+      "decision": "CANDIDATE_FOR_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "Q03",
+      "statement": "Total mixed derivative carries old U,V,W",
+      "evidence_status": [
+        "derived",
+        "exactly_checked",
+        "implementation-verified"
+      ],
+      "formula": "M a = a_z W + a_zz(U,V) + a_zlambda V + a_zb U + a_lambdab",
+      "formula_reference": "PHYS04_ORDERED_QUARTIC_KO.md equations (8)-(10)",
+      "decision": "CANDIDATE_FOR_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "Q04",
+      "statement": "Zero-initial-photon remap-dependent mixed quartic",
+      "evidence_status": [
+        "derived",
+        "exactly_checked",
+        "implementation-verified"
+      ],
+      "formula": "Delta_L [h^4] W_two = (H_z J(LB) + 2 Q(H,LB) + L Q(H,B))/16",
+      "gas_formula": "Delta_L [h^4] W_two_gas = (H_z J(LB) + 2 Q(H,LB))_gas/16",
+      "extra_conditions": [
+        "P_initial=0",
+        "U_initial=V_initial=W_initial=0",
+        "frozen coefficients",
+        "constant B",
+        "F_gamma(g,0;lambda)=0; no internally produced transported photons",
+        "L photon-only"
+      ],
+      "formula_reference": "PHYS04_ORDERED_QUARTIC_KO.md equations (11)-(12)",
+      "decision": "CANDIDATE_FOR_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "Q05",
+      "statement": "HI-only thermal-weighted opacity specialization",
+      "evidence_status": [
+        "derived"
+      ],
+      "formula": "Delta_L [h^4] W_two_x = -q sum_j A_j (4+Xi_j) (LB)_j /16",
+      "extra_conditions": [
+        "Q04 extra conditions",
+        "affected photon nodes below HeI photoionization cutoff",
+        "A_j=c n_H sigma_H(E_j)",
+        "Xi_j=(u/Pi) nu (1-T_gamma_j/T)",
+        "T_gamma_j is excess-energy equivalent temperature, not CMB"
+      ],
+      "formula_reference": "PHYS04_ORDERED_QUARTIC_KO.md equation (13)",
+      "decision": "CANDIDATE_FOR_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "Q06",
+      "statement": "Actual native finite-time sign, error and production admission",
+      "evidence_status": [
+        "unresolved"
+      ],
+      "decision": "HOLD",
+      "value": null
+    }
+  ],
+  "one_step": {
+    "d1": "L z + b B",
+    "d2": "M z/2 + b B_t",
+    "d3": "N z/6 + b B_tt/2",
+    "d4": "P4 z/24 + b B_ttt/6",
+    "a1": "d1+F",
+    "a2": "d2+J a1+F_t",
+    "a3": "d3+J a2+Q(a1,a1)/2+F_tz a1+F_tt/2",
+    "a4": "d4+J a3+Q(a1,a2)+F_tz a2+C(a1,a1,a1)/6+F_tzz(a1,a1)/2+F_ttz a1/2+F_ttt/6"
+  },
+  "two_half": {
+    "definitions": "X=(t,z), G1=(1,a1), Gr=(0,ar) for r>=2, D=D_X",
+    "C4": "(2 G4+D G1[G3]+D G2[G2]+D G3[G1]+D^2 G1[G1,G2]+D^2 G2[G1,G1]/2+D^3 G1[G1,G1,G1]/6)/16"
+  },
+  "verification": {
+    "final_evidence": "run_02/EXACT_CHECK.json",
+    "final_status": "run_02_status.json",
+    "candidate_algorithm": "Sparse polynomial differentiation -> explicit F tensors -> map-composition derivatives -> square-free parameter dual evaluation",
+    "oracle_algorithm": "Independent h-series convolution and four predetermined formal BE substitutions per stage; residual exact zero to h^4",
+    "shared_dependencies": [
+      "fractions.Fraction",
+      "dimensionless fixture rhs definitions"
+    ],
+    "case_count": 6,
+    "exact_scalar_slots_compared": 1152,
+    "state_dimension": 6,
+    "orders": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "control_slots": [
+      "primal",
+      "U",
+      "V",
+      "W"
+    ],
+    "old_UVW_case": "inherited_UVW_all_nonzero",
+    "zero_photon_specialization_cases": 2,
+    "native_calls": 0,
+    "ivp_calls": 0,
+    "nonlinear_BE_root_calls": 0,
+    "NCP_calls": 0,
+    "legacy_or_parent_suite_reruns": 0,
+    "first_execution_scope_note": "run_01 candidate/oracle checks passed; frozen fixture label was inaccurate because nonphoto t/47 cooling drift remained. Original script and results preserved. Frozen claims use corrected run_02 only.",
+    "correction": "FIRST_FIXTURE_SCOPE_CORRECTION.json"
+  },
+  "source_scope_limit": "Do not apply the near-identity expansion to the actual full-grid lower-guard discontinuity. Active quotient needs verified zero gas coupling of discarded inactive photons and no upward return."
+}
+

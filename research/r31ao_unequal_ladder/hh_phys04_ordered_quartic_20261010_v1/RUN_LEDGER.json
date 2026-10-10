@@ -1,0 +1,56 @@
+{
+  "schema": "HH_PHYS04_RUN_LEDGER_V1",
+  "counts": {
+    "new_algebra_check_processes": 4,
+    "quartic_final_cases": 6,
+    "quartic_preserved_run01_cases": 6,
+    "remap_new_runs": 1,
+    "implicit_new_runs": 1,
+    "native_dispatches": 0,
+    "nonlinear_BE_roots": 0,
+    "IVP_runs": 0,
+    "NCP_science_runs": 0,
+    "legacy_atomic_integrals": 0,
+    "completed_prior_physics_suite_reruns": 0
+  },
+  "runs": [
+    {
+      "name": "quartic_run01",
+      "status": "EXACT_AGREEMENT_WITH_FIXTURE_SCOPE_LABEL_MISMATCH",
+      "evidence": "quartic/run_01_status.json",
+      "preserved": true
+    },
+    {
+      "name": "quartic_run02",
+      "status": "PASS",
+      "trigger": "quartic/FIRST_FIXTURE_SCOPE_CORRECTION.json",
+      "evidence": "quartic/run_02_status.json"
+    },
+    {
+      "name": "remap_first",
+      "status": "PASS",
+      "evidence": "RUN_REMAP_FIRST.json"
+    },
+    {
+      "name": "implicit_first",
+      "status": "PASS",
+      "evidence": "RUN_IMPLICIT_FIRST.json"
+    }
+  ],
+  "failures": [
+    {
+      "class": "ENVIRONMENT",
+      "evidence": "quartic/FIRST_ENVIRONMENT_PROBE_FAILURE.json",
+      "resolution": "Use standard-library Fraction; no dependency installation"
+    },
+    {
+      "class": "IMPLEMENTATION_FIXTURE_SCOPE_MISMATCH",
+      "evidence": "quartic/FIRST_FIXTURE_SCOPE_CORRECTION.json",
+      "resolution": "Preserve run01; correct declared drift switch and recheck affected six cases only"
+    }
+  ],
+  "separate_source_finding": "Static duplicate endpoint in future receipt producer, not observed runtime failure",
+  "plot": "Stored-results visualization only; no scientific recomputation",
+  "native_authorization": null,
+  "remaining_native_budget": 0
+}

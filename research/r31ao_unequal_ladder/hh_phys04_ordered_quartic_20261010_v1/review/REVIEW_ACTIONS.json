@@ -1,0 +1,83 @@
+{
+  "schema": "HH_PHYS04_INDEPENDENT_REVIEW_ACTIONS_V1",
+  "reviewer": "/root/phys04_decision",
+  "candidate_author": false,
+  "candidate_validation_designer": false,
+  "model": {
+    "host_declared_label": "GPT-6 Astra Pro",
+    "basis": "Current developer host declaration in this review agent context",
+    "runtime_attestation": null,
+    "selected_harness": "gpt6-astra v4.0.0 research and coding",
+    "independence_limit": "Separate agent and final decision role; shared model family, task history and fixed evidence. No claim of independent native runtime or provider implementation."
+  },
+  "harness_reads": [
+    "physmath-research-loop SKILL.md",
+    "harnesses/research/START_HERE.md",
+    "harnesses/research/PROJECT_INSTRUCTIONS.md",
+    "harnesses/research/docs/MODEL_ROUTING.md",
+    "harnesses/research/state/RESEARCH_STATE.md (unexecuted package template)",
+    "harnesses/research/prompts/phases/08_external_decision_gate.md",
+    "harnesses/coding/START_HERE.md",
+    "harnesses/coding/AGENTS.md",
+    "harnesses/coding/docs/MODEL_ROUTING.md",
+    "harnesses/coding/prompts/phases/09_independent_diff_review.md"
+  ],
+  "actual_command": {
+    "argv": [
+      "python3",
+      "-B",
+      "review/audit_fixed_evidence.py",
+      "--output",
+      "review/STORED_EVIDENCE_AUDIT.json"
+    ],
+    "cwd": "/workspace/scratch/198b9c7581be/HH_PHYS04_20261010_v1",
+    "exit_code": 0,
+    "tool_output_chunk": "42bc60",
+    "stdout": "Same JSON object preserved in review/STORED_EVIDENCE_AUDIT.json; printed by this command",
+    "stderr_observed": "none in returned tool output",
+    "scope": "Stored hashes, rational endpoint order/containment and algebraic record consistency only",
+    "scientific_suite_replays": 0,
+    "candidate_module_imports": 0,
+    "new_exponential_evaluations": 0,
+    "native_calls": 0,
+    "nonlinear_roots": 0
+  },
+  "source_read_scope": {
+    "full_local_candidate_code": [
+      "quartic/ordered_be_quartic.py",
+      "src/remap_opacity.py",
+      "src/implicit_mixed.py",
+      "tests/check_implicit_mixed.py",
+      "reproduce.py"
+    ],
+    "fixed_theory_and_reports": [
+      "SCIENTIFIC_CONTRACT.md",
+      "REPORT_KO.md",
+      "REMAP_OPACITY_THEORY_KO.md",
+      "IMPLICIT_MIXED_THEORY_KO.md",
+      "quartic/PHYS04_ORDERED_QUARTIC_KO.md",
+      "quartic/CONTRACT.md",
+      "REPRODUCE_KO.md",
+      "NEXT_HANDOFF_KO.md",
+      "NEXT_DAG.json",
+      "CLAIM_LEDGER.json",
+      "RUN_LEDGER.json"
+    ],
+    "original_source": "Necessary fixed SS01–SS25 excerpts and selected corresponding full/partial source files; no claim of full-repository audit.",
+    "remote_live_identity": "Read recorded authoritative ref responses; no additional live GitHub fetch by this reviewer.",
+    "NCP_handoff": "All three final frozen files read in full; 100-input manifest, task/test/source path alignment and null/authority semantics checked in HANDOFF_AUDIT.json before final DECISION."
+  },
+  "final_handoff_audit": {
+    "command_record": "review/HANDOFF_AUDIT_RUN.json",
+    "result": "review/HANDOFF_AUDIT.json",
+    "stdout": "review/handoff_audit.stdout",
+    "stderr": "review/handoff_audit.stderr",
+    "exit_code": 0,
+    "scope": "100 fixed-input identities plus NCP graph/source-path/return structure only",
+    "native_calls": 0,
+    "scientific_suite_replays": 0
+  },
+  "candidate_edits": 0,
+  "remote_mutations": 0,
+  "new_scientific_claims_from_review": 0
+}

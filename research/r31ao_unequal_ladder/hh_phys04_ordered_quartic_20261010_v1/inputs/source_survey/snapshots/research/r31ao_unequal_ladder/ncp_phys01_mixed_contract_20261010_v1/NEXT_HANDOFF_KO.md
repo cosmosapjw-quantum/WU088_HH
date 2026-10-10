@@ -1,0 +1,2 @@
+# 다음 인계
+실제 full FT03+H/He source의 λ/S family adapter와 birth/gas/photon mixed sensitivities, fullchain Jacobian/fixedC/sourceABI/hash trusted exporter 및 roottube를 닫는다. 새 정확humanapproval와finite livebudget/binding 전 native science0. 최대1macro제안은 승인아님; wall/memory미정. 실제interval I 또는remainder를 delta3진단숫자에맞추지 않는다. S0과기존stock분리, 동일stateθ, exacthalf1→half2 보존. Trueflow source-law error와 D/I/HHdefect/mixeddefect 구분. 원 consumedscopes/G256/C1coverage/physicalproductionHOLD 유지.
