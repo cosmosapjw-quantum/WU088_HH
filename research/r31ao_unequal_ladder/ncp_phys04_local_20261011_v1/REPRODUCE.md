@@ -1,0 +1,1 @@
+Existing Rust1.94.1 toolchain; CARGO_BUILD_JOBS=1. cargo build --offline --locked; cargo test --offline --locked --test targeted -- --test-threads=1; cargo test --offline --locked -p hh_phys04_candidate --lib phys04_receipt_tests -- --test-threads=1. Default binary refuses science dispatch exit77. No old science suite replay.
