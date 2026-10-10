@@ -1,0 +1,183 @@
+     Locking 1 package to latest compatible version
+   Compiling rei_microphysics v0.1.0 (/root/WU088_HH_ENERGY06E_20261010/original_owner_dependency)
+   Compiling hh_energy06e_contract v0.1.0 (/root/WU088_HH_ENERGY06E_20261010/cargo)
+warning: struct `PairedTrial` is never constructed
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:42:12
+   |
+42 | pub struct PairedTrial {pub state:PairedState,pub local_bound:f64,pub public_width:f64,pub max_ledger:f64,pub audits:Vec<String>}
+   |            ^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `matter_energy` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:165:4
+    |
+165 | fn matter_energy(g:&PrimaryState)->f64{g.w_ev_per_h+CHI[0]*g.fractions[0]+FHE*(CHI[1]*g.fractions[1]+(CHI[1]+CHI[2])*g.fractions[2]...
+    |    ^^^^^^^^^^^^^
+
+warning: function `site_audit` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:166:4
+    |
+166 | fn site_audit(stage:&PrimaryStage,t:f64,dt:f64,nodes:&[f64],index:&[usize],old:&PrimaryState,parent:&PrimaryBox,root:&crate::couple...
+    |    ^^^^^^^^^^
+
+warning: function `endpoint` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:181:4
+    |
+181 | fn endpoint(c:&PairedConfig,h:[f64;3],s:&PairedState,dt:f64,nodes:&[f64])->Result<(PairedState,String,f64),ForwardError>{
+    |    ^^^^^^^^
+
+warning: function `difference` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:270:4
+    |
+270 | fn difference(a:&PairedState,b:&PairedState,nodes:&[f64])->Result<f64,ForwardError>{
+    |    ^^^^^^^^^^
+
+warning: function `width` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:292:4
+    |
+292 | fn width(s:&PairedState,nodes:&[f64])->Result<f64,ForwardError>{
+    |    ^^^^^
+
+warning: function `paired_trial` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:307:8
+    |
+307 | pub fn paired_trial(c:&PairedConfig,h:[f64;3],s:&PairedState,dt:f64)->Result<PairedTrial,ForwardError>{
+    |        ^^^^^^^^^^^^
+
+warning: methods `hh_events_per_h`, `hh_heat_ev_per_h`, and `hh_compensation` are never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:31:9
+   |
+29 | impl HhPairedState {
+   | ------------------ methods in this implementation
+30 |  pub fn base(&self)->&PairedState{&self.base}
+31 |  pub fn hh_events_per_h(&self)->f64{self.hh_events}
+   |         ^^^^^^^^^^^^^^^
+32 |  pub fn hh_heat_ev_per_h(&self)->f64{self.hh_heat}
+   |         ^^^^^^^^^^^^^^^^
+33 |  pub fn hh_compensation(&self)->[f64;2]{self.hh_comp}
+   |         ^^^^^^^^^^^^^^^
+
+warning: struct `HhPairedTrial` is never constructed
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:36:12
+   |
+36 | pub struct HhPairedTrial {pub state:HhPairedState,pub local_bound:f64,pub public_width:f64,pub max_ledger:f64,pub audits:Vec<String>...
+   |            ^^^^^^^^^^^^^
+
+warning: function `hh_endpoint_state` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:48:4
+   |
+48 | fn hh_endpoint_state(c:&HhRunConfig,s:&HhPairedState,dt:f64,nodes:&[f64])->Result<(HhPairedState,String,f64,[f64;2]),ForwardError>{
+   |    ^^^^^^^^^^^^^^^^^
+
+warning: function `hh_paired_trial` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:56:8
+   |
+56 | pub fn hh_paired_trial(c:&HhRunConfig,s:&HhPairedState,dt:f64)->Result<HhPairedTrial,ForwardError>{
+   |        ^^^^^^^^^^^^^^^
+
+warning: function `try_hh_paired_step` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:75:8
+   |
+75 | pub fn try_hh_paired_step(c:&HhRunConfig,s:&mut HhPairedState,dt:f64)->Result<HhPairedTrial,ForwardError>{
+   |        ^^^^^^^^^^^^^^^^^^
+
+warning: function `try_hh_paired_ensemble` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:79:8
+   |
+79 | pub fn try_hh_paired_ensemble(configs:&[HhRunConfig],states:&mut[HhPairedState],dt:f64)->Result<Vec<HhPairedTrial>,ForwardError>{
+   |        ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `hh_source_endpoint` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:87:4
+   |
+87 | fn hh_source_endpoint(c:&PairedConfig,h:[f64;3],s:&PairedState,dt:f64,nodes:&[f64])->Result<(PairedState,String,f64,[f64;2]),Forward...
+   |    ^^^^^^^^^^^^^^^^^^
+
+warning: fields `source_bits` and `policy` are never read
+ --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:3:48
+  |
+3 | #[derive(Clone,Debug)]pub struct BirthLaw {pub source_bits:u64,pub energy_bits:u64,pub policy:&'static str}
+  |                                  --------      ^^^^^^^^^^^                             ^^^^^^
+  |                                  |
+  |                                  fields in this struct
+  |
+  = note: `BirthLaw` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+
+warning: fields `label` and `stages` are never read
+ --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:4:50
+  |
+4 | #[derive(Clone,Debug)]pub struct StepScheme {pub label:&'static str,pub times:[f64;2],pub steps:[f64;2],pub stages:usize}
+  |                                  ----------      ^^^^^                                                      ^^^^^^
+  |                                  |
+  |                                  fields in this struct
+  |
+  = note: `StepScheme` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+
+warning: struct `ExactSciencePermit` is never constructed
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:16:8
+   |
+16 | struct ExactSciencePermit { _private:() }
+   |        ^^^^^^^^^^^^^^^^^^
+
+warning: function `actual_full` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:18:4
+   |
+18 | fn actual_full(_permit:&ExactSciencePermit,c:&HhRunConfig,s:&HhPairedState,dt:f64)->Result<(HhPairedState,String,f64,[f64;2]),Forwar...
+   |    ^^^^^^^^^^^
+
+warning: function `actual_twohalf` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:23:4
+   |
+23 | fn actual_twohalf(p:&ExactSciencePermit,c:&HhRunConfig,s:&HhPairedState,dt:f64)->Result<(HhPairedState,[String;2],f64,[[f64;2];2]),F...
+   |    ^^^^^^^^^^^^^^
+
+warning: function `actual_linked_chain` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:26:4
+   |
+26 | fn actual_linked_chain(p:&ExactSciencePermit,c:&HhRunConfig,s:&HhPairedState,dt:f64)->Result<HhPairedTrial,ForwardError>{
+   |    ^^^^^^^^^^^^^^^^^^^
+
+warning: fields `source_u`, `transport_u`, `redshift_loss`, and `index` are never read
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:32:125
+   |
+32 | ...ct Prebirth {pub photons:Vec<f64>,pub boxes:Vec<Interval>,pub weights:Vec<f64>,pub source_n:f64,pub source_u:f64,pub transport_n:f64,pub transport_u:f64,pub redshift_loss:f64,pub groups:Vec<f64>,pub group_boxes:Vec<Interval>,pub index:Ve...
+   |       -------- fields in this struct                                                                   ^^^^^^^^                             ^^^^^^^^^^^         ^^^^^^^^^^^^^                                                           ^^^^^
+   |
+   = note: `Prebirth` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+
+warning: function `audit_cli` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:103:8
+    |
+103 | pub fn audit_cli()->Result<(),Box<dyn std::error::Error>>{
+    |        ^^^^^^^^^
+
+warning: function `linked_tangent_stage` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:121:4
+    |
+121 | fn linked_tangent_stage(_permit:&ExactSciencePermit,stage:&crate::coupled_primary::PrimaryStage,old:&crate::coupled_primary::Primar...
+    |    ^^^^^^^^^^^^^^^^^^^^
+
+warning: fields `root_preconditioner`, `root_box`, `root_image`, `scales`, and `contraction` are never read
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/paired_stage_receipt.rs:12:2
+   |
+ 9 | pub struct PairedStageReceipt {
+   |            ------------------ fields in this struct
+...
+12 |  root_preconditioner:[[f64;4];4], root_box:[Interval;4],
+   |  ^^^^^^^^^^^^^^^^^^^              ^^^^^^^^
+13 |  root_image:[Interval;4], scales:[f64;4], contraction:f64,
+   |  ^^^^^^^^^^               ^^^^^^          ^^^^^^^^^^^
+   |
+   = note: `PairedStageReceipt` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+
+warning: function `accepted_half1_receipt` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/paired_stage_receipt.rs:27:4
+   |
+27 | fn accepted_half1_receipt(_permit:&ExactSciencePermit,id:ReceiptIdentity,c:&HhRunConfig,
+   |    ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `hh_energy06e_contract` (bin "receipt_contract" test) generated 25 warnings
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 9.62s
+     Running unittests /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/main.rs (/root/WU088_HH_ENERGY06E_20261010/target/debug/deps/receipt_contract-13020029ecb861e0)
+error: test failed, to rerun pass `--bin receipt_contract`

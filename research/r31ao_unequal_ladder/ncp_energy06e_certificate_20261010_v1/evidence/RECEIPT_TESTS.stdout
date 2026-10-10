@@ -1,0 +1,23 @@
+
+running 6 tests
+test owner::energy06e_tests::family_never_inferred_from_point ... ok
+test owner::energy06e_tests::exact_checkpoint_contract_roundtrip ... FAILED
+test owner::energy06e_tests::changed_member_theta_lambda_source_abi_rejected ... ok
+test owner::energy06e_tests::missing_receipt_and_weights_only_fail ... ok
+test owner::energy06e_tests::gas_photon_guard_compensation_and_hh_ledger_rejected ... ok
+test owner::energy06e_tests::wrong_clock_and_seed_rejected ... ok
+
+failures:
+
+---- owner::energy06e_tests::exact_checkpoint_contract_roundtrip stdout ----
+
+thread 'owner::energy06e_tests::exact_checkpoint_contract_roundtrip' (6026) panicked at /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/paired_stage_receipt.rs:70:161:
+called `Result::unwrap()` on an `Err` value: InvalidInput("ENERGY06E_EXACT_PREDECESSOR_MISMATCH")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    owner::energy06e_tests::exact_checkpoint_contract_roundtrip
+
+test result: FAILED. 5 passed; 1 failed; 0 ignored; 0 measured; 26 filtered out; finished in 0.00s
+

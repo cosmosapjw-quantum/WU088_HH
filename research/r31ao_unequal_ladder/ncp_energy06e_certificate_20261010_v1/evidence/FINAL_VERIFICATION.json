@@ -1,0 +1,132 @@
+{
+  "commands": [
+    {
+      "label": "FINAL_RECEIPT_TESTS",
+      "argv": [
+        "cargo",
+        "test",
+        "--offline",
+        "--manifest-path",
+        "/root/WU088_HH_ENERGY06E_20261010/cargo/Cargo.toml",
+        "--bin",
+        "receipt_contract",
+        "energy06e_tests"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "stdout_sha256": "cd9e64f5fb39da4aa1c366bc19270dc7e8159df3afa4e1dec02e70dbbd1dc057",
+      "stderr_sha256": "d087a75a4f9abe14273f5a12ee0a9e9401f9a447e69562e36893798cf6fbac96"
+    },
+    {
+      "label": "FINAL_PROOF_TESTS",
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/tests",
+        "-v"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b6a00d724ca7359fe6d6ddb29d2fc2d85cec713b4d5016ba401a4ef70978d5dd"
+    },
+    {
+      "label": "ENERGY06D_MANIFEST",
+      "argv": [
+        "python3",
+        "/root/WU088_HH_ENERGY06E_20261010/inputs/HH_ENERGY06D_20261010_v1/verify_delivery.py"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "stdout_sha256": "19823bb6450c6a5a9aa7497f0b16971e06d5b86d6a0a6da46145e07ff16a5f3a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "ENERGY06D_CONTRACT_TESTS",
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e7903c70e786d413718201bb44026408dfcd99cc1f8833cd2f12429a4700b7e3"
+    },
+    {
+      "label": "FINAL_RECEIPT_BUILD",
+      "argv": [
+        "cargo",
+        "build",
+        "--offline",
+        "--manifest-path",
+        "/root/WU088_HH_ENERGY06E_20261010/cargo/Cargo.toml",
+        "--bin",
+        "receipt_contract"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "3de3cd4565d314f9dd0557de36102c7ced0f91b7b8d1fb3d5a23eefb50a323de"
+    },
+    {
+      "label": "NO_DISPATCH_CLI",
+      "argv": [
+        "/root/WU088_HH_ENERGY06E_20261010/target/debug/receipt_contract"
+      ],
+      "exit": 77,
+      "expected": 77,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "a8ef20f15c3293986e3513fb98ed17ac01f330c43496d3ea3ba1fb4d528f937e"
+    },
+    {
+      "label": "C1_NO_DISPATCH_CLI",
+      "argv": [
+        "/root/WU088_HH_ENERGY06E_20261010/c1/energy06e_c1_identity_candidate"
+      ],
+      "exit": 77,
+      "expected": 77,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "044f8be85e958b9856b10b85dd5bf83fc3991c4a3b1de1a38f71d3ad696c0e3c"
+    },
+    {
+      "label": "RUST_COMPILER",
+      "argv": [
+        "rustc",
+        "--version",
+        "--verbose"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "stdout_sha256": "a834181975ab3494d51a1a01e4a9d4321fecd674a52e3db3cf93b3b84b6fc2c1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "new_tests": {
+    "Rust_synthetic_receipt": 6,
+    "Python_exact_contract": 6
+  },
+  "ENERGY06D_contract_tests": 18,
+  "original_owner26_and_C1_8": "historical inventory only; not rerun",
+  "original_preservation_files": 241,
+  "native_science_dispatch": 0,
+  "C1_integration_dispatch": 0,
+  "root_certified": false,
+  "family_certified": false,
+  "fullbox_certified": false,
+  "promotion": false,
+  "precision": "native binary64 owner; candidate C1 FLINT128; algebra exact Fraction",
+  "flags": "-C opt-level=3 -C target-cpu=x86-64",
+  "CPU": "Intel(R) Xeon(R) Gold 5220 CPU @ 2.20GHz",
+  "compiler_sha256": "ef6d716e5d1c6c93def277c0afa037c21e7a74f7de3aed4ee0700646c3301b1d",
+  "binary_sha256": "e02f0147b34f2c37c116908d64f02439e91c7a1170581c5a1372a4b8b14a988d",
+  "target_host_benchmark": false,
+  "canonical_scalar_arrays_sumabs": "not new kernel optimization; no promotion/comparison claimed"
+}

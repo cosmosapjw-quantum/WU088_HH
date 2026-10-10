@@ -1,0 +1,159 @@
+{
+  "schema": "WU088_HH_C1_EXACT_SCOPE_PROPOSAL_V3",
+  "task_id": "C1_ENERGY06C_20261009_PREPARATION_V1",
+  "status": "OPEN_PROPOSAL_NOT_AUTHORIZATION_NOT_EXECUTABLE",
+  "parent_FD2_sha256": "4ab58ad2a1946f4541557e2969cb31ae5f9cedee3dc9f2a0f0b2fcaf6e67fb53",
+  "parent_PREPARED_sha256": "856cc41d4e6dfc385d840790fefc6007b4c88b4e3e96004e5ef636d9b6a7de00",
+  "candidate_sources": {
+    "candidate_source_sha256": "e508057f4a1dfb9422a0bb7b678072b08f77dcff54f4466c0fce1d57d375e14a",
+    "candidate_scalar_sha256": "7b06ed12be2afd191831676ed2f3eae4198ae39805434c09fac59b1581f34282",
+    "candidate_domain": {
+      "k": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "r": [
+        0,
+        1,
+        2
+      ],
+      "z_contains_zero": true,
+      "whole_box_L1_upper_bound_max": 64,
+      "series_terms_max": 256,
+      "precision_in_observed_cases": 128,
+      "tail_ratio_upper": "6656/26471",
+      "tail_factor": "26471/19815",
+      "outside_domain": "unchanged original automatic evaluator"
+    }
+  },
+  "cell_inputs": [
+    {
+      "query_id": "Q272",
+      "cell_id": 272,
+      "parent_raw_sha256": "553fb6722b002e21e1fcbd990864b4a681b21289a8b5fae09f41229409eb4d4f",
+      "outer_log2_u_dump": {
+        "real": "-f -1 30000001 -1d",
+        "imag": "0 0 0 0"
+      },
+      "inner_log2_t_endpoints": [
+        38,
+        40
+      ],
+      "inner_box_constructor": "PINNED_FLINT_quad_simple_mid_delta_arb_get_mag_arb_add_error_mag",
+      "physical_parent_window": {
+        "T_t": "1099511627776",
+        "T_u": "1/64",
+        "l_t": "274877906944",
+        "l_u": "1/512"
+      },
+      "margin_policy": "ORIGINAL_PRIMITIVE_WORKER_FOR_SAME_PARENT",
+      "evaluators": [
+        "ORIGINAL_CACHED",
+        "ORIGINAL_REFERENCE"
+      ],
+      "evaluations_each": 1,
+      "order": 0,
+      "precision_bits": 128,
+      "parent_plan_sha256": "ab55dc20dbe6f72e3bafc2ec3006a2670727095fe8b4db5d9f02ccb2daab0260"
+    },
+    {
+      "query_id": "Q000",
+      "cell_id": 0,
+      "parent_raw_sha256": "0f15f0a70417189dc7baf731db0042be01491dcbf94b10321ca70aaf1ca0fc90",
+      "outer_log2_u_dump": {
+        "real": "-f -1 30000001 -1d",
+        "imag": "0 0 0 0"
+      },
+      "inner_log2_t_endpoints": [
+        -9,
+        -6
+      ],
+      "inner_box_constructor": "PINNED_FLINT_quad_simple_mid_delta_arb_get_mag_arb_add_error_mag",
+      "physical_parent_window": {
+        "T_t": "1/64",
+        "T_u": "1/64",
+        "l_t": "1/512",
+        "l_u": "1/512"
+      },
+      "margin_policy": "ORIGINAL_PRIMITIVE_WORKER_FOR_SAME_PARENT",
+      "evaluators": [
+        "ORIGINAL_CACHED",
+        "ORIGINAL_REFERENCE"
+      ],
+      "evaluations_each": 1,
+      "order": 0,
+      "precision_bits": 128,
+      "parent_plan_sha256": "a8d3276a8b0b78bb0d9a8ac9781e7382e4a1a3a1f74b52b88503977b16734933"
+    }
+  ],
+  "field_scope": {
+    "primitive": 0,
+    "field": "O",
+    "orbital": "S",
+    "ia": 0,
+    "ib": 0,
+    "coefficient_order": "signed ordered107"
+  },
+  "unchanged_numeric_contract": {
+    "precision_bits": 128,
+    "radius_exp": -57,
+    "partition_cells": 289,
+    "normalization_once_after_whole_coverage": false
+  },
+  "proposed_budget": {
+    "cells": [
+      272,
+      0
+    ],
+    "max_native_invocations": 2,
+    "concurrency": 1,
+    "max_wall_seconds_each": 120,
+    "max_total_wall_seconds": 250,
+    "max_evaluations_each": 200000,
+    "max_integration_calls_each": 1024,
+    "queued_panels": 64,
+    "degree_limit": 64,
+    "memory_mib_each": 1024,
+    "retry": 0
+  },
+  "prerequisites": [
+    "build and hash distinct candidate integration worker (existing FD2 executable is field observation only)",
+    "bind full integration boxes and holomorphic order/rank/sign predicates; field-point 256-term domain is insufficient",
+    "restore real delegated finite cgroup resource view and capability-drop contract without system-wide changes",
+    "new exact authorization record over newly sealed source/input/worker/ABI/cgroup/plan/budget hash; old FD1/FD2/6-cell consumed scopes remain barred"
+  ],
+  "authorization_record": null,
+  "scope_consumed": false,
+  "dispatch_count": 0,
+  "request_ready": false,
+  "stop_on_first_failure": true,
+  "promotion": false,
+  "candidate_worker": {
+    "path": "/root/WU088_HH_ENERGY06C_20261009/c1/c1_candidate_integration_worker",
+    "bytes": 346520,
+    "sha256": "1241b723eaff693ba1323f7569c6612071ed19e921c024ff498ed68567a127c5"
+  },
+  "candidate_source": {
+    "path": "/root/WU088_HH_ENERGY06C_20261009/c1/source/wide_domain_20261001_v1/log_native_driver/primitive_worker.cpp",
+    "bytes": 12017,
+    "sha256": "1b3c7b3390593be8eff32da3428ac71f18797a2ee3b067797eb4929928c2cdc7"
+  },
+  "cgroup_binding": null,
+  "parent_proposal": {
+    "path": "/root/WU088_HH_MASTER_EXEC_20261008/runs/master_20261008/TWO_CELL_NEW_SCOPE_PROPOSAL.json",
+    "bytes": 4311,
+    "sha256": "202b159b8a09a79374a91d44e4eb8ad906299a23e06585cbe3d4864561f03ff7"
+  },
+  "full_box_feasibility": {
+    "path": "/root/WU088_HH_ENERGY06C_20261009/c1/FULL_BOX_FEASIBILITY.json",
+    "bytes": 4057,
+    "sha256": "e6a0eb3787a0d1cdba48a386f950ee8d916d7742c1c33b74e035fbd093444c3d"
+  },
+  "proposal_content_sha256": "0507ff9d1cbb6269ecdb439db0c5898bf624690364ee8e8ac2036705bfc7c407",
+  "cgroup_preparation_supplement": "CGROUP_PREPARATION_SUPPLEMENT.json",
+  "finite_preparation_available": true,
+  "future_execution_binding": null,
+  "resource_note": "Actual user systemd preparation identity process observed CPU100%, memory1GiB, swap0, cap0, NoNewPrivs1. Probe exited0; this is not a live approved science worker. Fresh execution binding and reserve/UID policy remain required."
+}

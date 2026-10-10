@@ -1,0 +1,612 @@
+   Compiling hh_energy06e_contract v0.1.0 (/root/WU088_HH_ENERGY06E_20261010/cargo)
+warning: constant `CHI` is never used
+ --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:7:7
+  |
+7 | const CHI: [f64;3] = [13.598_434_599_702,24.587_389_011,54.417_76];
+  |       ^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `SOURCE` is never used
+ --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:8:7
+  |
+8 | const SOURCE: f64 = 5e-15;
+  |       ^^^^^^
+
+warning: constant `BIRTH` is never used
+ --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:9:7
+  |
+9 | const BIRTH: f64 = 13.7;
+  |       ^^^^^
+
+warning: constant `FHE` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:10:7
+   |
+10 | const FHE: f64 = 0.083;
+   |       ^^^
+
+warning: function `fail` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:11:4
+   |
+11 | fn fail(s:&'static str)->ForwardError { ForwardError::InvalidInput(s) }
+   |    ^^^^
+
+warning: function `ie` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:12:4
+   |
+12 | fn ie(_:impl std::fmt::Debug)->ForwardError { fail("PAIRED_INTERVAL_DOMAIN") }
+   |    ^^
+
+warning: function `p` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:13:4
+   |
+13 | fn p(x:f64)->Result<Interval,ForwardError>{Interval::point(x).map_err(ie)}
+   |    ^
+
+warning: function `add` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:14:4
+   |
+14 | fn add(a:Interval,b:Interval)->Result<Interval,ForwardError>{a.add(&b).map_err(ie)}
+   |    ^^^
+
+warning: function `sub` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:15:4
+   |
+15 | fn sub(a:Interval,b:Interval)->Result<Interval,ForwardError>{a.sub(&b).map_err(ie)}
+   |    ^^^
+
+warning: function `mul` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:16:4
+   |
+16 | fn mul(a:Interval,b:Interval)->Result<Interval,ForwardError>{a.mul(&b).map_err(ie)}
+   |    ^^^
+
+warning: function `div` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:17:4
+   |
+17 | fn div(a:Interval,b:Interval)->Result<Interval,ForwardError>{a.div(&b).map_err(ie)}
+   |    ^^^
+
+warning: function `nonneg` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:18:4
+   |
+18 | fn nonneg(b:Interval)->Result<Interval,ForwardError>{Interval::new(b.lo.max(0.0),b.hi.max(0.0)).map_err(ie)}
+   |    ^^^^^^
+
+warning: function `add_nonneg` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:19:4
+   |
+19 | fn add_nonneg(a:Interval,b:Interval)->Result<Interval,ForwardError>{
+   |    ^^^^^^^^^^
+
+warning: function `contains` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:24:4
+   |
+24 | fn contains(b:Interval,x:f64)->bool{b.lo<=x && x<=b.hi}
+   |    ^^^^^^^^
+
+warning: function `widened` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:25:4
+   |
+25 | fn widened(b:Interval,x:f64)->Result<Interval,ForwardError>{Interval::new(b.lo.min(x),b.hi.max(x)).map_err(ie)}
+   |    ^^^^^^^
+
+warning: struct `PairedConfig` is never constructed
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:28:12
+   |
+28 | pub struct PairedConfig {pub spectral_subdivisions:usize,pub n_mu:usize,pub n_phi:usize}
+   |            ^^^^^^^^^^^^
+
+warning: struct `PairedState` is never constructed
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:30:12
+   |
+30 | pub struct PairedState {
+   |            ^^^^^^^^^^^
+
+warning: struct `PairedTrial` is never constructed
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:42:12
+   |
+42 | pub struct PairedTrial {pub state:PairedState,pub local_bound:f64,pub public_width:f64,pub max_ledger:f64,pub audits:Vec<String>}
+   |            ^^^^^^^^^^^
+
+warning: function `energy_nodes` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:44:8
+   |
+44 | pub fn energy_nodes(c:&PairedConfig)->Result<Vec<f64>,ForwardError>{
+   |        ^^^^^^^^^^^^
+
+warning: function `qhat` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:56:8
+   |
+56 | pub fn qhat(c:&PairedConfig,d:usize)->[f64;3]{
+   |        ^^^^
+
+warning: function `directions` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:63:4
+   |
+63 | fn directions(c:&PairedConfig)->Result<usize,ForwardError>{c.n_mu.checked_mul(c.n_phi).ok_or(fail("PAIRED_GRID_RANGE"))}
+   |    ^^^^^^^^^^
+
+warning: function `gas4` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:64:4
+   |
+64 | fn gas4(s:&PrimaryState)->[f64;4]{[s.fractions[0],s.fractions[1],s.fractions[2],s.w_ev_per_h]}
+   |    ^^^^
+
+warning: function `temp_box` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:65:4
+   |
+65 | fn temp_box(g:[Interval;4])->Result<Interval,ForwardError>{
+   |    ^^^^^^^^
+
+warning: function `guard_temperature` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:75:4
+   |
+75 | fn guard_temperature(g:[Interval;4])->Result<(),ForwardError>{
+   |    ^^^^^^^^^^^^^^^^^
+
+warning: function `initial_w` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:79:4
+   |
+79 | fn initial_w()->f64{let x=[0.9,0.3,0.6];let particles=1.0+FHE+x[0]+FHE*(x[1]+2.0*x[2]);1.5*1.380649e-16*50_000.0*particles/1.6021766...
+   |    ^^^^^^^^^
+
+warning: function `paired_initial` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:80:8
+   |
+80 | pub fn paired_initial(c:&PairedConfig)->Result<PairedState,ForwardError>{
+   |        ^^^^^^^^^^^^^^
+
+warning: function `validate` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:95:4
+   |
+95 | fn validate(c:&PairedConfig,s:&PairedState,nodes:&[f64])->Result<(),ForwardError>{
+   |    ^^^^^^^^
+
+warning: function `g_point` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:109:4
+    |
+109 | fn g_point(q:[f64;3],h:[f64;3],t:f64)->f64{
+    |    ^^^^^^^
+
+warning: function `g_box` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:112:4
+    |
+112 | fn g_box(q:[f64;3],h:[f64;3],t:f64)->Result<Interval,ForwardError>{
+    |    ^^^^^
+
+warning: function `source_weights` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:118:4
+    |
+118 | fn source_weights(c:&PairedConfig,h:[f64;3],t:f64)->Result<(Vec<f64>,Vec<Interval>),ForwardError>{
+    |    ^^^^^^^^^^^^^^
+
+warning: function `hat` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:133:4
+    |
+133 | fn hat(x:f64,nodes:&[f64],j:usize)->f64{
+    |    ^^^
+
+warning: function `hat_at` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:140:4
+    |
+140 | fn hat_at(x:f64,nodes:&[f64],j:usize)->Result<Interval,ForwardError>{
+    |    ^^^^^^
+
+warning: function `hat_box` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:150:4
+    |
+150 | fn hat_box(x:Interval,nodes:&[f64],j:usize)->Result<Interval,ForwardError>{
+    |    ^^^^^^^
+
+warning: function `weighted_sum` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:161:4
+    |
+161 | fn weighted_sum(values:&[f64])->f64{let mut sum=0.0;let mut correction=0.0;for &x in values {let y=x-correction;let t=sum+y;correct...
+    |    ^^^^^^^^^^^^
+
+warning: function `accumulate` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:162:4
+    |
+162 | fn accumulate(sum:f64,correction:f64,x:f64)->(f64,f64){let y=x-correction;let t=sum+y;(t,(t-sum)-y)}
+    |    ^^^^^^^^^^
+
+warning: function `photon_energy` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:163:4
+    |
+163 | fn photon_energy(s:&PairedState,nodes:&[f64])->f64{weighted_sum(&s.photons.iter().enumerate().map(|(i,x)|x*nodes[i%nodes.len()]).ch...
+    |    ^^^^^^^^^^^^^
+
+warning: function `photon_number` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:164:4
+    |
+164 | fn photon_number(s:&PairedState)->f64{weighted_sum(&s.photons.iter().copied().chain(s.lower_guard_n.iter().copied()).collect::<Vec<...
+    |    ^^^^^^^^^^^^^
+
+warning: function `matter_energy` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:165:4
+    |
+165 | fn matter_energy(g:&PrimaryState)->f64{g.w_ev_per_h+CHI[0]*g.fractions[0]+FHE*(CHI[1]*g.fractions[1]+(CHI[1]+CHI[2])*g.fractions[2]...
+    |    ^^^^^^^^^^^^^
+
+warning: function `site_audit` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:166:4
+    |
+166 | fn site_audit(stage:&PrimaryStage,t:f64,dt:f64,nodes:&[f64],index:&[usize],old:&PrimaryState,parent:&PrimaryBox,root:&crate::couple...
+    |    ^^^^^^^^^^
+
+warning: function `endpoint` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:181:4
+    |
+181 | fn endpoint(c:&PairedConfig,h:[f64;3],s:&PairedState,dt:f64,nodes:&[f64])->Result<(PairedState,String,f64),ForwardError>{
+    |    ^^^^^^^^
+
+warning: function `difference` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:270:4
+    |
+270 | fn difference(a:&PairedState,b:&PairedState,nodes:&[f64])->Result<f64,ForwardError>{
+    |    ^^^^^^^^^^
+
+warning: function `width` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:292:4
+    |
+292 | fn width(s:&PairedState,nodes:&[f64])->Result<f64,ForwardError>{
+    |    ^^^^^
+
+warning: function `paired_trial` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/owner_runtime.rs:307:8
+    |
+307 | pub fn paired_trial(c:&PairedConfig,h:[f64;3],s:&PairedState,dt:f64)->Result<PairedTrial,ForwardError>{
+    |        ^^^^^^^^^^^^
+
+warning: constant `HH_PAIRED_MODEL_ID` is never used
+ --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:6:11
+  |
+6 | pub const HH_PAIRED_MODEL_ID:&str="HH_ON06B_FT03_LCS_FIXED_GRID_BINARY64_REAL_V1";
+  |           ^^^^^^^^^^^^^^^^^^
+
+warning: struct `HhRunIdentity` is never constructed
+ --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:8:8
+  |
+8 | struct HhRunIdentity {schema:u32,words:Vec<u64>}
+  |        ^^^^^^^^^^^^^
+
+warning: struct `HhRunConfig` is never constructed
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:10:12
+   |
+10 | pub struct HhRunConfig {grid:PairedConfig,hubble:[f64;3],mode:HhMode,identity:HhRunIdentity}
+   |            ^^^^^^^^^^^
+
+warning: associated items `new`, `mode`, `grid`, and `hubble` are never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:12:9
+   |
+11 | impl HhRunConfig {
+   | ---------------- associated items in this implementation
+12 |  pub fn new(grid:PairedConfig,hubble:[f64;3],mode:HhMode)->Result<Self,ForwardError>{
+   |         ^^^
+...
+23 |  pub fn mode(&self)->HhMode{self.mode}
+   |         ^^^^
+24 |  pub fn grid(&self)->&PairedConfig{&self.grid}
+   |         ^^^^
+25 |  pub fn hubble(&self)->[f64;3]{self.hubble}
+   |         ^^^^^^
+
+warning: struct `HhPairedState` is never constructed
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:28:12
+   |
+28 | pub struct HhPairedState {base:PairedState,hh_events:f64,hh_heat:f64,hh_comp:[f64;2],identity:HhRunIdentity}
+   |            ^^^^^^^^^^^^^
+
+warning: methods `base`, `hh_events_per_h`, `hh_heat_ev_per_h`, and `hh_compensation` are never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:30:9
+   |
+29 | impl HhPairedState {
+   | ------------------ methods in this implementation
+30 |  pub fn base(&self)->&PairedState{&self.base}
+   |         ^^^^
+31 |  pub fn hh_events_per_h(&self)->f64{self.hh_events}
+   |         ^^^^^^^^^^^^^^^
+32 |  pub fn hh_heat_ev_per_h(&self)->f64{self.hh_heat}
+   |         ^^^^^^^^^^^^^^^^
+33 |  pub fn hh_compensation(&self)->[f64;2]{self.hh_comp}
+   |         ^^^^^^^^^^^^^^^
+
+warning: struct `HhPairedTrial` is never constructed
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:36:12
+   |
+36 | pub struct HhPairedTrial {pub state:HhPairedState,pub local_bound:f64,pub public_width:f64,pub max_ledger:f64,pub audits:Vec<String>...
+   |            ^^^^^^^^^^^^^
+
+warning: function `hh_paired_initial` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:37:8
+   |
+37 | pub fn hh_paired_initial(c:&HhRunConfig)->Result<HhPairedState,ForwardError>{
+   |        ^^^^^^^^^^^^^^^^^
+
+warning: function `hh_check` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:40:4
+   |
+40 | fn hh_check(c:&HhRunConfig,s:&HhPairedState)->Result<(),ForwardError>{
+   |    ^^^^^^^^
+
+warning: function `hh_endpoint_state` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:48:4
+   |
+48 | fn hh_endpoint_state(c:&HhRunConfig,s:&HhPairedState,dt:f64,nodes:&[f64])->Result<(HhPairedState,String,f64,[f64;2]),ForwardError>{
+   |    ^^^^^^^^^^^^^^^^^
+
+warning: function `hh_paired_trial` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:56:8
+   |
+56 | pub fn hh_paired_trial(c:&HhRunConfig,s:&HhPairedState,dt:f64)->Result<HhPairedTrial,ForwardError>{
+   |        ^^^^^^^^^^^^^^^
+
+warning: function `try_hh_paired_step` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:75:8
+   |
+75 | pub fn try_hh_paired_step(c:&HhRunConfig,s:&mut HhPairedState,dt:f64)->Result<HhPairedTrial,ForwardError>{
+   |        ^^^^^^^^^^^^^^^^^^
+
+warning: function `try_hh_paired_ensemble` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:79:8
+   |
+79 | pub fn try_hh_paired_ensemble(configs:&[HhRunConfig],states:&mut[HhPairedState],dt:f64)->Result<Vec<HhPairedTrial>,ForwardError>{
+   |        ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `hh_source_endpoint` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:87:4
+   |
+87 | fn hh_source_endpoint(c:&PairedConfig,h:[f64;3],s:&PairedState,dt:f64,nodes:&[f64])->Result<(PairedState,String,f64,[f64;2]),Forward...
+   |    ^^^^^^^^^^^^^^^^^^
+
+warning: function `hh_fnv` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:199:4
+    |
+199 | fn hh_fnv(bytes:&[u8],mut state:u64)->u64{for b in bytes{state^=*b as u64;state=state.wrapping_mul(0x100000001b3);}state}
+    |    ^^^^^^
+
+warning: function `hh_source_tag` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:200:4
+    |
+200 | fn hh_source_tag()->u64{
+    |    ^^^^^^^^^^^^^
+
+warning: constant `HH_CHECKPOINT_MAGIC` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:205:7
+    |
+205 | const HH_CHECKPOINT_MAGIC:u64=u64::from_le_bytes(*b"HH06Bv01");
+    |       ^^^^^^^^^^^^^^^^^^^
+
+warning: function `hh_write_word` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:206:4
+    |
+206 | fn hh_write_word(out:&mut Vec<u8>,x:u64){out.extend_from_slice(&x.to_le_bytes());}
+    |    ^^^^^^^^^^^^^
+
+warning: function `hh_write_floats` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:207:4
+    |
+207 | fn hh_write_floats(out:&mut Vec<u8>,xs:&[f64]){for x in xs{hh_write_word(out,x.to_bits());}}
+    |    ^^^^^^^^^^^^^^^
+
+warning: function `hh_write_boxes` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:208:4
+    |
+208 | fn hh_write_boxes(out:&mut Vec<u8>,xs:&[Interval]){for x in xs{hh_write_floats(out,&[x.lo,x.hi]);}}
+    |    ^^^^^^^^^^^^^^
+
+warning: function `hh_checkpoint_encode` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:209:8
+    |
+209 | pub fn hh_checkpoint_encode(c:&HhRunConfig,s:&HhPairedState)->Result<Vec<u8>,ForwardError>{
+    |        ^^^^^^^^^^^^^^^^^^^^
+
+warning: struct `HhReader` is never constructed
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:225:8
+    |
+225 | struct HhReader<'a>{data:&'a[u8],at:usize}
+    |        ^^^^^^^^
+
+warning: methods `word`, `floats`, and `boxes` are never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:227:5
+    |
+226 | impl<'a> HhReader<'a>{
+    | --------------------- methods in this implementation
+227 |  fn word(&mut self)->Result<u64,ForwardError>{
+    |     ^^^^
+...
+232 |  fn floats(&mut self,n:usize)->Result<Vec<f64>,ForwardError>{
+    |     ^^^^^^
+...
+236 |  fn boxes(&mut self,n:usize)->Result<Vec<Interval>,ForwardError>{
+    |     ^^^^^
+
+warning: function `hh_checkpoint_decode` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/cargo/hh_paired_compat.rs:241:8
+    |
+241 | pub fn hh_checkpoint_decode(c:&HhRunConfig,data:&[u8])->Result<HhPairedState,ForwardError>{
+    |        ^^^^^^^^^^^^^^^^^^^^
+
+warning: struct `BirthLaw` is never constructed
+ --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:3:34
+  |
+3 | #[derive(Clone,Debug)]pub struct BirthLaw {pub source_bits:u64,pub energy_bits:u64,pub policy:&'static str}
+  |                                  ^^^^^^^^
+
+warning: struct `StepScheme` is never constructed
+ --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:4:34
+  |
+4 | #[derive(Clone,Debug)]pub struct StepScheme {pub label:&'static str,pub times:[f64;2],pub steps:[f64;2],pub stages:usize}
+  |                                  ^^^^^^^^^^
+
+warning: function `source_law` is never used
+ --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:5:8
+  |
+5 | pub fn source_law()->BirthLaw{BirthLaw{source_bits:SOURCE.to_bits(),energy_bits:BIRTH.to_bits(),policy:"OWNER_SOURCE_WEIGHTS_AT_ENDPO...
+  |        ^^^^^^^^^^
+
+warning: function `schemes` is never used
+ --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:6:8
+  |
+6 | pub fn schemes(t:f64,h:f64)->Result<[StepScheme;2],ForwardError>{
+  |        ^^^^^^^
+
+warning: function `contract_valid` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:10:8
+   |
+10 | pub fn contract_valid(clock:f64,lambda:f64,origin:&str,law:&str,angle:&str)->bool{
+   |        ^^^^^^^^^^^^^^
+
+warning: function `accepted_events` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:13:8
+   |
+13 | pub fn accepted_events(_full:f64,a:f64,b:f64)->f64{a+b}
+   |        ^^^^^^^^^^^^^^^
+
+warning: function `carry_rhs` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:14:8
+   |
+14 | pub fn carry_rhs(previous:f64,birth:f64,photon:f64,hh:f64)->f64{previous+birth+photon+hh}
+   |        ^^^^^^^^^
+
+warning: struct `ExactSciencePermit` is never constructed
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:16:8
+   |
+16 | struct ExactSciencePermit { _private:() }
+   |        ^^^^^^^^^^^^^^^^^^
+
+warning: function `scientific_dispatch_requested` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:17:8
+   |
+17 | pub fn scientific_dispatch_requested()->Result<(),ForwardError>{Err(fail("ENERGY06C_EXACT_AUTHORIZATION_MISSING"))}
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `actual_full` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:18:4
+   |
+18 | fn actual_full(_permit:&ExactSciencePermit,c:&HhRunConfig,s:&HhPairedState,dt:f64)->Result<(HhPairedState,String,f64,[f64;2]),Forwar...
+   |    ^^^^^^^^^^^
+
+warning: function `actual_twohalf` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:23:4
+   |
+23 | fn actual_twohalf(p:&ExactSciencePermit,c:&HhRunConfig,s:&HhPairedState,dt:f64)->Result<(HhPairedState,[String;2],f64,[[f64;2];2]),F...
+   |    ^^^^^^^^^^^^^^
+
+warning: function `actual_linked_chain` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:26:4
+   |
+26 | fn actual_linked_chain(p:&ExactSciencePermit,c:&HhRunConfig,s:&HhPairedState,dt:f64)->Result<HhPairedTrial,ForwardError>{
+   |    ^^^^^^^^^^^^^^^^^^^
+
+warning: struct `Prebirth` is never constructed
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:32:28
+   |
+32 | #[derive(Debug)]pub struct Prebirth {pub photons:Vec<f64>,pub boxes:Vec<Interval>,pub weights:Vec<f64>,pub source_n:f64,pub source_u...
+   |                            ^^^^^^^^
+
+warning: function `prepare_actual_birth` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:35:8
+   |
+35 | pub fn prepare_actual_birth(c:&PairedConfig,h:[f64;3],s:&PairedState,dt:f64,nodes:&[f64])->Result<Prebirth,ForwardError>{
+   |        ^^^^^^^^^^^^^^^^^^^^
+
+warning: function `enclosing_defect` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:94:8
+   |
+94 | pub fn enclosing_defect(full:&[Interval],two:&[Interval])->Result<Vec<Interval>,ForwardError>{
+   |        ^^^^^^^^^^^^^^^^
+
+warning: function `validate_tangent` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:98:8
+   |
+98 | pub fn validate_tangent(gas:&[f64],photons:&[f64],energies:&[f64],angles:usize)->Result<(),ForwardError>{
+   |        ^^^^^^^^^^^^^^^^
+
+warning: function `cfg` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:102:4
+    |
+102 | fn cfg(member:usize)->Result<HhRunConfig,ForwardError>{HhRunConfig::new(PairedConfig{spectral_subdivisions:8,n_mu:8,n_phi:16},if me...
+    |    ^^^
+
+warning: function `audit_cli` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:103:8
+    |
+103 | pub fn audit_cli()->Result<(),Box<dyn std::error::Error>>{
+    |        ^^^^^^^^^
+
+warning: function `linked_tangent_stage` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:121:4
+    |
+121 | fn linked_tangent_stage(_permit:&ExactSciencePermit,stage:&crate::coupled_primary::PrimaryStage,old:&crate::coupled_primary::Primar...
+    |    ^^^^^^^^^^^^^^^^^^^^
+
+warning: struct `PhotonTangent` is never constructed
+   --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:153:24
+    |
+153 | #[derive(Debug)]struct PhotonTangent { photons:Vec<Interval>,guard_n:Vec<Interval>,guard_u:Vec<Interval> }
+    |                        ^^^^^^^^^^^^^
+
+warning: function `hull_zero` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:154:4
+    |
+154 | fn hull_zero(x:Interval)->Result<Interval,ForwardError>{Interval::new(x.lo.min(0.0),x.hi.max(0.0)).map_err(ie)}
+    |    ^^^^^^^^^
+
+warning: function `remap_lambda_fixed_theta` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:155:4
+    |
+155 | fn remap_lambda_fixed_theta(c:&PairedConfig,h:[f64;3],time:f64,dt:f64,nodes:&[f64],incoming:&[Interval],guard_n:&[Interval],guard_u...
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `norm_upper` is never used
+   --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs:173:4
+    |
+173 | fn norm_upper(values:[f64;4])->Result<f64,ForwardError>{let mut n=p(0.0)?;for x in values{if x<0.0{return Err(fail("ENERGY06C_NORM_...
+    |    ^^^^^^^^^^
+
+warning: struct `ReceiptIdentity` is never constructed
+ --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/paired_stage_receipt.rs:4:12
+  |
+4 | pub struct ReceiptIdentity {
+  |            ^^^^^^^^^^^^^^^
+
+warning: struct `PairedStageReceipt` is never constructed
+ --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/paired_stage_receipt.rs:9:12
+  |
+9 | pub struct PairedStageReceipt {
+  |            ^^^^^^^^^^^^^^^^^^
+
+warning: constant `ENERGY06E_SOURCE_BINDING` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/paired_stage_receipt.rs:15:7
+   |
+15 | const ENERGY06E_SOURCE_BINDING:&str="265c5cf32db1d6a4e795c0cb383e547bc33697b8827adf9f16fb036d20098cfe";
+   |       ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `receipt_identity_valid` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/paired_stage_receipt.rs:16:4
+   |
+16 | fn receipt_identity_valid(id:&ReceiptIdentity,c:&HhRunConfig)->bool {
+   |    ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `accepted_half1_receipt` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/paired_stage_receipt.rs:27:4
+   |
+27 | fn accepted_half1_receipt(_permit:&ExactSciencePermit,id:ReceiptIdentity,c:&HhRunConfig,
+   |    ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `resolve_half2_predecessor` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/paired_stage_receipt.rs:49:8
+   |
+49 | pub fn resolve_half2_predecessor(receipt:Option<&PairedStageReceipt>,id:&ReceiptIdentity,
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `uniform_family_certificate_requested` is never used
+  --> /root/WU088_HH_ENERGY06E_20261010/repo/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/paired_stage_receipt.rs:59:8
+   |
+59 | pub fn uniform_family_certificate_requested()->Result<(),ForwardError>{
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `hh_energy06e_contract` (bin "receipt_contract") generated 97 warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.60s

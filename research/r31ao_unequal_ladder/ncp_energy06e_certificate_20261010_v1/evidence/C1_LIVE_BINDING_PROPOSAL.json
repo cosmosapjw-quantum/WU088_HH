@@ -1,0 +1,138 @@
+{
+  "status": "NEW_IDENTITY_ONLY_PROCESS_OBSERVED__FUTURE_SCIENCE_BINDING_OPEN",
+  "observation": {
+    "status": "LIVE_NEW_IDENTITY_PROCESS_OBSERVED",
+    "pid": 7221,
+    "starttime_ticks": "252837",
+    "identity": "ENERGY06E_C1_IDENTITY_ONLY precision=128 radius=2^-57 science_dispatch=0\n",
+    "binary": {
+      "path": "/root/WU088_HH_ENERGY06E_20261010/c1/energy06e_c1_identity_candidate",
+      "sha256": "6ddba2719b7ad89a912376feaebb7e3bbfd7f52c31caf89dd5f16606542b0a80"
+    },
+    "loader_maps": {
+      "/root/WU088_HH_ENERGY06E_20261010/c1/energy06e_c1_identity_candidate": "6ddba2719b7ad89a912376feaebb7e3bbfd7f52c31caf89dd5f16606542b0a80",
+      "/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/lib/libflint.so.22.0.0": "8093e1be0122622020ea4ca662b7b778d515bcb4b80a58d94aa20e170431af66",
+      "/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/lib/libgmp.so.10.5.0": "d4cd72f26d4184f00b0f011a5801ff30d7a2573ddc1552ae124fd6766afbfd3a",
+      "/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/lib/libmpfr.so.6.2.2": "2443d62e98079f8e818bbe2a1fb7cbc70782a1001879bb5ee3d6c10b4b58d3c5",
+      "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2": "854a9eb45875e00f48e1e89d40251317931d2d82555ab612d6090beba0c9f972",
+      "/usr/lib/x86_64-linux-gnu/libc.so.6": "c1e50a701d3245c8c45a1ba40151efe414ac41d2c9ae604087b4875e0d85c4fb",
+      "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1": "d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb",
+      "/usr/lib/x86_64-linux-gnu/libm.so.6": "3a51627ed6b9bf776b69103c82ece3a32099db77821c9d92d5270a76c2aeaf58",
+      "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33": "1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11"
+    },
+    "ancestors": [
+      {
+        "path": "/sys/fs/cgroup/user.slice/user-0.slice/user@0.service/app.slice/wu088-energy06e-identity-v3-20261010.service",
+        "values": {
+          "cpu.max": "100000 100000",
+          "memory.max": "1073741824",
+          "memory.current": "7962624",
+          "memory.swap.max": "0"
+        }
+      },
+      {
+        "path": "/sys/fs/cgroup/user.slice/user-0.slice/user@0.service/app.slice",
+        "values": {
+          "cpu.max": "max 100000",
+          "memory.max": "max",
+          "memory.current": "66777088",
+          "memory.swap.max": "max"
+        }
+      },
+      {
+        "path": "/sys/fs/cgroup/user.slice/user-0.slice/user@0.service",
+        "values": {
+          "cpu.max": "max 100000",
+          "memory.max": "max",
+          "memory.current": "73641984",
+          "memory.swap.max": "max"
+        }
+      },
+      {
+        "path": "/sys/fs/cgroup/user.slice/user-0.slice",
+        "values": {
+          "cpu.max": "max 100000",
+          "memory.max": "max",
+          "memory.current": "4131393536",
+          "memory.swap.max": "max"
+        }
+      },
+      {
+        "path": "/sys/fs/cgroup/user.slice",
+        "values": {
+          "cpu.max": "max 100000",
+          "memory.max": "max",
+          "memory.current": "4131528704",
+          "memory.swap.max": "max"
+        }
+      },
+      {
+        "path": "/sys/fs/cgroup",
+        "values": {
+          "cpu.max": null,
+          "memory.max": null,
+          "memory.current": null,
+          "memory.swap.max": null
+        }
+      }
+    ],
+    "execution": {
+      "Uid": "0\t0\t0\t0",
+      "CapEff": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "NoNewPrivs": "1"
+    },
+    "observed_while_worker_alive": true,
+    "scientific_dispatch": 0,
+    "scope_proposal_sha256": "9226e58df71cdd1abc88e260fb69e3b64ff2fb549852716dafee646f4a4fded0",
+    "source_sha256": "19dbb2bc34c5706d96bf7b206c8f32745f20044a9562bd702fd495827b0703c9",
+    "future_scientific_execution_binding": null,
+    "UID_policy_admitted": false,
+    "reserve_admitted": false,
+    "exit": 0,
+    "process_now_exited": true,
+    "future_live_evidence": false
+  },
+  "C1_candidate_ABI": "15 positional bounded integration args retained; main refuses science; --identity-live preparation only",
+  "source_ABI_hash": "19dbb2bc34c5706d96bf7b206c8f32745f20044a9562bd702fd495827b0703c9",
+  "compiler_and_flags": {
+    "argv": [
+      "/usr/bin/x86_64-linux-gnu-g++-13",
+      "-std=c++17",
+      "-O3",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-Wall",
+      "-Wextra",
+      "-Werror=return-type",
+      "-DWU088_USE_CACHED=1",
+      "-I/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/include",
+      "-I/root/WU088_HH_ENERGY06E_20261010/c1/source/gap_closure_20261001_g0_g6_v1/validated_callback",
+      "/root/WU088_HH_ENERGY06E_20261010/c1/source/wide_domain_20261001_v1/log_native_driver/primitive_worker.cpp",
+      "/root/WU088_HH_ENERGY06E_20261010/c1/source/ncp64_acceleration_20261001_v1/native_cache/cached_callback.cpp",
+      "/root/WU088_HH_ENERGY06E_20261010/c1/source/gap_closure_20261001_g0_g6_v1/validated_callback/assembly.cpp",
+      "/root/WU088_HH_ENERGY06E_20261010/c1/source/gap_closure_20261001_g0_g6_v1/interior_pilot/petras_host.cpp",
+      "-L/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/lib",
+      "-Wl,-rpath,/root/WU088_NCP_EXEC_20261003_v2/prep_r2/backend/prefix/lib",
+      "-lflint",
+      "-lmpfr",
+      "-lgmp",
+      "-o",
+      "/root/WU088_HH_ENERGY06E_20261010/c1/energy06e_c1_identity_candidate"
+    ],
+    "exit": 0,
+    "compiler_sha256": "1353e9bdd29a7295c7226bf6c63abccce056d8cac31f112e5cdbecc3f28c2769",
+    "source_sha256": "19dbb2bc34c5706d96bf7b206c8f32745f20044a9562bd702fd495827b0703c9",
+    "promotion": false
+  },
+  "plan_source_scope_proposal_sha256": "9226e58df71cdd1abc88e260fb69e3b64ff2fb549852716dafee646f4a4fded0",
+  "precision": 128,
+  "radius_exp": -57,
+  "future_execution_binding": null,
+  "authorization": null,
+  "UID_policy": "observed UID0 caps0; policy admission OPEN",
+  "reserve_admission": false,
+  "request_ready": false,
+  "dispatch_count": 0,
+  "retry": 0
+}
