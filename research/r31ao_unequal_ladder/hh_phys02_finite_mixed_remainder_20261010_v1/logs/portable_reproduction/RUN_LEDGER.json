@@ -1,0 +1,47 @@
+[
+  {
+    "name": "unit",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "remainder",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "bound_remainder.py",
+      "--output",
+      "/workspace/scratch/198b9c7581be/reproduction_check/REMAINDER.json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "quartic",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "independent/check_k4.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "source",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "independent/check_source_portable.py",
+      "--output",
+      "/workspace/scratch/198b9c7581be/reproduction_check/SOURCE_AUDIT.json"
+    ],
+    "exit_code": 0
+  }
+]

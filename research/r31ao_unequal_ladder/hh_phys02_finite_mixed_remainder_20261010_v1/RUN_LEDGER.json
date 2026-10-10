@@ -1,0 +1,90 @@
+{
+  "schema": "WU088_HH_PHYS02_EXECUTION_LEDGER_V1",
+  "parent_science_suite_rerun": false,
+  "records": [
+    {
+      "stage": "initial new algebra/source unit checks",
+      "evidence": [
+        "logs/tests_initial.stdout",
+        "logs/tests_initial.stderr"
+      ],
+      "unit_tests": 14,
+      "result": "PASS"
+    },
+    {
+      "stage": "initial 256-bit parametric enclosure",
+      "evidence": [
+        "results/REMAINDER_256_INITIAL.json",
+        "failures/NUMERIC_EXPORT_NOTE.json"
+      ],
+      "result": "INTERNAL_INTERVAL_PASS__INITIAL_DISPLAY_SUPERSEDED"
+    },
+    {
+      "stage": "directed export corrected 256-bit enclosure",
+      "evidence": [
+        "results/REMAINDER_256_FINAL.json",
+        "logs/remainder_256_final.stdout"
+      ],
+      "result": "FROZEN_MATCHED_CONTINUOUS_SIGN_ENCLOSED"
+    },
+    {
+      "stage": "one 384-bit precision consistency",
+      "evidence": [
+        "results/REMAINDER_384_CHECK.json",
+        "results/PRECISION_COMPARISON.json"
+      ],
+      "result": "PASS_FOCUSED_CONSISTENCY"
+    },
+    {
+      "stage": "independent source oracle",
+      "evidence": [
+        "independent/SOURCE_AUDIT_INITIAL_FAILURE.txt",
+        "independent/SOURCE_AUDIT_CHECKS.json",
+        "independent/SOURCE_AUDIT.md"
+      ],
+      "result": "INITIAL_COMPARATOR_CORRECTED__130_SCALAR_ASSERTIONS_PASS"
+    },
+    {
+      "stage": "independent quartic derivation and rational fixture",
+      "evidence": [
+        "independent/K4_EXACT_CHECK.json",
+        "independent/HH_PHYS02_REMAINDER_DERIVATION_KO.md"
+      ],
+      "result": "6_EXACT_RATIONAL_CASES_PASS"
+    },
+    {
+      "stage": "fresh independent decision",
+      "evidence": [
+        "independent/DECISION.json",
+        "independent/REVIEW.md",
+        "independent/EXACT_SERIALIZATION_CHECK.json"
+      ],
+      "result": "PROMOTE_SCOPED"
+    },
+    {
+      "stage": "portable source checker adaptation",
+      "evidence": [
+        "independent/SOURCE_AUDIT_PORTABILITY.json",
+        "results/SOURCE_AUDIT_PORTABLE_EXECUTION.json"
+      ],
+      "result": "ONE_PORTABLE_RUN_130_ASSERTIONS_PASS"
+    },
+    {
+      "stage": "portable four-command reproduction",
+      "evidence": [
+        "results/PORTABLE_REPRODUCTION.json",
+        "logs/portable_reproduction/RUN_LEDGER.json"
+      ],
+      "result": "ALL_EXIT0__REMAINDER_IDENTICAL_EXCEPT_WALL_SECONDS"
+    }
+  ],
+  "new_operations_absent": {
+    "native_dispatch": 0,
+    "IVP_trajectory_integrations": 0,
+    "BE_root_solves": 0,
+    "NCP_dispatch": 0,
+    "legacy_integral_runs": 0,
+    "parent_completed_suite_runs": 0
+  },
+  "method_note": "An algebraic augmented-IVP existence/tube certificate is evaluated; no trajectory solver or native root solver is invoked."
+}

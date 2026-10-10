@@ -1,0 +1,67 @@
+{
+  "schema": "HH_PHYS02_PORTABLE_REPRODUCTION_V1",
+  "status": "FOUR_NEW_BOUNDED_COMMANDS_EXIT0",
+  "executed_once_for_portability": true,
+  "commands": [
+    {
+      "name": "unit",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "remainder",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "bound_remainder.py",
+        "--output",
+        "/workspace/scratch/198b9c7581be/reproduction_check/REMAINDER.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "quartic",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "independent/check_k4.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "source",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "independent/check_source_portable.py",
+        "--output",
+        "/workspace/scratch/198b9c7581be/reproduction_check/SOURCE_AUDIT.json"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "remainder_matches_authoritative_except_wall_seconds": true,
+  "unit_tests": 14,
+  "source_scalar_assertions": 130,
+  "exact_quartic_cases": 6,
+  "inputs_unchanged": true,
+  "implementation_unchanged": true,
+  "raw_evidence_directory": "logs/portable_reproduction",
+  "no_trajectory_or_native_or_BE_or_NCP": true,
+  "code_sha256": {
+    "reproduce.py": "df6568f073e8214320463d41b7e2e0eefcc02fa6ee6701ba83abcccde1ada75d",
+    "independent/check_source_portable.py": "92d21e1060c783423b39a585ed2c3f949bdd81c699addc7296b173133160f4cb",
+    "bound_remainder.py": "de9a0d01c7564e2689072a1cb8c456a972f27233001a90a56fdd4281b5d16fcd",
+    "src/frozen_source.py": "cc845f4b2e5fa07b711eba64e745804f3995e0911293ca5209b11c18e3540625",
+    "src/jet_algebra.py": "4272607c007747d3ebd69495b5772d8e7b59b8994f3416d8326e071976196607"
+  }
+}

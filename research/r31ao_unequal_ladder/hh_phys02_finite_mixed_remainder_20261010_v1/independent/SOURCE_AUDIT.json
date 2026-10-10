@@ -1,0 +1,88 @@
+{
+  "schema": "HH_PHYS02_SOURCE_IMPLEMENTATION_AUDIT_V1",
+  "date_utc": "2026-10-10T10:45:21.646432+00:00",
+  "role": "independent source and implementation auditor; not final decision reviewer",
+  "status": "NO_BLOCKING_SOURCE_OR_IMPLEMENTATION_FINDINGS",
+  "blocking_findings": [],
+  "requested_owner_changes": [],
+  "source_restriction": "selected exact-real frozen continuous source only",
+  "read_scope": [
+    "Astra research v4 START_HERE/PROJECT_INSTRUCTIONS/MODEL_ROUTING/state template",
+    "Astra coding v4 START_HERE/AGENTS/SCIENTIFIC_CONTRACT template",
+    "HH-PHYS02 SCIENTIFIC_CONTRACT and state",
+    "five original Rust source files, selected JSON",
+    "candidate frozen_source.py/jet_algebra.py/bound_remainder.py",
+    "initial/final remainder result metadata; no native rerun"
+  ],
+  "candidate_sha256": {
+    "SCIENTIFIC_CONTRACT.md": "afb9d50104041e3a92ef1b40cf19ea52cdb7683c2c076299a88dcaacf10020b7",
+    "src/frozen_source.py": "cc845f4b2e5fa07b711eba64e745804f3995e0911293ca5209b11c18e3540625",
+    "src/jet_algebra.py": "4272607c007747d3ebd69495b5772d8e7b59b8994f3416d8326e071976196607",
+    "bound_remainder.py": "de9a0d01c7564e2689072a1cb8c456a972f27233001a90a56fdd4281b5d16fcd"
+  },
+  "checks": {
+    "scalar_assertions": 130,
+    "distinct_source_reference_states": 3,
+    "RHS_components_compared": 39,
+    "coefficient_values_compared": 39,
+    "formal_flow_scalar_coefficients": 40,
+    "nonlinear_HD_components": 4,
+    "parent_input_source_identities": 6,
+    "bin_partition_checks": 1,
+    "density_leaf_checks": 1,
+    "numeric_oracle": "independent 110-digit mpmath per-cm3 source; not interval-certified",
+    "formal_oracle": "SymPy exact polynomial Lie derivatives with nonzero initial parameter/mixed seeds"
+  },
+  "failure_history": [
+    {
+      "run": 1,
+      "exit": 1,
+      "failure": "RHS_PER_CM3_ROUTE_STATE1_COMPONENT5",
+      "classification": "NUMERICAL_ORACLE_COMPARATOR",
+      "diagnosis": "Re-enclosed numeric reference required whole-ball containment and therefore introduced extra conversion width. Candidate was not changed.",
+      "preserved_script": "source_audit_checks_initial.py",
+      "stderr": "SOURCE_AUDIT_INITIAL_STDERR.txt"
+    },
+    {
+      "run": 2,
+      "exit": 0,
+      "assertions_passed": 130,
+      "change": "Compare 110-digit independent scalar with exact candidate dyadic endpoints."
+    }
+  ],
+  "logic_audit": {
+    "HD_first_and_mixed_chain": "consistent",
+    "time_factorials": "consistent",
+    "all_52_augmented_tube_components": "strict inclusion reported; mathematical inclusion logic independently inspected",
+    "tube_existence": "compact smooth field plus strict integral enclosure and first-exit/continuation argument",
+    "signed_fourth_remainder": "positive Taylor kernel preserves interval enclosure after normalized integration",
+    "matched_rectangle": "uniform mixed derivative enclosure averages to I/(lambda*s)",
+    "inert_bins": "16 exact constants plus 9 active =25 selected bins",
+    "density": "recorded nHe exact binary64 leaf; r=nHe/nH"
+  },
+  "known_owner_fix": "Nondirected decimal endpoint display was owner-handled; corrected exact dyadic/outward export inspected, no duplicate fix",
+  "claim_limits": [
+    "not an actual owner full/twohalf macro bound",
+    "not time-dependent geometry or birth/remap certification",
+    "not a uniform native root/family certificate",
+    "not full angular-grid or full-history validation",
+    "not atomic-rate model adequacy",
+    "not final decision review"
+  ],
+  "operations": {
+    "new_native_runs": 0,
+    "BE_roots": 0,
+    "IVP_trajectories": 0,
+    "parent_cubic_reaudit": 0,
+    "owner_file_modifications": 0,
+    "remote_mutations": 0
+  },
+  "artifacts": [
+    "SOURCE_AUDIT.md",
+    "SOURCE_AUDIT_CHECKS.json",
+    "source_audit_checks.py",
+    "source_audit_checks_initial.py",
+    "SOURCE_AUDIT_INITIAL_STDERR.txt",
+    "SOURCE_AUDIT_INITIAL_FAILURE.txt"
+  ]
+}

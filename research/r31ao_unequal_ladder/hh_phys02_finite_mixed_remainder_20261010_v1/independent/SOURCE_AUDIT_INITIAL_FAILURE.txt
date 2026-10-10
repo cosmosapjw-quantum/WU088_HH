@@ -1,0 +1,10 @@
+Command: python -B /workspace/scratch/198b9c7581be/survey_sources/source_audit_checks.py
+Exit: 1
+AssertionError: RHS_PER_CM3_ROUTE_STATE1_COMPONENT5
+Observed test assertion failure: the initial auditor comparator required an
+Arb enclosure of the rounded high-precision scalar to be wholly contained in
+the candidate's existing Arb enclosure. The second enclosure has its own
+256-bit conversion radius. This is stronger than comparing the numerical
+reference scalar with the candidate exact dyadic endpoints. The comparator
+was corrected, keeping the original script as source_audit_checks_initial.py.
+This diagnosis is tested by the corrected run; no source implementation was changed.
