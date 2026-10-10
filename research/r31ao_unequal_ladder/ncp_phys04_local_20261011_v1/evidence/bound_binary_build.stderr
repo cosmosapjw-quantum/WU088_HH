@@ -1,0 +1,172 @@
+warning: function `hh_source_endpoint` is never used
+  --> candidate/src/hh_paired_extension.rs:89:4
+   |
+89 | fn hh_source_endpoint(c:&PairedConfig,h:[f64;3],s:&PairedState,dt:f64,nodes:&[f64])->Result<(PairedState,String,f64,[f64;2]),Forward...
+   |    ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: multiple fields are never read
+  --> candidate/src/phys04_receipt.rs:28:2
+   |
+26 | struct SameEndpointReturn {
+   |        ------------------ fields in this struct
+27 |  next:PairedState,audit:String,ledger:f64,events:[f64;2],
+28 |  point:crate::coupled_primary::HhStep,root:crate::coupled_primary::HhRoot,
+   |  ^^^^^                                ^^^^
+29 |  carry:PrimaryBox,stage:PrimaryStage,prebe:PrimaryState,parent:PrimaryBox,control:StepControl,
+   |  ^^^^^            ^^^^^              ^^^^^              ^^^^^^            ^^^^^^^
+30 |  identity:EndpointIdentity,history:Option<([f64;4],[f64;4])>,
+   |  ^^^^^^^^
+
+warning: struct `AcceptedHalf1` is never constructed
+  --> candidate/src/phys04_receipt.rs:33:8
+   |
+33 | struct AcceptedHalf1 {returned:SameEndpointReturn,history:[f64;4]}
+   |        ^^^^^^^^^^^^^
+
+warning: function `accepted_half1_receipt` is never used
+  --> candidate/src/phys04_receipt.rs:34:4
+   |
+34 | fn accepted_half1_receipt(returned:SameEndpointReturn,c:&PairedConfig,h:[f64;3],old:&PairedState,history:[f64;4])->Result<AcceptedHa...
+   |    ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `resolve_half2_predecessor` is never used
+  --> candidate/src/phys04_receipt.rs:49:4
+   |
+49 | fn resolve_half2_predecessor(receipt:&AcceptedHalf1,c:&PairedConfig,h:[f64;3],old:&PairedState,history:[f64;4])->Result<PairedState,...
+   |    ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: struct `Phys04ExactPermit` is never constructed
+  --> candidate/src/phys04_receipt.rs:54:8
+   |
+54 | struct Phys04ExactPermit{_sealed:()}
+   |        ^^^^^^^^^^^^^^^^^
+
+warning: function `accepted_half1_producer` is never used
+  --> candidate/src/phys04_receipt.rs:55:4
+   |
+55 | fn accepted_half1_producer(_permit:&Phys04ExactPermit,c:&HhRunConfig,old:&HhPairedState)->Result<AcceptedHalf1,ForwardError>{
+   |    ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `resolve_half2_hh_predecessor` is never used
+  --> candidate/src/phys04_receipt.rs:64:4
+   |
+64 | fn resolve_half2_hh_predecessor(receipt:&AcceptedHalf1,c:&HhRunConfig,old:&HhPairedState)->Result<HhPairedState,ForwardError>{
+   |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `hh_phys04_candidate` (lib) generated 8 warnings
+warning: function `error` is never used
+ --> src/family.rs:4:4
+  |
+4 | fn error()->ForwardError{ForwardError::InvalidInput("PHYS04_COMMON_FAMILY_IDENTITY")}
+  |    ^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: struct `FamilyIdentity` is never constructed
+ --> src/family.rs:6:12
+  |
+6 | pub struct FamilyIdentity {pub archive_sha256:String,pub candidate_source_sha256:String,pub abi_sha256:String,pub theta_bits:[u64;3],...
+  |            ^^^^^^^^^^^^^^
+
+warning: struct `CommonFamily` is never constructed
+ --> src/family.rs:8:12
+  |
+8 | pub struct CommonFamily {
+  |            ^^^^^^^^^^^^
+
+warning: function `jet` is never used
+  --> src/family.rs:16:4
+   |
+16 | fn jet(x:rei_reference::Interval)->Jet{Jet::constant(Interval{lo:x.lo,hi:x.hi}).expect("decoded valid interval")}
+   |    ^^^
+
+warning: function `sha_format` is never used
+  --> src/family.rs:17:4
+   |
+17 | fn sha_format(s:&str)->bool{s.len()==64&&s.bytes().all(|b|b.is_ascii_hexdigit())}
+   |    ^^^^^^^^^^
+
+warning: associated items `initialize`, `original_bytes`, `archived_roundtrip`, `total_hh`, `future_birth_rate`, and `add_future_hh` are never used
+  --> src/family.rs:19:9
+   |
+18 | impl CommonFamily {
+   | ----------------- associated items in this implementation
+19 |  pub fn initialize(bytes:&[u8],config:&HhRunConfig,id:FamilyIdentity)->Result<Self,ForwardError>{
+   |         ^^^^^^^^^^
+...
+31 |  pub fn original_bytes(&self)->&[u8]{&self.archive_bytes}
+   |         ^^^^^^^^^^^^^^
+32 |  pub fn archived_roundtrip(&self)->Result<Vec<u8>,ForwardError>{hh_checkpoint_encode(&self.config,&self.archived).map_err(|_|error())}
+   |         ^^^^^^^^^^^^^^^^^^
+33 |  pub fn total_hh(&self)->[f64;2]{[self.historical_hh[0]+self.future_hh[0],self.historical_hh[1]+self.future_hh[1]]}
+   |         ^^^^^^^^
+34 |  pub fn future_birth_rate(&self)->f64{5e-15*f64::from_bits(self.identity.b_bits)}
+   |         ^^^^^^^^^^^^^^^^^
+35 |  // Candidate endpoint increments only: zero future lambda does not erase history.
+36 |  pub fn add_future_hh(&mut self,events:f64)->Result<(),ForwardError>{
+   |         ^^^^^^^^^^^^^
+
+warning: struct `CertifiedCorners` is never constructed
+ --> src/observables.rs:3:12
+  |
+3 | pub struct CertifiedCorners { _private:() }
+  |            ^^^^^^^^^^^^^^^^
+
+warning: struct `ContinuousTarget` is never constructed
+ --> src/observables.rs:4:12
+  |
+4 | pub struct ContinuousTarget { _private:() }
+  |            ^^^^^^^^^^^^^^^^
+
+warning: struct `Observable` is never constructed
+ --> src/observables.rs:5:34
+  |
+5 | #[derive(Debug,Clone)]pub struct Observable {pub definition:&'static str,pub value:Option<Vec<Interval>>,pub missing:&'static str}
+  |                                  ^^^^^^^^^^
+
+warning: function `actual_observables` is never used
+ --> src/observables.rs:6:8
+  |
+6 | pub fn actual_observables(_corners:Option<&CertifiedCorners>,_continuous:Option<&ContinuousTarget>)->Vec<Observable>{
+  |        ^^^^^^^^^^^^^^^^^^
+
+warning: function `native_metrics_requested` is never used
+ --> src/observables.rs:9:8
+  |
+9 | pub fn native_metrics_requested()->Result<(),ForwardError>{Err(ForwardError::InvalidInput("PHYS04_TRUSTED_NATIVE_CORNER_FAMILY_MISSIN...
+  |        ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: struct `BoundDerivatives` is never constructed
+ --> src/certificate.rs:6:28
+  |
+6 | #[derive(Debug)]pub struct BoundDerivatives{pub incoming_identity:FamilyIdentity,pub endpoint_clock_bits:u64,pub density_bits:u64,pub...
+  |                            ^^^^^^^^^^^^^^^^
+
+warning: function `export_derivatives` is never used
+ --> src/certificate.rs:8:8
+  |
+8 | pub fn export_derivatives(family:&CommonFamily,pre:&Phys04PreBE,gas:[Interval;4],rectangle:[Interval;2],candidates:[[Interval;4];3])-...
+  |        ^^^^^^^^^^^^^^^^^^
+
+warning: struct `NativePointCertificate` is never constructed
+  --> src/certificate.rs:15:12
+   |
+15 | pub struct NativePointCertificate{_private:()}
+   |            ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: struct `NativeFamilyTube` is never constructed
+  --> src/certificate.rs:16:12
+   |
+16 | pub struct NativeFamilyTube{_private:()}
+   |            ^^^^^^^^^^^^^^^^
+
+warning: function `request_native_family_certificate` is never used
+  --> src/certificate.rs:17:8
+   |
+17 | pub fn request_native_family_certificate(_point:Option<&NativePointCertificate>)->Result<NativeFamilyTube,ForwardError>{Err(ForwardE...
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `hh_phys04_local` (bin "phys04_contract") generated 16 warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s

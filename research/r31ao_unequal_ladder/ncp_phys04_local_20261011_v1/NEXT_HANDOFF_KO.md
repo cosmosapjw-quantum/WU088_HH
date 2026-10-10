@@ -1,0 +1,1 @@
+실행 전 BLOCKERS.json의 trusted native common-family producer, uniform coupled tube, source-domain/continuous remainder, exact live identity, 별도 정확 human authorization을 닫아라. 현재 science budget0. NCP_RETURN.json의 제안으로 실행하지 말라. 재현은 offline locked build 및 지정 신규 targeted/receipt 시험만 사용하고 완료된 과학 suite는 재실행하지 말라.
