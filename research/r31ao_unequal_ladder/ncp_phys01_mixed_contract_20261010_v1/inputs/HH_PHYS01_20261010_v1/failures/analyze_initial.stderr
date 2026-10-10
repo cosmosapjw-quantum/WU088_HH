@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/mnt/data/HH_PHYS01_20261010_v1/analyze.py", line 96, in <module>
+    with out.open('x') as f:json.dump(compute(),f,indent=2);f.write('\n')
+                                      ~~~~~~~^^
+  File "/mnt/data/HH_PHYS01_20261010_v1/analyze.py", line 37, in compute
+    out[method]={'dimensionless_factors':{j:show(mp.mpf(val)) for j,val in v.items()},
+                                                 ~~~~~~^^^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/mpmath/ctx_mp_python.py", line 79, in __new__
+    v._mpf_ = mpf_pos(cls.mpf_convert_arg(val, prec, rounding), prec, rounding)
+                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/mpmath/ctx_mp_python.py", line 98, in mpf_convert_arg
+    raise TypeError("cannot create mpf from " + repr(x))
+TypeError: cannot create mpf from Fraction(1, 3)

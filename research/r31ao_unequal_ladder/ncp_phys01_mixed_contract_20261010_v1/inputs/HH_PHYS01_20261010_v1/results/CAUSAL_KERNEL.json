@@ -1,0 +1,25 @@
+{
+  "task": "HH-PHYS01",
+  "checks": {
+    "HH_integrates_to_cubic": true,
+    "photo_integrates_to_cubic": true,
+    "gas_integrates_to_cubic": true,
+    "survivors_integrate_to_cubic": true,
+    "instant_energy_balance": true,
+    "terminal_birth_no_instantaneous_gas": true,
+    "initial_birth_impulse_coefficient": true,
+    "birth_monotonic_derivative": true
+  },
+  "count": 8,
+  "kernels": {
+    "HH": "-A*q*(beta + 2)*(-birth + duration)**2/2",
+    "photo": "-A*q*(-birth**2 + duration**2)/2",
+    "HII": "-A*q*(beta + 2)*(-birth + duration)**2/2 - A*q*(-birth**2 + duration**2)/2",
+    "surviving_photon": "A*q*(-birth**2 + duration**2)/2",
+    "heat": "A*chi*q*(beta + 2)*(-birth + duration)**2/2 - A*g*q*(-birth**2 + duration**2)/2"
+  },
+  "meaning": "leading second-order-in-duration impulse kernel, multiplied by lambda * injected photon mass; integral against constant S gives cubic mixed response",
+  "scope": "one smooth frozen local stage; no event crossing; local jets, not certified whole-time kernels",
+  "monotonicity": "beta>=0, A>0,q>0, 0<=birth<=duration: HII mixed kernel negative before terminal and increases to zero",
+  "native_dispatch": 0
+}
