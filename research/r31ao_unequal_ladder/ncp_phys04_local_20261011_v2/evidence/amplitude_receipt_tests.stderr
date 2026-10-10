@@ -1,0 +1,58 @@
+   Compiling hh_phys04_candidate v0.1.0 (/root/WU088_HH_PHYS04_NCP_20261011/repo/research/r31ao_unequal_ladder/ncp_phys04_local_20261011_v1/candidate)
+warning: unused imports: `hh_return_enclosure`, `hh_stage_root`, and `hh_stage_step_conservative`
+ --> candidate/src/hh_paired_extension.rs:5:37
+  |
+5 | use crate::coupled_primary::{HhMode,hh_stage_step_conservative,hh_stage_root,hh_return_enclosure};
+  |                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `hh_endpoint` is never used
+   --> candidate/src/hh_primary_extension.rs:589:4
+    |
+589 | fn hh_endpoint(stage:&PrimaryStage,m:&Ft03Model,old:&PrimaryState,s:&PrimaryState,sigma:&[[f64;3]],dt:f64)->Result<(f64,PrimaryEven...
+    |    ^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `hh_source_endpoint` is never used
+  --> candidate/src/hh_paired_extension.rs:89:4
+   |
+89 | fn hh_source_endpoint(c:&PairedConfig,h:[f64;3],s:&PairedState,dt:f64,nodes:&[f64])->Result<(PairedState,String,f64,[f64;2]),Forward...
+   |    ^^^^^^^^^^^^^^^^^^
+
+warning: struct `Phys04ExactPermit` is never constructed
+  --> candidate/src/phys04_receipt.rs:55:8
+   |
+55 | struct Phys04ExactPermit{_sealed:()}
+   |        ^^^^^^^^^^^^^^^^^
+
+warning: function `accepted_half1_producer` is never used
+  --> candidate/src/phys04_receipt.rs:56:4
+   |
+56 | fn accepted_half1_producer(_permit:&Phys04ExactPermit,c:&HhRunConfig,old:&HhPairedState)->Result<AcceptedHalf1,ForwardError>{
+   |    ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `ReceiptNoRedispatch` should have a snake case name
+  --> candidate/src/phys04_receipt.rs:87:13
+   |
+87 |  #[test] fn ReceiptNoRedispatch(){
+   |             ^^^^^^^^^^^^^^^^^^^ help: convert the identifier to snake case: `receipt_no_redispatch`
+   |
+   = note: `#[warn(non_snake_case)]` (part of `#[warn(nonstandard_style)]`) on by default
+
+warning: function `RootTubeAuthority` should have a snake case name
+  --> candidate/src/phys04_receipt.rs:95:13
+   |
+95 |  #[test] fn RootTubeAuthority(){
+   |             ^^^^^^^^^^^^^^^^^ help: convert the identifier to snake case: `root_tube_authority`
+
+warning: function `NativeBudgetRefusal` should have a snake case name
+   --> candidate/src/phys04_receipt.rs:100:13
+    |
+100 |  #[test] fn NativeBudgetRefusal(){assert!(phys04_native_dispatch_requested().is_err());assert_eq!(phys04_native_counts(),[0;4]);}
+    |             ^^^^^^^^^^^^^^^^^^^ help: convert the identifier to snake case: `native_budget_refusal`
+
+warning: `hh_phys04_candidate` (lib test) generated 8 warnings (run `cargo fix --lib -p hh_phys04_candidate --tests` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.06s
+     Running unittests src/lib.rs (target/debug/deps/hh_phys04_candidate-f0f39e07f83a128b)

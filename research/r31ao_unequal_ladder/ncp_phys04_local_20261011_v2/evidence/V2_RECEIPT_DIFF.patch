@@ -1,0 +1,72 @@
+--- /root/WU088_HH_PHYS04_NCP_20261011/repo/research/r31ao_unequal_ladder/ncp_phys04_local_20261011_v1/candidate/src/phys04_receipt.rs	2026-10-11 02:31:05.064559219 +0900
++++ /root/WU088_HH_PHYS04_NCP_20261011/repo/research/r31ao_unequal_ladder/ncp_phys04_local_20261011_v2/candidate/src/phys04_receipt.rs	2026-10-11 07:06:37.970215426 +0900
+@@ -20,7 +20,7 @@
+  fn amplitude(c:&PairedConfig,h:[f64;3],old:&PairedState,dt:f64,lambda:f64,b:f64)->Self{
+   let mut config=vec![c.spectral_subdivisions as u64,c.n_mu as u64,c.n_phi as u64];config.extend(h.map(f64::to_bits));config.extend([lambda.to_bits(),b.to_bits()]);
+   // Actual compiled source bytes; binary/loader identity is supplied separately at delivery.
+-  let source=[include_bytes!("paired_runtime.rs").as_slice(),include_bytes!("hh_paired_extension.rs").as_slice(),include_bytes!("phys04_receipt.rs").as_slice(),include_bytes!("phys04_mixed.rs").as_slice(),include_bytes!("interval_ad.rs").as_slice()].concat();
++  let source=[include_bytes!("paired_runtime.rs").as_slice(),include_bytes!("hh_paired_extension.rs").as_slice(),include_bytes!("phys04_receipt.rs").as_slice(),include_bytes!("phys04_mixed.rs").as_slice(),include_bytes!("interval_ad.rs").as_slice(),include_bytes!("interval_math.rs").as_slice(),include_bytes!("coupled_primary.rs").as_slice(),include_bytes!("hh_primary_extension.rs").as_slice(),include_bytes!("hh_return_enclosure.rs").as_slice(),include_bytes!("phys04_transport.rs").as_slice()].concat();
+   Self{config,old:physical_words(old),clock:[old.time_s.to_bits(),dt.to_bits()],source}
+  }
+ }
+@@ -33,11 +33,14 @@
+ // Accepted receipt consumes the returned object. No solver/callback is invoked here.
+ struct AcceptedHalf1 {returned:SameEndpointReturn,history:[f64;4]}
+ fn accepted_half1_receipt(returned:SameEndpointReturn,c:&PairedConfig,h:[f64;3],old:&PairedState,history:[f64;4])->Result<AcceptedHalf1,ForwardError>{
+- use crate::coupled_primary::hh_root_matches;
+- if returned.identity!=EndpointIdentity::new(c,h,old,6.25e8)
++ accepted_half1_amplitude_receipt(returned,c,h,old,history,1.0,1.0)
++}
++fn accepted_half1_amplitude_receipt(returned:SameEndpointReturn,c:&PairedConfig,h:[f64;3],old:&PairedState,history:[f64;4],lambda:f64,b:f64)->Result<AcceptedHalf1,ForwardError>{
++ use crate::coupled_primary::hh_amplitude_root_matches;
++ if ![lambda,b].iter().all(|x|x.is_finite()&&(0.0..=1.0).contains(x)) || returned.identity!=EndpointIdentity::amplitude(c,h,old,6.25e8,lambda,b)
+  || old.time_s.to_bits()!=1.6e11_f64.to_bits() || returned.next.time_s.to_bits()!=1.60625e11_f64.to_bits()
+  || !returned.ledger.is_finite() || returned.ledger>1e-12
+- || !hh_root_matches(&returned.root,&returned.stage,&returned.prebe,&returned.parent,6.25e8,returned.control,HhMode::Lcs91)
++ || !hh_amplitude_root_matches(&returned.root,&returned.stage,&returned.prebe,&returned.parent,6.25e8,returned.control,lambda)
+  || returned.root.root.q<0.0 || returned.root.root.q>=1.0 || !returned.root.root.q.is_finite()
+  || !(0..4).all(|i|returned.root.root.gas[i].lo<returned.root.image[i].lo&&returned.root.image[i].hi<returned.root.root.gas[i].hi)
+  || returned.history.as_ref().map(|v|v.0.map(f64::to_bits))!=Some(history.map(f64::to_bits))
+@@ -48,7 +51,8 @@
+  Ok(AcceptedHalf1{returned,history})
+ }
+ fn resolve_half2_predecessor(receipt:&AcceptedHalf1,c:&PairedConfig,h:[f64;3],old:&PairedState,history:[f64;4])->Result<PairedState,ForwardError>{
+- if receipt.returned.identity!=EndpointIdentity::new(c,h,old,6.25e8)||receipt.history.map(f64::to_bits)!=history.map(f64::to_bits){return Err(fail("PHYS04_PREDECESSOR_IDENTITY"));}
++ let config=&receipt.returned.identity.config;let lambda=f64::from_bits(config[6]);let b=f64::from_bits(config[7]);
++ if receipt.returned.identity!=EndpointIdentity::amplitude(c,h,old,6.25e8,lambda,b)||receipt.history.map(f64::to_bits)!=history.map(f64::to_bits){return Err(fail("PHYS04_PREDECESSOR_IDENTITY"));}
+  Ok(receipt.returned.next.clone())
+ }
+ // Private future issuer: existing primal/root paths remain separate; one endpoint.
+@@ -56,11 +60,15 @@
+ fn accepted_half1_producer(_permit:&Phys04ExactPermit,c:&HhRunConfig,old:&HhPairedState)->Result<AcceptedHalf1,ForwardError>{
+  hh_check(c,old)?;
+  if c.mode()!=HhMode::Lcs91{return Err(fail("PHYS04_LEGACY_POINT_ONLY_LCS_SEAM"));}
+- let nodes=energy_nodes(c.grid())?;let mut result=hh_source_endpoint_returned(c.grid(),c.hubble(),old.base(),6.25e8,&nodes,1.0,1.0)?;
++ accepted_half1_amplitude_producer(_permit,c,old,1.0,1.0)
++}
++fn accepted_half1_amplitude_producer(_permit:&Phys04ExactPermit,c:&HhRunConfig,old:&HhPairedState,lambda:f64,b:f64)->Result<AcceptedHalf1,ForwardError>{
++ hh_check(c,old)?;if c.mode()!=HhMode::Lcs91||![lambda,b].iter().all(|x|x.is_finite()&&(0.0..=1.0).contains(x)){return Err(fail("PHYS04_AMPLITUDE_IDENTITY"));}
++ let nodes=energy_nodes(c.grid())?;let mut result=hh_source_endpoint_returned(c.grid(),c.hubble(),old.base(),6.25e8,&nodes,lambda,b)?;
+  let before=[old.hh_events,old.hh_heat,old.hh_comp[0],old.hh_comp[1]];
+  let e=accumulate(before[0],before[2],result.events[0]);let heat=accumulate(before[1],before[3],result.events[1]);
+  result.history=Some((before,[e.0,heat.0,e.1,heat.1]));
+- accepted_half1_receipt(result,c.grid(),c.hubble(),old.base(),before)
++ accepted_half1_amplitude_receipt(result,c.grid(),c.hubble(),old.base(),before,lambda,b)
+ }
+ fn resolve_half2_hh_predecessor(receipt:&AcceptedHalf1,c:&HhRunConfig,old:&HhPairedState)->Result<HhPairedState,ForwardError>{
+  hh_check(c,old)?;let before=[old.hh_events,old.hh_heat,old.hh_comp[0],old.hh_comp[1]];
+@@ -97,5 +105,14 @@
+   let(c,old,r)=fixture();let receipt=accepted_half1_receipt(r,&c,[1e-14;3],&old,[0.3,-4.0,1e-17,2e-17]).unwrap();
+   let mut changed=old.clone();changed.lower_guard_u[0]=1e-9;assert!(resolve_half2_predecessor(&receipt,&c,[1e-14;3],&changed,[0.3,-4.0,1e-17,2e-17]).is_err());assert!(resolve_half2_predecessor(&receipt,&c,[1e-14;3],&old,[0.0;4]).is_err());
+  }
++ #[test] fn AmplitudeReceiptFourCorners(){
++ let before=phys04_native_counts();let history=[0.3,-4.0,1e-17,2e-17];
++ for (lambda,b) in [(0.0,0.0),(0.0,1.0),(1.0,0.0),(1.0,1.0),(0.4,0.6)] {
++ let(c,old,mut r)=fixture();r.root.amplitude=lambda;r.identity=EndpointIdentity::amplitude(&c,[1e-14;3],&old,6.25e8,lambda,b);
++ let a=accepted_half1_amplitude_receipt(r,&c,[1e-14;3],&old,history,lambda,b).unwrap();let next=resolve_half2_predecessor(&a,&c,[1e-14;3],&old,history).unwrap();assert_eq!(physical_words(&next),physical_words(&a.returned.next));assert_eq!(a.history,history);
++ let(c,old,mut r)=fixture();r.root.amplitude=lambda;r.identity=EndpointIdentity::amplitude(&c,[1e-14;3],&old,6.25e8,lambda,b);
++ assert!(accepted_half1_amplitude_receipt(r,&c,[1e-14;3],&old,history,lambda,if b==0.0{1.0}else{0.0}).is_err());
++ }assert_eq!(phys04_native_counts(),before);
++ }
+  #[test] fn NativeBudgetRefusal(){assert!(phys04_native_dispatch_requested().is_err());assert_eq!(phys04_native_counts(),[0;4]);}
+ }

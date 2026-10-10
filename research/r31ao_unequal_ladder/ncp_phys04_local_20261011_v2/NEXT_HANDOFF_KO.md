@@ -1,0 +1,1 @@
+입력 detached receipt identity는 검증 완료. 이어갈 것은 실제 CommonFamily→trusted amplitude producer 연결과 승인 issuer, source-bound strict coupled root/uniform tube, future live worker identity 및 별도 exact authorization이다. 현재authorization=null/budget0. 실제 D/I/defects/continuous error/remainder는 null. 기존 과학 suite/FD1/FD2/6cell/G256를 재실행하지 말라.

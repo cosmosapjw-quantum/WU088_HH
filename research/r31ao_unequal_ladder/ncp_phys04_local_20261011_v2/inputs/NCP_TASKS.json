@@ -1,0 +1,878 @@
+{
+  "schema": "WU088_HH.NCP_PHYS04_TASKS.v1",
+  "language": "ko",
+  "document_status": "PENDING",
+  "purpose": "PHYS04 source-ordered quartic/remap/implicit mixed reference를 실제 owner FT03/LCS HHe kernel에 이식하기 위한 구현 DAG. 이 파일의 task/test는 수행 지시이며 완료 증거가 아니다.",
+  "completion_semantics": "현재 budget0 아래 코드·build·targeted synthetic validation·return/preservation을 완료한다. Actual native/family/continuous certification은 별도 허가와 증거가 없으면 PENDING/null을 유지한다.",
+  "repository": "cosmosapjw-quantum/WU088_HH",
+  "input_pins": {
+    "owner_branch": "research/ncp-energy06c-owner-birth-20261009",
+    "owner_commit": "569b04cd71e45756e0fd476aef6643bd9434f4fa",
+    "research_branch": "research/hh-energy06d-birth-tv-20261010",
+    "research_parent_commit": "93e04c51c682216d9cb662b77a52a5783b15c71f",
+    "phys04_packet_prefix": "research/r31ao_unequal_ladder/hh_phys04_ordered_quartic_20261010_v1",
+    "final_publication_commit_source": "detached delivery receipt",
+    "final_archive_sha256_source": "detached delivery receipt",
+    "intake_owner_delta_policy": "fresh refs once; compare actual owner to pin; reuse unchanged immutable snapshots; no historical science suite replay",
+    "source_bindings_file": "inputs/source_survey/SOURCE_LINE_BINDINGS.json",
+    "source_binding_identity_fields": [
+      "source_commit",
+      "git_blob",
+      "source_sha256",
+      "start",
+      "end",
+      "selected_sha256"
+    ],
+    "contributor_role": "source survey and NCP prompt contributor; not independent decision reviewer"
+  },
+  "host_model_policy": {
+    "producer_host_label": "GPT-6 Astra Pro",
+    "producer_harness_family": "Astra research/coding v4.0.0",
+    "producer_runtime_attestation": null,
+    "local_agent_selection": "현재 host metadata와 적용 가능한 physmath-research-loop routing을 읽고 실제 model/harness를 기록",
+    "parent_label_is_local_attestation": false
+  },
+  "authority": {
+    "authorized_work": [
+      "read-only source intake",
+      "new isolated additive worktree/sidecar",
+      "code implementation",
+      "offline build when dependencies exist",
+      "bounded targeted synthetic and changed-dependency regression checks",
+      "concrete future execution proposal",
+      "additive git publication and create-only designated backups"
+    ],
+    "actual_native_science_budget": {
+      "actual_science_dispatches": 0,
+      "actual_macro_executions": 0,
+      "actual_top_level_endpoint_dispatches": 0,
+      "actual_conservative_be_point_solver_calls": 0,
+      "actual_certificate_internal_point_solver_calls": 0,
+      "actual_root_enclosure_producer_calls": 0,
+      "actual_receipt_added_endpoint_calls": 0,
+      "actual_receipt_added_root_calls": 0,
+      "actual_legacy_atomic_integral_calls": 0,
+      "actual_retries": 0
+    },
+    "authorization_record": null,
+    "refusal_exit_code": 77,
+    "frozen_source_policy": "native/reference, vendor/orchestration, archived scientific arrays, checkpoints, ACK remain byte-preserved",
+    "promotion": "HOLD; component, synthetic, algebra and source-bound point checks do not confer native/physical/production admission",
+    "future_proposal": {
+      "authorization": false,
+      "macros_max": 1,
+      "four_corner_count": 4,
+      "schedule": [
+        "full",
+        "half1",
+        "half2_from_same_corner_accepted_half1"
+      ],
+      "top_level_endpoint_dispatches_max": 12,
+      "max_concurrency": 1,
+      "max_retries": 0,
+      "wall_seconds": null,
+      "memory_bytes": null,
+      "live_worker_binding": null,
+      "point_solver_calls_not_equal_endpoint_dispatches": true,
+      "condition": "단순 제안이다. typed same-execution receipt, exact family/root/tube source bindings, finite budgets 및 새 실제 authorization 전 dispatch 불가."
+    },
+    "candidate_source_overlay_policy": "original_owner_dependency snapshot은 byte-preserved reference이며 actual callback 확장은 새 candidate source overlay에서 수행한다. Overlay source/blob/compiler/ABI와 원본 대비 diff를 바인딩한다."
+  },
+  "call_counter_contract": {
+    "increment_at": "실제 함수 진입점에서 분리 계수하고 모든 early return/receipt path를 포함한다.",
+    "categories": [
+      "actual_science_dispatches",
+      "actual_macro_executions",
+      "actual_top_level_endpoint_dispatches",
+      "actual_conservative_be_point_solver_calls",
+      "actual_certificate_internal_point_solver_calls",
+      "actual_root_enclosure_producer_calls",
+      "actual_receipt_added_endpoint_calls",
+      "actual_receipt_added_root_calls",
+      "actual_legacy_atomic_integral_calls",
+      "actual_retries",
+      "synthetic_endpoint_fixture_calls",
+      "synthetic_root_fixture_calls",
+      "source_rhs_evaluations",
+      "source_derivative_evaluations",
+      "linear_tangent_solves",
+      "build_invocations",
+      "targeted_test_invocations"
+    ],
+    "disjoint_meaning": "top-level endpoint, conservative point, certificate-internal point, root enclosure는 별도 항목이다. 서로 다른 계수를 하나의 12 calls로 합치지 않는다.",
+    "receipt_delta_required": {
+      "endpoint": 0,
+      "root_enclosure": 0,
+      "point_solver": 0
+    },
+    "observation_policy": "실행하지 않은 phase의 observed count는 null; 실제 측정한 zero만 0으로 기록한다. Synthetic count와 actual count를 합치지 않는다."
+  },
+  "source_entrypoints": [
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/paired_stage_receipt.rs",
+      "symbols": [
+        "accepted_half1_receipt",
+        "resolve_half2_predecessor",
+        "uniform_family_certificate_requested"
+      ],
+      "bindings": [
+        "SS16",
+        "SS17",
+        "SS22"
+      ],
+      "note": "accepted_half1_receipt line34의 prospective actual_full redispatch가 첫 patch obligation"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/owner_birth.rs",
+      "symbols": [
+        "ExactSciencePermit",
+        "actual_full",
+        "actual_twohalf",
+        "actual_linked_chain",
+        "linked_tangent_stage",
+        "remap_lambda_fixed_theta"
+      ],
+      "bindings": [
+        "SS07"
+      ],
+      "note": "현재 permit issuer 없음; actual family λ,b lift는 구현 의무"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/original_owner_dependency/src/hh_paired_extension.rs",
+      "symbols": [
+        "HhRunIdentity",
+        "HhRunConfig",
+        "hh_check",
+        "hh_source_endpoint"
+      ],
+      "bindings": [
+        "SS08",
+        "SS09",
+        "SS10",
+        "SS11"
+      ]
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/original_owner_dependency/src/coupled_primary.rs",
+      "symbols": [
+        "interval_rhs"
+      ],
+      "bindings": [
+        "SS14"
+      ]
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/original_owner_dependency/src/hh_primary_extension.rs",
+      "symbols": [
+        "hh_rate_jet",
+        "hh_interval_source",
+        "hh_stage_root",
+        "hh_stage_step"
+      ],
+      "bindings": [
+        "SS13",
+        "SS15"
+      ]
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/original_owner_dependency/src/paired_runtime.rs",
+      "symbols": [
+        "source_weights"
+      ],
+      "bindings": [
+        "SS12"
+      ],
+      "note": "source_weights exact full snapshot도 읽어 endpoint clock/order를 보존"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/original_owner_dependency/src/interval_ad.rs",
+      "symbols": [],
+      "bindings": [
+        "SS13",
+        "SS14"
+      ],
+      "note": "original Jet/interval arithmetic source 파일 identity를 fresh delta 또는 immutable snapshot에서 바인딩",
+      "git_blob_at_owner_pin": "93f3abc33af7855719b65b839c01359ce494e2de"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/src/main.rs",
+      "symbols": [
+        "main"
+      ],
+      "bindings": [
+        "SS04"
+      ]
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/cargo/Cargo.toml",
+      "symbols": [
+        "receipt_contract"
+      ],
+      "bindings": [
+        "SS05"
+      ]
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/cargo/owner_runtime.rs",
+      "symbols": [],
+      "bindings": [
+        "SS05",
+        "SS25"
+      ],
+      "note": "absolute include relocation; original source bytes는 보존"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/prepare_e.py",
+      "symbols": [],
+      "bindings": [
+        "SS25"
+      ],
+      "note": "historical path/copy assumptions; blindly invoke 금지"
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/original_owner_dependency/examples/support/hh_cli.rs",
+      "symbols": [
+        "parse"
+      ],
+      "bindings": [
+        "SS06"
+      ]
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_phys01_mixed_contract_20261010_v1/src/mixed_family.py",
+      "symbols": [],
+      "bindings": [
+        "SS18"
+      ]
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_phys01_mixed_contract_20261010_v1/tests/test_mixed_family.py",
+      "symbols": [
+        "MixedFamilyTests"
+      ],
+      "bindings": [
+        "SS23"
+      ]
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_phys01_mixed_contract_20261010_v1/evidence/EXECUTION_AUTHORIZATION_RECEIPT.json",
+      "symbols": [],
+      "bindings": [
+        "SS19"
+      ]
+    },
+    {
+      "path": "research/r31ao_unequal_ladder/ncp_phys01_mixed_contract_20261010_v1/evidence/MODEL_AND_CORNER_IDENTITY.json",
+      "symbols": [],
+      "bindings": [
+        "SS20"
+      ]
+    }
+  ],
+  "common_family_target": {
+    "implemented_status": "PENDING",
+    "initial_archive_sha256": "678f967f0d50ad1fff47a73e2e63193429b708246cd84ca8ffc72191c31b522b",
+    "initial_archive_bytes": 108416,
+    "initial_archive_local_path": null,
+    "initial_time_s": "160000000000",
+    "macro_h_s": "1250000000",
+    "half_h_s": "625000000",
+    "grid": {
+      "directions": 128,
+      "energy_nodes": 33,
+      "lower_guard_n": 128,
+      "lower_guard_u": 128,
+      "gas_components": 4
+    },
+    "fixed_hubble_per_s": [
+      "1e-14",
+      "1e-14",
+      "1e-14"
+    ],
+    "lambda_range": [
+      "0",
+      "1"
+    ],
+    "source_b_range": [
+      "0",
+      "1"
+    ],
+    "corners": [
+      {
+        "id": "11",
+        "lambda": "1",
+        "b": "1"
+      },
+      {
+        "id": "10",
+        "lambda": "1",
+        "b": "0"
+      },
+      {
+        "id": "01",
+        "lambda": "0",
+        "b": "1"
+      },
+      {
+        "id": "00",
+        "lambda": "0",
+        "b": "0"
+      }
+    ],
+    "source_scale_photons_per_H_per_s": "5e-15",
+    "birth_energy_eV": "13.7",
+    "invariant": "하나의 공통 physical initial gas/photon/guard/box/compensation payload를 사용하고 archive의 과거 HH history와 새 future increment ledger를 분리한다.",
+    "forbidden_initialization": [
+      "ON seed byte identity를 OFF로 retag",
+      "과거 HH ledger/compensation zeroing",
+      "b=0에서 old photon stock/guard 삭제",
+      "서로 다른 과거 ON/OFF history를 공통 state corner라고 명명",
+      "half1 preBE 25group spectrum을 raw macro predecessor로 사용"
+    ],
+    "initial_tangents": "parameter-independent common initial physical payload에서만 U=V=W=0; history-dependent restart 또는 half2에서는 운반된 U,V,W 보존"
+  },
+  "tasks": [
+    {
+      "id": "NCP04-00",
+      "status": "PENDING",
+      "priority": 0,
+      "depends_on": [],
+      "title": "정확한 local intake와 isolated relocation",
+      "source_bindings": [
+        "SS01",
+        "SS02",
+        "SS03",
+        "SS04",
+        "SS05",
+        "SS06",
+        "SS19",
+        "SS25"
+      ],
+      "instructions": [
+        "현재 AGENTS/harness/model metadata와 preserved state를 읽는다.",
+        "detached receipt의 final Git/ZIP identity를 확인한다. parent93e04…는 publication SHA가 아니다.",
+        "owner ref delta를 한 번 읽고 달라진 relevant source만 조사한다.",
+        "새 additive worktree와 sidecar manifest에서 absolute build/include paths만 의도적으로 relocation한다.",
+        "기존 immutable input과 original owner source bytes를 보존한다."
+      ],
+      "outputs": [
+        "intake receipt",
+        "model/harness record",
+        "source delta record",
+        "relocation diff and compiler/ABI manifest"
+      ],
+      "acceptance": [
+        "current owner commit/tree and dirty-worktree state recorded",
+        "all source uses bound to commit/blob or immutable snapshot identity",
+        "no forced reset/stash, old state overwrite or repeated science suite",
+        "no invented final packet hash or runtime attestation"
+      ]
+    },
+    {
+      "id": "NCP04-01",
+      "status": "PENDING",
+      "priority": 1,
+      "depends_on": [
+        "NCP04-00"
+      ],
+      "title": "첫 patch: 같은 실행의 typed receipt로 redispatch 제거",
+      "source_bindings": [
+        "SS07",
+        "SS15",
+        "SS16",
+        "SS17",
+        "SS22"
+      ],
+      "instructions": [
+        "private same-execution result type에 state, original root certificate, point result, carry enclosure, old/preBE/parent, source/ABI/config/clock identity를 바인딩한다.",
+        "accepted_half1_receipt가 actual_full을 다시 호출하지 않게 하며 object를 consume 또는 검증한다.",
+        "caller-filled JSON이나 point weights에서 actual authority를 발급하지 않는다.",
+        "original root certificate box와 widened carry enclosure를 별도 보존한다.",
+        "endpoint/내부 point/root producer 계수를 분리하고 receipt delta를 기록한다."
+      ],
+      "tests": [
+        "ReceiptNoRedispatch",
+        "RootTubeAuthority"
+      ],
+      "outputs": [
+        "private returned-result/receipt implementation",
+        "counter instrumentation",
+        "synthetic trace and mutation refusal record"
+      ],
+      "acceptance": [
+        "receipt construction/resolution adds exactly 0 endpoint, 0 point-solver and 0 root-enclosure calls",
+        "returned state/source/root identity belongs to one original execution",
+        "forged/cross-run/preBE/parent/source/ABI mismatch refused",
+        "static prospective issue is not reported as an observed actual runtime failure"
+      ]
+    },
+    {
+      "id": "NCP04-02",
+      "status": "PENDING",
+      "priority": 2,
+      "depends_on": [
+        "NCP04-00",
+        "NCP04-01"
+      ],
+      "title": "과거 HH history를 보존하는 common seed family 초기화",
+      "source_bindings": [
+        "SS08",
+        "SS09",
+        "SS18",
+        "SS20",
+        "SS21"
+      ],
+      "instructions": [
+        "old archive bytes/SHA와 physical initial payload identity를 별도 기록한다.",
+        "과거 cumulative HH events/heat/compensation은 보존하고 새 lambda-dependent increments ledger를 둔다.",
+        "future b=0은 birth만 0이며 기존 photon/guard/energy는 유지한다.",
+        "full HHe gas4, 128x33 photon, guardN/U128, 모든 boxes/compensation 및 initial U,V,W contract를 직렬화한다.",
+        "기존 OFF ledger guard를 바꾸지 않고 새 typed amplitude-family identity를 만든다."
+      ],
+      "tests": [
+        "CommonStateHistory"
+      ],
+      "outputs": [
+        "versioned common-family initializer",
+        "past-history/future-increment ledger schema",
+        "common physical-state identity record"
+      ],
+      "acceptance": [
+        "all four corners share initial physical payload bytes and normalization",
+        "past history survives future lambda=0 unchanged",
+        "old ON/OFF bytes are never retagged",
+        "missing exact seed stays PENDING, not reconstructed from half1 aggregate or rerun history"
+      ]
+    },
+    {
+      "id": "NCP04-03",
+      "status": "PENDING",
+      "priority": 3,
+      "depends_on": [
+        "NCP04-02"
+      ],
+      "title": "source-order와 one-sided remap/guard chart",
+      "source_bindings": [
+        "SS10",
+        "SS11",
+        "SS12"
+      ],
+      "packet_references": [
+        "REMAP_OPACITY_THEORY_KO.md",
+        "src/remap_opacity.py",
+        "quartic/PHYS04_ORDERED_QUARTIC_KO.md"
+      ],
+      "instructions": [
+        "redshift→fixed-node hat remap→endpoint birth→grouping→endpoint-density BE ordering을 유지한다.",
+        "lambda,b-independent geometry/clock의 signed U,V,W와 guard number/energy를 이송한다.",
+        "active opacity quotient에서 R=I+sL와 Q=L^2+HL를 사용하되 raw lowest-node guard jump를 숨기지 않는다.",
+        "fixed-node sigma/cutoff와 hat cells의 branch identity를 bound한다.",
+        "quartic coefficient와 finite-step remainder를 별도 보존한다."
+      ],
+      "tests": [
+        "OrderedRemapAndGuardChart"
+      ],
+      "outputs": [
+        "chart-bound remap tangent adapter",
+        "full guard carry",
+        "source-order and threshold ledger"
+      ],
+      "acceptance": [
+        "b birth is added exactly once before BE and S* normalization is explicit",
+        "R(h) is not replaced by exp(hL)",
+        "hat/guard/thermal boundary crossing is refused or treated piecewise with explicit one-sided scope",
+        "active quotient is used only with inactive zero-opacity/no-return proof; full checkpoint retains inactive state"
+      ]
+    },
+    {
+      "id": "NCP04-04",
+      "status": "PENDING",
+      "priority": 4,
+      "depends_on": [
+        "NCP04-02",
+        "NCP04-03"
+      ],
+      "title": "actual FT03/LCS callback와 full photon-elimination mixed Hessian",
+      "source_bindings": [
+        "SS12",
+        "SS13",
+        "SS14"
+      ],
+      "packet_references": [
+        "IMPLICIT_MIXED_THEORY_KO.md",
+        "src/implicit_mixed.py",
+        "tests/check_implicit_mixed.py"
+      ],
+      "instructions": [
+        "원본 original_owner_dependency snapshot을 수정하지 않고 새 candidate source overlay에 actual callback 확장을 구현한다.",
+        "actual interval_rhs, hh_rate_jet/hh_interval_source 및 interval_ad arithmetic에 gas4/thermal Hessian을 연결한다.",
+        "lambda는 HH q와 -chiH*q를 함께 곱하고 b는 incoming future birth에만 작용한다.",
+        "P=N/(1+d*kappa)의 a,b,ab chain과 signed incoming derivatives를 포함한다.",
+        "source-bound T, nH(t_end), fHe, chi, c/kB, FT03 collision/recombination/heat/expansion 및 LCS noninteger power/exp derivative를 보존한다.",
+        "admissible synthetic gas states에서 실제 callback의 독립 derivative oracle를 구성하고 shared source dependence를 밝힌다."
+      ],
+      "tests": [
+        "ActualRhsMixedCallbacks",
+        "PhotonZeroStockSignedMixed"
+      ],
+      "outputs": [
+        "actual callback mixed Jet adapter",
+        "source-bound Hessian exporter",
+        "callback formula/units and oracle evidence"
+      ],
+      "acceptance": [
+        "P_ab=(N_ab-P*D_ab-P_a*D_b-P_b*D_a)/D with D>0",
+        "N=0 admits signed derivatives without division by stock or positivity clipping",
+        "gas-photon cross derivatives, EOS particle count, -2Hw and HH no-1/2 convention retained",
+        "polynomial fixture results are not represented as actual FT03/LCS derivative validation"
+      ]
+    },
+    {
+      "id": "NCP04-05",
+      "status": "PENDING",
+      "priority": 5,
+      "depends_on": [
+        "NCP04-01",
+        "NCP04-02",
+        "NCP04-03",
+        "NCP04-04"
+      ],
+      "title": "old gas/photon U,V,W와 accepted half chain",
+      "source_bindings": [
+        "SS07",
+        "SS10",
+        "SS15",
+        "SS17",
+        "SS18"
+      ],
+      "packet_references": [
+        "IMPLICIT_MIXED_THEORY_KO.md",
+        "src/implicit_mixed.py",
+        "quartic/PHYS04_ORDERED_QUARTIC_KO.md"
+      ],
+      "instructions": [
+        "A=G_y; AU=-G_a, AV=-G_b, AW=-r_ab를 실제 reduced residual에 연결한다.",
+        "r_ab에 old y0_ab, incoming N_ab, gas Hessian, mixed gas/photon terms 및 H_y V를 포함한다.",
+        "accepted half1 result의 모든 state/enclosure/UVW/guards/compensation/identity를 half2 입력으로 연결한다.",
+        "full diagnostic과 accepted twohalf를 구분하고 accepted ledger에는 twohalf의 increments만 누적한다."
+      ],
+      "tests": [
+        "LinkedHalfMixedCarry",
+        "PhotonZeroStockSignedMixed"
+      ],
+      "outputs": [
+        "full mixed tangent stage",
+        "same-corner half1→half2 receipt chain",
+        "term inventory and exact synthetic comparison"
+      ],
+      "acceptance": [
+        "nonzero half1 gas/photon U,V,W changes half2 as expected",
+        "half2 rejects weights-only, wrong parent/corner/source/clock and forged root authority",
+        "point tangent linear algebra is not called a uniform family enclosure",
+        "source derivative evaluation/linear solves add no actual endpoint/root dispatch"
+      ]
+    },
+    {
+      "id": "NCP04-06",
+      "status": "PENDING",
+      "priority": 6,
+      "depends_on": [
+        "NCP04-04",
+        "NCP04-05"
+      ],
+      "title": "source-bound uniform root/tube exporter를 실행 없이 준비",
+      "source_bindings": [
+        "SS15",
+        "SS17",
+        "SS18",
+        "SS19"
+      ],
+      "packet_references": [
+        "SCIENTIFIC_CONTRACT.md",
+        "IMPLICIT_MIXED_THEORY_KO.md"
+      ],
+      "instructions": [
+        "fixed C/preconditioner identity, interval G_y/Hessian, domain, parameter rectangle, old/incoming boxes를 묶는 certificate schema/exporter를 구현한다.",
+        "actual root certificate와 uniform-family tube를 분리한다.",
+        "arbitrary JSON inverse/C, point-only or source/ABI mismatch certificate를 reject한다.",
+        "native producer invocation은 gate 뒤에 두고 current budget0 경로의 refusal를 검증한다."
+      ],
+      "tests": [
+        "RootTubeAuthority",
+        "NativeBudgetRefusal"
+      ],
+      "outputs": [
+        "certificate/exporter implementation",
+        "missing actual root/tube premise list",
+        "authority refusal evidence"
+      ],
+      "acceptance": [
+        "no actual native root/tube computation during this task",
+        "original root domain not replaced with carry enclosure",
+        "uniform invertibility/existence uniqueness premise remains PENDING until real source-bound certificate",
+        "branch/thermal/hat/guard and positive denominator conditions are explicit"
+      ]
+    },
+    {
+      "id": "NCP04-07",
+      "status": "PENDING",
+      "priority": 7,
+      "depends_on": [
+        "NCP04-01",
+        "NCP04-02",
+        "NCP04-03",
+        "NCP04-04",
+        "NCP04-05",
+        "NCP04-06"
+      ],
+      "title": "build와 변경에 필요한 targeted 검증",
+      "source_bindings": [
+        "SS04",
+        "SS05",
+        "SS22",
+        "SS23",
+        "SS24",
+        "SS25"
+      ],
+      "tests": [
+        "ReceiptNoRedispatch",
+        "CommonStateHistory",
+        "ActualRhsMixedCallbacks",
+        "PhotonZeroStockSignedMixed",
+        "OrderedRemapAndGuardChart",
+        "LinkedHalfMixedCarry",
+        "RootTubeAuthority",
+        "NativeBudgetRefusal"
+      ],
+      "instructions": [
+        "offline locked build cache가 있으면 selective commands를 수행한다.",
+        "새 TO_CREATE targets를 실제 구현/등록하고 존재하는 경로·함수·명령을 반환한다.",
+        "기존 selective tests는 변경 의존성이 있을 때만 실행한다.",
+        "최초 실패/exit와 raw log를 보존하고 algebra/numerics/implementation/runtime/authority/permission 층을 분류한다.",
+        "old PHYS03/PHYS04 scientific suites는 intake 확인 목적으로 재생하지 않는다."
+      ],
+      "outputs": [
+        "target registry",
+        "compiler/flags/ABI/build result",
+        "raw first-run logs and focused rerun records",
+        "separate call counters"
+      ],
+      "acceptance": [
+        "reported test names exist and log paths/hashes/exits are real",
+        "no blanket cargo test/native run or full legacy science replay",
+        "all current actual native counters observed 0",
+        "receipt extra calls remain 0 under targeted synthetic spies"
+      ]
+    },
+    {
+      "id": "NCP04-08",
+      "status": "PENDING",
+      "priority": 8,
+      "depends_on": [
+        "NCP04-05",
+        "NCP04-06",
+        "NCP04-07"
+      ],
+      "title": "별도 관측량 schema 및 conditional assembly",
+      "source_bindings": [
+        "SS18",
+        "SS19",
+        "SS20"
+      ],
+      "packet_references": [
+        "NCP_LOCAL_CODEX_HANDOFF_KO.md",
+        "NCP_RETURN_TEMPLATE.json"
+      ],
+      "instructions": [
+        "D_h^scheme(b), I_h^scheme, HH scheme defect, mixed scheme defect를 별도 객체로 구현한다.",
+        "true continuous error는 별도 exact continuous target/enclosure가 있을 때만 계산한다.",
+        "W at candidate, local quartic coefficient, selected-spectrum remap result를 finite actual I 값으로 대입하지 않는다.",
+        "actual four-corner/root/tube certificate가 없으면 모든 actual metrics를 null로 반환한다."
+      ],
+      "outputs": [
+        "observable definitions/units and conditional assembler",
+        "explicit null actual metrics with missing premises"
+      ],
+      "acceptance": [
+        "each metric carries shared seed/source/clock/rectangle/enclosure identity",
+        "no finite four-corner value or sign is fabricated",
+        "continuous error and scheme difference remain separate",
+        "synthetic/reference metrics are labelled and segregated"
+      ]
+    },
+    {
+      "id": "NCP04-09",
+      "status": "PENDING",
+      "priority": 9,
+      "depends_on": [
+        "NCP04-07",
+        "NCP04-08"
+      ],
+      "title": "구체적인 미래 실행 제안 한 건",
+      "source_bindings": [
+        "SS19",
+        "SS20"
+      ],
+      "instructions": [
+        "허가 제안이 필요하면 exact checkpoint/binary/source/ABI, schedule, finite wall/memory/output budget, PID/exe/maps/loader/UID/cgroup/reserve binding을 준비한다.",
+        "1macro/4corners/full-half-half 최대12 endpoint는 proposal일 뿐이며 내부 point/root calls도 산정한다.",
+        "current authorization=null/budget0는 변경하지 않는다.",
+        "미완료된 live worker binding/authority는 null 및 missing premise로 유지한다."
+      ],
+      "outputs": [
+        "concrete proposal or exact missing proposal premise list"
+      ],
+      "acceptance": [
+        "future proposal not used as authorization",
+        "no consumed FD1/FD2/6cell/ON06G256 authority reuse",
+        "receipt-added calls0, retry0, concurrency1 and finite limits explicit",
+        "actual science remains unexecuted without new authorization"
+      ]
+    },
+    {
+      "id": "NCP04-10",
+      "status": "PENDING",
+      "priority": 10,
+      "depends_on": [
+        "NCP04-07",
+        "NCP04-08",
+        "NCP04-09"
+      ],
+      "title": "독립 판정·보존·Git/백업·자립적 반환",
+      "source_bindings": [
+        "SS01",
+        "SS19"
+      ],
+      "instructions": [
+        "candidate/validation 설계에 참여하지 않은 reviewer에게 scope-limited independent decision을 받는다.",
+        "새 additive branch의 code/source binding/tests/limitations와 첫 실패를 게시한다.",
+        "완성한 return template에 실제 evidence만 채우고 actual 미실행은 null 및 measured dispatch0으로 기록한다.",
+        "동일 sealed archive를 지정 Drive/Dropbox create-only로 보존하고 ACK/readback/restore 층을 분리한다.",
+        "publication commit/ZIP SHA는 detached delivery receipt에 기록한다."
+      ],
+      "outputs": [
+        "filled NCP return JSON",
+        "Korean implementation report",
+        "independent review",
+        "additive Git receipt",
+        "detached archive/backup receipt"
+      ],
+      "acceptance": [
+        "no main merge/force push or old source/checkpoint overwrite",
+        "no contributor mislabelled independent decision reviewer",
+        "upload ACK is not described as restore verification",
+        "physical/production HOLD and legacy open gates preserved"
+      ]
+    }
+  ],
+  "test_catalog": [
+    {
+      "id": "ReceiptNoRedispatch",
+      "existence": "TO_CREATE",
+      "scope": "synthetic single-execution result/receipt",
+      "criteria": [
+        "one fixture result consumed without redispatch",
+        "endpoint/point/root counters unchanged by receipt",
+        "cross-run/source/ABI/root/preBE/parent mutations rejected"
+      ]
+    },
+    {
+      "id": "CommonStateHistory",
+      "existence": "TO_CREATE",
+      "scope": "synthetic state and archive identity contract",
+      "criteria": [
+        "same physical payload in four corners",
+        "past HH offsets and compensations retained at lambda0",
+        "future b0 keeps old photon/guard stock",
+        "no ON→OFF retag or old OFF guard relaxation"
+      ]
+    },
+    {
+      "id": "ActualRhsMixedCallbacks",
+      "existence": "TO_CREATE",
+      "scope": "actual FT03/LCS callback derivatives evaluated on bounded synthetic admissible states",
+      "criteria": [
+        "independent first/mixed/second derivative oracle with precision/domain/error method",
+        "full HHe thermal and elimination chain",
+        "shared-source oracle dependency recorded"
+      ]
+    },
+    {
+      "id": "PhotonZeroStockSignedMixed",
+      "existence": "TO_CREATE",
+      "scope": "synthetic zero-stock/positive-denominator cases",
+      "criteria": [
+        "N0 signed Na/Nb/Nab survives",
+        "both cross denominator terms and Dab",
+        "no nonnegative clip on derivative intervals"
+      ]
+    },
+    {
+      "id": "OrderedRemapAndGuardChart",
+      "existence": "TO_CREATE",
+      "scope": "synthetic fixed-grid one-sided chart",
+      "criteria": [
+        "one/two remap identity with Q=L²+HL",
+        "inactive quotient proof and raw guard jump separately",
+        "signed UVW guardN/U and fixed-node sigma/cutoff"
+      ]
+    },
+    {
+      "id": "LinkedHalfMixedCarry",
+      "existence": "TO_CREATE",
+      "scope": "synthetic linked half receipt with nonzero incoming mixed state",
+      "criteria": [
+        "all gas4/photon/guard UVW propagated",
+        "parent/clock/member/source consistency",
+        "old mixed forcing and H_yV included"
+      ]
+    },
+    {
+      "id": "RootTubeAuthority",
+      "existence": "TO_CREATE",
+      "scope": "synthetic certificate and source-binding refusal",
+      "criteria": [
+        "same-execution root identity retained",
+        "point does not grant family authority",
+        "fixed C/source/ABI/clock/domain mismatch rejection"
+      ]
+    },
+    {
+      "id": "NativeBudgetRefusal",
+      "existence": "TO_CREATE",
+      "scope": "entrypoint/permit refusal; no kernel",
+      "criteria": [
+        "null authority and budget0 produce refusal before native dispatch",
+        "actual counters0",
+        "no retry/hidden receipt call",
+        "historical receipt_contract exit77 remains intentional"
+      ]
+    }
+  ],
+  "selective_commands": {
+    "command_semantics": "변수를 현 host의 확인된 isolated paths로 채운다. 원본 absolute build paths를 먼저 relocation한다. 아래 기존 tests는 관련 dependency 변경 때만 수행한다.",
+    "existing_build": [
+      "cargo check --offline --locked --manifest-path \"$NCP_PHYS04_WORK/cargo/Cargo.toml\" --bin receipt_contract",
+      "cargo test --offline --locked --manifest-path \"$NCP_PHYS04_WORK/cargo/Cargo.toml\" --bin receipt_contract --no-run"
+    ],
+    "existing_synthetic_receipt_regression": "cargo test --offline --locked --manifest-path \"$NCP_PHYS04_WORK/cargo/Cargo.toml\" --bin receipt_contract energy06e_tests -- --test-threads=1",
+    "existing_python_identity_regression": "python3 -B -Werror \"$NCP_PHYS04_CHECKOUT/research/r31ao_unequal_ladder/ncp_phys01_mixed_contract_20261010_v1/tests/test_mixed_family.py\" MixedFamilyTests.test_all_shared_identity_mutations_rejected MixedFamilyTests.test_missing_and_forged_native_certificate_rejected",
+    "new_tests": "TO_CREATE; actual new path/function/command must be registered before execution",
+    "seed_dependent_existing_tests": "actual_input_tests require exact HH_SEED/member*.bin and remain separate; prebirth source checks do not certify coupled roots",
+    "prohibited_as_intake": [
+      "unfiltered cargo test",
+      "cargo run of actual HH drivers",
+      "prepare_e.py blindly",
+      "historical PHYS/legacy full scientific suites",
+      "new finite native four-corner run"
+    ]
+  },
+  "stop_conditions": [
+    "actual native dispatch requested while authorization null or budget0",
+    "exact raw seed absent and physical data would have to be invented or historical science rerun",
+    "source/ABI/old-state/preBE/parent/family/clock mismatch",
+    "branch crossing/domain violation without explicit one-sided/piecewise contract",
+    "same-execution receipt would add an endpoint/point/root call",
+    "required source-bound uniform certificate absent for actual finite-family claim"
+  ]
+}
