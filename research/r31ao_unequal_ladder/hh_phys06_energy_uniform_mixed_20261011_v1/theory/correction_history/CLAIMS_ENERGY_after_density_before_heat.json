@@ -1,0 +1,482 @@
+{
+  "schema": "WU088_HH_PHYS06_ENERGY_CLAIMS_V1",
+  "document": "theory/ENERGY_COORDINATE_KO.md",
+  "status": "DERIVATION_COMPLETE_PENDING_INDEPENDENT_DECISION",
+  "author_role": "delegated_energy_theory",
+  "final_promotion_decision_by_author": false,
+  "model": {
+    "gas_coordinates": [
+      "x_HII",
+      "x_HeII",
+      "x_HeIII",
+      "w_eV_per_H"
+    ],
+    "energy_coordinates": [
+      "x_HII",
+      "x_HeII",
+      "x_HeIII",
+      "e_eV_per_H"
+    ],
+    "helium_normalization": "Photo rows and energy transform use stage.fHe; FT03 nonphoto source uses exact ratio of separately stored binary64 nHe/nH leaves. Their difference is preserved.",
+    "binding_energy_eV": [
+      "13.598434599702",
+      "24.587389011",
+      "54.41776"
+    ],
+    "provider_fit_cutoff_eV": [
+      "13.60",
+      "24.59",
+      "54.42"
+    ],
+    "fixed_for_parameter_differentiation": [
+      "step_seconds",
+      "endpoint_density_cm-3",
+      "speed_c_cm_per_s",
+      "fHe",
+      "hubble_mean_per_s",
+      "packet_energy_eV",
+      "cross_section_branch_and_values",
+      "binding_energies",
+      "source_grid_and_transport_chart",
+      "stored_model_nHe_cm-3_and_nH_cm-3_leaves"
+    ],
+    "parameter_family": [
+      "lambda_HH_strength",
+      "b_future_birth_amplitude"
+    ],
+    "new_physical_rates_or_closure": false
+  },
+  "claims": [
+    {
+      "id": "ENERGY_E01",
+      "statement": "e=w+chiH*x+fHe*chiHeI*y1+fHe*(chiHeI+chiHeII)*y2 is a constant invertible gas-coordinate transform of the existing matter energy ledger.",
+      "evidence_status": [
+        "derived"
+      ],
+      "source_status": "source_inspected",
+      "equations": [
+        "3",
+        "5"
+      ],
+      "sources": [
+        "E-SRC01",
+        "E-SRC02",
+        "E-SRC07"
+      ],
+      "limits": [
+        "Does not define baryon rest energy or a global GR conserved energy.",
+        "Temperature must still be reconstructed from w=e-binding."
+      ]
+    },
+    {
+      "id": "ENERGY_E02",
+      "statement": "The transformed HH energy row and its gas first/second derivatives vanish identically: ell*H=ell*H_g=ell*H_gg=0.",
+      "evidence_status": [
+        "derived"
+      ],
+      "source_status": "source_inspected",
+      "equations": [
+        "6",
+        "7"
+      ],
+      "sources": [
+        "E-SRC04"
+      ],
+      "limits": [
+        "Explicit energy forcing cancellation does not imply e_lambda_b=0.",
+        "All species, temperature, nonphoto and opacity responses remain coupled."
+      ]
+    },
+    {
+      "id": "ENERGY_E03",
+      "statement": "Each full H/He photo column satisfies ell*K_j=E_j*kappa_j with binding and excess heat cancellation.",
+      "evidence_status": [
+        "derived"
+      ],
+      "source_status": "source_inspected",
+      "equations": [
+        "9",
+        "10"
+      ],
+      "sources": [
+        "E-SRC01",
+        "E-SRC02",
+        "E-SRC03",
+        "E-SRC05"
+      ],
+      "premises": [
+        "Consistent per-H photon and thermal normalization.",
+        "Helium fractions are per helium with fHe>0.",
+        "Identical binding energies in K and ell; provider fit cutoffs remain separate."
+      ]
+    },
+    {
+      "id": "ENERGY_E04",
+      "statement": "For fixed N_j>=0, E_j>0, d>0, D_j>0 and affine opacity, the reduced photo energy Hessian is -2*d*sum_j(E_j*N_j*alpha_j*alpha_j^T/D_j^3), hence negative semidefinite in either gas coordinate system.",
+      "evidence_status": [
+        "derived"
+      ],
+      "equations": [
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "sources": [
+        "E-SRC01",
+        "E-SRC03"
+      ],
+      "limits": [
+        "A bilinear contraction in two distinct directions has no universal sign.",
+        "This is a fixed-N scalar photo Hessian, not the joint gas/stock or full nonphoto Hessian.",
+        "No uniform root inverse follows from concavity."
+      ]
+    },
+    {
+      "id": "ENERGY_E05",
+      "statement": "On the recovered 33-node grid with all energies <=20 eV, HeI/HeII provider cross sections are zero and the fixed-N photo energy Hessian has rank at most one along x_HII.",
+      "evidence_status": [
+        "derived"
+      ],
+      "source_status": "archived_input_inspected",
+      "equations": [
+        "15a"
+      ],
+      "sources": [
+        "E-SRC05",
+        "E-SRC08"
+      ],
+      "premises": [
+        "The same fixed grid/cutoff branch is retained.",
+        "d>0 and N_j>=0."
+      ],
+      "strict_rank_one_condition": "At least one positive-N active HI column.",
+      "limits": [
+        "No He nonphoto, thermal or HH derivative is removed.",
+        "Not an observation of a new BE endpoint, root or parameter tube."
+      ]
+    },
+    {
+      "id": "ENERGY_E06",
+      "statement": "The exact matter-photon energy residual is R_E=ell*G+sum_j E_j*R_gamma_j; exact photon elimination reduces it to ell*G.",
+      "evidence_status": [
+        "derived"
+      ],
+      "equations": [
+        "18",
+        "19"
+      ],
+      "sources": [
+        "E-SRC01",
+        "E-SRC02",
+        "E-SRC04"
+      ],
+      "nonphoto_terms": "Q0=ell*F0 is preserved without setting FT03 or expansion terms to zero.",
+      "limits": [
+        "Conservation at a candidate point requires reporting its residual.",
+        "Incoming photon N is the actual pre-BE numerator after remap/birth/grouping."
+      ]
+    },
+    {
+      "id": "ENERGY_E07",
+      "statement": "Threshold literals agree, but source density normalization differs: ell(stage.fHe)*F0=-L_escape-2*H*w+J_norm, where J_norm=(stage.fHe-exact(nHe_binary64)/exact(nH_binary64))*[chiHeI*F0_y1+(chiHeI+chiHeII)*F0_y2].",
+      "evidence_status": [
+        "derived"
+      ],
+      "source_status": "threshold_identity_and_density_normalization_difference_source_inspected",
+      "equations": [
+        "20",
+        "21",
+        "21a",
+        "21b",
+        "22"
+      ],
+      "sources": [
+        "E-SRC02",
+        "E-SRC06",
+        "E-SRC07",
+        "E-SRC09",
+        "E-SRC10"
+      ],
+      "limits": [
+        "The no-J_norm cancellation applies only when the two helium ratios agree exactly.",
+        "No blanket normalization or kernel change is authorized.",
+        "No bitwise energy conservation, actual J_norm magnitude or trajectory error is inferred.",
+        "Transport redshift, birth and guard energy retain separate ledgers."
+      ]
+    },
+    {
+      "id": "ENERGY_E08",
+      "statement": "The U,V,W energy residual identities retain full nonphoto Hessians, signed incoming stock derivatives and the current source normalization correction; no division by primal stock is required.",
+      "evidence_status": [
+        "derived"
+      ],
+      "equations": [
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "40"
+      ],
+      "sources": [
+        "E-SRC01",
+        "E-SRC03",
+        "E-SRC09",
+        "E-SRC10"
+      ],
+      "limits": [
+        "Arbitrary signed zero-stock jets are algebraic inputs, not automatic certificates of a positive physical family.",
+        "Old primal stock zero is weaker than zero incoming value/a/b/ab family."
+      ]
+    },
+    {
+      "id": "ENERGY_E09",
+      "statement": "A symbolic H-only photo subblock with constant HH rate gives nonzero e_lambda_b despite a zero explicit HH energy row.",
+      "evidence_status": [
+        "derived"
+      ],
+      "equations": [
+        "34"
+      ],
+      "counterexample_type": "exact symbolic logical counterexample, not replacement physical rates",
+      "limits": [
+        "Uses one-sided b>=0 derivative at zero source.",
+        "No actual FT03/LCS numerical endpoint or finite-sign claim."
+      ]
+    },
+    {
+      "id": "ENERGY_E10",
+      "statement": "For constant S and Q=S^-1, transformed residual Jacobian, Hessian and preconditioner satisfy Atilde=S*A*Q, Htilde[u,v]=S*H[Q*u,Q*v], Ctilde=S*C*Q.",
+      "evidence_status": [
+        "derived"
+      ],
+      "equations": [
+        "35",
+        "36",
+        "37",
+        "38"
+      ],
+      "sources": [
+        "E-SRC01"
+      ],
+      "limits": [
+        "Coordinate change does not guarantee a smaller contraction constant or condition number.",
+        "Exact gas-box image is generally a parallelepiped; taking an interval hull needs fresh inclusion/domain validation.",
+        "Parameter-dependent S requires the additional derivatives in equation 38."
+      ]
+    },
+    {
+      "id": "ENERGY_E11",
+      "statement": "Source-construction exact Fraction checks of the archived and two proposed density leaves give nonzero stage.fHe-minus-stored-density-ratio differences.",
+      "evidence_status": [
+        "numerically checked"
+      ],
+      "sources": [
+        "E-SRC08",
+        "E-SRC09",
+        "E-SRC10"
+      ],
+      "method": "Compute nHe=binary64(nH*stage_fHe), then delta=Fraction(stage_fHe)-Fraction(nHe)/Fraction(nH); exact nonzero test, no tolerance.",
+      "independent_check": "Source-intake agent independently confirmed all three exact fractions in E-SRC10. This is not final promotion review.",
+      "limits": [
+        "Scalar source coefficient-graph check only; no endpoint/root/IVP.",
+        "Proposed endpoint density leaves are not results of an executed endpoint.",
+        "The rates multiplying delta and resulting physical/mixed error remain unevaluated."
+      ]
+    }
+  ],
+  "source_pins": [
+    {
+      "id": "E-SRC01",
+      "path": "HH_PHYS04_20261010_v1/IMPLICIT_MIXED_THEORY_KO.md",
+      "sha256": "92e983d35e9688304fd9269d689c2117b7d0c81b95ce67d24fee789ca686cf00",
+      "companion_path": "HH_PHYS04_20261010_v1/src/implicit_mixed.py",
+      "companion_sha256": "ad8043ed6ca07ca1e2e8f8b596481917d34b65084ad64e8f8351ce85a74bc88f",
+      "publication_commit": "36b479d509d28aade8db6c8df6a1f8e9edf1a677"
+    },
+    {
+      "id": "E-SRC02",
+      "path": "HH_PHYS04_20261010_v1/inputs/source_survey/reused_phys03/source/coupled_primary.rs",
+      "sha256": "6386333c3b9478f7fc486c11adf941a35f811595fa42e6f4653cf0dcdac0706e",
+      "source_commit": "0bf109607e51873b6cf44ed8d3eb8f719388fb9b",
+      "git_blob": "99dbc26611852169679b66ef4c74c876dd7add01"
+    },
+    {
+      "id": "E-SRC03",
+      "path": "HH_NEXT_20261011_intake/phys05_source/CONTRACT.md",
+      "sha256": "2b431ce03df7d5ee167024bfc74cf3d5fa3350b8e5f0a54a06f7f8c446a116f3",
+      "source_commit": "4ea15a082f9358e28af35e30a392585f4e4383c9"
+    },
+    {
+      "id": "E-SRC04",
+      "path": "HH_PHYS04_20261010_v1/inputs/source_survey/snapshots/research/r31ao_unequal_ladder/ncp_energy06e_certificate_20261010_v1/original_owner_dependency/src/hh_primary_extension.rs",
+      "sha256": "8653f00034189b024759b39ca57d05723430988eaa08047387d12fe8381a676d",
+      "source_commit": "569b04cd71e45756e0fd476aef6643bd9434f4fa"
+    },
+    {
+      "id": "E-SRC05",
+      "path": "HH_PHYS04_20261010_v1/inputs/source_survey/reused_phys03/source/atomic_provider.rs",
+      "sha256": "b0b572d3940a7a1f740e09d5f43c60236ec61511e8bdbcc68e60395ec7e107d3",
+      "source_commit": "569b04cd71e45756e0fd476aef6643bd9434f4fa"
+    },
+    {
+      "id": "E-SRC06",
+      "path": "HH_NEXT_20261011_intake/ncp_source/candidate/src/ft03_controlled.rs",
+      "sha256": "61e11471482bb49d99e5d0eb79504d3f67538fbe6361653a0462d1abb0b672db",
+      "source_commit": "4b9231a0eff113701e7178ad98624233f387dd15",
+      "byte_equal_to_phys04_snapshot": true
+    },
+    {
+      "id": "E-SRC07",
+      "path": "HH_NEXT_20261011_intake/ncp_source/candidate/src/hhe_events.rs",
+      "sha256": "c100b08e034089c2d67b2102769ccdd51f1d29a2f388d6bb2dfe7984af93b290",
+      "companion_path": "HH_NEXT_20261011_intake/ncp_source/candidate/src/coupled_primary.rs",
+      "companion_sha256": "2c528f1e7dcf44622374f8421a192f75ce8cff8b1c311bbff508f9ed863d7dcc",
+      "source_commit": "4b9231a0eff113701e7178ad98624233f387dd15"
+    },
+    {
+      "id": "E-SRC08",
+      "path": "HH_NEXT_20261011_intake/ncp_source/ARCHIVED_COMMON_SEED_POINT_INPUT.json",
+      "sha256": "1f462e7fa7c1d4251c5004194c42b0e471fe5c42303962f1a40d5d5062f1923d",
+      "seed_sha256": "678f967f0d50ad1fff47a73e2e63193429b708246cd84ca8ffc72191c31b522b",
+      "source_commit": "4b9231a0eff113701e7178ad98624233f387dd15",
+      "scope": "Archived fields and fixed provider branch; existing scalar diagnostic outputs reused."
+    },
+    {
+      "id": "E-SRC09",
+      "path": "HH_NEXT_20261011_intake/ncp_source/candidate/src/ft03_interval.rs",
+      "sha256": "886580a810b8ec29c8f0b6199c0e35d82fde1f46d984a5f8f1da304326a42a42",
+      "source_commit": "4b9231a0eff113701e7178ad98624233f387dd15"
+    },
+    {
+      "id": "E-SRC10",
+      "path": "HH_NEXT_20261011_intake/ncp_source/SOURCE_DENSITY_LEAF_CORRECTION.json",
+      "sha256": "259d91f3153dd97b2f0ae50bb566e9d333aaff19af44f96b6c2714fd21a7471d",
+      "source_commit": "4b9231a0eff113701e7178ad98624233f387dd15"
+    }
+  ],
+  "execution_by_this_subtask": {
+    "source_reading": true,
+    "direct_derivation": true,
+    "new_native_endpoints": 0,
+    "new_nonlinear_roots": 0,
+    "new_IVP_solves": 0,
+    "new_atomic_integrals": 0,
+    "old_scientific_suites_rerun": 0,
+    "new_scientific_checker_executions": 1,
+    "external_literature_claims_added": 0,
+    "new_scientific_checker_scope": "One exact source-density scalar arithmetic command across three already extracted density leaves; no rates, endpoints or roots."
+  },
+  "actual_physical_claims": {
+    "uniform_root_tube": "unresolved",
+    "finite_mixed_response_sign": "unresolved",
+    "finite_mixed_response_value": null,
+    "full_vs_two_half_gas_remainder": null,
+    "continuous_time_error": null,
+    "production_admission": false
+  },
+  "remaining_premises": [
+    "Actual source-bound regular root family across the complete parameter rectangle.",
+    "Full nonphoto/HH and gas-stock derivative enclosures with incoming U,V,W.",
+    "Strict physical-domain inclusion and uniform inverse/contraction.",
+    "Escape, thermal work, remap/birth and guard ledger identities for the same family.",
+    "Independent decision review of the new bounded claims.",
+    "Source-bound J_norm normalization residual and its derivatives, or a separately justified exact coefficient graph where it vanishes."
+  ],
+  "correction_history": [
+    {
+      "id": "ENERGY_CORRECTION_01",
+      "classification": "CANDIDATE_DERIVATION_CORRECTION_BEFORE_FINAL_REVIEW",
+      "failure_layer": "theory_or_math",
+      "native_failure": false,
+      "prior_document_sha256": "771a287642d7457392135f353986eed05dd307b1992bf9f607a0f4ec264d7ffa",
+      "prior_claim_file_sha256": "0915b267547f72c1905ad5887058681a08362e43d56e5ff8304bf3880e6d28ff",
+      "withdrawn_E07_statement": "The current source threshold literals agree; FT03 event algebra gives ell*F0=-L_escape-2*H*w. Including escape and endpoint thermal-work ledgers yields the closed BE stage energy identity.",
+      "reason": "Matching thresholds was incorrectly treated as sufficient without checking stage.fHe against exact ratio of separately stored binary64 density leaves.",
+      "correction": "Preserve J_norm and its first/mixed derivatives; temperature uses source stored-density ratio. General R_E=ell*G and photo Gram Hessian are unchanged.",
+      "method": "Exact Fraction(fstage)-Fraction(binary64(nH*fstage))/Fraction(nH); decimal displays do not define equality.",
+      "owner_check_cases": [
+        {
+          "label": "archived_t0",
+          "time_s": 160000000000.0,
+          "nH_binary64": 9.952115015900972e-05,
+          "nHe_rounded_binary64": 8.260255463197807e-06,
+          "f_stage_binary64": 0.083,
+          "f_tilde_exact": {
+            "numerator": "4875994192418275",
+            "denominator": "58746917980943072"
+          },
+          "delta_f_exact": {
+            "numerator": "518739254785749",
+            "denominator": "132286298964070155145850814201856"
+          },
+          "delta_f_decimal": "3.92133772618918045415042864166536152387348954280550294274156E-18",
+          "delta_f_positive": true
+        },
+        {
+          "label": "proposed_dt_6.25e+08",
+          "time_s": 160625000000.0,
+          "nH_binary64": 9.951928415493808e-05,
+          "nHe_rounded_binary64": 8.26010058485986e-06,
+          "f_stage_binary64": 0.083,
+          "f_tilde_exact": {
+            "numerator": "2437951384192135",
+            "denominator": "29372908243278736"
+          },
+          "delta_f_exact": {
+            "numerator": "969088477952539",
+            "denominator": "132283818619217885719133270573056"
+          },
+          "delta_f_decimal": "7.32582781528316176267261488283733832043849489567214441411211E-18",
+          "delta_f_positive": true
+        },
+        {
+          "label": "proposed_dt_1.25e+09",
+          "time_s": 161250000000.0,
+          "nH_binary64": 9.951741818585369e-05,
+          "nHe_rounded_binary64": 8.259945709425857e-06,
+          "f_stage_binary64": 0.083,
+          "f_tilde_exact": {
+            "numerator": "2437905673032225",
+            "denominator": "29372357506412348"
+          },
+          "delta_f_exact": {
+            "numerator": "201373658400253",
+            "denominator": "529125353283486566110759781138432"
+          },
+          "delta_f_decimal": "3.80578358513023563263416916781993596883259312772764355474707E-19",
+          "delta_f_positive": true
+        }
+      ],
+      "owner_check_hex_leaves": [
+        {
+          "label": "archived_t0",
+          "nH": "0x1.a16c0573ce65cp-14",
+          "fstage": "0x1.53f7ced916873p-4",
+          "nHe": "0x1.152b0ddc415e3p-17"
+        },
+        {
+          "label": "proposed_half",
+          "nH": "0x1.a16a0487716e4p-14",
+          "fstage": "0x1.53f7ced916873p-4",
+          "nHe": "0x1.1529b9478090ep-17"
+        },
+        {
+          "label": "proposed_full",
+          "nH": "0x1.a168039d8abcfp-14",
+          "fstage": "0x1.53f7ced916873p-4",
+          "nHe": "0x1.152864b462442p-17"
+        }
+      ],
+      "independent_confirmation": "E-SRC10",
+      "new_kernel_or_density_normalization_change": false
+    }
+  ]
+}

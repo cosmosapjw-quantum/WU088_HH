@@ -1,0 +1,120 @@
+{
+  "schema": "WU088_HH_PHYS06_RUN_LEDGER_V1",
+  "historical_results_reused_without_rerun": {
+    "PHYS05_equalities": 18817,
+    "PHYS04_remap_and_quartic": "read existing evidence only",
+    "NCP_Decimal100_189_slot_oracle": "read reuse binding only"
+  },
+  "new_runs": [
+    {
+      "id": "reference_first",
+      "evidence": "evidence/reference_first/EXECUTION.json",
+      "exit_code": 0,
+      "wall_seconds": 0.115784593996068,
+      "assertions": 275,
+      "expected_rejections": 17,
+      "scope": "exact rational conditional arithmetic and manufactured mathematical examples"
+    },
+    {
+      "id": "archived_energy_run01",
+      "evidence": "evidence/archived_energy_run01.json",
+      "measurements": {
+        "schema": "WU088_HH_PHYS06_ARCHIVED_ENERGY_EXECUTION_V1",
+        "run_id": "archived_energy_run01",
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "/workspace/scratch/198b9c7581be/HH_PHYS06_20261011_v1/diagnostics/archived_energy_point.py",
+          "--input",
+          "/workspace/scratch/198b9c7581be/HH_PHYS06_20261011_v1/inputs/ARCHIVED_COMMON_SEED_POINT_INPUT.json",
+          "--source-manifest",
+          "/workspace/scratch/198b9c7581be/HH_NEXT_20261011_intake/ncp_source/SOURCE_INTAKE_MANIFEST.json",
+          "--output",
+          "/workspace/scratch/198b9c7581be/HH_PHYS06_20261011_v1/evidence/archived_energy_point_results.json"
+        ],
+        "start_utc": "2026-10-10T22:44:20.647074+00:00",
+        "wall_seconds": 0.11521357099991292,
+        "exit_code": 0,
+        "timeout": false,
+        "resource_limits": {
+          "wall_timeout_seconds": 30,
+          "script_RLIMIT_AS_bytes": 268435456,
+          "script_RLIMIT_CPU_seconds": 30
+        },
+        "input_sha256": "1f462e7fa7c1d4251c5004194c42b0e471fe5c42303962f1a40d5d5062f1923d",
+        "source_manifest_sha256": "0de85417009cc43814c6db4eb92b77af322726a6d426f0119bad2f37ac153627",
+        "script_sha256": "044713bd1bccb3fb500f1dd26b23d0e8e71b970bdb144cbcc246211899e9aa91",
+        "stdout_sha256": "bfb0f0a465140d7fcbd463916067fe359c0adc6d14243d589712175015f989f7",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "result_sha256": "4adbb5fbd5303a6826196efff064701496219454336c46208903495ba9190ef2",
+        "scope": "New bounded frozen archived energy arithmetic; no native endpoint/root/IVP or old suite",
+        "native_counts": {
+          "endpoints": 0,
+          "point_solvers": 0,
+          "root_producers": 0,
+          "IVP": 0,
+          "old_suites": 0
+        },
+        "retry": 0
+      },
+      "scope": "frozen actual archived input, Python provider transcription leaves, no new native endpoint"
+    },
+    {
+      "id": "source_photo_excess_leaf_read01",
+      "evidence": "evidence/archived_energy_photo_leaf_check.json",
+      "measurements": {
+        "id": "source_photo_excess_leaf_read01",
+        "retry": 0,
+        "wall_seconds": 0.0030857239980832674,
+        "max_rss_KiB": 9984,
+        "max_seconds": 30,
+        "max_address_space_bytes": 268435456
+      },
+      "scope": "99 fixed scalar subtraction leaf comparisons"
+    },
+    {
+      "id": "photo_leaf_addendum_run01",
+      "evidence": "evidence/archived_energy_photo_leaf_addendum_run01.json",
+      "exit_code": 0,
+      "wall_seconds": 0.04609513300238177,
+      "scope": "99 weighted reused leaf values plus3 generic100eV subtraction witnesses"
+    }
+  ],
+  "additional_readonly_scalar_intake": {
+    "python_source_cross_section_calls": 99,
+    "seed_readonly_decoder": "Python field parsing of archived bytes; original native decoder not called",
+    "density_ratio_source_cases": 3,
+    "density_ratio_theory_confirmation_cases": 3,
+    "theory_run_record": "theory/correction_history/RUN_DENSITY_NORMALIZATION_CORRECTION.json",
+    "provenance_limit": "Inline density confirmation lacks separately captured UTC/stderr and was not rerun. Do not equate it with the wrapper-bounded reference execution."
+  },
+  "actual_native_totals": {
+    "native_endpoint": 0,
+    "native_BE_point_solver": 0,
+    "certificate_internal_point_solver": 0,
+    "native_root_producer": 0,
+    "IVP": 0,
+    "native_FT03_LCS_RHS": 0,
+    "native_Rust_provider": 0,
+    "historical_science_suite": 0,
+    "receipt_added_endpoint": 0,
+    "receipt_added_root": 0
+  },
+  "repairs": {
+    "reference_code_repairs": 0,
+    "archived_point_reruns": 0,
+    "pre_review_derivation_corrections": [
+      "density normalization residual",
+      "rounded photo excess-energy leaf residual"
+    ],
+    "details": "FAILURE_LOG.md"
+  },
+  "actual_science": {
+    "W": null,
+    "I_h": null,
+    "mixed_scheme_defect": null,
+    "native_family_tube": null,
+    "continuous_source_error": null,
+    "physical": "HOLD",
+    "production": "HOLD"
+  }
+}
