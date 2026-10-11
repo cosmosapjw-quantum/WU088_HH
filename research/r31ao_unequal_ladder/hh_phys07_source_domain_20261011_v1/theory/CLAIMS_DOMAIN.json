@@ -1,0 +1,139 @@
+{
+  "schema": "WU088_HH_PHYS07_DOMAIN_CLAIMS_V1",
+  "creator": "/root/phys07_domain_theory",
+  "creator_is_independent_decision_reviewer": false,
+  "decision_status": "PENDING_INDEPENDENT_REVIEW",
+  "proof_document": "theory/SOURCE_C2_DOMAIN_KO.md",
+  "target": "source-derived exact-real fixed-stage residual with declared isotropic analytic transport reference family",
+  "source": {
+    "repository": "cosmosapjw-quantum/WU088_HH",
+    "ncp_implementation_core": "927019cff541e8a4a1f0d2c8846f1466d6b70533",
+    "head": "65a36e255aa6d9911e23a9b5ced18d8a9f507606",
+    "tree": "f823df8c95defcaba737139859cd9eeeda4ef133",
+    "intake_manifest_sha256": "fdecbf0c21d90cae761899d75442b14211f99c56cb45b9f153fe44a36d8ea48b",
+    "common_seed_sha256": "678f967f0d50ad1fff47a73e2e63193429b708246cd84ca8ffc72191c31b522b"
+  },
+  "conventions": {
+    "gas_coordinate_order": ["x_HII", "y_HeII", "y_HeIII", "w_eV_per_H"],
+    "parameter_order": ["lambda_HH_future_amplitude", "b_future_birth_amplitude"],
+    "theta_bits_in_native_FamilyIdentity_is_hubble_triplet": true,
+    "time_unit": "proper_s",
+    "density_unit": "cm^-3",
+    "fhat_definition": "exact(stored_nHe) / exact(stored_nH), not exact(stage_fHe)",
+    "finite_stage_birth_amount": "M_j=exact(fl(d*S_*))*delta_j24, as fixed by the source-order reference scalar trace",
+    "finite_stage_effective_birth_rate": "(B_d)_j=M_j/exact(d), not assumed exactly equal to S_* delta_j24",
+    "formal_cubic_birth_rate": "B_j=S_* delta_j24 independent of h in the declared smooth/formal rate family; not the derivative of native fl(h*S_*)",
+    "thermal_factor": "2 * exact(eV_erg) / (3 * exact(k_B_erg_per_K))",
+    "metric_signature": "(-,+,+,+)",
+    "initial_history_preserved_at_lambda_zero": true
+  },
+  "candidate_domain": {
+    "endpoints": "exact_decimal_rationals; final input artifact must retain this convention or explicitly bind different endpoints",
+    "closed_gas_box": [["0.90", "0.93"], ["0.29", "0.31"], ["0.59", "0.61"], ["13", "14"]],
+    "parameter_rectangle": [["0", "1"], ["0", "1"]],
+    "proposed_open_gas_box": [["0.899", "0.931"], ["0.289", "0.311"], ["0.589", "0.611"], ["12.9", "14.1"]],
+    "coarse_leaf_conditions": ["0.082 <= fhat <= 0.084", "7700 < thermal_factor < 7800"],
+    "derived_open_box_temperature_K_under_coarse_leaf_conditions": {"strict_lower": "46200", "strict_upper": "52372"},
+    "root_containment_claim": false,
+    "new_numerical_evidence_owned_by": "/root",
+    "new_numeric_results_in_this_file": null
+  },
+  "claims": [
+    {
+      "id": "P07-D01",
+      "statement": "The inspected FT03+HH+reduced-photo exact-real source is C-infinity on a neighborhood of the declared gas box times [0,1]^2 once the explicit positive source-leaf and temperature margins are established.",
+      "evidence_status": ["derived"],
+      "proof_sections": [2, 3, 4, 9],
+      "conditions": ["fixed source leaves", "positive nH and stored nHe", "strict physical simplex for source callback", "positive w and 35000<T<60000 on an open neighborhood", "fixed geometry/time/grid", "algebraic open extension of lambda and incoming stock"],
+      "not_claimed": ["native float program is a C2 real map", "negative physical stock is allowed", "root lies in the candidate box", "native source tuple identity"]
+    },
+    {
+      "id": "P07-D02",
+      "statement": "Gas-box and energy-box temperature extrema follow from monotonic linear-fractional forms; the S-image of a gas box must retain its correlation or be rechecked after rectangular hull.",
+      "evidence_status": ["derived"],
+      "proof_equations": [1, 2, 3, 4, 5, 6, 7, 8],
+      "conditions": ["positive density ratio and thermal energy", "positive binding-energy coefficients", "gas-to-energy transformation retains stage f distinct from fhat"],
+      "not_claimed": ["energy e can replace thermal w in the current Domain API", "hull(SX) equals SX", "exact S equals bitwise native energy()"]
+    },
+    {
+      "id": "P07-D03",
+      "statement": "Opacity is affine in gas, admits exact signed-corner extrema, and satisfies kappa>=0 and D=1+d*kappa>=1 on the physical simplex for nonnegative cross sections and d>=0.",
+      "evidence_status": ["derived"],
+      "proof_equations": [14, 15, 16, 17, 18],
+      "conditions": ["fixed density and energy/cross-section leaves", "physical H/He simplex", "nonnegative cross sections"],
+      "not_claimed": ["native sigma leaf measured by this agent", "same lower bound outside the physical simplex", "zero stock makes all signed derivatives zero"]
+    },
+    {
+      "id": "P07-D04",
+      "statement": "The actual FT03/HH fit graph has positive event coefficients in the admitted thermal domain; logarithmic slopes yield explicit first/second derivative bounds and the RR kinetic coefficient requires its slope derivatives.",
+      "evidence_status": ["derived"],
+      "proof_equations": [19, 20, 21, 22, 23, 24],
+      "conditions": ["actual FT03 Case A leaves, not raw AtomicProvider replacement rates", "35000<=T<=60000", "DR frozen from_bits leaves preserved", "source products and exponent semantics retained"],
+      "not_claimed": ["kinetic cooling positive for all T>0", "source fit physically validated outside its admitted domain", "native measured rate/Hessian values"]
+    },
+    {
+      "id": "P07-D05",
+      "statement": "In the declared low-energy reference family, active HI photo events raise w but lower T throughout the candidate box; direct HH events lower T and preserve the exact linear total-energy row.",
+      "evidence_status": ["derived"],
+      "proof_equations": [25, 26, 27, 28, 29, 30],
+      "conditions": ["reference incoming/birth support E<=13.7 eV", "active HI rounded excess leaf positive and below 0.102 eV", "w/p>6 eV", "q>0 for strict HH sign", "positive event rate for strict photo sign"],
+      "not_claimed": ["temperature along the full solution necessarily decreases", "all photo spectra cool T", "native widened support has been verified", "sign of actual W or finite interaction"]
+    },
+    {
+      "id": "P07-D06",
+      "statement": "For full and first-half stages originating from a parameter-independent COMMON seed, N=Nbar+b*M=Nbar+b*d*B_d with M=exact(fl(d*S_*))*delta_j24 and B_d=M/d implies G_lambda_b=0 at fixed gas, with G_lambda=-dH, G_b=-d^2 P_Bd^(d), and nonzero gas-parameter cross derivatives.",
+      "evidence_status": ["derived"],
+      "proof_equations": [31, 32, 33, 34],
+      "conditions": ["COMMON gas and signed incoming jets independent of future lambda,b", "fixed transport coefficients", "rounded finite-stage birth amount M preserved", "birth included once", "fixed all-node layout"],
+      "not_claimed": ["W=0", "second-half incoming carry has the same simplification", "root inverse available", "native preBE tuple equals reference"]
+    },
+    {
+      "id": "P07-D07",
+      "statement": "The finite-stage HH/newborn-photo directional interactions H_g P_Bd^(d) and (P_Bd^(d))_g H use B_d=exact(fl(d*S_*))/d and have strictly negative ionization components for nonzero low-energy birth; their projected energy components are respectively zero and negative.",
+      "evidence_status": ["derived"],
+      "proof_equations": [35, 36, 37],
+      "conditions": ["HI-only low-energy birth", "positive q and positive source rate", "Xi>0", "D>0", "rounded heat leaf retained"],
+      "not_claimed": ["these source directions equal actual U,V", "actual mixed forcing has a fixed sign", "actual W or I_h has a fixed sign"]
+    },
+    {
+      "id": "P07-D08",
+      "statement": "The formal common-input gas mixed cubic is alpha_m H_g P_B + beta_m (P_B)_g H, with alpha_m=(m+1)(m+2)/(6m^2) and beta_m=(m+1)(2m+1)/(6m^2). Its low-energy x/energy coefficients are negative, while two-half minus full leading coefficients are positive.",
+      "evidence_status": ["derived"],
+      "proof_equations": [38, 39, 40, 41],
+      "conditions": ["zero initial parameter jets; nonzero archived photon primal is allowed", "HH photon-independent", "photo gas-photon bilinear", "birth photon-only and included before BE", "frozen or explicitly smooth source-time leaves", "appropriate h=0+ active remap chart", "constant formal birth rate B=S_* delta_j24 for stated m-substep formula, separate from finite-stage rounded B_d"],
+      "prior_consistency": "PHYS04 ordered quartic inherited cubic coefficients and thermal form, plus PHYS05 reduced conditional propagation; read-only comparison, no historical checker run",
+      "not_claimed": ["native rounded time map is differentiable", "quantified O(h^4) remainder", "finite-h mixed sign", "observed full/two-half output or defect", "the PHYS04 remap-specific quartic or PHYS05 old-family h2 coefficient is the entire mixed result"]
+    },
+    {
+      "id": "P07-D09",
+      "statement": "The fixed-geometry lambda/b chart has no moving hat or Verner threshold, and parameter subdivision cannot repair a fixed coefficient interval that crosses a native transport branch.",
+      "evidence_status": ["derived"],
+      "proof_sections": [2, 9],
+      "conditions": ["geometry/time/grid fixed independently of lambda,b", "source's all-node signed-jet semantics preserved"],
+      "not_claimed": ["native branch checks may be bypassed", "same C2 claim when time/Hubble/energy become variables", "all requested source bounds are already numerically sharp"]
+    }
+  ],
+  "execution_scope_of_creator": {
+    "source_reads": true,
+    "symbolic_derivation": true,
+    "new_scientific_numeric_commands": 0,
+    "native_endpoint_calls": 0,
+    "native_BE_point_calls": 0,
+    "native_root_calls": 0,
+    "IVP_calls": 0,
+    "heavy_atomic_calls": 0,
+    "historical_science_suite_runs": 0,
+    "root_managed_new_bounded_runs": "tracked separately by root RUN_LEDGER; not inferred here"
+  },
+  "corrections": [{"record": "theory/corrections/BIRTH_LEAF_CORRECTION.json", "finding": "Finite source birth amount fl(d*S_*) must be distinguished from formal smooth d*S_*; original full document and claim JSON preserved", "scientific_code_changed": false, "scientific_results_changed": false, "scientific_reruns": 0}],
+  "actual_values": {
+    "native_Gc": null,
+    "native_A": null,
+    "native_W": null,
+    "native_I_h": null,
+    "second_half_joint_carry": null,
+    "native_full_two_half_defect": null,
+    "time_remainder": null,
+    "continuum_remainder": null
+  }
+}

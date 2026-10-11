@@ -1,0 +1,46 @@
+{
+  "schema": "WU088_HH_PHYS07_FAILURE_AND_CORRECTION_LOG_V1",
+  "new_scientific_execution_failures": [],
+  "independent_review_findings": [
+    {
+      "id": "FINITE_BIRTH_LEAF",
+      "status": "RESOLVED_NO_SCIENCE_RERUN",
+      "description": "Finite M=exact(fl(d*S_*)) must use B_d=M/exact(d); formal smooth cubic B=S_* remains separate. Original theory/claims and correction preserved.",
+      "record": "theory/corrections/BIRTH_LEAF_CORRECTION.json",
+      "source_code_changes": 0,
+      "scientific_reruns": 0
+    }
+  ],
+  "orchestration_observations": [
+    {
+      "stage": "early parallel source read orchestration",
+      "error": "JavaScript SyntaxError: Unexpected token .",
+      "effect": "functions exec rejected script before any nested tool evaluation; corrected orchestration syntax only",
+      "scientific_runs_affected": 0,
+      "exact_tool_error_utc": null
+    }
+  ],
+  "inherited_failures": "Original NCP build failures and review corrections retained in inputs/ncp_phys06/evidence; not relabeled as new PHYS07 failures.",
+  "editorial_review_corrections": [
+    {
+      "item": "Handoff inherited NCP paths",
+      "correction": "Use explicit inputs/ncp_phys06/ prefixes and distinguish inherited review from PHYS07 independent review.",
+      "scientific_effect": false
+    },
+    {
+      "item": "Paired FHE blanket notation",
+      "correction": "Explicitly use binary64 endpoint leaves fl(FHE*(1±8*EPSILON)), matching paired_runtime.rs.",
+      "scientific_effect": false
+    },
+    {
+      "item": "Prior target binary identity wording",
+      "correction": "Explicitly retain prior per-first-target binary hashes as unmeasured null; final build hash not assigned retrospectively.",
+      "scientific_effect": false
+    },
+    {
+      "item": "Theorem equation 6 unit rendering",
+      "correction": "Replace one accidental carriage return with literal LaTex thin space and mathrm K.",
+      "scientific_effect": false
+    }
+  ]
+}
