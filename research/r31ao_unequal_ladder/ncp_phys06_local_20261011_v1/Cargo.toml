@@ -1,0 +1,12 @@
+[package]
+name="hh_phys06_local"
+version="0.1.0"
+edition="2021"
+publish=false
+[workspace]
+[dependencies]
+hh_phys04_candidate={path="candidate"}
+rei_reference={package="rei_microphysics",path="../ncp_energy06e_certificate_20261010_v1/original_owner_dependency"}
+[[bin]]
+name="phys06_targets"
+path="src/main.rs"
