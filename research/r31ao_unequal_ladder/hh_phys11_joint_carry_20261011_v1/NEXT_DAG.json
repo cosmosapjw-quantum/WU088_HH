@@ -1,0 +1,275 @@
+{
+  "schema": "WU088_HH_PHYS11_NEXT_DAG_V1",
+  "project": "WU088_HH",
+  "current_loop": "PHYS11",
+  "draft_requires_actual_result_binding": false,
+  "active_ncp_heavy_queue": [],
+  "active_ncp_launch": false,
+  "future_nodes_are_not_active_execution_authorization": true,
+  "nodes": [
+    {
+      "id": "P08",
+      "name": "Archived weighted scalar gate",
+      "status": "REUSED_EXISTING_COMPLETE",
+      "source_head": "5288fd50148755f5ed37391e3dcb612d8d51f130",
+      "replay": false
+    },
+    {
+      "id": "P09",
+      "name": "Projected finite gas-energy gate",
+      "status": "REUSED_EXISTING_COMPLETE",
+      "source_head": "e6a72c3df5803b5b23f9a38918dad6a1eba7e1f7",
+      "replay": false
+    },
+    {
+      "id": "P10",
+      "name": "Gas and surviving-photon finite ledger",
+      "status": "REUSED_EXISTING_COMPLETE",
+      "depends_on": [
+        "P09"
+      ],
+      "evidence": "inputs/phys10/SUMMARY.json",
+      "execution": "inputs/phys10/EXECUTION.json",
+      "replay": false
+    },
+    {
+      "id": "P11_GROUP_CARRY",
+      "name": "Source-aligned 33-group and ledger value/U/V/W carry",
+      "depends_on": [
+        "P09",
+        "P10"
+      ],
+      "status": "COMPLETE_HERE",
+      "location": "HERE",
+      "evidence": "results/carry_v2/SUMMARY.json",
+      "execution": "evidence/carry_v2/EXECUTION.json",
+      "decision": "review/DECISION.json",
+      "acceptance": [
+        "same fixed-alpha source family and existing source inclusion premise",
+        "all 33 group carries, same-family quotient intersection and signed derivative components preserved",
+        "absorbed/source/HH/thermal/derived-escape-star ledgers distinct from native compensated state",
+        "actual bounded execution and independent review recorded"
+      ],
+      "new_source_provider_native_root_inverse_calls": 0,
+      "first_failure": "evidence/carry_first/EXECUTION.json",
+      "correction_record": "evidence/FIRST_FAILURE_AND_CORRECTION.json",
+      "replay": false
+    },
+    {
+      "id": "JOINT_COMPOSITION",
+      "name": "Joint gas/photon/guard/ledger composition theorem",
+      "depends_on": [
+        "P11_GROUP_CARRY"
+      ],
+      "status": "DERIVED_WITH_LOCAL_SEMANTIC_CHECKS",
+      "location": "HERE",
+      "acceptance": [
+        "full joint-state chain rule with both cross forcing terms",
+        "first_half from COMMON not relabeled as carried second_half",
+        "source-derived escape-star not silently substituted for native escape",
+        "within-node ray scalar lift conditional on common residual-aligned denominator"
+      ],
+      "decision": "review/DECISION.json"
+    },
+    {
+      "id": "RAY_GUARD_MATERIALIZATION",
+      "name": "Bind actual saved ray/guard input and output arrays",
+      "depends_on": [
+        "P11_GROUP_CARRY"
+      ],
+      "status": "OPEN_DATA_AVAILABILITY",
+      "location": "HERE",
+      "acceptance": [
+        "original immutable prebe_words binary materialized only if actually needed",
+        "bytes/SHA and 515461-word output layout agree with original manifest",
+        "actual 4224 ray/node and128 guardN/U values retain input identity",
+        "no reconstruction of ray pattern from 33 group totals"
+      ],
+      "known_output_bytes_per_stage": 4123688,
+      "heavy_work_evidence": false
+    },
+    {
+      "id": "SOURCE_NATIVE_GRAPH_BINDING",
+      "name": "Reconcile source/native distribution and escape graphs",
+      "depends_on": [
+        "P11_GROUP_CARRY",
+        "JOINT_COMPOSITION"
+      ],
+      "status": "OPEN_SOURCE_AND_IMPLEMENTATION_BINDING",
+      "location": "HERE_FOR_DERIVATION_AND_LIGHT_CHECKS",
+      "acceptance": [
+        "residual c*nH*sigma leaf product distinguished from scalar fl(fl(sigma*c)*nH)",
+        "actual coefficient bits or explicit conditional value bound, no fabricated bits",
+        "normalization f versus nHe_stored/nH preserved",
+        "actual native escape-rate derivative identity separate from derived escape-star",
+        "compensation remains actual primal state"
+      ],
+      "coefficient_checks_are_heavy": false
+    },
+    {
+      "id": "COMPLETE_JOINT_STATE",
+      "name": "Actual complete same-family carry state",
+      "depends_on": [
+        "JOINT_COMPOSITION",
+        "RAY_GUARD_MATERIALIZATION",
+        "SOURCE_NATIVE_GRAPH_BINDING"
+      ],
+      "status": "OPEN_ACTUAL_STATE_BINDING",
+      "location": "HERE",
+      "acceptance": [
+        "gas/ray photons/guards/source-absorption-work-HH-escape ledgers and actual compensation bind one predecessor",
+        "historical versus future derivative ledgers explicit",
+        "source/geometry/background/clock/normalization identity retained"
+      ]
+    },
+    {
+      "id": "NORMALIZED_HISTORY_BINDING",
+      "name": "Actual normalized background and source history",
+      "depends_on": [
+        "COMPLETE_JOINT_STATE"
+      ],
+      "status": "OPEN_PHYSICAL_HISTORY_BINDING",
+      "location": "HERE",
+      "acceptance": [
+        "specified actual initial and terminal state/time",
+        "physical background and density/clock history",
+        "photon/source history and selected closure",
+        "immutable data/configuration and fixed coefficient domain",
+        "no manufactured actual inputs or arbitrary resource-filling parameter domain"
+      ]
+    },
+    {
+      "id": "NEXT_STAGE_COVERAGE",
+      "name": "Coverage and regularity for actual carried next stage",
+      "depends_on": [
+        "COMPLETE_JOINT_STATE",
+        "NORMALIZED_HISTORY_BINDING"
+      ],
+      "status": "OPEN_SOURCE_COVERAGE",
+      "location": "HERE_FOR_THEORY_AND_LIGHT_CHECKS",
+      "acceptance": [
+        "next stage input is actual previous joint output",
+        "positive denominator and physical/thermal domain",
+        "whole-rectangle hat/guard branch handling",
+        "source inclusion and C2 premises explicit"
+      ],
+      "current_new_native_calls": 0
+    },
+    {
+      "id": "NATIVE_FAMILY_BINDING",
+      "name": "Native issuer/root/response connection",
+      "depends_on": [
+        "NEXT_STAGE_COVERAGE",
+        "SOURCE_NATIVE_GRAPH_BINDING"
+      ],
+      "status": "OPEN_NATIVE_AUTHORITY_AND_IMPLEMENTATION",
+      "location": "HERE_FOR_DESIGN_AND_LIGHT_CHECKS",
+      "acceptance": [
+        "actual native evidence binds same mathematical family",
+        "source-only arithmetic does not issue native authority",
+        "actual root/U/V/W/I remain null until their own evidence exists"
+      ],
+      "current_new_native_calls": 0
+    },
+    {
+      "id": "NECESSARY_PILOT",
+      "name": "New necessary physical task with measured resources",
+      "depends_on": [
+        "NORMALIZED_HISTORY_BINDING",
+        "NEXT_STAGE_COVERAGE",
+        "NATIVE_FAMILY_BINDING"
+      ],
+      "status": "WAITING_FOR_ACTUAL_PHYSICAL_WORK_CONTRACT",
+      "location": "HERE_IF_SHORT_AND_SUPPORTED",
+      "run_now": false,
+      "acceptance": [
+        "new task answers specified physical question",
+        "finite timeout/output/memory budget",
+        "actual wall/CPU time,peak RSS and output bytes",
+        "completed pilot retained as result and not repeated"
+      ]
+    },
+    {
+      "id": "UNFINISHED_HEAVY_TASKS",
+      "name": "Actual scientifically required unfinished independent task manifest",
+      "depends_on": [
+        "NORMALIZED_HISTORY_BINDING",
+        "NECESSARY_PILOT"
+      ],
+      "status": "NOT_READY",
+      "tasks": [],
+      "acceptance": [
+        "actual physical task identifiers and immutable inputs",
+        "completed identities excluded",
+        "independent family units with sequential internal carry",
+        "no scan/grid/task inflation to fill64cores"
+      ]
+    },
+    {
+      "id": "NCP_ADMISSION",
+      "name": "Actual cost/topology/memory admission",
+      "depends_on": [
+        "NECESSARY_PILOT",
+        "UNFINISHED_HEAVY_TASKS"
+      ],
+      "status": "NOT_READY",
+      "policy": "NCP_TASKS.json#/future_work",
+      "acceptance": [
+        "documented long workload and real parallel benefit",
+        "recovery/serialization/I/O cost included",
+        "actual cpuset/quota/topology/RAM/competing jobs read",
+        "worker memory governor enforceable",
+        "identity-bound checkpoint/resume and first-failure preservation"
+      ],
+      "measured_speedup": null,
+      "target_benchmark_in_current_handoff": false
+    },
+    {
+      "id": "NCP_HEAVY_EXECUTION",
+      "name": "Only admitted unfinished independent-family campaign",
+      "depends_on": [
+        "NCP_ADMISSION"
+      ],
+      "status": "NO_HEAVY_JOB_READY",
+      "location": "NCP",
+      "launch": false,
+      "tasks": [],
+      "acceptance": [
+        "only admitted unfinished task identities execute",
+        "carry and canonical reductions preserved",
+        "actual metrics/raw logs/checkpoints returned"
+      ]
+    }
+  ],
+  "excluded_implicit_edges": [
+    "33 group carry -> actual4224ray/128guard reconstruction",
+    "common node denominator theorem -> native scalar product graph identity",
+    "derived escape-star -> actual native escape Jet",
+    "source-derived joint composition -> actual carried second_half",
+    "same-COMMON first_half -> second_half",
+    "source-only U/V/W -> actual native U/V/W",
+    "time slice -> independent physical family",
+    "energy group -> independent gas solve",
+    "missing4.1MBpayload -> heavy job",
+    "33x3coefficientcheck -> NCP task",
+    "64core128GiBcapacity -> invented task manifest",
+    "source-only calculation -> full49/production"
+  ],
+  "inherited_open": [
+    "native root/U/V/W/I and actual issuer binding",
+    "actual ray/guard complete-state carry",
+    "source/native distribution coefficient graph identity",
+    "actual native escape-rate derivative binding",
+    "actual carried second_half",
+    "full/two-half paired defect",
+    "time remainder",
+    "continuum remainder",
+    "global transport/guard/escape/redshift energy conservation",
+    "full49",
+    "production",
+    "PHYS07 analytic-reference energy",
+    "NCP07 node32 per-node predicate",
+    "PHYS08 minsubnormal_signed binary64 unresolved exception"
+  ],
+  "polling": "No repeated readiness polling; complete the bounded intake and return NO_HEAVY_JOB_READY."
+}
