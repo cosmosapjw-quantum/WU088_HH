@@ -1,0 +1,106 @@
+{
+  "schema": "WU088_HH_PHYS08_NCP_TASKS_V1",
+  "status": "READY_FOR_FIRST_NCP_SAVED_GATE_EXECUTION",
+  "scope": "Validate Rust scalar weighted gate on already preserved exact-aggregate fixtures; no new source evaluation.",
+  "ncp_base": "4d5c18b8a6d348e2de42b5e12dc0fd4d753add7b",
+  "research_branch": "research/hh-phys08-weighted-source-20261011",
+  "entrypoint": "python3 tools/run_ncp_weighted.py --run-dir <new absolute create-only path>",
+  "tasks": [
+    {
+      "id": "T01",
+      "task": "Bind verified core and selected source identities; read contract/review; preserve existing runtime and dirty work."
+    },
+    {
+      "id": "T02",
+      "task": "Record actual host and existing rustc -vV. No install."
+    },
+    {
+      "id": "T03",
+      "task": "One first offline standalone Rust build. No Cargo or source producer."
+    },
+    {
+      "id": "T04",
+      "task": "One Rust gate run: 7 builtin semantic groups, 11 archived scalar fixtures. Preserve raw output."
+    },
+    {
+      "id": "T05",
+      "task": "One exact Fraction output consumer: containment and role/sign/schema checks, never overlap-only."
+    },
+    {
+      "id": "T06",
+      "task": "Produce archived-source weighted sidecar with binary/input/command pins and no implicit native authority."
+    },
+    {
+      "id": "T07",
+      "task": "Noncreator scoped decision; additive NCP branch/PR; full returned archive and handoff in both backup folders."
+    }
+  ],
+  "budgets": {
+    "rustc_identity": {
+      "max_invocations": 1,
+      "wall_seconds": 10,
+      "address_space_MiB": 512
+    },
+    "rust_build": {
+      "max_invocations": 1,
+      "wall_seconds": 60,
+      "address_space_MiB": 512,
+      "codegen_units": 1
+    },
+    "Rust_gate": {
+      "max_invocations": 1,
+      "wall_seconds": 10,
+      "address_space_MiB": 128,
+      "expected_fixture_rows": 11,
+      "planned_total_scalar_gate_calls": 26,
+      "planned_expected_gate_error_returns": 7
+    },
+    "exact_output_consumer": {
+      "max_invocations": 1,
+      "wall_seconds": 10,
+      "address_space_MiB": 128
+    },
+    "per_output_file_MiB": 8,
+    "automatic_retry": false,
+    "fresh_PreBE": 0,
+    "fresh_residual": 0,
+    "fresh_FT03": 0,
+    "fresh_HH": 0,
+    "fresh_provider": 0,
+    "fresh_root": 0,
+    "fresh_IVP": 0,
+    "reference_replay": 0,
+    "historical_suite": 0,
+    "carry_paired_full49_production": 0
+  },
+  "required_return": [
+    "HOST.json",
+    "compiler_identity/EXECUTION.json",
+    "build_first/EXECUTION.json",
+    "gate_first/stdout.txt",
+    "gate_first/stderr.txt",
+    "gate_first/EXECUTION.json",
+    "consumer_first/EXECUTION.json",
+    "ORACLE_CHECK.json",
+    "WEIGHTED_SOURCE_SIDECAR.json",
+    "NCP_RUN.json",
+    "MANIFEST.json",
+    "review/DECISION.json",
+    "detached backup receipts and next handoff"
+  ],
+  "open": [
+    "native root authority",
+    "U/V/W/I",
+    "finite energy interaction",
+    "carried second half",
+    "paired defect",
+    "time/continuum",
+    "full49",
+    "production"
+  ],
+  "backup_destinations": {
+    "Drive_folder_id": "1074Hr5msnAMgIXWU-PmgdMrQvrdV6emM",
+    "Dropbox_folder": "/BASS_DERIVATION_DOSSIERS_20260912/WU088_HH_R31S_NCP_REDESIGN_20260928"
+  },
+  "additional_attachment_required": false
+}

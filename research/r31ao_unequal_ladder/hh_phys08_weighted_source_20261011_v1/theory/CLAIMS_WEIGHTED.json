@@ -1,0 +1,184 @@
+{
+  "schema": "WU088_HH_PHYS08_WEIGHTED_PHOTO_CLAIMS_V1",
+  "owner": "/root/phys08_weighted_theory",
+  "document": "theory/WEIGHTED_PHOTO_THEOREM_KO.md",
+  "source_repository": "cosmosapjw-quantum/WU088_HH",
+  "source_head": "4d5c18b8a6d348e2de42b5e12dc0fd4d753add7b",
+  "source_prefix": "research/r31ao_unequal_ladder/ncp_phys07_local_20261011_v1/",
+  "archived_evidence_paths_relative_to": "inputs/ncp07/raw",
+  "scope": "fixed-coefficient real source over the original stored-interval COMMON first-stage family; saved signed exports retained",
+  "native_authority": false,
+  "host_model_label": "GPT-6 Astra Pro",
+  "runtime_model_attestation": null,
+  "model_switched": false,
+  "harness": "PHYS-MATH GPT-6 Astra v4 continuation",
+  "author_execution": {
+    "source_or_physics_calls": 0,
+    "builds": 0,
+    "tests": 0,
+    "numerical_diagnostic_runs": 0,
+    "remote_mutations": 0,
+    "note": "Counts describe this theory subtask only; inherited and root-owned executions have separate provenance."
+  },
+  "root_owned_exact_arithmetic": {
+    "result": "results/weighted_corrected/WEIGHTED_RESULTS.json",
+    "result_sha256": "b6e32f01138068920518f43dd294086ba2de859909ebca580e941aa0fc8e48de",
+    "execution": "evidence/weighted_corrected/EXECUTION.json",
+    "execution_sha256": "cf4676afc9d6918e68bac894c42b2b680b53ec6f1350ed43e725ba7dbefcc1d8",
+    "stdout": "evidence/weighted_corrected/stdout.txt",
+    "status": "PASS",
+    "run_id": "weighted_corrected",
+    "started_utc": "2026-10-11T05:24:42.346263+00:00",
+    "finished_utc": "2026-10-11T05:24:42.716765+00:00",
+    "elapsed_seconds": 0.3678347829991253,
+    "max_rss_KiB_linux": 19324,
+    "exit_code": 0,
+    "assertions": 294,
+    "assertions_are_unique_tests": false,
+    "semantic_fixture_cases": 11,
+    "bound_files_unchanged": true,
+    "stderr_bytes": 0,
+    "exact_interval_source_sha256": "30886477bcd095a7324c169959f7adee8912a478174a82857408317c3e356390",
+    "diagnostic_source_sha256": "102e33c852512504b5411c46194902a061ce92f33ddb92ce19867ea638be7739",
+    "first_attempt_status": "FAILED_REFERENCE_SCAFFOLDING_OPERATOR_OMISSION",
+    "first_failure": "evidence/weighted_first/FAILURE_CLASSIFICATION.json",
+    "first_failure_snapshot": "evidence/weighted_first/source_snapshot",
+    "targeted_fix": "Reflected division __rtruediv__ delegates to existing interval division; source input/domain/sign/tolerance/assertions unchanged. Corrected output uses new create-only run ID.",
+    "native_source_replay": false,
+    "rust_status": "NOT_BUILT_NOT_RUN_TOOLCHAIN_ABSENT",
+    "execution_by_this_theory_author": false
+  },
+  "claims": [
+    {
+      "id": "WT-01",
+      "statement": "For every signed source direction v, DT[v]=C*(p*v_w-w*(v_x+fhat*v_HeII+2*fhat*v_HeIII))/p^2.",
+      "evidence_status": ["derived"],
+      "premises": ["p>0", "C>0", "fixed stored density ratio fhat", "thermal-w coordinates", "same source/domain"],
+      "evidence": ["document equations (1),(2),(3),(6)", "candidate/src/hh_primary_extension.rs", "src/sourcebox.rs::temperature"],
+      "support_relation": "supports",
+      "claim_ceiling": "source directional derivative only"
+    },
+    {
+      "id": "WT-02",
+      "statement": "Total HI photo cooling is equivalent to p*Q-w*R<0; if R>0 this is Q/R<w/p. Individual a_j*p<w for every positive-support node is sufficient but not necessary.",
+      "evidence_status": ["derived"],
+      "premises": ["HI-only exact fixed sigma leaves", "positive p,C", "retained source rate sum", "R>0 only for ratio form"],
+      "evidence": ["document equations (7)-(12)", "document section 4.2 counterexample", "candidate/src/phys04_mixed.rs::phys04_reduced_residual"],
+      "signed_weight_note": "Do not interpret Q/R as a convex weighted average for arbitrary signed derivative enclosures.",
+      "support_relation": "supports",
+      "claim_ceiling": "source directional derivative only"
+    },
+    {
+      "id": "WT-03",
+      "statement": "A four-component interval contraction can retain all positive/value and signed derivative subnormal tails and still certify a strict total temperature sign.",
+      "evidence_status": ["derived", "implementation-verified"],
+      "implementation_evidence_origin": "archived PHYS07 NCP first-run DIRECTIONAL_VECTORS and sourcebox producer, not a new theory-subtask execution",
+      "premises": ["all four P_M components retained", "whole gas by whole parameter domain", "valid exact-real enclosures", "strict negative upper bound"],
+      "archived_display_outward": {
+        "full_DT_P_M_K_per_s": ["-2.803890e-13", "-1.733005e-13"],
+        "first_half_DT_P_M_K_per_s": ["-1.403104e-13", "-8.675312e-14"]
+      },
+      "evidence": ["results/full/DIRECTIONAL_VECTORS.json", "results/first_half/DIRECTIONAL_VECTORS.json", "src/sourcebox.rs::directional", "document sections 3,7"],
+      "previous_support_predicate_status": "OPEN retained; not edited or retroactively relabeled",
+      "new_root_owned_exact_arithmetic_evidence": "results/weighted_corrected/WEIGHTED_RESULTS.json#source_stages[*].roles.P_M",
+      "support_relation": "supports",
+      "claim_ceiling": "archived source P_M temperature direction, not total P_N or implicit root"
+    },
+    {
+      "id": "WT-04",
+      "statement": "For q=nH*u^2*k(T) with positive q,u and nu=T*k'/k, Dq[P]=q*(-2*P_x/u+nu*DT[P]/T); P_x>0 and DT[P]<0 imply (H_g P)_x<0 without per-node thermal support restrictions.",
+      "evidence_status": ["derived", "numerically checked"],
+      "premises": ["u=1-x>0", "q>0", "T>0", "nu>0", "same fixed-source q and temperature", "P_x>0", "DT[P]<0"],
+      "evidence": ["document equations (13)-(15)", "candidate/src/hh_primary_extension.rs::hh_rate_jet"],
+      "new_root_owned_numeric_evidence": "results/weighted_corrected/WEIGHTED_RESULTS.json#source_stages[*].roles.*.HgP_x_saved_Jet",
+      "support_relation": "supports",
+      "claim_ceiling": "source contraction only"
+    },
+    {
+      "id": "WT-05",
+      "statement": "For gas-independent incoming Z and HI-only rates, (P_Z,g H)_x=-q*sum_j(A_j*Z_j/D_j^2). The sign has no thermal-energy prerequisite.",
+      "evidence_status": ["derived", "numerically checked"],
+      "premises": ["HI-only exact fixed sigma leaves", "incoming Z gas-independent", "D_j=1+dt*A_j*u>0", "strict positive aggregate for a strict negative conclusion"],
+      "evidence": ["document equation (16)", "candidate/src/phys04_transport.rs", "candidate/src/phys04_mixed.rs"],
+      "new_root_owned_numeric_evidence": "results/weighted_corrected/WEIGHTED_RESULTS.json#source_stages[*].roles.*.PgH_saved_Jet",
+      "signed_weight_note": "For M intervals, certify the aggregate lower bound; do not clip each derivative to nonnegative.",
+      "support_relation": "supports",
+      "claim_ceiling": "source contraction only"
+    },
+    {
+      "id": "WT-06",
+      "statement": "The gas thermal-plus-ionization projection annihilates H and H_g v exactly with the same CHI_H leaf; projected photo-source response keeps E_j+epsilon_j. Neither fact determines finite gas-energy interaction sign.",
+      "evidence_status": ["derived", "numerically checked"],
+      "premises": ["ell=(CHI_H,f*CHI_HeI,f*(CHI_HeI+CHI_HeII),1)", "same CHI_H in HH thermal and ionization terms", "f fixed", "rounded heat leaf error retained"],
+      "evidence": ["document equations (17)-(19)", "src/energy.rs", "src/sourcebox.rs::directional"],
+      "new_root_owned_numeric_evidence": "results/weighted_corrected/WEIGHTED_RESULTS.json#source_stages[*].roles.*.ell_PgH_saved_Jet",
+      "support_relation": "supports",
+      "claim_ceiling": "gas source projection; finite I_e unresolved"
+    },
+    {
+      "id": "WT-07",
+      "statement": "Fixed coefficient source C2 and whole-family quantifiers require one coherent coefficient vector per family, native stored input identity, whole X times Theta coverage, and preservation of signed derivatives; rounded interval programs are not the differentiated C2 maps.",
+      "evidence_status": ["derived", "implementation-verified"],
+      "implementation_evidence_origin": "archived NCP source, C2_DOMAIN and independent review; no new execution by this author",
+      "premises": ["existing source C2 evidence", "same-object PREBE binding", "coefficients fixed in gas/lambda/b", "all denominator positive on the open source chart", "native and Python reference families not identified"],
+      "evidence": ["document section 8", "theory/NATIVE_SOURCE_C2_KO.md", "results/full/C2_DOMAIN.json", "results/first_half/C2_DOMAIN.json", "review/REVIEW_KO.md"],
+      "support_relation": "limits",
+      "claim_ceiling": "underlying real source regularity, not native root authority"
+    },
+    {
+      "id": "WT-08",
+      "statement": "Energy-coordinate Jets require pullback of both state Hessian indices and a valid pullback domain; transformed Jets do not turn the thermal-w box into an energy box.",
+      "evidence_status": ["derived"],
+      "premises": ["exact linear S/Q", "same fixed f", "coordinate-domain image or conservative valid preimage established"],
+      "evidence": ["document equation (20)", "src/energy.rs::transform", "src/energy.rs::export"],
+      "support_relation": "limits",
+      "claim_ceiling": "coordinate transformation identity only"
+    },
+    {
+      "id": "WT-09",
+      "statement": "In both archived NCP07 first-stage source domains, separate exact-rational sums for total photo P_N and birth derivative P_M retain all 33 by 3 signed rate inputs and certify P_x>0, P_w>0, B<0, DT<0, (H_gP)_x<0, (P_gH)_x<0 and ell(P_gH)<0.",
+      "evidence_status": ["derived", "numerically checked", "implementation-verified"],
+      "implementation_scope": "root-owned offline Python exact-rational postprocessing only; Rust NOT_BUILT/NOT_RUN; no fresh source evaluation",
+      "premises": ["archived source interval inclusion and C2 contract", "same whole-state and whole-parameter domain", "fixed coefficient vector per family", "all signed rate/value/gradient/Hessian components retained", "correct PN versus PM Jet-slot mappings"],
+      "new_evidence": ["results/weighted_corrected/WEIGHTED_RESULTS.json", "evidence/weighted_corrected/EXECUTION.json", "evidence/weighted_corrected/stdout.txt", "document sections 7.1 and 7.2"],
+      "display_outward": {
+        "full": {
+          "P_N_B_eV_per_H_per_s": ["-9.969964e-13", "-6.407154e-13"],
+          "P_N_DT_K_per_s": ["-1.740689e-9", "-1.082374e-9"],
+          "P_M_B_eV_per_H_per_s": ["-1.604455e-16", "-1.028246e-16"],
+          "P_M_DT_K_per_s": ["-2.801270e-13", "-1.737038e-13"]
+        },
+        "first_half": {
+          "P_N_B_eV_per_H_per_s": ["-9.977286e-13", "-6.414618e-13"],
+          "P_N_DT_K_per_s": ["-1.741967e-9", "-1.083635e-9"],
+          "P_M_B_eV_per_H_per_s": ["-8.028903e-17", "-5.147328e-17"],
+          "P_M_DT_K_per_s": ["-1.401793e-13", "-8.695494e-14"]
+        }
+      },
+      "old_per_node_predicate": "still false; archived OPEN unchanged",
+      "node32_preserved": true,
+      "signed_He_preserved": true,
+      "overlap_status": "DIAGNOSTIC_ONLY_NOT_IDENTITY_PROOF",
+      "native_authority": false,
+      "support_relation": "supports",
+      "claim_ceiling": "source-level cooling and HH/photo suppression; no implicit or finite interaction claim"
+    }
+  ],
+  "unresolved": [
+    "Actual native nonlinear root and root authority.",
+    "Actual native U,V,W and finite I.",
+    "Finite gas-energy interaction sign.",
+    "Carried second-half, same-terminal full/two-half defect.",
+    "Time and continuum remainder, physical adequacy and production admission."
+  ],
+  "prohibited_inferences": [
+    "No deletion, clipping or zeroing of archived subnormal value/gradient/Hessian tails.",
+    "No statement that a high-energy tail alone determines the total-photo temperature sign.",
+    "No transfer of Python point-reference roots or mixed interactions into the stored-interval native family.",
+    "No reinterpretation of P_M as P_N or as dt*P_M.",
+    "No finite energy sign from exact source energy cancellation.",
+    "No overlap-only equality claim.",
+    "No native authority inferred from valid source arithmetic or hash identity."
+  ],
+  "independent_decision": "pending root-level noncreator reviewer"
+}
