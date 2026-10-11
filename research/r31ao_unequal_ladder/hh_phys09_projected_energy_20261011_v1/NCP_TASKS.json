@@ -1,0 +1,83 @@
+{
+  "schema": "WU088_HH_PHYS09_NCP_TASKS_V1",
+  "project": "WU088_HH",
+  "loop": "PHYS09",
+  "additional_attachment_required": false,
+  "research_science": "COMPLETED_FIRST_PASS",
+  "native_authority": false,
+  "tasks": [
+    {
+      "id": "T01",
+      "action": "Recover pinned core and inspect contract/review/manifest",
+      "execution": "read/hash only"
+    },
+    {
+      "id": "T02",
+      "action": "Resolve PHYS08 actual completion; reuse identical success or execute preserved pending saved-data gate once",
+      "package": "predecessor/WU088_HH_PHYS08_WEIGHTED_SOURCE_NCP_HANDOFF_20261011_v1_sha_84ec6694a01e.zip",
+      "archive_sha256": "84ec6694a01ec711eb2f55542f718bb1f091a5547ab4ce809503089bd18c2b9b",
+      "status_at_intake": "NCP08_RETURN_NOT_OBSERVED",
+      "ceiling": {
+        "compiler_identity": 1,
+        "offline_build": 1,
+        "gate": 1,
+        "consumer": 1,
+        "build_wall_s": 60,
+        "build_memory_MiB": 512,
+        "gate_wall_s": 10,
+        "gate_memory_MiB": 128
+      }
+    },
+    {
+      "id": "T03",
+      "action": "Execute PHYS09 saved-data projected-energy consumer once",
+      "command": "python3 tools/run_ncp_projected.py --run-dir ABSOLUTE_NEW_DIRECTORY",
+      "dependencies": [
+        "T01"
+      ],
+      "T02_independence": "PHYS08 native implementation evidence is separate; a PHYS08 blocker need not block this independent saved-input gate",
+      "ceiling": {
+        "compiler_identity": 1,
+        "offline_build": 1,
+        "gate": 1,
+        "consumer": 1,
+        "build_wall_s": 60,
+        "build_memory_MiB": 512,
+        "gate_wall_s": 15,
+        "gate_memory_MiB": 256,
+        "consumer_wall_s": 15,
+        "consumer_memory_MiB": 256,
+        "each_output_MiB": 16
+      },
+      "oracle": "results/projected_first/GOLDEN_ORACLE.json",
+      "fixture": "results/projected_first/GATE_INPUTS.tsv",
+      "acceptance": "Actual finite binary64 intervals contain exact rational oracle, labels match endpoints; projected energy strict sign only from actual endpoints."
+    },
+    {
+      "id": "T04",
+      "action": "Noncreator independent review of new implementation and original logs",
+      "dependencies": [
+        "T03"
+      ]
+    },
+    {
+      "id": "T05",
+      "action": "Publish complete return core/PR and all handoff files to both existing backups",
+      "dependencies": [
+        "T04"
+      ],
+      "no_main_merge_or_runtime_install": true
+    }
+  ],
+  "all_new_native_scientific_calls_ceiling": 0,
+  "historical_scientific_replays_ceiling": 0,
+  "auto_retries": false,
+  "actual_native": {
+    "root": null,
+    "U": null,
+    "V": null,
+    "W": null,
+    "I": null
+  },
+  "next_research_after_NCP": "Native issuer/root authority and coherent carried joint gas/photon/guard state remain separate obligations; select the next concrete physics obligation from actual returned evidence."
+}
