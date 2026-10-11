@@ -1,0 +1,1 @@
+추가 첨부 없이 delivery START에 고정된 Git commit/path 또는 Drive/Dropbox archive ID로 복구한다. 압축본 크기·SHA256 및 MANIFEST/SHA256SUMS를 먼저 검증한다. source core, 기존 PHYS08/09 완료 로그와 actual binaries가 포함된다. 동일 identity 완료 실행을 다시 수행하지 않는다. 현재 과학 OPEN 항목은 CLAIM_LEDGER.json을 따른다. 새 native source/root/IVP 및 old suite 예산은 0이다.

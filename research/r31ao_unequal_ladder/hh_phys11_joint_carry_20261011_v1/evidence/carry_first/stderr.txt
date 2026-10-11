@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/198b9c7581be/HH_PHYS11_20261011_v1/diagnostics/analyze_joint_carry.py", line 248, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/scratch/198b9c7581be/HH_PHYS11_20261011_v1/diagnostics/analyze_joint_carry.py", line 233, in main
+    s,d=stage(name,gas[name],ledger[name]);summaries.append(s);details.append(d)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/198b9c7581be/HH_PHYS11_20261011_v1/diagnostics/analyze_joint_carry.py", line 96, in stage
+    oldgas=[E.saved(s) for s in common['old_gas']]
+            ^^^^^^^^^^
+  File "/workspace/scratch/198b9c7581be/HH_PHYS11_20261011_v1/src/exact_weighted.py", line 57, in saved
+    lo, hi = unbits(d['lo_bits']), unbits(d['hi_bits'])
+                    ~^^^^^^^^^^^
+KeyError: 'lo_bits'
