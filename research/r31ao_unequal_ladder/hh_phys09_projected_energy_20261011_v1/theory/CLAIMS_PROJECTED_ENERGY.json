@@ -1,0 +1,171 @@
+{
+  "schema": "WU088_HH_PHYS09_PROJECTED_ENERGY_CLAIMS_V1",
+  "project": "WU088_HH",
+  "loop": "PHYS09",
+  "date": "2026-10-11",
+  "theory_author": "/root/phys09_theory_route",
+  "theory_author_scientific_executions": 0,
+  "independent_decision": "SEE_review/DECISION.json",
+  "theorem": "theory/PROJECTED_ENERGY_THEOREM_KO.md",
+  "scientific_result": "results/projected_first/PROJECTED_RESULTS.json",
+  "scientific_result_sha256": "c6329fed8c411e1592bd1a0c63ebd9ca6151e81500ed1f46fb6b40f4b7758444",
+  "scientific_execution": "evidence/projected_first/EXECUTION.json",
+  "scientific_execution_status": "FIRST_PASS_EXIT_0_48_ASSERTIONS_8_SEMANTIC_CASES",
+  "fixed_source_intake": "inputs/ncp07/SOURCE_INTAKE_MANIFEST.json",
+  "source_delivery_commit": "4d5c18b8a6d348e2de42b5e12dc0fd4d753add7b",
+  "source_core_commit": "dfa574ce2c302ff2dce38d0e487903d57f1db977",
+  "coefficient_quantifier": "For each admitted fixed COMMON/source coefficient tuple alpha, the identical alpha is held across the entire lambda,b rectangle. The theorem does not identify independently selected interval endpoints with a coherent source family.",
+  "conventions": {
+    "gas": "x_HII,y_HeII,y_HeIII,w[eV/H]",
+    "theta": "lambda,b in [0,1]^2",
+    "slots": {
+      "gas": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "lambda": 4,
+      "b": 5,
+      "unused_in_this_contraction": 6
+    },
+    "source_domain": "Original outward native X from frozen words; Banach Y=exact(center)+[-exact(radius),exact(radius)] contained in X",
+    "stages": [
+      "full",
+      "first_half_from_same_COMMON"
+    ],
+    "energy": "e=ell*g, ell=(chi_H,f*chi_HeI,f*(chi_HeI+chi_HeII),1)",
+    "normalization": "Stage f and exact(stored nHe)/exact(stored nH) are distinct; all source leaves retained",
+    "units": "e,W_e,I_e in eV/H; lambda and b dimensionless; c,k_B and eV-to-erg retained"
+  },
+  "inherited_premises": [
+    "Native-captured coefficient real source has the stated open C2 chart containing X times Theta.",
+    "Original SOURCE_BOX and SOURCE_CENTRE signed interval Jets enclose that same fixed real source and all derivatives on their declared domains.",
+    "COMMON and finite incoming amount M are fixed coefficient data across Theta; no carried second-half is substituted.",
+    "Original interval_math, AD, geometry and provider source-inclusion semantics remain inherited, not newly formally proved by PHYS09."
+  ],
+  "claims": [
+    {
+      "id": "P09-01",
+      "kind": "DERIVED",
+      "status": "DERIVED_PENDING_INDEPENDENT_REVIEW",
+      "claim": "ell H=ell H_g=ell H_gg=0 for the identical captured chi_H reaction-vector leaf, and E=ell nonphoto+sum_(j,a)(heat_(j,a)+chi_a)*rate_(j,a)-2*Hmean*w.",
+      "conditions": [
+        "The stage f in ell and photo normalization is the identical exact leaf.",
+        "The exact sum of captured heat and chi leaves is retained.",
+        "Nonphoto projection retains normalization corrections; no extra Jnorm double count."
+      ],
+      "source_evidence": [
+        "inputs/ncp07/raw/candidate/src/phys04_mixed.rs::phys04_reduced_residual",
+        "inputs/ncp07/raw/src/energy.rs::export",
+        "theory/PROJECTED_ENERGY_THEOREM_KO.md"
+      ]
+    },
+    {
+      "id": "P09-02",
+      "kind": "DERIVED_WITH_INHERITED_SOURCE_PREMISES",
+      "status": "DERIVED_AND_EXACT_RATIONAL_VERIFIED_PENDING_INDEPENDENT_REVIEW",
+      "claim": "Each admitted fixed real source family has a root in the interior of Y, unique in X, with one C2 parameter branch over Theta.",
+      "conditions": [
+        "Y is contained in original X.",
+        "C is fixed and nonsingular.",
+        "gamma=norm_r(I-C A)<1 and every radius-beta-B*radius margin is strictly positive.",
+        "The inherited C2 and source enclosure premises hold."
+      ],
+      "source_evidence": [
+        "inputs/ncp07/raw/results/full/SOURCE_BOX.json",
+        "inputs/ncp07/raw/results/first_half/SOURCE_BOX.json",
+        "inputs/ncp07/raw/inputs/FROZEN_SOURCE_CONTRACT.json",
+        "theory/PROJECTED_ENERGY_THEOREM_KO.md"
+      ]
+    },
+    {
+      "id": "P09-03",
+      "kind": "DERIVED_AND_NUMERICALLY_CHECKED",
+      "status": "EXACT_RATIONAL_FIRST_PASS_PENDING_INDEPENDENT_REVIEW",
+      "claim": "Original signed residual terms and a fixed four-term preconditioned Neumann sum plus rigorous tail enclose U,V,W of the same mathematical first-stage family.",
+      "conditions": [
+        "Every original G_lambdab,G_g_lambda,G_g_b,G_gg signed component is included.",
+        "Tail gamma^4*norm_r(C*rhs)/(1-gamma) is included componentwise with the actual radius.",
+        "No source callback, nonlinear root, corner evaluation or finite difference substitutes for the proof."
+      ],
+      "observed_uniform_signs_both_stages": {
+        "W_x": "STRICT_NEGATIVE",
+        "W_w": "STRICT_POSITIVE",
+        "W_T_with_observable_Hessian": "STRICT_POSITIVE",
+        "W_yHeII": "ZERO_CONTAINING",
+        "W_yHeIII": "ZERO_CONTAINING"
+      },
+      "native_authority": false
+    },
+    {
+      "id": "P09-04",
+      "kind": "DERIVED_AND_NUMERICALLY_CHECKED",
+      "status": "EXACT_RATIONAL_FIRST_PASS_PENDING_INDEPENDENT_REVIEW",
+      "claim": "The early-projected scalar expression encloses W_e=d(E_g W+E_gg[U,V]+E_g_lambda V+E_g_b U+E_lambdab), and its uniform interval also encloses the finite unit-rectangle I_e.",
+      "conditions": [
+        "Same fixed source family and C2 root branch for all four corners.",
+        "All 33 by 3 rate and nonphoto signed derivative tails are retained, including numerical lambda-related tails.",
+        "The original thermal-w domain is used; no transformed axis-aligned energy box authority is inferred.",
+        "A strict energy sign is reported only if the actual complete interval has that sign."
+      ],
+      "finite_energy_sign": "STRICT_NEGATIVE_BOTH_FIRST_STAGES_CONDITIONAL_ON_INHERITED_SOURCE_INCLUSION",
+      "projected_energy_outward_binary64_display": {
+        "full": [
+          -6.192852956727484e-16,
+          -2.012354998700877e-16
+        ],
+        "first_half": [
+          -7.75969827499494e-17,
+          -2.5357316013204017e-17
+        ]
+      },
+      "authoritative_endpoints": "Exact rational endpoints in the bound scientific_result; displayed floats do not replace them.",
+      "direct_component_projection": "ZERO_CONTAINING_BOTH_STAGES_PRESERVED",
+      "finite_remainder_over_negative_source_margin_upper_display": {
+        "full": 0.013272538631541469,
+        "first_half": 0.006646316425409087
+      },
+      "native_authority": false
+    },
+    {
+      "id": "P09-05",
+      "kind": "UNRESOLVED",
+      "status": "OPEN",
+      "claim": "Actual native trusted root, U,V,W,I or solver authority.",
+      "reason": "Offline source-bound mathematical inclusion and a scalar consumer do not issue native root certificates or execute an implicit endpoint.",
+      "actual_native": {
+        "root": null,
+        "U": null,
+        "V": null,
+        "W": null,
+        "I": null
+      },
+      "native_authority": false
+    },
+    {
+      "id": "P09-06",
+      "kind": "UNRESOLVED",
+      "status": "OPEN",
+      "claim": "Carried second-half, full versus two-half paired defect, time/continuum remainder, full49 and production.",
+      "reason": "Both source stages begin independently from the same COMMON; no terminal joint carry or continuum remainder has been produced."
+    },
+    {
+      "id": "P09-07",
+      "kind": "PRESERVED_HISTORICAL_EVIDENCE",
+      "status": "PRESERVED_OPEN",
+      "claim": "Prior PHYS07 analytic-reference finite energy and NCP07 per-node source-witness OPEN statuses are unchanged.",
+      "reason": "A new source family/projection result is additive evidence. It does not rewrite the prior family, native predicate, original failure or archived numerical array."
+    }
+  ],
+  "no_claims": [
+    "Rounded binary64 program is C2",
+    "Exact endpoint identities with analytic PHYS07 transport reference",
+    "Energy zero because HH source has exact zero projection",
+    "Energy sign from formal leading term alone",
+    "Clipped subnormal or signed derivative tails",
+    "Native solver/issuer authorization from symbolic or rational arithmetic success",
+    "Independent promotion by this theorem creator"
+  ],
+  "creator_status_snapshot": "Individual pending-review status strings record the creator proposal; the separate noncreator decision is authoritative for final scoped adoption."
+}
