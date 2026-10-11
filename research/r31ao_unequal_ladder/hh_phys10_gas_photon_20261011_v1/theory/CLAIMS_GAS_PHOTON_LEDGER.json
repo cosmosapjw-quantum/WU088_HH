@@ -1,0 +1,326 @@
+{
+  "schema": "WU088_HH_PHYS10_GAS_PHOTON_LEDGER_CLAIMS_V1",
+  "date": "2026-10-11",
+  "project": "WU088_HH",
+  "loop": "PHYS10",
+  "creator": "/root/phys10_theory",
+  "creator_status": "DERIVATION_AND_NUMERICAL_RESULT_PROPOSAL_NOT_INDEPENDENT_DECISION",
+  "creator_recommendation": "PROMOTE_SCOPED_IF_ACCEPTED_BY_NONCREATOR_INDEPENDENT_REVIEW",
+  "independent_decision": "SEE_review/DECISION.json",
+  "creator_snapshot_independent_decision": "NOT_YET_READ_AT_THEORY_WRITE",
+  "model_context": {
+    "host_developer_label": "GPT-6 Astra Pro",
+    "router_result": "MODEL_UNRESOLVED_PRO_ALIAS_ABSENT",
+    "harness_applied": "already selected and locally preserved GPT-6 Astra research v4.0.0, model-independent continuation",
+    "model_switched": false,
+    "new_model_identity_attestation": false
+  },
+  "source": {
+    "repository": "cosmosapjw-quantum/WU088_HH",
+    "NCP07_source_delivery": "4d5c18b8a6d348e2de42b5e12dc0fd4d753add7b",
+    "PHYS09_science_core": "3e409503c40a7899033126a458b1cb06b227978a",
+    "PHYS09_core_subtree": "afdef4725df9fdb084038d291343ac371ef96196",
+    "reused_projected_results_sha256": "c6329fed8c411e1592bd1a0c63ebd9ca6151e81500ed1f46fb6b40f4b7758444"
+  },
+  "assumptions": [
+    "The original NCP07 fixed-coefficient real-source interval inclusion is an inherited premise, not a newly formalized kernel.",
+    "For each admitted fixed coefficient tuple alpha, the same PHYS09 C2 implicit family exists throughout the full unit theta rectangle, with the reused uniform U,V,W and gas-energy enclosures.",
+    "Alpha, dt, node energies, cross-section and heat/threshold/density/geometry leaves are held fixed across the parameter rectangle and all four finite corners.",
+    "Incoming photon amount Nbar_j+b M_j is photons/H, independent of gas and lambda, with its original finite captured birth amount; no extra dt or nH division.",
+    "Full and first_half independently start from the same COMMON; no carried second_half is substituted.",
+    "All 33 by 3 signed rate Jets and all four nonphoto Jets preserve their source enclosure semantics; no signed subnormal clipping.",
+    "Gas and photon observables share exactly the captured gas state and absorption source graph."
+  ],
+  "definitions": {
+    "gas": "g=(x_HII,y_HeII,y_HeIII,w[eV/H])",
+    "theta": "(lambda,b) in [0,1]^2",
+    "gas_energy": "e=ell g, ell=(chiH,f chiHeI,f(chiHeI+chiHeII),1)",
+    "photon_energy": "egamma=sum_j exact(E_j) N_j[eV/H]; local retained photons after absorption",
+    "epsilon": "exact(captured heat_ja)+exact(CHI_a)-exact(E_j)",
+    "A": "sum_j,a exact(E_j) R_ja",
+    "B": "ell F_nonphoto-2 Hmean w+sum_j,a epsilon_ja R_ja",
+    "L": "J_g W+J_gg[U,V]+J_g_lambda V+J_g_b U+J_lambda_b",
+    "I": "z(1,1)-z(1,0)-z(0,1)+z(0,0), within the same alpha family"
+  },
+  "claims": [
+    {
+      "id": "P10-01",
+      "claim": "d sum_a R_ja=Nin_j-N_j, and Wgamma=-d L(sum_j,a E_j R_ja).",
+      "evidence_status": [
+        "derived"
+      ],
+      "scope": "fixed captured source elimination; full mixed derivative along the inherited same implicit family",
+      "evidence": [
+        "theory/GAS_PHOTON_LEDGER_THEOREM_KO.md sections 2-3",
+        "inputs/ncp07/raw/candidate/src/phys04_mixed.rs",
+        "inputs/ncp07/raw/candidate/src/phys04_transport.rs",
+        "inputs/ncp07/raw/candidate/src/coupled_primary.rs"
+      ]
+    },
+    {
+      "id": "P10-02",
+      "claim": "e+egamma=e0+sum E_j Nin_j+d B, so We+Wgamma=d L(B), with nonphoto, expansion and captured heat correction all retained exactly.",
+      "evidence_status": [
+        "derived"
+      ],
+      "scope": "local absorption stage gas-plus-retained-photon ledger; Jnorm already included in nonphoto projection",
+      "evidence": [
+        "theory/GAS_PHOTON_LEDGER_THEOREM_KO.md section 4",
+        "inputs/ncp07/raw/src/energy.rs",
+        "diagnostics/analyze_photon_ledger.py"
+      ]
+    },
+    {
+      "id": "P10-03",
+      "claim": "Retained-photon mixed response Wgamma and finite unit-rectangle Igamma are strictly positive in both admitted first-stage families.",
+      "evidence_status": [
+        "derived",
+        "numerically checked",
+        "implementation-verified"
+      ],
+      "source_condition": "inherited source inclusion and same C2 root family",
+      "evidence": [
+        "theory/GAS_PHOTON_LEDGER_THEOREM_KO.md sections 5-6",
+        "results/ledger_first/LEDGER_RESULTS.json",
+        "evidence/ledger_first/EXECUTION.json"
+      ]
+    },
+    {
+      "id": "P10-04",
+      "claim": "The finite ratio Igamma/(-Ie) lies in the stored same-family ratio intervals around one; absolute relative imbalance is bounded by eta in both stages.",
+      "evidence_status": [
+        "derived",
+        "numerically checked",
+        "implementation-verified"
+      ],
+      "derivation": "Finite FTC enclosures then (Igamma/(-Ie))=1+(Ie+Igamma)/(-Ie); not the integral of a pointwise ratio.",
+      "evidence": [
+        "theory/GAS_PHOTON_LEDGER_THEOREM_KO.md sections 5-6",
+        "results/ledger_first/LEDGER_RESULTS.json"
+      ]
+    },
+    {
+      "id": "P10-05",
+      "claim": "The small total gas-plus-photon interval is ZERO_CONTAINING in both stages; exact zero and a total positive or negative sign remain unresolved.",
+      "evidence_status": [
+        "unresolved"
+      ],
+      "status": "ZERO_CONTAINING_NOT_EXACT_ZERO",
+      "evidence": [
+        "results/ledger_first/LEDGER_RESULTS.json",
+        "theory/GAS_PHOTON_LEDGER_THEOREM_KO.md sections 6-7"
+      ]
+    },
+    {
+      "id": "P10-06",
+      "claim": "Expansion mixed energy is strictly negative; nonphoto and captured heat correction mixed contributions remain zero-containing. Nineteen nonzero epsilon coefficients do not establish a nonzero physical Psi contribution.",
+      "evidence_status": [
+        "derived",
+        "numerically checked",
+        "implementation-verified"
+      ],
+      "scope": "source-part decomposition of the same local ledger",
+      "evidence": [
+        "results/ledger_first/LEDGER_RESULTS.json details/open_ledger_parts and capture_epsilon",
+        "theory/GAS_PHOTON_LEDGER_THEOREM_KO.md section 6.2"
+      ]
+    },
+    {
+      "id": "P10-07",
+      "claim": "Actual native root/U/V/W/I and native issuer authority are not advanced by this saved-source contraction.",
+      "evidence_status": [
+        "unresolved"
+      ],
+      "status": "OPEN",
+      "native_authority": false,
+      "actual_native_root_U_V_W_I": null
+    },
+    {
+      "id": "P10-08",
+      "claim": "Carried second_half, paired full/two-half defect, time/continuum remainder, full49, production and global transport/escape/guard/redshift energy conservation remain open.",
+      "evidence_status": [
+        "unresolved"
+      ],
+      "status": "PRESERVED_OPEN",
+      "reason": "No new joint carry source coverage or trajectory/continuum dataset or execution was introduced."
+    },
+    {
+      "id": "P10-09",
+      "claim": "Historical PHYS07 analytic-reference energy OPEN and NCP07 node32 per-node source predicate OPEN are not retrospectively changed.",
+      "evidence_status": [
+        "unresolved"
+      ],
+      "status": "PRESERVED_OPEN"
+    }
+  ],
+  "observed_stages": [
+    {
+      "stage": "full",
+      "units": "eV/H",
+      "same_COMMON_first_stage": true,
+      "photon_finite_and_mixed": {
+        "lo": 2.0147819024003132e-16,
+        "hi": 6.190685965150866e-16,
+        "lo_bits": "3cad093bb48a7223",
+        "hi_bits": "3cc64de665384769",
+        "sign": "STRICT_POSITIVE"
+      },
+      "gas_plus_photon_finite_and_mixed": {
+        "lo": -3.1314477547412323e-19,
+        "hi": 2.4467453520579934e-19,
+        "lo_bits": "bc171b2337a706d0",
+        "hi_bits": "3c120dc573b98c74",
+        "sign": "ZERO_CONTAINING"
+      },
+      "photon_over_negative_gas_ratio": {
+        "lo": 0.9984438889973375,
+        "hi": 1.0012158616912215,
+        "lo_bits": "3feff34099444ecc",
+        "hi_bits": "3ff004faec63343f",
+        "sign": "STRICT_POSITIVE"
+      },
+      "relative_imbalance_upper": 0.0015561110026624584,
+      "capture_epsilon_nonzero_count": 19,
+      "capture_epsilon_total": 99,
+      "source_part_intervals": {
+        "nonphoto": {
+          "lo": -2.787417411584523e-19,
+          "hi": 2.7907756952147026e-19,
+          "lo_bits": "bc1491485a000b20",
+          "hi_bits": "3c1497a051608824",
+          "sign": "ZERO_CONTAINING"
+        },
+        "expansion": {
+          "lo": -3.440303431567093e-20,
+          "hi": -1.0578055231115218e-20,
+          "lo_bits": "bbe44ed6ed37dd81",
+          "hi_bits": "bbc8fa0ac377c3b9",
+          "sign": "STRICT_NEGATIVE"
+        },
+        "capture_defect": {
+          "lo": -5e-324,
+          "hi": 5e-324,
+          "lo_bits": "8000000000000001",
+          "hi_bits": "0000000000000001",
+          "sign": "ZERO_CONTAINING"
+        }
+      },
+      "exact_endpoint_authority": "results/ledger_first/LEDGER_RESULTS.json, matching stage record and exact field"
+    },
+    {
+      "stage": "first_half",
+      "units": "eV/H",
+      "same_COMMON_first_stage": true,
+      "photon_finite_and_mixed": {
+        "lo": 2.5372573637033666e-17,
+        "hi": 7.758341579441771e-17,
+        "lo_bits": "3c7d40a9761400ad",
+        "hi_bits": "3c965ca54a1c6f7a",
+        "sign": "STRICT_POSITIVE"
+      },
+      "gas_plus_photon_finite_and_mixed": {
+        "lo": -1.9605021839988345e-20,
+        "hi": 1.5319948343632613e-20,
+        "lo_bits": "bbd72541181bcb8b",
+        "hi_bits": "3bd2162b974515dd",
+        "sign": "ZERO_CONTAINING"
+      },
+      "photon_over_negative_gas_ratio": {
+        "lo": 0.9992268494887321,
+        "hi": 1.0006041628512914,
+        "lo_bits": "3feff9aa95fadae1",
+        "hi_bits": "3ff0027982bb010b",
+        "sign": "STRICT_POSITIVE"
+      },
+      "relative_imbalance_upper": 0.0007731505112678191,
+      "capture_epsilon_nonzero_count": 19,
+      "capture_epsilon_total": 99,
+      "source_part_intervals": {
+        "nonphoto": {
+          "lo": -1.7451970205780317e-20,
+          "hi": 1.7472999977840642e-20,
+          "lo_bits": "bbd49a88caea1723",
+          "hi_bits": "3bd4a0e3e476ca45",
+          "sign": "ZERO_CONTAINING"
+        },
+        "expansion": {
+          "lo": -2.1530516342080285e-21,
+          "hi": -6.625765892416593e-22,
+          "lo_bits": "bba455c2698da33f",
+          "hi_bits": "bb89080c2d865182",
+          "sign": "STRICT_NEGATIVE"
+        },
+        "capture_defect": {
+          "lo": -5e-324,
+          "hi": 5e-324,
+          "lo_bits": "8000000000000001",
+          "hi_bits": "0000000000000001",
+          "sign": "ZERO_CONTAINING"
+        }
+      },
+      "exact_endpoint_authority": "results/ledger_first/LEDGER_RESULTS.json, matching stage record and exact field"
+    }
+  ],
+  "actual_new_execution": {
+    "run_id": "ledger_first",
+    "elapsed_seconds": 0.7208253940043505,
+    "max_RSS_KiB": 23924,
+    "exit_code": 0,
+    "timeout": false,
+    "stderr_bytes": 0,
+    "assertions": 35,
+    "assertions_are_unique_tests": false,
+    "semantic_cases": 7,
+    "bound_files": 19,
+    "bound_files_unchanged": true,
+    "attempts": 1,
+    "corrections": 0,
+    "new_source_callbacks": 0,
+    "new_inverse_solves": 0,
+    "new_native_root_calls": 0,
+    "historical_scientific_replays": 0,
+    "owner_program": "diagnostics/analyze_photon_ledger.py",
+    "theory_creator_science_runs": 0,
+    "execution_evidence": "evidence/ledger_first/EXECUTION.json"
+  },
+  "scope_exclusions": [
+    "absolute energy conversion or heating/cooling efficiency",
+    "global transport or escape/redshift/guard conservation",
+    "a new native root or trusted native uniform issuer",
+    "interpreting first_half as carried second_half or using the two data points for a time convergence order",
+    "setting signed tails or the total interaction to exactly zero",
+    "heavy parameter replication or 64-core launch to fill hardware without a new scientific work unit"
+  ],
+  "artifact_evidence": [
+    {
+      "path": "results/ledger_first/LEDGER_RESULTS.json",
+      "bytes": 477429,
+      "sha256": "5c80682180650f4c98bff6a0cec699cb04b9a52c680a019b1e522f0bb598a7cc"
+    },
+    {
+      "path": "results/ledger_first/SUMMARY.json",
+      "bytes": 2111,
+      "sha256": "73c6ddabd0d8fc2047405378be253d0a7f58fc0ef82f3e91f98f52c7d85c1cbe"
+    },
+    {
+      "path": "diagnostics/analyze_photon_ledger.py",
+      "bytes": 12550,
+      "sha256": "f4de621ae1bf82d7097f11b87847d05fcd563256cb0249650b55a239accfe636"
+    },
+    {
+      "path": "evidence/ledger_first/EXECUTION.json",
+      "bytes": 8097,
+      "sha256": "56b9bc4d35c56f6179defacc3b890cba92f11a4269f8f959c629cef8e9d3b082"
+    },
+    {
+      "path": "SCIENTIFIC_CONTRACT.md",
+      "bytes": 4583,
+      "sha256": "7860dc05d3118267a06efada060a4ffdb1ef99e6aad881fb58334863334cb1ba"
+    },
+    {
+      "path": "theory/GAS_PHOTON_LEDGER_THEOREM_KO.md",
+      "bytes": 22933,
+      "sha256": "42f186410fc565b62a42ded4305463999330c52ebdd17fc812c0b28e523e0252"
+    }
+  ]
+}

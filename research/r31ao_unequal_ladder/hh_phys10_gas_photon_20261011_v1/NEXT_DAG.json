@@ -1,0 +1,95 @@
+{
+  "schema": "WU088_HH_PHYS10_NEXT_DAG_V1",
+  "project": "WU088_HH",
+  "current_loop": "PHYS10",
+  "active_ncp_heavy_queue": [],
+  "active_ncp_launch": false,
+  "future_nodes_are_not_active_execution_authorization": true,
+  "nodes": [
+    {"id": "P08", "name": "Archived weighted scalar gate", "status": "REUSED_EXISTING_COMPLETE", "evidence": "inputs/current_return/files/ncp08/VALIDATION.json", "replay": false},
+    {"id": "P09", "name": "Projected finite gas-energy gate", "status": "REUSED_EXISTING_COMPLETE", "evidence": "inputs/current_return/files/ncp09/NCP_RETURN.json", "replay": false},
+    {"id": "P10", "name": "Finite gas-plus-surviving-photon energy ledger", "depends_on": ["P09"], "status": "COMPLETE_HERE", "evidence": "results/ledger_first/SUMMARY.json", "execution": "evidence/ledger_first/EXECUTION.json", "decision": "review/DECISION.json", "replay": false},
+    {
+      "id": "CARRY_CONTRACT",
+      "name": "Same-family joint value and derivative carry",
+      "depends_on": ["P09", "P10"],
+      "status": "NEXT_LOCAL_RESEARCH_OBLIGATION",
+      "location": "HERE",
+      "output": "Derived joint gas/photon/guard/ledger carry map with U,V,W and unit/normalization conventions",
+      "acceptance": ["all joint components and clock have the same family identity", "historical and future derivative ledgers remain distinct", "stage f and stored-density ratio remain distinct", "signed derivative tails and compensation state are retained"],
+      "native_calls_currently_authorized": 0
+    },
+    {
+      "id": "NORMALIZED_HISTORY_BINDING",
+      "name": "Actual physical history and initial-data binding",
+      "depends_on": ["CARRY_CONTRACT"],
+      "status": "OPEN_INPUT_AND_IDENTITY_OBLIGATION",
+      "location": "HERE",
+      "required_inputs": ["actual incoming gas/photon/lower-guard state", "per-H photon and event normalization", "eV/H energy and work ledgers", "fixed coefficient tuple over parameter rectangle", "background/clock and density history", "photon/source history and closure", "task-specific initial and terminal times"],
+      "acceptance": "Immutable source data with units and provenance; no fabricated or silently normalized replacement history"
+    },
+    {
+      "id": "NEXT_STAGE_COVERAGE",
+      "name": "Source domain and regularity for actual carried next stage",
+      "depends_on": ["CARRY_CONTRACT", "NORMALIZED_HISTORY_BINDING"],
+      "status": "OPEN_SOURCE_COVERAGE_OBLIGATION",
+      "location": "HERE_FOR_THEORY_AND_LIGHT_CHECKS",
+      "acceptance": ["next source input binds actual first-half joint output", "positive denominator and physical state domain", "hat/guard chart handling over the complete next parameter domain", "whole-source inclusion/C2 premises are explicit", "same-COMMON first_half is not relabeled as second_half"],
+      "native_calls_currently_authorized": 0
+    },
+    {
+      "id": "NATIVE_FAMILY_BINDING",
+      "name": "Native issuer/root and mathematical-family connection",
+      "depends_on": ["NORMALIZED_HISTORY_BINDING", "NEXT_STAGE_COVERAGE"],
+      "status": "OPEN_AUTHORITY_AND_IMPLEMENTATION_OBLIGATION",
+      "location": "HERE_FOR_DESIGN_AND_LIGHT_CHECKS",
+      "acceptance": "Required actual native state/derivative evidence is independently bound to the same source family; scalar interval checks alone do not issue native authority",
+      "native_calls_currently_authorized": 0
+    },
+    {
+      "id": "LOCAL_REPRESENTATIVE_TASK",
+      "name": "A necessary new carried task with measured cost",
+      "depends_on": ["CARRY_CONTRACT", "NORMALIZED_HISTORY_BINDING", "NEXT_STAGE_COVERAGE", "NATIVE_FAMILY_BINDING"],
+      "status": "WAITING_FOR_PHYSICAL_AND_EXECUTION_CONTRACT",
+      "location": "HERE_IF_SHORT_AND_SUPPORTED",
+      "acceptance": ["new task answers an actual physical question", "bounded first attempt with immutable inputs and raw logs", "measured wall/CPU time, peak RSS and output bytes", "completed pilot is reused as campaign evidence"],
+      "run_now": false
+    },
+    {
+      "id": "HEAVY_TASK_SET",
+      "name": "Scientifically required finite independent family set",
+      "depends_on": ["NORMALIZED_HISTORY_BINDING", "LOCAL_REPRESENTATIVE_TASK"],
+      "status": "NOT_READY",
+      "acceptance": ["explicit question, task count and parameter domain", "each family has immutable initial/history/source/closure identity", "completed task identities are removed", "families are independent but carry inside a family stays sequential", "no resource-fill scan or resolution inflation"],
+      "tasks": []
+    },
+    {
+      "id": "HEAVY_ADMISSION",
+      "name": "NCP cost, memory and dependency admission",
+      "depends_on": ["LOCAL_REPRESENTATIVE_TASK", "HEAVY_TASK_SET"],
+      "status": "NOT_READY",
+      "policy": "NCP_TASKS.json#/future_work",
+      "acceptance": ["actual long workload supported by measured representative cost", "sufficient independent unfinished tasks", "recovery/I/O cost included", "actual host limits and worker memory cap known", "checkpoint, first-failure and task-identity resume contract fixed"],
+      "speedup_measured": null
+    },
+    {
+      "id": "NCP_HEAVY_EXECUTION",
+      "name": "Long independent-family campaign",
+      "depends_on": ["HEAVY_ADMISSION"],
+      "status": "NO_HEAVY_JOB_READY",
+      "location": "NCP",
+      "launch": false,
+      "tasks": [],
+      "acceptance": "Only admitted unfinished task identities execute; per-family carry and canonical reduction are preserved; actual metrics and durable checkpoints are returned"
+    }
+  ],
+  "excluded_implicit_edges": [
+    "PHYS10 ledger -> native authority",
+    "same-COMMON first_half -> carried second_half",
+    "energy group -> independent gas solve",
+    "time slice -> independent family",
+    "64-core capacity -> invented task set",
+    "source-only sign -> full49 or production"
+  ],
+  "polling": "No repeated or periodic readiness polling is requested; return the current bounded result."
+}

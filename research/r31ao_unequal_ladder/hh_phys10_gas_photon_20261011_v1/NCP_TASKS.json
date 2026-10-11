@@ -1,0 +1,106 @@
+{
+  "schema": "WU088_HH_PHYS10_NCP_TASKS_V1",
+  "project": "WU088_HH",
+  "loop": "PHYS10",
+  "additional_attachment_required": false,
+  "status": "LOCAL_SCIENCE_COMPLETE_NO_HEAVY_JOB_READY",
+  "completed_work": [
+    {
+      "id": "PHYS08_ARCHIVED_WEIGHTED_GATE",
+      "status": "REUSED_EXISTING_COMPLETE",
+      "source_head": "5288fd50148755f5ed37391e3dcb612d8d51f130",
+      "pull_request": 41,
+      "evidence": "inputs/current_return/files/ncp08/VALIDATION.json",
+      "replay": false
+    },
+    {
+      "id": "PHYS09_PROJECTED_ENERGY_GATE",
+      "status": "REUSED_EXISTING_COMPLETE",
+      "source_head": "e6a72c3df5803b5b23f9a38918dad6a1eba7e1f7",
+      "original_execution_commit": "638af93295c5205c1683c33c9e2b97fe8f3e910d",
+      "pull_request": 42,
+      "evidence": "inputs/current_return/files/ncp09/NCP_RETURN.json",
+      "replay": false
+    },
+    {
+      "id": "PHYS10_GAS_PHOTON_LEDGER",
+      "status": "COMPLETE_HERE",
+      "run_id": "ledger_first",
+      "elapsed_seconds": 0.7208253940043505,
+      "maxrss_KiB": 23924,
+      "assertions": 35,
+      "semantic_cases": 7,
+      "bound_files": 19,
+      "bound_files_unchanged": true,
+      "exit_code": 0,
+      "summary": "results/ledger_first/SUMMARY.json",
+      "execution": "evidence/ledger_first/EXECUTION.json",
+      "scientific_decision": "review/DECISION.json",
+      "replay": false
+    }
+  ],
+  "tasks": [
+    {
+      "id": "NCP_INTAKE_PHYS10",
+      "action": "Recover fixed delivery from its detached Git/backup header; read manifest, contract, completed evidence and final decision.",
+      "mode": "read_and_identity_only",
+      "runtime_invocations": 0
+    },
+    {
+      "id": "NCP_RECORD_EMPTY_QUEUE",
+      "dependencies": ["NCP_INTAKE_PHYS10"],
+      "action": "Preserve completed work and return NO_HEAVY_JOB_READY because heavy_queue is empty and launch is false.",
+      "runtime_invocations": 0,
+      "periodic_polling": false
+    }
+  ],
+  "lightweight_science_queue_for_ncp": [],
+  "heavy_queue": [],
+  "launch": false,
+  "return_when_empty": "NO_HEAVY_JOB_READY",
+  "active_budgets": {
+    "new_compiler_build_gate_consumer": 0,
+    "completed_math_replay": 0,
+    "new_source_provider_native_root_IVP_history": 0,
+    "old_scientific_suite": 0,
+    "runtime_install_or_replacement": 0,
+    "blind_retries": 0
+  },
+  "future_work": {
+    "dag": "NEXT_DAG.json",
+    "routing": "EXECUTION_ROUTING_KO.md",
+    "work_location_for_derivation_and_light_checks": "HERE",
+    "heavy_family_inputs": "real pinned normalized initial/history/background/source data; no fabricated inputs",
+    "heavy_queue_activation_requires_new_concrete_contract": true,
+    "parallel_unit": "independent physical family with sequential carry inside each family",
+    "group_gas_solve_independence": false,
+    "time_chunk_independence": false,
+    "measured_pilot_required": true,
+    "default_material_work_policy": {
+      "basis": "chosen operational threshold, not measured speedup or physical law",
+      "minimum_remaining_serial_seconds": 600,
+      "minimum_independent_pending_families": 8,
+      "invent_tasks_to_meet_threshold": false,
+      "include_recovery_serialization_IO_cost": true
+    },
+    "resource_policy": {
+      "basis": "prospective limits; NCP scaling is unmeasured",
+      "nominal_user_capacity": {"cores": 64, "RAM_GiB": 128},
+      "reserved": {"cores": 8, "RAM_GiB": 16},
+      "pool_ceiling": {"single_thread_workers": 56, "RAM_GiB": 112},
+      "host_observation_required": ["effective cpuset", "CPU quota", "physical core/SMT topology", "cgroup remaining memory", "available RAM", "competing jobs"],
+      "usable_cpu_budget": "max(0, min(56, floor(observed_effective_cpu_capacity)-8))",
+      "pool_memory_budget": "max(0, min(112 GiB, observed_available_memory_after_cgroup_and_competing_work - 16 GiB))",
+      "worker_memory_limit": "max(2*representative_new_task_peak_RSS, explicit_task_memory_requirement), enforced before dispatch",
+      "workers": "min(pending_tasks, usable_cpu_budget, floor(pool_memory_budget/worker_memory_limit))",
+      "nested_threads_default": 1,
+      "measured_speedup": null,
+      "task_identity_resume": true,
+      "first_failure_preserved": true
+    }
+  },
+  "actual_native": {"root": null, "U": null, "V": null, "W": null, "I": null},
+  "native_authority": false,
+  "open": ["carried second_half", "full/two-half paired defect", "time/continuum remainder", "full49/production", "PHYS07 reference energy", "NCP07 node32 per-node predicate"],
+  "self_publication_identity": "Detached delivery header and receipts; no self-referential commit/archive hash is embedded here."
+}
