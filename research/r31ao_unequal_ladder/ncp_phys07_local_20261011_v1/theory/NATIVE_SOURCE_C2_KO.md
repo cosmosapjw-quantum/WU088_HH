@@ -1,0 +1,19 @@
+# 실제 source의 C² 범위와 산술 exporter
+
+이 문서는 producer 코드의 수학적 범위를 명시한다. 실제 판정은 각 최초 target의 C2_DOMAIN.json, SOURCE_BOX.json, SOURCE_CENTRE.json, geometry_trace.txt와 독립 review를 함께 읽어야 한다. Native root, endpoint, U/V/W/I를 발행하는 문서가 아니다.
+
+COMMON 입력은 CommonFamily::initialize가 보존하는 stored interval gas/photon/guard Jets다. Archived scalar point와 exact direction-sum을 사용한 PHYS07 Python reference는 다른 입력·coefficient 가족이다. Initializer의 decoder/encoder roundtrip은 각 stage에 필요한 입력 준비다. Historical HH ON와 primal compensation을 그대로 두고 미래 parameter의 미분 ledger만 0으로 시작한다. full과 first-half는 둘 다 같은 COMMON에서 출발한다.
+
+FROZEN_SOURCE_CONTRACT.json은 exact decimal rational endpoint의 outward binary64 포함 변환과 fixed center/radius를 기록한다. 기존 uniform 산술이 외향 계산하는 center±radius까지 X가 포함하도록 첫 호출 전에 X를 몇 ulp 확장했다. Parameter 전체 rectangle은 [0,1]²이며 gas coordinate의 네 번째 슬롯은 thermal w다. Transform된 energy Jets를 thermal-w domain에 대입하지 않는다.
+
+실제 public prepare_family 한 호출의 input/output words와 source bytes를 그대로 저장한다. 같은 객체의 validator가 동일 COMMON Jet, clock, Hubble triplet, dt와 b-slot-5 variable에 결박됐는지 검사한다. 기존 call-site에서 qhat, g_point/g_box, energy ratios, guard/hat branch, source volume/raw angular weights와 최종 weights를 복사한다. Geometry·provider·HH의 기록용 추가 평가는 없다. Native libm direction, stage density, scalar Verner leaves와 finite-remainder interval_math 경로를 구분한다. CHI를 뺀 heat leaf는 원래 source subtraction 바로 그 지점에서 한 번 계산한 값을 보존한다.
+
+Actual density ratio의 실수 정의는 fhat=exact(stored nHe)/exact(stored nH)다. 입자수 p=1+fhat+x+fhat(y1+2y2), T=2 eV w/(3 kB p)에 대해 source interval algebra로 전체 X 및 별도의 열린 gas 이웃 (.899,.931)×(.289,.311)×(.589,.611)×(12.9,14.1)의 outward hull을 점검한다. x<1, y1+y2<1, 각 분율과 w,p의 양수 여유와 HH 35000–60000 K gate를 유지한다. 이 gate는 lambda=0에서도 적용된다. FT03 30000–110000 K 범위는 더 넓어서 포함된다. paired blanket은 source 순서의 각각 rounded FHE*(1-8 EPSILON), FHE*(1+8 EPSILON) endpoint를 사용하고 fhat enclosure 포함 여부와 blanket 온도를 별도로 저장한다.
+
+전체 X에서 physical incoming≥0, sigma≥0와 simplex로 κ≥0이며 D=1+dt κ>0다. Source는 성공적으로 반환한 실제 denominator Jets의 lower>0도 검사한다. 열린 gas 이웃에서도 simplex와 positive nH,c,dt,sigma 때문에 D≥1인 실수 식을 유지한다. Fixed energies와 native geometry는 gas/lambda/b에 의존하지 않는다. Guard/hat crossing은 prepare_family가 실제 같은 호출의 coefficient interval로 거부한다. Lambda/b subdivision으로 fixed geometry의 실패를 해소한다고 주장하지 않는다. Threshold cutoffs는 CHI와 다르며 fixed provider leaf chart의 선택이다.
+
+미분 대상은 이 fixed-coefficient real source다. HH의 positive-temperature power/exponential과 FT03 kinetic/rational 식은 열린 chart에서 C²다. Lambda는 affine source multiplier이고 incoming은 b에 affine이므로 D>0인 작은 parameter 열린 연장을 정의할 수 있다. 이는 native admissibility 밖의 실제 실행을 허용하지 않는다. Physical-value nonneg와 widened는 enclosure 연산이며 전체 rounded program의 C²를 뜻하지 않는다. Signed gradient와 Hessian을 clipping하지 않는다.
+
+동일 PreBE groups로 whole X×Theta, fixed gas center×whole Theta의 public reduced_residual을 각각 한 번 호출한다. Source exporter는 Gc,A, parameter partials와 모든 7-slot signed Hessian을 보존하며 midpoint-of-center-Jacobian은 별도의 theta-center source 호출로 해석하지 않는다. 기존 energy exporter의 ell G, Jnorm, rounded-heat Psi 및 S/Q를 재사용한다. 같은 source/domain data가 기존 UniformData로 들어간다. C² guard가 닫힌 경우에만 root_arithmetic을 한 번 시도하며 충분조건의 실패와 모든 B,beta,q,radius/margin을 보존한다. 조건부 산술 PASS라도 native authority는 false다. Mixed/finite 산술은 이번 실행 ceiling 0이며 동일 data에 필요한 actual U/V/W/carry/authority를 OPEN으로 남긴다.
+
+Source directional witness의 M은 실제 incoming Jet의 dN/db finite amount다. B_dt=M/exact(dt)를 따로 표시하고 G_b=-dt P_M에 dt를 중복 삽입하지 않는다. HH H=q(1,0,0,-CHI_H), photo P_M 및 H_g P_M, (P_M)_g H를 이미 저장한 q/rates Jets에서 얻는다. HI-only native support 조건 아래 별도의 closed formula와 비교하되 interval overlap만으로 동일한 enclosure임을 주장하지 않는다. Heat a=fl(E-CHI_H), epsilon=a-(E-CHI_H)로 energy projection에 E+epsilon을 유지한다. ell H_g P_M의 exact leaf cancellation과 interval 폭을 구분한다. Source directional 부호는 actual implicit W, finite gas-energy I, carried second-half, full/two-half defect 또는 시간·continuum remainder의 판정이 아니다.

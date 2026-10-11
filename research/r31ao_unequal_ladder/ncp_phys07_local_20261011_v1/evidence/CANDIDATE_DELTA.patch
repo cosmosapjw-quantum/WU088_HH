@@ -1,0 +1,324 @@
+--- PHYS06/candidate/src/paired_runtime.rs
++++ PHYS07/candidate/src/paired_runtime.rs
+@@ -58,7 +58,7 @@
+     let mu=-1.0+2.0*((imu as f64)+0.5)/(c.n_mu as f64);
+     let phi=2.0*std::f64::consts::PI*((iphi as f64)+0.5)/(c.n_phi as f64);
+     let r=(1.0-mu*mu).sqrt();let q=[r*phi.cos(),r*phi.sin(),mu];
+-    let norm=q[0].hypot(q[1]).hypot(q[2]);q.map(|x|x/norm)
++    let norm=q[0].hypot(q[1]).hypot(q[2]);{let result=q.map(|x|x/norm);phys07_trace(format!("qhat ray={} raw={:016x},{:016x},{:016x} norm={:016x} unit={:016x},{:016x},{:016x}",d,q[0].to_bits(),q[1].to_bits(),q[2].to_bits(),norm.to_bits(),result[0].to_bits(),result[1].to_bits(),result[2].to_bits()));result}
+ }
+ fn directions(c:&PairedConfig)->Result<usize,ForwardError>{c.n_mu.checked_mul(c.n_phi).ok_or(fail("PAIRED_GRID_RANGE"))}
+ fn gas4(s:&PrimaryState)->[f64;4]{[s.fractions[0],s.fractions[1],s.fractions[2],s.w_ev_per_h]}
+@@ -119,9 +119,10 @@
+     let nd=directions(c)?;let volume=(-(h[0]+h[1]+h[2])*t).exp();
+     let sumh=add(add(p(h[0])?,p(h[1])?)?,p(h[2])?)?;
+     let volume_box=mul(p(-1.0)?,mul(sumh,p(t)?)?)?.exp().map_err(ie)?;
++    phys07_trace(format!("source_volume point={:016x} enclosure={:016x},{:016x}",volume.to_bits(),volume_box.lo.to_bits(),volume_box.hi.to_bits()));
+     let mut raw=Vec::with_capacity(nd);let mut boxes=Vec::with_capacity(nd);
+     for d in 0..nd {let q=qhat(c,d);let g=g_point(q,h,t);let gb=g_box(q,h,t)?;
+-        let j=volume/(g*g*g);let jb=div(volume_box,gb.powf(3.0).map_err(ie)?)?;
++        let j=volume/(g*g*g);let jb=div(volume_box,gb.powf(3.0).map_err(ie)?)?;phys07_trace(format!("source_geometry ray={} g_point={:016x} g_box={:016x},{:016x} raw_point={:016x} raw_box={:016x},{:016x}",d,g.to_bits(),gb.lo.to_bits(),gb.hi.to_bits(),j.to_bits(),jb.lo.to_bits(),jb.hi.to_bits()));
+         raw.push(j);boxes.push(widened(jb,j)?);
+     }
+     let total: f64=raw.iter().sum();if !total.is_finite() || total<=0.0{return Err(fail("PAIRED_SOURCE_RANGE"));}
+--- PHYS06/candidate/src/phys04_mixed.rs
++++ PHYS07/candidate/src/phys04_mixed.rs
+@@ -21,34 +21,38 @@
+  }Ok(out)
+ }
+ #[derive(Clone,Debug)]
+-pub struct Phys04DerivativeExport {pub residual:[Jet;4],pub photons:Vec<Jet>,pub denominators:Vec<Jet>,pub rhs:[Jet;4],pub native_root_certified:bool,pub nonphoto:[Jet;4],pub photo_rates:Vec<[Jet;3]>,pub source_stage:PrimaryStage,pub energy_leaves:Vec<f64>,pub stored_n_he:f64,pub dt:f64}
++pub struct Phys04DerivativeExport {pub residual:[Jet;4],pub photons:Vec<Jet>,pub denominators:Vec<Jet>,pub rhs:[Jet;4],pub native_root_certified:bool,pub nonphoto:[Jet;4],pub photo_rates:Vec<[Jet;3]>,pub source_stage:PrimaryStage,pub energy_leaves:Vec<f64>,pub stored_n_he:f64,pub dt:f64,pub q:Jet,pub sigma_leaves:Vec<[f64;3]>,pub heat_leaves:Vec<[f64;3]>,pub c_leaf:f64,pub kb_leaf:f64,pub ev_leaf:f64}
+ pub fn phys04_reduced_residual(stage:&PrimaryStage,old:&[Jet;4],gas:&[Jet;4],incoming:&[Jet],energies:&[f64],lambda:&Jet,dt:f64)->Result<Phys04DerivativeExport,ForwardError>{
+  PHYS04_DERIVATIVES.fetch_add(1,std::sync::atomic::Ordering::SeqCst);
+  if !dt.is_finite()||dt<=0.0||incoming.len()!=energies.len()||lambda.value.lo<0.0||lambda.value.hi>1.0||incoming.iter().any(|j|j.value.lo<0.0){return Err(fail("PHYS04_PARAMETER_OR_LAYOUT"));}
+  let mut m=model(stage)?;m.gas.sigma_cm2=[[0.0;3];3];
+  let bx=gas.each_ref().map(|j|j.value);let dummy=ip(1.0)?;
+  PHYS04_SOURCE_RHS.fetch_add(1,std::sync::atomic::Ordering::SeqCst);
++ PHYS07_FT03.fetch_add(1,std::sync::atomic::Ordering::SeqCst);
+  let raw=ft03_interval_rhs(&m,&[bx[0],bx[1],bx[2],bx[3],dummy,dummy,dummy])?;
+  let mut f=[phys04_compose(&raw[0],gas)?,phys04_compose(&raw[1],gas)?,phys04_compose(&raw[2],gas)?,phys04_compose(&raw[3],gas)?];
+  let nonphoto=f.clone();
++ PHYS07_HH.fetch_add(1,std::sync::atomic::Ordering::SeqCst);
+  let q=phys04_compose(&hh_rate_jet(stage,&bx)?,gas)?;
+- f[0]=jadd(&f[0],&jmul(lambda,&q)?)?;f[3]=jsub(&f[3],&jprod(&[ic(CHI[0])?,lambda.clone(),q])?)?;
++ f[0]=jadd(&f[0],&jmul(lambda,&q)?)?;f[3]=jsub(&f[3],&jprod(&[ic(CHI[0])?,lambda.clone(),q.clone()])?)?;
+  let lower=[jsub(&ic(1.0)?,&gas[0])?,jmul(&ic(stage.f_he)?,&jsub(&jsub(&ic(1.0)?,&gas[1])?,&gas[2])?)?,jmul(&ic(stage.f_he)?,&gas[1])?];
+- let provider=AtomicProvider::reference();let mut photons=Vec::new();let mut denominators=Vec::new();let mut photo_rates=Vec::new();
++ let provider=AtomicProvider::reference();let mut sigma_leaves=Vec::new();let mut heat_leaves=Vec::new();let mut photons=Vec::new();let mut denominators=Vec::new();let mut photo_rates=Vec::new();
+  for (n,e) in incoming.iter().zip(energies){
+-  let sigma=[provider.cross_section(Absorber::HI,*e)?,provider.cross_section(Absorber::HeI,*e)?,provider.cross_section(Absorber::HeII,*e)?];
++  let channel=|a|{PHYS07_PROVIDER.fetch_add(1,std::sync::atomic::Ordering::SeqCst);provider.cross_section(a,*e)};
++  let sigma=[channel(Absorber::HI)?,channel(Absorber::HeI)?,channel(Absorber::HeII)?];
++  sigma_leaves.push(sigma);
+   let mut opacity=ic(0.0)?;for a in 0..3 {opacity=jadd(&opacity,&jprod(&[ic(m.gas.c_cm_s)?,ic(stage.n_h_cm3)?,lower[a].clone(),ic(sigma[a])?])?)?;}
+   let den=jadd(&ic(1.0)?,&jmul(&ic(dt)?,&opacity)?)?;
+   if den.value.lo<=0.0{return Err(fail("PHYS04_POSITIVE_DENOMINATOR_MISSING"));}
+   // Jet quotient retains N_a,N_b,N_ab even at zero stock, and both cross terms.
+-  let ph=jdiv(n,&den)?;let mut rates=[ic(0.0)?,ic(0.0)?,ic(0.0)?];
+-  for a in 0..3 {rates[a]=jprod(&[ic(m.gas.c_cm_s)?,ic(stage.n_h_cm3)?,lower[a].clone(),ic(sigma[a])?,ph.clone()])?;f[3]=jadd(&f[3],&jmul(&rates[a],&ic(*e-CHI[a])?)?)?;}
++  let ph=jdiv(n,&den)?;let mut heat_row=[0.0;3];let mut rates=[ic(0.0)?,ic(0.0)?,ic(0.0)?];
++  for a in 0..3 {rates[a]=jprod(&[ic(m.gas.c_cm_s)?,ic(stage.n_h_cm3)?,lower[a].clone(),ic(sigma[a])?,ph.clone()])?;let heat=*e-CHI[a];heat_row[a]=heat;f[3]=jadd(&f[3],&jmul(&rates[a],&ic(heat)?)?)?;}
+   f[0]=jadd(&f[0],&rates[0])?;f[1]=jadd(&f[1],&jdiv(&jsub(&rates[1],&rates[2])?,&ic(stage.f_he)?)?)?;f[2]=jadd(&f[2],&jdiv(&rates[2],&ic(stage.f_he)?)?)?;
+-  photo_rates.push(rates);photons.push(ph);denominators.push(den);
++  heat_leaves.push(heat_row);photo_rates.push(rates);photons.push(ph);denominators.push(den);
+  }
+  f[3]=jsub(&f[3],&jprod(&[ic(2.0)?,ic(stage.h_mean_per_s)?,gas[3].clone()])?)?;
+  let residual=[jsub(&jsub(&gas[0],&old[0])?,&jmul(&ic(dt)?,&f[0])?)?,jsub(&jsub(&gas[1],&old[1])?,&jmul(&ic(dt)?,&f[1])?)?,jsub(&jsub(&gas[2],&old[2])?,&jmul(&ic(dt)?,&f[2])?)?,jsub(&jsub(&gas[3],&old[3])?,&jmul(&ic(dt)?,&f[3])?)?];
+- Ok(Phys04DerivativeExport{residual,photons,denominators,rhs:f,native_root_certified:false,nonphoto,photo_rates,source_stage:stage.clone(),energy_leaves:energies.to_vec(),stored_n_he:m.gas.n_he_cm3,dt})
++ Ok(Phys04DerivativeExport{residual,photons,denominators,rhs:f,native_root_certified:false,nonphoto,photo_rates,source_stage:stage.clone(),energy_leaves:energies.to_vec(),stored_n_he:m.gas.n_he_cm3,dt,q,sigma_leaves,heat_leaves,c_leaf:m.gas.c_cm_s,kb_leaf:m.gas.kb_erg_k,ev_leaf:m.gas.ev_erg})
+ }
+ #[derive(Clone,Debug)]
+ pub struct Phys04MixedArithmetic {pub u:[Interval;4],pub v:[Interval;4],pub w:[Interval;4],pub photons:Vec<Jet>,pub matrix:[[Interval;4];4],pub fixed_c:[[f64;4];4],pub contraction:f64,pub native_root_certified:bool}
+@@ -85,3 +89,8 @@
+  let final_=phys04_reduced_residual(stage,old,&final_y,incoming,energies,&lam,dt)?;
+  Ok(Phys04MixedArithmetic{u,v,w,photons:final_.photons,matrix,fixed_c:c,contraction:qu.max(qv).max(qw),native_root_certified:false})
+ }
++
++static PHYS07_FT03:std::sync::atomic::AtomicUsize=std::sync::atomic::AtomicUsize::new(0);
++static PHYS07_HH:std::sync::atomic::AtomicUsize=std::sync::atomic::AtomicUsize::new(0);
++static PHYS07_PROVIDER:std::sync::atomic::AtomicUsize=std::sync::atomic::AtomicUsize::new(0);
++pub fn phys07_source_counts()->[usize;3]{[&PHYS07_FT03,&PHYS07_HH,&PHYS07_PROVIDER].map(|x|x.load(std::sync::atomic::Ordering::SeqCst))}
+--- PHYS06/candidate/src/phys04_transport.rs
++++ PHYS07/candidate/src/phys04_transport.rs
+@@ -9,6 +9,7 @@
+ }
+ fn phys04_zero_jet(j:&Jet)->bool{j.value.lo==0.0&&j.value.hi==0.0&&j.gradient.iter().chain(j.hessian.iter().flatten()).all(|x|x.lo==0.0&&x.hi==0.0)}
+ pub fn phys04_prepare_family(c:&PairedConfig,h:[f64;3],time:f64,dt:f64,gas:&[Jet;4],photons:&[Jet],gn:&[Jet],gu:&[Jet],b:&Jet)->Result<Phys04PreBE,ForwardError>{
++ PHYS07_PREBE.fetch_add(1,std::sync::atomic::Ordering::SeqCst);
+  if c.spectral_subdivisions!=8||c.n_mu!=8||c.n_phi!=16{return Err(fail("PHYS04_FIXED_GRID_IDENTITY"));}
+  let nodes=energy_nodes(c)?;let nd=directions(c)?;let n=nodes.len();
+  if n!=33||nd!=128||photons.len()!=nd*n||gn.len()!=nd||gu.len()!=nd||h.iter().any(|x|!x.is_finite()||*x<0.0)||!time.is_finite()||!dt.is_finite()||dt<=0.0||time<0.0||time+dt>1e13||b.value.lo<0.0||b.value.hi>1.0 {return Err(fail("PHYS04_TRANSPORT_IDENTITY"));}
+@@ -17,19 +18,21 @@
+  let zero=Jet::constant(p(0.0)?).map_err(ie)?;let mut out=vec![zero.clone();photons.len()];let mut guard_n=gn.to_vec();let mut guard_u=gu.to_vec();let mut exports=0;
+  for d in 0..nd {
+   let rb=if h==[0.0;3]{p(1.0)?}else{div(g_box(qhat(c,d),h,time+dt)?,g_box(qhat(c,d),h,time)?)?};
++  phys07_trace(format!("ray={} ratio={:016x},{:016x}",d,rb.lo.to_bits(),rb.hi.to_bits()));
+   let rj=Jet::constant(rb).map_err(ie)?;guard_u[d]=gu[d].mul(&rj).map_err(ie)?;
+   for j in 0..n {
+    let eb=mul(p(nodes[j])?,rb)?;let x=&photons[d*n+j];
++   phys07_trace(format!("ray={} node={} energy={:016x},{:016x} guard_low={} guard_cross={} hat_cross={} upper={}",d,j,eb.lo.to_bits(),eb.hi.to_bits(),eb.hi<10.0,eb.lo<10.0 && eb.hi>=10.0,nodes.iter().any(|k|eb.lo<*k&&*k<eb.hi),eb.hi>20.0));
+    if eb.hi>20.0 {return Err(fail("PHYS04_UPPER_GUARD_UNSUPPORTED"));}
+    if eb.hi<10.0 {guard_n[d]=guard_n[d].add(x).map_err(ie)?;guard_u[d]=guard_u[d].add(&x.mul(&Jet::constant(eb).map_err(ie)?).map_err(ie)?).map_err(ie)?;exports+=1;continue;}
+    if eb.lo<10.0{return Err(fail("PHYS04_GUARD_BRANCH_CROSSING"));}
+    // A geometry enclosure straddling a hat knot needs a piecewise proof.
+    if nodes.iter().any(|k|eb.lo<*k&&*k<eb.hi){return Err(fail("PHYS04_HAT_BRANCH_CROSSING"));}
+    if phys04_zero_jet(x){continue;}
+-   for k in 0..n {let weight=hat_box(eb,&nodes,k)?;if weight.lo==0.0&&weight.hi==0.0{continue;}out[d*n+k]=out[d*n+k].add(&x.mul(&Jet::constant(weight).map_err(ie)?).map_err(ie)?).map_err(ie)?;}
++   for k in 0..n {let weight=hat_box(eb,&nodes,k)?;phys07_trace(format!("ray={} node={} dest={} weight={:016x},{:016x}",d,j,k,weight.lo.to_bits(),weight.hi.to_bits()));if weight.lo==0.0&&weight.hi==0.0{continue;}out[d*n+k]=out[d*n+k].add(&x.mul(&Jet::constant(weight).map_err(ie)?).map_err(ie)?).map_err(ie)?;}
+   }
+  }
+- let (_,wb)=source_weights(c,h,time+dt)?;
++ let (wp,wb)=source_weights(c,h,time+dt)?;for (d,(a,z)) in wp.iter().zip(&wb).enumerate(){phys07_trace(format!("birth_ray={} point={:016x} weight={:016x},{:016x}",d,a.to_bits(),z.lo.to_bits(),z.hi.to_bits()));}
+  let source_n=b.mul(&Jet::constant(p(dt*SOURCE)?).map_err(ie)?).map_err(ie)?;
+  let source_u=source_n.mul(&Jet::constant(p(BIRTH)?).map_err(ie)?).map_err(ie)?;
+  for d in 0..nd {let born=source_n.mul(&Jet::constant(wb[d]).map_err(ie)?).map_err(ie)?;let i=d*n+3*c.spectral_subdivisions;out[i]=out[i].add(&born).map_err(ie)?;}
+@@ -51,6 +54,10 @@
+  }Ok(out)
+ }
+ impl Phys04PreBE {
++ pub fn captured_input_words(&self)->&[u64]{&self.input_words}
++ pub fn captured_output_words(&self)->&[u64]{&self.output_words}
++ pub fn captured_source_bytes(&self)->&[u8]{&self.source_bytes}
++
+  pub fn validate_family_input(&self,h:[f64;3],time:f64,dt:f64,gas:&[Jet;4],photons:&[Jet],gn:&[Jet],gu:&[Jet],b:Interval)->Result<(),ForwardError>{
+   let mut expected_b=Jet::variable(b,5).map_err(ie)?;
+   // Lambda and b have no geometry slots; b is the direct source parameter.
+@@ -63,3 +70,9 @@
+ fn phys04_frame_words(h:[f64;3],time:f64,dt:f64,gas:&[Jet;4],photons:&[Jet],gn:&[Jet],gu:&[Jet],b:&Jet)->Vec<u64>{let mut out=h.map(f64::to_bits).to_vec();out.extend([time.to_bits(),dt.to_bits()]);for j in gas.iter().chain(photons).chain(gn).chain(gu).chain(std::iter::once(b)){phys04_jet_words(j,&mut out);}out}
+ fn phys04_prebe_words(pre:&Phys04PreBE)->Vec<u64>{let mut out=vec![pre.time_s.to_bits(),pre.dt.to_bits(),pre.stage.n_h_cm3.to_bits(),pre.stage.f_he.to_bits(),pre.stage.h_mean_per_s.to_bits(),pre.guard_exports as u64];for j in pre.gas.iter().chain(&pre.photons).chain(&pre.guard_n).chain(&pre.guard_u).chain(&pre.groups).chain([&pre.source_n,&pre.source_u]){phys04_jet_words(j,&mut out);}out.extend(pre.energies.iter().map(|x|x.to_bits()));for x in &pre.source_weights{out.extend([x.lo.to_bits(),x.hi.to_bits()]);}out}
+ fn phys04_transport_source_bytes()->Vec<u8>{[include_bytes!("paired_runtime.rs").as_slice(),include_bytes!("phys04_transport.rs").as_slice(),include_bytes!("interval_ad.rs").as_slice(),include_bytes!("interval_math.rs").as_slice()].concat()}
++
++static PHYS07_PREBE:std::sync::atomic::AtomicUsize=std::sync::atomic::AtomicUsize::new(0);
++static PHYS07_TRACE:std::sync::Mutex<Vec<String>>=std::sync::Mutex::new(Vec::new());
++fn phys07_trace(row:String){PHYS07_TRACE.lock().unwrap().push(row);}
++pub fn phys07_transport_trace()->Vec<String>{PHYS07_TRACE.lock().unwrap().clone()}
++pub fn phys07_prebe_count()->usize{PHYS07_PREBE.load(std::sync::atomic::Ordering::SeqCst)}
+--- PHYS06/src/bindings.rs
++++ PHYS07/src/bindings.rs
+@@ -1,2 +1,2 @@
+-pub const SOURCE_SHA:&str="14b1d1e76f54175069020fb49568f8a3c16571620fd69a532afaed73bb34a207";
+-pub const ABI_SHA:&str="149b59c50ceec2a7d6c1beef54490181dd4aeefaa473e356810abd02133f2ea9";
++pub const SOURCE_SHA:&str="fff8941d5b54d0e2399f9c188c7d02bebdc989d42789bda8ee4b08a3ab724dd8";
++pub const ABI_SHA:&str="64e77c36b5e9df1e0e547d1807b34f1c2f83fe700d92a8bc49b0937d570d6a95";
+--- PHYS06/src/lib.rs
++++ PHYS07/src/lib.rs
+@@ -14,3 +14,5 @@
+ pub fn valid(a:Interval)->R<()>{Interval::new(a.lo,a.hi).map(|_|()).map_err(|_|"invalid interval")}
+ pub fn same(a:Interval,b:Interval)->bool{a.lo.to_bits()==b.lo.to_bits()&&a.hi.to_bits()==b.hi.to_bits()}
+ pub fn mag(a:Interval)->f64{a.lo.abs().max(a.hi.abs())}
++
++pub mod sourcebox;
+--- PHYS06/src/main.rs
++++ PHYS07/src/main.rs
+@@ -1,65 +1 @@
+-//! Six bounded nonnative targets only. No old tests or native dispatcher entry.
+-use hh_phys06_local::*;use hh_phys06_local::energy::*;use hh_phys06_local::uniform::*;
+-use hh_phys04_candidate::coupled_primary::{Phys04DerivativeExport,PrimaryStage};
+-fn p(x:f64)->Interval{point(x).unwrap()}fn z()->Interval{p(0.)}fn iv(a:f64,b:f64)->Interval{Interval::new(a,b).unwrap()}
+-fn c(x:f64)->Jet{Jet::constant(p(x)).unwrap()}fn carry(value:f64,u:f64,v:f64,w:f64)->Jet{let mut j=c(value);j.gradient[4]=p(u);j.gradient[5]=p(v);j.hessian[4][5]=p(w);j.hessian[5][4]=p(w);j}
+-fn contains(x:Interval,v:f64){assert!(x.lo<=v&&v<=x.hi,"{:?} does not contain {}",x,v)}
+-fn zero_mat()->Mat{[[z();4];4]}fn idmat()->[[f64;4];4]{std::array::from_fn(|i|std::array::from_fn(|j|if i==j{1.}else{0.}))}
+-fn key()->Identity{Identity{source:family::bindings::SOURCE_SHA.into(),abi:family::bindings::ABI_SHA.into(),seed:"manufactured-parameter-independent-seed-not-archived".into(),family:"analytic-generic-family".into(),start:1.6e11_f64.to_bits(),terminal:1.6125e11_f64.to_bits(),density:1e-4_f64.to_bits(),leaf_graph:"synthetic exact leaf graph".into(),initial_carry:"full gas/photon/guard UVW fixture".into()}}
+-fn data()->UniformData{
+- let center=[0.5,0.15,0.3,12.];let radius=[0.125,0.03125,0.03125,1.];let x=std::array::from_fn(|i|Interval{lo:sub(p(center[i]),p(radius[i])).unwrap().lo,hi:add(p(center[i]),p(radius[i])).unwrap().hi});let theta=[iv(0.,1.),iv(0.,1.)];let identity=key();
+- let domain=Domain{identity:identity.clone(),theta,x,coverage:Coverage::Whole{state:x,theta},regularity:Regularity::ConditionalC2{open_domain_premise:"analytic manufactured polynomial family with open extension".into(),branch_premise:"constant synthetic chart and denominator".into()},denominator_min:p(1.),temperature:iv(45000.,50000.),no_hat_guard_crossing:true};
+- let a=std::array::from_fn(|i|std::array::from_fn(|j|p(if i==j{1.}else{0.})));let mut ga=[z();4];let mut gb=ga;let mut gab=ga;ga[0]=iv(-0.01171875,-0.0078125);gb[0]=iv(-0.01953125,-0.015625);gab[0]=p(-0.00390625);
+- UniformData{domain,center,radius,gc:[iv(-0.02734375,0.02734375),z(),z(),z()],a,c:CChoice::Fixed(FixedC::from_center(&identity,idmat()).unwrap()),partials:Partials{ga,gb,gab,gya:zero_mat(),gyb:zero_mat(),gyy:[zero_mat();4]}}
+-}
+-fn mixed_fixture()->(UniformData,RootBounds,MixedBounds){let d=data();let r=root_arithmetic(&d).unwrap();let mb=mixed(&r,[[iv(-0.125,0.125);4];3]).unwrap();(d,r,mb)}
+-fn energy_source_projection(){
+- let residual=std::array::from_fn(|i|{let mut j=Jet::variable(p((i+1)as f64),i).unwrap();j.gradient[4]=p((i+1)as f64/8.);j.gradient[5]=p(-((i+1)as f64)/16.);j.hessian[4][5]=p((i+1)as f64/32.);j.hessian[5][4]=j.hessian[4][5];j});
+- let nh=1e-4;let fhe=0.083;let mut export=Phys04DerivativeExport{residual,photons:vec![carry(1.,-3.,5.,7.)],denominators:vec![carry(2.,1.,2.,4.)],rhs:std::array::from_fn(|_|c(0.)),native_root_certified:false,nonphoto:[c(0.),carry(1e15,2e15,-3e15,4e15),carry(2e15,-1e15,2e15,-3e15),c(0.)],photo_rates:vec![[carry(2.,3.,5.,7.),c(0.),c(0.)]],source_stage:PrimaryStage{n_h_cm3:nh,f_he:fhe,h_mean_per_s:1e-14},energy_leaves:vec![100.],stored_n_he:nh*fhe,dt:1.};
+- let e=hh_phys06_local::energy::export(&export).unwrap();assert!(!e.native_authority);assert_eq!(e.epsilon[0][0],-2_f64.powi(-48));contains(e.psi.value,-2.*2_f64.powi(-48));contains(e.psi.gradient[4],-3.*2_f64.powi(-48));contains(e.psi.hessian[4][5],-7.*2_f64.powi(-48));assert!(mag(e.j_norm.hessian[4][5])>0.);
+- let ell=[CHI[0],fhe*CHI[1],fhe*(CHI[1]+CHI[2]),1.];let scalar=(0..4).map(|i|ell[i]*(i+1)as f64).sum::<f64>();contains(e.ell_g.value,scalar);contains(e.ell_g.gradient[4],scalar/8.);contains(e.ell_g.gradient[5],-scalar/16.);contains(e.ell_g.hessian[4][5],scalar/32.);
+- for i in 0..4{for j in 0..4{contains(e.transformed[i].gradient[j],if i==j{1.}else{0.});}}let sq=matmul(&e.s,&e.q).unwrap();for i in 0..4{for j in 0..4{contains(sq[i][j],if i==j{1.}else{0.});}}
+- let ci=transform_c(idmat(),&e.s,&e.q).unwrap();for i in 0..4{for j in 0..4{contains(ci[i][j],if i==j{1.}else{0.});}}
+- // Quotient carries both incoming cross terms, including at zero stock.
+- let n=carry(0.,-3.,5.,7.);let den=carry(2.,1.,2.,4.);let photon=n.div(&den).unwrap();contains(photon.gradient[4],-1.5);contains(photon.gradient[5],2.5);contains(photon.hessian[4][5],3.75);
+- export.denominators[0].value=iv(-1.,1.);assert!(hh_phys06_local::energy::export(&export).is_err());assert!(heat_epsilon(f64::NAN,CHI[0]).is_err());
+-}
+-fn uniform_contract_binding(){
+- let d=data();let r=root_arithmetic(&d).unwrap();assert!(!r.native_authority());assert!(request_native_certificate().is_err());assert!(actual_physical_values().iter().all(Option::is_none));
+- let mut bad=d.clone();bad.domain.coverage=Coverage::Point;assert!(root_arithmetic(&bad).is_err());bad.domain.coverage=Coverage::BooleanClaim(true);assert!(root_arithmetic(&bad).is_err());bad=d.clone();bad.domain.regularity=Regularity::BooleanClaim(true);assert!(root_arithmetic(&bad).is_err());
+- bad=d.clone();bad.domain.identity.source.push('x');assert!(root_arithmetic(&bad).is_err());bad=d.clone();bad.domain.identity.terminal+=1;assert!(root_arithmetic(&bad).is_err());bad=d.clone();if let Coverage::Whole{theta,..}=&mut bad.domain.coverage{theta[0]=iv(0.,0.5);}assert!(root_arithmetic(&bad).is_err());bad=d.clone();bad.domain.identity.initial_carry.push('x');assert!(root_arithmetic(&bad).is_err());
+- let c=match d.c{CChoice::Fixed(c)=>c,_=>unreachable!()};assert_eq!(c.centre_bits(),idmat().map(|r|r.map(f64::to_bits)));
+-}
+-fn uniform_strict_margins(){
+- let d=data();let r=root_arithmetic(&d).unwrap();assert!(r.q().hi<1.);assert!(r.margins().iter().all(|x|x.lo>0.));
+- for k in 0..7{let mut b=d.clone();match k{0=>b.radius[0]=0.,1=>b.gc[0]=p(b.radius[0]),2=>b.a[0][0]=p(0.),3=>b.c=CChoice::VariableClaim,4=>b.domain.denominator_min=iv(-1.,1.),5=>b.domain.x[3]=iv(-1.,1.),_=>b.domain.temperature=iv(34000.,50000.)};assert!(root_arithmetic(&b).is_err());}
+- assert!(linear(&r,[p(1.);4],[iv(-0.1,0.1);4]).is_err());
+- // Non-diagonal interval matrix: strict Krawczyk linear inclusion, no scalar inverse assumption.
+- let mut nd=d.clone();nd.a[0][1]=iv(0.124,0.126);let mut jc=idmat();jc[0][1]=0.125;nd.c=CChoice::Fixed(FixedC::from_center(&nd.domain.identity,jc).unwrap());let nr=root_arithmetic(&nd).unwrap();let l=linear(&nr,[p(0.01),p(0.02),z(),z()],[iv(-0.1,0.1);4]).unwrap();contains(l.enclosure()[0],0.0075);contains(l.image()[1],0.02);
+-}
+-fn mixed_incoming_chain(){
+- // Independent prescribed mixed coefficients; no nonlinear solve or physical RHS.
+- for n0 in [0.,1.]{let n=carry(n0,-3.,5.,7.);let d=carry(2.,1.,2.,4.);let photon=n.div(&d).unwrap();let p0=n0/2.;let pa=(-3.-p0)/2.;let pb=(5.-2.*p0)/2.;let pab=(7.-4.*p0-2.*pa-pb)/2.;contains(photon.value,p0);contains(photon.gradient[4],pa);contains(photon.gradient[5],pb);contains(photon.hessian[4][5],pab);
+- let gas=carry(0.5,0.03125,-0.0625,0.125);let stock=photon.mul(&c(0.125)).unwrap();let old=gas.sub(&stock).unwrap();let residual=gas.sub(&old).unwrap().sub(&stock).unwrap();contains(residual.hessian[4][5],0.);let mut erased=old.clone();erased.hessian[4][5]=z();erased.hessian[5][4]=z();let wrong=gas.sub(&erased).unwrap().sub(&stock).unwrap();assert!(mag(wrong.hessian[4][5])>0.01);
+- let gn=carry(2.,-3.,4.,-5.);let gu=gn.mul(&c(10.)).unwrap();let half2=gn.clone();assert_eq!(half2.gradient[4].lo,gn.gradient[4].lo);contains(gu.hessian[4][5],-50.);
+- }
+- let(d,_,m)=mixed_fixture();contains(m.w().enclosure()[0],0.00390625);contains(m.forcing()[0],0.00390625);assert!(!m.w().native_authority());
+- // Every Hessian/cross forcing term discriminated by independent scalar sum.
+- let mut p=d.partials.clone();p.gab[0]=pnt(2.);p.gya[0][0]=pnt(3.);p.gyb[0][0]=pnt(5.);p.gyy[0][0][0]=pnt(7.);let mut u=[z();4];let mut v=u;u[0]=pnt(-2.);v[0]=pnt(4.);contains(forcing(&p,u,v).unwrap()[0],52.);
+-}
+-fn pnt(x:f64)->Interval{p(x)}
+-fn finite_observable_coverage(){
+- let(d,_,m)=mixed_fixture();let f=finite(&m,d.domain.theta).unwrap();contains(f.enclosure[0],0.00390625);assert!(!f.native_authority);assert!(finite(&m,[iv(0.,0.5),iv(0.,1.)]).is_err());
+- // y_i=center_i+lambda+b on Theta=[0,1/128]^2,
+- // O=(y_0-center_0)^2: W=0 but O_yy[U,V]=2.
+- // Gc=-lambda-b in every component fits the unchanged physical state box.
+- let mut dat=data();dat.domain.theta=[iv(0.,1./128.);2];dat.domain.coverage=Coverage::Whole{state:dat.domain.x,theta:dat.domain.theta};dat.gc=[iv(-1./64.,0.);4];dat.partials.ga=[p(-1.);4];dat.partials.gb=[p(-1.);4];dat.partials.gab=[z();4];let root=root_arithmetic(&dat).unwrap();let mb=mixed(&root,[[iv(0.99,1.01);4],[iv(0.99,1.01);4],[iv(-0.01,0.01);4]]).unwrap();let mut h=zero_mat();h[0][0]=p(2.);let mut gradient=[z();4];gradient[0]=iv(-0.5,0.5); // whole-X bound for 2*(y0-center0), not a center sample
+- let o=ObservablePartials{gradient,hessian:h,explicit_ab:z(),gas_a:[z();4],gas_b:[z();4]};contains(observable(&mb,&o).unwrap(),2.);contains(finite_observable(&mb,&o,dat.domain.theta).unwrap(),2./16384.);
+- let explicit=ObservablePartials{gradient:[z();4],hessian:zero_mat(),explicit_ab:p(3.),gas_a:[p(2.);4],gas_b:[p(-1.);4]};contains(observable(&mb,&explicit).unwrap(),7.);
+-}
+-fn paired_difference_binding(){
+- let(d,r,m)=mixed_fixture();let mut da=zero_mat();da[0][0]=p(0.25);let mut df=[z();4];df[0]=p(0.001);let before=hh_phys04_candidate::paired_runtime::phys04_native_counts();let bound=paired(&r,&m,da,df,[iv(-0.1,0.1);4],"analytic shared-parameter delta witness; full mixed range retained").unwrap();assert!(!bound.native_authority);contains(bound.forcing[0],0.001-0.25*0.00390625);
+- let mut changed=d.clone();changed.domain.identity.terminal+=1;changed.c=CChoice::Fixed(FixedC::from_center(&changed.domain.identity,idmat()).unwrap());let bad=root_arithmetic(&changed).unwrap();assert!(paired(&bad,&m,da,df,[iv(-1.,1.);4],"joint").is_err());assert!(paired(&r,&m,da,df,[iv(-1.,1.);4],"").is_err());assert_eq!(hh_phys04_candidate::paired_runtime::phys04_native_counts(),before);
+- let mut changed=d.clone();changed.domain.identity.seed.push('x');changed.c=CChoice::Fixed(FixedC::from_center(&changed.domain.identity,idmat()).unwrap());let bad=root_arithmetic(&changed).unwrap();assert!(paired(&bad,&m,da,df,[iv(-1.,1.);4],"joint").is_err());
+-}
+-fn main(){let name=std::env::args().nth(1).expect("one explicit nonnative target required");let before=hh_phys04_candidate::paired_runtime::phys04_native_counts();assert_eq!(before,[0;4]);match name.as_str(){"energy_source_projection"=>energy_source_projection(),"uniform_contract_binding"=>uniform_contract_binding(),"uniform_strict_margins"=>uniform_strict_margins(),"mixed_incoming_chain"=>mixed_incoming_chain(),"finite_observable_coverage"=>finite_observable_coverage(),"paired_difference_binding"=>paired_difference_binding(),_=>panic!("unknown target; no native execution mode")};assert_eq!(hh_phys04_candidate::paired_runtime::phys04_native_counts(),before);assert_eq!(hh_phys04_candidate::coupled_primary::phys04_arithmetic_counts(),[0;3]);println!("{{\"target\":\"{}\",\"status\":\"PASS\",\"scope\":\"MANUFACTURED_NONNATIVE_CONDITIONAL_ARITHMETIC\",\"native_counts\":{:?},\"phys04_callback_counts\":{:?},\"energy_exports\":{},\"uniform_linear_counts\":{:?}}}",name,before,hh_phys04_candidate::coupled_primary::phys04_arithmetic_counts(),export_count(),counts());}
++fn main(){hh_phys07_local::sourcebox::run_cli();}
+--- PHYS06/src/sourcebox.rs
++++ PHYS07/src/sourcebox.rs
+@@ -0,0 +1,101 @@
++//! Source-only producer. No native permit, endpoint, or nonlinear solver.
++use crate::*;
++use crate::uniform::*;
++use hh_phys04_candidate::coupled_primary::{Phys04DerivativeExport,phys04_reduced_residual};
++use hh_phys04_candidate::paired_runtime::{phys04_prepare_family,PairedConfig,Phys04PreBE};
++use crate::family::{CommonFamily,FamilyIdentity};
++use std::path::Path;
++use std::io::Write;
++const CHI:[f64;3]=crate::energy::CHI;
++fn p(x:f64)->Interval{point(x).unwrap()}
++fn json_string(s:&str)->String{format!("\"{}\"",s.replace('\\',"\\\\").replace('"',"\\\"").replace('\n',"\\n").replace('\r',"\\r").replace('\t',"\\t"))}
++fn iv(x:Interval)->String{format!("{{\"lo\":{:e},\"hi\":{:e},\"lo_bits\":\"{:016x}\",\"hi_bits\":\"{:016x}\"}}",x.lo,x.hi,x.lo.to_bits(),x.hi.to_bits())}
++fn arr(xs:impl IntoIterator<Item=String>)->String{format!("[{}]",xs.into_iter().collect::<Vec<_>>().join(","))}
++fn ints(xs:impl IntoIterator<Item=Interval>)->String{arr(xs.into_iter().map(iv))}
++fn mat(x:[[Interval;4];4])->String{arr(x.map(ints))}
++fn jet(j:&Jet)->String{format!("{{\"value\":{},\"gradient\":{},\"signed_hessian\":{}}}",iv(j.value),ints(j.gradient),arr(j.hessian.map(ints)))}
++fn jets(xs:impl IntoIterator<Item=Jet>)->String{arr(xs.into_iter().map(|j|jet(&j)))}
++fn write(path:&Path,name:&str,s:String){std::fs::write(path.join(name),s+"\n").unwrap();}
++fn words(path:&Path,name:&str,x:&[u64]){let mut f=std::fs::File::create(path.join(name)).unwrap();for w in x{f.write_all(&w.to_le_bytes()).unwrap();}}
++fn jw(j:&Jet,v:&mut Vec<u64>){for x in std::iter::once(&j.value).chain(&j.gradient).chain(j.hessian.iter().flatten()){v.extend([x.lo.to_bits(),x.hi.to_bits()]);}}
++fn export(path:&Path,name:&str,x:&Phys04DerivativeExport){
++ let mut w=Vec::new();for j in x.residual.iter().chain(&x.rhs).chain(&x.nonphoto).chain(&x.photons).chain(&x.denominators).chain(x.photo_rates.iter().flatten()).chain(std::iter::once(&x.q)){jw(j,&mut w);}words(path,&format!("{}_jets.bin",name),&w);
++ write(path,&format!("{}.json",name),format!("{{\"schema\":\"PHYS07_SOURCE_JETS_V1\",\"native_authority\":false,\"coordinate\":\"thermal_w\",\"binary_layout\":\"little-endian u64; Jet value,gradient[7],Hessian[7][7] each lo,hi; residual[4],rhs[4],nonphoto[4],photons[33],denominators[33],photo_rates[33][3],q\",\"full_signed_jet_words\":{},\"G\":{},\"A_Gg\":{},\"G_lambda\":{},\"G_b\":{},\"G_lambdab\":{},\"G_g_lambda\":{},\"G_g_b\":{},\"G_gg\":{},\"q\":{},\"D\":{},\"photons\":{},\"nH_bits\":\"{:016x}\",\"nHe_stored_bits\":\"{:016x}\",\"fHe_bits\":\"{:016x}\",\"Hmean_bits\":\"{:016x}\",\"dt_bits\":\"{:016x}\",\"energy_bits\":{},\"sigma_bits\":{},\"heat_bits\":{}}}",w.len(),jets(x.residual.clone()),mat(std::array::from_fn(|i|std::array::from_fn(|j|x.residual[i].gradient[j]))),ints(x.residual.each_ref().map(|j|j.gradient[4])),ints(x.residual.each_ref().map(|j|j.gradient[5])),ints(x.residual.each_ref().map(|j|j.hessian[4][5])),mat(std::array::from_fn(|i|std::array::from_fn(|j|x.residual[i].hessian[j][4]))),mat(std::array::from_fn(|i|std::array::from_fn(|j|x.residual[i].hessian[j][5]))),arr(x.residual.each_ref().map(|j|mat(std::array::from_fn(|a|std::array::from_fn(|b|j.hessian[a][b]))))),jet(&x.q),ints(x.denominators.iter().map(|j|j.value)),ints(x.photons.iter().map(|j|j.value)),x.source_stage.n_h_cm3.to_bits(),x.stored_n_he.to_bits(),x.source_stage.f_he.to_bits(),x.source_stage.h_mean_per_s.to_bits(),x.dt.to_bits(),arr(x.energy_leaves.iter().map(|x|json_string(&format!("{:016x}",x.to_bits())))),arr(x.sigma_leaves.iter().map(|r|arr(r.map(|x|json_string(&format!("{:016x}",x.to_bits())))))),arr(x.heat_leaves.iter().map(|r|arr(r.map(|x|json_string(&format!("{:016x}",x.to_bits()))))))));
++}
++fn source_components(path:&Path,name:&str,x:&Phys04DerivativeExport){write(path,&format!("{}_COMPONENTS.json",name),format!("{{\"rhs\":{},\"nonphoto\":{},\"photo_rates\":{},\"binary_offsets_u64\":{{\"residual\":0,\"rhs\":456,\"nonphoto\":912,\"photons\":1368,\"denominators\":5130,\"photo_rates\":8892,\"q\":20178}},\"words_per_Jet\":114}}",jets(x.rhs.clone()),jets(x.nonphoto.clone()),arr(x.photo_rates.iter().map(|r|jets(r.clone())))));}
++fn temperature(x:[Interval;4],f:Interval)->R<(Interval,Interval)>{
++ let particles=add(add(add(p(1.),f)?,x[0])?,mul(f,add(x[1],mul(p(2.),x[2])?)?)?)?;
++ let t=div(mul(mul(p(2.),p(1.602176634e-12))?,x[3])?,mul(mul(p(3.),p(1.380649e-16))?,particles)?)?;Ok((particles,t))
++}
++fn open_box()->[Interval;4]{[Interval{lo:f64::from_bits(0.899_f64.to_bits()-1),hi:f64::from_bits(0.931_f64.to_bits()+1)},Interval{lo:f64::from_bits(0.289_f64.to_bits()-1),hi:f64::from_bits(0.311_f64.to_bits()+1)},Interval{lo:f64::from_bits(0.589_f64.to_bits()-1),hi:f64::from_bits(0.611_f64.to_bits()+1)},Interval{lo:f64::from_bits(12.9_f64.to_bits()-1),hi:f64::from_bits(14.1_f64.to_bits()+1)}]}
++fn c2(path:&Path,x:[Interval;4],pre:&Phys04PreBE,src:&Phys04DerivativeExport)->R<(Interval,Interval)>{
++ let fhat=div(p(src.stored_n_he),p(src.source_stage.n_h_cm3))?;let f=src.source_stage.f_he;
++ let blanket=Interval{lo:f*(1.-8.*f64::EPSILON),hi:f*(1.+8.*f64::EPSILON)};
++ let (parts,t)=temperature(x,fhat)?;let (op,ot)=temperature(open_box(),fhat)?;let (_,pt)=temperature(x,blanket)?;
++ let den=Interval{lo:src.denominators.iter().map(|j|j.value.lo).fold(f64::INFINITY,f64::min),hi:src.denominators.iter().map(|j|j.value.hi).fold(0.,f64::max)};
++ let simplex=add(x[1],x[2])?;let ox=open_box();let osimplex=add(ox[1],ox[2])?;
++ let guard=blanket.lo<=fhat.lo&&fhat.hi<=blanket.hi&&x[0].lo>0.&&x[0].hi<1.&&x[1].lo>0.&&x[2].lo>0.&&simplex.hi<1.&&x[3].lo>0.&&parts.lo>0.&&t.lo>35000.&&t.hi<60000.&&pt.lo>35000.&&pt.hi<60000.&&op.lo>0.&&ox[0].lo>0.&&ox[0].hi<1.&&ox[1].lo>0.&&ox[2].lo>0.&&osimplex.hi<1.&&ot.lo>35000.&&ot.hi<60000.&&den.lo>0.&&pre.groups.iter().all(|j|j.value.lo>=0.);
++ write(path,"C2_DOMAIN.json",format!("{{\"status\":{},\"native_authority\":false,\"scope\":\"underlying fixed-coefficient real source; rounded program and interval clipping are not C2 maps\",\"X\":{},\"open_witness\":{},\"fhat\":{},\"paired_source_order_blanket\":{},\"blanket_contains_density_ratio_enclosure\":{},\"particles\":{},\"temperature\":{},\"paired_temperature\":{},\"open_particles\":{},\"open_temperature\":{},\"simplex_sum\":{},\"open_simplex_sum\":{},\"denominator_range\":{},\"physical_incoming_nonnegative\":{},\"geometry_basis\":\"successful same-call PreBE and geometry_trace.txt: rejects guard/hat crossing before return\",\"thresholds\":[13.60,24.59,54.42],\"threshold_chart\":\"fixed native energy/sigma coefficients, independent of gas/lambda/b\",\"parameter_open_extension\":\"lambda affine, incoming affine in b; denominator independent of lambda,b and strictly positive; extends algebraically to a small open parameter neighbourhood, without evaluating out-of-guard native calls\",\"nonneg_semantics\":\"physical value cone intersection only, signed gradient/Hessian unchanged\"}}",json_string(if guard{"SOURCE_C2_EVIDENCED"}else{"OPEN_GUARD"}),ints(x),ints(ox),iv(fhat),iv(blanket),blanket.lo<=fhat.lo&&fhat.hi<=blanket.hi,iv(parts),iv(t),iv(pt),iv(op),iv(ot),iv(simplex),iv(osimplex),iv(den),pre.groups.iter().all(|j|j.value.lo>=0.)));
++ if !guard{return Err("actual source C2 guard or open witness failed");}Ok((den,t))
++}
++fn uniform(path:&Path,family:&CommonFamily,pre:&Phys04PreBE,src:&Phys04DerivativeExport,center_src:&Phys04DerivativeExport,x:[Interval;4],center:[f64;4],radius:[f64;4],den:Interval,t:Interval)->R<()>{
++ let theta=[Interval{lo:0.,hi:1.};2];let id=Identity{source:family.identity.candidate_source_sha256.clone(),abi:family.identity.abi_sha256.clone(),seed:family.identity.archive_sha256.clone(),family:format!("COMMON_STORED_INTERVAL_FIRST_STAGE_dt_{:016x}",pre.dt.to_bits()),start:family.identity.clock_bits,terminal:pre.time_s.to_bits(),density:pre.stage.n_h_cm3.to_bits(),leaf_graph:"same-call captured source sigma/q/heat/native direction coefficients".into(),initial_carry:"COMMON gas/photon/guard signed Jets; historical primal compensation retained; fresh future derivative ledger zero".into()};
++ let a=std::array::from_fn(|i|std::array::from_fn(|j|src.residual[i].gradient[j]));let jc=std::array::from_fn(|i|std::array::from_fn(|j|{let v=center_src.residual[i].gradient[j];v.lo+(v.hi-v.lo)/2.}));let fixed=FixedC::from_center(&id,jc)?;
++ let data=UniformData{domain:Domain{identity:id,theta,x,coverage:Coverage::Whole{state:x,theta},regularity:Regularity::ConditionalC2{open_domain_premise:"actual same-call C2_DOMAIN.json plus mathematical fixed-source open extension".into(),branch_premise:"actual geometry_trace and public PreBE return; fixed thresholds; source bytes captured".into()},denominator_min:den,temperature:t,no_hat_guard_crossing:true},center,radius,gc:center_src.residual.each_ref().map(|j|j.value),a,c:CChoice::Fixed(fixed.clone()),partials:Partials{ga:src.residual.each_ref().map(|j|j.gradient[4]),gb:src.residual.each_ref().map(|j|j.gradient[5]),gab:src.residual.each_ref().map(|j|j.hessian[4][5]),gya:std::array::from_fn(|i|std::array::from_fn(|j|src.residual[i].hessian[j][4])),gyb:std::array::from_fn(|i|std::array::from_fn(|j|src.residual[i].hessian[j][5])),gyy:std::array::from_fn(|i|std::array::from_fn(|a|std::array::from_fn(|b|src.residual[i].hessian[a][b])))}};
++ write(path,"INTERACTION_ADAPTER.json",format!("{{\"status\":\"OPEN\",\"same_UniformData_source_and_domain\":true,\"parameter_partials\":{{\"Ga\":{},\"Gb\":{},\"Gab\":{},\"Gya\":{},\"Gyb\":{},\"Gyy\":{}}},\"mixed_entry\":false,\"finite_entry\":false,\"missing\":[\"native trusted uniform root/tube authority\",\"native U/V/W predecessor/carry and exact same family terminal relation\",\"finite interaction I proof and energy sign\"],\"native_authority\":false}}",ints(data.partials.ga),ints(data.partials.gb),ints(data.partials.gab),mat(data.partials.gya),mat(data.partials.gyb),arr(data.partials.gyy.map(mat))));
++ // Preserve diagnostic B,beta,q and all strict margins even when root_arithmetic returns OPEN.
++ let cm=fixed.matrix();let mut bmat=[[p(0.);4];4];let mut beta=[p(0.);4];let mut image=[p(0.);4];let mut margins=[p(0.);4];let mut qhi=0_f64;
++ for i in 0..4{let mut cg=p(0.);let mut row=p(0.);for j in 0..4{cg=add(cg,mul(p(cm[i][j]),data.gc[j])?)?;let mut defect=p(if i==j{1.}else{0.});for k in 0..4{defect=sub(defect,mul(p(cm[i][k]),data.a[k][j])?)?;}bmat[i][j]=p(mag(defect));row=add(row,mul(bmat[i][j],div(p(radius[j]),p(radius[i]))?)?)?;}beta[i]=Interval{lo:0.,hi:mag(cg)};qhi=qhi.max(row.hi);image[i]=beta[i];for j in 0..4{image[i]=add(image[i],mul(bmat[i][j],p(radius[j]))?)?;}margins[i]=sub(p(radius[i]),image[i])?;}
++ write(path,"UNIFORM_DIAGNOSTICS.json",format!("{{\"native_authority\":false,\"scope\":\"stored-export arithmetic diagnostics, not an additional root attempt\",\"B\":{},\"beta\":{},\"q\":{},\"image_radius\":{},\"strict_margins\":{},\"radius\":{:?},\"center\":{:?}}}",mat(bmat),ints(beta),iv(Interval{lo:0.,hi:qhi}),ints(image),ints(margins),radius,center));
++ // Existing uniform/energy arithmetic only; no U/V/W candidates or nonlinear root.
++ let outcome=root_arithmetic(&data);let (status,detail)=match outcome{Ok(r)=>("CONDITIONAL_ROOT_ARITHMETIC_PASS",format!("\"B\":{},\"beta\":{},\"q\":{},\"image_radius\":{},\"margins\":{}",mat(r.b()),ints(r.beta()),iv(r.q()),ints(r.image_radius()),ints(r.margins()))),Err(e)=>("OPEN",format!("\"reason\":{}",json_string(e)))};
++ write(path,"UNIFORM_ARITHMETIC.json",format!("{{\"status\":{},\"native_authority\":false,\"fixed_C\":{},\"representative_matrix\":\"midpoint of gas-center Jacobian over whole Theta; no theta-center callback\",\"center\":{:?},\"radius\":{:?},\"actual_U\":null,\"actual_V\":null,\"actual_W\":null,\"actual_I\":null,{}}}",json_string(status),arr(fixed.matrix().map(|r|format!("{:?}",r))),center,radius,detail));Ok(())
++}
++fn dot(a:[Interval;4],b:[Interval;4])->R<Interval>{let mut s=p(0.);for i in 0..4{s=add(s,mul(a[i],b[i])?)?;}Ok(s)}
++fn directional(path:&Path,x:[Interval;4],pre:&Phys04PreBE,src:&Phys04DerivativeExport)->R<()>{
++ let q=&src.q;let h=[q.value,p(0.),p(0.),neg(mul(p(CHI[0]),q.value)?)?];
++ let mut pv=[p(0.);4];let mut pg=[[p(0.);4];4];
++ for rates in &src.photo_rates{for i in 0..4{let coeff:[Interval;3]=match i{0=>[p(1.),p(0.),p(0.)],1=>[p(0.),div(p(1.),p(pre.stage.f_he))?,neg(div(p(1.),p(pre.stage.f_he))?)?],2=>[p(0.),p(0.),div(p(1.),p(pre.stage.f_he))?],_=>[p(0.);3]};if i<3{for a in 0..3{pv[i]=add(pv[i],mul(coeff[a],rates[a].gradient[5])?)?;for k in 0..4{pg[i][k]=add(pg[i][k],mul(coeff[a],rates[a].hessian[k][5])?)?;}}}}}
++ for (j,rates) in src.photo_rates.iter().enumerate(){for a in 0..3{let heat=p(src.heat_leaves[j][a]);pv[3]=add(pv[3],mul(heat,rates[a].gradient[5])?)?;for k in 0..4{pg[3][k]=add(pg[3][k],mul(heat,rates[a].hessian[k][5])?)?;}}}
++ let hp_ad=dot(std::array::from_fn(|i|q.gradient[i]),pv)?;let ph_ad=dot(pg[0],h)?;let ell=[p(CHI[0]),mul(p(pre.stage.f_he),p(CHI[1]))?,mul(p(pre.stage.f_he),add(p(CHI[1]),p(CHI[2]))?)?,p(1.)];let phv=std::array::from_fn(|i|dot(pg[i],h).unwrap());let pe_ad=dot(ell,phv)?;
++ let fhat=div(p(src.stored_n_he),p(pre.stage.n_h_cm3))?;let(parts,t)=temperature(x,fhat)?;
++ let hpv=[hp_ad,p(0.),p(0.),neg(mul(p(CHI[0]),hp_ad)?)?];let ell_hp=dot(ell,hpv)?;
++ let tgrad=[neg(div(t,parts)?)?,neg(div(mul(fhat,t)?,parts)?)?,neg(div(mul(mul(p(2.),fhat)?,t)?,parts)?)?,div(t,x[3])?];let dt_h=dot(tgrad,h)?;let dt_pm=dot(tgrad,pv)?;
++ write(path,"DIRECTIONAL_VECTORS.json",format!("{{\"scope\":\"stored-export source directional algebra with finite amount M\",\"H\":{},\"P_M\":{},\"H_g_P_M\":{},\"P_M_g_H\":{},\"ell_H_g_P_M\":{},\"ell_H_g_P_M_algebraic_cancellation\":\"exact zero for exact leaf ell and H=q*(1,0,0,-CHI_H); interval enclosure may have width\",\"T_gradient\":{},\"DT_H\":{},\"DT_P_M\":{},\"native_authority\":false}}",ints(h),ints(pv),ints(hpv),ints(phv),iv(ell_hp),ints(tgrad),iv(dt_h),iv(dt_pm)));
++let u=sub(p(1.),x[0])?;let nu=add(p(1.2),div(p(157800.),t)?)?;let mut hp=p(0.);let mut ph=p(0.);let mut pe=p(0.);let mut entries=Vec::new();let mut support=true;
++ for j in 0..pre.groups.len(){let amount=pre.groups[j].gradient[5];if amount.lo==0.&&amount.hi==0.{continue;}let a=mul(mul(p(src.c_leaf),p(pre.stage.n_h_cm3))?,p(src.sigma_leaves[j][0]))?;let heat=p(src.heat_leaves[j][0]);let d=src.denominators[j].value;
++ let xi=mul(div(mul(u,nu)?,parts)?,sub(p(1.),div(mul(heat,parts)?,x[3])?)?)?;let common=mul(mul(q.value,a)?,amount)?;
++ hp=sub(hp,mul(div(common,d)?,add(p(2.),xi)?)?)?;let dp=div(common,mul(d,d)?)?;ph=sub(ph,dp)?;
++ let eps=crate::energy::heat_epsilon(src.energy_leaves[j],CHI[0])?;pe=sub(pe,mul(add(p(src.energy_leaves[j]),p(eps))?,dp)?)?;
++ let thermal=mul(heat,parts)?;support &= src.sigma_leaves[j][1]==0.&&src.sigma_leaves[j][2]==0.&&thermal.hi<x[3].lo;
++ entries.push(format!("{{\"node\":{},\"M_actual_dN_db\":{},\"B_dt\":{},\"Xi\":{},\"a_heat_times_particles\":{},\"w\":{},\"E_plus_epsilon\":{}}}",j,iv(amount),iv(div(amount,p(pre.dt))?),iv(xi),iv(thermal),iv(x[3]),iv(add(p(src.energy_leaves[j]),p(eps))?)));
++ }
++ let mut physical_support=Vec::new();for j in 0..pre.groups.len(){if pre.groups[j].value.hi>0.{let heat=p(src.heat_leaves[j][0]);let ap=mul(heat,parts)?;let active=src.sigma_leaves[j][0]>0.;let pass=!active||ap.hi<x[3].lo;support &= pass;physical_support.push(format!("{{\"node\":{},\"energy_bits\":\"{:016x}\",\"physical_incoming\":{},\"active_HI\":{},\"a_heat_p\":{},\"a_heat_p_lt_w\":{}}}",j,src.energy_leaves[j].to_bits(),iv(pre.groups[j].value),active,iv(ap),pass));}}
++ write(path,"NATIVE_SUPPORT.json",format!("{{\"scope\":\"actual stored interval incoming support from same PreBE\",\"entries\":{}}}",arr(physical_support)));
++ let overlap=|a:Interval,b:Interval|a.lo.max(b.lo)<=a.hi.min(b.hi);
++ let all_hi_only=src.sigma_leaves.iter().all(|s|s[1]==0.&&s[2]==0.);
++ write(path,"SOURCE_DIRECTIONAL_WITNESS.json",format!("{{\"status\":{},\"scope\":\"source directional witness using finite birth amount M; not implicit W, finite I, or paired defect\",\"native_authority\":false,\"birth_definition\":\"M=dN/db from actual PreBE; B_dt=M/exact(dt); G_b=-dt*P_M\",\"HI_only_all_fixed_leaves\":{},\"support_thermal_condition\":{},\"H_g_P_M_x_AD\":{},\"P_M_g_H_x_AD\":{},\"energy_P_M_g_H_AD\":{},\"H_g_P_M_x_closed\":{},\"P_M_g_H_x_closed\":{},\"energy_P_M_g_H_closed\":{},\"closed_vs_AD_overlap_only\":[{},{},{}],\"G_lambdab_algebraic\":\"zero from independent lambda and b at fixed gas, zero incoming mixed carry; exported enclosure not bitwise equality\",\"G_lambdab_encloses_zero\":{},\"entries\":{}}}",json_string(if all_hi_only&&support&&hp.hi<0.&&ph.hi<0.&&hp_ad.hi<0.&&ph_ad.hi<0.{"SOURCE_DIRECTIONAL_NEGATIVE_SCOPED"}else{"OPEN"}),all_hi_only,support,iv(hp_ad),iv(ph_ad),iv(pe_ad),iv(hp),iv(ph),iv(pe),overlap(hp,hp_ad),overlap(ph,ph_ad),overlap(pe,pe_ad),src.residual.iter().all(|j|j.hessian[4][5].lo<=0.&&j.hessian[4][5].hi>=0.),arr(entries)));
++ Ok(())
++}
++fn counters()->String{format!("{{\"prebe\":{},\"direct_residual_linear\":{:?},\"FT03_HH_provider\":{:?},\"native_endpoint_point_certificate_root\":{:?},\"uniform_root_linear\":{:?},\"IVP\":null,\"heavy_atomic\":null,\"old_suite\":null}}",hh_phys04_candidate::paired_runtime::phys07_prebe_count(),hh_phys04_candidate::coupled_primary::phys04_arithmetic_counts(),hh_phys04_candidate::coupled_primary::phys07_source_counts(),hh_phys04_candidate::paired_runtime::phys04_native_counts(),crate::uniform::counts())}
++fn source_stage(path:&Path,dt:f64,x:[Interval;4],center:[f64;4],radius:[f64;4])->Result<(),String>{
++ use rei_reference::paired_runtime::HhRunConfig;
++ let rg=rei_reference::paired_runtime::PairedConfig{spectral_subdivisions:8,n_mu:8,n_phi:16};let h=[1e-14;3];let config=HhRunConfig::new(rg,h,rei_reference::coupled_primary::HhMode::Lcs91).map_err(|e|format!("config: {:?}",e))?;
++ let id=FamilyIdentity{archive_sha256:"678f967f0d50ad1fff47a73e2e63193429b708246cd84ca8ffc72191c31b522b".into(),candidate_source_sha256:family::bindings::SOURCE_SHA.into(),abi_sha256:family::bindings::ABI_SHA.into(),theta_bits:h.map(f64::to_bits),clock_bits:1.6e11_f64.to_bits(),lambda_bits:0.0_f64.to_bits(),b_bits:0.0_f64.to_bits()};
++ let family=CommonFamily::initialize(include_bytes!("../inputs/COMMON_SEED_MEMBER1.bin"),&config,id).map_err(|e|format!("COMMON: {:?}",e))?;
++ write(path,"COMMON_INPUT_SCOPE.json",format!("{{\"input_preparation\":\"one necessary initialize decode/roundtrip for this named stage; no diagnostic target replay\",\"old_gas\":{},\"archived_point\":{:?},\"stored_interval_not_point_identity\":true,\"historical_HH_and_compensation\":{:?},\"primal_ledger_comp\":{:?},\"primal_energy_comp\":{:e},\"fresh_future_partial_ledger\":\"zero; historical HH ON is retained\",\"theta_bits_meaning\":\"Hubble triplet, not lambda/b rectangle\"}}",jets(family.gas.clone()),[family.physical.gas.fractions[0],family.physical.gas.fractions[1],family.physical.gas.fractions[2],family.physical.gas.w_ev_per_h],family.historical_hh,family.physical.ledger_comp,family.physical.energy_comp));
++ let b=Jet::variable(Interval{lo:0.,hi:1.},5).unwrap();let cfg=PairedConfig{spectral_subdivisions:8,n_mu:8,n_phi:16};
++ let pre=phys04_prepare_family(&cfg,h,family.physical.time_s,dt,&family.gas,&family.photons,&family.guard_n,&family.guard_u,&b).map_err(|e|format!("PreBE: {:?}",e))?;
++ pre.validate_family_input(h,family.physical.time_s,dt,&family.gas,&family.photons,&family.guard_n,&family.guard_u,b.value).map_err(|e|format!("PreBE validator: {:?}",e))?;
++ words(path,"prebe_input_words.bin",pre.captured_input_words());words(path,"prebe_words.bin",pre.captured_output_words());std::fs::write(path.join("prebe_source_bytes.bin"),pre.captured_source_bytes()).unwrap();
++ write(path,"PREBE.json",format!("{{\"same_object_validator\":true,\"input_words\":{},\"output_words\":{},\"binary_layout\":\"phys04_frame_words and phys04_prebe_words in captured source; little-endian u64; signed full Jet value/gradient/Hessian\",\"source_n\":{},\"source_u\":{},\"fl_dt_SOURCE_bits\":\"{:016x}\",\"groups\":{},\"source_weights\":{},\"stored_source_binding\":{},\"ABI_binding\":{},\"geometry_trace\":\"geometry_trace.txt\"}}",pre.captured_input_words().len(),pre.captured_output_words().len(),jet(&pre.source_n),jet(&pre.source_u),(dt*5e-15).to_bits(),jets(pre.groups.clone()),ints(pre.source_weights.clone()),json_string(family::bindings::SOURCE_SHA),json_string(family::bindings::ABI_SHA)));
++ let gas=std::array::from_fn(|i|Jet::variable(x[i],i).unwrap());let lambda=Jet::variable(Interval{lo:0.,hi:1.},4).unwrap();
++ let src=phys04_reduced_residual(&pre.stage,&family.gas,&gas,&pre.groups,&pre.energies,&lambda,dt).map_err(|e|format!("whole source: {:?}",e))?;export(path,"SOURCE_BOX",&src);source_components(path,"SOURCE_BOX",&src);
++ let cg=std::array::from_fn(|i|Jet::variable(p(center[i]),i).unwrap());let cs=phys04_reduced_residual(&pre.stage,&family.gas,&cg,&pre.groups,&pre.energies,&lambda,dt).map_err(|e|format!("center source whole Theta: {:?}",e))?;export(path,"SOURCE_CENTRE",&cs);source_components(path,"SOURCE_CENTRE",&cs);
++ write(path,"NATIVE_CONSTANT_LEAVES.json",format!("{{\"c_bits\":\"{:016x}\",\"kb_bits\":\"{:016x}\",\"ev_erg_bits\":\"{:016x}\",\"CHI_bits\":{},\"native_libm_scope\":\"native qhat sin/cos/sqrt/hypot and source geometry exp/sqrt/Verner powf captured at original calls; HH/FT03 Jet transcendental use finite-series remainder interval_math, not scalar libm replay\"}}",src.c_leaf.to_bits(),src.kb_leaf.to_bits(),src.ev_leaf.to_bits(),arr(CHI.map(|v|json_string(&format!("{:016x}",v.to_bits()))))));
++ let energy=crate::energy::export(&src).map_err(String::from)?;write(path,"ENERGY_PROJECTION.json",format!("{{\"native_authority\":false,\"ell_G\":{},\"Jnorm\":{},\"Psi\":{},\"fhat\":{},\"delta_f\":{},\"S\":{},\"Q\":{},\"transformed_signed_Jets\":{},\"energy_box_authority\":false,\"coordinate_warning\":\"default domain remains thermal w; transformed energy Jets do not prove an energy-box domain\"}}",jet(&energy.ell_g),jet(&energy.j_norm),jet(&energy.psi),iv(energy.fhat),iv(energy.delta_f),mat(energy.s),mat(energy.q),jets(energy.transformed)));
++ directional(path,x,&pre,&src).map_err(String::from)?;
++ match c2(path,x,&pre,&src){Ok((den,t))=>{if let Err(e)=uniform(path,&family,&pre,&src,&cs,x,center,radius,den,t){write(path,"UNIFORM_ARITHMETIC.json",format!("{{\"status\":\"OPEN\",\"native_authority\":false,\"reason\":{}}}",json_string(e)));}},Err(e)=>write(path,"UNIFORM_ARITHMETIC.json",format!("{{\"status\":\"NOT_ATTEMPTED_OPEN_C2\",\"reason\":{},\"native_authority\":false}}",json_string(e)))}
++ Ok(())
++}
++pub fn run_cli(){let args=std::env::args().collect::<Vec<_>>();assert_eq!(args.len(),3,"target and frozen-contract path required");let(dt,stage)=match args[1].as_str(){"phys07_sourcebox_full_first"=>(1.25e9,"full"),"phys07_sourcebox_first_half_first"=>(6.25e8,"first_half"),_=>panic!("unknown target; no native execution mode")};let contract=std::fs::read_to_string(&args[2]).unwrap();assert_eq!(contract,include_str!("../inputs/FROZEN_SOURCE_CONTRACT.json"),"compiled frozen contract identity");let key="\"frozen_words\"";let tail=&contract[contract.find(key).unwrap()+key.len()..];let list=&tail[tail.find('[').unwrap()+1..tail.find(']').unwrap()];let w=list.split(',').map(|s|s.trim().parse::<u64>().unwrap()).collect::<Vec<_>>();assert_eq!(w.len(),16);let x=std::array::from_fn(|i|Interval{lo:f64::from_bits(w[2*i]),hi:f64::from_bits(w[2*i+1])});let center=std::array::from_fn(|i|f64::from_bits(w[8+i]));let radius=std::array::from_fn(|i|f64::from_bits(w[12+i]));let path=Path::new("results").join(stage);std::fs::create_dir_all(&path).unwrap();let claim=Path::new("evidence").join(format!("{}.FIRST_CLAIM",args[1]));let _lock=std::fs::OpenOptions::new().write(true).create_new(true).open(claim).expect("named first already claimed; no replay");write(&path,"COUNTERS_BEFORE.json",counters());let outcome=source_stage(&path,dt,x,center,radius);std::fs::write(path.join("geometry_trace.txt"),hh_phys04_candidate::paired_runtime::phys07_transport_trace().join("\n")+"\n").unwrap();write(&path,"COUNTERS_AFTER.json",counters());let (status,reason)=match outcome{Ok(())=>("SOURCE_EXPORT_COMPLETE",String::new()),Err(e)=>("OPEN_SOURCE_FAILURE",e)};write(&path,"TARGET_RESULT.json",format!("{{\"target\":{},\"status\":{},\"reason\":{},\"native_authority\":false,\"actual_native_root\":null,\"actual_U_V_W_I\":null,\"same_COMMON_first_stage\":true}}",json_string(&args[1]),json_string(status),json_string(&reason)));println!("{}: {} {}",args[1],status,reason);if status=="OPEN_SOURCE_FAILURE"{std::process::exit(2);}}
