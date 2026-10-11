@@ -1,0 +1,74 @@
+{
+  "schema": "wu088.routing.v2",
+  "routes": {
+    "routine": {
+      "model": "gpt-5.6-luna",
+      "effort": "low",
+      "profile": "wu088-routine"
+    },
+    "code": {
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "profile": "wu088-code"
+    },
+    "orchestrator": {
+      "model": "gpt-6.1-sol",
+      "effort": "medium",
+      "profile": "wu088-orchestrator"
+    },
+    "worker": {
+      "model": "gpt-6-sol",
+      "effort": "medium",
+      "profile": "wu088-worker"
+    },
+    "explorer": {
+      "model": "gpt-6-luna",
+      "effort": "high",
+      "profile": "wu088-explorer"
+    },
+    "review": {
+      "model": "gpt-6-astra",
+      "effort": "xhigh",
+      "profile": "wu088-review"
+    },
+    "research": {
+      "model": "gpt-6-astra",
+      "effort": "xhigh",
+      "profile": "wu088-research"
+    },
+    "blocker": {
+      "model": "gpt-6-astra",
+      "effort": "ultra",
+      "profile": "wu088-blocker"
+    }
+  },
+  "escalation": {
+    "distinct_failed_attempts": 2,
+    "route": "blocker",
+    "max_attempts_per_escalation": 1,
+    "require_failure_evidence": true
+  },
+  "parallelism": {
+    "primary": 1,
+    "children_max": 3,
+    "depth_max_policy": 1,
+    "single_writer": true
+  },
+  "availability": {
+    "local_cli_cache": "/root/.codex/models_cache.json",
+    "spawn_tool_available_5_6_luna_terra": false,
+    "no_silent_substitution": true,
+    "ultra": "eligible local client; API supports max, not ultra; no implicit mapping"
+  },
+  "pricing_policy": {
+    "paid_fast_mode_opt_in_only": true,
+    "model_call_for_unchanged_pr": false
+  },
+  "sources": [
+    "https://learn.chatgpt.com/docs/config-file/config-reference",
+    "https://learn.chatgpt.com/docs/agent-configuration/subagents",
+    "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+    "https://developers.openai.com/api/docs/models/gpt-6-astra"
+  ]
+}

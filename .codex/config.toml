@@ -1,0 +1,12 @@
+model = "gpt-5.6-terra"
+model_reasoning_effort = "medium"
+developer_instructions = """
+For this WU088_HH project, follow docs/coding/CODEX_HARNESS_KO.md.
+Consult /root/.local/state/wu088-pr-watch/queue.json before planning implementation. Run the deterministic PR watcher at task start if the snapshot is older than 6 hours. Apply relevant independently verified PR findings in an isolated additive change and record source head and disposition. Follow scientific authorization ceilings; no automatic native promotion or source replay.
+Select task routes using scripts/codex/route.py from the harness worktree. Model configuration applies to subsequent sessions, not proof of current host routing. For genuinely independent subagent-driven tasks, use a 6.1 Sol coordinator with bounded 6 Sol/Luna workers; one writer per file and one independent Astra xhigh reviewer. Do not delegate routine single-file work. Evidence-backed hard blockers or two failed distinct attempts use Astra ultra where supported; no unlimited retries or invented fallback.
+"""
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3
+default_subagent_model = "gpt-6-sol"
+default_subagent_reasoning_effort = "medium"
