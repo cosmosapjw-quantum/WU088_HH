@@ -1,0 +1,2 @@
+pub const SOURCE_SHA:&str="fff8941d5b54d0e2399f9c188c7d02bebdc989d42789bda8ee4b08a3ab724dd8";
+pub const ABI_SHA:&str="64e77c36b5e9df1e0e547d1807b34f1c2f83fe700d92a8bc49b0937d570d6a95";

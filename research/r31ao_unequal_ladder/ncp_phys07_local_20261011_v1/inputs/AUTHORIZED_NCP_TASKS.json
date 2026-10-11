@@ -1,0 +1,546 @@
+{
+  "schema": "WU088_HH_PHYS07_NCP_TASKS_V1",
+  "status": "IMPLEMENTATION_HANDOFF_NOT_EXECUTED",
+  "creator_role": "Handoff/source candidate creator; not the independent final reviewer.",
+  "recovery": {
+    "repository": "cosmosapjw-quantum/WU088_HH",
+    "branch": "research/hh-phys07-source-domain-20261011",
+    "directory": "research/r31ao_unequal_ladder/hh_phys07_source_domain_20261011_v1/",
+    "delivery_directory": "research/r31ao_unequal_ladder/hh_phys07_source_domain_20261011_v1_delivery/",
+    "receipt_name": "WU088_HH_PHYS07_DELIVERY_RECEIPT_20261011_v1.json",
+    "receipt_git_path": "research/r31ao_unequal_ladder/hh_phys07_source_domain_20261011_v1_delivery/WU088_HH_PHYS07_DELIVERY_RECEIPT_20261011_v1.json",
+    "value_references": {
+      "publication_commit": "publication.commit",
+      "publication_tree": "publication.tree",
+      "archive_name": "archive.name",
+      "archive_bytes": "archive.bytes",
+      "archive_sha256": "archive.sha256",
+      "manifest_sha256": "archive.manifest_sha256",
+      "drive_object_id": "backups.drive.object_id",
+      "dropbox_path": "backups.dropbox.path"
+    },
+    "reference_semantics": "Literal field references in the detached PHYS07 receipt; resolve observed values at intake. They are not publication SHA placeholders.",
+    "drive_folder_id": "1074Hr5msnAMgIXWU-PmgdMrQvrdV6emM",
+    "dropbox_folder": "/BASS_DERIVATION_DOSSIERS_20260912/WU088_HH_R31S_NCP_REDESIGN_20260928",
+    "user_attachment_required": false,
+    "avoid_repeated_download": "Use the exact existing Git object/cache; recover one verified ZIP only if necessary. Do not claim a restore for unexecuted providers."
+  },
+  "inherited_source": {
+    "branch": "codex/hh-phys06-ncp-20261011",
+    "head": "65a36e255aa6d9911e23a9b5ced18d8a9f507606",
+    "tree": "f823df8c95defcaba737139859cd9eeeda4ef133",
+    "core": "927019cff541e8a4a1f0d2c8846f1466d6b70533",
+    "core_tree": "f156e72d5e58d4c6efa840606af28e43aa014e6f",
+    "directory": "research/r31ao_unequal_ladder/ncp_phys06_local_20261011_v1/",
+    "source_sha256": "26a7136322696aaf1dd65a13987d437ee8dfd86ed8967e6db1a224d828fb01f6",
+    "candidate_source_sha256": "14b1d1e76f54175069020fb49568f8a3c16571620fd69a532afaed73bb34a207",
+    "abi_sha256": "149b59c50ceec2a7d6c1beef54490181dd4aeefaa473e356810abd02133f2ea9",
+    "historical_final_build_binary_sha256": "36bc9ad2f95d214d1a0b1abe4fd44623c5dd1aea6e1e67cbc3eb28c9bd12363d",
+    "historical_binary_pin_scope": "Observed after final gradient-widening build only; earlier target binary hashes and post-edit target executions were unmeasured.",
+    "historical_rustc": "rustc 1.94.1 (e408947bf 2026-03-25)",
+    "common_seed_sha256": "678f967f0d50ad1fff47a73e2e63193429b708246cd84ca8ffc72191c31b522b",
+    "common_seed_bytes": 108416,
+    "completed_return": "inputs/ncp_phys06/delivery/NCP_RETURN_FINAL.json",
+    "source_intake_manifest": "inputs/ncp_phys06/SOURCE_INTAKE_MANIFEST.json",
+    "source_identity_is_native_authority": false
+  },
+  "work_branch_to_create": "codex/hh-phys07-ncp-20261011",
+  "work_directory_to_create": "research/r31ao_unequal_ladder/ncp_phys07_local_20261011_v1/",
+  "native_endpoint_authorization": null,
+  "source_arithmetic_scope": "Two bounded named public-source first invocations, necessary to continue the authorized PHYS07 source producer task. This does not authorize native endpoint/BE/root/IVP execution.",
+  "current_execution_ceiling": {
+    "native_endpoints": 0,
+    "conservative_or_BE_points": 0,
+    "certificate_internal_points": 0,
+    "native_nonlinear_roots": 0,
+    "native_root_or_tube_certificate_producers": 0,
+    "IVP": 0,
+    "heavy_atomic": 0,
+    "old_suite_replays": 0,
+    "receipt_extra_endpoints": 0,
+    "receipt_extra_roots": 0,
+    "new_stage_target_invocations": 2,
+    "phys04_prepare_family_entries": 2,
+    "phys04_reduced_residual_entries": 4,
+    "transitive_ft03_interval_rhs_entries": 4,
+    "transitive_hh_rate_jet_entries": 4,
+    "transitive_atomic_provider_channel_evaluations": 396,
+    "standalone_provider_or_rate_diagnostics": 0,
+    "extra_direction_or_geometry_passes": 0,
+    "uniform_root_arithmetic_entries": 2,
+    "phys04_mixed_at_box_entries": 0,
+    "uniform_linear_entries": 0,
+    "uniform_mixed_entries": 0,
+    "uniform_finite_entries": 0,
+    "uniform_paired_entries": 0,
+    "source_replay_allowance": 0,
+    "changed_code_build_attempts": 3
+  },
+  "resource_ceiling": {
+    "per_stage_target": {
+      "wall_seconds": 60,
+      "address_space_bytes": 536870912,
+      "output_and_artifact_bytes": 33554432,
+      "cpu_cores": 1,
+      "concurrency": 1,
+      "swap_bytes": 0
+    },
+    "changed_code_build": {
+      "attempts_total": 3,
+      "initial_attempts": 1,
+      "compile_defect_repair_attempts": 2,
+      "wall_seconds_each": 300,
+      "memory_bytes": 536870912,
+      "output_bytes": 33554432,
+      "cpu_cores": 1,
+      "concurrency": 1,
+      "swap_bytes": 0,
+      "CARGO_BUILD_JOBS": 1,
+      "offline": true,
+      "locked": true,
+      "new_toolchain_or_dependency_install": false,
+      "prospective_command": [
+        "cargo",
+        "build",
+        "--offline",
+        "--locked",
+        "--jobs",
+        "1",
+        "--bin",
+        "hh_phys07_sourcebox"
+      ]
+    },
+    "enforcement": "Record actual process-group timeout, address-space/cgroup memory, CPU, swap and total output enforcement before dispatch. Unsupported mandatory limits block only dependent source execution; no fabricated attestation.",
+    "repair_policy": "No unchanged retries. Up to two compile repairs use preserved concrete failures. Source first-call budget has no replay allowance; retain incomplete/OPEN evidence if a source rerun would be necessary."
+  },
+  "fixed_source_domain": {
+    "gas_coordinate_tag": "GAS_X_HII_Y_HEII_Y_HEIII_W_EV_PER_H",
+    "gas_order": [
+      "x_HII",
+      "y_HeII",
+      "y_HeIII",
+      "w_eV_per_H"
+    ],
+    "gas_box_exact_decimal_endpoints": [
+      [
+        ".90",
+        ".93"
+      ],
+      [
+        ".29",
+        ".31"
+      ],
+      [
+        ".59",
+        ".61"
+      ],
+      [
+        "13",
+        "14"
+      ]
+    ],
+    "theta_order": [
+      "lambda",
+      "b"
+    ],
+    "theta_exact": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "t0_s": "160000000000",
+    "hubble_binary64_source_literals": [
+      "1e-14",
+      "1e-14",
+      "1e-14"
+    ],
+    "stage_dt_s": {
+      "full": "1250000000",
+      "first_half": "625000000"
+    },
+    "stages_start_from_same_common": true,
+    "second_half_carried_stage_in_scope": false,
+    "grid": {
+      "nodes": 33,
+      "directions": 128,
+      "directional_photons": 4224,
+      "guard_n": 128,
+      "guard_u": 128
+    },
+    "jet_slots": {
+      "gas": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "lambda": 4,
+      "b": 5,
+      "unused": 6,
+      "gradient_length": 7,
+      "hessian_shape": [
+        7,
+        7
+      ]
+    },
+    "endpoint_conversion": "Outward binary64 enclosure of exact rational decimals; record rational, hex, to_bits and inclusion before source dispatch.",
+    "center_and_radius": "Freeze a positive-radius center box before first dispatch and ensure the actual source X encloses outward center +/- radius.",
+    "old_input_scope": "CommonFamily stored gas/photon/guard interval boxes; old primal point and its inclusion are recorded separately.",
+    "reference_input_scope": "Archived gas_point and exact sums of directional point stock with isotropic analytic remap; not assumed byte-identical to CommonFamily stored intervals.",
+    "source_amount_convention": "M_j = dN_j/db in photons/H from actual PreBE; optional effective rate B_dt=M_j/dt. Retain fl(dt*SOURCE) and native weight sums.",
+    "coordinate_rule": "uniform.Domain.x[3] is thermal w; total energy e requires explicit inverse transform and correlated domain evidence."
+  },
+  "reference_evidence": {
+    "analysis": "results/SOURCE_ANALYSIS.json",
+    "c2_theory": "theory/SOURCE_C2_DOMAIN_KO.md",
+    "root_theorem": "theory/REFERENCE_ROOT_THEOREM_KO.md",
+    "final_scope_decision": "review/DECISION.json",
+    "scope": "Declared isotropic analytic transport and correctly rounded reference leaves; fixed mathematical first-stage residuals only.",
+    "native_tuple_equivalence": "OPEN until actually established per component; CommonFamily stored interval inputs differ from reference point-input scope.",
+    "use": "Read saved exports for scoped cross-check only; do not replay Python source/reference tests or transfer its root/W/I values to native fields."
+  },
+  "source_files_relative_to_inherited_ncp_dossier": [
+    "candidate/src/phys04_transport.rs",
+    "candidate/src/phys04_mixed.rs",
+    "candidate/src/ft03_interval.rs",
+    "candidate/src/ft03_rates.rs",
+    "candidate/src/hh_primary_extension.rs",
+    "candidate/src/paired_runtime.rs",
+    "candidate/src/coupled_primary.rs",
+    "candidate/src/atomic_provider.rs",
+    "candidate/src/interval_ad.rs",
+    "candidate/src/interval_math.rs",
+    "candidate/src/phys04_receipt.rs",
+    "src/family.rs",
+    "src/adapter.rs",
+    "src/energy.rs",
+    "src/uniform.rs",
+    "src/certificate.rs",
+    "src/bindings.rs"
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "title": "Intake identity and isolated additive workspace",
+      "depends_on": [],
+      "status": "PENDING",
+      "implementation": [
+        "Resolve actual PHYS07 detached receipt/manifest/commit and inherited NCP head/core; reuse completed evidence and preserve original failures.",
+        "Create or safely resume isolated codex/hh-phys07-ncp-20261011 worktree and new NCP directory; read actual AGENTS/harness contracts.",
+        "Freeze source/input/X/Theta/coordinate/run budgets; record raw model label and routing receipt without switching models."
+      ],
+      "acceptance": [
+        "Actual receipt bytes/SHA and repository commit/tree recorded; no unavailable publication SHA inserted into core.",
+        "User work, old dossiers, scientific arrays/history and immutable seed remain byte-preserved.",
+        "Source changes, runtime observations and execution ceilings are ready for review before any scientific callback."
+      ],
+      "expected_evidence": [
+        "evidence/INTAKE.json",
+        "evidence/MODEL_ROUTING_RECEIPT.json",
+        "inputs/FROZEN_SOURCE_CONTRACT.json",
+        "evidence/PREFLIGHT.json"
+      ],
+      "actual_evidence": []
+    },
+    {
+      "id": "T02",
+      "title": "Native leaf, source tuple and historical carry binding",
+      "depends_on": [
+        "T01"
+      ],
+      "status": "PENDING",
+      "implementation": [
+        "Bind actual CommonFamily stored interval inputs and archived-point inclusion; preserve past HH ON and all compensation.",
+        "Build a source-specific producer through public prepare_family and reduced_residual only; capture PreBE words and same-call sigma/q/geometry/branch metadata.",
+        "Use minimal metadata-only edits in a new candidate copy where sigma/q or geometry trace is not exposed; pin changed source/ABI and actual binary."
+      ],
+      "acceptance": [
+        "Existing PreBE validate_family_input succeeds on the same object and exact call frame or original failure is retained.",
+        "Every energy/density/heat/source/geometry/provider leaf is observed from the executed path, with units and fixed-versus-variable roles.",
+        "No additional provider/geometry diagnostic, old suite, private permit issuer, endpoint or root dispatch."
+      ],
+      "expected_evidence": [
+        "evidence/SOURCE_BINDING.json",
+        "evidence/CANDIDATE_DELTA.patch",
+        "evidence/BUILD_PINS.json",
+        "results/full/prebe_words.bin",
+        "results/first_half/prebe_words.bin"
+      ],
+      "actual_evidence": []
+    },
+    {
+      "id": "T03",
+      "title": "Source C2 domain and branch predicate",
+      "depends_on": [
+        "T02"
+      ],
+      "status": "PENDING",
+      "implementation": [
+        "Prove exact rational endpoint conversion and actual frozen gas chart; compute monotone T/p/simplex margins on X and a surrounding open witness.",
+        "Use stored nHe/nH and the paired blanket whose endpoints are binary64 source-ordered FHE*(1-8*EPSILON) and FHE*(1+8*EPSILON); audit all D and physical incoming positivity, fixed energy cutoffs, hat/guard branches and min/max/nonneg semantics.",
+        "Separate underlying source-real C2 from rounded program/interval endpoint operations; preserve signed derivatives at zero stock and thermal-w coordinate meaning."
+      ],
+      "acceptance": [
+        "Whole X times whole Theta and an open real-formula extension are evidenced by actual leaves and source paths, not a boolean label.",
+        "HH temperature gate remains enforced when lambda=0; physical guard failure remains an explicit failure.",
+        "Stored interval inputs, coefficient uncertainty and reference point family are distinguished; no silent reference-to-native promotion."
+      ],
+      "expected_evidence": [
+        "results/full/C2_DOMAIN.json",
+        "results/first_half/C2_DOMAIN.json",
+        "theory/NATIVE_SOURCE_C2_KO.md"
+      ],
+      "actual_evidence": []
+    },
+    {
+      "id": "T04",
+      "title": "Whole-source export into existing uniform adapter",
+      "depends_on": [
+        "T02",
+        "T03"
+      ],
+      "status": "PENDING",
+      "implementation": [
+        "Execute only the two named stage first targets: two direct residual calls per stage for whole X and gas-center, both over whole Theta.",
+        "Export Gc,A,G_lambda,G_b,G_lambdab,G_g_lambda,G_g_b,G_gg and full signed Jets with actual PreBE/source/carry identity.",
+        "Reuse PHYS06 energy and uniform code; create a source-bound data factory and at most one conditional root_arithmetic call per stage using a frozen C derived from the center export."
+      ],
+      "acceptance": [
+        "Whole-source data originates from the actual private producer flow; imported JSON/labels cannot create native authority.",
+        "Jnorm, rounded heat-leaf Psi and coordinate transforms remain exact to the declared leaf graph.",
+        "B,beta,q,radius,strict margins and all unresolved source/C2 premises are saved; no native root/U/V/W/I is produced."
+      ],
+      "expected_evidence": [
+        "results/full/SOURCE_BOX.json",
+        "results/full/SOURCE_CENTRE.json",
+        "results/full/UNIFORM_ARITHMETIC.json",
+        "results/first_half/SOURCE_BOX.json",
+        "results/first_half/SOURCE_CENTRE.json",
+        "results/first_half/UNIFORM_ARITHMETIC.json"
+      ],
+      "actual_evidence": []
+    },
+    {
+      "id": "T05",
+      "title": "Native-leaf HH-photo source directional witness",
+      "depends_on": [
+        "T04"
+      ],
+      "status": "PENDING",
+      "implementation": [
+        "Reuse captured q/sigma/heat/source/denominator Jets to form H_g P_M and (P_M)_g H and independently evaluate the closed source directional formulas.",
+        "Use actual M=dN/db amount or explicitly B_dt=M/dt; preserve one factor of dt in G_b=-dt*P_M.",
+        "Check native support and a*p<w, source G_lambdab identity versus interval inclusion, and energy projection with E+epsilon."
+      ],
+      "acceptance": [
+        "Witness is labeled source-directional; it is not actual implicit W, finite I, or full/two-half defect.",
+        "Native/reference leaf equality, interval inclusion, overlap and mismatches are reported separately.",
+        "No extra source/HH/provider callback, finite-difference, corner/root sampling, reference rerun or old target replay."
+      ],
+      "expected_evidence": [
+        "results/full/SOURCE_DIRECTIONAL_WITNESS.json",
+        "results/first_half/SOURCE_DIRECTIONAL_WITNESS.json",
+        "evidence/REFERENCE_COMPARISON.json"
+      ],
+      "actual_evidence": []
+    },
+    {
+      "id": "T06",
+      "title": "Independent scoped decision, complete return and dual delivery",
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "status": "PENDING",
+      "implementation": [
+        "Obtain one focused review by a noncreator of candidate/theory/tests; fix concrete issues only within remaining budgets.",
+        "Preserve original command/logs/exit/resource/source/build/test-binary identity and post-test changes; do not fabricate final-test coverage.",
+        "Complete actual return, claim/blocker ledger, manifests, additive commit and create-only ZIP/delivery files in both existing backup folders."
+      ],
+      "acceptance": [
+        "Reviewer independence and actual evidence basis are explicit; self-review is not independent promotion.",
+        "Every unmeasured value remains null and every unexecuted gate is named; native authority remains null/false.",
+        "START and handoff/tasks/return/receipt are included in backups for attachment-free continuation; upload metadata and actual restore are distinct."
+      ],
+      "expected_evidence": [
+        "review/DECISION.json",
+        "review/REVIEW_KO.md",
+        "NCP_RETURN.json",
+        "RETURN_KO.md",
+        "NEXT_HANDOFF_KO.md",
+        "CLAIM_LEDGER.json",
+        "BLOCKERS.json",
+        "MANIFEST.json",
+        "evidence/RUN_LEDGER.jsonl",
+        "delivery/ACK_INDEX.json"
+      ],
+      "actual_evidence": []
+    }
+  ],
+  "new_execution_targets": [
+    {
+      "name": "phys07_sourcebox_full_first",
+      "stage": "full",
+      "status": "TO_CREATE_NOT_EXECUTED",
+      "invocations_ceiling": 1,
+      "dt_s": "1250000000",
+      "prospective_cli": {
+        "binary_to_create": "hh_phys07_sourcebox",
+        "task_argument": "phys07_sourcebox_full_first",
+        "frozen_contract": "inputs/FROZEN_SOURCE_CONTRACT.json"
+      },
+      "execution_order": [
+        "Read prepared COMMON or perform necessary initializer input preparation once; enforce identity/resources and freeze X/Theta.",
+        "Call phys04_prepare_family once with b as slot-5 variable over [0,1]; capture existing-call-site trace and validate_family_input.",
+        "Call phys04_reduced_residual once at whole gas X times whole Theta using actual PreBE groups and source leaves.",
+        "Call phys04_reduced_residual once at fixed gas center times whole Theta; keep gas gradient slots and parameter/incoming Jets.",
+        "Reuse both results for source C2 evidence, native leaf/reference comparison, energy projection, source-bound UniformData, at most one root_arithmetic and HH-photo directional witness.",
+        "Write exact input/output words, original logs, resource/counter deltas and the actual source/build/executable identity."
+      ],
+      "per_target_call_ceiling": {
+        "phys04_prepare_family": 1,
+        "phys04_reduced_residual": 2,
+        "ft03_interval_rhs": 2,
+        "hh_rate_jet": 2,
+        "atomic_provider_channels": 198,
+        "uniform_root_arithmetic": 1,
+        "native_endpoints": 0,
+        "native_points": 0,
+        "native_roots": 0
+      },
+      "results_directory": "results/full/",
+      "evidence_directory": "evidence/phys07_sourcebox_full_first/",
+      "failure_rule": "Count failed function entries; preserve the first record. No source replay, box/Theta sweep, or counter reset. Complete the other still-unexecuted named stage if independent and safe."
+    },
+    {
+      "name": "phys07_sourcebox_first_half_first",
+      "stage": "first_half",
+      "status": "TO_CREATE_NOT_EXECUTED",
+      "invocations_ceiling": 1,
+      "dt_s": "625000000",
+      "prospective_cli": {
+        "binary_to_create": "hh_phys07_sourcebox",
+        "task_argument": "phys07_sourcebox_first_half_first",
+        "frozen_contract": "inputs/FROZEN_SOURCE_CONTRACT.json"
+      },
+      "execution_order": [
+        "Read prepared COMMON or perform necessary initializer input preparation once; enforce identity/resources and freeze X/Theta.",
+        "Call phys04_prepare_family once with b as slot-5 variable over [0,1]; capture existing-call-site trace and validate_family_input.",
+        "Call phys04_reduced_residual once at whole gas X times whole Theta using actual PreBE groups and source leaves.",
+        "Call phys04_reduced_residual once at fixed gas center times whole Theta; keep gas gradient slots and parameter/incoming Jets.",
+        "Reuse both results for source C2 evidence, native leaf/reference comparison, energy projection, source-bound UniformData, at most one root_arithmetic and HH-photo directional witness.",
+        "Write exact input/output words, original logs, resource/counter deltas and the actual source/build/executable identity."
+      ],
+      "per_target_call_ceiling": {
+        "phys04_prepare_family": 1,
+        "phys04_reduced_residual": 2,
+        "ft03_interval_rhs": 2,
+        "hh_rate_jet": 2,
+        "atomic_provider_channels": 198,
+        "uniform_root_arithmetic": 1,
+        "native_endpoints": 0,
+        "native_points": 0,
+        "native_roots": 0
+      },
+      "results_directory": "results/first_half/",
+      "evidence_directory": "evidence/phys07_sourcebox_first_half_first/",
+      "failure_rule": "Count failed function entries; preserve the first record. No source replay, box/Theta sweep, or counter reset. Complete the other still-unexecuted named stage if independent and safe."
+    }
+  ],
+  "producer_output_contract": {
+    "prebe": "Same-call source/time/dt/config/input/output words, 4224 photon/128+128 guard and 33 grouped value/gradient/Hessian Jets; preserve exact signed words.",
+    "native_leaves": [
+      "stored_nH",
+      "stored_nHe",
+      "fHe",
+      "Hmean",
+      "c",
+      "kB",
+      "eV_erg",
+      "CHI",
+      "energy_nodes",
+      "sigma_channels",
+      "heat_subtraction_leaves",
+      "fl_dt_times_SOURCE",
+      "q_Jet",
+      "native_direction_and_geometry_trace",
+      "source_weights",
+      "guard_hat_branch_trace"
+    ],
+    "source_box": [
+      "G",
+      "A_Gg",
+      "G_lambda",
+      "G_b",
+      "G_lambdab",
+      "G_g_lambda",
+      "G_g_b",
+      "G_gg",
+      "rhs",
+      "nonphoto",
+      "photo_rates",
+      "photons",
+      "denominators",
+      "full_7_slot_Jets"
+    ],
+    "source_centre": "G(g_c,whole Theta) plus full center-source Jets; no theta-center substitution.",
+    "uniform": "Existing PHYS06 UniformData with source-specific verified producer/domain evidence; fixed-C identity and at most one conditional arithmetic attempt per stage.",
+    "authority": "All exports and conditional arithmetic carry native_authority=false. Private native permits/certificates remain unissued.",
+    "metadata_additions": "Only capture values already computed at native source call sites; never replace physical equations or recompute provider/geometry for logging."
+  },
+  "scientific_invariants": {
+    "temperature": "T=(2*eV_erg/(3*kB))*w/(1+fhat+x+fhat*(y1+2*y2)), fhat=exact(stored_nHe)/exact(stored_nH)",
+    "energy_projection": "ell*G from existing source Jets; preserve Jnorm=(f-fhat)*(chiI*F0_y1+(chiI+chiII)*F0_y2) and rounded-heat Psi.",
+    "heat": "a=fl(E-CHI), epsilon=a-(E-CHI); keep E+epsilon when projecting photo energy.",
+    "birth": "Use actual M=dN/db; G_b=-dt*P_M; optional effective B_dt=M/dt is not automatically exact SOURCE.",
+    "first_common_partials": "G_lambda=-dt*H, G_b=-dt*P_M, G_lambdab=0, G_g_lambda=-dt*H_g, G_g_b=-dt*(P_M)_g; distinguish algebraic zero from interval enclosure.",
+    "source_witness": "H_g P_M and (P_M)_g H on whole X, using observed native leaves; not actual W or finite interaction.",
+    "C2": "Underlying fixed-coefficient real source on an open chart, with actual source/domain guards; not the rounded program or clipped interval-endpoint map.",
+    "history": "Historical HH ON, archived physical data and compensation remain unchanged; future lambda/b do not retag past state.",
+    "scope": "Full and first-half each start at COMMON; second-half derivatives/carry and paired terminal-time family are not produced.",
+    "paired_temperature_blanket": "Source-ordered binary64 endpoints FHE*(1-8*EPSILON) and FHE*(1+8*EPSILON); preserve endpoint rounding and separately verify containment of exact(stored_nHe)/exact(stored_nH)."
+  },
+  "completed_prerequisites_do_not_repeat": [
+    "PHYS06 energy/uniform/mixed/finite/paired generic implementation and its six first targets plus one fixture recheck",
+    "NCP v2 seed/receipt and 189-slot oracle; v1 target results",
+    "PHYS04 remap/quartic, PHYS05 18817 checks, FD1/FD2/6-cell/G256",
+    "Existing checkpoint/receipt/seed decoder diagnostic suites and harness package tests",
+    "PHYS07 Python primitive/full/first-half/source-analysis reference runs"
+  ],
+  "required_actual_evidence": [
+    "Command vector, cwd, run/task ID, UTC start/end, exit, timeout, stdout/stderr bytes and SHA, elapsed and observed RSS/CPU",
+    "Source, candidate, ABI, dependencies, compiler/flags/CPU/loader and executable SHA for each build and each target before/after",
+    "First failure chronology and explicit post-test edits with no retroactive final-binary PASS",
+    "Actual native and source-arithmetic counters before/after; uninstrumented measured counts remain null",
+    "Independent noncreator decision and concrete evidence references",
+    "Actual publication and dual-backup ACK/metadata/restore observations, each at its observed scope"
+  ],
+  "future_native_proposal_not_authorization": {
+    "source": "inputs/ncp_phys06/delivery/NCP_RETURN_FINAL.json",
+    "field": "next_proposal_not_executed",
+    "status": "INHERITED_PROPOSED_NOT_EXECUTED",
+    "request_ready": false,
+    "authorization": null,
+    "instruction": "Preserve the single existing proposal as unexecuted; current public-source budget is not permission for its endpoint/root counts."
+  },
+  "persistent_state": {
+    "provider_admission": "24/289",
+    "unbounded_cases": 265,
+    "epsilon_C": null,
+    "epsilon_R": null,
+    "B22": "OPEN",
+    "canonical_S0_HH": "OFF",
+    "ON06G_prefix_macros": 256,
+    "ON06G_prefix_terminal_s": "320000000000",
+    "physical_production": "HOLD"
+  },
+  "stop": "Finish T01-T06 and one noncreator review. Preserve concrete failures and complete delivery; no generic adapter proliferation, source replay, new native authority or optional old-suite sweeps."
+}

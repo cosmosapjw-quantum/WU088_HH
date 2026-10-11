@@ -1,0 +1,19 @@
+{
+  "status": "PASS_RESOURCE_CAPABILITY_ONLY",
+  "command": [
+    "/usr/bin/python3",
+    "-c",
+    "import os,resource,json; print(json.dumps({\"cgroup\":open(\"/proc/self/cgroup\").read(),\"affinity\":list(os.sched_getaffinity(0)),\"address_space\":resource.getrlimit(resource.RLIMIT_AS)}))"
+  ],
+  "exit": 0,
+  "stdout": "{\"cgroup\": \"0::/wu088_phys07_20261011\\n\", \"affinity\": [0], \"address_space\": [536870912, 536870912]}\n",
+  "stderr": "",
+  "scientific_callbacks": 0,
+  "build_attempts": 0,
+  "cgroup_limits": {
+    "cpu.max": "100000 100000",
+    "memory.max": "536870912",
+    "memory.swap.max": "0"
+  },
+  "toolchain_preexisting": true
+}
