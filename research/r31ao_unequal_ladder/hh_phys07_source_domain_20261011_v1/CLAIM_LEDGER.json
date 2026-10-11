@@ -1,0 +1,98 @@
+{
+  "schema": "WU088_HH_PHYS07_CLAIM_LEDGER_V1",
+  "scope": "All numeric promotions are for the declared first-stage mathematical reference family only. Final independent acceptance is recorded separately.",
+  "claims": [
+    {
+      "id": "P07-01",
+      "claim": "Source-specific open C2 chart for fixed reference leaves and parameter rectangle",
+      "evidence_status": "derived_and_implementation_verified",
+      "evidence": [
+        "theory/SOURCE_C2_DOMAIN_KO.md",
+        "results/SOURCE_ANALYSIS.json"
+      ]
+    },
+    {
+      "id": "P07-02",
+      "claim": "Whole-X-times-Theta and fixed-centre-times-Theta residual/Jacobian/Hessian enclosures for full and first-half reference source",
+      "evidence_status": "implementation_verified",
+      "evidence": [
+        "results/full/source_box.json",
+        "results/full/source_centre.json",
+        "results/first_half/source_box.json",
+        "results/first_half/source_centre.json",
+        "RUN_LEDGER.json"
+      ]
+    },
+    {
+      "id": "P07-03",
+      "claim": "Low excess-energy active photo raises thermal w while decreasing T; both HH and photo temperature directions negative",
+      "evidence_status": "derived_and_implementation_verified",
+      "evidence": [
+        "theory/SOURCE_C2_DOMAIN_KO.md",
+        "results/SOURCE_ANALYSIS.json"
+      ]
+    },
+    {
+      "id": "P07-04",
+      "claim": "Uniform unique reference root inside X for each fixed coefficient vector and every theta",
+      "evidence_status": "derived_and_implementation_verified",
+      "evidence": [
+        "theory/REFERENCE_ROOT_THEOREM_KO.md",
+        "results/SOURCE_ANALYSIS.json"
+      ]
+    },
+    {
+      "id": "P07-05",
+      "claim": "Reference root uniform W_x<0, W_w>0, W_T>0 and corresponding finite unit-square interactions have the same signs",
+      "evidence_status": "derived_and_implementation_verified",
+      "evidence": [
+        "theory/REFERENCE_ROOT_THEOREM_KO.md",
+        "results/SOURCE_ANALYSIS.json"
+      ]
+    },
+    {
+      "id": "P07-06",
+      "claim": "Reference finite gas energy interaction sign",
+      "evidence_status": "unresolved",
+      "evidence": [
+        "results/SOURCE_ANALYSIS.json"
+      ]
+    },
+    {
+      "id": "P07-07",
+      "claim": "Formal common-input cubic coefficients alpha_m,beta_m and low-energy leading x/e signs",
+      "evidence_status": "derived_only_not_finite_step_certification",
+      "evidence": [
+        "theory/SOURCE_C2_DOMAIN_KO.md"
+      ]
+    },
+    {
+      "id": "P07-08",
+      "claim": "Native leaf/Phys04PreBE/input tuple identity, actual native root/W/I",
+      "evidence_status": "unresolved",
+      "evidence": [
+        "inputs/SOURCE_PORT_LEAF_MAPPING.json",
+        "handoff/NCP_LOCAL_CODEX_HANDOFF_KO.md"
+      ]
+    },
+    {
+      "id": "P07-09",
+      "claim": "Actual carried second-half, coupled full/two-half defect and time/continuum remainder",
+      "evidence_status": "unresolved",
+      "evidence": [
+        "SCIENTIFIC_CONTRACT.md",
+        "handoff/NCP_LOCAL_CODEX_HANDOFF_KO.md"
+      ]
+    }
+  ],
+  "actual_native": {
+    "U": null,
+    "V": null,
+    "W": null,
+    "root": null,
+    "finite_interaction": null,
+    "paired_defect": null,
+    "time_remainder": null
+  },
+  "independent_decision_path": "review/DECISION.json"
+}

@@ -1,0 +1,2110 @@
+{
+  "schema": "WU088_HH_PHYS07_REFERENCE_CHART_AUDIT_V1",
+  "metadata": {
+    "family_scope": "FIRST_STAGE_SOURCE_DERIVED_REFERENCE_ONLY",
+    "old_gas_choice": "fixed archived gas_point.values, theta-independent; archived gas_box is retained as provenance, not an incoming uncertain family",
+    "old_photon_choice": "exact sum of archived directional binary64 stocks; not stored primary packet count and not PHYS06 frozen stock reused as Nbar",
+    "theta": {
+      "lambda": [
+        0,
+        1
+      ],
+      "b": [
+        0,
+        1
+      ]
+    },
+    "first_stage_incoming": "N_j(b) = Nbar_j + b*B_j; N_lambda=N_lambdab=0 and B is fixed",
+    "coefficient_enclosure_semantics": "Nbar intervals enclose one fixed theta-independent vector defined by the analytic remap; their endpoints are not separately chosen as theta varies. Treating their boxes independently only enlarges the source enclosure.",
+    "clock": {
+      "time0_s": 160000000000.0,
+      "dt_s": 625000000.0,
+      "time1_f64_s": 160625000000.0,
+      "elapsed_exact": {
+        "numerator": "625000000",
+        "denominator": "1"
+      }
+    },
+    "transport_chart": {
+      "kind": "analytically reduced exact-real isotropic g-ratio and normalized angular sum",
+      "r": {
+        "lo": {
+          "numerator": "5192264406780873622601344759993231",
+          "denominator": "5192296858534827628530496329220096"
+        },
+        "hi": {
+          "numerator": "324516525423804601412584047499581",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          0.9999937500195312,
+          0.9999937500195312
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "r_argument_exact": {
+        "numerator": "-61897001964269013671875",
+        "denominator": "9903520314283042199192993792"
+      },
+      "formula": "g(q,t1)/g(q,t0)=exp(-H*(t1-t0)); sum_d normalized source weights = 1",
+      "native_widened_weight_interval_reproduction": false,
+      "native_qhat_leaves_required_for_this_analytic_cancellation": false
+    },
+    "scalar_leaf_chart": {
+      "kind": "source binary64 operation order with uniquely correctly-rounded reference transcendental leaves",
+      "density_exp_argument_hex": "-0x1.3bcd35a858794p-8",
+      "nH_hex": "0x1.a16a0487716e4p-14",
+      "stored_nHe_hex": "0x1.1529b9478090ep-17",
+      "fHe_hex": "0x1.53f7ced916873p-4",
+      "hmean_hex": "0x1.6849b86a12b9bp-47",
+      "birth_dt_SOURCE_hex": "0x1.a36e2eb1c432dp-19",
+      "native_libm_bitwise_identity": "UNRESOLVED_NOT_CALLED"
+    },
+    "native_Phys04PreBE_tuple": null,
+    "provider_leaf_semantics": "AtomicProvider source AST with correctly-rounded reference sqrt/pow leaves; native Rust libm identity OPEN",
+    "provider_sigma_reused_in_this_call": true,
+    "native_Phys04PreBE_equivalence": "OPEN",
+    "actual_HH_W": null,
+    "actual_native_root": null,
+    "second_half_history": "NOT_CONSTRUCTED_NOT_INHERITED",
+    "source_model_change": "No reaction or closure changed; this is a separately declared scalar/geometry reference chart and is not installed into native source.",
+    "source_bindings": {
+      "source_commit_declared_from_intake": "927019cff541e8a4a1f0d2c8846f1466d6b70533",
+      "source_files_sha256": {
+        "ft03_interval.rs": "886580a810b8ec29c8f0b6199c0e35d82fde1f46d984a5f8f1da304326a42a42",
+        "ft03_rates.rs": "1a97cd7a3555deeb4d8700376cd84580c5102127773bc3a235a29c33b0c1542f",
+        "ft03_controlled.rs": "61e11471482bb49d99e5d0eb79504d3f67538fbe6361653a0462d1abb0b672db",
+        "hhe_events.rs": "c100b08e034089c2d67b2102769ccdd51f1d29a2f388d6bb2dfe7984af93b290",
+        "hh_primary_extension.rs": "f47d910abb096f96b829e3392fdfbf55d079ba2fbb09a45416c97c76a4f4a647",
+        "phys04_mixed.rs": "95c1ecb757b32abd1fd5d5e7ef5195cc8a3ee67ca54de0b1f6e5b87bb58d3cd8",
+        "phys04_transport.rs": "566a68cf4111d8586b5fee7bd0750f39ec98b2e3f2b6217a656b270deda5ce78",
+        "paired_runtime.rs": "5cfa65e67e4843ae6ae3ae3eb3d1d5a47e23c01db14eaf26feceb4692fe2e4db",
+        "coupled_primary.rs": "2c528f1e7dcf44622374f8421a192f75ce8cff8b1c311bbff508f9ed863d7dcc",
+        "atomic_provider.rs": "b0b572d3940a7a1f740e09d5f43c60236ec61511e8bdbcc68e60395ec7e107d3",
+        "interval_ad.rs": "b14a16a24ba55d1d915fc890348bbafccf3c9df4566c04bbf06d38cdac2ef2dd",
+        "interval_math.rs": "e4639a4386feee536dbe7e7ffb1260f26fa00697b6b05477083c182ddf03de18"
+      },
+      "archived_input_path": "/workspace/scratch/198b9c7581be/HH_PHYS07_20261011_v1/inputs/ARCHIVED_COMMON_SEED_POINT_INPUT.json",
+      "archived_input_sha256": "1f462e7fa7c1d4251c5004194c42b0e471fe5c42303962f1a40d5d5062f1923d",
+      "archived_seed_sha256": "678f967f0d50ad1fff47a73e2e63193429b708246cd84ca8ffc72191c31b522b",
+      "source_port_sha256": "450d937cfe296857a17fbb9335b461c875ea00e631acf55667d179f0d23bf34f",
+      "interval_backend_sha256": "74a47e22913447ab0732ff542a6ffcc08f48e250cc3de97edb5882378d83c483",
+      "driver_sha256": "e4061dcfb71649e9d7474e7468560a324b53f2e0848c676770ef16e8ac6c9a73",
+      "no_remote_lookup_or_native_callback_in_this_driver": true
+    },
+    "provider_reference": {
+      "path": "/workspace/scratch/198b9c7581be/HH_PHYS07_20261011_v1/results/full/provider_reference.json",
+      "sha256": "9dbb1fef6cb9c0397c4d1b0f5b8d23df8f250d1891f9dfb159dbe24bc6ad63c2",
+      "read_only_reuse_no_provider_arithmetic_replay": true
+    }
+  },
+  "branches": [
+    {
+      "old_node": 0,
+      "branch": "lower_guard",
+      "energy_interval": {
+        "lo": {
+          "numerator": "3245165254238046014125840474995769",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "1622582627119023007062920237497905",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "display_float": [
+          9.999937500195312,
+          9.999937500195312
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 1,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        0,
+        1
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "3391134190895557657086521151423987",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "1695567095447778828543260575712015",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "display_float": [
+          10.449739013889817,
+          10.449739013889817
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "193002382948220889906858725460749",
+            "denominator": "1329227995784915872903807060280344576"
+          },
+          "hi": {
+            "numerator": "193002382948220889906858725852315",
+            "denominator": "1329227995784915872903807060280344576"
+          },
+          "display_float": [
+            0.000145198854944559,
+            0.000145198854944559
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2595771471488218070339648831161117",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "hi": {
+            "numerator": "2595771471488218070339648831161883",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "display_float": [
+            0.9998548011450554,
+            0.9998548011450554
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 2,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        1,
+        2
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "3537103127553069300047201827852205",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "1768551563776534650023600913926125",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "display_float": [
+          10.899540527584321,
+          10.899540527584321
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "1610480255683571262157283580166571",
+            "denominator": "10633823966279326983230456482242756608"
+          },
+          "hi": {
+            "numerator": "805240127841785631078641791722399",
+            "denominator": "5316911983139663491615228241121378304"
+          },
+          "display_float": [
+            0.0001514488354133497,
+            0.0001514488354133497
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2595755245611241067375073046547683",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "hi": {
+            "numerator": "5191510491222482134750146093096969",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.9998485511645866,
+            0.9998485511645866
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 3,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        2,
+        3
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "230192004013161272909420816831241",
+          "denominator": "20282409603651670423947251286016"
+        },
+        "hi": {
+          "numerator": "3683072064210580366550733069299903",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          11.349342041278824,
+          11.349342041278824
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "3353882895562763530262168527176723",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "hi": {
+            "numerator": "1676941447781381765131084267012287",
+            "denominator": "10633823966279326983230456482242756608"
+          },
+          "display_float": [
+            0.000157698815882141,
+            0.000157698815882141
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2595739019734264062857745458490171",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "hi": {
+            "numerator": "5191478039468528125715490916982017",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.9998423011841179,
+            0.9998423011841179
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 4,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        3,
+        4
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "1914520500434046004755706872864037",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "hi": {
+          "numerator": "3829041000868092009511413745728123",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          11.799143554973329,
+          11.799143554973329
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "435850659969794821373777017595025",
+            "denominator": "2658455991569831745807614120560689152"
+          },
+          "hi": {
+            "numerator": "435850659969794821373777018487431",
+            "denominator": "2658455991569831745807614120560689152"
+          },
+          "display_float": [
+            0.00016394879635093105,
+            0.00016394879635093105
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "5191445587714574123020000670980861",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "5191445587714574123020000670982607",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.999836051203649,
+            0.999836051203649
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 5,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        4,
+        5
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "993752484381400913118023605539073",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "hi": {
+          "numerator": "3975009937525603652472094422156343",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          12.248945068667833,
+          12.248945068667833
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "1809863831976983428397521846860679",
+            "denominator": "10633823966279326983230456482242756608"
+          },
+          "hi": {
+            "numerator": "904931915988491714198760925288001",
+            "denominator": "5316911983139663491615228241121378304"
+          },
+          "display_float": [
+            0.00017019877681972173,
+            0.00017019877681972173
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "5191413135960620117090849101753993",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "2595706567980310058545424550877905",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "display_float": [
+            0.9998298012231803,
+            0.9998298012231803
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 6,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        5,
+        6
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "4120978874183114718975625663603943",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "1030244718545778679743906415900999",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "display_float": [
+          12.698746582362336,
+          12.698746582362336
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "3752650048149589437544663436960703",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "hi": {
+            "numerator": "938162512037397359386165861170687",
+            "denominator": "5316911983139663491615228241121378304"
+          },
+          "display_float": [
+            0.0001764487572885131,
+            0.0001764487572885131
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2595690342103333053835860388310647",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "hi": {
+            "numerator": "5191380684206666107671720776623183",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.9998235512427115,
+            0.9998235512427115
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 7,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        6,
+        7
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "4266947810840626361936306340032161",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "533368476355078295242038292504027",
+          "denominator": "40564819207303340847894502572032"
+        },
+        "display_float": [
+          13.14854809605684,
+          13.14854809605684
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "3885572432345182903470692674148415",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "hi": {
+            "numerator": "3885572432345182903470692682161857",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "display_float": [
+            0.0001826987377573031,
+            0.0001826987377573031
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "5191348232452712105360703679639489",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "648918529056589013170087959955181",
+            "denominator": "649037107316853453566312041152512"
+          },
+          "display_float": [
+            0.9998173012622427,
+            0.9998173012622427
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 8,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        7,
+        8
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "4412916747498138004896987016460379",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "4412916747498138004896987016460435",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          13.598349609751345,
+          13.598349609751345
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "502311852067598898659440028406909",
+            "denominator": "2658455991569831745807614120560689152"
+          },
+          "hi": {
+            "numerator": "4018494816540791189275520235414413",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "display_float": [
+            0.0001889487182260938,
+            0.0001889487182260938
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "1297828945174689524857888027603155",
+            "denominator": "1298074214633706907132624082305024"
+          },
+          "hi": {
+            "numerator": "5191315780698758099431552110414615",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.9998110512817739,
+            0.9998110512817739
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 9,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        8,
+        9
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "4412980247281338778446258822395311",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "4412980247281338778446258822395367",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          13.598545283565631,
+          13.598545283565631
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "2255266742184998337702508818602561",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "4510533484369996675405017646363165",
+            "denominator": "10384593717069655257060992658440192"
+          },
+          "display_float": [
+            0.43434857513547365,
+            0.43434857513547365
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2937030116349829290827987506038513",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "2937030116349829290827987510617535",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.5656514248645264,
+            0.5656514248645264
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 10,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        9,
+        10
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "1103260936766134743884595298337419",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "hi": {
+          "numerator": "1103260936766134743884595298337433",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "display_float": [
+          13.598740957379915,
+          13.598740957379915
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "4510598387918851744777414594044371",
+            "denominator": "10384593717069655257060992658440192"
+          },
+          "hi": {
+            "numerator": "2255299193959425872388707301601207",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.4343548251198855,
+            0.4343548251198855
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "367124708071925219517723628452361",
+            "denominator": "649037107316853453566312041152512"
+          },
+          "hi": {
+            "numerator": "1468498832287700878070894516098955",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "display_float": [
+            0.5656451748801145,
+            0.5656451748801145
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 11,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        10,
+        11
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "34477400365997966789747289056911",
+          "denominator": "2535301200456458802993406410752"
+        },
+        "hi": {
+          "numerator": "551638405855967468635956624910583",
+          "denominator": "40564819207303340847894502572032"
+        },
+        "display_float": [
+          13.5989366311942,
+          13.5989366311942
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "2255331645692906054960663176291335",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "4510663291385812109921326361740713",
+            "denominator": "10384593717069655257060992658440192"
+          },
+          "display_float": [
+            0.43436107509641114,
+            0.43436107509641114
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2936965212841921573569833148349739",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "2936965212841921573569833152928761",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.5656389249035888,
+            0.5656389249035888
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 12,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        11,
+        12
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "1103292686657734986544943842559743",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "hi": {
+          "numerator": "1103292686657734986544943842559757",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "display_float": [
+          13.599132305008483,
+          13.599132305008483
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "4510728194934668357694318437830985",
+            "denominator": "10384593717069655257060992658440192"
+          },
+          "hi": {
+            "numerator": "4510728194934668357694318446989029",
+            "denominator": "10384593717069655257060992658440192"
+          },
+          "display_float": [
+            0.43436732508082315,
+            0.43436732508082315
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2936932761067493449683337105725581",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "2936932761067493449683337110304603",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.5656326749191769,
+            0.5656326749191769
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 13,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        12,
+        13
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "275827140400883794983065448510869",
+          "denominator": "20282409603651670423947251286016"
+        },
+        "hi": {
+          "numerator": "551654280801767589966130897021745",
+          "denominator": "40564819207303340847894502572032"
+        },
+        "display_float": [
+          13.59932797882277,
+          13.59932797882277
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "2255396549200813772218817534061877",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "4510793098401627544437635077281797",
+            "denominator": "10384593717069655257060992658440192"
+          },
+          "display_float": [
+            0.4343735750573487,
+            0.4343735750573487
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2936900309334013856311678790579197",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "2936900309334013856311678795158219",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.5656264249426514,
+            0.5656264249426514
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 14,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        13,
+        14
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "1103324436549335373319579745527209",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "hi": {
+          "numerator": "1103324436549335373319579745527223",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "display_float": [
+          13.599523652637055,
+          13.599523652637055
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "4510858001909535556295938206554321",
+            "denominator": "10384593717069655257060992658440192"
+          },
+          "hi": {
+            "numerator": "1127714500477383889073984553928091",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "display_float": [
+            0.43437982503781747,
+            0.43437982503781747
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2936867857580059850382527221363913",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "367108482197507481297815903242867",
+            "denominator": "649037107316853453566312041152512"
+          },
+          "display_float": [
+            0.5656201749621825,
+            0.5656201749621825
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 15,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        14,
+        15
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "4413361245980541690370441353063201",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "4413361245980541690370441353063257",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          13.59971932645134,
+          13.59971932645134
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "1127730726364598392917455746670451",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "hi": {
+            "numerator": "4510922905458393571669822995839847",
+            "denominator": "10384593717069655257060992658440192"
+          },
+          "display_float": [
+            0.4343860750222296,
+            0.4343860750222296
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "734208851451407710673896207825043",
+            "denominator": "1298074214633706907132624082305024"
+          },
+          "hi": {
+            "numerator": "1468417702902815421347792417939597",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "display_float": [
+            0.5656139249777704,
+            0.5656139249777704
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 16,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        15,
+        16
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "1103356186440935615979928289749533",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "hi": {
+          "numerator": "4413424745763742463919713158998189",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          13.599915000265623,
+          13.599915000265623
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "4510987808925350990812246921931869",
+            "denominator": "10384593717069655257060992658440192"
+          },
+          "hi": {
+            "numerator": "563873476115668873851530866406681",
+            "denominator": "1298074214633706907132624082305024"
+          },
+          "display_float": [
+            0.434392324998755,
+            0.434392324998755
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2936802954072152133124372863593371",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "1468401477036076066562186434127081",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "display_float": [
+            0.565607675001245,
+            0.565607675001245
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 17,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        16,
+        17
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "2208740601165769895427255342799825",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "hi": {
+          "numerator": "4417481202331539790854510685599707",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          13.612414922140868,
+          13.612414922140868
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "4523514887157051254170612018028735",
+            "denominator": "664613997892457936451903530140172288"
+          },
+          "hi": {
+            "numerator": "4523514887157051254170612027367617",
+            "denominator": "664613997892457936451903530140172288"
+          },
+          "display_float": [
+            0.006806228730513448,
+            0.006806228730513448
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2578478449239456582803644211378143",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "hi": {
+            "numerator": "5156956898478913165607288422829249",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.9931937712694866,
+            0.9931937712694866
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 18,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        17,
+        18
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "4421537658899337694246457647181735",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "138173051840604302945201801474431",
+          "denominator": "10141204801825835211973625643008"
+        },
+        "display_float": [
+          13.624914844016113,
+          13.624914844016113
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "4527668711662521182973378511469321",
+            "denominator": "664613997892457936451903530140172288"
+          },
+          "hi": {
+            "numerator": "4527668711662521182973378520808203",
+            "denominator": "664613997892457936451903530140172288"
+          },
+          "display_float": [
+            0.0068124787109812715,
+            0.0068124787109812715
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "644615555840620522723564601190785",
+            "denominator": "649037107316853453566312041152512"
+          },
+          "hi": {
+            "numerator": "2578462223362482090894258404799621",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "display_float": [
+            0.9931875212890188,
+            0.9931875212890188
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 19,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        18,
+        19
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "4425594115467135021181255173783253",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "2212797057733567510590627586891655",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "display_float": [
+          13.637414765891355,
+          13.637414765891355
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "2265911268084638681163689714129603",
+            "denominator": "332306998946228968225951765070086144"
+          },
+          "hi": {
+            "numerator": "566477817021159670290922429699761",
+            "denominator": "83076749736557242056487941267521536"
+          },
+          "display_float": [
+            0.00681872869145103,
+            0.00681872869145103
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "1289222998742751287284328419340965",
+            "denominator": "1298074214633706907132624082305024"
+          },
+          "hi": {
+            "numerator": "5156891994971005149137313677436823",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.9931812713085489,
+            0.9931812713085489
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 20,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        19,
+        20
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "4429650572034932348116052700384771",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "4429650572034932348116052700384827",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          13.6499146877666,
+          13.6499146877666
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "141749261271105941289336884044787",
+            "denominator": "20769187434139310514121985316880384"
+          },
+          "hi": {
+            "numerator": "4535976360675390121258780298608227",
+            "denominator": "664613997892457936451903530140172288"
+          },
+          "display_float": [
+            0.006824978671919821,
+            0.006824978671919821
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "5156859543217051143208162108137219",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "5156859543217051143208162108208901",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "display_float": [
+            0.9931750213280802,
+            0.9931750213280802
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 21,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        20,
+        21
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "554213378575341281438499957745857",
+          "denominator": "40564819207303340847894502572032"
+        },
+        "hi": {
+          "numerator": "69276672321917660179812494718233",
+          "denominator": "5070602400912917605986812821504"
+        },
+        "display_float": [
+          13.662414609641845,
+          13.662414609641845
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "2270065092590429139589824859258421",
+            "denominator": "332306998946228968225951765070086144"
+          },
+          "hi": {
+            "numerator": "1135032546295214569794912431922971",
+            "denominator": "166153499473114484112975882535043072"
+          },
+          "display_float": [
+            0.006831228652387641,
+            0.006831228652387641
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "5156827091463102173224405315722501",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "644603386432887771653050664474273",
+            "denominator": "649037107316853453566312041152512"
+          },
+          "display_float": [
+            0.9931687713476124,
+            0.9931687713476124
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 22,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        21,
+        22
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "2218881742585263789221398594284187",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "hi": {
+          "numerator": "2218881742585263789221398594284215",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "display_float": [
+          13.674914531517087,
+          13.674914531517087
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "4544284009687616229415547699663655",
+            "denominator": "664613997892457936451903530140172288"
+          },
+          "hi": {
+            "numerator": "4544284009687616229415547708838697",
+            "denominator": "664613997892457936451903530140172288"
+          },
+          "display_float": [
+            0.006837478632857403,
+            0.006837478632857403
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "5156794639709143126738187362744793",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "1289198659927285781684546840704119",
+            "denominator": "1298074214633706907132624082305024"
+          },
+          "display_float": [
+            0.9931625213671426,
+            0.9931625213671426
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 23,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        22,
+        23
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "4441819941738325481834744150150459",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "4441819941738325481834744150150515",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          13.687414453392334,
+          13.687414453392334
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "2274218917096541603374242876240699",
+            "denominator": "332306998946228968225951765070086144"
+          },
+          "hi": {
+            "numerator": "4548437834193083206748485761656441",
+            "denominator": "664613997892457936451903530140172288"
+          },
+          "display_float": [
+            0.006843728613325222,
+            0.006843728613325222
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "5156762187955194165977773784207153",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "1289190546988798541494443446069709",
+            "denominator": "1298074214633706907132624082305024"
+          },
+          "display_float": [
+            0.9931562713866747,
+            0.9931562713866747
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 24,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        23,
+        24
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "4445876398306122808769541676751977",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "4445876398306122808769541676752033",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          13.699914375267577,
+          13.699914375267577
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "2276295829349921168786157554947063",
+            "denominator": "332306998946228968225951765070086144"
+          },
+          "hi": {
+            "numerator": "284536978668740146098269694941823",
+            "denominator": "41538374868278621028243970633760768"
+          },
+          "display_float": [
+            0.006849978593794985,
+            0.006849978593794985
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "322295608512577194391763288584523",
+            "denominator": "324518553658426726783156020576256"
+          },
+          "hi": {
+            "numerator": "2578364868100617555134106308712025",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "display_float": [
+            0.993150021406205,
+            0.993150021406205
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": true
+    },
+    {
+      "old_node": 25,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        24,
+        25
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "1175358290519342204272630431790445",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "hi": {
+          "numerator": "293839572629835551068157607947615",
+          "denominator": "20282409603651670423947251286016"
+        },
+        "display_float": [
+          14.487409453407958,
+          14.487409453407958
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "4890699786752700362386511679114441",
+            "denominator": "42535295865117307932921825928971026432"
+          },
+          "hi": {
+            "numerator": "4890699786752700362386511689100881",
+            "denominator": "42535295865117307932921825928971026432"
+          },
+          "display_float": [
+            0.00011497979941791131,
+            0.00011497979941791131
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2595849924641757521518520472246211",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "hi": {
+            "numerator": "1297924962320878760759260236123411",
+            "denominator": "1298074214633706907132624082305024"
+          },
+          "display_float": [
+            0.9998850202005821,
+            0.9998850202005821
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": false
+    },
+    {
+      "old_node": 26,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        25,
+        26
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "4956989925848614825411501777571583",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "hi": {
+          "numerator": "4956989925848614825411501777571647",
+          "denominator": "324518553658426726783156020576256"
+        },
+        "display_float": [
+          15.274904531548337,
+          15.274904531548337
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "5156544555143916933996166784992535",
+            "denominator": "42535295865117307932921825928971026432"
+          },
+          "hi": {
+            "numerator": "2578272277571958466998083397822369",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "display_float": [
+            0.000121229779886702,
+            0.000121229779886702
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "5191667397529561037107889375265549",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "1297916849382390259276972343816713",
+            "denominator": "1298074214633706907132624082305024"
+          },
+          "display_float": [
+            0.9998787702201133,
+            0.9998787702201133
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": false
+    },
+    {
+      "old_node": 27,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        26,
+        27
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "2606273344809930705094815631480977",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "hi": {
+          "numerator": "1303136672404965352547407815740505",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "display_float": [
+          16.062399609688722,
+          16.062399609688722
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "1355597330883780468508379853084961",
+            "denominator": "10633823966279326983230456482242756608"
+          },
+          "hi": {
+            "numerator": "2711194661767560937016759711662465",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "display_float": [
+            0.0001274797603554924,
+            0.0001274797603554924
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2595817472887803516299303735934307",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "hi": {
+            "numerator": "2595817472887803516299303735934979",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "display_float": [
+            0.9998725202396445,
+            0.9998725202396445
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": false
+    },
+    {
+      "old_node": 28,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        27,
+        28
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "1367025863347776998741940187088081",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "hi": {
+          "numerator": "2734051726695553997483880374176197",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "display_float": [
+          16.849894687829103,
+          16.849894687829103
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "177757315372698076426349203695431",
+            "denominator": "1329227995784915872903807060280344576"
+          },
+          "hi": {
+            "numerator": "2844117045963169222821587264952321",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "display_float": [
+            0.0001337297408242831,
+            0.0001337297408242831
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "5191602494021653026669455902641737",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "2595801247010826513334727951321581",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "display_float": [
+            0.9998662702591757,
+            0.9998662702591757
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": false
+    },
+    {
+      "old_node": 29,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        28,
+        29
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "715457527145294178353948920472695",
+          "denominator": "40564819207303340847894502572032"
+        },
+        "hi": {
+          "numerator": "2861830108581176713415795681890817",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "display_float": [
+          17.63738976596948,
+          17.63738976596948
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "744259857539697584881534910329995",
+            "denominator": "5316911983139663491615228241121378304"
+          },
+          "hi": {
+            "numerator": "2977039430158790339526139647478285",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "display_float": [
+            0.0001399797212930744,
+            0.0001399797212930744
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2595785021133849508803880227641361",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "hi": {
+            "numerator": "1297892510566924754401940113821057",
+            "denominator": "1298074214633706907132624082305024"
+          },
+          "display_float": [
+            0.9998600202787069,
+            0.9998600202787069
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": false
+    },
+    {
+      "old_node": 30,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        29,
+        30
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "2989608490466800005804860424585965",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "hi": {
+          "numerator": "747402122616700001451215106146501",
+          "denominator": "40564819207303340847894502572032"
+        },
+        "display_float": [
+          18.42488484410986,
+          18.42488484410986
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "777490453588596298691882797437843",
+            "denominator": "5316911983139663491615228241121378304"
+          },
+          "hi": {
+            "numerator": "3109961814354385194767531196242559",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "display_float": [
+            0.00014622970176186447,
+            0.00014622970176186447
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "5191537590513745014957555037424137",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "1297884397628436253739388759356431",
+            "denominator": "1298074214633706907132624082305024"
+          },
+          "display_float": [
+            0.9998537702982382,
+            0.9998537702982382
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": false
+    },
+    {
+      "old_node": 31,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        30,
+        31
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "389673359044052840217096966537573",
+          "denominator": "20282409603651670423947251286016"
+        },
+        "hi": {
+          "numerator": "194836679522026420108548483268789",
+          "denominator": "10141204801825835211973625643008"
+        },
+        "display_float": [
+          19.212379922250243,
+          19.212379922250243
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "1621442099275003755399752961227199",
+            "denominator": "10633823966279326983230456482242756608"
+          },
+          "hi": {
+            "numerator": "3242884198550007510799505929112025",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "display_float": [
+            0.0001524796822306558,
+            0.0001524796822306558
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "2595752569379895502801527521796435",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "hi": {
+            "numerator": "2595752569379895502801527521797249",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "display_float": [
+            0.9998475203177694,
+            0.9998475203177694
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": false
+    },
+    {
+      "old_node": 32,
+      "branch": "fixed_hat_segment",
+      "target_nodes": [
+        31,
+        32
+      ],
+      "energy_interval": {
+        "lo": {
+          "numerator": "3245165254238046014125840474995769",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "hi": {
+          "numerator": "1622582627119023007062920237497905",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "display_float": [
+          19.999875000390624,
+          19.999875000390624
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "weights": [
+        {
+          "lo": {
+            "numerator": "3375806582745601166713475120542289",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "hi": {
+            "numerator": "3375806582745601166713475127366357",
+            "denominator": "21267647932558653966460912964485513216"
+          },
+          "display_float": [
+            0.0001587296626994458,
+            0.0001587296626994458
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        },
+        {
+          "lo": {
+            "numerator": "5191472687005837003245654172206577",
+            "denominator": "5192296858534827628530496329220096"
+          },
+          "hi": {
+            "numerator": "2595736343502918501622827086104123",
+            "denominator": "2596148429267413814265248164610048"
+          },
+          "display_float": [
+            0.9998412703373005,
+            0.9998412703373005
+          ],
+          "display_float_is_not_the_certified_endpoint": true
+        }
+      ],
+      "nonzero_old_stock": false
+    }
+  ],
+  "lower_guard_export_n_per_H": {
+    "lo": {
+      "numerator": "525502884134639551",
+      "denominator": "44601490397061246283071436545296723011960832"
+    },
+    "hi": {
+      "numerator": "525502884134639551",
+      "denominator": "44601490397061246283071436545296723011960832"
+    },
+    "display_float": [
+      1.1782182152578123e-26,
+      1.1782182152578123e-26
+    ],
+    "display_float_is_not_the_certified_endpoint": true
+  },
+  "lower_guard_export_u_ev_per_H": {
+    "lo": {
+      "numerator": "369787469004046863191313800890323",
+      "denominator": "3138550867693340381917894711603833208051177722232017256448"
+    },
+    "hi": {
+      "numerator": "2958299752032374905530510407122623",
+      "denominator": "25108406941546723055343157692830665664409421777856138051584"
+    },
+    "display_float": [
+      1.178210851416979e-25,
+      1.178210851416979e-25
+    ],
+    "display_float_is_not_the_certified_endpoint": true
+  },
+  "source_birth_total_per_H": {
+    "lo": {
+      "numerator": "7378697629483821",
+      "denominator": "2361183241434822606848"
+    },
+    "hi": {
+      "numerator": "7378697629483821",
+      "denominator": "2361183241434822606848"
+    },
+    "display_float": [
+      3.125e-06,
+      3.125e-06
+    ],
+    "display_float_is_not_the_certified_endpoint": true
+  },
+  "source_birth_total_ev_per_H": {
+    "lo": {
+      "numerator": "28453786784770855292162453166327",
+      "denominator": "664613997892457936451903530140172288"
+    },
+    "hi": {
+      "numerator": "28453786784770855292162453166327",
+      "denominator": "664613997892457936451903530140172288"
+    },
+    "display_float": [
+      4.28125e-05,
+      4.28125e-05
+    ],
+    "display_float_is_not_the_certified_endpoint": true
+  },
+  "reference_transcendental_leaves": [
+    {
+      "label": "stage.exp",
+      "operator": "exp",
+      "input_hex": "-0x1.3bcd35a858794p-8",
+      "exponent_hex": null,
+      "certified_exact_real_enclosure": {
+        "lo": {
+          "numerator": "5167336664813198392887395756010573",
+          "denominator": "5192296858534827628530496329220096"
+        },
+        "hi": {
+          "numerator": "5167336664813198392887395756010637",
+          "denominator": "5192296858534827628530496329220096"
+        },
+        "display_float": [
+          0.9951928415493808,
+          0.9951928415493808
+        ],
+        "display_float_is_not_the_certified_endpoint": true
+      },
+      "reference_f64_hex": "0x1.fd89ea8755f71p-1",
+      "rounding_uniquely_determined": true,
+      "native_libm_identity": "UNRESOLVED_NOT_CALLED"
+    }
+  ],
+  "reference_binary64_scalar_operations": [
+    {
+      "label": "stage.time_plus_dt",
+      "operator": "+",
+      "input_hex": [
+        "0x1.2a05f20000000p+37",
+        "0x1.2a05f20000000p+29"
+      ],
+      "output_hex": "0x1.2b2ff7f200000p+37",
+      "rounding": "nearest_even_binary64_from_exact_rational"
+    },
+    {
+      "label": "stage.iter_sum_h_0",
+      "operator": "+",
+      "input_hex": [
+        "0x0.0p+0",
+        "0x1.6849b86a12b9bp-47"
+      ],
+      "output_hex": "0x1.6849b86a12b9bp-47",
+      "rounding": "nearest_even_binary64_from_exact_rational"
+    },
+    {
+      "label": "stage.iter_sum_h_1",
+      "operator": "+",
+      "input_hex": [
+        "0x1.6849b86a12b9bp-47",
+        "0x1.6849b86a12b9bp-47"
+      ],
+      "output_hex": "0x1.6849b86a12b9bp-46",
+      "rounding": "nearest_even_binary64_from_exact_rational"
+    },
+    {
+      "label": "stage.iter_sum_h_2",
+      "operator": "+",
+      "input_hex": [
+        "0x1.6849b86a12b9bp-46",
+        "0x1.6849b86a12b9bp-47"
+      ],
+      "output_hex": "0x1.0e374a4f8e0b4p-45",
+      "rounding": "nearest_even_binary64_from_exact_rational"
+    },
+    {
+      "label": "stage.neg_sumh",
+      "operator": "neg",
+      "input_hex": [
+        "0x1.0e374a4f8e0b4p-45"
+      ],
+      "output_hex": "-0x1.0e374a4f8e0b4p-45",
+      "rounding": "nearest_even_binary64_from_exact_rational"
+    },
+    {
+      "label": "stage.exp_argument",
+      "operator": "*",
+      "input_hex": [
+        "-0x1.0e374a4f8e0b4p-45",
+        "0x1.2b2ff7f200000p+37"
+      ],
+      "output_hex": "-0x1.3bcd35a858794p-8",
+      "rounding": "nearest_even_binary64_from_exact_rational"
+    },
+    {
+      "label": "stage.nH",
+      "operator": "*",
+      "input_hex": [
+        "0x1.a36e2eb1c432dp-14",
+        "0x1.fd89ea8755f71p-1"
+      ],
+      "output_hex": "0x1.a16a0487716e4p-14",
+      "rounding": "nearest_even_binary64_from_exact_rational"
+    },
+    {
+      "label": "model.stored_nHe",
+      "operator": "*",
+      "input_hex": [
+        "0x1.a16a0487716e4p-14",
+        "0x1.53f7ced916873p-4"
+      ],
+      "output_hex": "0x1.1529b9478090ep-17",
+      "rounding": "nearest_even_binary64_from_exact_rational"
+    },
+    {
+      "label": "stage.hmean",
+      "operator": "/",
+      "input_hex": [
+        "0x1.0e374a4f8e0b4p-45",
+        "0x1.8000000000000p+1"
+      ],
+      "output_hex": "0x1.6849b86a12b9bp-47",
+      "rounding": "nearest_even_binary64_from_exact_rational"
+    },
+    {
+      "label": "transport.dt_times_SOURCE",
+      "operator": "*",
+      "input_hex": [
+        "0x1.2a05f20000000p+29",
+        "0x1.6849b86a12b9bp-48"
+      ],
+      "output_hex": "0x1.a36e2eb1c432dp-19",
+      "rounding": "nearest_even_binary64_from_exact_rational"
+    }
+  ],
+  "native_calls": {
+    "provider": 0,
+    "preBE": 0,
+    "endpoint": 0,
+    "BE_point": 0,
+    "root": 0,
+    "IVP": 0
+  }
+}
