@@ -1,0 +1,12 @@
+{
+  "class": "implementation",
+  "scope": "binding receipt assembly only",
+  "command": "python3 /workspace/scratch/b826cbaab54f/phys15_premises/pin_fixed_preconditioner.py",
+  "exit_code": 1,
+  "error": "TypeError: list indices must be integers or slices, not str",
+  "location": "archive_binding.member_sha256: row[sha256]",
+  "cause": "Manifest row name was reused for a matrix row list. All archive identity and Fraction bound assertions had completed before receipt serialization.",
+  "script_sha256": "19c3662e80d6812d6327b83f9ea068d562b18295cbfcb5040b94716f9cf22328",
+  "minimal_repair": "Rename the manifest row variable to member_record.",
+  "new_source_root_history_runs": 0
+}

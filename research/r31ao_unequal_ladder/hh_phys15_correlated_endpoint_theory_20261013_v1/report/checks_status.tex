@@ -1,0 +1,27 @@
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\textwidth}{@{}p{31mm}X p{35mm}@{}}
+\toprule
+검산 & 실제 판별 대상 & 결과\\
+\midrule
+광자 exact Fraction 및 네 슬롯 & outgoing·흡수 분해, opacity secant, remap/guard 수지, transparent·stock·birth 극한 & 39개 관계, 3148개 scalar equality 통과\\
+원 leaf 부호 & HI $\sigma$의 순서, active heat identity, birth-redshift의 전체 물리 범위 조건 & exact 유리수 조건 통과\\
+비선형 전달 예제 & 비대각 4D quadratic residual, 평균 Jacobian과 끝점 Jacobian의 차이, Neumann bound, finite $T$, 같은 adjoint의 sector 합 & 14개 관계, 16개 scalar equality 통과\\
+Wolfram 대수 & $A^2-A_F$, $A^2+A-2A_F$, finite $T$, $\beta_{23}-\beta_{24}$의 factorization & 네 차이 $\{0,0,0,0\}$\\
+독립 검토자 & 별도 세 제조 대수 계열, 원 source graph·leaf·고정 $C$, 전체 논증과 타입 & 26개 검토 항목 통과\\
+\bottomrule
+\end{tabularx}
+\caption{실제로 수행한 표적 검산. 관계·scalar equality·검토 항목은 각각 다른 집계 단위다.}
+\label{tab:checks}
+\end{table}
+광자 대수 검산의 wall time은 약 0.48초, 별도 sector leaf 검사는 약 0.04초,
+비선형 전달 예제는 약 0.0013초, 독립 검토 실행은 약 0.051초였다.
+제조 상태는 항등식과 판별 사례를 확인하는 입력으로 기록했다.
+이번 이론 단위의 새 physical source callback, root solve, history 실행은 모두 0회다.
+PHYS09--14의 원 source·근 포함은 전제를 유지한 채 재사용했다.\cite{checks,review}
+
+표적 비선형 예제에서는 평균 Jacobian이 정확한 $+r$ 식을 만족하는 반면,
+끝점 Jacobian으로 치환한 식에 비영 quadratic remainder가 남았다.
+Finite temperature 식과 tangent 식도 구별되었다.
+이 판별은 제\ref{sec:bound}--\ref{sec:observables}절에서 유지한 평균과 유한 분모의 역할을 확인한다.
+

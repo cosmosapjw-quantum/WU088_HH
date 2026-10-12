@@ -1,0 +1,1457 @@
+{
+  "schema_version": 1,
+  "workflow_version": "1.0.0",
+  "task": "research",
+  "unit_id": "WU088_HH_PHYS15_CORRELATED_ENDPOINT_THEORY",
+  "objective": "동일 COMMON의 Full과 실제 two-half 경로 사이의 상관된 기체·광자 잔차를 유도하고, 기존 Full 포함과 유한 관측량 식으로 endpoint 차이를 전달한다.",
+  "scope": "Same-COMMON Full versus actual two-half theoretical defect construction in the inherited geometric isotropic source-aligned C2 family, with captured original constants and linked global lambda,b; actual PHYS15 numerical endpoint enclosure is the named successor unit.",
+  "status": "in_progress",
+  "created_at_utc": "2026-10-12T15:31:23.724613+00:00",
+  "record_state": "R1-R8 closed; R9 formal PDF completion in progress; R10 final delivery pending",
+  "locator_base": "Paths without a leading slash are relative to this PHYS15 core directory.",
+  "dependencies": [
+    {
+      "id": "dep_PHYS14_DECISION",
+      "identity": "sha256:2ccf534271f2c4052247685407f0240c20b5b2ed0f604a350c6aa3e608de38f4",
+      "description": "inputs/phys14/review/DECISION.json"
+    },
+    {
+      "id": "dep_PHYS14_THEORY",
+      "identity": "sha256:0eb0a8374470498e9320e0a6191d72d0a5f5e15c0162a7f633b5e3e52f2da125",
+      "description": "inputs/phys14/theory/THEORY_CANDIDATE_KO.md"
+    },
+    {
+      "id": "dep_PHYS14_GEOMETRY",
+      "identity": "sha256:19a187a3b04db5aebf9cb615cd135f8db7e3201203219121ab27501f83e04cfc",
+      "description": "inputs/phys14/review/GEOMETRY_REVIEW.json"
+    },
+    {
+      "id": "dep_PHYS14_RESULT",
+      "identity": "sha256:a0faac7d55b425ae85ed8ee15e57d5f3c2687b40896b039fe858dcfdb342e28e",
+      "description": "inputs/phys14/results/advance01/ADVANCE_RESULTS.json"
+    },
+    {
+      "id": "dep_FIRST_CARRY",
+      "identity": "sha256:5e3dc0b589c5e86672664ea851e7986708e10ed73f6a3db8332b9c8084a897ca",
+      "description": "inputs/phys14/inputs/phys11/CARRY_RESULTS.json"
+    },
+    {
+      "id": "dep_ROOT_READOUT",
+      "identity": "sha256:0943234c6a15f6238803cbc4ec0c61df12bc218523678210f1095b9c0588c6ea",
+      "description": "inputs/phys14/inputs/phys13/THERMO_RESULTS.json"
+    },
+    {
+      "id": "dep_FULL_SOURCE",
+      "identity": "sha256:cf1b48df2c299187a03ab501b1169e2d559c5959bf50892d7b749c65f81ff64d",
+      "description": "inputs/phys14/inputs/ncp07/results/full/SOURCE_BOX.json"
+    },
+    {
+      "id": "dep_HALF_SOURCE",
+      "identity": "sha256:36247ef5ac3bce4b114aac41fe5d85c2015488183ba32b77f9051cc7d25b77b4",
+      "description": "inputs/phys14/inputs/ncp07/results/first_half/SOURCE_BOX.json"
+    },
+    {
+      "id": "dep_FULL_CENTRE",
+      "identity": "sha256:d9cac85f991f45ccd21fd7f124647e78a1564ae1d00a360b3aebdb67e811761a",
+      "description": "inputs/phys14/inputs/ncp07/results/full/SOURCE_CENTRE.json"
+    },
+    {
+      "id": "dep_HALF_CENTRE",
+      "identity": "sha256:fe63465b6a457cb9dd6c88f37a7161ce75d7761b7296608ec8eb3bde8bb629a9",
+      "description": "inputs/ncp07_additions/results/first_half/SOURCE_CENTRE.json"
+    },
+    {
+      "id": "dep_FULL_PRECONDITIONER",
+      "identity": "sha256:3cf8c86b445ba2be2889e5effbdaacbcf84d0dcedbabd60763124141dfbc09af",
+      "description": "inputs/ncp07_additions/results/full/UNIFORM_ARITHMETIC.json"
+    },
+    {
+      "id": "dep_FT03_SOURCE",
+      "identity": "sha256:886580a810b8ec29c8f0b6199c0e35d82fde1f46d984a5f8f1da304326a42a42",
+      "description": "inputs/phys14/inputs/ncp07/candidate/src/ft03_interval.rs"
+    },
+    {
+      "id": "dep_HH_SOURCE",
+      "identity": "sha256:f47d910abb096f96b829e3392fdfbf55d079ba2fbb09a45416c97c76a4f4a647",
+      "description": "inputs/ncp07_additions/candidate/src/hh_primary_extension.rs"
+    },
+    {
+      "id": "dep_WORKFLOW",
+      "identity": "sha256:d521d6259d43aef1e68a6c1df91e467e13b7d7e9028c807a541b02b4b7fc9103",
+      "description": "evidence/workflow_1_0_0/references/WORKFLOW.json"
+    },
+    {
+      "id": "dep_EVIDENCE_POLICY",
+      "identity": "sha256:782c28bbc50e87a68bc46448bcc5dd58b02b47ca517fac0ce4e01e04adcde58b",
+      "description": "evidence/workflow_1_0_0/references/EVIDENCE_AND_HANDOFF.md"
+    },
+    {
+      "id": "dep_CONTRACT",
+      "identity": "sha256:11fc32d5cdacff0a10eed497ca3f3f5213c82cac145a3244546dadec0c8fe65b",
+      "description": "contracts/ENDPOINT_ENCLOSURE_CONTRACT.json"
+    },
+    {
+      "id": "dep_ROOT_THEORY",
+      "identity": "sha256:60c9d5e52df1fa43e317c2043598e0d44ed89854c79dad4bed474aa4f200ef61",
+      "description": "theory/CORRELATED_ENDPOINT_THEORY_KO.md"
+    },
+    {
+      "id": "dep_PHOTON_THEORY",
+      "identity": "sha256:252908a82fef7c9975d442182d487163ee8cf84257eaacc6b7c8a306937c4de2",
+      "description": "theory/PHOTON_DEFECT_THEOREM_KO.md"
+    },
+    {
+      "id": "dep_SOURCE_BINDING",
+      "identity": "sha256:82b560c7a7c891de7e05d24f7faef807c1882e77d746e3cd45bb842b3ca41425",
+      "description": "evidence/bindings/BINDINGS.json"
+    },
+    {
+      "id": "dep_SOURCE_NORMALIZATION",
+      "identity": "sha256:16e23676dbe6a1c0805728c7e01c22d7e37f97c990e892e7d75e6cd2f3718b41",
+      "description": "theory/ASSUMPTIONS_AND_BINDINGS_KO.md"
+    },
+    {
+      "id": "dep_C_BINDING",
+      "identity": "sha256:cedfd3cfd795de8b50e8451140127c97ea2a15bcb5b32e0a8e1038d6f15564a9",
+      "description": "evidence/bindings/FIXED_PRECONDITIONER_BINDING.json"
+    },
+    {
+      "id": "dep_THRESHOLD_IDENTITY",
+      "identity": "sha256:b25fe1a614d179168e3aa5964caa39e36f8a1a358e11a5f5b0d533c1cfda0b11",
+      "description": "evidence/bindings/FT03_THRESHOLD_IDENTITY.json"
+    },
+    {
+      "id": "dep_PHOTON_CHECKS",
+      "identity": "sha256:c0d7f31d7efc7f037e704dcadf938f82fe2aa0412ddce0ab274a33284cc78000",
+      "description": "checks/photon/PHOTON_EXACT_CHECKS.json"
+    },
+    {
+      "id": "dep_PHOTON_PRE_RUN",
+      "identity": "sha256:52812447ab25d23fff7b8a0e6db6b85db48bfe0d5e1fe7f8fcb45777b58a9b95",
+      "description": "checks/photon/PRE_RUN.json"
+    },
+    {
+      "id": "dep_PHOTON_RUN",
+      "identity": "sha256:3c7ad52b496e5483d76c8aeb938d1764e5b1cc74db2d55183a6128202ad6aa4a",
+      "description": "checks/photon/RUN_RECORD.json"
+    },
+    {
+      "id": "dep_SIGN_CHECKS",
+      "identity": "sha256:28d38252956e4f42915da14cbe77844c1b7add082b163f364c0f215af8081163",
+      "description": "checks/photon/SECTOR_SIGN_CHECKS.json"
+    },
+    {
+      "id": "dep_SIGN_PRE_RUN",
+      "identity": "sha256:3bf24db3d97200a90815f786c3318a3924c444ac4b744f295366a6d2d17cbc04",
+      "description": "checks/photon/SECTOR_PRE_RUN.json"
+    },
+    {
+      "id": "dep_SIGN_RUN",
+      "identity": "sha256:2aa8174aef58def51e390a8c7d5b2ac7796e175a6cbff0dc23d9b50430b135aa",
+      "description": "checks/photon/SECTOR_RUN_RECORD.json"
+    },
+    {
+      "id": "dep_NONLINEAR_CHECKS",
+      "identity": "sha256:346061e142e2f3dba936e3d508514715ce142bb1af25177ba2b797f563410acb",
+      "description": "checks/NONLINEAR_TRANSFER_CHECKS.json"
+    },
+    {
+      "id": "dep_NONLINEAR_PRE_RUN",
+      "identity": "sha256:9383441d49ad9a44e51eb75cb12bbf94dc39d57352845fab2f3810f305d79743",
+      "description": "checks/NONLINEAR_PRE_RUN.json"
+    },
+    {
+      "id": "dep_WOLFRAM_CHECKS",
+      "identity": "sha256:8e44cd9befbdf2bc629ba4317532c9164f266c4689b71372434fdad4abab6098",
+      "description": "checks/WOLFRAM_ALGEBRA.json"
+    },
+    {
+      "id": "dep_REVIEW",
+      "identity": "sha256:3dc7ac23b90ae8066105281542c6e2041788315eacf13e27f071a3819b2d9996",
+      "description": "review/REVIEW_KO.md"
+    },
+    {
+      "id": "dep_REVIEW_DECISION",
+      "identity": "sha256:8addd12246ded9a540ecfb85b98651013f8c55e6a0c72840166546e686da3c44",
+      "description": "review/DECISION.json"
+    },
+    {
+      "id": "dep_REVIEW_CHECKS",
+      "identity": "sha256:d7911195464bce90a0d7284f40fb5f3039bd4224376ba8fe4823927543f6137e",
+      "description": "review/INDEPENDENT_THEORY_CHECKS.json"
+    },
+    {
+      "id": "dep_REVIEW_RUN",
+      "identity": "sha256:9662d76bd7f684689bbdfc5fead6e78c5d8f908eb4228a7d52d44cfea05f843b",
+      "description": "review/RUN_RECORD.json"
+    },
+    {
+      "id": "dep_SECANT_CORRECTION",
+      "identity": "sha256:2f9134491614c0897db49ca5dab40c3d03f73a5ce519411c370358de3554ae85",
+      "description": "checks/photon/SECANT_TYPE_CORRECTION.json"
+    },
+    {
+      "id": "dep_OVERLAY_FINAL",
+      "identity": "sha256:e54e996bd9573c0e3d186c2bffa448695389241c8691eff3f6c59e5eadad82fe",
+      "description": "ROOT_OVERLAY_FINAL.json"
+    },
+    {
+      "id": "dep_DAG_CHECK",
+      "identity": "sha256:39d05f837e22a5c612a8e09df15a52aa76bda5782e81a17933bb722fc3715260",
+      "description": "evidence/DAG_CHANGE_CHECK.json"
+    },
+    {
+      "id": "dep_REPORT_MARKDOWN",
+      "identity": "sha256:454dd0da271982b30026f93fca4a0bdf8f7f4d6c845f946515dc6342e0f3517d",
+      "description": "REPORT_KO.md"
+    },
+    {
+      "id": "dep_HANDOFF",
+      "identity": "sha256:6c06d809fd5d98e76c25a9e82baf2c890c48aa986a540c5f30e50cad3ea990d6",
+      "description": "HANDOFF_KO.md"
+    },
+    {
+      "id": "dep_PINNING_INCIDENT",
+      "identity": "sha256:30001195044ce82ea41b9507a4c49ab9c0534ee09c8e6ee56fdaeec7a3dd0027",
+      "description": "evidence/bindings/pinning_evidence/FIRST_FAILURE.json"
+    },
+    {
+      "id": "dep_OVERLAY_INCIDENT",
+      "identity": "sha256:d1a048978125427dde18a4a0438514fab7760fdb0a46099a307c94ac16c0f933",
+      "description": "evidence/bindings/overlay_evidence/FIRST_ATTEMPT.json"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "PHYS14_DECISION",
+      "kind": "decision",
+      "locator": "inputs/phys14/review/DECISION.json",
+      "scope": "Inherited scoped actual two-half physical result and source/C2/root premises.",
+      "dependency_ids": [
+        "dep_PHYS14_DECISION"
+      ],
+      "sha256": "2ccf534271f2c4052247685407f0240c20b5b2ed0f604a350c6aa3e608de38f4",
+      "bytes": 17195
+    },
+    {
+      "id": "PHYS14_THEORY",
+      "kind": "derivation",
+      "locator": "inputs/phys14/theory/THEORY_CANDIDATE_KO.md",
+      "scope": "Same-geometric-isotropic family, 39-state closure and actual second-half composition.",
+      "dependency_ids": [
+        "dep_PHYS14_THEORY"
+      ],
+      "sha256": "0eb0a8374470498e9320e0a6191d72d0a5f5e15c0162a7f633b5e3e52f2da125",
+      "bytes": 25037
+    },
+    {
+      "id": "PHYS14_GEOMETRY",
+      "kind": "review",
+      "locator": "inputs/phys14/review/GEOMETRY_REVIEW.json",
+      "scope": "Original geometric subfamily and verified remap branch.",
+      "dependency_ids": [
+        "dep_PHYS14_GEOMETRY"
+      ],
+      "sha256": "19a187a3b04db5aebf9cb615cd135f8db7e3201203219121ab27501f83e04cfc",
+      "bytes": 57133
+    },
+    {
+      "id": "PHYS14_RESULT",
+      "kind": "calculation",
+      "locator": "inputs/phys14/results/advance01/ADVANCE_RESULTS.json",
+      "scope": "Actual carried second-half endpoint and derivative enclosures, reused without replay.",
+      "dependency_ids": [
+        "dep_PHYS14_RESULT"
+      ],
+      "sha256": "a0faac7d55b425ae85ed8ee15e57d5f3c2687b40896b039fe858dcfdb342e28e",
+      "bytes": 643946
+    },
+    {
+      "id": "FIRST_CARRY",
+      "kind": "calculation",
+      "locator": "inputs/phys14/inputs/phys11/CARRY_RESULTS.json",
+      "scope": "Actual first-half joint gas/photon/guard carry.",
+      "dependency_ids": [
+        "dep_FIRST_CARRY"
+      ],
+      "sha256": "5e3dc0b589c5e86672664ea851e7986708e10ed73f6a3db8332b9c8084a897ca",
+      "bytes": 6463565
+    },
+    {
+      "id": "ROOT_READOUT",
+      "kind": "calculation",
+      "locator": "inputs/phys14/inputs/phys13/THERMO_RESULTS.json",
+      "scope": "Inherited Full and first-half root/readout images.",
+      "dependency_ids": [
+        "dep_ROOT_READOUT"
+      ],
+      "sha256": "0943234c6a15f6238803cbc4ec0c61df12bc218523678210f1095b9c0588c6ea",
+      "bytes": 250652
+    },
+    {
+      "id": "FULL_SOURCE",
+      "kind": "source",
+      "locator": "inputs/phys14/inputs/ncp07/results/full/SOURCE_BOX.json",
+      "scope": "Original whole-X Full source and derivative inclusions.",
+      "dependency_ids": [
+        "dep_FULL_SOURCE"
+      ],
+      "sha256": "cf1b48df2c299187a03ab501b1169e2d559c5959bf50892d7b749c65f81ff64d",
+      "bytes": 57972
+    },
+    {
+      "id": "HALF_SOURCE",
+      "kind": "source",
+      "locator": "inputs/phys14/inputs/ncp07/results/first_half/SOURCE_BOX.json",
+      "scope": "Original first-half source and captured normalization.",
+      "dependency_ids": [
+        "dep_HALF_SOURCE"
+      ],
+      "sha256": "36247ef5ac3bce4b114aac41fe5d85c2015488183ba32b77f9051cc7d25b77b4",
+      "bytes": 57807
+    },
+    {
+      "id": "FULL_CENTRE",
+      "kind": "source",
+      "locator": "inputs/phys14/inputs/ncp07/results/full/SOURCE_CENTRE.json",
+      "scope": "Original source at common gas centre.",
+      "dependency_ids": [
+        "dep_FULL_CENTRE"
+      ],
+      "sha256": "d9cac85f991f45ccd21fd7f124647e78a1564ae1d00a360b3aebdb67e811761a",
+      "bytes": 57976
+    },
+    {
+      "id": "HALF_CENTRE",
+      "kind": "source",
+      "locator": "inputs/ncp07_additions/results/first_half/SOURCE_CENTRE.json",
+      "scope": "Original NCP07 first-half centre source, matched to archive member.",
+      "dependency_ids": [
+        "dep_HALF_CENTRE"
+      ],
+      "sha256": "fe63465b6a457cb9dd6c88f37a7161ce75d7761b7296608ec8eb3bde8bb629a9",
+      "bytes": 57834
+    },
+    {
+      "id": "FULL_PRECONDITIONER",
+      "kind": "source",
+      "locator": "inputs/ncp07_additions/results/full/UNIFORM_ARITHMETIC.json",
+      "scope": "Original same-file fixed_C, majorant B, radius S and qArithmetic.",
+      "dependency_ids": [
+        "dep_FULL_PRECONDITIONER"
+      ],
+      "sha256": "3cf8c86b445ba2be2889e5effbdaacbcf84d0dcedbabd60763124141dfbc09af",
+      "bytes": 3918
+    },
+    {
+      "id": "FT03_SOURCE",
+      "kind": "source",
+      "locator": "inputs/phys14/inputs/ncp07/candidate/src/ft03_interval.rs",
+      "scope": "Original photo-off reaction and thermal normalization graph.",
+      "dependency_ids": [
+        "dep_FT03_SOURCE"
+      ],
+      "sha256": "886580a810b8ec29c8f0b6199c0e35d82fde1f46d984a5f8f1da304326a42a42",
+      "bytes": 6248
+    },
+    {
+      "id": "HH_SOURCE",
+      "kind": "source",
+      "locator": "inputs/ncp07_additions/candidate/src/hh_primary_extension.rs",
+      "scope": "Original HH source graph and threshold constants.",
+      "dependency_ids": [
+        "dep_HH_SOURCE"
+      ],
+      "sha256": "f47d910abb096f96b829e3392fdfbf55d079ba2fbb09a45416c97c76a4f4a647",
+      "bytes": 26293
+    },
+    {
+      "id": "WORKFLOW",
+      "kind": "source",
+      "locator": "evidence/workflow_1_0_0/references/WORKFLOW.json",
+      "scope": "Current user-selected built-in 1.0.0 THEORY R1-R10 enums and stage definitions.",
+      "dependency_ids": [
+        "dep_WORKFLOW"
+      ],
+      "sha256": "d521d6259d43aef1e68a6c1df91e467e13b7d7e9028c807a541b02b4b7fc9103",
+      "bytes": 4011
+    },
+    {
+      "id": "EVIDENCE_POLICY",
+      "kind": "source",
+      "locator": "evidence/workflow_1_0_0/references/EVIDENCE_AND_HANDOFF.md",
+      "scope": "Current evidence, execution, reuse identity and handoff contract.",
+      "dependency_ids": [
+        "dep_EVIDENCE_POLICY"
+      ],
+      "sha256": "782c28bbc50e87a68bc46448bcc5dd58b02b47ca517fac0ce4e01e04adcde58b",
+      "bytes": 7540
+    },
+    {
+      "id": "CONTRACT",
+      "kind": "artifact",
+      "locator": "contracts/ENDPOINT_ENCLOSURE_CONTRACT.json",
+      "scope": "Reviewed expressions, domains, input/output units and exact numerical successor acceptance.",
+      "dependency_ids": [
+        "dep_CONTRACT"
+      ],
+      "sha256": "11fc32d5cdacff0a10eed497ca3f3f5213c82cac145a3244546dadec0c8fe65b",
+      "bytes": 9583
+    },
+    {
+      "id": "ROOT_THEORY",
+      "kind": "derivation",
+      "locator": "theory/CORRELATED_ENDPOINT_THEORY_KO.md",
+      "scope": "Sections 1-9: contract, same-COMMON residual, source bridge, averaged Jacobian, finite readouts, ledgers and actual photon secant.",
+      "dependency_ids": [
+        "dep_ROOT_THEORY"
+      ],
+      "sha256": "60c9d5e52df1fa43e317c2043598e0d44ed89854c79dad4bed474aa4f200ef61",
+      "bytes": 20761
+    },
+    {
+      "id": "PHOTON_THEORY",
+      "kind": "derivation",
+      "locator": "theory/PHOTON_DEFECT_THEOREM_KO.md",
+      "scope": "Six outgoing and seven integrated-absorption sectors, original-grid signs and guard chronology.",
+      "dependency_ids": [
+        "dep_PHOTON_THEORY"
+      ],
+      "sha256": "252908a82fef7c9975d442182d487163ee8cf84257eaacc6b7c8a306937c4de2",
+      "bytes": 19050
+    },
+    {
+      "id": "SOURCE_BINDING",
+      "kind": "calculation",
+      "locator": "evidence/bindings/BINDINGS.json",
+      "scope": "Exact COMMON/birth/source leaves, original model graph and pullback/domain bindings.",
+      "dependency_ids": [
+        "dep_SOURCE_BINDING"
+      ],
+      "sha256": "82b560c7a7c891de7e05d24f7faef807c1882e77d746e3cd45bb842b3ca41425",
+      "bytes": 32862
+    },
+    {
+      "id": "SOURCE_NORMALIZATION",
+      "kind": "derivation",
+      "locator": "theory/ASSUMPTIONS_AND_BINDINGS_KO.md",
+      "scope": "Same-alpha compatibility, density/fhat bridge and within-X temperature pullback.",
+      "dependency_ids": [
+        "dep_SOURCE_NORMALIZATION"
+      ],
+      "sha256": "16e23676dbe6a1c0805728c7e01c22d7e37f97c990e892e7d75e6cd2f3718b41",
+      "bytes": 9861
+    },
+    {
+      "id": "C_BINDING",
+      "kind": "calculation",
+      "locator": "evidence/bindings/FIXED_PRECONDITIONER_BINDING.json",
+      "scope": "Original fixed_C IEEE identity and same-file q/S/majorant binding; targeted exact rational checks.",
+      "dependency_ids": [
+        "dep_C_BINDING"
+      ],
+      "sha256": "cedfd3cfd795de8b50e8451140127c97ea2a15bcb5b32e0a8e1038d6f15564a9",
+      "bytes": 19546
+    },
+    {
+      "id": "THRESHOLD_IDENTITY",
+      "kind": "calculation",
+      "locator": "evidence/bindings/FT03_THRESHOLD_IDENTITY.json",
+      "scope": "FT03 model threshold and original captured H/He chi binary identities.",
+      "dependency_ids": [
+        "dep_THRESHOLD_IDENTITY"
+      ],
+      "sha256": "b25fe1a614d179168e3aa5964caa39e36f8a1a358e11a5f5b0d533c1cfda0b11",
+      "bytes": 2675
+    },
+    {
+      "id": "PHOTON_CHECKS",
+      "kind": "calculation",
+      "locator": "checks/photon/PHOTON_EXACT_CHECKS.json",
+      "scope": "3,148 exact scalar equalities in manufactured algebra examples and original leaf identities.",
+      "dependency_ids": [
+        "dep_PHOTON_CHECKS"
+      ],
+      "sha256": "c0d7f31d7efc7f037e704dcadf938f82fe2aa0412ddce0ab274a33284cc78000",
+      "bytes": 9573
+    },
+    {
+      "id": "PHOTON_PRE_RUN",
+      "kind": "resource",
+      "locator": "checks/photon/PRE_RUN.json",
+      "scope": "Original pre-run command, purpose and bounded algebra-check budget.",
+      "dependency_ids": [
+        "dep_PHOTON_PRE_RUN"
+      ],
+      "sha256": "52812447ab25d23fff7b8a0e6db6b85db48bfe0d5e1fe7f8fcb45777b58a9b95",
+      "bytes": 611
+    },
+    {
+      "id": "PHOTON_RUN",
+      "kind": "resource",
+      "locator": "checks/photon/RUN_RECORD.json",
+      "scope": "Actual photon algebra command, zero exit and measured time/RSS.",
+      "dependency_ids": [
+        "dep_PHOTON_RUN"
+      ],
+      "sha256": "3c7ad52b496e5483d76c8aeb938d1764e5b1cc74db2d55183a6128202ad6aa4a",
+      "bytes": 540
+    },
+    {
+      "id": "SIGN_CHECKS",
+      "kind": "calculation",
+      "locator": "checks/photon/SECTOR_SIGN_CHECKS.json",
+      "scope": "Exact captured-leaf inequality conditions for the scoped sector sign statements.",
+      "dependency_ids": [
+        "dep_SIGN_CHECKS"
+      ],
+      "sha256": "28d38252956e4f42915da14cbe77844c1b7add082b163f364c0f215af8081163",
+      "bytes": 4069
+    },
+    {
+      "id": "SIGN_PRE_RUN",
+      "kind": "resource",
+      "locator": "checks/photon/SECTOR_PRE_RUN.json",
+      "scope": "Original sign-check command and budget.",
+      "dependency_ids": [
+        "dep_SIGN_PRE_RUN"
+      ],
+      "sha256": "3bf24db3d97200a90815f786c3318a3924c444ac4b744f295366a6d2d17cbc04",
+      "bytes": 574
+    },
+    {
+      "id": "SIGN_RUN",
+      "kind": "resource",
+      "locator": "checks/photon/SECTOR_RUN_RECORD.json",
+      "scope": "Actual sign-check command, zero exit and measured time/RSS.",
+      "dependency_ids": [
+        "dep_SIGN_RUN"
+      ],
+      "sha256": "2aa8174aef58def51e390a8c7d5b2ac7796e175a6cbff0dc23d9b50430b135aa",
+      "bytes": 532
+    },
+    {
+      "id": "NONLINEAR_CHECKS",
+      "kind": "calculation",
+      "locator": "checks/NONLINEAR_TRANSFER_CHECKS.json",
+      "scope": "Four-dimensional manufactured nonlinear residual and finite-temperature discriminators; 14 relations, no physical endpoint evaluation.",
+      "dependency_ids": [
+        "dep_NONLINEAR_CHECKS"
+      ],
+      "sha256": "346061e142e2f3dba936e3d508514715ce142bb1af25177ba2b797f563410acb",
+      "bytes": 5128
+    },
+    {
+      "id": "NONLINEAR_PRE_RUN",
+      "kind": "resource",
+      "locator": "checks/NONLINEAR_PRE_RUN.json",
+      "scope": "Original exact-Fraction discriminating example plan and command.",
+      "dependency_ids": [
+        "dep_NONLINEAR_PRE_RUN"
+      ],
+      "sha256": "9383441d49ad9a44e51eb75cb12bbf94dc39d57352845fab2f3810f305d79743",
+      "bytes": 1150
+    },
+    {
+      "id": "WOLFRAM_CHECKS",
+      "kind": "calculation",
+      "locator": "checks/WOLFRAM_ALGEBRA.json",
+      "scope": "Actual independent symbolic tool response {0,0,0,0} for four rational identities.",
+      "dependency_ids": [
+        "dep_WOLFRAM_CHECKS"
+      ],
+      "sha256": "8e44cd9befbdf2bc629ba4317532c9164f266c4689b71372434fdad4abab6098",
+      "bytes": 983
+    },
+    {
+      "id": "REVIEW",
+      "kind": "review",
+      "locator": "review/REVIEW_KO.md",
+      "scope": "Independent proof, source graph and original-leaf examination with resolved componentwise secant notation finding.",
+      "dependency_ids": [
+        "dep_REVIEW"
+      ],
+      "sha256": "3dc7ac23b90ae8066105281542c6e2041788315eacf13e27f071a3819b2d9996",
+      "bytes": 10686
+    },
+    {
+      "id": "REVIEW_DECISION",
+      "kind": "decision",
+      "locator": "review/DECISION.json",
+      "scope": "Actual PROMOTE_SCOPED for nine theory claims; zero remaining blocking findings.",
+      "dependency_ids": [
+        "dep_REVIEW_DECISION"
+      ],
+      "sha256": "8addd12246ded9a540ecfb85b98651013f8c55e6a0c72840166546e686da3c44",
+      "bytes": 15321
+    },
+    {
+      "id": "REVIEW_CHECKS",
+      "kind": "calculation",
+      "locator": "review/INDEPENDENT_THEORY_CHECKS.json",
+      "scope": "Separately authored posthoc exact arithmetic, 26 checks; no candidate imports or physical replay.",
+      "dependency_ids": [
+        "dep_REVIEW_CHECKS"
+      ],
+      "sha256": "d7911195464bce90a0d7284f40fb5f3039bd4224376ba8fe4823927543f6137e",
+      "bytes": 5167
+    },
+    {
+      "id": "REVIEW_RUN",
+      "kind": "resource",
+      "locator": "review/RUN_RECORD.json",
+      "scope": "Actual independent check command, exit 0 and measured wall/CPU/RSS.",
+      "dependency_ids": [
+        "dep_REVIEW_RUN"
+      ],
+      "sha256": "9662d76bd7f684689bbdfc5fead6e78c5d8f908eb4228a7d52d44cfea05f843b",
+      "bytes": 688
+    },
+    {
+      "id": "SECANT_CORRECTION",
+      "kind": "artifact",
+      "locator": "checks/photon/SECANT_TYPE_CORRECTION.json",
+      "scope": "Scalar d_x is applied componentwise; corrected vector/matrix display type without coefficient changes.",
+      "dependency_ids": [
+        "dep_SECANT_CORRECTION"
+      ],
+      "sha256": "2f9134491614c0897db49ca5dab40c3d03f73a5ce519411c370358de3554ae85",
+      "bytes": 659
+    },
+    {
+      "id": "OVERLAY_FINAL",
+      "kind": "artifact",
+      "locator": "ROOT_OVERLAY_FINAL.json",
+      "scope": "Six before/after hashes; exact PHYS14 suffix/snapshot preservation and current policy mapping.",
+      "dependency_ids": [
+        "dep_OVERLAY_FINAL"
+      ],
+      "sha256": "e54e996bd9573c0e3d186c2bffa448695389241c8691eff3f6c59e5eadad82fe",
+      "bytes": 8240
+    },
+    {
+      "id": "DAG_CHECK",
+      "kind": "artifact",
+      "locator": "evidence/DAG_CHANGE_CHECK.json",
+      "scope": "Prior 10 nodes preserved, 12-node successor DAG acyclic and original global DAG hash retained.",
+      "dependency_ids": [
+        "dep_DAG_CHECK"
+      ],
+      "sha256": "39d05f837e22a5c612a8e09df15a52aa76bda5782e81a17933bb722fc3715260",
+      "bytes": 590
+    },
+    {
+      "id": "REPORT_MARKDOWN",
+      "kind": "artifact",
+      "locator": "REPORT_KO.md",
+      "scope": "Current formal report text; PDF completion remains R9 obligation.",
+      "dependency_ids": [
+        "dep_REPORT_MARKDOWN"
+      ],
+      "sha256": "454dd0da271982b30026f93fca4a0bdf8f7f4d6c845f946515dc6342e0f3517d",
+      "bytes": 4706
+    },
+    {
+      "id": "HANDOFF",
+      "kind": "artifact",
+      "locator": "HANDOFF_KO.md",
+      "scope": "Local concrete successor inputs, formulas, acceptance and restart instructions; final delivery remains R10 obligation.",
+      "dependency_ids": [
+        "dep_HANDOFF"
+      ],
+      "sha256": "6c06d809fd5d98e76c25a9e82baf2c890c48aa986a540c5f30e50cad3ea990d6",
+      "bytes": 4401
+    },
+    {
+      "id": "PINNING_INCIDENT",
+      "kind": "artifact",
+      "locator": "evidence/bindings/pinning_evidence/FIRST_FAILURE.json",
+      "scope": "Preserved metadata assembly TypeError; fixed variable shadowing after already successful source assertions.",
+      "dependency_ids": [
+        "dep_PINNING_INCIDENT"
+      ],
+      "sha256": "30001195044ce82ea41b9507a4c49ab9c0534ee09c8e6ee56fdaeec7a3dd0027",
+      "bytes": 687
+    },
+    {
+      "id": "OVERLAY_INCIDENT",
+      "kind": "artifact",
+      "locator": "evidence/bindings/overlay_evidence/FIRST_ATTEMPT.json",
+      "scope": "Preserved first create-only attempt stopped on an already-created empty output directory; no file was changed by that attempt.",
+      "dependency_ids": [
+        "dep_OVERLAY_INCIDENT"
+      ],
+      "sha256": "d1a048978125427dde18a4a0438514fab7760fdb0a46099a307c94ac16c0f933",
+      "bytes": 543
+    }
+  ],
+  "stages": [
+    {
+      "id": "R1",
+      "status": "complete",
+      "evidence_refs": [
+        "ROOT_THEORY",
+        "CONTRACT",
+        "WORKFLOW",
+        "OVERLAY_FINAL"
+      ],
+      "dependency_ids": [
+        "dep_CONTRACT",
+        "dep_OVERLAY_FINAL",
+        "dep_ROOT_THEORY",
+        "dep_WORKFLOW"
+      ],
+      "reason": "같은 COMMON·alpha·global lambda,b의 Full 대 실제 two-half를 이론 단위로 고정하고, 완료 조건과 수치 후속 계약 및 현재 절차 override를 명시했다.",
+      "reuse": null
+    },
+    {
+      "id": "R2",
+      "status": "reused",
+      "evidence_refs": [
+        "PHYS14_DECISION",
+        "PHYS14_THEORY",
+        "PHYS14_GEOMETRY",
+        "PHYS14_RESULT",
+        "FIRST_CARRY",
+        "ROOT_READOUT",
+        "FULL_SOURCE",
+        "HALF_SOURCE",
+        "FULL_CENTRE",
+        "HALF_CENTRE",
+        "FULL_PRECONDITIONER",
+        "FT03_SOURCE",
+        "HH_SOURCE"
+      ],
+      "dependency_ids": [
+        "dep_FIRST_CARRY",
+        "dep_FT03_SOURCE",
+        "dep_FULL_CENTRE",
+        "dep_FULL_PRECONDITIONER",
+        "dep_FULL_SOURCE",
+        "dep_HALF_CENTRE",
+        "dep_HALF_SOURCE",
+        "dep_HH_SOURCE",
+        "dep_PHYS14_DECISION",
+        "dep_PHYS14_GEOMETRY",
+        "dep_PHYS14_RESULT",
+        "dep_PHYS14_THEORY",
+        "dep_ROOT_READOUT"
+      ],
+      "reason": "PHYS14의 승인된 실제 carry·source/C2/root·geometry 결과와 원 NCP07 source/preconditioner를 정확한 파일 identity로 재사용한다. 기존 과학 계산의 재실행은 없다.",
+      "reuse": {
+        "dependency_identities": {
+          "dep_FIRST_CARRY": "sha256:5e3dc0b589c5e86672664ea851e7986708e10ed73f6a3db8332b9c8084a897ca",
+          "dep_FT03_SOURCE": "sha256:886580a810b8ec29c8f0b6199c0e35d82fde1f46d984a5f8f1da304326a42a42",
+          "dep_FULL_CENTRE": "sha256:d9cac85f991f45ccd21fd7f124647e78a1564ae1d00a360b3aebdb67e811761a",
+          "dep_FULL_PRECONDITIONER": "sha256:3cf8c86b445ba2be2889e5effbdaacbcf84d0dcedbabd60763124141dfbc09af",
+          "dep_FULL_SOURCE": "sha256:cf1b48df2c299187a03ab501b1169e2d559c5959bf50892d7b749c65f81ff64d",
+          "dep_HALF_CENTRE": "sha256:fe63465b6a457cb9dd6c88f37a7161ce75d7761b7296608ec8eb3bde8bb629a9",
+          "dep_HALF_SOURCE": "sha256:36247ef5ac3bce4b114aac41fe5d85c2015488183ba32b77f9051cc7d25b77b4",
+          "dep_HH_SOURCE": "sha256:f47d910abb096f96b829e3392fdfbf55d079ba2fbb09a45416c97c76a4f4a647",
+          "dep_PHYS14_DECISION": "sha256:2ccf534271f2c4052247685407f0240c20b5b2ed0f604a350c6aa3e608de38f4",
+          "dep_PHYS14_GEOMETRY": "sha256:19a187a3b04db5aebf9cb615cd135f8db7e3201203219121ab27501f83e04cfc",
+          "dep_PHYS14_RESULT": "sha256:a0faac7d55b425ae85ed8ee15e57d5f3c2687b40896b039fe858dcfdb342e28e",
+          "dep_PHYS14_THEORY": "sha256:0eb0a8374470498e9320e0a6191d72d0a5f5e15c0162a7f633b5e3e52f2da125",
+          "dep_ROOT_READOUT": "sha256:0943234c6a15f6238803cbc4ec0c61df12bc218523678210f1095b9c0588c6ea"
+        }
+      }
+    },
+    {
+      "id": "R3",
+      "status": "complete",
+      "evidence_refs": [
+        "ROOT_THEORY",
+        "SOURCE_BINDING",
+        "SOURCE_NORMALIZATION",
+        "C_BINDING",
+        "THRESHOLD_IDENTITY"
+      ],
+      "dependency_ids": [
+        "dep_C_BINDING",
+        "dep_ROOT_THEORY",
+        "dep_SOURCE_BINDING",
+        "dep_SOURCE_NORMALIZATION",
+        "dep_THRESHOLD_IDENTITY"
+      ],
+      "reason": "P1-P7과 원 capture의 density/fhat, source 시각, birth, 같은 계열과 X/pullback 영역을 직접 유도한 항등식 및 남은 수치 평가와 구분했다.",
+      "reuse": null
+    },
+    {
+      "id": "R4",
+      "status": "complete",
+      "evidence_refs": [
+        "ROOT_THEORY",
+        "PHOTON_THEORY",
+        "NONLINEAR_PRE_RUN",
+        "PHOTON_PRE_RUN",
+        "SIGN_PRE_RUN"
+      ],
+      "dependency_ids": [
+        "dep_NONLINEAR_PRE_RUN",
+        "dep_PHOTON_PRE_RUN",
+        "dep_PHOTON_THEORY",
+        "dep_ROOT_THEORY",
+        "dep_SIGN_PRE_RUN"
+      ],
+      "reason": "공통 초기 입력을 제거한 잔차, 일곱 흡수 항, 온도 정렬 source 표현과 평균 Jacobian을 선택하고 endpoint Jacobian·미분 온도식과 구별하는 사례를 구성했다.",
+      "reuse": null
+    },
+    {
+      "id": "R5",
+      "status": "complete",
+      "evidence_refs": [
+        "ROOT_THEORY",
+        "PHOTON_THEORY",
+        "SOURCE_NORMALIZATION",
+        "C_BINDING"
+      ],
+      "dependency_ids": [
+        "dep_C_BINDING",
+        "dep_PHOTON_THEORY",
+        "dep_ROOT_THEORY",
+        "dep_SOURCE_NORMALIZATION"
+      ],
+      "reason": "상관 기체 잔차, chronology 분해, source 정규화 연결, 평균 Jacobian 포함, 유한 관측량·공통 adjoint·ledger·실제 photon endpoint 전달을 구성적으로 유도했다.",
+      "reuse": null
+    },
+    {
+      "id": "R6",
+      "status": "complete",
+      "evidence_refs": [
+        "REVIEW",
+        "REVIEW_DECISION",
+        "REVIEW_CHECKS",
+        "REVIEW_RUN",
+        "SECANT_CORRECTION"
+      ],
+      "dependency_ids": [
+        "dep_REVIEW",
+        "dep_REVIEW_CHECKS",
+        "dep_REVIEW_DECISION",
+        "dep_REVIEW_RUN",
+        "dep_SECANT_CORRECTION"
+      ],
+      "reason": "독립 검토자가 원 source 및 핵심 증명을 검토하고 별도 exact 검산을 수행했다. photon secant의 표시형 지적을 교정했고 남은 차단 지적은 없다.",
+      "reuse": null
+    },
+    {
+      "id": "R7",
+      "status": "complete",
+      "evidence_refs": [
+        "PHOTON_CHECKS",
+        "PHOTON_RUN",
+        "SIGN_CHECKS",
+        "SIGN_RUN",
+        "NONLINEAR_CHECKS",
+        "WOLFRAM_CHECKS",
+        "REVIEW_CHECKS",
+        "REVIEW_RUN"
+      ],
+      "dependency_ids": [
+        "dep_NONLINEAR_CHECKS",
+        "dep_PHOTON_CHECKS",
+        "dep_PHOTON_RUN",
+        "dep_REVIEW_CHECKS",
+        "dep_REVIEW_RUN",
+        "dep_SIGN_CHECKS",
+        "dep_SIGN_RUN",
+        "dep_WOLFRAM_CHECKS"
+      ],
+      "reason": "실제 제조 대수·부호·유한 온도·평균 Jacobian 판별 검산과 독립 기호·exact 검산을 완료했다. 실제 물리 endpoint 구간은 이 증명 판정의 의무가 아니며 별도 후속 실행으로 남긴다.",
+      "reuse": null
+    },
+    {
+      "id": "R8",
+      "status": "complete",
+      "evidence_refs": [
+        "REVIEW_DECISION",
+        "REVIEW",
+        "CONTRACT"
+      ],
+      "dependency_ids": [
+        "dep_CONTRACT",
+        "dep_REVIEW",
+        "dep_REVIEW_DECISION"
+      ],
+      "reason": "원 geometric isotropic same-COMMON 계열과 상속 전제 아래 이론 주장 9개를 PROMOTE_SCOPED로 채택했다. 새 strong no-go 주장은 없다.",
+      "reuse": null
+    },
+    {
+      "id": "R9",
+      "status": "in_progress",
+      "evidence_refs": [
+        "ROOT_THEORY",
+        "PHOTON_THEORY",
+        "REPORT_MARKDOWN",
+        "CONTRACT"
+      ],
+      "dependency_ids": [
+        "dep_CONTRACT",
+        "dep_PHOTON_THEORY",
+        "dep_REPORT_MARKDOWN",
+        "dep_ROOT_THEORY"
+      ],
+      "reason": "정식 보고서 본문과 수치 구현 계약이 작성됐다. root가 최종 LaTeX/PDF 제작·확인을 마친 뒤 이 단계를 종료한다.",
+      "reuse": null
+    },
+    {
+      "id": "R10",
+      "status": "pending",
+      "evidence_refs": [
+        "HANDOFF",
+        "DAG_CHECK",
+        "OVERLAY_FINAL"
+      ],
+      "dependency_ids": [
+        "dep_DAG_CHECK",
+        "dep_HANDOFF",
+        "dep_OVERLAY_FINAL"
+      ],
+      "reason": "현재 local handoff와 DAG/root entry는 작성됐다. root가 최종 산출물 identity와 실제 Git/provider 전달 근거를 결박한 뒤 종료한다.",
+      "reuse": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "PHYS15_COMMON_INPUT_BINDING",
+      "statement": "Full and the actual two-half history share one COMMON and one linked coefficient selection with global lambda,b.",
+      "scope": "Same-COMMON Full versus actual two-half theoretical defect construction in the inherited geometric isotropic source-aligned C2 family, with captured original constants and linked global lambda,b; actual PHYS15 numerical endpoint enclosure is the named successor unit.",
+      "basis": [
+        "derived"
+      ],
+      "evidence_refs": [
+        "SOURCE_BINDING",
+        "PHYS14_THEORY",
+        "REVIEW_DECISION"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED",
+      "proof_locations": [
+        "P1-P7",
+        "source-normalization section 1"
+      ],
+      "conditional_premises": [
+        "The original nonphoto and HH C2 source inclusions, fixed-coefficient Full/first-half root families and PHYS14 actual second-half result remain valid.",
+        "The same linked COMMON, original captured leaves, common isotropic rho, normalized geometric weights and global lambda,b are used across both histories.",
+        "Actual gas endpoints and the temperature-aligned source pullback segments lie inside the stated original convex source domain.",
+        "Original Full C, B, radius S and q are consumed from their paired UNIFORM_ARITHMETIC source certificate."
+      ]
+    },
+    {
+      "id": "PHYS15_CORRELATED_GAS_RESIDUAL",
+      "statement": "r=H_F(g2)=h(B1(g1)-B2(g2))+V(P1+P2-L_F(g2)Q_F), with d=g2-gF and averaged residual Jacobian Abar*d=r.",
+      "scope": "Same-COMMON Full versus actual two-half theoretical defect construction in the inherited geometric isotropic source-aligned C2 family, with captured original constants and linked global lambda,b; actual PHYS15 numerical endpoint enclosure is the named successor unit.",
+      "basis": [
+        "derived"
+      ],
+      "evidence_refs": [
+        "ROOT_THEORY",
+        "REVIEW_CHECKS",
+        "REVIEW_DECISION"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED",
+      "proof_locations": [
+        "root equations (3.1)-(3.3),(6.1)"
+      ],
+      "conditional_premises": [
+        "The original nonphoto and HH C2 source inclusions, fixed-coefficient Full/first-half root families and PHYS14 actual second-half result remain valid.",
+        "The same linked COMMON, original captured leaves, common isotropic rho, normalized geometric weights and global lambda,b are used across both histories.",
+        "Actual gas endpoints and the temperature-aligned source pullback segments lie inside the stated original convex source domain.",
+        "Original Full C, B, radius S and q are consumed from their paired UNIFORM_ARITHMETIC source certificate."
+      ]
+    },
+    {
+      "id": "PHYS15_PHOTON_CHRONOLOGY",
+      "statement": "Six-sector outgoing and seven-sector integrated-absorption decompositions preserve the common initial spectrum, birth and chronological absorbed energy.",
+      "scope": "Same-COMMON Full versus actual two-half theoretical defect construction in the inherited geometric isotropic source-aligned C2 family, with captured original constants and linked global lambda,b; actual PHYS15 numerical endpoint enclosure is the named successor unit.",
+      "basis": [
+        "derived"
+      ],
+      "evidence_refs": [
+        "PHOTON_THEORY",
+        "PHOTON_CHECKS",
+        "REVIEW_DECISION"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED",
+      "proof_locations": [
+        "root equations (4.2),(9.1)",
+        "photon equations (13)-(14)"
+      ],
+      "conditional_premises": [
+        "The original nonphoto and HH C2 source inclusions, fixed-coefficient Full/first-half root families and PHYS14 actual second-half result remain valid.",
+        "The same linked COMMON, original captured leaves, common isotropic rho, normalized geometric weights and global lambda,b are used across both histories.",
+        "Actual gas endpoints and the temperature-aligned source pullback segments lie inside the stated original convex source domain.",
+        "Original Full C, B, radius S and q are consumed from their paired UNIFORM_ARITHMETIC source certificate."
+      ]
+    },
+    {
+      "id": "PHYS15_SOURCE_TIME_BRIDGE",
+      "statement": "The original FT03 and HH sources obey the temperature-aligned density/electron bridge, with the captured fhat difference retained in the thermal correction.",
+      "scope": "Same-COMMON Full versus actual two-half theoretical defect construction in the inherited geometric isotropic source-aligned C2 family, with captured original constants and linked global lambda,b; actual PHYS15 numerical endpoint enclosure is the named successor unit.",
+      "basis": [
+        "derived"
+      ],
+      "evidence_refs": [
+        "SOURCE_NORMALIZATION",
+        "SOURCE_BINDING",
+        "THRESHOLD_IDENTITY",
+        "REVIEW_DECISION"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED",
+      "proof_locations": [
+        "root equations (5.1)-(5.5)",
+        "source-normalization sections 3.1-3.3"
+      ],
+      "conditional_premises": [
+        "The original nonphoto and HH C2 source inclusions, fixed-coefficient Full/first-half root families and PHYS14 actual second-half result remain valid.",
+        "The same linked COMMON, original captured leaves, common isotropic rho, normalized geometric weights and global lambda,b are used across both histories.",
+        "Actual gas endpoints and the temperature-aligned source pullback segments lie inside the stated original convex source domain.",
+        "Original Full C, B, radius S and q are consumed from their paired UNIFORM_ARITHMETIC source certificate."
+      ]
+    },
+    {
+      "id": "PHYS15_MEAN_JACOBIAN_TRANSFER",
+      "statement": "The inherited same-file C,B,q,S certificate applies to the averaged Full residual Jacobian and bounds the endpoint defect by the preconditioned residual.",
+      "scope": "Same-COMMON Full versus actual two-half theoretical defect construction in the inherited geometric isotropic source-aligned C2 family, with captured original constants and linked global lambda,b; actual PHYS15 numerical endpoint enclosure is the named successor unit.",
+      "basis": [
+        "derived"
+      ],
+      "evidence_refs": [
+        "ROOT_THEORY",
+        "C_BINDING",
+        "FULL_PRECONDITIONER",
+        "NONLINEAR_CHECKS",
+        "REVIEW_DECISION"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED",
+      "proof_locations": [
+        "root equations (6.2)-(6.4)",
+        "FIXED_PRECONDITIONER_BINDING.md"
+      ],
+      "conditional_premises": [
+        "The original nonphoto and HH C2 source inclusions, fixed-coefficient Full/first-half root families and PHYS14 actual second-half result remain valid.",
+        "The same linked COMMON, original captured leaves, common isotropic rho, normalized geometric weights and global lambda,b are used across both histories.",
+        "Actual gas endpoints and the temperature-aligned source pullback segments lie inside the stated original convex source domain.",
+        "Original Full C, B, radius S and q are consumed from their paired UNIFORM_ARITHMETIC source certificate."
+      ]
+    },
+    {
+      "id": "PHYS15_FINITE_OBSERVABLE_TRANSFER",
+      "statement": "The same endpoint normalization yields exact finite temperature/electron/thermal differences and a common-adjoint decomposition of the full difference into source sectors.",
+      "scope": "Same-COMMON Full versus actual two-half theoretical defect construction in the inherited geometric isotropic source-aligned C2 family, with captured original constants and linked global lambda,b; actual PHYS15 numerical endpoint enclosure is the named successor unit.",
+      "basis": [
+        "derived"
+      ],
+      "evidence_refs": [
+        "ROOT_THEORY",
+        "NONLINEAR_CHECKS",
+        "WOLFRAM_CHECKS",
+        "REVIEW_DECISION"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED",
+      "proof_locations": [
+        "root equations (7.1)-(7.3)"
+      ],
+      "conditional_premises": [
+        "The original nonphoto and HH C2 source inclusions, fixed-coefficient Full/first-half root families and PHYS14 actual second-half result remain valid.",
+        "The same linked COMMON, original captured leaves, common isotropic rho, normalized geometric weights and global lambda,b are used across both histories.",
+        "Actual gas endpoints and the temperature-aligned source pullback segments lie inside the stated original convex source domain.",
+        "Original Full C, B, radius S and q are consumed from their paired UNIFORM_ARITHMETIC source certificate."
+      ]
+    },
+    {
+      "id": "PHYS15_LEDGER_AND_CHEMICAL_PROJECTION",
+      "statement": "Guard-inclusive number/energy chronology and the captured active-HI heat identity yield the chi_H*x+w residual projection.",
+      "scope": "Same-COMMON Full versus actual two-half theoretical defect construction in the inherited geometric isotropic source-aligned C2 family, with captured original constants and linked global lambda,b; actual PHYS15 numerical endpoint enclosure is the named successor unit.",
+      "basis": [
+        "derived"
+      ],
+      "evidence_refs": [
+        "ROOT_THEORY",
+        "PHOTON_THEORY",
+        "SIGN_CHECKS",
+        "REVIEW_DECISION"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED",
+      "proof_locations": [
+        "root equations (8.1)-(8.4)",
+        "photon equations (35)-(46)"
+      ],
+      "conditional_premises": [
+        "The original nonphoto and HH C2 source inclusions, fixed-coefficient Full/first-half root families and PHYS14 actual second-half result remain valid.",
+        "The same linked COMMON, original captured leaves, common isotropic rho, normalized geometric weights and global lambda,b are used across both histories.",
+        "Actual gas endpoints and the temperature-aligned source pullback segments lie inside the stated original convex source domain.",
+        "Original Full C, B, radius S and q are consumed from their paired UNIFORM_ARITHMETIC source certificate."
+      ]
+    },
+    {
+      "id": "PHYS15_ACTUAL_PHOTON_ENDPOINT_SECANT",
+      "statement": "The residual-anchor photon difference is transferred to the actual Full endpoint by the componentwise positive-coefficient opacity secant using the same d_x.",
+      "scope": "Same-COMMON Full versus actual two-half theoretical defect construction in the inherited geometric isotropic source-aligned C2 family, with captured original constants and linked global lambda,b; actual PHYS15 numerical endpoint enclosure is the named successor unit.",
+      "basis": [
+        "derived"
+      ],
+      "evidence_refs": [
+        "ROOT_THEORY",
+        "PHOTON_THEORY",
+        "SECANT_CORRECTION",
+        "REVIEW_CHECKS",
+        "REVIEW_DECISION"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED",
+      "proof_locations": [
+        "root equation (9.2)",
+        "photon equations (49)-(50)"
+      ],
+      "conditional_premises": [
+        "The original nonphoto and HH C2 source inclusions, fixed-coefficient Full/first-half root families and PHYS14 actual second-half result remain valid.",
+        "The same linked COMMON, original captured leaves, common isotropic rho, normalized geometric weights and global lambda,b are used across both histories.",
+        "Actual gas endpoints and the temperature-aligned source pullback segments lie inside the stated original convex source domain.",
+        "Original Full C, B, radius S and q are consumed from their paired UNIFORM_ARITHMETIC source certificate."
+      ]
+    },
+    {
+      "id": "PHYS15_SECTOR_SIGNS",
+      "statement": "The original monotone active-HI graph gives nonnegative absorption-remap forcing; the stated positive birth/neutral-fraction domain gives positive birth-redshift ionization and negative thermal-deposition/direct-temperature sector.",
+      "scope": "Same-COMMON Full versus actual two-half theoretical defect construction in the inherited geometric isotropic source-aligned C2 family, with captured original constants and linked global lambda,b; actual PHYS15 numerical endpoint enclosure is the named successor unit.",
+      "basis": [
+        "derived"
+      ],
+      "evidence_refs": [
+        "PHOTON_THEORY",
+        "SIGN_CHECKS",
+        "REVIEW_DECISION"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED",
+      "proof_locations": [
+        "root equations (4.6)-(4.11)",
+        "photon equations (20)-(29)"
+      ],
+      "conditional_premises": [
+        "The original nonphoto and HH C2 source inclusions, fixed-coefficient Full/first-half root families and PHYS14 actual second-half result remain valid.",
+        "The same linked COMMON, original captured leaves, common isotropic rho, normalized geometric weights and global lambda,b are used across both histories.",
+        "Actual gas endpoints and the temperature-aligned source pullback segments lie inside the stated original convex source domain.",
+        "Original Full C, B, radius S and q are consumed from their paired UNIFORM_ARITHMETIC source certificate."
+      ]
+    },
+    {
+      "id": "HH_CORRELATED_ENDPOINT_ENCLOSURE",
+      "statement": "실제 원 입력에서 r,d,DeltaT,Deltae,Deltaw,Deltane 및 photon/guard endpoint 차이의 수치 구간을 계산한다.",
+      "scope": "계약에 지정된 같은 입력 계열의 다음 수치 단위",
+      "basis": [
+        "unresolved"
+      ],
+      "evidence_refs": [
+        "CONTRACT"
+      ],
+      "obligations": [
+        "검토된 식을 공통 입력 표현으로 구현하고 실제 포함 계산을 수행한 후 결과·실행 근거와 독립 수치 판정을 기록한다."
+      ],
+      "execution_status": "not_run"
+    }
+  ],
+  "checks": [
+    {
+      "id": "PHOTON_EXACT_ALGEBRA",
+      "domain": "math",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "PHOTON_CHECKS",
+        "PHOTON_RUN"
+      ],
+      "reason": "3,148 scalar equalities check the stated exact algebra examples and captured identities; this is not a physical case count.",
+      "execution_ref": "EXEC_PHOTON_ALGEBRA"
+    },
+    {
+      "id": "ORIGINAL_SECTOR_SIGNS",
+      "domain": "physics",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "SIGN_CHECKS",
+        "SIGN_RUN"
+      ],
+      "reason": "Source leaf inequalities support the sign theorem on its explicit positive domain.",
+      "execution_ref": "EXEC_SECTOR_SIGNS"
+    },
+    {
+      "id": "NONLINEAR_TRANSFER_DISCRIMINATORS",
+      "domain": "math",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "NONLINEAR_CHECKS",
+        "NONLINEAR_PRE_RUN"
+      ],
+      "reason": "Actual stored exact-Fraction result distinguishes the averaged Jacobian and finite-temperature quotient from their local approximations.",
+      "execution_ref": null
+    },
+    {
+      "id": "WOLFRAM_IDENTITIES",
+      "domain": "math",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "WOLFRAM_CHECKS"
+      ],
+      "reason": "Actual symbolic tool output is {0,0,0,0}; no shell exit code is inferred for the symbolic service.",
+      "execution_ref": null
+    },
+    {
+      "id": "INDEPENDENT_THEORY_REVIEW",
+      "domain": "math",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "REVIEW",
+        "REVIEW_CHECKS",
+        "REVIEW_RUN",
+        "REVIEW_DECISION"
+      ],
+      "reason": "26 separately authored checks and direct proof review; all reported blocking findings resolved.",
+      "execution_ref": "EXEC_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "SOURCE_AND_PRECONDITIONER_BINDINGS",
+      "domain": "physics",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "SOURCE_BINDING",
+        "C_BINDING",
+        "THRESHOLD_IDENTITY"
+      ],
+      "reason": "Targeted original-file and exact binary/rational identity checks are reused.",
+      "execution_ref": null
+    },
+    {
+      "id": "ROOT_ENTRY_PRESERVATION",
+      "domain": "packaging",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "OVERLAY_FINAL"
+      ],
+      "reason": "Six original entries remain exact Markdown suffixes or complete unchanged JSON snapshots.",
+      "execution_ref": null
+    },
+    {
+      "id": "ACTUAL_PHYSICAL_ENDPOINT_ENCLOSURE",
+      "domain": "numerics",
+      "result": "not_run",
+      "evidence_refs": [
+        "CONTRACT"
+      ],
+      "reason": "The named successor performs actual physical interval evaluation; current theory decision does not claim its values.",
+      "execution_ref": "EXEC_ENDPOINT_ENCLOSURE"
+    }
+  ],
+  "executions": [
+    {
+      "id": "EXEC_PHOTON_ALGEBRA",
+      "status": "completed",
+      "command": [
+        "python3",
+        "/workspace/scratch/b826cbaab54f/phys15_photon_theory/check_photon_defect_identities.py",
+        "--project",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS14_20261012_v1",
+        "--output",
+        "/workspace/scratch/b826cbaab54f/phys15_photon_theory/PHOTON_EXACT_CHECKS.json"
+      ],
+      "environment": {
+        "runtime": "python3 as recorded by the original run",
+        "location": "/workspace/scratch/b826cbaab54f",
+        "arithmetic_and_scope": "Python Fraction and exact dual algebra; manufactured examples and captured leaves.",
+        "original_run_record": "checks/photon/RUN_RECORD.json"
+      },
+      "evidence_refs": [
+        "PHOTON_RUN",
+        "PHOTON_CHECKS"
+      ],
+      "exit_code": 0,
+      "reason": "Existing actual execution record is linked; no re-execution in state assembly."
+    },
+    {
+      "id": "EXEC_SECTOR_SIGNS",
+      "status": "completed",
+      "command": [
+        "python3",
+        "/workspace/scratch/b826cbaab54f/phys15_photon_theory/check_sector_signs.py",
+        "--project",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS14_20261012_v1",
+        "--output",
+        "/workspace/scratch/b826cbaab54f/phys15_photon_theory/SECTOR_SIGN_CHECKS.json"
+      ],
+      "environment": {
+        "runtime": "python3 as recorded by the original run",
+        "location": "/workspace/scratch/b826cbaab54f",
+        "arithmetic_and_scope": "Python Fraction exact original-leaf inequalities.",
+        "original_run_record": "checks/photon/SECTOR_RUN_RECORD.json"
+      },
+      "evidence_refs": [
+        "SIGN_RUN",
+        "SIGN_CHECKS"
+      ],
+      "exit_code": 0,
+      "reason": "Existing actual execution record is linked; no re-execution in state assembly."
+    },
+    {
+      "id": "EXEC_INDEPENDENT_REVIEW",
+      "status": "completed",
+      "command": [
+        "python3",
+        "/workspace/scratch/b826cbaab54f/phys15_review/independent_theory_checks.py"
+      ],
+      "environment": {
+        "runtime": "python3 as recorded by the original run",
+        "location": "/workspace/scratch/b826cbaab54f",
+        "arithmetic_and_scope": "Independently authored Python Fraction checks; no candidate module import.",
+        "original_run_record": "review/RUN_RECORD.json"
+      },
+      "evidence_refs": [
+        "REVIEW_RUN",
+        "REVIEW_CHECKS"
+      ],
+      "exit_code": 0,
+      "reason": "Existing actual execution record is linked; no re-execution in state assembly."
+    },
+    {
+      "id": "EXEC_ENDPOINT_ENCLOSURE",
+      "status": "not_run",
+      "command": [],
+      "environment": {
+        "input_contract": "contracts/ENDPOINT_ENCLOSURE_CONTRACT.json"
+      },
+      "evidence_refs": [
+        "CONTRACT"
+      ],
+      "exit_code": null,
+      "reason": "Successor evaluator is specified by its contract; its concrete executable command belongs to the next implementation unit."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "PHYS15_THEORY_ACCEPTED",
+      "decision": "PROMOTE_SCOPED",
+      "scope": "Same-COMMON Full versus actual two-half theoretical defect construction in the inherited geometric isotropic source-aligned C2 family, with captured original constants and linked global lambda,b; actual PHYS15 numerical endpoint enclosure is the named successor unit.",
+      "evidence_refs": [
+        "REVIEW_DECISION"
+      ],
+      "reason": "The independent theoretical proof obligations are closed after the componentwise secant notation correction; proceed to the scoped report, DAG, durable records and named numerical successor."
+    },
+    {
+      "id": "NUMERICAL_SUCCESSOR_DEFINED",
+      "decision": "HH_CORRELATED_ENDPOINT_ENCLOSURE",
+      "evidence_refs": [
+        "CONTRACT",
+        "HANDOFF"
+      ],
+      "reason": "Actual endpoint interval evaluation is the next research unit under the fixed reviewed input and expression contract."
+    }
+  ],
+  "overrides": [
+    {
+      "id": "PHYS15_CURRENT_USER_BUILTIN_THEORY_OVERRIDE",
+      "authority": "User 2026-10-12 explicit physmath-research-loop skill and reference instructions",
+      "previous_rule": "Historical v4 default harness acquisition/routing in preserved project entries",
+      "replacement": "Built-in 1.0.0 THEORY R1-R10 and current common/evidence policies; explicit legacy-version requests retain their original route.",
+      "reason": "The current user supplied the updated built-in protocol for this theory request.",
+      "affected_dependencies": "Workflow entry/routing and evidence reuse only; fixed scientific models and accepted results retain their identity and criteria.",
+      "authorization_rule": "Carry existing session authorization forward; no duplicate confirmation for read-only or already authorized steps. Actual access controls remain authoritative.",
+      "status": "APPLIED_TO_CURRENT_THEORY",
+      "evidence_refs": [
+        "WORKFLOW",
+        "EVIDENCE_POLICY",
+        "OVERLAY_FINAL"
+      ]
+    },
+    {
+      "id": "SECANT_COMPONENTWISE_NOTATION_CORRECTION",
+      "previous_rule": "A displayed diagonal matrix was multiplied directly by scalar d_x while the left side denoted a vector.",
+      "replacement": "Write the photon identity for each retained component j=0..32 and zero guard corrections.",
+      "affected_dependencies": "Root equation (9.2) and photon equation (50); coefficients and truth conditions unchanged.",
+      "status": "resolved",
+      "evidence_refs": [
+        "SECANT_CORRECTION",
+        "REVIEW_DECISION"
+      ]
+    }
+  ],
+  "failures": [
+    {
+      "id": "PRECONDITIONER_RECEIPT_ASSEMBLY_VARIABLE_SHADOWING",
+      "class": "implementation",
+      "status": "resolved",
+      "evidence_refs": [
+        "PINNING_INCIDENT",
+        "C_BINDING"
+      ],
+      "next_action": "Resolved by a metadata variable rename; source assertions retained and no physical computation replayed."
+    },
+    {
+      "id": "EMPTY_OVERLAY_DIRECTORY_CREATE_GUARD",
+      "class": "implementation",
+      "status": "resolved",
+      "evidence_refs": [
+        "OVERLAY_INCIDENT",
+        "OVERLAY_FINAL"
+      ],
+      "next_action": "Resolved by target-file absence checks and exclusive creation; the first attempt wrote no target file."
+    }
+  ],
+  "next_actions": [
+    {
+      "id": "FINISH_R9",
+      "owner": "/root",
+      "stage": "R9",
+      "action": "Complete and verify the final LaTeX/PDF, bind report identities and mark R9 complete.",
+      "evidence_refs": [
+        "REPORT_MARKDOWN",
+        "CONTRACT"
+      ]
+    },
+    {
+      "id": "FINISH_R10",
+      "owner": "/root",
+      "stage": "R10",
+      "action": "Complete actual publication/delivery acknowledgements, preserve artifact identities and handoff, then close R10.",
+      "evidence_refs": [
+        "HANDOFF",
+        "DAG_CHECK",
+        "OVERLAY_FINAL"
+      ]
+    },
+    {
+      "id": "NEXT_THEORY_APPLICATION",
+      "unit_id": "HH_CORRELATED_ENDPOINT_ENCLOSURE",
+      "status": "not_run",
+      "action": "Implement and evaluate the reviewed common-input residual/endpoint contract.",
+      "evidence_refs": [
+        "CONTRACT",
+        "HANDOFF"
+      ]
+    }
+  ],
+  "scientific_decision": "PROMOTE_SCOPED",
+  "carried_physical_baseline": {
+    "loop": "PHYS14",
+    "source_commit": "087a16f28d0ee4fc7ae74ae50bfcafe578716e85",
+    "source_tree": "61a4dc1ed1bf42530ed8fda9596a91962e9912e7"
+  },
+  "execution_counts": {
+    "new_atomic_source_callbacks": 0,
+    "new_physical_root_solves": 0,
+    "new_physical_history_runs": 0,
+    "new_native_runs": 0,
+    "new_NCP_jobs": 0
+  },
+  "same_file_preconditioner": {
+    "file": "inputs/ncp07_additions/results/full/UNIFORM_ARITHMETIC.json",
+    "q_upper": "0.00011736830563768177",
+    "q_binary64_hex": "3f1ec474231fbe16",
+    "binding": "fixed_C, abs_IminusCHp majorant, qArithmetic and exact binary radius from one original file"
+  },
+  "strong_no_go_claims": []
+}

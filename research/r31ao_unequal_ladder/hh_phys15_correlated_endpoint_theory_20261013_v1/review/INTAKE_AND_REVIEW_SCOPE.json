@@ -1,0 +1,121 @@
+{
+  "schema": "WU088_HH_PHYS15_REVIEW_INTAKE_V1",
+  "created_utc": "2026-10-12T14:53:06.734173+00:00",
+  "reviewer": "/root/hh_phys15_review",
+  "workflow_version": "1.0.0",
+  "candidate_design_participation": false,
+  "candidate_modifications": false,
+  "scientific_reexecution_count": 0,
+  "cloud_mutation_count": 0,
+  "source_root": "/workspace/scratch/b826cbaab54f/HH_PHYS14_20261012_v1",
+  "sources": [
+    {
+      "path": "HANDOFF_KO.md",
+      "bytes": 4631,
+      "sha256": "22bf72d6446486f2307752d2fd304b878f6408345584a31d52786f86205d0e99",
+      "read_scope": "full"
+    },
+    {
+      "path": "SCIENTIFIC_CONTRACT.md",
+      "bytes": 4821,
+      "sha256": "e4eae1f5687830461ea18bb54129623f3c6aad19e00e495cf9ce318b47df8f73",
+      "read_scope": "full"
+    },
+    {
+      "path": "NEXT_DAG.json",
+      "bytes": 13190,
+      "sha256": "f084eb0cd663000407ac597c6337b57eb3a73cd21905748df35233b5ec14340a",
+      "read_scope": "inherited nodes and correlated endpoint successor"
+    },
+    {
+      "path": "theory/THEORY_CANDIDATE_KO.md",
+      "bytes": 25037,
+      "sha256": "0eb0a8374470498e9320e0a6191d72d0a5f5e15c0162a7f633b5e3e52f2da125",
+      "read_scope": "full 422 lines"
+    },
+    {
+      "path": "inputs/phys11/SOURCE_TO_CARRY_MAP_KO.md",
+      "bytes": 17284,
+      "sha256": "b2ec61d8fe9074c6cceaad3d1aa2f864e023ae90a71a7e95875d70ee63e51d90",
+      "read_scope": "full 207 lines; historical availability claims read as dated history"
+    },
+    {
+      "path": "src/phys14_advance.py",
+      "bytes": 25348,
+      "sha256": "d20d9797278b8da71d38a3db229325dc7792d3991863f07bcdb7f72f2ba5567a",
+      "read_scope": "full 517 lines; read only; no import or execution"
+    },
+    {
+      "path": "inputs/ncp07/candidate/src/phys04_transport.rs",
+      "bytes": 8159,
+      "sha256": "aa7b7ebc83ce1c191fdfbf7039f2a1810caff22ec0744d9802f53832770f6b97",
+      "read_scope": "full"
+    },
+    {
+      "path": "inputs/ncp07/candidate/src/phys04_mixed.rs",
+      "bytes": 8969,
+      "sha256": "0fa10fdea11cb24aa1a191a2ea81cf4c8442299fde7278a191553b42a26585d3",
+      "read_scope": "full"
+    },
+    {
+      "path": "inputs/ncp07/results/first_half/SOURCE_BOX.json",
+      "bytes": 57807,
+      "sha256": "36247ef5ac3bce4b114aac41fe5d85c2015488183ba32b77f9051cc7d25b77b4",
+      "read_scope": "schema and captured stage/energy/sigma/heat leaves"
+    },
+    {
+      "path": "inputs/ncp07/results/full/SOURCE_BOX.json",
+      "bytes": 57972,
+      "sha256": "cf1b48df2c299187a03ab501b1169e2d559c5959bf50892d7b749c65f81ff64d",
+      "read_scope": "schema and captured stage/energy/sigma/heat leaves"
+    },
+    {
+      "path": "inputs/ncp07/results/first_half/PREBE.json",
+      "bytes": 200124,
+      "sha256": "bb293bb9b915f1093bacf5a9878583993f96897ee277e73a445350ea5c3eb3f7",
+      "read_scope": "captured birth amount leaf"
+    },
+    {
+      "path": "inputs/ncp07/results/full/PREBE.json",
+      "bytes": 200052,
+      "sha256": "966fe63bbb1e886f3a85ec38bf69ed05920623407b847df19be30b1c21b9c7aa",
+      "read_scope": "captured birth amount leaf"
+    },
+    {
+      "path": "inputs/ncp07/results/first_half/C2_DOMAIN.json",
+      "bytes": 3002,
+      "sha256": "1875f912d6002f0bb7b3ca12c74eaa07ad99662bc4505aa23a969b20925a7488",
+      "read_scope": "schema and original convex gas box"
+    },
+    {
+      "path": "inputs/ncp07/results/full/C2_DOMAIN.json",
+      "bytes": 3016,
+      "sha256": "d157fa72a281680ca779072b16fddfa74e7f651186b50da4d6954cd3c4ed67cd",
+      "read_scope": "schema and original convex gas box"
+    },
+    {
+      "path": "review/DECISION.json",
+      "bytes": 17195,
+      "sha256": "2ccf534271f2c4052247685407f0240c20b5b2ed0f604a350c6aa3e608de38f4",
+      "read_scope": "scoped claims, inherited premises and separate proof/implementation authority"
+    }
+  ],
+  "review_targets": [
+    "Common initial gas/photon/guard state and same global lambda,b throughout both histories",
+    "Stage-specific captured density and source normalization, with Full/second-half common endpoint leaves",
+    "Exact remap then birth then absorption chronology and source-aligned denominator",
+    "Exact gas residual difference and the sign convention for two-half minus Full",
+    "Derivative/integral inverse conditions and convex-domain support",
+    "Observable temperature/electron/thermal transfer, including finite-temperature denominator",
+    "Photon number and captured energy/heat ledger compatibility",
+    "Claims linked to actual derivations and arithmetic evidence; theoretical and executed status separated"
+  ],
+  "source_findings": [
+    "The first-half and Full source domains use the same captured convex gas X.",
+    "First-half and Full density leaves differ and must remain stage-specific.",
+    "Full and second-half endpoint leaves agree by PHYS14 source-reuse theorem.",
+    "Captured full birth amount is exactly twice the captured half amount for this input.",
+    "The exact group closure is for the geometric isotropic source-aligned subfamily, with common rho and normalized weights.",
+    "Prior PHYS14 source/carry/root results are reused under their established premises."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "WU088_HH_PHYS15_WOLFRAM_ALGEBRA_V1",
+  "role": "Independent symbolic simplification of four rational identities",
+  "date_KST": "2026-10-13",
+  "tool": "Wolfram Language evaluator",
+  "command": "With[{a=1/(1+t), af=1/(1+2t)}, FullSimplify[{a^2-af+t^2/((1+t)^2(1+2t)), a^2+a-2af-t/((1+t)^2(1+2t)), ct w/p-ct(w-dw)/(p-de)-(ct dw-(ct w/p)de)/(p-de), eta s1/(1+eta s1)^2-eta s2/(1+eta s2)^2-eta(s1-s2)(1-eta^2 s1 s2)/((1+eta s1)^2(1+eta s2)^2)}, Assumptions->{t>=0,p>de,p>0,eta>=0,s1>s2>0}]]",
+  "identities": [
+    "A^2-A_F=-C2",
+    "A^2+A-2A_F=C1",
+    "finite temperature difference formula",
+    "beta(sigma23)-beta(sigma24) factorization"
+  ],
+  "actual_result": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Out[1]= {0, 0, 0, 0}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "status": "PASS",
+  "physical_source_calls": 0,
+  "physical_root_calls": 0,
+  "physical_history_runs": 0
+}

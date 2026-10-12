@@ -1,3 +1,21 @@
+# WU088_HH 최신 연구: PHYS15 상관된 endpoint 결함 이론
+
+PHYS15는 같은 COMMON에서 출발한 Full과 PHYS14의 실제 two-half 경로를 하나의 잔차로 연결한다. 기체 잔차, 광자 흡수 결함의 일곱 항과 원 격자의 부호 관계, 밀도·fhat source 정규화 연결, 유한 온도 차이와 공통 adjoint 기여를 유도했다. 원 Full의 fixed_C·B·radius·q=0.00011736830563768177을 함께 재사용해 전처리 잔차에서 endpoint 차이로 가는 포함식을 구성했다.
+
+**현재 상태:** 독립 검토에서 이론 주장 9개를 PROMOTE_SCOPED로 채택했고 남은 차단 지적은 0개다. 현재 채택된 이론은 PHYS15이며, PHYS14는 재사용하는 물리 계산 기준점으로 유지한다. 이 이론 단위의 새 원자 source 평가, 물리적 root solve와 물리 history 실행은 모두 0회다.
+
+- [PHYS15 상세 유도](research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/theory/CORRELATED_ENDPOINT_THEORY_KO.md)
+- [현재 개발계획](CURRENT_DEVELOPMENT_PLAN.json)
+- [독립 판정](research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/review/DECISION.json)
+- [endpoint 포함 계산 계약](research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/contracts/ENDPOINT_ENCLOSURE_CONTRACT.json)
+- 다음 계산: **HH_CORRELATED_ENDPOINT_ENCLOSURE**. 같은 입력의 상관관계를 유지해 잔차, 기체·광자 endpoint 차이, ΔT/e/w/ne와 공통 inverse를 거친 항별 기여를 포함한다.
+
+정식 보고서와 최종 전달 기록은 현재 마무리 중이다.
+
+현재 운영 규약은 physmath-research-loop built-in 1.0.0의 THEORY R1–R10이다. 기존 과학 원본과 source·C²·근 전제를 재사용하고, PR49 위에 연구 브랜치를 추가하는 방식으로 게시한다. 원 전역 REI DAG와 기존 연구 기록은 각 시점의 근거로 보존한다.
+
+## 보존된 PHYS14 및 이전 안내
+
 # WU088_HH 최신 연구: PHYS14 공동 carry의 두 번째 half
 
 PHYS14를 독립 검토 후 PROMOTE_SCOPED로 채택했다. 같은 COMMON과 전역 λ,b를 유지한 실제 두-half 계열에서 새 두 번째 implicit 단계의 유일 근과 일차·혼합·유한 온도·전자 응답을 포함했다. 유한 HH 온도 응답은 [-18.93685,-9.75153] μK, mixed 온도 interaction은 [1.96632,3.44806] pK다. 첫 half의 광자 기억은 열에너지를 늘리면서 온도를 추가로 낮춘다.

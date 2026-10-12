@@ -1,3 +1,21 @@
+# Current priority - PHYS15 correlated endpoint theory, 2026-10-13 KST
+
+Read CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/theory/CORRELATED_ENDPOINT_THEORY_KO.md. The current theory constructs the same-COMMON residual, seven photon absorption sectors and their scoped signs, the exact density/fhat source bridge, the original Full preconditioned endpoint bound, and finite T/e/w/adjoint readouts. Reuse the actual PHYS14 two-half carry and original Full source. The original Full UNIFORM_ARITHMETIC.json supplies fixed_C, B, radius and q=0.00011736830563768177 together.
+
+Current status: Independent review accepted nine scoped theoretical claims as PROMOTE_SCOPED with no remaining blocking findings. PHYS15 is the current accepted theory; PHYS14 remains its carried physical baseline. The accepted decision is recorded in research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/review/DECISION.json. The successor is HH_CORRELATED_ENDPOINT_ENCLOSURE: evaluate the correlated residual and endpoint/observable intervals with existing source and carry data. This theory unit has zero new atomic source callbacks, physical root solves or physical history runs.
+
+## Current workflow policy override
+
+The user's 2026-10-12 explicit physmath-research-loop instructions select built-in 1.0.0, THEORY R1-R10, for this request. This replaces the historical v4 harness acquisition and default routing in preserved entries below. Use the current common research, evidence and handoff policies; use the original legacy harness when the user explicitly selects that version. This procedural correction keeps the fixed scientific models, inputs, established results and original scientific acceptance criteria.
+
+Current user instructions have priority over project defaults. Carry forward authorization already evidenced in the session, and complete read-only or otherwise authorized steps without duplicate confirmation. Respect actual access controls and resolve a genuinely new dependency at its source. Reuse completed evidence when its identities and premises persist; validate changed dependencies and then continue the research.
+
+Publish an additive branch stacked on PR49 head 087a16f28d0ee4fc7ae74ae50bfcafe578716e85. Root binds actual publication identities and delivery acknowledgements when publishing. Preserve existing files and original global REI DAG evidence, and advance the PHYS15 theory node with its actual PROMOTE_SCOPED decision. The current inherited-data successor plan records heavy_queue=[] and launch=false. Execution routing follows its actual needs and the authorized task; native and microscopic lanes retain their existing scientific conditions. Use selective publication readback at the level needed to resolve an actual remaining identity question.
+
+## Preserved PHYS14 and earlier instructions
+
+The exact preceding entry follows. Current priorities and workflow authority are stated above.
+
 # Current development priority - PHYS14 carried second half, 2026-10-12
 
 Read CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/SCIENTIFIC_CONTRACT.md, REPORT_KO.md, HANDOFF_KO.md, NEXT_DAG.json and review/DECISION.json in that core. PHYS14 is independently PROMOTE_SCOPED for the source-aligned geometric-isotropic two-half family. The same COMMON and global lambda,b apply to both halves. First-half source/C2/root premises are inherited; the second implicit stage and its responses are newly enclosed.

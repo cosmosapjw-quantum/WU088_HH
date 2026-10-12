@@ -1,0 +1,193 @@
+{
+  "schema": "WU088_HH_PHYS15_PHOTON_FORMULA_CONTRACT_V1",
+  "scope": "Theoretical identities and bound-ready formulas; no new endpoint numerical enclosure",
+  "vector_layout": {
+    "retained_photons": [
+      0,
+      32
+    ],
+    "guard_number": 33,
+    "guard_energy": 34
+  },
+  "units": {
+    "N": "photons/H",
+    "G_N": "photons/H",
+    "G_U": "eV/H",
+    "kappa": "s^-1",
+    "a": "s^-1",
+    "tau": "dimensionless",
+    "P": "photons/H",
+    "r_x": "H ionized fraction",
+    "r_w": "eV/H"
+  },
+  "shared_inputs": [
+    "z0",
+    "lambda",
+    "b",
+    "captured h",
+    "captured source amount M",
+    "linked rho and rho^2",
+    "captured energy/sigma/heat/CHI",
+    "same endpoint source nH2"
+  ],
+  "definitions": {
+    "Q1": "R*z0+b*J",
+    "A1": "diag(1/(1+h*a1*(1-x1))), guards=1",
+    "A": "diag(1/(1+h*a2*(1-x2))), guards=1",
+    "AF": "diag(1/(1+2*h*a2*(1-x2))), guards=1",
+    "B": "I-A",
+    "BF": "I-AF",
+    "tau": "h*diag(a2*(1-x2)), guards=0",
+    "C1": "tau*A^2*AF",
+    "C2": "tau^2*A^2*AF",
+    "DeltaA1": "h*(kappa2-kappa1)*A1*A",
+    "DeltaR": "linked original-grid R(rho)^2-R(rho^2)"
+  },
+  "absorption_residual_sectors": [
+    {
+      "id": "opacity",
+      "expression": "-(I-B*R)*DeltaA1*Q1"
+    },
+    {
+      "id": "absorption_remap_order",
+      "expression": "B*[R,A]*Q1"
+    },
+    {
+      "id": "first_absorption_node",
+      "expression": "B*(I-R)*R*z0"
+    },
+    {
+      "id": "stock_absorption_step",
+      "expression": "C2*R^2*z0"
+    },
+    {
+      "id": "remap_split",
+      "expression": "BF*DeltaR*z0"
+    },
+    {
+      "id": "birth_redshift",
+      "expression": "b*B*A*(R-I)*J"
+    },
+    {
+      "id": "birth_absorption_time",
+      "expression": "-b*C1*J"
+    }
+  ],
+  "residual": "h*(Bgas1(g1)-Bgas2(g2))+sum_j nu_j*DeltaP_j",
+  "full_endpoint_solve": "(I-2*h*mean_J_F)*(g2-gF)=r",
+  "actual_photon_endpoint_extra": "For j=0..32: h*a2_j*Q2_j*(x2-xF)/(D2_j(g2)*D2_j(gF)); guards=0",
+  "bound_construction": [
+    "Factor differences before interval arithmetic",
+    "Preserve linked coefficients and common inputs",
+    "Retain all signed derivative slots",
+    "Form photon and guard moments from same expressions",
+    "Evaluate alternative valid identities and intersect",
+    "Use the same 4D implicit inverse for all sector attributions"
+  ],
+  "claims": [
+    {
+      "id": "P15_PHOTON_OUTGOING_FACTORIZATION",
+      "statement": "Exact common-input outgoing factorization equation (13), with general endpoint opacity secant (49)-(50)",
+      "basis": [
+        "derived",
+        "exact-arithmetic checked"
+      ],
+      "scope": "Source-aligned geometric isotropic family; same COMMON; full birth exactly twice half capture",
+      "evidence": [
+        "PHOTON_DEFECT_THEOREM_KO.md",
+        "PHOTON_EXACT_CHECKS.json"
+      ],
+      "new_vs_reused": "New paired composition identity using reused PHYS14 remap and source definition"
+    },
+    {
+      "id": "P15_PHOTO_RESIDUAL_FACTORIZATION",
+      "statement": "Exact seven-sector absorption residual factorization equation (14)",
+      "basis": [
+        "derived",
+        "exact-arithmetic checked"
+      ],
+      "scope": "Full residual at actual two-half gas endpoint g2; 33 groups plus guards",
+      "evidence": [
+        "PHOTON_DEFECT_THEOREM_KO.md",
+        "PHOTON_EXACT_CHECKS.json"
+      ],
+      "new_vs_reused": "New forcing connecting photon composition to gas Full residual"
+    },
+    {
+      "id": "P15_COMMUTATOR_ABSORPTION_SIGN",
+      "statement": "B[R,A]Q1 is componentwise nonnegative",
+      "basis": [
+        "derived",
+        "exact captured-leaf conditions checked"
+      ],
+      "scope": "Physical Q1>=0 and 0<=x2<=1, actual active decreasing HI sigma, zero inactive opacity",
+      "evidence": [
+        "PHOTON_DEFECT_THEOREM_KO.md section 4.1",
+        "SECTOR_SIGN_CHECKS.json"
+      ],
+      "new_vs_reused": "New sector sign using actual sigma order"
+    },
+    {
+      "id": "P15_CHRONOLOGY_BALANCE",
+      "statement": "C2 R^2 z0-b C1 J=C1[tau R^2 z0-bJ] determines each same-opacity chronology sector sign",
+      "basis": [
+        "derived",
+        "exact-arithmetic checked"
+      ],
+      "scope": "Same denominator source at g2 and captured M_F=2M",
+      "evidence": [
+        "PHOTON_DEFECT_THEOREM_KO.md section 4.2",
+        "PHOTON_EXACT_CHECKS.json"
+      ],
+      "new_vs_reused": "New local stock-versus-birth criterion"
+    },
+    {
+      "id": "P15_BIRTH_REDSHIFT_SIGN",
+      "statement": "bBA(R-I)J has positive total ionization absorption and negative thermal deposition; its direct temperature covector is negative",
+      "basis": [
+        "derived",
+        "exact captured-leaf conditions checked"
+      ],
+      "scope": "b>0,x2<1, original source node24 and adjacent redshift branch; temperature needs w>0,particle_count>0",
+      "evidence": [
+        "PHOTON_DEFECT_THEOREM_KO.md section 4.3",
+        "SECTOR_SIGN_CHECKS.json"
+      ],
+      "new_vs_reused": "New actual captured-leaf sector theorem"
+    },
+    {
+      "id": "P15_HEAT_CAPTURE_IDENTITY",
+      "statement": "Captured HI heat equals exact(E)-exact(CHI) on all 17 active nodes",
+      "basis": [
+        "established from captured bits",
+        "derived exact subtraction rationale"
+      ],
+      "scope": "Original active energy,CHI,heat capture; inactive absorption=0",
+      "evidence": [
+        "PHOTON_DEFECT_THEOREM_KO.md section 6.1",
+        "PHOTON_EXACT_CHECKS.json",
+        "SECTOR_SIGN_CHECKS.json"
+      ],
+      "new_vs_reused": "New identity check permitting chemical-energy moment reduction; captured leaf authority preserved"
+    },
+    {
+      "id": "P15_PHOTON_GAS_ENERGY_LEDGER",
+      "statement": "H chemical+thermal residual equals source-time difference plus (1-rho)(E.P1-bME24)-Delta photon+guard energy",
+      "basis": [
+        "derived",
+        "exact-arithmetic checked"
+      ],
+      "scope": "Covector (CHI_H,0,0,1), same-COMMON full residual; original guard energy normalization",
+      "evidence": [
+        "PHOTON_DEFECT_THEOREM_KO.md equations (35)-(46)",
+        "PHOTON_EXACT_CHECKS.json"
+      ],
+      "new_vs_reused": "New correlated moment residual; reuses PHYS14 number/energy remap invariants"
+    }
+  ],
+  "remaining_parent_work": [
+    "Independent review of complete derivations",
+    "Integrate with source-time gas theory and actual root/domain evidence",
+    "Select next correlated endpoint inclusion execution if requested by root loop"
+  ]
+}

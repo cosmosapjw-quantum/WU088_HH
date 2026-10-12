@@ -1,0 +1,382 @@
+\section{연구 대상과 재사용 전제}\label{sec:scope}
+연구 질문은 같은 COMMON과 같은 미래 제어변수에서 Full과 실제 two-half의 기체·광자 endpoint 차이를 어떻게 구성하는가이다. PHYS14는 실제 첫 half의 기체 및 광자 carry를 둘째 half에 전달했다. 여기서는 그 완성된 경로와 같은 종료 시각의 Full을 비교한다. 핵심은 각 경로의 큰 포함을 독립적으로 뺄 때 반복되는 입력을 식에서 먼저 공유하는 것이다.
+
+고정된 admissible 계수 선택을 $\alpha$라 하고, $\theta=(\lambda,b)\in[0,1]^2$를 두 경로에 동일하게 적용한다. $\lambda$는 HH 항, $b$는 광자 생성량에 곱한다. $\alpha$에는 COMMON, 과거 HH ON 이력, 원 source leaves, 기하학 및 정상화 angular weight가 포함된다. 모든 정리는 같은 $\alpha,\theta$에 대한 pointwise 식이다. 그 관계를 유지한 포함은 해당 계열 전체에 적용된다.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\textwidth}{@{}p{11mm}X p{49mm}@{}}
+\toprule
+전제 & 확인된 근거 & 이번 사용\\
+\midrule
+P1 & Full과 first half의 COMMON binary payload가 시간 간격 header를 제외하고 같다. & 같은 $g_0,Z_0,\lambda,b$\\
+P2 & PHYS14의 geometric isotropic 계열과 정확한 39-state closure & $\R=\R(\rho)$, $\RF=\R(\rho^2)$\\
+P3 & $g_1,g_2,g_F$가 원 convex source 영역 $X$ 내부에 있고 원 source 계열이 $C^2$다. & 연결 선분의 평균 Jacobian\\
+P4 & Full과 둘째 half의 종료 시각·density·원자 leaves가 같다. & 공통 함수 $\BB_2$\\
+P5 & Captured $M_F=2M$, HI active 16--32, He photo cross section은 0 & 같은 birth와 HI survival\\
+P6 & Full의 고정 $C$와 whole-$X$ 전처리 derivative 포함 & 잔차에서 결함으로 전달\\
+P7 & 원 source의 $\fh=n_{\rm He}^{\rm stored}/n_H$와 $C_T$ & source bridge와 관측량\\
+\bottomrule
+\end{tabularx}
+\caption{PHYS09--14에서 재사용하는 전제와 PHYS15의 대응. 실제 파일 identity와 적용 범위는 원 binding 기록에 있다.}
+\label{tab:premises}
+\end{table}
+
+시간과 단계 길이는
+\begin{align}
+t_0&=160000000000\ {\rm s},&
+h&=625000000\ {\rm s},\label{eq:time}\\
+t_1&=t_0+h,&
+t_2&=t_0+2h=161250000000\ {\rm s}.
+\end{align}
+기하학은 세 방향의 captured $H_i=10^{-14}\,{\rm s}^{-1}$가 같은 등방 선택이다. 원 ray 표현에서 수송 비율은 $\rho=\exp[-\ex(H)\ex(h)]$로 공통이며, 실제 정상화 source weight의 합은 1이다. 이 선택이 기존 coefficient enclosure에 들어간다는 PHYS14의 geometry 검토를 재사용한다.\cite{phys14,bindings}
+
+계산 상수는 원 IEEE binary64 leaf가 나타내는 정확한 실수로 해석한다. 표시용 소수와 underlying exact 값은 구별한다. 원 source 함수·근 포함과 이번 유도·표적 검산의 역할은 마지막 검증 절에서 연결한다.
+
+\section{상태, 단위, source와 실제 단계식}\label{sec:stages}
+\subsection{기체와 35차원 photon--guard 상태}
+기체 좌표와 광자 상태를
+\begin{equation}
+g=(x,y_1,y_2,w)^{\mathsf T},\qquad
+Z=(N_0,\ldots,N_{32},G_N,G_U)^{\mathsf T}
+\label{eq:states}
+\end{equation}
+로 쓴다. $x$는 HII 분율, $y_1,y_2$는 HeII·HeIII 분율, $w$는 $\mathrm{eV/H}$다. $N_j,G_N$은 $\mathrm{photons/H}$, $G_U$는 $\mathrm{eV/H}$다. 전체 상태는 기체 4개와 photon--guard 35개, 합계 39개 실수로 닫힌다. 값과 $U=\partial_\lambda$, $V=\partial_b$, $W=\partial_\lambda\partial_b$의 네 carry slot에는 같은 대수 관계를 적용한다.
+
+원 hat remap $\R$은 아래 경계로 나간 광자의 number와 energy를 두 guards에 더한다. 기존 guard energy는 $\rho$배 한다. 행벡터
+\begin{equation}
+\mathfrak n=(1,\ldots,1,1,0),\qquad
+\mathfrak u=(E_0,\ldots,E_{32},0,1)
+\label{eq:rows}
+\end{equation}
+는 각각 총 photon number와 energy를 읽는다. 따라서
+\begin{equation}
+\mathfrak n\R=\mathfrak n,\qquad \mathfrak u\R=\rho\mathfrak u.
+\label{eq:remapmom}
+\end{equation}
+단위가 다른 photon--guard 성분의 norm이 필요하면 해당 단위와 척도를 함께 지정한다.
+
+\subsection{생존·흡수 연산자와 birth}
+Source 시각 $k=1,2$에서
+\begin{equation}
+a_{k,j}=\ex(c)\ex(n_k)\ex(\sigma_j),\qquad
+\kappa_{k,j}(g)=a_{k,j}(1-x)
+\label{eq:opacity}
+\end{equation}
+이며 단위는 $\mathrm{s}^{-1}$다. HI active group은 $j=16,\ldots,32$이다. Half와 Full의 survival 연산자는
+\begin{align}
+A_k(g)&=\diag\!\left[\frac1{1+h\kappa_{k,j}(g)}\right],
+&L_k(g)&=I-A_k(g),\label{eq:halfA}\\
+A_F(g)&=\diag\!\left[\frac1{1+2h\kappa_{2,j}(g)}\right],
+&L_F(g)&=I-A_F(g).
+\label{eq:fullA}
+\end{align}
+두 guard 성분에서는 $A=1,L=0$이다. 이 정의는 PHYS14의 source-aligned denominator를 따른다.
+
+광흡수 한 개의 기체 방향은
+\begin{equation}
+\nu_j=(1,0,0,\epsilon_j)^{\mathsf T}.
+\label{eq:nu}
+\end{equation}
+$\epsilon_j$는 원 captured HI heat leaf이다. $\mathsf V$의 active $j$열을 $\nu_j$로 두고 inactive 및 guard 열은 0으로 둔다.
+
+Captured half birth amount와 Full amount는 정확히
+\begin{equation}
+M=\frac{7378697629483821}{2361183241434822606848},
+\qquad M_F=2M,\qquad J=Me_{24}
+\label{eq:birth}
+\end{equation}
+이다. 원 bits는 각각 \texttt{3eca36e2eb1c432d}, \texttt{3eda36e2eb1c432d}다. $M$의 단위는 photons/H이고 birth는 수송 뒤, 흡수 전에 들어간다.\cite{bindings}
+
+\subsection{세 경로를 같은 COMMON에 결박한다}
+실제 two-half의 absorption 전후 상태는
+\begin{align}
+Q_1&=\R Z_0+bJ,&
+Z_1&=A_1(g_1)Q_1,&
+P_1&=L_1(g_1)Q_1,\label{eq:stage1}\\
+Q_2&=\R Z_1+bJ,&
+Z_2&=A_2(g_2)Q_2,&
+P_2&=L_2(g_2)Q_2.
+\label{eq:stage2}
+\end{align}
+$P_k$는 각 단계의 integrated absorbed photons/H다. Full의 incoming은
+\begin{equation}
+Q_F=\RF Z_0+2bJ.
+\label{eq:qfull}
+\end{equation}
+
+비광자 source는
+\begin{equation}
+\BB_k(g,\lambda)
+=F_k^{\rm np}(g)+\lambda q_k(g)\nuH-2H_k w\ew,\qquad
+\nuH=(1,0,0,-\chi_H)^{\mathsf T}.
+\label{eq:bgas}
+\end{equation}
+실제 gas 단계식은
+\begin{equation}
+g_1-g_0=h\BB_1(g_1)+\mathsf VP_1,\qquad
+g_2-g_1=h\BB_2(g_2)+\mathsf VP_2.
+\label{eq:gassteps}
+\end{equation}
+Full residual의 부호를
+\begin{equation}
+\HF(g)=g-g_0-2h\BB_2(g)-\mathsf V L_F(g)Q_F,\qquad
+\HF(g_F)=0
+\label{eq:fullresidual}
+\end{equation}
+로 고정한다.
+
+비교점 $g_2$의 가상 Full photon은
+\begin{equation}
+\widehat Z_F=A_F(g_2)Q_F,\qquad
+\widehat P_F=L_F(g_2)Q_F
+\label{eq:virtualfull}
+\end{equation}
+다. 실제 Full photon은 $Z_F=A_F(g_F)Q_F$다. 첫 비교점은 residual을 구성하고, 두 번째 비교점은 최종 photon endpoint 차이를 정의한다.
+
+\section{상관된 기체 결함의 정확한 잔차}\label{sec:residual}
+\begin{theorem}[같은 COMMON의 residual]\label{thm:residual}
+$p=P_1+P_2-\widehat P_F$, $r=\HF(g_2)$라 두면
+\begin{equation}
+\boxed{r=h[\BB_1(g_1)-\BB_2(g_2)]+\mathsf Vp.}
+\label{eq:residualdecomp}
+\end{equation}
+\end{theorem}
+\begin{proof}
+식 \eqref{eq:gassteps}를 더하면
+$g_2-g_0=h\BB_1(g_1)+h\BB_2(g_2)+\mathsf V(P_1+P_2)$다.
+같은 $g_0,Q_F,\lambda,b$를 쓰는 \eqref{eq:fullresidual}에 대입하면 결론을 얻는다. COMMON의 동일성이 항등식 단계에서 반영된다.
+\end{proof}
+
+중간 gas 이동도 같은 끝 stage 함수로 결박한다. 다음을 정의한다.
+\begin{align}
+\delta g_{21}&=g_2-g_1,&
+\delta\BB_t(g)&=\BB_1(g)-\BB_2(g),\\
+\overline J_{12}
+&=\int_0^1D_g\BB_2(g_1+s\delta g_{21})\,\dd s.
+\end{align}
+미적분학의 기본정리에서
+\begin{equation}
+\BB_1(g_1)-\BB_2(g_2)
+=\delta\BB_t(g_1)-\overline J_{12}\delta g_{21}
+\end{equation}
+이므로 비광자 residual 부분은
+\begin{equation}
+\boxed{
+r_g=h\delta\BB_t(g_1)
+-h\overline J_{12}\bigl[h\BB_2(g_2)+\mathsf VP_2\bigr].
+}
+\label{eq:gasdecomp}
+\end{equation}
+첫 항은 source 시각의 계수 변화, 둘째 항은 실제 기체 이동이다. 제\ref{sec:bridge}절에서 첫 시각과 끝 시각의 source를 정확히 연결한다.
+
+이 구성은 독립적인 source interval 둘을 빼는 대신 동일 함수의 유한 차이를 평균 도함수에 결박한다. Interval의 입력 의존성과 이러한 표현 선택의 일반적 배경은 Rump의 제6절, slope 표현은 제11.5절, 비선형 포함은 제13절을 참고할 수 있다.\cite{rump} 아래의 chronology와 source 연결은 이 프로젝트의 단계식에서 직접 유도한다.
+
+\section{광자 absorption 결함의 일곱 작용}\label{sec:photon}
+기준점을 $g_2$에 두고
+\begin{align}
+A&=A_2(g_2),&L&=I-A,&
+A_F&=A_F(g_2),&L_F&=I-A_F,\\
+\tau&=h\diag\kappa_2(g_2),&
+\Delta A_1&=A_1(g_1)-A,&
+\Delta\R&=\R^2-\RF
+\end{align}
+로 쓴다. 대각 연산자
+\begin{equation}
+C_1=\tau A^2A_F,\qquad C_2=\tau^2A^2A_F
+\label{eq:c12}
+\end{equation}
+는 제\ref{sec:bound}절의 gas 전처리 행렬 $C$와 구별한다. Scalar $t=h\kappa\ge0$에서
+\begin{align}
+C_1(t)&=\frac{t}{(1+t)^2(1+2t)},&
+C_2(t)&=\frac{t^2}{(1+t)^2(1+2t)},\label{eq:c12scalar}\\
+A^2-A_F&=-C_2,&A^2+A-2A_F&=C_1.
+\label{eq:c12identities}
+\end{align}
+
+\begin{theorem}[같은 입력의 integrated absorption 분해]\label{thm:photon}
+$[\R,A]=\R A-A\R$라 두면
+\begin{equation}
+\boxed{\begin{aligned}
+p={}&-(I-L\R)\Delta A_1Q_1+L[\R,A]Q_1+L(I-\R)\R Z_0\\
+&+C_2\R^2Z_0+L_F\Delta\R Z_0\\
+&+bLA(\R-I)J-bC_1J.
+\end{aligned}}
+\label{eq:seven}
+\end{equation}
+\end{theorem}
+\begin{proof}
+$L_1=L-\Delta A_1$을 실제 단계식에 넣으면
+\[
+p=-(I-L\R)\Delta A_1Q_1+LQ_1+L\R A Q_1+bLJ-L_FQ_F.
+\]
+$\R A=A\R+[\R,A]$, $Q_1=\R Z_0+bJ$를 대입한다. COMMON 부분에서
+\[
+L\R Z_0+LA\R^2Z_0-L_F\RF Z_0
+=L(I-\R)\R Z_0+C_2\R^2Z_0+L_F\Delta\R Z_0
+\]
+이고 birth 부분에서
+\[
+b(2L+LA\R-2L_F)J=bLA(\R-I)J-bC_1J
+\]
+이다. 두 식은 $L+LA=I-A^2$와 \eqref{eq:c12identities}에서 나온다.
+\end{proof}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\textwidth}{@{}p{57mm}X@{}}
+\toprule
+흡수량의 항 & 실제로 분리한 작용\\
+\midrule
+$-(I-L\R)\Delta A_1Q_1$ & 첫 stage와 끝점 기준 opacity의 변화\\
+$L[\R,A]Q_1$ & 중간 흡수와 다음 수송의 순서\\
+$L(I-\R)\R Z_0$ & 서로 다른 시점의 흡수를 해당 원 node에서 평가하는 보정\\
+$C_2\R^2Z_0$ & 기존 광자의 두 half BE 흡수와 Full BE 흡수\\
+$L_F\Delta\R Z_0$ & 같은 COMMON spectrum의 수송 분할\\
+$bLA(\R-I)J$ & 먼저 생성된 광자의 추가 redshift\\
+$-bC_1J$ & 총량이 같은 두 birth의 흡수 시점\\
+\bottomrule
+\end{tabularx}
+\caption{정리 \ref{thm:photon}의 일곱 sector. 모든 항은 같은 $Z_0,\lambda,b$를 공유한다.}
+\label{tab:sectors}
+\end{table}
+
+Opacity 차이도 작은 항을 먼저 묶는다.
+\begin{align}
+\Delta A_{1,j}
+&=h[\kappa_{2,j}(g_2)-\kappa_{1,j}(g_1)]A_{1,j}A_j,
+\label{eq:dA}\\
+\kappa_{2,j}-\kappa_{1,j}
+&=c\sigma_j(n_2-n_1)(1-x_2)+a_{1,j}(x_1-x_2).
+\label{eq:dkappa}
+\end{align}
+식 \eqref{eq:dkappa}의 첫 항은 원 captured density 변화이고 둘째 항은 중간 기체 이동이다. 동일 $c,\sigma_j$를 보존하면 두 큰 opacity를 따로 포함하여 빼는 입력 반복을 줄일 수 있다.
+
+\section{원 spectrum에서 얻는 sector의 부호}\label{sec:signs}
+\subsection{중간 흡수와 remap 순서}
+원 branch에서
+\begin{equation}
+\R e_j=(1-\alpha_j)e_j+\alpha_je_{j-1},\qquad
+\alpha_j=(1-\rho)\frac{E_j}{E_j-E_{j-1}},\quad j\ge1.
+\label{eq:alpha}
+\end{equation}
+따라서 commutator의 retained 비영 성분은
+\begin{equation}
+[\R,A]_{j-1,j}
+=\alpha_j(A_j-A_{j-1})
+=\frac{h\alpha_j(\kappa_{2,j-1}-\kappa_{2,j})}
+{(1+h\kappa_{2,j})(1+h\kappa_{2,j-1})}.
+\label{eq:comm}
+\end{equation}
+원 group 0은 HI inactive이므로 guard로 나가는 성분의 survival도 1이며, 그 경계 commutator는 0이다.
+
+\begin{proposition}[흡수--수송 순서의 부호]\label{prop:comm}
+원 cross section, $Q_1\ge0$, $0\le x_2\le1$에서
+\begin{equation}
+\boxed{L[\R,A]Q_1\ge0}
+\label{eq:commsign}
+\end{equation}
+가 성분별로 성립한다.
+\end{proposition}
+\begin{proof}
+Captured cross section은 $\sigma_{16}>\sigma_{17}>\cdots>\sigma_{32}>0$이다. Active output으로 내려가는 edge에서는 $\kappa_{j-1}\ge\kappa_j$, 따라서 $A_j-A_{j-1}\ge0$이다. Threshold edge $16\to15$, 다른 inactive 및 guard output에서는 $L_i=0$이다. 식 \eqref{eq:comm}의 나머지 인수는 비음수다.
+\end{proof}
+$\epsilon_j>0$인 active output에서 $\nu_j$로 사영하므로 이 sector의 직접 $x,w$ forcing은 비음수다.
+
+\subsection{stock과 birth가 경쟁하는 흡수 시점}
+두 대각 chronology 항은
+\begin{equation}
+\boxed{C_2\R^2Z_0-bC_1J=C_1[\tau\R^2Z_0-bJ].}
+\label{eq:balance}
+\end{equation}
+Birth node 24에서
+\[
+\tau_{24}(\R^2Z_0)_{24}\gtreqless bM
+\]
+이 이 sector의 흡수 증가·영·감소를 결정한다. 다른 active group에서는 birth 성분이 0이므로 이 항은 비음수다. 특히 $\R=I,A_1=A$에서는 전체 absorbed-photon 차이가
+\begin{equation}
+p_j=
+\frac{\tau_j}{(1+\tau_j)^2(1+2\tau_j)}
+(\tau_jN_{0,j}-bJ_j)
+\label{eq:scalarbalance}
+\end{equation}
+로 줄어든다. 같은-opacity 한 group에서 stock의 두 번 흡수 효과와 새 birth의 시점 효과를 직접 비교하는 식이다.
+
+\subsection{먼저 생성된 광자의 redshift}
+$\beta_j=\tau_j/(1+\tau_j)^2$, $\eta=hcn_2(1-x_2)$로 두면
+\begin{equation}
+p_{bR}=bLA(\R-I)J
+=bM\alpha_{24}(\beta_{23}e_{23}-\beta_{24}e_{24}).
+\label{eq:birthred}
+\end{equation}
+직접 공통 분모를 취하면
+\begin{equation}
+\beta_{23}-\beta_{24}
+=\frac{\eta(\sigma_{23}-\sigma_{24})(1-\eta^2\sigma_{23}\sigma_{24})}
+{(1+\eta\sigma_{23})^2(1+\eta\sigma_{24})^2}.
+\label{eq:betadiff}
+\end{equation}
+
+\begin{proposition}[birth-redshift의 이온화와 열 방향]\label{prop:birthsign}
+원 captured leaves와 branch에서 $b>0,x_2<1$이면
+\begin{equation}
+\boxed{\boldsymbol1^{\mathsf T}p_{bR}>0,\qquad
+\epsilon^{\mathsf T}p_{bR}<0.}
+\label{eq:birthsign}
+\end{equation}
+\end{proposition}
+\begin{proof}
+전체 $0\le x_2\le1$에서
+\[
+\eta^2\sigma_{23}\sigma_{24}
+\le(hcn_2)^2\sigma_{23}\sigma_{24}
+\simeq0.00013495931272495<1.
+\]
+이 상한과 $\sigma_{23}>\sigma_{24}$는 원 bits의 exact 유리수 비교로 확인되었다. 그러므로 \eqref{eq:betadiff}가 양수다. 또한
+$\epsilon_{23}\sigma_{23}<\epsilon_{24}\sigma_{24}$이고
+$(1+\eta\sigma_{23})^2>(1+\eta\sigma_{24})^2$이므로
+$\epsilon_{23}\beta_{23}<\epsilon_{24}\beta_{24}$다.
+$bM\alpha_{24}>0$를 곱하면 두 부호를 얻는다.
+\end{proof}
+
+따라서 이 sector는 이온화 absorption을 늘리면서 thermal deposition을 줄인다. 현재 기체의 $w,\Pi>0$에 대한 온도 covector
+\begin{equation}
+T_g\,\delta g=C_T\left(\frac{\delta w}{\Pi}
+-\frac{w\,\delta e}{\Pi^2}\right)
+\end{equation}
+로 $\mathsf Vp_{bR}$를 사영한 값도 음수다. 전체 endpoint의 온도 기여는 제\ref{sec:observables}절에서 같은 inverse를 통과시켜 정의한다.\cite{photon_theory,checks}
+
+\section{원 비균일 격자의 remap 분할과 경계}\label{sec:remap}
+PHYS14에서 $\Delta_j=E_j-E_{j-1}$를 사용하여 다음 exact identity를 얻었다.
+\begin{equation}
+\boxed{
+\Delta\R e_j
+=\alpha_j\alpha_{j-1}
+\left[
+\frac{\Delta_{j-1}}{\Delta_j}e_j
+-\left(1+\frac{\Delta_{j-1}}{\Delta_j}\right)e_{j-1}
++e_{j-2}
+\right],\quad j\ge2.
+}
+\label{eq:remapdef}
+\end{equation}
+이는 $\rho E_j,\rho^2E_j\in[E_{j-1},E_j]$ 및
+$\rho E_{j-1}\in[E_{j-2},E_{j-1}]$인 원 branch에 적용된다.
+현재의 captured 격자와 기하학에서 이 branch 조건은 PHYS14에 포함되어 있다.
+
+경계 column은 guard를 포함하여
+\begin{align}
+\Delta\R e_1={}&\alpha_1(\alpha_1+\rho-1)e_1
+-\alpha_1(\alpha_1+\rho)e_0\nonumber\\
+&+\alpha_1e_{G_N}+\rho E_0\alpha_1e_{G_U}.
+\label{eq:boundarydef}
+\end{align}
+$j=0$과 기존 두 guard column의 차이는 0이다. 식
+\eqref{eq:remapdef}--\eqref{eq:boundarydef}의 계수합 및 energy 가중합은 정확히 0이므로
+\begin{equation}
+\mathfrak n\Delta\R=0,\qquad \mathfrak u\Delta\R=0.
+\label{eq:zero_moments}
+\end{equation}
+
+따라서 remap 두 경로가 보존하는 number와 redshifted energy가 같아도 energy node별 분포가 달라진다. 제\ref{sec:photon}절에서는 이 spectrum 차이를 흡수 연산자 $L_F$로 전달한다. 원 captured node의 작은 비균일성과 아래 경계 수지는 그대로 유지한다. 새로운 interval 계산에서도 $\Delta\R$를 큰 두 결과의 차이로 만드는 대신 위 연결된 계수에서 구성한다.\cite{phys14,photon_theory}
+
