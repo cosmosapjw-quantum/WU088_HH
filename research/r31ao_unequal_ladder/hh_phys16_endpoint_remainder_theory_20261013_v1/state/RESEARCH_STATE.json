@@ -6,9 +6,9 @@
   "unit_id": "WU088_HH_PHYS16_THEORY",
   "objective": "Apply PHYS15 same-COMMON exact defect to archived source/carry data and constructively close endpoint/mean-Jacobian/common-adjoint remainder, finite-temperature and birth-sector attribution bounds.",
   "scope": "Inherited source-aligned geometric-isotropic C2 family; each admissible alpha is fixed, the same global lambda,b in [0,1] and COMMON are shared by Full/two-half stages; original affine gas chart, 33 photon groups plus two guards, original convex X and stored C,B,q,S.",
-  "status": "in_progress",
+  "status": "complete",
   "final_review_status": "PROMOTE_SCOPED",
-  "recorded_utc": "2026-10-12T21:26:38.303377+00:00",
+  "recorded_utc": "2026-10-12T21:33:13.574886+00:00",
   "locator_base": "PHYS16 core root; ../HH_PHYS15_THEORY_20261012_v1 is the required pinned sibling parent input",
   "dependencies": [
     {
@@ -829,8 +829,8 @@
       "dependency_ids": [
         "D_PARENT_GIT"
       ],
-      "sha256": "bba4d2c3b97e98b6e1b10e69447f08ace174df1fc9ec02cc517b07b4ef39dd03",
-      "bytes": 7236
+      "sha256": "191ad2de420b81dc4ccd1aec1795c041e981d4854c00292e2605e4c81b1336aa",
+      "bytes": 7952
     },
     {
       "id": "E_HANDOFF",
@@ -840,8 +840,8 @@
       "dependency_ids": [
         "D_PARENT_GIT"
       ],
-      "sha256": "cec413aa6f5e9044c323460e5e0d2cd14f50f354c47139f7f52f6e6fb6836284",
-      "bytes": 9337
+      "sha256": "8cd4d01f8c4d12c5219927810b5b25270679c96af396a66498d3794d6fe8fac0",
+      "bytes": 10048
     },
     {
       "id": "E_WORKFLOW",
@@ -918,6 +918,15 @@
       "dependency_ids": [],
       "sha256": "4a40edf64fe113987e063d632c5f12538f3f1b82b17806c937c3a12d55bb27ab",
       "bytes": 522
+    },
+    {
+      "id": "E_BACKUP_ACK",
+      "kind": "storage",
+      "locator": "publication/BACKUP_ACK.json",
+      "scope": "Observed Git commit/tree/object checks, draft PR51 and Google Drive/Dropbox completed uploads with metadata-size matches.",
+      "dependency_ids": [],
+      "sha256": "140407b002cd5662d4aa5f39cef091a288ffe7beda72f17291c60ef18d69997e",
+      "bytes": 2592
     }
   ],
   "stages": [
@@ -1130,7 +1139,7 @@
     },
     {
       "id": "R10",
-      "status": "in_progress",
+      "status": "complete",
       "evidence_refs": [
         "E_DAG",
         "E_DAG_CHECK",
@@ -1139,12 +1148,13 @@
         "E_FINAL_DECISION",
         "E_REPORT_PDF",
         "E_REPORT_QA",
-        "E_REPORT_BUILD"
+        "E_REPORT_BUILD",
+        "E_BACKUP_ACK"
       ],
       "dependency_ids": [
         "D_PARENT_GIT"
       ],
-      "reason": "Final scientific decision, 19-page PDF QA, handoff and next contract complete. Actual Git and dual-provider delivery acknowledgements are the remaining closure metadata.",
+      "reason": "Final 19-page PDF QA, actual Git object and dual-provider upload acknowledgements, source/input identities, handoff and exact next contract are linked. Final user-file presentation follows separately.",
       "reuse": null
     }
   ],
@@ -1531,11 +1541,13 @@
     {
       "id": "C_FINAL_DELIVERY",
       "domain": "storage",
-      "result": "not_run",
+      "result": "pass_scoped",
       "evidence_refs": [
-        "E_HANDOFF"
+        "E_BACKUP_ACK",
+        "E_HANDOFF",
+        "E_REPORT_PDF"
       ],
-      "reason": "Root must attach observed final storage/publication receipts.",
+      "reason": "Git changed object SHA/size and provider upload completion/metadata sizes verified. No redownload or physics suite replay claimed.",
       "execution_ref": null
     }
   ],
@@ -1869,14 +1881,6 @@
   ],
   "next_actions": [
     {
-      "id": "N_FINAL_REPORT_DELIVERY",
-      "action": "Root completes final PDF visual/structural QA and actual storage/publication receipts; bind their current identities and close R10 after completion.",
-      "evidence_refs": [
-        "E_REPORT_SOURCE",
-        "E_HANDOFF"
-      ]
-    },
-    {
       "id": "N_PARAMETER_RESPONSE",
       "action": "At the next theory loop, use the prepared same-global-parameter P1-P4 identity and mixed source/carry bindings; derive and include full parameter response before any sign conclusion.",
       "evidence_refs": [
@@ -1947,7 +1951,7 @@
     "No enlarged physical source family or new root solution is claimed.",
     "Finite-sector attribution is distinguished from total parameter differentiation.",
     "Current endpoint science and actual check files are frozen; this state packages existing evidence.",
-    "Final independent scientific adoption is PROMOTE_SCOPED; final PDF/delivery remains R10 work."
+    "Final independent scientific adoption, PDF QA and actual Git/dual-provider storage evidence are complete; the parameter-response numeric application remains the next research unit."
   ],
   "scientific_decision": {
     "path": "review/DECISION.json",
@@ -1973,5 +1977,5 @@
     },
     "remaining_blocking_findings": []
   },
-  "delivery_status": "PDF_QA_complete_Git_and_dual_provider_acknowledgements_pending"
+  "delivery_status": "GIT_SCIENCE_OBJECTS_AND_DUAL_PROVIDER_ACKNOWLEDGEMENTS_VERIFIED"
 }

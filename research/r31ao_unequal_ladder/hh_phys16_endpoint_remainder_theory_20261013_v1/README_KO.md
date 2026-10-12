@@ -2,7 +2,7 @@
 
 2026-10-13 KST. `physmath-research-loop` 내장 규약 1.0.0의 THEORY R1–R10을 적용했다. 원 PHYS15의 동일 COMMON 잔차를 실제 보존 source·carry 자료에 적용하고, endpoint Jacobian에서 평균 Jacobian과 공통 adjoint로 가는 2차 remainder를 유도했다.
 
-**현재 과학 판정: `PROMOTE_SCOPED`.** 독립 심사와 root 채택을 완료했다. 동일 COMMON·고정 α·원 C² source 계열 안의 실제 Full–two-half endpoint 포함과 공통 adjoint 결과를 채택한다. R6·R8·R9를 완료로 연결했고, 19쪽 PDF 확인을 완료했고, R10의 실제 전달 receipt 연결을 마무리한다.
+**현재 과학 판정: `PROMOTE_SCOPED`.** 독립 심사와 root 채택을 완료했다. 동일 COMMON·고정 α·원 C² source 계열 안의 실제 Full–two-half endpoint 포함과 공통 adjoint 결과를 채택한다. R6·R8·R9를 완료로 연결했고, 19쪽 PDF와 실제 Git/Google Drive/Dropbox 저장을 확인했으며 R1–R10을 완료했다. 저장 근거는 `publication/BACKUP_ACK.json`에 있다.
 
 ## 현재 결과
 
@@ -52,7 +52,7 @@ b=0에서 두 sector는 정확히 0이다. 이는 같은 평균 inverse와 유�
 
 Wolfram Language 15.0.1과 xAct xTensor 1.3.0을 실제 사용했다. affine 4D 기체 상태 공간에서 tensor contraction 6개와 scalar 항등식 4개가 정확히 0을 반환했다. 최종 canonicalization은 xPerm의 Wolfram Language group algorithms를 사용했다. 실제 설정 교정·출력·버전·원 archive identity는 위 실행 기록에 보존했다.
 
-원 source 포함 자체의 정칙성·영역·입력 동일성은 PHYS15 및 PHYS14의 채택된 근거를 재사용한다. 현재의 새로운 유도·포함에 대한 독립 심사는 실제 산술 18개 검증군, source 직접 검토, 원고의 부호·가중치·단위·범위를 검토하여 `PROMOTE_SCOPED`로 판정했고, root가 같은 범위에서 채택했다. 채택 기록은 `review/DECISION.json`이며 SHA256은 `610df271576260d01b473c004824ef7179bce475931cfd50c7e017dadfc0bbd3`다. 최종 PDF·전달 확인은 R10에 별도로 연결한다.
+원 source 포함 자체의 정칙성·영역·입력 동일성은 PHYS15 및 PHYS14의 채택된 근거를 재사용한다. 현재의 새로운 유도·포함에 대한 독립 심사는 실제 산술 18개 검증군, source 직접 검토, 원고의 부호·가중치·단위·범위를 검토하여 `PROMOTE_SCOPED`로 판정했고, root가 같은 범위에서 채택했다. 채택 기록은 `review/DECISION.json`이며 SHA256은 `610df271576260d01b473c004824ef7179bce475931cfd50c7e017dadfc0bbd3`다. 최종 PDF·전달 확인도 R10에 연결하여 완료했다.
 
 ## 실행 환경과 부모 입력
 
@@ -89,3 +89,7 @@ python3 checks/endpoint/apply_endpoint_remainder.py \
 `HH_DEFECT_PARAMETER_RESPONSE`는 같은 global λ,b에 대한 ∂θd와 ∂θΔT를 구한다. 기존 C² source, mixed gas-parameter derivative 및 PHYS09/PHYS14의 U/V carry로 시작할 수 있다. 구체적인 P1–P4 시작식과 성공 기준은 [theory/NEXT_PARAMETER_RESPONSE_PROPOSAL_KO.md](theory/NEXT_PARAMETER_RESPONSE_PROPOSAL_KO.md)에 있다.
 
 원 global DAG bytes와 기존 HH first11 node 값은 보존했다. 새 RUX 완료는 추가하지 않았고, 현재 heavy queue는 비어 있으며 launch=false다.
+
+## 최종 저장과 재개
+
+[PR51](https://github.com/cosmosapjw-quantum/WU088_HH/pull/51)은 PR50 위의 draft 연구 PR이다. 과학 commit은 `23218af77c9872230b47b6e12bde3e7500368c3c`이며, 이후 metadata commit은 실제 backup ACK와 R10 종료를 연결한다. 과학 snapshot은 4,846,184 bytes, SHA256 `148efaf4219b95b9407b145737311c2e603faf1bf003db3188d0a322465b22e3`로 고정했다. Google Drive ID `158GDLZEGouvjhB9WmvS4AscWx-3tUDrL`, Dropbox ID `id:BSpOijBcT10AAAAAAD4RqQ`, rev `65dab6b163c9f0af03d47`에 저장됐고 두 공급자의 실제 크기를 확인했다. 상세 근거는 `publication/BACKUP_ACK.json`을 참조한다.

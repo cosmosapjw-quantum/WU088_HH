@@ -4,7 +4,7 @@
 
 **현재 단위:** `WU088_HH_PHYS16_THEORY`. PHYS15의 동일 COMMON Full–two-half 잔차를 실제 원 자료에 적용하고, endpoint Jacobian·유한 Neumann 예측·공통 adjoint의 2차 오차를 유도했다. Source cooling cone으로 시각 정렬 bridge의 k_wHe 포함을 닫았고, 같은 b 인수를 유지하여 두 birth sector의 endpoint 온도 부호를 얻었다.
 
-**현재 과학 판정: `PROMOTE_SCOPED`.** 독립 심사와 root 채택을 완료했다. `review/INDEPENDENT_REVIEW.json`과 `review/DECISION.json`을 상태에 연결했고 blocking finding은 없다. R6·R8·R9는 실제 수행 범위에서 완료이며, 19쪽 PDF 확인을 완료했고, R10의 실제 전달·출판 receipt 연결을 마무리한다. 이전의 PHYS15 결과와 PHYS14 actual second-half를 상속한다.
+**현재 과학 판정: `PROMOTE_SCOPED`.** 독립 심사와 root 채택을 완료했다. `review/INDEPENDENT_REVIEW.json`과 `review/DECISION.json`을 상태에 연결했고 blocking finding은 없다. R6·R8·R9는 실제 수행 범위에서 완료이며, 19쪽 PDF와 실제 Git/Google Drive/Dropbox 저장을 확인했으며 R1–R10을 완료했다. 저장 근거는 `publication/BACKUP_ACK.json`에 있다. 이전의 PHYS15 결과와 PHYS14 actual second-half를 상속한다.
 
 최종 채택 기록 `review/DECISION.json`의 SHA256은 `610df271576260d01b473c004824ef7179bce475931cfd50c7e017dadfc0bbd3`다. 채택 범위는 원 고정 α의 source-aligned geometric-isotropic C² 계열, 동일 COMMON 및 동일 global λ,b의 Full–two-half 차이다.
 
@@ -88,7 +88,7 @@ b=0에서는 둘 다 정확히 0이다. 모든 attribution은 같은 평균 inve
 | R7 | 실제 residual·endpoint·Hessian·공통 adjoint 포함 및 문헌 식 판별 완료 |
 | R8 | 완료 — 독립 판정과 root `review/DECISION.json`의 실제 범위·주장 대응을 최종 상태에 연결 |
 | R9 | 완료 — 정식 유도·실제 결과·보고서 원고·인계·다음 parameter-response 계약 연결 |
-| R10 | 진행 중 — 19쪽 PDF 조판·시각 QA 완료; 실제 전달·출판 receipt 연결 |
+| R10 | 완료 — 19쪽 PDF 조판·시각 QA, 실제 Git/양쪽 backup ACK 및 재개 경로 연결 |
 
 구조적 상태 검사 명령은 다음과 같다.
 
@@ -124,3 +124,7 @@ J_Fd_\theta=r_\theta-
 `baseline/PHYS15_NEXT_DAG.json` 및 `baseline/REI_ATOMIC_REUSE_DAG_20261012.json`은 부모 원 bytes를 보존한다. 첫 11개 HH node 값도 PHYS15 snapshot 그대로다. 따라서 node11 내부의 당시 numerical not_run 기록은 이력이며, 현재 실행과 `PROMOTE_SCOPED` 채택 상태는 node12 `HH_CORRELATED_ENDPOINT_ENCLOSURE`에서 읽는다. 새 node13 `HH_DEFECT_PARAMETER_RESPONSE`는 시작 계약이 준비되어 있으며 아직 실행하지 않았다.
 
 원 global DAG SHA256은 `2508158361442bba6c828b3a02141c56051d80bbe4546cb31a07544f5c0b79fa`다. RUX 완료 추가는 0개이고, heavy_queue=[], launch=false다. 다음 실행 장소는 현재 환경에서의 유도와 보존 포함의 경량 계산이며, 다른 자원이 필요한 경우에는 측정된 작업량에 따라 판단한다.
+
+## 최종 저장과 재개
+
+[PR51](https://github.com/cosmosapjw-quantum/WU088_HH/pull/51)은 PR50 위의 draft 연구 PR이다. 과학 commit은 `23218af77c9872230b47b6e12bde3e7500368c3c`이며, 이후 metadata commit은 실제 backup ACK와 R10 종료를 연결한다. 과학 snapshot은 4,846,184 bytes, SHA256 `148efaf4219b95b9407b145737311c2e603faf1bf003db3188d0a322465b22e3`로 고정했다. Google Drive ID `158GDLZEGouvjhB9WmvS4AscWx-3tUDrL`, Dropbox ID `id:BSpOijBcT10AAAAAAD4RqQ`, rev `65dab6b163c9f0af03d47`에 저장됐고 두 공급자의 실제 크기를 확인했다. 상세 근거는 `publication/BACKUP_ACK.json`을 참조한다.
