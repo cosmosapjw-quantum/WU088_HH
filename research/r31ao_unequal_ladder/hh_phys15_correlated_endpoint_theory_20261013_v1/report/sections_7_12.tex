@@ -1,0 +1,482 @@
+\section{원 source의 밀도와 온도 정규화 연결}\label{sec:bridge}
+Full과 둘째 half는 같은 끝 시각의 source를 쓰지만 첫 half의 저장 density는 다르다. 이 절에서는
+\begin{equation}
+f_k=\fh_k=\frac{\ex(n_{{\rm He},k}^{\rm stored})}{\ex(n_k)},\qquad
+s=y_1+2y_2,\qquad e_k=x+f_ks
+\end{equation}
+로 쓴다. 전자 수와 전체 자유입자 수, 온도는
+\begin{equation}
+\Pi_k=1+f_k+e_k,\qquad
+T_k=C_T\frac{w}{\Pi_k},\qquad
+C_T=\frac{2\ex(\epsilon_{\rm eV})}{3\ex(k_B)}.
+\label{eq:thermo}
+\end{equation}
+$f_k$는 이 절의 source density ratio이고, 원 stage에 입력된 scalar $f_{\rm He,stage}$와의 대응은 저장 곱 $n_kf_{\rm He,stage}$를 통해 정해진다.
+
+\subsection{FT03 반응 함수의 완전한 인수 분해}
+종 표기를 $a=H,I,II$로 두며 $I,II$는 각각 HeI, HeII 이온화 채널이다.
+$\beta_a(T)$는 collisional-ionization coefficient,
+$\alpha_a(T)$는 radiative-recombination coefficient,
+\[
+s_a(T)=\frac{\dd\log\alpha_a}{\dd\log T}
+\]
+이다. 모든 함수는 원 FT03의 고정 fit이며 계수의 단위는 $\mathrm{cm^3\,s^{-1}}$다. HeI dielectronic recombination은
+\begin{equation}
+d_{\rm DR}(T)=d_1(T)+d_2(T),\qquad
+d_r(T)=c_rA_{\rm DR}T^{-3/2}\exp(-B_r/T),\quad(c_1,c_2)=(1,0.3).
+\label{eq:dr}
+\end{equation}
+$A_{\rm DR},B_r$는 원 source에 저장된 세 고정 leaves다.
+
+분율의 반응 인수는 다음과 같이 모두 주어진다.
+\begin{align}
+k_x&=(1-x)\beta_H-x\alpha_H,\label{eq:kx}\\
+k_y&=(1-y_1-y_2)\beta_I-y_1(\alpha_I+d_{\rm DR})
+-y_1\beta_{II}+y_2\alpha_{II},\label{eq:ky}\\
+k_z&=y_1\beta_{II}-y_2\alpha_{II},\qquad
+k_{\rm frac}=(k_x,k_y,k_z)^{\mathsf T}.
+\label{eq:kz}
+\end{align}
+Photo-off source의 collisional·RR·DR 항은 반응 전 population과 electron density의 곱이다. H당 정상화 및 He 분율의 정상화를 적용하면
+\begin{equation}
+\boxed{F^{\rm np}_{k,{\rm frac}}(g)
+=n_ke_k\,k_{\rm frac}(x,y_1,y_2,T_k).}
+\label{eq:npfrac}
+\end{equation}
+
+RR의 kinetic energy coefficient를
+\begin{equation}
+\mathcal K_a(T)=
+\frac{k_BT\,\alpha_a(T)\,[3/2+s_a(T)]}{\epsilon_{\rm eV}}
+\label{eq:kinetic}
+\end{equation}
+로 둔다. $\mathcal K_a$의 단위는 $\mathrm{eV\,cm^3\,s^{-1}}$다.
+FT03 controlled model의 threshold를 $\chi_a^{\rm FT}$로 쓰면
+\begin{equation}
+k_{wH}=-\chi_H^{\rm FT}(1-x)\beta_H-x\mathcal K_H,
+\label{eq:kwH}
+\end{equation}
+\begin{align}
+k_{w{\rm He}}={}&-\chi_I^{\rm FT}(1-y_1-y_2)\beta_I
+-\chi_{II}^{\rm FT}y_1\beta_{II}
+-y_1\mathcal K_I-y_2\mathcal K_{II}\nonumber\\
+&-y_1\sum_{r=1}^2d_r(T)\frac{k_BB_r}{\epsilon_{\rm eV}}.
+\label{eq:kwHe}
+\end{align}
+따라서 열 source는 정확히
+\begin{equation}
+\boxed{F^{\rm np}_{k,w}(g)
+=n_ke_k\bigl[k_{wH}(x,T_k)+f_k k_{w{\rm He}}(y_1,y_2,T_k)\bigr].}
+\label{eq:npthermal}
+\end{equation}
+이 $F^{\rm np}$는 HH·photo·팽창을 넣기 직전에 export한 네 성분이다. 팽창은 \eqref{eq:bgas}에서 따로 더한다.
+
+이번 controlled model의 실제 정의 사슬을 따라가면
+\begin{equation}
+(\chi_H^{\rm FT},\chi_I^{\rm FT},\chi_{II}^{\rm FT})
+=\ex(13.598434599702,\ 24.587389011,\ 54.41776)
+\label{eq:thresholds}
+\end{equation}
+이며 native photon/HH의 세 $\chi_a$ leaves와 bits가 각각 같다.
+따라서 이 고정 source에서는 $\chi_a^{\rm FT}=\chi_a$로 동일시할 수 있다.\cite{bindings,threshold_binding}
+
+HH의 별도 event rate는 원 source에서
+\begin{equation}
+q_k(g)=n_k(1-x)^2 k_{\rm HH}(T_k),\qquad
+k_{\rm HH}(T)=\ex(1.2\times10^{-17})T^{\ex(1.2)}
+\exp[-\ex(157800)/T]
+\label{eq:hh}
+\end{equation}
+다. 온도 정의는 \eqref{eq:thermo}와 같다.
+
+\subsection{온도를 맞추는 사상}
+\begin{theorem}[source 시각의 정확한 bridge]\label{thm:bridge}
+같은 분율에서
+\begin{equation}
+\Psi g=(x,y_1,y_2,w\Pi_2/\Pi_1),\quad
+r_n=\frac{n_1}{n_2},\quad
+r_e=r_n\frac{e_1}{e_2},\quad \Delta f=f_1-f_2
+\label{eq:psi}
+\end{equation}
+로 두면 $T_2(\Psi g)=T_1(g)$이고
+\begin{align}
+F^{\rm np}_1(g)
+&=r_e F^{\rm np}_2(\Psi g)
++n_1e_1\Delta f\,k_{w{\rm He}}(y_1,y_2,T_1)\ew,\label{eq:bridgeF}\\
+q_1(g)&=r_nq_2(\Psi g).
+\label{eq:bridgeq}
+\end{align}
+\end{theorem}
+\begin{proof}
+$\Psi$는 분율과 $\Pi_2$를 고정하면서 $w$를 $w\Pi_2/\Pi_1$로 바꾸므로
+$C_T\Psi_w/\Pi_2=C_Tw/\Pi_1$이다.
+따라서 \eqref{eq:npfrac}의 모든 $k_{\rm frac}$ 함수가 같은 온도에서 평가된다.
+열 항은
+\[
+r_e F^{\rm np}_{2,w}(\Psi g)
+=n_1e_1[k_{wH}(T_1)+f_2k_{w{\rm He}}(T_1)]
+\]
+이므로 $f_1-f_2$에 비례한 항을 더하면 \eqref{eq:bridgeF}다.
+식 \eqref{eq:hh}에서는 온도를 맞춘 뒤 남는 비율이 $n_1/n_2$이므로
+\eqref{eq:bridgeq}를 얻는다.
+\end{proof}
+
+\subsection{작은 차이를 먼저 구성한다}
+비율과 thermal-coordinate 이동을
+\begin{equation}
+r_e-1=(r_n-1)+r_n\Delta f\,\frac{s}{e_2},\qquad
+\delta w_\Psi=\Psi_w(g)-w=-w\Delta f\,\frac{1+s}{\Pi_1}
+\label{eq:small_bridge}
+\end{equation}
+로 구성한다. $g$에서 $\Psi g$로 가는 $w$-선분의 평균 derivative를
+$\overline{F^{\rm np}_{2,w}}$, $\overline{q_{2,w}}$로 쓰면
+\begin{align}
+F^{\rm np}_1(g)-F^{\rm np}_2(g)
+={}&(r_e-1)F^{\rm np}_2(g)
++r_e\overline{F^{\rm np}_{2,w}}\,\delta w_\Psi\nonumber\\
+&+n_1e_1\Delta f\,k_{w{\rm He}}(T_1)\ew,\label{eq:timeF}\\
+q_1(g)-q_2(g)
+={}&(r_n-1)q_2(g)
++r_n\overline{q_{2,w}}\,\delta w_\Psi .
+\label{eq:timeq}
+\end{align}
+원 $H_1=H_2$여서 같은 $g$의 팽창 항은 $\delta\BB_t$에서 소거된다.
+식 \eqref{eq:timeF}--\eqref{eq:timeq}와 $\lambda\nuH$를 결합하면
+\eqref{eq:gasdecomp}의 source 시각 항이 된다.
+
+원 exact leaves에서
+\begin{equation}
+\Delta f\in[-6.94524945677013820,\,-6.94524945677013819]\times10^{-18}.
+\label{eq:dfvalue}
+\end{equation}
+Full·first-half·실제 second-half root image의 공동 convex hull에서는
+\begin{equation}
+\delta w_\Psi\in[1.09800931589085210,\,
+1.11069895932571596]\times10^{-16}\ {\rm eV/H}.
+\label{eq:dwpsivalue}
+\end{equation}
+이 hull과 $\Psi$의 상, 그 사이의 선분이 원 $X$ 내부임을 exact endpoint로 확인했다.
+따라서 기존 whole-$X$ gradient·Hessian 포함을 이 연결에 적용할 수 있다.
+이와 같이 실제 사용할 내부 영역을 지정하면 source를 다시 호출하지 않고 원 derivative 근거를 재사용한다.\cite{bindings}
+
+\section{기존 Full 포함으로 닫히는 endpoint 결함}\label{sec:bound}
+\subsection{평균 Jacobian과 photo 한 열}
+\begin{theorem}[유한 endpoint 전달]\label{thm:transfer}
+$d=g_2-g_F$와
+\begin{equation}
+\overline{\mathcal A}
+=\int_0^1D_g\HF(g_F+s d)\,\dd s
+\label{eq:Abar}
+\end{equation}
+에 대해
+\begin{equation}
+\boxed{\overline{\mathcal A}d=r.}
+\label{eq:mean_defect}
+\end{equation}
+\end{theorem}
+\begin{proof}
+원 convex $X$가 $g_F,g_2$와 연결 선분을 포함한다.
+미적분학의 기본정리를 적용하면
+$\HF(g_2)-\HF(g_F)=\overline{\mathcal A}(g_2-g_F)$다.
+왼쪽은 정의에 의해 $r$이다.
+\end{proof}
+
+Photo의 current-gas derivative는 $x$ 한 열만 가진다.
+\begin{align}
+D_g\HF(g)
+&=I-2hD_g\BB_2(g)+2h\,v_F(g)e_x^{\mathsf T},\label{eq:photojac}\\
+v_F(g)
+&=\sum_j
+\frac{a_{2,j}Q_{F,j}}{[1+2h\kappa_{2,j}(g)]^2}\nu_j.
+\label{eq:vf}
+\end{align}
+여기서 $Q_F$는 current-gas unknown에 독립인 공통 입력이다. 원 Full source 포함은 같은 $Q_F$와 같은 계수 계열에서 \eqref{eq:photojac}를 포함한다.
+
+\subsection{고정 전처리 행렬과 componentwise bound}
+원 NCP07 Full의 고정 binary64 행렬 $C$를 exact dyadic 행렬로 사용한다.
+$C$는 centre Jacobian에서 계산되어 저장된 approximate inverse다. 원 증명의 scale과 포함은
+\begin{gather}
+S=\diag\bigl(\ex(0.015),\ex(0.01),\ex(0.01),\ex(0.5)\bigr),
+\label{eq:S}\\
+|I-CD_g\HF(g)|\le B\quad(g\in X),\qquad
+\widetilde B=S^{-1}BS,\qquad
+\normi{\widetilde B}\le q<1,\label{eq:Bbound}\\
+q=\ex(0.00011736830563768177).
+\label{eq:q}
+\end{gather}
+$C,B,q,S$는 같은 원 \texttt{UNIFORM\_ARITHMETIC.json}에서 결박한다.
+표시가 매우 가까운 다른 diagnostic export와 섞지 않는다.\cite{preconditioner}
+
+\begin{theorem}[재사용된 Full bound로부터의 결함 포함]\label{thm:majorant}
+원 포함 \eqref{eq:Bbound} 아래 $\overline{\mathcal A}$는 가역이며
+\begin{equation}
+\boxed{
+|S^{-1}d|\le(I-\widetilde B)^{-1}|S^{-1}Cr|,
+\qquad
+\normi{S^{-1}d}\le\frac{\normi{S^{-1}Cr}}{1-q}.
+}
+\label{eq:majorant}
+\end{equation}
+\end{theorem}
+\begin{proof}
+$\overline E=I-C\overline{\mathcal A}$라 두면 평균 적분에서도
+$|\overline E|\le B$다. 따라서
+$\normi{S^{-1}\overline ES}\le q<1$이고 $I-\overline E=C\overline{\mathcal A}$가 가역이다.
+유한 정사각 행렬의 곱이 가역이므로 $C,\overline{\mathcal A}$도 가역이다.
+\[
+d=Cr+\overline E d,\qquad
+S^{-1}d=\sum_{m=0}^{\infty}(S^{-1}\overline ES)^mS^{-1}Cr.
+\]
+각 항의 절대값을 비음수 $\widetilde B^m$로 지배하여 첫 식을 얻고,
+노름의 기하급수를 합하면 둘째 식이다.
+\end{proof}
+
+원 $q$의 scalar amplification은
+\begin{equation}
+\frac1{1-q}<1.000118.
+\label{eq:amplification}
+\end{equation}
+이 상한은 \emph{전처리된 잔차 $Cr$}의 원 반경 척도 노름에 적용된다.
+실제 residual의 크기는 \eqref{eq:residualdecomp},
+\eqref{eq:seven}, \eqref{eq:timeF}--\eqref{eq:timeq}를 같은 입력에서 평가해 정한다.
+평균 Jacobian을 끝점 Jacobian으로 대체하는 경우의 차이는 별도의
+비선형 판별 예제에서 확인했다.
+
+포함을 계산할 때는 먼저 \eqref{eq:majorant}에서 유효한 초기 $[d]$를 만들고,
+원 $[E]=I-C[D\HF](X)$를 사용하여
+\begin{equation}
+[d]\leftarrow[d]\cap\bigl(C[r]+[E][d]\bigr)
+\label{eq:refine}
+\end{equation}
+를 적용할 수 있다. 이미 있는 $[g_2]-[g_F]$도 독립적인 valid cap으로 교차한다.
+더 좁은 $[g_2]-[d]$와 source Hessian을 활용할지는 실제 남은 폭에 따라 정한다.
+평균 Jacobian을 통한 포함의 일반적 원리는 비선형 검증 이론을 따르며,
+이곳에서는 고정된 원 $C,B,q,S$와 실제 두 단계 residual을 결박했다.\cite{rump}
+
+\section{유한 관측량과 같은 inverse의 sector 기여}\label{sec:observables}
+두 endpoint는 같은 $f_2,C_T,n_2$를 사용한다. 전자 covector와 열 좌표는
+\begin{equation}
+\ell_e=(1,f_2,2f_2,0),\qquad
+d_e=\ell_e d,\qquad d_w=e_w^{\mathsf T}d,\qquad
+\Delta n_e=n_2d_e.
+\label{eq:electron_defect}
+\end{equation}
+$\Pi_F=\Pi_2-d_e>0$이고 $T_2=C_Tw_2/\Pi_2$이다.
+
+\begin{theorem}[유한 온도 차이와 공통 adjoint]\label{thm:temperature}
+정확한 유한 온도 차이는
+\begin{equation}
+\boxed{\Delta T=T_2-T_F
+=\frac{C_Td_w-T_2d_e}{\Pi_2-d_e}.}
+\label{eq:finiteT}
+\end{equation}
+또한
+\begin{equation}
+\ell_T=\frac{C_Te_w^{\mathsf T}-T_2\ell_e}{\Pi_F},\qquad
+\overline{\mathcal A}^{\mathsf T}z_T=\ell_T^{\mathsf T}
+\label{eq:adjoint}
+\end{equation}
+이면
+\begin{equation}
+\boxed{\Delta T=z_T^{\mathsf T}r,\qquad
+r=\sum_s r_s\ \Longrightarrow\
+\Delta T=\sum_s z_T^{\mathsf T}r_s.}
+\label{eq:attribution}
+\end{equation}
+\end{theorem}
+\begin{proof}
+$T_F=C_T(w_2-d_w)/(\Pi_2-d_e)$를 $T_2$에서 빼고 공통 분모를 취하면
+\eqref{eq:finiteT}다. 이는 $\Delta T=\ell_Td$와 같다.
+식 \eqref{eq:mean_defect}를 이용하여
+$\ell_Td=z_T^{\mathsf T}\overline{\mathcal A}d=z_T^{\mathsf T}r$를 얻는다.
+같은 $z_T$에 대한 선형성이 마지막 합을 준다.
+\end{proof}
+
+$r_s$는 source 시각·중간 gas 이동 및 광자 일곱 sector다.
+모든 항에 같은 원 endpoint와 같은 평균 inverse가 적용된다.
+따라서 각 기여는 하나의 유한 $\Delta T$를 정확히 분할한다.
+전자 수, 열에너지, 전자 밀도도 대응 covector를 동일한 방식으로 사용한다.
+
+식 \eqref{eq:finiteT}는 큰 두 온도 포함을 각각 뺄 필요 없이
+같은 $d$에서 $C_Td_w-T_2d_e$를 구성한다.
+제\ref{sec:signs}절의 직접 forcing 부호를 endpoint 기여로 변환하는 대상은
+바로 \eqref{eq:attribution}다.
+이온화로 늘어난 자유입자와 열에너지 변화가 온도에서 결합하는 방식도
+유한 분모 $\Pi_F$를 포함해 유지된다.
+
+\section{guard ledger와 H 화학·열에너지 잔차}\label{sec:ledger}
+잔차 기준 photon 차이와 그 moments를
+\begin{equation}
+\Delta\widehat Z=Z_2-\widehat Z_F,\qquad
+\Delta\mathcal N=\mathfrak n\Delta\widehat Z,\qquad
+\Delta\mathcal U=\mathfrak u\Delta\widehat Z
+\label{eq:photon_moments}
+\end{equation}
+로 쓴다. 두 경로의 총 birth가 같고 $\mathfrak n\R=\mathfrak n$이므로
+\begin{equation}
+\boldsymbol1^{\mathsf T}p=-\Delta\mathcal N.
+\label{eq:number_ledger}
+\end{equation}
+
+\begin{theorem}[흡수 chronology와 energy residual]\label{thm:energy}
+원 guard 수지에서
+\begin{equation}
+\boxed{E\cdot p
+=(1-\rho)(E\cdot P_1-bME_{24})-\Delta\mathcal U.}
+\label{eq:energy_ledger}
+\end{equation}
+\end{theorem}
+\begin{proof}
+첫 half의 absorption은 두 번째 redshift 전에 발생한다. 식
+\eqref{eq:remapmom}을 순서대로 적용하면
+\begin{align*}
+\mathfrak uZ_2
+&=\rho^2\mathfrak uZ_0+b(\rho+1)ME_{24}
+-\rho E\cdot P_1-E\cdot P_2,\\
+\mathfrak u\widehat Z_F
+&=\rho^2\mathfrak uZ_0+2bME_{24}-E\cdot\widehat P_F.
+\end{align*}
+두 식을 빼고 $p=P_1+P_2-\widehat P_F$를 대입한다.
+\end{proof}
+
+원 active 17개 group의 captured heat는
+\begin{equation}
+\epsilon_j=\ex(E_j)-\ex(\chi_H)
+\label{eq:heat_identity}
+\end{equation}
+와 정확히 같다. 실제 bits에서 확인했고,
+$\chi_H\le E_j<2\chi_H$인 normal binary subtraction의 Sterbenz 조건과도 일치한다.
+원 subtraction capture를 유지한 상태에서 이 identity를 사용할 수 있다.
+Inactive group의 흡수는 0이므로
+\begin{equation}
+\epsilon\cdot p
+=(1-\rho)(E\cdot P_1-bME_{24})
+-\Delta\mathcal U+\chi_H\Delta\mathcal N.
+\label{eq:thermal_ledger}
+\end{equation}
+
+H 화학·열에너지 covector
+\begin{equation}
+\ell_H=(\chi_H,0,0,1)
+\end{equation}
+는 $\ell_H\nu_j=E_j$, $\ell_H\nuH=0$를 만족한다.
+따라서
+\begin{equation}
+\boxed{\begin{aligned}
+\ell_Hr={}&h\ell_H[\BB_1(g_1)-\BB_2(g_2)]\\
+&+(1-\rho)(E\cdot P_1-bME_{24})-\Delta\mathcal U.
+\end{aligned}}
+\label{eq:Henergy}
+\end{equation}
+이 사영의 물리량은 $\chi_Hx+w$다.
+HH의 직접 $q\nuH$는 소거되고, HH가 실제 기체·opacity·흡수·nonphoto 평가점에 전달한 효과가 나머지 항에 남는다.
+Helium의 nonphoto 열 기여도 원 벡터 안에 유지된다.
+
+$(1-\rho)E\cdot P_1$은 첫 absorption이 이미 소모한 광자에 대한 chronology 보정이고,
+$-(1-\rho)bME_{24}$는 먼저 주입된 birth가 겪는 redshift를 기록한다.
+따라서 이 ledger는 spectrum 모양과 별개로 시간 순서를 점검하는 정확한 관계다.
+
+\section{실제 Full photon endpoint의 회수}\label{sec:actual_photon}
+같은 $g_2$를 기준으로 한 outgoing 차이는
+\begin{equation}
+\begin{aligned}
+\Delta\widehat Z={}&A\R\Delta A_1Q_1+A[\R,A]Q_1-C_2\R^2Z_0
++A_F\Delta\R Z_0\\
+&+bA^2(\R-I)J+bC_1J.
+\end{aligned}
+\label{eq:outgoing}
+\end{equation}
+이는 \eqref{eq:stage1}--\eqref{eq:virtualfull}에
+$\R A=A\R+[\R,A]$와 \eqref{eq:c12identities}를 적용한 정확한 항등식이다.
+
+실제 Full과의 차이 $\Delta Z=Z_2-Z_F$는 같은 $d_x=x_2-x_F$를 사용하여 회수한다.
+\begin{equation}
+\boxed{
+\Delta Z_j=\Delta\widehat Z_j+
+\frac{2h\,a_{2,j}Q_{F,j}\,d_x}
+{D_{F,j}(g_2)D_{F,j}(g_F)},\qquad 0\le j\le32,
+}
+\label{eq:fullphotonsecant}
+\end{equation}
+\begin{equation}
+D_{F,j}(g)=1+2h\kappa_{2,j}(g).
+\end{equation}
+Guard의 추가항은 0이다.
+이 식의 부호는 survival의 다음 resolvent 차이에서 정해진다.
+\[
+\bigl(A_F(g_2)-A_F(g_F)\bigr)_{jj}
+=\frac{2h\,a_{2,j}(x_2-x_F)}{D_{F,j}(g_2)D_{F,j}(g_F)}.
+\]
+
+일반 비교점 $g_*$를 기준으로 photon 분해를 만들 수도 있다.
+그 경우 실제 둘째 half로 옮기는 추가항은 retained 성분마다
+\begin{equation}
+\bigl([A_2(g_2)-A_2(g_*)]Q_2\bigr)_j
+=\frac{h\,a_{2,j}Q_{2,j}(x_2-x_*)}
+{D_{2,j}(g_2)D_{2,j}(g_*)},\quad 0\le j\le32,
+\label{eq:halfphotonsecant}
+\end{equation}
+이며 guard는 0이다.
+식 \eqref{eq:fullphotonsecant}는 Full 분모·$Q_F$·$2h$를,
+\eqref{eq:halfphotonsecant}는 half 분모·$Q_2$·$h$를 사용한다.
+두 비교점의 차이를 명시하면 residual에서 실제 photon endpoint까지 같은 gas 결함을 전달할 수 있다.
+
+\section{판별 검산, 연구 판정과 다음 계산}\label{sec:verification}
+\input{checks_status.tex}
+
+이번 독립 판정은 \textbf{\ReviewDecision}이다.
+같은 COMMON, linked geometric isotropic source-aligned $C^2$ 계열,
+captured 원 상수와 두 half에 공통인 $\lambda,b$ 아래의 결함 구성,
+source bridge, 평균 Jacobian 전달, finite readout, ledger와 부호 정리를 채택했다.
+최종 검토에서 제기된 photon secant의 행렬·벡터 표기는
+\eqref{eq:fullphotonsecant}--\eqref{eq:halfphotonsecant}의 성분식으로 교정하여 확인했다.\cite{review}
+
+\subsection{다음 포함 계산의 연결}
+후속 단위는 \textbf{HH\_CORRELATED\_ENDPOINT\_ENCLOSURE}다.
+입력은 같은 COMMON의 원 근·carry·source 포함,
+정확한 $C,S$, 그리고 이 보고서의 expression 관계다.
+이 단위의 \texttt{assemble\_correlated\_defect}와
+\texttt{enclose\_endpoint\_defect}는 아래 식을 구현할 후속 함수의 계산계약이다.
+먼저 \eqref{eq:residualdecomp}의 $[r]$를 구성하고,
+\eqref{eq:majorant}--\eqref{eq:refine}에서 $[d]$를 얻는다.
+이후 \eqref{eq:finiteT}, \eqref{eq:electron_defect},
+\eqref{eq:attribution}, \eqref{eq:fullphotonsecant}로 관측량과 sector 기여를 포함한다.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+ box/.style={draw=MidnightBlue!65,fill=MidnightBlue!3,rounded corners=2pt,
+ text width=40mm,minimum height=11mm,align=center,font=\small},
+ >={Stealth[length=2mm]},node distance=10mm and 9mm]
+\node[box] (input) {같은 COMMON\\원 근·source·carry};
+\node[box,below left=of input] (gas) {source 시각·기체 이동\\식 \eqref{eq:gasdecomp}, \eqref{eq:timeF}};
+\node[box,below right=of input] (photon) {광자 일곱 sector\\식 \eqref{eq:seven}};
+\node[box,below=26mm of input] (res) {상관된 residual $r$\\식 \eqref{eq:residualdecomp}};
+\node[box,below=of res] (defect) {기존 $C,B,q,S$로 $d$ 포함\\식 \eqref{eq:majorant}};
+\node[box,below left=of defect] (readout) {$\Delta T,\Delta e,\Delta w,\Delta n_e$\\같은 adjoint의 기여};
+\node[box,below right=of defect] (out) {실제 $\Delta Z$\\동일 $d_x$의 secant};
+\draw[->] (input)--(gas);
+\draw[->] (input)--(photon);
+\draw[->] (gas)--(res);
+\draw[->] (photon)--(res);
+\draw[->] (res)--(defect);
+\draw[->] (defect)--(readout);
+\draw[->] (defect)--(out);
+\end{tikzpicture}
+\caption{이번 이론에서 다음 실제 포함 계산으로 이어지는 의존관계. 같은 원 입력과 동일한 결함이 두 종류의 endpoint 출력을 연결한다.}
+\label{fig:dag}
+\end{figure}
+
+\subsection{계산 중 유지할 정확한 관계}
+\begin{enumerate}
+\item $\RF=\R(\rho^2)$, $M_F=2M$, 같은 $Z_0,\lambda,b$를 먼저 결박한다.
+\item $\Delta\R$, $[\R,A]$, $\Delta A_1$, $r_e-1$, $\delta w_\Psi$를 차이의 factorized 식에서 구성한다.
+\item 원 33개 group, 두 guards와 signed $U,V,W$를 유지한다. 구조적 관계는 원 계수와 source identity로 적용한다.
+\item 직접 photon 합과 number/energy ledger의 유효 포함을 교차할 수 있다. 정확한 zero moment는 연결된 계수에서 구성한다.
+\item 새로 얻은 실제 폭이 source·remap·birth 중 어느 관계에 의해 지배되는지 읽고, 그 관계에 필요한 포함만 다듬는다.
+\end{enumerate}
+이론적으로 남아 있던 연결은 실제 두 단계식에서 같은 COMMON의 잔차를 만들고,
+이를 기존 Full 증명과 유한 관측량으로 전달하는 사슬이었다.
+정리 \ref{thm:residual}--\ref{thm:energy}와 photon secant가 그 사슬을 완성한다.
+후속 계산은 이 사슬의 크기와 부호를 실제 원 입력에서 평가한다.
+

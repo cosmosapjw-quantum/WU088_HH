@@ -1,0 +1,91 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{NotoSerifCJKkr-Regular.otf}[Path=fonts/,BoldFont=NotoSerifCJKkr-Bold.otf,ItalicFont=NotoSerifCJKkr-Regular.otf]
+\setsansfont{NotoSerifCJKkr-Regular.otf}[Path=fonts/,BoldFont=NotoSerifCJKkr-Bold.otf]
+\setmonofont{DejaVu Sans Mono}[Scale=0.79]
+\XeTeXlinebreaklocale "ko"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage[margin=23mm,top=23mm,bottom=23mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,longtable,array,graphicx,float}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,caption,fancyhdr,titlesec}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage{hyperref}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=MidnightBlue,urlcolor=MidnightBlue,citecolor=MidnightBlue,pdftitle={같은 COMMON의 Full--two-half 결함: 광자 chronology와 관측량 전달 정리},pdfauthor={WU088 HH 연구}}
+\urlstyle{same}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{0.34em}
+\setlength{\parindent}{1em}
+\widowpenalty=10000
+\clubpenalty=10000
+\linespread{1.10}
+\setlist{itemsep=0.18em,topsep=0.35em,leftmargin=1.6em}
+\captionsetup{font=small,labelfont=bf}
+\renewcommand{\figurename}{그림}
+\renewcommand{\tablename}{표}
+\renewcommand{\contentsname}{목차}
+\renewcommand{\refname}{참고 문헌과 원자료}
+\renewcommand{\proofname}{증명}
+\titleformat{\section}{\large\sffamily\bfseries\color{MidnightBlue}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\sffamily\bfseries}{\thesubsection}{0.7em}{}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\sffamily WU088\_HH / PHYS15 이론}
+\fancyhead[R]{\small\sffamily 2026-10-13 KST}
+\fancyfoot[C]{\thepage}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\ex}{\operatorname{exact}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\fh}{\widehat f}
+\newcommand{\R}{\mathsf R}
+\newcommand{\RF}{\mathsf R_F}
+\newcommand{\BB}{\mathcal B}
+\newcommand{\HF}{\mathcal H_F}
+\newcommand{\nuH}{\nu_H}
+\newcommand{\ew}{e_w}
+\newcommand{\exx}{e_x}
+\newcommand{\normi}[1]{\left\lVert #1\right\rVert_\infty}
+\newtheorem{theorem}{정리}
+\newtheorem{lemma}{보조정리}
+\newtheorem{proposition}{명제}
+\theoremstyle{definition}
+\newtheorem{definition}{정의}
+\input{review_status.tex}
+\begin{document}
+\begin{center}
+{\color{MidnightBlue}\sffamily\large WU088\_HH \quad PHYS15 이론 연구}\\[5mm]
+{\LARGE\bfseries 같은 COMMON의 Full--two-half 결함}\\[2mm]
+{\Large\bfseries 광자 chronology와 관측량 전달 정리}\\[4mm]
+{\large 2026년 10월 13일 KST}
+\end{center}
+\vspace{2mm}
+\noindent\rule{\textwidth}{0.6pt}
+
+\section*{초록}
+같은 COMMON에서 출발하는 길이 $2h$의 Full과 실제 두 번의 길이 $h$ 단계를 결박하고, 두 endpoint의 차이를 공통 입력의 상관관계를 유지한 잔차로 구성한다. PHYS14의 등방 source-aligned 계열, 원 33개 에너지 node와 두 guards, 실제 두 번째 half의 근 포함을 재사용한다. 비교의 중심량은 실제 two-half 기체 $g_2$에서 평가한 Full residual $r=\HF(g_2)$다. 이 잔차를 source 시각, 중간 기체 이동, 일곱 광자 작용으로 정확히 분해한다.
+
+광자 분해에는 opacity 변화, 흡수와 수송의 순서, 흡수 node의 시간 차이, BE 흡수 길이, remap 분할, 먼저 생성된 광자의 redshift 및 birth 흡수 시점이 들어간다. 원 cross section의 순서를 이용하면 중간 absorption--remap sector의 absorbed-photon 변화가 성분별로 비음수임을 보인다. 원 birth node의 추가 redshift sector는 이온화 absorption을 늘리면서 thermal deposition을 줄인다. 이 직접 forcing은 동일한 implicit inverse와 관측량 covector를 통해 endpoint 기여로 전달된다.
+
+서로 다른 source 시각의 저장 밀도비를 보존하기 위해 온도를 일치시키는 gas 사상 $\Psi$를 구성한다. 원 FT03의 반응 인수 분해에서 nonphoto 및 HH source의 정확한 연결식을 얻는다. 기존 Full 전처리 행렬과 whole-domain 포함을 재사용하면 $\overline{\mathcal A}(g_2-g_F)=r$와 유효한 componentwise defect bound가 성립한다. 유한 온도 차이, 전자 수, 열에너지 및 photon endpoint는 이 같은 결함에서 계산된다. Number/energy guard 수지는 H 화학·열에너지 residual과 광자 chronology를 연결한다.
+
+본 연구의 결과는 조건을 명시한 이론적 구성과 표적 대수 검산이다. 다음 계산 단위는 이미 확보된 source와 근 포함을 이 식에 대입하여 실제 $\Delta T,\Delta e,\Delta w,\Delta n_e$의 상관된 포함을 구하는 것이다.\cite{phys14,root_theory,photon_theory,bindings}
+
+\vspace{1mm}
+\noindent\fcolorbox{MidnightBlue!45}{MidnightBlue!3}{%
+\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{현재 연구 판정}\quad \ReviewDecision\par
+\small \ReviewExplanation}}
+\newpage
+\begingroup
+\small\setlength{\parskip}{0pt}
+\tableofcontents
+\vspace{3mm}
+\noindent\textbf{읽기 순서.} 제1--3절에서 대상과 정확한 잔차를 정하고, 제4--6절에서 광자 기작을 분해한다. 제7절은 원 source 정규화, 제8--9절은 endpoint 포함과 관측량 전달을 다룬다. 제10--11절은 photon ledger와 실제 Full 광자 차이를 회수한다. 부록은 기호와 계산 입력의 대응을 모은다.
+\endgroup
+\newpage
+\input{sections_1_6.tex}
+\input{sections_7_12.tex}
+\input{appendix.tex}
+\end{document}
+

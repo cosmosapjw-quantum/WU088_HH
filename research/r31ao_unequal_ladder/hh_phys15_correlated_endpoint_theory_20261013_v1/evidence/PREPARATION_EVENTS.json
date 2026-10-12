@@ -1,0 +1,22 @@
+{
+  "schema": "WU088_HH_PHYS15_PREPARATION_EVENTS_V1",
+  "events": [
+    {
+      "class": "environment lookup",
+      "observation": "WORKFLOW.json was first queried at the skill root and the file was absent there.",
+      "correction": "Located and read the actual references/WORKFLOW.json, then used the published scripts/run_record.py checker.",
+      "effect_on_science": "none",
+      "status": "resolved"
+    },
+    {
+      "class": "artifact preview path",
+      "observation": "Two initial contact-sheet paths used unpadded page numbers and returned file-not-found.",
+      "correction": "Used the actual returned final_contact_01_04.jpg and final_contact_09_12.jpg paths; both previews were inspected.",
+      "effect_on_science": "none; no files changed by failed reads",
+      "status": "resolved"
+    }
+  ],
+  "scientific_notation_correction": "review/DECISION.json::resolved_findings",
+  "preserved_source_binding_incidents": "evidence/bindings/pinning_evidence and evidence/bindings/overlay_evidence",
+  "physical_source_or_root_reruns": 0
+}

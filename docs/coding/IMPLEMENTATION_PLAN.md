@@ -1,3 +1,17 @@
+# Current implementation priorities - PHYS15 endpoint theory, 2026-10-13 KST
+
+Read research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/theory/CORRELATED_ENDPOINT_THEORY_KO.md and root CURRENT_DEVELOPMENT_PLAN.json. Current status: Independent review accepted nine scoped theoretical claims as PROMOTE_SCOPED with no remaining blocking findings. PHYS15 is the current accepted theory; PHYS14 remains its carried physical baseline.
+
+The next bounded numerical task is HH_CORRELATED_ENDPOINT_ENCLOSURE, governed by research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/contracts/ENDPOINT_ENCLOSURE_CONTRACT.json. Build the common-input expression DAG from the actual two-half gas/photon equations, the seven absorption sectors, and the density/fhat bridge. Reuse Full UNIFORM_ARITHMETIC.json fixed_C, B, exact binary radius and q=0.00011736830563768177 as one binding. Evaluate the correlated residual r, include d=g2-gF, and use the finite temperature quotient and one shared average inverse for all sector contributions. Preserve the guard chronology and recover the actual photon endpoint difference from the same d_x.
+
+Use the existing Full/half source and PHYS14 carry, root hull and source derivative domains. This PHYS15 theory unit has zero new atomic source callbacks, physical root solves and physical history runs. Any further tightening follows the measured residual width and its actual dependency; first evaluate the inherited-data inclusion. The current successor plan records an empty heavy queue and launch=false; execution routing follows the actual inherited-data inclusion needs.
+
+The current user-selected workflow is physmath-research-loop built-in 1.0.0, THEORY R1-R10; implementation work uses its C1-C10 contract when undertaken. Preserve the mathematical meaning of captured nHe/nH, heat and source leaves, the same alpha and global lambda,b, and all original successful scientific artifacts. Current session authorizations apply to read-only and already authorized work without repeated confirmation.
+
+Publication is an additive branch stacked on PR49 head 087a16f28d0ee4fc7ae74ae50bfcafe578716e85. The independent PROMOTE_SCOPED decision is final for this theory scope; root completes the report and binds actual publication metadata at delivery. Existing main and historical artifacts retain their original state.
+
+## Preserved PHYS14 and earlier implementation guidance
+
 # Current implementation priorities - PHYS14 complete
 
 Read research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/HANDOFF_KO.md and review/DECISION.json. The actual carried second implicit half and finite source-aligned observables are independently PROMOTE_SCOPED. Use the original geometric subfamily, common global parameters, source fhat and 33 energy/sigma/heat leaves.

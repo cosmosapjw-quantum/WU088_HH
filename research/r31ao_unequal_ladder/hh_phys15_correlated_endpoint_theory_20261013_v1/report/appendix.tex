@@ -1,0 +1,109 @@
+\appendix
+\section{기호와 원자료의 대응}
+\begin{longtable}{@{}p{30mm}p{115mm}@{}}
+\toprule
+기호 & 정의와 원자료 대응\\
+\midrule
+\endhead
+$g_0,Z_0$ & 같은 COMMON의 gas 및 aggregate photon/guard. Full·first-half binary payload 대응을 binding에서 확인했다.\\
+$g_1,g_2,g_F$ & first half, 실제 둘째 half, 같은 종료 시각 Full의 root family. 원 $X$ 안의 포함을 재사용한다.\\
+$Q_k,Z_k,P_k$ & absorption 전, 후, integrated absorbed 상태. $P_k=(I-A_k)Q_k$.\\
+$\R,\RF$ & 원 33-node hat remap와 두 guard를 포함한 수송. $\rho$와 $\rho^2$를 결박한다.\\
+$A,L,A_F,L_F$ & 기준점 $g_2$의 half/Full survival 및 absorption 대각 연산자. Guard에서는 $A=1,L=0$.\\
+$\Delta A_1$ & $A_1(g_1)-A_2(g_2)$, 원 density 차이와 $x_1-x_2$로 factorize한다.\\
+$C_1,C_2$ & 광자 chronology의 비음수 대각 연산자. Gas 전처리 행렬 $C$와 별개다.\\
+$\HF,r,d$ & Full residual, $r=\HF(g_2)$, 실제 gas 차이 $d=g_2-g_F$.\\
+$C,B,q,S$ & 원 Full ARITHMETIC export의 고정 전처리 행렬, magnitude bound, 수축 상한, radius scale.\\
+$f_k,\Psi$ & $f_k=n_{{\rm He},k}^{\rm stored}/n_k$와 온도 정렬 사상 $\Psi_w=w\Pi_2/\Pi_1$.\\
+$\ell_e,\ell_T,\ell_H$ & 전자 수, 유한 온도 차이, H 화학·열에너지의 covector.\\
+$\Delta\widehat Z,\Delta Z$ & 각각 $g_2$ 기준 가상 Full과의 photon 차이, 실제 $g_F$ Full과의 차이.\\
+\bottomrule
+\end{longtable}
+
+원 threshold의 bits는
+\[
+(\texttt{402b3266051507a6},\ \texttt{4038965f20504658},\
+\texttt{404b357928e0c9da})
+\]
+이며 FT03 controlled threshold와 photon/HH constants가 각각 동일하다.
+원 $C$의 16개 entries, $B$의 16개 bounds, $S$ 및 $q$는
+\texttt{FIXED\_PRECONDITIONER\_BINDING.json}의 bits/exact 값을 계산 입력으로 사용한다.
+본문의 소수 표시는 이 값을 읽기 쉽게 제시한 것이다.
+
+\section{원고와 검산의 재현 범위}
+보고서의 주요 근거는 다음 문서와 JSON에 대응한다. 모든 내부 경로는 PHYS15 연구 묶음의 상대 경로다.
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\textwidth}{@{}p{41mm}X@{}}
+\toprule
+내용 & 상대 경로\\
+\midrule
+통합 이론 & \texttt{theory/CORRELATED\_ENDPOINT\_THEORY\_KO.md}\\
+광자 분해·부호·ledger & \texttt{theory/PHOTON\_DEFECT\_THEOREM\_KO.md}\\
+source·COMMON 결박 & \texttt{theory/ASSUMPTIONS\_AND\_BINDINGS\_KO.md}\\
+고정 $C,B,q,S$ & \texttt{theory/FIXED\_PRECONDITIONER\_BINDING.md}\\
+광자 exact 검사 & \texttt{checks/photon/PHOTON\_EXACT\_CHECKS.json}\\
+sector 조건 & \texttt{checks/photon/SECTOR\_SIGN\_CHECKS.json}\\
+비선형·Wolfram 검사 & \texttt{checks/NONLINEAR\_TRANSFER\_CHECKS.json}, \texttt{checks/WOLFRAM\_ALGEBRA.json}\\
+독립 최종 판정 & \texttt{review/DECISION.json}, \texttt{review/REVIEW\_KO.md}\\
+\bottomrule
+\end{tabularx}
+\caption{완성된 이론과 실제 검사 근거의 대응.}
+\end{table}
+
+이 보고서는 XeLaTeX으로 컴파일한다. 본문, 표, 정리, TikZ 의존관계 그림 및 한국어 fonts를 source 묶음에 포함한다. 최종 독립 판정 문구는 \texttt{review\_status.tex}, 검산 서술은 \texttt{checks\_status.tex}에 분리되어 있다. 판정의 원자료는 별도의 독립 reviewer 기록으로 유지한다.
+
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\begin{thebibliography}{9}
+\setlength{\itemsep}{4pt}
+\bibitem{rump}
+S. M. Rump, \emph{Verification methods: Rigorous results using floating-point arithmetic},
+Acta Numerica \textbf{19} (2010), 287--449.
+일반 배경: \S6, \S11.5, \S13.
+\url{https://www.tuhh.de/ti3/paper/rump/Ru10.pdf}.
+
+\bibitem{phys14}
+WU088\_HH PHYS14, \emph{공동 carry의 두 번째 half 전달과 광자 기억의 온도 응답},
+2026-10-12. 원 승인 commit
+\texttt{087a16f28d0ee4fc7ae74ae50bfcafe578716e85}.
+\href{https://github.com/cosmosapjw-quantum/WU088_HH/pull/49}{GitHub PR49}.
+원 source-aligned closure, 실제 carry 및 geometry/root 근거.
+
+\bibitem{root_theory}
+WU088\_HH PHYS15, \emph{동일 COMMON의 Full--two-half 결함 이론},
+\texttt{theory/CORRELATED\_ENDPOINT\_THEORY\_KO.md}, 2026-10-13 KST.
+
+\bibitem{photon_theory}
+WU088\_HH PHYS15 광자 분과, \emph{공통 입력을 보존하는 광자 결함과 기체 잔차},
+\texttt{theory/PHOTON\_DEFECT\_THEOREM\_KO.md}.
+Secant 성분 표기 교정 및 원문 보존 기록 포함.
+
+\bibitem{bindings}
+WU088\_HH PHYS15, \emph{동일 COMMON endpoint 비교의 전제와 정확한 source 연결},
+\texttt{theory/ASSUMPTIONS\_AND\_BINDINGS\_KO.md}와 동반
+\texttt{BINDINGS.json}. NCP07 원 archive SHA256:
+\texttt{4ea6b7dbbc714493ac85f944a65a353a1ee75abf5742c3e7ce65a7df56cc3465}.
+
+\bibitem{preconditioner}
+WU088\_HH PHYS15, \emph{기존 Full preconditioner와 수축 상한의 결박},
+\texttt{FIXED\_PRECONDITIONER\_BINDING.md/json}.
+원 \texttt{results/full/UNIFORM\_ARITHMETIC.json}의 $C,B,q,S$.
+
+\bibitem{threshold_binding}
+WU088\_HH PHYS15, \texttt{FT03\_THRESHOLD\_IDENTITY.json}.
+Controlled fixture와 photon/HH threshold 세 leaves의 source graph 및 bits 동일성.
+
+\bibitem{checks}
+WU088\_HH PHYS15, \texttt{checks/}의 photon, sector, nonlinear-transfer 및
+Wolfram exact algebra 기록. 시험용 manufactured 입력과 원 captured leaves의 역할을 각 실행에 명시했다.
+
+\bibitem{review}
+WU088\_HH PHYS15 독립 검토,
+\texttt{review/DECISION.json}, \texttt{review/REVIEW\_KO.md},
+\texttt{review/INDEPENDENT\_THEORY\_CHECKS.json}.
+최종 판정 \texttt{PROMOTE\_SCOPED}, 2026-10-13 KST.
+\end{thebibliography}
+\endgroup
+

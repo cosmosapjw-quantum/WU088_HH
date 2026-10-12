@@ -1,0 +1,21 @@
+{
+  "schema": "WU088_HH_PHYS15_R7_PRE_RUN_V1",
+  "logical_case": "manufactured 4D quadratic residual with off-diagonal coupling and nonlinear finite-temperature readout",
+  "discriminators": [
+    "Positive r sign and exact mean Jacobian versus endpoint Jacobian with nonzero quadratic remainder",
+    "Componentwise and norm preconditioned residual bounds",
+    "Finite-temperature denominator versus differential approximation",
+    "Adjoint and same-inverse sector sum",
+    "Original q binary endpoint yields amplification strictly below 1.000118"
+  ],
+  "command": "python3 checks/check_nonlinear_transfer.py --output checks/NONLINEAR_TRANSFER_CHECKS.json",
+  "arithmetic": "exact rational Python Fraction",
+  "location": "current local research environment",
+  "expected_wall_seconds": 1,
+  "expected_peak_memory_MiB": 32,
+  "physical_source_calls": 0,
+  "physical_root_calls": 0,
+  "physical_history_runs": 0,
+  "acceptance": "All exact equalities/comparisons pass; manufactured quantities explicitly labelled",
+  "authorization": "User explicitly requested actual theoretical derivation and constructive checks with physmath-research-loop"
+}

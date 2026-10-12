@@ -1,3 +1,17 @@
+# WU088_HH current research: PHYS15 correlated endpoint theory
+
+PHYS15 derives the difference between Full and the actual PHYS14 two-half path from one shared COMMON. The theory connects an exact gas residual to seven photon absorption sectors, their original-grid sign relations, a density/fhat source-normalization bridge, and a finite temperature/adjoint decomposition. The original Full fixed_C, B, radius and q=0.00011736830563768177 give the endpoint transfer bound under the inherited source/C2/root premises.
+
+**Current status:** Independent review accepted nine scoped theoretical claims as PROMOTE_SCOPED with no remaining blocking findings. PHYS15 is the current accepted theory; PHYS14 remains its carried physical baseline. This theory unit uses zero new atomic source evaluations, physical root solves or physical history runs.
+
+Read [the PHYS15 derivation](research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/theory/CORRELATED_ENDPOINT_THEORY_KO.md) and [CURRENT_DEVELOPMENT_PLAN.json](CURRENT_DEVELOPMENT_PLAN.json). The next task, **HH_CORRELATED_ENDPOINT_ENCLOSURE**, evaluates the correlated residual, gas/photon endpoint differences and T/e/w/ne intervals, retaining common inputs and the same inverse for sector contributions.
+
+The [independent decision](research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/review/DECISION.json) and [endpoint inclusion contract](research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/contracts/ENDPOINT_ENCLOSURE_CONTRACT.json) bind the accepted scope and the numerical successor. Formal documentation and final delivery are in progress.
+
+The current workflow is physmath-research-loop built-in 1.0.0, THEORY R1-R10. The proposed publication is an additive branch stacked on PHYS14 PR49. Existing scientific artifacts and the original global REI DAG remain available as their immutable source records.
+
+## Preserved PHYS14 and earlier README
+
 # WU088_HH current research: PHYS14 carried second half
 
 PHYS14 is independently **PROMOTE_SCOPED** for one source-aligned geometric-isotropic two-half history. A new uniform implicit root, gas/photon/guard U/V/W and finite thermodynamic responses continue the same COMMON with global lambda,b in both halves. HH temperature response is [-18.93685,-9.75153] microkelvin; mixed HH-birth temperature interaction is [1.96632,3.44806] picokelvin. Inherited photon memory adds thermal energy while lowering temperature.

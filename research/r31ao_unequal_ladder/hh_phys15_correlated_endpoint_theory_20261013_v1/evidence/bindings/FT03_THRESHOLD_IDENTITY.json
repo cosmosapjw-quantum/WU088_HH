@@ -1,0 +1,58 @@
+{
+  "schema": "WU088_HH_PHYS15_FT03_THRESHOLD_BINDING_V1",
+  "threshold_ev_values": [
+    13.598434599702,
+    24.587389011,
+    54.41776
+  ],
+  "FT03_literal_binary64_bits": [
+    "402b3266051507a6",
+    "4038965f20504658",
+    "404b357928e0c9da"
+  ],
+  "captured_CHI_bits": [
+    "402b3266051507a6",
+    "4038965f20504658",
+    "404b357928e0c9da"
+  ],
+  "identity_all_three": true,
+  "definition_chain": [
+    "coupled_primary.rs::model(stage) calls Ft03Model::controlled and changes only n_h_cm3,n_he_cm3",
+    "ft03_controlled.rs::controlled calls HHeModel::controlled_fixture; changes photon energies, alpha,beta,sigma but leaves threshold_ev unchanged",
+    "hhe_events.rs::controlled_fixture supplies threshold_ev [13.598434599702,24.587389011,54.41776]",
+    "phys04_mixed.rs nonphoto ft03_interval_rhs uses model.gas.threshold_ev; photon/HH uses CHI of coupled_primary"
+  ],
+  "meaning": "For this fixed captured model, chi_a^FT equals the corresponding captured CHI_a exact binary64 leaf. Separate notation is valid but may be identified after this binding.",
+  "sources": [
+    {
+      "path": "/workspace/scratch/b826cbaab54f/phys14_intake/ncp07/HH_PHYS07_NCP_LOCAL_20261011_v1/candidate/src/ft03_controlled.rs",
+      "archive_member": "HH_PHYS07_NCP_LOCAL_20261011_v1/candidate/src/ft03_controlled.rs",
+      "bytes": 14726,
+      "sha256": "61e11471482bb49d99e5d0eb79504d3f67538fbe6361653a0462d1abb0b672db",
+      "archive_and_manifest_match": true
+    },
+    {
+      "path": "/workspace/scratch/b826cbaab54f/phys14_intake/ncp07/HH_PHYS07_NCP_LOCAL_20261011_v1/candidate/src/hhe_events.rs",
+      "archive_member": "HH_PHYS07_NCP_LOCAL_20261011_v1/candidate/src/hhe_events.rs",
+      "bytes": 9447,
+      "sha256": "c100b08e034089c2d67b2102769ccdd51f1d29a2f388d6bb2dfe7984af93b290",
+      "archive_and_manifest_match": true
+    },
+    {
+      "path": "/workspace/scratch/b826cbaab54f/phys14_intake/ncp07/HH_PHYS07_NCP_LOCAL_20261011_v1/candidate/src/coupled_primary.rs",
+      "archive_member": "HH_PHYS07_NCP_LOCAL_20261011_v1/candidate/src/coupled_primary.rs",
+      "bytes": 28893,
+      "sha256": "2c528f1e7dcf44622374f8421a192f75ce8cff8b1c311bbff508f9ed863d7dcc",
+      "archive_and_manifest_match": true
+    },
+    {
+      "path": "/workspace/scratch/b826cbaab54f/phys14_intake/ncp07/HH_PHYS07_NCP_LOCAL_20261011_v1/candidate/src/phys04_mixed.rs",
+      "archive_member": "HH_PHYS07_NCP_LOCAL_20261011_v1/candidate/src/phys04_mixed.rs",
+      "bytes": 8969,
+      "sha256": "0fa10fdea11cb24aa1a191a2ea81cf4c8442299fde7278a191553b42a26585d3",
+      "archive_and_manifest_match": true
+    }
+  ],
+  "source_evaluations": 0,
+  "root_history_executions": 0
+}
