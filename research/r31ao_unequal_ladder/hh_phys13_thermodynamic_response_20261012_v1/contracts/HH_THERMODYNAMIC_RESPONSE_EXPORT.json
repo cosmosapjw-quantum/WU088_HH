@@ -1,0 +1,47 @@
+{
+  "schema": "WU088_HH_PHYS13_THERMODYNAMIC_EXPORT_V1",
+  "provider": "WU088_HH",
+  "consumer": null,
+  "consumer_admission": false,
+  "decision": "review/DECISION.json",
+  "process": "effective LCS neutral H-H ionization, distinct from singlet H+/H- scattering",
+  "family": "same-alpha NCP07/PHYS09 real-lift, inherited source-inclusion and C2 implicit branch",
+  "coordinate": [
+    "x_HII",
+    "y_HeII",
+    "y_HeIII",
+    "w_eV_per_H"
+  ],
+  "readouts": {
+    "e": "x+fhat*(y1+2*y2)",
+    "n_e_cm3": "nH*e",
+    "particles_per_H": "1+fhat+e",
+    "T_K": "2*exact(ev_erg)/(3*exact(kb_erg_k))*w/particles_per_H",
+    "fhat": "exact(nHe_stored)/exact(nH)",
+    "f": "exact(stage.fHe); separately retained for photo/energy normalization"
+  },
+  "switches": {
+    "lambda": "selected future HH source strength; prior HH and compensation retained",
+    "b": "selected future photon birth amplitude; existing photons retained"
+  },
+  "results": "results/thermo_v2/THERMO_RESULTS.json",
+  "stage_ids": [
+    "full",
+    "first_half"
+  ],
+  "stage_chronology": "independent first stages from same COMMON; not a two-half history",
+  "admission_fields_required": [
+    "consumer source/scenario identity",
+    "COMMON and prior state relationship",
+    "operator and coefficient graph relationship",
+    "time/stage/birth conventions",
+    "observable definition, unit and norm",
+    "absolute effect question or materiality budget"
+  ],
+  "global_nodes_newly_completed": [],
+  "native_authority": false,
+  "same_root_readout_bridge_only": true,
+  "omission_decision": null,
+  "heavy_queue": [],
+  "launch": false
+}
