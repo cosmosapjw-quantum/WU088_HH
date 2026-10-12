@@ -1,3 +1,13 @@
+# PHYS17 handoff — actual parameter response complete
+
+The inherited PHYS16 first-derivative obligation is complete and independently PROMOTE_SCOPED. Read research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/DEPENDENCIES.json, the three successful application records, review/DECISION.json and the full theorem. Existing source and U/V/W carry are reused through the pinned PHYS16 parent bundle and its PHYS15 dependency archive.
+
+Next use research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/contracts/MIXED_RESPONSE_CONTRACT.json for W_d=d_lambda_b, the finite temperature mixed derivative and four-corner HH/birth contrast. Maintain the small shared d,d_lambda,d_b and second-half increments before interval evaluation. The existing first-derivative bounds already imply |I|<=1.958485175177039e-9 K; the mixed application must establish its own enclosure and mechanism.
+
+PHYS17's b response is positive because birth-BE explicit forcing dominates small negative feedback. A remaining birth-redshift derivative interval spans zero mainly because opposite-signed adjacent photon groups lose correlation in componentwise interval transfer. Source and inverse approximation replays do not address that specific width. The two m=2 endpoint Jacobian surrogate derivative error bounds are recorded separately from total physical interval widths.
+
+## Preserved previous implementation plan
+
 # PHYS16 handoff - actual correlated endpoint and C2 remainder complete
 
 The current bounded application and finite endpoint/adjoint calculation are independently PROMOTE_SCOPED. Read research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/DEPENDENCIES.json and the two immutable run directories. Reuse the parent PHYS15 input tree at commit b4b8019c6f149035c52784aced8e9cd7f3fbb23b; the full PHYS16 snapshot includes the pinned parent archive.

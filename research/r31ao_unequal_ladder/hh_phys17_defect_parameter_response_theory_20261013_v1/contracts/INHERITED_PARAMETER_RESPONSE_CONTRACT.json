@@ -1,0 +1,244 @@
+{
+  "schema": "WU088_HH_PHYS16_PARAMETER_RESPONSE_CONTRACT_V1",
+  "provider_unit": "PHYS16_THEORY",
+  "provider_review_status": "PROMOTE_SCOPED",
+  "successor_unit": "HH_DEFECT_PARAMETER_RESPONSE",
+  "successor_task": "research",
+  "successor_execution_status": "not_run",
+  "objective": "Derive and evaluate the first derivatives of same-COMMON d=g2-gF and DeltaT=T2-TF with respect to the same global lambda and b, separating explicit source forcing from state/opacity feedback.",
+  "scope": {
+    "family": "Inherited source-aligned geometric isotropic fixed-alpha C2 family",
+    "parameters": {
+      "lambda": [
+        0,
+        1
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "same_across_stages": true,
+      "derivative_parameters": [
+        "lambda",
+        "b"
+      ],
+      "alpha": "fixed admissible coefficient choice"
+    },
+    "gas_coordinates": [
+      "x_HII",
+      "y_HeII",
+      "y_HeIII",
+      "w_eV_per_H"
+    ],
+    "photon_coordinates": "33 original groups plus number and energy guards",
+    "time_s": {
+      "h": 625000000,
+      "t0": 160000000000,
+      "t1": 160625000000,
+      "t2": 161250000000
+    },
+    "domain": "Original convex X, internal root/source hulls and positive denominators",
+    "regularity": "C2 source/root family; first-order parameter carry and H_gg,H_gtheta suffice",
+    "partial_derivative_meaning": "Differentiate the actual endpoint defect with all same-family state feedback retained; physical sector attribution is a separate linked decomposition"
+  },
+  "input_roots": {
+    "PHYS15": {
+      "required": true,
+      "local_sibling_default": "../HH_PHYS15_THEORY_20261012_v1",
+      "repository": "cosmosapjw-quantum/WU088_HH",
+      "commit": "b4b8019c6f149035c52784aced8e9cd7f3fbb23b",
+      "tree": "0a356c941dc7f9c7aacc7245396a9a53fe39dde4",
+      "repository_core": "research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1",
+      "restoration": "Use unchanged PHYS15 INPUT_RESTORE.json and src/restore_large_inputs.py when preparing its archived large inputs."
+    },
+    "PHYS16": {
+      "required": true,
+      "local_root": ".",
+      "decision": "Adopted PROMOTE_SCOPED in review/DECISION.json; reuse only the recorded inherited fixed-family scope."
+    }
+  },
+  "input_bindings": [
+    {
+      "id": "PHYS15_THEORY",
+      "root": "PHYS15",
+      "path": "theory/CORRELATED_ENDPOINT_THEORY_KO.md",
+      "role": "Original exact residual, mean Jacobian and finite-temperature convention",
+      "bytes": 20761,
+      "sha256": "60c9d5e52df1fa43e317c2043598e0d44ed89854c79dad4bed474aa4f200ef61"
+    },
+    {
+      "id": "SOURCE_ASSUMPTIONS",
+      "root": "PHYS15",
+      "path": "theory/ASSUMPTIONS_AND_BINDINGS_KO.md",
+      "role": "Original FT03/HH source and fhat normalization",
+      "bytes": 9861,
+      "sha256": "16e23676dbe6a1c0805728c7e01c22d7e37f97c990e892e7d75e6cd2f3718b41"
+    },
+    {
+      "id": "FIRST_FULL_UV",
+      "root": "PHYS15",
+      "path": "inputs/phys14/inputs/phys09/PROJECTED_RESULTS.json",
+      "role": "stages[stage=first_half/full]::U,V",
+      "bytes": 1120229,
+      "sha256": "c6329fed8c411e1592bd1a0c63ebd9ca6151e81500ed1f46fb6b40f4b7758444"
+    },
+    {
+      "id": "PHOTON_CARRY",
+      "root": "PHYS15",
+      "path": "inputs/phys14/inputs/phys11/CARRY_RESULTS.json",
+      "role": "stages[stage=first_half].groups signed incoming/outgoing/absorbed Jets",
+      "bytes": 6463565,
+      "sha256": "5e3dc0b589c5e86672664ea851e7986708e10ed73f6a3db8332b9c8084a897ca"
+    },
+    {
+      "id": "SECOND_HALF_UV",
+      "root": "PHYS15",
+      "path": "inputs/phys14/results/advance01/ADVANCE_RESULTS.json",
+      "role": "gas_response::U,V and actual g2",
+      "bytes": 643946,
+      "sha256": "a0faac7d55b425ae85ed8ee15e57d5f3c2687b40896b039fe858dcfdb342e28e"
+    },
+    {
+      "id": "FULL_SOURCE",
+      "root": "PHYS15",
+      "path": "inputs/phys14/inputs/ncp07/results/full/SOURCE_BOX.json",
+      "role": "A_Gg,G_gg,G_lambda,G_b,G_g_lambda,G_g_b",
+      "bytes": 57972,
+      "sha256": "cf1b48df2c299187a03ab501b1169e2d559c5959bf50892d7b749c65f81ff64d"
+    },
+    {
+      "id": "HALF_SOURCE",
+      "root": "PHYS15",
+      "path": "inputs/phys14/inputs/ncp07/results/first_half/SOURCE_BOX.json",
+      "role": "First-half source and same gas/parameter slot mapping",
+      "bytes": 57807,
+      "sha256": "36247ef5ac3bce4b114aac41fe5d85c2015488183ba32b77f9051cc7d25b77b4"
+    },
+    {
+      "id": "FULL_COMPONENTS",
+      "root": "PHYS15",
+      "path": "inputs/phys14/inputs/ncp07/results/full/SOURCE_BOX_COMPONENTS.json",
+      "role": "nonphoto signed gas Jacobian/Hessian; q supplied by FULL_SOURCE",
+      "bytes": 554961,
+      "sha256": "29e73ac3518cd4cb5f11ee24c7237a43442d6615a1dba1e710d0206f319ad610"
+    },
+    {
+      "id": "HALF_COMPONENTS",
+      "root": "PHYS15",
+      "path": "inputs/phys14/inputs/ncp07/results/first_half/SOURCE_BOX_COMPONENTS.json",
+      "role": "First-half nonphoto signed gas Jacobian/Hessian; q supplied by HALF_SOURCE",
+      "bytes": 554945,
+      "sha256": "4272aa6aa49e836eacfdcccddf30e7b5c77fd2e5d8e1846beb0f16af741cf63c"
+    },
+    {
+      "id": "PRECONDITIONER",
+      "root": "PHYS15",
+      "path": "inputs/ncp07_additions/results/full/UNIFORM_ARITHMETIC.json",
+      "role": "same-file fixed C,B,q,S",
+      "bytes": 3918,
+      "sha256": "3cf8c86b445ba2be2889e5effbdaacbcf84d0dcedbabd60763124141dfbc09af"
+    },
+    {
+      "id": "EXPORT_MAPPING",
+      "root": "PHYS15",
+      "path": "inputs/phys14/inputs/ncp07/src/sourcebox.rs",
+      "role": "G_g_lambda=Hessian[g][4],G_g_b=Hessian[g][5]",
+      "bytes": 24396,
+      "sha256": "d771968e9c12c0cce5a9e3ec5fa7311d0040ac63d1f4f4a6f54f048972f674ae"
+    },
+    {
+      "id": "PHYS16_APPLICATION",
+      "root": "PHYS16",
+      "path": "checks/application/run01/results/CORRELATED_DEFECT_RESULTS.json",
+      "role": "Same-COMMON r,d,PiF and residual sectors",
+      "bytes": 463751,
+      "sha256": "725cca8b785343f638ddc69d0d056643086955927f9a0c84cbea3ea46a10d2fc"
+    },
+    {
+      "id": "PHYS16_REMAINDER",
+      "root": "PHYS16",
+      "path": "checks/endpoint/application01/ENDPOINT_REMAINDER_RESULTS.json",
+      "role": "Endpoint/mean adjoint closure and signed birth sector bounds",
+      "bytes": 216859,
+      "sha256": "6cf01b2c6f69c0ff89ab5f2a3487ea34fbd35da6c0f72b6f4ee09e1d7ad5b4c8"
+    },
+    {
+      "id": "STARTING_DERIVATION",
+      "root": "PHYS16",
+      "path": "theory/NEXT_PARAMETER_RESPONSE_PROPOSAL_KO.md",
+      "role": "P1-P4 exact starting formulae",
+      "bytes": 3984,
+      "sha256": "34283485907b58fd8a0c03f9d2cd915645e919a82cf81def3da127984533a7bf"
+    }
+  ],
+  "exact_starting_relations": {
+    "definitions": "y=g2;d=y-gF;r=H_F(y;theta);J_F=H_g(gF;theta);theta=lambda or b",
+    "implicit_first_derivative": "J_F*d_theta=J_F*y_theta+H_theta(gF;theta)",
+    "correlated_derivative": "J_F*d_theta=r_theta-integral_0^1[H_gg(y-s*d;theta)[d,y_theta]+H_gtheta(y-s*d;theta)*d]ds",
+    "stage_residual_derivative": "r_theta=h*(B1_g*g1_theta+B1_theta-B2_g*y_theta-B2_theta)+V*p_theta",
+    "finite_temperature_derivative": "partial_theta DeltaT=(CT*d_wtheta-T2*d_etheta-T2_theta*d_e-DeltaT*(le*y_theta-d_etheta))/PiF",
+    "temperature_at_second_half": "T2_theta=D_g T(g2)*y_theta",
+    "lambda_source": "H_lambda=-2*h*q2*nuH;H_glambda=-2*h*nuH outer D_g q2",
+    "birth_source": "H_b=-2*V*LF*J;H_gb=2*sum_j ell_j*J_j/(DF_j^2)*nu_j outer e_x;ell_j=2*h*a2j"
+  },
+  "derivative_slots": {
+    "gas": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "lambda": 4,
+    "b": 5,
+    "G_g_lambda": "residual[i].hessian[j][4]",
+    "G_g_b": "residual[i].hessian[j][5]"
+  },
+  "units": {
+    "d_lambda_and_d_b": [
+      "fraction",
+      "fraction",
+      "fraction",
+      "eV/H"
+    ],
+    "DeltaT_parameter_derivative": "K per unit dimensionless parameter",
+    "Deltae_parameter_derivative": "electrons/H per unit dimensionless parameter",
+    "Deltaw_parameter_derivative": "eV/H per unit dimensionless parameter"
+  },
+  "acceptance": [
+    "Maintain one fixed alpha and common lambda,b throughout inherited carries and differentiated sector expressions",
+    "Use original H_gg,H_gtheta derivative slots and retain all signed tail information",
+    "Derive P2 from the original implicit equation using C2 regularity",
+    "Use the same C,B,q,S for J_F transfer and retain explicit/feedback terms in the reported result",
+    "Apply the exact finite denominator in P4 and verify PiF>0",
+    "Output actual first-derivative intervals and sign margins; preserve any unresolved zero-containing intervals with their dominant dependency width",
+    "Independent scoped review with exact input/code/result identities"
+  ],
+  "outputs": [
+    "theory/PARAMETER_RESPONSE_THEOREM_KO.md",
+    "PARAMETER_RESPONSE_RESULTS.json",
+    "RUN_RECORD.json",
+    "DECISION.json"
+  ],
+  "execution_contract": {
+    "status": "theory_start_ready_implementation_not_selected",
+    "command": null,
+    "reason": "The next theory unit first closes P2-P4 and the differentiated seven-sector graph; its actual evaluator command is recorded after that implementation exists."
+  },
+  "resource_policy": {
+    "first_location": "current environment for derivation and bounded stored-enclosure arithmetic",
+    "heavy_queue": [],
+    "launch": false,
+    "escalation": "Use measured workload and current project authority only if a selected execution needs additional resources."
+  },
+  "global_nodes_newly_completed": [],
+  "source_or_closure_change": false,
+  "new_strong_no_go": {
+    "applicable": false,
+    "reason": "This unit constructs derivative transfer and observable enclosures; no new impossibility/exclusion claim is proposed."
+  },
+  "provider_review": {
+    "decision": "PROMOTE_SCOPED",
+    "path": "review/DECISION.json",
+    "sha256": "610df271576260d01b473c004824ef7179bce475931cfd50c7e017dadfc0bbd3"
+  }
+}

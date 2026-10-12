@@ -1,0 +1,71 @@
+# PHYS16 handoff - actual correlated endpoint and C2 remainder complete
+
+The current bounded application and finite endpoint/adjoint calculation are independently PROMOTE_SCOPED. Read research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/DEPENDENCIES.json and the two immutable run directories. Reuse the parent PHYS15 input tree at commit b4b8019c6f149035c52784aced8e9cd7f3fbb23b; the full PHYS16 snapshot includes the pinned parent archive.
+
+The next work is research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/contracts/PARAMETER_RESPONSE_CONTRACT.json. Derive d_lambda and d_b using H_gg and H_gtheta with stored first/second-half U/V. The previous numerical endpoint obligation is complete. Keep one COMMON and one global parameter choice through every expression; residual sector attribution is not a total parameter derivative.
+
+The m=2 endpoint approximation's certified temperature remainder is at most 1.710575696736044e-12 K using the same finite denominator. The remaining total enclosure width is much larger; refine the shared expression or parameter representation only where it can change the next physical decision. Keep source roots and native/microscopic scientific conditions unchanged unless a concrete new obligation requires action.
+
+## Preserved previous implementation plan
+
+# Current implementation priorities - PHYS15 endpoint theory, 2026-10-13 KST
+
+Read research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/theory/CORRELATED_ENDPOINT_THEORY_KO.md and root CURRENT_DEVELOPMENT_PLAN.json. Current status: Independent review accepted nine scoped theoretical claims as PROMOTE_SCOPED with no remaining blocking findings. PHYS15 is the current accepted theory; PHYS14 remains its carried physical baseline.
+
+The next bounded numerical task is HH_CORRELATED_ENDPOINT_ENCLOSURE, governed by research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/contracts/ENDPOINT_ENCLOSURE_CONTRACT.json. Build the common-input expression DAG from the actual two-half gas/photon equations, the seven absorption sectors, and the density/fhat bridge. Reuse Full UNIFORM_ARITHMETIC.json fixed_C, B, exact binary radius and q=0.00011736830563768177 as one binding. Evaluate the correlated residual r, include d=g2-gF, and use the finite temperature quotient and one shared average inverse for all sector contributions. Preserve the guard chronology and recover the actual photon endpoint difference from the same d_x.
+
+Use the existing Full/half source and PHYS14 carry, root hull and source derivative domains. This PHYS15 theory unit has zero new atomic source callbacks, physical root solves and physical history runs. Any further tightening follows the measured residual width and its actual dependency; first evaluate the inherited-data inclusion. The current successor plan records an empty heavy queue and launch=false; execution routing follows the actual inherited-data inclusion needs.
+
+The current user-selected workflow is physmath-research-loop built-in 1.0.0, THEORY R1-R10; implementation work uses its C1-C10 contract when undertaken. Preserve the mathematical meaning of captured nHe/nH, heat and source leaves, the same alpha and global lambda,b, and all original successful scientific artifacts. Current session authorizations apply to read-only and already authorized work without repeated confirmation.
+
+Publication is an additive branch stacked on PR49 head 087a16f28d0ee4fc7ae74ae50bfcafe578716e85. The independent PROMOTE_SCOPED decision is final for this theory scope; root completes the report and binds actual publication metadata at delivery. Existing main and historical artifacts retain their original state.
+
+## Preserved PHYS14 and earlier implementation guidance
+
+# Current implementation priorities - PHYS14 complete
+
+Read research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/HANDOFF_KO.md and review/DECISION.json. The actual carried second implicit half and finite source-aligned observables are independently PROMOTE_SCOPED. Use the original geometric subfamily, common global parameters, source fhat and 33 energy/sigma/heat leaves.
+
+Next form the correlated same-COMMON Full-versus-two-half endpoint defect, reusing admitted full/half source and carry and the exact remap split stencil. Preserve gas/photon dependence before subtracting root enclosures. Admit only the actual missing source/domain work. Existing successful scientific runs are cached evidence.
+
+Use 31 exact existing Git input blobs, nine small new inputs, and five archive-restored large members. src/restore_large_inputs.py verifies archive/member bytes and installs only missing files; it refuses differing existing input. Current science used one new implicit-stage run with zero native/atomic/NCP calls. Independent review, analytic oracles, input restoration, and publication checks retain their distinct roles.
+
+## Preserved PHYS13 and original implementation guidance
+
+# Current implementation priorities — PHYS13
+
+Read research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/HANDOFF_KO.md and the completed independent decision. Reuse the exact observable transfer; there is no heavy job ready. Preserve source fhat, coefficient graph, finite-switch and first-stage chronology. A concrete consumer requires same-family admission; actual further history requires joint carried state and next-stage source coverage. PHYS13 adds one provider result and changes no original Atomic Reuse v2 dependency.
+
+## Preserved prior implementation guidance
+
+# Active implementation priorities — HH Atomic-Reuse plan v2, 2026-10-12
+
+Read root CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/DEVELOPMENT_PLAN_KO.md, NEXT_DAG.json, TASK_CARDS.jsonl and HANDOFF_KO.md. This is a plan/provider-contract update after PHYS12, with zero new scientific execution.
+
+1. Reuse PHYS12 source-bound absolute HH response and inherited mixed response. Producer evidence and process-owner contracts are prepared under the current plan; source/rate/consumer admission remains distinct.
+2. When a named consumer request exists, compare the full source family and domain in HH_DOMAIN_SCREEN, then apply the observable/error decision policy in HH_MATERIALITY. Coarse coordinate-box overlap is insufficient.
+3. For a selected physical EoR effect question, bind actual RUX11 evidence before HH_MATCHED_HISTORY. Compare prespecified geometry and HH switches; reuse matching cached histories and compute only missing cases. Preserve sequential time carry and coupled photon groups.
+4. Keep independent HH_SINGLET and HH_STRICT_NATIVE routes open under original microscopic/native requirements without REI completion prerequisites. Optional HH is not a baseline EoR dependency.
+5. NCP queue remains empty. Admit a concrete expensive unfinished task only under its lane's NCP_TASKS.json conditions, using available measured cost evidence. No historical science replay or empty-queue host benchmark.
+
+Original source arrays, code, closures, tolerances and past failures are preserved. Plan review is research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/review/PLAN_REVIEW.json; PHYS12's scientific decision retains its existing scope.
+
+## Preserved R31K-B implementation plan — historical native lane
+
+The original text below remains valid within its historical frozen107/native scope and does not set the default next task for all HH research.
+
+# R31K-B bounded research + coding loop
+
+Authority: user 2026-09-26 request, GPT6 Astra v4 research/coding harnesses.
+Maintain frozen107 donor, complex ETFs, 47+2 basis, <=2e-7 Eh H order-difference gate, independent dotO and raw-matrix gates. No propagation, midpoint admission or scientific rerun of completed anchors.
+
+DAG: raw intake -> H order comparison -> missing-provider report;
+raw events + baseline source -> scheduling diagnosis -> held-out cost-wave model -> scheduler tests -> guarded orchestrator;
+exact Gaussian/moment derivation + scalar source -> OpenMP gamma-plane candidate -> baseline numerical equivalence and refusal tests -> host benchmark (not sandbox host-speed claim).
+
+1. Reuse all ten returned exact states. No heavy pair reruns.
+2. Validate longest-cost-first selection before each <=12-pair wave, preserve the existing queue/ACK fence and canonical assembly order. Instrument cost-profile identity separately from scientific identity.
+3. Hardware topology from allowed affinity, physical package/core IDs, cgroup quota and available memory. Do not infer RAM from old profiles or configure 24 workers automatically.
+4. New native candidate: hoist separable Gaussian factors; preserve even-power analytic integration and independent wide-strip seeds. Parallelize independent gamma planes, storing per-plane compensated partial sums and reducing in original h order. No SIMD precision downgrade or OpenMP floating reduction.
+5. Test failures first at scheduling and thread-utilization interfaces. Add equivalence/error/domain tests. Owner self-review does not count as independent final decision.
+6. Versioned repository overlay and local benchmark commands; existing runtime remains unmodified. Publish only within explicitly requested WU088_HH repository. If Git transport is blocked, retain local commit and report no push.

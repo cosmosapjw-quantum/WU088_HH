@@ -1,3 +1,13 @@
+# WU088_HH 현재 결과: PHYS17
+
+같은 COMMON과 공유 전역 매개변수에서 실제 endpoint 결함의 1차 응답을 유도·계산했다. 독립 판정은 **PROMOTE_SCOPED**, 별도 Fraction 산술은 **29/29 PASS**다.
+
+온도 결함의 lambda 미분은 **[-1.009599125635e-8, -8.137506081166e-9] K**, b 미분은 **[6.776348385589e-5, 7.185335549648e-5] K**다. 원 C2 nonphoto Jet에서 He 열원 도함수를 직접 구성하여 density pullback을 닫았다. 같은 Full inverse와 온도 covector에서 lambda의 직접·feedback 기여는 모두 음수, b의 직접 기여는 양수이고 feedback은 작은 음수다.
+
+[연구 개요](research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/README_KO.md), [19쪽 PDF](research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/report/WU088_HH_PHYS17_THEORY_20261013.pdf), [채택 기록](research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/review/DECISION.json), [다음 DAG](research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/NEXT_DAG.json)를 참조한다. 다음은 기존 mixed carry와 C2 Hessian을 사용하는 HH_DEFECT_MIXED_RESPONSE이며, 네 모서리 HH/birth contrast의 현재 상한은 1.958485175177039e-9 K다. 원 source·root·history 재실행 및 NCP launch는 모두 0회다.
+
+## 이전 연구 개요 보존
+
 # WU088_HH 현재 결과: PHYS16
 
 같은 COMMON에서 출발한 실제 두 half와 Full의 상관 endpoint 차이를 계산하고 C² endpoint remainder 및 공통 adjoint 정리를 완성했다. 독립 판정은 **PROMOTE_SCOPED**이며 적용 범위는 기존 source-aligned geometric-isotropic 계열과 동일한 전역 lambda,b다.

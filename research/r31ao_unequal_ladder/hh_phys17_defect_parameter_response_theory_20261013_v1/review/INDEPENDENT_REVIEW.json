@@ -1,0 +1,667 @@
+{
+  "schema": "WU088_HH_PHYS17_INDEPENDENT_REVIEW_V1",
+  "decision": "PROMOTE_SCOPED",
+  "reviewer": "/root/hh_phys17_literature_review",
+  "completed_utc": "2026-10-12T23:01:18.511775+00:00",
+  "scope": {
+    "same_COMMON": true,
+    "same_global_lambda_b": true,
+    "lambda": [
+      0,
+      1
+    ],
+    "b": [
+      0,
+      1
+    ],
+    "fixed_alpha": "inherited source-aligned geometric-isotropic fixed-coefficient C2 family",
+    "derivative": "actual same-family finite endpoint difference",
+    "new_physical_source_calls": 0,
+    "new_reaction_fit_evaluations": 0,
+    "new_nonlinear_root_solves": 0,
+    "history_replays": 0
+  },
+  "scope_contract": {
+    "root": "HH_PHYS16_THEORY_20261013_v1",
+    "path": "contracts/PARAMETER_RESPONSE_CONTRACT.json",
+    "bytes": 9881,
+    "sha256": "f6bc651dfb129983f72bb6aa89fa850a19213c0963e5575581dd1dd1d4666daf"
+  },
+  "contract_input_bindings_verified": 14,
+  "main_input_identities_verified": 13,
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "C2 implicit P1/P2 response and signed full residual mixed derivatives",
+      "result": "PASS",
+      "evidence": "Direct independent derivation, 96 original export-slot equalities, quadratic exact sign witness, xAct contraction checks"
+    },
+    {
+      "id": "C2",
+      "claim": "Shared gas movement and exact density/time source closure",
+      "result": "PASS",
+      "evidence": "Original FT03/phys04 thermal source, fixed-temperature He projector, same carried stage increment, original convex X"
+    },
+    {
+      "id": "C3",
+      "claim": "Seven photon sectors and actual global parameter derivatives",
+      "result": "PASS",
+      "evidence": "Ordered noncommuting identity, manual product-rule and dual candidate implementations, 490 group/sector intersections"
+    },
+    {
+      "id": "C4",
+      "claim": "Same JF response inclusion with unchanged C/B/q/S",
+      "result": "PASS",
+      "evidence": "Independent exact determinant/Cramer majorants, nonnegative tails and three signed refinements"
+    },
+    {
+      "id": "C5",
+      "claim": "Finite P4 temperature derivative and common goal/adjoint attribution",
+      "result": "PASS",
+      "evidence": "Positive original PiF, exact P4 enclosure, total and decomposed signs; units K per unit dimensionless parameter"
+    },
+    {
+      "id": "C6",
+      "claim": "Finite Neumann derivative and endpoint change error bound",
+      "result": "PASS",
+      "evidence": "Coefficient 1 in Jacobian difference, conservative inherited rational copy, independent exact readout"
+    },
+    {
+      "id": "C7",
+      "claim": "Monotonic finite changes, local level curve, four-corner contrast prior",
+      "result": "PASS",
+      "evidence": "FTC/IFT derivation with same alpha, five exact corollary intervals and outward decimals"
+    },
+    {
+      "id": "C8",
+      "claim": "Actual Wolfram+xAct formal execution",
+      "result": "PASS_SCOPED",
+      "evidence": "6 tensor checks and 15 values in 9 scalar groups all exactly zero, pure WL xPerm backend; original physical source binding reviewed separately"
+    },
+    {
+      "id": "C9",
+      "claim": "Primary literature premises and citation scope",
+      "result": "PASS",
+      "evidence": "Four new primary references; two prior references reused; MB22 sufficient-condition citation correction"
+    }
+  ],
+  "blocking_findings": [],
+  "accepted_output_intervals": {
+    "lambda": {
+      "d_theta": [
+        {
+          "exact": {
+            "lo": [
+              "69600296159185913122105529515029264261236189233398706728071365899843119741121",
+              "509258994083621521567111422102344540262867098416484062659035112338595324940834176545849344"
+            ],
+            "hi": [
+              "21515249235168293054639082743937957009993938941218567827630344438405931847419",
+              "127314748520905380391777855525586135065716774604121015664758778084648831235208544136462336"
+            ]
+          },
+          "outward_decimal": [
+            "1.366697436231E-13",
+            "1.689925910794E-13"
+          ],
+          "sign": "STRICT_POSITIVE"
+        },
+        {
+          "exact": {
+            "lo": [
+              "61833253976646337503885293659506380554723094135342684773041329202781437537935",
+              "1042962419883256876169444192465601618458351817556959360325703910069443225478828393565899456512"
+            ],
+            "hi": [
+              "25961188893553949718467994817039850282952993649371783821043711897740106855635",
+              "260740604970814219042361048116400404614587954389239840081425977517360806369707098391474864128"
+            ]
+          },
+          "outward_decimal": [
+            "5.928617637399E-17",
+            "9.956711152243E-17"
+          ],
+          "sign": "STRICT_POSITIVE"
+        },
+        {
+          "exact": {
+            "lo": [
+              "80035792138226719356446716708694692647055322312027600830936383877308012210235",
+              "16687398718132110018711107079449625895333629080911349765211262561111091607661254297054391304192"
+            ],
+            "hi": [
+              "26338666930814490462083323521593642660569082842404647554728832990849902825465",
+              "4171849679533027504677776769862406473833407270227837441302815640277772901915313574263597826048"
+            ]
+          },
+          "outward_decimal": [
+            "4.796181447457E-18",
+            "6.313426646227E-18"
+          ],
+          "sign": "STRICT_POSITIVE"
+        },
+        {
+          "exact": {
+            "lo": [
+              "-107365005677636146910134009511504946771858359275690527952907808506131956497175",
+              "63657374260452690195888927762793067532858387302060507832379389042324415617604272068231168"
+            ],
+            "hi": [
+              "-43618295863469961353942361606745146506398820310752127782597668848585970044997",
+              "31828687130226345097944463881396533766429193651030253916189694521162207808802136034115584"
+            ]
+          },
+          "outward_decimal": [
+            "-1.686607512876E-12",
+            "-1.370408263621E-12"
+          ],
+          "sign": "STRICT_NEGATIVE"
+        }
+      ],
+      "DeltaT_theta_K": {
+        "exact": {
+          "lo": [
+            "-78452672599524474793675875577358741985061916929375149267675397592975792813613",
+            "7770675568902916283677847627294075626569627356208558085007249638955617140820833992704"
+          ],
+          "hi": [
+            "-123503749407651780219220291681966629494967494949978420163189274021125297557",
+            "15177100720513508366558296147058741458143803430094840009779784451085189728165691392"
+          ]
+        },
+        "outward_decimal": [
+          "-1.009599125635E-8",
+          "-8.137506081166E-9"
+        ],
+        "sign": "STRICT_NEGATIVE"
+      },
+      "explicit_DeltaT_theta_K": {
+        "exact": {
+          "lo": [
+            "-33211334250098133763757537305805424794741518586968448960485494148911126303011",
+            "3885337784451458141838923813647037813284813678104279042503624819477808570410416996352"
+          ],
+          "hi": [
+            "-54077958664923423330249555888115733318517930404654636804118842011135841784539",
+            "7770675568902916283677847627294075626569627356208558085007249638955617140820833992704"
+          ]
+        },
+        "outward_decimal": [
+          "-8.547862783773E-9",
+          "-6.959235163714E-9"
+        ],
+        "sign": "STRICT_NEGATIVE"
+      },
+      "feedback_DeltaT_theta_K": {
+        "exact": {
+          "lo": [
+            "-96239349654672473064396841299671633966665007944018637618271659664871647827741",
+            "62165404551223330269422781018352605012557018849668464680057997111644937126566671941632"
+          ],
+          "hi": [
+            "-36624144185862289049161094136670679203682246574163615321866038972617269048249",
+            "31082702275611665134711390509176302506278509424834232340028998555822468563283335970816"
+          ]
+        },
+        "outward_decimal": [
+          "-1.548117483502E-9",
+          "-1.178280571010E-9"
+        ],
+        "sign": "STRICT_NEGATIVE"
+      },
+      "decomposition_intersection_DeltaT_theta_K": {
+        "exact": {
+          "lo": [
+            "-39226293603515163330282339887034901917658081583469613811627472877965604292245",
+            "3885337784451458141838923813647037813284813678104279042503624819477808570410416996352"
+          ],
+          "hi": [
+            "-63233994711388995592539829422283403119438492048195540634585351754290159046601",
+            "7770675568902916283677847627294075626569627356208558085007249638955617140820833992704"
+          ]
+        },
+        "outward_decimal": [
+          "-1.009598026728E-8",
+          "-8.137515734724E-9"
+        ],
+        "sign": "STRICT_NEGATIVE"
+      },
+      "JF_neumann_temperature_error_K": {
+        "exact": {
+          "lo": [
+            "43427251703595612247872416191548862582798696561113497404932169209855430489693",
+            "1067993517960455041197510853084776057301352261178326384973520803911109862890320275011481043468288"
+          ],
+          "hi": [
+            "86854503407191224495744832383097725165597393122226994809864338419710860979387",
+            "2135987035920910082395021706169552114602704522356652769947041607822219725780640550022962086936576"
+          ]
+        },
+        "outward_decimal": [
+          "4.066246748999E-20",
+          "4.066246749000E-20"
+        ],
+        "sign": "STRICT_POSITIVE"
+      },
+      "Jy_neumann_temperature_error_K": {
+        "exact": {
+          "lo": [
+            "291998841421397347856559553706980241690891118859273870050976692608251746327",
+            "32592575621351777380295131014550050576823494298654980010178247189670100796213387298934358016"
+          ],
+          "hi": [
+            "74751703403877721051279245748986941872868126427974110733050033307712447059713",
+            "8343699359066055009355553539724812947666814540455674882605631280555545803830627148527195652096"
+          ]
+        },
+        "outward_decimal": [
+          "8.959060026851E-18",
+          "8.959060026852E-18"
+        ],
+        "sign": "STRICT_POSITIVE"
+      }
+    },
+    "b": {
+      "d_theta": [
+        {
+          "exact": {
+            "lo": [
+              "-97222177693562065430518320282058625528074756429552677281491469147886131720721",
+              "31082702275611665134711390509176302506278509424834232340028998555822468563283335970816"
+            ],
+            "hi": [
+              "-11632097800035995801433827727714563462175436665515706054876364259342242147693",
+              "3885337784451458141838923813647037813284813678104279042503624819477808570410416996352"
+            ]
+          },
+          "outward_decimal": [
+            "-3.127854741570E-9",
+            "-2.993844665600E-9"
+          ],
+          "sign": "STRICT_NEGATIVE"
+        },
+        {
+          "exact": {
+            "lo": [
+              "104843730208620675766834017073924832276864089032907093925195807058960292964583",
+              "65185151242703554760590262029100101153646988597309960020356494379340201592426774597868716032"
+            ],
+            "hi": [
+              "90419714839646618369486545161242035206894827706409904246460580454821933261467",
+              "32592575621351777380295131014550050576823494298654980010178247189670100796213387298934358016"
+            ]
+          },
+          "outward_decimal": [
+            "1.608398971389E-15",
+            "2.774242695334E-15"
+          ],
+          "sign": "STRICT_POSITIVE"
+        },
+        {
+          "exact": {
+            "lo": [
+              "115627149452627204988793727268594735420710501491642369796326389860706700661979",
+              "260740604970814219042361048116400404614587954389239840081425977517360806369707098391474864128"
+            ],
+            "hi": [
+              "31335675800452391287622576644243230539834900348094793202198177360417364219609",
+              "65185151242703554760590262029100101153646988597309960020356494379340201592426774597868716032"
+            ]
+          },
+          "outward_decimal": [
+            "4.434566279600E-16",
+            "4.807180040710E-16"
+          ],
+          "sign": "STRICT_POSITIVE"
+        },
+        {
+          "exact": {
+            "lo": [
+              "-80889994967315385388241953592866093532314992181343720341851955573172102999005",
+              "248661618204893321077691124073410420050228075398673858720231988446579748506266687766528"
+            ],
+            "hi": [
+              "-19316877336665827797759318269731829041423336846482349115580441227294981544067",
+              "62165404551223330269422781018352605012557018849668464680057997111644937126566671941632"
+            ]
+          },
+          "outward_decimal": [
+            "-3.253014902391E-10",
+            "-3.107335579349E-10"
+          ],
+          "sign": "STRICT_NEGATIVE"
+        }
+      ],
+      "DeltaT_theta_K": {
+        "exact": {
+          "lo": [
+            "64278326228364508105540983671122308458678550732616104754144627789625833539383",
+            "948568795032094272909893509191171341133987714380927500611236528192824358010355712"
+          ],
+          "hi": [
+            "34078925421150747791048271568218572575595508139511556773988409123486241644477",
+            "474284397516047136454946754595585670566993857190463750305618264096412179005177856"
+          ]
+        },
+        "outward_decimal": [
+          "0.00006776348385589",
+          "0.00007185335549648"
+        ],
+        "sign": "STRICT_POSITIVE"
+      },
+      "explicit_DeltaT_theta_K": {
+        "exact": {
+          "lo": [
+            "32177605635405536631184455024595302745435355369800413800959329780435177715593",
+            "474284397516047136454946754595585670566993857190463750305618264096412179005177856"
+          ],
+          "hi": [
+            "533079228585350238173315683176068988953274153525588054825008679395060952003",
+            "7410693711188236507108543040556026102609279018600996098525285376506440296955904"
+          ]
+        },
+        "outward_decimal": [
+          "0.00006784453758953",
+          "0.00007193378236380"
+        ],
+        "sign": "STRICT_POSITIVE"
+      },
+      "feedback_DeltaT_theta_K": {
+        "exact": {
+          "lo": [
+            "-20405329820064596409634639193049197488006529477326805178653380878041540837699",
+            "242833611528216133864932738352939863330300854881517440156476551217363035650651062272"
+          ],
+          "hi": [
+            "-37683118492998127322249310897258469793172933829630129464572912875489482381703",
+            "485667223056432267729865476705879726660601709763034880312953102434726071301302124544"
+          ]
+        },
+        "outward_decimal": [
+          "-8.403008830470E-8",
+          "-7.759040903738E-8"
+        ],
+        "sign": "STRICT_NEGATIVE"
+      },
+      "decomposition_intersection_DeltaT_theta_K": {
+        "exact": {
+          "lo": [
+            "64278326228364508105540983671122308458678550732616104754144627789625833539383",
+            "948568795032094272909893509191171341133987714380927500611236528192824358010355712"
+          ],
+          "hi": [
+            "34078925421150747791048271568218572575595508139511556773988409123486241644477",
+            "474284397516047136454946754595585670566993857190463750305618264096412179005177856"
+          ]
+        },
+        "outward_decimal": [
+          "0.00006776348385589",
+          "0.00007185335549648"
+        ],
+        "sign": "STRICT_POSITIVE"
+      },
+      "JF_neumann_temperature_error_K": {
+        "exact": {
+          "lo": [
+            "98118771026349272479358958778121108514182343409463294955587297340257908342057",
+            "130370302485407109521180524058200202307293977194619920040712988758680403184853549195737432064"
+          ],
+          "hi": [
+            "49059385513174636239679479389060554257091171704731647477793648670128954171029",
+            "65185151242703554760590262029100101153646988597309960020356494379340201592426774597868716032"
+          ]
+        },
+        "outward_decimal": [
+          "7.526159651070E-16",
+          "7.526159651071E-16"
+        ],
+        "sign": "STRICT_POSITIVE"
+      },
+      "Jy_neumann_temperature_error_K": {
+        "exact": {
+          "lo": [
+            "21111585992636563183033120839852639973218617954254153943705053176379101118547",
+            "127314748520905380391777855525586135065716774604121015664758778084648831235208544136462336"
+          ],
+          "hi": [
+            "84446343970546252732132483359410559892874471817016615774820212705516404474189",
+            "509258994083621521567111422102344540262867098416484062659035112338595324940834176545849344"
+          ]
+        },
+        "outward_decimal": [
+          "1.658219981416E-13",
+          "1.658219981417E-13"
+        ],
+        "sign": "STRICT_POSITIVE"
+      }
+    }
+  },
+  "arithmetic_review": {
+    "final_result": "PASS",
+    "final_checks_passed": 29,
+    "final_checks_total": 29,
+    "actual_program_executions": 2,
+    "initial_checks_passed": 26,
+    "initial_checks_total": 29,
+    "candidate_imports": 0,
+    "PHYS14_helper_imports": 0,
+    "method": "Exact Fraction intervals without intermediate rounding; 24-term Leibniz determinant and Cramer solve independent of candidate Gaussian elimination",
+    "elapsed_seconds": 0.2219209700015199,
+    "wall_seconds": 0.261186063002242,
+    "peak_rss_kib": 27580
+  },
+  "reviewer_correction": {
+    "scope": "review implementation assumption only",
+    "cause": "Original long exact Fraction intervals were outward copied to 256 significant bits; equality is not the required inclusion invariant.",
+    "initial_failed_bundles": [
+      "lambda_inherited_stage_responses",
+      "b_inherited_stage_responses",
+      "finite_Neumann_derivative_and_endpoint_change_bounds"
+    ],
+    "correction": "Verify original-interval inclusion and conservative upper-point import, bounding relative endpoint expansion by 2^-254.",
+    "original_code_pre_run_result_logs_preserved": true,
+    "candidate_science_or_results_changed": false
+  },
+  "wolfram_xact": {
+    "tensor_checks": 6,
+    "scalar_groups": 9,
+    "scalar_values": 15,
+    "all_exact_zero": true,
+    "xTensor": "1.3.0",
+    "xPerm": "1.2.4",
+    "external_canonicalizer_used": false,
+    "backend": "xPerm Wolfram Language group algorithms"
+  },
+  "literature_counts": {
+    "exa_search_calls": 4,
+    "exa_requested_candidates_including_duplicates": 20,
+    "scispace_search_calls": 1,
+    "scispace_returned_records": 10,
+    "exa_fetch_calls": 4,
+    "new_core_primary_references": 4,
+    "reused_prior_primary_references": 2
+  },
+  "limitations": [
+    "Inherited fixed-coefficient source-aligned geometric isotropic C2 family and its original COMMON only.",
+    "No claim of native runtime equivalence beyond inherited source bindings, global physical parameter validity, or completion of other DAG branches.",
+    "The differentiated photon ledger formulas in theorem section 6.2 are derived; this result file does not evaluate every additional endpoint photon observable.",
+    "First parameter derivatives and four-corner prior do not determine the mixed-derivative sign; successor mixed-response research remains not_run.",
+    "Formal symbolic checks verify stated algebra; physical inclusion is supported by the distinct original-source and exact-arithmetic reviews."
+  ],
+  "new_source_calls": 0,
+  "new_root_solves": 0,
+  "history_replays": 0,
+  "new_strong_no_go": false,
+  "source_or_closure_change": false,
+  "raw_candidate_status_preserved": "CANDIDATE_COMPUTED",
+  "reviewed_bindings": [
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "theory/PARAMETER_RESPONSE_THEOREM_KO.md",
+      "bytes": 25230,
+      "sha256": "f0b6891420784239ef4e87793dde4ca425e52a9b320b0d1f4ce7a07f8c546b9b"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "theory/PARAMETER_COROLLARIES.json",
+      "bytes": 3275,
+      "sha256": "d6f51e60a13d81f6fcd7c4cd59fb6baa3192b82caca872f6da845eee3f9ab646"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "src/parameter_response_application.py",
+      "bytes": 20859,
+      "sha256": "449c66f24bf2f59db4e0e02d5b9522ea0b39175bcdc7bac09b4c544869644337"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/application/run02/results/PARAMETER_RESPONSE_RESULTS.json",
+      "bytes": 626092,
+      "sha256": "fd4fc0fe6bcf035496270bb92f0c56c44ca43d16694cb40296087569a305e7c0"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/application/run02/PRE_RUN.json",
+      "bytes": 1439,
+      "sha256": "bca021b11cc08b2e018ab74644c78f304adfb780db1e9203235160547c6f90f0"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/application/run02/RUN_RECORD.json",
+      "bytes": 4947,
+      "sha256": "f03c2d4df5018c0a060528a5f5377a94b7c9db78d81bdcf49bb387c1c39d9a42"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "src/forcing_feedback_decomposition.py",
+      "bytes": 11584,
+      "sha256": "c5f1761f2035fe762d7da4665f4794c06cff804985a79822702be3ca0deb79ca"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/application/forcing01/results/FORCING_FEEDBACK_RESULTS.json",
+      "bytes": 416851,
+      "sha256": "1eef9f7011f5897777075796393f6f911b34f7b13c0ac8345c9966e71b257a90"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/application/forcing01/PRE_RUN.json",
+      "bytes": 1504,
+      "sha256": "8f82b2fd301ada1f5ac9706b766b02615dfbf5cc03878d67218fe5c8f285c0b7"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/application/forcing01/RUN_RECORD.json",
+      "bytes": 2122,
+      "sha256": "143ac35949265a10ce4abaac4cc59fa145f90b22f5753e91d637160f457b8657"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "src/derivative_neumann_readout.py",
+      "bytes": 4743,
+      "sha256": "abe90ba6cb9350fa8fc77c883afad6aa32d0caff6957f8ddafbaeb0bfea3a60e"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/application/neumann02/results/DERIVATIVE_NEUMANN_RESULTS.json",
+      "bytes": 22318,
+      "sha256": "c22604e4c78d96072e536ccf71b7d22c1079bb5776eac0c8134acf223a5b8be6"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/application/neumann02/PRE_RUN.json",
+      "bytes": 1506,
+      "sha256": "cda86e97ae0eb997122085f5085d0450798623ce9848c50a090ec1b18b79f226"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/application/neumann02/RUN_RECORD.json",
+      "bytes": 2118,
+      "sha256": "f8df46110804e612b35249a1254509b5103132def03450d818c48727105f1ff2"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/wolfram/parameter_response_checks.wl",
+      "bytes": 5760,
+      "sha256": "b33af2650c0a3e229166f5b2a0ec7c1a86beb8c47cb19df563c9d3cbc2acbb72"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/wolfram/WOLFRAM_XACT_EXECUTION.json",
+      "bytes": 4018,
+      "sha256": "7c8b1df7efae7d60dc943da44dceddeda85dbfbe36afca9635bf840926bc63f9"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/wolfram/PRE_RUN.json",
+      "bytes": 760,
+      "sha256": "83033538fa9b2b69adfe2de9546669463f3f763047394d32ec4d48127cfe7a8c"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "checks/wolfram/SUMMARY.json",
+      "bytes": 994,
+      "sha256": "9ec99c0ff54f0b0e5d38b28e5d1548cde5411c09639bf0aee5f8de50f15d114b"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "review/independent_arithmetic_review.py",
+      "bytes": 23599,
+      "sha256": "30d592d7538f5170fdfd9d449a5a004b19d872c31a8767aca1c593121afdebf9"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "review/independent_arithmetic_review_v2.py",
+      "bytes": 24332,
+      "sha256": "c0e79879cabdd30a1e7c13f84cd4f2b24aecb44e3b78d52c718d5cad5294348f"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "review/INDEPENDENT_REVIEW_PRE_RUN.json",
+      "bytes": 774,
+      "sha256": "0006f20197d57358e7f81c21ab972f6bfc9bd411ac1c40774b3a8a0a517517f1"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "review/INDEPENDENT_REVIEW_RUN.json",
+      "bytes": 1093,
+      "sha256": "9acd573246f53dabd85b09506247388b4b45a6c998a4326dd87c46a340d81edd"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "review/arithmetic01/INDEPENDENT_ARITHMETIC_RESULTS.json",
+      "bytes": 11319,
+      "sha256": "2c7b5770e6ee49aa3d8584b3686b5b053bfb992af615d60bbe1f68d527440044"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "review/INDEPENDENT_REVIEW_PRE_RUN_02.json",
+      "bytes": 973,
+      "sha256": "bb86998c66e7583d9ec6282aa9b715fc3f56eb5a0a75dfe7d2ac195ab538bd8c"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "review/INDEPENDENT_REVIEW_RUN_02.json",
+      "bytes": 1094,
+      "sha256": "dc5b7422e1e2440413169178a3aa7ac73f2ab1ef53a46bf3b17289fe081e6d5c"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "review/arithmetic02/INDEPENDENT_ARITHMETIC_RESULTS.json",
+      "bytes": 12024,
+      "sha256": "dfed22bcda2e45a4ccd7861b7454ea7535751fb75d1d1e32be2f61d72a66f6c2"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "review/INITIAL_FORMULA_REVIEW_KO.md",
+      "bytes": 5301,
+      "sha256": "598f527f1642cfe86b812c233b4161b698da26901759f96d67c1ce422647c244"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "review/SOURCE_AND_DERIVATION_REVIEW_KO.md",
+      "bytes": 10663,
+      "sha256": "376f253dc9a910fe734d02dc5cdd0c5c818878162a8bcb3337ba1360a46986fd"
+    }
+  ]
+}

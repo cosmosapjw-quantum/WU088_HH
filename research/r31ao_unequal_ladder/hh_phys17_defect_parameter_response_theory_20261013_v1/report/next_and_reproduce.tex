@@ -1,0 +1,44 @@
+\section{다음 이론 연구: HH와 birth의 혼합 응답}
+\label{sec:next}
+다음 노드는 \texttt{HH\_DEFECT\_MIXED\_RESPONSE}다. 현재 확보한 두 1차 미분에서 한 단계 더 나아가 HH와 birth가 동시에 존재할 때 시간 분할 온도 차이에 주는 혼합 작용을 계산한다. $F(\lambda,b)=\Delta T(\lambda,b)$로 두면 대상은
+\[
+W_d=\partial_{\lambda b}(g_2-g_F),\qquad F_{\lambda b},
+\]
+\[
+\mathcal I=F(1,1)-F(1,0)-F(0,1)+F(0,0)
+=\int_0^1\!\int_0^1F_{\lambda b}(\lambda,b)\,\dd b\,\dd\lambda
+\]
+다. 현재 원 $\partial_\lambda F$ 범위에서 $|\mathcal I|\le1.958485175177039\times10^{-9}\,\mathrm K$를 얻었다. 다음 계산은 이 기준 안에서 실제 부호와 sourceㆍphotonㆍthermal normalization의 기여를 구분한다.
+
+기존 $U_F=g_{F,\lambda}$, $V_F=g_{F,b}$와 실제 둘째 half의 $W_2=g_{2,\lambda b}$를 사용하면 원 $C^2$ implicit 식에서
+\[
+\begin{aligned}
+J_FW_d={}&J_FW_2+H_{gg}(g_F)[U_F,V_F]\\
+&+H_{g\lambda}(g_F)V_F+H_{gb}(g_F)U_F+H_{\lambda b}(g_F)
+\end{aligned}
+\]
+가 출발식이다. 원 Full source의 gas-fixed $H_{\lambda b}=0$ 구조와 signed export를 연결한다. 작은 $d,d_\lambda,d_b,s,s_\lambda,s_b$를 유지하는 상관식, HI 유리식의 Hessian 차이 및 원 signed $C^2$ Hessian 범위를 적용할 수 있다. PHYS09와 PHYS14의 $U,V,W$ 및 photon mixed carry는 기존 입력에 존재한다.
+
+유한 온도 분수 $F=N/P$, $P=\Pi_F$, $N=C_Td_w-T_2d_e$에서는
+\[
+F_{\lambda b}=\frac{N_{\lambda b}-F_\lambda P_b-F_bP_\lambda-FP_{\lambda b}}{P}
+\]
+를 사용한다. 동일 $n_F$와 $J_F$로 혼합 forcing을 전달하는 자세한 시작식 M1--M16은 연구 묶음의 다음 제안 문서에 수록했다. 현재 mixed application 상태는 \texttt{not\_run}이며, 이번 루프의 1차 응답 판정과 분리하여 기록한다.
+
+\section{재현, 이력과 DAG 연결}
+\label{sec:reproduce}
+현재 연구는 PHYS16의 PR 51 최종 head \texttt{2db8684c607b}에서 이어진다. Google Drive와 Dropbox의 해당 원 snapshot metadata를 현재 읽고 PHYS16의 보존 ACK와 일치함을 확인했다. 계약의 원 입력 14개는 실제 로컬 바이트의 크기와 SHA-256으로 확인했으며, 실제 적용이 추가로 사용하는 centreㆍnative constantㆍ산술 구현 입력도 각 실행 기록에 결박했다.
+
+연구 묶음은 다음 내용을 제공한다.
+\begin{itemize}
+\item 본 PDF 및 전체 LaTeX 원고, 필요한 CJK font subset과 빌드 지침.
+\item 원 $C^2$ 유도, 실제 구간 결과, 첫 실행 실패와 교정 기록, exact 입력ㆍ출력ㆍ코드 identity.
+\item 실제 Wolfram+xAct source와 raw 응답, 독립 검토와 최종 채택 기록.
+\item 다음 mixed-response 시작식ㆍ입력 계약과 갱신된 HH DAG.
+\item PHYS16 최종 연구 묶음 및 그 안의 PHYS15 sourceㆍcarry 복원 의존성.
+\end{itemize}
+원 실행 명령은 \texttt{checks/application}의 세 성공 실행 기록에서 확인한다. 재현할 때는 PHYS15, PHYS16, PHYS17 core를 형제 디렉터리로 배치하고, 원 대형 입력이 압축된 PHYS15 상태에서는 그 단위의 \texttt{INPUT\_RESTORE.json} 및 복원 스크립트를 먼저 적용한다. 새 계산 결과를 재현하려면 새 출력 디렉터리를 지정하여 동결된 원 실행을 보존한다. LaTeX 빌드는 포함된 font와 함께 XeLaTeX, BibTeX, XeLaTeX 두 번 순서로 수행한다.
+
+DAG는 이전 HH 노드 12개의 JSON 값을 보존하고 현재 \texttt{HH\_DEFECT\_PARAMETER\_RESPONSE} 노드에 실제 유도ㆍ계산ㆍ채택 근거를 연결한다. 다음 mixed-response 노드는 시작식과 입력이 준비된 후속 작업으로 추가한다. 원 global REI DAG의 바이트와 기존 global 노드 상태는 유지한다. 현재 작업은 저장된 포함에 대한 경량 산술이며 heavy queue는 비어 있다.
+
+문헌의 인용 조건, 직접 증명, 수치 포함, 구현 실행, 저장 ACK는 각각의 근거로 구분하여 보존한다. 최종 출판 commit과 실제 백업 식별자는 전달 receipt에 기록하며, 과학 결과와 원 실행의 바이트는 그 기록을 추가할 때에도 유지한다.
