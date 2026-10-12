@@ -1,10 +1,10 @@
-# WU088_HH — 현재 개발 우선순위 (2026-10-12)
+# WU088_HH — PHYS12 결과 (2026-10-12)
 
-현재 계획은 [관측량 중심 개발계획](research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/DEVELOPMENT_PLAN_KO.md)과 [CURRENT_DEVELOPMENT_PLAN.json](CURRENT_DEVELOPMENT_PLAN.json)이다. 다음 경량 작업은 같은 소스 계열의 HH-on/off ΔxHII·Δw 평가이며 **HERE에서 수행할 예정**이다. 이번 계획 변경에서 새 과학 계산을 실행했다고 세지 않는다.
+[PHYS12 보고서](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/REPORT_KO.md)는 PR45에서 예정한 같은 고정 계열 HH-on/off Δx_HII·Δw 평가를 여기서 실행한 결과다. 두 첫 단계에서 이온화 분율 기여는 양수, 열에너지 차이는 음수인 조건부 포함을 얻었다. 기존 혼합 응답과 절대 HH 기여를 구별한다. [현재 상태](CURRENT_DEVELOPMENT_PLAN.json)와 [독립 판정](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/review/DECISION.json)을 따른다.
 
-PHYS11 C2 `328372568144c4cdb6cdecd94c9c9bff984e103e`의 기존 scoped 결과를 재사용한다. LCS 유효 이온화와 singlet H⁺/H⁻ ion-pair는 별개 반응이다. FT03 BE native 인증과 frozen107 atomic 연구도 해당 주장에 맞는 조건을 유지한다. 모든 경량 결과가 두 native 경로의 완성을 기다리지 않는다.
+PHYS09/PHYS11의 source-inclusion·동일 α C² 전제를 유지한다. full과 first_half는 서로 다른 첫 단계이며, actual native root·전구간 history·full49·production을 새로 승인하지 않는다. 완료된 L0–L3를 다시 실행하지 않는다.
 
-**NCP heavy_queue=[] / launch=false / NO_HEAVY_JOB_READY.** [현재 NCP 전달문](research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/HANDOFF_KO.md)을 먼저 읽는다. 짧은 분석, 완료된 계산, 빈 큐 benchmark를 NCP로 넘기지 않는다.
+**NCP heavy_queue=[] / launch=false / NO_HEAVY_JOB_READY.** [현재 NCP 전달문](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/handoff/NCP_LOCAL_CODEX_HANDOFF_KO.md)을 읽는다. 이 bounded 질문은 답을 얻었고 추가 구간 정밀화나 heavy job은 선정하지 않았다.
 
 ## 아래 문서의 범위: 보존된 R31K-B/R31M native 안내
 

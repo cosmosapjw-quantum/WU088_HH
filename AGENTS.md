@@ -1,10 +1,10 @@
-# Current development priority — 2026-10-12
+# Current development priority — PHYS12, 2026-10-12
 
-Read CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/DEVELOPMENT_PLAN_KO.md first. Select the output-specific lane in NEXT_DAG.json, then apply the preserved execution contract below.
+Read CURRENT_DEVELOPMENT_PLAN.json, then research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/state/RESEARCH_STATE.json and review/DECISION.json in that folder. The observable-first plan remains active; PHYS12 has now executed its L0–L3 bounded task.
 
-The next short science task belongs HERE: fixed-family HH-on/off response in x_HII and w using existing inputs. It is planned, not executed by this documentation change. Current NCP heavy_queue=[] and launch=false. Do not benchmark an empty queue or replay completed science. Full native certification is required for that native claim, not as a universal prerequisite of a scoped effective-model result. HH LCS ionization and singlet ion-pair physics, and FT03 BE versus frozen107 atomic native, remain separate.
+Reuse the fixed-family future HH-on/off x_HII and thermal-w results and the inherited PHYS11 mixed response. Do not replay completed PHYS09/PHYS11/PHYS12 or treat the old plan's PLANNED_NOT_EXECUTED snapshot as the current execution state. Source-inclusion and same-alpha C2 premises remain explicit. Full and first_half are separate first stages; their PreBE coefficients differ.
 
-The historical README/results/verification files below keep their original scientific scope. Target-host benchmarking in the preserved native-candidate contract applies when admitting an actual native candidate; it is not the default action for this plan. No existing scientific tolerances, arrays, source identities or failures are changed.
+Current NCP heavy_queue=[] and launch=false. The fixed-family question is answered within its inherited scope; no additional refinement or heavy job is selected. Select new work only for a concrete observable/error requirement or a standalone microscopic HH question, following the existing lane-specific admission. HH LCS and singlet ion-pair physics, and FT03 BE versus frozen107 atomic native, remain distinct.
 
 ## Preserved execution contract
 
