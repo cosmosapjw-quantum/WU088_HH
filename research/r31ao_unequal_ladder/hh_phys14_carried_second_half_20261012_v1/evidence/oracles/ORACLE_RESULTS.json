@@ -1,0 +1,548 @@
+{
+  "schema": "PHYS14_REQUIRED_SEMANTIC_ORACLES_V1",
+  "status": "PASS",
+  "role": "candidate validation by candidate theory author; not independent decision review",
+  "new_physical_cases": 0,
+  "old_scientific_suites_rerun": 0,
+  "candidate_main_calls": 0,
+  "semantic_families": 2,
+  "quadratic_oracle_variants": 2,
+  "rounding": {
+    "status": "PASS",
+    "kind": "arithmetic implementation semantic check",
+    "significand_bits": 256,
+    "known_binade_point_cases": 306,
+    "binade_exponents": [
+      -16384,
+      -4096,
+      -1075,
+      -1074,
+      -1022,
+      -512,
+      -256,
+      -1,
+      0,
+      1,
+      53,
+      255,
+      256,
+      511,
+      1023,
+      4096,
+      16384
+    ],
+    "mantissa_families": [
+      "one",
+      "three_halves",
+      "four_thirds",
+      "almost_one_nondyadic",
+      "almost_two_nondyadic",
+      "exact_last_bit",
+      "half_ulp_above_one",
+      "inside_high_significand",
+      "wide_odd_denominator"
+    ],
+    "signs": [
+      -1,
+      1
+    ],
+    "rounding_oracle": "known input binade; independent positive magnitude Euclidean division and sign exchange",
+    "all_point_inclusions_and_exact_directed_outputs": true,
+    "all_nonzero_signs_preserved": true,
+    "exact_zero_preserved": true,
+    "unbounded_tiny_tail_exponent": -100000,
+    "tiny_positive_negative_and_crossing_preserved": true,
+    "zero_divisor_rejections": [
+      "point_zero",
+      "symmetric_tiny",
+      "positive_with_zero",
+      "negative_with_zero"
+    ],
+    "mixed_sign_large_exponent_gap_arithmetic": "PASS",
+    "exact_output_stream_sha256": "f24772e471c7a6b06b84a48bd5bd08b5c7be494ba5a46720a4568c1f4628c729"
+  },
+  "implicit_oracle": [
+    {
+      "status": "PASS",
+      "HH_shape_beta": 0,
+      "implicit_equation": "x = old(lambda,b) + gamma*lambda*(1-beta*x) + Nin(lambda,b)*(1-x)/(4-x)",
+      "root_formula": "(L-sqrt(L^2-4BC))/(2B), B=1+gamma*beta*lambda, c=old+gamma*lambda, L=4B+c+Nin, C=4c+Nin",
+      "parameter_point": [
+        {
+          "numerator": "1",
+          "denominator": "3"
+        },
+        {
+          "numerator": "2",
+          "denominator": "5"
+        }
+      ],
+      "gamma": {
+        "numerator": "1",
+        "denominator": "20"
+      },
+      "old_value_U_V_W": [
+        {
+          "numerator": "143",
+          "denominator": "420"
+        },
+        {
+          "numerator": "1",
+          "denominator": "13"
+        },
+        {
+          "numerator": "1",
+          "denominator": "17"
+        },
+        {
+          "numerator": "1",
+          "denominator": "19"
+        }
+      ],
+      "incoming_value_U_V_W": [
+        {
+          "numerator": "1",
+          "denominator": "1"
+        },
+        {
+          "numerator": "1",
+          "denominator": "7"
+        },
+        {
+          "numerator": "1",
+          "denominator": "11"
+        },
+        {
+          "numerator": "1",
+          "denominator": "23"
+        }
+      ],
+      "closed_root_value_U_V_W": [
+        {
+          "numerator": "1",
+          "denominator": "2"
+        },
+        {
+          "numerator": "1877",
+          "denominator": "15860"
+        },
+        {
+          "numerator": "658",
+          "denominator": "11407"
+        },
+        {
+          "numerator": "51556704549",
+          "denominator": "1205662922035"
+        }
+      ],
+      "closed_photon_value_U_V_W": [
+        {
+          "numerator": "6",
+          "denominator": "7"
+        },
+        {
+          "numerator": "4203",
+          "denominator": "27755"
+        },
+        {
+          "numerator": "1050",
+          "denominator": "11407"
+        },
+        {
+          "numerator": "64319365761",
+          "denominator": "1205662922035"
+        }
+      ],
+      "A": {
+        "numerator": "61",
+        "denominator": "49"
+      },
+      "mixed_gas_numerator_terms": {
+        "inherited_gas_W": {
+          "numerator": "1",
+          "denominator": "19"
+        },
+        "Fgg_U_V": {
+          "numerator": "-2117256",
+          "denominator": "2216208995"
+        },
+        "F_g_lambda_V": {
+          "numerator": "-1128",
+          "denominator": "558943"
+        },
+        "F_g_b_U": {
+          "numerator": "-5631",
+          "denominator": "2137135"
+        },
+        "F_lambdab_incoming": {
+          "numerator": "1",
+          "denominator": "161"
+        }
+      },
+      "mixed_photon_terms": {
+        "incoming_W_over_D": {
+          "numerator": "6",
+          "denominator": "161"
+        },
+        "incoming_U_times_gas_V": {
+          "numerator": "1128",
+          "denominator": "558943"
+        },
+        "incoming_V_times_gas_U": {
+          "numerator": "5631",
+          "denominator": "2137135"
+        },
+        "gas_W_times_incoming_value": {
+          "numerator": "88382922084",
+          "denominator": "8439640454245"
+        },
+        "two_denominator_cross_terms": {
+          "numerator": "2117256",
+          "denominator": "2216208995"
+        }
+      },
+      "each_gas_and_photon_mixed_term_omission_detected": true,
+      "all_residual_polynomial_coefficients_exact_zero": true,
+      "implementation": {
+        "candidate_functions_exercised": [
+          "Source.evaluate",
+          "contraction",
+          "neumann",
+          "outgoing_carry"
+        ],
+        "lambda_evaluation_box": [
+          0,
+          1
+        ],
+        "oracle_derivative_point": [
+          {
+            "numerator": "1",
+            "denominator": "3"
+          },
+          {
+            "numerator": "2",
+            "denominator": "5"
+          }
+        ],
+        "contraction_upper": {
+          "numerator": "56714492687665075309504155922622648744458767999497419121366979922243165537929",
+          "denominator": "231584178474632390847141970017375815706539969331281128078915168015826259279872"
+        },
+        "neumann_degree": 8,
+        "candidate_gas_UVW": [
+          {
+            "lo": {
+              "numerator": "54814957073172385148593467391569180275985504424982439715381756782680039321395",
+              "denominator": "463168356949264781694283940034751631413079938662562256157830336031652518559744"
+            },
+            "hi": {
+              "numerator": "54815529769728784758682750280973543412274268748510600267398704910278229609617",
+              "denominator": "463168356949264781694283940034751631413079938662562256157830336031652518559744"
+            }
+          },
+          {
+            "lo": {
+              "numerator": "106869168927299868674513265295338794259990485409086587557315102896371797379529",
+              "denominator": "1852673427797059126777135760139006525652319754650249024631321344126610074238976"
+            },
+            "hi": {
+              "numerator": "106870285476656064507482299585684902885442772173085319260129748928633979260493",
+              "denominator": "1852673427797059126777135760139006525652319754650249024631321344126610074238976"
+            }
+          },
+          {
+            "lo": {
+              "numerator": "9902996075270188586965860119644882267964794351383227183454487631507135860161",
+              "denominator": "231584178474632390847141970017375815706539969331281128078915168015826259279872"
+            },
+            "hi": {
+              "numerator": "79224964573289678619978077585607765741025437223150813789876113534502592578313",
+              "denominator": "1852673427797059126777135760139006525652319754650249024631321344126610074238976"
+            }
+          }
+        ],
+        "candidate_photon_UVW": [
+          {
+            "lo": {
+              "numerator": "35069281903812829713763522948034081140717404949746559321750643852878322277705",
+              "denominator": "231584178474632390847141970017375815706539969331281128078915168015826259279872"
+            },
+            "hi": {
+              "numerator": "17534676014960888302397431855000981170539647229375003776304930995475785034051",
+              "denominator": "115792089237316195423570985008687907853269984665640564039457584007913129639936"
+            }
+          },
+          {
+            "lo": {
+              "numerator": "10658512785932289655574611890633464160449463563231666116892519716562929078401",
+              "denominator": "115792089237316195423570985008687907853269984665640564039457584007913129639936"
+            },
+            "hi": {
+              "numerator": "85268239007787647346593103405518257196916396681036847102831747042576352857537",
+              "denominator": "926336713898529563388567880069503262826159877325124512315660672063305037119488"
+            }
+          },
+          {
+            "lo": {
+              "numerator": "49417903408570087701278817326719117062123875163821142270996187845086295935463",
+              "denominator": "926336713898529563388567880069503262826159877325124512315660672063305037119488"
+            },
+            "hi": {
+              "numerator": "98836177776503212870954359147734017548266610166761319911118095408623972885383",
+              "denominator": "1852673427797059126777135760139006525652319754650249024631321344126610074238976"
+            }
+          }
+        ],
+        "all_exact_root_and_photon_derivatives_contained": true,
+        "primal_nonlinear_solver_executed": false,
+        "candidate_main_executed": false
+      }
+    },
+    {
+      "status": "PASS",
+      "HH_shape_beta": 1,
+      "implicit_equation": "x = old(lambda,b) + gamma*lambda*(1-beta*x) + Nin(lambda,b)*(1-x)/(4-x)",
+      "root_formula": "(L-sqrt(L^2-4BC))/(2B), B=1+gamma*beta*lambda, c=old+gamma*lambda, L=4B+c+Nin, C=4c+Nin",
+      "parameter_point": [
+        {
+          "numerator": "1",
+          "denominator": "3"
+        },
+        {
+          "numerator": "2",
+          "denominator": "5"
+        }
+      ],
+      "gamma": {
+        "numerator": "1",
+        "denominator": "20"
+      },
+      "old_value_U_V_W": [
+        {
+          "numerator": "293",
+          "denominator": "840"
+        },
+        {
+          "numerator": "1",
+          "denominator": "13"
+        },
+        {
+          "numerator": "1",
+          "denominator": "17"
+        },
+        {
+          "numerator": "1",
+          "denominator": "19"
+        }
+      ],
+      "incoming_value_U_V_W": [
+        {
+          "numerator": "1",
+          "denominator": "1"
+        },
+        {
+          "numerator": "1",
+          "denominator": "7"
+        },
+        {
+          "numerator": "1",
+          "denominator": "11"
+        },
+        {
+          "numerator": "1",
+          "denominator": "23"
+        }
+      ],
+      "closed_root_value_U_V_W": [
+        {
+          "numerator": "1",
+          "denominator": "2"
+        },
+        {
+          "numerator": "9351",
+          "denominator": "96434"
+        },
+        {
+          "numerator": "39480",
+          "denominator": "693583"
+        },
+        {
+          "numerator": "199496080854000",
+          "denominator": "4927699440295333"
+        }
+      ],
+      "closed_photon_value_U_V_W": [
+        {
+          "numerator": "6",
+          "denominator": "7"
+        },
+        {
+          "numerator": "49344",
+          "denominator": "337519"
+        },
+        {
+          "numerator": "63714",
+          "denominator": "693583"
+        },
+        {
+          "numerator": "2824301806518444",
+          "denominator": "54204693843248663"
+        }
+      ],
+      "A": {
+        "numerator": "3709",
+        "denominator": "2940"
+      },
+      "mixed_gas_numerator_terms": {
+        "inherited_gas_W": {
+          "numerator": "1",
+          "denominator": "19"
+        },
+        "Fgg_U_V": {
+          "numerator": "-1265751360",
+          "denominator": "1638682084039"
+        },
+        "F_g_lambda_V": {
+          "numerator": "-14946",
+          "denominator": "3089597"
+        },
+        "F_g_b_U": {
+          "numerator": "-56106",
+          "denominator": "25988963"
+        },
+        "F_lambdab_incoming": {
+          "numerator": "1",
+          "denominator": "161"
+        }
+      },
+      "mixed_photon_terms": {
+        "incoming_W_over_D": {
+          "numerator": "6",
+          "denominator": "161"
+        },
+        "incoming_U_times_gas_V": {
+          "numerator": "67680",
+          "denominator": "33985567"
+        },
+        "incoming_V_times_gas_U": {
+          "numerator": "56106",
+          "denominator": "25988963"
+        },
+        "gas_W_times_incoming_value": {
+          "numerator": "341993281464000",
+          "denominator": "34493896082067331"
+        },
+        "two_denominator_cross_terms": {
+          "numerator": "1265751360",
+          "denominator": "1638682084039"
+        }
+      },
+      "each_gas_and_photon_mixed_term_omission_detected": true,
+      "all_residual_polynomial_coefficients_exact_zero": true,
+      "implementation": {
+        "candidate_functions_exercised": [
+          "Source.evaluate",
+          "contraction",
+          "neumann",
+          "outgoing_carry"
+        ],
+        "lambda_evaluation_box": [
+          0,
+          1
+        ],
+        "oracle_derivative_point": [
+          {
+            "numerator": "1",
+            "denominator": "3"
+          },
+          {
+            "numerator": "2",
+            "denominator": "5"
+          }
+        ],
+        "contraction_upper": {
+          "numerator": "68293701611396694851861254423491439529785766466061475525312738323034478501923",
+          "denominator": "231584178474632390847141970017375815706539969331281128078915168015826259279872"
+        },
+        "neumann_degree": 8,
+        "candidate_gas_UVW": [
+          {
+            "lo": {
+              "numerator": "83948395878933985969103319151515792763751935184471083581515251179572377085217",
+              "denominator": "926336713898529563388567880069503262826159877325124512315660672063305037119488"
+            },
+            "hi": {
+              "numerator": "47296734620574051217419884150573263406928625539096919064841961934875665521235",
+              "denominator": "463168356949264781694283940034751631413079938662562256157830336031652518559744"
+            }
+          },
+          {
+            "lo": {
+              "numerator": "98558305013342572435062480140415570477047078871321924304190949900759795921549",
+              "denominator": "1852673427797059126777135760139006525652319754650249024631321344126610074238976"
+            },
+            "hi": {
+              "numerator": "55527993692603841842140092749816506710019398586867606577784842808325768177429",
+              "denominator": "926336713898529563388567880069503262826159877325124512315660672063305037119488"
+            }
+          },
+          {
+            "lo": {
+              "numerator": "68867507368868028422922364085841974577403063405200933825111138062560284365213",
+              "denominator": "1852673427797059126777135760139006525652319754650249024631321344126610074238976"
+            },
+            "hi": {
+              "numerator": "40166828926387654986236042902133631489089953050898404016851191704671565036987",
+              "denominator": "926336713898529563388567880069503262826159877325124512315660672063305037119488"
+            }
+          }
+        ],
+        "candidate_photon_UVW": [
+          {
+            "lo": {
+              "numerator": "66993888101412093999598439900359276429816147818004082417062724964639783140197",
+              "denominator": "463168356949264781694283940034751631413079938662562256157830336031652518559744"
+            },
+            "hi": {
+              "numerator": "17074341618073863799871133928649943619191954787982329416964722241879709681701",
+              "denominator": "115792089237316195423570985008687907853269984665640564039457584007913129639936"
+            }
+          },
+          {
+            "lo": {
+              "numerator": "84250445481667627909153941840791400167316924031841329353124955324877473265007",
+              "denominator": "926336713898529563388567880069503262826159877325124512315660672063305037119488"
+            },
+            "hi": {
+              "numerator": "85780773935365396633547946578654760527683256885198058600232555616619319032357",
+              "denominator": "926336713898529563388567880069503262826159877325124512315660672063305037119488"
+            }
+          },
+          {
+            "lo": {
+              "numerator": "94345232922758040124674357184158204072417294033469983628648942704433226420435",
+              "denominator": "1852673427797059126777135760139006525652319754650249024631321344126610074238976"
+            },
+            "hi": {
+              "numerator": "12300198762909794162777922038205418775073412099788338385311554896219076916747",
+              "denominator": "231584178474632390847141970017375815706539969331281128078915168015826259279872"
+            }
+          }
+        ],
+        "all_exact_root_and_photon_derivatives_contained": true,
+        "primal_nonlinear_solver_executed": false,
+        "candidate_main_executed": false
+      }
+    }
+  ],
+  "candidate_path": "/workspace/scratch/b826cbaab54f/HH_PHYS14_20261012_v1/src/phys14_advance.py",
+  "candidate_sha256": "d20d9797278b8da71d38a3db229325dc7792d3991863f07bcdb7f72f2ba5567a",
+  "oracle_sha256": "b28b5e69c2108fd970b861a06e649cdcc947081332ccc77312e2d3e3078a2ff7",
+  "candidate_unchanged": true,
+  "elapsed_s": 0.07331500400323421,
+  "ru_maxrss_KiB": 14336,
+  "limits": {
+    "cpu_s": 30,
+    "address_space_bytes": 268435456
+  }
+}

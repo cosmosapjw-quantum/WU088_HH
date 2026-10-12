@@ -1,0 +1,49 @@
+{
+  "schema": "PHYS14_NEXT_HALF_THEORY_OPERATIONS_V1",
+  "theory": "THEORY_CANDIDATE_KO.md",
+  "new_derived": [
+    "isotropic exact 39-state group/guard closure",
+    "Full endpoint nonphoto and HH source reuse for second half",
+    "HI-only rank-one photo Jacobian and two-row photon memory forcing",
+    "nonnegative first-derivative photon memory under positive ionization response",
+    "nonuniform-node two-half versus Full remap identity"
+  ],
+  "reused": [
+    "PHYS11 joint C2 mixed carry algebra and general implicit chain rule",
+    "PHYS13 source-aligned temperature and electron observables and finite FTC"
+  ],
+  "time_s": {
+    "common": 160000000000,
+    "first_half_end": 160625000000,
+    "second_half_end": 161250000000,
+    "half_dt": 625000000
+  },
+  "source_reuse_requires": [
+    "second_half endpoint stage nH, stored nHe, fHe, Hmean and atomic leaves equal captured Full leaves",
+    "new root domain contained in saved source X",
+    "nonphoto/q use only current-gas partials 0..3",
+    "new photon term uses second_half h and carried incoming photon jets",
+    "geometry-aligned fixed coefficient tuple and common theta across stages"
+  ],
+  "root_gate": [
+    "old_gas_box + h F2(X) strictly contained in X",
+    "positive diagonal scaling S with norm(S^-1 h Fg S,infinity)<1",
+    "same C2 source and incoming carry in open neighborhood"
+  ],
+  "minimum_derivatives": {
+    "nonphoto": "4 values, 4x4 gas Jacobian, 4x4x4 gas Hessian",
+    "q": "1 value,4 gas gradient,4x4 gas Hessian",
+    "photo": "scalar p_j,p_j_prime,p_j_doubleprime for17 HI-active nodes",
+    "incoming": "33 value/U/V/W; zero derivative w.r.t.current gas unknown",
+    "gas_carry": "4 value/U/V/W"
+  },
+  "optional_readouts": [
+    "adjoint T memory decomposition eq25",
+    "sparse remap spectral defect eq29"
+  ],
+  "claim_separation": {
+    "geometry_aligned_exact_real_history": "owner execution pending",
+    "native_history_authority": false,
+    "final_promotion": "independent decision reviewer"
+  }
+}

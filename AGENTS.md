@@ -1,3 +1,17 @@
+# Current development priority - PHYS14 carried second half, 2026-10-12
+
+Read CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/SCIENTIFIC_CONTRACT.md, REPORT_KO.md, HANDOFF_KO.md, NEXT_DAG.json and review/DECISION.json in that core. PHYS14 is independently PROMOTE_SCOPED for the source-aligned geometric-isotropic two-half family. The same COMMON and global lambda,b apply to both halves. First-half source/C2/root premises are inherited; the second implicit stage and its responses are newly enclosed.
+
+Reuse the exact 39-state aggregate closure, first-half and new second-half U/V/W, the finite T/e/w responses, the negative photon-memory temperature contribution, and the original-node remap split identity. Next derive the correlated same-COMMON Full-versus-two-half endpoint defect. Preserve input correlations and attribute remap, intermediate absorption and source/birth chronology. Reuse completed scientific results; no old suite replay or new atomic source evaluation without a concrete changed requirement.
+
+Keep the original global REI DAG and all nine preceding HH node values unchanged. HH_ISOTROPIC_JOINT_ADVANCE is the admitted provider successor; HH_CORRELATED_ENDPOINT_DEFECT is a concrete unexecuted local successor. Preserve HH_SINGLET and HH_STRICT_NATIVE conditions. The source-aligned finite response does not itself provide native history, time-order or consumer admission. NCP heavy_queue=[] and launch=false.
+
+Git includes 31 existing input blobs and 9 small new inputs. Restore 5 large pinned archive members through INPUT_RESTORE.json and src/restore_large_inputs.py. The full backup snapshot includes all 45 inputs. Preserve archived input bytes, first execution records and the independent decision.
+
+## Preserved PHYS13 and original execution contract
+
+The following is the exact preceding entry snapshot; the current priority is above.
+
 # Current development priority — PHYS13 thermodynamic response, 2026-10-12
 
 Read CURRENT_DEVELOPMENT_PLAN.json, then research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/REPORT_KO.md, HANDOFF_KO.md, NEXT_DAG.json and review/DECISION.json in that same core. PHYS13 is independently PROMOTE_SCOPED under the inherited same-alpha source/C2 root premises. Reuse the completed finite T/e/ne bounds, energy-projected cooling fraction, soft-birth dilution result and output-normalization bridge. Do not replay PHYS09/11/12/13 by default.

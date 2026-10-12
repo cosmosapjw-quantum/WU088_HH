@@ -1,0 +1,86 @@
+{
+  "schema": "PHYS14_PUBLICATION_PREFLIGHT_RESOLUTION_V1",
+  "checked_at_utc": "2026-10-12T13:19:26.147491+00:00",
+  "reviewer": "/root/hh_phys14_intake",
+  "scope": "Targeted read-only resolution of the three recorded publication metadata findings only. No scientific execution or project mutation. Prior audit remains immutable.",
+  "status": "ALL_THREE_PUBLICATION_FINDINGS_RESOLVED",
+  "prior_audit": {
+    "path": "/workspace/scratch/b826cbaab54f/phys14_publication_prep/FINAL_PREFLIGHT.json",
+    "sha256": "78fe3a1446bb466e861d1ae8340e8754d72efab6aa66a656099206ecb5d2e11f",
+    "preserved_unchanged": true
+  },
+  "editorial_fix_record": {
+    "path": "evidence/PUBLICATION_EDITORIAL_FIX.json",
+    "sha256": "5fb41c7a66a8e47c5c2f9fdc22f716e75b112f7fe463c59a8434a7014715328c",
+    "scientific_source_modified_reported": false,
+    "scientific_reruns_reported": 0
+  },
+  "resolutions": [
+    {
+      "finding_id": "PUB01",
+      "status": "RESOLVED",
+      "checks": {
+        "pointer_matches_materialized_baseline": true,
+        "global_DAG_exact_original_SHA": true,
+        "all_nine_inherited_node_values_and_edges_unchanged": true,
+        "inherited_artifact_roots_exact": true,
+        "artifact_roots_pinned_to_PR48": true,
+        "retained_science_resolves_in_pinned_repository": true
+      }
+    },
+    {
+      "finding_id": "PUB02",
+      "status": "RESOLVED",
+      "checks": {
+        "plan_current_candidate_equals_final_root_state": true,
+        "current_candidate_status_final": true,
+        "decision_matches_independent_review": true,
+        "publication_preparation_status_final": true,
+        "execution_count_note_replaces_preparer_placeholder": true,
+        "resource_evidence_points_to_existing_run_record": true,
+        "scientific_run_count_matches_final_stage_count": true
+      }
+    },
+    {
+      "finding_id": "PUB03",
+      "status": "RESOLVED",
+      "checks": {
+        "linked_prior_plan_target_exists": true,
+        "prior_plan_exact_bytes": true,
+        "prior_state_exact_bytes": true
+      },
+      "baseline_identities": [
+        {
+          "path": "baseline/PR48_CURRENT_DEVELOPMENT_PLAN.json",
+          "bytes": 12821,
+          "sha256": "5e05e805fc35f03a9b8c43a1b18d400b12fb5b09db95b95eca9b02838211b854",
+          "git_blob_sha": "252c77a696eff43e117a752f1c90b1cf8737e069",
+          "exact_bytes_equal_pinned_PR48_baseline": true
+        },
+        {
+          "path": "baseline/PR48_RESEARCH_STATE.json",
+          "bytes": 5273,
+          "sha256": "315c25cadbfa450191d0a403864efde35ec1fea44653a35c7c7014036a005617",
+          "git_blob_sha": "f0264d83bebd70e2ef481fdcf6e8e2b2ccb7cb71",
+          "exact_bytes_equal_pinned_PR48_baseline": true
+        }
+      ]
+    }
+  ],
+  "corrected_file_sha256": {
+    "NEXT_DAG.json": "f084eb0cd663000407ac597c6337b57eb3a73cd21905748df35233b5ec14340a",
+    "publication_overlay/CURRENT_DEVELOPMENT_PLAN.json": "fe0df35703e72e6a552465bd9cb2891169257c88252ccf002f7d0864b14d2394",
+    "publication_overlay/RESEARCH_STATE.json": "24be4bc53946a9dc6dde798486623de31e106739e7417c2d4e12140b7fbf0b87",
+    "baseline/PR48_CURRENT_DEVELOPMENT_PLAN.json": "5e05e805fc35f03a9b8c43a1b18d400b12fb5b09db95b95eca9b02838211b854",
+    "baseline/PR48_RESEARCH_STATE.json": "315c25cadbfa450191d0a403864efde35ec1fea44653a35c7c7014036a005617"
+  },
+  "retained_scientific_result_identity": {
+    "path": "results/advance01/ADVANCE_RESULTS.json",
+    "sha256": "a0faac7d55b425ae85ed8ee15e57d5f3c2687b40896b039fe858dcfdb342e28e",
+    "matches_editorial_fix_record": true
+  },
+  "prior_input_blob_restore_findings": "Prior 45 input / 31 reuse / 9 new small / 5 exact archive restoration checks remain in FINAL_PREFLIGHT.json and were not unnecessarily repeated.",
+  "new_scientific_runs": 0,
+  "project_mutations": 0,
+  "remote_mutations": 0
+}
