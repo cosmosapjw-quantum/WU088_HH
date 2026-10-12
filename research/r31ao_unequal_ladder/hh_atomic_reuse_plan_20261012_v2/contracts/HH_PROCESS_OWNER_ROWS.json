@@ -1,0 +1,75 @@
+{
+  "schema": "hh_process_owner_contract.v2",
+  "status": "PLANNING_INTERFACE_PREPARED_NOT_RUNTIME_ADMITTED",
+  "provider_owner": "WU088_HH",
+  "consumer_runtime_owner": "rei_bianchi",
+  "observer_receiver_owner": "bass",
+  "network_coordinate_warning": "Free electrons, HII ions, and H-minus ions are distinct event counts.",
+  "rows": [
+    {
+      "id": "HH_DISABLED_BASELINE",
+      "meaning": "An explicit consumer model choice for the named future HH term; not a finding of physical negligibility",
+      "future_source_factor": 0,
+      "inherited_state_retained": true,
+      "source_null_is_zero": false,
+      "baseline_REI_may_proceed_without_optional_HH_precision": true
+    },
+    {
+      "id": "LCS_EFFECTIVE_HH_IONIZATION",
+      "evidence": "S14_PHYS12",
+      "reaction_label": "H0 + H0 -> H+ + H0 + e_free",
+      "stoichiometric_net": {
+        "HI": -1,
+        "HII": 1,
+        "H_minus": 0,
+        "free_electron": 1,
+        "direct_photon": 0
+      },
+      "rate_form": "q = nH_proper * (1 - x_HII)^2 * k_LCS(T)",
+      "k_units": "cm^3 s^-1",
+      "q_units": "proper s^-1 per H nucleus (fraction source)",
+      "source_coordinate": [
+        "x_HII",
+        "y_HeII",
+        "y_HeIII",
+        "w_thermal_eV_per_H"
+      ],
+      "source_form": "H = q * (1, 0, 0, -chi_H)",
+      "thermal_energy_per_event_eV": "-chi_H",
+      "chi_H_nominal_eV": "13.598434599702",
+      "chi_H_authority": "Captured original source leaf; decimal nominal is not a new uncertainty certificate",
+      "normalization": "Use the inherited q/k convention exactly; do not introduce another identical-pair factor 1/2",
+      "photon_owner": "No direct HH photon source; photoabsorption can change indirectly through coupled gas state",
+      "energy_owner": "Threshold term counted once in the selected thermal/chemical ledger; full coupled D_w need not equal -chi_H D_x",
+      "temperature_response": "Requires thermal-energy-to-temperature and particle-number mapping",
+      "native_callback_binding": null,
+      "arbitrary_T_rate_table": null,
+      "admission_ceiling": "Captured-coefficient source family and PHYS12 finite response only"
+    },
+    {
+      "id": "SINGLET_H_PLUS_H_MINUS_ION_PAIR",
+      "evidence": "Existing independent microscopic lane; original source/basis/channel gates retained",
+      "reaction_label": "H0 + H0 -> H+ + H-",
+      "stoichiometric_net": {
+        "HI": -2,
+        "HII": 1,
+        "H_minus": 1,
+        "free_electron": 0,
+        "direct_photon": 0
+      },
+      "rate": null,
+      "threshold_energy_eV": null,
+      "runtime_admission": "OPEN",
+      "required_network_extension": "An explicit H-minus population and its subsequent reaction/energy owners when inserted into chemistry",
+      "not_interchangeable_with": "LCS_EFFECTIVE_HH_IONIZATION",
+      "independent_of_REI_completion": true
+    }
+  ],
+  "consumer_insertion_checks": [
+    "Named channel is not already included by another rate owner",
+    "Proper/comoving and gas-frame conventions match",
+    "Thermal and chemical threshold energy are not counted twice",
+    "Species and charge conservation hold for actual consumer network",
+    "Case-A/B and opacity ownership remain consumer responsibilities; HH rows do not replace the whole atomic registry"
+  ]
+}

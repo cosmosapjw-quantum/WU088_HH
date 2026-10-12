@@ -1,0 +1,199 @@
+{
+  "schema": "hh_atomic_reuse_independent_plan_review.v1",
+  "decision": "APPROVE_PLAN_SCOPED",
+  "decided_at_utc": "2026-10-12T08:06:57.713640+00:00",
+  "project": "WU088_HH",
+  "candidate": "HH_ATOMIC_REUSE_PLAN_20261012_v2",
+  "decision_scope": "첨부 REI Atomic-Reuse DAG에 따른 HH 계획·retained provider 계약의 의미와 내부 일관성. 새로운 과학/consumer/native/production admission 아님.",
+  "reviewer": {
+    "agent": "/root/replan_remote_intake",
+    "role": "independent noncreator plan decision reviewer",
+    "prior_role": "Read-only actual GitHub PR/branch/commit/tree observation and original baseline byte/object identity intake",
+    "participated_in_candidate_plan_or_contract_creation": false,
+    "participated_in_candidate_validator_design": false,
+    "candidate_files_modified": false,
+    "files_written_scope": "review/ only",
+    "received_frozen_candidate_before_review": true
+  },
+  "freeze": {
+    "manifest": "review/CANDIDATE_FREEZE.json",
+    "sha256": "5ce98cb56433919f64fbcd334a954c8f53dc76131580525209708ee356e97c1b",
+    "expected_sha256": "5ce98cb56433919f64fbcd334a954c8f53dc76131580525209708ee356e97c1b",
+    "files": 47,
+    "initial_matches": 47,
+    "final_matches": 47,
+    "stable": true,
+    "readback": "review/REVIEWED_FILE_HASHES.json"
+  },
+  "source_baseline": {
+    "commit": "dcea5dc6545736e6f4afa5acf4b7eabd428485e8",
+    "root_tree": "5fdb8bfffb7e6c38f3e78fe65858541d3efb61ea",
+    "science_subtree": "ff2625c424a9c2e17af99d960fd6fcdda79227f9",
+    "science_decision_reused": "PROMOTE_SCOPED",
+    "science_decision_renewed": false
+  },
+  "method": {
+    "semantic_review": "Read the actual planning text, contracts, DAG/task cards, root entries, inherited source/decision/policy and supplied sources; conclusions do not derive from creator validator PASS alone.",
+    "direct_reference_readback": "Original attachment bytes, global crosswalk fields, retained baseline copies and actual saved remote object IDs compared by separate read-only Python metadata snippet. No candidate imports or validator invocation.",
+    "reference_record": "review/INDEPENDENT_REFERENCE_READBACK.json",
+    "reference_record_sha256": "e844fc45c081ca60edf0df2adc8fe0adaa1b493e0e567440872d9f16965f670d",
+    "attachments_equal": 4,
+    "global_nodes_preserved": 17,
+    "baseline_copies_equal": 8,
+    "copied_remote_intake_records_equal": 3,
+    "creator_structure_run_observed": "Existing 1 run, 29 structural items PASS; observed evidence only, not rerun.",
+    "candidate_validator_runs_by_reviewer": 0,
+    "PHYS12_source_native_or_history_runs": 0,
+    "old_full_suite_replays": 0,
+    "new_remote_read_requests_in_review": 0,
+    "remote_mutations": 0
+  },
+  "semantic_checks": [
+    {
+      "id": "SOURCE_SNAPSHOT_AND_CURRENT_PARENT",
+      "status": "PASS_PLAN_SCOPE",
+      "sources": [
+        "PLANNING_CONTRACT.md",
+        "SOURCE_REGISTRY.json",
+        "HH_RETAINED_RESULTS.json",
+        "evidence/REMOTE_STATE.json"
+      ],
+      "finding": "첨부4는 proposed snapshot으로 보존하고 실제 PHYS12 PR46을 별도 후속 S14_PHYS12로 결박한다. 역사적 N2 HOLD를 현재 REI 입력 부재나 외부 admission으로 승격하지 않는다."
+    },
+    {
+      "id": "GLOBAL_DAG_PRESERVATION",
+      "status": "PASS_PLAN_SCOPE",
+      "sources": [
+        "inputs/REI_ATOMIC_REUSE_DAG_20261012.json",
+        "DAG_CROSSWALK.json"
+      ],
+      "finding": "17개 원 global 노드의 ID·title·owner·depends_on·status가 대응표에 일치하며 원본 optional·acceptance·stop조건은 원 첨부 바이트에 그대로 남는다. 어떤 global 노드도 새로 완료로 표시하지 않는다."
+    },
+    {
+      "id": "RUX14_PREPARATION_AND_ACTUAL_CONSUMPTION",
+      "status": "PASS_PLAN_SCOPE",
+      "sources": [
+        "NEXT_DAG.json",
+        "DAG_CROSSWALK.json",
+        "HANDOFF_KO.md"
+      ],
+      "finding": "HH_REUSE/EXPORT와 구체적 소비 입력이 주어진 DOMAIN_SCREEN/MATERIALITY는 준비 경로다. 실제 HH_MATCHED_HISTORY는 external_dependencies=[RUX11]과 실제 증거를 요구하므로 원 RUX14 의존성을 우회하지 않는다."
+    },
+    {
+      "id": "INDEPENDENT_HH_LANES",
+      "status": "PASS_PLAN_SCOPE",
+      "sources": [
+        "NEXT_DAG.json",
+        "NCP_TASKS.json",
+        "baseline/PHYS12_NEXT_DAG.json",
+        "baseline/OBSERVABLE_FIRST_NCP_TASKS.json"
+      ],
+      "finding": "STRICT_NATIVE와 SINGLET의 고유 source/native 또는 atomic/channel 조건을 유지하며 REI 완료를 선행조건으로 부과하지 않는다. 이들 완료도 REI baseline의 선행조건으로 추가하지 않는다."
+    },
+    {
+      "id": "RETAINED_PHYS12_SCOPE",
+      "status": "PASS_PLAN_SCOPE",
+      "sources": [
+        "HH_RETAINED_RESULTS.json",
+        "contracts/HH_REI_EXPORT_CONTRACT.json",
+        "baseline/PHYS12_DECISION.json"
+      ],
+      "finding": "same-alpha, COMMON과 원 photon/history, 두 별개의 첫 단계, real-lift/source-C2 전제를 유지한다. 일반 k(T), 임의 geometry/전체 이력이나 생략 정확도로 전환하지 않는다. exact 결과 참조와 subtree는 실제 원격 객체와 일치한다."
+    },
+    {
+      "id": "SOURCE_FAMILY_ADMISSION",
+      "status": "PASS_PLAN_SCOPE",
+      "sources": [
+        "contracts/HH_REI_EXPORT_CONTRACT.json",
+        "contracts/HH_CONSUMER_REQUEST_TEMPLATE.json",
+        "NEXT_DAG.json"
+      ],
+      "finding": "수치 box의 겹침만으로 적용성을 인정하지 않고 source식·fixed coefficients·COMMON·stage/PreBE·변수/단위·chart/root branch를 대조한다. 불일치는 필요한 입력/변환 작업으로 남기고 전체 atomic replay로 확장하지 않는다."
+    },
+    {
+      "id": "EVENT_UNITS_AND_SWITCH_SEMANTICS",
+      "status": "PASS_PLAN_SCOPE",
+      "sources": [
+        "contracts/HH_PROCESS_OWNER_ROWS.json",
+        "contracts/HH_REI_EXPORT_CONTRACT.json",
+        "DEVELOPMENT_PLAN_KO.md"
+      ],
+      "finding": "LCS의 net HI -1/HII +1/free electron +1과 singlet의 HI -2/HII +1/Hminus +1/free electron 0를 구별한다. q의 proper fraction/s와 w의 thermal eV/H, 상속 pair convention, threshold 1회 집계, lambda/b_amp의 미래 source 의미를 보존한다. singlet rate/threshold는 null로 유지한다."
+    },
+    {
+      "id": "OBSERVABLE_THRESHOLD_LOGIC",
+      "status": "PASS_PLAN_SCOPE",
+      "sources": [
+        "contracts/HH_OBSERVABLE_EFFECT_POLICY.json",
+        "DEVELOPMENT_PLAN_KO.md",
+        "HH_RETAINED_RESULTS.json"
+      ],
+      "finding": "절대 HH 기여·BI-FLRW 차이·그 차이에 대한 HH 기여를 구분한다. 유효 상계<=budget이면 scoped omission, 절대효과 하계>budget이면 material, 상계만 큰 경우 unresolved/targeted evaluation이다. 작은 mixed I나 HH-response 분모의 ratio를 전체 이력 생략 근거로 사용하지 않는다."
+    },
+    {
+      "id": "MATCHED_CASE_REUSE_AND_ERRORS",
+      "status": "PASS_PLAN_SCOPE",
+      "sources": [
+        "contracts/HH_OBSERVABLE_EFFECT_POLICY.json",
+        "NEXT_DAG.json",
+        "HANDOFF_KO.md"
+      ],
+      "finding": "FLRW/BI와 HH OFF/ON 네 경우는 논리 비교 정의이며 네 번의 새 실행 강제가 아니다. 같은 source/IC/closure·고정 geometry 변화를 유지하고 기존 동일 조건 이력을 재사용한다. tau/visibility에는 실제 BASS receiver 결박을 요구하며 오차 종류를 분리한다."
+    },
+    {
+      "id": "LANE_SPECIFIC_NCP_GATES",
+      "status": "PASS_PLAN_SCOPE",
+      "sources": [
+        "NCP_TASKS.json",
+        "NEXT_DAG.json",
+        "HANDOFF_KO.md"
+      ],
+      "finding": "REI 이력 route에 RUX04/RUX07 및 RUX14의 실제 RUX11이 필요하다. 독립 native/microscopic route는 고유 조건으로 판단한다. 비용·실행 manifest·독립 분할이 필요하고 time carry/coupled groups는 임의 분할하지 않는다. 56worker/112GiB는 정책 상한이며 empty queue와 launch=false가 유지된다."
+    },
+    {
+      "id": "ROOT_AND_HANDOFF_CONSISTENCY",
+      "status": "PASS_PLAN_SCOPE",
+      "sources": [
+        "ROOT:AGENTS.md",
+        "ROOT:CURRENT_DEVELOPMENT_PLAN.json",
+        "ROOT:RESEARCH_STATE.json",
+        "ROOT:README.md",
+        "ROOT:README_KO.md",
+        "ROOT:docs/coding/IMPLEMENTATION_PLAN.md",
+        "HANDOFF_KO.md",
+        "TASK_CARDS.jsonl",
+        "state/RESEARCH_STATE.json"
+      ],
+      "finding": "현재8-node 계획·다음 DOMAIN_SCREEN 조건·PHYS12 과학 기준·빈 NCP queue를 같은 의미로 지시한다. 과거 native 실행 안내는 역사적 범위로 명시되어 새 default 실행으로 적용되지 않는다."
+    },
+    {
+      "id": "PLANNING_AND_DELIVERY_BOUNDARIES",
+      "status": "PASS_PLAN_SCOPE",
+      "sources": [
+        "PLANNING_CONTRACT.md",
+        "evidence/README.md",
+        "PR_PLAN.json",
+        "RETURN_TEMPLATE.json",
+        "state/RESEARCH_STATE.json"
+      ],
+      "finding": "계약 준비, runtime admission, 과학 PASS, 게시/ACK/restore를 구별한다. 새 PHYS13·외부 실행·heavy job을 선언하지 않는다. 실제 publication/backup receipt는 frozen 이후 별도 기록 대상이다."
+    }
+  ],
+  "blocking_findings": [],
+  "required_revisions": [],
+  "nonblocking_findings": [],
+  "claim_ceiling": {
+    "plan_consistency": "APPROVED_SCOPED",
+    "HH_export_contract": "PREPARED_NOT_RUNTIME_BOUND",
+    "PHYS12": "Existing conditional result retained unchanged",
+    "global_RUX_nodes": "Original proposed status preserved; no actual completion inferred",
+    "consumer_physical_input_and_runtime": "NOT_ADMITTED_BY_THIS_REVIEW",
+    "HH_effect_on_EoR": "NOT_COMPUTED",
+    "new_scientific_run_count": 0,
+    "native_root_U_V_W_I": null,
+    "consumer_threshold": null,
+    "NCP_launch": false,
+    "publication_backup_restore": "Outside this decision; attest only from actual detached receipts"
+  },
+  "stop_decision": "Frozen plan is sufficient for the requested restructuring; no additional audit or scientific rerun is needed for this planning decision. Changed candidate bytes require review of the actual changed scope rather than automatic renewal."
+}

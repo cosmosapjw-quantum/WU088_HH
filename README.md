@@ -1,10 +1,12 @@
-# WU088_HH — latest scoped physics result
+# WU088_HH — HH Atomic-Reuse research plan v2
 
-[PHYS12 report](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/REPORT_KO.md) now executes the fixed-family future HH-on/off response planned in PR45. Both archived first stages have positive hydrogen-ionization-fraction response and negative thermal-energy response, conditional on the inherited source inclusion and same-alpha C2 family. See [CURRENT_DEVELOPMENT_PLAN.json](CURRENT_DEVELOPMENT_PLAN.json) and the [independent decision](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/review/DECISION.json).
+The [current research plan](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/DEVELOPMENT_PLAN_KO.md) maps the user's 17-node REI Atomic-Reuse DAG into eight HH tasks. The [HH DAG](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/NEXT_DAG.json), [provider contract](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/contracts/HH_REI_EXPORT_CONTRACT.json), and [handoff](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/HANDOFF_KO.md) are the active planning entry points. See [CURRENT_DEVELOPMENT_PLAN.json](CURRENT_DEVELOPMENT_PLAN.json).
 
-The PHYS11 source/native boundaries and original scientific files are preserved. Full and first_half are separate first stages, not a continuous history. The mixed response is reused and is distinguished from the absolute HH contribution.
+The scientific baseline remains [PHYS12](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/REPORT_KO.md), with its existing scoped independent decision. The successor registers PHYS12 as S14_PHYS12 while preserving the supplied REI DAG and all earlier science. No new scientific run or external RUX completion is claimed.
 
-Current NCP status: **NO_HEAVY_JOB_READY**; heavy_queue=[]; launch=false. [NCP handoff](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/handoff/NCP_LOCAL_CODEX_HANDOFF_KO.md). The bounded question is answered; no automatic refinement or empty-queue benchmark is selected.
+HH source-family admission and observable screening can proceed when a concrete consumer request exists. Actual optional EoR ON/OFF histories follow RUX11 and reuse matching cached cases. The REI baseline proceeds without optional HH completion; independent HH singlet and strict-native research keep their own admission.
+
+Current NCP status: **NO_HEAVY_JOB_READY**; heavy_queue=[]; launch=false. [Lane-specific policy](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/NCP_TASKS.json). Producer contracts are prepared, but no new HH rate table, coupled consumer runtime, or whole-history result has been admitted.
 
 ## Historical R31K-B/R31M native-lane guide
 

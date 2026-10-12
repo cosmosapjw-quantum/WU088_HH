@@ -1,11 +1,14 @@
-# Active implementation priorities — after PHYS12, 2026-10-12
+# Active implementation priorities — HH Atomic-Reuse plan v2, 2026-10-12
 
-Current state is root CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/state/RESEARCH_STATE.json. The earlier observable-first plan is preserved as its original planning snapshot.
+Read root CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/DEVELOPMENT_PLAN_KO.md, NEXT_DAG.json, TASK_CARDS.jsonl and HANDOFF_KO.md. This is a plan/provider-contract update after PHYS12, with zero new scientific execution.
 
-1. Reuse completed L0–L3: fixed-family FTC transfer of existing U to future HH-on/off x_HII and thermal-w bounds, with exact output and mixed-response distinction. Independent decision: research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/review/DECISION.json.
-2. No refinement selected for the answered bounded question. A new task must name a concrete observable and domain/error requirement, or a standalone microscopic HH collision target.
-3. NCP has no active heavy task. Preserve empty queue; no completed-science replay or topology benchmark. Future admission retains actual unfinished inputs, scientific necessity, measured cost/memory and independent partitions.
-4. Native/whole-history/open scientific obligations keep their original scope. No change to source arrays, original code, closure, tolerances or historical failures.
+1. Reuse PHYS12 source-bound absolute HH response and inherited mixed response. Producer evidence and process-owner contracts are prepared under the current plan; source/rate/consumer admission remains distinct.
+2. When a named consumer request exists, compare the full source family and domain in HH_DOMAIN_SCREEN, then apply the observable/error decision policy in HH_MATERIALITY. Coarse coordinate-box overlap is insufficient.
+3. For a selected physical EoR effect question, bind actual RUX11 evidence before HH_MATCHED_HISTORY. Compare prespecified geometry and HH switches; reuse matching cached histories and compute only missing cases. Preserve sequential time carry and coupled photon groups.
+4. Keep independent HH_SINGLET and HH_STRICT_NATIVE routes open under original microscopic/native requirements without REI completion prerequisites. Optional HH is not a baseline EoR dependency.
+5. NCP queue remains empty. Admit a concrete expensive unfinished task only under its lane's NCP_TASKS.json conditions, using available measured cost evidence. No historical science replay or empty-queue host benchmark.
+
+Original source arrays, code, closures, tolerances and past failures are preserved. Plan review is research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/review/PLAN_REVIEW.json; PHYS12's scientific decision retains its existing scope.
 
 ## Preserved R31K-B implementation plan — historical native lane
 

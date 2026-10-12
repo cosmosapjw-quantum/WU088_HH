@@ -1,10 +1,12 @@
-# WU088_HH — PHYS12 결과 (2026-10-12)
+# WU088_HH — HH Atomic-Reuse 연구계획 v2 (2026-10-12)
 
-[PHYS12 보고서](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/REPORT_KO.md)는 PR45에서 예정한 같은 고정 계열 HH-on/off Δx_HII·Δw 평가를 여기서 실행한 결과다. 두 첫 단계에서 이온화 분율 기여는 양수, 열에너지 차이는 음수인 조건부 포함을 얻었다. 기존 혼합 응답과 절대 HH 기여를 구별한다. [현재 상태](CURRENT_DEVELOPMENT_PLAN.json)와 [독립 판정](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/review/DECISION.json)을 따른다.
+첨부 REI Atomic-Reuse DAG의 17개 노드를 [새 연구계획](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/DEVELOPMENT_PLAN_KO.md)과 [HH 로컬 DAG](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/NEXT_DAG.json)의 8개 작업에 대응시켰다. 현재 진입점은 [CURRENT_DEVELOPMENT_PLAN.json](CURRENT_DEVELOPMENT_PLAN.json), [제공 계약](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/contracts/HH_REI_EXPORT_CONTRACT.json), [후속 인계문](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/HANDOFF_KO.md)이다.
 
-PHYS09/PHYS11의 source-inclusion·동일 α C² 전제를 유지한다. full과 first_half는 서로 다른 첫 단계이며, actual native root·전구간 history·full49·production을 새로 승인하지 않는다. 완료된 L0–L3를 다시 실행하지 않는다.
+과학 기준점은 [PHYS12 보고서](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/REPORT_KO.md)와 기존 PROMOTE_SCOPED 판정이다. PHYS12를 S14_PHYS12로 등록하고 원 첨부와 기존 과학 파일을 보존했다. 이번 변경은 계획과 계약 작성이며 새 과학 실행·외부 RUX 완료를 뜻하지 않는다.
 
-**NCP heavy_queue=[] / launch=false / NO_HEAVY_JOB_READY.** [현재 NCP 전달문](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/handoff/NCP_LOCAL_CODEX_HANDOFF_KO.md)을 읽는다. 이 bounded 질문은 답을 얻었고 추가 구간 정밀화나 heavy job은 선정하지 않았다.
+실제 소비자의 소스 계열·시나리오·적용영역이 주어지면 HH_DOMAIN_SCREEN부터 진행한다. 제공 계약과 적용성·관측량 screening은 RUX11 전에 준비할 수 있다. 실제 EoR HH ON/OFF 이력 비교는 RUX11 증거를 요구하며 같은 조건의 보존 이력은 재사용한다. 기본 REI 이력은 선택 HH 정밀 계산을 기다리지 않는다. 독립 singlet 충돌·FT03 strict-native 연구에는 각각의 원래 승인 조건을 적용한다.
+
+**NCP heavy_queue=[] / launch=false / NO_HEAVY_JOB_READY.** [경로별 NCP 정책](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/NCP_TASKS.json)을 따른다. 현재 소비 runtime은 결박되지 않았고 새 HH rate table·전체 우주론 이력·production 판정은 없다. 완료된 과학 계산이나 빈 큐 benchmark를 자동 재실행하지 않는다.
 
 ## 아래 문서의 범위: 보존된 R31K-B/R31M native 안내
 
