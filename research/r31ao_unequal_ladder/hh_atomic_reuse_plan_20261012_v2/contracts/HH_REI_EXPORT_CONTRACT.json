@@ -1,0 +1,61 @@
+{
+  "schema": "hh_rei_export_contract.v2",
+  "status": "RETAINED_RESPONSE_AND_PROCESS_CONTRACT_AVAILABLE",
+  "payload": "HH_RETAINED_RESULTS.json",
+  "process_owner_rows": "contracts/HH_PROCESS_OWNER_ROWS.json",
+  "coordinates": [
+    "x_HII",
+    "y_HeII",
+    "y_HeIII",
+    "w_thermal_eV_per_H"
+  ],
+  "switches": {
+    "lambda": "Selected future LCS HH source strength on [0,1]",
+    "b_amp": "Future photon-birth strength on [0,1]; pre-existing photons remain"
+  },
+  "primary_setting": {
+    "b_amp": 1,
+    "lambda_off": 0,
+    "lambda_on": 1
+  },
+  "same_family_checks": [
+    "Source equation/real lift and inherited inclusion/C2 assumptions",
+    "Same fixed admissible coefficient tuple within each contrast",
+    "COMMON gas, old photons, compensation, ray/guard state",
+    "Stage duration and PreBE/scalar coefficients",
+    "Gas coordinates, normalization and units",
+    "Same admitted chart and root branch over the parameter path"
+  ],
+  "coordinate_box_overlap_is_sufficient": false,
+  "stage_bindings": [
+    {
+      "id": "full",
+      "proper_duration_s": "1250000000",
+      "source_contract": "baseline/PHYS12_FROZEN_SOURCE_CONTRACT.json"
+    },
+    {
+      "id": "first_half",
+      "proper_duration_s": "625000000",
+      "source_contract": "baseline/PHYS12_FROZEN_SOURCE_CONTRACT.json"
+    }
+  ],
+  "stages_are_sequential": false,
+  "numeric_interpretation": "Outward conditional enclosures with inherited interval dependency and coefficient-domain effects; not statistical confidence or pure numerical-error bars",
+  "allowed_reuse": [
+    "Existing first-stage diagnostic",
+    "Finite ON/OFF inclusion in the exact matching or separately proven-covered fixed family",
+    "Source/units/switch/event contract for a later selected consumer",
+    "Motivation for an explicit local applicability/sensitivity question"
+  ],
+  "forbidden_transfers": [
+    "Delta x / duration used as k(T) or an instantaneous rate",
+    "Simple sum/time rescaling into an EoR history bound",
+    "Small mixed response used as total HH omission bound",
+    "Sign of thermal w directly labeled as sign of temperature",
+    "PHYS12 LCS response substituted for singlet ion-pair kinetics"
+  ],
+  "consumer_admission": null,
+  "consumer_physical_history": null,
+  "consumer_observable_error_budget": null,
+  "EoR_effect_status": "NOT_COMPUTED"
+}

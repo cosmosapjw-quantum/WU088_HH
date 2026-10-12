@@ -1,0 +1,45 @@
+{
+  "schema": "hh_observable_effect_policy.v2",
+  "status": "PROPOSED_TARGETS_NOT_EVALUATED",
+  "current_materiality_decision": "NOT_EVALUATED_NO_BOUND_CONSUMER",
+  "target_definitions": {
+    "within_geometry_HH_effect": "Delta_HH O_G = O(G,lambda=1) - O(G,lambda=0)",
+    "Bianchi_contrast": "C_lambda = O(BI,lambda) - O(FLRW,lambda)",
+    "HH_effect_on_Bianchi_contrast": "Delta_HH C = C_1 - C_0"
+  },
+  "logical_history_cases": [
+    "FLRW HH-OFF",
+    "FLRW HH-ON",
+    "Bianchi-I HH-OFF",
+    "Bianchi-I HH-ON"
+  ],
+  "cases_are_mandatory_new_runs": false,
+  "reuse_policy": "Reuse any actual cached case whose complete input/solver/claim identity matches; compute only missing or materially invalidated cases",
+  "predeclared_threshold": null,
+  "classification_rules": [
+    {
+      "id": "SCOPED_OMISSION_SUPPORTED",
+      "requires": "A valid bound B_O for the named consumer observable/domain, including declared uncertainty, satisfies B_O <= epsilon_HH",
+      "ceiling": "Only this observable/domain/model/accuracy choice"
+    },
+    {
+      "id": "MATERIAL_EFFECT_ESTABLISHED",
+      "requires": "An admitted lower bound on |Delta_HH O| exceeds the predeclared epsilon_HH",
+      "ceiling": "Only this selected observable/domain"
+    },
+    {
+      "id": "TARGETED_EVALUATION_NEEDED",
+      "requires": "Upper bound exceeds epsilon but lower bound does not, or a concrete scientific question requests the HH response",
+      "ceiling": "No materiality claim from an upper bound alone"
+    },
+    {
+      "id": "UNRESOLVED_INPUT_OR_TRANSFER",
+      "requires": "Consumer identity, domain, threshold, source owner or valid local-to-history transfer missing",
+      "ceiling": "No inference of negligible effect and no complete atomic rerun"
+    }
+  ],
+  "numerical_and_model_error_separate": true,
+  "atomic_bound_width_is_full_model_error": false,
+  "local_PHYS12_premise_for_reuse": "Exact matching or separately established source-family coverage; full/first_half are not history samples",
+  "no_current_omission_decision": true
+}

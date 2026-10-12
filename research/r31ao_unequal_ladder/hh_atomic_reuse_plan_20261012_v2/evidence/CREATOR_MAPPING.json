@@ -1,0 +1,406 @@
+{
+  "schema": "WU088_HH_RUX_MAPPING_ANALYSIS_V1",
+  "analysis_role": "read-only planning analysis; no source reruns or remote mutations",
+  "basis": {
+    "user_request": "Use attached DAG to reorganize WU088_HH research plan",
+    "source_dag_schema": "rei_reuse_successor_dag.v1",
+    "source_dag_nodes": 17,
+    "source_dag_status": "ALL_PROPOSED_NOT_EXECUTED",
+    "current_PHYS12": "PROMOTE_SCOPED observed in local DECISION/state",
+    "parent_reported_remote_commit": "dcea5dc6545736e6f4afa5acf4b7eabd428485e8",
+    "remote_commit_this_agent_verified": false
+  },
+  "input_files": [
+    {
+      "role": "USER_ATTACHMENT",
+      "path": "/workspace/scratch/b826cbaab54f/upload/Pasted text(20261012-074002).txt",
+      "bytes": 27280,
+      "sha256": "479165b26c5bf9acf84bd13c419cd416b045909c7ddedd746bd1884942362b9e"
+    },
+    {
+      "role": "USER_ATTACHMENT",
+      "path": "/workspace/scratch/b826cbaab54f/upload/REI_ATOMIC_REUSE_CODEX_HANDOFF_20261012(3).md",
+      "bytes": 2884,
+      "sha256": "0a97bccfa8718ecae74a4ecc57c54f4f797fd3c83b1c584ad67334dbaf4490bc"
+    },
+    {
+      "role": "USER_ATTACHMENT",
+      "path": "/workspace/scratch/b826cbaab54f/upload/REI_ATOMIC_REUSE_PLAN_20261012(3).md",
+      "bytes": 14825,
+      "sha256": "e0d6ba7fd15496afb9a1f4536b6da2b4a772c7ff05ec8e2584326255a79112d5"
+    },
+    {
+      "role": "USER_ATTACHMENT",
+      "path": "/workspace/scratch/b826cbaab54f/upload/REI_ATOMIC_REUSE_DAG_20261012(4).json",
+      "bytes": 21382,
+      "sha256": "2508158361442bba6c828b3a02141c56051d80bbe4546cb31a07544f5c0b79fa"
+    },
+    {
+      "role": "LOCAL_EXISTING_PHYS12_EVIDENCE",
+      "path": "/workspace/scratch/b826cbaab54f/work/HH_PHYS12_20261012_v1/SCIENTIFIC_CONTRACT.md",
+      "bytes": 5197,
+      "sha256": "70fc50aed03a102e16abb5d5412b91b7b166b178791e7c28fb5919459c25f2f1"
+    },
+    {
+      "role": "LOCAL_EXISTING_PHYS12_EVIDENCE",
+      "path": "/workspace/scratch/b826cbaab54f/work/HH_PHYS12_20261012_v1/state/RESEARCH_STATE.json",
+      "bytes": 1564,
+      "sha256": "4912891e4ef3e7593f175b6a386f3549cbea74ca6abbdfc9d83a4de11875e0dd"
+    },
+    {
+      "role": "LOCAL_EXISTING_PHYS12_EVIDENCE",
+      "path": "/workspace/scratch/b826cbaab54f/work/HH_PHYS12_20261012_v1/NEXT_DAG.json",
+      "bytes": 5813,
+      "sha256": "fa69c7ebdf41ca49e9f7fc8b9aefb468d45ab85c89b2b3cec7e0f3941da76eb8"
+    },
+    {
+      "role": "LOCAL_EXISTING_PHYS12_EVIDENCE",
+      "path": "/workspace/scratch/b826cbaab54f/work/HH_PHYS12_20261012_v1/NCP_TASKS.json",
+      "bytes": 756,
+      "sha256": "23233ad9c5b36a563bf7707faa724783c51adae19fb5446b7ef22bd746fc6f32"
+    },
+    {
+      "role": "LOCAL_EXISTING_PHYS12_EVIDENCE",
+      "path": "/workspace/scratch/b826cbaab54f/work/HH_PHYS12_20261012_v1/review/DECISION.json",
+      "bytes": 12861,
+      "sha256": "62295419c98671e88b2019b16ad8b5e898ae854295a6a4caceb788453af3bcfc"
+    },
+    {
+      "role": "LOCAL_EXISTING_PHYS12_EVIDENCE",
+      "path": "/workspace/scratch/b826cbaab54f/work/HH_PHYS12_20261012_v1/theory/FINITE_HH_RESPONSE_KO.md",
+      "bytes": 7597,
+      "sha256": "89550bafbf26628fa0538fb4e24e34246baa902df09831a15f3e67c22fcb1b6e"
+    },
+    {
+      "role": "LOCAL_EXISTING_PHYS12_EVIDENCE",
+      "path": "/workspace/scratch/b826cbaab54f/work/HH_PHYS12_20261012_v1/inputs/family/FROZEN_SOURCE_CONTRACT.json",
+      "bytes": 3276,
+      "sha256": "5c03815a11d17f63e5431c2df0bf59a02c8805d987406ea0c67d0fd06f8a9775"
+    },
+    {
+      "role": "EXISTING_LANE_SPECIFIC_NCP_POLICY",
+      "path": "/workspace/scratch/b826cbaab54f/checkpoint/WU088_HH_OBSERVABLE_FIRST_PLAN_20261012_v1/repo/research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/NCP_TASKS.json",
+      "bytes": 3528,
+      "sha256": "b11e524692e089c7a694abfd6430f020a4ca2812100eb81e8402ddb403b2766b"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "KEEP_PRODUCER_CONSUMER_SEPARATE",
+      "decision": "WU088_HH remains HH source/response provider and independent microscopic research owner. rei_bianchi owns physical EoR input/scenario/history. bass owns tau/visibility receiver."
+    },
+    {
+      "id": "NO_BASELINE_HH_GATE",
+      "decision": "Do not add HH precision/native/full49/microscopic completion as a predecessor of RUX04-RUX11 or RUX16."
+    },
+    {
+      "id": "REFRESH_S14_BY_OVERLAY",
+      "decision": "Keep user source DAG bytes immutable and add S14_PHYS12 successor evidence. PHYS12 local L0-L2 completed and L3 stopped; original S14 plan-only metadata is historical."
+    },
+    {
+      "id": "SPLIT_RUX14",
+      "decision": "Local preparation/producer export and existing sensitivity reuse may happen now. Actual HH_EFFECT_ON_EOR consumer work remains optional after RUX11 and a materiality/domain trigger. PHYS12 does not complete RUX14."
+    },
+    {
+      "id": "SCOPE_HEAVY_POLICY",
+      "decision": "RUX04/RUX07 are physical EoR heavy-route gates. They are not prerequisites of independent microscopic HH scattering work. Retain lane-specific inherited NCP input/science/cost/partition gates."
+    },
+    {
+      "id": "NO_HISTORY_EXTRAPOLATION",
+      "decision": "Two saved first-stage bounds are not a response table for arbitrary T/density/redshift or an accumulated EoR error bound. No summing, time-rescaling or cosmic omission claim without a valid transfer/history contract."
+    }
+  ],
+  "global_mapping": [
+    {
+      "global_id": "RUX00",
+      "local_contribution": "HH exact source/result/decision pin and no-rerun register",
+      "global_completion_from_HH": "NO"
+    },
+    {
+      "global_id": "RUX01",
+      "local_contribution": "PHYS12 figure/table as a separate retained HH diagnostic; F08/SYNC03 remain their own evidence",
+      "global_completion_from_HH": "NO"
+    },
+    {
+      "global_id": "RUX02",
+      "local_contribution": "State HH input requirements only; actual cosmological admission belongs to rei_bianchi",
+      "global_completion_from_HH": "NO"
+    },
+    {
+      "global_id": "RUX03",
+      "local_contribution": "Optional HH owner rows: explicit disabled baseline, LCS effective ionization, distinct singlet ion-pair process, units/threshold/count convention/domain",
+      "global_completion_from_HH": "NO"
+    },
+    {
+      "global_id": "RUX04-RUX11",
+      "local_contribution": "Consume actual externally admitted scenario/history only when needed; HH not mandatory",
+      "global_completion_from_HH": "NO"
+    },
+    {
+      "global_id": "RUX14",
+      "local_contribution": "Existing local PHYS12 sensitivity available; producer export can be prepared; physical EoR consumer effect uncomputed",
+      "global_completion_from_HH": "NO; LOCAL_SUBOBLIGATION_ONLY"
+    },
+    {
+      "global_id": "RUX16",
+      "local_contribution": "Supply scoped result provenance; physical/continuum/production claim belongs to receiver acceptance",
+      "global_completion_from_HH": "NO"
+    }
+  ],
+  "proposed_local_nodes": [
+    {
+      "id": "HH_REUSE",
+      "depends_on": [],
+      "lane": "RETAINED",
+      "proposed_status": "READY_TO_RECORD_EXISTING_COMPLETE",
+      "inputs": [
+        "PHYS12 DECISION/state",
+        "PHYS12 exact results",
+        "actual repo commit/tree identity verified by integrator"
+      ],
+      "output": "HH_RETAINED_RESULTS.json",
+      "acceptance": [
+        "Retain original PHYS12 scoped decision without rerun",
+        "Point to exact source/results and prior mixed attribution",
+        "No global RUX completion inferred"
+      ]
+    },
+    {
+      "id": "HH_EXPORT",
+      "depends_on": [
+        "HH_REUSE"
+      ],
+      "lane": "PRODUCER_INTERFACE",
+      "proposed_status": "READY_LOCAL_PLAN_OR_INTERFACE",
+      "inputs": [
+        "PHYS12 contract/source family",
+        "existing separate microscopic contracts"
+      ],
+      "output": "HH_REI_EXPORT_CONTRACT.json and HH_OWNER_ROWS.json",
+      "acceptance": [
+        "Effective LCS and singlet ion-pair separated",
+        "Future lambda/b_amp/COMMON semantics explicit",
+        "w thermal eV/H; q per proper second; pair-count convention inherited",
+        "Consumer identity/history/tolerance missing fields remain null, not zero",
+        "Explicit baseline disabled/declared effective channel choice"
+      ]
+    },
+    {
+      "id": "HH_DOMAIN_SCREEN",
+      "depends_on": [
+        "HH_EXPORT"
+      ],
+      "external_inputs": [
+        "actual REI consumer process request and admitted scenario",
+        "source/domain/units/operator matches"
+      ],
+      "lane": "OPTIONAL_EOR_PREPARATION",
+      "proposed_status": "WAIT_FOR_CONCRETE_CONSUMER",
+      "output": "HH_CONSUMER_ADMISSION.json",
+      "acceptance": [
+        "Compare full fixed source family/operator/coefficients; coordinate box alone insufficient",
+        "Existing response reusable only under matching or proved covered family",
+        "Mismatch routes to named smallest model/transfer requirement, not blanket atomic recomputation",
+        "Pre-screening may precede RUX11; no EoR effect claim"
+      ]
+    },
+    {
+      "id": "HH_MATERIALITY",
+      "depends_on": [
+        "HH_DOMAIN_SCREEN"
+      ],
+      "lane": "OPTIONAL_EOR_PREPARATION",
+      "proposed_status": "NOT_READY_NO_CONSUMER_TOLERANCE",
+      "output": "HH_MATERIALITY_DECISION.json",
+      "acceptance": [
+        "Named O and unit plus predeclared absolute tolerance",
+        "Separate local finite-stage materiality from history observable materiality",
+        "Use retained absolute response, not tiny mixed I, as starting HH scale",
+        "No tolerance invented from returned answer",
+        "No consumer missing-input interpreted as negligible"
+      ]
+    },
+    {
+      "id": "HH_MATCHED_HISTORY",
+      "depends_on": [
+        "HH_MATERIALITY"
+      ],
+      "external_dependencies": [
+        "RUX11 actual accepted consumer evidence"
+      ],
+      "lane": "OPTIONAL_EOR_RUX14",
+      "proposed_status": "CONDITIONAL_NOT_EXECUTED",
+      "activation": "Named materiality/uncertainty question requires matched actual history and admitted HH channel/domain",
+      "output": "HH_EFFECT_ON_EOR.json",
+      "acceptance": [
+        "Same declared physical source/IC/closure/background/cosmological history on each ON/OFF comparison",
+        "Toggle one named HH channel with conservation/energy owner fixed",
+        "Time carry and numerical error established at claimed level",
+        "Report x/T/ne/tau only for outputs actually bound to histories and receiver",
+        "Use NCP only if measured/judged genuinely heavy independent tasks"
+      ]
+    },
+    {
+      "id": "HH_STRICT_NATIVE",
+      "depends_on": [
+        "HH_REUSE"
+      ],
+      "lane": "FT03_NATIVE",
+      "proposed_status": "OPEN_OPTIONAL_RESEARCH",
+      "output": "Original strict-native scientific output if selected",
+      "acceptance": [
+        "Concrete strict certificate question",
+        "Preserve original PHYS11 dependencies and actual root/ray/guard/carry authority",
+        "Not prerequisite for existing LCS bound or REI baseline"
+      ]
+    },
+    {
+      "id": "HH_SINGLET",
+      "depends_on": [],
+      "lane": "ATOMIC_MICROSCOPIC",
+      "proposed_status": "OPEN_INDEPENDENT_RESEARCH",
+      "output": "Named original microscopic collision observable if selected",
+      "acceptance": [
+        "Original source/basis/raw input",
+        "Selected channel/spin/velocity/impact/energy/tail gates",
+        "Independent of REI RUX04/RUX07/RUX11 and consumer completion",
+        "No electron-source replacement with LCS"
+      ]
+    }
+  ],
+  "producer_contract_minimum": {
+    "process_id": [
+      "LCS_EFFECTIVE_HH_IONIZATION",
+      "SINGLET_H_PLUS_H_MINUS_ION_PAIR"
+    ],
+    "evidence_kind": "conditional finite implicit-stage response; not tabulated k(T) or full history",
+    "observables": [
+      "x_HII",
+      "w_thermal_eV_per_H"
+    ],
+    "theta": {
+      "lambda": "future selected LCS HH strength [0,1]",
+      "b_amp": "future photon-birth amplitude [0,1], existing photons retained"
+    },
+    "stage_contracts": [
+      {
+        "stage": "full",
+        "duration_proper_s": 1250000000
+      },
+      {
+        "stage": "first_half",
+        "duration_proper_s": 625000000
+      }
+    ],
+    "same_alpha_each_comparison": true,
+    "stages_sequential": false,
+    "coefficient_and_source_identity": "must reference original source lock and COMMON contracts; numerical box only is insufficient",
+    "inherited_domain": {
+      "reference_X": [
+        [
+          ".90",
+          ".93"
+        ],
+        [
+          ".29",
+          ".31"
+        ],
+        [
+          ".59",
+          ".61"
+        ],
+        [
+          "13",
+          "14"
+        ]
+      ],
+      "coordinate": "x_HII,y_HeII,y_HeIII,w_eV_per_H",
+      "hubble_triplet_s_inverse": [
+        1e-14,
+        1e-14,
+        1e-14
+      ],
+      "coverage_note": "full identity and fixed-family premises still necessary"
+    },
+    "rate_expression": "q=nH_proper*(1-x_HII)^2*k_LCS(T)",
+    "q_units": "H nucleus^-1 proper s^-1 (normalized fraction derivative)",
+    "new_pair_count_half_factor": false,
+    "consumer_repo_commit": null,
+    "consumer_scenario_id": null,
+    "consumer_process_owner_id": null,
+    "consumer_observable": null,
+    "consumer_absolute_tolerance": null,
+    "native_root_U_V_W_I": null,
+    "physical_history": null,
+    "forbidden_imports": [
+      "No direct k_LCS(T) from Delta x / dt",
+      "No arbitrary time rescale/sum of independent first stages",
+      "No thermal w sign -> temperature sign without particle-factor transfer",
+      "No singlet ion-pair -> immediate free-electron LCS source",
+      "No tiny mixed response -> total HH negligibility"
+    ]
+  },
+  "ncp_policy": {
+    "current_heavy_queue": [],
+    "current_launch": false,
+    "EOR_route_required": [
+      "Selected science target and immutable task inputs",
+      "RUX04 accepted physical scenario",
+      "RUX07 accepted coupled physical interval",
+      "For RUX14 actual EoR effect, RUX11 dependency plus consumer/domain/materiality trigger",
+      "Measured wall/CPU/RSS or justified scale; executable and independent unfinished partitions"
+    ],
+    "microscopic_route_required": [
+      "Selected independent microscopic observable",
+      "Original atomic input/source/domain/physics gates",
+      "Named unfinished executable tasks, immutable inputs",
+      "Relevant measured pilot reused or necessary bounded pilot",
+      "Genuine long cost and safe independent partitions/checkpoint/resume"
+    ],
+    "microscopic_route_excludes": [
+      "RUX04",
+      "RUX07",
+      "RUX11",
+      "REI consumer completion"
+    ],
+    "resource_policy_reference": "/workspace/scratch/b826cbaab54f/checkpoint/WU088_HH_OBSERVABLE_FIRST_PLAN_20261012_v1/repo/research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/NCP_TASKS.json",
+    "no_launch_due_to_plan_change": true
+  },
+  "review_findings": [
+    {
+      "severity": "MATERIAL_MAPPING_RISK",
+      "id": "F1",
+      "finding": "Global no_new_heavy_until list is unscoped; copying it into HH would block independent atomic research. Scope by lane in local overlay."
+    },
+    {
+      "severity": "MATERIAL_MAPPING_RISK",
+      "id": "F2",
+      "finding": "S14 references PHYS11/plan; local authority is now PHYS12. Add successor evidence without changing user original."
+    },
+    {
+      "severity": "MATERIAL_MAPPING_RISK",
+      "id": "F3",
+      "finding": "RUX14 depends RUX11 for EoR effect, but local preparation and independent research must not wait for global scientific plots."
+    },
+    {
+      "severity": "SCIENTIFIC_SCOPE",
+      "id": "F4",
+      "finding": "PHYS12 response cannot be exported as arbitrary thermal rate table or integrated cosmic error/omission certificate."
+    },
+    {
+      "severity": "NO_DEFECT_IN_ATTACHED_INTENT",
+      "id": "F5",
+      "finding": "Attachments explicitly state HH optional baseline and independent scientific value. Local overlay should preserve this intended distinction."
+    }
+  ],
+  "operations": {
+    "science_runs": 0,
+    "source_native_inverse_runs": 0,
+    "remote_mutations": 0,
+    "attachments_modified": false,
+    "new_files": [
+      "DAG_MAPPING_KO.md",
+      "DAG_MAPPING.json"
+    ]
+  }
+}

@@ -1,10 +1,12 @@
-# Current development priority — PHYS12, 2026-10-12
+# Current development priority — HH Atomic-Reuse plan v2, 2026-10-12
 
-Read CURRENT_DEVELOPMENT_PLAN.json, then research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/state/RESEARCH_STATE.json and review/DECISION.json in that folder. The observable-first plan remains active; PHYS12 has now executed its L0–L3 bounded task.
+Read CURRENT_DEVELOPMENT_PLAN.json, then research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/DEVELOPMENT_PLAN_KO.md, NEXT_DAG.json, and HANDOFF_KO.md. This successor plan implements the user's attached REI Atomic-Reuse DAG as an HH planning overlay. Original global nodes remain PROPOSED_NOT_EXECUTED; global_links are contributions, not dependency edges or completion receipts.
 
-Reuse the fixed-family future HH-on/off x_HII and thermal-w results and the inherited PHYS11 mixed response. Do not replay completed PHYS09/PHYS11/PHYS12 or treat the old plan's PLANNED_NOT_EXECUTED snapshot as the current execution state. Source-inclusion and same-alpha C2 premises remain explicit. Full and first_half are separate first stages; their PreBE coefficients differ.
+Retain PHYS12 at commit dcea5dc6545736e6f4afa5acf4b7eabd428485e8, subtree ff2625c424a9c2e17af99d960fd6fcdda79227f9. Reuse its fixed-family future HH-on/off x_HII and thermal-w bounds and PHYS11 mixed response with their inherited source/C2 premises. Two first stages are not a carried history. Do not replay completed PHYS09/PHYS11/PHYS12.
 
-Current NCP heavy_queue=[] and launch=false. The fixed-family question is answered within its inherited scope; no additional refinement or heavy job is selected. Select new work only for a concrete observable/error requirement or a standalone microscopic HH question, following the existing lane-specific admission. HH LCS and singlet ion-pair physics, and FT03 BE versus frozen107 atomic native, remain distinct.
+Producer contracts and owner rows are prepared; no consumer scenario/runtime is bound. Next consumer task is HH_DOMAIN_SCREEN once an actual named request supplies source/scenario identity and domain. Preparation may precede RUX11; actual HH_MATCHED_HISTORY requires actual RUX11 evidence. Optional HH is not a prerequisite of the REI baseline. Independent microscopic singlet and FT03 strict-native work retain their own admission without REI completion gates.
+
+Current NCP heavy_queue=[] and launch=false. No scientific or heavy job is selected by this plan change. Use lane-specific NCP_TASKS.json and preserved atomic/native conditions for a selected physical question; do not benchmark an empty queue. Plan review is research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/review/PLAN_REVIEW.json; scientific decision remains research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/review/DECISION.json.
 
 ## Preserved execution contract
 
