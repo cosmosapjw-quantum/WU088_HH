@@ -1,10 +1,10 @@
-# WU088_HH — current development plan
+# WU088_HH — latest scoped physics result
 
-The active priority is observable-based HH research. Start with [the current plan](research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/DEVELOPMENT_PLAN_KO.md) and [CURRENT_DEVELOPMENT_PLAN.json](CURRENT_DEVELOPMENT_PLAN.json).
+[PHYS12 report](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/REPORT_KO.md) now executes the fixed-family future HH-on/off response planned in PR45. Both archived first stages have positive hydrogen-ionization-fraction response and negative thermal-energy response, conditional on the inherited source inclusion and same-alpha C2 family. See [CURRENT_DEVELOPMENT_PLAN.json](CURRENT_DEVELOPMENT_PLAN.json) and the [independent decision](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/review/DECISION.json).
 
-The next HERE result will assess fixed-source-family HH-on/off changes in hydrogen ionization fraction and gas energy, separately from the already completed PHYS11 mixed response. It is not yet executed. PHYS11 at 328372568144c4cdb6cdecd94c9c9bff984e103e remains the scoped scientific baseline. Full native certification and microscopic singlet ion-pair research retain their own requirements and do not block every effective-model result.
+The PHYS11 source/native boundaries and original scientific files are preserved. Full and first_half are separate first stages, not a continuous history. The mixed response is reused and is distinguished from the absolute HH contribution.
 
-Current NCP status: **NO_HEAVY_JOB_READY**; heavy_queue=[]; launch=false. [NCP handoff](research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/HANDOFF_KO.md). Heavy work is selected only for actual unfinished physics with measured cost and useful independent partitions.
+Current NCP status: **NO_HEAVY_JOB_READY**; heavy_queue=[]; launch=false. [NCP handoff](research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/handoff/NCP_LOCAL_CODEX_HANDOFF_KO.md). The bounded question is answered; no automatic refinement or empty-queue benchmark is selected.
 
 ## Historical R31K-B/R31M native-lane guide
 

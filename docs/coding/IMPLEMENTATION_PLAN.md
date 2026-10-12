@@ -1,11 +1,11 @@
-# Active implementation priorities — 2026-10-12
+# Active implementation priorities — after PHYS12, 2026-10-12
 
-Current authority: root CURRENT_DEVELOPMENT_PLAN.json and `research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/DEVELOPMENT_PLAN_KO.md`. The machine-readable NEXT_DAG.json separates the first scoped HH response result, the strict FT03 native-carry certificate and microscopic singlet ion-pair work.
+Current state is root CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/state/RESEARCH_STATE.json. The earlier observable-first plan is preserved as its original planning snapshot.
 
-1. HERE: reuse source-bound PHYS11/PHYS09 data, fix the same-family HH-on/off observable contract, evaluate the existing U enclosure, and report the physical scope. This is the next planned study, not an executed result of this plan change.
-2. Select additional work only if it answers the stated observable or a concrete standalone HH collision question. Native/full49 requirements remain attached to their own claims.
-3. NCP: no active heavy task. Do not run the historical host benchmark for an empty queue. New long work requires an actual unfinished manifest, lane-specific inputs, measured pilot cost/memory and independent partitions.
-4. Independent review targets substantive claims, algorithm changes and promotion. Reuse unchanged scientific evidence. One coherent plan publication replaces repeated administrative cycles.
+1. Reuse completed L0–L3: fixed-family FTC transfer of existing U to future HH-on/off x_HII and thermal-w bounds, with exact output and mixed-response distinction. Independent decision: research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/review/DECISION.json.
+2. No refinement selected for the answered bounded question. A new task must name a concrete observable and domain/error requirement, or a standalone microscopic HH collision target.
+3. NCP has no active heavy task. Preserve empty queue; no completed-science replay or topology benchmark. Future admission retains actual unfinished inputs, scientific necessity, measured cost/memory and independent partitions.
+4. Native/whole-history/open scientific obligations keep their original scope. No change to source arrays, original code, closure, tolerances or historical failures.
 
 ## Preserved R31K-B implementation plan — historical native lane
 
