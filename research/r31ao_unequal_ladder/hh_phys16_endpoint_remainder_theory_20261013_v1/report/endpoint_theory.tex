@@ -1,0 +1,248 @@
+\section{평균 Jacobian을 endpoint와 이차 나머지로 옮긴다}\label{sec:endpoint}
+$y=g_2$, $J=D\HF(y)$로 두자. 원 convex $X$에서 $\HF\in C^2$이고 $y,g_F\in X$이므로 $y-sd$ 전체가 정의역에 놓인다. 기존의 정확한 평균식은
+\begin{equation}
+\overline A d=r,\qquad
+\overline A=\int_0^1D\HF(y-sd)\dd s.
+\label{eq:meanJ}
+\end{equation}
+평균 Jacobian의 값 자체를 새로 풀 필요 없이, 그 endpoint 차이를 적분형 Hessian으로 나타낼 수 있다.\cite{endpoint16}
+
+\begin{theorem}[endpoint Taylor 전달]\label{thm:K}
+다음 선형사상과 벡터를 정의한다.
+\begin{equation}
+K(d)v=\int_0^1(1-s)D^2\HF(y-sd)[d,v]\dd s,
+\qquad R_2(d)=K(d)d.
+\label{eq:K}
+\end{equation}
+그러면
+\begin{equation}
+\boxed{\overline A=J-K(d),\qquad Jd=r+R_2(d)}
+\label{eq:JK}
+\end{equation}
+이며, 원 fixed 전처리 행렬 $C$에 대해
+\begin{equation}
+\boxed{d=Cr+Md+CR_2(d),\qquad M=I-CJ}
+\label{eq:transfer}
+\end{equation}
+가 정확히 성립한다.
+\end{theorem}
+\begin{proof}
+$D\HF(y-sd)=J-\int_0^sD^2\HF(y-td)[d,\cdot]\dd t$를 식 \eqref{eq:meanJ}에 대입한다. 적분 순서를 바꾸면 두 번째 적분의 가중치가 $1-t$가 되므로 $\overline A=J-K(d)$다. 따라서 $(J-K)d=r$이며, 왼쪽에 $C$를 곱하고 $CJ=I-M$을 사용한다. 같은 부호는 $0=\HF(y-d)=r-Jd+R_2$에서도 직접 확인된다.
+\end{proof}
+
+\subsection{HI opacity의 정확한 유리식 나머지}
+활성 group마다
+\begin{equation}
+\ell_j=2ha_{2j},\quad D_j=1+\ell_j(1-x_2),\quad
+D_{Fj}=D_j+\ell_jd_x=1+\ell_j(1-x_F)>0
+\label{eq:DF}
+\end{equation}
+로 쓴다. 식 \eqref{eq:fullres}의 photon 항은 상수항을 제외하면 $\sum_j\nu_jQ_{Fj}/D_j$다. 따라서
+\begin{align}
+J_{ph}&=\sum_j\frac{\ell_jQ_{Fj}}{D_j^2}\nu_j\exx^{\mathsf T},&
+\overline A_{ph}&=\sum_j\frac{\ell_jQ_{Fj}}{D_jD_{Fj}}\nu_j\exx^{\mathsf T},\\
+K_{ph}(d)&=\left[\sum_j\frac{\ell_j^2Q_{Fj}d_x}{D_j^2D_{Fj}}\nu_j\right]\exx^{\mathsf T},&
+R_{2,ph}(d)&=\sum_j\frac{\ell_j^2Q_{Fj}d_x^2}{D_j^2D_{Fj}}\nu_j.
+\label{eq:rankone}
+\end{align}
+이는 모든 gas 성분을 묶는 일반 행렬의 추정이 아니라, 정확히 $x$ 한 열을 갖는 연산자다. 다음 단일 유리식 항등식이 식 \eqref{eq:rankone}을 증명한다.
+\begin{equation}
+\frac1{D+\ell d_x}-\frac1D+\frac{\ell d_x}{D^2}
+=\frac{\ell^2d_x^2}{D^2(D+\ell d_x)}.
+\label{eq:rationalid}
+\end{equation}
+물리적 $Q_{Fj}\ge0$에서 활성 group의 $\nu_{j,x},\nu_{j,w}\ge0$이므로 $R_{2,ph,x},R_{2,ph,w}\ge0$이다. 광자 guard와 inactive group에서는 이 항이 0이다. 다만 $K_{ph}$의 계수에는 $d_x$가 남아 있어, $R_{2,ph}$의 비음수성과 같은 부호 주장은 별도로 해야 한다.
+
+기체 source의 나머지는
+\begin{align}
+R_{2,\BB}&=-h\widehat H_{\BB}[d,d],\qquad
+K_{\BB}(d)v=-h\widehat H_{\BB}[d,v],\\
+\widehat H_{\BB}&=2\int_0^1(1-s)D^2\BB_2(y-sd)\dd s
+\in[D^2\BB_2](X),\notag\\
+D^2\BB_2&=D^2F_2^{np}+\lambda\nu_H\otimes D^2q_2.
+\label{eq:sourceHessian}
+\end{align}
+팽창은 $w$에 선형이므로 Hessian이 없다. 식 \eqref{eq:rankone}과 \eqref{eq:sourceHessian}은 source별 이차 나머지를 직접 구성하는 경로를 제공한다. 이번 수치 적용은 원 Full residual의 signed Hessian 전체를 사용한 보편 상계도 함께 계산하여 이 경로를 포함한다.
+
+\section{원 componentwise majorant와 Hessian 상수}\label{sec:bounds}
+\subsection{같은 \texorpdfstring{$C,B,q,S$}{C,B,q,S}를 유지한 첫 포함}
+원 arithmetic 파일은 모든 $g\in X$와 고정 계열에서
+\begin{equation}
+|I-CD\HF(g)|\le B,\qquad
+\nI{S^{-1}BS}\le q<1
+\label{eq:contract}
+\end{equation}
+를 포함한다. 여기서
+\begin{align}
+S&=\diag(\ex(0.015),\ex(0.01),\ex(0.01),0.5),\notag\\
+q&=\ex(0.00011736830563768177).
+\label{eq:Sq}
+\end{align}
+$q$의 원 bits는 \texttt{3f1ec474231fbe16}이다. $\nS{v}:=\nI{S^{-1}v}$는 혼합 gas 단위를 제거한 노름이다. Neumann 급수에 의해 $CJ$와 $C\overline A$가 가역이고, 정사각 행렬 $C,J,\overline A$도 가역이다.\cite{phys14,Rump2010}
+
+첫 포함은 scalar $q$만으로 반경을 키우지 않고 원 행렬 $B$를 사용한다. $u=\magv([Cr])$를 componentwise magnitude로 두고
+\begin{equation}
+(I-B)m=u,\qquad m\ge0
+\label{eq:majorsolve}
+\end{equation}
+를 정확한 유리수 산술로 풀면 $|d|\le m$이다. 실제로 $d=Cr+(I-C\overline A)d$이므로 $|d|\le u+B|d|$이고, $(I-B)^{-1}=\sum_{k\ge0}B^k\ge0$다. 따라서
+\begin{equation}
+D_0=[Cr]+[-Bm,Bm]
+\label{eq:D0}
+\end{equation}
+가 유효하다. 실제 실행은 원 signed $[I-C\overline A]$와의 교차를 추가했다. 이 첫 단계의 포함 반경은 이후 endpoint 보정의 입력이며, 새 물리 근 계산이 아니다.
+
+\subsection{Scaled signed Hessian의 구성}
+원 Full residual Hessian의 각 성분을 $[H^a_{jk}]=[D^2\HF]^a_{jk}(X)$라 하자. $S$의 대각성분 $s_i$로
+\begin{equation}
+\mathcal T_{ijk}=\frac{s_js_k}{s_i}\sum_aC_{ia}[H^a_{jk}],\qquad
+L_H=\max_i\sum_{j,k}\magv(\mathcal T_{ijk})
+\label{eq:LH}
+\end{equation}
+를 구성한다. $C$와 signed Hessian을 먼저 수축한 후 magnitude를 취하는 순서가 원 부호 정보를 유지한다. 그러면
+\begin{equation}
+\nI{S^{-1}CD^2\HF(g)[Su,Sv]}
+\le L_H\nI{u}\nI{v},\qquad g\in X.
+\label{eq:hbound}
+\end{equation}
+원 \path{SOURCE_BOX.json/G_gg}는 이미 $-2h$를 포함하는 \emph{Full residual} Hessian이다. 반면 \path{SOURCE_BOX_COMPONENTS/nonphoto}와 \path{SOURCE_BOX/q}는 source Hessian이므로 식 \eqref{eq:sourceHessian}에서 시간 계수를 적용해야 한다. 이 구별을 유지한 실제 읽기는
+\begin{equation}
+L_H\in[8.27802481433761309,8.27802481433761310]\times10^{-5}
+\label{eq:LHvalue}
+\end{equation}
+를 얻었다.\cite{endpoint16}
+
+\begin{proposition}[Endpoint 이차 오차]\label{prop:quad}
+$\nS{d}\le a$이고 $\kappa=(1-q)^{-1}$라면
+\begin{align}
+\nI{S^{-1}CK(d)S}&\le\tfrac12L_Ha,&
+\nS{CR_2(d)}&\le\tfrac12L_Ha^2,\\
+\nS{d-J^{-1}r}&\le\frac{L_Ha^2}{2(1-q)}.
+\label{eq:quadbound}
+\end{align}
+\end{proposition}
+\begin{proof}
+식 \eqref{eq:hbound}를 식 \eqref{eq:K}에 적분하면 $\int_0^1(1-s)\dd s=1/2$에서 첫 두 식을 얻는다. 식 \eqref{eq:JK}의 차이는 $d-J^{-1}r=(CJ)^{-1}CR_2$이며, 식 \eqref{eq:contract}에서 $\|(CJ)^{-1}\|_S\le\kappa$다.
+\end{proof}
+
+원 $X$ 전체의 Hessian을 유지한 이차 계수 $L_H/[2(1-q)]$는
+\[
+[4.13949825306495892,4.13949825306495893]\times10^{-5}
+\]
+에 포함된다.
+이 계수는 실제 $d$의 작은 반경을 제곱해 사용한다. $X$ 자체의 크기를 제곱한 오차와 구별된다.
+
+\section{유한 Neumann 보정과 닫힌 나머지}\label{sec:neumann}
+\begin{theorem}[유한 endpoint 전달]\label{thm:neumann}
+$P_m(M)=\sum_{k=0}^mM^k$, $v_m=P_m(M)Cr$로 두면
+\begin{equation}
+d=v_m+P_m(M)CR_2(d)+M^{m+1}d
+\label{eq:finiteN}
+\end{equation}
+가 정확하며,
+\begin{equation}
+\boxed{\nS{d-v_m}\le\epsilon_m(a):=
+q^{m+1}a+\frac12L_Ha^2\sum_{k=0}^mq^k.}
+\label{eq:eps}
+\end{equation}
+\end{theorem}
+\begin{proof}
+식 \eqref{eq:transfer}에 $P_m$을 곱한다. $P_m(I-M)=I-M^{m+1}$이므로 식 \eqref{eq:finiteN}을 얻는다. $\|M\|_S\le q$와 명제 \ref{prop:quad}를 각 유한 항에 적용하면 식 \eqref{eq:eps}다. 무한 합의 수치 절단이나 새 Jacobian 역행렬의 근사값이 전제에 들어가지 않는다.
+\end{proof}
+
+실제 $J(y)$의 포함은 저장된 중심 Jacobian $J_c$와 같은 $X$의 Hessian을 이용한다.
+\begin{equation}
+J(y)=J_c+\int_0^1D^2\HF(c+t(y-c))[y-c,\cdot]\dd t.
+\label{eq:Jaccenter}
+\end{equation}
+여기에는 $1-t$ 가중치가 없다. 전체 $X$의 Jacobian 포함과 식 \eqref{eq:Jaccenter}를 교차해 $[J(y)]$를 좁히고, 모든 sector에 같은 $[M]=I-C[J]$를 사용했다. 최종 포함은
+\begin{equation}
+D_{new}=D_0\cap\bigl([v_m]+S[-\epsilon_m,\epsilon_m]^4\bigr)
+\label{eq:intersection}
+\end{equation}
+이다. 이번 실행은 $m=2$까지만 계산했다. 산술 오차와 이론 나머지를 모두 포함한 뒤 얻은 추가 반경이 실제 interval 폭보다 이미 매우 작기 때문이다.
+
+\section{유한 관측량과 근사 adjoint}\label{sec:adjoint}
+\subsection{선형 전자 수와 유리식 온도}
+같은 마지막 시각에서 $\ell_e=(1,f_2,2f_2,0)$라 두면
+\begin{equation}
+\Delta e=\ell_ed,\quad \Delta n_e=n_2\ell_ed,\quad
+\Delta w=\ew^{\mathsf T}d,\quad \Pi_F=\Pi_2-\ell_ed>0.
+\label{eq:readout}
+\end{equation}
+온도는 유한 분모를 유지하면 정확히 선형 분자의 비가 된다.
+\begin{equation}
+n_T=C_T\ew^{\mathsf T}-T_2\ell_e,\quad N_T=n_Td,
+\qquad \boxed{\Delta T=\frac{N_T}{\Pi_F}.}
+\label{eq:finiteT}
+\end{equation}
+이는 $g_2$에서의 미분만 사용하는 온도 근사가 아니다. $T_F=C_T(w_2-d_w)/(\Pi_2-\ell_ed)$를 대입하여 얻은 항등식이다.
+
+\begin{theorem}[근사 adjoint의 유한 보정]\label{thm:adjoint}
+임의의 행벡터 $z^{\mathsf T}$와 dual residual $\eta^{\mathsf T}=n_T-z^{\mathsf T}J$에 대해
+\begin{equation}
+N_T=z^{\mathsf T}r+\eta^{\mathsf T}d+z^{\mathsf T}R_2(d).
+\label{eq:dualresidual}
+\end{equation}
+특히 $z_m^{\mathsf T}=n_TP_m(M)C$라 두면 $\eta_m^{\mathsf T}=n_TM^{m+1}$이고,
+\begin{equation}
+|N_T-z_m^{\mathsf T}r|\le b_T\epsilon_m(a),\qquad
+b_T=\|n_TS\|_1=T_2(s_x+f_2s_{y_1}+2f_2s_{y_2})+C_Ts_w.
+\label{eq:goalerror}
+\end{equation}
+\end{theorem}
+\begin{proof}
+$n_T=z^{\mathsf T}J+\eta^{\mathsf T}$에 식 \eqref{eq:JK}를 적용하면 식 \eqref{eq:dualresidual}이다. $z_m^{\mathsf T}J=n_TP_m(M)(I-M)=n_T(I-M^{m+1})$에서 dual residual 식을 얻는다. 또한 $z_m^{\mathsf T}r=n_Tv_m$이므로 $|n_T(d-v_m)|\le\|n_TS\|_1\nS{d-v_m}$이다.
+\end{proof}
+
+분모 $\Pi_F$를 같은 구간으로 유지하는 관측량 포함에서는 식 \eqref{eq:goalerror}를 $\inf\Pi_F$로 나누면 된다. 예측 endpoint $v$ 자체의 분모를 사용하는 경우에도 닫힌 항등식이 있다. $e=d-v$, $\Pi_v=\Pi_2-\ell_ev$, $T_v=C_T(w_2-v_w)/\Pi_v$로 두면
+\begin{equation}
+\Delta T-\Delta T_v
+=\frac{(C_T\ew^{\mathsf T}-T_v\ell_e)e}{\Pi_v-\ell_ee}.
+\label{eq:tempredictor}
+\end{equation}
+따라서 예측 분모의 차이도 남은 $e$로 함께 제어할 수 있다. 실제 보고 수치는 식 \eqref{eq:finiteT}의 같은 $\Pi_F$를 사용한다.
+
+\section{하나의 adjoint로 sector 기여와 부호를 보증한다}\label{sec:sector}
+식 \eqref{eq:rg}의 두 gas 항과 식 \eqref{eq:seven}의 일곱 photon 항을 $r=\sum_s r_s$로 쓴다. 같은 평균 Jacobian으로
+\begin{equation}
+d_s=\overline A^{-1}r_s,\quad N_s=n_Td_s,\quad
+\Delta T_s=N_s/\Pi_F
+\label{eq:sectordef}
+\end{equation}
+를 정의하면 $d=\sum_sd_s$, $N_T=\sum_sN_s$, $\Delta T=\sum_s\Delta T_s$가 점별로 성립한다. 각 sector는 전체 endpoint와 같은 응답 연산자 및 온도 분모를 쓴다.
+
+\begin{theorem}[공통 sector 오차와 부호 여유]\label{thm:sector}
+$c_s\ge\nS{Cr_s}$, $\kappa=(1-q)^{-1}$라 하자. $\eta_m$과 $z_m$를 정리 \ref{thm:adjoint}와 같이 두면
+\begin{equation}
+N_s-z_m^{\mathsf T}r_s=(\eta_m^{\mathsf T}+z_m^{\mathsf T}K)d_s
+\label{eq:sectoridentity}
+\end{equation}
+이며,
+\begin{equation}
+|N_s-z_m^{\mathsf T}r_s|\le E_s,
+\qquad E_s=\kappa c_sb_T\left(q^{m+1}
++\frac12L_Ha\sum_{k=0}^mq^k\right).
+\label{eq:sectorerror}
+\end{equation}
+$[z_m^{\mathsf T}r_s]=[L_s,U_s]$라면 $L_s>E_s$는 양의, $U_s<-E_s$는 음의 sector 부호를 보증한다.
+\end{theorem}
+\begin{proof}
+$(J-K)d_s=r_s$이므로 $Jd_s=r_s+Kd_s$다. 여기에 $n_T=z_m^{\mathsf T}J+\eta_m^{\mathsf T}$를 적용하여 식 \eqref{eq:sectoridentity}를 얻는다. 식 \eqref{eq:contract}를 평균한 결과에서 $\nS{d_s}\le\kappa c_s$다. $\|\eta_m^{\mathsf T}S\|_1\le b_Tq^{m+1}$이며,
+\[
+\|z_m^{\mathsf T}KS\|_1
+=\|n_TP_m(M)CKS\|_1
+\le b_T\sum_{k=0}^mq^k\frac12L_Ha.
+\]
+두 항에 $\nS{d_s}$를 곱하면 식 \eqref{eq:sectorerror}다. 마지막 부호 판정은 $\Pi_F>0$에서 분자와 온도 기여의 부호가 같다는 사실을 사용한다.
+\end{proof}
+
+부호가 구조적으로 상쇄되는 birth 항은 공통 평균 adjoint
+$\overline z^{\mathsf T}=n_T\overline A^{-1}$의 componentwise 포함을 직접 사용하는 편이 유리하다. $c_C=\|S^{-1}CS\|_\infty$라 두면
+\begin{equation}
+\| (\overline z-z_m)^{\mathsf T}S\|_1\le\Theta_z,
+\quad\Theta_z=\kappa c_Cb_T\left(q^{m+1}
++\frac12L_Ha\sum_{k=0}^mq^k\right).
+\label{eq:adjointrow}
+\end{equation}
+실제로 $(\overline z-z_m)^{\mathsf T}\overline A=\eta_m^{\mathsf T}+z_m^{\mathsf T}K$이며 $\|\overline A^{-1}\|_S\le\kappa c_C$이므로 위 식을 얻는다. 각 성분에 $\Theta_z/s_i$를 더하고 빼면 $[\overline z_i]$를 포함한다. 이 공통 행벡터가 다음 절의 birth 부호를 닫는다.

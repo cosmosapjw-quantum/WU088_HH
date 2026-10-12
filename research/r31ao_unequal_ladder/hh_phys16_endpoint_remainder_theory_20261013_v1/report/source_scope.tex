@@ -1,0 +1,200 @@
+\section{연구 대상과 현재 전제}\label{sec:scope}
+연구 질문은 동일 COMMON에서 출발한 실제 two-half와 Full의 차이를 작은 잔차로 계산하고, 그 잔차가 유한 관측량에 미치는 효과를 어떻게 검증하는가이다. PHYS15는 공통 입력과 source 계열을 유지한 정확한 잔차를 구성했다. PHYS16은 그 잔차를 실제 자료에 적용하고, 알려지지 않은 평균 Jacobian을 endpoint에서 계산 가능한 연산자와 명시적 나머지로 옮긴다.
+
+기체 상태는 $g=(x,y_1,y_2,w)^{\mathsf T}$이며 $x=x_{HII}$, $y_1=x_{HeII}$, $y_2=x_{HeIII}$, $w$는 eV/H다. 첫 half의 실제 endpoint를 $g_1$, 둘째 half의 실제 endpoint를 $g_2$, Full의 근을 $g_F$라 쓴다. 전체 차이의 방향은
+\begin{equation}
+d=g_2-g_F,\qquad \Delta T=T_2-T_F
+\label{eq:direction}
+\end{equation}
+로 고정한다. 각 half의 길이와 원 시각은
+\begin{equation}
+h=625000000\ \mathrm s,\quad t_0=160000000000\ \mathrm s,
+\quad t_2=t_0+2h=161250000000\ \mathrm s.
+\label{eq:time}
+\end{equation}
+Full의 길이는 $2h$다. 모든 비교에서 고정 admissible coefficient 선택 $\alpha$와 전역 $\theta=(\lambda,b)\in[0,1]^2$를 공유한다. $\lambda$는 HH source의 진폭이고 $b$는 photon birth의 진폭이다. 과거 HH ON과 primal compensation은 같은 COMMON에 포함돼 있다.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\textwidth}{@{}p{12mm}X p{45mm}@{}}
+\toprule
+전제 & 보존된 대상 & 이번 사용\\\midrule
+A1 & 동일 COMMON gas, photon, 두 guard 및 고정 $\alpha$ & 공통 입력의 대수적 소거\\
+A2 & 원 33개 energy node, HI 활성 16--32, He photo sigma 0 & 원 photon remap과 HI opacity\\
+A3 & 실제 $g_1,g_2,g_F$의 근 포함 및 원 convex $X$의 $C^2$ source & 연결 선분과 Hessian 나머지\\
+A4 & Full과 둘째 half의 끝 시각·밀도·source leaves가 같음 & 같은 함수 $\BB_2$\\
+A5 & $\rho=\exp[-\ex(H)\ex(h)]$, Full 수송은 $\rho^2$, captured $M_{\gamma,F}=2M_\gamma$ & 같은 수송·birth graph\\
+A6 & 같은 파일의 fixed $C,B,q,S$ & componentwise 잔차 전달\\
+A7 & 저장된 $f_k=n_{He,k}^{stored}/n_{H,k}$ 및 $C_T$ & source bridge와 유한 온도\\
+\bottomrule
+\end{tabularx}
+\caption{상속된 전제. A1--A7은 PHYS09--15의 실제 원자료와 검토에서 재사용한다. 새 연구는 이 대응을 바꾸지 않고 필요한 차이식과 나머지를 계산한다.}
+\label{tab:premises}
+\end{table}
+
+원 기하학 선택은 세 방향의 captured $H_i=10^{-14}\,\mathrm{s}^{-1}$가 같은 등방 경우다. PHYS14의 geometry 검토가 이 linked 선택을 원 ray enclosure에 포함한다. 온도 정렬 pullback과 root 사이의 모든 선분은 원 $X$ 내부에 있다. 물리 상수는 원 binary64 bits가 나타내는 정확한 실수로 사용하며, 표시용 소수는 외향 반올림한다.\cite{phys14,phys15,sourceaudit}
+
+\section{공통 잔차를 실제 포함으로 구성한다}\label{sec:residual}
+\subsection{Source와 photon 상태}
+기체 source의 nonphoto, HH 및 팽창 부분을
+\begin{equation}
+\BB_k(g,\lambda)=F_k^{np}(g)+\lambda q_k(g)\nu_H-2H_kw\ew,
+\quad \nu_H=(1,0,0,-\chi_H)^{\mathsf T}
+\label{eq:source}
+\end{equation}
+로 쓴다. Photon 상태는 $Z=(N_0,\ldots,N_{32},G_N,G_U)^{\mathsf T}$다. $N_j,G_N$은 photons/H, $G_U$는 eV/H다. 선형사상 $V$는 HI 흡수량을 $\nu_j=(1,0,0,\epsilon_j)^{\mathsf T}$로 옮긴다. 활성 group에서 $\epsilon_j=E_j-\chi_H$의 captured leaf 대응은 PHYS15에서 확인됐다.
+
+$a_{kj}=c n_{H,k}\sigma_j$, $\kappa_{kj}=a_{kj}(1-x)$라 두면 survival과 absorption은
+\begin{align}
+A_k(g)&=\diag[1+h\kappa_{kj}(g)]^{-1},&L_k&=I-A_k,\\
+A_F(g)&=\diag[1+2h\kappa_{2j}(g)]^{-1},&L_F&=I-A_F.
+\label{eq:survival}
+\end{align}
+두 guard에서 $A=1,L=0$이다. $J_b=M_\gamma e_{24}$를 half birth 벡터라 하고 $\R=\R(\rho)$, $\RF=\R(\rho^2)$라 하면
+\begin{align}
+Q_1&=\R Z_0+bJ_b,& Z_1&=A_1(g_1)Q_1,\\
+Q_2&=\R Z_1+bJ_b,& Q_F&=\RF Z_0+2bJ_b.
+\label{eq:incoming}
+\end{align}
+$P_1=L_1Q_1$, $P_2=L_2Q_2$는 실제 half의 적분 흡수량이다. Full 잔차와 $g_2$에서 평가한 Full absorption은
+\begin{equation}
+\HF(g)=g-g_0-2h\BB_2(g)-VL_F(g)Q_F,
+\qquad \widehat P_F=L_F(g_2)Q_F
+\label{eq:fullres}
+\end{equation}
+이다. PHYS15의 정확한 잔차식은
+\begin{equation}
+\boxed{r=\HF(g_2)=h[\BB_1(g_1)-\BB_2(g_2)]+Vp,\quad
+p=P_1+P_2-\widehat P_F.}
+\label{eq:r}
+\end{equation}
+
+\subsection{같은 단계 증분으로 차이를 보존한다}
+기존 개별 root hull의 폭은 $x$에서 약 $0.0036$, $w$에서 약 $0.131$이다. 실제 단계 관계를 먼저 사용하면
+\begin{equation}
+\boxed{s_{21}:=g_2-g_1=h\BB_2(g_2)+VP_2}
+\label{eq:stageinc}
+\end{equation}
+를 직접 포함할 수 있다. 실제 적용에서
+\begin{align}
+s_{21,x}&\in[4.026226742267,4.238554960924]\times10^{-5},\\
+s_{21,w}&\in[-2.138278832743,-2.054999707633]\times10^{-4}\ \mathrm{eV/H}.
+\label{eq:incbounds}
+\end{align}
+$\delta\BB_t(g)=\BB_1(g)-\BB_2(g)$와 연결 선분의 $\overline J_{12}=\int_0^1D\BB_2(g_1+s s_{21})\dd s$를 쓰면
+\begin{equation}
+r_g=h\delta\BB_t(g_1)-h\overline J_{12}s_{21}.
+\label{eq:rg}
+\end{equation}
+첫 opacity 차이에도 같은 증분을 사용한다.
+\begin{equation}
+\boxed{\Delta A_{1j}
+=h[c\sigma_j(n_2-n_1)(1-x_2)-a_{1j}s_{21,x}]A_{1j}A_{2j}.}
+\label{eq:deltaA}
+\end{equation}
+이 식은 두 큰 root hull의 차를 opacity coefficient에 넣기 전에 실제 시간 이동을 묶는다.
+
+\subsection{광자 일곱 항}
+$A=A_2(g_2)$, $L=I-A$, $A_F=A_F(g_2)$, $\tau=h\diag\kappa_2(g_2)$와
+\begin{equation}
+C_1=\tau A^2A_F,\quad C_2=\tau^2A^2A_F,\quad
+\Delta R=\R^2-\RF
+\label{eq:C12}
+\end{equation}
+를 정의한다. PHYS15의 일곱 항은
+\begin{align}
+p={}&-(I-L\R)\Delta A_1Q_1+L[\R,A]Q_1+L(I-\R)\R Z_0\notag\\
+&+C_2\R^2Z_0+L_F\Delta RZ_0
++bLA(\R-I)J_b-bC_1J_b.
+\label{eq:seven}
+\end{align}
+각각 opacity 변화, 흡수·수송 순서, stock의 중간 수송, stock의 BE 분할, remap 합성, birth-redshift, birth의 BE 분할이다. $\R-I$, $\Delta R$, $[\R,A]$는 원 격자의 sparse coefficient를 먼저 인수 분해하고 $Z_0$에 작용시켰다. 동일 $\rho$에서 $\rho^2$를 계산하며, 모든 경계 column과 두 guard를 유지했다.\cite{phys15,app16}
+
+\section{Source 시각 차이와 cooling-cone 포함}\label{sec:cooling}
+\subsection{보존된 source jet과 온도 정렬}
+원 source의 gas value, gradient, signed Hessian은 같은 convex $X$에 저장돼 있다. 중심은 $c=(0.915,0.3,0.6,13.5)$다. $G\subset X$, $\delta=G-c$에 대해
+\begin{align}
+[F](G)&=[F](X)\cap\{[F](c)+[DF](X)\delta\},\\
+[DF_j](G)&=[DF_j](X)\cap\{[DF_j](c)+[D^2F_{j\cdot}](X)\delta\}
+\label{eq:taylorjet}
+\end{align}
+로 기존 값을 좁혔다. 이 전이는 보존된 도함수 포함에 대한 구간 연산이다.
+
+$f_k=n_{He,k}^{stored}/n_k$, $s=y_1+2y_2$와
+\begin{equation}
+e_k=x+f_ks,\quad \Pi_k=1+f_k+e_k,\quad T_k=C_Tw/\Pi_k,
+\quad C_T=\frac{2\epsilon_{eV}}{3k_B}
+\label{eq:thermo}
+\end{equation}
+를 정의한다. 온도를 맞추는 사상
+\begin{equation}
+\Psi g=(x,y_1,y_2,w\Pi_2/\Pi_1),\qquad T_2(\Psi g)=T_1(g)
+\label{eq:pullback}
+\end{equation}
+은 원 fraction을 유지한다. $r_n=n_1/n_2$, $r_e=r_ne_1/e_2$, $\Delta f=f_1-f_2$를 쓰면
+\begin{align}
+F_1^{np}(g)&=r_eF_2^{np}(\Psi g)
++n_1e_1\Delta f\,k_{wHe}(T_1)\ew,\\
+q_1(g)&=r_nq_2(\Psi g).
+\label{eq:sourcebridge}
+\end{align}
+작은 factor를 먼저 구성하는 식은
+\begin{equation}
+r_e-1=(r_n-1)+r_n\Delta f\,s/e_2,
+\qquad \delta w=-w\Delta f(1+s)/\Pi_1
+\label{eq:smallfactors}
+\end{equation}
+이다. 식 \eqref{eq:sourcebridge}를 같은 $g$의 source와 $w$ 방향 평균 도함수로 전개하여 $\delta\BB_t$를 계산했다.
+
+\subsection{원 thermal map의 부호}
+원 photo-off FT03 source의 thermal 성분은
+\begin{equation}
+F_w^{np}=ne[k_{wH}(x,T)+f k_{wHe}(y_1,y_2,T)]
+\label{eq:cooldecomp}
+\end{equation}
+로 인수 분해된다. $\beta_a>0$는 CI, $\alpha_a>0$는 RR coefficient다. $s_a=\dd\log\alpha_a/\dd\log T$ 및
+\begin{equation}
+\kappa_a(T)=\frac{k_BT\alpha_a(T)}{\epsilon_{eV}}(3/2+s_a)
+\end{equation}
+를 사용하면
+\begin{align}
+k_{wH}&=-\chi_H(1-x)\beta_H-x\kappa_H,\\
+k_{wHe}&=-\chi_I(1-y_1-y_2)\beta_I-\chi_{II}y_1\beta_{II}
+-y_1\kappa_I-y_2\kappa_{II}\notag\\
+&\hspace{9mm}-y_1\sum_{r=1}^2d_r(T)\frac{k_B B_r}{\epsilon_{eV}}.
+\label{eq:kw}
+\end{align}
+$d_r=c_rA_{DR}T^{-3/2}e^{-B_r/T}>0$는 두 DR channel이다. 이 식은 원 함수의 thermal 변수를 수정하는 모든 항을 포함한다. 실제 `nonphoto` export는 HH, 외부 33-group photoheating, 팽창을 더하기 전에 저장된다.\cite{sourceaudit}
+
+\begin{lemma}[원 FT03 cooling cone]\label{lem:cooling}
+원 captured 상수, $30000\le T\le110000$ K, $0\le x\le1$, $y_1,y_2\ge0$, $y_1+y_2\le1$ 및 $n,e,f>0$ 아래
+\begin{equation}
+k_{wH}\le0,\qquad k_{wHe}\le0,
+\qquad \boxed{\frac{F_w^{np}}{nef}\le k_{wHe}\le0}
+\label{eq:coolcone}
+\end{equation}
+가 성립한다.
+\end{lemma}
+\begin{proof}
+CI와 DR는 양의 coefficient, energy와 population을 곱한 cooling이다. HeI RR에서는 $3/2+s_I=1.5-\ex(0.654)>0$이다. H와 HeII RR에서
+\begin{align}
+u_a&=\left[\frac{\Lambda_a}{\ex(0.522)T}\right]^{\ex(0.470)},\notag\\
+3/2+s_a&=1.5-\ex(1.503)+\ex(1.923)\ex(0.470)\frac{u_a}{1+u_a}.
+\end{align}
+$\Lambda_H=315614$ K, $\Lambda_{II}=1263030$ K이므로 원 온도 범위에서 $u_a>1$이다. 따라서
+\begin{equation}
+3/2+s_a>1.5-\ex(1.503)
++\frac{\ex(1.923)\ex(0.470)}2>0.4489.
+\end{equation}
+모든 $\kappa_a$가 양수여서 식 \eqref{eq:kw}의 각 항은 비양수다. 식 \eqref{eq:cooldecomp}를 $nef>0$로 나누면 $F_w^{np}/(nef)=k_{wH}/f+k_{wHe}\le k_{wHe}$를 얻는다.
+\end{proof}
+
+현재 pullback에서 보존된 $F_{2,w}^{np}$를 위 보조정리에 대입하면
+\begin{align}
+k_{wHe}&\in[-8.824448068133\times10^{-9},0]\quad
+[\mathrm{eV\,cm^3\,s^{-1}}],\\
+0\le n_1e_1\Delta f k_{wHe}&\le6.351387331127\times10^{-30}\quad
+[\mathrm{eV/H/s}].
+\label{eq:hebound}
+\end{align}
+$\Delta f\simeq-6.94525\times10^{-18}$를 유지한 채 미분리 coefficient의 포함을 얻었다. 원 model에서 thermal source의 구성항은 CI, RR, DR이며, Compton·free-free·추가 heating callback은 이 export의 정의에 들어 있지 않다. 보조정리의 적용 대상은 이 확인된 fixed source다.

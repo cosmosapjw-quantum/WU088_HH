@@ -1,0 +1,90 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{NotoSerifCJKkr-Regular.otf}[Path=fonts/,BoldFont=NotoSerifCJKkr-Bold.otf,ItalicFont=NotoSerifCJKkr-Regular.otf]
+\setsansfont{NotoSerifCJKkr-Regular.otf}[Path=fonts/,BoldFont=NotoSerifCJKkr-Bold.otf]
+\setmonofont{DejaVu Sans Mono}[Scale=0.79]
+\XeTeXlinebreaklocale "ko"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage[margin=23mm,top=23mm,bottom=23mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,longtable,array,graphicx,float}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,caption,fancyhdr,titlesec}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage{hyperref}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=MidnightBlue,urlcolor=MidnightBlue,citecolor=MidnightBlue,pdftitle={WU088 HH PHYS16: 상관된 endpoint 결함과 유한 adjoint 나머지},pdfauthor={WU088 HH 연구}}
+\urlstyle{same}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{0.34em}
+\setlength{\parindent}{1em}
+\widowpenalty=10000\clubpenalty=10000
+\linespread{1.10}
+\setlist{itemsep=0.18em,topsep=0.35em,leftmargin=1.6em}
+\captionsetup{font=small,labelfont=bf}
+\renewcommand{\figurename}{그림}
+\renewcommand{\tablename}{표}
+\renewcommand{\contentsname}{목차}
+\renewcommand{\refname}{참고 문헌과 원자료}
+\renewcommand{\proofname}{증명}
+\titleformat{\section}{\large\sffamily\bfseries\color{MidnightBlue}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\sffamily\bfseries}{\thesubsection}{0.7em}{}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\sffamily WU088\_HH / PHYS16 이론}
+\fancyhead[R]{\small\sffamily 2026-10-13 KST}
+\fancyfoot[C]{\thepage}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ex}{\operatorname{exact64}}
+\newcommand{\BB}{\mathcal B}
+\newcommand{\HF}{\mathcal H_F}
+\newcommand{\R}{\mathsf R}
+\newcommand{\RF}{\mathsf R_F}
+\newcommand{\ew}{e_w}
+\newcommand{\exx}{e_x}
+\newcommand{\nS}[1]{\left\lVert#1\right\rVert_S}
+\newcommand{\nI}[1]{\left\lVert#1\right\rVert_\infty}
+\newcommand{\magv}{\operatorname{mag}}
+\newtheorem{theorem}{정리}
+\newtheorem{lemma}{보조정리}
+\newtheorem{proposition}{명제}
+\theoremstyle{definition}\newtheorem{definition}{정의}
+\input{review_status.tex}
+\begin{document}
+\begin{center}
+{\color{MidnightBlue}\sffamily\large WU088\_HH \quad PHYS16 이론 연구}\\[5mm]
+{\LARGE\bfseries 상관된 Full--two-half endpoint 결함}\\[2mm]
+{\Large\bfseries 실제 포함, 유한 Neumann 보정과 공통 adjoint}\\[4mm]
+{\large 2026년 10월 13일 KST}
+\end{center}
+\vspace{2mm}\noindent\rule{\textwidth}{0.6pt}
+
+\section*{초록}
+동일 COMMON과 고정 source 계열에서 실제 두 half와 Full의 유한 endpoint 차이를 계산한다. PHYS15가 유도한 정확한 상관 잔차를 PHYS14의 실제 second-half 근 및 상속된 source 값, gradient, Hessian에 적용한다. 같은 단계 증분을 gas movement와 opacity 변화에 공유하고, 원 FT03의 cooling cone에서 분리되지 않았던 헬륨 thermal coefficient의 포함을 얻는다. 이에 따라 새로운 반응 fit이나 비선형 근을 계산하지 않고 전체 source 시각 차이와 일곱 photon sector를 외향 구간 산술로 조립한다.
+
+이론적으로 평균 Jacobian을 실제 two-half endpoint의 Jacobian과 적분형 나머지로 연결한다. HI opacity가 만드는 나머지는 단일 열의 유리식으로 정확히 적분되며, 나머지 source에는 원 signed Hessian을 적용한다. 기존 고정 전처리 행렬과 componentwise majorant를 유지한 유한 Neumann 다항식은 역행렬을 새로 구성하는 대신 명시적 오차를 제공한다. 하나의 근사 adjoint에 선형 잔차와 비선형 나머지를 더해 모든 물리 sector의 유한 온도 기여 및 부호 여유를 평가한다.
+
+실제 계열 전체에서 two-half의 전자 수 변화는 양수이고 열에너지 변화는 음수다. 온도 차이는
+\[
+\Delta T=T_2-T_F\in[-1.585967387181453,-1.210819969055199]\times10^{-3}\ \mathrm K
+\]
+로 포함된다. $m=2$의 유한 Neumann 보정이 정확한 endpoint 전달을 대체할 때, 같은 유한 온도 분모에서 생기는 오차 상계는 $1.7106\times10^{-12}\,\mathrm K$다. 공통 평균 adjoint의 부호를 확보하여 $b>0$에서 birth-redshift의 온도 기여는 음수, birth의 BE 시간 분할 기여는 양수임을 보인다. 총 광자 수와 에너지의 endpoint 차이도 원 guards를 포함한 식으로 음의 구간에 들어간다.
+
+유도에는 원 $C^2$ 계열과 source 영역을 재사용하고, 대수적 index 및 부호 연결은 Wolfram Language와 xAct/xTensor로 확인한다. 문헌의 잔차 전처리와 목표 관측량 adjoint 원리를 원 HH의 source, 광자 chronology, 유한 온도식에 결합한 연구 결과다.\cite{phys15,app16,endpoint16,Rump2010,Rannacher2003}
+
+\noindent\fcolorbox{MidnightBlue!45}{MidnightBlue!3}{%
+\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{현재 연구 판정}\quad \ReviewDecision\par
+\small \ReviewExplanation}}
+\newpage
+\begingroup\small\setlength{\parskip}{0pt}
+\tableofcontents
+\vspace{3mm}
+\noindent\textbf{읽기 순서.} 제1--3절은 현재 전제와 실제 잔차 구성을, 제4--8절은 endpoint 나머지와 공통 adjoint 정리를 전개한다. 제9--10절은 실제 계열에서 확보한 부호와 수치 포함을 설명한다. 제11--12절 및 부록은 실행 근거, 문헌 대응과 다음 연구 연결을 모은다.
+\endgroup
+\newpage
+\input{source_scope.tex}
+\input{endpoint_theory.tex}
+\input{application_results.tex}
+\input{appendix.tex}
+\end{document}

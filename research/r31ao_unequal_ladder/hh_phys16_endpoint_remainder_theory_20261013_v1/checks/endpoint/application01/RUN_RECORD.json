@@ -1,0 +1,47 @@
+{
+  "schema": "WU088_HH_PHYS16_ENDPOINT_REMAINDER_RUN_V1",
+  "started_utc": "2026-10-12T21:02:18.854186+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS16_THEORY_20261013_v1/checks/endpoint/apply_endpoint_remainder.py",
+    "--phys15",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS15_THEORY_20261012_v1",
+    "--application",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS16_THEORY_20261013_v1/checks/application/run01/results/CORRELATED_DEFECT_RESULTS.json",
+    "--hessian",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS16_THEORY_20261013_v1/checks/endpoint/ENDPOINT_HESSIAN_READOUT.json",
+    "--output",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS16_THEORY_20261013_v1/checks/endpoint/application01/ENDPOINT_REMAINDER_RESULTS.json"
+  ],
+  "code_sha256": "7781be3f929ea023b783e53827c222a012e3d8f5ca7e215151d7464824fb6149",
+  "purpose": "Apply derived endpoint/adjoint remainder bounds to actual run01 D and source enclosures",
+  "physical_source_calls": 0,
+  "root_solves": 0,
+  "history_replays": 0,
+  "finished_utc": "2026-10-12T21:02:18.941560+00:00",
+  "exit_code": 0,
+  "elapsed_wall_seconds": 0.08722346899958211,
+  "peak_child_rss_kib": 16060,
+  "outputs": [
+    {
+      "path": "checks/endpoint/application01/PRE_RUN.json",
+      "bytes": 1102,
+      "sha256": "25ac4ec6dd76d7e47e832b7ec9aa8825771a9ebd9ec7afd635e34d764aa57c6c"
+    },
+    {
+      "path": "checks/endpoint/application01/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "checks/endpoint/application01/stdout.txt",
+      "bytes": 1717,
+      "sha256": "49e89e9753a4595271c9ae4c81e50c23f754e5369ea233c91f8b7f4eb0926dcd"
+    },
+    {
+      "path": "checks/endpoint/application01/ENDPOINT_REMAINDER_RESULTS.json",
+      "bytes": 216859,
+      "sha256": "6cf01b2c6f69c0ff89ab5f2a3487ea34fbd35da6c0f72b6f4ee09e1d7ad5b4c8"
+    }
+  ]
+}

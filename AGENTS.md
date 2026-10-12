@@ -1,3 +1,17 @@
+# Current priority - PHYS16 endpoint remainder and actual defect, 2026-10-13 KST
+
+Read CURRENT_DEVELOPMENT_PLAN.json, research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/README_KO.md, theory/ENDPOINT_REMAINDER_THEORY_KO.md, review/DECISION.json and NEXT_DAG.json in that core. PHYS16 is PROMOTE_SCOPED for the same COMMON, fixed source-aligned C2 family and shared global lambda,b. The actual correlated endpoint inclusion has been computed and independently reviewed. The two-half temperature is below Full throughout this inherited family. Original Full C,B,q,S and all 35 photon/guard slots are retained.
+
+The C2 endpoint remainder and finite m=2 Neumann prediction now bound the observable transfer. One common averaged adjoint proves birth redshift negative and birth backward Euler positive for b>0; both vanish at b=0. These attribution signs do not assert the sign of the total b derivative. Next execute HH_DEFECT_PARAMETER_RESPONSE using original H_gg, H_g_lambda, H_g_b and carried U/V, following the explicit parameter-response contract.
+
+Use the user-selected physmath-research-loop built-in 1.0.0 THEORY R1-R10. Reuse unchanged premises and evidence. The user explicitly requested SciSpace, Exa, Wolfram and xAct; the actual xAct check uses official xTensor 1.3.0 and xPerm's Wolfram Language group backend ($xpermQ=False), with six exact-zero tensor checks. Source/root/history re-execution needs a concrete changed scientific obligation. Native and microscopic lanes keep their existing conditions.
+
+Current root and theory approval is scoped to the inherited physical family. PHYS14 remains the carried root baseline, and PHYS15 exact chronology and common-input proofs remain the parent theory. First eleven prior HH DAG node values and original global REI DAG bytes are preserved. No global RUX node is newly completed; heavy_queue=[] and launch=false.
+
+Publication for this unit is additive, stacked on PR50 head b4b8019c6f149035c52784aced8e9cd7f3fbb23b. Preserve prior scientific files and exact run records. Session authorization for Git branch/PR and dual-provider backup persists; no main merge is implied. Bind actual publication and delivery identities after each operation succeeds. A historical instruction's previous PR target below is superseded by this current verified parent.
+
+## Preserved PHYS15 and earlier instructions
+
 # Current priority - PHYS15 correlated endpoint theory, 2026-10-13 KST
 
 Read CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/theory/CORRELATED_ENDPOINT_THEORY_KO.md. The current theory constructs the same-COMMON residual, seven photon absorption sectors and their scoped signs, the exact density/fhat source bridge, the original Full preconditioned endpoint bound, and finite T/e/w/adjoint readouts. Reuse the actual PHYS14 two-half carry and original Full source. The original Full UNIFORM_ARITHMETIC.json supplies fixed_C, B, radius and q=0.00011736830563768177 together.
