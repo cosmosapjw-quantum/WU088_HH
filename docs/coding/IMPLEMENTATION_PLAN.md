@@ -1,3 +1,13 @@
+# PHYS16 handoff - actual correlated endpoint and C2 remainder complete
+
+The current bounded application and finite endpoint/adjoint calculation are independently PROMOTE_SCOPED. Read research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/DEPENDENCIES.json and the two immutable run directories. Reuse the parent PHYS15 input tree at commit b4b8019c6f149035c52784aced8e9cd7f3fbb23b; the full PHYS16 snapshot includes the pinned parent archive.
+
+The next work is research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/contracts/PARAMETER_RESPONSE_CONTRACT.json. Derive d_lambda and d_b using H_gg and H_gtheta with stored first/second-half U/V. The previous numerical endpoint obligation is complete. Keep one COMMON and one global parameter choice through every expression; residual sector attribution is not a total parameter derivative.
+
+The m=2 endpoint approximation's certified temperature remainder is at most 1.710575696736044e-12 K using the same finite denominator. The remaining total enclosure width is much larger; refine the shared expression or parameter representation only where it can change the next physical decision. Keep source roots and native/microscopic scientific conditions unchanged unless a concrete new obligation requires action.
+
+## Preserved previous implementation plan
+
 # Current implementation priorities - PHYS15 endpoint theory, 2026-10-13 KST
 
 Read research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/theory/CORRELATED_ENDPOINT_THEORY_KO.md and root CURRENT_DEVELOPMENT_PLAN.json. Current status: Independent review accepted nine scoped theoretical claims as PROMOTE_SCOPED with no remaining blocking findings. PHYS15 is the current accepted theory; PHYS14 remains its carried physical baseline.

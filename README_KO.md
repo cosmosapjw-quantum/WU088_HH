@@ -1,3 +1,13 @@
+# WU088_HH 현재 결과: PHYS16
+
+같은 COMMON에서 출발한 실제 두 half와 Full의 상관 endpoint 차이를 계산하고 C² endpoint remainder 및 공통 adjoint 정리를 완성했다. 독립 판정은 **PROMOTE_SCOPED**이며 적용 범위는 기존 source-aligned geometric-isotropic 계열과 동일한 전역 lambda,b다.
+
+온도 차이 T₂−T_F는 **[-0.001585967387181453, -0.001210819969055199] K**다. 이온화 H·전자 수는 증가하고 열에너지·잔존 광자 수와 에너지는 감소한다. b>0에서 birth redshift의 온도 기여는 음수, birth backward Euler는 양수이며, 두 부호는 같은 기체의 암시적 응답을 포함한다.
+
+[연구 개요](research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/README_KO.md), [PDF 보고서](research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/report/WU088_HH_PHYS16_THEORY_20261013.pdf), [독립 판정](research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/review/DECISION.json), [다음 DAG](research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/NEXT_DAG.json)를 참조한다. 다음 이론 단위는 원 mixed Hessian과 U/V carry를 이용한 HH_DEFECT_PARAMETER_RESPONSE다. 현재 단계의 원 source·root·history 재실행 및 NCP launch는 모두 0회다.
+
+## 이전 연구 개요 보존
+
 # WU088_HH 최신 연구: PHYS15 상관된 endpoint 결함 이론
 
 PHYS15는 같은 COMMON에서 출발한 Full과 PHYS14의 실제 two-half 경로를 하나의 잔차로 연결한다. 기체 잔차, 광자 흡수 결함의 일곱 항과 원 격자의 부호 관계, 밀도·fhat source 정규화 연결, 유한 온도 차이와 공통 adjoint 기여를 유도했다. 원 Full의 fixed_C·B·radius·q=0.00011736830563768177을 함께 재사용해 전처리 잔차에서 endpoint 차이로 가는 포함식을 구성했다.

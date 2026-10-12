@@ -1,3 +1,13 @@
+# WU088_HH - PHYS16 current research result
+
+PHYS16 completes the actual same-COMMON two-half versus Full endpoint enclosure and its C2 endpoint/adjoint remainder theory. Independent decision: **PROMOTE_SCOPED** within the inherited source-aligned geometric-isotropic family.
+
+The certified temperature difference is **[-0.001585967387181453, -0.001210819969055199] K**. Ionized H and electrons increase, thermal energy and total outgoing photon number/energy decrease. Birth-redshift and birth-BE contributions have opposite certified signs under one common averaged adjoint.
+
+Start with [research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/README_KO.md](research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/README_KO.md), the [report](research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/report/WU088_HH_PHYS16_THEORY_20261013.pdf), [decision](research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/review/DECISION.json), and [next DAG](research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/NEXT_DAG.json). The next unit computes parameter responses from existing mixed Hessians and carried U/V. Source callbacks, new roots, history replays and NCP launches in PHYS16: zero.
+
+## Preserved earlier project overview
+
 # WU088_HH current research: PHYS15 correlated endpoint theory
 
 PHYS15 derives the difference between Full and the actual PHYS14 two-half path from one shared COMMON. The theory connects an exact gas residual to seven photon absorption sectors, their original-grid sign relations, a density/fhat source-normalization bridge, and a finite temperature/adjoint decomposition. The original Full fixed_C, B, radius and q=0.00011736830563768177 give the endpoint transfer bound under the inherited source/C2/root premises.
