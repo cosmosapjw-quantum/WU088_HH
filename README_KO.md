@@ -1,3 +1,17 @@
+# WU088_HH — PHYS13 유한 온도·전자 응답
+
+PHYS13에서 같은 source family의 HH 온도·전자 응답과 냉각 원인을 계산했다. [연구보고서](research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/REPORT_KO.md), [상세 유도](research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/theory/THERMODYNAMIC_RESPONSE_THEOREM_KO.md), [정확한 결과](research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/results/thermo_v2/THERMO_RESULTS.json), [독립 판정](research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/review/DECISION.json)을 참조한다.
+
+Full 첫 단계에서 HH ΔT는 [-2.283422272e-5,-7.460984727e-6] K이며, 선택한 HH 강도 경로의 냉각 중 입자 수 증가 비중은 [31.67901824,31.98634497]%다. 같은 계열의 추가 birth는 열에너지를 늘리면서 온도를 낮춘다. 새 전자당 순 열에너지 증가가 기존 입자당 평균 열에너지보다 작기 때문이다.
+
+이 결과는 상속한 source/C² root 조건 아래 PROMOTE_SCOPED다. Full과 first_half는 같은 COMMON에서 따로 출발하며, 실제 소비자 적용성이나 전체 시간 이력을 새로 인증하지 않는다. 새 source/native/root 호출과 NCP 작업은 0이다.
+
+현재 진입점은 [CURRENT_DEVELOPMENT_PLAN.json](CURRENT_DEVELOPMENT_PLAN.json), [DAG](research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/NEXT_DAG.json), [후속 인계](research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/HANDOFF_KO.md), [제공 계약](research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/contracts/HH_THERMODYNAMIC_RESPONSE_EXPORT.json)이다. 기존 atomic/native 연구 및 PHYS12 결과를 보존한다.
+
+## 이전 계획·native 사용 안내의 보존
+
+아래 원문은 이전 계획과 각 native lane의 보존 기록이며, 현재 다음 작업은 위 PHYS13 인계를 따른다.
+
 # WU088_HH — HH Atomic-Reuse 연구계획 v2 (2026-10-12)
 
 첨부 REI Atomic-Reuse DAG의 17개 노드를 [새 연구계획](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/DEVELOPMENT_PLAN_KO.md)과 [HH 로컬 DAG](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/NEXT_DAG.json)의 8개 작업에 대응시켰다. 현재 진입점은 [CURRENT_DEVELOPMENT_PLAN.json](CURRENT_DEVELOPMENT_PLAN.json), [제공 계약](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/contracts/HH_REI_EXPORT_CONTRACT.json), [후속 인계문](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/HANDOFF_KO.md)이다.

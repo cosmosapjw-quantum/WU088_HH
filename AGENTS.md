@@ -1,12 +1,12 @@
-# Current development priority — HH Atomic-Reuse plan v2, 2026-10-12
+# Current development priority — PHYS13 thermodynamic response, 2026-10-12
 
-Read CURRENT_DEVELOPMENT_PLAN.json, then research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/DEVELOPMENT_PLAN_KO.md, NEXT_DAG.json, and HANDOFF_KO.md. This successor plan implements the user's attached REI Atomic-Reuse DAG as an HH planning overlay. Original global nodes remain PROPOSED_NOT_EXECUTED; global_links are contributions, not dependency edges or completion receipts.
+Read CURRENT_DEVELOPMENT_PLAN.json, then research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/REPORT_KO.md, HANDOFF_KO.md, NEXT_DAG.json and review/DECISION.json in that same core. PHYS13 is independently PROMOTE_SCOPED under the inherited same-alpha source/C2 root premises. Reuse the completed finite T/e/ne bounds, energy-projected cooling fraction, soft-birth dilution result and output-normalization bridge. Do not replay PHYS09/11/12/13 by default.
 
-Retain PHYS12 at commit dcea5dc6545736e6f4afa5acf4b7eabd428485e8, subtree ff2625c424a9c2e17af99d960fd6fcdda79227f9. Reuse its fixed-family future HH-on/off x_HII and thermal-w bounds and PHYS11 mixed response with their inherited source/C2 premises. Two first stages are not a carried history. Do not replay completed PHYS09/PHYS11/PHYS12.
+Use exact(nHe_stored)/exact(nH) and the captured kB/ev leaves for temperature and electron readouts. Stage f and fhat differ. Both durations remain separate first stages from COMMON; no carried second_half, native root, history or continuum certificate is issued. Actual consumer admission is still unbound in the targeted intake.
 
-Producer contracts and owner rows are prepared; no consumer scenario/runtime is bound. Next consumer task is HH_DOMAIN_SCREEN once an actual named request supplies source/scenario identity and domain. Preparation may precede RUX11; actual HH_MATCHED_HISTORY requires actual RUX11 evidence. Optional HH is not a prerequisite of the REI baseline. Independent microscopic singlet and FT03 strict-native work retain their own admission without REI completion gates.
+The prior Atomic Reuse v2 eight node values and global source DAG are preserved. PHYS13 adds HH_THERMODYNAMIC_RESPONSE as an independent provider result and completes no global RUX node. When a concrete consumer request is bound, apply the full same-family comparison in HH_DOMAIN_SCREEN. Actual further time evolution needs joint gas/photon/ray/guard carry and a valid next-stage source/root domain. Independent microscopic/strict-native paths retain their conditions.
 
-Current NCP heavy_queue=[] and launch=false. No scientific or heavy job is selected by this plan change. Use lane-specific NCP_TASKS.json and preserved atomic/native conditions for a selected physical question; do not benchmark an empty queue. Plan review is research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/review/PLAN_REVIEW.json; scientific decision remains research/r31ao_unequal_ladder/hh_phys12_absolute_response_20261012_v1/review/DECISION.json.
+NCP heavy_queue=[] and launch=false. No empty-queue benchmark, new heavy launch, source/basis/precision change, or native authorization override is implied. Read preserved files before mutation and retain successful scientific outputs and first failures.
 
 ## Preserved execution contract
 

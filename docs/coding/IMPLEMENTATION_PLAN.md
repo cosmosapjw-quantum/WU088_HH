@@ -1,3 +1,9 @@
+# Current implementation priorities — PHYS13
+
+Read research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/HANDOFF_KO.md and the completed independent decision. Reuse the exact observable transfer; there is no heavy job ready. Preserve source fhat, coefficient graph, finite-switch and first-stage chronology. A concrete consumer requires same-family admission; actual further history requires joint carried state and next-stage source coverage. PHYS13 adds one provider result and changes no original Atomic Reuse v2 dependency.
+
+## Preserved prior implementation guidance
+
 # Active implementation priorities — HH Atomic-Reuse plan v2, 2026-10-12
 
 Read root CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/DEVELOPMENT_PLAN_KO.md, NEXT_DAG.json, TASK_CARDS.jsonl and HANDOFF_KO.md. This is a plan/provider-contract update after PHYS12, with zero new scientific execution.
