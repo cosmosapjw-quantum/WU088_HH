@@ -5,7 +5,7 @@
   "unit_id": "HH_PHYS17_DEFECT_PARAMETER_RESPONSE_THEORY_20261013",
   "objective": "Derive and evaluate the first derivatives of same-COMMON d=g2-gF and DeltaT=T2-TF with respect to the same global lambda and b, separating explicit source forcing from state/opacity feedback.",
   "scope": "Same fixed admissible alpha and COMMON; global lambda,b in [0,1]^2; inherited source-aligned geometric-isotropic C2 family; first derivatives of d=g2-gF and finite DeltaT=T2-TF.",
-  "status": "in_progress",
+  "status": "complete",
   "dependencies": [
     {
       "id": "D_INPUT_PHYS15_THEORY",
@@ -1605,6 +1605,15 @@
       "dependency_ids": [],
       "sha256": "dc7150550b2a2665a336e5507ce6b8308828a989a7f6ab500740a82b33b7ea6b",
       "bytes": 3415
+    },
+    {
+      "id": "E_BACKUP_ACK",
+      "kind": "storage",
+      "locator": "publication/BACKUP_ACK.json",
+      "scope": "Actual science commit/tree and 144 expected object checks, draft PR52, completed Google Drive and Dropbox uploads with exact metadata sizes.",
+      "dependency_ids": [],
+      "sha256": "f439f03714c719afc3ba475583a440279216f2616c2961ebef883fa01c73b8f3",
+      "bytes": 5287
     }
   ],
   "stages": [
@@ -1860,7 +1869,7 @@
     },
     {
       "id": "R10",
-      "status": "in_progress",
+      "status": "complete",
       "evidence_refs": [
         "E_DECISION",
         "E_NEXT_PROPOSAL",
@@ -1871,7 +1880,8 @@
         "E_DEPENDENCIES",
         "E_REPORT_PDF",
         "E_REPORT_BUILD",
-        "E_REPORT_QA"
+        "E_REPORT_QA",
+        "E_BACKUP_ACK"
       ],
       "dependency_ids": [
         "D_DECISION",
@@ -1882,7 +1892,7 @@
         "D_NEXT_PROPOSAL",
         "D_README_KO"
       ],
-      "reason": "Scientific adoption, final PDF QA, handoff and next contract complete. Actual Git and dual-provider upload acknowledgements remain to close R10.",
+      "reason": "Final 19-page PDF QA, complete handoff and next 24-input contract, verified science Git objects/PR and actual dual-provider acknowledgements are linked. User file presentation follows separately.",
       "reuse": null
     }
   ],
@@ -2219,6 +2229,18 @@
       ],
       "reason": "19 pages compiled, rendered and inspected; final glyphs, equations, tables and references verified.",
       "execution_ref": "X_REPORT_BUILD"
+    },
+    {
+      "id": "K_DELIVERY",
+      "domain": "storage",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_BACKUP_ACK",
+        "E_REPORT_PDF",
+        "E_HANDOFF_KO"
+      ],
+      "execution_ref": null,
+      "reason": "Actual Git object SHA/size checks and completed provider uploads with metadata-size matches; no remote restore or scientific rerun claimed."
     }
   ],
   "executions": [
@@ -2511,6 +2533,16 @@
         "E_REVIEW"
       ],
       "reason": "Root adopted fixed first-response science following independent 29/29 review; execution and original candidate status preserved."
+    },
+    {
+      "id": "CLOSE_R10",
+      "decision": "THEORY_R1_R10_COMPLETE",
+      "evidence_refs": [
+        "E_BACKUP_ACK",
+        "E_REPORT_QA",
+        "E_NEXT_CONTRACT"
+      ],
+      "reason": "All current-loop scientific and delivery obligations have actual linked evidence; mixed application remains the next unit."
     }
   ],
   "overrides": [],
@@ -2562,18 +2594,6 @@
   ],
   "next_actions": [
     {
-      "id": "CLOSEOUT_GIT",
-      "stage": "R10",
-      "status": "pending_root_evidence",
-      "action": "Attach actual Git commit/tree and draft PR or publication acknowledgement."
-    },
-    {
-      "id": "CLOSEOUT_BACKUP",
-      "stage": "R10",
-      "status": "pending_root_evidence",
-      "action": "Attach actual current PHYS17 Dropbox/Google Drive acknowledgement; preserve parent receipts as parent-only evidence."
-    },
-    {
       "id": "NEXT_MIXED",
       "stage": "successor",
       "status": "not_run",
@@ -2620,7 +2640,7 @@
     "regularity": "C2 source/root family; first-order parameter carry and H_gg,H_gtheta suffice",
     "partial_derivative_meaning": "Differentiate the actual endpoint defect with all same-family state feedback retained; physical sector attribution is a separate linked decomposition"
   },
-  "updated_utc": "2026-10-12T23:10:57.255734+00:00",
+  "updated_utc": "2026-10-12T23:15:00.730698+00:00",
   "scientific_status": "PROMOTE_SCOPED",
   "heavy_queue": [],
   "launch": false,
@@ -2653,7 +2673,8 @@
     "wolfram_xact_executions": 1,
     "wolfram_tensor_checks": 6,
     "wolfram_scalar_groups": 9,
-    "wolfram_scalar_values": 15
+    "wolfram_scalar_values": 15,
+    "document_builds": 1
   },
   "literature_counts": {
     "exa_search_calls": 4,
@@ -2664,5 +2685,5 @@
     "new_core_primary_references": 4,
     "reused_prior_primary_references": 2
   },
-  "delivery_status": "PDF_QA_complete_Git_and_current_provider_acknowledgements_pending"
+  "delivery_status": "GIT_SCIENCE_OBJECTS_AND_CURRENT_DUAL_PROVIDER_ACKNOWLEDGEMENTS_VERIFIED"
 }
