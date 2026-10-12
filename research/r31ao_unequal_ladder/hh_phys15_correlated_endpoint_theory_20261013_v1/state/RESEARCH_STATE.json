@@ -5,9 +5,9 @@
   "unit_id": "WU088_HH_PHYS15_CORRELATED_ENDPOINT_THEORY",
   "objective": "동일 COMMON의 Full과 실제 two-half 경로 사이의 상관된 기체·광자 잔차를 유도하고, 기존 Full 포함과 유한 관측량 식으로 endpoint 차이를 전달한다.",
   "scope": "Same-COMMON Full versus actual two-half theoretical defect construction in the inherited geometric isotropic source-aligned C2 family, with captured original constants and linked global lambda,b; actual PHYS15 numerical endpoint enclosure is the named successor unit.",
-  "status": "in_progress",
+  "status": "complete",
   "created_at_utc": "2026-10-12T15:31:23.724613+00:00",
-  "record_state": "R1-R9 closed; R10 actual Git/provider delivery in progress",
+  "record_state": "Current PHYS15 theory unit R1-R10 complete/reused; numerical successor not_run; detached final publication/delivery continues with root",
   "locator_base": "Paths without a leading slash are relative to this PHYS15 core directory.",
   "dependencies": [
     {
@@ -239,6 +239,21 @@
       "id": "dep_REPORT_MANIFEST_FINAL",
       "identity": "sha256:c92e65db1d4dfc531be3c8cb37fc440a9b44d074bd03185563511bab1da15a6c",
       "description": "report/REPORT_MANIFEST.json"
+    },
+    {
+      "id": "dep_SCIENCE_GIT_ACK",
+      "identity": "sha256:7ee7a3cd36e851fdf497885024f1ddf624f02d9478fb1121b869505b705d50fc",
+      "description": "evidence/SCIENCE_GIT_RECEIPT.json: actual Git provider response for frozen science/report objects"
+    },
+    {
+      "id": "dep_SCIENCE_GIT_COMMIT",
+      "identity": "git-commit:d053934a0d3ea6e2b3d6702ba6d8038686686d30",
+      "description": "Actual acknowledged scientific Git commit; parent 087a16f28d0ee4fc7ae74ae50bfcafe578716e85"
+    },
+    {
+      "id": "dep_SCIENCE_GIT_TREE",
+      "identity": "git-tree:6af41663f772eaeade80b287362ef2364b7b8faa",
+      "description": "Actual acknowledged frozen scientific/report tree"
     }
   ],
   "evidence": [
@@ -747,6 +762,19 @@
       ],
       "sha256": "c92e65db1d4dfc531be3c8cb37fc440a9b44d074bd03185563511bab1da15a6c",
       "bytes": 2409
+    },
+    {
+      "id": "SCIENCE_GIT_ACK",
+      "kind": "storage",
+      "locator": "evidence/SCIENCE_GIT_RECEIPT.json",
+      "scope": "Actual Git provider acknowledgement of the scientific commit/tree and PDF/font blobs. Final branch/PR/Drive/Dropbox delivery is recorded separately by root and is not asserted here.",
+      "dependency_ids": [
+        "dep_SCIENCE_GIT_ACK",
+        "dep_SCIENCE_GIT_COMMIT",
+        "dep_SCIENCE_GIT_TREE"
+      ],
+      "sha256": "7ee7a3cd36e851fdf497885024f1ddf624f02d9478fb1121b869505b705d50fc",
+      "bytes": 2144
     }
   ],
   "stages": [
@@ -970,18 +998,30 @@
     },
     {
       "id": "R10",
-      "status": "in_progress",
+      "status": "complete",
       "evidence_refs": [
         "HANDOFF",
         "DAG_CHECK",
-        "OVERLAY_FINAL"
+        "OVERLAY_FINAL",
+        "SCIENCE_GIT_ACK",
+        "REVIEW_DECISION",
+        "REPORT_PDF_FINAL",
+        "REPORT_MANIFEST_FINAL",
+        "CONTRACT"
       ],
       "dependency_ids": [
+        "dep_CONTRACT",
         "dep_DAG_CHECK",
         "dep_HANDOFF",
-        "dep_OVERLAY_FINAL"
+        "dep_OVERLAY_FINAL",
+        "dep_REPORT_MANIFEST_FINAL",
+        "dep_REPORT_PDF_FINAL",
+        "dep_REVIEW_DECISION",
+        "dep_SCIENCE_GIT_ACK",
+        "dep_SCIENCE_GIT_COMMIT",
+        "dep_SCIENCE_GIT_TREE"
       ],
-      "reason": "정식 보고서, local handoff와 DAG/root entry가 준비됐다. root가 Git scientific commit과 실제 provider ACK를 확인하여 전달 identity를 연결하는 중이며, 해당 근거가 도착한 후 R10을 종료한다.",
+      "reason": "현재 이론 단위의 승인된 증명·보고서·입력과 수치 후속 인계를 보존했고, 실제 Git provider ACK의 scientific commit/tree에 identity를 결박했다. 현재 단위 R10을 완료한다. 최종 branch/PR 및 Drive/Dropbox 전달은 root의 별도 detached delivery receipt에서 이후 기록한다.",
       "reuse": null
     }
   ],
@@ -1333,6 +1373,16 @@
       ],
       "execution_ref": null,
       "reason": "Reused the actual final report build and visual QA; matched PDF/TeX/QA manifest identities. No report rebuild or scientific rerun was performed by this state update."
+    },
+    {
+      "id": "SCIENTIFIC_GIT_PROVIDER_ACK",
+      "domain": "storage",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "SCIENCE_GIT_ACK"
+      ],
+      "execution_ref": null,
+      "reason": "Consumed the actual provider receipt with science commit/tree and matching PDF/font blob acknowledgements. No final branch, PR or cloud-backup success is inferred."
     }
   ],
   "executions": [
@@ -1453,6 +1503,21 @@
       "pdf_sha256": "bb56b101ce91b1323cf558214d58744293e40c085d4a81067720a86613fb7515",
       "pdf_bytes": 236812,
       "page_count": 17
+    },
+    {
+      "id": "R10_CURRENT_THEORY_UNIT_COMPLETED",
+      "decision": "R10 complete; current unit complete",
+      "decided_at_utc": "2026-10-12T15:48:04.662339+00:00",
+      "scope": "Completion of the reviewed PHYS15 theoretical derivation, report, preserved scientific identity and concrete numerical handoff. Final branch/PR/Drive/Dropbox delivery is separately pending actual acknowledgements.",
+      "evidence_refs": [
+        "SCIENCE_GIT_ACK",
+        "HANDOFF",
+        "CONTRACT",
+        "REVIEW_DECISION",
+        "REPORT_PDF_FINAL",
+        "REPORT_MANIFEST_FINAL"
+      ],
+      "reason": "The actual acknowledged science commit/tree preserves the reviewed theory/report identity, and the next numerical unit has concrete inputs, equations and acceptance criteria."
     }
   ],
   "overrides": [
@@ -1507,18 +1572,6 @@
   ],
   "next_actions": [
     {
-      "id": "FINISH_R10",
-      "owner": "/root",
-      "stage": "R10",
-      "action": "Bind the actual Git scientific commit and provider acknowledgements supplied by root, record final delivery identities, and then close R10.",
-      "evidence_refs": [
-        "HANDOFF",
-        "DAG_CHECK",
-        "OVERLAY_FINAL"
-      ],
-      "status": "in_progress"
-    },
-    {
       "id": "NEXT_THEORY_APPLICATION",
       "unit_id": "HH_CORRELATED_ENDPOINT_ENCLOSURE",
       "status": "not_run",
@@ -1549,5 +1602,25 @@
     "binding": "fixed_C, abs_IminusCHp majorant, qArithmetic and exact binary radius from one original file"
   },
   "strong_no_go_claims": [],
-  "updated_at_utc": "2026-10-12T15:43:54.386916+00:00"
+  "updated_at_utc": "2026-10-12T15:48:04.662339+00:00",
+  "completed_at_utc": "2026-10-12T15:48:04.662339+00:00",
+  "completion_scope": "Completion of the reviewed PHYS15 theoretical derivation, report, preserved scientific identity and concrete numerical handoff. Final branch/PR/Drive/Dropbox delivery is separately pending actual acknowledgements.",
+  "scientific_checkpoint": {
+    "repository": "cosmosapjw-quantum/WU088_HH",
+    "commit": "d053934a0d3ea6e2b3d6702ba6d8038686686d30",
+    "tree": "6af41663f772eaeade80b287362ef2364b7b8faa",
+    "parent_commit": "087a16f28d0ee4fc7ae74ae50bfcafe578716e85",
+    "provider_receipt": "evidence/SCIENCE_GIT_RECEIPT.json",
+    "provider_receipt_sha256": "7ee7a3cd36e851fdf497885024f1ddf624f02d9478fb1121b869505b705d50fc",
+    "acknowledged_at_utc": "2026-10-12 15:45:40 UTC",
+    "science_manifest_sha256": "aa7aa8992bacb9d7db9eca1efe8599996b42977c039c6ceb3120037d6a4e79f7",
+    "scope": "Frozen scientific and report objects acknowledged by Git provider; subsequent metadata commit is recorded separately."
+  },
+  "detached_final_delivery": {
+    "owner": "/root",
+    "status": "pending_actual_delivery_receipt",
+    "scope": "Second metadata commit, final branch/PR and Drive/Dropbox file delivery",
+    "success_asserted": false,
+    "record": "Detached final delivery receipt is produced by root after actual provider responses."
+  }
 }
