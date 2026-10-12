@@ -1,0 +1,31 @@
+{
+  "schema": "WU088_HH_PHYS17_PRE_RUN_V1",
+  "started_utc": "2026-10-12T22:52:22.441556+00:00",
+  "command": [
+    "python3",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/src/derivative_neumann_readout.py",
+    "--parent15",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS15_THEORY_20261012_v1",
+    "--parent16",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS16_THEORY_20261013_v1",
+    "--output",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/checks/application/neumann02/results"
+  ],
+  "source": {
+    "path": "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/src/derivative_neumann_readout.py",
+    "bytes": 4743,
+    "sha256": "abe90ba6cb9350fa8fc77c883afad6aa32d0caff6957f8ddafbaeb0bfea3a60e"
+  },
+  "reason": "Use an explicit outward envelope for the copied endpoint a after neumann01 detected a 1.2e-77 relative serialization expansion; preserve inherited and applied a separately",
+  "budget": {
+    "timeout_seconds": 20,
+    "expected_peak_rss_MiB_below": 128,
+    "native_source_root_history_calls": 0
+  },
+  "questions": [
+    "Do P2 correlated derivative transfer and P4 finite-temperature readout close uniformly?",
+    "What are the signs and widths of d_lambda,d_b and DeltaT_lambda,DeltaT_b?",
+    "Do the C2 density bridge and exact photon derivative graph preserve shared-stage correlations?"
+  ],
+  "acceptance": "Report exact outward intervals and observed sign margins; independently review source correspondence and arithmetic."
+}

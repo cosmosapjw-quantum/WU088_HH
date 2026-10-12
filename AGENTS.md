@@ -1,3 +1,17 @@
+# Current priority — PHYS17 parameter response, 2026-10-13 KST
+
+Read CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/README_KO.md, HANDOFF_KO.md, review/DECISION.json and NEXT_DAG.json. PHYS17 is PROMOTE_SCOPED for the inherited fixed-alpha C2 family, same COMMON and shared global lambda,b. Both actual total temperature derivatives are now enclosed: lambda is strictly negative, b strictly positive. Explicit forcing and state feedback are carried through the same Full inverse and temperature covector.
+
+The new He thermal projector and its first derivative close the exact density pullback using original nonphoto values, gradients and Hessians. Reuse unchanged original C,B,q,S, source/root/carry files and all 35 photon/guard slots. The full proof and three successful bounded applications are frozen, with 29/29 independent arithmetic checks and actual Wolfram+xAct exact-zero checks (6 tensor, 15 scalar components).
+
+Next execute HH_DEFECT_MIXED_RESPONSE using contracts/MIXED_RESPONSE_CONTRACT.json. Its target is the mixed HH/birth response and four-corner contrast; current first derivatives already bound the contrast magnitude by 1.958485175177039e-9 K. Keep the same C2 family and common parameters. New mixed numerical application is not run in PHYS17.
+
+Use the user-selected physmath-research-loop embedded 1.0.0 THEORY R1–R10. Continue constructive derivation and original-input application where the next obligation is open. Source/root/history re-execution requires a concrete changed scientific obligation. Original native and microscopic conditions remain in force. Earlier HH node values 1–12 and global REI DAG bytes are preserved; no global RUX node is newly completed, heavy_queue=[] and launch=false.
+
+Publication is additive, stacked on PR51 head 2db8684c607bfe833015120d786c90348763efd6, branch research/hh-phys16-endpoint-remainder-theory-20261013. Session authorization for a new research branch/draft PR and dual-provider backup persists; no main merge is implied. Record actual Git and storage identities after successful operations. Historical older publication targets below are superseded by this verified parent.
+
+## Preserved PHYS16 and earlier instructions
+
 # Current priority - PHYS16 endpoint remainder and actual defect, 2026-10-13 KST
 
 Read CURRENT_DEVELOPMENT_PLAN.json, research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/README_KO.md, theory/ENDPOINT_REMAINDER_THEORY_KO.md, review/DECISION.json and NEXT_DAG.json in that core. PHYS16 is PROMOTE_SCOPED for the same COMMON, fixed source-aligned C2 family and shared global lambda,b. The actual correlated endpoint inclusion has been computed and independently reviewed. The two-half temperature is below Full throughout this inherited family. Original Full C,B,q,S and all 35 photon/guard slots are retained.

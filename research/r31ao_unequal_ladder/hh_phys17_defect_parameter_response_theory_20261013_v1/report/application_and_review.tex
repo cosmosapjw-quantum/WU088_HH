@@ -1,0 +1,49 @@
+\section{실제 포함과 응답의 분해}
+\label{sec:application}
+실제 적용은 이전 PHYS14의 exact Fraction 산술 기본 연산을 유지하며 256-bit dyadic 외향 반올림으로 구간을 전파한다. 원 source callback과 물리 근을 다시 평가하지 않고, 보존된 signed source Jet와 carry를 위 정리에 대입한다. 첫 half의 photon \texttt{incoming}, \texttt{outgoing\_joint}, 실제 둘째 half의 \texttt{incoming}과 \texttt{absorbed}를 같은 global $\lambda,b$로 연결한다. 원 33개 photon group과 두 guard를 모두 포함한다.\cite{app17,phys16}
+
+\subsection{직접 forcing과 state feedback}
+\input{forcing_table.tex}
+직접 forcing은 stage state를 고정하고 해당 매개변수의 명시적 source/birth 항만 미분한 부분이다. endpoint 보정 중 $-\int H_{g\theta}d$는 직접 forcing에, $-\int H_{gg}[d,g_{2,\theta}]$는 feedback에 배정한다. feedback은 stage state와 opacity의 반응을 함께 포함한다. 유한 온도 관측량에서 생기는 공통 geometry 보정은 feedback에 배정한다. 이 정의로 합을 취하면 전체 $\Delta T_\theta$의 정확한 분해가 된다. 모든 항을 같은 $J_F$, 같은 $n_F$, 같은 $\Pi_F$로 전달한다.\cite{forcing17}
+
+$\lambda$ 직접항은 약 $-(6.96\text{--}8.55)\,\mathrm{nK}$, feedback은 약 $-(1.18\text{--}1.55)\,\mathrm{nK}$다. 부호가 같아서 전체 음의 응답을 함께 만든다. 세부 분해에서 gas movement curvature와 opacity 변화 항은 각각\[[-8.418121434253,-6.878598414007]\times10^{-9}\,\mathrm K,\]\[[-1.065815198396,-0.8408372101424]\times10^{-9}\,\mathrm K\]다. 이 두 항이 전체 응답의 주요 크기를 설명한다.\cite{app17,forcing17}
+
+$b$ 직접항은 약 $67.84\text{--}71.93\,\mu\mathrm K$이고 feedback은 약 $-0.0840\text{--}-0.0776\,\mu\mathrm K$다. birth의 BE chronology가 양의 응답을 지배한다. 해당 sector의 전체 미분 기여는 $[6.790370523788,7.194893096834]\times10^{-5}\,\mathrm K$다. opacity와 gas movement의 음의 반응이 추가되지만 전체 부호의 여유는 유지된다.\cite{app17,forcing17}
+
+PHYS16의 birth-redshift 값은 $b>0$에서 음수로 채택되었다. 현재 그 sector의 전체 $b$ 미분 구간은 $[-2.358047892684,1.928694832154]\times10^{-8}\,\mathrm K$로 0을 포함한다. 그 폭은 인접 group의 반대 부호 항을 좌표별 구간으로 전달할 때 남는 상관 손실이 주도한다. 실제 feedback photon 항은 각 절댓값 $2.46\times10^{-18}$ 이하로 작다. 이 항과 stock intermediate-redshift, remap composition의 일부 도함수 부호는 원 signed 구간으로 유지한다. 전체 온도 도함수의 두 부호는 해당 작은 항의 가능한 값을 모두 포함한 결과다.\cite{phys16,app17}
+
+\subsection{유한 inverse 보정의 정량적 오차}
+원 $q=0.00011736830563768177$와 PHYS16의 $L_H,a$를 재사용했다. 실제 P2 forcing에서
+\[
+a_\lambda\le1.126742971729\times10^{-11},\qquad
+a_b\le2.085472922428\times10^{-7}
+\]
+를 얻었다. $m=2$의 공통 goal-row weighted norm은 $2232.113973360\,\mathrm K$ 이하다. 표~\ref{tab:neumann}는 같은 유한 온도 분모와 geometry 항을 유지하고 inverse 전달을 유한 다항식으로 바꿀 때의 오차다.\cite{neumann17}
+
+\begin{table}[htbp]\centering\small
+\caption{$m=2$의 온도 도함수 전달 오차 상계.}\label{tab:neumann}
+\begin{tabular}{lll}\toprule
+기준 Jacobian & $\lambda$ 응답 [K] & $b$ 응답 [K]\\\midrule
+$J_F$ & $4.066246749000\times10^{-20}$ & $7.526159651071\times10^{-16}$\\
+$J_y$ & $8.959060026852\times10^{-18}$ & $1.658219981417\times10^{-13}$\\
+\bottomrule\end{tabular}
+\end{table}
+이 상계는 유한 다항식으로 inverse를 대신할 때의 오차다. 표~\ref{tab:responses}의 전체 포함 폭은 기존 source와 carry의 범위를 함께 반영한다. $J_y$ 기준의 식은 Jacobian 차이 $\mathcal L(d)$를 포함하여 $L_Ha$에 $1/2$를 곱하지 않는다.
+
+\section{실행, 독립 검토와 문헌 대응}
+\label{sec:evidence}
+\subsection{실제 실행 근거}
+주 적용 \texttt{run02}는 wall $0.6663\,\mathrm s$, peak RSS $40536\,\mathrm{KiB}$로 종료했다. forcing/feedback 적용은 $0.3080\,\mathrm s$, $26504\,\mathrm{KiB}$이며, finite Neumann postprocess는 약 $0.050\,\mathrm s$, $16000\,\mathrm{KiB}$다. 이 기록은 현재 host에서의 한 번의 실행을 측정한 값이다. source callback, 반응 fit 평가, 비선형 근 풀이, history 재실행은 이번 루프에서 각각 0회다. 실행 명령과 코드ㆍ입출력 SHA-256은 각 \texttt{RUN\_RECORD.json}과 결과 JSON의 \texttt{input\_identities}에 보존했다.\cite{app17,forcing17,neumann17}
+
+첫 적용은 이전 photon field를 \texttt{outgoing}으로 읽어 완전한 결과를 산출하기 전에 중단했다. 원 필드 \texttt{outgoing\_joint}로 연결을 교정한 뒤 \texttt{run02}를 실행했다. 첫 Neumann readout에서는 PHYS16 exact bound와 PHYS17 외향 copy의 작은 경계 차이를 assertion이 발견했다. 두 유효 상계의 max를 유지해 외측 포함을 명시한 뒤 \texttt{neumann02}를 실행했다. 원 실패 로그와 성공 결과는 별도 보존한다. 이 두 교정은 물리 source, tolerance, 계열을 변경하지 않는다.
+
+Wolfram Language $15.0.1$에서 공식 xAct archive를 받아 SHA-256을 확인하고 xTensor $1.3.0$, xPerm $1.2.4$를 불러왔다. Tensor canonicalization은 xPerm의 Wolfram Language group backend를 사용했다. 새 텐서 검산 6개와 scalarㆍ행렬 검산 9묶음의 15개 성분이 모두 정확히 0이다. 여기에는 P2 부호와 Hessian 수축, common adjoint, helium projector와 도함수, P4 온도 미분, 비가환 2-slot photon 일곱 항의 값ㆍ도함수 합, $m=2$ Neumann 항등식이 포함된다. 실제 35-slot 구간 계산은 별도 원자료 적용으로 검토한다.\cite{xact17}
+
+\input{independent_review.tex}
+
+\subsection{원전과 현재 기여의 대응}
+Neumaier의 parameter slope 포함과 Rump의 검증된 전처리 외측 포함은 같은 매개변수 및 inverse 전달을 다루는 기존 기반이다. Margossian--Betancourt의 implicitㆍadjoint differentiation은 원 비특이 Jacobian 아래의 표준 1차 미분 연결을 제공한다. Goldsztejn은 parameter box 전체의 검증된 fixed-point 구성과 centered parameter 전처리를 다룬다. 본 연구는 이 기반을 원 HH source 및 실제 carry에 결합하여 작은 두 경로의 결함을 먼저 추출하고, C$^2$ source-time 도함수와 일곱 photon derivative를 실제 포함한 것이다.\cite{Neumaier1989Sensitivity,Rump1990Sensitivity,Goldsztejn2008Sensitivity,MargossianBetancourt2022Implicit}
+
+Exa 검색 4회에서 요청한 후보 수 합계는 20개이며 SciSpace 검색은 10개 레코드를 반환했다. 새 핵심 원전 4개를 직접 읽고 PHYS16에서 대조한 Rump 2010, Rannacher 2003의 관련 근거를 재사용했다. Neumaier 1989는 저자 스캔의 정리 3.1과 따름정리 4.2를 이미지로 확인했다. Rump 1990의 독립 tolerance 집합에 대한 inner hull 성질은 현재 shared-parameter 집합의 근거에 포함하지 않고 외측 포함의 조건을 사용한다. MB22의 일반적 필요충분조건 표현은 원 $C^2$와 확인된 Jacobian 가역성이라는 충분조건으로 읽는다.\cite{Neumaier1989Sensitivity,Rump1990Sensitivity,MargossianBetancourt2022Implicit,Rump2010Verification,Rannacher2003Adaptive}
+
+이번에 채택하는 기여는 WU088\_HH의 원 정규화ㆍsourceㆍcarry에서 상관 매개변수 응답과 그 부호를 얻은 구성이다. 새 불가능성ㆍ배제 정리를 제안하지 않았으므로 NG1--NG7은 새 no-go 채택 대상으로 적용되지 않는다. 문헌 대응과 독립 검토는 현재 직접 유도 및 포함의 범위에 연결한다.

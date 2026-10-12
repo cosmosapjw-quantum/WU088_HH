@@ -1,0 +1,8 @@
+\subsection{독립 과학 검토와 채택}
+독립 검토자는 후보 계산 모듈과 PHYS14의 구간 helper를 import하지 않고, 자체 \texttt{Fraction} 구간 산술과 24항 Leibniz determinant/Cramer 계산을 작성했다. 최종 실행은 \textbf{29/29 항목을 통과}했다. 원 계약 입력 14개와 주 적용 입력 identity 13개를 대조했고, 검토 기록은 코드·결과·증명 28개에 결박된다. 최종 wall time은 \(0.2612\,\mathrm{s}\), 계산 내부 elapsed time은 \(0.2219\,\mathrm{s}\), peak RSS는 \(27{,}580\,\mathrm{KiB}\)였다.
+
+검토 대상은 (i) \(C^2\) implicit 응답과 원 residual mixed slot의 부호, (ii) He 열원과 density pullback, (iii) 7개 photon sector와 490개 좌표 교차, (iv) 원 \(C,B,q,S\)를 사용하는 상관된 포함, (v) 유한 온도 몫과 공통 adjoint, (vi) Neumann 잔여, (vii) 단조성·유한 변화·level curve·mixed contrast, (viii) 실제 Wolfram+xAct 실행, (ix) 원전 적용 범위였다. 9개 claim bundle은 모두 PASS 또는 PASS\_SCOPED 판정을 받았다.
+
+첫 독립 실행의 3개 실패는 원 exact rational 구간과 이를 바깥 방향으로 256비트에 복사한 구간에 완전 동등성을 요구한 검토 코드의 가정에서 발생했다. 최종 검토는 원 구간 포함과 보수적 상한을 검사한다. 첫 코드·결과·로그는 보존했고, 이 교정 때문에 후보 과학식이나 결과를 변경하지 않았다.
+
+독립 판정은 \texttt{review/INDEPENDENT\_REVIEW.json}, root의 채택 기록은 \texttt{review/DECISION.json}에 있다. 결과 JSON의 원래 \texttt{CANDIDATE\_COMPUTED} 상태는 계산 provenance로 보존한다. 채택 범위는 같은 COMMON, 고정된 admissible \(\alpha\), 원 source-aligned geometric-isotropic \(C^2\) family와 동일한 전역 \((\lambda,b)\in[0,1]^2\)이다. 남은 blocking finding은 없다.

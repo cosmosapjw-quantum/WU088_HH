@@ -1,0 +1,2689 @@
+{
+  "schema_version": 1,
+  "workflow_version": "1.0.0",
+  "task": "research",
+  "unit_id": "HH_PHYS17_DEFECT_PARAMETER_RESPONSE_THEORY_20261013",
+  "objective": "Derive and evaluate the first derivatives of same-COMMON d=g2-gF and DeltaT=T2-TF with respect to the same global lambda and b, separating explicit source forcing from state/opacity feedback.",
+  "scope": "Same fixed admissible alpha and COMMON; global lambda,b in [0,1]^2; inherited source-aligned geometric-isotropic C2 family; first derivatives of d=g2-gF and finite DeltaT=T2-TF.",
+  "status": "complete",
+  "dependencies": [
+    {
+      "id": "D_INPUT_PHYS15_THEORY",
+      "identity": "sha256:60c9d5e52df1fa43e317c2043598e0d44ed89854c79dad4bed474aa4f200ef61;bytes:20761",
+      "description": "Original exact residual, mean Jacobian and finite-temperature convention",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "theory/CORRELATED_ENDPOINT_THEORY_KO.md",
+        "bytes": 20761,
+        "sha256": "60c9d5e52df1fa43e317c2043598e0d44ed89854c79dad4bed474aa4f200ef61"
+      }
+    },
+    {
+      "id": "D_INPUT_SOURCE_ASSUMPTIONS",
+      "identity": "sha256:16e23676dbe6a1c0805728c7e01c22d7e37f97c990e892e7d75e6cd2f3718b41;bytes:9861",
+      "description": "Original FT03/HH source and fhat normalization",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "theory/ASSUMPTIONS_AND_BINDINGS_KO.md",
+        "bytes": 9861,
+        "sha256": "16e23676dbe6a1c0805728c7e01c22d7e37f97c990e892e7d75e6cd2f3718b41"
+      }
+    },
+    {
+      "id": "D_INPUT_FIRST_FULL_UV",
+      "identity": "sha256:c6329fed8c411e1592bd1a0c63ebd9ca6151e81500ed1f46fb6b40f4b7758444;bytes:1120229",
+      "description": "stages[stage=first_half/full]::U,V",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "inputs/phys14/inputs/phys09/PROJECTED_RESULTS.json",
+        "bytes": 1120229,
+        "sha256": "c6329fed8c411e1592bd1a0c63ebd9ca6151e81500ed1f46fb6b40f4b7758444"
+      }
+    },
+    {
+      "id": "D_INPUT_PHOTON_CARRY",
+      "identity": "sha256:5e3dc0b589c5e86672664ea851e7986708e10ed73f6a3db8332b9c8084a897ca;bytes:6463565",
+      "description": "stages[stage=first_half].groups signed incoming/outgoing/absorbed Jets",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "inputs/phys14/inputs/phys11/CARRY_RESULTS.json",
+        "bytes": 6463565,
+        "sha256": "5e3dc0b589c5e86672664ea851e7986708e10ed73f6a3db8332b9c8084a897ca"
+      }
+    },
+    {
+      "id": "D_INPUT_SECOND_HALF_UV",
+      "identity": "sha256:a0faac7d55b425ae85ed8ee15e57d5f3c2687b40896b039fe858dcfdb342e28e;bytes:643946",
+      "description": "gas_response::U,V and actual g2",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "inputs/phys14/results/advance01/ADVANCE_RESULTS.json",
+        "bytes": 643946,
+        "sha256": "a0faac7d55b425ae85ed8ee15e57d5f3c2687b40896b039fe858dcfdb342e28e"
+      }
+    },
+    {
+      "id": "D_INPUT_FULL_SOURCE",
+      "identity": "sha256:cf1b48df2c299187a03ab501b1169e2d559c5959bf50892d7b749c65f81ff64d;bytes:57972",
+      "description": "A_Gg,G_gg,G_lambda,G_b,G_g_lambda,G_g_b",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "inputs/phys14/inputs/ncp07/results/full/SOURCE_BOX.json",
+        "bytes": 57972,
+        "sha256": "cf1b48df2c299187a03ab501b1169e2d559c5959bf50892d7b749c65f81ff64d"
+      }
+    },
+    {
+      "id": "D_INPUT_HALF_SOURCE",
+      "identity": "sha256:36247ef5ac3bce4b114aac41fe5d85c2015488183ba32b77f9051cc7d25b77b4;bytes:57807",
+      "description": "First-half source and same gas/parameter slot mapping",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "inputs/phys14/inputs/ncp07/results/first_half/SOURCE_BOX.json",
+        "bytes": 57807,
+        "sha256": "36247ef5ac3bce4b114aac41fe5d85c2015488183ba32b77f9051cc7d25b77b4"
+      }
+    },
+    {
+      "id": "D_INPUT_FULL_COMPONENTS",
+      "identity": "sha256:29e73ac3518cd4cb5f11ee24c7237a43442d6615a1dba1e710d0206f319ad610;bytes:554961",
+      "description": "nonphoto signed gas Jacobian/Hessian; q supplied by FULL_SOURCE",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "inputs/phys14/inputs/ncp07/results/full/SOURCE_BOX_COMPONENTS.json",
+        "bytes": 554961,
+        "sha256": "29e73ac3518cd4cb5f11ee24c7237a43442d6615a1dba1e710d0206f319ad610"
+      }
+    },
+    {
+      "id": "D_INPUT_HALF_COMPONENTS",
+      "identity": "sha256:4272aa6aa49e836eacfdcccddf30e7b5c77fd2e5d8e1846beb0f16af741cf63c;bytes:554945",
+      "description": "First-half nonphoto signed gas Jacobian/Hessian; q supplied by HALF_SOURCE",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "inputs/phys14/inputs/ncp07/results/first_half/SOURCE_BOX_COMPONENTS.json",
+        "bytes": 554945,
+        "sha256": "4272aa6aa49e836eacfdcccddf30e7b5c77fd2e5d8e1846beb0f16af741cf63c"
+      }
+    },
+    {
+      "id": "D_INPUT_PRECONDITIONER",
+      "identity": "sha256:3cf8c86b445ba2be2889e5effbdaacbcf84d0dcedbabd60763124141dfbc09af;bytes:3918",
+      "description": "same-file fixed C,B,q,S",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "inputs/ncp07_additions/results/full/UNIFORM_ARITHMETIC.json",
+        "bytes": 3918,
+        "sha256": "3cf8c86b445ba2be2889e5effbdaacbcf84d0dcedbabd60763124141dfbc09af"
+      }
+    },
+    {
+      "id": "D_INPUT_EXPORT_MAPPING",
+      "identity": "sha256:d771968e9c12c0cce5a9e3ec5fa7311d0040ac63d1f4f4a6f54f048972f674ae;bytes:24396",
+      "description": "G_g_lambda=Hessian[g][4],G_g_b=Hessian[g][5]",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "inputs/phys14/inputs/ncp07/src/sourcebox.rs",
+        "bytes": 24396,
+        "sha256": "d771968e9c12c0cce5a9e3ec5fa7311d0040ac63d1f4f4a6f54f048972f674ae"
+      }
+    },
+    {
+      "id": "D_INPUT_PHYS16_APPLICATION",
+      "identity": "sha256:725cca8b785343f638ddc69d0d056643086955927f9a0c84cbea3ea46a10d2fc;bytes:463751",
+      "description": "Same-COMMON r,d,PiF and residual sectors",
+      "artifact_identity": {
+        "root": "HH_PHYS16_THEORY_20261013_v1",
+        "path": "checks/application/run01/results/CORRELATED_DEFECT_RESULTS.json",
+        "bytes": 463751,
+        "sha256": "725cca8b785343f638ddc69d0d056643086955927f9a0c84cbea3ea46a10d2fc"
+      }
+    },
+    {
+      "id": "D_INPUT_PHYS16_REMAINDER",
+      "identity": "sha256:6cf01b2c6f69c0ff89ab5f2a3487ea34fbd35da6c0f72b6f4ee09e1d7ad5b4c8;bytes:216859",
+      "description": "Endpoint/mean adjoint closure and signed birth sector bounds",
+      "artifact_identity": {
+        "root": "HH_PHYS16_THEORY_20261013_v1",
+        "path": "checks/endpoint/application01/ENDPOINT_REMAINDER_RESULTS.json",
+        "bytes": 216859,
+        "sha256": "6cf01b2c6f69c0ff89ab5f2a3487ea34fbd35da6c0f72b6f4ee09e1d7ad5b4c8"
+      }
+    },
+    {
+      "id": "D_INPUT_STARTING_DERIVATION",
+      "identity": "sha256:34283485907b58fd8a0c03f9d2cd915645e919a82cf81def3da127984533a7bf;bytes:3984",
+      "description": "P1-P4 exact starting formulae",
+      "artifact_identity": {
+        "root": "HH_PHYS16_THEORY_20261013_v1",
+        "path": "theory/NEXT_PARAMETER_RESPONSE_PROPOSAL_KO.md",
+        "bytes": 3984,
+        "sha256": "34283485907b58fd8a0c03f9d2cd915645e919a82cf81def3da127984533a7bf"
+      }
+    },
+    {
+      "id": "D_CONTRACT",
+      "identity": "sha256:f6bc651dfb129983f72bb6aa89fa850a19213c0963e5575581dd1dd1d4666daf;bytes:9881",
+      "description": "Inherited PHYS16 parameter-response scope and P1-P4 acceptance contract",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "contracts/INHERITED_PARAMETER_RESPONSE_CONTRACT.json",
+        "bytes": 9881,
+        "sha256": "f6bc651dfb129983f72bb6aa89fa850a19213c0963e5575581dd1dd1d4666daf"
+      }
+    },
+    {
+      "id": "D_ENTRY",
+      "identity": "sha256:3917ac92a72fad1c1fefac5c7aeee4a8de263cc3bcd8445c04caaed1df6327f0;bytes:9760",
+      "description": "Actual intake comparison of the 14 contract bindings and inherited source/root history",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "evidence/intake/ENTRY_INPUT_IDENTITIES.json",
+        "bytes": 9760,
+        "sha256": "3917ac92a72fad1c1fefac5c7aeee4a8de263cc3bcd8445c04caaed1df6327f0"
+      }
+    },
+    {
+      "id": "D_PARENT_DECISION",
+      "identity": "sha256:610df271576260d01b473c004824ef7179bce475931cfd50c7e017dadfc0bbd3;bytes:32691",
+      "description": "Inherited PHYS16 PROMOTE_SCOPED",
+      "artifact_identity": {
+        "root": "HH_PHYS16_THEORY_20261013_v1",
+        "path": "review/DECISION.json",
+        "bytes": 32691,
+        "sha256": "610df271576260d01b473c004824ef7179bce475931cfd50c7e017dadfc0bbd3"
+      }
+    },
+    {
+      "id": "D_PARENT_REMOTE",
+      "identity": "sha256:c373f79725be449a0b69b060fe1a929a61ef78e496080165fb753f7cc545f5ae;bytes:1363",
+      "description": "Actually observed PHYS16 commit/PR and Drive/Dropbox metadata; not a PHYS17 backup receipt",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "evidence/intake/PARENT_REMOTE_REFERENCE.json",
+        "bytes": 1363,
+        "sha256": "c373f79725be449a0b69b060fe1a929a61ef78e496080165fb753f7cc545f5ae"
+      }
+    },
+    {
+      "id": "D_THEOREM",
+      "identity": "sha256:f0b6891420784239ef4e87793dde4ca425e52a9b320b0d1f4ce7a07f8c546b9b;bytes:25230",
+      "description": "Seven completed C2 theorems, exact source mapping and finite corollaries",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "theory/PARAMETER_RESPONSE_THEOREM_KO.md",
+        "bytes": 25230,
+        "sha256": "f0b6891420784239ef4e87793dde4ca425e52a9b320b0d1f4ce7a07f8c546b9b"
+      }
+    },
+    {
+      "id": "D_CLAIMS",
+      "identity": "sha256:6a2408f38af3204f5317299fd1824f52312437fb3e41b7051e496cf582ea933b;bytes:4477",
+      "description": "Eight scientific claims with equation and scope mapping",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "theory/PARAMETER_RESPONSE_CLAIMS.json",
+        "bytes": 4477,
+        "sha256": "6a2408f38af3204f5317299fd1824f52312437fb3e41b7051e496cf582ea933b"
+      }
+    },
+    {
+      "id": "D_COROLLARIES",
+      "identity": "sha256:d6f51e60a13d81f6fcd7c4cd59fb6baa3192b82caca872f6da845eee3f9ab646;bytes:3275",
+      "description": "Five exact rational consequence intervals from run02",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "theory/PARAMETER_COROLLARIES.json",
+        "bytes": 3275,
+        "sha256": "d6f51e60a13d81f6fcd7c4cd59fb6baa3192b82caca872f6da845eee3f9ab646"
+      }
+    },
+    {
+      "id": "D_NEXT_PROPOSAL",
+      "identity": "sha256:0f06a2ad47be5752bdf4a31c50490d2691ba94c4bcf50fe7225cf7048d24d100;bytes:8826",
+      "description": "Selected next mixed-response formulae; application not_run",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "theory/NEXT_MIXED_RESPONSE_PROPOSAL_KO.md",
+        "bytes": 8826,
+        "sha256": "0f06a2ad47be5752bdf4a31c50490d2691ba94c4bcf50fe7225cf7048d24d100"
+      }
+    },
+    {
+      "id": "D_MAIN_CODE",
+      "identity": "sha256:449c66f24bf2f59db4e0e02d5b9522ea0b39175bcdc7bac09b4c544869644337;bytes:20859",
+      "description": "Frozen run02 source; shared gas and dual photon derivative graph",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "src/parameter_response_application.py",
+        "bytes": 20859,
+        "sha256": "449c66f24bf2f59db4e0e02d5b9522ea0b39175bcdc7bac09b4c544869644337"
+      }
+    },
+    {
+      "id": "D_FORCING_CODE",
+      "identity": "sha256:c5f1761f2035fe762d7da4665f4794c06cff804985a79822702be3ca0deb79ca;bytes:11584",
+      "description": "Frozen manual photon product rule and explicit/feedback implementation",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "src/forcing_feedback_decomposition.py",
+        "bytes": 11584,
+        "sha256": "c5f1761f2035fe762d7da4665f4794c06cff804985a79822702be3ca0deb79ca"
+      }
+    },
+    {
+      "id": "D_NEUMANN_CODE",
+      "identity": "sha256:abe90ba6cb9350fa8fc77c883afad6aa32d0caff6957f8ddafbaeb0bfea3a60e;bytes:4743",
+      "description": "Frozen finite Neumann derivative error readout",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "src/derivative_neumann_readout.py",
+        "bytes": 4743,
+        "sha256": "abe90ba6cb9350fa8fc77c883afad6aa32d0caff6957f8ddafbaeb0bfea3a60e"
+      }
+    },
+    {
+      "id": "D_REVIEW_CODE_01",
+      "identity": "sha256:30d592d7538f5170fdfd9d449a5a004b19d872c31a8767aca1c593121afdebf9;bytes:23599",
+      "description": "Original exact Fraction reviewer with equality assumption, retained unchanged",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/independent_arithmetic_review.py",
+        "bytes": 23599,
+        "sha256": "30d592d7538f5170fdfd9d449a5a004b19d872c31a8767aca1c593121afdebf9"
+      }
+    },
+    {
+      "id": "D_REVIEW_CODE_02",
+      "identity": "sha256:c0e79879cabdd30a1e7c13f84cd4f2b24aecb44e3b78d52c718d5cad5294348f;bytes:24332",
+      "description": "Corrected independent Fraction/Cramer reviewer; no candidate/helper import",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/independent_arithmetic_review_v2.py",
+        "bytes": 24332,
+        "sha256": "c0e79879cabdd30a1e7c13f84cd4f2b24aecb44e3b78d52c718d5cad5294348f"
+      }
+    },
+    {
+      "id": "D_REVIEW",
+      "identity": "sha256:6a9218a5aa13458813301614293e8c5a47b8619fc19c7cd1b6ddc2a7df08d17e;bytes:25912",
+      "description": "Independent scoped scientific adoption and 29/29 final arithmetic checks",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/INDEPENDENT_REVIEW.json",
+        "bytes": 25912,
+        "sha256": "6a9218a5aa13458813301614293e8c5a47b8619fc19c7cd1b6ddc2a7df08d17e"
+      }
+    },
+    {
+      "id": "D_REVIEW_HUMAN",
+      "identity": "sha256:ba58c8c1f37a841d4fbb0f956541ac9c6015e9aaf17ee29e04db0201905aa842;bytes:9614",
+      "description": "Readable independent science review and actual failure correction",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/INDEPENDENT_REVIEW_KO.md",
+        "bytes": 9614,
+        "sha256": "ba58c8c1f37a841d4fbb0f956541ac9c6015e9aaf17ee29e04db0201905aa842"
+      }
+    },
+    {
+      "id": "D_SOURCE_REVIEW",
+      "identity": "sha256:376f253dc9a910fe734d02dc5cdd0c5c818878162a8bcb3337ba1360a46986fd;bytes:10663",
+      "description": "Direct original Rust source, He projector, density, sign and normalization review",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/SOURCE_AND_DERIVATION_REVIEW_KO.md",
+        "bytes": 10663,
+        "sha256": "376f253dc9a910fe734d02dc5cdd0c5c818878162a8bcb3337ba1360a46986fd"
+      }
+    },
+    {
+      "id": "D_SOURCE_IDENTITIES",
+      "identity": "sha256:b7d4dc607331703dd43179117887fd108f1a97d0f00ed73d1e76f0bb1197079c;bytes:1008",
+      "description": "Four actually hashed original source/helper identities",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/ORIGINAL_SOURCE_IDENTITIES.json",
+        "bytes": 1008,
+        "sha256": "b7d4dc607331703dd43179117887fd108f1a97d0f00ed73d1e76f0bb1197079c"
+      }
+    },
+    {
+      "id": "D_FORMULA_REVIEW",
+      "identity": "sha256:598f527f1642cfe86b812c233b4161b698da26901759f96d67c1ce422647c244;bytes:5301",
+      "description": "Independent starting P1-P4 derivation",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/INITIAL_FORMULA_REVIEW_KO.md",
+        "bytes": 5301,
+        "sha256": "598f527f1642cfe86b812c233b4161b698da26901759f96d67c1ce422647c244"
+      }
+    },
+    {
+      "id": "D_DECISION",
+      "identity": "sha256:c6fca7e8dd4cbd89887b3cadd3eba50747b7640015e0f90c8c41b5d6e66a0098;bytes:19276",
+      "description": "Root detached PROMOTE_SCOPED adoption; original candidate result status preserved",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/DECISION.json",
+        "bytes": 19276,
+        "sha256": "c6fca7e8dd4cbd89887b3cadd3eba50747b7640015e0f90c8c41b5d6e66a0098"
+      }
+    },
+    {
+      "id": "D_LIT_REVIEW",
+      "identity": "sha256:5527f667cbcadd39966a8f251153575476cdf2f632db0c63a73d216030f4458d;bytes:8971",
+      "description": "Four new primary references and two reused prior references, source-condition comparison",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "literature/LITERATURE_REVIEW_KO.md",
+        "bytes": 8971,
+        "sha256": "5527f667cbcadd39966a8f251153575476cdf2f632db0c63a73d216030f4458d"
+      }
+    },
+    {
+      "id": "D_LIT_BIB",
+      "identity": "sha256:a7183d1c10fff64835aeca4118b049125c3f23833db242d066a8cbef2de08f9f;bytes:2160",
+      "description": "Primary bibliography with DOI/URL",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "literature/references.bib",
+        "bytes": 2160,
+        "sha256": "a7183d1c10fff64835aeca4118b049125c3f23833db242d066a8cbef2de08f9f"
+      }
+    },
+    {
+      "id": "D_LIT_SEARCH",
+      "identity": "sha256:b65665953abb2f8506095a9fc367039404befbc9eccfc8d0735cfdfa5bb1ae47;bytes:4657",
+      "description": "Actual SciSpace 1 search/10 records, Exa 4 searches/20 requested and 4 fetches",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "literature/SEARCH_PROVENANCE.json",
+        "bytes": 4657,
+        "sha256": "b65665953abb2f8506095a9fc367039404befbc9eccfc8d0735cfdfa5bb1ae47"
+      }
+    },
+    {
+      "id": "D_WL_CODE",
+      "identity": "sha256:b33af2650c0a3e229166f5b2a0ec7c1a86beb8c47cb19df563c9d3cbc2acbb72;bytes:5760",
+      "description": "Actual Wolfram+xAct symbolic code",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/wolfram/parameter_response_checks.wl",
+        "bytes": 5760,
+        "sha256": "b33af2650c0a3e229166f5b2a0ec7c1a86beb8c47cb19df563c9d3cbc2acbb72"
+      }
+    },
+    {
+      "id": "D_WL_PRE",
+      "identity": "sha256:83033538fa9b2b69adfe2de9546669463f3f763047394d32ec4d48127cfe7a8c;bytes:760",
+      "description": "Actual Wolfram evaluator pre-run command and 60-second constraint",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/wolfram/PRE_RUN.json",
+        "bytes": 760,
+        "sha256": "83033538fa9b2b69adfe2de9546669463f3f763047394d32ec4d48127cfe7a8c"
+      }
+    },
+    {
+      "id": "D_WL_RAW",
+      "identity": "sha256:7c8b1df7efae7d60dc943da44dceddeda85dbfbe36afca9635bf840926bc63f9;bytes:4018",
+      "description": "Completed actual Wolfram/xAct run: 6 tensor and 15 scalar values all exact zero",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/wolfram/WOLFRAM_XACT_EXECUTION.json",
+        "bytes": 4018,
+        "sha256": "7c8b1df7efae7d60dc943da44dceddeda85dbfbe36afca9635bf840926bc63f9"
+      }
+    },
+    {
+      "id": "D_WL_SUMMARY",
+      "identity": "sha256:9ec99c0ff54f0b0e5d38b28e5d1548cde5411c09639bf0aee5f8de50f15d114b;bytes:994",
+      "description": "6 tensor checks, 9 scalar bundles and 15 scalar values, xPerm pure WL backend",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/wolfram/SUMMARY.json",
+        "bytes": 994,
+        "sha256": "9ec99c0ff54f0b0e5d38b28e5d1548cde5411c09639bf0aee5f8de50f15d114b"
+      }
+    },
+    {
+      "id": "D_WORKFLOW",
+      "identity": "sha256:ab1c30dd44ec7ef850f2eb088ced2713ff0019b133b5eb32221c3f04c2f28a76;bytes:1671",
+      "description": "Captured validator/workflow/theory loop verified identical to the currently installed skill",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "state/WORKFLOW_IDENTITY.json",
+        "bytes": 1671,
+        "sha256": "ab1c30dd44ec7ef850f2eb088ced2713ff0019b133b5eb32221c3f04c2f28a76"
+      }
+    },
+    {
+      "id": "D_ORIGINAL_SOURCE_1",
+      "identity": "sha256:886580a810b8ec29c8f0b6199c0e35d82fde1f46d984a5f8f1da304326a42a42;bytes:6248",
+      "description": "Original source used in the direct source/derivation review",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "inputs/phys14/inputs/ncp07/candidate/src/ft03_interval.rs",
+        "bytes": 6248,
+        "sha256": "886580a810b8ec29c8f0b6199c0e35d82fde1f46d984a5f8f1da304326a42a42"
+      }
+    },
+    {
+      "id": "D_ORIGINAL_SOURCE_2",
+      "identity": "sha256:0fa10fdea11cb24aa1a191a2ea81cf4c8442299fde7278a191553b42a26585d3;bytes:8969",
+      "description": "Original source used in the direct source/derivation review",
+      "artifact_identity": {
+        "root": "HH_PHYS16_THEORY_20261013_v1",
+        "path": "inputs/ncp07_proofsrc/phys04_mixed.rs",
+        "bytes": 8969,
+        "sha256": "0fa10fdea11cb24aa1a191a2ea81cf4c8442299fde7278a191553b42a26585d3"
+      }
+    },
+    {
+      "id": "D_ORIGINAL_SOURCE_3",
+      "identity": "sha256:d771968e9c12c0cce5a9e3ec5fa7311d0040ac63d1f4f4a6f54f048972f674ae;bytes:24396",
+      "description": "Original source used in the direct source/derivation review",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "inputs/phys14/inputs/ncp07/src/sourcebox.rs",
+        "bytes": 24396,
+        "sha256": "d771968e9c12c0cce5a9e3ec5fa7311d0040ac63d1f4f4a6f54f048972f674ae"
+      }
+    },
+    {
+      "id": "D_ORIGINAL_SOURCE_4",
+      "identity": "sha256:d20d9797278b8da71d38a3db229325dc7792d3991863f07bcdb7f72f2ba5567a;bytes:25348",
+      "description": "Original source used in the direct source/derivation review",
+      "artifact_identity": {
+        "root": "HH_PHYS15_THEORY_20261012_v1",
+        "path": "inputs/phys14/src/phys14_advance.py",
+        "bytes": 25348,
+        "sha256": "d20d9797278b8da71d38a3db229325dc7792d3991863f07bcdb7f72f2ba5567a"
+      }
+    },
+    {
+      "id": "D_MAIN01_CODE",
+      "identity": "sha256:b66f9ec44722e417f6626b9b4758e8e710b713919a746f669b31ee594c81d29d;bytes:20847",
+      "description": "Preserved exact source executed in the first failed attempt",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/run01/SOURCE.py",
+        "bytes": 20847,
+        "sha256": "b66f9ec44722e417f6626b9b4758e8e710b713919a746f669b31ee594c81d29d"
+      }
+    },
+    {
+      "id": "D_MAIN01_DIAG",
+      "identity": "sha256:6e32019fe942b2678a435b7a0a8bea3595bcfe7d3e93e25c2efffea3ac858121;bytes:376",
+      "description": "Observed first-attempt failure and implemented correction",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/run01/DIAGNOSIS.json",
+        "bytes": 376,
+        "sha256": "6e32019fe942b2678a435b7a0a8bea3595bcfe7d3e93e25c2efffea3ac858121"
+      }
+    },
+    {
+      "id": "D_NEUMANN01_CODE",
+      "identity": "sha256:568bfa70c7ed99b69dfb46fdfab933a0f36c8c7f012bc548664faef6d783ef94;bytes:4653",
+      "description": "Preserved exact source executed in the first failed attempt",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/neumann01/SOURCE.py",
+        "bytes": 4653,
+        "sha256": "568bfa70c7ed99b69dfb46fdfab933a0f36c8c7f012bc548664faef6d783ef94"
+      }
+    },
+    {
+      "id": "D_NEUMANN01_DIAG",
+      "identity": "sha256:f73ee537a9a0bcf90142ac355ec1fdf7cee050eb98e29596938c2064051eb906;bytes:526",
+      "description": "Observed first-attempt failure and implemented correction",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/neumann01/DIAGNOSIS.json",
+        "bytes": 526,
+        "sha256": "f73ee537a9a0bcf90142ac355ec1fdf7cee050eb98e29596938c2064051eb906"
+      }
+    },
+    {
+      "id": "D_MAIN01_PRE",
+      "identity": "sha256:27e356053b8a3fee003779758e1abaae7091bf58d5c157d795f24433b5fac453;bytes:1452",
+      "description": "Actual recorded pre-run command and source identity",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/run01/PRE_RUN.json",
+        "bytes": 1452,
+        "sha256": "27e356053b8a3fee003779758e1abaae7091bf58d5c157d795f24433b5fac453"
+      }
+    },
+    {
+      "id": "D_MAIN01_RUN",
+      "identity": "sha256:e95ab03cf0b4335234c4f7429637fb851f5a93b89dc142ae2752df48643a8f20;bytes:1587",
+      "description": "Actual process completion, command, exit code and measured resources",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/run01/RUN_RECORD.json",
+        "bytes": 1587,
+        "sha256": "e95ab03cf0b4335234c4f7429637fb851f5a93b89dc142ae2752df48643a8f20"
+      }
+    },
+    {
+      "id": "D_MAIN02_PRE",
+      "identity": "sha256:bca021b11cc08b2e018ab74644c78f304adfb780db1e9203235160547c6f90f0;bytes:1439",
+      "description": "Actual recorded pre-run command and source identity",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/run02/PRE_RUN.json",
+        "bytes": 1439,
+        "sha256": "bca021b11cc08b2e018ab74644c78f304adfb780db1e9203235160547c6f90f0"
+      }
+    },
+    {
+      "id": "D_MAIN02_RUN",
+      "identity": "sha256:f03c2d4df5018c0a060528a5f5377a94b7c9db78d81bdcf49bb387c1c39d9a42;bytes:4947",
+      "description": "Actual process completion, command, exit code and measured resources",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/run02/RUN_RECORD.json",
+        "bytes": 4947,
+        "sha256": "f03c2d4df5018c0a060528a5f5377a94b7c9db78d81bdcf49bb387c1c39d9a42"
+      }
+    },
+    {
+      "id": "D_MAIN02_RESULT",
+      "identity": "sha256:fd4fc0fe6bcf035496270bb92f0c56c44ca43d16694cb40296087569a305e7c0;bytes:626092",
+      "description": "Unchanged exact output of MAIN02",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/run02/results/PARAMETER_RESPONSE_RESULTS.json",
+        "bytes": 626092,
+        "sha256": "fd4fc0fe6bcf035496270bb92f0c56c44ca43d16694cb40296087569a305e7c0"
+      }
+    },
+    {
+      "id": "D_FORCING01_PRE",
+      "identity": "sha256:8f82b2fd301ada1f5ac9706b766b02615dfbf5cc03878d67218fe5c8f285c0b7;bytes:1504",
+      "description": "Actual recorded pre-run command and source identity",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/forcing01/PRE_RUN.json",
+        "bytes": 1504,
+        "sha256": "8f82b2fd301ada1f5ac9706b766b02615dfbf5cc03878d67218fe5c8f285c0b7"
+      }
+    },
+    {
+      "id": "D_FORCING01_RUN",
+      "identity": "sha256:143ac35949265a10ce4abaac4cc59fa145f90b22f5753e91d637160f457b8657;bytes:2122",
+      "description": "Actual process completion, command, exit code and measured resources",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/forcing01/RUN_RECORD.json",
+        "bytes": 2122,
+        "sha256": "143ac35949265a10ce4abaac4cc59fa145f90b22f5753e91d637160f457b8657"
+      }
+    },
+    {
+      "id": "D_FORCING01_RESULT",
+      "identity": "sha256:1eef9f7011f5897777075796393f6f911b34f7b13c0ac8345c9966e71b257a90;bytes:416851",
+      "description": "Unchanged exact output of FORCING01",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/forcing01/results/FORCING_FEEDBACK_RESULTS.json",
+        "bytes": 416851,
+        "sha256": "1eef9f7011f5897777075796393f6f911b34f7b13c0ac8345c9966e71b257a90"
+      }
+    },
+    {
+      "id": "D_NEUMANN01_PRE",
+      "identity": "sha256:60a32a63103228ae2d3dc5112a82f4df5c7d4b07c16b986dffa9cf643b4ac55c;bytes:1464",
+      "description": "Actual recorded pre-run command and source identity",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/neumann01/PRE_RUN.json",
+        "bytes": 1464,
+        "sha256": "60a32a63103228ae2d3dc5112a82f4df5c7d4b07c16b986dffa9cf643b4ac55c"
+      }
+    },
+    {
+      "id": "D_NEUMANN01_RUN",
+      "identity": "sha256:de8c98fc8a3f9e94c1dbe48c8a3ea157b3ee350eabbb5eb2f2eeb7fa9f5b6440;bytes:1596",
+      "description": "Actual process completion, command, exit code and measured resources",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/neumann01/RUN_RECORD.json",
+        "bytes": 1596,
+        "sha256": "de8c98fc8a3f9e94c1dbe48c8a3ea157b3ee350eabbb5eb2f2eeb7fa9f5b6440"
+      }
+    },
+    {
+      "id": "D_NEUMANN02_PRE",
+      "identity": "sha256:cda86e97ae0eb997122085f5085d0450798623ce9848c50a090ec1b18b79f226;bytes:1506",
+      "description": "Actual recorded pre-run command and source identity",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/neumann02/PRE_RUN.json",
+        "bytes": 1506,
+        "sha256": "cda86e97ae0eb997122085f5085d0450798623ce9848c50a090ec1b18b79f226"
+      }
+    },
+    {
+      "id": "D_NEUMANN02_RUN",
+      "identity": "sha256:f8df46110804e612b35249a1254509b5103132def03450d818c48727105f1ff2;bytes:2118",
+      "description": "Actual process completion, command, exit code and measured resources",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/neumann02/RUN_RECORD.json",
+        "bytes": 2118,
+        "sha256": "f8df46110804e612b35249a1254509b5103132def03450d818c48727105f1ff2"
+      }
+    },
+    {
+      "id": "D_NEUMANN02_RESULT",
+      "identity": "sha256:c22604e4c78d96072e536ccf71b7d22c1079bb5776eac0c8134acf223a5b8be6;bytes:22318",
+      "description": "Unchanged exact output of NEUMANN02",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "checks/application/neumann02/results/DERIVATIVE_NEUMANN_RESULTS.json",
+        "bytes": 22318,
+        "sha256": "c22604e4c78d96072e536ccf71b7d22c1079bb5776eac0c8134acf223a5b8be6"
+      }
+    },
+    {
+      "id": "D_REVIEW01_PRE",
+      "identity": "sha256:0006f20197d57358e7f81c21ab972f6bfc9bd411ac1c40774b3a8a0a517517f1;bytes:774",
+      "description": "Actual recorded pre-run command and source identity",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/INDEPENDENT_REVIEW_PRE_RUN.json",
+        "bytes": 774,
+        "sha256": "0006f20197d57358e7f81c21ab972f6bfc9bd411ac1c40774b3a8a0a517517f1"
+      }
+    },
+    {
+      "id": "D_REVIEW01_RUN",
+      "identity": "sha256:9acd573246f53dabd85b09506247388b4b45a6c998a4326dd87c46a340d81edd;bytes:1093",
+      "description": "Actual process completion, command, exit code and measured resources",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/INDEPENDENT_REVIEW_RUN.json",
+        "bytes": 1093,
+        "sha256": "9acd573246f53dabd85b09506247388b4b45a6c998a4326dd87c46a340d81edd"
+      }
+    },
+    {
+      "id": "D_REVIEW01_RESULT",
+      "identity": "sha256:2c7b5770e6ee49aa3d8584b3686b5b053bfb992af615d60bbe1f68d527440044;bytes:11319",
+      "description": "Unchanged exact output of REVIEW01",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/arithmetic01/INDEPENDENT_ARITHMETIC_RESULTS.json",
+        "bytes": 11319,
+        "sha256": "2c7b5770e6ee49aa3d8584b3686b5b053bfb992af615d60bbe1f68d527440044"
+      }
+    },
+    {
+      "id": "D_REVIEW02_PRE",
+      "identity": "sha256:bb86998c66e7583d9ec6282aa9b715fc3f56eb5a0a75dfe7d2ac195ab538bd8c;bytes:973",
+      "description": "Actual recorded pre-run command and source identity",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/INDEPENDENT_REVIEW_PRE_RUN_02.json",
+        "bytes": 973,
+        "sha256": "bb86998c66e7583d9ec6282aa9b715fc3f56eb5a0a75dfe7d2ac195ab538bd8c"
+      }
+    },
+    {
+      "id": "D_REVIEW02_RUN",
+      "identity": "sha256:dc5b7422e1e2440413169178a3aa7ac73f2ab1ef53a46bf3b17289fe081e6d5c;bytes:1094",
+      "description": "Actual process completion, command, exit code and measured resources",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/INDEPENDENT_REVIEW_RUN_02.json",
+        "bytes": 1094,
+        "sha256": "dc5b7422e1e2440413169178a3aa7ac73f2ab1ef53a46bf3b17289fe081e6d5c"
+      }
+    },
+    {
+      "id": "D_REVIEW02_RESULT",
+      "identity": "sha256:dfed22bcda2e45a4ccd7861b7454ea7535751fb75d1d1e32be2f61d72a66f6c2;bytes:12024",
+      "description": "Unchanged exact output of REVIEW02",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "review/arithmetic02/INDEPENDENT_ARITHMETIC_RESULTS.json",
+        "bytes": 12024,
+        "sha256": "dfed22bcda2e45a4ccd7861b7454ea7535751fb75d1d1e32be2f61d72a66f6c2"
+      }
+    },
+    {
+      "id": "D_NEXT_DAG_ROOT",
+      "identity": "sha256:4b7b80b55a3bbf5dee4501513405664d184c6456df4d82bd4b8fe40a83cebb03;bytes:27439",
+      "description": "Next research DAG: mixed response selected, no heavy launch",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "NEXT_DAG.json",
+        "bytes": 27439,
+        "sha256": "4b7b80b55a3bbf5dee4501513405664d184c6456df4d82bd4b8fe40a83cebb03"
+      }
+    },
+    {
+      "id": "D_NEXT_CONTRACT",
+      "identity": "sha256:fee865c96d04be41e5597f53fb417118a780cb8a1bb56bb88bb55f7f03966914;bytes:17828",
+      "description": "Successor mixed-response contract, actual application not_run",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "contracts/MIXED_RESPONSE_CONTRACT.json",
+        "bytes": 17828,
+        "sha256": "fee865c96d04be41e5597f53fb417118a780cb8a1bb56bb88bb55f7f03966914"
+      }
+    },
+    {
+      "id": "D_README_KO",
+      "identity": "sha256:84bc801837abe1b3e3153fbac3a9e0eab75d5c08be51679098a04f0e154d27d1;bytes:4015",
+      "description": "Korean current result entry point",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "README_KO.md",
+        "bytes": 4015,
+        "sha256": "84bc801837abe1b3e3153fbac3a9e0eab75d5c08be51679098a04f0e154d27d1"
+      }
+    },
+    {
+      "id": "D_HANDOFF_KO",
+      "identity": "sha256:247020fc362735ff3e5a4add636e47974b2bb4ec023641569a99aa6710eb46ea;bytes:6545",
+      "description": "Current restart and successor handoff",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "HANDOFF_KO.md",
+        "bytes": 6545,
+        "sha256": "247020fc362735ff3e5a4add636e47974b2bb4ec023641569a99aa6710eb46ea"
+      }
+    },
+    {
+      "id": "D_DEPENDENCIES",
+      "identity": "sha256:80a140aa3b798860c544ac2fca8010708f7ba2d38a135120f09c612724728f5e;bytes:18492",
+      "description": "Declared dependency and artifact bindings",
+      "artifact_identity": {
+        "root": "HH_PHYS17_THEORY_20261013_v1",
+        "path": "DEPENDENCIES.json",
+        "bytes": 18492,
+        "sha256": "80a140aa3b798860c544ac2fca8010708f7ba2d38a135120f09c612724728f5e"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E_INPUT_PHYS15_THEORY",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/theory/CORRELATED_ENDPOINT_THEORY_KO.md",
+      "scope": "Original exact residual, mean Jacobian and finite-temperature convention",
+      "dependency_ids": [
+        "D_INPUT_PHYS15_THEORY"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_SOURCE_ASSUMPTIONS",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/theory/ASSUMPTIONS_AND_BINDINGS_KO.md",
+      "scope": "Original FT03/HH source and fhat normalization",
+      "dependency_ids": [
+        "D_INPUT_SOURCE_ASSUMPTIONS"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_FIRST_FULL_UV",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/inputs/phys14/inputs/phys09/PROJECTED_RESULTS.json",
+      "scope": "stages[stage=first_half/full]::U,V",
+      "dependency_ids": [
+        "D_INPUT_FIRST_FULL_UV"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_PHOTON_CARRY",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/inputs/phys14/inputs/phys11/CARRY_RESULTS.json",
+      "scope": "stages[stage=first_half].groups signed incoming/outgoing/absorbed Jets",
+      "dependency_ids": [
+        "D_INPUT_PHOTON_CARRY"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_SECOND_HALF_UV",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/inputs/phys14/results/advance01/ADVANCE_RESULTS.json",
+      "scope": "gas_response::U,V and actual g2",
+      "dependency_ids": [
+        "D_INPUT_SECOND_HALF_UV"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_FULL_SOURCE",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/inputs/phys14/inputs/ncp07/results/full/SOURCE_BOX.json",
+      "scope": "A_Gg,G_gg,G_lambda,G_b,G_g_lambda,G_g_b",
+      "dependency_ids": [
+        "D_INPUT_FULL_SOURCE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_HALF_SOURCE",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/inputs/phys14/inputs/ncp07/results/first_half/SOURCE_BOX.json",
+      "scope": "First-half source and same gas/parameter slot mapping",
+      "dependency_ids": [
+        "D_INPUT_HALF_SOURCE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_FULL_COMPONENTS",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/inputs/phys14/inputs/ncp07/results/full/SOURCE_BOX_COMPONENTS.json",
+      "scope": "nonphoto signed gas Jacobian/Hessian; q supplied by FULL_SOURCE",
+      "dependency_ids": [
+        "D_INPUT_FULL_COMPONENTS"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_HALF_COMPONENTS",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/inputs/phys14/inputs/ncp07/results/first_half/SOURCE_BOX_COMPONENTS.json",
+      "scope": "First-half nonphoto signed gas Jacobian/Hessian; q supplied by HALF_SOURCE",
+      "dependency_ids": [
+        "D_INPUT_HALF_COMPONENTS"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_PRECONDITIONER",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/inputs/ncp07_additions/results/full/UNIFORM_ARITHMETIC.json",
+      "scope": "same-file fixed C,B,q,S",
+      "dependency_ids": [
+        "D_INPUT_PRECONDITIONER"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_EXPORT_MAPPING",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/inputs/phys14/inputs/ncp07/src/sourcebox.rs",
+      "scope": "G_g_lambda=Hessian[g][4],G_g_b=Hessian[g][5]",
+      "dependency_ids": [
+        "D_INPUT_EXPORT_MAPPING"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_PHYS16_APPLICATION",
+      "kind": "source",
+      "locator": "../HH_PHYS16_THEORY_20261013_v1/checks/application/run01/results/CORRELATED_DEFECT_RESULTS.json",
+      "scope": "Same-COMMON r,d,PiF and residual sectors",
+      "dependency_ids": [
+        "D_INPUT_PHYS16_APPLICATION"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_PHYS16_REMAINDER",
+      "kind": "source",
+      "locator": "../HH_PHYS16_THEORY_20261013_v1/checks/endpoint/application01/ENDPOINT_REMAINDER_RESULTS.json",
+      "scope": "Endpoint/mean adjoint closure and signed birth sector bounds",
+      "dependency_ids": [
+        "D_INPUT_PHYS16_REMAINDER"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_INPUT_STARTING_DERIVATION",
+      "kind": "source",
+      "locator": "../HH_PHYS16_THEORY_20261013_v1/theory/NEXT_PARAMETER_RESPONSE_PROPOSAL_KO.md",
+      "scope": "P1-P4 exact starting formulae",
+      "dependency_ids": [
+        "D_INPUT_STARTING_DERIVATION"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_CONTRACT",
+      "kind": "resource",
+      "locator": "contracts/INHERITED_PARAMETER_RESPONSE_CONTRACT.json",
+      "scope": "Inherited PHYS16 parameter-response scope and P1-P4 acceptance contract",
+      "dependency_ids": [
+        "D_CONTRACT",
+        "D_INPUT_PHYS15_THEORY",
+        "D_INPUT_SOURCE_ASSUMPTIONS",
+        "D_INPUT_FIRST_FULL_UV",
+        "D_INPUT_PHOTON_CARRY",
+        "D_INPUT_SECOND_HALF_UV",
+        "D_INPUT_FULL_SOURCE",
+        "D_INPUT_HALF_SOURCE",
+        "D_INPUT_FULL_COMPONENTS",
+        "D_INPUT_HALF_COMPONENTS",
+        "D_INPUT_PRECONDITIONER",
+        "D_INPUT_EXPORT_MAPPING",
+        "D_INPUT_PHYS16_APPLICATION",
+        "D_INPUT_PHYS16_REMAINDER",
+        "D_INPUT_STARTING_DERIVATION"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_ENTRY",
+      "kind": "review",
+      "locator": "evidence/intake/ENTRY_INPUT_IDENTITIES.json",
+      "scope": "Actual intake comparison of the 14 contract bindings and inherited source/root history",
+      "dependency_ids": [
+        "D_ENTRY",
+        "D_INPUT_PHYS15_THEORY",
+        "D_INPUT_SOURCE_ASSUMPTIONS",
+        "D_INPUT_FIRST_FULL_UV",
+        "D_INPUT_PHOTON_CARRY",
+        "D_INPUT_SECOND_HALF_UV",
+        "D_INPUT_FULL_SOURCE",
+        "D_INPUT_HALF_SOURCE",
+        "D_INPUT_FULL_COMPONENTS",
+        "D_INPUT_HALF_COMPONENTS",
+        "D_INPUT_PRECONDITIONER",
+        "D_INPUT_EXPORT_MAPPING",
+        "D_INPUT_PHYS16_APPLICATION",
+        "D_INPUT_PHYS16_REMAINDER",
+        "D_INPUT_STARTING_DERIVATION"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_PARENT_DECISION",
+      "kind": "decision",
+      "locator": "../HH_PHYS16_THEORY_20261013_v1/review/DECISION.json",
+      "scope": "Inherited PHYS16 PROMOTE_SCOPED",
+      "dependency_ids": [
+        "D_PARENT_DECISION"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_PARENT_REMOTE",
+      "kind": "storage",
+      "locator": "evidence/intake/PARENT_REMOTE_REFERENCE.json",
+      "scope": "Actually observed PHYS16 commit/PR and Drive/Dropbox metadata; not a PHYS17 backup receipt",
+      "dependency_ids": [
+        "D_PARENT_REMOTE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_THEOREM",
+      "kind": "derivation",
+      "locator": "theory/PARAMETER_RESPONSE_THEOREM_KO.md",
+      "scope": "Seven completed C2 theorems, exact source mapping and finite corollaries",
+      "dependency_ids": [
+        "D_THEOREM"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_CLAIMS",
+      "kind": "derivation",
+      "locator": "theory/PARAMETER_RESPONSE_CLAIMS.json",
+      "scope": "Eight scientific claims with equation and scope mapping",
+      "dependency_ids": [
+        "D_CLAIMS"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_COROLLARIES",
+      "kind": "calculation",
+      "locator": "theory/PARAMETER_COROLLARIES.json",
+      "scope": "Five exact rational consequence intervals from run02",
+      "dependency_ids": [
+        "D_COROLLARIES"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_NEXT_PROPOSAL",
+      "kind": "derivation",
+      "locator": "theory/NEXT_MIXED_RESPONSE_PROPOSAL_KO.md",
+      "scope": "Selected next mixed-response formulae; application not_run",
+      "dependency_ids": [
+        "D_NEXT_PROPOSAL"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_MAIN_CODE",
+      "kind": "implementation",
+      "locator": "src/parameter_response_application.py",
+      "scope": "Frozen run02 source; shared gas and dual photon derivative graph",
+      "dependency_ids": [
+        "D_MAIN_CODE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_FORCING_CODE",
+      "kind": "implementation",
+      "locator": "src/forcing_feedback_decomposition.py",
+      "scope": "Frozen manual photon product rule and explicit/feedback implementation",
+      "dependency_ids": [
+        "D_FORCING_CODE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_NEUMANN_CODE",
+      "kind": "implementation",
+      "locator": "src/derivative_neumann_readout.py",
+      "scope": "Frozen finite Neumann derivative error readout",
+      "dependency_ids": [
+        "D_NEUMANN_CODE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_REVIEW_CODE_01",
+      "kind": "implementation",
+      "locator": "review/independent_arithmetic_review.py",
+      "scope": "Original exact Fraction reviewer with equality assumption, retained unchanged",
+      "dependency_ids": [
+        "D_REVIEW_CODE_01"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_REVIEW_CODE_02",
+      "kind": "implementation",
+      "locator": "review/independent_arithmetic_review_v2.py",
+      "scope": "Corrected independent Fraction/Cramer reviewer; no candidate/helper import",
+      "dependency_ids": [
+        "D_REVIEW_CODE_02"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_REVIEW",
+      "kind": "review",
+      "locator": "review/INDEPENDENT_REVIEW.json",
+      "scope": "Independent scoped scientific adoption and 29/29 final arithmetic checks",
+      "dependency_ids": [
+        "D_REVIEW"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_REVIEW_HUMAN",
+      "kind": "review",
+      "locator": "review/INDEPENDENT_REVIEW_KO.md",
+      "scope": "Readable independent science review and actual failure correction",
+      "dependency_ids": [
+        "D_REVIEW_HUMAN"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_SOURCE_REVIEW",
+      "kind": "review",
+      "locator": "review/SOURCE_AND_DERIVATION_REVIEW_KO.md",
+      "scope": "Direct original Rust source, He projector, density, sign and normalization review",
+      "dependency_ids": [
+        "D_SOURCE_REVIEW"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_SOURCE_IDENTITIES",
+      "kind": "source",
+      "locator": "review/ORIGINAL_SOURCE_IDENTITIES.json",
+      "scope": "Four actually hashed original source/helper identities",
+      "dependency_ids": [
+        "D_SOURCE_IDENTITIES"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_FORMULA_REVIEW",
+      "kind": "derivation",
+      "locator": "review/INITIAL_FORMULA_REVIEW_KO.md",
+      "scope": "Independent starting P1-P4 derivation",
+      "dependency_ids": [
+        "D_FORMULA_REVIEW"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_DECISION",
+      "kind": "decision",
+      "locator": "review/DECISION.json",
+      "scope": "Root detached PROMOTE_SCOPED adoption; original candidate result status preserved",
+      "dependency_ids": [
+        "D_DECISION"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_LIT_REVIEW",
+      "kind": "source",
+      "locator": "literature/LITERATURE_REVIEW_KO.md",
+      "scope": "Four new primary references and two reused prior references, source-condition comparison",
+      "dependency_ids": [
+        "D_LIT_REVIEW"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_LIT_BIB",
+      "kind": "source",
+      "locator": "literature/references.bib",
+      "scope": "Primary bibliography with DOI/URL",
+      "dependency_ids": [
+        "D_LIT_BIB"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_LIT_SEARCH",
+      "kind": "source",
+      "locator": "literature/SEARCH_PROVENANCE.json",
+      "scope": "Actual SciSpace 1 search/10 records, Exa 4 searches/20 requested and 4 fetches",
+      "dependency_ids": [
+        "D_LIT_SEARCH"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_WL_CODE",
+      "kind": "implementation",
+      "locator": "checks/wolfram/parameter_response_checks.wl",
+      "scope": "Actual Wolfram+xAct symbolic code",
+      "dependency_ids": [
+        "D_WL_CODE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_WL_PRE",
+      "kind": "resource",
+      "locator": "checks/wolfram/PRE_RUN.json",
+      "scope": "Actual Wolfram evaluator pre-run command and 60-second constraint",
+      "dependency_ids": [
+        "D_WL_PRE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_WL_RAW",
+      "kind": "calculation",
+      "locator": "checks/wolfram/WOLFRAM_XACT_EXECUTION.json",
+      "scope": "Completed actual Wolfram/xAct run: 6 tensor and 15 scalar values all exact zero",
+      "dependency_ids": [
+        "D_WL_RAW"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_WL_SUMMARY",
+      "kind": "review",
+      "locator": "checks/wolfram/SUMMARY.json",
+      "scope": "6 tensor checks, 9 scalar bundles and 15 scalar values, xPerm pure WL backend",
+      "dependency_ids": [
+        "D_WL_SUMMARY"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_WORKFLOW",
+      "kind": "resource",
+      "locator": "state/WORKFLOW_IDENTITY.json",
+      "scope": "Captured validator/workflow/theory loop verified identical to the currently installed skill",
+      "dependency_ids": [
+        "D_WORKFLOW"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_ORIGINAL_SOURCE_1",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/inputs/phys14/inputs/ncp07/candidate/src/ft03_interval.rs",
+      "scope": "Original source used in the direct source/derivation review",
+      "dependency_ids": [
+        "D_ORIGINAL_SOURCE_1"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_ORIGINAL_SOURCE_2",
+      "kind": "source",
+      "locator": "../HH_PHYS16_THEORY_20261013_v1/inputs/ncp07_proofsrc/phys04_mixed.rs",
+      "scope": "Original source used in the direct source/derivation review",
+      "dependency_ids": [
+        "D_ORIGINAL_SOURCE_2"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_ORIGINAL_SOURCE_3",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/inputs/phys14/inputs/ncp07/src/sourcebox.rs",
+      "scope": "Original source used in the direct source/derivation review",
+      "dependency_ids": [
+        "D_ORIGINAL_SOURCE_3"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_ORIGINAL_SOURCE_4",
+      "kind": "source",
+      "locator": "../HH_PHYS15_THEORY_20261012_v1/inputs/phys14/src/phys14_advance.py",
+      "scope": "Original source used in the direct source/derivation review",
+      "dependency_ids": [
+        "D_ORIGINAL_SOURCE_4"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_MAIN01_CODE",
+      "kind": "implementation",
+      "locator": "checks/application/run01/SOURCE.py",
+      "scope": "Preserved exact source executed in the first failed attempt",
+      "dependency_ids": [
+        "D_MAIN01_CODE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_MAIN01_DIAG",
+      "kind": "review",
+      "locator": "checks/application/run01/DIAGNOSIS.json",
+      "scope": "Observed first-attempt failure and implemented correction",
+      "dependency_ids": [
+        "D_MAIN01_DIAG"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_NEUMANN01_CODE",
+      "kind": "implementation",
+      "locator": "checks/application/neumann01/SOURCE.py",
+      "scope": "Preserved exact source executed in the first failed attempt",
+      "dependency_ids": [
+        "D_NEUMANN01_CODE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_NEUMANN01_DIAG",
+      "kind": "review",
+      "locator": "checks/application/neumann01/DIAGNOSIS.json",
+      "scope": "Observed first-attempt failure and implemented correction",
+      "dependency_ids": [
+        "D_NEUMANN01_DIAG"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_MAIN01_PRE",
+      "kind": "resource",
+      "locator": "checks/application/run01/PRE_RUN.json",
+      "scope": "Actual recorded pre-run command and source identity",
+      "dependency_ids": [
+        "D_MAIN01_PRE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_MAIN01_RUN",
+      "kind": "calculation",
+      "locator": "checks/application/run01/RUN_RECORD.json",
+      "scope": "Actual process completion, command, exit code and measured resources",
+      "dependency_ids": [
+        "D_MAIN01_RUN"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_MAIN02_PRE",
+      "kind": "resource",
+      "locator": "checks/application/run02/PRE_RUN.json",
+      "scope": "Actual recorded pre-run command and source identity",
+      "dependency_ids": [
+        "D_MAIN02_PRE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_MAIN02_RUN",
+      "kind": "calculation",
+      "locator": "checks/application/run02/RUN_RECORD.json",
+      "scope": "Actual process completion, command, exit code and measured resources",
+      "dependency_ids": [
+        "D_MAIN02_RUN"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_MAIN02_RESULT",
+      "kind": "calculation",
+      "locator": "checks/application/run02/results/PARAMETER_RESPONSE_RESULTS.json",
+      "scope": "Unchanged exact output of MAIN02",
+      "dependency_ids": [
+        "D_MAIN02_RESULT"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_FORCING01_PRE",
+      "kind": "resource",
+      "locator": "checks/application/forcing01/PRE_RUN.json",
+      "scope": "Actual recorded pre-run command and source identity",
+      "dependency_ids": [
+        "D_FORCING01_PRE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_FORCING01_RUN",
+      "kind": "calculation",
+      "locator": "checks/application/forcing01/RUN_RECORD.json",
+      "scope": "Actual process completion, command, exit code and measured resources",
+      "dependency_ids": [
+        "D_FORCING01_RUN"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_FORCING01_RESULT",
+      "kind": "calculation",
+      "locator": "checks/application/forcing01/results/FORCING_FEEDBACK_RESULTS.json",
+      "scope": "Unchanged exact output of FORCING01",
+      "dependency_ids": [
+        "D_FORCING01_RESULT"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_NEUMANN01_PRE",
+      "kind": "resource",
+      "locator": "checks/application/neumann01/PRE_RUN.json",
+      "scope": "Actual recorded pre-run command and source identity",
+      "dependency_ids": [
+        "D_NEUMANN01_PRE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_NEUMANN01_RUN",
+      "kind": "calculation",
+      "locator": "checks/application/neumann01/RUN_RECORD.json",
+      "scope": "Actual process completion, command, exit code and measured resources",
+      "dependency_ids": [
+        "D_NEUMANN01_RUN"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_NEUMANN02_PRE",
+      "kind": "resource",
+      "locator": "checks/application/neumann02/PRE_RUN.json",
+      "scope": "Actual recorded pre-run command and source identity",
+      "dependency_ids": [
+        "D_NEUMANN02_PRE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_NEUMANN02_RUN",
+      "kind": "calculation",
+      "locator": "checks/application/neumann02/RUN_RECORD.json",
+      "scope": "Actual process completion, command, exit code and measured resources",
+      "dependency_ids": [
+        "D_NEUMANN02_RUN"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_NEUMANN02_RESULT",
+      "kind": "calculation",
+      "locator": "checks/application/neumann02/results/DERIVATIVE_NEUMANN_RESULTS.json",
+      "scope": "Unchanged exact output of NEUMANN02",
+      "dependency_ids": [
+        "D_NEUMANN02_RESULT"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_REVIEW01_PRE",
+      "kind": "resource",
+      "locator": "review/INDEPENDENT_REVIEW_PRE_RUN.json",
+      "scope": "Actual recorded pre-run command and source identity",
+      "dependency_ids": [
+        "D_REVIEW01_PRE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_REVIEW01_RUN",
+      "kind": "calculation",
+      "locator": "review/INDEPENDENT_REVIEW_RUN.json",
+      "scope": "Actual process completion, command, exit code and measured resources",
+      "dependency_ids": [
+        "D_REVIEW01_RUN"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_REVIEW01_RESULT",
+      "kind": "calculation",
+      "locator": "review/arithmetic01/INDEPENDENT_ARITHMETIC_RESULTS.json",
+      "scope": "Unchanged exact output of REVIEW01",
+      "dependency_ids": [
+        "D_REVIEW01_RESULT"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_REVIEW02_PRE",
+      "kind": "resource",
+      "locator": "review/INDEPENDENT_REVIEW_PRE_RUN_02.json",
+      "scope": "Actual recorded pre-run command and source identity",
+      "dependency_ids": [
+        "D_REVIEW02_PRE"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_REVIEW02_RUN",
+      "kind": "calculation",
+      "locator": "review/INDEPENDENT_REVIEW_RUN_02.json",
+      "scope": "Actual process completion, command, exit code and measured resources",
+      "dependency_ids": [
+        "D_REVIEW02_RUN"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_REVIEW02_RESULT",
+      "kind": "calculation",
+      "locator": "review/arithmetic02/INDEPENDENT_ARITHMETIC_RESULTS.json",
+      "scope": "Unchanged exact output of REVIEW02",
+      "dependency_ids": [
+        "D_REVIEW02_RESULT"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_NEXT_DAG_ROOT",
+      "kind": "resource",
+      "locator": "NEXT_DAG.json",
+      "scope": "Next research DAG: mixed response selected, no heavy launch",
+      "dependency_ids": [
+        "D_NEXT_DAG_ROOT"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_NEXT_CONTRACT",
+      "kind": "resource",
+      "locator": "contracts/MIXED_RESPONSE_CONTRACT.json",
+      "scope": "Successor mixed-response contract, actual application not_run",
+      "dependency_ids": [
+        "D_NEXT_CONTRACT"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_README_KO",
+      "kind": "artifact",
+      "locator": "README_KO.md",
+      "scope": "Korean current result entry point",
+      "dependency_ids": [
+        "D_README_KO"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_HANDOFF_KO",
+      "kind": "artifact",
+      "locator": "HANDOFF_KO.md",
+      "scope": "Current restart and successor handoff",
+      "dependency_ids": [
+        "D_HANDOFF_KO"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_DEPENDENCIES",
+      "kind": "resource",
+      "locator": "DEPENDENCIES.json",
+      "scope": "Declared dependency and artifact bindings",
+      "dependency_ids": [
+        "D_DEPENDENCIES"
+      ],
+      "relation": "supports"
+    },
+    {
+      "id": "E_REPORT_PDF",
+      "kind": "artifact",
+      "locator": "report/WU088_HH_PHYS17_THEORY_20261013.pdf",
+      "scope": "Final 19-page Korean report with full derivation and accepted results.",
+      "dependency_ids": [],
+      "sha256": "5327adc8223157c5e5e3fa014a82c844f316edceb6688a25fc9fc8a04bd24bb6",
+      "bytes": 282038
+    },
+    {
+      "id": "E_REPORT_BUILD",
+      "kind": "artifact",
+      "locator": "report/BUILD_RECORD.json",
+      "scope": "Actual XeLaTeX/BibTeX commands and successful final build.",
+      "dependency_ids": [],
+      "sha256": "cc662b335579a762b7e209018785573b9b04e96ff5b3a8fadd2861041633faac",
+      "bytes": 2291
+    },
+    {
+      "id": "E_REPORT_QA",
+      "kind": "review",
+      "locator": "report/qa/QA_RESULT.json",
+      "scope": "All-page visual inspection and final closeups; no material layout issue.",
+      "dependency_ids": [],
+      "sha256": "42834442917579bb5b403270d6d295cf758a3fba1b764a8ae7144013c62cd07e",
+      "bytes": 1339
+    },
+    {
+      "id": "E_REPORT_SOURCE",
+      "kind": "artifact",
+      "locator": "report/WU088_HH_PHYS17_THEORY_20261013.tex",
+      "scope": "Main LaTeX source; included files are in the top-level manifest.",
+      "dependency_ids": [],
+      "sha256": "dc7150550b2a2665a336e5507ce6b8308828a989a7f6ab500740a82b33b7ea6b",
+      "bytes": 3415
+    },
+    {
+      "id": "E_BACKUP_ACK",
+      "kind": "storage",
+      "locator": "publication/BACKUP_ACK.json",
+      "scope": "Actual science commit/tree and 144 expected object checks, draft PR52, completed Google Drive and Dropbox uploads with exact metadata sizes.",
+      "dependency_ids": [],
+      "sha256": "f439f03714c719afc3ba475583a440279216f2616c2961ebef883fa01c73b8f3",
+      "bytes": 5287
+    }
+  ],
+  "stages": [
+    {
+      "id": "R1",
+      "status": "reused",
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_ENTRY",
+        "E_PARENT_DECISION",
+        "E_PARENT_REMOTE"
+      ],
+      "dependency_ids": [
+        "D_CONTRACT",
+        "D_ENTRY",
+        "D_INPUT_EXPORT_MAPPING",
+        "D_INPUT_FIRST_FULL_UV",
+        "D_INPUT_FULL_COMPONENTS",
+        "D_INPUT_FULL_SOURCE",
+        "D_INPUT_HALF_COMPONENTS",
+        "D_INPUT_HALF_SOURCE",
+        "D_INPUT_PHOTON_CARRY",
+        "D_INPUT_PHYS15_THEORY",
+        "D_INPUT_PHYS16_APPLICATION",
+        "D_INPUT_PHYS16_REMAINDER",
+        "D_INPUT_PRECONDITIONER",
+        "D_INPUT_SECOND_HALF_UV",
+        "D_INPUT_SOURCE_ASSUMPTIONS",
+        "D_INPUT_STARTING_DERIVATION",
+        "D_PARENT_DECISION",
+        "D_PARENT_REMOTE"
+      ],
+      "reason": "Inherited PHYS16 successor scope and user-authorized theory loop; 14 original bindings match.",
+      "reuse": {
+        "dependency_identities": {
+          "D_CONTRACT": "sha256:f6bc651dfb129983f72bb6aa89fa850a19213c0963e5575581dd1dd1d4666daf;bytes:9881",
+          "D_ENTRY": "sha256:3917ac92a72fad1c1fefac5c7aeee4a8de263cc3bcd8445c04caaed1df6327f0;bytes:9760",
+          "D_INPUT_EXPORT_MAPPING": "sha256:d771968e9c12c0cce5a9e3ec5fa7311d0040ac63d1f4f4a6f54f048972f674ae;bytes:24396",
+          "D_INPUT_FIRST_FULL_UV": "sha256:c6329fed8c411e1592bd1a0c63ebd9ca6151e81500ed1f46fb6b40f4b7758444;bytes:1120229",
+          "D_INPUT_FULL_COMPONENTS": "sha256:29e73ac3518cd4cb5f11ee24c7237a43442d6615a1dba1e710d0206f319ad610;bytes:554961",
+          "D_INPUT_FULL_SOURCE": "sha256:cf1b48df2c299187a03ab501b1169e2d559c5959bf50892d7b749c65f81ff64d;bytes:57972",
+          "D_INPUT_HALF_COMPONENTS": "sha256:4272aa6aa49e836eacfdcccddf30e7b5c77fd2e5d8e1846beb0f16af741cf63c;bytes:554945",
+          "D_INPUT_HALF_SOURCE": "sha256:36247ef5ac3bce4b114aac41fe5d85c2015488183ba32b77f9051cc7d25b77b4;bytes:57807",
+          "D_INPUT_PHOTON_CARRY": "sha256:5e3dc0b589c5e86672664ea851e7986708e10ed73f6a3db8332b9c8084a897ca;bytes:6463565",
+          "D_INPUT_PHYS15_THEORY": "sha256:60c9d5e52df1fa43e317c2043598e0d44ed89854c79dad4bed474aa4f200ef61;bytes:20761",
+          "D_INPUT_PHYS16_APPLICATION": "sha256:725cca8b785343f638ddc69d0d056643086955927f9a0c84cbea3ea46a10d2fc;bytes:463751",
+          "D_INPUT_PHYS16_REMAINDER": "sha256:6cf01b2c6f69c0ff89ab5f2a3487ea34fbd35da6c0f72b6f4ee09e1d7ad5b4c8;bytes:216859",
+          "D_INPUT_PRECONDITIONER": "sha256:3cf8c86b445ba2be2889e5effbdaacbcf84d0dcedbabd60763124141dfbc09af;bytes:3918",
+          "D_INPUT_SECOND_HALF_UV": "sha256:a0faac7d55b425ae85ed8ee15e57d5f3c2687b40896b039fe858dcfdb342e28e;bytes:643946",
+          "D_INPUT_SOURCE_ASSUMPTIONS": "sha256:16e23676dbe6a1c0805728c7e01c22d7e37f97c990e892e7d75e6cd2f3718b41;bytes:9861",
+          "D_INPUT_STARTING_DERIVATION": "sha256:34283485907b58fd8a0c03f9d2cd915645e919a82cf81def3da127984533a7bf;bytes:3984",
+          "D_PARENT_DECISION": "sha256:610df271576260d01b473c004824ef7179bce475931cfd50c7e017dadfc0bbd3;bytes:32691",
+          "D_PARENT_REMOTE": "sha256:c373f79725be449a0b69b060fe1a929a61ef78e496080165fb753f7cc545f5ae;bytes:1363"
+        },
+        "reason": "Same frozen source/family and P1-P4 contract; actual input hashes unchanged."
+      }
+    },
+    {
+      "id": "R2",
+      "status": "complete",
+      "evidence_refs": [
+        "E_ENTRY",
+        "E_LIT_REVIEW",
+        "E_LIT_BIB",
+        "E_LIT_SEARCH",
+        "E_SOURCE_IDENTITIES"
+      ],
+      "dependency_ids": [
+        "D_ENTRY",
+        "D_INPUT_EXPORT_MAPPING",
+        "D_INPUT_FIRST_FULL_UV",
+        "D_INPUT_FULL_COMPONENTS",
+        "D_INPUT_FULL_SOURCE",
+        "D_INPUT_HALF_COMPONENTS",
+        "D_INPUT_HALF_SOURCE",
+        "D_INPUT_PHOTON_CARRY",
+        "D_INPUT_PHYS15_THEORY",
+        "D_INPUT_PHYS16_APPLICATION",
+        "D_INPUT_PHYS16_REMAINDER",
+        "D_INPUT_PRECONDITIONER",
+        "D_INPUT_SECOND_HALF_UV",
+        "D_INPUT_SOURCE_ASSUMPTIONS",
+        "D_INPUT_STARTING_DERIVATION",
+        "D_LIT_BIB",
+        "D_LIT_REVIEW",
+        "D_LIT_SEARCH",
+        "D_SOURCE_IDENTITIES"
+      ],
+      "reason": "Read original source and primary literature; preserve prior valid source/root/adjoint evidence.",
+      "reuse": null
+    },
+    {
+      "id": "R3",
+      "status": "complete",
+      "evidence_refs": [
+        "E_CLAIMS",
+        "E_THEOREM",
+        "E_SOURCE_REVIEW",
+        "E_CONTRACT"
+      ],
+      "dependency_ids": [
+        "D_CLAIMS",
+        "D_CONTRACT",
+        "D_INPUT_EXPORT_MAPPING",
+        "D_INPUT_FIRST_FULL_UV",
+        "D_INPUT_FULL_COMPONENTS",
+        "D_INPUT_FULL_SOURCE",
+        "D_INPUT_HALF_COMPONENTS",
+        "D_INPUT_HALF_SOURCE",
+        "D_INPUT_PHOTON_CARRY",
+        "D_INPUT_PHYS15_THEORY",
+        "D_INPUT_PHYS16_APPLICATION",
+        "D_INPUT_PHYS16_REMAINDER",
+        "D_INPUT_PRECONDITIONER",
+        "D_INPUT_SECOND_HALF_UV",
+        "D_INPUT_SOURCE_ASSUMPTIONS",
+        "D_INPUT_STARTING_DERIVATION",
+        "D_SOURCE_REVIEW",
+        "D_THEOREM"
+      ],
+      "reason": "Eight scientific claims quantified on the fixed same-COMMON C2 family with units and derivative slots.",
+      "reuse": null
+    },
+    {
+      "id": "R4",
+      "status": "complete",
+      "evidence_refs": [
+        "E_FORMULA_REVIEW",
+        "E_THEOREM",
+        "E_MAIN_CODE",
+        "E_FORCING_CODE"
+      ],
+      "dependency_ids": [
+        "D_FORCING_CODE",
+        "D_FORMULA_REVIEW",
+        "D_MAIN_CODE",
+        "D_THEOREM"
+      ],
+      "reason": "Selected direct implicit differentiation, correlated stage increment, isothermal He projector and seven-sector response.",
+      "reuse": null
+    },
+    {
+      "id": "R5",
+      "status": "complete",
+      "evidence_refs": [
+        "E_THEOREM",
+        "E_COROLLARIES",
+        "E_MAIN_CODE",
+        "E_FORCING_CODE",
+        "E_NEUMANN_CODE"
+      ],
+      "dependency_ids": [
+        "D_COROLLARIES",
+        "D_FORCING_CODE",
+        "D_MAIN_CODE",
+        "D_NEUMANN_CODE",
+        "D_THEOREM"
+      ],
+      "reason": "Seven completed constructive theorems and corollary close all current first-response obligations.",
+      "reuse": null
+    },
+    {
+      "id": "R6",
+      "status": "complete",
+      "evidence_refs": [
+        "E_REVIEW",
+        "E_SOURCE_REVIEW",
+        "E_REVIEW01_RESULT",
+        "E_REVIEW02_RESULT",
+        "E_WL_RAW",
+        "E_WL_SUMMARY"
+      ],
+      "dependency_ids": [
+        "D_REVIEW",
+        "D_REVIEW01_RESULT",
+        "D_REVIEW02_RESULT",
+        "D_SOURCE_REVIEW",
+        "D_WL_RAW",
+        "D_WL_SUMMARY"
+      ],
+      "reason": "Independent source/formula and exact Cramer review complete, 29/29 final checks, first comparator correction retained.",
+      "reuse": null
+    },
+    {
+      "id": "R7",
+      "status": "complete",
+      "evidence_refs": [
+        "E_MAIN01_DIAG",
+        "E_MAIN02_RUN",
+        "E_MAIN02_RESULT",
+        "E_FORCING01_RUN",
+        "E_FORCING01_RESULT",
+        "E_NEUMANN01_DIAG",
+        "E_NEUMANN02_RUN",
+        "E_NEUMANN02_RESULT",
+        "E_WL_RAW"
+      ],
+      "dependency_ids": [
+        "D_FORCING01_RESULT",
+        "D_FORCING01_RUN",
+        "D_MAIN01_DIAG",
+        "D_MAIN02_RESULT",
+        "D_MAIN02_RUN",
+        "D_NEUMANN01_DIAG",
+        "D_NEUMANN02_RESULT",
+        "D_NEUMANN02_RUN",
+        "D_WL_RAW"
+      ],
+      "reason": "Actual stored-enclosure discrimination completed; strict response signs, forcing/feedback and finite Neumann bounds obtained.",
+      "reuse": null
+    },
+    {
+      "id": "R8",
+      "status": "complete",
+      "evidence_refs": [
+        "E_REVIEW",
+        "E_DECISION"
+      ],
+      "dependency_ids": [
+        "D_DECISION",
+        "D_REVIEW"
+      ],
+      "reason": "Independent PROMOTE_SCOPED followed by root detached adoption; no blocking science finding or new strong no-go.",
+      "reuse": null
+    },
+    {
+      "id": "R9",
+      "status": "complete",
+      "evidence_refs": [
+        "E_THEOREM",
+        "E_CLAIMS",
+        "E_COROLLARIES",
+        "E_NEXT_PROPOSAL",
+        "E_NEXT_DAG_ROOT",
+        "E_NEXT_CONTRACT",
+        "E_README_KO",
+        "E_HANDOFF_KO",
+        "E_DEPENDENCIES"
+      ],
+      "dependency_ids": [
+        "D_CLAIMS",
+        "D_COROLLARIES",
+        "D_DEPENDENCIES",
+        "D_HANDOFF_KO",
+        "D_NEXT_CONTRACT",
+        "D_NEXT_DAG_ROOT",
+        "D_NEXT_PROPOSAL",
+        "D_README_KO",
+        "D_THEOREM"
+      ],
+      "reason": "Formal equations, implementation/result bindings and mixed-response successor contract available; successor application not_run.",
+      "reuse": null
+    },
+    {
+      "id": "R10",
+      "status": "complete",
+      "evidence_refs": [
+        "E_DECISION",
+        "E_NEXT_PROPOSAL",
+        "E_NEXT_DAG_ROOT",
+        "E_NEXT_CONTRACT",
+        "E_README_KO",
+        "E_HANDOFF_KO",
+        "E_DEPENDENCIES",
+        "E_REPORT_PDF",
+        "E_REPORT_BUILD",
+        "E_REPORT_QA",
+        "E_BACKUP_ACK"
+      ],
+      "dependency_ids": [
+        "D_DECISION",
+        "D_DEPENDENCIES",
+        "D_HANDOFF_KO",
+        "D_NEXT_CONTRACT",
+        "D_NEXT_DAG_ROOT",
+        "D_NEXT_PROPOSAL",
+        "D_README_KO"
+      ],
+      "reason": "Final 19-page PDF QA, complete handoff and next 24-input contract, verified science Git objects/PR and actual dual-provider acknowledgements are linked. User file presentation follows separately.",
+      "reuse": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "P17-T1",
+      "statement": "Same-family tangent defect transfer",
+      "scope": "Same fixed admissible alpha and COMMON; global lambda,b in [0,1]^2; inherited source-aligned geometric-isotropic C2 family; first derivatives of d=g2-gF and finite DeltaT=T2-TF.",
+      "basis": [
+        "derived",
+        "numerically checked",
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_THEOREM",
+        "E_FORMULA_REVIEW",
+        "E_INPUT_FULL_SOURCE",
+        "E_INPUT_EXPORT_MAPPING",
+        "E_MAIN02_RESULT",
+        "E_REVIEW",
+        "E_DECISION"
+      ],
+      "obligations": [],
+      "equation_locator": "theory/PARAMETER_RESPONSE_THEOREM_KO.md: Equation (1), source slots (4)",
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "P17-T2",
+      "statement": "Correlated gas time/movement response",
+      "scope": "Same fixed admissible alpha and COMMON; global lambda,b in [0,1]^2; inherited source-aligned geometric-isotropic C2 family; first derivatives of d=g2-gF and finite DeltaT=T2-TF.",
+      "basis": [
+        "derived",
+        "numerically checked",
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_THEOREM",
+        "E_INPUT_FIRST_FULL_UV",
+        "E_INPUT_SECOND_HALF_UV",
+        "E_MAIN02_RESULT",
+        "E_SOURCE_REVIEW",
+        "E_REVIEW",
+        "E_DECISION"
+      ],
+      "obligations": [],
+      "equation_locator": "theory/PARAMETER_RESPONSE_THEOREM_KO.md: Equations (5)-(6)",
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "P17-T3",
+      "statement": "Local He thermal projection and derivative",
+      "scope": "Same fixed admissible alpha and COMMON; global lambda,b in [0,1]^2; inherited source-aligned geometric-isotropic C2 family; first derivatives of d=g2-gF and finite DeltaT=T2-TF.",
+      "basis": [
+        "derived",
+        "numerically checked",
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_THEOREM",
+        "E_SOURCE_IDENTITIES",
+        "E_SOURCE_REVIEW",
+        "E_WL_RAW",
+        "E_MAIN02_RESULT",
+        "E_REVIEW",
+        "E_DECISION"
+      ],
+      "obligations": [],
+      "equation_locator": "theory/PARAMETER_RESPONSE_THEOREM_KO.md: Equations (7)-(11)",
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "P17-T4",
+      "statement": "Exact density pullback first derivative",
+      "scope": "Same fixed admissible alpha and COMMON; global lambda,b in [0,1]^2; inherited source-aligned geometric-isotropic C2 family; first derivatives of d=g2-gF and finite DeltaT=T2-TF.",
+      "basis": [
+        "derived",
+        "numerically checked",
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_THEOREM",
+        "E_INPUT_FULL_COMPONENTS",
+        "E_INPUT_HALF_COMPONENTS",
+        "E_SOURCE_REVIEW",
+        "E_MAIN02_RESULT",
+        "E_REVIEW",
+        "E_DECISION"
+      ],
+      "obligations": [],
+      "equation_locator": "theory/PARAMETER_RESPONSE_THEOREM_KO.md: Equations (12)-(16)",
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "P17-T5",
+      "statement": "Seven-sector photon response and ledgers",
+      "scope": "Same fixed admissible alpha and COMMON; global lambda,b in [0,1]^2; inherited source-aligned geometric-isotropic C2 family; first derivatives of d=g2-gF and finite DeltaT=T2-TF.",
+      "basis": [
+        "derived",
+        "numerically checked",
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_THEOREM",
+        "E_INPUT_PHOTON_CARRY",
+        "E_MAIN02_RESULT",
+        "E_FORCING01_RESULT",
+        "E_WL_RAW",
+        "E_REVIEW",
+        "E_DECISION"
+      ],
+      "obligations": [],
+      "equation_locator": "theory/PARAMETER_RESPONSE_THEOREM_KO.md: Equations (17)-(22)",
+      "decision": "PROMOTE_SCOPED",
+      "subclaim_scope": "Seven-sector actual derivative evaluated; additional photon ledger and endpoint readout formulae in section 6.2 derived, not all numerically evaluated."
+    },
+    {
+      "id": "P17-T6",
+      "statement": "Same-preconditioner sensitivity enclosure and finite Neumann bound",
+      "scope": "Same fixed admissible alpha and COMMON; global lambda,b in [0,1]^2; inherited source-aligned geometric-isotropic C2 family; first derivatives of d=g2-gF and finite DeltaT=T2-TF.",
+      "basis": [
+        "derived",
+        "numerically checked",
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_THEOREM",
+        "E_INPUT_PRECONDITIONER",
+        "E_INPUT_PHYS16_REMAINDER",
+        "E_NEUMANN02_RESULT",
+        "E_REVIEW02_RESULT",
+        "E_REVIEW",
+        "E_DECISION"
+      ],
+      "obligations": [],
+      "equation_locator": "theory/PARAMETER_RESPONSE_THEOREM_KO.md: Equations (23)-(26)",
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "P17-T7",
+      "statement": "Finite-temperature response and common adjoint",
+      "scope": "Same fixed admissible alpha and COMMON; global lambda,b in [0,1]^2; inherited source-aligned geometric-isotropic C2 family; first derivatives of d=g2-gF and finite DeltaT=T2-TF.",
+      "basis": [
+        "derived",
+        "numerically checked",
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_THEOREM",
+        "E_MAIN02_RESULT",
+        "E_FORCING01_RESULT",
+        "E_WL_RAW",
+        "E_SOURCE_REVIEW",
+        "E_REVIEW",
+        "E_DECISION"
+      ],
+      "obligations": [],
+      "equation_locator": "theory/PARAMETER_RESPONSE_THEOREM_KO.md: Equations (27)-(31)",
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "P17-C1",
+      "statement": "Monotone corner extrema, finite increments, constant-defect slope and mixed contrast prior",
+      "scope": "Same fixed admissible alpha and COMMON; global lambda,b in [0,1]^2; inherited source-aligned geometric-isotropic C2 family; first derivatives of d=g2-gF and finite DeltaT=T2-TF.",
+      "basis": [
+        "derived",
+        "numerically checked",
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_THEOREM",
+        "E_COROLLARIES",
+        "E_MAIN02_RESULT",
+        "E_REVIEW02_RESULT",
+        "E_REVIEW",
+        "E_DECISION"
+      ],
+      "obligations": [],
+      "equation_locator": "theory/PARAMETER_RESPONSE_THEOREM_KO.md: Equations (32)-(37)",
+      "decision": "PROMOTE_SCOPED"
+    }
+  ],
+  "checks": [
+    {
+      "id": "K_SOURCE",
+      "domain": "physics",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_SOURCE_REVIEW",
+        "E_SOURCE_IDENTITIES",
+        "E_REVIEW",
+        "E_THEOREM"
+      ],
+      "reason": "Same physical source, C2 family, COMMON, threshold leaves, density and finite-temperature normalization.",
+      "execution_ref": null
+    },
+    {
+      "id": "K_LITERATURE",
+      "domain": "math",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_LIT_REVIEW",
+        "E_LIT_BIB",
+        "E_LIT_SEARCH"
+      ],
+      "reason": "Primary conditions checked; independent-tolerance inner claims not transferred; MB22 sufficient-condition scope corrected.",
+      "execution_ref": null
+    },
+    {
+      "id": "K_MAIN01",
+      "domain": "implementation",
+      "result": "fail",
+      "evidence_refs": [
+        "E_MAIN01_RUN",
+        "E_MAIN01_DIAG"
+      ],
+      "reason": "Original schema-field failure retained; resolved by MAIN02.",
+      "execution_ref": "X_MAIN01"
+    },
+    {
+      "id": "K_MAIN02",
+      "domain": "numerics",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_MAIN02_RUN",
+        "E_MAIN02_RESULT",
+        "E_REVIEW"
+      ],
+      "reason": "Frozen run02 includes both strict temperature derivative signs and exact P2/P4 transfer.",
+      "execution_ref": "X_MAIN02"
+    },
+    {
+      "id": "K_FORCING",
+      "domain": "numerics",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_FORCING01_RUN",
+        "E_FORCING01_RESULT",
+        "E_REVIEW"
+      ],
+      "reason": "Same-JF explicit/feedback decomposition; 245 photon intersections per parameter and 4 RHS intersections each.",
+      "execution_ref": "X_FORCING01"
+    },
+    {
+      "id": "K_NEUMANN01",
+      "domain": "numerics",
+      "result": "fail",
+      "evidence_refs": [
+        "E_NEUMANN01_RUN",
+        "E_NEUMANN01_DIAG"
+      ],
+      "reason": "Missing import envelope detected before result; corrected by conservative max in NEUMANN02.",
+      "execution_ref": "X_NEUMANN01"
+    },
+    {
+      "id": "K_NEUMANN02",
+      "domain": "numerics",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_NEUMANN02_RUN",
+        "E_NEUMANN02_RESULT",
+        "E_REVIEW"
+      ],
+      "reason": "Actual finite Neumann bounds with Jacobian-difference coefficient 1 and conservative imported a.",
+      "execution_ref": "X_NEUMANN02"
+    },
+    {
+      "id": "K_REVIEW01",
+      "domain": "implementation",
+      "result": "fail",
+      "evidence_refs": [
+        "E_REVIEW01_RUN",
+        "E_REVIEW01_RESULT",
+        "E_REVIEW"
+      ],
+      "reason": "26/29: equality versus outward-copy inclusion was an incorrect reviewer invariant; source and logs retained.",
+      "execution_ref": "X_REVIEW01"
+    },
+    {
+      "id": "K_REVIEW02",
+      "domain": "numerics",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_REVIEW02_RUN",
+        "E_REVIEW02_RESULT",
+        "E_REVIEW_CODE_02",
+        "E_REVIEW"
+      ],
+      "reason": "29/29 final exact Fraction checks; independent determinant/Cramer inverse; candidate and PHYS14 helper imports zero.",
+      "execution_ref": "X_REVIEW02"
+    },
+    {
+      "id": "K_WOLFRAM",
+      "domain": "math",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_WL_RAW",
+        "E_WL_SUMMARY",
+        "E_WL_CODE",
+        "E_SOURCE_REVIEW"
+      ],
+      "reason": "Actual 6 tensor and 15 scalar exact-zero checks; mathematical identities distinguished from physical inclusion.",
+      "execution_ref": "X_WOLFRAM"
+    },
+    {
+      "id": "K_COROLLARIES",
+      "domain": "math",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_THEOREM",
+        "E_COROLLARIES",
+        "E_REVIEW02_RESULT"
+      ],
+      "reason": "Same-alpha monotonicity, FTC finite changes, local level-curve and continuation, four-corner prior checked.",
+      "execution_ref": "X_REVIEW02"
+    },
+    {
+      "id": "K_NEXT_MIXED",
+      "domain": "math",
+      "result": "not_run",
+      "evidence_refs": [
+        "E_NEXT_PROPOSAL"
+      ],
+      "reason": "Next C2 mixed-response construction and actual evaluator remain a successor unit.",
+      "execution_ref": "X_NEXT_MIXED"
+    },
+    {
+      "id": "K_PDF_QA",
+      "domain": "packaging",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_REPORT_PDF",
+        "E_REPORT_BUILD",
+        "E_REPORT_QA"
+      ],
+      "reason": "19 pages compiled, rendered and inspected; final glyphs, equations, tables and references verified.",
+      "execution_ref": "X_REPORT_BUILD"
+    },
+    {
+      "id": "K_DELIVERY",
+      "domain": "storage",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_BACKUP_ACK",
+        "E_REPORT_PDF",
+        "E_HANDOFF_KO"
+      ],
+      "execution_ref": null,
+      "reason": "Actual Git object SHA/size checks and completed provider uploads with metadata-size matches; no remote restore or scientific rerun claimed."
+    }
+  ],
+  "executions": [
+    {
+      "id": "X_MAIN01",
+      "status": "failed",
+      "command": [
+        "python3",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/src/parameter_response_application.py",
+        "--parent15",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS15_THEORY_20261012_v1",
+        "--parent16",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS16_THEORY_20261013_v1",
+        "--output",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/checks/application/run01/results"
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "location": "current shared executor",
+        "arithmetic": "exact Fraction endpoints; application uses directed 256-significant-bit rounding"
+      },
+      "evidence_refs": [
+        "E_MAIN01_PRE",
+        "E_MAIN01_RUN",
+        "E_MAIN01_CODE"
+      ],
+      "exit_code": 1,
+      "reason": "KeyError on outgoing field; preserved PHYS11 schema uses outgoing_joint. Stopped before candidate result.",
+      "wall_seconds": 0.2535891930019716,
+      "peak_rss_kib": 40536,
+      "new_source_calls": 0,
+      "new_root_solves": 0,
+      "history_replays": 0
+    },
+    {
+      "id": "X_MAIN02",
+      "status": "completed",
+      "command": [
+        "python3",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/src/parameter_response_application.py",
+        "--parent15",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS15_THEORY_20261012_v1",
+        "--parent16",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS16_THEORY_20261013_v1",
+        "--output",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/checks/application/run02/results"
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "location": "current shared executor",
+        "arithmetic": "exact Fraction endpoints; application uses directed 256-significant-bit rounding"
+      },
+      "evidence_refs": [
+        "E_MAIN02_PRE",
+        "E_MAIN02_RUN",
+        "E_MAIN_CODE",
+        "E_MAIN02_RESULT"
+      ],
+      "exit_code": 0,
+      "reason": "",
+      "wall_seconds": 0.6662573930007056,
+      "peak_rss_kib": 40536,
+      "new_source_calls": 0,
+      "new_root_solves": 0,
+      "history_replays": 0
+    },
+    {
+      "id": "X_FORCING01",
+      "status": "completed",
+      "command": [
+        "python3",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/src/forcing_feedback_decomposition.py",
+        "--parent15",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS15_THEORY_20261012_v1",
+        "--parent16",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS16_THEORY_20261013_v1",
+        "--output",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/checks/application/forcing01/results"
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "location": "current shared executor",
+        "arithmetic": "exact Fraction endpoints; application uses directed 256-significant-bit rounding"
+      },
+      "evidence_refs": [
+        "E_FORCING01_PRE",
+        "E_FORCING01_RUN",
+        "E_FORCING_CODE",
+        "E_FORCING01_RESULT"
+      ],
+      "exit_code": 0,
+      "reason": "",
+      "wall_seconds": 0.3079826970024442,
+      "peak_rss_kib": 26504,
+      "new_source_calls": 0,
+      "new_root_solves": 0,
+      "history_replays": 0
+    },
+    {
+      "id": "X_NEUMANN01",
+      "status": "failed",
+      "command": [
+        "python3",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/src/derivative_neumann_readout.py",
+        "--parent15",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS15_THEORY_20261012_v1",
+        "--parent16",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS16_THEORY_20261013_v1",
+        "--output",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/checks/application/neumann01/results"
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "location": "current shared executor",
+        "arithmetic": "exact Fraction endpoints; application uses directed 256-significant-bit rounding"
+      },
+      "evidence_refs": [
+        "E_NEUMANN01_PRE",
+        "E_NEUMANN01_RUN",
+        "E_NEUMANN01_CODE"
+      ],
+      "exit_code": 1,
+      "reason": "Outward-copied endpoint norm exceeded inherited exact a; assertion detected missing serialization envelope.",
+      "wall_seconds": 0.042960964998201234,
+      "peak_rss_kib": 16000,
+      "new_source_calls": 0,
+      "new_root_solves": 0,
+      "history_replays": 0
+    },
+    {
+      "id": "X_NEUMANN02",
+      "status": "completed",
+      "command": [
+        "python3",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/src/derivative_neumann_readout.py",
+        "--parent15",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS15_THEORY_20261012_v1",
+        "--parent16",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS16_THEORY_20261013_v1",
+        "--output",
+        "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/checks/application/neumann02/results"
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "location": "current shared executor",
+        "arithmetic": "exact Fraction endpoints; application uses directed 256-significant-bit rounding"
+      },
+      "evidence_refs": [
+        "E_NEUMANN02_PRE",
+        "E_NEUMANN02_RUN",
+        "E_NEUMANN_CODE",
+        "E_NEUMANN02_RESULT"
+      ],
+      "exit_code": 0,
+      "reason": "",
+      "wall_seconds": 0.04993875000218395,
+      "peak_rss_kib": 16000,
+      "new_source_calls": 0,
+      "new_root_solves": 0,
+      "history_replays": 0
+    },
+    {
+      "id": "X_REVIEW01",
+      "status": "failed",
+      "command": [
+        "python3",
+        "HH_PHYS17_THEORY_20261013_v1/review/independent_arithmetic_review.py",
+        "--parent15",
+        "HH_PHYS15_THEORY_20261012_v1",
+        "--parent16",
+        "HH_PHYS16_THEORY_20261013_v1",
+        "--parent17",
+        "HH_PHYS17_THEORY_20261013_v1",
+        "--output",
+        "HH_PHYS17_THEORY_20261013_v1/review/arithmetic01"
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "location": "current shared executor",
+        "arithmetic": "exact Fraction endpoints; application uses directed 256-significant-bit rounding"
+      },
+      "evidence_refs": [
+        "E_REVIEW01_PRE",
+        "E_REVIEW01_RUN",
+        "E_REVIEW_CODE_01",
+        "E_REVIEW01_RESULT"
+      ],
+      "exit_code": 1,
+      "reason": "26/29 checks passed; reviewer equality assumption failed on conservative outward copies. Actual intervals were valid.",
+      "wall_seconds": 0.26985652499934076,
+      "peak_rss_kib": 27560,
+      "new_source_calls": 0,
+      "new_root_solves": 0,
+      "history_replays": 0
+    },
+    {
+      "id": "X_REVIEW02",
+      "status": "completed",
+      "command": [
+        "python3",
+        "HH_PHYS17_THEORY_20261013_v1/review/independent_arithmetic_review_v2.py",
+        "--parent15",
+        "HH_PHYS15_THEORY_20261012_v1",
+        "--parent16",
+        "HH_PHYS16_THEORY_20261013_v1",
+        "--parent17",
+        "HH_PHYS17_THEORY_20261013_v1",
+        "--output",
+        "HH_PHYS17_THEORY_20261013_v1/review/arithmetic02"
+      ],
+      "environment": {
+        "python": "3.12.14",
+        "location": "current shared executor",
+        "arithmetic": "exact Fraction endpoints; application uses directed 256-significant-bit rounding"
+      },
+      "evidence_refs": [
+        "E_REVIEW02_PRE",
+        "E_REVIEW02_RUN",
+        "E_REVIEW_CODE_02",
+        "E_REVIEW02_RESULT"
+      ],
+      "exit_code": 0,
+      "reason": "",
+      "wall_seconds": 0.261186063002242,
+      "peak_rss_kib": 27580,
+      "new_source_calls": 0,
+      "new_root_solves": 0,
+      "history_replays": 0
+    },
+    {
+      "id": "X_WOLFRAM",
+      "status": "completed",
+      "command": "wolfram.wolframlanguageevaluator(code=parameter_response_checks.wl,timeConstraint=60)",
+      "environment": {
+        "tool": "wolfram.wolframlanguageevaluator",
+        "Wolfram": "15.0.1 for Linux x86 (64-bit), July 2, 2026",
+        "xTensor": "1.3.0",
+        "xPerm": "1.2.4",
+        "backend": "xPerm Wolfram Language group algorithms",
+        "external_canonicalizer_used": false
+      },
+      "evidence_refs": [
+        "E_WL_PRE",
+        "E_WL_CODE",
+        "E_WL_RAW",
+        "E_WL_SUMMARY"
+      ],
+      "exit_code": 0,
+      "exit_code_semantics": "Workflow success code for returned Completed evaluator result; tool did not return an OS process exit code.",
+      "reason": "Actual exact symbolic execution completed; physical 35-slot inclusion is separately bound.",
+      "wall_seconds": 11.171,
+      "tensor_checks": 6,
+      "scalar_groups": 9,
+      "scalar_values": 15
+    },
+    {
+      "id": "X_NEXT_MIXED",
+      "status": "not_run",
+      "command": "",
+      "environment": {
+        "intended_location": "current environment after selection of next theory/application unit"
+      },
+      "evidence_refs": [
+        "E_NEXT_PROPOSAL"
+      ],
+      "exit_code": null,
+      "reason": "First mixed-response application is a selected successor, not part of this completed first-response execution."
+    },
+    {
+      "id": "X_REPORT_BUILD",
+      "status": "completed",
+      "command": "XeLaTeX, BibTeX, XeLaTeX and documented final layout/reference passes; Poppler rendering",
+      "environment": "Local TeX Live XeTeX; bundled Noto Serif CJK KR subsets; DejaVu Sans Mono; Poppler and Pillow",
+      "evidence_refs": [
+        "E_REPORT_BUILD",
+        "E_REPORT_PDF",
+        "E_REPORT_QA"
+      ],
+      "exit_code": 0,
+      "reason": "Actual document build and visual QA, without physics reruns."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "ADOPT_PHYS17",
+      "decision": "PROMOTE_SCOPED",
+      "adopter": "/root",
+      "evidence_refs": [
+        "E_DECISION",
+        "E_REVIEW"
+      ],
+      "reason": "Root adopted fixed first-response science following independent 29/29 review; execution and original candidate status preserved."
+    },
+    {
+      "id": "CLOSE_R10",
+      "decision": "THEORY_R1_R10_COMPLETE",
+      "evidence_refs": [
+        "E_BACKUP_ACK",
+        "E_REPORT_QA",
+        "E_NEXT_CONTRACT"
+      ],
+      "reason": "All current-loop scientific and delivery obligations have actual linked evidence; mixed application remains the next unit."
+    }
+  ],
+  "overrides": [],
+  "failures": [
+    {
+      "id": "F_MAIN01",
+      "class": "implementation",
+      "execution_ref": "X_MAIN01",
+      "evidence_refs": [
+        "E_MAIN01_RUN",
+        "E_MAIN01_DIAG",
+        "E_MAIN01_CODE",
+        "E_MAIN02_RUN"
+      ],
+      "observed": "PHYS11 outgoing field mapping KeyError; no candidate result emitted.",
+      "status": "resolved",
+      "next_action": "Completed: use preserved outgoing_joint field and run02."
+    },
+    {
+      "id": "F_NEUMANN01",
+      "class": "numerics",
+      "execution_ref": "X_NEUMANN01",
+      "evidence_refs": [
+        "E_NEUMANN01_RUN",
+        "E_NEUMANN01_DIAG",
+        "E_NEUMANN01_CODE",
+        "E_NEUMANN02_RUN"
+      ],
+      "observed": "Exact inherited a did not cover the outward-copied d/S norm before envelope correction.",
+      "status": "resolved",
+      "next_action": "Completed: max(inherited a, actual copied enclosure norm), with both values recorded in neumann02."
+    },
+    {
+      "id": "F_REVIEW01",
+      "class": "implementation",
+      "execution_ref": "X_REVIEW01",
+      "evidence_refs": [
+        "E_REVIEW01_RUN",
+        "E_REVIEW01_RESULT",
+        "E_REVIEW_CODE_01",
+        "E_REVIEW_CODE_02",
+        "E_REVIEW02_RESULT",
+        "E_REVIEW"
+      ],
+      "observed": "26/29 reviewer checks: exact equality incorrectly required for long rational versus outward-copied enclosures.",
+      "status": "resolved",
+      "next_action": "Completed: conservative inclusion and relative import-expansion check; arithmetic02 29/29 PASS; original science unchanged."
+    }
+  ],
+  "next_actions": [
+    {
+      "id": "NEXT_MIXED",
+      "stage": "successor",
+      "status": "not_run",
+      "node": "HH_DEFECT_MIXED_RESPONSE",
+      "evidence_refs": [
+        "E_NEXT_PROPOSAL",
+        "E_NEXT_CONTRACT"
+      ],
+      "action": "Use original C2 W/Hessian data and proposed mixed forcing construction in the next authorized unit."
+    }
+  ],
+  "family_scope": {
+    "family": "Inherited source-aligned geometric isotropic fixed-alpha C2 family",
+    "parameters": {
+      "lambda": [
+        0,
+        1
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "same_across_stages": true,
+      "derivative_parameters": [
+        "lambda",
+        "b"
+      ],
+      "alpha": "fixed admissible coefficient choice"
+    },
+    "gas_coordinates": [
+      "x_HII",
+      "y_HeII",
+      "y_HeIII",
+      "w_eV_per_H"
+    ],
+    "photon_coordinates": "33 original groups plus number and energy guards",
+    "time_s": {
+      "h": 625000000,
+      "t0": 160000000000,
+      "t1": 160625000000,
+      "t2": 161250000000
+    },
+    "domain": "Original convex X, internal root/source hulls and positive denominators",
+    "regularity": "C2 source/root family; first-order parameter carry and H_gg,H_gtheta suffice",
+    "partial_derivative_meaning": "Differentiate the actual endpoint defect with all same-family state feedback retained; physical sector attribution is a separate linked decomposition"
+  },
+  "updated_utc": "2026-10-12T23:15:00.730698+00:00",
+  "scientific_status": "PROMOTE_SCOPED",
+  "heavy_queue": [],
+  "launch": false,
+  "strong_no_go_claims": 0,
+  "global_nodes_newly_completed": [],
+  "next_research_node": "HH_DEFECT_MIXED_RESPONSE",
+  "mixed_response_actual_application": "not_run",
+  "new_source_calls": 0,
+  "new_root_solves": 0,
+  "history_replays": 0,
+  "native_authority_promoted": false,
+  "continuous_exact_solution_error_claimed": false,
+  "workflow_structure_check": {
+    "record_path": "state/STRUCTURE_CHECK_01.json",
+    "status_managed_outside_state": true,
+    "command": "python3 evidence/workflow_1_0_0/scripts/run_record.py check state/RESEARCH_STATE.json",
+    "scope": "structure_and_references; scientific validity assessed by the separately linked review/decision",
+    "latest_check": "state/SCHEMA_CHECK.json"
+  },
+  "record_migration": {
+    "preserved_before": "state/RESEARCH_STATE_BEFORE_COMPLETION_UPDATE.json",
+    "change": "scope object preserved verbatim as family_scope; scope is a descriptive string required by workflow 1.0.0.",
+    "scientific_claim_or_candidate_mutation": false
+  },
+  "execution_counts": {
+    "successful_application_executions": 3,
+    "failed_initial_application_executions": 2,
+    "independent_review_program_executions": 2,
+    "independent_review_final_checks": 29,
+    "wolfram_xact_executions": 1,
+    "wolfram_tensor_checks": 6,
+    "wolfram_scalar_groups": 9,
+    "wolfram_scalar_values": 15,
+    "document_builds": 1
+  },
+  "literature_counts": {
+    "exa_search_calls": 4,
+    "exa_requested_candidates_including_duplicates": 20,
+    "scispace_search_calls": 1,
+    "scispace_returned_records": 10,
+    "exa_fetch_calls": 4,
+    "new_core_primary_references": 4,
+    "reused_prior_primary_references": 2
+  },
+  "delivery_status": "GIT_SCIENCE_OBJECTS_AND_CURRENT_DUAL_PROVIDER_ACKNOWLEDGEMENTS_VERIFIED"
+}

@@ -1,0 +1,42 @@
+\input{preamble.tex}
+\input{review_status.tex}
+\begin{document}
+\begin{center}
+{\color{MidnightBlue}\sffamily\large WU088\_HH \quad PHYS17 이론 연구}\\[5mm]
+{\LARGE\bfseries 상관된 endpoint 결함의 매개변수 응답}\\[3mm]
+{\Large\bfseries C$^2$ source 구성, 공통 adjoint와 전역 단조성}\\[4mm]
+{\large 2026년 10월 13일 KST}
+\end{center}
+\vspace{2mm}\noindent\rule{\textwidth}{0.6pt}
+\section*{초록}
+동일 초기 COMMON, 고정된 admissible 계수 선택 $\alpha$, 공유된 전역 매개변수 $(\lambda,b)\in[0,1]^2$에서 실제 두 half 경로와 Full 경로의 endpoint 차이 $d=g_2-g_F$ 및 온도 차이 $\Delta T=T_2-T_F$를 미분한다. PHYS16에서 얻은 유한 결함과 원 signed source gradient, Hessian, mixed derivative 및 PHYS09/11/14의 실제 carry를 재사용한다. 작은 결함 $d$를 먼저 인수로 추출하는 정확한 미분 잔차식을 구성하여, 각 경로의 독립 sensitivity 상자를 뺄 때 생기는 구간 폭을 줄인다.
+
+새 source 구성은 $U=(F_w+\chi_HF_x)/(ne)$와 온도를 보존하는 방향 $\xi=e_x+(w/\Pi)e_w$로부터 helium 열원 계수 $k_{w\mathrm{He}}=(U-xDU[\xi])/f$ 및 그 도함수를 직접 회수한다. 이에 따라 exact density pullback의 1차 응답이 원 $C^2$ 자료에서 닫힌다. 동일 stage 증분의 도함수를 gas movement와 photon opacity에 공유하고, 비가환 수송을 유지한 일곱 photon sector를 미분한다. 원 Full 전처리 $C,B,q,S$와 하나의 온도 covector가 모든 forcing과 feedback을 같은 endpoint에서 전달한다.
+
+실제 외향 구간 계산은
+\[
+\partial_\lambda\Delta T\in[-1.009599125635,-0.8137506081166]\times10^{-8}\ \mathrm K,
+\]
+\[
+\partial_b\Delta T\in[6.776348385589,7.185335549648]\times10^{-5}\ \mathrm K
+\]
+를 준다. 따라서 이 계열에서 $\Delta T$는 $\lambda$에 대해 감소하고 $b$에 대해 증가한다. $\lambda$의 직접 forcing과 state feedback은 모두 음수이며, $b$의 양의 직접 forcing은 작은 음의 feedback을 포함한 뒤에도 양수다. 기존 $\Delta T<0$ 포함과 결합하면, 두 half의 낮은 온도는 유지되면서 birth가 그 차이를 줄이는 구조를 얻는다.
+
+Wolfram Language에서 공식 xAct/xTensor를 실제 실행하여 텐서 항등식 6개와 scalarㆍ행렬 성분 항등식 15개를 정확히 검산한다. 독립 Fraction 검토, 원전 대응, 원 입력의 identity, 실행 기록 및 다음 mixed-response 계약을 함께 제시한다.\cite{Neumaier1989Sensitivity,Rump1990Sensitivity,MargossianBetancourt2022Implicit,phys16,app17}
+
+\noindent\fcolorbox{MidnightBlue!45}{MidnightBlue!3}{%
+\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{연구 판정}\quad \ReviewDecision\par
+\small \ReviewExplanation}}
+\newpage
+\begingroup\small\setlength{\parskip}{0pt}\tableofcontents\endgroup
+\vspace{4mm}
+\noindent\textbf{읽기 순서.} 제1절은 새 수치 결과와 물리적 귀결을 제시한다. 이어지는 정리들은 원 잔차에서 응답식, source closure, photon 미분, inverse와 adjoint 전달을 실제로 유도한다. 후반부는 직접 forcingㆍfeedback, 검산ㆍ문헌, 다음 연구 의무와 재현 경로를 설명한다.
+\newpage
+\input{results_overview.tex}
+\input{theory_complete.tex}
+\input{application_and_review.tex}
+\input{next_and_reproduce.tex}
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}

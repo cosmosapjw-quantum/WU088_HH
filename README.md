@@ -1,3 +1,13 @@
+# WU088_HH — PHYS17 current research result
+
+PHYS17 derives and encloses the actual same-COMMON endpoint defect response to shared HH strength lambda and photon birth b. Independent decision: **PROMOTE_SCOPED**, with 29/29 exact arithmetic checks.
+
+The temperature-defect derivative is **[-1.009599125635e-8, -8.137506081166e-9] K** per unit lambda and **[6.776348385589e-5, 7.185335549648e-5] K** per unit b. An exact C2 He-source derivative construction closes density transfer. The same Full inverse separates explicit forcing and state feedback. Global monotonicity fixes corner extrema; the total rectangle span is enclosed by [6.777162136197765e-5, 7.186345148772871e-5] K for each fixed admissible alpha.
+
+Start with the [research summary](research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/README_KO.md), [19-page report](research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/report/WU088_HH_PHYS17_THEORY_20261013.pdf), [decision](research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/review/DECISION.json), and [next DAG](research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/NEXT_DAG.json). The next mixed-response unit starts from existing C2 Hessians and U/V/W carry. Source callbacks, new root solves, physical history replays and NCP launches in PHYS17: zero.
+
+## Preserved earlier project overview
+
 # WU088_HH - PHYS16 current research result
 
 PHYS16 completes the actual same-COMMON two-half versus Full endpoint enclosure and its C2 endpoint/adjoint remainder theory. Independent decision: **PROMOTE_SCOPED** within the inherited source-aligned geometric-isotropic family.

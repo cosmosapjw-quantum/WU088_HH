@@ -1,42 +1,47 @@
 {
-  "schema": "WU088_HH_ROOT_PHYS16_V1",
+  "schema": "WU088_HH_ROOT_PHYS17_V1",
   "project": "WU088_HH",
   "current_plan": "CURRENT_DEVELOPMENT_PLAN.json",
   "current_science": {
-    "loop": "PHYS16",
-    "core_path": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1",
+    "loop": "PHYS17",
+    "core_path": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1",
     "task": "THEORY_R1_R10_WITH_BOUNDED_APPLICATION",
     "status": "PROMOTE_SCOPED",
     "decision": "PROMOTE_SCOPED",
-    "scope": "Same COMMON, fixed source-aligned geometric-isotropic C2 family, shared global lambda,b in [0,1]^2; inherited source and Full/first-half/second-half root certificates.",
-    "theory": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/theory/ENDPOINT_REMAINDER_THEORY_KO.md",
-    "theory_sha256": "02f29b8e03825a1817378d9a9097228a82fd360fdd2ad9e573c6169c4aa59b48",
-    "actual_correlated_endpoint": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/checks/application/run01/results/CORRELATED_DEFECT_RESULTS.json",
-    "actual_correlated_endpoint_sha256": "725cca8b785343f638ddc69d0d056643086955927f9a0c84cbea3ea46a10d2fc",
-    "actual_endpoint_remainder": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/checks/endpoint/application01/ENDPOINT_REMAINDER_RESULTS.json",
-    "actual_endpoint_remainder_sha256": "6cf01b2c6f69c0ff89ab5f2a3487ea34fbd35da6c0f72b6f4ee09e1d7ad5b4c8",
-    "independent_decision": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/review/DECISION.json",
-    "independent_decision_sha256": "610df271576260d01b473c004824ef7179bce475931cfd50c7e017dadfc0bbd3",
+    "scope": "Same COMMON, fixed admissible alpha in the inherited source-aligned geometric-isotropic C2 family, shared global lambda,b in [0,1]^2; original source and Full/two-half root certificates.",
+    "theory": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/theory/PARAMETER_RESPONSE_THEOREM_KO.md",
+    "theory_sha256": "f0b6891420784239ef4e87793dde4ca425e52a9b320b0d1f4ce7a07f8c546b9b",
+    "actual_parameter_response": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/application/run02/results/PARAMETER_RESPONSE_RESULTS.json",
+    "actual_parameter_response_sha256": "fd4fc0fe6bcf035496270bb92f0c56c44ca43d16694cb40296087569a305e7c0",
+    "forcing_feedback": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/application/forcing01/results/FORCING_FEEDBACK_RESULTS.json",
+    "finite_Neumann_response": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/application/neumann02/results/DERIVATIVE_NEUMANN_RESULTS.json",
+    "independent_decision": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/review/DECISION.json",
+    "independent_decision_sha256": "c6fca7e8dd4cbd89887b3cadd3eba50747b7640015e0f90c8c41b5d6e66a0098",
     "remaining_blocking_findings": [],
-    "source_parent_commit": "b4b8019c6f149035c52784aced8e9cd7f3fbb23b",
-    "source_root_tree": "0a356c941dc7f9c7aacc7245396a9a53fe39dde4",
-    "source_pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/50",
+    "source_parent_commit": "2db8684c607bfe833015120d786c90348763efd6",
+    "source_root_tree": "9efc00cef2f36c130fc4c9e55595165c6ab5c103",
+    "source_pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/51",
     "new_science": [
-      "Cooling-cone closure of the density bridge",
-      "Actual correlated gas and photon endpoint inclusions",
-      "C2 endpoint and finite Neumann remainder bounds",
-      "Common averaged-adjoint birth-sector signs"
+      "Exact C2 He thermal derivative closure and density pullback",
+      "Actual same-family d_lambda,d_b and finite temperature derivatives",
+      "Common inverse/adjoint explicit forcing and state feedback",
+      "Finite Neumann derivative error bounds",
+      "Uniform monotonicity, finite changes, constant-defect local slope and mixed-contrast prior"
     ],
-    "deltaT_K": [
-      "-0.001585967387181453",
-      "-0.001210819969055199"
+    "DeltaT_lambda_K": [
+      "-1.009599125635E-8",
+      "-8.137506081166E-9"
+    ],
+    "DeltaT_b_K": [
+      "0.00006776348385589",
+      "0.00007185335549648"
     ],
     "new_source_callbacks": 0,
     "new_root_solves": 0,
     "new_history_replays": 0
   },
   "current_execution": {
-    "status": "SCOPED_THEORY_AND_ACTUAL_ENCLOSURE_COMPLETE",
+    "status": "SCOPED_THEORY_AND_ACTUAL_PARAMETER_RESPONSE_COMPLETE",
     "physical_source_callbacks": 0,
     "new_physical_root_solves": 0,
     "new_physical_history_replays": 0,
@@ -45,13 +50,16 @@
     "new_NCP_jobs": 0,
     "heavy_queue": [],
     "launch": false,
-    "bounded_application_runs": 2,
-    "archived_Hessian_readouts": 1,
+    "successful_bounded_application_runs": 3,
+    "aborted_or_failed_application_attempts": 2,
+    "independent_arithmetic_runs": 2,
+    "wolfram_xact_runs": 1,
     "execution_evidence": {
-      "application": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/checks/application/run01/RUN_RECORD.json",
-      "endpoint": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/checks/endpoint/application01/RUN_RECORD.json",
-      "wolfram_xAct": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/checks/wolfram/WOLFRAM_XACT_EXECUTION.json",
-      "independent_review": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/review/DECISION.json"
+      "application": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/application/run02/RUN_RECORD.json",
+      "forcing": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/application/forcing01/RUN_RECORD.json",
+      "Neumann": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/application/neumann02/RUN_RECORD.json",
+      "wolfram_xAct": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/wolfram/WOLFRAM_XACT_EXECUTION.json",
+      "independent_review": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/review/INDEPENDENT_REVIEW.json"
     }
   },
   "historical_R31K_B": {
@@ -91,14 +99,13 @@
     "science_claim_ceiling_changed": false
   },
   "current_plan_update": {
-    "path": "research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/NEXT_DAG.json",
-    "kind": "CORRELATED_ENDPOINT_THEORY_AND_NUMERICAL_SUCCESSOR",
-    "status": "THEORY_PROMOTE_SCOPED; NUMERICAL_SUCCESSOR_NOT_RUN",
-    "theory": "research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/theory/CORRELATED_ENDPOINT_THEORY_KO.md",
-    "review": "research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/review/DECISION.json",
-    "external_RUX_nodes_newly_completed": [],
-    "next_task": "HH_CORRELATED_ENDPOINT_ENCLOSURE",
-    "contract": "research/r31ao_unequal_ladder/hh_phys15_correlated_endpoint_theory_20261013_v1/contracts/ENDPOINT_ENCLOSURE_CONTRACT.json"
+    "loop": "PHYS17",
+    "DAG": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/NEXT_DAG.json",
+    "current_node": "HH_DEFECT_PARAMETER_RESPONSE",
+    "decision": "PROMOTE_SCOPED",
+    "next_node": "HH_DEFECT_MIXED_RESPONSE",
+    "original_global_DAG_preserved": true,
+    "global_nodes_newly_completed": []
   },
   "previous_science_PHYS12": {
     "loop": "PHYS12",
@@ -142,33 +149,38 @@
     "external_RUX_nodes_newly_completed": []
   },
   "current_candidate": {
-    "loop": "PHYS16",
-    "core_path": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1",
+    "loop": "PHYS17",
+    "core_path": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1",
     "task": "THEORY_R1_R10_WITH_BOUNDED_APPLICATION",
     "status": "PROMOTE_SCOPED",
     "decision": "PROMOTE_SCOPED",
-    "scope": "Same COMMON, fixed source-aligned geometric-isotropic C2 family, shared global lambda,b in [0,1]^2; inherited source and Full/first-half/second-half root certificates.",
-    "theory": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/theory/ENDPOINT_REMAINDER_THEORY_KO.md",
-    "theory_sha256": "02f29b8e03825a1817378d9a9097228a82fd360fdd2ad9e573c6169c4aa59b48",
-    "actual_correlated_endpoint": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/checks/application/run01/results/CORRELATED_DEFECT_RESULTS.json",
-    "actual_correlated_endpoint_sha256": "725cca8b785343f638ddc69d0d056643086955927f9a0c84cbea3ea46a10d2fc",
-    "actual_endpoint_remainder": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/checks/endpoint/application01/ENDPOINT_REMAINDER_RESULTS.json",
-    "actual_endpoint_remainder_sha256": "6cf01b2c6f69c0ff89ab5f2a3487ea34fbd35da6c0f72b6f4ee09e1d7ad5b4c8",
-    "independent_decision": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/review/DECISION.json",
-    "independent_decision_sha256": "610df271576260d01b473c004824ef7179bce475931cfd50c7e017dadfc0bbd3",
+    "scope": "Same COMMON, fixed admissible alpha in the inherited source-aligned geometric-isotropic C2 family, shared global lambda,b in [0,1]^2; original source and Full/two-half root certificates.",
+    "theory": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/theory/PARAMETER_RESPONSE_THEOREM_KO.md",
+    "theory_sha256": "f0b6891420784239ef4e87793dde4ca425e52a9b320b0d1f4ce7a07f8c546b9b",
+    "actual_parameter_response": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/application/run02/results/PARAMETER_RESPONSE_RESULTS.json",
+    "actual_parameter_response_sha256": "fd4fc0fe6bcf035496270bb92f0c56c44ca43d16694cb40296087569a305e7c0",
+    "forcing_feedback": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/application/forcing01/results/FORCING_FEEDBACK_RESULTS.json",
+    "finite_Neumann_response": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/application/neumann02/results/DERIVATIVE_NEUMANN_RESULTS.json",
+    "independent_decision": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/review/DECISION.json",
+    "independent_decision_sha256": "c6fca7e8dd4cbd89887b3cadd3eba50747b7640015e0f90c8c41b5d6e66a0098",
     "remaining_blocking_findings": [],
-    "source_parent_commit": "b4b8019c6f149035c52784aced8e9cd7f3fbb23b",
-    "source_root_tree": "0a356c941dc7f9c7aacc7245396a9a53fe39dde4",
-    "source_pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/50",
+    "source_parent_commit": "2db8684c607bfe833015120d786c90348763efd6",
+    "source_root_tree": "9efc00cef2f36c130fc4c9e55595165c6ab5c103",
+    "source_pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/51",
     "new_science": [
-      "Cooling-cone closure of the density bridge",
-      "Actual correlated gas and photon endpoint inclusions",
-      "C2 endpoint and finite Neumann remainder bounds",
-      "Common averaged-adjoint birth-sector signs"
+      "Exact C2 He thermal derivative closure and density pullback",
+      "Actual same-family d_lambda,d_b and finite temperature derivatives",
+      "Common inverse/adjoint explicit forcing and state feedback",
+      "Finite Neumann derivative error bounds",
+      "Uniform monotonicity, finite changes, constant-defect local slope and mixed-contrast prior"
     ],
-    "deltaT_K": [
-      "-0.001585967387181453",
-      "-0.001210819969055199"
+    "DeltaT_lambda_K": [
+      "-1.009599125635E-8",
+      "-8.137506081166E-9"
+    ],
+    "DeltaT_b_K": [
+      "0.00006776348385589",
+      "0.00007185335549648"
     ],
     "new_source_callbacks": 0,
     "new_root_solves": 0,
@@ -188,7 +200,7 @@
     "actual_native_root_U_V_W_I": null,
     "publication_target_branch": "research/hh-phys13-thermodynamic-response-20261012"
   },
-  "publication_review_status": "Independent review accepted the scoped PHYS16 theory and actual endpoint application; no remaining blocking finding. PHYS14 remains the carried physical root baseline, with PHYS15 exact chronology identities reused.",
+  "publication_review_status": "Independent PHYS17 review PROMOTE_SCOPED: 29/29 exact arithmetic checks and 9 scientific claim bundles; no remaining blocking findings.",
   "admitted_current_science_remains_PHYS14_until_final_decision": false,
   "workflow_version": "1.0.0",
   "workflow_track": "THEORY_R1_R10",
@@ -358,42 +370,47 @@
     "commit_identity": "Actual containing commit is recorded in detached delivery receipt after publication"
   },
   "current_accepted_theory": {
-    "loop": "PHYS16",
-    "core_path": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1",
+    "loop": "PHYS17",
+    "core_path": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1",
     "task": "THEORY_R1_R10_WITH_BOUNDED_APPLICATION",
     "status": "PROMOTE_SCOPED",
     "decision": "PROMOTE_SCOPED",
-    "scope": "Same COMMON, fixed source-aligned geometric-isotropic C2 family, shared global lambda,b in [0,1]^2; inherited source and Full/first-half/second-half root certificates.",
-    "theory": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/theory/ENDPOINT_REMAINDER_THEORY_KO.md",
-    "theory_sha256": "02f29b8e03825a1817378d9a9097228a82fd360fdd2ad9e573c6169c4aa59b48",
-    "actual_correlated_endpoint": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/checks/application/run01/results/CORRELATED_DEFECT_RESULTS.json",
-    "actual_correlated_endpoint_sha256": "725cca8b785343f638ddc69d0d056643086955927f9a0c84cbea3ea46a10d2fc",
-    "actual_endpoint_remainder": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/checks/endpoint/application01/ENDPOINT_REMAINDER_RESULTS.json",
-    "actual_endpoint_remainder_sha256": "6cf01b2c6f69c0ff89ab5f2a3487ea34fbd35da6c0f72b6f4ee09e1d7ad5b4c8",
-    "independent_decision": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/review/DECISION.json",
-    "independent_decision_sha256": "610df271576260d01b473c004824ef7179bce475931cfd50c7e017dadfc0bbd3",
+    "scope": "Same COMMON, fixed admissible alpha in the inherited source-aligned geometric-isotropic C2 family, shared global lambda,b in [0,1]^2; original source and Full/two-half root certificates.",
+    "theory": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/theory/PARAMETER_RESPONSE_THEOREM_KO.md",
+    "theory_sha256": "f0b6891420784239ef4e87793dde4ca425e52a9b320b0d1f4ce7a07f8c546b9b",
+    "actual_parameter_response": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/application/run02/results/PARAMETER_RESPONSE_RESULTS.json",
+    "actual_parameter_response_sha256": "fd4fc0fe6bcf035496270bb92f0c56c44ca43d16694cb40296087569a305e7c0",
+    "forcing_feedback": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/application/forcing01/results/FORCING_FEEDBACK_RESULTS.json",
+    "finite_Neumann_response": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/checks/application/neumann02/results/DERIVATIVE_NEUMANN_RESULTS.json",
+    "independent_decision": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/review/DECISION.json",
+    "independent_decision_sha256": "c6fca7e8dd4cbd89887b3cadd3eba50747b7640015e0f90c8c41b5d6e66a0098",
     "remaining_blocking_findings": [],
-    "source_parent_commit": "b4b8019c6f149035c52784aced8e9cd7f3fbb23b",
-    "source_root_tree": "0a356c941dc7f9c7aacc7245396a9a53fe39dde4",
-    "source_pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/50",
+    "source_parent_commit": "2db8684c607bfe833015120d786c90348763efd6",
+    "source_root_tree": "9efc00cef2f36c130fc4c9e55595165c6ab5c103",
+    "source_pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/51",
     "new_science": [
-      "Cooling-cone closure of the density bridge",
-      "Actual correlated gas and photon endpoint inclusions",
-      "C2 endpoint and finite Neumann remainder bounds",
-      "Common averaged-adjoint birth-sector signs"
+      "Exact C2 He thermal derivative closure and density pullback",
+      "Actual same-family d_lambda,d_b and finite temperature derivatives",
+      "Common inverse/adjoint explicit forcing and state feedback",
+      "Finite Neumann derivative error bounds",
+      "Uniform monotonicity, finite changes, constant-defect local slope and mixed-contrast prior"
     ],
-    "deltaT_K": [
-      "-0.001585967387181453",
-      "-0.001210819969055199"
+    "DeltaT_lambda_K": [
+      "-1.009599125635E-8",
+      "-8.137506081166E-9"
+    ],
+    "DeltaT_b_K": [
+      "0.00006776348385589",
+      "0.00007185335549648"
     ],
     "new_source_callbacks": 0,
     "new_root_solves": 0,
     "new_history_replays": 0
   },
-  "current_science_state": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/state/RESEARCH_STATE.json",
-  "observable_contracts": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/contracts/PARAMETER_RESPONSE_CONTRACT.json",
-  "next_action": "HH_DEFECT_PARAMETER_RESPONSE: derive correlated d_lambda,d_b and finite temperature derivatives from the original C2/mixed Hessian and stored U/V carry.",
-  "actual_publication_receipt": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/publication/BACKUP_ACK.json",
+  "current_science_state": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/state/RESEARCH_STATE.json",
+  "observable_contracts": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/contracts/MIXED_RESPONSE_CONTRACT.json",
+  "next_action": "HH_DEFECT_MIXED_RESPONSE: derive correlated d_lambda_b and finite temperature mixed response from existing W and C2 Hessians, then resolve the four-corner HH/birth contrast.",
+  "actual_publication_receipt": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/publication/BACKUP_ACK.json",
   "previous_PHYS15_root_document": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/baseline/root_documents_PHYS15/RESEARCH_STATE.json",
   "previous_PHYS15_accepted_theory": {
     "loop": "PHYS15",
@@ -442,18 +459,60 @@
     },
     "next_action": "Implement and evaluate HH_CORRELATED_ENDPOINT_ENCLOSURE using its reviewed common-input residual and endpoint contract with the existing source/carry/preconditioner binding."
   },
-  "publication_target_branch": "research/hh-phys16-endpoint-remainder-theory-20261013",
+  "publication_target_branch": "research/hh-phys17-defect-parameter-response-theory-20261013",
   "publication_stack": {
-    "base": "research/hh-phys15-correlated-endpoint-theory-20261013",
-    "parent_commit": "b4b8019c6f149035c52784aced8e9cd7f3fbb23b",
-    "parent_tree": "0a356c941dc7f9c7aacc7245396a9a53fe39dde4"
+    "base": "research/hh-phys16-endpoint-remainder-theory-20261013",
+    "parent_commit": "2db8684c607bfe833015120d786c90348763efd6",
+    "parent_tree": "9efc00cef2f36c130fc4c9e55595165c6ab5c103"
   },
   "heavy_queue": [],
   "launch": false,
-  "actual_publication_receipt_sha256": "140407b002cd5662d4aa5f39cef091a288ffe7beda72f17291c60ef18d69997e",
+  "actual_publication_receipt_sha256": "f439f03714c719afc3ba475583a440279216f2616c2961ebef883fa01c73b8f3",
   "current_research_loop_status": "complete",
-  "current_research_pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/51",
-  "current_science_commit": "23218af77c9872230b47b6e12bde3e7500368c3c",
-  "current_science_tree": "04673abf1ecdac1bbe76b4afd91768cab2c28f34",
-  "dual_provider_backup_status": "ACKNOWLEDGED_METADATA_SIZE_VERIFIED"
+  "current_research_pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/52",
+  "current_science_commit": "a404c2314d24f897ebb236aa12c856de4d429a3a",
+  "current_science_tree": "4b184213ab7c6041934df8978afa5484ad675066",
+  "dual_provider_backup_status": "ACKNOWLEDGED_METADATA_SIZE_VERIFIED",
+  "previous_PHYS16_root_document": "research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/baseline/root_documents_PHYS16/RESEARCH_STATE.json",
+  "previous_PHYS16_accepted_theory": {
+    "loop": "PHYS16",
+    "core_path": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1",
+    "task": "THEORY_R1_R10_WITH_BOUNDED_APPLICATION",
+    "status": "PROMOTE_SCOPED",
+    "decision": "PROMOTE_SCOPED",
+    "scope": "Same COMMON, fixed source-aligned geometric-isotropic C2 family, shared global lambda,b in [0,1]^2; inherited source and Full/first-half/second-half root certificates.",
+    "theory": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/theory/ENDPOINT_REMAINDER_THEORY_KO.md",
+    "theory_sha256": "02f29b8e03825a1817378d9a9097228a82fd360fdd2ad9e573c6169c4aa59b48",
+    "actual_correlated_endpoint": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/checks/application/run01/results/CORRELATED_DEFECT_RESULTS.json",
+    "actual_correlated_endpoint_sha256": "725cca8b785343f638ddc69d0d056643086955927f9a0c84cbea3ea46a10d2fc",
+    "actual_endpoint_remainder": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/checks/endpoint/application01/ENDPOINT_REMAINDER_RESULTS.json",
+    "actual_endpoint_remainder_sha256": "6cf01b2c6f69c0ff89ab5f2a3487ea34fbd35da6c0f72b6f4ee09e1d7ad5b4c8",
+    "independent_decision": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/review/DECISION.json",
+    "independent_decision_sha256": "610df271576260d01b473c004824ef7179bce475931cfd50c7e017dadfc0bbd3",
+    "remaining_blocking_findings": [],
+    "source_parent_commit": "b4b8019c6f149035c52784aced8e9cd7f3fbb23b",
+    "source_root_tree": "0a356c941dc7f9c7aacc7245396a9a53fe39dde4",
+    "source_pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/50",
+    "new_science": [
+      "Cooling-cone closure of the density bridge",
+      "Actual correlated gas and photon endpoint inclusions",
+      "C2 endpoint and finite Neumann remainder bounds",
+      "Common averaged-adjoint birth-sector signs"
+    ],
+    "deltaT_K": [
+      "-0.001585967387181453",
+      "-0.001210819969055199"
+    ],
+    "new_source_callbacks": 0,
+    "new_root_solves": 0,
+    "new_history_replays": 0
+  },
+  "previous_PHYS16_publication": {
+    "current_research_pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/51",
+    "current_science_commit": "23218af77c9872230b47b6e12bde3e7500368c3c",
+    "current_science_tree": "04673abf1ecdac1bbe76b4afd91768cab2c28f34",
+    "actual_publication_receipt": "research/r31ao_unequal_ladder/hh_phys16_endpoint_remainder_theory_20261013_v1/publication/BACKUP_ACK.json",
+    "actual_publication_receipt_sha256": "140407b002cd5662d4aa5f39cef091a288ffe7beda72f17291c60ef18d69997e",
+    "dual_provider_backup_status": "ACKNOWLEDGED_METADATA_SIZE_VERIFIED"
+  }
 }

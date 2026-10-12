@@ -1,0 +1,31 @@
+{
+  "schema": "WU088_HH_PHYS17_PRE_RUN_V1",
+  "started_utc": "2026-10-12T22:49:09.905846+00:00",
+  "command": [
+    "python3",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/src/forcing_feedback_decomposition.py",
+    "--parent15",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS15_THEORY_20261012_v1",
+    "--parent16",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS16_THEORY_20261013_v1",
+    "--output",
+    "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/checks/application/forcing01/results"
+  ],
+  "source": {
+    "path": "/workspace/scratch/b826cbaab54f/HH_PHYS17_THEORY_20261013_v1/src/forcing_feedback_decomposition.py",
+    "bytes": 11584,
+    "sha256": "c5f1761f2035fe762d7da4665f4794c06cff804985a79822702be3ca0deb79ca"
+  },
+  "reason": "Close explicit global-parameter forcing versus state and opacity feedback with the same Full Jacobian; manual sector derivative cross-check against frozen run02",
+  "budget": {
+    "timeout_seconds": 20,
+    "expected_peak_rss_MiB_below": 128,
+    "native_source_root_history_calls": 0
+  },
+  "questions": [
+    "Do P2 correlated derivative transfer and P4 finite-temperature readout close uniformly?",
+    "What are the signs and widths of d_lambda,d_b and DeltaT_lambda,DeltaT_b?",
+    "Do the C2 density bridge and exact photon derivative graph preserve shared-stage correlations?"
+  ],
+  "acceptance": "Report exact outward intervals and observed sign margins; independently review source correspondence and arithmetic."
+}
