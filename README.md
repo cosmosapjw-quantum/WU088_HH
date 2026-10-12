@@ -1,3 +1,15 @@
+# WU088_HH current research: PHYS14 carried second half
+
+PHYS14 is independently **PROMOTE_SCOPED** for one source-aligned geometric-isotropic two-half history. A new uniform implicit root, gas/photon/guard U/V/W and finite thermodynamic responses continue the same COMMON with global lambda,b in both halves. HH temperature response is [-18.93685,-9.75153] microkelvin; mixed HH-birth temperature interaction is [1.96632,3.44806] picokelvin. Inherited photon memory adds thermal energy while lowering temperature.
+
+The result includes an exact 39-state aggregate closure and the original nonuniform-grid R(rho)^2-R(rho²) split operator. It reuses the original Full nonphoto/q source and first-half carry. One new implicit stage passed its first bounded scientific run; the independent reviewer checked it with separate rational arithmetic.
+
+Read [research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/REPORT_KO.md](research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/REPORT_KO.md), [the LaTeX/PDF report](research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/report/), [the scoped decision](research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/review/DECISION.json), and [the handoff](research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/HANDOFF_KO.md). The next local research question is the correlated same-COMMON Full-versus-two-half endpoint defect. First-half/source/C2 premises remain inherited and the geometric subfamily is explicit.
+
+The original global DAG and nine predecessor HH nodes are retained. Native and microscopic lanes keep their own admission conditions. The complete backup has 45 inputs; a Git checkout restores five large pinned NCP07 members using INPUT_RESTORE.json and src/restore_large_inputs.py.
+
+## Preserved preceding English README
+
 # WU088_HH — HH Atomic-Reuse research plan v2
 
 The [current research plan](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/DEVELOPMENT_PLAN_KO.md) maps the user's 17-node REI Atomic-Reuse DAG into eight HH tasks. The [HH DAG](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/NEXT_DAG.json), [provider contract](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/contracts/HH_REI_EXPORT_CONTRACT.json), and [handoff](research/r31ao_unequal_ladder/hh_atomic_reuse_plan_20261012_v2/HANDOFF_KO.md) are the active planning entry points. See [CURRENT_DEVELOPMENT_PLAN.json](CURRENT_DEVELOPMENT_PLAN.json).

@@ -1,3 +1,13 @@
+# Current implementation priorities - PHYS14 complete
+
+Read research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/HANDOFF_KO.md and review/DECISION.json. The actual carried second implicit half and finite source-aligned observables are independently PROMOTE_SCOPED. Use the original geometric subfamily, common global parameters, source fhat and 33 energy/sigma/heat leaves.
+
+Next form the correlated same-COMMON Full-versus-two-half endpoint defect, reusing admitted full/half source and carry and the exact remap split stencil. Preserve gas/photon dependence before subtracting root enclosures. Admit only the actual missing source/domain work. Existing successful scientific runs are cached evidence.
+
+Use 31 exact existing Git input blobs, nine small new inputs, and five archive-restored large members. src/restore_large_inputs.py verifies archive/member bytes and installs only missing files; it refuses differing existing input. Current science used one new implicit-stage run with zero native/atomic/NCP calls. Independent review, analytic oracles, input restoration, and publication checks retain their distinct roles.
+
+## Preserved PHYS13 and original implementation guidance
+
 # Current implementation priorities — PHYS13
 
 Read research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/HANDOFF_KO.md and the completed independent decision. Reuse the exact observable transfer; there is no heavy job ready. Preserve source fhat, coefficient graph, finite-switch and first-stage chronology. A concrete consumer requires same-family admission; actual further history requires joint carried state and next-stage source coverage. PHYS13 adds one provider result and changes no original Atomic Reuse v2 dependency.

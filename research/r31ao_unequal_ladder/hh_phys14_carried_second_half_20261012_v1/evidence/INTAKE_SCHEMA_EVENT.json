@@ -1,0 +1,10 @@
+{
+  "phase": "read_only_source_inspection",
+  "classification": "IMPLEMENTATION_SCHEMA_ASSUMPTION",
+  "observed": "KeyError: 'rows' while inspecting PHYS09 PROJECTED_RESULTS.json",
+  "cause": "A metadata inspection script assumed the PHYS13 top-level rows key for the PHYS09 document. The actual PHYS09 keys are stages and details.",
+  "correction": "Read actual top-level keys and use stages/details in subsequent consumers.",
+  "scientific_execution": false,
+  "source_modified": false,
+  "original_error": "Traceback (most recent call last):\n  File <stdin>, line 12, in <module>\nKeyError: 'rows'"
+}

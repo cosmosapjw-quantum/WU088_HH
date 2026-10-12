@@ -1,3 +1,18 @@
+# WU088_HH 최신 연구: PHYS14 공동 carry의 두 번째 half
+
+PHYS14를 독립 검토 후 PROMOTE_SCOPED로 채택했다. 같은 COMMON과 전역 λ,b를 유지한 실제 두-half 계열에서 새 두 번째 implicit 단계의 유일 근과 일차·혼합·유한 온도·전자 응답을 포함했다. 유한 HH 온도 응답은 [-18.93685,-9.75153] μK, mixed 온도 interaction은 [1.96632,3.44806] pK다. 첫 half의 광자 기억은 열에너지를 늘리면서 온도를 추가로 낮춘다.
+
+원 등방 기하학에서 gas4+group33+guard2의 정확한39-state closure와 원 비균일격자의 R(rho)^2−R(rho²) 차이식을 얻었다. 기존 Full nonphoto/q source와 첫-half carry를 재사용했고 새 암시적 stage한개가첫실행에통과했다.
+
+- 보고서: [research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/REPORT_KO.md](research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/REPORT_KO.md)
+- LaTeX/PDF: [research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/report/](research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/report/)
+- 결과와독립판정: [research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/results/advance01/](research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/results/advance01/), [research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/review/DECISION.json](research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/review/DECISION.json)
+- 다음연구: [research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/HANDOFF_KO.md](research/r31ao_unequal_ladder/hh_phys14_carried_second_half_20261012_v1/HANDOFF_KO.md), 같은COMMON의Full대실제two-half endpoint결함을상관된잔차차이로포함
+
+원 source/C2 첫단계 전제와 geometric subfamily scope를 함께읽는다. 기존전역DAG와9개HHnodes를보존하고provider결과와구체적후속작업만추가했다. 과학원본과완료실행을기본적으로반복하지않는다.
+
+## 보존된 PHYS13 및 이전 안내
+
 # WU088_HH — PHYS13 유한 온도·전자 응답
 
 PHYS13에서 같은 source family의 HH 온도·전자 응답과 냉각 원인을 계산했다. [연구보고서](research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/REPORT_KO.md), [상세 유도](research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/theory/THERMODYNAMIC_RESPONSE_THEOREM_KO.md), [정확한 결과](research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/results/thermo_v2/THERMO_RESULTS.json), [독립 판정](research/r31ao_unequal_ladder/hh_phys13_thermodynamic_response_20261012_v1/review/DECISION.json)을 참조한다.
