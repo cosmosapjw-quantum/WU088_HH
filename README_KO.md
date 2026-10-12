@@ -1,3 +1,15 @@
+# WU088_HH — 현재 개발 우선순위 (2026-10-12)
+
+현재 계획은 [관측량 중심 개발계획](research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/DEVELOPMENT_PLAN_KO.md)과 [CURRENT_DEVELOPMENT_PLAN.json](CURRENT_DEVELOPMENT_PLAN.json)이다. 다음 경량 작업은 같은 소스 계열의 HH-on/off ΔxHII·Δw 평가이며 **HERE에서 수행할 예정**이다. 이번 계획 변경에서 새 과학 계산을 실행했다고 세지 않는다.
+
+PHYS11 C2 `328372568144c4cdb6cdecd94c9c9bff984e103e`의 기존 scoped 결과를 재사용한다. LCS 유효 이온화와 singlet H⁺/H⁻ ion-pair는 별개 반응이다. FT03 BE native 인증과 frozen107 atomic 연구도 해당 주장에 맞는 조건을 유지한다. 모든 경량 결과가 두 native 경로의 완성을 기다리지 않는다.
+
+**NCP heavy_queue=[] / launch=false / NO_HEAVY_JOB_READY.** [현재 NCP 전달문](research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/HANDOFF_KO.md)을 먼저 읽는다. 짧은 분석, 완료된 계산, 빈 큐 benchmark를 NCP로 넘기지 않는다.
+
+## 아래 문서의 범위: 보존된 R31K-B/R31M native 안내
+
+아래 원문은 해당 과거 native 작업의 절차로 보존한다. 아래의 ‘현재 릴리스’·‘다음 benchmark’는 그 시점의 설명이며 현재 root 계획을 대체하지 않는다. Git fetch/pull 직후 자동 benchmark를 실행하라는 현재 지시가 아니다.
+
 # WU088_HH
 
 Frozen107 두 전자 H-H 연구의 source-bound 계산·성능 진단 저장소. 현재 릴리스는 **R31K-B 연구 결과와 검증된 범위의 최적화 후보**이며 완성된 scattering/production solver가 아니다.

@@ -1,3 +1,16 @@
+# Active implementation priorities — 2026-10-12
+
+Current authority: root CURRENT_DEVELOPMENT_PLAN.json and `research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/DEVELOPMENT_PLAN_KO.md`. The machine-readable NEXT_DAG.json separates the first scoped HH response result, the strict FT03 native-carry certificate and microscopic singlet ion-pair work.
+
+1. HERE: reuse source-bound PHYS11/PHYS09 data, fix the same-family HH-on/off observable contract, evaluate the existing U enclosure, and report the physical scope. This is the next planned study, not an executed result of this plan change.
+2. Select additional work only if it answers the stated observable or a concrete standalone HH collision question. Native/full49 requirements remain attached to their own claims.
+3. NCP: no active heavy task. Do not run the historical host benchmark for an empty queue. New long work requires an actual unfinished manifest, lane-specific inputs, measured pilot cost/memory and independent partitions.
+4. Independent review targets substantive claims, algorithm changes and promotion. Reuse unchanged scientific evidence. One coherent plan publication replaces repeated administrative cycles.
+
+## Preserved R31K-B implementation plan — historical native lane
+
+The original text below remains valid within its historical frozen107/native scope and does not set the default next task for all HH research.
+
 # R31K-B bounded research + coding loop
 
 Authority: user 2026-09-26 request, GPT6 Astra v4 research/coding harnesses.

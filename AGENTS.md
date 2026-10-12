@@ -1,3 +1,13 @@
+# Current development priority — 2026-10-12
+
+Read CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/DEVELOPMENT_PLAN_KO.md first. Select the output-specific lane in NEXT_DAG.json, then apply the preserved execution contract below.
+
+The next short science task belongs HERE: fixed-family HH-on/off response in x_HII and w using existing inputs. It is planned, not executed by this documentation change. Current NCP heavy_queue=[] and launch=false. Do not benchmark an empty queue or replay completed science. Full native certification is required for that native claim, not as a universal prerequisite of a scoped effective-model result. HH LCS ionization and singlet ion-pair physics, and FT03 BE versus frozen107 atomic native, remain separate.
+
+The historical README/results/verification files below keep their original scientific scope. Target-host benchmarking in the preserved native-candidate contract applies when admitting an actual native candidate; it is not the default action for this plan. No existing scientific tolerances, arrays, source identities or failures are changed.
+
+## Preserved execution contract
+
 # WU088_HH execution contract
 
 Read README_KO.md, docs/research/RESULTS_KO.md, docs/coding/IMPLEMENTATION_PLAN.md, and evidence/FINAL_VERIFICATION.json.

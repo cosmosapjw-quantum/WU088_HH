@@ -1,0 +1,398 @@
+{
+  "schema": "WU088_HH_AUDIT_ADOPTION_V1",
+  "created_utc": "2026-10-12 06:15:30 UTC",
+  "language": "ko",
+  "document_role": "CREATOR_PLANNING_INPUT_NOT_INDEPENDENT_FINAL_REVIEW",
+  "subject_repository": "cosmosapjw-quantum/WU088_HH",
+  "scope": "첨부 rei_bianchi 개발 감사에서 WU088_HH 계획에 적용할 권고·조건·과장 방지 조항. 새 과학 계산과 다른 repository 변경 없음.",
+  "audit_attachment": {
+    "path": "repo/research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/inputs/AUDIT_ORIGINAL_KO.txt",
+    "bytes": 27686,
+    "sha256": "ba4822f20d706d8c1841aaa7f934b8386fdf1e577de63e6578ca266e211807a4",
+    "uploaded_name": "Pasted text(20261012-060411).txt",
+    "original_local_path": "/workspace/scratch/198b9c7581be/upload/Pasted text(20261012-060411).txt"
+  },
+  "evidence_intake": {
+    "file": "intake/rei_audit/REI_SOURCE_INTAKE.json",
+    "sha256": "c01d43d8c382fbb3a2ce9c7cf7c44d42309ab46df531db1eb437a50be2926896",
+    "observed_utc": "2026-10-12 06:09:37 UTC",
+    "findings_file": "intake/rei_audit/REI_AUDIT_FINDINGS.json",
+    "findings_sha256": "3fa00567c4d2f4b8f5b7e619a45488865bf2197409e7602f159ea7df5424742c",
+    "scope": "PR104/110/112/113; latest12 updated PR metadata; PR83 head commit; main ref; pinned report/DAG/summary only",
+    "limitations": [
+      "read-only planning intake, not fresh numerical validation",
+      "full repository and raw histories not materialized",
+      "external CAMB/CLASS/FlexRT statements were not independently reaudited by this contributor"
+    ]
+  },
+  "disposition_vocabulary": {
+    "adopt": "감사 권고를 HH 계획에 적용한다. 과학적 성공을 소급 선언하지 않는다.",
+    "qualify": "감사 취지를 적용하되 실제 증거·모형·소유권의 조건을 명시한다.",
+    "reject_overclaim": "감사 자체 또는 적용 과정에서 생길 수 있는 과도한 추론을 배제한다. 감사의 타당한 취지까지 기각하는 것이 아니다."
+  },
+  "recommendation_count": 14,
+  "global_boundaries": {
+    "new_scientific_runtime_calls": 0,
+    "remote_mutations_by_this_document_author": 0,
+    "rei_bianchi_code_or_runtime_paused": false,
+    "rei_bianchi_pr_or_automation_modified": false,
+    "HH_scientific_channel_details": "DEFINED_BY_HH_OWNER_SEPARATELY",
+    "independent_final_review": false,
+    "old_failure_and_checkpoint_preserved": true,
+    "NCP_dispatch_authorized_by_this_document": false
+  },
+  "recommendations": [
+    {
+      "recommendation_id": "AUD01_REUSE_EXISTING_REDUCED_SCIENCE",
+      "disposition": "adopt",
+      "audit_intent": "이미 계산된 축약 재이온화 전구간 결과를 독립적인 과학 기준선으로 활용한다.",
+      "confirmed_facts": [
+        {
+          "statement": "PR104의 S0–S2는 DONE이며 14개 fine history, 각16384 구간의 z20→4+ 적분과 독립 비교가 완료돼 있다. 기존 적분시간 합계는3.2106087329993898초이고 BROAD_HISTORY.png가 게시돼 있다.",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/REPORT_KO.md",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/DAG.json",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/evidence/RUN002/CAMPAIGN.json",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/independent/DECISION.json",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/evidence/RUN002/BROAD_HISTORY.png"
+          ]
+        }
+      ],
+      "hh_plan_change": [
+        "HH 완료를 기다려야 첫 reduced scientific plot을 얻는다는 작업·문구를 만들지 않는다.",
+        "기존 결과와 그 과학 범위를 참조하고 동일 계산을 HH 계획 변경의 확인 절차로 재실행하지 않는다."
+      ],
+      "claim_ceiling": [
+        "기존 첫 reduced plot의 존재와 채택을 재확인한 것이며 이번 작업에서 새 plot이나 history를 생성한 것이 아니다.",
+        "Reduced mean-volume history를 방향별 수송·편광·전체 CMB optical depth 또는 관측적 채택으로 승격하지 않는다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD02_HH_NONBLOCKING_DEPENDENCY",
+      "disposition": "qualify",
+      "audit_intent": "HH·CR·RCT 전체 증명을 경량 우주론 결과의 필수 선행조건으로 만들지 않는다.",
+      "confirmed_facts": [
+        {
+          "statement": "현재 PR104 DAG의 S0–S2에는 A_HH dependency가 없다. A_HH는 원 mixed certificate만 막고 N2는 chronology 발견을 활용하되 전체 proof lane을 요구하지 않는다고 명시돼 있다.",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/DAG.json",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/REPORT_KO.md"
+          ]
+        }
+      ],
+      "hh_plan_change": [
+        "현재도 존재하는 비차단 원칙을 HH의 task selector와 handoff에 명시적으로 집행한다.",
+        "HH 원 연구의 후속 의무를 보존하면서 Track A, prescribed-history Track B, 명시적 HH-OFF 최소 Track C의 보편적 선행조건에서 제외한다.",
+        "특정 HH 물리 관측량을 목표로 선택한 경우 필요한 HH 입력과 정밀도는 해당 선택의 개별 의존성으로 선언한다."
+      ],
+      "claim_ceiling": [
+        "현재 DAG가 이미 분리한 의존성을 이번에 처음 해제했다고 소급 서술하지 않는다.",
+        "운영 우선순위의 문제와 실제 코드/DAG에 존재하는 필수 dependency를 구분한다.",
+        "HH-OFF closure의 모델 적합성이 자동 입증된 것으로 처리하지 않는다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD03_NATIVE_HISTORY_STATUS_PRECISION",
+      "disposition": "qualify",
+      "audit_intent": "최근 native 진행 범위와 비용을 근거로 연구 우선순위를 재평가한다.",
+      "confirmed_facts": [
+        {
+          "statement": "PR110의 C12R14 current run은 gen96, z15.830948903093297, 목표 출력1/129이며 allocation exhausted 및 scientific admission false다. Accepted macros96과 half-boundaries192는129 output epochs와 다른 수량이다.",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/17f8d0daa72e0f76a49cde01b110f650a6688c42/research/accel02_20261011/q1b/c12/HANDOFF.json"
+          ],
+          "source_pr_url": "https://github.com/cosmosapjw-quantum/rei_bianchi/pull/110",
+          "head_commit": "17f8d0daa72e0f76a49cde01b110f650a6688c42"
+        },
+        {
+          "statement": "같은 PR의 과거 G1_FINE는129 epochs까지 완료했으나 photon-number3.5288241e-9와 source 정밀도 문제로 기각됐다. 현재 C12는 별도 수치 구성이다.",
+          "source_pr_url": "https://github.com/cosmosapjw-quantum/rei_bianchi/pull/110",
+          "head_commit": "17f8d0daa72e0f76a49cde01b110f650a6688c42",
+          "evidence_snapshot": "intake/rei_audit/REI_SOURCE_INTAKE.json"
+        }
+      ],
+      "hh_plan_change": [
+        "Native 통합 현황을 HH 결과의 직접적 완료·실패 판정으로 가져오지 않는다.",
+        "기존 rejected full history와 현재 accepted prefix를 구분한 인용만 사용한다.",
+        "원 checkpoint·실패·열린 gate를 유지하면서 HH 쪽의 다음 작업을 별도로 정한다."
+      ],
+      "claim_ceiling": [
+        "Native 전구간이 한 번도 실행 완료되지 않았다는 일반화를 배제한다.",
+        "실행 완료, 수치·물리 기준 통과, 과학적 채택을 서로 구분한다.",
+        "이 계획 변경이 PR110의 현재 실행·allocation을 변경했다는 주장을 하지 않는다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD04_SEPARATE_STIFFNESS_AND_ATOMIC_FIDELITY",
+      "disposition": "adopt",
+      "audit_intent": "시간 적분의 stiffness·분할 오차와 원자물리 fidelity를 다른 연구 문제로 다룬다.",
+      "confirmed_facts": [
+        {
+          "statement": "저장된 C12 sequence에서 step은15.360배 감소했고, 마지막 GammaHI signed 차이의99.908401%가 HI threshold cell24에 집중된다. 유효 hκ는 coarse8.059/fine half5.311이고 국소 평균19.777초/attempt다.",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/17f8d0daa72e0f76a49cde01b110f650a6688c42/research/accel02_20261011/q1b/c12/future/STEP_SIZE_TREND_KO.md"
+          ]
+        }
+      ],
+      "hh_plan_change": [
+        "HH의 chronology·수치 map 문제와 새로운 atomic physics provider의 필요성을 한 작업으로 자동 결합하지 않는다.",
+        "수치 알고리즘 변경은 해당 결함과 목표 관측량에 직접 연결된 최소 실험으로 제안한다.",
+        "다른 repo의 native 진단은 참고 입력으로만 쓰고 이 HH 계획에서 그 실제 runner를 호출하지 않는다."
+      ],
+      "claim_ceiling": [
+        "저장된 진화 중 상태의 진단은 fixed-state h→0 errorfloor·Zeno·stiff order reduction의 증명이 아니다.",
+        "국소 attempt 평균을 전구간 ETA 또는 NCP 병렬 가속률로 쓰지 않는다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD05_SCENARIO_SIZE_IS_NOT_HH_BOUND",
+      "disposition": "reject_overclaim",
+      "audit_intent": "작은 shear response보다 큰 astrophysical scenario 변화를 고려해 관측량의 식별성을 우선한다.",
+      "overclaim_rejected": "fesc/C/T scenario 변화가 더 크므로 HH correction은 자동으로 무시 가능하거나 불필요하다는 확장 해석.",
+      "confirmed_facts": [
+        {
+          "statement": "r=.1의 delta tau는-2.6112249698381773e-5이며 fesc=.1/.3, C=5, T=10000K의 기존 scenario delta는 각각-0.012723178756789875,+0.008685768352462576,-0.003945403095246831,-0.004664000499791161이다. 이들은 선택한 한 변수씩의 scenario이고 HH-on/off bound나 통계적 posterior가 아니다.",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/evidence/RUN002/CAMPAIGN.json",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/REPORT_KO.md"
+          ]
+        }
+      ],
+      "hh_plan_change": [
+        "HH의 우선순위는 대상 observable에 대한 실제 또는 명시적 조건부 영향 근거로 정한다.",
+        "HH를 생략한 경량 closure와 HH의 중요도가 검증돼 작다고 결론 난 경우를 다른 상태로 기록한다."
+      ],
+      "claim_ceiling": [
+        "첨부 감사 자체는 이 scenario를 HH 무시 상한으로 증명하지 않았다. 여기서 기각하는 것은 감사를 적용하며 생길 수 있는 과도한 추론이다.",
+        "Reduced shear effect나 타 원자 과정의 크기를 HH 물리 과정 전체의 상한으로 대체하지 않는다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD06_OBSERVABLE_ERROR_BUDGET",
+      "disposition": "qualify",
+      "audit_intent": "모든 내부 항의 일률적 정밀도보다 연구 대상 관측량의 수치오차와 모델오차를 구분해 배정한다.",
+      "confirmed_facts": [
+        {
+          "statement": "Reduced r=.1 response는 약2.6112e-5이고 독립 reference 비교는 같은 reduced model의 수치해를 검증한다. 기존 판정은 물리 모형의 적합성·전체 CMB tau를 채택하지 않는다.",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/independent/DECISION.json",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/REPORT_KO.md"
+          ]
+        }
+      ],
+      "hh_plan_change": [
+        "새 HH 작업마다 대상 observable, 적용 domain, 비교 기준, 수치오차와 closure uncertainty의 의미를 먼저 적는다.",
+        "작은 response에 대한 paired 또는 직접 response 계산을 후보로 평가하되 해당 식의 source family와 합성 조건을 고정한다.",
+        "Positivity, 핵수·광자수 bookkeeping, 단위·부호와 기존 보호된 gate의 의미를 유지한다."
+      ],
+      "claim_ceiling": [
+        "2.6e-6은 기록된 reduced response를10% 상대 수치정확도로 다루겠다는 선택 아래의 예시이며 HH의 새 공통 tolerance가 아니다.",
+        "Global/native gate를 이 감사 문구만으로 완화하거나 과거 실패를 통과로 바꾸지 않는다.",
+        "관측량 중심 오차배정이 아직 계산되지 않은 모델오차의 크기를 입증하지 않는다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD07_FROZEN_COEFFICIENT_UPDATE_SCOPE",
+      "disposition": "qualify",
+      "audit_intent": "상수 source·opacity 구간의 정확한 source–absorption 적분을 stiffness 대응 후보로 고려한다.",
+      "confirmed_facts": [
+        {
+          "statement": "첨부 감사의 N'=S-κN, N(t+h)=exp(-κh)N(t)+S[1-exp(-κh)]/κ는 frozen coefficient scalar subproblem을 대상으로 한다. C12 기록은 gas-dependent opacity와 source–attenuation–reconstruction의 결합을 진단하고 있다.",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/17f8d0daa72e0f76a49cde01b110f650a6688c42/research/accel02_20261011/q1b/c12/future/STEP_SIZE_TREND_KO.md"
+          ],
+          "audit_attachment_sha256": "ba4822f20d706d8c1841aaa7f934b8386fdf1e577de63e6578ca266e211807a4"
+        }
+      ],
+      "hh_plan_change": [
+        "정확한 국소 map·closure·변수 결합의 책임을 분리한 알고리즘 후보만 검토한다.",
+        "실제 coupled source/opacity/time dependence와 이벤트 chronology에 대한 유효성은 해당 실험의 별도 조건으로 둔다."
+      ],
+      "claim_ceiling": [
+        "상수계수 해의 positivity·안정성으로 native coupled accuracy, 보존, Jacobian 동치 또는 병렬 속도 향상을 완료 처리하지 않는다.",
+        "이번 계획 문서에서는 새 수치 알고리즘을 구현·검증·실행하지 않는다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD08_MATCHED_H_SCALAR_DEGENERACY",
+      "disposition": "qualify",
+      "audit_intent": "평균 팽창 효과와 Bianchi 방향별 수송 효과를 구분해 과학적 질문을 정한다.",
+      "confirmed_facts": [
+        {
+          "statement": "PR104의 LRS Bianchi-I background는 H²=Hfid²(Ωm a^-3+ΩΛ)+s0²a^-6를 사용하고 reduced scalar closure에는 angular transport가 없다. +/-r의 Q/tau가 같은 기존 검사도 기록돼 있다.",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/REPORT_KO.md",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/independent/DECISION.json"
+          ]
+        }
+      ],
+      "hh_plan_change": [
+        "HH 공급 인터페이스에서 background/time convention과 scalar 또는 directional observable 여부를 구분한다.",
+        "Bianchi 고유 효과라는 주장은 같은 mean-H 기준과 source/IC를 고정한 비교가 필요한 독립 과학 질문으로 둔다."
+      ],
+      "claim_ceiling": [
+        "같은 H(a),S(a),R(a),초기조건과 cap 처리를 갖는 scalar ODE의 유일성에 따른 퇴화라는 조건부 추론이다.",
+        "Bianchi 전체, 각도 의존 광자 전달, 편광, observed-z 경계에 대한 no-go로 확장하지 않는다.",
+        "이번 입력감사는 새로운 독립 수학 정리 판정이 아니다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD09_SEPARATE_SCIENTIFIC_PRODUCTS",
+      "disposition": "adopt",
+      "audit_intent": "Reduced history, prescribed-history Bianchi transport, 최소 coupling, 고정밀 native physics를 구분된 과학 제품으로 개발한다.",
+      "confirmed_facts": [
+        {
+          "statement": "PR104는 reduced history를 별도로 채택하며 원 native CR/RCT/HH/thermal을 HOLD로 보존한다. RCT 관련 PR112/113도 synthetic component와 saved rate-only readout이라는 별도 범위를 유지한다.",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/independent/DECISION.json",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/DAG.json"
+          ],
+          "source_pr_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/pull/112",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/pull/113"
+          ],
+          "source_pr_heads": {
+            "112": "2cae28f8d156d33511d38de9725983f59c03549c",
+            "113": "efb63623c4ed0f6c270a677fab3eb0a81ce80e34"
+          }
+        }
+      ],
+      "hh_plan_change": [
+        "HH 원 연구를 별도 과학 목적과 명시적 재개 조건을 가진 공급 경로로 둔다.",
+        "수신 측의 named physical question에 필요한 HH 결과만 공급하고 전체 원 연구 완료를 기다리는 일반 dependency를 만들지 않는다.",
+        "HH의 기존 결과·실패·열린 의무를 폐기하거나 과학적 DONE으로 바꾸지 않는다."
+      ],
+      "claim_ceiling": [
+        "경량제품 독립성을 채택하는 것은 특정 최소 coupling의 물리적 충분성을 이미 검증했다는 뜻이 아니다.",
+        "다른 repo의 구현·실행 순서를 이 HH 문서만으로 변경하지 않는다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD10_EFFECTIVE_INPUTS_PRESERVE_MOMENTS",
+      "disposition": "qualify",
+      "audit_intent": "필요한 photoionization·heating moment를 명시한 effective input이나 표를 재사용하고 고비용 미시물리의 매-step 재계산을 피한다.",
+      "confirmed_facts": [
+        {
+          "statement": "PR110의 native 경로는 source number/energy precision과 spectral gate를 별도로 관리하며, source quadrature의 실패를 evolved gas error와 구분한다.",
+          "source_pr_url": "https://github.com/cosmosapjw-quantum/rei_bianchi/pull/110",
+          "head_commit": "17f8d0daa72e0f76a49cde01b110f650a6688c42",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/17f8d0daa72e0f76a49cde01b110f650a6688c42/research/accel02_20261011/q1b/c12/HANDOFF.json"
+          ]
+        }
+      ],
+      "hh_plan_change": [
+        "HH 공급 결과는 요구되는 사건수·에너지·모멘트와 domain·단위·source identity가 맞는지로 연결한다.",
+        "수신 측이 요구하지 않는 전체 native interface를 기본 선행작업으로 확장하지 않는다.",
+        "이 채널의 구체적 공급 변수와 과학 ceiling은 HH owner가 별도로 고정한다."
+      ],
+      "claim_ceiling": [
+        "단순한 고에너지 tail 절단이나 총률 하나의 일치로 heating·spectrum·moment 정확도를 가정하지 않는다.",
+        "표·축약 입력의 cache reuse는 검증된 input/closure identity와 지원 domain 안에 한정한다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD11_SCALE_VERIFICATION_TO_DECISIONS",
+      "disposition": "adopt",
+      "audit_intent": "검증·자료전파가 매 작은 계산의 핵심 경로를 점유하지 않도록 하고 중요한 과학 판정과 상태 전이를 중심으로 보존한다.",
+      "confirmed_facts": [
+        {
+          "statement": "PR110의1543 changed files는 누적 stacked diff이며 코드뿐 아니라 evidence/checkpoint/report를 포함한다. 이 숫자만으로 코드 복잡도나 검증 오버헤드의 실측 시간을 계산할 수 없다.",
+          "source_pr_url": "https://github.com/cosmosapjw-quantum/rei_bianchi/pull/110",
+          "head_commit": "17f8d0daa72e0f76a49cde01b110f650a6688c42"
+        },
+        {
+          "statement": "PR104 및 C12 handoff는 완료 검산의 무변경 재실행을 피하고 실패·checkpoint를 보존하도록 이미 요구한다.",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/REPORT_KO.md",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/17f8d0daa72e0f76a49cde01b110f650a6688c42/research/accel02_20261011/q1b/c12/HANDOFF.json"
+          ]
+        }
+      ],
+      "hh_plan_change": [
+        "주요 scientific claim, 알고리즘 교체, 승격·유의미한 상태 전이에 검토와 checkpoint를 집중한다.",
+        "완료 증거가 있는 동일 작업을 다음 계획의 형식적 gate로 반복 실행하지 않는다.",
+        "선택적 readback과 기존 백업 승인을 유지하고 같은 payload의 무의미한 반복 업로드를 피한다."
+      ],
+      "claim_ceiling": [
+        "기존 failure·provenance·필요한 재현 정보를 지우거나 검증을 수행한 것처럼 생략하지 않는다.",
+        "모든 개발 지연이 문서·백업 때문이라는 원인 비율이나 측정된 속도 향상을 주장하지 않는다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD12_NCP_ADMISSION_BY_USEFUL_WORK",
+      "disposition": "adopt",
+      "audit_intent": "NCP64코어/128GiB에는 실제로 길고 독립 병렬화가 유효한 계산만 위임한다.",
+      "confirmed_facts": [
+        {
+          "statement": "기존 reduced14개 fine trajectory의 적분시간 합계는3.21초인 반면 C12의19.777초/attempt는 다른 native 문제의 국소 sequence다. 이는 직접 speedup benchmark가 아니다.",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/REPORT_KO.md",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/17f8d0daa72e0f76a49cde01b110f650a6688c42/research/accel02_20261011/q1b/c12/future/STEP_SIZE_TREND_KO.md"
+          ]
+        }
+      ],
+      "hh_plan_change": [
+        "준비된 유용한 미완료 heavy manifest가 없으면 heavy_queue=[]와 launch=false를 유지한다.",
+        "짧은 이론·입력 연결·후처리·작은 실제 실험은 이 대화 환경에서 처리한다.",
+        "NCP 후보는 독립 physical family 각각의 전체 history나 실제 독립 계산으로 나누며 각 history 내부 시간 carry는 순차성을 유지한다.",
+        "실제 workload의 비용·메모리·I/O·scaling 근거로 worker 수를 정하고 사용량을 채우려고 scan을 추가하지 않는다.",
+        "빈 queue에서 성능 벤치마크나 runtime 설치를 실행하지 않는다."
+      ],
+      "claim_ceiling": [
+        "코어 수가 많다는 이유만으로 한 stiff adaptive trajectory의 선형 병렬 가속을 보장하지 않는다.",
+        "감사의19.777초 수치만으로 HH 작업을 heavy로 분류하거나 전체 ETA를 산출하지 않는다.",
+        "이번 파일은 실제 NCP dispatch나 새로운 물리 workload의 완료를 의미하지 않는다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD13_NO_CROSS_REPOSITORY_SIDE_EFFECT",
+      "disposition": "adopt",
+      "audit_intent": "이 스레드에서 감사의 취지를 WU088_HH 개발계획에 적용한다.",
+      "confirmed_facts": [
+        {
+          "statement": "이번 bounded intake는 rei_bianchi PR·pinned 문서와 저장된 요약만 읽었으며 원격 mutation, history 재실행, binary/checkpoint 다운로드는0회다.",
+          "evidence_snapshot": "intake/rei_audit/REI_SOURCE_INTAKE.json"
+        }
+      ],
+      "hh_plan_change": [
+        "원격 쓰기·계획 게시의 대상은 WU088_HH로 한정한다.",
+        "rei_bianchi/BASS/CR/HE의 코드·PR·자동화·실행 중지를 수행하지 않는다.",
+        "다른 owner에 필요한 정책 반영은 후속 제안 또는 별도 소유 작업으로 명시한다."
+      ],
+      "claim_ceiling": [
+        "HH 계획 변경을 전체 연구 프로그램의 실제 scheduler 중지·재설정 완료로 보고하지 않는다.",
+        "외부 스레드가 제안을 수신·채택·실행했다는 ACK를 만들지 않는다."
+      ]
+    },
+    {
+      "recommendation_id": "AUD14_NO_AUTOMATIC_SCIENTIFIC_PROMOTION",
+      "disposition": "adopt",
+      "audit_intent": "개발 전략 변경과 새로운 과학적 완료 판정을 분리한다.",
+      "confirmed_facts": [
+        {
+          "statement": "PR104의 채택은 선언된 reduced model에 한정되고 PR110 현재 broad native admission은 false다. PR112/113의 범위도 각각 synthetic stepper와 rate-only 진단이다.",
+          "pinned_source_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/f66929c23ea3fa6e39dd4808e5b27d136c568a03/research/broad_history_20261010/independent/DECISION.json",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/17f8d0daa72e0f76a49cde01b110f650a6688c42/research/accel02_20261011/q1b/c12/HANDOFF.json"
+          ],
+          "source_pr_urls": [
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/pull/112",
+            "https://github.com/cosmosapjw-quantum/rei_bianchi/pull/113"
+          ]
+        }
+      ],
+      "hh_plan_change": [
+        "이번 산출물은 계획수정 creator input으로 표시한다.",
+        "HH 과학 상태와 경계의 최종 정리는 HH owner의 기존 실제 증거를 따르며 이번 감사 문구만으로 승격하지 않는다.",
+        "다음 작업의 성공 조건을 필요한 관측량·비교·오차·남은 한계로 기록한다."
+      ],
+      "claim_ceiling": [
+        "이 파일은 새로운 독립 과학 review, native certification, 전역 보존 또는 production admission이 아니다.",
+        "계획상 보류·선택적 실행을 과학적 완료나 물리적 불필요성으로 표시하지 않는다."
+      ]
+    }
+  ],
+  "local_evidence_path_base": "Root of WU088_HH_OBSERVABLE_FIRST_PLAN_20261012_v1 backup bundle. intake/ and prior/ paths are bundle-relative, not relative to this JSON. For Git-only reads, use the pinned repository URLs.",
+  "portable_audit_copy": "repo/research/r31ao_unequal_ladder/hh_observable_first_plan_20261012_v1/inputs/AUDIT_ORIGINAL_KO.txt"
+}
