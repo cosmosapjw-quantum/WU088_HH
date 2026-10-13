@@ -1,0 +1,179 @@
+{
+  "schema": "WU088_HH_PHYS20_CONSUMER_SOURCE_CONTRACT_V1",
+  "status": "PREPARED_NOT_EXECUTED",
+  "target": "PHYS20_ONE_NAMED_REI_CONSUMER_INTERVAL_HH_SOURCE_RESPONSE",
+  "research_question": "One actual named consumer interval: signed and absolute HH temperature-source and electron-production rates, and their dominant input dependence.",
+  "predecessor": {
+    "unit": "PHYS19",
+    "actual_calculation": "completed",
+    "root_adoption_at_handoff": "pending_independent_review",
+    "reuse_gate": "Bind final root adoption to the unchanged actual result identities.",
+    "result_ref": {
+      "logical_root": "PHYS19",
+      "path": "checks/application/run01/results/SUMMARY.json"
+    },
+    "root_adoption_after_review": "PROMOTE_SCOPED",
+    "adoption_record": "review/DECISION.json",
+    "result_sha256": "0cf533a6a766f97ca3905113d2922f28dadd6c80f4b355dc0e81aa91c0b8d0fa"
+  },
+  "existing_HH_nodes": [
+    "HH_DOMAIN_SCREEN",
+    "HH_MATERIALITY"
+  ],
+  "external_RUX_DAG": {
+    "mutation": "none",
+    "implicit_new_edges": []
+  },
+  "independent_lanes": {
+    "HH_STRICT_NATIVE": "preserve independent original native/source/ray/root/carry conditions",
+    "HH_SINGLET": "preserve independent original channel/spin/basis/velocity/impact/energy/tail conditions"
+  },
+  "consumer_binding": {
+    "status": "unverified",
+    "repo": null,
+    "revision": null,
+    "scenario_id": null,
+    "interval_id": null
+  },
+  "first_targeted_retrieval": [
+    "Read current WU088_HH/PHYS19 entry, predecessor decision and existing HH export/process-owner/consumer-request contracts.",
+    "Locate the current rei_bianchi entry through connected source discovery; read its actual head and baseline/interval pointers.",
+    "Select one actual consumer-adopted interval; retrieve only linked state/COMMON/source/density/clock/geometry/closure/owner evidence and bind exact identities."
+  ],
+  "required_consumer_fields": {
+    "identity": [
+      "repo",
+      "commit_or_immutable_revision",
+      "tree_or_provider_object_identity",
+      "scenario_id",
+      "interval_id",
+      "adoption_evidence",
+      "source_and_result_paths_hashes"
+    ],
+    "time_frame": [
+      "start_end_units",
+      "evaluation_time_or_certified_state_tube",
+      "derivative_definition",
+      "collision_frame",
+      "conversion_to_physical_seconds",
+      "consumer_clock_map"
+    ],
+    "state_COMMON": [
+      "gas_xHII_yHeII_yHeIII_w",
+      "value_or_interval_correlations",
+      "common_gas_photon_input_identity",
+      "photon_groups_guards",
+      "birth_IC_HH_switch_semantics"
+    ],
+    "density_units": [
+      "physical_or_comoving",
+      "density_rest_frame",
+      "n_H_and_n_He_units",
+      "stored_fhat_nHe_over_nH",
+      "energy_per_H_and_photons_per_H_normalization",
+      "energy_and_kB_conversion_leaves"
+    ],
+    "source_owners": [
+      "native_source_code_version",
+      "coefficient_or_fit_identity_and_domain",
+      "HH_channel_stoichiometry",
+      "identical_pair_rate_convention",
+      "lambda_switch",
+      "thermal_electron_photon_process_owners"
+    ],
+    "geometry_closure": [
+      "background_and_time_map_identity",
+      "geometry_tilt_frame",
+      "kinetic_and_thermal_closure",
+      "photon_remap_absorption_operator",
+      "source_domain_coverage"
+    ],
+    "question_budget": [
+      "named_temperature_and_electron_source_response",
+      "optional_observable_budget_and_valid_transfer_for_omission_decision"
+    ]
+  },
+  "definitions": {
+    "dot": "local collision-frame physical proper time, seconds",
+    "g": "(x_HII,y_HeII,y_HeIII,w_eV_per_H)",
+    "fhat": "exact stored n_He/n_H, fixed for the HH reaction contribution",
+    "e": "x+fhat*(y+2*z)",
+    "Pi": "1+fhat+e; Pi>0",
+    "C_T": "2*epsilon_eV/(3*k_B), using the admitted captured unit leaves",
+    "T": "C_T*w/Pi",
+    "ell_e": "(1,fhat,2*fhat,0)",
+    "e_w": "(0,0,0,1)",
+    "HH_g_source": "nu_H*q_HH",
+    "HH_temperature_source": "((C_T*e_w-T*ell_e)/Pi) dot nu_H * q_HH",
+    "HH_electron_per_H_source": "ell_e dot nu_H * q_HH",
+    "HH_electron_density_source": "n_H*(ell_e dot nu_H)*q_HH",
+    "native_FT03_LCS": {
+      "nu_H": "(1,0,0,-chi_H)",
+      "q_HH": "lambda*n_H*(1-x)^2*k_HH(T)",
+      "dotT_HH": "-(C_T*chi_H+T)*q_HH/Pi",
+      "dote_HH": "q_HH",
+      "activation": "use after this exact channel/source/normalization is admitted"
+    },
+    "units": {
+      "q_HH": "s^-1",
+      "dotT_HH": "K s^-1",
+      "dote_HH": "electrons per H nucleus per s",
+      "dotne_HH": "cm^-3 s^-1 or explicitly converted SI"
+    },
+    "clock_rule": "Restore c for a source defined with c^-1 partial_t; convert proper-time sources using the verified d(tau_gas)/d(t_consumer)."
+  },
+  "admission": {
+    "comparison": "Read and compare full source/fixed-coefficient/COMMON/operator identities and domain; record the scope of each admitted claim.",
+    "local_source": "Bind rate, stoichiometry, kinetic closure, frame, density, clock and the actual state domain; prove any required local transfer.",
+    "PHYS19_endpoint_reuse": "Additionally bind the same full COMMON/source/geometry/operator family or an explicit proved transfer.",
+    "unresolved_field_action": "Record actual checked fields, unverified field names and the smallest next source retrieval; current unverified status is not an absence claim."
+  },
+  "first_verified_table": [
+    "interval_state_identity",
+    "clock_frame",
+    "n_H",
+    "fhat",
+    "T",
+    "lambda",
+    "q_HH",
+    "signed_dotT_HH",
+    "dote_HH",
+    "dotne_HH",
+    "units",
+    "process_owner",
+    "input_and_coverage_evidence",
+    "same_state_other_sources_and_signed_total"
+  ],
+  "materiality_mode": "explicit_source_response_question; optional ratio to positive sum_j(abs(dotT_j)); observable omission uses its supplied budget and valid transfer",
+  "completion_gate": "Independent check of actual input binding, units, signs, process ownership, source sum and admitted domain; deliver the one-interval source-response table and dominant input dependence.",
+  "conditional_history_gate": {
+    "finite_interval_effect": "Bind actual state evolution or an adopted source-to-observable response transfer.",
+    "matched_HH_ON_OFF": "Preserve existing HH_MATCHED_HISTORY requirements: actual RUX11 evidence, matched physical source/IC/closure/geometry, global switch, sequential gas/photon/guard carry and stage source coverage.",
+    "BASS_tau_visibility": "Bind the actual receiver before those observable claims."
+  },
+  "execution_state": {
+    "targeted_retrieval": "not_run",
+    "next_science": "not_run",
+    "remote_mutation": "none",
+    "heavy_queue": [],
+    "launch": false
+  },
+  "source_refs": [
+    {
+      "logical_root": "PHYS18",
+      "path": "NEXT_DAG.json"
+    },
+    {
+      "logical_root": "PHYS18",
+      "path": "publication_overlay/docs/coding/IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "logical_root": "PHYS15",
+      "path": "theory/CORRELATED_ENDPOINT_THEORY_KO.md"
+    },
+    {
+      "logical_root": "PHYS15",
+      "path": "theory/ASSUMPTIONS_AND_BINDINGS_KO.md"
+    }
+  ]
+}
