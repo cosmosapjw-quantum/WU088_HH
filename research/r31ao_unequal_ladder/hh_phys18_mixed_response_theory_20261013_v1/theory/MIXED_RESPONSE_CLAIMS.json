@@ -1,0 +1,198 @@
+{
+  "schema": "WU088_HH_PHYS18_MIXED_RESPONSE_CLAIMS_V1",
+  "status": "derived_and_calculated_pending_root_adoption",
+  "claims": [
+    {
+      "id": "PHYS18_T1",
+      "title": "C2 mixed implicit forcing",
+      "statement": "J_F W_d=J_F W+H_gg(g_F)[U_F,V_F]+H_g_lambda(g_F)V_F+H_g_b(g_F)U_F, with exact fixed-gas H_lambdab=0.",
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "basis": [
+        "derived"
+      ],
+      "derivation": {
+        "path": "theory/MIXED_RESPONSE_THEOREM_KO.md",
+        "equations": "18.7–18.9"
+      },
+      "strong_no_go": false,
+      "obligations": []
+    },
+    {
+      "id": "PHYS18_T2",
+      "title": "Correlated mixed endpoint equation",
+      "statement": "The exact mixed endpoint equation factors d,d_lambda,d_b and admits C2 signed-Hessian differences and balanced symmetric contractions.",
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "basis": [
+        "derived"
+      ],
+      "derivation": {
+        "path": "theory/MIXED_RESPONSE_THEOREM_KO.md",
+        "equations": "18.10–18.16"
+      },
+      "strong_no_go": false,
+      "obligations": []
+    },
+    {
+      "id": "PHYS18_T3",
+      "title": "HI/HH endpoint factorization",
+      "statement": "Photon Hessian and mixed birth-gradient endpoint differences factor the same d_x, while the HH mixed gradient difference uses the original q Hessian segment integral.",
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "basis": [
+        "derived"
+      ],
+      "derivation": {
+        "path": "theory/MIXED_RESPONSE_THEOREM_KO.md",
+        "equations": "18.17–18.20"
+      },
+      "strong_no_go": false,
+      "obligations": []
+    },
+    {
+      "id": "PHYS18_T4",
+      "title": "C2 stage mixed residual",
+      "statement": "Mixed gas residual closes through original stage U,V,W and first density derivatives with only C2 source data.",
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "basis": [
+        "derived"
+      ],
+      "derivation": {
+        "path": "theory/MIXED_RESPONSE_THEOREM_KO.md",
+        "equations": "18.21–18.32"
+      },
+      "strong_no_go": false,
+      "obligations": []
+    },
+    {
+      "id": "PHYS18_T5",
+      "title": "Mixed photon chronology and ledger",
+      "statement": "The original seven photon sectors differentiate exactly on all 35 slots; number/energy mixed ledgers and true-Full photon mixed correction follow.",
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "basis": [
+        "derived"
+      ],
+      "derivation": {
+        "path": "theory/MIXED_RESPONSE_THEOREM_KO.md",
+        "equations": "18.33–18.43"
+      },
+      "strong_no_go": false,
+      "obligations": []
+    },
+    {
+      "id": "PHYS18_T6",
+      "title": "Fixed inverse and finite Neumann inclusion",
+      "statement": "The original Full C,B,q,S enclose W_d and finite Neumann tails, with valid intersection of direct, correlated and carried-difference inclusions.",
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "basis": [
+        "derived"
+      ],
+      "derivation": {
+        "path": "theory/MIXED_RESPONSE_THEOREM_KO.md",
+        "equations": "18.44–18.48"
+      },
+      "strong_no_go": false,
+      "obligations": []
+    },
+    {
+      "id": "PHYS18_T7",
+      "title": "Finite temperature and common adjoint",
+      "statement": "Exact quotient differentiation maps W_d to F_lambdab through one positive Pi_F and common Full adjoint.",
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "basis": [
+        "derived"
+      ],
+      "derivation": {
+        "path": "theory/MIXED_RESPONSE_THEOREM_KO.md",
+        "equations": "18.49–18.55"
+      },
+      "strong_no_go": false,
+      "obligations": []
+    },
+    {
+      "id": "PHYS18_T8",
+      "title": "Rectangle interaction and anchored reconstruction",
+      "statement": "Uniform mixed bounds imply subrectangle interaction, marginal ordering, and an anchored-axis cross correction with a rigorously bounded remainder.",
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "basis": [
+        "derived"
+      ],
+      "derivation": {
+        "path": "theory/MIXED_RESPONSE_THEOREM_KO.md",
+        "equations": "18.56–18.62"
+      },
+      "strong_no_go": false,
+      "obligations": []
+    },
+    {
+      "id": "PHYS18_C1",
+      "title": "Strictly negative mixed response and interaction",
+      "statement": "F_lambdab and unit-square four-corner interaction lie in [-2.668505746423e-12,-2.118796636045e-12] K.",
+      "scope": "Same inherited fixed-alpha source-aligned geometric-isotropic family, globally lambda,b in [0,1]^2.",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "evidence": [
+        "checks/application/run02/results/MIXED_RESPONSE_RESULTS.json",
+        "checks/application/readout01/results/FINITE_MIXED_READOUT.json",
+        "theory/MIXED_RESPONSE_COROLLARIES.json"
+      ],
+      "strong_no_go": false,
+      "obligations": []
+    },
+    {
+      "id": "PHYS18_C2",
+      "title": "Strict submodularity and ordered marginals",
+      "statement": "Every positive-area subrectangle has negative interaction; F_lambda decreases with b and F_b decreases with lambda by area/length-scaled mixed bounds.",
+      "scope": "Same fixed alpha and any ordered subrectangle within the unit square.",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "evidence": [
+        "theory/MIXED_RESPONSE_THEOREM_KO.md#10",
+        "theory/MIXED_RESPONSE_COROLLARIES.json"
+      ],
+      "strong_no_go": false,
+      "obligations": []
+    },
+    {
+      "id": "PHYS18_C3",
+      "title": "Anchored cross correction with sub-picokelvin remainder",
+      "statement": "F=F(lambda,0)+F(0,b)-F00-2.393651191234e-12*lambda*b+R, with |R|<=2.748545551890e-13*lambda*b K.",
+      "scope": "Same fixed alpha; exact axis functions are retained.",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "evidence": [
+        "theory/MIXED_RESPONSE_THEOREM_KO.md#10.2",
+        "theory/MIXED_RESPONSE_COROLLARIES.json"
+      ],
+      "strong_no_go": false,
+      "obligations": []
+    },
+    {
+      "id": "PHYS18_C4",
+      "title": "First-half linear input readiness for pure curvature",
+      "statement": "For the pinned first-half A_Gg, C1=I and S1=(1,1,1,27/2) give q1<0.0005396<1.",
+      "scope": "Original whole-X first-half Jacobian inclusion; pure response application remains not_run.",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "evidence": [
+        "theory/CURVATURE_INPUT_PREFLIGHT.json",
+        "theory/curvature_input_preflight.py"
+      ],
+      "strong_no_go": false,
+      "obligations": []
+    }
+  ],
+  "new_no_go_claims": [],
+  "next_unit": {
+    "node": "HH_DEFECT_PARAMETER_CURVATURE",
+    "application_status": "not_run",
+    "proposal": "theory/NEXT_CURVATURE_PROPOSAL_KO.md",
+    "draft_contract": "theory/CURVATURE_CONTRACT_DRAFT.json"
+  }
+}

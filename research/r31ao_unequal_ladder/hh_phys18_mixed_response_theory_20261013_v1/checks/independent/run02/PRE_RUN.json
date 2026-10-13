@@ -1,0 +1,35 @@
+{
+  "schema": "WU088_HH_PHYS18_INDEPENDENT_PRE_RUN_V1",
+  "execution_status": "not_run",
+  "created_utc": "2026-10-12T23:50:27.569464+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "HH_PHYS18_THEORY_20261013_v1/checks/independent/review_arithmetic.py",
+    "--p15",
+    "HH_PHYS15_THEORY_20261012_v1",
+    "--p16",
+    "HH_PHYS16_THEORY_20261013_v1",
+    "--p17",
+    "HH_PHYS17_THEORY_20261013_v1",
+    "--p18",
+    "HH_PHYS18_THEORY_20261013_v1",
+    "--output",
+    "HH_PHYS18_THEORY_20261013_v1/checks/independent/run02/INDEPENDENT_ARITHMETIC.json"
+  ],
+  "working_directory": "/workspace/scratch/b826cbaab54f",
+  "source": {
+    "path": "HH_PHYS18_THEORY_20261013_v1/checks/independent/review_arithmetic.py",
+    "sha256": "9796bdabf7d0975996f246ea9ef3289fd49e367201d12959df7c7d3f2789daf5",
+    "bytes": 33639
+  },
+  "resource_class": "bounded original-interval exact arithmetic",
+  "estimate_seconds": 30,
+  "upper_bound_seconds": 120,
+  "expected_memory_mib": 256,
+  "new_source_calls": 0,
+  "new_root_solves": 0,
+  "history_replays": 0,
+  "python": "3.12.14",
+  "independent_method": "Cramer plus unrounded rational intervals and nilpotent coefficient convolution",
+  "changed_obligation": "Readout added; original prior decimal is outward represented and need not be a singleton in saved dyadic output. The checker now compares containment of the exact recorded decimal, rather than requiring singleton output."
+}

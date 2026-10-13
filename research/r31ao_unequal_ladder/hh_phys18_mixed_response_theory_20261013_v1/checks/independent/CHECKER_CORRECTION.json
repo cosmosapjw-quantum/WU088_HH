@@ -1,0 +1,10 @@
+{
+  "failure_class": "independent_checker_implementation",
+  "previous_source": "HH_PHYS18_THEORY_20261013_v1/checks/independent/review_arithmetic.py",
+  "previous_sha256": "de29f683690dc6dc898a277f97f059bb5214747e36eb04603ddb036e58906139",
+  "cause": "Exact decimal prior 1.958485175177039e-9 is saved as a 256-bit outward dyadic interval. Point() was an over-strong representation assumption. Scientific sign was already negative; no production calculation changed.",
+  "correction": "Contain exact decimal prior in stored interval; retain every remaining sign and integral check. Add independent grouped-readout checks.",
+  "production_source_changed": false,
+  "production_results_changed": false,
+  "preserved_failed_source": "run01/FAILED_CHECKER.py"
+}

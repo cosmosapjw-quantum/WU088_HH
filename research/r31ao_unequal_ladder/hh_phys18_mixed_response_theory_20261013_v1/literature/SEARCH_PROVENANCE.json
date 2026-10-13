@@ -1,0 +1,122 @@
+{
+  "schema": "WU088_HH_PHYS18_LITERATURE_PROVENANCE_V1",
+  "date_KST": "2026-10-13",
+  "reviewer": "/root/hh_phys18_mixed_review",
+  "scope": "Mixed implicit sensitivity, same-C2 validated residual/adjoint response, finite four-corner identity",
+  "reused_literature": [
+    {
+      "path": "HH_PHYS17_THEORY_20261013_v1/literature/LITERATURE_REVIEW_KO.md",
+      "bytes": 8971,
+      "sha256": "5527f667cbcadd39966a8f251153575476cdf2f632db0c63a73d216030f4458d"
+    },
+    {
+      "path": "HH_PHYS17_THEORY_20261013_v1/literature/references.bib",
+      "bytes": 2160,
+      "sha256": "a7183d1c10fff64835aeca4118b049125c3f23833db242d066a8cbef2de08f9f"
+    }
+  ],
+  "searches": [
+    {
+      "provider": "SciSpace",
+      "method": "search_papers",
+      "query": "How can second order or mixed parameter sensitivities of implicitly defined nonlinear systems be obtained by differentiating residual equations and validated using interval Jacobian and Hessian bounds under twice continuously differentiable assumptions?",
+      "returned_count": 10,
+      "selected_ids": [
+        "3meg2w31w3",
+        "1bj63jg0",
+        "qpjjpgdwqsw6"
+      ],
+      "raw_private_record": {
+        "path": "phys18_literature_private_source_cache/scispace_search01.json",
+        "bytes": 44841,
+        "sha256": "9d1f5563db0bfedf3c589e6607002ba9778d30ac1d823e5a5565caa671a40aa6"
+      }
+    },
+    {
+      "provider": "Exa",
+      "method": "web_search_exa",
+      "request_count": 2,
+      "requested_candidates_sum": 10,
+      "raw_private_records": [
+        {
+          "path": "phys18_literature_private_source_cache/exa_search01.json",
+          "bytes": 43808,
+          "sha256": "a7e44b68bb7371f584be8452c82b5c808637dcc203fe2a14100f6dbaca4568d6"
+        },
+        {
+          "path": "phys18_literature_private_source_cache/exa_search02.json",
+          "bytes": 9862,
+          "sha256": "b1e0dba46d3043aa5db93de14f323810feb67e82052313bee48133e5f00125e6"
+        }
+      ]
+    },
+    {
+      "provider": "Exa",
+      "method": "web_fetch_exa",
+      "request_count": 3,
+      "url_requests": 5,
+      "note": "Two HTML catalog responses, two direct-PDF body responses, one failed RWTH fetch"
+    },
+    {
+      "provider": "web",
+      "method": "search/open/find",
+      "purpose": "Locate original author/institution documents and read actual mathematical sections"
+    }
+  ],
+  "sources": [
+    {
+      "id": "SLN15",
+      "url": "https://publications.rwth-aachen.de/record/569704/files/569704.pdf",
+      "doi": "10.1016/j.procs.2015.05.232",
+      "read_location": "Sections 3.1-4.2, Theorem 4.3, Equation (7), pp235-236",
+      "access": "web PDF parsed full text 8 pages",
+      "web_ref": "turn28view0",
+      "local_pdf_status": "direct HTTP returned 248-byte HTML challenge; not PDF; Exa fetch CRAWL_EMPTY_CONTENT",
+      "supports": "C2 mixed tangent implicit linear system and separation from solver-trace AD"
+    },
+    {
+      "id": "L97",
+      "url": "https://ntrs.nasa.gov/api/citations/19970015271/downloads/19970015271.pdf",
+      "read_location": "Section2.3 Theorem2.2 Eqs7-14 PDFpp9-12",
+      "web_ref": "turn29view2",
+      "private_original": {
+        "path": "phys18_literature_private_source_cache/L97.pdf",
+        "bytes": 1494449,
+        "sha256": "e389db596c777016a552324defa1282fd680b10aa1f732d451de8a66c62a2121"
+      },
+      "supports": "C2 Frechet residual/observable, invertibility sufficient premise, reduced Hessian/adjoint"
+    },
+    {
+      "id": "P22",
+      "url": "https://arxiv.org/pdf/2201.00241",
+      "doi": "10.1137/1.9781611977141.6",
+      "read_location": "Sections4.1-4.3 Eqs4.10-4.16 Algorithm1",
+      "web_ref": "turn29view0",
+      "private_original": {
+        "path": "phys18_literature_private_source_cache/P22.pdf",
+        "bytes": 743880,
+        "sha256": "94b506ba40f092e9a957357abb142fa7172eea68d5386969b7390a9062669a79"
+      },
+      "supports": "Bilinear Hessian contraction and reused state/transpose solves"
+    },
+    {
+      "id": "X25",
+      "url": "https://arxiv.org/pdf/2505.12646",
+      "read_location": "Sections2.3-3.3 Eqs20-24 Algorithm1",
+      "web_ref": "turn29view1",
+      "private_original": {
+        "path": "phys18_literature_private_source_cache/X25.pdf",
+        "bytes": 10436106,
+        "sha256": "f9d143bd59a345787d3739a186b6f3aab9489280f9fada18dd438cf5b96ac12a"
+      },
+      "supports": "Second order incremental state/adjoint construction and distinct finite-difference/Taylor validation"
+    }
+  ],
+  "publication_policy": {
+    "full_papers_in_public_core": false,
+    "raw_search_in_public_core": false,
+    "public_content": "bibliography, own derivation/mapping and exact metadata only"
+  },
+  "novelty_scope": "Application-specific correlated mixed defect and finite temperature inclusion; no new generic implicit-Hessian theorem or strong no-go asserted",
+  "source_quality_correction": "SciSpace generated Cacuci TLDR not used; its unsupported contrary sentence is excluded in favor of original papers."
+}

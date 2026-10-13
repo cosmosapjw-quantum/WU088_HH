@@ -1,0 +1,163 @@
+{
+  "schema": "WU088_HH_PHYS18_MIXED_RESPONSE_COROLLARIES_V1",
+  "status": "derived_from_actual_interval_application",
+  "scope": "Each fixed admissible alpha; same COMMON; shared global lambda,b in [0,1]^2; inherited source-aligned geometric-isotropic C2 family.",
+  "inputs": [
+    {
+      "path": "HH_PHYS18_THEORY_20261013_v1/checks/application/run02/results/MIXED_RESPONSE_RESULTS.json",
+      "bytes": 879395,
+      "sha256": "69cb5d38bae33fb15b9533895e15022acc992f7a893903d17615bde8563ab889"
+    },
+    {
+      "path": "HH_PHYS18_THEORY_20261013_v1/checks/application/readout01/results/FINITE_MIXED_READOUT.json",
+      "bytes": 27162,
+      "sha256": "de6e27f648d58e8cd3876ede5a7fe739913edec15a9cefcb9e0c314498ed3fbb"
+    },
+    {
+      "path": "HH_PHYS18_THEORY_20261013_v1/theory/MIXED_RESPONSE_THEOREM_KO.md",
+      "bytes": 30383,
+      "sha256": "ce264e69de61ec397775eb91db036452c12eabd9e6c3109cb71bb8430c86a262"
+    }
+  ],
+  "derivative": {
+    "exact": {
+      "lo": [
+        "-84935034508086548791681532134601007697457365768746147750492781931707682812573",
+        "31828687130226345097944463881396533766429193651030253916189694521162207808802136034115584"
+      ],
+      "hi": [
+        "-67438515221262389562232793361087572509264891036448618646185048344419750446757",
+        "31828687130226345097944463881396533766429193651030253916189694521162207808802136034115584"
+      ]
+    },
+    "outward_decimal": [
+      "-2.668505746423E-12",
+      "-2.118796636045E-12"
+    ],
+    "sign": "STRICT_NEGATIVE"
+  },
+  "four_corner_interaction": {
+    "exact": {
+      "lo": [
+        "-84935034508086548791681532134601007697457365768746147750492781931707682812573",
+        "31828687130226345097944463881396533766429193651030253916189694521162207808802136034115584"
+      ],
+      "hi": [
+        "-67438515221262389562232793361087572509264891036448618646185048344419750446757",
+        "31828687130226345097944463881396533766429193651030253916189694521162207808802136034115584"
+      ]
+    },
+    "outward_decimal": [
+      "-2.668505746423E-12",
+      "-2.118796636045E-12"
+    ],
+    "sign": "STRICT_NEGATIVE"
+  },
+  "mixed_gas_defect": [
+    {
+      "exact": {
+        "lo": [
+          "71509877668610150386727782038384806653727192132238907621860226514253638002551",
+          "2085924839766513752338888384931203236916703635113918720651407820138886450957656787131798913024"
+        ],
+        "hi": [
+          "93843550220752059964996540470842806544684886463245250708099849255677504496483",
+          "2085924839766513752338888384931203236916703635113918720651407820138886450957656787131798913024"
+        ]
+      },
+      "outward_decimal": [
+        "3.428209698898E-17",
+        "4.498894132315E-17"
+      ],
+      "sign": "STRICT_POSITIVE"
+    },
+    {
+      "exact": {
+        "lo": [
+          "-62793175045084555278960447797854555620771707339667382139634326268552589940517",
+          "273406340597876490546562778389702670669146178861651554553221325801244124899921990402939147127881728"
+        ],
+        "hi": [
+          "31485931584133832833676643460921891783539992194479127909808203437454236959979",
+          "546812681195752981093125556779405341338292357723303109106442651602488249799843980805878294255763456"
+        ]
+      },
+      "outward_decimal": [
+        "-2.296697834724E-22",
+        "5.758083648551E-23"
+      ],
+      "sign": "ZERO_CONTAINING"
+    },
+    {
+      "exact": {
+        "lo": [
+          "-82418812423303831088240870156993467902919797231640123086017952554359682831013",
+          "8749002899132047697490008908470485461412677723572849745703082425639811996797503692894052708092215296"
+        ],
+        "hi": [
+          "-91414777397253240453119057894252008125639856773771142578721930929743518938705",
+          "34996011596528190789960035633881941845650710894291398982812329702559247987190014771576210832368861184"
+        ]
+      },
+      "outward_decimal": [
+        "-9.420366340430E-24",
+        "-2.612148448548E-24"
+      ],
+      "sign": "STRICT_NEGATIVE"
+    },
+    {
+      "exact": {
+        "lo": [
+          "-56538643071762567142517231882305846776006606118553318556623802306312749461983",
+          "130370302485407109521180524058200202307293977194619920040712988758680403184853549195737432064"
+        ],
+        "hi": [
+          "-46944807612102193453066874741999855013732884242296539307542457098522873495177",
+          "130370302485407109521180524058200202307293977194619920040712988758680403184853549195737432064"
+        ]
+      },
+      "outward_decimal": [
+        "-4.336773175632E-16",
+        "-3.600882004347E-16"
+      ],
+      "sign": "STRICT_NEGATIVE"
+    }
+  ],
+  "strict_negative": true,
+  "subrectangle": {
+    "identity": "I_rect = integral(lambda0,lambda1) integral(b0,b1) F_lambdab db dlambda",
+    "enclosure": "(lambda1-lambda0)*(b1-b0)*DeltaT_mixed_intersection_K",
+    "strict_submodular_when": "lambda1>lambda0 and b1>b0"
+  },
+  "marginal_ordering": {
+    "birth_increment": "F_lambda(lambda,b1)-F_lambda(lambda,b0) in (b1-b0)*mixed_interval",
+    "lambda_increment": "F_b(lambda1,b)-F_b(lambda0,b) in (lambda1-lambda0)*mixed_interval",
+    "directions": "both strict negative for positive increments"
+  },
+  "anchored_axis_reconstruction": {
+    "axis_model": "F(lambda,0)+F(0,b)-F(0,0)",
+    "error_enclosure": "lambda*b*mixed_interval",
+    "absolute_error_bound_K": "2.668505746423e-12 * lambda * b",
+    "cross_coefficient_exact_from_outward_endpoints": [
+      "-1196825595617",
+      "500000000000000000000000"
+    ],
+    "cross_coefficient_decimal_K": "-2.393651191234e-12",
+    "cross_remainder_radius_exact_from_outward_endpoints": [
+      "274854555189",
+      "1000000000000000000000000"
+    ],
+    "cross_remainder_radius_decimal_K": "2.748545551890e-13",
+    "cross_corrected_model": "axis_model + cross_coefficient * lambda * b",
+    "cross_corrected_error_bound_K": "2.748545551890e-13 * lambda * b",
+    "axis_function_values": "same fixed-alpha actual axis values; pure-axis nonlinearity retained"
+  },
+  "pure_curvature": {
+    "lambda_lambda": "not_run",
+    "b_b": "not_run",
+    "next_node": "HH_DEFECT_PARAMETER_CURVATURE"
+  },
+  "source_calls": 0,
+  "root_solves": 0,
+  "history_replays": 0
+}

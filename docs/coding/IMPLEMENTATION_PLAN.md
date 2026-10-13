@@ -1,3 +1,17 @@
+# PHYS18 handoff — actual mixed response complete
+
+The inherited PHYS17 mixed-response obligation is complete and independently PROMOTE_SCOPED. Read research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/DEPENDENCIES.json, research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/theory/MIXED_RESPONSE_THEOREM_KO.md, the actual application/readout records and research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/review/DECISION.json. The original same-COMMON C2 family, fixed Full C/B/q/S and 35 photon/guard slots are retained.
+
+The actual mixed temperature-defect derivative and interaction are [-2.668505746423E-12, -2.118796636045E-12] K. Direct and correlated mixed implicit inclusions agree on the negative sign. The largest projected terms are the stage HH gradient acting on s_b and the endpoint HH gradient acting on d_b. Signed C2 source-Hessian differences are already sufficient for this result. Finite subrectangle interaction, ordered marginals and the anchored cross correction are established.
+
+Next use research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/contracts/CURVATURE_CONTRACT.json and research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/theory/NEXT_CURVATURE_PROPOSAL_KO.md. First generate first-half pure gas responses, then their outgoing photon second derivatives and carried second-half incoming second derivatives; solve the correct second-half linear system and the existing Full system. Preserve the factor 2 in pure implicit mixed-gas/parameter terms, photon product rules and finite temperature quotient.
+
+The next outputs are F_lambda_lambda, F_b_b and a signed/absolute bilinear reconstruction remainder. The original C2 source is sufficient for these implicit equations. First-half linear inverse readiness is complete with C1=I, S1=(1,1,1,27/2), q1<0.0005396. This readiness witness is separate from the not_run pure-response application. Retain the current mixed interval as an established input and the same-family anchor/chord relations in the reconstruction.
+
+The 13 preceding HH DAG node values and original global REI DAG identity are preserved. No new source/root/history or heavy job is scheduled; native and microscopic lanes retain their existing conditions. Publication adds the PHYS18 core and these six entry documents on the PHYS17 branch, with actual receipts attached after publication succeeds.
+
+## Preserved previous implementation plan
+
 # PHYS17 handoff — actual parameter response complete
 
 The inherited PHYS16 first-derivative obligation is complete and independently PROMOTE_SCOPED. Read research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/DEPENDENCIES.json, the three successful application records, review/DECISION.json and the full theorem. Existing source and U/V/W carry are reused through the pinned PHYS16 parent bundle and its PHYS15 dependency archive.
