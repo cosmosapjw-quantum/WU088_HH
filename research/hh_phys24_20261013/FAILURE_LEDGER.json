@@ -1,0 +1,33 @@
+{
+  "entries": [
+    {
+      "kind": "runtime_environment",
+      "operation": "container HTTP downloads",
+      "evidence": "checks/acquisition.json",
+      "effect": "no local raw copy of live remote files obtained by container; source content read through GitHub/Exa/web instead",
+      "resolved_for_current_science": true
+    },
+    {
+      "kind": "runtime_environment",
+      "operation": "web PDF screenshots",
+      "sources": [
+        "NASA Sheldon",
+        "Glover",
+        "official Barklem access"
+      ],
+      "effect": "use parsed prose only; no plot digitization or image-dependent formula adoption",
+      "resolved_for_claimed_source_scope": true
+    },
+    {
+      "kind": "implementation",
+      "operation": "LaTeX compile",
+      "root_cause": "one missing row terminator before midrule in overview table",
+      "evidence": "report/compile1.log",
+      "repair": "corrected row terminator; final two builds and all9page renders succeeded",
+      "physics_changed": false
+    }
+  ],
+  "scientific_test_failures": 0,
+  "first_Wolfram_status": "PASS",
+  "second_Wolfram_status": "PASS"
+}

@@ -1,0 +1,32 @@
+{
+  "next_unit": "PHYS24_WEIGHTED_CROSS_SECTION_ENVELOPE_AND_BUDGET_BINDING",
+  "reaction": "H(1s)+H(1s)->H+ + H(1s)+e_free",
+  "T_box_K": [
+    49999.63846,
+    50000.36154
+  ],
+  "required_fields": {
+    "source_identity": null,
+    "initial_state_and_spin_average": null,
+    "energy_frame_lab_or_CM": null,
+    "event_and_pair_normalization": null,
+    "sigma_bins_or_k_envelope": null,
+    "high_energy_tail": null,
+    "coverage_meaning": null,
+    "physical_temperature_budget_K": null,
+    "physical_electron_budget_perH": null,
+    "physical_optical_depth_budget": null
+  },
+  "retain": {
+    "F0_majorants": "inputs/interval_result_v3.json",
+    "new_transport": "results/PHYS23_RESULT.json",
+    "BASS": "receiver/CONTRACT_EXTRACT.json"
+  },
+  "comparison_rule": "physical upper k <= minimum(budget/transport_coefficient, tube_ceiling); all units and scope must match",
+  "do_not_rerun": [
+    "unchanged PHYS20 source grid",
+    "PHYS21 tangent campaign",
+    "PHYS22 nominal certificate",
+    "new 202-check closure without changed evidence"
+  ]
+}
