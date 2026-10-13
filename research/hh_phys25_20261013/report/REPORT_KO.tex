@@ -1,0 +1,293 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm,headheight=15pt]{geometry}
+\usepackage{fontspec,kotex}
+\setmainfont{Liberation Serif}\setsansfont{Liberation Sans}
+\setmainhangulfont[ItalicFont={Noto Serif CJK KR}]{Noto Serif CJK KR}
+\setsanshangulfont{Noto Sans CJK KR}
+\usepackage{amsmath,amssymb,mathtools,bm,booktabs,array,tabularx,fancyhdr,hyperref,xurl}
+\hypersetup{hidelinks,pdftitle={WU088 HH PHYS25: Sheldon model reconstruction and threshold-vertex restoration}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\sffamily WU088\_HH / PHYS25}\fancyhead[R]{\small\sffamily 2026-10-13}\fancyfoot[C]{\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}\setlength{\emergencystretch}{3em}\renewcommand{\arraystretch}{1.15}
+\newcommand{\dd}{\mathrm d}\newcommand{\kb}{k_{\rm B}}\newcommand{\ev}{\epsilon_{\rm eV}}\newcommand{\eV}{\mathrm{eV}}\newcommand{\cm}{\mathrm{CM}}\newcommand{\lab}{\mathrm{lab}}
+\numberwithin{equation}{section}
+\begin{document}
+{\large\sffamily 근문턱 원자 모형의 복원과 검산}\par
+{\LARGE\bfseries H--H 이온화 문턱의 직접 행렬원소 복원}\par
+\vspace{2mm}
+\textbf{핵심 결과.} Sheldon의 NASA TN D-3134 원문 수식과 그림을 읽어 singlet/triplet 단면적 모형을 복원했다. 원문에서 생략한 $I_2-I_5$를 동일한 product-state/plane-wave 모형 안에서 전자 운동량 $p=0$에 대해 정확히 계산했다. 이 항을 복원하면 비편극 단면적의 선도 문턱 계수는
+\[
+6.16620545974917\ldots\ \longrightarrow\ 4.08770211160421\ldots
+\]
+로 변한다. 비율은 $0.662920192699918\ldots$, 감소량은 \textbf{33.70798\%}다. 이는 해당 직접 행렬원소 모형의 근사 민감도를 정량화한 결과다.
+
+생략항을 사용하지 않은 원래 S65 식의 $I_0\le E_\cm\le2I_0$ 부분 Maxwellian 적분은 온도 영역 전체에서
+\[
+\boxed{k_{\rm near}\in[1.1658244,\,1.1731356]\times10^{-11}\ \mathrm{cm^3\,s^{-1}}}
+\]
+에 포함된다. 이 표시는 외향 반올림이며 원 유리수 끝점은 결과 JSON에 있다. 동일 온도 $50000\,\mathrm K$의 직접 적분값은 $1.1694741862013453\times10^{-11}\,\mathrm{cm^3/s}$다.
+
+\textbf{서로 다른 세 결과.} (i) 원 S65 모형의 전체 명시 구간 단면적과 부분 열평균, (ii) 생략항을 복원한 모형의 $E\downarrow I_0$ 선도 계수, (iii) S65 근문턱 구간만 켠 별도 P01 진단을 구분한다. 문턱 계수 비율을 전체 유한 에너지의 보정배수로 사용하지 않았다. 실제 원자 단면적의 교정된 오차범위와 과학적 omission budget은 아직 제공되지 않았다.
+
+\begin{center}\begin{tabularx}{\linewidth}{@{}p{31mm}X@{}}\toprule
+근거 층 & 이번 산출물\\\midrule
+문헌 복원 & NASA 원문 PDF 4--10쪽의 수식과 그림을 실제 페이지 영상으로 확인\\
+직접 유도 & screened Coulomb convolution, 선도 문턱 계수, $g_s'$와 양의 적분식\\
+구간 검산 & 512 에너지 bin과 연속 온도 영역; $g_s'$는 spin별 128구간 검사\\
+별도 계산 & Wolfram/xAct 17개 영 잔차; Python 71개 최종 검사\\
+물리적 범위 & 고전 궤적, sudden approximation, 지정된 전자 product/plane-wave 모형\\\bottomrule
+\end{tabularx}\end{center}
+PHYS24 원본은 이번 연구 전에 Google Drive와 Dropbox에 보존하고 draft PR57에 게시했다. PHYS25는 그 과학 입력과 고정 수신계수를 재사용한다.
+
+\newpage
+\section{원전, 단위와 tagged-channel 정규화}
+원전은 John W. Sheldon, \emph{Cross section for impact ionization of H(1s) atoms by H(1s) atoms near threshold}, NASA TN D-3134 (1965)이다\cite{sheldon}. 실제 PDF의 SHA-256은
+\begin{quote}\small\ttfamily\url{61d91628383e2d4932592ba5dedc32381fb36a2f63ee99cdaae430f9c86d5a9f}\end{quote}
+로 고정했다. 파싱된 텍스트에서 손상된 수식을 추정하지 않고 Wolfram의 PDF 페이지 영상으로 식 (2), (3), (9)--(18)을 읽었다.
+
+차원 없는 충돌 에너지와 거리를
+\begin{equation}
+\eta=E_\cm/I_0,\qquad \rho=R/a_0,\qquad 1\le\eta\le2
+\end{equation}
+로 쓴다. $I_0=13.605693122990\,\eV$와 $a_0=5.29177210544\times10^{-11}\,\mathrm m$는 Rydberg 및 Bohr scale의 지정된 중심값이다\cite{codata}. Maxwell 평균의 질량은 부모 계약의 근사 $m_H=1.67262192369\times10^{-27}\,\mathrm{kg}$, $\mu=m_H/2$를 유지한다. 이 값은 현재 중성 원자의 정밀 질량을 새로 측정하거나 추정한 값이 아니다. 원 수신 열장부의 $\chi_H=13.598434599702\,\eV$도 별도로 보존한다.
+
+물리적 $\hbar$, $k_B$, $c$를 유지하며, 미시적 모형에서는 $E_\cm=\mu v_{\rm rel}^2/2$, 동일 질량의 정지 표적 실험에서는 $E_\lab=2E_\cm$다. 원문은 $\epsilon=\mu v^2/2$를 사용하므로 lab 에너지를 그대로 넣지 않는다.
+
+원문의 $\psi_i$는 두 1s 파동함수의 곱이고 $\psi_f$는 1s spectator와 한 전자의 plane wave 곱이다. 아래 $\sigma_{\rm tag}$는 이 \emph{tagged active-electron product 모형}에서 복원한 단면적이다. 서로 배타적인 target/projectile 단일 이온화 가지를 대칭적으로 합하는 adapter를 명시적으로 채택하면
+\begin{equation}
+\sigma_{\rm ev}=2\sigma_{\rm tag},\qquad
+R_e=\frac{n_{\rm HI}^2}{2}\langle\sigma_{\rm ev}v_{\rm rel}\rangle
+=n_{\rm HI}^2\langle\sigma_{\rm tag}v_{\rm rel}\rangle .
+\end{equation}
+따라서 해당 adapter의 network $k$는 $\langle\sigma_{\rm tag}v\rangle$다. 기존 LCS의 $k$를 다시 절반으로 바꾸지 않는다. 단면적을 전체 사건으로 정의하는 다른 입력은 PHYS24의 $\langle\sigma_{\rm ev}v\rangle/2$ 계약으로 읽는다.
+
+S65의 spin 평균 $\bar\sigma=(\sigma_1+3\sigma_3)/4$도 그대로 유지한다. 현재 복원은 완전한 exchange-symmetrized 두 전자 산란해가 아니라 원문의 지정된 직접 전자 상태와 spin별 고전 퍼텐셜을 가진 모형이다. 이하의 모든 포함 및 감소율은 이 선언된 모형에 대한 것이다.
+
+\newpage
+\section{S65 단면적의 실행 가능한 복원}
+원문 퍼텐셜을 $I_0$ 단위로 쓰면
+\begin{align}
+U_3(\rho)&=\alpha e^{-\beta\rho},& \alpha&=3.6,&\beta&=1.48,\\
+U_1(\rho)&=D\bigl[e^{-2B(\rho-\gamma)}-2e^{-B(\rho-\gamma)}\bigr],
+&D&=0.35,&B&=1.08,\quad\gamma=1.5 .
+\end{align}
+head-on turning point와 impact-parameter Jacobian은
+\begin{align}
+r_3(\eta)&=\beta^{-1}\log(\alpha/\eta),&
+r_1(\eta)&=\gamma-B^{-1}\log(1+\sqrt{1+\eta/D}),\\
+b^2/a_0^2&=\rho^2(1-U_s/\eta),&
+J_s(\rho,\eta)&=1-U_s/\eta-\rho U'_s/(2\eta).
+\end{align}
+$\rho\ge r_3$에서는 $J_3\ge0$다. singlet의 $r_1\le\rho\le\gamma$에서는 $U'_1\le0$이고, $\rho\ge\gamma$에서는 $\rho e^{-B(\rho-\gamma)}\le\gamma$이므로 $J_1\ge1-DB\gamma/\eta\ge0.433$. 따라서 아래 적분의 양의 가중치가 정당화된다.
+
+\begin{align}
+S(\rho)&=(1+1/\rho)e^{-2\rho},\\
+f(x)&=\int_0^x\frac{t^2}{(1+t^2)^6}\,\dd t
+=\frac12B_{x^2/(1+x^2)}\!\left(\frac32,\frac92\right),\\
+g_s(\eta)&=\int_{r_s(\eta)}^\infty \rho S(\rho)^2J_s(\rho,\eta)\,\dd\rho,\\
+\sigma_s(\eta)&=256a_0^2f(\sqrt{\eta-1})g_s(\eta).
+\end{align}
+이 식은 원문의 유한 $h(s,r)$, $k(s,r)$ 표현과 직접 $\rho$ 적분으로 각각 계산했다. 두 결과의 대조와 식의 미분 검사는 재현 코드에 있다.
+
+\begin{center}\begin{tabular}{@{}rrrr@{}}\toprule
+$E_\cm/I_0$ & $\sigma_1/a_0^2$ & $\sigma_3/a_0^2$ & $\bar\sigma/a_0^2$\\\midrule
+1.01 & 0.01730292385 & 0.002239802759 & 0.006005583031\\
+1.10 & 0.4213434715 & 0.06350124236 & 0.1529617996\\
+1.20 & 0.9267547282 & 0.1624816303 & 0.3535499048\\
+1.50 & 2.060011074 & 0.5237891329 & 0.9078446182\\
+2.00 & 3.199702996 & 1.277749813 & 1.758238108\\\bottomrule
+\end{tabular}\end{center}
+마지막 행은 원문 Fig.3의 singlet 약 $3.2$, triplet 약 $1.3$, 평균 약 $1.8$의 ordinate와 일치한다. 표는 원식 계산값이며 실험 데이터 또는 그림 digitization 값으로 기록하지 않는다.
+
+\newpage
+\section{생략한 $I_2-I_5$의 정확한 영운동량 복원}
+원문은 행렬원소 중 $I_2-I_5\simeq0$를 원자간 거리가 전자 궤도보다 큰 경우의 근사로 사용한다\cite{sheldon}. 여기서는 동일한 전자 product 모형의 spectator 밀도를 먼저 적분한다. 무차원 1s 밀도의 Coulomb 적분은
+\begin{equation}
+\int\frac{e^{-2|\bm y|}}{\pi|\bm y-\bm r|}\,\dd^3y
+=\frac1r-\left(1+\frac1r\right)e^{-2r}
+\end{equation}
+이다. nuclear $1/r$ 항과 결합하면 잔여는 $-S(r)$가 된다.
+
+$\bm\kappa=a_0\bm p/\hbar$, $E_a=q_e^2/(4\pi\epsilon_0a_0)=2I_0$라 두면 직접 행렬원소는
+\begin{align}
+\frac{M(\bm\kappa,\bm R)}{8\sqrt\pi E_a a_0^{3/2}}
+&=\frac{S(R)}{(1+\kappa^2)^2}-C(\bm\kappa,\bm R),\\
+C(\bm\kappa,\bm R)
+&=\frac1{8\pi}\int e^{-|\bm r|}S(|\bm r-\bm R|)
+ e^{-i\bm\kappa\cdot\bm r}\,\dd^3r .
+\end{align}
+벡터 $\bm r,\bm R$는 이 두 식에서 $a_0$ 단위다. 원문의 생략은 정확히 $C=0$을 취하는 위치에 해당한다.
+
+Fourier convention $\widehat f(\bm k)=\int e^{-i\bm k\cdot\bm r}f(\bm r)\dd^3r$에서
+\begin{equation}
+\widehat C_0(k)=\frac{4\pi(k^2+8)}{(k^2+1)^2(k^2+4)^2}.
+\end{equation}
+$z=k^2$에 대한 부분분수식
+\[
+\frac{z+8}{(z+1)^2(z+4)^2}
+=\frac{11}{27(z+4)}+\frac4{9(z+4)^2}
+ -\frac{11}{27(z+1)}+\frac7{9(z+1)^2}
+\]
+을 역변환하여
+\begin{equation}\boxed{
+C_0(R)=e^{-R}\left(\frac7{18}-\frac{11}{27R}\right)
++e^{-2R}\left(\frac19+\frac{11}{27R}\right)
+}\end{equation}
+를 얻었다. $R\to0$에서 $C_0\to5/54$로 유한하다.
+
+독립적으로 각도를 먼저 적분하면 $F(t)=e^{-2t}(t/2+3/4)$에 대해
+\begin{equation}
+C_0(R)=\frac1{4R}\int_0^\infty x e^{-x}
+ [F(|x-R|)-F(x+R)]\dd x
+\end{equation}
+이며, $x=R$에서 나눈 적분은 위 폐쇄식과 정확히 일치한다. Wolfram 기호 적분 및 별도 mpmath 적분을 모두 대조했다. xAct에서는 이 3차원 Euclidean 적분에 쓰이는 radial chain 및 Green identity를 실제 검산했다.
+
+\newpage
+\section{문턱 계수의 변화와 계산 범위}
+복원한 영운동량 vertex는
+\begin{equation}
+A(R)=S(R)-C_0(R)
+=e^{-2R}\left(\frac89+\frac{16}{27R}\right)
++e^{-R}\left(\frac{11}{27R}-\frac7{18}\right).
+\end{equation}
+$\delta=\eta-1\downarrow0$에서 $f(\sqrt\delta)=\delta^{3/2}/3+O(\delta^{5/2})$. 전체 직접 vertex의 angular average는 $\bm\kappa\mapsto-\bm\kappa$ 대칭 때문에 홀수차가 소거된다. exponential orbital과 양의 turning radius가 적분 미분 교환에 필요한 지배함수를 제공한다. 따라서
+\begin{align}
+\frac{\sigma_s^{\rm restored}}{a_0^2}
+&=\frac{256}{3}\widetilde g_s(1)\delta^{3/2}+O(\delta^{5/2}),\\
+\widetilde g_s(1)&=\int_{r_s(1)}^\infty R A(R)^2J_s(R,1)\,\dd R.
+\end{align}
+문턱 지수는 동일 plane-wave 모형의 $3/2$로 남고 계수가 달라진다.
+
+\begin{center}\begin{tabular}{@{}lrrr@{}}\toprule
+spin & 원 $g_s(1)$ & 복원 $\widetilde g_s(1)$ & 복원/원\\\midrule
+singlet & 0.2092343984703 & 0.1521004327343 & 0.7269379884295\\
+triplet & 0.02660216081847 & 0.01317020124906 & 0.4950801304799\\
+비편극 평균 & 0.07226022023144 & 0.04790275912036 & 0.6629201926999\\\bottomrule
+\end{tabular}\end{center}
+$RA^2$는 $e^{-4R},e^{-3R},e^{-2R}$ 각각에 $R,1,R^{-1}$을 곱한 유한 합이다. 퍼텐셜의 지수항까지 곱한 모든 적분은 $E_1(sr)$ 및 정수차 exponential moments로 정확히 계산된다. 이 별도 폐쇄식을 50자리 구간 산술로 평가했고, 직접 적분과 일치했다. 비율의 외향 표시는
+\begin{equation}
+\boxed{0.66292019269991<\widetilde g_{\rm av}/g_{\rm av}<0.66292019269993}
+\end{equation}
+이다. 보다 긴 유리수 끝점도 함께 보존했다.
+
+원 적분의 $R\ge2a_0$ 기여는 문턱에서 singlet의 약 $0.1962\%$, triplet의 약 $1.6049\%$다. 이 수치는 왜 큰 거리에서만 정당화한 생략항을 실제로 평가할 필요가 있는지 보여준다. 전체 양자모형의 오차배수나 실험적 confidence로 바꾸지 않는다.
+
+\textbf{유한 에너지에 필요한 후속 식.} 복원 모형을 $1<\eta\le2$ 전체에서 계산하려면
+\[
+256a_0^2\!\int_0^{\sqrt{\eta-1}}\!\frac{\kappa^2\dd\kappa}{(1+\kappa^2)^2}
+\int_{r_s(\eta)}^\infty\! RJ_s
+\left\langle\left|\frac{S}{(1+\kappa^2)^2}-C\right|^2\right\rangle_{\Omega_\kappa}\dd R
+\]
+가 필요하다. 현재 $0.66292\ldots$를 이 전체 적분에 일괄 곱하지 않았다.
+
+\newpage
+\section{원 S65 부분 열평균의 연속 영역 포함}
+$\theta=k_BT/\ev$를 eV 수치로 쓰고 tagged adapter를 유지하면
+\begin{equation}
+k_{\rm near}(T)=100\sqrt{\frac{8\ev}{\pi\mu}}\theta^{-3/2}
+\int_{I_0}^{2I_0}\sigma_{\rm tag}(E)E e^{-E/\theta}\,\dd E.
+\end{equation}
+$\sigma$는 $\mathrm{cm^2}$, $\mu$는 kg이며 100은 m/s를 cm/s로 바꾸는 인자다. 이전의 전체 사건 단면적용 prefactor 50과는 tagged/event 변환으로 일치한다.
+
+단면적 자체의 연속구간 포함을 위해 $g_s$의 미분을 새로 정리했다. 하한 $r_s'(\eta)=1/U_s'(r_s)$에서 나오는 항과 부분적분 경계항을 함께 처리하면
+\begin{equation}\boxed{
+g_s'(\eta)=\frac1{\eta^2}\int_{r_s(\eta)}^\infty
+ e^{-4R}(2R^2+4R+3+R^{-1})U_s(R)\,\dd R
+}\end{equation}
+이다. triplet에서는 부호가 즉시 양수이고, singlet은 부호가 바뀌는 $U_1$를 포함하므로 실제 구간 계산을 사용했다. $[1,2]$를 spin별 128개 구간으로 나누어
+\[
+g_1'>0.08451245095,\qquad g_3'>0.05855137157
+\]
+를 검증했다. $f'\ge0$와 결합하면 source 단면적은 증가한다.
+
+따라서 512개 에너지 bin에서 양 끝점의 단면적을 각각 곱한 양의 Maxwellian bin 합이 적분 하한과 상한을 준다. 온도 범위는
+\[
+T\in[49999.63846,50000.36154]\ \mathrm K
+\]
+이며, $E/\theta>3/2$이므로 kernel도 온도에 대해 증가한다. 에너지와 온도 모두의 연속범위를 포함한 결과는
+\begin{equation}
+\boxed{k_{\rm near}\in[1.1658244,1.1731356]\times10^{-11}\ \mathrm{cm^3/s}}.
+\end{equation}
+독립적인 Wolfram quadrature 및 mpmath quadrature는 $50000\,\mathrm K$에서 $1.1694741862013453\times10^{-11}$로 일치했다. 부모의 LCS 전체 반응률과의 수학적 비율은 $52.56283411\ldots$다. 단면적 오차 가중치만 보았던 PHYS24에서 실제 모형을 곱한 계산으로 진행했다.
+
+$E_1$의 interval 계산은 지원되지 않는 특수함수 호출을 피하고
+\[
+E_1(x)=-\gamma_E-\log x-\sum_{n=1}^{80}\frac{(-x)^n}{n\,n!}+R_{80}
+\]
+에 감소하는 alternating tail의 다음 항 상계를 사용했다. $E_1'(x)=-e^{-x}/x<0$로 끝점만 평가해 의존성에 의한 폭 증가를 줄였다. 지원되는 elementary interval 연산의 의미론은 공식 문서를 따른다\cite{mpmath}.
+
+\newpage
+\section{고정 P01에 연결한 근문턱-전용 진단}
+현재 검증된 source window 바깥의 단면적을 0으로 놓는 \emph{근문턱-전용 진단}을 별도로 정의한다. 이는 전체 물리적 H--H 반응률을 정의하는 tail 가정과 분리한다. 이 진단에서는 위 $k_{\rm near}(T)$만 켜고, 원 warm P01의 IC, 외부 source, 기하, closure 및 gas4/photon2904 변수를 그대로 유지한다.
+
+기존 공통 영역에서 $q=n_H(1-x)^2k_{\rm near}$이며, exact-rational 입력으로
+\[
+q\in[4.1284061,4.2226351]\times10^{-25}\ \mathrm{s^{-1}}
+\]
+를 얻는다. 원 first-exit 적분 상계에 바뀐 source만 더한 최대 반경비는 $0.6227211402346171<1$이다. 따라서 동일 비교행렬 $P$와 exposure cone의 재사용 조건이 닫힌다.
+
+$Q(t)=\int_0^tq\dd s$에 대해 부모 결과
+\begin{align}
+0.9657383453960767Q&\le\Delta e\le1.0342616546039233Q,\\
+-72894.51840866Q&\le\Delta T\le-70796.35234679Q\quad[\mathrm K]
+\end{align}
+를 적용했다. $e=n_e/n_H$이고 $h=10^{11}\,\mathrm s$에서
+\begin{center}\begin{tabularx}{\linewidth}{@{}p{39mm}X@{}}\toprule
+진단 관측량 & 외향 포함\\\midrule
+$\Delta T(h)$ & $[-3.078070,-2.922760]\times10^{-9}\ \mathrm K$\\
+$\Delta e(h)$ & $[3.986960,4.367310]\times10^{-14}\ \mathrm{electrons/H}$\\
+$\Delta\tau(0)$ & $[2.359815,2.584956]\times10^{-21}$\\
+$\Delta r(h)/r_0(h)$ & $[3.687272,4.039034]\times10^{-14}$\\\bottomrule
+\end{tabularx}\end{center}
+Thomson 항은 비경사 proper-time 모델의 $r=c\sigma_Tn_He$를 사용하고, 공통 observer tail을 유지한다. $n_H$의 동일성 때문에 끝점 rate의 상대 변화는 $\Delta e/e_0$다. 확률의 최종 native 수신 실행은 수행하지 않았다.
+
+마지막 행은 BASS의 기존 $64\epsilon_{64}$ reference 비교 scale의 $2.59469$--$2.84222$배다. 이는 선언된 source 모형을 바꿨을 때 numerical reference scale과의 순서가 달라진다는 판별값이다. 그 scale을 물리적 omission budget으로 채택하지 않는다.
+
+전체 반응률에는 여전히
+\begin{equation}
+k_{\rm full}=k_{\rm near}+k_{\rm tail},\qquad k_{\rm tail}\ge0
+\end{equation}
+가 필요하다. tail 상계와 교정된 source 오차가 주어지면 PHYS24의 양의 가중 예산식에 더한다. 다른 source가 만든 실제 전체 해의 응답을 위의 진단 상·하계로 대체하지 않는다.
+
+\newpage
+\section{검증, 재현성과 판단}
+\begin{center}\begin{tabularx}{\linewidth}{@{}p{43mm}X@{}}\toprule
+검증 경로 & 실제 관측 결과\\\midrule
+원전 영상 & Wolfram PDF PageImages 3회; 16쪽 원본 SHA 확인, 식과 Fig.3 복원\\
+Wolfram/xAct & 15.0.1 / xTensor1.3.0 / xPerm1.2.4. 실제 tensor2개와 scalar15개 잔차 모두 0\\
+독립 함수 평가 & direct radial convolution, source $g_s$ 적분, 미분, phase 적분과 폐쇄식 대조\\
+구간 폐쇄 & spin별 128구간 $g_s'$ 양성; 512개 bin의 연속 온도 부분 rate 포함\\
+영운동량 계수 & finite exponential/E1 basis의 interval 끝점 및 독립 직접 적분\\
+최종 Python 검사 & 71개 통과, 0개 실패. 같은 assistant의 별도 산술/CAS 경로\\\bottomrule
+\end{tabularx}\end{center}
+최초 downstream checker가 Wolfram NIntegrate에 요청한 PrecisionGoal40보다 엄격한 $10^{-55}$ 절대 일치를 요구하여 $1.5549\times10^{-55}$ 차이에서 실패했다. 해당 checker와 실제 차이를 보존하고 명시된 evaluator 정확도에 맞춰 $10^{-40}$ 비교로 교정했다. 채택한 interval certificate는 이 검사기 임계값과 독립적이다. source 모형이나 관측량 기준은 변경하지 않았다.
+
+초기 채팅 runtime 오류, 원격 fitz 부재, PDF screenshot/download 실패, 특수함수 interval의 지원 범위 문제도 실패 장부에 남겼다. 원문 영상은 성공한 Wolfram 경로로 복원했고, $E_1$은 명시적 급수와 증명된 tail로 계산했다. 새 ODE·native receiver·ab-initio 산란·HPC 실행은 각각 0회다. 이번에는 실제 역사적 원자 모형의 적분과 검산을 수행했다.
+
+\textbf{채택.} 원 S65 source 복원, 같은 직접 모형의 $I_2-I_5$ 영운동량 복원, 선도 계수 감소, 부분 rate 포함과 명시된 근문턱-전용 P01 진단을 채택한다. 대수적 복원이 정확하다는 근거와 물리적 원자모형의 보정 정확도는 서로 다른 항목이다. 외부 독립 심사자는 참여하지 않았다.
+
+\textbf{재현.} Python은 \texttt{src/sheldon\_model.py}, \texttt{checks/final\_validate.py}, \texttt{checks/build\_results.py}를 사용한다. 연속 포함의 재계산은 \texttt{checks/rebuild\_intervals.py}다. CAS 입력은 실행 전에 파일로 보존했으며, 반환 기록은 실제 출력의 선택된 정규화 전사본이다. 원시 connector transport bytes라는 주장은 하지 않는다. 필요한 원문 PDF는 URL/SHA와 영상 읽기 명령으로 복원한다.
+
+\newpage
+\section{다음 계산과 자료 계약}
+다음 단위는 \texttt{PHYS26\_FINITE\_MOMENTUM\_DIRECT\_VERTEX}다. 현재 $C_0$를 단순 배율로 사용하지 않고 $C(\bm\kappa,\bm R)$를 계산하여
+\[
+\left\langle|S/(1+\kappa^2)^2-C|^2\right\rangle
+\]
+의 직접항·교차항·복원항을 각각 유지한다. $[1,2]$의 에너지, turning radius, spin별 퍼텐셜을 고정한 채, positive angular/radial quadrature와 tail 상계를 설계한다. 완료 조건은 (i) $\kappa\to0$에서 이번 계수 회복, (ii) $C=0$에서 원 S65 식 회복, (iii) angular positivity 및 refinement, (iv) corrected near-rate 포함이다.
+
+그 후 실제 물리적 calibration은 근사 모형 간 일치와 별개로 exchange/continuum treatment, 같은 free-electron final channel, 실험의 에너지축·정규화·오차를 검토하여 부여한다. Cariatore--Schultz의 2022 erratum은 $\mathrm H^++\mathrm H$의 $50$--$10000\,\mathrm{keV}$ lab 결과를 교정하므로 현재 neutral H--H 근문턱 오차범위로 이동시키지 않는다\cite{erratum}. Sheldon의 마지막 약 factor-two 비교 역시 He--He/Ar--Ar의 비교다\cite{sheldon}.
+
+\textbf{보존한 의존성.} Local PHYS23 및 별도 게시 PR56의 byte 차이를 유지한다. 이번에는 PHYS24 원본에 포함된 complete local PHYS23 계수와 PHYS22 interval 입력만 과학 입력으로 사용했다. 이전 다른 저장소에서 가져온 endpoint-cone 및 공동 사건수 정규화의 provenance는 PHYS24에 남아 있다. HH\_STRICT\_NATIVE, HH\_SINGLET 및 전역 RUX의 기존 의무는 변경하지 않았다.
+
+\textbf{10단계 실행 기록.} R1: 근문턱 모형 복원과 현재 scope 고정. R2: 원전 영상 및 부모 identity 회수. R3: tagged/event, source Ry, receiver 열장부 분리. R4: 생략항 복원 선택. R5: convolution과 문턱 계수 유도. R6: 별도 radial/Fourier/CAS 대조. R7: positive interval과 모형 적분 실행. R8: 위 범위 채택, empirical coverage 미결. R9: 공식·코드·보고서 작성. R10: 결과, 실패, 다음 계산과 원격 전달 보존.
+
+\begin{thebibliography}{9}\small
+\bibitem{sheldon} J. W. Sheldon, NASA TN D-3134 (1965).\newline
+\url{https://ntrs.nasa.gov/citations/19660002855}. PDF: \url{https://ntrs.nasa.gov/api/citations/19660002855/downloads/19660002855.pdf}. 식(2)--(18), printed pp.2--8.
+\bibitem{codata} NIST, 2022 CODATA complete listing.\newline
+\url{https://physics.nist.gov/cuu/Constants/Table/allascii.txt}. Bohr radius and Rydberg energy central values; accessed 2026-10-13.
+\bibitem{mpmath} mpmath documentation, contexts and interval arithmetic.\newline
+\url{https://mpmath.org/doc/current/contexts.html}. Runtime version and supported-function treatment recorded in the package.
+\bibitem{erratum} N. D. Cariatore and D. R. Schultz, ApJS \textbf{260},21 (2022),\newline DOI: \href{https://doi.org/10.3847/1538-4365/ac6c8a}{10.3847/1538-4365/ac6c8a}. Primary publisher text retrieved through Exa.
+\end{thebibliography}
+\end{document}
