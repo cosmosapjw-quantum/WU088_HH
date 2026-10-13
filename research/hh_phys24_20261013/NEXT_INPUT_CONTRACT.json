@@ -1,0 +1,41 @@
+{
+  "unit": "PHYS25_NEAR_THRESHOLD_CHANNEL_CALIBRATION",
+  "channel": "H(1s)+H(1s)->H+ + H(1s)+e_free",
+  "energy_frame": "CM relative kinetic energy, eV; lab adapter L=2E for equal masses",
+  "cross_section_semantics": "total inclusive single-ionization event cross section, cm^2; one electron per event; network coefficient is half of event average",
+  "spin": "unpolarized1/4 singlet+3/4 triplet only when the supplied spin-resolved cross sections include their spatial exchange treatment",
+  "T_box_K": [
+    "49999.63846",
+    "50000.36154"
+  ],
+  "requested_priority_support_CM_eV": [
+    "13.598434599702",
+    "27.196869199404"
+  ],
+  "full_support": "threshold..infinity with explicit residual-tail envelope",
+  "finite_bin_options": [
+    "pointwise lower/upper cross-section bounds",
+    "compatible exact endpoint values plus justified Lipschitz bounds on each connected support"
+  ],
+  "physical_bin_values": null,
+  "justified_slope_bounds": null,
+  "tail_envelope": null,
+  "physical_observable_budgets": null,
+  "required_provenance": [
+    "input identity/version",
+    "reaction and event multiplicity",
+    "lab/CM mapping",
+    "spin and basis/channel identities",
+    "data/systematic/model error attribution",
+    "energy coverage",
+    "tail and threshold handling"
+  ],
+  "stop_condition": "Evaluate positive bin envelope plus explicit tail; check common-tube validity and the supplied observable budget; refine only bins dominating the remaining width.",
+  "preserved_independent_lanes": [
+    "HH_STRICT_NATIVE",
+    "HH_SINGLET",
+    "global RUX",
+    "BASS_HE kinetic closure",
+    "bass_cr nonthermal cascade"
+  ]
+}

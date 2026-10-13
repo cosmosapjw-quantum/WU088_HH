@@ -1,0 +1,294 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm,headheight=15pt]{geometry}
+\usepackage{fontspec,kotex}
+\setmainfont{Liberation Serif}\setsansfont{Liberation Sans}
+\setmainhangulfont[ItalicFont={Noto Serif CJK KR}]{Noto Serif CJK KR}\setsanshangulfont{Noto Sans CJK KR}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,booktabs,array,tabularx}
+\usepackage{fancyhdr,hyperref,xurl}
+\hypersetup{hidelinks,pdftitle={WU088 HH PHYS24: weighted cross-section envelopes and observable budgets}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\sffamily WU088\_HH / PHYS24}\fancyhead[R]{\small\sffamily 2026-10-13}\fancyfoot[C]{\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5.5pt}\setlength{\emergencystretch}{3em}
+\renewcommand{\arraystretch}{1.17}\numberwithin{equation}{section}
+\newcommand{\dd}{\mathrm d}\newcommand{\eV}{\mathrm{eV}}\newcommand{\kb}{k_{\rm B}}\newcommand{\ev}{\epsilon_{\eV}}
+\newcommand{\sig}{\sigma_{\rm ev}}\newcommand{\cm}{\mathrm{CM}}\newcommand{\lab}{\mathrm{lab}}\newcommand{\hh}{\mathrm{HH}}
+\newtheorem{theorem}{정리}[section]
+\begin{document}
+{\large\sffamily 이론 연구 결과}\par
+{\LARGE\bfseries HH 단면적의 양의 가중 포함과\newline 관측량 오차 예산의 연결}\par
+\vspace{2mm}
+\textbf{핵심 결과.} PHYS23의 유한 HH 응답 경계를 유지하면서, 미시적 단면적 자료가 들어갈 수 있는 에너지별 입력 사상을 완성했다. BASS\_HE THEORY13의 endpoint Lipschitz cone을 Maxwellian 에너지 가중치로 확장하여, 양립 가능한 단면적 점값과 기울기 상계가 주어졌을 때 반응률의 날카로운 조건부 상·하계를 얻었다. 새 에너지점을 넣으면 이 포함은 단조롭게 좁아진다. 실제로 계산한 검산 예제에서는 점 하나를 추가하여 폭을 약 1.989배 줄였다.
+
+고정 warm P01의 온도 영역
+\begin{equation}
+T\in[T_-,T_+]=[49999.63846,50000.36154]\ \mathrm K
+\end{equation}
+에서, 전체 single-ionization event 단면적을 곱하는 Maxwellian bin 가중치를 60자리 구간 연산으로 계산했다. $T=50000\,\mathrm K$에서 전체 가중치는
+\begin{equation}
+W_{[\chi_H,\infty)}=405791.854170867629\ldots\ \mathrm{cm\,s^{-1}}.
+\end{equation}
+동일한 절대 단면적 오차에 대한 이 가중치 중 \textbf{92.50624\%}가 $\chi_H\le E_{\cm}\le2\chi_H$, \textbf{99.93503\%}가 $E_{\cm}\le50\,\eV$에 놓인다. 이 수치는 단면적의 실제 모양을 곱하기 전의 오차 가중치 분율이며, 실제 반응 사건의 에너지별 비율은 $\sig(E)$를 포함하여 계산한다.
+
+\textbf{연구 대상.} 바닥상태의 비축퇴 Maxwellian H 원자 두 개, 공통 온도와 유체 속도, 유일한 single-ionization 자유전자 사건을 다룬다. HH-OFF와 비교하는 소비자는 동일 IC/source/geometry/closure의 gas 4개와 광자 2904개 warm P01, proper time $0\le t\le10^{11}\,\mathrm s$다. 미시적 에너지 적분은 비상대론적 모델이다. 공변 에너지 사상은 좌표와 부호를 확인하는 데 사용한다.
+
+\begin{center}\begin{tabularx}{\linewidth}{@{}p{29mm}X@{}}\toprule
+결과 층 & 현재 근거\\\midrule
+직접 유도 & event/pair 정규화, 양의 Maxwellian bin, 최적 Lipschitz 포함, tail 및 예산 부등식\\
+실제 검산 & Wolfram/xAct 24개 영 잔차, 7개 부등식·조건, Python 62개 검사\\
+다른 repo 재사용 & HE의 endpoint cone을 다른 가중치로 확장; CR의 사건수·에너지 공동 정규화 구조 사용\\
+남은 물리 입력 & 교정된 $\sig$의 bin 상·하계 또는 정당화된 기울기, tail 상계, 물리적 관측량 예산\\\bottomrule
+\end{tabularx}\end{center}
+이번 채택은 위의 수학적 사상과 계산된 전달계수에 대한 것이다. 실제 HH 단면적의 물리적 coverage 및 omission 결정은 마지막 행의 입력으로 판단한다.
+
+\newpage
+\section{사건, pair, spin 및 에너지 convention}
+반응은
+\begin{equation}
+\mathrm H(1s)+\mathrm H(1s)\longrightarrow\mathrm H^++\mathrm H(1s)+e^-.
+\end{equation}
+$\sig$는 한 쌍의 충돌이 이 single-ionization 사건으로 끝나는 \emph{전체 사건 단면적}이다. 어느 원자가 이온화되는지를 포함하는 최종 채널들을 이미 합쳤다고 정의한다. 균일한 동일 원자 집단에서 서로 다른 unordered pair의 수가 $n_{\rm HI}^2/2$에 비례하므로
+\begin{equation}\label{eq:pair}
+R_e=\frac{n_{\rm HI}^2}{2}\langle\sig v_{\rm rel}\rangle,
+\qquad k=\frac12\langle\sig v_{\rm rel}\rangle,
+\qquad q=\frac{R_e}{n_H}=n_H(1-x)^2k.
+\end{equation}
+기존 LCS 등의 network $k$에는 이 사상이 이미 포함되어 있으므로 그 값에 다시 $1/2$를 곱하지 않는다. 새 데이터가 특정 target만의 이온화 단면적인지, 전체 사건 단면적인지 확인하여 식~\eqref{eq:pair}에 연결한다. 제공자가 $\sigma_{\rm eff}=\sig/2$를 정의했다면 prefactor를 1로 바꾸어 같은 $k$를 얻는다.
+
+전자 spin이 비편극이고 $\sigma_S,\sigma_T$에 각 spin 채널의 공간 교환 대칭 처리가 포함되어 있다면
+\begin{equation}
+\sig=\tfrac14\sigma_S+\tfrac34\sigma_T,
+\qquad \sigma_{\rm eff}=\tfrac18\sigma_S+\tfrac38\sigma_T.
+\end{equation}
+이 가정은 데이터 계약에 남긴다. WU088\_HH의 별도 $\mathrm H^++\mathrm H^-$ singlet lane은 자유전자 yield가 0이므로 이 식의 $\sigma_S$에 곧바로 넣을 수 있는 자료가 아니다. 실제 owner contract가 그 두 반응의 화학양론을 구별한다 \cite{hhowner}.
+
+질량이 동일한 두 원자의 reduced mass는 $\mu=m_H/2$다. 상대속도를 $v$라 쓰면
+\begin{equation}
+E_{\cm}=\frac12\mu v^2=\frac14m_Hv^2,
+\quad E_{\lab}=\frac12m_Hv^2=2E_{\cm}.
+\end{equation}
+따라서 비상대론적 single-ionization threshold는 $E_{\cm}=\chi_H$와 $E_{\lab}=2\chi_H$로 대응한다. 고전 처방의 frame/threshold 혼동은 Barklem의 원문에서 실제로 논의된다 \cite{barklem}. 이번에는 $\chi_H=13.598434599702\,\eV$를 기존 화학 에너지 leaf와 동일하게 유지한다.
+
+부호 검산을 위해 $u^au_a=v^av_a=-1$, $\gamma_{\rm rel}=-u^av_a$와
+\begin{equation}
+p^a=m_Hc(u^a+v^a),\quad
+-c^2p^ap_a=2m_H^2c^4(1+\gamma_{\rm rel})
+\end{equation}
+를 정의하면 전체 CM 운동에너지는
+\begin{equation}
+E_{\cm}=m_Hc^2\bigl[\sqrt{2(1+\gamma_{\rm rel})}-2\bigr]
+=\frac14m_Hv^2+O(v^4/c^2)
+\end{equation}
+이다. xAct로 invariant 전개, 교환 대칭과 공변 전자수 전류의 곱 미분을 확인했다. 이 검산과 별개로 아래 수치 kernel은 명시된 비상대론적 Maxwellian closure를 사용한다.
+
+\newpage
+\section{양의 Maxwellian 적분과 연속 온도 포함}
+동일 온도의 독립 원자 속도분포를 convolution하면 상대속도 밀도는
+\begin{equation}
+f_v(v)=4\pi\left(\frac{\mu}{2\pi\kb T}\right)^{3/2}
+v^2\exp\!\left(-\frac{\mu v^2}{2\kb T}\right),\quad v\ge0.
+\end{equation}
+식~\eqref{eq:pair}에 대입하고 $E=\mu v^2/2$, $\dd v=\dd E/(\mu v)$로 치환하면
+\begin{equation}\label{eq:maxwell}
+k(T)=\frac12\sqrt{\frac8{\pi\mu}}(\kb T)^{-3/2}
+\int_{\chi_H}^{\infty}\sig(E)E e^{-E/(\kb T)}\,\dd E.
+\end{equation}
+이 식에서는 에너지들을 동일한 물리 단위로 사용한다. 계산용으로 $E$를 eV, $\sig$를 $\mathrm{cm^2}$로 쓰고 $\theta=\kb T/\ev$를 eV 단위의 수치로 정의하면
+\begin{equation}
+k=\mathcal A(T)\int_{\chi_H}^{\infty}\sig(E)E e^{-E/\theta}\dd E,
+\quad \mathcal A=50\sqrt{\frac{8\ev}{\pi\mu}}\theta^{-3/2}.
+\end{equation}
+$\mu$는 kg, $\ev=1.602176634\times10^{-19}\,\mathrm{J/eV}$로 사용한다. $50=100/2$는 m/s에서 cm/s로의 변환과 pair 계수의 곱이다. inherited mass-number 근사 $m_H=m_p=1.67262192369\times10^{-27}\,\mathrm{kg}$를 고정했다.
+
+lab 단면적을 쓰는 경우에는
+\begin{equation}
+\int_{\chi_H}^{\infty}\sig(E)E e^{-E/\theta}\dd E
+=\frac14\int_{2\chi_H}^{\infty}\sigma_{\lab}(L)L e^{-L/(2\theta)}\dd L.
+\end{equation}
+아래 모든 bin은 CM 축이며 CSV에 lab 축도 함께 실었다.
+
+\begin{theorem}[양의 bin 포함]
+$\sigma_j^-\le\sig(E)\le\sigma_j^+$가 bin $[a_j,b_j]$ 전체에서 성립하고 $\sig\ge0$라 하자. 그러면
+\begin{align}
+W_j(T)&=\mathcal A\theta\bigl[(a_j+\theta)e^{-a_j/\theta}-(b_j+\theta)e^{-b_j/\theta}\bigr],\\
+\sum_jW_j(T)\sigma_j^-&\le k(T)\le\sum_jW_j(T)\sigma_j^+
+\end{align}
+이다. 무한 오른쪽 끝점의 항은 0이다. 전체 지지집합을 덮지 않은 경우에는 residual tail을 별도로 포함한다.
+\end{theorem}
+\begin{proof}
+$E e^{-E/\theta}\ge0$에 점별 부등식을 곱하여 적분한다. 원시함수는 $-\theta(E+\theta)e^{-E/\theta}$이다. 또한
+\begin{equation}\label{eq:tmono}
+\frac{\partial}{\partial\theta}\log\!\left(\theta^{-3/2}Ee^{-E/\theta}\right)
+=\frac{E/\theta-3/2}{\theta}.
+\end{equation}
+현재 영역에서는 $\chi_H>3\theta_+/2$이므로 모든 적분점에서 증가한다. 따라서 온도와 무관한 단면적 envelope에 대해 $k^-\ge\sum W_j(T_-)\sigma_j^-$, $k^+\le\sum W_j(T_+)\sigma_j^+$를 사용한다. 온도 연속구간의 포함은 이 부호 증명에 근거하고 표본 계산은 구현 검산으로 사용한다.
+\end{proof}
+
+\newpage
+\section{Endpoint cone의 Maxwellian 확장과 sharpness}
+BASS\_HE THEORY13의 구성은 양의 affine 시간 가중치에 endpoint Lipschitz cone을 적분한다 \cite{he13}. 여기서는 양의 가중치만 유지하고 원시함수를 바꾸어 단면적 에너지 적분으로 옮긴다. 아래 결과는 독립적인 수학 명제로 증명한다.
+
+\begin{theorem}[점값과 Lipschitz 상계에 대한 최적 포함]\label{thm:cone}
+유한 구간 $[a,b]$ 안의 정렬된 점 $E_i$와 정확한 비음수 값 $s_i$가 주어지고,
+$|s_i-s_j|\le L|E_i-E_j|$인 $L\ge0$가 주어졌다고 하자. admissible set을 이 점값들을 가지는 비음수 $L$-Lipschitz 함수들의 집합으로 둔다. 그러면
+\begin{align}
+\sigma_-(E)&=\max\{0,\max_i[s_i-L|E-E_i|]\},\\
+\sigma_+(E)&=\min_i[s_i+L|E-E_i|]
+\end{align}
+는 각각 그 집합의 점별 최소·최대 원소이다. 임의의 적분가능한 양의 가중치 $w(E)$에 대해
+\begin{equation}
+\inf_{\sigma}\int_a^bw\sigma\,\dd E=\int_a^bw\sigma_-\,\dd E,
+\quad
+\sup_{\sigma}\int_a^bw\sigma\,\dd E=\int_a^bw\sigma_+\,\dd E.
+\end{equation}
+새로운 양립 가능한 점값을 추가하면 하계는 증가하고 상계는 감소한다.
+\end{theorem}
+\begin{proof}
+Lipschitz 조건으로 모든 admissible $\sigma$에 대해 $s_i-L|E-E_i|\le\sigma(E)\le s_i+L|E-E_i|$이다. 비음수성까지 취하면 $\sigma_-\le\sigma\le\sigma_+$를 얻는다. 같은 상수의 유한 max/min은 여전히 $L$-Lipschitz이다. 각 데이터점 $E_j$에서는 compatibility 때문에 모든 lower cone이 $s_j$ 이하이고 모든 upper cone이 $s_j$ 이상이다. 자신의 cone은 정확히 $s_j$이므로 두 함수 모두 점값을 충족한다. Upper cone은 비음수이고 lower에는 0을 넣었으므로 둘 다 admissible이다. 따라서 적분의 두 끝값이 실제로 달성된다. 점 추가는 lower max에 항을 더하고 upper min에 항을 더하므로 nestedness가 따른다.
+\end{proof}
+구간별 threshold cusp, resonance 또는 알려지지 않은 기울기를 임의의 유한 $L$로 대체하지 않는다. 그 부분에는 제2절의 점별 bin 상·하계가 곧바로 적용된다. $L$의 물리적 정당화는 수치 quadrature와 별도 입력이다.
+
+Cone의 각 branch는 $\alpha E+\beta$이다. Maxwellian 적분에는
+\begin{align}
+J_1(E)&=-\theta(E+\theta)e^{-E/\theta},\\
+J_2(E)&=-\theta(E^2+2\theta E+2\theta^2)e^{-E/\theta}
+\end{align}
+를 써 branch별로 $\mathcal A[\alpha J_2+\beta J_1]_{l}^{r}$를 합한다. 함수의 두 번째 미분이나 dense Hessian이 필요하지 않다. $L=0$이고 모든 점값이 같으면 정확한 상수 단면적 branch가 된다. 서로 맞지 않는 $L$·점값은 현재 구현에서 오류로 반환한다.
+
+\newpage
+\section{실제 에너지 가중치와 분할 검산}
+표의 $W_j$는 전체 사건 단면적 $\sig$를 곱하며 단위는 $\mathrm{cm/s}$이다. 가운데 값은 $50000\,\mathrm K$ 진단이고, 전달에는 별도 CSV의 정확한 유리수 외향 $W_j^-,W_j^+$를 사용한다.
+
+\begin{center}\begin{tabular}{@{}rrr@{}}\toprule
+CM 에너지 bin [eV] & $W_j(50000\,\mathrm K)$ & 전체 가중치 중 비율\\\midrule
+$13.5984346$--$16$ & $142224.08033$ & $35.0485301\%$\\
+$16$--$20$ & $138889.78713$ & $34.2268544\%$\\
+$20$--$25$ & $77575.16922$ & $19.1169853\%$\\
+$25$--$27.1968692$ & $16693.75539$ & $4.1138715\%$\\
+$27.1968692$--$35$ & $24206.32319$ & $5.9652068\%$\\
+$35$--$50$ & $5939.08702$ & $1.4635797\%$\\
+$50$--$100$ & $263.64726$ & $0.0649711\%$\\
+$100$--$625$ & $0.004620659$ & $1.1386772\times10^{-6}\%$\\
+$625$--$\infty$ & $3.3695842\times10^{-55}$ & $8.3037256\times10^{-59}\%$\\\bottomrule
+\end{tabular}\end{center}
+
+이 결과는 단면적 오차가 $|\delta\sigma(E)|\le\varepsilon$처럼 균일할 때 각 bin의 최대 반응률 오차가 $W_j\varepsilon$로 배분됨을 뜻한다. 실제 단면적이 에너지에 따라 크게 달라지면 사건 분율도 달라진다. $625\,\eV$ 이상 진단은 매우 작지만, 알려지지 않은 물리적 tail을 0으로 선언하는 근거로 사용하지 않는다. 마지막 bin의 저장용 외향 격자는 $10^{-45}\,\mathrm{cm/s}$라 진단값보다 훨씬 넓은 $[0,10^{-45}]$를 반환한다.
+
+\textbf{에너지점 추가의 실제 예제.} 물리 데이터를 대신하지 않는 제조된 입력을
+\begin{equation}
+[E_0,E_1]=[14,18]\,\eV,\quad
+[s_0,s_1]=[2,3]\times10^{-18}\,\mathrm{cm^2},\quad
+L=10^{-18}\,\mathrm{cm^2/eV}
+\end{equation}
+로 고정했다. 정리~\ref{thm:cone}를 이 bin에 적용한 rate contribution은
+\begin{equation}
+[2.91508867233035,\ 6.56137501417359]\times10^{-13}\,\mathrm{cm^3/s}
+\end{equation}
+에 들어간다. $(16\,\eV,2.5\times10^{-18}\,\mathrm{cm^2})$의 정확한 점을 추가하면
+\begin{equation}
+[3.85977013311510,\ 5.69342375580028]\times10^{-13}\,\mathrm{cm^3/s}
+\end{equation}
+로 좁아진다. 폭의 비는 $1.98853605541032766\ldots$이다. Wolfram 60자리 branch 적분과 별도 mpmath 적분을 비교했고, 정확한 CAS 끝점에 Python 값이 포함됨도 확인했다. 다른 bin 및 tail은 이 제조된 예제에 포함하지 않았다.
+
+\newpage
+\section{원전의 활용과 입력 우선순위}
+SciSpace와 Exa에서 같은 반응의 원전으로 Sheldon의 NASA-TN-D-3134 (1965)를 확인했다 \cite{sheldon}. 이 문서는 바닥상태 H--H single-ionization에 Rosen의 sudden/classical-path 근사를 적용하고 singlet 및 triplet potential을 구별한다. 제시된 계산 영역은 threshold에서 twice-threshold까지다. 이를 이번 가중치에 대응시키면 같은 절대 단면적 오차의 $92.50624\%$가 놓이는 구간과 일치하므로, 해당 모델은 우선 재현·대조할 후보가 된다.
+
+현재 읽은 자료는 공식 record와 parsed 원문이다. PDF 이미지 조회가 실패하여 그래프에서 수치를 추출하거나 이미지 의존 수식을 실행하지 않았다. 논문 마지막의 약 2배 일치는 He--He와 Ar--Ar 비교에 관한 것이므로 H--H에 대한 교정된 오차배수로 쓰지 않았다. 이 원전은 미시적 모델의 benchmark 후보로 보존했다.
+
+Barklem의 연구는 고전 단면적의 lab/CM convention과 낮은 에너지의 이온화율 민감도를 논의한다 \cite{barklem}. Glover의 비교는 LCS 및 다른 prescription에 사용된 고에너지 자료와 근문턱 외삽을 구별한다 \cite{glover}. McClure의 publisher 검색 결과에서 보고된 beam 에너지 범위는 $1.25$--$117\,\mathrm{keV}$이며, 동일 질량의 아래쪽 CM 에너지는 $625\,\eV$로 대응한다 \cite{mcclure}. 이 높은 에너지 영역의 측정값을 근문턱 데이터로 취급하지 않고, tail 및 모델의 별도 검증에 배치한다.
+
+\textbf{선택된 다음 입력 범위.} 우선 $E_{\cm}\in[\chi_H,2\chi_H]$의 같은 single-ionization event 정의를 복원하고, $2\chi_H$--$50\,\eV$의 연결 및 $50\,\eV$ 이상 tail을 별도로 제한한다. 이 순서는 고정 warm box의 실제 가중치에 따른 선택이며 모든 온도에 대한 보편적 순서는 아니다. 식~\eqref{eq:tmono}의 조건을 벗어나면 온도 의존 최댓값을 다시 평가한다.
+
+\textbf{Tail 정리.} $E\ge E_c$에서 $0\le\sig(E)\le S(E/E_c)^p$인 명시적 가정이 주어지면
+\begin{equation}
+k_{\rm tail}(T)\le
+50\sqrt{\frac{8\ev}{\pi\mu}}\,
+S E_c^{-p}\theta^{p+1/2}\Gamma(p+2,E_c/\theta).
+\end{equation}
+이는 $E=\theta x$로 치환하여 얻는다. $E_c>0$이면 유한한 실수 $p$에 대해 적분이 존재한다. $p=0$의 경우 원시함수 $J_1$만으로 계산된다. $S,p,E_c$의 물리적 근거와 비상대론적 high-energy model의 유효범위는 입력 계약에 둔다. 현재 계산기는 tail coverage가 명시되지 않은 전체 rate 요청을 거부한다.
+
+\newpage
+\section{다른 연구 lane에서 가져온 것과 유지한 경계}
+이번에 읽은 관련 repo의 정확한 snapshot은 \texttt{CROSS\_REPO\_REUSE.json}에 있다. 읽기 범위는 최신 관련 PR과 직접 연결된 결과 파일이며 모든 branch를 전수 감사한 것으로 기록하지 않는다.
+
+\begin{center}\begin{tabularx}{\linewidth}{@{}p{23mm}p{26mm}X@{}}\toprule
+repo & revision 앞자리 & 실제 재사용\\\midrule
+WU088\_HH & \texttt{ca616e02fcbd} & 게시 PHYS23의 공통 exposure cone과 PHYS22 majorant identity 확인\\
+BASS\_HE & \texttt{d9cb8c3ec352} & THEORY13의 양의 endpoint cone을 에너지 kernel로 변환\\
+bass\_cr & \texttt{15193ccf8820} & 사건수·전하·threshold energy 공동 정규화, 양의 기여별 예산 구조\\
+rei\_bianchi & \texttt{a5c958c414de} & fixed warm P01 source·IC·기하·clock 유지\\
+bass & \texttt{d520c5e47ebf} & 같은 $\beta=0$ 유한 Thomson receiver 사상 유지\\\bottomrule
+\end{tabularx}\end{center}
+
+BASS\_HE THEORY13은 $D=10^{-3}\,\mathrm{cm^{-3}}$, $f=2/25$, total time $\le10^9\,\mathrm s$의 별도 source family와 kinetic-opacity 문제다 \cite{he13}. 그 유도 중 endpoint extremizer는 다른 양의 가중치에도 적용되어 제3절에서 직접 증명했다. 해당 연구의 recoil·temporal numerical radius는 P01에 옮기지 않았다.
+
+BASS\_CR의 실제-time donor 연구는 약 $99.6\,\mathrm K$의 별도 cold snapshot에서 electron donor의 HI/HeI 반응을 다룬다 \cite{crtime}. 동일 extent로 전자수·화학 에너지·열을 계산하는 구조는 이번 단면적의 사건 multiplicity를 고정하는 데 재사용했다. 이 연구의 electron-impact 단면적과 수치 오차상계는 neutral H--H 자료를 대신하지 않는다. 따라서 현재 free-electron channel에 적용되는 event threshold power는
+\begin{equation}
+\dot u_{\rm th,HH}=-\ev\chi_H R_e,\qquad
+\dot u_{\rm chem,HH}=+\ev\chi_H R_e
+\end{equation}
+처럼 같은 $R_e$로 묶는다.
+
+\textbf{PHYS23 버전 차이.} 현재 대화의 local archive는 850385 bytes, SHA prefix \texttt{4bc8ad7392d0}이고 게시본은 863274 bytes, SHA prefix \texttt{2af6c191d004}이다. 두 결과가 연결하는 PHYS22 majorant는 동일 SHA \texttt{9b6b44acee63}\ldots이며 $\ell^TV$와 온도 exposure 계수는 일치한다. 반응률 표현·포함폭은 별개로 유지했다. 이번 수치 계산은 첨부된 local PHYS23의 완전한 유리수 coefficient 파일을 입력으로 사용하고, 게시된 prescription 숫자로 덮어쓰지 않았다.
+
+\newpage
+\section{단면적 정확도를 관측량 예산으로 변환}
+같은 P01에 대해 inherited exposure theorem은
+\begin{equation}
+|\Delta O|\le\mathcal C_O K_*,\qquad K_*\ge\sup_{T\in[T_-,T_+]}k(T)
+\end{equation}
+를 제공한다. $O=T,e,\tau$에 대한 계수의 대표값은
+\begin{align}
+\mathcal C_T&=262.379694439\ldots\ \mathrm{K\,s\,cm^{-3}},\\
+\mathcal C_e&=0.00372276630437\ldots\ \mathrm{s\,cm^{-3}},\\
+\mathcal C_\tau&=2.20345863763\ldots\times10^{-10}\ \mathrm{s\,cm^{-3}}.
+\end{align}
+$e=n_e/n_H$이고 $\tau$는 같은 유한 P01의 Thomson 광학깊이다. 정확한 유리수는 결과 JSON에 보존한다. 위 부등식은 HH-OFF 기준의 크기를 제한하는 것이다. 두 임의 HH-ON 모델 사이의 차이에 같은 상수를 적용하는 별도 Lipschitz 주장을 추가하지 않았다.
+
+\begin{theorem}[입력 예산의 충분조건]
+주어진 과학적 예산이 $B_T,B_e,B_\tau$이고 공통 tube가 허용하는 rate ceiling이 $K_{\rm tube}$일 때,
+\begin{equation}
+\sum_j W_j(T_+)\sigma_j^++k_{\rm tail}^+
+\le K_{\rm allow}:=\min\left\{
+\frac{B_T}{\mathcal C_T},\frac{B_e}{\mathcal C_e},
+\frac{B_\tau}{\mathcal C_\tau},K_{\rm tube}\right\}
+\end{equation}
+이면 모든 envelope 내 반응률이 해당 예산을 충족한다. Lipschitz 자료가 있는 bin에는 $W_j\sigma_j^+$ 대신 $\sigma_+$의 정확한 가중 적분을 넣을 수 있다.
+\end{theorem}
+\begin{proof}
+제2절의 양의 rate 상계를 inherited observable 상계에 대입한다. 마지막 tube 조건은 같은 전달계수의 사용 영역을 보존한다. 세 관측량의 조건을 동시에 취하면 충분조건이 된다.
+\end{proof}
+
+기여별 rate 예산 $b_j\ge0$, $b_{\rm tail}\ge0$를 정하여 $\sum b_j+b_{\rm tail}\le K_{\rm allow}$라 두면 $\sigma_j^+\le b_j/W_j(T_+)$가 간단한 bin별 목표다. 같은 방식으로 $W_j(\sigma_j^+-\sigma_j^-)$ 또는 cone의 적분폭을 계산해 현재 불확실성의 기여가 큰 bin부터 정밀화한다. 이 배분은 공통 초기조건의 coupled ODE를 반복하지 않고 수행할 수 있다.
+
+\textbf{단위응답 예제.} 모든 $E\ge\chi_H$에서 \emph{가정된} $\sig\le10^{-18}\,\mathrm{cm^2}$를 넣으면, 현재 weight 상계의 합으로
+\begin{align}
+k&\le4.058004\times10^{-13}\ \mathrm{cm^3/s},\\
+|\Delta T|&\le1.064738\times10^{-10}\ \mathrm K,\quad
+\Delta e\le1.510700\times10^{-15},\\
+\Delta\tau&\le8.941643\times10^{-23}
+\end{align}
+를 얻는다. 이 입력은 관측·산란 자료에서 도출한 cap이 아니라, 결과를 원하는 단면적 단위에 곱할 수 있게 만든 선형 전달 예제다. 실제 물리적 budget과 교정된 envelope는 현재 null로 남겨두었다.
+
+\newpage
+\section{실행 근거, 판정 및 재현}
+실제 Wolfram kernel은 15.0.1 Linux x86, xTensor 1.3.0, xPerm 1.2.4다. 공식 archive를 내려받아 SHA-256을 확인하고 xAct를 로드했다. Substantive evaluator는 두 번 실행했다. 첫 호출에서 tensor 3개 및 scalar 9개 잔차가 0이고, 두 번째 호출에서 cone branch primitive 12개 잔차가 0이었다. 온도 단조 조건 1개와 cone의 순서·포함 조건 6개도 통과했다. 구간 연산의 외향 반올림 의미론은 공식 문서를 따른다 \cite{wl}.
+
+별도 Python/multiprecision 계산은 58개 검사와 CAS 끝점 대조 4개, 총 62개를 통과했다. 감마함수 기반 moment와 직접 quadrature, lab/CM 변수 치환, spin/pair 대조, compatible cone nesting, 제조 곡선, $L=0$, $\sigma=0$, 잘못된 slope·음의 단면적·정렬 오류·tail 누락 검사를 포함한다. 온도 표본 검사는 연속구간 증명을 대체하지 않고 식~\eqref{eq:tmono}와 실제 구간 endpoint를 구현상 대조한다.
+
+저장된 Wolfram 결과는 실제 출력 중 필요한 필드의 정규화된 전사다. Tool transport 원시 bytes라고 주장하지 않는다. 입력 파일은 실행한 식과 수학적으로 같은 정규화 source이며, compact submission과 공백·출력 packaging 차이가 있다. Container의 외부 DNS 실패는 GitHub/Exa/web read 및 Wolfram 실행으로 우회했고, 실패 원본은 \texttt{FAILURE\_LEDGER.json}에 남겼다.
+
+\textbf{판정.} 정의한 가정 아래의 kernel, 최적 cone, 에너지 가중치와 고정 소비자 예산 사상을 채택한다. External independent reviewer는 참여하지 않았다. 새 gas/photon ODE, native receiver, 산란 수치학 및 원자 fit 실행은 0회다. 이번 결과는 로컬 산출물로 보존하며 repo 또는 원격 백업을 새로 수정하지 않았다.
+
+\textbf{다음 실제 단위.} \texttt{PHYS25\_NEAR\_THRESHOLD\_CHANNEL\_CALIBRATION}: 같은 사건·spin·CM 정의로 $[\chi_H,2\chi_H]$의 점 또는 bin 자료와 그 오차근거를 확보한다. Sheldon 모델은 수식을 직접 확인한 뒤 benchmark로 사용할 수 있다. $2\chi_H$ 이상 연결과 tail을 명시하여 전체 $k$ 상계를 조립하고, 주어진 관측량 예산을 넘는 기여만 추가 정밀화한다. 기존 nominal source·tangent·finite-response 계산은 재사용한다.
+
+\begin{thebibliography}{9}\small
+\bibitem{sheldon} J. W. Sheldon, NASA-TN-D-3134 (1965), \emph{Cross section for impact ionization of H(1s) atoms by H(1s) atoms near threshold}. \url{https://ntrs.nasa.gov/citations/19660002855}.
+\bibitem{barklem} P. S. Barklem (2007), \emph{Non-LTE Balmer line formation in late-type spectra}. \url{https://arxiv.org/abs/astro-ph/0702222}.
+\bibitem{glover} S. C. O. Glover (2015), \emph{Simulating the formation of massive seed black holes II}, \S3.2.8. \url{https://arxiv.org/abs/1504.00514}.
+\bibitem{mcclure} G. W. McClure, Phys. Rev. \textbf{166}, 22 (1968), DOI:10.1103/PhysRev.166.22. Publisher search metadata used for energy range only.
+\bibitem{he13} BASS\_HE THEORY13, revision \texttt{d9cb8c3ec352}, \path{research/theory13_kinetic_error_bridge_20261013/THEORY13.md}. Full compact proof read through connector.
+\bibitem{crtime} BASS\_CR time/donor theory, revision \texttt{15193ccf8820}, \path{research/cr_time_donor_20261013/THEORY_AND_DELIVERY_KO.md}.
+\bibitem{hhowner} WU088\_HH process-owner contract, revision \texttt{ca616e02fcbd}, \texttt{HH\_PROCESS\_OWNER\_ROWS.json}. Full path in source registry.
+\bibitem{wl} Wolfram Language, \emph{Interval}. \url{https://reference.wolfram.com/language/ref/Interval.html}.
+\end{thebibliography}
+\end{document}

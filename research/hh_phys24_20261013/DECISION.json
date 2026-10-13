@@ -1,0 +1,65 @@
+{
+  "unit": "PHYS24",
+  "decision": "promote_for_specified_use",
+  "scope": "Maxwellian cross-section-to-rate map with explicit event/frame convention; sharp Lipschitz conditional envelopes; continuous warm-box bin weights; fixed-consumer budget map",
+  "support": [
+    "derived",
+    "numerically-checked",
+    "symbolically-checked"
+  ],
+  "physical_cross_section_coverage": "unresolved",
+  "scientific_omission_budget": null,
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "pair/CM normalization and temperature-uniform positive energy weights",
+      "decision": "adopt",
+      "evidence": [
+        "report §§2-3",
+        "wolfram/OBSERVED_RESULTS.json",
+        "results/KERNEL_BIN_TABLE.csv"
+      ]
+    },
+    {
+      "id": "C2",
+      "claim": "sharp envelope and nested refinement for compatible nonnegative Lipschitz cross sections",
+      "decision": "adopt under stated data/L assumptions",
+      "evidence": [
+        "report §4",
+        "checks/VALIDATION.json",
+        "wolfram/verify_endpoint_cones.wl"
+      ]
+    },
+    {
+      "id": "C3",
+      "claim": "near-threshold priority from uniform absolute cross-section-error weights",
+      "decision": "adopt for allocation, not a physical event fraction",
+      "evidence": [
+        "results/PHYS24_RESULT.json"
+      ]
+    },
+    {
+      "id": "C4",
+      "claim": "fixed P01 observable budget bound from per-bin upper envelopes",
+      "decision": "adopt if actual input envelope/tail and budget supplied",
+      "evidence": [
+        "report §7",
+        "predecessor23/WU088_HH_PHYS23_20261013/results/PHYS23_RESULT.json"
+      ]
+    },
+    {
+      "id": "C5",
+      "claim": "physical HH omission admissibility",
+      "decision": "hold",
+      "required": [
+        "calibrated cross-section/rate coverage",
+        "scientific observable allocation"
+      ]
+    }
+  ],
+  "novelty": "specific cross-repo Maxwellian-weight extension and computed input-priority/budget coefficients; general positive integration or Lipschitz extension principle not claimed novel",
+  "external_independent_review": false,
+  "research_motivation": "turn existing rigorous response bounds into atomic-data accuracy requirements without replaying coupled histories",
+  "no_new_ODE_or_native_or_scattering_runs": true,
+  "remote_mutation": false
+}
