@@ -1,0 +1,63 @@
+{
+  "schema": "HH22_SCIENCE_DECISION_V1",
+  "decision": "promote_for_specified_use",
+  "label": "ACCEPT_DECLARED_NOMINAL_FINITE_RESPONSE_ENCLOSURE",
+  "scope": "Both solutions of the declared exact-real warm P01 gas4/photon2904 IVP with common fixed IC/source/geometry/closure; all lambda in [0,1].",
+  "evidence": [
+    "derived",
+    "numerically-checked",
+    "implementation-verified_scoped"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "All-lambda common solution tube through 1e11 proper seconds",
+      "decision": "promote_for_specified_use",
+      "basis": "first-exit proof plus strict interval RHS inclusion"
+    },
+    {
+      "id": "C2",
+      "claim": "Exact nonlinear shared-source comparison with diagonal photon damping",
+      "decision": "promote_for_specified_use",
+      "basis": "difference identities; componentwise integral bound; nonnegative inverse"
+    },
+    {
+      "id": "C3",
+      "claim": "Finite response sign and interval for delta_T and delta_e",
+      "decision": "promote_for_specified_use",
+      "basis": "directed-rounding bounds plus exact rational closure and quotient"
+    },
+    {
+      "id": "C4",
+      "claim": "Atomic fit uncertainty and whole-reionization physical effect",
+      "decision": "hold",
+      "next_required_input": "quantified HH rate envelope over the selected state range and receiver-specific observable budget"
+    }
+  ],
+  "checks": {
+    "wolfram_interval_result": "results/interval_result_v3.json",
+    "exact_arithmetic": "checks/EXACT_AUDIT.json",
+    "exact_checks_passed": 24,
+    "xact_residuals_zero": 11
+  },
+  "independence": "same assistant, different CAS/arithmetic implementations; no external reviewer",
+  "comparison_to_PHYS21": "PHYS21 retains its nominal PL-baseline tangent status. Direct PHYS22 difference enclosure replaces the need to certify the PL interpolation for this finite-response target.",
+  "execution_counts": {
+    "new_baseline_ODE_runs": 0,
+    "new_tangent_ODE_runs": 0,
+    "native_HH_activation": 0,
+    "new_atomic_fits": 0,
+    "HPC_jobs": 0,
+    "interval_science_successful_revisions": 2,
+    "adopted_interval_version": "v3",
+    "symbolic_xact_runs": 2
+  },
+  "unresolved_for_adopted_scope": [],
+  "outside_current_claim": [
+    "native floating-point error guarantee",
+    "atomic-fit physical uncertainty",
+    "arbitrary Bianchi or whole reionization history",
+    "external-independent-review"
+  ],
+  "next_unit": "PHYS23_HH_RATE_ENVELOPE_TO_OBSERVABLE_BUDGET"
+}

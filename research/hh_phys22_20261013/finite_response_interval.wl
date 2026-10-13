@@ -4,8 +4,8 @@
 ClearAll["Global`*"]; $MaxExtraPrecision=200; started=AbsoluteTime[];
 iv[x_]:=N[Interval[{x,x}],40]; ib[a_,b_]:=N[Interval[{a,b}],40];
 lo[x_]:=If[Head[x]===Interval,Min[x],x]; hi[x_]:=If[Head[x]===Interval,Max[x],x];
-up[x_]:=Ceiling[Rationalize[hi[x],0]*10^55+1]/10^55;
-dn[x_]:=Floor[Rationalize[lo[x],0]*10^55-1]/10^55;
+up[x_]:=Ceiling[SetPrecision[hi[x],Infinity]*10^55+1]/10^55;
+dn[x_]:=Floor[SetPrecision[lo[x],Infinity]*10^55-1]/10^55;
 au[x_]:=Max[Abs[dn[x]],Abs[up[x]]];
 serial[x_]:=ToString[x,InputForm]; bounds[x_]:=serial/@{dn[x],up[x]};
 base="https://raw.githubusercontent.com/cosmosapjw-quantum/rei_bianchi/a5c958c414dea41216b445c05f58df837f05cacb/research/physical_provider_20261010/";
@@ -15,8 +15,8 @@ If[FileHash[ar,"SHA256","HexString"]=!="3cbf35cf7910c37083de4c5b9db443c71b272f38
 paths=ExtractArchive[ar,dir];
 readNPY[path_]:=Module[{st,ver,len,head,shape,data},st=OpenRead[path,BinaryFormat->True];BinaryReadList[st,"Byte",6];ver=BinaryReadList[st,"Byte",2];len=BinaryRead[st,If[ver[[1]]==1,"UnsignedInteger16","UnsignedInteger32"],ByteOrdering->-1];head=FromCharacterCode[BinaryReadList[st,"Byte",len]];If[!StringContainsQ[head,"'<f8'"]||StringContainsQ[head,"True"],Return[$Failed]];shape=ToExpression/@DeleteCases[StringTrim/@StringSplit[First[StringCases[head,RegularExpression["'shape': \\(([^)]*)\\)"]->"$1"]],","],""];data=BinaryReadList[st,"Real64",ByteOrdering->-1];Close[st];ArrayReshape[data,shape]];
 arr=Association[(FileBaseName[#]->readNPY[#])&/@Select[paths,StringEndsQ[#,".npy"]&]];
-g0=Rationalize[arr["initial_state"][[1;;4]],0];en0=Rationalize[arr["q_eV"],0];wei=Rationalize[arr["weights"],0];nn=Length[en0];
-nh0=Rationalize[5.935621973155476*^-5,0]; m0=Rationalize[arr["initial_state"][[5;;4+nn]],0]/nh0;
+g0=SetPrecision[arr["initial_state"][[1;;4]],Infinity];en0=SetPrecision[arr["q_eV"],Infinity];wei=SetPrecision[arr["weights"],Infinity];nn=Length[en0];
+nh0=SetPrecision[5.935621973155476*^-5,Infinity]; m0=SetPrecision[arr["initial_state"][[5;;4+nn]],Infinity]/nh0;
 span=10^11; ff=3/38; ev=1602176634/10^21; kb=1380649/10^22; cc=29979245800; hp=662607015/10^35;ct=2ev/(3kb);
 chi={13598434599702/10^12,24587389011/10^9,5441776/10^5}; ell={1,ff,2ff,0}; ew={0,0,0,1};nu={1,0,0,-chi[[1]]};
 rgrad={{-1,0,0,0},{0,-ff,-ff,0},{0,ff,0,0}};ugrad={{1,0,0,0},{0,ff,0,0},{0,0,ff,0}};
@@ -28,8 +28,8 @@ sigfun[ee_,p_]:=Module[{xx,yy,s},If[hi[ee]<p[[1]],Return[0]];xx=ee/p[[2]]-p[[7]]
 sigI=Table[sigfun[enI[[i]],params[[a]]],{a,3},{i,nn}];
 lines=Select[StringSplit[Import[src,"Text"],"\n"],StringLength[StringTrim[#]]>0&&!StringStartsQ[StringTrim[#],"#"]&];
 tokens=StringSplit/@lines;
-If[!AllTrue[Flatten[tokens],StringMatchQ[#,RegularExpression["[+-]?(?:[0-9]+\\.?[0-9]*|\\.[0-9]+)(?:[eE][+-]?[0-9]+)?"]&],Return["SOURCE_TOKEN_FAILURE"]];
-rows=Map[Rationalize[ToExpression[StringReplace[#,{"E"->"*^","e"->"*^"}]],0]&,tokens,{2}];
+If[!AllTrue[Flatten[tokens],StringMatchQ[#,RegularExpression["[+-]?(?:[0-9]+\\.?[0-9]*|\\.[0-9]+)(?:[eE][+-]?[0-9]+)?"]]&],Return["SOURCE_TOKEN_FAILURE"]];
+decToken[st_String]:=Module[{q=ToLowerCase[st],sg=1,parts,m,ex,ds},If[StringStartsQ[q,"-"],sg=-1;q=StringDrop[q,1],If[StringStartsQ[q,"+"],q=StringDrop[q,1]]];parts=StringSplit[q,"e"];m=parts[[1]];ex=If[Length[parts]==2,ToExpression[parts[[2]]],0];ds=StringSplit[m,".",All];sg FromDigits[StringJoin[ds]]10^(ex-If[Length[ds]==2,StringLength[ds[[2]]],0])]; rows=Map[decToken,tokens,{2}];
 zs=First[rows];wave=Reverse[Rest[rows][[All,1]]];spec=Reverse[Rest[rows][[All,2;;]]];nativeE=(hp cc/ev*10^8)/wave;
 izlo=Max[1,Length[Select[zs,#<=lo[zI]&]]];izhi=Min[Length[zs],Length[Select[zs,#<hi[zI]&]]+1];
 profileU=Max/@spec[[All,izlo;;izhi]];
@@ -50,5 +50,21 @@ bg=cc nI{r[[1]]sigI[[1]],(r[[2]]sigI[[2]]-r[[3]]sigI[[3]])/ff,r[[3]]sigI[[3]]/ff
 aU=Map[au,ag,{2}];bU=Map[au,bg,{2}];cU=Map[au,-mI kg,{2}];bcU=bU.cU;gain=span aU+span^2 bcU/2;
 qL=dn[qhh];qU=up[qhh];uu=Inverse[IdentityMatrix[4]-gain].(span Abs[nu] qU);err=gain.uu;weights={1,1,1,32};etaGain=Max[(gain.weights)/weights];
 eErr=ell.err;electron={span qL-eErr,span qU+eErr};ttlo=dn[temp];tthi=up[temp];pilo=dn[part];pihi=up[part];tempNum={-(ct chi[[1]]+tthi)span qU-ct err[[4]]-tthi eErr,-(ct chi[[1]]+ttlo)span qL+ct err[[4]]+tthi eErr};tempResp={tempNum[[1]]/pilo,tempNum[[2]]/pihi};
-result=<|"status"->If[tubePass&&etaGain<1&&Min[uu]>0,"PASS_INTERVAL_TUBE_AND_FINITE_COMPARISON","CANDIDATE_CHECK_FAILED"],"kernel"->$Version,"precision"->40,"seconds"->AbsoluteTime[]-started,"node_count"->nn,"gas_initial_exact"->(serial/@g0),"gas_radii"->(serial/@radii),"tube_picard_upper"->(serial/@picard),"tube_ratios"->N[picard/radii,12],"temperature_box"->bounds[temp],"particle_box"->bounds[part],"nH_box"->bounds[nI],"qHH_box"->bounds[qhh],"source_sum_upper_perH_s"->serial[Total[sourceU]],"initial_photon_sum_perH"->serial[Total[m0]],"Gamma_box"->(bounds/@gam),"Aabs_upper"->Map[serial,aU,{2}],"BabsCabs_upper"->Map[serial,bcU,{2}],"gain_upper"->Map[serial,gain,{2}],"weighted_gain"->N[etaGain,16],"finite_gas_bound"->N[uu,16],"feedback_error_bound"->N[err,16],"electron_lambda1_interval"->N[electron,16],"temperature_lambda1_interval_K"->N[tempResp,16],"source_z_columns"->{izlo,izhi},"source_native_shape"->Dimensions[spec],"source_domain_check"->(Min[en0]lo[ratI]>=Min[nativeE]&&Max[en0]<=Max[nativeE]),"threshold_overlap_counts"->Table[Count[enI,v_/;lo[v]<params[[a,1]]<=hi[v]],{a,3}],"gas_domain"->(lo[x]>0&&hi[x]<1&&lo[y]>0&&lo[z]>0&&hi[y+z]<1&&lo[temp]>30000&&hi[temp]<110000),"input_sha256"->{FileHash[ar,"SHA256","HexString"],FileHash[src,"SHA256","HexString"]}|>;
-ExportString[result,"RawJSON"]
+result=<|"status"->If[tubePass&&etaGain<1&&Min[uu]>0,"PASS_INTERVAL_TUBE_AND_FINITE_COMPARISON","CANDIDATE_CHECK_FAILED"],"kernel"->$Version,"precision"->40,"seconds"->AbsoluteTime[]-started,"node_count"->nn,"gas_initial_exact"->(serial/@g0),"gas_radii"->(serial/@radii),"tube_picard_upper"->(serial/@picard),"tube_ratios"->N[picard/radii,12],"temperature_box"->bounds[temp],"particle_box"->bounds[part],"nH_box"->bounds[nI],"qHH_box"->bounds[qhh],"source_sum_upper_perH_s"->serial[Total[sourceU]],"initial_photon_sum_perH"->bounds[Total[iv/@m0]],"Gamma_box"->(bounds/@gam),"Aabs_upper"->Map[serial,aU,{2}],"BabsCabs_upper"->Map[serial,bcU,{2}],"gain_upper"->Map[serial,gain,{2}],"weighted_gain"->N[etaGain,16],"finite_gas_bound"->N[uu,16],"feedback_error_bound"->N[err,16],"electron_lambda1_interval"->N[electron,16],"temperature_lambda1_interval_K"->N[tempResp,16],"source_z_columns"->{izlo,izhi},"source_native_shape"->Dimensions[spec],"source_domain_check"->(Min[en0]lo[ratI]>=Min[nativeE]&&Max[en0]<=Max[nativeE]),"threshold_overlap_counts"->Table[Count[enI,v_/;lo[v]<params[[a,1]]<=hi[v]],{a,3}],"gas_domain"->(lo[x]>0&&hi[x]<1&&lo[y]>0&&lo[z]>0&&hi[y+z]<1&&lo[temp]>30000&&hi[temp]<110000),"input_sha256"->{FileHash[ar,"SHA256","HexString"],FileHash[src,"SHA256","HexString"]}|>;
+
+gasOK=TrueQ[lo[x]>0&&hi[x]<1&&lo[y]>0&&lo[z]>0&&hi[y+z]<1&&lo[temp]>30000&&hi[temp]<110000];
+sourceOK=TrueQ[Min[en0]lo[ratI]>=Min[nativeE]&&Max[en0]<=Max[nativeE]&&Min[sourceU]>=0&&Min[m0]>=0&&Min[wei]>=0];
+repOK=And@@(TrueQ[IntegerQ[Log[2,Denominator[#]]]]&/@Join[g0,en0,wei]);
+invOK=And@@(TrueQ[#>=0]&/@Flatten[Inverse[IdentityMatrix[4]-gain]]);
+result["status"]=If[TrueQ[tubePass&&etaGain<1&&Min[uu]>0&&gasOK&&sourceOK&&repOK&&invOK&&Min[electron]>0&&Max[tempResp]<0],"PASS_INTERVAL_TUBE_AND_FINITE_COMPARISON","FAIL"];
+result["binary64_dyadic_input_check"]=repOK;result["inverse_nonnegative"]=invOK;
+result["number_representation"]="NPZ inputs decoded to exact binary64 rationals by SetPrecision[...,Infinity]; source decimal tokens parsed exactly; analytic coefficient decimal leaves exact";
+result["gas_domain"]=gasOK;result["source_domain_check"]=sourceOK;
+result["electron_interval_rational"]=serial/@{Floor[electron[[1]]10^30]/10^30,Ceiling[electron[[2]]10^30]/10^30};
+result["temperature_interval_rational_K"]=serial/@{Floor[tempResp[[1]]10^24]/10^24,Ceiling[tempResp[[2]]10^24]/10^24};
+result["finite_gas_bound_rational"]=serial/@(Ceiling[10^30 #]/10^30&/@uu);
+result["feedback_bound_rational"]=serial/@(Ceiling[10^32 #]/10^32&/@err);
+result["kernel"]=System`$Version;
+Export[FileNameJoin[{DirectoryName[$InputFileName],"interval_result_v3.json"}],result,"RawJSON"];
+Print[ExportString[KeyTake[result,{"status","kernel","node_count","gas_initial_exact","tube_ratios","weighted_gain","finite_gas_bound","feedback_error_bound","electron_lambda1_interval","temperature_lambda1_interval_K","gas_domain","source_domain_check","binary64_dyadic_input_check","inverse_nonnegative","source_z_columns","source_native_shape","threshold_overlap_counts"}],"RawJSON"]];
+If[result["status"]=!="PASS_INTERVAL_TUBE_AND_FINITE_COMPARISON",Exit[2]];
