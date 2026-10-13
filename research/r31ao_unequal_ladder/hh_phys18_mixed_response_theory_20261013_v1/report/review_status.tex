@@ -1,0 +1,21 @@
+별도 검토자는 후보 application 및 PHYS14 프로그램을 import하지 않고,
+원 입력에 대한 자체 exact interval 산술과 Cramer determinant 방식의
+선형 역 인증을 사용했다. 독립 arithmetic 22개 묶음이 모두 통과했다.
+nilpotent polynomial 계수 합성으로 일곱 광자 항의
+$7\times35\times4=980$개 성분을 각각 계산했으며,
+모두 후보 포함 안에 들어갔다.
+
+검토는 원 input identity, $U/V/W$와 parameter slot, Full birth의 2배
+인수, 직접/상관 혼합 우변, 원 $C^2$ density bridge, stage mixed
+increment, 유한 온도 분수, 공통 inverse의 세 기여 묶음을 포함한다.
+mixed number/energy ledger는 두 guard를 유지한 잔차의 0 포함을
+확인했다. 현재 수치의 음의 margin도 독립 유리수 계산과 일치한다.
+
+독립 검사 첫 시도는 바깥쪽으로 저장된 decimal prior를 유리수
+singleton으로 가정한 checker의 표현 오류를 발견했다. 실제 표현인
+바깥쪽 구간 포함으로 판정식을 교정하여 다음 실행에서 22/22를
+통과했다. 이 과정에서 생산 코드와 수치 결과는 바뀌지 않았다.
+이론 정리 8개와 따름정리 4개는 이 범위에서 \texttt{PROMOTE\_SCOPED}로
+채택한다. 남은 과학적 차단 사유는 없다. 실제 최종 해시와 채택은
+\nolinkurl{review/INDEPENDENT_REVIEW.json},
+\nolinkurl{review/DECISION.json}에 기록한다.

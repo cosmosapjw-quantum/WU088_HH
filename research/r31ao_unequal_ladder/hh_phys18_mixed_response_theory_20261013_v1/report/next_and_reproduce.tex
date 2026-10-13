@@ -1,0 +1,105 @@
+\clearpage
+\section{다음 연구와 재현 경로}
+
+\subsection{현재 닫힌 항과 남은 순수 곡률}
+
+현재 $F_\lambda,F_b,F_{\lambda b}$의 전역 포함은 확보했다.
+축 위 실제 함수를 보존한 표현에서
+\[
+F=F(\lambda,0)+F(0,b)-F(0,0)+c_m\lambda b+R_m,
+\]
+\[
+c_m=-2.393651191234\times10^{-12}\ {\rm K},\qquad
+|R_m|\le2.748545551890\times10^{-13}\lambda b\ {\rm K}
+\]
+가 성립한다. $c_m$은 현재 바깥쪽 표시 구간의 중심이다.
+이는 양 축의 비선형성을 보존하면서 교차항을 하나의 작은 계수와
+검증된 잔차로 표현한 현재 결과다.
+
+다음 노드는 \texttt{HH\_DEFECT\_PARAMETER\_CURVATURE}다.
+두 남은 순수 곡률 $F_{\lambda\lambda},F_{bb}$를 원 $C^2$ 자료로
+계산하여 축의 직선 보간까지 포함하는 전체 bilinear 모델의 오차를
+구한다. $\theta\in\{\lambda,b\}$에 대해
+\[
+J_kg_{k,\theta\theta}
+=-\{H_{k,gg}[g_{k,\theta},g_{k,\theta}]
++2H_{k,g\theta}g_{k,\theta}+H_{k,\theta\theta}\}
+\]
+가 출발식이다. Full과 첫 half에서는 고정 기체의 두 순수 parameter
+partial이 0이고, carried 둘째 half에서는 이전 stage의 순수 incoming
+jet를 함께 전달한다. 상세 식과 원자료 연결은
+\nolinkurl{contracts/CURVATURE_CONTRACT.json}과
+\nolinkurl{theory/NEXT_CURVATURE_PROPOSAL_KO.md}에 보존한다.
+
+$M_{\lambda\lambda}\ge\sup|F_{\lambda\lambda}|$,
+$M_{bb}\ge\sup|F_{bb}|$가 계산되면 네 실제 모서리를 잇는
+$\mathcal L_{\rm bilin}F$에 대해
+\begin{equation}
+|F-\mathcal L_{\rm bilin}F|
+\le\frac{M_{\lambda\lambda}}2\lambda(1-\lambda)
++\frac{M_{bb}}2b(1-b)
+\label{eq:bilinear-remainder}
+\end{equation}
+를 얻는다. 각 축의 1차 보간 오차에 대한 Peano kernel 경계와
+나머지 축 보간 연산자의 양성 가중치를 적용하면 이 부등식이 따른다.
+현재 mixed 부호는 다음 계산의 확정 입력으로 재사용한다.
+새 pure-curvature 수치 응답은 다음 단위의 실행 의무다.
+
+그 실행에 필요한 첫 half의 선형 준비는 실제로 확인했다.
+원 Jacobian 구간에서 $C_1=I$, $S_1=(1,1,1,27/2)$를 쓰면
+exact rational 행 상계가
+$q_1=0.0005395474227883633\ldots<0.0005396<1$이다.
+독립 검토도 네 행 상계를 일치시켰다. 이는 새 pure 우변을 넣을
+역 포함의 준비이며, 순수 곡률 응답의 수치 실행은 아직 하지 않았다.
+
+\subsection{DAG와 현재 판정의 범위}
+
+이번 DAG에서는 앞선 13개 HH 노드 값을 그대로 보존하고
+\texttt{HH\_DEFECT\_MIXED\_RESPONSE}에 실제 계산과 독립 판정을 기록한다.
+그 다음에 순수 곡률 노드를 추가한다. 원 global REI DAG 파일과
+그 노드 상태는 기존 identity를 유지한다.
+원 native/microscopic 경로의 과학적 조건을 보존하며 현재 작업에서
+\texttt{heavy\_queue=[]}, \texttt{launch=false}를 유지한다.
+
+\subsection{입력과 코드의 복원}
+
+최종 연구 묶음에는 현재 core와 PHYS17의 고정된 최종 연구 archive가
+들어 있다. 그 안의 PHYS16 묶음과 PHYS15 snapshot을 따라가면 실제
+source, Hessian, carry와 원 전처리 자료를 복원할 수 있다.
+각 부모는 자기 core 이름의 형제 디렉터리로 추출하며,
+부모별 metadata는 별도 staging에 유지한다.
+\nolinkurl{DEPENDENCIES.json}은 archive 크기와 SHA-256,
+원 Git commit, 필요한 내부 경로를 결박한다.
+
+\noindent\begin{minipage}{\linewidth}
+복원한 작업 디렉터리에서 아래와 같이 새 출력 디렉터리를 지정한다.
+성공한 기존 실행 디렉터리는 그대로 유지한다.
+\begin{quote}\small
+\ttfamily
+python3 HH\_PHYS18\_THEORY\_20261013\_v1/src/\\
+mixed\_response\_application.py \\
+\quad --parent15 HH\_PHYS15\_THEORY\_20261012\_v1 \\
+\quad --parent16 HH\_PHYS16\_THEORY\_20261013\_v1 \\
+\quad --parent17 HH\_PHYS17\_THEORY\_20261013\_v1 \\
+\quad --output PHYS18\_reproduce/results
+\end{quote}
+\end{minipage}\par
+이 표시의 줄바꿈은 가독성을 위한 것이다. 복사 가능한 한 줄 명령은
+\nolinkurl{checks/application/APPLICATION_KO.md}에 있다.
+실제 Wolfram 검산은
+\nolinkurl{checks/wolfram/mixed_response_checks.wl} 전체를
+stateless evaluator에 주어 실행한다. 원 출력과 진단, archive/hash
+확인은 같은 디렉터리에서 읽을 수 있다.
+
+LaTeX source 묶음의 \texttt{latex/}에서 XeLaTeX, BibTeX, XeLaTeX 두 번
+순서로 주 원고를 컴파일한다. 필요한 CJK font subset을 포함했다.
+수치표와 그림은 동결된 exact 결과에서 생성한 것으로, PDF 재컴파일은
+물리 source나 root 계산을 다시 실행하지 않는다.
+정확한 명령과 실제 PDF 검증 기록은 \nolinkurl{report/BUILD_KO.md}와
+\nolinkurl{report/qa/QA_RESULT.json}에 연결한다.
+
+현재 판정, 완결한 R1--R10 단계, 원 실패와 교정, 다음 실행 의무는
+\nolinkurl{state/RESEARCH_STATE.json}, \nolinkurl{HANDOFF_KO.md},
+\nolinkurl{review/DECISION.json}에서 함께 추적한다.
+최종 Git과 실제 Drive/Dropbox 저장 응답은 별도 delivery receipt에
+기록하며, 과학 산출물의 identity와 저장 완료의 identity를 연결한다.

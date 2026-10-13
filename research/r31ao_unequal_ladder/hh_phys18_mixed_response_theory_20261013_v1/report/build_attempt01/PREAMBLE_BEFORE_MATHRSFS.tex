@@ -1,0 +1,53 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{NotoSerifCJKkr-Regular.otf}[Path=fonts/,BoldFont=NotoSerifCJKkr-Bold.otf,ItalicFont=NotoSerifCJKkr-Regular.otf]
+\setsansfont{NotoSerifCJKkr-Regular.otf}[Path=fonts/,BoldFont=NotoSerifCJKkr-Bold.otf]
+\setmonofont{DejaVu Sans Mono}[Scale=0.79]
+\XeTeXlinebreaklocale "ko"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage[margin=23mm,top=23mm,bottom=23mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,longtable,array,graphicx,float}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,caption,fancyhdr,titlesec}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage{hyperref}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\passthrough}[1]{#1}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=MidnightBlue,urlcolor=MidnightBlue,citecolor=MidnightBlue,pdftitle={WU088 HH PHYS18: HH와 birth의 혼합 응답과 유한 상호작용},pdfauthor={WU088 HH 연구}}
+\urlstyle{same}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{0.34em}
+\setlength{\parindent}{1em}
+\widowpenalty=10000\clubpenalty=10000
+\linespread{1.10}
+\setlist{itemsep=0.18em,topsep=0.35em,leftmargin=1.6em}
+\captionsetup{font=small,labelfont=bf}
+\renewcommand{\figurename}{그림}
+\renewcommand{\tablename}{표}
+\renewcommand{\contentsname}{목차}
+\renewcommand{\refname}{참고 문헌과 원자료}
+\renewcommand{\proofname}{증명}
+\titleformat{\section}{\large\sffamily\bfseries\color{MidnightBlue}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\sffamily\bfseries}{\thesubsection}{0.7em}{}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\sffamily WU088\_HH / PHYS18 이론}
+\fancyhead[R]{\small\sffamily 2026-10-13 KST}
+\fancyfoot[C]{\thepage}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ex}{\operatorname{exact64}}
+\newcommand{\BB}{\mathcal B}
+\newcommand{\HF}{\mathcal H_F}
+\newcommand{\R}{\mathsf R}
+\newcommand{\RF}{\mathsf R_F}
+\newcommand{\ew}{e_w}
+\newcommand{\exx}{e_x}
+\newcommand{\nS}[1]{\left\lVert#1\right\rVert_S}
+\newcommand{\nI}[1]{\left\lVert#1\right\rVert_\infty}
+\newcommand{\magv}{\operatorname{mag}}
+\newtheorem{theorem}{정리}
+\newtheorem{lemma}{보조정리}
+\newtheorem{proposition}{명제}
+\theoremstyle{definition}\newtheorem{definition}{정의}

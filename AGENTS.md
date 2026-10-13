@@ -1,3 +1,17 @@
+# Current priority — PHYS18 mixed response, 2026-10-13 KST
+
+Read CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/README_KO.md, HANDOFF_KO.md, review/DECISION.json and NEXT_DAG.json. PHYS18 is PROMOTE_SCOPED for the inherited fixed-alpha C2 family, same COMMON and shared global lambda,b. The actual mixed temperature-defect derivative and four-corner interaction are both strictly negative: [-2.668505746423E-12, -2.118796636045E-12] K.
+
+The direct and correlated mixed implicit equations use original source Hessians, U/V/W carry and all 35 photon/guard slots. Exact HI denominator differences and the inherited first density derivative preserve the small endpoint and stage differences. One common Full inverse and temperature covector resolves HH-gradient, photon chronology and thermal-normalization contributions. Reuse the unchanged original C,B,q,S. Accepted evidence: 8 theorems, 4 corollaries, 22/22 independent arithmetic checks; actual Wolfram/xAct yields 7 tensor and 14 scalar exact-zero checks.
+
+Every positive-area parameter subrectangle has negative interaction. The established anchored-axis model has cross coefficient -2.393651191234e-12 K and remainder at most 2.748545551890e-13*lambda*b K. Next execute HH_DEFECT_PARAMETER_CURVATURE using contracts/CURVATURE_CONTRACT.json: compute the two pure temperature-defect curvatures and a finite bilinear reconstruction error. First-half identity-preconditioned linear readiness is complete with q1<0.0005396; pure response applications are not_run.
+
+Use the user-selected physmath-research-loop embedded 1.0.0 THEORY R1–R10. Reuse unchanged premises and complete the next constructive obligation. Source/root/history re-execution requires a concrete changed scientific obligation. Original native and microscopic conditions remain in force. The 13 preceding HH node values and original global REI DAG bytes are preserved; no global RUX node is newly completed, heavy_queue=[] and launch=false.
+
+Publication is additive, stacked on PR52 head ba5f2693c5c1222b2635d87f33ed4e47eba519ae, branch research/hh-phys17-defect-parameter-response-theory-20261013. Session authorization for a new research branch/draft PR and dual-provider backup persists; no main merge is implied. Bind actual commit/tree and provider acknowledgements after successful operations. Preserved historical publication targets below remain records of their respective units.
+
+## Preserved PHYS17 and earlier instructions
+
 # Current priority — PHYS17 parameter response, 2026-10-13 KST
 
 Read CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_phys17_defect_parameter_response_theory_20261013_v1/README_KO.md, HANDOFF_KO.md, review/DECISION.json and NEXT_DAG.json. PHYS17 is PROMOTE_SCOPED for the inherited fixed-alpha C2 family, same COMMON and shared global lambda,b. Both actual total temperature derivatives are now enclosed: lambda is strictly negative, b strictly positive. Explicit forcing and state feedback are carried through the same Full inverse and temperature covector.

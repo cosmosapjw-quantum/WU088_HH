@@ -1,3 +1,15 @@
+# WU088_HH 현재 결과: PHYS18
+
+같은 COMMON과 공유 전역 HH·birth 매개변수에서 실제 endpoint 결함의 혼합 응답을 유도·계산했다. 독립 판정은 **PROMOTE_SCOPED**, 이론 정리 **8개**, 따름정리 **4개**, 별도 exact Fraction 산술은 **22/22 PASS**다.
+
+온도 결함의 혼합 미분과 네 모서리 interaction은 모두 **[-2.668505746423E-12, -2.118796636045E-12] K**에 포함된다. 원 C2 Hessian과 U/V/W carry에서 직접식·상관식을 구성했고, 같은 Full inverse와 온도 covector에서 HH gradient의 음의 기여가 가장 크다는 것을 확인했다. 실제 Wolfram/xAct의 7개 tensor·14개 scalar component 검산은 모두 정확히 0이다.
+
+모든 양의 면적 subrectangle의 interaction이 음수이며 HH·birth marginal response의 정렬이 결정된다. 축 응답을 그대로 보존하면 교차항 -2.393651191234e-12*lambda*b K의 잔여 오차는 2.748545551890e-13*lambda*b K 이하이다.
+
+[연구 개요](research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/README_KO.md), [PDF 보고서](research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/report/WU088_HH_PHYS18_THEORY_20261013.pdf), [채택 기록](research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/review/DECISION.json), [다음 DAG](research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/NEXT_DAG.json)를 참조한다. 다음은 [HH_DEFECT_PARAMETER_CURVATURE](research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/contracts/CURVATURE_CONTRACT.json)에서 두 pure curvature와 bilinear 재구성 오차를 계산하는 일이다. 첫 half의 선형 inverse 준비는 완료했으며 새 pure response application은 not_run이다. 원 source·root·history 재실행 및 NCP launch는 모두 0회다.
+
+## 이전 연구 개요 보존
+
 # WU088_HH 현재 결과: PHYS17
 
 같은 COMMON과 공유 전역 매개변수에서 실제 endpoint 결함의 1차 응답을 유도·계산했다. 독립 판정은 **PROMOTE_SCOPED**, 별도 Fraction 산술은 **29/29 PASS**다.

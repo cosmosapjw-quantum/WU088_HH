@@ -1,0 +1,1071 @@
+{
+  "schema": "WU088_HH_PHYS18_INDEPENDENT_REVIEW_V1",
+  "decision": "PROMOTE_SCOPED",
+  "reviewer": "/root/hh_phys18_mixed_review",
+  "completed_utc": "2026-10-13T00:02:35.093599+00:00",
+  "scope": "HH_DEFECT_MIXED_RESPONSE on each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family, same COMMON and global lambda,b in [0,1]^2, actual ordinary mixed endpoint defect and finite DeltaT.",
+  "scope_contract": {
+    "root": "HH_PHYS17_THEORY_20261013_v1",
+    "path": "contracts/MIXED_RESPONSE_CONTRACT.json",
+    "bytes": 17828,
+    "sha256": "fee865c96d04be41e5597f53fb417118a780cb8a1bb56bb88bb55f7f03966914"
+  },
+  "active_contract": {
+    "root": "HH_PHYS18_THEORY_20261013_v1",
+    "path": "contracts/ACTIVE_MIXED_RESPONSE_CONTRACT.json",
+    "bytes": 18164,
+    "sha256": "c9f57cbadcd55e16958775d11c57aba63a58c541690bdb4b8f2a0ee88379ec2e"
+  },
+  "scope_parameters": {
+    "family": "Inherited source-aligned geometric isotropic fixed-alpha C2 family",
+    "parameters": {
+      "lambda": [
+        0,
+        1
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "same_across_stages": true,
+      "derivative_parameters": [
+        "lambda",
+        "b"
+      ],
+      "alpha": "fixed admissible coefficient choice",
+      "mixed_derivative_order": {
+        "lambda": 1,
+        "b": 1
+      }
+    },
+    "gas_coordinates": [
+      "x_HII",
+      "y_HeII",
+      "y_HeIII",
+      "w_eV_per_H"
+    ],
+    "photon_coordinates": "33 original groups plus number and energy guards",
+    "time_s": {
+      "h": 625000000,
+      "t0": 160000000000,
+      "t1": 160625000000,
+      "t2": 161250000000
+    },
+    "domain": "Original convex X, internal root/source hulls and positive denominators",
+    "regularity": "Original C2 source/root family; mixed implicit forcing uses second derivatives. First application bounds differences of stored Hessians directly and factors exact HI rational differences.",
+    "partial_derivative_meaning": "Differentiate the actual same-family endpoint defect twice, once in global lambda and once in global b, retaining both state feedbacks and all same-parameter photon carry.",
+    "mixed_observable": "I=DeltaT(1,1)-DeltaT(1,0)-DeltaT(0,1)+DeltaT(0,0)"
+  },
+  "contract_input_bindings_verified": 24,
+  "main_input_identities_verified": 16,
+  "claims": [
+    {
+      "id": "PHYS18_T1",
+      "claim": "C2 mixed implicit forcing",
+      "result": "PASS",
+      "status": "accepted_scoped",
+      "basis": [
+        "derived"
+      ],
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "evidence": "Independent mixed implicit differentiation; all 100 original residual export slots checked; actual Wolfram/xAct mixed chain-rule identity.",
+      "open_obligations": []
+    },
+    {
+      "id": "PHYS18_T2",
+      "claim": "Correlated mixed endpoint equation",
+      "result": "PASS",
+      "status": "accepted_scoped",
+      "basis": [
+        "derived"
+      ],
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "evidence": "Independent M4 cancellation and nine endpoint correction sectors; balanced/symmetric forms (18.15)-(18.16) checked symbolically and by proof. The source Hessian difference remains an original signed-range difference under C2.",
+      "open_obligations": []
+    },
+    {
+      "id": "PHYS18_T3",
+      "claim": "HI/HH endpoint factorization",
+      "result": "PASS",
+      "status": "accepted_scoped",
+      "basis": [
+        "derived"
+      ],
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "evidence": "Independent exact HI rational M5/M6 construction including Full birth factor2; q-Hessian segment M7 checked against original jets.",
+      "open_obligations": []
+    },
+    {
+      "id": "PHYS18_T4",
+      "claim": "C2 stage mixed residual",
+      "result": "PASS",
+      "status": "accepted_scoped",
+      "basis": [
+        "derived"
+      ],
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "evidence": "Independent nine-sector gas residual and W1/V1 density/temperature pullback from original C2 source. No third derivative used.",
+      "open_obligations": []
+    },
+    {
+      "id": "PHYS18_T5",
+      "claim": "Mixed photon chronology and ledger",
+      "result": "PASS",
+      "status": "accepted_scoped",
+      "basis": [
+        "derived"
+      ],
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "evidence": "Independent nilpotent coefficient convolution reconstructs seven sectors,35 slots and4 coefficients;980/980 contained. Mixed number/energy ledger checked. Equation18.43 is a proved true-Full correction, not an additional numerical claim.",
+      "open_obligations": []
+    },
+    {
+      "id": "PHYS18_T6",
+      "claim": "Fixed inverse and finite Neumann inclusion",
+      "result": "PASS",
+      "status": "accepted_scoped",
+      "basis": [
+        "derived"
+      ],
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "evidence": "Original C,B,q,S identity checked; independent24-term determinant/Cramer inverse and3 signed fixed-point refinements. Direct/correlated/original difference inclusions intersect correctly. Finite Neumann extension is derived, not newly evaluated here.",
+      "open_obligations": []
+    },
+    {
+      "id": "PHYS18_T7",
+      "claim": "Finite temperature and common adjoint",
+      "result": "PASS",
+      "status": "accepted_scoped",
+      "basis": [
+        "derived"
+      ],
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "evidence": "Independent M15/M16 exact quotient with positive same PiF, six geometry sectors, four gas components and same inverse/goal row readout. Units are K after exact native-leaf conversion.",
+      "open_obligations": []
+    },
+    {
+      "id": "PHYS18_T8",
+      "claim": "Rectangle interaction and anchored reconstruction",
+      "result": "PASS",
+      "status": "accepted_scoped",
+      "basis": [
+        "derived"
+      ],
+      "scope": "Each fixed admissible alpha; same COMMON; shared lambda,b rectangle; inherited C2 source/root family.",
+      "evidence": "C2 rectangle FTC, strict positive-area interaction consequence, marginal ordering and anchored-axis exact decomposition independently derived; exact outward coefficient/radius checked.",
+      "open_obligations": []
+    },
+    {
+      "id": "PHYS18_C1",
+      "claim": "Strictly negative mixed response and interaction",
+      "result": "PASS",
+      "status": "accepted_scoped",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "scope": "Same inherited fixed-alpha source-aligned geometric-isotropic family, globally lambda,b in [0,1]^2.",
+      "evidence": "Actual main run02/readout01 and independent22/22 calculation establish strictly negative mixed temperature and unit-square interaction on the same fixed-alpha family.",
+      "open_obligations": []
+    },
+    {
+      "id": "PHYS18_C2",
+      "claim": "Strict submodularity and ordered marginals",
+      "result": "PASS",
+      "status": "accepted_scoped",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "scope": "Same fixed alpha and any ordered subrectangle within the unit square.",
+      "evidence": "Area/length integration of the established uniform strictly negative interval. Fixed-alpha and common parameter identities retained throughout.",
+      "open_obligations": []
+    },
+    {
+      "id": "PHYS18_C3",
+      "claim": "Anchored cross correction with sub-picokelvin remainder",
+      "result": "PASS",
+      "status": "accepted_scoped",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "scope": "Same fixed alpha; exact axis functions are retained.",
+      "evidence": "Exact rational midpoint/radius of outward bounds independently checked; same actual axis functions retained. This is a cross-error bound and does not linearize axis dependence.",
+      "open_obligations": []
+    },
+    {
+      "id": "PHYS18_C4",
+      "claim": "First-half linear input readiness for pure curvature",
+      "result": "PASS",
+      "status": "accepted_scoped",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "scope": "Original whole-X first-half Jacobian inclusion; pure response application remains not_run.",
+      "evidence": "Separate independent first-half inverse preflight recomputes16 B entries and4 weighted rows; q1 exact fraction matches. Pure response application remains not_run.",
+      "open_obligations": []
+    }
+  ],
+  "blocking_findings": [],
+  "accepted_output_intervals": {
+    "d_mixed_intersection": [
+      {
+        "exact": {
+          "lo": [
+            "71509877668610150386727782038384806653727192132238907621860226514253638002551",
+            "2085924839766513752338888384931203236916703635113918720651407820138886450957656787131798913024"
+          ],
+          "hi": [
+            "93843550220752059964996540470842806544684886463245250708099849255677504496483",
+            "2085924839766513752338888384931203236916703635113918720651407820138886450957656787131798913024"
+          ]
+        },
+        "outward_decimal": [
+          "3.428209698898E-17",
+          "4.498894132315E-17"
+        ],
+        "sign": "STRICT_POSITIVE"
+      },
+      {
+        "exact": {
+          "lo": [
+            "-62793175045084555278960447797854555620771707339667382139634326268552589940517",
+            "273406340597876490546562778389702670669146178861651554553221325801244124899921990402939147127881728"
+          ],
+          "hi": [
+            "31485931584133832833676643460921891783539992194479127909808203437454236959979",
+            "546812681195752981093125556779405341338292357723303109106442651602488249799843980805878294255763456"
+          ]
+        },
+        "outward_decimal": [
+          "-2.296697834724E-22",
+          "5.758083648551E-23"
+        ],
+        "sign": "ZERO_CONTAINING"
+      },
+      {
+        "exact": {
+          "lo": [
+            "-82418812423303831088240870156993467902919797231640123086017952554359682831013",
+            "8749002899132047697490008908470485461412677723572849745703082425639811996797503692894052708092215296"
+          ],
+          "hi": [
+            "-91414777397253240453119057894252008125639856773771142578721930929743518938705",
+            "34996011596528190789960035633881941845650710894291398982812329702559247987190014771576210832368861184"
+          ]
+        },
+        "outward_decimal": [
+          "-9.420366340430E-24",
+          "-2.612148448548E-24"
+        ],
+        "sign": "STRICT_NEGATIVE"
+      },
+      {
+        "exact": {
+          "lo": [
+            "-56538643071762567142517231882305846776006606118553318556623802306312749461983",
+            "130370302485407109521180524058200202307293977194619920040712988758680403184853549195737432064"
+          ],
+          "hi": [
+            "-46944807612102193453066874741999855013732884242296539307542457098522873495177",
+            "130370302485407109521180524058200202307293977194619920040712988758680403184853549195737432064"
+          ]
+        },
+        "outward_decimal": [
+          "-4.336773175632E-16",
+          "-3.600882004347E-16"
+        ],
+        "sign": "STRICT_NEGATIVE"
+      }
+    ],
+    "DeltaT_mixed_intersection_K": {
+      "exact": {
+        "lo": [
+          "-84935034508086548791681532134601007697457365768746147750492781931707682812573",
+          "31828687130226345097944463881396533766429193651030253916189694521162207808802136034115584"
+        ],
+        "hi": [
+          "-67438515221262389562232793361087572509264891036448618646185048344419750446757",
+          "31828687130226345097944463881396533766429193651030253916189694521162207808802136034115584"
+        ]
+      },
+      "outward_decimal": [
+        "-2.668505746423E-12",
+        "-2.118796636045E-12"
+      ],
+      "sign": "STRICT_NEGATIVE"
+    },
+    "four_corner_interaction_K": {
+      "exact": {
+        "lo": [
+          "-84935034508086548791681532134601007697457365768746147750492781931707682812573",
+          "31828687130226345097944463881396533766429193651030253916189694521162207808802136034115584"
+        ],
+        "hi": [
+          "-67438515221262389562232793361087572509264891036448618646185048344419750446757",
+          "31828687130226345097944463881396533766429193651030253916189694521162207808802136034115584"
+        ]
+      },
+      "outward_decimal": [
+        "-2.668505746423E-12",
+        "-2.118796636045E-12"
+      ],
+      "sign": "STRICT_NEGATIVE"
+    },
+    "DeltaT_mixed_direct_K": {
+      "exact": {
+        "lo": [
+          "-60784334976605553325429780356584745959029755398411026250952101627200724143885",
+          "15914343565113172548972231940698266883214596825515126958094847260581103904401068017057792"
+        ],
+        "hi": [
+          "-108638769627059153859114064292759570750346686534211917863698450003141562826291",
+          "127314748520905380391777855525586135065716774604121015664758778084648831235208544136462336"
+        ]
+      },
+      "outward_decimal": [
+        "-3.819468564815E-12",
+        "-8.533085984866E-13"
+      ],
+      "sign": "STRICT_NEGATIVE"
+    },
+    "strict_negative_margin_K": {
+      "exact": {
+        "lo": [
+          "67438515221262389562232793361087572509264891036448618646185048344419750446757",
+          "31828687130226345097944463881396533766429193651030253916189694521162207808802136034115584"
+        ],
+        "hi": [
+          "67438515221262389562232793361087572509264891036448618646185048344419750446757",
+          "31828687130226345097944463881396533766429193651030253916189694521162207808802136034115584"
+        ]
+      },
+      "outward_decimal": [
+        "2.118796636045E-12",
+        "2.118796636046E-12"
+      ],
+      "sign": "STRICT_POSITIVE"
+    },
+    "anchored_axis_reconstruction": {
+      "axis_model": "F(lambda,0)+F(0,b)-F(0,0)",
+      "error_enclosure": "lambda*b*mixed_interval",
+      "absolute_error_bound_K": "2.668505746423e-12 * lambda * b",
+      "cross_coefficient_exact_from_outward_endpoints": [
+        "-1196825595617",
+        "500000000000000000000000"
+      ],
+      "cross_coefficient_decimal_K": "-2.393651191234e-12",
+      "cross_remainder_radius_exact_from_outward_endpoints": [
+        "274854555189",
+        "1000000000000000000000000"
+      ],
+      "cross_remainder_radius_decimal_K": "2.748545551890e-13",
+      "cross_corrected_model": "axis_model + cross_coefficient * lambda * b",
+      "cross_corrected_error_bound_K": "2.748545551890e-13 * lambda * b",
+      "axis_function_values": "same fixed-alpha actual axis values; pure-axis nonlinearity retained"
+    }
+  },
+  "arithmetic_review": {
+    "status": "PASS",
+    "source": "checks/independent/review_arithmetic.py",
+    "result": "checks/independent/run02/INDEPENDENT_ARITHMETIC.json",
+    "run_record": "checks/independent/run02/RUN_RECORD.json",
+    "method": "No candidate import; unrounded rational interval arithmetic; independent Cramer inverse; photon nilpotent coefficient convolution",
+    "candidate_imported": false,
+    "phys14_helper_imported": false,
+    "primitive_reused": "PHYS17 independently reviewed exact rational interval primitive",
+    "checks_passed": 22,
+    "checks_total": 22,
+    "checks": [
+      {
+        "id": "original_input_identities",
+        "result": "PASS"
+      },
+      {
+        "id": "constants_and_endpoint_bindings",
+        "result": "PASS"
+      },
+      {
+        "id": "original_mixed_carry_and_intersections",
+        "result": "PASS"
+      },
+      {
+        "id": "original_preconditioner_and_JF_inclusion",
+        "result": "PASS"
+      },
+      {
+        "id": "original_Hessian_parameter_slots",
+        "result": "PASS"
+      },
+      {
+        "id": "independent_original_source_and_HI_derivative_reconstruction",
+        "result": "PASS"
+      },
+      {
+        "id": "M3_direct_mixed_forcing",
+        "result": "PASS"
+      },
+      {
+        "id": "M4_endpoint_correction_and_M5_M6_M7",
+        "result": "PASS"
+      },
+      {
+        "id": "mixed_residual_and_correlated_rhs_assembly",
+        "result": "PASS"
+      },
+      {
+        "id": "direct_independent_inverse_certificate",
+        "result": "PASS"
+      },
+      {
+        "id": "correlated_independent_inverse_certificate",
+        "result": "PASS"
+      },
+      {
+        "id": "three_mixed_endpoint_inclusions_and_final_intersection",
+        "result": "PASS"
+      },
+      {
+        "id": "M15_M16_exact_finite_temperature",
+        "result": "PASS"
+      },
+      {
+        "id": "uniform_negative_mixed_response_and_four_corner_integral",
+        "result": "PASS"
+      },
+      {
+        "id": "three_group_common_inverse_attribution",
+        "result": "PASS"
+      },
+      {
+        "id": "finite_rectangle_readout_and_improvement_ratios",
+        "result": "PASS"
+      },
+      {
+        "id": "seven_photon_sectors_independent_mixed_polynomial_products",
+        "result": "PASS"
+      },
+      {
+        "id": "M13_mixed_stage_increment",
+        "result": "PASS"
+      },
+      {
+        "id": "mixed_photon_number_energy_ledgers",
+        "result": "PASS"
+      },
+      {
+        "id": "W1_density_gradient_bridge_from_original_C2_source",
+        "result": "PASS"
+      },
+      {
+        "id": "V1_density_gradient_bridge_from_original_C2_source",
+        "result": "PASS"
+      },
+      {
+        "id": "M8_M9_M10_M11_gas_mixed_residual",
+        "result": "PASS"
+      }
+    ],
+    "photon_coefficient_containment_count": 980,
+    "photon_coefficient_count": 980,
+    "source_derivative_export_equalities": 100,
+    "original_gas_mixed_carry_components": 36,
+    "physical_photon_and_guard_slots": 35,
+    "own_wall_seconds": 1.3704573239992897,
+    "wrapper_wall_seconds": 1.4683290380016842,
+    "peak_rss_kib": 48604,
+    "meaning": "Exact expression inclusions and sign are checked separately from input identities and metadata."
+  },
+  "reviewer_correction": {
+    "main_arithmetic": {
+      "failure_class": "independent_checker_implementation",
+      "previous_source": "HH_PHYS18_THEORY_20261013_v1/checks/independent/review_arithmetic.py",
+      "previous_sha256": "de29f683690dc6dc898a277f97f059bb5214747e36eb04603ddb036e58906139",
+      "cause": "Exact decimal prior 1.958485175177039e-9 is saved as a 256-bit outward dyadic interval. Point() was an over-strong representation assumption. Scientific sign was already negative; no production calculation changed.",
+      "correction": "Contain exact decimal prior in stored interval; retain every remaining sign and integral check. Add independent grouped-readout checks.",
+      "production_source_changed": false,
+      "production_results_changed": false,
+      "preserved_failed_source": "run01/FAILED_CHECKER.py"
+    },
+    "successor_metadata": {
+      "schema": "WU088_HH_PHYS18_SCHEMA_CHECK_CORRECTION_V1",
+      "cause": "The first metadata checker compared a raw exact interval against the enclosing interval metadata object instead of its exact member. All 23 input identities and read fields had already passed.",
+      "correction": "Compare exact members on both sides and keep all numerical bounds checks.",
+      "production_source_changed": false,
+      "production_results_changed": false,
+      "theory_changed": false,
+      "failed_checker_sha256": "d89d9235f4764b2d06df4f1d4987c89f539272c37110f9ea709016f18a66a774",
+      "failed_assertion": "c[derivative][exact] == r[DeltaT_mixed_intersection_K]",
+      "correct_assertion": "c[derivative][exact] == r[DeltaT_mixed_intersection_K][exact]",
+      "execution_exit_code": 1
+    },
+    "failed_source_and_records_preserved": true,
+    "production_mutated_by_reviewer": false
+  },
+  "production_failure_review": {
+    "record": "checks/application/FAILURES.json",
+    "cause": "Original guard schema uses named number and energy_eV_per_H fields; first application indexed them as integers.",
+    "minimal_correction": "Access original named fields.",
+    "failed_run_preserved": true,
+    "accepted_run": "run02"
+  },
+  "wolfram_xact": {
+    "status": "completed",
+    "check_result": "pass_scoped",
+    "wolfram_version": "15.0.1 for Linux x86 (64-bit) (July 2, 2026)",
+    "xTensor_version": "1.3.0",
+    "xPerm_version": "1.2.4",
+    "archive_sha256": "7a6c5f600868a3922668b020a15c0692f76574ff2a559808c62d460cef1b07be",
+    "xTensor_sha256": "04e1cf3c7e81f1eff61ca633c84537c3f3cbb0fdd42ea01441e89172086d8b36",
+    "tensor_exact_zero_count": 7,
+    "scalar_component_exact_zero_count": 14,
+    "all_checks_zero": true,
+    "algebra_wall_seconds": 1.216823,
+    "client_elapsed_ms": 11749,
+    "time_constraint_seconds": 60,
+    "canonicalization_backend": "xPerm Wolfram Language group algorithms with $xpermQ=False before DefManifold/DefTensor and ToCanonical",
+    "diagnostic_messages": [
+      {
+        "message": "Symbol::undefined2 for HH18 and B18",
+        "class": "symbolic_test_function_diagnostic",
+        "interpretation": "These are intentionally arbitrary scalar function heads in the general C2 chain-rule/source-composition identity. Both sides retain their formal derivatives and all checks simplify exactly to zero.",
+        "action": "Preserve the actual warning and scoped successful result; no re-execution needed."
+      }
+    ],
+    "scope": "Seven abstract-index algebra identities and fourteen exact scalar/matrix components. The two-slot noncommuting remap verifies algebra; actual original 35-slot physics application is separate.",
+    "execution_sha256": "cf35a0b85031d809bbf694918ba545f17d4e1f156abaa4f6643d8378557dab3a",
+    "source_sha256": "8338070aabb3ad49c3e4a410752faeaba5dbf0aa69db35cbdd596ef76fd31075",
+    "review_method": "Read actual source and raw execution; scalar diagnostics are preserved and the formal identities cancel exactly. This does not replace the original35-slot physical interval calculation."
+  },
+  "literature_counts": {
+    "SciSpace_search_calls": 1,
+    "SciSpace_returned_papers": 10,
+    "Exa_search_calls": 2,
+    "Exa_requested_search_candidates": 10,
+    "Exa_fetch_calls": 3,
+    "Exa_URL_requests": 5,
+    "new_primary_documents_read": 4,
+    "new_primary_ids": [
+      "SLN15",
+      "L97",
+      "P22",
+      "X25"
+    ],
+    "provenance": "literature/SEARCH_PROVENANCE.json",
+    "previous_P17_premises_reused": true,
+    "raw_search_and_full_papers_public": false
+  },
+  "regularity_and_units_review": {
+    "regularity": "C2 only; no Hessian Lipschitz/C3 assumption introduced",
+    "same_parameter": "One shared global lambda and b across all stages; alpha held fixed",
+    "source_lambda_b_at_fixed_gas": "exact0 by affine source; source export interval contains0",
+    "full_birth_factor": "QF=RFZ0+2bJ; factor2 retained independently of Full duration2h",
+    "derivative_normalization": "ordinary partial derivatives, no mixed Taylor1/2",
+    "denominators": "Original positive photon and finite-temperature particle denominators retained",
+    "gas_units": [
+      "dimensionless",
+      "dimensionless",
+      "dimensionless",
+      "eV/H"
+    ],
+    "observable_unit": "K",
+    "heat_leaf": "All active HI heat bits equal exact(Ej)-exact(CHI_H) in the original source."
+  },
+  "successor_readiness": {
+    "status": "ready_not_run",
+    "proposal": "theory/NEXT_CURVATURE_PROPOSAL_KO.md",
+    "contract": {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "theory/CURVATURE_CONTRACT_DRAFT.json",
+      "bytes": 14309,
+      "sha256": "6c41482b636e14f5c8bea6ad70c1f7698fbf21f4c4bbc1141b469f746d1c1126"
+    },
+    "derived_equations": "C1-C20 independently reviewed",
+    "input_bindings_verified": 23,
+    "actual_read_fields_verified": true,
+    "binding_check": "checks/independent/SUCCESSOR_BINDING_CHECK.json",
+    "first_half_preflight": {
+      "schema": "WU088_HH_PHYS18_INDEPENDENT_CURVATURE_PREFLIGHT_V1",
+      "status": "PASS",
+      "readiness": "first-half linear inverse only; pure response remains not_run",
+      "original_input_sha256": "36247ef5ac3bce4b114aac41fe5d85c2015488183ba32b77f9051cc7d25b77b4",
+      "checked_B_entries": 16,
+      "checked_weighted_rows": 4,
+      "q1_exact": "5095881330588929517/9444732965739290427392",
+      "q1_display": 0.0005395474227883633,
+      "preflight_sha256": "d1a38d3592190ac24f97e8671d3f03eb611418ddb81d22c960b4bddc41a1acd5",
+      "elapsed_seconds": 0.0012277999994694255,
+      "completed_utc": "2026-10-12T23:56:11.695016+00:00",
+      "source_calls": 0,
+      "root_solves": 0,
+      "history_replays": 0
+    },
+    "pure_response_application": "not_run",
+    "new_pure_response_values_claimed": false,
+    "current_mixed_sign_retained": true,
+    "metadata_correction": "Two read_fields paths were corrected from signed_gradient to the actual gradient field before this review freeze."
+  },
+  "limitations": [
+    "All numerical conclusions are conditional on the inherited pinned C2 source/root family, original COMMON and fixed admissible alpha. They do not assert unrestricted transport/closure results.",
+    "Strictly negative mixed temperature response and interaction do not resolve the zero-containing y_HeII mixed component or either pure curvature.",
+    "Balanced/symmetric alternative contractions, the true-Full photon correction and finite Neumann tail are proved extensions; every additional tightening path was not numerically executed in this unit.",
+    "The anchored cross model retains exact axis functions; its remainder does not bound separately uncomputed pure-axis nonlinearities.",
+    "Source Hessian differences use their original signed ranges. No unprovided C3 bound or Hessian Lipschitz constant is assumed.",
+    "Wolfram/xAct proves scoped algebraic identities; physical35-slot inclusion comes from the actual rational interval applications.",
+    "First-half q1 verifies only linear inverse readiness. Both pure-curvature applications remain not_run."
+  ],
+  "new_source_calls": 0,
+  "new_root_solves": 0,
+  "history_replays": 0,
+  "new_strong_no_go": false,
+  "NG1_NG7_review": {
+    "new_strong_no_go_admitted": false,
+    "criteria": [
+      {
+        "id": "NG1",
+        "status": "PASS",
+        "evidence": "Exact fixed admissible alpha, inherited C2 family, same COMMON, shared global lambda,b in unit square, original convex root/source domain, positive denominators, ordinary mixed derivatives and finite temperature units are explicit."
+      },
+      {
+        "id": "NG2",
+        "status": "PASS",
+        "evidence": "All62 displayed mixed-theorem equations and C1-C20 successor equations independently read. Nontrivial implicit, density-source, photon chronology, endpoint, finite quotient and integral steps close under the stated premises."
+      },
+      {
+        "id": "NG3",
+        "status": "PASS",
+        "evidence": "Original verified root family and nonzero physical source/carry are inherited by exact file identity. New inclusion changes a previously zero-containing mixed comparison to a strict sign and produces a quantitative interaction; no hidden inconsistent condition was introduced."
+      },
+      {
+        "id": "NG4",
+        "status": "PASS_SCOPED",
+        "evidence": "Concrete cross-response mechanism is the same-source HH gradient and seven photon sectors through the common inverse and finite-temperature geometry. No universal impossibility or obstruction theorem is claimed."
+      },
+      {
+        "id": "NG5",
+        "status": "PASS",
+        "evidence": "Negative mixed response gives strict submodularity, ordered marginals and an anchored cross correction with radius2.748545551890e-13K times lambda*b. It closes the mixed-sign obligation and selects pure curvatures for the next unit."
+      },
+      {
+        "id": "NG6",
+        "status": "PASS",
+        "evidence": "Actual SciSpace and Exa discovery plus primary SLN15,L97,P22,X25 reading. Standard implicit Hessian/adjoint identities are distinguished from the application-specific correlated finite-temperature certificate; previous validated-arithmetic premises reused."
+      },
+      {
+        "id": "NG7",
+        "status": "PASS",
+        "evidence": "Independent reviewer reads original bytes, does not import candidate/helper, reconstructs rational intervals, Cramer inverse,980 photon coefficients, source derivatives and exact output expressions. Actual Wolfram/xAct source/raw also read. No optimality or necessity claim is made."
+      }
+    ]
+  },
+  "source_or_closure_change": false,
+  "raw_candidate_status_preserved": true,
+  "reviewed_binding_count": 67,
+  "reviewed_bindings": [
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/APPLICATION_KO.md",
+      "bytes": 9285,
+      "sha256": "977e5a1f548f36831869142a287844df9bff30a59d49b63d59514909f5bc9236"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/APPLICATION_MANIFEST.json",
+      "bytes": 4040,
+      "sha256": "4d8fa8159f42459b5cc6410e01a8aaf9c82f60f081f59577e06430b5c5c3e8d2"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/APPLICATION_SUMMARY.json",
+      "bytes": 14134,
+      "sha256": "700587157bd2a9658681304eb146d5efd01114ad3a9d14ebbbfc99f45e7fa76f"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/FAILURES.json",
+      "bytes": 691,
+      "sha256": "6c80dddb853573a511674b7e46c28d24ea7d22bd8e363ce499a2d07fbaf53c50"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/readout01/PRE_RUN.json",
+      "bytes": 1070,
+      "sha256": "55c69092ad8db810c29a6cd29bab88d987601b09e87c419461b334b7a28bb404"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/readout01/RUN.json",
+      "bytes": 826,
+      "sha256": "fb52fa425926136059f9c600c336ed09aa8985a953eb137ce9417b9ac9eebb56"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/readout01/STDERR.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/readout01/STDOUT.log",
+      "bytes": 1332,
+      "sha256": "e709d73c6e8cdbcc60e67ff82bdb8f371e46b3f113516ec73d81545529b83ace"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/readout01/results/FINITE_MIXED_READOUT.json",
+      "bytes": 27162,
+      "sha256": "de6e27f648d58e8cd3876ede5a7fe739913edec15a9cefcb9e0c314498ed3fbb"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/readout01/results/SUMMARY.json",
+      "bytes": 1332,
+      "sha256": "e709d73c6e8cdbcc60e67ff82bdb8f371e46b3f113516ec73d81545529b83ace"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/run01/FAILED_CODE.py",
+      "bytes": 27317,
+      "sha256": "45fbefc9e9d6c78dd5b2b8594e3bc9043f008a276eb23377104f94625a23a35f"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/run01/PRE_RUN.json",
+      "bytes": 1140,
+      "sha256": "ffa5b4070ba8f9961a8b1703e64262fdfef4e3dada473a63e690d5c64667c0f3"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/run01/RUN.json",
+      "bytes": 860,
+      "sha256": "a566ba120e84569803483e1da3e3154dcacb9998ea9fc75bce1e431a166dfd32"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/run01/STDERR.log",
+      "bytes": 687,
+      "sha256": "f005382ff5a72b548f38e769d62a0b5c230f36b700b28b745aa6f6908a0f1482"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/run01/STDOUT.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/run02/PRE_RUN.json",
+      "bytes": 1265,
+      "sha256": "b98846ed84f11c872596a4e1fb0dba96e7836d1537da5a84a2b462132d0bb61b"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/run02/RUN.json",
+      "bytes": 862,
+      "sha256": "63caf3fa3caef3eb6db161209ad22e802e4b0fa284b68832ef920eac17047a41"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/run02/STDERR.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/run02/STDOUT.log",
+      "bytes": 8609,
+      "sha256": "894b246d34d66f0c5ea1764abbf1bd38b30b55c81c079ef092c92db85a4ddbb8"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/run02/results/MIXED_RESPONSE_RESULTS.json",
+      "bytes": 879395,
+      "sha256": "69cb5d38bae33fb15b9533895e15022acc992f7a893903d17615bde8563ab889"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/application/run02/results/SUMMARY.json",
+      "bytes": 8609,
+      "sha256": "894b246d34d66f0c5ea1764abbf1bd38b30b55c81c079ef092c92db85a4ddbb8"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/CHECKER_CORRECTION.json",
+      "bytes": 759,
+      "sha256": "42a57855d552b45a989bc202cab45516901e157c2845b2044d75debd0efc4274"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/CONTRACT_BINDING_CHECK.json",
+      "bytes": 6579,
+      "sha256": "9bfe976e569f7cbddc78e34ae05e801a7112679babb5efc6ed1d7fab5172af7d"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/SUCCESSOR_BINDING_CHECK.json",
+      "bytes": 15658,
+      "sha256": "f1dcbf6854401660bd880e95e3f649549ae00bfcb60551ab73df3b736c596273"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/preflight01/CURVATURE_PREFLIGHT_REVIEW.json",
+      "bytes": 674,
+      "sha256": "4c71c564b3efc295b9e8d960537693f827213b0fc7c01f86eff2ee86a2a3fc1f"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/preflight01/PRE_RUN.json",
+      "bytes": 769,
+      "sha256": "5235eb851e471607dd80700c7c6bd559ee60709b5f1c735144d05cea2a0298bd"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/preflight01/RUN_RECORD.json",
+      "bytes": 139,
+      "sha256": "71660ca276a0e3a987ddca84ebd9dc0e48b1171bc35258e4d75df633e27b0460"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/preflight01/STDERR.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/preflight01/STDOUT.log",
+      "bytes": 674,
+      "sha256": "4c71c564b3efc295b9e8d960537693f827213b0fc7c01f86eff2ee86a2a3fc1f"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/review_arithmetic.py",
+      "bytes": 33639,
+      "sha256": "9796bdabf7d0975996f246ea9ef3289fd49e367201d12959df7c7d3f2789daf5"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/review_curvature_preflight.py",
+      "bytes": 2125,
+      "sha256": "c2a1109796db1a53589c70f7adb40b52c14d02903ac7d19e2b4939edd22287aa"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/review_successor_bindings.py",
+      "bytes": 4898,
+      "sha256": "8ca8798f4a326a754c723b5b58d5338bd37709c99ecac8c46eec2d4f56c0fb09"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/run01/FAILED_CHECKER.py",
+      "bytes": 30985,
+      "sha256": "de29f683690dc6dc898a277f97f059bb5214747e36eb04603ddb036e58906139"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/run01/INDEPENDENT_ARITHMETIC.json",
+      "bytes": 8432,
+      "sha256": "f7707526a34496ecb17b9099b83ceab410e35ac2176361a03f5bd50641d2c4ce"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/run01/PRE_RUN.json",
+      "bytes": 1236,
+      "sha256": "cadce6ae45e8ecafd2268c9e36372ac9a2c23fc2bd9bc9d4522c24397d56016e"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/run01/RUN_RECORD.json",
+      "bytes": 158,
+      "sha256": "be06cb4fa3222e33953a81a38ab93e9e84c2b5d4959babd5f28382755b6979cd"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/run01/STDERR.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/run01/STDOUT.log",
+      "bytes": 262,
+      "sha256": "6b16d9cc1a96660b1c0370e9403fc1e52dbd499ca1daf21cd7d1583bda10e40d"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/run02/INDEPENDENT_ARITHMETIC.json",
+      "bytes": 10370,
+      "sha256": "a2fbb63e99e1f5521798362c71191585f1b56dea0ff8cb961a737d65c97f4d7c"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/run02/PRE_RUN.json",
+      "bytes": 1484,
+      "sha256": "c5fe5f6653352b058ae9936e2f45bf3f109acf98f8876e23a4d0710fadd48aa6"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/run02/RUN_RECORD.json",
+      "bytes": 162,
+      "sha256": "bb60647c9cdbdd417c759e4f982da6da66402c01692e0c2615c4b5da4558d442"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/run02/STDERR.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/run02/STDOUT.log",
+      "bytes": 96,
+      "sha256": "ac13b67fd522377f424f2906bae7c8fa20d9acc1d7f9f73780cd19efb4117bdb"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/successor_schema_check01/CORRECTION.json",
+      "bytes": 756,
+      "sha256": "b3e3b0955b41b91862069ce863d856913888a6205eab407021c4b1de4ed5aa58"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/independent/successor_schema_check01/FAILED_CHECKER.py",
+      "bytes": 4858,
+      "sha256": "d89d9235f4764b2d06df4f1d4987c89f539272c37110f9ea709016f18a66a774"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/wolfram/SUMMARY.json",
+      "bytes": 1562,
+      "sha256": "442727a4bf657130adf0136089b668ee39fdc68f3b315c67e269eae9d4a58e28"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/wolfram/WOLFRAM_XACT_EXECUTION.json",
+      "bytes": 4846,
+      "sha256": "cf35a0b85031d809bbf694918ba545f17d4e1f156abaa4f6643d8378557dab3a"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "checks/wolfram/mixed_response_checks.wl",
+      "bytes": 8001,
+      "sha256": "8338070aabb3ad49c3e4a410752faeaba5dbf0aa69db35cbdd596ef76fd31075"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "contracts/ACTIVE_MIXED_RESPONSE_CONTRACT.json",
+      "bytes": 18164,
+      "sha256": "c9f57cbadcd55e16958775d11c57aba63a58c541690bdb4b8f2a0ee88379ec2e"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "literature/LITERATURE_MANIFEST.json",
+      "bytes": 658,
+      "sha256": "bcf758fe44330465fb1d0c389c70ad5688e69ce37e4d3524f4a9401bfad3d20d"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "literature/LITERATURE_REVIEW_KO.md",
+      "bytes": 6321,
+      "sha256": "5d9287fb21753e105d783e61775dbd2f0a7077401eee1733a1cee103b6172334"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "literature/SEARCH_PROVENANCE.json",
+      "bytes": 5018,
+      "sha256": "49e8afe35fc3f63f5e6b4510a0823d836522b6b4a9bac1692e8bcc2a018ffe46"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "literature/references.bib",
+      "bytes": 1490,
+      "sha256": "09eb99c08560eed2a62d86f2d168687200fa30411629018730bdaba25da33e1f"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "review/INDEPENDENT_REVIEW_KO.md",
+      "bytes": 9716,
+      "sha256": "f45ccb701de92d36b9c6f445f51f0bf4e150b6d825eadf02034041332607d759"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "review/INITIAL_FORMULA_REVIEW_KO.md",
+      "bytes": 2818,
+      "sha256": "9631862664ed90046c7f97a57cb0f87c853893a5ea46381911abb5d84661fc6e"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "src/mixed_response_application.py",
+      "bytes": 27347,
+      "sha256": "c588b58a0e5a873123bb2463665fa06b38aeaef8810547dd5e8ce74563d55969"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "src/mixed_response_readout.py",
+      "bytes": 5996,
+      "sha256": "c7330f232b6040396fa6bf88787608cbe239eb9bc84399dd16253b731cd2e6cc"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "theory/CURVATURE_CONTRACT_DRAFT.json",
+      "bytes": 14309,
+      "sha256": "6c41482b636e14f5c8bea6ad70c1f7698fbf21f4c4bbc1141b469f746d1c1126"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "theory/CURVATURE_INPUT_PREFLIGHT.json",
+      "bytes": 3658,
+      "sha256": "d1a38d3592190ac24f97e8671d3f03eb611418ddb81d22c960b4bddc41a1acd5"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "theory/MIXED_RESPONSE_CLAIMS.json",
+      "bytes": 7508,
+      "sha256": "2a1ded4421828c8e1c61b95b1a6d1a2d975233b4092e2c294809b6efd87fcb7e"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "theory/MIXED_RESPONSE_COROLLARIES.json",
+      "bytes": 6212,
+      "sha256": "d4d65128db210a243865aec2dabde176ae72bc37f18aa975e6bf125e047e8fe9"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "theory/MIXED_RESPONSE_NUMERICAL_COROLLARY_KO.md",
+      "bytes": 3628,
+      "sha256": "3c8153ea59dad84626c637d4844f634af4ac834551cac177e797c500b058d58e"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "theory/MIXED_RESPONSE_THEOREM_KO.md",
+      "bytes": 30383,
+      "sha256": "ce264e69de61ec397775eb91db036452c12eabd9e6c3109cb71bb8430c86a262"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "theory/NEXT_CURVATURE_PROPOSAL_KO.md",
+      "bytes": 11861,
+      "sha256": "6181d5dc65cea93e150ccc469a098b0740ad6b099673ca12d9456cbaf7d4fa92"
+    },
+    {
+      "root": "HH_PHYS18_THEORY_20261013_v1",
+      "path": "theory/curvature_input_preflight.py",
+      "bytes": 3577,
+      "sha256": "ea6ff6012b90bb14edd7ca3e771561ca1941d201bec277b62a87ff87156b654d"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "contracts/MIXED_RESPONSE_CONTRACT.json",
+      "bytes": 17828,
+      "sha256": "fee865c96d04be41e5597f53fb417118a780cb8a1bb56bb88bb55f7f03966914"
+    },
+    {
+      "root": "HH_PHYS17_THEORY_20261013_v1",
+      "path": "review/independent_arithmetic_review_v2.py",
+      "bytes": 24332,
+      "sha256": "c0e79879cabdd30a1e7c13f84cd4f2b24aecb44e3b78d52c718d5cad5294348f"
+    }
+  ],
+  "adoption_boundary": "Root owns DECISION.json and publication; this review freezes the listed source, derivation and evidence bytes. Unlisted publication artifacts are outside this scientific review."
+}

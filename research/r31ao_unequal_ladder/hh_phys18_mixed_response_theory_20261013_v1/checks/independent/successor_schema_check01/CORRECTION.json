@@ -1,0 +1,12 @@
+{
+  "schema": "WU088_HH_PHYS18_SCHEMA_CHECK_CORRECTION_V1",
+  "cause": "The first metadata checker compared a raw exact interval against the enclosing interval metadata object instead of its exact member. All 23 input identities and read fields had already passed.",
+  "correction": "Compare exact members on both sides and keep all numerical bounds checks.",
+  "production_source_changed": false,
+  "production_results_changed": false,
+  "theory_changed": false,
+  "failed_checker_sha256": "d89d9235f4764b2d06df4f1d4987c89f539272c37110f9ea709016f18a66a774",
+  "failed_assertion": "c[derivative][exact] == r[DeltaT_mixed_intersection_K]",
+  "correct_assertion": "c[derivative][exact] == r[DeltaT_mixed_intersection_K][exact]",
+  "execution_exit_code": 1
+}

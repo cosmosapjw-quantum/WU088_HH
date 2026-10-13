@@ -1,0 +1,19 @@
+{
+  "schema": "WU088_HH_PHYS18_APPLICATION_FAILURES_V1",
+  "failures": [
+    {
+      "id": "PHYS18_GUARD_SCHEMA_KEY",
+      "class": "implementation",
+      "observation": "run01 KeyError:0 while indexing the guard dict as a list",
+      "original_evidence": [
+        "checks/application/run01/STDERR.log",
+        "checks/application/run01/RUN.json",
+        "checks/application/run01/FAILED_CODE.py"
+      ],
+      "correction": "Use the original named fields number and energy_eV_per_H in each guard slot",
+      "affected_scope": "guard carry intersection only; no source/root/history run",
+      "resolved_by": "checks/application/run02/RUN.json",
+      "status": "closed"
+    }
+  ]
+}

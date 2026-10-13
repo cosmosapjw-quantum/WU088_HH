@@ -1,3 +1,15 @@
+# WU088_HH — PHYS18 current research result
+
+PHYS18 derives and encloses the same-COMMON HH–birth mixed endpoint response. Independent decision: **PROMOTE_SCOPED**, supported by 8 theorems, 4 corollaries, 22/22 independent arithmetic checks.
+
+The actual mixed temperature-defect derivative and four-corner interaction are **[-2.668505746423E-12, -2.118796636045E-12] K**. The original C2 source and stored U/V/W carry close both direct and correlated implicit expressions. HH-gradient feedback gives the largest negative contribution. HH and photon forcing use the same Full inverse and covector; finite-temperature geometry is added through the quotient.
+
+The negative mixed bound gives strict submodularity and orders the HH and birth marginal responses. Keeping the exact axis responses, the cross correction is -2.393651191234e-12*lambda*b K with error at most 2.748545551890e-13*lambda*b K.
+
+Start with the [research summary](research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/README_KO.md), [Korean LaTeX/PDF report](research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/report/WU088_HH_PHYS18_THEORY_20261013.pdf), [decision](research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/review/DECISION.json), and [next DAG](research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/NEXT_DAG.json). The next [pure-curvature contract](research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/contracts/CURVATURE_CONTRACT.json) computes F_lambda_lambda, F_b_b and the full bilinear response error from the original C2 inputs. Its pure application is not_run; first-half linear inverse readiness is already recorded. New physical source callbacks, root solves, history replays and NCP launches in PHYS18: zero.
+
+## Preserved earlier project overview
+
 # WU088_HH — PHYS17 current research result
 
 PHYS17 derives and encloses the actual same-COMMON endpoint defect response to shared HH strength lambda and photon birth b. Independent decision: **PROMOTE_SCOPED**, with 29/29 exact arithmetic checks.

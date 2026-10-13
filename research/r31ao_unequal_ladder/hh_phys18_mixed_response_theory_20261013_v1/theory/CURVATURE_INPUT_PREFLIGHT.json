@@ -1,0 +1,159 @@
+{
+  "schema": "WU088_HH_PHYS18_CURVATURE_LINEAR_INPUT_PREFLIGHT_V1",
+  "status": "completed",
+  "meaning": "First-half linear preconditioner readiness only; pure responses not_run.",
+  "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 HH_PHYS18_THEORY_20261013_v1/theory/curvature_input_preflight.py --parent15 HH_PHYS15_THEORY_20261012_v1 --output HH_PHYS18_THEORY_20261013_v1/theory/CURVATURE_INPUT_PREFLIGHT.json",
+  "script_sha256": "ea6ff6012b90bb14edd7ca3e771561ca1941d201bec277b62a87ff87156b654d",
+  "completed_utc": "2026-10-12T23:55:23.310646+00:00",
+  "input": {
+    "path": "HH_PHYS15_THEORY_20261012_v1/inputs/phys14/inputs/ncp07/results/first_half/SOURCE_BOX.json",
+    "bytes": 57807,
+    "sha256": "36247ef5ac3bce4b114aac41fe5d85c2015488183ba32b77f9051cc7d25b77b4",
+    "slot": "A_Gg",
+    "meaning": "Original first-half residual Jacobian whole-X enclosure"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39"
+  },
+  "method": "Exact Fraction decoding; B1_ij=max(|delta_ij-Jlo_ij|,|delta_ij-Jhi_ij|); weighted row sums",
+  "C1": "identity",
+  "S1_exact": [
+    [
+      "1",
+      "1"
+    ],
+    [
+      "1",
+      "1"
+    ],
+    [
+      "1",
+      "1"
+    ],
+    [
+      "27",
+      "2"
+    ]
+  ],
+  "B1_exact": [
+    [
+      [
+        "71831894439",
+        "140737488355328"
+      ],
+      [
+        "8870235758683709",
+        "9444732965739290427392"
+      ],
+      [
+        "138597433729433",
+        "73786976294838206464"
+      ],
+      [
+        "575726362369609",
+        "295147905179352825856"
+      ]
+    ],
+    [
+      [
+        "6982268698595771",
+        "9444732965739290427392"
+      ],
+      [
+        "7613292301",
+        "4503599627370496"
+      ],
+      [
+        "3993974016568511",
+        "2361183241434822606848"
+      ],
+      [
+        "4571789404812807",
+        "37778931862957161709568"
+      ]
+    ],
+    [
+      [
+        "4025352940379959",
+        "75557863725914323419136"
+      ],
+      [
+        "5215492297256119",
+        "1208925819614629174706176"
+      ],
+      [
+        "283130049",
+        "4503599627370496"
+      ],
+      [
+        "243508450961391",
+        "75557863725914323419136"
+      ]
+    ],
+    [
+      [
+        "925571910174811",
+        "1152921504606846976"
+      ],
+      [
+        "2387764214197567",
+        "147573952589676412928"
+      ],
+      [
+        "4286579987885325",
+        "147573952589676412928"
+      ],
+      [
+        "176837191033",
+        "4503599627370496"
+      ]
+    ]
+  ],
+  "weighted_row_bounds_exact": [
+    [
+      "5095881330588929517",
+      "9444732965739290427392"
+    ],
+    [
+      "434833481453918325",
+      "75557863725914323419136"
+    ],
+    [
+      "198221108561613263",
+      "1208925819614629174706176"
+    ],
+    [
+      "5649296200759579",
+      "55340232221128654848"
+    ]
+  ],
+  "weighted_row_bounds_display": [
+    0.0005395474227883633,
+    5.754973208761884e-06,
+    1.6396465800093544e-07,
+    0.0001020829868979607
+  ],
+  "q1_exact": [
+    "5095881330588929517",
+    "9444732965739290427392"
+  ],
+  "q1_display": 0.0005395474227883633,
+  "strict_margin_exact": [
+    "9439637084408701497875",
+    "9444732965739290427392"
+  ],
+  "outward_decimal_q1_upper": "0.0005396",
+  "checks": {
+    "q1_lt_outward_upper": true,
+    "outward_upper_lt_one": true
+  },
+  "pure_response_application": "not_run",
+  "source_evaluations": 0,
+  "root_solves": 0,
+  "history_replays": 0,
+  "elapsed_seconds": 0.005733316000259947,
+  "cpu_seconds": 0.004758151000000002,
+  "peak_rss_kib": 11904,
+  "exit_code": 0
+}
