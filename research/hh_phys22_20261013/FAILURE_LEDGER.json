@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "runtime_environment",
+    "event": "Wolfram connector returned two mcp_network_error responses",
+    "repair": "authorized local Wolfram Engine through Remote Desktop Commander",
+    "science_impact": "no result inferred from failed connector"
+  },
+  {
+    "kind": "implementation",
+    "event": "v1 unmatched bracket in source-token regular expression; Wolfram Syntax::sntue despite outer exit0",
+    "repair": "v2 one-character syntax correction; require actual result/status",
+    "preserved": "raw/finite_response_interval.wl and raw/interval.stdout"
+  },
+  {
+    "kind": "implementation_representation",
+    "event": "v2 Rationalize and source float parsing did not preserve intended exact dyadic/decimal input semantics",
+    "repair": "v3 SetPrecision[...,Infinity] and explicit exact decimal parser; re-evaluated affected interval result",
+    "preserved": "raw/finite_response_interval_v2.wl and raw/interval_v2.stdout"
+  },
+  {
+    "kind": "metadata",
+    "event": "original xAct kernel field resolved package $Version instead of System`$Version",
+    "repair": "qualified System`$Version, portable output location, targeted rerun 11 zero residuals",
+    "preserved": "raw/xact_result.json; checks/XACT_V2_OBSERVED.json"
+  },
+  {
+    "kind": "runtime_interruption",
+    "event": "assistant interrupted after interval v3 and xAct outputs were written",
+    "repair": "recovered 19 files, hash inventory and no residual Wolfram process; no science replay"
+  },
+  {
+    "kind": "runtime_environment",
+    "event": "container DNS prevented direct internet download; web PDF screenshot cache miss",
+    "repair": "Dropbox Library materialization recovered exact raw ZIP; primary PDF text retained, no screenshot-derived claim"
+  },
+  {
+    "kind": "report_environment",
+    "event": "TeX Gyre Pagella font unavailable during first PDF build",
+    "repair": "installed Liberation Serif/Sans selected; final eight-page PDF compiled and visually inspected",
+    "preserved": "raw/report_font_failure.log"
+  }
+]

@@ -1,0 +1,297 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm,headheight=15pt]{geometry}
+\usepackage{fontspec,kotex}
+\setmainfont{Liberation Serif}
+\setsansfont{Liberation Sans}
+\setmainhangulfont{Noto Serif CJK KR}
+\setsanshangulfont{Noto Sans CJK KR}
+\usepackage{amsmath,amssymb,amsthm,bm,mathtools,booktabs,array,tabularx,longtable}
+\usepackage{xcolor,fancyhdr,hyperref,xurl}
+\definecolor{ink}{HTML}{18374A}
+\hypersetup{colorlinks=true,linkcolor=ink,urlcolor=ink,citecolor=ink,pdftitle={WU088 HH PHYS22: finite nonlinear response enclosure},pdfauthor={WU088 HH research record}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\sffamily WU088\_HH / PHYS22}\fancyhead[R]{\small\sffamily 2026-10-13}\fancyfoot[C]{\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.17}
+\numberwithin{equation}{section}
+\newcommand{\dd}{\mathrm d}\newcommand{\HH}{\mathrm{HH}}\newcommand{\eV}{\mathrm{eV}}
+\newcommand{\R}{\mathbb R}\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mytitle}[2]{\vspace*{2mm}{\large\sffamily\color{ink}#1}\par\vspace{2mm}{\LARGE\bfseries #2}\par\vspace{3mm}}
+\begin{document}
+\mytitle{이론 연구 결과 · 복구 후 확정본}{결합 gas--photon 계의 유한 HH 응답 포함}
+\textbf{핵심 결과.} 고정 warm P01의 gas 4개와 광자 2904개를 모두 유지한 실수값 명목 초기값 문제에서, 같은 초기조건·외부 source·기하·closure를 공유하는 HH-ON/OFF 두 해의 끝점 차이를 직접 포함했다. $t_f=10^{11}\,\mathrm s$에서
+\begin{align}
+ T_1(t_f)-T_0(t_f)&\in[-5.83789,-5.57637]\times10^{-11}\,\mathrm K,\\
+ e_1(t_f)-e_0(t_f)&\in[7.60418,8.28307]\times10^{-16}\quad\text{electrons/H}.
+\end{align}
+표시 숫자는 외향 반올림한 값이다. 계산의 정확한 유리수 끝점은 \path{results/interval_result_v3.json}에 보존했다. 전체 $0\le\lambda\le1$에 대한 공통 해 존재 영역과 비교행렬의 양성을 함께 닫았다. 각 $\lambda>0$의 응답은 위 포함구간의 $\lambda$배에 들어간다.
+
+\textbf{대상과 수 해석.} 대상은 \texttt{REI-PHYSINPUT-01-20261010} warm P01이다. LRS Bianchi I dust+$\Lambda$ 배경에서 gas와 radiation을 test 성분으로 두고, primary HM12 source, Case A escape, 원 고정 운동량 지지집합을 사용한다. 식에 명시된 십진 상수와 source 표를 정확한 실수로 해석하고, NPZ 초기값은 저장 binary64 값을 정확한 dyadic 유리수로 고정한다. 이 보고서의 포함은 이 명시적 수학 모델을 대상으로 한다. Native 부동소수점 실행 오차와 원자 fit의 물리적 불확실성은 별도 항목이다.
+
+\textbf{PHYS21에서의 진전.} PHYS21은 17-knot 선형 재구성 경로 위의 명목 tangent를 계산했다. 이번에는 공통 외부 source를 보존한 두 비선형 방정식의 차이를 먼저 취하고, 광자 흡수 블록의 양성을 사용했다. 따라서 유한 응답의 포함에 재구성 baseline의 보간 오차나 tangent residual을 입력할 필요가 없어졌다. PHYS21의 기존 계산값과 유도는 그대로 보존한다.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lX@{}}\toprule
+판정 축 & 실제 근거\\\midrule
+수학 & 공통 영역의 first-exit 증명, 정확한 차이식, 양의 비교행렬, 온도 quotient\\
+구간 계산 & Wolfram Engine 15.0.0, 40자리 \texttt{Interval}, v3 결과\\
+별도 계산 & Python \texttt{Fraction} 24개 검사 통과, xAct 포함 11개 항등식 잔차 0\\
+독립성 & 같은 assistant의 서로 다른 계산 경로. 외부 심사자 참여 0\\
+채택 & 명시한 명목 실수값 초기값 문제의 유한 응답 포함\\\bottomrule
+\end{tabularx}
+\end{center}
+\textbf{실행 범위.} 새로운 baseline ODE·tangent ODE·native HH activation·원자 fit·HPC 실행은 0회다. 보존된 구간 계산과 기호 검산을 복구하고, 입력 및 유리수 폐쇄 검사를 수행했다.
+
+\newpage
+\section{고정 모델, 좌표와 source의 책임}
+계량 부호는 $(-,+,+,+)$이며 $t$는 비경사 gas의 proper seconds이다. 초기 volume-redshift는 $z_i=5.807$, $s_i/H_i=10^{-3}$, 명목 초기 온도는 $50000\,\mathrm K$이다. 양의 광자 quadrature 2904개와 원 NPZ 초기조건을 유지한다. 소비자 소스 revision은 \texttt{a5c958c414dea41216b445c05f58df837f05cacb}이다.
+\begin{equation}
+ g=(x,y,z,w)^T,\qquad f=\frac3{38},\qquad e=x+f(y+2z),\qquad \Pi=1+f+e,
+\end{equation}
+\begin{equation}
+ T=\frac{C_Tw}{\Pi},\qquad C_T=\frac{2\epsilon_{\eV}}{3k_B},\qquad
+ \epsilon_{\eV}=1.602176634\times10^{-12}\,\mathrm{erg/eV},\quad k_B=1.380649\times10^{-16}\,\mathrm{erg/K}.
+\end{equation}
+$w$는 H 핵당 thermal energy의 eV 수치이다. $x,y,z$는 각각 H II/H, He II/He, He III/He 분율이다. 기하의 shear 변수는 $b_{\rm geom}$로 부르며 PHYS19의 birth 배율과 구분한다.
+
+저장 reference-volume 광자수 $N_i$를
+\begin{equation}
+ m_i=\frac{N_i}{n_{H0}}=\frac{n_{\gamma i}(t)}{n_H(t)}
+\end{equation}
+로 바꾸면 능동계는
+\begin{align}
+ \dot g_\lambda&=a(g_\lambda,t)+B(g_\lambda,t)m_\lambda+\lambda\nu q(g_\lambda,t),\\
+ \dot m_\lambda&=s(t)-K(g_\lambda,t)m_\lambda,\qquad K=\operatorname{diag}(\kappa_i)
+ \label{eq:system}
+\end{align}
+가 된다. $a$에는 CI, RR, DR 및 $-2Hw$가 포함되고, $B m$은 동일 photon node의 PI 및 excess-energy heating이다. RR kinetic moment, DR captured energy, chemical threshold는 원 FT03 event 계약을 그대로 따른다.
+\begin{equation}
+ \nu=(1,0,0,-\chi_H)^T,\quad\chi_H=13.598434599702\,\eV,
+ \quad q=n_H(1-x)^2k_{\HH}(T),
+\end{equation}
+\begin{equation}
+ k_{\HH}(T)=1.2\times10^{-17}(T/\mathrm K)^{1.2}
+ \exp[-157800\,\mathrm K/T]\,\mathrm{cm^3\,s^{-1}}.
+\end{equation}
+$q$의 단위는 $\mathrm s^{-1}$이다. $\lambda$는 별도의 전역 활성도이며 추가 identical-pair 계수 $1/2$를 삽입하지 않는다. 자유전자 1개와 H II 1개를 생성하는 inherited effective ionization 채널을 사용한다.
+
+흡수 계수와 광자--gas 결합은
+\begin{equation}
+ r=(1-x,\ f(1-y-z),\ fy),\qquad \kappa_i=cn_H\sum_{a=1}^3r_a\sigma_a(E_i),
+\end{equation}
+\begin{equation}
+ B_i=cn_H\begin{pmatrix}
+ r_1\sigma_{1i}\\(r_2\sigma_{2i}-r_3\sigma_{3i})/f\\r_3\sigma_{3i}/f\\
+ \sum_a r_a\sigma_{ai}(E_i-\chi_a)
+ \end{pmatrix}.
+\end{equation}
+$K$와 $B$는 $g$에 대해 affine이다. $c=29979245800\,\mathrm{cm/s}$를 유지한다. 외부 $s(t)$와 기하는 두 해에서 공통이며 gas feedback을 통해 변경되지 않는다.
+
+\newpage
+\section{실제 HM12 source를 포함한 공통 해 영역}
+\subsection*{기하와 source의 전체 구간 포함}
+$v=a^3$라 하면 선택한 배경은 $H^2=D+B/v+C/v^2$, $s^2=C/v^2$이다. 팽창해에서 $v$가 증가하므로 $H\le H_i$이고
+\begin{equation}
+ (s/H)^2=\frac{C}{Dv^2+Bv+C}\le(s_i/H_i)^2.
+\end{equation}
+따라서 모든 방향의 ray ratio $R_i=E_i/E_{i0}$와 밀도·redshift에 대해
+\begin{align}
+ e^{-(1+2r_i)H_it_f}\le R_i(t)&\le1,\qquad r_i=10^{-3},\\
+ n_{H0}e^{-3H_it_f}\le n_H(t)&\le n_{H0},\\
+ (1+z_i)e^{-H_it_f}-1\le z(t)&\le z_i
+\end{align}
+가 성립한다. 첫 식은 $\dot{\ln E}=-H-s(3\mu^2-1)$에서 얻는다. 모든 주방향 팽창률이 양수이므로 $E_i$는 증가하지 않는다.
+
+HM12 emissivity 표의 십진 토큰을 정확히 파싱했다. 표는 378개의 wavelength row와 60개의 redshift column을 가진다. 해당 시간 구간에 필요한 redshift column은 1-based 40, 41이다. $\ln E$와 $z$의 양의 선형 보간은 관여하는 표 값의 최댓값으로 상계된다. 같은 wavelength의 서로 다른 ordinate는 양쪽 값을 보존한다.
+\begin{equation}
+ s_i(t)=\frac{\epsilon_\nu(E_i,z)(1+z)^3 W_i}
+ {L_{\rm Mpc}^{3}h_{\rm P}n_{H0}R_i^3},\qquad 0\le s_i(t)\le S_i.
+\end{equation}
+$W_i$는 원 양의 quadrature weight이고 $h_{\rm P}$는 Planck 상수이다. $S_i$는 관련 spectral row 전체의 최댓값과 위 양의 기하 계수로 구했다. 실제 source는 이 포함에 들어가며, 0으로 치환하지 않았다.
+
+\subsection*{조건부 광자 포함에서 gas first-exit 폐쇄로}
+초기값 중심의 gas box $\mathcal G=\{g:|g-g_i|\le r_g\}$를 잡고
+\begin{equation}
+ r_g=(10^{-7},\ 2\times10^{-7},\ 2\times10^{-7},\ 10^{-4}\,\eV/\mathrm H)
+\end{equation}
+로 둔다. $g\in\mathcal G$인 동안 $0\le\kappa_i\le\kappa_i^+$이므로 정확한 적분인자 해에서
+\begin{equation}
+ m_{i0}e^{-\kappa_i^+t_f}\le m_i(t)\le m_{i0}+t_fS_i
+ \label{eq:photonbox}
+\end{equation}
+를 얻는다. 이를 $\mathcal M$으로 정의하고 $[0,t_f]\times\mathcal G\times\mathcal M\times[0,1]$에서 gas 우변의 성분별 절댓값 상계를 $F_j^+$라 하자. 계산된 비율은
+\begin{equation}
+ \frac{t_fF_j^+}{r_{g,j}}=
+ (0.03430414,\ 0.07035527,\ 0.03333276,\ 0.62272114)<1.
+\end{equation}
+처음 gas box를 벗어나는 시각을 가정하면, 그 이전의 광자는 \eqref{eq:photonbox}에 있고 $|g_j(t)-g_{i,j}|\le t_fF_j^+<r_{g,j}$여서 경계 도달과 모순이다. 상태에 대한 국소 Lipschitz성과 bounded prescribed coefficient를 사용하면 모든 $\lambda\in[0,1]$의 해가 $t_f$까지 유일하게 연장된다. 영역은 gas simplex와 $30000<T<110000\,\mathrm K$ 안에 있다.
+
+\newpage
+\section{유한 비선형 차이의 비교 정리와 증명}
+공통 초기조건을 갖는 $Y_\lambda=(g_\lambda,m_\lambda)$와 $Y_0$에 대해 $\delta g=g_\lambda-g_0$, $\delta m=m_\lambda-m_0$로 쓴다. 여기의 $g_0(t),m_0(t)$는 정확한 OFF 해이다. 식 \eqref{eq:system}의 차이는
+\begin{equation}
+ \dot{\delta m}=-K(g_\lambda,t)\delta m-
+ [K(g_\lambda,t)-K(g_0,t)]m_0.
+ \label{eq:diffphot}
+\end{equation}
+공통 $s(t)$는 대수적으로 소거된다. $K\ge0$가 diagonal이므로 적분인자 각 성분은 $[0,1]$에 있다. $C^+_{ij}\ge m_i\abs{\partial_{g_j}\kappa_i}$인 전체 영역 상계를 사용하면
+\begin{equation}
+ |\delta m(t)|\le\int_0^t C^+|\delta g(s)|\,\dd s.
+ \label{eq:phbound}
+\end{equation}
+모든 부등식은 성분별이다. $\kappa_i=0$에서도 이 식은 그대로 유효하다.
+
+Gas 차이에서는 먼저 $m_0(t)$를 고정한 채 $a+B m_0$에 mean-value integral을 적용한다.
+\begin{equation}
+ \dot{\delta g}=\overline A(t)\delta g+B(g_\lambda,t)\delta m+\lambda\nu q(g_\lambda,t),
+\end{equation}
+\begin{equation}
+ |\overline A|\le A^+,\quad |B|\le B^+,\quad
+ 0<q^-\le q(g,t)\le q^+.
+\end{equation}
+$d_j=\sup_{0\le t\le t_f}|\delta g_j(t)|$에 대해 두 차이식을 차례로 적분하면
+\begin{equation}
+ d\le\lambda t_f|\nu|q^++Pd,\qquad
+ P=t_fA^++\frac{t_f^2}{2}B^+C^+\ge0.
+ \label{eq:smallgain}
+\end{equation}
+$t_f^2/2$는 $\int_0^{t_f}\int_0^s\dd v\dd s$에서 나오는 정확한 계수이다.
+
+\textbf{비교 정리.} 어떤 양의 diagonal scaling $S$에 대해 $\|S^{-1}PS\|_\infty<1$이면
+\begin{equation}
+ (I-P)^{-1}=\sum_{n=0}^\infty P^n\ge0,\qquad
+ d\le\lambda u,\qquad u=(I-P)^{-1}t_f|\nu|q^+.
+ \label{eq:ubound}
+\end{equation}
+증명은 수렴 Neumann 급수와 \eqref{eq:smallgain}의 성분별 순서 보존에서 즉시 따른다. 이 단계에서 실수행렬을 정확한 유리수 majorant로 바꾼 뒤 역행렬과 포함을 계산했다.
+
+노출량 $I_\lambda=\lambda\int_0^{t_f}q(g_\lambda,t)\dd t$를 정의하면
+\begin{equation}
+ I_\lambda\in\lambda t_f[q^-,q^+],\qquad
+ \delta g(t_f)=\nu I_\lambda+\varepsilon_g,\qquad
+ |\varepsilon_g|\le\lambda v,\quad v=Pu.
+ \label{eq:exposure}
+\end{equation}
+이는 유한 활성도에서 정확한 분해와 feedback 상계이다. $\lambda$에 대한 Taylor 절단을 사용하지 않았다. $S=\operatorname{diag}(1,1,1,32\,\eV/\mathrm H)$는 서로 다른 gas 단위를 정규화하며, 실제 가중 크기는 $0.03688471538571053$이다.
+
+\newpage
+\section{전자·온도 관측량으로의 정확한 사상}
+$\ell=(1,f,2f,0)^T$이면 $\delta e=\ell^T\delta g$이다. $v_e=\ell^Tv$라 두고 \eqref{eq:exposure}를 적용하면
+\begin{equation}
+ \delta e(t_f)\in\lambda[t_fq^--v_e,\ t_fq^++v_e].
+ \label{eq:einterval}
+\end{equation}
+온도는 입자수 변화까지 포함한 정확한 유한 quotient로 읽는다.
+\begin{equation}
+ \delta T=\frac{C_T\delta w-T_0\delta e}{\Pi_0+\delta e}
+ =\frac{-(C_T\chi_H+T_0)I_\lambda+C_T\varepsilon_w-T_0\ell^T\varepsilon_g}{\Pi_\lambda}.
+ \label{eq:Tquotient}
+\end{equation}
+공통 영역의 $T\in[T^-,T^+]$, $\Pi\in[\Pi^-,\Pi^+]$를 사용한다. $\lambda$를 제외한 분자의 하한·상한을
+\begin{align}
+ N^-&=-(C_T\chi_H+T^+)t_fq^+-C_Tv_w-T^+v_e,\\
+ N^+&=-(C_T\chi_H+T^-)t_fq^-+C_Tv_w+T^+v_e
+\end{align}
+로 두었다. 실제 계산에서는 $N^-<N^+<0$이고 따라서
+\begin{equation}
+ \boxed{\delta T(t_f)\in\lambda\left[\frac{N^-}{\Pi^-},\frac{N^+}{\Pi^+}\right].}
+ \label{eq:Tinterval}
+\end{equation}
+음의 분자를 나누는 방향을 유지했다. 분모에 끝점 해의 입자수를 사용하는 것이 중요하다.
+
+\begin{center}
+\begin{tabular}{@{}lrr@{}}\toprule
+성분 & $u$: 유한 변화 절댓값 상계 & $v$: source 노출량 대비 feedback\\\midrule
+$x$ & $8.28306799031450\times10^{-16}$ & $2.74388816752657\times10^{-17}$\\
+$y$ & $9.94151537835311\times10^{-22}$ & $9.94151537835311\times10^{-22}$\\
+$z$ & $6.32110414379109\times10^{-22}$ & $6.32110414379109\times10^{-22}$\\
+$w\ [\eV/\mathrm H]$ & $1.09477745502426\times10^{-14}$ & $5.72245530749743\times10^{-17}$\\\bottomrule
+\end{tabular}
+\end{center}
+표는 읽기 위한 반올림이다. 실제 포함 연산에는 보존된 유리수 상계를 사용한다. 공통 온도 영역은 약 $[49999.63846196361,50000.36153808571]\,\mathrm K$이고
+\begin{equation}
+ q\in[7.87857103615212,8.00867917356185]\times10^{-27}\,\mathrm s^{-1}.
+\end{equation}
+
+\textbf{단위와 극한.} $t_fq$는 H 핵당 사건수, $C_Tv_w$와 $Tv_e$는 K, $\Pi$는 무차원이다. $\lambda=0$ 및 $t_f=0$에서 응답은 정확히 0이다. $B=0$ 또는 $C=0$이면 memory 기여 $B^+C^+$가 사라진다. 투명 광자 모드는 적분인자 1로 처리한다. 모든 bound는 동일한 fixed-q support와 원 양의 quadrature를 대상으로 한다.
+
+\newpage
+\section{결과의 수치 해석과 PHYS21과의 연결}
+$\lambda=1$에서 계산된 포함구간의 내부값은
+\begin{align}
+ \delta T&\in[-5.837888114462345,-5.576376192476052]\times10^{-11}\,\mathrm K,\\
+ \delta e&\in[7.604180436473915,8.283069773240052]\times10^{-16}.
+\end{align}
+유리수 outward 끝점으로 계산한 온도 중점과 반경은
+\begin{equation}
+ c_T^{\rm box}=-5.707132153469198\times10^{-11}\,\mathrm K,\qquad
+ r_T^{\rm box}=1.307559609931468\times10^{-12}\,\mathrm K.
+\end{equation}
+반경은 중점 절댓값의 약 $2.2911\%$이다. 이 반경은 데이터에 대한 통계적 신뢰구간이 아니라, 명시한 모델과 입력의 두 정확한 해 차이를 포함하는 검증된 결정론적 폭이다.
+
+PHYS21의 숫자 $-5.68654774358033\times10^{-11}\,\mathrm K$를 하나의 명시적 근삿값으로 택하면, 이 유한 응답과의 차이는 이번 포함으로
+\begin{equation}
+ \abs{\delta T-(-5.68654774358033\times10^{-11}\,\mathrm K)}
+ \le1.513403708821\times10^{-12}\,\mathrm K
+\end{equation}
+로 제한된다. 같은 방식으로 $7.81328718123\times10^{-16}$에 대한 전자 응답 오차는 $4.697825920101\times10^{-17}$ 이하이다. PHYS21의 PL tangent 오차를 따로 분해·인증한 결과와는 구별하여, \textbf{해당 숫자를 사용한 유한 응답 근사}의 절대 오차로 기록한다.
+
+\textbf{활성도 범위.} 공통 영역은 모든 $0\le\lambda\le1$을 덮는다. 따라서 각 $\lambda$에 대해 \eqref{eq:einterval}, \eqref{eq:Tinterval}의 동일 상수에 $\lambda$를 곱할 수 있다. 이는 균일한 포함이며 응답이 정확히 선형이라는 가정을 필요로 하지 않는다.
+
+\textbf{현재 구간에서의 사용.} 이 명목 모델의 끝점 omission budget을 $(\varepsilon_T,\varepsilon_e)$라 할 때
+\begin{equation}
+ \varepsilon_T\ge5.83789\times10^{-11}\,\mathrm K,\qquad
+ \varepsilon_e\ge8.28307\times10^{-16}
+\end{equation}
+이면 본 구간의 HH-ON/OFF 차이는 그 budget 안에 들어간다. 이 판단은 source 정밀도 작업의 우선순위를 관측량 예산과 직접 연결한다. 전체 재이온화 이력의 누적 효과를 판단할 때에는 그 수신 구간과 새로운 상태 영역을 같은 방식으로 연결한다.
+
+\textbf{남은 물리 입력.} LCS fit의 오차 envelope는 이번 입력에 포함되지 않았다. 다음에는 $k_-(T)\le k_{\HH}(T)\le k_+(T)$를 실제 문헌 또는 별도 microscopic 결과로 정해 $q^\pm$에 전달한다. 자유전자 생성 effective channel과 singlet ion-pair channel의 원 소유권을 유지한다. 이러한 source 불확실성은 계산 roundoff와 별도의 물리 항이다.
+
+\newpage
+\section{검증, 복구와 근거의 독립성}
+\subsection*{수식과 원 구현의 대응}
+\texttt{ft03\_rates.rs}의 RR·CI 식, \texttt{ft03\_controlled.rs}의 DR와 RR kinetic moment를 확인했다. \path{axisym_conditional.rs}의 사건당 threshold·excess energy·부피 변환, \texttt{background.py}와 \texttt{hm12\_data.py}의 기하·source 보간도 대조했다. 비교계의 $A^+$는 HH-OFF full gas derivative를 대상으로 하며, HH 활성도는 별도 $\lambda\nu q$ forcing으로 유지한다. 광자 2904개는 $B^+C^+$ 합에서 전부 참여한다.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lX@{}}\toprule
+검증 & 관찰된 결과 및 범위\\\midrule
+Wolfram interval v3 & 40자리 directed-rounding interval과 exact-rational closure. gas·source domain, dyadic 입력, nonnegative inverse, 부호를 최종 status에 포함\\
+Python Fraction & 서로 다른 Gaussian elimination 및 포함 재계산. 24개 통과, 0개 실패. 저장된 interval majorant는 입력으로 재사용\\
+xAct / scalar CAS & 공변 전자·에너지 차이, chemical energy, finite quotient, $c$ clock 및 흡수·bilinear·double integral 등 11개 잔차가 정확히 0\\
+데이터 & NPZ와 emissivity SHA-256 일치. 초기 gas의 exact dyadic 값, 2904 modes, 양의 weights·광자와 support 확인\\
+경계 & T guards, gas simplex, 3종 opacity threshold crossing 수 $0,0,0$, source domain 및 positivity 확인\\\bottomrule
+\end{tabularx}
+\end{center}
+검산의 독립성은 같은 assistant가 만든 서로 다른 식·산술 경로이다. Fraction 검사는 Wolfram의 모든 구간 함수를 독립 구현하지 않고, 저장된 majorant 이후의 대수 폐쇄를 별도로 검증한다. 이 역할 분리를 각 receipt에 적었다.
+
+채택된 interval v3 실행은 약 16.55초 wall time, 최대 RSS 111396 KiB였다. Wolfram 계산 내부 시간은 10.007655초이다. 원 xAct 실행의 11개 잔차 0을 보존했고, kernel metadata를 \texttt{System\`\$Version}으로 수정한 작은 재실행에서도 동일한 11개 잔차를 확인했다. 수정 실행은 10.85초, 106080 KiB였다.
+
+\subsection*{실패와 복구의 처리}
+Wolfram cloud 연결 실패 뒤 승인된 로컬 Wolfram Engine으로 실행했다. v1의 bracket 문법 오류는 원 stdout과 함께 보존했다. v2에서 수 표현을 정확히 유지하기 위해 v3에서 \texttt{SetPrecision[...,Infinity]}와 명시적 decimal parser를 사용했다. xAct의 원 kernel 필드는 패키지 \texttt{\$Version}을 가리킨 metadata 오류여서 System context로 교정했다. 실제 중단 뒤 19개 기존 파일의 크기·시각·SHA를 회수했고, 미완료 게시·문서만 이어갔다.
+
+\newpage
+\section{재현 계약, 다음 연구와 출처}
+\subsection*{재현과 파일 구성}
+\texttt{INPUTS.json}은 동일 source revision과 제공된 NPZ·emissivity·원 구현의 SHA를 연결한다. \texttt{wolfram/finite\_response\_interval\_v3.wl}은 실제 채택된 원실행 bytes이며, immutable source URL과 입력 hash를 검사한다. 다음 명령은 원 경량 구간 계산의 재현 경로이다.
+\begin{verbatim}
+wolframscript -file wolfram/finite_response_interval_v3.wl
+wolframscript -file wolfram/xact_checks_v2.wl
+python checks/audit_certificate.py
+\end{verbatim}
+Wolfram 및 xAct 설치가 필요하며, 첫 명령은 보존된 immutable 두 입력을 다운로드한다. 이번 ZIP에는 해당 입력 bytes도 함께 실어 네트워크 복구와 원 입력 검토에 사용할 수 있게 했다. 완료된 이력이나 scattering 계산을 실행하는 명령은 없다. \texttt{checks/EXACT\_AUDIT.json}, \texttt{DECISION.json}, \texttt{RESEARCH\_STATE.json}이 결과와 R1--R10을 연결한다.
+
+\subsection*{다음 단위: PHYS23}
+다음 연구 목표는 \texttt{HH\_RATE\_ENVELOPE\_TO\_OBSERVABLE\_BUDGET}이다. 현재 common tube와 유한 차이 정리·majorant를 재사용하고, 채널이 일치하는 rate uncertainty envelope와 수신 observable budget을 연결한다. 새로운 uncertainty 입력을 확보하면 $q^\pm$, gas first-exit 여유, 비교행렬에 영향을 주는 부분만 갱신한다. 표본별 rate 진단이나 기존 tangent refinement의 반복을 다음 기본 작업으로 삼지 않는다. HH\_STRICT\_NATIVE, HH\_SINGLET 및 외부 RUX 의무는 각 원 기록에 남는다.
+
+\subsection*{문헌 대비 위치}
+SciSpace와 Exa로 interval ODE·positive comparison 선행연구를 탐색하고 Neumaier 원문을 확인했다. 그의 정리 3.5 및 4.1은 검증 가능한 영역과 mean-value interval linearization을 연결한다. 이번에는 선택된 gas--photon 구조의 diagonal absorption과 공통 source 소거를 이용하여 4차원 비음수 비교계와 실제 부호 포함을 구성했다. 일반적인 differential inequality 원리의 신규성을 주장하지 않으며, 새 결과는 이 고정 HH 소비 문제의 수치 포함과 그 계산 계약이다.
+
+Wolfram 공식 \texttt{Interval} 문서는 근사 interval 연산에서 하한은 아래쪽, 상한은 위쪽으로 반올림하는 의미론을 명시한다. 최종 비교식은 저장된 interval 끝점을 바깥쪽 exact rational로 바꾼 후 별도로 재계산했다. 이 구현 의존성과 물리 모델의 가정을 모두 명시했다.
+
+\begin{thebibliography}{9}\small
+\bibitem{neumaier} A. Neumaier, \emph{Global, rigorous and realistic bounds for the solution of dissipative differential equations. Part I: Theory}, Computing \textbf{52} (1994), 315--336. Author manuscript, March 1993, Theorems 3.5 and 4.1. \url{https://arnold-neumaier.at/ms/ode.pdf}.
+\bibitem{wolfram} Wolfram Research, \emph{Interval}, official documentation. Accessed 2026-10-13. \url{https://reference.wolfram.com/language/ref/Interval.html}.
+\bibitem{receiver} \emph{rei\_bianchi}, immutable receiver source, commit \texttt{a5c958c414dea41216b445c05f58df837f05cacb}. \url{https://github.com/cosmosapjw-quantum/rei_bianchi/tree/a5c958c414dea41216b445c05f58df837f05cacb}.
+\bibitem{previous} WU088\_HH, \emph{PHYS20} and \emph{PHYS21}, retained research bundles dated 2026-10-13. Original hashes and two-provider publication receipts are preserved in the companion package.
+\end{thebibliography}
+\end{document}
