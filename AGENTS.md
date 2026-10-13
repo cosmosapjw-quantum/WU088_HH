@@ -1,3 +1,17 @@
+# Current priority — PHYS19 pure curvature and PHYS20 consumer intake, 2026-10-13 KST
+
+Read CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/README_KO.md, HANDOFF_KO.md, review/DECISION.json and NEXT_DAG.json. PHYS19's actual stored-input pure-curvature application is completed and adopted as PROMOTE_SCOPED after pass_scoped independent scientific review. PHYS19 is the current accepted theory and scientific baseline; the accepted PHYS18 mixed result remains a named inherited input. The independent Fraction audit passed all 362 checks, comparing 2,057 scalar enclosures across 265 interval comparisons and validating 3,174 outward decimal intervals and 23 contract bindings.
+
+The ordinary pure temperature-defect derivatives are F_lambda_lambda in [-4.510292217171e-14,-3.084478303660e-14] K and F_b_b in [-4.912098573204e-11,-4.450662359403e-11] K. The exact-corner bilinear remainder is at most 6.145761081776e-12 K; exact pure-curvature midpoint correction gives 2.892887673208e-13 K. The concrete fixed-coefficient model's total error bound, including anchor/chord uncertainty, is 0.0001557338140092 K. Preserve the same-family coupling of anchor, chord and interaction coefficients. The Hessian is strictly indefinite, with opposite-signed directional curvatures and concavity along both coordinate axes.
+
+Next perform PHYS20 targeted intake: identify and bind an actual named rei_bianchi consumer interval and its repository/file identities, state, clock, density convention, closure and process ownership. The current binding status is UNVERIFIED. Then execute HH_DOMAIN_SCREEN and HH_MATERIALITY to produce instantaneous dotT_HH and the HH electron-source table for that bound interval. Reuse the original HH export and process-owner contracts when their assumptions match the selected consumer.
+
+Use the current physmath-research-loop 1.0.0 THEORY R1-R10 workflow. The original fixed-alpha C2 source family, COMMON, global lambda,b, Full C/B/q/S and all 35 photon/guard slots retain their meaning. The original RUX DAG and the 14 preceding HH node values are preserved. HH_STRICT_NATIVE and HH_SINGLET retain their independent original research scopes. The active heavy_queue is [] and launch is false.
+
+Publication target: research/hh-phys19-parameter-curvature-theory-20261013, stacked on PHYS18 PR53 head 41fe51d5a40651e8cadbaa52554035b58a92490c, branch research/hh-phys18-mixed-response-theory-20261013. The PHYS19 science decision is PROMOTE_SCOPED. Actual draft PR54 is https://github.com/cosmosapjw-quantum/WU088_HH/pull/54; science commit is d4061f091e27f4786edc2b22c5112902149eb9cf. Both provider backups are completed and size-verified; see the PHYS19 publication/BACKUP_ACK.json receipt. The execution record separates one successful scientific application, one successful independent audit and two preserved checker-only failed attempts, two geometry readouts and two Wolfram calls.
+
+## Preserved PHYS18 and earlier instructions — historical context
+
 # Current priority — PHYS18 mixed response, 2026-10-13 KST
 
 Read CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/README_KO.md, HANDOFF_KO.md, review/DECISION.json and NEXT_DAG.json. PHYS18 is PROMOTE_SCOPED for the inherited fixed-alpha C2 family, same COMMON and shared global lambda,b. The actual mixed temperature-defect derivative and four-corner interaction are both strictly negative: [-2.668505746423E-12, -2.118796636045E-12] K.

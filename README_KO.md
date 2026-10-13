@@ -1,3 +1,20 @@
+# WU088_HH 현재 결과: PHYS19 순수 매개변수 곡률
+
+[PHYS19 draft PR54](https://github.com/cosmosapjw-quantum/WU088_HH/pull/54) · [완료된 게시·백업 영수증](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/publication/PUBLICATION.json)
+
+
+같은 COMMON에서 출발한 two-half minus Full 온도 결함의 순수 곡률 application을 원 저장 입력으로 완료했다. 독립 과학 검토 **pass_scoped**를 거쳐 **PROMOTE_SCOPED**로 채택했다. 현재 채택 이론과 과학 기준점은 PHYS19다.
+
+보통 두 번째 도함수는 **F_lambda_lambda ∈ [-4.510292217171e-14, -3.084478303660e-14] K**, **F_b_b ∈ [-4.912098573204e-11, -4.450662359403e-11] K**다. 두 좌표축 응답은 모두 엄격히 오목하다. 확립된 음의 mixed response를 결합하면 Hessian은 indefinite이며, 고정 방향 (1,-1/24)에서는 양의 곡률, lambda축에서는 음의 곡률을 갖는다.
+
+단위 사각형 전체의 bilinear interpolation remainder는 **6.145761081776e-12 K 이하**다. 정확한 pure-curvature midpoint를 사용해 보정하면 **2.892887673208e-13 K 이하**로 줄어든다. 두 표현은 정확한 같은-family corner coefficients와 그 결박 관계를 유지한다. 절대 anchor와 chord 계수의 불확실성까지 포함한 구체적 고정 계수 모델의 전체 오차는 **0.0001557338140092 K 이하**다. PHYS18의 mixed derivative와 네 모서리 interaction은 확립된 입력으로 재사용했다.
+
+[연구 개요](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/README_KO.md), [실제 application](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/checks/application/run01/results/SUMMARY.json), [곡률·오차 readout](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/checks/application/readout02/results/SUMMARY.json), [판정 기록](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/review/DECISION.json), [다음 DAG](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/NEXT_DAG.json)를 참조한다. 독립 Fraction 심사는 **362/362개 검사**를 통과했다. 구간 대조 265개로 scalar 포함 2,057개를 비교했고, 바깥 방향 decimal 3,174개와 계약 결박 23개를 검증했다. 실제 Wolfram/xAct는 tensor 6개·scalar 13개·matrix component 14개에서 정확한 0을, Peano 관련 조건 4개에서 True를 반환했다. 실행 기록에는 과학 application 1회, 독립 심사 성공 1회와 보존한 checker-only 실패 2회, geometry readout 2회, Wolfram 2회를 구별해 기록했다.
+
+**다음 단위 PHYS20은 실제 이름을 가진 rei_bianchi consumer interval을 찾아 결박한다.** 그 입력에서 `HH_DOMAIN_SCREEN`과 `HH_MATERIALITY`를 수행하고 순간 `dotT_HH` 및 HH 전자 source table을 제공한다. 현재 consumer binding은 **UNVERIFIED**다. 원 RUX DAG와 독립 `HH_STRICT_NATIVE`·`HH_SINGLET` 경로는 기존 범위를 유지한다.
+
+## PHYS18과 이전 연구 개요 보존
+
 # WU088_HH 현재 결과: PHYS18
 
 같은 COMMON과 공유 전역 HH·birth 매개변수에서 실제 endpoint 결함의 혼합 응답을 유도·계산했다. 독립 판정은 **PROMOTE_SCOPED**, 이론 정리 **8개**, 따름정리 **4개**, 별도 exact Fraction 산술은 **22/22 PASS**다.

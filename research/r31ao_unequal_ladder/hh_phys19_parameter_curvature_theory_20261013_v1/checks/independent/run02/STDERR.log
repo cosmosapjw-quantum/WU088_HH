@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/61df56c29001/work/phys19_audit_new/run02/EXECUTED_CODE.py", line 512, in <module>
+    ap=argparse.ArgumentParser();ap.add_argument('--base',type=pathlib.Path,required=True);ap.add_argument('--output',type=pathlib.Path,required=True);a=ap.parse_args();main(a.base,a.output)
+                                                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/61df56c29001/work/phys19_audit_new/run02/EXECUTED_CODE.py", line 404, in main
+    dhphoto=project([2*e**3*v*d[0]*(dfi**2+dfi*dyi+dyi**2)/(dyi**3*dfi**3) for e,v,dfi,dyi in zip(ell,QF,Df,Dy)])
+                                                                                              ^^^^^^^^^^^^^^^^^
+TypeError: 'Fraction' object is not iterable

@@ -1,3 +1,20 @@
+# PHYS19 handoff — pure curvature application complete
+
+[PHYS19 draft PR54](https://github.com/cosmosapjw-quantum/WU088_HH/pull/54) · [완료된 게시·백업 영수증](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/publication/PUBLICATION.json)
+
+
+Read research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/checks/application/run01/results/CURVATURE_RESULTS.json and the current research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/checks/application/readout02/results/CURVATURE_GEOMETRY.json, then the PHYS19 review record and NEXT_DAG. The application is completed and adopted as PROMOTE_SCOPED. Independent scientific review is pass_scoped: 362 checks passed, 265 interval comparisons covered 2,057 scalar enclosures, and 3,174 outward decimal intervals and 23 contract bindings were validated. PHYS19 is the current accepted theory and scientific baseline.
+
+PHYS19 has generated the first-half, Full and carried second-half pure gas/photon responses, keeping ordinary second derivatives and each product-rule factor 2. Direct, correlated and separately generated endpoint inclusions supply F_lambda_lambda in [-4.510292217171e-14,-3.084478303660e-14] K and F_b_b in [-4.912098573204e-11,-4.450662359403e-11] K. The original C2 source, fixed Full inverse and 35 photon/guard slots remain the input basis.
+
+Use the exact same-family corner coefficients for the bilinear representation. Its uniform remainder is <=6.145761081776e-12 K. The exact pure-curvature midpoint correction has remainder <=2.892887673208e-13 K. Retain anchor/chord uncertainty as its own part of a concrete coefficient model; the current model's total error bound is 0.0001557338140092 K. The current geometry readout binds the pointwise PHYS18 mixed derivative separately from its integrated corner interaction and records both coordinate concavity and indefinite Hessian geometry.
+
+The next implementation unit is PHYS20 targeted consumer intake. Resolve an actual named rei_bianchi interval, bind repository/commit and file identities, and read the state/source fields needed by the original HH export contract. Record consumer binding as UNVERIFIED until the concrete identity is established. Apply HH_DOMAIN_SCREEN to that source family and domain, then HH_MATERIALITY to instantaneous dotT_HH and the HH electron-source table with the admitted density/clock conventions and reaction ownership.
+
+The original RUX DAG and independent HH_STRICT_NATIVE/HH_SINGLET lanes retain their scope. The active heavy queue is empty. PHYS19 publication adds its core and these six entry documents on the PHYS18 parent; the adopted scientific decision is linked to review/INDEPENDENT_REVIEW.json and review/DECISION.json, while actual publication identities remain pending delivery. The execution record distinguishes one scientific application, one successful independent audit and two preserved checker-only failed attempts, two geometry readouts and two Wolfram calls.
+
+## Preserved PHYS18 and earlier implementation plans
+
 # PHYS18 handoff — actual mixed response complete
 
 The inherited PHYS17 mixed-response obligation is complete and independently PROMOTE_SCOPED. Read research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/DEPENDENCIES.json, research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/theory/MIXED_RESPONSE_THEOREM_KO.md, the actual application/readout records and research/r31ao_unequal_ladder/hh_phys18_mixed_response_theory_20261013_v1/review/DECISION.json. The original same-COMMON C2 family, fixed Full C/B/q/S and 35 photon/guard slots are retained.

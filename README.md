@@ -1,3 +1,20 @@
+# WU088_HH — PHYS19 pure parameter curvature
+
+[PHYS19 draft PR54](https://github.com/cosmosapjw-quantum/WU088_HH/pull/54) · [완료된 게시·백업 영수증](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/publication/PUBLICATION.json)
+
+
+PHYS19 completes the stored-input pure-curvature application for the same-COMMON two-half minus Full temperature defect. The result is adopted as **PROMOTE_SCOPED**, with independent scientific review **pass_scoped**. PHYS19 is the current accepted theory and scientific baseline.
+
+The two ordinary second derivatives are **F_lambda_lambda in [-4.510292217171e-14, -3.084478303660e-14] K** and **F_b_b in [-4.912098573204e-11, -4.450662359403e-11] K**. Both coordinate responses are strictly concave. Combined with the inherited negative mixed response, the Hessian is strictly indefinite: the fixed direction (1,-1/24) has positive curvature while the lambda axis has negative curvature.
+
+The bilinear interpolation remainder is at most **6.145761081776e-12 K** on the unit square. Adding the exact pure-curvature midpoint correction reduces that remainder to **2.892887673208e-13 K**. These representations retain the exact coupled same-family corner coefficients. The concrete fixed-coefficient model includes anchor and chord uncertainty and has total error at most **0.0001557338140092 K**. PHYS18's mixed derivative and four-corner interaction remain inherited inputs.
+
+Read the [PHYS19 summary](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/README_KO.md), [application result](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/checks/application/run01/results/SUMMARY.json), [geometry readout](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/checks/application/readout02/results/SUMMARY.json), [review record](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/review/DECISION.json), and [next DAG](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/NEXT_DAG.json). The independent Fraction audit passed **362/362 checks**, with 265 interval comparisons covering 2,057 scalar enclosures, 3,174 outward decimal validations and 23 contract bindings. The actual Wolfram/xAct checks return 6 tensor, 13 scalar and 14 matrix-component exact zeros, plus four Peano-kernel checks equal to True. Execution records distinguish one scientific application, one successful independent audit with two preserved checker-only failed attempts, two geometry readouts and two Wolfram calls.
+
+**Next: PHYS20 targeted consumer intake.** Bind an actual named `rei_bianchi` interval, then perform `HH_DOMAIN_SCREEN` and `HH_MATERIALITY` for instantaneous `dotT_HH` and the HH electron-source table. The consumer binding is **UNVERIFIED**. The original RUX DAG and independent `HH_STRICT_NATIVE` / `HH_SINGLET` lanes keep their existing scope.
+
+## Preserved PHYS18 and earlier project overview
+
 # WU088_HH — PHYS18 current research result
 
 PHYS18 derives and encloses the same-COMMON HH–birth mixed endpoint response. Independent decision: **PROMOTE_SCOPED**, supported by 8 theorems, 4 corollaries, 22/22 independent arithmetic checks.

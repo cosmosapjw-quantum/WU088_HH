@@ -1,0 +1,12 @@
+{
+  "id": "PHYS19_WOLFRAM_HESSIAN_GEOMETRY_RUN02",
+  "tool": "mcp__codex_apps__wolfram_wolframlanguageevaluator",
+  "status": "prepared",
+  "timeConstraint": 60,
+  "code_file": "hessian_geometry_checks.wl",
+  "code_bytes": 1879,
+  "code_sha256": "ec63e7b2fd0069750a3a0f3fc0b3a1e6bb0a36a91f4d18845a25c6564cd125de",
+  "prepared_at_utc": "2026-10-13T01:00:23.246920+00:00",
+  "code": "Module[{aa,mm,dd,hh,v,w,dirResidual,wResidual,intervalA,intervalD,intervalM,\n detBounds,vBounds,wBounds,axisConcave,indefinite,oppositeDirections},\n hh={{aa,mm},{mm,dd}};v={1,-1/24};w={1,0};\n dirResidual=Expand[v.hh.v-(aa-mm/12+dd/576)];\n wResidual=Expand[w.hh.w-aa];\n intervalA={-4510292217171/10^26,-3084478303660/10^26};\n intervalD={-4912098573204/10^23,-4450662359403/10^23};\n intervalM={-2668505746423/10^24,-2118796636045/10^24};\n detBounds={intervalA[[2]]*intervalD[[2]]-intervalM[[1]]^2,\n intervalA[[1]]*intervalD[[1]]-intervalM[[2]]^2};\n vBounds={intervalA[[1]]-intervalM[[2]]/12+intervalD[[1]]/576,\n intervalA[[2]]-intervalM[[1]]/12+intervalD[[2]]/576};\n wBounds=intervalA;\n axisConcave=intervalA[[2]]<0&&intervalD[[2]]<0;\n indefinite=detBounds[[2]]<0;\n oppositeDirections=vBounds[[1]]>0&&wBounds[[2]]<0;\n <|\"Status\"->If[dirResidual===0&&wResidual===0&&axisConcave&&indefinite&&oppositeDirections,\"Completed\",\"Unresolved\"],\n \"WolframVersion\"->$Version,\n \"Direction\"->v,\"OppositeSignDirection\"->w,\n \"GenericDirectionResidual\"->dirResidual,\"GenericAxisResidual\"->wResidual,\n \"InputIntervalsExact\"-><|\"Fll\"->intervalA,\"Fbb\"->intervalD,\"Flb\"->intervalM|>,\n \"DeterminantBoundsExact_K2\"->detBounds,\"DeterminantBoundsDecimal_K2\"->N[detBounds,20],\n \"PositiveDirectionCurvatureBoundsExact_K\"->vBounds,\"PositiveDirectionCurvatureBoundsDecimal_K\"->N[vBounds,20],\n \"NegativeAxisCurvatureBoundsExact_K\"->wBounds,\"NegativeAxisCurvatureBoundsDecimal_K\"->N[wBounds,20],\n \"BothCoordinateAxesStrictlyConcave\"->axisConcave,\"HessianStrictlyIndefinite\"->indefinite,\n \"OppositeSignedDirectionsUniformlyResolved\"->oppositeDirections,\n \"Scope\"->\"Exact rational interval arithmetic conditional on the three explicitly supplied decimal curvature enclosures. Dimensionless parameters give directional curvatures in K and determinant in K^2. No physical source, inverse or root is evaluated.\"|>\n]\n",
+  "scope": "Exact rational interval arithmetic on root-supplied decimal enclosures, no physical source evaluation."
+}

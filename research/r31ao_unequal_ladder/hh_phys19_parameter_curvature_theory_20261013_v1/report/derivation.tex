@@ -1,0 +1,249 @@
+\section{원 residual에서 순수 곡률까지}
+\subsection{보통 2차 도함수와 implicit 방정식}
+$\theta\in\{\lambda,b\}$에 대해
+$p_k=g_{k,\theta}$, $K_k=g_{k,\theta\theta}$라 쓴다.
+$K_k$는 Taylor 계수의 두 배인 보통 2차 도함수다.
+고정 incoming의 단계 residual $H_k(g_k,\theta)=0$을 두 번 미분하면
+\[
+J_kp_k+H_{k,\theta}=0,\qquad
+\boxed{J_kK_k=-H_{k,gg}[p_k,p_k]-2H_{k,g\theta}p_k-H_{k,\theta\theta}},
+\quad J_k=H_{k,g}.
+\tag{19.1}
+\]
+$C^2$ Hessian의 대칭성이 두 교차항의 계수 2를 준다.
+같은 Jacobian으로 두 번째 tangent를 푸는 일반 구조는
+Safiran--Lotz--Naumann의 Theorem 4.3과 일치한다 \cite{SLN15}.
+본 계산의 root branch와 역행렬 포함은 원 인증에 결박했다.
+
+원 gas source와 HH 방향은
+\[
+B_k(g,\lambda)=F_k^{np}(g)+\lambda q_k(g)\nu_H-2H_kw e_w,
+\qquad \nu_H=(1,0,0,-\chi_H)^T.
+\tag{19.2}
+\]
+첫 half와 Full의 incoming은
+$Q_1=RZ_0+bJ_\gamma$, $Q_F=R_FZ_0+2bJ_\gamma$다.
+고정 gas에서 각 residual이 $\lambda,b$에 affine이므로
+$H_{k,\theta\theta}=0$이다.
+원 \texttt{SOURCE\_BOX}의 \texttt{G\_gg,G\_g\_lambda,G\_g\_b}에는
+이미 residual 부호와 시간 인수가 들어 있다. 이 export에는 (19.1)을 직접 적용한다.
+source Hessian을 분해할 때에만 식 (19.2)의 $h$ 또는 $2h$를 붙인다.
+
+\subsection{survival과 실제 carry}
+활성 photon slot $j$에서 $a_{kj}=cn_k\sigma_j$,
+$A_k=(1+ha_k(1-x_k))^{-1}$, $L_k=1-A_k$다.
+고정 $a_k$에 대한 두 미분은
+\[
+A_{k,\theta}=ha_kA_k^2p_{k,x},\qquad
+\boxed{A_{k,\theta\theta}
+=ha_kA_k^2K_{k,x}+2(ha_k)^2A_k^3p_{k,x}^2}.
+\tag{19.3}
+\]
+Full에서는 $ha_k$를 $2ha_2$로 바꾼다.
+$\delta_b=\partial_\theta b$를 쓰면
+\[
+\begin{aligned}
+Z_1&=A_1Q_1,& Q_2&=RZ_1+bJ_\gamma,\\
+Z_{1,\theta\theta}&=A_{1,\theta\theta}Q_1
+2\delta_b A_{1,\theta}J_\gamma,&
+Q_{2,\theta\theta}&=RZ_{1,\theta\theta}.
+\end{aligned}
+\tag{19.4}
+\]
+첫 단계 gas의 $K_1$과 광자의 $Q_{2,\theta\theta}$를 순서대로 carry한다.
+특히 $b=0$에서도 $2A_{1,b}J_\gamma$는 일반적으로 남는다.
+생성 진폭의 값과 그 미분은 구별되기 때문이다.
+
+guard는 국소적으로 $A=1,L=0$이어서 이 두 함수의 도함수는 0이다.
+그러나 $(RZ_{1,\theta\theta})_{\rm guard}$는
+활성 photon의 수송이 guard에 도달하면 남는다.
+따라서 incoming/outgoing guard의 순수 응답도 저장했다.
+
+\subsection{carried 둘째 half의 선형 방정식}
+둘째 gas 방정식과 Jacobian은
+\[
+g_2-g_1=hB_2(g_2,\lambda)+V_{\rm ph}L_2(g_2)Q_2,\qquad
+J_2=I-hB_{2,g}-V_{\rm ph}(L_{2,g}Q_2).
+\]
+$p=p_2$, $\delta_\lambda=\partial_\theta\lambda$라 놓으면
+\[
+\boxed{\begin{aligned}
+J_2K_2={}&K_1+hB_{2,gg}[p,p]
+2h\delta_\lambda Dq_2[p]\nu_H\\
+&+V_{\rm ph}\{L_{2,gg}[p,p]Q_2
++2L_{2,g}[p]Q_{2,\theta}+L_2Q_{2,\theta\theta}\}.
+\end{aligned}}
+\tag{19.5}
+\]
+실제 photon 흡수의 순수 도함수에는
+$L_{2,g}[K_2]Q_2$도 있다.
+이 선형 항은 (19.5)의 $J_2$에 배치하고, $K_2$를 구한 뒤 실제 photon jet를 복원한다.
+Full의 birth 항은 product-rule 계수 2와 $Q_{F,b}=2J_\gamma$가 만나
+source 표현에서 계수 4를 갖는다.
+
+단계 차이 $s=g_2-g_1$에 대해서도
+\[
+s_{\theta\theta}
+=h\{B_{2,g}K_2+B_{2,gg}[p,p]
++2\delta_\lambda Dq_2[p]\nu_H\}+V_{\rm ph}P_{2,\theta\theta}
+\tag{19.6}
+\]
+를 계산하여 $[K_2]-[K_1]$와 교차한다.
+
+\subsection{같은 Full Jacobian에서 endpoint 차이 보존}
+Full residual을 $H(g;\lambda,b)$,
+$r=H(g_2;\lambda,b)$,
+$d=g_2-g_F$,
+$d_\theta=p-p_F$,
+$K_d=K_2-K_F$라 쓴다.
+모든 endpoint 전달은 $J_F=H_g(g_F)$를 사용한다.
+직접식은
+\[
+J_FK_d=J_FK_2+H_{gg}(g_F)[p_F,p_F]+2H_{g\theta}(g_F)p_F.
+\tag{19.7}
+\]
+$J_y=H_g(g_2)$,
+$\Delta H_{gg}=H_{gg}(g_2)-H_{gg}(g_F)$,
+$\Delta H_{g\theta}=H_{g\theta}(g_2)-H_{g\theta}(g_F)$라 두자.
+대칭 bilinear map에 대한 정확한 항등식
+\[
+H_{gg}(g_F)[p,p]-H_{gg}(g_F)[p_F,p_F]
+=2H_{gg}(g_F)[d_\theta,p-d_\theta/2]
+\]
+으로 같은 forcing을 다시 쓰면
+\[
+\boxed{\begin{aligned}
+J_FK_d={}&r_{\theta\theta}-(J_y-J_F)K_2-\Delta H_{gg}[p,p]\\
+&-2H_{gg}(g_F)[d_\theta,p-d_\theta/2]\\
+&-2\Delta H_{g\theta}p-2H_{g\theta}(g_F)d_\theta.
+\end{aligned}}
+\tag{19.8}
+\]
+이 식은 큰 endpoint 값을 각각 뺄 때 생기는 포함폭을,
+원 작은 차이의 포함으로 직접 제어한다.
+
+$J_y-J_F$와 HH gradient 차이에는 기존 Hessian의 선분 적분을 쓴다.
+일반 source의 $\Delta H_{gg}$는 두 평가점의 원 signed Hessian 범위의 차로 포함한다.
+HI rational 항은 명시적 분모차를 $d_x$로 인수 분해한다.
+따라서 모든 유도와 적용에서 source의 최고 도함수는 2차로 유지된다.
+
+\subsection{gas stage 잔차의 원식 기반 분해}
+두 stage 방정식을 더하여
+\[
+r=h\{B_1(g_1)-B_2(g_2)\}+V_{\rm ph}p_{\rm ph}
+\]
+를 얻는다. gas 부분의 순수 미분은
+\[
+\begin{aligned}
+r_{g,\theta\theta}=h\{&
+B_{1,g}K_1-B_{2,g}K_2
++B_{1,gg}[p_1,p_1]-B_{2,gg}[p,p]\\
+&+2\delta_\lambda(Dq_1[p_1]-Dq_2[p])\nu_H\}.
+\end{aligned}
+\tag{19.9}
+\]
+$\delta B_t=B_1-B_2$, $\delta q_t=q_1-q_2$라 놓으면
+\[
+\begin{aligned}
+B_{1,g}K_1-B_{2,g}K_2
+={}&D\delta B_t(g_1)[K_1]-B_{2,g}(g_2)s_{\theta\theta}\\
+&-\int_0^1B_{2,gg}(g_1+ts)[s,K_1]\,\dd t,\\
+B_{1,gg}[p_1,p_1]-B_{2,gg}[p,p]
+={}&\Delta B_{gg}[p_1,p_1]
+-2B_{2,gg}[s_\theta,(p+p_1)/2],\\
+Dq_1[p_1]-Dq_2[p]
+={}&D\delta q_t(g_1)[p_1]-Dq_2(g_2)[s_\theta]\\
+&-\int_0^1D^2q_2(g_1+ts)[s,p_1]\,\dd t.
+\end{aligned}
+\tag{19.10}
+\]
+PHYS17의 원 density/temperature pullback에 방향 $K_1$ 또는 $p_1$을 대입했다.
+gradient를 새 방향에 평가하는 계산이며, source Hessian 위의 새 미분을 요구하지 않는다.
+
+\subsection{일곱 photon sector와 순서 있는 미분}
+$A=A_2$, $L=I-A$, $\tau=ha_2(1-x_2)$,
+$A_F=(I+2\tau)^{-1}$,
+$L_F=I-A_F$,
+$\mathcal C_1=\tau A^2A_F$,
+$\mathcal C_2=\tau^2A^2A_F$로 두자.
+이 $\mathcal C_i$는 역행렬 preconditioner $C$와 별개다.
+원 순서 있는 photon 잔차는
+\[
+\begin{aligned}
+p_{\rm ph}={}&-(I-LR)(A_1-A)Q_1+L[R,A]Q_1
++L(I-R)RZ_0\\
+&+\mathcal C_2R^2Z_0+L_F(R^2-R_F)Z_0\\
+&+bLA(R-I)J_\gamma-b\mathcal C_1J_\gamma.
+\end{aligned}
+\tag{19.11}
+\]
+$R$와 diagonal survival의 순서를 바꾸지 않는다.
+$D_A=(A_1-A)Q_1$,
+$K_R=[R,A]Q_1$,
+$Z_R=(I-R)RZ_0$,
+$J_R=(R-I)J_\gamma$라고 쓰고 prime을 $\theta$ 미분으로 쓰면,
+일곱 항의 순수 응답은
+\[
+\begin{aligned}
+p_{\rm opacity}''&=-D_A''+L''RD_A+2L'RD_A'+LRD_A'',\\
+p_{\rm comm}''&=L''K_R+2L'K_R'+LK_R'',\\
+p_{\rm stockR}''&=L''Z_R,\qquad
+p_{\rm stockBE}''=\mathcal C_2''R^2Z_0,\\
+p_{\rm remap}''&=L_F''(R^2-R_F)Z_0,\\
+p_{\rm birthR}''&=\{b(LA)''+2\delta_b(LA)'\}J_R,\\
+p_{\rm birthBE}''&=-\{b\mathcal C_1''+2\delta_b\mathcal C_1'\}J_\gamma.
+\end{aligned}
+\tag{19.12}
+\]
+각 matrix product의 보통 순수 도함수는
+$(XY)''=X''Y+2X'Y'+XY''$다.
+opacity 차이는
+\[
+A_1-A=\zeta A_1A,\quad
+\zeta=h\{c\sigma(n_2-n_1)(1-x_2)-a_1s_x\},
+\]
+\[
+\zeta''=-h\{c\sigma(n_2-n_1)K_{2,x}+a_1s_{\theta\theta,x}\}
+\tag{19.13}
+\]
+로 인수 분해한 뒤 미분했다.
+이렇게 얻은 일곱 sector와 직접 흡수 차이의 포함을 같은 35개 slot에서 확인했다.
+
+$\Delta\widehat Z=Z_2-A_F(g_2)Q_F$와 원 number·energy row를 쓰면
+\[
+\mathbf1^Tp_{\rm ph}''=-n_\gamma\Delta\widehat Z'',\qquad
+E^Tp_{\rm ph}''=(1-\rho)E^TP_1''-u_\gamma\Delta\widehat Z''
+\tag{19.14}
+\]
+가 성립한다. $\rho$는 원 redshift 비다.
+직접 birth energy 항은 $b$에 선형이므로 이 순수 미분에서는 0이다.
+원 ledger의 두 guard를 유지한 것이 (19.14)의 의미다.
+
+\subsection{검증된 inverse의 재사용}
+각 stage의 고정 $C$, 비음수 $B$, 양의 scale $S$에 대해
+\[
+|I-CJ|\le B,\qquad \|S^{-1}BS\|_\infty\le q<1
+\tag{19.15}
+\]
+를 원 입력과 대조했다.
+$Jv=f$에서 $v=Cf+(I-CJ)v$이고
+$(I-B)^{-1}=\sum_{k\ge0}B^k\ge0$이므로
+\[
+m=(I-B)^{-1}\operatorname{mag}([Cf]),\qquad
+\boxed{v\in[Cf]+[-Bm,Bm]}.
+\tag{19.16}
+\]
+이는 family의 모든 허용 Jacobian과 RHS를 포함한다.
+interval family 전체의 가역성·해 포함이라는 양화는 Rump의
+검증된 선형계 구성과 일치한다 \cite{R99}.
+현재 수치는 원 고정 행렬과 유리수 majorant로 직접 계산했다.
+signed $[I-CJ]$를 남겨 세 번의 유한 fixed-point 교차를 적용했다.
+
+첫 half의 결박은
+\[
+C=I,\qquad S=\operatorname{diag}(1,1,1,27/2),\qquad q<0.0005396
+\]
+이다. Full은 원 $q=0.00011736830563768177$의 exact64 leaf를 사용한다.
+둘째 half의 refined contraction은 $q<0.0005045844357588$이다.
+endpoint $K_d$의 모든 분해와 기여에는 Full의 동일한 $C,B,S,J_F$를 썼다.
+직접·상관·별도 endpoint 차이는 동일 exact quantity의 포함이므로 교차가 유효하다.

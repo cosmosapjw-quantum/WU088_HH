@@ -1,0 +1,1389 @@
+{
+  "schema_version": 1,
+  "workflow_version": "1.0.0",
+  "task": "both",
+  "unit_id": "HH_PHYS19_THEORY_20261013_v1",
+  "objective": "Close actual pure parameter curvatures, full Hessian geometry and finite bilinear response, then hand off a concrete consumer source-response question.",
+  "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+  "status": "complete",
+  "scientific_status": "PROMOTE_SCOPED",
+  "dependencies": [
+    {
+      "id": "D_CONTRACT",
+      "identity": "sha256:94e39ca1448e2658c966b17e4cd2db29cd0fbe7588d065e53161273955196c56;bytes:15499",
+      "description": "contracts/ADOPTED_CURVATURE_CONTRACT.json",
+      "artifact_identity": {
+        "path": "contracts/ADOPTED_CURVATURE_CONTRACT.json",
+        "bytes": 15499,
+        "sha256": "94e39ca1448e2658c966b17e4cd2db29cd0fbe7588d065e53161273955196c56"
+      }
+    },
+    {
+      "id": "D_INPUTS",
+      "identity": "sha256:92ce2adc31021925b815d68af96114cd885e876970c382a8e4298cd4f3fbe4bc;bytes:5565",
+      "description": "evidence/intake/INPUT_BINDING_CHECKS.json",
+      "artifact_identity": {
+        "path": "evidence/intake/INPUT_BINDING_CHECKS.json",
+        "bytes": 5565,
+        "sha256": "92ce2adc31021925b815d68af96114cd885e876970c382a8e4298cd4f3fbe4bc"
+      }
+    },
+    {
+      "id": "D_PARENT",
+      "identity": "sha256:bc0f555777f228f94a92fc99aa50acfce0467c25bcba5fbb65b69a7d8f1362b1;bytes:18426",
+      "description": "baseline/PHYS18_DECISION.json",
+      "artifact_identity": {
+        "path": "baseline/PHYS18_DECISION.json",
+        "bytes": 18426,
+        "sha256": "bc0f555777f228f94a92fc99aa50acfce0467c25bcba5fbb65b69a7d8f1362b1"
+      }
+    },
+    {
+      "id": "D_PARENT_REMOTE",
+      "identity": "sha256:5623698613ceb2dbd647a57708983dff70cd791e6ab43a505ea0746be67020b9;bytes:1906",
+      "description": "evidence/intake/PHYS18_REMOTE_REF.json",
+      "artifact_identity": {
+        "path": "evidence/intake/PHYS18_REMOTE_REF.json",
+        "bytes": 1906,
+        "sha256": "5623698613ceb2dbd647a57708983dff70cd791e6ab43a505ea0746be67020b9"
+      }
+    },
+    {
+      "id": "D_LIT",
+      "identity": "sha256:358d11c9fe065f06d0b847b9e32454641d4c06fe27fe3ce19b7f9728faa72ab2;bytes:12960",
+      "description": "literature/LITERATURE_REVIEW_KO.md",
+      "artifact_identity": {
+        "path": "literature/LITERATURE_REVIEW_KO.md",
+        "bytes": 12960,
+        "sha256": "358d11c9fe065f06d0b847b9e32454641d4c06fe27fe3ce19b7f9728faa72ab2"
+      }
+    },
+    {
+      "id": "D_LIT_PROVENANCE",
+      "identity": "sha256:4626336f52b9debaea26c83bc4500aa449b3075eca9ce2b445a21fd70c53d371;bytes:3285",
+      "description": "literature/LITERATURE_PROVENANCE.json",
+      "artifact_identity": {
+        "path": "literature/LITERATURE_PROVENANCE.json",
+        "bytes": 3285,
+        "sha256": "4626336f52b9debaea26c83bc4500aa449b3075eca9ce2b445a21fd70c53d371"
+      }
+    },
+    {
+      "id": "D_THEORY",
+      "identity": "sha256:49cc115ccf3ccce4b2a209808c2b530821e9888dc85a9c0e46f471ba9460c9e7;bytes:29430",
+      "description": "theory/PURE_CURVATURE_INDEPENDENT_DERIVATION_KO.md",
+      "artifact_identity": {
+        "path": "theory/PURE_CURVATURE_INDEPENDENT_DERIVATION_KO.md",
+        "bytes": 29430,
+        "sha256": "49cc115ccf3ccce4b2a209808c2b530821e9888dc85a9c0e46f471ba9460c9e7"
+      }
+    },
+    {
+      "id": "D_CLAIMS",
+      "identity": "sha256:60bf452973b3a6c7e2655d5fe5df7383f10f3057bc89df13e3916349ad856583;bytes:5770",
+      "description": "theory/PURE_CURVATURE_CLAIMS.json",
+      "artifact_identity": {
+        "path": "theory/PURE_CURVATURE_CLAIMS.json",
+        "bytes": 5770,
+        "sha256": "60bf452973b3a6c7e2655d5fe5df7383f10f3057bc89df13e3916349ad856583"
+      }
+    },
+    {
+      "id": "D_CODE",
+      "identity": "sha256:c02af6b7b79a5be64b900c7bcaa1a37566e99e95dc15383e2b364bdb83e5aeaf;bytes:31448",
+      "description": "src/curvature_application.py",
+      "artifact_identity": {
+        "path": "src/curvature_application.py",
+        "bytes": 31448,
+        "sha256": "c02af6b7b79a5be64b900c7bcaa1a37566e99e95dc15383e2b364bdb83e5aeaf"
+      }
+    },
+    {
+      "id": "D_MAIN_PRE",
+      "identity": "sha256:947c6d69057e8a425acbe717e9237144fae72b969939941a501b6dfca962c16c;bytes:1248",
+      "description": "checks/application/run01/PRE_RUN.json",
+      "artifact_identity": {
+        "path": "checks/application/run01/PRE_RUN.json",
+        "bytes": 1248,
+        "sha256": "947c6d69057e8a425acbe717e9237144fae72b969939941a501b6dfca962c16c"
+      }
+    },
+    {
+      "id": "D_MAIN_RUN",
+      "identity": "sha256:ce9c6de8de0850af136cb2c93f7d6ab540fb4cc69c3b7339209634a1366e7c00;bytes:1384",
+      "description": "checks/application/run01/RUN.json",
+      "artifact_identity": {
+        "path": "checks/application/run01/RUN.json",
+        "bytes": 1384,
+        "sha256": "ce9c6de8de0850af136cb2c93f7d6ab540fb4cc69c3b7339209634a1366e7c00"
+      }
+    },
+    {
+      "id": "D_MAIN",
+      "identity": "sha256:0cf533a6a766f97ca3905113d2922f28dadd6c80f4b355dc0e81aa91c0b8d0fa;bytes:1792470",
+      "description": "checks/application/run01/results/CURVATURE_RESULTS.json",
+      "artifact_identity": {
+        "path": "checks/application/run01/results/CURVATURE_RESULTS.json",
+        "bytes": 1792470,
+        "sha256": "0cf533a6a766f97ca3905113d2922f28dadd6c80f4b355dc0e81aa91c0b8d0fa"
+      }
+    },
+    {
+      "id": "D_GEOMETRY",
+      "identity": "sha256:2fe5729db6fae4b8b155e1155d4f4709fdfb9de7fc8992b65e45d5d632c322cc;bytes:19423",
+      "description": "checks/application/readout02/results/CURVATURE_GEOMETRY.json",
+      "artifact_identity": {
+        "path": "checks/application/readout02/results/CURVATURE_GEOMETRY.json",
+        "bytes": 19423,
+        "sha256": "2fe5729db6fae4b8b155e1155d4f4709fdfb9de7fc8992b65e45d5d632c322cc"
+      }
+    },
+    {
+      "id": "D_GEO01_RUN",
+      "identity": "sha256:f967535f3364cf39073c6828929c0a8384bc373480f4e5e66d4092fe276355f6;bytes:1019",
+      "description": "checks/application/readout01/RUN.json",
+      "artifact_identity": {
+        "path": "checks/application/readout01/RUN.json",
+        "bytes": 1019,
+        "sha256": "f967535f3364cf39073c6828929c0a8384bc373480f4e5e66d4092fe276355f6"
+      }
+    },
+    {
+      "id": "D_GEO02_RUN",
+      "identity": "sha256:1e90a9440547e3d25e8bc65504ef35601097986be3320a9d67643390021424c5;bytes:1259",
+      "description": "checks/application/readout02/RUN.json",
+      "artifact_identity": {
+        "path": "checks/application/readout02/RUN.json",
+        "bytes": 1259,
+        "sha256": "1e90a9440547e3d25e8bc65504ef35601097986be3320a9d67643390021424c5"
+      }
+    },
+    {
+      "id": "D_REVIEW",
+      "identity": "sha256:cfca50ba9a084a6bd7bb5a5e5cf6badb85397126ab30f008acc39cf66a7a89ce;bytes:17621",
+      "description": "review/INDEPENDENT_REVIEW.json",
+      "artifact_identity": {
+        "path": "review/INDEPENDENT_REVIEW.json",
+        "bytes": 17621,
+        "sha256": "cfca50ba9a084a6bd7bb5a5e5cf6badb85397126ab30f008acc39cf66a7a89ce"
+      }
+    },
+    {
+      "id": "D_REVIEW_PROSE",
+      "identity": "sha256:cd34480f664ff342a2b2de7c5a392b298abc320ae29ca3e76850ba86bd7ca787;bytes:14963",
+      "description": "review/INDEPENDENT_REVIEW_KO.md",
+      "artifact_identity": {
+        "path": "review/INDEPENDENT_REVIEW_KO.md",
+        "bytes": 14963,
+        "sha256": "cd34480f664ff342a2b2de7c5a392b298abc320ae29ca3e76850ba86bd7ca787"
+      }
+    },
+    {
+      "id": "D_AUDIT",
+      "identity": "sha256:b032ebc337d810dfc11403dfd42f192df0d0824ba7185e21666d04bd34416778;bytes:325122",
+      "description": "checks/independent/run03/results/INDEPENDENT_FRACTION_AUDIT.json",
+      "artifact_identity": {
+        "path": "checks/independent/run03/results/INDEPENDENT_FRACTION_AUDIT.json",
+        "bytes": 325122,
+        "sha256": "b032ebc337d810dfc11403dfd42f192df0d0824ba7185e21666d04bd34416778"
+      }
+    },
+    {
+      "id": "D_AUDIT_RUN",
+      "identity": "sha256:8305328e7bd21faff05c4d0fcb5cf35a53e8c05769af2cef43c0004983dfb30f;bytes:1084",
+      "description": "checks/independent/run03/RUN.json",
+      "artifact_identity": {
+        "path": "checks/independent/run03/RUN.json",
+        "bytes": 1084,
+        "sha256": "8305328e7bd21faff05c4d0fcb5cf35a53e8c05769af2cef43c0004983dfb30f"
+      }
+    },
+    {
+      "id": "D_AUDIT01_RUN",
+      "identity": "sha256:a08fb53ce1db9fe59074a6316516db6204909f29d53e5f23ceca297a723d0c77;bytes:845",
+      "description": "checks/independent/run01/RUN.json",
+      "artifact_identity": {
+        "path": "checks/independent/run01/RUN.json",
+        "bytes": 845,
+        "sha256": "a08fb53ce1db9fe59074a6316516db6204909f29d53e5f23ceca297a723d0c77"
+      }
+    },
+    {
+      "id": "D_AUDIT02_RUN",
+      "identity": "sha256:5f3f6954e5beadc55e05505913211f1051f75eeea425097ae549619adbfc4cdf;bytes:844",
+      "description": "checks/independent/run02/RUN.json",
+      "artifact_identity": {
+        "path": "checks/independent/run02/RUN.json",
+        "bytes": 844,
+        "sha256": "5f3f6954e5beadc55e05505913211f1051f75eeea425097ae549619adbfc4cdf"
+      }
+    },
+    {
+      "id": "D_WOLFRAM",
+      "identity": "sha256:05733be70f1c3fd98128b906d5e192c4d1f2090361fd0d873184dcf60f869078;bytes:5711",
+      "description": "checks/wolfram/WOLFRAM_XACT_EXECUTION.json",
+      "artifact_identity": {
+        "path": "checks/wolfram/WOLFRAM_XACT_EXECUTION.json",
+        "bytes": 5711,
+        "sha256": "05733be70f1c3fd98128b906d5e192c4d1f2090361fd0d873184dcf60f869078"
+      }
+    },
+    {
+      "id": "D_WOLFRAM_GEOMETRY",
+      "identity": "sha256:14ee8c5b654a672413c7df1a494bad62a056cd5b1858ea2167dec03e50b06c8c;bytes:2442",
+      "description": "checks/wolfram/HESSIAN_GEOMETRY_EXECUTION.json",
+      "artifact_identity": {
+        "path": "checks/wolfram/HESSIAN_GEOMETRY_EXECUTION.json",
+        "bytes": 2442,
+        "sha256": "14ee8c5b654a672413c7df1a494bad62a056cd5b1858ea2167dec03e50b06c8c"
+      }
+    },
+    {
+      "id": "D_DECISION",
+      "identity": "sha256:6058f8ca0b352e55ff4e00c231ba57668080cd2cd48e19bf732d15d5bd8d2211;bytes:9083",
+      "description": "review/DECISION.json",
+      "artifact_identity": {
+        "path": "review/DECISION.json",
+        "bytes": 9083,
+        "sha256": "6058f8ca0b352e55ff4e00c231ba57668080cd2cd48e19bf732d15d5bd8d2211"
+      }
+    },
+    {
+      "id": "D_NEXT",
+      "identity": "sha256:8a15a3079c37784c6ebc033fe63a4a15fd9ab290704c4b69aada9f43209da372;bytes:8145",
+      "description": "theory/HH_CONSUMER_SOURCE_RESPONSE_HANDOFF_KO.md",
+      "artifact_identity": {
+        "path": "theory/HH_CONSUMER_SOURCE_RESPONSE_HANDOFF_KO.md",
+        "bytes": 8145,
+        "sha256": "8a15a3079c37784c6ebc033fe63a4a15fd9ab290704c4b69aada9f43209da372"
+      }
+    },
+    {
+      "id": "D_NEXT_CONTRACT",
+      "identity": "sha256:001e65e0fcd64c0f167c5eea78a856d3127da3c453da29946b40ba77d9040be5;bytes:7068",
+      "description": "contracts/NEXT_CONSUMER_CONTRACT.json",
+      "artifact_identity": {
+        "path": "contracts/NEXT_CONSUMER_CONTRACT.json",
+        "bytes": 7068,
+        "sha256": "001e65e0fcd64c0f167c5eea78a856d3127da3c453da29946b40ba77d9040be5"
+      }
+    },
+    {
+      "id": "D_DAG",
+      "identity": "sha256:5a1e16914478d09d732496cf4791f42f6587c16cb1c1ded653e9f3c6f2e4521d;bytes:38368",
+      "description": "NEXT_DAG.json",
+      "artifact_identity": {
+        "path": "NEXT_DAG.json",
+        "bytes": 38368,
+        "sha256": "5a1e16914478d09d732496cf4791f42f6587c16cb1c1ded653e9f3c6f2e4521d"
+      }
+    },
+    {
+      "id": "D_REPORT",
+      "identity": "sha256:d5f08318a3d3323a40e10e09abea65b3588460f59c9d0a5f96d54e1866b4f4b6;bytes:426326",
+      "description": "report/WU088_HH_PHYS19_THEORY_20261013.pdf",
+      "artifact_identity": {
+        "path": "report/WU088_HH_PHYS19_THEORY_20261013.pdf",
+        "bytes": 426326,
+        "sha256": "d5f08318a3d3323a40e10e09abea65b3588460f59c9d0a5f96d54e1866b4f4b6"
+      }
+    },
+    {
+      "id": "D_RESTORE",
+      "identity": "sha256:2f6c6a31345311f95cacde5f15193cc86dd59865dbef6a36fc943008e185f8ee;bytes:4304",
+      "description": "evidence/intake/RESTORATION_RECEIPT.json",
+      "artifact_identity": {
+        "path": "evidence/intake/RESTORATION_RECEIPT.json",
+        "bytes": 4304,
+        "sha256": "2f6c6a31345311f95cacde5f15193cc86dd59865dbef6a36fc943008e185f8ee"
+      }
+    },
+    {
+      "id": "D_QA",
+      "identity": "sha256:6d211513d694955e71d30f52e47c3b5d37af07acf6cec0c5ec5d4b138b03724f;bytes:3241",
+      "description": "Final PDF layout confirmation"
+    },
+    {
+      "id": "D_BACKUP",
+      "identity": "sha256:ae48c22c5dbd27221f0a0d06b395a838a1b32094068bda2acf0d7e5d9827dae3;bytes:1536",
+      "description": "Both completed provider acknowledgements and matching server sizes"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E_CONTRACT",
+      "kind": "source",
+      "locator": "contracts/ADOPTED_CURVATURE_CONTRACT.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_CONTRACT"
+      ]
+    },
+    {
+      "id": "E_INPUTS",
+      "kind": "artifact",
+      "locator": "evidence/intake/INPUT_BINDING_CHECKS.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_INPUTS"
+      ]
+    },
+    {
+      "id": "E_PARENT",
+      "kind": "source",
+      "locator": "baseline/PHYS18_DECISION.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_PARENT"
+      ]
+    },
+    {
+      "id": "E_PARENT_REMOTE",
+      "kind": "artifact",
+      "locator": "evidence/intake/PHYS18_REMOTE_REF.json",
+      "scope": "Artifact identity, current checkpoint or document content",
+      "dependency_ids": [
+        "D_PARENT_REMOTE"
+      ]
+    },
+    {
+      "id": "E_LIT",
+      "kind": "source",
+      "locator": "literature/LITERATURE_REVIEW_KO.md",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_LIT"
+      ]
+    },
+    {
+      "id": "E_LIT_PROVENANCE",
+      "kind": "artifact",
+      "locator": "literature/LITERATURE_PROVENANCE.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_LIT_PROVENANCE"
+      ]
+    },
+    {
+      "id": "E_THEORY",
+      "kind": "derivation",
+      "locator": "theory/PURE_CURVATURE_INDEPENDENT_DERIVATION_KO.md",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_THEORY"
+      ]
+    },
+    {
+      "id": "E_CLAIMS",
+      "kind": "derivation",
+      "locator": "theory/PURE_CURVATURE_CLAIMS.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_CLAIMS"
+      ]
+    },
+    {
+      "id": "E_CODE",
+      "kind": "implementation",
+      "locator": "src/curvature_application.py",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_CODE"
+      ]
+    },
+    {
+      "id": "E_MAIN_PRE",
+      "kind": "resource",
+      "locator": "checks/application/run01/PRE_RUN.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_MAIN_PRE"
+      ]
+    },
+    {
+      "id": "E_MAIN_RUN",
+      "kind": "calculation",
+      "locator": "checks/application/run01/RUN.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_MAIN_RUN"
+      ]
+    },
+    {
+      "id": "E_MAIN",
+      "kind": "calculation",
+      "locator": "checks/application/run01/results/CURVATURE_RESULTS.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_MAIN"
+      ]
+    },
+    {
+      "id": "E_GEOMETRY",
+      "kind": "calculation",
+      "locator": "checks/application/readout02/results/CURVATURE_GEOMETRY.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_GEOMETRY"
+      ]
+    },
+    {
+      "id": "E_GEO01_RUN",
+      "kind": "calculation",
+      "locator": "checks/application/readout01/RUN.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_GEO01_RUN"
+      ]
+    },
+    {
+      "id": "E_GEO02_RUN",
+      "kind": "calculation",
+      "locator": "checks/application/readout02/RUN.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_GEO02_RUN"
+      ]
+    },
+    {
+      "id": "E_REVIEW",
+      "kind": "review",
+      "locator": "review/INDEPENDENT_REVIEW.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_REVIEW"
+      ]
+    },
+    {
+      "id": "E_REVIEW_PROSE",
+      "kind": "review",
+      "locator": "review/INDEPENDENT_REVIEW_KO.md",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_REVIEW_PROSE"
+      ]
+    },
+    {
+      "id": "E_AUDIT",
+      "kind": "calculation",
+      "locator": "checks/independent/run03/results/INDEPENDENT_FRACTION_AUDIT.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_AUDIT"
+      ]
+    },
+    {
+      "id": "E_AUDIT_RUN",
+      "kind": "calculation",
+      "locator": "checks/independent/run03/RUN.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_AUDIT_RUN"
+      ]
+    },
+    {
+      "id": "E_AUDIT01_RUN",
+      "kind": "calculation",
+      "locator": "checks/independent/run01/RUN.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_AUDIT01_RUN"
+      ]
+    },
+    {
+      "id": "E_AUDIT02_RUN",
+      "kind": "calculation",
+      "locator": "checks/independent/run02/RUN.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_AUDIT02_RUN"
+      ]
+    },
+    {
+      "id": "E_WOLFRAM",
+      "kind": "calculation",
+      "locator": "checks/wolfram/WOLFRAM_XACT_EXECUTION.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_WOLFRAM"
+      ]
+    },
+    {
+      "id": "E_WOLFRAM_GEOMETRY",
+      "kind": "calculation",
+      "locator": "checks/wolfram/HESSIAN_GEOMETRY_EXECUTION.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_WOLFRAM_GEOMETRY"
+      ]
+    },
+    {
+      "id": "E_DECISION",
+      "kind": "decision",
+      "locator": "review/DECISION.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_DECISION"
+      ]
+    },
+    {
+      "id": "E_NEXT",
+      "kind": "derivation",
+      "locator": "theory/HH_CONSUMER_SOURCE_RESPONSE_HANDOFF_KO.md",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_NEXT"
+      ]
+    },
+    {
+      "id": "E_NEXT_CONTRACT",
+      "kind": "artifact",
+      "locator": "contracts/NEXT_CONSUMER_CONTRACT.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_NEXT_CONTRACT"
+      ]
+    },
+    {
+      "id": "E_DAG",
+      "kind": "artifact",
+      "locator": "NEXT_DAG.json",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "dependency_ids": [
+        "D_DAG"
+      ]
+    },
+    {
+      "id": "E_REPORT",
+      "kind": "artifact",
+      "locator": "report/WU088_HH_PHYS19_THEORY_20261013.pdf",
+      "scope": "Artifact identity, current checkpoint or document content",
+      "dependency_ids": [
+        "D_REPORT"
+      ]
+    },
+    {
+      "id": "E_RESTORE",
+      "kind": "artifact",
+      "locator": "evidence/intake/RESTORATION_RECEIPT.json",
+      "scope": "Artifact identity, current checkpoint or document content",
+      "dependency_ids": [
+        "D_RESTORE"
+      ]
+    },
+    {
+      "id": "E_QA",
+      "kind": "review",
+      "locator": "report/qa/FINAL_QA_REPORT.json",
+      "scope": "Final13pagePDF visual layout",
+      "dependency_ids": [
+        "D_QA"
+      ]
+    },
+    {
+      "id": "E_BACKUP",
+      "kind": "storage",
+      "locator": "publication/BACKUP_ACK.json",
+      "scope": "Same immutable8,228,410-byte snapshot acknowledged by Google Drive and Dropbox; no complete remote restore",
+      "dependency_ids": [
+        "D_BACKUP"
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "id": "R1",
+      "status": "complete",
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_PARENT",
+        "E_PARENT_REMOTE",
+        "E_INPUTS"
+      ],
+      "dependency_ids": [
+        "D_CONTRACT",
+        "D_PARENT",
+        "D_PARENT_REMOTE",
+        "D_INPUTS"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "R2",
+      "status": "complete",
+      "evidence_refs": [
+        "E_LIT",
+        "E_LIT_PROVENANCE",
+        "E_INPUTS"
+      ],
+      "dependency_ids": [
+        "D_LIT",
+        "D_LIT_PROVENANCE",
+        "D_INPUTS"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "R3",
+      "status": "complete",
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_CLAIMS"
+      ],
+      "dependency_ids": [
+        "D_CONTRACT",
+        "D_CLAIMS"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "R4",
+      "status": "complete",
+      "evidence_refs": [
+        "E_THEORY",
+        "E_GEOMETRY"
+      ],
+      "dependency_ids": [
+        "D_THEORY",
+        "D_GEOMETRY"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "R5",
+      "status": "complete",
+      "evidence_refs": [
+        "E_THEORY",
+        "E_CODE"
+      ],
+      "dependency_ids": [
+        "D_THEORY",
+        "D_CODE"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "R6",
+      "status": "complete",
+      "evidence_refs": [
+        "E_REVIEW",
+        "E_AUDIT",
+        "E_WOLFRAM"
+      ],
+      "dependency_ids": [
+        "D_REVIEW",
+        "D_AUDIT",
+        "D_WOLFRAM"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "R7",
+      "status": "complete",
+      "evidence_refs": [
+        "E_MAIN",
+        "E_GEOMETRY",
+        "E_AUDIT"
+      ],
+      "dependency_ids": [
+        "D_MAIN",
+        "D_GEOMETRY",
+        "D_AUDIT"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "R8",
+      "status": "complete",
+      "evidence_refs": [
+        "E_DECISION",
+        "E_REVIEW"
+      ],
+      "dependency_ids": [
+        "D_DECISION",
+        "D_REVIEW"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "R9",
+      "status": "complete",
+      "evidence_refs": [
+        "E_REPORT",
+        "E_CODE",
+        "E_CLAIMS",
+        "E_QA"
+      ],
+      "dependency_ids": [
+        "D_REPORT",
+        "D_CODE",
+        "D_CLAIMS",
+        "D_QA"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "R10",
+      "status": "complete",
+      "evidence_refs": [
+        "E_NEXT",
+        "E_NEXT_CONTRACT",
+        "E_DAG",
+        "E_BACKUP"
+      ],
+      "dependency_ids": [
+        "D_NEXT",
+        "D_NEXT_CONTRACT",
+        "D_DAG",
+        "D_BACKUP"
+      ],
+      "reason": "Scoped scientific adoption, final report QA, concrete successor and actual draftPR/dual-provider acknowledgements complete.",
+      "reuse": null
+    },
+    {
+      "id": "C1",
+      "status": "complete",
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_INPUTS"
+      ],
+      "dependency_ids": [
+        "D_CONTRACT",
+        "D_INPUTS"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "C2",
+      "status": "complete",
+      "evidence_refs": [
+        "E_THEORY",
+        "E_CODE"
+      ],
+      "dependency_ids": [
+        "D_THEORY",
+        "D_CODE"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "C3",
+      "status": "complete",
+      "evidence_refs": [
+        "E_CODE",
+        "E_MAIN_PRE"
+      ],
+      "dependency_ids": [
+        "D_CODE",
+        "D_MAIN_PRE"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "C4",
+      "status": "complete",
+      "evidence_refs": [
+        "E_MAIN_PRE",
+        "E_MAIN_RUN"
+      ],
+      "dependency_ids": [
+        "D_MAIN_PRE",
+        "D_MAIN_RUN"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "C5",
+      "status": "complete",
+      "evidence_refs": [
+        "E_CODE",
+        "E_MAIN"
+      ],
+      "dependency_ids": [
+        "D_CODE",
+        "D_MAIN"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "C6",
+      "status": "complete",
+      "evidence_refs": [
+        "E_AUDIT",
+        "E_WOLFRAM"
+      ],
+      "dependency_ids": [
+        "D_AUDIT",
+        "D_WOLFRAM"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "C7",
+      "status": "complete",
+      "evidence_refs": [
+        "E_MAIN",
+        "E_GEOMETRY",
+        "E_REVIEW"
+      ],
+      "dependency_ids": [
+        "D_MAIN",
+        "D_GEOMETRY",
+        "D_REVIEW"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "C8",
+      "status": "complete",
+      "evidence_refs": [
+        "E_INPUTS",
+        "E_RESTORE",
+        "E_AUDIT"
+      ],
+      "dependency_ids": [
+        "D_INPUTS",
+        "D_RESTORE",
+        "D_AUDIT"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "C9",
+      "status": "complete",
+      "evidence_refs": [
+        "E_REVIEW",
+        "E_AUDIT"
+      ],
+      "dependency_ids": [
+        "D_REVIEW",
+        "D_AUDIT"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    },
+    {
+      "id": "C10",
+      "status": "complete",
+      "evidence_refs": [
+        "E_DECISION",
+        "E_NEXT_CONTRACT"
+      ],
+      "dependency_ids": [
+        "D_DECISION",
+        "D_NEXT_CONTRACT"
+      ],
+      "reason": "Completed with reused fixed inputs and linked new derivation/calculation evidence.",
+      "reuse": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "PHYS19_T1",
+      "statement": "Pure implicit derivatives, ordinary factor 2 and actual carried second-half response close with the inherited C2 Hessians.",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "basis": [
+        "derived",
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_THEORY",
+        "E_MAIN",
+        "E_REVIEW",
+        "E_WOLFRAM"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "PHYS19_T2",
+      "statement": "The seven ordered photon sectors and correlated endpoint forcing use the same Full inverse, retain all35 photon/guard slots, and close number/energy ledgers.",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "basis": [
+        "derived",
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_THEORY",
+        "E_MAIN",
+        "E_REVIEW",
+        "E_WOLFRAM"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "PHYS19_T3",
+      "statement": "The exact finite-temperature quotient transmits each forcing through the common Full temperature row and retains denominator feedback.",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "basis": [
+        "derived",
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_THEORY",
+        "E_MAIN",
+        "E_REVIEW",
+        "E_WOLFRAM"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "PHYS19_C1",
+      "statement": "F_lambda_lambda in [-4.510292217171e-14,-3.084478303660e-14] K and F_b_b in [-4.912098573204e-11,-4.450662359403e-11] K establish strict concavity on both coordinate axes.",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "evidence_refs": [
+        "E_MAIN",
+        "E_REVIEW"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "PHYS19_C2",
+      "statement": "The same-family full Hessian has strictly negative determinant and v=(1,-1/24) has strictly positive directional curvature; no stationary-point assertion is made.",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "evidence_refs": [
+        "E_GEOMETRY",
+        "E_REVIEW",
+        "E_WOLFRAM_GEOMETRY"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "PHYS19_C3",
+      "statement": "Bilinear corner interpolation has positive signed interior error and uniform absolute remainder <=6.145761081776e-12 K.",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "evidence_refs": [
+        "E_THEORY",
+        "E_MAIN",
+        "E_REVIEW",
+        "E_GEOMETRY"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "PHYS19_C4",
+      "statement": "Exact pure-midpoint correction has remainder <=2.892887673208e-13 K; specified finite-decimal coefficients give <=2.892887673216e-13 K.",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "evidence_refs": [
+        "E_THEORY",
+        "E_GEOMETRY",
+        "E_REVIEW"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED"
+    },
+    {
+      "id": "PHYS19_C5",
+      "statement": "Same-family corner consistency narrows F00; the deterministic coefficient-midpoint model retains a total uniform bound <=0.0001557338140092 K including coefficient resolution.",
+      "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
+      "basis": [
+        "derived",
+        "numerically checked"
+      ],
+      "evidence_refs": [
+        "E_GEOMETRY",
+        "E_REVIEW"
+      ],
+      "obligations": [],
+      "decision": "PROMOTE_SCOPED"
+    }
+  ],
+  "checks": [
+    {
+      "id": "K_MATH",
+      "domain": "math",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_THEORY",
+        "E_WOLFRAM",
+        "E_REVIEW"
+      ],
+      "execution_ref": "X_WOLFRAM",
+      "reason": "Independent proof and actual symbolic residuals."
+    },
+    {
+      "id": "K_NUMERIC",
+      "domain": "numerics",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_AUDIT",
+        "E_MAIN",
+        "E_GEOMETRY"
+      ],
+      "execution_ref": "X_AUDIT03",
+      "reason": "362 checks,2057 scalar comparisons,3174 outward displays."
+    },
+    {
+      "id": "K_PHYSICS",
+      "domain": "physics",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_THEORY",
+        "E_REVIEW"
+      ],
+      "execution_ref": null,
+      "reason": "Same family, constants, source units, carry and ledger; no source/closure change."
+    },
+    {
+      "id": "K_PACKAGING",
+      "domain": "packaging",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_RESTORE",
+        "E_INPUTS"
+      ],
+      "execution_ref": null,
+      "reason": "Four archives restore all23 identity-bound inputs in a new directory."
+    },
+    {
+      "id": "K_REPORT",
+      "domain": "packaging",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_QA",
+        "E_REPORT"
+      ],
+      "execution_ref": null,
+      "reason": "13-page PDF rendered and inspected; no layout/glyph issues remaining."
+    },
+    {
+      "id": "K_STORAGE",
+      "domain": "storage",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_BACKUP"
+      ],
+      "execution_ref": null,
+      "reason": "Both provider upload completions and server sizes match the local snapshot; local SHA256 recorded."
+    }
+  ],
+  "executions": [
+    {
+      "id": "X_MAIN",
+      "status": "completed",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS19_THEORY_20261013_v1/src/curvature_application.py",
+        "--parent15",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS15_THEORY_20261012_v1",
+        "--parent16",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS16_THEORY_20261013_v1",
+        "--parent17",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS17_THEORY_20261013_v1",
+        "--parent18",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS18_THEORY_20261013_v1",
+        "--output",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS19_THEORY_20261013_v1/checks/application/run01/results"
+      ],
+      "environment": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "platform": "Linux-6.18.44-x86_64-with-glibc2.39"
+      },
+      "evidence_refs": [
+        "E_MAIN_RUN"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.568606982997153,
+      "reason": "Completed bounded calculation from the linked actual execution evidence."
+    },
+    {
+      "id": "X_GEO01",
+      "status": "completed",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS19_THEORY_20261013_v1/src/curvature_geometry.py",
+        "--source",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS19_THEORY_20261013_v1/checks/application/run01/results/CURVATURE_RESULTS.json",
+        "--output",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS19_THEORY_20261013_v1/checks/application/readout01/results"
+      ],
+      "environment": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "platform": "Linux-6.18.44-x86_64-with-glibc2.39"
+      },
+      "evidence_refs": [
+        "E_GEO01_RUN"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.06421291900187498,
+      "reason": "Completed bounded calculation from the linked actual execution evidence."
+    },
+    {
+      "id": "X_GEO02",
+      "status": "completed",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS19_THEORY_20261013_v1/src/curvature_geometry.py",
+        "--source",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS19_THEORY_20261013_v1/checks/application/run01/results/CURVATURE_RESULTS.json",
+        "--mixed-source",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS18_THEORY_20261013_v1/checks/application/run02/results/MIXED_RESPONSE_RESULTS.json",
+        "--output",
+        "/workspace/scratch/61df56c29001/work/phys18/HH_PHYS19_THEORY_20261013_v1/checks/application/readout02/results"
+      ],
+      "environment": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "platform": "Linux-6.18.44-x86_64-with-glibc2.39"
+      },
+      "evidence_refs": [
+        "E_GEO02_RUN"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.04861675600113813,
+      "reason": "Completed bounded calculation from the linked actual execution evidence."
+    },
+    {
+      "id": "X_AUDIT01",
+      "status": "failed",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/61df56c29001/work/phys19_audit_new/run01/EXECUTED_CODE.py",
+        "--base",
+        "/workspace/scratch/61df56c29001/work/phys18",
+        "--output",
+        "/workspace/scratch/61df56c29001/work/phys19_audit_new/run01/results"
+      ],
+      "environment": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+        "implementation": "CPython",
+        "cwd": "/workspace/scratch/61df56c29001/work/phys19_audit_new"
+      },
+      "evidence_refs": [
+        "E_AUDIT01_RUN"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.21554959299828624,
+      "reason": "Checker-only normalization or variable shadowing corrected; producer immutable."
+    },
+    {
+      "id": "X_AUDIT02",
+      "status": "failed",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/61df56c29001/work/phys19_audit_new/run02/EXECUTED_CODE.py",
+        "--base",
+        "/workspace/scratch/61df56c29001/work/phys18",
+        "--output",
+        "/workspace/scratch/61df56c29001/work/phys19_audit_new/run02/results"
+      ],
+      "environment": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+        "implementation": "CPython",
+        "cwd": "/workspace/scratch/61df56c29001/work/phys19_audit_new"
+      },
+      "evidence_refs": [
+        "E_AUDIT02_RUN"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.8709564239979954,
+      "reason": "Checker-only normalization or variable shadowing corrected; producer immutable."
+    },
+    {
+      "id": "X_AUDIT03",
+      "status": "completed",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/61df56c29001/work/phys19_audit_new/run03/EXECUTED_CODE.py",
+        "--base",
+        "/workspace/scratch/61df56c29001/work/phys18",
+        "--output",
+        "/workspace/scratch/61df56c29001/work/phys19_audit_new/run03/results"
+      ],
+      "environment": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+        "implementation": "CPython",
+        "cwd": "/workspace/scratch/61df56c29001/work/phys19_audit_new"
+      },
+      "evidence_refs": [
+        "E_AUDIT_RUN"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.8698881699965568,
+      "reason": "Independent scoped audit completed."
+    },
+    {
+      "id": "X_WOLFRAM",
+      "status": "completed",
+      "command": [
+        "Wolfram evaluator",
+        "checks/wolfram/pure_curvature_checks.wl"
+      ],
+      "environment": {
+        "Wolfram": "15.0.1 Linux x86-64",
+        "xTensor": "1.3.0",
+        "xPerm": "1.2.4",
+        "canonicalizer": "Wolfram Language group backend, xpermQ=False"
+      },
+      "evidence_refs": [
+        "E_WOLFRAM"
+      ],
+      "exit_code": 0,
+      "exit_code_semantics": "adapter-equivalent success after literal evaluated outputs; no shell exit returned by remote evaluator",
+      "wall_seconds": 13.222,
+      "reason": "Completed bounded calculation from the linked actual execution evidence."
+    },
+    {
+      "id": "X_WOLFRAM_GEOMETRY",
+      "status": "completed",
+      "command": [
+        "Wolfram evaluator",
+        "checks/wolfram/hessian_geometry_checks.wl"
+      ],
+      "environment": {
+        "Wolfram": "15.0.1 Linux x86-64",
+        "xTensor": "1.3.0",
+        "xPerm": "1.2.4",
+        "canonicalizer": "Wolfram Language group backend, xpermQ=False"
+      },
+      "evidence_refs": [
+        "E_WOLFRAM_GEOMETRY"
+      ],
+      "exit_code": 0,
+      "exit_code_semantics": "adapter-equivalent success after literal evaluated outputs; no shell exit returned by remote evaluator",
+      "wall_seconds": 6.088,
+      "reason": "Completed bounded calculation from the linked actual execution evidence."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "ADOPT_PHYS19",
+      "decision": "PROMOTE_SCOPED",
+      "adopter": "/root",
+      "evidence_refs": [
+        "E_DECISION",
+        "E_REVIEW"
+      ],
+      "reason": "Actual new results adopted after independent proof and numerical audit."
+    },
+    {
+      "id": "CLOSE_R10",
+      "decision": "THEORY_AND_BOUNDED_CODING_LOOP_COMPLETE",
+      "evidence_refs": [
+        "E_BACKUP",
+        "E_QA",
+        "E_NEXT_CONTRACT",
+        "E_DECISION"
+      ],
+      "reason": "Actual scientific, report, preservation and resume obligations linked."
+    }
+  ],
+  "overrides": [],
+  "failures": [
+    {
+      "id": "CHECKER01",
+      "class": "implementation",
+      "execution_ref": "X_AUDIT01",
+      "evidence_refs": [
+        "E_AUDIT01_RUN",
+        "E_REVIEW"
+      ],
+      "next_action": "Closed by independent run03; normalization interpretation corrected in checker only."
+    },
+    {
+      "id": "CHECKER02",
+      "class": "implementation",
+      "execution_ref": "X_AUDIT02",
+      "evidence_refs": [
+        "E_AUDIT02_RUN",
+        "E_REVIEW"
+      ],
+      "next_action": "Closed by independent run03; checker variable shadowing corrected."
+    }
+  ],
+  "next_actions": [
+    {
+      "id": "NEXT_CONSUMER",
+      "stage": "successor",
+      "status": "not_run",
+      "node": "HH_DOMAIN_SCREEN",
+      "consumer_binding": "unverified",
+      "evidence_refs": [
+        "E_NEXT",
+        "E_NEXT_CONTRACT"
+      ],
+      "action": "PHYS20 targeted intake of one actual named rei_bianchi consumer interval, followed by existing HH_DOMAIN_SCREEN and instantaneous HH_MATERIALITY source-response table."
+    }
+  ],
+  "new_source_calls": 0,
+  "new_reaction_fits": 0,
+  "new_root_solves": 0,
+  "history_replays": 0,
+  "global_nodes_newly_completed": [],
+  "strong_no_go_claims": [],
+  "heavy_queue": [],
+  "launch": false,
+  "execution_counts": {
+    "main_attempts": 1,
+    "main_completed": 1,
+    "geometry_readouts": 2,
+    "independent_attempts": 3,
+    "independent_completed": 1,
+    "Wolfram_calls": 2,
+    "source_calls": 0,
+    "root_solves": 0,
+    "history_replays": 0
+  },
+  "literature_counts": {
+    "SciSpace_queries": 1,
+    "Exa_queries": 2,
+    "Exa_requested_candidates": 12,
+    "primary_fulltexts_read": 3
+  },
+  "delivery_status": "draft_pr_and_dual_backup_completed",
+  "updated_utc": "2026-10-13T01:40:03.607540+00:00",
+  "current_publication": {
+    "pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/54",
+    "science_commit": "d4061f091e27f4786edc2b22c5112902149eb9cf",
+    "science_tree": "edb195de1c5abd4e700e8b7f9f030594d3816ad3",
+    "receipt": "publication/PUBLICATION.json"
+  },
+  "workflow_structure_check": "state/WORKFLOW_STRUCTURE_CHECK.json"
+}

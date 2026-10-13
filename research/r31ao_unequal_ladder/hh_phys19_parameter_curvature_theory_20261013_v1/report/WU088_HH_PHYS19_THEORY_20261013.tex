@@ -1,0 +1,77 @@
+\input{preamble.tex}
+\begin{document}
+\begin{titlepage}
+\vspace*{14mm}
+{\sffamily\bfseries\color{MidnightBlue}\Large WU088\_HH / PHYS19\par}
+\vspace{8mm}
+{\huge\bfseries HH와 birth의 순수 곡률과\\[3mm]검증된 유한 응답\par}
+\vspace{7mm}
+{\large 같은 gas--photon 계열의 두 half-step 대 Full-step 온도 결함\par}
+\vspace{10mm}
+{\large 이론 연구 루프 · 2026년 10월 13일 UTC\par}
+\vspace{12mm}
+\noindent\textbf{이번 결과.}
+PHYS18에서 확립한 동일 계열의 혼합 응답에 두 순수 2차 응답을 결합했다.
+원 gas Hessian, 35개 photon slot, 단계별 carry와 검증된 Full 역연산자로
+전체 $(\lambda,b)\in[0,1]^2$에서
+\[
+F_{\lambda\lambda}\in[-4.510292217171,-3.084478303660]10^{-14}\ {\rm K},
+\]
+\[
+F_{bb}\in[-4.912098573204,-4.450662359403]10^{-11}\ {\rm K}
+\]
+를 얻었다. 여기서 $F=T_{\rm two\ half}-T_{\rm Full}$이다.
+두 축에서 각각 엄격한 오목성이 성립하며, 혼합 응답을 함께 쓰면
+Hessian은 전체 사각형에서 양·음 고유값을 하나씩 가진다.
+
+\vspace{4mm}
+\noindent 같은 계열의 네 corner로 만든 bilinear 보간 오차는
+$6.145761081776\times10^{-12}\ {\rm K}$ 이하이고,
+순수 곡률 중심 보정으로
+$2.892887673208\times10^{-13}\ {\rm K}$ 이하가 된다.
+이는 곡률에 의한 형상 재구성 오차다. 현재 계수 포함을 수치 중심값으로
+바꾼 모델의 전체 오차 예산은 본문에서 따로 계산한다.
+
+\vfill
+\noindent\small
+워크플로: physmath-research-loop 1.0.0, R1--R10 및 한정된 C1--C10 계산.
+SciSpace·Exa 원전 대조, 실제 Wolfram 15.0.1·xAct 1.3.0 검산,
+외향 구간 계산과 독립 검토를 결합했다.
+원 실행 기록·정확한 유리수 endpoint·소스·인계 계약은 함께 제공한 연구 묶음에 있다.
+\end{titlepage}
+
+\tableofcontents
+\newpage
+\input{results.tex}
+\input{derivation.tex}
+\input{finite_response.tex}
+\input{verification_and_next.tex}
+\begin{thebibliography}{9}
+\bibitem{SLN15}
+N. Safiran, J. Lotz, U. Naumann,
+\emph{Second-order Tangent Solvers for Systems of Parameterized Nonlinear Equations},
+Procedia Computer Science 51 (2015), 231--238.
+DOI: \href{https://doi.org/10.1016/j.procs.2015.05.232}{10.1016/j.procs.2015.05.232}.
+실제 대조: §4.2, Theorem 4.3, Eq. (7), pp.235--236.
+\href{https://publications.rwth-aachen.de/record/569704/files/569704.pdf}{저자 기관 PDF}.
+\bibitem{R99}
+S. M. Rump,
+\emph{Verified Solution of Large Linear and Nonlinear Systems},
+in Error Control and Adaptivity in Scientific Computing, Kluwer (1999), 279--298.
+실제 대조: §3, Lemma 3.1, Theorem 3.2, 저자 PDF pp.4--5.
+\href{https://www.tuhh.de/ti3/paper/rump/Ru99d.pdf}{저자 PDF}.
+\bibitem{MR09}
+B. Mößner, U. Reif,
+\emph{Error Bounds for Polynomial Tensor Product Interpolation},
+Computing 86 (2009), 185--197.
+DOI: \href{https://doi.org/10.1007/s00607-009-0062-7}{10.1007/s00607-009-0062-7}.
+실제 대조: 2009-03-18 저자 원고 §3, Theorem 3.1, PDF p.5.
+\href{https://www.mathematik.tu-darmstadt.de/media/mathematik/forschung/preprint/preprints/2580.pdf}{저자 원고}.
+\bibitem{PHYS18}
+WU088\_HH PHYS18, \emph{HH와 birth의 혼합 응답과 유한 상호작용},
+2026-10-13. 고정 기준 commit:
+\texttt{41fe51d5a40651e8cadbaa52554035b58a92490c}.
+\href{https://github.com/cosmosapjw-quantum/WU088_HH/pull/53}{Draft PR 53}.
+채택 계약: \texttt{contracts/ADOPTED\_CURVATURE\_CONTRACT.json}.
+\end{thebibliography}
+\end{document}
