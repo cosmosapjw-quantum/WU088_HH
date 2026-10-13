@@ -1,0 +1,324 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm,headheight=15pt]{geometry}
+\usepackage{fontspec,kotex}
+\setmainfont{Liberation Serif}\setsansfont{Liberation Sans}
+\setmainhangulfont{Noto Serif CJK KR}\setsanshangulfont{Noto Sans CJK KR}
+\usepackage{amsmath,amssymb,amsthm,bm,mathtools,booktabs,array,tabularx,longtable}
+\usepackage{xcolor,fancyhdr,hyperref,xurl}
+\definecolor{ink}{HTML}{18374A}
+\hypersetup{colorlinks=true,linkcolor=ink,urlcolor=ink,citecolor=ink,pdftitle={WU088 HH PHYS23: rate envelope and observable bounds},pdfauthor={WU088 HH research record}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\sffamily WU088\_HH / PHYS23}\fancyhead[R]{\small\sffamily 2026-10-13}\fancyfoot[C]{\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.17}\numberwithin{equation}{section}
+\newcommand{\dd}{\mathrm d}\newcommand{\HH}{\mathrm{HH}}\newcommand{\eV}{\mathrm{eV}}
+\newcommand{\R}{\mathbb R}\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\Ical}{\mathcal I}\newcommand{\titleblock}[2]{\vspace*{2mm}{\large\sffamily\color{ink}#1}\par\vspace{2mm}{\LARGE\bfseries #2}\par\vspace{3mm}}
+\begin{document}
+\titleblock{이론 연구 결과 · 동일 입력의 유한 비교}{HH 반응률 포락선과 온도·전자·Thomson 관측량}
+\textbf{결과.} PHYS22의 공통 해 영역과 gas--photon 비교행렬을 재사용하여, 유한 HH 응답을 \emph{실제로 누적된 반응 사건수}로 정규화하는 포함 정리를 증명했다. 문헌의 다섯 반응률 처방을 현재 온도 영역에서 비교하고, 실제 BASS 수신 소스의 광학깊이·생존확률·셀 확률 사상으로 전달했다. 고정 warm P01에서 다섯 처방의 포락선은 LCS91의
+\begin{equation}
+ 0.00995317788791\le k(T)/k_{\rm LCS}(T)\le1.09804144787671
+\end{equation}
+에 포함된다. 최댓값/최솟값은 약 110.32069이다. 포락선 안의 비음수 반응률은 같은 초기조건의 HH-OFF 해에 대해 $t_f=10^{11}\,\mathrm s$에서
+\begin{align}
+ \Delta T(t_f)&\in[-6.41025\times10^{-11},-5.55162\times10^{-13}]\,\mathrm K,\\
+ \Delta e(t_f)&\in[7.57301\times10^{-18},9.09516\times10^{-16}]\quad\text{electrons/H},\\
+ \Delta\tau(0)&\in[4.48234\times10^{-25},5.38331\times10^{-23}]
+\end{align}
+를 만족한다. $e=n_e/n_H$이고, $\tau$는 이 유한 구간 끝의 동일 observer tail을 쓰는 backward Thomson depth이다. 표시값은 외향 반올림이며 정확한 유리수 경계는 결과 JSON에 있다.
+
+\textbf{가정과 의미.} 대상은 gas 4개와 photon 2904개를 유지한 warm P01의 명시적 실수값 모델이다. LRS Bianchi I dust+$\Lambda$ test-field 배경, 초기 $T\simeq50000\,\mathrm K$, $z_i=5.807$, $s_i/H_i=10^{-3}$, HM12 primary source, Case A escape와 비경사 gas proper time을 유지했다. 기존 십진 상수는 정확한 실수, NPZ 초기값은 exact binary64 값으로 해석한다.
+
+다섯 처방의 포락선은 \textbf{문헌 처방 집합의 수치 포함}이다. 실제 단면적의 신뢰수준이나 측정 오차로 보정된 물리적 $k_\pm(T)$는 이번에 확보되지 않았다. 이 구분은 부호 정리나 명시한 처방 집합의 포함을 바꾸지 않는다.
+
+\begin{center}\begin{tabularx}{\linewidth}{@{}lX@{}}\toprule
+근거 축 & 이번 결과\\\midrule
+직접 유도 & 사건수 정규화 유한 비교, 부호 보존, 연속·표본 광학깊이와 셀 확률 경계\\
+CAS/수치 & Wolfram 60자리 Interval 비율 포함; xAct 포함 9개 잔차 0\\
+별도 계산 & Fraction 폐쇄·조건 검사 및 mpmath 직접 처방 검사 등 35개 통과\\
+수신 연결 & 실제 BASS 소스·계약을 읽은 연산자 수준 연결; 신규 native 실행 0\\
+남은 입력 & 측정·미시 이론으로 보정한 rate envelope, 과학적 HH 생략 예산\\\bottomrule
+\end{tabularx}\end{center}
+
+\newpage
+\section{반응 채널, 문헌 처방과 열역학 사상}
+\subsection*{1.1 동일 채널을 유지한 처방 비교}
+대상 반응은 $\mathrm H(1s)+\mathrm H(1s)\to\mathrm H+\mathrm H^++e^-$의 inherited effective ionization이다. $\mathrm H^++\mathrm H^-$ ion-pair 채널은 자유전자를 직접 생성하지 않으므로 이 표에 합치지 않는다. Glover의 일차 연구 \cite{glover} \S3.2.8, 식 (9)--(14)에 제시된 형태를 전사했다. $\vartheta=T/(1\,\mathrm K)$, $x_E=157800/\vartheta$, $\mu_e=m_e/m_H$로 쓰면 모든 $k$의 단위는 $\mathrm{cm^3\,s^{-1}}$이다.
+\begin{align}
+ k_{\rm LCS91}&=1.2\times10^{-17}\vartheta^{1.2}e^{-157800/\vartheta},\\
+ k_{\rm HM89}&=1.7\times10^{-14}\vartheta^{1/2}e^{-149000/\vartheta},\\
+ k_{\rm HM79}&=9.8\times10^{-15}\vartheta^{1/2}e^{-157800/\vartheta},\\
+ k_{\rm KS91/G15}&=4.65\times10^{-21}\vartheta^{3/2}e^{-157800/\vartheta},\\
+ k_{\rm D69/G15}&=1.57\times10^{-14}\vartheta^{1/2}
+ \frac{1+2/x_E}{1+(2\mu_e/x_E)^2}e^{-x_E}.
+\end{align}
+KS91/G15는 Glover가 threshold를 바로잡아 제시한 저에너지 표현이다. 현재 계산은 이 명시적 함수의 처방 비교로 채택한다. Barklem \cite{barklem}은 Soon의 에너지 프레임·threshold 및 Maxwell 적분 문제를 직접 조사했다. 이 근거 때문에 Soon의 별도 analytic rate를 측정된 정밀도 envelope로 취급하지 않았다.
+
+PHYS22가 포함한 온도 영역 $[49999.63846,50000.36154]\,\mathrm K$에서 Wolfram Interval로 함수 비율을 계산했다. D69에는 보수적인 $0\le\mu_e\le10^{-3}$를 사용했다. NIST의 전자/양성자 질량비는 약 $5.4462\times10^{-4}$이며 \cite{nist}, 선택 구간은 중성 H에 대한 비까지 포함한다.
+\begin{center}\begin{tabular}{@{}lll@{}}\toprule
+처방 & $k/k_{\rm LCS}$ 포함 & 해석\\\midrule
+LCS91 & $1$ & 기존 명목 기준\\
+HM89 & $[0.86780420507504,\,0.86781519874320]$ & 대안 처방\\
+HM79 & $[0.41953058574552,\,0.41953483270271]$ & 대안 처방\\
+KS91/G15 & $[0.00995317788791,\,0.00995322106945]$ & 명시한 저에너지 표현\\
+D69/G15 & $[1.09802373193989,\,1.09804144787671]$ & 질량비 범위도 포함\\\bottomrule
+\end{tabular}\end{center}
+\subsection*{1.2 Gas 좌표와 단위}
+\begin{gather}
+ g=(x,y,z,w),\quad f=3/38,\quad e=x+f(y+2z),\quad\Pi=1+f+e,\\
+ T=C_Tw/\Pi,\quad C_T=2\epsilon_{\eV}/(3k_B),\quad
+ \nu=(1,0,0,-\chi_H),\quad \chi_H=13.598434599702\,\eV.
+\end{gather}
+$w$는 eV/H이다. $\dot g_{\HH}=\nu q$, $q=n_H(1-x)^2k(T)$는 H 핵당 사건률이며 단위는 $\mathrm s^{-1}$이다. 기존 event-rate convention에 추가 $1/2$를 넣지 않았다. 따라서 $\dot e_{\HH}=q$, $\dot T_{\HH}=-(C_T\chi_H+T)q/\Pi$이다.
+
+\newpage
+\section{누적 사건수에 대한 유한 응답 포함 정리}
+\subsection*{2.1 가정 및 기존 비교행렬의 재사용}
+같은 초기조건, 외부 source와 기하를 공유하는 두 해를 비교한다. HH-OFF 해를 $(g_0,m_0)$, 새 반응률을 가진 해를 $(g_q,m_q)$라 한다.
+\begin{align}
+ \dot g_q&=a(g_q,t)+B(g_q,t)m_q+\nu q(g_q,t),\\
+ \dot m_q&=s(t)-K(g_q,t)m_q.
+\end{align}
+$K$는 비음수 대각행렬이고, $q=\alpha(g,t)q_0(g,t)$,
+$q_0=n_H(1-x)^2k_{\rm LCS}(T)$이다. $\alpha$는 공통 영역에서 비음수이고 상태에 국소 Lipschitz 연속이라고 가정한다. 시간은 연속 또는 적분 가능한 구간별 표현을 허용한다. 수치 비교에 사용한 함수는 모두 이 조건을 만족한다.
+
+PHYS22는 공통 영역 $\mathcal D$에서 gas Jacobian과 양방향 photon 결합의 성분별 절댓값 majorant $A^+,B^+,C^+$를 제공한다. 단위가 다른 좌표의 양의 scaling $S=\operatorname{diag}(1,1,1,32\,\eV)$에 대해
+\begin{equation}
+ P=t_fA^++\frac{t_f^2}{2}B^+C^+,\qquad
+ \|S^{-1}PS\|_\infty=0.03688471538571053<1.
+\end{equation}
+$P\ge0$이므로 $(I-P)^{-1}=\sum_{j\ge0}P^j\ge0$이다.
+
+새로운 최대 활성도를 $A_*=1.1$로 넓혔다. 이전 gas 적분 상계 $F_j^{\rm tube}$와 반경 $r_j$에 대해
+\begin{equation}
+ F_j^{\rm tube}+(A_*-1)t_f|\nu_j|q_0^+<r_j
+\end{equation}
+를 정확한 유리수로 확인했다. 네 좌표의 좌변/반경은
+각각 $0.0343041397720$, $0.0703552701778$, $0.0333327636737$, $0.6227211346123$이다.
+따라서 동일한 first-exit 논증으로 $0\le\alpha\le1.1$의 해가 $\mathcal D$에 머문다. 기본 원자 source·기하·광자 majorant를 다시 평가하지 않고, 바뀐 HH 항의 상계만 추가했다.
+
+\subsection*{2.2 정리와 증명}
+누적 사건수를
+\begin{equation}
+ \Ical(t)=\int_0^tq(g_q(s),s)\dd s\ge0,
+ \qquad Z=(I-P)^{-1}|\nu|,\qquad V=PZ
+\end{equation}
+로 정의한다. 그러면 모든 $0\le t\le t_f$에서
+\begin{equation}\boxed{
+ |g_q(t)-g_0(t)|\le Z\Ical(t),\qquad
+ g_q(t)-g_0(t)=\nu\Ical(t)+\varepsilon(t),\quad
+ |\varepsilon(t)|\le V\Ical(t)
+}\end{equation}
+가 성립한다. 부등식은 성분별이다.
+
+\emph{증명.} 정확한 광자 차이식은
+$\dot{\delta m}=-K(g_q)\delta m-[K(g_q)-K(g_0)]m_0$이다. 동일 $s(t)$는 차이에서 소거된다. 흡수 적분인자가 $[0,1]$에 있으므로
+$|\delta m(t)|\le\int_0^tC^+|\delta g(s)|\dd s$이다. 이를 gas 차이식에 넣고
+$d(t)=\sup_{s\le t}|\delta g(s)|$를 두면, $\Ical(s)\le\Ical(t)$ 및 $P(t)\le P$로부터
+$d(t)\le|\nu|\Ical(t)+Pd(t)$를 얻는다. 양의 역행렬을 곱하면 첫 포함이 나온다. 직접 HH 항을 뺀 gas 적분식의 나머지에 같은 majorant를 적용하면 $|\varepsilon|\le PZ\Ical(t)$이다. \hfill$\square$
+
+\newpage
+\section{부호 보존과 처방별 온도·전자 응답}
+\subsection*{3.1 사건수와 관측량 사이의 양의 계수}
+$\ell=(1,f,2f,0)$라 두고 $\zeta=\ell\cdot V$를 계산하면
+\begin{equation}
+ \zeta=0.03426165460392322888\ldots<1,
+ \qquad
+ \boxed{(1-\zeta)\Ical\le\Delta e\le(1+\zeta)\Ical}.
+\end{equation}
+이는 $q_0^-/q_0^+$ 또는 서로 다른 처방의 상대적 크기가 작더라도 유지된다. 직접 노출량과 feedback을 \emph{동일한 실제 $\Ical$}로 제한했기 때문이다. 양의 사건수가 누적되면 전자 증가의 부호가 고정된다.
+
+온도의 정확한 유한 quotient는
+\begin{equation}
+ \Delta T=\frac{C_T\Delta w-T_0\Delta e}{\Pi_q}.
+\end{equation}
+공통 영역의 $T_\pm,\Pi_\pm$와
+$E_T=C_TV_w+T_+\zeta$를 사용하면
+\begin{equation}
+ G_T^-:=\frac{C_T\chi_H+T_--E_T}{\Pi_+}>0,
+ \qquad
+ G_T^+:=\frac{C_T\chi_H+T_++E_T}{\Pi_-}
+\end{equation}
+및
+\begin{equation}\boxed{-G_T^+\Ical\le\Delta T\le-G_T^-\Ical}\end{equation}
+를 얻는다. 실제 계수는
+\begin{align}
+ 1-\zeta&=0.9657383453960767711\ldots,\\
+ 1+\zeta&=1.0342616546039232289\ldots,\\
+ G_T^-&=70796.35234679312\ldots\ \mathrm K,\quad
+ G_T^+=72894.51840865735\ldots\ \mathrm K.
+\end{align}
+$\Delta w=-\chi_H\Ical+\varepsilon_w$를 온도 분자에 대입하고,
+$|C_T\varepsilon_w-T_0\ell\varepsilon|\le E_T\Ical$를 적용하면 증명이 끝난다.
+
+\subsection*{3.2 반응률 경계의 유한 응답 전달}
+공통 영역에서 $b\le\alpha\le a$이면
+$bq_0^-t\le\Ical(t)\le aq_0^+t$이다. 저장된
+$q_0\in[7.87857,8.00868]\times10^{-27}\,\mathrm s^{-1}$와 결합한 끝점 포함은 다음과 같다. 표의 수치는 가독성을 위해 외향 반올림했다.
+\begin{center}\begin{tabular}{@{}lll@{}}\toprule
+처방 & $\Delta T(t_f)\ [\mathrm K]$ & $\Delta e(t_f)\ [\mathrm{electrons/H}]$\\\midrule
+LCS91 & $[-5.83789,-5.57774]\,10^{-11}$ & $[7.60863,8.28307]\,10^{-16}$\\
+HM89 & $[-5.06621,-4.84038]\,10^{-11}$ & $[6.60280,7.18818]\,10^{-16}$\\
+HM79 & $[-2.44920,-2.34003]\,10^{-11}$ & $[3.19205,3.47504]\,10^{-16}$\\
+KS91/G15 & $[-5.81058,-5.55162]\,10^{-13}$ & $[7.57301,8.24433]\,10^{-18}$\\
+D69/G15 & $[-6.41025,-6.12449]\,10^{-11}$ & $[8.35446,9.09516]\,10^{-16}$\\\bottomrule
+\end{tabular}\end{center}
+이 표는 매 처방을 각각 새로 시간 적분한 값이 아니라, 각 처방이 정의하는 유한 비선형 해에 대한 포함이다. 같은 하한·상한 사이의 locally Lipschitz 반응률 또는 상태 의존 혼합에도 포락선 결과가 적용된다.
+
+\newpage
+\section{실제 BASS 사상으로의 광학깊이·visibility 전달}
+\subsection*{4.1 수신 계약의 범위}
+BASS의 \texttt{visibility.rs} \cite{basssource}와 warm P01 수신 계약 \cite{basscontract}을 직접 읽었다. 수신 grid는 17개 proper/normal time edge와 16개 셀, $t_f=10^{11}\,\mathrm s$이다. proper density의 $\mathrm{cm^{-3}}\to\mathrm{m^{-3}}$ 변환은 한 번, material tilt는 0이며 rate는
+\begin{equation}
+ r(t)=c\sigma_T n_H(t)e(t),\qquad
+ c=29979245800\,\mathrm{cm/s},\quad\sigma_T=6.6524587\times10^{-25}\,\mathrm{cm^2}
+\end{equation}
+이다. 이 $\sigma_T$는 수신 코드의 고정 상수다. 일반 공통 material frame에서는 정규화한 ray $\ell^a=n^a+\hat e^a$에 대해 $r=c\sigma_Tn_HD e$, $D=-u_a\ell^a=\gamma(1-\boldsymbol\beta\cdot\boldsymbol e)$이며 이번 구간은 $D=1$이다. 이 부호는 계량 $(-,+,+,+)$와 미래방향 null ray를 사용한다.
+
+PHYS22와 수신 계약의 provider/background hash 및 analytic clock/density mapping을 연결했다. 이전 수신 dataset의 archive identity는 PHYS22와 다르다. 이번 결과는 현재 선언한 실수값 해를 \emph{동일한 수신 연산자}로 보내는 포함이며, 이전 수신 출력 전체의 bytes 동등성을 주장하지 않는다. 원 수신 실행의 prelaunch executable-hash 미기록은 기존 이력에 유지했다.
+
+\subsection*{4.2 연속 시간과 표본 사상의 공통 경계}
+같은 observer tail에 대해
+\begin{equation}
+ \Delta\tau(t)=\int_t^{t_f}\Delta r(s)\dd s,\qquad
+ Lt\le\Delta r(t)\le Ut,
+\end{equation}
+\begin{equation}
+ L=c\sigma_Tn_H^-(1-\zeta)bq_0^-,\qquad
+ U=c\sigma_Tn_H^+(1+\zeta)aq_0^+.
+\end{equation}
+따라서
+\begin{equation}\boxed{
+ \frac L2(t_f^2-t^2)\le\Delta\tau(t)\le\frac U2(t_f^2-t^2)
+}\end{equation}
+이다. BASS는 edge rate를 선형 보간하고 셀 평균 $(r_i+r_{i+1})/2$를 적분한다. 양의 사다리꼴 가중치가 선형 $t$를 정확히 적분하므로, \emph{exact-real 해를 그 grid에서 표본화한 사상}도 같은 edge 포함을 만족한다. 이 진술은 연속 사상과 표본 사상 각각의 ON/OFF 차이를 제한한다.
+
+다섯 처방 전체에 대해
+\begin{equation}
+ \Delta\tau(0)\in[4.48234\times10^{-25},5.38331\times10^{-23}].
+\end{equation}
+기준 실수값 사상의 depth는
+$\tau_0(0)\in[1.27997868124533,1.27998753502219]\times10^{-7}$에 포함된다. 원 수신 계약의 보존된 진단값 $1.2799831081953007\times10^{-7}$도 이 범위 안에 있다.
+
+생존확률 $S=e^{-\tau}$에는
+\begin{equation}
+ \Delta S=S_0\operatorname{expm1}(-\Delta\tau)\le0,
+ \qquad |\Delta S|\le1-e^{-\Delta\tau}\le\Delta\tau
+\end{equation}
+를 적용한다. 공통 양의 tail은 두 생존확률과 셀 확률에 같은 감쇠 인자를 곱하며 광학깊이 차이에서는 소거된다.
+
+\newpage
+\section{셀 확률과 실제 허용오차의 비교}
+\subsection*{5.1 작은 optical depth에서 안정적인 셀 차이}
+수신 셀 확률은 $p=e^{-\tau_R}(1-e^{-d})$이며 $d$는 그 셀의 optical depth이다. $\Delta d,\Delta\tau_R\ge0$에 대해 정확한 차이는
+\begin{align}
+ \Delta p=e^{-\tau_{R0}}\big[&(e^{-\Delta\tau_R}-1)(1-e^{-d_0})\nonumber\\
+ &+e^{-\Delta\tau_R-d_0}(1-e^{-\Delta d})\big].
+\end{align}
+두 항을 각각 \texttt{expm1}로 평가하면 큰 확률 두 개의 직접 뺄셈을 피할 수 있다. 부호가 다른 두 항에 절댓값을 적용하면
+\begin{equation}\boxed{|\Delta p_i|\le\Delta d_i+p_{i0}\Delta\tau_{i+1}}\end{equation}
+이다. 이는 기존 수신기의 양 끝점 survival error 합보다 현재 얇은 셀에서 직접적이다. 여기서는 새 native 구현이 아니라 이 정확한 사상과 부등식을 유도·검산했다.
+
+고정 grid의 $\Delta d_i\le U(t_{i+1}^2-t_i^2)/2$, $p_{i0}\le r_0^+\Delta t_i$를 사용했다. 상대오차의 양의 분모에는
+\begin{equation}
+ p_{i0}\ge(1-\tau_0^+)\left[r_0^-\Delta t_i-	frac12(r_0^-\Delta t_i)^2\right]>0
+\end{equation}
+라는 유리수 하계를 사용했다. $e^{-x}\ge1-x$ 및 $1-e^{-x}\ge x-x^2/2$에서 따르며, 이 구간에서는 괄호와 $1-\tau_0^+$가 양수다.
+
+\subsection*{5.2 수신자의 알고리즘 검증 기준과 비교}
+실제 계약은 rate/$n_e$에 $64\epsilon_{64}$, depth/양의 셀 질량에 $256\epsilon_{64}$ 상대 기준, survival에 $64\epsilon_{64}$ 절대 기준을 둔다. $\epsilon_{64}=2^{-52}$이다. 계약은 이를 부동소수점 검증 기준으로 명시한다 \cite{basscontract}.
+\begin{center}\begin{tabular}{@{}llll@{}}\toprule
+양 & HH 포락선 상계 & 기록된 기준 & 기준 대비\\\midrule
+rate 상대 & $8.41156\times10^{-16}$ & $1.42109\times10^{-14}$ & $5.9192\%$\\
+depth 상대 & $4.20578\times10^{-16}$ & $5.68435\times10^{-14}$ & $0.7399\%$\\
+survival 절대 & $5.38331\times10^{-23}$ & $1.42109\times10^{-14}$ & $3.7882\times10^{-9}$\\
+셀 확률 상대 & $8.14870\times10^{-16}$ & $5.68435\times10^{-14}$ & $1.4336\%$\\\bottomrule
+\end{tabular}\end{center}
+셀 확률 변화의 절댓값 상한은 $6.51885\times10^{-24}$이다. 따라서 문헌 처방 포락선의 기여가 \emph{이 수치 검증 scale보다 작음}을 계산으로 닫았다. 물리적 HH 생략에 할당된 오차 예산은 읽은 계약에 명시되어 있지 않아 \texttt{null}로 보존했다.
+
+반응률이 $0\le k/k_{\rm LCS}\le A$로 주어졌을 때, 같은 상계식에서 기록된 수치기준 네 가지를 모두 만족하는 충분조건은 $A\le18.55079$이다. 이것은 실제 반응률에 대한 관측 상한이 아니라, 공급된 반응률 경계를 수신 기준으로 변환하는 \emph{계산된 허용량}이다.
+
+\newpage
+\section{물리적 rate 입력과 과학 예산을 위한 계산식}
+\subsection*{6.1 실제 단면적 envelope가 제공될 때의 연결}
+단면적이 충돌의 centre-of-mass 상대에너지 $E$로 주어지고, 두 원자의 온도가 같으며 Maxwell 분포를 따른다면 $\mu=m_H/2$에 대해
+\begin{equation}
+ k(T)=\gamma_{\rm pair}\sqrt{\frac8{\pi\mu}}(k_BT)^{-3/2}
+ \int_{\chi_H}^{\infty}E\,\sigma(E)e^{-E/(k_BT)}\dd E.
+\end{equation}
+여기서 $E,\chi_H,k_BT$는 같은 에너지 단위이고, $\gamma_{\rm pair}$는 미시 자료의 사건 정의와 inherited $R=n_{\rm HI}^2k$를 맞추는 계수이다. 두 동일 원자의 \emph{unordered event} cross-section이면 $\gamma_{\rm pair}=1/2$이다. 현재 문헌 $k$에는 이미 선택된 rate convention이 들어 있으므로 그 값에 다시 $1/2$를 곱하지 않는다.
+
+$\sigma_-(E)\le\sigma(E)\le\sigma_+(E)$이면 적분핵의 양성으로 $k_-\le k\le k_+$가 바로 따른다. 에너지 bin $[E_1,E_2]$의 상수 단면적 경계에는
+\begin{align}
+ W(T;E_1,E_2)=\gamma_{\rm pair}\sqrt{\frac8{\pi\mu}}(k_BT)^{1/2}
+ \big[(1+x_1)e^{-x_1}-(1+x_2)e^{-x_2}\big],\quad x_i=E_i/(k_BT)
+\end{align}
+를 곱해 합하면 된다. 고에너지 tail은 별도의 양의 상계로 포함해야 한다. 이 연결은 미시 자료를 무엇부터 확보해야 하는지 정하며, 측정되지 않은 단면적을 만들어 넣지 않는다. 동일 질량 충돌에서 $E_{\rm lab}=2E_{\rm cm}$이므로 threshold 대응도 함께 확인한다 \cite{barklem}.
+
+현재 온도에서 $k_BT\simeq4.309\,\eV$이다. 이번 처방 차이의 물리적 해소에는 free-electron 채널의 threshold 부근 cross-section, spin/event multiplicity, 에너지 프레임, 적분 tail과 그 오차가 필요하다. 별도의 HH singlet ion-pair 연구는 자기 채널의 근거를 유지한다.
+
+\subsection*{6.2 예산에서 허용 반응률 크기로의 역방향 사상}
+온도·전자·광학깊이에 과학적으로 할당된 절대 예산 $\varepsilon_T,\varepsilon_e,\varepsilon_\tau>0$가 주어지면
+\begin{align}
+ A_{\rm allowed}<\min\left\{
+ A_{\rm box},\frac{\varepsilon_T}{G_T^+q_0^+t_f},
+ \frac{\varepsilon_e}{(1+\zeta)q_0^+t_f},
+ \frac{2\varepsilon_\tau}{c\sigma_Tn_H^+(1+\zeta)q_0^+t_f^2}
+ \right\}
+\end{align}
+가 충분조건이다. 경계 등호를 쓰려면 first-exit 부등식의 엄격성을 별도로 유지한다. 이번 상계식이 주는 $A_{\rm box}\simeq1.2058\times10^8$은 같은 수학 모델의 box 충분조건이다. 큰 $A$가 실제 원자물리와 부합한다는 의미는 부여하지 않는다.
+
+이 루프는 명목 유한 응답을 재실행하는 대신, $k$의 상태 의존성을 포함하는 충분조건과 실제 수신 연산자까지의 경계를 완성했다. 물리적 envelope와 과학 예산이 도착하면 해당 수치만 이 식에 연결하면 된다.
+
+\newpage
+\section{검증, 근거 계보와 다음 연구 단위}
+\subsection*{7.1 실제 실행 및 실패 기록}
+Wolfram cloud의 \texttt{15.0.1} kernel에서 60자리 \texttt{Interval}로 비율을 포함했다. 공식 문서의 외향 반올림 의미론을 사용하고 \cite{wolfram}, $10^{-14}$ 격자의 정확한 유리수 끝점을 추출했다. 비교행렬과 응답 사상은 정확한 유리수 계산이다.
+
+공식 xAct 1.3.0 archive의 SHA-256을 검사하고 xTensor를 실제 로드했다. 공변 전류 차이·ray opacity 차이·누적 source 분해의 tensor 잔차 3개, 온도 quotient·시간 적분·셀 확률·공통 tail의 scalar 잔차 6개가 모두 정확히 0이었다. xPerm 외부 연결 메시지는 로딩 시 나타났으며, 실제 canonicalization에는 \texttt{\$xpermQ=False}가 적용되었다.
+
+별도 Python \texttt{Fraction}의 Gaussian elimination, 부호·영역·광학깊이·표본 사상 검사, mpmath 85자리 직접 처방 평가와 얇은/보통/두꺼운 셀 control을 합해 35개 검사가 통과했다. 처방 평가 330개 점은 별도 수치 대조이며 Wolfram의 전체 영역 포함과 구별했다. 독립성은 같은 assistant의 다른 CAS·산술 경로이며 외부 심사자 참여는 없다.
+
+첫 긴 Wolfram 요청은 마지막 scalar 검산 표현의 괄호 문법 오류로 평가가 시작되지 않았다. 수치 계산과 symbolic 검산을 분리한 요청이 성공했다. Wolfram의 \texttt{Tbox} 경고와 PDF screenshot cache 실패도 기록했다. 후자는 문헌의 파싱된 본문만 사용한 상태로 보존했다. 기존 PHYS22의 성공한 전체 interval 실행은 반복하지 않았다.
+
+\subsection*{7.2 산출물과 상태}
+\begin{center}\begin{tabularx}{\linewidth}{@{}lX@{}}\toprule
+파일 & 내용\\\midrule
+\path{results/EXPOSURE_CONE.json} & 정확한 $Z,V,\zeta,G_T^\pm$, 처방별 유한 응답과 수신 경계\\
+\path{results/RATE_RESPONSE_TABLE.csv} & 처방별 온도·전자·depth 표\\
+\path{results/EDGE_BOUNDS.csv}, \path{CELL_BOUNDS.csv} & 수신 17 edge·16 cell 경계\\
+\path{checks/compute_and_check.py} & 실행 가능한 정확한 유리수 폐쇄 및 별도 수치 검산\\
+\path{wolfram/} & 실제 평가 요청의 코드와 관찰된 응답 필드\\
+\path{inputs/PHYS22_RESEARCH_BUNDLE.zip} & 원 입력·기존 증명·majorant를 포함한 변경 없는 조상 묶음\\\bottomrule
+\end{tabularx}\end{center}
+채택 범위는 \texttt{EXPOSURE\_CONE + PRESCRIPTION\_HULL + RECEIVER\_OPERATOR\_BOUND}이다. 실물 rate coverage와 과학적 생략 예산은 별도 미완료 입력이다. 새 baseline/tangent ODE, native HH activation, HPC 실행은 모두 0회다.
+
+다음 단위는 \textbf{PHYS24: channel-resolved cross-section envelope 또는 실제 science budget의 수신}이다. 입력 자료가 제공되기 전에도 위 양의 Maxwell kernel을 사용한 bin별 충분조건과 정규화 검사를 준비할 수 있다. 현재 명목 응답·처방 표·동일 xAct 검산의 변경 없는 재실행은 기본 다음 작업에서 제외한다.
+
+\newpage
+\section*{참고문헌과 immutable source 식별}
+\begin{thebibliography}{9}
+\bibitem{glover} S. C. O. Glover, \emph{Simulating the formation of massive seed black holes in the early Universe. II. Impact of rate coefficient uncertainties}, MNRAS \textbf{453}, 2901--2918 (2015). DOI: 10.1093/mnras/stv1781. 본 연구는 \S3.2.8, 식 (9)--(14)를 읽었다.\newline
+\url{https://academic.oup.com/mnras/article/453/3/2901/1079636}
+\bibitem{barklem} P. S. Barklem, \emph{Non-LTE Balmer line formation in late-type spectra: effects of atomic processes involving hydrogen atoms}, A\&A \textbf{466}, 327--337 (2007). DOI: 10.1051/0004-6361:20066686. arXiv:astro-ph/0702222, 특히 원고 pp.4--5의 threshold 및 적분 비교.\newline
+\url{https://arxiv.org/abs/astro-ph/0702222}
+\bibitem{nist} NIST, 2022 CODATA, electron--proton mass ratio. 본 계산은 정밀 질량 fit 대신 보수적 범위 $0\le m_e/m_H\le10^{-3}$를 사용한다.\newline
+\url{https://physics.nist.gov/cgi-bin/cuu/Value?mesmp}
+\bibitem{wolfram} Wolfram Language, \emph{Interval}, 공식 문서.\newline
+\url{https://reference.wolfram.com/language/ref/Interval.html}
+\bibitem{basssource} BASS, \texttt{visibility.rs}, source commit
+\texttt{41fa2d5f6874a6d9eb1a151ff83b2d56f1d2fd25}.\newline
+\url{https://github.com/cosmosapjw-quantum/bass/blob/41fa2d5f6874a6d9eb1a151ff83b2d56f1d2fd25/_rustcore/src/microphysics/visibility.rs}
+\bibitem{basscontract} BASS warm P01 contract, evidence commit
+\texttt{d520c5e47ebf5cf218351082430ae3ef5e1ab3ec}.\newline
+\url{https://github.com/cosmosapjw-quantum/bass/blob/d520c5e47ebf5cf218351082430ae3ef5e1ab3ec/research/warm_p01_bass_history_20261011/CONTRACT.json}
+\end{thebibliography}
+\textbf{조상 결과 식별.} PHYS22 science commit은
+\texttt{0f976b842fbf847a6c94a0c16a487077e4a26b17}이며, 현재 읽은 branch의 administrative head는
+\texttt{d835dc766f67269e516ad35ca14fc8ff0ac6a2b4}이다. 재사용한 interval JSON의 SHA-256은
+\path{9b6b44acee637ac8adde1ca114e258c38747d48b3a750146614742786d8444ed}이다.
+
+\textbf{자료 검색과 검토.} SciSpace와 Exa를 실제 사용해 채널·에너지 영역을 확인했다. 최근 연도까지의 표적 검색에서 확보한 자료는 위 처방 비교와 threshold 검토를 뒷받침한다. 전체 원자 충돌 문헌에 대한 완전성이나 다섯 처방의 물리적 coverage는 주장하지 않는다. 고에너지 excitation/ionization 자료, electron-impact 자료, H$^+$+H$^-$ ion-pair 및 excited-state associative ionization은 각각 별도 채널로 분리했다.
+
+\textbf{원격 보존.} 원격 commit과 provider ACK는 이 PDF를 재귀적으로 수정하지 않는 외부 delivery receipt에 기록한다. 로컬 파일 해시, Git tree, 업로드 성공, 실제 복원과 과학적 검증을 구분한다.
+\end{document}

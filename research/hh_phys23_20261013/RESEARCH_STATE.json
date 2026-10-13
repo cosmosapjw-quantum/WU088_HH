@@ -1,0 +1,43 @@
+{
+  "schema": "WU088_HH_PHYS23_STATE_V1",
+  "unit": "PHYS23_HH_RATE_ENVELOPE_TO_OBSERVABLE_BUDGET",
+  "date": "2026-10-13",
+  "decision": "promote_for_specified_use",
+  "adopted_scope": "derived exposure-normalised finite-response cone; interval bounds for five explicitly declared literature prescriptions; analytic transfer to exact-real BASS sampled visibility operator",
+  "claim_support": [
+    "derived",
+    "literature-supported",
+    "numerically-checked"
+  ],
+  "claim_tests": {
+    "exposure_cone_and_receiver_exact_calculation": "PASS_35_CHECKS",
+    "Wolfram_interval_rates": "PASS",
+    "xAct_scalar_identities": "PASS_9_ZERO_RESIDUALS",
+    "native_HH_execution": "NOT_RUN",
+    "physical_rate_coverage": "UNRESOLVED",
+    "science_omission_budget": "UNRESOLVED"
+  },
+  "predecessor": {
+    "science_commit": "0f976b842fbf847a6c94a0c16a487077e4a26b17",
+    "administrative_head": "d835dc766f67269e516ad35ca14fc8ff0ac6a2b4",
+    "result_sha256": "9b6b44acee637ac8adde1ca114e258c38747d48b3a750146614742786d8444ed",
+    "reuse": "direct majorants and exact-real input contract; re-proved larger-amplitude tube algebraically"
+  },
+  "R1": "Read PHYS22 handoff; keep same warm P01 real IVP, finite amplitude, gas4/photon2904",
+  "R2": "SciSpace/Exa discovery; Glover equations9-14 and Barklem threshold text read; actual BASS contract/source read",
+  "R3": "Prescribed rate family separated from physically calibrated confidence envelope; numerical receiver tolerance separated from science budget",
+  "R4": "Choose cumulative actual reaction exposure as comparison normalisation to retain signs despite wide rate ratio range",
+  "R5": "Prove Z,V exposure enclosure, positive electron and negative temperature responses, depth and stable cell bounds, inverse budget formula",
+  "R6": "Sign, zero source, component dimensions, common ray/tail, threshold/frame/normalisation, same-assistant Fraction and high-precision separate checks",
+  "R7": "Observed Wolfram interval and xAct executions; Fraction35 tests; actual compiler and layout inspection",
+  "R8": "Accept exact-real prescription-hull/operator claim; hold only physically calibrated envelope and unspecified scientific omission decision",
+  "R9": "Nine-page LaTeX report and reproducible code, rational results, per-edge/cell CSV outputs",
+  "R10": "Freeze archive and manifest, retain failure/provenance distinctions, PHYS24 concrete handoff",
+  "new_baseline_ode_runs": 0,
+  "new_tangent_ode_runs": 0,
+  "new_native_receiver_runs": 0,
+  "new_atomic_fits": 0,
+  "HPC_jobs": 0,
+  "external_independent_reviewer": false,
+  "next": "PHYS24_CHANNEL_ENVELOPE_OR_SCIENCE_BUDGET_INPUT"
+}
