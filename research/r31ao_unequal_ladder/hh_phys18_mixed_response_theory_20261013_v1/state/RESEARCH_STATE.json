@@ -5,7 +5,7 @@
   "unit_id": "HH_PHYS18_THEORY_20261013_v1",
   "objective": "Close actual C2 mixed HH/birth endpoint and finite-temperature response, with quantitative finite interaction and a concrete pure-curvature successor.",
   "scope": "HH_DEFECT_MIXED_RESPONSE on each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family, same COMMON and global lambda,b in [0,1]^2, actual ordinary mixed endpoint defect and finite DeltaT.",
-  "status": "in_progress",
+  "status": "complete",
   "dependencies": [
     {
       "id": "D_INPUT_PHYS15_THEORY",
@@ -930,6 +930,17 @@
         "bytes": 1143,
         "sha256": "113a715a5cc888f9a15b766a68e192688b37c6a07acbb3393f520f0268b9faf5"
       }
+    },
+    {
+      "id": "D_BACKUP_ACK",
+      "identity": "sha256:04c57cef987af2f7fe2471fb440871bba7ceeeff00231eb3eb5e8c0f9a68767e;bytes:5514",
+      "description": "Actual science commit/tree and 142 expected Git object checks, draft PR 53, and completed Google Drive/Dropbox uploads with metadata-size matches. Local archive SHA-256 is verified; no provider-side SHA-256 or remote restore is claimed.",
+      "artifact_identity": {
+        "root": "HH_PHYS18_THEORY_20261013_v1",
+        "path": "publication/BACKUP_ACK.json",
+        "bytes": 5514,
+        "sha256": "04c57cef987af2f7fe2471fb440871bba7ceeeff00231eb3eb5e8c0f9a68767e"
+      }
     }
   ],
   "evidence": [
@@ -1772,6 +1783,18 @@
         "D_REPORT_FONT_ARG_FIX"
       ],
       "relation": "supports"
+    },
+    {
+      "id": "E_BACKUP_ACK",
+      "kind": "storage",
+      "locator": "publication/BACKUP_ACK.json",
+      "scope": "Actual science commit/tree and 142 expected Git object checks, draft PR 53, and completed Google Drive/Dropbox uploads with metadata-size matches. Local archive SHA-256 is verified; no provider-side SHA-256 or remote restore is claimed.",
+      "dependency_ids": [
+        "D_BACKUP_ACK"
+      ],
+      "relation": "supports",
+      "sha256": "04c57cef987af2f7fe2471fb440871bba7ceeeff00231eb3eb5e8c0f9a68767e",
+      "bytes": 5514
     }
   ],
   "stages": [
@@ -1962,7 +1985,7 @@
     },
     {
       "id": "R10",
-      "status": "in_progress",
+      "status": "complete",
       "evidence_refs": [
         "E_DECISION",
         "E_NEXT_PROPOSAL",
@@ -1973,7 +1996,8 @@
         "E_REPORT_PDF",
         "E_REPORT_BUILD",
         "E_REPORT_QA",
-        "E_REPORT_RENDER"
+        "E_REPORT_RENDER",
+        "E_BACKUP_ACK"
       ],
       "dependency_ids": [
         "D_DECISION",
@@ -1981,9 +2005,10 @@
         "D_NEXT_CONTRACT",
         "D_NEXT_DAG_ROOT",
         "D_HANDOFF_KO",
-        "D_DEPENDENCIES"
+        "D_DEPENDENCIES",
+        "D_BACKUP_ACK"
       ],
-      "reason": "Science,21-page PDF QA and handoff complete; actual Git/draft PR and dual-provider ACK closeout pending.",
+      "reason": "Final 21-page PDF QA, complete handoff and pure-curvature successor, verified science Git objects/draft PR, and actual dual-provider acknowledgements are linked. Pure-curvature application remains not_run; user file presentation follows separately.",
       "reuse": null
     }
   ],
@@ -2342,12 +2367,15 @@
     {
       "id": "K_BACKUP",
       "domain": "storage",
-      "result": "not_run",
+      "result": "pass_scoped",
       "evidence_refs": [
-        "E_DEPENDENCIES"
+        "E_BACKUP_ACK",
+        "E_DEPENDENCIES",
+        "E_REPORT_PDF",
+        "E_HANDOFF_KO"
       ],
       "execution_ref": null,
-      "reason": "Actual new science commit and dual-provider acknowledgements pending."
+      "reason": "Actual Git object identity/size checks and completed provider uploads with metadata-size matches; no remote restore or scientific rerun claimed."
     },
     {
       "id": "K_PDF_QA",
@@ -2597,6 +2625,16 @@
         "E_REVIEW"
       ],
       "reason": "Frozen mixed response adopted after independent science review."
+    },
+    {
+      "id": "CLOSE_R10",
+      "decision": "THEORY_R1_R10_COMPLETE",
+      "evidence_refs": [
+        "E_BACKUP_ACK",
+        "E_REPORT_QA",
+        "E_NEXT_CONTRACT"
+      ],
+      "reason": "Current-loop scientific and delivery obligations have actual linked evidence; HH_DEFECT_PARAMETER_CURVATURE remains the next research unit."
     }
   ],
   "overrides": [],
@@ -2675,16 +2713,6 @@
         "E_NEXT_PREFLIGHT"
       ],
       "action": "Implement and evaluate both pure responses and finite bilinear remainder under C1-C20."
-    },
-    {
-      "id": "CLOSE_DELIVERY",
-      "stage": "R10",
-      "status": "in_progress",
-      "evidence_refs": [
-        "E_DEPENDENCIES",
-        "E_HANDOFF_KO"
-      ],
-      "action": "Bind final PDF QA, actual Git objects/draft PR and dual-provider acknowledgements, then close only metadata."
     }
   ],
   "family_scope": {
@@ -2727,7 +2755,7 @@
     "partial_derivative_meaning": "Differentiate the actual same-family endpoint defect twice, once in global lambda and once in global b, retaining both state feedbacks and all same-parameter photon carry.",
     "mixed_observable": "I=DeltaT(1,1)-DeltaT(1,0)-DeltaT(0,1)+DeltaT(0,0)"
   },
-  "updated_utc": "2026-10-13T00:10:46.685149+00:00",
+  "updated_utc": "2026-10-13T00:14:42.498425+00:00",
   "scientific_status": "PROMOTE_SCOPED",
   "heavy_queue": [],
   "launch": false,
@@ -2759,7 +2787,7 @@
     "previous_P17_premises_reused": true,
     "raw_search_and_full_papers_public": false
   },
-  "delivery_status": "science_complete_publication_pending",
+  "delivery_status": "GIT_SCIENCE_OBJECTS_AND_CURRENT_DUAL_PROVIDER_ACKNOWLEDGEMENTS_VERIFIED",
   "execution_counts": {
     "physical_source_calls": 0,
     "nonlinear_physical_root_solves": 0,
