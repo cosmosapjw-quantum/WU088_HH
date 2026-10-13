@@ -1,5 +1,8 @@
 # WU088_HH — PHYS19 pure parameter curvature
 
+[PHYS19 draft PR54](https://github.com/cosmosapjw-quantum/WU088_HH/pull/54) · [완료된 게시·백업 영수증](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/publication/PUBLICATION.json)
+
+
 PHYS19 completes the stored-input pure-curvature application for the same-COMMON two-half minus Full temperature defect. The result is adopted as **PROMOTE_SCOPED**, with independent scientific review **pass_scoped**. PHYS19 is the current accepted theory and scientific baseline.
 
 The two ordinary second derivatives are **F_lambda_lambda in [-4.510292217171e-14, -3.084478303660e-14] K** and **F_b_b in [-4.912098573204e-11, -4.450662359403e-11] K**. Both coordinate responses are strictly concave. Combined with the inherited negative mixed response, the Hessian is strictly indefinite: the fixed direction (1,-1/24) has positive curvature while the lambda axis has negative curvature.

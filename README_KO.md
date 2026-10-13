@@ -1,5 +1,8 @@
 # WU088_HH 현재 결과: PHYS19 순수 매개변수 곡률
 
+[PHYS19 draft PR54](https://github.com/cosmosapjw-quantum/WU088_HH/pull/54) · [완료된 게시·백업 영수증](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/publication/PUBLICATION.json)
+
+
 같은 COMMON에서 출발한 two-half minus Full 온도 결함의 순수 곡률 application을 원 저장 입력으로 완료했다. 독립 과학 검토 **pass_scoped**를 거쳐 **PROMOTE_SCOPED**로 채택했다. 현재 채택 이론과 과학 기준점은 PHYS19다.
 
 보통 두 번째 도함수는 **F_lambda_lambda ∈ [-4.510292217171e-14, -3.084478303660e-14] K**, **F_b_b ∈ [-4.912098573204e-11, -4.450662359403e-11] K**다. 두 좌표축 응답은 모두 엄격히 오목하다. 확립된 음의 mixed response를 결합하면 Hessian은 indefinite이며, 고정 방향 (1,-1/24)에서는 양의 곡률, lambda축에서는 음의 곡률을 갖는다.

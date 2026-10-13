@@ -5,7 +5,7 @@
   "unit_id": "HH_PHYS19_THEORY_20261013_v1",
   "objective": "Close actual pure parameter curvatures, full Hessian geometry and finite bilinear response, then hand off a concrete consumer source-response question.",
   "scope": "Each fixed admissible alpha of the inherited source-aligned geometric-isotropic C2 family; same COMMON; shared lambda,b in [0,1]^2; actual ordinary pure derivatives of the two-half minus Full finite temperature defect.",
-  "status": "in_progress",
+  "status": "complete",
   "scientific_status": "PROMOTE_SCOPED",
   "dependencies": [
     {
@@ -302,6 +302,11 @@
       "id": "D_QA",
       "identity": "sha256:6d211513d694955e71d30f52e47c3b5d37af07acf6cec0c5ec5d4b138b03724f;bytes:3241",
       "description": "Final PDF layout confirmation"
+    },
+    {
+      "id": "D_BACKUP",
+      "identity": "sha256:ae48c22c5dbd27221f0a0d06b395a838a1b32094068bda2acf0d7e5d9827dae3;bytes:1536",
+      "description": "Both completed provider acknowledgements and matching server sizes"
     }
   ],
   "evidence": [
@@ -574,6 +579,15 @@
       "dependency_ids": [
         "D_QA"
       ]
+    },
+    {
+      "id": "E_BACKUP",
+      "kind": "storage",
+      "locator": "publication/BACKUP_ACK.json",
+      "scope": "Same immutable8,228,410-byte snapshot acknowledged by Google Drive and Dropbox; no complete remote restore",
+      "dependency_ids": [
+        "D_BACKUP"
+      ]
     }
   ],
   "stages": [
@@ -719,18 +733,20 @@
     },
     {
       "id": "R10",
-      "status": "in_progress",
+      "status": "complete",
       "evidence_refs": [
         "E_NEXT",
         "E_NEXT_CONTRACT",
-        "E_DAG"
+        "E_DAG",
+        "E_BACKUP"
       ],
       "dependency_ids": [
         "D_NEXT",
         "D_NEXT_CONTRACT",
-        "D_DAG"
+        "D_DAG",
+        "D_BACKUP"
       ],
-      "reason": "Scientific obligation closed by linked actual evidence; R10 delivery acknowledgements pending.",
+      "reason": "Scoped scientific adoption, final report QA, concrete successor and actual draftPR/dual-provider acknowledgements complete.",
       "reuse": null
     },
     {
@@ -1068,6 +1084,16 @@
       ],
       "execution_ref": null,
       "reason": "13-page PDF rendered and inspected; no layout/glyph issues remaining."
+    },
+    {
+      "id": "K_STORAGE",
+      "domain": "storage",
+      "result": "pass_scoped",
+      "evidence_refs": [
+        "E_BACKUP"
+      ],
+      "execution_ref": null,
+      "reason": "Both provider upload completions and server sizes match the local snapshot; local SHA256 recorded."
     }
   ],
   "executions": [
@@ -1276,6 +1302,17 @@
         "E_REVIEW"
       ],
       "reason": "Actual new results adopted after independent proof and numerical audit."
+    },
+    {
+      "id": "CLOSE_R10",
+      "decision": "THEORY_AND_BOUNDED_CODING_LOOP_COMPLETE",
+      "evidence_refs": [
+        "E_BACKUP",
+        "E_QA",
+        "E_NEXT_CONTRACT",
+        "E_DECISION"
+      ],
+      "reason": "Actual scientific, report, preservation and resume obligations linked."
     }
   ],
   "overrides": [],
@@ -1340,6 +1377,13 @@
     "Exa_requested_candidates": 12,
     "primary_fulltexts_read": 3
   },
-  "delivery_status": "in_progress",
-  "updated_utc": "2026-10-13T01:26:30.915775+00:00"
+  "delivery_status": "draft_pr_and_dual_backup_completed",
+  "updated_utc": "2026-10-13T01:40:03.607540+00:00",
+  "current_publication": {
+    "pr": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/54",
+    "science_commit": "d4061f091e27f4786edc2b22c5112902149eb9cf",
+    "science_tree": "edb195de1c5abd4e700e8b7f9f030594d3816ad3",
+    "receipt": "publication/PUBLICATION.json"
+  },
+  "workflow_structure_check": "state/WORKFLOW_STRUCTURE_CHECK.json"
 }

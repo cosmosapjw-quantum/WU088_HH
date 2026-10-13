@@ -1,5 +1,8 @@
 # PHYS19 handoff — pure curvature application complete
 
+[PHYS19 draft PR54](https://github.com/cosmosapjw-quantum/WU088_HH/pull/54) · [완료된 게시·백업 영수증](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/publication/PUBLICATION.json)
+
+
 Read research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/checks/application/run01/results/CURVATURE_RESULTS.json and the current research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/checks/application/readout02/results/CURVATURE_GEOMETRY.json, then the PHYS19 review record and NEXT_DAG. The application is completed and adopted as PROMOTE_SCOPED. Independent scientific review is pass_scoped: 362 checks passed, 265 interval comparisons covered 2,057 scalar enclosures, and 3,174 outward decimal intervals and 23 contract bindings were validated. PHYS19 is the current accepted theory and scientific baseline.
 
 PHYS19 has generated the first-half, Full and carried second-half pure gas/photon responses, keeping ordinary second derivatives and each product-rule factor 2. Direct, correlated and separately generated endpoint inclusions supply F_lambda_lambda in [-4.510292217171e-14,-3.084478303660e-14] K and F_b_b in [-4.912098573204e-11,-4.450662359403e-11] K. The original C2 source, fixed Full inverse and 35 photon/guard slots remain the input basis.

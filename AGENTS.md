@@ -8,7 +8,7 @@ Next perform PHYS20 targeted intake: identify and bind an actual named rei_bianc
 
 Use the current physmath-research-loop 1.0.0 THEORY R1-R10 workflow. The original fixed-alpha C2 source family, COMMON, global lambda,b, Full C/B/q/S and all 35 photon/guard slots retain their meaning. The original RUX DAG and the 14 preceding HH node values are preserved. HH_STRICT_NATIVE and HH_SINGLET retain their independent original research scopes. The active heavy_queue is [] and launch is false.
 
-Publication target: research/hh-phys19-parameter-curvature-theory-20261013, stacked on PHYS18 PR53 head 41fe51d5a40651e8cadbaa52554035b58a92490c, branch research/hh-phys18-mixed-response-theory-20261013. The PHYS19 science decision is PROMOTE_SCOPED. Actual commit/tree/provider receipts are connected during delivery. The execution record separates one successful scientific application, one successful independent audit and two preserved checker-only failed attempts, two geometry readouts and two Wolfram calls.
+Publication target: research/hh-phys19-parameter-curvature-theory-20261013, stacked on PHYS18 PR53 head 41fe51d5a40651e8cadbaa52554035b58a92490c, branch research/hh-phys18-mixed-response-theory-20261013. The PHYS19 science decision is PROMOTE_SCOPED. Actual draft PR54 is https://github.com/cosmosapjw-quantum/WU088_HH/pull/54; science commit is d4061f091e27f4786edc2b22c5112902149eb9cf. Both provider backups are completed and size-verified; see the PHYS19 publication/BACKUP_ACK.json receipt. The execution record separates one successful scientific application, one successful independent audit and two preserved checker-only failed attempts, two geometry readouts and two Wolfram calls.
 
 ## Preserved PHYS18 and earlier instructions — historical context
 
