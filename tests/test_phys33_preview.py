@@ -13,7 +13,7 @@ SOURCE=ROOT/"research/hh_phys34_20261015/inputs/FROZEN_U_SUBSET.npz"
 
 
 def test_vectorized_batch_preview_matches_rational_moments_with_finite_roundoff():
-    ref=json.loads((ROOT/"research/hh_phys35_20261015/results/analytic_weight8.json").read_text())
+    ref=json.loads((ROOT/"research/hh_phys35_20261015/results/FINAL_SCREEN8_SAFE_W4.json").read_text())
     a=preview_components(SOURCE,quadrature_nodes=64)
     b=preview_components(SOURCE,quadrature_nodes=160)
     for key,cert in [('coulomb_diagonal','coulomb_diagonal'),
@@ -29,7 +29,7 @@ def test_vectorized_batch_preview_matches_rational_moments_with_finite_roundoff(
 
 def test_vectorized_hotspot_screened_preview_is_not_promoted_to_certificate():
     r=preview_components(SOURCE,quadrature_nodes=96)
-    parent=json.loads((ROOT/"research/hh_phys35_20261015/results/analytic_weight8.json").read_text())
+    parent=json.loads((ROOT/"research/hh_phys35_20261015/results/FINAL_SCREEN8_SAFE_W4.json").read_text())
     assert 0<r["norms_sampled"]["screened_broken_bulk_triangle"]<float(parent["norm_upper"]["broken_transformed_bulk_residual"])
     assert r["norms_sampled"]["screened_gradient"]<=r["norms_sampled"]["state_gradient"]
     with pytest.raises(ValueError):
