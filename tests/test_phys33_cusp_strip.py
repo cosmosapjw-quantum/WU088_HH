@@ -70,8 +70,11 @@ def test_archived_finite_strips_have_true_positive_volume():
 
 
 def test_noncertifying_vectorized_s_distance_preview_inside_true_bound():
+    anchored=json.loads((OUT/"FINAL_STRIP_W3.json").read_text())
     for den in [100,1000,10000]:
-        ref=json.loads((OUT/f"FINITE_STRIP_{den}.json").read_text())
+        matches=[row for row in anchored["strips"] if row["delta_a0"]==str(F(1,den))]
+        assert len(matches)==1
+        ref=matches[0]
         p=preview_cusp_strip(SRC,F(1,den),24,64)
         q=preview_cusp_strip(SRC,F(1,den),48,128)
         assert ref["input_sha256"]==p["input_sha256"]==q["input_sha256"]
