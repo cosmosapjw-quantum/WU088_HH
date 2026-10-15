@@ -1,0 +1,92 @@
+{
+  "schema": "WU088_HH_PHYS48_NEXT_DAG_V1",
+  "date_KST": "2026-10-15",
+  "parent_branch": "research/hh-phys47-high-ell-analytic-tail-20261015",
+  "parent_commit": "9b36c2ddb72c267cfb6a12414e4e38da36af8895",
+  "original_frozen_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+  "model": "h=-Delta/2-1/r-(1+s^-1) exp(-2s), R=k=7/10; original eta=F*y, xi=F*y-phi",
+  "selected": "PHYS48_CENTRAL_COULOMB_HIGH_ELL_BARRIER_RATIONAL_ACTION",
+  "done": [
+    "rigorous exact-turning-root bracket and monotone forbidden-region action lower/upper",
+    "fine rational 1e-8 turning endpoint replaced coarse integer sliver",
+    "adaptive true-child rational cell priority; uniform and graded benchmark",
+    "55-digit independent mpmath Coulomb action quadrature and reference Coulomb H+ log amplitudes",
+    "Wolfram exact turning-root/derivative/ell14-15 crossing source check",
+    "314 original project tests PASS; no REI production changes"
+  ],
+  "selected_claim": {
+    "status": "CERTIFIED_CENTRAL_COULOMB_BARRIER_ACTION_ONLY",
+    "reference_outer_B_a0": 20,
+    "kappa": "7/10",
+    "ell_values": [
+      14,
+      15,
+      20,
+      21,
+      24,
+      28,
+      33,
+      41,
+      61,
+      80,
+      120
+    ],
+    "canonical_cert": "research/hh_phys48_20261015/results/BARRIER_FINE_UNIFORM_1024.json",
+    "certified_examples": {
+      "ell21": [
+        "3.87109623781129",
+        "3.87750649583268"
+      ],
+      "ell41": [
+        "31.79240978283436",
+        "31.86257216754310"
+      ],
+      "ell61": [
+        "70.95003194903357",
+        "71.14146138064778"
+      ],
+      "ell120": [
+        "220.30853027641067",
+        "221.18454568219287"
+      ]
+    },
+    "not_a_transmission_probability": true,
+    "not_a_high_ell_Green_norm": true
+  },
+  "runtime": {
+    "full_project_pytest": "314_PASSED_EXIT0_203.54s",
+    "new_targeted": "16_PASSED",
+    "CAS_Wolfram": "EXACT_TURN_ROOT_DERIVATIVE_SIGN_PASS",
+    "numpy_runtime": "2.4.2",
+    "project_numpy_pin": "2.3.5",
+    "local_codex": "NOT_USED",
+    "native_subagent": "NOT_RUN",
+    "parallel_process_workers_scoped": "BENCHMARKED",
+    "owning_REI_repo_mutated": false
+  },
+  "other_repos": {
+    "rei_pr140": "b1cba753083ad83049c23ff538834564b49b7b6e",
+    "rei_pr139": "1ca73d64d3aaf7ea3ed4b7265522bbfdfae7e228",
+    "rei_local_owner": "0fcb2dddf5de6b583c2e00f150abff0b2afb6315",
+    "bass_cr_positive_child_gap_method": "PR71_READ_ONLY_METHODOLOGY",
+    "HH_R10_admission": "OFF"
+  },
+  "next": [
+    {
+      "id": "PHYS49_HIGH_ELL_COULOMB_GREEN_WEIGHTED_ENCLOSURE",
+      "state": "READY_THEORY",
+      "action": "Derive rigorous l-dependent Coulomb irregular/regular Green upper with centrifugal barrier across rturn and outgoing normalization, prove weighted ell-summability with PHYS47 all-high-ell source coefficient; do not replace exact reference by bare WKB transmission exponent."
+    },
+    {
+      "id": "PHYS49_ORIGINAL_DRIVEN_PHYSICAL_SOURCE_AND_OBSERVABLE",
+      "state": "PARTIALLY_READY",
+      "action": "Introduce original eta=F y, xi=F y-phi with source-correct origin/exterior, full continuous inverse and incoming adjoint, then microscopic sigma(E), correct identical reactant symmetry and Maxwellian k_HH(T)."
+    },
+    {
+      "id": "REI_HH_RATE_OWNER_INTAKE",
+      "state": "READ_ONLY_READY",
+      "action": "Adopt only actual source-pinned proper-time gas state with experimental rate and owner responsibility; REI HH_R10 remains disabled."
+    }
+  ],
+  "backup": "GIT_SOURCE_FIRST; CLOUD_RESTORED_SHA_REQUIRED_BEFORE_DOUBLE_BACKUP_CLAIM"
+}
