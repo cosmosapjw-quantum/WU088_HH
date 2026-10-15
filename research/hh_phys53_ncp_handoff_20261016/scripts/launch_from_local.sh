@@ -12,10 +12,12 @@ PART='research/hh_phys53_ncp_handoff_20261016'
 SOURCE='research/hh_phys34_20261015/inputs/FROZEN_U_SUBSET.npz'
 ORACLE='research/hh_phys53_20261016/results/ISOLATED_COULOMB_27_CASES.json'
 EXPECTED='f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d'
+RUST_EXPECTED='c49679cc5d487aa1d360dc2fadce3a1d0f3ae5a4ea00663437eaf643484e1189'
 PARENT='8fe647d4e836204f783e91024f81a3f2c8f46b60'
 [[ -r "$KEY" ]] || { echo 'authorized private key not available' >&2; exit 2; }
 [[ -r "$SOURCE" && -r "$ORACLE" ]] || { echo 'required original NPZ or oracle missing' >&2; exit 2; }
 [[ "$(sha256sum "$SOURCE" | awk '{print $1}')" == "$EXPECTED" ]] || { echo 'frozen input SHA256 mismatch' >&2; exit 2; }
+[[ "$(sha256sum native/phys53_coulomb_cf.rs | awk '{print $1}')" == "$RUST_EXPECTED" ]] || { echo 'Rust source SHA256 mismatch' >&2; exit 2; }
 git merge-base --is-ancestor "$PARENT" HEAD || { echo 'wrong worktree ancestry, refusing run' >&2; exit 2; }
 [[ -r native/phys53_coulomb_cf.rs && -r "$PART/scripts/worker_on_ncp.sh" ]] || { echo 'missing source scripts' >&2; exit 2; }
 SSH=(ssh -p "$P" -i "$KEY" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=12)
