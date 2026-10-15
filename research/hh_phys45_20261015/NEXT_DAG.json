@@ -1,0 +1,102 @@
+{
+  "schema": "WU088_HH_PHYS45_NEXT_DAG_V1",
+  "date_KST": "2026-10-15",
+  "parent_commit": "4b36f178d5effa2ccf960d5285372f2f51d21327",
+  "parent_PR": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/83",
+  "original_model": "h=-Delta/2-1/r-(1+1/s)exp(-2s); R=kappa=7/10; lambda=1, eta=F*y, xi=F*y-phi",
+  "source_frozen_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+  "user_selected_stages": [
+    "R5 original two-centre exterior operator derivation",
+    "C5 implementation",
+    "C6 regression",
+    "C7 CAS and physical invariants",
+    "C8 CPU/matrix optimizations",
+    "scientific publication and Dropbox+Drive double backup"
+  ],
+  "selected_subscope": {
+    "id": "PHYS45_SOURCE_LOCKED_SCREENED_COUPLING_AND_REI_ADVISORY",
+    "status": "CLOSED_SCOPED",
+    "results": [
+      "exact positive rational exponentially enveloped normalized full m=0 21x21 angular screened coupling at r20 a0, 231 independent pairs, all 441 symmetric entries",
+      "all angular-sector multiplication operator spectrally positive and bounded by physical spectator minimum-distance envelope",
+      "convexity-improved positive original noncentral +2V radial L1 coefficient bound and l>20 potential-driven source leakage control",
+      "independent Wolfram/70dps mpmath 5/6 couplings and 441 float Gauss strict enclosure consistency",
+      "actual REI local/source family read-only consumer HOLD advisory; no original consumer mutations",
+      "measured exact rational parallel speed and separately marked 21-mode float vectorization speed"
+    ]
+  },
+  "quantitative": {
+    "outer_a0": "20",
+    "ell_lmax": 20,
+    "numerical_exponential_terms": 320,
+    "certified_V00": [
+      "0.000000000000000005983632",
+      "0.000000000000000005983633"
+    ],
+    "certified_V01": [
+      "0.000000000000000004329202",
+      "0.000000000000000004329203"
+    ],
+    "full_screened_plus2V_radial_L1_upper": "0.000000000000000018120565",
+    "noncentral_plus2V_radial_L1_upper": "0.000000000000000013872211",
+    "noncentral_pointwise_B_upper": "0.000000000000000013659793",
+    "lambda_min_spectral_lower": "0.000000000000000001098241",
+    "lambda_max_spectral_upper": "0.000000000000000018120565",
+    "reference_Coulomb_log_derivative_Hplus": "PHYS44",
+    "inherited_truncated_annulus_D_Hminus1_upper": "0.917114942873"
+  },
+  "scientific_proof": "Exact positive s-power exponential moments under mu=(r²+R²-s²)/(2rR), normalized Y_l0; matrix symmetry and positive quadratic form; V(s) convex/decreasing; offcentral scalar subtraction yields ||M_V-V(r)I||=V(r-R)-V(r); high-l projection QVP ≤difference; integrate physical radial tail with exact monotone factor.",
+  "current_rei": {
+    "local_owner_head": "0fcb2dddf5de6b583c2e00f150abff0b2afb6315",
+    "latest_public_PR129_head": "fa20d75e344a28c833a47cbca82315ccbbdf6882",
+    "separate_public_revision": true,
+    "source_id": "MD14_Z002_FESC_BB50K_13P6_100_V1",
+    "HH_R10_production": "OFF",
+    "physical_rate_admission": "HOLD",
+    "thermal_k_HH_T": null,
+    "real_HH_source_to_REI": null,
+    "source_bridge": "research/hh_phys45_20261015/results/REI_CONSUMER_ADVISORY.json"
+  },
+  "execution": {
+    "full_pytest": "275_PASS_EXIT0_168.39s",
+    "source_matrix_serial_parallel_science_identity": true,
+    "Wolfram_local_scalar_exact_zero": 6,
+    "Wolfram_independent_5_matrix_entries_pass": true,
+    "strict_fraction_proof_not_gauss": true,
+    "CPU_workers": [
+      1,
+      2
+    ],
+    "cpu_microkernel_speedup_approx": 1.55,
+    "noncertifying_float_Gauss_160repeats_speedup_approx": 75,
+    "local_codex": "NOT_USED",
+    "native_subagent": "NOT_RUN",
+    "other_repo_mutations": 0
+  },
+  "unresolved": {
+    "full_two_centre_screened_outgoing_DtN": null,
+    "Green_kernel_weighted_bound": null,
+    "Volterra_contraction": null,
+    "ell_gt20_propagated_solution": null,
+    "origin_driven_correction": null,
+    "continuous_low_Schur_inverse": null,
+    "incoming_adjoint": null,
+    "physical_cross_section_sigma_E": null,
+    "physical_thermal_HH_rate_T": null,
+    "REI_ionization_or_temperature_response": null
+  },
+  "next": [
+    {
+      "id": "PHYS46_SCREENED_NONCENTRAL_VOLERRA_GREEN_CONTRACTION",
+      "status": "READY_CONSTRUCTIVE_THEORY",
+      "action": "For Coulomb outgoing radial Green kernel derive rigorous weighted sup_{B<=r<=t} ||G_C(r,t)|| for all l and all angular sectors; with PHYS45 exact angular V matrix and all-l operator tail, bound q<1 or report numeric/analytic blocker precisely. If diagonal Yukawa central V(r) is moved into reference, recompute matching distorted Green before using reduced noncentral bound."
+    },
+    {
+      "id": "PHYS20_NAMED_REI_CONSUMER_SOURCE_SCREEN",
+      "status": "READY_READ_ONLY_INTAKE",
+      "action": "On a named original REI adopted source epoch/interval bind source/clock/n_H/temperature/stoichiometry/physical beta_HH including identical-pair factor, collision ownership and no electron-impact double counting. No source injection until full scattering k(T) plus consumer authority and error budget."
+    }
+  ],
+  "publication_expected": "new stacked WU draft PR, immutable original source, real git bundle plus small capsule doubly backed up to Dropbox/Google Drive with fresh authenticated hash verification",
+  "backup_status": "SEE_SEPARATE_POST_PUSH_PUBLICATION_AND_BACKUP_RECEIPT"
+}
