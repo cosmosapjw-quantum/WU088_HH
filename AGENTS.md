@@ -1,3 +1,7 @@
+# Current priority PHYS51 finite high outgoing (2026-10-15 KST)
+
+Parent PHYS50 PR89 source 6db2b278. The active local additive PHYS51 result is under research/hh_phys51_20261015/REPORT_KO.md, NEXT_DAG.json and results/. The original 1386 complex128 source is byte locked; current result is a 400-channel ell21..28 all-m finite projected screened outgoing Jost construction, not the full infinite angular exterior operator or a physical rate. REI HH_R10 remains OFF. Preserve all original science and historical instructions below.
+
 # Current priority — PHYS19 pure curvature and PHYS20 consumer intake, 2026-10-13 KST
 
 Read CURRENT_DEVELOPMENT_PLAN.json and research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/README_KO.md, HANDOFF_KO.md, review/DECISION.json and NEXT_DAG.json. PHYS19's actual stored-input pure-curvature application is completed and adopted as PROMOTE_SCOPED after pass_scoped independent scientific review. PHYS19 is the current accepted theory and scientific baseline; the accepted PHYS18 mixed result remains a named inherited input. The independent Fraction audit passed all 362 checks, comparing 2,057 scalar enclosures across 265 interval comparisons and validating 3,174 outward decimal intervals and 23 contract bindings.
