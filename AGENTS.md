@@ -1,3 +1,7 @@
+# Current priority PHYS52: finite screened outgoing-collar Robin matching, 2026-10-15 KST
+
+Read research/hh_phys52_20261015/REPORT_KO.md, NEXT_DAG.json and results before extending. PHYS52 preserves original source SHA, finite ell21..28 all m screened outgoing plus positive collar matching only. Do not promote infinite ell, actual driven xi, physical H-H scattering rate, or REI HH_R10. Next PHYS53. No other-repo owner mutation. NCP SSH blocked; NCP Rust unverified.
+
 # Current priority PHYS51 finite high outgoing (2026-10-15 KST)
 
 Parent PHYS50 PR89 source 6db2b278. The active local additive PHYS51 result is under research/hh_phys51_20261015/REPORT_KO.md, NEXT_DAG.json and results/. The original 1386 complex128 source is byte locked; current result is a 400-channel ell21..28 all-m finite projected screened outgoing Jost construction, not the full infinite angular exterior operator or a physical rate. REI HH_R10 remains OFF. Preserve all original science and historical instructions below.
