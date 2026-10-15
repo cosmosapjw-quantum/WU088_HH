@@ -1,0 +1,45 @@
+{
+  "schema": "WU088_HH_PHYS36_C7A_NEXT_V1",
+  "date_KST": "2026-10-15",
+  "parent_commit": "ff1e82b223925870c35ae0405932a698d00bea10",
+  "selected_stage": "C7",
+  "executed_subscope": "C7A_DIRECT_SOURCE_OVERLAP_AND_COUPLED_PREVIEW",
+  "global_C7_complete": false,
+  "scientific_status": "CERTIFIED_DIRECT_ISOTROPIC_SOURCE_CANCELLATION_ONLY",
+  "fixed_model": "original frozen-direct one-centre Coulomb + spectator screened, R=kappa=0.7 lambda1",
+  "input_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+  "new_certified_upper": "2.603747132326",
+  "old_certified_upper": "4.001581079393",
+  "local_full_test_status": "121_PASS_OBSERVED",
+  "new_code": [
+    "src/wu088_hh/phys33_coupled_source.py",
+    "src/wu088_hh/phys33_coupled_preview.py",
+    "scripts/phys33_coupled_source.py",
+    "tests/test_phys33_coupled_source.py"
+  ],
+  "next": "C7B_SCREENED_ANGULAR_COUPLING_INTERVAL_CERTIFICATE",
+  "next_action": "Certify actual screened angular cross-terms with quadrature/interval special handling of s=0 cusp; then interface origin full-outgoing dual and continuous low inverse.",
+  "unresolved": [
+    "direct screened derivative-potential angular cross cancellation",
+    "distributional interface",
+    "origin r<1e-4",
+    "exterior outgoing residual",
+    "continuous low Schur inverse",
+    "two-centre rate"
+  ],
+  "existing_certificates_unchanged": true,
+  "production_HH": "OFF",
+  "rei_owner_mutations": 0,
+  "local_codex_used": false,
+  "native_subagent": "NOT_RUN",
+  "external_independent_scientific_review": "NOT_RUN",
+  "new_overlap_bounds": {
+    "radial_Coulomb_minus_bare_source": "0.725518569620",
+    "weighted_screened_gradient": "385184863759/1000000000000",
+    "weighted_screened_state": "65074723029/200000000000",
+    "global_E_phi": "0.306786312012",
+    "screened_broken_bulk_previous": "4001581079393/1000000000000",
+    "screened_broken_bulk_with_direct_source": "2.603747132326",
+    "screened_broken_bulk_admitted": "2.603747132326"
+  }
+}
