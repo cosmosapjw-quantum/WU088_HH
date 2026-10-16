@@ -1,0 +1,25 @@
+{
+ "schema":"WU088_HH_PHYS58_C5C8_NEXT_DAG_V1",
+ "stage":"C5_C8",
+ "parent_R5_science_commit":"350efd1977c4d976000faa4371afc6e33915add3",
+ "source_SHA256":"f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+ "stage_result":"SOURCE_LOCKED_EXACT_FINITE_MULTIPOLE_INTERVALS_N0_TO12_AND_PHYSICAL_PQ_POSITIVE_LOWER",
+ "scientifically_proved":[
+   "r=27 and r=30 original low-order Legendre A_n included in exact Fraction intervals using finite rational exponential series/remainder",
+   "strict full original P20,m0->Q21,m0 2S transfer >6e-24 at r=27 using all positive Legendre coefficients and Gaunt n1 lower",
+   "all-angular original screened V=2S physical high tail bound reuses PHYS58 R5 global analytic geometry"
+ ],
+ "numerical_only":[
+  "independent mpmath angular integral mp.dps=240",
+  "finite 3x3 Gaunt matrix approximate comparison with GL128/256 at r=27 m0,1,2",
+  "not a numerical full exterior Dirichlet-to-Neumann solve"
+ ],
+ "next":[
+  {"id":"PHYS59_SCREENED_OUTGOING_LAP_POISSON", "status":"READY_THEORY", "goal":"Construct positive-energy outgoing Coulomb Dirichlet LAP and boundary Poisson maps in weighted H+/-a; include original real noncentral S with proven radius/angle source bounds"},
+  {"id":"PHYS59_SCREENED_DTN_AND_PQ", "status":"DEPENDENT", "goal":"Obtain actual Z_S-Z_C weighted trace operator norm or non-quantitative Fredholm with P/Q Schur; retain V_PQ and V_QP"},
+  {"id":"PHYS59_PHYSICAL_INCOMING_XI", "status":"HOLD", "goal":"Original xi=Fy-phi regular origin/incoming adjoint and physical sigma(E)"},
+  {"id":"MICROPHYSICAL_HH_RATE_TO_REI", "status":"HOLD", "goal":"Identical neutral H-pair Maxwellian k_HH(T), proper-process ownership and REI HH_R10 guard"},
+  {"id":"NCP_FULL_SOLVER", "status":"NOT_REQUIRED_THIS_STAGE", "goal":"Use 64c/125GiB NCP only when exterior coupled PDE solve/interval enclosure warrants it; otherwise local sandbox enough"}
+ ],
+ "production":{"HH_R10":"OFF"}
+}
