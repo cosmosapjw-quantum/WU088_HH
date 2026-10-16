@@ -34,6 +34,12 @@
     "benchmark_peak_rss_KiB": 2048,
     "timing_caveat": "0.01-second timing resolution and a short benchmark prevent a stable scaling claim."
   },
+  "outgoing_phase_and_current": {
+    "convention": "H_l^(+)=G_l+iF_l; Im Z_l^(+)=k/|H_l^(+)|^2 follows from the positive Coulomb Wronskian.",
+    "acceptance": "f64 imaginary part is checked only for ell<=29; high-ell f64 imaginary values are not a positivity gate.",
+    "reused_high_ell_oracle": {"radius_Bohr": 27, "ell": 256, "log10_current": -510.144639403908},
+    "status": "POSITIVE_WRONSKIAN_CONVENTION_AND_LOG_CURRENT_REUSED; NOT_AN_INFINITE_SCREENED_DTN_PROOF"
+  },
   "archive": {
     "results_tar_sha256": "91fe436aa66fc0b96f3e970ed2367d6ebc3e5607e18f522adc897c6b16179df8",
     "files_manifest_sha256": "cba36d70e5c686a7047ca55a7dd23c73eb02216bf1f3511c2e0fbb899f2f1dee",
