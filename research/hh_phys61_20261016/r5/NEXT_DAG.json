@@ -1,0 +1,17 @@
+{
+  "schema":"WU088_HH_PHYS61_R5_DAG_V1",
+  "parent_physics_commit":"94908dce03b7cacf288ed33f916ab4b9f7d3efe7",
+  "scope":"ALL_ANGULAR_ACTUAL_NONCENTRAL_SCREENED_EXTERNAL_DTN_AT_COMPLEX_Z_ONLY",
+  "spectral_energy":"49/200+i/100 Hartree",
+  "source_SHA256":"f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+  "nodes":[
+    {"id":"PHYS61_R5_UPPER_PLANE_RESOLVENT_POISSON_DTN","status":"PROVED_EXACT_RATIONAL_SCOPED","evidence":"R5 focused tests, exact proof, producer, Wolfram independent"},
+    {"id":"PHYS61_C5_C8_COMPLEX_COULOMB_CURRENT_BORN","status":"READY_LIGHT_SANDBOX","dependency":"PHYS61_R5"},
+    {"id":"PHYS62_REAL_ENERGY_WEIGHTED_COULOMB_LAP","status":"READY_THEORY_OPEN","dependency":"weight-space uniform bounds as tau->0 not proven"},
+    {"id":"PHYS62_REAL_SCREENED_POSITIVE_ENERGY_ZS","status":"BLOCKED_BY_LAP","dependency":"actual real outgoing weighted Poisson and screened perturbation"},
+    {"id":"HH_PHYSICAL_XI_ADJOINT_SIGMA_RATE","status":"HOLD","dependency":"original physical driven solution, proper cross section, thermal identical H rate"}
+  ],
+  "production":{"rei_bianchi_HH_R10":"OFF"},
+  "NCP":"NOT_REQUIRED_FOR_R5",
+  "native_subagents":"NOT_RUN"
+}
