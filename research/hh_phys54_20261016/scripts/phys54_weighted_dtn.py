@@ -108,11 +108,23 @@ def run(output: Path) -> dict:
         "screened_multiplier_upper_at_and_beyond_radius": screen,
         "central_diagnostic": diagnostic,
         "conditional_reduction_with_epsilon_zero_only_as_algebraic_baseline": statement,
-        "required_open_lemma": {
-            "name": "uniform weighted exterior screened DtN perturbation",
-            "required_form": "||W^(-1/2)(Z_S-Z_C)W^(-1/2)||_Re <= epsilon < c_C",
-            "status": "OPEN_NOT_INFERRED_FROM_MULTIPLIER_BOUND_OR_FINITE_CF_SAMPLES",
-        },
+        "open_prerequisites": [
+            {
+                "name": "central all-ell real-part and weighted DtN theorem",
+                "required_form": "Z_C:X->X* exists and -Re<g,Z_Cg> >= c_C||W^(1/2)g||^2 for every high trace",
+                "status": "OPEN_NOT_INFERRED_FROM_FINITE_CF_SAMPLES",
+            },
+            {
+                "name": "high-block definition for noncentral exterior",
+                "required_form": "define Z_S as the Q-to-Q Schur/compressed outgoing DtN after treating P-Q coupling",
+                "status": "OPEN_Q_IS_NOT_INVARIANT_UNDER_NONCENTRAL_MULTIPLICATION",
+            },
+            {
+                "name": "uniform weighted exterior screened DtN perturbation",
+                "required_form": "||W^(-1/2)(Z_S-Z_C)W^(-1/2)||_Re <= epsilon < c_C",
+                "status": "OPEN_NOT_INFERRED_FROM_MULTIPLIER_BOUND_OR_FINITE_CF_SAMPLES",
+            },
+        ],
         "HH_R10": "OFF",
     }
     output.parent.mkdir(parents=True, exist_ok=True)

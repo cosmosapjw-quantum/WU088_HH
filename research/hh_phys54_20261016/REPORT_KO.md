@@ -29,9 +29,12 @@ uniform lower bound를 쓰지 않는다. 따라서 PHYS53의 central current dec
 아니다. 이를 epsilon으로 대입하지 않았으며, finite CF 표본도 all-ℓ
 certificate로 대입하지 않았다.
 
-따라서 남은 정확한 lemma는
-`||W^(-1/2)(Z_S-Z_C)W^(-1/2)||_Re <= epsilon < c_C`이다. 이는 noncentral
-screened exterior Volterra/resolvent의 uniform weighted estimate를 요구한다.
-PHYS54는 이 lemma를 OPEN으로 남긴다. 실제 driven `xi=Fy-phi`, regular origin,
+이 reduction에는 세 OPEN 전제가 있다. 첫째 all-ℓ 중앙 `Z_C:X->X*`의 존재와
+`c_C>0` real-part bound는 finite CF 표본으로 증명되지 않았다. 둘째 비중심
+multiplication은 Q(high ell)를 보존하지 않으므로, `Z_S`는 P-Q coupling을 다룬
+high-block Schur/compressed DtN으로 정의해야 한다. 셋째 그 정의 아래
+`||W^(-1/2)(Z_S-Z_C)W^(-1/2)||_Re <= epsilon < c_C`인 uniform exterior
+Volterra/resolvent estimate가 필요하다. PHYS54는 셋 모두 OPEN으로 남긴다.
+실제 driven `xi=Fy-phi`, regular origin,
 incoming adjoint, sigma(E), identical-H Maxwellian k_HH(T)는 이 결과로부터
 나오지 않으며 `HH_R10=OFF`다.
