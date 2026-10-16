@@ -109,3 +109,33 @@ central reference뿐이며, `Z_S`의 존재/유계성/가역성은 새 전제다
 다음 READY DAG는 (i) weighted Coulomb exterior LAP/trace mapping, (ii) screened
 Fredholm uniqueness 또는 certified norm, (iii) finite P block 및 full matching Schur,
 (iv) 그 뒤에야 original driven source와 observables 순서다.
+
+## PHYS56 R5 추가: hybrid inverse의 조건부 정량 공식
+
+PHYS55의 \(M_{\rm hyb}\) 자체에 대해서는 새로 다음의 조건부 정량 보조정리를
+유도했다. \(U=W^{-1/2}M_{\rm hyb}W^{-1/2}\), \(P=\{21\le\ell<L\}\),
+\(Q=\{\ell\ge L\}\)라 하자. 모든 \(\ell\ge L\)에 대해
+\(\operatorname{Re}Z_{C,\ell}\le0\)인 **uniform certificate**와, 유한 P block의
+\(j_*\le\min_{\ell\in P}\operatorname{Im}Z_{C,\ell}/(\ell+1)\)인 outward
+interval certificate가 주어졌다고 가정한다. PHYS55의
+\(c_D=9/1000\), PHYS50의 \(b\le C_{\rm trace}=4849/16800\)를 쓰면
+
+\[
+ \|M_{\rm hyb}^{-1}\|_{X^*\to X}
+ \le(1+C_{\rm trace}/c_D)^2\max\{c_D^{-1},j_*^{-1}\}.
+\]
+
+실제로 \(D=U_{QQ}\)는 \(c_D\)-accretive이고,
+\(S=U_{PP}-U_{PQ}D^{-1}U_{QP}\)에 대해
+\(\operatorname{Im}S=-J_P-U_{PQ}(D^{-*}J_QD^{-1})U_{QP}\le-j_*I\)다.
+따라서 \(\|D^{-1}\|\le c_D^{-1}\), \(\|S^{-1}\|\le j_*^{-1}\)와 block
+factorization이 위 식을 준다. P가 비면 상계는 \(c_D^{-1}=1000/9\)로 개선된다.
+
+이는 **실제 수치 상계가 아니다**. 현 저장소에는 uniform tail cutoff \(L\)도
+finite-current interval도 없으므로 코드 결과는 `OPEN_MISSING_UNIFORM_TAIL_SIGN`이다.
+유한 \(\ell=64,128,256\) 표본이나 f64 허수부 underflow는 이를 대체할 수 없다.
+반대로 coercivity, principal limit, 각 모드 양의 current만으로 보편 수치 상계를
+추론할 수 없다는 추상 예도 구성했다: 한 예외 모드에
+\(Z=(c_D+i\varepsilon)W\)를 두면 동일한 정성 조건 아래
+\(\|M^{-1}\|\ge\varepsilon^{-1}\)가 가능하다. 이는 실제 Coulomb 해의 반례가
+아니라, 필요한 certificate를 정확히 분리하는 정보부족 예다.

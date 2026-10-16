@@ -16,6 +16,8 @@ from pathlib import Path
 FROZEN_NPZ_SHA256 = "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d"
 BOUNDARY_RADIUS_A0 = 27.0
 DISPLACEMENT_A0 = 0.7
+HYBRID_COLLAR_COERCIVITY = 9.0e-3
+PHYS50_TRACE_BOUND = 4849.0 / 16800.0
 
 
 def sha256_file(path: Path) -> str:
@@ -93,6 +95,64 @@ def scalar_schur_complement(m_pp: complex, m_pq: complex, m_qp: complex, m_qq: c
     return m_qq - m_qp * m_pq / m_pp
 
 
+def conditional_hybrid_inverse_bound(
+    tail_sign_certified: bool,
+    low_block_empty: bool,
+    normalized_current_lower: float | None = None,
+    collar_coercivity: float = HYBRID_COLLAR_COERCIVITY,
+    trace_bound: float = PHYS50_TRACE_BOUND,
+) -> dict[str, object]:
+    """Evaluate the PHYS56 Schur bound only after its certified inputs exist.
+
+    For U=W^-1/2(Lambda_D,TT-Z_C)W^-1/2, a uniform tail certificate
+    Re z_l <= 0 makes U_QQ c_D-accretive.  With b=||U_PQ|| and a
+    finite-block Wronskian interval j_*>0, Schur factorization gives
+    ||U^-1|| <= (1+b/c_D)^2 max(1/c_D,1/j_*).
+    """
+    if collar_coercivity <= 0.0 or trace_bound < 0.0:
+        raise ValueError("coercivity must be positive and trace bound nonnegative")
+    if low_block_empty:
+        if not tail_sign_certified:
+            return {"status": "OPEN_MISSING_UNIFORM_TAIL_SIGN"}
+        return {
+            "status": "CONDITIONAL_BOUND_READY_EMPTY_LOW_BLOCK",
+            "bound": 1.0 / collar_coercivity,
+            "required_certificates": ["uniform Re Z_C,l <= 0 for every ell>=21"],
+        }
+    if not tail_sign_certified:
+        return {"status": "OPEN_MISSING_UNIFORM_TAIL_SIGN"}
+    if normalized_current_lower is None or not isfinite(normalized_current_lower) or normalized_current_lower <= 0.0:
+        return {"status": "OPEN_MISSING_FINITE_CURRENT_INTERVAL"}
+    factor = (1.0 + trace_bound / collar_coercivity) ** 2
+    return {
+        "status": "CONDITIONAL_BOUND_READY",
+        "bound": factor * max(1.0 / collar_coercivity, 1.0 / normalized_current_lower),
+        "factor": factor,
+        "required_certificates": [
+            "uniform Re Z_C,l <= 0 on the full tail",
+            "outward interval lower bound for finite exceptional normalized Wronskian current",
+        ],
+    }
+
+
+def schur_sign_diagnostic() -> dict[str, float | bool]:
+    """Small two-channel check of the Schur imaginary-part sign, not physics."""
+    collar_pp, collar_qq, coupling = 0.109, 0.109, 0.05
+    z_p, z_q = complex(0.109, 0.02), complex(-1.0 / 27.0, 0.001)
+    d = collar_qq - z_q
+    s = collar_pp - z_p - coupling * coupling / d
+    determinant = (collar_pp - z_p) * d - coupling * coupling
+    inverse_frobenius = ((abs(d) ** 2 + 2.0 * coupling**2 + abs(collar_pp-z_p) ** 2) ** 0.5) / abs(determinant)
+    bound = conditional_hybrid_inverse_bound(True, False, 0.02)["bound"]
+    return {
+        "imaginary_inverse_tail_positive": (1.0 / d).imag > 0.0,
+        "imaginary_schur_negative": s.imag <= -0.02,
+        "inverse_frobenius": inverse_frobenius,
+        "coarse_schur_bound": float(bound),
+        "diagnostic_bound_holds": inverse_frobenius <= float(bound),
+    }
+
+
 def operator_construction() -> dict[str, object]:
     """Machine-readable statement of identities and unproved analytical gates."""
     return {
@@ -103,6 +163,7 @@ def operator_construction() -> dict[str, object]:
         "pq_feshbach": "Veff_Q=V_QQ+V_QP(I-R_P V_PP)^(-1)R_P V_PQ; (Z_S)_QQ retains V_PQ and V_QP",
         "full_matching": "The physical r=27 match needs the full P+Q boundary operator; a Q-only collar does not prove it. If M_PP is invertible, use M_QQ-M_QP M_PP^(-1)M_PQ.",
         "axisymmetry": "The displaced z-axis potential preserves m, with the usual real-potential conjugation relation between m and -m; no angular coupling is discarded.",
+        "hybrid_inverse_formula": "If a uniform tail sign and finite exceptional-current intervals are certified, ||M_hyb^-1|| <= (1+C_trace/c_D)^2 max(1/c_D,1/j_*); without them no numerical bound is admitted.",
         "required_unproved_gates": [
             "weighted outgoing Coulomb limiting absorption and Dirichlet resolvent domain",
             "weighted boundary Poisson bounds and the unweighted-volume-pairing dual-transpose trace bound",
@@ -124,6 +185,10 @@ def result_payload(npz_path: Path) -> dict[str, object]:
         "frozen_npz_sha256_match": actual_sha == FROZEN_NPZ_SHA256,
         "screened_exterior_upper_bound": screened_exterior_upper_bound(),
         "conditional_unit_constant_example": asdict(example),
+        "hybrid_inverse_quantification": {
+            "current_status": conditional_hybrid_inverse_bound(False, False),
+            "schur_sign_diagnostic": schur_sign_diagnostic(),
+        },
         "operator_construction": operator_construction(),
         "not_claimed": [
             "a proved weighted norm for Z_S-Z_C",

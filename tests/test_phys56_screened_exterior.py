@@ -6,6 +6,8 @@ from wu088_hh.phys56_screened_exterior import (
     operator_construction,
     scalar_feshbach_effective_q,
     scalar_schur_complement,
+    conditional_hybrid_inverse_bound,
+    schur_sign_diagnostic,
     screened_exterior_upper_bound,
     sha256_file,
 )
@@ -43,3 +45,14 @@ def test_feshbach_return_and_full_schur_are_retained():
     statement = operator_construction()
     assert "V_QP" in statement["pq_feshbach"]
     assert "Q-only" in statement["full_matching"]
+
+
+def test_hybrid_inverse_formula_requires_actual_certificates():
+    assert conditional_hybrid_inverse_bound(False, False)["status"] == "OPEN_MISSING_UNIFORM_TAIL_SIGN"
+    assert conditional_hybrid_inverse_bound(True, False)["status"] == "OPEN_MISSING_FINITE_CURRENT_INTERVAL"
+    empty = conditional_hybrid_inverse_bound(True, True)
+    assert empty["bound"] == 1000.0 / 9.0
+    diagnostic = schur_sign_diagnostic()
+    assert diagnostic["imaginary_inverse_tail_positive"]
+    assert diagnostic["imaginary_schur_negative"]
+    assert diagnostic["diagnostic_bound_holds"]
