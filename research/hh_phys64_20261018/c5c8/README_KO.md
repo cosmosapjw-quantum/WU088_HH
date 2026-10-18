@@ -23,7 +23,9 @@ D3=(2.143001354846671e-71 +1.718651496404267e-71 i).
 - src/wu088_hh/phys64_campaign.py와 scripts/phys64_ncp.py: 직접 실행, 케이스별 OS 프로세스, timeout, 낮은 우선순위, 메모리 ceiling, atomic 결과, 입력/코드/환경/결과 SHA 기반 resume, 결과 패키징.
 - scripts/phys64_born_hierarchy.py: 8개 원래 물리적 case와 별도 증폭 검산 생성기.
 - 선택 회귀: 이전 PHYS63 24개+R5 12개+신규 solver22개+runner8개=66/66 PASS, exit0. 전체 과거 저장소 test suite를 실행한 것은 아니다.
-- 실제 sandbox 프로세스 2개 완료; 같은 실행의 resume에서 2개 재사용, 추가 계산0. NCP는 아직 실행하지 않았다.
+- 실제 sandbox 프로세스 2개 완료; 같은 실행의 resume에서 2개 재사용, 추가 계산0.
+- 2026-10-18 승인 NCP `s1a0e5abed09`(64 CPU, 125 GiB)에서 smoke 2개와 extended 18개를 실제 실행했다. 20개 모두 exit 0이고, `L28,m0,T39`의 분리 저장 계수는 D1=(2.766042246013503e-24 +4.500676730156273e-25 i), D2=(7.017743633174654e-48 +3.200163222384794e-48 i), D3=(2.143001354846671e-71 +1.718651496404267e-71 i)이다. L28 128점 대비 192점 refinement의 D2 상대차는 2.0816e-13이며 이는 self-difference일 뿐 전체 절단/공간/반올림 오차 상계가 아니다.
+- `SOURCE_RESULTS.zip` SHA256은 `d7fa0b50ed803e19dfcec8f781219c03acbd21f8f3ee47fe922754f8fdb5ea79`이고 내부 CRC 및 runner hash 검증을 통과했다. Git bundle도 로컬 `git bundle verify`를 통과했다. 후속 재시도에서 기존 연결 Dropbox와 Google Drive에 capsule/bundle을 각각 업로드하고, 양 provider에서 독립 재다운로드한 모든 파일의 SHA256, 두 ZIP CRC 및 두 Git bundle verify를 통과했다. 상세 object identity와 검증은 `ncp_run/BACKUP_STATUS.json`에 기록했다.
 - 원본 solver나 생산 owner를 수정하지 않았다. 새 코드를 native Git 파일로 전부 게시한다. 압축 packet만으로 코드를 대신하지 않는다.
 
 ## NCP에서 그대로 실행
