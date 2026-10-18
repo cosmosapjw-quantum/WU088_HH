@@ -1,0 +1,32 @@
+{
+  "schema": "PHYS66_C5C8_ARTIFACT_ACCESS_V1",
+  "status": "BLOCKED_ARTIFACT_ACCESS",
+  "recorded_utc": "2026-10-18T07:00:00Z",
+  "base_commit": "445d82db9c42b4f2f81e4ac1b107dec3b69b3c24",
+  "finite_l_certificate_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+  "required_artifacts": {
+    "source_zip": {
+      "name": "WU088_HH_PHYS66_SOURCE_AND_EVIDENCE_20261018.zip",
+      "expected_sha256": "993317b1c78edf496ec5a82a261eceb5a54515a78e38d139a924722a5d28f891",
+      "access": "NOT_FOUND_IN_CONNECTED_DROPBOX_OR_GOOGLE_DRIVE"
+    },
+    "patch": "WU088_HH_PHYS66_ADD_ONLY.patch: NOT_FOUND_IN_CONNECTED_DROPBOX_OR_GOOGLE_DRIVE",
+    "delivery": "PHYS66_DELIVERY_20261018.json: NOT_FOUND_IN_CONNECTED_DROPBOX_OR_GOOGLE_DRIVE",
+    "checksums": "WU088_HH_PHYS66_SHA256SUMS: NOT_FOUND_IN_CONNECTED_DROPBOX_OR_GOOGLE_DRIVE"
+  },
+  "provider_observations": {
+    "dropbox": "WU088_HH_PHYS66_R5_20261018.zip was accessible in /WU088_HH; no requested C5-C8 source artifact was present.",
+    "google_drive": "PHYS66_R5_20261018 folder and WU088_HH_PHYS66_R5_20261018.zip were accessible; no requested C5-C8 source artifact was present.",
+    "library_file_tool": "NOT_EXPOSED_IN_THIS_SESSION"
+  },
+  "preserved_completed_work": "PHYS64 NCP smoke2+extended18 was observed as completed and was not re-run.",
+  "not_run": [
+    "git apply",
+    "PHYS66_C5C8_tests",
+    "PHYS66_import_results",
+    "PHYS66_smoke",
+    "PHYS66_longtail",
+    "PHYS66_provider_backup"
+  ],
+  "reason": "No unverified substitute, reconstructed patch, solver design, or tolerance change is authorized when the required C5-C8 artifact package is unavailable."
+}
