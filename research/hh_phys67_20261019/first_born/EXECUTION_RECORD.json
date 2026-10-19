@@ -1,0 +1,36 @@
+{
+  "schema": "PHYS67_FIRST_BORN_EXECUTION_RECORD_V1",
+  "recorded_after_execution_utc": "2026-10-19T05:13:20.671385+00:00",
+  "actual_invocation": "Current-turn Python API: integrate_first_born(source, **FIRST_BORN_REQUEST.json); result serialized to FIRST_BORN_CERTIFICATE.json",
+  "request": {
+    "ell": 21,
+    "ellprime": 20,
+    "outer": 65,
+    "precision_bits": 256,
+    "coefficient_bits": 1024,
+    "absolute_goal": "1e-40",
+    "relative_goal": "1e-22",
+    "eval_limit": 5000,
+    "panel_width": 4
+  },
+  "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+  "process_exit_code_observed": 0,
+  "function_wall_seconds": 7.68403813400073,
+  "function_evaluations": 3269,
+  "goal_met": true,
+  "code_sha256": {
+    "src/wu088_hh/phys67_first_born.py": "c4f4c7c6adc72269ead632b3897f21c4cd0068ea3535df691cd1078f2ce7bb11",
+    "src/wu088_hh/phys67_coulomb_certificate.py": "497d83649a829149dcae0496ad991c75add1e197fd2de2a586d734f27f02840c",
+    "src/wu088_hh/phys66_radial_budget.py": "9443973869c9cbfd465c945cc9801c9b19de66f8a278c0e3a76465d02c3d0989",
+    "src/wu088_hh/phys65_exterior_bounds.py": "ba9d2fe1e83555595bbc97d875dc1b4b4a9bae208ea8d67ac4eba91b37978f89"
+  },
+  "receipt_sha256": "c3e8640db5296c3a522397780ce74f09e0e5db334a11b671cecc7ada07758f95",
+  "reproduction_cli": "scripts/phys67_first_born_certificate.py (written after this API execution; not falsely claimed as the original command)",
+  "earlier_attempt": {
+    "receipt": "FIRST_BORN_CERTIFICATE_ATTEMPT01.json",
+    "status": "FINITE_VALID_ENCLOSURE_NUMERICAL_GOAL_NOT_MET",
+    "original_panel_absolute_budget": "absolute_goal/number_of_panels",
+    "resolution": "tighten relative goal and use absolute_goal/(8*number_of_panels); acceptance still measures actual radius"
+  },
+  "HH_R10": "OFF"
+}

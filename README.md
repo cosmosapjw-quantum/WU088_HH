@@ -1,3 +1,15 @@
+# WU088_HH — PHYS67 original first-Born numerical certificate
+
+PHYS67 encloses the original **D1(ell21,ell20), m0** at B27 and E49/200 Hartree. Exact elementary angular integration and validated Coulomb/radial ball arithmetic give a numerical complex radius below **2.328e-41 a0^-1**, with a separately proved omitted radial tail below **4.973e-53 a0^-1**. The stored earlier PHYS66 pilot is reused; its actual D1 error is between **1.514e-36 and 1.516e-36 a0^-1**. The source-driven xi and physical rates remain separate obligations; **HH_R10=OFF**.
+
+The same unit proves an all-signed-m finite-L exact Gauss bound and executes 20 Coulomb point certificates. New focused tests: **71 PASS** across the three new modules. Recovery integration tests: **57 PASS**. Completed PHYS64 20-case NCP data and the prior PHYS66 pilot/smoke were not rerun.
+
+Read the [current report](research/hh_phys67_20261019/REPORT_KO.md), [first-Born proof](research/hh_phys67_20261019/first_born/PROOF.md), [exact result](research/hh_phys67_20261019/first_born/FIRST_BORN_CERTIFICATE.json), [angular theorem](research/hh_phys67_20261019/angular/PROOF.md), [Coulomb certificate](research/hh_phys67_20261019/coulomb/PROOF_AND_REPORT_KO.md), [recovery identities](research/hh_phys67_20261019/recovery/ARTIFACT_RECONCILIATION.json), [NCP readiness](research/hh_phys67_20261019/ncp_delivery/READINESS_KO.md), [DAG](research/hh_phys67_20261019/NEXT_DAG.json) and [publication receipts](research/hh_phys67_20261019/publication/).
+
+Recovery found an earlier archive **84c29de7...** and integrated its 84 new paths on actual PR116. The requested final archive **993317b1...** remains inaccessible; it is not claimed restored. Published PR115 proof bytes are preserved. Current priority is given here and in AGENTS.md; earlier project summaries below are historical records.
+
+## Preserved PHYS19 and earlier project overview
+
 # WU088_HH — PHYS19 pure parameter curvature
 
 [PHYS19 draft PR54](https://github.com/cosmosapjw-quantum/WU088_HH/pull/54) · [완료된 게시·백업 영수증](research/r31ao_unequal_ladder/hh_phys19_parameter_curvature_theory_20261013_v1/publication/PUBLICATION.json)

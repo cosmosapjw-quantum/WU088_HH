@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-10-19T05:17:05.582904+00:00",
+  "status": "BLOCKED_REMOTE_ACCESS_FOR_NCP_INVENTORY",
+  "domain": "environment/service transport",
+  "device_discovery": {
+    "tool": "mcp__codex_apps__remote_desktop_commander_list_devices",
+    "result": "completed",
+    "isError": false,
+    "device_name": "cosmosapjw",
+    "device_id": "edd1b263-56a0-4391-8a2a-677dd00eabf5",
+    "online_state_returned": "Online",
+    "last_seen_returned": "4m ago",
+    "app_version": "0.3.0"
+  },
+  "attempted_read_only_command": {
+    "tool": "mcp__codex_apps__remote_desktop_commander_start_process",
+    "device_id": "edd1b263-56a0-4391-8a2a-677dd00eabf5",
+    "command": "hostname",
+    "timeout_ms_requested": 1000,
+    "tool_result": "aborted by user after 1696.1s",
+    "output_received": false,
+    "pid_received": false,
+    "call_id_received": false,
+    "exit_code": null,
+    "execution_status": "unresolved"
+  },
+  "ncp_ssh_attempted": false,
+  "ncp_receipts_checked": false,
+  "ncp_processes_checked": false,
+  "phys66_longtail_execution_state": "UNRESOLVED_BY_REMOTE_ACCESS",
+  "no_inference": [
+    "Underlying runtime unavailable",
+    "Remote desktop offline",
+    "NCP offline",
+    "Longtail campaign not run"
+  ],
+  "actions_stopped": "No further remote polling per parent instruction; no solver launch or installation performed",
+  "private_key_handling": "No private key content accessed, copied, or displayed",
+  "next_minimum_action": "Use prepared exact runner capsule for user-controlled NCP handoff; perform current receipt/process read before any future launch"
+}

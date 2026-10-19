@@ -1,0 +1,209 @@
+{
+  "schema": "WU088_HH_PHYS67_DAG_V1",
+  "snapshot_kind": "SCIENCE_SNAPSHOT_BEFORE_PUBLICATION",
+  "recorded_utc": "2026-10-19T05:18:47.623084+00:00",
+  "original_source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+  "nodes": [
+    {
+      "id": "PHYS63_QUALITATIVE_ALL_ANGULAR_LAP_POISSON_DTN",
+      "state": "ESTABLISHED_REUSED",
+      "evidence": "PHYS63 applicable literature/model mapping; user fixed established state",
+      "depends_on": []
+    },
+    {
+      "id": "PHYS64_NCP20",
+      "state": "COMPLETED_REUSED",
+      "evidence": "PR113 / original ZIP d7fa0b50ed803e19dfcec8f781219c03acbd21f8f3ee47fe922754f8fdb5ea79",
+      "depends_on": [],
+      "reruns_this_turn": 0
+    },
+    {
+      "id": "PHYS65_FINITE_L64_ALL_RADIAL_COULOMB_BORN",
+      "state": "PROVED_REUSED",
+      "evidence": "PR114 bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+      "depends_on": []
+    },
+    {
+      "id": "PHYS66_ORDER_RADIAL_CUTOFF",
+      "state": "PROVED_REUSED",
+      "evidence": "PR115 445d82db9c42b4f2f81e4ac1b107dec3b69b3c24",
+      "depends_on": [
+        "PHYS65_FINITE_L64_ALL_RADIAL_COULOMB_BORN"
+      ]
+    },
+    {
+      "id": "PHYS66_FINAL_993317B1_ARTIFACT",
+      "state": "BLOCKED_ARTIFACT_ACCESS_EXACT_FINAL_VERSION",
+      "evidence": "recovery/ARTIFACT_RECONCILIATION.json",
+      "depends_on": [],
+      "bytes_restored": false
+    },
+    {
+      "id": "PHYS66_EARLIER_84C29DE7_C5C8",
+      "state": "RECOVERED_INTEGRATED_VERIFIED",
+      "evidence": "recovery/ARTIFACT_RECONCILIATION.json",
+      "depends_on": [],
+      "tests_passed": 57,
+      "new_paths": 84,
+      "claimed_equal_to_requested_final": false
+    },
+    {
+      "id": "PHYS66_LONGTAIL_RUNNER",
+      "state": "READY_NCP_TRANSFER_BLOCKED",
+      "evidence": "ncp_delivery/DELIVERY_PREPARATION.json",
+      "depends_on": [
+        "PHYS66_EARLIER_84C29DE7_C5C8"
+      ],
+      "fresh_extract_preflight": "PASS",
+      "source_capsule_sha256": "34a59dfe3158c454811ed6e6f47c82357e502ef8cdef9ee5f14640b37f73a835"
+    },
+    {
+      "id": "PHYS66_NCP_LONGTAIL6",
+      "state": "NOT_RUN_THIS_TURN_REMOTE_INVENTORY_UNRESOLVED",
+      "evidence": "recovery/NCP_ACCESS.json",
+      "depends_on": [
+        "PHYS66_LONGTAIL_RUNNER"
+      ],
+      "last_user_confirmed_status": "NOT_RUN",
+      "new_results_found_in_checked_backups": false,
+      "solver_executions_this_turn": 0
+    },
+    {
+      "id": "PHYS67_IDEAL_GAUSS_ANGULAR",
+      "state": "PROVED_AND_IMPLEMENTED_SCOPED",
+      "evidence": "angular/PROOF.md; angular/RESULTS.json",
+      "depends_on": [],
+      "finite_L_max": 64,
+      "all_signed_m": true,
+      "all_r_ge_27": true,
+      "floating_evaluation_included": false
+    },
+    {
+      "id": "PHYS67_COULOMB_20_POINTS",
+      "state": "CERTIFIED_EXECUTED_SCOPED",
+      "evidence": "coulomb/POINT_CERTIFICATES.json",
+      "depends_on": [],
+      "point_count": 20,
+      "continuous_radial_domain_certified_by_points": false
+    },
+    {
+      "id": "PHYS67_ORIGINAL_D1_21_20_M0",
+      "state": "CERTIFIED_EXECUTED_SCOPED",
+      "evidence": "first_born/FIRST_BORN_CERTIFICATE.json; first_born/PROOF.md",
+      "depends_on": [
+        "PHYS66_ORDER_RADIAL_CUTOFF"
+      ],
+      "numerical_complex_radius_upper": "2.328e-41",
+      "analytic_radial_tail_upper": "4.973e-53",
+      "units": "a0^-1",
+      "full_radial": true,
+      "exact_angular_entry": true,
+      "all_angular_first_forcing_individual_entry": true,
+      "full_nonlinear_entry_certified": false
+    },
+    {
+      "id": "PHYS67_STORED_PILOT_D1_ERROR",
+      "state": "CERTIFIED_BY_REUSED_OUTPUT",
+      "evidence": "first_born/EXISTING_PILOT_COMPARISON.json",
+      "depends_on": [
+        "PHYS67_ORIGINAL_D1_21_20_M0",
+        "PHYS66_EARLIER_84C29DE7_C5C8"
+      ],
+      "error_lower": "1.514e-36",
+      "error_upper": "1.516e-36",
+      "solver_reruns": 0
+    },
+    {
+      "id": "FINITE_L_D1_RADIAL_PROFILE_ENCLOSURES",
+      "state": "OPEN_NEXT",
+      "evidence": "Next contract: validated m0 ell0..28 D1 profiles; no unbounded interpolation",
+      "depends_on": [
+        "PHYS67_ORIGINAL_D1_21_20_M0"
+      ],
+      "input_boundary": 27,
+      "outer_radius": 65
+    },
+    {
+      "id": "FINITE_L_D2_D3_INTEGRATION_ROUNDOFF",
+      "state": "OPEN",
+      "evidence": "D2(21,20),m0,L28: retain every j0..28; prove numerical profile/integration error then add PR115 tail",
+      "depends_on": [
+        "FINITE_L_D1_RADIAL_PROFILE_ENCLOSURES",
+        "PHYS66_ORDER_RADIAL_CUTOFF"
+      ]
+    },
+    {
+      "id": "F64_GAUSS_NODE_BASIS_MATRIX_ROUNDOFF",
+      "state": "OPEN_SEPARATE_COMPONENT",
+      "evidence": "angular/RESULTS.json contains diagnostics only; no strict f64 matrix bound",
+      "depends_on": [
+        "PHYS67_IDEAL_GAUSS_ANGULAR"
+      ]
+    },
+    {
+      "id": "EXCLUDED_ANGULAR_FULL_RESPONSE",
+      "state": "OPEN",
+      "evidence": "Establish quantitative ell>L response including intermediate higher-order channels",
+      "depends_on": [
+        "PHYS63_QUALITATIVE_ALL_ANGULAR_LAP_POISSON_DTN"
+      ]
+    },
+    {
+      "id": "ORIGINAL_SOURCE_DRIVEN_XI",
+      "state": "OPEN",
+      "evidence": "xi=Fy-phi for original frozen source; preserve original source and model",
+      "depends_on": [
+        "FINITE_L_D2_D3_INTEGRATION_ROUNDOFF",
+        "EXCLUDED_ANGULAR_FULL_RESPONSE"
+      ]
+    },
+    {
+      "id": "REGULAR_ORIGIN_AND_INCOMING_ADJOINT",
+      "state": "OPEN",
+      "evidence": "Construct and certify original-source regular-origin/incoming-adjoint matching",
+      "depends_on": [
+        "ORIGINAL_SOURCE_DRIVEN_XI"
+      ]
+    },
+    {
+      "id": "SIGMA_E",
+      "state": "OPEN",
+      "evidence": "Original physical cross section after source/adjoint matching",
+      "depends_on": [
+        "REGULAR_ORIGIN_AND_INCOMING_ADJOINT"
+      ]
+    },
+    {
+      "id": "MAXWELLIAN_K_HH_T",
+      "state": "OPEN",
+      "evidence": "Certified energy integration and Maxwellian weighting",
+      "depends_on": [
+        "SIGMA_E"
+      ]
+    }
+  ],
+  "operational_states": {
+    "derivation": "COMPLETED_SCOPED_PHYS67",
+    "code": "IMPLEMENTED_AND_NATIVE_GIT_FILES",
+    "validation": {
+      "new_tests_passed": 71,
+      "recovered_tests_passed": 57,
+      "test_process_failures_final": 0,
+      "full_historical_suite_rerun": false
+    },
+    "scientific_execution": "COMPLETED_FOR_SCOPED_NEW_UNITS",
+    "ncp_execution": "ZERO_THIS_TURN_INVENTORY_UNRESOLVED",
+    "publication": {
+      "state": "PENDING_AT_SCIENCE_SNAPSHOT",
+      "authority": "publication/PUBLICATION.json"
+    },
+    "backup": {
+      "state": "PENDING_AT_SCIENCE_SNAPSHOT",
+      "authority": "publication/BACKUP_ACK.json"
+    },
+    "DAG": "UPDATED_WITH_SEPARATE_SCIENTIFIC_AND_OPERATIONAL_STATES"
+  },
+  "HH_R10": "OFF",
+  "new_strong_no_go_claimed": false,
+  "original_global_REI_DAG_mutated": false
+}

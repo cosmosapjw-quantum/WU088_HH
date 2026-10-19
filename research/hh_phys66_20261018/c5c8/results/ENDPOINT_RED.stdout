@@ -1,0 +1,19 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_extended_endpoint_preserves_nonzero_original_screen ___________
+
+    def test_extended_endpoint_preserves_nonzero_original_screen():
+        x=solve_endpoint(SOURCE,ells=(20,21),outer=65.,join=39.,nodes=96)
+>       assert np.linalg.norm(x['coefficients'][0])>0.01
+E       AssertionError: assert np.float64(0.0) > 0.01
+E        +  where np.float64(0.0) = <function norm at 0x7f2baa7752f0>(array([[0.+0.j, 0.+0.j],\n       [0.+0.j, 0.+0.j]]))
+E        +    where <function norm at 0x7f2baa7752f0> = <module 'numpy.linalg' from '/opt/pyvenv/lib/python3.13/site-packages/numpy/linalg/__init__.py'>.norm
+E        +      where <module 'numpy.linalg' from '/opt/pyvenv/lib/python3.13/site-packages/numpy/linalg/__init__.py'> = np.linalg
+
+tests/test_phys66_endpoint.py:9: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_phys66_endpoint.py::test_extended_endpoint_preserves_nonzero_original_screen - AssertionError: assert np.float64(0.0) > 0.01
+ +  where np.float64(0.0) = <function norm at 0x7f2baa7752f0>(array([[0.+0.j, 0.+0.j],\n       [0.+0.j, 0.+0.j]]))
+ +    where <function norm at 0x7f2baa7752f0> = <module 'numpy.linalg' from '/opt/pyvenv/lib/python3.13/site-packages/numpy/linalg/__init__.py'>.norm
+ +      where <module 'numpy.linalg' from '/opt/pyvenv/lib/python3.13/site-packages/numpy/linalg/__init__.py'> = np.linalg
+1 failed in 0.07s

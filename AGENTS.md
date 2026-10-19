@@ -1,3 +1,15 @@
+# Current priority PHYS67: numerical certification and recovered PHYS66 runner, 2026-10-19 UTC
+
+Read research/hh_phys67_20261019/REPORT_KO.md, NEXT_DAG.json, CODEX_HANDOFF_PROMPT.md and publication/ before continuing. The current branch is an actual descendant of PR116 1a1e5b6df5e5f88de851bc4686949089e2444291, whose parent is PR115 445d82db9c42b4f2f81e4ac1b107dec3b69b3c24. PR116 only recorded an artifact-access blocker. The current recovery found an earlier 84c29de7 archive and its 84-path add-only patch, independently verified and integrated; the requested final 993317b1 archive and 2d08f8da snapshot remain BLOCKED_ARTIFACT_ACCESS_EXACT_FINAL_VERSION. Do not conflate those versions or claim local snapshot ancestry.
+
+Preserve original atomic coordinates, B27, k7/10, E49/200 Hartree, the original off-center screened Hamiltonian and frozen source SHA f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d. eta=Fy, xi=Fy-phi and eta_C=-10/7 remain distinct. PHYS63 qualitative all-angular real-axis LAP/Poisson/DtN is ESTABLISHED and must not be reopened. PR114 finite-L64 Coulomb/Born and PR115 order-specific radial-cutoff proofs remain byte-identical. Reuse completed PHYS64 20 NCP cases and prior PHYS66 pilot/smoke; no broad reruns.
+
+PHYS67 closes the ideal Gauss angular truncation component for finite L<=64/all signed m, a 20-point Coulomb certificate and one full-radial original first-Born D1(21,20),m0 numerical enclosure. It does not certify the full nonlinear response or original driven xi. Next extend validated first-/second-order profiles with all intermediate modes in the specified finite block; then address excluded-angular response, original xi, origin/incoming adjoint, sigma(E), Maxwellian k_HH(T). HH_R10 remains OFF. The complete six-case longtail runner is supplied with preflight evidence; actual NCP submission/result state is recorded separately. Do not send solver design to NCP.
+
+Use the current user-selected physmath-research-loop 1.0.0. The stale PHYS52/PHYS19 priorities and historical NCP access claims below are preserved history; current receipts determine current status. This priority correction changes no original physics, protected proof, process owner, access control, or main-merge rule. Publication is an additive stacked draft; consult actual commit and backup acknowledgements rather than inferring them from a plan.
+
+## Preserved PHYS52 and earlier instructions
+
 # Current priority PHYS52: finite screened outgoing-collar Robin matching, 2026-10-15 KST
 
 Read research/hh_phys52_20261015/REPORT_KO.md, NEXT_DAG.json and results before extending. PHYS52 preserves original source SHA, finite ell21..28 all m screened outgoing plus positive collar matching only. Do not promote infinite ell, actual driven xi, physical H-H scattering rate, or REI HH_R10. Next PHYS53. No other-repo owner mutation. NCP SSH blocked; NCP Rust unverified.
