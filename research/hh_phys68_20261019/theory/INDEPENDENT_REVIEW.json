@@ -1,0 +1,122 @@
+{
+  "schema": "PHYS68_INDEPENDENT_THEORY_IMPLEMENTATION_REVIEW_V1",
+  "reviewer_role": "Independent delegated reviewer; not author of the three PHYS68 source modules",
+  "observed_at_utc": "2026-10-19T08:23:56.763148+00:00",
+  "decision": "PASS_SCOPED_THEORY_AND_IMPLEMENTATION_CONTRACT",
+  "numerical_execution_decision": "PENDING_ACTUAL_RECEIPT_REVIEW",
+  "scope": {
+    "m": 0,
+    "L": 28,
+    "ell": 21,
+    "ellprime": 20,
+    "T": "65",
+    "all_intermediate_j": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    "required_symmetric_pairs": 57,
+    "reference_degree": 80,
+    "half_width": "1/4",
+    "zero_free_radius": "1/2",
+    "large_radius": "2",
+    "arithmetic_bits": 384,
+    "coefficient_bits": 1024,
+    "D1_B_goal": "1e-45",
+    "D2_full_goal": "1e-62"
+  },
+  "source_files_sha256_at_review": {
+    "src/wu088_hh/phys68_profiles.py": "50878a9198cd8b5cd25b72472f14c7400803ba15257fcc13961d1cbe9c6edb62",
+    "src/wu088_hh/phys68_taylor.py": "99424c5bfee73937ebf1d4f0b705503734d807b29a449edac5951c6934b7edf2",
+    "src/wu088_hh/phys68_angular.py": "05ba85a1fd726bbb85072b46d7e13710c0c5f81148e12320d6c0c5cac37e20cc",
+    "src/wu088_hh/phys66_radial_budget.py": "9443973869c9cbfd465c945cc9801c9b19de66f8a278c0e3a76465d02c3d0989",
+    "research/hh_phys66_20261018/r5/PROOF.md": "c0f67c47c36f445494af3df52a9e09e27a853962b8f500ebe1572603febb68ca",
+    "research/hh_phys68_20261019/theory/PROOF.md": "7f6b2f9543975924e1c500c23b15b609aff20dc1438866340b8fd95e18bfff25"
+  },
+  "independent_methods": [
+    "Derived the Riccati coefficient equations directly from u double-prime +(Qc+V)u=0, using increasing-r DtN.",
+    "Expanded the D1 squared matrix product and cancelled external normalized Coulomb factors without conjugation.",
+    "Proved the complex screened-distance branch and Re sqrt inequality by explicit algebra and branch-cut exclusion.",
+    "Derived Cauchy coefficient and integrated Taylor tails, including q terminal/carry uncertainty.",
+    "Read the actual profile, angular and Coulomb-Taylor source paths and matched them to the formulas.",
+    "Checked the scalar constant complex source algebra: D2=kappa squared times (T-B) cubed/3.",
+    "Read the actual PR115 proof definition of D_(n,T) and the guarded per-L radial certificate code.",
+    "Read actual SciSpace results and Exa primary source fetches; see LITERATURE_RETRIEVAL.json."
+  ],
+  "closed_findings": [
+    {
+      "id": "P68_API_COEFFICIENT_PRECISION_RANGE",
+      "type": "implementation_contract",
+      "original": "ProfileRequest allowed coefficient_bits up to8192 whereas angular._bits permits4096.",
+      "correction_observed": "ProfileRequest now enforces coefficient_bits<=4096.",
+      "status": "CLOSED_BY_SOURCE_READ"
+    },
+    {
+      "id": "P68_PERSISTED_PROFILE_LOADER",
+      "type": "implementation_contract",
+      "original": "Only in-memory ProfilePanel evaluator existed while reusable saved-profile reconstruction was intended.",
+      "correction_observed": "load_profile_panel now validates request/source/engine/runtime, payload and certificate manifest, full j and pair coverage; restores q centers and kernel majorants; regenerates coefficients only.",
+      "status": "CLOSED_BY_SOURCE_READ"
+    },
+    {
+      "id": "P68_D1_TOLERANCE_SCOPE",
+      "type": "claim_scope",
+      "observation": "D1 absolute goal is checked only at B for every required pair. Uniform profile containment has no separately claimed uniform1e-45 accuracy gate.",
+      "correction_observed": "Code and proof consistently use D1_B_all_requested_pairs and distinguish uniform containment from endpoint tolerance.",
+      "status": "CLOSED_SCOPE_MATCH"
+    }
+  ],
+  "unresolved_mathematical_blockers": [],
+  "required_execution_evidence": [
+    "Complete76 panels, every29 internal j and every57 required pair with hash-bound backward chain.",
+    "Positive Coulomb zero-free lower bounds at every panel/mode; no unresolved reciprocal fallback.",
+    "Finite ball output; final exact midpoint/radius; numerical and beta2 components separate.",
+    "Actual D1_B and D2 achieved-goal comparisons against unchanged pre-run goals.",
+    "Partial2-panel resume uses previous2 payloads and computes74 new panels, without recreating their integrals."
+  ],
+  "not_claimed": [
+    "No actual PHYS68 successful integration is asserted by this pre-execution review.",
+    "No numerical tests were independently rerun by this reviewer.",
+    "No full D1 matrix outside the57 required pairs.",
+    "No excluded-angular D2 or nonlinear response certificate.",
+    "No original xi, origin/adjoint, sigma or rate certificate.",
+    "No new strong no-go or literature-priority claim."
+  ],
+  "PHYS63": "ESTABLISHED_REUSED",
+  "HH_R10": "OFF",
+  "code_mutations_by_reviewer": 0,
+  "commit_push_by_reviewer": 0,
+  "actual_literature_status": {
+    "scispace_search": "SUCCESS_10_INDEX_RESULTS",
+    "exa_searches": 2,
+    "exa_requested_result_slots": 10,
+    "primary_pages_fetched": 5,
+    "failed_primary_fetches": 1
+  }
+}

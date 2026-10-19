@@ -1,0 +1,329 @@
+{
+  "schema": "WU088_HH_PHYS68_NEXT_DAG_V1",
+  "updated_utc": "2026-10-19T10:26:12.175204+00:00",
+  "unit": "PHYS68",
+  "scope": "Validated finite-L28 original second Born coefficient and reusable two-row radial profiles; complete optional L64 execution implementation.",
+  "HH_R10": "OFF",
+  "PHYS63_qualitative_existence": "ESTABLISHED_REUSED",
+  "physics": {
+    "coordinates": "atomic",
+    "B": "27",
+    "k": "7/10",
+    "E_Hartree": "49/200",
+    "R0": "7/10",
+    "hamiltonian": "-Delta/2 - 1/r - (1+1/d)*exp(-2*d), d=|x-0.7*zhat|",
+    "radial_potential": "V=2*S",
+    "outgoing": "Hplus=G+iF",
+    "DtN_sign": "Z=+uprime*uinverse",
+    "radial_derivative": "d_r=k*d_rho",
+    "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+    "source_applied_to_original_xi_in_this_unit": false
+  },
+  "upstream": {
+    "PR": 117,
+    "head": "1a149efeba61a9ffd7ea882bdd86f7ea36c0b78c",
+    "tree": "43885b4b718ee35bcc96ee842645c6e5ac4a0bd6"
+  },
+  "states": {
+    "derivation": "COMPLETE_SCOPED_WITH_INDEPENDENT_REVIEW",
+    "implementation": "COMPLETE_SCOPED",
+    "verification": {
+      "status": "PASS_SCOPED",
+      "new_distinct_Python_tests": 128,
+      "new_native_Rust_tests": 5,
+      "new_distinct_total": 133,
+      "counts_by_component": {
+        "taylor": 28,
+        "angular": 35,
+        "profiles": 22,
+        "rust_driver_python": 14,
+        "saved_result_comparison": 8,
+        "NCP_wrapper": 21,
+        "native_Rust": 5
+      },
+      "historical_suites_rerun": 0,
+      "independent_saved_evidence_audit_solver_integrations": 0
+    },
+    "local_scientific_execution": {
+      "status": "COMPLETE",
+      "campaigns": 1,
+      "total_panels": 76,
+      "initial_panels_computed": 2,
+      "panels_reused_after_bounded_adoption": 2,
+      "completion_panels_new": 74,
+      "failed_resume_new_panels": 0,
+      "certificate_sha256": "ddaae206009a276def281af5526851ceb717baf2e0de5f8472552a9db340de9a",
+      "request_fingerprint": "412209899e821083775fecb5194fcf193e7e9b1b65d97126487ab9aa07c877b5",
+      "Rust_reference_runs_once_each": [
+        2432,
+        4864
+      ],
+      "L64_preflight_only_executed_once": true,
+      "L64_radial_panels": 0
+    },
+    "NCP": {
+      "submission": "NOT_SUBMITTED_THIS_THREAD",
+      "new_remote_calls": 0,
+      "host_state": "UNKNOWN",
+      "candidate_new_receipts_in_scanned_backups": 0
+    },
+    "publication": {
+      "status": "POSTED_READBACK_VERIFIED",
+      "target_branch": "research/hh-phys68-validated-born-profiles-20261019",
+      "actual_PHYS68_commit": "489ef7dee76231fcaf3c890d8706a2614ff69fe9",
+      "actual_PR": 118,
+      "current_receipt_authority": "publication/SCIENCE_REMOTE.json; subsequent metadata-only commit identity is recorded in final external DELIVERY",
+      "actual_science_tree": "e3da286066c382bcd3362acd25540f99075db525",
+      "actual_PR_url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/118",
+      "science_reruns_during_publication": 0
+    },
+    "backup": {
+      "new_PHYS68": "DUAL_CLOUD_BACKUP_NOT_CONFIRMED",
+      "Dropbox": "REJECTED_PARENT_NOT_FOLDER",
+      "Google_Drive": "UNKNOWN_NO_UPLOAD_ACK_AFTER_INTERRUPTION",
+      "receipt_authority": "publication/BACKUP_ACK.json",
+      "old_PHYS67_Dropbox": "VERIFIED_AT_INTAKE_CURRENT_LOOKUP_UNRESOLVED",
+      "old_PHYS67_Google_Drive": "PREVIOUS_UPLOAD_OUTCOMES_UNRESOLVED",
+      "local_capsule": "PASS_MANIFEST_HASH_SIZE_IMPORT_ONLY",
+      "source_capsule_sha256": "9843e924955c9a522921d7b3a297e684ea2305fb7ea40be7bc6df55f7156b483",
+      "supplemental_git_bundle": "PASS_INCREMENTAL_BUNDLE",
+      "supplemental_git_bundle_sha256": "36e1b6a62c1e6bf137f66becb0fe5962c05030e38049b61a89902e26040b0be8",
+      "old_PHYS67_Dropbox_scope": "Earlier intake observed unchanged metadata and independently recovered matching archive bytes; current old-folder/old-object lookup returns NOT_FOUND without establishing deletion."
+    },
+    "exact_requested_PHYS66_artifact": "BLOCKED_ARTIFACT_ACCESS_EXACT_FINAL_VERSION"
+  },
+  "nodes": [
+    {
+      "id": "INTAKE_PHYS68",
+      "status": "COMPLETE",
+      "scope": "Reconcile recovered PHYS67 bytes and inspected backups with PR117 before new science.",
+      "depends_on": [],
+      "evidence": [
+        "intake/GITHUB_BASE.json",
+        "intake/BACKUP_INTAKE.json",
+        "intake/PROTECTED_INPUTS_CHECKED.json"
+      ]
+    },
+    {
+      "id": "PHYS63_ALL_ANGULAR_QUALITATIVE_EXISTENCE",
+      "status": "ESTABLISHED_REUSED",
+      "scope": "Applicable real-axis LAP, Poisson and DtN existence; inherited without reopening.",
+      "depends_on": [],
+      "evidence": [
+        "../hh_phys67_20261019/NEXT_DAG.json"
+      ]
+    },
+    {
+      "id": "PHYS65_FINITE_L64_ALL_RADIAL_RATIO",
+      "status": "ESTABLISHED_REUSED",
+      "scope": "PR114 ratio and Born remainder for every r >= 27 and finite L <= 64; excluded angular and arbitrary floating-point coefficients are outside this theorem.",
+      "depends_on": [],
+      "evidence": [
+        "../hh_phys65_20261018/r5/PROOF.md"
+      ]
+    },
+    {
+      "id": "PHYS66_ORDER_RADIAL_CUTOFF",
+      "status": "ESTABLISHED_REUSED",
+      "scope": "PR115 order-specific beta1, beta2 and beta3; inherited proofs retained byte-identically.",
+      "depends_on": [
+        "PHYS65_FINITE_L64_ALL_RADIAL_RATIO"
+      ],
+      "evidence": [
+        "../hh_phys66_20261018/r5/PROOF.md"
+      ]
+    },
+    {
+      "id": "PHYS68_COULOMB_TAYLOR_DISKS",
+      "status": "DERIVED_IMPLEMENTED_VERIFIED",
+      "scope": "Normalized outgoing Coulomb ODE Taylor coefficients, complex majorants and positive reciprocal-disk gates.",
+      "depends_on": [
+        "INTAKE_PHYS68"
+      ],
+      "evidence": [
+        "taylor/PROOF.md",
+        "taylor/EXECUTION_RECORD.json",
+        "taylor/WOLFRAM_VERIFICATION.json"
+      ]
+    },
+    {
+      "id": "PHYS68_ANGULAR_TAYLOR_KERNEL",
+      "status": "DERIVED_IMPLEMENTED_VERIFIED",
+      "scope": "Exact m0 Laurent reduction, cached exact coefficients, Arb Taylor arithmetic and original screened-potential complex disk bound.",
+      "depends_on": [
+        "INTAKE_PHYS68"
+      ],
+      "evidence": [
+        "angular/PROOF.md",
+        "angular/TEST_EXECUTION.json",
+        "angular/PREPARATION_RESULT.json"
+      ]
+    },
+    {
+      "id": "PHYS68_D1_TWO_EXTERNAL_ROWS",
+      "status": "CERTIFIED_GOALS_MET",
+      "scope": "57 unique symmetric profiles for external ell = 21 and 20 with every intermediate j = 0..28; all requested D1(B) full-radial errors meet 1e-45. This is not a separately executed full D1 matrix or a uniform 1e-45 error at every profile point.",
+      "depends_on": [
+        "PHYS68_COULOMB_TAYLOR_DISKS",
+        "PHYS68_ANGULAR_TAYLOR_KERNEL",
+        "PHYS66_ORDER_RADIAL_CUTOFF"
+      ],
+      "evidence": [
+        "profiles/run_l28_t65_completed/CERTIFICATE.json",
+        "profiles/run_l28_t65_completed/ADOPTION_RECEIPT.json",
+        "theory/PROOF.md"
+      ],
+      "max_D1_B_full_radial_absolute_error_safe_upper": "8.764e-53 a0^-1"
+    },
+    {
+      "id": "PHYS68_D2_L28_M0_21_20",
+      "status": "CERTIFIED_GOALS_MET",
+      "scope": "Second Born coefficient D2(21,20) at B27 for finite L28, m0, with all 29 intermediate modes, all r >= 27 using T65 plus PR115 beta2. Numerical integration, Coulomb, exact angular reduction and roundoff are enclosed for this fixed request.",
+      "depends_on": [
+        "PHYS68_D1_TWO_EXTERNAL_ROWS"
+      ],
+      "evidence": [
+        "profiles/run_l28_t65_completed/CERTIFICATE.json",
+        "theory/FINAL_EXECUTION_REVIEW.json"
+      ],
+      "absolute_error_about_exact_stored_midpoint_safe_upper": "8.691e-67 a0^-1",
+      "goal": "1e-62 a0^-1",
+      "excluded_angular_certified": false,
+      "original_driven_xi_certified": false
+    },
+    {
+      "id": "PHYS68_RUST_REFERENCE",
+      "status": "EXECUTED_COMPARED",
+      "scope": "Independent binary64 Rust angular quadrature and RK4 ODE/Volterra/D2 path, with rigorous terminal seeds; 2432 and 4864 steps executed once each. These two approximations are compared with the certificate.",
+      "depends_on": [
+        "PHYS68_D2_L28_M0_21_20"
+      ],
+      "evidence": [
+        "rust_reference/run_20261019/EXECUTION_RECORD.json",
+        "validation/SAVED_RESULTS_COMPARISON.json"
+      ]
+    },
+    {
+      "id": "PHYS68_SAVED_EVIDENCE_REUSE",
+      "status": "COMPLETE",
+      "scope": "Old PHYS67 D1 enclosure and old PHYS66 pilot D2 scalar were compared using saved bytes; no old integrator was repeated. Two new profile-point evaluations use saved panels.",
+      "depends_on": [
+        "PHYS68_D2_L28_M0_21_20"
+      ],
+      "evidence": [
+        "validation/EXECUTION_RECORD.json",
+        "validation/SAVED_RESULTS_COMPARISON.json",
+        "validation/PROFILE_EVALUATION_WITNESS.json"
+      ]
+    },
+    {
+      "id": "PHYS66_NCP_LONGTAIL6",
+      "status": "PREPARED_NOT_SUBMITTED_THIS_THREAD",
+      "scope": "Six unchanged L28/L64 by T55/T65/T75 longtail cases. Check host receipts and active runs before executing; host state was not observed here.",
+      "depends_on": [
+        "INTAKE_PHYS68"
+      ],
+      "evidence": [
+        "intake/BACKUP_INTAKE.json"
+      ],
+      "runner_sha256": "34a59dfe3158c454811ed6e6f47c82357e502ef8cdef9ee5f14640b37f73a835",
+      "actual_host_state": "UNKNOWN"
+    },
+    {
+      "id": "PHYS68_NCP_L64_D2",
+      "status": "PREPARED_NOT_SUBMITTED",
+      "scope": "Complete fixed L64 extension runner; local mathematical preflight passed once with no radial panels. Actual NCP compilation or run receipts remain separate.",
+      "depends_on": [
+        "PHYS68_D2_L28_M0_21_20"
+      ],
+      "evidence": [
+        "ncp_delivery/REQUEST_L64.json",
+        "ncp_delivery/README_KO.md",
+        "ncp_delivery/PREFLIGHT_EXECUTION.json",
+        "ncp_delivery/TEST_EXECUTION.json",
+        "ncp_delivery/CAPSULE_BUILD_RECEIPT.json",
+        "ncp_delivery/CAPSULE_RESTORE_RECEIPT.json"
+      ],
+      "preflight_request_fingerprint": "2b46ed3d8032ff63ff6a62a3a26d9b73765bf38650395ff91dfd1e9fa5495140",
+      "actual_NCP_submissions": 0,
+      "actual_NCP_radial_runs": 0,
+      "capsule_sha256": "b31f72af3101c71fb69036421bbe3542f40e7efca15d391878d5bd47eb0e9580",
+      "clean_restore": "PASS_HASH_IMPORT_HELP_REQUEST_BINDING"
+    },
+    {
+      "id": "EXCLUDED_ANGULAR_HIGHER_ORDER_RESPONSE",
+      "status": "OPEN_CONSTRUCTIVE_RESEARCH",
+      "scope": "Bound response outside the finite angular block at real energy; preserve already established all-angular qualitative existence.",
+      "depends_on": [
+        "PHYS63_ALL_ANGULAR_QUALITATIVE_EXISTENCE",
+        "PHYS68_D2_L28_M0_21_20"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "NUMERICAL_CERTIFICATION_OTHER_ENTRIES_ORDERS",
+      "status": "OPEN_SCOPED_EXTENSION",
+      "scope": "Extend numerical certificate to required other m, entries, orders or nonlinear response; do not generalize this fixed m0 D2 proof to an arbitrary f64 solver.",
+      "depends_on": [
+        "PHYS68_D2_L28_M0_21_20"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "ORIGINAL_SOURCE_DRIVEN_XI",
+      "status": "OPEN_CONSTRUCTIVE_RESEARCH",
+      "scope": "Apply the original frozen1386 complex128 source and retain eta = F y, xi = F y - phi and eta_C = -10/7 as distinct objects. Source hash locking alone does not solve this node.",
+      "depends_on": [
+        "PHYS63_ALL_ANGULAR_QUALITATIVE_EXISTENCE",
+        "EXCLUDED_ANGULAR_HIGHER_ORDER_RESPONSE"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "REGULAR_ORIGIN_AND_INCOMING_ADJOINT",
+      "status": "OPEN_CONSTRUCTIVE_RESEARCH",
+      "scope": "Construct required origin regularity and incoming-adjoint solution in original physical conventions.",
+      "depends_on": [
+        "ORIGINAL_SOURCE_DRIVEN_XI"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "SIGMA_E",
+      "status": "OPEN_CONSTRUCTIVE_RESEARCH",
+      "scope": "Construct the physical sigma(E) from the original source-driven scattering problem.",
+      "depends_on": [
+        "ORIGINAL_SOURCE_DRIVEN_XI",
+        "REGULAR_ORIGIN_AND_INCOMING_ADJOINT"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "MAXWELLIAN_K_HH_T",
+      "status": "OPEN_CONSTRUCTIVE_RESEARCH",
+      "scope": "Construct Maxwellian k_HH(T) with justified energy-domain treatment.",
+      "depends_on": [
+        "SIGMA_E"
+      ],
+      "evidence": []
+    }
+  ],
+  "execution_reuse_policy": {
+    "never_repeat_to_reestablish_unchanged_evidence": [
+      "PHYS64 NCP20 (2 smoke + 18 extended)",
+      "prior PHYS66 pilot and smoke",
+      "prior PHYS67 accepted certificates and 128 focused tests",
+      "completed PHYS68 L28/T65 76 panels",
+      "completed PHYS68 Rust 2432 and 4864 references"
+    ],
+    "future_remote_launch_condition": "Inspect actual host/backup receipts and matching source/request first. Resume or reuse any valid completed work; run only missing cases."
+  },
+  "next_scientific_priority": [
+    "EXCLUDED_ANGULAR_HIGHER_ORDER_RESPONSE",
+    "ORIGINAL_SOURCE_DRIVEN_XI",
+    "REGULAR_ORIGIN_AND_INCOMING_ADJOINT",
+    "SIGMA_E",
+    "MAXWELLIAN_K_HH_T"
+  ],
+  "optional_numerical_extension": "PHYS68_NCP_L64_D2 does not itself close the excluded-angular or original-source nodes."
+}

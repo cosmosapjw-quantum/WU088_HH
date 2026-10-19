@@ -1,0 +1,52 @@
+{
+  "Coulomb_probes": 0,
+  "HH_R10": "OFF",
+  "NCP_submissions": 0,
+  "angular_probes": 0,
+  "archive": "/workspace/scratch/455b0ba5bd64/delivery_phys68/WU088_HH_PHYS68_L64_D2_RUNNER_20261019.zip",
+  "archive_bytes": 122760,
+  "archive_sha256": "b31f72af3101c71fb69036421bbe3542f40e7efca15d391878d5bd47eb0e9580",
+  "checks": [
+    {
+      "command": [
+        "/workspace/scratch/455b0ba5bd64/runtime_phys68/bin/python",
+        "scripts/phys68_ncp.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "usage: phys68_ncp.py [-h] [--request REQUEST] [--source SOURCE]\n                     [--out-root OUT_ROOT] [--run]\n                     [--wall-seconds WALL_SECONDS] [--memory-gib MEMORY_GIB]\n                     [--ncp-limits]\n\nPrepare or explicitly run the optional PHYS68 finite-L64 extension. Default:\nbounded mathematical preflight only. The completed L28 request is not a\nselectable profile. A run delegates to the existing profile solver, with exact\nsource/request/engine/runtime binding and safe automatic resume.\n\noptions:\n  -h, --help            show this help message and exit\n  --request REQUEST     complete exact fixed L64 request JSON\n  --source SOURCE\n  --out-root OUT_ROOT\n  --run                 explicitly launch the optional L64 campaign after\n                        preflight\n  --wall-seconds WALL_SECONDS\n  --memory-gib MEMORY_GIB\n  --ncp-limits          apply Linux address-space limit and nice10 to the\n                        solver child\n"
+    },
+    {
+      "command": [
+        "/workspace/scratch/455b0ba5bd64/runtime_phys68/bin/python",
+        "scripts/phys68_profiles.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "usage: phys68_profiles.py [-h] [--source SOURCE] --out OUT [--request REQUEST]\n                          [--resume] [--max-new-panels MAX_NEW_PANELS]\n\nExecute the complete validated profile/second-Born runner (no NCP solver\ndesign).\n\noptions:\n  -h, --help            show this help message and exit\n  --source SOURCE\n  --out OUT\n  --request REQUEST     JSON object with exact ProfileRequest fields\n  --resume\n  --max-new-panels MAX_NEW_PANELS\n                        checkpoint after this many new panels; zero verifies\n                        stored panels\n"
+    },
+    {
+      "command": [
+        "/workspace/scratch/455b0ba5bd64/runtime_phys68/bin/python",
+        "-c",
+        "import importlib,json,pathlib,runpy; m=json.loads(pathlib.Path('MANIFEST.json').read_text()); names=[p[4:-3].replace('/','.') for p in m['recursive_import_closure'] if p.startswith('src/') and not p.endswith('__init__.py')]; [importlib.import_module(n) for n in names]; w=runpy.run_path('scripts/phys68_ncp.py',run_name='capsule_import_only'); r=w['read_request']('research/hh_phys68_20261019/ncp_delivery/REQUEST_L64.json'); b=w['binding_for'](r,w['FROZEN_SOURCE']); print(json.dumps({'imported_modules':names,'request_max_ell':r.max_ell,'source_sha256':b['source_sha256'],'engine':b['engine'],'fingerprint':w['digest'](b),'scientific_executions':0},sort_keys=True))"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"engine\": {\"files_sha256\": {\"phys65_exterior_bounds.py\": \"ba9d2fe1e83555595bbc97d875dc1b4b4a9bae208ea8d67ac4eba91b37978f89\", \"phys66_radial_budget.py\": \"9443973869c9cbfd465c945cc9801c9b19de66f8a278c0e3a76465d02c3d0989\", \"phys67_coulomb_certificate.py\": \"497d83649a829149dcae0496ad991c75add1e197fd2de2a586d734f27f02840c\", \"phys67_first_born.py\": \"c4f4c7c6adc72269ead632b3897f21c4cd0068ea3535df691cd1078f2ce7bb11\", \"phys68_angular.py\": \"05ba85a1fd726bbb85072b46d7e13710c0c5f81148e12320d6c0c5cac37e20cc\", \"phys68_profiles.py\": \"4ba80017cd4aa6e2e0db22b5b17a7fc4faba1610f726029f57fd3165a9fc00e7\", \"phys68_taylor.py\": \"99424c5bfee73937ebf1d4f0b705503734d807b29a449edac5951c6934b7edf2\"}, \"flint\": \"3.3.1\", \"python\": \"3.12.14\", \"python_flint\": \"0.8.0\"}, \"fingerprint\": \"2b46ed3d8032ff63ff6a62a3a26d9b73765bf38650395ff91dfd1e9fa5495140\", \"imported_modules\": [\"wu088_hh.phys63_lap_contract\", \"wu088_hh.phys63_scaled_riccati\", \"wu088_hh.phys65_exterior_bounds\", \"wu088_hh.phys66_radial_budget\", \"wu088_hh.phys67_coulomb_certificate\", \"wu088_hh.phys67_first_born\", \"wu088_hh.phys68_angular\", \"wu088_hh.phys68_profiles\", \"wu088_hh.phys68_taylor\"], \"request_max_ell\": 64, \"scientific_executions\": 0, \"source_sha256\": \"f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d\"}\n"
+    }
+  ],
+  "created_utc": "2026-10-19T10:07:49.445530+00:00",
+  "elapsed_seconds": 1.4401019139986602,
+  "payloads_checked": 34,
+  "preflight_rerun": 0,
+  "radial_integrations": 0,
+  "reuse": "Existing 21-test receipt and one mathematical preflight remain unchanged.",
+  "schema": "WU088_HH_PHYS68_L64_CAPSULE_CLEAN_RESTORE_V1",
+  "scientific_executions": 0,
+  "status": "PASS_HASH_IMPORT_HELP_REQUEST_BINDING",
+  "temporary_restore_removed_after_check": true,
+  "tests_rerun": 0
+}

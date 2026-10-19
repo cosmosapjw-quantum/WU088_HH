@@ -1,0 +1,120 @@
+{
+  "schema": "PHYS68_RUST_REFERENCE_EXECUTION_V1",
+  "timestamp_utc": "2026-10-19T08:20:57.176395+00:00",
+  "status": "COMPLETED_REFERENCE_WITH_REFINEMENT_CHECK",
+  "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+  "rust_source_sha256": "dd20cf25a8ce9149f5bc52ce5159101ec47d98e0936e366e53f508575db0cef4",
+  "driver_sha256": "b7cbd9b6c8036fcd641a0276f12d81917cfce4b76efd665cb65bcfceed4af300",
+  "seed_sha256": "3aae5f37d858deca71f4f4217d56484d8430f06ad95e30280a44aafc2b6f7862",
+  "seed_ball_receipt": "SEED_BALLS.json",
+  "seed_provenance": "Shared PHYS67 Coulomb initializer; original parameters fixed.",
+  "independent_components": [
+    "Rust standard-library complex arithmetic",
+    "Gauss-Legendre 96 nodes and normalized m=0 basis",
+    "backward RK4 Coulomb ODE",
+    "all j=0..28 first- and second-Born integrals"
+  ],
+  "commands": [
+    {
+      "command": [
+        "/tmp/rei_run15_salvage/recovery/toolchain/prefix/bin/rustc",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/455b0ba5bd64/WU088_HH",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.008755945003940724,
+      "stdout": "RUST_VERSION.stdout.txt",
+      "stderr": "RUST_VERSION.stderr.txt"
+    },
+    {
+      "command": [
+        "/tmp/rei_run15_salvage/recovery/toolchain/prefix/bin/rustc",
+        "--edition=2021",
+        "--test",
+        "-O",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/scripts/phys68_rust_reference.rs",
+        "-o",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/research/hh_phys68_20261019/rust_reference/run_20261019/phys68_rust_reference_tests"
+      ],
+      "cwd": "/workspace/scratch/455b0ba5bd64/WU088_HH",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.3180538989981869,
+      "stdout": "COMPILE_TESTS.stdout.txt",
+      "stderr": "COMPILE_TESTS.stderr.txt"
+    },
+    {
+      "command": [
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/research/hh_phys68_20261019/rust_reference/run_20261019/phys68_rust_reference_tests"
+      ],
+      "cwd": "/workspace/scratch/455b0ba5bd64/WU088_HH",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.0027481030047056265,
+      "stdout": "RUST_TESTS.stdout.txt",
+      "stderr": "RUST_TESTS.stderr.txt"
+    },
+    {
+      "command": [
+        "/tmp/rei_run15_salvage/recovery/toolchain/prefix/bin/rustc",
+        "--edition=2021",
+        "-O",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/scripts/phys68_rust_reference.rs",
+        "-o",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/research/hh_phys68_20261019/rust_reference/run_20261019/phys68_rust_reference"
+      ],
+      "cwd": "/workspace/scratch/455b0ba5bd64/WU088_HH",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.5025493989960523,
+      "stdout": "COMPILE_REFERENCE.stdout.txt",
+      "stderr": "COMPILE_REFERENCE.stderr.txt"
+    },
+    {
+      "command": [
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/research/hh_phys68_20261019/rust_reference/run_20261019/phys68_rust_reference",
+        "2432",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/research/hh_phys68_20261019/rust_reference/run_20261019/SEED_INPUT.txt"
+      ],
+      "cwd": "/workspace/scratch/455b0ba5bd64/WU088_HH",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.060464647998742294,
+      "stdout": "RK4_2432.stdout.txt",
+      "stderr": "RK4_2432.stderr.txt"
+    },
+    {
+      "command": [
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/research/hh_phys68_20261019/rust_reference/run_20261019/phys68_rust_reference",
+        "4864",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/research/hh_phys68_20261019/rust_reference/run_20261019/SEED_INPUT.txt"
+      ],
+      "cwd": "/workspace/scratch/455b0ba5bd64/WU088_HH",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.09835407100035809,
+      "stdout": "RK4_4864.stdout.txt",
+      "stderr": "RK4_4864.stderr.txt"
+    }
+  ],
+  "refinement": {
+    "status": "NUMERICALLY_CHECKED",
+    "coarse_steps": 2432,
+    "fine_steps": 4864,
+    "absolute_difference": 5.4959262654049e-56,
+    "relative_difference": 7.12557230146345e-09,
+    "relative_goal": 1e-06,
+    "goal_met": true,
+    "certified_error_bound": false,
+    "external_validated_ball_comparison": "PENDING_PARENT_CERTIFICATE"
+  },
+  "results": [
+    "RK4_2432.json",
+    "RK4_4864.json"
+  ],
+  "ncp_launches": 0,
+  "old_campaign_reruns": 0,
+  "HH_R10": "OFF",
+  "numeric_reference_is_interval_certificate": false
+}

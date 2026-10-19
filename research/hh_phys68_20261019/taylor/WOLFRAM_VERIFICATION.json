@@ -1,0 +1,40 @@
+{
+  "schema": "WU088_HH_PHYS68_WOLFRAM_V1",
+  "purpose": "Exact Q_n Taylor recurrence and d_r=k*d_rho chain factor check",
+  "context_call": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "tool call error: tool call failed for `codex_apps/wolfram.WolframContext`\n\nCaused by:\n    Mcp error: -32603: Internal error"
+        }
+      ],
+      "isError": true
+    }
+  },
+  "evaluator_call": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Symbol::undefined2: Warning: Global symbols \"Q, Q, Q, Q\" are undefined.\nGeneral::messages: Messages were generated which may indicate errors.\n\nOut[1]= <|\"QChecks\" -> {0, 0, 0, 0, 0, 0, 0}, \"ChainFactor\" -> 0, \"ResidualChecks\" -> {0, 0, 0, 0, 0, 0, 0}, \"PhysicalParameters\" -> {k -> 7/10, eta -> -10/7}|>"
+        }
+      ],
+      "structuredContent": null,
+      "isError": false
+    }
+  },
+  "assessment": {
+    "context": "FAILED_PROVIDER_INTERNAL_ERROR_-32603",
+    "evaluator": "RETURNED_15_EXACT_ZEROS_WITH_PROVIDER_WARNINGS",
+    "exact_zero_groups": {
+      "q_coefficients_0_through_6": 7,
+      "ode_residual_0_through_6": 7,
+      "chain_factor": 1
+    },
+    "warning": "Global symbols Q undefined warning was included by the provider; the returned association explicitly contained the expected zero checks. This receipt preserves the warning rather than labeling the response clean.",
+    "scientific_scope": "Finite exact algebra consistency only; the disk majorant and analytic zero-free proof are independently derived."
+  }
+}
