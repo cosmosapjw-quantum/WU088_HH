@@ -1,0 +1,40 @@
+{
+  "schema": "PHYS68_ANGULAR_PRIMARY_API_REFERENCES_V1",
+  "read_status": "ACTUALLY_RETRIEVED_EXA_PRIMARY_DOCUMENTATION_AND_INSTALLED_API_PROBE",
+  "python_flint_installed": "0.8.0",
+  "FLINT_installed": "3.3.1",
+  "sources": [
+    {
+      "url": "https://python-flint.readthedocs.io/en/latest/acb_series.html",
+      "used_for": [
+        "acb_series constructor prec",
+        "inv and exp availability",
+        "Taylor coefficient access"
+      ]
+    },
+    {
+      "url": "https://python-flint.readthedocs.io/en/latest/general.html",
+      "used_for": [
+        "process global ctx.prec",
+        "ctx.cap upper power series order",
+        "known coefficient order tracking"
+      ]
+    }
+  ],
+  "local_probe": {
+    "initial_context": {
+      "prec": 53,
+      "cap": 10
+    },
+    "probe_arithmetic_bits": 192,
+    "probe_series_cap": 6,
+    "probe_expression": "(1/r+1/r^2)exp(-2r), r=29+x",
+    "known_terms": 6,
+    "arb_upper_endpoint_exact": true,
+    "restored_context": {
+      "prec": 53,
+      "cap": 10
+    }
+  },
+  "scientific_proof": "PROOF.md contains direct derivation; API documentation supports implementation semantics only."
+}
