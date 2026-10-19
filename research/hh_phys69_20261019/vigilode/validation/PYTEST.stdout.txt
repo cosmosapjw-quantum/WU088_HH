@@ -1,0 +1,117 @@
+.....................F...                                                [100%]
+=================================== FAILURES ===================================
+___________ test_saved_arb_reference_compares_without_an_integrator ____________
+
+    def test_saved_arb_reference_compares_without_an_integrator():
+        result = result_fixture()
+        comparison = client.compare_certificate(result,client.DEFAULT_CERT)
+        assert comparison["goal_met"]
+>       assert Fraction(comparison["relative_error_upper"]["numerator"],comparison["relative_error_upper"]["denominator"]) < Fraction(1,10**14)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_phys69_vigilode.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'fractions.Fraction'>
+numerator = '222235861937107168974591491040588492516615302277911317753370206275171738494031573931511521776262297333310982368031543...3624099672576934687549011125618267574100980253934472136086118591322687197382469750675319891628286396587536322146893473'
+denominator = '579821672701774257114214824764685387273437703414826078448616787647687015031264926184557612897788756145514198075213818...3594726414258815803335128664321305183040194917563747592981220176116168790214790560254098044539100502568953164934887777'
+
+    def __new__(cls, numerator=0, denominator=None):
+        """Constructs a Rational.
+    
+        Takes a string like '3/2' or '1.5', another Rational instance, a
+        numerator/denominator pair, or a float.
+    
+        Examples
+        --------
+    
+        >>> Fraction(10, -8)
+        Fraction(-5, 4)
+        >>> Fraction(Fraction(1, 7), 5)
+        Fraction(1, 35)
+        >>> Fraction(Fraction(1, 7), Fraction(2, 3))
+        Fraction(3, 14)
+        >>> Fraction('314')
+        Fraction(314, 1)
+        >>> Fraction('-35/4')
+        Fraction(-35, 4)
+        >>> Fraction('3.1415') # conversion from numeric string
+        Fraction(6283, 2000)
+        >>> Fraction('-47e-2') # string may include a decimal exponent
+        Fraction(-47, 100)
+        >>> Fraction(1.47)  # direct construction from float (exact conversion)
+        Fraction(6620291452234629, 4503599627370496)
+        >>> Fraction(2.25)
+        Fraction(9, 4)
+        >>> Fraction(Decimal('1.47'))
+        Fraction(147, 100)
+    
+        """
+        self = super(Fraction, cls).__new__(cls)
+    
+        if denominator is None:
+            if type(numerator) is int:
+                self._numerator = numerator
+                self._denominator = 1
+                return self
+    
+            elif isinstance(numerator, numbers.Rational):
+                self._numerator = numerator.numerator
+                self._denominator = numerator.denominator
+                return self
+    
+            elif isinstance(numerator, (float, Decimal)):
+                # Exact conversion
+                self._numerator, self._denominator = numerator.as_integer_ratio()
+                return self
+    
+            elif isinstance(numerator, str):
+                # Handle construction from strings.
+                m = _RATIONAL_FORMAT.match(numerator)
+                if m is None:
+                    raise ValueError('Invalid literal for Fraction: %r' %
+                                     numerator)
+                numerator = int(m.group('num') or '0')
+                denom = m.group('denom')
+                if denom:
+                    denominator = int(denom)
+                else:
+                    denominator = 1
+                    decimal = m.group('decimal')
+                    if decimal:
+                        decimal = decimal.replace('_', '')
+                        scale = 10**len(decimal)
+                        numerator = numerator * scale + int(decimal)
+                        denominator *= scale
+                    exp = m.group('exp')
+                    if exp:
+                        exp = int(exp)
+                        if exp >= 0:
+                            numerator *= 10**exp
+                        else:
+                            denominator *= 10**-exp
+                if m.group('sign') == '-':
+                    numerator = -numerator
+    
+            else:
+                raise TypeError("argument should be a string "
+                                "or a Rational instance")
+    
+        elif type(numerator) is int is type(denominator):
+            pass # *very* normal case
+    
+        elif (isinstance(numerator, numbers.Rational) and
+            isinstance(denominator, numbers.Rational)):
+            numerator, denominator = (
+                numerator.numerator * denominator.denominator,
+                denominator.numerator * numerator.denominator
+                )
+        else:
+>           raise TypeError("both arguments should be "
+                            "Rational instances")
+E           TypeError: both arguments should be Rational instances
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/fractions.py:277: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_phys69_vigilode.py::test_saved_arb_reference_compares_without_an_integrator
+1 failed, 24 passed in 0.07s

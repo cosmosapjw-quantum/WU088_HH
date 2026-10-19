@@ -1,0 +1,109 @@
+{
+  "schema": "PHYS69_FINAL_SCIENCE_DELIVERY_V1",
+  "recorded_utc": "2026-10-19T17:07:34.100286+00:00",
+  "science": {
+    "status": "PROMOTE_SCOPED_COMPLETE",
+    "source_commit": "b9f3b2a9419bdafb59dc19a8b80ec611e3a0dada",
+    "source_tree": "83cb0c778ad1eefe2db75c3cb7557c9008bff994",
+    "actual_parent": "2a79d961388e4fc71cbc0938f012b08af7ecf14e",
+    "entry": {
+      "ell": 21,
+      "ellprime": 20,
+      "m": 0,
+      "order": 2,
+      "meaning": "actual all-angular/all-radial outgoing DtN Taylor coefficient Z_second_derivative_at_zero/2"
+    },
+    "center_real": "7.01774363281637372857673e-48",
+    "center_imag": "3.20016322230539545153550e-48",
+    "absolute_error_upper_including_display_rounding": "1.279825889920e-64",
+    "units": "a0^-1",
+    "original_goal": "1e-62",
+    "verdict": "PASS",
+    "certificate": "../all_angular/CERTIFICATE.json",
+    "certificate_sha256": "965dc9e3d4a1b40fd7e379629f13480c5a7f30b382aa5b240fd7663b56ae9e29"
+  },
+  "code": {
+    "status": "IMPLEMENTED_AND_PUBLISHED",
+    "rust": "1.94.1",
+    "vigilode_pin": "a21d573980f66fe02891bd216153443b5352f921",
+    "applied_crates": {
+      "num-complex": "0.4.6",
+      "gauss-quad": "0.3.2"
+    },
+    "NCP_solver_design_required": false
+  },
+  "verification": {
+    "new_python_distinct_pass": 137,
+    "new_rust_distinct_pass": 7,
+    "total_distinct_pass": 144,
+    "old_suites_replayed": 0,
+    "actual_test_failure_history_preserved": true,
+    "clean_ncp_delivery_restore": "PASS_READ_ONLY_NO_INTEGRATIONS",
+    "independent_reviews": "COMPLETE_NO_NEW_REVIEW_CYCLE"
+  },
+  "execution": {
+    "new_validated_band_panels": 76,
+    "old_radial_panels_recomputed": 0,
+    "new_native_l28_runs": 2,
+    "NCP_submissions": 0,
+    "NCP_host_state": "UNKNOWN",
+    "ready_not_run": [
+      "PHYS66_LONGTAIL6",
+      "PHYS68_VALIDATED_L64",
+      "PHYS69_VIGILODE_L64"
+    ]
+  },
+  "publication": {
+    "state": "SCIENCE_PUBLISHED_READBACK_VERIFIED",
+    "pr": 119,
+    "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/119",
+    "branch": "research/hh-phys69-angular-tail-vigilode-20261019",
+    "draft": true,
+    "main_merged": false,
+    "science_remote_receipt": "SCIENCE_REMOTE.json",
+    "metadata_source_parent": "b9f3b2a9419bdafb59dc19a8b80ec611e3a0dada",
+    "metadata_self_identity": "Use the containing Git commit; external PHYS69_DELIVERY_20261019.json records its returned SHA after publication."
+  },
+  "backup": {
+    "state": "TWO_PROVIDERS_UPLOAD_ACKNOWLEDGED_AND_DOWNLOADED_SHA256_VERIFIED",
+    "receipt": "BACKUP_ACK.json",
+    "science_capsule": {
+      "file": "WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019.zip",
+      "bytes": 11100708,
+      "sha256": "12983336200c2a7f4cfd3d55e9c4481d06d6ce310adfbddcf336cc2a9b5d6a89",
+      "payload_files": 345,
+      "all_members_verified": true
+    },
+    "ncp_capsule": {
+      "file": "WU088_HH_PHYS69_NCP_READY_20261019.zip",
+      "bytes": 2853036,
+      "sha256": "3dc019df5de44992631b885e9a0bd3467bfcb538296204ad038dcbe2a8fb2751",
+      "payload_files": 333,
+      "all_members_verified": true
+    }
+  },
+  "DAG": {
+    "receipt": "../NEXT_DAG.json",
+    "PHYS63": "ESTABLISHED_REUSED",
+    "PHYS69_ALL_ANGULAR_D2_21_20_M0": "COMPLETE",
+    "next": "PHYS70_ALL_ANGULAR_D3_AND_HIGHER_REMAINDER",
+    "open": [
+      "ORIGINAL_SOURCE_DRIVEN_XI",
+      "ORIGIN_AND_ORIGINAL_INCOMING_ADJOINT",
+      "SIGMA_E",
+      "MAXWELLIAN_K_HH_T"
+    ],
+    "HH_R10": "OFF"
+  },
+  "preserved_source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+  "historical_exact_artifact_access": {
+    "sha256": "993317b1c78edf496ec5a82a261eceb5a54515a78e38d139a924722a5d28f891",
+    "state": "BLOCKED_ARTIFACT_ACCESS_EXACT_FINAL_VERSION",
+    "does_not_relabel_earlier_84c29de7_archive": true
+  },
+  "skill_versions": {
+    "science_run_record": "1.0.0 historical execution",
+    "current_closeout": "1.3.0",
+    "scientific_reexecution_due_to_skill_update": 0
+  }
+}

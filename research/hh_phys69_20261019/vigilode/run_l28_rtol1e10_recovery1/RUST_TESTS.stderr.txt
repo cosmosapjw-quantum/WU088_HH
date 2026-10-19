@@ -1,0 +1,38 @@
+   Compiling pulp v0.22.3
+   Compiling dyn-stack-macros v0.1.3
+   Compiling dyn-stack v0.13.2
+   Compiling typenum v1.20.1
+   Compiling seq-macro v0.3.6
+   Compiling once_cell v1.21.4
+   Compiling syn v1.0.109
+   Compiling gemm-common v0.19.0
+   Compiling generic-array v0.14.7
+   Compiling nano-gemm-core v0.2.1
+   Compiling libc v0.2.191
+   Compiling interpol v0.2.1
+   Compiling nano-gemm-f64 v0.2.1
+   Compiling nano-gemm-c32 v0.2.1
+   Compiling nano-gemm-f32 v0.2.1
+   Compiling nano-gemm-c64 v0.2.1
+   Compiling syn v3.0.9
+   Compiling syn v2.0.119
+   Compiling serde_core v1.0.229
+   Compiling crossbeam-utils v0.8.23
+   Compiling defer v0.2.1
+   Compiling private-gemm-x86 v0.1.22
+   Compiling equator-macro v0.2.1
+   Compiling zmij v1.0.23
+   Compiling crossbeam-epoch v0.9.21
+   Compiling num_cpus v1.17.0
+   Compiling equator v0.2.2
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling gemm-f32 v0.19.0
+   Compiling gemm-f64 v0.19.0
+   Compiling gemm-c64 v0.19.0
+   Compiling gemm-c32 v0.19.0
+rustc-LLVM ERROR: IO failure on output stream: No space left on device
+error: could not compile `gemm-c32` (lib)
+
+Caused by:
+  process didn't exit successfully: `/tmp/rei_run15_salvage/recovery/toolchain/prefix/bin/rustc --crate-name gemm_c32 --edition=2021 /workspace/scratch/455b0ba5bd64/cargo_phys69/registry/src/index.crates.io-1949cf8c6b5b557f/gemm-c32-0.19.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no -C codegen-units=16 --cfg 'feature="std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("default", "experimental-apple-amx", "rayon", "std", "x86-v4"))' -C metadata=b5acedc18505f6bd -C extra-filename=-57ed2b28b91cff45 --out-dir /workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/target/release/deps -C strip=debuginfo -L dependency=/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/target/release/deps --extern dyn_stack=/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/target/release/deps/libdyn_stack-bfebba7bde0733de.rmeta --extern gemm_common=/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/target/release/deps/libgemm_common-9dceb8ad4ee62f43.rmeta --extern num_complex=/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/target/release/deps/libnum_complex-166294063599ee82.rmeta --extern num_traits=/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/target/release/deps/libnum_traits-3c601ddd908c4981.rmeta --extern paste=/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/target/release/deps/libpaste-146db335cd101292.so --extern raw_cpuid=/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/target/release/deps/libraw_cpuid-f0306b178b7cb561.rmeta --extern seq_macro=/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/target/release/deps/libseq_macro-01b5a309e4e7e6ff.so --cap-lints allow` (exit status: 101)

@@ -1,0 +1,137 @@
+{
+  "schema": "WU088_HH_PHYS69_ANGULAR_TAIL_CODE_REVIEW_V1",
+  "reviewer": "/root/phys69_github_intake",
+  "recorded_utc": "2026-10-19T12:51:49.399Z",
+  "status": "PASS_SCOPED_CODE_AFTER_MINIMAL_PARSER_CORRECTION",
+  "source_before_fix": {
+    "path": "src/wu088_hh/phys69_angular_tail.py",
+    "sha256": "8e60a031c47c427c7548b4ec237809bbf30982b627ab1464b036b98ca627dcd3"
+  },
+  "source_after_fix": {
+    "path": "src/wu088_hh/phys69_angular_tail.py",
+    "sha256": "73674f2bbe4c63474cc09f172478677aabf35a7ae0b6f69fb3cfc08a2effeae4",
+    "preserved_actual_producer_source": "research/hh_phys69_20261019/angles/producer_source/phys69_angular_tail.py",
+    "preserved_producer_sha256_independently_verified": true,
+    "change_review": "Read the complete old-to-new source diff. Changes are restricted to exact integer-field validation, exact-record shape/zero-denominator rejection, and validation of external indices before max/range. Mathematical formula functions and valid exact input semantics are unchanged."
+  },
+  "reviewed_paths": [
+    "src/wu088_hh/phys69_angular_tail.py",
+    "tests/test_phys69_angular_tail.py",
+    "research/hh_phys69_20261019/angles/RESULTS.json"
+  ],
+  "actual_saved_result": {
+    "path": "research/hh_phys69_20261019/angles/RESULTS.json",
+    "sha256": "d0a8d978d6aed67bc32fd8b702cab0145c168e1b12cf9dccb7b2bfc664f4fa24",
+    "producer_source_sha256": "8e60a031c47c427c7548b4ec237809bbf30982b627ab1464b036b98ca627dcd3",
+    "producer_core_seconds": 0.005583558006037492,
+    "scientific_radial_integrations": 0
+  },
+  "independent_saved_output_review": {
+    "status": "PASS",
+    "cutoffs_verified_exactly": [
+      28,
+      29,
+      32,
+      34,
+      35,
+      36,
+      40,
+      64
+    ],
+    "independently_implemented_formula": "Gamma_ext/16*(800/189)^2*(1/(9*10^19))^2*10^43*S_L(1/100)",
+    "every_upward_decimal_compared_as_exact_fraction": true,
+    "old_certificate_sha256": "ddaae206009a276def281af5526851ceb717baf2e0de5f8472552a9db340de9a",
+    "Gamma28_inheritance": "Exact saved analytic_radial_cutoff.gamma decodes to5929; source certificate is SHA pinned.",
+    "coarse_enclosure": "Exact old cutoff midpoint + old full-radial complex absolute radius + new full-radial j>28 tail.",
+    "coarse_radius_combination_correct": true,
+    "real_and_imag_strict_sign_flags_independently_verified": true,
+    "new_beta2_decimal_upper": "7.541139e-66",
+    "beta2_decimal_check": "Independently proved Gamma64^3*delta^2/(4*sum_{n=0}^{200}76^n/n!) <7.541139e-66 using exact Fraction arithmetic.",
+    "supplied_pre_fix_results_numerically_affected_by_parser_defects": false
+  },
+  "findings": [
+    {
+      "id": "PARSER_RATIONAL_FLOAT_COERCION",
+      "severity": "medium_interface_correctness",
+      "status": "CLOSED_MINIMAL_FIX_AND_NEW_BOUNDARY_TEST_RECEIPT_REVIEWED",
+      "source": "read_rational",
+      "observed_input": {
+        "numerator": 1.75,
+        "denominator": 2.5
+      },
+      "actual_observed_return": "1/2",
+      "failure": "int(field) silently truncates numeric JSON floats and accepts bool as an integer, contrary to exact-record contract.",
+      "minimal_correction": "Accept field type int or str only, excluding bool and float before int conversion; retain exact integer strings.",
+      "impact_on_pinned_input": "None: all fields in the actual SHA-pinned old/new rational records are integer strings."
+    },
+    {
+      "id": "PARSER_DYADIC_MANTISSA_FLOAT_COERCION",
+      "severity": "medium_interface_correctness",
+      "status": "CLOSED_MINIMAL_FIX_AND_NEW_BOUNDARY_TEST_RECEIPT_REVIEWED",
+      "source": "_dyadic",
+      "observed_input": {
+        "mantissa": 1.75,
+        "exponent2": 0
+      },
+      "actual_observed_return": "1",
+      "failure": "The mantissa int conversion silently truncates floats or accepts bool while exponent type is already guarded.",
+      "minimal_correction": "Use the same exact integer-field parser for mantissa; retain existing exact exponent check.",
+      "impact_on_pinned_input": "None: actual old dyadic mantissas are exact integer strings."
+    },
+    {
+      "id": "MINIMUM_CUTOFF_INVALID_EXTERNAL_TYPES",
+      "severity": "low_error_interface",
+      "status": "CLOSED_EXTERNAL_INDICES_VALIDATED_BEFORE_RANGE",
+      "source": "minimum_cutoff_for_angular_goal",
+      "observation": "max/range uses external indices before external_ratio_product validates them, so invalid float/string indices can raise TypeError rather than the stated-domain ValueError.",
+      "minimal_correction": "Validate ell/ellprime before max/range; no mathematical output changes.",
+      "incorrect_bound_observed": false
+    }
+  ],
+  "correction_acceptance": {
+    "root_authorized_to_apply_fix": true,
+    "reuse_old36_tests": "Retain actual36PASS on pre-fix source; do not rerun the historical/newly completed suite merely for receipt freshness.",
+    "new_checks": "Only new malformed exact-field and affected interface boundary checks.",
+    "required_science_invariance": "All mode/selection/geometric-tail/budget formula functions remain unchanged; exact pinned valid-string records retain identical interpretation.",
+    "prior_producer_rerun_required": false,
+    "final_code_verdict": "PASS_SCOPED_CODE",
+    "new_boundary_test_receipt": {
+      "path": "research/hh_phys69_20261019/angles/EXACT_RECORD_TESTS.json",
+      "sha256": "153660ed81086f385f3d587988f456f17efa5b3f0e5ff6eb821d301ece455035",
+      "test_source": "tests/test_phys69_exact_records.py",
+      "test_source_sha256": "0d78f5853fc07c5dc68f2f4625e0e426edd32704fde804052a3f0cd7de378361",
+      "observed_outcome": "23 passed in 0.04s",
+      "wrapper_elapsed_seconds": 0.30290132200025255,
+      "source_binding_matches_reviewed_fixed_source": true,
+      "reviewer_reran_tests": false,
+      "coverage_read": "Both rational fields and dyadic mantissa reject bool/float; exponent rejects non-int; valid integer and string records preserve exact values; invalid record shapes and zero denominator reject; external indices validate before range."
+    },
+    "preserved_36_test_receipt": {
+      "path": "research/hh_phys69_20261019/angles/TEST_EXECUTION.json",
+      "sha256": "0b85b1887c0bd071fb5729875d4b2493968161581e8a201d46c3fd9b31cd5e4f",
+      "observed_outcome": "36 passed in 0.70s",
+      "producer_source_binding": "8e60a031c47c427c7548b4ec237809bbf30982b627ab1464b036b98ca627dcd3",
+      "reviewer_reran_tests": false
+    }
+  },
+  "execution_scope": {
+    "independent_parser_defect_probes": 2,
+    "independent_new_saved_result_arithmetic_check": 1,
+    "new_scientific_integrations": 0,
+    "old_test_suite_reruns": 0,
+    "NCP_calls": 0
+  },
+  "environment_incident": {
+    "classification": "ENVIRONMENT_FILESYSTEM_EXHAUSTION",
+    "failed_read_commands": 3,
+    "failure": "Sandbox bubblewrap mount-marker creation failed before shell start, exit101: No space left on device.",
+    "read_only_df": "overlay32GiB used32GiB available0,100%",
+    "review_continuation": "Approved read-only escalated commands successfully read the new result and executed the two parser probes; no integration or file write in those commands."
+  },
+  "mathematical_review": "INDEPENDENT_REVIEW.json: PASS_SCOPED_MATHEMATICS",
+  "band_implementation_review": "Not performed in this angular-tail review.",
+  "PHYS63_qualitative_existence": "ESTABLISHED_REUSED",
+  "HH_R10": "OFF",
+  "publication": "ROOT_DELIVERY_PENDING",
+  "backup": "ROOT_DELIVERY_PENDING"
+}

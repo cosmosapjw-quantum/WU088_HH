@@ -1,0 +1,122 @@
+{
+  "schema": "PHYS69_INDEPENDENT_BAND_CODE_REVIEW_V1",
+  "reviewer": "/root/phys69_github_intake",
+  "reviewed_utc": "2026-10-19T13:06:53Z",
+  "status": "PASS_PINNED_NEW_BAND_IMPLEMENTATION_AND_SAVED_RESULT",
+  "scope": "New m=0 external (21,20), intermediate j=29..36, B=27 to T=65, lambda^2 DtN coefficient. The band certificate itself contains numerical error only.",
+  "reviewed_code": [
+    {
+      "path": "src/wu088_hh/phys69_band_profiles.py",
+      "sha256": "7444488c7ca117ab5bf1108f4f7b5ad3a5df6f7d6696973cf57569ecd5058c6f"
+    },
+    {
+      "path": "scripts/phys69_band_profiles.py",
+      "sha256": "6afc231cf4591fcfee416d264d23cbd2bbc61369a889bc111e37a7df356a6477"
+    },
+    {
+      "path": "tests/test_phys69_band_profiles.py",
+      "sha256": "8796d50ef2b4e109f94b80398e6e2302dacadb34cb1d51900205d9c4b13419cc"
+    }
+  ],
+  "independent_scientific_code_review": {
+    "verdict": "PASS",
+    "intermediate_modes": [29, 30, 31, 32, 33, 34, 35, 36],
+    "coulomb_modes": [20, 21, 29, 30, 31, 32, 33, 34, 35, 36],
+    "unique_q_profiles": 16,
+    "radial_panels": 76,
+    "normalization": "The unchanged Coulomb Taylor kernel returns H_j^+(r)/H_j^+(27), with d_r H in the initial derivative. External factors equal one at B.",
+    "terminal_condition": "Each new q_ab starts at exact zero at T=65; q_ab'=-F_a F_b V_ab. The original analytic K is retained across the terminal complex disk.",
+    "coefficient": "Sum j=29..36 of integral_B^T q_21j q_20j/F_j^2 dr. The code uses ordinary complex multiplication without conjugation and no extra factor 2.",
+    "old_integration_exclusion": "The mode loop is request.intermediate_modes and pairs are generated only for this band. PHYS68 run_profiles and its full-mode build_panel are not called. Evaluating external modes 20 and 21 is necessary for the new pair kernels and does not add them to the intermediate sum.",
+    "same_equation_as_proof": "INDEPENDENT_REVIEW.md, actual DtN coefficient and disjoint-band addition sections.",
+    "fixed_physics": "Atomic B=27, k=7/10, E=49/200 Hartree, shift=7/10, original V=2(1+1/d)exp(-2d), Coulomb eta_C=-10/7, Z=+u'(B)u(B)^-1."
+  },
+  "independent_error_propagation_review": {
+    "verdict": "PASS",
+    "unchanged_kernels": "Outgoing Coulomb Arb point enclosures, ODE Taylor coefficients/majorants, algebraic angular Taylor coefficient enclosures, exact-weight polynomial integral, Cauchy remainder and L1 radius extraction are reused without source changes.",
+    "q_center_error": "The right-boundary enclosure is added to integral_0^h K_N and inflated by h times the large-disk Cauchy K remainder.",
+    "q_left_error": "The same right-boundary enclosure plus integral_-h^h K_N is inflated by 2h times that remainder.",
+    "small_disk_q_majorant": "|q_right|+(rho+h) M_K(rho) controls the analytic primitive on the rho disk.",
+    "reciprocal_control": "Every required Coulomb disk must have a strictly positive zero_free_lower(rho). The integrand majorant divides by its squared lower bound only after this gate.",
+    "second_Born_integral_error": "The exact degree-N series integral is inflated by 2h times M_integrand*(h/rho)^(N+1)/(1-h/rho). Arb propagates coefficient, denominator, boundary-carry and arithmetic roundoff.",
+    "final_radius": "Exact dyadic real and imaginary radii are added as a complex L1 absolute bound about the stored rectangular midpoint.",
+    "radial_and_angular_tail_inclusion": "Both are explicitly false in the finite-T band certificate. The separate assembler must use old numerical + band numerical + one full-L36 beta2(Gamma64,T65) + all-radial j>36 tail."
+  },
+  "execution_and_resume_review": {
+    "verdict": "PASS_FOR_DOCUMENTED_SINGLE_WRAPPER_CAMPAIGN",
+    "identity": "Exact request/source/engine/runtime fingerprint; fixed band source and CLI hashes plus unchanged PHYS68 kernels and process-wrapper hash.",
+    "checkpoint": "Atomic JSON replacement, payload hash, ordered index/center, all band and Coulomb modes, exact pair coverage, and immutable predecessor serialization hash.",
+    "carry": "Consumed q_right must contain the predecessor's exact serialized q_left box. This preserves the PHYS68 correction for outward Arb magnitude decoding.",
+    "parser": "New decoder rejects bool/float dyadic mantissas and exponents before the inherited decoder and rejects negative radii.",
+    "completion": "Partial checkpoints omit the final D2 certificate. A complete valid enclosure that misses the goal has a distinct non-goal status.",
+    "wrapper": "A bounded owned child with a campaign lock, explicit wall limit, optional Linux memory cap, one BLAS thread and an appended current-child invocation receipt. An old success is insufficient.",
+    "scope_limit": "The lock guarantees exclusion for the same fingerprint; direct worker/function calls are internal and do not add a separate global locking contract."
+  },
+  "actual_saved_result": {
+    "path": "research/hh_phys69_20261019/band/run_j29_36_t65/CERTIFICATE.json",
+    "sha256": "e123f084bea390a25162826f306c115d683b7c9fd3157b15967c88814787d0c8",
+    "fingerprint": "97c831662b24a53f24bf1e17ab528a82823fbc402223068854982e11c027f12c",
+    "status": "CERTIFIED_BAND_NUMERICAL_GOAL_MET",
+    "certificate_core_seconds_for_second_call": 44.96734297199873,
+    "invocation_elapsed_seconds_for_second_call": 44.97038143100508,
+    "first_call": {"new_panels": 2, "reused_panels": 0, "status": "PARTIAL_CHECKPOINT"},
+    "second_call": {"new_panels": 74, "reused_panels": 2, "status": "COMPLETE"},
+    "numerical_absolute_error_l1": {
+      "numerator": "1876321931",
+      "denominator": "59285549689505892056868344324448208820874232148807968788202283012051522375647232"
+    },
+    "approximate_radius_for_context_only": "3.1648891522922437943e-71",
+    "old_completed_integrations_repeated": 0
+  },
+  "reused_actual_test_evidence": {
+    "path": "research/hh_phys69_20261019/band/tests/RECEIPT.json",
+    "sha256": "bc80e7ecc23271a3bc2daa1e342bbfd2b7329c0981e329dbcc6c9aab9f3cebc1",
+    "outcome": "36 PASS",
+    "source_hashes_match_reviewed_code": true,
+    "coverage_read": "Independent constant analytic integral, complex bilinear sign/factor, exact selected modes, failure on zero-free gate, missing pair, restart reuse without recomputation, corruption/carry rejection, exact-input rejection, requested-goal status, and current-child wrapper receipt.",
+    "reviewer_reran_tests": false
+  },
+  "reused_saved_record_audit": {
+    "path": "research/hh_phys69_20261019/band/STORED_BAND_FRACTION_AUDIT.json",
+    "sha256": "7b9e512e6fdd10e2aeac822be49ae55e7d560de8da660e1095a35efb9141e392",
+    "status": "PASS",
+    "payloads": 76,
+    "boundary_containments": 1216,
+    "positive_Coulomb_gates": 760,
+    "source_files": 10,
+    "exact_saved_increment_sum_contained": true,
+    "first_two_panel_bytes_unchanged": true,
+    "reviewer_repeated_this_full_audit": false
+  },
+  "independent_old_kernel_binding_check": {
+    "status": "PASS",
+    "old_certificate_sha256": "ddaae206009a276def281af5526851ceb717baf2e0de5f8472552a9db340de9a",
+    "old_request_sha256": "16a2452e3341057e38a178b10dc48003992774196a5320c3f192176696b9b3e7",
+    "old_fingerprint": "412209899e821083775fecb5194fcf193e7e9b1b65d97126487ab9aa07c877b5",
+    "actual_check": "Canonical SHA256 of old REQUEST.binding equals the pinned old certificate fingerprint, and its binding.engine equals the band's phys68_reused_engine exactly. The old engine is stored in REQUEST.json, not in the old CERTIFICATE.json.",
+    "new_special_function_or_integral_calls": 0
+  },
+  "non_scientific_documentation_finding": {
+    "id": "COMPLETED_RESUME_REWRITES_PINNED_CERTIFICATE",
+    "status": "CLOSED_READ_ONLY_VERIFIER_DOCUMENTED_AND_REVIEWED",
+    "observation": "A completed --run --resume --max-new-panels 0 call performs zero integrals but rewrites elapsed/count metadata in CERTIFICATE.json, changing its immutable SHA pin.",
+    "required_handoff": "Use the read-only assembler/verifier on this already completed result. Reserve the solver resume command for a genuinely incomplete campaign. No numerical source change or repeated integration is needed.",
+    "correction_read": "band/README_KO.md now directs completed-result verification to band/verify_saved_band.py and explicitly reserves --run --resume for PARTIAL_CHECKPOINT. The verifier only reads input files and prints a receipt; it does not rewrite the pinned certificate. Its source was read without rerunning its completed full audit."
+  },
+  "review_execution_scope": {
+    "new_or_old_radial_integrations": 0,
+    "special_function_evaluations": 0,
+    "completed_test_suite_repetitions": 0,
+    "NCP_calls": 0,
+    "read_only_small_identity_check": 1
+  },
+  "HH_R10": "OFF",
+  "PHYS63_qualitative_existence": "ESTABLISHED_REUSED",
+  "not_claimed": [
+    "The finite-T band alone is an all-angular/full-radial certificate.",
+    "Convergence of the complete nonlinear Born series at lambda=1.",
+    "Original source-driven xi, origin, incoming adjoint source, sigma(E), or Maxwellian k_HH(T)."
+  ],
+  "publication": "ROOT_DELIVERY_PENDING",
+  "backup": "ROOT_DELIVERY_PENDING"
+}
