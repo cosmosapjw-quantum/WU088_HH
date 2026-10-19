@@ -1,0 +1,65 @@
+{
+  "schema": "PHYS67_SCIENTIFIC_DECISION_V1",
+  "decision": "PROMOTE_SCOPED",
+  "claims": [
+    {
+      "id": "IDEAL_GAUSS_ANGULAR",
+      "adopted": true,
+      "scope": "all r>=27, L<=64/all m, exact Gaussian rule; no f64 evaluation bound",
+      "evidence": "angular/PROOF.md; angular/RESULTS.json"
+    },
+    {
+      "id": "COULOMB_20_POINTS",
+      "adopted": true,
+      "scope": "twenty exact inputs; actual old binary64 point error bound",
+      "evidence": "coulomb/POINT_CERTIFICATES.json"
+    },
+    {
+      "id": "ORIGINAL_FIRST_BORN_ENTRY",
+      "adopted": true,
+      "scope": "m0 D1(21,20),B27,E49/200,all radial, original potential; no source-driven xi or full nonlinear response",
+      "evidence": "first_born/FIRST_BORN_CERTIFICATE.json; first_born/PROOF.md"
+    }
+  ],
+  "review": [
+    {
+      "file": "coulomb/FIRST_BORN_INDEPENDENT_REVIEW.md",
+      "decision": "PASS_SCOPED"
+    },
+    {
+      "file": "angular/INDEPENDENT_SCOPE_REVIEW.md",
+      "decision": "PASS_SCOPED"
+    },
+    {
+      "file": "review/FINAL_SCOPED_REVIEW.json",
+      "decision": "PASS_SCOPED"
+    }
+  ],
+  "resolved_findings": [
+    {
+      "id": "GOAL01",
+      "finding": "First finite ball exceeded requested absolute goal",
+      "minimal_correction": "tighten internal per-panel and relative budgets; keep goal fixed",
+      "evidence": "first_born/FIRST_BORN_CERTIFICATE_ATTEMPT01.json; first_born/FIRST_BORN_CERTIFICATE.json"
+    },
+    {
+      "id": "SCOPE01",
+      "finding": "Ideal Gaussian truncation cannot stand for actual f64 matrix error",
+      "minimal_correction": "typed distinct components, measured Gram only diagnostic",
+      "evidence": "angular/RESULTS.json"
+    }
+  ],
+  "open_findings": [
+    {
+      "id": "ARTIFACT_FINAL",
+      "state": "BLOCKED_ARTIFACT_ACCESS_EXACT_FINAL_VERSION"
+    },
+    {
+      "id": "NCP_INVENTORY",
+      "state": "BLOCKED_REMOTE_ACCESS_FOR_NCP_INVENTORY"
+    }
+  ],
+  "NG1_NG7": "NOT_APPLICABLE_NO_NEW_STRONG_NO_GO_ADOPTED",
+  "PHYS63_qualitative_all_angular": "ESTABLISHED_REUSED",
+  "HH_R10": "OFF"
+}

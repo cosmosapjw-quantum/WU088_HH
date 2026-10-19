@@ -1,0 +1,3670 @@
+{
+  "schema": "PHYS66_VERIFIED_INHERITED_LEDGER_V1",
+  "archive_sha256": "d7fa0b50ed803e19dfcec8f781219c03acbd21f8f3ee47fe922754f8fdb5ea79",
+  "manifest_payload_count": 149,
+  "inherited_total_success_count": 20,
+  "extended_cases_verified": 18,
+  "new_NCP_jobs_executed": 0,
+  "runtime_inherited": {
+    "code_sha256": {
+      "scripts/phys64_ncp.py": "b193b70dd6f48f81650c0b03b9488d6d5fa39aa88d0bb6d5e3ecc5c1dc61e0f7",
+      "src/wu088_hh/phys63_lap_contract.py": "22aae2a7d932df1b24f1a2fe70eb466f4f8246709bd082030f7e2c027fd2aee6",
+      "src/wu088_hh/phys63_scaled_riccati.py": "8041d973ef103ba88a5b73af34d1213afd1465f2748235b16ff07aa63e4cb30a",
+      "src/wu088_hh/phys64_born_contract.py": "18e11b629a25c7206f020d2056f5aa471041ba4683737c1cc78f2e73b2b23c1a",
+      "src/wu088_hh/phys64_born_hierarchy.py": "1891e9177025fbbf01bae4a05526d6424980d8445dd92c1e9b60a7be54331a46",
+      "src/wu088_hh/phys64_campaign.py": "0827ca93a86b6b5e8f97b540fd9d2d3f0c1a0091ce6d94791ff599b2bb8a0fd0"
+    },
+    "cpu_count": 64,
+    "execution_host": "NCP_HOSTNAME_MATCH_REQUIRES_HARDWARE_REVIEW",
+    "fingerprint": "fcf61cbf37875f7bab6df85e0984357657fd5ffb55421904056a628e50d2c6b7",
+    "git_head": "eed3bda2fa90f2493a9ced6123fd8fc2d300c198",
+    "host": "s1a0e5abed09",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "schema": "PHYS64_RUNTIME_V1",
+    "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+    "versions": {
+      "mpmath": "1.3.0",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    }
+  },
+  "cases": [
+    {
+      "key": "aac5f3951499fe6202d17e91fd98620560f2c47ea6b662ad9c395dedb225a837",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "m": 0,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 35.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.766042159877056e-24,
+          4.500677527613007e-25
+        ],
+        [
+          6.436423054127367e-48,
+          3.0034777083471436e-48
+        ],
+        [
+          1.7033206850676927e-71,
+          1.4672542424542806e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154259_2bbc0fea/COEFFICIENTS.npz": "2408510c41e815fc3eb94f7718feed0f945d7ce480b85f1e66d9841b4b680854",
+        "attempt_20261018T154259_2bbc0fea/RESULT.json": "55e52db9a704351ea285e908065f4177e87d6fbc060453440b95619dd36c7cad"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 21,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "23",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "d24",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "9db",
+            "denominator_hex": "a968163f0a57b400000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "349",
+            "denominator_hex": "1"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "206073",
+            "denominator_hex": "2a5a058fc295ed00000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "51a95737b178ebbe809",
+            "denominator_hex": "c45d1df942711438644fb001b29c24f8af48ab352e034b9b9a97c0a4cc4000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "69415ba34b893f0679f8ef3dd721b058647c61ef9543e8e4b50159331463b9634928e85f88abd75b962b218ad1354916467d50c0449926a19704e74eb508e2b970a43a9f2c2bd0ac1cf766623a2f9305230a8a2f318634bc7a340b38a540448783502ab3695d",
+            "denominator_hex": "3be45a4faefd9f93aff123ff74ea68396e4e41832df1837a62e48d0a9c0f19d02568c0f7d50f8194138e9db5706ac38a8a756ecd04e1336e19337e40c6b97b1171a501efa2fd82556ebd89164eb9a29317bf8573afd0e2683554e6f29940c320405b58c9ca38be1f12a266a9aea5800000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "9db",
+                "denominator_hex": "a968163f0a57b400000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "2f385b336ff6f1e3ea100436c9b6ca226ee0c020d98446b370d4948b4ab6e92f234ed4fa018dd8809e0078b51f4e4849b4e4d7b3818725f2b7a7a3180da7229cc6bd7207421e39115d57c005b80197e6dde31e7a396f630c835f0f65043",
+                "denominator_hex": "1ade795444daa2a0a7f5e1e0b5321a54ca0f1a3ada8c246cb069a43aac0ebb5a8e9f4a0856dbd186403ea38e906fedcc29a356d6364c61a93f90f28288f2d5e5e7e39d6f0ed806b1d1047421afd0d6f95b9196edb730c0a333124be44e3b39742cbe1b5ab85400000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "13f168d61",
+                "denominator_hex": "701a97b150cf18376a85901bd6900000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "2b086ab224f5cbc3efa70838ff9929d96e67d0f73efad84b6d6dced5cb0bbb2647238761d6f98f7c4b0e38e769380a5f128563f8a7cefbfc4cc4834cad05053d04ec64c14d55b2b201de971a7abf5547fe24908b3fcd81998eb5459",
+                "denominator_hex": "2007c7a8b9d8962ffe5978556c608b2da5a382e7bab96207e548df3bc54dcbcdd2d6d933f2f32944c723ebdf9a24bdfd0a7eec2b7a588bc7cf7bdd68261b638682aff193fd34fbf307480c248c63b7d4dfed8d68bf0a49144c88c6a258564fdc82ba5c01e48e7ac40000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "285b097845e293",
+                "denominator_hex": "25179157c93ec73e23fa32aa4f9d3bda934d8ee6a0000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "57143d30f5a9c3f51f7c4523e04997cad230da5e7760a653920a5309d77a6013c515033f560c3177372c229a77e6a93f2a053d67e2180800367b097195cf442d8d9ce74236a8c36c2427d32f726d78cee1336f209202aed1ca427c7843fb",
+                "denominator_hex": "43d3b599c51e0eb311ebf1ec0b0e1138e7f36f3c98c3a7315f0f025f60b2e4d7849e3b6c6e6fb165a54daaf0af9b7367e97519648ca4aa3ec1ca5cffea75e45df8de8a7e406c66e0ca78452154408338237b9da9ab9da106ed06afd104110ad3cdadb1a4052e4c6a04cecd4b62f90000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 21,
+        "outer": 35.0,
+        "gamma": 3364.0,
+        "chi": 1.6974744e-16,
+        "radial_by_order": [
+          5.6785249163338146e-27,
+          9.639150675238792e-43,
+          2.0452764386200704e-58
+        ],
+        "born_remainder": 2.4680670051061516e-67,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "308d290b28c914ae66b56a86f5c4612d4799766932429177a01c0e10f8a4ad3f",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "m": 0,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 39.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.766042246013476e-24,
+          4.500676730156313e-25
+        ],
+        [
+          6.436424155631998e-48,
+          3.003477161680343e-48
+        ],
+        [
+          1.7033214143944234e-71,
+          1.4672541535379279e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154259_e1125572/COEFFICIENTS.npz": "04647b3acf1720788cfabfe8182f0f533a5918ba214ad575ca00d17b7ca8b767",
+        "attempt_20261018T154259_e1125572/RESULT.json": "b8be1a7f081cdce5c461abc36f717572f0c64326e6033ede48bdddd18387f0d2"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 21,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "27",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "d24",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "9db",
+            "denominator_hex": "a968163f0a57b400000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "349",
+            "denominator_hex": "1"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "206073",
+            "denominator_hex": "2a5a058fc295ed00000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "51a95737b178ebbe809",
+            "denominator_hex": "c45d1df942711438644fb001b29c24f8af48ab352e034b9b9a97c0a4cc4000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "4caba3c72953eb22b8a6d185099ecef2375285564d893b37e1ebe3172d94fe5b48c45e38a9276c55eeb3d80001555f8a99dfb2b050b5309c9d5940873fec12fe7bec20ebc86d40dc274bc4a6f81fd26c4b57c7687c472d",
+            "denominator_hex": "1fc0189c379fdf66fc4d8897d000a2c25fb489a45bc050652892a53afab5b41860dfb2506f0e5ea2eeeab39d520f71af177ce7348825e003ce2ed1ed64c4c260289fc6ec0f7f703b9a81c1997a847af4d20a0d87dd14b3aa174ec96546a996219800000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "9db",
+                "denominator_hex": "a968163f0a57b400000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "2265723ee711d7614395b1d412a1e2c730e229f3979fe202312c23f2f4d6626f39ad34da039e991a4483992eab76a425b5f1f8033435f1ae6866b09ef902c9e61ad17bf80e2a55916fd1164c20c73",
+                "denominator_hex": "e3e77339e126adfe7d8dbeaa51d3c1b611506eca40cb59da57d54e2569f57e0ec781d609c05423e816b3d8f8ad8bd0542545a53079b94669c8248b79377cdd325cf2f43b8dbc2655fc52de7b62e8b412f35420084ac250b400000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "13f168d61",
+                "denominator_hex": "701a97b150cf18376a85901bd6900000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1f589ebc346ec2896894338e0b5928be7e16d822d8af553c74405f9f62a443b2fef43a492f152bb2f54554bfd5e858bee153436a0e0fac8738b11255c0b51e77a8ddf48d7a24811a2e0ef41e9",
+                "denominator_hex": "10faecff7366ba918c951f2136f6dac02f7a1df2270bfa9cbee0692994fd11b56c44ac1d43ddb0d91d2d8431d6a7a14c7df32870cca8b2275680bb897ef6a847be297cbafe25513bf2ebc15a21c87a1723b3bfff38286a64ea3a40000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "285b097845e293",
+                "denominator_hex": "25179157c93ec73e23fa32aa4f9d3bda934d8ee6a0000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "3f6e327dc700d67e1fd77ffa9d835a0247fb639ab3ed3be487dcc50b30e1f5f8d678b66b7832d8d446608c5e7bf6f50839ca6def0cfdfc2a44c2329237b6d4bbeaad2a9192debb21591e6d0151fbab",
+                "denominator_hex": "23f4f92eec0b807cfd79079760ebfddd7752f9152f365a97c35912d3ab094061af96795c424c434c4f779eed4c1ce7d06b8b310b0ea3f73dd88f5e199b24afcf51422c5c7c2aadd70365ab84181a9b87b8a2d7003b8053225ed840d086aea98f10000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 21,
+        "outer": 39.0,
+        "gamma": 3364.0,
+        "chi": 1.6974744e-16,
+        "radial_by_order": [
+          1.9049328910432327e-30,
+          3.233574816263877e-46,
+          6.861138088865793e-62
+        ],
+        "born_remainder": 2.4680670051061516e-67,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "9f91647f2386d8827a4180657e88fa3b753868d4ee3b765f64f9e4a59a40232a",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "m": 0,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 43.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.766042245979895e-24,
+          4.500676730174345e-25
+        ],
+        [
+          6.43642415530461e-48,
+          3.003477161591625e-48
+        ],
+        [
+          1.7033214142359736e-71,
+          1.4672541534211419e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154259_ad677eaa/COEFFICIENTS.npz": "ecec9f688dcf8138394ccf4d5b8afd02f6d2e8ee12b78b004179ae6127e75a2d",
+        "attempt_20261018T154259_ad677eaa/RESULT.json": "26f563b18e25d65c3636807a973c70b42cd5bd3c2c9dbfd5ccde8a5a4a0d90cf"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 21,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "2b",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "d24",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "9db",
+            "denominator_hex": "a968163f0a57b400000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "349",
+            "denominator_hex": "1"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "206073",
+            "denominator_hex": "2a5a058fc295ed00000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "51a95737b178ebbe809",
+            "denominator_hex": "c45d1df942711438644fb001b29c24f8af48ab352e034b9b9a97c0a4cc4000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "2315c9366e83150228a84fbf47b5e572cc2975fa8716a2f6e700731106cbe8766db84d752d8e9d1e8763b5d8f067185cc229c5956c330ce087ac4d1a3c584b93258c138a640e9ae409a7cccb68ba86570bae2e0fbb2cbc3ed366ae6837156c2d2bc56391231f",
+            "denominator_hex": "a92f1cf70047d22bbc7a19db87909a5ec65eae435118f0e516642b2c9e6fc33dfc59560ba0ab4cd61fd7ff6fe4127f748b58f871dc55c8464e445efc272a6ed076d0359e7f9d597308c8c0779e0d5c495924a40970fcb3b5636f29e047e50ad4ce5b175d9675707ff5320b47249424a94800000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "9db",
+                "denominator_hex": "a968163f0a57b400000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "fbd73bbcffcfb4bf8b0016798924360cfa0400af32c1791259c3183c3924dba611a46fe00849d8034aad2e70a6f6d6de6f6f2912b2d0ca63d37e108048d0b8997947b57c0b4bdb0747295573d55dd4cf4a10a28bdcfcbaed6750521ac1",
+                "denominator_hex": "4be670ae49f34133726c26d889932f2bfa843e16ee77fa21608febf5526053d02ebe5be93c965479695cb7e7ea4c85706ed3551c19f098352d19fd53d89b9a776dbdee65760f3a9712c78431135f1fcf1582d752b7c9796fc788ec6acba0117db6a8d0026873f97dc00000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "13f168d61",
+                "denominator_hex": "701a97b150cf18376a85901bd6900000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "e582390b6fc99414fe25812ffddb89dcf77f0526a539d6e79cf44f1ee593e6217b68275f2532fd41904bda278680375062c76a837efa9541996d66ee45701bf01a42195c471e63b55f4dd08d3951c6d54b6dad91544808884e7173",
+                "denominator_hex": "5a7ae3c174bdd070c15df74acff88a12b03297383c24dc18bbe9716bc1443ec9c34902f7092ec1117fdefc67a1e95a6e68cd438c70d834a21c14e4626cce766270bd9369c97de57b49ee0190b4b4bc9e5007aa8966815818856034bccb5f7ff9d9b83b7f6ede88a1acdac0000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "285b097845e293",
+                "denominator_hex": "25179157c93ec73e23fa32aa4f9d3bda934d8ee6a0000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1d06bf1051e34151b5296c614ac33298f0baf374d2758cc68603710347d3755bec5c566a7204107d12640b88d2a2386a63571477f60802aabcd3add0874516b9d9def7c0bce2ebceb6b7f10fd0cf2844f5bbcfb58600e4f098c0d42816a9",
+                "denominator_hex": "bf9953a6a6d0a86e78189813e4c80ca99ac4f7122765ca75fc63b45a3cfd270346616515d65ba410d3429adf373104b070cf75e2436b4c8e759ece35727e6ac59895bb5337b7449e8d0332b06fc54cd55a25ce05750ec5f6800fef932bad6c039c8868dd25cae4d46c1063c4f9ea4ad030000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 21,
+        "outer": 43.0,
+        "gamma": 3364.0,
+        "chi": 1.6974744e-16,
+        "radial_by_order": [
+          6.3903379360729214e-34,
+          1.084743505383262e-49,
+          2.301655413692937e-65
+        ],
+        "born_remainder": 2.4680670051061516e-67,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "eeafb1adf582fb29e5c00c635a18d8f895817466ff4517f497f3fa15158cf413",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "m": 0,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 35.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.7660421598771008e-24,
+          4.5006775276129845e-25
+        ],
+        [
+          7.017742508869212e-48,
+          3.2001638474215894e-48
+        ],
+        [
+          2.143000561512437e-71,
+          1.718651689295351e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154259_c39abba2/COEFFICIENTS.npz": "7b7b4e2faec9cc921c958f78621d7eed644e92603aaf99cacee09ee8fe82636c",
+        "attempt_20261018T154259_c39abba2/RESULT.json": "e2d855115dea3dc4f9e6c883de4af1191d516dbe6c10837afb6cd5893017e9cd"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 28,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "23",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "457b",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "4"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6492db3",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "43689c8194acb367a98cbf29",
+            "denominator_hex": "3117477e509c401d50eccdf7f9f3b50a208667d94b0f8c1834aeca1754f1000000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "2e60b2bf07504c6448c1ef03b338df9186b08548979d675719f00272f5237bbd0a26b201c40f97f4a98533ae7cdbe4790bf885a75546a070321d46db7648a88fa4f020a9599d903f4cca6e158aa16c626f3ed8d2eff22ef06e708d88f52343f141be7bb512657d",
+            "denominator_hex": "ef91693ebbf64e16425c25df778d8c525859729ea6c6193499b56317fe9b6ce5a11120ebd09654275047142fe06689faed89901597541b022dcdcf7b0620ecb1a9b6c746f559e824d8b17360863014931bd16b67dcaf2118fa833202fb59c3788e5cb67811dd85d27e0932a4b8916000000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "457b",
+                "denominator_hex": "2a5a058fc295ed000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "14ce63161cd8174a6ab0cc484fdc9573348bc805f379ec16dd9b27f54ef134067b72b26d522651caef79521ab04948e850a34f982189f37ab7d8e9c8c0c3cd7b4cd6c8b6391e66baa83c11515bfa763dd4562a8e6598e611982c39c046e3",
+                "denominator_hex": "6b79e551136a8a829fd78782d4c86953283c68eb6a3091b2c1a690eab03aed6a3a7d28215b6f461900fa8e3a41bfb730a68d5b58d93186a4fe43ca0a23cb57979f8e75bc3b601ac74411d086bf435be56e465bb6dcc3028ccc492f9138ece5d0b2f86d6ae15000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1b4be7a3401",
+                "denominator_hex": "1c06a5ec5433c60ddaa16406f5a4000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "3ae673b3153ade5a7152df12d5e21e7e3c4d352280b5b965852a1f04239fa0eec1a34d331daad9861e6e3e970f4460629b2edc5a8f0c9f457a3a666ab91ba4da602943db005241fd978fd8f9a81a77c778774f9c23fcc2d9201e505f9",
+                "denominator_hex": "801f1ea2e76258bff965e155b1822cb6968e0b9eeae5881f95237cef15372f374b5b64cfcbcca5131c8faf7e6892f7f429fbb0ade9622f1f3def75a0986d8e1a0abfc64ff4d3efcc1d203092318edf537fb635a2fc29245132231a8961593f720ae970079239eb1000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "ab94f24ed84df89b3",
+                "denominator_hex": "945e455f24fb1cf88fe8caa93e74ef6a4d363b9a8000000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1723cf0e209cff2b7b1a104db8a93f5f3e08420b22e2dea2fb9702174eb507274868a5b50066dc5f2a7ef080b8546107d8213c0b3ad14cc497fcd1e6f9bcde86ad50af3f93cf63071fb4f0ffbda27780643f68990c94c253ea746fdf1f30f21b",
+                "denominator_hex": "10f4ed66714783acc47afc7b02c3844e39fcdbcf2630e9cc57c3c097d82cb935e1278edb1b9bec5969536abc2be6dcd9fa5d465923292a8fb072973ffa9d79177e37a29f901b19b8329e1148551020ce08dee76a6ae76841bb41abf4410442b4f36b6c69014b931a8133b352d8be4000000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 28,
+        "outer": 35.0,
+        "gamma": 5929.0,
+        "chi": 5.27295615e-16,
+        "radial_by_order": [
+          1.000831576365731e-26,
+          5.277341015711876e-42,
+          3.4783984705556474e-57
+        ],
+        "born_remainder": 1.3038726889240312e-65,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "7fcb9674ad607ae2c17edae0055591f52d221b7fd4bf96b9bea7803115cde3d5",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "m": 0,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 39.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.766042246013503e-24,
+          4.500676730156273e-25
+        ],
+        [
+          7.017743633174654e-48,
+          3.200163222384794e-48
+        ],
+        [
+          2.143001354846671e-71,
+          1.718651496404267e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154303_23d2dc04/COEFFICIENTS.npz": "7fb0ff92881dbe1d47b800ac456be27cdc44e15251061eefcb789765c4a27380",
+        "attempt_20261018T154303_23d2dc04/RESULT.json": "d880a0a07e3ea968f320465b38e3ab83f537a8615123b06de0c9944c5d52feef"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 28,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "27",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "457b",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "4"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6492db3",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "43689c8194acb367a98cbf29",
+            "denominator_hex": "3117477e509c401d50eccdf7f9f3b50a208667d94b0f8c1834aeca1754f1000000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "21c85b180a46c536d4043b9e15012bc6e67597c1a533c2a10a2aa63a566abd1a0c3fe869090e94dbcf9714215890a03385b21aeb0de1a809e1f8ec6f2260b93baadb6ff2069fef1a141e2f21aa28d3cfa640cdd67708054d",
+            "denominator_hex": "7f006270de7f640bcb142e72e27f615b1a2abcde69f4ced1ac44256cec985e70f087e998932cc93b45c227997d5272a445bdd27d9acab574af4cc9683f1aa3f546fd80c58c221611852c39be7be3e247bd3f48869fdc5f06f5ed906b2bc7ce42e6000000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "457b",
+                "denominator_hex": "2a5a058fc295ed000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f27ddf69e170feda73c147645786071122bf28f93134a25d615c050c73d0df5b03976f6d0c6da199871763c2797df1e63e5d761c111c1cba6337cd08c6d0154f87304df815f0504aae53dbe6c6d13",
+                "denominator_hex": "38f9dcce7849ab7f9f636faa9474f06d84541bb29032d67695f553895a7d5f83b1e07582701508fa05acf63e2b62f4150951694c1e6e519a720922de4ddf374c973cbd0ee36f09957f14b79ed8ba2d04bcd5080212b0942d000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1b4be7a3401",
+                "denominator_hex": "1c06a5ec5433c60ddaa16406f5a4000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "2ae780cbee0034f48ca298a5d22cc448ea9f0e07757d9a3425aa671f447cbabb428304a956c4c20d077795f8743f2d203b8935384bca3c9b8133bf3787afcfa7cfe68e3a98f1f076342d93d0d89",
+                "denominator_hex": "43ebb3fdcd9aea4632547c84dbdb6b00bde877c89c2fea72fb81a4a653f446d5b112b0750f76c36474b610c75a9e8531f7cca1c332a2c89d5a02ee25fbdaa11ef8a5f2ebf89544efcbaf05688721e85c8ecefffce0a1a993a8e9000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "ab94f24ed84df89b3",
+                "denominator_hex": "945e455f24fb1cf88fe8caa93e74ef6a4d363b9a8000000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "10db0b1333dc6ba487beda854bbdd418218b1e92f8f914c6caeb9176dcc0dd872fe8518d5c0614fe593e809d48d2a3b02b169603e1f75c6786ec4ae43cf46aded2861f5d381087bcf5ddc488a7b3228bcb",
+                "denominator_hex": "8fd3e4bbb02e01f3f5e41e5d83aff775dd4be454bcd96a5f0d644b4eac250186be59e57109310d313dde7bb530739f41ae2cc42c3a8fdcf7623d78666c92bf3d4508b171f0aab75c0d96ae10606a6e1ee28b5c00ee014c897b6103421abaa63c4000000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 28,
+        "outer": 39.0,
+        "gamma": 5929.0,
+        "chi": 5.27295615e-16,
+        "radial_by_order": [
+          3.357415906954616e-30,
+          1.7703506854684168e-45,
+          1.1668726918246756e-60
+        ],
+        "born_remainder": 1.3038726889240312e-65,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "22acd7e27d315bbaefaff61ea3e92017f33341ab4a3177ada12289e07d5ec816",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "m": 0,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 43.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.7660422459799226e-24,
+          4.500676730174283e-25
+        ],
+        [
+          7.017743632831588e-48,
+          3.20016322231188e-48
+        ],
+        [
+          2.143001354660533e-71,
+          1.7186514963019409e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154303_9d8d86c5/COEFFICIENTS.npz": "0be0f93cdc735b1ecdbef7623c19c4c778ace77371dd0de5ff0db836256e9b3c",
+        "attempt_20261018T154303_9d8d86c5/RESULT.json": "b246fdde5688e0acfdaea682ab5ad6107d62f49550ef0b0a06351b2b1d6b40bd"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 28,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "2b",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "457b",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "4"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6492db3",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "43689c8194acb367a98cbf29",
+            "denominator_hex": "3117477e509c401d50eccdf7f9f3b50a208667d94b0f8c1834aeca1754f1000000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "f7590ea57c56ecc1840a5013bbd9fdb2ce581c2dd3477c7b35000d0fc61293f03623b55ec0532a6e32c668f7ef3f6d303fd81e271c2357abb5f179e7cc2e2da8c500ae31ddf30151998cf5c838b2420cfbf9d9ba550ba5024d02f2da70bc1506b3f7e91b0cc7f",
+            "denominator_hex": "2a4bc73dc011ec078008912169a8bec94b09254b4387b73743c54a04ab607fd9cac30a4b8133fbf8e81f42f12160c24dd29d6c9565cbc8d30f5c9422428992baea0ead87f62923aa7fec9c0f288e54e6f56d9c719d0c04f62b405500bf8a38a059ab28ee21f84ce2fe240cc4a78a94ad1d2000000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "457b",
+                "denominator_hex": "2a5a058fc295ed000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "6ef765cb44807c378e5996d6ff431d11183ed575128a4079f33b7fc6fa5bc0229263b79c60cc5ee4fd31b5e3ac3184d70366fdd60835128e7f2f8984041447e6ef242e7685f77938d695b1b1ea8d2149c1cb8da21dda205dd64134017a1",
+                "denominator_hex": "12f99c2b927cd04cdc9b09b62264cbcafea10f85bb9dfe885823fafd549814f40baf96fa4f25951e5a572df9fa93215c1bb4d547067c260d4b467f54f626e69ddb6f7b995d83cea5c4b1e10c44d7c7f3c560b5d4adf25e5bf1e23b1ab2e8045f6daa34009a1cfe5f7000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1b4be7a3401",
+                "denominator_hex": "1c06a5ec5433c60ddaa16406f5a4000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "13a2269107139f737b1b9fb0f1f60a2a1419bc60d591e8772c635fac0bdfe04f95e119bbb48e48820a24bf87afc1757633ba49738504351728be2223930936f37563169e5570c0a9dd2ff2fde2b37d427d7d1a89615440f30ab4c5753",
+                "denominator_hex": "169eb8f05d2f741c30577dd2b3fe2284ac0ca5ce0f0937062efa5c5af0510fb270d240bdc24bb0445ff7bf19e87a569b9a3350e31c360d28870539189b339d989c2f64da725f795ed27b80642d2d2f279401eaa259a0560621580d2f32d7dffe766e0edfdbb7a2286b36b000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "ab94f24ed84df89b3",
+                "denominator_hex": "945e455f24fb1cf88fe8caa93e74ef6a4d363b9a8000000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "7b69a5a0adeffb92908b019e8386a7514ad6b590ba0f4e0fe87ab5d1a3c57b7c2cd8c91aaccf41fb8d4fad592c6cb029d606959139b1996dd5445f7a8944a2ce4703a6a869a7657b53c50553f3627d576bfcd885986eb714e26cff50a65a609",
+                "denominator_hex": "2fe654e9a9b42a1b9e062604f932032a66b13dc489d9729d7f18ed168f3f49c0d19859457596e90434d0a6b7cdcc412c1c33dd7890dad3239d67b38d5c9f9ab166256ed4cdedd127a340ccac1bf15335568973815d43b17da003fbe4caeb5b00e7221a374972b9351b0418f13e7a92b40c000000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 28,
+        "outer": 43.0,
+        "gamma": 5929.0,
+        "chi": 5.27295615e-16,
+        "radial_by_order": [
+          1.1262875631086905e-33,
+          5.938864932562483e-49,
+          3.9144217962718346e-64
+        ],
+        "born_remainder": 1.3038726889240312e-65,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "89d3dfae33cdb260daa5fe4b8f0fa3af0516f88c2a4d126eab7b6f82e6ee31b4",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "m": 0,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 35.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.766042159877065e-24,
+          4.500677527612957e-25
+        ],
+        [
+          7.017742508869733e-48,
+          3.200163847421259e-48
+        ],
+        [
+          2.143000561554524e-71,
+          1.7186516893060108e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154304_924fcddf/COEFFICIENTS.npz": "39a446a57cb829bde479ac8ca8c3df3fd4eda166cf9c65a824902da9fdf1a53d",
+        "attempt_20261018T154304_924fcddf/RESULT.json": "0efdbdcff8b74daf6a2776793388e72eabab8089d756e9c89beee96dab75972e"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 40,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "23",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "2f44",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "16b",
+            "denominator_hex": "6c6b935b8bbd400000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "bd1",
+            "denominator_hex": "1"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "ab93",
+            "denominator_hex": "1158e460913d00000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6d47d140ac7559",
+            "denominator_hex": "8a2dbf142dfc7240c020abe2d0f3a4ee6cc600860b71fb11564000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "b825e186b23ff5734a9361442f7f7cde9105957e55501cb210d3e9b883218ada512b9abc4eb73b656a61d282f641a17040b7092ab468ac9da3bd1bf05a038abd37155d69ccfa22fb756ae9c57fbcbe247d8b058554b620bbe193c8d7489c7837c9988ac327f",
+            "denominator_hex": "1d21a809445245c803001e5178c26d623f82de861ffea8e143b6625f1f2256870c04b74753677911d263368b27c6d4ec815f640808ce807b8588b1e5240a14a7b63eb2680d1665d579d58a2d6cc9b48034ae0af139d4ddb8d31514250bbb2b48078d1b0b3ae02e7c0d7963d0178800000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "16b",
+                "denominator_hex": "6c6b935b8bbd400000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "a9d8b5edfb22b3add9e1f15386b517978d99a4c2ddaf09df3ad33bbd9e8c6f3a23fbe4cac867d52a3f9fade98a2c72829244d2e455b47fab16438957205dbc6beb6b9feee1f2f30367cb004f03bde49576fe177abffa467047f0dca971b",
+                "denominator_hex": "1ade795444daa2a0a7f5e1e0b5321a54ca0f1a3ada8c246cb069a43aac0ebb5a8e9f4a0856dbd186403ea38e906fedcc29a356d6364c61a93f90f28288f2d5e5e7e39d6f0ed806b1d1047421afd0d6f95b9196edb730c0a333124be44e3b39742cbe1b5ab85400000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f34971",
+                "denominator_hex": "1d6329f1c35ca4bfabb9f56100000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "20cf674e66864d2036b387301ccc0618f9f3868695bd945df8287885c9419c09b0e280c8e14312b3e22f7b170e9de4a5252b6561addbd45cb1350038aa1db89ed881bf81b0b9d0732f95f8c42f65daae5a3134d6d891108e14fe9",
+                "denominator_hex": "86585ea558452d2347cd696389fa83a7f24b832644bcb61f721035255c49a8c4c91c7229b24b179f413931c8d22fa4fcd030b22f0f7de84e3dd4bc8cacbe2d7d8772132b4a382179151644a86f1432dec9d7f2a493f3c32fff5b7b7587281f44dfb688c599a40000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "a30dc1a6e3",
+                "denominator_hex": "3fb942dc0970da8200bc8db411d4f56d23a0000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "15fd6119b08094a2ce095463c3dcd13a2f4d31b2254d9df6f6b887be924163e712b7de1621d12701e560987c1500dc649aa854a37638ac14db982894fa2b89631dd4fd6c988498efa2ed8048e450408f085ca88cda07415b699c185cb",
+                "denominator_hex": "7486a0251149a73052582452846f49167e99e29c9ad8b0c5f86487b552f57c1b1af6d2126a767669a8e580a2488b3bb7df3ebaddc421624e348261c628e95fc96abe5d16f6e4be9f763ad634474bc7c8cbc1aa088b7381b1efa7ef823c49b3bc7fcd0f00c69576b5a160010000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 40,
+        "outer": 35.0,
+        "gamma": 12100.0,
+        "chi": 2.19615e-15,
+        "radial_by_order": [
+          2.042513421154553e-26,
+          4.4856658498685716e-41,
+          1.231399382023608e-55
+        ],
+        "born_remainder": 1.922483532515162e-63,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "a71fe8628e08b3bfa5a53a1ed1c77915b1f6fd22b8223c627637c9ffee91c2b6",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "m": 0,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 39.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.7660422460134396e-24,
+          4.5006767301562e-25
+        ],
+        [
+          7.017743633175048e-48,
+          3.2001632223843943e-48
+        ],
+        [
+          2.1430013548887293e-71,
+          1.7186514964148779e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154304_73b549f2/COEFFICIENTS.npz": "d219e96a0f66f6b47d172a01735400430aeccb61bbd52bd9a71548bbaf02eb01",
+        "attempt_20261018T154304_73b549f2/RESULT.json": "e842ee71a5fc3e80f3f16c54d6812fd9eb40285f8b737b75a56b5cd6992ba664"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 40,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "27",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "2f44",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "16b",
+            "denominator_hex": "6c6b935b8bbd400000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "bd1",
+            "denominator_hex": "1"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "ab93",
+            "denominator_hex": "1158e460913d00000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6d47d140ac7559",
+            "denominator_hex": "8a2dbf142dfc7240c020abe2d0f3a4ee6cc600860b71fb11564000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "862344800e0dadfcc3b836ad49a79922f3d354c8349e07d1794af5861c7558648969a91a567eb1d4c9ab7c9d2937373357b284a82b7b3a26fe5b88ea9ac248f104a4e2303d26b197fcb1072b8305ce2174e354c24726f",
+            "denominator_hex": "f7181868e900c67059f2df4a3c5b84be3c17ed23efa88332aaa0b09f609eb1e0341134fba9152354de3997c98507ac8758695a24db77d75d6cc2241b4ea81437edb139bf89a25035466c90b0d8827b4fef6bcd1f8bd9f1bc199f5acd7b46d94800000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "16b",
+                "denominator_hex": "6c6b935b8bbd400000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "7bb8625024a75d74adff58ab5bacdf08be22d635fefb81dc0d1a0d065a6fcac5f228b1036461baf04a260e538c5a614bace151287138238e1db9345d4b500adf6ec50da85ec8f9f1db8e0cede80cb",
+                "denominator_hex": "e3e77339e126adfe7d8dbeaa51d3c1b611506eca40cb59da57d54e2569f57e0ec781d609c05423e816b3d8f8ad8bd0542545a53079b94669c8248b79377cdd325cf2f43b8dbc2655fc52de7b62e8b412f35420084ac250b400000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f34971",
+                "denominator_hex": "1d6329f1c35ca4bfabb9f56100000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "17e6534a993c77311a1d736ead2b5384862aface0722e45bea95c50af73af35cd11de12d9eea1b9495a4fe0ecf65e6927b04c1d3aa9c80424a8b2b29e030fc0bbdc4eb314b4ecc97e1f7679",
+                "denominator_hex": "47385402165c165f873c4b9539922c88e569229f343f8c143b72a86bb11cb7649e5892e30c1a4b38871833cdb63bb11a4ba5c39f2609e6010e8b6b95e157051fbd0bec529c4acbfaded9e5868ee8b845ec0a4a02975cb93840000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "a30dc1a6e3",
+                "denominator_hex": "3fb942dc0970da8200bc8db411d4f56d23a0000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "100492e4a83161563da3ab04363960aa7ab7c035a31267928679be9e78705768bdfb0991c658a0da16472371c70a28873e48d133af818189eddbc3bec1cc747c9280812cfa9be0e8ef27033da7b",
+                "denominator_hex": "3dc6061a3a407dfb526c21a31ece54af72661b83b3688d5b004087dd5d0c64fe025bbbe053dae9b55c519b7b33683dd96bb42fe53c966072d15b2719276010c5267f55c584a2680e25ee271bbe7358499af4093d80ea84247bc1ce0cbb90000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 40,
+        "outer": 39.0,
+        "gamma": 12100.0,
+        "chi": 2.19615e-15,
+        "radial_by_order": [
+          6.851869197866563e-30,
+          1.504773253889465e-44,
+          4.130884726911686e-59
+        ],
+        "born_remainder": 1.922483532515162e-63,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "81161a72c8bfc45b2cc9a591c9c49c6d9065d0ae3d532aecddec6f2dc5951ace",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "m": 0,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 43.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.7660422459798752e-24,
+          4.500676730174267e-25
+        ],
+        [
+          7.017743632832135e-48,
+          3.2001632223115473e-48
+        ],
+        [
+          2.1430013547027275e-71,
+          1.7186514963126207e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154309_397eb3bf/COEFFICIENTS.npz": "a5785a19127a51a8038285b93e0f31bd7d8a42684b16d71760aed40b4cee7787",
+        "attempt_20261018T154309_397eb3bf/RESULT.json": "d5a729cd40bace8217ac19fbde891ea68d19996bfacd85005703024729c4dcbf"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 40,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "2b",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "2f44",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "16b",
+            "denominator_hex": "6c6b935b8bbd400000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "bd1",
+            "denominator_hex": "1"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "ab93",
+            "denominator_hex": "1158e460913d00000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6d47d140ac7559",
+            "denominator_hex": "8a2dbf142dfc7240c020abe2d0f3a4ee6cc600860b71fb11564000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "3d61f5d790bffc7bc38675c1652a7ef4db01dc7f71c55ee6059bf892d660839e1b0e88e96f926921ce209b80fcc08b256ae7adb8e6cd8edf36945ea57356839467b1c9cdeefe0ba92723a341d53eea0c29d901d71c3cb593f5dbed9d1834281298882e410d5",
+            "denominator_hex": "524a8682ca7a38af6aa4bea6563887b993948b332fa6fb15d41eeddaa3219662be4922d74dc7028376552d1d3dacead79a1c984cc1c9ad134cbaad9456f915389a9f11bc8b0267f0bd4464a187b8b18958c3ac225c56240b731f286fe30b270198951cc06aac4e22bac0075be6ed7b15800000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "16b",
+                "denominator_hex": "6c6b935b8bbd400000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "389d91f9fe60e68f48a0a5c6823c5d3284888c40f48fadf5139bbe948a2ecfbe0bfea198ed77f1b8bfdfe4a32e0ed0d630c19ba171e6d539076bd872601f3ecea3ce8aa4f5fba65677ee556fabe9f6dc7cff5d28eaa8c2256d50498dd09",
+                "denominator_hex": "4be670ae49f34133726c26d889932f2bfa843e16ee77fa21608febf5526053d02ebe5be93c965479695cb7e7ea4c85706ed3551c19f098352d19fd53d89b9a776dbdee65760f3a9712c78431135f1fcf1582d752b7c9796fc788ec6acba0117db6a8d0026873f97dc00000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f34971",
+                "denominator_hex": "1d6329f1c35ca4bfabb9f56100000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "aefcd1a222cc460123bd7bab444020853512cd7873f3174a80d7d81edc08958904b8042f5c1063bf60fd3b25a34a18c61b921cb39f3f1743b11aabd8e09e834f2d5ea80903df0266531fd96ba7748e4c8bb119cf2db0584b1aa3",
+                "denominator_hex": "17b80336771c046013c1cc23aafdfebdbe4953672a857e2a6e2cf9bca9be1a310e9b7cb8e2eefa65f0ecf9787937e9b322a20a98c81b2f909e181f2a33b0a045524b5a7fb4e4c24f35de594f560db9f0b6b8e349d96ef5f2ee5ac9e15fa205774914c100c0a43df74c0000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "a30dc1a6e3",
+                "denominator_hex": "3fb942dc0970da8200bc8db411d4f56d23a0000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "75475b33ad586e0ef587176969ef068ba6f1090b719df52523d8294db6b214d063d4a07609b0d00a1cadd7eb1aaf42188e2c6e12768395c4932b831a8b92dcbb49c5479882c32fa8ba480184c1ac02fad74382ef357c073cddeb2c99",
+                "denominator_hex": "1492a1a0b29ea79b1bf4bf668f2c08eaddeb9beaf3ecfa110cbc37b13244dbedfa32f6a82617d882dcef147a69cb08421e11e7e983fbc81039c87da06327bb22c7b980d9cb84566d2077ee37dd5ef387dd1fc317ec04d4a6bcc2bcbd8729fc7c6aead2db86f795a201a0886ab2db0000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 40,
+        "outer": 43.0,
+        "gamma": 12100.0,
+        "chi": 2.19615e-15,
+        "radial_by_order": [
+          2.298546047160593e-33,
+          5.047951901471736e-48,
+          1.385757446052144e-62
+        ],
+        "born_remainder": 1.922483532515162e-63,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "0e1579e3ca9e7b5993483e7cd1718aba7b92c68390129929fb11617705515f66",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64
+        ],
+        "m": 0,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 35.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.7660421598769418e-24,
+          4.500677527613205e-25
+        ],
+        [
+          7.017742508866e-48,
+          3.2001638474196654e-48
+        ],
+        [
+          2.1430005615502425e-71,
+          1.7186516893027132e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154309_2ba60019/COEFFICIENTS.npz": "8b85aaf0e04e6f919488e8afbb11c1593b06ad50f7aed16d3dfe4011b0611def",
+        "attempt_20261018T154309_2ba60019/RESULT.json": "fb3ee4595ea031a509902b74abfe377259c7ab4ee75f355199c5e37516b3b8b9"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 64,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "23",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "7e90",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "f3",
+            "denominator_hex": "1b1ae4d6e2ef500000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1fa4",
+            "denominator_hex": "1"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "4ce3",
+            "denominator_hex": "1158e460913d0000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6954fe21e3e81",
+            "denominator_hex": "228b6fc50b7e98ced2907afd9b9b44d8c08ef390fbe8b62f490000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "7b45c9bfb8e7645b1f34e517787de84ac134f5ce0d4bd6d193bd8a633862d2c45169acf0990e0b9eacef0aaabe04851c043ff431cf9648e69fb4563f40dfb87024285ed0903da99174dd5777c4e128cf0fd6935e1f4cd74c2007a46010724c28b3151677f7",
+            "denominator_hex": "7486a02511459e40ad0b0f57717c201f7399dcd6fb961af26186ff02c8ad1c35e3f1449a12f4a4890c55e97eb938acefd2919536d7e52f9965b6595ccc7d6696a7d929538ceee486ad71e50e81eeeaf41544a1958b205bfc7bf4598d86a7c3e09f43b986fd5dd0a748c7ebcec200000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f3",
+                "denominator_hex": "1b1ae4d6e2ef500000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "71b2ec09183f6db3d9ca071a4b5db90c97ea06a01139ef55f6b7b7dc06b2a3513c0e2d41edd342882ed28fecbbb3f80702b57a225f74992a986cae7372c1ec266478b51cbd56785d413ff5a0cb7f1e4ee5defcad2589eb735c96a8df723",
+                "denominator_hex": "6b79e551136a8a829fd78782d4c86953283c68eb6a3091b2c1a690eab03aed6a3a7d28215b6f461900fa8e3a41bfb730a68d5b58d93186a4fe43ca0a23cb57979f8e75bc3b601ac74411d086bf435be56e465bb6dcc3028ccc492f9138ece5d0b2f86d6ae1500000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "48fb79",
+                "denominator_hex": "758ca7c70d7292feaee7d584000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "9d7b10e678758016445aea2a2fbe213ca849d895ec1f07656908751b0b088f6409b7d6ada7201a53afa17f2b76dc4bf6b78b1cddc9a87e5e63e80e040f911aa69e1e809264aaad2a08875b45429595ea8ce3b6f279d4ff7101b1",
+                "denominator_hex": "219617a956114b48d1f35a58e27ea0e9fc92e0c9912f2d87dc840d4957126a3132471c8a6c92c5e7d04e4c72348be93f340c2c8bc3df7a138f752f232b2f8b5f61dc84cad28e085e4545912a1bc50cb7b275fca924fcf0cbffd6dedd61ca07d137eda2316669000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "15eb5ee84b",
+                "denominator_hex": "fee50b7025c36a0802f236d04753d5b48e80000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "2f4c2d24681fb23730099a222994c7757abf25c78f0995b5aa1aa543de415328d89731bee998b9483058adf4aad3cbe49a420cec7087d5ec135b7aeda238e19418af433777b1eec006cdbf1e7e2e732590ce883b352d43b40db50bf3",
+                "denominator_hex": "1d21a809445269cc14960914a11bd2459fa678a726b62c317e1921ed54bd5f06c6bdb4849a9d9d9a6a3960289222ceedf7cfaeb7710858938d2098718a3a57f25aaf9745bdb92fa7dd8eb58d11d2f1f232f06a8222dce06c7be9fbe08f126cef1ff343c031a55dad68580040000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 64,
+        "outer": 35.0,
+        "gamma": 32400.0,
+        "chi": 1.57464e-14,
+        "radial_by_order": [
+          5.469209491355993e-26,
+          8.612036033468801e-40,
+          1.695107052467664e-53
+        ],
+        "born_remainder": 1.897492673384315e-60,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "0879d8571cb7ac3a7a0070a95809afdcf6322dfbdc4b59874d4249fab8f70ec9",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64
+        ],
+        "m": 0,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 39.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.7660422460132986e-24,
+          4.500676730156403e-25
+        ],
+        [
+          7.017743633171119e-48,
+          3.20016322238273e-48
+        ],
+        [
+          2.1430013548843917e-71,
+          1.7186514964115286e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154311_74463c38/COEFFICIENTS.npz": "d299794697079bf1f09276e4ad07c5a8cb83eb53d93a08a1f9ef201ca12a4b8d",
+        "attempt_20261018T154311_74463c38/RESULT.json": "8ee2f70187bfcbd64080424241d08ec34cf0787c606bb8a3c99e8cb029de2e24"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 64,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "27",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "7e90",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "f3",
+            "denominator_hex": "1b1ae4d6e2ef500000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1fa4",
+            "denominator_hex": "1"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "4ce3",
+            "denominator_hex": "1158e460913d0000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6954fe21e3e81",
+            "denominator_hex": "228b6fc50b7e98ced2907afd9b9b44d8c08ef390fbe8b62f490000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "59cb718ed8bdc5211b918fcc3456b712d49fe3bc42e283fcb270f7890995cb9dffcb7a092fc67753cc5ba21abf8ec34bccda436d2eec96c5083b0504a0534ad679275348907b63f0e4fc382e20dc7f8c7ebefab7cf67",
+            "denominator_hex": "3dc6061a3a3e5a64eee94852172fa534281110f8513200b1268e433ec5206f8457a086d1a3019709bef41d870942518d3c9a6faa1600b30502fc3621a5d9570a98020e1b5989ae09c66c300774b72f0edeb4c30f32801bce92eae1ace97803200000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f3",
+                "denominator_hex": "1b1ae4d6e2ef500000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "52d22ca7e5c28cd7a0e84a2ac6e3db1f3db1c44a3a8ef9d7026c6a0a99a1946f5a2c2a54c87ca9920b8dd6d0427382b7f2abfd34761b0087557bfadb03ded69e08909b205060748aa1c8e074f2153",
+                "denominator_hex": "38f9dcce7849ab7f9f636faa9474f06d84541bb29032d67695f553895a7d5f83b1e07582701508fa05acf63e2b62f4150951694c1e6e519a720922de4ddf374c973cbd0ee36f09957f14b79ed8ba2d04bcd5080212b0942d00000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "48fb79",
+                "denominator_hex": "758ca7c70d7292feaee7d584000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "72b67402ae9d24bee747fb16601fe20f71ed1e232ffcaa5f9f25721f9f666b7dc42bab215c56d08b0252deeddced298d8a87f1871d701aedd360a4ae433e2e05fc06c47590f2e18fb784c1",
+                "denominator_hex": "11ce150085970597e1cf12e54e648b22395a48a7cd0fe3050edcaa1aec472dd9279624b8c30692ce21c60cf36d8eec4692e970e7c982798043a2dae57855c147ef42fb14a712b2feb7b67961a3ba2e117b029280a5d72e4e1000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "15eb5ee84b",
+                "denominator_hex": "fee50b7025c36a0802f236d04753d5b48e80000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "2273e239aa377c4041f0735e4960b36209846a342b728f9f76093c15955cbfbaa6c1e986a5fea6e42ff3a9aa4a814ea1dda2323f478c62667ba31f95c27c15cc96207c531b47a254aceb240323",
+                "denominator_hex": "f7181868e901f7ed49b0868c7b3952bdc9986e0ecda2356c01021f75743193f8096eef814f6ba6d571466deccda0f765aed0bf94f25981cb456c9c649d80431499fd57161289a03897b89c6ef9cd61266bd024f603aa1091ef073832ee40000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 64,
+        "outer": 39.0,
+        "gamma": 32400.0,
+        "chi": 1.57464e-14,
+        "radial_by_order": [
+          1.8347153885196416e-29,
+          2.889016239378568e-43,
+          5.686450663968836e-57
+        ],
+        "born_remainder": 1.897492673384315e-60,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "07a4341a1e6a9ddc97eda823f7426accacedb639197a036fe423d5d7a8878369",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64
+        ],
+        "m": 0,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 43.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.7660422459797838e-24,
+          4.500676730174531e-25
+        ],
+        [
+          7.01774363282847e-48,
+          3.200163222309975e-48
+        ],
+        [
+          2.1430013546985347e-71,
+          1.718651496309355e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154312_a7c98fd3/COEFFICIENTS.npz": "8bcace98a5b2dd70cbc8c2276889106fdb5e313fe7eb99064db57a39ffca0eb6",
+        "attempt_20261018T154312_a7c98fd3/RESULT.json": "80fdac4dd7eb1d89e963012ca81e031d57cb5e7b2b35c2635ededb51dfb1ec00"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 64,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "2b",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "7e90",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "f3",
+            "denominator_hex": "1b1ae4d6e2ef500000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1fa4",
+            "denominator_hex": "1"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "4ce3",
+            "denominator_hex": "1158e460913d0000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6954fe21e3e81",
+            "denominator_hex": "228b6fc50b7e98ced2907afd9b9b44d8c08ef390fbe8b62f490000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "2917433fe84d2173b511a1b27d7f4d6e4066fc9a046e9cf0869483766820f0ec1b2339a5885a03df8efa58e394ac2c5eac155165efdcc2f78a917215159fe8256162ca458569e3307c49c7d296f5b84505478674b5199d1960028c20057b6eb83bb1b227fd",
+            "denominator_hex": "1492a1a0b29df13d65a77b683ebb54365275c51d77cde71ddf2d4ea89d1f39d32cda7ec303b6dcb32c49260f96c370c27f92864db83e2b48248200acf6f1b6cd1db5539facd8f2978ef3d61636308740cbd978f495af5c8f6536d577498b11a7c62019aae5f0f00956173f424b9e83f600000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f3",
+                "denominator_hex": "1b1ae4d6e2ef500000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "25e64eadb2bfcf3bf34357b36e74930432a3578ab068a51ca792929eace63670695a0f15f9f1162d64f0daa43e9152ad00e728b61fd1886388243a267b95f962217d91b43f1cd2c9c06aa735992a5f6fa1f4fee461d8a3d11edce2f5261",
+                "denominator_hex": "12f99c2b927cd04cdc9b09b62264cbcafea10f85bb9dfe885823fafd549814f40baf96fa4f25951e5a572df9fa93215c1bb4d547067c260d4b467f54f626e69ddb6f7b995d83cea5c4b1e10c44d7c7f3c560b5d4adf25e5bf1e23b1ab2e8045f6daa34009a1cfe5f700000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "48fb79",
+                "denominator_hex": "758ca7c70d7292feaee7d584000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "347e5af77d7c80076c1e4e0e0fea0b1438189d874eb502772302d1b3ae582fcc033d478f37b55e1be535d50e7cf419523d2e5ef4988d7f74cbf804ac05305e378a0a2adb76e38f0e02d7c9171631dca3844be7a6289c5525ab3b",
+                "denominator_hex": "5ee00cd9dc7011804f07308eabf7faf6f9254d9caa15f8a9b8b3e6f2a6f868c43a6df2e38bbbe997c3b3e5e1e4dfa6cc8a882a63206cbe4278607ca8cec28115492d69fed393093cd779653d5836e7c2dae38d2765bbd7cbb96b27857e8815dd245304030290f7dd3000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "15eb5ee84b",
+                "denominator_hex": "fee50b7025c36a0802f236d04753d5b48e80000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "fc40f0c22b53b67baadde0b633197d1d3950c97da58873c8e08e1c14a15c662f2dd1094f8883dc2bac839fc38f143f6de16044ed02d474eb11e7e4f3612f5dc083a6bbd27e5fa400244950a2a0f7bb73044d813bc646be6af3c5951",
+                "denominator_hex": "524a8682ca7a9e6c6fd2fd9a3cb023ab77ae6fabcfb3e84432f0dec4c9136fb7e8cbdaa0985f620b73bc51e9a72c210878479fa60fef2040e721f6818c9eec8b1ee603672e1159b481dfb8df757bce1f747f0c5fb013529af30af2f61ca7f1f1abab4b6e1bde5688068221aacb6c0000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 64,
+        "outer": 43.0,
+        "gamma": 32400.0,
+        "chi": 1.57464e-14,
+        "radial_by_order": [
+          6.1547844568597694e-33,
+          9.691569797149667e-47,
+          1.907591683172969e-60
+        ],
+        "born_remainder": 1.897492673384315e-60,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "87ce31e93bb145d6acea541c4a67c40eb22112eb7fa8e84bf96918d30fdd60b3",
+      "spec": {
+        "ells": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "m": 1,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 39.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.761381014061623e-24,
+          4.493095124718613e-25
+        ],
+        [
+          6.997131907969551e-48,
+          3.190691033382089e-48
+        ],
+        [
+          2.133521139541181e-71,
+          1.7109077446156458e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154317_049c254d/COEFFICIENTS.npz": "e22ae7066d3f9039855a7bea0afce3afe2ccc6b8f26cba1bbd8f7a47b64b455f",
+        "attempt_20261018T154317_049c254d/RESULT.json": "7b3e9471f4d928dedf9e24f2396e2cb1358bf1692a70078720863c9637206828"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 28,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "27",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "457b",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "4"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6492db3",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "43689c8194acb367a98cbf29",
+            "denominator_hex": "3117477e509c401d50eccdf7f9f3b50a208667d94b0f8c1834aeca1754f1000000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "21c85b180a46c536d4043b9e15012bc6e67597c1a533c2a10a2aa63a566abd1a0c3fe869090e94dbcf9714215890a03385b21aeb0de1a809e1f8ec6f2260b93baadb6ff2069fef1a141e2f21aa28d3cfa640cdd67708054d",
+            "denominator_hex": "7f006270de7f640bcb142e72e27f615b1a2abcde69f4ced1ac44256cec985e70f087e998932cc93b45c227997d5272a445bdd27d9acab574af4cc9683f1aa3f546fd80c58c221611852c39be7be3e247bd3f48869fdc5f06f5ed906b2bc7ce42e6000000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "457b",
+                "denominator_hex": "2a5a058fc295ed000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f27ddf69e170feda73c147645786071122bf28f93134a25d615c050c73d0df5b03976f6d0c6da199871763c2797df1e63e5d761c111c1cba6337cd08c6d0154f87304df815f0504aae53dbe6c6d13",
+                "denominator_hex": "38f9dcce7849ab7f9f636faa9474f06d84541bb29032d67695f553895a7d5f83b1e07582701508fa05acf63e2b62f4150951694c1e6e519a720922de4ddf374c973cbd0ee36f09957f14b79ed8ba2d04bcd5080212b0942d000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1b4be7a3401",
+                "denominator_hex": "1c06a5ec5433c60ddaa16406f5a4000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "2ae780cbee0034f48ca298a5d22cc448ea9f0e07757d9a3425aa671f447cbabb428304a956c4c20d077795f8743f2d203b8935384bca3c9b8133bf3787afcfa7cfe68e3a98f1f076342d93d0d89",
+                "denominator_hex": "43ebb3fdcd9aea4632547c84dbdb6b00bde877c89c2fea72fb81a4a653f446d5b112b0750f76c36474b610c75a9e8531f7cca1c332a2c89d5a02ee25fbdaa11ef8a5f2ebf89544efcbaf05688721e85c8ecefffce0a1a993a8e9000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "ab94f24ed84df89b3",
+                "denominator_hex": "945e455f24fb1cf88fe8caa93e74ef6a4d363b9a8000000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "10db0b1333dc6ba487beda854bbdd418218b1e92f8f914c6caeb9176dcc0dd872fe8518d5c0614fe593e809d48d2a3b02b169603e1f75c6786ec4ae43cf46aded2861f5d381087bcf5ddc488a7b3228bcb",
+                "denominator_hex": "8fd3e4bbb02e01f3f5e41e5d83aff775dd4be454bcd96a5f0d644b4eac250186be59e57109310d313dde7bb530739f41ae2cc42c3a8fdcf7623d78666c92bf3d4508b171f0aab75c0d96ae10606a6e1ee28b5c00ee014c897b6103421abaa63c4000000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 28,
+        "outer": 39.0,
+        "gamma": 5929.0,
+        "chi": 5.27295615e-16,
+        "radial_by_order": [
+          3.357415906954616e-30,
+          1.7703506854684168e-45,
+          1.1668726918246756e-60
+        ],
+        "born_remainder": 1.3038726889240312e-65,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "f2e796c03eab2f2d39d82285d239999e7fc6606fbcbbf04cf95d47f77a612324",
+      "spec": {
+        "ells": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "m": 1,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 39.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.7613810140615544e-24,
+          4.493095124718547e-25
+        ],
+        [
+          6.997131907969697e-48,
+          3.190691033381558e-48
+        ],
+        [
+          2.133521139582492e-71,
+          1.710907744625908e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154320_bf441257/COEFFICIENTS.npz": "8c3fc8b93a9f0e576246c232842078b117906fc7ecf474a3f40fe8aa372dac97",
+        "attempt_20261018T154320_bf441257/RESULT.json": "70b57de0db07de70643454e46481f9e369524240d0c5602f17a817794112a428"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 40,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "27",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "2f44",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "16b",
+            "denominator_hex": "6c6b935b8bbd400000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "bd1",
+            "denominator_hex": "1"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "ab93",
+            "denominator_hex": "1158e460913d00000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6d47d140ac7559",
+            "denominator_hex": "8a2dbf142dfc7240c020abe2d0f3a4ee6cc600860b71fb11564000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "862344800e0dadfcc3b836ad49a79922f3d354c8349e07d1794af5861c7558648969a91a567eb1d4c9ab7c9d2937373357b284a82b7b3a26fe5b88ea9ac248f104a4e2303d26b197fcb1072b8305ce2174e354c24726f",
+            "denominator_hex": "f7181868e900c67059f2df4a3c5b84be3c17ed23efa88332aaa0b09f609eb1e0341134fba9152354de3997c98507ac8758695a24db77d75d6cc2241b4ea81437edb139bf89a25035466c90b0d8827b4fef6bcd1f8bd9f1bc199f5acd7b46d94800000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "16b",
+                "denominator_hex": "6c6b935b8bbd400000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "7bb8625024a75d74adff58ab5bacdf08be22d635fefb81dc0d1a0d065a6fcac5f228b1036461baf04a260e538c5a614bace151287138238e1db9345d4b500adf6ec50da85ec8f9f1db8e0cede80cb",
+                "denominator_hex": "e3e77339e126adfe7d8dbeaa51d3c1b611506eca40cb59da57d54e2569f57e0ec781d609c05423e816b3d8f8ad8bd0542545a53079b94669c8248b79377cdd325cf2f43b8dbc2655fc52de7b62e8b412f35420084ac250b400000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f34971",
+                "denominator_hex": "1d6329f1c35ca4bfabb9f56100000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "17e6534a993c77311a1d736ead2b5384862aface0722e45bea95c50af73af35cd11de12d9eea1b9495a4fe0ecf65e6927b04c1d3aa9c80424a8b2b29e030fc0bbdc4eb314b4ecc97e1f7679",
+                "denominator_hex": "47385402165c165f873c4b9539922c88e569229f343f8c143b72a86bb11cb7649e5892e30c1a4b38871833cdb63bb11a4ba5c39f2609e6010e8b6b95e157051fbd0bec529c4acbfaded9e5868ee8b845ec0a4a02975cb93840000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "a30dc1a6e3",
+                "denominator_hex": "3fb942dc0970da8200bc8db411d4f56d23a0000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "100492e4a83161563da3ab04363960aa7ab7c035a31267928679be9e78705768bdfb0991c658a0da16472371c70a28873e48d133af818189eddbc3bec1cc747c9280812cfa9be0e8ef27033da7b",
+                "denominator_hex": "3dc6061a3a407dfb526c21a31ece54af72661b83b3688d5b004087dd5d0c64fe025bbbe053dae9b55c519b7b33683dd96bb42fe53c966072d15b2719276010c5267f55c584a2680e25ee271bbe7358499af4093d80ea84247bc1ce0cbb90000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 40,
+        "outer": 39.0,
+        "gamma": 12100.0,
+        "chi": 2.19615e-15,
+        "radial_by_order": [
+          6.851869197866563e-30,
+          1.504773253889465e-44,
+          4.130884726911686e-59
+        ],
+        "born_remainder": 1.922483532515162e-63,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "863a1f24910e5f97e00819ffb539c07a2e32cddd9a80feaec102a10e9c55d9c0",
+      "spec": {
+        "ells": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "m": 2,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 39.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.7474004264957456e-24,
+          4.470355307178682e-25
+        ],
+        [
+          6.935520943790667e-48,
+          3.162379247699344e-48
+        ],
+        [
+          2.1052735381847287e-71,
+          1.6878386904333417e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154322_29302064/COEFFICIENTS.npz": "a779152ca2ad4d2ca7e2252c589ff0c0faeb9a04d133ca7f3b24a0e7a060fda9",
+        "attempt_20261018T154322_29302064/RESULT.json": "7ac25978340dbdb23f7b066c215e773ec5deb4fc4f241400932fa1a97fd7c69a"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 28,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "27",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "457b",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "4"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6492db3",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "43689c8194acb367a98cbf29",
+            "denominator_hex": "3117477e509c401d50eccdf7f9f3b50a208667d94b0f8c1834aeca1754f1000000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "21c85b180a46c536d4043b9e15012bc6e67597c1a533c2a10a2aa63a566abd1a0c3fe869090e94dbcf9714215890a03385b21aeb0de1a809e1f8ec6f2260b93baadb6ff2069fef1a141e2f21aa28d3cfa640cdd67708054d",
+            "denominator_hex": "7f006270de7f640bcb142e72e27f615b1a2abcde69f4ced1ac44256cec985e70f087e998932cc93b45c227997d5272a445bdd27d9acab574af4cc9683f1aa3f546fd80c58c221611852c39be7be3e247bd3f48869fdc5f06f5ed906b2bc7ce42e6000000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "457b",
+                "denominator_hex": "2a5a058fc295ed000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f27ddf69e170feda73c147645786071122bf28f93134a25d615c050c73d0df5b03976f6d0c6da199871763c2797df1e63e5d761c111c1cba6337cd08c6d0154f87304df815f0504aae53dbe6c6d13",
+                "denominator_hex": "38f9dcce7849ab7f9f636faa9474f06d84541bb29032d67695f553895a7d5f83b1e07582701508fa05acf63e2b62f4150951694c1e6e519a720922de4ddf374c973cbd0ee36f09957f14b79ed8ba2d04bcd5080212b0942d000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1b4be7a3401",
+                "denominator_hex": "1c06a5ec5433c60ddaa16406f5a4000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "2ae780cbee0034f48ca298a5d22cc448ea9f0e07757d9a3425aa671f447cbabb428304a956c4c20d077795f8743f2d203b8935384bca3c9b8133bf3787afcfa7cfe68e3a98f1f076342d93d0d89",
+                "denominator_hex": "43ebb3fdcd9aea4632547c84dbdb6b00bde877c89c2fea72fb81a4a653f446d5b112b0750f76c36474b610c75a9e8531f7cca1c332a2c89d5a02ee25fbdaa11ef8a5f2ebf89544efcbaf05688721e85c8ecefffce0a1a993a8e9000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "ab94f24ed84df89b3",
+                "denominator_hex": "945e455f24fb1cf88fe8caa93e74ef6a4d363b9a8000000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "10db0b1333dc6ba487beda854bbdd418218b1e92f8f914c6caeb9176dcc0dd872fe8518d5c0614fe593e809d48d2a3b02b169603e1f75c6786ec4ae43cf46aded2861f5d381087bcf5ddc488a7b3228bcb",
+                "denominator_hex": "8fd3e4bbb02e01f3f5e41e5d83aff775dd4be454bcd96a5f0d644b4eac250186be59e57109310d313dde7bb530739f41ae2cc42c3a8fdcf7623d78666c92bf3d4508b171f0aab75c0d96ae10606a6e1ee28b5c00ee014c897b6103421abaa63c4000000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 28,
+        "outer": 39.0,
+        "gamma": 5929.0,
+        "chi": 5.27295615e-16,
+        "radial_by_order": [
+          3.357415906954616e-30,
+          1.7703506854684168e-45,
+          1.1668726918246756e-60
+        ],
+        "born_remainder": 1.3038726889240312e-65,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "e1a693cb5e50607733c2ba2f1756b4d07236153a30f5cfaef6a1b63346af9a4e",
+      "spec": {
+        "ells": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "m": 2,
+        "max_step": 0.25,
+        "nodes": 128,
+        "orders": 3,
+        "outer": 39.0,
+        "rtol": 2e-11
+      },
+      "physical_entries": [
+        [
+          2.747400426495646e-24,
+          4.47035530717866e-25
+        ],
+        [
+          6.935520943790521e-48,
+          3.1623792476987073e-48
+        ],
+        [
+          2.1052735382241236e-71,
+          1.6878386904429606e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154322_3920b52d/COEFFICIENTS.npz": "ce53e030c10a0c1358297fdf9180dc9b965831aedb6a59e59366ea9a580e7caa",
+        "attempt_20261018T154322_3920b52d/RESULT.json": "9ad6147f98d4aa194ec97c63000a1cc131f7b9ce8311f411b037637513561ef0"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 40,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "27",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "2f44",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "16b",
+            "denominator_hex": "6c6b935b8bbd400000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "bd1",
+            "denominator_hex": "1"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "ab93",
+            "denominator_hex": "1158e460913d00000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6d47d140ac7559",
+            "denominator_hex": "8a2dbf142dfc7240c020abe2d0f3a4ee6cc600860b71fb11564000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "862344800e0dadfcc3b836ad49a79922f3d354c8349e07d1794af5861c7558648969a91a567eb1d4c9ab7c9d2937373357b284a82b7b3a26fe5b88ea9ac248f104a4e2303d26b197fcb1072b8305ce2174e354c24726f",
+            "denominator_hex": "f7181868e900c67059f2df4a3c5b84be3c17ed23efa88332aaa0b09f609eb1e0341134fba9152354de3997c98507ac8758695a24db77d75d6cc2241b4ea81437edb139bf89a25035466c90b0d8827b4fef6bcd1f8bd9f1bc199f5acd7b46d94800000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "16b",
+                "denominator_hex": "6c6b935b8bbd400000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "7bb8625024a75d74adff58ab5bacdf08be22d635fefb81dc0d1a0d065a6fcac5f228b1036461baf04a260e538c5a614bace151287138238e1db9345d4b500adf6ec50da85ec8f9f1db8e0cede80cb",
+                "denominator_hex": "e3e77339e126adfe7d8dbeaa51d3c1b611506eca40cb59da57d54e2569f57e0ec781d609c05423e816b3d8f8ad8bd0542545a53079b94669c8248b79377cdd325cf2f43b8dbc2655fc52de7b62e8b412f35420084ac250b400000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f34971",
+                "denominator_hex": "1d6329f1c35ca4bfabb9f56100000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "17e6534a993c77311a1d736ead2b5384862aface0722e45bea95c50af73af35cd11de12d9eea1b9495a4fe0ecf65e6927b04c1d3aa9c80424a8b2b29e030fc0bbdc4eb314b4ecc97e1f7679",
+                "denominator_hex": "47385402165c165f873c4b9539922c88e569229f343f8c143b72a86bb11cb7649e5892e30c1a4b38871833cdb63bb11a4ba5c39f2609e6010e8b6b95e157051fbd0bec529c4acbfaded9e5868ee8b845ec0a4a02975cb93840000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "a30dc1a6e3",
+                "denominator_hex": "3fb942dc0970da8200bc8db411d4f56d23a0000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "100492e4a83161563da3ab04363960aa7ab7c035a31267928679be9e78705768bdfb0991c658a0da16472371c70a28873e48d133af818189eddbc3bec1cc747c9280812cfa9be0e8ef27033da7b",
+                "denominator_hex": "3dc6061a3a407dfb526c21a31ece54af72661b83b3688d5b004087dd5d0c64fe025bbbe053dae9b55c519b7b33683dd96bb42fe53c966072d15b2719276010c5267f55c584a2680e25ee271bbe7358499af4093d80ea84247bc1ce0cbb90000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 40,
+        "outer": 39.0,
+        "gamma": 12100.0,
+        "chi": 2.19615e-15,
+        "radial_by_order": [
+          6.851869197866563e-30,
+          1.504773253889465e-44,
+          4.130884726911686e-59
+        ],
+        "born_remainder": 1.922483532515162e-63,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "146ac05bd09545d9bd49024242a8726002954a77e08fec8f6715a04e04205682",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "m": 0,
+        "max_step": 0.125,
+        "nodes": 192,
+        "orders": 3,
+        "outer": 39.0,
+        "rtol": 2e-12
+      },
+      "physical_entries": [
+        [
+          2.7660422460144348e-24,
+          4.500676730158496e-25
+        ],
+        [
+          7.017743633173067e-48,
+          3.2001632223845535e-48
+        ],
+        [
+          2.1430013548391792e-71,
+          1.7186514963999162e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154324_d92e7f84/COEFFICIENTS.npz": "971013ae86a2049f730d8a50e1f73df1e1a181aa1b298969de306ef57cd466c9",
+        "attempt_20261018T154324_d92e7f84/RESULT.json": "c09b585d9145553169ba0f2349da04a5072845133c42dcc468faa0934fbfad85"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 28,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "27",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "457b",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "4"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6492db3",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "43689c8194acb367a98cbf29",
+            "denominator_hex": "3117477e509c401d50eccdf7f9f3b50a208667d94b0f8c1834aeca1754f1000000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "21c85b180a46c536d4043b9e15012bc6e67597c1a533c2a10a2aa63a566abd1a0c3fe869090e94dbcf9714215890a03385b21aeb0de1a809e1f8ec6f2260b93baadb6ff2069fef1a141e2f21aa28d3cfa640cdd67708054d",
+            "denominator_hex": "7f006270de7f640bcb142e72e27f615b1a2abcde69f4ced1ac44256cec985e70f087e998932cc93b45c227997d5272a445bdd27d9acab574af4cc9683f1aa3f546fd80c58c221611852c39be7be3e247bd3f48869fdc5f06f5ed906b2bc7ce42e6000000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "457b",
+                "denominator_hex": "2a5a058fc295ed000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f27ddf69e170feda73c147645786071122bf28f93134a25d615c050c73d0df5b03976f6d0c6da199871763c2797df1e63e5d761c111c1cba6337cd08c6d0154f87304df815f0504aae53dbe6c6d13",
+                "denominator_hex": "38f9dcce7849ab7f9f636faa9474f06d84541bb29032d67695f553895a7d5f83b1e07582701508fa05acf63e2b62f4150951694c1e6e519a720922de4ddf374c973cbd0ee36f09957f14b79ed8ba2d04bcd5080212b0942d000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1b4be7a3401",
+                "denominator_hex": "1c06a5ec5433c60ddaa16406f5a4000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "2ae780cbee0034f48ca298a5d22cc448ea9f0e07757d9a3425aa671f447cbabb428304a956c4c20d077795f8743f2d203b8935384bca3c9b8133bf3787afcfa7cfe68e3a98f1f076342d93d0d89",
+                "denominator_hex": "43ebb3fdcd9aea4632547c84dbdb6b00bde877c89c2fea72fb81a4a653f446d5b112b0750f76c36474b610c75a9e8531f7cca1c332a2c89d5a02ee25fbdaa11ef8a5f2ebf89544efcbaf05688721e85c8ecefffce0a1a993a8e9000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "ab94f24ed84df89b3",
+                "denominator_hex": "945e455f24fb1cf88fe8caa93e74ef6a4d363b9a8000000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "10db0b1333dc6ba487beda854bbdd418218b1e92f8f914c6caeb9176dcc0dd872fe8518d5c0614fe593e809d48d2a3b02b169603e1f75c6786ec4ae43cf46aded2861f5d381087bcf5ddc488a7b3228bcb",
+                "denominator_hex": "8fd3e4bbb02e01f3f5e41e5d83aff775dd4be454bcd96a5f0d644b4eac250186be59e57109310d313dde7bb530739f41ae2cc42c3a8fdcf7623d78666c92bf3d4508b171f0aab75c0d96ae10606a6e1ee28b5c00ee014c897b6103421abaa63c4000000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 28,
+        "outer": 39.0,
+        "gamma": 5929.0,
+        "chi": 5.27295615e-16,
+        "radial_by_order": [
+          3.357415906954616e-30,
+          1.7703506854684168e-45,
+          1.1668726918246756e-60
+        ],
+        "born_remainder": 1.3038726889240312e-65,
+        "total_numerical_error_certified": false
+      }
+    },
+    {
+      "key": "98ce5cb16ae8ea4310415f06eb2cf2c81ac3d2aa1bc5c075adb18d8587259881",
+      "spec": {
+        "ells": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "m": 0,
+        "max_step": 0.125,
+        "nodes": 256,
+        "orders": 3,
+        "outer": 39.0,
+        "rtol": 2e-12
+      },
+      "physical_entries": [
+        [
+          2.7660422460124485e-24,
+          4.500676730155265e-25
+        ],
+        [
+          7.017743633161522e-48,
+          3.200163222379254e-48
+        ],
+        [
+          2.143001354833234e-71,
+          1.7186514963950612e-71
+        ]
+      ],
+      "payload_SHA256": {
+        "attempt_20261018T154327_b0a7d60e/COEFFICIENTS.npz": "c8337da359a905138c139381c8996dd8f25efa52530cf1aa441d2a27a12f48ba",
+        "attempt_20261018T154327_b0a7d60e/RESULT.json": "bfd43f7d9c19bb6697528f9dbbf5bdc31475b60f92286e83ae41289cac2dceb2"
+      },
+      "unchanged_inherited_certification": {
+        "full_nonlinear_remainder_certified": false,
+        "spatial_and_roundoff_error_certified": false
+      },
+      "new_components": {
+        "analytic_component": {
+          "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+          "max_ell": 28,
+          "outer": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "27",
+            "denominator_hex": "1"
+          },
+          "orders": 3,
+          "gamma": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "1"
+          },
+          "a": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "457b",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "b": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1729",
+            "denominator_hex": "4"
+          },
+          "chi": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "6492db3",
+            "denominator_hex": "2a5a058fc295ed000000"
+          },
+          "continuum_born_remainder": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "43689c8194acb367a98cbf29",
+            "denominator_hex": "3117477e509c401d50eccdf7f9f3b50a208667d94b0f8c1834aeca1754f1000000000000000000"
+          },
+          "continuum_response_radial_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "21c85b180a46c536d4043b9e15012bc6e67597c1a533c2a10a2aa63a566abd1a0c3fe869090e94dbcf9714215890a03385b21aeb0de1a809e1f8ec6f2260b93baadb6ff2069fef1a141e2f21aa28d3cfa640cdd67708054d",
+            "denominator_hex": "7f006270de7f640bcb142e72e27f615b1a2abcde69f4ced1ac44256cec985e70f087e998932cc93b45c227997d5272a445bdd27d9acab574af4cc9683f1aa3f546fd80c58c221611852c39be7be3e247bd3f48869fdc5f06f5ed906b2bc7ce42e6000000"
+          },
+          "terms": [
+            {
+              "order": 1,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "457b",
+                "denominator_hex": "2a5a058fc295ed000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "f27ddf69e170feda73c147645786071122bf28f93134a25d615c050c73d0df5b03976f6d0c6da199871763c2797df1e63e5d761c111c1cba6337cd08c6d0154f87304df815f0504aae53dbe6c6d13",
+                "denominator_hex": "38f9dcce7849ab7f9f636faa9474f06d84541bb29032d67695f553895a7d5f83b1e07582701508fa05acf63e2b62f4150951694c1e6e519a720922de4ddf374c973cbd0ee36f09957f14b79ed8ba2d04bcd5080212b0942d000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 2,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1b4be7a3401",
+                "denominator_hex": "1c06a5ec5433c60ddaa16406f5a4000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "2ae780cbee0034f48ca298a5d22cc448ea9f0e07757d9a3425aa671f447cbabb428304a956c4c20d077795f8743f2d203b8935384bca3c9b8133bf3787afcfa7cfe68e3a98f1f076342d93d0d89",
+                "denominator_hex": "43ebb3fdcd9aea4632547c84dbdb6b00bde877c89c2fea72fb81a4a653f446d5b112b0750f76c36474b610c75a9e8531f7cca1c332a2c89d5a02ee25fbdaa11ef8a5f2ebf89544efcbaf05688721e85c8ecefffce0a1a993a8e9000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "1",
+                "denominator_hex": "1"
+              }
+            },
+            {
+              "order": 3,
+              "weighted_coefficient_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "ab94f24ed84df89b3",
+                "denominator_hex": "945e455f24fb1cf88fe8caa93e74ef6a4d363b9a8000000000000000000"
+              },
+              "radial_cutoff_bound": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "10db0b1333dc6ba487beda854bbdd418218b1e92f8f914c6caeb9176dcc0dd872fe8518d5c0614fe593e809d48d2a3b02b169603e1f75c6786ec4ae43cf46aded2861f5d381087bcf5ddc488a7b3228bcb",
+                "denominator_hex": "8fd3e4bbb02e01f3f5e41e5d83aff775dd4be454bcd96a5f0d644b4eac250186be59e57109310d313dde7bb530739f41ae2cc42c3a8fdcf7623d78666c92bf3d4508b171f0aab75c0d96ae10606a6e1ee28b5c00ee014c897b6103421abaa63c4000000000000000000"
+              },
+              "error_weight": {
+                "type": "rational-hex-v1",
+                "numerator_hex": "5",
+                "denominator_hex": "4"
+              }
+            }
+          ],
+          "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+          "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+          "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+          "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+          "numerical_error_bound": null,
+          "excluded_angular_error_bound": null,
+          "total_numerical_error_certified": false,
+          "HH_R10": "OFF"
+        },
+        "numerical_error_bound": null,
+        "excluded_angular_error_bound": null,
+        "total_error_certified": false,
+        "HH_R10": "OFF"
+      },
+      "display_noncertifying": {
+        "max_ell": 28,
+        "outer": 39.0,
+        "gamma": 5929.0,
+        "chi": 5.27295615e-16,
+        "radial_by_order": [
+          3.357415906954616e-30,
+          1.7703506854684168e-45,
+          1.1668726918246756e-60
+        ],
+        "born_remainder": 1.3038726889240312e-65,
+        "total_numerical_error_certified": false
+      }
+    }
+  ],
+  "HH_R10": "OFF",
+  "total_numerical_error_certified": false,
+  "new_plan": {
+    "status": "ANALYTIC_RADIAL_TARGETS_MET",
+    "max_ell": 64,
+    "outer": 65,
+    "targets": {
+      "1": {
+        "type": "rational-hex-v1",
+        "numerator_hex": "1",
+        "denominator_hex": "c9f2c9cd04674edea40000000"
+      },
+      "2": {
+        "type": "rational-hex-v1",
+        "numerator_hex": "1",
+        "denominator_hex": "a70c3c40a64e6c51999090b65f67d9240000000000000"
+      },
+      "3": {
+        "type": "rational-hex-v1",
+        "numerator_hex": "1",
+        "denominator_hex": "8a2dbf142dfcc7ab6e3569326c7843372a9f4d2505e3a40000000000000000000"
+      }
+    },
+    "certificate": {
+      "schema": "PHYS66_RADIAL_COEFFICIENT_BOUND_V1",
+      "max_ell": 64,
+      "outer": {
+        "type": "rational-hex-v1",
+        "numerator_hex": "41",
+        "denominator_hex": "1"
+      },
+      "orders": 3,
+      "gamma": {
+        "type": "rational-hex-v1",
+        "numerator_hex": "7e90",
+        "denominator_hex": "1"
+      },
+      "a": {
+        "type": "rational-hex-v1",
+        "numerator_hex": "f3",
+        "denominator_hex": "1b1ae4d6e2ef500000"
+      },
+      "b": {
+        "type": "rational-hex-v1",
+        "numerator_hex": "1fa4",
+        "denominator_hex": "1"
+      },
+      "chi": {
+        "type": "rational-hex-v1",
+        "numerator_hex": "4ce3",
+        "denominator_hex": "1158e460913d0000"
+      },
+      "continuum_born_remainder": {
+        "type": "rational-hex-v1",
+        "numerator_hex": "6954fe21e3e81",
+        "denominator_hex": "228b6fc50b7e98ced2907afd9b9b44d8c08ef390fbe8b62f490000000000000"
+      },
+      "continuum_response_radial_bound": {
+        "type": "rational-hex-v1",
+        "numerator_hex": "1eb91b8e7439b907eadacdb52cf83406d93856ec63182087ff26ed42c34fb3b6a1ba92853918c716aaaf4045bd5128b1b2627b5ab063e8030129f55a997d8637ba76ff168b90ac3dd1618b32226e70a4a3551c439b039348efde4714652ea9b2cd75e70904e62f1f2313",
+        "denominator_hex": "ab7676e6245ee407f4e777f4f5d48029f512e3e61d9481acf4ba89ae790dc8ca2f18e1ef27c58d4f2a57e0bbb06118525dde3f81bd509515bbdfdcb04054b4e5764365d5adf39298b0097789127cb793a282cdd41bab393075e1345d8555e68fd3c39833ff1da42c833974f31d48b1758bbbb561baaf6871abfe3fbf200000"
+      },
+      "terms": [
+        {
+          "order": 1,
+          "weighted_coefficient_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "f3",
+            "denominator_hex": "1b1ae4d6e2ef500000"
+          },
+          "radial_cutoff_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1c564809261a7c233f43b21219d0c0228b64779cf0ea6eb9c84c37659c6f13553e6b66761e22d0518ec5dcb408fbc448785af434530d50526741a9ee5d9ea45c675e2ee5ae6b77fdaf229f03bcbb48342b00e819ad7eed7dfe514068f6deb7a4ca7ef",
+            "denominator_hex": "9e257f628a0611fba575ab886e655a87551d37fee86fd1ade9848f300da69dd851f67fcee6e1e3e0b058265936a6290e77081792f7f8b35e21d877ce97cb5f443708defca442e76140c937dcf34cd0ebed0efc9485d7891a4784d18ebf247602b7f88c54bc5ebc345e805f34bc831b741016c8838d00000"
+          },
+          "error_weight": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1",
+            "denominator_hex": "1"
+          }
+        },
+        {
+          "order": 2,
+          "weighted_coefficient_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "48fb79",
+            "denominator_hex": "758ca7c70d7292feaee7d584000000000"
+          },
+          "radial_cutoff_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "7d988daf52e9eceaee1e420c25e7732e24533b5932f41788bd88acc45a25114fcba884379a67eaa30060564fdee0ef717a14e8c8a1a75b8e1253f8127a9ed5f9ecb835029feb73321876b750d2931d863a98a4b22c2560a22c2e60b8cd571",
+            "denominator_hex": "9e257f628a0611fba575ab886e655a87551d37fee86fd1ade9848f300da69dd851f67fcee6e1e3e0b058265936a6290e77081792f7f8b35e21d877ce97cb5f443708defca442e76140c937dcf34cd0ebed0efc9485d7891a4784d18ebf247602b7f88c54bc5ebc345e805f34bc831b741016c8838d000000000"
+          },
+          "error_weight": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "1",
+            "denominator_hex": "1"
+          }
+        },
+        {
+          "order": 3,
+          "weighted_coefficient_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "15eb5ee84b",
+            "denominator_hex": "fee50b7025c36a0802f236d04753d5b48e80000000000000"
+          },
+          "radial_cutoff_bound": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "25b8a855af13f7c2d30220702c06526cd4b2eb6c1b38a56d7684a37b7cdef0020a379dadbf24c3cd72a5ef0c3efd688a01dd75a5f9e506945c6b2e1a74c9e25deee39713c8cdb3fa04aeefb08b2e6537076b463eef183dd4d4eaf1d6a0d3ecf33",
+            "denominator_hex": "892b9251b6b70ff61271b5c8d7212065646b631df79beea7b7d0d579b7e614c60d66ac1aaf3c5b3baf26672a58ae2282d924bb48be8595101ac0c885adc39df1d22ad7f71aef0a6ba81a4094759805479bd25bb799aa22eab21c1b5be61b12ef2907e864d5700407ea56abe0144534287231bd503953fedbb5e140000000000000"
+          },
+          "error_weight": {
+            "type": "rational-hex-v1",
+            "numerator_hex": "5",
+            "denominator_hex": "4"
+          }
+        }
+      ],
+      "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "upstream_commit": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f",
+      "upstream_blob": "935d8ec1b765e5f1bd7c6ad0d95c9c74acf33512",
+      "scope": "EXACT_CONTINUUM_FINITE_L_RADIAL_COMPONENT_ONLY",
+      "numerical_error_bound": null,
+      "excluded_angular_error_bound": null,
+      "total_numerical_error_certified": false,
+      "HH_R10": "OFF"
+    },
+    "total_numerical_error_certified": false
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "fetched_at_utc": {
+    "current_time": "2026-10-19 04:45:22 UTC"
+  },
+  "repo": "cosmosapjw-quantum/WU088_HH",
+  "most_recent_prs": [
+    {
+      "number": 116,
+      "title": "PHYS66: record C5-C8 artifact access blocker",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/116",
+      "state": "open",
+      "draft": true,
+      "created_at": "2026-10-18T14:00:49Z",
+      "updated_at": "2026-10-18T14:00:49Z",
+      "merged_at": null,
+      "base": {
+        "ref": "research/hh-phys66-r5-order-cutoff-20261018",
+        "sha": "445d82db9c42b4f2f81e4ac1b107dec3b69b3c24"
+      },
+      "head": {
+        "ref": "research/hh-phys66-c5c8-artifact-access-blocked-20261018",
+        "sha": "1a1e5b6df5e5f88de851bc4686949089e2444291"
+      },
+      "body": "Records the verified BLOCKED_ARTIFACT_ACCESS state for the unavailable PHYS66 C5-C8 source package. No patch, solver, tests, NCP campaign, or scientific result is claimed."
+    },
+    {
+      "number": 115,
+      "title": "PHYS66 R5: order-resolved radial-cutoff certificate, exact integers and separate error scopes",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/115",
+      "state": "open",
+      "draft": true,
+      "created_at": "2026-10-18T12:11:17Z",
+      "updated_at": "2026-10-18T12:24:33Z",
+      "merged_at": null,
+      "base": {
+        "ref": "research/hh-phys65-r5-global-radial-ratios-20261018",
+        "sha": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f"
+      },
+      "head": {
+        "ref": "research/hh-phys66-r5-order-cutoff-20261018",
+        "sha": "445d82db9c42b4f2f81e4ac1b107dec3b69b3c24"
+      },
+      "body": "Backup-first intake: checked WU Dropbox/GDrive latest objects, which remain PHYS64 NCP. Latest GitHub PR114 adds a stronger PHYS65 continuum proof; no new PHYS65 NCP job was found. Existing PHYS64 20-case data reused, not rerun. The attached unpublished PHYS65 archive has different bytes from the prior message's displayed checksum, but its own146 payload hashes pass and repaired hex serializer is present; raw archive and stale receipt preserved separately. No overwrite of PR114 PROOF.md.\n\nR5 uses the proved PR114 Gamma64=32400, a=Gamma delta/2,b=Gamma/4,chi=4ab,delta=3e-23. For physical exact full-radial Born D_n and finite-screen-cut D_n,T, derive E1<=a theta and E_n<=Gamma sum A_j E_(n-j), theta=e^-2(T-27). Hence E_n<=a^n b^(n-1)h_(n-1)theta, h={1,4,20,104,548,2904,...}, H(x)=1/(2sqrt(1-4x)-1). In particular E2<=a chi theta, E3<=5a chi² theta/4. This preserves every intermediate channel within fixed L<=64/all signed m and actual original off-centre V. It does NOT include excluded ell, ODE/angle/roundoff errors or certify the actual floating coefficient. T65 displays E1=4.78911917745e-52,E2=7.54113862158e-66,E3=1.48432231489e-79. Absolute budget radius picker avoids treating measured coefficients as exact denominators.\n\nActual sandbox22/22 pytest PASS; missing-output test observed RED then GREEN; source NPZ SHA f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d checked; 600-digit independent exponential tests, 10000-digit safe rational hex roundtrip with no process digit-limit changes. Connected Wolfram h recurrence, generating residual and constants PASS. New source/scripts/tests are native Git files, not a loader for an archive. Full historical suite/NCP/native subagent execution NOT_RUN. Source commit445d82db9c42b4f2f81e4ac1b107dec3b69b3c24 tree65c8cfa390d1b7f495b2e55084de3dc21249c589.\n\nNext C5-C8: inspect saved campaign with exact hash/array/shape/config checks, attach coefficient-specific analytic error components without retroactively setting original total-certification flags, and prepare complete new long-tail NCP runner. PHYS63 qualitative on-shell LAP retained; full physical source/rates HOLD, HH_R10 OFF. Separate stage archive and restore receipts follow."
+    },
+    {
+      "number": 114,
+      "title": "PHYS65 R5: finite-L64 full-exterior Coulomb ratio certificate and rigorous radial/Born tails",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/114",
+      "state": "open",
+      "draft": true,
+      "created_at": "2026-10-18T07:38:50Z",
+      "updated_at": "2026-10-18T07:38:50Z",
+      "merged_at": null,
+      "base": {
+        "ref": "research/hh-phys64-c5c8-order-resolved-ncp-run-20261018",
+        "sha": "9694567d6ee327c7b38ca1c7bb930ea92ef2edd7"
+      },
+      "head": {
+        "ref": "research/hh-phys65-r5-global-radial-ratios-20261018",
+        "sha": "bad80f7729015c84c8dde27f1b1dec3a1f8b2c9f"
+      },
+      "body": "## Backup-first intake\nCloud WU backups still reported PHYS64 extended18 NOT_RUN. GitHub PR113 is newer and reports completed 2 smoke+18 extended NCP runs. We read PREFLIGHT/CAMPAIGN/BACKUP_STATUS and recovered the actual L64,m0,T39 RESULT.json with SHA256 8ee2f70187bfcbd64080424241d08ec34cf0787c606bb8a3c99e8cb029de2e24 matching the campaign. All six inherited code SHA256 hashes match the local source archive. No old NCP campaign rerun. Complete new NCP ZIP/bundle remain in PR113; their cloud upload was blocked on NCP, and binary download is not available in the current connector/sandbox. Selected JSON, provenance and attempted download blocker are preserved, not falsely described as a full raw NCP restore.\n\n## Constructive finite-cutoff full-radial result\nOriginal positive E49/200 Hartree, k7/10, B27, original noncentral V=2(1+1/d)exp(-2d) retained in every signed-m Galerkin block. No angular sample fitting. Allowed-region energy identities E'=nu'|h|² and (E/nu)'=-nu'|h'|²/nu², outgoing E(infinity)=2k², a short rational turning-point patch and the Wronskian real-Gram determinant1 yield |H_l(t)/H_l(r)|²<=C_l² for ALL 27<=r<=t<infinity. Forbidden-region backward scalar transfer has nonnegative monotone coefficients, so no incorrect attractive-Coulomb amplitude-monotonicity assumption is used. Exact rational enumeration l0..64 gives max C_l=180 and Gamma64=32400.\n\nFor the actual finite-L full-exterior projected screened response, exponential weighted Riccati fixed point has a=Gamma delta/2, b=Gamma/4, chi=4ab=Gamma²delta/2 with delta=3e-23. Ordered Catalan tail after N exact Born terms <=a chi^N/(1-chi). L64 chi=1.57464e-14 and N3 tail<2e-60 a0^-1. Unlike prior ell0/1-only proof this covers the actual finite P20-Q21 block, including every intermediate mode inside L64. Full-radial versus screen-cut-at-T response difference <=a(1-chi)/(1-2chi) exp[-2(T-27)]; L64 T39 <=1.834716e-29, T43 <=6.155e-33, T65 <=4.789120e-52. THESE ARE CONTINUUM ANALYTIC COMPONENTS, NOT finite-grid integration/roundoff or excluded ell>L errors. Total numerical error remains uncertified, HH_R10 OFF.\n\n## Actual code/evidence\n28/28 new sandbox tests PASS, source-guarded exact Fraction producer exit0, independent mpmath ratios and high-precision exponential checks, connected Wolfram energy/Gram residual0 and exact l64/C64/chi/tail constants PASS. First baseline missing-certificate assertion was red; rational-string parser and insufficient reference precision were repaired with no tolerance relaxation, failures preserved. No new NCP or native subagent invocation, no full historical owner suite. Source original NPZ f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d verified. Module, producer and tests are native Git files and their 3 Git blob hashes exactly match tested bytes; full proof included.\n\nParent672ba3e752df4d615e78c809aea5c576c330645c; R5 commitbad80f7729015c84c8dde27f1b1dec3a1f8b2c9f tree493c6b69c008c7395fa2f12798bf55ca29f3c88e. Next C5-C8: attach typed analytic/error ledgers to already executed campaign, implement optional long-tail cases without rerunning old18. Stage-specific backup/readback receipts follow. No merge or sibling owner changes."
+    },
+    {
+      "number": 113,
+      "title": "PHYS64: completed NCP C5-C8 order-resolved campaign",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/113",
+      "state": "open",
+      "draft": true,
+      "created_at": "2026-10-18T06:45:17Z",
+      "updated_at": "2026-10-18T07:15:42Z",
+      "merged_at": null,
+      "base": {
+        "ref": "research/hh-phys64-c5c8-order-resolved-ncp-20261018",
+        "sha": "eed3bda2fa90f2493a9ced6123fd8fc2d300c198"
+      },
+      "head": {
+        "ref": "research/hh-phys64-c5c8-order-resolved-ncp-run-20261018",
+        "sha": "9694567d6ee327c7b38ca1c7bb930ea92ef2edd7"
+      },
+      "body": "Records the completed approved-NCP PHYS64 Python campaign.\\n\\n- 2 smoke + 18 extended cases completed\\n- Results retain per-order D1/D2/D3 arrays and execution payloads\\n- No solver or tolerance changes\\n- HH_R10 remains OFF\\n- SOURCE_RESULTS.zip SHA256 and archive contents verified locally."
+    },
+    {
+      "number": 112,
+      "title": "PHYS64 C5-C8: separately resolved physical Born orders and complete resumable NCP runner",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/112",
+      "state": "open",
+      "draft": true,
+      "created_at": "2026-10-18T05:07:15Z",
+      "updated_at": "2026-10-18T05:16:54Z",
+      "merged_at": null,
+      "base": {
+        "ref": "research/hh-phys64-r5-order-resolved-20261018",
+        "sha": "0218ef1de8d36d0562b09b075aad0ad6f3055970"
+      },
+      "head": {
+        "ref": "research/hh-phys64-c5c8-order-resolved-ncp-20261018",
+        "sha": "eed3bda2fa90f2493a9ced6123fd8fc2d300c198"
+      },
+      "body": "## Backup-first continuation, all implementation native in Git\nParent R5 PR111 0218ef1de8d36d0562b09b075aad0ad6f3055970; C5-C8 source fb0e43bf62c18718ce901029f311327367ef4f42, tree75d343b4d9b975731c034778341848a62d13d51a. Original input SHA f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d retained. Latest checked WU backups were PHYS63 and held no new NCP execution; those were restored before starting. No prior result replaced.\n\n## Actual science\nThe noncommutative Riccati hierarchy integrates Y1,Y2,Y3 separately for Delta=sum epsilon^n Yn, epsilon=3e-23. It avoids total-minus-first-Born cancellation. Original off-centre screened Gram multiplication is evaluated at every RHS; all intermediate ell within the finite m block are retained. L28,m0,T39 gives D2=(7.017743633174654e-48+3.200163222384794e-48 i), D3=(2.143001354846671e-71+1.718651496404267e-71 i), while D1 matches prior independent mpmath oracle. D2 changes ~7.9566% between L21 and L28; L28/32 and tighter step/angular/tolerance diagnostics agree much more closely. These are numerical finite-angular/radial Taylor coefficient contributions, NOT certified full nonlinear error or full infinite-angular DtN values.\n\nIndependent radial coefficient quadrature gives relative residuals ~1.21e-12/3.10e-12/1.21e-11 (shared central dense profile, explicit independence limit). Nonphysical strength1e20 two-channel U,U' control tests nonlinear ordering: errors for 1/2/3 terms ~1.24e-7/2.93e-11/8.09e-15; current residual5.66e-16. R5 conditional Catalan bound and complete ell0/1 continuum example are preserved and not transported to P20-Q21.\n\n## Actual execution and complete NCP preparation\n66 selected tests PASS exit0 (24 unchanged PHYS63+12 R5+22 solver+8 runner), 15.75s pytest/20.68s wall, peakRSS210744KiB. Eight physical-case producer exit0,14.83s wall. Real zero-coefficient RED then implementation GREEN preserved. Runner preflight, actual two-process sandbox smoke, and resume all exit0; two cases reused with no new computation after exact source/config/runtime and payload hash validation.\n\nNative modules, scripts, all new tests, exact tested requirements, math context, results JSON and handoff are committed, not merely a ZIP/quick reproducer. scripts/phys64_ncp.py supports direct-current-host execution, 2-case smoke, 18-case extended L<=64/T35,39,43/m0,1,2/refinement, child wall timeout/VM cap/nice+10/BLAS1, atomic attempt preservation, hash-safe resume and checked source/results ZIP. Maximum eight workers and declared aggregate32GiB VM. NCP only runs provided Python code; no unfinished Rust port or solver implementation is delegated. Full 18-case NCP campaign NOT_RUN. No credential/SSH key needed when already on NCP.\n\nNo full historical WU pytest, NCP compute, native subagents, production mutation or main merge. PHYS63 qualitative all-angular real-axis LAP remains closed. Numerical all-angular constants, radial/angular/roundoff certification, original driven xi, incoming adjoint, sigma(E), thermal k_HH(T) remain open; HH_R10 OFF. Read research/hh_phys64_20261018/c5c8/README_KO.md, NEXT_DAG.json and CODEX_HANDOFF_PROMPT.md. Stage-specific full archive/restore receipt will follow."
+    },
+    {
+      "number": 111,
+      "title": "PHYS64 R5: ordered Riccati/Born hierarchy and explicitly scoped Catalan bounds",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/111",
+      "state": "open",
+      "draft": true,
+      "created_at": "2026-10-18T04:40:40Z",
+      "updated_at": "2026-10-18T04:49:16Z",
+      "merged_at": null,
+      "base": {
+        "ref": "research/hh-phys63-c5c8-scaled-riccati-20261018",
+        "sha": "653db0dfaa57f04d7c0a93017c60a5902bdb319e"
+      },
+      "head": {
+        "ref": "research/hh-phys64-r5-order-resolved-20261018",
+        "sha": "0218ef1de8d36d0562b09b075aad0ad6f3055970"
+      },
+      "body": "Backup-first check completed: newest found WU archive and delivery remain PHYS63; both current Dropbox/GDrive PHYS63 ZIPs re-downloaded and byte/SHA equal (58193 bytes, 4c3bbc0db6fdcae48b6297394b5cff2d1fd019dac1676cb583e208bb9da08604). No newer NCP result found in checked WU paths. Parent PR110 653db0dfaa57f04d7c0a93017c60a5902bdb319e.\n\nNew native exact Fraction code, tests, producer and mathematical PROOF.md. Delta=sum epsilon^n Yn has ordered noncommutative sources sum_j Yj Y(n-j), avoiding tiny total-response subtraction. Conditional Volterra norm K gives Catalan coefficient and tail estimates if q=4|epsilon|K²w<1; arbitrary numerical K is NOT certified. A complete continuum source-specific certificate is provided ONLY for ell subset{0,1} with screen cut at T=39: K<=24368/441, q<=3.6639019174109554e-19, tail after second order <3e-58. Does not include omitted angular modes/radial tail or numerical discretization. No P20-Q21 certificate claimed.\n\nActual sandbox 12 tests PASS, source-guarded producer PASS, first red zero-q test preserved, connected Wolfram ordered products and rational constants PASS. Original NPZ SHA f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d checked. Full historical WU suite/NCP/native subagents NOT_RUN. Source stage commit 0218ef1de8d36d0562b09b075aad0ad6f3055970, tree fcd1cdb65227b34b3530640d2e46b695916e26c6. Next C5-C8 implements fully executable order-resolved solver, independent controls and resumable NCP runner. PHYS63 qualitative all-angular on-shell LAP retained; quantitative high-channel constants/source/rates HOLD, HH_R10 OFF. No main merge or sibling mutation."
+    },
+    {
+      "number": 110,
+      "title": "PHYS63 C5-C8: scaled physical screened Riccati response and independent nonlinear control",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/110",
+      "state": "open",
+      "draft": true,
+      "created_at": "2026-10-18T03:31:35Z",
+      "updated_at": "2026-10-18T03:39:06Z",
+      "merged_at": null,
+      "base": {
+        "ref": "research/hh-phys63-r5-real-axis-lap-20261018",
+        "sha": "13a9d2cacedc84d9d23cd1193837de2c75f781b5"
+      },
+      "head": {
+        "ref": "research/hh-phys63-c5c8-scaled-riccati-20261018",
+        "sha": "653db0dfaa57f04d7c0a93017c60a5902bdb319e"
+      },
+      "body": "Parent R5 PR109 commit13a9d2cacedc84d9d23cd1193837de2c75f781b5. C5-C8 source commit653db0dfaa57f04d7c0a93017c60a5902bdb319e, tree6ce5f08e1c34405b51264f24b9e2274d6328b80e. Original NPZ SHA256f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d checked.\n\n## New actual implementation\nAt real positive E49/200 Hartree, solve Delta=Z_screen-Z_C directly as scale*Y instead of subtracting two order-one DtNs. Exact noncommutative Riccati equation Y'=-z_C Y-Y z_C-scale Y²-V/(3e-23), with scale3e-23 at physical strength. Original noncentral angular Gram V=2(1+1/s)e^-2s evaluated at every RHS, no centralization. All included intermediate ell are retained within each finite m block.\n\nExecuted m0 L21/24/28/32 with rmax39, plus rmax35/43, GL128/192; m1/m2 L28 controls. At L28,rmax39, actual computed Delta21,20=(2.7660422460146247e-24+4.5006767301497705e-25i), consistent with prior independent mpmath Born diagnostic. Exact Coulomb outgoing boundary at rmax; numerical screen is zero outside that radius. **Finite angular/radial floating diagnostic, not a validated infinite-angular numerical DtN.** Physical nonlinear correction is below f64 relative resolution and explicitly NOT_RESOLVED, not promoted from agreement with Born.\n\nIndependent nonlinear implementation control: original potential shape amplified1e20, only ell0/1,r27..33, deliberately NONPHYSICAL. Separate U,U' second-order solve agrees with Riccati Z to max9.665e-15; current transport residual4.442e-16; nonlinear-versus-first-order change1.672e-4 is resolved. The control verifies signs/matrix ordering, not physical correction accuracy.\n\n## Executed evidence\nFirst physical-response regression genuinely failed with a zero-response baseline, then passed after implementation; RED/GREEN preserved. Full selected R5+C5 tests24/24 PASS exit0,6.03s pytest/8.32s wall,210300KiB RSS. Producer exit0,8.14s wall. Connected Wolfram noncommuting2x2 Riccati expansion residual zero. Native runnable modules, scripts, tests, report and DAG are in this PR; detailed machine rows/raw logs in portable backup. No NCP, full historical WU suite or native subagent dispatch; no sibling mutation or main merge.\n\nR5 now closes **qualitative** all-angular on-shell LAP/Poisson/DtN via an applicable primary theorem and source-specific derivation. PHYS64 remaining: usable numerical operator constants, certified truncation/error control, interior matching/source xi, regular origin/incoming adjoint and sigma(E)/k_HH(T). HH_R10 remains OFF. Stage-specific cloud restore receipt follows."
+    },
+    {
+      "number": 109,
+      "title": "PHYS63 R5: applicable hard-core real-axis LAP and full screened Poisson/DtN construction",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/109",
+      "state": "open",
+      "draft": true,
+      "created_at": "2026-10-18T03:16:07Z",
+      "updated_at": "2026-10-18T03:19:10Z",
+      "merged_at": null,
+      "base": {
+        "ref": "research/hh-phys62-c5c8-fixed-pq-realaxis-born-20261016",
+        "sha": "ba78fd280af1e2c716e75ac0727511be988c9ace"
+      },
+      "head": {
+        "ref": "research/hh-phys63-r5-real-axis-lap-20261018",
+        "sha": "13a9d2cacedc84d9d23cd1193837de2c75f781b5"
+      },
+      "body": "Parent PR108 ba78fd280af1e2c716e75ac0727511be988c9ace. New R5 commit 13a9d2cacedc84d9d23cd1193837de2c75f781b5; tree e9234d88da28ed2533fed64d4f6503f5c2583337. Original NPZ SHA256 f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d preserved.\n\n## Actual scientific advance and attribution\nThe original real smooth off-centre screened Hamiltonian on r>27 satisfies Adachi–Itakura–Ito–Skibsted arXiv1804.07874v1 Condition1.1 with decay delta=1/2, and Condition1.3 analytic unique continuation. The theorem explicitly allows hard-core/exterior domains. For N=1 thresholds={0}; Cor1.6 excludes positive point spectrum. Thus Theorem1.7 and Cor1.9 yield **qualitative all-angular real-axis weighted LAP** for BOTH central Coulomb and original screened exterior, including operator norm boundary limits. This is a source-specific application of established literature, **not a new general LAP theorem** and not numerical certification.\n\nDirect construction via a cutoff positive-annulus harmonic lift avoids incorrectly assuming an H1/2 trace lift is H2. The lift's differential equation makes the residual compactly supported L2. Applying the weighted resolvent gives outgoing Poisson X→H_-s, s>1/2, and local H1 control, hence weak DtN X→X*. Zero-trace elliptic regularity shows screened-minus-central DtN is compact. Full original P/Q coupling retained. Exact resolvent identity gives (I-G_C V)^-1=I+G_S V without claiming a Neumann contraction.\n\n**Closed:** qualitative existence of true full screened on-shell exterior LAP, Poisson and DtN. **Still open:** usable numerical LAP/Poisson constants, certified truncation errors, interior matching/Schur conditioning, actual original driven xi=Fy-phi, incoming adjoint, sigma(E), k_HH(T). HH_R10 remains OFF. The explicit bound2.19e-20 is a WEIGHTED MULTIPLIER bound, not a DtN norm bound.\n\n## Executed evidence\n8/8 focused Python checks PASS exit0, exact Fraction producer exit0, source tamper guards and independent symbolic radial/weight checks; these check ingredients, not the spectral theorem itself. Connected Wolfram arithmetic residuals passed with a preserved symbol warning. Full WU suite/NCP/native subagents NOT_RUN. Full detailed proof and runnable code/tests are native files in this PR; raw logs and original NPZ are preserved in the stage ZIP. No sibling repository mutation or main merge. Dual-provider archive verification will be recorded separately."
+    },
+    {
+      "number": 108,
+      "title": "PHYS62 C5-C8: original P20–Q21 first Born Abel limit at real energy, 46 sandbox tests",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/108",
+      "state": "open",
+      "draft": true,
+      "created_at": "2026-10-16T11:26:24Z",
+      "updated_at": "2026-10-16T11:28:01Z",
+      "merged_at": null,
+      "base": {
+        "ref": "research/hh-phys62-r5-abel-flux-20261016",
+        "sha": "d0da1c3a4143f1c3a6680ea5ea94385e2c774e8a"
+      },
+      "head": {
+        "ref": "research/hh-phys62-c5c8-fixed-pq-realaxis-born-20261016",
+        "sha": "ba78fd280af1e2c716e75ac0727511be988c9ace"
+      },
+      "body": "## PHYS62 source-locked C5-C8 stacked on R5 PR107\n\n**Scientific result:** Physical original spectator `h=-Δ/2-1/r-(1+1/s)exp(-2s)`, `s=|x-0.7 zhat|`, `k0=.7`, real spectral energy `E=+49/200 Hartree`. The fixed finite partial-wave *first Born* P20,m→Q21,m functional `D1_m(tau)=∫_27^∞p21(tau,r)V21,20,m(r)p20(tau,r)dr`, tau=2Im E, has a **well-defined tau↓0 real-axis limit**, from consistent analytic outgoing CoulombH+ branch for each FIXED ell, no boundary zero via Wronskian, fixed-ell large-r polynomial outgoing envelope and original exponential V bound `<3e-23 exp[-2(r-27)]`. No complex conjugation for outgoing bilinear transpose. This is NOT a theorem about infinite angular real-axis screened `Z_S^+`, resolvent, or the physical source rate.\n\n**Actually executed source-locked science:** 22 R5 +24 C5 tests **46/46 combined pytest PASS exit0**, source-guarded four-tau m=0,1,2 original off-centre physical screened first Born producer exit0, tau .01/.002/.0005/0. m0 tau0 numerical finite [27,39] radial GL12 × angle GL128 = `(2.7660417647442462e-24+4.5006806053936095e-25i)`; independent GL18×192 = `(2.7660422460142386e-24+4.5006767301594555e-25i)`, relative grid difference `2.2048660e-7`, a **NONCERTIFYING** finite-domain quadrature witness. Actual frozen original NPZ SHA256 `f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d`. Connected Wolfram exact Gaunt `21/sqrt1763` and finite polynomial-exponential integrable envelope 5/4 PASS. Screen radial L1 tail does **not** certify missing Born radial tail without quantitative normalized Coulomb envelope.\n\n**Durable portable full evidence:** ZIP `WU088_HH_PHYS62_C5C8_SOURCE_EVIDENCE_20261016.zip`, bytes 55802, SHA256 `85300fda37514b6841984f894972566e39d8354eb06bc65b210cbac07ff13f25`, 37 entries/36 manifest source hashes incl original NPZ. Independently re-downloaded Google Drive and Dropbox uploads, byte for byte and full SHA/ZIP CRC/all manifest 36 source hashes RESTORE_VERIFIED. GitHub source publication is scoped to tested quick reproducer + report/DAG because direct per-file source transfers got container_session_expired; full tested Python code/tests and inherited source/inputs are in dual-provider restored ZIP. Git quick script original blob SHA1 `e36bb71bf6241b2b6ef37f2289769414a1777026` matched exact local executed bytes, prints PASS.\n\n**Code identity:** parent PR107 `d0da1c3a4143f1c3a6680ea5ea94385e2c774e8a`, new current commit `ba78fd280af1e2c716e75ac0727511be988c9ace`, tree `49eb8bc36af8767e3cd65b0b499cbfddf0ee4a03`. No original repo main merge, no other REI/HE/CR mutation; NCP and full WU regression NOT_RUN. PHYS63 all-angular weighted on-shell Coulomb LAP/Poisson remains READY_THEORY and screened full noncentral `Z_S^+` OPEN. Original driven xi=Fy-phi, sigma(E), identical-H Maxwellian k_HH(T) HOLD; `HH_R10=OFF`."
+    },
+    {
+      "number": 107,
+      "title": "PHYS62 R5: on-shell Coulomb Abel flux, exact L² divergence mechanism and cloud-verified source",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/107",
+      "state": "open",
+      "draft": true,
+      "created_at": "2026-10-16T11:15:25Z",
+      "updated_at": "2026-10-16T11:27:57Z",
+      "merged_at": null,
+      "base": {
+        "ref": "research/hh-phys61-c5c8-absorptive-complex-born-20261016",
+        "sha": "35dee6a0b79efb925c4749a1a1db864feb1509ab"
+      },
+      "head": {
+        "ref": "research/hh-phys62-r5-abel-flux-20261016",
+        "sha": "d0da1c3a4143f1c3a6680ea5ea94385e2c774e8a"
+      },
+      "body": "R5 follow-up to PHYS61 PR106 commit 35dee6a0b79efb925c4749a1a1db864feb1509ab. New Git quick-script/report/DAG commit d0da1c3a4143f1c3a6680ea5ea94385e2c774e8a tree e530abd72edd59ffdce9d7088459e471645bb47e. Exact quick-script Git blob SHA1=692b357dc082e07568e85f212801c24cc636f386 matches sandbox-tested source byte for byte.\n\n**Actual math:** For each FIXED central Coulomb ell at B=27, k=0.7, eta=-10/7, normalized upper-plane outgoing Poisson p_l(E+i tau/2), current J'= -tau|p|² and J(∞)=0 give exact ImZ_l(tau)=tau||p_l||²_L2. Taking tau↓0 using Coulomb complex analyticity and real Wronskian, the Abel limit is j_l=k/(F_l²+G_l²)>0. Consequently the UNWEIGHTED L² Poisson norm for X=H1/2 trace diverges at least ∼tau^-1/2 even for one fixed ell. This diagnoses PHYS61 naive bound, not a no-go for properly WEIGHTED LAP. No all-infinite-angular real positive-energy screened Z_S^+ theorem or physical cross-section claim.\n\n**Actual science execution** original 1386 complex128 frozen NPZ SHA256 f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d, 22/22 focused sandbox pytest PASS exit0, producer exit0, ell0/20/21 tau=.01/.002/.0005/.0001/0 at 60 dps, exact free-wave identity independent Wolfram residuals 0, 160-term original screen gate PASS. No NCP, full historical suite, or native subagents. Full tests/primary Python source/log/NPZ are in 34,250-byte `WU088_HH_PHYS62_R5_SOURCE_EVIDENCE_20261016.zip`, SHA256 987c6615084b66e801a95d1b984f484b4203c60ad32fd364f996110be2a3e89b, independently re-downloaded from Dropbox and Google Drive; byte-for-byte/ZIP CRC/all 16 manifest hashes and NPZ PASS. Git publishes a tested quick reproducer, math report and DAG because individual direct container-to-Library file uploads returned container_session_expired; full standalone original source is not being misrepresented as committed Git blobs.\n\n**DAG:** PHYS62 R5 PROVED_FIXED_ELL / PUBLISHED / DUAL_CLOUD_RESTORED. C5-C8 original noncentral P20-Q21 real-axis FIRST BORN continuation and numerical method READY; full infinite angular real-axis Coulomb LAP/Poisson and screened DtN remain OPEN, xi/sigma(E)/k_HH(T) HOLD, rei_bianchi HH_R10 OFF."
+    }
+  ],
+  "main": {
+    "sha": "5c153f703aae21835bc0130a19460e50be271f50",
+    "tree": "9301f09048adc42cfcc0849e74ad47475e09ed28"
+  },
+  "pr115_changed": [
+    {
+      "filename": "research/hh_phys66_20261018/r5/EXECUTION_SUMMARY.json",
+      "sha": "d3b7fa24d94fb0d0c64a5a4c92664365198d2faf",
+      "status": "added",
+      "additions": 18,
+      "deletions": 0
+    },
+    {
+      "filename": "research/hh_phys66_20261018/r5/NEXT_DAG.json",
+      "sha": "bff85afdbc317dc00da9b56736a65723f830b682",
+      "status": "added",
+      "additions": 1,
+      "deletions": 0
+    },
+    {
+      "filename": "research/hh_phys66_20261018/r5/PROOF.md",
+      "sha": "995f67a52ea1e17c57cd1a7764a9740fc087539a",
+      "status": "added",
+      "additions": 79,
+      "deletions": 0
+    },
+    {
+      "filename": "scripts/phys66_order_tail.py",
+      "sha": "3f7b14212edce5534d0fe30df75b36827b17c4bf",
+      "status": "added",
+      "additions": 18,
+      "deletions": 0
+    },
+    {
+      "filename": "src/wu088_hh/phys66_order_tail.py",
+      "sha": "5500074da5402c1ffeb774a0f3e17b59f92e6779",
+      "status": "added",
+      "additions": 119,
+      "deletions": 0
+    },
+    {
+      "filename": "tests/test_phys66_order_tail.py",
+      "sha": "bea4ecfaf115dc532800495be0bdd58482f331b5",
+      "status": "added",
+      "additions": 61,
+      "deletions": 0
+    }
+  ],
+  "pr116_changed": [
+    {
+      "filename": "research/hh_phys66_20261018/c5c8/ARTIFACT_ACCESS_STATUS.json",
+      "sha": "61ec124e8714bcaef95284e02cbb4fca4e0920ca",
+      "status": "added",
+      "additions": 32,
+      "deletions": 0
+    }
+  ],
+  "pr115_comments": [
+    {
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/115#issuecomment-6249881055",
+      "created_at": "2026-10-18T12:24:33Z",
+      "updated_at": "2026-10-18T12:24:33Z",
+      "body": "R5 checkpoint closed: native source/test/producer/proof commit445d82db9c42b4f2f81e4ac1b107dec3b69b3c24, source-guarded22 tests and producer exit0, exact Wolfram recurrence/generating residual confirmed. Source ZIP WU088_HH_PHYS66_R5_20261018.zip 37727 bytes SHA2569d45adf9c661998218519eebb2cb6f1d25882d284a75dba10377ba5a39bcca06 stored in ChatGPT Library and Google Drive /WU088_HH/PHYS66_R5_20261018, Dropbox /WU088_HH/WU088_HH_PHYS66_R5_20261018.zip. Google file1-kaBk-4pItpImGvheuGR1Noh8IE82dc3, Dropbox id:BSpOijBcT10AAAAAAD_L0g. Both providers independently re-downloaded: exact local-byte and SHA256 equality, ZIP CRC and all14 payload hashes PASS. Original NPZ included. This certifies portable ZIP restoration, not whole Git history. No NCP job was run. R5 PROVED_SCOPED/PUBLISHED/DUAL_RESTORED; C5-C8 now reading20 actual inherited NCP cases and implementing native continuation/ledger. Numerical/omitted-angular errors remain OPEN, HH_R10 OFF."
+    }
+  ],
+  "tree116": {
+    "ref": "1a1e5b6df5e5f88de851bc4686949089e2444291",
+    "truncated": false,
+    "entries": 10880,
+    "phys66": [
+      {
+        "path": "research/hh_phys66_20261018",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "c6257785d25887f1829b7f97e68aee217f8a837a",
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/trees/c6257785d25887f1829b7f97e68aee217f8a837a"
+      },
+      {
+        "path": "research/hh_phys66_20261018/c5c8",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b6a9036a5615ad49778943ddb5f7e00de83959d2",
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/trees/b6a9036a5615ad49778943ddb5f7e00de83959d2"
+      },
+      {
+        "path": "research/hh_phys66_20261018/c5c8/ARTIFACT_ACCESS_STATUS.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "61ec124e8714bcaef95284e02cbb4fca4e0920ca",
+        "size": 1641,
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/blobs/61ec124e8714bcaef95284e02cbb4fca4e0920ca"
+      },
+      {
+        "path": "research/hh_phys66_20261018/r5",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "9bc28eae0eae87a6a2fb5363e98627cb3ed2be64",
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/trees/9bc28eae0eae87a6a2fb5363e98627cb3ed2be64"
+      },
+      {
+        "path": "research/hh_phys66_20261018/r5/EXECUTION_SUMMARY.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d3b7fa24d94fb0d0c64a5a4c92664365198d2faf",
+        "size": 776,
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/blobs/d3b7fa24d94fb0d0c64a5a4c92664365198d2faf"
+      },
+      {
+        "path": "research/hh_phys66_20261018/r5/NEXT_DAG.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bff85afdbc317dc00da9b56736a65723f830b682",
+        "size": 209,
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/blobs/bff85afdbc317dc00da9b56736a65723f830b682"
+      },
+      {
+        "path": "research/hh_phys66_20261018/r5/PROOF.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "995f67a52ea1e17c57cd1a7764a9740fc087539a",
+        "size": 4311,
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/blobs/995f67a52ea1e17c57cd1a7764a9740fc087539a"
+      },
+      {
+        "path": "scripts/phys66_order_tail.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3f7b14212edce5534d0fe30df75b36827b17c4bf",
+        "size": 1163,
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/blobs/3f7b14212edce5534d0fe30df75b36827b17c4bf"
+      },
+      {
+        "path": "src/wu088_hh/phys66_order_tail.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5500074da5402c1ffeb774a0f3e17b59f92e6779",
+        "size": 4659,
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/blobs/5500074da5402c1ffeb774a0f3e17b59f92e6779"
+      },
+      {
+        "path": "tests/test_phys66_order_tail.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bea4ecfaf115dc532800495be0bdd58482f331b5",
+        "size": 2647,
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/blobs/bea4ecfaf115dc532800495be0bdd58482f331b5"
+      }
+    ]
+  }
+}

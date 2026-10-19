@@ -1,0 +1,48 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________________ test_order_two_tail_is_not_silently_omitted __________________
+
+    def test_order_two_tail_is_not_silently_omitted():
+>       assert error_weights(3)==[F(1),F(1),F(5,4)]
+E       assert [Fraction(0, ...raction(0, 1)] == [Fraction(1, ...raction(5, 4)]
+E         
+E         At index 0 diff: Fraction(0, 1) != Fraction(1, 1)
+E         
+E         Full diff:
+E           [
+E         -     Fraction(1, 1),
+E         ?              ^
+E         +     Fraction(0, 1),
+E         ?              ^
+E         -     Fraction(1, 1),
+E         ?              ^
+E         +     Fraction(0, 1),
+E         ?              ^
+E         -     Fraction(5, 4),
+E         ?              ^  ^
+E         +     Fraction(0, 1),
+E         ?              ^  ^
+E           ]
+
+tests/test_phys66_radial_budget.py:5: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_phys66_radial_budget.py::test_order_two_tail_is_not_silently_omitted - assert [Fraction(0, ...raction(0, 1)] == [Fraction(1, ...raction(5, 4)]
+  
+  At index 0 diff: Fraction(0, 1) != Fraction(1, 1)
+  
+  Full diff:
+    [
+  -     Fraction(1, 1),
+  ?              ^
+  +     Fraction(0, 1),
+  ?              ^
+  -     Fraction(1, 1),
+  ?              ^
+  +     Fraction(0, 1),
+  ?              ^
+  -     Fraction(5, 4),
+  ?              ^  ^
+  +     Fraction(0, 1),
+  ?              ^  ^
+    ]
+1 failed in 0.11s

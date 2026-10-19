@@ -1,0 +1,27 @@
+{
+  "schema": "PHYS67_COULOMB_DEVELOPMENT_FAILURES_V1",
+  "failures": [
+    {
+      "class": "environment/package",
+      "action": "initial current-turn import flint probe",
+      "observed": "ModuleNotFoundError: No module named 'flint'",
+      "resolution": "Parent completed python-flint0.8.0 installation; subsequent actual arb/acb Coulomb evaluation passed.",
+      "underlying_python_runtime": "available"
+    },
+    {
+      "class": "numerics/precision",
+      "action": "direct Tricomi derivative formula ell64,r75 at256bits",
+      "observed": "U denominator ball contained zero; log derivative was indeterminate",
+      "resolution": "384bits and512bits resolved the denominator; production point certificates use512bits.",
+      "mathematical_zero_of_U_claimed": false
+    },
+    {
+      "class": "implementation/test_contract",
+      "command": "python -m pytest tests/test_phys67_coulomb_certificate.py -q",
+      "first_result": "23 passed,1 failed",
+      "test": "test_dyadic_serialization_preserves_the_full_ball",
+      "observed": "Arb constructor may round a stored radius outward by one radius ulp, so equality-style mutual containment was too strong.",
+      "resolution": "Test exact stored mantissa/exponents and restored containment of the original ball. The serializer's outward contract and numerical calculation were unchanged."
+    }
+  ]
+}

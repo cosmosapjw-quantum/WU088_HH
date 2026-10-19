@@ -1,0 +1,34 @@
+{
+  "schema": "PHYS67_COULOMB_VERIFICATION_V1",
+  "test_command": "/workspace/scratch/455b0ba5bd64/runtime_phys67/bin/python -m pytest tests/test_phys67_coulomb_certificate.py -q",
+  "tests_passed": 24,
+  "tests_failed": 0,
+  "test_exit_code": 0,
+  "point_execution_completed": true,
+  "point_count": 20,
+  "point_receipt_sha256": "0dc62a977b1e04635255a35721160e79f97ab2e9a338cde8bb5d1d0bb48eec0b",
+  "bound_checks": {
+    "impedance_radius_upper": {
+      "upper_decimal_cap": "1.152e-100",
+      "exact_upper_cap_rational": "9/78125000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "verified_by_exact_fraction_comparison": true
+    },
+    "ratio_radius_upper": {
+      "upper_decimal_cap": "3.345e-101",
+      "exact_upper_cap_rational": "669/20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "verified_by_exact_fraction_comparison": true
+    },
+    "binary64_absolute_error_upper": {
+      "upper_decimal_cap": "8.387e-17",
+      "exact_upper_cap_rational": "8387/100000000000000000000",
+      "verified_by_exact_fraction_comparison": true
+    },
+    "definition_overlap_radius_upper": {
+      "upper_decimal_cap": "1e-90",
+      "exact_upper_cap_rational": "1/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "verified_by_exact_fraction_comparison": true
+    }
+  },
+  "claimed_scope": "exact-point Coulomb evaluation and old binary64 scalar comparison",
+  "HH_R10": "OFF"
+}

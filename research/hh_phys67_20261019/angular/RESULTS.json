@@ -1,0 +1,864 @@
+{
+  "schema": "PHYS67_ANGULAR_EXECUTED_RESULTS_V1",
+  "created_utc": "2026-10-19T04:59:57.357228+00:00",
+  "python": "3.12.14",
+  "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+  "file_sha256": {
+    "src/wu088_hh/phys58_screen_multipoles.py": "d9a27bb43e31a407f294669fa7cc105dacef1040961ae72e598ad1fb8c6c8896",
+    "src/wu088_hh/phys63_scaled_riccati.py": "8041d973ef103ba88a5b73af34d1213afd1465f2748235b16ff07aa63e4cb30a",
+    "src/wu088_hh/phys66_order_tail.py": "798c9f5ae716a187a8b79d1d434c10351f853282957854738d1a1808ec387363",
+    "src/wu088_hh/phys67_angular_certificate.py": "43fc3097dddb2d3b15285998fb8895989522df38e35c0350505055427aef399e",
+    "tests/test_phys67_angular_certificate.py": "e57c1d9f7cce86400738b254b862228b5f530f416596e6fb6cc44a4ecae64bf7",
+    "research/hh_phys67_20261019/angular/produce.py": "d36672e995364d9f9a9e3f9554520a48b04a5c7ad6773a9d9c6aaa4716f67c00"
+  },
+  "certificates": [
+    {
+      "schema": "PHYS67_EXACT_GAUSS_ANGULAR_CERTIFICATE_V1",
+      "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "published_premise_commit": "445d82db9c42b4f2f81e4ac1b107dec3b69b3c24",
+      "max_ell": 64,
+      "nodes": 65,
+      "polynomial_degree": 1,
+      "maximum_polynomial_degree": 1,
+      "basis_product_degree_maximum": 128,
+      "Gauss_exactness_degree": 129,
+      "all_signed_m": true,
+      "full_projection_dimension": 4225,
+      "channel_dimension_factor": 1,
+      "radial_domain": "r/a0 in [27,infinity)",
+      "radial_weight": "exp[-2(r/a0-27)]",
+      "units": "radial-equation multiplication coefficient in a0^-2",
+      "quantity": "V=2(1+1/d)exp(-2d), d=|r n-(7/10)zhat| in atomic coordinates",
+      "weighted_ellipse": {
+        "rho": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0xa",
+          "denominator_hex": "0x1"
+        },
+        "S_weighted_ellipse_majorant": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x22b1c8c1227a00000"
+        },
+        "quadratic_gap_slope": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x5d",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_intercept": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "-0x60f",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_at_B": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x30",
+          "denominator_hex": "0x5"
+        },
+        "root_real_part_lower_expression": "r-4 = 23+(r-27)",
+        "radial_weight_expression": "exp[-2(r-27)]",
+        "inherited_positive_Taylor_gate": {
+          "source_radius_R": "7/10",
+          "exterior_min_r": "27",
+          "Bernstein_rho": "10",
+          "min_Re_s_squared": "2693/5",
+          "Re_s_strict_gt": 23,
+          "exp46_Taylor_order": 46,
+          "exp46_partial_sum_gt_5e19": true,
+          "sup_analytic_S_upper_exact": "1/40000000000000000000",
+          "Legendre_coefficient_prefactor_exact": "1/18000000000000000000",
+          "proved_infinite_angular": true,
+          "status": "SCOPED_RIGOROUS_PHYSICAL_SCREENED_MULTIPLIER_ONLY"
+        }
+      },
+      "chebyshev_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x18650127cc3dc80000"
+      },
+      "legendre_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x2f",
+        "denominator_hex": "0xc598895bf65ad40000"
+      },
+      "chebyshev_operator_error_decimal_upper": "2.22222222222222222222223E-21",
+      "legendre_operator_error_decimal_upper": "1.28943758573388203017833E-20",
+      "scaled_AngularScreen_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x7d0",
+        "denominator_hex": "0x1b"
+      },
+      "scaled_AngularScreen_error_decimal_upper": "74.0740740740740740740741",
+      "exact_gauss_quadrature_truncation_certified": true,
+      "ideal_nodes_weights_and_point_evaluation": true,
+      "floating_nodes_weights_basis_screen_roundoff_bound": null,
+      "matrix_arithmetic_roundoff_bound": null,
+      "radial_integration_error_bound": null,
+      "coulomb_evaluation_error_bound": null,
+      "excluded_angular_response_bound": null,
+      "total_numerical_error_bound": null,
+      "total_numerical_error_certified": false,
+      "HH_R10": "OFF"
+    },
+    {
+      "schema": "PHYS67_EXACT_GAUSS_ANGULAR_CERTIFICATE_V1",
+      "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "published_premise_commit": "445d82db9c42b4f2f81e4ac1b107dec3b69b3c24",
+      "max_ell": 64,
+      "nodes": 80,
+      "polynomial_degree": 31,
+      "maximum_polynomial_degree": 31,
+      "basis_product_degree_maximum": 128,
+      "Gauss_exactness_degree": 159,
+      "all_signed_m": true,
+      "full_projection_dimension": 4225,
+      "channel_dimension_factor": 1,
+      "radial_domain": "r/a0 in [27,infinity)",
+      "radial_weight": "exp[-2(r/a0-27)]",
+      "units": "radial-equation multiplication coefficient in a0^-2",
+      "quantity": "V=2(1+1/d)exp(-2d), d=|r n-(7/10)zhat| in atomic coordinates",
+      "weighted_ellipse": {
+        "rho": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0xa",
+          "denominator_hex": "0x1"
+        },
+        "S_weighted_ellipse_majorant": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x22b1c8c1227a00000"
+        },
+        "quadratic_gap_slope": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x5d",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_intercept": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "-0x60f",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_at_B": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x30",
+          "denominator_hex": "0x5"
+        },
+        "root_real_part_lower_expression": "r-4 = 23+(r-27)",
+        "radial_weight_expression": "exp[-2(r-27)]",
+        "inherited_positive_Taylor_gate": {
+          "source_radius_R": "7/10",
+          "exterior_min_r": "27",
+          "Bernstein_rho": "10",
+          "min_Re_s_squared": "2693/5",
+          "Re_s_strict_gt": 23,
+          "exp46_Taylor_order": 46,
+          "exp46_partial_sum_gt_5e19": true,
+          "sup_analytic_S_upper_exact": "1/40000000000000000000",
+          "Legendre_coefficient_prefactor_exact": "1/18000000000000000000",
+          "proved_infinite_angular": true,
+          "status": "SCOPED_RIGOROUS_PHYSICAL_SCREENED_MULTIPLIER_ONLY"
+        }
+      },
+      "chebyshev_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x133e709e2e312cd633472176e75b042000000000000"
+      },
+      "legendre_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x24b",
+        "denominator_hex": "0x9be029ce0fc184c705c028a9852e07d000000000000"
+      },
+      "chebyshev_operator_error_decimal_upper": "2.22222222222222222222223E-51",
+      "legendre_operator_error_decimal_upper": "1.61042524005486968449932E-49",
+      "scaled_AngularScreen_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2b9ef0326d7ec3363c000000"
+      },
+      "scaled_AngularScreen_error_decimal_upper": "7.40740740740740740740741E-29",
+      "exact_gauss_quadrature_truncation_certified": true,
+      "ideal_nodes_weights_and_point_evaluation": true,
+      "floating_nodes_weights_basis_screen_roundoff_bound": null,
+      "matrix_arithmetic_roundoff_bound": null,
+      "radial_integration_error_bound": null,
+      "coulomb_evaluation_error_bound": null,
+      "excluded_angular_response_bound": null,
+      "total_numerical_error_bound": null,
+      "total_numerical_error_certified": false,
+      "HH_R10": "OFF"
+    },
+    {
+      "schema": "PHYS67_EXACT_GAUSS_ANGULAR_CERTIFICATE_V1",
+      "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "published_premise_commit": "445d82db9c42b4f2f81e4ac1b107dec3b69b3c24",
+      "max_ell": 64,
+      "nodes": 96,
+      "polynomial_degree": 63,
+      "maximum_polynomial_degree": 63,
+      "basis_product_degree_maximum": 128,
+      "Gauss_exactness_degree": 191,
+      "all_signed_m": true,
+      "full_projection_dimension": 4225,
+      "channel_dimension_factor": 1,
+      "radial_domain": "r/a0 in [27,infinity)",
+      "radial_weight": "exp[-2(r/a0-27)]",
+      "units": "radial-equation multiplication coefficient in a0^-2",
+      "quantity": "V=2(1+1/d)exp(-2d), d=|r n-(7/10)zhat| in atomic coordinates",
+      "weighted_ellipse": {
+        "rho": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0xa",
+          "denominator_hex": "0x1"
+        },
+        "S_weighted_ellipse_majorant": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x22b1c8c1227a00000"
+        },
+        "quadratic_gap_slope": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x5d",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_intercept": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "-0x60f",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_at_B": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x30",
+          "denominator_hex": "0x5"
+        },
+        "root_real_part_lower_expression": "r-4 = 23+(r-27)",
+        "radial_weight_expression": "exp[-2(r-27)]",
+        "inherited_positive_Taylor_gate": {
+          "source_radius_R": "7/10",
+          "exterior_min_r": "27",
+          "Bernstein_rho": "10",
+          "min_Re_s_squared": "2693/5",
+          "Re_s_strict_gt": 23,
+          "exp46_Taylor_order": 46,
+          "exp46_partial_sum_gt_5e19": true,
+          "sup_analytic_S_upper_exact": "1/40000000000000000000",
+          "Legendre_coefficient_prefactor_exact": "1/18000000000000000000",
+          "proved_infinite_angular": true,
+          "status": "SCOPED_RIGOROUS_PHYSICAL_SCREENED_MULTIPLIER_ONLY"
+        }
+      },
+      "chebyshev_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x5ee1395c1333b9fa2e449ca3a78af3e7393c323093f336f4200000000000000000000"
+      },
+      "legendre_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x48b",
+        "denominator_hex": "0x30086b70368562f37439227fa66b251374f9ac9bcae653d1fd00000000000000000000"
+      },
+      "chebyshev_operator_error_decimal_upper": "2.22222222222222222222223E-83",
+      "legendre_operator_error_decimal_upper": "3.19067215363511659807957E-81",
+      "scaled_AngularScreen_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0xd71141a69fdce176c27c5e3fbc2ebc50583c00000000000000"
+      },
+      "scaled_AngularScreen_error_decimal_upper": "7.40740740740740740740741E-61",
+      "exact_gauss_quadrature_truncation_certified": true,
+      "ideal_nodes_weights_and_point_evaluation": true,
+      "floating_nodes_weights_basis_screen_roundoff_bound": null,
+      "matrix_arithmetic_roundoff_bound": null,
+      "radial_integration_error_bound": null,
+      "coulomb_evaluation_error_bound": null,
+      "excluded_angular_response_bound": null,
+      "total_numerical_error_bound": null,
+      "total_numerical_error_certified": false,
+      "HH_R10": "OFF"
+    },
+    {
+      "schema": "PHYS67_EXACT_GAUSS_ANGULAR_CERTIFICATE_V1",
+      "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "published_premise_commit": "445d82db9c42b4f2f81e4ac1b107dec3b69b3c24",
+      "max_ell": 64,
+      "nodes": 128,
+      "polynomial_degree": 127,
+      "maximum_polynomial_degree": 127,
+      "basis_product_degree_maximum": 128,
+      "Gauss_exactness_degree": 255,
+      "all_signed_m": true,
+      "full_projection_dimension": 4225,
+      "channel_dimension_factor": 1,
+      "radial_domain": "r/a0 in [27,infinity)",
+      "radial_weight": "exp[-2(r/a0-27)]",
+      "units": "radial-equation multiplication coefficient in a0^-2",
+      "quantity": "V=2(1+1/d)exp(-2d), d=|r n-(7/10)zhat| in atomic coordinates",
+      "weighted_ellipse": {
+        "rho": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0xa",
+          "denominator_hex": "0x1"
+        },
+        "S_weighted_ellipse_majorant": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x22b1c8c1227a00000"
+        },
+        "quadratic_gap_slope": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x5d",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_intercept": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "-0x60f",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_at_B": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x30",
+          "denominator_hex": "0x5"
+        },
+        "root_real_part_lower_expression": "r-4 = 23+(r-27)",
+        "radial_weight_expression": "exp[-2(r-27)]",
+        "inherited_positive_Taylor_gate": {
+          "source_radius_R": "7/10",
+          "exterior_min_r": "27",
+          "Bernstein_rho": "10",
+          "min_Re_s_squared": "2693/5",
+          "Re_s_strict_gt": 23,
+          "exp46_Taylor_order": 46,
+          "exp46_partial_sum_gt_5e19": true,
+          "sup_analytic_S_upper_exact": "1/40000000000000000000",
+          "Legendre_coefficient_prefactor_exact": "1/18000000000000000000",
+          "proved_infinite_angular": true,
+          "status": "SCOPED_RIGOROUS_PHYSICAL_SCREENED_MULTIPLIER_ONLY"
+        }
+      },
+      "chebyshev_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x90266546b96205b15a92727f75722a7b18cb5c706a3fcde050bbb83bba4fb96c7c1d909d845cc6c9006d42000000000000000000000000000000000000"
+      },
+      "legendre_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1cf",
+        "denominator_hex": "0xe985e181eee15b246ee3012aa4a996bd2d4971e94ff6b90a1c634e4c476cac62f206ef6593ddfa5a1a4a99000000000000000000000000000000000000"
+      },
+      "chebyshev_operator_error_decimal_upper": "2.22222222222222222222223E-147",
+      "legendre_operator_error_decimal_upper": "6.35116598079561042524006E-145",
+      "scaled_AngularScreen_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x146bffc409a0fb78cd08bca4b58f01e3654ffbb7e3c9d8f32907a5f751e6155385c3d79c3c000000000000000000000000000000"
+      },
+      "scaled_AngularScreen_error_decimal_upper": "7.40740740740740740740741E-125",
+      "exact_gauss_quadrature_truncation_certified": true,
+      "ideal_nodes_weights_and_point_evaluation": true,
+      "floating_nodes_weights_basis_screen_roundoff_bound": null,
+      "matrix_arithmetic_roundoff_bound": null,
+      "radial_integration_error_bound": null,
+      "coulomb_evaluation_error_bound": null,
+      "excluded_angular_response_bound": null,
+      "total_numerical_error_bound": null,
+      "total_numerical_error_certified": false,
+      "HH_R10": "OFF"
+    },
+    {
+      "schema": "PHYS67_EXACT_GAUSS_ANGULAR_CERTIFICATE_V1",
+      "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "published_premise_commit": "445d82db9c42b4f2f81e4ac1b107dec3b69b3c24",
+      "max_ell": 28,
+      "nodes": 128,
+      "polynomial_degree": 199,
+      "maximum_polynomial_degree": 199,
+      "basis_product_degree_maximum": 56,
+      "Gauss_exactness_degree": 255,
+      "all_signed_m": true,
+      "full_projection_dimension": 841,
+      "channel_dimension_factor": 1,
+      "radial_domain": "r/a0 in [27,infinity)",
+      "radial_weight": "exp[-2(r/a0-27)]",
+      "units": "radial-equation multiplication coefficient in a0^-2",
+      "quantity": "V=2(1+1/d)exp(-2d), d=|r n-(7/10)zhat| in atomic coordinates",
+      "weighted_ellipse": {
+        "rho": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0xa",
+          "denominator_hex": "0x1"
+        },
+        "S_weighted_ellipse_majorant": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x22b1c8c1227a00000"
+        },
+        "quadratic_gap_slope": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x5d",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_intercept": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "-0x60f",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_at_B": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x30",
+          "denominator_hex": "0x5"
+        },
+        "root_real_part_lower_expression": "r-4 = 23+(r-27)",
+        "radial_weight_expression": "exp[-2(r-27)]",
+        "inherited_positive_Taylor_gate": {
+          "source_radius_R": "7/10",
+          "exterior_min_r": "27",
+          "Bernstein_rho": "10",
+          "min_Re_s_squared": "2693/5",
+          "Re_s_strict_gt": 23,
+          "exp46_Taylor_order": 46,
+          "exp46_partial_sum_gt_5e19": true,
+          "sup_analytic_S_upper_exact": "1/40000000000000000000",
+          "Legendre_coefficient_prefactor_exact": "1/18000000000000000000",
+          "proved_infinite_angular": true,
+          "status": "SCOPED_RIGOROUS_PHYSICAL_SCREENED_MULTIPLIER_ONLY"
+        }
+      },
+      "chebyshev_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x51960407bb861b9a10a815d24405b37b652d54d987719d773b45336da1f899dd86c2d014df8859f678dc617d9be0c624c66732e3e317817bf3c16fda08fd6f02000000000000000000000000000000000000000000000000000000"
+      },
+      "legendre_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0xe1b",
+        "denominator_hex": "0x294d8ba3ea224ac5fed517d8d8d61610119ef2f4862b1e1df6016ed5e6cc411825d29fbdc45d0724c6c92af463b697829e0aa4f6915d7ff38d0053d32e26b365d000000000000000000000000000000000000000000000000000000"
+      },
+      "chebyshev_operator_error_decimal_upper": "2.22222222222222222222223E-219",
+      "legendre_operator_error_decimal_upper": "9.90672153635116598079562E-217",
+      "scaled_AngularScreen_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0xb8ef14f9ed47d8f175917fcd0d4229ddbffa83c5cbcce27852441e5243e71abe044fb1a9fcb042403d725eb5d255398fe2a8f370e4cf5e480bc000000000000000000000000000000000000000000000000"
+      },
+      "scaled_AngularScreen_error_decimal_upper": "7.40740740740740740740741E-197",
+      "exact_gauss_quadrature_truncation_certified": true,
+      "ideal_nodes_weights_and_point_evaluation": true,
+      "floating_nodes_weights_basis_screen_roundoff_bound": null,
+      "matrix_arithmetic_roundoff_bound": null,
+      "radial_integration_error_bound": null,
+      "coulomb_evaluation_error_bound": null,
+      "excluded_angular_response_bound": null,
+      "total_numerical_error_bound": null,
+      "total_numerical_error_certified": false,
+      "HH_R10": "OFF"
+    },
+    {
+      "schema": "PHYS67_EXACT_GAUSS_ANGULAR_CERTIFICATE_V1",
+      "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "published_premise_commit": "445d82db9c42b4f2f81e4ac1b107dec3b69b3c24",
+      "max_ell": 64,
+      "nodes": 192,
+      "polynomial_degree": 255,
+      "maximum_polynomial_degree": 255,
+      "basis_product_degree_maximum": 128,
+      "Gauss_exactness_degree": 383,
+      "all_signed_m": true,
+      "full_projection_dimension": 4225,
+      "channel_dimension_factor": 1,
+      "radial_domain": "r/a0 in [27,infinity)",
+      "radial_weight": "exp[-2(r/a0-27)]",
+      "units": "radial-equation multiplication coefficient in a0^-2",
+      "quantity": "V=2(1+1/d)exp(-2d), d=|r n-(7/10)zhat| in atomic coordinates",
+      "weighted_ellipse": {
+        "rho": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0xa",
+          "denominator_hex": "0x1"
+        },
+        "S_weighted_ellipse_majorant": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x22b1c8c1227a00000"
+        },
+        "quadratic_gap_slope": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x5d",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_intercept": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "-0x60f",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_at_B": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x30",
+          "denominator_hex": "0x5"
+        },
+        "root_real_part_lower_expression": "r-4 = 23+(r-27)",
+        "radial_weight_expression": "exp[-2(r-27)]",
+        "inherited_positive_Taylor_gate": {
+          "source_radius_R": "7/10",
+          "exterior_min_r": "27",
+          "Bernstein_rho": "10",
+          "min_Re_s_squared": "2693/5",
+          "Re_s_strict_gt": 23,
+          "exp46_Taylor_order": 46,
+          "exp46_partial_sum_gt_5e19": true,
+          "sup_analytic_S_upper_exact": "1/40000000000000000000",
+          "Legendre_coefficient_prefactor_exact": "1/18000000000000000000",
+          "proved_infinite_angular": true,
+          "status": "SCOPED_RIGOROUS_PHYSICAL_SCREENED_MULTIPLIER_ONLY"
+        }
+      },
+      "chebyshev_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x14cbbc1e53aa3455d0826060504d617472d5bea3c0726602b7a36b0bdd355745ae0123bd144607d5e2bbff1532dcbb6d21516092572619c2090b019ba98c2cced36c96c2409792e6ba89bdba856e0694200000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "legendre_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x120b",
+        "denominator_hex": "0xa872408f3f490e50b286730c240c622f3bc354fb306b6d7c691216467fc9a94e016fa17b8a9da5de12f2c55ee8c8baf3f4465b07c1e7d0a3afa5f36cdd55d15816ef91f23e655919b3c21a66d2619bafd00000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "chebyshev_operator_error_decimal_upper": "2.22222222222222222222223E-275",
+      "legendre_operator_error_decimal_upper": "1.26721536351165980795611E-272",
+      "scaled_AngularScreen_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2f23803db3e9017c02a661adae99dfbcc659ce46bbaaf865e99f44173df822d9c253e32fac58c2180f586ad9af3707ca861d8bcadde347f7a07ccf6419e4173915284193cda0b29a243c00000000000000000000000000000000000000000000000000000000000000"
+      },
+      "scaled_AngularScreen_error_decimal_upper": "7.40740740740740740740741E-253",
+      "exact_gauss_quadrature_truncation_certified": true,
+      "ideal_nodes_weights_and_point_evaluation": true,
+      "floating_nodes_weights_basis_screen_roundoff_bound": null,
+      "matrix_arithmetic_roundoff_bound": null,
+      "radial_integration_error_bound": null,
+      "coulomb_evaluation_error_bound": null,
+      "excluded_angular_response_bound": null,
+      "total_numerical_error_bound": null,
+      "total_numerical_error_certified": false,
+      "HH_R10": "OFF"
+    },
+    {
+      "schema": "PHYS67_EXACT_GAUSS_ANGULAR_CERTIFICATE_V1",
+      "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "published_premise_commit": "445d82db9c42b4f2f81e4ac1b107dec3b69b3c24",
+      "max_ell": 64,
+      "nodes": 256,
+      "polynomial_degree": 383,
+      "maximum_polynomial_degree": 383,
+      "basis_product_degree_maximum": 128,
+      "Gauss_exactness_degree": 511,
+      "all_signed_m": true,
+      "full_projection_dimension": 4225,
+      "channel_dimension_factor": 1,
+      "radial_domain": "r/a0 in [27,infinity)",
+      "radial_weight": "exp[-2(r/a0-27)]",
+      "units": "radial-equation multiplication coefficient in a0^-2",
+      "quantity": "V=2(1+1/d)exp(-2d), d=|r n-(7/10)zhat| in atomic coordinates",
+      "weighted_ellipse": {
+        "rho": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0xa",
+          "denominator_hex": "0x1"
+        },
+        "S_weighted_ellipse_majorant": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x22b1c8c1227a00000"
+        },
+        "quadratic_gap_slope": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x5d",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_intercept": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "-0x60f",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_at_B": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x30",
+          "denominator_hex": "0x5"
+        },
+        "root_real_part_lower_expression": "r-4 = 23+(r-27)",
+        "radial_weight_expression": "exp[-2(r-27)]",
+        "inherited_positive_Taylor_gate": {
+          "source_radius_R": "7/10",
+          "exterior_min_r": "27",
+          "Bernstein_rho": "10",
+          "min_Re_s_squared": "2693/5",
+          "Re_s_strict_gt": 23,
+          "exp46_Taylor_order": 46,
+          "exp46_partial_sum_gt_5e19": true,
+          "sup_analytic_S_upper_exact": "1/40000000000000000000",
+          "Legendre_coefficient_prefactor_exact": "1/18000000000000000000",
+          "proved_infinite_angular": true,
+          "status": "SCOPED_RIGOROUS_PHYSICAL_SCREENED_MULTIPLIER_ONLY"
+        }
+      },
+      "chebyshev_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x30007b83debde6a8b08a422868a1485bf1b7f04300a7e070cd6064ba9cfd4cf558755f3f8e2fe4abfbd3dd157c45c494fc351296e267a84449d9644f489e8b8b7356a8e4cf06456b90fba0ed6ded5974276b2f30d1e70d58c2ef03dfcba1d5ad74745873c08033f6744974f7f3923afa98bcfc865420000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "legendre_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1b0b",
+        "denominator_hex": "0x184d0b545bf6899232f9317e0e91a63b58c51e6eb854fcd2b4c59964df79d55c34c838382cc83ef7111674b946e9b851d2e1449c629e1395c562dac82329dd0b6597124d6f34c6580e329644ffa68ee2cd8e43171d7691f4ef7c338fb249edc63627b32dcca74d8191453003ece86ddbaa1faca400fd0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "chebyshev_operator_error_decimal_upper": "2.22222222222222222222223E-403",
+      "legendre_operator_error_decimal_upper": "1.89931412894375857338821E-400",
+      "scaled_AngularScreen_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x6ccebe9a394447716ec2a44f0299f6ba5cd89eb00025279a29a5c1d5b348bfec2b10acaf0817bd3340882159896372a821fc5fb5ad449fd6edddadb6fc0b1ae087b00760ebdc86ac0cb7f12262e04f1b0db28f409f0ce22acd43deb4af227c0f88eaf9d2e9266647578137e64cac3c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "scaled_AngularScreen_error_decimal_upper": "7.40740740740740740740741E-381",
+      "exact_gauss_quadrature_truncation_certified": true,
+      "ideal_nodes_weights_and_point_evaluation": true,
+      "floating_nodes_weights_basis_screen_roundoff_bound": null,
+      "matrix_arithmetic_roundoff_bound": null,
+      "radial_integration_error_bound": null,
+      "coulomb_evaluation_error_bound": null,
+      "excluded_angular_response_bound": null,
+      "total_numerical_error_bound": null,
+      "total_numerical_error_certified": false,
+      "HH_R10": "OFF"
+    },
+    {
+      "schema": "PHYS67_EXACT_GAUSS_ANGULAR_CERTIFICATE_V1",
+      "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "published_premise_commit": "445d82db9c42b4f2f81e4ac1b107dec3b69b3c24",
+      "max_ell": 64,
+      "nodes": 512,
+      "polynomial_degree": 895,
+      "maximum_polynomial_degree": 895,
+      "basis_product_degree_maximum": 128,
+      "Gauss_exactness_degree": 1023,
+      "all_signed_m": true,
+      "full_projection_dimension": 4225,
+      "channel_dimension_factor": 1,
+      "radial_domain": "r/a0 in [27,infinity)",
+      "radial_weight": "exp[-2(r/a0-27)]",
+      "units": "radial-equation multiplication coefficient in a0^-2",
+      "quantity": "V=2(1+1/d)exp(-2d), d=|r n-(7/10)zhat| in atomic coordinates",
+      "weighted_ellipse": {
+        "rho": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0xa",
+          "denominator_hex": "0x1"
+        },
+        "S_weighted_ellipse_majorant": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x22b1c8c1227a00000"
+        },
+        "quadratic_gap_slope": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x5d",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_intercept": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "-0x60f",
+          "denominator_hex": "0x64"
+        },
+        "quadratic_gap_at_B": {
+          "codec": "rational-hex-v1",
+          "numerator_hex": "0x30",
+          "denominator_hex": "0x5"
+        },
+        "root_real_part_lower_expression": "r-4 = 23+(r-27)",
+        "radial_weight_expression": "exp[-2(r-27)]",
+        "inherited_positive_Taylor_gate": {
+          "source_radius_R": "7/10",
+          "exterior_min_r": "27",
+          "Bernstein_rho": "10",
+          "min_Re_s_squared": "2693/5",
+          "Re_s_strict_gt": 23,
+          "exp46_Taylor_order": 46,
+          "exp46_partial_sum_gt_5e19": true,
+          "sup_analytic_S_upper_exact": "1/40000000000000000000",
+          "Legendre_coefficient_prefactor_exact": "1/18000000000000000000",
+          "proved_infinite_angular": true,
+          "status": "SCOPED_RIGOROUS_PHYSICAL_SCREENED_MULTIPLIER_ONLY"
+        }
+      },
+      "chebyshev_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x552a776616191cbe011bf464d14c8090563274278f2bcceae28da10653e4ae041b078c4b2a603f4273e2d9c324de91e411fd1bce65c8cbf5dd4cab590f1712c555479a37470288516e36630e2880954217111e37585d372b17adc1084d99b6b262086b9a40a7f377a940efc071e5cf8429e279ed14c5fa590099a9fef7e2c8433589c71478b5277a550a8048b38f9f4bc00a8ad8640fabd02d7e362eaa90a727aca496caecc6624bde444c2e6217c6bb9d26e904c7a56285fc5569f4573d176d42b1764277eb5668077aa4853c4e8ee86f2553e2ccb629c63d82728ba5d26b7a07a0e10f43486f4a4cd40e34c46d737dcba960ae2ffd758b8bf8b5769b278809efcdb490289ba1b85542000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "legendre_operator_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x3f0b",
+        "denominator_hex": "0x2b1d7fa547fcb68cfd5c8d5309f52115ded6579a6d47c623b5e47feb34122b4badaf056c73da5339a44471713110ad0ea91b5613b0540da7ab3b9d25160a14b3e65f72df2f261502d2febbbf2ae77ec30ee0aa7f37ef30ba9d965cec3415d14a4e6ddcdfb0bb6cdafa7c12f96cdc577482010db99f5106bd0eb43142ad7e022ed31a8cc8c3821bfc54a6ea8b3480b5718c6bbcb0bf74bbc7ca3b183ad32607d27c3352bd2177a1c33552935de1a8d63561287f90d1deed13d48b3da3b290870f5029d711a64f23be43c949b040215ebf45114c1137a29ebf8f23a396b258eccf60a971efba0fdebd9d4b5a64503dcf447be758f1c84b8381d875e8aa71bf36783b002368faf53045518fd000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "chebyshev_operator_error_decimal_upper": "2.22222222222222222222223E-915",
+      "legendre_operator_error_decimal_upper": "4.42770919067215363511660E-912",
+      "scaled_AngularScreen_error_coefficient": {
+        "codec": "rational-hex-v1",
+        "numerator_hex": "0x1",
+        "denominator_hex": "0xc10c6efda022a8fc5d4fbf01c0551e7fdf3bf3afc7fee0fe6f5b919b3193861c9484fd8d652d6017b1fb04e30687a193339dbed0ba56f0addcf1bef8a4c5b9952b2baaf72898966c44442486f99d607e4eb61adcb5a4c75ae1971e252e6c8043cfb9d9e212af57db0231dbd6d8ca1194cb1bf4e61086064c7b1f6aaaccf89f8d24628099be77bac2a4e71a99d23b94e455d0acc04a6d9fc16a648ca84de68307ea3807c1afcb5df454a3b4398dc1a06d3fc27b52e92410974852e3310f4d6aa63b7ee59d172b3740d0afb7dba85f5d1aa1f9544598036bce4e048730434ef3958d3cf8bce98f94e6cb2f56527629e86e3224bc3bea2ce06040a1dc719124e59e676cc3c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "scaled_AngularScreen_error_decimal_upper": "7.40740740740740740740741E-893",
+      "exact_gauss_quadrature_truncation_certified": true,
+      "ideal_nodes_weights_and_point_evaluation": true,
+      "floating_nodes_weights_basis_screen_roundoff_bound": null,
+      "matrix_arithmetic_roundoff_bound": null,
+      "radial_integration_error_bound": null,
+      "coulomb_evaluation_error_bound": null,
+      "excluded_angular_response_bound": null,
+      "total_numerical_error_bound": null,
+      "total_numerical_error_certified": false,
+      "HH_R10": "OFF"
+    }
+  ],
+  "independent_checks": {
+    "physical_highprecision_rows": [
+      {
+        "r_atomic": 27,
+        "L": 4,
+        "m": 0,
+        "equivalent_signed_m": [
+          0
+        ],
+        "Q": 12,
+        "dps": 90,
+        "direct_integral_vs_GL_operator_norm": "1.1228794769749712436342205924196474e-38",
+        "analytic_quadrature_bound": "2.2222222222222222222222222222222222e-35",
+        "residual_over_bound": "0.0005052957646387370596353993",
+        "highprecision_discrete_Gram_defect": "5.039962679069344028965303e-90",
+        "bound_comparison": true,
+        "numerical_witness_is_not_interval_certification": true
+      },
+      {
+        "r_atomic": 27,
+        "L": 4,
+        "m": 1,
+        "equivalent_signed_m": [
+          -1,
+          1
+        ],
+        "Q": 12,
+        "dps": 90,
+        "direct_integral_vs_GL_operator_norm": "8.9663465418789772189867232617427767e-39",
+        "analytic_quadrature_bound": "2.2222222222222222222222222222222222e-35",
+        "residual_over_bound": "0.0004034855943845539748544025",
+        "highprecision_discrete_Gram_defect": "2.527076078644720793695019e-90",
+        "bound_comparison": true,
+        "numerical_witness_is_not_interval_certification": true
+      },
+      {
+        "r_atomic": 27,
+        "L": 4,
+        "m": 4,
+        "equivalent_signed_m": [
+          -4,
+          4
+        ],
+        "Q": 12,
+        "dps": 90,
+        "direct_integral_vs_GL_operator_norm": "1.5571500773937579609598976769252036e-40",
+        "analytic_quadrature_bound": "2.2222222222222222222222222222222222e-35",
+        "residual_over_bound": "0.00000700717534827191082431954",
+        "highprecision_discrete_Gram_defect": "9.818186930595453106191544e-91",
+        "bound_comparison": true,
+        "numerical_witness_is_not_interval_certification": true
+      },
+      {
+        "r_atomic": 39,
+        "L": 4,
+        "m": 0,
+        "equivalent_signed_m": [
+          0
+        ],
+        "Q": 12,
+        "dps": 90,
+        "direct_integral_vs_GL_operator_norm": "2.1439102561568381067527976557221287e-49",
+        "analytic_quadrature_bound": "8.3891878761757727814332656611631262e-46",
+        "residual_over_bound": "0.0002555563527484311946070029",
+        "highprecision_discrete_Gram_defect": "5.039962679069344028965303e-90",
+        "bound_comparison": true,
+        "numerical_witness_is_not_interval_certification": true
+      },
+      {
+        "r_atomic": 39,
+        "L": 4,
+        "m": 1,
+        "equivalent_signed_m": [
+          -1,
+          1
+        ],
+        "Q": 12,
+        "dps": 90,
+        "direct_integral_vs_GL_operator_norm": "1.7124679470021996141267498050295749e-49",
+        "analytic_quadrature_bound": "8.3891878761757727814332656611631262e-46",
+        "residual_over_bound": "0.0002041279766621261292516204",
+        "highprecision_discrete_Gram_defect": "2.527076078644720793695019e-90",
+        "bound_comparison": true,
+        "numerical_witness_is_not_interval_certification": true
+      },
+      {
+        "r_atomic": 39,
+        "L": 4,
+        "m": 4,
+        "equivalent_signed_m": [
+          -4,
+          4
+        ],
+        "Q": 12,
+        "dps": 90,
+        "direct_integral_vs_GL_operator_norm": "2.9876634890994445090567739381379763e-51",
+        "analytic_quadrature_bound": "8.3891878761757727814332656611631262e-46",
+        "residual_over_bound": "0.000003561326237053325574167843",
+        "highprecision_discrete_Gram_defect": "9.818186930595453106191544e-91",
+        "bound_comparison": true,
+        "numerical_witness_is_not_interval_certification": true
+      }
+    ],
+    "floating_AngularScreen_rows": [
+      {
+        "L": 64,
+        "m": 0,
+        "Q": 128,
+        "actual_f64_Gram_defect_2norm": 9.088067298835561e-12,
+        "meaning": "diagnostic effect of floating nodes/weights/basis; separate from ideal Gauss truncation",
+        "roundoff_bound_certified": false
+      },
+      {
+        "L": 64,
+        "m": 1,
+        "Q": 128,
+        "actual_f64_Gram_defect_2norm": 1.5983101224379407e-12,
+        "meaning": "diagnostic effect of floating nodes/weights/basis; separate from ideal Gauss truncation",
+        "roundoff_bound_certified": false
+      },
+      {
+        "L": 64,
+        "m": 32,
+        "Q": 128,
+        "actual_f64_Gram_defect_2norm": 7.888502061799765e-14,
+        "meaning": "diagnostic effect of floating nodes/weights/basis; separate from ideal Gauss truncation",
+        "roundoff_bound_certified": false
+      },
+      {
+        "L": 64,
+        "m": 64,
+        "Q": 128,
+        "actual_f64_Gram_defect_2norm": 3.5083047578154947e-14,
+        "meaning": "diagnostic effect of floating nodes/weights/basis; separate from ideal Gauss truncation",
+        "roundoff_bound_certified": false
+      }
+    ],
+    "actual_radial_solver_runs": 0,
+    "actual_NCP_runs": 0
+  },
+  "seconds": 3.2230309959995793,
+  "scientific_scope": "ideal angular quadrature for finite L, all signed m, every r>=27",
+  "total_numerical_error_certified": false,
+  "HH_R10": "OFF"
+}
