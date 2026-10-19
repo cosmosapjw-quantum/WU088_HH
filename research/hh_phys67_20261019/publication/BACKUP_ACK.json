@@ -1,0 +1,140 @@
+{
+  "schema": "PHYS67_BACKUP_ACK_V1",
+  "artifact": {
+    "name": "WU088_HH_PHYS67_SOURCE_AND_EVIDENCE_20261019.zip",
+    "path": "/workspace/scratch/455b0ba5bd64/delivery_phys67/WU088_HH_PHYS67_SOURCE_AND_EVIDENCE_20261019.zip",
+    "bytes": 4684159,
+    "sha256": "f1bec132b7efb5a8f3f938a5848d505c84216f1087be8e39e484ae3ef121234d",
+    "local_hash_check": "PASS_EXACT_EXPECTED_BYTES_AND_SHA256"
+  },
+  "science_identity": {
+    "commit": "46d011e365b26eb75dd30b9d8f54224dd3d3bb6a",
+    "tree": "484677cb42453b22c3d51231746cf85eea9c0364",
+    "parent": "1a1e5b6df5e5f88de851bc4686949089e2444291",
+    "pr_url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/117",
+    "identity_source": "root agent published science identity; no capsule modifications performed by backup agent"
+  },
+  "overall_status": "PARTIAL_DUAL_PROVIDER_BACKUP",
+  "google_drive": {
+    "status": "TWO_UPLOAD_REQUESTS_OUTCOMES_UNRESOLVED",
+    "upload_attempts": 2,
+    "tool": "mcp__codex_apps__google_drive_upload_file",
+    "parent_folder_id": "1M_5fcGBevapsN-3RpXq-wimMq2uqrusG",
+    "destination_file_name": "WU088_HH_PHYS67_SOURCE_AND_EVIDENCE_20261019.zip",
+    "source_argument": "absolute local capsule path",
+    "upload_response_received": false,
+    "operation_id": null,
+    "file_id": null,
+    "bytes": null,
+    "provider_checksum": null,
+    "observed_tool_end": "aborted by user after 457.3s",
+    "elapsed_seconds_before_tool_abort": 457.3,
+    "preupload_readback": {
+      "tool": "mcp__codex_apps__google_drive_list_folder",
+      "existing_direct_entries": 24,
+      "exact_name_matches": 0
+    },
+    "post_interrupt_readbacks": [
+      {
+        "tool": "mcp__codex_apps__google_drive_list_folder",
+        "existing_direct_entries": 24,
+        "exact_name_matches": 0,
+        "position": "after attempt 1, before attempt 2"
+      },
+      {
+        "tool": "mcp__codex_apps__google_drive_list_folder",
+        "existing_direct_entries": 24,
+        "exact_name_matches": 0,
+        "position": "after attempt 1, before attempt 2"
+      }
+    ],
+    "readback_scope": "Exact file-name match in selected WU088_HH Drive folder; no created object was observed.",
+    "retry_performed": true,
+    "remaining_action": "No further upload attempted. A future session must reconcile both uncertain requests by provider state before proposing any new upload.",
+    "limitation": "Neither request returned a provider acknowledgement. Two readbacks after attempt 1 and before attempt 2 found no exact-name object; no readback after attempt 2 was performed. Both outcomes remain unresolved, without a failure or not-executed claim.",
+    "attempts": [
+      {
+        "attempt": 1,
+        "requested_at_utc": null,
+        "request_utc_status": "not captured before stalled call; no estimated timestamp substituted",
+        "tool": "mcp__codex_apps__google_drive_upload_file",
+        "result_received": false,
+        "file_id_received": false,
+        "operation_id_received": false,
+        "outcome": "UNRESOLVED",
+        "interrupting_authority": "root agent intervened after stalled provider call",
+        "raw_tool_interrupt": "aborted by user after 457.3s",
+        "reported_call_wait_elapsed_seconds": 457.3,
+        "post_interrupt_exact_name_readbacks": 2,
+        "post_interrupt_exact_name_objects": 0
+      },
+      {
+        "attempt": 2,
+        "requested_at_utc": null,
+        "request_utc_status": "store timestamp did not survive interrupted tool cell; no estimated timestamp substituted",
+        "tool": "mcp__codex_apps__google_drive_upload_file",
+        "exec_cell_id": "29",
+        "wait_tool": "functions.wait",
+        "wait_args": {
+          "cell_id": "29",
+          "yield_time_ms": 10000
+        },
+        "reason": "Root explicitly authorized one additional request after two negative readbacks and changed registered fileParams delivery state",
+        "target_maximum_wait_seconds": 120,
+        "result_received": false,
+        "file_id_received": false,
+        "operation_id_received": false,
+        "outcome": "UNRESOLVED",
+        "interrupting_authority": "root agent enforced stop after the waiting call exceeded the intended bound",
+        "raw_tool_interrupt": "aborted by user after 221.5s",
+        "reported_wait_call_elapsed_seconds": 221.5,
+        "wait_bound_exceeded": true,
+        "post_interrupt_readback_performed": false
+      }
+    ],
+    "additional_uploads_authorized_or_planned": false
+  },
+  "dropbox": {
+    "status": "COMPLETED",
+    "upload_attempts": 1,
+    "upload_tool": "mcp__codex_apps__dropbox_upload_file",
+    "initial_upload_status": "in_progress",
+    "status_tool": "mcp__codex_apps__dropbox_check_upload_file_status",
+    "completed_status": "completed",
+    "file_id": "id:BSpOijBcT10AAAAAAD_Pqg",
+    "path": "ns:183516487//WU088_HH/WU088_HH_PHYS67_SOURCE_AND_EVIDENCE_20261019.zip",
+    "path_display": "/WU088_HH/WU088_HH_PHYS67_SOURCE_AND_EVIDENCE_20261019.zip",
+    "file_name": "WU088_HH_PHYS67_SOURCE_AND_EVIDENCE_20261019.zip",
+    "bytes": 4684159,
+    "revision": "65e2b27b925210af03d47",
+    "server_modified": "2026-10-19T05:55:03Z",
+    "is_downloadable": true,
+    "url": "https://www.dropbox.com/preview/WU088_HH/WU088_HH_PHYS67_SOURCE_AND_EVIDENCE_20261019.zip",
+    "preupload_readback": {
+      "exact_name_matches": 0,
+      "existing_direct_entries": 22,
+      "has_more": false
+    },
+    "metadata_readback_tool": "mcp__codex_apps__dropbox_get_file_metadata",
+    "metadata_size_matches_local": true,
+    "stable_url_source": "mcp__codex_apps__dropbox_search exact filename result",
+    "provider_content_hash": null,
+    "provider_content_hash_status": "NOT_RETURNED_BY_UPLOAD_STATUS_OR_FILE_METADATA",
+    "restoration_download_performed": false,
+    "verification_scope": "Provider upload completed; independent file metadata readback confirms exact path, file ID, revision and source byte count. Local source SHA256 verified immediately before upload. No provider-side content hash or restored-byte verification claimed.",
+    "operation_id_sha256": "642cd230b0948a5fbf306ad9294aa300ed20b20778a98430be343a9df5d3e437",
+    "operation_token_status": "issued and completed; opaque token omitted from public ACK",
+    "restored_sha256": null,
+    "restoration_status": "NOT_RUN; no Dropbox download call started before root stopped remaining backup work"
+  },
+  "separate_library_save_report": {
+    "basis": "Root separately verified successful Library delivery of this unchanged capsule. Backup agent did not independently verify that provider; internal object identifiers omitted from public ACK."
+  },
+  "no_science_rerun": true,
+  "no_ncp_calls_in_backup_task": true,
+  "signed_urls_or_auth_recorded": false,
+  "ack_recorded_at_utc": "2026-10-19T05:56:38.167769+00:00",
+  "ack_finalized_at_utc": "2026-10-19T06:02:57.461855+00:00",
+  "public_metadata_sanitized": true,
+  "stop_authority": "Root agent stopped stalled provider calls; generic tool text aborted by user is not interpreted as an explicit user cancellation."
+}
