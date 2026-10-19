@@ -1,0 +1,131 @@
+{
+  "schema": "PHYS69_SCOPED_RESEARCH_DAG_V1",
+  "created_utc": "2026-10-19T13:13:12.529612+00:00",
+  "original_global_DAG_modified": false,
+  "HH_R10": "OFF",
+  "scope": "Fixed original E49/200, external(21,20),m0 all-angular DtN lambda^2 coefficient; other observables retain separate obligations.",
+  "nodes": [
+    {
+      "id": "PHYS63_ALL_ANGULAR_LAP_POISSON_DTN",
+      "state": "ESTABLISHED_REUSED",
+      "dependencies": [],
+      "evidence": "theory/inputs/PHYS63_REPORT_KO.md"
+    },
+    {
+      "id": "PHYS69_ALL_J_COULOMB_RATIO",
+      "state": "COMPLETE",
+      "dependencies": [],
+      "evidence": "theory/PROOF.md"
+    },
+    {
+      "id": "PHYS69_EXCLUDED_ANGULAR_D2",
+      "state": "COMPLETE",
+      "dependencies": [
+        "PHYS69_ALL_J_COULOMB_RATIO"
+      ],
+      "evidence": "angles/RESULTS.json"
+    },
+    {
+      "id": "PHYS69_NEW_BAND_29_36",
+      "state": "COMPLETE",
+      "dependencies": [],
+      "evidence": "band/run_j29_36_t65/CERTIFICATE.json"
+    },
+    {
+      "id": "PHYS69_ALL_ANGULAR_D2_21_20_M0",
+      "state": "COMPLETE",
+      "dependencies": [
+        "PHYS63_ALL_ANGULAR_LAP_POISSON_DTN",
+        "PHYS69_EXCLUDED_ANGULAR_D2",
+        "PHYS69_NEW_BAND_29_36"
+      ],
+      "evidence": "all_angular/CERTIFICATE.json"
+    },
+    {
+      "id": "PHYS69_VIGILODE_L28_DIAGNOSTIC",
+      "state": "COMPLETE_STORED_POINT_ERROR_CHECKED",
+      "dependencies": [],
+      "evidence": "vigilode/VALIDATION_SUMMARY.json"
+    },
+    {
+      "id": "PHYS66_LONGTAIL6",
+      "state": "READY_NOT_RUN_HOST_STATE_UNKNOWN",
+      "dependencies": [],
+      "evidence": "../hh_phys68_20261019/CODEX_HANDOFF_PROMPT.md"
+    },
+    {
+      "id": "PHYS68_L64_VALIDATED_PROFILES",
+      "state": "READY_NOT_RUN_HOST_STATE_UNKNOWN",
+      "dependencies": [],
+      "evidence": "../hh_phys68_20261019/ncp_delivery/REQUEST_L64.json"
+    },
+    {
+      "id": "PHYS69_VIGILODE_L64",
+      "state": "READY_NOT_RUN_HOST_STATE_UNKNOWN",
+      "dependencies": [],
+      "evidence": "vigilode/REQUEST_L64.json"
+    },
+    {
+      "id": "PHYS70_ALL_ANGULAR_D3_AND_HIGHER_REMAINDER",
+      "state": "OPEN",
+      "dependencies": [
+        "PHYS69_ALL_ANGULAR_D2_21_20_M0"
+      ],
+      "evidence": "theory/PROOF.md"
+    },
+    {
+      "id": "ORIGINAL_SOURCE_DRIVEN_XI",
+      "state": "OPEN",
+      "dependencies": [
+        "PHYS63_ALL_ANGULAR_LAP_POISSON_DTN"
+      ],
+      "evidence": "../hh_phys68_20261019/NEXT_DAG.json"
+    },
+    {
+      "id": "ORIGIN_AND_ORIGINAL_INCOMING_ADJOINT",
+      "state": "OPEN",
+      "dependencies": [
+        "ORIGINAL_SOURCE_DRIVEN_XI"
+      ],
+      "evidence": "../hh_phys68_20261019/NEXT_DAG.json"
+    },
+    {
+      "id": "SIGMA_E",
+      "state": "OPEN",
+      "dependencies": [
+        "ORIGINAL_SOURCE_DRIVEN_XI",
+        "ORIGIN_AND_ORIGINAL_INCOMING_ADJOINT"
+      ],
+      "evidence": "../hh_phys68_20261019/NEXT_DAG.json"
+    },
+    {
+      "id": "MAXWELLIAN_K_HH_T",
+      "state": "OPEN",
+      "dependencies": [
+        "SIGMA_E"
+      ],
+      "evidence": "../hh_phys68_20261019/NEXT_DAG.json"
+    }
+  ],
+  "execution": {
+    "new_validated_band_panels": 76,
+    "old_radial_panels_recomputed": 0,
+    "new_native_l28_runs": 2,
+    "NCP_submissions": 0,
+    "NCP_host_state": "UNKNOWN"
+  },
+  "publication": {
+    "state_at_science_snapshot": "PENDING",
+    "actual_state_receipt": "publication/FINAL_DELIVERY.json"
+  },
+  "backup": {
+    "state_at_science_snapshot": "PENDING",
+    "actual_state_receipt": "publication/BACKUP_ACK.json"
+  },
+  "next_theory": {
+    "unit": "PHYS70",
+    "target": "fixed m0 (21,20) all-angular D3 / higher-order remainder",
+    "first_derivation": "Derive the two-intermediate-index Green/Volterra formula and a summable angular convolution estimate retaining C_j proportional to j+1. Identify saved D1/D2 profiles usable without replay.",
+    "forbidden_inference": "Do not turn polynomial C_j into a uniform Gamma_infinity or promote D2 to full lambda1."
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "PHYS69_VIGILODE_EXECUTION_V1",
+  "timestamp_utc": "2026-10-19T12:52:17.701677+00:00",
+  "identity": {
+    "request": {
+      "schema": "PHYS69_VIGILODE_REQUEST_V1",
+      "lmax": 28,
+      "angular_nodes": 96,
+      "rtol": 1e-10,
+      "atol": 1e-12,
+      "initial_step": 0.01,
+      "max_step": 0.5,
+      "max_attempts": 20000,
+      "upstream_commit": "a21d573980f66fe02891bd216153443b5352f921",
+      "frozen_source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "HH_R10": "OFF"
+    },
+    "request_sha256": "430ef86e0e30e485dcc7079593a4185020db51e5fa5c6c4de28efb913381581f",
+    "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+    "engine_sha256": {
+      "native/phys69_vigilode/Cargo.toml": "88345aa9528d38898046871e79396ea286c6f3a7641ce80d7179b14c65fd2265",
+      "native/phys69_vigilode/Cargo.lock": "cfe49e974d77fd04dca94709b78ba23f4f11d964844b3d6df258bacfcfc1ba0e",
+      "native/phys69_vigilode/src/lib.rs": "d0f86cf84de9d4437c742fe7518f9ecd88891236987f3a28bb790eb876f0d211",
+      "native/phys69_vigilode/src/main.rs": "68350797f5b81062fd81a6cecf230739895a8e178947e9de9c79555a1ecd48bf",
+      "scripts/phys69_vigilode.py": "28e9d65eec7bd3a7a82d9a87a830d965c45001b39f1f7224c8a021a39179f2b3"
+    },
+    "seed_sha256": "3aae5f37d858deca71f4f4217d56484d8430f06ad95e30280a44aafc2b6f7862"
+  },
+  "status": "COMPLETED_NATIVE_APPLICATION",
+  "commands": [
+    {
+      "command": [
+        "/tmp/rei_run15_salvage/recovery/toolchain/prefix/bin/rustc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.015924851002637297,
+      "stdout": "RUST_VERSION.stdout.txt",
+      "stderr": "RUST_VERSION.stderr.txt"
+    },
+    {
+      "command": [
+        "/tmp/rei_run15_salvage/recovery/toolchain/prefix/bin/cargo",
+        "--version"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.007915251000667922,
+      "stdout": "CARGO_VERSION.stdout.txt",
+      "stderr": "CARGO_VERSION.stderr.txt"
+    },
+    {
+      "command": [
+        "/tmp/rei_run15_salvage/recovery/toolchain/prefix/bin/cargo",
+        "test",
+        "--manifest-path",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/Cargo.toml",
+        "--locked",
+        "--release",
+        "--jobs",
+        "1",
+        "--target-dir",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/target",
+        "--offline",
+        "--lib"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 208.20847997999954,
+      "stdout": "RUST_TESTS.stdout.txt",
+      "stderr": "RUST_TESTS.stderr.txt"
+    },
+    {
+      "command": [
+        "/tmp/rei_run15_salvage/recovery/toolchain/prefix/bin/cargo",
+        "build",
+        "--manifest-path",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/Cargo.toml",
+        "--locked",
+        "--release",
+        "--jobs",
+        "1",
+        "--target-dir",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/target",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 2.723986771001364,
+      "stdout": "BUILD_NATIVE.stdout.txt",
+      "stderr": "BUILD_NATIVE.stderr.txt"
+    },
+    {
+      "command": [
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/native/phys69_vigilode/target/release/wu088-hh-phys69-vigilode",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/research/hh_phys69_20261019/vigilode/run_l28_rtol1e10_recovery2/REQUEST.json",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/research/hh_phys69_20261019/vigilode/run_l28_rtol1e10_recovery2/SEED_INPUT.txt",
+        "/workspace/scratch/455b0ba5bd64/WU088_HH/research/hh_phys34_20261015/inputs/FROZEN_U_SUBSET.npz"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 4.329261364000558,
+      "stdout": "INTEGRATE_NATIVE.stdout.txt",
+      "stderr": "INTEGRATE_NATIVE.stderr.txt"
+    }
+  ],
+  "old_campaign_reruns": 0,
+  "ncp_submission": "NOT_SUBMITTED_BY_THIS_DRIVER",
+  "HH_R10": "OFF",
+  "build_environment": {
+    "RUSTC": "/tmp/rei_run15_salvage/recovery/toolchain/prefix/bin/rustc",
+    "CARGO_INCREMENTAL": "0",
+    "CARGO_PROFILE_RELEASE_DEBUG": "0",
+    "RAYON_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "binary_sha256": "1ccc69012f39b7e303359a177f80f5bf7038fb371b6d8a0acd3659c5e2c7c481",
+  "result_sha256": "7b7801bfbeaa04725cd7688c015aed1c28c17363e6ba4ad694ca07ceeb00771f",
+  "comparison_goal_met": true
+}

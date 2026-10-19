@@ -1,3 +1,15 @@
+# Current priority PHYS69: actual all-angular D2 and pinned VigilODE, 2026-10-19 UTC
+
+Read research/hh_phys69_20261019/REPORT_KO.md, NEXT_DAG.json, CODEX_HANDOFF_PROMPT.md, NEW_THREAD_HANDOFF.md, all_angular/CERTIFICATE.json and publication/ before new work. Actual parent is PR118 metadata HEAD 2a79d961388e4fc71cbc0938f012b08af7ecf14e, tree3255eff8a21ff4b97880e34312de44281988ea23. Actual PHYS69 science commit, later metadata HEAD and cloud ACKs are separate receipts; do not infer them from this priority text.
+
+PHYS69 completes the actual all-angular/all-radial m0 D2(21,20)=Z''(0)/2 at original B27,k7/10,E49/200 with absolute error about the printed center below1.279825889920e-64 a0^-1, preserving the fixed1e-62 goal. It reuses PHYS68 j0..28 and adds only j29..36 (16new pairs,76new panels), one common radial beta2 and an explicit summable angular tail. The coefficient is not the full lambda1 nonlinear response. The source/normalizations and PHYS63 qualitative existence remain protected. HH_R10=OFF.
+
+Do not rerun PHYS64 NCP20, completed PHYS66 pilot/smoke, PHYS67 certificates, PHYS68 L28/old Rust runs, PHYS69 j29..36, or PHYS69's two completed VigilODE L28 runs. The new band raw78JSONs are in PHYS69_BAND_PAYLOADS_20261019.zip SHA538e16bb74ff5305584fbe2d42491dda55fdffdde536f9276e038bc48da561f0; restore with scripts/phys69_restore_evidence.py and validate read-only. Even max-new-panels0 rewrites completed band certificate metadata, so do not apply its run/resume command to COMPLETE output. The native resume interface separately reuses complete immutable results.
+
+VigilODE source a21d573980f66fe02891bd216153443b5352f921, num-complex0.4.6 and gauss-quad0.3.2 were actually compiled and applied using Rust1.94.1. Native L64, inherited validated L64 and longtail6 are ready but have no observed new completion receipt; check actual host and backups before launching. NCP gets implemented requests, not solver design. Next PHYS70 derives a fixed-entry all-angular D3/higher-order angular convolution bound, then original source-driven xi, origin/incoming adjoint and sigma(E)/Maxwellian k_HH(T) retain separate obligations. Preserve original proof/source bytes and all historical instructions below. Publish an additive stacked draft; main is not merged.
+
+## Preserved PHYS68 instructions
+
 # Current priority PHYS68: validated finite-L28 Born profiles and D2, 2026-10-19 UTC
 
 Read research/hh_phys68_20261019/REPORT_KO.md, NEXT_DAG.json, CODEX_HANDOFF_PROMPT.md, profiles/run_l28_t65_completed/CERTIFICATE.json, theory/ and publication/ before further work. Actual parent is PR117 HEAD 1a149efeba61a9ffd7ea882bdd86f7ea36c0b78c, tree 43885b4b718ee35bcc96ee842645c6e5ac4a0bd6. Current exact remote identities and backup acknowledgements belong to the new publication receipts, not to an assumed local commit.

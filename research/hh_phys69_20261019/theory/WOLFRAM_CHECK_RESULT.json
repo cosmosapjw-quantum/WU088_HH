@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-10-19T12:33:56.172Z",
+  "code": "Clear[j, r, z, n, LL, xx, tt, BB];\nkk=7/10; aa=(j-1)/kk; rr=(j+1)/kk;\nnu[zz_]:=kk^2+2/zz-j(j+1)/zz^2;\nexponent=2*(j(j+1)/aa^2-2/aa)/kk^2;\ntargetExponent=2+(14j+182)/(49(j-1)^2);\nchecks=<|\n\"nu_anchor\"->Together[nu[aa]+(7j+91)/(100(j-1)^2)],\n\"nu_allowed\"->Together[nu[rr]-189/(100(j+1))],\n\"transition_exponent\"->Together[exponent-targetExponent],\n\"exponent_positive_polynomial\"->Expand[(49j^2-378j-3591)/.j->20+n]-(49n^2+1582n+8449),\n\"mode_lower_endpoint\"->FullSimplify[aa>=27,Assumptions->j>=20],\n\"nu_max_half\"->FullSimplify[kk^2+1/(j(j+1))<=1/2,Assumptions->j>=20]\n|>;\ng=xx^(LL+1)/(1-xx); weighted=Expand[xx D[xx D[g,xx]+g,xx]+xx D[g,xx]+g];\nclosed=xx^(LL+1)*((LL+2)^2/(1-xx)+2(LL+2)xx/(1-xx)^2+xx(1+xx)/(1-xx)^3);\nchecks[\"geometric_tail\"]=FullSimplify[weighted-closed,Assumptions->{Element[LL,Integers],LL>=0,0<xx<1}];\nchecks[\"radial_factor\"]=Integrate[Integrate[Exp[-2(tt-BB)],{tt,r,Infinity}]^2,{r,BB,Infinity},Assumptions->Element[BB,Reals]];\nterms=60; v=41/20; sum=Sum[v^n/n!,{n,0,terms}]; up=sum+(v^terms/terms!)*v/(terms+1)/(1-v/(terms+2));\nchecks[\"exp_rational_upper_below_8\"]=TrueQ[up<8];\nchecks[\"exp_rational_upper_display\"]=N[up,25];\nchecks[\"associated_selection_zero\"]=Integrate[LegendreP[2,1,xx]*LegendreP[4,1,xx]*xx,{xx,-1,1}];\nchecks[\"associated_first_allowed\"]=Integrate[LegendreP[2,1,xx]*LegendreP[4,1,xx]*xx^2,{xx,-1,1}];\nExportString[checks,\"RawJSON\"]",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Symbol::undefined2: Warning: Global symbols \"LL, BB, LL, LL, LL, LL, LL, LL, BB, BB, BB\" are undefined.\nGeneral::messages: Messages were generated which may indicate errors.\n\nOut[1]= \"{\\n\\t\\\"nu_anchor\\\":0,\\n\\t\\\"nu_allowed\\\":0,\\n\\t\\\"transition_exponent\\\":0,\\n\\t\\\"exponent_positive_polynomial\\\":0,\\n\\t\\\"mode_lower_endpoint\\\":true,\\n\\t\\\"nu_max_half\\\":true,\\n\\t\\\"geometric_tail\\\":0,\\n\\t\\\"radial_factor\\\":6.25e-2,\\n\\t\\\"exp_rational_upper_below_8\\\":true,\\n\\t\\\"exp_rational_upper_display\\\":7.767901106306771816244664,\\n\\t\\\"associated_selection_zero\\\":0,\\n\\t\\\"associated_first_allowed\\\":0.7619047619047619\\n}\""
+      }
+    ],
+    "structuredContent": null,
+    "isError": false
+  }
+}

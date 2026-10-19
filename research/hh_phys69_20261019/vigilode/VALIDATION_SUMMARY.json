@@ -1,0 +1,82 @@
+{
+  "schema": "PHYS69_VIGILODE_VALIDATION_SUMMARY_V1",
+  "timestamp_utc": "2026-10-19T13:03:20.425898+00:00",
+  "source_pin": "a21d573980f66fe02891bd216153443b5352f921",
+  "engine_sha256": {
+    "native/phys69_vigilode/Cargo.toml": "88345aa9528d38898046871e79396ea286c6f3a7641ce80d7179b14c65fd2265",
+    "native/phys69_vigilode/Cargo.lock": "cfe49e974d77fd04dca94709b78ba23f4f11d964844b3d6df258bacfcfc1ba0e",
+    "native/phys69_vigilode/src/lib.rs": "d0f86cf84de9d4437c742fe7518f9ecd88891236987f3a28bb790eb876f0d211",
+    "native/phys69_vigilode/src/main.rs": "68350797f5b81062fd81a6cecf230739895a8e178947e9de9c79555a1ecd48bf",
+    "scripts/phys69_vigilode.py": "28e9d65eec7bd3a7a82d9a87a830d965c45001b39f1f7224c8a021a39179f2b3"
+  },
+  "binary_sha256": "1ccc69012f39b7e303359a177f80f5bf7038fb371b6d8a0acd3659c5e2c7c481",
+  "python_distinct_tests_passed": 25,
+  "python_initial_fixture_failure": 1,
+  "python_targeted_corrected_test_passed": 1,
+  "rust_new_kernel_tests_passed": 7,
+  "native_physical_integrations_completed": 2,
+  "completed_campaigns_rerun": 0,
+  "resume_existing_results_reused": 2,
+  "resume_new_integrations": 0,
+  "failed_compilation_attempts_before_recovery": 2,
+  "failed_attempt_reason": "ENOSPC; no Rust tests or physical integration started in these attempts",
+  "l28_seed_generation": 0,
+  "reference_certificate_regeneration": 0,
+  "results": [
+    {
+      "directory": "run_l28_rtol1e10_recovery2",
+      "status": "COMPLETED_NATIVE_APPLICATION",
+      "rtol": 1e-10,
+      "atol": 1e-12,
+      "D2_stored_binary64": {
+        "imag": 3.200163222549467e-48,
+        "real": 7.017743632541892e-48
+      },
+      "F_B_normalization_drift": 1.7202652031001174e-11,
+      "attempts": 883,
+      "accepted_steps": 883,
+      "rejected_steps": 0,
+      "integration_elapsed_seconds": 4.312257911,
+      "analytic_jvp_vectors": 296688,
+      "assembled_jacobians": 0,
+      "direct_factorizations": 0,
+      "true_error_upper_display_approximate": "3.66797076136461845730996189559E-58",
+      "true_relative_error_upper_display_approximate": "4.75559343575045880424696294277E-11",
+      "result_sha256": "7b7801bfbeaa04725cd7688c015aed1c28c17363e6ba4ad694ca07ceeb00771f",
+      "comparison_sha256": "4f0044d15919259617cab384a18f2c79ad60e7f91a4cf84d0ba9f329ce9f7050",
+      "execution_sha256": "0283f96ebf7bcb01b6934cbd2cda79ce7eeed18a584b954badac2049df03d143"
+    },
+    {
+      "directory": "run_l28_rtol1e12",
+      "status": "COMPLETED_NATIVE_APPLICATION",
+      "rtol": 1e-12,
+      "atol": 1e-14,
+      "D2_stored_binary64": {
+        "imag": 3.200163222306804e-48,
+        "real": 7.017743632813095e-48
+      },
+      "F_B_normalization_drift": 2.4472941954814824e-13,
+      "attempts": 2277,
+      "accepted_steps": 2277,
+      "rejected_steps": 0,
+      "integration_elapsed_seconds": 10.309391728,
+      "analytic_jvp_vectors": 765072,
+      "assembled_jacobians": 0,
+      "direct_factorizations": 0,
+      "true_error_upper_display_approximate": "2.91188951117485919458538585253E-60",
+      "true_relative_error_upper_display_approximate": "3.77531980102859423032691084552E-13",
+      "result_sha256": "442133d52c371213024608c9752f38263c8eae33d1ce885f6d0eba2d76266faf",
+      "comparison_sha256": "6341cfa8d320ea94a4b27f676e3d13aa0dc8b4055689562d3b3358a720f64b23",
+      "execution_sha256": "f10c263e814aaa979f38699fbc0843a4febd5d1d806543157daa3c3c73cd0ece"
+    }
+  ],
+  "L64_native_request": "NOT_RUN",
+  "derivation": "DONE_ORIGINAL_ODE_EXACT_TIME_REVERSAL_AND_SCALING_ANALYTIC_JVP_TIME_PARTIAL",
+  "code": "IMPLEMENTED_AND_FROZEN_AT_RECORDED_ENGINE_HASHES",
+  "local_validation": "COMPLETED",
+  "publication": "SEE_TOP_LEVEL_DELIVERY_AND_REMOTE_READBACK",
+  "backup": "SEE_TOP_LEVEL_DELIVERY_AND_BACKUP_RECEIPTS",
+  "uniform_integrator_certificate": false,
+  "stored_native_value_error_bound": "DEDUCED_FROM_PREEXISTING_PINNED_PHYS68_CERTIFICATE_USING_EXACT_RATIONAL_ARITHMETIC",
+  "HH_R10": "OFF"
+}

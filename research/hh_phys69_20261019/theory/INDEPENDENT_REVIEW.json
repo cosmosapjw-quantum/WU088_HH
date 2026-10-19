@@ -1,0 +1,152 @@
+{
+  "schema": "WU088_HH_PHYS69_INDEPENDENT_MATH_REVIEW_V1",
+  "status": "PASS_SCOPED_MATHEMATICS",
+  "reviewer": "/root/phys69_github_intake",
+  "reviewed_candidate_author": "/root",
+  "recorded_utc": "2026-10-19T12:44:05.584818+00:00",
+  "exact_statement": {
+    "physics": "Original atomic B27,k7/10,E49/200,V=2(1+1/d)exp(-2d), d=|x-0.7zhat|, Hplus=G+iF, Z=+uprime/ u",
+    "channel_quantifiers": "Any fixed signed m, |m|<=min(ell,p),0<=ell,p<=64; integer L>=max(ell,p,19)",
+    "Coulomb_ratio": "For every integer j>=20, every B<=r<=t: |Hplus_j(t)/Hplus_j(r)| <= (800/189)*(j+1)",
+    "target": "Actual all-angular outgoing DtN lambda^2 coefficient D2=Z_second_derivative_at_lambda0/2, with full radial domain",
+    "new_angular_bound": "Gamma_ext/16*(800/189)^2*(4M/9)^2*10^(ell+p+2)*S_L(1/100), M=1/(4*10^19)",
+    "external_ratio_presets": {
+      "ell_p_at_most_28": "5929",
+      "ell_p_at_most_64": "32400"
+    }
+  },
+  "review_methods": [
+    "Independent energy and real Gram transfer derivation for arbitrary integer j",
+    "Exact angular polynomial selection plus multiplication-norm bound for all signed m",
+    "Accepted PHYS63 weighted LAP and bounded coupling-Neumann map: actual DtN coefficient identification",
+    "Independent Dirichlet Green kernel W=-1, derivative-jump=-1 and d_B G=+f",
+    "Absolute triple-integral/Fubini and polynomial-geometric infinite sum",
+    "Exact scalar standard-library Fraction computation without importing solver code"
+  ],
+  "findings": [
+    {
+      "id": "M1",
+      "topic": "uniform versus modewise Coulomb constant",
+      "status": "RESOLVED",
+      "resolution": "Polynomial C_j retained explicitly; no Gamma_infinity assertion."
+    },
+    {
+      "id": "M2",
+      "topic": "identification as actual DtN coefficient",
+      "status": "RESOLVED",
+      "resolution": "H_s spaces, R0:H1->H-1, V:H-1->H1, local analytic lambda family and Green formula establish D2."
+    },
+    {
+      "id": "M3",
+      "topic": "compactness",
+      "status": "RESOLVED",
+      "resolution": "V is a bounded multiplier, not compact; R0 V is compact via local smoothing, intermediate weight and source tail. Boundedness alone suffices for local coupling analyticity."
+    },
+    {
+      "id": "M4",
+      "topic": "sign, complex transpose and derivative normalization",
+      "status": "RESOLVED",
+      "resolution": "Kernel sign plus, incoming adjoint produces outgoing bilinear product, ordinary second derivative equals2D2."
+    },
+    {
+      "id": "M5",
+      "topic": "old L28 plus new j29..36 composition",
+      "status": "RESOLVED",
+      "resolution": "Use exact common-T decomposition, old numerical radius alone, new band numerical radius, one beta2(Gamma64) and angular tailL36. Exact dyadic midpoint addition avoids extra roundoff."
+    }
+  ],
+  "remaining_blocking_math_findings": [],
+  "band_adoption_contract": {
+    "new_profiles": "q21j^T,q20j^T for each j29..36:16profiles",
+    "retained_old_work": "PHYS68 full j0..28 57profiles/76panels and cutoff D2 result are reused, not recomputed",
+    "error_sum": "e_num28 + e_num_band + e_add + beta2(Gamma64,T65) + angular_tailL36",
+    "old_numerical_field": "D2_numerical_absolute_error_l1",
+    "old_full_radial_total_not_to_add_again": true,
+    "new_band_execution_required": true,
+    "certified_actual_new_band": false
+  },
+  "numerical_check": {
+    "status": "PASS_EXACT_SCALAR_CHECKS",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "receipt": "INDEPENDENT_EXACT_CHECKS.json",
+    "program": "independent_arithmetic.py",
+    "historical_tests_rerun": 0,
+    "Coulomb_evaluations": 0,
+    "radial_integrations": 0,
+    "native_runs": 0
+  },
+  "primary_sources_read": [
+    {
+      "url": "https://dlmf.nist.gov/33.2",
+      "sections": "33.2.1,33.2.11,33.2.12",
+      "web_ref": "turn21view0"
+    },
+    {
+      "url": "https://dlmf.nist.gov/33.11",
+      "sections": "33.11.1 fixed-j asymptotic",
+      "web_ref": "turn21view1"
+    },
+    {
+      "url": "https://arxiv.org/html/1804.07874v1",
+      "sections": "Theorem1.7,Corollaries1.9/1.10",
+      "web_refs": [
+        "turn22view0",
+        "turn23view0",
+        "turn23view1"
+      ]
+    },
+    {
+      "url": "https://github.com/chebfun/ATAP/blob/development/chap8.m",
+      "sections": "Theorems8.1/8.2",
+      "web_ref": "turn23view2"
+    }
+  ],
+  "PHYS63_source_copy_git_blob": "df68533dd0d04f466df9d08714fd4e218261c534",
+  "NG1_NG7": {
+    "new_no_go_claim": false,
+    "NG1": "Quantifiers, function spaces, physical operator, coupling and boundary conventions stated.",
+    "NG2": "Complete nontrivial energy/transfer, analytic coupling, Green and infinite-sum proofs.",
+    "NG3": "Original noncentral analytic screened potential is an admissible nonvacuous model.",
+    "NG4": "Constructive control mechanism: polynomial mode growth times geometric angular off-diagonal decay. No impossibility mechanism claimed.",
+    "NG5": "Selects new j29..36 band sufficient to target1e-62 without old recomputation.",
+    "NG6": "Primary sources checked2026-10-19; new source-specific quantitative composition, no general-LAP/Chebyshev novelty claim.",
+    "NG7": "Separate agent independently derived and checked candidate; no sharpness or optimality asserted."
+  },
+  "states": {
+    "derivation": "PASS_SCOPED_MATHEMATICS",
+    "implementation_review": "NOT_PERFORMED_BY_THIS_REVIEW",
+    "new_band_execution": "NOT_CLAIMED",
+    "publication": "ROOT_DELIVERY_PENDING",
+    "backup": "ROOT_DELIVERY_PENDING",
+    "DAG": "Root may close scoped second-order angular bound; higher all-order/source nodes remain separate"
+  },
+  "preserved": {
+    "PHYS63_qualitative_existence": "ESTABLISHED_REUSED",
+    "HH_R10": "OFF",
+    "original_source_driven_xi": "OPEN",
+    "all_angular_full_nonlinear_remainder": "OPEN",
+    "lambda_1_neumann_radius": "NOT_CLAIMED"
+  },
+  "artifact_files": {
+    "INDEPENDENT_REVIEW.md": {
+      "size_bytes": 20542,
+      "sha256": "45d48d67c163a7dd501e9c49cc7963280ec1a43fb637e8641280d19d26c73eec"
+    },
+    "independent_arithmetic.py": {
+      "size_bytes": 4970,
+      "sha256": "3b158df39f0f06646882afdbdcd17e0143743d6af0d3e9290fe76fcc15e5c3b8"
+    },
+    "INDEPENDENT_EXACT_CHECKS.json": {
+      "size_bytes": 3340,
+      "sha256": "9b5e619f5457e7bc5238328687ed9cd92e2342e94fc321db3744aa8d8b981481"
+    },
+    "inputs/PHYS63_REPORT_KO.md": {
+      "size_bytes": 9590,
+      "sha256": "ca2d0cdb729181e9350c187a3f72d03a94faa09363114fe4fcb30f76b2f6db0c"
+    },
+    "inputs/PHYS63_REPORT_SOURCE.json": {
+      "size_bytes": 527,
+      "sha256": "1bf3f6a39ae501f2d036a2021b6ec43804b4bb9d780a40030f49639cccc699c3"
+    }
+  }
+}
