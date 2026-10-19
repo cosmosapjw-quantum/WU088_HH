@@ -1,0 +1,150 @@
+{
+  "schema": "PHYS68_DUAL_CLOUD_BACKUP_ACK_V1",
+  "unit": "PHYS68",
+  "record_created_utc": "2026-10-19T10:20:04.113Z",
+  "source": {
+    "filename": "WU088_HH_PHYS68_SOURCE_AND_EVIDENCE_20261019.zip",
+    "bytes": 6546827,
+    "sha256": "9843e924955c9a522921d7b3a297e684ea2305fb7ea40be7bc6df55f7156b483",
+    "local_md5": "72a828fda25653e1367ca439f41d21f5",
+    "science_PR": 118,
+    "science_commit_prefix": "489ef7d"
+  },
+  "authorization": "User has explicitly authorized create-only GitHub/Drive/Dropbox backup in the persistent session; exact source and destinations are fixed.",
+  "precheck": {
+    "dropbox": {
+      "path": "/WU088_HH/WU088_HH_PHYS68_SOURCE_AND_EVIDENCE_20261019.zip",
+      "status": "NOT_FOUND",
+      "tool_content": [
+        {
+          "type": "text",
+          "text": "[NOT_FOUND] Not found (reason: NOT_FOUND)"
+        }
+      ]
+    },
+    "drive": {
+      "folder_id": "1M_5fcGBevapsN-3RpXq-wimMq2uqrusG",
+      "direct_children_observed": 24,
+      "exact_filename_matches": 0
+    }
+  },
+  "Dropbox": {
+    "status": "REJECTED_PARENT_NOT_FOLDER",
+    "upload_attempts": 1,
+    "requested_destination": "/WU088_HH/WU088_HH_PHYS68_SOURCE_AND_EVIDENCE_20261019.zip",
+    "upload_ack": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[INVALID_ARGUMENT] Parent is not a folder (reason: PARENT_NOT_FOLDER)"
+        }
+      ],
+      "structuredContent": {
+        "error_code": "INVALID_ARGUMENT"
+      },
+      "isError": true
+    },
+    "completion_ack": false,
+    "object_id": null,
+    "provider_size": null,
+    "provider_revision": null,
+    "provider_checksum": null,
+    "diagnostics": {
+      "current_plain_parent_metadata": {
+        "content": [
+          {
+            "type": "text",
+            "text": "[NOT_FOUND] Not found (reason: NOT_FOUND)"
+          }
+        ],
+        "structuredContent": {
+          "error_code": "INVALID_ARGUMENT"
+        },
+        "isError": true
+      },
+      "current_plain_parent_direct_listing": {
+        "content": [
+          {
+            "type": "text",
+            "text": "[NOT_FOUND] File or Folder is not found (reason: FILE_NOT_FOUND)"
+          }
+        ],
+        "structuredContent": {
+          "error_code": "INVALID_ARGUMENT"
+        },
+        "isError": true
+      },
+      "current_previous_canonical_namespace_parent": "ns:183516487//WU088_HH",
+      "current_canonical_parent_metadata": {
+        "content": [
+          {
+            "type": "text",
+            "text": "[NOT_FOUND] Not found (reason: NOT_FOUND)"
+          }
+        ],
+        "structuredContent": {
+          "error_code": "INVALID_ARGUMENT"
+        },
+        "isError": true
+      },
+      "previous_PHYS67_file_id": "id:BSpOijBcT10AAAAAAD_Pqg",
+      "current_previous_PHYS67_file_metadata": {
+        "content": [
+          {
+            "type": "text",
+            "text": "[NOT_FOUND] Not found (reason: NOT_FOUND)"
+          }
+        ],
+        "structuredContent": {
+          "error_code": "INVALID_ARGUMENT"
+        },
+        "isError": true
+      },
+      "prior_intake_observed_utc": "2026-10-19T07:55:45.844Z",
+      "prior_intake_folder_listing_succeeded_with_children": 23,
+      "interpretation": "Current calls cannot resolve the previously readable authorized parent or its known prior object ID. No verified corrected same-destination path is available; the rejected upload was not retried. These tool results do not establish provider-side deletion or identify the cause."
+    },
+    "content_readback_performed": false
+  },
+  "Google_Drive": {
+    "status": "UNKNOWN_NO_UPLOAD_ACK_AFTER_INTERRUPTION",
+    "upload_attempts": 1,
+    "requested_filename": "WU088_HH_PHYS68_SOURCE_AND_EVIDENCE_20261019.zip",
+    "requested_parent_folder_id": "1M_5fcGBevapsN-3RpXq-wimMq2uqrusG",
+    "started_utc": "2026-10-19T10:20:35.603Z",
+    "upload_tool_outcome": {
+      "message": "aborted by user after 175.6s",
+      "response_returned": false,
+      "elapsed_seconds_reported": 175.6,
+      "interruption_requested_by_parent_due_to_hang": true
+    },
+    "completion_ack": false,
+    "object_id": null,
+    "provider_size": null,
+    "provider_revision": null,
+    "provider_checksum": null,
+    "read_only_post_interruption_reconciliation": {
+      "readback_utc": "2026-10-19T10:24:56.709Z",
+      "tool": "google_drive_list_folder",
+      "exact_folder_only": true,
+      "top_k": 100,
+      "direct_children_observed": 24,
+      "exact_filename_matches": [],
+      "readback_is_error": false,
+      "interpretation": "No exact-name object was observed in the target folder at this readback. The interrupted underlying upload may have an unknown or later outcome; this is not proof of failure or non-completion."
+    },
+    "older_PHYS67_uploads": "UNRESOLVED_PRIOR_OUTCOMES_NOT_RETRIED",
+    "further_upload_retries": 0,
+    "content_readback_performed": false
+  },
+  "NCP_calls": 0,
+  "scientific_runs": 0,
+  "record_updated_utc": "2026-10-19T10:24:56.709Z",
+  "overall_status": "DUAL_CLOUD_BACKUP_NOT_CONFIRMED",
+  "scope_notes": [
+    "Local source archive SHA256/size/MD5 were checked; there is no new provider content readback hash claim.",
+    "Dropbox returned an explicit rejected request, not a completed or pending operation token.",
+    "Drive returned no upload receipt; preserve UNKNOWN and reconcile read-only before any future upload.",
+    "Science, Git publication and Library deliverables are independent of these provider outcomes."
+  ]
+}

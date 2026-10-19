@@ -1,6 +1,6 @@
 {
   "schema": "WU088_HH_PHYS68_NEXT_DAG_V1",
-  "updated_utc": "2026-10-19T10:08:16.329137+00:00",
+  "updated_utc": "2026-10-19T10:26:12.175204+00:00",
   "unit": "PHYS68",
   "scope": "Validated finite-L28 original second Born coefficient and reusable two-row radial profiles; complete optional L64 execution implementation.",
   "HH_R10": "OFF",
@@ -68,19 +68,27 @@
       "candidate_new_receipts_in_scanned_backups": 0
     },
     "publication": {
-      "status": "PENDING_ACTUAL_ACK_AT_SCIENCE_FREEZE",
+      "status": "POSTED_READBACK_VERIFIED",
       "target_branch": "research/hh-phys68-validated-born-profiles-20261019",
-      "actual_PHYS68_commit": null,
-      "actual_PR": null,
-      "current_receipt_authority": "publication/; later acknowledged publication metadata supersedes this pending science-freeze status"
+      "actual_PHYS68_commit": "489ef7dee76231fcaf3c890d8706a2614ff69fe9",
+      "actual_PR": 118,
+      "current_receipt_authority": "publication/SCIENCE_REMOTE.json; subsequent metadata-only commit identity is recorded in final external DELIVERY",
+      "actual_science_tree": "e3da286066c382bcd3362acd25540f99075db525",
+      "actual_PR_url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/118",
+      "science_reruns_during_publication": 0
     },
     "backup": {
-      "new_PHYS68": "PENDING_ACTUAL_ACK_AT_SCIENCE_FREEZE",
-      "Dropbox": null,
-      "Google_Drive": null,
-      "receipt_authority": "publication/; actual provider acknowledgements only",
-      "old_PHYS67_Dropbox": "CONFIRMED_UNCHANGED_METADATA_AND_INDEPENDENTLY_RECOVERED_ARCHIVE_BYTES",
-      "old_PHYS67_Google_Drive": "PREVIOUS_UPLOAD_OUTCOMES_UNRESOLVED"
+      "new_PHYS68": "DUAL_CLOUD_BACKUP_NOT_CONFIRMED",
+      "Dropbox": "REJECTED_PARENT_NOT_FOLDER",
+      "Google_Drive": "UNKNOWN_NO_UPLOAD_ACK_AFTER_INTERRUPTION",
+      "receipt_authority": "publication/BACKUP_ACK.json",
+      "old_PHYS67_Dropbox": "VERIFIED_AT_INTAKE_CURRENT_LOOKUP_UNRESOLVED",
+      "old_PHYS67_Google_Drive": "PREVIOUS_UPLOAD_OUTCOMES_UNRESOLVED",
+      "local_capsule": "PASS_MANIFEST_HASH_SIZE_IMPORT_ONLY",
+      "source_capsule_sha256": "9843e924955c9a522921d7b3a297e684ea2305fb7ea40be7bc6df55f7156b483",
+      "supplemental_git_bundle": "PASS_INCREMENTAL_BUNDLE",
+      "supplemental_git_bundle_sha256": "36e1b6a62c1e6bf137f66becb0fe5962c05030e38049b61a89902e26040b0be8",
+      "old_PHYS67_Dropbox_scope": "Earlier intake observed unchanged metadata and independently recovered matching archive bytes; current old-folder/old-object lookup returns NOT_FOUND without establishing deletion."
     },
     "exact_requested_PHYS66_artifact": "BLOCKED_ARTIFACT_ACCESS_EXACT_FINAL_VERSION"
   },
@@ -232,11 +240,15 @@
         "ncp_delivery/REQUEST_L64.json",
         "ncp_delivery/README_KO.md",
         "ncp_delivery/PREFLIGHT_EXECUTION.json",
-        "ncp_delivery/TEST_EXECUTION.json"
+        "ncp_delivery/TEST_EXECUTION.json",
+        "ncp_delivery/CAPSULE_BUILD_RECEIPT.json",
+        "ncp_delivery/CAPSULE_RESTORE_RECEIPT.json"
       ],
       "preflight_request_fingerprint": "2b46ed3d8032ff63ff6a62a3a26d9b73765bf38650395ff91dfd1e9fa5495140",
       "actual_NCP_submissions": 0,
-      "actual_NCP_radial_runs": 0
+      "actual_NCP_radial_runs": 0,
+      "capsule_sha256": "b31f72af3101c71fb69036421bbe3542f40e7efca15d391878d5bd47eb0e9580",
+      "clean_restore": "PASS_HASH_IMPORT_HELP_REQUEST_BINDING"
     },
     {
       "id": "EXCLUDED_ANGULAR_HIGHER_ORDER_RESPONSE",
