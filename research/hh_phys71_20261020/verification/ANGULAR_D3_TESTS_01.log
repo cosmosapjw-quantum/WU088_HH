@@ -1,0 +1,31 @@
+test_asymptotic_convolution_matches_finite_plus_exact_tail (test_phys71_angular_d3.ThirdBornAngularTests.test_asymptotic_convolution_matches_finite_plus_exact_tail) ... FAIL
+test_complete_double_sum_symmetry_and_finite_block (test_phys71_angular_d3.ThirdBornAngularTests.test_complete_double_sum_symmetry_and_finite_block) ... ok
+test_exact_certificate (test_phys71_angular_d3.ThirdBornAngularTests.test_exact_certificate) ... ok
+test_geometric_moments_satisfy_translation_identity (test_phys71_angular_d3.ThirdBornAngularTests.test_geometric_moments_satisfy_translation_identity) ... ok
+test_invalid_inputs (test_phys71_angular_d3.ThirdBornAngularTests.test_invalid_inputs) ... ok
+test_one_sided_tail_difference_all_transition_cases (test_phys71_angular_d3.ThirdBornAngularTests.test_one_sided_tail_difference_all_transition_cases) ... FAIL
+test_polynomial_tail_difference (test_phys71_angular_d3.ThirdBornAngularTests.test_polynomial_tail_difference) ... ok
+test_radial_factor_and_no_factorial (test_phys71_angular_d3.ThirdBornAngularTests.test_radial_factor_and_no_factorial) ... ok
+test_screen_and_ratio_constants (test_phys71_angular_d3.ThirdBornAngularTests.test_screen_and_ratio_constants) ... ok
+test_symmetry_monotonicity_and_goal (test_phys71_angular_d3.ThirdBornAngularTests.test_symmetry_monotonicity_and_goal) ... ok
+
+======================================================================
+FAIL: test_asymptotic_convolution_matches_finite_plus_exact_tail (test_phys71_angular_d3.ThirdBornAngularTests.test_asymptotic_convolution_matches_finite_plus_exact_tail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/455b0ba5bd64/WU088_HH/tests/test_phys71_angular_d3.py", line 48, in test_asymptotic_convolution_matches_finite_plus_exact_tail
+    self.assertEqual(d3.inner_convolution(j, b), d3.power10(-j)*polynomial)
+AssertionError: Fraction(39364454679589808802226999999999999999999[140 chars]0000) != Fraction(19958910573603780880222699999999999999999[141 chars]0000)
+
+======================================================================
+FAIL: test_one_sided_tail_difference_all_transition_cases (test_phys71_angular_d3.ThirdBornAngularTests.test_one_sided_tail_difference_all_transition_cases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/455b0ba5bd64/WU088_HH/tests/test_phys71_angular_d3.py", line 56, in test_one_sided_tail_difference_all_transition_cases
+    self.assertEqual(d3.one_sided_tail(cutoff, a, b)-d3.one_sided_tail(cutoff+1, a, b),
+AssertionError: Fraction(19958910573603780880222699999999999999999[163 chars]0000) != Fraction(39364454679589808802226999999999999999999[162 chars]0000)
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.218s
+
+FAILED (failures=2)

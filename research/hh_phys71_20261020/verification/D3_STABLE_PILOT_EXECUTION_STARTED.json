@@ -1,0 +1,37 @@
+{
+  "HH_R10": "OFF",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "scripts/phys71_ncp.py",
+    "--run",
+    "--out",
+    "/workspace/scratch/455b0ba5bd64/WU088_HH/research/hh_phys71_20261020/d3/run_l36_t65_stable_errors",
+    "--low-archive",
+    "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019/research/hh_phys68_20261019/profiles/PROFILE_PANEL_PAYLOADS_20261019.zip",
+    "--band-archive",
+    "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019/archives/PHYS69_BAND_PAYLOADS_20261019.zip",
+    "--timeout",
+    "300",
+    "--memory-gib",
+    "4",
+    "--request",
+    "research/hh_phys71_20261020/ncp_delivery/REQUEST_D3_L36.json",
+    "--max-new-panels",
+    "1"
+  ],
+  "cwd": "/workspace/scratch/455b0ba5bd64/WU088_HH",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "/workspace/scratch/455b0ba5bd64/phys71-python:/workspace/scratch/455b0ba5bd64/WU088_HH/src",
+    "PYTHONUNBUFFERED": "1"
+  },
+  "phase": "stable_pilot",
+  "schema": "PHYS71_ACTUAL_INVOCATION_V1",
+  "source_sha256": {
+    "scripts/phys71_ncp.py": "793096fb95d4cc1e5d3c6bfe470a07a1843d1260d68ea07e325a0a5cdd304391",
+    "src/wu088_hh/phys71_campaign.py": "f99cec09e922083f45a46a210e7873a2b05c573d6a9a3f152652d946de9062b2",
+    "src/wu088_hh/phys71_d3.py": "8e0cd89475546b50157ba1c23c51cef0c5f88ec5f774f6ffd984c833464fc815"
+  },
+  "started_utc": "2026-10-20T05:50:04.063768+00:00"
+}

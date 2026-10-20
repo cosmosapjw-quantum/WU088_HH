@@ -1,0 +1,85 @@
+{
+  "schema": "PHYS71_PRIMARY_SOURCE_AND_REUSE_MAP_V1",
+  "created_utc": "2026-10-20T05:54:22.806817+00:00",
+  "sources": [
+    {
+      "id": "NIST_DLMF_33_2",
+      "url": "https://dlmf.nist.gov/33.2",
+      "use": "Coulomb differential equation, outgoing G+iF_C convention and normalization background",
+      "local_retrieval": "theory/PRIMARY_WEB_READ.json",
+      "source_type": "primary_official_reference",
+      "new_HH_theorem_proved_by_source": false
+    },
+    {
+      "id": "JOHANSSON_ARB",
+      "url": "https://arxiv.org/abs/1611.02831",
+      "use": "Arbitrary-precision ball arithmetic; algebraic uncertainty enclosure",
+      "local_retrieval": "theory/SCISPACE_ARB.json",
+      "source_type": "primary_author_paper",
+      "actual_runtime": "python-flint0.8.0 / FLINT3.3.1"
+    },
+    {
+      "id": "JOHANSSON_INTEGRATION",
+      "url": "https://arxiv.org/abs/1802.07942",
+      "use": "Rigorous numerical integration background; distinguish analytic remainder and arithmetic enclosure",
+      "source_type": "primary_author_paper",
+      "algorithm_claim": "Existing local Taylor/Cauchy construction reused; no acb_calc_integrate call is claimed."
+    },
+    {
+      "id": "FLINT_ACB_CALC",
+      "url": "https://flintlib.org/doc/acb_calc.html",
+      "use": "Official complex analytic integration conventions",
+      "local_retrieval": "theory/PRIMARY_ARB_READ.json",
+      "retrieval": "Exa get_contents succeeded; separate web open403 preserved as a failed read"
+    },
+    {
+      "id": "PYTHON_FLINT",
+      "url": "https://python-flint.readthedocs.io/en/latest/",
+      "use": "Official interface background",
+      "version_scope": "Latest documentation is background only; actual wheel/runtime pinned0.8.0."
+    }
+  ],
+  "external_searches": {
+    "SciSpace": "Focused Arb search produced relevant primary paper; initial broad exploratory output not relied on.",
+    "Exa": "Arb primary-source discovery and official documentation retrieval.",
+    "Wolfram": "Actual differential identity/scalar/radial/angular checks; first rR token error and corrected explicit multiplication are both retained."
+  },
+  "reused_project_evidence": [
+    {
+      "unit": "PHYS63",
+      "status": "ESTABLISHED_REUSED",
+      "scope": "actual all-angular qualitative LAP/Poisson/DtN"
+    },
+    {
+      "unit": "PR114_PHYS65",
+      "scope": "finiteL<=64 Coulomb ratio on every realr>=27; no excludedangular or f64 certificate"
+    },
+    {
+      "unit": "PR115_PHYS66",
+      "scope": "order-specific beta3 finiteL<=64 radial cutoff; exact exponential audit certifies PR115 printed upward endpoint1.48432231489e-79; original summary1.484322e-79 was inward and rejected"
+    },
+    {
+      "unit": "PHYS68_PHYS69",
+      "scope": "152 saved q-profile payloads, old uncertainty preserved; previous integrals replayed0"
+    },
+    {
+      "unit": "PHYS69",
+      "scope": "all-angular all-radial D2(21,20),m0 complete"
+    },
+    {
+      "unit": "PHYS70",
+      "scope": "complete pinned VigilODE/Rust exact block inverse/SIMD/parallel runner remains unchanged;31 completed performance integrations replayed0"
+    }
+  ],
+  "new_constructive_results": [
+    "D3 bilinear forward-response identity",
+    "all-angular D3 double convolution and exact infinite tail sum",
+    "73-moment finite angular contraction",
+    "projected weighted coefficient-error separation",
+    "bounded immutable panel campaign and complete read-only resume"
+  ],
+  "related_new_results": "VigilODE/BASS_HE/REI/REC deltas in intake are not HH completion receipts and are not used to certify HH.",
+  "strong_no_go_claim": false,
+  "novelty_claim": false,
+  "HH_R10": "OFF"
+}
