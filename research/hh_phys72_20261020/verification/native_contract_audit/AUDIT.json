@@ -1,0 +1,185 @@
+{
+  "schema": "PHYS72_NATIVE_CONTRACT_AUDIT_V1",
+  "scope": "six malformed CLI tokens, returned scope/input contract, one rounded denominator branch",
+  "audit_source_sha256": "1670cccb7d640a3af8b45d16e0369a03034a09f984a85283a4fcc4baa057b95c",
+  "runner_sha256": "2a9965c90ffbf7df01627b1e744821b26b0d98ff8ff379cb59f1eb7a6978df5a",
+  "native_source_sha256": "dcde24319db227201ec8654623731077319d2bd08ec75a8569623a6ad047212d",
+  "binary_sha256": "c817b9fb78b5748fefba40a69434f1f88b4479cbcb7e2c4fdbdfec2bed131771",
+  "valid_result_sha256": "367ed91829dd55ebc8764430f7fdb861c3b17541454e5d46e74ff072d3f8cb74",
+  "checks": [
+    {
+      "check": "accept_actual_corrected_default_payload",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_whole_invalid_cli_token",
+      "arguments": [
+        "1 2",
+        "3"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0016671420016791672,
+      "stdout": "",
+      "stderr": "STOP 2\n",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_whole_invalid_cli_token",
+      "arguments": [
+        "1/",
+        "3"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0013277289981488138,
+      "stdout": "",
+      "stderr": "STOP 2\n",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_whole_invalid_cli_token",
+      "arguments": [
+        "/",
+        "3"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0010289860001648776,
+      "stdout": "",
+      "stderr": "STOP 2\n",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_whole_invalid_cli_token",
+      "arguments": [
+        "1",
+        "3 4"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0010870539990719408,
+      "stdout": "",
+      "stderr": "STOP 2\n",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_whole_invalid_cli_token",
+      "arguments": [
+        "1",
+        "3/"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0012683390013989992,
+      "stdout": "",
+      "stderr": "STOP 2\n",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_whole_invalid_cli_token",
+      "arguments": [
+        "1",
+        "/"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.000928123998164665,
+      "stdout": "",
+      "stderr": "STOP 2\n",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_inconsistent_payload",
+      "mutated_field": "schema",
+      "replacement": "OTHER_SCHEMA",
+      "error": "native schema does not match the requested contract",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_inconsistent_payload",
+      "mutated_field": "certified",
+      "replacement": true,
+      "error": "native result must declare certified:false",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_inconsistent_payload",
+      "mutated_field": "HH_R10",
+      "replacement": "ON",
+      "error": "native HH_R10 does not match the requested contract",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_inconsistent_payload",
+      "mutated_field": "terms_retained",
+      "replacement": 4,
+      "error": "native terms_retained does not match the requested contract",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_inconsistent_payload",
+      "mutated_field": "physical_integrations",
+      "replacement": 1,
+      "error": "native physical_integrations does not match the requested contract",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_inconsistent_payload",
+      "mutated_field": "lambda_abs_decimal_input",
+      "replacement": "2",
+      "error": "native lambda_abs_decimal_input does not match the requested contract",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_inconsistent_payload",
+      "mutated_field": "lambda_abs_rounded",
+      "replacement": "2",
+      "error": "native rounded lambda does not match the sent decimal",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_inconsistent_payload",
+      "mutated_field": "q_formula_rounded",
+      "replacement": "NaN",
+      "error": "native q_formula_rounded must be one nonnegative decimal token",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_inconsistent_payload",
+      "mutated_field": "contraction_rounded",
+      "replacement": "1",
+      "error": "native finite-tail branch requires rounded rho < 1",
+      "status": "PASS"
+    },
+    {
+      "check": "reject_inconsistent_payload",
+      "mutated_field": "tail_formula_rounded",
+      "replacement": null,
+      "error": "native tail_formula_rounded must be one nonnegative decimal token",
+      "status": "PASS"
+    },
+    {
+      "check": "rounded_nonpositive_denominator_has_no_tail",
+      "status": "PASS",
+      "arguments": [
+        "1e30",
+        "3"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.0011887689979630522,
+      "stdout": "{\n  \"schema\": \"PHYS72_FORTRAN_ROUNDED_CROSSCHECK_V1\",\n  \"status\": \"NONPOSITIVE_ROUNDED_DENOMINATOR\",\n  \"certified\": false,\n  \"certificate_authority\": \"Python exact Fraction evaluator\",\n  \"q_formula_rounded\": \"5.5331099999999999999999999999999998388E-0021\",\n  \"lambda_abs_decimal_input\": \"1e30\",\n  \"lambda_abs_rounded\": \"1.0000000000000000000000000000000000000E+0030\",\n  \"contraction_rounded\": \"5.5331100000000000000000000000000000000E+0009\",\n  \"tail_formula_rounded\": null,\n  \"terms_retained\": 3,\n  \"real_significand_bits\": 113,\n  \"real_decimal_range\": 4931,\n  \"physical_integrations\": 0,\n  \"HH_R10\": \"OFF\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "check": "actual_runner_rejects_inconsistent_existing_binary_payload",
+      "status": "PASS",
+      "runner_exit_code": 2,
+      "receipt": "inconsistent_binary/EXECUTION.json",
+      "fixture_source": "#!/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3\nprint('{\"schema\": \"PHYS72_FORTRAN_ROUNDED_CROSSCHECK_V1\", \"status\": \"FINITE_ROUNDED_CROSSCHECK\", \"certified\": false, \"certificate_authority\": \"Python exact Fraction evaluator\", \"q_formula_rounded\": \"5.5331099999999999999999999999999998388E-0021\", \"lambda_abs_decimal_input\": \"1\", \"lambda_abs_rounded\": \"1.0000000000000000000000000000000000000E+0000\", \"contraction_rounded\": \"5.5331099999999999999999999999999998388E-0021\", \"tail_formula_rounded\": \"1.5065398437838842309068358506750387496E-0080\", \"terms_retained\": 4, \"real_significand_bits\": 113, \"real_decimal_range\": 4931, \"physical_integrations\": 0, \"HH_R10\": \"OFF\"}')\n",
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "physical_integrations": 0,
+  "HH_R10": "OFF",
+  "status": "PASS_SCOPED",
+  "checks_passed": 19,
+  "rejected_native_cli_calls": 6,
+  "successful_native_scalar_calls": 1,
+  "payload_fixture_processes": 1
+}

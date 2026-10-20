@@ -1,0 +1,145 @@
+{
+  "schema": "PHYS72_FORTRAN_SETUP_V1",
+  "status": "ISOLATED_COMPILER_COMPILE_AND_RUN_SUCCEEDED",
+  "system_packages_installed": false,
+  "compiler_version": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "initial_current_turn_probe": "COMPILER_MISSING",
+  "download_argv": [
+    "apt-get",
+    "-o",
+    "Dir::State::lists=/tmp/wu088_phys72_apt_lists",
+    "download",
+    "gfortran-13-x86-64-linux-gnu",
+    "libgfortran-13-dev"
+  ],
+  "download_exit_code": 0,
+  "download_reported_bytes": "12.3 MB",
+  "download_reported_wall_seconds": 9,
+  "package_extract_receipts": [
+    {
+      "package": "gfortran-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "bytes": 11408640,
+      "sha256": "82382cb8506616ef7df5b9927694bfaacf97bdfb317b1f995453cc17c96aa071",
+      "exit_code": 0,
+      "wall_seconds": 0.16371444700052962,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "package": "libgfortran-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "bytes": 928110,
+      "sha256": "ce0fdf0d9e7eadb33947ca7cdd0fc3477b570603cb721b108c96ebdfbb7cd80a",
+      "exit_code": 0,
+      "wall_seconds": 0.020730379997985438,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "setup_failures": [
+    {
+      "classification": "EXECUTION_FAILED",
+      "stage": "tool_process_creation",
+      "detail": "First package-download tool invocation named a workdir before it existed; no process launched. Creating the workdir resolved it."
+    },
+    {
+      "classification": "EXECUTION_FAILED",
+      "domain": "environment",
+      "stage": "first_native_compile",
+      "detail": "Extracted gfortran driver did not locate existing liblto_plugin.so; explicit extracted/system GCC search paths fixed the environment.",
+      "receipt": "native_attempt_01/EXECUTION.json"
+    }
+  ],
+  "download_warning": "APT downloaded as root because its _apt user could not access the task-local package directory; no package install was performed.",
+  "successful_compile_receipt": "native_attempt_02/EXECUTION.json",
+  "native_results": [
+    {
+      "directory": "native_attempt_02",
+      "status": "COMPLETED_ROUNDED_CROSSCHECK",
+      "lambda": "1",
+      "terms": 3,
+      "binary_sha256": "b20ddaf9866302a50335c091618026528ed5cbcfcfb631d41cd04c347c8b0799",
+      "native_wall_seconds": 0.0021212689971434884,
+      "comparison": {
+        "q_relative_difference": {
+          "numerator": "403",
+          "denominator": "13832775000000000000000000000000000000",
+          "upper_decimal": "2.913370599897706714668604094261635861207E-35",
+          "display_rounding": "ROUND_CEILING"
+        },
+        "scope": "rounded scalar comparison only; exact authority unchanged",
+        "tail_absolute_difference": {
+          "numerator": "37259609115314216070456974907",
+          "denominator": "12499999999999999999930836125000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "upper_decimal": "2.980768729225137285653050913823362899367E-114",
+          "display_rounding": "ROUND_CEILING"
+        },
+        "tail_relative_difference": {
+          "numerator": "12419869705104738690152324969",
+          "denominator": "62772493490995176287437500000000000000000000000000000000000000",
+          "upper_decimal": "1.978552868365248334242723503653918580711E-34",
+          "display_rounding": "ROUND_CEILING"
+        }
+      }
+    },
+    {
+      "directory": "native_zero_lambda",
+      "status": "COMPLETED_ROUNDED_CROSSCHECK",
+      "lambda": "0",
+      "terms": 3,
+      "binary_sha256": "b20ddaf9866302a50335c091618026528ed5cbcfcfb631d41cd04c347c8b0799",
+      "native_wall_seconds": 0.004006487004517112,
+      "comparison": {
+        "q_relative_difference": {
+          "numerator": "403",
+          "denominator": "13832775000000000000000000000000000000",
+          "upper_decimal": "2.913370599897706714668604094261635861207E-35",
+          "display_rounding": "ROUND_CEILING"
+        },
+        "scope": "rounded scalar comparison only; exact authority unchanged",
+        "tail_absolute_difference": {
+          "numerator": "0",
+          "denominator": "1",
+          "upper_decimal": "0E+0",
+          "display_rounding": "ROUND_CEILING"
+        },
+        "both_zero": true
+      }
+    },
+    {
+      "directory": "native_scaled_lambda",
+      "status": "COMPLETED_ROUNDED_CROSSCHECK",
+      "lambda": "3/2",
+      "terms": 4,
+      "binary_sha256": "b20ddaf9866302a50335c091618026528ed5cbcfcfb631d41cd04c347c8b0799",
+      "native_wall_seconds": 0.0030282430016086437,
+      "comparison": {
+        "q_relative_difference": {
+          "numerator": "403",
+          "denominator": "13832775000000000000000000000000000000",
+          "upper_decimal": "2.913370599897706714668604094261635861207E-35",
+          "display_rounding": "ROUND_CEILING"
+        },
+        "scope": "rounded scalar comparison only; exact authority unchanged",
+        "tail_absolute_difference": {
+          "numerator": "3409061596078874637801533872089",
+          "denominator": "19999999999999999999834006700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "upper_decimal": "1.704530798039437318914913970650409986536E-133",
+          "display_rounding": "ROUND_CEILING"
+        },
+        "tail_relative_difference": {
+          "numerator": "1136353865359624879267177957363",
+          "denominator": "4220024404238517886393567163343750000000000000000000000000000000",
+          "upper_decimal": "2.692766099215661292686356102122176351932E-34",
+          "display_rounding": "ROUND_CEILING"
+        }
+      }
+    }
+  ],
+  "compiler_failures": 1,
+  "successful_compiles": 1,
+  "successful_native_scalar_calls": 3,
+  "physical_integrations": 0,
+  "Coulomb_function_evaluations": 0,
+  "old_campaign_replays": 0,
+  "HH_R10": "OFF"
+}

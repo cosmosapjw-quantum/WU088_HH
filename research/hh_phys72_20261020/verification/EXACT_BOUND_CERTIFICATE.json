@@ -1,0 +1,182 @@
+{
+  "schema": "PHYS72_EXACT_WEIGHTED_BORN_BOUND_V1",
+  "calculation": "exact rational evaluation of proved sufficient inequalities",
+  "scope": "actual outgoing Dirichlet Coulomb exterior; all j and all r>=27",
+  "model": {
+    "coordinates": "atomic",
+    "B_a0": "27",
+    "k_a0_inverse": "7/10",
+    "E_Hartree": "49/200",
+    "shift_a0": "7/10",
+    "A0": "2*h_C-k^2",
+    "screened_multiplier": "V=2*(1+1/d)*exp(-2*d); d=abs(x-0.7*zhat)",
+    "outgoing": "H_plus=G+i*F_C",
+    "DtN_sign": "Z=+u_prime*u_inverse",
+    "eta_C": "-10/7",
+    "source_eta": "F*y",
+    "source_xi": "F*y-phi"
+  },
+  "constants": {
+    "delta": {
+      "numerator": "3",
+      "denominator": "100000000000000000000000",
+      "upper_decimal": "3E-23",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "resolvent_norm_upper": {
+      "numerator": "253",
+      "denominator": "1000",
+      "upper_decimal": "2.53E-1",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "resolvent_quadratic_witness": {
+      "numerator": "37701",
+      "denominator": "7000000",
+      "upper_decimal": "5.385857142857142857142857142857142857143E-3",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "weighted_multiplier_upper": {
+      "numerator": "2187",
+      "denominator": "100000000000000000000000",
+      "upper_decimal": "2.187E-20",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "q_upper": {
+      "numerator": "553311",
+      "denominator": "100000000000000000000000000",
+      "upper_decimal": "5.53311E-21",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "sufficient_abs_lambda_open_radius": {
+      "numerator": "100000000000000000000000000",
+      "denominator": "553311",
+      "upper_decimal": "1.807301860978726249794419413313669889086E+20",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "external_entry_factor": {
+      "numerator": "5929",
+      "denominator": "1",
+      "upper_decimal": "5.929E+3",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "weighted_Poisson_norm_squared_upper": {
+      "numerator": "3",
+      "denominator": "200000000000000000000000",
+      "upper_decimal": "1.5E-23",
+      "display_rounding": "ROUND_CEILING"
+    }
+  },
+  "radius_membership_rule": "Use the exact rational radius or abs(lambda)*q_upper<1; the upward decimal radius is a display and cannot enlarge the open disk.",
+  "angular_space": {
+    "definition": "||g||_HC^2=sum_(j,m) C_j^2*abs(g_jm)^2",
+    "C_j": "77 if 0<=j<=28; 800*(j+1)/189 if j>=29",
+    "all_j": true,
+    "finite_L_Gamma_replacement": false,
+    "entry_vs_operator": "5929=C_21*C_20; it is not sup_j C_j^2"
+  },
+  "remainder": {
+    "status": "SUFFICIENT_CONDITION_MET",
+    "terms_retained": 3,
+    "first_omitted_power": 4,
+    "lambda_abs": {
+      "numerator": "1",
+      "denominator": "1",
+      "upper_decimal": "1E+0",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "contraction_upper": {
+      "numerator": "553311",
+      "denominator": "100000000000000000000000000",
+      "upper_decimal": "5.53311E-21",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "entry": {
+      "ell": 21,
+      "p": 20,
+      "m": 0
+    },
+    "remainder_upper": {
+      "numerator": "3013079687567768461797",
+      "denominator": "199999999999999999998893378000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper_decimal": "1.506539843783884230906835850675039047677E-80",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "remainder_unit": "a0^-1",
+    "criterion": "abs(lambda)*q_upper < 1",
+    "interpretation": "All-angular, all-radial DtN entry tail after N Born terms."
+  },
+  "provenance": {
+    "theorem_source": "research/hh_phys72_20261020/theory/",
+    "angular_weight_source": "research/hh_phys71_20261020/theory/ANGULAR_D3.md",
+    "frozen_npz_expected_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+    "D3_certificate_expected_sha256": "f75d082e1966dd61a326c37b6ff14e8f330e010341a59a88eb4ca8d4734e6173",
+    "original_source_driven_xi": "separate unresolved obligation",
+    "inherits_PHYS63": "qualitative actual all-angular LAP/Poisson/DtN",
+    "inherits_PHYS69": "completed D2 coefficient",
+    "inherits_PHYS71": "completed D3 coefficient; no integration replay"
+  },
+  "scientific_integrations": 0,
+  "HH_R10": "OFF",
+  "term_budget": {
+    "budget": {
+      "numerator": "1",
+      "denominator": "1000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper_decimal": "1E-78",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "budget_unit": "a0^-1",
+    "max_terms": 256,
+    "minimum_terms": 3,
+    "minimum_over": "positive integers N>=1",
+    "status": "BUDGET_CERTIFIED",
+    "bound": {
+      "status": "SUFFICIENT_CONDITION_MET",
+      "terms_retained": 3,
+      "first_omitted_power": 4,
+      "lambda_abs": {
+        "numerator": "1",
+        "denominator": "1",
+        "upper_decimal": "1E+0",
+        "display_rounding": "ROUND_CEILING"
+      },
+      "contraction_upper": {
+        "numerator": "553311",
+        "denominator": "100000000000000000000000000",
+        "upper_decimal": "5.53311E-21",
+        "display_rounding": "ROUND_CEILING"
+      },
+      "entry": {
+        "ell": 21,
+        "p": 20,
+        "m": 0
+      },
+      "remainder_upper": {
+        "numerator": "3013079687567768461797",
+        "denominator": "199999999999999999998893378000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "upper_decimal": "1.506539843783884230906835850675039047677E-80",
+        "display_rounding": "ROUND_CEILING"
+      },
+      "remainder_unit": "a0^-1",
+      "criterion": "abs(lambda)*q_upper < 1",
+      "interpretation": "All-angular, all-radial DtN entry tail after N Born terms."
+    }
+  },
+  "input_identity_checks": [
+    {
+      "path": "/workspace/scratch/1b90a4a1175e/WU088_HH/research/hh_phys34_20261015/inputs/FROZEN_U_SUBSET.npz",
+      "size_bytes": 21029,
+      "expected_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "actual_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "status": "MATCH"
+    },
+    {
+      "path": "/workspace/scratch/1b90a4a1175e/intake_phys71/source/WU088_HH_PHYS71_SOURCE_AND_EVIDENCE_20261020/research/hh_phys71_20261020/d3/run_l36_t65_stable_errors/ALL_ANGULAR_CERTIFICATE.json",
+      "size_bytes": 6708,
+      "expected_sha256": "f75d082e1966dd61a326c37b6ff14e8f330e010341a59a88eb4ca8d4734e6173",
+      "actual_sha256": "f75d082e1966dd61a326c37b6ff14e8f330e010341a59a88eb4ca8d4734e6173",
+      "status": "MATCH"
+    }
+  ],
+  "input_identity_status": "MATCH",
+  "adoption_status": "BOUND_EVALUATED_WITH_STATED_PROVENANCE"
+}

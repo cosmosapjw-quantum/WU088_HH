@@ -1,0 +1,216 @@
+{
+  "schema": "PHYS72_READONLY_BACKUP_AND_CONTEXT_INTAKE_V1",
+  "observed_utc": "2026-10-20T13:08:01.512119+00:00",
+  "cutoff_exclusive": "2026-10-20T10:27:00Z",
+  "new_scientific_integrations": 0,
+  "completed_campaign_replays": 0,
+  "remote_mutations": 0,
+  "sources_read": [
+    "PHYS71_DELIVERY_20261020.json",
+    "PHYS71_RECOVERY_20261020.zip",
+    "WU088_HH_PHYS71_SOURCE_AND_EVIDENCE_20261020.zip",
+    "WU088_HH_PHYS70_L64_RESULT_20261020.zip"
+  ],
+  "downloads": [
+    {
+      "name": "PHYS71_DELIVERY_20261020.json",
+      "bytes": 10202,
+      "sha256": "5c122b30cfd7efc9ae5d74a66cdf6a66207b89ccacb6d29d4b337fff747355a1",
+      "local_path": "/workspace/scratch/1b90a4a1175e/intake_phys71/materialized_dropbox/PHYS71_DELIVERY_20261020.json"
+    },
+    {
+      "name": "PHYS71_RECOVERY_20261020.zip",
+      "bytes": 129845,
+      "sha256": "a7bad44b115d7f53fb7c9f86ccd45c7955472dc8e9ff15825531be26c82d5650",
+      "local_path": "/workspace/scratch/1b90a4a1175e/intake_phys71/materialized_dropbox/PHYS71_RECOVERY_20261020.zip"
+    },
+    {
+      "name": "WU088_HH_PHYS70_L64_CURRENT_BRANCH_20261020.bundle",
+      "bytes": 64894000,
+      "sha256": "4f6e1b99d39933a189e9392ef6eb674780d162d9e92659cdab9ef072e3c0f692",
+      "local_path": "/workspace/scratch/1b90a4a1175e/intake_phys71/materialized_dropbox/WU088_HH_PHYS70_L64_CURRENT_BRANCH_20261020.bundle"
+    },
+    {
+      "name": "WU088_HH_PHYS70_L64_RESULT_20261020.zip",
+      "bytes": 93648,
+      "sha256": "7a358fe5a81a81a52e73cdccf31ee93b36a9b85debf53e521765d423cca650a9",
+      "local_path": "/workspace/scratch/1b90a4a1175e/intake_phys71/materialized_dropbox/WU088_HH_PHYS70_L64_RESULT_20261020.zip"
+    },
+    {
+      "name": "WU088_HH_PHYS71_SOURCE_AND_EVIDENCE_20261020.zip",
+      "bytes": 30636014,
+      "sha256": "1a17cd48a70c5ea8cac47f9e9430eba74f0c669ad38f88ac3c7314a4e1c61f52",
+      "local_path": "/workspace/scratch/1b90a4a1175e/intake_phys71/materialized_dropbox/WU088_HH_PHYS71_SOURCE_AND_EVIDENCE_20261020.zip"
+    }
+  ],
+  "library_materialization_attempts": [
+    {
+      "mode": "sandbox",
+      "status": "SERVICE_ERROR",
+      "error": "hosted apps tools/list request failed: network"
+    },
+    {
+      "mode": "allowed_network",
+      "status": "SERVICE_ERROR",
+      "error": "hosted apps tools/list request failed with HTTP status 403",
+      "automatic_approval_rejection": false
+    }
+  ],
+  "fallback": "Dropbox temporary links, single GET each, authenticated metadata preserved; success",
+  "preserved_states": {
+    "PHYS71": "R1-R10/C1-C10 COMPLETE_SCOPED; M PENDING superseded by external DELIVERY",
+    "PHYS63": "ESTABLISHED_REUSED_QUALITATIVE_ALL_ANGULAR",
+    "PHYS69": "COMPLETE_REUSED_D2",
+    "PHYS71_D3_corrected_certificate": {
+      "actual_sha256": "f75d082e1966dd61a326c37b6ff14e8f330e010341a59a88eb4ca8d4734e6173",
+      "expected": "f75d082e1966dd61a326c37b6ff14e8f330e010341a59a88eb4ca8d4734e6173",
+      "scope": "single D3(21,20),m=0 all-angular all-radial coefficient",
+      "absolute_error_upper": "7.121295358370e-79",
+      "completed_profiles_and_panels_not_reintegrated": true
+    },
+    "frozen_npz_actual_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+    "HH_R10": "OFF"
+  },
+  "backup_previous_status": {
+    "SOURCE_NCP_METADATA": "Library and Dropbox completed ACKs, read in DELIVERY",
+    "old_PHYS70_Drive_upload": "UNKNOWN_UNRESOLVED_NOT_RETRIED",
+    "exact_PHYS66_993317b1_archive": "BLOCKED_ARTIFACT_ACCESS_EXACT_FINAL_VERSION_PRESERVED"
+  },
+  "new_host_evidence": {
+    "archive": "WU088_HH_PHYS70_L64_RESULT_20261020.zip",
+    "recorded_status": "COMPLETED_NATIVE_APPLICATION",
+    "native_status": "COMPLETED_BINARY64_REFERENCE_NOT_CERTIFICATE",
+    "started_utc": "2026-10-20T10:58:39.897221+00:00",
+    "finished_utc": "2026-10-20T11:04:10.528604+00:00",
+    "identity": {
+      "request_sha256": "4894196e50b9da91b31465b5723c8ba7c770b0a8ecbc8eeeb5f94053b68b2d03",
+      "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "seed_sha256": "38216fd59acbc66146f4abc27fddb3a076a745b81aac8164b0772ebae96d7f65",
+      "engine": "block_simd",
+      "upstream_commit": "a21d573980f66fe02891bd216153443b5352f921",
+      "engine_files_sha256": {
+        "native/phys69_vigilode/Cargo.lock": "cfe49e974d77fd04dca94709b78ba23f4f11d964844b3d6df258bacfcfc1ba0e",
+        "native/phys69_vigilode/Cargo.toml": "88345aa9528d38898046871e79396ea286c6f3a7641ce80d7179b14c65fd2265",
+        "native/phys69_vigilode/src/lib.rs": "d0f86cf84de9d4437c742fe7518f9ecd88891236987f3a28bb790eb876f0d211",
+        "native/phys69_vigilode/src/main.rs": "68350797f5b81062fd81a6cecf230739895a8e178947e9de9c79555a1ecd48bf",
+        "native/phys70_optimized/Cargo.lock": "76e4b91b26c3e7e87fca2a78504916e0568a3907f3e8c4e1fd4cdfcdd667d94c",
+        "native/phys70_optimized/Cargo.toml": "db4687db571cf4ec2737b37443f1c850314ccadce1b6f8f171804669651412f1",
+        "native/phys70_optimized/src/benchmark.rs": "571c7dba4597ab9eb20b2d3a9662514acb71a05df9274869ba579c277c59eab9",
+        "native/phys70_optimized/src/block.rs": "31f89c1fbd23776a3bc0982b7be92a1661cebd71650acb4f57459c053faec32b",
+        "native/phys70_optimized/src/integrate.rs": "e1b7fe5903a6fb2322f1426e515ac77539da476ad0d2746cadea68c31983c4c9",
+        "native/phys70_optimized/src/kernel.rs": "c5739d3c5ecbc02754cbf34ae2d23372775b4fa52758251888d7233e0e4cbf3e",
+        "native/phys70_optimized/src/lib.rs": "f8984129dd26b9e5b8e770ae7fe45f76033f53a1e6720edadaaedebd0ad42228",
+        "native/phys70_optimized/src/main.rs": "7fe3c4a2b54d362192f3976783e492138853d91c5fab7719fa6f122662d4d15f",
+        "native/phys70_optimized/tests/contract.rs": "650cd35916723b9791227866d859e385bb72874441adf367007ae805bd39a152",
+        "scripts/phys68_rust_reference.py": "b7cbd9b6c8036fcd641a0276f12d81917cfce4b76efd665cb65bcfceed4af300",
+        "scripts/phys69_vigilode.py": "28e9d65eec7bd3a7a82d9a87a830d965c45001b39f1f7224c8a021a39179f2b3",
+        "scripts/phys70_ncp.py": "cc2e67f85c63cc2124162ba19173b221a087f8df86dfbec95e119f576a63c0e5",
+        "src/wu088_hh/phys67_coulomb_certificate.py": "497d83649a829149dcae0496ad991c75add1e197fd2de2a586d734f27f02840c"
+      },
+      "engine_fingerprint_sha256": "7499c51cc30e2ced8ad021f2e546b247813bffe16f22d2d103a32b0580f7cab1",
+      "binary_sha256": "60174fbf19bfc86407136dff0b4677dd02892006c77ddfa51e12b2ef593638a8"
+    },
+    "binary_bytes_not_in_capsule": "binary SHA is producer-recorded, not independently recomputed here",
+    "checksum_files": 22,
+    "checksum_all_match": true,
+    "checksums": {
+      "BUILD_NATIVE.EXECUTION.json": true,
+      "BUILD_NATIVE.stderr.txt": true,
+      "BUILD_NATIVE.stdout.txt": true,
+      "CARGO_VERSION.EXECUTION.json": true,
+      "CARGO_VERSION.stderr.txt": true,
+      "CARGO_VERSION.stdout.txt": true,
+      "EXECUTION.json": true,
+      "FROZEN_U_SUBSET.npz": true,
+      "INTEGRATE_NATIVE.EXECUTION.json": true,
+      "INTEGRATE_NATIVE.stderr.txt": true,
+      "INTEGRATE_NATIVE.stdout.txt": true,
+      "INVOCATION.json": true,
+      "MAKE_SEED.EXECUTION.json": true,
+      "MAKE_SEED.stderr.txt": true,
+      "MAKE_SEED.stdout.txt": true,
+      "REQUEST.json": true,
+      "RESULT.json": true,
+      "RUST_VERSION.EXECUTION.json": true,
+      "RUST_VERSION.stderr.txt": true,
+      "RUST_VERSION.stdout.txt": true,
+      "SEED_BALLS.json": true,
+      "SEED_INPUT.txt": true
+    },
+    "lmax": 64,
+    "T": 65.0,
+    "B": 27.0,
+    "accepted_steps": 825,
+    "attempts": 825,
+    "elapsed_integration_seconds": 0.178249182,
+    "normalization_drift": 5.4352251588341005e-09,
+    "max_shifted_backward_residual": 1.9051004806626438e-16,
+    "min_shifted_denominator": 0.9995149855101603,
+    "uniform_numerical_certificate": false,
+    "scientific_reuse": "finite-L64 binary64 reference, cannot replace infinite-j bound or PHYS71 D3 certificate"
+  },
+  "provider_scope": {
+    "dropbox_root_direct_children": 450,
+    "dropbox_root_pagination_complete": true,
+    "new_hh_named_root_entries": [
+      {
+        "client_modified": "2026-10-20T11:10:37Z",
+        "file": {
+          "size": 93648
+        },
+        "file_id": "id:BSpOijBcT10AAAAAAD_TiA",
+        "modified_time": "2026-10-20T11:10:37Z",
+        "name": "WU088_HH_PHYS70_L64_RESULT_20261020.zip",
+        "object_type": "file",
+        "path": "ns:183516487//WU088_HH_PHYS70_L64_RESULT_20261020.zip",
+        "path_display": "/WU088_HH_PHYS70_L64_RESULT_20261020.zip"
+      },
+      {
+        "client_modified": "2026-10-20T11:16:31Z",
+        "file": {
+          "size": 64894000
+        },
+        "file_id": "id:BSpOijBcT10AAAAAAD_Tjg",
+        "modified_time": "2026-10-20T11:16:37Z",
+        "name": "WU088_HH_PHYS70_L64_CURRENT_BRANCH_20261020.bundle",
+        "object_type": "file",
+        "path": "ns:183516487//WU088_HH_PHYS70_L64_CURRENT_BRANCH_20261020.bundle",
+        "path_display": "/WU088_HH_PHYS70_L64_CURRENT_BRANCH_20261020.bundle"
+      },
+      {
+        "client_modified": "2026-10-20T11:11:27Z",
+        "file": {
+          "size": 64891818
+        },
+        "file_id": "id:BSpOijBcT10AAAAAAD_TiQ",
+        "modified_time": "2026-10-20T11:11:33Z",
+        "name": "WU088_HH_PHYS70_L64_GIT_20261020.bundle",
+        "object_type": "file",
+        "path": "ns:183516487//WU088_HH_PHYS70_L64_GIT_20261020.bundle",
+        "path_display": "/WU088_HH_PHYS70_L64_GIT_20261020.bundle"
+      },
+      {
+        "client_modified": "2026-10-20T10:27:04Z",
+        "file": {
+          "size": 129845
+        },
+        "file_id": "id:BSpOijBcT10AAAAAAD_SYQ",
+        "modified_time": "2026-10-20T10:27:04Z",
+        "name": "PHYS71_RECOVERY_20261020.zip",
+        "object_type": "file",
+        "path": "ns:183516487//PHYS71_RECOVERY_20261020.zip",
+        "path_display": "/PHYS71_RECOVERY_20261020.zip"
+      }
+    ],
+    "dropbox_search_limitation": "Requested after-cutoff search returned old objects; filtered returned timestamps and checked full root direct children. Other descendant folders not exhaustively scanned.",
+    "library_recent_count": 7,
+    "library_recent_next_cursor": null,
+    "library_new_hh_named_records": [],
+    "drive_search_limitation": "PHYS71 keyword search unrelated result; exact title/time filters empty despite later exact ID reads succeeding. Negative search is not absence.",
+    "drive_exact_result_and_bundle_metadata": "Both read successfully, matching sizes and later modification times; provider checksum fields not returned",
+    "other_conversations": "SERVICE_ERROR Personal context is unavailable for this conversation.",
+    "live_NCP_host_inspection": "NOT_PERFORMED_BY_THIS_SUBTASK; actual archived host execution read",
+    "all_provider_global_absence": "NOT_CLAIMED"
+  },
+  "parent_responsibility": "GitHub actual descendant checkout; new science/code/publication; integrate this receipt."
+}

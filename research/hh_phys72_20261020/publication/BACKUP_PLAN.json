@@ -1,0 +1,78 @@
+{
+  "schema": "PHYS72_CREATE_ONLY_BACKUP_PLAN_V1",
+  "status": "PLANNED_NOT_UPLOADED",
+  "authorization": "Current user requests stagewise backup; existing HH create-only dual-provider backup authorization retained. Parent owns final path/hash approval; no extra user confirmation required for this authorized scope.",
+  "planned_basename": "WU088_HH_PHYS72_SOURCE_AND_EVIDENCE_20261020.zip",
+  "local_final_path": null,
+  "local_bytes": null,
+  "local_sha256": null,
+  "pre_upload_gate": [
+    "Parent supplies finalized absolute path, exact bytes and SHA256.",
+    "Confirm source path exists and retain archive validation already performed.",
+    "Use final basename; if prior same-name object is found, compare known identity and reuse if matching or create a distinct suffix without overwriting.",
+    "No outgoing upload initiated by this preparation task."
+  ],
+  "providers": [
+    {
+      "provider": "Dropbox",
+      "method": "mcp__codex_apps__dropbox_upload_file",
+      "destination_path": "ns:183516487//WU088_HH_PHYS72_SOURCE_AND_EVIDENCE_20261020.zip",
+      "schema": {
+        "destination_path": "string full destination including basename",
+        "source_file": "absolute local path string; runtime fileParams adapter handles object injection"
+      },
+      "parent_verified": "450-entry direct root list complete; PHYS71/PHYS70 archives are in this root",
+      "expected_status": "completed",
+      "async": {
+        "method": "mcp__codex_apps__dropbox_check_upload_file_status",
+        "parameters": "operation_id unchanged, wait_ms<=30000; honor recommended_poll_after_ms"
+      },
+      "no_overwrite": "ALREADY_EXISTS must not be retried against the same path",
+      "post_upload": "Retain exact returned file_id/path_display/size/modified_time/status; metadata read on returned id. Byte verification may reuse actual downloaded data if required; do not invent a provider SHA."
+    },
+    {
+      "provider": "Google Drive",
+      "method": "mcp__codex_apps__google_drive_upload_file",
+      "destination_folder_id": "0APYlhWMPor0ZUk9PVA",
+      "destination_folder_title": "내 드라이브",
+      "file_name": "WU088_HH_PHYS72_SOURCE_AND_EVIDENCE_20261020.zip",
+      "mime_type": "application/zip",
+      "schema": {
+        "file_uri": "absolute local path string accepted by surfaced runtime file adapter",
+        "file_name": "string basename",
+        "mime_type": "application/zip",
+        "parent_folder_id": "0APYlhWMPor0ZUk9PVA"
+      },
+      "parent_verified": "Current get_file_metadata returned folder MIME; PR123 L64 result and GIT bundle returned this exact parent.",
+      "no_overwrite": "upload_file creates a new object; never update/delete existing objects. Same-name Drive objects can coexist; use unique final basename or reconcile prior attempt before retry.",
+      "post_upload": "Retain returned id/URL/status; read exact returned metadata. Requested checksum fields may be omitted by adapter; only claim what was returned.",
+      "historical_failure_separation": "Old PHYS70 Drive upload UNKNOWN_UNRESOLVED remains independent; this is a new PHYS72 object."
+    },
+    {
+      "provider": "Library",
+      "method": "mcp__codex_apps__library_create_library_file",
+      "destination": "Library root (directory_id omitted), matching prior PHYS71 source archive location",
+      "schema": {
+        "file": "one absolute local path string",
+        "library_artifact_type": "other"
+      },
+      "route_condition": "Exactly one local final archive under about50MiB. For multiple Library files or archive>=about50MiB use current library_upload.py with whole ordered batch; never switch an already-started unknown-outcome helper write to direct write.",
+      "metadata_writeback": "In same functions.exec invocation as successful create, pass complete returned xattrs array or [] to current library_file_transfer.py apply-xattrs LOCAL_PATH LIBRARY_FILE_ID via stdin JSON; inspect result.",
+      "helper_source": "/root/.codex/plugins/cache/openai-curated-remote/openai-library/0.1.65/skills/library/scripts/",
+      "current_limitations": "Read materialization helper failed current tool-list network thenHTTP403. Upload route has not been probed because finalized file was not supplied; do not infer upload failure."
+    }
+  ],
+  "read_only_destination_checks": {
+    "dropbox_exact_title_matches": 0,
+    "library_exact_title_matches": 0,
+    "drive_exact_name_filter_matches": 0,
+    "absence_limit": "Drive filters already missed known L64 objects, so empty search does not prove absence. Keep source/hash identity and reconcile unknown outcomes before any retry."
+  },
+  "bookkeeping": {
+    "scientific_integrations": 0,
+    "remote_uploads": 0,
+    "remote_mutations": 0,
+    "HH_R10": "OFF"
+  },
+  "receipt_separation": "The immutable source archive can contain this plan; actual later provider ACKs belong in external delivery receipt and Git metadata commit, without rewriting archive or making self-referential hash claims."
+}

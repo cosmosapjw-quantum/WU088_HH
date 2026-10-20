@@ -1,0 +1,126 @@
+{
+  "schema": "PHYS72_SUCCESSOR_DAG_V1",
+  "supersedes_only_current_scope": "PHYS71/PR123 higher-exterior-remainder open node; historical files remain unchanged",
+  "nodes": [
+    {
+      "id": "PHYS63_ACTUAL_EXTERIOR_EXISTENCE",
+      "status": "COMPLETE_REUSED",
+      "scope": "qualitative all-angular LAP/Poisson/DtN",
+      "dependencies": []
+    },
+    {
+      "id": "PHYS69_D2",
+      "status": "COMPLETE_REUSED",
+      "scope": "original D2(21,20),m0 coefficient",
+      "dependencies": [
+        "PHYS63_ACTUAL_EXTERIOR_EXISTENCE"
+      ]
+    },
+    {
+      "id": "PHYS71_D3",
+      "status": "COMPLETE_REUSED",
+      "scope": "all-angular/all-radial D3(21,20),m0; 76 panels and 152 profiles reused",
+      "certificate_sha256": "f75d082e1966dd61a326c37b6ff14e8f330e010341a59a88eb4ca8d4734e6173",
+      "dependencies": [
+        "PHYS63_ACTUAL_EXTERIOR_EXISTENCE"
+      ]
+    },
+    {
+      "id": "PHYS70_L64_HOST_DIAGNOSTIC",
+      "status": "COMPLETE_REUSED_FINITE_L_BINARY64",
+      "scope": "archived actual NCP return; no uniform numerical certificate",
+      "dependencies": [
+        "PHYS69_D2"
+      ]
+    },
+    {
+      "id": "PHYS72_ACTUAL_GREEN_WEIGHTED_BOUND",
+      "status": "COMPLETE_DERIVED",
+      "scope": "H_+ to H_- actual outgoing inverse, all j and r>=27; C_R<253/1000",
+      "evidence": "theory/THEOREM_AND_MODEL_MAP.md",
+      "dependencies": [
+        "PHYS63_ACTUAL_EXTERIOR_EXISTENCE"
+      ]
+    },
+    {
+      "id": "PHYS72_ORIGINAL_SCREEN_WEIGHTED_BOUND",
+      "status": "COMPLETE_DERIVED",
+      "scope": "original noncentral multiplication; L2/H1/H_C joint radial/angular bounds B^2delta,2B^2delta,77B^2delta",
+      "evidence": "theory/SCREEN_ENVELOPE_EXACT.md",
+      "dependencies": [],
+      "additional_evidence": "theory/ANGULAR_MULTIPLIER_ADDENDUM.md"
+    },
+    {
+      "id": "PHYS72_LAMBDA1_CONVERGENCE",
+      "status": "COMPLETE_DERIVED",
+      "scope": "K on H_- and S on L2; q=553311/10^26; weighted exterior Poisson/DtN analytic disk",
+      "dependencies": [
+        "PHYS72_ACTUAL_GREEN_WEIGHTED_BOUND",
+        "PHYS72_ORIGINAL_SCREEN_WEIGHTED_BOUND"
+      ]
+    },
+    {
+      "id": "PHYS72_ORDER_GE4_REMAINDER",
+      "status": "COMPLETE_DERIVED_EXACT_EVALUATED",
+      "scope": "H_C to H_C* plus fixed entry21,20,m0; 1.50654e-80 a0^-1 upper",
+      "evidence": "verification/EXACT_BOUND_CERTIFICATE.json",
+      "dependencies": [
+        "PHYS72_LAMBDA1_CONVERGENCE"
+      ]
+    },
+    {
+      "id": "PHYS72_THIRD_AND_HIGHER_ENCLOSURE",
+      "status": "COMPLETE_EXACT_COMPOSITION",
+      "scope": "(Z1-Z0)-exactD1-exactD2; same D3 center, radius7.271949342749e-79 a0^-1",
+      "evidence": "verification/THIRD_AND_HIGHER_ENCLOSURE.json",
+      "dependencies": [
+        "PHYS71_D3",
+        "PHYS72_ORDER_GE4_REMAINDER"
+      ]
+    },
+    {
+      "id": "PHYS72_OPTIONAL_NCP_REPRODUCTION",
+      "status": "READY_NOT_SUBMITTED_NOT_SCIENCE_GATE",
+      "scope": "complete exact Python and Fortran sources; compile/env/run only",
+      "evidence": "ncp_delivery/README_KO.md",
+      "dependencies": [
+        "PHYS72_ORDER_GE4_REMAINDER"
+      ]
+    },
+    {
+      "id": "ORIGINAL_SOURCE_DRIVEN_XI",
+      "status": "OPEN_OUTSIDE_FIXED_CYCLE",
+      "scope": "eta=Fy, xi=Fy-phi with frozen original source",
+      "dependencies": [
+        "PHYS72_LAMBDA1_CONVERGENCE"
+      ]
+    },
+    {
+      "id": "ORIGIN_INCOMING_ADJOINT_MATCHING",
+      "status": "OPEN_OUTSIDE_FIXED_CYCLE",
+      "scope": "original interior/origin and physical incoming adjoint matching",
+      "dependencies": [
+        "ORIGINAL_SOURCE_DRIVEN_XI"
+      ]
+    },
+    {
+      "id": "SIGMA_E",
+      "status": "OPEN_OUTSIDE_FIXED_CYCLE",
+      "scope": "physical HH cross section with complete source/matching errors",
+      "dependencies": [
+        "ORIGIN_INCOMING_ADJOINT_MATCHING"
+      ]
+    },
+    {
+      "id": "K_HH_T",
+      "status": "OPEN_OUTSIDE_FIXED_CYCLE",
+      "scope": "Maxwellian rate from certified cross section",
+      "dependencies": [
+        "SIGMA_E"
+      ]
+    }
+  ],
+  "next_authorized_cycle_recommendation": "Use the new actual exterior inverse and tail as an input to a separately scoped original-source/interior matching cycle; do not re-integrate closed D2/D3 campaigns.",
+  "publication_and_backup_are_separate_from_science": true,
+  "HH_R10": "OFF"
+}

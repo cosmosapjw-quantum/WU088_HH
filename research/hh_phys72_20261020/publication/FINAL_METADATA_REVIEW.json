@@ -1,0 +1,45 @@
+{
+  "schema": "PHYS72_DELIVERY_METADATA_REVIEW_V1",
+  "recorded_utc": "2026-10-20T17:29:42.712899+00:00",
+  "reviewer": "/root/weighted_multiplier",
+  "mode": "independent read-only review; no code or scientific execution",
+  "reviewed": [
+    "EXECUTION_LEDGER.json",
+    "LOOP_RECORD.md",
+    "NEXT_DAG.json",
+    "NEW_THREAD_HANDOFF.md",
+    "ncp_delivery/README_KO.md",
+    "publication/REMOTE_PUBLICATION.json",
+    "publication/RESTORE_AFTER_WORKSPACE_RESET.json",
+    "publication/CLEAN_RESTORE_ACK.json"
+  ],
+  "findings": [
+    {
+      "id": "M1",
+      "finding": "Fresh capsule lacks runs parent and mkdir failure must stop the shell block",
+      "correction": "Added set -eu and mkdir -p runs before create-only run directory mkdir",
+      "status": "CLOSED_READBACK_BY_REVIEWER"
+    },
+    {
+      "id": "M2",
+      "finding": "No additive patch or Git bundle is shipped",
+      "correction": "Handoff now uses actual branch clone/fetch or explicitly partial source/evidence capsule",
+      "status": "CLOSED_READBACK_BY_REVIEWER"
+    },
+    {
+      "id": "M3",
+      "finding": "Direct Fortran CLI and preflight failures do not necessarily create a wrapper receipt",
+      "correction": "NCP document distinguishes direct exit status, stages started by wrapper, and possible preflight termination",
+      "status": "CLOSED_READBACK_BY_REVIEWER"
+    }
+  ],
+  "reviewer_confirmed": [
+    "No additional scientific DAG, fixed identity, corrected D3 reuse, restore scope, or path-only JSON normalization inconsistency",
+    "121-file science capsule identity must remain separate from later metadata HEAD",
+    "Clean-restore three exact CLI executions must be recorded separately from original source-freeze executions"
+  ],
+  "scientific_source_changes": 0,
+  "executable_code_changes": 0,
+  "science_reruns": 0,
+  "HH_R10": "OFF"
+}
