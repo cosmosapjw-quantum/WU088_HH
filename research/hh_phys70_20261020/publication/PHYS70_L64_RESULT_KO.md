@@ -18,4 +18,4 @@ native 결과 중심은 `D2 = (7.017743632402883 + 3.200163222655957 i) × 10^-4
 
 이는 PHYS70 runner의 상태 `COMPLETED_BINARY64_REFERENCE_NOT_CERTIFICATE`에 해당하는 유한 L64 binary64 진단이다. 이를 새 all-angular 계수, 전 ODE·Coulomb·quadrature·roundoff 상계 또는 전체 응답 인증으로 해석하지 않는다. wrapper는 identity, endpoint layout/finiteness, 고정 관계식을 검사했으며 total error 인증은 `false`다. 기존 PHYS69 all-angular D2 certificate와 PHYS71 D3 certificate는 별도 범위로 계속 재사용한다.
 
-PHYS70의 결합 DAG 노드는 `PARTIAL_D3_COMPLETE_HIGHER_REMAINDER_OPEN` 그대로다. 4차 이상 Born 나머지/전체 비선형 응답, original source-driven `xi`, regular origin/incoming adjoint, `sigma(E)`, Maxwellian `k_HH(T)`는 계속 OPEN이다. `HH_R10=OFF`를 유지한다. 다음 단계는 이 addendum·실행 capsule·Git bundle의 additive 게시와 각각의 백업 복원 검증뿐이다.
+PHYS70의 결합 DAG 노드는 `PARTIAL_D3_COMPLETE_HIGHER_REMAINDER_OPEN` 그대로다. 4차 이상 Born 나머지/전체 비선형 응답, original source-driven `xi`, regular origin/incoming adjoint, `sigma(E)`, Maxwellian `k_HH(T)`는 계속 OPEN이다. `HH_R10=OFF`를 유지한다. 결과 capsule과 complete-history Git bundle은 PR123 draft에 additive 게시됐고 Dropbox/Drive에서 독립 다운로드·SHA 검증을 마쳤다. 실제 object ID와 복원 영수증은 `PHYS70_L64_DELIVERY_20261020.json`에 기록한다.
