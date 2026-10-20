@@ -1,0 +1,371 @@
+{
+  "schema": "PHYS70_ADDITIONAL_EXECUTION_REVIEW_V1",
+  "reviewed_utc": "2026-10-20T03:18:10.881260+00:00",
+  "reviewer": "opt_github_intake independent postprocessing",
+  "status": "PASS_SCOPED_PARALLEL_BATCH_AND_SANDBOX_RUNNER_EVIDENCE",
+  "prior_review_sha256": "6d9a8e59b5b5004e57e6354bac46e8c309e8f608d62da075075cf87b0c7eb6bd",
+  "prior_review_unchanged": true,
+  "scientific_or_performance_integrations_launched_by_review": 0,
+  "producer_files_modified": 0,
+  "completed_additional_executions_reused": {
+    "parallel_performance_integrations": 12,
+    "sandbox_execution_of_NCP_runner": 1,
+    "read_only_resume_integrations": 0,
+    "L64_preflight_integrations": 0
+  },
+  "identity": {
+    "binary_sha256": "303efb12fb6c6169b97440a1224d30730e5194a6230c02d469a13a25b9270c13",
+    "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+    "seed_sha256": "3aae5f37d858deca71f4f4217d56484d8430f06ad95e30280a44aafc2b6f7862",
+    "reference_certificate_sha256": "ddaae206009a276def281af5526851ceb717baf2e0de5f8472552a9db340de9a",
+    "runtime": {
+      "hostname": "6a4240d1fd44",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+      "machine": "x86_64",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "cpu_affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "engine_source_pins_verified": 17,
+    "parallel_benchmark_script_sha256_verified": "be25136fd564655bf5c30b75ccc72d6abab5c186067f14d618fe550a2d028155",
+    "HH_R10": "OFF",
+    "PHYS63": "ESTABLISHED_REUSED"
+  },
+  "checks": {
+    "payload_file_hashes_and_manifest_membership_verified": 37,
+    "parallel_payload_hashes": 24,
+    "pilot_payload_hashes": 9,
+    "preflight_payload_hashes": 4,
+    "complete_finite_native_states_verified": 13,
+    "state_shape_each": [
+      2,
+      234
+    ],
+    "exact_rational_point_error_records_recomputed": 65,
+    "stored_binary64_complex_component_Fractions_verified": 26,
+    "native_endpoint_matches_scaled_final_state": 13,
+    "strict_stored_point_relative_goals_verified": 13,
+    "point_error_method": "Independent integer/Fraction algorithm, as documented in PERFORMANCE_REVIEW; no producer comparison helper imported, no numerical solver called.",
+    "parallel_request_list_exact_byte_hash_verified": true,
+    "all_12_native_requests_semantically_equal_to_ordered_input_list": true,
+    "canonical_per_item_request_digests": "Native serde_json-derived digests reviewed for 64-hex format and equality across all thread counts. Exact input-list bytes and each semantic request independently verified. Python JSON formatting is not assumed byte-identical to serde_json, so these per-item SHA bytes are not independently reconstructed here.",
+    "cross_thread_pairs_compared": 8,
+    "cross_thread_state_components_compared": 3744,
+    "all_cross_thread_stored_state_bits_equal": true,
+    "pilot_state_bits_equal_to_matching_threads_1_job": true,
+    "resume_before_after_current_files_content_size_mtime_ns_verified": 10
+  },
+  "parallel_trajectories": {
+    "request_list_sha256": "752a3a9c9bc601226d0daff011c7d7943f313d8855a852bb5dd2cd4af6330249",
+    "summary_sha256": "7931dbd2870ac72576634a545e1d2fc0c6f9d338f1f75374070df1ee8fa9e2be",
+    "rows": [
+      {
+        "threads": 1,
+        "samples": 1,
+        "batch_seconds": 0.201385102,
+        "process_wall_seconds": 0.21620884599906276,
+        "jobs": [
+          {
+            "job": 0,
+            "rtol": 3e-09,
+            "atol": 3e-11,
+            "accepted_steps": 436,
+            "rejected_steps": 0,
+            "relative_D2_error_upper": 1.6275184296677257e-09,
+            "state_ieee754_be_sha256": "8ab2917dbe4af5457c561dd6c6734f2974ca3eea7b205f92e6b04317fa37c092",
+            "native_serde_request_sha256": "a8ff6c0b4b283c5d7dcebc9152035cfe157b8c02df3a7329c13765c7f69a4d9d"
+          },
+          {
+            "job": 1,
+            "rtol": 3e-10,
+            "atol": 3e-12,
+            "accepted_steps": 703,
+            "rejected_steps": 0,
+            "relative_D2_error_upper": 1.4728567155626935e-10,
+            "state_ieee754_be_sha256": "1fc5aa55c66b108740467d3d433c097a4e10490842b60146319bdbdc1f961f94",
+            "native_serde_request_sha256": "9b751562d28ee87cdf3128811e149d925c2da439e884200b54961c9ae06ba567"
+          },
+          {
+            "job": 2,
+            "rtol": 3e-11,
+            "atol": 3e-13,
+            "accepted_steps": 1132,
+            "rejected_steps": 0,
+            "relative_D2_error_upper": 1.3856994587496746e-11,
+            "state_ieee754_be_sha256": "058171c8a09172efb3a329cb78728ef7bef3358a69e54835505765acd94b9bd8",
+            "native_serde_request_sha256": "56828717295704129a30a63dd9ca3252de0f1ebf96e95f259439e5f10ec19bd5"
+          },
+          {
+            "job": 3,
+            "rtol": 3e-12,
+            "atol": 3e-14,
+            "accepted_steps": 1819,
+            "rejected_steps": 0,
+            "relative_D2_error_upper": 1.2701532252981296e-12,
+            "state_ieee754_be_sha256": "49340d008309345a4f772d66b2360bd121aeb229756d21fbd0ae1cb940bd34e6",
+            "native_serde_request_sha256": "f61a6bea15913d4f85ca585d85109250f35783b1e6e1a3bd95d3f98529a23cc5"
+          }
+        ],
+        "result_sha256": "a8a4c381941683cb8e050d0f295ee561d74c4283268cb3b61756b6e99882b336",
+        "payload_checksums": {
+          "BATCH.EXECUTION.json": "d5d516d708aa4511856ebcf586c0c0276d50b2b45da2714f20e29e25da3bb085",
+          "BATCH.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "BATCH.stdout.txt": "a8a4c381941683cb8e050d0f295ee561d74c4283268cb3b61756b6e99882b336",
+          "POINT_ERROR_0.json": "e8cf2090fe754550c2ed2ebac93352215949d3e417958583c0a30d60a58fcd12",
+          "POINT_ERROR_1.json": "856e46f443b7272daac5084e34be9d7922c0e4af35521ecb7a5be69e4b97c8c5",
+          "POINT_ERROR_2.json": "b52ea1ac8950f0495a4943dc9798443bf979422daacc49427df43fa23b0e4100",
+          "POINT_ERROR_3.json": "d6f4e98001fbbeab2077941461f5029bd84aa32b322b2ccfc4a9b082a7641125",
+          "RESULT.json": "a8a4c381941683cb8e050d0f295ee561d74c4283268cb3b61756b6e99882b336"
+        },
+        "all_retained_state_bits_equal_to_threads_1": true,
+        "single_batch_speedup_over_threads_1": 1.0,
+        "single_process_wall_speedup_over_threads_1": 1.0
+      },
+      {
+        "threads": 2,
+        "samples": 1,
+        "batch_seconds": 0.138033682,
+        "process_wall_seconds": 0.16541934099950595,
+        "jobs": [
+          {
+            "job": 0,
+            "rtol": 3e-09,
+            "atol": 3e-11,
+            "accepted_steps": 436,
+            "rejected_steps": 0,
+            "relative_D2_error_upper": 1.6275184296677257e-09,
+            "state_ieee754_be_sha256": "8ab2917dbe4af5457c561dd6c6734f2974ca3eea7b205f92e6b04317fa37c092",
+            "native_serde_request_sha256": "a8ff6c0b4b283c5d7dcebc9152035cfe157b8c02df3a7329c13765c7f69a4d9d"
+          },
+          {
+            "job": 1,
+            "rtol": 3e-10,
+            "atol": 3e-12,
+            "accepted_steps": 703,
+            "rejected_steps": 0,
+            "relative_D2_error_upper": 1.4728567155626935e-10,
+            "state_ieee754_be_sha256": "1fc5aa55c66b108740467d3d433c097a4e10490842b60146319bdbdc1f961f94",
+            "native_serde_request_sha256": "9b751562d28ee87cdf3128811e149d925c2da439e884200b54961c9ae06ba567"
+          },
+          {
+            "job": 2,
+            "rtol": 3e-11,
+            "atol": 3e-13,
+            "accepted_steps": 1132,
+            "rejected_steps": 0,
+            "relative_D2_error_upper": 1.3856994587496746e-11,
+            "state_ieee754_be_sha256": "058171c8a09172efb3a329cb78728ef7bef3358a69e54835505765acd94b9bd8",
+            "native_serde_request_sha256": "56828717295704129a30a63dd9ca3252de0f1ebf96e95f259439e5f10ec19bd5"
+          },
+          {
+            "job": 3,
+            "rtol": 3e-12,
+            "atol": 3e-14,
+            "accepted_steps": 1819,
+            "rejected_steps": 0,
+            "relative_D2_error_upper": 1.2701532252981296e-12,
+            "state_ieee754_be_sha256": "49340d008309345a4f772d66b2360bd121aeb229756d21fbd0ae1cb940bd34e6",
+            "native_serde_request_sha256": "f61a6bea15913d4f85ca585d85109250f35783b1e6e1a3bd95d3f98529a23cc5"
+          }
+        ],
+        "result_sha256": "a4c3436a86a73fbac7122aa0e89defa22509bda3d508a6f9ac162590cf462742",
+        "payload_checksums": {
+          "BATCH.EXECUTION.json": "6d82a5174ab36367e8a53e60d362f471c24e6cdfea9ab3baeab6894e4afaa11c",
+          "BATCH.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "BATCH.stdout.txt": "a4c3436a86a73fbac7122aa0e89defa22509bda3d508a6f9ac162590cf462742",
+          "POINT_ERROR_0.json": "e8cf2090fe754550c2ed2ebac93352215949d3e417958583c0a30d60a58fcd12",
+          "POINT_ERROR_1.json": "856e46f443b7272daac5084e34be9d7922c0e4af35521ecb7a5be69e4b97c8c5",
+          "POINT_ERROR_2.json": "b52ea1ac8950f0495a4943dc9798443bf979422daacc49427df43fa23b0e4100",
+          "POINT_ERROR_3.json": "d6f4e98001fbbeab2077941461f5029bd84aa32b322b2ccfc4a9b082a7641125",
+          "RESULT.json": "a4c3436a86a73fbac7122aa0e89defa22509bda3d508a6f9ac162590cf462742"
+        },
+        "all_retained_state_bits_equal_to_threads_1": true,
+        "single_batch_speedup_over_threads_1": 1.4589562422887483,
+        "single_process_wall_speedup_over_threads_1": 1.3070348648028316
+      },
+      {
+        "threads": 4,
+        "samples": 1,
+        "batch_seconds": 0.099805345,
+        "process_wall_seconds": 0.11540392499955487,
+        "jobs": [
+          {
+            "job": 0,
+            "rtol": 3e-09,
+            "atol": 3e-11,
+            "accepted_steps": 436,
+            "rejected_steps": 0,
+            "relative_D2_error_upper": 1.6275184296677257e-09,
+            "state_ieee754_be_sha256": "8ab2917dbe4af5457c561dd6c6734f2974ca3eea7b205f92e6b04317fa37c092",
+            "native_serde_request_sha256": "a8ff6c0b4b283c5d7dcebc9152035cfe157b8c02df3a7329c13765c7f69a4d9d"
+          },
+          {
+            "job": 1,
+            "rtol": 3e-10,
+            "atol": 3e-12,
+            "accepted_steps": 703,
+            "rejected_steps": 0,
+            "relative_D2_error_upper": 1.4728567155626935e-10,
+            "state_ieee754_be_sha256": "1fc5aa55c66b108740467d3d433c097a4e10490842b60146319bdbdc1f961f94",
+            "native_serde_request_sha256": "9b751562d28ee87cdf3128811e149d925c2da439e884200b54961c9ae06ba567"
+          },
+          {
+            "job": 2,
+            "rtol": 3e-11,
+            "atol": 3e-13,
+            "accepted_steps": 1132,
+            "rejected_steps": 0,
+            "relative_D2_error_upper": 1.3856994587496746e-11,
+            "state_ieee754_be_sha256": "058171c8a09172efb3a329cb78728ef7bef3358a69e54835505765acd94b9bd8",
+            "native_serde_request_sha256": "56828717295704129a30a63dd9ca3252de0f1ebf96e95f259439e5f10ec19bd5"
+          },
+          {
+            "job": 3,
+            "rtol": 3e-12,
+            "atol": 3e-14,
+            "accepted_steps": 1819,
+            "rejected_steps": 0,
+            "relative_D2_error_upper": 1.2701532252981296e-12,
+            "state_ieee754_be_sha256": "49340d008309345a4f772d66b2360bd121aeb229756d21fbd0ae1cb940bd34e6",
+            "native_serde_request_sha256": "f61a6bea15913d4f85ca585d85109250f35783b1e6e1a3bd95d3f98529a23cc5"
+          }
+        ],
+        "result_sha256": "c5765d4ce4178a91c8c005fb5166cb259e5be8012d79b6dd2b0c13deda8526a8",
+        "payload_checksums": {
+          "BATCH.EXECUTION.json": "d077ddc26e095bb0c865ff328b63cf00ed39562afd2c8ec7974490bfa306d685",
+          "BATCH.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "BATCH.stdout.txt": "c5765d4ce4178a91c8c005fb5166cb259e5be8012d79b6dd2b0c13deda8526a8",
+          "POINT_ERROR_0.json": "e8cf2090fe754550c2ed2ebac93352215949d3e417958583c0a30d60a58fcd12",
+          "POINT_ERROR_1.json": "856e46f443b7272daac5084e34be9d7922c0e4af35521ecb7a5be69e4b97c8c5",
+          "POINT_ERROR_2.json": "b52ea1ac8950f0495a4943dc9798443bf979422daacc49427df43fa23b0e4100",
+          "POINT_ERROR_3.json": "d6f4e98001fbbeab2077941461f5029bd84aa32b322b2ccfc4a9b082a7641125",
+          "RESULT.json": "c5765d4ce4178a91c8c005fb5166cb259e5be8012d79b6dd2b0c13deda8526a8"
+        },
+        "all_retained_state_bits_equal_to_threads_1": true,
+        "single_batch_speedup_over_threads_1": 2.017778727181395,
+        "single_process_wall_speedup_over_threads_1": 1.8734964690316789
+      }
+    ],
+    "time_scope": "Batch Instant begins after pool construction and seed parsing; includes per-job setup, execution and counters/metadata conversions, and collection of job results. Parent JSON output and process start excluded. Each configuration has one batch sample.",
+    "parallel_axis": "Four independent complete trajectories, each retaining sequential radial carry.",
+    "scope_limit": "A single observed batch per worker count, not a median, confidence interval, or general scaling guarantee. These are new performance configurations using retained seed/source/certificate; no historical production campaign is replayed."
+  },
+  "ncp_runner_sandbox_pilot": {
+    "result_sha256": "0ef41785793d32d47fdb63a7d12828d9d5c2f6e06e3746c65ade85d8ac23be27",
+    "execution_sha256": "b157d1bce5ca445da832f0bd1cce663623e13f4283b3b8745f6cf8112a753c8f",
+    "request_sha256": "db72c6705219e5a505eca2360faf4df2687e79cb2836070434eaadc5e7b3e009",
+    "request": {
+      "schema": "PHYS70_OPTIMIZED_REQUEST_V1",
+      "engine": "block_simd",
+      "physics_request": {
+        "schema": "PHYS69_VIGILODE_REQUEST_V1",
+        "lmax": 28,
+        "angular_nodes": 96,
+        "rtol": 3e-11,
+        "atol": 3e-13,
+        "initial_step": 0.01,
+        "max_step": 0.5,
+        "max_attempts": 20000,
+        "upstream_commit": "a21d573980f66fe02891bd216153443b5352f921",
+        "frozen_source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+        "HH_R10": "OFF"
+      },
+      "HH_R10": "OFF"
+    },
+    "accepted_steps": 1132,
+    "rejected_steps": 0,
+    "solver_setup_and_solve_elapsed_seconds": 0.05580754,
+    "native_process_wall_seconds": 0.0654275550004968,
+    "relative_D2_error_upper": 1.3856994587496746e-11,
+    "actual_runtime_host": "6a4240d1fd44",
+    "host_classification": "CURRENT_SANDBOX_RUN_OF_NCP_DELIVERY_RUNNER",
+    "remote_NCP_submission": false,
+    "receipt_NCP_submission": "DIRECT_HOST_EXECUTION_ONLY_NO_REMOTE_JOB_SUBMISSION",
+    "build_provenance": "EXTERNAL_BINARY_SHA_ONLY",
+    "interpretation": "Runner actual execution and receipt wiring validated on this sandbox with externally supplied already-built binary. This is not a new NCP-host benchmark or an in-wrapper compilation result.",
+    "payload_checksums": {
+      "EXECUTION.json": "b157d1bce5ca445da832f0bd1cce663623e13f4283b3b8745f6cf8112a753c8f",
+      "FROZEN_U_SUBSET.npz": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "INTEGRATE_NATIVE.EXECUTION.json": "b9d9f0e1b332077c57aea121d98504276bad0189f892aae95dec1da02adfd9ca",
+      "INTEGRATE_NATIVE.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "INTEGRATE_NATIVE.stdout.txt": "0ef41785793d32d47fdb63a7d12828d9d5c2f6e06e3746c65ade85d8ac23be27",
+      "INVOCATION.json": "8a93380503ee5ae2828a66dbcb3a448ef0d3bd622f2e8f52ba9f9dd7599db419",
+      "REQUEST.json": "db72c6705219e5a505eca2360faf4df2687e79cb2836070434eaadc5e7b3e009",
+      "RESULT.json": "0ef41785793d32d47fdb63a7d12828d9d5c2f6e06e3746c65ade85d8ac23be27",
+      "SEED_INPUT.txt": "3aae5f37d858deca71f4f4217d56484d8430f06ad95e30280a44aafc2b6f7862"
+    },
+    "resume": {
+      "verification_sha256": "86a473ea86b5e0d88013299a9e58dc6adf806014aa44d18699995de9fcf7ca8b",
+      "status": "PASS_READ_ONLY_REUSE",
+      "new_integrations": 0,
+      "files_written": 0,
+      "files_content_size_mtime_ns_unchanged": 10,
+      "result_sha256": "0ef41785793d32d47fdb63a7d12828d9d5c2f6e06e3746c65ade85d8ac23be27"
+    }
+  },
+  "L64_preflight": {
+    "execution_sha256": "b2c646a91184e3ecfe975d42564cf4331bba9c97dcd219887ff6db1208049805",
+    "status": "PREFLIGHT_ONLY",
+    "new_integrations": 0,
+    "commands": [],
+    "processes_launched": 0,
+    "special_function_calls": 0,
+    "seed_sha256": null,
+    "seed_state": "NOT_GENERATED_IN_PREFLIGHT",
+    "binary_available": true,
+    "python_flint_available_in_preflight_environment": false,
+    "request_sha256": "4894196e50b9da91b31465b5723c8ba7c770b0a8ecbc8eeeb5f94053b68b2d03",
+    "request": {
+      "schema": "PHYS70_OPTIMIZED_REQUEST_V1",
+      "engine": "block_simd",
+      "physics_request": {
+        "schema": "PHYS69_VIGILODE_REQUEST_V1",
+        "lmax": 64,
+        "angular_nodes": 128,
+        "rtol": 1e-10,
+        "atol": 1e-12,
+        "initial_step": 0.01,
+        "max_step": 0.25,
+        "max_attempts": 50000,
+        "upstream_commit": "a21d573980f66fe02891bd216153443b5352f921",
+        "frozen_source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+        "HH_R10": "OFF"
+      },
+      "HH_R10": "OFF"
+    },
+    "payload_checksums": {
+      "EXECUTION.json": "b2c646a91184e3ecfe975d42564cf4331bba9c97dcd219887ff6db1208049805",
+      "FROZEN_U_SUBSET.npz": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "INVOCATION.json": "d0e43547129003ac94f7656207f62aa93f2656dc7d79355c40e4f6b25a80d93b",
+      "REQUEST.json": "4894196e50b9da91b31465b5723c8ba7c770b0a8ecbc8eeeb5f94053b68b2d03"
+    },
+    "L64_result_claimed": false
+  },
+  "claim_decisions": {
+    "independent_trajectory_order_and_bit_parity": "SUPPORTED_ON_ALL_12_STORED_COMPLETIONS",
+    "four_worker_scaling": "OBSERVED_SINGLE_BATCH_RATIO_2.017778727181395",
+    "NCP_runner_sandbox_smoke": "PASS_ACTUAL_EXECUTION",
+    "read_only_resume": "PASS_STORED_BEFORE_AFTER_AND_CURRENT_BYTES_SIZE_MTIME",
+    "remote_NCP_execution": "NOT_PERFORMED_BY_THESE_ARTIFACTS",
+    "L64_scientific_execution": "NOT_RUN_IN_PREFLIGHT",
+    "uniform_global_numerical_certificate": "NOT_CLAIMED"
+  },
+  "stage_status": {
+    "derivation": "Prior independent block theory retained; no new derivation required for this evidence read.",
+    "code": "Existing producer read-only; new review reports only.",
+    "verification": "13 stored completions, 65 exact rational records, 37 payload hashes, 10 resume snapshots reviewed.",
+    "scientific_execution": "Already completed 12 performance integrations +1 sandbox runner pilot reused; reviewer launched0.",
+    "publication": "Not assessed by child; root owns publication receipts.",
+    "backup": "Not assessed by child; root owns backup receipts.",
+    "DAG": "PARALLEL_BATCH_SCOPED_PASS; NCP_RUNNER_SANDBOX_PASS; RESUME_READ_ONLY_PASS; L64_PREFLIGHT_ONLY"
+  }
+}

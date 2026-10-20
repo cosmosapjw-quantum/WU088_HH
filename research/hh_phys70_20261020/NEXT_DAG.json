@@ -1,0 +1,161 @@
+{
+  "schema": "PHYS70_OPTIMIZATION_SCOPED_DAG_V1",
+  "created_utc": "2026-10-20T03:21:27.713359+00:00",
+  "parent": "efd1520dfc0643220f729307583ff0bc04b059e9",
+  "current_unit": "PHYS70_OPTIMIZATION",
+  "original_global_DAG_modified": false,
+  "HH_R10": "OFF",
+  "nodes": [
+    {
+      "id": "PHYS63_ALL_ANGULAR_LAP_POISSON_DTN",
+      "state": "ESTABLISHED_REUSED",
+      "dependencies": [],
+      "evidence": "../hh_phys69_20261019/NEXT_DAG.json"
+    },
+    {
+      "id": "PHYS69_ALL_ANGULAR_D2_21_20_M0",
+      "state": "COMPLETE_REUSED",
+      "dependencies": [],
+      "evidence": "../hh_phys69_20261019/all_angular/CERTIFICATE.json"
+    },
+    {
+      "id": "PHYS70_EXACT_HH_BLOCK_SHIFTED_INVERSE",
+      "state": "COMPLETE_ANALYTIC",
+      "dependencies": [
+        "PHYS69_ALL_ANGULAR_D2_21_20_M0"
+      ],
+      "evidence": "theory/PROOF.md",
+      "scope": "Finite-L original D2 ODE; analytic inverse for frozen full Jacobian."
+    },
+    {
+      "id": "PHYS70_ORDERED_SIMD_KERNEL",
+      "state": "COMPLETE_TESTED",
+      "dependencies": [
+        "PHYS70_EXACT_HH_BLOCK_SHIFTED_INVERSE"
+      ],
+      "evidence": "verification/RUST_TESTS_01.log"
+    },
+    {
+      "id": "PHYS70_SAME_ACCURACY_OPTIMIZATION",
+      "state": "COMPLETE_SCOPED",
+      "dependencies": [
+        "PHYS70_EXACT_HH_BLOCK_SHIFTED_INVERSE",
+        "PHYS70_ORDERED_SIMD_KERNEL"
+      ],
+      "evidence": "verification/PERFORMANCE_REVIEW.json",
+      "scope": "Stored L28 point errors and same-host observations; no uniform integration enclosure."
+    },
+    {
+      "id": "PHYS70_INDEPENDENT_PARALLEL_JOBS",
+      "state": "COMPLETE_SCOPED",
+      "dependencies": [
+        "PHYS70_SAME_ACCURACY_OPTIMIZATION"
+      ],
+      "evidence": "verification/ADDITIONAL_EXECUTION_REVIEW.json"
+    },
+    {
+      "id": "PHYS70_NCP_RUNNER",
+      "state": "IMPLEMENTED_SANDBOX_PILOT_AND_RESUME_PASS",
+      "dependencies": [
+        "PHYS70_SAME_ACCURACY_OPTIMIZATION"
+      ],
+      "evidence": "verification/ncp_runner/RESUME_VERIFICATION.json"
+    },
+    {
+      "id": "PHYS70_OPTIMIZED_L64",
+      "state": "READY_NOT_RUN_HOST_STATE_UNKNOWN",
+      "dependencies": [
+        "PHYS70_NCP_RUNNER"
+      ],
+      "evidence": "ncp_delivery/REQUEST_L64.json"
+    },
+    {
+      "id": "PHYS66_LONGTAIL6",
+      "state": "READY_NOT_RUN_HOST_STATE_UNKNOWN",
+      "dependencies": [],
+      "evidence": "../hh_phys69_20261019/NEXT_DAG.json"
+    },
+    {
+      "id": "PHYS68_L64_VALIDATED_PROFILES",
+      "state": "READY_NOT_RUN_HOST_STATE_UNKNOWN",
+      "dependencies": [],
+      "evidence": "../hh_phys68_20261019/ncp_delivery/REQUEST_L64.json"
+    },
+    {
+      "id": "PHYS69_VIGILODE_L64",
+      "state": "READY_NOT_RUN_HOST_STATE_UNKNOWN",
+      "dependencies": [],
+      "evidence": "../hh_phys69_20261019/vigilode/REQUEST_L64.json"
+    },
+    {
+      "id": "PHYS70_ALL_ANGULAR_D3_AND_HIGHER_REMAINDER",
+      "state": "OPEN",
+      "dependencies": [
+        "PHYS69_ALL_ANGULAR_D2_21_20_M0"
+      ],
+      "evidence": "../hh_phys69_20261019/theory/PROOF.md",
+      "scope": "Preserved prior successor identifier; not renamed complete by the optimization unit."
+    },
+    {
+      "id": "FULL_NONLINEAR_NUMERICAL_AND_ROUNDOFF_CERTIFICATION",
+      "state": "OPEN",
+      "dependencies": [],
+      "evidence": "theory/PROOF.md",
+      "scope": "PHYS67-69 scoped certificates stay complete; this node addresses remaining response and algorithm-wide obligations."
+    },
+    {
+      "id": "ORIGINAL_SOURCE_DRIVEN_XI",
+      "state": "OPEN",
+      "dependencies": [
+        "PHYS63_ALL_ANGULAR_LAP_POISSON_DTN"
+      ],
+      "evidence": "../hh_phys69_20261019/NEXT_DAG.json"
+    },
+    {
+      "id": "ORIGIN_AND_ORIGINAL_INCOMING_ADJOINT",
+      "state": "OPEN",
+      "dependencies": [
+        "ORIGINAL_SOURCE_DRIVEN_XI"
+      ],
+      "evidence": "../hh_phys69_20261019/NEXT_DAG.json"
+    },
+    {
+      "id": "SIGMA_E",
+      "state": "OPEN",
+      "dependencies": [
+        "ORIGINAL_SOURCE_DRIVEN_XI",
+        "ORIGIN_AND_ORIGINAL_INCOMING_ADJOINT"
+      ],
+      "evidence": "../hh_phys69_20261019/NEXT_DAG.json"
+    },
+    {
+      "id": "MAXWELLIAN_K_HH_T",
+      "state": "OPEN",
+      "dependencies": [
+        "SIGMA_E"
+      ],
+      "evidence": "../hh_phys69_20261019/NEXT_DAG.json"
+    }
+  ],
+  "publication": {
+    "state": "SOURCE_PUBLISHED_DRAFT_READBACK_VERIFIED",
+    "source_commit": "e73048e1399263eac3d40ffd3e700807bbc7c72e",
+    "pr": 120,
+    "metadata_binding": "publication/FINAL_DELIVERY.json",
+    "science_receipt": "publication/SCIENCE_REMOTE.json"
+  },
+  "backup": {
+    "state": "CAPSULES_PROVIDER_ACKNOWLEDGED",
+    "final_receipt": "publication/BACKUP_ACK.json",
+    "source_sha256": "a07be4fbc9d807780e663341551a88814be638622471f33325e27f1bfbb9679a",
+    "ncp_sha256": "3d6d42699b809cc4a6e322045b185d80e0884ee6cb7a5cdc31880340fb0ec504",
+    "remote_full_download_performed": false,
+    "acknowledged_destinations": [
+      "Library",
+      "Dropbox"
+    ],
+    "additional_destination_state": "ACK_NOT_OBSERVED"
+  },
+  "next_bounded_action": "Check actual host/backups for identical completion before one ready optimized L64 request; numerical certification and D3 remain distinct research obligations.",
+  "transport_updated_utc": "2026-10-20T04:45:22.995978+00:00"
+}

@@ -1,0 +1,138 @@
+{
+  "schema": "PHYS70_INDEPENDENT_IMPLEMENTATION_MATH_REVIEW_V1",
+  "created_utc": "2026-10-20T03:02:48.176773+00:00",
+  "reviewer": "/root/opt_literature",
+  "reviewer_implementation_edits": 0,
+  "status": "PASS_SCOPED_AFTER_TWO_TARGETED_FIXES",
+  "reviewed_files_sha256": {
+    "native/phys70_optimized/src/lib.rs": "f8984129dd26b9e5b8e770ae7fe45f76033f53a1e6720edadaaedebd0ad42228",
+    "native/phys70_optimized/src/kernel.rs": "c5739d3c5ecbc02754cbf34ae2d23372775b4fa52758251888d7233e0e4cbf3e",
+    "native/phys70_optimized/src/block.rs": "31f89c1fbd23776a3bc0982b7be92a1661cebd71650acb4f57459c053faec32b",
+    "native/phys70_optimized/src/integrate.rs": "e1b7fe5903a6fb2322f1426e515ac77539da476ad0d2746cadea68c31983c4c9",
+    "native/phys70_optimized/src/main.rs": "7fe3c4a2b54d362192f3976783e492138853d91c5fab7719fa6f122662d4d15f",
+    "native/phys70_optimized/src/benchmark.rs": "571c7dba4597ab9eb20b2d3a9662514acb71a05df9274869ba579c277c59eab9",
+    "native/phys70_optimized/Cargo.toml": "db4687db571cf4ec2737b37443f1c850314ccadce1b6f8f171804669651412f1",
+    "native/phys70_optimized/Cargo.lock": "76e4b91b26c3e7e87fca2a78504916e0568a3907f3e8c4e1fd4cdfcdd667d94c",
+    "native/phys70_optimized/tests/contract.rs": "650cd35916723b9791227866d859e385bb72874441adf367007ae805bd39a152",
+    "research/hh_phys70_20261020/verification/RUST_TESTS_01.log": "e7d5f0e23839421b6564e6111ddf99f5a366162030abba48cd0e28750d0b38cb"
+  },
+  "upstream_commit": "a21d573980f66fe02891bd216153443b5352f921",
+  "baseline_commit": "efd1520dfc0643220f729307583ff0bc04b059e9",
+  "scope": "Original finite-L m0 HH binary64 callback and structured raw-U implementation, resource-safe independent jobs. Not a global integration enclosure or original xi result.",
+  "methods": [
+    "Read unchanged PHYS69 RHS/JVP/time partial and compare equations and scalar operation order",
+    "Read pinned upstream attempt_inner raw-U stages and adaptive controller implementation",
+    "Independent symbolic block elimination and derivative sign/shared-channel analysis",
+    "One bounded IEEE scalar counterexample for residual denominator overflow",
+    "Read root-produced 13-test release execution log and meaningful assertions; no reviewer test rerun",
+    "Read only changed failure paths after two corrections"
+  ],
+  "findings": [
+    {
+      "id": "R70-F1",
+      "severity": "MEDIUM",
+      "location": "native/phys70_optimized/src/kernel.rs:HhKernel::freeze",
+      "state": "CLOSED_SOURCE_AND_TARGETED_TEST",
+      "problem": "A failed public check or angular refresh could return before FrozenJacobian::prepare invalidated the previously valid Jacobian. The integration wrapper already invalidated its own refresh, but the public API could expose the old base after failed freeze.",
+      "minimum_fix": "Call jac.invalidate() at entry, before all fallible checks.",
+      "closure_evidence": [
+        "Source re-read after fix",
+        "RUST_TESTS_01.log: failed_public_freeze_invalidates_previous_operator PASS",
+        "RUST_TESTS_01.log: failed_refresh_does_not_poison_later_valid_attempt PASS"
+      ],
+      "affected_prior_results": "No observed normal HH run affected; found before PHYS70 performance promotion."
+    },
+    {
+      "id": "R70-F2",
+      "severity": "MEDIUM",
+      "location": "native/phys70_optimized/src/block.rs:FrozenJacobian::solve residual denominator",
+      "state": "CLOSED_SOURCE_AND_TARGETED_TEST",
+      "problem": "Finite x, Jx and RHS can overflow the unscaled residual normalizer; division by Inf then reports a false zero.",
+      "actual_bounded_counterexample": {
+        "r": 28.0,
+        "j": 0,
+        "q": 0.5614285714285714,
+        "shift": 0.01,
+        "rhs_f": 1e+308,
+        "rhs_g": 5e+307,
+        "solution_f": 9.949441409932272e+307,
+        "solution_g": 5.055859006772905e+307,
+        "all_inputs_and_solution_finite": true,
+        "computed_numerator": 1.99584030953472e+292,
+        "denominator_state": "POSITIVE_INFINITY",
+        "old_reported_ratio": 0.0
+      },
+      "minimum_fix": "Reject nonfinite numerator or denominator before division.",
+      "closure_evidence": [
+        "Source re-read after fix",
+        "RUST_TESTS_01.log: overflow_in_residual_normalizer_cannot_pass_as_zero PASS"
+      ],
+      "behavior_after_fix": "Conservative NonFinite error at extreme magnitudes; no false successful zero-residual report."
+    }
+  ],
+  "checks": [
+    {
+      "area": "SIMD ordering",
+      "result": "PASS_SCOPED",
+      "evidence": "Node-major reduction order, scalar sqrt/exp and original multiplication parentheses are preserved. Four lanes are independent j values; padding is not included in physical outputs. Root test compares RHS and time partial bits for L21/28/36/64 at four tau values."
+    },
+    {
+      "area": "Exact shifted structure",
+      "result": "PASS",
+      "evidence": "I-sJ oscillator inverse has 1+s^2Q, xf=(bf-s bg)/Delta, xg=bg+sQxf. A/B blocks include both shared external derivatives. z derivative coefficients have no conjugate and the required negative factor 2."
+    },
+    {
+      "area": "Frozen JVP roundoff",
+      "result": "PASS_SCOPED",
+      "evidence": "Coefficient rearrangement is mathematically equivalent but not claimed bitwise. Original PHYS69 JVP independently checks solve residual and inverse action in current tests."
+    },
+    {
+      "area": "Time derivative and raw U",
+      "result": "PASS",
+      "evidence": "tau derivative sign and h*gamma, gamma*C, h^2*gamma*gamma_rows terms match the pinned upstream. Same raw b_code order and U8 WRMS estimator retained."
+    },
+    {
+      "area": "Cache identity and failure",
+      "result": "PASS_AFTER_R70_F1",
+      "evidence": "Exact t/state bits and immutable channels/nodes/backend key gate reuse; h-only retry recomputes shift. Failed refresh invalidates before callbacks."
+    },
+    {
+      "area": "Represented endpoint and PI",
+      "result": "PASS_SCOPED",
+      "evidence": "Only accepted y_new commits, trial uses end-t, strict cap and exact t+h==end are checked. Rejection must shorten represented end; final step reaches 38 exactly. Existing upstream PI updater is called. Four actual clock tests PASS."
+    },
+    {
+      "area": "Parallel independent identity",
+      "result": "PASS_SOURCE_CONTRACT",
+      "evidence": "Each request owns solver state/workspace, indexed results preserve request order, input digests are recorded, any failed/partial request makes batch incomplete. Scientific run and timing claims require root actual batch receipts."
+    },
+    {
+      "area": "Completion and malformed input",
+      "result": "PASS_SOURCE_CONTRACT",
+      "evidence": "Main checks two exact endpoint times, two states, fixed dimension and all finite values. Partial results retain false complete and nonzero process exit. Request/source/seed shape guards are present."
+    },
+    {
+      "area": "Performance-stage acceptance metric",
+      "result": "PASS_SCOPE_CORRECTION",
+      "evidence": "Tiny cancelling embedded raw stage relative errors are retained as telemetry; acceptance uses original state error weights (0.005 bound) and separate endpoint difference. This is a diagnostic comparison, not an interval certificate."
+    }
+  ],
+  "execution_evidence": {
+    "root_release_tests_pass": 13,
+    "clock_tests": 4,
+    "contract_tests": 9,
+    "reviewer_test_runs": 0,
+    "reviewer_scientific_integrations": 0,
+    "reviewer_old_campaign_replays": 0,
+    "reviewer_bounded_scalar_checks": 1,
+    "root_result_log": "RUST_TESTS_01.log"
+  },
+  "remaining_blocking_findings": [],
+  "claim_limits": [
+    "A successful structured solve and observed backward residual are binary64 diagnostics, not a global numerical integration certificate.",
+    "SIMD bitwise evidence is for measured compiled targets and tested inputs; exact arithmetic correspondence is broader.",
+    "Actual speed/memory, batch result identity and certificate comparison are root execution evidence, not inferred by this review.",
+    "Original PHYS63 existence and PHYS69 all-angular D2 certificate remain reused; original xi, higher orders and rates retain their obligations."
+  ],
+  "HH_R10": "OFF"
+}
