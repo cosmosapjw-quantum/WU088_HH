@@ -1,0 +1,30 @@
+{
+  "timestamp_utc": "2026-10-20T21:01:27.263184+00:00",
+  "argv": [
+    "python3",
+    "-u",
+    "research/hh_phys73_20261021/implementation/test_batch.py"
+  ],
+  "cwd": "/tmp/phys73_fullclone",
+  "source_sha256_before": {
+    "ncp_batch.py": "b3e2056e36123edc3bc86e47b0cf8a59f41b3a2b6d965dbe088ac38b14af573d",
+    "original_source.py": "33a4562c80721344ebc8272fea357f102959be589cb8880ffc38c6299ac8f254",
+    "test_batch.py": "d13ff77084be3573851f223756514453202c585bbf63c855cfc2fe2c87779a0a"
+  },
+  "source_sha256_after": {
+    "ncp_batch.py": "b3e2056e36123edc3bc86e47b0cf8a59f41b3a2b6d965dbe088ac38b14af573d",
+    "original_source.py": "33a4562c80721344ebc8272fea357f102959be589cb8880ffc38c6299ac8f254",
+    "test_batch.py": "d13ff77084be3573851f223756514453202c585bbf63c855cfc2fe2c87779a0a"
+  },
+  "source_stable_during_test": true,
+  "exit_code": 1,
+  "wall_seconds": 1.5506343150045723,
+  "stdout": "",
+  "stderr": "test_changed_output_rejects_without_child (__main__.BatchChecks.test_changed_output_rejects_without_child) ... ok\ntest_directory_membership_change_is_detected (__main__.BatchChecks.test_directory_membership_change_is_detected) ... ok\ntest_directory_symlink_is_not_silently_omitted (__main__.BatchChecks.test_directory_symlink_is_not_silently_omitted) ... ok\ntest_expected_output_contract_is_bound (__main__.BatchChecks.test_expected_output_contract_is_bound) ... ok\ntest_explicit_child_environment_is_bound (__main__.BatchChecks.test_explicit_child_environment_is_bound) ... ok\ntest_resource_plan_accounts_64_cpu_128_gib_and_small_hosts (__main__.BatchChecks.test_resource_plan_accounts_64_cpu_128_gib_and_small_hosts) ... ok\ntest_resume_runs_zero_children_and_preserves_evidence (__main__.BatchChecks.test_resume_runs_zero_children_and_preserves_evidence) ... ok\ntest_success_receipt_cannot_drop_payload_membership (__main__.BatchChecks.test_success_receipt_cannot_drop_payload_membership) ... ok\ntest_success_receipt_must_record_zero_exit (__main__.BatchChecks.test_success_receipt_must_record_zero_exit) ... ok\ntest_timeout_stops_own_descendants_and_preserves_unrelated_process (__main__.BatchChecks.test_timeout_stops_own_descendants_and_preserves_unrelated_process) ... FAIL\ntest_too_small_memory_has_an_input_error (__main__.BatchChecks.test_too_small_memory_has_an_input_error) ... ok\ntest_top_level_output_symlink_is_rejected (__main__.BatchChecks.test_top_level_output_symlink_is_rejected) ... ok\ntest_api_rejects_mislabeled_physics_before_evaluation (__main__.PreparationChecks.test_api_rejects_mislabeled_physics_before_evaluation) ... ok\ntest_resume_requires_expected_payload_membership (__main__.PreparationChecks.test_resume_requires_expected_payload_membership) ... ok\n\n======================================================================\nFAIL: test_timeout_stops_own_descendants_and_preserves_unrelated_process (__main__.BatchChecks.test_timeout_stops_own_descendants_and_preserves_unrelated_process)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/phys73_fullclone/research/hh_phys73_20261021/implementation/test_batch.py\", line 159, in test_timeout_stops_own_descendants_and_preserves_unrelated_process\n    self.assertFalse(running(int(ready.read_text())), \"own SIGTERM-resistant descendant leaked\")\nAssertionError: True is not false : own SIGTERM-resistant descendant leaked\n\n----------------------------------------------------------------------\nRan 14 tests in 1.417s\n\nFAILED (failures=1)\n",
+  "physical_campaign_executions": 0,
+  "environment_overrides": {
+    "PYTHONPATH": "/tmp/wu088_phys72_deps",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

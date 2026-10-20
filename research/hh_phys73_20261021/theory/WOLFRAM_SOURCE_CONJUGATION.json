@@ -1,0 +1,15 @@
+{
+  "schema": "WU088_HH_PHYS73_SOURCE_CONJUGATION_CHECK_V1",
+  "reason": "Independent review asked whether eta is homogeneous; the original transformed equation has source (1+k^2)F^-1 phi. This check verifies its conjugation, orbital source, and subtraction sign.",
+  "code": "uu=lam (em-em^2)/dist-lam em/2-(lam+lam^2/2)em^2; conjugatedPotential=lam em (1-2/dist)+lam^2 em^2+2lam (1+1/dist)em^2; orbital=Exp[-rr]/Sqrt[Pi]; {Expand[conjugatedPotential+2uu],FullSimplify[D[orbital,{rr,2}]+2/rr D[orbital,rr]+(kk^2+2/rr)orbital-(1+kk^2)orbital,Assumptions->rr>0],Expand[-src-(-src-vv chi)-vv chi]}",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Out[1]= {0, 0, 0}"
+      }
+    ],
+    "structuredContent": null,
+    "isError": false
+  }
+}

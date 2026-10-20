@@ -1,0 +1,97 @@
+{
+  "Coulomb_scalar_calls": 12,
+  "HH_R10": "OFF",
+  "binding": {
+    "angular_backend": {
+      "angular_quadrature_used": false,
+      "certified": false,
+      "domain": {
+        "lmax": [
+          0,
+          128
+        ],
+        "max_radial_points": 4097,
+        "radii": [
+          27,
+          65
+        ]
+      },
+      "eta_C": "-10/7",
+      "method": "analytic_positive_Yukawa_multipoles",
+      "numpy": "2.3.5",
+      "offset": "7/10",
+      "precision": "binary64",
+      "primary_sources": [
+        "https://dlmf.nist.gov/10.60.E3",
+        "https://dlmf.nist.gov/10.47.E7",
+        "https://dlmf.nist.gov/10.47.E9",
+        "https://dlmf.nist.gov/10.51.E5",
+        "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.spherical_in.html",
+        "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.spherical_kn.html"
+      ],
+      "scattering_k": "7/10",
+      "scipy": "1.17.0",
+      "screening_kappa": "2"
+    },
+    "angular_code_sha256": "0353ab972cee0403bd5b4dcb5e864dd07da0aa5aef503924df5dabb561c7bee5",
+    "cache_code_sha256": "c81df56b569581415533f8fd9701f68ed7df8f47d2f82e8f27a919834fd1f80a",
+    "mpmath": "1.3.0",
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "request": {
+      "B": "27",
+      "E_Hartree": "49/200",
+      "HH_R10": "OFF",
+      "angular_nodes": 8,
+      "angular_nodes_role": "unused_legacy_diagnostic_parameter_no_angular_quadrature",
+      "angular_rule": "analytic_positive_Yukawa_multipoles",
+      "boundary": "zero_Dirichlet",
+      "dps": 40,
+      "eta_C": "-10/7",
+      "forcing": "V*(r*phi)",
+      "frozen_source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+      "k": "7/10",
+      "lmax": 1,
+      "nodes": 3,
+      "outer": 28.0,
+      "phi": "exp(-r)/sqrt(pi)",
+      "radial_rule": "composite_Simpson",
+      "schema": "PHYS73_ORIGINAL_SOURCE_GRID_V2"
+    },
+    "source_code_sha256": "863d6afd1f5f6dea609e114b842e24967cdfbd9c33b6ec01b103d69c3706257e"
+  },
+  "cached_node_hits": 2,
+  "certified": false,
+  "channel_seconds": [
+    {
+      "cache_hits": 1,
+      "cache_path": "/workspace/scratch/1b90a4a1175e/phys73_runtime_evidence/CACHE_CHECK_L1_N3_N5_DPS40/coulomb_cache/20ae6ea5475af0e1f5676dff9186f122a62d32f9b42936395a4d88242610ac17/ell_0000.json",
+      "ell": 0,
+      "new_Coulomb_nodes": 3,
+      "seconds": 0.09518774300522637
+    },
+    {
+      "cache_hits": 1,
+      "cache_path": "/workspace/scratch/1b90a4a1175e/phys73_runtime_evidence/CACHE_CHECK_L1_N3_N5_DPS40/coulomb_cache/20ae6ea5475af0e1f5676dff9186f122a62d32f9b42936395a4d88242610ac17/ell_0001.json",
+      "ell": 1,
+      "new_Coulomb_nodes": 3,
+      "seconds": 0.053934511000989005
+    }
+  ],
+  "created_utc": "2026-10-20T21:06:02.100254+00:00",
+  "effective_workers": 1,
+  "elapsed_seconds": 0.15090538799995556,
+  "files_sha256": {
+    "GRID.npz": "fc79f30cb824878c16e78205934c88ef6a87b045763cf93e6692fc6b42c06f67",
+    "SOURCE_GREEN.bin": "dcaf8b7db678f4bf4cc3b1f52eee8d98af03be7557dba02a17296fae7aa40778"
+  },
+  "fingerprint": "c861d100e2d595e22ab76a44ee7e1b870a7513963a29287b5f2f304501304212",
+  "interior_matching_boundary_supplied": false,
+  "old_panel_integrations": 0,
+  "old_profile_integrations": 0,
+  "process_worker_memory_limit_bytes": null,
+  "requested_workers": 1,
+  "schema": "PHYS73_SOURCE_PREPARATION_RECEIPT_V1",
+  "scientific_scope": "original_source_zero_Dirichlet_first_Green_action",
+  "status": "PREPARED_BINARY64_DIAGNOSTIC"
+}

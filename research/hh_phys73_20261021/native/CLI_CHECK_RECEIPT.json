@@ -1,0 +1,252 @@
+{
+  "schema": "PHYS73_NATIVE_CLI_CHECK_V1",
+  "scope": "manufactured protocol checks; no HH campaign",
+  "binary_sha256": "b31aadcbf64584ce61c9e103fa0451735411cebf61a5595104f7fbd3c92968e7",
+  "successful_processes": 5,
+  "expected_rejections": 11,
+  "checks_passed": 16,
+  "commands": [
+    {
+      "name": "single",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/single.bin",
+        "/tmp/phys73_cli_bohdli60/single.out",
+        "--workers",
+        "64",
+        "--repeat",
+        "3"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.0023260599991772324,
+      "stdout": "{\"schema\":\"PHYS73_GREEN_RUN_V1\",\"mode\":\"sweep\",\"tasks\":1,\"nodes\":3,\"workers_requested\":64,\"workers_effective\":1,\"available_parallelism\":8,\"repeat\":3,\"kernel_seconds\":[0.000312292,0.000111038,0.000095564],\"kernel_timing_includes_worker_spawn\":true,\"input_bytes\":168,\"output_bytes\":72,\"input_subnormal_components\":0,\"output_subnormal_components\":0,\"arithmetic_subnormal_results_all_repeats\":0,\"multiplication_underflow_to_zero_all_repeats\":0,\"precision\":\"binary64\",\"certified\":false,\"HH_R10\":\"OFF\"}\n",
+      "stderr": "",
+      "input_sha256": "763122b153ee8cc999a042c02d6880c6e6a13cf246b23d42f223b2ac0fb38af6",
+      "passed": true
+    },
+    {
+      "name": "dense",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/dense.bin",
+        "/tmp/phys73_cli_bohdli60/dense.out",
+        "--mode",
+        "dense"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.0019284480076748878,
+      "stdout": "{\"schema\":\"PHYS73_GREEN_RUN_V1\",\"mode\":\"dense\",\"tasks\":1,\"nodes\":3,\"workers_requested\":1,\"workers_effective\":1,\"available_parallelism\":8,\"repeat\":1,\"kernel_seconds\":[0.000236938],\"kernel_timing_includes_worker_spawn\":true,\"input_bytes\":168,\"output_bytes\":72,\"input_subnormal_components\":0,\"output_subnormal_components\":0,\"arithmetic_subnormal_results_all_repeats\":0,\"multiplication_underflow_to_zero_all_repeats\":0,\"precision\":\"binary64\",\"certified\":false,\"HH_R10\":\"OFF\"}\n",
+      "stderr": "",
+      "input_sha256": "763122b153ee8cc999a042c02d6880c6e6a13cf246b23d42f223b2ac0fb38af6",
+      "passed": true
+    },
+    {
+      "name": "multi",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/multi.bin",
+        "/tmp/phys73_cli_bohdli60/multi.out",
+        "--workers",
+        "6"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.001984011003514752,
+      "stdout": "{\"schema\":\"PHYS73_GREEN_RUN_V1\",\"mode\":\"sweep\",\"tasks\":7,\"nodes\":3,\"workers_requested\":6,\"workers_effective\":6,\"available_parallelism\":8,\"repeat\":1,\"kernel_seconds\":[0.000703755],\"kernel_timing_includes_worker_spawn\":true,\"input_bytes\":1032,\"output_bytes\":360,\"input_subnormal_components\":0,\"output_subnormal_components\":0,\"arithmetic_subnormal_results_all_repeats\":0,\"multiplication_underflow_to_zero_all_repeats\":0,\"precision\":\"binary64\",\"certified\":false,\"HH_R10\":\"OFF\"}\n",
+      "stderr": "",
+      "input_sha256": "05be21fc6a520e26f195aebe9dfdc8c406859671939f94ba750ed69984c4cb8d",
+      "passed": true
+    },
+    {
+      "name": "serial",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/serial.bin",
+        "/tmp/phys73_cli_bohdli60/serial.out",
+        "--workers",
+        "1"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.0019000350002897903,
+      "stdout": "{\"schema\":\"PHYS73_GREEN_RUN_V1\",\"mode\":\"sweep\",\"tasks\":7,\"nodes\":3,\"workers_requested\":1,\"workers_effective\":1,\"available_parallelism\":8,\"repeat\":1,\"kernel_seconds\":[0.000409830],\"kernel_timing_includes_worker_spawn\":true,\"input_bytes\":1032,\"output_bytes\":360,\"input_subnormal_components\":0,\"output_subnormal_components\":0,\"arithmetic_subnormal_results_all_repeats\":0,\"multiplication_underflow_to_zero_all_repeats\":0,\"precision\":\"binary64\",\"certified\":false,\"HH_R10\":\"OFF\"}\n",
+      "stderr": "",
+      "input_sha256": "05be21fc6a520e26f195aebe9dfdc8c406859671939f94ba750ed69984c4cb8d",
+      "passed": true
+    },
+    {
+      "name": "underflow",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/underflow.bin",
+        "/tmp/phys73_cli_bohdli60/underflow.out"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.0014609100035158917,
+      "stdout": "{\"schema\":\"PHYS73_GREEN_RUN_V1\",\"mode\":\"sweep\",\"tasks\":1,\"nodes\":1,\"workers_requested\":1,\"workers_effective\":1,\"available_parallelism\":8,\"repeat\":1,\"kernel_seconds\":[0.000149491],\"kernel_timing_includes_worker_spawn\":true,\"input_bytes\":72,\"output_bytes\":40,\"input_subnormal_components\":0,\"output_subnormal_components\":0,\"arithmetic_subnormal_results_all_repeats\":0,\"multiplication_underflow_to_zero_all_repeats\":1,\"precision\":\"binary64\",\"certified\":false,\"HH_R10\":\"OFF\"}\n",
+      "stderr": "",
+      "input_sha256": "7f8ccdedfa8d9f805bb1ab813dfcd3ff4ff3c90d127ddddbee8bddf3e90dd784",
+      "passed": true
+    },
+    {
+      "name": "overflow",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/overflow.bin",
+        "/tmp/phys73_cli_bohdli60/overflow.out"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0014267880033003166,
+      "stdout": "",
+      "stderr": "green_batch: nonfinite arithmetic intermediate\n",
+      "input_sha256": "9fd8dc965a9a741705c730971d42809e190282fa70a6aa988995a7c89bd7c630",
+      "passed": true
+    },
+    {
+      "name": "bad_magic",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/bad_magic.bin",
+        "/tmp/phys73_cli_bohdli60/bad_magic.out"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0013259959960123524,
+      "stdout": "",
+      "stderr": "green_batch: invalid input magic/version\n",
+      "input_sha256": "ce6a48e1a7797c53d73e1d730ff3285d430115a0ed8c9e68ca230db50bd301bd",
+      "passed": true
+    },
+    {
+      "name": "truncated",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/truncated.bin",
+        "/tmp/phys73_cli_bohdli60/truncated.out"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0011724139912985265,
+      "stdout": "",
+      "stderr": "green_batch: input length mismatch: expected 168, got 167\n",
+      "input_sha256": "d03f8546d51ddc01e9e0ab4e948a815bf3ad6e558c376d0d7c682ddd3b0a039b",
+      "passed": true
+    },
+    {
+      "name": "trailing",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/trailing.bin",
+        "/tmp/phys73_cli_bohdli60/trailing.out"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.000950949004618451,
+      "stdout": "",
+      "stderr": "green_batch: input length mismatch: expected 168, got 169\n",
+      "input_sha256": "108b027748b0de83b54efd8956d21666fcadbb7bade3b4d137a286e64e844fe4",
+      "passed": true
+    },
+    {
+      "name": "nan",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/nan.bin",
+        "/tmp/phys73_cli_bohdli60/nan.out"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0009365769947180524,
+      "stdout": "",
+      "stderr": "green_batch: nonfinite input component\n",
+      "input_sha256": "943f57f6bbeb89ef6ffa21a1a1f717a6b1c137cd4fd0416aa7cd1702e5729ab1",
+      "passed": true
+    },
+    {
+      "name": "sentinel",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/sentinel.bin",
+        "/tmp/phys73_cli_bohdli60/sentinel.out"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.001085862997570075,
+      "stdout": "",
+      "stderr": "green_batch: t[0] must be the unused zero sentinel\n",
+      "input_sha256": "fd21a2134f0743833bedbbb5fa5682e22fb4ed6a15e6189ac59e5a69553544fb",
+      "passed": true
+    },
+    {
+      "name": "workers_zero",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/workers_zero.bin",
+        "/tmp/phys73_cli_bohdli60/workers_zero.out",
+        "--workers",
+        "0"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0008352730073966086,
+      "stdout": "",
+      "stderr": "green_batch: workers outside 1..=1024\n",
+      "input_sha256": "763122b153ee8cc999a042c02d6880c6e6a13cf246b23d42f223b2ac0fb38af6",
+      "passed": true
+    },
+    {
+      "name": "duplicate",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/duplicate.bin",
+        "/tmp/phys73_cli_bohdli60/duplicate.out",
+        "--repeat",
+        "1",
+        "--repeat",
+        "1"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0008353839948540553,
+      "stdout": "",
+      "stderr": "green_batch: missing value or duplicate option\n",
+      "input_sha256": "763122b153ee8cc999a042c02d6880c6e6a13cf246b23d42f223b2ac0fb38af6",
+      "passed": true
+    },
+    {
+      "name": "stale",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/stale.bin",
+        "/tmp/phys73_cli_bohdli60/stale.out"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0008874219929566607,
+      "stdout": "",
+      "stderr": "green_batch: output exists; choose a new path\n",
+      "input_sha256": "763122b153ee8cc999a042c02d6880c6e6a13cf246b23d42f223b2ac0fb38af6",
+      "passed": true
+    },
+    {
+      "name": "hh_r10",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/hh_r10.bin",
+        "/tmp/phys73_cli_bohdli60/hh_r10.out"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.00082321600348223,
+      "stdout": "",
+      "stderr": "green_batch: HH_R10 must remain OFF\n",
+      "input_sha256": "763122b153ee8cc999a042c02d6880c6e6a13cf246b23d42f223b2ac0fb38af6",
+      "passed": true
+    },
+    {
+      "name": "dense_limit",
+      "argv": [
+        "/tmp/phys73_runtime/green_batch",
+        "/tmp/phys73_cli_bohdli60/dense_limit.bin",
+        "/tmp/phys73_cli_bohdli60/dense_limit.out",
+        "--mode",
+        "dense"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.004491394996875897,
+      "stdout": "",
+      "stderr": "green_batch: dense work exceeds hard pair-evaluation limit\n",
+      "input_sha256": "dd9f17a43cf41b81e8707b888be4838798e677e0c259f6802bf77de421b318de",
+      "passed": true
+    }
+  ]
+}

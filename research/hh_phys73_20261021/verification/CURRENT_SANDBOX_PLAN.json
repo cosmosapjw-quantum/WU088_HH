@@ -1,0 +1,113 @@
+{
+  "driver_sha256": "79096bbc4275ab91ad93f4a11647c5b23eacda7fd41c63682b8ff28270c73ee7",
+  "inventory": [
+    {
+      "cases": [
+        {
+          "L": 28,
+          "T": 55
+        },
+        {
+          "L": 28,
+          "T": 65
+        },
+        {
+          "L": 28,
+          "T": 75
+        },
+        {
+          "L": 64,
+          "T": 55
+        },
+        {
+          "L": 64,
+          "T": 65
+        },
+        {
+          "L": 64,
+          "T": 75
+        }
+      ],
+      "engine": "unchanged PHYS66/64 full-matrix ordered hierarchy",
+      "id": "PHYS66_LONGTAIL6",
+      "status": "READY_NO_OBSERVED_RETURN",
+      "workers": 1
+    },
+    {
+      "id": "PHYS68_VALIDATED_L64",
+      "inherited_intermediate_modes": [
+        0,
+        36
+      ],
+      "new_independent_jobs": 28,
+      "new_modes": [
+        37,
+        64
+      ],
+      "status": "REPLACED_BY_REUSE_EQUIVALENT_REQUEST",
+      "target": "same finite L64 D1 1e-45 / D2 1e-62 goals",
+      "workers": 1
+    },
+    {
+      "Fortran_compile_and_scalar_run": 1,
+      "exact_scalar_jobs": 3,
+      "id": "PHYS72_HOST_REPRODUCTION",
+      "status": "READY_OPTIONAL_NOT_SCIENCE_GATE"
+    },
+    {
+      "L": 64,
+      "T": 44,
+      "angular_source": "analytic_positive_Yukawa_multipoles",
+      "dps": 60,
+      "id": "PHYS73_ORIGINAL_SOURCE",
+      "native_workers": 8,
+      "preparation_workers": 7,
+      "radial_nodes": [
+        257,
+        513
+      ],
+      "status": "NEW_READY_FINITE_GRID_DIAGNOSTIC"
+    },
+    {
+      "id": "PHYS70_L64",
+      "status": "COMPLETE_REUSED_PR123_EXCLUDED_FROM_QUEUE"
+    },
+    {
+      "id": "PHYS71_D3_AND_INHERITED_PROFILES",
+      "old_panels_to_integrate": 0,
+      "old_profiles_to_integrate": 0,
+      "status": "COMPLETE_REUSED_EXCLUDED_FROM_QUEUE"
+    }
+  ],
+  "resource_plan": {
+    "effective_cpus": 8,
+    "effective_memory_gib": 8,
+    "legacy_parallel": true,
+    "legacy_reserved_cpus": 2,
+    "legacy_reserved_gib": 6,
+    "longtail_worker_memory_gib": 4,
+    "longtail_workers": 1,
+    "native_workers": 8,
+    "observed": {
+      "NCP_identity": "CURRENT_HOST_NOT_ASSUMED",
+      "affinity_cpus": 9,
+      "cgroup_memory_bytes": 8589934592,
+      "cgroup_quota_cpus": 8,
+      "cpu_count": 9,
+      "effective_cpus": 8,
+      "effective_memory_bytes": 8589934592,
+      "hostname": "6a4240d1fd44",
+      "machine": "x86_64",
+      "physical_memory_bytes": 10451439616,
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.39"
+    },
+    "requested_cpus": 64,
+    "requested_memory_gib": 128,
+    "reserve_gib": 1,
+    "source_preparation_workers": 7,
+    "source_worker_memory_gib": 1,
+    "validated_worker_memory_gib": 2,
+    "validated_workers": 1
+  },
+  "status": "PLAN_ONLY_ZERO_SCIENTIFIC_EXECUTIONS"
+}

@@ -1,0 +1,160 @@
+{
+  "actual_runs": [
+    {
+      "CLI_successes": 1,
+      "id": "exact_source_budget",
+      "output": "verification/SOURCE_BUDGET_L64_T44_N1.json",
+      "postrun_literal_only_revision": "verification/SOURCE_BUDGET_LITERAL_REVISION.json",
+      "receipt": "theory/TOOL_EVIDENCE.json",
+      "unit_tests": 12
+    },
+    {
+      "expected_rejections": 11,
+      "id": "native_kernel",
+      "normal_CLI_processes": 5,
+      "receipt": "native/CLI_CHECK_RECEIPT.json",
+      "unit_tests": 6
+    },
+    {
+      "angular_backend": "historical_Gauss16_LOW_MODE_ONLY",
+      "grids": [
+        {
+          "Coulomb_scalar_calls": 144,
+          "L": 3,
+          "Nr": 17,
+          "T": 28,
+          "dps": 50
+        },
+        {
+          "Coulomb_scalar_calls": 1040,
+          "L": 3,
+          "Nr": 129,
+          "T": 28,
+          "dps": 50
+        }
+      ],
+      "id": "actual_Coulomb_source_v1_low_mode",
+      "native_smoke_processes": 2,
+      "preparations": 2,
+      "source_snapshot": "verification/ORIGINAL_SOURCE_PREPARER_EXECUTED_v1.py.txt"
+    },
+    {
+      "Coulomb_scalar_calls": 144,
+      "direct_angular_integrals": 2,
+      "dps": 70,
+      "id": "independent_Coulomb_oracle",
+      "receipt": "verification/INDEPENDENT_COULOMB_ORACLE.json"
+    },
+    {
+      "Coulomb_preparation_in_timing": false,
+      "Nr": 129,
+      "available_CPUs": 8,
+      "blocks": 4,
+      "configurations_per_block": 3,
+      "copies": 16,
+      "distinct_physical_modes": 4,
+      "exclusive_host": false,
+      "id": "paired_kernel_benchmark",
+      "kernel_repetitions": 36,
+      "native_processes": 12,
+      "receipt": "verification/kernel_benchmark/REPORT.json",
+      "repetitions_per_configuration": 3,
+      "scope": "same finite packet kernel throughput, not NCP or whole HH speedup",
+      "shared_sandbox": true,
+      "tasks": 64
+    },
+    {
+      "Bessel_reference_points": 5,
+      "Coulomb_scalar_calls": 0,
+      "direct_angular_integrals": 4,
+      "dps": 180,
+      "id": "analytic_screen_source",
+      "invalid_domain_rejections": 8,
+      "receipt": "verification/runtime/ANALYTIC_SCREEN_CHECK.json",
+      "selected_source_values": 387
+    },
+    {
+      "Coulomb_scalar_calls": 40,
+      "L": 1,
+      "Nr": [
+        3,
+        5,
+        5
+      ],
+      "bounded_preparations": 3,
+      "checks": 14,
+      "completed_resume_Coulomb_calls": 0,
+      "dps": 40,
+      "id": "production_nested_cache",
+      "receipt": "verification/cache/CACHE_CHECK_RECEIPT.json"
+    },
+    {
+      "Coulomb_scalar_calls": 0,
+      "id": "production_analytic_cache_native_pipeline",
+      "native_processes": 2,
+      "receipt": "verification/cache/integrated/INTEGRATED_PIPELINE_RECEIPT.json"
+    },
+    {
+      "current_wrapper_tests": 14,
+      "full_L64_certificate_exists": false,
+      "id": "validated_l64_new_science",
+      "new_j37_panels": 1,
+      "postrun_atomic_writer_revision": "verification/validated_l64/ATOMIC_WRITER_REVISION.json",
+      "receipt": "verification/validated_l64/LIGHT_CHECK_RECEIPT.json",
+      "worker_memory_limit_bytes": 2147483648,
+      "worker_seconds": 1.1892563319997862
+    },
+    {
+      "batch_tests": 14,
+      "capsule_tests": 9,
+      "id": "current_batch_and_return_capsule",
+      "receipt": "verification/RETURN_CAPSULE_REVIEW.json",
+      "scientific_integrations": 0
+    }
+  ],
+  "external_tools": {
+    "Exa": [
+      "theory/TOOL_EVIDENCE.json",
+      "theory/YUKAWA_SYMBOLIC_AND_SOURCE_EVIDENCE.json"
+    ],
+    "SciSpace": "theory/TOOL_EVIDENCE.json",
+    "Wolfram": [
+      "theory/TOOL_EVIDENCE.json",
+      "theory/WOLFRAM_SOURCE_CONJUGATION.json",
+      "theory/YUKAWA_SYMBOLIC_AND_SOURCE_EVIDENCE.json"
+    ],
+    "warnings_and_failed_Context_call_preserved": true
+  },
+  "first_failure_resolution": [
+    "Bind explicit child environment in success identity",
+    "Stop own entire process group even if leader exited",
+    "Reject a full-batch memory request below5GiB as input error",
+    "Bounded wait in timeout test for asynchronous SIGKILL delivery",
+    "Reject symlinked archive directory before capsule write"
+  ],
+  "first_failures_preserved": [
+    "verification/runtime/INDEPENDENT_BATCH_REVIEW_INITIAL.json",
+    "verification/runtime/INDEPENDENT_BATCH_REVIEW_FINAL.json"
+  ],
+  "recorded_utc": "2026-10-20T21:10:19.356193+00:00",
+  "schema": "WU088_HH_PHYS73_EXECUTION_LEDGER_V1",
+  "stage_states": {
+    "DAG": "NEXT_DAG.json",
+    "NCP_execution": "NOT_SUBMITTED_NOT_RUN",
+    "backup": "SEE_FINAL_EXTERNAL_DELIVERY_AND_ACK",
+    "derivation": "COMPLETE_SCOPED",
+    "implementation": "COMPLETE_SCOPED",
+    "publication": "SEE_ACTUAL_REMOTE_PUBLICATION_RECEIPT",
+    "scientific_execution": "BOUNDED_NEW_SOURCE_DIAGNOSTICS_AND_ONE_NEW_J37_PANEL_ONLY",
+    "verification": "PASS_SCOPED_WITH_PRESERVED_FIRST_FAILURES"
+  },
+  "totals_by_scientific_scope": {
+    "HH_R10": "OFF",
+    "NCP_host_runs": 0,
+    "NCP_submissions": 0,
+    "new_interval_panels": 1,
+    "old_panel_integrations": 0,
+    "old_profile_integrations": 0,
+    "physical_matched_xi_solutions": 0
+  }
+}

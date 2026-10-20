@@ -1,0 +1,35 @@
+{
+  "timestamp_recorded_utc": "2026-10-20T20:56:54.220193+00:00",
+  "command": [
+    "python3",
+    "research/hh_phys73_20261021/implementation/test_batch.py"
+  ],
+  "environment_override": {
+    "PYTHONPATH": "/tmp/wu088_phys72_deps"
+  },
+  "tests_run": 13,
+  "passed": 10,
+  "failures": 2,
+  "errors": 1,
+  "test_reported_seconds": 1.278,
+  "observed_findings": [
+    {
+      "id": "explicit_environment_unbound",
+      "result": "FAIL",
+      "message": "ValueError not raised when explicit child environment changed on resume"
+    },
+    {
+      "id": "timeout_descendant_cleanup",
+      "result": "FAIL",
+      "message": "Own SIGTERM-resistant grandchild remained running after timed-out leader exited; fixture cleaned its own PIDs in finally; unrelated process preserved"
+    },
+    {
+      "id": "small_resource_input_error",
+      "result": "ERROR",
+      "message": "4GiB full batch resource_plan raised ArithmeticError rather than a clear input ValueError"
+    }
+  ],
+  "concurrent_root_corrections": "Other reported issues were fixed while this test file was being prepared;10 tests passed on imported code snapshot",
+  "source_snapshot_hash": "NOT_CAPTURED_BEFORE_IMPORT; do not associate this receipt with later edited source bytes",
+  "scientific_campaign_executions": 0
+}

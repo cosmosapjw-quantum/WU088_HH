@@ -1,0 +1,54 @@
+{
+  "AST_comparison": {
+    "additional_run_guard": "Ignore only ordinary .REQUEST.json.<32 lowercase hex>.tmp files; never parse/promote their incomplete bytes.",
+    "changed_top_level_functions": [
+      "write_new",
+      "run"
+    ],
+    "entire_module_AST_equal_after_replacing_write_new_and_only_nonempty_output_guard": true,
+    "numerical_changes": 0,
+    "scientific_functions_unchanged": true
+  },
+  "HH_R10": "OFF",
+  "current_driver": {
+    "path": "research/hh_phys73_20261021/implementation/validated_l64.py",
+    "sha256": "12348bfe8810807d7ede7bd7fff605ca4afd1584a36addc76f8c15c3fcb2cd6d"
+  },
+  "executed_scientific_driver_snapshot": {
+    "NCP_run": false,
+    "actual_new_panels": 1,
+    "path": "research/hh_phys73_20261021/verification/validated_l64/validated_l64_one_panel_executed.py",
+    "sha256": "41c9c1410070a9bcf161ca497978b21bac7788bb312b7396fdd4e3298e6c6aa4"
+  },
+  "full4256panel_NCP_run": "NOT_RUN",
+  "inherited_profiles_reintegrated": 0,
+  "new_writer": "Same-directory exclusive temporary, flush+fsync, atomic no-replace hard link, unlink temporary, directory fsync.",
+  "numerical_panel_reexecutions_for_revision": 0,
+  "prior_one_panel_checkpoint": "Immutable test artifact remains bound to its preserved pre-atomic driver snapshot; it is not a resume target for the revised driver.",
+  "reason": "Wall-bounded interruption must not publish a truncated REQUEST, aggregate certificate, or invocation receipt.",
+  "recorded_utc": "2026-10-20T21:00:43.785014+00:00",
+  "regression_tests": {
+    "PYTHONPATH": "/tmp/wu088_phys72_deps:/tmp/phys73_fullclone/src",
+    "command": [
+      "python3",
+      "research/hh_phys73_20261021/implementation/test_validated_l64.py"
+    ],
+    "exit_code": 0,
+    "fixture_pool_scientific_calls": 0,
+    "log": "research/hh_phys73_20261021/verification/validated_l64/atomic_writer_tests.tool_output.txt",
+    "log_sha256": "c70d316099f361bc99ee3bc89e7f093d3306f2607ed1ad60365b3bd5145f2d73",
+    "new_cases": [
+      "existing target collision preserves immutable bytes",
+      "injected pre-link fsync interruption publishes no target; retry works",
+      "SIGKILL-style leftover REQUEST temporary is ignored, never promoted; bound request freshly written"
+    ],
+    "passed": 14,
+    "test_report_seconds": 0.769,
+    "tool_process_wall_seconds": 0.788601807
+  },
+  "schema": "PHYS73_VALIDATED_L64_ATOMIC_WRITER_REVISION_V1",
+  "test_source": {
+    "path": "research/hh_phys73_20261021/implementation/test_validated_l64.py",
+    "sha256": "92e278bede7a2b60605d3408a2cc2d6df5e7e9e299ca99619cc22cbecfff0c8d"
+  }
+}
