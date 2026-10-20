@@ -50,6 +50,14 @@ VigilODE PR77/78은 reflecting-grid 모형이다. residual inverse 구조를
 ## 복원 범위
 
 SOURCE_AND_EVIDENCE와 RECOVERY ZIP은 source/evidence capsule이다.
-전체 Git clone으로 취급하지 않는다. 실제 branch를 clone/fetch하거나
-명시된 base commit을 가진 Git clone에서 additive patch/bundle을 사용한다.
-증거 capsule만으로도 새 exact scalar certificate와 포함원은 재현할 수 있다.
+전체 Git clone으로 취급하지 않는다. Git history가 필요하면 실제 branch를
+clone/fetch하고 외부 DELIVERY의 최종 HEAD와 대조한다. 이 전달물에는 Git
+bundle이나 additive patch를 포함하지 않는다. 증거 capsule의 명시된 subtree만
+복원해도 새 exact scalar certificate와 포함원은 재현할 수 있다.
+
+121-file science source commit은 `f26fa5a6e9fcb4428d6467cb762c852fa49daa6f`,
+science tree는 `b22ac13ca38d5bdbf1aa96cecc74e04c7f9e2e02`다. 후속 metadata
+commit과 외부 DELIVERY는 게시·백업·clean restore 결과 및 실행 안내만 닫는다.
+Science capsule과 최종 metadata HEAD의 identity를 서로 바꾸어 사용하지 않는다.
+원래 checkout 경로가 사라진 뒤 pinned remote blob과 대조하여 121개 파일을
+복원했으며, 원인 미확인 및 native binary 부재도 publication 기록에 명시했다.

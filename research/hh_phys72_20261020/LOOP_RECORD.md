@@ -62,3 +62,33 @@ orders >=4 and lambda=1. The PHYS71 loop remains complete and reused.
    sufficient bound. Failure of an optional bound is never promoted to no-go.
 6. PHYS63, PHYS69 and PHYS71 remain complete; HH_R10 remains OFF. No change to
    project-wide policy, original physical target or protected source is made.
+
+## Final scientific and source-delivery closure
+
+The tables above preserve the state at the scientific source freeze. The
+actual source commit is `f26fa5a6e9fcb4428d6467cb762c852fa49daa6f` and its tree is
+`b22ac13ca38d5bdbf1aa96cecc74e04c7f9e2e02`. Draft PR124 is published on the
+actual PR123 descendant. `publication/REMOTE_PUBLICATION.json` records the
+transport and remote readback; `publication/BACKUP_ACK.json` records actual
+source capsule provider responses. The old BACKUP_PLAN status is a historical
+plan, superseded by that ACK.
+
+R1–R10 and C1–C10 are complete for this fixed scientific/source-delivery unit.
+Publication, transport backup and the scientific calculation remain distinct
+state axes. The later metadata HEAD and final recovery payload are identified
+by external `PHYS72_DELIVERY_20261020.json`; actual final recovery upload
+responses and its hash are in external `PHYS72_FINAL_BACKUP_ACK_20261020.json`.
+Those external records avoid self-referential archive hashes.
+
+The immutable 121-file science capsule was restored in a fresh directory,
+every manifest SHA and Git blob matched, and each of the three exact CLI
+entry points ran once with matching semantic results. These three scalar
+executions are separate from the earlier source-freeze test/diagnostic counts.
+No tests, native run or physical integration was repeated for the restore.
+Final metadata is separately matched to the pinned final remote subtree.
+
+Independent delivery review corrected three documentation issues: creation
+of the runs parent and stop-on-existing-directory behavior, accurate direct
+Fortran versus wrapper failure records, and removal of an unshipped Git
+bundle/patch route. No executable or mathematical source was changed.
+PHYS63/69/71 stay complete; old campaign counts remain zero; `HH_R10=OFF`.

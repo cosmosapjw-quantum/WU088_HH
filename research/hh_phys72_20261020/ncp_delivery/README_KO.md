@@ -23,7 +23,9 @@
 새 디렉터리다. 이 계산은 exact scalar arithmetic이며 적분을 호출하지 않는다.
 
 ```bash
+set -eu
 PHYS72_RUN_DIR=runs/phys72_exact_20261020
+mkdir -p runs
 mkdir "$PHYS72_RUN_DIR"
 python3 research/hh_phys72_20261020/implementation/bounds.py \
   --terms 3 --lambda-abs 1 --budget 1e-78 \
@@ -65,8 +67,9 @@ python3 research/hh_phys72_20261020/ncp_delivery/run_native.py \
 대형 job, multi-core sweep 또는 새로운 누적 계산 예산을 배정하지 않는다.
 native 출력은 `certified:false`인 rounded diagnostic이다. `EXACT_AUTHORITY.json`
 이 수렴과 오차 판정을 담당한다. 경계 근처 native 분기가 다르더라도 정확
-Fraction 판정을 바꾸지 않는다. 직접 CLI와 wrapper는 잘못된 입력·scope를
-거부하고 별도 실패 receipt를 남긴다.
+Fraction 판정을 바꾸지 않는다. 직접 Fortran CLI는 잘못된 입력을 exit code로
+거부한다. Wrapper는 실제로 시작한 compile/native/payload 단계의 결과와
+실패를 기록한다. 일부 preflight 오류는 receipt 생성 전에 종료될 수 있다.
 
 ## 반환 계약
 
