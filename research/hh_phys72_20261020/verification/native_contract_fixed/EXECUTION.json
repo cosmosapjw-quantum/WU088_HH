@@ -1,0 +1,89 @@
+{
+  "schema": "PHYS72_NATIVE_CROSSCHECK_EXECUTION_V1",
+  "status": "COMPLETED_ROUNDED_CROSSCHECK",
+  "source_sha256": "dcde24319db227201ec8654623731077319d2bd08ec75a8569623a6ad047212d",
+  "exact_source_sha256": "2036fc4b0d76a825d98e3ea3f2342c67c3029f4ed6fbe67686c1d70042762e7c",
+  "runner_sha256": "2a9965c90ffbf7df01627b1e744821b26b0d98ff8ff379cb59f1eb7a6978df5a",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "native_certified": false,
+  "exact_lambda": "1",
+  "native_lambda_decimal": "1",
+  "terms": 3,
+  "physical_integrations": 0,
+  "HH_R10": "OFF",
+  "compiler_version_execution": {
+    "command": [
+      "/tmp/wu088_phys72_fortran/root/usr/bin/x86_64-linux-gnu-gfortran-13",
+      "--version"
+    ],
+    "status": "completed",
+    "exit_code": 0,
+    "started_unix_seconds": 1792502692.7069364,
+    "wall_seconds": 0.002971996000269428,
+    "timeout_seconds": 60,
+    "stdout_sha256": "c077c93e4d08c80bcaaca8856d54d860655a989eb6820a5e807ac798e452e222",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "compile": {
+    "command": [
+      "/tmp/wu088_phys72_fortran/root/usr/bin/x86_64-linux-gnu-gfortran-13",
+      "-O2",
+      "-std=f2008",
+      "-Wall",
+      "-Wextra",
+      "-fcheck=all",
+      "-fno-fast-math",
+      "-B/tmp/wu088_phys72_fortran/root/usr/lib/gcc/x86_64-linux-gnu/13/",
+      "-B/usr/lib/gcc/x86_64-linux-gnu/13/",
+      "-L/tmp/wu088_phys72_fortran/root/usr/lib/gcc/x86_64-linux-gnu/13/",
+      "/workspace/scratch/1b90a4a1175e/WU088_HH/research/hh_phys72_20261020/native/phys72_bounds.f90",
+      "-o",
+      "/workspace/scratch/1b90a4a1175e/WU088_HH/research/hh_phys72_20261020/verification/native_contract_fixed/phys72-bounds"
+    ],
+    "status": "completed",
+    "exit_code": 0,
+    "started_unix_seconds": 1792502692.7100246,
+    "wall_seconds": 0.15580596999643603,
+    "timeout_seconds": 60,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "binary_sha256": "c817b9fb78b5748fefba40a69434f1f88b4479cbcb7e2c4fdbdfec2bed131771",
+  "native": {
+    "command": [
+      "/workspace/scratch/1b90a4a1175e/WU088_HH/research/hh_phys72_20261020/verification/native_contract_fixed/phys72-bounds",
+      "1",
+      "3"
+    ],
+    "status": "completed",
+    "exit_code": 0,
+    "started_unix_seconds": 1792502692.866469,
+    "wall_seconds": 0.00193097200099146,
+    "timeout_seconds": 60,
+    "stdout_sha256": "367ed91829dd55ebc8764430f7fdb861c3b17541454e5d46e74ff072d3f8cb74",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native_payload_validation": "PASSED_SCOPE_INPUT_AND_BRANCH_CONTRACT",
+  "comparison": {
+    "q_relative_difference": {
+      "numerator": "403",
+      "denominator": "13832775000000000000000000000000000000",
+      "upper_decimal": "2.913370599897706714668604094261635861207E-35",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "scope": "rounded scalar comparison only; exact authority unchanged",
+    "tail_absolute_difference": {
+      "numerator": "37259609115314216070456974907",
+      "denominator": "12499999999999999999930836125000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper_decimal": "2.980768729225137285653050913823362899367E-114",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "tail_relative_difference": {
+      "numerator": "12419869705104738690152324969",
+      "denominator": "62772493490995176287437500000000000000000000000000000000000000",
+      "upper_decimal": "1.978552868365248334242723503653918580711E-34",
+      "display_rounding": "ROUND_CEILING"
+    }
+  }
+}

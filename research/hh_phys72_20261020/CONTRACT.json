@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "workflow_version": "1.0.0",
+  "unit_id": "WU088_HH_PHYS72_20261020",
+  "task": "both",
+  "objective": "Construct the actual outgoing Coulomb Dirichlet Green and original screen weighted bounds; decide lambda=1 convergence and Born orders >=4.",
+  "scope": "Original atomic exterior r>=27; every angular mode; H_- bulk and explicit H_C boundary operator norms; fixed entry (21,20),m=0.",
+  "actual_parent": "7060b2390caa931a74b3a377150731b98c2431a9",
+  "actual_parent_tree": "39314a970256799970fc11a2ff9d56d685d47e39",
+  "actual_parent_pr": 123,
+  "ancestor_pr121_head": "a5423e77ff1f3d2e7ea7f5db903fca9e9b2a0477",
+  "branch": "research/hh-phys72-outgoing-green-20261020",
+  "physical_parameters": {
+    "B_a0": "27",
+    "k_a0_inverse": "7/10",
+    "E_Hartree": "49/200",
+    "eta_C": "-10/7",
+    "shift_a0": "7/10",
+    "V": "2*(1+1/d)*exp(-2*d), d=abs(r*n-0.7*zhat)",
+    "A0": "2*h_C-k^2",
+    "outgoing": "H_plus=G+i*F_C",
+    "DtN_sign": "+u_prime*u_inverse",
+    "source_eta": "F*y",
+    "source_xi": "F*y-phi"
+  },
+  "preserved_inputs": {
+    "frozen_npz_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+    "corrected_D3_sha256": "f75d082e1966dd61a326c37b6ff14e8f330e010341a59a88eb4ca8d4734e6173",
+    "D3_display_sha256": "b22a110aa08e44fd9560da215ff5955ab138586a37016c1578bd48ea96be1a47"
+  },
+  "preserved_completed_states": ["PHYS63 qualitative actual LAP/Poisson/DtN", "PHYS69 D2", "PHYS71 R1-R10/C1-C10 and all-angular/all-radial D3"],
+  "acceptance": [
+    "Actual Green jump, boundary derivative, outgoing convention and density correspondence are explicit.",
+    "Uniform j estimate preserves the centrifugal term; growing C_j is retained in H_C.",
+    "Original multiplier remains noncentral and exact; no finite-L Gamma replacement.",
+    "Exact rational q admits lambda=1 and exact all-order geometric remainder follows.",
+    "Actual new lightweight checks and independent review support their stated scopes.",
+    "Additive descendant draft PR, readback identities, source/recovery backups and separate DAG states."
+  ],
+  "execution_policy": {
+    "old_76_panel_reintegrations": 0,
+    "inherited_152_profile_reintegrations": 0,
+    "old_campaign_verifier_runs": 0,
+    "new_NCP_submissions": 0,
+    "new_physical_campaign_required": false,
+    "local_allowed": ["derivation", "exact scalar arithmetic", "new lightweight manufactured checks", "Coulomb point evaluations", "native compile and scalar execution"],
+    "NCP_handoff": "Complete source, inputs, commands and return contract; only optional compile/environment adjustment/execution remains."
+  },
+  "HH_R10": "OFF"
+}

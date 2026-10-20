@@ -1,0 +1,29 @@
+{
+  "schema": "PHYS72_MANUFACTURED_MORAWETZ_EXECUTION_V1",
+  "status": "COMPLETED_VIA_STDIN_SAVED_WITHOUT_RERUN",
+  "receipt_recorded_utc": "2026-10-20T13:14:08.495993+00:00",
+  "execution_timestamp_utc": "NOT_RECORDED_BY_EXEC_TOOL",
+  "execution_tool_chunk_id": "684b4d",
+  "executor": "/root/weighted_multiplier",
+  "original_command": "python3 - <<'PY'\nimport math,json\nfrom scipy.integrate import quad\nB=27.0;k=0.7\nres=[]\nfor j in [0,20,64,1000]:\n L=j*(j+1)\n def terms(x):\n  r=B+x; w=-math.expm1(-x); wp=math.exp(-x); beta=r-B/2\n  f=complex(wp+(L+1/(k*k))*w/(r*r), -2*(k+1/(k*r))*wp+w/(k*r*r))\n  p=complex(wp,w/(k*r))\n  energy=abs(p)**2+B*(w/r)**2+(1-B/r)*L*(w/r)**2\n  rhs=2*(f*(beta*p.conjugate()+complex(0,w/k))).real\n  flux=(f*w).imag\n  return energy,rhs,flux\n vals=[quad(lambda x:terms(x)[a],0,math.inf,epsabs=2e-10,epsrel=5e-13,limit=300) for a in range(3)]\n left=vals[0][0]+B/2;right=vals[1][0]\n res.append({'j':j,'lhs_with_trace':left,'rhs_with_coulomb_flux':right,'relative_residual':abs(left-right)/max(abs(left),abs(right)), 'flux_plus_k':vals[2][0]+k,'quad_abs_error_max':max(v[1] for v in vals)})\nprint(json.dumps(res,indent=2))\nPY",
+  "replay_command": "python3 research/hh_phys72_20261020/verification/manufactured_morawetz.py",
+  "replay_command_executed": false,
+  "source_capture": "Exact stdin source materialized after the successful invocation; no second scientific execution.",
+  "script_sha256": "d801e079a20c93cbc4e09ac019cf337c646f3c311eda9ced26b50f617f77bd9d",
+  "stdout_sha256": "93db6980bf25ebf9217c5f4428adcc7d9414470db6e502beec22416463509952",
+  "exit_code": 0,
+  "wall_time_seconds": 0.525860309,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "scipy": "1.17.0",
+    "numpy": "2.3.5"
+  },
+  "manufactured_fields": 4,
+  "new_scalar_quadratures": 12,
+  "inherited_HH_integrations": 0,
+  "Coulomb_evaluations": 0,
+  "result": "PASS_SCOPED_BINARY64_MANUFACTURED_IDENTITY_NOT_INTERVAL_CERTIFICATE",
+  "max_relative_residual": 3.937133560165064e-16,
+  "max_flux_abs_residual": 0.0,
+  "raw_output_origin": "Preserved directly from successful tool stdout before any rerun."
+}

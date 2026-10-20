@@ -1,0 +1,176 @@
+{
+  "schema": "PHYS72_ANGULAR_WEIGHTED_BOUNDS_V1",
+  "status": "PASS_EXACT_SCALAR_WITNESSES_OF_PROVED_BOUNDS",
+  "assumptions": [
+    "Original atomic V=2(1+1/d)exp(-2d), d=|r*Omega-(7/10)zhat|, r>=27",
+    "Proved original screen envelope V<=delta*exp(-2(r-B))",
+    "Proved actual outgoing Coulomb Dirichlet estimate ||R0 f/r||<=Cstar||r f||",
+    "Spherical boundary and central Coulomb R0 commute with angular spectral weights"
+  ],
+  "norms": {
+    "H1": "sum_(j,m) (1+j(j+1))*abs(g_jm)^2",
+    "HC": "sum_(j,m) C_j^2*abs(g_jm)^2; C_j=77 through j=28, then 800*(j+1)/189",
+    "XminusY": "integral_B^infinity r^-2*||u(r)||_Y^2 dr",
+    "XplusY": "integral_B^infinity r^2*||f(r)||_Y^2 dr",
+    "angular_contraction_operator": "K=R0^+ V on Xminus(H1) or Xminus(HC)"
+  },
+  "proof_scope": "Scalar arithmetic verifies constants; accompanying analytic derivation supplies all-radial/all-angular inequalities",
+  "proof": "theory/ANGULAR_MULTIPLIER_ADDENDUM.md",
+  "values": {
+    "B": {
+      "numerator": "27",
+      "denominator": "1",
+      "upper_decimal": "2.7E+1",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "shift_a": {
+      "numerator": "7",
+      "denominator": "10",
+      "upper_decimal": "7E-1",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "d0": {
+      "numerator": "263",
+      "denominator": "10",
+      "upper_decimal": "2.63E+1",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "delta": {
+      "numerator": "3",
+      "denominator": "100000000000000000000000",
+      "upper_decimal": "3E-23",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "angular_log_gradient_upper": {
+      "numerator": "71849",
+      "denominator": "51285",
+      "upper_decimal": "1.400974943940723408404016769035780442625E+0",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "angular_log_gradient_margin_to_3_over_2": {
+      "numerator": "10157",
+      "denominator": "102570",
+      "upper_decimal": "9.902505605927659159598323096421955737546E-2",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "shear_norm_upper": {
+      "numerator": "2",
+      "denominator": "1",
+      "upper_decimal": "2E+0",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "shear_psd_11": {
+      "numerator": "3",
+      "denominator": "4",
+      "upper_decimal": "7.5E-1",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "shear_psd_22": {
+      "numerator": "3",
+      "denominator": "1",
+      "upper_decimal": "3E+0",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "shear_psd_determinant": {
+      "numerator": "0",
+      "denominator": "1",
+      "upper_decimal": "0E+0",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "HC_to_H1_lower_constant": {
+      "numerator": "2",
+      "denominator": "1",
+      "upper_decimal": "2E+0",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "HC_to_H1_upper_constant": {
+      "numerator": "77",
+      "denominator": "1",
+      "upper_decimal": "7.7E+1",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "finite_channel_lower_comparison_margin": {
+      "numerator": "2677",
+      "denominator": "1",
+      "upper_decimal": "2.677E+3",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "tail_lower_coefficient_margin": {
+      "numerator": "497116",
+      "denominator": "35721",
+      "upper_decimal": "1.391663167324542985918647294308669970046E+1",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "tail_upper_coefficient_margin": {
+      "numerator": "210509809",
+      "denominator": "35721",
+      "upper_decimal": "5.893166736653509140281627054113826600600E+3",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "V_XminusH1_to_XplusH1_upper": {
+      "numerator": "2187",
+      "denominator": "50000000000000000000000",
+      "upper_decimal": "4.374E-20",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "V_XminusHC_to_XplusHC_upper": {
+      "numerator": "168399",
+      "denominator": "100000000000000000000000",
+      "upper_decimal": "1.68399E-18",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "R0_weighted_upper": {
+      "numerator": "253",
+      "denominator": "1000",
+      "upper_decimal": "2.53E-1",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "q_L2_sandwich_unchanged": {
+      "numerator": "553311",
+      "denominator": "100000000000000000000000000",
+      "upper_decimal": "5.53311E-21",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "q_H1_R0V": {
+      "numerator": "553311",
+      "denominator": "50000000000000000000000000",
+      "upper_decimal": "1.106622E-20",
+      "display_rounding": "ROUND_CEILING"
+    },
+    "q_HC_R0V": {
+      "numerator": "42604947",
+      "denominator": "100000000000000000000000000",
+      "upper_decimal": "4.2604947E-19",
+      "display_rounding": "ROUND_CEILING"
+    }
+  },
+  "exact_comparisons": {
+    "positive_d0": true,
+    "radial_envelope_weight_decreases": true,
+    "angular_log_gradient_strictly_below_3_over_2": true,
+    "shear_psd_first_diagonal_nonnegative": true,
+    "shear_psd_second_diagonal_nonnegative": true,
+    "shear_psd_determinant_zero": true,
+    "finite_channel_comparison": true,
+    "all_high_channel_lower_coefficient": true,
+    "all_high_channel_upper_coefficient": true,
+    "q_H1_equals_2q": true,
+    "q_HC_equals_77q": true,
+    "lambda1_H1_sufficient_condition": true,
+    "lambda1_HC_sufficient_condition": true
+  },
+  "lambda1_admitted": {
+    "XminusH1": true,
+    "XminusHC": true
+  },
+  "remainder_authority": "Existing unweighted L2 sandwich q is unchanged and remains the sharper DtN remainder constant",
+  "all_angular_degrees_retained": true,
+  "physical_integrations": 0,
+  "coulomb_evaluations": 0,
+  "old_panel_or_profile_replays": 0,
+  "old_campaign_verifier_runs": 0,
+  "HH_R10": "OFF",
+  "source_sha256": "f30c427b659b66f0d068952ca6b764b9d481052424d8605c8ac9b7d0d5d30708",
+  "bounds_source_sha256": "2036fc4b0d76a825d98e3ea3f2342c67c3029f4ed6fbe67686c1d70042762e7c",
+  "proof_source_sha256": "20c9f556fddcbba38011713c8d46971945004fba86692b1f235989cf75d6cac8"
+}
