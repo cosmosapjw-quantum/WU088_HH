@@ -1,0 +1,200 @@
+{
+  "HH_R10": "OFF",
+  "angular_nodes": 96,
+  "callback_samples": [
+    {
+      "frozen_jvp_seconds": 0.002292738,
+      "jvp_calls_per_engine": 5000,
+      "legacy_jvp_seconds": 0.005043047,
+      "legacy_rhs_seconds": 0.010079214,
+      "rhs_calls_per_engine": 1000,
+      "sample": 0,
+      "scalar_rhs_seconds": 0.00903166,
+      "simd_rhs_seconds": 0.005137169
+    },
+    {
+      "frozen_jvp_seconds": 0.00203681,
+      "jvp_calls_per_engine": 5000,
+      "legacy_jvp_seconds": 0.005483603,
+      "legacy_rhs_seconds": 0.009310942,
+      "rhs_calls_per_engine": 1000,
+      "sample": 1,
+      "scalar_rhs_seconds": 0.008850845,
+      "simd_rhs_seconds": 0.004936766
+    },
+    {
+      "frozen_jvp_seconds": 0.002024251,
+      "jvp_calls_per_engine": 5000,
+      "legacy_jvp_seconds": 0.004805949,
+      "legacy_rhs_seconds": 0.009945902,
+      "rhs_calls_per_engine": 1000,
+      "sample": 2,
+      "scalar_rhs_seconds": 0.008608208,
+      "simd_rhs_seconds": 0.005023567
+    },
+    {
+      "frozen_jvp_seconds": 0.001941677,
+      "jvp_calls_per_engine": 5000,
+      "legacy_jvp_seconds": 0.004787421,
+      "legacy_rhs_seconds": 0.009214886,
+      "rhs_calls_per_engine": 1000,
+      "sample": 3,
+      "scalar_rhs_seconds": 0.008388907,
+      "simd_rhs_seconds": 0.004610893
+    },
+    {
+      "frozen_jvp_seconds": 0.002039415,
+      "jvp_calls_per_engine": 5000,
+      "legacy_jvp_seconds": 0.005272374,
+      "legacy_rhs_seconds": 0.009769464,
+      "rhs_calls_per_engine": 1000,
+      "sample": 4,
+      "scalar_rhs_seconds": 0.008899549,
+      "simd_rhs_seconds": 0.005840472
+    },
+    {
+      "frozen_jvp_seconds": 0.002464567,
+      "jvp_calls_per_engine": 5000,
+      "legacy_jvp_seconds": 0.005611917,
+      "legacy_rhs_seconds": 0.009474219,
+      "rhs_calls_per_engine": 1000,
+      "sample": 5,
+      "scalar_rhs_seconds": 0.008124637,
+      "simd_rhs_seconds": 0.004791346
+    },
+    {
+      "frozen_jvp_seconds": 0.002139205,
+      "jvp_calls_per_engine": 5000,
+      "legacy_jvp_seconds": 0.005414068,
+      "legacy_rhs_seconds": 0.00861547,
+      "rhs_calls_per_engine": 1000,
+      "sample": 6,
+      "scalar_rhs_seconds": 0.009043918,
+      "simd_rhs_seconds": 0.004849914
+    }
+  ],
+  "common_step": {
+    "endpoint_relative_inf": 1.7242789105370307e-16,
+    "h": 0.001,
+    "legacy_error_norm": 0.0,
+    "stage_difference_over_original_state_tolerance_max": 0.00011337063034645797,
+    "stage_relative_inf": [
+      3.5922295549017564e-16,
+      1.0776688649259524e-15,
+      2.2491824057924886e-16,
+      5.062214273579249e-16,
+      2.61853124720208e-16,
+      1.8724493068925112e-11,
+      0.000022654679231561357,
+      1.0
+    ],
+    "stage_tolerance_fraction_gate": 0.005,
+    "structured_error_norm": 3.513540535953444e-6,
+    "tau": 37.375
+  },
+  "dimension": 234,
+  "frozen_jvp_relative_inf": 3.240238880768821e-16,
+  "input": "immutable PHYS69 final state; callback/step probes are not trajectories",
+  "legacy_rhs_scalar_simd_bitwise": true,
+  "lmax": 28,
+  "memory": {
+    "legacy_driver_report": {
+      "attempt_snapshot_bytes": 0,
+      "cached_state_bytes": 1872,
+      "driver_scratch_bytes": 24464,
+      "gcrodr_bytes": 0,
+      "gmres_bytes": 196576,
+      "least_squares_bytes": 33368,
+      "lgmres_bytes": 0,
+      "lgmres_into_bytes": 0,
+      "staged_bytes": 0
+    },
+    "scope": "retained vector capacities; not total RSS or total allocator traffic",
+    "structured_driver_and_frozen_bytes": 30632,
+    "structured_kernel_table_and_rows_bytes": 52736
+  },
+  "old_scientific_integrations": 0,
+  "parallel_frozen_jobs": [
+    {
+      "bitwise_equal": true,
+      "jobs": 8,
+      "pool_setup_in_timer": false,
+      "rhs_calls_per_job": 500,
+      "seconds": [
+        0.019423035,
+        0.019907006,
+        0.01958187,
+        0.020642218,
+        0.019260228
+      ],
+      "threads": 1,
+      "workspace_setup_in_timer": false
+    },
+    {
+      "bitwise_equal": true,
+      "jobs": 8,
+      "pool_setup_in_timer": false,
+      "rhs_calls_per_job": 500,
+      "seconds": [
+        0.010135548,
+        0.012864807,
+        0.016469017,
+        0.014838702,
+        0.014836598
+      ],
+      "threads": 2,
+      "workspace_setup_in_timer": false
+    },
+    {
+      "bitwise_equal": true,
+      "jobs": 8,
+      "pool_setup_in_timer": false,
+      "rhs_calls_per_job": 500,
+      "seconds": [
+        0.007780702,
+        0.007553113,
+        0.007707221,
+        0.007867153,
+        0.007583478
+      ],
+      "threads": 4,
+      "workspace_setup_in_timer": false
+    }
+  ],
+  "saved_input_sha256": "442133d52c371213024608c9752f38263c8eae33d1ce885f6d0eba2d76266faf",
+  "schema": "PHYS70_MICROBENCH_V1",
+  "source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+  "status": "PASS_BOUNDED_NEW_PERFORMANCE_EXPERIMENT",
+  "step_samples": [
+    {
+      "legacy_seconds": 0.049552973,
+      "new_probe_attempts_per_engine": 12,
+      "sample": 0,
+      "structured_simd_seconds": 0.000522781
+    },
+    {
+      "legacy_seconds": 0.04631864,
+      "new_probe_attempts_per_engine": 12,
+      "sample": 1,
+      "structured_simd_seconds": 0.000577964
+    },
+    {
+      "legacy_seconds": 0.051213563,
+      "new_probe_attempts_per_engine": 12,
+      "sample": 2,
+      "structured_simd_seconds": 0.000682332
+    },
+    {
+      "legacy_seconds": 0.04686648,
+      "new_probe_attempts_per_engine": 12,
+      "sample": 3,
+      "structured_simd_seconds": 0.000550913
+    },
+    {
+      "legacy_seconds": 0.050042382,
+      "new_probe_attempts_per_engine": 12,
+      "sample": 4,
+      "structured_simd_seconds": 0.000886521
+    }
+  ]
+}

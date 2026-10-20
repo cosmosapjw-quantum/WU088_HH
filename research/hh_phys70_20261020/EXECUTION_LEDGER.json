@@ -1,0 +1,104 @@
+{
+  "schema": "PHYS70_ACTUAL_EXECUTION_LEDGER_V1",
+  "created_utc": "2026-10-20T03:21:27.713359+00:00",
+  "scope": "Current sandbox only; no NCP job submitted",
+  "work_precision": {
+    "new_performance_integrations": 18,
+    "tolerances": [
+      {
+        "rtol": "3e-10",
+        "atol": "3e-12"
+      },
+      {
+        "rtol": "3e-12",
+        "atol": "3e-14"
+      }
+    ],
+    "engines": [
+      "legacy_gmres",
+      "block_scalar",
+      "block_simd"
+    ],
+    "samples_per_engine_and_tolerance": 3,
+    "status": "COMPLETE_POINT_ERROR_CHECKED",
+    "evidence": "benchmark/work_precision/SUMMARY.json"
+  },
+  "parallel_trajectories": {
+    "new_performance_integrations": 12,
+    "threads": [
+      1,
+      2,
+      4
+    ],
+    "jobs_per_batch": 4,
+    "samples_per_thread_setting": 1,
+    "status": "COMPLETE_ORDERED_STATE_BIT_PARITY",
+    "evidence": "benchmark/parallel_trajectories/SUMMARY.json"
+  },
+  "ncp_runner_sandbox_pilot": {
+    "new_performance_integrations": 1,
+    "rtol": "3e-11",
+    "atol": "3e-13",
+    "status": "COMPLETED_NATIVE_APPLICATION",
+    "evidence": "benchmark/ncp_pilot/EXECUTION.json"
+  },
+  "total_new_complete_performance_integrations": 31,
+  "microbench": {
+    "status": "COMPLETE_FROZEN_STATE_CALLBACK_AND_SINGLE_STEP_PROBES",
+    "new_complete_trajectories": 0,
+    "saved_input_reused": true,
+    "evidence": "benchmark/micro/RESULT.json"
+  },
+  "symbolic": {
+    "Wolfram_exact_complex_residuals_zero": 13,
+    "complete_trajectories": 0,
+    "evidence": "theory/WOLFRAM_RESULT.json"
+  },
+  "tests": {
+    "rust_distinct": 13,
+    "rust_pass": 13,
+    "wrapper_initial_distinct_pass": 19,
+    "wrapper_later_new_distinct": 3,
+    "wrapper_targeted_final_pass": 5,
+    "wrapper_affected_existing_rechecked": 2,
+    "distinct_tests_total": 35,
+    "single_final_combined_suite_run": false,
+    "nonphysical_wrapper_fixtures": true,
+    "expected_red_failures_preserved": true,
+    "evidence": [
+      "verification/RUST_TESTS_01.log",
+      "verification/wrapper/EXECUTION.json",
+      "verification/wrapper/attempt_02/red/EXECUTION.json",
+      "verification/wrapper/attempt_02/green/EXECUTION.json"
+    ]
+  },
+  "resume": {
+    "completed_reused": 1,
+    "new_integrations": 0,
+    "files_written": 0,
+    "contents_sizes_mtimes_unchanged": true,
+    "evidence": "verification/ncp_runner/RESUME_VERIFICATION.json"
+  },
+  "L64_preflight": {
+    "status": "PREFLIGHT_ONLY",
+    "new_integrations": 0,
+    "child_processes": 0,
+    "new_coulomb_seeds": 0,
+    "evidence": "verification/ncp_l64_preflight/EXECUTION.json"
+  },
+  "independent_reviews": {
+    "new_integrations": 0,
+    "new_rhs_or_step_probes": 0,
+    "finite_arithmetic_counterexample": 1,
+    "evidence": [
+      "verification/INDEPENDENT_REVIEW.json",
+      "verification/PERFORMANCE_REVIEW.json",
+      "verification/ADDITIONAL_EXECUTION_REVIEW.json"
+    ]
+  },
+  "inherited_completed_scientific_campaigns_replayed": 0,
+  "inherited_suites_replayed": 0,
+  "NCP_submissions": 0,
+  "NCP_host_state": "UNKNOWN",
+  "HH_R10": "OFF"
+}

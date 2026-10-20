@@ -1,0 +1,852 @@
+{
+  "schema": "PHYS70_INDEPENDENT_PERFORMANCE_REVIEW_V1",
+  "reviewed_utc": "2026-10-20T03:12:34.827201+00:00",
+  "reviewer": "independent child opt_github_intake; benchmark producer not modified",
+  "status": "PASS_SCOPED_SAME_HOST_L28_PERFORMANCE_EVIDENCE",
+  "scientific_integrations_launched_by_this_review": 0,
+  "callback_or_stage_probes_reexecuted_by_this_review": 0,
+  "completed_work_precision_executions_reused": 18,
+  "microbench_artifact_reused": true,
+  "producer_files_modified": 0,
+  "protected_scope": {
+    "B": 27,
+    "T": 65,
+    "k": "7/10",
+    "E": "49/200 Hartree; fixed original model",
+    "lmax": 28,
+    "angular_nodes": 96,
+    "dimension_real": 234,
+    "target": [
+      21,
+      20
+    ],
+    "m": 0,
+    "eta_C": "-10/7",
+    "frozen_source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+    "PHYS63": "ESTABLISHED_REUSED",
+    "HH_R10": "OFF",
+    "source_driven_xi_claimed": false
+  },
+  "identity": {
+    "binary_sha256": "303efb12fb6c6169b97440a1224d30730e5194a6230c02d469a13a25b9270c13",
+    "source_pins": {
+      "native/phys69_vigilode/Cargo.toml": "88345aa9528d38898046871e79396ea286c6f3a7641ce80d7179b14c65fd2265",
+      "native/phys69_vigilode/Cargo.lock": "cfe49e974d77fd04dca94709b78ba23f4f11d964844b3d6df258bacfcfc1ba0e",
+      "native/phys69_vigilode/src/lib.rs": "d0f86cf84de9d4437c742fe7518f9ecd88891236987f3a28bb790eb876f0d211",
+      "native/phys69_vigilode/src/main.rs": "68350797f5b81062fd81a6cecf230739895a8e178947e9de9c79555a1ecd48bf",
+      "native/phys70_optimized/Cargo.toml": "db4687db571cf4ec2737b37443f1c850314ccadce1b6f8f171804669651412f1",
+      "native/phys70_optimized/Cargo.lock": "76e4b91b26c3e7e87fca2a78504916e0568a3907f3e8c4e1fd4cdfcdd667d94c",
+      "native/phys70_optimized/src/benchmark.rs": "571c7dba4597ab9eb20b2d3a9662514acb71a05df9274869ba579c277c59eab9",
+      "native/phys70_optimized/src/block.rs": "31f89c1fbd23776a3bc0982b7be92a1661cebd71650acb4f57459c053faec32b",
+      "native/phys70_optimized/src/integrate.rs": "e1b7fe5903a6fb2322f1426e515ac77539da476ad0d2746cadea68c31983c4c9",
+      "native/phys70_optimized/src/kernel.rs": "c5739d3c5ecbc02754cbf34ae2d23372775b4fa52758251888d7233e0e4cbf3e",
+      "native/phys70_optimized/src/lib.rs": "f8984129dd26b9e5b8e770ae7fe45f76033f53a1e6720edadaaedebd0ad42228",
+      "native/phys70_optimized/src/main.rs": "7fe3c4a2b54d362192f3976783e492138853d91c5fab7719fa6f122662d4d15f",
+      "scripts/phys70_benchmark.py": "839a5337da6a97c5b1196165a218b277475f0231cad6160f0c19dca77216c688",
+      "scripts/phys69_vigilode.py": "28e9d65eec7bd3a7a82d9a87a830d965c45001b39f1f7224c8a021a39179f2b3"
+    },
+    "seed_sha256": "3aae5f37d858deca71f4f4217d56484d8430f06ad95e30280a44aafc2b6f7862",
+    "frozen_source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+    "certificate_sha256": "ddaae206009a276def281af5526851ceb717baf2e0de5f8472552a9db340de9a",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "cpu_quota": "800000 100000",
+    "environment_flags": {
+      "RUSTFLAGS": null,
+      "RAYON_NUM_THREADS": null,
+      "OMP_NUM_THREADS": null
+    }
+  },
+  "identity_checks": {
+    "actual_binary_sha256_verified": true,
+    "recorded_source_pin_files_verified": 14,
+    "seed_file_hash_verified": true,
+    "original_NPZ_hash_verified": true,
+    "certificate_file_hash_verified": true,
+    "same_binary_all_18_and_micro": true,
+    "same_physics_requests_within_each_tolerance_group": true,
+    "only_engine_and_two_declared_tolerance_pairs_vary": true,
+    "unique_request_engine_sample_triplets": 18,
+    "receipt_file_hashes_independently_verified": 54,
+    "micro_receipt_file_hashes_verified": 2,
+    "native_request_json_and_digest_binding_verified": 18,
+    "summary_result_hashes_and_times_verified": 18,
+    "all_complete_status_returncode_and_finite_shapes_verified": 18,
+    "full_expected_sample_product_verified": true
+  },
+  "point_error_checks": {
+    "status": "PASS_ALL_18_STORED_FINITE_L_D2_POINT_GOALS",
+    "method": "Independent Python integer/Fraction postprocessing; no import or execution of producer comparison helper. Decode stored binary64 exactly; decode certificate dyadic boxes; compute rectangular Euclidean distance and reference norm bounds; use math.isqrt for 512-bit directed square-root bounds and explicitly assert lower^2 <= argument <= upper^2; add radial tail to distance upper bound and subtract from reference norm lower bound; compare exact rational records.",
+    "certificate_path": "research/hh_phys68_20261019/profiles/run_l28_t65_completed/CERTIFICATE.json",
+    "certificate_sha256": "ddaae206009a276def281af5526851ceb717baf2e0de5f8472552a9db340de9a",
+    "stored_complex_component_fraction_matches": 36,
+    "exact_rational_record_matches": 90,
+    "records_per_execution": [
+      "absolute_error_lower",
+      "absolute_error_upper",
+      "relative_error_lower",
+      "relative_error_upper",
+      "radial_tail"
+    ],
+    "strict_relative_goal_comparisons_passed": 18,
+    "native_endpoint_matches_scaled_final_state": 18,
+    "includes_finite_L_radial_tail": true,
+    "all_angular_error_added": false,
+    "uniform_algorithm_error_certificate": false,
+    "original_driven_xi_certificate": false
+  },
+  "bit_parity_checks": {
+    "representation": "IEEE-754 binary64 big-endian bytes packed from parsed retained JSON states; includes signed-zero distinction",
+    "states_retained_per_execution": 2,
+    "components_per_state": 234,
+    "scalar_simd_pairs_compared": 6,
+    "components_compared_across_pairs": 2808,
+    "scalar_simd_all_retained_state_bits_equal": true,
+    "three_repeats_within_each_of_six_engine_tolerance_groups_equal": true,
+    "legacy_to_block_retained_state_bits_equal": false,
+    "intermediate_trajectory_state_bits_available": false,
+    "all_stage_bit_identity_claimed": false
+  },
+  "timing_scope": {
+    "host": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "cpu_quota": "800000 100000",
+    "work_precision_execution": "Separate sequential processes; alternating engine order on sample 1, ordinary order samples 0 and 2. Each single run uses the single-engine run command without a Rayon pool.",
+    "solver_timer": "native/phys70_optimized/src/main.rs execute: Instant begins before solve() and ends after model/driver setup, integration, and conversion of counters/diagnostic metadata into the return tuple. Request/source/seed reading and validation before execute, endpoint extraction, final JSON serialization, and process startup are outside this timer.",
+    "process_wall_timer": "Python subprocess timer includes process lifetime, input reading, JSON writing, and subprocess wait/poll overhead.",
+    "metric": "Ratios of medians across three samples; not a confidence interval or universal speed guarantee. Median of within-sample ratios is stored separately.",
+    "comparison_baseline": "The pinned original PHYS69 VigilODE GMRES path inside the same PHYS70 binary; not all possible tuned VigilODE methods or latest PR73/74/75.",
+    "scope_limit": "L28, m=0, T65, 96 angular nodes on this sandbox host; no L64 or NCP runtime inference.",
+    "observed_variability": "At rtol3e-10 SIMD sample2 takes 0.062358916s versus 0.029824452 and 0.030813919s. At rtol3e-12 scalar sample0 takes 0.201225098s versus 0.118176558 and 0.118403532s. Retained min/max prevents concealing this variability."
+  },
+  "groups": [
+    {
+      "rtol": 3e-10,
+      "atol": 3e-12,
+      "samples_per_engine": 3,
+      "accepted_steps_each": 703,
+      "rejected_steps_each": 0,
+      "solver_setup_and_solve_median_seconds": {
+        "legacy_gmres": 3.04168174,
+        "block_scalar": 0.044981303,
+        "block_simd": 0.030813919
+      },
+      "solver_setup_and_solve_minmax_seconds": {
+        "legacy_gmres": [
+          2.943144191,
+          3.145392509
+        ],
+        "block_scalar": [
+          0.044249557,
+          0.048682022
+        ],
+        "block_simd": [
+          0.029824452,
+          0.062358916
+        ]
+      },
+      "ratio_of_solver_medians": {
+        "legacy_over_block_scalar": 67.62102333940838,
+        "legacy_over_block_simd": 98.7112914783738,
+        "block_scalar_over_block_simd": 1.4597722217677018
+      },
+      "process_wall_median_seconds": {
+        "legacy_gmres": 3.0737040210005944,
+        "block_scalar": 0.0640769099991303,
+        "block_simd": 0.06397567900057766
+      },
+      "ratio_of_process_wall_medians_legacy_over_simd": 48.044883133992855,
+      "paired_legacy_over_simd_ratios": [
+        98.68225545267353,
+        98.7112914783738,
+        50.44014089340488
+      ],
+      "median_of_paired_legacy_over_simd_ratios": 98.68225545267353,
+      "relative_D2_point_error_upper_by_engine": {
+        "legacy_gmres": 1.4727851774252374e-10,
+        "block_scalar": 1.4728567155626935e-10,
+        "block_simd": 1.4728567155626935e-10
+      },
+      "representative_work_per_run": {
+        "rhs_calls_each_engine": 5624,
+        "legacy_jvp_calls": 236208,
+        "legacy_linear_iterations": 224960,
+        "legacy_orthogonalization_inner_products": 9223360,
+        "structured_shifted_solves": 5624,
+        "structured_true_shifted_residual_jvp_checks": 5624,
+        "structured_kernel": {
+          "angular_cache_hits": 3514,
+          "angular_evaluations": 3516,
+          "linearizations": 703,
+          "rhs_calls": 5624,
+          "time_partial_calls": 703
+        },
+        "structured_max_shifted_backward_residual_observed": 1.7493447746359964e-16,
+        "structured_min_denominator_observed": 0.99994985481038
+      }
+    },
+    {
+      "rtol": 3e-12,
+      "atol": 3e-14,
+      "samples_per_engine": 3,
+      "accepted_steps_each": 1819,
+      "rejected_steps_each": 0,
+      "solver_setup_and_solve_median_seconds": {
+        "legacy_gmres": 8.136270035,
+        "block_scalar": 0.118403532,
+        "block_simd": 0.08924281
+      },
+      "solver_setup_and_solve_minmax_seconds": {
+        "legacy_gmres": [
+          7.87773301,
+          8.390502528
+        ],
+        "block_scalar": [
+          0.118176558,
+          0.201225098
+        ],
+        "block_simd": [
+          0.085251453,
+          0.092870805
+        ]
+      },
+      "ratio_of_solver_medians": {
+        "legacy_over_block_scalar": 68.71644703132674,
+        "legacy_over_block_simd": 91.17003414616819,
+        "block_scalar_over_block_simd": 1.3267571023368716
+      },
+      "process_wall_median_seconds": {
+        "legacy_gmres": 8.189774234000652,
+        "block_scalar": 0.1648478309980419,
+        "block_simd": 0.11427250300039304
+      },
+      "ratio_of_process_wall_medians_legacy_over_simd": 71.66880937203662,
+      "paired_legacy_over_simd_ratios": [
+        95.43849106008786,
+        90.34596532247137,
+        88.27302737329764
+      ],
+      "median_of_paired_legacy_over_simd_ratios": 90.34596532247137,
+      "relative_D2_point_error_upper_by_engine": {
+        "legacy_gmres": 1.2717040124565395e-12,
+        "block_scalar": 1.2701532252981296e-12,
+        "block_simd": 1.2701532252981296e-12
+      },
+      "representative_work_per_run": {
+        "rhs_calls_each_engine": 14552,
+        "legacy_jvp_calls": 611143,
+        "legacy_linear_iterations": 582040,
+        "legacy_orthogonalization_inner_products": 23863640,
+        "structured_shifted_solves": 14552,
+        "structured_true_shifted_residual_jvp_checks": 14552,
+        "structured_kernel": {
+          "angular_cache_hits": 9094,
+          "angular_evaluations": 9096,
+          "linearizations": 1819,
+          "rhs_calls": 14552,
+          "time_partial_calls": 1819
+        },
+        "structured_max_shifted_backward_residual_observed": 1.955151273734789e-16,
+        "structured_min_denominator_observed": 0.9999923004366253
+      }
+    }
+  ],
+  "rows": [
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-10_block_scalar_sample0",
+      "rtol": 3e-10,
+      "atol": 3e-12,
+      "engine": "block_scalar",
+      "sample": 0,
+      "started_utc": "2026-10-20T03:02:31.326010+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 0.044249557,
+      "process_wall_seconds": 0.06403211300130351,
+      "accepted_steps": 703,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "1fc5aa55c66b108740467d3d433c097a4e10490842b60146319bdbdc1f961f94",
+      "relative_D2_error_upper": 1.4728567155626935e-10,
+      "files_sha256": {
+        "REQUEST.json": "bacf88ea495ea09f341966c2ef4217e981d2415853b7b1aad39e277ccbcae7ca",
+        "RESULT.json": "651c6cab79e88f9729111e52020192859773661dd2dabc7c0e534bb73a0fbf2a",
+        "EXECUTION.json": "c2886e00e0df2f3dd4cbc883bbcd242746f9744cee67a28551bc860779465d4b",
+        "POINT_ERROR.json": "856e46f443b7272daac5084e34be9d7922c0e4af35521ecb7a5be69e4b97c8c5",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-10_block_scalar_sample1",
+      "rtol": 3e-10,
+      "atol": 3e-12,
+      "engine": "block_scalar",
+      "sample": 1,
+      "started_utc": "2026-10-20T03:02:31.491853+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 0.044981303,
+      "process_wall_seconds": 0.0640769099991303,
+      "accepted_steps": 703,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "1fc5aa55c66b108740467d3d433c097a4e10490842b60146319bdbdc1f961f94",
+      "relative_D2_error_upper": 1.4728567155626935e-10,
+      "files_sha256": {
+        "REQUEST.json": "bacf88ea495ea09f341966c2ef4217e981d2415853b7b1aad39e277ccbcae7ca",
+        "RESULT.json": "1b9f0827403f698e37b4d485e182344686a9467e8095333603e8a49c8dcf477d",
+        "EXECUTION.json": "4ea212653bbd4278aa0180075f26ccfb6d030876ef3ae89b0def356d5c0623f3",
+        "POINT_ERROR.json": "856e46f443b7272daac5084e34be9d7922c0e4af35521ecb7a5be69e4b97c8c5",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-10_block_scalar_sample2",
+      "rtol": 3e-10,
+      "atol": 3e-12,
+      "engine": "block_scalar",
+      "sample": 2,
+      "started_utc": "2026-10-20T03:02:37.811571+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 0.048682022,
+      "process_wall_seconds": 0.06434873499893001,
+      "accepted_steps": 703,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "1fc5aa55c66b108740467d3d433c097a4e10490842b60146319bdbdc1f961f94",
+      "relative_D2_error_upper": 1.4728567155626935e-10,
+      "files_sha256": {
+        "REQUEST.json": "bacf88ea495ea09f341966c2ef4217e981d2415853b7b1aad39e277ccbcae7ca",
+        "RESULT.json": "70915b5d1366c298bc8fbab9eaa856fec4f0b8bf86cdb70ea4af1d2e122b1389",
+        "EXECUTION.json": "4f9d4e9b39c907a80e656480a1a299a1251d960af46e6e72561d0a0a05edb3c4",
+        "POINT_ERROR.json": "856e46f443b7272daac5084e34be9d7922c0e4af35521ecb7a5be69e4b97c8c5",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-10_block_simd_sample0",
+      "rtol": 3e-10,
+      "atol": 3e-12,
+      "engine": "block_simd",
+      "sample": 0,
+      "started_utc": "2026-10-20T03:02:31.392023+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 0.029824452,
+      "process_wall_seconds": 0.03197104399805539,
+      "accepted_steps": 703,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "1fc5aa55c66b108740467d3d433c097a4e10490842b60146319bdbdc1f961f94",
+      "relative_D2_error_upper": 1.4728567155626935e-10,
+      "files_sha256": {
+        "REQUEST.json": "672322cafe56254ad37b5e1ce601eb3df135e850bec6e538b1be3eb25a47c846",
+        "RESULT.json": "6ad1fdc61bc5cc3137a117249750053adeb37949a39d493e65f84c3949685aa9",
+        "EXECUTION.json": "0dc73d1e89db633d5c04842dec018b9dc8b1bd0ebe8bb29b820bef79f3944992",
+        "POINT_ERROR.json": "856e46f443b7272daac5084e34be9d7922c0e4af35521ecb7a5be69e4b97c8c5",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-10_block_simd_sample1",
+      "rtol": 3e-10,
+      "atol": 3e-12,
+      "engine": "block_simd",
+      "sample": 1,
+      "started_utc": "2026-10-20T03:02:31.425819+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 0.030813919,
+      "process_wall_seconds": 0.06397567900057766,
+      "accepted_steps": 703,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "1fc5aa55c66b108740467d3d433c097a4e10490842b60146319bdbdc1f961f94",
+      "relative_D2_error_upper": 1.4728567155626935e-10,
+      "files_sha256": {
+        "REQUEST.json": "672322cafe56254ad37b5e1ce601eb3df135e850bec6e538b1be3eb25a47c846",
+        "RESULT.json": "13d8b2a65e2d5933581844e8ddf2d984cb01347ed40338c4fe51ab5cb8e94669",
+        "EXECUTION.json": "e99ea873b837874e9ecce30943e7178c588b1377acbcd5fc37f5d9256067311c",
+        "POINT_ERROR.json": "856e46f443b7272daac5084e34be9d7922c0e4af35521ecb7a5be69e4b97c8c5",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-10_block_simd_sample2",
+      "rtol": 3e-10,
+      "atol": 3e-12,
+      "engine": "block_simd",
+      "sample": 2,
+      "started_utc": "2026-10-20T03:02:37.877795+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 0.062358916,
+      "process_wall_seconds": 0.1143707129995164,
+      "accepted_steps": 703,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "1fc5aa55c66b108740467d3d433c097a4e10490842b60146319bdbdc1f961f94",
+      "relative_D2_error_upper": 1.4728567155626935e-10,
+      "files_sha256": {
+        "REQUEST.json": "672322cafe56254ad37b5e1ce601eb3df135e850bec6e538b1be3eb25a47c846",
+        "RESULT.json": "9f7fd5f1168df4d74e4f4d39cc7dc02f5114707be29f8bf4cb79df33fcc37a6a",
+        "EXECUTION.json": "01175569de73bc91eff99f6c9bed9b170c4b958d099ed6c21bfa9b66a88b56a2",
+        "POINT_ERROR.json": "856e46f443b7272daac5084e34be9d7922c0e4af35521ecb7a5be69e4b97c8c5",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-10_legacy_gmres_sample0",
+      "rtol": 3e-10,
+      "atol": 3e-12,
+      "engine": "legacy_gmres",
+      "sample": 0,
+      "started_utc": "2026-10-20T03:02:28.351634+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 2.943144191,
+      "process_wall_seconds": 2.972022152000136,
+      "accepted_steps": 703,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "3953e84e8d0b67f2a0d3af090ac70c98b7b28826b16af346535ad26af85fce01",
+      "relative_D2_error_upper": 1.4727851774252374e-10,
+      "files_sha256": {
+        "REQUEST.json": "80ddedc6bfd7a6ce123cd2028a2d3d475dca404932c5363223b014bf3a55da7a",
+        "RESULT.json": "4a62f430ca439fc0003faf31dd0f9a25917bc001455ce575b04335bf42a7716e",
+        "EXECUTION.json": "c6224403110555a2efc7a4e5abc40ecbf84704e455ebb4dd0956db86d5704725",
+        "POINT_ERROR.json": "32b196efb693177990b5b370ff70aede567787861b303cfe0108a3f10eae73a7",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-10_legacy_gmres_sample1",
+      "rtol": 3e-10,
+      "atol": 3e-12,
+      "engine": "legacy_gmres",
+      "sample": 1,
+      "started_utc": "2026-10-20T03:02:31.557984+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 3.04168174,
+      "process_wall_seconds": 3.0737040210005944,
+      "accepted_steps": 703,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "3953e84e8d0b67f2a0d3af090ac70c98b7b28826b16af346535ad26af85fce01",
+      "relative_D2_error_upper": 1.4727851774252374e-10,
+      "files_sha256": {
+        "REQUEST.json": "80ddedc6bfd7a6ce123cd2028a2d3d475dca404932c5363223b014bf3a55da7a",
+        "RESULT.json": "a027238d97f66839204bd5ec7e09edcca1fbb2e8dd8342e326c14308b4899393",
+        "EXECUTION.json": "78f5e333a7965c01084451a663521386b6205e328da0a569e95039060dc29ea5",
+        "POINT_ERROR.json": "32b196efb693177990b5b370ff70aede567787861b303cfe0108a3f10eae73a7",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-10_legacy_gmres_sample2",
+      "rtol": 3e-10,
+      "atol": 3e-12,
+      "engine": "legacy_gmres",
+      "sample": 2,
+      "started_utc": "2026-10-20T03:02:34.633853+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 3.145392509,
+      "process_wall_seconds": 3.174654381997243,
+      "accepted_steps": 703,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "3953e84e8d0b67f2a0d3af090ac70c98b7b28826b16af346535ad26af85fce01",
+      "relative_D2_error_upper": 1.4727851774252374e-10,
+      "files_sha256": {
+        "REQUEST.json": "80ddedc6bfd7a6ce123cd2028a2d3d475dca404932c5363223b014bf3a55da7a",
+        "RESULT.json": "e969dfecf83fadc1815ad276c5aca1a4a88d3f780555caa7873b7c3ce3c9655c",
+        "EXECUTION.json": "47722b48ec60a378b7d832a806f20ab90c24768ed0f072fb1681d8dfa61caf41",
+        "POINT_ERROR.json": "32b196efb693177990b5b370ff70aede567787861b303cfe0108a3f10eae73a7",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-12_block_scalar_sample0",
+      "rtol": 3e-12,
+      "atol": 3e-14,
+      "engine": "block_scalar",
+      "sample": 0,
+      "started_utc": "2026-10-20T03:02:46.185927+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 0.201225098,
+      "process_wall_seconds": 0.21458114299821318,
+      "accepted_steps": 1819,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "49340d008309345a4f772d66b2360bd121aeb229756d21fbd0ae1cb940bd34e6",
+      "relative_D2_error_upper": 1.2701532252981296e-12,
+      "files_sha256": {
+        "REQUEST.json": "a854351591ff0faf85efd6fad8fdb0d4bd5a71ad4bfa2d7434cbecefbdf12cfa",
+        "RESULT.json": "78d825e8310b9c6e1f9b76ced6d979739f4cdc52f1a296d177abcd5242d59551",
+        "EXECUTION.json": "abf4f8a27208271d171f0f676757d3a47d2be566bcd5386314da2c21c7a12158",
+        "POINT_ERROR.json": "d6f4e98001fbbeab2077941461f5029bd84aa32b322b2ccfc4a9b082a7641125",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-12_block_scalar_sample1",
+      "rtol": 3e-12,
+      "atol": 3e-14,
+      "engine": "block_scalar",
+      "sample": 1,
+      "started_utc": "2026-10-20T03:02:46.636679+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 0.118176558,
+      "process_wall_seconds": 0.1648478309980419,
+      "accepted_steps": 1819,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "49340d008309345a4f772d66b2360bd121aeb229756d21fbd0ae1cb940bd34e6",
+      "relative_D2_error_upper": 1.2701532252981296e-12,
+      "files_sha256": {
+        "REQUEST.json": "a854351591ff0faf85efd6fad8fdb0d4bd5a71ad4bfa2d7434cbecefbdf12cfa",
+        "RESULT.json": "e42fd7f015f426d4bcfad0965a49e7bb50ac6e4b182cfc5989a871362eead9d6",
+        "EXECUTION.json": "81793e6db120dd3fb4b50979f5b7973f2b5666041abbca3f636ccf14f47cb06b",
+        "POINT_ERROR.json": "d6f4e98001fbbeab2077941461f5029bd84aa32b322b2ccfc4a9b082a7641125",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-12_block_scalar_sample2",
+      "rtol": 3e-12,
+      "atol": 3e-14,
+      "engine": "block_scalar",
+      "sample": 2,
+      "started_utc": "2026-10-20T03:03:03.135938+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 0.118403532,
+      "process_wall_seconds": 0.16436959199927514,
+      "accepted_steps": 1819,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "49340d008309345a4f772d66b2360bd121aeb229756d21fbd0ae1cb940bd34e6",
+      "relative_D2_error_upper": 1.2701532252981296e-12,
+      "files_sha256": {
+        "REQUEST.json": "a854351591ff0faf85efd6fad8fdb0d4bd5a71ad4bfa2d7434cbecefbdf12cfa",
+        "RESULT.json": "be02b9b6d1d2748210ee977d59e2fc8672de84c135a748ab18230e3397284f37",
+        "EXECUTION.json": "1da6f3d8cdfca540b1022afb17f3dc738b4dd80d1486547d68621f36ced49cf7",
+        "POINT_ERROR.json": "d6f4e98001fbbeab2077941461f5029bd84aa32b322b2ccfc4a9b082a7641125",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-12_block_simd_sample0",
+      "rtol": 3e-12,
+      "atol": 3e-14,
+      "engine": "block_simd",
+      "sample": 0,
+      "started_utc": "2026-10-20T03:02:46.403774+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 0.085251453,
+      "process_wall_seconds": 0.11428950000117766,
+      "accepted_steps": 1819,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "49340d008309345a4f772d66b2360bd121aeb229756d21fbd0ae1cb940bd34e6",
+      "relative_D2_error_upper": 1.2701532252981296e-12,
+      "files_sha256": {
+        "REQUEST.json": "0d36aa8a852fea353463d66d9bbcbc3dee5157f6ffe67e2709e09237fe4c2553",
+        "RESULT.json": "c4dc07e459d411477607e91f116b0725af3cf139ba7778c1eef8f446ce733563",
+        "EXECUTION.json": "be742eb2e6338fa061ed03a6a4ac7462e48ab2eb55e267658ba0a1fdc64e4cd7",
+        "POINT_ERROR.json": "d6f4e98001fbbeab2077941461f5029bd84aa32b322b2ccfc4a9b082a7641125",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-12_block_simd_sample1",
+      "rtol": 3e-12,
+      "atol": 3e-14,
+      "engine": "block_simd",
+      "sample": 1,
+      "started_utc": "2026-10-20T03:02:46.520299+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 0.092870805,
+      "process_wall_seconds": 0.11427250300039304,
+      "accepted_steps": 1819,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "49340d008309345a4f772d66b2360bd121aeb229756d21fbd0ae1cb940bd34e6",
+      "relative_D2_error_upper": 1.2701532252981296e-12,
+      "files_sha256": {
+        "REQUEST.json": "0d36aa8a852fea353463d66d9bbcbc3dee5157f6ffe67e2709e09237fe4c2553",
+        "RESULT.json": "c872345c6895620b9e3cd2026f0427c4645ca5f73e0e431cbee941929567d521",
+        "EXECUTION.json": "a2f1ce373f7644c869efe4dc9f0f275d7d91bc6adc87d6179f1b8c1dd6fd3a01",
+        "POINT_ERROR.json": "d6f4e98001fbbeab2077941461f5029bd84aa32b322b2ccfc4a9b082a7641125",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-12_block_simd_sample2",
+      "rtol": 3e-12,
+      "atol": 3e-14,
+      "engine": "block_simd",
+      "sample": 2,
+      "started_utc": "2026-10-20T03:03:03.302350+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 0.08924281,
+      "process_wall_seconds": 0.1142551530028868,
+      "accepted_steps": 1819,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "49340d008309345a4f772d66b2360bd121aeb229756d21fbd0ae1cb940bd34e6",
+      "relative_D2_error_upper": 1.2701532252981296e-12,
+      "files_sha256": {
+        "REQUEST.json": "0d36aa8a852fea353463d66d9bbcbc3dee5157f6ffe67e2709e09237fe4c2553",
+        "RESULT.json": "d8f09d89148704a921558cd6facd4d92d3ebd84424ec7f61c0cdc190553bd31e",
+        "EXECUTION.json": "acde8536c8df20088ea9dcdac5ba629971a753d4f6bf9bb5a44e859da47fa407",
+        "POINT_ERROR.json": "d6f4e98001fbbeab2077941461f5029bd84aa32b322b2ccfc4a9b082a7641125",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-12_legacy_gmres_sample0",
+      "rtol": 3e-12,
+      "atol": 3e-14,
+      "engine": "legacy_gmres",
+      "sample": 0,
+      "started_utc": "2026-10-20T03:02:37.994126+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 8.136270035,
+      "process_wall_seconds": 8.189774234000652,
+      "accepted_steps": 1819,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "67f9353369b0b45d43a607591b7733ba931ec6ec15df32c27b5e363a9900736c",
+      "relative_D2_error_upper": 1.2717040124565395e-12,
+      "files_sha256": {
+        "REQUEST.json": "50fa4066fd1b01889e6f2b4de15bd2b801c02d86d6cc926fe6e94ec13337a7ff",
+        "RESULT.json": "1d610fe2bf722a40f51cdc8dc6f1f9caf51ac666668f38777c6e42ab60fa8e17",
+        "EXECUTION.json": "a80c07cb3e2189d30c5d35f20d72b6426d317489ddc3f7707941ee909cc74e0d",
+        "POINT_ERROR.json": "e595dd6d28a2ae811aa00fc287b7a696bcd169c8036fc35c20d3d325e87c800b",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-12_legacy_gmres_sample1",
+      "rtol": 3e-12,
+      "atol": 3e-14,
+      "engine": "legacy_gmres",
+      "sample": 1,
+      "started_utc": "2026-10-20T03:02:46.804540+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 8.390502528,
+      "process_wall_seconds": 8.439924451999104,
+      "accepted_steps": 1819,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "67f9353369b0b45d43a607591b7733ba931ec6ec15df32c27b5e363a9900736c",
+      "relative_D2_error_upper": 1.2717040124565395e-12,
+      "files_sha256": {
+        "REQUEST.json": "50fa4066fd1b01889e6f2b4de15bd2b801c02d86d6cc926fe6e94ec13337a7ff",
+        "RESULT.json": "672429e98a13dfc63d898dce25b9e51bda833360472121031f4470d8f75218fa",
+        "EXECUTION.json": "e17211ca49b7ffa6f3905c73b28d2ec05d79a6f52109306a1e6fd30e8bcd9e00",
+        "POINT_ERROR.json": "e595dd6d28a2ae811aa00fc287b7a696bcd169c8036fc35c20d3d325e87c800b",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "directory": "research/hh_phys70_20261020/benchmark/work_precision/rtol_3e-12_legacy_gmres_sample2",
+      "rtol": 3e-12,
+      "atol": 3e-14,
+      "engine": "legacy_gmres",
+      "sample": 2,
+      "started_utc": "2026-10-20T03:02:55.246574+00:00",
+      "solver_setup_and_solve_elapsed_seconds": 7.87773301,
+      "process_wall_seconds": 7.887416107998433,
+      "accepted_steps": 1819,
+      "rejected_steps": 0,
+      "state_shape": [
+        2,
+        234
+      ],
+      "state_ieee754_be_sha256": "67f9353369b0b45d43a607591b7733ba931ec6ec15df32c27b5e363a9900736c",
+      "relative_D2_error_upper": 1.2717040124565395e-12,
+      "files_sha256": {
+        "REQUEST.json": "50fa4066fd1b01889e6f2b4de15bd2b801c02d86d6cc926fe6e94ec13337a7ff",
+        "RESULT.json": "96377f309f822198f6090f650d3eb3ba6e4f21ba805b6aa83b20c0c07c196556",
+        "EXECUTION.json": "323885c432336eb28a240f072be9a28e5a28d3bb1acc46a16a815b9564096f8a",
+        "POINT_ERROR.json": "e595dd6d28a2ae811aa00fc287b7a696bcd169c8036fc35c20d3d325e87c800b",
+        "STDERR.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "micro": {
+    "result_sha256": "4eab2461d4fc7aa9a72ee49233d09e6cf5802b9e67565383a0c887445fe9e983",
+    "execution_sha256": "492cbd9d7a916c8e05f8682e8a4068423d6dc974bd4675a6064a4894c32ee5a1",
+    "binary_sha256": "303efb12fb6c6169b97440a1224d30730e5194a6230c02d469a13a25b9270c13",
+    "saved_input_sha256": "442133d52c371213024608c9752f38263c8eae33d1ce885f6d0eba2d76266faf",
+    "input_scope": "Read-only PHYS69 final state, evaluated at declared nearby collar times. Callback and single-step probes are synthetic probes from that saved state, not additional complete radial trajectories.",
+    "callback_median_seconds": {
+      "legacy_rhs_seconds": 0.009474219,
+      "scalar_rhs_seconds": 0.008850845,
+      "simd_rhs_seconds": 0.004936766,
+      "legacy_jvp_seconds": 0.005272374,
+      "frozen_jvp_seconds": 0.002039415
+    },
+    "callback_counts_per_sample": {
+      "rhs_per_engine": 1000,
+      "jvp_per_engine": 5000,
+      "samples": 7
+    },
+    "callback_ratios_of_medians": {
+      "legacy_rhs_over_simd": 1.9191144567111345,
+      "scalar_rhs_over_simd": 1.7928427233537094,
+      "legacy_jvp_over_frozen": 2.5852384139569433
+    },
+    "step_median_seconds": {
+      "legacy_seconds": 0.049552973,
+      "structured_simd_seconds": 0.000577964
+    },
+    "step_probe_count_per_engine_per_sample": 12,
+    "step_samples": 5,
+    "step_ratio_of_medians": 85.73712722591718,
+    "common_step": {
+      "endpoint_relative_inf": 1.7242789105370307e-16,
+      "h": 0.001,
+      "legacy_error_norm": 0.0,
+      "stage_difference_over_original_state_tolerance_max": 0.00011337063034645797,
+      "stage_relative_inf": [
+        3.5922295549017564e-16,
+        1.0776688649259524e-15,
+        2.2491824057924886e-16,
+        5.062214273579249e-16,
+        2.61853124720208e-16,
+        1.8724493068925112e-11,
+        2.2654679231561357e-05,
+        1.0
+      ],
+      "stage_tolerance_fraction_gate": 0.005,
+      "structured_error_norm": 3.513540535953444e-06,
+      "tau": 37.375
+    },
+    "common_step_assessment": "PASS endpoint and original-state weighted stage difference gates. Stage8 raw relative difference is 1.0 and the upstream embedded error norm is zero; the original absolute linear residual floor can return the zero solution for that tiny RHS. Structured embedded error norm is 3.513540535953444e-6. The largest stage difference divided by original state tolerance is 0.00011337063034645797, below recorded gate0.005. This is not all-stage bit identity, and neither local norm is a global error enclosure.",
+    "common_step_raw_vectors_retained": false,
+    "micro_bitwise_flags_status": "Producer assertions and matching source/binary provenance reviewed. Raw RHS/stage/frozen-job vectors are not retained in micro JSON, so these flags are not independently rederived from output vectors in this review.",
+    "memory": {
+      "scope": "Retained allocated vector capacities for declared structures, not RSS, total allocator traffic, or every live object.",
+      "legacy_driver_retained_bytes": 256280,
+      "legacy_driver_components": {
+        "attempt_snapshot_bytes": 0,
+        "cached_state_bytes": 1872,
+        "driver_scratch_bytes": 24464,
+        "gcrodr_bytes": 0,
+        "gmres_bytes": 196576,
+        "least_squares_bytes": 33368,
+        "lgmres_bytes": 0,
+        "lgmres_into_bytes": 0,
+        "staged_bytes": 0
+      },
+      "structured_driver_and_frozen_retained_bytes": 30632,
+      "structured_kernel_tables_and_rows_retained_bytes": 52736,
+      "structured_reported_driver_plus_kernel_bytes": 83368,
+      "same_scope_driver_old_over_new": 8.366414207364848,
+      "same_scope_driver_bytes_reduction_percent": 88.04744810363665,
+      "legacy_model_storage_in_driver_report": false,
+      "total_RSS_reduction_claimed": false
+    },
+    "parallel_frozen_callbacks": {
+      "jobs": 8,
+      "rhs_calls_per_job": 500,
+      "samples_per_thread_count": 5,
+      "median_seconds": {
+        "1": 0.01958187,
+        "2": 0.014836598,
+        "4": 0.007707221
+      },
+      "speedup_over_one_worker": {
+        "1": 1.0,
+        "2": 1.3198355849501349,
+        "4": 2.5407173350809584
+      },
+      "pool_setup_in_timer": false,
+      "workspace_setup_in_timer": false,
+      "producer_reported_bitwise_equality_all_thread_counts": true,
+      "raw_final_callback_vectors_retained": false,
+      "trajectory_throughput_claimed_from_this_microbench": false
+    }
+  },
+  "claim_decisions": {
+    "same_point_accuracy_at_lower_observed_work_and_time": "SUPPORTED_FOR_BOTH_STORED_L28_TOLERANCE_GROUPS",
+    "SIMD_speed_increment": "SUPPORTED_BY_SCALAR_PAIR_1.45977x_AND_1.32676x_MEDIAN",
+    "block_algorithm_speedup": "SUPPORTED_VS_PINNED_ORIGINAL_GMRES_WITH_SAME_ACCEPTED_STEP_COUNTS",
+    "driver_retained_memory_reduction": "SUPPORTED_FOR_DECLARED_DRIVER_SCOPE_ONLY",
+    "global_integration_roundoff_or_quadrature_certificate": "NOT_ESTABLISHED_BY_PERFORMANCE_EXPERIMENT",
+    "generic_VigilODE_100x_claim": "NOT_SUPPORTED",
+    "L64_or_NCP_performance": "NOT_MEASURED_IN_THESE_18_ARTIFACTS",
+    "all_angular_D2_bound": "REUSE_SEPARATE_PHYS69_EVIDENCE; NOT_REPROVED_HERE",
+    "PHYS63_qualitative_existence": "ESTABLISHED_REUSED"
+  },
+  "stage_status": {
+    "derivation": "Independent block theory/API analysis exists separately; this file reviews performance evidence.",
+    "code": "Read-only producer/source pin inspection; no producer modifications.",
+    "verification": "18 stored executions plus micro evidence independently reviewed; no solver execution.",
+    "scientific_execution": "REUSED_18_COMPLETED_PERFORMANCE_EXECUTIONS; REVIEW_LAUNCHED_0",
+    "publication": "NOT_ASSESSED_BY_THIS_REVIEW; parent controls Git publication",
+    "backup": "NOT_ASSESSED_BY_THIS_REVIEW; parent controls backup",
+    "DAG": "PERFORMANCE_EVIDENCE_REVIEW_PASS_SCOPED; parent updates canonical DAG"
+  },
+  "followup_evidence": {
+    "ncp_pilot": {
+      "path": "research/hh_phys70_20261020/benchmark/ncp_pilot",
+      "status": "PARENT_EXECUTING; NOT_YET_READ_BY_THIS_REVIEW"
+    },
+    "parallel_trajectories": {
+      "path": "research/hh_phys70_20261020/benchmark/parallel_trajectories",
+      "status": "PARENT_EXECUTING; NOT_YET_READ_BY_THIS_REVIEW"
+    }
+  }
+}

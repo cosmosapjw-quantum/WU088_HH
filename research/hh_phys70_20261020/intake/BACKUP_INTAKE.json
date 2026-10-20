@@ -1,0 +1,515 @@
+{
+  "schema": "WU088_OPTIMIZATION_BACKUP_INTAKE_V1",
+  "recorded_utc": "2026-10-20T02:43:48.082915+00:00",
+  "stage": {
+    "theory": "R1_EVIDENCE_INTAKE_COMPLETE",
+    "coding": "C1_RUNTIME_INTERRUPTION_RECOVERY_COMPLETE",
+    "actual_scientific_execution": "NONE",
+    "publication": "NO_NEW_WRITES",
+    "backup": "EXISTING_BACKUP_RESTORED_AND_IDENTITY_VERIFIED_NO_NEW_BACKUP_WRITES",
+    "DAG": "BASELINE_COMPLETE_NODES_REUSED_NEW_WU_RUN_RECEIPTS_NOT_OBSERVED"
+  },
+  "baseline": {
+    "repository": "https://github.com/cosmosapjw-quantum/WU088_HH",
+    "PR": 119,
+    "metadata_head": "efd1520dfc0643220f729307583ff0bc04b059e9",
+    "science_commit": "b9f3b2a9419bdafb59dc19a8b80ec611e3a0dada",
+    "science_tree": "83cb0c778ad1eefe2db75c3cb7557c9008bff994",
+    "actual_parent": "2a79d961388e4fc71cbc0938f012b08af7ecf14e",
+    "identity_source": "Recovered final DELIVERY plus parent Git-intake agent separately reports current PR119 unchanged"
+  },
+  "new_execution_search": {
+    "requested_modified_after": "2026-10-19T00:00:00Z",
+    "WU_state": "NO_NEW_EXECUTION_RECEIPTS_OBSERVED_IN_SCANNED_ACCESSIBLE_SOURCES",
+    "target_campaigns": [
+      "PHYS66_LONGTAIL6",
+      "PHYS68_VALIDATED_L64",
+      "PHYS69_VIGILODE_L64"
+    ],
+    "inherited_campaign_state": "READY_NOT_RUN_HOST_STATE_UNKNOWN",
+    "NCP_host_state": "UNKNOWN_NOT_QUERIED",
+    "NCP_submissions": 0,
+    "scope": "Current owned Library recursive recent listing and content queries, current WU Drive parent direct inventory plus keyword/filter searches, Dropbox WU/PHYS6/longtail/validated/VigilODE searches and exact PHYS69 backup folder listing.",
+    "limits": [
+      "No NCP process or filesystem access was performed. Search nonobservation is not proof of host absence or nonexecution.",
+      "Library recursive recent listing returned 172 records, next_cursor null, warnings empty. It covers the returned recent owned Library inventory, not unknown unshared locations.",
+      "Library content search did not resolve the binary source ZIP; the current list did and was used for exact recovery.",
+      "Dropbox recent search returned older records despite requested last_modified_after; chronological cutoff was checked against returned timestamps and the filter was not assumed authoritative.",
+      "Dropbox WU and validated searches returned exactly 100 records with has_more false. Preserve the provider response but do not infer exhaustive indexing of all possible result names.",
+      "Drive keyword/filter searches returned no WU matches despite the known source appearing in direct parent listing; search coverage is incomplete for these binary archives.",
+      "Drive WU direct folder list returned 26 children. This is a direct inventory of the known parent, not a claim that every remote backup namespace was recursively exhausted."
+    ],
+    "latest_observed_WU_objects": [
+      {
+        "provider": "Library",
+        "library_file_id": "libfile_b37d549923c081918788eb7d1e9789cb",
+        "modified_utc": "2026-10-19T17:14:10.487115Z",
+        "bytes": 11100708,
+        "role": "existing PHYS69 source"
+      },
+      {
+        "provider": "Google Drive",
+        "file_id": "1AdMX_bauaqOA6bbx-z9jggN_GYcDf8Jx",
+        "modified_utc": "2026-10-19T17:02:48.273Z",
+        "bytes": 11100708,
+        "role": "existing PHYS69 source"
+      },
+      {
+        "provider": "Dropbox",
+        "file_id": "id:BSpOijBcT10AAAAAAD_Q8Q",
+        "modified_utc": "2026-10-19T17:03:26Z",
+        "bytes": 11100708,
+        "role": "existing PHYS69 source"
+      }
+    ]
+  },
+  "recovery": {
+    "schema": "WU088_BACKUP_READONLY_RESTORE_V1",
+    "recorded_utc": "2026-10-20T02:41:20.420551+00:00",
+    "state": "BYTE_IDENTITY_AND_PAYLOAD_RESTORATION_VERIFIED",
+    "archives": [
+      {
+        "file": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019.zip",
+        "bytes": 11100708,
+        "sha256": "12983336200c2a7f4cfd3d55e9c4481d06d6ce310adfbddcf336cc2a9b5d6a89",
+        "manifest": "WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019/MANIFEST.json",
+        "manifest_sha256": "01ff1ce0347affe499e3540cba97625c8d8bc91a370082390ac286f8976162cd",
+        "payload_files": 345,
+        "members": 346,
+        "verified_payload_sha256": 345,
+        "verified_payload_sizes": 345,
+        "zip_crc": "PASS_ALL_MEMBERS_READ",
+        "closed_payload_membership": "PASS",
+        "path_safety": "PASS",
+        "restore_directory": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019",
+        "scientific_processes_started": 0,
+        "tests_run": 0,
+        "parent": "2a79d961388e4fc71cbc0938f012b08af7ecf14e",
+        "science_commit": "b9f3b2a9419bdafb59dc19a8b80ec611e3a0dada",
+        "HH_R10": "OFF"
+      },
+      {
+        "file": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/VigilODE_Integration_Research_20261020.zip",
+        "bytes": 47810,
+        "sha256": "54f4f4a99d552388fc28d01f5f367176e301c2af15c3cd8a9c7a30b4e5dfd4f1",
+        "manifest": "vigilode_integration_research_20261020/SHA256SUMS",
+        "manifest_sha256": "e9ed50a0a4ca5200a62efb5bedc90b94643305df7c60506d0a4d4f72db23993f",
+        "payload_files": 21,
+        "members": 22,
+        "verified_payload_sha256": 21,
+        "verified_payload_sizes": 0,
+        "zip_crc": "PASS_ALL_MEMBERS_READ",
+        "closed_payload_membership": "PASS",
+        "path_safety": "PASS",
+        "restore_directory": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/vigilode_integration_research_20261020",
+        "scientific_processes_started": 0,
+        "tests_run": 0,
+        "parent": null,
+        "science_commit": null,
+        "HH_R10": null
+      }
+    ],
+    "delivery_local_file_references": [
+      {
+        "file": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019.zip",
+        "bytes": 11100708,
+        "sha256": "12983336200c2a7f4cfd3d55e9c4481d06d6ce310adfbddcf336cc2a9b5d6a89",
+        "state": "PASS"
+      },
+      {
+        "file": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/PHYS69_REPORT_KO.md",
+        "bytes": 14924,
+        "sha256": "3fac031ebafd9831b334cebb84016fca6a49dc133a04784fdbd5bbe75d8dc576",
+        "state": "PASS"
+      },
+      {
+        "file": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/PHYS69_CODEX_HANDOFF_PROMPT.md",
+        "bytes": 6847,
+        "sha256": "91a050bbbe20074253e7a7aad6d0d843ebf00df68f59dcd6965920945046546e",
+        "state": "PASS"
+      },
+      {
+        "file": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/PHYS69_NEW_THREAD_HANDOFF.md",
+        "bytes": 7023,
+        "sha256": "711372e88ec1311071a4c713c4cbc110875dff5e68437a49b79352a47afd1b53",
+        "state": "PASS"
+      }
+    ],
+    "new_scientific_runs": 0,
+    "tests_reexecuted": 0,
+    "provider_writes": 0,
+    "git_writes": 0,
+    "HH_R10": "OFF"
+  },
+  "readset": [
+    {
+      "path": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/PHYS69_DELIVERY_20261019.json",
+      "bytes": 9640,
+      "sha256": "8f127a4f56312f6ca74ccf2e8189be586e6272729d2ee46aa17b0f8c4b6acff3",
+      "read_full": true
+    },
+    {
+      "path": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019/research/hh_phys66_20261018/local_verification/PROOF.md",
+      "bytes": 6088,
+      "sha256": "5778d8d2da5455c35bfa800b1db65fab619155976ed0574c86d15e8ba8d7fd5e",
+      "read_full": true
+    },
+    {
+      "path": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019/research/hh_phys66_20261018/c5c8/REPORT_KO.md",
+      "bytes": 6203,
+      "sha256": "95e2755de652a5b9475fc8f8ac9663f55ef94f5eb15392b7a9d446a354a6b856",
+      "read_full": true
+    },
+    {
+      "path": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019/research/hh_phys69_20261019/NEXT_DAG.json",
+      "bytes": 3964,
+      "sha256": "336c08c1e5db545773dda03ae79a9a9c56815afa761559f803900b1a012db3a7",
+      "read_full": true
+    },
+    {
+      "path": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019/research/hh_phys69_20261019/CODEX_HANDOFF_PROMPT.md",
+      "bytes": 5943,
+      "sha256": "4182e1e97325c75bfc3201651aa27b4bd4082e9453f2285f4a8ae2fe4ddf348e",
+      "read_full": true
+    }
+  ],
+  "current_library_relevant_metadata": [
+    {
+      "name": "PHYS69_LIBRARY_SAVE_ACK.json",
+      "library_file_id": "libfile_0d8fe83fa86c81918c76da43180528fb",
+      "path": "/BASS/PHYS69_LIBRARY_SAVE_ACK.json",
+      "size_bytes": 7853,
+      "modified_at": "2026-10-19T17:16:01.068664Z"
+    },
+    {
+      "name": "PHYS69_BACKUP_ACK.json",
+      "library_file_id": "libfile_a79cbf8ed0948191b766cb1c2580b491",
+      "path": "/PHYS69_BACKUP_ACK.json",
+      "size_bytes": 2784,
+      "modified_at": "2026-10-19T17:14:10.499162Z"
+    },
+    {
+      "name": "PHYS69_NEW_THREAD_HANDOFF.md",
+      "library_file_id": "libfile_5c0a837b7f9c8191b9959fdd3435d32d",
+      "path": "/PHYS69_NEW_THREAD_HANDOFF.md",
+      "size_bytes": 7023,
+      "modified_at": "2026-10-19T17:14:10.493079Z"
+    },
+    {
+      "name": "WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019.zip",
+      "library_file_id": "libfile_b37d549923c081918788eb7d1e9789cb",
+      "path": "/WU088_HH_PHYS69_SOURCE_AND_EVIDENCE_20261019.zip",
+      "size_bytes": 11100708,
+      "modified_at": "2026-10-19T17:14:10.487115Z"
+    },
+    {
+      "name": "WU088_HH_PHYS69_SHA256SUMS",
+      "library_file_id": "libfile_33e262bd0cec8191b1866df94ec50dd3",
+      "path": "/WU088_HH_PHYS69_SHA256SUMS",
+      "size_bytes": 1089,
+      "modified_at": "2026-10-19T17:14:10.409515Z"
+    },
+    {
+      "name": "PHYS69_CODEX_HANDOFF_PROMPT.md",
+      "library_file_id": "libfile_1a5cdbc7ea748191aae1566b7100b8dd",
+      "path": "/PHYS69_CODEX_HANDOFF_PROMPT.md",
+      "size_bytes": 6847,
+      "modified_at": "2026-10-19T17:14:10.342908Z"
+    },
+    {
+      "name": "WU088_HH_PHYS69_INCREMENTAL_20261019.bundle",
+      "library_file_id": "libfile_98d04fa2f478819197df3492fb1aa52e",
+      "path": "/WU088_HH_PHYS69_INCREMENTAL_20261019.bundle",
+      "size_bytes": 285975,
+      "modified_at": "2026-10-19T17:14:10.177795Z"
+    },
+    {
+      "name": "WU088_HH_PHYS69_NCP_READY_20261019.zip",
+      "library_file_id": "libfile_e989a85979d48191a5cff7a8c9749c8d",
+      "path": "/WU088_HH_PHYS69_NCP_READY_20261019.zip",
+      "size_bytes": 2853036,
+      "modified_at": "2026-10-19T17:14:10.156154Z"
+    },
+    {
+      "name": "PHYS69_BAND_PAYLOADS_20261019.zip",
+      "library_file_id": "libfile_9243f42aa2fc8191b6d67fd8f4e07ade",
+      "path": "/PHYS69_BAND_PAYLOADS_20261019.zip",
+      "size_bytes": 2021962,
+      "modified_at": "2026-10-19T17:14:10.137093Z"
+    },
+    {
+      "name": "PHYS69_DELIVERY_20261019.json",
+      "library_file_id": "libfile_803f3fe6c3e481918f2f31261fdc34a9",
+      "path": "/PHYS69_DELIVERY_20261019.json",
+      "size_bytes": 9640,
+      "modified_at": "2026-10-19T17:14:10.127362Z"
+    },
+    {
+      "name": "WU088_HH_PHYS69_PATCH_20261019.patch",
+      "library_file_id": "libfile_c25d758248d08191b0876c1dea9e3b0c",
+      "path": "/WU088_HH_PHYS69_PATCH_20261019.patch",
+      "size_bytes": 972613,
+      "modified_at": "2026-10-19T17:14:10.108196Z"
+    },
+    {
+      "name": "PHYS69_REPORT_KO.md",
+      "library_file_id": "libfile_672980cb4b9c8191bcf9014634c14410",
+      "path": "/PHYS69_REPORT_KO.md",
+      "size_bytes": 14924,
+      "modified_at": "2026-10-19T17:14:10.039792Z"
+    },
+    {
+      "name": "PHYS68_SOURCE_CAPSULE_RECEIPT_20261019.json",
+      "library_file_id": "libfile_5063054b9a888191bc4fbda647f305bb",
+      "path": "/PHYS68_SOURCE_CAPSULE_RECEIPT_20261019.json",
+      "size_bytes": 1518,
+      "modified_at": "2026-10-19T10:31:29.864576Z"
+    },
+    {
+      "name": "WU088_HH_PHYS68_SHA256SUMS",
+      "library_file_id": "libfile_79175db52b3c81919876808b00f8e1b6",
+      "path": "/WU088_HH_PHYS68_SHA256SUMS",
+      "size_bytes": 642,
+      "modified_at": "2026-10-19T10:31:29.711043Z"
+    },
+    {
+      "name": "WU088_HH_PHYS68_FINAL_20261019.bundle",
+      "library_file_id": "libfile_fd3bd2057e28819181c3e4ca51213fa5",
+      "path": "/WU088_HH_PHYS68_FINAL_20261019.bundle",
+      "size_bytes": 267312,
+      "modified_at": "2026-10-19T10:31:29.698635Z"
+    },
+    {
+      "name": "WU088_HH_PHYS68_SOURCE_AND_EVIDENCE_20261019.zip",
+      "library_file_id": "libfile_15b70f0ce9d081918d22c12962a39a1f",
+      "path": "/WU088_HH_PHYS68_SOURCE_AND_EVIDENCE_20261019.zip",
+      "size_bytes": 6546827,
+      "modified_at": "2026-10-19T10:31:29.539501Z"
+    },
+    {
+      "name": "WU088_HH_PHYS68_L64_D2_RUNNER_20261019.zip",
+      "library_file_id": "libfile_6aadd22bb1bc8191b04cdc3d408aaa4d",
+      "path": "/WU088_HH_PHYS68_L64_D2_RUNNER_20261019.zip",
+      "size_bytes": 122760,
+      "modified_at": "2026-10-19T10:31:29.514348Z"
+    },
+    {
+      "name": "PHYS68_DELIVERY_20261019.json",
+      "library_file_id": "libfile_16446c8e27c881918ee02d13f0a9851a",
+      "path": "/PHYS68_DELIVERY_20261019.json",
+      "size_bytes": 47325,
+      "modified_at": "2026-10-19T10:31:29.497794Z"
+    },
+    {
+      "name": "PHYS68_FINAL_BUNDLE_RECEIPT_20261019.json",
+      "library_file_id": "libfile_3d3642fd9e7c819182bb870141ce617a",
+      "path": "/PHYS68_FINAL_BUNDLE_RECEIPT_20261019.json",
+      "size_bytes": 951,
+      "modified_at": "2026-10-19T10:31:29.493061Z"
+    },
+    {
+      "name": "WU088_HH_PHYS67_PACKAGING_RECEIPT_20261019.json",
+      "library_file_id": "libfile_77b16b02599481919ed461d9c35010fb",
+      "path": "/WU088_HH_PHYS67_PACKAGING_RECEIPT_20261019.json",
+      "size_bytes": 2356,
+      "modified_at": "2026-10-19T06:07:04.788949Z"
+    },
+    {
+      "name": "PHYS67_DELIVERY_20261019.json",
+      "library_file_id": "libfile_b2046867d5b48191b8955a22c84a0639",
+      "path": "/PHYS67_DELIVERY_20261019.json",
+      "size_bytes": 36356,
+      "modified_at": "2026-10-19T06:07:04.435453Z"
+    },
+    {
+      "name": "WU088_HH_PHYS67_SHA256SUMS",
+      "library_file_id": "libfile_edfea54eb63481919813775fa414ab79",
+      "path": "/WU088_HH_PHYS67_SHA256SUMS",
+      "size_bytes": 436,
+      "modified_at": "2026-10-19T06:07:04.394423Z"
+    },
+    {
+      "name": "WU088_HH_PHYS67_SOURCE_AND_EVIDENCE_20261019.zip",
+      "library_file_id": "libfile_844d8d1ee154819181e6543122c1b04e",
+      "path": "/WU088_HH_PHYS67_SOURCE_AND_EVIDENCE_20261019.zip",
+      "size_bytes": 4684159,
+      "modified_at": "2026-10-19T05:52:07.394155Z"
+    },
+    {
+      "name": "WU088_HH_PHYS66_LONGTAIL_RUNNER_20261019.zip",
+      "library_file_id": "libfile_57c030decc6081918f3d4593515ba112",
+      "path": "/WU088_HH_PHYS66_LONGTAIL_RUNNER_20261019.zip",
+      "size_bytes": 95615,
+      "modified_at": "2026-10-19T05:52:07.381132Z"
+    }
+  ],
+  "new_related_upstream_artifacts": [
+    {
+      "name": "VigilODE_Integration_Research_20261020.zip",
+      "library_file_id": "libfile_34a96a6aaffc8191b97a01100b946ba7",
+      "modified_utc": "2026-10-19T21:09:23.847142Z",
+      "bytes": 47810,
+      "sha256": "54f4f4a99d552388fc28d01f5f367176e301c2af15c3cd8a9c7a30b4e5dfd4f1",
+      "restore_directory": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/recovered/vigilode_integration_research_20261020",
+      "payload_sha256_verified": 21,
+      "source_ref": "c03ca90f19a9e64ba7751c069325a48b54b39c2e",
+      "artifact_claim_scope": "Independent NumPy/SciPy exploratory raw-U probe: 30 stored homotopy results and 13 historical tests; native Rust not run in this artifact; no production repository modification or application acceleration certification. No historical script rerun.",
+      "successor_note": "Companion Git-intake agent directly identified this ZIP as PR74 supplied input and later actual native PR74/75 runs. This artifact NOT_RUN status must not be propagated to those later runs. Their authoritative direct GitHub receipts are owned by the companion Git intake."
+    },
+    {
+      "name": "REI_RUN18_RESUME_20261019_200405Z.txt",
+      "provider": "Dropbox",
+      "file_id": "id:BSpOijBcT10AAAAAAD_SBw",
+      "bytes": 6857,
+      "role": "Read related-project VigilODE reuse and source-pin note; not WU execution evidence and not a new upstream benchmark receipt."
+    },
+    {
+      "name": "Other recent REI/BASS VigilODE integration/recovery archives",
+      "role": "Metadata discovered in raw Dropbox search; their names were not counted as WU results or fresh upstream benchmark executions. No unrelated archive restoration."
+    }
+  ],
+  "preserved_science": {
+    "PHYS63": "ESTABLISHED_REUSED",
+    "PHYS69_ALL_ANGULAR_D2_21_20_M0": "COMPLETE_REUSED",
+    "PHYS69_cert_sha256": "965dc9e3d4a1b40fd7e379629f13480c5a7f30b382aa5b240fd7663b56ae9e29",
+    "frozen_input_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+    "HH_R10": "OFF",
+    "historical_PHYS66_exact_final_archive": "BLOCKED_ARTIFACT_ACCESS_EXACT_FINAL_VERSION",
+    "historical_PHYS66_exact_final_sha256": "993317b1c78edf496ec5a82a261eceb5a54515a78e38d139a924722a5d28f891",
+    "not_relabelled_as_recovered": true
+  },
+  "activity_counts": {
+    "new_WU_scientific_runs": 0,
+    "old_scientific_runs_replayed": 0,
+    "old_tests_replayed": 0,
+    "new_tests": 0,
+    "provider_writes": 0,
+    "Git_writes": 0,
+    "NCP_submissions": 0,
+    "Library_files_downloaded": 6,
+    "archives_extracted": 2,
+    "top_level_payload_hashes_checked": 366,
+    "initial_download_attempt": "FAILED_BEFORE_TRANSFER_HOSTED_TOOLS_LIST_NETWORK",
+    "read_only_network_escalation": "SUCCESS_SAME_CURRENT_HELPER"
+  },
+  "raw_receipts": [
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/drive_recent_vigilode.json",
+      "response_sha256": "bf1b7d018d062d05b5ae23281614c8795d078e1f7cf7ae15da738bae91ff91bd",
+      "records": 1,
+      "has_more": null,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    },
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/drive_recent_wu.json",
+      "response_sha256": "427cf391b41484bbae6e59fd3ce613b7d61936ce5609ca84c36ed3e0bce71b1f",
+      "records": 0,
+      "has_more": null,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    },
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/drive_wu_filename.json",
+      "response_sha256": "427cf391b41484bbae6e59fd3ce613b7d61936ce5609ca84c36ed3e0bce71b1f",
+      "records": 0,
+      "has_more": null,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    },
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/drive_wu_folder.json",
+      "response_sha256": "9e1e7afa8ba8763f914788326015dda86b75b3ced6ba6533d7df14c48b580640",
+      "records": 26,
+      "has_more": null,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    },
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/dropbox_longtail.json",
+      "response_sha256": "c0818db9c28a3ade781658ae245145b034d3fbb2da0f4f3efa5c896906abedb1",
+      "records": 0,
+      "has_more": false,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    },
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/dropbox_phys6.json",
+      "response_sha256": "825f078bab0c7aac71a871093ec6bc00b2b8d4367f577002dbb495cd7c221664",
+      "records": 6,
+      "has_more": false,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    },
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/dropbox_phys69_folder.json",
+      "response_sha256": "da934dae4da74e80ebf62dd02429b181fae7a9a1bb200df421f893554a49706c",
+      "records": 1,
+      "has_more": false,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    },
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/dropbox_recent_vigilode.json",
+      "response_sha256": "096e0c99cb27c207788e7e47b9e9601f0ab5363266bd7fd8bb280501165baee8",
+      "records": 87,
+      "has_more": false,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    },
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/dropbox_recent_wu.json",
+      "response_sha256": "697700453bb2d653862d6748b4bc546910c09665374dd3222eae27d644aa6bdf",
+      "records": 100,
+      "has_more": false,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    },
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/dropbox_run18_note.json",
+      "response_sha256": "6168e96eb122cba6b00a7c12c7b289553db3ff598824161042cee25b674d3f7b",
+      "records": 0,
+      "has_more": null,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    },
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/dropbox_validated.json",
+      "response_sha256": "07d302e9057f17aab4d3a7b919e7bc0d9f388a5d1b0d15b5174e7b967278b7d2",
+      "records": 100,
+      "has_more": false,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    },
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/library_list_recent.json",
+      "response_sha256": "cb7e3c9a49f8590c20c8fa89f88f91e01c91482ad1a0cd0c1aeaec7cb8683a66",
+      "records": 172,
+      "has_more": null,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    },
+    {
+      "raw_receipt": "/workspace/scratch/455b0ba5bd64/intake_opt_20261020/backup/raw/library_recent.json",
+      "response_sha256": "8dc2626f0e87968f3385b35a029b8a800c3cd20a22ec6bf8f1ab0b24daf7d791",
+      "records": 15,
+      "has_more": null,
+      "next_cursor": null,
+      "next_page_token": null,
+      "tool_is_error": false
+    }
+  ],
+  "integration_owner": "Parent root compares latest GitHub HEAD and integrates source; this intake did not clone or overwrite a repository."
+}

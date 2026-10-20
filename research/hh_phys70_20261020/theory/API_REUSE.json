@@ -1,0 +1,76 @@
+{
+  "schema": "PHYS70_PINNED_VIGILODE_API_REUSE_V1",
+  "status": "SOURCE_REVIEW_COMPLETE_NO_PHYSICAL_EXECUTION",
+  "upstream_commit": "a21d573980f66fe02891bd216153443b5352f921",
+  "upstream_checkout": "/workspace/scratch/455b0ba5bd64/cargo-home/git/checkouts/vigilode-69f7472badf9ef6b/a21d573",
+  "coefficient_snapshot_sha256": "211255f6125b648c6955833c3da537d9c031ec78168b2918563c29fa88c8bce6",
+  "custom_shifted_solve_hook": false,
+  "public_reuse": [
+    {
+      "item": "rodas5p_core::rodas5p_coefficients",
+      "role": "unchanged cached raw-U tableau and gamma_rows",
+      "source": "crates/rodas5p-core/src/coefficients.rs"
+    },
+    {
+      "item": "rodas5p_integrators::rodas_next_step_after_attempt",
+      "role": "unchanged PI/control algorithm",
+      "source": "crates/rodas5p-integrators/src/adaptive.rs"
+    },
+    {
+      "item": "rodas5p_integrators::Rodas5pMfFastWorkspace",
+      "role": "one-step parent comparator; public attempt, y_new, stage, set_gmres_into and set_ls_workspace",
+      "source": "crates/rodas5p-integrators/src/rodas5p_matrix_free_fast.rs"
+    }
+  ],
+  "private_boundaries": [
+    "MfFastWorkspace internal stage solver and IdentityPreconditioner field",
+    "output::represent/land_capped/adaptive_end_step",
+    "OutputCollector"
+  ],
+  "raw_u_contract": {
+    "stage_count": 8,
+    "shift": "h*gamma",
+    "rhs": "h*gamma*f_i + gamma*sum(C_ij*U_j) + h^2*gamma*gamma_rows_i*f_t(t0,y0)",
+    "state": "y+sum(a_ij U_j)",
+    "output": "y+sum(b_code_i U_i)",
+    "embedded": "U_7",
+    "scale": "atol+rtol*max(abs(y_i),abs(y_new_i))",
+    "do_not_mix": "finish_step takes K-coordinate stages"
+  },
+  "frozen_reuse": {
+    "allowed": "exact same time/state/model and changed h only",
+    "failed_refresh": "invalidate before fallible callbacks"
+  },
+  "exact_inverse": {
+    "complex_blocks": "oscillator2x2 -> A/B -> z",
+    "cost": "O(L)",
+    "condition": "all f_j nonzero, finite coefficients, d_j=1+(h*gamma)^2 q_j nonzero",
+    "analytic_uniform_d_lower_for_L64_r27_65_h_le_half": "17171964889/18225000000",
+    "roundoff_certificate": false,
+    "global_inverse_norm_certificate": false
+  },
+  "newer_upstream": {
+    "PR73": "banded LU; current HH MF has no LU bottleneck",
+    "PR74_PR75": "autonomous coupled stage candidate; not drop-in for explicit-time HH"
+  },
+  "proposed_local_api": {
+    "workspace": "StructuredWorkspace::new(dimension)",
+    "attempt": "attempt(&mut self, &mut HhKernel, t,y,h,fresh,atol,rtol)->CoreResult<f64>",
+    "inspection": [
+      "y_new",
+      "stage",
+      "workspace_bytes"
+    ],
+    "integration": "solve_structured(&Request,&[(Complex64,Complex64)],Backend)->CoreResult<StructuredResult>"
+  },
+  "progress": {
+    "derivation": "SCOPED_COMPLETE",
+    "API_read": "COMPLETE",
+    "implementation": "ASSIGNED_NEXT_SEPARATELY",
+    "verification": "SOURCE_AND_ALGEBRA_REVIEW_ONLY",
+    "execution": "NO_PHYSICAL_EXECUTION",
+    "publication": "NOT_PERFORMED_BY_CHILD",
+    "backup": "WRITTEN_FOR_PARENT_CAPSULE",
+    "DAG": "OPTIMIZATION_LINEAR_ACTION_DERIVED; PHYS63/69_REUSED_HH_R10_OFF"
+  }
+}

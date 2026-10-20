@@ -1,0 +1,72 @@
+{
+  "schema": "PHYS70_OPTIMIZATION_CONTRACT_V1",
+  "parent": "efd1520dfc0643220f729307583ff0bc04b059e9",
+  "unit": "PHYS70_OPTIMIZATION",
+  "target": "original HH m0 two-row D2 binary64 client optimization, fixed L<=64",
+  "user_priority_override": "Current explicit optimization request takes precedence over prior suggested PHYS70 D3 scheduling. D3 remains an independent OPEN science node.",
+  "physics_preserved": {
+    "B": "27",
+    "T": "65",
+    "k": "7/10",
+    "E_Hartree": "49/200",
+    "shift": "7/10",
+    "eta_C": "-10/7",
+    "eta": "Fy",
+    "xi": "Fy-phi",
+    "D2": "Z_second_lambda_derivative_at_zero/2",
+    "q_scale": "2^80",
+    "d2_scale": "2^160",
+    "HH_R10": "OFF"
+  },
+  "PHYS63": "ESTABLISHED_REUSED",
+  "PHYS69_D2": "CERTIFIED_REUSED_NO_RECOMPUTATION",
+  "inputs_restored": "PHYS69 source ZIP 12983336200c2a7f4cfd3d55e9c4481d06d6ce310adfbddcf336cc2a9b5d6a89",
+  "optimization_candidates": [
+    "O(L) exact shifted block elimination preserving 8 raw-U stages and PI controller",
+    "freeze coefficients once per actual base state",
+    "precompute only two angular basis rows",
+    "ordered j-lane wide SIMD",
+    "Rayon independent requests with deterministic collection"
+  ],
+  "performance_contract": {
+    "same_binary_variants": [
+      "legacy_gmres",
+      "block_scalar",
+      "block_simd"
+    ],
+    "new_tolerances": [
+      [
+        3e-10,
+        3e-12
+      ],
+      [
+        3e-12,
+        3e-14
+      ]
+    ],
+    "paired_repetitions": 3,
+    "reason_for_repetitions": "New changed-path work/precision measurement, not replay of PHYS69 completed production requests",
+    "old_completed_requests_replayed": 0,
+    "true_error_reference": "SHA-pinned PHYS68 certificate on same finite L28; retain all-angular D2 certificate separately",
+    "no_claims": [
+      "whole-integrator roundoff enclosure",
+      "all-L nonlinear response",
+      "NCP host performance before host measurement",
+      "original source-driven xi or rates"
+    ]
+  },
+  "local_budget": {
+    "cpu_quota": 8,
+    "memory_gib": 8,
+    "cargo_jobs": 2,
+    "bounded_new_performance_runs": 18
+  },
+  "execution": {
+    "old_scientific_integrations": 0,
+    "NCP_submissions": 0,
+    "host_state": "UNKNOWN"
+  },
+  "publication": "PENDING",
+  "backup": "PENDING_NEW_UNIT",
+  "DAG": "C1_COMPLETE_R5_DERIVED_C5_IMPLEMENTING"
+}

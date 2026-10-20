@@ -1,3 +1,17 @@
+# Current priority PHYS70: HH structured optimization, 2026-10-20 UTC
+
+Read research/hh_phys70_20261020/REPORT_KO.md, theory/PROOF.md, EXECUTION_LEDGER.json, NEXT_DAG.json, CODEX_HANDOFF_PROMPT.md, NEW_THREAD_HANDOFF.md and publication/ before further work. This unit is an actual additive descendant of PR119 HEAD efd1520dfc0643220f729307583ff0bc04b059e9. Actual source commit, metadata HEAD, publication readback and backup acknowledgements remain separate receipts.
+
+The user's current optimization/vectorization/parallelization request supersedes the former scheduling suggestion to perform D3 immediately. POLICY_OVERRIDE.json records this scheduling correction. PHYS70_ALL_ANGULAR_D3_AND_HIGHER_REMAINDER remains OPEN under its existing identifier. No physics convention, completed certificate, error goal, access control or main-merge rule is changed.
+
+PHYS70 adds an exact O(L) frozen full-Jacobian shifted inverse for the original finite-L HH D2 ODE, an ordered wide1.7.1 SIMD kernel and Rayon1.12.0 independent jobs. It reuses the pinned VigilODE a21d573980f66fe02891bd216153443b5352f921 raw-U Rodas5P coefficients/controller and unchanged PHYS69 baseline. New L28 same-host solve-time medians improve98.7113x/91.1700x with exact stored D2 point-error checks; these are scoped measurements, not generic solver or NCP speed guarantees and not a uniform integrator certificate.
+
+Completed PHYS70 performance executions are18 paired+12 parallel+1 sandbox runner pilot=31; micro callbacks/single-step probes and35 distinct tests are separate. Preserve every first result and failure. Runner --resume reused10 files unchanged with0 new integrations and0 writes. Do not replay these completed measurements without a changed performance question. PHYS64 NCP20, PHYS66 pilot/smoke, PHYS67 certificates, PHYS68 L28 panels/old Rust, PHYS69 new band/old native runs remain completed and must not be replayed for unchanged identities.
+
+The optimized L64 runner is complete with a cheap preflight; actual NCP host is UNKNOWN and submissions0. Check related GitHub/backups and actual host receipts before a new request. On an older glibc host compile the locked source locally; the supplied measured binary requires GLIBC2.39. NCP gets implemented solver/request/guards, not a solver-design assignment. PHYS63 qualitative all-angular LAP/Poisson/DtN remains ESTABLISHED, PHYS69 all-angular D2 remains COMPLETE, original source-driven xi/origin/incoming adjoint/sigma(E)/Maxwellian k_HH(T) retain separate obligations. Original frozen source f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d and HH_R10=OFF are protected.
+
+## Preserved PHYS69 and earlier instructions
+
 # Current priority PHYS69: actual all-angular D2 and pinned VigilODE, 2026-10-19 UTC
 
 Read research/hh_phys69_20261019/REPORT_KO.md, NEXT_DAG.json, CODEX_HANDOFF_PROMPT.md, NEW_THREAD_HANDOFF.md, all_angular/CERTIFICATE.json and publication/ before new work. Actual parent is PR118 metadata HEAD 2a79d961388e4fc71cbc0938f012b08af7ecf14e, tree3255eff8a21ff4b97880e34312de44281988ea23. Actual PHYS69 science commit, later metadata HEAD and cloud ACKs are separate receipts; do not infer them from this priority text.

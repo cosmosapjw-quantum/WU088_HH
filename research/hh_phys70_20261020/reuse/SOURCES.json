@@ -1,0 +1,258 @@
+{
+  "schema": "PHYS70_EXTERNAL_REUSE_SOURCES_V1",
+  "retrieved_utc_date": "2026-10-20",
+  "task_scope": "HH implementation optimization; no new physics certification",
+  "sources": [
+    {
+      "id": "RODAS5P_ORIGINAL",
+      "url": "https://link.springer.com/article/10.1007/s10543-023-00967-x",
+      "doi": "10.1007/s10543-023-00967-x",
+      "author": "Gerd Steinebach",
+      "year": 2023,
+      "classification": "PRIMARY_PAPER_OPEN_ACCESS",
+      "retrieval": [
+        "SciSpace semantic search",
+        "Exa search",
+        "web open and find"
+      ],
+      "locations": [
+        "Eq. (1.2)-(1.3)",
+        "Section 4 work-precision discussion"
+      ],
+      "used_for": "Unchanged nonautonomous ROW stage system, step-frozen exact Jacobian/time partial, and comparison of achieved errors with work.",
+      "not_used_for": "No transfer of published Julia timing or numerical superiority to HH."
+    },
+    {
+      "id": "WIDE_RELEASE",
+      "url": "https://docs.rs/crate/wide/1.7.1/source/Cargo.toml",
+      "version": "1.7.1",
+      "released": "2026-09-14",
+      "rust_version": "1.89",
+      "edition": "2024",
+      "license": "Zlib OR Apache-2.0 OR MIT",
+      "classification": "OFFICIAL_RELEASE_SOURCE",
+      "retrieval": [
+        "Exa direct fetch",
+        "docs.rs latest release list via web open"
+      ],
+      "dependencies": {
+        "bytemuck": "^1.24.0",
+        "safe_arch": "^1.2.0 on x86/x86_64"
+      },
+      "used_for": "Pin stable-Rust SIMD implementation by registry version and Cargo.lock."
+    },
+    {
+      "id": "WIDE_F64X4",
+      "url": "https://docs.rs/wide/1.7.1/wide/struct.f64x4.html",
+      "classification": "OFFICIAL_API_DOCUMENTATION",
+      "retrieval": [
+        "Exa search and direct fetch"
+      ],
+      "api": [
+        "f64x4::new([f64;4])",
+        "f64x4::splat(f64)",
+        "to_array()",
+        "Add",
+        "Mul"
+      ],
+      "used_for": "Independent angular channel lanes with scalar-order node reductions.",
+      "excluded_api": [
+        "reduce_add: documented unspecified order",
+        "mul_add: platform-dependent fused versus non-fused rounding",
+        "exp: not substituted for existing scalar exp in equivalence route"
+      ]
+    },
+    {
+      "id": "WIDE_PORTABILITY",
+      "url": "https://docs.rs/crate/wide/1.7.1",
+      "classification": "OFFICIAL_CRATE_DOCUMENTATION",
+      "retrieval": [
+        "web open latest resolving version 1.7.1"
+      ],
+      "used_for": "Compile-time target feature selection; portable default build and optional NCP-local native compilation are distinct artifacts."
+    },
+    {
+      "id": "RAYON_RELEASE",
+      "url": "https://docs.rs/crate/rayon/1.12.0/source/Cargo.toml",
+      "alternate_primary_url": "https://github.com/rayon-rs/rayon/blob/v1.12.0/Cargo.toml",
+      "version": "1.12.0",
+      "released": "2026-04-14",
+      "rust_version": "1.80",
+      "edition": "2021",
+      "license": "MIT OR Apache-2.0",
+      "classification": "OFFICIAL_RELEASE_SOURCE",
+      "retrieval": [
+        "Exa direct fetch",
+        "GitHub fetch release tag"
+      ],
+      "used_for": "Independent job map with explicit resource limit.",
+      "dependencies": {
+        "rayon_core": "^1.13.0",
+        "either": "^1"
+      }
+    },
+    {
+      "id": "RAYON_POOL",
+      "url": "https://docs.rs/rayon/1.12.0/rayon/struct.ThreadPoolBuilder.html",
+      "classification": "OFFICIAL_API_DOCUMENTATION",
+      "retrieval": [
+        "Exa direct fetch",
+        "web open"
+      ],
+      "api": [
+        "ThreadPoolBuilder::new",
+        "num_threads",
+        "build",
+        "ThreadPool::install"
+      ],
+      "used_for": "A nonzero explicit thread limit; one pool outside measured repeated work."
+    },
+    {
+      "id": "RAYON_INDEXED",
+      "url": "https://docs.rs/rayon/1.12.0/rayon/iter/trait.IndexedParallelIterator.html",
+      "alternate_primary_url": "https://docs.rs/rayon/1.12.0/rayon/iter/trait.ParallelIterator.html",
+      "classification": "OFFICIAL_API_DOCUMENTATION",
+      "retrieval": [
+        "Exa fetch",
+        "web open"
+      ],
+      "api": [
+        "par_iter",
+        "map",
+        "collect_into_vec",
+        "collect::<Vec<_>>()"
+      ],
+      "used_for": "Ordered indexed collection of independent results and existing buffer reuse; do not introduce parallel floating-point reduce."
+    },
+    {
+      "id": "SCIML_WORK_PRECISION",
+      "url": "https://docs.sciml.ai/SciMLBenchmarksOutput/stable/StiffODE/ROBER/",
+      "classification": "OFFICIAL_EXECUTABLE_BENCHMARK_DOCUMENTATION",
+      "retrieval": [
+        "web open and find"
+      ],
+      "used_for": "Separate endpoint versus time-series error metric, common reference solution, tolerance sweep and thread isolation.",
+      "not_used_for": "No imported timings, rankings, or certified error claim."
+    },
+    {
+      "id": "RUST_PORTABLE_SIMD",
+      "url": "https://doc.rust-lang.org/std/simd/index.html",
+      "classification": "OFFICIAL_RUST_DOCUMENTATION",
+      "retrieval": [
+        "Exa search",
+        "web open"
+      ],
+      "used_for": "Current std::simd remains nightly experimental; select wide for supplied stable Rust."
+    },
+    {
+      "id": "HH_BASELINE_SOURCE",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/blob/efd1520dfc0643220f729307583ff0bc04b059e9/native/phys69_vigilode/src/lib.rs",
+      "classification": "LOCAL_CHECKOUT_READ_AT_VERIFIED_REMOTE_COMMIT",
+      "local_path": "native/phys69_vigilode/src/lib.rs",
+      "used_for": "Exact RHS/JVP/time-partial formula, scalar operation order, one-radial-point cache and GMRES configuration."
+    }
+  ],
+  "tool_use": {
+    "exa_search_calls": 2,
+    "exa_num_results_sum": 10,
+    "exa_direct_fetch_calls": 3,
+    "exa_requested_pages": 8,
+    "scispace_search_calls": 1,
+    "scispace_returned_papers": 10,
+    "scientific_integrations": 0,
+    "benchmarks": 0,
+    "remote_mutations": 0
+  },
+  "scispace": {
+    "query": "How can Rosenbrock-Wanner integration of stiff ordinary differential equations exploit a block triangular Jacobian with analytical small block shifted linear solves, and how should work versus precision be assessed for such specializations?",
+    "papers": [
+      {
+        "title": "Rosenbrock-W methods for stochastic Galerkin systems",
+        "doi": "10.1016/j.cam.2023.115527",
+        "status": "DISCOVERY_ONLY_NOT_ADOPTED"
+      },
+      {
+        "title": "Construction of Rosenbrock–Wanner method Rodas5P and numerical benchmarks within the Julia Differential Equations package",
+        "doi": "10.1007/s10543-023-00967-x",
+        "status": "SELECTED_PRIMARY_RETRIEVED"
+      },
+      {
+        "title": "A Class of Runge‐Kutta‐Rosenbrock Methods for Solving Stiff Differential Equations",
+        "doi": "10.1002/ZAMM.19830630104",
+        "status": "DISCOVERY_ONLY_NOT_ADOPTED"
+      },
+      {
+        "title": "Approximation of the Jacobian matrix in (m, 2)-methods for solving stiff problems",
+        "doi": "10.1134/S0965542511120153",
+        "status": "DISCOVERY_ONLY_NOT_ADOPTED"
+      },
+      {
+        "title": "Performance assessment of exponential Rosenbrock methods for large systems of ODEs",
+        "doi": "10.21914/ANZIAMJ.V54I0.6331",
+        "status": "DISCOVERY_ONLY_NOT_ADOPTED"
+      },
+      {
+        "title": "Improvement of Rosenbrock-Wanner Method RODASP",
+        "doi": "10.1007/978-3-030-53905-4_6",
+        "status": "DISCOVERY_ONLY_NOT_ADOPTED"
+      },
+      {
+        "title": "Improving the Efficiency of Stiff ODE Solvers through Adaptive Step Size Control and Jacobian Optimization",
+        "doi": "10.54254/2753-8818/2025.gl24961",
+        "status": "DISCOVERY_ONLY_NOT_ADOPTED"
+      },
+      {
+        "title": "A Rosenbrock- Nystrom state space implicit approach for the dynamic analysis of mechanical systems: I— theoretical formulation",
+        "doi": "10.1243/146441903322683013",
+        "status": "DISCOVERY_ONLY_NOT_ADOPTED"
+      },
+      {
+        "title": "Construction of high-order multirate Rosenbrock methods for stiff ODEs",
+        "doi": null,
+        "status": "DISCOVERY_ONLY_NOT_ADOPTED"
+      },
+      {
+        "title": "Schemes of (m, k)-Type for Solving Differential-Algebraic and Stiff Systems",
+        "doi": "10.1134/S1995423920010036",
+        "status": "DISCOVERY_ONLY_NOT_ADOPTED"
+      }
+    ]
+  },
+  "access_notes": [
+    {
+      "tool": "GitHub fetch",
+      "url": "https://api.github.com/repos/Lokathor/wide/tags?per_page=10",
+      "state": "UNSUPPORTED_ENDPOINT",
+      "resolution": "Read official published Cargo manifest through Exa."
+    },
+    {
+      "tool": "web open",
+      "url": "https://docs.rs/crate/wide/1.7.1/source/Cargo.toml",
+      "state": "INTERNAL_ERROR",
+      "resolution": "Exa direct fetch succeeded; not a package-access blocker."
+    }
+  ],
+  "version_distinction": {
+    "wide_main": {
+      "version_string": "1.7.1",
+      "dependencies_differ_from_published_manifest": true
+    },
+    "rayon_main": {
+      "version_string": "1.12.0",
+      "rust_version": "1.85",
+      "edition": "2024"
+    },
+    "selected_identity": "Published crates, not mutable main despite equal package version strings."
+  },
+  "implementation_status": "RECOMMENDATIONS_ONLY_AT_THIS_RECEIPT; actual applied version and measured outcome belong to root implementation receipts",
+  "retrieval_receipts": {
+  "wide_release_actual_excerpt": "edition = \"2024\"\nrust-version = \"1.89\"\nname = \"wide\"\nversion = \"1.7.1\"",
+  "rayon_release_actual_excerpt": "edition = \"2021\"\nrust-version = \"1.80\"\nname = \"rayon\"\nversion = \"1.12.0\"",
+  "wide_api_actual_excerpt": "pub const fn new(array: [f64; 4]) -> Self",
+  "scispace_selected_actual_fields": {
+    "title": "Construction of Rosenbrock–Wanner method Rodas5P and numerical benchmarks within the Julia Differential Equations package",
+    "doi": "10.1007/s10543-023-00967-x"
+  },
+  "note": "Small raw excerpts only; conclusions and limitations above are paraphrases of inspected primary source content."
+}
+}
