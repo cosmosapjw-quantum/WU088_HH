@@ -1,0 +1,451 @@
+{
+  "HH_R10": "OFF",
+  "actual_total_Coulomb_scalar_calls": 40,
+  "certified": false,
+  "checks": [
+    {
+      "actual": {
+        "coulombf": 6,
+        "coulombg": 6
+      },
+      "name": "coarse_cached_actual_call_counts",
+      "passed": true,
+      "reported_scalar_calls": 12
+    },
+    {
+      "hit_semantics": "includes within-call repeated B, even without disk cache",
+      "hits": 2,
+      "name": "coarse_new_nodes",
+      "new_nodes": 6,
+      "passed": true
+    },
+    {
+      "actual": {
+        "coulombf": 4,
+        "coulombg": 4
+      },
+      "name": "fine_cached_actual_call_counts",
+      "passed": true,
+      "reported_scalar_calls": 8
+    },
+    {
+      "hits": 8,
+      "name": "nested_grid_reuses_coarse_nodes",
+      "new_nodes": 4,
+      "passed": true
+    },
+    {
+      "actual": {
+        "coulombf": 10,
+        "coulombg": 10
+      },
+      "name": "fine_uncached_actual_call_counts",
+      "passed": true,
+      "reported_scalar_calls": 20
+    },
+    {
+      "hits": 2,
+      "name": "uncached_fine_counts",
+      "new_nodes": 10,
+      "passed": true
+    },
+    {
+      "cached_sha256": "51f24af15d142cbeb61f0144953bbc7674d3954c32d1a21a899d37f0259076b1",
+      "name": "cached_uncached_packet_bit_identity",
+      "passed": true,
+      "uncached_sha256": "51f24af15d142cbeb61f0144953bbc7674d3954c32d1a21a899d37f0259076b1"
+    },
+    {
+      "name": "packet_shape_and_magic",
+      "passed": true
+    },
+    {
+      "actual_F_calls": 0,
+      "actual_G_calls": 0,
+      "actual_channel_calls": 0,
+      "name": "completed_prepare_resume_zero_evaluations",
+      "passed": true
+    },
+    {
+      "name": "resume_preserves_existing_bytes",
+      "passed": true
+    },
+    {
+      "name": "one_cache_file_per_channel",
+      "passed": true
+    },
+    {
+      "actual_F_calls": 0,
+      "actual_G_calls": 0,
+      "exception": "Coulomb cache binding or hash mismatch",
+      "name": "changed_payload_rejected",
+      "passed": true
+    },
+    {
+      "actual_F_calls": 0,
+      "actual_G_calls": 0,
+      "exception": "Coulomb cache binding or hash mismatch",
+      "name": "wrong_binding_with_valid_hash_rejected",
+      "passed": true
+    },
+    {
+      "name": "tamper_test_restores_cache_bytes",
+      "passed": true
+    }
+  ],
+  "elapsed_seconds": 0.4770001489960123,
+  "files_sha256": {
+    "coarse_cached/GRID.npz": "fc79f30cb824878c16e78205934c88ef6a87b045763cf93e6692fc6b42c06f67",
+    "coarse_cached/PREPARED.json": "e65ab433d289b4559fe8d9dbb3889ead9c72faef10a6743faadbde8ba1780add",
+    "coarse_cached/SOURCE_GREEN.bin": "dcaf8b7db678f4bf4cc3b1f52eee8d98af03be7557dba02a17296fae7aa40778",
+    "coulomb_cache/20ae6ea5475af0e1f5676dff9186f122a62d32f9b42936395a4d88242610ac17/ell_0000.json": "084278b9af0e2d8508c14bb3a9530a1267efd7efa54c65a5785056a2dfdbd724",
+    "coulomb_cache/20ae6ea5475af0e1f5676dff9186f122a62d32f9b42936395a4d88242610ac17/ell_0001.json": "0cc369b755a2f73a739274ff1fa45203cd6174e44f909dffe9efde0b7629e682",
+    "fine_cached/GRID.npz": "ebc6818d56d18d25bccfbf6786ee2b8d1020b94babcef9b0fba963f2703ba9fc",
+    "fine_cached/PREPARED.json": "0d7ffcee227f024e8d95c8d59bfaf39068521ad180175010024a484af023f790",
+    "fine_cached/SOURCE_GREEN.bin": "51f24af15d142cbeb61f0144953bbc7674d3954c32d1a21a899d37f0259076b1",
+    "fine_uncached/GRID.npz": "ebc6818d56d18d25bccfbf6786ee2b8d1020b94babcef9b0fba963f2703ba9fc",
+    "fine_uncached/PREPARED.json": "8ca4d80f392ca8580a3d97e3e2875efb58055ad9bd8c2b462410369eac8e8e7a",
+    "fine_uncached/SOURCE_GREEN.bin": "51f24af15d142cbeb61f0144953bbc7674d3954c32d1a21a899d37f0259076b1"
+  },
+  "old_panel_integrations": 0,
+  "old_profile_integrations": 0,
+  "passed_checks": 14,
+  "preparations": {
+    "coarse_cached": {
+      "actual_scalar_calls": {
+        "coulombf": 6,
+        "coulombg": 6
+      },
+      "receipt": {
+        "Coulomb_scalar_calls": 12,
+        "HH_R10": "OFF",
+        "binding": {
+          "angular_backend": {
+            "angular_quadrature_used": false,
+            "certified": false,
+            "domain": {
+              "lmax": [
+                0,
+                128
+              ],
+              "max_radial_points": 4097,
+              "radii": [
+                27,
+                65
+              ]
+            },
+            "eta_C": "-10/7",
+            "method": "analytic_positive_Yukawa_multipoles",
+            "numpy": "2.3.5",
+            "offset": "7/10",
+            "precision": "binary64",
+            "primary_sources": [
+              "https://dlmf.nist.gov/10.60.E3",
+              "https://dlmf.nist.gov/10.47.E7",
+              "https://dlmf.nist.gov/10.47.E9",
+              "https://dlmf.nist.gov/10.51.E5",
+              "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.spherical_in.html",
+              "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.spherical_kn.html"
+            ],
+            "scattering_k": "7/10",
+            "scipy": "1.17.0",
+            "screening_kappa": "2"
+          },
+          "angular_code_sha256": "0353ab972cee0403bd5b4dcb5e864dd07da0aa5aef503924df5dabb561c7bee5",
+          "cache_code_sha256": "c81df56b569581415533f8fd9701f68ed7df8f47d2f82e8f27a919834fd1f80a",
+          "mpmath": "1.3.0",
+          "numpy": "2.3.5",
+          "python": "3.12.14",
+          "request": {
+            "B": "27",
+            "E_Hartree": "49/200",
+            "HH_R10": "OFF",
+            "angular_nodes": 8,
+            "angular_nodes_role": "unused_legacy_diagnostic_parameter_no_angular_quadrature",
+            "angular_rule": "analytic_positive_Yukawa_multipoles",
+            "boundary": "zero_Dirichlet",
+            "dps": 40,
+            "eta_C": "-10/7",
+            "forcing": "V*(r*phi)",
+            "frozen_source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+            "k": "7/10",
+            "lmax": 1,
+            "nodes": 3,
+            "outer": 28.0,
+            "phi": "exp(-r)/sqrt(pi)",
+            "radial_rule": "composite_Simpson",
+            "schema": "PHYS73_ORIGINAL_SOURCE_GRID_V2"
+          },
+          "source_code_sha256": "863d6afd1f5f6dea609e114b842e24967cdfbd9c33b6ec01b103d69c3706257e"
+        },
+        "cached_node_hits": 2,
+        "certified": false,
+        "channel_seconds": [
+          {
+            "cache_hits": 1,
+            "cache_path": "/workspace/scratch/1b90a4a1175e/phys73_runtime_evidence/CACHE_CHECK_L1_N3_N5_DPS40/coulomb_cache/20ae6ea5475af0e1f5676dff9186f122a62d32f9b42936395a4d88242610ac17/ell_0000.json",
+            "ell": 0,
+            "new_Coulomb_nodes": 3,
+            "seconds": 0.09518774300522637
+          },
+          {
+            "cache_hits": 1,
+            "cache_path": "/workspace/scratch/1b90a4a1175e/phys73_runtime_evidence/CACHE_CHECK_L1_N3_N5_DPS40/coulomb_cache/20ae6ea5475af0e1f5676dff9186f122a62d32f9b42936395a4d88242610ac17/ell_0001.json",
+            "ell": 1,
+            "new_Coulomb_nodes": 3,
+            "seconds": 0.053934511000989005
+          }
+        ],
+        "created_utc": "2026-10-20T21:06:02.100254+00:00",
+        "effective_workers": 1,
+        "elapsed_seconds": 0.15090538799995556,
+        "files_sha256": {
+          "GRID.npz": "fc79f30cb824878c16e78205934c88ef6a87b045763cf93e6692fc6b42c06f67",
+          "SOURCE_GREEN.bin": "dcaf8b7db678f4bf4cc3b1f52eee8d98af03be7557dba02a17296fae7aa40778"
+        },
+        "fingerprint": "c861d100e2d595e22ab76a44ee7e1b870a7513963a29287b5f2f304501304212",
+        "interior_matching_boundary_supplied": false,
+        "old_panel_integrations": 0,
+        "old_profile_integrations": 0,
+        "process_worker_memory_limit_bytes": null,
+        "requested_workers": 1,
+        "schema": "PHYS73_SOURCE_PREPARATION_RECEIPT_V1",
+        "scientific_scope": "original_source_zero_Dirichlet_first_Green_action",
+        "status": "PREPARED_BINARY64_DIAGNOSTIC",
+        "this_invocation": "NEW_PREPARATION"
+      }
+    },
+    "fine_cached": {
+      "actual_scalar_calls": {
+        "coulombf": 4,
+        "coulombg": 4
+      },
+      "receipt": {
+        "Coulomb_scalar_calls": 8,
+        "HH_R10": "OFF",
+        "binding": {
+          "angular_backend": {
+            "angular_quadrature_used": false,
+            "certified": false,
+            "domain": {
+              "lmax": [
+                0,
+                128
+              ],
+              "max_radial_points": 4097,
+              "radii": [
+                27,
+                65
+              ]
+            },
+            "eta_C": "-10/7",
+            "method": "analytic_positive_Yukawa_multipoles",
+            "numpy": "2.3.5",
+            "offset": "7/10",
+            "precision": "binary64",
+            "primary_sources": [
+              "https://dlmf.nist.gov/10.60.E3",
+              "https://dlmf.nist.gov/10.47.E7",
+              "https://dlmf.nist.gov/10.47.E9",
+              "https://dlmf.nist.gov/10.51.E5",
+              "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.spherical_in.html",
+              "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.spherical_kn.html"
+            ],
+            "scattering_k": "7/10",
+            "scipy": "1.17.0",
+            "screening_kappa": "2"
+          },
+          "angular_code_sha256": "0353ab972cee0403bd5b4dcb5e864dd07da0aa5aef503924df5dabb561c7bee5",
+          "cache_code_sha256": "c81df56b569581415533f8fd9701f68ed7df8f47d2f82e8f27a919834fd1f80a",
+          "mpmath": "1.3.0",
+          "numpy": "2.3.5",
+          "python": "3.12.14",
+          "request": {
+            "B": "27",
+            "E_Hartree": "49/200",
+            "HH_R10": "OFF",
+            "angular_nodes": 8,
+            "angular_nodes_role": "unused_legacy_diagnostic_parameter_no_angular_quadrature",
+            "angular_rule": "analytic_positive_Yukawa_multipoles",
+            "boundary": "zero_Dirichlet",
+            "dps": 40,
+            "eta_C": "-10/7",
+            "forcing": "V*(r*phi)",
+            "frozen_source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+            "k": "7/10",
+            "lmax": 1,
+            "nodes": 5,
+            "outer": 28.0,
+            "phi": "exp(-r)/sqrt(pi)",
+            "radial_rule": "composite_Simpson",
+            "schema": "PHYS73_ORIGINAL_SOURCE_GRID_V2"
+          },
+          "source_code_sha256": "863d6afd1f5f6dea609e114b842e24967cdfbd9c33b6ec01b103d69c3706257e"
+        },
+        "cached_node_hits": 8,
+        "certified": false,
+        "channel_seconds": [
+          {
+            "cache_hits": 4,
+            "cache_path": "/workspace/scratch/1b90a4a1175e/phys73_runtime_evidence/CACHE_CHECK_L1_N3_N5_DPS40/coulomb_cache/20ae6ea5475af0e1f5676dff9186f122a62d32f9b42936395a4d88242610ac17/ell_0000.json",
+            "ell": 0,
+            "new_Coulomb_nodes": 2,
+            "seconds": 0.02714269499119837
+          },
+          {
+            "cache_hits": 4,
+            "cache_path": "/workspace/scratch/1b90a4a1175e/phys73_runtime_evidence/CACHE_CHECK_L1_N3_N5_DPS40/coulomb_cache/20ae6ea5475af0e1f5676dff9186f122a62d32f9b42936395a4d88242610ac17/ell_0001.json",
+            "ell": 1,
+            "new_Coulomb_nodes": 2,
+            "seconds": 0.027519294002559036
+          }
+        ],
+        "created_utc": "2026-10-20T21:06:02.157014+00:00",
+        "effective_workers": 1,
+        "elapsed_seconds": 0.05586521700024605,
+        "files_sha256": {
+          "GRID.npz": "ebc6818d56d18d25bccfbf6786ee2b8d1020b94babcef9b0fba963f2703ba9fc",
+          "SOURCE_GREEN.bin": "51f24af15d142cbeb61f0144953bbc7674d3954c32d1a21a899d37f0259076b1"
+        },
+        "fingerprint": "79bafbd16f50fdac3bff9e53984bb938b164859ea87fef0adead7f8bc243722d",
+        "interior_matching_boundary_supplied": false,
+        "old_panel_integrations": 0,
+        "old_profile_integrations": 0,
+        "process_worker_memory_limit_bytes": null,
+        "requested_workers": 1,
+        "schema": "PHYS73_SOURCE_PREPARATION_RECEIPT_V1",
+        "scientific_scope": "original_source_zero_Dirichlet_first_Green_action",
+        "status": "PREPARED_BINARY64_DIAGNOSTIC",
+        "this_invocation": "NEW_PREPARATION"
+      }
+    },
+    "fine_uncached": {
+      "actual_scalar_calls": {
+        "coulombf": 10,
+        "coulombg": 10
+      },
+      "receipt": {
+        "Coulomb_scalar_calls": 20,
+        "HH_R10": "OFF",
+        "binding": {
+          "angular_backend": {
+            "angular_quadrature_used": false,
+            "certified": false,
+            "domain": {
+              "lmax": [
+                0,
+                128
+              ],
+              "max_radial_points": 4097,
+              "radii": [
+                27,
+                65
+              ]
+            },
+            "eta_C": "-10/7",
+            "method": "analytic_positive_Yukawa_multipoles",
+            "numpy": "2.3.5",
+            "offset": "7/10",
+            "precision": "binary64",
+            "primary_sources": [
+              "https://dlmf.nist.gov/10.60.E3",
+              "https://dlmf.nist.gov/10.47.E7",
+              "https://dlmf.nist.gov/10.47.E9",
+              "https://dlmf.nist.gov/10.51.E5",
+              "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.spherical_in.html",
+              "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.spherical_kn.html"
+            ],
+            "scattering_k": "7/10",
+            "scipy": "1.17.0",
+            "screening_kappa": "2"
+          },
+          "angular_code_sha256": "0353ab972cee0403bd5b4dcb5e864dd07da0aa5aef503924df5dabb561c7bee5",
+          "cache_code_sha256": "c81df56b569581415533f8fd9701f68ed7df8f47d2f82e8f27a919834fd1f80a",
+          "mpmath": "1.3.0",
+          "numpy": "2.3.5",
+          "python": "3.12.14",
+          "request": {
+            "B": "27",
+            "E_Hartree": "49/200",
+            "HH_R10": "OFF",
+            "angular_nodes": 8,
+            "angular_nodes_role": "unused_legacy_diagnostic_parameter_no_angular_quadrature",
+            "angular_rule": "analytic_positive_Yukawa_multipoles",
+            "boundary": "zero_Dirichlet",
+            "dps": 40,
+            "eta_C": "-10/7",
+            "forcing": "V*(r*phi)",
+            "frozen_source_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+            "k": "7/10",
+            "lmax": 1,
+            "nodes": 5,
+            "outer": 28.0,
+            "phi": "exp(-r)/sqrt(pi)",
+            "radial_rule": "composite_Simpson",
+            "schema": "PHYS73_ORIGINAL_SOURCE_GRID_V2"
+          },
+          "source_code_sha256": "863d6afd1f5f6dea609e114b842e24967cdfbd9c33b6ec01b103d69c3706257e"
+        },
+        "cached_node_hits": 2,
+        "certified": false,
+        "channel_seconds": [
+          {
+            "cache_hits": 1,
+            "cache_path": null,
+            "ell": 0,
+            "new_Coulomb_nodes": 5,
+            "seconds": 0.06794057099614292
+          },
+          {
+            "cache_hits": 1,
+            "cache_path": null,
+            "ell": 1,
+            "new_Coulomb_nodes": 5,
+            "seconds": 0.06947650099755265
+          }
+        ],
+        "created_utc": "2026-10-20T21:06:02.296662+00:00",
+        "effective_workers": 1,
+        "elapsed_seconds": 0.1387208300002385,
+        "files_sha256": {
+          "GRID.npz": "ebc6818d56d18d25bccfbf6786ee2b8d1020b94babcef9b0fba963f2703ba9fc",
+          "SOURCE_GREEN.bin": "51f24af15d142cbeb61f0144953bbc7674d3954c32d1a21a899d37f0259076b1"
+        },
+        "fingerprint": "79bafbd16f50fdac3bff9e53984bb938b164859ea87fef0adead7f8bc243722d",
+        "interior_matching_boundary_supplied": false,
+        "old_panel_integrations": 0,
+        "old_profile_integrations": 0,
+        "process_worker_memory_limit_bytes": null,
+        "requested_workers": 1,
+        "schema": "PHYS73_SOURCE_PREPARATION_RECEIPT_V1",
+        "scientific_scope": "original_source_zero_Dirichlet_first_Green_action",
+        "status": "PREPARED_BINARY64_DIAGNOSTIC",
+        "this_invocation": "NEW_PREPARATION"
+      }
+    }
+  },
+  "schema": "PHYS73_COULOMB_CACHE_CHECK_V1",
+  "scope": "L1 radial 3->5 on [27,28], dps40; sample preparation only",
+  "source_sha256_after": {
+    "analytic_screen_source.py": "0353ab972cee0403bd5b4dcb5e864dd07da0aa5aef503924df5dabb561c7bee5",
+    "coulomb_cache.py": "c81df56b569581415533f8fd9701f68ed7df8f47d2f82e8f27a919834fd1f80a",
+    "original_source.py": "863d6afd1f5f6dea609e114b842e24967cdfbd9c33b6ec01b103d69c3706257e",
+    "test_cache.py": "09c29aa7158d978f83902707dfcb7e52bad804e5580269664b401d332d09d3db"
+  },
+  "source_sha256_before": {
+    "analytic_screen_source.py": "0353ab972cee0403bd5b4dcb5e864dd07da0aa5aef503924df5dabb561c7bee5",
+    "coulomb_cache.py": "c81df56b569581415533f8fd9701f68ed7df8f47d2f82e8f27a919834fd1f80a",
+    "original_source.py": "863d6afd1f5f6dea609e114b842e24967cdfbd9c33b6ec01b103d69c3706257e",
+    "test_cache.py": "09c29aa7158d978f83902707dfcb7e52bad804e5580269664b401d332d09d3db"
+  },
+  "source_stable_during_run": true,
+  "started_utc": "2026-10-20T21:06:01.825239+00:00",
+  "status": "PASS",
+  "total_checks": 14,
+  "versions": {
+    "mpmath": "1.3.0",
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  }
+}

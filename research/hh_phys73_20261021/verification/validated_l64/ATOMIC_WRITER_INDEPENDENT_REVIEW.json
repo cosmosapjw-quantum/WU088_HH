@@ -1,0 +1,17 @@
+{
+  "changed_functions": [
+    "write_new",
+    "run"
+  ],
+  "current_sha256": "12348bfe8810807d7ede7bd7fff605ca4afd1584a36addc76f8c15c3fcb2cd6d",
+  "decision": "PASS",
+  "entire_module_AST_equal_except_writer_and_precise_REQUEST_temp_guard": true,
+  "executed_source_sha256": "41c9c1410070a9bcf161ca497978b21bac7788bb312b7396fdd4e3298e6c6aa4",
+  "existing_test_reruns": 0,
+  "new_guard": "any((p.name != 'CAMPAIGN.lock' and (not (re.fullmatch('\\\\.REQUEST\\\\.json\\\\.[0-9a-f]{32}\\\\.tmp', p.name) and p.is_file() and (not p.is_symlink()))) for p in output.iterdir()))",
+  "numerical_integrations": 0,
+  "old_guard": "any((p.name != 'CAMPAIGN.lock' for p in output.iterdir()))",
+  "reviewer": "optimization_theory",
+  "schema": "PHYS73_VALIDATED_L64_ATOMIC_INDEPENDENT_REVIEW_V1",
+  "test_receipt_and_log_hash_verified": true
+}

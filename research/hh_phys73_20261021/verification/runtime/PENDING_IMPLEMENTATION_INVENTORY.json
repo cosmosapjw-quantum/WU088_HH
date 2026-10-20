@@ -1,0 +1,59 @@
+{
+  "source_checkout": "/tmp/phys73_fullclone",
+  "baseline_head": "9d6d7491f26850918d6316ed466e3df35dace570",
+  "files_sha256": {
+    "scripts/phys66_ncp.py": "6bc89886e3d8c72660a9763bcb10b48ca1576d6c7d675fe8f004fb4fde09670b",
+    "src/wu088_hh/phys66_campaign.py": "9be50d71dbf5b433ee0cc612a19d7165e8509eb2774a24e7e72c7de41df20311",
+    "src/wu088_hh/phys66_endpoint.py": "f9b5c6a84b2c2bcf8a0cb0c5168abd624c72f9158e1822109e85a3b5afe7dc56",
+    "scripts/phys68_ncp.py": "a75f578889f76d2d8f896aaecd8513a52f952706706ee08619285fdd0bb0d8d1",
+    "src/wu088_hh/phys68_profiles.py": "4ba80017cd4aa6e2e0db22b5b17a7fc4faba1610f726029f57fd3165a9fc00e7",
+    "research/hh_phys68_20261019/ncp_delivery/REQUEST_L64.json": "8db90950cc808a7131f7a82385ecedb48fde5d70dfda4606272ed5d0de6b5d7e",
+    "scripts/phys70_ncp.py": "cc2e67f85c63cc2124162ba19173b221a087f8df86dfbec95e119f576a63c0e5",
+    "research/hh_phys70_20261020/publication/PHYS70_L64_EXECUTION_ADDENDUM.json": "f81dfe3978180a96bcf13dd1becd88c55fa768d432913353c2f95e5f9d1fd763"
+  },
+  "read_only": true,
+  "physical_executions": 0,
+  "findings": [
+    {
+      "id": "PHYS66_LONGTAIL6",
+      "implementation": "scripts/phys66_ncp.py -> src/wu088_hh/phys66_campaign.py",
+      "cases": "L28/L64 x T55/T65/T75, m0, join39, threeBornorders",
+      "case_independence": "six separate subprocesses; wrapper uses thread pool only for subprocess waits",
+      "unchanged_request": "rtol2e-11,max_step0.25,angular128,DOP853",
+      "resource_limits": "workers1..8,memory1..16GiB each,aggregate<=32GiB,timeout30..900s; sixworkers*4GiB=24GiB fits unchanged guard",
+      "remaining_receipt": "Parent intake determines actual unexecuted status; do not rely on old PENDING",
+      "environment_note": "run_case overwrites PYTHONPATH with repo/src, so runtime dependencies must be installed in the chosen interpreter environment rather than only external PYTHONPATH"
+    },
+    {
+      "id": "PHYS68_VALIDATED_L64",
+      "request": {
+        "max_ell": 64,
+        "ell": 21,
+        "ellprime": 20,
+        "outer": "65",
+        "half_width": "1/8",
+        "zero_free_radius": "1/4",
+        "majorant_radius": "2",
+        "degree": 96,
+        "precision_bits": 768,
+        "coefficient_bits": 2048,
+        "d1_absolute_goal": "1e-45",
+        "d2_absolute_goal": "1e-62"
+      },
+      "panels": 152,
+      "pairs": 129,
+      "parallel_constraint": "flint.ctx precision/cap is process-global: threads forbidden for validated coefficient kernels",
+      "dependency": "q_right flows backward across panels; independent component precomputation or proven composition needed before panel-level parallel integration",
+      "reuse": "Existing completed profiles have different panel/precision request; current request is optional finite-block extension and all-angular D2 is already completed. Parent decides true pending vs superseded status without rerunning completed profile campaign."
+    },
+    {
+      "id": "PHYS70_NATIVE_L64",
+      "actual_status": "COMPLETE_EXECUTED_BINARY64_DIAGNOSTIC_NOT_CERTIFIED",
+      "build_seconds": 328.065074861981,
+      "native_integration_seconds_reported_by_wrapper": 0.21725168198463507,
+      "old_campaign_reruns": 0,
+      "resource_usage": "onebuild/solverthread,4GiB cap on actual64CPUhost",
+      "reuse": "Already complete; optimize repeated build avoidance and reuse receipt rather than reintegrating."
+    }
+  ]
+}

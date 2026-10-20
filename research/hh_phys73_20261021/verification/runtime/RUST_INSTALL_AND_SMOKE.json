@@ -1,0 +1,77 @@
+{
+  "timestamp_utc": "2026-10-20T20:43:49.247157+00:00",
+  "prefix": "/tmp/phys73_runtime/prefix",
+  "commands": [
+    {
+      "argv": [
+        "bash",
+        "/tmp/phys73_runtime/unpack/rust-1.94.1-x86_64-unknown-linux-gnu/install.sh",
+        "--prefix=/tmp/phys73_runtime/prefix",
+        "--components=rustc,cargo,rust-std-x86_64-unknown-linux-gnu",
+        "--disable-ldconfig"
+      ],
+      "elapsed_seconds": 6.227997491994756,
+      "exit_code": 0,
+      "stdout": "install: creating uninstall script at /tmp/phys73_runtime/prefix/lib/rustlib/uninstall.sh\ninstall: installing component 'rustc'\ninstall: installing component 'cargo'\ninstall: installing component 'rust-std-x86_64-unknown-linux-gnu'\n\n    rust installed.\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/tmp/phys73_runtime/prefix/bin/rustc",
+        "--version",
+        "--verbose"
+      ],
+      "elapsed_seconds": 0.008911376004107296,
+      "exit_code": 0,
+      "stdout": "rustc 1.94.1 (e408947bf 2026-03-25)\nbinary: rustc\ncommit-hash: e408947bfd200af42db322daf0fadfe7e26d3bd1\ncommit-date: 2026-03-25\nhost: x86_64-unknown-linux-gnu\nrelease: 1.94.1\nLLVM version: 21.1.8\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/tmp/phys73_runtime/prefix/bin/cargo",
+        "--version",
+        "--verbose"
+      ],
+      "elapsed_seconds": 0.014024080010131001,
+      "exit_code": 0,
+      "stdout": "cargo 1.94.1 (29ea6fb6a 2026-03-24)\nrelease: 1.94.1\ncommit-hash: 29ea6fb6a5db279426f4cc4e17aa385f05a0cfbc\ncommit-date: 2026-03-24\nhost: x86_64-unknown-linux-gnu\nlibgit2: 1.9.2 (sys:0.20.3 vendored)\nlibcurl: 8.15.0-DEV (sys:0.4.83+curl-8.15.0 vendored ssl:OpenSSL/3.5.4)\nssl: OpenSSL 3.5.4 30 Sep 2025\nos: Ubuntu 24.4.0 (noble) [64-bit]\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/tmp/phys73_runtime/prefix/bin/rustc",
+        "--edition=2021",
+        "-O",
+        "/workspace/scratch/1b90a4a1175e/phys73_runtime_evidence/runtime_smoke.rs",
+        "-o",
+        "/tmp/phys73_runtime/runtime_smoke"
+      ],
+      "elapsed_seconds": 0.09691282799758483,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/tmp/phys73_runtime/runtime_smoke"
+      ],
+      "elapsed_seconds": 0.0011682769982144237,
+      "exit_code": 0,
+      "stdout": "{\"q_f64\":5.53311000000000010e-21,\"tail_f64\":1.50653984378388452e-80,\"relative_error\":2.22044604925031308e-16,\"available_parallelism\":8,\"certified\":false}\n",
+      "stderr": ""
+    }
+  ],
+  "signature_verification": "NOT_PERFORMED_NO_KEY_SELECTED",
+  "scientific_status": "RUNTIME_CAPABILITY_ONLY_F64_NOT_CERTIFICATE",
+  "archive_sha256": "294b3d81fa72e62581276290c60c81eb8b58498d333d422ca1dfc432877d0c40",
+  "source": {
+    "path": "/workspace/scratch/1b90a4a1175e/phys73_runtime_evidence/runtime_smoke.rs",
+    "bytes": 672,
+    "sha256": "990172e59c4c3c34a8edf54f438c02c28c4562642d3eeed1c15c793a683a9caf"
+  },
+  "binary": {
+    "path": "/tmp/phys73_runtime/runtime_smoke",
+    "bytes": 3997208,
+    "sha256": "da38c052e2e0e68dd3a79370504d70be5d7ddd77e021305945768d561bebc811"
+  }
+}

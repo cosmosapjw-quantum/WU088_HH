@@ -1,0 +1,65 @@
+{
+  "schema": "WU088_HH_PHYS73_ANALYTIC_YUKAWA_EVIDENCE_V1",
+  "scope": "New analytic retained-mode source evaluation; no old numerical integration",
+  "source_fetch": {
+    "tool": "mcp__codex_apps__exa_web_fetch_exa",
+    "request": {
+      "urls": [
+        "https://dlmf.nist.gov/10.51",
+        "https://dlmf.nist.gov/10.60",
+        "https://dlmf.nist.gov/10.47"
+      ],
+      "maxCharacters": 20000
+    },
+    "isError": false,
+    "returned_text_characters": 31322,
+    "checked_equations": [
+      {
+        "number": "10.60.3",
+        "present": true
+      },
+      {
+        "number": "10.47.7",
+        "present": true
+      },
+      {
+        "number": "10.47.9",
+        "present": true
+      },
+      {
+        "number": "10.51.5",
+        "present": true
+      }
+    ],
+    "normalization": "DLMF k_n = sqrt(pi/(2z)) K_(n+1/2)(z); code kbar_n=(2/pi) k_n",
+    "domain": "r>=27 > a=7/10 implies |v exp(+-i alpha)|<|u| for all real mu",
+    "derivative_source": "10.51.5 applied to g_n=i_n or (-1)^n k_n, with the l=0 kbar_-1=kbar_0 identity checked directly"
+  },
+  "symbolic": {
+    "tool": "mcp__codex_apps__wolfram_wolframlanguageevaluator",
+    "code": "Clear[aa, rr, kap, dd, c0, direct0, i0, i1, kn0, stable0]; c0 = Exp[-kap rr] Sinh[kap aa]/(kap aa rr); direct0 = 2/(rr aa) (Exp[-kap (rr-aa)] ((rr-aa+1)/kap + 1/kap^2) - Exp[-kap (rr+aa)] ((rr+aa+1)/kap + 1/kap^2)); i0 = Sinh[kap aa]/(kap aa); i1 = ((kap aa) Cosh[kap aa]-Sinh[kap aa])/(kap aa)^2; kn0 = Exp[-kap rr]/(kap rr); stable0 = 4 kap ((i0-aa i1) kn0 + rr i0 kn0); FullSimplify[{direct0 - 4 (c0-D[c0,kap]), stable0 - 4 (c0-D[c0,kap]), D[Exp[-kap dd]/dd,kap]+Exp[-kap dd], 1-(7/10)(7/5)/3-101/150}, Assumptions -> rr>aa>0 && kap>0 && dd>0]",
+    "timeConstraint": 20,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Out[1]= {0, 0, 0, 0}"
+        }
+      ],
+      "structuredContent": null,
+      "isError": false
+    },
+    "expected": "{0, 0, 0, 0}",
+    "checks": [
+      "Direct l0 angular integral versus 4(C0-C0')",
+      "Positive-term l0 recurrence formula versus 4(C0-C0')",
+      "Negative derivative sign for Yukawa kernel",
+      "Exact all-l 101/150 separation lower factor"
+    ]
+  },
+  "old_panel_integrations": 0,
+  "inherited_profile_integrations": 0,
+  "new_panel_integrations": 0,
+  "finite_grid_certification": false,
+  "HH_R10": "OFF"
+}

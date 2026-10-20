@@ -1,0 +1,457 @@
+{
+  "schema": "PHYS73_SUCCESSOR_DAG_V1",
+  "recorded_utc": "2026-10-20T21:12:15.875287+00:00",
+  "parent_at_fresh_intake": {
+    "PR": 124,
+    "HEAD": "9d6d7491f26850918d6316ed466e3df35dace570"
+  },
+  "scope": "Constructive original-source fast Green application, bounded local verification and complete pending-job batch preparation.",
+  "seven_distinct_state_axes": {
+    "derivation": "COMPLETE_FOR_NEW_FORMULAS_AND_ANALYTIC_COMPONENTS",
+    "code": "IMPLEMENTED_EXECUTION_READY",
+    "verification": "PASS_SCOPED_BY_VERSIONED_LOCAL_RECEIPTS",
+    "scientific_execution": "LIGHT_LOCAL_ONLY_FULL_NCP_BATCH_NOT_RUN",
+    "publication": {
+      "status_at_this_checkpoint": "AUTHORIZED_FINAL_REMOTE_READBACK_PENDING",
+      "authority": "publication/REMOTE_PUBLICATION.json",
+      "source_commit": null,
+      "metadata_HEAD": null,
+      "external_final_identity": "PHYS73_DELIVERY_*.json identified by the actual publication receipt",
+      "self_referential_hash_used": false
+    },
+    "backup": {
+      "status_at_this_checkpoint": "FINAL_PROVIDER_ACK_PENDING",
+      "source_backup_authority": "publication/BACKUP_ACK.json if emitted",
+      "final_authority": "external PHYS73_FINAL_BACKUP_ACK_*.json and PHYS73_DELIVERY_*.json",
+      "archive_hash": null,
+      "full_git_clone_assumed": false,
+      "self_referential_hash_used": false
+    },
+    "DAG": "CLOSED_INHERITED_NODES_PRESERVED_NEW_READY_AND_OPEN_NODES_DISTINCT"
+  },
+  "nodes": [
+    {
+      "id": "PHYS63_ACTUAL_EXTERIOR_EXISTENCE",
+      "status": "COMPLETE_REUSED",
+      "scope": "Qualitative all-angular LAP/Poisson/DtN; no reproof campaign.",
+      "dependencies": [],
+      "evidence": [
+        "../hh_phys72_20261020/NEXT_DAG.json"
+      ]
+    },
+    {
+      "id": "PHYS69_D2",
+      "status": "COMPLETE_REUSED",
+      "scope": "Original all-angular/all-radial D2(21,20),m0.",
+      "dependencies": [
+        "PHYS63_ACTUAL_EXTERIOR_EXISTENCE"
+      ],
+      "evidence": [
+        "intake/PHYS71_DELIVERY_20261020.json"
+      ]
+    },
+    {
+      "id": "PHYS71_D3",
+      "status": "COMPLETE_REUSED",
+      "scope": "All-angular/all-radial D3(21,20),m0; accepted76 panels/inherited152 profiles unchanged.",
+      "dependencies": [
+        "PHYS63_ACTUAL_EXTERIOR_EXISTENCE"
+      ],
+      "evidence": [
+        "intake/PHYS71_DELIVERY_20261020.json"
+      ],
+      "certificate_sha256": "f75d082e1966dd61a326c37b6ff14e8f330e010341a59a88eb4ca8d4734e6173",
+      "old_panels_to_reintegrate": 0,
+      "old_profiles_to_reintegrate": 0
+    },
+    {
+      "id": "PHYS70_L64_HOST_DIAGNOSTIC",
+      "status": "COMPLETE_REUSED_FINITE_L_BINARY64",
+      "scope": "PR123 actual NCP return; equivalent old native-L64 request excluded from queue.",
+      "dependencies": [
+        "PHYS69_D2"
+      ],
+      "evidence": [
+        "intake/PENDING_NCP_INVENTORY.md"
+      ],
+      "historical_aliases": [
+        "PHYS70_OPTIMIZED_L64",
+        "PHYS69_VIGILODE_L64"
+      ]
+    },
+    {
+      "id": "PHYS72_ACTUAL_GREEN_WEIGHTED_BOUND",
+      "status": "COMPLETE_REUSED",
+      "scope": "Actual outgoing Dirichlet inverse all j, r>=27; ||R0||X+->X- <=253/1000.",
+      "dependencies": [
+        "PHYS63_ACTUAL_EXTERIOR_EXISTENCE"
+      ],
+      "evidence": [
+        "../hh_phys72_20261020/theory/THEOREM_AND_MODEL_MAP.md"
+      ]
+    },
+    {
+      "id": "PHYS72_ORIGINAL_SCREEN_WEIGHTED_BOUND",
+      "status": "COMPLETE_REUSED",
+      "scope": "Original multiplier radial/angular L2,H1,H_C bounds; no replacement by finite-L Gamma64.",
+      "dependencies": [],
+      "evidence": [
+        "../hh_phys72_20261020/theory/ANGULAR_MULTIPLIER_ADDENDUM.md"
+      ]
+    },
+    {
+      "id": "PHYS72_LAMBDA1_CONVERGENCE",
+      "status": "COMPLETE_REUSED",
+      "scope": "Actual K and sandwiched S contraction q=553311/10^26<1.",
+      "dependencies": [
+        "PHYS72_ACTUAL_GREEN_WEIGHTED_BOUND",
+        "PHYS72_ORIGINAL_SCREEN_WEIGHTED_BOUND"
+      ],
+      "evidence": [
+        "intake/PHYS72_DELIVERY_20261020.json"
+      ]
+    },
+    {
+      "id": "PHYS72_ORDER_GE4_REMAINDER",
+      "status": "COMPLETE_REUSED",
+      "scope": "Completed weighted operator and fixed-entry order>=4 exterior Born remainder.",
+      "dependencies": [
+        "PHYS72_LAMBDA1_CONVERGENCE"
+      ],
+      "evidence": [
+        "../hh_phys72_20261020/verification/EXACT_BOUND_CERTIFICATE.json"
+      ]
+    },
+    {
+      "id": "PHYS72_THIRD_AND_HIGHER_ENCLOSURE",
+      "status": "COMPLETE_REUSED",
+      "scope": "Completed exact composition of PHYS71 D3 and PHYS72 higher tail.",
+      "dependencies": [
+        "PHYS71_D3",
+        "PHYS72_ORDER_GE4_REMAINDER"
+      ],
+      "evidence": [
+        "../hh_phys72_20261020/verification/THIRD_AND_HIGHER_ENCLOSURE.json"
+      ]
+    },
+    {
+      "id": "PHYS70_ALL_ANGULAR_D3_AND_HIGHER_REMAINDER",
+      "status": "COMPLETE_REUSED_FROM_PHYS71_AND_PHYS72",
+      "scope": "Preserved historical combined successor; both children have actual completion evidence.",
+      "dependencies": [
+        "PHYS71_D3",
+        "PHYS72_ORDER_GE4_REMAINDER"
+      ],
+      "evidence": [
+        "intake/PHYS71_DELIVERY_20261020.json",
+        "intake/PHYS72_DELIVERY_20261020.json"
+      ],
+      "closed_historical_child": "PHYS71_ALL_ANGULAR_HIGHER_REMAINDER"
+    },
+    {
+      "id": "PHYS73_ORIGINAL_SOURCE_MAPPING",
+      "status": "COMPLETE_DERIVED",
+      "scope": "At lambda1, (A0-V)u=V chi with u=r xi, chi=r exp(-r)/sqrt(pi); zero-trace particular distinguished from actual matched boundary.",
+      "dependencies": [
+        "PHYS72_LAMBDA1_CONVERGENCE"
+      ],
+      "evidence": [
+        "theory/ORIGINAL_SOURCE_AND_ERROR_BUDGET.md",
+        "theory/WOLFRAM_SOURCE_CONJUGATION.json"
+      ]
+    },
+    {
+      "id": "PHYS73_ANALYTIC_SOURCE_BUDGET",
+      "status": "COMPLETE_DERIVED_EXACT_EVALUATED",
+      "scope": "Explicit radial and all-angular omitted-source bounds plus source Born tail; L64/T44/N1 analytic components <=4.918263356868373e-53 in X-.",
+      "dependencies": [
+        "PHYS73_ORIGINAL_SOURCE_MAPPING",
+        "PHYS72_LAMBDA1_CONVERGENCE"
+      ],
+      "evidence": [
+        "theory/ORIGINAL_SOURCE_AND_ERROR_BUDGET.md",
+        "verification/SOURCE_BUDGET_L64_T44_N1.json",
+        "verification/SOURCE_BUDGET_LITERAL_REVISION.json"
+      ],
+      "finite_grid_certified": false
+    },
+    {
+      "id": "PHYS73_ANALYTIC_SCREEN_MULTIPOLES",
+      "status": "COMPLETE_DERIVED_IMPLEMENTED_SCOPED_CHECKED",
+      "scope": "Exact original screen via positive Yukawa multipoles; floating coefficients remain diagnostic.",
+      "dependencies": [
+        "PHYS73_ORIGINAL_SOURCE_MAPPING"
+      ],
+      "evidence": [
+        "theory/ANALYTIC_SCREEN_SOURCE.md",
+        "implementation/analytic_screen_source.py",
+        "verification/runtime/ANALYTIC_SCREEN_CHECK.json"
+      ],
+      "uniform_floating_error_certified": false
+    },
+    {
+      "id": "PHYS73_RATIO_GREEN_KERNEL",
+      "status": "COMPLETE_IMPLEMENTED_SCOPED_CHECKED",
+      "scope": "Exact separable complex-symmetric Green represented by ordered O(Nr) ratio sweep; no conjugation; diagonal/weights once.",
+      "dependencies": [
+        "PHYS72_ACTUAL_GREEN_WEIGHTED_BOUND"
+      ],
+      "evidence": [
+        "theory/FAST_GREEN_APPLICATION.md",
+        "native/green_batch.rs",
+        "verification/INDEPENDENT_COULOMB_ORACLE.json",
+        "verification/kernel_benchmark/REPORT.json"
+      ],
+      "NCP_speedup_measured": false
+    },
+    {
+      "id": "PHYS73_COULOMB_CACHE",
+      "status": "COMPLETE_IMPLEMENTED_SCOPED_CHECKED",
+      "scope": "Hash-bound per-channel analytic F/G cache reuses shared nested-grid radii without changing precision; local3->5 grid observed40 scalar calls total.",
+      "dependencies": [
+        "PHYS73_RATIO_GREEN_KERNEL"
+      ],
+      "evidence": [
+        "implementation/coulomb_cache.py",
+        "verification/cache/CACHE_CHECK_RECEIPT.json",
+        "verification/cache/integrated/INTEGRATED_PIPELINE_RECEIPT.json"
+      ]
+    },
+    {
+      "id": "PHYS73_LIGHT_VERIFICATION",
+      "status": "COMPLETE_SCOPED",
+      "scope": "Versioned CAS/exact tests/native tests/small source packets; one actual new validated j37 panel; no old campaign re-integration.",
+      "dependencies": [
+        "PHYS73_ANALYTIC_SOURCE_BUDGET",
+        "PHYS73_ANALYTIC_SCREEN_MULTIPOLES",
+        "PHYS73_RATIO_GREEN_KERNEL",
+        "PHYS73_COULOMB_CACHE"
+      ],
+      "evidence": [
+        "native/UNIT_TEST_RECEIPT.json",
+        "native/CLI_CHECK_RECEIPT.json",
+        "verification/validated_l64/LIGHT_CHECK_RECEIPT.json",
+        "verification/ANALYTIC_SCREEN_INDEPENDENT_REVIEW.md"
+      ],
+      "old_panel_integrations": 0,
+      "old_profile_integrations": 0,
+      "new_validated_panels": 1,
+      "full_NCP_batch_executed": false
+    },
+    {
+      "id": "PHYS73_NCP_BATCH_PREPARATION",
+      "status": "READY_IMPLEMENTED_LIGHT_CHECKED_NOT_SUBMITTED",
+      "scope": "Resource-aware64CPU/128GiB target batch; actual cgroup/affinity/memory caps; per-job resume and local return capsule.",
+      "dependencies": [
+        "PHYS73_LIGHT_VERIFICATION"
+      ],
+      "evidence": [
+        "implementation/ncp_batch.py",
+        "implementation/return_capsule.py",
+        "ncp_delivery/CURRENT_RESOURCE_PLAN_64_128.json",
+        "ncp_delivery/README_KO.md",
+        "verification/RETURN_CAPSULE_REVIEW.json"
+      ],
+      "actual_host_access": false,
+      "new_NCP_submissions": 0,
+      "verified_current_batch_tests": 14,
+      "verified_return_capsule_tests": 9
+    },
+    {
+      "id": "PHYS66_LONGTAIL6",
+      "status": "READY_NO_NEW_HOST_RETURN_OBSERVED",
+      "scope": "Six unchanged L28/L64 x T55/T65/T75 full-matrix longtail cases, join39,orders3,nodes128,rtol2e-11,max_step0.25.",
+      "dependencies": [
+        "PHYS73_NCP_BATCH_PREPARATION"
+      ],
+      "evidence": [
+        "intake/PENDING_NCP_INVENTORY.json",
+        "intake/PENDING_NCP_INVENTORY.md"
+      ],
+      "historical_aliases": [
+        "PHYS66_NCP_LONGTAIL6"
+      ],
+      "scientific_execution": "NOT_RUN_THIS_SESSION",
+      "actual_live_host_state": "UNOBSERVED",
+      "result_kind": "BINARY64_DIAGNOSTIC_WITH_ORIGINAL_GATES",
+      "case_count": 6
+    },
+    {
+      "id": "PHYS68_L64_VALIDATED_PROFILES",
+      "status": "READY_NEW_J37_64_ONLY_FULL_HOST_RUN_PENDING",
+      "scope": "Original L64 target preserved by reusing certified j0..36 and computing28 independent new j37..64 chains,152 panels each.",
+      "dependencies": [
+        "PHYS73_NCP_BATCH_PREPARATION",
+        "PHYS69_D2"
+      ],
+      "evidence": [
+        "implementation/validated_l64.py",
+        "intake/PENDING_NCP_INVENTORY.md",
+        "verification/VALIDATED_L64_INDEPENDENT_REVIEW.md"
+      ],
+      "historical_aliases": [
+        "PHYS68_NCP_L64_D2",
+        "PHYS68_VALIDATED_L64"
+      ],
+      "new_modes": [
+        37,
+        64
+      ],
+      "new_independent_jobs": 28,
+      "panels_per_job": 152,
+      "full_campaign_new_panels": 4256,
+      "sandbox_smoke_panels": 1,
+      "sandbox_smoke_resume_target": false,
+      "old_modes_to_reintegrate": [],
+      "D1_goal": "1e-45",
+      "D2_goal": "1e-62",
+      "scientific_execution": "ONE_SANDBOX_PANEL_ONLY_FULL_NCP_NOT_RUN",
+      "acceptance": "aggregate PHYS73_VALIDATED_L64_CERTIFICATE_V1; CERTIFIED_GOALS_MET; D1_goal_met and D2.goal_met"
+    },
+    {
+      "id": "PHYS72_OPTIONAL_NCP_REPRODUCTION",
+      "status": "READY_OPTIONAL_NOT_A_SCIENCE_GATE",
+      "scope": "Three exact Python scalar outputs plus inherited Fortran build/run on actual host; included in prepared batch by user request.",
+      "dependencies": [
+        "PHYS73_NCP_BATCH_PREPARATION",
+        "PHYS72_ORDER_GE4_REMAINDER"
+      ],
+      "evidence": [
+        "implementation/ncp_batch.py",
+        "../hh_phys72_20261020/ncp_delivery/README_KO.md"
+      ],
+      "scientific_execution": "NOT_RUN_ON_NCP_THIS_SESSION"
+    },
+    {
+      "id": "PHYS73_NCP_SOURCE_257",
+      "status": "READY_NOT_RUN",
+      "scope": "Original zero-Dirichlet source first Green action L64,T44,257 Simpson nodes,dps60; analytic angular coefficients.",
+      "dependencies": [
+        "PHYS73_NCP_BATCH_PREPARATION",
+        "PHYS73_ANALYTIC_SOURCE_BUDGET",
+        "PHYS73_ANALYTIC_SCREEN_MULTIPOLES",
+        "PHYS73_COULOMB_CACHE"
+      ],
+      "evidence": [
+        "implementation/original_source.py",
+        "implementation/ncp_batch.py"
+      ],
+      "scientific_execution": "FULL_TARGET_GRID_NOT_RUN",
+      "result_kind": "FINITE_GRID_DIAGNOSTIC",
+      "physical_matched_xi": false
+    },
+    {
+      "id": "PHYS73_NCP_SOURCE_513",
+      "status": "READY_NOT_RUN",
+      "scope": "Same original source at513 Simpson nodes,dps60; reuse shared Coulomb radii from257-node preparation.",
+      "dependencies": [
+        "PHYS73_NCP_SOURCE_257"
+      ],
+      "evidence": [
+        "implementation/original_source.py",
+        "implementation/coulomb_cache.py",
+        "implementation/ncp_batch.py"
+      ],
+      "dependency_kind": "EXECUTION_ORDER_FOR_CACHE_REUSE_NOT_MATHEMATICAL_DEPENDENCE",
+      "scientific_execution": "FULL_TARGET_GRID_NOT_RUN",
+      "result_kind": "FINITE_GRID_DIAGNOSTIC",
+      "physical_matched_xi": false
+    },
+    {
+      "id": "PHYS73_NCP_SOURCE_REFINEMENT",
+      "status": "READY_INPUT_EXECUTIONS_PENDING",
+      "scope": "Compare257/513-grid finite results and measure paired native kernel cost on actual host.",
+      "dependencies": [
+        "PHYS73_NCP_SOURCE_257",
+        "PHYS73_NCP_SOURCE_513"
+      ],
+      "evidence": [
+        "implementation/verify_green.py",
+        "implementation/benchmark_green.py"
+      ],
+      "scientific_execution": "NOT_RUN_ON_NCP",
+      "empirical_refinement_is_continuum_certificate": false
+    },
+    {
+      "id": "PHYS73_CONTINUUM_GRID_ERROR_CLOSURE",
+      "status": "OPEN_CONSTRUCTIVE_ERROR_BOUND_REQUIRED",
+      "scope": "Bound floating Coulomb/source coefficient evaluation and radial quadrature/reconstruction, or a genuine continuous X+ residual; point-vector residual is insufficient.",
+      "dependencies": [
+        "PHYS73_ANALYTIC_SOURCE_BUDGET",
+        "PHYS73_NCP_SOURCE_REFINEMENT"
+      ],
+      "evidence": [
+        "theory/ORIGINAL_SOURCE_AND_ERROR_BUDGET.md"
+      ],
+      "finite_grid_certified": false,
+      "automatic_closure_after_runtime_success": false
+    },
+    {
+      "id": "ORIGINAL_SOURCE_DRIVEN_XI",
+      "status": "PARTIAL_ZERO_TRACE_EXTERIOR_CONSTRUCTED_FULL_MATCHING_OPEN",
+      "scope": "Original source equation and zero-trace particular construction advanced; physical g=u(27), full interior matching and full error certificate remain.",
+      "dependencies": [
+        "PHYS73_ORIGINAL_SOURCE_MAPPING",
+        "PHYS73_CONTINUUM_GRID_ERROR_CLOSURE"
+      ],
+      "evidence": [
+        "theory/ORIGINAL_SOURCE_AND_ERROR_BUDGET.md"
+      ],
+      "frozen_npz_does_not_supply_B27_trace": true,
+      "physical_matched_xi": false
+    },
+    {
+      "id": "ORIGIN_INCOMING_ADJOINT_MATCHING",
+      "status": "OPEN",
+      "scope": "Original regular-origin and physical incoming adjoint matching.",
+      "dependencies": [
+        "ORIGINAL_SOURCE_DRIVEN_XI"
+      ],
+      "evidence": [
+        "../hh_phys72_20261020/NEXT_DAG.json"
+      ]
+    },
+    {
+      "id": "SIGMA_E",
+      "status": "OPEN",
+      "scope": "Physical HH cross section with complete source/matching errors.",
+      "dependencies": [
+        "ORIGIN_INCOMING_ADJOINT_MATCHING"
+      ],
+      "evidence": [
+        "../hh_phys72_20261020/NEXT_DAG.json"
+      ]
+    },
+    {
+      "id": "K_HH_T",
+      "status": "OPEN",
+      "scope": "Maxwellian rate from certified cross section.",
+      "dependencies": [
+        "SIGMA_E"
+      ],
+      "evidence": [
+        "../hh_phys72_20261020/NEXT_DAG.json"
+      ]
+    }
+  ],
+  "immutable_inputs": {
+    "frozen_npz_sha256": "f1bd3074950163960cc2011682d013af60f9b17c471bea72ecbc2ffb19e6855d",
+    "corrected_D3_certificate_sha256": "f75d082e1966dd61a326c37b6ff14e8f330e010341a59a88eb4ca8d4734e6173"
+  },
+  "no_rerun": {
+    "accepted_PHYS71_panels": 76,
+    "inherited_profiles": 152,
+    "old_panel_integrations_this_cycle": 0,
+    "old_profile_integrations_this_cycle": 0,
+    "PHYS70_PR123_native_L64_duplicate_excluded": true
+  },
+  "host_intake": {
+    "actual_live_host_access": false,
+    "new_NCP_submissions": 0,
+    "other_conversation_access": "UNAVAILABLE_NOT_AN_ABSENCE_PROOF",
+    "evidence": "intake/FRESH_BACKUP_CONTEXT_INTAKE.json"
+  },
+  "next_execution": "Reconcile same-host results and active jobs, then execute the implemented resource-aware batch; preserve successful identity-bound outputs.",
+  "strong_no_go_adopted": false,
+  "HH_R10": "OFF"
+}

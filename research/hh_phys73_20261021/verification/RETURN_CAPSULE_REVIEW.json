@@ -1,0 +1,100 @@
+{
+  "HH_R10": "OFF",
+  "backup_claim": "Tests prove LOCAL_ARCHIVED_VERIFIED semantics for manufactured files only. No remote backup was performed.",
+  "current_batch_tests": {
+    "command": [
+      "python3",
+      "research/hh_phys73_20261021/implementation/test_batch.py"
+    ],
+    "exit_code": 0,
+    "logs": [
+      {
+        "bytes": 0,
+        "path": "research/hh_phys73_20261021/verification/batch_current_tests.stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 1881,
+        "path": "research/hh_phys73_20261021/verification/batch_current_tests.stderr.txt",
+        "sha256": "7163117091d194d7f7d4605d62a436edb20a9de0d247e100372b7fac839450e6"
+      }
+    ],
+    "passed": 14,
+    "run_count": 1,
+    "scope": "Current ncp_batch and integrated source API fixtures, identity/resume/output membership, 64/128 resource accounting, timeout kills own descendants and preserves unrelated process.",
+    "unittest_report_seconds": 1.466
+  },
+  "external_uploads": 0,
+  "finding": {
+    "description": "Original pack_return accepted out/archives directory symlink. Owner added output-root symlink and archive-directory symlink/containment guards.",
+    "id": "PHYS73_RETURN_ARCHIVE_SYMLINK",
+    "regression": "Both output alias and external archives target are rejected; external target stays empty.",
+    "status": "RESOLVED_BY_OWNER_BEFORE_TEST_RUN"
+  },
+  "integration_read_review": "execute writes its RESULT inside invocations, then calls pack_return after all own jobs finish while holding BATCH.lock; standalone ACK reports archive identity without rewriting the frozen RESULT.",
+  "limits": [
+    "No full NCP scientific batch executed.",
+    "No claimed upload or publication from pack_return."
+  ],
+  "recorded_utc": "2026-10-20T21:08:14.734738+00:00",
+  "return_capsule_tests": {
+    "command": [
+      "python3",
+      "research/hh_phys73_20261021/implementation/test_return_capsule.py"
+    ],
+    "environment": {
+      "HH_R10": "OFF",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONPATH": "/tmp/wu088_phys72_deps:/tmp/phys73_fullclone/src"
+    },
+    "exit_code": 0,
+    "logs": [
+      {
+        "bytes": 0,
+        "path": "research/hh_phys73_20261021/verification/return_capsule_tests.stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 1308,
+        "path": "research/hh_phys73_20261021/verification/return_capsule_tests.stderr.txt",
+        "sha256": "202ac77c70e17f64f9dcce9a670c12fafdd563690c67b71318151b8ed23ed121"
+      }
+    ],
+    "passed": 9,
+    "run_count": 1,
+    "scope": [
+      "exact complete source/result membership and per-payload SHA256",
+      "archive SHA256/bytes and separate local-only ACK",
+      "missing, extra, changed and duplicate ZIP members refused",
+      "source mutation refused before archive creation",
+      "duplicate existing archive and ACK bytes preserved without overwrite",
+      "source file symlink refused",
+      "result file symlink refused",
+      "result directory symlink refused",
+      "archives symlink refused without external write",
+      "output-root symlink refused",
+      "old archives, locks, temporary files and Python bytecode excluded"
+    ],
+    "unittest_report_seconds": 0.028
+  },
+  "reviewed_code_sha256": {
+    "research/hh_phys73_20261021/implementation/analytic_screen_source.py": "0353ab972cee0403bd5b4dcb5e864dd07da0aa5aef503924df5dabb561c7bee5",
+    "research/hh_phys73_20261021/implementation/ncp_batch.py": "79096bbc4275ab91ad93f4a11647c5b23eacda7fd41c63682b8ff28270c73ee7",
+    "research/hh_phys73_20261021/implementation/original_source.py": "863d6afd1f5f6dea609e114b842e24967cdfbd9c33b6ec01b103d69c3706257e",
+    "research/hh_phys73_20261021/implementation/return_capsule.py": "7e6ddc1007d67751f99483414ac592cccce26e62101790a824b48033eb0c2ef6",
+    "research/hh_phys73_20261021/implementation/source_budget.py": "67feea40c89e787264221c75f60459a2b6528767340114c678bbe2e9d51ae157",
+    "research/hh_phys73_20261021/implementation/test_batch.py": "2b58b8996d0f9d2d0199a86ae24f56c38e651b3bc2fbc781ddbd55e3b496be2f",
+    "research/hh_phys73_20261021/implementation/test_return_capsule.py": "3208ba32a96cef0886c51ed10bba32e2eee192cdab44eda4a569037ae3880702"
+  },
+  "schema": "PHYS73_RETURN_CAPSULE_INDEPENDENT_REVIEW_V1",
+  "scientific_execution": {
+    "Born_profile_integrations": 0,
+    "HH_campaigns": 0,
+    "NCP_jobs": 0,
+    "fixture_scope": "Manufactured repository/results and local process fixtures only; no production return archive generated.",
+    "inherited_panel_reintegrations": 0,
+    "inherited_profile_reintegrations": 0
+  },
+  "source_unchanged_across_tests": true,
+  "status": "PASS_MANUFACTURED_FIXTURES"
+}

@@ -1,0 +1,108 @@
+{
+  "Coulomb_nodes_without_cross_grid_cache": 50050,
+  "Coulomb_unique_nodes_with_cache": 33345,
+  "HH_R10": "OFF",
+  "inventory": [
+    {
+      "cases": [
+        {
+          "L": 28,
+          "T": 55
+        },
+        {
+          "L": 28,
+          "T": 65
+        },
+        {
+          "L": 28,
+          "T": 75
+        },
+        {
+          "L": 64,
+          "T": 55
+        },
+        {
+          "L": 64,
+          "T": 65
+        },
+        {
+          "L": 64,
+          "T": 75
+        }
+      ],
+      "engine": "unchanged PHYS66/64 full-matrix ordered hierarchy",
+      "id": "PHYS66_LONGTAIL6",
+      "status": "READY_NO_OBSERVED_RETURN",
+      "workers": 6
+    },
+    {
+      "id": "PHYS68_VALIDATED_L64",
+      "inherited_intermediate_modes": [
+        0,
+        36
+      ],
+      "new_independent_jobs": 28,
+      "new_modes": [
+        37,
+        64
+      ],
+      "status": "REPLACED_BY_REUSE_EQUIVALENT_REQUEST",
+      "target": "same finite L64 D1 1e-45 / D2 1e-62 goals",
+      "workers": 28
+    },
+    {
+      "Fortran_compile_and_scalar_run": 1,
+      "exact_scalar_jobs": 3,
+      "id": "PHYS72_HOST_REPRODUCTION",
+      "status": "READY_OPTIONAL_NOT_SCIENCE_GATE"
+    },
+    {
+      "L": 64,
+      "T": 44,
+      "angular_source": "analytic_positive_Yukawa_multipoles",
+      "dps": 60,
+      "id": "PHYS73_ORIGINAL_SOURCE",
+      "native_workers": 64,
+      "preparation_workers": 64,
+      "radial_nodes": [
+        257,
+        513
+      ],
+      "status": "NEW_READY_FINITE_GRID_DIAGNOSTIC"
+    },
+    {
+      "id": "PHYS70_L64",
+      "status": "COMPLETE_REUSED_PR123_EXCLUDED_FROM_QUEUE"
+    },
+    {
+      "id": "PHYS71_D3_AND_INHERITED_PROFILES",
+      "old_panels_to_integrate": 0,
+      "old_profiles_to_integrate": 0,
+      "status": "COMPLETE_REUSED_EXCLUDED_FROM_QUEUE"
+    }
+  ],
+  "resource_plan": {
+    "effective_cpus": 64,
+    "effective_memory_gib": 128,
+    "legacy_parallel": true,
+    "legacy_reserved_cpus": 34,
+    "legacy_reserved_gib": 80,
+    "longtail_worker_memory_gib": 4,
+    "longtail_workers": 6,
+    "native_workers": 64,
+    "observed": {
+      "NCP_identity": "PLANNED_TARGET_NOT_OBSERVED_HARDWARE",
+      "effective_cpus": 64,
+      "effective_memory_bytes": 137438953472
+    },
+    "requested_cpus": 64,
+    "requested_memory_gib": 128,
+    "reserve_gib": 16,
+    "source_preparation_workers": 64,
+    "source_worker_memory_gib": 1,
+    "validated_worker_memory_gib": 2,
+    "validated_workers": 28
+  },
+  "reused_node_fraction": 0.33376623376623377,
+  "status": "SYNTHETIC_CAPACITY_PLAN_NOT_HOST_EXECUTION"
+}

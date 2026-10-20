@@ -1,0 +1,48 @@
+{
+  "timestamp_utc": "2026-10-20T20:49:28.281255+00:00",
+  "source_sha256": "c21eae96926f2d619453f6612f1d808e58d305c2706ea62076b0ef3d8be2d646",
+  "commands": [
+    {
+      "argv": [
+        "/tmp/phys73_runtime/prefix/bin/rustc",
+        "--edition=2021",
+        "--test",
+        "-O",
+        "/tmp/phys73_fullclone/research/hh_phys73_20261021/native/green_batch.rs",
+        "-o",
+        "/tmp/phys73_runtime/green_batch_tests"
+      ],
+      "wall_seconds": 0.4541084890079219,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/tmp/phys73_runtime/green_batch_tests",
+        "--nocapture"
+      ],
+      "wall_seconds": 0.0057851140009006485,
+      "exit_code": 0,
+      "stdout": "\nrunning 6 tests\ntest tests::exact_small_matrix_and_single_node ... ok\ntest tests::cli_rejects_bad_and_duplicate_options ... ok\ntest tests::overflow_rejected_underflow_counted ... ok\ntest tests::parser_rejects_bad_shape_and_payload ... ok\ntest tests::dense_and_sweep_agree_with_complex_cancellation ... ok\ntest tests::parallel_workers_have_identical_bits ... ok\n\ntest result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/tmp/phys73_runtime/prefix/bin/rustc",
+        "--edition=2021",
+        "-O",
+        "-C",
+        "target-cpu=x86-64",
+        "/tmp/phys73_fullclone/research/hh_phys73_20261021/native/green_batch.rs",
+        "-o",
+        "/tmp/phys73_runtime/green_batch"
+      ],
+      "wall_seconds": 0.43810482900880743,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "scope": "NEW_KERNEL_UNIT_TESTS_ONLY_NO_PHYSICAL_CAMPAIGN"
+}
