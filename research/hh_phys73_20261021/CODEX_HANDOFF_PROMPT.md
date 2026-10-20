@@ -8,6 +8,7 @@ source SHA·metadata HEAD·draft PR은 `publication/REMOTE_PUBLICATION.json`과
 WU088_HH PHYS73의 구현 완료 batch를 실행하라.
 Repository: https://github.com/cosmosapjw-quantum/WU088_HH
 Branch: research/hh-phys73-green-batch-20261021
+과학·구현 source commit: dbf42680b9ac91c7841b17b2df8086a6b09cc705 (draft PR125).
 확정 parent: PR124 HEAD 9d6d7491f26850918d6316ed466e3df35dace570.
 실행 source/metadata HEAD는 PHYS73_DELIVERY_20261021.json과 publication/REMOTE_PUBLICATION.json에서 읽어 pin하라.
 

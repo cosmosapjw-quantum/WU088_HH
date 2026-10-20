@@ -4,6 +4,7 @@
 $physmath-research-loop로 WU088_HH PHYS73 이후를 이어가라.
 Repository https://github.com/cosmosapjw-quantum/WU088_HH
 Branch research/hh-phys73-green-batch-20261021.
+과학·구현 source commit: dbf42680b9ac91c7841b17b2df8086a6b09cc705 (draft PR125).
 먼저 PHYS73_DELIVERY_20261021.json, PHYS73_RECOVERY_20261021.zip,
 PHYS73_FINAL_BACKUP_ACK_20261021.json 및 publication/REMOTE_PUBLICATION.json을 읽고
 기록된 실제 source SHA와 metadata HEAD를 대조하라. capsule은 full Git clone이 아니다.
