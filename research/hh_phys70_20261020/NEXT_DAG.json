@@ -63,11 +63,12 @@
     },
     {
       "id": "PHYS70_OPTIMIZED_L64",
-      "state": "READY_NOT_RUN_HOST_STATE_UNKNOWN",
+      "state": "COMPLETE_EXECUTED_BINARY64_DIAGNOSTIC_NOT_CERTIFIED",
       "dependencies": [
         "PHYS70_NCP_RUNNER"
       ],
-      "evidence": "ncp_delivery/REQUEST_L64.json"
+      "evidence": "publication/PHYS70_L64_EXECUTION_ADDENDUM.json",
+      "scope": "One finite-L64 block_simd binary64 application; successful execution and identity validation do not certify ODE, quadrature, Coulomb, or roundoff error."
     },
     {
       "id": "PHYS66_LONGTAIL6",
@@ -89,12 +90,40 @@
     },
     {
       "id": "PHYS70_ALL_ANGULAR_D3_AND_HIGHER_REMAINDER",
-      "state": "OPEN",
+      "state": "PARTIAL_D3_COMPLETE_HIGHER_REMAINDER_OPEN",
       "dependencies": [
         "PHYS69_ALL_ANGULAR_D2_21_20_M0"
       ],
       "evidence": "../hh_phys69_20261019/theory/PROOF.md",
-      "scope": "Preserved prior successor identifier; not renamed complete by the optimization unit."
+      "scope": "Preserved combined successor identifier; D3 is complete but the higher-order remainder stays open.",
+      "children": [
+        "PHYS71_ALL_ANGULAR_D3_21_20_M0",
+        "PHYS71_ALL_ANGULAR_HIGHER_REMAINDER"
+      ],
+      "transition_evidence": [
+        "../hh_phys71_20261020/d3/run_l36_t65_stable_errors/ALL_ANGULAR_CERTIFICATE.json",
+        "../hh_phys71_20261020/verification/C9_INDEPENDENT_FINAL_REVIEW.json",
+        "publication/PHYS71_REUSE_VERIFICATION.json"
+      ]
+    },
+    {
+      "id": "PHYS71_ALL_ANGULAR_D3_21_20_M0",
+      "state": "COMPLETE_REUSED",
+      "dependencies": [
+        "PHYS69_ALL_ANGULAR_D2_21_20_M0"
+      ],
+      "evidence": "../hh_phys71_20261020/d3/run_l36_t65_stable_errors/ALL_ANGULAR_CERTIFICATE.json",
+      "independent_reuse_verification": "publication/PHYS71_REUSE_VERIFICATION.json",
+      "scope": "One all-angular/all-radial D3 coefficient; absolute error <= 7.121295358370e-79 a0^-1. Reused without recomputation."
+    },
+    {
+      "id": "PHYS71_ALL_ANGULAR_HIGHER_REMAINDER",
+      "state": "OPEN",
+      "dependencies": [
+        "PHYS71_ALL_ANGULAR_D3_21_20_M0"
+      ],
+      "evidence": "../hh_phys71_20261020/theory/ANGULAR_D3.md",
+      "scope": "All-order operator and lambda=1 higher Born remainder remain unproved."
     },
     {
       "id": "FULL_NONLINEAR_NUMERICAL_AND_ROUNDOFF_CERTIFICATION",
@@ -138,11 +167,15 @@
     }
   ],
   "publication": {
-    "state": "SOURCE_PUBLISHED_DRAFT_READBACK_VERIFIED",
-    "source_commit": "e73048e1399263eac3d40ffd3e700807bbc7c72e",
-    "pr": 120,
-    "metadata_binding": "publication/FINAL_DELIVERY.json",
-    "science_receipt": "publication/SCIENCE_REMOTE.json"
+    "state": "L64_RESULT_PUBLISHED_DRAFT_READBACK_VERIFIED",
+    "source_commit": "3d82e80f7058aa2351d7c9db763a5491d00d7867",
+    "source_tree": "469e889b176de518950b905b86374a816359a3b3",
+    "pr": 123,
+    "pr_url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/123",
+    "result_addendum": "publication/PHYS70_L64_EXECUTION_ADDENDUM.json",
+    "stacked_on_pr": 121,
+    "metadata_delivery": "publication/PHYS70_L64_DELIVERY_20261020.json",
+    "main_merged": false
   },
   "backup": {
     "state": "CAPSULES_PROVIDER_ACKNOWLEDGED",
@@ -154,8 +187,16 @@
       "Library",
       "Dropbox"
     ],
-    "additional_destination_state": "ACK_NOT_OBSERVED"
+    "additional_destination_state": "ACK_NOT_OBSERVED",
+    "l64_result": {
+      "state": "BOTH_ARTIFACTS_ACKNOWLEDGED_AND_INDEPENDENTLY_RESTORE_VERIFIED_ON_DROPBOX_AND_DRIVE",
+      "receipt": "publication/PHYS70_L64_DELIVERY_20261020.json",
+      "result_capsule_sha256": "7a358fe5a81a81a52e73cdccf31ee93b36a9b85debf53e521765d423cca650a9",
+      "git_bundle_sha256": "f1bb28f478048bd40f7e249ad964f37a0460de6dc142c097000d533a3e3ceb5d",
+      "destinations": ["Dropbox", "Google Drive"],
+      "remote_full_download_performed": true
+    }
   },
-  "next_bounded_action": "Check actual host/backups for identical completion before one ready optimized L64 request; numerical certification and D3 remain distinct research obligations.",
-  "transport_updated_utc": "2026-10-20T04:45:22.995978+00:00"
+  "next_bounded_action": "Continue only a scientifically authorized successor; this L64 execution and capsule/bundle delivery are complete. Preserve the open total-error and higher-order remainder obligations.",
+  "transport_updated_utc": "2026-10-20T11:12:00Z"
 }
