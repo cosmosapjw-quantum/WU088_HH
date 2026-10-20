@@ -1,3 +1,11 @@
+# Current priority PHYS71: all-angular third Born coefficient, 2026-10-20 UTC
+
+Read research/hh_phys71_20261020/CONTRACT.json, theory/PROOF.md, theory/ANGULAR_D3.md, REPORT_KO.md, EXECUTION_LEDGER.json, NEXT_DAG.json, CODEX_HANDOFF_PROMPT.md and NEW_THREAD_HANDOFF.md. The actual parent is PR120 metadata HEAD31745376ca751e7c925b3b1453ef292436cd30e8, tree2e507880420d3c1017b212f6ddc604878fa1e943. Scientific calculation, numerical acceptance, Git publication and backup have separate receipts.
+
+The latest request resumes the preserved D3 successor after PHYS70 optimization. POLICY_OVERRIDE.json records this scheduling correction. Reuse the completed PHYS63 qualitative existence, PHYS69 all-angular D2 certificate, and PHYS70 optimization results. The original PHYS70_ALL_ANGULAR_D3_AND_HIGHER_REMAINDER node retains its identifier and can only advance according to its D3 and all-order sub-obligations. Original driven xi, origin/incoming adjoint, sigma(E), Maxwellian k_HH(T) and HH_R10=OFF keep their meanings.
+
+The PHYS71 implementation uses the saved73q pairs to compute74directed forward source-response primitives and the new bilinear D3 angular contraction. No old D1/D2 integration is called. The completed source-row archives and their exact enclosures are immutable. Check actual current backups/host and request/engine identities before running; --resume must reuse successful new panels. Other-conversation intake currently returned BLOCKED_CONTEXT_ACCESS and NCP host remains UNKNOWN, so these are not evidence of global absence of executions. Preserve all historical instructions below; publish additive stacked drafts without merging main.
+
 # Current priority PHYS70: HH structured optimization, 2026-10-20 UTC
 
 Read research/hh_phys70_20261020/REPORT_KO.md, theory/PROOF.md, EXECUTION_LEDGER.json, NEXT_DAG.json, CODEX_HANDOFF_PROMPT.md, NEW_THREAD_HANDOFF.md and publication/ before further work. This unit is an actual additive descendant of PR119 HEAD efd1520dfc0643220f729307583ff0bc04b059e9. Actual source commit, metadata HEAD, publication readback and backup acknowledgements remain separate receipts.

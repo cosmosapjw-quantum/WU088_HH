@@ -1,0 +1,353 @@
+{
+  "HH_R10": "OFF",
+  "backup": {
+    "exact_final_PHYS66": {
+      "new_exact_bytes_observed": false,
+      "older_version_equivalence_claim": false,
+      "sha256": "993317b1c78edf496ec5a82a261eceb5a54515a78e38d139a924722a5d28f891",
+      "status": "BLOCKED_ARTIFACT_ACCESS_EXACT_FINAL_VERSION"
+    },
+    "inherited_PHYS70": {
+      "acknowledged_destinations": [
+        "Library",
+        "Dropbox"
+      ],
+      "additional_destination_state": "ACK_NOT_OBSERVED",
+      "final_receipt": "../hh_phys70_20261020/publication/BACKUP_ACK.json",
+      "ncp_sha256": "3d6d42699b809cc4a6e322045b185d80e0884ee6cb7a5cdc31880340fb0ec504",
+      "remote_full_download_performed": false,
+      "source_sha256": "a07be4fbc9d807780e663341551a88814be638622471f33325e27f1bfbb9679a",
+      "state": "CAPSULES_PROVIDER_ACKNOWLEDGED"
+    },
+    "prior_ambiguous_Drive_PHYS70_upload": {
+      "file_name": "WU088_HH_PHYS70_SOURCE_AND_EVIDENCE_20261020.zip",
+      "new_object_observed_in_known_parent": false,
+      "new_retry_count": 0,
+      "prior_call_count": 1,
+      "reason": "No object is visible in the current direct parent listing, but no operation ACK exists and this does not prove a pending upload cannot later finish.",
+      "status": "UNKNOWN_UNRESOLVED"
+    },
+    "state": "LOCAL_SOURCE_PHASE_PENDING_NEW_PROVIDER_ACK"
+  },
+  "bounded_next_research": {
+    "candidate": "Construct a weighted angular sequence norm controlling the outgoing Green operator composed with the original exponentially decaying multiplier; retain polynomial Coulomb-ratio growth and exact angular off-diagonal decay.",
+    "first_discriminant": "Derive an explicit bounded operator majorant and evaluate whether its actual norm permits a resolvent remainder at lambda1. Do not infer all-order convergence from the D3 coefficient bound or finiteL Gamma64.",
+    "node": "PHYS71_ALL_ANGULAR_HIGHER_REMAINDER",
+    "reuse": "PHYS69 all-j ratio and angular selection estimates, PHYS71 exact three-factor angular convolution, actual D1/D2/D3 coefficients if certified.",
+    "state": "OPEN_NOT_SOLVED_IN_THIS_RECORD"
+  },
+  "created_utc": "2026-10-20T05:47:40.515406+00:00",
+  "current_unit": "PHYS71_ALL_ANGULAR_D3",
+  "execution_observation": {
+    "actual_completed_resume_callbacks": 0,
+    "adopted_certificate_sha256": "f75d082e1966dd61a326c37b6ff14e8f330e010341a59a88eb4ca8d4734e6173",
+    "aggregate_certificate_present": true,
+    "aggregate_scientific_acceptance": "PASS_CORRECTED_ALL_ANGULAR_D3_CERTIFICATE",
+    "corrected_analytic_postprocessing_new_integrations": 0,
+    "displayed_error_upper": "7.121295358370E-79",
+    "new_physical_panel_calls_total": 77,
+    "observed_utc": "2026-10-20T06:06:26.692656+00:00",
+    "physical_execution_complete": true,
+    "rejected_goal_pilot_count": 1,
+    "remaining_panels_started": true,
+    "stable_campaign_required_panels": 76,
+    "stable_campaign_saved_panels": 76,
+    "stable_fingerprint": "a59e8275e0197970af71740cad86c2f7ff77b2a2cad6b15b37cb002af8d24325",
+    "stable_pilot_independently_accepted": true
+  },
+  "inherited_dag": {
+    "all_other_old_states_preserved": true,
+    "all_prior_node_ids_and_scopes_preserved": true,
+    "path": "../hh_phys70_20261020/NEXT_DAG.json",
+    "preserved_node_ids": 17,
+    "sha256": "0f940f2970bf015230bbcc382a0242688bc44a6d9a1094eb2f7f6041de5cf881",
+    "state_transitions": [
+      {
+        "basis": "Actual corrected D3 certificate independently accepted; higher remainder still OPEN.",
+        "from": "OPEN",
+        "id": "PHYS70_ALL_ANGULAR_D3_AND_HIGHER_REMAINDER",
+        "to": "PARTIAL_D3_COMPLETE_HIGHER_REMAINDER_OPEN"
+      }
+    ],
+    "unchanged_old_node_states": 16
+  },
+  "next_bounded_action": "Publish and back up this completed scoped D3 result with actual receipts. Reuse all76 certified numerical panels. Continue the separate OPEN all-angular all-order remainder lemma without replaying completed D3.",
+  "nodes": [
+    {
+      "dependencies": [],
+      "evidence": "../hh_phys69_20261019/NEXT_DAG.json",
+      "id": "PHYS63_ALL_ANGULAR_LAP_POISSON_DTN",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "ESTABLISHED_REUSED"
+    },
+    {
+      "dependencies": [],
+      "evidence": "../hh_phys69_20261019/all_angular/CERTIFICATE.json",
+      "id": "PHYS69_ALL_ANGULAR_D2_21_20_M0",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "COMPLETE_REUSED"
+    },
+    {
+      "dependencies": [
+        "PHYS69_ALL_ANGULAR_D2_21_20_M0"
+      ],
+      "evidence": "../hh_phys70_20261020/theory/PROOF.md",
+      "id": "PHYS70_EXACT_HH_BLOCK_SHIFTED_INVERSE",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "scope": "Finite-L original D2 ODE; analytic inverse for frozen full Jacobian.",
+      "state": "COMPLETE_ANALYTIC"
+    },
+    {
+      "dependencies": [
+        "PHYS70_EXACT_HH_BLOCK_SHIFTED_INVERSE"
+      ],
+      "evidence": "../hh_phys70_20261020/verification/RUST_TESTS_01.log",
+      "id": "PHYS70_ORDERED_SIMD_KERNEL",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "COMPLETE_TESTED"
+    },
+    {
+      "dependencies": [
+        "PHYS70_EXACT_HH_BLOCK_SHIFTED_INVERSE",
+        "PHYS70_ORDERED_SIMD_KERNEL"
+      ],
+      "evidence": "../hh_phys70_20261020/verification/PERFORMANCE_REVIEW.json",
+      "id": "PHYS70_SAME_ACCURACY_OPTIMIZATION",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "scope": "Stored L28 point errors and same-host observations; no uniform integration enclosure.",
+      "state": "COMPLETE_SCOPED"
+    },
+    {
+      "dependencies": [
+        "PHYS70_SAME_ACCURACY_OPTIMIZATION"
+      ],
+      "evidence": "../hh_phys70_20261020/verification/ADDITIONAL_EXECUTION_REVIEW.json",
+      "id": "PHYS70_INDEPENDENT_PARALLEL_JOBS",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "COMPLETE_SCOPED"
+    },
+    {
+      "dependencies": [
+        "PHYS70_SAME_ACCURACY_OPTIMIZATION"
+      ],
+      "evidence": "../hh_phys70_20261020/verification/ncp_runner/RESUME_VERIFICATION.json",
+      "id": "PHYS70_NCP_RUNNER",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "IMPLEMENTED_SANDBOX_PILOT_AND_RESUME_PASS"
+    },
+    {
+      "dependencies": [
+        "PHYS70_NCP_RUNNER"
+      ],
+      "evidence": "../hh_phys70_20261020/ncp_delivery/REQUEST_L64.json",
+      "id": "PHYS70_OPTIMIZED_L64",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "READY_NOT_RUN_HOST_STATE_UNKNOWN"
+    },
+    {
+      "dependencies": [],
+      "evidence": "../hh_phys69_20261019/NEXT_DAG.json",
+      "id": "PHYS66_LONGTAIL6",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "READY_NOT_RUN_HOST_STATE_UNKNOWN"
+    },
+    {
+      "dependencies": [],
+      "evidence": "../hh_phys68_20261019/ncp_delivery/REQUEST_L64.json",
+      "id": "PHYS68_L64_VALIDATED_PROFILES",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "READY_NOT_RUN_HOST_STATE_UNKNOWN"
+    },
+    {
+      "dependencies": [],
+      "evidence": "../hh_phys69_20261019/vigilode/REQUEST_L64.json",
+      "id": "PHYS69_VIGILODE_L64",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "READY_NOT_RUN_HOST_STATE_UNKNOWN"
+    },
+    {
+      "children": [
+        "PHYS71_ALL_ANGULAR_D3_21_20_M0",
+        "PHYS71_ALL_ANGULAR_HIGHER_REMAINDER"
+      ],
+      "dependencies": [
+        "PHYS69_ALL_ANGULAR_D2_21_20_M0"
+      ],
+      "evidence": "../hh_phys69_20261019/theory/PROOF.md",
+      "id": "PHYS70_ALL_ANGULAR_D3_AND_HIGHER_REMAINDER",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "previous_state": "OPEN",
+      "scope": "Preserved prior successor identifier; not renamed complete by the optimization unit.",
+      "state": "PARTIAL_D3_COMPLETE_HIGHER_REMAINDER_OPEN",
+      "transition_evidence": [
+        "d3/run_l36_t65_stable_errors/ALL_ANGULAR_CERTIFICATE.json",
+        "verification/FINAL_SAVED_D3_AUDIT_02.json"
+      ],
+      "transition_reason": "Only the all-angular all-radial third coefficient is now certified; the combined higher-order remainder obligation remains open.",
+      "transition_rule": "Remain OPEN until actual new D3 certificate is scientifically accepted; then PARTIAL_D3_COMPLETE_HIGHER_REMAINDER_OPEN. Never complete this combined node from D3 alone."
+    },
+    {
+      "dependencies": [],
+      "evidence": "../hh_phys70_20261020/theory/PROOF.md",
+      "id": "FULL_NONLINEAR_NUMERICAL_AND_ROUNDOFF_CERTIFICATION",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "scope": "PHYS67-69 scoped certificates stay complete; this node addresses remaining response and algorithm-wide obligations.",
+      "state": "OPEN"
+    },
+    {
+      "dependencies": [
+        "PHYS63_ALL_ANGULAR_LAP_POISSON_DTN"
+      ],
+      "evidence": "../hh_phys69_20261019/NEXT_DAG.json",
+      "id": "ORIGINAL_SOURCE_DRIVEN_XI",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "OPEN"
+    },
+    {
+      "dependencies": [
+        "ORIGINAL_SOURCE_DRIVEN_XI"
+      ],
+      "evidence": "../hh_phys69_20261019/NEXT_DAG.json",
+      "id": "ORIGIN_AND_ORIGINAL_INCOMING_ADJOINT",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "OPEN"
+    },
+    {
+      "dependencies": [
+        "ORIGINAL_SOURCE_DRIVEN_XI",
+        "ORIGIN_AND_ORIGINAL_INCOMING_ADJOINT"
+      ],
+      "evidence": "../hh_phys69_20261019/NEXT_DAG.json",
+      "id": "SIGMA_E",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "OPEN"
+    },
+    {
+      "dependencies": [
+        "SIGMA_E"
+      ],
+      "evidence": "../hh_phys69_20261019/NEXT_DAG.json",
+      "id": "MAXWELLIAN_K_HH_T",
+      "inherited_from": "../hh_phys70_20261020/NEXT_DAG.json",
+      "state": "OPEN"
+    },
+    {
+      "dependencies": [
+        "PHYS63_ALL_ANGULAR_LAP_POISSON_DTN"
+      ],
+      "evidence": "theory/ANGULAR_D3.md",
+      "id": "PHYS71_D3_BILINEAR_IDENTITY",
+      "scope": "D3=Zthird(0)/6, U=f integral(q/f^2), complex bilinear two-index contraction.",
+      "state": "COMPLETE_ANALYTIC"
+    },
+    {
+      "dependencies": [
+        "PHYS71_D3_BILINEAR_IDENTITY"
+      ],
+      "evidence": "angles/RESULTS.json",
+      "id": "PHYS71_D3_ANGULAR_TAIL",
+      "scope": "Whole radial exterior; exact summation of excluded j or k above L, with positive overlap counted twice.",
+      "state": "COMPLETE_EXACT_RATIONAL"
+    },
+    {
+      "dependencies": [
+        "PHYS69_ALL_ANGULAR_D2_21_20_M0"
+      ],
+      "evidence": "verification/INHERITED_DATA_REVIEW.json",
+      "id": "PHYS71_INHERITED_PROFILE_ACCESS",
+      "scope": "152 immutable saved payloads and 5548 boundary-pair containments; 73 distinct pairs per radial panel; no old integration.",
+      "state": "COMPLETE_READONLY_VALIDATED"
+    },
+    {
+      "dependencies": [
+        "PHYS71_D3_BILINEAR_IDENTITY",
+        "PHYS71_INHERITED_PROFILE_ACCESS",
+        "PHYS71_CENTERED_ANGULAR_ERROR_SPLIT"
+      ],
+      "evidence": "verification/STABLE_PILOT_INDEPENDENT_GATE.json",
+      "id": "PHYS71_D3_CERTIFIED_PANEL_CORE",
+      "scope": "Fixed L36/B27/T65/degree80/bits384 core; achieved physical numerical radius requires actual panel evidence.",
+      "state": "COMPLETE_SCOPED_PHYSICAL_NUMERICAL_VALIDATION"
+    },
+    {
+      "additional_evidence": [
+        "verification/ACTUAL_COMPLETED_RESUME.json",
+        "verification/ANALYTIC_FINALIZATION_01.json",
+        "verification/EXISTING_FINALIZER_REUSE_01.json"
+      ],
+      "dependencies": [
+        "PHYS71_D3_CERTIFIED_PANEL_CORE"
+      ],
+      "evidence": "verification/CAMPAIGN_FINAL_REVIEW.json",
+      "id": "PHYS71_D3_CAMPAIGN_RUNNER",
+      "scope": "Immutable sequential forward carry chain, exact certificate checks, bounded worker, read-only completed resume.",
+      "state": "COMPLETE_SCOPED_EXECUTION_AND_READONLY_RESUME"
+    },
+    {
+      "dependencies": [
+        "PHYS71_D3_ANGULAR_TAIL",
+        "PHYS71_D3_CAMPAIGN_RUNNER"
+      ],
+      "evidence": "d3/run_l36_t65_stable_errors/ALL_ANGULAR_CERTIFICATE.json",
+      "final_C9_review": "verification/C9_INDEPENDENT_FINAL_REVIEW.json",
+      "id": "PHYS71_ALL_ANGULAR_D3_21_20_M0",
+      "independent_review": "verification/FINAL_SAVED_D3_AUDIT_02.json",
+      "scientific_status": "CERTIFIED_GOAL_MET",
+      "scope": "One actual exterior coefficient D3(21,20),m0=Zthird(0)/6 over all angular modes and all real r>=27; fixed absolute goal1e-78 a0^-1 met with printed bound7.121295358370e-79.",
+      "state": "COMPLETE"
+    },
+    {
+      "dependencies": [
+        "PHYS71_D3_BILINEAR_IDENTITY"
+      ],
+      "evidence": "theory/ANGULAR_D3.md",
+      "id": "PHYS71_ALL_ANGULAR_HIGHER_REMAINDER",
+      "scope": "All-order operator/remainder at lambda1 remains open. Finite-L PR114 remainder retains its proven scope.",
+      "state": "OPEN"
+    },
+    {
+      "dependencies": [
+        "PHYS71_D3_BILINEAR_IDENTITY"
+      ],
+      "evidence": "verification/CENTERED_ANGULAR_INDEPENDENT_REVIEW.json",
+      "id": "PHYS71_CENTERED_ANGULAR_ERROR_SPLIT",
+      "scope": "Exact dyadic midpoint contraction plus original-basis weighted coefficient-error bound including error-error term, and unchanged analytic Taylor tail.",
+      "state": "COMPLETE_ANALYTIC_IMPLEMENTED_REVIEWED"
+    }
+  ],
+  "original_global_DAG_modified": false,
+  "parent": "31745376ca751e7c925b3b1453ef292436cd30e8",
+  "publication": {
+    "current_unit_pr": null,
+    "current_unit_remote_commit": null,
+    "inherited_PHYS70": {
+      "metadata_binding": "../hh_phys70_20261020/publication/FINAL_DELIVERY.json",
+      "pr": 120,
+      "science_receipt": "../hh_phys70_20261020/publication/SCIENCE_REMOTE.json",
+      "source_commit": "e73048e1399263eac3d40ffd3e700807bbc7c72e",
+      "state": "SOURCE_PUBLISHED_DRAFT_READBACK_VERIFIED"
+    },
+    "prior_PR120_head_verified": "31745376ca751e7c925b3b1453ef292436cd30e8",
+    "state": "LOCAL_SOURCE_PHASE_PENDING_PUBLICATION"
+  },
+  "record_phase": "SCIENTIFIC_COMPLETE_SOURCE_PHASE_PUBLICATION_AND_BACKUP_PENDING",
+  "schema": "PHYS71_FIXED_D3_SCOPED_DAG_V1",
+  "source_phase_freeze": {
+    "backup": "PENDING_ROOT_ACTUAL_PROVIDER_ACK",
+    "new_numerical_validation_by_metadata_author": 0,
+    "publication": "PENDING_ROOT_ACTUAL_COMMIT_READBACK",
+    "recorded_utc": "2026-10-20T06:06:58.456000+00:00",
+    "scientific_state": "COMPLETE_SCOPED"
+  },
+  "state_separation": {
+    "DAG": "D3_COMPLETE_COMBINED_PARENT_PARTIAL_HIGHER_REMAINDER_OPEN",
+    "NCP_execution": "NOT_SUBMITTED_HOST_STATE_UNKNOWN",
+    "backup": "LOCAL_SOURCE_PHASE_PENDING_NEW_PROVIDER_ACK",
+    "code": "NUMERICAL_ENGINE_AND_CORRECTED_ANALYTIC_FINALIZER_IMPLEMENTED",
+    "derivation": "COMPLETE_SCOPED_D3_IDENTITY_AND_EXACT_ANGULAR_TAIL",
+    "publication": "LOCAL_SOURCE_PHASE_PENDING_PUBLICATION",
+    "sandbox_execution": "77_NEW_D3_PANEL_CALLS_76_ACCEPTED_STABLE_PLUS1_REJECTED_GOAL_PILOT",
+    "verification": "54_DISTINCT_TESTS_AND_INDEPENDENT_CORRECTED_CERTIFICATE_PASS"
+  },
+  "updated_utc": "2026-10-20T06:06:58.456000+00:00"
+}

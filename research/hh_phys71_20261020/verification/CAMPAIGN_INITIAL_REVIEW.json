@@ -1,0 +1,56 @@
+{
+  "schema": "PHYS71_CAMPAIGN_INITIAL_READONLY_REVIEW_V1",
+  "date_utc": "2026-10-20",
+  "reviewer_role": "separate_agent_from_producer",
+  "status": "FINDINGS_SENT_TO_PRODUCER_PENDING_FIX_READBACK",
+  "scientific_integrations_run_by_reviewer": 0,
+  "core_tests_replayed": 0,
+  "files_read": [
+    "src/wu088_hh/phys71_campaign.py",
+    "scripts/phys71_ncp.py",
+    "src/wu088_hh/phys71_d3.py",
+    "src/wu088_hh/phys69_angular_tail.py"
+  ],
+  "accepted_readthrough": [
+    "The scalar certificate error is numerical L1 radius plus finite-L beta3 plus excluded-angular D3 radius, each counted once.",
+    "Certificate validation reconstructs the entire saved increment sum by exact Fraction interval endpoints.",
+    "The forward carry binds exact predecessor serialization by SHA and requires the consumed enclosing P_left to contain it.",
+    "Initial completed resume returns before campaign lock, output creation, or numerical callback.",
+    "Actual new panel assembly and final sum restore balls under the fixed request precision.",
+    "Failed goal is distinct from incomplete execution; a complete but insufficient enclosure gets CERTIFIED_GOAL_NOT_MET."
+  ],
+  "findings": [
+    {
+      "id": "C9-D3-01",
+      "severity": "BLOCKING_IDENTITY",
+      "observed": "The numerical engine fingerprint omitted phys69_angular_tail.py although its MODE_SLOPE and SCREEN_ELLIPSE_M feed the new D3 angular bound.",
+      "requested_fix": "Add this numerical dependency to the current engine fingerprint before starting a real campaign."
+    },
+    {
+      "id": "C9-D3-02",
+      "severity": "BLOCKING_CERTIFICATE_CONTRACT",
+      "observed": "The resumed certificate checked the scalar error fields but did not verify the advertised D3_full_radial_all_angular_box or duplicated physical source/coefficient/scope fields.",
+      "requested_fix": "Require exact coordinate containment of the finite-cutoff box plus the analytic radial/angular error square and verify source, coefficient and claimed scope/count bindings."
+    },
+    {
+      "id": "C9-D3-03",
+      "severity": "BOUNDED_PROCESS_CONTRACT",
+      "observed": "On timeout, SIGKILL was sent to the owned group only if the direct child remained alive after SIGTERM. A descendant ignoring SIGTERM could outlive a direct child that had already exited.",
+      "requested_fix": "Finish owned-group cleanup after timeout regardless of the direct-child wait outcome, retaining the process receipt."
+    },
+    {
+      "id": "C9-D3-04",
+      "severity": "READONLY_CLAIM_SCOPE",
+      "observed": "A clean CLI import may create Python bytecode even when the campaign function makes no writes.",
+      "requested_fix": "Disable bytecode writes in the CLI and child invocation or bind the read-only receipt explicitly to campaign output only."
+    },
+    {
+      "id": "C9-D3-05",
+      "severity": "RACE_CONSISTENCY",
+      "observed": "The second inspection after acquiring the lock did not recheck exists with resume=False. An output created after the first inspection could be implicitly resumed.",
+      "requested_fix": "Repeat the existing-output/no-resume gate under the lock before appending."
+    }
+  ],
+  "receipt_scope": "This is the preserved first read-only review. Later corrections and validation belong to a separate final readback; do not relabel this file as a final PASS.",
+  "HH_R10": "OFF"
+}
