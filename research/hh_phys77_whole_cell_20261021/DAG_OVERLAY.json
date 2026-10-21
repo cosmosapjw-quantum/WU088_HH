@@ -1,34 +1,147 @@
 {
-  "schema": "PHYS77_DAG_V1",
+  "schema": "PHYS77_DAG_V2",
   "parent_dags": [
     "../hh_phys76_time_transport_20261021/DAG_OVERLAY.json",
     "../hh_phys76_rei199_d8_20261021/DAG_OVERLAY.json"
   ],
   "parent_head": "ec28299fe7e81aab184b93aff787cb00a185dd2e",
+  "selected_parent_obligation": "FINITE_OWNER_WHOLE_CELL_SOURCE_OR_RESIDUAL_ENCLOSURE",
+  "parent_status": "PARTIAL_SCOPED",
   "nodes": {
     "LIVE_INVENTORY": {
-      "status": "in_progress"
+      "status": "complete",
+      "evidence": [
+        "evidence/INVENTORY_S0.json",
+        "evidence/INVENTORY_ADDENDUM.json",
+        "evidence/LOCAL_PARENT_READS.json"
+      ],
+      "scope": "accessible indexed sources and backups; private conversations not exhaustively observable"
+    },
+    "REI199_D8_RECONCILE": {
+      "status": "reused_no_rerun",
+      "evidence": [
+        "evidence/INVENTORY_S0.json"
+      ],
+      "cases": 4,
+      "relation": "HH131 and REI199/216 raw/sample identity match; stale main DAG overridden by completed sidecar in this overlay"
     },
     "FROZEN_OWNER_BOX_EXTENSION": {
-      "status": "pending"
+      "status": "complete_scoped",
+      "evidence": [
+        "source/export_owner.py",
+        "source/owner_interval.py",
+        "verification/OWNER_CORE_INDEPENDENT_SOURCE_REVIEW.json"
+      ],
+      "scope": "exact captured binary64 coefficients defining a real IVP"
     },
     "DEFECT_TUBE_THEOREM": {
-      "status": "in_progress"
+      "status": "complete",
+      "evidence": [
+        "theory/THEOREM_KO.md",
+        "verification/INDEPENDENT_MATH_CODE_REVIEW.json"
+      ]
     },
     "LOCAL_CELL_WITNESS": {
-      "status": "pending"
+      "status": "complete_scoped",
+      "evidence": [
+        "results/FIRST_CELL_AFTER_RADIUS_FIX.json",
+        "results/LOCAL_CELL_SUMMARY.json",
+        "verification/INPUT_GUARD_VALIDATION_BRIDGE.json"
+      ],
+      "case_id": "mixed_s+0_m+1",
+      "cell_count": 1,
+      "covered_x": [
+        "0",
+        "0.0224231957076456676902775910775744705460965633392333984375"
+      ]
+    },
+    "SHARED_PENDING_RUNNER": {
+      "status": "complete_scoped",
+      "evidence": [
+        "source/run_enclosures.py",
+        "source/RUNNER_SOURCE_LOCK.json",
+        "verification/RUNNER_VALIDATION.json",
+        "verification/FINAL_RUNNER_INDEPENDENT_REVIEW.json",
+        "verification/LOCAL_RUNNER_PREFLIGHT.json"
+      ],
+      "scope": "implementation and fake-worker review; actual NCP dispatch not run"
+    },
+    "THREE_PREFIX_REQUESTS": {
+      "status": "READY_NOT_RUN",
+      "evidence": [
+        "inputs/PENDING_NCP_MANIFEST.json",
+        "CODEX_HANDOFF_KO.md"
+      ],
+      "case_count": 3,
+      "requested_cells_per_case": 4,
+      "depends_on": [
+        "SHARED_PENDING_RUNNER",
+        "LOCAL_CELL_WITNESS"
+      ]
+    },
+    "FINITE_OWNER_WHOLE_CELL_SOURCE_OR_RESIDUAL_ENCLOSURE": {
+      "status": "PARTIAL_SCOPED",
+      "evidence": [
+        "results/LOCAL_CELL_SUMMARY.json"
+      ],
+      "alias": "WHOLE_CELL_SOURCE_RESIDUAL_ENCLOSURE",
+      "completed_scope": "one initial cell of one exact captured finite IVP",
+      "remaining": "full-history carry-forward enclosures over intended cases"
     },
     "FULL_HISTORY_ENCLOSURE": {
-      "status": "OPEN"
+      "status": "OPEN",
+      "evidence": [],
+      "depends_on": [
+        "THREE_PREFIX_REQUESTS"
+      ],
+      "next_action": "Inspect actual prefix outcomes before designing subdivision or polynomial predictor; never infer full coverage from one-cell pass"
+    },
+    "PAST_CONSTRUCTOR_AND_MACHINE_TRAJECTORY_RELATION": {
+      "status": "OPEN",
+      "evidence": [
+        "CONTRACT.json",
+        "evidence/FEASIBILITY_AND_EXPORT_KO.md"
+      ],
+      "reason": "Past raw histories did not serialize coefficient tables or all intermediate rounding; current capture defines its own exact identity"
     },
     "ANGULAR_TRUNCATION_CERTIFICATE": {
-      "status": "OPEN"
+      "status": "OPEN",
+      "evidence": [],
+      "reason": "Finite L8 has not been enclosed against infinite hierarchy"
+    },
+    "MOMENTUM_QUADRATURE_CONTINUUM_CERTIFICATE": {
+      "status": "OPEN",
+      "evidence": [],
+      "reason": "2592 captured packet finite sum is the present model"
+    },
+    "FULL_NATIVE_COLD_EOR": {
+      "status": "OPEN",
+      "evidence": []
+    },
+    "GENERAL_NON_LRS": {
+      "status": "OPEN",
+      "evidence": []
+    },
+    "HH_PHYSICAL_MATCHED_XI_AND_RATE": {
+      "status": "OPEN",
+      "evidence": []
     },
     "PUBLICATION": {
-      "status": "pending"
+      "status": "in_progress",
+      "evidence": [
+        "delivery/S0_PUBLICATION.json"
+      ],
+      "draft_pr": 132,
+      "S0": "91eeb12012b5fdcdbd2423ab28a72ecf4ca7cbcc",
+      "S1": "ready_to_publish"
     },
     "BACKUP": {
-      "status": "pending"
+      "status": "in_progress",
+      "evidence": [
+        "delivery/S0_BACKUP_ACK.json"
+      ],
+      "S0": "complete_both_providers",
+      "S1": "pending_after_publication"
     }
   },
   "HH_R10": "OFF",

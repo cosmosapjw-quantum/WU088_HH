@@ -1,0 +1,89 @@
+{
+  "HH_R10": "OFF",
+  "blocking_findings": [],
+  "checks": [
+    {
+      "finding": "RESULT_UNVERIFIED.json is published create-only before result identity and post-call input/source checks; a subsequent failure preserves that result and its hash in FAILED.json without acceptance.",
+      "object": "first returned JSON preservation",
+      "status": "PASS"
+    },
+    {
+      "finding": "Completion checks bind request bytes, canonical case identity, result bytes, provisional-result equality, receipt seal and requested/enclosed prefix. Corrupt terminal data blocks even explicit retry; failed/interrupted/noncertified attempts require explicit distinct retries.",
+      "object": "resume and corruption",
+      "status": "PASS"
+    },
+    {
+      "finding": "Executing runner, source lock, local modules, external PHYS76 transport and immutable HH74 resources are pinned; runtime is recorded and rechecked before and after calls. Engine entry remains cell_enclosure.certify_request only.",
+      "object": "source and runtime lock",
+      "status": "PASS"
+    },
+    {
+      "finding": "Manifest directory is prepended only for engine import; foreign already-loaded pinned modules and unpinned local Python modules are rejected. Final tests reside outside the source root.",
+      "object": "import paths",
+      "status": "PASS"
+    },
+    {
+      "finding": "No uncoordinated fallback. PID liveness precedes pool construction, acquisition precedes child startup, worker PID/start-tick handoff precedes the engine gate, and the gate remains strongly referenced until child exit. The normal path joins each worker before own lease release.",
+      "object": "shared admission and lease lifecycle",
+      "status": "PASS_SCOPED"
+    },
+    {
+      "finding": "No kill/terminate/signals to peers or overdue own workers. Dispatch horizon stops new launches only. Abrupt external dispatcher termination can leave STARTED-only checkpoints or dead leases for later protocol pruning; active worker evidence and leases are not falsely marked completed.",
+      "object": "cancellation and worker lifetime",
+      "status": "PASS_WITH_DOCUMENTED_LIMIT"
+    },
+    {
+      "finding": "unit/source/run_enclosures.py and unit/tests/test_run_enclosures.py are byte-identical to the frozen tested files. With unit under research/, HH74 resources and sibling PHYS76 transport resolve correctly.",
+      "object": "portable source/test placement",
+      "status": "PASS"
+    },
+    {
+      "finding": "The runner scans every request-directory JSON. Final unit/inputs/pending_ncp contains exactly the three request JSON files; original manifest and preparation receipt are byte-identically preserved separately in evidence.",
+      "object": "metadata/request directory mixing",
+      "status": "RESOLVED_BY_FINAL_PLACEMENT"
+    }
+  ],
+  "existing_receipt_all_artifact_hashes_and_sizes_match": true,
+  "existing_test_count": 17,
+  "existing_test_log_sha256": "adea775b8f1f1d89091c137efe5ea6d546031db648a4337482de567fdb672516",
+  "existing_test_status": "PASS_FAKE_WORKER_CONTRACTS",
+  "existing_validation_receipt_sha256": "b886762d7ab5d8bed718fc0fa013d76f41de348436c09f9a97a9c77c98cfdd9b",
+  "integration_receipts": {
+    "admissible_slots": 0,
+    "capacity_gib": 8.0,
+    "eligible_cases": 3,
+    "interpretation": "Root local read-only preflight only; no NCP execution or handoff claim. Earlier PID-unobservable observation remains historical.",
+    "observed_status": "PREFLIGHT_COMPLETE_NO_ENGINE_IMPORT_NO_ODE",
+    "preflight_receipt_sha256": "f64ed025b38c7b360156d9f16aa623602e8c703174ccec8c062ab6245579e4b7",
+    "preflight_sha256": "60242fd00c50413e80b61705fd16d54e68966098cccd46053e3bafca9cebffb8",
+    "quota_cpus": 8.0,
+    "reserve_gib": 16.0,
+    "shared_pid_liveness_observed": true
+  },
+  "limitations": [
+    "Advisory leases and sampled availability are not kernel CPU/RSS reservations.",
+    "A common host/shared path/PID namespace remains an operational precondition.",
+    "The 17 existing tests use fake workers and synthetic resource observations; actual NCP handoff remains unexecuted."
+  ],
+  "production_admission": "NOT_ISSUED",
+  "review_scope": "Read-only source and existing receipts; no runner, engine, RHS, ODE or test execution",
+  "runner_sha256": "0700ee87672bdf062bd616e256472524caab006a4138f129d8b24e3d0ee2aea4",
+  "schema": "PHYS77_FINAL_RUNNER_INDEPENDENT_REVIEW_V1",
+  "source_lock_sha256": "8d1bf0ca0ea7467516c9dbd804443b557c67119d73011389a283b11124bd7ebb",
+  "status": "PASS_SCOPED",
+  "tests_sha256": "e21b138b10ff36941020c38c9ed6effac64d8a13f0fc4e5a19ebdbfdf862b59e",
+  "this_review_execution": {
+    "NCP_jobs": 0,
+    "ODE_solves": 0,
+    "RHS_calls": 0,
+    "benchmark_runs": 0,
+    "engine_calls": 0,
+    "new_tests": 0
+  },
+  "utc": "2026-10-21T13:21:49.700603+00:00",
+  "verified_final_request_filenames": [
+    "request_mixed_s0_mminus1_4cells.json",
+    "request_mixed_sminus1_mminus1_4cells.json",
+    "request_mixed_splus1_mplus1_4cells.json"
+  ]
+}

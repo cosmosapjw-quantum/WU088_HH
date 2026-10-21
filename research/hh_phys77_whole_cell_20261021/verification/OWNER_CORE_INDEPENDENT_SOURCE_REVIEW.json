@@ -1,0 +1,89 @@
+{
+  "HH_R10": "OFF",
+  "blocking_findings": [],
+  "checks": [
+    {
+      "finding": "Original q and stored mu2 are used; 72x36 packets are represented; only exactly zero populations are skipped. q squares and constant products use directed arithmetic.",
+      "object": "finite packet map",
+      "status": "PASS"
+    },
+    {
+      "finding": "rho, separate perpendicular/parallel pressures, signed pi and rho-minus-pbar match the exact captured finite packet formulas. The positive rho-minus-pbar expression avoids cancellation without changing the model.",
+      "object": "matter moments",
+      "status": "PASS"
+    },
+    {
+      "finding": "gamma=href/h0 and total=H2/h0^2 preserve the original dimensional formulas, including mpref, shear energy, radiation E0 and the full signed M matrix.",
+      "object": "normalized H and coupled RHS",
+      "status": "PASS"
+    },
+    {
+      "finding": "delta_row contains every first-row M coefficient with +2 on the E2 coefficient. Collected alpha and unsimplified chain-rule extension match the independent packet-differentiated Decimal-120 formula at both checked points.",
+      "object": "alpha full-row chain rule",
+      "status": "PASS"
+    },
+    {
+      "finding": "P_m and P_r are separate same-normal-frame signed half amplitudes. Pi_total_F applies absolute value after signed addition, then sqrt(2); Sigma_F uses the same sqrt(2) convention.",
+      "object": "signed components and norms",
+      "status": "PASS"
+    },
+    {
+      "finding": "Addition/division use directed endpoint contexts. Nonnegative multiply shortcut selects monotone endpoint products; general signed multiply retains all corners. Square accounts for zero crossings.",
+      "object": "directed basic arithmetic",
+      "status": "PASS_SOURCE_REVIEW"
+    },
+    {
+      "finding": "Correctly rounded nearest elementary results are bracketed by adjacent representable endpoints. Explicit finiteness/sign/subnormal endpoint guards supplement Decimal traps. sqrt(0) is exact.",
+      "object": "exp and sqrt",
+      "status": "PASS_SOURCE_REVIEW"
+    },
+    {
+      "finding": "Finite ordered boxes, x>=0, strict |b|<1, E0>0 and positive H2 lower bound establish the regular chart used by the first-exit argument. E0 positivity is not an all-angle brightness certificate.",
+      "object": "domain and smoothness",
+      "status": "PASS_SOURCE_REVIEW"
+    },
+    {
+      "finding": "Slope rounding defines an explicit Decimal point predictor; the actual endpoint is outward-computed rather than replaced by the target sample. e0+[0,h]D is strictly enclosed in R, and endpoint uses e0+hD. Subsequent cells carry the endpoint box and recenter it against each new saved predictor origin.",
+      "object": "predictor and first-exit source review",
+      "status": "PASS_SOURCE_REVIEW"
+    },
+    {
+      "finding": "The producer receipt and request hash bind the prepared original initial state. The core proves the exact IVP declared in the request; it does not independently reread raw source history. This limitation is explicit in the result.",
+      "object": "request provenance",
+      "status": "SCOPED"
+    }
+  ],
+  "execution": {
+    "NCP_jobs": 0,
+    "benchmark_runs": 0,
+    "core_point_evaluations": 2,
+    "new_ODE_solves": 0,
+    "original_binary64_rhs_calls": 2,
+    "reference_point_evaluations": 2
+  },
+  "numerical_evidence": {
+    "all_inside_50_digit_bounds": true,
+    "original_rhs_comparison": "arithmetic differences only, never interval acceptance",
+    "points": 2,
+    "reference_method": "independent dimensional unfused packet sums and direct packet derivative",
+    "reference_precision": 120,
+    "scalar_comparisons": 46
+  },
+  "point_review_sha256": "f1043841d94b39c276ca8bbce8cb8ad45408f814b40e72e375051feb0b6500b6",
+  "production_admission": "NOT_ISSUED",
+  "schema": "PHYS77_INDEPENDENT_OWNER_SOURCE_REVIEW_V1",
+  "scope_limits": [
+    "point numerical checks do not prove entire-cell bounds; proof relies on source arithmetic and first-exit construction",
+    "no original machine trajectory rounding certificate",
+    "no continuum radial/angular/L truncation certificate",
+    "generic certifier manufactured tests delegated to theory agent; not duplicated here"
+  ],
+  "source_sha256": {
+    "research/hh_phys76_time_transport_20261021/source/interval_transport.py": "c8b21a2dfdb7ec5810710d2fda6d98922656ecf6d6ae86c82632caab3e227ce6",
+    "research/hh_phys77_whole_cell_20261021/source/cell_enclosure.py": "27966586afda5fbdb6a71aa41102f365376d71caf72f0f7498b0ec20263233ec",
+    "research/hh_phys77_whole_cell_20261021/source/export_owner.py": "7ebf5f8699d9e58dcc7c2eec4bddd99cf9c9cd1d3999aa923890ae784de5b707",
+    "research/hh_phys77_whole_cell_20261021/source/owner_interval.py": "405dafcdfdb7d0488f5afcb94e4c38b90b0fae600cfd902aaae54cd2df1bba7c"
+  },
+  "status": "PASS_SCOPED",
+  "utc": "2026-10-21T13:11:36.787075+00:00"
+}

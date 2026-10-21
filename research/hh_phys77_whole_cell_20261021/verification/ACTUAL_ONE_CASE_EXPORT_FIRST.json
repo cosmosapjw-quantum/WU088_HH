@@ -1,0 +1,66 @@
+{
+  "stage": "one actual coefficient export and saved predictor preparation; no science integration",
+  "utc": "2026-10-21T12:59:32.080605+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/scratch/61913f66989c/phys77_audit/source/export_owner.py",
+    "--repo",
+    "/workspace/scratch/61913f66989c/WU088_HH_PHYS77",
+    "--owner-root",
+    "/workspace/scratch/61913f66989c/upstream_inputs/rei198_verified/repo_payload/research/rei_bianchi_sigma_pi_pilot_20261021",
+    "--terminal-index",
+    "/workspace/scratch/61913f66989c/upstream_inputs/REI198_TERMINAL_STATES.json",
+    "--case-id",
+    "mixed_s+0_m+1",
+    "--out",
+    "/workspace/scratch/61913f66989c/phys77_audit/exports/mixed_s0_mplus1_owner.json",
+    "--request-out",
+    "/workspace/scratch/61913f66989c/phys77_audit/exports/REQUEST_FIRST_CELL.json"
+  ],
+  "returncode": 0,
+  "source_sha256": "7ebf5f8699d9e58dcc7c2eec4bddd99cf9c9cd1d3999aa923890ae784de5b707",
+  "log_sha256": "1472a9e3714fecb70bf7ec8f793aaec72d3bec6169faad3d2a11f88e1e225f36",
+  "new_ODE_solves": 0,
+  "rhs_calls": 0,
+  "benchmark_runs": 0,
+  "status": "PASS",
+  "readback": {
+    "table": {
+      "path": "/workspace/scratch/61913f66989c/phys77_audit/exports/mixed_s0_mplus1_owner.json",
+      "file_sha256": "ab271a4e11c02460a8e84a7bb542621446d87e17a5045b150956c710894a749b",
+      "table_sha256": "c13b5305e83e9b3a249847e0461dfa271eb43138862a5762640f1c7a03ccef47",
+      "array_shapes": {
+        "q": [
+          72
+        ],
+        "mu2": [
+          36
+        ],
+        "numbers": [
+          72,
+          36
+        ],
+        "M": [
+          5,
+          5
+        ]
+      },
+      "case_id": "mixed_s+0_m+1",
+      "status": "EXACT_TABLE_READBACK_PASS",
+      "new_ODE_solves": 0,
+      "rhs_calls": 0,
+      "benchmark_runs": 0
+    },
+    "request": {
+      "path": "/workspace/scratch/61913f66989c/phys77_audit/exports/REQUEST_FIRST_CELL.json",
+      "file_sha256": "ba886f673984a02ea2d84457c13de08494445516f1233d8db91f02388927c479",
+      "content_sha256": "da5b559df809cbb30df2dfffc2461c2f27559d7faccb7568d072a8d9449420f7",
+      "predictor_nodes": 2,
+      "initial_kind": "exact_stored_initial_state",
+      "status": "EXACT_SAVED_PREDICTOR_REQUEST_PREPARED_NO_ENCLOSURE_CLAIM",
+      "new_ODE_solves": 0,
+      "rhs_calls": 0,
+      "benchmark_runs": 0
+    }
+  }
+}
