@@ -127,21 +127,31 @@
       "evidence": []
     },
     "PUBLICATION": {
-      "status": "in_progress",
-      "evidence": [
-        "delivery/S0_PUBLICATION.json"
-      ],
+      "status": "complete_scoped",
       "draft_pr": 132,
       "S0": "91eeb12012b5fdcdbd2423ab28a72ecf4ca7cbcc",
-      "S1": "ready_to_publish"
+      "source_results_commit": "04bc4a063384b2629a323ad15bdf6618fa8c14f0",
+      "source_result_readback": "delivery/S1_PUBLICATION.json",
+      "source_result_blob_count": 77,
+      "metadata": "this additive closeout commit; actual final HEAD supplied by external post-publication receipt",
+      "evidence": [
+        "delivery/S0_PUBLICATION.json",
+        "delivery/S1_PUBLICATION.json"
+      ]
     },
     "BACKUP": {
-      "status": "in_progress",
+      "status": "complete_scoped",
+      "S0": "delivery/S0_BACKUP_ACK.json",
+      "S1": "delivery/S1_BACKUP_ACK.json",
+      "scope": "S0 inventory contract and S1 all source/results plus executable inherited helpers",
+      "both_S1_providers_remote_bytes_and_all_payloads_verified": true,
       "evidence": [
-        "delivery/S0_BACKUP_ACK.json"
+        "delivery/S0_BACKUP_ACK.json",
+        "delivery/S1_BACKUP_ACK.json",
+        "delivery/S1_DRIVE_RESTORE.json",
+        "delivery/S1_DROPBOX_RESTORE.json"
       ],
-      "S0": "complete_both_providers",
-      "S1": "pending_after_publication"
+      "final_metadata_archive": "external final delivery receipt after this commit"
     }
   },
   "HH_R10": "OFF",
