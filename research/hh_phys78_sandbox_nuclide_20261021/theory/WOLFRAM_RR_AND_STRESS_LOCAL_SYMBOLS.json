@@ -1,0 +1,14 @@
+{
+  "purpose": "Variable-localized repeat removes undefined-global-symbol warnings; same bounded exact algebra, not a new scientific run",
+  "code": "Module[{temp,tempzero,tempone,expo,amp,shear,matter,rad,rate,expr,target,positive,assum,sig,pim,pir}, rate=amp/(Sqrt[temp/tempzero]*(1+Sqrt[temp/tempzero])^(1-expo)*(1+Sqrt[temp/tempone])^(1+expo));expr=3/2+temp D[Log[rate],temp];target=1-((1-expo)Sqrt[temp/tempzero]/(1+Sqrt[temp/tempzero])+(1+expo)Sqrt[temp/tempone]/(1+Sqrt[temp/tempone]))/2;positive=((1-expo)/(1+Sqrt[temp/tempzero])+(1+expo)/(1+Sqrt[temp/tempone]))/2;assum=temp>0&&tempzero>0&&tempone>0&&amp>0&&0<=expo<=1;sig=DiagonalMatrix[{-shear,-shear,2shear}];pim=DiagonalMatrix[{-matter,-matter,2matter}];pir=DiagonalMatrix[{-rad,-rad,2rad}];{FullSimplify[expr-target,assum],FullSimplify[target-positive,assum],Tr[sig.sig],FullSimplify[Tr[(pim+pir).(pim+pir)]],FullSimplify[Tr[sig.(pim+pir)]]}]",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Out[1]= {0, 0, 6*shear$83885^2, 6*(matter$83885 + rad$83885)^2, 6*(matter$83885 + rad$83885)*shear$83885}"
+      }
+    ],
+    "structuredContent": null,
+    "isError": false
+  }
+}

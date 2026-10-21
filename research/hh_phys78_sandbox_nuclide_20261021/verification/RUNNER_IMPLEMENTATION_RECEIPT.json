@@ -1,0 +1,37 @@
+{
+  "task": "PHYS78 bounded cooperative runner",
+  "status": "IMPLEMENTED_TARGETED_FAKE_WORKER_CHECKS_PASS",
+  "test_command": "python -m unittest discover -s tests -p test_runner.py -v",
+  "tests_passed": 7,
+  "scientific_ODE_calls": 0,
+  "NCP_calls": 0,
+  "benchmarks": 0,
+  "files": {
+    "source/run_pilot.py": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+    "tests/test_runner.py": "e91b7cef5478a9fc6ccc5165b82baba0b702de1dd1107d0936a84445a8957b04"
+  },
+  "default_cases": 31,
+  "actual_resource_probe": {
+    "site": "local",
+    "cap_cpus": 8,
+    "affinity_cpus": 9,
+    "quota_cpus": 8.0,
+    "sampled_busy_affinity_cpus": 4.222222222222222,
+    "sampled_cgroup_busy_cpus": 4.129592831351176,
+    "sampled_idle_cpus": 3.870407168648824,
+    "cgroup_quota_headrooms": [
+      3.870407168648824
+    ],
+    "available_gib": 7.170135498046875,
+    "capacity_gib": 8.0,
+    "reserve_gib": 1.5,
+    "reserve_cpus": 1,
+    "job_gib": 0.5,
+    "sample_interval_s": 0.0802759529906325
+  },
+  "preflight_attempt": {
+    "status": "SOURCE_INCOMPLETE_NO_SCIENCE",
+    "reason": "kinetic.py not yet created at 10:14 UTC; correct source manifest guard"
+  },
+  "next": "Parent freezes science source, adopts eligible debug baseline, runs preflight then authorizes new pilot cases."
+}
