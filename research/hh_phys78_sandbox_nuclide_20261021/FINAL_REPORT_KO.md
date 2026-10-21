@@ -94,7 +94,7 @@ SI 에너지밀도·압력과 proper time 초를 사용하는 구현에서 `κ_E
 | Li7 | I, II, III, IV | 5.627e-10 | I↔II; III/IV는 정확히 0 |
 | n | 중성 | 0 | 0 유지 |
 
-합계 21개 nuclear/ionic state와 charge neutrality로 유도한 electron이다. 모형의 원소별 atomic fit은 isotope에 공통이고 각 isotope population은 별도로 적분한다. isotope shift·정밀 원자 질량은 이번 범위가 아니다. 초기 abundance는 PRIMAT 표의 중앙값을 사용한 탐색 초기조건이며 lithium abundance 관측 적합을 주장하지 않는다. 과거 붕괴 생성물이 반영된 abundance를 사용하므로 T/n의 유한 초기 population을 새로 주입하지 않았다.
+합계 21개 nuclear/ionic state와 charge neutrality로 유도한 electron이다. 실제 초기 전하 조건은 H II/H=2e-4이고 그 밖의 존재하는 isotope는 중성이다. 이는 탐색용 초기조건이며, PRIMAT의 nuclear abundance 표가 z20 ionic fraction까지 제공한 것은 아니다. 잔류 재결합 복사와 연결한 초기 Li/He/D 전하 조건은 `RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT`에 남긴다. 모형의 원소별 atomic fit은 isotope에 공통이고 각 isotope population은 별도로 적분한다. isotope shift·정밀 원자 질량은 이번 범위가 아니다. 초기 abundance는 PRIMAT 표의 중앙값을 사용한 탐색 초기조건이며 lithium abundance 관측 적합을 주장하지 않는다. 과거 붕괴 생성물이 반영된 abundance를 사용하므로 T/n의 유한 초기 population을 새로 주입하지 않았다.
 
 실제 rate RHS는 **13 PI + 13 RR**다. 보조 stoichiometric registry의 22 species/43 channels는 정수 baryon number·charge 결함이 0인 구조 검사이며, 43개의 검증된 활성 rate를 구현했다는 뜻이 아니다. 사용자 그림의 핵반응·약붕괴는 별도의 rate/source 의무다.
 
@@ -140,7 +140,7 @@ E_{\rm cap}=k_BT\left(\frac32+\frac{d\ln\alpha}{d\ln T}\right)
 
 이며 양의 안정된 형태로 구현했다. 이는 이번 모형의 유도된 closure다. 독립적으로 검증된 모든 thermal-rate owner를 가져왔다고 주장하지 않는다.
 
-초기 gas 300 K는 미리 가열된 탐색 시나리오다. source는 H당 ln(a)당 `8*uv_scale*logistic((8-z)/1.5)*[0.7,0.25,0.05]`, 고정 주입 에너지는 18/30/60 eV다. 관측으로 복원한 EOR 광원이 아니다. 마지막 에너지까지 Li I outer-shell fit의 64.39 eV 상한 안에 있지만 Li II/III의 75.64/122.5 eV 문턱을 넘지 않으므로 Li III/IV가 생성되지 않는다. hard UV를 넣으려면 Li I inner-shell·branching과 일관된 에너지 회계를 먼저 추가해야 한다.
+실행한 정규화 상수는 H0=67.4 km/s/Mpc, Ωm=0.315, Ωb=0.0493, Ωr=9.2e-5, ΩΛ=1−Ωm−Ωr이다. 비등방 collisionless massive 성분은 Ωwarm=0.1 Ωm이고 나머지 cold dust는 Ωm−Ωb−Ωwarm이다. massive packet의 m/Tref=30은 기체 온도가 아니며 초기 energy-weighted rms 속도는 약 0.1185c다. 초기 source reservoir는 1000 eV/reference-H, gray photon number는 각 bin 1e-10/reference-H이다. 이 값들은 탐색 모형의 입력이며 관측 적합 결과가 아니다. 초기 gas 300 K는 미리 가열된 탐색 시나리오다. source는 H당 ln(a)당 `8*uv_scale*logistic((8-z)/1.5)*[0.7,0.25,0.05]`, 고정 주입 에너지는 18/30/60 eV다. 관측으로 복원한 EOR 광원이 아니다. 마지막 에너지까지 Li I outer-shell fit의 64.39 eV 상한 안에 있지만 Li II/III의 75.64/122.5 eV 문턱을 넘지 않으므로 Li III/IV가 생성되지 않는다. hard UV를 넣으려면 Li I inner-shell·branching과 일관된 에너지 회계를 먼저 추가해야 한다.
 
 gas는 이번에 25,371 K까지 도달했다. **CI/CX 생략이 이 온도에서 무시 가능하다고 검증하지 않았다.** 이것이 다음 physics→coding 의무를 선택하는 핵심 근거다. 핵광반응의 source 기여가 유한 60 eV cutoff 때문에 0인 것과 CMB의 Planck tail이 수학적으로 정확히 0이라는 주장은 서로 다르다. 후자는 주장하지 않는다.
 
@@ -211,7 +211,7 @@ python source/plot_pilot.py --input results/pilot --output figures
 
 ## 10. 게시·백업·다음 DAG
 
-S0 inventory/optimization은 commit `9a9f5c16ddf3c9fe98bfbcae6ee1f0cf1ae5ea15`, 19/19 blob readback PASS다. S1 theory/code/baseline은 `81f414482803bafce969059bffce8d462f71dd57`, 88/88 blob readback PASS다. S0 두 provider upload는 확인되었고 S1 두 provider는 전체 remote ZIP을 다시 내려받아 SHA256·ZIP CRC·payload 88개 SHA256까지 확인했다. S2는 이 보고서, 결과, 정련, 실제 그림을 담는다. 그 후 S3는 게시·백업 receipt만 마무리한다. 최종 HEAD와 최종 archive SHA는 self-reference를 피하려고 외부 `PHYS78_FINAL_DELIVERY_20261021.json`에 기록한다.
+S0 inventory/optimization은 commit `9a9f5c16ddf3c9fe98bfbcae6ee1f0cf1ae5ea15`, 19/19 blob readback PASS다. S1 theory/code/baseline은 `81f414482803bafce969059bffce8d462f71dd57`, 88/88 blob readback PASS다. S0 두 provider upload는 확인되었고 S1 두 provider는 전체 remote ZIP을 다시 내려받아 SHA256·ZIP CRC·payload 88개 SHA256까지 확인했다. S2 commit `b001e69668b2d2c2557b51830f5f732164b56ce0`는 이 보고서, 결과, 정련, 실제 그림을 담으며 369/369 remote blob의 해시·크기를 확인했다. S2 ZIP SHA256은 `0075a86507fc101a48da90c9f3beb86d73740b7ffdf4a842ceae21c2144b71fa`이고 두 provider에서 전체 bytes·ZIP CRC·369 payload SHA256 복원 확인을 마쳤다. S3는 이 게시·백업 receipt와 handoff를 마무리하는 metadata commit이다. 최종 HEAD와 최종 archive SHA는 self-reference를 피하려고 외부 `PHYS78_FINAL_DELIVERY_20261021.json`에 기록한다.
 
 다음 선택 의무는 **`COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE`**다. 25,371 K까지 도달한 실제 이력 때문에 H/He/Li의 domain-valid CI/CX와 해당 thermal·escaped-energy 항을 동일 회계 안에 넣는 것이 우선이다. rate table의 출처·domain과 detailed balance/energy convention을 먼저 닫고, 그 다음 구현한다. Li III/IV를 유의미하게 활성화하려면 별도 `LI_HARD_UV_INNER_SHELL_CONTRACT`에서 75.64/122.5 eV 이상 광원, Li I inner-shell/branching, spectral closure를 먼저 해결해야 한다. 그림을 채우기 위한 임의 floor·초기 population 주입으로 대신하지 않는다.
 

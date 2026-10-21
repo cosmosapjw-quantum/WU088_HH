@@ -1,6 +1,6 @@
 {
   "schema": "PHYS78_DAG_V2",
-  "utc": "2026-10-21T15:43:03.619298+00:00",
+  "utc": "2026-10-21T16:09:13.358087+00:00",
   "parent_dags": [
     "../hh_phys77_whole_cell_20261021/DAG_OVERLAY.json"
   ],
@@ -84,25 +84,35 @@
       "PDF": 10
     },
     "PUBLICATION": {
-      "status": "S0_S1_COMPLETE_S2_PREPARED",
+      "status": "COMPLETE_SCOPED",
       "evidence": [
         "delivery/S0_PUBLICATION.json",
-        "delivery/S1_PUBLICATION.json"
+        "delivery/S1_PUBLICATION.json",
+        "delivery/S2_PUBLICATION.json"
       ],
       "draft_PR": 133,
       "branch": "research/hh-phys78-sandbox-nuclide-pilot-20261021",
       "S0": "9a9f5c16ddf3c9fe98bfbcae6ee1f0cf1ae5ea15",
       "S1": "81f414482803bafce969059bffce8d462f71dd57",
-      "final_HEAD_receipt": "external PHYS78_FINAL_DELIVERY_20261021.json after publication"
+      "final_HEAD_receipt": "external PHYS78_FINAL_DELIVERY_20261021.json after publication",
+      "source_results_commit": "b001e69668b2d2c2557b51830f5f732164b56ce0",
+      "source_result_readback": "delivery/S2_PUBLICATION.json",
+      "source_result_blob_count": 369,
+      "metadata": "This additive S3 delivery commit; actual final HEAD is provided by external final-delivery receipt"
     },
     "BACKUP": {
-      "status": "S1_DUAL_FULL_RESTORE_PASS_S2_PENDING",
+      "status": "COMPLETE_SCOPED_S2_DUAL_FULL_RESTORE_PASS",
       "evidence": [
         "delivery/S0_BACKUP_ACK.json",
-        "delivery/S1_BACKUP_ACK.json"
+        "delivery/S1_BACKUP_ACK.json",
+        "delivery/S2_BACKUP_ACK.json",
+        "delivery/S2_drive_receipt.json",
+        "delivery/S2_dropbox_receipt.json"
       ],
       "S0": "dual upload ACK only",
-      "S1": "both providers restored complete bytes and 88 payloads"
+      "S1": "both providers restored complete bytes and 88 payloads",
+      "S2": "Both providers whole ZIP SHA/CRC and all 369 payload SHA verified",
+      "final_metadata_archive": "External final-delivery receipt after this S3 metadata commit"
     },
     "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE": {
       "status": "NEXT_OPEN",
@@ -163,6 +173,15 @@
     "HH_PHYSICAL_MATCHED_XI_AND_RATE": {
       "status": "OPEN_INHERITED",
       "evidence": []
+    },
+    "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT": {
+      "status": "OPEN",
+      "evidence": [
+        "source/coupled_model.py",
+        "FINAL_REPORT_KO.md"
+      ],
+      "reason": "Executed initial charges are HII=2e-4 and other populated isotopes neutral; PRIMAT fixes nuclear inventories, not cosmological z20 ionic fractions",
+      "next_action": "Source and reconcile residual radiation/charge-state initial conditions before interpreting ion histories as a physical EOR prediction"
     }
   },
   "HH_R10": "OFF",
