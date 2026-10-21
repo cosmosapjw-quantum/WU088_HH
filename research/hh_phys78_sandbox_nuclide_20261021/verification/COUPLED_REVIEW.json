@@ -1,0 +1,111 @@
+{
+  "stage": "C9 complementary physics and implementation review",
+  "status": "NO_P0_P1_FINDING_SCOPED_PASS_WITH_P2_DOCUMENTED",
+  "scope": "Actual kinetic.py, coupled_model.py, and atomic_network.py physical equations and numerical coordinate repair; one bounded review pass; no ODE rerun.",
+  "independence": "Separate agent from code author; reviewer constructed the physics contract earlier. Independent equation-to-code and direct packet directional derivative check, not independent external model validation.",
+  "source_sha256": {
+    "kinetic.py": "0e24c9260fe6058e665b66d096f7acadaba911f06c1c43e0d7e0e9cb2fa6c5cf",
+    "coupled_model.py": "1a7ad66d5d14aac906e1f5968730efa48902b811f5bdc2861ae255072c98b781",
+    "atomic_network.py": "2e8b5f892961ebf60fb21fe90895c961fde423689634684305c58ba34830bab6"
+  },
+  "point_check": {
+    "path": "COUPLED_POINT_CHECK.json",
+    "sha256": "aa63e87e7f4c7f0f3afc637cd3368d0e498f13061c6d891c6b81bcca2f683d44",
+    "points": 3,
+    "maxima": {
+      "sigma0_abs_error": 1.3877787807814457e-17,
+      "massive_continuity_relative": 1.473310724345658e-16,
+      "radiation_continuity_relative": 1.157450031748348e-16,
+      "total_density_continuity_relative": 3.942238998282595e-16,
+      "friedmann_raychaudhuri_directional_relative": 4.14614416014891e-16,
+      "gray_exchange_relative": 1.160061489196809e-16,
+      "norm_half_difference": 1.3552527156068805e-20,
+      "signed_total_before_norm_difference": 0.0,
+      "isotope_rhs_abs_max": 1.3877787807814457e-17
+    },
+    "integration_count": 0,
+    "benchmarks": 0
+  },
+  "physical_rhs_bridge": {
+    "relation": "STRUCTURAL_IDENTITY_OF_AST_METHODS",
+    "old_coupled_sha256": "87c3ff897a2a20a9ae973acb624e560ea47aab74ffca735d48929ac599d62df0",
+    "new_coupled_sha256": "1a7ad66d5d14aac906e1f5968730efa48902b811f5bdc2861ae255072c98b781",
+    "old_snapshot": "phys78_code/coupled_trials/20261021T151814_274361Z/SOURCE_SNAPSHOT/source/coupled_model.py",
+    "method_AST_equal": {
+      "_initial_state": true,
+      "absolute_tolerances": true,
+      "source_per_x": true,
+      "environment": true,
+      "evaluate": true,
+      "rhs": true,
+      "arrays": true,
+      "postflight": true
+    },
+    "interpretation": "Earlier exact-point evidence applies to unchanged physical initial conditions, RHS, moment output and acceptance methods; new diagonal solver-coordinate wrapper reviewed separately."
+  },
+  "solver_scaling": {
+    "formula": "y=D z, z_prime=D^-1 f(x,D z), atol_z=D^-1 atol_y",
+    "error_norm_identity": "(delta_y/D)/(atol_y/D+rtol*abs(y)/D)=delta_y/(atol_y+rtol*abs(y)) for positive diagonal D",
+    "physical_RHS_changed": false,
+    "projection": "NONE",
+    "stage_absent_inventory_absolute_per_H": 1e-28,
+    "saved_absent_inventory_absolute_per_H": 1e-28
+  },
+  "findings": [
+    {
+      "id": "C9-P2-01",
+      "severity": "P2",
+      "status": "DOCUMENTED_NONBLOCKING",
+      "object": "CoupledModel.solver_rhs nonfinite-domain recovery docstring",
+      "observed_mechanism": "Installed SciPy solve_bdf_system stops on nonfinite RHS; _step_impl may refresh self.jac(t_new,y_predict) before halving when current_jac is false. An invalid predictor can therefore produce a nonfinite numerical Jacobian and LU error instead of automatic retry.",
+      "impact": "Conditional numerical robustness limit; no silent wrong result. The successful baseline reported zero rejected-domain stages, so its result did not use this path.",
+      "smallest_correction": "Qualify guarantee in README/repair notes while preserving frozen executed scientific bytes. If a sweep encounters this path, retain failure and perform a concrete diagnosed repair.",
+      "current_task_blocker": false
+    }
+  ],
+  "source_contract_qualifications": [
+    "source_per_x is photons per reference H per log(a), proper-second emissivity equals H times this source.",
+    "mass_over_Tref=30 Fermi-Dirac momentum owner gives initial energy-weighted v^2/c^2=0.014042955660121, not exactly v/c=0.1.",
+    "pi_m is collisionless DM; reacting atomic gas uses pi_gas=0; UV/escape radiation isotropic closure has pi=0.",
+    "All enumerated nonnegative atomic charge slots are included, but PI/RR-only is not all 19 nuclear reaction channels or molecules/anion chemistry.",
+    "Gray energy/number conservation does not establish frequency/angle accuracy, and instantaneous residual does not establish trajectory or continuum error."
+  ],
+  "scipy_source": {
+    "version": "1.17.0",
+    "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/bdf.py",
+    "sha256": "a5b75a2ae8aca2e66cc35ed268af51d8a9685878209d5cf77a44c8ccef3b76e6",
+    "inspected": [
+      "solve_bdf_system",
+      "BDF._step_impl"
+    ]
+  },
+  "reused_baseline": {
+    "path": "phys78_code/coupled_trials/20261021T152026_608503Z",
+    "source_sha256_matches_current": true,
+    "negative_solver_stage_evaluations": 0,
+    "rejected_domain_stage_evaluations": 0,
+    "reviewer_reran": false
+  },
+  "reviewer_execution": {
+    "ODE_integrations": 0,
+    "parameter_sweeps": 0,
+    "benchmarks": 0,
+    "additional_atomic_test_suite_runs": 0,
+    "pointwise_physics_checks": 3
+  },
+  "next_action": "Continue bounded finite-model pilot and actual output checks. Keep all-nuclear/molecular/spectral obligations open. No new production gate.",
+  "HH_R10": "OFF",
+  "production_admission": false,
+  "skill_context_used": {
+    "version": "1.3.0",
+    "selection": "C9",
+    "root": "/root/.codex/plugins/cache/created-by-me-remote/physmath-research-loop/1.3.0/skills/physmath-research-loop",
+    "read": [
+      "SKILL.md",
+      "references/POLICY_INTEGRATION.md",
+      "references/THEORY_LOOP.md",
+      "references/SUBAGENT_MODE.md",
+      "references/CODING_LOOP.md C9"
+    ]
+  }
+}

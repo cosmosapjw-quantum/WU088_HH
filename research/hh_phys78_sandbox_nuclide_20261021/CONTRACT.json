@@ -1,0 +1,62 @@
+{
+  "schema": "PHYS78_CONTRACT_V1",
+  "parent_pr": 132,
+  "parent_head": "d43cf2df2c4864ae05049f44301c5b389b80a49c",
+  "scientific_baseline_pr128": "92f5ab9dba531ebe05909dcb77d3740d2c68c580",
+  "scope": "Sandbox complete exploratory optimization then physics and coding pilot, z20 to2",
+  "chosen_open_parent": "FULL_NATIVE_COLD_EOR",
+  "scoped_child": "CONSERVATIVE_GRAY_PI_RR_ALL_PRIMORDIAL_ISOTOPE_CHARGE_PILOT",
+  "not_full_parent_completion": true,
+  "geometry": "non-tilted LRS Bianchi I; (-,+,+,+); cosmic proper time; normal orthonormal frame",
+  "tensor": "sigma=diag(-s,-s,2s); pi_A=diag(-p_A,-p_A,2p_A); signed p_m and p_r preserved; total p=p_m+p_r before norm",
+  "norm": "Frobenius=sqrt(6)*abs(s) and sqrt(6)*abs(p); half-contraction=sqrt(3)*abs(s),sqrt(3)*abs(p); ratio sqrt(2)",
+  "species": [
+    "n",
+    "H1",
+    "H2(D)",
+    "H3(T)",
+    "He3",
+    "He4",
+    "Li6",
+    "Li7",
+    "derived_electron"
+  ],
+  "ion_states": "all q=0..Z for each listed nucleus, including LiIV",
+  "gas": "isotropic ideal Maxwellian reacting gas: pi_gas=0, pressure and energy coupled to Einstein constraint",
+  "stress_matter": "positive canonical collisionless nonbaryonic massive packets; dust and gas isotropic",
+  "stress_radiation": "positive massless canonical angular packets; gray UV and escaped recombination radiation isotropic",
+  "reaction": "photoionization + radiative recombination; isotope-blind atomic coefficients with independently stored isotope populations; exact charge/nuclear bookkeeping",
+  "photon_source_eV": [
+    18,
+    30,
+    60
+  ],
+  "photon_source_energy": "positive finite pressureless reservoir included in matter energy; debit emitted energy",
+  "energy": "photo excess heating and VF rate derivative RR captured energy; opposite photon/escape accounting; gray mean-energy closure",
+  "excluded": [
+    "collisional ionization",
+    "molecular chemistry",
+    "charge exchange in this bounded model",
+    "active thermonuclear fusion",
+    "hard-photon photodisintegration",
+    "Compton/Thomson coupling",
+    "full kinetic reaction recoil",
+    "full angular/momentum continuum certificate"
+  ],
+  "nuclear_scope": "n and T initially zero; no surviving primordial unstable nuclei; photodisintegration zero under finite soft-UV spectrum, thermonuclear terms omitted in declared cold diffuse approximation",
+  "claims": "new exploratory model; not old HH1231/warm729/control63 identities; no observational EOR inference or full 19-active-reaction completion",
+  "resources": {
+    "sandbox_cpu_cap": 8,
+    "sandbox_memory_GiB_cap": 8,
+    "default_workers": 3,
+    "nested_threads": 1,
+    "no_other_process_termination": true,
+    "NCP_cap": [
+      64,
+      128
+    ]
+  },
+  "benchmark": "not requested; no speedup claim",
+  "HH_R10": "OFF",
+  "production": "NOT_ISSUED"
+}

@@ -1,0 +1,169 @@
+{
+  "schema": "PHYS78_BOUNDED_C7_FIGURE_HOSTILE_RESIDUAL_AUDIT_V1",
+  "utc": "2026-10-21T15:37:22.780133+00:00",
+  "status": "PASS_FOR_DECLARED_EXPLORATORY_SAVED_DATA_FIGURES",
+  "new_scientific_integrations": 0,
+  "new_benchmarks": 0,
+  "actual_cases": 31,
+  "epochs_per_case": [
+    161
+  ],
+  "redshift_range": [
+    20.0,
+    2.000000000000001
+  ],
+  "representative": "P013",
+  "figure_count": 10,
+  "figures_directly_viewed": [
+    "01_parameter_sweep.png",
+    "02_stress_time_evolution.png",
+    "02b_isotropic_control_residuals.png",
+    "02c_signed_tensor_cancellation.png",
+    "03a_H_D_T_neutron.png",
+    "03b_helium_isotopes.png",
+    "03c_lithium_isotopes.png",
+    "04a_temperature_electrons.png",
+    "04b_soft_uv_photons.png",
+    "04c_conservation_diagnostics.png"
+  ],
+  "output_formats": [
+    "PNG",
+    "PDF"
+  ],
+  "width_mm": 180,
+  "source_sha256": "bbbba96cfb55d6aebd4b7b8fa77c358f3207f574d058aea2a11163852a471ba7",
+  "plot_manifest_sha256": "5f3797e9fdffe0ec10e7b6460f096a5a0e138dbf85c3b905614020f9f0e0bff5",
+  "figure_hostile_findings_resolved": [
+    "Isotropic finite-arithmetic residuals no longer dominate color normalization; exact-input controls have hollow markers and separate signed-residual figure.",
+    "Sparse signed sweep axes are linear actual values; crowded symlog tick labels removed.",
+    "Declared data-driven control display cutoffs omit tiny samples without flooring or changing raw arrays; omission counts and thresholds are present in each norm panel.",
+    "z=2 endpoint shown despite stored 2+4e-16 roundoff.",
+    "Case IDs Pxxx replace unstable file-order aliases on visible legends.",
+    "Shared legends removed from quantitative curves; footer/axis-label collisions repaired.",
+    "LiIII/IV identically zero explicitly stated; zero T/neutron abundance gives undefined charge fractions.",
+    "Frobenius/half-contraction sqrt(2) factor printed on every figure.",
+    "Signed matter/radiation and tensor-sum cancellation shown for P024."
+  ],
+  "actual_display_ranges": {
+    "Sigma_F": {
+      "control_display_cutoff": 4.036957932128307e-18,
+      "visible_min": 6.512795935259378e-06,
+      "visible_max": 0.09999999999999999,
+      "active_omitted_samples": 8,
+      "active_total_samples": 4508,
+      "raw_full_range": {
+        "minimum": 0.0,
+        "maximum": 0.09999999999999999,
+        "smallest_positive": 1.6111084776236483e-19,
+        "exact_zero_samples": 11,
+        "negative_samples": 0
+      }
+    },
+    "Pi_m_F": {
+      "control_display_cutoff": 2.5346473714720744e-19,
+      "visible_min": 4.735788203296957e-10,
+      "visible_max": 0.0005468865088172861,
+      "active_omitted_samples": 10,
+      "active_total_samples": 4508,
+      "raw_full_range": {
+        "minimum": 0.0,
+        "maximum": 0.0005468865088172861,
+        "smallest_positive": 3.132618693089501e-21,
+        "exact_zero_samples": 243,
+        "negative_samples": 0
+      }
+    },
+    "Pi_r_F": {
+      "control_display_cutoff": 1.3752973011492915e-17,
+      "visible_min": 3.8423205992871926e-10,
+      "visible_max": 0.0023885550415890665,
+      "active_omitted_samples": 10,
+      "active_total_samples": 4508,
+      "raw_full_range": {
+        "minimum": 1.680155794375738e-18,
+        "maximum": 0.0023885550415890665,
+        "smallest_positive": 1.680155794375738e-18,
+        "exact_zero_samples": 0,
+        "negative_samples": 0
+      }
+    },
+    "Pi_total_F": {
+      "control_display_cutoff": 1.3752973011492915e-17,
+      "visible_min": 8.765761172566263e-07,
+      "visible_max": 0.0029354415504063524,
+      "active_omitted_samples": 4,
+      "active_total_samples": 4508,
+      "raw_full_range": {
+        "minimum": 1.680155794375738e-18,
+        "maximum": 0.0029354415504063524,
+        "smallest_positive": 1.680155794375738e-18,
+        "exact_zero_samples": 0,
+        "negative_samples": 0
+      }
+    }
+  },
+  "observed_saved_residuals": {
+    "energy_balance_rel": 2.514452716784673e-16,
+    "nuclei_rel_error": 1.7350768007071328e-14
+  },
+  "norm_mapping_max_abs_residual": {
+    "Sigma": 0.0,
+    "matter": 0.0,
+    "radiation": 0.0,
+    "total": 0.0
+  },
+  "full_minus_sqrt2_half_max_abs": {
+    "Sigma_F": 2.7755575615628914e-17,
+    "Pi_m_F": 5.421010862427522e-20,
+    "Pi_r_F": 2.168404344971009e-19,
+    "Pi_total_F": 4.336808689942018e-19
+  },
+  "exact_zero_species_max_abs_per_reference_H": {
+    "T_I": 0.0,
+    "T_II": 0.0,
+    "n": 0.0,
+    "Li6_III": 0.0,
+    "Li6_IV": 0.0,
+    "Li7_III": 0.0,
+    "Li7_IV": 0.0
+  },
+  "density_unit_mapping_max_abs_J_m3": 0.0,
+  "P024_signed_cancellation": {
+    "minimum_ratio": 0.6273906331116796,
+    "maximum_ratio": 0.9652949689848299,
+    "total_norm_check_maxabs": 0.0
+  },
+  "strongest_saved_cancellation": {
+    "case_id": "P025",
+    "minimum_saved_norm_ratio": 0.0022142889601485544,
+    "z_at_saved_minimum": 12.887880190562546
+  },
+  "P013_final_species_per_reference_H": {
+    "H1_I": 5.298736830874354e-06,
+    "H1_II": 0.9999947012631691,
+    "D_I": 1.3034892603950907e-10,
+    "D_II": 2.4599869651073962e-05,
+    "T_I": 0.0,
+    "T_II": 0.0,
+    "He3_I": 1.8510885484793785e-10,
+    "He3_II": 1.139201880230672e-06,
+    "He3_III": 9.600613010914482e-06,
+    "He4_I": 1.4141985445642825e-06,
+    "He4_II": 0.008703298620212156,
+    "He4_III": 0.07334696634644235,
+    "Li6_I": 2.2750622079462426e-20,
+    "Li6_II": 1.1999977249377917e-14,
+    "Li6_III": 0.0,
+    "Li6_IV": 0.0,
+    "Li7_I": 1.0668145870094587e-15,
+    "Li7_II": 5.626989331854128e-10,
+    "Li7_III": 0.0,
+    "Li7_IV": 0.0,
+    "n": 0.0
+  },
+  "narrowed_claim": "Exploratory finite PI+RR isotropic reacting gas with 21 finite species slots; anisotropic collisionless nonbaryonic matter and free radiation in one normal frame. No nuclear-reaction network completion, species-off causal experiment, observational fit, or all-case continuum/convergence certificate.",
+  "display_cutoff_warning": "Observed isotropic residual envelope is a display cutoff only, not a certified error bound.",
+  "residual_scope": "Saved instantaneous energy and isotope identities; no continuum certificate. Separate root-owned P024 refinement is outside this figure audit.",
+  "HH_R10": "OFF",
+  "production_admission": false
+}

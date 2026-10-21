@@ -1,0 +1,15 @@
+{
+  "purpose": "Aggregated photo/RR/source exchange cancellation. Here photo denotes total absorbed photon energy; binding is net chemical-energy production; cap denotes total escaping RR photon energy, so gas term photo-binding-cap equals photoheat minus captured-electron energy.",
+  "code": "Module[{uu,bb,uv,rr,qq,h,photo,cap,binding,inject,du,db,duv,drr,dqq,total},\ndu=-2uu+(photo-binding-cap)/h;\ndb=binding/h;\nduv=-uv+(inject-photo)/h;\ndrr=-rr+cap/h;\ndqq=-inject/h;\ntotal=FullSimplify[du+db+duv+drr+dqq+2uu+uv+rr];\ntotal]",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Out[1]= 0"
+      }
+    ],
+    "structuredContent": null,
+    "isError": false
+  },
+  "expected": 0
+}

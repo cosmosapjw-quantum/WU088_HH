@@ -1,0 +1,14 @@
+{
+  "purpose": "Exact identity check of Maxwellian fit-derived RR energy and signed LRS tensor contractions",
+  "code": "Clear[T,T0,T1,b,A,kB,s,pm,pr];\nalpha=A/(Sqrt[T/T0]*(1+Sqrt[T/T0])^(1-b)*(1+Sqrt[T/T1])^(1+b));\nexpr=3/2+T D[Log[alpha],T];\ntarget=1-((1-b) Sqrt[T/T0]/(1+Sqrt[T/T0])+(1+b) Sqrt[T/T1]/(1+Sqrt[T/T1]))/2;\npositive=((1-b)/(1+Sqrt[T/T0])+(1+b)/(1+Sqrt[T/T1]))/2;\nassum=T>0&&T0>0&&T1>0&&A>0&&0<=b<=1;\nsig=DiagonalMatrix[{-s,-s,2s}];\npiM=DiagonalMatrix[{-pm,-pm,2pm}];piR=DiagonalMatrix[{-pr,-pr,2pr}];\n{FullSimplify[expr-target,assum],FullSimplify[target-positive,assum],\nFullSimplify[Tr[sig.sig]], FullSimplify[Tr[(piM+piR).(piM+piR)]],FullSimplify[Tr[sig.(piM+piR)]]}",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Symbol::undefined2: Warning: Global symbols \"T, T0, T1, A, A, T, T0, T, T0, T, T1, T, T, T, T0, T, T0, T, T1, T, T1, T, T0, T, T1, T, T0, T1, A\" are undefined.\nGeneral::messages: Messages were generated which may indicate errors.\n\nOut[1]= {0, 0, 6*s^2, 6*(pm + pr)^2, 6*(pm + pr)*s}"
+      }
+    ],
+    "structuredContent": null,
+    "isError": false
+  }
+}

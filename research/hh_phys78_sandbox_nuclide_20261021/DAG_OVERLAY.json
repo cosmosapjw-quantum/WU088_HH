@@ -1,0 +1,196 @@
+{
+  "schema": "PHYS78_DAG_V2",
+  "utc": "2026-10-21T16:09:13.358087+00:00",
+  "parent_dags": [
+    "../hh_phys77_whole_cell_20261021/DAG_OVERLAY.json"
+  ],
+  "parent_head": "d43cf2df2c4864ae05049f44301c5b389b80a49c",
+  "selected_parent_obligation": "FULL_NATIVE_COLD_EOR",
+  "selected_child_scope": "Executable finite gray PI+RR isotope LRS pilot in sandbox; separate collisionless DM/radiation stress",
+  "nodes": {
+    "LATEST_INVENTORY": {
+      "status": "COMPLETE_SCOPED_ACCESSIBLE",
+      "evidence": [
+        "inventory/REPORT_KO.md",
+        "inventory/FINAL_HEAD_REFRESH.json"
+      ],
+      "repos": 6,
+      "refs": 1060,
+      "recent_PR_metadata": 180,
+      "pinned_blob_matched_files": 26,
+      "known_backup_IDs": 10,
+      "private_conversations_exhaustive": false
+    },
+    "OPTIMIZATION_DESIGN": {
+      "status": "COMPLETE",
+      "evidence": [
+        "source/kinetic.py",
+        "verification/RETAINED_OWNER_COMPARISON.json"
+      ],
+      "measured_speedup": false
+    },
+    "CONSERVATIVE_GRAY_THEORY": {
+      "status": "COMPLETE_SCOPED",
+      "evidence": [
+        "theory/PHYSICS_CONTRACT_KO.md",
+        "theory/WOLFRAM_GRAY_ENERGY.json",
+        "verification/COUPLED_REVIEW.json"
+      ]
+    },
+    "SANDBOX_IMPLEMENTATION": {
+      "status": "COMPLETE_SCOPED",
+      "evidence": [
+        "source/atomic_network.py",
+        "source/coupled_model.py",
+        "source/run_pilot.py"
+      ],
+      "science_manifest_sha256": "a0380fdd5cbdd9a1f22f5c09fde67ad0ef85da0ce149e043dec69684b662a6b6"
+    },
+    "LIGHT_VALIDATION": {
+      "status": "PASS_SCOPED",
+      "evidence": [
+        "EXECUTION_LEDGER.json",
+        "verification/COUPLED_REVIEW.json"
+      ],
+      "unique_unit_tests": 35
+    },
+    "NEW_PILOT_Z20_Z2": {
+      "status": "COMPLETE_SCOPED",
+      "evidence": [
+        "results/pilot/",
+        "verification/SAVED_RESULTS_CHECK.json"
+      ],
+      "parameter_points": 31,
+      "epochs_per_case": 161,
+      "adopted_no_replay": 1,
+      "new_remaining": 30
+    },
+    "ONE_DISTINCT_REFINEMENT": {
+      "status": "PASS_SCOPED",
+      "evidence": [
+        "inputs/REFINEMENT_CONTRACT.json",
+        "verification/REFINEMENT_RESULT.json"
+      ],
+      "cases": 1,
+      "continuum_certificate": false
+    },
+    "FIGURES": {
+      "status": "COMPLETE_REVIEWED",
+      "evidence": [
+        "figures/PLOT_MANIFEST.json",
+        "verification/FIGURE_HOSTILE_RESIDUAL_AUDIT.json"
+      ],
+      "PNG": 10,
+      "PDF": 10
+    },
+    "PUBLICATION": {
+      "status": "COMPLETE_SCOPED",
+      "evidence": [
+        "delivery/S0_PUBLICATION.json",
+        "delivery/S1_PUBLICATION.json",
+        "delivery/S2_PUBLICATION.json"
+      ],
+      "draft_PR": 133,
+      "branch": "research/hh-phys78-sandbox-nuclide-pilot-20261021",
+      "S0": "9a9f5c16ddf3c9fe98bfbcae6ee1f0cf1ae5ea15",
+      "S1": "81f414482803bafce969059bffce8d462f71dd57",
+      "final_HEAD_receipt": "external PHYS78_FINAL_DELIVERY_20261021.json after publication",
+      "source_results_commit": "b001e69668b2d2c2557b51830f5f732164b56ce0",
+      "source_result_readback": "delivery/S2_PUBLICATION.json",
+      "source_result_blob_count": 369,
+      "metadata": "This additive S3 delivery commit; actual final HEAD is provided by external final-delivery receipt"
+    },
+    "BACKUP": {
+      "status": "COMPLETE_SCOPED_S2_DUAL_FULL_RESTORE_PASS",
+      "evidence": [
+        "delivery/S0_BACKUP_ACK.json",
+        "delivery/S1_BACKUP_ACK.json",
+        "delivery/S2_BACKUP_ACK.json",
+        "delivery/S2_drive_receipt.json",
+        "delivery/S2_dropbox_receipt.json"
+      ],
+      "S0": "dual upload ACK only",
+      "S1": "both providers restored complete bytes and 88 payloads",
+      "S2": "Both providers whole ZIP SHA/CRC and all 369 payload SHA verified",
+      "final_metadata_archive": "External final-delivery receipt after this S3 metadata commit"
+    },
+    "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE": {
+      "status": "NEXT_OPEN",
+      "evidence": [
+        "FINAL_REPORT_KO.md"
+      ],
+      "reason": "Actual Tmax 25370.663 K; omitted CI/CX has not been bounded as negligible",
+      "next_action": "Source/domain and energy convention for H/He/Li CI/CX, then conservative implementation and bounded new control only",
+      "depends_on": [
+        "NEW_PILOT_Z20_Z2"
+      ]
+    },
+    "LI_HARD_UV_INNER_SHELL_CONTRACT": {
+      "status": "OPEN",
+      "evidence": [
+        "theory/PHYSICS_CONTRACT_KO.md"
+      ],
+      "reason": "18/30/60eV source leaves LiIII/IV exactly zero; harder photons need LiI inner-shell/branching and spectral energy closure"
+    },
+    "REACTIVE_BARYON_ANISOTROPIC_CLOSURE": {
+      "status": "OPEN",
+      "evidence": [],
+      "reason": "pi_gas=0 in the completed pilot; pi_m is collisionless nonbaryonic DM"
+    },
+    "FULL_19_ACTIVE_NUCLEAR_REACTIONS": {
+      "status": "OPEN",
+      "evidence": [
+        "theory/SPECIES_AND_CHANNELS.json"
+      ],
+      "reason": "Registry conservation is not active source/rate validation; executed rates are 13 PI + 13 RR"
+    },
+    "MOLECULAR_ANION_AND_COMPTON_TRANSPORT": {
+      "status": "OPEN",
+      "evidence": []
+    },
+    "FULL_NATIVE_COLD_EOR": {
+      "status": "OPEN",
+      "evidence": [],
+      "completed_child": "NEW_PILOT_Z20_Z2",
+      "reason": "Reduced gray PI+RR exploratory closure only"
+    },
+    "FULL_HISTORY_ENCLOSURE": {
+      "status": "OPEN_INHERITED_PHYS77",
+      "evidence": []
+    },
+    "ANGULAR_TRUNCATION_CERTIFICATE": {
+      "status": "OPEN_INHERITED",
+      "evidence": []
+    },
+    "MOMENTUM_QUADRATURE_CONTINUUM_CERTIFICATE": {
+      "status": "OPEN_INHERITED",
+      "evidence": []
+    },
+    "GENERAL_NON_LRS": {
+      "status": "OPEN_INHERITED",
+      "evidence": []
+    },
+    "HH_PHYSICAL_MATCHED_XI_AND_RATE": {
+      "status": "OPEN_INHERITED",
+      "evidence": []
+    },
+    "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT": {
+      "status": "OPEN",
+      "evidence": [
+        "source/coupled_model.py",
+        "FINAL_REPORT_KO.md"
+      ],
+      "reason": "Executed initial charges are HII=2e-4 and other populated isotopes neutral; PRIMAT fixes nuclear inventories, not cosmological z20 ionic fractions",
+      "next_action": "Source and reconcile residual radiation/charge-state initial conditions before interpreting ion histories as a physical EOR prediction"
+    }
+  },
+  "HH_R10": "OFF",
+  "production": "NOT_ISSUED",
+  "interpretation_guards": [
+    "Signed tensors added before norm in one normal orthonormal frame",
+    "Frobenius=sqrt(2)*half contraction",
+    "Same-trajectory conditional attribution is not species-off causality",
+    "Sampled algebra residual is not a continuum certificate",
+    "HH1231, REI729, HH74control63 remain separate campaigns"
+  ]
+}
