@@ -1,0 +1,54 @@
+{
+  "schema": "PHYS76_EXECUTION_LEDGER_V1",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "local_workers": 2,
+    "PYTHON": "PASS",
+    "CPP": "PASS",
+    "NCP": "SERVICE_ERROR_BEFORE_SSH_EXECUTION"
+  },
+  "focused_tests": {
+    "cumulative": 13,
+    "interval": 11,
+    "continuation_fake_solver": 10,
+    "saved_analysis": 7,
+    "total_distinct": 41
+  },
+  "science": {
+    "new_z4_z2_ODE_integrations": 1231,
+    "completed": 1231,
+    "failed": 0,
+    "pending": 0,
+    "old_z20_z4_integrations_replayed": 0,
+    "new_NCP_jobs": 0,
+    "benchmark_runs": 0,
+    "foreign_process_signals": 0
+  },
+  "costs": {
+    "case_cpu_s": 50.181952348000046,
+    "case_wall_s": 54.50032015181205,
+    "new_ODE_solves": 1231,
+    "run_wall_s": 115.228586858997
+  },
+  "cost_interpretation": "Actual execution accounting only, not benchmark or speedup measurement",
+  "source": {
+    "runner_sha256": "959952f9d347bcc515410ef90b3b8dc4b36388ad4bfd2acc2bac356fafd6d97b",
+    "invocation": "results/tail_z4_z2/invocations/58cac41af8a04eae90e410be0badb5ca",
+    "stdout": "evidence/CONTINUATION_RUN_STDOUT.json",
+    "stderr": "evidence/CONTINUATION_RUN_STDERR.log",
+    "exit_code": 0
+  },
+  "command": "python3 research/hh_phys76_time_transport_20261021/source/continue_saved.py --run --owner-root /workspace/scratch/61913f66989c/upstream_inputs/rei198_verified/repo_payload/research/rei_bianchi_sigma_pi_pilot_20261021 --terminal-index /workspace/scratch/61913f66989c/upstream_inputs/REI198_TERMINAL_STATES.json --output /workspace/scratch/61913f66989c/WU088_HH/research/hh_phys76_time_transport_20261021/results/tail_z4_z2 --site local --max-workers 2 --max-new-cases 1231",
+  "postprocessing": {
+    "new_ODE": 0,
+    "analysis_receipt": "evidence/ANALYSIS_Z20_Z2_FIRST_RECEIPT.json",
+    "plot_receipts": [
+      "evidence/PLOTS_Z20_Z2_FIRST_RECEIPT.json",
+      "evidence/FIGURE04_FIRST_RENDER_RECEIPT.json"
+    ]
+  },
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}
