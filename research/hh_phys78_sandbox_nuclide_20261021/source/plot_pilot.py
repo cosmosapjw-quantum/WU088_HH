@@ -25,6 +25,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.cm import ScalarMappable
 from matplotlib.colors import LogNorm, Normalize
+from matplotlib.lines import Line2D
 
 
 WIDTH_IN = 180.0 / 25.4
@@ -32,8 +33,8 @@ SCOPE = (
     "Exploratory: isotropic reacting gas + anisotropic collisionless matter/radiation; soft UV."
 )
 CONVENTION = (
-    r"$\pi_{\rm gas}=0$; $\pi_m$ is collisionless DM. Full Frobenius norms; "
-    "no nuclear-reaction claim."
+    r"$\pi_{\rm gas}=0$; $\pi_m$ is collisionless DM. Norm$_F=\sqrt{2}\,$Norm$_{\rm half}$. "
+    "No nuclear-reaction claim."
 )
 VECTOR_KEYS = (
     "x", "z", "b", "s_over_H", "Sigma_F", "Pi_m_F", "Pi_r_F",
@@ -188,6 +189,10 @@ def make_figure(rows: int, cols: int, height_mm: float, title: str, subtitle: st
 def z_axis(ax, cases: list[Case]) -> None:
     zmax = max(float(c.data["z"][0]) for c in cases)
     zmin = min(float(c.data["z"][-1]) for c in cases)
+    if abs(zmax-round(zmax)) < 1e-12:
+        zmax = float(round(zmax))
+    if abs(zmin-round(zmin)) < 1e-12:
+        zmin = float(round(zmin))
     ax.set_xlim(zmax, zmin)
     ticks = [v for v in (20, 15, 10, 8, 6, 4, 2) if zmin <= v <= zmax]
     if len(ticks) >= 2:
@@ -235,6 +240,17 @@ def save_figure(fig, output: Path, name: str, description: dict, manifest: dict)
     manifest["figures"].append({"name": name, "width_mm": 180, "outputs": outputs, **description})
 
 
+def shared_top_legend(fig, axes) -> None:
+    handles, labels = axes.flat[0].get_legend_handles_labels()
+    for ax in axes.flat:
+        if ax.get_legend() is not None:
+            ax.get_legend().remove()
+    fig.subplots_adjust(top=.78)
+    if handles:
+        fig.legend(handles, labels, loc="center", bbox_to_anchor=(.53, .865),
+                   ncol=len(handles), fontsize=7.2, frameon=False)
+
+
 def representative(cases: list[Case], requested: str | None) -> Case:
     if requested:
         found = [c for c in cases if requested in (c.case_id, c.alias)]
@@ -250,13 +266,20 @@ def representative(cases: list[Case], requested: str | None) -> Case:
 
 
 def highlighted(cases: list[Case], rep: Case) -> list[Case]:
-    ordered = sorted(cases, key=lambda c: float(c.data["Sigma_F"][-1]))
-    picks = [rep, ordered[0], ordered[len(ordered) // 2], ordered[-1]]
+    ordered = sorted([c for c in cases if not isotropic_control(c)] or cases,
+                     key=lambda c: float(c.data["Sigma_F"][-1]))
+    opposing = next((c for c in cases if c.case_id == "P024"), ordered[len(ordered)//2])
+    picks = [rep, opposing, ordered[0], ordered[-1]]
     unique = []
     for case in picks:
         if case.case_id not in {c.case_id for c in unique}:
             unique.append(case)
     return unique
+
+
+def isotropic_control(case: Case) -> bool:
+    """Classification uses exact physical inputs, never a fitted data threshold."""
+    return all(case.value(key) == 0. for key in ("sigma0_F_signed", "A_m", "A_r"))
 
 
 def signed_axis(ax, which: str, values: np.ndarray) -> None:
@@ -279,7 +302,7 @@ def sweep(cases: list[Case], rep: Case, output: Path, manifest: dict) -> None:
                  for c in chosen_uv}, key=abs)
     right = [c for c in chosen_uv
              if c.value("sigma0_F_signed", float(np.sqrt(6.) * c.data["s_over_H"][0])) == sigma]
-    final = np.asarray([c.data["Sigma_F"][-1] for c in chosen_uv])
+    final = np.asarray([c.data["Sigma_F"][-1] for c in chosen_uv if not isotropic_control(c)])
     pos = final[final > 0]
     if pos.size and pos.min() < pos.max():
         norm = LogNorm(vmin=float(pos.min()), vmax=float(pos.max()))
@@ -288,9 +311,9 @@ def sweep(cases: list[Case], rep: Case, output: Path, manifest: dict) -> None:
     else:
         norm = Normalize(vmin=0, vmax=1)
     cmap = plt.get_cmap("viridis")
-    fig, axes = make_figure(1, 2, 108, "Initial-condition sweep: actual saved points",
-                           f"UV scale = {uv:g}; exact parameter slices; no interpolation")
-    fig.subplots_adjust(right=.845, wspace=.46)
+    fig, axes = make_figure(1, 2, 112, "Initial-condition sweep: actual saved points",
+                           f"UV scale = {uv:g}; exact slices; hollow diamond = isotropic-input control")
+    fig.subplots_adjust(right=.845, bottom=.235, top=.80, wspace=.46)
     specs = [
         (left, lambda c: np.sqrt(6.) * c.data["s_over_H"][0],
          lambda c: c.data["signed_Pi_m_F"][0],
@@ -304,21 +327,31 @@ def sweep(cases: list[Case], rep: Case, output: Path, manifest: dict) -> None:
         xv = np.asarray([getx(c) for c in subset], dtype=float)
         yv = np.asarray([gety(c) for c in subset], dtype=float)
         cv = np.asarray([c.data["Sigma_F"][-1] for c in subset])
-        positive = cv > 0
+        control = np.asarray([isotropic_control(c) for c in subset])
+        positive = (cv > 0) & ~control
         if positive.any():
             ax.scatter(xv[positive], yv[positive], c=cv[positive], norm=norm, cmap=cmap,
                        s=31, linewidths=.4, edgecolors="#303030", zorder=3)
-        if (~positive).any():
-            ax.scatter(xv[~positive], yv[~positive], facecolors="none", edgecolors="black",
-                       s=37, linewidths=.9, label=r"Final $\Sigma_F=0$", zorder=4)
-            ax.legend(loc="best", fontsize=6.7)
-        signed_axis(ax, "x", xv)
-        signed_axis(ax, "y", yv)
+        if control.any():
+            ax.scatter(xv[control], yv[control], facecolors="white", edgecolors="black",
+                       marker="D", s=45, linewidths=1., zorder=4)
+        zero = (cv == 0) & ~control
+        if zero.any():
+            ax.scatter(xv[zero], yv[zero], facecolors="none", edgecolors="black",
+                       s=37, linewidths=.9, zorder=4)
+        # These sparse, signed slices have only three nonzero physical levels.
+        # Linear coordinates preserve their actual values without magnifying
+        # isotropic floating-point residuals into a misleading logarithmic axis.
+        ax.axvline(0, color=".75", lw=.6, zorder=0)
+        ax.axhline(0, color=".75", lw=.6, zorder=0)
+        ax.ticklabel_format(axis="both", style="sci", scilimits=(-3, 3), useMathText=True)
+        ax.margins(x=.12, y=.14)
         ax.set_xlabel(xlabel)
         ax.set_ylabel(ylabel)
-        ax.set_title(title + f"; n={len(subset)}", fontsize=8.5)
+        ax.set_title(title + f"; n={len(subset)}", fontsize=8.5, y=1.025, pad=8)
         panels.append({"case_ids": [c.case_id for c in subset], "x": xv.tolist(), "y": yv.tolist(),
-                       "color_final_Sigma_F": cv.tolist(), "exact_zero_color_count": int((~positive).sum())})
+                       "color_final_Sigma_F": cv.tolist(), "exact_zero_color_count": int(zero.sum()),
+                       "isotropic_control_ids_excluded_from_color_scale": [c.case_id for c in subset if isotropic_control(c)]})
     if pos.size:
         cax = fig.add_axes([.885, .23, .025, .56])
         fig.colorbar(ScalarMappable(norm=norm, cmap=cmap), cax=cax,
@@ -331,25 +364,106 @@ def sweep(cases: list[Case], rep: Case, output: Path, manifest: dict) -> None:
 def evolution(cases: list[Case], picks: list[Case], output: Path, manifest: dict) -> None:
     fields = [("Sigma_F", r"Shear $\Sigma_F$"), ("Pi_m_F", r"Collisionless DM $\Pi_{m,F}$"),
               ("Pi_r_F", r"Free radiation $\Pi_{r,F}$"), ("Pi_total_F", r"Tensor-sum norm $\Pi_{{\rm total},F}$")]
+    controls = [c for c in cases if isotropic_control(c)]
+    active = [c for c in cases if not isotropic_control(c)] or cases
     fig, axes = make_figure(2, 2, 158, "Shear and separate anisotropic-stress evolution",
-                           f"{len(cases)} completed histories in gray; selected case IDs in color")
+                           f"{len(active)} anisotropic cases; {len(controls)} isotropic controls shown separately in 02b")
     colors = plt.get_cmap("tab10").colors
+    omissions = {}
     for ax, (key, label) in zip(axes.flat, fields):
-        zero, negative = 0, 0
-        for c in cases:
-            zc, nc = positive_line(ax, c.data["z"], c.data[key], color=".69", alpha=.38, lw=.65)
-            zero += zc
-            negative += nc
+        threshold = max((float(c.data[key].max()) for c in controls), default=0.)
+        visible = [np.where(c.data[key] > threshold, c.data[key], np.nan) for c in active]
+        count = sum(int(np.count_nonzero(c.data[key] <= threshold)) for c in active)
+        for c, values in zip(active, visible):
+            positive_line(ax, c.data["z"], values, color=".63", alpha=.42, lw=.65)
         for i, c in enumerate(picks):
-            positive_line(ax, c.data["z"], c.data[key], color=colors[i], lw=1.45,
-                          label=c.alias, zorder=5)
-        finish_log(ax, [c.data[key] for c in cases], zero, negative)
+            if isotropic_control(c):
+                continue
+            values = np.where(c.data[key] > threshold, c.data[key], np.nan)
+            positive_line(ax, c.data["z"], values, color=colors[i], lw=1.45,
+                          label=c.case_id, zorder=5)
+        finish_log(ax, visible)
+        ax.set_title(f"{count} samples ≤ control max {threshold:.1e} omitted; no floor", fontsize=6.4, pad=8)
         z_axis(ax, cases)
         ax.set_ylabel(label)
         ax.legend(loc="upper right", ncol=2, fontsize=6.7)
+        omissions[key] = {"threshold": threshold, "omitted_active_samples": count,
+                          "definition": "maximum stored norm across exact isotropic-input controls"}
+    shared_top_legend(fig, axes)
     save_figure(fig, output, "02_stress_time_evolution",
                 {"kind": "all_saved_norm_histories", "highlighted_case_ids": [c.case_id for c in picks],
-                 "zero_policy": "exact zeros omitted on log ordinate; no floor or component-norm summation"}, manifest)
+                 "control_case_ids": [c.case_id for c in controls], "display_omissions": omissions,
+                 "zero_policy": "control-envelope values omitted explicitly; no substituted floor or component-norm summation"}, manifest)
+    if controls:
+        control_residuals(controls, output, manifest)
+
+
+def control_residuals(cases: list[Case], output: Path, manifest: dict) -> None:
+    fig, axes = make_figure(2, 2, 151, "Isotropic-input numerical residuals",
+                           "Signed stored values on linear axes; initial anisotropy inputs are exactly zero")
+    specs = [("signed_Sigma_F", r"Signed $\Sigma_F$", lambda s: np.sqrt(6.)*s["s_over_H"]),
+             ("signed_Pi_m_F", r"Signed $\Pi_{m,F}$", lambda s: s["signed_Pi_m_F"]),
+             ("signed_Pi_r_F", r"Signed $\Pi_{r,F}$", lambda s: s["signed_Pi_r_F"]),
+             ("signed_Pi_total_F", r"Signed $\Pi_{{\rm total},F}$", lambda s: s["signed_Pi_m_F"]+s["signed_Pi_r_F"])]
+    evidence = {}
+    for ax, (key, label, getter) in zip(axes.flat, specs):
+        for c in cases:
+            ax.plot(c.data["z"], getter(c.data), lw=1.2, label=f"{c.case_id} UV={c.value('uv_scale',1.):g}")
+        ax.axhline(0, color=".6", lw=.6)
+        ax.ticklabel_format(axis="y", style="sci", scilimits=(0, 0), useMathText=True)
+        z_axis(ax, cases)
+        ax.set_ylabel(label)
+        ax.legend(loc="best", fontsize=6.3)
+        evidence[key] = {"maximum_absolute": max(float(np.max(np.abs(getter(c.data)))) for c in cases)}
+    shared_top_legend(fig, axes)
+    save_figure(fig, output, "02b_isotropic_control_residuals",
+                {"kind": "signed_isotropic_input_numerical_residuals", "case_ids": [c.case_id for c in cases],
+                 "metrics": evidence, "interpretation": "No physical anisotropy inferred from isotropic-input finite arithmetic residuals"}, manifest)
+
+
+def signed_cancellation(cases: list[Case], output: Path, manifest: dict) -> None:
+    case = next((c for c in cases if c.case_id == "P024"), None)
+    if case is None:
+        opposing = [c for c in cases if c.value("A_m")*c.value("A_r") < 0]
+        if not opposing:
+            return
+        case = max(opposing, key=lambda c: abs(c.value("sigma0_F_signed")))
+    data, z = case.data, case.data["z"]
+    matter, radiation = data["signed_Pi_m_F"], data["signed_Pi_r_F"]
+    total = matter+radiation
+    norm_sum = np.abs(matter)+np.abs(radiation)
+    ratio = np.divide(np.abs(total), norm_sum, out=np.full_like(total, np.nan), where=norm_sum>0)
+    fig, axes = make_figure(2, 2, 157, "Signed components and tensor cancellation",
+                           f"{case.case_id}: initial signed ΣF={case.value('sigma0_F_signed'):g}, Am={case.value('A_m'):g}, Ar={case.value('A_r'):g}")
+    ax = axes[0, 0]
+    for values, label, color, ls in [(matter, r"Matter $\Pi_{m,F}^{s}$", "#0072B2", "-"),
+                                    (radiation, r"Radiation $\Pi_{r,F}^{s}$", "#D55E00", "--"),
+                                    (total, "Signed tensor sum", "#222222", "-.")]:
+        ax.plot(z, values, label=label, color=color, ls=ls)
+    ax.axhline(0, color=".6", lw=.7)
+    ax.set_ylabel("Signed stress amplitude")
+    ax.ticklabel_format(axis="y", style="sci", scilimits=(-3, 3), useMathText=True)
+    ax.legend(loc="best", fontsize=6.4)
+    ax = axes[0, 1]
+    ax.plot(z, np.sqrt(6.)*data["s_over_H"], color="#009E73")
+    ax.set_ylabel(r"Signed shear $\Sigma_F^s$")
+    ax = axes[1, 0]
+    positive_line(ax, z, np.abs(total), color="#222222", label="Norm of tensor sum")
+    positive_line(ax, z, norm_sum, color="#CC79A7", ls="--", label="Sum of norms (comparison)")
+    finish_log(ax, [np.abs(total), norm_sum])
+    ax.set_ylabel("Stress norms")
+    ax.legend(loc="best", fontsize=6.4)
+    ax = axes[1, 1]
+    ax.plot(z, ratio, color="#0072B2")
+    ax.set_ylim(0, 1.02)
+    ax.set_ylabel(r"$|\Pi_m^s+\Pi_r^s|/(|\Pi_m^s|+|\Pi_r^s|)$")
+    for ax in axes.flat:
+        z_axis(ax, [case])
+    save_figure(fig, output, "02c_signed_tensor_cancellation",
+                {"kind": "signed_same_trajectory_components", "case_id": case.case_id,
+                 "ratio_min": float(np.nanmin(ratio)), "ratio_max": float(np.nanmax(ratio)),
+                 "total_norm_check_maxabs": float(np.max(np.abs(data["Pi_total_F"]-np.abs(total)))),
+                 "interpretation": "same-trajectory components, not species-off causal experiment"}, manifest)
 
 
 def species_panel(ax, case: Case, iso: str) -> dict:
@@ -385,7 +499,6 @@ def species_panel(ax, case: Case, iso: str) -> dict:
     if np.any(fractions > 0):
         lo, hi = ax.get_ylim()
         ax.set_ylim(lo, max(hi, 1.08))
-    ax.legend(loc="best", ncol=2, fontsize=7)
     evidence.update({"fraction_status": "NORMALIZED_ON_POSITIVE_TOTAL_ONLY",
                      "zero_fraction_samples_omitted": zeros, "negative_fraction_samples_omitted": negative,
                      "sum_minus_one_maxabs": float(np.nanmax(np.abs(fractions.sum(axis=0) - 1.)))})
@@ -398,8 +511,19 @@ def species_figures(case: Case, output: Path, manifest: dict) -> None:
             ("03c_lithium_isotopes", ["Li6", "Li7"], 1, 2, 99)]
     for name, isotopes, rows, cols, height in sets:
         fig, axes = make_figure(rows, cols, height, "Isotope-resolved ionization history",
-                               f"Representative {case.alias}; UV scale={case.value('uv_scale', 1.):g}; each isotope has its own denominator")
+                               f"Representative {case.case_id}; UV scale={case.value('uv_scale', 1.):g}; each isotope has its own denominator")
+        fig.subplots_adjust(top=.78)
         evidence = [species_panel(ax, case, iso) for ax, iso in zip(axes.flat, isotopes)]
+        max_charge = max(GROUPS[iso][0] for iso in isotopes)
+        names = case.data["species_names"].tolist()
+        handles = []
+        for q in range(max_charge+1):
+            members = [f"{iso}_{q}" for iso in isotopes if iso != "n" and GROUPS[iso][0] >= q]
+            all_zero = members and all(np.all(case.data["Y"][names.index(name)] == 0) for name in members)
+            label = ("I", "II", "III", "IV")[q] + (" (identically zero)" if all_zero else "")
+            handles.append(Line2D([], [], color=ION_COLORS[q], ls=ION_STYLES[q], label=label))
+        fig.legend(handles=handles, loc="center", bbox_to_anchor=(.53, .865), ncol=len(handles),
+                   fontsize=7.2, frameon=False)
         save_figure(fig, output, name, {"kind": "isotope_charge_fractions", "case_id": case.case_id,
                                       "species_evidence": evidence}, manifest)
 
@@ -408,24 +532,25 @@ def thermal_photons(cases: list[Case], picks: list[Case], rep: Case, output: Pat
     colors = plt.get_cmap("tab10").colors
     fig, axes = make_figure(1, 2, 99, "Reacting gas temperature and electron abundance",
                            "Completed histories in gray; selected case IDs in color")
-    for ax, key, ylabel in zip(axes.flat, ("T_K", "xe"), ("Gas temperature [K]", r"Electron abundance $x_e$ (stored definition)")):
+    for ax, key, ylabel in zip(axes.flat, ("T_K", "xe"), ("Gas temperature [K]", r"Electron abundance $x_e=n_e/n_{\rm H,ref}$")):
         zero, negative = 0, 0
         for c in cases:
             zc, nc = positive_line(ax, c.data["z"], c.data[key], color=".7", lw=.65, alpha=.4)
             zero += zc
             negative += nc
         for i, c in enumerate(picks):
-            positive_line(ax, c.data["z"], c.data[key], color=colors[i], label=c.alias, lw=1.5)
+            positive_line(ax, c.data["z"], c.data[key], color=colors[i], label=c.case_id, lw=1.5)
         finish_log(ax, [c.data[key] for c in cases], zero, negative)
         z_axis(ax, cases)
         ax.set_ylabel(ylabel)
-        ax.legend(loc="best", ncol=2, fontsize=6.7)
+        ax.legend(loc="upper right", ncol=2, fontsize=6.7)
+    shared_top_legend(fig, axes)
     save_figure(fig, output, "04a_temperature_electrons", {"kind": "gas_history", "case_ids": [c.case_id for c in picks]}, manifest)
 
     fig, axes = make_figure(1, 2, 101, "Soft-UV photon populations and energies",
-                           f"Representative {rep.alias}; three stored bands; no reconstructed source history")
+                           f"Representative {rep.case_id}; three stored bands; no reconstructed source history")
     for ax, key, ylabel in zip(axes.flat, ("UV_N_perH", "UV_mean_eV"),
-                              ("Photon abundance per H nucleus", "Mean photon energy [eV]")):
+                              ("Photon abundance per reference H", "Mean photon energy [eV]")):
         zero, negative = 0, 0
         for j, values in enumerate(rep.data[key]):
             zc, nc = positive_line(ax, rep.data["z"], values, color=ION_COLORS[j],
@@ -452,13 +577,14 @@ def conservation(cases: list[Case], picks: list[Case], output: Path, manifest: d
             zc, _ = positive_line(ax, c.data["z"], values, color=".69", lw=.65, alpha=.4)
             zero += zc
         for i, c in enumerate(picks):
-            positive_line(ax, c.data["z"], np.abs(c.data[key]), color=colors[i], label=c.alias, lw=1.5)
+            positive_line(ax, c.data["z"], np.abs(c.data[key]), color=colors[i], label=c.case_id, lw=1.5)
         finish_log(ax, [np.abs(c.data[key]) for c in cases], zero)
         z_axis(ax, cases)
         ax.set_ylabel(label)
-        ax.legend(loc="best", ncol=2, fontsize=6.7)
+        ax.legend(loc="upper right", ncol=2, fontsize=6.7)
         metrics[key] = {"max_abs": max(float(np.max(np.abs(c.data[key]))) for c in cases),
                         "zero_samples": zero}
+    shared_top_legend(fig, axes)
     save_figure(fig, output, "04c_conservation_diagnostics", {"kind": "sampled_consistency_only", "metrics": metrics}, manifest)
 
 
@@ -478,6 +604,9 @@ def main(argv: list[str] | None = None) -> int:
         "physics_split": "isotropic reacting gas pi_gas=0; anisotropic matter is collisionless nonbaryonic DM",
         "norm": "full Frobenius; half-contraction values are smaller by sqrt(2)",
         "total_norm": "stored Pi_total_F; tensor signed sum precedes norm",
+        "signed_LRS_convention": "sigma_ab=diag(-s,-s,2s), pi_A=diag(-p_A,-p_A,2p_A), Sigma_F_signed=sqrt(6)*s/H, Pi_A_F_signed=sqrt(6)*kappa*p_A/H^2",
+        "display_control_envelope": "Observed control maximum is a declared display cutoff only, not a certified numerical error bound. No stored value is replaced.",
+        "rho_array_units": "rho_baryon, rho_m_kinetic and rho_r_free are in units of rho_crit,0, not SI energy densities; _J_m3 arrays are separate in NPZ",
         "new_ODE_integrations": 0, "data_source": str(args.input.resolve()),
         "representative_case": rep.case_id, "representative_selection": "explicit --case or median UV scale then smallest initial tensor amplitudes",
         "highlighted_case_ids": [c.case_id for c in picks], "skipped_incomplete_receipts": skipped,
@@ -519,6 +648,7 @@ def main(argv: list[str] | None = None) -> int:
         writer.writerows(rows)
     sweep(cases, rep, args.output, manifest)
     evolution(cases, picks, args.output, manifest)
+    signed_cancellation(cases, args.output, manifest)
     species_figures(rep, args.output, manifest)
     thermal_photons(cases, picks, rep, args.output, manifest)
     conservation(cases, picks, args.output, manifest)
