@@ -1,0 +1,39 @@
+{
+  "schema": "PHYS75_SECTOR_MEMORY_CONTRACT_V1",
+  "parent": "71e925938387b73958c8881a06ef387e6874fafe",
+  "objective": "Contribute to the existing REI matter/radiation pilot without replaying its completed sweeps: source-bound vectorized shear-memory analysis and an exact finite collisionless radiation representation.",
+  "upstreams": {
+    "REI198": "8bd35af5f11c7ea5945b656be1c013d1c1933498",
+    "REI213": "d32cd99fa19c65aa1ca63dbc8aab8741834270e8",
+    "HH127": "71e925938387b73958c8881a06ef387e6874fafe"
+  },
+  "physics": {
+    "model": "non-tilted reflection-even LRS Bianchi I, original owner closure",
+    "sigma": "diag(-s,-s,2s)",
+    "pi_A": "diag(-p_A,-p_A,2p_A), A=m,r",
+    "K_proper_time_SI": "8*pi*G/c^2, pressure in J/m^3, H and s in s^-1",
+    "signed_half_coordinates": "S=sqrt(3)*s/H; P_A=sqrt(3)*K*p_A/H^2",
+    "Frobenius_coordinates": "sqrt(2) times half coordinates; magnitudes nonnegative; signs separately retained",
+    "total": "norm of signed tensor sum, never sum of sector norms",
+    "memory_identity": "S_f=exp(-3*dx)*H_i/H_f*S_i+integral[exp(3*(x-x_f))*H/H_f*P_m]dx+integral[exp(3*(x-x_f))*H/H_f*P_r]dx",
+    "radiation_reduction": "Only for source-free collisionless E'=b' M E with the exact unchanged constant finite-L owner matrix: E=exp((b-b_i)M)E_i. Not applicable to native chemistry/UV/Thomson C15 without another derivation.",
+    "HH_R10": "OFF"
+  },
+  "execution": {
+    "completed_sweep_replays": 0,
+    "detailed_benchmarks": false,
+    "new_work": "saved-data analysis; only bounded new-input representation-equivalence controls if needed",
+    "NCP_policy": "reuse original cooperative capacity leases; other sessions are not a veto; use actual free CPU/RAM and original budgets; no foreign signals",
+    "cpu_ceiling": 64,
+    "ram_ceiling_gib": 128,
+    "headroom_gib": 16,
+    "nested_threads": 1
+  },
+  "claims": {
+    "sampled_memory_quadrature": "DIAGNOSTIC_NOT_CONTINUUM_ERROR_BOUND",
+    "path_contributions": "NOT_COUNTERFACTUAL_SPECIES_REMOVAL",
+    "speedup": "NOT_MEASURED",
+    "production": "NOT_ISSUED"
+  },
+  "stage": "R1-R5_C1-C4_CONTRACT_AND_INTAKE_CHECKPOINT"
+}
