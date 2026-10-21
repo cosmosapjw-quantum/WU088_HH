@@ -1,0 +1,56 @@
+{
+  "schema": "PHYS76_TIME_TRANSPORT_CONTRACT_V1",
+  "unit": "PHYS76",
+  "parent_commit": "b76fd4b5d0dfe4850ebde66a8a10f78402d36c00",
+  "science_baseline": "92f5ab9dba531ebe05909dcb77d3740d2c68c580",
+  "selected_parent_obligation": "CONTINUUM_TIME_ANGULAR_CERTIFICATE",
+  "bounded_contribution": [
+    "all_node_saved_history_signed_simpson_transport",
+    "conditional_continuous_time_interval_response"
+  ],
+  "objective": "Advance a concrete numerical obligation and deliver separate matter/radiation time-evolution plots from immutable source histories; assess new z4-to2 continuation only after actual source intake.",
+  "physics": {
+    "frame": "common normal orthonormal frame",
+    "signature": "-+++",
+    "sigma": "diag(-s,-s,2s)",
+    "pi_A": "diag(-p_A,-p_A,2*p_A)",
+    "K_proper_time": "8*pi*G/c^2",
+    "half": "S=sqrt(3)*s/H; P_A=sqrt(3)*K*p_A/H^2",
+    "Frobenius": "sqrt(2)*abs(signed_half)",
+    "total": "norm of signed tensor sum",
+    "attribution": "conditional on same coupled trajectory",
+    "HH_R10": "OFF"
+  },
+  "constraints": {
+    "completed_science_replays": 0,
+    "benchmark_campaign": false,
+    "production": "NOT_ISSUED",
+    "original_science_files": "UNCHANGED",
+    "other_repositories": "READ_ONLY",
+    "NCP_cpu_cap": 64,
+    "NCP_memory_cap_GiB": 128,
+    "NCP_memory_reserve_GiB": 16,
+    "nested_threads": 1,
+    "foreign_process_signals": false
+  },
+  "implementation_acceptance": [
+    "endpoint_matches_pinned_PR128_sampled_Simpson",
+    "all_node_matches_independent_cumulative_Simpson_on_bounded_grid",
+    "signed_cancellation_and_sqrt2_preserved",
+    "invalid_inputs_rejected_without_mutation",
+    "conditional_interval_output_requires_whole_cell_enclosure_provenance",
+    "figures_visually_reviewed"
+  ],
+  "coverage_at_intake": {
+    "REI198": "1231 collisionless histories; z20 to4",
+    "REI213": "729 warm C15 histories; a0.1999 to0.2",
+    "HH74": "63 collisionless controls; separate scope"
+  },
+  "actual_initial_runtime": {
+    "python": "PYTHON_PASS",
+    "cpp": "CPP_PASS",
+    "local_visible_cpu": 9,
+    "ssh_key_path_present": false,
+    "git_network": "default proxy failure, escalated read succeeded"
+  }
+}
