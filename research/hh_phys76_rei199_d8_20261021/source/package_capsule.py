@@ -25,6 +25,7 @@ def main() -> None:
         ROOT / "source" / "package_capsule.py",
         ROOT / "delivery" / "PHYS76_REI199_D8_RUN_RECORD.json",
         ROOT / "delivery" / "PUBLICATION_BACKUP_STATUS.json",
+        ROOT / "delivery" / "PROVIDER_BACKUP_RESTORE_RECEIPT.json",
         ARCHIVE,
     ]
     missing = [str(p) for p in files if not p.is_file()]
