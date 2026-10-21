@@ -1,0 +1,55 @@
+{
+  "HH_R10": "OFF",
+  "NCP_scientific_jobs": 0,
+  "artifacts": {
+    "RUNNER_TEST_OUTPUT.txt": {
+      "bytes": 2862,
+      "sha256": "adea775b8f1f1d89091c137efe5ea6d546031db648a4337482de567fdb672516"
+    },
+    "SHARED_RUNNER_KO.md": {
+      "bytes": 9444,
+      "sha256": "cf594baa84e6b3bbe501c3198c9bcc8947eb19193db71bd2733f9f6d99bf6f60"
+    },
+    "source/run_enclosures.py": {
+      "bytes": 39509,
+      "sha256": "0700ee87672bdf062bd616e256472524caab006a4138f129d8b24e3d0ee2aea4"
+    },
+    "tests/test_run_enclosures.py": {
+      "bytes": 18052,
+      "sha256": "e21b138b10ff36941020c38c9ed6effac64d8a13f0fc4e5a19ebdbfdf862b59e"
+    }
+  },
+  "benchmark_runs": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/workspace/scratch/61913f66989c/phys77_inventory/tests",
+    "-p",
+    "test_run_enclosures.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "known_limitations": [
+    "Advisory sampled capacity, not kernel CPU/RSS reservation.",
+    "Same host shared lease path and PID namespace required.",
+    "Dispatcher deadline bounds new dispatch only; active workers are not killed.",
+    "Current local sandbox PID stat lookup was unavailable; actual NCP handoff remains unexecuted."
+  ],
+  "new_ODE_solves": 0,
+  "observed_utc": "2026-10-21T13:17:48.308331+00:00",
+  "production_admission": "NOT_ISSUED",
+  "python": "3.12.14",
+  "real_enclosure_calls": 0,
+  "repaired_findings": [
+    "Spawn handshake Event retained in active worker record until child exit.",
+    "Own PID liveness checked before shared lease directory creation.",
+    "Returned JSON preserved before post-call source/input/result validation; failed validation never adopts it."
+  ],
+  "schema": "PHYS77_PENDING_RUNNER_VALIDATION_V1",
+  "status": "PASS_FAKE_WORKER_CONTRACTS",
+  "test_scope": "Fake JSON worker plus temporary case outputs and synthetic liveness/resource observations; actual flock; no actual engine imported by tests.",
+  "tests": 17
+}

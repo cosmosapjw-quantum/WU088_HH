@@ -1,0 +1,40 @@
+{
+  "schema": "PHYS77_INDEPENDENT_MATH_CODE_REVIEW_V1",
+  "timestamp_utc": "2026-10-21T13:16:25.984891+00:00",
+  "status": "PASS_SCOPED_FINITE_REAL_LIFT_CELL_KERNEL",
+  "open_findings": 0,
+  "closed_findings": [
+    {
+      "id": "GENERIC_CELL_REVERSED_INITIAL_INTERVAL",
+      "first_receipt": "INDEPENDENT_FIRST_TESTS.json",
+      "impact": "Generic certify_cell accepted malformed reversed initial interval; actual certify_request inputs were valid.",
+      "correction": "Validate finite Decimal ordered initial and RHS intervals; no arithmetic change.",
+      "verification": "16 unchanged analytic/arithmetic controls PASS; final portable source also 16 PASS."
+    }
+  ],
+  "final_test_count": 16,
+  "final_source_sha256": {
+    "/workspace/scratch/61913f66989c/WU088_HH_PHYS77/research/hh_phys77_whole_cell_20261021/source/owner_interval.py": "594a7e9c36608946e0e360ae67f55d4be210df611b60953f8ee64bb7211df0b5",
+    "/workspace/scratch/61913f66989c/WU088_HH_PHYS77/research/hh_phys77_whole_cell_20261021/source/cell_enclosure.py": "b4a542170cbc8a62e64dee07bf50e5c5726fe5c9c518650607593d801375e877",
+    "/workspace/scratch/61913f66989c/WU088_HH_PHYS77/research/hh_phys77_whole_cell_20261021/source/export_owner.py": "7ebf5f8699d9e58dcc7c2eec4bddd99cf9c9cd1d3999aa923890ae784de5b707",
+    "/workspace/scratch/61913f66989c/phys77_theory/verification/test_cell_independent.py": "5eb20e74239b4ac19a5e4eee8bfee9974afc8f17c75aa80922b4e17f7da8df56"
+  },
+  "validation_bridge_status": "PASS_SCOPED_VALID_INPUT_COMPUTATIONAL_BODY_UNCHANGED",
+  "validation_bridge_saved_intervals": 134,
+  "artifacts_sha256": {
+    "INDEPENDENT_FIRST_TESTS.json": "05b234e58a2e42bcd4c2486eb54f8fcc133748fc64971b8ef35afe1bc8b7b6d4",
+    "INDEPENDENT_FINAL_TESTS.json": "f13c5504d139be63373e1d6681ab397d34bc344c082655ab23d16e330910afb3",
+    "INDEPENDENT_PORTABLE_FINAL_TESTS.json": "e0231a9dbd9148d4ca243a81de4cf011f6fa9aef6c79a32568c41d40ceb12f1d",
+    "INPUT_GUARD_VALIDATION_BRIDGE.json": "6b49d8b713f9a8eb9f33131eb6deaaac30b7f21f22ea5535686ce40afe15ef7e",
+    "INDEPENDENT_REVIEW_KO.md": "ef389d998bd75016a9570d8d63715f9815e5b626db708e46a831571f1c938eec",
+    "test_cell_independent.py": "5eb20e74239b4ac19a5e4eee8bfee9974afc8f17c75aa80922b4e17f7da8df56",
+    "bridge_input_guard.py": "4622b0f6e157a979e564f559491add1af0674ca8a5c71db5a7093b1b96f1be83"
+  },
+  "scope": "Strict first-exit finite real-lift cell kernel. No full-history, historic machine, momentum/angular continuum certificate.",
+  "new_ODE_solves": 0,
+  "actual_packet_cell_replays": 0,
+  "benchmark_runs": 0,
+  "NCP_jobs": 0,
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}
