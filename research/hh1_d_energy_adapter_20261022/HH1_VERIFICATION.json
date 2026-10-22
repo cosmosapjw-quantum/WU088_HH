@@ -1,0 +1,57 @@
+{
+  "schema": "HH1_C99_FRACTION_VERIFICATION_V1",
+  "status": "PASS_SCOPED",
+  "event_cases": 72,
+  "invalid_or_domain_cases": 8,
+  "temperature_cases": 27,
+  "closed_cycle_checks": 1,
+  "max_relative_energy_residual": 8.549096043503075e-17,
+  "max_scaled_component_error": 7.246087870182086e-17,
+  "max_scaled_temperature_error": 1.7074648717612224e-16,
+  "I_D_eV": 13.603705453302721,
+  "delta_model_eV": 0.003705453302722427,
+  "kb_eV_K": 8.617333262145179e-05,
+  "examples": {
+    "D_PI_18eV": {
+      "thermal": 4.396294546697279,
+      "binding": 13.603705453302721,
+      "radiation": -18.0,
+      "electron": 1.0,
+      "photon_number": -1.0
+    },
+    "D_RR_capture_kT_300K": {
+      "thermal": -0.025851999786435535,
+      "binding": -13.603705453302721,
+      "radiation": 13.629557453089157,
+      "electron": -1.0,
+      "photon_number": 1.0
+    }
+  },
+  "wall_seconds": 0.3985140949989727,
+  "compiler": "cc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "flags": [
+    "-std=c99",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pedantic",
+    "-fPIC",
+    "-shared"
+  ],
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "precision": "C double / Python float binary64; exact Fraction oracle on binary64 inputs",
+  "source_sha256": {
+    "hh1_energy_adapter.h": "ce1f205aba85756204d83b22ea430e0f1707cb94b5c63ce132176c81cb524554",
+    "hh1_energy_adapter.c": "616ffb4e3fa9441594ffdf8ea4ec14b47d89814a271b78d7ebff52633ee0ebef",
+    "verify_hh1.py": "c685ee3a92c99136fc78d1f76fbbe83a87483883d2a66c6d73c7b96262199899"
+  },
+  "execution_counts": {
+    "new_ode": 0,
+    "historical_replay": 0,
+    "ncp": 0,
+    "primary_verification_pass": 1
+  },
+  "scope": "Event energy component only. D rates/cross sections and full coupled model remain OPEN."
+}
