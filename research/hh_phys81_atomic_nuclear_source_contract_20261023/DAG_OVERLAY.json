@@ -1,6 +1,6 @@
 {
   "schema": "PHYS81_ADDITIVE_DAG_OVERLAY_V1",
-  "as_of_utc": "2026-10-22T23:27:15.424672+00:00",
+  "as_of_utc": "2026-10-22T23:34:39.855660+00:00",
   "nodes": [
     {
       "id": "LATEST_ACCESSIBLE_IDENTITY_INVENTORY",
@@ -65,6 +65,22 @@
     {
       "id": "BOUND_BOUND_CE_AND_RADIATIVE_COOLING",
       "status": "OPEN_SOURCE_AND_ENERGY_CONTRACT_REQUIRED"
+    },
+    {
+      "id": "EXTERNAL_HE36_REACTIVE_MOMENT_BRIDGE",
+      "status": "COMPLETED_SCOPED_EXTERNAL_REUSE; producer evidence inspected, not rerun",
+      "head": "6403055c3d574ec0bd1ece80147f9711315902e7",
+      "remaining": "Differential gain/net source/thermal-fast particle ownership/stopping/closure/coupled pi remain OPEN"
+    },
+    {
+      "id": "EXTERNAL_REC127_ANGULAR_ESCAPE_MOMENTS",
+      "status": "COMPLETED_SCOPED_EXTERNAL_REUSE; producer evidence inspected, not rerun",
+      "head": "5185c396b7e07076565ca2f5044a5ccd193e6ee1",
+      "remaining": "Q is escape-probability PSTF, not photon stress; resolved-line number/energy mapping OPEN"
+    },
+    {
+      "id": "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP",
+      "status": "OPEN_SOURCE_CONTRACT; connect PHYS81 event energy to HE36 only after compatible number source"
     }
   ],
   "edges": [
@@ -111,11 +127,28 @@
     [
       "NOVEL_FINITE_CI_PARCEL",
       "LOW_T_CI_SOURCE_COVERAGE"
+    ],
+    [
+      "RADIATIVE_CAPTURE_PHOTON_RECOIL",
+      "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP"
+    ],
+    [
+      "EXTERNAL_HE36_REACTIVE_MOMENT_BRIDGE",
+      "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP"
+    ],
+    [
+      "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP",
+      "NUCLEAR_RATES_FAST_PRODUCT_STOPPING"
+    ],
+    [
+      "EXTERNAL_REC127_ANGULAR_ESCAPE_MOMENTS",
+      "FULL_GEOMETRY_SPECTRAL_BACKREACTION"
     ]
   ],
-  "next": "LOW_T_CI_SOURCE_COVERAGE: Li7 threshold-to6eV source/uncertainty first; then bound-bound CE/radiative cooling and He/Li CX source-energy contracts. Nuclear next: thermal-population ownership/finite-T photon-recoil averaging before rates or stopping activation.",
+  "next": "LOW_T_CI_SOURCE_COVERAGE: Li7 threshold-to6eV source/uncertainty first; then bound-bound CE/radiative cooling and He/Li CX source-energy contracts. Nuclear next: thermal-population ownership/finite-T photon-recoil averaging before rates or stopping activation. Reuse new HE36/ANGULAR01 components with their source/ownership distinctions; do not rerun their completed diagnostics.",
   "percent_total_goal": null,
   "percent_reason": "Full objective is an open research DAG without a fixed denominator; statuses are obligation-specific.",
   "HH_R10": "OFF",
-  "production_admission": "NOT_ISSUED"
+  "production_admission": "NOT_ISSUED",
+  "final_freshness_receipt": "delivery/FINAL_REFERENCE_DELTA.json"
 }

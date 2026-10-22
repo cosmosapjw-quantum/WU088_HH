@@ -1,0 +1,7 @@
+# 게시 이후 identity 마감 규칙
+
+과학 결과는S2 commit5745e61be8c8e676c42d48543c8126bc20e717f8에고정됐고과학88files의SHA는delivery/SCIENCE_PAYLOAD_MANIFEST.json에있다. 그후root문서와deliverymetadata만추가·갱신한다.
+
+최종순서: metadata후손commit→actualremoteHEAD/tree및부모대비additive검증→해당unit전체ZIP생성→Drive/Dropbox각upload→각provider에서fullZIPbytes한번download→bytes/SHA256/CRC/각payloadSHA/과학88SHA대조→외부PHYS81_FINAL_DELIVERY_20261023.json작성·양쪽upload/readback→PR137본문및복사형chat handoff갱신. 이최종외부JSON이Git내부checkpoint의pending상태를마감한다. ZIP자기SHA나외부JSON자기IDs를그안에되돌려넣지않는다. JSON자신의IDs/SHA는PR본문과최종chat이소유한다.
+
+S0/S1/S2는stageuploadACK다. 최종두providerfullrestore와동일한증거라고주장하지않는다. 접근할수없는비공개대화와나중에변할remoteHEAD는조회범위밖이다. 과학/geometry/production범위는CONTRACT와FINAL_REPORT를따른다.

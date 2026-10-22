@@ -201,3 +201,17 @@ D_PI_RR_MATCHED_SOURCE_MOMENTS, RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT, LI
 - 상세원자료URL/단위/저장hash: source_data/ 및inventory/.
 - 실행코드: source/finite_ci.py, parcel.py, nuclear_recoil.py, run_science.py, rate_profiles.py.
 - 실제영수증: verification/, results/, figures/PLOT_MANIFEST.json.
+
+## 9. 게시 직전 최신 변경분 종합 (23:30–23:32 UTC)
+
+초기2175-ref조사는21:48UTC snapshot이었다. 최종 게시 직전 직접 관련PR8개와5repo의latest-updated PR3개씩을다시읽고, 이동한2HEAD의actualcommitdiff와새2unit의pinnedhandoff/DAG를대조했다. 이는최종boundedfreshnesscheck이며전체branchinventory를두번완주했다는주장이아니다.
+
+- WU136 부모 `951182dd59bbb59dba454bbaab78ad56d029355a`와 직접 재사용한CR96/PHYS80 과학 입력은불변이다.
+- REI221 최신 `73c5e00cac26b4efc782446975bd6b6762555997`: DELIVERY.json한개추가만있는1commit.
+- REC125 최신 `b28b387fecd6cc71fddb98e95f336eba5f8a647f`:10개handoff/DAG/delivery문서변경의1commit.두경우모두과학code/data/results변화0이다.
+- 새 REC127 ANGULAR01 `5185c396b7e07076565ca2f5044a5ccd193e6ee1`:405angularrows완료.초기5개validator실패는저장행에만stablevalidator를적용해닫았으며전체study를다시실행하지않았다. Q는escape-probability의PSTFmoment이며photonstress가아니다. Linepopulation/Einstein/degeneracy와number/energyinjection매핑은NOT_RUN이다.
+- 새 HE89 HE36 `6403055c3d574ec0bd1ece80147f9711315902e7`:129finite-Htemperaturediagnosticrows,6독립Cartesiancontrols,7event/finite/liftbridgegroups,0newIVP를producerhandoff에서확인했다.5pairedtrials의batchingbenchmark는그기존kernel내부결과이며PHYS81benchmark0과합치지않는다.
+
+HE36의reactivepressure-momentbridge를다음연결에서재사용한다. 현재adapter는common-bulkcentraltensor와charge-neutral21state의all-thermal핵/전자수를요구하며unresolveddEfastownership을거부한다. PHYS81의임의ζrecoil분할을thermal-numbercontract로자동전환하지않는다. Differentialgain/net source,딸핵/stopping,thermal/fastparticleownership,closure,새결합gasIVP와metricfeedback은계속OPEN이다. 기존gaspi_b=0도유지한다.
+
+이새결과들을PHYS81과학payload88개를변경하지않고DAG/handoff의재사용의존성에추가했다. Producer의완료숫자를이번독립검증으로재포장하거나해당cohort를재실행하지않았다. 실제GET19회와원본문/비교증거는delivery/FINAL_REFERENCE_DELTA.json에있다.

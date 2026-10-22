@@ -10,7 +10,7 @@
 
 핵 후보는 Q를 전부 즉시 열로 넣는 폐쇄와, photon+recoil 및 주어진 ζ로 에너지 소유권을 명시하는 사건 회계다. 후자를 선택한다. ζ 자체는 열적 딸핵 population이나 stopping time을 지정하지 않는다. 이 구별을 유지한 cold-COM 수식과 코드를 완성하고 실제 반응률/finite-T averaging은 원전 입력을 기다린다.
 
-## PhysMath 단계별 상태 (S2)
+## PhysMath 단계별 상태 (최종 과학 및 전달)
 
 | 단계 | 실제 산출물 | 상태 |
 |---|---|---|
@@ -23,12 +23,12 @@
 | R7 기호·경량 검산 | Wolfram2, exact rational3, 독립 수치15군/핵15+45 | PASS·각 단위 구분 |
 | R8 과학 판정 | source-qualified finite operator와 cold event 회계 채택 | 범위별 채택, full closure OPEN |
 | R9 계산 연결 | theory/, registry, finite_ci/parcel/nuclear_recoil | 구현 연결 완료 |
-| R10 연구 정리 | S0/S1 보존; S2 새 과학 완료, 최종 handoff는 S3에서 완결 | 단계별 보존 중 |
+| R10 연구 정리 | S0/S1/S2 보존; S3 handoff 작성, remote restore는외부영수증으로마감 | 단계별 보존 중 |
 | C1–C4 기준·매핑·설계·자원 | original7 comparator, fixed gates, create-only identity/shared lease | 완료 |
 | C5 구현 | finite moments, 3/7-state equations, recoil API, runner | 구현·문법 확인 |
 | C6 구현 검증 | 15 atomic groups, 663 nuclear assertions | PASS |
 | C7–C8 과학·수치 검증 | 새3 IVP, refinement/original7, rate profiles | 새3ODE/27profile완료, 비교PASS |
 | C9 독립 코드 검토 | 계산 core/runner findings 교정, 저장결과 점검 | 완료·실제 영수증 |
-| C10 배포·인계 | Draft PR137, 단계 ZIP, 최종 full restore | S0/S1게시·ACK완료; S2/S3진행 |
+| C10 배포·인계 | Draft PR137, 단계 ZIP, 최종 full restore | S0/S1/S2게시·ACK완료; S3최종fullrestore영수증으로마감 |
 
 HH_R10=OFF는 역사적 HH admission flag다. 위 R10 연구 정리 단계와 다른 객체다. Production admission NOT_ISSUED. 전체 목표의 고정 분모가 없으므로 임의 백분율을 쓰지 않는다. 열린 DAG는 DAG_OVERLAY.json이 소유한다.
