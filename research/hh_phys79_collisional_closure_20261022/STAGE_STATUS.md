@@ -1,9 +1,10 @@
-# Checkpoint S0 — source/domain and derivation
+# Checkpoint S1 — code and validated local operators
 
-- Intake: actual PHYS78 head91d0846a940a; scientific and sibling identities compared.
-- Theory: thermal stoichiometry and D/H detailed-balance model derived; primary-source CI domains fixed.
-- Literature gaps: full cold-to-hot CI and He/Li CX energy contracts OPEN.
-- Implementation: locally constructed; C6 tests and isolated science results belong to S1/S2.
-- Scientific execution in this checkpoint: no new ODE; old completed identities not rerun.
-- Publication and provider acknowledgements: external receipts populated after this commit.
+- S0 published at77bd3cc5f482804a246a66a8b2f3b631611e3219 in Draft PR134.
+- Theory: source domains, thermal equation and D/H detailed-balance model derived; full cold-to-hot CI/CX remains OPEN.
+- Code: explicit CI subset and D-CX operator implemented;24 unique lightweight tests PASS.
+- C9: initial29 checks reused; F1/F2/N1 corrected and14 targeted checks PASS; conditioning252states passed unchanged gate.
+- Saved-data analysis: two histories,322 unique epochs; two postprocessing executions because energy-bookkeeping dependency changed;0 ODE.
+- Isolated science: two controls plus one distinct refinement fully specified, not yet executed at this checkpoint.
+- Publication and backup are recorded by post-publication receipts, separately from numerical acceptance.
 - HH_R10=OFF; production admission NOT_ISSUED.

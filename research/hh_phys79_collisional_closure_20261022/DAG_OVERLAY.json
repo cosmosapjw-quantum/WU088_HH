@@ -1,0 +1,148 @@
+{
+  "schema": "PHYS79_DAG_V1",
+  "parent_dags": [
+    "../hh_phys78_sandbox_nuclide_20261021/DAG_OVERLAY.json"
+  ],
+  "parent_head": "91d0846a940abf7817c900102dab488ff87e6a82",
+  "selected_parent_obligation": "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE",
+  "selected_child_scope": "Sourced domain-guarded collisional operator, saved-history diagnostics and isolated energy-conservative controls",
+  "nodes": {
+    "LATEST_INVENTORY": {
+      "status": "COMPLETE_SCOPED_ACCESSIBLE",
+      "evidence": [
+        "inventory/IDENTITY_INVENTORY_KO.md"
+      ],
+      "repositories_catalogued": 51,
+      "WU_branch_refs": 142,
+      "recent_PR_metadata": 74,
+      "sibling_actual_refs": 7,
+      "private_conversations_exhaustive": false
+    },
+    "CI_SOURCE_DOMAIN_REGISTRY": {
+      "status": "COMPLETE_SCOPED",
+      "evidence": [
+        "theory/ATOMIC_SOURCES_PHYS79.md",
+        "theory/SOURCE_EVIDENCE_EXTRACTED.json"
+      ],
+      "elemental_rows": 6,
+      "isotopic_CI_transitions": 13,
+      "all_six_rows_admitted_on_saved_histories": false
+    },
+    "D_H_GROUND_STATE_THERMODYNAMIC_MODEL": {
+      "status": "COMPLETE_CONDITIONAL_DERIVATION",
+      "evidence": [
+        "theory/DH_DETAILED_BALANCE_CLOSURE_KO.md",
+        "verification/DH_DB_WOLFRAM_RECEIPT.json"
+      ],
+      "forward": "Savin_reverse_fit*exp(-43/T)",
+      "raw_forward_accuracy_inherited": false
+    },
+    "THERMAL_STOICHIOMETRY": {
+      "status": "COMPLETE_CONDITIONAL_DERIVATION",
+      "evidence": [
+        "theory/THERMAL_CLOSURE_KO.md",
+        "verification/WOLFRAM_RECEIPT.json",
+        "verification/STOICHIOMETRY_EXACT_CHECK.json"
+      ]
+    },
+    "DOMAIN_GUARDED_IMPLEMENTATION": {
+      "status": "PASS_SCOPED",
+      "evidence": [
+        "source/collisional.py",
+        "verification/LIGHT_TEST_RECEIPT.json",
+        "verification/C9_TARGETED_RECHECK.json"
+      ],
+      "unique_light_tests": 24
+    },
+    "SAVED_PHYS78_OPERATOR_ANALYSIS": {
+      "status": "COMPLETE_SCOPED",
+      "evidence": [
+        "analysis/saved_operator/SUMMARY.json",
+        "theory/SAVED_TRAJECTORY_FINDINGS_KO.md"
+      ],
+      "unique_epochs": 322,
+      "saved_histories": 2,
+      "postprocessing_executions": 2,
+      "new_ODE": 0
+    },
+    "ISOLATED_CONSERVATIVE_CONTROLS": {
+      "status": "PLANNED_NOT_EXECUTED",
+      "evidence": [
+        "inputs/CONTROL_PLAN.json",
+        "verification/RUNNER_INDEPENDENT_REVIEW.json"
+      ],
+      "physical_controls": 2,
+      "distinct_refinement": 1
+    },
+    "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE": {
+      "status": "PARTIAL_WITH_EXECUTABLE_SUBSET",
+      "evidence": [
+        "CONTRACT.json",
+        "theory/ATOMIC_SOURCES_PHYS79.md"
+      ],
+      "remaining": [
+        "LOW_T_CI_SOURCE_COVERAGE",
+        "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+        "D_PI_RR_ENERGY_ADAPTER",
+        "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT"
+      ]
+    },
+    "LOW_T_CI_SOURCE_COVERAGE": {
+      "status": "NEXT_OPEN",
+      "evidence": [
+        "theory/ATOMIC_SOURCES_PHYS79.md"
+      ],
+      "next_action": "Obtain and validate low-temperature cross sections or rates over255..11605K and matching higher-stage domains; construct Maxwellian integration or a sourced matched fit with explicit accuracy."
+    },
+    "HE_LI_CX_STATE_AND_PHOTON_ENERGY": {
+      "status": "OPEN",
+      "evidence": [
+        "theory/ATOMIC_SOURCES_PHYS79.md"
+      ],
+      "next_action": "Resolve Zygelman He final-state branch, corrected Kimura Li nonradiative coefficients/domain, and radiative photon-energy moment before thermal activation."
+    },
+    "D_PI_RR_ENERGY_ADAPTER": {
+      "status": "OPEN",
+      "evidence": [
+        "theory/DH_DETAILED_BALANCE_CLOSURE_KO.md"
+      ],
+      "next_action": "Use one D-shifted ionic potential consistently in PI thresholds, RR emission, CI and CX energy; do not bolt CX heat onto old isotope-blind photon ledger."
+    },
+    "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT": {
+      "status": "OPEN_INHERITED",
+      "evidence": [
+        "../hh_phys78_sandbox_nuclide_20261021/FINAL_REPORT_KO.md"
+      ],
+      "initial_PHYS78": "HII/H=2e-4; other populated isotopes neutral; exploratory"
+    },
+    "LI_HARD_UV_INNER_SHELL_CONTRACT": {
+      "status": "OPEN_INHERITED",
+      "evidence": [
+        "../hh_phys78_sandbox_nuclide_20261021/DAG_OVERLAY.json"
+      ]
+    },
+    "FULL_NATIVE_COLD_EOR": {
+      "status": "OPEN_INHERITED",
+      "evidence": [
+        "../hh_phys78_sandbox_nuclide_20261021/DAG_OVERLAY.json"
+      ]
+    },
+    "PUBLICATION": {
+      "status": "S0_PUBLISHED_S1_PENDING",
+      "evidence": [
+        "delivery/S0_PUBLICATION_RECEIPT.json"
+      ],
+      "PR": 134,
+      "draft": true
+    },
+    "BACKUP": {
+      "status": "S0_DUAL_ACK_S1_PENDING",
+      "evidence": [
+        "delivery/S0_BACKUP_ACK.json"
+      ]
+    }
+  },
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "inherited_open_obligations": "All unchanged PHYS78 open nodes remain open; unit overlay does not silently close them."
+}

@@ -1,0 +1,98 @@
+{
+  "status": "PASS_TARGETED_C9_FIXES",
+  "source_sha256": "7fca190029597888692d770f9641c6c325c921b0fb67da927f5f06db75f2f2cd",
+  "checks": [
+    {
+      "name": "F1_aggregate_overflow_thermal_energy",
+      "passed": true,
+      "error_type": "ValueError",
+      "reason": "PARTICLE_NUMBER_MUST_BE_FINITE_POSITIVE"
+    },
+    {
+      "name": "F1_aggregate_overflow_temperature",
+      "passed": true,
+      "error_type": "ValueError",
+      "reason": "PARTICLE_NUMBER_MUST_BE_FINITE_POSITIVE"
+    },
+    {
+      "name": "F1_aggregate_overflow_rhs",
+      "passed": true,
+      "error_type": "ValueError",
+      "reason": "PARTICLE_NUMBER_MUST_BE_FINITE_POSITIVE"
+    },
+    {
+      "name": "F1_output_overflow_thermal_energy",
+      "passed": true,
+      "error_type": "ValueError",
+      "reason": "THERMAL_ENERGY_MUST_BE_FINITE_POSITIVE"
+    },
+    {
+      "name": "F1_output_overflow_temperature",
+      "passed": true,
+      "error_type": "ValueError",
+      "reason": "TEMPERATURE_MUST_BE_FINITE_POSITIVE"
+    },
+    {
+      "name": "F1_output_underflow_temperature",
+      "passed": true,
+      "error_type": "ValueError",
+      "reason": "TEMPERATURE_MUST_BE_FINITE_POSITIVE"
+    },
+    {
+      "name": "F1_invalid_thermal_input_inf",
+      "passed": true,
+      "error_type": "ValueError",
+      "reason": "NONPOSITIVE_THERMAL_STATE"
+    },
+    {
+      "name": "F1_invalid_thermal_input_nan",
+      "passed": true,
+      "error_type": "ValueError",
+      "reason": "NONPOSITIVE_THERMAL_STATE"
+    },
+    {
+      "name": "F1_invalid_thermal_input_-1.0",
+      "passed": true,
+      "error_type": "ValueError",
+      "reason": "NONPOSITIVE_THERMAL_STATE"
+    },
+    {
+      "name": "F1_invalid_thermal_input_0.0",
+      "passed": true,
+      "error_type": "ValueError",
+      "reason": "NONPOSITIVE_THERMAL_STATE"
+    },
+    {
+      "name": "F2_252_fixed_event_gate",
+      "passed": true,
+      "cases": 252,
+      "maximum_event_relative": 0.0,
+      "note": "Zero event-ledger residual is an operator construction; independent direct-state derivative retained separately."
+    },
+    {
+      "name": "F2_direct_diagnostic_preserved",
+      "passed": true,
+      "maximum_constituent_scaled_discrepancy": 8.84550295442014e-17
+    },
+    {
+      "name": "N1_neutral_model_family_with_explicit_closure",
+      "passed": true,
+      "model": "PHYS79_DOMAIN_GUARDED_CI_DCX_V1",
+      "closure": "raw_fit"
+    },
+    {
+      "name": "reviewed_source_stable_during_checks",
+      "passed": true
+    }
+  ],
+  "unique_targeted_checks": 14,
+  "conditioning_cases": 252,
+  "initial_review_preserved": "C9_REVIEW.json",
+  "closed_findings": [
+    "C9-F1",
+    "C9-F2",
+    "C9-N1"
+  ],
+  "no_new_ode": true,
+  "prior_core29_reused": true
+}

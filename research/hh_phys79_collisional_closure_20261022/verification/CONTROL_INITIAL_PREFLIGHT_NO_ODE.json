@@ -1,0 +1,566 @@
+{
+  "status": "PREFLIGHT_NO_ODE",
+  "tasks": [
+    {
+      "task_id": "C01_BASE",
+      "science_id": "f71aa8b1ef972923b38831a90a43d0fbe038901b2ca50372d0746c1903e1ee69",
+      "physics_id": "a0cdd172c8325b9018e1339c357b4f517bf32cfd31848088c1a24319b12d96fc",
+      "binding": {
+        "schema": "PHYS79_ISOLATED_SCIENCE_ID_V1",
+        "source": {
+          "files": {
+            "inputs/CONTROL_PLAN.json": {
+              "bytes": 3263,
+              "sha256": "a73cad6cd70144cd47f1f655cf99ef65074727ddcd23fcf67d27fada130fb596"
+            },
+            "source/collisional.py": {
+              "bytes": 10467,
+              "sha256": "7fca190029597888692d770f9641c6c325c921b0fb67da927f5f06db75f2f2cd"
+            },
+            "source/phys78_bridge.py": {
+              "bytes": 1019,
+              "sha256": "d86fe9a2d2749d41f9e417aaa55dd94084cde40d8e830556e0131d5edc087190"
+            },
+            "source/run_controls.py": {
+              "bytes": 24004,
+              "sha256": "6338654ea244e9f9354740b4191319e8f5af05b180cc0414ab9c6157e54d8436"
+            },
+            "vendor/PHYS78_PROVENANCE.json": {
+              "bytes": 1123,
+              "sha256": "7920cf6bc53a1704c8760bc367a46fd052f9047a05edf133ff8edc16c969fc64"
+            },
+            "vendor/phys78/source/atomic_network.py": {
+              "bytes": 19903,
+              "sha256": "2e8b5f892961ebf60fb21fe90895c961fde423689634684305c58ba34830bab6"
+            },
+            "vendor/phys78/source/run_pilot.py": {
+              "bytes": 28068,
+              "sha256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124"
+            },
+            "vendor/phys78/vendor/atomic/photo.dat": {
+              "bytes": 17760,
+              "sha256": "a53e73b0af4cc6b801aef67b84bd964e3ed8c9c4992f214e4a69dc7e4443f389"
+            },
+            "vendor/phys78/vendor/atomic/rec_table1.dat": {
+              "bytes": 6048,
+              "sha256": "2382f6896fe58ee1da58c9bd563fd7d02c0d94410dbd4150767eed26a54f5091"
+            }
+          },
+          "sha256": "66f8b3e6c3e4ec46c65079aa2f2c0b991ff9fd55a4530e6487a3b4def67b0d1e",
+          "parent_commit": "91d0846a940abf7817c900102dab488ff87e6a82"
+        },
+        "physics": {
+          "control_id": "C01",
+          "ci_rows": [
+            0,
+            1,
+            3
+          ],
+          "d_cx": true,
+          "d_cx_closure": "detailed_balance",
+          "T_initial_K": 25370.66308424773,
+          "nH_cm3": 0.001,
+          "initial_Y_per_H": [
+            0.9,
+            0.1,
+            2.2143749901159854e-05,
+            2.456250098840149e-06,
+            0.0,
+            0.0,
+            1.06326e-05,
+            1.0740000000000001e-07,
+            0.0,
+            0.08123116237354726,
+            0.0008205167916519925,
+            0.0,
+            1.1879999999999999e-14,
+            1.2e-16,
+            0.0,
+            0.0,
+            5.57073e-10,
+            5.627e-12,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "initial_u_eV_per_H": 3.879249439246715,
+          "isotope_inventory_per_H": {
+            "H1": 1.0,
+            "D": 2.46e-05,
+            "T": 0.0,
+            "He3": 1.074e-05,
+            "He4": 0.08205167916519925,
+            "Li6": 1.2e-14,
+            "Li7": 5.627e-10,
+            "n": 0.0
+          },
+          "ionic_potential_eV": [
+            0.0,
+            13.6,
+            0.0,
+            13.603705453302721,
+            0.0,
+            13.6,
+            0.0,
+            24.59,
+            79.01,
+            0.0,
+            24.59,
+            79.01,
+            0.0,
+            5.392,
+            81.032,
+            203.53199999999998,
+            0.0,
+            5.392,
+            81.032,
+            203.53199999999998,
+            0.0
+          ],
+          "theta_end": 0.1,
+          "k_ref_cm3_s": 1.8288054045780266e-11,
+          "theta_per_proper_second": 1.8288054045780265e-14,
+          "initial_CX_forward_cm3_s": 1.1464049873541788e-08,
+          "initial_CX_reverse_cm3_s": 1.1483496433762313e-08,
+          "frame": "isotropic nonrelativistic gas in one orthonormal rest frame",
+          "proper_volume_and_density": "fixed",
+          "H_per_s": 0.0,
+          "external_heat_bath": false,
+          "PI": false,
+          "RR": false,
+          "gas_anisotropic_stress": 0.0,
+          "units": "K,cm^-3,cm^3/s,eV,proper_s,per_reference_H1"
+        },
+        "numerics": {
+          "method": "DOP853",
+          "rtol": 2e-08,
+          "atol_scaled": 2e-11,
+          "max_step_theta": 7.962755137891653e-05,
+          "saved_samples": 161,
+          "scale_vector": [
+            1.0,
+            1.0,
+            2.46e-05,
+            2.46e-05,
+            1.0,
+            1.0,
+            1.074e-05,
+            1.074e-05,
+            1.074e-05,
+            0.08205167916519925,
+            0.08205167916519925,
+            0.08205167916519925,
+            1.2e-14,
+            1.2e-14,
+            1.2e-14,
+            1.2e-14,
+            5.627e-10,
+            5.627e-10,
+            5.627e-10,
+            5.627e-10,
+            1.0,
+            3.879249439246715
+          ]
+        },
+        "dependencies": {
+          "Python": "3.12.14",
+          "NumPy": "2.3.5",
+          "SciPy": "1.17.0"
+        }
+      }
+    },
+    {
+      "task_id": "C02_BASE",
+      "science_id": "21ba9a5fb0c5f087896b729a1df8e7cf80e4cd94a9cd06b525ea7663bd6d7ee1",
+      "physics_id": "112384ec1dcbe9ec909099874dcbbf04afcb516e6c6b7a32da88f09d86808d32",
+      "binding": {
+        "schema": "PHYS79_ISOLATED_SCIENCE_ID_V1",
+        "source": {
+          "files": {
+            "inputs/CONTROL_PLAN.json": {
+              "bytes": 3263,
+              "sha256": "a73cad6cd70144cd47f1f655cf99ef65074727ddcd23fcf67d27fada130fb596"
+            },
+            "source/collisional.py": {
+              "bytes": 10467,
+              "sha256": "7fca190029597888692d770f9641c6c325c921b0fb67da927f5f06db75f2f2cd"
+            },
+            "source/phys78_bridge.py": {
+              "bytes": 1019,
+              "sha256": "d86fe9a2d2749d41f9e417aaa55dd94084cde40d8e830556e0131d5edc087190"
+            },
+            "source/run_controls.py": {
+              "bytes": 24004,
+              "sha256": "6338654ea244e9f9354740b4191319e8f5af05b180cc0414ab9c6157e54d8436"
+            },
+            "vendor/PHYS78_PROVENANCE.json": {
+              "bytes": 1123,
+              "sha256": "7920cf6bc53a1704c8760bc367a46fd052f9047a05edf133ff8edc16c969fc64"
+            },
+            "vendor/phys78/source/atomic_network.py": {
+              "bytes": 19903,
+              "sha256": "2e8b5f892961ebf60fb21fe90895c961fde423689634684305c58ba34830bab6"
+            },
+            "vendor/phys78/source/run_pilot.py": {
+              "bytes": 28068,
+              "sha256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124"
+            },
+            "vendor/phys78/vendor/atomic/photo.dat": {
+              "bytes": 17760,
+              "sha256": "a53e73b0af4cc6b801aef67b84bd964e3ed8c9c4992f214e4a69dc7e4443f389"
+            },
+            "vendor/phys78/vendor/atomic/rec_table1.dat": {
+              "bytes": 6048,
+              "sha256": "2382f6896fe58ee1da58c9bd563fd7d02c0d94410dbd4150767eed26a54f5091"
+            }
+          },
+          "sha256": "66f8b3e6c3e4ec46c65079aa2f2c0b991ff9fd55a4530e6487a3b4def67b0d1e",
+          "parent_commit": "91d0846a940abf7817c900102dab488ff87e6a82"
+        },
+        "physics": {
+          "control_id": "C02",
+          "ci_rows": [],
+          "d_cx": true,
+          "d_cx_closure": "detailed_balance",
+          "T_initial_K": 300.0,
+          "nH_cm3": 1.0,
+          "initial_Y_per_H": [
+            0.5,
+            0.5,
+            2.45999754e-05,
+            2.46e-11,
+            0.0,
+            0.0,
+            1.074e-05,
+            0.0,
+            0.0,
+            0.08205167916519925,
+            0.0,
+            0.0,
+            1.2e-14,
+            0.0,
+            0.0,
+            0.0,
+            5.627e-10,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "initial_u_eV_per_H": 0.06135016994514652,
+          "isotope_inventory_per_H": {
+            "H1": 1.0,
+            "D": 2.46e-05,
+            "T": 0.0,
+            "He3": 1.074e-05,
+            "He4": 0.08205167916519925,
+            "Li6": 1.2e-14,
+            "Li7": 5.627e-10,
+            "n": 0.0
+          },
+          "ionic_potential_eV": [
+            0.0,
+            13.6,
+            0.0,
+            13.603705453302721,
+            0.0,
+            13.6,
+            0.0,
+            24.59,
+            79.01,
+            0.0,
+            24.59,
+            79.01,
+            0.0,
+            5.392,
+            81.032,
+            203.53199999999998,
+            0.0,
+            5.392,
+            81.032,
+            203.53199999999998,
+            0.0
+          ],
+          "theta_end": 20.0,
+          "k_ref_cm3_s": 2.0717361978905527e-09,
+          "theta_per_proper_second": 2.0717361978905527e-09,
+          "initial_CX_forward_cm3_s": 1.795087317022544e-09,
+          "initial_CX_reverse_cm3_s": 2.0717361978905527e-09,
+          "frame": "isotropic nonrelativistic gas in one orthonormal rest frame",
+          "proper_volume_and_density": "fixed",
+          "H_per_s": 0.0,
+          "external_heat_bath": false,
+          "PI": false,
+          "RR": false,
+          "gas_anisotropic_stress": 0.0,
+          "units": "K,cm^-3,cm^3/s,eV,proper_s,per_reference_H1"
+        },
+        "numerics": {
+          "method": "DOP853",
+          "rtol": 2e-08,
+          "atol_scaled": 2e-11,
+          "max_step_theta": 0.1,
+          "saved_samples": 161,
+          "scale_vector": [
+            1.0,
+            1.0,
+            2.4599999999999998e-05,
+            2.4599999999999998e-05,
+            1.0,
+            1.0,
+            1.074e-05,
+            1.074e-05,
+            1.074e-05,
+            0.08205167916519925,
+            0.08205167916519925,
+            0.08205167916519925,
+            1.2e-14,
+            1.2e-14,
+            1.2e-14,
+            1.2e-14,
+            5.627e-10,
+            5.627e-10,
+            5.627e-10,
+            5.627e-10,
+            1.0,
+            0.06135016994514652
+          ]
+        },
+        "dependencies": {
+          "Python": "3.12.14",
+          "NumPy": "2.3.5",
+          "SciPy": "1.17.0"
+        }
+      }
+    },
+    {
+      "task_id": "C01_REFINED",
+      "science_id": "8d2bb8cd9713eebc1d689771e4a88a29eb37fb334e5df31581735c95dee67018",
+      "physics_id": "a0cdd172c8325b9018e1339c357b4f517bf32cfd31848088c1a24319b12d96fc",
+      "binding": {
+        "schema": "PHYS79_ISOLATED_SCIENCE_ID_V1",
+        "source": {
+          "files": {
+            "inputs/CONTROL_PLAN.json": {
+              "bytes": 3263,
+              "sha256": "a73cad6cd70144cd47f1f655cf99ef65074727ddcd23fcf67d27fada130fb596"
+            },
+            "source/collisional.py": {
+              "bytes": 10467,
+              "sha256": "7fca190029597888692d770f9641c6c325c921b0fb67da927f5f06db75f2f2cd"
+            },
+            "source/phys78_bridge.py": {
+              "bytes": 1019,
+              "sha256": "d86fe9a2d2749d41f9e417aaa55dd94084cde40d8e830556e0131d5edc087190"
+            },
+            "source/run_controls.py": {
+              "bytes": 24004,
+              "sha256": "6338654ea244e9f9354740b4191319e8f5af05b180cc0414ab9c6157e54d8436"
+            },
+            "vendor/PHYS78_PROVENANCE.json": {
+              "bytes": 1123,
+              "sha256": "7920cf6bc53a1704c8760bc367a46fd052f9047a05edf133ff8edc16c969fc64"
+            },
+            "vendor/phys78/source/atomic_network.py": {
+              "bytes": 19903,
+              "sha256": "2e8b5f892961ebf60fb21fe90895c961fde423689634684305c58ba34830bab6"
+            },
+            "vendor/phys78/source/run_pilot.py": {
+              "bytes": 28068,
+              "sha256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124"
+            },
+            "vendor/phys78/vendor/atomic/photo.dat": {
+              "bytes": 17760,
+              "sha256": "a53e73b0af4cc6b801aef67b84bd964e3ed8c9c4992f214e4a69dc7e4443f389"
+            },
+            "vendor/phys78/vendor/atomic/rec_table1.dat": {
+              "bytes": 6048,
+              "sha256": "2382f6896fe58ee1da58c9bd563fd7d02c0d94410dbd4150767eed26a54f5091"
+            }
+          },
+          "sha256": "66f8b3e6c3e4ec46c65079aa2f2c0b991ff9fd55a4530e6487a3b4def67b0d1e",
+          "parent_commit": "91d0846a940abf7817c900102dab488ff87e6a82"
+        },
+        "physics": {
+          "control_id": "C01",
+          "ci_rows": [
+            0,
+            1,
+            3
+          ],
+          "d_cx": true,
+          "d_cx_closure": "detailed_balance",
+          "T_initial_K": 25370.66308424773,
+          "nH_cm3": 0.001,
+          "initial_Y_per_H": [
+            0.9,
+            0.1,
+            2.2143749901159854e-05,
+            2.456250098840149e-06,
+            0.0,
+            0.0,
+            1.06326e-05,
+            1.0740000000000001e-07,
+            0.0,
+            0.08123116237354726,
+            0.0008205167916519925,
+            0.0,
+            1.1879999999999999e-14,
+            1.2e-16,
+            0.0,
+            0.0,
+            5.57073e-10,
+            5.627e-12,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "initial_u_eV_per_H": 3.879249439246715,
+          "isotope_inventory_per_H": {
+            "H1": 1.0,
+            "D": 2.46e-05,
+            "T": 0.0,
+            "He3": 1.074e-05,
+            "He4": 0.08205167916519925,
+            "Li6": 1.2e-14,
+            "Li7": 5.627e-10,
+            "n": 0.0
+          },
+          "ionic_potential_eV": [
+            0.0,
+            13.6,
+            0.0,
+            13.603705453302721,
+            0.0,
+            13.6,
+            0.0,
+            24.59,
+            79.01,
+            0.0,
+            24.59,
+            79.01,
+            0.0,
+            5.392,
+            81.032,
+            203.53199999999998,
+            0.0,
+            5.392,
+            81.032,
+            203.53199999999998,
+            0.0
+          ],
+          "theta_end": 0.1,
+          "k_ref_cm3_s": 1.8288054045780266e-11,
+          "theta_per_proper_second": 1.8288054045780265e-14,
+          "initial_CX_forward_cm3_s": 1.1464049873541788e-08,
+          "initial_CX_reverse_cm3_s": 1.1483496433762313e-08,
+          "frame": "isotropic nonrelativistic gas in one orthonormal rest frame",
+          "proper_volume_and_density": "fixed",
+          "H_per_s": 0.0,
+          "external_heat_bath": false,
+          "PI": false,
+          "RR": false,
+          "gas_anisotropic_stress": 0.0,
+          "units": "K,cm^-3,cm^3/s,eV,proper_s,per_reference_H1"
+        },
+        "numerics": {
+          "method": "DOP853",
+          "rtol": 2e-10,
+          "atol_scaled": 2e-13,
+          "max_step_theta": 1.990688784472913e-05,
+          "saved_samples": 161,
+          "scale_vector": [
+            1.0,
+            1.0,
+            2.46e-05,
+            2.46e-05,
+            1.0,
+            1.0,
+            1.074e-05,
+            1.074e-05,
+            1.074e-05,
+            0.08205167916519925,
+            0.08205167916519925,
+            0.08205167916519925,
+            1.2e-14,
+            1.2e-14,
+            1.2e-14,
+            1.2e-14,
+            5.627e-10,
+            5.627e-10,
+            5.627e-10,
+            5.627e-10,
+            1.0,
+            3.879249439246715
+          ]
+        },
+        "dependencies": {
+          "Python": "3.12.14",
+          "NumPy": "2.3.5",
+          "SciPy": "1.17.0"
+        }
+      }
+    }
+  ],
+  "existing": [
+    {
+      "task_id": "C01_BASE",
+      "science_id": "f71aa8b1ef972923b38831a90a43d0fbe038901b2ca50372d0746c1903e1ee69",
+      "status": "READY"
+    },
+    {
+      "task_id": "C02_BASE",
+      "science_id": "21ba9a5fb0c5f087896b729a1df8e7cf80e4cd94a9cd06b525ea7663bd6d7ee1",
+      "status": "READY"
+    },
+    {
+      "task_id": "C01_REFINED",
+      "science_id": "8d2bb8cd9713eebc1d689771e4a88a29eb37fb334e5df31581735c95dee67018",
+      "status": "READY"
+    }
+  ],
+  "source": {
+    "files": {
+      "inputs/CONTROL_PLAN.json": {
+        "bytes": 3263,
+        "sha256": "a73cad6cd70144cd47f1f655cf99ef65074727ddcd23fcf67d27fada130fb596"
+      },
+      "source/collisional.py": {
+        "bytes": 10467,
+        "sha256": "7fca190029597888692d770f9641c6c325c921b0fb67da927f5f06db75f2f2cd"
+      },
+      "source/phys78_bridge.py": {
+        "bytes": 1019,
+        "sha256": "d86fe9a2d2749d41f9e417aaa55dd94084cde40d8e830556e0131d5edc087190"
+      },
+      "source/run_controls.py": {
+        "bytes": 24004,
+        "sha256": "6338654ea244e9f9354740b4191319e8f5af05b180cc0414ab9c6157e54d8436"
+      },
+      "vendor/PHYS78_PROVENANCE.json": {
+        "bytes": 1123,
+        "sha256": "7920cf6bc53a1704c8760bc367a46fd052f9047a05edf133ff8edc16c969fc64"
+      },
+      "vendor/phys78/source/atomic_network.py": {
+        "bytes": 19903,
+        "sha256": "2e8b5f892961ebf60fb21fe90895c961fde423689634684305c58ba34830bab6"
+      },
+      "vendor/phys78/source/run_pilot.py": {
+        "bytes": 28068,
+        "sha256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124"
+      },
+      "vendor/phys78/vendor/atomic/photo.dat": {
+        "bytes": 17760,
+        "sha256": "a53e73b0af4cc6b801aef67b84bd964e3ed8c9c4992f214e4a69dc7e4443f389"
+      },
+      "vendor/phys78/vendor/atomic/rec_table1.dat": {
+        "bytes": 6048,
+        "sha256": "2382f6896fe58ee1da58c9bd563fd7d02c0d94410dbd4150767eed26a54f5091"
+      }
+    },
+    "sha256": "66f8b3e6c3e4ec46c65079aa2f2c0b991ff9fd55a4530e6487a3b4def67b0d1e",
+    "parent_commit": "91d0846a940abf7817c900102dab488ff87e6a82"
+  },
+  "new_ODE_calls": 0,
+  "command_to_execute": "python source/run_controls.py --execute --output /tmp/hh_phys79_work/WU088_HH/research/hh_phys79_collisional_closure_20261022/results/isolated"
+}

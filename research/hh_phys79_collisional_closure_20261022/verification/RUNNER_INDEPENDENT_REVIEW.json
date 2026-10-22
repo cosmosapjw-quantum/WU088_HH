@@ -1,0 +1,25 @@
+{
+  "reviewer": "root independent of runner author thermal_derivation",
+  "status": "PASS_WITH_PRE_EXECUTION_ENERGY_ORACLE_ADDITION",
+  "new_ODE_calls": 0,
+  "checked": [
+    "proper-time theta scaling matches nH*kref",
+    "21 abundances and independently integrated thermal u",
+    "per-isotope diagonal scaling does not alter equations",
+    "source domain checked at every RHS, no clipping",
+    "two physical controls and one distinct numerical refinement",
+    "one cooperative lease, release owned lease only",
+    "durable marker before actual solve_ivp call",
+    "complete identity bytes verified then skipped; failed/partial not replayed",
+    "independent D scalar equilibrium includes temperature from extent energy",
+    "baseline/refinement same physics and161 grid comparison"
+  ],
+  "added_before_any_ODE": {
+    "scope": "C02 tiny isotope heat check in temperature units",
+    "formula": "T=T0-2*Delta*xi/(3*kB*N0)",
+    "absolute_gate_K": 1e-09,
+    "reason": "A total-energy relative check alone uses a much larger common H-ion potential than the D isotope heat."
+  },
+  "source_sha256": "08690a2c39911e9879020073214b08a1044b93bf2fa7c96b94381f8dda6d325b",
+  "plan_sha256": "215a90bfe97afa482867215c1f4020fc653608cf69ccab52a91c62ae0766751f"
+}
