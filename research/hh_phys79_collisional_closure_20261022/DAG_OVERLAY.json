@@ -66,13 +66,19 @@
       "new_ODE": 0
     },
     "ISOLATED_CONSERVATIVE_CONTROLS": {
-      "status": "PLANNED_NOT_EXECUTED",
+      "status": "PASS_SCOPED",
       "evidence": [
         "inputs/CONTROL_PLAN.json",
+        "results/ISOLATED_SUMMARY.json",
         "verification/RUNNER_INDEPENDENT_REVIEW.json"
       ],
       "physical_controls": 2,
-      "distinct_refinement": 1
+      "distinct_refinement": 1,
+      "new_ODE": 3,
+      "failed_ODE": 0,
+      "completed_replay": 0,
+      "refinement_scaled_difference": 4.574293383682441e-15,
+      "continuum_certificate": false
     },
     "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE": {
       "status": "PARTIAL_WITH_EXECUTABLE_SUBSET",
@@ -128,17 +134,21 @@
       ]
     },
     "PUBLICATION": {
-      "status": "S0_PUBLISHED_S1_PENDING",
+      "status": "S0_S1_PUBLISHED_S2_PENDING",
       "evidence": [
-        "delivery/S0_PUBLICATION_RECEIPT.json"
+        "delivery/S0_PUBLICATION_RECEIPT.json",
+        "delivery/S1_PUBLICATION_RECEIPT.json"
       ],
       "PR": 134,
-      "draft": true
+      "draft": true,
+      "S0": "77bd3cc5f482804a246a66a8b2f3b631611e3219",
+      "S1": "b61494393532c42a12c7517408895a5cf38aea29"
     },
     "BACKUP": {
-      "status": "S0_DUAL_ACK_S1_PENDING",
+      "status": "S0_S1_DUAL_ACK_S2_PENDING",
       "evidence": [
-        "delivery/S0_BACKUP_ACK.json"
+        "delivery/S0_BACKUP_ACK.json",
+        "delivery/S1_BACKUP_ACK.json"
       ]
     }
   },

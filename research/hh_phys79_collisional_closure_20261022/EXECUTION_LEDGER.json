@@ -1,6 +1,6 @@
 {
   "schema": "PHYS79_EXECUTION_LEDGER_V1",
-  "as_of_stage": "S1_PRE_SCIENCE",
+  "as_of_stage": "S2_SCIENCE_COMPLETE_PUBLICATION_PENDING",
   "inherited_PHYS78": {
     "ODE_attempts": 34,
     "failed": 2,
@@ -25,23 +25,65 @@
     "postprocessing_executions": 2,
     "postprocessing_dependency_rebuild": 1,
     "postprocessing_auxiliary_QA_failure": 1,
-    "new_isolated_ODE": 0,
-    "planned_new_isolated_ODE": 3,
+    "new_isolated_ODE": 3,
+    "planned_new_isolated_ODE": 0,
     "new_cosmological_ODE": 0,
     "completed_identical_ODE_replays": 0,
     "NCP": 0,
-    "benchmark": 0
+    "benchmark": 0,
+    "failed_new_isolated_ODE": 0,
+    "distinct_physical_controls": 2,
+    "distinct_refinement": 1,
+    "isolated_solver_invocations": 1,
+    "resume_invocations": 1,
+    "resume_completed_skips": 3,
+    "resume_new_ODE": 0,
+    "isolated_epochs_per_case": 161
   },
   "distinct_statuses": {
     "derivation": "COMPLETE_SCOPED_WITH_EXPLICIT_OPEN_FULL_CLOSURE",
     "code": "IMPLEMENTED_DOMAIN_GUARDED_SUBSET",
     "light_validation": "24_PASS",
     "saved_state_analysis": "COMPLETE",
-    "isolated_science_execution": "NOT_EXECUTED",
-    "publication": "S0_PR134_COMPLETE_S1_PENDING",
-    "backup": "S0_DUAL_ACK_S1_PENDING",
+    "isolated_science_execution": "COMPLETE_2_CONTROLS_PLUS_1_REFINEMENT",
+    "publication": "S1_PR134_COMPLETE_S2_PENDING",
+    "backup": "S0_S1_DUAL_ACK_S2_PENDING",
     "DAG": "FULL_COLLISIONAL_CLOSURE_PARTIAL"
   },
   "HH_R10": "OFF",
-  "production_admission": "NOT_ISSUED"
+  "production_admission": "NOT_ISSUED",
+  "numerical_results": {
+    "maximum_isotope_relative_error": 4.397502728453756e-15,
+    "maximum_total_energy_relative_error": 2.6645352591003757e-15,
+    "refinement_scaled_state_difference": 4.574293383682441e-15,
+    "D_temperature_extent_absolute_error_K": 3.410605131648481e-13,
+    "D_final_equilibrium_distance_over_inventory": 3.635426294598055e-09
+  },
+  "operational_non_science_failures": [
+    {
+      "stage": "intake",
+      "kind": "default cwd exec service error; explicit /tmp Python/C++ succeeded",
+      "ODE": 0
+    },
+    {
+      "stage": "intake",
+      "kind": "git HTTPS proxy connection failure; exact GitHub API materialization used",
+      "ODE": 0
+    },
+    {
+      "stage": "C9",
+      "kind": "review numpy int64 JSON serialization failed; scalar cast fixed; algebra-only repeat",
+      "ODE": 0
+    },
+    {
+      "stage": "saved_analysis_QA",
+      "kind": "Li defect lookup index assertion; fixed named event lookup; original failure retained",
+      "ODE": 0
+    },
+    {
+      "stage": "publication_S1",
+      "kind": "large local JSON stdout truncation caused JSON.parse failure before tree mutation; segmented reads and verified Git blob writes completed",
+      "ODE": 0
+    }
+  ]
 }

@@ -1,10 +1,15 @@
-# Checkpoint S1 — code and validated local operators
+# Checkpoint S2 — executed bounded science
 
-- S0 published at77bd3cc5f482804a246a66a8b2f3b631611e3219 in Draft PR134.
-- Theory: source domains, thermal equation and D/H detailed-balance model derived; full cold-to-hot CI/CX remains OPEN.
-- Code: explicit CI subset and D-CX operator implemented;24 unique lightweight tests PASS.
-- C9: initial29 checks reused; F1/F2/N1 corrected and14 targeted checks PASS; conditioning252states passed unchanged gate.
-- Saved-data analysis: two histories,322 unique epochs; two postprocessing executions because energy-bookkeeping dependency changed;0 ODE.
-- Isolated science: two controls plus one distinct refinement fully specified, not yet executed at this checkpoint.
-- Publication and backup are recorded by post-publication receipts, separately from numerical acceptance.
-- HH_R10=OFF; production admission NOT_ISSUED.
+| Stage | State | Evidence |
+|---|---|---|
+| Source and derivation | Complete for the declared subset | theory/, Wolfram receipts |
+| Implementation | Complete for domain-guarded CI and D/H CX | source/collisional.py |
+| Light verification |24 unique tests PASS; C9 findings closed | verification/ |
+| Saved-history analysis |322 unique epochs;2 postprocessing executions;0 ODE | analysis/saved_operator/ |
+| New science execution |3 successful ODE =2 isolated controls+1 refinement | results/ISOLATED_SUMMARY.json |
+| Exact-identity resume |3 skips;0 new ODE;NPZ bytes unchanged | results/ISOLATED_RESUME_STDOUT.json |
+| Publication |S0/S1 complete;S2 being published | delivery/ |
+| Backup |S0/S1 dual provider acknowledgements;S2 pending | delivery/ |
+| Full collisional cosmology DAG |Partial; precise remaining source/energy obligations | DAG_OVERLAY.json |
+
+HH_R10=OFF. Production admission NOT_ISSUED.
