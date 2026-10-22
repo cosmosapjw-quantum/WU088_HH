@@ -1,0 +1,72 @@
+{
+  "HH_R10": "OFF",
+  "actual_ODE_calls": 0,
+  "actual_RHS_finite_difference_calls": 48,
+  "checks": [
+    {
+      "component_normalized_error": 3.656071026071092e-11,
+      "pass": true,
+      "point": "UNEQUAL_1_INTERIOR_NEW",
+      "row_relative_error": 6.0250540690599324e-12,
+      "z": [
+        0.1049999962501911,
+        0.10484756499350198,
+        0.10211778838716104,
+        0.41999146988157354
+      ]
+    },
+    {
+      "component_normalized_error": 2.5029018238764215e-10,
+      "pass": true,
+      "point": "UNEQUAL_1:1",
+      "row_relative_error": 6.5206637494108914e-12,
+      "z": [
+        0.1149999962501911,
+        0.10984756499350197,
+        0.10811778838716105,
+        0.4999914698815735
+      ]
+    },
+    {
+      "component_normalized_error": 1.0563128379538919e-10,
+      "pass": true,
+      "point": "UNEQUAL_1:2",
+      "row_relative_error": 2.8744519663263086e-12,
+      "z": [
+        0.1399999962501911,
+        0.13984756499350198,
+        0.12011778838716104,
+        0.6999914698815735
+      ]
+    }
+  ],
+  "claim_scope": "finite independent numerical derivatives on three previously unverified interior states; boundary two-sided derivative not claimed",
+  "command": "python -B /tmp/phys80_review/jacobian_interior_supplement.py",
+  "completed_Jacobian_points_replayed": 0,
+  "maximum_component_error": 2.5029018238764215e-10,
+  "maximum_row_error": 6.5206637494108914e-12,
+  "new_Jacobian_columns": 12,
+  "new_Jacobian_points": 3,
+  "old_suite_executions": 0,
+  "original_failure_class": "TEST_FIXTURE_OUTSIDE_STRICT_PHYSICAL_DOMAIN; no implementation defect",
+  "original_failure_preserved": true,
+  "passed": true,
+  "prior_receipt_sha256": "32b83ccb002f243600a91b0b5c9ad0fc136ac344bdc229064658df7413fc6654",
+  "production_admission": "NOT_ISSUED",
+  "schema": "PHYS80_INDEPENDENT_JACOBIAN_SUPPLEMENT_V1",
+  "source_hashes": {
+    "inputs/REDUCTION_PLAN.json": "449d80fb3f76caec15685a2b811ee2acc6297b9b77a45d2d373b4a6a682f74dc",
+    "source/phys79_bridge.py": "53d01690dadf20d526e3e352cf01906538b45659dcadcc08210c8c0abc915262",
+    "source/reduced.py": "2029eac4b5e23e25158742ae79ba47bb9dcacaf95faba59237c7518195b201a9",
+    "source/run_reduced.py": "396c59328ae3cec8f31b06fb9fa97de20b9717526ae8770950c73247ae3da320",
+    "theory/PHYSICS_TO_CODE_GATE_KO.md": "d1823463fb62e99e40b634f82a9b1d4875a6b41b522cd7398fb074050e74df08",
+    "vendor/PHYS79_PROVENANCE.json": "aca6625e48a23d6325de841ea5a8d9ded92678bb0561b13b6b2d3f30da8c3779"
+  },
+  "test_script_sha256": "f9af3e2176adb06bd4cff999f6b458bb7b5cc52608cea767c66719d6a7231663",
+  "utc": "2026-10-22T06:54:47.708295+00:00",
+  "versions": {
+    "NumPy": "2.3.5",
+    "Python": "3.12.14",
+    "SciPy": "1.17.0"
+  }
+}

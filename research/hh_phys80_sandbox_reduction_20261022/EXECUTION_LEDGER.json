@@ -1,0 +1,196 @@
+{
+  "schema": "PHYS80_TYPED_EXECUTION_LEDGER_V1",
+  "as_of_utc": "2026-10-22T17:23:57.115787+00:00",
+  "inherited_reused": {
+    "PHYS78": {
+      "ODE": 34,
+      "failed": 2,
+      "pilot": 31,
+      "refined": 1,
+      "unique_light_tests": 35,
+      "reruns_this_unit": 0
+    },
+    "PHYS79": {
+      "ODE": 3,
+      "failed": 0,
+      "controls": 2,
+      "refined": 1,
+      "unique_light_tests": 24,
+      "reruns_this_unit": 0
+    },
+    "HH1231_REI729_HH74control63_completed_identities_replayed": 0
+  },
+  "this_unit": {
+    "new_isolated_ODE": {
+      "calls": 3,
+      "completed": 3,
+      "failed": 0,
+      "controls": 2,
+      "distinct_refinements": 1,
+      "identities": [
+        {
+          "task_id": "C01_REDUCED_BASE",
+          "science_id": "98f621e3a855548a7c8e379c38093815313d8fdb703bfd25fa7eaddaa1f05bdc",
+          "status": "COMPLETE",
+          "new_ODE_calls": 1,
+          "solver": {
+            "success": true,
+            "message": "The solver successfully reached the end of the integration interval.",
+            "nfev": 463,
+            "njev": 2,
+            "nlu": 22,
+            "rhs_calls": 463,
+            "jacobian_calls": 2,
+            "accepted_mesh_points": 66,
+            "solve_wall_s": 2.844909983999969,
+            "new_ODE_calls": 1
+          }
+        },
+        {
+          "task_id": "C02_REDUCED_BASE",
+          "science_id": "8647a92cba02fcc2fbcce7a121361c150f4cce36e096412f28476d6bd6126ef3",
+          "status": "COMPLETE",
+          "new_ODE_calls": 1,
+          "solver": {
+            "success": true,
+            "message": "The solver successfully reached the end of the integration interval.",
+            "nfev": 933,
+            "njev": 1,
+            "nlu": 58,
+            "rhs_calls": 933,
+            "jacobian_calls": 1,
+            "accepted_mesh_points": 134,
+            "solve_wall_s": 0.7729486460011685,
+            "new_ODE_calls": 1
+          }
+        },
+        {
+          "task_id": "C01_REDUCED_REFINED",
+          "science_id": "639fcf6f214f864b7a23a947d9c7127c0c1195e79333fbeaf903318482926a51",
+          "status": "COMPLETE",
+          "new_ODE_calls": 1,
+          "solver": {
+            "success": true,
+            "message": "The solver successfully reached the end of the integration interval.",
+            "nfev": 1422,
+            "njev": 2,
+            "nlu": 26,
+            "rhs_calls": 1422,
+            "jacobian_calls": 2,
+            "accepted_mesh_points": 203,
+            "solve_wall_s": 2.625781836002716,
+            "new_ODE_calls": 1
+          }
+        }
+      ]
+    },
+    "resume": {
+      "completed_verified_skips": 3,
+      "new_ODE": 0
+    },
+    "old_completed_identity_replays": 0,
+    "new_cosmological_ODE": 0,
+    "NCP": 0,
+    "benchmark": 0,
+    "independent_review": {
+      "logical_groups": 16,
+      "initial_passed": 15,
+      "initial_failed": 1,
+      "failure_class": "TEST_FIXTURE_OUTSIDE_STRICT_PHYSICAL_DOMAIN",
+      "failed_receipt_preserved": true,
+      "supplement_new_Jacobian_points": 3,
+      "completed_points_replayed": 0,
+      "final_scoped_status": "PASS_SCOPED",
+      "full_operator_points": 13,
+      "Jacobian_completed_points": 12,
+      "Jacobian_completed_columns": 39,
+      "rate_derivative_points": 23,
+      "expected_guard_rejections": 64,
+      "identity_fixtures": 10,
+      "old_suite_executions": 0,
+      "ODE": 0
+    },
+    "generic_maxwellian": {
+      "unique_unittest_methods": 6,
+      "tests_run": 6,
+      "failures": 0,
+      "pure_A_witnesses": 9,
+      "order_profiles": 18,
+      "scalar_quadrature_sums": 36,
+      "E1_oracles": 9,
+      "ODE": 0,
+      "physical_admission": "NOT_ISSUED"
+    },
+    "Wolfram": {
+      "context_calls": 1,
+      "evaluator_calls": 3,
+      "successful_algebra_calls": 2,
+      "preserved_syntax_failures": 1,
+      "local_ODE": 0
+    },
+    "figures": {
+      "render_invocations": 1,
+      "PNG": 3,
+      "PDF": 3,
+      "source_model_evaluations": 0,
+      "ODE": 0
+    },
+    "postflight_saved_result_audit": {
+      "invocations": 1,
+      "accepted_mesh_rows": 403,
+      "accepted_steps": 400,
+      "dense_sample_rows": 483,
+      "max_fsum_isotope_relative_error": 2.220446049250313e-16,
+      "ODE": 0,
+      "RHS": 0,
+      "Jacobian": 0,
+      "rates": 0,
+      "root_solves": 0,
+      "evidence": "verification/independent/postflight_audit_001.json"
+    },
+    "ledger_metadata_reconciliation": {
+      "invocations": 1,
+      "science_evaluations": 0
+    }
+  },
+  "stages": {
+    "derivation": "COMPLETE_SCOPED",
+    "code": "COMPLETE_SCOPED",
+    "implementation_verification": "PASS_SCOPED_WITH_PRESERVED_FIXTURE_FAILURE",
+    "science_execution": "3_COMPLETE_0_FAILED",
+    "publication": "S0_DRAFT_PR136_PUBLISHED_REMOTE_135_FILES_PASS;S1_FINAL_HEAD_BOUND_EXTERNALLY",
+    "backup": "S0_DRIVE_UPLOAD_ACK_AND_DROPBOX_UPLOAD_SIZE_ACK;FINAL_ZIP_RESTORE_BOUND_IN_EXTERNAL_FINAL_DELIVERY",
+    "DAG": "SCOPED_REDUCTION_COMPLETE;LOW_T_PHYSICAL_ADMISSION_OPEN;D_PI_RR_EVENT_COMPONENT_REUSED_PARTIAL"
+  },
+  "resource_policy": {
+    "workers": 1,
+    "threads": 1,
+    "shared_lease_acquired_for_each_ODE": true,
+    "other_processes_terminated": 0
+  },
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "initial_ledger_snapshot_utc": "2026-10-22T14:44:07.693479+00:00",
+  "late_sibling_reuse": {
+    "HH135_head": "6c3b12554288893d5d7e221d77be943324285ceb",
+    "REI222_head": "074933f73743ed10ff98a10db49d1b72696ead4f",
+    "scope": "supplied-event energy/C99 component only; source-qualified D rates and RR moments remain open",
+    "producer_counts": {
+      "event_cases": 72,
+      "invalid_domain_cases": 8,
+      "temperature_cases": 27,
+      "exact_cycles": 1,
+      "ODE": 0
+    },
+    "PHYS80_reexecution": 0,
+    "counts_added_to_PHYS80": false,
+    "evidence": "delivery/LATE_HH135_REI222_SCOPE_RECEIPT.json"
+  },
+  "delivery_identity": {
+    "science_commit": "fd18c59796175191bdd5f9b7ab2981d5e92836fd",
+    "PR": 136,
+    "publication_receipt": "delivery/POST_PUBLICATION_RECEIPT.json",
+    "final_head_and_full_restore": "EXTERNAL_PHYS80_FINAL_DELIVERY_20261022.json_AND_PR_BODY",
+    "self_hash_avoided": true
+  }
+}

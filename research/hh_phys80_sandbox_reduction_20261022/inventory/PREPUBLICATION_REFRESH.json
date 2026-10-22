@@ -1,0 +1,462 @@
+{
+  "schema": "phys80.prepublication_incremental_refresh.v1",
+  "written_utc": "2026-10-22T14:42:55.882Z",
+  "scope": "Read-only bounded prepublication refresh after environment/tool pause; PR134 and new PHYS80 branch, only REI221/REC120/HE86 sibling refs. No repository catalogs, unrelated branches, private chats or archival bytes revisited.",
+  "evidence_class": "FRESH_REMOTE_REF_AND_PINNED_HANDOFF_READ",
+  "previous_baseline": {
+    "observed_utc": "2026-10-22T06:37:19Z",
+    "wu_pr134": "3304d16db1dc9bf868c185a8eeb6cc9dbc270e50",
+    "rei221": "c1714f82ea7de15fee230a1a995365970ee6dc02",
+    "rec120": "d562d03415e37488cd4b5444488c77555260e0fb",
+    "he86": "bb1259b21c7b83b0376a5f7fcbb0c6321918ec90"
+  },
+  "ref_observations": [
+    {
+      "key": "wu_pr134",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/pulls/134",
+      "kind": "pr",
+      "observed_utc": "2026-10-22T14:40:57.495Z",
+      "isError": false,
+      "data": {
+        "number": 134,
+        "state": "open",
+        "draft": true,
+        "merged": false,
+        "updated_at": "2026-10-22T03:25:37Z",
+        "head": {
+          "ref": "research/hh-phys79-collisional-closure-20261022",
+          "sha": "3304d16db1dc9bf868c185a8eeb6cc9dbc270e50"
+        },
+        "base": {
+          "ref": "research/hh-phys78-sandbox-nuclide-pilot-20261021",
+          "sha": "91d0846a940abf7817c900102dab488ff87e6a82"
+        },
+        "html_url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/134",
+        "body": "## Physics and completed work\n\nPHYS78 reached Tmax=25,370.663 K with finite PI+RR chemistry. This additive successor derives and implements a source-domain-guarded collisional operator and a consistent thermal/ionic-energy ledger before admitting a bounded set of new executions.\n\n- Voronov lower temperature column is eV and upper column keV. At PHYS78 Tmax, only neutral H/He/Li CI rows are admitted; unsupported low-temperature and higher-stage domains remain OPEN.\n- D/H charge exchange uses a declared ground-state model: Savin reverse fit × exp(-43 K/T), with one D-shifted ionic potential. The new forward model does not inherit the independent raw-forward fit accuracy.\n- Saved P013/P030 histories were evaluated at 322 unique epochs without reintegration. Peak conditional CI cooling / PI heating is 1.88690 and 2.45532; these are instantaneous diagnostics on unchanged trajectories.\n- Two new isolated controls and one distinct refinement passed. C01 cools from 25,370.663 K to 24,461.950 K. C02 isolates D/H CX at 300 K and resolves a 0.2069196 mK temperature drop with an independent extent/closed-energy-equilibrium check.\n\n[Full Korean report](https://github.com/cosmosapjw-quantum/WU088_HH/blob/3304d16db1dc9bf868c185a8eeb6cc9dbc270e50/research/hh_phys79_collisional_closure_20261022/FINAL_REPORT_KO.md) · [contract](https://github.com/cosmosapjw-quantum/WU088_HH/blob/3304d16db1dc9bf868c185a8eeb6cc9dbc270e50/research/hh_phys79_collisional_closure_20261022/CONTRACT.json) · [DAG](https://github.com/cosmosapjw-quantum/WU088_HH/blob/3304d16db1dc9bf868c185a8eeb6cc9dbc270e50/research/hh_phys79_collisional_closure_20261022/DAG_OVERLAY.json) · [execution ledger](https://github.com/cosmosapjw-quantum/WU088_HH/blob/3304d16db1dc9bf868c185a8eeb6cc9dbc270e50/research/hh_phys79_collisional_closure_20261022/EXECUTION_LEDGER.json)\n\n## Validation and execution accounting\n\n| Stage | Actual outcome |\n|---|---|\n| Source/derivation | Exa, SciSpace and Wolfram evidence; declared subset closed |\n| Code | Domain guards, conservative event-energy ledger, explicit subnetwork selection |\n| Light validation | 24 unique tests PASS, one suite execution |\n| Independent C9 | 29 initial checks; 14 targeted checks; 252 conditioning states; findings F1/F2/N1 closed |\n| Saved analysis | 322 unique epochs, 2 postprocessing executions after one dependency correction, 0 ODE |\n| New scientific execution | 3 successful ODE = 2 physical controls + 1 refinement; failures 0 |\n| Exact-identity resume | 3 verified skips, 0 new ODE |\n| Completed old-identity replay / new cosmological ODE / NCP / benchmark | 0 / 0 / 0 / 0 |\n| Figures | 4 PNG + 4 PDF |\n| Publication | 165 new files; existing parent files unchanged; Draft; no merge |\n| Final backup | Both providers: complete remote-byte SHA256, ZIP CRC, all 166 payload SHA256 PASS |\n\nMaximum isotope relative error 4.3975e-15; saved total-energy relative error 2.6645e-15; baseline/refined scaled-state difference 4.5743e-15. C02 extent-temperature error 3.4106e-13 K. Fixed gates and independent checks are documented in the report. Sampled residuals and one refinement are not continuum certificates. Same-trajectory diagnostics are not species-off causal experiments.\n\nInherited PHYS78 ODE34 (2 failed + 31 pilots + 1 refinement) and 35 light tests are reused evidence, not this unit's execution count. HH1231, REI729, HH74control63 and completed PHYS78 identities were not rerun. Shared leases and one worker/thread were used; no other process was terminated.\n\n## Actual descendant and handoff\n\n- Parent PR133 HEAD: `91d0846a940abf7817c900102dab488ff87e6a82`\n- S0 source/derivation: `77bd3cc5f482804a246a66a8b2f3b631611e3219`\n- S1 implementation/saved analysis: `b61494393532c42a12c7517408895a5cf38aea29`\n- **S2 science commit: `338fb7728e8b41f49551200b1f1ba73c047fb90c`**\n- **Final HEAD: `3304d16db1dc9bf868c185a8eeb6cc9dbc270e50`**\n- Final root tree: `f395850ed6b7e72dc2e597a23390bd81f8ac522e`\n- 165/165 remote Git blob SHA + size matched the frozen snapshot. All 112 scientific payloads were unchanged by the final metadata commit.\n\n[Codex handoff](https://github.com/cosmosapjw-quantum/WU088_HH/blob/3304d16db1dc9bf868c185a8eeb6cc9dbc270e50/research/hh_phys79_collisional_closure_20261022/CODEX_HANDOFF_KO.md) · [Next-thread handoff](https://github.com/cosmosapjw-quantum/WU088_HH/blob/3304d16db1dc9bf868c185a8eeb6cc9dbc270e50/research/hh_phys79_collisional_closure_20261022/NEXT_THREAD_HANDOFF_KO.md) · [Post-publication handoff](https://github.com/cosmosapjw-quantum/WU088_HH/blob/3304d16db1dc9bf868c185a8eeb6cc9dbc270e50/research/hh_phys79_collisional_closure_20261022/POST_PUBLICATION_HANDOFF_KO.md) · [Research/code loop map](https://github.com/cosmosapjw-quantum/WU088_HH/blob/3304d16db1dc9bf868c185a8eeb6cc9dbc270e50/research/hh_phys79_collisional_closure_20261022/theory/RESEARCH_LOOP_AND_CODE_MAP_KO.md)\n\n## Final delivery\n\n**ZIP:** `PHYS79_FINAL_20261022_3304d16db1dc.zip`  \nBytes: 2557522; payloads: 166 (165 final-HEAD files + 1 post-publication receipt; archive manifest is additional metadata).  \nSHA256: `513a7d37478b5b055b7b2cd97f752b6d992522d0fc3f45135ffbae831cb183e6`  \nDropbox content hash: `dd140b208c297a623b5b37a72bcf3379af021980698fa797302587df57784d95`\n\n- [Drive final ZIP](https://drive.google.com/file/d/1giOzzoaECzH24HRqbIBFbdb_nyvwCcO4/view), ID `1giOzzoaECzH24HRqbIBFbdb_nyvwCcO4`.\n- Dropbox final ZIP ID `id:BSpOijBcT10AAAAAAD_h2A`, path `/BASS_DERIVATION_DOSSIERS_20260912/WU088_HH_R31S_NCP_REDESIGN_20260928/PHYS79_FINAL_20261022_3304d16db1dc.zip`.\n- Both ZIPs were newly restored in full and passed raw SHA256, CRC, and all 166 payload SHA256 checks. S0/S1 were metadata acknowledgments; S2 and FINAL have separate full-restore receipts.\n\n**External delivery JSON:** `PHYS79_FINAL_DELIVERY_20261022.json`  \nBytes: 10549; SHA256: `7fae6fa4b5ee871fd7e6f2968b163b48a5d22398599cbbf93b436b95fc9ad9c0`\n\n- [Drive final-delivery JSON](https://drive.google.com/file/d/11bIvp2Fh55tSfHj2wbKfCHg7-CJpM3Hg/view), ID `11bIvp2Fh55tSfHj2wbKfCHg7-CJpM3Hg`.\n- Dropbox final-delivery JSON ID `id:BSpOijBcT10AAAAAAD_h2g`, path `/BASS_DERIVATION_DOSSIERS_20260912/WU088_HH_R31S_NCP_REDESIGN_20260928/PHYS79_FINAL_DELIVERY_20261022.json`.\n- Both JSON copies were newly restored as complete raw bytes and matched the local original SHA256 and parsed JSON.\n\nThe external JSON binds final HEAD, science commit, archive identity, provider IDs, verification scope and next DAG without making a commit or ZIP contain its own hash. This PR body records the external JSON's own IDs and hash.\n\n## Remaining physics\n\nFull COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE is PARTIAL_WITH_EXECUTABLE_SUBSET. Next priority: LOW_T_CI_SOURCE_COVERAGE. He/Li CX final-state branching/corrected domains/photon-energy moments, the D PI/RR energy adapter, RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT, and Li hard-UV inner-shell/branching/spectral-energy closure remain OPEN. Full nuclear/molecular, excitation/free-free/Compton and spectral transport remain OPEN.\n\nAccessible refs, sibling results and supplied backup/handoff identities were checked. Inaccessible private conversations were not exhaustively inspected; the PHYS78 old whole-ZIP proof was reused, not newly restored at intake.\n\nSame normal orthonormal frame; sum signed matter/radiation tensors before norm; Frobenius=sqrt(2)×half-contraction. Reacting gas pi=0; nonzero pi_m is collisionless DM.\n\n**HH_R10=OFF. Production admission NOT_ISSUED. Draft only; no merge.**\n"
+      }
+    },
+    {
+      "key": "wu_phys80_ref",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/ref/heads/research/hh-phys80-sandbox-reduction-20261022",
+      "kind": "ref",
+      "observed_utc": "2026-10-22T14:40:57.130Z",
+      "isError": false,
+      "data": {
+        "ref": "refs/heads/research/hh-phys80-sandbox-reduction-20261022",
+        "sha": "3304d16db1dc9bf868c185a8eeb6cc9dbc270e50",
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/refs/heads/research/hh-phys80-sandbox-reduction-20261022"
+      }
+    },
+    {
+      "key": "rei221_ref",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/rei_bianchi/git/ref/heads/research/rei-coupled-isotope-contract-20261022",
+      "kind": "ref",
+      "observed_utc": "2026-10-22T14:40:57.195Z",
+      "isError": false,
+      "data": {
+        "ref": "refs/heads/research/rei-coupled-isotope-contract-20261022",
+        "sha": "2f9ebff30c7505e425179862819f212ddbd07542",
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/rei_bianchi/git/refs/heads/research/rei-coupled-isotope-contract-20261022"
+      }
+    },
+    {
+      "key": "rec120_ref",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/rec_bianchi/git/ref/heads/research/rec-rei-thermal-yield-20261022",
+      "kind": "ref",
+      "observed_utc": "2026-10-22T14:40:57.220Z",
+      "isError": false,
+      "data": {
+        "ref": "refs/heads/research/rec-rei-thermal-yield-20261022",
+        "sha": "7c4af579be508cccf203d3e2a3a5aa16a4b28e38",
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/rec_bianchi/git/refs/heads/research/rec-rei-thermal-yield-20261022"
+      }
+    },
+    {
+      "key": "he86_ref",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/BASS_HE/git/ref/heads/research/he33-baryon-moment-foundation-20261022",
+      "kind": "ref",
+      "observed_utc": "2026-10-22T14:40:57.149Z",
+      "isError": false,
+      "data": {
+        "ref": "refs/heads/research/he33-baryon-moment-foundation-20261022",
+        "sha": "bb1259b21c7b83b0376a5f7fcbb0c6321918ec90",
+        "url": "https://api.github.com/repos/cosmosapjw-quantum/BASS_HE/git/refs/heads/research/he33-baryon-moment-foundation-20261022"
+      }
+    }
+  ],
+  "changed_head_observations": [
+    {
+      "key": "rei221_head",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/rei_bianchi/commits/2f9ebff30c7505e425179862819f212ddbd07542",
+      "kind": "commit",
+      "observed_utc": "2026-10-22T14:41:19.914Z",
+      "isError": false,
+      "data": {
+        "sha": "2f9ebff30c7505e425179862819f212ddbd07542",
+        "author_date": "2026-10-22T07:40:58Z",
+        "committer_date": "2026-10-22T07:40:58Z",
+        "message": "research: record sandbox source publication and backup acknowledgments\n\nRecord the 49-file remote identity check, unchanged C1/C2 subtrees and acknowledged source archive uploads with matching sizes. Scientific source, observed 156 plus 2 results and immutable ZIP are unchanged; no scientific rerun.",
+        "parents": [
+          "569f784e78676123513b7390001d317eb62d6372"
+        ],
+        "files": [
+          {
+            "filename": "research/rei_coupled_isotope_sandbox_20261022/DELIVERY.json",
+            "status": "added",
+            "sha": "ad7bbf6fbb58749466c8fb18cb3953f493384f54"
+          }
+        ],
+        "stats": {
+          "total": 66,
+          "additions": 66,
+          "deletions": 0
+        }
+      }
+    },
+    {
+      "key": "rec120_head",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/rec_bianchi/commits/7c4af579be508cccf203d3e2a3a5aa16a4b28e38",
+      "kind": "commit",
+      "observed_utc": "2026-10-22T14:41:20.586Z",
+      "isError": false,
+      "data": {
+        "sha": "7c4af579be508cccf203d3e2a3a5aa16a4b28e38",
+        "author_date": "2026-10-22T06:54:00Z",
+        "committer_date": "2026-10-22T06:54:00Z",
+        "message": "docs: close THERM01 delivery with verified recovered archive and final handoff",
+        "parents": [
+          "b94314be1be12664f1dec8100d29bdb5f9135adf"
+        ],
+        "files": [
+          {
+            "filename": "research/rec_rei_thermal_yield_20261022/CODEX_HANDOFF.md",
+            "status": "modified",
+            "sha": "8cf129ab6e6545e2eebd3ff7e9c4d40b498935fc"
+          },
+          {
+            "filename": "research/rec_rei_thermal_yield_20261022/DAG.json",
+            "status": "modified",
+            "sha": "21890927c4e480ddab1de8f3e499a9335d74936c"
+          },
+          {
+            "filename": "research/rec_rei_thermal_yield_20261022/HANDOFF.json",
+            "status": "modified",
+            "sha": "60371a752519a32ab30ff0005d16866492357fce"
+          },
+          {
+            "filename": "research/rec_rei_thermal_yield_20261022/NEXT_THREAD_HANDOFF_KO.md",
+            "status": "modified",
+            "sha": "54f0f7abdd908dd05ee12b86538da13826ac04b1"
+          },
+          {
+            "filename": "research/rec_rei_thermal_yield_20261022/RESULTS_KO.md",
+            "status": "modified",
+            "sha": "5e9513a6a8dc6f179a2022b91df3c0be38312a09"
+          },
+          {
+            "filename": "research/rec_rei_thermal_yield_20261022/delivery/FINAL_LOCAL.json",
+            "status": "added",
+            "sha": "49dfaca0f86d01c582ecdc8584a035b911d3e07a"
+          },
+          {
+            "filename": "research/rec_rei_thermal_yield_20261022/delivery/FINAL_PUBLICATION_BACKUP.json",
+            "status": "added",
+            "sha": "6ab1d7ba870b9f8666071aa345bd27f0ccea3028"
+          },
+          {
+            "filename": "research/rec_rei_thermal_yield_20261022/delivery/FINAL_REMOTE_READBACK.json",
+            "status": "added",
+            "sha": "fb3a5505083f52ad640f345e8ae670b521e21269"
+          },
+          {
+            "filename": "research/rec_rei_thermal_yield_20261022/delivery/RECOVERED_GIT_TREE_VERIFY.json",
+            "status": "added",
+            "sha": "ec4ff2c9087366e3890528e0cc0c720fce0f418b"
+          },
+          {
+            "filename": "research/rec_rei_thermal_yield_20261022/delivery/RECOVERY_PUBLICATION.json",
+            "status": "added",
+            "sha": "ea5f643dd20fe20979f8d4984df89f4a0fd6489b"
+          }
+        ],
+        "stats": {
+          "total": 280,
+          "additions": 249,
+          "deletions": 31
+        }
+      }
+    },
+    {
+      "key": "rei221_c2_resume",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/rei_bianchi/2f9ebff30c7505e425179862819f212ddbd07542/research/rei_coupled_isotope_mapping_20261022/RESUME.md",
+      "kind": "text",
+      "observed_utc": "2026-10-22T14:41:20.213Z",
+      "isError": false,
+      "data": "# Resume: C2 complete, select C3 next\n\nUser requested the next `rei_bianchi` research loop. The completed selected\nstage is C2 formula–data–code mapping, following C1 at\n`9f621b684fedb9b71f2148022f6909d1760ba947`. The current decision is\n**PASS_SCOPED_C2_MAPPING_AND_FINITE_BINDINGS**. Its one actual diagnostic has\n**214 checks PASS**, no failures, no repair, and **zero new cosmological IVPs**.\nThe one independent review did not rerun the diagnostic or an older campaign.\n\n## Read first\n\n`REPORT_KO.md`, `THEORY.md`, `CODE_MAP.md`, `BINDINGS.json`, `REVIEW.md` and\n`DAG.json` in this directory. Exact inputs and observed execution are in\n`SOURCE_IDENTITY.json` and `evidence/EXECUTION.json`. Preserve the old C1\nsnapshot and this numerical evidence; do not rerun them just to resume.\n\nStarting branch: `research/rei-coupled-isotope-contract-20261022`.\nStarting HEAD: `3e56bbd3d939ab235df2d47f9d012c95674d00fc`.\nAtomic donor: `8be7533cc97b3302bf42608699d6e8313ed6af8a`.\nNuclear scientific source: `5a1e5220b301a1c497f2863d6fd823e605faba80`.\nSubsequent publication/backup identities belong to the containing Git commit\nand delivery receipts, without a self-referential SHA in this source snapshot.\n\nThe separately active bootstrap/thermal/provider lane published a scoped\nreviewed result at `61e08967832363b611a8e5ba4167ba7b06c06b6b` during C2.\n`CONCURRENT_UPDATE.md` records the actually fetched source reviews. The\nrecovered archive's old bootstrap errors are historical, not a present\nblocker. Do not restart that repair or conflate its scalar tests with C2's\ntests. Its fresh83 campaign is still not automatic.\n\n## Next selected stage: C3\n\nBegin numerical design of a **conditional local 21-state source adapter**.\nUse supplied charge-resolved events and signed energy partitions (or clearly\nmanufactured test events) so useful finite execution does not wait for every\nremaining physical provider. Resolve these concrete numerical dependencies:\n\n1. Absolute abundances retain n/T when their initial inventory is zero. Choose\n   an exact-zero onset and tiny positive stock representation; the old\n   `1e-20` scaling does not guarantee resolution of saved stocks near `1e-104`.\n2. Cached nuclear k applies at the saved T grid with the old provider\n   assumptions. Decide off-grid evaluation/interpolation and its residual\n   criterion; saved F(Y_old) is replay evidence, not F(Y_new).\n3. Reuse `AtomicNetwork.rates()` and omit returned D. The evaluated nuclear\n   event layer owns beta once. Do not call unchanged `evaluate()` and then\n   add the new beta events again.\n4. Keep each RR provider's alpha, derivative and lambda together. The donor\n   Li uses Badnell; the recovered/published scalar adapter uses VF. Their\n   difference is measured and is not an equality-test failure. A derivative\n   of Badnell's b(T) includes b_dot. RR kinetic factors never multiply Gdr.\n5. Distinguish total/thermal electrons and include both nucleus and electron\n   count changes in the common-temperature heat capacity. Differentiate the\n   actual selected state/closure when constructing the Jacobian.\n6. Local sources return proper-time units. The outer solver applies H and\n   population scales once. The fixed compact33 chemistry lift cannot carry\n   positive n/T injection; geometry reduction is a separate question.\n\nFreeze a finite C3 numerical probe and its tolerances before delegating code.\nUse the existing checkout, inspect/preserve concurrent dirty files, and stage\nonly the next task's paths. Astra owns numerical/physical acceptance and\none independent scoped review; the lower-tier worker implements and runs the\nbounded probe. A finite PASS must lead to the next executable action.\n\nPhysical daughter probabilities, charge-conditioned nuclear rates, consistent\nmass/binding data, empirical RR energy accuracy, DR moments/cascades,\nnonthermal stopping and generated-photon closure remain explicit inputs.\nTheir absence limits coupled physical claims but does not prohibit a labelled\nconditional local construction. C3–C10 and full coupled production are not\ndeclared complete by this C2 checkpoint.\n"
+    },
+    {
+      "key": "rec120_handoff",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/rec_bianchi/7c4af579be508cccf203d3e2a3a5aa16a4b28e38/research/rec_rei_thermal_yield_20261022/CODEX_HANDOFF.md",
+      "kind": "text",
+      "observed_utc": "2026-10-22T14:41:20.408Z",
+      "isError": false,
+      "data": "# Codex continuation — THERM01 completed finite science\n\nRepository: `cosmosapjw-quantum/rec_bianchi`.\nBranch: `research/rec-rei-thermal-yield-20261022`.\nDraft PR: https://github.com/cosmosapjw-quantum/rec_bianchi/pull/120 .\nUnit: `research/rec_rei_thermal_yield_20261022`.\nExecution-source checkpoint: `f68f6e8391f115f36da2766bc8eb20724d1c673f`.\nRead the latest PR/branch and delivery receipts before interpreting a later document-only HEAD.\n\n## Completed work to reuse\n\nRead `HANDOFF.json`, `DAG.json`, `RESULTS_KO.md`, `FROZEN_CONTRACT.md`,\n`SOURCE_SCOPE_CLARIFICATION.md`, `NEXT_SOURCE_INPUTS.md`, and\n`evidence/INDEPENDENT_REVIEW.md`. The frozen contract is an execution-identity file;\nthe separate scope clarification corrects its overly broad core-excitation sentence.\n\nExactly eight new THERM01 histories are complete: six nominal, one tight34, one\nfull63 oracle. All have 193 saved epochs and 21 reconstructed populations, z20→2.\nThe new nominal state is compact34, with dynamic w=epsilon_th/kB. All finite gates\nand the bounded independent review passed. The maximum normalized energy residual\nis 2.935629461677083e-6 against 3e-6: only 2.1457% headroom. Preserve that qualification.\nThree PNG/PDF figure pairs and ten CSV sources are complete and checked.\n\nDo not rerun REC126, REI129, warm729, any other completed historical campaign, or\nthe completed THERM01 histories merely to recover or republish artifacts. Their\ncounts are separate. REI's historical first failed raw remains local-only in its\noriginal preservation scope; it is not retroactively covered by later archives.\nAll eight new THERM01 trajectory and solver-return NPZ files are preserved here.\n\n## Reuse and recovery commands\n\nPython 3.12.14, NumPy2.3.5, SciPy1.17.0, Matplotlib3.10.8 were actually used.\n`requirements-runtime.txt` records those versions. This unit is self-contained\nwith the 57 immutable donor files and PR220 compact module in vendor/.\n\nFor lost figures only, read the existing raw; this command performs no ODE:\n\n```bash\nOPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 MPLCONFIGDIR=/tmp/therm01-mpl python code/run.py --plot\n```\n\nDo not invoke a full campaign as an automatic recovery step. The default runner\nhas source/config/raw-hash cache guards, but even cached revalidation is unnecessary\nunless it resolves a concrete missing result. Never delete an output directory or\nchange a scientific identity merely to bypass its cache/failure guard.\n\n## Positive next work\n\nFollow N1–N5 in `NEXT_SOURCE_INPUTS.md`: resolve actual charge/level/energy data for\nin-band Li resonances and 60–200 eV correlated channels; select an independent H/He\npartial recombination-cooling witness; freeze source tables, units, exclusive\nchannels, energy ledger and finite criteria before code. Recheck the compact\ninvariant subspace if new processes break electronic isotope equality or introduce\nnuclear transmutation. Allocate a new source identity/cohort for genuinely new IVPs.\n\nThe retained direct Li I1s photoionization channel is zero below its edge. Physical\n50–60 eV resonant core excitations are excluded, not nonexistent. Source-fit\nderivative cooling accuracy remains unmeasured. UV remains prescribed. Do not\nclaim full nuclear or thermodynamic closure or complete 5–200 eV ionic yields.\n\nPhysical HOLD; REC U5 HOLD_9_FAIL/HOLD_8_FAIL; CLOSED_HOLD_NOT_RESET;\nglobal convergence NOT_RUN; production NOT_APPROVED; REI_activation=false.\n\n## Delivery interpretation\n\nScience publication: `d562d03415e37488cd4b5444488c77555260e0fb`.\nRecovery publication: `b94314be1be12664f1dec8100d29bdb5f9135adf`.\nThe final documentary HEAD is the commit containing\n`delivery/FINAL_PUBLICATION_BACKUP.json`, pinned in the PR120 completion comment.\nAll 20 current R1–R10/C1–C10 nodes are COMPLETE_SCOPED. N1 is READY_TO_SELECT;\nN2/N3 are INPUT_DEPENDENT; N4/N5 are NOT_RUN.\n\nFinal archive: `REC_REI_THERM01_FINAL_RECOVERED_20261022_5445e15edb1d.zip`.\nSize: 12,639,251 bytes; 157 payload files plus one manifest.\nSHA256: `5445e15edb1d580af8b819e8d6a1b73fc2b9958d76bae92967c38ee0763bf0e0`.\nDropbox file `id:BSpOijBcT10AAAAAAD_h4A`: actual single full GET matches whole-byte\nSHA256, ZIP CRC, manifest and all 157 payload SHA256 values.\nGoogle Drive file `1vplg47vr0im-aTm0K6XLMYzvLEY5SJNs`: successful upload and exact\nmetadata size; whole-byte readback NOT_RUN. Stages A/B have their own preserved\nACK/size receipts; do not promote them to a whole-byte readback claim.\n\nThe archive is a fixed payload snapshot made before upload ACK. This receipt,\nfinal DAG and handoff updates form a documentary Git supplement. Do not rewrite\nthe already verified ZIP to make an impossible self-containing publication receipt.\n\nOriginal Stage C remote ZIP was incomplete (12,257,739 bytes, no central directory).\nAll 147 expected payloads were recovered exactly: 85 complete local members and\n62 from fixed science Git, with two CSV line endings restored only after original\nSHA256/GitSHA agreement. Recovery commit verified all 155 published unit blobs.\nThe incomplete ZIP remains failure evidence; its cause is undetermined.\nRecovery ODE count is 0. Use the final recovered ZIP, not the incomplete object.\n"
+    },
+    {
+      "key": "rei221_sandbox_dir",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/rei_bianchi/contents/research/rei_coupled_isotope_sandbox_20261022?ref=2f9ebff30c7505e425179862819f212ddbd07542",
+      "kind": "directory",
+      "observed_utc": "2026-10-22T14:41:33.314Z",
+      "isError": false,
+      "data": [
+        {
+          "name": "DAG.json",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/DAG.json",
+          "sha": "15bdb8ed4d7c7d692b418e64bbedd4b8f55ccadd",
+          "size": 5629,
+          "type": "file"
+        },
+        {
+          "name": "DELIVERY.json",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/DELIVERY.json",
+          "sha": "ad7bbf6fbb58749466c8fb18cb3953f493384f54",
+          "size": 2656,
+          "type": "file"
+        },
+        {
+          "name": "EXECUTION_CONTRACT.md",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/EXECUTION_CONTRACT.md",
+          "sha": "e78ed51cded6e9b5aecc505b3cb059c3095ffbb6",
+          "size": 13833,
+          "type": "file"
+        },
+        {
+          "name": "IMPLEMENTATION.md",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/IMPLEMENTATION.md",
+          "sha": "cd9aef2b902df54571c2bdb375389eb1b15e64d7",
+          "size": 8325,
+          "type": "file"
+        },
+        {
+          "name": "README.md",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/README.md",
+          "sha": "921e8ad66094b24957cae27ac42195e024cedc3a",
+          "size": 4233,
+          "type": "file"
+        },
+        {
+          "name": "REPORT_KO.md",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/REPORT_KO.md",
+          "sha": "2f59337e65449531f270939fc6e30677a39d23f7",
+          "size": 15193,
+          "type": "file"
+        },
+        {
+          "name": "RESUME.md",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/RESUME.md",
+          "sha": "38f28a3e05a545d284d973cb01b07371a5c9e480",
+          "size": 5550,
+          "type": "file"
+        },
+        {
+          "name": "REVIEW.md",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/REVIEW.md",
+          "sha": "392316581058523c5704361e1b5e6ed0e7728a6f",
+          "size": 11981,
+          "type": "file"
+        },
+        {
+          "name": "SOURCES.md",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/SOURCES.md",
+          "sha": "97904e0c6675f7cdc6b12306079fcfede6d8a2d9",
+          "size": 5979,
+          "type": "file"
+        },
+        {
+          "name": "THEORY_DERIVATION.md",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/THEORY_DERIVATION.md",
+          "sha": "93686403c9d8ee95e752f735dc9eeb362b06bb10",
+          "size": 26052,
+          "type": "file"
+        },
+        {
+          "name": "code",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/code",
+          "sha": "55de55ead8fee00c288a7c62acd5bb0a3cb73004",
+          "size": 0,
+          "type": "dir"
+        },
+        {
+          "name": "evidence",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/evidence",
+          "sha": "c72f189fd1370798fa7c58756032e62ad9b01241",
+          "size": 0,
+          "type": "dir"
+        },
+        {
+          "name": "figures",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/figures",
+          "sha": "5beef3a7afd5222facffb8c55d6ba64c5ed3667d",
+          "size": 0,
+          "type": "dir"
+        },
+        {
+          "name": "fixtures",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/fixtures",
+          "sha": "0d1fca99c7e17e95c40bf193370ef2ea8571a04c",
+          "size": 0,
+          "type": "dir"
+        },
+        {
+          "name": "requirements.txt",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/requirements.txt",
+          "sha": "471f776f67541bcaadd042782a1c0a438d0009f3",
+          "size": 46,
+          "type": "file"
+        },
+        {
+          "name": "run.sh",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/run.sh",
+          "sha": "0c167d8c790c8169af73c89784770a62eab4d140",
+          "size": 199,
+          "type": "file"
+        },
+        {
+          "name": "run_fresh.sh",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/run_fresh.sh",
+          "sha": "6240e0843fb0dbe079692b467c4531ce78d1494c",
+          "size": 2490,
+          "type": "file"
+        },
+        {
+          "name": "vendor",
+          "path": "research/rei_coupled_isotope_sandbox_20261022/vendor",
+          "sha": "0f0111e46bf90d75b2178b65692f301eca164d00",
+          "size": 0,
+          "type": "dir"
+        }
+      ]
+    },
+    {
+      "key": "rei221_sandbox_delivery",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/rei_bianchi/2f9ebff30c7505e425179862819f212ddbd07542/research/rei_coupled_isotope_sandbox_20261022/DELIVERY.json",
+      "kind": "text",
+      "observed_utc": "2026-10-22T14:41:33.774Z",
+      "isError": false,
+      "data": "{\n  \"schema\": \"rei-conditional-sandbox-delivery-v1\",\n  \"utc\": \"2026-10-22T07:40:35.198021+00:00\",\n  \"scientific_decision\": \"PASS_SCOPED_CONDITIONAL_LOCAL_SANDBOX\",\n  \"execution_accounting\": {\n    \"baseline_checks_pass\": 156,\n    \"targeted_checks_pass\": 2,\n    \"separate_invocations\": true,\n    \"delivery_scientific_reruns\": 0\n  },\n  \"scientific_publication\": {\n    \"commit\": \"569f784e78676123513b7390001d317eb62d6372\",\n    \"parent\": \"42e44494bd0956756d8c610e75da5b1cafe20d3c\",\n    \"full_tree\": \"24fef6518805a228d4cc6f37da7631f0909422c5\",\n    \"unit_scientific_subtree\": \"15b205e5198302ca29144a53035c28d55430a346\",\n    \"remote_recursive_tree_verification\": {\n      \"expected_files\": 49,\n      \"matched_blob_and_mode_identities\": 49,\n      \"mismatches\": []\n    },\n    \"unchanged_inherited_subtrees\": {\n      \"C1\": \"ed4853d0118d9c26b1c17376d1cb21ba24d28293\",\n      \"C2\": \"552475316bcd15629b34498ac0d56c5245c22886\"\n    }\n  },\n  \"branch\": \"research/rei-coupled-isotope-contract-20261022\",\n  \"pull_request\": {\n    \"number\": 221,\n    \"url\": \"https://github.com/cosmosapjw-quantum/rei_bianchi/pull/221\",\n    \"state\": \"open\",\n    \"draft\": true,\n    \"merged\": false\n  },\n  \"immutable_source_archive\": {\n    \"filename\": \"REI_COUPLED_ISOTOPE_SANDBOX_20261022_de84e782db1e.zip\",\n    \"local_sha256\": \"de84e782db1e4cbfd9f63a4703e88ee3fc5557378eb55eea85e4bef395dba44f\",\n    \"size_bytes\": 440240,\n    \"member_count\": 50,\n    \"contains_this_delivery_receipt\": false\n  },\n  \"backups\": {\n    \"drive\": {\n      \"upload_status\": \"SUCCESS\",\n      \"file_id\": \"1nbxnozIHfN7ueiYPhad9iWLjAcwWensl\",\n      \"url\": \"https://drive.google.com/file/d/1nbxnozIHfN7ueiYPhad9iWLjAcwWensl/view?usp=drivesdk\",\n      \"parent_id\": \"1phclg92jkhC5KgvnXhks8GbOFlya4qGe\",\n      \"metadata_read_confirmed_size_bytes\": 440240,\n      \"provider_hash\": \"NOT_EXPOSED\",\n      \"full_remote_download\": \"NOT_RUN\",\n      \"admitted_evidence\": \"UPLOAD_ACK_AND_METADATA_SIZE_ONLY\"\n    },\n    \"dropbox\": {\n      \"upload_status\": \"COMPLETED\",\n      \"file_id\": \"id:BSpOijBcT10AAAAAAD_h6A\",\n      \"modified_time\": \"2026-10-22T07:39:14Z\",\n      \"path_display\": \"/bianchi/research_backups/rei_bianchi/REI_COUPLED_ISOTOPE_SANDBOX_20261022_de84e782db1e.zip\",\n      \"acknowledged_size_bytes\": 440240,\n      \"provider_hash\": \"NOT_EXPOSED\",\n      \"full_remote_download\": \"NOT_RUN\",\n      \"admitted_evidence\": \"UPLOAD_ACK_AND_SIZE_ONLY\"\n    }\n  },\n  \"delivery_metadata_commit\": \"COMMIT_CONTAINING_THIS_FILE_RESOLVES\",\n  \"snapshot_rule\": \"Later delivery metadata; scientific source, observed results and immutable archive remain unchanged.\",\n  \"full_coupled_physical_production\": \"HOLD_PHYSICAL_CLOSURE_AND_COUPLED_INTEGRATION\"\n}\n"
+    },
+    {
+      "key": "rei221_sandbox_resume",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/rei_bianchi/2f9ebff30c7505e425179862819f212ddbd07542/research/rei_coupled_isotope_sandbox_20261022/RESUME.md",
+      "kind": "text",
+      "observed_utc": "2026-10-22T14:41:40.242Z",
+      "isError": false,
+      "data": "# Resume: local sandbox source adapter\n\n## Current scientific checkpoint\n\n`PASS_SCOPED_CONDITIONAL_LOCAL_SANDBOX`, 2026-10-22.\nSee REVIEW.md and evidence/INDEPENDENT_REVIEW.json for the independent decision.\nTheory R1–R10 and coding C3–C10 have been carried through for this finite unit;\nC1/C2 baseline and source mappings are reused within their earlier scope.\n\nFirst diagnostic: 156 PASS, zero failures, exit 0. One subsequently authorized\ncoverage addition: two manufactured n/T zero-onset checks PASS in a separate\ninvocation. All three original scientific code SHA256 values remain unchanged.\nNo full diagnostic rerun for the addition, helper validation, packaging or\npublication. No historical C1/C2 execution, cosmological IVP or reset of an old\ncampaign budget. The finite local integrations are one atomic Radau oracle,\nfour atomic midpoint trajectories and six analytic scalar trace comparisons.\n\nLocal restored directory has no .git. The actually fetched remote starting\nhead was PR221 at `42e44494bd0956756d8c610e75da5b1cafe20d3c`, on\n`research/rei-coupled-isotope-contract-20261022`. The pinned C2 scientific\ncommit is `c1714f82ea7de15fee230a1a995365970ee6dc02`; atomic donor is\n`8be7533cc97b3302bf42608699d6e8313ed6af8a`. A subsequent delivery receipt\nrecords the new published commit and acknowledged backups. Do not interpret\nthe remote branch identity as an observed local checkout HEAD.\n\n## Reuse directly\n\n- Immutable small input copies and source mappings; preserve older results.\n- Shared charge blocks at fixed T/spectrum under the donor's isotope electronic\n  equality model, with all 21 independent abundances retained.\n- `J=B+(n_B RY)q^T`, fixed-fast-electron column, and the physical-domain d≥1\n  denominator theorem. The theorem has its stated sign/domain restrictions.\n- Positive second-order atomic midpoint at fixed T/UV/nB and zero fast pool.\n- Supplied resolved-channel event algebra, zero-aware derivatives, log flux,\n  explicit energy reservoir accounting and the supplied-Q temperature formula.\n- Component scaling evidence at 1e-104 and 1e-120, without a population floor.\n- Measured default: dense 21-state linear solve, prepared rates, vectorized\n  batches where useful. Structured solve remains an exact checked alternative.\n\nNo new proof, literature search, full manifest or repeat diagnostic is needed\nmerely to resume or deliver identical work. New assumptions or changed code\nrequire checking only the affected dependencies.\n\n## Next scientifically useful unit\n\nThe next open dependency is **physical resolved-event/energy input followed by\na finite coupled local integration**. The present unit already calculates\nlocal atomic, supplied-event and EOS pieces. It does not supply missing\ncharge-state branching, radiation retention, fast-electron stopping or nuclear\nenergy partitions.\n\n1. Select a concrete local physical scenario and list its externally prescribed\n   T/spectrum/density or its actual thermal evolution. Reuse the 21-state\n   normalization and single beta ownership.\n2. Identify the exact event coefficients and their applicability. For several\n   branches of a parent, supply normalized probabilities and form resolved\n   coefficients before calling this API. Supply a justified coefficient table\n   or compute at supported temperatures; three saved knots alone do not admit\n   off-grid interpolation accuracy.\n3. Supply each event's signed energy ledger in the existing neutral-atom\n   convention and any required fast-electron/radiation closure. Classify a\n   manufactured scenario explicitly if these inputs are chosen for a numerical\n   construction. Physical missing values are not silently replaced with zero.\n4. Freeze the combined equations, energy and baryon invariants, initial/boundary\n   values, event/thermal Jacobian requirements, solver and finite resource cap.\n   The atomic-only positive midpoint and its d≥1 proof must not automatically\n   be promoted to the augmented system.\n5. Execute a bounded combined local trajectory and a refinement/reference\n   comparison, checking energy, baryons, onset and componentwise trace accuracy.\n   Compare runtime only for equivalent equations and accuracy. Review that new\n   result once and advance according to observed evidence.\n\nEntry point is R1/R3 for new physical assumptions and C2/C3 for newly connected\nevent/thermal dependencies, preserving completed atomic results. It is not a\nreason to reopen all C1/C2 work. Full cosmological production and historical\ncampaigns require their own existing input/budget contracts.\n\n## Reproduction and practical caveats\n\nRun `bash research/rei_coupled_isotope_sandbox_20261022/run_fresh.sh` from the\nproject or extracted package root. It prints a new /tmp artifact-copy path,\npreserves delivered evidence there and executes baseline156 then targeted2.\nThe source wrapper was checked with syntax/help/prepare-only; no scientific\nreplay was performed for that packaging check. Actual first-run commands and\nversions are recorded in the execution receipts.\n\nReported 10.3994 s wall and 10.2784 s CPU are diagnostic body timers after\nimports. Peak RSS 111128 KiB is the process peak. Local timing varies: preserve\nraw repeat ranges. The Matplotlib cache warning and successful temporary-cache\nfallback are in the original stderr.\n\nPolicy alignment with the user-selected built-in physmath workflow 1.0.0,\ncurrent AGENTS tiered roles and current no-new-worktree instruction is in the\nfrozen EXECUTION_CONTRACT. Historical artifacts are unchanged; this work adds\none owned directory.\n"
+    }
+  ],
+  "identity_ledger": [
+    {
+      "unit": "WU088_HH PHYS79 parent",
+      "classification": "UNCHANGED",
+      "expected_head": "3304d16db1dc9bf868c185a8eeb6cc9dbc270e50",
+      "actual_head": "3304d16db1dc9bf868c185a8eeb6cc9dbc270e50",
+      "pr_state": "OPEN_DRAFT_NOT_MERGED",
+      "observed_utc": "2026-10-22T14:40:57.495Z"
+    },
+    {
+      "unit": "WU088_HH PHYS80 pending publication branch",
+      "classification": "EXPECTED_FRESH_BRANCH_AT_PARENT",
+      "branch": "research/hh-phys80-sandbox-reduction-20261022",
+      "expected_head": "3304d16db1dc9bf868c185a8eeb6cc9dbc270e50",
+      "actual_head": "3304d16db1dc9bf868c185a8eeb6cc9dbc270e50",
+      "observed_utc": "2026-10-22T14:40:57.130Z",
+      "acceptance": "PARENT_MATCH_AT_OBSERVATION; publication must use expected-ref CAS or equivalent fresh guard"
+    },
+    {
+      "unit": "REI221 conditional local sandbox",
+      "classification": "NEW_SIBLING_SCIENTIFIC_IDENTITY_OBSERVED",
+      "previous_head": "c1714f82ea7de15fee230a1a995365970ee6dc02",
+      "actual_head": "2f9ebff30c7505e425179862819f212ddbd07542",
+      "science_commit": "569f784e78676123513b7390001d317eb62d6372",
+      "source_unit": "research/rei_coupled_isotope_sandbox_20261022",
+      "reported_scope": "PASS_SCOPED_CONDITIONAL_LOCAL_SANDBOX",
+      "reported_counts": {
+        "baseline_checks_pass": 156,
+        "targeted_zero_onset_checks_pass": 2,
+        "separate_invocations": true,
+        "atomic_Radau_oracle": 1,
+        "atomic_midpoint_trajectories": 4,
+        "analytic_scalar_trace_comparisons": 6,
+        "cosmological_IVP": 0,
+        "historical_C1_C2_replay": 0,
+        "delivery_scientific_reruns": 0
+      },
+      "scope_limits": [
+        "21 independent abundances retained",
+        "Shared charge blocks under source-dependent isotope electronic equality",
+        "Atomic midpoint at fixed T/spectrum/nB with zero fast pool",
+        "Supplied resolved events and signed energy partitions; missing physical branching/stopping/radiation inputs remain OPEN",
+        "Denominator and positivity proof must not be promoted automatically to augmented event/thermal system"
+      ],
+      "relation_to_PHYS80": "Separate local atomic/supplied-event identity, not a PHYS80 reduced execution or source-domain admission.",
+      "backup_evidence_reported": "Drive upload+metadata size; Dropbox upload+acknowledged size; both full remote downloads NOT_RUN",
+      "this_refresh_remote_backup_downloads": 0
+    },
+    {
+      "unit": "REC120 THERM01",
+      "classification": "SAME_SCIENCE_NEW_RECOVERY_AND_DELIVERY_METADATA",
+      "previous_head": "d562d03415e37488cd4b5444488c77555260e0fb",
+      "actual_head": "7c4af579be508cccf203d3e2a3a5aa16a4b28e38",
+      "science_publication": "d562d03415e37488cd4b5444488c77555260e0fb",
+      "execution_source_checkpoint": "f68f6e8391f115f36da2766bc8eb20724d1c673f",
+      "recovery_publication": "b94314be1be12664f1dec8100d29bdb5f9135adf",
+      "reported_counts": {
+        "completed_THERM01_histories": 8,
+        "new_recovery_ODE": 0
+      },
+      "reported_recovery": {
+        "reason": "Original Stage C ZIP incomplete, no central directory; cause undetermined",
+        "original_incomplete_bytes": 12257739,
+        "expected_payloads_recovered": 147,
+        "local_complete_members": 85,
+        "fixed_science_git_members": 62,
+        "git_unit_blobs_verified": 155
+      },
+      "reported_final_backup": {
+        "filename": "REC_REI_THERM01_FINAL_RECOVERED_20261022_5445e15edb1d.zip",
+        "bytes": 12639251,
+        "payload_files": 157,
+        "sha256": "5445e15edb1d580af8b819e8d6a1b73fc2b9958d76bae92967c38ee0763bf0e0",
+        "dropbox_scope": "Actual single full GET: whole-byte SHA256, ZIP CRC, manifest and all157payload SHA256",
+        "drive_scope": "Upload and metadata exact size only; whole-byte readback NOT_RUN"
+      },
+      "relation_to_PHYS80": "Existing8histories remain separate; no new thermal/CI/CX source closure or new PHYS80 result.",
+      "this_refresh_remote_backup_downloads": 0
+    },
+    {
+      "unit": "HE86 HE33",
+      "classification": "UNCHANGED",
+      "previous_head": "bb1259b21c7b83b0376a5f7fcbb0c6321918ec90",
+      "actual_head": "bb1259b21c7b83b0376a5f7fcbb0c6321918ec90"
+    }
+  ],
+  "subtask_accounting": {
+    "new_scientific_ODE": 0,
+    "scientific_tests_rerun": 0,
+    "historical_campaign_reruns": 0,
+    "remote_mutations": 0,
+    "remote_archive_downloads": 0,
+    "processes_terminated": 0
+  },
+  "parent_report_only": {
+    "PHYS80_new_reduced_ODE_completed": 3,
+    "scope": "Parent message supplied count; not independently reexecuted or recounted by this refresh."
+  },
+  "original_inventory_manifest": {
+    "path": "/tmp/phys80_inventory/INVENTORY_MANIFEST.json",
+    "mutation": "UNCHANGED",
+    "refresh_inclusion": "This refresh and companion note are external additive evidence, intentionally outside the earlier frozen manifest."
+  },
+  "interpretation": "No observed parent-ref conflict. New sibling result remains independently scoped; fixed-inventory/source-isotope-equality reduction and existing source-domain guards must not be broadened by cross-repo reuse.",
+  "private_conversations": "UNAVAILABLE_NOT_EXHAUSTIVELY_SURVEYED"
+}
