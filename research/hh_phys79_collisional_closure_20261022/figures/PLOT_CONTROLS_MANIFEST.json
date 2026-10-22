@@ -1,0 +1,122 @@
+{
+  "schema": "PHYS79_SAVED_CONTROL_PLOTS_V1",
+  "status": "PASS_PNG_VISUAL_REVIEW",
+  "created_utc": "2026-10-22T02:57:55.895449+00:00",
+  "source": {
+    "path": "source/plot_controls.py",
+    "sha256": "7be47bcb83b7ff938f4d0465d35ee596d241657edaf93c0dc05b622a1053fbf8"
+  },
+  "inputs": {
+    "run_receipt": {
+      "path": "results/ISOLATED_COMMAND_STDOUT.json",
+      "sha256": "f58a4d05c462a8c63c7eedda17e8f263bd09f64564ec5e6832589189049a4d45",
+      "bytes": 5689
+    },
+    "C01_BASE": {
+      "science_id": "87b585ddcdef54dc97b13f35607d6351f8d3f8320e79942391e5813d36a00761",
+      "physics_id": "a0cdd172c8325b9018e1339c357b4f517bf32cfd31848088c1a24319b12d96fc",
+      "case_receipt": {
+        "path": "results/isolated/cases/87b585ddcdef54dc97b13f35607d6351f8d3f8320e79942391e5813d36a00761.json",
+        "sha256": "210c931a23ad2e3730f551fc7e510a80dcd2aaf785c3ec66e66fc6cd510bca13",
+        "bytes": 4839
+      },
+      "npz": {
+        "path": "results/isolated/cases/87b585ddcdef54dc97b13f35607d6351f8d3f8320e79942391e5813d36a00761.npz",
+        "sha256": "52049245ed64711220bc4709536e6204af34b729a89b3d5482bef35035969d4b",
+        "bytes": 49850
+      }
+    },
+    "C02_BASE": {
+      "science_id": "270d221e2c86815860e8c6fa37aee61effcc635ee5b9bc630b54c010c38a542f",
+      "physics_id": "112384ec1dcbe9ec909099874dcbbf04afcb516e6c6b7a32da88f09d86808d32",
+      "case_receipt": {
+        "path": "results/isolated/cases/270d221e2c86815860e8c6fa37aee61effcc635ee5b9bc630b54c010c38a542f.json",
+        "sha256": "112ae2535558ecfd2f8fbea1be9cd5a2f53dc155b6060ce650eb70dcf7fa5527",
+        "bytes": 5827
+      },
+      "npz": {
+        "path": "results/isolated/cases/270d221e2c86815860e8c6fa37aee61effcc635ee5b9bc630b54c010c38a542f.npz",
+        "sha256": "459ba3c7608df79b2853cb3d8688d4cb453b7c524ebf5a5c907af747f8c833f5",
+        "bytes": 18249
+      }
+    },
+    "C01_REFINED": {
+      "science_id": "f698f70efed77439c95adbb14859c3f03c067a4eb4824571b04132200aa49d49",
+      "physics_id": "a0cdd172c8325b9018e1339c357b4f517bf32cfd31848088c1a24319b12d96fc",
+      "case_receipt": {
+        "path": "results/isolated/cases/f698f70efed77439c95adbb14859c3f03c067a4eb4824571b04132200aa49d49.json",
+        "sha256": "aa80df4933c913977b0be2804a247fc613436963257db3295545266cd77756d1",
+        "bytes": 4859
+      },
+      "npz": {
+        "path": "results/isolated/cases/f698f70efed77439c95adbb14859c3f03c067a4eb4824571b04132200aa49d49.npz",
+        "sha256": "abcb0a0f56989a96b1ee5ae14b6288f4fa0ca930db9c8e0f16c8afbc11c786a1",
+        "bytes": 50026
+      }
+    }
+  },
+  "plotted_samples": 483,
+  "seconds_per_Julian_year": 31557600.0,
+  "axis_zero_policy": "All axes are linear; physical zeros are drawn without floors.",
+  "scope": "Isolated fixed-density controls; no cosmological correction or continuum certificate.",
+  "control_dependency_identity_changed": false,
+  "new_ODE_calls_by_plotting": 0,
+  "existing_control_ODEs_from_run_receipt": 3,
+  "oracle_recomputed": false,
+  "numerical_display": {
+    "C01": {
+      "proper_time_end_kyr": 173.27205909772874,
+      "T_initial_K": 25370.663084247735,
+      "T_final_K": 24461.949997932665,
+      "H1_II_fraction_initial": 0.1,
+      "H1_II_fraction_final": 0.10828622472254856,
+      "Li_II_fraction_initial": 0.01,
+      "Li_II_fraction_final": 0.959042195649593,
+      "refinement_scaled_state_difference_from_run_receipt": 4.574293383682441e-15
+    },
+    "C02": {
+      "proper_time_end_yr": 305.90852103944354,
+      "D_II_fraction_initial": 1e-06,
+      "D_II_fraction_final": 0.4642164994314677,
+      "recorded_oracle_D_II_fraction": 0.464216503066894,
+      "final_thermal_drop_mK": 0.20691957263352379,
+      "recorded_oracle_thermal_drop_mK": 0.20691957439566977,
+      "max_saved_temperature_minus_extent_relation_K": 3.647465385281379e-13,
+      "D_final_distance_over_inventory_from_case_receipt": 3.635426294598055e-09,
+      "oracle_scope": "Scalar equilibrium already recorded by the control run; not recomputed by plotting",
+      "extent_comparison_note": "Plotting reconstructs the conserved particle census as initial_u/(1.5*k_B*T0) and compares drops after conversion to mK. Floating arithmetic therefore differs slightly from the runner check based on the explicit particle census; this is a display diagnostic, not a replacement acceptance gate."
+    }
+  },
+  "files": {
+    "03_c01_isolated_CI_CX_control.png": {
+      "bytes": 189130,
+      "sha256": "08881dbb81f4496d8b095837eb6e675ac7729172cf5ef25001f07eee5817efa0"
+    },
+    "03_c01_isolated_CI_CX_control.pdf": {
+      "bytes": 27018,
+      "sha256": "d92361eb2bc621982963c68aae2fa6eeb0e5fe003111959779ed433615535a2c"
+    },
+    "04_c02_isolated_DCX_oracle.png": {
+      "bytes": 171031,
+      "sha256": "c2a2d6fa528cea78669d4cd2286c7982f177c470f34051c1e19a228c457d204e"
+    },
+    "04_c02_isolated_DCX_oracle.pdf": {
+      "bytes": 26091,
+      "sha256": "d75d549dac0d6531e224a586ccb9fdc42c8f65cf69cdd81fb11c748442540b9e"
+    }
+  },
+  "visual_inspection": {
+    "status": "PASS_PNG_VISUAL_REVIEW",
+    "reviewed_utc": "2026-10-22T02:58:57.633651+00:00",
+    "reviewer": "identity_inventory agent; figure author",
+    "method": "Both final PNGs opened and inspected directly. PDFs were exported from the same matplotlib figures and were not separately raster-inspected.",
+    "observations": [
+      "Both figures have readable labels, units, legends, and scope captions without overlapping curves.",
+      "C01 displays the baseline trajectory and distinct open refined markers; the caption qualifies the small step-limited refinement difference.",
+      "C02 displays the D ion fraction and the positive temperature drop in millikelvin, with the recorded scalar equilibrium and saved-extent energy relation.",
+      "The abscissas are dimensional proper time: kyr for C01 and yr for C02.",
+      "All axes are linear; exact physical zeros are displayed without log floors."
+    ],
+    "continuum_certificate": false
+  }
+}

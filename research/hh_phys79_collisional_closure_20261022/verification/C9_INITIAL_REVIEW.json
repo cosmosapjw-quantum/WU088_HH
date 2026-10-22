@@ -1,0 +1,295 @@
+{
+  "status": "CHANGES_REQUESTED_FINITE_GUARDS_AND_STABLE_ENERGY_DERIVATIVE",
+  "checks": [
+    {
+      "name": "isotope_integer_nullspace",
+      "passed": true,
+      "details": {
+        "shape": [
+          21,
+          15
+        ]
+      }
+    },
+    {
+      "name": "electron_stoich_CI_vs_CX",
+      "passed": true,
+      "details": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "energy_event_scale",
+      "passed": true,
+      "details": {
+        "relative_residual": -1.5157664898672022e-16
+      }
+    },
+    {
+      "name": "temperature_chain_rule",
+      "passed": true,
+      "details": {
+        "derived": -1.347897371889452e-08,
+        "returned": -1.347897371889452e-08
+      }
+    },
+    {
+      "name": "DB_ratio_2.7",
+      "passed": true,
+      "details": {
+        "relative": 0.0
+      }
+    },
+    {
+      "name": "DB_ratio_3.0",
+      "passed": true,
+      "details": {
+        "relative": 0.0
+      }
+    },
+    {
+      "name": "DB_ratio_10.0",
+      "passed": true,
+      "details": {
+        "relative": 0.0
+      }
+    },
+    {
+      "name": "DB_ratio_300.0",
+      "passed": true,
+      "details": {
+        "relative": 0.0
+      }
+    },
+    {
+      "name": "DB_ratio_10000.0",
+      "passed": true,
+      "details": {
+        "relative": 0.0
+      }
+    },
+    {
+      "name": "DB_ratio_200000.0",
+      "passed": true,
+      "details": {
+        "relative": 0.0
+      }
+    },
+    {
+      "name": "D_equilibrium_flux",
+      "passed": true,
+      "details": {
+        "relative_flux": 1.4570071456124999e-16
+      }
+    },
+    {
+      "name": "CI_domain_0_below",
+      "passed": true,
+      "details": {
+        "temperature": 11604.51812155008
+      }
+    },
+    {
+      "name": "CI_domain_0_above",
+      "passed": true,
+      "details": {
+        "temperature": 232090362.43100163
+      }
+    },
+    {
+      "name": "CI_domain_1_below",
+      "passed": true,
+      "details": {
+        "temperature": 11604.51812155008
+      }
+    },
+    {
+      "name": "CI_domain_1_above",
+      "passed": true,
+      "details": {
+        "temperature": 232090362.43100163
+      }
+    },
+    {
+      "name": "CI_domain_2_below",
+      "passed": true,
+      "details": {
+        "temperature": 34813.554364650234
+      }
+    },
+    {
+      "name": "CI_domain_2_above",
+      "passed": true,
+      "details": {
+        "temperature": 232090362.43100163
+      }
+    },
+    {
+      "name": "CI_domain_3_below",
+      "passed": true,
+      "details": {
+        "temperature": 11604.51812155008
+      }
+    },
+    {
+      "name": "CI_domain_3_above",
+      "passed": true,
+      "details": {
+        "temperature": 232090362.43100163
+      }
+    },
+    {
+      "name": "CI_domain_4_below",
+      "passed": true,
+      "details": {
+        "temperature": 46418.07248620032
+      }
+    },
+    {
+      "name": "CI_domain_4_above",
+      "passed": true,
+      "details": {
+        "temperature": 232090362.43100163
+      }
+    },
+    {
+      "name": "CI_domain_5_below",
+      "passed": true,
+      "details": {
+        "temperature": 58022.5906077504
+      }
+    },
+    {
+      "name": "CI_domain_5_above",
+      "passed": true,
+      "details": {
+        "temperature": 232090362.43100163
+      }
+    },
+    {
+      "name": "D_invalidT_0.0",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "D_invalidT_-1.0",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "D_invalidT_nan",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "D_invalidT_inf",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "zero_catalyst_still_rejects_rate_domain",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "full_cosmological_refusal",
+      "passed": true,
+      "details": {}
+    }
+  ],
+  "findings": [
+    {
+      "id": "C9-F1",
+      "severity": "medium",
+      "scope": "finite-domain API",
+      "finding": "Finite species inputs may overflow aggregate particle count; helpers return inf or zero rather than explicit invalid-state error. rhs(empty network) also accepts that state.",
+      "reproduction": {
+        "thermal_energy": "inf",
+        "temperature": "0.0",
+        "rhs": {
+          "temperature_derivative": -0.0,
+          "energy": 0.0
+        }
+      },
+      "minimum_fix": "Check isfinite(xe), isfinite(N) and positive finite returned thermal u/T in all three entrypoints. No clipping."
+    },
+    {
+      "id": "C9-N1",
+      "severity": "low",
+      "scope": "provenance label",
+      "finding": "diagnostics.model always embeds DB43K even for raw_fit alternative. The separate d_cx_closure field is correct, so actual numerical configuration remains recoverable.",
+      "reproduction": {
+        "model": "PHYS79_CI_VORONOV_DOMAIN_DCX_SAVIN_REVERSE_DB43K_V1",
+        "ci_rows": [],
+        "d_cx": true,
+        "d_cx_closure": "raw_fit",
+        "units": "K,cm^-3,eV,proper_s,per_reference_H1",
+        "escaping_photon_energy": 0.0,
+        "species_projection": "NONE",
+        "isotope_atomic_kinetics": "ELEMENT_SHARED_CI",
+        "ionic_potential": "PHYS78_PLUS_D43K",
+        "full_cosmological_admission": "NOT_ISSUED"
+      },
+      "minimum_fix": "Use neutral family ID or derive model label from closure; keep closure field in identity."
+    },
+    {
+      "id": "C9-F2",
+      "severity": "medium",
+      "scope": "fixed energy acceptance gate",
+      "finding": "Computing delta energy via epsilon@dY cancels the ~13.6eV common H/D potential against the0.003705eV defect.85of252 physical D/H states exceed fixed2e-13 event-energy relative gate despite mathematically conservative stoichiometry.",
+      "evidence": {
+        "case_count": 252,
+        "max_case": {
+          "T_K": 25370.7,
+          "xH": 1e-10,
+          "xD": 0.0001,
+          "nH_cm3": 1e-05,
+          "heat": 1.0467679241282296e-24,
+          "binding_dot": -1.0467679241275499e-24,
+          "event_scale": 1.0467700139119023e-24,
+          "relative_residual": 6.493941682768351e-13
+        },
+        "fail_count_at_2e13": 85,
+        "gate": 2e-13,
+        "scope": "floating arithmetic derivative identity; no ODE"
+      },
+      "minimum_fix": "Compute authoritative binding_derivative as math.fsum(delta_binding_eV[r]*event[r]); retain epsilon@dY as independent conditioning diagnostic using constituent energy scale. Keep the declared2e-13 energy gate."
+    }
+  ],
+  "count": 29,
+  "passed_count": 29,
+  "ode_runs": 0,
+  "reviewed_source_identity": {
+    "source/collisional.py": {
+      "bytes": 9894,
+      "sha256": "6da20f80f8c7097372d1c984c1ba1f8fead6ef36334204566fe0706c7cf60837"
+    },
+    "source/phys78_bridge.py": {
+      "bytes": 1019,
+      "sha256": "d86fe9a2d2749d41f9e417aaa55dd94084cde40d8e830556e0131d5edc087190"
+    },
+    "CONTRACT.json": {
+      "bytes": 3633,
+      "sha256": "f0525d56d7a92e185b2f3455e773018aba529bc8709ba4e3f2b466efb7111cb8"
+    }
+  },
+  "review_pass": "single bounded independent C9; fixes may receive targeted changed-dependency check",
+  "review_probe_serialization_failure": {
+    "classification": "IMPLEMENTATION_ERROR_IN_REVIEW_OUTPUT_SERIALIZATION",
+    "detail": "numpy int64 sum not JSON serializable; cast to builtin int and reran only252 algebra probes,0ODE"
+  }
+}

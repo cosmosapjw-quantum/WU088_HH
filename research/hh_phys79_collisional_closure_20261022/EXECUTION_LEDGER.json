@@ -1,0 +1,96 @@
+{
+  "schema": "PHYS79_EXECUTION_LEDGER_V1",
+  "as_of_stage": "S3_DELIVERY_METADATA_SCIENCE_FROZEN",
+  "inherited_PHYS78": {
+    "ODE_attempts": 34,
+    "failed": 2,
+    "pilot": 31,
+    "refinement": 1,
+    "unique_light_tests_PASS": 35,
+    "evidence": "parent EXECUTION_LEDGER.json; reused, not rerun"
+  },
+  "this_unit": {
+    "unique_light_tests_PASS": 24,
+    "light_suite_executions": 1,
+    "C9_initial_named_checks": 29,
+    "C9_targeted_checks": 14,
+    "C9_conditioning_states": 252,
+    "C9_findings_closed": [
+      "F1",
+      "F2",
+      "N1"
+    ],
+    "saved_histories": 2,
+    "unique_saved_epochs": 322,
+    "postprocessing_executions": 2,
+    "postprocessing_dependency_rebuild": 1,
+    "postprocessing_auxiliary_QA_failure": 1,
+    "new_isolated_ODE": 3,
+    "planned_new_isolated_ODE": 0,
+    "new_cosmological_ODE": 0,
+    "completed_identical_ODE_replays": 0,
+    "NCP": 0,
+    "benchmark": 0,
+    "failed_new_isolated_ODE": 0,
+    "distinct_physical_controls": 2,
+    "distinct_refinement": 1,
+    "isolated_solver_invocations": 1,
+    "resume_invocations": 1,
+    "resume_completed_skips": 3,
+    "resume_new_ODE": 0,
+    "isolated_epochs_per_case": 161
+  },
+  "distinct_statuses": {
+    "derivation": "COMPLETE_SCOPED_WITH_EXPLICIT_OPEN_FULL_CLOSURE",
+    "code": "IMPLEMENTED_DOMAIN_GUARDED_SUBSET",
+    "light_validation": "24_PASS",
+    "saved_state_analysis": "COMPLETE",
+    "isolated_science_execution": "COMPLETE_2_CONTROLS_PLUS_1_REFINEMENT",
+    "publication": "S2_PR134_COMPLETE_FINAL_HEAD_EXTERNAL_RECEIPT",
+    "backup": "S2_DUAL_FULL_RESTORE_PASS_FINAL_ZIP_EXTERNAL_RECEIPT",
+    "DAG": "FULL_COLLISIONAL_CLOSURE_PARTIAL"
+  },
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "numerical_results": {
+    "maximum_isotope_relative_error": 4.397502728453756e-15,
+    "maximum_total_energy_relative_error": 2.6645352591003757e-15,
+    "refinement_scaled_state_difference": 4.574293383682441e-15,
+    "D_temperature_extent_absolute_error_K": 3.410605131648481e-13,
+    "D_final_equilibrium_distance_over_inventory": 3.635426294598055e-09
+  },
+  "operational_non_science_failures": [
+    {
+      "stage": "intake",
+      "kind": "default cwd exec service error; explicit /tmp Python/C++ succeeded",
+      "ODE": 0
+    },
+    {
+      "stage": "intake",
+      "kind": "git HTTPS proxy connection failure; exact GitHub API materialization used",
+      "ODE": 0
+    },
+    {
+      "stage": "C9",
+      "kind": "review numpy int64 JSON serialization failed; scalar cast fixed; algebra-only repeat",
+      "ODE": 0
+    },
+    {
+      "stage": "saved_analysis_QA",
+      "kind": "Li defect lookup index assertion; fixed named event lookup; original failure retained",
+      "ODE": 0
+    },
+    {
+      "stage": "publication_S1",
+      "kind": "large local JSON stdout truncation caused JSON.parse failure before tree mutation; segmented reads and verified Git blob writes completed",
+      "ODE": 0
+    },
+    {
+      "stage": "report_write",
+      "kind": "one JavaScript template syntax error before any file mutation; report subsequently written successfully",
+      "ODE": 0
+    }
+  ],
+  "science_commit": "338fb7728e8b41f49551200b1f1ba73c047fb90c",
+  "final_delivery_authority": "delivery/FINAL_DELIVERY_POINTER.json"
+}

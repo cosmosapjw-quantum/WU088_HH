@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "stage": "S1",
+  "checked_utc": "2026-10-22T02:54:27.570Z",
+  "status": "PASS_SCOPED_DUAL_PROVIDER_METADATA_ACK",
+  "archive": {
+    "name": "PHYS79_S1_20261022_b61494393532.zip",
+    "bytes": 1817333,
+    "sha256": "80de2a4175697ef5304efcb635f61caeae45fb45848a928fe36d0f6d01498afc",
+    "dropbox_content_hash": "700ad5455fe8e217aed908171235a27694a6851ca5d0ca2c7828ef2cd2a6b1b1",
+    "payloads": 107,
+    "local_crc_and_payload_sha": "PASS_REUSED_FROM_LOCAL_ARCHIVE_RECEIPT",
+    "source_receipt": "/tmp/phys79_s1_archive.json"
+  },
+  "publication": {
+    "repository": "cosmosapjw-quantum/WU088_HH",
+    "branch": "research/hh-phys79-collisional-closure-20261022",
+    "pr": 134,
+    "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/134",
+    "parent": "77bd3cc5f482804a246a66a8b2f3b631611e3219",
+    "commit": "b61494393532c42a12c7517408895a5cf38aea29",
+    "tree": "e59b33207ea1965ed0abaf0998636978a5769e86",
+    "unit_tree": "d52c14be81a0bf4f8cb41919b72ab8a269cf7fa9",
+    "draft": true
+  },
+  "providers": {
+    "drive": {
+      "tool": "google_drive_get_file_metadata",
+      "requested_fields": [
+        "id",
+        "name",
+        "size",
+        "sha256Checksum",
+        "md5Checksum",
+        "parents"
+      ],
+      "returned_metadata": {
+        "id": "1FZD8pR6DOQ2o4Gj9jDYzXQQZpHew3vAv",
+        "size": "1817333"
+      },
+      "not_returned_fields": [
+        "name",
+        "sha256Checksum",
+        "md5Checksum",
+        "parents"
+      ],
+      "id_match": true,
+      "size_match": true,
+      "archive_sha256_match": "NOT_ASSESSED_PROVIDER_CHECKSUM_NOT_RETURNED",
+      "status": "PASS_ID_SIZE_METADATA_ONLY",
+      "full_remote_bytes_restored": false
+    },
+    "dropbox": {
+      "tool": "dropbox_download_link",
+      "operation_scope": "Metadata read only; no GET of the returned download URL",
+      "returned_metadata": {
+        "content_hash": "700ad5455fe8e217aed908171235a27694a6851ca5d0ca2c7828ef2cd2a6b1b1",
+        "id": "id:BSpOijBcT10AAAAAAD_h0Q",
+        "name": "PHYS79_S1_20261022_b61494393532.zip",
+        "size": 1817333
+      },
+      "id_match": true,
+      "name_match": true,
+      "size_match": true,
+      "content_hash_match": true,
+      "content_hash_comparator": "Expected Dropbox content hash from the local archive receipt; this is not the raw archive SHA256",
+      "status": "PASS_ID_NAME_SIZE_CONTENT_HASH_METADATA",
+      "download_url_printed": false,
+      "download_url_stored": false,
+      "full_remote_bytes_restored": false
+    }
+  },
+  "verification_scope": {
+    "local_zip_sha256": "Reused from the local archive receipt; no new local archive reconstruction or scientific execution",
+    "provider_metadata": "Read and matched to archive identity, with Drive limited to returned ID and byte size",
+    "remote_archive_sha256": "NOT_VERIFIED_FROM_COMPLETE_REMOTE_BYTES_AT_S1",
+    "remote_crc": "NOT_PERFORMED_AT_S1",
+    "remote_payload_sha256": "NOT_PERFORMED_AT_S1",
+    "complete_remote_byte_restore": "DEFERRED_TO_FINAL_ARCHIVE_VERIFICATION",
+    "new_uploads": 0,
+    "new_ODE": 0
+  },
+  "authorization": "User-requested dual backups were already uploaded; this task performs read-only provider acknowledgments and writes this local delivery receipt."
+}
