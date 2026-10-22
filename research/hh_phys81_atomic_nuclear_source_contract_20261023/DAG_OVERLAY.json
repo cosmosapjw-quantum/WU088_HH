@@ -1,6 +1,6 @@
 {
   "schema": "PHYS81_ADDITIVE_DAG_OVERLAY_V1",
-  "as_of_utc": "2026-10-22T23:14:23.774109+00:00",
+  "as_of_utc": "2026-10-22T23:27:15.424672+00:00",
   "nodes": [
     {
       "id": "LATEST_ACCESSIBLE_IDENTITY_INVENTORY",
@@ -20,11 +20,11 @@
     },
     {
       "id": "THREE_SPECIES_HAZARD_REDUCTION",
-      "status": "DERIVATION_AND_POINTWISE_VERIFICATION_PASS"
+      "status": "COMPLETE_EXACT_CONTINUOUS_MAP_AND_SAMPLED_7STATE_COMPARISON"
     },
     {
       "id": "NOVEL_FINITE_CI_PARCEL",
-      "status": "NOT_RUN"
+      "status": "COMPLETE_SCOPED_3_NEW_ODE_COMPARISONS_PASS"
     },
     {
       "id": "RADIATIVE_CAPTURE_PHOTON_RECOIL",
@@ -36,7 +36,7 @@
     },
     {
       "id": "LOW_T_CI_SOURCE_COVERAGE",
-      "status": "PARTIAL; near-threshold physical uncertainty and missing energy intervals OPEN"
+      "status": "PARTIAL_FINITE_OPERATOR_CLOSED; threshold gaps/tails/physical uncertainty OPEN"
     },
     {
       "id": "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
@@ -61,6 +61,10 @@
     {
       "id": "FULL_GEOMETRY_SPECTRAL_BACKREACTION",
       "status": "OPEN_RETAINED"
+    },
+    {
+      "id": "BOUND_BOUND_CE_AND_RADIATIVE_COOLING",
+      "status": "OPEN_SOURCE_AND_ENERGY_CONTRACT_REQUIRED"
     }
   ],
   "edges": [
@@ -91,9 +95,25 @@
     [
       "RADIATIVE_CAPTURE_PHOTON_RECOIL",
       "NUCLEAR_RATES_FAST_PRODUCT_STOPPING"
+    ],
+    [
+      "LOW_T_CI_SOURCE_COVERAGE",
+      "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE"
+    ],
+    [
+      "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+      "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE"
+    ],
+    [
+      "BOUND_BOUND_CE_AND_RADIATIVE_COOLING",
+      "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE"
+    ],
+    [
+      "NOVEL_FINITE_CI_PARCEL",
+      "LOW_T_CI_SOURCE_COVERAGE"
     ]
   ],
-  "next": "NOVEL_FINITE_CI_PARCEL: predeclared three new IVPs and independent-coordinate/refinement comparison; rate profiles and saved-data figures",
+  "next": "LOW_T_CI_SOURCE_COVERAGE: Li7 threshold-to6eV source/uncertainty first; then bound-bound CE/radiative cooling and He/Li CX source-energy contracts. Nuclear next: thermal-population ownership/finite-T photon-recoil averaging before rates or stopping activation.",
   "percent_total_goal": null,
   "percent_reason": "Full objective is an open research DAG without a fixed denominator; statuses are obligation-specific.",
   "HH_R10": "OFF",

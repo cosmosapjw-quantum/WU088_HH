@@ -1,6 +1,6 @@
 {
   "schema": "PHYS81_STAGE_STATUS_V1",
-  "as_of_utc": "2026-10-22T23:14:23.774109+00:00",
+  "as_of_utc": "2026-10-22T23:27:15.424672+00:00",
   "S0": {
     "intake": "COMPLETE_BOUNDED_ACCESS",
     "publication": "DRAFT_PR137_COMMIT_7f54d6b7be4e6b82fb1ec9b2d8d781f8f9dea863",
@@ -12,17 +12,19 @@
     "code": "IMPLEMENTED",
     "verification": "ATOMIC_15_GROUPS_PASS; NUCLEAR_663_ASSERTIONS_15_KINEMATICS_45_PARTITIONS_PASS; BELL_EXACT_CERTIFICATE_PASS",
     "scientific_execution": "0_NEW_ODE; new cohort prepared",
-    "publication": "PREPARED; actual commit in external S1_PUBLICATION.json",
-    "backup": "PENDING_PUBLICATION_THEN_DUAL_ACK"
+    "publication": "PUBLISHED a27bc238eaafb06dbde5f96b5b4f896d2bc5c811",
+    "backup": "DUAL_UPLOAD_ACK; delivery/S1_BACKUP_ACK.json; no full restore claim"
   },
   "S2": {
-    "scientific_execution": "NOT_RUN",
-    "figures": "NOT_RUN",
-    "publication": "NOT_RUN",
-    "backup": "NOT_RUN"
+    "derivation": "INHERITED_S1_SCOPED_PASS",
+    "code": "FROZEN_EXECUTED_HASHES",
+    "verification": "SAVED_RECEIPTS_HASH_BINDING; resume3skips0ODE; PNG visual3/PDF structure3 PASS",
+    "scientific_execution": "3_NEW_ODE_COMPLETED_0_FAILED;27finite+27Bell64+27window_profile_evaluations",
+    "publication": "PREPARED; actual commit recorded in external S2_PUBLICATION.json",
+    "backup": "PENDING_PUBLICATION_THEN_DUAL_ACK"
   },
   "S3": {
-    "handoff": "PENDING_SCIENCE",
+    "handoff": "DRAFTING_FINAL_IDENTITY",
     "final_restore": "NOT_RUN"
   }
 }

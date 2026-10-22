@@ -1,10 +1,9 @@
-# PHYS81 — 유한 원자 source와 핵 방사 포획 에너지 계약
+# PHYS81 — 원자 source와 핵 photon/recoil 연구
 
-PHYS80 실제 최종 HEAD `951182dd59bbb59dba454bbaab78ad56d029355a`의 additive Draft PR137 연구 단원이다. 현재 S1에서 최신 접근 가능 refs/전달 기록 종합, source/energy 유도, 구현 및 독립 검증을 보존했다. 실제 상태는 `STAGE_STATUS.json`, `EXECUTION_LEDGER.json`, `DAG_OVERLAY.json`을 따른다.
+PHYS80 최종 `951182dd59bbb59dba454bbaab78ad56d029355a`의 additive Draft PR137이다. **새 finite-CI parcel3ODE 완료/0실패**, 기본·정련 및 독립7상태 비교PASS다. 원자15검증군, 핵663assertions(15운동학/45분할 등),3종 PNG+PDF를 보존했다. 정확한 결과와 해석은 **FINAL_REPORT_KO.md**, 실제 횟수는EXECUTION_LEDGER.json, 의존성은DAG_OVERLAY.json에 있다.
 
-- C22D H finite Maxwell 코드와 PHYS80 Bell kernel을 byte identity로 재사용한다.
-- He4 24.6–60 eV, Li7 6–15 eV author-data를 ground-product finite operator로 연결한다. Li7 chemical energy는 Bushaw2007 7Li 원전으로 교정했다.
-- 고정 밀도 CI-only common-T parcel은 정확한 연속 좌표변환으로 7→3 상태, analytic Jacobian rank≤2다. 새3 IVP만 실행해 원래7상태와 비교할 준비를 마쳤다.
-- 세 bare radiative capture의 photon/recoil 및 explicit ζ 에너지 회계는 독립 수치 검증을 통과했다. Nuclear rates와 thermal-population/stopping은 OPEN이다.
+C22DHfinitekernel/표와PHYS80Bellkernel을 재사용하고 새 energy moment/미분,7→3hazardJacobian,세 coldcapture의명시적저장소회계를 구현했다. BellH계수 및Li7원전귀속을 교정했다. 저온결측source,CE/CX/radiativecooling,finite-T nuclear rate/stopping,전체geometry/spectral연결은OPEN이다.
 
-`RESEARCH_LOOP_MAP_KO.md`가 R1–R10/C1–C10과 실제 산출물의 연결을 설명한다. 기존 연구 identity 재실행0, NCP0, benchmark0. 단계 백업 ACK와 최종 full-byte restore를 구별한다. HH_R10=OFF; Production admission NOT_ISSUED.
+기존완료identity재실행0,NCP0,benchmark0,newcosmologicalODE0. Resume3verifiedskips/0ODE. Sharedworker/thread1,다른process종료0. HH_R10=OFF;ProductionadmissionNOT_ISSUED.
+
+StageACK와최종remote-byte복원증거는delivery/ 및PR137최종본문/외부final-deliveryJSON으로구분한다. 최종실제HEAD와백업IDs는외부영수증의identity를읽고재개한다.
