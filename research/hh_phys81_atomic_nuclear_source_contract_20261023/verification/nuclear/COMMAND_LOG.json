@@ -1,0 +1,119 @@
+{
+  "schema": "PHYS81_NUCLEAR_REVIEW_COMMAND_LOG_V1",
+  "scope": "Observed read, hash, syntax and parent execution commands through post-run evidence inspection; artifact-authoring/copy operations are separate metadata actions.",
+  "reviewer_numeric_executions": 0,
+  "reviewer_ODE_attempts": 0,
+  "commands": [
+    {
+      "command": "pwd",
+      "exit_code": 0,
+      "scope": "read cwd"
+    },
+    {
+      "command": "rg --files -g 'AGENTS.md' -g '*NUCLEAR*' -g '*nuclear*' /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023 /tmp/phys81_intake/nuclear_theory",
+      "exit_code": 0,
+      "scope": "read-only inventory"
+    },
+    {
+      "command": "cat /tmp/phys81_intake/nuclear_theory/NUCLEAR_RECOIL_THEORY_KO.md",
+      "exit_code": 0,
+      "scope": "read theory"
+    },
+    {
+      "command": "cat /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/nuclear_recoil.py",
+      "exit_code": 0,
+      "scope": "read source"
+    },
+    {
+      "command": "cat /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/NUCLEAR_MASSES_CODATA2022.json",
+      "exit_code": 0,
+      "scope": "read pinned source table"
+    },
+    {
+      "command": "python - <<'PY'\nfrom pathlib import Path\npaths = [Path('/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023'), Path('/tmp/phys81_intake/nuclear_theory'), Path('/tmp/phys81_review/nuclear')]\nseen = set()\nfor path in paths:\n    for parent in [path, *path.parents]:\n        item = parent / 'AGENTS.md'\n        if item in seen:\n            continue\n        seen.add(item)\n        if item.is_file():\n            print('FILE', item)\n            print(item.read_text())\nPY",
+      "exit_code": 0,
+      "scope": "read applicable ancestor policy"
+    },
+    {
+      "command": "rg --files /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023 /tmp/phys81_intake/nuclear_theory /tmp/phys81_review/nuclear",
+      "exit_code": 2,
+      "scope": "read-only inventory",
+      "observed_failure": "Review directory had not yet been created; source and theory listings were returned."
+    },
+    {
+      "command": "sha256sum /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/nuclear_recoil.py /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/NUCLEAR_MASSES_CODATA2022.json /tmp/phys81_intake/nuclear_theory/NUCLEAR_RECOIL_THEORY_KO.md",
+      "exit_code": 0,
+      "scope": "pin read bytes"
+    },
+    {
+      "command": "cat /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/CONTRACT.json /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/POLICY_OVERRIDE.json /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/EXECUTION_LEDGER.json",
+      "exit_code": 0,
+      "scope": "read current scope and lease policy"
+    },
+    {
+      "command": "cat /tmp/phys81_intake/nuclear_theory/NIST_CODATA2022_RELEVANT_ROWS.txt /tmp/phys81_intake/nuclear_theory/EVIDENCE_MANIFEST.json /tmp/phys81_intake/nuclear_theory/RESUME_NOTE.md",
+      "exit_code": 0,
+      "scope": "reuse primary-row evidence"
+    },
+    {
+      "command": "rg -n 'MeV|nuclear|lease|register|execution|recoil|zeta|ζ|CODE' /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/README_KO.md /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/STAGE_STATUS.json /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/CODEX_HANDOFF_KO.md",
+      "exit_code": 0,
+      "scope": "read current admission scope"
+    },
+    {
+      "command": "rg -n '^def |^class |SOURCE_SHA256|thermal_particle_number_ownership|incident_kinetic_ledger|source_pin_scope|initial =|Q =|W =|available =|ratio =|recoil =|photon =|residual =|thermal =|nonthermal =|rest =|^## |^### ' /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/nuclear_recoil.py /tmp/phys81_intake/nuclear_theory/NUCLEAR_RECOIL_THEORY_KO.md",
+      "exit_code": 0,
+      "scope": "find equation and source line references"
+    },
+    {
+      "command": "sha256sum /tmp/phys81_intake/nuclear_theory/SOURCE_PINNED_MASSES.json /tmp/phys81_intake/nuclear_theory/NIST_CODATA2022_RELEVANT_ROWS.txt /tmp/phys81_intake/nuclear_theory/EVIDENCE_MANIFEST.json /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/CONTRACT.json /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/POLICY_OVERRIDE.json",
+      "exit_code": 0,
+      "scope": "pin reused evidence"
+    },
+    {
+      "command": "python - <<'PY'\nimport ast\nimport hashlib\nimport json\nfrom pathlib import Path\npath = Path('/tmp/phys81_review/nuclear/verify_nuclear_independent.py')\npayload = path.read_bytes()\nmodule = ast.parse(payload, filename=str(path))\ncompile(module, str(path), 'exec')\nreceipt = {'scope': 'AST and in-memory compile only; verifier not imported or executed', 'path': str(path), 'sha256': hashlib.sha256(payload).hexdigest(), 'syntax_ok': True, 'numerical_checks_executed': 0}\nPath('/tmp/phys81_review/nuclear/SYNTAX_RECEIPT.json').write_text(json.dumps(receipt, indent=2) + '\\n')\nprint(json.dumps(receipt, indent=2))\nPY",
+      "exit_code": 0,
+      "scope": "syntax only; no module import or scientific evaluation"
+    },
+    {
+      "command": "sha256sum /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/nuclear_recoil.py",
+      "exit_code": 0,
+      "scope": "confirm unchanged reviewed source before parent run"
+    },
+    {
+      "command": "python -B /tmp/phys81_review/nuclear/verify_nuclear_independent.py --unit /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023 --out /tmp/phys81_review/nuclear/NUMERIC_RECEIPT_001.json",
+      "exit_code": 0,
+      "actor": "parent",
+      "scope": "single new independent verifier run under shared lease",
+      "observation_basis": "Read verification/LEASE_NUCLEAR_INDEPENDENT_001.json and numeric receipt; reviewer did not execute this command.",
+      "assertions_passed": 663,
+      "assertions_failed": 0
+    },
+    {
+      "command": "python - <<'PY'\nimport json\nfrom pathlib import Path\npath = Path('/tmp/phys81_review/nuclear/NUMERIC_RECEIPT_001.json')\nr = json.loads(path.read_text())\nsummary = {key: value for key, value in r.items() if key not in ('checks', 'event_results')}\nsummary['event_results'] = r.get('event_results')\nsummary['failed_checks'] = [item for item in r.get('checks', []) if not item['passed']]\nsummary['context_and_source_checks'] = [item for item in r.get('checks', []) if item['name'].startswith(('caller_context.', 'source_tamper_rejected.', 'scope_metadata.', 'malformed_text_rejected.', 'reviewed_identity.'))]\nprint(json.dumps(summary, indent=2))\nPY",
+      "exit_code": 0,
+      "scope": "read and filter existing result; no scientific reevaluation"
+    },
+    {
+      "command": "cat /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/verification/LEASE_NUCLEAR_INDEPENDENT_001.json",
+      "exit_code": 0,
+      "scope": "read actual lease execution receipt"
+    },
+    {
+      "command": "sha256sum /tmp/phys81_review/nuclear/verify_nuclear_independent.py /tmp/phys81_review/nuclear/NUMERIC_RECEIPT_001.json /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/nuclear_recoil.py /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/NUCLEAR_MASSES_CODATA2022.json",
+      "exit_code": 0,
+      "scope": "bind observed run to reviewed inputs"
+    },
+    {
+      "command": "python - <<'PY'\nimport json\nfrom pathlib import Path\nr = json.loads(Path('/tmp/phys81_review/nuclear/NUMERIC_RECEIPT_001.json').read_text())\nchecks = r['checks']\nnames = [c['name'] for c in checks]\ndomain = ('unknown_channel.', 'invalid_K.', 'unresolved_or_out_of_range_K.', 'invalid_zeta.', 'zeta_must_be_explicit', 'deposition_underflow_is_rejected')\nselected = [c for c in checks if c['name'].startswith(domain) or c['name'].startswith('caller_context.') and c['name'].endswith('.state_unchanged')]\nprint(json.dumps({'assertion_count': len(checks), 'unique_assertion_names': len(set(names)), 'event_rows': len(r['event_results']), 'unique_reaction_K_pairs': len({(e['reaction'], e['K_MeV']) for e in r['event_results']}), 'partition_zeta_checks': len([n for n in names if n.endswith('.stored_zeta')]), 'domain_reject_checks': len([n for n in names if n.startswith(domain)]), 'cold_rows': [e for e in r['event_results'] if e['K_MeV'] == '0'], 'selected_checks': selected, 'cold_oracle_checks': [c for c in checks if '.K=0.' in c['name'] and c['name'].endswith(('.sqrt_root_photon', '.sqrt_root_recoil', '.un_squared_energy_conservation', '.mass_shell_momentum_invariant'))]}, indent=2))\nPY",
+      "exit_code": 0,
+      "scope": "read stored outcomes and count coverage metadata; no scientific reevaluation",
+      "note": "Diagnostic cold_oracle_checks name filter also selected K=0.001 entries; cold_rows uses exact K string equality and is the authoritative cold-row extraction."
+    },
+    {
+      "command": "sha256sum /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/verification/LEASE_NUCLEAR_INDEPENDENT_001.json",
+      "exit_code": 0,
+      "scope": "pin actual lease receipt"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "schema": "PHYS81_EXECUTION_LEDGER_V1",
+  "as_of_utc": "2026-10-22T23:27:15.424672+00:00",
+  "stage": "S2_SCIENCE_COMPLETE_SAVED_RESULT_AUDIT",
+  "new_ODE_attempts": 3,
+  "new_ODE_completed": 3,
+  "new_ODE_failed": 0,
+  "completed_identity_reexecutions": 0,
+  "NCP": 0,
+  "benchmark": 0,
+  "new_cosmological_ODE": 0,
+  "science_evaluations": [
+    {
+      "identity": "LI7_SOURCE_CORRECTION",
+      "kind": "exact-SI unit conversion",
+      "ODE": 0
+    },
+    {
+      "identity": "BELL_GLOBAL_POSITIVITY",
+      "kind": "exact rational Bernstein certificate",
+      "ODE": 0
+    },
+    {
+      "identity": "ce0c382952674e0da985d768654f1b0f1253d671ed475f26cc00d7f47eb5e014",
+      "kind": "rate_profiles",
+      "counts": {
+        "finite_profiles": 27,
+        "new_Bell64_evaluations_using_reused_kernel": 27,
+        "new_Bell_finite_window_integrals": 27,
+        "ODE": 0
+      },
+      "receipt": "results/RATE_PROFILES.json"
+    },
+    {
+      "kind": "new_isolated_finite_CI_parcel",
+      "binding_SHA256": "8ae4a4d18b625742c7f966b21596ce24f904be83e1ac5123541df5aa188a291b",
+      "records": [
+        {
+          "label": "hazard_base",
+          "science_id": "8d502e15c159fbd634765f392ee45ea32f2e53f06807d7c004dbce9ed4f35e7b",
+          "dimension": 3,
+          "nfev": 386,
+          "njev": 2,
+          "nlu": 16,
+          "accepted_mesh_points": 55,
+          "saved_samples": 161
+        },
+        {
+          "label": "hazard_refined",
+          "science_id": "0a382330c777b87ad3744f25e25b21c5bacec12d127c22cc73b9ec4e519985ec",
+          "dimension": 3,
+          "nfev": 1156,
+          "njev": 2,
+          "nlu": 18,
+          "accepted_mesh_points": 165,
+          "saved_samples": 161
+        },
+        {
+          "label": "original7_reference",
+          "science_id": "00724d8bc7fbd9752dd1a844768674342bd3da34089c58f73dfbb7147af9cee3",
+          "dimension": 7,
+          "nfev": 89,
+          "njev": 0,
+          "nlu": 0,
+          "accepted_mesh_points": 6,
+          "saved_samples": 161
+        }
+      ],
+      "receipt": "results/parcel/SCIENCE_SUMMARY.json",
+      "accepted_mesh_points": 226,
+      "accepted_steps": 223,
+      "dense_saved_samples": 483
+    }
+  ],
+  "symbolic_checks": [
+    {
+      "identity": "WOLFRAM_EVAL_001",
+      "status": "PASS_SCOPED",
+      "scope": "Bell polynomial sign; hazard and particle-number temperature identities",
+      "warnings": "Undefined Global names retained in receipt; output returned"
+    },
+    {
+      "identity": "WOLFRAM_EVAL_002",
+      "status": "PASS_SCOPED",
+      "scope": "capture mass-shell/energy/stoichiometry and exact-SI Li7 conversion"
+    }
+  ],
+  "source_intake": "No rate evaluation or model activation during intake",
+  "other_processes_terminated": 0,
+  "verification": {
+    "atomic_logical_groups": 15,
+    "atomic_failed": 0,
+    "retained_H_rate_evaluations_at_new_T": 1,
+    "nuclear_assertions": 663,
+    "nuclear_assertions_failed": 0,
+    "nuclear_kinematic_inputs": 15,
+    "nuclear_reservoir_partitions": 45,
+    "nuclear_domain_rejections": 38,
+    "nuclear_source_tamper_rejections": 3,
+    "nuclear_caller_context_profiles": 3,
+    "Bell_positive_rational_certificates": 3,
+    "Li7_SI_conversion": 1,
+    "interpretation": "counts have different units; no sum presented as independent physical experiments"
+  },
+  "resources": {
+    "protocol": "/tmp/rei-bianchi-cooperative-leases",
+    "worker": 1,
+    "numerical_threads": 1,
+    "lease_memory_GiB": 0.5,
+    "other_processes_terminated": 0
+  },
+  "verified_resume": {
+    "calls": 1,
+    "verified_skips": 3,
+    "new_ODE": 0,
+    "saved_comparisons_rechecked": 2,
+    "receipt": "verification/LEASE_FINITE_CI_RESUME_001.json"
+  },
+  "figures": {
+    "types": 3,
+    "PNG": 3,
+    "PDF": 3,
+    "source": "saved JSON/NPZ only",
+    "new_science_evaluations": 0,
+    "PNG_visual": "PASS_3",
+    "PDF_structure": "PASS_3",
+    "receipt": "verification/FIGURE_AUDIT.json"
+  },
+  "execution_environment_interruption": {
+    "observed": "2026-10-22T23:19 UTC around S1 publication",
+    "impact": "Temporary unavailable; S1 Git checkpoint retained; recovered before any new ODE. No scientific retry."
+  }
+}

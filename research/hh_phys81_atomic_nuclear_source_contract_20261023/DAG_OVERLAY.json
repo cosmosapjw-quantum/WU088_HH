@@ -1,0 +1,154 @@
+{
+  "schema": "PHYS81_ADDITIVE_DAG_OVERLAY_V1",
+  "as_of_utc": "2026-10-22T23:34:39.855660+00:00",
+  "nodes": [
+    {
+      "id": "LATEST_ACCESSIBLE_IDENTITY_INVENTORY",
+      "status": "COMPLETE_SCOPED"
+    },
+    {
+      "id": "BELL_PRIMARY_TRANSCRIPTION",
+      "status": "COMPLETE_PRIMARY_PIXELS"
+    },
+    {
+      "id": "BELL_GLOBAL_POSITIVITY",
+      "status": "COMPLETE_EXACT_RATIONAL_AND_WOLFRAM"
+    },
+    {
+      "id": "GROUND_PRODUCT_FINITE_CI_WINDOWS",
+      "status": "COMPLETE_DECLARED_FINITE_OPERATOR_ONLY"
+    },
+    {
+      "id": "THREE_SPECIES_HAZARD_REDUCTION",
+      "status": "COMPLETE_EXACT_CONTINUOUS_MAP_AND_SAMPLED_7STATE_COMPARISON"
+    },
+    {
+      "id": "NOVEL_FINITE_CI_PARCEL",
+      "status": "COMPLETE_SCOPED_3_NEW_ODE_COMPARISONS_PASS"
+    },
+    {
+      "id": "RADIATIVE_CAPTURE_PHOTON_RECOIL",
+      "status": "CODE_AND_INDEPENDENT_KINEMATICS_PASS"
+    },
+    {
+      "id": "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE",
+      "status": "PARTIAL_WITH_REUSED_SUBSETS"
+    },
+    {
+      "id": "LOW_T_CI_SOURCE_COVERAGE",
+      "status": "PARTIAL_FINITE_OPERATOR_CLOSED; threshold gaps/tails/physical uncertainty OPEN"
+    },
+    {
+      "id": "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+      "status": "OPEN_RETAINED"
+    },
+    {
+      "id": "D_PI_RR_MATCHED_SOURCE_MOMENTS",
+      "status": "OPEN_RETAINED"
+    },
+    {
+      "id": "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT",
+      "status": "OPEN_RETAINED"
+    },
+    {
+      "id": "LI_HARD_UV_INNER_SHELL_SPECTRAL_CONTRACT",
+      "status": "OPEN_RETAINED"
+    },
+    {
+      "id": "NUCLEAR_RATES_FAST_PRODUCT_STOPPING",
+      "status": "OPEN_RETAINED"
+    },
+    {
+      "id": "FULL_GEOMETRY_SPECTRAL_BACKREACTION",
+      "status": "OPEN_RETAINED"
+    },
+    {
+      "id": "BOUND_BOUND_CE_AND_RADIATIVE_COOLING",
+      "status": "OPEN_SOURCE_AND_ENERGY_CONTRACT_REQUIRED"
+    },
+    {
+      "id": "EXTERNAL_HE36_REACTIVE_MOMENT_BRIDGE",
+      "status": "COMPLETED_SCOPED_EXTERNAL_REUSE; producer evidence inspected, not rerun",
+      "head": "6403055c3d574ec0bd1ece80147f9711315902e7",
+      "remaining": "Differential gain/net source/thermal-fast particle ownership/stopping/closure/coupled pi remain OPEN"
+    },
+    {
+      "id": "EXTERNAL_REC127_ANGULAR_ESCAPE_MOMENTS",
+      "status": "COMPLETED_SCOPED_EXTERNAL_REUSE; producer evidence inspected, not rerun",
+      "head": "5185c396b7e07076565ca2f5044a5ccd193e6ee1",
+      "remaining": "Q is escape-probability PSTF, not photon stress; resolved-line number/energy mapping OPEN"
+    },
+    {
+      "id": "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP",
+      "status": "OPEN_SOURCE_CONTRACT; connect PHYS81 event energy to HE36 only after compatible number source"
+    }
+  ],
+  "edges": [
+    [
+      "LATEST_ACCESSIBLE_IDENTITY_INVENTORY",
+      "BELL_PRIMARY_TRANSCRIPTION"
+    ],
+    [
+      "BELL_PRIMARY_TRANSCRIPTION",
+      "BELL_GLOBAL_POSITIVITY"
+    ],
+    [
+      "LATEST_ACCESSIBLE_IDENTITY_INVENTORY",
+      "GROUND_PRODUCT_FINITE_CI_WINDOWS"
+    ],
+    [
+      "GROUND_PRODUCT_FINITE_CI_WINDOWS",
+      "THREE_SPECIES_HAZARD_REDUCTION"
+    ],
+    [
+      "THREE_SPECIES_HAZARD_REDUCTION",
+      "NOVEL_FINITE_CI_PARCEL"
+    ],
+    [
+      "LATEST_ACCESSIBLE_IDENTITY_INVENTORY",
+      "RADIATIVE_CAPTURE_PHOTON_RECOIL"
+    ],
+    [
+      "RADIATIVE_CAPTURE_PHOTON_RECOIL",
+      "NUCLEAR_RATES_FAST_PRODUCT_STOPPING"
+    ],
+    [
+      "LOW_T_CI_SOURCE_COVERAGE",
+      "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE"
+    ],
+    [
+      "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+      "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE"
+    ],
+    [
+      "BOUND_BOUND_CE_AND_RADIATIVE_COOLING",
+      "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE"
+    ],
+    [
+      "NOVEL_FINITE_CI_PARCEL",
+      "LOW_T_CI_SOURCE_COVERAGE"
+    ],
+    [
+      "RADIATIVE_CAPTURE_PHOTON_RECOIL",
+      "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP"
+    ],
+    [
+      "EXTERNAL_HE36_REACTIVE_MOMENT_BRIDGE",
+      "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP"
+    ],
+    [
+      "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP",
+      "NUCLEAR_RATES_FAST_PRODUCT_STOPPING"
+    ],
+    [
+      "EXTERNAL_REC127_ANGULAR_ESCAPE_MOMENTS",
+      "FULL_GEOMETRY_SPECTRAL_BACKREACTION"
+    ]
+  ],
+  "next": "LOW_T_CI_SOURCE_COVERAGE: Li7 threshold-to6eV source/uncertainty first; then bound-bound CE/radiative cooling and He/Li CX source-energy contracts. Nuclear next: thermal-population ownership/finite-T photon-recoil averaging before rates or stopping activation. Reuse new HE36/ANGULAR01 components with their source/ownership distinctions; do not rerun their completed diagnostics.",
+  "percent_total_goal": null,
+  "percent_reason": "Full objective is an open research DAG without a fixed denominator; statuses are obligation-specific.",
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "final_freshness_receipt": "delivery/FINAL_REFERENCE_DELTA.json"
+}

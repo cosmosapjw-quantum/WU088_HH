@@ -1,0 +1,315 @@
+{
+  "schema": "PHYS81_SAVED_RESULT_REVIEW_V1",
+  "decision": "CONFIRMED_SCOPED_FROM_SAVED_EVIDENCE",
+  "review_stage": "bounded C7/C8 saved-result readback",
+  "review_mode": "JSON receipt/schema/identity and byte-hash inspection only; no rates, RHS, Jacobian, integrator, numerical test, or NPZ-array arithmetic",
+  "source_static_review": {
+    "path": "verification/RUNNER_STATIC_REVIEW.md",
+    "sha256": "de7faadb3ad216b3a45af560c9db52556836353c28679fe037dad1c85e2773d5"
+  },
+  "immutable_result_identities": {
+    "results/parcel/SCIENCE_SUMMARY.json": "752a09bfb1445c12a36766f4a9512e0900caa8835cb9f95d55246102a9174c84",
+    "results/parcel/PLAN.json": "8296c8a7ceecea9073dfee08ffe40d7d373694542cb5af31573321f6a5a70612",
+    "results/RATE_PROFILES.json": "131de5ea39834a3a3a3dbf4a15ebfe196d1980ebabd69bebcf3e69100e7b2d33",
+    "results/RATE_PROFILES.csv": "e4d17ffeb92c80d6a0035f9104557a85810068af31cc7125725f2beb356cd5a9",
+    "verification/LEASE_RATE_PROFILES_001.json": "328982350e26801cd55b6ce64991558ccfccf100c4aa2f31f89608d8ad90f107",
+    "verification/LEASE_FINITE_CI_PARCEL_001.json": "decf9d5420e992bc9f83cc53b430220b0b6e70d263c0a24142c2c3caab9eab50",
+    "verification/LEASE_FINITE_CI_RESUME_001.json": "ef6c27dbe06c577eabdd59fd14dfcc4f2c33a0d6908bc4546229182fdf05f23e"
+  },
+  "bound_source_and_data_hashes": {
+    "source/run_science.py": "f7b7443c80fef386e070bbcd4019c59c16143c0b9b285e83c076c04d70eae4f4",
+    "source/parcel.py": "e885bea7d9fb58ebf835facb2f54a2c24bce3e9c016dc78a0c41e8777f0ff758",
+    "source/finite_ci.py": "e582e83650f39fbaf38e66be848d736845b2bbf38f52613c464ae4e2c1d77674",
+    "source/registry.py": "280925bc250252da29e159dc9ca99f893c39d7fccbaace252a276f086fdcdd5f",
+    "source/vendor/ci_finite_c22d.py": "859cdf616ffa165c9fb3c3372d2202f5449e4b9a74a289a725fe456e26eb55b2",
+    "source/vendor/CCC_TICS_1S.txt": "7a87a2c9f2116ee36c0786b379dac08e1f4d92a49504fe542e6aa71cbb279bae",
+    "source_data/ADMITTED_FINITE_CI_REGISTRY.json": "2415d357c318f1ff1307239f4f39c8009e6a7005b140c3ec67b492f631097641",
+    "source_data/PHYS81_CI_FINITE_WINDOW_LITERAL_DATA.csv": "522fd63bd4aead4314d7b4ea87f61e5454b23df0f046b1c8e48b2f2023272dad",
+    "source/rate_profiles.py": "54063b5feb68851816535ae0aca3adceef423004524900ff1093d08eb864a936",
+    "source/vendor/bell_kernel_phys80.py": "075f24cb0315f5d812b422f151f76ccc5ff8f2932306da4e88f848cc3e5951a1",
+    "source_data/BELL1983_VISUAL_TABLE_TRANSCRIPT.json": "1c05cee3d7704857b20e8442ee8d9b9f86acdf70550a92a6d9c966f9ab7dbf4c"
+  },
+  "identity_inspection": {
+    "all_listed_bound_file_hashes_match": true,
+    "plan_binding_digest_matches_summary": true,
+    "binding_sha256": "8ae4a4d18b625742c7f966b21596ce24f904be83e1ac5123541df5aa188a291b",
+    "all_three_canonical_science_ids_match": true,
+    "all_three_claims_match_complete_identity": true,
+    "all_three_trajectory_hashes_match_COMPLETE_and_summary": true,
+    "profile_identity_digest_matches": true,
+    "profile_science_id": "ce0c382952674e0da985d768654f1b0f1253d671ed475f26cc00d7f47eb5e014",
+    "profile_CSV_hash_matches": true,
+    "no_source_edit_after_static_review_observed": true
+  },
+  "model": {
+    "B": [
+      1,
+      0.083,
+      4.6e-10
+    ],
+    "X0": [
+      0.0002,
+      0,
+      0
+    ],
+    "T0_K": 25370.66308424773,
+    "nref_cm3": 0.001,
+    "t_end_s": 100000000000000,
+    "scope": "Fixed-density homogeneous common-T H1/He4/Li7 finite-window CI-only model; stationary-target electron Maxwell rates; no expansion, PI/RR/CX/CE or radiative losses"
+  },
+  "saved_run_records": [
+    {
+      "label": "hazard_base",
+      "science_id": "8d502e15c159fbd634765f392ee45ea32f2e53f06807d7c004dbce9ed4f35e7b",
+      "COMPLETE_sha256": "7eaec67b6ba8d2872129bbfaf32e208f042efacc6f184905d7f3b572542c86c2",
+      "CLAIM_sha256": "5d3e6f652e19f686ba987ad2768ac6fa8dad57169614c58f88d83f243ebf692c",
+      "trajectory_sha256": "4407d66a8750d8fc6e27f23d2ba3769b97f5fe2a39e7c599bcbe411caff91ab7",
+      "status": "COMPLETE",
+      "method": "Radau",
+      "dimension": 3,
+      "rtol": 2e-8,
+      "atol": 2e-11,
+      "nfev": 386,
+      "njev": 2,
+      "nlu": 16,
+      "accepted_mesh_points": 55,
+      "accepted_steps": 54,
+      "saved_dense_samples": 161,
+      "wall_s": 0.7089417639945168,
+      "final_T_K": 25266.558216163517,
+      "final_xe": 0.0010642158051798682,
+      "final_ion_fractions": [
+        0.001064059898733583,
+        0.0000018773392812850093,
+        0.1897520400615017
+      ],
+      "maximum_nucleus_fraction_error": 2.220446049250313e-16,
+      "maximum_relative_total_energy_error": 1.2492035952546755e-16,
+      "minimum_accepted_fraction": 0,
+      "minimum_sampled_fraction": 0,
+      "accepted_T_range_K": [
+        25266.558216163517,
+        25370.663084247735
+      ],
+      "neutral_underflow_samples": 0,
+      "neutral_underflow_accepted": 0
+    },
+    {
+      "label": "hazard_refined",
+      "science_id": "0a382330c777b87ad3744f25e25b21c5bacec12d127c22cc73b9ec4e519985ec",
+      "COMPLETE_sha256": "dd3a79d534047e89d00d60c02673256308a6d19630d20f0fd4fa865ffddfd1c6",
+      "CLAIM_sha256": "202c9f43b45793a2f89648635e1c0e14467a2695e8cb4f6802871c276f159a75",
+      "trajectory_sha256": "d8626e65c2e3f77df674abbca770fc05678093b45311245df3e33075f649e6ba",
+      "status": "COMPLETE",
+      "method": "Radau",
+      "dimension": 3,
+      "rtol": 2e-10,
+      "atol": 2e-13,
+      "nfev": 1156,
+      "njev": 2,
+      "nlu": 18,
+      "accepted_mesh_points": 165,
+      "accepted_steps": 164,
+      "saved_dense_samples": 161,
+      "wall_s": 2.0984197439975105,
+      "final_T_K": 25266.558216164776,
+      "final_xe": 0.0010642158051694301,
+      "final_ion_fractions": [
+        0.001064059898723147,
+        0.0000018773392812632518,
+        0.18975204005937182
+      ],
+      "maximum_nucleus_fraction_error": 2.220446049250313e-16,
+      "maximum_relative_total_energy_error": 0,
+      "minimum_accepted_fraction": 0,
+      "minimum_sampled_fraction": 0,
+      "accepted_T_range_K": [
+        25266.558216164776,
+        25370.663084247735
+      ],
+      "neutral_underflow_samples": 0,
+      "neutral_underflow_accepted": 0
+    },
+    {
+      "label": "original7_reference",
+      "science_id": "00724d8bc7fbd9752dd1a844768674342bd3da34089c58f73dfbb7147af9cee3",
+      "COMPLETE_sha256": "29afdf73d41dc70fbd977427b70db23faebaac70bbe04d57f4825040fefb88e1",
+      "CLAIM_sha256": "ee135835f0e348abfe187acf9f41dde6da9d26bb53bd7d440f68b88b7598d8e3",
+      "trajectory_sha256": "8746483030433d6b5ff8ae04c58538779479701b32b7fd34de71829163310112",
+      "status": "COMPLETE",
+      "method": "DOP853",
+      "dimension": 7,
+      "rtol": 2e-10,
+      "atol": 2e-13,
+      "nfev": 89,
+      "njev": 0,
+      "nlu": 0,
+      "accepted_mesh_points": 6,
+      "accepted_steps": 5,
+      "saved_dense_samples": 161,
+      "wall_s": 0.1812924749974627,
+      "final_T_K": 25266.558216165464,
+      "final_xe": 0.0010642158051637036,
+      "final_ion_fractions": [
+        0.0010640598987174212,
+        0.0000018773392812517207,
+        0.189752040054055
+      ],
+      "maximum_nucleus_fraction_error": 1.1102230246251565e-16,
+      "maximum_relative_total_energy_error": 0,
+      "minimum_accepted_fraction": 0,
+      "minimum_sampled_fraction": 0,
+      "accepted_T_range_K": [
+        25266.558216165464,
+        25370.663084247735
+      ],
+      "neutral_underflow_samples": 0,
+      "neutral_underflow_accepted": 0
+    }
+  ],
+  "stored_comparison_results": [
+    {
+      "pair": [
+        "hazard_base",
+        "hazard_refined"
+      ],
+      "max_scaled7_error": 3.266791559486393e-10,
+      "max_T_fraction_T0": 6.451973914971298e-12,
+      "passed": true
+    },
+    {
+      "pair": [
+        "original7_reference",
+        "hazard_refined"
+      ],
+      "max_scaled7_error": 7.286526937377857e-11,
+      "max_T_fraction_T0": 1.35578205058459e-12,
+      "passed": true
+    }
+  ],
+  "frozen_gates": {
+    "maximum_normalized_7state_comparison": 1e-7,
+    "maximum_T_fraction_of_T0": 1e-7,
+    "nucleus_fraction_error": 1e-10,
+    "relative_energy_error": 2e-10,
+    "minimum_fraction": 0
+  },
+  "comparison_evidence_scope": "Stored maxima on 161 common dense-output sample times; raw normalized full7 state retained; no additional arithmetic by this reviewer",
+  "conservation_evidence_scope": "Conservation gates apply to accepted meshes; positivity additionally applies to dense sample states. Hazard thermal energy is reconstructed from the invariant.",
+  "root_execution_receipts": {
+    "new_ODE_attempts": 3,
+    "new_ODE_completed": 3,
+    "failed_ODE_attempts_observed": 0,
+    "completed_identity_replays": 0,
+    "new_cosmological_ODE": 0,
+    "NCP": 0,
+    "benchmark": 0,
+    "profile_counts": {
+      "finite_profiles": 27,
+      "new_Bell64_evaluations_using_reused_kernel": 27,
+      "new_Bell_finite_window_integrals": 27,
+      "ODE": 0
+    },
+    "resume": {
+      "status": "RESUME_VERIFIED",
+      "new_ODE": 0,
+      "verified_skips": 3,
+      "saved_comparisons_rechecked": 2,
+      "summary_sha256": "752a09bfb1445c12a36766f4a9512e0900caa8835cb9f95d55246102a9174c84"
+    },
+    "lease_wrappers": {
+      "profiles_exit_code": 0,
+      "cohort_exit_code": 0,
+      "resume_exit_code": 0,
+      "threads_each": 1,
+      "reserved_job_GiB_each": 0.5,
+      "other_processes_terminated_each": 0,
+      "lease_implementation_sha256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124"
+    }
+  },
+  "profile_principal_rows_at_T0": [
+    {
+      "species": "H1",
+      "T_K": 25370.66308424773,
+      "K_cm3_s": 1.6896167676316183e-11,
+      "mean_incoming_eV": 18.20986091959254,
+      "Bell_model_window_fraction": 0.9999965981812716,
+      "CCC_over_Bell_same_window": 0.9272527745565898
+    },
+    {
+      "species": "He4",
+      "T_K": 25370.66308424773,
+      "K_cm3_s": 3.7079880419624424e-14,
+      "mean_incoming_eV": 29.543935701774554,
+      "Bell_model_window_fraction": 0.9999979496478227,
+      "CCC_over_Bell_same_window": 0.7937276129636713
+    },
+    {
+      "species": "Li7",
+      "T_K": 25370.66308424773,
+      "K_cm3_s": 4.077941060608214e-9,
+      "mean_incoming_eV": 9.40034398240508,
+      "Bell_model_window_fraction": 0.9231367126146738,
+      "CCC_over_Bell_same_window": 0.7340960656962464
+    }
+  ],
+  "profile_notes": {
+    "stored_warning_lists_empty": true,
+    "largest_stored_reported_relative_quadrature_error": 1.1613197816350031e-12,
+    "largest_error_row": {
+      "species": "He4",
+      "T_K": 3000
+    },
+    "declared_reported_error_gate": 1e-8,
+    "He4_underflow_rows": [
+      {
+        "T_K": 255,
+        "finite_K_cm3_s": 0,
+        "finite_log10_K": -495.69828218412414
+      },
+      {
+        "T_K": 300,
+        "finite_K_cm3_s": 0,
+        "finite_log10_K": -422.78345015523087
+      }
+    ],
+    "nonblocking_approximation_observation": {
+      "species": "He4",
+      "T_K": 300,
+      "Bell_model_window_fraction": 1.0000000000001137,
+      "interpretation": "Tiny floating quadrature/logarithm overshoot, not physical support above one; keep raw result without silently clipping"
+    },
+    "Li7_low_T_scope_example": {
+      "T_K": 255,
+      "Bell_model_window_fraction": 4.255644038244163e-11,
+      "CCC_over_Bell_same_window": 0.9994992523362651,
+      "interpretation": "Agreement within the selected window does not establish complete low-temperature physical-rate coverage"
+    }
+  },
+  "no_speedup_inference": "Three-state Radau used 386/1156 RHS evaluations; seven-state DOP853 used 89. Different methods, tolerances and callback costs plus single-run timings do not provide a controlled speedup comparison.",
+  "remaining_scope": [
+    "finite source-window model; no complete physical CI-rate or omitted-support certificate",
+    "stationary-target electron Maxwell rates; no finite-mass double-Maxwell closure",
+    "same rate implementation shared by compared trajectories",
+    "sampled convergence evidence, not uniform-in-time error enclosure",
+    "hazard invariant reconstruction not independent trajectory accuracy",
+    "accepted-mesh conservation, distinct from dense-output sampling",
+    "no general performance or speedup claim",
+    "no nuclear-rate activation, cosmological ODE or normal-frame transport admission",
+    "plot scientific claims and visual QA reserved to parent"
+  ],
+  "reviewer_actions": {
+    "numerical_module_imports": 0,
+    "rate_evaluations": 0,
+    "RHS_calls": 0,
+    "Jacobian_calls": 0,
+    "ODE_attempts": 0,
+    "NPZ_array_arithmetic": 0,
+    "recomputed_scientific_tests": 0,
+    "subagents_for_this_postflight": 0,
+    "reviewed_source_edits": 0,
+    "remote_writes": 0
+  },
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}
