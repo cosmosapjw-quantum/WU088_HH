@@ -1,0 +1,712 @@
+{
+  "HH_R10": "OFF",
+  "actual_ODE_calls": 0,
+  "checks": [
+    {
+      "details": {
+        "actual_import_paths_checked": 3,
+        "parent_C01_baseline_refinement_physics_equal": true,
+        "pin_count": 15
+      },
+      "name": "t01_pinned_sources",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "dimension": 4,
+          "finite_initial_lift_weights": true,
+          "max_relative_species_error": 0.0,
+          "parent_task": "C01_BASE",
+          "relative_T_error": 0.0,
+          "relative_u_error": 0.0
+        },
+        {
+          "dimension": 1,
+          "finite_initial_lift_weights": true,
+          "max_relative_species_error": 0.0,
+          "parent_task": "C02_BASE",
+          "relative_T_error": 0.0,
+          "relative_u_error": 0.0
+        }
+      ],
+      "name": "t02_saved_initial_lifts",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "fractions": {
+            "He3": 0.3,
+            "He4": 0.02,
+            "Li6": 0.9,
+            "Li7": 0.003
+          },
+          "max_species_absolute_error": 0.0
+        },
+        {
+          "fractions": {
+            "He3": 1.0,
+            "He4": 0.1,
+            "Li6": 0.0,
+            "Li7": 0.4
+          },
+          "max_species_absolute_error": 0.0
+        }
+      ],
+      "name": "t03_unequal_isotope_initial_fractions",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "maximum_error": 3.8179583055020773e-16,
+        "points": [
+          {
+            "point": "C01_BASE:0",
+            "reaction_constituent_normalized_error": 3.4594235147458054e-16,
+            "temperature_K": 25370.66308424773
+          },
+          {
+            "point": "C01_BASE:1",
+            "reaction_constituent_normalized_error": 3.6622268376490994e-16,
+            "temperature_K": 23618.263110687774
+          },
+          {
+            "point": "C01_BASE:2",
+            "reaction_constituent_normalized_error": 2.7240084260866287e-16,
+            "temperature_K": 20816.025355566704
+          },
+          {
+            "point": "C02_BASE:0",
+            "reaction_constituent_normalized_error": 0.0,
+            "temperature_K": 300.0
+          },
+          {
+            "point": "C02_BASE:1",
+            "reaction_constituent_normalized_error": 0.0,
+            "temperature_K": 299.9999554264121
+          },
+          {
+            "point": "C02_BASE:2",
+            "reaction_constituent_normalized_error": 1.439997432467053e-16,
+            "temperature_K": 299.9998662783449
+          },
+          {
+            "point": "C02_BASE:3",
+            "reaction_constituent_normalized_error": 7.484577568630452e-17,
+            "temperature_K": 299.99979941729447
+          },
+          {
+            "point": "UNEQUAL_0:0",
+            "reaction_constituent_normalized_error": 1.6589687755146402e-16,
+            "temperature_K": 25370.66308424774
+          },
+          {
+            "point": "UNEQUAL_0:1",
+            "reaction_constituent_normalized_error": 3.277119368192115e-16,
+            "temperature_K": 23619.466498159807
+          },
+          {
+            "point": "UNEQUAL_0:2",
+            "reaction_constituent_normalized_error": 2.3895927492859007e-16,
+            "temperature_K": 20819.086736483998
+          },
+          {
+            "point": "UNEQUAL_1:0",
+            "reaction_constituent_normalized_error": 2.1968967312235558e-16,
+            "temperature_K": 25370.663084247728
+          },
+          {
+            "point": "UNEQUAL_1:1",
+            "reaction_constituent_normalized_error": 1.9063105305524787e-16,
+            "temperature_K": 23629.009297279696
+          },
+          {
+            "point": "UNEQUAL_1:2",
+            "reaction_constituent_normalized_error": 3.8179583055020773e-16,
+            "temperature_K": 20843.36648502001
+          }
+        ]
+      },
+      "name": "t04_full_event_operator_tangent",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "energy_relative_max": 1.6813866964115292e-16,
+        "energy_tangent_normalized_max": 7.259795917415648e-17,
+        "isotope_relative_max": 1.8375257965013053e-16,
+        "isotope_tangent_normalized_max": 0.0,
+        "scope": "finite arithmetic checks; energy construction is not an independent physical certificate"
+      },
+      "name": "t05_state_and_tangent_conservation",
+      "status": "PASS"
+    },
+    {
+      "error": "ValueError('STRICT_PHYSICAL_STATE_GUARD')",
+      "name": "t06_analytic_jacobians",
+      "status": "FAIL",
+      "traceback": "Traceback (most recent call last):\n  File \"/tmp/phys80_review/independent_check.py\", line 80, in test\n    data = function()\n           ^^^^^^^^^^\n  File \"/tmp/phys80_review/independent_check.py\", line 229, in t06_analytic_jacobians\n    fd = np.column_stack([five_point(lambda zz: model.rhs(0., zz), z, j) for j in range(len(z))])\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/phys80_review/independent_check.py\", line 220, in five_point\n    return (function(point-2*d)-8*function(point-d)+8*function(point+d)-function(point+2*d))/(12*h)\n            ^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/phys80_review/independent_check.py\", line 229, in <lambda>\n    fd = np.column_stack([five_point(lambda zz: model.rhs(0., zz), z, j) for j in range(len(z))])\n                                                ^^^^^^^^^^^^^^^^^\n  File \"/tmp/hh_phys79_work/WU088_HH/research/hh_phys80_sandbox_reduction_20261022/source/reduced.py\", line 177, in rhs\n    q, _, xe, _, rates, _ = self._values(z)\n                            ^^^^^^^^^^^^^^^\n  File \"/tmp/hh_phys79_work/WU088_HH/research/hh_phys80_sandbox_reduction_20261022/source/reduced.py\", line 166, in _values\n    _, _, t, xe, N = self.state(z)\n                     ^^^^^^^^^^^^^\n  File \"/tmp/hh_phys79_work/WU088_HH/research/hh_phys80_sandbox_reduction_20261022/source/reduced.py\", line 145, in state\n    raise ValueError(\"STRICT_PHYSICAL_STATE_GUARD\")\nValueError: STRICT_PHYSICAL_STATE_GUARD\n"
+    },
+    {
+      "details": {
+        "maximum_relative_error": 1.3290252564814759e-09,
+        "points": [
+          {
+            "T_K": 100000.0,
+            "kind": "CI",
+            "relative_error": 3.50783111807405e-13,
+            "row": 0
+          },
+          {
+            "T_K": 199000.0,
+            "kind": "CI",
+            "relative_error": 1.9867770914459222e-12,
+            "row": 0
+          },
+          {
+            "T_K": 12000.0,
+            "kind": "CI",
+            "relative_error": 3.6517004106668755e-11,
+            "row": 0
+          },
+          {
+            "T_K": 25370.66308424773,
+            "kind": "CI",
+            "relative_error": 8.470310881869455e-13,
+            "row": 0
+          },
+          {
+            "T_K": 100000.0,
+            "kind": "CI",
+            "relative_error": 1.1392814974899659e-12,
+            "row": 1
+          },
+          {
+            "T_K": 199000.0,
+            "kind": "CI",
+            "relative_error": 7.588802070906561e-13,
+            "row": 1
+          },
+          {
+            "T_K": 12000.0,
+            "kind": "CI",
+            "relative_error": 1.3290252564814759e-09,
+            "row": 1
+          },
+          {
+            "T_K": 25370.66308424773,
+            "kind": "CI",
+            "relative_error": 8.716905566045096e-12,
+            "row": 1
+          },
+          {
+            "T_K": 100000.0,
+            "kind": "CI",
+            "relative_error": 1.8711122715212295e-12,
+            "row": 2
+          },
+          {
+            "T_K": 199000.0,
+            "kind": "CI",
+            "relative_error": 5.530459413898676e-13,
+            "row": 2
+          },
+          {
+            "T_K": 100000.0,
+            "kind": "CI",
+            "relative_error": 4.0921957408894116e-12,
+            "row": 3
+          },
+          {
+            "T_K": 199000.0,
+            "kind": "CI",
+            "relative_error": 6.983169330251031e-12,
+            "row": 3
+          },
+          {
+            "T_K": 12000.0,
+            "kind": "CI",
+            "relative_error": 5.6348738985327e-13,
+            "row": 3
+          },
+          {
+            "T_K": 25370.66308424773,
+            "kind": "CI",
+            "relative_error": 1.6219159919820645e-13,
+            "row": 3
+          },
+          {
+            "T_K": 100000.0,
+            "kind": "CI",
+            "relative_error": 2.8287221826424406e-12,
+            "row": 4
+          },
+          {
+            "T_K": 199000.0,
+            "kind": "CI",
+            "relative_error": 3.436660145877105e-14,
+            "row": 4
+          },
+          {
+            "T_K": 100000.0,
+            "kind": "CI",
+            "relative_error": 5.729549936500025e-11,
+            "row": 5
+          },
+          {
+            "T_K": 199000.0,
+            "kind": "CI",
+            "relative_error": 2.476144018835049e-12,
+            "row": 5
+          },
+          {
+            "T_K": 3.0,
+            "kind": "CX_pair",
+            "relative_error": 3.545476125855968e-11
+          },
+          {
+            "T_K": 43.0,
+            "kind": "CX_pair",
+            "relative_error": 1.4241319470622933e-12
+          },
+          {
+            "T_K": 300.0,
+            "kind": "CX_pair",
+            "relative_error": 3.2225399650860554e-13
+          },
+          {
+            "T_K": 25370.66308424773,
+            "kind": "CX_pair",
+            "relative_error": 1.3918660823711512e-13
+          },
+          {
+            "T_K": 199000.0,
+            "kind": "CX_pair",
+            "relative_error": 4.0273701342678883e-13
+          }
+        ]
+      },
+      "name": "t07_rate_derivatives",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "case": "H_per_s:1e-20",
+          "error": "ValueError:UNSUPPORTED_PHYSICAL_SUBNETWORK"
+        },
+        {
+          "case": "PI:True",
+          "error": "ValueError:UNSUPPORTED_PHYSICAL_SUBNETWORK"
+        },
+        {
+          "case": "RR:True",
+          "error": "ValueError:UNSUPPORTED_PHYSICAL_SUBNETWORK"
+        },
+        {
+          "case": "external_heat_bath:True",
+          "error": "ValueError:UNSUPPORTED_PHYSICAL_SUBNETWORK"
+        },
+        {
+          "case": "proper_volume_and_density:'variable'",
+          "error": "ValueError:UNSUPPORTED_PHYSICAL_SUBNETWORK"
+        },
+        {
+          "case": "gas_anisotropic_stress:1.0",
+          "error": "ValueError:UNSUPPORTED_PHYSICAL_SUBNETWORK"
+        },
+        {
+          "case": "d_cx:False",
+          "error": "ValueError:UNSUPPORTED_PHYSICAL_SUBNETWORK"
+        },
+        {
+          "case": "d_cx:'true'",
+          "error": "ValueError:UNSUPPORTED_PHYSICAL_SUBNETWORK"
+        },
+        {
+          "case": "PI:0",
+          "error": "ValueError:UNSUPPORTED_PHYSICAL_SUBNETWORK"
+        },
+        {
+          "case": "RR:0",
+          "error": "ValueError:UNSUPPORTED_PHYSICAL_SUBNETWORK"
+        },
+        {
+          "case": "external_heat_bath:0",
+          "error": "ValueError:UNSUPPORTED_PHYSICAL_SUBNETWORK"
+        },
+        {
+          "case": "d_cx_closure:'raw_fit'",
+          "error": "ValueError:UNSUPPORTED_PHYSICAL_SUBNETWORK"
+        },
+        {
+          "case": "ci_rows:[0, 1, 2, 3]",
+          "error": "ValueError:ONLY_NEUTRAL_CI_OR_CX_ONLY_ADMITTED"
+        },
+        {
+          "case": "nH_cm3:0.0",
+          "error": "ValueError:INVALID_DENSITY_OR_CLOCK"
+        },
+        {
+          "case": "nH_cm3:inf",
+          "error": "ValueError:INVALID_DENSITY_OR_CLOCK"
+        },
+        {
+          "case": "theta_per_proper_second:0.0",
+          "error": "ValueError:INVALID_DENSITY_OR_CLOCK"
+        },
+        {
+          "case": "theta_per_proper_second:1.0",
+          "error": "ValueError:REFERENCE_CLOCK_MISMATCH"
+        },
+        {
+          "case": "initial_u_eV_per_H:0.0",
+          "error": "ValueError:INVALID_INITIAL_STATE"
+        },
+        {
+          "case": "initial_u_eV_per_H:nan",
+          "error": "ValueError:INVALID_INITIAL_STATE"
+        },
+        {
+          "case": "T_initial_K:nan",
+          "error": "ValueError:INITIAL_THERMAL_CONTRACT_MISMATCH"
+        },
+        {
+          "case": "k_ref_cm3_s:-1.0",
+          "error": "ValueError:REFERENCE_CLOCK_MISMATCH"
+        },
+        {
+          "case": "forbidden:He4_III",
+          "error": "ValueError:NONZERO_HIGHER_CHARGE_OR_T_NEUTRON_UNSUPPORTED"
+        },
+        {
+          "case": "forbidden:Li7_III",
+          "error": "ValueError:NONZERO_HIGHER_CHARGE_OR_T_NEUTRON_UNSUPPORTED"
+        },
+        {
+          "case": "forbidden:T_I",
+          "error": "ValueError:NONZERO_HIGHER_CHARGE_OR_T_NEUTRON_UNSUPPORTED"
+        },
+        {
+          "case": "forbidden:n",
+          "error": "ValueError:NONZERO_HIGHER_CHARGE_OR_T_NEUTRON_UNSUPPORTED"
+        },
+        {
+          "case": "negative species",
+          "error": "ValueError:INVALID_INITIAL_STATE"
+        },
+        {
+          "case": "NaN species",
+          "error": "ValueError:INVALID_INITIAL_STATE"
+        },
+        {
+          "case": "wrong potential",
+          "error": "ValueError:GLOBAL_IONIC_POTENTIAL_MISMATCH"
+        },
+        {
+          "case": "wrong inventory",
+          "error": "ValueError:INITIAL_INVENTORY_METADATA_MISMATCH"
+        },
+        {
+          "case": "wrong length",
+          "error": "ValueError:INVALID_INITIAL_STATE"
+        },
+        {
+          "case": "zero inventory:H1",
+          "error": "ValueError:POSITIVE_H_D_HE_LI_INVENTORIES_REQUIRED"
+        },
+        {
+          "case": "zero inventory:D",
+          "error": "ValueError:POSITIVE_H_D_HE_LI_INVENTORIES_REQUIRED"
+        },
+        {
+          "case": "zero inventory:He4",
+          "error": "ValueError:POSITIVE_H_D_HE_LI_INVENTORIES_REQUIRED"
+        },
+        {
+          "case": "zero inventory:Li7",
+          "error": "ValueError:POSITIVE_H_D_HE_LI_INVENTORIES_REQUIRED"
+        }
+      ],
+      "name": "t08_constructor_rejections",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "case": "shape",
+          "error": "ValueError:INVALID_REDUCED_STATE"
+        },
+        {
+          "case": "NaN",
+          "error": "ValueError:INVALID_REDUCED_STATE"
+        },
+        {
+          "case": "negative D fraction",
+          "error": "ValueError:STRICT_RAW_COORDINATE_GUARD"
+        },
+        {
+          "case": "negative h",
+          "error": "ValueError:STRICT_RAW_COORDINATE_GUARD"
+        },
+        {
+          "case": "negative l",
+          "error": "ValueError:STRICT_RAW_COORDINATE_GUARD"
+        },
+        {
+          "case": "D above inventory",
+          "error": "ValueError:STRICT_RAW_COORDINATE_GUARD"
+        },
+        {
+          "case": "h above one",
+          "error": "ValueError:STRICT_RAW_COORDINATE_GUARD"
+        },
+        {
+          "case": "l above one",
+          "error": "ValueError:STRICT_RAW_COORDINATE_GUARD"
+        },
+        {
+          "case": "negative HII",
+          "error": "ValueError:STRICT_RAW_COORDINATE_GUARD"
+        },
+        {
+          "case": "negative HI",
+          "error": "ValueError:STRICT_RAW_COORDINATE_GUARD"
+        },
+        {
+          "case": "nonpositive thermal energy",
+          "error": "ValueError:STRICT_PHYSICAL_STATE_GUARD"
+        },
+        {
+          "case": "tiny negative Q hidden by anchored subtraction",
+          "error": "ValueError:STRICT_RAW_COORDINATE_GUARD"
+        }
+      ],
+      "name": "t09_strict_reduced_state_guards",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "case": "C01_BASE:10000.0",
+          "error": "RateDomainError:CI_OUTSIDE_AUTHOR_DOMAIN:H_I:9999.999999999998"
+        },
+        {
+          "case": "C01_BASE:200001.0",
+          "error": "RateDomainError:D_CX_OUTSIDE_SAVIN_2P7_TO_2E5_K"
+        },
+        {
+          "case": "C02_BASE:2.6",
+          "error": "RateDomainError:D_CX_OUTSIDE_SAVIN_2P7_TO_2E5_K"
+        },
+        {
+          "case": "C02_BASE:200001.0",
+          "error": "RateDomainError:D_CX_OUTSIDE_SAVIN_2P7_TO_2E5_K"
+        },
+        {
+          "case": "rhs:physical state outside CI source domain",
+          "error": "RateDomainError:CI_OUTSIDE_AUTHOR_DOMAIN:H_I:10000.000000000004"
+        },
+        {
+          "case": "jacobian:physical state outside CI source domain",
+          "error": "RateDomainError:CI_OUTSIDE_AUTHOR_DOMAIN:H_I:10000.000000000004"
+        }
+      ],
+      "name": "t10_source_domains_at_rhs_and_jacobian",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "case": "C01_BASE:inventory",
+          "error": "ValueError:FULL_STATE_OUTSIDE_FIXED_INVARIANT_MANIFOLD"
+        },
+        {
+          "case": "C01_BASE:energy",
+          "error": "ValueError:FULL_STATE_OUTSIDE_FIXED_INVARIANT_MANIFOLD"
+        },
+        {
+          "case": "C01_BASE:isotope partition",
+          "error": "ValueError:FULL_STATE_OUTSIDE_FIXED_INVARIANT_MANIFOLD"
+        },
+        {
+          "case": "C01_BASE:forbidden tracer",
+          "error": "ValueError:FULL_STATE_OUTSIDE_FIXED_INVARIANT_MANIFOLD"
+        },
+        {
+          "case": "C02_BASE:inventory",
+          "error": "ValueError:FULL_STATE_OUTSIDE_FIXED_INVARIANT_MANIFOLD"
+        },
+        {
+          "case": "C02_BASE:energy",
+          "error": "ValueError:FULL_STATE_OUTSIDE_FIXED_INVARIANT_MANIFOLD"
+        },
+        {
+          "case": "C02_BASE:isotope partition",
+          "error": "ValueError:FULL_STATE_OUTSIDE_FIXED_INVARIANT_MANIFOLD"
+        },
+        {
+          "case": "C02_BASE:forbidden tracer",
+          "error": "ValueError:FULL_STATE_OUTSIDE_FIXED_INVARIANT_MANIFOLD"
+        }
+      ],
+      "name": "t11_encode_off_manifold",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "display_alias_identity_preserved": true,
+        "new_science_ids": [
+          "98f621e3a855548a7c8e379c38093815313d8fdb703bfd25fa7eaddaa1f05bdc",
+          "8647a92cba02fcc2fbcce7a121361c150f4cce36e096412f28476d6bd6126ef3",
+          "639fcf6f214f864b7a23a947d9c7127c0c1195e79333fbeaf903318482926a51"
+        ],
+        "parent_physics_preserved": true
+      },
+      "name": "t12_identity_bindings",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "fixture": "empty",
+          "status": "READY"
+        },
+        {
+          "fixture": "orphan_npz",
+          "status": "BLOCKED_PREVIOUS_PARTIAL_IDENTITY"
+        },
+        {
+          "fixture": "orphan_checksum",
+          "status": "BLOCKED_PREVIOUS_PARTIAL_IDENTITY"
+        },
+        {
+          "fixture": "claim",
+          "status": "BLOCKED_PREVIOUS_PARTIAL_IDENTITY"
+        },
+        {
+          "fixture": "attempt",
+          "status": "BLOCKED_PREVIOUS_PARTIAL_IDENTITY"
+        },
+        {
+          "fixture": "complete",
+          "new_ODE_calls": 0,
+          "status": "SKIP_COMPLETE_VERIFIED",
+          "unchanged_files": 3
+        },
+        {
+          "error": "RuntimeError:EXISTING_NPZ_SHA_MISMATCH",
+          "fixture": "tampered_npz"
+        },
+        {
+          "error": "RuntimeError:EXISTING_BINDING_MISMATCH",
+          "fixture": "wrong_binding"
+        },
+        {
+          "fixture": "failed",
+          "status": "BLOCKED_PREVIOUS_FAILED_IDENTITY"
+        }
+      ],
+      "name": "t13_existing_identity_states",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "new_ODE_calls": 0,
+        "no_science_receipt_written": true,
+        "scope": "deterministic publication race injection; no ODE and no live lease operation",
+        "status": "BLOCKED_UNOWNED_ATTEMPT"
+      },
+      "name": "t14_claim_race_no_owner_poison",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "exit_status": 0,
+          "injected_module": "collisional",
+          "result": "PARENT_MODULE_CACHE_PATH_MISMATCH:collisional"
+        },
+        {
+          "exit_status": 0,
+          "injected_module": "phys78_bridge",
+          "result": "PARENT_MODULE_CACHE_PATH_MISMATCH:phys78_bridge"
+        },
+        {
+          "exit_status": 0,
+          "injected_module": "run_controls",
+          "result": "PARENT_MODULE_CACHE_PATH_MISMATCH:run_controls"
+        }
+      ],
+      "name": "t15_pinned_import_cache_rejection",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "negative_state_error": "ValueError:STRICT_RAW_COORDINATE_GUARD",
+        "out_of_source_domain_error": "RateDomainError:CI_OUTSIDE_AUTHOR_DOMAIN:H_I:10000.000000000004",
+        "scope": "full_states routine covers supplied points only; no actual solver mesh or continuum certificate",
+        "valid_points": 2
+      },
+      "name": "t16_full_mesh_validation_primitive",
+      "status": "PASS"
+    }
+  ],
+  "claim_scope": "finite algebra, selected source guards, external API and create-only identity behavior; no trajectory execution, no continuous positivity/convergence/rate-accuracy certificate",
+  "command": "python -B /tmp/phys80_review/independent_check.py",
+  "completed_utc": "2026-10-22T06:53:01.057552+00:00",
+  "failed": 1,
+  "internal_counts": {
+    "conservation_points": 13,
+    "expected_guard_rejections": 64,
+    "finite_difference_function_evaluations": 216,
+    "full_operator_points": 13,
+    "independent_import_guard_processes": 3,
+    "initial_states_checked": 4,
+    "jacobian_columns": 27,
+    "jacobian_points": 9,
+    "mesh_validation_points": 6,
+    "pinned_files_checked": 15,
+    "rate_derivative_points": 23,
+    "runner_identity_fixtures": 10
+  },
+  "live_lease_mutations": 0,
+  "old_suite_executions": 0,
+  "passed": 15,
+  "production_admission": "NOT_ISSUED",
+  "remote_mutations": 0,
+  "schema": "PHYS80_INDEPENDENT_BOUNDED_REVIEW_V1",
+  "source_hashes_after": {
+    "inputs/REDUCTION_PLAN.json": "449d80fb3f76caec15685a2b811ee2acc6297b9b77a45d2d373b4a6a682f74dc",
+    "source/phys79_bridge.py": "53d01690dadf20d526e3e352cf01906538b45659dcadcc08210c8c0abc915262",
+    "source/reduced.py": "2029eac4b5e23e25158742ae79ba47bb9dcacaf95faba59237c7518195b201a9",
+    "source/run_reduced.py": "396c59328ae3cec8f31b06fb9fa97de20b9717526ae8770950c73247ae3da320",
+    "theory/PHYSICS_TO_CODE_GATE_KO.md": "d1823463fb62e99e40b634f82a9b1d4875a6b41b522cd7398fb074050e74df08",
+    "vendor/PHYS79_PROVENANCE.json": "aca6625e48a23d6325de841ea5a8d9ded92678bb0561b13b6b2d3f30da8c3779"
+  },
+  "source_hashes_before": {
+    "inputs/REDUCTION_PLAN.json": "449d80fb3f76caec15685a2b811ee2acc6297b9b77a45d2d373b4a6a682f74dc",
+    "source/phys79_bridge.py": "53d01690dadf20d526e3e352cf01906538b45659dcadcc08210c8c0abc915262",
+    "source/reduced.py": "2029eac4b5e23e25158742ae79ba47bb9dcacaf95faba59237c7518195b201a9",
+    "source/run_reduced.py": "396c59328ae3cec8f31b06fb9fa97de20b9717526ae8770950c73247ae3da320",
+    "theory/PHYSICS_TO_CODE_GATE_KO.md": "d1823463fb62e99e40b634f82a9b1d4875a6b41b522cd7398fb074050e74df08",
+    "vendor/PHYS79_PROVENANCE.json": "aca6625e48a23d6325de841ea5a8d9ded92678bb0561b13b6b2d3f30da8c3779"
+  },
+  "started_utc": "2026-10-22T06:52:59.237396+00:00",
+  "test_script_sha256": "03fcf321efd0afccd432ad5f3fe37a878ed5da511a51de30a019e7b3389b0ba0",
+  "threads": {
+    "BLIS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "unique_check_groups": 16,
+  "versions": {
+    "NumPy": "2.3.5",
+    "Python": "3.12.14",
+    "SciPy": "1.17.0"
+  }
+}

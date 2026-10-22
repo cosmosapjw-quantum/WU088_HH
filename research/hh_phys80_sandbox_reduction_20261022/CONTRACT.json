@@ -1,0 +1,72 @@
+{
+  "schema": "PHYS80_SCIENTIFIC_CONTRACT_V1",
+  "objective": "physics-derived exact coordinate reduction of pinnedPHYS79 isolated controls; genericMaxwellian computationalcontract withoutphysicalsourceadmission",
+  "parent_head": "3304d16db1dc9bf868c185a8eeb6cc9dbc270e50",
+  "parent_science_commit": "338fb7728e8b41f49551200b1f1ba73c047fb90c",
+  "scope": {
+    "geometry_context": "non-tiltedLRSBianchiI; currentisolatedparcelssetexpansion0",
+    "frame": "oneisotropicgasorthonormalrestframe",
+    "reacting_gas_pi": 0,
+    "collisionless_DM_pi_m": "inheritedseparatephysicsnotcomputedhere",
+    "inventory": "fixed H1/D/He3/He4/Li6/Li7; T/neutron0",
+    "charge_scope": "neutralandsinglyonly;highercharges0 invariant",
+    "rates": "samePHYS79neutralVoronovCIrows0,1,3 and declaredSavinreverse*exp(-43/T) D/HDBmodel",
+    "density": "fixedproperdensity",
+    "PI": false,
+    "RR": false,
+    "external_heat_bath": false,
+    "state_reduction": {
+      "C01": "22to4;Q,v,h,l",
+      "C02": "22to1;v withQ,h,lfixed"
+    },
+    "thermal": "oneglobalstoredionicpotential andanchoredenergyfirstintegral",
+    "source_domain_C01": "1eV/kB<=T<=200000K",
+    "source_domain_C02": "2.7K<=T<=200000K"
+  },
+  "protected_conventions": {
+    "tensor": "sumsignedmatter/radiationinsamenormalorthonormalframebeforenorm",
+    "norm": "Frobenius=sqrt(2)*halfcontraction",
+    "trajectorydiagnostics": "not speciesoffcausalintervention",
+    "sampledresiduals": "notcontinuumcertificate"
+  },
+  "numerical_contract": {
+    "method": "Radau",
+    "analytic_jacobian": true,
+    "max_step": "unbounded_solver_controlled",
+    "t_eval": null,
+    "dense_output": true,
+    "saved_samples": 161,
+    "strict_nonnegative_all_RHS_and_Jacobian_trials": true,
+    "accepted_mesh_validation": true,
+    "projection": "NONE",
+    "baseline": {
+      "rtol": 2e-08,
+      "atol_scaled": 2e-11
+    },
+    "refinement": {
+      "rtol": 2e-10,
+      "atol_scaled": 2e-13
+    }
+  },
+  "gates": {
+    "parent_trajectory_max_scaled_error": 1e-06,
+    "reduced_refinement_max_scaled_error": 1e-06,
+    "isotope_relative": 1e-10,
+    "absent_isotope_absolute": 0,
+    "minimum_species": 0,
+    "total_u_plus_binding_relative": 2e-10,
+    "C02_extent_temperature_absolute_error_K": 1e-09,
+    "C02_equilibrium_distance_over_D": 1e-06,
+    "RHS_lift_scaled_error": 1e-10,
+    "Jacobian_normalized_error": 2e-06
+  },
+  "source_admission": {
+    "neutralCIinoldauthorTdomain": "inheritedscoped",
+    "lowT_H_He_Li": "OPEN",
+    "genericBellkernel": "MATHEMATICAL_PROTOTYPE_ONLY",
+    "speciesdefaultcoefficients": 0,
+    "newfullcosmologicalactivation": false
+  },
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}

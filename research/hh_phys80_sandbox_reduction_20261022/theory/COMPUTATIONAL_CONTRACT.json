@@ -1,0 +1,101 @@
+{
+  "schema": "PHYS80_EXACT_COORDINATE_REDUCTION_THEORY_V1",
+  "status": "CONDITIONAL_CONTINUOUS_EQUIVALENCE_AND_ANALYTIC_JACOBIAN_VERIFIED",
+  "parent_actual_head_reported_by_root": "3304d16db1dc9bf868c185a8eeb6cc9dbc270e50",
+  "parent_unit": "research/hh_phys79_collisional_closure_20261022",
+  "read_actual_files": [
+    "source/collisional.py", "source/run_controls.py", "CONTRACT.json",
+    "inputs/CONTROL_PLAN.json", "vendor/phys78/source/atomic_network.py"
+  ],
+  "required_physics": {
+    "ci_rows": [0, 1, 3],
+    "d_cx": true,
+    "d_cx_closure": "detailed_balance",
+    "constant_proper_density": true,
+    "expansion": false,
+    "PI": false,
+    "RR": false,
+    "external_heat_bath": false,
+    "radiative_CX": false,
+    "T_and_neutron_inventory": 0,
+    "He_III_and_Li_III_IV_initial": 0,
+    "isotope_rate_sharing": "retain declared PHYS79 elemental CI approximation",
+    "initial_isotope_fraction_equality": "common He and common Li in ideal real IC; weighted neutral-ratio reconstruction preserves stored unequal rounding"
+  },
+  "state": {
+    "original": "21 Y plus independent thermal u",
+    "reduced": ["Q=Y_HII+Y_DII", "v=Y_DII", "h=HeII_total/He_total", "l=LiII_total/Li_total"],
+    "solver_coordinates": ["Q/(Htot+Dtot)", "v/Dtot", "h", "l"],
+    "D_only_coordinates": ["v/Dtot"],
+    "reconstruction": "all original21 slots plus thermal u; no projection",
+    "thermal_anchor": "u0-fsum(IH*dQ,delta_eff*dv,IHe*B*dh,ILi*L*dl)",
+    "delta_eff": "actual stored epsilon[DII]-epsilon[HII]",
+    "DB_exponent_temperature_K": 43.0,
+    "potentials_eV": {"HI": 13.6, "HeI": 24.59, "LiI": 5.392},
+    "potentials_are_not_rate_fit_dE": true,
+    "time": "retain theta=nH*kref*t_proper and original kref/time interval"
+  },
+  "jacobian": {
+    "physical_coordinates": "J=nH*(M+outer(w,dT_dy))",
+    "temperature_gradient": "-(binding_gradient+1.5*kB*T*electron_gradient)/(1.5*kB*N)",
+    "solver_coordinates": "Jz=Sinverse*J*S/(nH*kref)",
+    "symbolic_difference_to_direct_derivative": "all16 entries exactly0"
+  },
+  "source_domain": {
+    "C01_min_K": "1 eV/kB",
+    "C01_max_K": 200000,
+    "D_only_min_K": 2.7,
+    "D_only_max_K": 200000,
+    "outside": "explicit refusal; no floor, extrapolation or zero-fill",
+    "domain_global_invariance": "NOT_PROVED; terminate/admit source work at boundary"
+  },
+  "numerical_plan_from_root_not_executed_here": {
+    "method": "Radau",
+    "analytic_jacobian": true,
+    "same_physical_time_and_saved_samples": 161,
+    "baseline_rtol": 2e-8,
+    "baseline_atol_scaled": 2e-11,
+    "distinct_C01_refinement_rtol": 2e-10,
+    "distinct_C01_refinement_atol_scaled": 2e-13,
+    "do_not_reuse_DOP853_trace_rate_maxstep_cap": true,
+    "stored_parent_comparison_scaled_gate": 1e-6,
+    "parent_energy_and_nucleus_gates": "retain",
+    "completed_parent_DOP853_reruns": 0,
+    "strict_stage_guard_first": true,
+    "if_trial_domain_failure": "preserve failed solve; any algebraic trial extension requires new version and explicit changed contract",
+    "clipping_projection": "NONE",
+    "accepted_step_and_requested_dense_samples": "physical/source/finite gates",
+    "continuum_certificate": false
+  },
+  "scalar_theorem": {
+    "scope": "D CX-only, positive H/D inventory,0<Q<H+D, full physical interval lies in sourced temperature domain",
+    "G_derivative": "strictly negative",
+    "equilibrium": "unique interior root",
+    "trajectory": "monotonic toward root; no finite-time equilibrium projection",
+    "full_F_derivative_global_negativity": "NOT_CLAIMED",
+    "finite_time_exact_flow_representation": "quadrature/inversion with numerical quadrature errors if implemented"
+  },
+  "approximations_not_admitted": {
+    "QSS": "requires invariant tube and uniform relaxation/forcing bounds plus slow-state error; not substituted",
+    "finite_step_splitting": "nonzero CI/CX Lie bracket; exact subflows do not remove splitting error",
+    "frozen_temperature_rate_flow": "additional approximation; not same exact model"
+  },
+  "actual_verification": {
+    "wolfram_context_calls": 1,
+    "wolfram_evaluator_calls": 3,
+    "successful_algebra_calls": 2,
+    "preserved_evaluator_input_syntax_failures": 1,
+    "orchestration_parse_failure_before_tool_call": 1,
+    "local_scientific_code_execution": 0,
+    "ODE_calls": 0,
+    "completed_identity_replays": 0
+  },
+  "open_physics": [
+    "LOW_T_CI_SOURCE_COVERAGE", "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+    "D_PI_RR_ENERGY_ADAPTER", "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT",
+    "LI_HARD_UV_INNER_SHELL_CONTRACT", "nuclear/molecular/Compton/spectral closure"
+  ],
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "strong_no_go": "NOT_CLAIMED"
+}

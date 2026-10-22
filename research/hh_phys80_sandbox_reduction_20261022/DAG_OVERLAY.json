@@ -1,0 +1,113 @@
+{
+  "schema": "PHYS80_ADDITIVE_DAG_OVERLAY_V1",
+  "as_of_utc": "2026-10-22T14:46:20.661630+00:00",
+  "parent": "PHYS79/PR134@3304d16db1dc9bf868c185a8eeb6cc9dbc270e50",
+  "global_prior_DAG_edited": false,
+  "nodes": [
+    {
+      "id": "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE",
+      "status": "PARTIAL_WITH_EXECUTABLE_SUBSETS",
+      "evidence": [
+        "theory/COMPUTATIONAL_CONTRACT.json",
+        "EXECUTION_LEDGER.json"
+      ],
+      "obligations": [
+        "LOW_T_CI_SOURCE_COVERAGE",
+        "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+        "D_PI_RR_ENERGY_ADAPTER",
+        "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT"
+      ]
+    },
+    {
+      "id": "PHYS80_FIXED_INVENTORY_EXACT_REDUCTION",
+      "status": "COMPLETE_SCOPED",
+      "derivation": "CONDITIONAL_EXACT_CONTINUOUS_MODEL",
+      "code": "IMPLEMENTED",
+      "validation": "PASS_SCOPED",
+      "science": "3_COMPLETE_0_FAILED",
+      "evidence": [
+        "source/reduced.py",
+        "theory/EXACT_REDUCTION_AND_JACOBIAN_KO.md",
+        "verification/SCIENCE_STDOUT.json",
+        "verification/independent/REVIEW_KO.md"
+      ],
+      "limitations": [
+        "fixedproperdensity no expansion",
+        "neutralCI+groundstateD/HDB only",
+        "no isotopeinjection no PI/RR",
+        "numericalRadau finiteerror",
+        "notproductionadmission"
+      ]
+    },
+    {
+      "id": "LOW_T_CI_SOURCE_COVERAGE",
+      "status": "PARTIAL_SOURCE_RESEARCH_PHYSICAL_ADMISSION_OPEN",
+      "implemented_child": "PHYS80_GENERIC_MAXWELLIAN_KERNEL",
+      "remaining": [
+        "resolveBellHTable5 B1transcriptionagainstactualpagebytes",
+        "assessnear-thresholdcrosssectionuncertaintyandthresholdlawat255K",
+        "fixisotopethreshold/branchingmapping",
+        "closeglobalpotentialandCIthermallossadapter",
+        "ratecomparisonsandsource-domaincontractbeforeanyactivation"
+      ],
+      "evidence": [
+        "source/maxwellian/LOW_T_SOURCE_ASSESSMENT.md",
+        "source/maxwellian/SOURCE_COEFFICIENTS.json"
+      ]
+    },
+    {
+      "id": "PHYS80_GENERIC_MAXWELLIAN_KERNEL",
+      "status": "IMPLEMENTATION_VERIFIED_MATHEMATICAL_PROTOTYPE",
+      "evidence": [
+        "source/maxwellian/bell_kernel.py",
+        "source/maxwellian/MAXWELLIAN_DERIVATION.md",
+        "source/maxwellian/BELL_KERNEL_VERIFY_RECEIPT.json"
+      ],
+      "physical_admission": "NOT_ISSUED",
+      "active_H_He_Li_coefficients": 0
+    },
+    {
+      "id": "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT",
+      "status": "OPEN_RETAINED"
+    },
+    {
+      "id": "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+      "status": "OPEN_RETAINED"
+    },
+    {
+      "id": "D_PI_RR_ENERGY_ADAPTER",
+      "status": "OPEN_RETAINED"
+    },
+    {
+      "id": "LI_HARD_UV_INNER_SHELL_CONTRACT",
+      "status": "OPEN_RETAINED",
+      "requires": [
+        "inner-shellbranching",
+        "spectralenergycontract",
+        "coreexcitation/autoionizingresonancescope"
+      ]
+    },
+    {
+      "id": "NUCLEAR_MOLECULAR_COMPTON_SPECTRAL_TRANSPORT",
+      "status": "OPEN_RETAINED"
+    }
+  ],
+  "edges": [
+    [
+      "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE",
+      "LOW_T_CI_SOURCE_COVERAGE"
+    ],
+    [
+      "COLLISIONAL_ATOMIC_AND_THERMAL_CLOSURE",
+      "PHYS80_FIXED_INVENTORY_EXACT_REDUCTION"
+    ],
+    [
+      "LOW_T_CI_SOURCE_COVERAGE",
+      "PHYS80_GENERIC_MAXWELLIAN_KERNEL"
+    ]
+  ],
+  "next_selected": "LOW_T_CI_SOURCE_COVERAGE",
+  "next_action": "ResolveprimaryHrowandthreshold/isotopic-energycontract;reuseclosedgenericquadratureandfixedinventoryreduction. No completedscience rerun.",
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}

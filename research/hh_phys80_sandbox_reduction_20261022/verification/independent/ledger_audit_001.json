@@ -1,0 +1,150 @@
+{
+  "HH_R10": "OFF",
+  "Python": "3.12.14",
+  "audit_script_sha256": "559d961fa1efb94e3346383defa9253d30ed4615ca1eab96215b61a018e43784",
+  "checks": [
+    {
+      "label": "three new scientific calls, three complete, zero failed",
+      "observed": {
+        "calls": 3,
+        "completed": 3,
+        "failed": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "two controls and one distinct refinement",
+      "observed": {
+        "controls": 2,
+        "refinements": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "ledger identity and solver detail equal execution stdout",
+      "observed": {
+        "identities": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "verified skips are not new ODE calls",
+      "observed": {
+        "completed_verified_skips": 3,
+        "new_ODE": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "16 logical groups and subordinate point counts remain typed",
+      "observed": {
+        "Jacobian_completed_columns": 39,
+        "Jacobian_completed_points": 12,
+        "ODE": 0,
+        "completed_points_replayed": 0,
+        "expected_guard_rejections": 64,
+        "full_operator_points": 13,
+        "identity_fixtures": 10,
+        "initial_failed": 1,
+        "initial_passed": 15,
+        "logical_groups": 16,
+        "old_suite_executions": 0,
+        "rate_derivative_points": 23,
+        "supplement_new_Jacobian_points": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "first fixture failure is retained",
+      "observed": {
+        "completed_points_replayed": 0,
+        "first_failed": 1,
+        "supplement_passed": true
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "six distinct Maxwellian unittest methods, not sixteen groups",
+      "observed": {
+        "method_names": [
+          "test_01_pure_a_rate_and_incident_moment_against_e1",
+          "test_invalid_inputs_are_rejected",
+          "test_logarithmic_underflow_has_no_physical_zero_claim",
+          "test_negative_cross_section_is_rejected_without_clipping",
+          "test_parameters_are_explicit_and_immutable",
+          "test_threshold_and_absolute_cross_section"
+        ],
+        "tests_run": 6
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "Maxwellian internal witnesses/profiles/sums are not independent tests",
+      "observed": {
+        "E1_oracles": 9,
+        "ODE": 0,
+        "order_profiles": 18,
+        "pure_A_witnesses": 9,
+        "scalar_quadrature_sums": 36
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "one Maxwellian attempt and two byte-identical receipt names",
+      "observed": {
+        "attempt": 1,
+        "receipt_sha256": "0107d664f520dcbf156bd6a5430c454f7f56ee2525aa820af69ad275be2a1c32"
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "Maxwellian source pins preserved",
+      "observed": {
+        "bell_kernel.py": "075f24cb0315f5d812b422f151f76ccc5ff8f2932306da4e88f848cc3e5951a1",
+        "verify_bell_kernel.py": "f1684952cd69ca3efd9f5b91bdd90192eebcebb9a0257f2d6c95554d2295abd5"
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "Wolfram evaluator failure not hidden by transport isError false",
+      "observed": {
+        "context_calls": 1,
+        "evaluator_calls": 3,
+        "local_ODE": 0,
+        "preserved_syntax_failures": 1,
+        "successful_algebra_calls": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "local source result audit passes",
+      "observed": {
+        "ODE": 0,
+        "accepted_points": 403,
+        "dense_samples": 483
+      },
+      "status": "PASS"
+    }
+  ],
+  "command": "python -B /tmp/phys80_review/ledger_readonly.py",
+  "ledger_sha256": "093e8217b91fbbe24e30f97ca75a8f9bd1fdadd2ea4d220eac6cd5e6051299c7",
+  "new_ODE": 0,
+  "new_kernel_evaluations": 0,
+  "old_test_suite_runs": 0,
+  "postflight_receipt_sha256": "868ec30c8ea5e9684d14d81c8e5ed722b8757e51e35c1665d6884f4606737c51",
+  "production_admission": "NOT_ISSUED",
+  "schema": "PHYS80_TYPED_LEDGER_READONLY_AUDIT_V1",
+  "scope": "current unit execution/review/Maxwellian/Wolfram typed counts against saved receipts; inherited historical totals, figure visual QA, publication and backup delivery are not re-audited",
+  "status": "PASS_SCOPED",
+  "suggested_additive_ledger_entry": {
+    "Jacobian": 0,
+    "RHS": 0,
+    "accepted_mesh_points": 403,
+    "batches": 1,
+    "dense_samples": 483,
+    "kind": "independent saved-result postprocessing audit",
+    "new_ODE": 0,
+    "rate_evaluations": 0
+  },
+  "utc": "2026-10-22T14:49:08.315031+00:00"
+}
