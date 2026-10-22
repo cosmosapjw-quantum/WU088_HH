@@ -136,7 +136,7 @@ C9 에너지 안정성 수정 때문에 저장 분석을 한 번 의존성 재�
 
 C01은 \(n_H=10^{-3}\,\mathrm{cm^{-3}}\), \(T_0=25370.663084\) K, HII/H=0.1에서 시작한다. D 초기 이온분율은 선택한 상세평형 관계로 정하고, 다른 존재 원소는 singly ionized fraction 0.01, 더 높은 전하는 0으로 둔다. 선택한 반응은 중성 CI 7개와 D CX 두 방향이다. 약 **173272.059년** 후 온도는 **24461.949998 K**, HII/H는 **0.1082862247**, DII/D는 **0.1081168888**, Li7II/Li7은 **0.9590421956**이 되었다. 이 결과는 선택한 사건들의 이온화 에너지 소비와 입자수 증가가 함께 만드는 냉각을 보여 준다. [C01 저장 결과 요약](results/ISOLATED_SUMMARY.json).
 
-C02는 \(n_H=1\,\mathrm{cm^{-3}}\), \(T_0=300\) K, HII/H=0.5, DII/D=10−6에서 **D CX만** 작동시킨다. 약 **305.908521년** 후 DII/D는 **0.4642164994**, HII/H는 **0.4999885803**이며 온도는 **299.9997930804 K**이다. 즉 냉각은 **0.2069195726 mK**다. CX는 총 자유전자수를 바꾸지 않으므로 이 작은 온도 변화는 주로 D 동위원소 전위 차이의 열 교환을 직접 검사한다.
+C02는 \(n_H=1\,\mathrm{cm^{-3}}\), \(T_0=300\) K, HII/H=0.5, DII/D=1e-6에서 **D CX만** 작동시킨다. 약 **305.908521년** 후 DII/D는 **0.4642164994**, HII/H는 **0.4999885803**이며 온도는 **299.9997930804 K**이다. 즉 냉각은 **0.2069195726 mK**다. CX는 총 자유전자수를 바꾸지 않으므로 이 작은 온도 변화는 주로 D 동위원소 전위 차이의 열 교환을 직접 검사한다.
 
 C02에는 전체 에너지 잔차와 독립인 확인을 추가했다. 순전방 반응 extent \(\xi\)에 대해
 
@@ -194,9 +194,10 @@ C9 초기 검토의 핵심 검사 29개는 재사용했다. F1은 개별 입력�
 |---|---|---|
 | S0 | 77bd3cc5f482804a246a66a8b2f3b631611e3219 | 양쪽 metadata ACK |
 | S1 | b61494393532c42a12c7517408895a5cf38aea29 | 양쪽 metadata ACK |
-| S2 과학 결과·최종 handoff | 게시 후 실제 receipt에 결속 | 최종 receipt로 별도 확인 |
+| S2 과학 결과 | 338fb7728e8b41f49551200b1f1ba73c047fb90c | 양쪽 전체 bytes SHA256·CRC·156 payload SHA PASS |
+| S3 최종 handoff·전달 | 실제 최종 HEAD는 외부 최종 전달 JSON 및 PR134 body에 결속 | 최종 ZIP은 외부 receipt로 별도 확인 |
 
-PR134는 실제 부모의 additive draft이며 main merge나 force update를 하지 않았다. S0/S1의 원격 검증은 Git blob identity·크기 대조이고, 전체 원격 파일 bytes를 모두 다시 내려받았다는 의미가 아니다. 백업 ACK도 Drive의 반환 ID·크기, Dropbox의 ID·크기·provider content hash 대조 범위를 명시한다. provider content hash와 원 ZIP SHA256, 전체 복원·CRC·payload 검증은 별도 항목이다. S2 과학 commit, 최종 HEAD, 최종 ZIP/외부 전달 JSON의 ID와 SHA는 실제 게시·백업 완료 후 delivery 기록과 handoff에서 확정한다. [S0 게시](delivery/S0_PUBLICATION_RECEIPT.json), [S1 게시](delivery/S1_PUBLICATION_RECEIPT.json), [S0 ACK](delivery/S0_BACKUP_ACK.json), [S1 ACK](delivery/S1_BACKUP_ACK.json).
+PR134는 실제 부모의 additive draft이며 main merge나 force update를 하지 않았다. S0/S1의 원격 검증은 Git blob identity·크기 대조이고, 전체 원격 파일 bytes를 모두 다시 내려받았다는 의미가 아니다. 백업 ACK도 Drive의 반환 ID·크기, Dropbox의 ID·크기·provider content hash 대조 범위를 명시한다. provider content hash와 원 ZIP SHA256, 전체 복원·CRC·payload 검증은 별도 항목이다. S2 과학 commit은 338fb7728e8b41f49551200b1f1ba73c047fb90c이며, S2 ZIP은 양쪽 provider에서 전체 2,531,152 bytes를 새로 복원해 원 ZIP SHA256, CRC, 156 payload SHA를 확인했다. [Drive 전체 복원](delivery/S2_DRIVE_RESTORE_RECEIPT.json), [Dropbox 전체 복원](delivery/S2_DROPBOX_RESTORE_RECEIPT.json), [S2 게시](delivery/S2_PUBLICATION_RECEIPT.json)에 실제 범위를 보존했다. 최종 HEAD와 최종 ZIP/외부 전달 JSON의 ID·SHA·검증 범위는 [전달 위치](delivery/FINAL_DELIVERY_POINTER.json)와 PR134 body에 결속한다. 과학 commit 이후 S3는 전달 문서만 바꾸며 112개 과학 payload를 유지한다. [S0 게시](delivery/S0_PUBLICATION_RECEIPT.json), [S1 게시](delivery/S1_PUBLICATION_RECEIPT.json), [S0 ACK](delivery/S0_BACKUP_ACK.json), [S1 ACK](delivery/S1_BACKUP_ACK.json).
 
 ## 11. 남은 물리 의무와 다음 순서
 

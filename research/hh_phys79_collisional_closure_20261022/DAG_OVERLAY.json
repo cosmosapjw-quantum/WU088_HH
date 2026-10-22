@@ -134,22 +134,32 @@
       ]
     },
     "PUBLICATION": {
-      "status": "S0_S1_PUBLISHED_S2_PENDING",
+      "status": "S2_SCIENCE_PUBLISHED_FINAL_HEAD_EXTERNALLY_ATTESTED",
       "evidence": [
         "delivery/S0_PUBLICATION_RECEIPT.json",
-        "delivery/S1_PUBLICATION_RECEIPT.json"
+        "delivery/S1_PUBLICATION_RECEIPT.json",
+        "delivery/S2_PUBLICATION_RECEIPT.json",
+        "delivery/FINAL_DELIVERY_POINTER.json"
       ],
       "PR": 134,
       "draft": true,
       "S0": "77bd3cc5f482804a246a66a8b2f3b631611e3219",
-      "S1": "b61494393532c42a12c7517408895a5cf38aea29"
+      "S1": "b61494393532c42a12c7517408895a5cf38aea29",
+      "S2": "338fb7728e8b41f49551200b1f1ba73c047fb90c",
+      "final_head_authority": "delivery/FINAL_DELIVERY_POINTER.json"
     },
     "BACKUP": {
-      "status": "S0_S1_DUAL_ACK_S2_PENDING",
+      "status": "S2_DUAL_FULL_RESTORE_PASS_FINAL_ARCHIVE_EXTERNALLY_ATTESTED",
       "evidence": [
         "delivery/S0_BACKUP_ACK.json",
-        "delivery/S1_BACKUP_ACK.json"
-      ]
+        "delivery/S1_BACKUP_ACK.json",
+        "delivery/S2_BACKUP_ACK.json",
+        "delivery/S2_DRIVE_RESTORE_RECEIPT.json",
+        "delivery/S2_DROPBOX_RESTORE_RECEIPT.json",
+        "delivery/FINAL_DELIVERY_POINTER.json"
+      ],
+      "S2_full_remote_byte_restore": "BOTH_PASS",
+      "final_archive_authority": "PHYS79_FINAL_DELIVERY_20261022.json via PR134 Final delivery"
     }
   },
   "HH_R10": "OFF",

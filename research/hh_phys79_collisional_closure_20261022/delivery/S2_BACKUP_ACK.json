@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "stage": "S2",
+  "checked_utc": "2026-10-22T03:16:38.077Z",
+  "status": "PASS_SCOPED_DUAL_PROVIDER_METADATA_ACK",
+  "archive": {
+    "name": "PHYS79_S2_20261022_338fb7728e8b.zip",
+    "bytes": 2531152,
+    "sha256": "e4b9045a113298c28d0af163f3e7c50d412deb9dc57ff9d9d428a6178e0b2049",
+    "dropbox_content_hash": "668c80cf91db5f35ea6f301255beb083887838af51614672df42b02e716a28ff",
+    "payloads": 156,
+    "science_commit": "338fb7728e8b41f49551200b1f1ba73c047fb90c",
+    "snapshot_commit": "338fb7728e8b41f49551200b1f1ba73c047fb90c",
+    "local_crc_and_payload_sha": "PASS_REUSED_FROM_LOCAL_ARCHIVE_RECEIPT",
+    "source_receipt": "/tmp/phys79_s2_archive.json"
+  },
+  "publication": {
+    "repository": "cosmosapjw-quantum/WU088_HH",
+    "branch": "research/hh-phys79-collisional-closure-20261022",
+    "pr": 134,
+    "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/134",
+    "parent": "b61494393532c42a12c7517408895a5cf38aea29",
+    "commit": "338fb7728e8b41f49551200b1f1ba73c047fb90c",
+    "tree": "fe2daed7bc36f814097936fe1b2da549bfa6b339",
+    "unit_tree": "5b8103a982524fe3f229fe0b104f793a4c0332af",
+    "draft": true,
+    "source_receipt": "delivery/S2_PUBLICATION_RECEIPT.json"
+  },
+  "providers": {
+    "drive": {
+      "tool": "google_drive_get_file_metadata",
+      "requested_fields": [
+        "id",
+        "name",
+        "size",
+        "sha256Checksum",
+        "md5Checksum",
+        "parents"
+      ],
+      "returned_metadata": {
+        "id": "1CupemlX0IoPVLawkUXwHRFoqPhXIxEW0",
+        "size": "2531152"
+      },
+      "not_returned_fields": [
+        "name",
+        "sha256Checksum",
+        "md5Checksum",
+        "parents"
+      ],
+      "id_match": true,
+      "size_match": true,
+      "archive_sha256_match": "NOT_ASSESSED_PROVIDER_CHECKSUM_NOT_RETURNED",
+      "status": "PASS_ID_SIZE_METADATA_ONLY",
+      "full_remote_bytes_restored": false
+    },
+    "dropbox": {
+      "tool": "dropbox_download_link",
+      "operation_scope": "Metadata read only; no GET of the returned download URL",
+      "returned_metadata": {
+        "content_hash": "668c80cf91db5f35ea6f301255beb083887838af51614672df42b02e716a28ff",
+        "id": "id:BSpOijBcT10AAAAAAD_h1g",
+        "name": "PHYS79_S2_20261022_338fb7728e8b.zip",
+        "size": 2531152
+      },
+      "id_match": true,
+      "name_match": true,
+      "size_match": true,
+      "content_hash_match": true,
+      "content_hash_comparator": "Expected Dropbox content hash from the local archive receipt; this is not the raw archive SHA256",
+      "status": "PASS_ID_NAME_SIZE_CONTENT_HASH_METADATA",
+      "download_url_printed": false,
+      "download_url_stored": false,
+      "full_remote_bytes_restored": false
+    }
+  },
+  "verification_scope": {
+    "local_zip_sha256": "Reused from the local archive receipt; no new local archive reconstruction or scientific execution",
+    "provider_metadata": "Fresh read matched to archive identity, with Drive limited to returned ID and byte size",
+    "remote_archive_sha256": "NOT_VERIFIED_FROM_COMPLETE_REMOTE_BYTES_AT_S2",
+    "remote_crc": "NOT_PERFORMED_AT_S2",
+    "remote_payload_sha256": "NOT_PERFORMED_AT_S2",
+    "complete_remote_byte_restore": "DEFERRED_TO_FINAL_ARCHIVE_VERIFICATION",
+    "new_uploads": 0,
+    "new_ODE": 0
+  },
+  "authorization": "User-requested dual backups were already uploaded; this task performs read-only provider acknowledgments and writes this local delivery receipt."
+}

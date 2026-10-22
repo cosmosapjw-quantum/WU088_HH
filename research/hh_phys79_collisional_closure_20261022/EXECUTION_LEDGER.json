@@ -1,6 +1,6 @@
 {
   "schema": "PHYS79_EXECUTION_LEDGER_V1",
-  "as_of_stage": "S2_SCIENCE_COMPLETE_PUBLICATION_PENDING",
+  "as_of_stage": "S3_DELIVERY_METADATA_SCIENCE_FROZEN",
   "inherited_PHYS78": {
     "ODE_attempts": 34,
     "failed": 2,
@@ -46,8 +46,8 @@
     "light_validation": "24_PASS",
     "saved_state_analysis": "COMPLETE",
     "isolated_science_execution": "COMPLETE_2_CONTROLS_PLUS_1_REFINEMENT",
-    "publication": "S1_PR134_COMPLETE_S2_PENDING",
-    "backup": "S0_S1_DUAL_ACK_S2_PENDING",
+    "publication": "S2_PR134_COMPLETE_FINAL_HEAD_EXTERNAL_RECEIPT",
+    "backup": "S2_DUAL_FULL_RESTORE_PASS_FINAL_ZIP_EXTERNAL_RECEIPT",
     "DAG": "FULL_COLLISIONAL_CLOSURE_PARTIAL"
   },
   "HH_R10": "OFF",
@@ -84,6 +84,13 @@
       "stage": "publication_S1",
       "kind": "large local JSON stdout truncation caused JSON.parse failure before tree mutation; segmented reads and verified Git blob writes completed",
       "ODE": 0
+    },
+    {
+      "stage": "report_write",
+      "kind": "one JavaScript template syntax error before any file mutation; report subsequently written successfully",
+      "ODE": 0
     }
-  ]
+  ],
+  "science_commit": "338fb7728e8b41f49551200b1f1ba73c047fb90c",
+  "final_delivery_authority": "delivery/FINAL_DELIVERY_POINTER.json"
 }
