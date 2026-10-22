@@ -4,7 +4,7 @@
 
 CCC 원자료는 H1 13.6058–968.61eV(a0²), He ground TICS는 cm², Li ground CGI는 cm²이다. H source lower13.6058과 NIST physical ionization energy는 구별한다. He4는 첫 양의 표본24.6부터60eV까지, Li7은6부터15eV까지의 PL interpolation만 사용한다. 구간 밖 단면적0은 선택한 finite-support operator의 정의다. 미측정 물리 단면적0의 주장이 아니다.
 
-He+의 가장 낮은 들뜬준위2p1/2는40.8130309000eV, He I ionization24.587389011eV이므로 excited-residual channel의 내부 threshold는65.400419911eV다. Li+ 최저1s2s triplet59.020708eV와 Li I ionization5.391714996eV의 합은64.412422996eV다. 지정된 상한60/15eV에서 이 daughter excitation은 에너지 보존상 열리지 않는다. Recoil은 lab threshold를 낮추지 않는다. He3/Li6 isotope mapping은 이 계약에 포함하지 않는다.
+He+의 가장 낮은 들뜬준위2p1/2는40.8130309000eV, He I ionization24.587389011eV이므로 excited-residual channel의 내부 threshold는65.400419911eV다. Li+ 최저1s2s triplet59.020708eV와 Li7 원논문 43487.15940(18)cm^-1의 exact-SI 변환5.39172060034581eV의 합은64.41242860034581eV다. 지정된 상한60/15eV에서 이 daughter excitation은 에너지 보존상 열리지 않는다. Recoil은 lab threshold를 낮추지 않는다. He3/Li6 isotope mapping은 이 계약에 포함하지 않는다.
 
 CI event는 neutral−1, ion+1, free electron+1이다. 모든 outgoing electron과 recoil이 하나의 열 pool로 열화된다는 모델에서 thermal loss는 chemical defect I_s다. Incoming energy mean을 추가 loss로 쓰지 않는다. I_s와 source-window lower는 서로 다른 자료 객체이며 모든 허용 incident E가 I_s보다 크다.
 
@@ -35,3 +35,9 @@ Jacobian은 두 outer product의 합이므로 rank≤2다. 부호/차원 및 이
 x=1−I/E in[0,1), F(x)=−A log(1−x)+sum B_j x^j.
 (1−x)F'(x)=G(x)=A+(1−x)sum j B_j x^(j−1).
 원전 H/He/Li neutral 계수를 정확 유리수로 넣으면 Wolfram Reduce가 각각 [0,1]에서 G≤0인 x가 없다고 반환했다. F(0)=0이므로 E>I에서 F>0이다. 별도의 rational Bernstein subdivision 증명증서를 만들어 exact arithmetic으로 검토한다. 이 명제는 분석함수의 양성만 닫으며 near-threshold experimental uncertainty를 줄였다는 주장이 아니다.
+
+## 독립 검토 후 명시한 조건
+
+Maxwell 평균은 C22D와 같은 stationary-target/electron-mass closure다. 두 움직이는 finite-mass Maxwell 분포의 정확한 충돌계수로 주장하지 않는다. Common T는 공유 thermal pool과 EOS의 조건이다. N_s,X_s,B_s,x_e,N_g는 무차원 abundance/referenceH, n_ref는cm^-3, u는eV/referenceH다. N_s0>0, X_s0>=0, X_s0<B_s, 초기xe>0을 요구한다. Bound-bound excitation/de-excitation과 그 radiative loss도 CI-only 대조계에서 생략한다. 유한z의 분석적 중성양성과 exp(-z)의 binary64 underflow는 구별한다.
+
+Li7 isotope energy는 독립 원전 검토에서 발견한 일반 ASD Li값의 귀속 문제를 교정했다. 바뀐것은 chemical defect와 그에 의존한 energy/Jacobian map이다. 단면적 knot/finite Maxwell rate는 바뀌지 않았다. 해당 원본intake와 교정receipt를 모두 보존했다. NeutralHe4의 새동위원소 원전도 source_data/NEUTRAL_ISOTOPE_PROVENANCE.md에 연결한다.

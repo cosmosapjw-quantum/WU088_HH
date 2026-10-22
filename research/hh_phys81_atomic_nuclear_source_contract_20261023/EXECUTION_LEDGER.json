@@ -1,7 +1,7 @@
 {
   "schema": "PHYS81_EXECUTION_LEDGER_V1",
-  "as_of_utc": "2026-10-22T22:00:58.898717+00:00",
-  "stage": "S0_INTAKE_THEORY_IN_PROGRESS",
+  "as_of_utc": "2026-10-22T23:14:23.774109+00:00",
+  "stage": "S1_THEORY_CODE_INDEPENDENT_VERIFICATION",
   "new_ODE_attempts": 0,
   "new_ODE_completed": 0,
   "new_ODE_failed": 0,
@@ -9,15 +9,53 @@
   "NCP": 0,
   "benchmark": 0,
   "new_cosmological_ODE": 0,
-  "science_evaluations": [],
+  "science_evaluations": [
+    {
+      "identity": "LI7_SOURCE_CORRECTION",
+      "kind": "exact-SI unit conversion",
+      "ODE": 0
+    },
+    {
+      "identity": "BELL_GLOBAL_POSITIVITY",
+      "kind": "exact rational Bernstein certificate",
+      "ODE": 0
+    }
+  ],
   "symbolic_checks": [
     {
       "identity": "WOLFRAM_EVAL_001",
-      "scope": "Bell derivative polynomial positivity and hazard/variable-particle-temperature identities",
-      "status": "OUTPUT_RECEIVED_REVIEW_PENDING",
-      "warnings": "undefined global symbolic names; results returned"
+      "status": "PASS_SCOPED",
+      "scope": "Bell polynomial sign; hazard and particle-number temperature identities",
+      "warnings": "Undefined Global names retained in receipt; output returned"
+    },
+    {
+      "identity": "WOLFRAM_EVAL_002",
+      "status": "PASS_SCOPED",
+      "scope": "capture mass-shell/energy/stoichiometry and exact-SI Li7 conversion"
     }
   ],
   "source_intake": "No rate evaluation or model activation during intake",
-  "other_processes_terminated": 0
+  "other_processes_terminated": 0,
+  "verification": {
+    "atomic_logical_groups": 15,
+    "atomic_failed": 0,
+    "retained_H_rate_evaluations_at_new_T": 1,
+    "nuclear_assertions": 663,
+    "nuclear_assertions_failed": 0,
+    "nuclear_kinematic_inputs": 15,
+    "nuclear_reservoir_partitions": 45,
+    "nuclear_domain_rejections": 38,
+    "nuclear_source_tamper_rejections": 3,
+    "nuclear_caller_context_profiles": 3,
+    "Bell_positive_rational_certificates": 3,
+    "Li7_SI_conversion": 1,
+    "interpretation": "counts have different units; no sum presented as independent physical experiments"
+  },
+  "resources": {
+    "protocol": "/tmp/rei-bianchi-cooperative-leases",
+    "worker": 1,
+    "numerical_threads": 1,
+    "lease_memory_GiB": 0.5,
+    "other_processes_terminated": 0
+  }
 }

@@ -1,0 +1,67 @@
+{
+  "schema": "PHYS81_INDEPENDENT_NUCLEAR_STATIC_REVIEW_V1",
+  "review_scope": "read-only source and equation review; bounded independent verifier authoring",
+  "status": "STATIC_AND_NUMERICAL_RECEIPT_REVIEW_COMPLETE",
+  "decision": "CONFIRMED_SCOPED",
+  "decision_scope": "pinned COM event kinematics and explicit conditional reservoir ledger; no rate or production admission",
+  "blocking_static_findings": [],
+  "observations": [
+    {
+      "id": "NUCLEAR_PARSE_CONTEXT_001",
+      "severity": "nonblocking",
+      "source_location": "source/nuclear_recoil.py:_decimal_scalar, lines 120-135",
+      "finding": "Malformed decimal-string construction occurs outside the fresh arithmetic context. Rejection may set the caller InvalidOperation flag and message may depend on that trap. Valid numerical output isolation is not contradicted.",
+      "verification_state": "CONFIRMED_BY_READBACK_OF_PARENT_EXECUTED_RECEIPT; valid-call context isolation passed"
+    }
+  ],
+  "reviewed_hashes": {
+    "source/nuclear_recoil.py": "e8b7ad216113932d0844e424ca6e5e17dd644e07ca883e463c0c6c325c4fcf0e",
+    "source_data/NUCLEAR_MASSES_CODATA2022.json": "ee87900f698e59029a1aafce3d4184870ccc6fa16a8ba50326bd13a10de60aaf",
+    "intake/NUCLEAR_RECOIL_THEORY_KO.md": "566b5cb4f2b704e9553d5aa558372599d65ffe9dcf9dda90ab28ae1cb09eba18",
+    "intake/NIST_CODATA2022_RELEVANT_ROWS.txt": "b2c5b86f1d2e8068418d200d5e12d3b28e2bb8dc930f3ddecbcb905ed304abce"
+  },
+  "verifier": {
+    "path": "/tmp/phys81_review/nuclear/verify_nuclear_independent.py",
+    "sha256": "6213f2f165c124471579574737feafe970038a877174086e57e044421162b28f",
+    "reference": "180-digit Decimal square root and bounded bisection of unsquared COM energy conservation",
+    "planned_reference_events": 15,
+    "planned_partitions": 45,
+    "syntax_check_exit_code": 0,
+    "numeric_command": "python -B /tmp/phys81_review/nuclear/verify_nuclear_independent.py --unit /tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023 --out /tmp/phys81_review/nuclear/NUMERIC_RECEIPT_001.json",
+    "numeric_execution_status_by_reviewer": "NOT_RUN; parent-run receipt inspected read-only",
+    "numeric_execution_exit_code_by_reviewer": null,
+    "numeric_execution_status_by_parent": "COMPLETED_ONCE",
+    "numeric_execution_exit_code_by_parent": 0,
+    "assertions_passed": 663,
+    "assertions_failed": 0,
+    "unique_kinematic_inputs": 15,
+    "zeta_partitions": 45,
+    "domain_rejection_checks": 38,
+    "source_tamper_rejection_checks": 3,
+    "caller_context_profiles": 3,
+    "numeric_receipt_sha256": "c8c46e9e5c925aea288bf48420c7d81169e9482096cd58c09e901bbcfc00778e",
+    "lease_receipt_sha256": "90f7bf835fafd476205cf51e5727a1b733a6b55955e544be47b2251dfede97e0",
+    "lease_owner": "parent runner"
+  },
+  "reviewer_actions": {
+    "reviewed_code_edits": 0,
+    "new_numeric_checks_executed": 0,
+    "new_ODE_attempts": 0,
+    "completed_historical_identity_reruns": 0,
+    "other_processes_terminated": 0,
+    "remote_writes": 0,
+    "main_merges": 0
+  },
+  "not_established": [
+    "nuclear rates or rate domains",
+    "finite-temperature reaction-selected incoming moment",
+    "thermal particle membership from zeta",
+    "stopping or thermalization closure",
+    "normal-frame source adapter or frame boost",
+    "photon transport or radiation tensor closure",
+    "covariance-based derived uncertainty",
+    "production admission"
+  ],
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}

@@ -1,0 +1,202 @@
+{
+  "schema": "PHYS81_ATOMIC_REVIEW_RESOLUTION_V1",
+  "created_utc": "2026-10-22T23:11:32.354366+00:00",
+  "reviewer": "/root/atomic_review",
+  "decision": "PASS_SCOPED_DECLARED_FINITE_CI_OPERATOR_AND_POINTWISE_PARCEL",
+  "initial_review": {
+    "path": "/tmp/phys81_review/atomic/ATOMIC_STATIC_REVIEW.md",
+    "sha256": "de33a0acafb1906ffc948d705fcb595ff9ce693e056ffbd88dcefb21c4420732",
+    "preserved": true
+  },
+  "initial_input_manifest": {
+    "path": "/tmp/phys81_review/atomic/REVIEWED_INPUTS.json",
+    "sha256": "06e7cb38e689231b25051d61c7d58c526f1044e5adf460b9ef642a516ea398c0",
+    "preserved": true
+  },
+  "resolved_findings": [
+    {
+      "id": "A1",
+      "status": "RESOLVED_SCOPED",
+      "correction": "CONTRACT, theory and parcel API state stationary-target electron-mass Maxwell rates; common T is the separate thermal-reservoir/EOS closure. No double-Maxwell finite-mass equivalence admitted."
+    },
+    {
+      "id": "A2",
+      "status": "RESOLVED_SCOPED",
+      "correction": "Abundances are dimensionless per reference H; nref is cm^-3; u is eV/reference H. N0>0, 0<=X0<B, seeded xe0>0, valid T and no clipping are explicit. Mathematical positivity and binary64 neutral underflow are distinguished and checked."
+    },
+    {
+      "id": "A3",
+      "status": "RESOLVED_SCOPED",
+      "correction": "Bound-bound excitation/de-excitation and radiative losses are explicitly omitted in the CI-only control."
+    },
+    {
+      "id": "A4",
+      "status": "RESOLVED_FOR_ACTIVE_CHEMICAL_REGISTRY",
+      "correction": "Neutral He I isotope evidence is attached. Li7 uses Bushaw2007 original 43487.15940(18) cm^-1 converted by root under lease; the active loader and parcel use 5.39172060034581 eV. H is qualified as an ordinary-H/HDEL convention. The original intake and initial review remain immutable; no natural-isotope explanation of the Li mismatch is asserted."
+    }
+  ],
+  "executed_source_identity": {
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/CONTRACT.json": {
+      "sha256": "d20e465c23defb28e1e0ae321b75e0120d5e0c632e24b9b655d227007fee1821",
+      "bytes": 2408
+    },
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/theory/ATOMIC_DERIVATION_KO.md": {
+      "sha256": "7bf21f07f60e7b481b3123bf7528fd8e5faa6b0c77470f9759179f16c77454d3",
+      "bytes": 4590
+    },
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/finite_ci.py": {
+      "sha256": "e582e83650f39fbaf38e66be848d736845b2bbf38f52613c464ae4e2c1d77674",
+      "bytes": 13540
+    },
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/vendor/ci_finite_c22d.py": {
+      "sha256": "859cdf616ffa165c9fb3c3372d2202f5449e4b9a74a289a725fe456e26eb55b2",
+      "bytes": 8350
+    },
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/vendor/CCC_TICS_1S.txt": {
+      "sha256": "7a87a2c9f2116ee36c0786b379dac08e1f4d92a49504fe542e6aa71cbb279bae",
+      "bytes": 5754
+    },
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/vendor/REUSE.json": {
+      "sha256": "74022e8293fdbefd7328c415fdba20bacbc3779b2691c009f994c3058af3d566",
+      "bytes": 2448
+    },
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/parcel.py": {
+      "sha256": "e885bea7d9fb58ebf835facb2f54a2c24bce3e9c016dc78a0c41e8777f0ff758",
+      "bytes": 12608
+    },
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/registry.py": {
+      "sha256": "280925bc250252da29e159dc9ca99f893c39d7fccbaace252a276f086fdcdd5f",
+      "bytes": 1603
+    },
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/verification/LI7_SOURCE_CORRECTION.json": {
+      "sha256": "ba8501980d048c7a9c69285c5406692d07379cc9e64b4dbad1e30a2dd641f940",
+      "bytes": 518
+    },
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/ADMITTED_FINITE_CI_REGISTRY.json": {
+      "sha256": "2415d357c318f1ff1307239f4f39c8009e6a7005b140c3ec67b492f631097641",
+      "bytes": 8590
+    },
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/PHYS81_CI_FINITE_WINDOW_LITERAL_DATA.csv": {
+      "sha256": "522fd63bd4aead4314d7b4ea87f61e5454b23df0f046b1c8e48b2f2023272dad",
+      "bytes": 15651
+    },
+    "/tmp/phys81_review/atomic/verify_atomic_finite.py": {
+      "sha256": "588f7a0f81f91bf3b6b92d4f4c5bfe3bfba2014ca2433b515cf352347c24042d",
+      "bytes": 42322
+    }
+  },
+  "review_time_identity_recheck": {
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/CONTRACT.json": true,
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/theory/ATOMIC_DERIVATION_KO.md": true,
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/finite_ci.py": true,
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/vendor/ci_finite_c22d.py": true,
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/vendor/CCC_TICS_1S.txt": true,
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/vendor/REUSE.json": true,
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/parcel.py": true,
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/registry.py": true,
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/verification/LI7_SOURCE_CORRECTION.json": true,
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/ADMITTED_FINITE_CI_REGISTRY.json": true,
+    "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/PHYS81_CI_FINITE_WINDOW_LITERAL_DATA.csv": true,
+    "/tmp/phys81_review/atomic/verify_atomic_finite.py": true
+  },
+  "syntax_only_check": {
+    "command": [
+      "python3",
+      "-m",
+      "py_compile",
+      "/tmp/phys81_review/atomic/verify_atomic_finite.py"
+    ],
+    "exit_code": 0,
+    "tool_chunk_id": "91cd78",
+    "does_not_certify_science": true
+  },
+  "root_numerical_run": {
+    "command": [
+      "python",
+      "-B",
+      "/tmp/phys81_review/atomic/verify_atomic_finite.py",
+      "--output",
+      "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/verification/ATOMIC_FINITE_CHECKS.json"
+    ],
+    "working_directory": "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023",
+    "exit_code": 0,
+    "elapsed_wall_s": 1.0002963160077343,
+    "run_receipt": "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/verification/ATOMIC_FINITE_CHECKS.json",
+    "run_receipt_sha256": "6685db635de14da2cecb95946ec155342cf9ea742b5dbd8960504a9ea26a9d2a",
+    "lease_receipt": "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/verification/LEASE_ATOMIC_INDEPENDENT_001.json",
+    "lease_receipt_sha256": "15b3c56c9b038a22df644655417e64613d6bcceda692db8a69129f100fca970d",
+    "groups": 15,
+    "all_group_statuses": {
+      "active_registry_loader_binding_and_Li7_propagation": "PASS",
+      "source_chemical_separation": "PASS",
+      "new_M2_mean_and_derivative_quadrature": "PASS",
+      "new_J3_branch_and_scaled_large_argument": "PASS",
+      "new_log_derivative_five_point_difference": "PASS",
+      "retained_H_single_new_temperature_equivalence": "PASS",
+      "new_generic_zero_prefix_signed_derivative_and_underflow": "PASS",
+      "new_constructor_and_evaluation_domain_guards": "PASS",
+      "new_immutable_array_contents_and_copy_isolation": "PASS",
+      "new_parcel_lift_and_original_equation_pushforward": "PASS",
+      "new_parcel_analytic_Jacobian_and_temperature_gradient": "PASS",
+      "new_original_seven_state_decode_without_projection": "PASS",
+      "new_parcel_initial_temperature_endpoint_roundtrip": "PASS",
+      "new_seeded_parcel_domains_and_immutable_inputs": "PASS",
+      "new_parcel_saturation_reports_neutral_underflow": "PASS"
+    },
+    "retained_vendor_evaluations": 1,
+    "old_science_suites_executed": 0,
+    "ODEs_executed": 0,
+    "reviewer_additional_numerical_runs": 0
+  },
+  "metrics_read_from_existing_run_receipt": {
+    "finite_source_temperature_pairs": 9,
+    "max_absolute_logK_difference_vs_independent_quadrature": 0.0,
+    "max_mean_energy_relative_difference_vs_independent_quadrature": 2.8850826193261347e-16,
+    "max_dlogK_dT_relative_difference_vs_independent_quadrature": 5.351065578384165e-16,
+    "max_dlogK_dT_relative_difference_vs_five_point": 2.6501278129246434e-12,
+    "J3_points": 11,
+    "max_J3_absolute_difference": 5.551115123125783e-17,
+    "H_vendor_relative_difference_at_new_parent_Tmax": 7.075773050928895e-15,
+    "parcel_pushforward_states": 3,
+    "max_original_RHS_relative_difference_on_invariant_manifold": 1.8345039892323955e-16,
+    "original_RHS_relative_difference_off_invariant_manifold": 3.772128761772459e-15,
+    "max_Jacobian_row_scaled_five_point_difference": 6.134794361557517e-11,
+    "max_temperature_gradient_relative_five_point_difference": 3.733202102296468e-11,
+    "finite_kernel_rejected_guard_cases": 31,
+    "parcel_rejected_guard_cases": 26
+  },
+  "endpoint_roundtrip": [
+    {
+      "T0_K": 255.0,
+      "hazard_T_K": 255.0,
+      "full_T_K": 255.0
+    },
+    {
+      "T0_K": 50000.0,
+      "hazard_T_K": 49999.99999999999,
+      "full_T_K": 49999.99999999999
+    }
+  ],
+  "remaining_limits": [
+    "This decision covers the declared finite-support stationary-target CI operator and pointwise parcel equations. It is not full physical-rate or production admission.",
+    "The He source curve is described by its author as unpublished as of 13-Apr-2026. No experimental accuracy or complete error budget is supplied.",
+    "Cross sections below the selected floors and above the selected ceilings remain unconstrained here. The Li7 chemical-threshold to 6 eV gap is 0.6082793996541902 eV in the executed report.",
+    "CCC electronic-target cross sections are not newly certified isotope-resolved measurements. The Li7 chemical-energy correction does not establish such a cross-section correction.",
+    "Numerical comparisons are bounded binary64 samples, not continuum interval-error certificates or a proof for all abundance configurations.",
+    "The zero-electron seed is a valid absorbing mathematical state outside the explicitly selected seeded active parcel API.",
+    "Ground residual electronic states are excluded by energy thresholds only under the stated ground-target single-impact model. Neutral excitation and other omitted channels remain possible in a real gas.",
+    "No ODE or trajectory was run by this verifier. Independent trajectory/refinement evidence belongs to the root runner and is not certified by this receipt.",
+    "The energy first integral reconstructed by lift is an identity, not independent trajectory accuracy evidence. The analytic rank<=2 proof is algebraic; the reported SVD is only pointwise consistency.",
+    "Array immutability covers ordinary object mutation and NumPy data-byte writes; it is not an adversarial Python object-model sandbox."
+  ],
+  "physical_rate_admission": "NOT_ISSUED",
+  "production_admission": "NOT_ISSUED",
+  "verifier_copy": {
+    "source": "/tmp/phys81_review/atomic/verify_atomic_finite.py",
+    "destination": "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/verification/verify_atomic_finite.py",
+    "sha256": "588f7a0f81f91bf3b6b92d4f4c5bfe3bfba2014ca2433b515cf352347c24042d",
+    "copy_status": "CREATED_EXCLUSIVE_BYTE_IDENTICAL_COPY",
+    "execution_after_copy": false
+  },
+  "post_run_actions": "Read existing receipts, compare current SHA256 identities, reduce recorded error fields, write this resolution, and byte-copy the executed verifier; no science imports or reruns."
+}

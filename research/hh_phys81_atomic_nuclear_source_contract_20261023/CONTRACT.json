@@ -9,14 +9,15 @@
   },
   "scope": {
     "parent_geometry": "non-tilted LRS Bianchi I",
-    "new_atomic_control": "isolated homogeneous common-T fixed-density H1/He4/Li7 parcel; expansion=0; PI/RR/CX=0",
+    "new_atomic_control": "isolated homogeneous common-T fixed-density H1/He4/Li7 CI-only parcel; expansion/PI/RR/CX/bound-bound CE and radiative losses=0",
     "new_atomic_source": "explicit finite electron-energy windows, PL author samples, no physical extrapolation",
     "T_scope_K": [
       255.0,
       50000.0
     ],
     "actual_parent_Tmax_K": 25370.66308424773,
-    "nuclear": "cold-COM radiative-capture kinematics and supplied recoil-deposition fraction; no nuclear rate activation"
+    "nuclear": "cold-COM radiative-capture kinematics and supplied recoil-deposition fraction; no nuclear rate activation",
+    "rate_kinematics": "stationary-target electron-mass Maxwell average; common-T thermal pool/EOS is a separate closure; finite-mass double-Maxwell kinetics not admitted"
   },
   "source_windows_eV": {
     "H1": [
@@ -32,7 +33,7 @@
       15.0
     ]
   },
-  "chemical_energy_registry": "NIST ASD isotope-qualified ground ionization potentials; source-window thresholds remain separate",
+  "chemical_energy_registry": "ADMITTED_FINITE_CI_REGISTRY.json v2: H1 ordinary-H/HDEL convention, He4 explicitly isotope-qualified neutral ASD, Li7 Bushaw2007 original spectroscopic limit converted with exact SI hc/eV",
   "sources_before_activation": true,
   "protected": {
     "tensor_sum": "signed tensors in same normal orthonormal frame before norm",
@@ -47,5 +48,8 @@
     "completed_identities_reexecuted": 0
   },
   "HH_R10": "OFF",
-  "production_admission": "NOT_ISSUED"
+  "production_admission": "NOT_ISSUED",
+  "atomic_abundance_units": "N_s/X_s/B_s/xe/N_g dimensionless per fixed referenceH count; nref cm^-3; thermal u eV per referenceH",
+  "hazard_domain": "N0_s>0,0<=X0_s<B_s,xe0>0,z_s>=0; all trialstates guarded, no clipping",
+  "source_admission_registry_SHA256": "2415d357c318f1ff1307239f4f39c8009e6a7005b140c3ec67b492f631097641"
 }
