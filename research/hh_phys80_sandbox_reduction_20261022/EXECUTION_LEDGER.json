@@ -1,6 +1,6 @@
 {
   "schema": "PHYS80_TYPED_EXECUTION_LEDGER_V1",
-  "as_of_utc": "2026-10-22T14:44:07.693479+00:00",
+  "as_of_utc": "2026-10-22T17:23:57.115787+00:00",
   "inherited_reused": {
     "PHYS78": {
       "ODE": 34,
@@ -158,9 +158,9 @@
     "code": "COMPLETE_SCOPED",
     "implementation_verification": "PASS_SCOPED_WITH_PRESERVED_FIXTURE_FAILURE",
     "science_execution": "3_COMPLETE_0_FAILED",
-    "publication": "BRANCH_CREATED_AT_ACTUAL_PARENT;COMMIT_PR_PENDING",
-    "backup": "PENDING",
-    "DAG": "SCOPED_REDUCTION_COMPLETE;LOW_T_PHYSICAL_ADMISSION_OPEN"
+    "publication": "S0_DRAFT_PR136_PUBLISHED_REMOTE_135_FILES_PASS;S1_FINAL_HEAD_BOUND_EXTERNALLY",
+    "backup": "S0_DRIVE_UPLOAD_ACK_AND_DROPBOX_UPLOAD_SIZE_ACK;FINAL_ZIP_RESTORE_BOUND_IN_EXTERNAL_FINAL_DELIVERY",
+    "DAG": "SCOPED_REDUCTION_COMPLETE;LOW_T_PHYSICAL_ADMISSION_OPEN;D_PI_RR_EVENT_COMPONENT_REUSED_PARTIAL"
   },
   "resource_policy": {
     "workers": 1,
@@ -169,5 +169,28 @@
     "other_processes_terminated": 0
   },
   "HH_R10": "OFF",
-  "production_admission": "NOT_ISSUED"
+  "production_admission": "NOT_ISSUED",
+  "initial_ledger_snapshot_utc": "2026-10-22T14:44:07.693479+00:00",
+  "late_sibling_reuse": {
+    "HH135_head": "6c3b12554288893d5d7e221d77be943324285ceb",
+    "REI222_head": "074933f73743ed10ff98a10db49d1b72696ead4f",
+    "scope": "supplied-event energy/C99 component only; source-qualified D rates and RR moments remain open",
+    "producer_counts": {
+      "event_cases": 72,
+      "invalid_domain_cases": 8,
+      "temperature_cases": 27,
+      "exact_cycles": 1,
+      "ODE": 0
+    },
+    "PHYS80_reexecution": 0,
+    "counts_added_to_PHYS80": false,
+    "evidence": "delivery/LATE_HH135_REI222_SCOPE_RECEIPT.json"
+  },
+  "delivery_identity": {
+    "science_commit": "fd18c59796175191bdd5f9b7ab2981d5e92836fd",
+    "PR": 136,
+    "publication_receipt": "delivery/POST_PUBLICATION_RECEIPT.json",
+    "final_head_and_full_restore": "EXTERNAL_PHYS80_FINAL_DELIVERY_20261022.json_AND_PR_BODY",
+    "self_hash_avoided": true
+  }
 }

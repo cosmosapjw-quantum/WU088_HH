@@ -1,6 +1,6 @@
 {
   "schema": "PHYS80_ADDITIVE_DAG_OVERLAY_V1",
-  "as_of_utc": "2026-10-22T14:46:20.661630+00:00",
+  "as_of_utc": "2026-10-22T17:23:57.115787+00:00",
   "parent": "PHYS79/PR134@3304d16db1dc9bf868c185a8eeb6cc9dbc270e50",
   "global_prior_DAG_edited": false,
   "nodes": [
@@ -76,7 +76,19 @@
     },
     {
       "id": "D_PI_RR_ENERGY_ADAPTER",
-      "status": "OPEN_RETAINED"
+      "status": "PARTIAL_COMPONENT_IMPLEMENTED_EXTERNALLY",
+      "sibling_pr": 135,
+      "sibling_head": "6c3b12554288893d5d7e221d77be943324285ceb",
+      "evidence": [
+        "delivery/LATE_HH135_REI222_ASSESSMENT_KO.md",
+        "delivery/LATE_HH135_REI222_SCOPE_RECEIPT.json"
+      ],
+      "PHYS80_import_or_execution": 0,
+      "remaining": [
+        "D_PI_RR_RATE_AND_THRESHOLD_BINDING",
+        "D_PI_RR_MATCHED_RR_CAPTURE_MOMENTS",
+        "D_PI_RR_CHANGED_DEPENDENCY_COUPLED_CONTROL"
+      ]
     },
     {
       "id": "LI_HARD_UV_INNER_SHELL_CONTRACT",
@@ -90,6 +102,41 @@
     {
       "id": "NUCLEAR_MOLECULAR_COMPTON_SPECTRAL_TRANSPORT",
       "status": "OPEN_RETAINED"
+    },
+    {
+      "id": "D_PI_RR_EVENT_ENERGY_MAP",
+      "status": "PASS_SCOPED_REUSED_FROM_PR135",
+      "evidence": [
+        "delivery/LATE_HH135_REI222_SCOPE_RECEIPT.json"
+      ]
+    },
+    {
+      "id": "D_PI_RR_C99_COMPONENT",
+      "status": "PASS_SCOPED_REUSED_FROM_PR135",
+      "evidence": [
+        "delivery/LATE_HH135_REI222_SCOPE_RECEIPT.json"
+      ]
+    },
+    {
+      "id": "D_PI_RR_RATE_AND_THRESHOLD_BINDING",
+      "status": "OPEN_SOURCE_AND_ALGEBRA",
+      "evidence": [
+        "delivery/LATE_HH135_REI222_SCOPE_RECEIPT.json"
+      ]
+    },
+    {
+      "id": "D_PI_RR_MATCHED_RR_CAPTURE_MOMENTS",
+      "status": "OPEN_SOURCE_DEPENDENT",
+      "evidence": [
+        "delivery/LATE_HH135_REI222_SCOPE_RECEIPT.json"
+      ]
+    },
+    {
+      "id": "D_PI_RR_CHANGED_DEPENDENCY_COUPLED_CONTROL",
+      "status": "NOT_RUN_AWAITING_SOURCE_BINDING",
+      "evidence": [
+        "delivery/LATE_HH135_REI222_SCOPE_RECEIPT.json"
+      ]
     }
   ],
   "edges": [
@@ -104,10 +151,35 @@
     [
       "LOW_T_CI_SOURCE_COVERAGE",
       "PHYS80_GENERIC_MAXWELLIAN_KERNEL"
+    ],
+    [
+      "D_PI_RR_ENERGY_ADAPTER",
+      "D_PI_RR_EVENT_ENERGY_MAP"
+    ],
+    [
+      "D_PI_RR_ENERGY_ADAPTER",
+      "D_PI_RR_C99_COMPONENT"
+    ],
+    [
+      "D_PI_RR_ENERGY_ADAPTER",
+      "D_PI_RR_RATE_AND_THRESHOLD_BINDING"
+    ],
+    [
+      "D_PI_RR_ENERGY_ADAPTER",
+      "D_PI_RR_MATCHED_RR_CAPTURE_MOMENTS"
+    ],
+    [
+      "D_PI_RR_ENERGY_ADAPTER",
+      "D_PI_RR_CHANGED_DEPENDENCY_COUPLED_CONTROL"
     ]
   ],
   "next_selected": "LOW_T_CI_SOURCE_COVERAGE",
   "next_action": "ResolveprimaryHrowandthreshold/isotopic-energycontract;reuseclosedgenericquadratureandfixedinventoryreduction. No completedscience rerun.",
   "HH_R10": "OFF",
-  "production_admission": "NOT_ISSUED"
+  "production_admission": "NOT_ISSUED",
+  "late_sibling_update": {
+    "observation_window_utc": "2026-10-22T15:04:48Z/2026-10-22T15:05:12Z",
+    "PHYS80_scientific_payload_changed": false,
+    "new_science_evaluations": 0
+  }
 }

@@ -13,7 +13,8 @@ inputs/phys79_cases/에 byte-pinned되어 있어 이전 전체 repository가 없
 ## 실행 계약
 
 Python3.12.14, NumPy2.3.5, SciPy1.17.0에서 실행했다.
-그림에는 Matplotlib3.10.8을 사용했다. dependency 버전은 science identity에 포함된다.
+Python/NumPy/SciPy 버전은 ODE science identity에 포함된다.
+그림에는 별도 figure 환경의 Matplotlib3.10.8을 사용했다.
 
 현재 디렉터리에서:
 
@@ -56,3 +57,13 @@ verification/FIGURE_VISUAL_QA.json에 있다.
 - 역사 nfev 비교는 작업량 근거다. 현재와 과거 wall-time의 paired benchmark는 수행하지 않았다.
 
 HH_R10=OFF. Production admission NOT_ISSUED.
+
+## 게시와 최종 전달
+
+[Draft PR136](https://github.com/cosmosapjw-quantum/WU088_HH/pull/136)의 science commit은 `fd18c59796175191bdd5f9b7ab2981d5e92836fd`이다.
+S0의 원격 135개 Git blob identity/size와 additive parent를 확인했다.
+[게시 영수증](delivery/POST_PUBLICATION_RECEIPT.json)은 S0 checkpoint의 양 provider 저장 ACK도 기록한다.
+최종 metadata HEAD와 최종 ZIP의 전체 bytes/CRC/payload SHA 검증은
+외부 `PHYS80_FINAL_DELIVERY_20261022.json` 및 PR 본문에서 확인한다.
+늦게 확인한 [HH135/REI222의 D 에너지 component](delivery/LATE_HH135_REI222_ASSESSMENT_KO.md)는
+전달 DAG에서 부분 성과로 재사용하며 PHYS80 science payload나 실행 수를 바꾸지 않는다.

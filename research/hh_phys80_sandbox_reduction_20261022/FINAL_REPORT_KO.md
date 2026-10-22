@@ -14,16 +14,19 @@ PHYS79의 고립된 neutral CI + D/H ground-state CX 부분계에서 **21종 abu
 | 과학 실행 | 새 isolated ODE 3 = control 2 + 별도 refinement 1; 성공 3, 실패 0 |
 | 재개 검증 | 완료 identity 3개 바이트 검증 후 skip; 새 ODE 0 |
 | 그림 | 3종 PNG/PDF 생성; 실제 PNG 3개 시각 검토 PASS_SCOPED |
-| 게시·백업 | PUBLICATION_AND_BACKUP_RECEIPTS_PENDING — root의 실제 전달 영수증으로 마감 |
+| 게시 | Draft PR136 science snapshot 게시 및 원격 135개 파일 검증 PASS; 최종 metadata HEAD는 외부 전달 JSON에 결합 |
+| 백업 | S0 checkpoint의 Drive upload ACK 및 Dropbox upload/size ACK 확인; 최종 ZIP의 full-byte/CRC/payload 판정은 외부 final-delivery JSON에 기록 |
 | production | HH_R10=OFF; production admission NOT_ISSUED |
 
 ## 2. 시작 identity, 새 근거와 접근 범위
 
-부모는 [Draft PR134](https://github.com/cosmosapjw-quantum/WU088_HH/pull/134)의 실제 HEAD \(3304d16db1dc9bf868c185a8eeb6cc9dbc270e50\)이다. PHYS79 science commit \(338fb7728e8b41f49551200b1f1ba73c047fb90c\)의 결과와 부모 source를 byte-pinned 입력으로 재사용했다. 게시용 branch research/hh-phys80-sandbox-reduction-20261022는 게시 전 관측에서도 그 부모 HEAD에 있었다. 새 과학 commit, 최종 HEAD 및 provider ID는 게시·백업 영수증이 확정할 항목이다. 이 초안에는 아직 없는 값을 채우지 않는다.
+부모는 [Draft PR134](https://github.com/cosmosapjw-quantum/WU088_HH/pull/134)의 실제 HEAD \(3304d16db1dc9bf868c185a8eeb6cc9dbc270e50\)이다. PHYS79 science commit \(338fb7728e8b41f49551200b1f1ba73c047fb90c\)의 결과와 부모 source를 byte-pinned 입력으로 재사용했다. 게시용 branch research/hh-phys80-sandbox-reduction-20261022는 게시 전 관측에서도 그 부모 HEAD에 있었다. 새 science commit은 `fd18c59796175191bdd5f9b7ab2981d5e92836fd`이며 [Draft PR136](https://github.com/cosmosapjw-quantum/WU088_HH/pull/136)으로 게시했다. 원격 parent/tree와 135개 Git blob SHA1·size를 확인했고 변경은 모두 새 unit 경로의 추가였다. S0 checkpoint의 provider ID는 [게시 영수증](delivery/POST_PUBLICATION_RECEIPT.json)에 있다. 최종 metadata HEAD와 최종 ZIP identity는 자기참조를 피하기 위해 외부 `PHYS80_FINAL_DELIVERY_20261022.json`과 PR 본문에 연결한다.
 
 초기 증분 intake는 WU의 최근 PR, 지정 sibling PR/branch와 전달 기록을 대조했다. PHYS79 로컬 ZIP 및 외부 delivery JSON의 전체 bytes identity를 확인했고, 이전 양 provider의 전체 bytes/CRC/166 payload SHA 검증은 **재사용 근거**로 분류했다. 이 단계에서 remote ZIP을 다시 내려받았다고 주장하지 않는다. 이전 51 repo/142 branch catalog 전체를 재실행하거나 접근 불가능한 비공개 대화를 전수 조사하지 않았다. [증분 inventory](inventory/INCREMENTAL_INVENTORY_KO.md), [복구 근거의 재사용](inventory/PARENT_RESTORE_EVIDENCE_REUSE.json)을 따른다.
 
 14:40–14:41 UTC의 [게시 전 갱신](inventory/PREPUBLICATION_REFRESH_KO.md)은 부모 ref가 그대로임을 확인했다. REI221에는 별도의 conditional local sandbox science commit \(569f784e78676123513b7390001d317eb62d6372\)가 생겼고, REC120은 기존 8개 THERM01 이력에 전달 복구 자료가 추가됐다. REI의 독립 abundance·주어진 event/energy 입력과 REC의 열 이력은 각각의 계약에 속한다. 그 실행을 PHYS80의 세 ODE에 더하지 않으며, 저온 CI나 고정 inventory 환원에 새 물리 승인을 부여하지 않는다. HE86 ref는 그대로였다. sibling 백업에 대한 upload/size ACK와 full download 검증의 차이도 원문대로 유지한다.
+
+15:04–15:05 UTC에 추가로 확인한 [HH PR135](https://github.com/cosmosapjw-quantum/WU088_HH/pull/135)의 HEAD `6c3b12554288893d5d7e221d77be943324285ceb`와 REI222 HEAD `074933f73743ed10ff98a10db49d1b72696ead4f`는 별도의 D PI/RR event-energy component를 제공한다. 추가 파일 9/9 Git blob identity와 생산자 receipt의 source 3/3 SHA256이 일치했다. 공급된 PI/RR event와 에너지를 thermal/binding/radiation 및 particle-count 온도 항으로 매핑하는 부분은 재사용하고, source-qualified D threshold/rate/RR capture-energy moments와 결합 control은 OPEN으로 유지한다. 생산자 72 event+8 invalid/domain+27 temperature+1 exact cycle 검증을 재실행하거나 PHYS80 수에 합산하지 않았다. [늦은 sibling 판단](delivery/LATE_HH135_REI222_ASSESSMENT_KO.md)과 [원문 identity 영수증](delivery/LATE_HH135_REI222_SCOPE_RECEIPT.json)이 이 S1 metadata 갱신의 근거다. 고정된 124개 PHYS80 과학 payload는 바꾸지 않았다.
 
 ## 3. 무엇을 정확히 환원했는가
 
@@ -97,7 +100,7 @@ C01은 \(T_0=25370.66308424773\) K, \(n_H=10^{-3}\ {\rm cm^{-3}}\), HII/H=0.1, D
 
 이 표는 [실제 새 영수증](verification/SCIENCE_STDOUT.json)과 저장된 부모 영수증의 계산량을 나란히 표시한다. 부모 solver는 다시 실행하지 않았다. 두 알고리즘의 실행 시점과 host 부하는 같지 않으므로, paired wall-time benchmark나 보편적 가속 배수를 주장하지 않는다.
 
-새 C01 baseline–refinement의 최대 scaled-state 차이는 \(3.5481474703\times10^{-9}\)다. C01 온도는 약 25370.663084→24461.949998 K, C02는 300→299.999793080427 K로 변했다. C02의 전자 abundance 변화는 관측상 0, closed-energy extent 온도 차이는 \(5.6843418861\times10^{-14}\) K, 최종 평형 거리/D는 \(3.6705103993\times10^{-9}\)다. 독립 scalar equilibrium root는 추가 ODE가 아니다.
+새 C01 baseline–refinement의 최대 scaled-state 차이는 \(3.5481474703\times10^{-9}\)다. C01 온도는 약 25370.663084→24461.949998 K, C02는 300→299.999793080427 K로 변했다. C02의 전자 abundance 변화는 관측상 0, closed-energy extent 온도 차이는 \(5.6843418861\times10^{-14}\) K, 최종 평형 거리/D는 \(3.6705103993\times10^{-9}\)다. 평형 비교에는 저장된 PHYS79 scalar equilibrium oracle를 재사용했으며, 이번 PHYS80의 새 root solve는 0이다.
 
 세 결과의 isotope 상대 오차 최대는 \(1.8375257965\times10^{-16}\), 저장 total-energy 상대 오차 최대는 \(2.2204460493\times10^{-16}\), 최소 종 abundance는 0이다. accepted mesh는 각각 66/134/203점이며 모두 온도 domain, positivity, thermal energy gate를 통과했다. runner의 isotope 정량 gate는 161개 저장점에 적용했다. 후속 독립 저장결과 감사는 accepted mesh 403개 점(초기점 포함, 실제 step 400개)과 dense sample 483개를 한 번 후처리했고, isotope 상대 오차 최대 2.2204460493e−16와 absent isotope 0을 확인했다. 이는 ODE·RHS·rate 재평가가 없는 별도 근거다. [감사 영수증](verification/independent/postflight_audit_001.json)을 참조한다. 열에너지를 first integral에서 복원하므로 작은 energy residual 자체는 독립 정확도 증거가 아니다. 별도 full-event 연산자와의 접선 비교, 다른 solver의 저장 궤적과의 비교를 함께 사용한다.
 
@@ -131,9 +134,9 @@ CI의 입사 전자 에너지 moment는 shared thermal pool의 net cooling과 �
 
 ## 8. 다음 DAG와 재개 조건
 
-다음 physics→coding 노드는 LOW_T_CI_SOURCE_COVERAGE의 구체적 species/threshold/uncertainty 계약이다. 이를 닫은 뒤 기존 CI 연산자의 에너지 potential과 결합한다. He/Li의 state-resolved CX와 radiative photon-energy moment, D의 PI/RR potential adapter, RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT, Li hard-UV inner-shell/branching/spectral-energy 계약은 계속 OPEN이다. 전체 핵반응·분자·excitation/free-free/Compton·spectral transport의 완성을 주장하지 않는다.
+다음 physics→coding 노드는 LOW_T_CI_SOURCE_COVERAGE의 구체적 species/threshold/uncertainty 계약이다. 이를 닫은 뒤 기존 CI 연산자의 에너지 potential과 결합한다. He/Li의 state-resolved CX와 radiative photon-energy moment, RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT, Li hard-UV inner-shell/branching/spectral-energy 계약은 계속 OPEN이다. D PI/RR energy adapter는 HH135의 보존적 event-energy/C99 component를 재사용하는 PARTIAL 상태다. D의 threshold-consistent rate와 matched RR capture-energy moment, photon retention/escape 결합 및 새 coupled control은 여전히 OPEN이다. 전체 핵반응·분자·excitation/free-free/Compton·spectral transport의 완성을 주장하지 않는다.
 
-T/neutron의 양의 주입이나 새 반응을 넣으면 보존 inventory와 invariant manifold부터 다시 유도해야 한다. 현재 4/1차원 변수를 자동 재사용하지 않는다. 새 물리 조건을 선택할 때 이미 완료된 symbolic/finite/ODE identity는 근거로 재사용하고, 변경된 의존성만 점검한다. 게시·백업 마감은 실제 descendant commit, Draft PR, provider 전달과 full-byte 검증, Codex/next-thread handoff의 외부 identity 연결을 확인한 뒤 별도 상태로 기록한다.
+T/neutron의 양의 주입이나 새 반응을 넣으면 보존 inventory와 invariant manifold부터 다시 유도해야 한다. 현재 4/1차원 변수를 자동 재사용하지 않는다. 새 물리 조건을 선택할 때 이미 완료된 symbolic/finite/ODE identity는 근거로 재사용하고, 변경된 의존성만 점검한다. S0 science의 실제 descendant commit·Draft PR·원격 payload와 checkpoint 저장 ACK는 확인했다. S1 metadata commit은 과학 124개 payload를 유지하며, 최종 HEAD/ZIP/provider full-byte·CRC·payload 검증은 외부 final-delivery JSON으로 마감한다. [Codex handoff](CODEX_HANDOFF_KO.md), [다음-thread 시작문](NEXT_THREAD_HANDOFF_KO.md), [게시·전달 연결](POST_PUBLICATION_HANDOFF_KO.md)에서 같은 외부 identity를 조회하도록 명시했다.
 
 상위 non-tilted LRS Bianchi I 계약, 같은 normal orthonormal frame에서 signed matter/radiation tensor를 먼저 합한 뒤 norm을 취하는 규칙, Frobenius=\(\sqrt2\)×half-contraction을 유지한다. reacting gas의 \(\pi=0\), 비영 \(\pi_m\)은 collisionless DM이다. 이번 고립 parcel의 수치 결과가 새 우주론적 stress closure를 제공하지 않는다.
 

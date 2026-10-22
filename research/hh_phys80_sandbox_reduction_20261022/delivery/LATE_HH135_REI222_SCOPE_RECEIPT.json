@@ -1,0 +1,604 @@
+{
+  "schema": "phys80.late_hh135_rei222_identity_scope_read.v1",
+  "observed_window_utc": {
+    "start": "2026-10-22T15:04:48.248Z",
+    "end": "2026-10-22T15:05:12.226Z"
+  },
+  "classification": "LATE_SIBLING_RESULT_OBSERVED_AFTER_PHYS80_SCIENCE_FREEZE",
+  "PHYS80_context": {
+    "draft_pr": 136,
+    "science_commit": "fd18c59796175191bdd5f9b7ab2981d5e92836fd",
+    "frozen_science_payloads": 124,
+    "context_source": "parent task message; not changed or reexecuted by this assessment"
+  },
+  "remote_identities": {
+    "hh135": {
+      "repo": "cosmosapjw-quantum/WU088_HH",
+      "pr": 135,
+      "branch": "research/hh1-d-energy-adapter-20261022",
+      "head": "6c3b12554288893d5d7e221d77be943324285ceb",
+      "base": "3304d16db1dc9bf868c185a8eeb6cc9dbc270e50",
+      "state": "OPEN_DRAFT_NOT_MERGED",
+      "changed_files": 9,
+      "all_added": true
+    },
+    "rei222": {
+      "repo": "cosmosapjw-quantum/rei_bianchi",
+      "pr": 222,
+      "branch": "research/orchestration-sandbox-20261022",
+      "head": "074933f73743ed10ff98a10db49d1b72696ead4f",
+      "state": "OPEN_DRAFT_NOT_MERGED"
+    }
+  },
+  "observed_scientific_scope": {
+    "producer_verification": {
+      "schema": "HH1_C99_FRACTION_VERIFICATION_V1",
+      "status": "PASS_SCOPED",
+      "event_cases": 72,
+      "invalid_or_domain_cases": 8,
+      "temperature_cases": 27,
+      "closed_cycle_checks": 1,
+      "max_relative_energy_residual": 8.549096043503075e-17,
+      "max_scaled_component_error": 7.246087870182086e-17,
+      "max_scaled_temperature_error": 1.7074648717612224e-16,
+      "I_D_eV": 13.603705453302721,
+      "delta_model_eV": 0.003705453302722427,
+      "kb_eV_K": 8.617333262145179e-05,
+      "examples": {
+        "D_PI_18eV": {
+          "thermal": 4.396294546697279,
+          "binding": 13.603705453302721,
+          "radiation": -18,
+          "electron": 1,
+          "photon_number": -1
+        },
+        "D_RR_capture_kT_300K": {
+          "thermal": -0.025851999786435535,
+          "binding": -13.603705453302721,
+          "radiation": 13.629557453089157,
+          "electron": -1,
+          "photon_number": 1
+        }
+      },
+      "wall_seconds": 0.3985140949989727,
+      "compiler": "cc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+      "flags": [
+        "-std=c99",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fPIC",
+        "-shared"
+      ],
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+      "machine": "x86_64",
+      "precision": "C double / Python float binary64; exact Fraction oracle on binary64 inputs",
+      "source_sha256": {
+        "hh1_energy_adapter.h": "ce1f205aba85756204d83b22ea430e0f1707cb94b5c63ce132176c81cb524554",
+        "hh1_energy_adapter.c": "616ffb4e3fa9441594ffdf8ea4ec14b47d89814a271b78d7ebff52633ee0ebef",
+        "verify_hh1.py": "c685ee3a92c99136fc78d1f76fbbe83a87483883d2a66c6d73c7b96262199899"
+      },
+      "execution_counts": {
+        "new_ode": 0,
+        "historical_replay": 0,
+        "ncp": 0,
+        "primary_verification_pass": 1
+      },
+      "scope": "Event energy component only. D rates/cross sections and full coupled model remain OPEN."
+    },
+    "read_source_findings": [
+      "C99 component maps supplied event rate to thermal/positive ionization/radiation/electron/photon-book ledger.",
+      "PI event ledger per event: (thermal,binding,radiation)=(E-I_D,+I_D,-E); requires E>=I_D.",
+      "Case-A RR event ledger per event: (-e_c,-I_D,+I_D+e_c), where e_c is supplied captured kinetic energy.",
+      "Rates are per reference H1 per proper second; energies eV. Temperature chain rule assumes atomic nucleus conservation and common thermal electron population.",
+      "Temperature derivative -2 H T +2 q/(3 k_B N)-T dx_e/N separates particle-number and expansion terms.",
+      "D potential is the inherited rounded finite-model I_H=13.6eV plus Delta=43 k_B K; it is not newly sourced isotope spectroscopy.",
+      "Output-preserving error paths reject nonfinite/bad inputs and below-threshold D PI, including an H-admitted/D-rejected threshold gap.",
+      "Exact Fraction oracle uses actual binary64 input values; the closed H PI→D CX→D RR cycle checks bookkeeping algebra.",
+      "RR photon number is an aggregate book entry, not a spectral-bin or cascade multiplicity model; escaping energy is not automatically injected into the local gray-photon inventory."
+    ],
+    "not_closed": [
+      "Source-qualified isotope-dependent D PI cross sections and threshold-coherent event rates",
+      "Source-matched D RR alpha, captured-energy moment and derivative accuracy",
+      "Microscopic Milne/detailed-balance consistency across matched PI/RR providers",
+      "Finite-mass isotope spectroscopy beyond the declared43K rounded model",
+      "Radiation spectral/cascade/retention and complete coupled state ownership",
+      "Changed-dependency coupled trajectory/control and overall D_PI_RR_ENERGY_ADAPTER admission"
+    ],
+    "static_review_scope": "Read of all nine exact changed files and linked current orchestration handoff/DAG; no compiled/imported code, no producer verification replay. Numeric PASS values are producer evidence whose source byte identity is checked separately.",
+    "producer_wolfram_claim": "Theory document reports root Wolfram conservation/chain-rule check; original Wolfram tool receipt not retrieved by this bounded read, so not independently recertified here."
+  },
+  "recommended_additive_DAG_update": {
+    "D_PI_RR_ENERGY_ADAPTER": "PARTIAL_COMPONENT_IMPLEMENTED_EXTERNALLY",
+    "D_PI_RR_EVENT_ENERGY_MAP": "PASS_SCOPED_REUSED_FROM_PR135",
+    "D_PI_RR_C99_COMPONENT": "PASS_SCOPED_REUSED_FROM_PR135",
+    "D_PI_RR_RATE_AND_THRESHOLD_BINDING": "OPEN_SOURCE_AND_ALGEBRA",
+    "D_PI_RR_MATCHED_RR_CAPTURE_MOMENTS": "OPEN_SOURCE_DEPENDENT",
+    "D_PI_RR_CHANGED_DEPENDENCY_COUPLED_CONTROL": "NOT_RUN_AWAITING_SOURCE_BINDING",
+    "LOW_T_CI_SOURCE_COVERAGE": "UNCHANGED_BY_HH135; retain PHYS80's own final evidence/status",
+    "reuse": "Reference the exact sibling source+verification; no source import or old-check replay.",
+    "next_action": "Source-qualified finite-mass hydrogenic PI/RR threshold/number/energy moment binding in the same CX defect convention, then a separately frozen changed-dependency control.",
+    "admission": "HH_R10=OFF; Production admission NOT_ISSUED."
+  },
+  "producer_DAG": {
+    "schema": "HH1_DAG_OVERLAY_V1",
+    "parent_head": "3304d16db1dc9bf868c185a8eeb6cc9dbc270e50",
+    "nodes": {
+      "INTAKE_48H": "COMPLETE_SCOPED_ACCESSIBLE",
+      "D_PI_RR_EVENT_ENERGY_MAP": "PASS_SCOPED",
+      "D_PI_RR_C99_COMPONENT": "PASS_SCOPED",
+      "D_PI_RR_ENERGY_ADAPTER": "PARTIAL_COMPONENT_IMPLEMENTED",
+      "D_PI_RR_RATE_AND_THRESHOLD_BINDING": "OPEN",
+      "LOW_T_CI_SOURCE_COVERAGE": "NEXT_OPEN_INHERITED",
+      "PUBLICATION": "ROOT_PENDING",
+      "BACKUP": "ROOT_PENDING"
+    },
+    "edges": [
+      [
+        "INTAKE_48H",
+        "D_PI_RR_EVENT_ENERGY_MAP"
+      ],
+      [
+        "D_PI_RR_EVENT_ENERGY_MAP",
+        "D_PI_RR_C99_COMPONENT"
+      ],
+      [
+        "D_PI_RR_C99_COMPONENT",
+        "D_PI_RR_RATE_AND_THRESHOLD_BINDING"
+      ]
+    ],
+    "HH_R10": "OFF",
+    "production_admission": "NOT_ISSUED",
+    "new_ODE": 0,
+    "new_NCP": 0
+  },
+  "linked_orchestration_nodes": {
+    "completed": [
+      {
+        "id": "HH1",
+        "repo": "cosmosapjw-quantum/WU088_HH",
+        "title": "D PI/RR energy and particle-count temperature adapter",
+        "status": "PASS_SCOPED",
+        "evidence": "72 events+8 domain+27 temperature+1 cycle",
+        "publication": {
+          "key": "hh",
+          "repo": "cosmosapjw-quantum/WU088_HH",
+          "branch": "research/hh1-d-energy-adapter-20261022",
+          "science_commit": "6c3b12554288893d5d7e221d77be943324285ceb",
+          "unit": "research/hh1_d_energy_adapter_20261022",
+          "pr": 135,
+          "url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/135",
+          "readback_head_match": true
+        }
+      }
+    ],
+    "next": [
+      {
+        "id": "N4",
+        "repo": "WU088_HH",
+        "title": "Bind D PI/RR thresholds, rate providers and captured-energy moments",
+        "depends": [
+          "HH1"
+        ],
+        "status": "READY_SOURCE_AND_ALGEBRA",
+        "input": "PHYS79 owner source+HH1 energy ledger; same isotope defect convention",
+        "first_action": "Compare finite-mass hydrogenic source convention with inherited provider; supply matched number/energy moments and avoid double-counted CX binding energy",
+        "acceptance": "Event conservation and derivative consistency with source-qualified isotope physics; distinct low-T CI coverage",
+        "budget": "Scalar quadrature/reference checks first, <=30s initial probe"
+      },
+      {
+        "id": "N6",
+        "repo": "rei_bianchi",
+        "title": "Complete C3 coefficient-domain policy and event/Jacobian assembly",
+        "depends": [
+          "REI1",
+          "HH1"
+        ],
+        "status": "READY_BOUNDED_CONSTRUCTION",
+        "input": "PR221C2 source unchanged by42e44494 metadata; PR222 local-source proof kernel; current other-threadC3 must be refreshed first",
+        "first_action": "Reuse zero/tiny-stock kernel; add source-bound physical events, provider-matched thermal moments, off-grid statuses and electron-density rank-one dependencies",
+        "acceptance": "One beta owner; exact baryon/charge/particle bookkeeping; derivative tests and source bounds; no guessed daughter distributions",
+        "budget": "One bounded local operator probe <=30s; fresh Astra contract→lower-tier execution→one Astra decision"
+      },
+      {
+        "id": "N8",
+        "repo": "all",
+        "title": "Integrate source-qualified thermal/charge/moment components in one closed pilot",
+        "depends": [
+          "N1",
+          "N2",
+          "N3",
+          "N4",
+          "N5",
+          "N6"
+        ],
+        "status": "WAITING_PHYSICAL_DEPENDENCIES",
+        "input": "Shared proper-clock event measure; explicit17/21state map and18-family isotope map; separate photon/nonthermal reservoirs",
+        "first_action": "Freeze a small closed model after inputs above are ready, then compare one reference solver with reduced optimized implementation",
+        "acceptance": "Baryon/charge/energy, positivity, physical source-domain coverage, numerical convergence and observable scope independently stated",
+        "budget": "Sandbox-first selected case; external compute only for demonstrated resource need and explicit ready contract"
+      }
+    ]
+  },
+  "raw_observations": [
+    {
+      "key": "wu135_metadata",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/pulls/135",
+      "kind": "pr",
+      "observed_utc": "2026-10-22T15:04:48.248Z",
+      "isError": false,
+      "data": {
+        "number": 135,
+        "state": "open",
+        "draft": true,
+        "merged": false,
+        "created_at": "2026-10-22T06:57:09Z",
+        "updated_at": "2026-10-22T06:57:09Z",
+        "title": "HH1: conservative deuterium PI/RR energy adapter",
+        "head": {
+          "ref": "research/hh1-d-energy-adapter-20261022",
+          "sha": "6c3b12554288893d5d7e221d77be943324285ceb"
+        },
+        "base": {
+          "ref": "research/hh-phys79-collisional-closure-20261022",
+          "sha": "3304d16db1dc9bf868c185a8eeb6cc9dbc270e50"
+        },
+        "body": "Add a C99 event-energy adapter and variable-particle-number temperature source on the pinned PHYS79 result. The one bounded verification passed 72 event cases, 8 domain/invalid cases, 27 temperature cases and an exact closed cycle in 0.399 seconds. The modeled D threshold is inherited from the stated isotope defect. This supplies consistent energy bookkeeping; source-qualified D cross sections, rates and recombination moments remain separate obligations. No old cohort, ODE or NCP calculation was rerun. Full orchestration: https://github.com/cosmosapjw-quantum/rei_bianchi/pull/222.",
+        "html_url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/135"
+      }
+    },
+    {
+      "key": "wu135_files",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/pulls/135/files?per_page=100",
+      "kind": "files",
+      "observed_utc": "2026-10-22T15:04:48.328Z",
+      "isError": false,
+      "data": [
+        {
+          "filename": "research/hh1_d_energy_adapter_20261022/DAG_OVERLAY.json",
+          "status": "added",
+          "sha": "c757d3035ae4b865df87ddc7d2cecc434544bac8",
+          "additions": 32,
+          "deletions": 0,
+          "changes": 32,
+          "raw_url": "https://github.com/cosmosapjw-quantum/WU088_HH/raw/6c3b12554288893d5d7e221d77be943324285ceb/research%2Fhh1_d_energy_adapter_20261022%2FDAG_OVERLAY.json"
+        },
+        {
+          "filename": "research/hh1_d_energy_adapter_20261022/HH1_PREFLIGHT.json",
+          "status": "added",
+          "sha": "a0c078178b6359451d176a2a5994bcee7efcf87b",
+          "additions": 17,
+          "deletions": 0,
+          "changes": 17,
+          "raw_url": "https://github.com/cosmosapjw-quantum/WU088_HH/raw/6c3b12554288893d5d7e221d77be943324285ceb/research%2Fhh1_d_energy_adapter_20261022%2FHH1_PREFLIGHT.json"
+        },
+        {
+          "filename": "research/hh1_d_energy_adapter_20261022/HH1_THEORY_AND_RESULT.md",
+          "status": "added",
+          "sha": "fc0dd57c245e94c5824f6533b1d736846498afb1",
+          "additions": 130,
+          "deletions": 0,
+          "changes": 130,
+          "raw_url": "https://github.com/cosmosapjw-quantum/WU088_HH/raw/6c3b12554288893d5d7e221d77be943324285ceb/research%2Fhh1_d_energy_adapter_20261022%2FHH1_THEORY_AND_RESULT.md"
+        },
+        {
+          "filename": "research/hh1_d_energy_adapter_20261022/HH1_VERIFICATION.json",
+          "status": "added",
+          "sha": "522747d7d226f9bb4fa0ed05f278b130be536b58",
+          "additions": 57,
+          "deletions": 0,
+          "changes": 57,
+          "raw_url": "https://github.com/cosmosapjw-quantum/WU088_HH/raw/6c3b12554288893d5d7e221d77be943324285ceb/research%2Fhh1_d_energy_adapter_20261022%2FHH1_VERIFICATION.json"
+        },
+        {
+          "filename": "research/hh1_d_energy_adapter_20261022/INTAKE.json",
+          "status": "added",
+          "sha": "f8c3390cba1af756dc919ab688b738fadc0bdcc6",
+          "additions": 52,
+          "deletions": 0,
+          "changes": 52,
+          "raw_url": "https://github.com/cosmosapjw-quantum/WU088_HH/raw/6c3b12554288893d5d7e221d77be943324285ceb/research%2Fhh1_d_energy_adapter_20261022%2FINTAKE.json"
+        },
+        {
+          "filename": "research/hh1_d_energy_adapter_20261022/INTAKE.md",
+          "status": "added",
+          "sha": "80a7d877b91cf7aa5dca8a7ca2019767f3cc6f19",
+          "additions": 54,
+          "deletions": 0,
+          "changes": 54,
+          "raw_url": "https://github.com/cosmosapjw-quantum/WU088_HH/raw/6c3b12554288893d5d7e221d77be943324285ceb/research%2Fhh1_d_energy_adapter_20261022%2FINTAKE.md"
+        },
+        {
+          "filename": "research/hh1_d_energy_adapter_20261022/hh1_energy_adapter.c",
+          "status": "added",
+          "sha": "c97f89756171548a5e349925d656b2f8436fcc0d",
+          "additions": 49,
+          "deletions": 0,
+          "changes": 49,
+          "raw_url": "https://github.com/cosmosapjw-quantum/WU088_HH/raw/6c3b12554288893d5d7e221d77be943324285ceb/research%2Fhh1_d_energy_adapter_20261022%2Fhh1_energy_adapter.c"
+        },
+        {
+          "filename": "research/hh1_d_energy_adapter_20261022/hh1_energy_adapter.h",
+          "status": "added",
+          "sha": "4257393552f849741d4e59afeba667aa2d6cdbe8",
+          "additions": 21,
+          "deletions": 0,
+          "changes": 21,
+          "raw_url": "https://github.com/cosmosapjw-quantum/WU088_HH/raw/6c3b12554288893d5d7e221d77be943324285ceb/research%2Fhh1_d_energy_adapter_20261022%2Fhh1_energy_adapter.h"
+        },
+        {
+          "filename": "research/hh1_d_energy_adapter_20261022/verify_hh1.py",
+          "status": "added",
+          "sha": "c9b91120565c9f5304186d2ecd65ce8a4948873e",
+          "additions": 113,
+          "deletions": 0,
+          "changes": 113,
+          "raw_url": "https://github.com/cosmosapjw-quantum/WU088_HH/raw/6c3b12554288893d5d7e221d77be943324285ceb/research%2Fhh1_d_energy_adapter_20261022%2Fverify_hh1.py"
+        }
+      ]
+    },
+    {
+      "key": "rei222_metadata",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/rei_bianchi/pulls/222",
+      "kind": "pr",
+      "observed_utc": "2026-10-22T15:04:48.508Z",
+      "isError": false,
+      "data": {
+        "number": 222,
+        "state": "open",
+        "draft": true,
+        "merged": false,
+        "created_at": "2026-10-22T06:52:46Z",
+        "updated_at": "2026-10-22T07:18:51Z",
+        "title": "Seven sandbox physics kernels, recovered results and next eight-node DAG",
+        "head": {
+          "ref": "research/orchestration-sandbox-20261022",
+          "sha": "074933f73743ed10ff98a10db49d1b72696ead4f"
+        },
+        "base": {
+          "ref": "research/rei-coupled-isotope-contract-20261022",
+          "sha": "c1714f82ea7de15fee230a1a995365970ee6dc02"
+        },
+        "body": "Complete one bounded theory/code unit per repository after the48-hour intake. Published: HE87, HH135, CR97, REC123, BASS181, VigilODE79 and this REI C3 kernel. All remote science heads read back. New cosmological IVPs/NCP submissions:0. Reuse completed owner campaigns, including newly recovered C22A/B and latest REC/VigilODE returns.\n\nResults include Lorentz pressure moments, D event-energy/temperature accounting, primary-source-verified H excitation, saved-history Compton budget, exact33→30 restriction, repaired full33 adaptive error norm and reviewed zero/tiny-stock isotope sources. These are scoped kernels, not a full closed reionization solution or global convergence approval. Existing root CI fmt failures are distinct from the finite checks.\n\nRead research/orchestration_sandbox_20261022/REPORT_KO.md, DAG.json, CLOSEOUT_DELTAS.md and HANDOFF_NEXT_THREAD_KO.md. The next eight nodes and exact source/backup pins are explicit. S0/S1 backups are acknowledged in Drive/Dropbox; final S2 receipt is appended after upload. No force push or merge.",
+        "html_url": "https://github.com/cosmosapjw-quantum/rei_bianchi/pull/222"
+      }
+    },
+    {
+      "key": "hh135_DAG_OVERLAY.json",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/WU088_HH/6c3b12554288893d5d7e221d77be943324285ceb/research/hh1_d_energy_adapter_20261022/DAG_OVERLAY.json",
+      "kind": "text",
+      "expected_git_blob": "c757d3035ae4b865df87ddc7d2cecc434544bac8",
+      "observed_utc": "2026-10-22T15:05:12.195Z",
+      "isError": false,
+      "data": "{\n  \"schema\": \"HH1_DAG_OVERLAY_V1\",\n  \"parent_head\": \"3304d16db1dc9bf868c185a8eeb6cc9dbc270e50\",\n  \"nodes\": {\n    \"INTAKE_48H\": \"COMPLETE_SCOPED_ACCESSIBLE\",\n    \"D_PI_RR_EVENT_ENERGY_MAP\": \"PASS_SCOPED\",\n    \"D_PI_RR_C99_COMPONENT\": \"PASS_SCOPED\",\n    \"D_PI_RR_ENERGY_ADAPTER\": \"PARTIAL_COMPONENT_IMPLEMENTED\",\n    \"D_PI_RR_RATE_AND_THRESHOLD_BINDING\": \"OPEN\",\n    \"LOW_T_CI_SOURCE_COVERAGE\": \"NEXT_OPEN_INHERITED\",\n    \"PUBLICATION\": \"ROOT_PENDING\",\n    \"BACKUP\": \"ROOT_PENDING\"\n  },\n  \"edges\": [\n    [\n      \"INTAKE_48H\",\n      \"D_PI_RR_EVENT_ENERGY_MAP\"\n    ],\n    [\n      \"D_PI_RR_EVENT_ENERGY_MAP\",\n      \"D_PI_RR_C99_COMPONENT\"\n    ],\n    [\n      \"D_PI_RR_C99_COMPONENT\",\n      \"D_PI_RR_RATE_AND_THRESHOLD_BINDING\"\n    ]\n  ],\n  \"HH_R10\": \"OFF\",\n  \"production_admission\": \"NOT_ISSUED\",\n  \"new_ODE\": 0,\n  \"new_NCP\": 0\n}\n"
+    },
+    {
+      "key": "hh135_HH1_PREFLIGHT.json",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/WU088_HH/6c3b12554288893d5d7e221d77be943324285ceb/research/hh1_d_energy_adapter_20261022/HH1_PREFLIGHT.json",
+      "kind": "text",
+      "expected_git_blob": "a0c078178b6359451d176a2a5994bcee7efcf87b",
+      "observed_utc": "2026-10-22T15:05:12.191Z",
+      "isError": false,
+      "data": "{\n  \"schema\": \"HH1_PREFLIGHT_V1\",\n  \"parent_global_gate\": \"I0_COMPLETE_SCOPED_APPROVED_BY_ROOT\",\n  \"selected_node\": \"D_PI_RR_ENERGY_ADAPTER_SCOPED\",\n  \"live_pr134_head\": \"3304d16db1dc9bf868c185a8eeb6cc9dbc270e50\",\n  \"live_pr134_updated\": \"2026-10-22T03:25:37Z\",\n  \"backup_dropbox_id\": \"id:BSpOijBcT10AAAAAAD_h2A\",\n  \"backup_rev\": \"65e655eb7af310af03d47\",\n  \"backup_size\": 2557522,\n  \"conversation_refresh\": \"Personal context unavailable for this conversation; root global retrieval reused; no inference of absence\",\n  \"current_skill\": \"cloud physmath-research-loop1.3.0\",\n  \"agents_model_override\": \"NONE_FOUND\",\n  \"native_promotion\": \"NOT_REQUESTED_NOT_ISSUED\",\n  \"initial_execution_budget_seconds\": 30,\n  \"new_ode\": 0,\n  \"prior_tests_replayed\": 0\n}\n"
+    },
+    {
+      "key": "hh135_HH1_THEORY_AND_RESULT.md",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/WU088_HH/6c3b12554288893d5d7e221d77be943324285ceb/research/hh1_d_energy_adapter_20261022/HH1_THEORY_AND_RESULT.md",
+      "kind": "text",
+      "expected_git_blob": "fc0dd57c245e94c5824f6533b1d736846498afb1",
+      "observed_utc": "2026-10-22T15:05:12.400Z",
+      "isError": false,
+      "data": "# HH1: one D potential for PI/RR event energy\n\nScope: additive successor component of PHYS79's D_PI_RR_ENERGY_ADAPTER. The owner\natomic code and PHYS79 collision code were read at HEAD\n3304d16db1dc9bf868c185a8eeb6cc9dbc270e50. This unit supplies an executable\nevent-energy map. Cross sections, rate coefficients and emitted photon spectra\nare supplied by the caller and keep their own physical provenance.\n\n## Derivation and physical simplification\n\nLet Y_i=n_i/n_H1 be abundance per conserved reference H1 nucleus. The local ideal\nreacting gas has one temperature T, free-electron abundance x_e and particle\ncount N=sum_i Y_i+x_e. Nonrelativistic translational thermal energy per reference\nH1 is u=(3/2) k_B N T. The ionic binding ledger uses positive ionization\npotentials relative to the neutral ground state, b=sum_i epsilon_i Y_i.\n\nThe adopted PHYS79 rounded ground-state model fixes\nDelta=43 k_B K and I_D=I_H+Delta. The inherited H threshold is13.6eV.\nThis is an explicit finite model; the 43K constant is not an isotope-structure\ncalculation. SI-defined k_B=1.380649e-23 J/K and eV=1.602176634e-19 J give\nDelta=0.003705453302722427eV in the executed binary64 arithmetic.\n\nFor a PI event D+gamma(E)->D+ +e, the photon supplies E. The ionization\ncost is I_D and the remaining translational energy is E-I_D. Thus the\nbinding/gas/radiation changes per event are\n\n    Delta b=+I_D, Delta u=E-I_D, Delta u_gamma=-E, Delta x_e=+1.\n\nThis map requires E>=I_D. In particular, a photon in [I_H,I_D) may ionize\nthe inherited H model but not this D model. Reusing an H event rate in this gap\nand changing only the heat term would create a negative PI excess. The adapter\nrejects the unsupported D event rather than accepting such a heat source.\nThe cross-section kernel must separately be made consistent with this threshold\nbefore combining a whole new trajectory.\n\nFor radiative recombination D+ +e->D+gamma, let e_c>=0 be the supplied mean\ncaptured kinetic energy under the caller's chosen rate-weighted electron\ndistribution. In Case A the emitted photon escapes the local reacting parcel:\n\n    Delta b=-I_D, Delta u=-e_c, Delta u_gamma=I_D+e_c, Delta x_e=-1.\n\nThe radiation ledger here includes escaping photons. Their energy must not be\ninserted automatically into the local gray-photon inventory. Photon-number\nchanges in the API are aggregate book entries and do not specify a bin.\n\nFor both events Delta b+Delta u+Delta u_gamma=0 exactly in real arithmetic.\nMultiplication by event rate R [per H1/s] yields eV per H1 per proper second.\nEach event is independent, so any linear combination conserves the three-ledger\nenergy at the local interaction level. An H PI, forward D/H CX, D RR cycle has\nzero net ionic energy; with the same potential its gas and radiation transfers\ncancel exactly. This is a useful cross-process compatibility check.\n\nThe inherited RR kinetic moment is already computed from its fitted alpha(T)\nusing <e_c>=k_B T[3/2+d ln alpha/d ln T]. Under a temperature-independent capture\ncross section, differentiating the Maxwellian average gives that identity.\nThis unit reuses the identity and accepts a supplied e_c; it does not assert\nthat an unchanged H fit is an isotope-correct D recombination fit or that\nreplacing a threshold alone enforces microscopic Milne detailed balance.\n\nAtomic reactions preserve the number of nuclei, hence dN/dt=dx_e/dt.\nDifferentiating u gives\n\n    dT/dt = (2 q)/(3 k_B N) - (T/N) dx_e/dt\n\nfor a local reaction heat q. When u obeys du/dt=-2 H u+q per reference nucleus,\nthe full temperature derivative is\n\n    dT/dt = -2 H T + (2 q)/(3 k_B N) - (T/N) dx_e/dt.\n\nThe final term comes from the change in number of thermal particles. It is\nabsent from the u source itself and must not be charged twice. The expansion\nterm is supplied separately by the cosmological background, not derived from\nthe reaction-energy identity.\n\n## Implementation and numerical meaning\n\nhh1_d_threshold constructs one potential; hh1_event maps PI or Case-A RR into\nthe five scalar ledger entries; hh1_temperature_rhs implements the chain rule.\nAll inputs/results must be finite, energies/rates nonnegative and T,N,k_B\nstrictly positive where applicable. Invalid calls preserve the output object.\nPI heat forms E-I before multiplying by rate, avoiding subtraction of large\ntotal energy powers. No species projection, floor, basis change or tolerance\nchange is introduced. C99 costs O(1) arithmetic and O(1) memory per event.\nNo timing comparison with a solver is claimed.\n\nThe primary verification independently uses exact Fraction arithmetic on the\nactual binary64 arguments. It tests conservation against this exact-input\noracle, not against a duplicate floating evaluation of the implementation.\nThe exact symbolic identities are additionally checked by root's actual Wolfram\ncall. Fraction arithmetic identifies algebraic and sign errors; it is not a\ncontinuum or astrophysical-model accuracy certificate.\n\n## Executed result\n\nOne build and one verification pass completed in0.398514s (command wall0.520427s).\nCompiler: GCC13.3.0, C99, -O2, -Wall -Wextra -Werror -pedantic -fPIC -shared;\nbinary64. There were72 event cases,8 domain/invalid cases,27 temperature\nchain-rule cases and one closed-cycle check. All passed. Maximum scaled\nthree-ledger residual8.54910e-17, component error7.24609e-17, temperature\nchain-rule error1.70746e-16. Gates were fixed at16 and32 binary64 epsilons on\nthe specified energy/temperature scales before execution.\n\nThe computed D potential is13.603705453302721eV. A supplied18eV PI photon\ndeposits4.396294546697279eV into gas per event. The RR example with a deliberately\nsupplied e_c=k_B*300K radiates13.629557453089157eV per event; that chosen capture\nenergy is an API example, not a prediction of the inherited recombination fit.\n\nNo ODE, benchmark campaign, NCP launch or completed scientific-identity replay\nwas performed. Native provider admission is NOT_ISSUED and HH_R10 remains OFF.\n\n## Research/code map and next obligation\n\nR1–R3/C1–C2: exact PHYS79 owner/source/intake and explicit ledger scope.\nR4–R5/C3: event-local energy map plus closed-cycle and temperature derivation.\nC4: single-worker sandbox,30s initial ceiling, root publication after result.\nC5–C8/R7: C99 source plus one executed exact-input oracle and finite numerical\nchecks. R6/C9: root Wolfram conservation/chain-rule check; independent code review\nstatus belongs to root's actual review receipt, not an assumed child review.\nR8–R10/C10: this energy-map component PASS_SCOPED; parent adapter PARTIAL.\nThe parent owner low-T CI source node remains NEXT_OPEN. The next D task is a\nsource-qualified threshold/cross-section/RR-moment binding and one changed-\ndependency coupled control. Existing PHYS78/79 histories remain immutable.\n\nPrimary inherited source pointers:\n- Verner et al.1996, DOI10.1086/177435, author photo.dat, for the pinned H fit.\n- Verner & Ferland1996, DOI10.1086/192284, author table1.dat, for RR fits.\n- Savin2002, DOI10.1086/324218, for D/H ground-state CX and isotope defect.\nThese source applications were previously documented by PHYS79 and are reused.\nNo new low-temperature rate or physical cross-section data were produced here.\n\n"
+    },
+    {
+      "key": "hh135_HH1_VERIFICATION.json",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/WU088_HH/6c3b12554288893d5d7e221d77be943324285ceb/research/hh1_d_energy_adapter_20261022/HH1_VERIFICATION.json",
+      "kind": "text",
+      "expected_git_blob": "522747d7d226f9bb4fa0ed05f278b130be536b58",
+      "observed_utc": "2026-10-22T15:05:12.446Z",
+      "isError": false,
+      "data": "{\n  \"schema\": \"HH1_C99_FRACTION_VERIFICATION_V1\",\n  \"status\": \"PASS_SCOPED\",\n  \"event_cases\": 72,\n  \"invalid_or_domain_cases\": 8,\n  \"temperature_cases\": 27,\n  \"closed_cycle_checks\": 1,\n  \"max_relative_energy_residual\": 8.549096043503075e-17,\n  \"max_scaled_component_error\": 7.246087870182086e-17,\n  \"max_scaled_temperature_error\": 1.7074648717612224e-16,\n  \"I_D_eV\": 13.603705453302721,\n  \"delta_model_eV\": 0.003705453302722427,\n  \"kb_eV_K\": 8.617333262145179e-05,\n  \"examples\": {\n    \"D_PI_18eV\": {\n      \"thermal\": 4.396294546697279,\n      \"binding\": 13.603705453302721,\n      \"radiation\": -18.0,\n      \"electron\": 1.0,\n      \"photon_number\": -1.0\n    },\n    \"D_RR_capture_kT_300K\": {\n      \"thermal\": -0.025851999786435535,\n      \"binding\": -13.603705453302721,\n      \"radiation\": 13.629557453089157,\n      \"electron\": -1.0,\n      \"photon_number\": 1.0\n    }\n  },\n  \"wall_seconds\": 0.3985140949989727,\n  \"compiler\": \"cc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0\",\n  \"flags\": [\n    \"-std=c99\",\n    \"-O2\",\n    \"-Wall\",\n    \"-Wextra\",\n    \"-Werror\",\n    \"-pedantic\",\n    \"-fPIC\",\n    \"-shared\"\n  ],\n  \"platform\": \"Linux-6.18.55-x86_64-with-glibc2.39\",\n  \"machine\": \"x86_64\",\n  \"precision\": \"C double / Python float binary64; exact Fraction oracle on binary64 inputs\",\n  \"source_sha256\": {\n    \"hh1_energy_adapter.h\": \"ce1f205aba85756204d83b22ea430e0f1707cb94b5c63ce132176c81cb524554\",\n    \"hh1_energy_adapter.c\": \"616ffb4e3fa9441594ffdf8ea4ec14b47d89814a271b78d7ebff52633ee0ebef\",\n    \"verify_hh1.py\": \"c685ee3a92c99136fc78d1f76fbbe83a87483883d2a66c6d73c7b96262199899\"\n  },\n  \"execution_counts\": {\n    \"new_ode\": 0,\n    \"historical_replay\": 0,\n    \"ncp\": 0,\n    \"primary_verification_pass\": 1\n  },\n  \"scope\": \"Event energy component only. D rates/cross sections and full coupled model remain OPEN.\"\n}\n"
+    },
+    {
+      "key": "hh135_INTAKE.json",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/WU088_HH/6c3b12554288893d5d7e221d77be943324285ceb/research/hh1_d_energy_adapter_20261022/INTAKE.json",
+      "kind": "text",
+      "expected_git_blob": "f8c3390cba1af756dc919ab688b738fadc0bdcc6",
+      "observed_utc": "2026-10-22T15:05:12.196Z",
+      "isError": false,
+      "data": "{\n  \"schema\": \"ORCHESTRATION_INTAKE_V1\",\n  \"repository\": \"cosmosapjw-quantum/WU088_HH\",\n  \"alias_wu088_cr\": \"UNESTABLISHED\",\n  \"window_start\": \"2026-10-20T06:42:09Z\",\n  \"window_end\": \"2026-10-22T06:42:09Z\",\n  \"observed_through\": \"2026-10-22T06:48:43Z\",\n  \"branch\": \"research/hh-phys79-collisional-closure-20261022\",\n  \"head\": \"3304d16db1dc9bf868c185a8eeb6cc9dbc270e50\",\n  \"tree\": \"f395850ed6b7e72dc2e597a23390bd81f8ac522e\",\n  \"science_commit\": \"338fb7728e8b41f49551200b1f1ba73c047fb90c\",\n  \"all_branches\": 143,\n  \"head_metadata\": 143,\n  \"heads_in_window\": 14,\n  \"recent_prs_inspected\": 15,\n  \"prs_in_window\": 14,\n  \"status\": \"INTAKE_COMPLETE_SCOPED_ACCESSIBLE\",\n  \"backup_current\": \"PROVIDER_METADATA_MATCH_OWNER_FULL_RESTORE_RECEIPT_REUSED\",\n  \"hh_r10\": \"OFF\",\n  \"production_admission\": \"NOT_ISSUED\",\n  \"candidate\": \"D_PI_RR_ENERGY_ADAPTER_SCOPED\",\n  \"candidate_execution\": \"PASS_SCOPED_EVENT_ENERGY_COMPONENT\",\n  \"new_ode\": 0,\n  \"new_scientific_tests\": 0,\n  \"completed_replays\": 0,\n  \"ncp\": 0,\n  \"remote_mutations\": 0,\n  \"files\": [\n    \"INTAKE.md\",\n    \"intake/BRANCH_HEADS.json\",\n    \"intake/RECENT_PRS.json\",\n    \"intake/BACKUP_METADATA.json\",\n    \"intake/AGENTS.md\",\n    \"intake/DAG_OVERLAY.json\",\n    \"intake/CONTRACT.json\",\n    \"intake/EXECUTION_LEDGER.json\",\n    \"intake/FINAL_REPORT_KO.md\",\n    \"intake/OWNER_LOOP_MAP.md\",\n    \"intake/atomic_network.py\",\n    \"intake/source_collisional.py\"\n  ],\n  \"remaining\": [\n    \"LOW_T_CI_SOURCE_COVERAGE\",\n    \"HE_LI_CX_STATE_AND_PHOTON_ENERGY\",\n    \"D_PI_RR_ENERGY_ADAPTER\",\n    \"RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT\",\n    \"LI_HARD_UV_INNER_SHELL_CONTRACT\",\n    \"PHYS73_RAW_ARTIFACT_ACCESS\",\n    \"FULL_NATIVE_COLD_EOR\"\n  ],\n  \"candidate_result\": \"HH1_VERIFICATION.json\"\n}\n"
+    },
+    {
+      "key": "hh135_INTAKE.md",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/WU088_HH/6c3b12554288893d5d7e221d77be943324285ceb/research/hh1_d_energy_adapter_20261022/INTAKE.md",
+      "kind": "text",
+      "expected_git_blob": "80a7d877b91cf7aa5dca8a7ca2019767f3cc6f19",
+      "observed_utc": "2026-10-22T15:05:12.185Z",
+      "isError": false,
+      "data": "# WU088_HH intake — 2026-10-22\n\nWindow: 2026-10-20T06:42:09Z to 2026-10-22T06:42:09Z. Live observations continued through 2026-10-22T06:48:43Z. This lane does not establish that the user's alias `wu088_cr` denotes this repository.\n\n## Confirmed identity and coverage\n\n- Repository: cosmosapjw-quantum/WU088_HH.\n- Latest science owner: [draft PR134](https://github.com/cosmosapjw-quantum/WU088_HH/pull/134), branch `research/hh-phys79-collisional-closure-20261022`.\n- Live HEAD `3304d16db1dc9bf868c185a8eeb6cc9dbc270e50`, root tree `f395850ed6b7e72dc2e597a23390bd81f8ac522e`; HEAD timestamp 2026-10-22T03:20:40Z; PR updated 03:25:37Z.\n- Science commit `338fb7728e8b41f49551200b1f1ba73c047fb90c`; parent PHYS78 `91d0846a940abf7817c900102dab488ff87e6a82`.\n- All 143 live branch refs (100+43 pages) were read; all 143 exact head commit dates and trees obtained. Fourteen head commits fall inside the requested window. A branch head date does not inventory every historical commit or deleted branch.\n- Fifteen recent PRs were inspected, PR120–134. PR121–134 are inside the exact window; PR120 was updated at 2026-10-20T04:45:42Z, outside the window.\n- Current AGENTS at exact HEAD read (Git blob 83e41056ef39af8183152f93a32d1285bb1a7f2c), together with current PHYS79 report, contract, DAG, execution ledger, atomic/collisional source and owner theory. Its leading historical priority is PHYS71; actual latest owner delivery is PHYS79. The user's sandbox-first request controls scheduling while immutable source/science scopes remain preserved.\n- Root owns cross-repository/conversation intake. No claim of exhaustive private-conversation or all-backup access is made here.\n\n## New results integrated without replay\n\n| Owner unit | Established or reported evidence | Scope retained |\n|---|---|---|\n| PHYS70 L64 / PR123 | One NCP block-SIMD L64 binary64 diagnostic, 22 wrapper tests and read-only resume; actual capsule reported in PR | Finite-L64 diagnostic; no total ODE/roundoff certificate |\n| PHYS71 / PR121 | All-angular third Born coefficient, reused 76 panels, corrected bound 7.121295358370e-79 a0^-1 | Third coefficient only; higher-order remainder and matched driven problem remain distinct |\n| PHYS73 / PR126 | User-reported 15 successful NCP jobs and 15 resume reuses, validated L64 28 chains/4256 panels, longtail6 and source probes | Raw return archive remains PENDING_ARTIFACT_ACCESS. Exact-name fresh Drive and Dropbox searches returned zero matches; this is not global absence. Never recompute to recover missing bytes |\n| PHYS76 / PR130 | 1231 new z4→2 tails; inherited z20→4 not replayed | Finite preliminary sector histories |\n| PHYS77 / PR132 | One finite-L8 whole-cell first-exit enclosure; three four-cell requests READY_NOT_RUN | Finite frozen-coefficient cell; not an unlimited continuum/cosmological certificate |\n| PHYS78 / PR133 | 31 parameter pilots plus one refinement, 34 total ODE attempts (2 failed), 35 light tests; 21 nuclear/ionic slots and derived electrons | Exploratory isotope-blind PI/RR; initial charge is not a recombination-to-z20 reconstruction |\n| PHYS79 / PR134 | 24 unique light tests, 29 initial +14 targeted C9 checks, 252 conditioning states; 322 saved epochs, 3 new successful isolated ODE (two controls and one refinement), 0 ODE failures | Domain-guarded neutral H/He/Li CI + conditional D/H ground-state CX; full collisional closure PARTIAL |\n\nPHYS79 changes the low-temperature interpretation. Voronov table lower temperature unit is eV, upper is keV. Neutral rows begin at about11604.52 K; no full 255–25371 K coverage is supplied. The new D forward CX is Savin reverse fit times exp(-43/T), a declared detailed-balance model, not the original forward fit with inherited accuracy.\n\n## Exact backup evidence\n\nPHYS79 final archive `PHYS79_FINAL_20261022_3304d16db1dc.zip`: 2,557,522 bytes, SHA256 `513a7d37478b5b055b7b2cd97f752b6d992522d0fc3f45135ffbae831cb183e6`, 166 payloads.\nDrive ID `1giOzzoaECzH24HRqbIBFbdb_nyvwCcO4`; Dropbox ID `id:BSpOijBcT10AAAAAAD_h2A`, revision `65e655eb7af310af03d47`.\nFresh provider metadata confirmed exact name/ID/size; Drive modified 03:22:03.212Z, Dropbox server modified03:22:14Z.\nThe owner external delivery JSON was read and binds final HEAD/tree, science commit, archive and both-provider complete remote-byte SHA/CRC/166-payload verification at03:23:00.822015Z. Those full ZIP checks are reused owner evidence, not newly performed by this intake.\nExternal JSON: `PHYS79_FINAL_DELIVERY_20261022.json`,10549bytes,SHA256 `7fae6fa4b5ee871fd7e6f2968b163b48a5d22398599cbbf93b436b95fc9ad9c0`, DriveID `11bIvp2Fh55tSfHj2wbKfCHg7-CJpM3Hg`, DropboxID `id:BSpOijBcT10AAAAAAD_h2g`.\n\nPHYS73 missing return is `PHYS73_NCP_RETURN_20261020T224043_2f346343.zip`, reported SHA256 `a2e27b0a1adafa63b80ad832fb4a477846909cffc8460087c5a47d75f2bd0027`. Its ACK reported SHA256 `c063b8e570c9215323349f3e8e0df00f5c6c1eee2c9ab28e2e234e025897caa1`. This intake did not retrieve or hash those raw bytes.\n\n## Candidate node submitted before implementation\n\n`D_PI_RR_ENERGY_ADAPTER_SCOPED` follows the owner's open `D_PI_RR_ENERGY_ADAPTER`. Parent atomic source uses H1/D/T identical 13.6eV thresholds; PHYS79 D CX potential instead adds Delta=43 k_B K=0.003705453302722426eV. A small additive adapter can make PI/RR event energies use the same I_D while preserving finite-model rate choices explicitly:\n\n- PI event: Delta(binding,gas,photons)=(I_D,Egamma-I_D,-Egamma), Egamma>=I_D.\n- RR event: Delta(binding,gas,photons)=(-I_D,-Ecap,I_D+Ecap).\n- Accumulate small event defects directly; preserve electron-number contribution in T chain rule.\n- Standalone C99 component and exact/rational event oracle; initial sandbox budget <=30s, one worker; no ODE, old test replay, benchmark or NCP.\n\nThis closes a conservative event-ledger component only. Isotope-specific cross sections, RR kinetic moments/rate correspondence, spectral transport and full coupled cosmology remain separate. Owner NEXT_OPEN low-temperature CI coverage stays open. Global intake gate and fresh ref/backup recheck precede execution. No new research code or scientific calculation was executed by this intake.\n\n## Operational record\n\nOne whole-repository recursive-tree request returned transport closed. An oversized metadata call ended with code-mode early EOF; no science or mutation occurred, and bounded batches then obtained all143 head metadata successfully. The PHYS79 unit tree query succeeded. No git clone, remote mutation, solver execution or completed-run replay occurred. Root will publish and back up this additive intake and later research node.\n\n"
+    },
+    {
+      "key": "hh135_hh1_energy_adapter.c",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/WU088_HH/6c3b12554288893d5d7e221d77be943324285ceb/research/hh1_d_energy_adapter_20261022/hh1_energy_adapter.c",
+      "kind": "text",
+      "expected_git_blob": "c97f89756171548a5e349925d656b2f8436fcc0d",
+      "observed_utc": "2026-10-22T15:05:12.200Z",
+      "isError": false,
+      "data": "#include \"hh1_energy_adapter.h\"\n#include <math.h>\n\nint hh1_d_threshold(double h, double delta, double *out) {\n    if (!out || !isfinite(h) || h <= 0.0 || !isfinite(delta) || delta < 0.0)\n        return HH1_BAD_INPUT;\n    const double d = h + delta;\n    if (!isfinite(d)) return HH1_NONFINITE_RESULT;\n    *out = d;\n    return HH1_OK;\n}\n\nint hh1_event(int kind, double ion, double energy, double rate, hh1_ledger *out) {\n    if (!out || !isfinite(ion) || ion <= 0.0 || !isfinite(energy) ||\n        energy < 0.0 || !isfinite(rate) || rate < 0.0 ||\n        (kind != HH1_PI && kind != HH1_RR_CASE_A)) return HH1_BAD_INPUT;\n    hh1_ledger next;\n    if (kind == HH1_PI) {\n        if (energy < ion) return HH1_BELOW_THRESHOLD;\n        /* Form excess before multiplying: no subtraction of two large powers. */\n        next.thermal = (energy-ion)*rate;\n        next.binding = ion*rate;\n        next.radiation = -(energy*rate);\n        next.electron = rate;\n        next.photon_number = -rate;\n    } else {\n        next.thermal = -(energy*rate);\n        next.binding = -(ion*rate);\n        next.radiation = (ion+energy)*rate;\n        next.electron = -rate;\n        next.photon_number = rate;\n    }\n    if (!isfinite(next.thermal) || !isfinite(next.binding) ||\n        !isfinite(next.radiation)) return HH1_NONFINITE_RESULT;\n    *out = next;\n    return HH1_OK;\n}\n\nint hh1_temperature_rhs(double t, double n, double q, double dx,\n                       double h, double kb, double *out) {\n    if (!out || !isfinite(t) || t <= 0.0 || !isfinite(n) || n <= 0.0 ||\n        !isfinite(q) || !isfinite(dx) || !isfinite(h) ||\n        !isfinite(kb) || kb <= 0.0) return HH1_BAD_INPUT;\n    /* u=(3/2) k_B T N, du/dt=-2 H u+q, dN/dt=dx_e/dt. */\n    const double value = -2.0*h*t + (2.0/3.0)*(q/n)/kb - t*(dx/n);\n    if (!isfinite(value)) return HH1_NONFINITE_RESULT;\n    *out = value;\n    return HH1_OK;\n}\n"
+    },
+    {
+      "key": "hh135_hh1_energy_adapter.h",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/WU088_HH/6c3b12554288893d5d7e221d77be943324285ceb/research/hh1_d_energy_adapter_20261022/hh1_energy_adapter.h",
+      "kind": "text",
+      "expected_git_blob": "4257393552f849741d4e59afeba667aa2d6cdbe8",
+      "observed_utc": "2026-10-22T15:05:12.200Z",
+      "isError": false,
+      "data": "#ifndef HH1_ENERGY_ADAPTER_H\n#define HH1_ENERGY_ADAPTER_H\n\n/* Proper seconds; energies eV; event rates per reference H1 per second.\n * This component maps supplied event rates to energy ledgers. It does not\n * supply D cross sections, rate coefficients or a radiation spectrum. */\nenum hh1_status { HH1_OK=0, HH1_BAD_INPUT=1, HH1_BELOW_THRESHOLD=2,\n                  HH1_NONFINITE_RESULT=3 };\nenum hh1_kind { HH1_PI=0, HH1_RR_CASE_A=1 };\ntypedef struct {\n    double thermal, binding, radiation, electron, photon_number;\n} hh1_ledger;\n\nint hh1_d_threshold(double hydrogen_ev, double isotope_defect_ev,\n                    double *deuterium_ev);\nint hh1_event(int kind, double ionization_ev, double photon_or_capture_ev,\n              double rate_per_H_s, hh1_ledger *out);\nint hh1_temperature_rhs(double temperature_K, double particles_per_H,\n                       double heat_ev_per_H_s, double electron_per_H_s,\n                       double hubble_per_s, double kb_ev_K, double *out);\n#endif\n"
+    },
+    {
+      "key": "hh135_verify_hh1.py",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/WU088_HH/6c3b12554288893d5d7e221d77be943324285ceb/research/hh1_d_energy_adapter_20261022/verify_hh1.py",
+      "kind": "text",
+      "expected_git_blob": "c9b91120565c9f5304186d2ecd65ce8a4948873e",
+      "observed_utc": "2026-10-22T15:05:12.315Z",
+      "isError": false,
+      "data": "#!/usr/bin/env python3\n\"\"\"One bounded C99/Fraction verification pass; no ODE or historical replay.\"\"\"\nimport ctypes as C\nfrom fractions import Fraction as F\nimport hashlib\nimport json\nimport math\nfrom pathlib import Path\nimport platform\nimport subprocess\nimport tempfile\nimport time\n\nROOT=Path(__file__).resolve().parent\nclass Ledger(C.Structure):\n    _fields_=[(k,C.c_double) for k in ('thermal','binding','radiation','electron','photon_number')]\ndef frac(x):return F.from_float(float(x))\ndef expected(kind,I,E,R):\n    i,e,r=map(frac,(I,E,R))\n    return [(e-i)*r,i*r,-e*r,r,-r] if kind==0 else [-e*r,-i*r,(i+e)*r,-r,r]\n\ndef main():\n    start=time.perf_counter()\n    flags=['-std=c99','-O2','-Wall','-Wextra','-Werror','-pedantic','-fPIC','-shared']\n    with tempfile.TemporaryDirectory(prefix='hh1_') as d:\n        libpath=Path(d)/'libhh1.so'\n        cmd=['cc',*flags,str(ROOT/'hh1_energy_adapter.c'),'-lm','-o',str(libpath)]\n        built=subprocess.run(cmd,capture_output=True,text=True,timeout=10)\n        assert built.returncode==0,built.stderr\n        lib=C.CDLL(str(libpath))\n        lib.hh1_d_threshold.argtypes=[C.c_double,C.c_double,C.POINTER(C.c_double)]\n        lib.hh1_event.argtypes=[C.c_int,C.c_double,C.c_double,C.c_double,C.POINTER(Ledger)]\n        lib.hh1_temperature_rhs.argtypes=[*[C.c_double]*6,C.POINTER(C.c_double)]\n        kb=1.380649e-23/1.602176634e-19\n        delta=43.0*kb\n        out=C.c_double()\n        assert lib.hh1_d_threshold(13.6,delta,C.byref(out))==0\n        ID=out.value\n        count=0;max_ledger=0.;max_component=0.\n        cases=[]\n        for I in (13.6,ID):\n            for R in (0.,1e-30,1e-12,1.):\n                for E in (I,math.nextafter(I,math.inf),18.,30.,60.):cases.append((0,I,E,R))\n                for E in (0.,kb*255.,kb*300.,kb*25370.663084247735):cases.append((1,I,E,R))\n        example={}\n        for kind,I,E,R in cases:\n            result=Ledger()\n            assert lib.hh1_event(kind,I,E,R,C.byref(result))==0\n            values=[getattr(result,k) for k,_ in Ledger._fields_]\n            truth=expected(kind,I,E,R)\n            scale=max(sum(abs(float(v)) for v in truth[:3]),1e-300)\n            for v,e in zip(values,truth):\n                err=abs(float(frac(v)-e))/scale\n                max_component=max(max_component,err)\n                assert err<=16*math.ulp(1.)\n            residual=abs(math.fsum(values[:3]))/scale\n            max_ledger=max(max_ledger,residual)\n            assert residual<=16*math.ulp(1.)\n            assert sum(truth[:3])==0\n            count+=1\n            if I==ID and E==18. and R==1. and kind==0:example['D_PI_18eV']=dict(zip([k for k,_ in Ledger._fields_],values))\n            if I==ID and E==kb*300. and R==1. and kind==1:example['D_RR_capture_kT_300K']=dict(zip([k for k,_ in Ledger._fields_],values))\n        # New threshold gap: inherited H PI is admitted but D PI is rejected.\n        gap=(13.6+ID)/2\n        result=Ledger(1,2,3,4,5)\n        frozen=bytes(result)\n        assert lib.hh1_event(0,ID,gap,1.,C.byref(result))==2 and bytes(result)==frozen\n        assert lib.hh1_event(0,13.6,gap,1.,C.byref(result))==0\n        # Reject invalid and overflowing values without modifying the output.\n        negatives=[(0,ID,18.,-1.,1),(0,ID,math.nan,1.,1),(4,ID,18.,1.,1),\n                   (1,ID,-1.,1.,1),(0,ID,18.,math.inf,1),\n                   (1,ID,1e308,1e308,3),(0,ID,math.nextafter(ID,0.),0.,2)]\n        for kind,I,E,R,status in negatives:\n            result=Ledger(1,2,3,4,5);frozen=bytes(result)\n            assert lib.hh1_event(kind,I,E,R,C.byref(result))==status\n            assert bytes(result)==frozen\n        # Exact independent chain rule from differentiation of u=(3/2)kNT.\n        temp_cases=0;max_temp=0.\n        for T in (255.,300.,25370.663084247735):\n            for N in (1.,1.5,2.):\n                for q,dx,H in ((0.,0.,1e-17),(1e-12,1e-13,0.),(-1e-12,-1e-13,1e-17)):\n                    t,n,k=map(frac,(T,N,kb))\n                    u=F(3,2)*k*n*t\n                    udot=-2*frac(H)*u+frac(q)\n                    truth=(udot-F(3,2)*k*t*frac(dx))/(F(3,2)*k*n)\n                    got=C.c_double()\n                    assert lib.hh1_temperature_rhs(T,N,q,dx,H,kb,C.byref(got))==0\n                    scale=max(abs(float(truth)),abs(2*H*T),abs(q/(kb*N)),abs(T*dx/N),1e-300)\n                    err=abs(float(frac(got.value)-truth))/scale\n                    max_temp=max(max_temp,err);assert err<=32*math.ulp(1.)\n                    temp_cases+=1\n        # Closed H PI -> D CX -> D RR cycle, exact energies only.\n        EH=frac(18.);IH=frac(13.6);DI=frac(ID);capture=frac(kb*300.)\n        gas=(EH-IH)-(DI-IH)-capture\n        radiation=-EH+(DI+capture)\n        binding=IH+(DI-IH)-DI\n        assert gas+radiation+binding==0 and binding==0\n        compiler=subprocess.run(['cc','--version'],capture_output=True,text=True,timeout=2).stdout.splitlines()[0]\n    receipt={'schema':'HH1_C99_FRACTION_VERIFICATION_V1','status':'PASS_SCOPED',\n        'event_cases':count,'invalid_or_domain_cases':len(negatives)+1,'temperature_cases':temp_cases,\n        'closed_cycle_checks':1,'max_relative_energy_residual':max_ledger,\n        'max_scaled_component_error':max_component,'max_scaled_temperature_error':max_temp,\n        'I_D_eV':ID,'delta_model_eV':delta,'kb_eV_K':kb,'examples':example,\n        'wall_seconds':time.perf_counter()-start,'compiler':compiler,'flags':flags,\n        'platform':platform.platform(),'machine':platform.machine(),\n        'precision':'C double / Python float binary64; exact Fraction oracle on binary64 inputs',\n        'source_sha256':{n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in\n            ('hh1_energy_adapter.h','hh1_energy_adapter.c','verify_hh1.py')},\n        'execution_counts':{'new_ode':0,'historical_replay':0,'ncp':0,'primary_verification_pass':1},\n        'scope':'Event energy component only. D rates/cross sections and full coupled model remain OPEN.'}\n    (ROOT/'HH1_VERIFICATION.json').write_text(json.dumps(receipt,indent=2)+'\\n')\n    print(json.dumps(receipt,indent=2))\nif __name__=='__main__':main()\n"
+    },
+    {
+      "key": "hh135_actual_ref",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/WU088_HH/git/ref/heads/research/hh1-d-energy-adapter-20261022",
+      "kind": "ref",
+      "observed_utc": "2026-10-22T15:05:11.784Z",
+      "isError": false,
+      "data": {
+        "ref": "refs/heads/research/hh1-d-energy-adapter-20261022",
+        "sha": "6c3b12554288893d5d7e221d77be943324285ceb"
+      }
+    },
+    {
+      "key": "rei222_actual_ref",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/rei_bianchi/git/ref/heads/research/orchestration-sandbox-20261022",
+      "kind": "ref",
+      "observed_utc": "2026-10-22T15:05:11.786Z",
+      "isError": false,
+      "data": {
+        "ref": "refs/heads/research/orchestration-sandbox-20261022",
+        "sha": "074933f73743ed10ff98a10db49d1b72696ead4f"
+      }
+    },
+    {
+      "key": "rei222_DAG.json",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/rei_bianchi/074933f73743ed10ff98a10db49d1b72696ead4f/research/orchestration_sandbox_20261022/DAG.json",
+      "kind": "text",
+      "observed_utc": "2026-10-22T15:05:12.228Z",
+      "isError": false,
+      "data": "{\n  \"schema\": \"orchestration.sandbox20261022.v2\",\n  \"skill\": \"physmath-research-loop1.3.0\",\n  \"window_utc\": [\n    \"2026-10-20T06:42:09Z\",\n    \"2026-10-22T06:42:09Z\"\n  ],\n  \"coverage\": \"1260 advertised branch refs across7repos;314Library entries; partial conversation retrieval, not an exhaustive all-conversation audit\",\n  \"stages\": [\n    {\n      \"id\": \"I0\",\n      \"status\": \"COMPLETE_SCOPED\"\n    },\n    {\n      \"id\": \"S0\",\n      \"status\": \"PUBLISHED_BACKUP_ACK_SIZE\"\n    },\n    {\n      \"id\": \"X1\",\n      \"status\": \"COMPLETE_SCOPED_WITH_POSTWINDOW_DELTAS\"\n    },\n    {\n      \"id\": \"S1\",\n      \"status\": \"PUBLISHED_BACKUP_ACK_SIZE\"\n    },\n    {\n      \"id\": \"H1\",\n      \"status\": \"COMPLETE\"\n    },\n    {\n      \"id\": \"S2\",\n      \"status\": \"PUBLISHED_BACKUP_ACK_SIZE\"\n    }\n  ],\n  \"completed_nodes\": [\n    {\n      \"id\": \"HE1\",\n      \"repo\": \"cosmosapjw-quantum/BASS_HE\",\n      \"title\": \"Lorentz l=2 pressure functional; HE33 host check\",\n      \"status\": \"PASS_SCOPED\",\n      \"evidence\": \"17 legacy groups reused on Node;11 new groups; no IVP\",\n      \"publication\": {\n        \"key\": \"he\",\n        \"repo\": \"cosmosapjw-quantum/BASS_HE\",\n        \"branch\": \"research/he34-lorentz-transport-20261022\",\n        \"science_commit\": \"0868889acebeb4d9b70d38313a9a694d12bf8766\",\n        \"unit\": \"research/he34_lorentz_transport_20261022\",\n        \"pr\": 87,\n        \"url\": \"https://github.com/cosmosapjw-quantum/BASS_HE/pull/87\",\n        \"readback_head_match\": true\n      }\n    },\n    {\n      \"id\": \"HH1\",\n      \"repo\": \"cosmosapjw-quantum/WU088_HH\",\n      \"title\": \"D PI/RR energy and particle-count temperature adapter\",\n      \"status\": \"PASS_SCOPED\",\n      \"evidence\": \"72 events+8 domain+27 temperature+1 cycle\",\n      \"publication\": {\n        \"key\": \"hh\",\n        \"repo\": \"cosmosapjw-quantum/WU088_HH\",\n        \"branch\": \"research/hh1-d-energy-adapter-20261022\",\n        \"science_commit\": \"6c3b12554288893d5d7e221d77be943324285ceb\",\n        \"unit\": \"research/hh1_d_energy_adapter_20261022\",\n        \"pr\": 135,\n        \"url\": \"https://github.com/cosmosapjw-quantum/WU088_HH/pull/135\",\n        \"readback_head_match\": true\n      }\n    },\n    {\n      \"id\": \"CR1\",\n      \"repo\": \"cosmosapjw-quantum/bass_cr\",\n      \"title\": \"C22A/B source recovery and SW91 excitation diagnostic\",\n      \"status\": \"PASS_SCOPED\",\n      \"evidence\": \"36 source coefficients;126 Decimal checks;0 ODE\",\n      \"publication\": {\n        \"key\": \"cr\",\n        \"repo\": \"cosmosapjw-quantum/bass_cr\",\n        \"branch\": \"research/orchestration-sandbox-cr-20261022\",\n        \"science_commit\": \"15fd250ab91574bd4f3348e91d739a15a6ed6005\",\n        \"unit\": \"research/cr_c22c_excitation_diagnostic_20261022\",\n        \"pr\": 97,\n        \"url\": \"https://github.com/cosmosapjw-quantum/bass_cr/pull/97\",\n        \"readback_head_match\": true\n      }\n    },\n    {\n      \"id\": \"REC1\",\n      \"repo\": \"cosmosapjw-quantum/rec_bianchi\",\n      \"title\": \"Saved-eight Compton omission budget\",\n      \"status\": \"PASS_SCOPED\",\n      \"evidence\": \"872 saved states;0 ODE; overlaps PR122 Planck budget\",\n      \"publication\": {\n        \"key\": \"rec\",\n        \"repo\": \"cosmosapjw-quantum/rec_bianchi\",\n        \"branch\": \"research/orchestration-sandbox-rec-20261022\",\n        \"science_commit\": \"02f3286ee39d99444777ed029844b74bc00cb053\",\n        \"unit\": \"research/orchestration_sandbox_20261022/rec_bianchi\",\n        \"pr\": 123,\n        \"url\": \"https://github.com/cosmosapjw-quantum/rec_bianchi/pull/123\",\n        \"readback_head_match\": true\n      }\n    },\n    {\n      \"id\": \"BASS1\",\n      \"repo\": \"cosmosapjw-quantum/bass\",\n      \"title\": \"Exact affine33-to30 restriction\",\n      \"status\": \"PASS_SCOPED\",\n      \"evidence\": \"3 actual-owner states;12 directions;0 IVP\",\n      \"publication\": {\n        \"key\": \"bass\",\n        \"repo\": \"cosmosapjw-quantum/bass\",\n        \"branch\": \"research/orchestration-sandbox-20261022-bass\",\n        \"science_commit\": \"797d66580448dad7fc41f2c2db31fe0eb37908bf\",\n        \"unit\": \"research/sandbox_affine_chemistry_20261022\",\n        \"pr\": 181,\n        \"url\": \"https://github.com/cosmosapjw-quantum/bass/pull/181\",\n        \"readback_head_match\": true\n      }\n    },\n    {\n      \"id\": \"VIG1\",\n      \"repo\": \"cosmosapjw-quantum/vigilode\",\n      \"title\": \"Lifted full33 adaptive norm\",\n      \"status\": \"PASS_SCOPED\",\n      \"evidence\": \"10 Decimal oracles+5 negative controls; concrete repair closed\",\n      \"publication\": {\n        \"key\": \"vig\",\n        \"repo\": \"cosmosapjw-quantum/vigilode\",\n        \"branch\": \"research/orchestration-sandbox-20261022-vigilode\",\n        \"science_commit\": \"f9da4aae865623d71bff20c6157318cbaf19ba6c\",\n        \"unit\": \"research/lifted_error_norm_20261022\",\n        \"pr\": 79,\n        \"url\": \"https://github.com/cosmosapjw-quantum/vigilode/pull/79\",\n        \"readback_head_match\": true\n      }\n    },\n    {\n      \"id\": \"REI1\",\n      \"repo\": \"cosmosapjw-quantum/rei_bianchi\",\n      \"title\": \"Zero/tiny-stock absolute-abundance event kernel\",\n      \"status\": \"PASS_SCOPED\",\n      \"evidence\": \"7 manufactured fixtures;9 applicability+5 controls;0 IVP\",\n      \"publication\": {\n        \"key\": \"rei\",\n        \"repo\": \"cosmosapjw-quantum/rei_bianchi\",\n        \"branch\": \"research/orchestration-sandbox-20261022\",\n        \"science_commit\": \"20539a00d3fb5dcdb4165b1c90b4d5d5d1f8ebb3\",\n        \"unit\": \"research/rei_c3_zero_tiny_source_20261022\",\n        \"pr\": 222,\n        \"url\": \"https://github.com/cosmosapjw-quantum/rei_bianchi/pull/222\",\n        \"readback_head_match\": true\n      }\n    }\n  ],\n  \"next_nodes\": [\n    {\n      \"id\": \"N1\",\n      \"repo\": \"vigilode+bass\",\n      \"title\": \"Wire lifted error metric into an opt-in adaptive client and compare one paired trajectory\",\n      \"depends\": [\n        \"BASS1\",\n        \"VIG1\"\n      ],\n      \"status\": \"READY_TO_DESIGN\",\n      \"input\": \"BASS181 and VigilODE79 exact published kernels; preserve full33 tolerances/scales and eliminated neutral errors\",\n      \"first_action\": \"Read current solver norm hook and port branch delta; implement client hook, then one small matched30/33 run\",\n      \"acceptance\": \"Same physical outputs within predeclared full33 budget; unchanged conservation; report work counts and wall without broad speed claim\",\n      \"budget\": \"Initial paired sandbox probe <=30s per process; no NCP duplicate; cumulative cap frozen before run\"\n    },\n    {\n      \"id\": \"N2\",\n      \"repo\": \"rec_bianchi\",\n      \"title\": \"Dynamic Compton closure using the existing PR122 eight-case contract\",\n      \"depends\": [\n        \"REC1\"\n      ],\n      \"status\": \"READY_CONTRACT_EXISTS_NOT_RUN\",\n      \"input\": \"PR12211897e09ea9368460ed074c0233afb924f39a7bf; actual-monopole and Planck baths remain distinct\",\n      \"first_action\": \"Read NEXT_UNIT_CONTRACT and newest branch/backups; reuse existing eight saved trajectories and independent C kernel; implement missing RHS/Jacobian/ledger pieces only\",\n      \"acceptance\": \"Source-consistent thermal and bath energy ledger, positivity, nominal/refined comparison; keep test-fluid bath convention explicit\",\n      \"budget\": \"Owner contract:240s/case,1200s serial aggregate for8; stage a smaller representative first within that original aggregate, no reset\"\n    },\n    {\n      \"id\": \"N3\",\n      \"repo\": \"bass_cr\",\n      \"title\": \"Close the source-domain gap for low-temperature H excitation and collision processes\",\n      \"depends\": [\n        \"CR1\"\n      ],\n      \"status\": \"READY_SOURCE_RESEARCH\",\n      \"input\": \"Recovered C22A/B and C22C diagnostic; SW91 domain2000–500000K\",\n      \"first_action\": \"Locate primary cross sections/rate fits with stated low-T domain; verify tables/normalization and build direct quadrature or a domain-qualified evaluator\",\n      \"acceptance\": \"No extrapolated<2000K values from SW91; source-qualified rates and energy derivatives; keep partial-history coverage explicit\",\n      \"budget\": \"Primary-source work plus bounded scalar quadrature; no full cohort before source admission\"\n    },\n    {\n      \"id\": \"N4\",\n      \"repo\": \"WU088_HH\",\n      \"title\": \"Bind D PI/RR thresholds, rate providers and captured-energy moments\",\n      \"depends\": [\n        \"HH1\"\n      ],\n      \"status\": \"READY_SOURCE_AND_ALGEBRA\",\n      \"input\": \"PHYS79 owner source+HH1 energy ledger; same isotope defect convention\",\n      \"first_action\": \"Compare finite-mass hydrogenic source convention with inherited provider; supply matched number/energy moments and avoid double-counted CX binding energy\",\n      \"acceptance\": \"Event conservation and derivative consistency with source-qualified isotope physics; distinct low-T CI coverage\",\n      \"budget\": \"Scalar quadrature/reference checks first, <=30s initial probe\"\n    },\n    {\n      \"id\": \"N5\",\n      \"repo\": \"BASS_HE\",\n      \"title\": \"Transport data and finite-mass baryon pressure exchange matrix\",\n      \"depends\": [\n        \"HE1\"\n      ],\n      \"status\": \"READY_THEORY_AND_SOURCE\",\n      \"input\": \"HE33 moment equations, HE34 Lorentz functional; source-qualified differential transport data still missing\",\n      \"first_action\": \"Derive finite-mass pair exchange conserving total momentum/energy; match l=2 cross section rather than event frequency; keep Grad projection validity explicit\",\n      \"acceptance\": \"Correct dimensions/symmetries/equilibrium and nonnegative relaxation on the supported model; no empirical calibration claim without data\",\n      \"budget\": \"Small matrix/scalar kernels only; then B2 reactive moments→B3 closure→saved-HE32 control→feedback\"\n    },\n    {\n      \"id\": \"N6\",\n      \"repo\": \"rei_bianchi\",\n      \"title\": \"Complete C3 coefficient-domain policy and event/Jacobian assembly\",\n      \"depends\": [\n        \"REI1\",\n        \"HH1\"\n      ],\n      \"status\": \"READY_BOUNDED_CONSTRUCTION\",\n      \"input\": \"PR221C2 source unchanged by42e44494 metadata; PR222 local-source proof kernel; current other-threadC3 must be refreshed first\",\n      \"first_action\": \"Reuse zero/tiny-stock kernel; add source-bound physical events, provider-matched thermal moments, off-grid statuses and electron-density rank-one dependencies\",\n      \"acceptance\": \"One beta owner; exact baryon/charge/particle bookkeeping; derivative tests and source bounds; no guessed daughter distributions\",\n      \"budget\": \"One bounded local operator probe <=30s; fresh Astra contract→lower-tier execution→one Astra decision\"\n    },\n    {\n      \"id\": \"N7\",\n      \"repo\": \"rei_bianchi\",\n      \"title\": \"D10 zero-initial matter-stress generation on35 saved histories\",\n      \"depends\": [\n        \"I0\"\n      ],\n      \"status\": \"READY_SAVED_DATA_THEORY\",\n      \"input\": \"PR199D9 current saved results and ownD10 contract\",\n      \"first_action\": \"Read newestD10 owner status; reuse35 zero-initial histories and separated matter/radiation stresses, derive source decomposition\",\n      \"acceptance\": \"Exact source identity; no new cosmological IVP unless a genuinely missing dependency is established\",\n      \"budget\": \"Saved-data diagnostics only under original owner contract\"\n    },\n    {\n      \"id\": \"N8\",\n      \"repo\": \"all\",\n      \"title\": \"Integrate source-qualified thermal/charge/moment components in one closed pilot\",\n      \"depends\": [\n        \"N1\",\n        \"N2\",\n        \"N3\",\n        \"N4\",\n        \"N5\",\n        \"N6\"\n      ],\n      \"status\": \"WAITING_PHYSICAL_DEPENDENCIES\",\n      \"input\": \"Shared proper-clock event measure; explicit17/21state map and18-family isotope map; separate photon/nonthermal reservoirs\",\n      \"first_action\": \"Freeze a small closed model after inputs above are ready, then compare one reference solver with reduced optimized implementation\",\n      \"acceptance\": \"Baryon/charge/energy, positivity, physical source-domain coverage, numerical convergence and observable scope independently stated\",\n      \"budget\": \"Sandbox-first selected case; external compute only for demonstrated resource need and explicit ready contract\"\n    }\n  ],\n  \"execution_policy\": {\n    \"refresh_before_each_node\": \"Check relevant latest Git refs, owner DAG, backup receipts and accessible conversations; current science source is authoritative over stale PR prose. Record coverage and changed dependencies.\",\n    \"completed_reuse\": \"Do not replay any completed cohort for restoration, metadata or reassurance.\",\n    \"ownership\": \"Write additive owned paths and branches; preserve concurrent dirty/untracked work; no force push/merge.\",\n    \"source_and_units\": \"Proper seconds; state whether per-baryon, per-Href or per-proper-volume.17-state dossier projection must retain omitted isotope stock.\",\n    \"claims\": \"Physical/source/model, numerical/implementation, execution and backup states are separate.\",\n    \"phase_end\": \"Publish reviewed source/results and update DAG; back up usable checkpoint and record actual acknowledgment; stop at selected bounded scope.\"\n  },\n  \"postwindow\": {\n    \"REI_C2\": \"42e44494 delivery-only; science unchanged\",\n    \"REC_PR122\": \"11897e09 broader saved8 omission budget; futureCompton8NOT_RUN\",\n    \"VIG_PORT\": \"7647d545 attempt2PASS;attempt3started07:00:04Z,completionunobserved\"\n  }\n}\n"
+    },
+    {
+      "key": "rei222_CLOSEOUT_DELTAS.md",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/rei_bianchi/074933f73743ed10ff98a10db49d1b72696ead4f/research/orchestration_sandbox_20261022/CLOSEOUT_DELTAS.md",
+      "kind": "text",
+      "observed_utc": "2026-10-22T15:05:12.338Z",
+      "isError": false,
+      "data": "# Post-window closeout deltas\n\nThese observations occurred after the fixed intake cutoff and are not counted as initial-window results.\n\n## rec_bianchi\n\n# X1 REC closeout delta — 2026-10-22 07:10 UTC\n\nRead-only refresh; zero ODEs, zero postprocessor reruns. Existing REC1 source/publication map was not changed.\n\n**PR121** is the already adopted thermal-moments source, now formally published: https://github.com/cosmosapjw-quantum/rec_bianchi/pull/121 . HEAD892aad5c3e9fb0b2abd021154b62a42c39277125, branch research/rec-thermal-moments-20261022, tree503fa14793f385a1e235763818251c5d34987842. Its eight full63 histories are already counted. Published provenance/REC_THERMAL_PUBLICATION_DROPBOX_20261022.json records full-GET size/SHA256/Dropbox-content-hash PASS for the38621529B release and its integrity/restore-audit sidecars. This supersedes the old local delivery-blocked snapshot and our earlier metadata-only observation; no repeat download was made here.\n\n**PR122** adds a broader omitted-process budget: https://github.com/cosmosapjw-quantum/rec_bianchi/pull/122 . Live HEAD11897e09ea9368460ed074c0233afb924f39a7bf, branch research/rec-thermal-omitted-budget-20261022, tree022e31f6b7b0618fbd35c296850a8615ec9ce675. Runtime identity88edf8e7e5ccff94509e03ff2979b3b93e5e988641c5dbd4a5d64f4583bca02c. Actual results/budget_v1/RESULT.json is COMPLETE, finished03:27:15Z, newODE0/oldreruns0; DAG confirms872savedstates and0.676866s postprocessing. It includes actual-photon-monopole hot Compton, an independently specified Planck reference, diluteUV Compton, HG97 H/He collisional ionization and HI/HeII excitation with source-domain/missing-channel masks.\n\n**Relationship to our PR123 REC1:** the Planck-reference component overlaps exactly in scientific scope. Read-only reconciliation of all eight existing ENERGY_BUDGETS.csv simpson_109 entries against REC1 RESULT.json gives maximum absolute difference1.7763568394002505e-15eV/baryon. PR122's main table uses trapezoid109; compare matching quadratures. Preserve REC1 as an independently implemented C kernel plus frozen-step identity and matching reference-field budget. Do not count another eight physical trajectories or present the overlapping scalar result as an additional independent physical prediction. PR122 is the broader source-budget/future-contract anchor.\n\nPR122's actual-U hot term is scientifically distinct from the Planck reference: primary-path cooling2.576–2.592eV/baryon,29.72–29.92% of retained photoheat; HI excitation about−0.00132eV/baryon, CI kinetic→binding about2.05e-5, UV Compton about+6.23e-5. Full actual-CMB recoil/induced closure remains spectrum-dependent. Its independent raw recomputation and65implementation checks are source receipts, not new tests run by this refresh.\n\n**No new coupled Compton run is present.** NEXT_UNIT_CONTRACT.md explicitly says PROPOSED_FINITE_CONTRACT/FUTURE_ODE_NOT_RUN; DAG future_compton_full63 is PROPOSED_NOT_RUN. Reuse this concrete contract: seeds s03_m03_r03 ands04_m04_r04 × actual_hot/planck_reference × nominal/refined =8newfull63IVPs, initial donor index84,z7.9637328→2. Both branches add the sameUVCompton term; do not sum their two CMB terms. Actual-hot uses current integrated U_gamma, not saved-path replay. Preserve full63 Jacobian couplings, exactzero n/T, Mao-factor RR, old baselines and test-fluid gas/bath ownership. Opposite exchange is ledgered but not dynamically fed into the photon/Einstein sector. Persist109comparisonstates and actual513/1025diagnostic arrays. Serial one-thread limits240s/case,1200s/campaign; same-branch refinements and retained-energy gates fixed by the contract. No automatic CI/CE activation.\n\nFuture orchestration: deduplicate this proposed8 against any fresh actual run before submitting; align its radiation ownership/ICs with the separate REI C22B lane rather than counting those as identical campaigns. Source-bound CI/CE diagnostics are already available inPR122, so the former plan to implement them from scratch should be replaced with adapter/reuse on new states. HeI excitation/metastables,Li CI/CE and the actual spectral recoil/induced closure remain explicit obligations.\n\nPR122 final combined archive/delivery supplement was still described as being finalized in its actual live body; its frozen DELIVERY_STATUS is prepublication, and current comments list is empty. StageA/B and prior thermal-release whole-byte evidence are published. Do not infer final-combined backup success from these predecessors. All physicalHOLD/globalconvergenceNOT_RUN/productionNOT_APPROVED/REI_activation=false and historical closed budgets remain.\n\n\n## rei_bianchi\n\n# REI closeout delta: C2 delivery and concurrent C3 coordination\n\nRead-only refresh after the original48-hour intake and the local C3 publication. No scientific code, diagnostic, solver or NCP command was run during this refresh.\n\n## Current exact identities\n\n| Item | Observed identity | Interpretation |\n|---|---|---|\n| PR221 current HEAD |42e44494bd0956756d8c610e75da5b1cafe20d3c|2026-10-22T06:55:29Z commit; delivery metadata |\n| PR221 current root tree |f87f1fd71c87b41bbfa4c9f7d4525788f130b37f|new delivery subtree |\n| Preserved C2 scientific commit |c1714f82ea7de15fee230a1a995365970ee6dc02|unchanged C2 code/input/results |\n| Preserved C2 scientific root tree |dd1ce4d9870c86e30823e15ecf6a05436a811367|actual214-check science |\n| PR222 orchestration HEAD |20539a00d3fb5dcdb4165b1c90b4d5d5d1f8ebb3|includes our C3 finite representation probe |\n\nThe Git compare c1714f82...42e44494 shows exactly one new commit and four added paths, all below research/rei_coupled_isotope_mapping_20261022/delivery/: BACKUP_READBACK.json, FINAL_DELIVERY_ACK.json, README.md and RESTORATION_RECEIPT.json. No existing file was modified or removed. Therefore the source/input/evidence bytes used by our frozen C3 baseline remain unchanged. This is an exact source-preservation result, not an inferred numerical equivalence and not a new214-check execution.\n\n## Backup assurance updated\n\nThe newly published delivery receipts establish producer-side full-body Drive and Dropbox readbacks for the C2 archive:\n\n- File: REI_COUPLED_ISOTOPE_C2_20261022_7fa873d9c276.zip.\n-135,421bytes;40members; SHA2567fa873d9c276f6f12ff4a4e32e7f83314da678e24d26741761230bf08b4ec36d.\n- Drive1lVhz8Zl6kyzDV3IftjJjYnqUXT4_WuA_; Dropboxid:BSpOijBcT10AAAAAAD_h4Q.\n- Both producer remote copies matched SHA256/size/member count and passed ZIP CRC. The receipt also preserves a39-file byte-identical local restoration without scientific reruns.\n\nThis supersedes our earlier metadata-only observation for this C2 archive. We read the published producer receipts; we did not repeat those downloads. The compact archive does not contain all historical nuclear arrays or outer-source references needed to replay all214 checks. Its assurance must not be transferred to the distinct20,634,190-byte bootstrap/provider archive, whose own receipt still says no new full remote download.\n\n## Actual workflow status\n\nBoth workflows at exact delivery HEAD42e44494 are completed/failure:\n\n| Event | Run | Job | Observed steps |\n|---|---:|---:|---|\n| pull_request |39737034930|119685035037|cargo fmt --check failed; workspace cargo test skipped |\n| push |39737029515|119685017114|cargo fmt --check failed; workspace cargo test skipped |\n\nThe failed command is cargo fmt --manifest-path rust/rei_microphysics/Cargo.toml --all -- --check. The skipped command is cargo test --manifest-path rust/rei_microphysics/Cargo.toml --workspace --locked. This independently confirms the reported fmt failure/test skip. The metadata-only delta contains no Rust change. Source-preservation booleans and scoped scientific PASS do not mean full repository CI is green; conversely these formatter failures are not failed C2 physical assertions or executed failed Rust tests.\n\n## C3 work already available; avoid another equivalent run\n\nOur completed conditional representation probe is actually published at PR22220539a00 in research/rei_c3_zero_tiny_source_20261022/. Its current RESULT_SUMMARY.json and directory listing were read back:\n\n- Seven finite fixtures, nine applicability controls and five additional controls pass.\n-8rate,147scaled-source,3087scaled-Jacobian and42central-difference comparisons pass.\n- Actual local execution receipt: one invocation, exit0, wall0.100463153s, CPU0.094889168s, maxRSS19,968KiB.\n- local_source.py SHA256e6818290a2f50f4e6872eff861f1aec1c461c21539751dbc4763496461549a79.\n- run_probe.py SHA256e52bca4f756e4b00fdab3ae385beb2b918c0a96576b594b589d9a0e803e1433d.\n- Result scope remains manufactured local representation, including exact-zero/tiny-stock/underflow/scaled-Jacobian and17→21baryon projection. It does not complete full C3 numerical design or coupled physical production.\n\nRoot's central conversation refresh reports another same-owner thread starting C3 around07:03Z. That is a concurrency signal, **not a recovered result**. At this read, PR221 still contains C2 and its delivery only; no newC3 result was found in the relevant current Git research directory or exact REI_COUPLED_ISOTOPE_C3 Drive/Dropbox title searches. These bounded searches cannot establish that private/local work does not exist.\n\nThe next thread should first retrieve the other thread's current source/contract/result receipt, if it has since been published, and compare its scientific identity with PR222's completed probe. Reuse our finished fixtures rather than rerunning them. Integrate a genuinely complementary C3 deliverable—off-grid coefficient policy, actual event assembly or thermal/fast Jacobian dependence—only after identifying the remaining difference. Do not treat PR221's historical C3_READY text as evidence that no C3 work has started. Keep D10 zero-initial matter stress as a separate ready theory/saved-data node.\n\n## Direct source pointers\n\n- [Exact metadata delta](https://github.com/cosmosapjw-quantum/rei_bianchi/compare/c1714f82ea7de15fee230a1a995365970ee6dc02...42e44494bd0956756d8c610e75da5b1cafe20d3c)\n- [C2 final receipt](https://github.com/cosmosapjw-quantum/rei_bianchi/blob/42e44494bd0956756d8c610e75da5b1cafe20d3c/research/rei_coupled_isotope_mapping_20261022/delivery/FINAL_DELIVERY_ACK.json)\n- [C3 completed probe](https://github.com/cosmosapjw-quantum/rei_bianchi/tree/20539a00d3fb5dcdb4165b1c90b4d5d5d1f8ebb3/research/rei_c3_zero_tiny_source_20261022)\n- [PR CI](https://github.com/cosmosapjw-quantum/rei_bianchi/actions/runs/39737034930)\n- [Push CI](https://github.com/cosmosapjw-quantum/rei_bianchi/actions/runs/39737029515)\n\n\n## vigilode\n\n# Closeout delta: VigilODE NCP C1, 2026-10-22\n\nAt the parent X1 refresh around07:10UTC, research/bassrei-port-20261021 advanced from2064366ea39ef35a9eae7966b4b5b2424a46124c to7647d545d79ed8723331194a36c68e6adf4d80f7 (commit07:00:47UTC; tree d78b234293c0ff92121a5fd48f537f5f85f4998a).\n\nThe new commit imports actual attempt2 results and Julia installation evidence. Its latest HANDOFF progress paragraph supersedes the earlier paragraphs saying attempt2running/attempt3notlaunched.\n\n| Item | Latest directly read result |\n|---|---|\n| NCP C1 attempt2 | **PASS**,1034s; actual execution source e3341309e42954fd946bce53a6a7be9c69a0d165. Imported results.json and REPORT.md agree on G1–G7 alltrue. |\n| Coverage |1212planned/1212typed rows:720OK,424HOLD,66NOT_APPLICABLE,2TIMEOUT; no missing/untyped rows and no VigilODE/reference cutoff. This is not1212successfulnumericalruns.|\n| Julia in attempt2 | **HOLD** from missing temporary depot; this remains part of the attempt2 scope.|\n| Julia installation |Reported JULIA_INSTALL_OK1.12.7,exit0;06:45:37–06:59:00UTC; private persistent depot1.5GB. Project/Manifest hashes are committed.|\n| NCP C1 attempt3 |**Launched07:00:04UTC** from2064366ea39ef35a9eae7966b4b5b2424a46124c with new depot found. Still inprogress in this commit; no result imported yet.|\n| Timing meaning |Budget-matched rungs and ABBA ratios remain diagnostic_only; loose-edge censoring is explicit. No general speed promotion.|\n| Final ledger/DAG |HANDOFF states attempt2ledger row remains tobeappended, and final DAG/results are to follow bothattempts. Keep production HOLD.|\n\nThe imported attempt2 tarball SHA256 is9aa4033bf04879fadff2011d2f15175f15964178e9269cc2d5b44f996e35f032. It is read from IMPORT_MANIFEST.json; this delta did not redownload/hash the tarball or rerun a calculation.\n\nRead-only sources at immutable commit7647d545d79ed8723331194a36c68e6adf4d80f7:\n\n- research/bassrei_ncp_wp_c1_20261022/attempt2/results.json\n- research/bassrei_ncp_wp_c1_20261022/attempt2/campaign/REPORT.md\n- research/bassrei_ncp_wp_c1_20261022/attempt2/IMPORT_MANIFEST.json\n- research/bassrei_ncp_wp_c1_20261022/handoff/HANDOFF.md\n- research/bassrei_ncp_wp_c1_20261022/julia_install/INSTALL_START_UTC.txt\n- research/bassrei_ncp_wp_c1_20261022/julia_install/INSTALL_END_UTC.txt\n- research/bassrei_ncp_wp_c1_20261022/julia_install/ENV_SHA256SUMS.txt\n\nThis late update is separate from the immutable intake window ending06:42:09UTC. It does not alter this orchestration's already published norm-kernel package or its test receipts. No NCP process was started, polled, stopped or changed by this lane. Our independentVigilODE PR79 remains separate from the active port branch. BASShead574c3af93810122af0a7977e00e34195e5251a09 remains unchanged according to the parent X1 refresh.\n\n"
+    },
+    {
+      "key": "rei222_HANDOFF_NEXT_THREAD_KO.md",
+      "url": "https://raw.githubusercontent.com/cosmosapjw-quantum/rei_bianchi/074933f73743ed10ff98a10db49d1b72696ead4f/research/orchestration_sandbox_20261022/HANDOFF_NEXT_THREAD_KO.md",
+      "kind": "text",
+      "observed_utc": "2026-10-22T15:05:12.226Z",
+      "isError": false,
+      "data": "# 새 스레드 실행 인계: sandbox physics orchestration 2026-10-22\n\n이 문서는 현재 사용자가 승인한 연구를 새 스레드에서 이어가기 위한 작업 계약입니다. 필요한 자료를 연결 도구로 직접 읽고 복구하세요. 사용자가 별도 파일을 내려받거나 업로드할 필요가 없습니다.\n\n## 먼저 읽을 파일\n\n같은 commit의 REPORT_KO.md, DAG.json, PUBLICATIONS.json, FINAL_DELIVERY.json, CLOSEOUT_DELTAS.md, theory/SHARED_PHYSICS.md, review/를 읽습니다. FINAL_DELIVERY.json은 최종 전달 commit에 추가되므로 고정 source commit에 없으면 이 문서의 branch 최신 전달 commit에서 찾습니다. 과학 source pin은 PUBLICATIONS.json 그대로입니다.\n\n현재 tagged physmath-research-loop1.3.0을 적용합니다. 최신 버전이면 변경된 단계 선택·보존 규칙만 읽고 실제 요청 범위에 적용합니다. 이 요청은 작은 이론 유도→구현→판별 검증→게시/백업 단위입니다. 큰 전체프로젝트를 완료로 선언하거나 자동으로 다음10단계 루프를 무한 시작하지 않습니다.\n\n## 시작 순서\n\n1. 실행 환경의 실제 Python/NumPy/SciPy/C/Node/Rust 가용성을 확인합니다. 현재 스레드는 Python3.12.14/NumPy/SciPy/GCC/Node를 사용했고 rustc/cargo/gfortran은 PATH에 없었습니다. 새로운 환경은 다시 관측합니다.\n2. 연구 전에 최근48시간 및 이 체크포인트 이후의 Git refs/PR 실제 파일, backup receipts, 접근 가능한 대화를 먼저 확인합니다. 각 DAG 노드 실행 직전 해당 의존성의 delta를 다시 확인합니다. 전체 대화 전수열람이나 미게시 NCP 프로세스 관측을 할 수 없으면 그 범위를 정확히 기록합니다.\n3. 원본 branch의 AGENTS.md와 선택한 owner 계약을 읽습니다. rei_bianchi는 Astra 계약→하위 모델 구현→fresh Astra 판정을 요구합니다. 현재 C3 probe는 이미 이 경로로 완료됐으므로 재실행하지 않습니다.\n4. 아래 source pin의 파일을 GitHub 연결 도구로 가져옵니다. 기존 checkout이 있으면 그곳의 branch/HEAD/status를 확인해 작업합니다. 이미 완료된 계산을 복구 목적으로 다시 돌리지 않습니다.\n5. DAG의 N1–N7에서 입력이 실제 확보된 작은 단위를 병렬/순차로 실행합니다. N8은 물리 입력의 의존성을 기다립니다. 각 단위 완료 후 코드·실제 raw·검증·scope·다음 행동을 남겨 additive branch에 push하고 기존 백업 폴더에 저장합니다. 강제 push나 merge는 하지 않습니다.\n\n## 저장소별 exact anchor\n\n| 저장소 | 과학/구현 pin | 단위 | 게시 |\n|---|---|---|---|\n| cosmosapjw-quantum/BASS_HE | `0868889acebeb4d9b70d38313a9a694d12bf8766` | `research/he34_lorentz_transport_20261022` | https://github.com/cosmosapjw-quantum/BASS_HE/pull/87 |\n| cosmosapjw-quantum/WU088_HH | `6c3b12554288893d5d7e221d77be943324285ceb` | `research/hh1_d_energy_adapter_20261022` | https://github.com/cosmosapjw-quantum/WU088_HH/pull/135 |\n| cosmosapjw-quantum/bass_cr | `15fd250ab91574bd4f3348e91d739a15a6ed6005` | `research/cr_c22c_excitation_diagnostic_20261022` | https://github.com/cosmosapjw-quantum/bass_cr/pull/97 |\n| cosmosapjw-quantum/rec_bianchi | `02f3286ee39d99444777ed029844b74bc00cb053` | `research/orchestration_sandbox_20261022/rec_bianchi` | https://github.com/cosmosapjw-quantum/rec_bianchi/pull/123 |\n| cosmosapjw-quantum/bass | `797d66580448dad7fc41f2c2db31fe0eb37908bf` | `research/sandbox_affine_chemistry_20261022` | https://github.com/cosmosapjw-quantum/bass/pull/181 |\n| cosmosapjw-quantum/vigilode | `f9da4aae865623d71bff20c6157318cbaf19ba6c` | `research/lifted_error_norm_20261022` | https://github.com/cosmosapjw-quantum/vigilode/pull/79 |\n| cosmosapjw-quantum/rei_bianchi | `20539a00d3fb5dcdb4165b1c90b4d5d5d1f8ebb3` | `research/rei_c3_zero_tiny_source_20261022` | https://github.com/cosmosapjw-quantum/rei_bianchi/pull/222 |\n\n원본 owner와 같은 물리조건인지를 확인한 뒤에만 코드를 결합합니다. HE의 stationary-heavy-target 순간 Grad functional, HH의 per-Href eV ledger, REC의 per-baryon SI Compton 예산, REI의 absolute per-baryon isotope source를 단위 변환 없이 혼합하지 않습니다.\n\n## 즉시 사용할 후속 작업 패킷\n\n- BASS+VigilODE / N1: affine30 RHS/Jacobian과 full33 WRMS를 opt-in adaptive client에 연결합니다. 미완료 지점은 driver hook과 작은30/33 paired trajectory입니다. norm32ulp 검증을 반복하는 것만으로 새 성과로 삼지 않습니다. 재래 norm을 그대로 적용하면 물리 오차예산이 달라집니다.\n- REC / N2: PR12211897e09의 NEXT_UNIT_CONTRACT를 먼저 읽고 actual-hot/Planck reference field를 분리한8개 full63 Compton 실행 준비를 이어갑니다. 기존 상한240s/case·1200s serial aggregate를 재설정하지 않습니다. 우선 작은 대표 케이스로 구현/회귀를 판별하고 누적예산을 유지합니다. 이미 있는8개 thermal-moments와 THERM01의별도8개는 재실행하지 않습니다.\n- bass_cr / N3: 새 C22C의2000K 이상 진단을 재사용하고 실제 저온 source/단면적/정규화로 공백을 메웁니다. SW91 fit을2000K 아래로 연장해 통과값을 만들지 않습니다. 새 source가 확보되면 rate/energy/derivative를 경량 적분으로 검증합니다.\n- WU088_HH / N4: D energy ledger를 source-qualified isotope PI/RR 수·열 모멘트와 연결합니다. CX defect와 threshold convention을 일치시킵니다. 에너지 보존만으로 미확보 rate를 승인하지 않습니다.\n- BASS_HE / N5: 실제 l=2 수송자료와 유한질량 pair exchange를 도입합니다. 총 event rate를 압력 relaxation rate로 대체하지 않습니다. B2 reactive moments→B3 closure→saved-HE32 control→feedback 순서가 뒤따릅니다.\n- REI / N6: 이미 완료된 C3 exact-zero/tiny-stock kernel을 재사용하고 off-grid coefficient policy와 rank-one electron-density Jacobian, 실제 event assembly를 채웁니다. 다른 스레드가 C3에 착수했다는 신호가 있으므로 새 commit/results를 먼저 통합해 중복 구현을 피합니다. 원전 없는 daughter branching은 제조하지 않습니다.\n- REI / N7: PR199의 D10 zero-initial matter-stress35 saved histories를 현재 owner 계약에 맞춰 분석합니다. 별도 source가 없는 새IVP를 시작하지 않습니다.\n\n## 이미 완료되어 재실행할 필요 없는 결과\n\nHE29reference4/4+packedcanary, HE32 394history, HH PHYS79, CR C22A/B, REC R3S NCP5jobs/REC126/THERM01eight/thermal-momentseight, REI D9/C1/C2/finiteC3, BASS compact127, VigilODE saved heat1046은 해당 exact evidence를 재사용합니다. 이번 seven-kernel 작업의 새 cosmological IVP와 NCP 제출은0회입니다. 서로 다른 모델/cohort 수를 합치지 않습니다.\n\nVigilODE port의 마지막 확인7647d545d79ed8723331194a36c68e6adf4d80f7: NCP C1attempt2 완료1034s,1212typedrows, G1–G7PASS; JuliaHOLD 당시기록 보존. Julia1.12.7 설치 후 attempt3가07:00:04UTC 시작된 상태였습니다. 최신 완료 반환을 먼저 확인하고 중복 제출하지 않습니다.\n\nREC PR122 Planck저장경로 예산과 우리 REC1은 같은8이력을 사용하며 최대1.78e−15eV/baryon 차이로 일치합니다. 독립 C구현은 새 성과지만 새8개 우주론해로 세지 않습니다.\n\n## 자동 복구할 백업\n\n- 새 모든 kernel/입력/근거: Drive1Uqx2do4-trSzEpI4U8SkBQaFLHQA_TRe 또는 Dropboxid:BSpOijBcT10AAAAAAD_h5g, ORCHESTRATION22_S1_REVIEWED_KERNELS.zip,2311953B,SHA256e400dee883c0cce8f30c1504e5428c2beb1922f8b8ee349be33371bcf1090f19.204payload,localCRC PASS; remoteACK+size.\n- 초기 조사: Drive15U4wmh0XGula9rzv1yPI_R-M4XsW_ZTm 또는 Dropboxid:BSpOijBcT10AAAAAAD_h4g, ORCHESTRATION22_S0_INTAKE.zip,43462B,SHA256834a65a3db3991decd2b7eae485cb6ea18b48a8f56326758c4c4c0bfb418f59a.\n- CR 원 full raw+source+gitbundle: Dropboxid:BSpOijBcT10AAAAAAD_h3g 또는 Librarylibfile_cb882db86828819185c4385ab1681af3, BASS_CR_C22B_COMPTON_20261022T124113KST.zip,69915429B,SHA256e35325402897a8f993120f7f5c37738170eb7ea343115dab4f0669e3045ce6f9.411payload를 이번에 실제 복구했습니다. 원bundle prerequisite는a5e12c5f3e6d323e211d65fefad34060ec07eff0, tipf03fdf71fb2ea995ce16b68d81ef4f47ecb00685. 새 PR97은 source content를 보존한 부분 게시이며 원commit identity가 아닙니다.\n- C3 full RESULT.json은 repo의 RESULT.json.gz에 losslessly 보관됩니다. Python표준 gzip으로 풀면978354B/SHA2569e95da5c376061da78cb58060763d7bfed1e0fd81e934cb4d63f4898ff70f957. 검증을 다시 실행할 필요가 없습니다.\n- 최종 S2 전달문서 백업 ID는 FINAL_DELIVERY.json을 읽습니다.\n\n백업 대상은 사용자가 이미 승인한 Dropbox /BASS_DERIVATION_DOSSIERS_20260912/ 와 Drive folder1pkohlay5eIfFJsBwPZ_yn2jIZONZjesI입니다. 자료를 연결 도구로 직접 복구하고 사용자에게 수동 다운로드를 요청하지 않습니다. 접근이 실제 차단되면 정확한 작업·오류·남은 입력만 기록하고 가능한 독립 노드를 이어갑니다.\n\n## 종료 기준\n\n선택한 작은 단위에서 실제 유도/코드/판별 결과, 과학적 적용 범위, 필요한 남은 source/closure를 남깁니다. 한 verification pass와 필요한 한 fresh review로 충분하면 게시로 전환합니다. 실패는 원본을 보존하고 구체적 원인이 있는 작은 수정을 합니다. source불명·원전미확보·CI실패를 서로 구별합니다. 기존REI cargo fmtFAIL/testsSKIP를 CI통과로 보고하지 않습니다.\n"
+    }
+  ],
+  "coverage": "Only PR135 and linked REI PR222 exact refs/known unit files. Other projects' results mentioned inside the handoff are source-reported context, not freshly surveyed or independently admitted.",
+  "execution_accounting": {
+    "new_scientific_ODE": 0,
+    "scientific_test_replays": 0,
+    "compiled_or_imported_sibling_code": false,
+    "remote_mutations": 0,
+    "remote_backup_downloads": 0,
+    "frozen_PHYS80_unit_edits": 0,
+    "frozen_inventory_edits": 0
+  },
+  "delivery_location": "External S1 delivery metadata candidate only; frozen PHYS80 scientific result identity is preserved.",
+  "read_only_byte_identity_checks": {
+    "class": "ADMINISTRATIVE_HASH_COMPARISON_ONLY_NO_SOURCE_EXECUTION",
+    "files": [
+      {
+        "file": "DAG_OVERLAY.json",
+        "bytes": 825,
+        "sha256": "539122669e10aef2fdb91fc83d7c8037fc16b2228a98651270164d69a254580d",
+        "git_blob_sha1": "c757d3035ae4b865df87ddc7d2cecc434544bac8",
+        "expected_git_blob_sha1": "c757d3035ae4b865df87ddc7d2cecc434544bac8",
+        "git_blob_match": true,
+        "producer_source_sha256": null,
+        "producer_source_sha256_match": null
+      },
+      {
+        "file": "HH1_PREFLIGHT.json",
+        "bytes": 751,
+        "sha256": "7640a209cbe4197ac2d5bd1cea3d779d5f60f5e28baa8edeb1226d6efcbddbf4",
+        "git_blob_sha1": "a0c078178b6359451d176a2a5994bcee7efcf87b",
+        "expected_git_blob_sha1": "a0c078178b6359451d176a2a5994bcee7efcf87b",
+        "git_blob_match": true,
+        "producer_source_sha256": null,
+        "producer_source_sha256_match": null
+      },
+      {
+        "file": "HH1_THEORY_AND_RESULT.md",
+        "bytes": 7206,
+        "sha256": "7740e40114139504e13ab066fc0414adda9c802a57db49924f5446c99df02e1e",
+        "git_blob_sha1": "fc0dd57c245e94c5824f6533b1d736846498afb1",
+        "expected_git_blob_sha1": "fc0dd57c245e94c5824f6533b1d736846498afb1",
+        "git_blob_match": true,
+        "producer_source_sha256": null,
+        "producer_source_sha256_match": null
+      },
+      {
+        "file": "HH1_VERIFICATION.json",
+        "bytes": 1796,
+        "sha256": "fb308fab5f19bc4604466a8f06af3fae5f46ec4cc990a6fd9af847ea74c454b4",
+        "git_blob_sha1": "522747d7d226f9bb4fa0ed05f278b130be536b58",
+        "expected_git_blob_sha1": "522747d7d226f9bb4fa0ed05f278b130be536b58",
+        "git_blob_match": true,
+        "producer_source_sha256": null,
+        "producer_source_sha256_match": null
+      },
+      {
+        "file": "INTAKE.json",
+        "bytes": 1728,
+        "sha256": "ecc307250f2f9cf24914fa254967c403c3065478bcdcd437845580725c5142ac",
+        "git_blob_sha1": "f8c3390cba1af756dc919ab688b738fadc0bdcc6",
+        "expected_git_blob_sha1": "f8c3390cba1af756dc919ab688b738fadc0bdcc6",
+        "git_blob_match": true,
+        "producer_source_sha256": null,
+        "producer_source_sha256_match": null
+      },
+      {
+        "file": "INTAKE.md",
+        "bytes": 6605,
+        "sha256": "a0f787a13513fd51c24affd57a7d0c0d623aaa306e7be5b5da1180b10a4e64ce",
+        "git_blob_sha1": "80a7d877b91cf7aa5dca8a7ca2019767f3cc6f19",
+        "expected_git_blob_sha1": "80a7d877b91cf7aa5dca8a7ca2019767f3cc6f19",
+        "git_blob_match": true,
+        "producer_source_sha256": null,
+        "producer_source_sha256_match": null
+      },
+      {
+        "file": "hh1_energy_adapter.c",
+        "bytes": 1882,
+        "sha256": "616ffb4e3fa9441594ffdf8ea4ec14b47d89814a271b78d7ebff52633ee0ebef",
+        "git_blob_sha1": "c97f89756171548a5e349925d656b2f8436fcc0d",
+        "expected_git_blob_sha1": "c97f89756171548a5e349925d656b2f8436fcc0d",
+        "git_blob_match": true,
+        "producer_source_sha256": "616ffb4e3fa9441594ffdf8ea4ec14b47d89814a271b78d7ebff52633ee0ebef",
+        "producer_source_sha256_match": true
+      },
+      {
+        "file": "hh1_energy_adapter.h",
+        "bytes": 995,
+        "sha256": "ce1f205aba85756204d83b22ea430e0f1707cb94b5c63ce132176c81cb524554",
+        "git_blob_sha1": "4257393552f849741d4e59afeba667aa2d6cdbe8",
+        "expected_git_blob_sha1": "4257393552f849741d4e59afeba667aa2d6cdbe8",
+        "git_blob_match": true,
+        "producer_source_sha256": "ce1f205aba85756204d83b22ea430e0f1707cb94b5c63ce132176c81cb524554",
+        "producer_source_sha256_match": true
+      },
+      {
+        "file": "verify_hh1.py",
+        "bytes": 6074,
+        "sha256": "c685ee3a92c99136fc78d1f76fbbe83a87483883d2a66c6d73c7b96262199899",
+        "git_blob_sha1": "c9b91120565c9f5304186d2ecd65ce8a4948873e",
+        "expected_git_blob_sha1": "c9b91120565c9f5304186d2ecd65ce8a4948873e",
+        "git_blob_match": true,
+        "producer_source_sha256": "c685ee3a92c99136fc78d1f76fbbe83a87483883d2a66c6d73c7b96262199899",
+        "producer_source_sha256_match": true
+      }
+    ],
+    "all_nine_git_blobs_match": true,
+    "all_three_recorded_source_sha256_match": true
+  }
+}

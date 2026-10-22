@@ -6,10 +6,15 @@ Repository: https://github.com/cosmosapjw-quantum/WU088_HH
 
 Branch: research/hh-phys80-sandbox-reduction-20261022
 
+Draft PR: https://github.com/cosmosapjw-quantum/WU088_HH/pull/136
+
+Science commit: fd18c59796175191bdd5f9b7ab2981d5e92836fd
+
 실제 부모 PR134 HEAD: 3304d16db1dc9bf868c185a8eeb6cc9dbc270e50.
 부모 과학 commit: 338fb7728e8b41f49551200b1f1ba73c047fb90c.
-이 PHYS80 snapshot의 실제 science commit과 최종 HEAD, Draft PR 및 backup
-identity는 delivery/POST_PUBLICATION_RECEIPT.json과 최종 PR 본문,
+S0 science의 135개 원격 파일 및 additive parent는 확인했다. 양 provider
+checkpoint 저장 ACK와 실제 science/PR identity는 delivery/POST_PUBLICATION_RECEIPT.json에 있다.
+S1 최종 HEAD와 최종 ZIP/provider full-byte 검증 identity는 최종 PR 본문,
 외부 PHYS80_FINAL_DELIVERY_20261022.json으로 확인한다.
 아직 없는 최종 hash를 이 파일의 내용에서 추정하지 않는다.
 
@@ -69,8 +74,14 @@ old nfev와 new nfev는 작업량 비교이며 paired wall-time benchmark가 아
 4. source/domain/에너지 계약을 닫은 후 새 원자 연산자/consumer adapter를 구현한다.
    새 injection/PI/RR/expansion에는 현재4/1차원 invariant를 자동 확장하지 않는다.
 
+D PI/RR energy adapter는 sibling HH135 HEAD6c3b12554288893d5d7e221d77be943324285ceb의
+보존적 event-energy/C99 component를 재사용하는 PARTIAL이다. delivery/LATE_HH135_REI222_ASSESSMENT_KO.md와
+원문 receipt를 읽고 해당 완료 검증을 반복하지 않는다. source-qualified D threshold/rates,
+matched RR capture-energy moments와 새 coupled control은 OPEN이다. RR escaping energy를
+기존 local gray-photon pool에 자동 재주입하지 않는다. 이 sibling code는 PHYS80에 import하지 않았다.
+
 RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT, He/Li CX state/photon energy,
-D PI/RR potential adapter, Li hard-UV inner-shell/branching/spectral contract,
+Li hard-UV inner-shell/branching/spectral contract,
 전체 핵반응·분자·Compton·spectral transport는 OPEN이다.
 접근 불가 비공개 대화를 전수 조회했다는 주장도 하지 않는다.
 
