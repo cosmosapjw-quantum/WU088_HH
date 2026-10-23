@@ -1,0 +1,87 @@
+{
+  "schema": "PHYS84_C9_TRANSCRIPT_RECOVERY_V1",
+  "created_utc": "2026-10-23T21:35:19.178496+00:00",
+  "root": "/tmp/wu84_review_recovery",
+  "reviewer": "/root/adapter_independent_review",
+  "event": "Parent reported scratch workspace reset after S0 publication and before any PHYS84 numerical execution",
+  "files": [
+    {
+      "path": "v4/source/run_source.py",
+      "bytes": 5427,
+      "recovered_SHA256": "b7931f7f90702805e1d9f79518524eb264ba491752c41379774734f3fe3f7fb8",
+      "preloss_SHA256": "b7931f7f90702805e1d9f79518524eb264ba491752c41379774734f3fe3f7fb8",
+      "preloss_digest_match": true,
+      "recovery_basis": "Full pre-loss file readback plus independently recorded pre-loss SHA256",
+      "identity_claim": "BYTE_IDENTITY_VERIFIED_AGAINST_PRELOSS_SHA256"
+    },
+    {
+      "path": "v4/source/leased_call.py",
+      "bytes": 4174,
+      "recovered_SHA256": "f15ae64c40dadcee0995344c9d90d3de314e2c9689a303b1b045271878c6a752",
+      "preloss_SHA256": "f15ae64c40dadcee0995344c9d90d3de314e2c9689a303b1b045271878c6a752",
+      "preloss_digest_match": true,
+      "recovery_basis": "Full pre-loss file readback plus independently recorded pre-loss SHA256",
+      "identity_claim": "BYTE_IDENTITY_VERIFIED_AGAINST_PRELOSS_SHA256"
+    },
+    {
+      "path": "reviews/INDEPENDENT_REVIEW_KO.md",
+      "bytes": 8753,
+      "recovered_SHA256": "e07c30aa4ca9788120da707b6d8483b8db68e2335b49c7557a3cc964ea273036",
+      "preloss_SHA256": null,
+      "preloss_digest_match": null,
+      "recovery_basis": "Full literal original apply_patch payload",
+      "identity_claim": "TRANSCRIPT_CONTENT_RECOVERED_NO_PRELOSS_DIGEST_COMPARISON"
+    },
+    {
+      "path": "reviews/INDEPENDENT_REVIEW.json",
+      "bytes": 5492,
+      "recovered_SHA256": "cfce5cc47682ba7c2990e1e95a35441702ee4e9810af6034025bf0b07b1e42e4",
+      "preloss_SHA256": null,
+      "preloss_digest_match": null,
+      "recovery_basis": "Full literal original apply_patch payload",
+      "identity_claim": "TRANSCRIPT_CONTENT_RECOVERED_NO_PRELOSS_DIGEST_COMPARISON"
+    },
+    {
+      "path": "observed/preloss_v4_SHA256.json",
+      "bytes": 487,
+      "recovered_SHA256": "6d4883b6ec54d8b56b6ca9f80fd2bf7008894eb7660ffc87df41d31c26d1696b",
+      "preloss_SHA256": null,
+      "preloss_digest_match": null,
+      "recovery_basis": "Full pre-loss tool output text",
+      "identity_claim": "TRANSCRIPT_CONTENT_RECOVERED_NO_PRELOSS_DIGEST_COMPARISON"
+    },
+    {
+      "path": "observed/S3_S4_S5_REPAIR_RECEIPT.json",
+      "bytes": 860,
+      "recovered_SHA256": "6edc54c5d2b324f048cf2fd1d55f71672e9c7a1f2c93521492bee23414288c88",
+      "preloss_SHA256": null,
+      "preloss_digest_match": null,
+      "recovery_basis": "Full pre-loss tool output text",
+      "identity_claim": "TRANSCRIPT_CONTENT_RECOVERED_NO_PRELOSS_DIGEST_COMPARISON"
+    }
+  ],
+  "additional_observed_pre_loss_hashes": {
+    "source/fixtures.json": "6cf2a671e0378d7e03446af9fe766b2d0286e9e69c1e272a1c17b43317833c4f",
+    "source/source_adapter.py": "8e61bab7ebc40d075965b980852d6b2d97f5c7e1421bfe31600ca4e19bfc258d",
+    "verification/verify_source.py": "9ab8cad5ef7b91b97decf49cbf934eb353a40acef0fb517ace5409d1368a240d"
+  },
+  "additional_content_not_recovered_by_this_reviewer": [
+    "source/source_adapter.py",
+    "source/fixtures.json",
+    "verification/verify_source.py"
+  ],
+  "review_documents_note": "Original authored patch text was re-materialized. No pre-loss review-file digest was recorded, so new file hashes are current observations only. The historical HOLD decision is preserved unchanged.",
+  "recovery_transcription_correction": {
+    "file": "v4/source/leased_call.py",
+    "initial_candidate_SHA256": "51273fa0981d215443079d16075b1bd3ef664ed7fd88120f361b38f025a1930b",
+    "observed_typo": "lease_source_SHA256256 instead of literal lease_source_SHA256",
+    "correction_basis": "Exact original pre-loss readback",
+    "corrected_SHA256": "f15ae64c40dadcee0995344c9d90d3de314e2c9689a303b1b045271878c6a752",
+    "status": "CORRECTED_AND_PRELOSS_SHA256_MATCHED_BEFORE_ANY_USE"
+  },
+  "scientific_or_test_execution_during_recovery": 0,
+  "source_imports": 0,
+  "remote_mutations": 0,
+  "repository_mutations_by_reviewer": 0,
+  "pending_gate": "C9-S1B exact expected COMPLETE serialization repair is authorized by root but remains unreviewed; no GO issued by this recovery receipt"
+}

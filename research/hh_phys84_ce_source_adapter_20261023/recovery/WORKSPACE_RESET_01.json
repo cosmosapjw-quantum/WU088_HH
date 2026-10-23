@@ -1,0 +1,43 @@
+{
+  "schema": "PHYS84_WORKSPACE_RESET_RECOVERY_V1",
+  "first_observed_utc": "2026-10-23T21:32:07Z",
+  "classification": "environment and artifact availability; not scientific failure",
+  "observed": "Tool catalog changed. The current task workspace contained scaffolding only; PHYS84 checkout, private intake, uncommitted implementation and unuploaded stage archive were absent. Bounded accessible workspace/tmp searches found no alternate copies.",
+  "unaffected_science": {
+    "PHYS83_parent_HEAD": "6a2fc5aacb6182a916b9434c316e99e750e8273c",
+    "PHYS83_identity": "e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c",
+    "parent_backup_ZIP_bytes": 7473461,
+    "parent_backup_ZIP_SHA256": "65f8969ec76e1971374f34638a8a9821f96bf9fcd52238a6600fb7e7c8c52d3a",
+    "parent_final_delivery_JSON_bytes": 868689,
+    "parent_final_delivery_JSON_SHA256": "789c627dcf54fe54038ac6bc59ee7d188939981f645df7bfa7364d30fe4ae772",
+    "new_PHYS84_verification_before_reset": 0,
+    "new_PHYS84_application_before_reset": 0,
+    "completed_science_reexecuted_for_recovery": 0
+  },
+  "remote_checkpoint_recovery": {
+    "PR": 141,
+    "HEAD": "ce14c0bfc0318662673b021a08f4029d6a36c7a7",
+    "exact_S0_Git_files_checked": 14,
+    "exact_S0_Git_files_pass": 14,
+    "method": "native Git sparse clone of unchanged actual remote branch; original file SHA256 manifest recovered from tool store; no UTF-8 rewriting of parent inputs"
+  },
+  "unuploaded_original_S0": {
+    "name": "PHYS84_S0_20261023_ce14c0bfc031.zip",
+    "bytes": 8496264,
+    "SHA256": "b655b5bc5b6d7f2fb0032d138f3e81e5329ec0df4b15f4c4a1818e69526df255",
+    "availability": "original archive bytes lost locally; no successful provider ACK",
+    "Drive_attempt": "tool catalog change rejection",
+    "Dropbox_attempt": "fileParams source path not found",
+    "replacement_policy": "A separately named S0_RECOVERY archive gets its own byte identity. It is not claimed byte-identical to the lost original archive."
+  },
+  "evidence_recovery": {
+    "original_private_intake_51_files": "not all byte recoverable; preserved S0 audit and recoverable tool records reused",
+    "tool_store_records": "recovered under private intake/recovered_tool_records; temporary download URLs omitted",
+    "code": "recover literal prior code where available, require surviving pre-loss hashes before exact-restore claims; record later bounded S1B edit separately",
+    "review_text": "authored transcript recovery; no pre-loss review hash available",
+    "delivery_helper": "reimplemented under unchanged packaging and full-restore requirements; previous helper digest is historical, not a match claim",
+    "symbolic": "published first-call output including warnings and targeted correction output remain exact; original local input scripts were not in S0 and are not claimed recovered"
+  },
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}

@@ -1,0 +1,4112 @@
+{
+  "schema": "WU_CE83_OWNER_READONLY_ADOPTION_AUDIT_V1",
+  "started_utc": "2026-10-23T19:20:34.270922+00:00",
+  "finished_utc": "2026-10-23T19:20:34.467789+00:00",
+  "status": "PASS_OWNER_ADOPTION_SCOPED",
+  "reviewer": "/root/owner_evidence_audit, fresh independent read-only auditor",
+  "method": "stdlib byte hashes, original ZIP/member comparison, saved receipt consistency and CSV row parsing; no scientific imports or calculations",
+  "actual_remote_HEAD": "parent-confirmed fresh PR140 read; this subtask independently verifies its binding to restored archive and delivery authority",
+  "owner_HEAD": "6a2fc5aacb6182a916b9434c316e99e750e8273c",
+  "scientific_identity": "e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c",
+  "external_authority": {
+    "name": "PHYS83_CONT_FINAL_DELIVERY_20261023.json",
+    "bytes": 868689,
+    "SHA256": "789c627dcf54fe54038ac6bc59ee7d188939981f645df7bfa7364d30fe4ae772"
+  },
+  "archive": {
+    "name": "PHYS83_CONT_FINAL_20261023_6a2fc5aacb61.zip",
+    "bytes": 7473461,
+    "SHA256": "65f8969ec76e1971374f34638a8a9821f96bf9fcd52238a6600fb7e7c8c52d3a"
+  },
+  "checks": [
+    {
+      "name": "external_delivery_raw_bytes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final_zip_raw_bytes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "authority_head_identity",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "archive_manifest_matches_authority",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "archive_entries_and_crc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "manifest_members_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all384_payload_byte_checks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all252_repo_blob_pin_checks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all57_frozen_scientific_bytes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "identity_canonical_hash",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "complete_claim_identity",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "claim_completion_hash",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "identity_input_hashes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "complete_manifest7",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved_rate_grid.csv_row_count",
+      "pass": true,
+      "detail": {
+        "rows": 132,
+        "columns": [
+          "upper_level",
+          "temperature_K",
+          "q_up_cm3_s",
+          "q_down_cm3_s",
+          "log_q_up_cm3_s",
+          "log_q_down_cm3_s",
+          "log10_q_up_cm3_s",
+          "log10_q_down_cm3_s",
+          "float64_underflow_up",
+          "float64_underflow_down",
+          "M0_eV2_cm2",
+          "M1_eV3_cm2",
+          "mean_excess_eV",
+          "mean_incoming_up_eV",
+          "mean_incoming_down_eV",
+          "dlogq_up_dT_K_inv",
+          "dlogq_down_dT_K_inv",
+          "dq_up_dT_cm3_s_K",
+          "dq_down_dT_cm3_s_K",
+          "finite_source_only"
+        ],
+        "unique_temperature_labels": 66
+      }
+    },
+    {
+      "name": "saved_steady_grid.csv_row_count",
+      "pass": true,
+      "detail": {
+        "rows": 324,
+        "columns": [
+          "temperature_K",
+          "electron_density_cm3",
+          "population_ground",
+          "population_2s",
+          "population_2p",
+          "critical_density_2s_cm3",
+          "critical_density_2p_cm3",
+          "radiative_events_2s_per_s",
+          "radiative_events_2p_per_s",
+          "escaped_power_eV_per_s",
+          "emitted_photons_per_s",
+          "coronal_reference_power_eV_per_s",
+          "exact_to_coronal_2s",
+          "exact_to_coronal_2p",
+          "coronal_relative_overestimate_2s",
+          "coronal_relative_overestimate_2p",
+          "slow_decay_per_s",
+          "fast_decay_per_s",
+          "ground_depletion_ratio",
+          "finite_star_only"
+        ],
+        "unique_temperature_labels": 4
+      }
+    },
+    {
+      "name": "saved_transient_grid.csv_row_count",
+      "pass": true,
+      "detail": {
+        "rows": 732,
+        "columns": [
+          "temperature_K",
+          "electron_density_cm3",
+          "time_s",
+          "population_ground",
+          "population_2s",
+          "population_2p",
+          "integral_ground_s",
+          "integral_2s_s",
+          "integral_2p_s",
+          "excitation_2s_events",
+          "excitation_2p_events",
+          "deexcitation_2s_events",
+          "deexcitation_2p_events",
+          "two_photon_events",
+          "M1_events",
+          "E1_events",
+          "emitted_photons",
+          "atomic_excitation_eV",
+          "escaped_radiation_eV",
+          "thermal_change_eV",
+          "heat_withdrawal_eV",
+          "raw_event_thermal_change_eV",
+          "raw_energy_residual_eV",
+          "gross_energy_scale_eV",
+          "normalized_raw_energy_residual",
+          "event_balance_2s",
+          "event_balance_2p",
+          "nuclei_residual",
+          "numerical_branch",
+          "finite_star_only",
+          "prescribed_bath"
+        ],
+        "unique_temperature_labels": 2,
+        "profiles": 6
+      }
+    },
+    {
+      "name": "owner_science_count_binding",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "verification_2111_binding",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "verified_input_pins",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "preserved_failure_history",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved_actual_resume_skip_zero_callback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved_Drive_full_restore_receipt",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved_Drive_science_and_parent_freeze",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved_Dropbox_full_restore_receipt",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved_Dropbox_science_and_parent_freeze",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved_lease_and_worker_scope",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "owner_and_source_scope",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "production_flags",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "byte_entry_results": [
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/CODEX_HANDOFF_KO.md",
+      "bytes": 14112,
+      "SHA256": "e8ee1e2cff720822bf096ee45dad18d708af7298f7f17f0de20133a0cc0cc454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "c24bf05ea8b1757c2853a92991f2b8e9980ad80f",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/CONTRACT.json",
+      "bytes": 6315,
+      "SHA256": "d9eb980df5236e2b2ca3da313813c3ca2b21562f90486f1173d0ea509bc4dcc5",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "8c60b3a31046f258d011359c25c6048d1e21458e",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/DAG_OVERLAY.json",
+      "bytes": 2936,
+      "SHA256": "abb8ecbcd4950596a8b0870f00d7dfdd14efcd199b0031070ab1b97dcef93627",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "b51ded106ec3284a24596c06cecb16ba12442c6e",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/EXECUTION_LEDGER.json",
+      "bytes": 3864,
+      "SHA256": "1b7f5efaf62f22fdc854bdce79870721eff2b34da16a586a05c530836b717c37",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "fd4a07378bfa49e2fb181aa81d02356193591783",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/FINAL_REPORT_KO.md",
+      "bytes": 27008,
+      "SHA256": "5b9dc0bc05e432fd4d3bf94ef310d1f4ecbd70afee16a6c2dc34e45f0db0581e",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "733b3f2939e1e0f8274a763c86a8847a56062bde",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/NEXT_THREAD_HANDOFF_KO.md",
+      "bytes": 7065,
+      "SHA256": "b5bb5938cfb2b79c780f1f616e4f40db84236a0eec1d6b4eaa442aa4c7136d9e",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "550a33bbdf458db849ce361d9ff95467dd21c69a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/POST_PUBLICATION_HANDOFF_KO.md",
+      "bytes": 8067,
+      "SHA256": "b76f60c3226d2541e1ddffee64fc0425d76dc3878a04643f10fb287fd7c6edc5",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "4f9e03679e92481b24cab9fe0232f2a610aa71ab",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/README_KO.md",
+      "bytes": 2059,
+      "SHA256": "0a1ebb9f678e87e77a0dc8cd401bffad904423f0d838013513181fa5f540ca6d",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "6b357bbab7a2a4bc62efde5d37586f0c9e787d10",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/RESEARCH_LOOP_MAP_KO.md",
+      "bytes": 4418,
+      "SHA256": "31005900c2a40042add999c8daf6c7207d078d004c074813e17003413d990342",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "683e31a58aa413c244f4ed3cfcb4838924bb7b35",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/STAGE_STATUS.json",
+      "bytes": 700,
+      "SHA256": "1bb2df5fcd2dc8e0e5746fc15d17ebdfd2e99231276569f4d25d46c5a8b6662b",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "92797f128d0f66934b845edd82ea4a35ad6a9e53",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/delivery/FINAL_FREEZE_CHECK.json",
+      "bytes": 41301,
+      "SHA256": "4728c68503bc177caf27f097d82cfc1befafc7fa82ba756161cc5dd0c89dbf31",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "700bb0ccf766b1454d1725edc012435954e042fb",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/delivery/S0_PUBLICATION_AND_BACKUP_ACK.json",
+      "bytes": 2024,
+      "SHA256": "f31783c311f25bdefbb6a73807de72f85840358e53764859d035a67bb4703b54",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "310ced2b15fc0738ae0fc6ddc77327f2876546f4",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/delivery/S1_CODE_AND_INPUT_FREEZE.json",
+      "bytes": 2710,
+      "SHA256": "05df7e3d0a4fd61ca162bb9e10628ac5c825db5fb70b319062d425346ae8dcdf",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "48b664799b7113b6d0d50d1226f7996360d790f5",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/delivery/S1_PUBLICATION_AND_BACKUP_ACK.json",
+      "bytes": 2060,
+      "SHA256": "e99081e2ccaa5b1075dd7b279ba0c72dd822ace05a11d42fd9c4a0e56abbaca7",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "fd0d41fb8ba93cbe8619a42ccd637daffa044b4b",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/delivery/S2_DROPBOX_UPLOAD_ATTEMPT01_FAILURE.json",
+      "bytes": 419,
+      "SHA256": "242197065c5c7bfba9a2f552fc7dbfa66c6760450d1a8c2f6db08cf50eb6151d",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "d91f885f5fbf4cf149dcf8ce343a5d7d5ffd55ec",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/delivery/S2_PUBLICATION_AND_BACKUP_ACK.json",
+      "bytes": 2143,
+      "SHA256": "cbf1826ea8b40e3b84c6c299e4acfa133668ca66392e59866e8ecc5fefd1b6bc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "b02e2e24d6be397646be5504cfba1b37dc536b55",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/delivery/SCIENTIFIC_FREEZE.json",
+      "bytes": 9208,
+      "SHA256": "d7ab0d676c67988150e5a7526421f638ee0aef7e519dededec0b6f76911293b0",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "2e4593fd4209353070e7f021d083dfc3c7427ce8",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/delivery/scientific_claims/e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c.json",
+      "bytes": 410,
+      "SHA256": "0db670ac249834f228a6c84e363fa9eb5b85177a7d5a5127af36d04fccccc74e",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "765ce702c79b25937ba8a6813cde051e61e0db7e",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/delivery/verify_archive_restore.py",
+      "bytes": 20355,
+      "SHA256": "26eb147b3718244971d9c3788a8437512e5bd3a88de20d190fc80ebd9148b45a",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f5fe5eb120f6eddc0457b32fc7ef460a7d6ad97b",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/figures/01_finite_matched_rates.pdf",
+      "bytes": 21981,
+      "SHA256": "bf0ee431ed47485e656c52dce3021712bddbf71debec7a114c91604328823016",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "ae2380e7bdeb2ad84f9390ca1a030041c9c21ba5",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/figures/01_finite_matched_rates.png",
+      "bytes": 164175,
+      "SHA256": "5d254b7d6b6595a9f1a6dec49533964d72e905d584582b8d2c48baeed96b02fb",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "226203d1a3ba48123627653dbd2f3b7037ce7d3f",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/figures/02_steady_coronal_suppression.pdf",
+      "bytes": 23961,
+      "SHA256": "ef8fae1d00a4711b9315088b23fc4e2c2d3ceb13b9e97bd37d6ce8a0f31e03b7",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "398616eb947112a14c959a65120e01fc6d8dc0b1",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/figures/02_steady_coronal_suppression.png",
+      "bytes": 246410,
+      "SHA256": "7f26a3bf2c01be2551941764c06649daaa57a641817f0ae6ac587ec8e4bb4ab7",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "61a7bc90df596a3519882427295917a639d21210",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/figures/03_transient_energy_accounting.pdf",
+      "bytes": 38070,
+      "SHA256": "a8d5bccf04dafeaff31db9766341db795af65642935e6d02c19177b40d1bf06a",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "b61ca2ecc7aa0b954603f192d1f385bfc70e0632",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/figures/03_transient_energy_accounting.png",
+      "bytes": 349067,
+      "SHA256": "cd81cc3c825f845b1314fc9330c0c6f884727e2b735a4d9cddd38b98c3342c67",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "426afeccb08e81480d6efa45798801cc4aaf0cc6",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/figures/PLOT_RUN_RECEIPT.json",
+      "bytes": 3407,
+      "SHA256": "e047520f2fe474355d749f4f16c8d107b336f8b9c909d9649cbfc6c036c71163",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "0df2878ff2e3a4590427e5710ef561c06105a70b",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/inventory/CURRENT_DELTA.json",
+      "bytes": 20455,
+      "SHA256": "1ba9045c13888282da10466202b98d1de696a676c510e6d6b8ed3208bab0766a",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "a8905b5b6348e430d771d111e9e6be6ec7f3b8e8",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/inventory/CURRENT_DELTA_KO.md",
+      "bytes": 8913,
+      "SHA256": "dc980f6571407581b46bc41a28a27497256bc385769b6b1b8276ff5a7cfa1101",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "0531fa78e5080285fb9bdd18767184e4be414210",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/inventory/PRE_SCIENCE_CURRENT_DELTA_REFRESH.json",
+      "bytes": 39121,
+      "SHA256": "cd48894696406b597286e2235404f335fdd784643f9e52e5c755a8f913045bbf",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "1caf35881b1ee57187adb6482a3c89e1ddd1d112",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/inventory/PRE_SCIENCE_CURRENT_DELTA_REFRESH.md",
+      "bytes": 8840,
+      "SHA256": "2856a274cba09207f550489ad680a81595a0e87fcf987147ec6882858caac727",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "69009cb5abc6cb8bb0c891d541698e45df9ee98c",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/inventory/RECEIPT_MANIFEST.json",
+      "bytes": 10948,
+      "SHA256": "3abb6fe4478f3e7953bc3413ee0ec285d02c8148ab4d705993f5e4564fe2138f",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "fd3724e109fd141d42ae4d12487a0b381b6af837",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/inventory/REUSED_INPUTS.json",
+      "bytes": 2742,
+      "SHA256": "420d8b767797e9513a320964054cfbad07f33671746937c1437a70f2ab044bdc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f3e9e87d4ce9e3f4ca03fa211d473325efd5b652",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/inventory/REUSE_IDENTITY_RECEIPT.json",
+      "bytes": 1089,
+      "SHA256": "46064accbda9092f9e7d2863478386a8da4e1a86b29e4cd9376d9fc4e981b8e5",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "97f369a31252d66edf4b059a53d8e92f7cacb4b0",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/results/COMPLETE.json",
+      "bytes": 6250,
+      "SHA256": "6a69c5552a9a311c14c55575ae1ee058d746fd377a23a21f7636ad3cc7854761",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "48283d89946d7ebddbc59a014278992ba4ea0ab4",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/results/ENVIRONMENT.json",
+      "bytes": 455,
+      "SHA256": "6ba05f53f4bd225ac10dd4d89b566662e77bab6ccfb68fead9ccec642caae4b2",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "4f52bb3966347c27d0811026b9c4da642dcec9f1",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/results/SCIENCE_IDENTITY.json",
+      "bytes": 1831,
+      "SHA256": "ca2ceebb71bff3e682dcf01761e3f5e2770d220a27bf38ac4817d8aad6622d46",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "5f1c8819af003d276dc6760c2aee145c66097e7a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/results/SCIENCE_SUMMARY.json",
+      "bytes": 4776,
+      "SHA256": "77cb3b440e29678cd64b2834c41233416ef5bfe9276bacf1c2c7c1f036c2d1b9",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "7635974278dba0b7b8ba72dfd0e5b7e2292cf7cf",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/results/execution_events.jsonl",
+      "bytes": 1795,
+      "SHA256": "9e6588a444554e31aa3d30e63d928a7bef807f1f410f1c9ec6c3248425869f8b",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "7d5faffa44f99bc21bcec6b122f1ec6476043bd4",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/results/rate_grid.csv",
+      "bytes": 46819,
+      "SHA256": "64e53e02b776db2aee6d67ce03201cbc0b90404d7cdf40e52cccaaecd2fc3017",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "5de4a9f8326fef6002aae8b292e4b18f433a5562",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/results/steady_grid.csv",
+      "bytes": 121853,
+      "SHA256": "1ad1e93ded30c3a8285ec5d939bdb5617e4fdb8c708643e699b7df450c9ecc78",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "0e74b25a4f396c3bb66825111fcd62b038e11b47",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/results/transient_grid.csv",
+      "bytes": 434612,
+      "SHA256": "c0a252703eb680066222e31db4a44241277e03e55e556ba08aea591ecec9cea6",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f77904c4ff6d6ddf08a9254ca325aab7b135dbbc",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source/frozen_star.py",
+      "bytes": 12414,
+      "SHA256": "78421356c6b985d845f452f42e6b03c8ea657171ad826df51b3a1dbcf454578f",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "25850f3178302c84ee5a9e711b05a1e34a4ae598",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source/leased_call.py",
+      "bytes": 2550,
+      "SHA256": "ae8f28e435b77fd9d073d8152faf655994f20022bba5d7ac31e2c1b66dd9b548",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "84d834ef7110cd3c30b59d4f20553b3a2e815774",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source/matched_ce.py",
+      "bytes": 14892,
+      "SHA256": "475ee6f84c5e19945324859a9c4c5e229d8ab5e92e8658ad5b3da39472c1744e",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "aa2b8e4eb4879545bfe6b4cb4a0e7b20513e5ed4",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source/nuclear_ownership.py",
+      "bytes": 10033,
+      "SHA256": "be0739a0cc63d4f53f06b450b300bce09aa41878cd4462c0753798d6639684d2",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "b832db0ad9088084ef6d11337a744bd0d40f014b",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source/plot_saved_results.py",
+      "bytes": 16437,
+      "SHA256": "24b2194cf5262bfebf955f30cc4e794042f1831e07cdaaaab781c57c316fed78",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "fbd8e9c0fe4b2e6a741ab0f188de74cc2cef318b",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source/requirements-verification.txt",
+      "bytes": 142,
+      "SHA256": "29b2eaf85fe6cfd10208e4d827859fd04207675ab70aa4088e278bcad922ca6a",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "81eb3ac923e38296628d1180b429f7d4c7e48ca6",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source/run_study.py",
+      "bytes": 12713,
+      "SHA256": "dee42bcd164fbdfdceedc72200df53e2e687bf5978caddd1f5a40c63bc360f85",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "032103b3de9ad8967e86efbf4a2b4258f54b0db8",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source/vendor/__pycache__/phys78_run_pilot.cpython-312.pyc",
+      "bytes": 45375,
+      "SHA256": "817894f12caf544371db5e23bd08eb4cf5075b8a00b0fb9d16dddcb83d7174a8",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "de68438609efeb8fc3c95af6645c9cd1f12c4458",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source/vendor/ci_finite_c22d.py",
+      "bytes": 8350,
+      "SHA256": "859cdf616ffa165c9fb3c3372d2202f5449e4b9a74a289a725fe456e26eb55b2",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "08878e3e0ee2761017a650782884a7320dfa3fa3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source/vendor/phys78_run_pilot.py",
+      "bytes": 28068,
+      "SHA256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "249f639c6ccf8eee090ed38365b2fed2ad841885",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source_data/CCC_1S.2P",
+      "bytes": 29366,
+      "SHA256": "00857e46838c5538da8b047363105b306bc1ba5c827700161749d5d712fa0e5a",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "2e32c26160fd914b432eb345ef153d933c1c2811",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source_data/CCC_1S.2S",
+      "bytes": 29366,
+      "SHA256": "f4afdbdeccc49a58055ab86750b14ce10dd2091da55bd380a19f3d7a13c337d0",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "242c6d28651494832c4ed6879a0a2b6e315d5602",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source_data/CCC_2P.1S",
+      "bytes": 29393,
+      "SHA256": "12cf46fa0904a5b227092a0a6a3ae6d8a20c041cf11c2981d3bb8bd1f6ac313d",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "6da8d9083190d8c5fc8309653c5fdc983b3f081f",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source_data/CCC_2S.1S",
+      "bytes": 29393,
+      "SHA256": "e8e0092e7be97abe4a90ce100e3101d1f6f225eee2d4ad1ba740f57de819997b",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "606210183a12f6b498c7fdde3d84da7dd967db31",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source_data/CCC_PARSE_AND_SOURCE_RECIPROCITY.json",
+      "bytes": 1401,
+      "SHA256": "5e86b39fa4fd37480f4a8eef0418a169f0ce2c98ec208e24b5acd491fa20849f",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "17b8562340d80c6745ba906a09f8b06865afbd33",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source_data/CCC_PRINT_PRECISION_CONSISTENCY.json",
+      "bytes": 691,
+      "SHA256": "15f908ff67caced565600f307033f3868879cc03b4408ae02fb0e5503120aaae",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "4289b5c1efe9e64f7692a9bc4ea42b929e223175",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source_data/CCC_README",
+      "bytes": 676,
+      "SHA256": "f48aa3eee41e3dd78c887218b64e097490fb50c17b5b15840a701cc9ef984ece",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f0c7aef1f1950415a5282424c47acff21f7b5773",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source_data/CCC_e-H_README",
+      "bytes": 580,
+      "SHA256": "1d4a324a12f43c0d800cffeb5c4d7500d94e08a85f7bad66e4f80afaacb1f2eb",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "d4d474e0595d19d009988b632882c01150312ed2",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source_data/HI_CE_SOURCE_CONTRACT.json",
+      "bytes": 16647,
+      "SHA256": "1983e17f57ab5ab0e9f8c5dde1bc679451ca670440fe79d0fec3de4efb4a812b",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "c64b9b90a0beab859dac919ba7ffa569f949320c",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source_data/h_1.elvlc",
+      "bytes": 2423,
+      "SHA256": "f7286ef6837989eba038b7b055c8db9f4e1ce8a6a0b3270ccc399fd0b2f6a75b",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f42860382d52e8cc7218681d9ce6cfc2bb489527",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/source_data/h_1.wgfa",
+      "bytes": 6621,
+      "SHA256": "f16d0f5033632ce5a3104bfa4dfec9c98fc14bb2e05f682be3468419c9a90179",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "bb1e14e2f3b58985450c94da54198306a6f81a54",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/theory/CONSTRUCTIVE_SCOPE_AND_NO_GO_REVIEW_KO.md",
+      "bytes": 3448,
+      "SHA256": "79f30008706a09e43f1c0b4b40484d81a440b3b9a4a61cb9fd232b4b52680c6e",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "dd152c86aa9475430fba01f5a4fd2de274a9a1eb",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/theory/EXECUTION_IDENTITY_AND_RECOVERY_KO.md",
+      "bytes": 2598,
+      "SHA256": "58c1fc939f680baf87a596723f14994db411e87e816bc1498a458da27569f0f5",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "b2e7b50c6b3e6acaa7c7f32176354197d2fb2e7b",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/theory/MATCHED_CE_IMPLEMENTATION_MAP_KO.md",
+      "bytes": 5974,
+      "SHA256": "b66696877a381556ab35c3678db4634c2e827e14df65a2e599c30ddfe414f181",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "e3dfb072bc6774a9e5eeb1443bc9811d039a5b7c",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/theory/NUCLEAR_CODING_ADOPTION_MAP_KO.md",
+      "bytes": 4096,
+      "SHA256": "0481a36c3491122cca282b3afadab51569c3bf55cd9833ca3272df1a4b893754",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "2942748b7cf7395ee3246bef0e44dbf96f59db26",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/theory/NUCLEAR_OWNERSHIP_CONTRACT.json",
+      "bytes": 12543,
+      "SHA256": "22dd085b22931d46d67f0b7b3e7b6aa684442348b1b754de1d3f20d559a49b94",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "bd3b2b7ee6042f5071bd32d22bc405c7a51286dd",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/theory/NUCLEAR_THERMAL_FAST_OWNERSHIP_KO.md",
+      "bytes": 16010,
+      "SHA256": "4bb5ba569deb96fd754c1a56d111e27b11e0261b4709c4edb8676c1aaaef0326",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "ae8fe6061210b69f4f828524289ac68cff4dba06",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/theory/PARENT_DERIVATION_KO.md",
+      "bytes": 24048,
+      "SHA256": "2d31b237fe3f91fedb4d44f9e7a947e57a1f01a41494b9d45aae2bb80588b445",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f3e7e62b53922dfdb73db34d6790116155d2033",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/theory/PARENT_MATCHED_KERNEL_CORE_KO.md",
+      "bytes": 3499,
+      "SHA256": "527397225c224342b6c48b17eab28c88bced649a6b8255d50146c9df4a7fedfa",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "93f8e0e3b64e2d89b8f1e2cb77a6e462529b27be",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/theory/PARENT_SYMBOLIC_CHECK.wl",
+      "bytes": 1049,
+      "SHA256": "c8b136f4542f4fb97438387ac885c2bb96b8c4c8678ff891bd33c503466896d3",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "5a3b2fdf17786f92fba7edf98cc6c2753ff57482",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/theory/PARENT_WOLFRAM_SYMBOLIC_RECEIPT.json",
+      "bytes": 607,
+      "SHA256": "34ad06a5d924087fc44955b3a72436958ca48ca3168648f34a3496dcb0175c7b",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f2da094fec3da873caed5b23b59608e7dc717a1d",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/theory/PLOT_SAVED_RESULTS_CONTRACT_KO.md",
+      "bytes": 4109,
+      "SHA256": "a5f958e76e4efd7b13bc6e3c961ab1d61db5059544aa65d9079847a926e485a6",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "66a6b1520fea682c525507ee80cb210865b59a4d",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/theory/ownership_checks.wl",
+      "bytes": 1393,
+      "SHA256": "d4e1e0a20e53a00cac63d04a6a1c938da70c7f21fdd14ef32de60dd8c7869cb4",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "34c758bc146526e9bd5d12c7546be6055deb34bb",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/CE_SOURCE_REVIEW_KO.md",
+      "bytes": 7230,
+      "SHA256": "d26e66144caf5ed08843a45e1d4470962be1283f1890925c82bf66811900d120",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "4da1a48fc4e42eaf8e827895fa97efc3410d8230",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/CE_SOURCE_REVIEW_MANIFEST.json",
+      "bytes": 6472,
+      "SHA256": "ef452d8dc82d94320bccf1990cd6e3355c67201ea44afdc37443ea3b9efd743b",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "750cb6de0e6629968e1d49002ee8fb8b17d1ebaa",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/FINAL_DOCUMENT_REVIEW_KO.md",
+      "bytes": 12412,
+      "SHA256": "e1396194b36f5966e84ad482d5a71a466a191da5ce5c25691b3c82eae1fb39c6",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "20b5aba9422bda8a28aa5bf8c98c8cdd27f6127c",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/FROZEN_STAR_STATIC_REVIEW_KO.md",
+      "bytes": 11479,
+      "SHA256": "eff005b9dc43f13493af9a7438fcd075f923b686e109824e4c1b281df0b5c324",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "4ac5e3f36db6a35793d592bcd0569c3f7b8e0f82",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/INDEPENDENT_REVIEW_KO.md",
+      "bytes": 17560,
+      "SHA256": "0b8b1bbe47bdefffa7e9db8939624194d303e339954b3672231425333250f86c",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "a8ef47af93927ec5899e20c77d4d385751fa3daf",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/INDEPENDENT_VERIFICATION_AGGREGATE.json",
+      "bytes": 18103,
+      "SHA256": "58eddb6e341e2579ccc09285f9ed0fb4d0119dcc45901aa6fc821638920e8527",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "c75a1b7537a21463bbc43b6ba933be17b60f5327",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/MPMATH_DEPENDENCY_RECOVERY.json",
+      "bytes": 517,
+      "SHA256": "b3a367cb46e8f7feac00749392dde166224fa5df3ff560df9976761fd1309d37",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "7fda390519509bd0868db253a04cc83a199b7813",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/NUCLEAR_CODING_STATIC_COMPILE.json",
+      "bytes": 433,
+      "SHA256": "76e8304255179b7c91f89897a9a94efdb34bdc922567eb229f69fbb99f5572e3",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "e1782d3968625dd9ff6ff8bca641e37995dc87b2",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/NUCLEAR_wolfram_moment_receipt.json",
+      "bytes": 1505,
+      "SHA256": "969bd38b79a428f85127ad402d8319b494d4842bafbd568c3863120f5ae02fd9",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "51170e1d138e3ea495efb731e310f09b058713ec",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/NUCLEAR_wolfram_symbolic_receipt.json",
+      "bytes": 2212,
+      "SHA256": "ff8bbf0cd6a9c900dc684eff08b043573089ce6c63327664cfe93aacc837d6c4",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "2235051f68076c0739864349507e84fb23d6f57e",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/PHYSICS_STATIC_REVIEW_KO.md",
+      "bytes": 6713,
+      "SHA256": "fc17d417eebea1144054fa3494f6f483ef685faa4a4a6b7e851d310594d741ff",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "404783e86b6c00d58cf803abfdb4c17d96a9f700",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/PLOT_VISUAL_REVIEW.json",
+      "bytes": 2239,
+      "SHA256": "bf3e1e4db62c0b82d687218c42d5d75cfc767a0666f58b787621cbac776666fa",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "5de385e395043a72a7c106505f097c6a069a0fb5",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/PRERUN_BOUNDARY_COVERAGE.json",
+      "bytes": 622,
+      "SHA256": "11ec1d34427eb43aa9eced33b2320095e52cab5e09d9504b9738bba2e61619c0",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "6aad0ad182f7315acb558a17e40b8b3798c216f0",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/PREVALIDATION_GUARD_FINDING.json",
+      "bytes": 499,
+      "SHA256": "4bd3ad08f585744c931613a99f744506ecd2c7be0acdb35c353c74b6ada82775",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "94b83aa238ec73836fd75968e72292d04cc26cee",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/PREVALIDATION_RUNNER_FINDING.json",
+      "bytes": 486,
+      "SHA256": "3623a7066261add2fe338c6d02efeee6edd190f0cb351f40c373f05b43dff8ea",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "70608274e6fa468e42511f636f853beca9c98867",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/RUNNER_PREVALIDATION_FINDING.json",
+      "bytes": 764,
+      "SHA256": "9ab563a9cdcd79aebf0752e66b403c34c734469d66c6f041335c23d0e44260e7",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "a4ac6d30575cd1545036580b335ff81ddc355a25",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/S1_EXECUTION_PREFLIGHT.json",
+      "bytes": 462,
+      "SHA256": "3f347b291a425268410c2a3df291b062887a18bd24f489cf4899515ea8dc5679",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f9996254a5e4d7b78615399a706f55cd470aed10",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/SAVED_RESULTS_REVIEW.json",
+      "bytes": 48919,
+      "SHA256": "54a82ad1acb1861c7192bc7a6fe5604fb39c2cfe33eacba9a916e7f44c9697fa",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "89fb5014c8245445392ef99b5c013c497e32fba9",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/SAVED_RESULTS_REVIEW_KO.md",
+      "bytes": 12106,
+      "SHA256": "b41acf61c90534034e6a21688ea3cc2d77ca98a3f11d2d5e0ee7a446c842b283",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "c71d31847c733ee1f9976aa72ad5b9fbacb2cff5",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/VERIFICATION_PLAN_KO.md",
+      "bytes": 6891,
+      "SHA256": "5e15953ed71286d6ad14477cd1d5107f59ae391da9700f3696410c501ba908fb",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "ec359bb777fb7c21416f7ea83d235abfe8caafa2",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/VERIFIER_STATIC_PREPARATION.json",
+      "bytes": 731,
+      "SHA256": "3df2b6b3852444cf6e565ca8492dcdecdd32007be0d96dbb81816b56395ac855",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "9592aa5130d8cc8768296d24527e4624d68170b6",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/VERIFIER_WRAPPER_COMPATIBILITY_STATIC.json",
+      "bytes": 763,
+      "SHA256": "d2a29000310643473adf66aa2682c408e30f2d224adc450f5a1694f3279c2d88",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "1747437d786ecc4e8d9dbb3101cef5d51053db41",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/ce_attempt_01/ENVIRONMENT_FAILURE.json",
+      "bytes": 500,
+      "SHA256": "721ee6a86dafd4745b6537c26bba44049a8aed541c99b11afbefb601e70da1e8",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f762cd6c2c2343e3dab9d5195a5337c47ae2ac0d",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/ce_attempt_01/START.json",
+      "bytes": 1594,
+      "SHA256": "69a77bab9c18df2e53b3ffaaf249b70bc7365131dc85141b6ce2f3dfe109dc50",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "789ae9144afded00e15de576936785641dd63c67",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/ce_attempt_02/RESULT.json",
+      "bytes": 61712,
+      "SHA256": "13a86473a77985e9b125fc58f9a15b09f0aa8e5a324fee29005f643b230e7a97",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "d9220c8fd49c2280f4fd4277bbe671b18a8c61cc",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/ce_attempt_02/START.json",
+      "bytes": 1594,
+      "SHA256": "e2bd922d07316314f8406407823f508e612e0e2a8c318fa773d14fbabe11a6b7",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "936347dd70ebe90ea2cb1d133810e93bc627a268",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/ce_attempt_02/checks.jsonl",
+      "bytes": 358067,
+      "SHA256": "8675e494a670830f772fa45ea41053d5de06a838781385473f41df24d48e93e3",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "adc7c875eefa72e13c1c811571cecf14307558f6",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/ce_attempt_02/deliberately_corrupt_source_guard/CCC_2S.1S",
+      "bytes": 29394,
+      "SHA256": "2cae8d1b5e2e1791c439808dcb0cb7d23a8783a6143aeb34ab3a37adbddd334f",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "bdc77c0f7b14af22f93400a00e96a33882514d76",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/independent_verify.py",
+      "bytes": 35952,
+      "SHA256": "b9b74a5d512ca9a73efc9c12a65f164a308eead4010d2ddceb3dde9c04544d96",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f90fa0e688ccdb418055083018c4acab64c54507",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/independent_verify_nuclear.py",
+      "bytes": 15283,
+      "SHA256": "d9b3ae43df9a90599428c8c150f794c51d4f5cf3f8c0024b3ecb29e94c15cdc2",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "6c867a68fa4446469daabb069e0714ca3cf49e95",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/independent_verify_runner.py",
+      "bytes": 19592,
+      "SHA256": "af5384c9a56cb85ff574ac893c7c8376d2d8176577bc051c015eedd707275f70",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "6f38913e5359c1d929b976adb064f98c5719a768",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/lease_ce_01.json",
+      "bytes": 1790,
+      "SHA256": "91e69aeb62569713bd02bc384150668c3441000b5af0a374547f70f6e03fa8ec",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "b3fee9b48b9bb86fa17353137f1493d9167e06e6",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/lease_ce_02.json",
+      "bytes": 6757,
+      "SHA256": "45aabdbad3c2b47e57cde45fad3911d619a5ead235e440db6ba65bce3284c803",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "b558a2832c4a19b4a9b64e14e148fda0608888e1",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/lease_nuclear_01.json",
+      "bytes": 2333,
+      "SHA256": "faed9495d1378c27525ea9cdce9ed8970273f77de12cccda9f9f6f345b138389",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "ff53a8256c04d2fcabea384015fb202b6daddc76",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/lease_plot_saved_01.json",
+      "bytes": 1828,
+      "SHA256": "ce53cc6e53d81f72d91b88bd1b042296bf7042f98275ecf09a610be82a100606",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "9e97d5e590c57281331471a8411ac2a1c193e3a4",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/lease_runner_mock_01.json",
+      "bytes": 2943,
+      "SHA256": "3c314dcc2caf2096dbb21fb8e1ffbf5b467c96ad1a6c6d89f5b728ca69bfa774",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "e23fe0d8952c5ee106ab6323e56a4e3d9f939bd9",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/lease_science_first.json",
+      "bytes": 5742,
+      "SHA256": "73963d64e5c626b9bd301bf843b3b2e81ae4c13baafff55a3f31e7b9f99d3460",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "beee67386bf2cefbf435cbb7485547106e394755",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/lease_science_resume_01.json",
+      "bytes": 1471,
+      "SHA256": "941e632b1cc0bdf4da39cfafa665654c180470dbca5a71bc708739a0cd625fa6",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "7cde4f224f29083a03a5989f97c53b4a9b17468e",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/nuclear_attempt_01/RESULT.json",
+      "bytes": 4033,
+      "SHA256": "735de8c2dfe8b7374303044ffc012a9e20324198f251a9d4085c7e24e06ef1aa",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "de235e15a951a9115fae98b05f74cd43233a5c25",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/nuclear_attempt_01/START.json",
+      "bytes": 994,
+      "SHA256": "4fff33ef94aa52763ac6146a04e8c15a83f0b840e03d3ffc2bb1850f79997d9c",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "6f1cea0103f6f9e0b388b8ccfc628c618574d06b",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/nuclear_attempt_01/checks.jsonl",
+      "bytes": 29664,
+      "SHA256": "c7ae661d23ba9a7ad99619aa7afeaea30cb5fbede1310911d93750875685da98",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "b52628a9c2fcad0e4e96a423f6970632bc3bad9f",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/pre_science_identity.json",
+      "bytes": 1918,
+      "SHA256": "513030d7321cc57f489ae7e339285ff01bac8aab4e119d7ea4dbfef704db0464",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "dd7b5ac2309761ba19802e2109eac1eb36398431",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/prevalidation_frozen_star_v1.py",
+      "bytes": 11642,
+      "SHA256": "5778e4fbda80cec51a4064b7b7f434676c2392ee0c339da3d2603000fb45d721",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "02c75d8f6382c7762c00c768365cede8375ffdf6",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/prevalidation_run_study_v1.py",
+      "bytes": 11222,
+      "SHA256": "6d3d4e3ebe55fe8065a9efb25a5e62c1f95b1b9b29da90b6eb81c3e2644f9040",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "cd4f46481fcd27d7723e08468a9011a51659785b",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_accounting/output/COMPLETE.json",
+      "bytes": 1473,
+      "SHA256": "41493be6eae7102d2338f4a7fe61244fb3b0907d01e011e1436fe0c887427721",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "32c1f093e96613085ac486a47b08c09db2933e77",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_accounting/output/ENVIRONMENT.json",
+      "bytes": 50,
+      "SHA256": "dd22e9572cab4f83d1521f72abe93af33ac89f4c54692055020a596039d3c454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "766362b2066a0f3665ea753da689107d96c52785",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_accounting/output/SCIENCE_IDENTITY.json",
+      "bytes": 261,
+      "SHA256": "8617d0c70e8e3fddec7b88244ba713250df6c518c5df99677e640fcc53bd8116",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "bf2c4996faac406c1ce43eeebe936a675e076ff1",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_accounting/output/SCIENCE_SUMMARY.json",
+      "bytes": 277,
+      "SHA256": "3765ff59b76ba033b0235c295c722d7712affe2ca77e7e0819ccc40b1b984b33",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "009c7004e1c1e9abfb0b44294d5676a749491f6a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_accounting/output/execution_events.jsonl",
+      "bytes": 56,
+      "SHA256": "0cc64d43f586c825f22a736bd39ec7ccad3a6132cbfe9cbea8b0be466483ee26",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f137be51156515b4aa908303a2b1d037ec0cee94",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_accounting/output/rate_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_accounting/output/steady_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_accounting/output/transient_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_accounting/registry/1b05189f8cb22ee57c5d801a0a06c51fb7f17143438bae5cdb923688967f8aa8.json",
+      "bytes": 233,
+      "SHA256": "5840f09cba693b97df2594c66bac028e7f97538ec3e7c6e2e752d1024fcec101",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "6730c5bad5c3de31e81687ebaa0b3941d9b03f9c",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_identity/output/COMPLETE.json",
+      "bytes": 1473,
+      "SHA256": "eda8f4ea8f891798fda3cab3418b28041f22d59deddbaae9b4e47aa59edf424f",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "84cec71a0c871e6a4267348705631abc2b9c4b80",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_identity/output/ENVIRONMENT.json",
+      "bytes": 50,
+      "SHA256": "dd22e9572cab4f83d1521f72abe93af33ac89f4c54692055020a596039d3c454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "766362b2066a0f3665ea753da689107d96c52785",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_identity/output/SCIENCE_IDENTITY.json",
+      "bytes": 280,
+      "SHA256": "f748a4ff561dc30ff730813ffeaacd785bc094d97619de7c103c6ffa961e0bb0",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "7a1f4014d82532b5facc7c19621b41fa0bcba45a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_identity/output/SCIENCE_SUMMARY.json",
+      "bytes": 277,
+      "SHA256": "3765ff59b76ba033b0235c295c722d7712affe2ca77e7e0819ccc40b1b984b33",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "009c7004e1c1e9abfb0b44294d5676a749491f6a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_identity/output/execution_events.jsonl",
+      "bytes": 56,
+      "SHA256": "0cc64d43f586c825f22a736bd39ec7ccad3a6132cbfe9cbea8b0be466483ee26",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f137be51156515b4aa908303a2b1d037ec0cee94",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_identity/output/rate_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_identity/output/steady_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_identity/output/transient_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_identity/registry/a2c1fd36249ccb89be71b07669fbc38859168b03fd168366b17c298a2f9bca45.json",
+      "bytes": 233,
+      "SHA256": "53647e4eeb22e1182ab76135a0661851f36ecd2719e36f15dd4d91a5909e0819",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3448328ccff066bdb8d76037f52a5437f53ef919",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_missing_certificate_hash/output/COMPLETE.json",
+      "bytes": 1473,
+      "SHA256": "26d6af4cab82801b53c2de4c46b11f097dfd3aff13882729c62d51042622c83d",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "b7154b85b373eb39d1272f306ede37903ba6a6dc",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_missing_certificate_hash/output/ENVIRONMENT.json",
+      "bytes": 50,
+      "SHA256": "dd22e9572cab4f83d1521f72abe93af33ac89f4c54692055020a596039d3c454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "766362b2066a0f3665ea753da689107d96c52785",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_missing_certificate_hash/output/SCIENCE_IDENTITY.json",
+      "bytes": 275,
+      "SHA256": "388c997ea0c734cf1c40c36e2e74ead4e4b78666b31d8919a71cd663f583a263",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "1b5e7fd4f32140f501868fcbb111143e173e43bb",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_missing_certificate_hash/output/SCIENCE_SUMMARY.json",
+      "bytes": 277,
+      "SHA256": "3765ff59b76ba033b0235c295c722d7712affe2ca77e7e0819ccc40b1b984b33",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "009c7004e1c1e9abfb0b44294d5676a749491f6a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_missing_certificate_hash/output/execution_events.jsonl",
+      "bytes": 56,
+      "SHA256": "0cc64d43f586c825f22a736bd39ec7ccad3a6132cbfe9cbea8b0be466483ee26",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f137be51156515b4aa908303a2b1d037ec0cee94",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_missing_certificate_hash/output/rate_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_missing_certificate_hash/output/steady_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_missing_certificate_hash/output/transient_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_missing_certificate_hash/registry/a0d103b8ae0bc02e0f4e55fcff5138b1cf31b16db3540d45b4f2375e5b7ec7d7.json",
+      "bytes": 142,
+      "SHA256": "46db16f28df4dc0e3f288dfbbf083131b287bcd5c775bcd02229b2b060af857a",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "4b4225c4f7fe1091491be95dd7b313f2ed6f2d40",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_summary/output/COMPLETE.json",
+      "bytes": 1473,
+      "SHA256": "fdaf667a5baa590a0b6c6a18874a13f209f87751523174d32f22c7a7cf6b92b3",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "310b25728ec7c4aa92b8badde0dbf26ed13f3c9f",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_summary/output/ENVIRONMENT.json",
+      "bytes": 50,
+      "SHA256": "dd22e9572cab4f83d1521f72abe93af33ac89f4c54692055020a596039d3c454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "766362b2066a0f3665ea753da689107d96c52785",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_summary/output/SCIENCE_IDENTITY.json",
+      "bytes": 258,
+      "SHA256": "c7652ee7df9df7b373c7a989cc4e36fe71e14bb67ad3ddae8ada221e46213a1d",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "b53848a380d53883e637986cafef648a885ee0ea",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_summary/output/SCIENCE_SUMMARY.json",
+      "bytes": 296,
+      "SHA256": "d02b0ec1eea8e9c159c291ea8f2e5b915b7483cf6b0b0ab29ed369adcb9cd6ff",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "017f3af5d5ff017c4973e3045f668a6dda3a0f1a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_summary/output/execution_events.jsonl",
+      "bytes": 56,
+      "SHA256": "0cc64d43f586c825f22a736bd39ec7ccad3a6132cbfe9cbea8b0be466483ee26",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f137be51156515b4aa908303a2b1d037ec0cee94",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_summary/output/rate_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_summary/output/steady_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_summary/output/transient_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/binding_summary/registry/43b951b55fc27c3d74770fe2a724421e82eabe8b168f3cdfb28f3e534d47e9ec.json",
+      "bytes": 233,
+      "SHA256": "2ca01fbabb51a7ce917594961f98d4e29abe6ef17c34c762fca889dfe6c83c87",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "ce01b993997ed97909057d8f5e16c48335c55c4d",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/callback_failure/output/FAILED.json",
+      "bytes": 900,
+      "SHA256": "5f01d2919cfdeae4e2fd149513d14a1041ae89e9f807a97d6feefd0a9a173adb",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "4bfa26a818254a14b41db7d0378647714400714d",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/callback_failure/output/SCIENCE_IDENTITY.json",
+      "bytes": 259,
+      "SHA256": "9bf8a75b0df8f918538109cfacc27ff80298b501811401800877585ecf625ee4",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "4ba16a58fe9c3236bb29cdd5b699cbb0f60a06f5",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/callback_failure/output/partial_mock.txt",
+      "bytes": 34,
+      "SHA256": "a2700862f1b07c8dea6a2ac49604d3ed78eeaaee1cb63aa51ddb9d2e912d9eca",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "0be002b9bdb6ad8792be46abbfae95fc85ffb216",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/callback_failure/registry/a676e3b316ea5dd343d1b7e5ac6b938fe66774e6ff323de2f15c4aeec52c2551.json",
+      "bytes": 900,
+      "SHA256": "5f01d2919cfdeae4e2fd149513d14a1041ae89e9f807a97d6feefd0a9a173adb",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "4bfa26a818254a14b41db7d0378647714400714d",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/certificate_corruption/output/COMPLETE.json",
+      "bytes": 1504,
+      "SHA256": "48d0a35121eea29252c672be1f455d19dd50bfa7d9498ff86c6835ae0c4f9e54",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "eb24db258be40d4d43d71111f7cd76d7e657ab6e",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/certificate_corruption/output/ENVIRONMENT.json",
+      "bytes": 50,
+      "SHA256": "dd22e9572cab4f83d1521f72abe93af33ac89f4c54692055020a596039d3c454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "766362b2066a0f3665ea753da689107d96c52785",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/certificate_corruption/output/SCIENCE_IDENTITY.json",
+      "bytes": 265,
+      "SHA256": "5f1e0a1b2f9898f4300de9433bcb3e794eb25c976d96fd2d349cac78078e1290",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "de8a140f006435008084f28649d81dd70e225288",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/certificate_corruption/output/SCIENCE_SUMMARY.json",
+      "bytes": 277,
+      "SHA256": "3765ff59b76ba033b0235c295c722d7712affe2ca77e7e0819ccc40b1b984b33",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "009c7004e1c1e9abfb0b44294d5676a749491f6a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/certificate_corruption/output/execution_events.jsonl",
+      "bytes": 56,
+      "SHA256": "0cc64d43f586c825f22a736bd39ec7ccad3a6132cbfe9cbea8b0be466483ee26",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f137be51156515b4aa908303a2b1d037ec0cee94",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/certificate_corruption/output/rate_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/certificate_corruption/output/steady_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/certificate_corruption/output/transient_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/certificate_corruption/registry/aae240318cb629036eb1191185c78fe10216ea4b794b68472ca04d3dac583602.json",
+      "bytes": 233,
+      "SHA256": "afb6f6f42fc7eea7f96efae3f7e1a67b7a9f9b7de20f66adfbf0cfdbfdde8d08",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "abdf5bb3f94b0385e6ed58ee7cfd70f4eba75f55",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/claim_ADMITTED/output/partial_mock.txt",
+      "bytes": 30,
+      "SHA256": "afa219ba2e896c78adfd6d84c34e34ce5cffab0ebe72177d48f76ae0ee01f169",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "631ff66f7343e705f4d519c704c18bad4f721ea0",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/claim_ADMITTED/registry/52a5e1471f5ec11bc08893437bede832001f261b31043b6f3d24fe827b6f4061.json",
+      "bytes": 141,
+      "SHA256": "57936e0f4fa91e276ae308f82fbefd20588ea3fecfd8b69fe372f334419fc088",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "70a43f948936db0b6bf6db06bc09fa25d61c2d86",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/claim_FAILED_PRESERVED/output/partial_mock.txt",
+      "bytes": 30,
+      "SHA256": "afa219ba2e896c78adfd6d84c34e34ce5cffab0ebe72177d48f76ae0ee01f169",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "631ff66f7343e705f4d519c704c18bad4f721ea0",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/claim_FAILED_PRESERVED/registry/e38c77d27396774dce1efb5b79a39079b706ccf19a9d96767d8679bb3bd7641c.json",
+      "bytes": 149,
+      "SHA256": "d62a72e59eb8193683f9d370d8cb983383b917963ad23604360813fce2f15c3b",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "6aec73997ba19fca8d940194e7ea5c8f5004b9e8",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/exclusive_claim/registry/848b1c88ad2858c13b29d1a2d7c9b7fcafa59c96c2c83fd7083347f479ba0b28.json",
+      "bytes": 141,
+      "SHA256": "5d785f9aabde48f00885dea6adfb5b9e4ee08d45650289a4f81ec71d2993ce4f",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "de82e456ce040c6b70e6efcaac0267fe6d935bd4",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/existing_output/output/preserved.txt",
+      "bytes": 37,
+      "SHA256": "5019369361a5cc9f75ad10ea5d6cd7ba8795d15bfc1f4235b1f350f2a435ca67",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "dd60bdb70817f047981443576014f94784171032",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_empty/output/COMPLETE.json",
+      "bytes": 511,
+      "SHA256": "cc294beff256a452db4351543a837060e95b739b975cb784cfda4e3dea4decb2",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "180a11c4f44e01ba8e58c561c8490a4cf62e56e0",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_empty/output/ENVIRONMENT.json",
+      "bytes": 50,
+      "SHA256": "dd22e9572cab4f83d1521f72abe93af33ac89f4c54692055020a596039d3c454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "766362b2066a0f3665ea753da689107d96c52785",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_empty/output/SCIENCE_IDENTITY.json",
+      "bytes": 257,
+      "SHA256": "87de9b254e9bb2771713a6dd100d42d9df90f810a3a6db7ebeb48da723d91156",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "30a4c53432c736056e4609815573036f3ce69469",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_empty/output/SCIENCE_SUMMARY.json",
+      "bytes": 277,
+      "SHA256": "3765ff59b76ba033b0235c295c722d7712affe2ca77e7e0819ccc40b1b984b33",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "009c7004e1c1e9abfb0b44294d5676a749491f6a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_empty/output/execution_events.jsonl",
+      "bytes": 56,
+      "SHA256": "0cc64d43f586c825f22a736bd39ec7ccad3a6132cbfe9cbea8b0be466483ee26",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f137be51156515b4aa908303a2b1d037ec0cee94",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_empty/output/rate_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_empty/output/steady_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_empty/output/transient_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_empty/registry/0086fc69360ae1499e020eec97cd5e8b08b403fec978cce051ca61b61bda12a7.json",
+      "bytes": 233,
+      "SHA256": "b2e655070c08e2ec59a4217bc93a24652c4df33c4055005e34693039d08dd0d7",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "d6051c623263a418ca43d073601082d6cf475633",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_identity_only/output/COMPLETE.json",
+      "bytes": 654,
+      "SHA256": "7451b4d0641f5632e114d61cd2daadd9ee5d0c1e3ad4ad253be7ffeb04fda7b1",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "d88c1b2ff3582aab49f4e4cb6eac7f51d2317a3e",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_identity_only/output/ENVIRONMENT.json",
+      "bytes": 50,
+      "SHA256": "dd22e9572cab4f83d1521f72abe93af33ac89f4c54692055020a596039d3c454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "766362b2066a0f3665ea753da689107d96c52785",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_identity_only/output/SCIENCE_IDENTITY.json",
+      "bytes": 265,
+      "SHA256": "f46161c4370fded8f7da4ea2ba6d0b365cf90e7595dd479ab7e792511e87e483",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "230540c37410b14943188cef864ed5a4f7871503",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_identity_only/output/SCIENCE_SUMMARY.json",
+      "bytes": 277,
+      "SHA256": "3765ff59b76ba033b0235c295c722d7712affe2ca77e7e0819ccc40b1b984b33",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "009c7004e1c1e9abfb0b44294d5676a749491f6a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_identity_only/output/execution_events.jsonl",
+      "bytes": 56,
+      "SHA256": "0cc64d43f586c825f22a736bd39ec7ccad3a6132cbfe9cbea8b0be466483ee26",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f137be51156515b4aa908303a2b1d037ec0cee94",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_identity_only/output/rate_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_identity_only/output/steady_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_identity_only/output/transient_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/manifest_identity_only/registry/9d25149c25f92241183f5d04ab950153487ae9bf241f017ac48568b88baec53b.json",
+      "bytes": 233,
+      "SHA256": "3131bb96bcaea65b1c4ca6c7b4adb436935aa0d3aa7db0d3a4af72dc32887e2d",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "fb671eaadcbbc73afe7ff610e0f7f6460e603fc4",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/metadata_recovery/output/COMPLETE.json",
+      "bytes": 1473,
+      "SHA256": "7f2ae1d7c09b45355757fe5cfecad1604e2f5172e27da58ffc737b2cc3e22d56",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "fdbcb5d52daa43a44f9ec9647e3ed550c5ad5e53",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/metadata_recovery/output/ENVIRONMENT.json",
+      "bytes": 50,
+      "SHA256": "dd22e9572cab4f83d1521f72abe93af33ac89f4c54692055020a596039d3c454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "766362b2066a0f3665ea753da689107d96c52785",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/metadata_recovery/output/SCIENCE_IDENTITY.json",
+      "bytes": 260,
+      "SHA256": "85b82a7966faaf20c5283ddc4f912f3507cff78bb70b5aeffd5dabc88be7235c",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "66e28841b46d813fa995be91aa00ab4c12d37059",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/metadata_recovery/output/SCIENCE_SUMMARY.json",
+      "bytes": 277,
+      "SHA256": "3765ff59b76ba033b0235c295c722d7712affe2ca77e7e0819ccc40b1b984b33",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "009c7004e1c1e9abfb0b44294d5676a749491f6a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/metadata_recovery/output/execution_events.jsonl",
+      "bytes": 56,
+      "SHA256": "0cc64d43f586c825f22a736bd39ec7ccad3a6132cbfe9cbea8b0be466483ee26",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f137be51156515b4aa908303a2b1d037ec0cee94",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/metadata_recovery/output/rate_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/metadata_recovery/output/steady_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/metadata_recovery/output/transient_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/metadata_recovery/registry/b25b70849afeb61a149ff7a3a26848fb780e2d147b76689d4568f44e6ebdfdd7.json",
+      "bytes": 296,
+      "SHA256": "dbc269fb5852d26249a4d715d670d8a3bab25788482e0a6fb47db67441661bf9",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "55b72beb3b7340dc1d5339f67708f9b447cd58ab",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/new_then_skip/output/COMPLETE.json",
+      "bytes": 1507,
+      "SHA256": "261329fc33130e85a8d613ee3d5ffa8e7887e28506d8a63709eff0b13fc0dabc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "c2b4a93cb2b769243e3633779c28f0e9899a6be1",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/new_then_skip/output/ENVIRONMENT.json",
+      "bytes": 50,
+      "SHA256": "dd22e9572cab4f83d1521f72abe93af33ac89f4c54692055020a596039d3c454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "766362b2066a0f3665ea753da689107d96c52785",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/new_then_skip/output/SCIENCE_IDENTITY.json",
+      "bytes": 256,
+      "SHA256": "080f9cbe50d8ef1d625f16644057034ebafd83ff050bda37e5d1a7aff25db135",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "40b2e49f2f71b6730c2f201ac7240f8d8aa2c5fb",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/new_then_skip/output/SCIENCE_SUMMARY.json",
+      "bytes": 277,
+      "SHA256": "3765ff59b76ba033b0235c295c722d7712affe2ca77e7e0819ccc40b1b984b33",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "009c7004e1c1e9abfb0b44294d5676a749491f6a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/new_then_skip/output/execution_events.jsonl",
+      "bytes": 56,
+      "SHA256": "0cc64d43f586c825f22a736bd39ec7ccad3a6132cbfe9cbea8b0be466483ee26",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f137be51156515b4aa908303a2b1d037ec0cee94",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/new_then_skip/output/rate_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/new_then_skip/output/steady_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/new_then_skip/output/transient_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/new_then_skip/registry/9dd749c2ebe832020dee59de6e093e99aa7c5e9d3d6f5f7841972918394b5c10.json",
+      "bytes": 401,
+      "SHA256": "dd8417bf16001f61791f5310d03f863e4db56c8163bfbdb0e3ecc3ed1d07b752",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "08a0bb94f23b83cc49d3ca6d6a5c673a97e0abff",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/payload_corruption/output/COMPLETE.json",
+      "bytes": 1473,
+      "SHA256": "d8baeac48508cf8bf3053e1e54db0c8b9fd3fa66c56d537c54922df207f9a8a2",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "44a4d747b9b01f2e1e20e1b01b17acdd88ec8a73",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/payload_corruption/output/ENVIRONMENT.json",
+      "bytes": 50,
+      "SHA256": "dd22e9572cab4f83d1521f72abe93af33ac89f4c54692055020a596039d3c454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "766362b2066a0f3665ea753da689107d96c52785",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/payload_corruption/output/SCIENCE_IDENTITY.json",
+      "bytes": 261,
+      "SHA256": "0a8dd2d86cc157508a1a980f727b249d400092009261e0dc92656d48f568bb8c",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3a303810573cadcdf2cfdb25059f6d9e7ecfd98b",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/payload_corruption/output/SCIENCE_SUMMARY.json",
+      "bytes": 277,
+      "SHA256": "3765ff59b76ba033b0235c295c722d7712affe2ca77e7e0819ccc40b1b984b33",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "009c7004e1c1e9abfb0b44294d5676a749491f6a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/payload_corruption/output/execution_events.jsonl",
+      "bytes": 56,
+      "SHA256": "0cc64d43f586c825f22a736bd39ec7ccad3a6132cbfe9cbea8b0be466483ee26",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f137be51156515b4aa908303a2b1d037ec0cee94",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/payload_corruption/output/rate_grid.csv",
+      "bytes": 34,
+      "SHA256": "d9e32d7009e69387ab8b3ca4a7a541753dcc8613f4e347956415234b0ebe8c09",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "6c6fa849d8dd2870dc22ddd897c5b8f907de6359",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/payload_corruption/output/steady_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/payload_corruption/output/transient_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/payload_corruption/registry/c6d9baffeb06db2f7a1361045ff2d89e8b94781ebfdd73d25007476c26559e36.json",
+      "bytes": 233,
+      "SHA256": "45dad4aff6a01808d440646700f7be1f51f74177ebae2e3e22035c066aa1a6b0",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "0cf8c76e18423a29c6f83dc78eb26a4e2082e240",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/output/COMPLETE.json",
+      "bytes": 1473,
+      "SHA256": "32f1ff96737a3cf810a41767874f728b2f6966752d1b9a209eecae3af86bb582",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "9ef9b7a5d19e617816a6d956fe1be5e5a29d54d7",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/output/ENVIRONMENT.json",
+      "bytes": 50,
+      "SHA256": "dd22e9572cab4f83d1521f72abe93af33ac89f4c54692055020a596039d3c454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "766362b2066a0f3665ea753da689107d96c52785",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/output/SCIENCE_IDENTITY.json",
+      "bytes": 259,
+      "SHA256": "a0e2ab5d656b95778acef257c1262cf0ce34e16ad2e6260107648ca3e89f567e",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "d74b56b8ec5a04736e1615bbb4a3c8db7afc1552",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/output/SCIENCE_SUMMARY.json",
+      "bytes": 277,
+      "SHA256": "3765ff59b76ba033b0235c295c722d7712affe2ca77e7e0819ccc40b1b984b33",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "009c7004e1c1e9abfb0b44294d5676a749491f6a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/output/execution_events.jsonl",
+      "bytes": 56,
+      "SHA256": "0cc64d43f586c825f22a736bd39ec7ccad3a6132cbfe9cbea8b0be466483ee26",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f137be51156515b4aa908303a2b1d037ec0cee94",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/output/rate_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/output/steady_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/output/transient_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/registry/80da6972b9e3bd0d6ef2fe9211ec54f8497fc8be6304a4faa870d64613e0c3ce.json",
+      "bytes": 233,
+      "SHA256": "4b9807971d31c44722eabc3b5c909217d33f1a46068c2d5b9521ebffed793ab6",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "2165318bc040e2e79c5483da734616cac5c62f64",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/restored_output/COMPLETE.json",
+      "bytes": 1473,
+      "SHA256": "32f1ff96737a3cf810a41767874f728b2f6966752d1b9a209eecae3af86bb582",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "9ef9b7a5d19e617816a6d956fe1be5e5a29d54d7",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/restored_output/ENVIRONMENT.json",
+      "bytes": 50,
+      "SHA256": "dd22e9572cab4f83d1521f72abe93af33ac89f4c54692055020a596039d3c454",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "766362b2066a0f3665ea753da689107d96c52785",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/restored_output/SCIENCE_IDENTITY.json",
+      "bytes": 259,
+      "SHA256": "a0e2ab5d656b95778acef257c1262cf0ce34e16ad2e6260107648ca3e89f567e",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "d74b56b8ec5a04736e1615bbb4a3c8db7afc1552",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/restored_output/SCIENCE_SUMMARY.json",
+      "bytes": 277,
+      "SHA256": "3765ff59b76ba033b0235c295c722d7712affe2ca77e7e0819ccc40b1b984b33",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "009c7004e1c1e9abfb0b44294d5676a749491f6a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/restored_output/execution_events.jsonl",
+      "bytes": 56,
+      "SHA256": "0cc64d43f586c825f22a736bd39ec7ccad3a6132cbfe9cbea8b0be466483ee26",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f137be51156515b4aa908303a2b1d037ec0cee94",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/restored_output/rate_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/restored_output/steady_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/portable_restore/restored_output/transient_grid.csv",
+      "bytes": 23,
+      "SHA256": "c473db52d51a72c4fc1e35b6bf8fbb63921e448bb329e261dedfc823342818dc",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "3f41668bbf6ef3c2fe044ed3ec055904f54796b3",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/runtime_exclusion/synthetic_input_unit/CONTRACT.json",
+      "bytes": 40,
+      "SHA256": "a07f11f4bc68cc084a8a4e2843c8c2ff0ded7779b63ee7788cf1163fc606ffc5",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "023839178b819a4ea0cd0be67816016bd2c8e558",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/runtime_exclusion/synthetic_input_unit/source/frozen_star.py",
+      "bytes": 48,
+      "SHA256": "e4a93582ebe400afe1a78645fb1bb166fc5406d2e8a6716a3a3e6a5f179e5414",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "8e850d108252eae0d30bb4db4ec24bdff6e7bdef",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/runtime_exclusion/synthetic_input_unit/source/matched_ce.py",
+      "bytes": 47,
+      "SHA256": "312b70d6ce876109d068b74fd5bebe31eefd3fc7859d217f04ca4b7b66be53f3",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "0dacd642144c66bd8f08b5cc3dadad76f28918fa",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/runtime_exclusion/synthetic_input_unit/source/run_study.py",
+      "bytes": 46,
+      "SHA256": "f9db6ed545828a5d22efb5186fb7530749cfcf097937e93634744d27c715470d",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "bed46bdb42d8942d27a97d5beb3e5a0fed74d28b",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/runtime_exclusion/synthetic_input_unit/source/vendor/ci_finite_c22d.py",
+      "bytes": 58,
+      "SHA256": "6461bfeab15d6ecffda050660ac1c42041fa862bf219e6a47255cf3ac0c0a4ef",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "14348b155189a75581c7f81008e3500360ec7a1e",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/runtime_exclusion/synthetic_input_unit/source_data/CCC_1S.2P",
+      "bytes": 48,
+      "SHA256": "0578463584b76d19f83383d63cc24865b7b1011a9dd8778e4894110bae568053",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "ba52d531ebf27611022a3fb254fef00b2f870806",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/runtime_exclusion/synthetic_input_unit/source_data/CCC_1S.2S",
+      "bytes": 48,
+      "SHA256": "4858467e027a4c08571cb1d8d5ad549acba7d16d197f9a76b4c2cdb1daa3db8d",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "944b4ebb5637d0dcf1170691b70f403da2d06663",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/runtime_exclusion/synthetic_input_unit/source_data/CCC_2P.1S",
+      "bytes": 48,
+      "SHA256": "9e4dbc979c3c059a2948b5a6b9373b51fe34a837372e075392377a78d44b8324",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "9ddf91ca322346a54e381b2ec633218d564bae60",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/runtime_exclusion/synthetic_input_unit/source_data/CCC_2S.1S",
+      "bytes": 48,
+      "SHA256": "5cea6f3d51ab6da64d80776e3d17f02e3a569805fd2dddbac03957f3b03c37b6",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "79e44e458149dc5a2fbc4604de38559eb756677a",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/runtime_exclusion/synthetic_input_unit/source_data/HI_CE_SOURCE_CONTRACT.json",
+      "bytes": 65,
+      "SHA256": "e7b3d3d6ecf60f3c1659de92a0780362c8a5d6fc4d60276c7013c09c72806530",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "78952c5bbf4c040bdae6fbe54079e63df49f2b59",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/runtime_exclusion/synthetic_input_unit/source_data/h_1.elvlc",
+      "bytes": 48,
+      "SHA256": "b4d02d6b2f09f6593bf28174abcfbfabf816a3aa45fba78ac70fdcfe69de9039",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "2b56a2699737282d9ff021854acef463b6b9615d",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/runtime_exclusion/synthetic_input_unit/source_data/h_1.wgfa",
+      "bytes": 47,
+      "SHA256": "87204d3c6fdb2368e966eb2957f2fbf18a08eec0a14633307d0261e08cfb0e57",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "e00b8ff5733a6cb9fb0958162e812722c7e3e574",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/RESULT.json",
+      "bytes": 5476,
+      "SHA256": "4a6fdca445295184d3f3e41fa715b9c9865d9c008ebb8ed1e96b4223fc2564de",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "b37b276044b2392076b7d0f086da195382d48c1e",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/START.json",
+      "bytes": 690,
+      "SHA256": "f5b7fe34dbff235acacf61affed44a8ac6f239b89a65d122278720a79295fcf3",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "c22a6e9626fc497798653cfaf465eb510ddb815c",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/checks.jsonl",
+      "bytes": 11539,
+      "SHA256": "86fb2250647ff9eaedbfc49747650df1051465a3aaa5f0953e35cc080e21821e",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "f805d94ba9fb2b5e4b780dd6ecd4f4b69baa3d24",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/science_first.json",
+      "bytes": 5252,
+      "SHA256": "49530e3d38aa01f701818c31565e4a5f9a236d8090dd4a100ffe8b92a071b3db",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "513ade249f292670e7b645968b2bb5b09875d85e",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "research/hh_phys83_ce_completion_20261023/verification/science_resume_01.json",
+      "bytes": 237,
+      "SHA256": "9aafedede024f382868dd696c2b9597a8346b0029cc21ff8eb9d689eef32e720",
+      "archive_and_extracted_bytes_match": true,
+      "git_blob_SHA1": "8be21080c04ede963587351bf5a0016a4e134bf5",
+      "matches_saved_fresh_remote_pin": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/BASS_HE_recent.json",
+      "bytes": 25546,
+      "SHA256": "729c1810887cb3b5c9bb2794656e01fe8de3820989bd66ee02242239f2e24e54",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/actualref_bass183.json",
+      "bytes": 1750,
+      "SHA256": "3731038c36281b155017e8580f0bbc32bdf9634a98072fd0ce16529c63715f61",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/actualref_cr96.json",
+      "bytes": 1809,
+      "SHA256": "fe2ca9ceef3ff8a496f0d0726becb139539f508499f417d4297430d0b385da37",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/actualref_he37.json",
+      "bytes": 1823,
+      "SHA256": "6f4752085c0d3df6e6cfde5eef968850166788722a95bb3a411c767763837c39",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/actualref_he38.json",
+      "bytes": 1809,
+      "SHA256": "18b7d1a3e64eeeecd9a01947fe86d3db4156eabbec2f567607d6620cb8faf75d",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/actualref_hh138.json",
+      "bytes": 1944,
+      "SHA256": "01a7b64625e025fb36e05cdfd48aa597095e8da152fe2ef314c896f7b5723693",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/actualref_hh139.json",
+      "bytes": 1892,
+      "SHA256": "119362032b355c8430a1b3dee639b3a3aa78e3f462bf802f7d89bf45f1d1d370",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/actualref_rec126.json",
+      "bytes": 1749,
+      "SHA256": "6d46e3935749e52eee0188b20ef7764de3614723ceca32c5c60f5201475b4617",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/actualref_rec129.json",
+      "bytes": 1799,
+      "SHA256": "37ec52c94b9e71d30bb5d4141493cdcb59c90babb49b96d4f4c2fced855f8539",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/actualref_rei221.json",
+      "bytes": 1889,
+      "SHA256": "7b126386ce1945b337609d7a246fbb7c80d749a07507d9fa74db70a3a9595351",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/angtherm01_commit.json",
+      "bytes": 221167,
+      "SHA256": "a7d6af16586b91b95c18e088f8ecb22dcd73fc7b9c02975510b902d19475b10e",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/bass_cr_recent.json",
+      "bytes": 26286,
+      "SHA256": "cf4f08dd1535546167b0efa2077b63b4eea3ed212de92fc8754000e369fecbe8",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/bass_recent.json",
+      "bytes": 20340,
+      "SHA256": "1864d57459abd67ef67c4b52101d0bf35166475ba94251e5bd6ce3c771fe26d9",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/branch83.json",
+      "bytes": 270,
+      "SHA256": "6f28d9b7153fa96fa3a01728f4e38939fb2d2a1e1277a673cffe599aeb09ce4e",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/c23a_branches.json",
+      "bytes": 180,
+      "SHA256": "5e098e6b40514275ddd4cc4491459ab051dc43f03436fd3e10fde634926ce818",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/c23a_final_commit.json",
+      "bytes": 226364,
+      "SHA256": "8db30fcc9efbe762c8b22b7e61aa198fdd57db08f363fe50035fe003cad4d3f2",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/c23a_science_commit.json",
+      "bytes": 3396141,
+      "SHA256": "fb68311ccca7ae19d215c3cac1470a9ab9a4653faf27c0bfc39f0d8a230e8fec",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/c23b_finalauthority.json",
+      "bytes": 14823,
+      "SHA256": "dab191c269066fa571c1e1b99dc1ec0e3ded4afb7648f4ea4cf458deef53ac6a",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/c23b_report.json",
+      "bytes": 21635,
+      "SHA256": "85e0ce9a0b5ba84e359ceeb2d767b61477c6c21aff838b12f27ad49be2961f5a",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/contract.json",
+      "bytes": 3523,
+      "SHA256": "3879c6c7c4d787ab290ce5c3f3b98824898d059601cf82a4436de3111c15efb5",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/cr96_delta.json",
+      "bytes": 81468,
+      "SHA256": "577e247c6acb3b9b0909fec8aca56014c132f0a27b3cf05483ce0a19163c3074",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/cr96_pr.json",
+      "bytes": 9169,
+      "SHA256": "558fe57fc71b4eda61365f1a79c7b21c2117090d14852154a5fd0f856e24c9ef",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/dag.json",
+      "bytes": 6471,
+      "SHA256": "2f13a4ef7941a0851c6593738e4a8e6c5fb8598e4023e0039a2dcdf6c51649e4",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/drive_parent82.json",
+      "bytes": 673,
+      "SHA256": "e62e63540201b8ca1c126d72d04b150727d81d8d896a938afd4e80827415c31a",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/dropbox_parent_list.json",
+      "bytes": 214,
+      "SHA256": "9e6d833238f98e0120a9d549bbfef525233201cd9199bc2d88d3454209c7d123",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/he37_commit.json",
+      "bytes": 1570714,
+      "SHA256": "649c8e16b457ba8303dd14fe9d71f97370b3a745a4d30808fdc8f843f5461417",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/he37_compare.json",
+      "bytes": 18220,
+      "SHA256": "f018aac24b9f69ff4165cab4445d5e11365757973c73a60e25cf910a24a5ee4f",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/he38_finalack.json",
+      "bytes": 668,
+      "SHA256": "541962a04b1743a860cec249747b9ed93465c096bb802b5305968775ae7577df",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/he38_finalack_new.json",
+      "bytes": 2177,
+      "SHA256": "01c34b313e4d21e2ffbe58250f23676f791334c93fc69ae3c4493706da4ba9bb",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/he38_movement.json",
+      "bytes": 4786,
+      "SHA256": "41b9e7f9c82a90378c5c1278f52f22e9af0d1c6b2b1ac04ae970adeb9bd2739b",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/he38_pr91.json",
+      "bytes": 2811,
+      "SHA256": "10aed8a488256a3ef58b6276af372d6065fa284d846d043a7c4495631935c937",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/he38_readme.json",
+      "bytes": 3302,
+      "SHA256": "c53e208ec55dae371e5a7d05f90037009adf8424adbbfdd9790d85cfd54dbb84",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/he38_run.json",
+      "bytes": 3761,
+      "SHA256": "44ec2ca1d275e722d6ab082b95bb5699ff9b4ce4ea1836f130c1cd0a04ea0add",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/hh_recent.json",
+      "bytes": 39841,
+      "SHA256": "119eb6e060847fc7c25ad8e38e7a232a1e05b6385c45ba1e1b6702fd306be1b0",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/line02_pr129.json",
+      "bytes": 2866,
+      "SHA256": "0a794d8a1cea0acf0cc99a62d56ad02e6692025942501322abcaa6ab34eda338",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/own_parentage.json",
+      "bytes": 8402,
+      "SHA256": "1ef98259f2698d7271187d3f15976c9eedf2dddc97741e8c405e796fbbdbefc5",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/p83_README_md.json",
+      "bytes": 2499,
+      "SHA256": "61b4bf8339d204b576c48227393ad44562bd5b48a513420ef7da1fc57594034a",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/p83_STAGE_STATUS_json.json",
+      "bytes": 1138,
+      "SHA256": "1b8a5f56f6fdfb28e8e70508a74e2000d6d196b2fcaa003155bbc700d7630f12",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/p83_inventory_CURRENT_INTAKE_KO_md.json",
+      "bytes": 14921,
+      "SHA256": "6a59c05d1e4a8ad223ca497a78e67eee51ea9881672dd94380f83727155f16ca",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/p83_inventory_CURRENT_REFS_json.json",
+      "bytes": 96431,
+      "SHA256": "00a41fb71341889e4037c230cf7299aaa87d5531ea6abb0eb694725eec6f23a1",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/p83_inventory_PRODUCER_RECEIPT_INDEX_json.json",
+      "bytes": 6719,
+      "SHA256": "384e58ca87412c60334f08b0ce43a71f1ae8c55a7d66c3e63930ebbc3b52a801",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/phys83_drive.json",
+      "bytes": 10416,
+      "SHA256": "9e1397d2ff657cc04a5eb3f4a61f269c0e5b06e22952427315da861d7eabe418",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/phys83_drive_folder.json",
+      "bytes": 171441,
+      "SHA256": "9997ddb9f0c98c9d37b7da3939e4a7409045a8469cac86a582ead89c7c779f8a",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/phys83_drive_name.json",
+      "bytes": 3673,
+      "SHA256": "bc7aad3ec2c8e970735790af63e0ab232f72b822869d6afc1777c653f797f012",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/phys83_drive_name_fixed.json",
+      "bytes": 915,
+      "SHA256": "d0e40e0b9755909e407cdcff6d2fdeb7abfddb02849e5ba8d7f2ad358f96278f",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/phys83_dropbox.json",
+      "bytes": 244,
+      "SHA256": "c0818db9c28a3ade781658ae245145b034d3fbb2da0f4f3efa5c896906abedb1",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/phys83_dropbox_folder.json",
+      "bytes": 558346,
+      "SHA256": "b3efddaf270f0201a26785c2c7f6e07e2969fa721af788c31e541c9b03e424d3",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/phys83_pr.json",
+      "bytes": 2649,
+      "SHA256": "cd6e0e6783ce15ce25c124d8d64a0c2bbde1f2f5df1798b33ba08f8f227ef83a",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/post_handoff82.json",
+      "bytes": 2595,
+      "SHA256": "42c5ded5313b0f436c66b39ffe2341b2d044000c6884c139aa604c030aefcb66",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/pr138.json",
+      "bytes": 13050,
+      "SHA256": "4f2d343a6c156fc789134ec18ca4f17897ac000f0c30a2174279c59fba37da77",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/pr139_files.json",
+      "bytes": 2704,
+      "SHA256": "679321ca828b70ebfa2c992d1fc0b652260f3a7a3a0565ce239686f6cc2122f7",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/rec126_commit.json",
+      "bytes": 1912564,
+      "SHA256": "e3c529bd7ab5c37f51a7ebf9c7a0f9d4345a8b8b09c94f1c5a67564ec585d196",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/rec_bianchi_recent.json",
+      "bytes": 32011,
+      "SHA256": "1b607a7aed45e8f1f9df6b5676850865256cfbcab5b12ca250473949494a4cba",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/rei221_delta.json",
+      "bytes": 5472,
+      "SHA256": "3ce1ab6a56a9e704c063c914e4cb2dddad42c34964937cfcc190651d44263bca",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/rei221_pr.json",
+      "bytes": 11844,
+      "SHA256": "50c26e3db1142dffc7a203990c26d907d40c831789a845039f40189065ee80ec",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/rei_bianchi_recent.json",
+      "bytes": 30976,
+      "SHA256": "f30e2a30d79aa8c75f4cde8dc6d173c8b00ad806d34722c86ca836ec1af2f337",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/rei_li_prepared.json",
+      "bytes": 2004,
+      "SHA256": "0950bb8f2b252e8522f956c85a116f0613e8370a661f745b7ff9a284224a6528",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/relevant_repos.json",
+      "bytes": 4395,
+      "SHA256": "d87d557e08b843217173f4aac8a3452614e66f54d48d7edb17577de122050178",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/updated5_BASS_HE.json",
+      "bytes": 219759,
+      "SHA256": "476e45b37b8d7c44ce72a7f83a83bdd0dbe9d1409cd5ca100546e0a3cb11c32a",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/updated5_WU088_HH.json",
+      "bytes": 246222,
+      "SHA256": "bdcfb3d3355dfa5e5b387b8d328c770235d6673cf65a65511e0667784a47218a",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/updated5_bass.json",
+      "bytes": 203820,
+      "SHA256": "da298b57ed187121843063f491687871501c589f76fa68b1854a0a0df21eccf8",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/updated5_bass_cr.json",
+      "bytes": 215209,
+      "SHA256": "8d5377d2c3b1bd162c07411d73a112360705a86d9e0c42b3b4defbce8bc5cdce",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/updated5_rec_bianchi.json",
+      "bytes": 236681,
+      "SHA256": "33656dbb141cf73ac491bf5c3db4eab98a1a253a8f3ca273046ebd2f7618fee6",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_delta/receipts/updated5_rei_bianchi.json",
+      "bytes": 232517,
+      "SHA256": "a7e8eb8ff7797b140055871bb3a5528ff0d240aca45a24211ff6853561b007ff",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/ce_sources/anderson2000.pdf",
+      "bytes": 116577,
+      "SHA256": "af5985766f7bcb18e8a51648b43604c93bf2e75cbb5100079a56048d5515c90b",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/ce_sources/anderson2000.txt",
+      "bytes": 30348,
+      "SHA256": "86d2f05d02f3e0372bf5569880d908967454f085d6553a0825e7711e47e0b453",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/ce_sources/anderson2002.pdf",
+      "bytes": 14371,
+      "SHA256": "05139dd27f444e88f1ccf092e184d1fec106abdca450075d09829eaf2fa42ae2",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/ce_sources/anderson2002_exa_extract.txt",
+      "bytes": 11922,
+      "SHA256": "a8bcc34cbe69351c0acee289edda37e14d55ba56e047b64a6e9f2f4473655f74",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/ce_sources/anderson2002_http_challenge.html",
+      "bytes": 14371,
+      "SHA256": "05139dd27f444e88f1ccf092e184d1fec106abdca450075d09829eaf2fa42ae2",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/ce_sources/download_manifest.json",
+      "bytes": 991,
+      "SHA256": "03db68000b0f4a09818b7cd187ded84e9e40114666b2f4f390eae491ac474f96",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/ce_sources/kulkarni_shull2023.pdf",
+      "bytes": 1598213,
+      "SHA256": "09aaee044131e25ff3e653788129ba45e65cdf947e5db032b829d133e09acb87",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/ce_sources/kulkarni_shull2023.txt",
+      "bytes": 80693,
+      "SHA256": "411825ea2469cb7a20f1ac3a5ae4948e1c11cf2f1f1b938bd3d627a1ddbec549",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/ce_sources/report.md",
+      "bytes": 7230,
+      "SHA256": "d26e66144caf5ed08843a45e1d4470962be1283f1890925c82bf66811900d120",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/ce_sources/source_manifest.json",
+      "bytes": 6472,
+      "SHA256": "ef452d8dc82d94320bccf1990cd6e3355c67201ea44afdc37443ea3b9efd743b",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/ce_sources/tool_receipts.json",
+      "bytes": 187832,
+      "SHA256": "46eb010e89e59cee74eac79edf62ad93e3ea782292fe9bb634a1552d937bdee0",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/ce_sources/tool_receipts_additional.json",
+      "bytes": 18709,
+      "SHA256": "8ee4194e6ae4f86d7e9e63c88e1e7485236ebe49713de076c46cf866a852ca8b",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/nuclear_ownership/CODING_ADOPTION_MAP.md",
+      "bytes": 4096,
+      "SHA256": "0481a36c3491122cca282b3afadab51569c3bf55cd9833ca3272df1a4b893754",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/nuclear_ownership/CODING_STATIC_COMPILE.json",
+      "bytes": 433,
+      "SHA256": "76e8304255179b7c91f89897a9a94efdb34bdc922567eb229f69fbb99f5572e3",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/nuclear_ownership/MANIFEST.json",
+      "bytes": 1389,
+      "SHA256": "921862f2f49b9abdfa2fe8571526c9e5d234d8364c4f9988702fe8435e3610fc",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/nuclear_ownership/NUCLEAR_OWNERSHIP_CONTRACT.json",
+      "bytes": 12543,
+      "SHA256": "22dd085b22931d46d67f0b7b3e7b6aa684442348b1b754de1d3f20d559a49b94",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/nuclear_ownership/NUCLEAR_THERMAL_FAST_OWNERSHIP_KO.md",
+      "bytes": 16010,
+      "SHA256": "4bb5ba569deb96fd754c1a56d111e27b11e0261b4709c4edb8676c1aaaef0326",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/nuclear_ownership/initial_tool_receipts.json",
+      "bytes": 49662,
+      "SHA256": "9a5ab1f228f52bad4f8d11c30db4cd499df85e8527d1c12d314133a688e49c2e",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/nuclear_ownership/ownership_checks.wl",
+      "bytes": 1393,
+      "SHA256": "d4e1e0a20e53a00cac63d04a6a1c938da70c7f21fdd14ef32de60dd8c7869cb4",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/nuclear_ownership/primary_source_receipts.json",
+      "bytes": 24427,
+      "SHA256": "d320f89af6e3eabe30f3fb47607868585a0ba3a3149948ee67528c0ecf211598",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/nuclear_ownership/wolfram_moment_receipt.json",
+      "bytes": 1505,
+      "SHA256": "969bd38b79a428f85127ad402d8319b494d4842bafbd568c3863120f5ae02fd9",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/nuclear_ownership/wolfram_symbolic_receipt.json",
+      "bytes": 2212,
+      "SHA256": "ff8bbf0cd6a9c900dc684eff08b043573089ce6c63327664cfe93aacc837d6c4",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/runtime_wheels/mpmath-1.3.0-py3-none-any.whl",
+      "bytes": 536198,
+      "SHA256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/RECEIPT_MANIFEST.json",
+      "bytes": 18055,
+      "SHA256": "c85b32977777488e720cc8e80a28e73ecc66b334118c8bfbd90be2eb9df58d63",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/angtherm02_implemented.json",
+      "bytes": 2292,
+      "SHA256": "137c3f8a47d6ee78dc0e99498ebcc821a20615b54ea6d6a0cfdfa8ed885e4739",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/angtherm02_observed.json",
+      "bytes": 7019,
+      "SHA256": "6209e43cf9191ba9a301466da307cd604e44bc9ddc2bb91000265316aae66273",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/angtherm02_review.json",
+      "bytes": 5292,
+      "SHA256": "b0f44d55a0dee79db791e660da263bb442fc80df7e5cc497ceac218e966207fb",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/bass184_report.json",
+      "bytes": 9282,
+      "SHA256": "e3544eabd5bf9de7bfbb749febeb8590bd6994291fda25ec61faed7eda634d07",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/bass184_results.json",
+      "bytes": 3791,
+      "SHA256": "b1664f6e7883bd4d23384d5ada7acd2a71ac2025ec530b8eb62ce506d7a27808",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/compare_rec129.json",
+      "bytes": 628835,
+      "SHA256": "920927a88e70bf8a28aaa23617744f35c9c2863d31db28414bc00033d29a9661",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/compare_rei221.json",
+      "bytes": 272183,
+      "SHA256": "466e8004544b834f4089a639aa0f35ce0870b830f556fb9963f4824d89085977",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/compare_rei222.json",
+      "bytes": 903365,
+      "SHA256": "3978494db6049f5e448567e1007ae16377be57b497922d4d37d8fec7499ce41a",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/latest_BASS_HE.json",
+      "bytes": 110515,
+      "SHA256": "5b28a652a6c76ec1be3ae6349748d2adc8941830d5efe677fcbe911228be526c",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/latest_WU088_HH.json",
+      "bytes": 124195,
+      "SHA256": "d3a776a51ede06151be7d52ccacf367c9bfad03f3158e6e25bf9f0714cde1a3a",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/latest_bass.json",
+      "bytes": 103633,
+      "SHA256": "cfca96bc210cb5fccb6dfe9e06798aecb78915d74238333e9d14d32245bd4d82",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/latest_bass_cr.json",
+      "bytes": 107615,
+      "SHA256": "ef8a90b70e4b1c6905ab16787098f42c88f26b7aa192024c0df7c9defd303d9a",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/latest_rec_bianchi.json",
+      "bytes": 122761,
+      "SHA256": "f1a3bdb6fc27cd63f2f84ba5ba81a87dfc17deb1d00e63188f27b4c891b3a8f8",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/latest_rei_bianchi.json",
+      "bytes": 116271,
+      "SHA256": "73630a375a66b89fa8f80fa5f78bd58a4c7130db7a2f11628cd55b231fa5ce12",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/pr138.json",
+      "bytes": 30250,
+      "SHA256": "504585b2b650f6d45f94420adee0aabff10e2ecd954b3e8f75c24cf321b1d361",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/pr139.json",
+      "bytes": 20434,
+      "SHA256": "480aee02e4b37e9139369db40edad75cdce81d743351e5a65bdfb76b438364e3",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/pr140.json",
+      "bytes": 20216,
+      "SHA256": "cc6a7532d7a0b022614171b809e0e03e04a4fa1c69ed05f12d07d32f4dcce60f",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rec129_dir.json",
+      "bytes": 21285,
+      "SHA256": "c4f45325106fd35deff47ed8c240ca7300ed1ffd27f363687166cde030878f67",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rec129_report.json",
+      "bytes": 21394,
+      "SHA256": "15285faa445112d74bb27b014295ba68c717c31abfb9d41e47a955d8ed869ec3",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rec129_summary.json",
+      "bytes": 3322,
+      "SHA256": "f5a44c2547f01878ff91b09608a0c0fe41529f2ab14a1fb86cbe46126fa0f0bd",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/ref138.json",
+      "bytes": 911,
+      "SHA256": "144fb1bb8a3d3679479694f1bf9d4fbd8a069743afe6769fe1051ff6fbd0b79a",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/ref139.json",
+      "bytes": 893,
+      "SHA256": "20d34db625ba09dc4684b09011727632fddff50bff33ad2ee0fef48d77eafd14",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/ref140.json",
+      "bytes": 863,
+      "SHA256": "a4619c1deb8c8fb5b1473f5add3fd4b7bbee088c2b823397eb3f1152adf08e5e",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/ref_bass_184.json",
+      "bytes": 853,
+      "SHA256": "ae712a6e43b2c84dd0292c7c76989ef1ef891f03c75949d354e82c73ff762370",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/ref_rei_bianchi_222.json",
+      "bytes": 876,
+      "SHA256": "e384134239f49ef0da306a1aeeea8d53e1655ad582c6305977f703758cb08ab1",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/refresh_actualref_bass183.json",
+      "bytes": 861,
+      "SHA256": "11a9728a52dbeed024145552846eea2be413f04219428befceed856a7ea253b4",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/refresh_actualref_cr96.json",
+      "bytes": 880,
+      "SHA256": "193fcc41a57f4c96dac253184c7a258185eee1e30d912692f851ed80c677b574",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/refresh_actualref_he37.json",
+      "bytes": 885,
+      "SHA256": "9a308e7b9dbcf6933eef89542df2c1f9f7cb7c008d2533b9df161a5bf2933719",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/refresh_actualref_he38.json",
+      "bytes": 880,
+      "SHA256": "237fdb152df087731aedabf67a171161b05a59eb0aeddeb52bb504917b5750f0",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/refresh_actualref_rec126.json",
+      "bytes": 864,
+      "SHA256": "f56c3c719cd913873a43426e83e50c4d1464ca0466d4cd05e0af6509d0e048c6",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/refresh_actualref_rec129.json",
+      "bytes": 881,
+      "SHA256": "cc3232088706c1c7f1c7fc7e0f963a1f9ffd8f1f14b580e3b334bc954d2dcf05",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/refresh_actualref_rei221.json",
+      "bytes": 912,
+      "SHA256": "ac491beaded6593a8a415dd03d482194995df6df2bb4a7a33a4d557f8172418d",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rei221_dir.json",
+      "bytes": 38129,
+      "SHA256": "bb061bba87eea31cabc88f2571c44fd126a9918242d5bda4a69edde444bb6ea6",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rei221_final.json",
+      "bytes": 64031,
+      "SHA256": "2cc2e04a170a5b87e3c10a616d302079dbd32efad9c1a9d6b4e2c928aab0e54c",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rei221_report.json",
+      "bytes": 20580,
+      "SHA256": "bb6e3a9627734514f5f0fecde1107a8e5e687852774d85cb2ec1f5d72a0d9e52",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rei221_run.json",
+      "bytes": 19451,
+      "SHA256": "9125794c9998b41827896a95f688ff16329753792abda8b6d525433b8ab24587",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rei222_current_report.json",
+      "bytes": 3400,
+      "SHA256": "34d690904c3aa7202f9eb3777a366cab04fc181d2f2fd4cc75ea065aaebe57e1",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rei222_current_result.json",
+      "bytes": 89156,
+      "SHA256": "8094b9cd71d6cd50a2885b9103390d1855671aaff623beb691070abf7f28b3e8",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rei222_delta.json",
+      "bytes": 13907,
+      "SHA256": "28c4cc39a8151b0d57acb5f5f7c96e15e06ddd00440b378c86ac4fbbaa4dc8ce",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rei222_dir.json",
+      "bytes": 14428,
+      "SHA256": "133aca2c611c94a7f3aad7927c6362e82080897b9d7c47463d315cfbd7036f48",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rei222_hh_handoff.json",
+      "bytes": 13140,
+      "SHA256": "e07adaaa428767e54777adaebc47898811ea608161715189781807720a77d4f5",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "private_evidence/current_refresh/receipts/rei222_report.json",
+      "bytes": 7627,
+      "SHA256": "327ecfe3af2e9e06c2d06aaff9d57e5f3b746863e6f985fd510ca1d7e28ff213",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "parent_recovery/PHYS82_FINAL_20261023_ca9d53983459.zip",
+      "bytes": 883808,
+      "SHA256": "427427e8d809943e225d89b138cfe93761efd39d2d7fc787a733da92aed3da61",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    },
+    {
+      "path": "parent_recovery/PHYS82_FINAL_DELIVERY_20261023.json",
+      "bytes": 217324,
+      "SHA256": "19eecc88f4a297ad8347678b8d08a0c6cd68581255538ec1f462d530280ee054",
+      "archive_and_extracted_bytes_match": true,
+      "pass": true
+    }
+  ],
+  "frozen57_results": [
+    {
+      "path": "CONTRACT.json",
+      "bytes": 6315,
+      "SHA256": "d9eb980df5236e2b2ca3da313813c3ca2b21562f90486f1173d0ea509bc4dcc5",
+      "pass": true
+    },
+    {
+      "path": "figures/01_finite_matched_rates.pdf",
+      "bytes": 21981,
+      "SHA256": "bf0ee431ed47485e656c52dce3021712bddbf71debec7a114c91604328823016",
+      "pass": true
+    },
+    {
+      "path": "figures/01_finite_matched_rates.png",
+      "bytes": 164175,
+      "SHA256": "5d254b7d6b6595a9f1a6dec49533964d72e905d584582b8d2c48baeed96b02fb",
+      "pass": true
+    },
+    {
+      "path": "figures/02_steady_coronal_suppression.pdf",
+      "bytes": 23961,
+      "SHA256": "ef8fae1d00a4711b9315088b23fc4e2c2d3ceb13b9e97bd37d6ce8a0f31e03b7",
+      "pass": true
+    },
+    {
+      "path": "figures/02_steady_coronal_suppression.png",
+      "bytes": 246410,
+      "SHA256": "7f26a3bf2c01be2551941764c06649daaa57a641817f0ae6ac587ec8e4bb4ab7",
+      "pass": true
+    },
+    {
+      "path": "figures/03_transient_energy_accounting.pdf",
+      "bytes": 38070,
+      "SHA256": "a8d5bccf04dafeaff31db9766341db795af65642935e6d02c19177b40d1bf06a",
+      "pass": true
+    },
+    {
+      "path": "figures/03_transient_energy_accounting.png",
+      "bytes": 349067,
+      "SHA256": "cd81cc3c825f845b1314fc9330c0c6f884727e2b735a4d9cddd38b98c3342c67",
+      "pass": true
+    },
+    {
+      "path": "figures/PLOT_RUN_RECEIPT.json",
+      "bytes": 3407,
+      "SHA256": "e047520f2fe474355d749f4f16c8d107b336f8b9c909d9649cbfc6c036c71163",
+      "pass": true
+    },
+    {
+      "path": "results/COMPLETE.json",
+      "bytes": 6250,
+      "SHA256": "6a69c5552a9a311c14c55575ae1ee058d746fd377a23a21f7636ad3cc7854761",
+      "pass": true
+    },
+    {
+      "path": "results/ENVIRONMENT.json",
+      "bytes": 455,
+      "SHA256": "6ba05f53f4bd225ac10dd4d89b566662e77bab6ccfb68fead9ccec642caae4b2",
+      "pass": true
+    },
+    {
+      "path": "results/SCIENCE_IDENTITY.json",
+      "bytes": 1831,
+      "SHA256": "ca2ceebb71bff3e682dcf01761e3f5e2770d220a27bf38ac4817d8aad6622d46",
+      "pass": true
+    },
+    {
+      "path": "results/SCIENCE_SUMMARY.json",
+      "bytes": 4776,
+      "SHA256": "77cb3b440e29678cd64b2834c41233416ef5bfe9276bacf1c2c7c1f036c2d1b9",
+      "pass": true
+    },
+    {
+      "path": "results/execution_events.jsonl",
+      "bytes": 1795,
+      "SHA256": "9e6588a444554e31aa3d30e63d928a7bef807f1f410f1c9ec6c3248425869f8b",
+      "pass": true
+    },
+    {
+      "path": "results/rate_grid.csv",
+      "bytes": 46819,
+      "SHA256": "64e53e02b776db2aee6d67ce03201cbc0b90404d7cdf40e52cccaaecd2fc3017",
+      "pass": true
+    },
+    {
+      "path": "results/steady_grid.csv",
+      "bytes": 121853,
+      "SHA256": "1ad1e93ded30c3a8285ec5d939bdb5617e4fdb8c708643e699b7df450c9ecc78",
+      "pass": true
+    },
+    {
+      "path": "results/transient_grid.csv",
+      "bytes": 434612,
+      "SHA256": "c0a252703eb680066222e31db4a44241277e03e55e556ba08aea591ecec9cea6",
+      "pass": true
+    },
+    {
+      "path": "source/frozen_star.py",
+      "bytes": 12414,
+      "SHA256": "78421356c6b985d845f452f42e6b03c8ea657171ad826df51b3a1dbcf454578f",
+      "pass": true
+    },
+    {
+      "path": "source/leased_call.py",
+      "bytes": 2550,
+      "SHA256": "ae8f28e435b77fd9d073d8152faf655994f20022bba5d7ac31e2c1b66dd9b548",
+      "pass": true
+    },
+    {
+      "path": "source/matched_ce.py",
+      "bytes": 14892,
+      "SHA256": "475ee6f84c5e19945324859a9c4c5e229d8ab5e92e8658ad5b3da39472c1744e",
+      "pass": true
+    },
+    {
+      "path": "source/nuclear_ownership.py",
+      "bytes": 10033,
+      "SHA256": "be0739a0cc63d4f53f06b450b300bce09aa41878cd4462c0753798d6639684d2",
+      "pass": true
+    },
+    {
+      "path": "source/plot_saved_results.py",
+      "bytes": 16437,
+      "SHA256": "24b2194cf5262bfebf955f30cc4e794042f1831e07cdaaaab781c57c316fed78",
+      "pass": true
+    },
+    {
+      "path": "source/requirements-verification.txt",
+      "bytes": 142,
+      "SHA256": "29b2eaf85fe6cfd10208e4d827859fd04207675ab70aa4088e278bcad922ca6a",
+      "pass": true
+    },
+    {
+      "path": "source/run_study.py",
+      "bytes": 12713,
+      "SHA256": "dee42bcd164fbdfdceedc72200df53e2e687bf5978caddd1f5a40c63bc360f85",
+      "pass": true
+    },
+    {
+      "path": "source/vendor/ci_finite_c22d.py",
+      "bytes": 8350,
+      "SHA256": "859cdf616ffa165c9fb3c3372d2202f5449e4b9a74a289a725fe456e26eb55b2",
+      "pass": true
+    },
+    {
+      "path": "source/vendor/phys78_run_pilot.py",
+      "bytes": 28068,
+      "SHA256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+      "pass": true
+    },
+    {
+      "path": "source_data/CCC_1S.2P",
+      "bytes": 29366,
+      "SHA256": "00857e46838c5538da8b047363105b306bc1ba5c827700161749d5d712fa0e5a",
+      "pass": true
+    },
+    {
+      "path": "source_data/CCC_1S.2S",
+      "bytes": 29366,
+      "SHA256": "f4afdbdeccc49a58055ab86750b14ce10dd2091da55bd380a19f3d7a13c337d0",
+      "pass": true
+    },
+    {
+      "path": "source_data/CCC_2P.1S",
+      "bytes": 29393,
+      "SHA256": "12cf46fa0904a5b227092a0a6a3ae6d8a20c041cf11c2981d3bb8bd1f6ac313d",
+      "pass": true
+    },
+    {
+      "path": "source_data/CCC_2S.1S",
+      "bytes": 29393,
+      "SHA256": "e8e0092e7be97abe4a90ce100e3101d1f6f225eee2d4ad1ba740f57de819997b",
+      "pass": true
+    },
+    {
+      "path": "source_data/CCC_PARSE_AND_SOURCE_RECIPROCITY.json",
+      "bytes": 1401,
+      "SHA256": "5e86b39fa4fd37480f4a8eef0418a169f0ce2c98ec208e24b5acd491fa20849f",
+      "pass": true
+    },
+    {
+      "path": "source_data/CCC_PRINT_PRECISION_CONSISTENCY.json",
+      "bytes": 691,
+      "SHA256": "15f908ff67caced565600f307033f3868879cc03b4408ae02fb0e5503120aaae",
+      "pass": true
+    },
+    {
+      "path": "source_data/CCC_README",
+      "bytes": 676,
+      "SHA256": "f48aa3eee41e3dd78c887218b64e097490fb50c17b5b15840a701cc9ef984ece",
+      "pass": true
+    },
+    {
+      "path": "source_data/CCC_e-H_README",
+      "bytes": 580,
+      "SHA256": "1d4a324a12f43c0d800cffeb5c4d7500d94e08a85f7bad66e4f80afaacb1f2eb",
+      "pass": true
+    },
+    {
+      "path": "source_data/HI_CE_SOURCE_CONTRACT.json",
+      "bytes": 16647,
+      "SHA256": "1983e17f57ab5ab0e9f8c5dde1bc679451ca670440fe79d0fec3de4efb4a812b",
+      "pass": true
+    },
+    {
+      "path": "source_data/h_1.elvlc",
+      "bytes": 2423,
+      "SHA256": "f7286ef6837989eba038b7b055c8db9f4e1ce8a6a0b3270ccc399fd0b2f6a75b",
+      "pass": true
+    },
+    {
+      "path": "source_data/h_1.wgfa",
+      "bytes": 6621,
+      "SHA256": "f16d0f5033632ce5a3104bfa4dfec9c98fc14bb2e05f682be3468419c9a90179",
+      "pass": true
+    },
+    {
+      "path": "theory/CONSTRUCTIVE_SCOPE_AND_NO_GO_REVIEW_KO.md",
+      "bytes": 3448,
+      "SHA256": "79f30008706a09e43f1c0b4b40484d81a440b3b9a4a61cb9fd232b4b52680c6e",
+      "pass": true
+    },
+    {
+      "path": "theory/EXECUTION_IDENTITY_AND_RECOVERY_KO.md",
+      "bytes": 2598,
+      "SHA256": "58c1fc939f680baf87a596723f14994db411e87e816bc1498a458da27569f0f5",
+      "pass": true
+    },
+    {
+      "path": "theory/MATCHED_CE_IMPLEMENTATION_MAP_KO.md",
+      "bytes": 5974,
+      "SHA256": "b66696877a381556ab35c3678db4634c2e827e14df65a2e599c30ddfe414f181",
+      "pass": true
+    },
+    {
+      "path": "theory/NUCLEAR_CODING_ADOPTION_MAP_KO.md",
+      "bytes": 4096,
+      "SHA256": "0481a36c3491122cca282b3afadab51569c3bf55cd9833ca3272df1a4b893754",
+      "pass": true
+    },
+    {
+      "path": "theory/NUCLEAR_OWNERSHIP_CONTRACT.json",
+      "bytes": 12543,
+      "SHA256": "22dd085b22931d46d67f0b7b3e7b6aa684442348b1b754de1d3f20d559a49b94",
+      "pass": true
+    },
+    {
+      "path": "theory/NUCLEAR_THERMAL_FAST_OWNERSHIP_KO.md",
+      "bytes": 16010,
+      "SHA256": "4bb5ba569deb96fd754c1a56d111e27b11e0261b4709c4edb8676c1aaaef0326",
+      "pass": true
+    },
+    {
+      "path": "theory/PARENT_DERIVATION_KO.md",
+      "bytes": 24048,
+      "SHA256": "2d31b237fe3f91fedb4d44f9e7a947e57a1f01a41494b9d45aae2bb80588b445",
+      "pass": true
+    },
+    {
+      "path": "theory/PARENT_MATCHED_KERNEL_CORE_KO.md",
+      "bytes": 3499,
+      "SHA256": "527397225c224342b6c48b17eab28c88bced649a6b8255d50146c9df4a7fedfa",
+      "pass": true
+    },
+    {
+      "path": "theory/PARENT_SYMBOLIC_CHECK.wl",
+      "bytes": 1049,
+      "SHA256": "c8b136f4542f4fb97438387ac885c2bb96b8c4c8678ff891bd33c503466896d3",
+      "pass": true
+    },
+    {
+      "path": "theory/PARENT_WOLFRAM_SYMBOLIC_RECEIPT.json",
+      "bytes": 607,
+      "SHA256": "34ad06a5d924087fc44955b3a72436958ca48ca3168648f34a3496dcb0175c7b",
+      "pass": true
+    },
+    {
+      "path": "theory/PLOT_SAVED_RESULTS_CONTRACT_KO.md",
+      "bytes": 4109,
+      "SHA256": "a5f958e76e4efd7b13bc6e3c961ab1d61db5059544aa65d9079847a926e485a6",
+      "pass": true
+    },
+    {
+      "path": "theory/ownership_checks.wl",
+      "bytes": 1393,
+      "SHA256": "d4e1e0a20e53a00cac63d04a6a1c938da70c7f21fdd14ef32de60dd8c7869cb4",
+      "pass": true
+    },
+    {
+      "path": "verification/INDEPENDENT_VERIFICATION_AGGREGATE.json",
+      "bytes": 18103,
+      "SHA256": "58eddb6e341e2579ccc09285f9ed0fb4d0119dcc45901aa6fc821638920e8527",
+      "pass": true
+    },
+    {
+      "path": "verification/PLOT_VISUAL_REVIEW.json",
+      "bytes": 2239,
+      "SHA256": "bf3e1e4db62c0b82d687218c42d5d75cfc767a0666f58b787621cbac776666fa",
+      "pass": true
+    },
+    {
+      "path": "verification/ce_attempt_02/RESULT.json",
+      "bytes": 61712,
+      "SHA256": "13a86473a77985e9b125fc58f9a15b09f0aa8e5a324fee29005f643b230e7a97",
+      "pass": true
+    },
+    {
+      "path": "verification/lease_science_first.json",
+      "bytes": 5742,
+      "SHA256": "73963d64e5c626b9bd301bf843b3b2e81ae4c13baafff55a3f31e7b9f99d3460",
+      "pass": true
+    },
+    {
+      "path": "verification/lease_science_resume_01.json",
+      "bytes": 1471,
+      "SHA256": "941e632b1cc0bdf4da39cfafa665654c180470dbca5a71bc708739a0cd625fa6",
+      "pass": true
+    },
+    {
+      "path": "verification/nuclear_attempt_01/RESULT.json",
+      "bytes": 4033,
+      "SHA256": "735de8c2dfe8b7374303044ffc012a9e20324198f251a9d4085c7e24e06ef1aa",
+      "pass": true
+    },
+    {
+      "path": "verification/runner_mock_attempt_01/RESULT.json",
+      "bytes": 5476,
+      "SHA256": "4a6fdca445295184d3f3e41fa715b9c9865d9c008ebb8ed1e96b4223fc2564de",
+      "pass": true
+    },
+    {
+      "path": "verification/science_first.json",
+      "bytes": 5252,
+      "SHA256": "49530e3d38aa01f701818c31565e4a5f9a236d8090dd4a100ffe8b92a071b3db",
+      "pass": true
+    },
+    {
+      "path": "verification/science_resume_01.json",
+      "bytes": 237,
+      "SHA256": "9aafedede024f382868dd696c2b9597a8346b0029cc21ff8eb9d689eef32e720",
+      "pass": true
+    }
+  ],
+  "saved_row_counts": {
+    "rate_grid.csv": {
+      "rows": 132,
+      "columns": [
+        "upper_level",
+        "temperature_K",
+        "q_up_cm3_s",
+        "q_down_cm3_s",
+        "log_q_up_cm3_s",
+        "log_q_down_cm3_s",
+        "log10_q_up_cm3_s",
+        "log10_q_down_cm3_s",
+        "float64_underflow_up",
+        "float64_underflow_down",
+        "M0_eV2_cm2",
+        "M1_eV3_cm2",
+        "mean_excess_eV",
+        "mean_incoming_up_eV",
+        "mean_incoming_down_eV",
+        "dlogq_up_dT_K_inv",
+        "dlogq_down_dT_K_inv",
+        "dq_up_dT_cm3_s_K",
+        "dq_down_dT_cm3_s_K",
+        "finite_source_only"
+      ],
+      "unique_temperature_labels": 66
+    },
+    "steady_grid.csv": {
+      "rows": 324,
+      "columns": [
+        "temperature_K",
+        "electron_density_cm3",
+        "population_ground",
+        "population_2s",
+        "population_2p",
+        "critical_density_2s_cm3",
+        "critical_density_2p_cm3",
+        "radiative_events_2s_per_s",
+        "radiative_events_2p_per_s",
+        "escaped_power_eV_per_s",
+        "emitted_photons_per_s",
+        "coronal_reference_power_eV_per_s",
+        "exact_to_coronal_2s",
+        "exact_to_coronal_2p",
+        "coronal_relative_overestimate_2s",
+        "coronal_relative_overestimate_2p",
+        "slow_decay_per_s",
+        "fast_decay_per_s",
+        "ground_depletion_ratio",
+        "finite_star_only"
+      ],
+      "unique_temperature_labels": 4
+    },
+    "transient_grid.csv": {
+      "rows": 732,
+      "columns": [
+        "temperature_K",
+        "electron_density_cm3",
+        "time_s",
+        "population_ground",
+        "population_2s",
+        "population_2p",
+        "integral_ground_s",
+        "integral_2s_s",
+        "integral_2p_s",
+        "excitation_2s_events",
+        "excitation_2p_events",
+        "deexcitation_2s_events",
+        "deexcitation_2p_events",
+        "two_photon_events",
+        "M1_events",
+        "E1_events",
+        "emitted_photons",
+        "atomic_excitation_eV",
+        "escaped_radiation_eV",
+        "thermal_change_eV",
+        "heat_withdrawal_eV",
+        "raw_event_thermal_change_eV",
+        "raw_energy_residual_eV",
+        "gross_energy_scale_eV",
+        "normalized_raw_energy_residual",
+        "event_balance_2s",
+        "event_balance_2p",
+        "nuclei_residual",
+        "numerical_branch",
+        "finite_star_only",
+        "prescribed_bath"
+      ],
+      "unique_temperature_labels": 2,
+      "profiles": 6
+    }
+  },
+  "reused_verification": {
+    "status": "PASS_SCOPED",
+    "named_cases": 71,
+    "assertions": 2111,
+    "CE_assertions": 1885,
+    "nuclear_assertions": 171,
+    "runner_mock_assertions": 55,
+    "saved_result_readback_groups": 21,
+    "saved_readback_included_in_2111": false,
+    "Exa_searches": 3,
+    "SciSpace_searches": 1,
+    "new_Wolfram_successful_evaluator_calls": 2,
+    "new_Wolfram_zero_residuals": 10,
+    "parent_Wolfram7_reused": true,
+    "parent_source_reciprocity902_reused": true,
+    "PNG": 3,
+    "PDF": 3,
+    "plot_visual_review": "PASS_SCOPED",
+    "final_document_review": "DOCUMENT_REVIEW_PASS_SCOPED",
+    "continuum_certificate": false
+  },
+  "reused_execution_ledger": {
+    "historical_completed_identity_reexecutions": 0,
+    "parent_symbolic7_reused": true,
+    "parent_source_reciprocity902_reused": true,
+    "source_literature": {
+      "new_Exa_searches": 3,
+      "new_SciSpace_searches": 1
+    },
+    "new_nuclear_symbolic": {
+      "successful_Wolfram_evaluator_calls": 2,
+      "zero_residuals": 10
+    },
+    "new_CE_science": {
+      "attempts": 1,
+      "completed": 1,
+      "failed": 0,
+      "paired_rate_evaluations": 132,
+      "T": 66,
+      "steady_rows": 324,
+      "transient_profiles": 6,
+      "transient_rows": 732,
+      "scientific_identity": "e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c",
+      "source_checkpoint": "cedf70d886e61fabe4e4f10f5d9cddc1b15ba3dd",
+      "receipt": "verification/science_first.json",
+      "science_result_commit": "1f5b11524abc351027d0f88cea009f0015dd088f"
+    },
+    "new_empirical_nuclear_rates": 0,
+    "new_stopping": 0,
+    "new_cosmological_ODE": 0,
+    "benchmark": 0,
+    "other_processes_terminated": 0,
+    "HH_R10": "OFF",
+    "production_admission": "NOT_ISSUED",
+    "verification": {
+      "CE": {
+        "environment_attempts": 2,
+        "environment_import_failures": 1,
+        "numerical_attempts": 1,
+        "passed_cases": 53,
+        "assertions": 1885,
+        "failed_numerical_cases": 0
+      },
+      "nuclear": {
+        "attempts": 1,
+        "passed_cases": 5,
+        "assertions": 171,
+        "physical_rate_callbacks": 0,
+        "parent_PHYS81_callbacks": 0
+      },
+      "runner_mock": {
+        "attempts": 1,
+        "passed_cases": 13,
+        "assertions": 55,
+        "real_calculate_callbacks": 0
+      },
+      "total_assertions": 2111,
+      "status": "PASS_SCOPED",
+      "continuum_certificate": false
+    },
+    "prevalidation_static_findings": {
+      "count": 2,
+      "invalidated_scientific_results": 0,
+      "repaired_before_corresponding_runtime_validation": true,
+      "ordering": "Frozen-star guard before CE numerical verification; runner manifest guard after CE/nuclear verification and before first runner mock validation"
+    },
+    "actual_resume": {
+      "attempts": 1,
+      "completed_identity_skips": 1,
+      "scientific_callbacks": 0,
+      "receipt": "verification/science_resume_01.json"
+    },
+    "plotting": {
+      "runs": 1,
+      "PNG": 3,
+      "PDF": 3,
+      "science_callbacks": 0,
+      "visual_audit": "PASS_SCOPED",
+      "receipt": "verification/PLOT_VISUAL_REVIEW.json"
+    },
+    "sampled_science_diagnostics": {
+      "max_abs_normalized_raw_energy_residual": 2.433784209198325e-16,
+      "max_abs_nuclei_residual": 1.1102230246251565e-16,
+      "minimum_sampled_population": 0.0,
+      "numerical_branches": [
+        "separated_roots",
+        "small_time_series",
+        "zero_time"
+      ],
+      "negative_clipping_used": false,
+      "finite_sample_is_continuum_certificate": false
+    },
+    "current_delta_refresh": {
+      "scope": "6repos x latest5PR plus12actualrefs and selected15files",
+      "window_UTC": "2026-10-23T15:00:44.912Z..15:02:50.279Z",
+      "duplicate_PHYS83_completion_found": false,
+      "evidence": "inventory/PRE_SCIENCE_CURRENT_DELTA_REFRESH.json"
+    },
+    "saved_results_readback": {
+      "groups": 21,
+      "status": "READBACK_PASS_SCOPED",
+      "numerical_verification_repeated": 0,
+      "kernel_imports": 0,
+      "rate_callbacks": 0,
+      "population_solves": 0,
+      "evidence": "verification/SAVED_RESULTS_REVIEW.json",
+      "included_in_2111_assertions": false
+    },
+    "stage_publication": {
+      "S0": "65c6751d363363cfc15eba0c7debf50eb493c1c9",
+      "S1": "cedf70d886e61fabe4e4f10f5d9cddc1b15ba3dd",
+      "S2": "1f5b11524abc351027d0f88cea009f0015dd088f",
+      "final": "external PHYS83_CONT_FINAL_DELIVERY_20261023.json"
+    },
+    "stage_backup": {
+      "S0": "DUAL_UPLOAD_ACK",
+      "S1": "DUAL_UPLOAD_ACK",
+      "S2": "DUAL_UPLOAD_ACK",
+      "S2_Dropbox_transfer_attempts": 2,
+      "S2_Dropbox_transfer_failures": 1,
+      "final_full_restore": "external PHYS83_CONT_FINAL_DELIVERY_20261023.json; not inferred from stage ACKs"
+    }
+  },
+  "reused_final_restoration_receipts": {
+    "Drive": {
+      "status": "PASS_FULL_BYTE_RESTORATION",
+      "counts": {
+        "zip_entries_expected": 385,
+        "original_crc_entries_verified": 385,
+        "downloaded_crc_entries_verified": 385,
+        "payload_entries_excluding_manifest_expected": 384,
+        "payload_sha256_size_verified": 384,
+        "repository_git_blobs_expected": 252,
+        "repository_git_blobs_recomputed_verified": 252,
+        "private_evidence_entries_expected": 132,
+        "local_git_cat_file_blobs_verified": 252,
+        "actual_files_extracted": 385,
+        "extracted_bytes_compared_to_original_verified": 385
+      },
+      "finished_utc": "2026-10-23T15:38:45.599968+00:00",
+      "proof_origin": "reused immutable owner receipt; no provider download in this audit"
+    },
+    "Dropbox": {
+      "status": "PASS_FULL_BYTE_RESTORATION",
+      "counts": {
+        "zip_entries_expected": 385,
+        "original_crc_entries_verified": 385,
+        "downloaded_crc_entries_verified": 385,
+        "payload_entries_excluding_manifest_expected": 384,
+        "payload_sha256_size_verified": 384,
+        "repository_git_blobs_expected": 252,
+        "repository_git_blobs_recomputed_verified": 252,
+        "private_evidence_entries_expected": 132,
+        "local_git_cat_file_blobs_verified": 252,
+        "actual_files_extracted": 385,
+        "extracted_bytes_compared_to_original_verified": 385
+      },
+      "finished_utc": "2026-10-23T15:37:31.354387+00:00",
+      "proof_origin": "reused immutable owner receipt; no provider download in this audit"
+    }
+  },
+  "stage_backup_scope": "S0/S1/S2 are dual upload ACK; no inference of whole-stage restoration. Final ZIP is separately actually downloaded and fully restored from both providers.",
+  "budget": {
+    "inherited_monetary_spend": null,
+    "remaining": null,
+    "currency": null,
+    "status": "UNKNOWN_NOT_ZERO",
+    "basis": "Owner ledger provides execution quantities and 0.5GiB single worker/thread receipts, not a monetary campaign balance; retain central unknown budget.",
+    "new_heavy_launch": false
+  },
+  "admission": {
+    "node": "WU_CE83_OWNER_COMPLETION",
+    "owner_completion": "NUMERICALLY_CHECKED_SCOPED",
+    "consumer_admission": "NOT_ISSUED",
+    "reason": "Named consumer, its source/domain/frame/process owner and valid branch/clock mapping must be bound in separate additive consumer work.",
+    "owner_radiative_process": "detached_own_spontaneous",
+    "T_domain_K": [
+      255.0,
+      50000.0
+    ],
+    "gap_eV": 10.20435,
+    "fixed_ne_T": true,
+    "optically_thin": true,
+    "finite_source_only": true
+  },
+  "new_execution_accounting": {
+    "scientific_module_imports": 0,
+    "rate_callbacks": 0,
+    "population_solves": 0,
+    "numerical_test_suite_runs": 0,
+    "resume_invocations": 0,
+    "science_replays": 0,
+    "provider_downloads_in_this_audit": 0,
+    "remote_mutations": 0,
+    "other_processes_terminated": 0
+  },
+  "audit_failure_history": {
+    "metadata_attempt01": "KeyError scientific_callbacks; owner key is science_callbacks; prior script and failure preserved; no numerical or science execution",
+    "receipt": "AUDIT_ATTEMPT01_FAILURE.json"
+  },
+  "remaining_scope": [
+    "No source physical confidence interval",
+    "No coupled thermal/charge/geometry trajectory",
+    "No continuum certificate",
+    "Finite-splitting 2s2p mixing and spectroscopic/isotope energy remain OPEN",
+    "No empirical nuclear rate or fast-product stopping activation"
+  ]
+}

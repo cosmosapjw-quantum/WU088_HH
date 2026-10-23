@@ -1,0 +1,237 @@
+{
+  "schema": "PHYS84_FRESH_C9_INDEPENDENT_REVIEW_V1",
+  "reviewer": "/root/adapter_independent_review",
+  "independent_of_implementation": true,
+  "scope": "Static PHYS84 source interface, persistence and verification design; later read-only verification/application outcome review",
+  "decision": "STATIC_REVIEW_PASS_NUMERICAL_ADMISSION_WAIT",
+  "reviewed_local_HEAD": "ce14c0bfc0318662673b021a08f4029d6a36c7a7",
+  "parent_final_HEAD": "6a2fc5aacb6182a916b9434c316e99e750e8273c",
+  "contract_SHA256": "01528db5b31bd27cb0a9ae623b92cd0821ac4b42bfb4b3792ce3cc56c6e8280f",
+  "parent_science_identity": "e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c",
+  "skill_context_used": {
+    "version": "physmath-research-loop 1.3.0",
+    "selected_stage": "C9",
+    "read": [
+      "SKILL.md",
+      "references/POLICY_INTEGRATION.md",
+      "references/CODING_LOOP.md",
+      "references/SUBAGENT_MODE.md"
+    ],
+    "applied": "One fresh read-only review, bounded observed-defect repair, unchanged physics and acceptance, no recursive audit or historical execution"
+  },
+  "reviewed_v2_SHA256": {
+    "source/fixtures.json": "6cf2a671e0378d7e03446af9fe766b2d0286e9e69c1e272a1c17b43317833c4f",
+    "source/leased_call.py": "9380387ea0c039bf542216294542fd490313aa206d3bc48475a73b3ff5c30a76",
+    "source/run_source.py": "7c6394805c2cd1e3fcf93a31cf24416a64844fd6e1c9abb89965a429e9847303",
+    "source/source_adapter.py": "8e61bab7ebc40d075965b980852d6b2d97f5c7e1421bfe31600ca4e19bfc258d",
+    "verification/verify_source.py": "c14b2d93628dd6bcc7b00ea709017341368e14417a745f038c0c46e9f805d794"
+  },
+  "reviewed_v4_SHA256": {
+    "source/fixtures.json": "6cf2a671e0378d7e03446af9fe766b2d0286e9e69c1e272a1c17b43317833c4f",
+    "source/leased_call.py": "f15ae64c40dadcee0995344c9d90d3de314e2c9689a303b1b045271878c6a752",
+    "source/run_source.py": "b7931f7f90702805e1d9f79518524eb264ba491752c41379774734f3fe3f7fb8",
+    "source/source_adapter.py": "8e61bab7ebc40d075965b980852d6b2d97f5c7e1421bfe31600ca4e19bfc258d",
+    "verification/verify_source.py": "9ab8cad5ef7b91b97decf49cbf934eb353a40acef0fb517ace5409d1368a240d"
+  },
+  "findings": [
+    {
+      "id": "C9-S3",
+      "status": "CLOSED_STATIC",
+      "object": "run_source.build_identity",
+      "defect": "Runtime implementation/version entered scientific identity",
+      "repair": "Runtime moved to attempt diagnostic; physical and source pins preserved",
+      "evidence": "implementation/S3_S4_S5_REPAIR.diff"
+    },
+    {
+      "id": "C9-S4",
+      "status": "CLOSED_STATIC",
+      "object": "leased_call module import",
+      "defect": "Preserved parent bytecode could be written without outer env",
+      "repair": "sys.dont_write_bytecode=True before lease import",
+      "evidence": "implementation/S3_S4_S5_REPAIR.diff"
+    },
+    {
+      "id": "C9-S5",
+      "status": "CLOSED_STATIC",
+      "object": "verification fixture counter",
+      "defect": "Partial failing run could report literal16 as actual evaluations",
+      "repair": "Increment actual counter immediately before fixture call; expected16 separate",
+      "evidence": "implementation/S3_S4_S5_REPAIR.diff"
+    },
+    {
+      "id": "C9-S1B",
+      "status": "CLOSED_STATIC",
+      "object": "run_source.persist COMPLETE check",
+      "defect": "Python equality treats canonical row_count16.0 as equal to expected16; parsed-object canonicalization alone cannot reject that byte change",
+      "repair": "Compare complete_bytes directly with encoded(expected), plus numeric-type mutation mock guard",
+      "evidence": "implementation/C9_S1B_REPAIR.diff and live v5 source/verification hash readback",
+      "repair_verified": "complete_bytes != encoded(expected) rejects canonical numeric-type change; one row_count16.0 mock corruption control added"
+    }
+  ],
+  "decision_history": [
+    {
+      "scope": "v2 static review",
+      "decision": "HOLD_PRE_RUNTIME_REPAIR",
+      "blocking_findings": [
+        "C9-S3",
+        "C9-S4",
+        "C9-S5"
+      ],
+      "executions": 0
+    },
+    {
+      "scope": "v4 targeted repair readback",
+      "decision": "HOLD_PRE_RUNTIME_EXACT_COMPLETION_BYTES",
+      "closed_findings": [
+        "C9-S3",
+        "C9-S4",
+        "C9-S5"
+      ],
+      "blocking_findings": [
+        "C9-S1B"
+      ],
+      "executions": 0
+    },
+    {
+      "scope": "Recovered v4 five-file identity and authorized v5 S1B minimal diff",
+      "decision": "GO_TARGETED_VERIFICATION",
+      "closed_findings": [
+        "C9-S1B"
+      ],
+      "blocking_findings": [],
+      "executions": 0,
+      "utc": "2026-10-23T21:38:20.477157+00:00"
+    },
+    {
+      "scope": "First bounded verification request and independent pinned resource-gate review",
+      "decision": "STATIC_REVIEW_PASS_NUMERICAL_ADMISSION_WAIT",
+      "static_blocking_findings": [],
+      "resource_gate": "WAITING_FOR_SHARED_LEASE",
+      "outer_exit_code": 75,
+      "child_started": false,
+      "numerical_tests": 0,
+      "source_interface_calls": 0,
+      "real_application_callbacks": 0,
+      "policy_change": false
+    }
+  ],
+  "physics_and_numerics_static": {
+    "status": "NO_BLOCKING_FINDING",
+    "event_count": 7,
+    "explicit_states": [
+      "1S",
+      "2S",
+      "2P"
+    ],
+    "source_native_delta_eV": "10.20435",
+    "photon_2gamma_count": 2,
+    "photon_2gamma_event_energy_delta_multiplicity": 1,
+    "energy_columns": [
+      "gas_thermal",
+      "chemical_binding",
+      "atomic_excitation",
+      "radiation_injected",
+      "escaped_radiation",
+      "source_reservoir"
+    ],
+    "routes_exclusive": true,
+    "emitted_energy_diagnostic_not_double_counted": true,
+    "thermal_particle_number_source": 0,
+    "exact_saved_T_only": true,
+    "oracle": "Independent Fraction from CSV decimal literals and separately transcribed event algebra; no production reference helper",
+    "positive_relative_tolerance": 2e-12,
+    "signed_gross_normalized_tolerance": 2e-13,
+    "underflow_overflow": "Conservative explicit rejection; no silent clipping"
+  },
+  "execution_accounting": {
+    "reviewer_numerical_tests": 0,
+    "reviewer_real_application_callbacks": 0,
+    "reviewer_parent_science_callbacks": 0,
+    "new_verification_at_review": 0,
+    "new_real_application_at_review": 0,
+    "historical_replays": 0,
+    "mock_vs_actual_application": "Separate",
+    "inherited_monetary_budget": null,
+    "lease_requests": 1,
+    "lease_refused_before_child": 1,
+    "numerical_tests": 0,
+    "fixture_interface_calls_actual": 0,
+    "fixture_interface_calls_planned": 16,
+    "mock_persistence_callbacks_actual": 0,
+    "real_applications_actual": 0,
+    "child_processes_started": 0,
+    "numerical_failures": 0,
+    "source_or_science_execution_failures": 0,
+    "outer_request_exit_code": 75,
+    "budget_reset": false
+  },
+  "verification_result_review": {
+    "status": "NOT_RUN_RESOURCE_LEASE_REFUSED",
+    "attempt": "verification/ATTEMPT_01.json",
+    "attempt_SHA256": "544b917197ed1e55f580180721ac808e0713ef8bc58f422c1a7545874072f4d1",
+    "outer_receipt": "verification/ATTEMPT_01_EXTERNAL_RECEIPT.json",
+    "outer_receipt_SHA256": "dfd145eaaadb886fb75ab2efc75b31ce94c86b332f3523332352f1097b56c4cf",
+    "resource_diagnosis": "verification/RESOURCE_DIAGNOSIS_01.json",
+    "resource_diagnosis_SHA256": "a779d79676a96444b1ae5771c607cc725835d36f88cf4c76af29e212b87a1d11",
+    "resource_review": "reviews/RESOURCE_GATE_REVIEW_KO.md",
+    "resource_review_SHA256": "0c2d39009c08e7797ac2111ee57f73ee4bd44de1d2f0b942871253b1c35b61fc",
+    "new_tests_executed": 0,
+    "numeric_assertions_pass_claim": false,
+    "lease_admission_policy": "Unchanged pinned source, reserve1.5GiB+job0.5GiB, no cache credit or reclaim override",
+    "reviewer_resource_source_imports": 0,
+    "reviewer_numeric_reruns": 0
+  },
+  "application_result_review": {
+    "status": "NOT_RUN"
+  },
+  "next_action": "Publish and preserve prepared v5 code plus actual resource-WAIT evidence. Await genuinely changed ordinary resource observation satisfying unchanged shared-lease gate before root authorizes another bounded request. Numerical verification and the one16row application remain unexecuted; no S2 science claim.",
+  "claim_limits": [
+    "Finite sampled source interface only",
+    "REI-L1 binding OPEN",
+    "No coupled trajectory",
+    "No continuum certificate",
+    "No parent science reevaluation",
+    "No external consumer admission",
+    "No remote publication or backup certification by this reviewer"
+  ],
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "reviewed_v5_SHA256": {
+    "source/fixtures.json": "6cf2a671e0378d7e03446af9fe766b2d0286e9e69c1e272a1c17b43317833c4f",
+    "source/leased_call.py": "f15ae64c40dadcee0995344c9d90d3de314e2c9689a303b1b045271878c6a752",
+    "source/run_source.py": "a6df009ee87aae6941d5b7bf651338b4594aeb8392cc4c9d74c9cfe05f1516da",
+    "source/source_adapter.py": "8e61bab7ebc40d075965b980852d6b2d97f5c7e1421bfe31600ca4e19bfc258d",
+    "verification/verify_source.py": "1dafea3f8f369d41deeb750aa7181c0d7b0a29146522c1b4e479cece187d8c46"
+  },
+  "recovery": {
+    "root_reported_event": "Workspace reset after S0 publication and before first PHYS84 numerical execution",
+    "restored_local_HEAD": "ce14c0bfc0318662673b021a08f4029d6a36c7a7",
+    "v4_snapshot_against_pre_loss_SHA256": {
+      "source/fixtures.json": true,
+      "source/leased_call.py": true,
+      "source/run_source.py": true,
+      "source/source_adapter.py": true,
+      "verification/verify_source.py": true
+    },
+    "v5_live_against_frozen_SHA256": {
+      "source/fixtures.json": true,
+      "source/leased_call.py": true,
+      "source/run_source.py": true,
+      "source/source_adapter.py": true,
+      "verification/verify_source.py": true
+    },
+    "prior_review_restoration": "Exact original authored apply_patch text recovered; no pre-loss review-file digest was recorded, so current restored-document hashes do not establish an independent old-file SHA comparison",
+    "original_restored_review_SHA256": {
+      "INDEPENDENT_REVIEW.json": "cfce5cc47682ba7c2990e1e95a35441702ee4e9810af6034025bf0b07b1e42e4",
+      "INDEPENDENT_REVIEW_KO.md": "e07c30aa4ca9788120da707b6d8483b8db68e2335b49c7557a3cc964ea273036"
+    },
+    "evidence": [
+      "/tmp/wu84_review_recovery/RECOVERY_RECEIPT.json",
+      "/tmp/wu84_code_recovery/RECOVERY_RECEIPT.json",
+      "implementation/C9_S1B_REPAIR_RECEIPT.json"
+    ],
+    "current_contract_SHA256": "01528db5b31bd27cb0a9ae623b92cd0821ac4b42bfb4b3792ce3cc56c6e8280f",
+    "current_theory_SHA256": "11a7ce2519eb5dab598d5d14d66132d71c0d0928e696f54eb1dcf0ea8eb453d3",
+    "new_scientific_or_test_execution": 0
+  }
+}

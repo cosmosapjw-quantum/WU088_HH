@@ -1,0 +1,85 @@
+{
+  "schema": "WU_PHYS84_ADDITIVE_DAG_OVERLAY_V1",
+  "central_source_HEAD": "0f9d9df825be1dac9ca9bdf73cdc2e8908bcba17",
+  "central_source_path": "research/orchestration_longterm_20261023/assembly/DAG.json",
+  "original_central_files_modified": false,
+  "nodes": [
+    {
+      "id": "WU_CE83_OWNER_COMPLETION",
+      "status": "NUMERICALLY_CHECKED_SCOPED",
+      "transition_basis": "existing owner result adopted, not reexecuted",
+      "owner_HEAD": "6a2fc5aacb6182a916b9434c316e99e750e8273c",
+      "scientific_identity": "e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c",
+      "evidence": "adoption/OWNER_ADOPTION_AUDIT.json",
+      "new_science_runs": 0,
+      "consumer_admission": "NOT_ISSUED"
+    },
+    {
+      "id": "WU_HI_CE_INSTANTANEOUS_SOURCE_V1",
+      "depends": [
+        "WU_CE83_OWNER_COMPLETION"
+      ],
+      "status": "DERIVED_SCOPED",
+      "contract": "CONTRACT.json",
+      "implementation": "WRITTEN_AND_STATIC_REVIEWED",
+      "bounded_application": "NOT_STARTED",
+      "external_recipient": "REI-L1",
+      "external_admission": "NOT_ISSUED",
+      "numerical_verification": "WAITING_FOR_SHARED_LEASE",
+      "prepared_artifact_identity_SHA256": "dca969a27fa00a703efb4c9f341efb5e50b45b2d88f5896a66f2c4aeced0a0db",
+      "new_numerical_science_identity": null
+    },
+    {
+      "id": "WU_REI_CE_STATE_STORAGE_BINDING",
+      "depends": [
+        "WU_HI_CE_INSTANTANEOUS_SOURCE_V1"
+      ],
+      "status": "OPEN",
+      "required": [
+        "REI owner accepts explicit 1s/2s/2p state",
+        "excited-atom energy reservoir unique owner",
+        "source/domain/local clock binding",
+        "native/detached radiation exclusivity",
+        "spectrum and transport contract if activated"
+      ]
+    },
+    {
+      "id": "WU_NUCLEAR_PARTICLE_OWNERSHIP",
+      "status": "PARTIAL_REUSED_SCALAR_OWNERSHIP",
+      "evidence": "../hh_phys83_ce_completion_20261023/theory/NUCLEAR_THERMAL_FAST_OWNERSHIP_KO.md",
+      "physical_finite_T_event_provider": "OPEN",
+      "new_nuclear_rates": 0,
+      "new_stopping": 0
+    }
+  ],
+  "retained_open": [
+    "WU_LI_SOURCE_UNCERTAINTY",
+    "WU_HE_LI_CX_STATE_ENERGY",
+    "WU_D_PI_RR_MATCHED",
+    "WU_SPECTRAL_GEOMETRY_COUPLING",
+    "HI_2S_2P_MIXING_AND_SPECTROSCOPIC_ENERGY_MATCH",
+    "NUCLEAR_FINITE_T_EVENT_PROVIDER_AND_STOICHIOMETRY",
+    "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT",
+    "LI_HARD_UV_INNER_SHELL_SPECTRAL_CONTRACT",
+    "FULL_GEOMETRY_SPECTRAL_BACKREACTION"
+  ],
+  "budget": {
+    "inherited_spend": null,
+    "remaining": null,
+    "currency": null,
+    "policy": "unknown is not zero; no heavy launch"
+  },
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "resource_boundary": {
+    "receipt": "verification/ATTEMPT_01.json",
+    "required_available_GiB": 2.0,
+    "observed_available_GiB": 1.0545654296875,
+    "lease_granted": false,
+    "child_started": false,
+    "guard_changed": false,
+    "latest_readonly_recheck": "verification/RESOURCE_RECHECK_BEFORE_FINAL.json",
+    "latest_raw_cgroup_headroom_GiB": 0.1309814453125
+  },
+  "gate_note": "Owner completion NUMERICALLY_CHECKED_SCOPED is reused evidence. New adapter does not advance to IMPLEMENTATION_VERIFIED/NUMERICALLY_CHECKED_SCOPED until actual new validation/application passes. REI consumer admission remains separate."
+}

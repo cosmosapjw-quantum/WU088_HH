@@ -1,0 +1,64 @@
+{
+  "schema": "PHYS84_ADMISSION_WAIT_HANDOFF_V1",
+  "status": "ADMISSION_WAIT_FIRST_CHILD_NOT_STARTED",
+  "cwd": "/workspace/scratch/ebcaaaa20861/WU088_HH/research/hh_phys84_ce_source_adapter_20261023",
+  "code_sha256": {
+    "source/fixtures.json": "6cf2a671e0378d7e03446af9fe766b2d0286e9e69c1e272a1c17b43317833c4f",
+    "source/leased_call.py": "f15ae64c40dadcee0995344c9d90d3de314e2c9689a303b1b045271878c6a752",
+    "source/run_source.py": "a6df009ee87aae6941d5b7bf651338b4594aeb8392cc4c9d74c9cfe05f1516da",
+    "source/source_adapter.py": "8e61bab7ebc40d075965b980852d6b2d97f5c7e1421bfe31600ca4e19bfc258d",
+    "verification/verify_source.py": "1dafea3f8f369d41deeb750aa7181c0d7b0a29146522c1b4e479cece187d8c46"
+  },
+  "all_code_matches_frozen_v5": true,
+  "adapter_contract_sha256": "01528db5b31bd27cb0a9ae623b92cd0821ac4b42bfb4b3792ce3cc56c6e8280f",
+  "parent_inputs_and_lease_sha256": {
+    "results/rate_grid.csv": "64e53e02b776db2aee6d67ce03201cbc0b90404d7cdf40e52cccaaecd2fc3017",
+    "CONTRACT.json": "d9eb980df5236e2b2ca3da313813c3ca2b21562f90486f1173d0ea509bc4dcc5",
+    "results/SCIENCE_IDENTITY.json": "ca2ceebb71bff3e682dcf01761e3f5e2770d220a27bf38ac4817d8aad6622d46",
+    "results/COMPLETE.json": "6a69c5552a9a311c14c55575ae1ee058d746fd377a23a21f7636ad3cc7854761",
+    "source/vendor/phys78_run_pilot.py": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124"
+  },
+  "all_parent_pins_match": true,
+  "commands_not_executed": {
+    "verification_retry_pending_new_authorization": "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 BLIS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python source/leased_call.py --kind verification --label source-interface-attempt02 --receipt verification/ATTEMPT_02.json -- python verification/verify_source.py --attempt verification/attempt_02",
+    "application_pending_GO_RUN": "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 BLIS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python source/leased_call.py --kind application --label constructed-source-application01 --receipt results/APPLICATION_ATTEMPT_01.json -- python source/run_source.py --output results/source_application --authorize-new-16row-application",
+    "completed_resume_pending_GO_RESUME": "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 BLIS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python source/leased_call.py --kind resume --label source-completion-resume01 --receipt results/RESUME_ATTEMPT_01.json -- python source/run_source.py --output results/source_application --resume"
+  },
+  "pending_output_paths_absent": {
+    "verification/ATTEMPT_02.json": true,
+    "verification/attempt_02": true,
+    "results/APPLICATION_ATTEMPT_01.json": true,
+    "results/source_application": true,
+    "results/RESUME_ATTEMPT_01.json": true
+  },
+  "first_outcome": "verification/ATTEMPT_01.json + ATTEMPT_01_EXTERNAL_RECEIPT.json; exit75 no lease; child0",
+  "gates": [
+    "Keep pinned cooperative lease unchanged; no retry without root authorization",
+    "Successful targeted verification raw outcome must receive fresh independent review",
+    "Root S1 publication precedes GO_RUN",
+    "One new16row application only under explicit GO_RUN",
+    "One actual completed resume only under GO_RESUME; verify bytes and zero callback"
+  ],
+  "test_runs": 0,
+  "fixture_interface_calls": 0,
+  "real_application_callbacks": 0,
+  "old_rate_callbacks": 0,
+  "population_solves": 0,
+  "ODE": 0,
+  "historical_replays": 0,
+  "other_processes_terminated": 0,
+  "resources": {
+    "workers": 1,
+    "threads": 1,
+    "leased_GiB": 0.5,
+    "verification_cpu_cap_s": 30,
+    "verification_wall_cap_s": 60,
+    "application_and_resume_cpu_cap_s": 10,
+    "application_and_resume_wall_cap_s": 20
+  },
+  "budget": {
+    "inherited_spend": null,
+    "remaining": null,
+    "currency": null
+  }
+}
