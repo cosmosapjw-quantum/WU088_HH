@@ -140,6 +140,11 @@ RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT, D_PI_RR_MATCHED_SOURCE_MOMENTS, LI
 
 Draft PR138은 실제PHYS81 부모의 additive descendant다. S0 intake와S1 verified-code checkpoint를 게시하고 양쪽 provider 업로드ACK를 보존했다. S2 science와최종meta는 delivery/PUBLICATION_HISTORY.json에 분리한다. ACK와fullrawrestore는 별개의 상태다. 최종HEAD·ZIP SHA256·두providerIDs·CRC/payload/Gitblob 검증과 finalJSONreadback의 확정권위는 외부 PHYS82_FINAL_DELIVERY_20261023.json 및PR138 최종본문이다. 이 파일은 자기 commit hash나 archive hash를 자기 안에 넣는 순환구조를 만들지 않는다.
 
+
+## 최종 Git byte 복구
+
+최종 원격 blob 대조에서 PHYS81_LITERAL.csv 하나의 CRLF가 초기 text export에서 LF로 바뀐 사실을 확인했다. 로컬 과학 입력과 S0/S1/S2 백업 payload는 원본 bytes를 유지했으므로 저장 과학 결과와 scientific identity는 변하지 않았다. 원격 source pin은 변환된 CSV의 실행을 거부한다. 원본 bytes를 base64 Git blob으로 복구하는 추가 descendant를 만들고 최종 원격 전체 파일을 대조했다. delivery/TRANSPORT_BYTE_REPAIR.json이 관측된 이전 blob과 정확한 원본 identity를 기록한다. 과학 결과 commit6a5c5a48만 checkout하지 말고 외부 final-delivery JSON이 가리키는 최종 HEAD를 사용한다. 새 과학 실행0이며 final archive가 이 복구를 포함한다.
+
 ## Primary sources
 
 - [S1] Zapesochnyi & Aleksakhin, Sov.Phys.JETP28,41–45(1969): https://jetp.ras.ru/cgi-bin/dn/e_028_01_0041.pdf (원본bytes SHA와 pixel provenance는source contract).

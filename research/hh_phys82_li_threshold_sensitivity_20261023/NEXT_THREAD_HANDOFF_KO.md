@@ -4,7 +4,7 @@ Repository: https://github.com/cosmosapjw-quantum/WU088_HH
 Draft PR138: https://github.com/cosmosapjw-quantum/WU088_HH/pull/138
 Branch: research/hh-phys82-li-threshold-sensitivity-20261023
 Parent PHYS81: b3ec271a96cb67e583bffa9b61533802838236f9
-Frozen scientific commit: 6a5c5a48e0ef345ff438941d037c9452453b1fb3
+Scientific results commit (final source-byte restoration recorded separately): 6a5c5a48e0ef345ff438941d037c9452453b1fb3
 Scientific identity: caae042b139373a10c516d759854ad117d807e9f7ace8c365529a1621419b73f
 Unit: research/hh_phys82_li_threshold_sensitivity_20261023
 
@@ -37,3 +37,7 @@ HE37 d618344413193950ec3e4e499be526d1ed636d98: H1 stationary-heavy-target/isotro
 PHYS78/79/80/81/82 및 HH1231/REI729/HH74control63,C22D/E,REIlocalflows,REC124/125/126,HE34/35/36/37,ANGULAR01,C23A의완료identity를재실행하지않는다. runtime버전이다르다는이유만으로완료science를자동재실행하지않는다. 다른process를종료하지않고sharedlease와1worker/thread를지킨다.
 
 non-tiltedLRSBianchiI;reactinggaspi0,collisionlessDMpi_m별도. 같은normalorthonormalframe의signedmatter/radiationtensor를합한뒤norm,Frobenius=sqrt2×half-contraction. sampled검증은continuumcertificate아님. same-trajectorycomponents는species-offcausalexperiment아님. HH_R10=OFF. Production admission NOT_ISSUED.
+
+## 최종 Git byte 복구
+
+최종 원격 blob 대조에서 PHYS81_LITERAL.csv 하나의 CRLF가 초기 text export에서 LF로 바뀐 사실을 확인했다. 로컬 과학 입력과 S0/S1/S2 백업 payload는 원본 bytes를 유지했으므로 저장 과학 결과와 scientific identity는 변하지 않았다. 원격 source pin은 변환된 CSV의 실행을 거부한다. 원본 bytes를 base64 Git blob으로 복구하는 추가 descendant를 만들고 최종 원격 전체 파일을 대조했다. delivery/TRANSPORT_BYTE_REPAIR.json이 관측된 이전 blob과 정확한 원본 identity를 기록한다. 과학 결과 commit6a5c5a48만 checkout하지 말고 외부 final-delivery JSON이 가리키는 최종 HEAD를 사용한다. 새 과학 실행0이며 final archive가 이 복구를 포함한다.
