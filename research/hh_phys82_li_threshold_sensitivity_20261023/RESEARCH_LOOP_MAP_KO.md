@@ -9,20 +9,22 @@
 | R3 주장·전제 정렬 | source contract: 문헌/직접 유도/조건부 matching 구별 | 완료 |
 | R4 가설·표현 탐색 | L0/L1/W0/W1와 독립 ZA1969 slope | 완료 |
 | R5 구성적 유도 | positive gamma moments, derivative, envelope, exposure/event heat | 완료 |
-| R6 독립 검증 | 새 agent의 physics/API/수치 검증 | 진행 |
-| R7 판별 검증 | Wolfram4residual0; 독립 수치 계산 | 진행 |
-| R8 결과 판정 | 물리 confidence OPEN, 조건부 finite model 채택 | 수치 결과 대기 |
+| R6 독립 검증 | 새 agent의 physics/API/수치 검증 | 선택 범위 완료 |
+| R7 판별 검증 | Wolfram4residual0; 독립 수치 계산 | 선택 범위 완료 |
+| R8 결과 판정 | 물리 confidence OPEN, 조건부 finite model 채택 | 조건부 model PASS, physical uncertainty OPEN |
 | R9 정식 결과·코딩 연결 | THRESHOLD_CONSTRUCTION + CONTRACT + threshold_gap.py | 완료 |
-| R10 종료·재개 | 최종 보고/DAG/dual restore/handoff | 진행 |
+| R10 종료·재개 | 최종 보고/DAG/dual restore/handoff | 선택 범위 완료 |
 | C1 목표·baseline | 기존9Li row 재사용; 새63T/360gap/1080exposure 계약 | 완료 |
 | C2 식–데이터–코드 | raw data→fixed PL baseline; gap moments→rate/mean/derivative | 완료 |
 | C3 수치 설계 | 양의 small-z급수, loggamma/logaddexp/expm1 | 완료 |
 | C4 실행 DAG·자원 | 1worker, sharedlease, identity/create-only checkpoints | 완료 |
 | C5 구현 | threshold_gap/run_study/plot_study | 완료 |
-| C6 구현 검증 | guard/immutability/reuse/skip and independent references | 진행 |
-| C7 과학 검증 | finite support/heat/event source separation and newstudy | 진행 |
-| C8 수치·재현성 | independent quadrature, PL identity, deterministic result/resume | 진행 |
-| C9 독립 검토 | 새 reviewer 1회, recursive review0 | 진행 |
-| C10 판정·인계 | additive Draft PR138 + stage backups + final deliverables | 진행 |
+| C6 구현 검증 | guard/immutability/reuse/skip and independent references | 선택 범위 완료 |
+| C7 과학 검증 | finite support/heat/event source separation and newstudy | 선택 범위 완료 |
+| C8 수치·재현성 | independent quadrature, PL identity, deterministic result/resume | 선택 범위 완료 |
+| C9 독립 검토 | 새 reviewer 1회, recursive review0 | 선택 범위 완료 |
+| C10 판정·인계 | additive Draft PR138 + stage backups + final deliverables | 선택 범위 완료 |
 
 S0는 실제fc66c8d4에 게시했으며 양쪽 provider의 업로드 ACK를 받았다. S0 원격 전체 bytes 복원 검증을 수행했다고 주장하지 않는다. 최종 archive에 대해 별도로 수행한다. HH_R10=OFF. Production admission NOT_ISSUED.
+
+최종 R10/C10의remoteclosure는external final-delivery JSON으로마감한다. S2science완료,실제resume0callbacks,3PNG/3PDFvisualPASS. 이표는20개물리문제를모두해결했다는뜻이아니다.

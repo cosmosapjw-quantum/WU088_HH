@@ -1,5 +1,8 @@
-# PHYS82 Li 문턱 구간 연구
+# PHYS82 Li7 threshold-gap sensitivity
 
-PHYS81의 실제 후손에서 Li7 physical threshold→6eV source/domain/uncertainty를 조사하고, 명시적인 threshold family의 양의 Maxwell moment와 고정 외부 노출 반응을 유도·구현한다. 기존 PHYS81 결과는 재실행하지 않는다.
+Li7physicalthreshold–6eV에대한조건부cross-section5종의양의Maxwellclosure와고정노출민감도연구를완료했다. FINAL_REPORT_KO.md와DAG_OVERLAY.json에서결과와열린의무를읽는다.새study72T/360gap/1080exposure,저장9baseline재사용,ODE0.독립1924assertionsPASS_SCOPED.
 
-현재: R1 계약/R2 원전·최신 refs intake 진행. 새 코드·검증·과학 결과는 실행 뒤 ledger로 기록한다. 물리 source 완전성과 조건부 모델 검증을 구분한다. HH_R10=OFF; Production admission NOT_ISSUED.
+PR138:https://github.com/cosmosapjw-quantum/WU088_HH/pull/138
+과학commit:6a5c5a48e0ef345ff438941d037c9452453b1fb3
+
+물리적confidenceinterval및coupledthermaltrajectoryerrorbound는발행하지않았다.HH_R10=OFF.Production admission NOT_ISSUED.최종전달확정은외부PHYS82_FINAL_DELIVERY_20261023.json과PR최종본문이다.
