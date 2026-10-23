@@ -1,0 +1,1217 @@
+{
+  "schema": "PHYS83_SAVED_RESULTS_INDEPENDENT_REVIEW_V1",
+  "utc": "2026-10-23T15:14:26.646173+00:00",
+  "status": "READBACK_PASS_SCOPED",
+  "scientific_identity": "e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c",
+  "reviewer": "/root/current_delta",
+  "method": "Read-only raw bytes, JSON, CSV and Decimal80/basic arithmetic; no production/scientific module import, no new rate/population/reference execution",
+  "scientific_execution_accounting_from_saved_receipts": {
+    "new_requested": 1,
+    "new_completed": 1,
+    "new_failed": 0,
+    "callback_counts": {
+      "paired_rate_calls": 132,
+      "steady_calls": 324,
+      "transient_calls": 732
+    },
+    "actual_resume_attempts": 1,
+    "resume_skips": 1,
+    "resume_science_callbacks": 0
+  },
+  "review_execution_accounting": {
+    "kernel_imports": 0,
+    "rate_callbacks": 0,
+    "population_solves": 0,
+    "new_grid_callbacks": 0,
+    "new_ODE": 0,
+    "numerical_validation_replays": 0,
+    "new_assertions_added_to_2111": 0
+  },
+  "numerical_matrix_assertions_unchanged": 2111,
+  "readback_check_groups": [
+    {
+      "check": "complete_status_and_exact_manifest",
+      "pass": true,
+      "detail": {
+        "payload_files": 7
+      }
+    },
+    {
+      "check": "complete_payload_bytes_and_SHA",
+      "pass": true,
+      "detail": {
+        "payload_hashes_verified": 7
+      }
+    },
+    {
+      "check": "scientific_identity_canonical_binding",
+      "pass": true,
+      "detail": {
+        "identity": "e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c"
+      }
+    },
+    {
+      "check": "scientific_identity_current_input_bytes",
+      "pass": true,
+      "detail": {
+        "input_files": 12
+      }
+    },
+    {
+      "check": "completed_claim_certificate_binding",
+      "pass": true,
+      "detail": {
+        "COMPLETE_SHA256": "6a69c5552a9a311c14c55575ae1ee058d746fd377a23a21f7636ad3cc7854761"
+      }
+    },
+    {
+      "check": "execution_summary_first_receipt_agree",
+      "pass": true,
+      "detail": {
+        "status": "COMPLETED_SCOPED"
+      }
+    },
+    {
+      "check": "callback_budget_receipts_agree",
+      "pass": true,
+      "detail": {
+        "paired_rate_calls": 132,
+        "steady_calls": 324,
+        "transient_calls": 732
+      }
+    },
+    {
+      "check": "actual_resume_skip_without_callbacks",
+      "pass": true,
+      "detail": {
+        "actual_resume_attempts": 1,
+        "skip": 1,
+        "science_callbacks": 0
+      }
+    },
+    {
+      "check": "science_first_lease_and_stdout",
+      "pass": true,
+      "detail": {
+        "workers": 1,
+        "threads": 1,
+        "stdout_matches_receipt": true
+      }
+    },
+    {
+      "check": "science_resume_lease_and_stdout",
+      "pass": true,
+      "detail": {
+        "workers": 1,
+        "threads": 1,
+        "stdout_matches_receipt": true
+      }
+    },
+    {
+      "check": "science_then_resume_sequential",
+      "pass": true,
+      "detail": {
+        "first_completed_utc": "2026-10-23T15:11:06.605599+00:00",
+        "resume_started_utc": "2026-10-23T15:11:19.219468+00:00"
+      }
+    },
+    {
+      "check": "execution_journal_single_science_and_budget",
+      "pass": true,
+      "detail": {
+        "SCIENCE_STARTED": 1,
+        "RATE_GRID_SAVED": 1,
+        "STEADY_GRID_SAVED": 1,
+        "TRANSIENT_PROFILE_COMPLETED": 6,
+        "SCIENCE_COMPLETED": 1
+      }
+    },
+    {
+      "check": "saved_CSV_shape_and_unique_keys",
+      "pass": true,
+      "detail": {
+        "rate_rows": 132,
+        "steady_rows": 324,
+        "transient_rows": 732,
+        "rate_T": 66,
+        "steady_T": 4,
+        "steady_density": 81,
+        "transient_profiles": 6,
+        "times_per_profile": {
+          "10000.0|1.0": 122,
+          "10000.0|100000000.0": 122,
+          "10000.0|1000000000000.0": 122,
+          "25370.66308424773|1.0": 122,
+          "25370.66308424773|100000000.0": 122,
+          "25370.66308424773|1000000000000.0": 122
+        }
+      }
+    },
+    {
+      "check": "saved_scope_and_no_activation_flags",
+      "pass": true,
+      "detail": {
+        "scope": "finite source-native LS; fixed bath; optically thin; no production admission"
+      }
+    },
+    {
+      "check": "saved_diagnostics_match_summary",
+      "pass": true,
+      "detail": {
+        "max_abs_normalized_raw_energy_residual": 2.433784209198325e-16,
+        "max_abs_nuclei_residual": 1.1102230246251565e-16,
+        "minimum_sampled_population": 0.0,
+        "numerical_branches": [
+          "separated_roots",
+          "small_time_series",
+          "zero_time"
+        ]
+      }
+    },
+    {
+      "check": "saved_energy_and_event_signs",
+      "pass": true,
+      "detail": {
+        "minimum_thermal_change_eV": -1715215.6733392552,
+        "maximum_thermal_change_eV": -0.0,
+        "minimum_nonnegative_energy_and_count_column": 0.0
+      }
+    },
+    {
+      "check": "saved_column_arithmetic_accounting",
+      "pass": true,
+      "detail": {
+        "maximum_discrepancies": {
+          "thermal_sign_pair_relative": 0.0,
+          "storage_plus_escape_equals_withdrawal_relative": 1.8736074063996402e-16,
+          "two_photon_number_relative": 2.060207182650746e-16,
+          "radiative_pair_energy_relative": 2.7599253776446592e-16,
+          "atomic_gap_energy_relative": 2.3974348527712535e-16,
+          "raw_event_energy_gross_normalized_from_saved_counts": 2.9690244088665723e-16,
+          "population_sum_absolute_from_decimal_strings": 1.45935552876e-16
+        },
+        "method": "Decimal80 arithmetic of CSV strings; no solver/reference/kernel replay"
+      }
+    },
+    {
+      "check": "saved_ncrit_constant_per_temperature",
+      "pass": true,
+      "detail": {
+        "definition": "ncrit_i=A_i/q_down_i; cross-over c_i=A_i in finite star, not a global H I critical density"
+      }
+    },
+    {
+      "check": "selected_transient_times_are_exact_grid_rows",
+      "pass": true,
+      "detail": {
+        "selected_times_s": [
+          1,
+          1000
+        ],
+        "rows": 12,
+        "interpolation": false
+      }
+    },
+    {
+      "check": "plot_input_binding_and_output_hashes",
+      "pass": true,
+      "detail": {
+        "outputs": 6,
+        "scientific_calls": 0,
+        "visual_audit_by_this_reviewer": false
+      }
+    },
+    {
+      "check": "science_and_plot_bytes_unchanged_during_readback",
+      "pass": true,
+      "detail": {
+        "protected_files": 26
+      }
+    }
+  ],
+  "readback_check_group_count": 21,
+  "source_code_result_and_plot_files_read": [
+    {
+      "path": "results/COMPLETE.json",
+      "bytes": 6250,
+      "sha256": "6a69c5552a9a311c14c55575ae1ee058d746fd377a23a21f7636ad3cc7854761"
+    },
+    {
+      "path": "results/ENVIRONMENT.json",
+      "bytes": 455,
+      "sha256": "6ba05f53f4bd225ac10dd4d89b566662e77bab6ccfb68fead9ccec642caae4b2"
+    },
+    {
+      "path": "results/SCIENCE_IDENTITY.json",
+      "bytes": 1831,
+      "sha256": "ca2ceebb71bff3e682dcf01761e3f5e2770d220a27bf38ac4817d8aad6622d46"
+    },
+    {
+      "path": "results/SCIENCE_SUMMARY.json",
+      "bytes": 4776,
+      "sha256": "77cb3b440e29678cd64b2834c41233416ef5bfe9276bacf1c2c7c1f036c2d1b9"
+    },
+    {
+      "path": "results/execution_events.jsonl",
+      "bytes": 1795,
+      "sha256": "9e6588a444554e31aa3d30e63d928a7bef807f1f410f1c9ec6c3248425869f8b"
+    },
+    {
+      "path": "results/rate_grid.csv",
+      "bytes": 46819,
+      "sha256": "64e53e02b776db2aee6d67ce03201cbc0b90404d7cdf40e52cccaaecd2fc3017"
+    },
+    {
+      "path": "results/steady_grid.csv",
+      "bytes": 121853,
+      "sha256": "1ad1e93ded30c3a8285ec5d939bdb5617e4fdb8c708643e699b7df450c9ecc78"
+    },
+    {
+      "path": "results/transient_grid.csv",
+      "bytes": 434612,
+      "sha256": "c0a252703eb680066222e31db4a44241277e03e55e556ba08aea591ecec9cea6"
+    },
+    {
+      "path": "CONTRACT.json",
+      "bytes": 6315,
+      "sha256": "d9eb980df5236e2b2ca3da313813c3ca2b21562f90486f1173d0ea509bc4dcc5"
+    },
+    {
+      "path": "source/frozen_star.py",
+      "bytes": 12414,
+      "sha256": "78421356c6b985d845f452f42e6b03c8ea657171ad826df51b3a1dbcf454578f"
+    },
+    {
+      "path": "source/matched_ce.py",
+      "bytes": 14892,
+      "sha256": "475ee6f84c5e19945324859a9c4c5e229d8ab5e92e8658ad5b3da39472c1744e"
+    },
+    {
+      "path": "source/run_study.py",
+      "bytes": 12713,
+      "sha256": "dee42bcd164fbdfdceedc72200df53e2e687bf5978caddd1f5a40c63bc360f85"
+    },
+    {
+      "path": "source/vendor/ci_finite_c22d.py",
+      "bytes": 8350,
+      "sha256": "859cdf616ffa165c9fb3c3372d2202f5449e4b9a74a289a725fe456e26eb55b2"
+    },
+    {
+      "path": "source_data/CCC_1S.2P",
+      "bytes": 29366,
+      "sha256": "00857e46838c5538da8b047363105b306bc1ba5c827700161749d5d712fa0e5a"
+    },
+    {
+      "path": "source_data/CCC_1S.2S",
+      "bytes": 29366,
+      "sha256": "f4afdbdeccc49a58055ab86750b14ce10dd2091da55bd380a19f3d7a13c337d0"
+    },
+    {
+      "path": "source_data/CCC_2P.1S",
+      "bytes": 29393,
+      "sha256": "12cf46fa0904a5b227092a0a6a3ae6d8a20c041cf11c2981d3bb8bd1f6ac313d"
+    },
+    {
+      "path": "source_data/CCC_2S.1S",
+      "bytes": 29393,
+      "sha256": "e8e0092e7be97abe4a90ce100e3101d1f6f225eee2d4ad1ba740f57de819997b"
+    },
+    {
+      "path": "source_data/HI_CE_SOURCE_CONTRACT.json",
+      "bytes": 16647,
+      "sha256": "1983e17f57ab5ab0e9f8c5dde1bc679451ca670440fe79d0fec3de4efb4a812b"
+    },
+    {
+      "path": "source_data/h_1.elvlc",
+      "bytes": 2423,
+      "sha256": "f7286ef6837989eba038b7b055c8db9f4e1ce8a6a0b3270ccc399fd0b2f6a75b"
+    },
+    {
+      "path": "source_data/h_1.wgfa",
+      "bytes": 6621,
+      "sha256": "f16d0f5033632ce5a3104bfa4dfec9c98fc14bb2e05f682be3468419c9a90179"
+    },
+    {
+      "path": "figures/01_finite_matched_rates.png",
+      "bytes": 164175,
+      "sha256": "5d254b7d6b6595a9f1a6dec49533964d72e905d584582b8d2c48baeed96b02fb"
+    },
+    {
+      "path": "figures/01_finite_matched_rates.pdf",
+      "bytes": 21981,
+      "sha256": "bf0ee431ed47485e656c52dce3021712bddbf71debec7a114c91604328823016"
+    },
+    {
+      "path": "figures/02_steady_coronal_suppression.png",
+      "bytes": 246410,
+      "sha256": "7f26a3bf2c01be2551941764c06649daaa57a641817f0ae6ac587ec8e4bb4ab7"
+    },
+    {
+      "path": "figures/02_steady_coronal_suppression.pdf",
+      "bytes": 23961,
+      "sha256": "ef8fae1d00a4711b9315088b23fc4e2c2d3ceb13b9e97bd37d6ce8a0f31e03b7"
+    },
+    {
+      "path": "figures/03_transient_energy_accounting.png",
+      "bytes": 349067,
+      "sha256": "cd81cc3c825f845b1314fc9330c0c6f884727e2b735a4d9cddd38b98c3342c67"
+    },
+    {
+      "path": "figures/03_transient_energy_accounting.pdf",
+      "bytes": 38070,
+      "sha256": "a8d5bccf04dafeaff31db9766341db795af65642935e6d02c19177b40d1bf06a"
+    }
+  ],
+  "receipt_files_read": [
+    {
+      "path": "verification/science_first.json",
+      "bytes": 5252,
+      "sha256": "49530e3d38aa01f701818c31565e4a5f9a236d8090dd4a100ffe8b92a071b3db"
+    },
+    {
+      "path": "verification/science_resume_01.json",
+      "bytes": 237,
+      "sha256": "9aafedede024f382868dd696c2b9597a8346b0029cc21ff8eb9d689eef32e720"
+    },
+    {
+      "path": "verification/lease_science_first.json",
+      "bytes": 5742,
+      "sha256": "73963d64e5c626b9bd301bf843b3b2e81ae4c13baafff55a3f31e7b9f99d3460"
+    },
+    {
+      "path": "verification/lease_science_resume_01.json",
+      "bytes": 1471,
+      "sha256": "941e632b1cc0bdf4da39cfafa665654c180470dbca5a71bc708739a0cd625fa6"
+    },
+    {
+      "path": "figures/PLOT_RUN_RECEIPT.json",
+      "bytes": 3407,
+      "sha256": "e047520f2fe474355d749f4f16c8d107b336f8b9c909d9649cbfc6c036c71163"
+    },
+    {
+      "path": "delivery/scientific_claims/e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c.json",
+      "bytes": 410,
+      "sha256": "0db670ac249834f228a6c84e363fa9eb5b85177a7d5a5127af36d04fccccc74e"
+    }
+  ],
+  "saved_grid_shape": {
+    "rate_rows": 132,
+    "steady_rows": 324,
+    "transient_rows": 732,
+    "rate_T": 66,
+    "steady_T": 4,
+    "steady_density": 81,
+    "transient_profiles": 6,
+    "times_per_profile": {
+      "10000.0|1.0": 122,
+      "10000.0|100000000.0": 122,
+      "10000.0|1000000000000.0": 122,
+      "25370.66308424773|1.0": 122,
+      "25370.66308424773|100000000.0": 122,
+      "25370.66308424773|1000000000000.0": 122
+    }
+  },
+  "saved_diagnostics": {
+    "max_abs_normalized_raw_energy_residual": 2.433784209198325e-16,
+    "max_abs_nuclei_residual": 1.1102230246251565e-16,
+    "minimum_sampled_population": 0.0,
+    "numerical_branches": [
+      "separated_roots",
+      "small_time_series",
+      "zero_time"
+    ]
+  },
+  "saved_column_signs": {
+    "minimum_thermal_change_eV": -1715215.6733392552,
+    "maximum_thermal_change_eV": -0.0,
+    "minimum_nonnegative_energy_and_count_column": 0.0
+  },
+  "saved_column_arithmetic_max_discrepancies": {
+    "thermal_sign_pair_relative": 0.0,
+    "storage_plus_escape_equals_withdrawal_relative": 1.8736074063996402e-16,
+    "two_photon_number_relative": 2.060207182650746e-16,
+    "radiative_pair_energy_relative": 2.7599253776446592e-16,
+    "atomic_gap_energy_relative": 2.3974348527712535e-16,
+    "raw_event_energy_gross_normalized_from_saved_counts": 2.9690244088665723e-16,
+    "population_sum_absolute_from_decimal_strings": 1.45935552876e-16
+  },
+  "temperature_labels": {
+    "previous_PHYS82_Tmax_anchor_K": 25370.66308424773,
+    "current_rate_grid_upper_K": 50000.0
+  },
+  "selected_rate_rows_exact_CSV": [
+    {
+      "upper_level": "2S",
+      "temperature_K": "10000.0",
+      "q_up_cm3_s": "8.512547823605277e-14",
+      "q_down_cm3_s": "1.1825666233594462e-08",
+      "log_q_up_cm3_s": "-30.094650012412117",
+      "log_q_down_cm3_s": "-18.25299356304816",
+      "log10_q_up_cm3_s": "-13.06994043520021",
+      "log10_q_down_cm3_s": "-7.927174382647391",
+      "float64_underflow_up": "False",
+      "float64_underflow_down": "False",
+      "M0_eV2_cm2": "1.4135272812998602e-16",
+      "M1_eV3_cm2": "1.3748748402282782e-16",
+      "mean_excess_eV": "0.9726553271500797",
+      "mean_incoming_up_eV": "11.177005327150079",
+      "mean_incoming_down_eV": "0.9726553271500797",
+      "dlogq_up_dT_K_inv": "0.0011470376086357486",
+      "dlogq_down_dT_K_inv": "-3.712803630064678e-05",
+      "dq_up_dT_cm3_s_K": "9.764212498985644e-17",
+      "dq_down_dT_cm3_s_K": "-4.390637652002281e-13",
+      "finite_source_only": "True"
+    },
+    {
+      "upper_level": "2P",
+      "temperature_K": "10000.0",
+      "q_up_cm3_s": "1.4643481898603336e-13",
+      "q_down_cm3_s": "6.780928304072407e-09",
+      "log_q_up_cm3_s": "-29.552195987057587",
+      "log_q_down_cm3_s": "-18.80915182636174",
+      "log10_q_up_cm3_s": "-12.834355645302532",
+      "log10_q_down_cm3_s": "-8.168710847469375",
+      "float64_underflow_up": "False",
+      "float64_underflow_down": "False",
+      "M0_eV2_cm2": "2.431582363566686e-16",
+      "M1_eV3_cm2": "2.686051806314043e-16",
+      "mean_excess_eV": "1.1046517883005602",
+      "mean_incoming_up_eV": "11.30900178830056",
+      "mean_incoming_down_eV": "1.1046517883005602",
+      "dlogq_up_dT_K_inv": "0.001162355161889761",
+      "dlogq_down_dT_K_inv": "-2.1810483046634467e-05",
+      "dq_up_dT_cm3_s_K": "1.7020926772880865e-16",
+      "dq_down_dT_cm3_s_K": "-1.4789532181641503e-13",
+      "finite_source_only": "True"
+    },
+    {
+      "upper_level": "2S",
+      "temperature_K": "25370.66308424773",
+      "q_up_cm3_s": "7.529257186297885e-11",
+      "q_down_cm3_s": "8.01317108276504e-09",
+      "log_q_up_cm3_s": "-23.309639633226656",
+      "log_q_down_cm3_s": "-18.642179263727577",
+      "log10_q_up_cm3_s": "-10.123247867863675",
+      "log10_q_down_cm3_s": "-8.096195584888113",
+      "float64_underflow_up": "False",
+      "float64_underflow_down": "False",
+      "M0_eV2_cm2": "3.870621633885383e-16",
+      "M1_eV3_cm2": "8.800123027994424e-16",
+      "mean_excess_eV": "2.2735683981491985",
+      "mean_incoming_up_eV": "12.477918398149198",
+      "mean_incoming_down_eV": "2.2735683981491985",
+      "dlogq_up_dT_K_inv": "0.0001658367565797443",
+      "dlogq_down_dT_K_inv": "-1.8134011310710868e-05",
+      "dq_up_dT_cm3_s_K": "1.2486275912303728e-14",
+      "dq_down_dT_cm3_s_K": "-1.453109350495225e-13",
+      "finite_source_only": "True"
+    },
+    {
+      "upper_level": "2P",
+      "temperature_K": "25370.66308424773",
+      "q_up_cm3_s": "1.6958887955931382e-10",
+      "q_down_cm3_s": "6.016284971273084e-09",
+      "log_q_up_cm3_s": "-22.497643963356584",
+      "log_q_down_cm3_s": "-18.928795882525616",
+      "log10_q_up_cm3_s": "-9.770602629109767",
+      "log10_q_down_cm3_s": "-8.220671600853867",
+      "float64_underflow_up": "False",
+      "float64_underflow_down": "False",
+      "M0_eV2_cm2": "8.718182549046653e-16",
+      "M1_eV3_cm2": "2.800950763697098e-15",
+      "mean_excess_eV": "3.212769115511795",
+      "mean_incoming_up_eV": "13.417119115511795",
+      "mean_incoming_down_eV": "3.212769115511795",
+      "dlogq_up_dT_K_inv": "0.0001827692880174609",
+      "dlogq_down_dT_K_inv": "-1.201479872994288e-06",
+      "dq_up_dT_cm3_s_K": "3.099563877273472e-14",
+      "dq_down_dT_cm3_s_K": "-7.22844530318263e-15",
+      "finite_source_only": "True"
+    },
+    {
+      "upper_level": "2S",
+      "temperature_K": "50000.0",
+      "q_up_cm3_s": "5.446136446053684e-10",
+      "q_down_cm3_s": "5.816232091802038e-09",
+      "log_q_up_cm3_s": "-21.33094448164107",
+      "log_q_down_cm3_s": "-18.962613191768277",
+      "log10_q_up_cm3_s": "-9.263911482161335",
+      "log10_q_down_cm3_s": "-8.235358271650771",
+      "float64_underflow_up": "False",
+      "float64_underflow_down": "False",
+      "M0_eV2_cm2": "7.772760969768403e-16",
+      "M1_eV3_cm2": "3.4410543845395712e-15",
+      "mean_excess_eV": "4.427068319639965",
+      "mean_incoming_up_eV": "14.631418319639966",
+      "mean_incoming_down_eV": "4.427068319639965",
+      "dlogq_up_dT_K_inv": "3.791622361369673e-05",
+      "dlogq_down_dT_K_inv": "-9.450402183759103e-06",
+      "dq_up_dT_cm3_s_K": "2.064969273192751e-14",
+      "dq_down_dT_cm3_s_K": "-5.496573246161575e-14",
+      "finite_source_only": "True"
+    },
+    {
+      "upper_level": "2P",
+      "temperature_K": "50000.0",
+      "q_up_cm3_s": "1.7446696606803572e-09",
+      "q_down_cm3_s": "6.210765968717357e-09",
+      "log_q_up_cm3_s": "-20.16670060541307",
+      "log_q_down_cm3_s": "-18.89698160420839",
+      "log10_q_up_cm3_s": "-8.758286791125864",
+      "log10_q_down_cm3_s": "-8.206854835334962",
+      "float64_underflow_up": "False",
+      "float64_underflow_down": "False",
+      "M0_eV2_cm2": "2.490003762851317e-15",
+      "M1_eV3_cm2": "1.739619391205682e-14",
+      "mean_excess_eV": "6.986412700090197",
+      "mean_incoming_up_eV": "17.190762700090197",
+      "mean_incoming_down_eV": "6.986412700090197",
+      "dlogq_up_dT_K_inv": "4.979620691058555e-05",
+      "dlogq_down_dT_K_inv": "2.4295811131297286e-06",
+      "dq_up_dT_cm3_s_K": "8.687793141386015e-14",
+      "dq_down_dT_cm3_s_K": "1.5089559695664552e-14",
+      "finite_source_only": "True"
+    }
+  ],
+  "critical_densities_exact_CSV": [
+    {
+      "temperature_K": "5000.0",
+      "critical_density_2s_cm3": "545974052.1810257",
+      "critical_density_2p_cm3": "7.580597391282485e+16",
+      "ncrit2p_over_ncrit2s_from_saved": 138845378.47540468
+    },
+    {
+      "temperature_K": "10000.0",
+      "critical_density_2s_cm3": "695859525.6665517",
+      "critical_density_2p_cm3": "9.231774351957749e+16",
+      "ncrit2p_over_ncrit2s_from_saved": 132667212.43938988
+    },
+    {
+      "temperature_K": "25370.66308424773",
+      "critical_density_2s_cm3": "1026934581.9533513",
+      "critical_density_2p_cm3": "1.0405092228660413e+17",
+      "ncrit2p_over_ncrit2s_from_saved": 101321860.33572552
+    },
+    {
+      "temperature_K": "50000.0",
+      "critical_density_2s_cm3": "1414833927.896164",
+      "critical_density_2p_cm3": "1.0079272076150715e+17",
+      "ncrit2p_over_ncrit2s_from_saved": 71239965.88870636
+    }
+  ],
+  "selected_high_density_steady_rows_exact_CSV_with_saved_ratio": [
+    {
+      "temperature_K": "5000.0",
+      "electron_density_cm3": "1e+18",
+      "population_ground": "0.9999999998036877",
+      "population_2s": "5.181647850108921e-11",
+      "population_2p": "1.4449579139512717e-10",
+      "critical_density_2s_cm3": "545974052.1810257",
+      "critical_density_2p_cm3": "7.580597391282485e+16",
+      "radiative_events_2s_per_s": "4.2639793091939344e-10",
+      "radiative_events_2p_per_s": "0.09045436541334961",
+      "escaped_power_eV_per_s": "0.9230280080568278",
+      "emitted_photons_per_s": "0.09045436626614535",
+      "coronal_reference_power_eV_per_s": "21.06867032780113",
+      "exact_to_coronal_2s": "5.459740517757567e-10",
+      "exact_to_coronal_2p": "0.07046435485223096",
+      "coronal_relative_overestimate_2s": "1831588875.3349535",
+      "coronal_relative_overestimate_2p": "13.191572492178139",
+      "slow_decay_per_s": "8883924379.64318",
+      "fast_decay_per_s": "15072149432.828308",
+      "ground_depletion_ratio": "1.9631226993475489e-10",
+      "finite_star_only": "True",
+      "total_exact_to_coronal_from_saved": 0.043810453801578914
+    },
+    {
+      "temperature_K": "10000.0",
+      "electron_density_cm3": "1e+18",
+      "population_ground": "0.9999730323816325",
+      "population_2s": "7.198172252112939e-06",
+      "population_2p": "1.976944611536337e-05",
+      "critical_density_2s_cm3": "695859525.6665517",
+      "critical_density_2p_cm3": "9.231774351957749e+16",
+      "radiative_events_2s_per_s": "5.9233777429275314e-05",
+      "radiative_events_2p_per_s": "12375.67326821747",
+      "escaped_power_eV_per_s": "126285.70211897715",
+      "emitted_photons_per_s": "12375.673386685006",
+      "coronal_reference_power_eV_per_s": "2362922.3189581945",
+      "exact_to_coronal_2s": "6.958407595082188e-10",
+      "exact_to_coronal_2p": "0.08451318719079944",
+      "coronal_relative_overestimate_2s": "1437110410.1618063",
+      "coronal_relative_overestimate_2p": "10.832472933985684",
+      "slow_decay_per_s": "7407074736.070337",
+      "fast_decay_per_s": "11825751370.122755",
+      "ground_depletion_ratio": "2.696834563952952e-05",
+      "finite_star_only": "True",
+      "total_exact_to_coronal_from_saved": 0.053444711705400515
+    },
+    {
+      "temperature_K": "25370.66308424773",
+      "electron_density_cm3": "1e+18",
+      "population_ground": "0.966250969949543",
+      "population_2s": "0.009078992544457713",
+      "population_2p": "0.02467003750599941",
+      "critical_density_2s_cm3": "1026934581.9533513",
+      "critical_density_2p_cm3": "1.0405092228660413e+17",
+      "radiative_events_2s_per_s": "0.0747110523095079",
+      "radiative_events_2p_per_s": "15443443.478755632",
+      "escaped_power_eV_per_s": "157590303.22481775",
+      "emitted_photons_per_s": "15443443.628177714",
+      "coronal_reference_power_eV_per_s": "2498856038.8210726",
+      "exact_to_coronal_2s": "9.92276534868151e-10",
+      "exact_to_coronal_2p": "0.09106401032241195",
+      "coronal_relative_overestimate_2s": "1007783580.3510146",
+      "coronal_relative_overestimate_2p": "9.981286640677277",
+      "slow_decay_per_s": "6801948755.6547985",
+      "fast_decay_per_s": "8098388758.034621",
+      "ground_depletion_ratio": "0.03492780975135215",
+      "finite_star_only": "True",
+      "total_exact_to_coronal_from_saved": 0.0630649788449465
+    },
+    {
+      "temperature_K": "50000.0",
+      "electron_density_cm3": "1e+18",
+      "population_ground": "0.7413853786685264",
+      "population_2s": "0.06942099046075592",
+      "population_2p": "0.18919363087071767",
+      "critical_density_2s_cm3": "1414833927.896164",
+      "critical_density_2p_cm3": "1.0079272076150715e+17",
+      "radiative_events_2s_per_s": "0.5712655037763527",
+      "radiative_events_2p_per_s": "118435212.92506926",
+      "escaped_power_eV_per_s": "1208554370.8413236",
+      "emitted_photons_per_s": "118435214.06760009",
+      "coronal_reference_power_eV_per_s": "23360648096.292393",
+      "exact_to_coronal_2s": "1.0489371859023042e-09",
+      "exact_to_coronal_2p": "0.06788403306038111",
+      "coronal_relative_overestimate_2s": "953345931.8546846",
+      "coronal_relative_overestimate_2p": "13.73100455169665",
+      "slow_decay_per_s": "5993667925.301437",
+      "fast_decay_per_s": "8948613448.732685",
+      "ground_depletion_ratio": "0.3488261689162611",
+      "finite_star_only": "True",
+      "total_exact_to_coronal_from_saved": 0.05173462507802321
+    }
+  ],
+  "selected_transient_rows_exact_CSV_with_saved_fraction": [
+    {
+      "temperature_K": "10000.0",
+      "electron_density_cm3": "1.0",
+      "time_s": "1.0",
+      "population_ground": "0.9999999999999897",
+      "population_2s": "1.0341808315055978e-14",
+      "population_2p": "2.3392143607992306e-22",
+      "integral_ground_s": "0.9999999999999909",
+      "integral_2s_s": "9.087817126058451e-15",
+      "integral_2p_s": "2.3392143570624695e-22",
+      "excitation_2s_events": "8.5125478236052e-14",
+      "excitation_2p_events": "1.4643481898603202e-13",
+      "deexcitation_2s_events": "1.0746949212471089e-22",
+      "deexcitation_2p_events": "1.5862044843097436e-30",
+      "two_photon_events": "7.478364713033498e-14",
+      "M1_events": "2.2683191546641892e-20",
+      "E1_events": "1.4643481875211058e-13",
+      "emitted_photons": "2.9600213569597207e-13",
+      "atomic_excitation_eV": "1.0553143406675766e-13",
+      "escaped_radiation_eV": "2.2573908837947588e-12",
+      "thermal_change_eV": "-2.3629223178615165e-12",
+      "heat_withdrawal_eV": "2.3629223178615165e-12",
+      "raw_event_thermal_change_eV": "-2.362922317861517e-12",
+      "raw_energy_residual_eV": "-4.0389678347315804e-28",
+      "gross_energy_scale_eV": "4.725844637916346e-12",
+      "normalized_raw_energy_residual": "-8.546552297395004e-17",
+      "event_balance_2s": "2.058448782809672e-30",
+      "event_balance_2p": "4.051812910948796e-30",
+      "nuclei_residual": "0.0",
+      "numerical_branch": "separated_roots",
+      "finite_star_only": "True",
+      "prescribed_bath": "True",
+      "atomic_fraction_of_withdrawal_from_saved": 0.044661406458027506
+    },
+    {
+      "temperature_K": "10000.0",
+      "electron_density_cm3": "1.0",
+      "time_s": "1000.0",
+      "population_ground": "0.9999999999999897",
+      "population_2s": "1.0344568269981539e-14",
+      "population_2p": "2.339214360799231e-22",
+      "integral_ground_s": "999.9999999999897",
+      "integral_2s_s": "1.0343311183443996e-11",
+      "integral_2p_s": "2.3392143607954943e-19",
+      "excitation_2s_events": "8.512547823605189e-11",
+      "excitation_2p_events": "1.4643481898603184e-10",
+      "deexcitation_2s_events": "1.2231654580561365e-19",
+      "deexcitation_2p_events": "1.586204486841081e-27",
+      "two_photon_events": "8.511510772856064e-11",
+      "M1_events": "2.5816904713876214e-17",
+      "E1_events": "1.4643481898579796e-10",
+      "emitted_photons": "3.1666506025982397e-10",
+      "atomic_excitation_eV": "1.0555959761280231e-13",
+      "escaped_radiation_eV": "2.3628167581123965e-09",
+      "thermal_change_eV": "-2.362922317710009e-09",
+      "heat_withdrawal_eV": "2.362922317710009e-09",
+      "raw_event_thermal_change_eV": "-2.362922317710009e-09",
+      "raw_energy_residual_eV": "2.0471256034847345e-25",
+      "gross_energy_scale_eV": "4.72584463791634e-09",
+      "normalized_raw_energy_residual": "4.331766615982804e-17",
+      "event_balance_2s": "1.5762610479496918e-26",
+      "event_balance_2p": "-3.770408504137342e-26",
+      "nuclei_residual": "0.0",
+      "numerical_branch": "separated_roots",
+      "finite_star_only": "True",
+      "prescribed_bath": "True",
+      "atomic_fraction_of_withdrawal_from_saved": 4.467332540796509e-05
+    },
+    {
+      "temperature_K": "10000.0",
+      "electron_density_cm3": "100000000.0",
+      "time_s": "1.0",
+      "population_ground": "0.9999990955977531",
+      "population_2s": "9.04402223496753e-07",
+      "population_2p": "2.3392122426746605e-14",
+      "integral_ground_s": "0.9999991916184386",
+      "integral_2s_s": "8.083815378959504e-07",
+      "integral_2p_s": "2.3392124635508663e-14",
+      "excitation_2s_events": "8.512540942218576e-06",
+      "excitation_2p_events": "1.4643470061082576e-05",
+      "deexcitation_2s_events": "9.559650256557302e-07",
+      "deexcitation_2p_events": "1.586203200333101e-14",
+      "two_photon_events": "6.652171675345775e-06",
+      "M1_events": "2.0177203185882922e-12",
+      "E1_events": "1.4643470021828423e-05",
+      "emitted_photons": "2.7947815390240294e-05",
+      "atomic_excitation_eV": "9.228837068040496e-06",
+      "escaped_radiation_eV": "0.00021730820194208386",
+      "thermal_change_eV": "-0.00022653703901012436",
+      "heat_withdrawal_eV": "0.00022653703901012436",
+      "raw_event_thermal_change_eV": "-0.0002265370390101243",
+      "raw_energy_residual_eV": "5.759824041329242e-20",
+      "gross_energy_scale_eV": "0.0004725840817630722",
+      "normalized_raw_energy_residual": "1.21879349381406e-16",
+      "event_balance_2s": "-1.2295559168428423e-21",
+      "event_balance_2p": "-1.5233861157422388e-21",
+      "nuclei_residual": "0.0",
+      "numerical_branch": "separated_roots",
+      "finite_star_only": "True",
+      "prescribed_bath": "True",
+      "atomic_fraction_of_withdrawal_from_saved": 0.0407387556064421
+    },
+    {
+      "temperature_K": "10000.0",
+      "electron_density_cm3": "100000000.0",
+      "time_s": "1000.0",
+      "population_ground": "0.9999990955237924",
+      "population_2s": "9.044761841782734e-07",
+      "population_2p": "2.33921224250165e-14",
+      "integral_ground_s": "999.9990956198949",
+      "integral_2s_s": "0.0009043800816735126",
+      "integral_2p_s": "2.339212242722718e-11",
+      "excitation_2s_events": "0.00851254012502638",
+      "excitation_2p_events": "0.014643468655329638",
+      "deexcitation_2s_events": "0.001069489699418186",
+      "deexcitation_2p_events": "1.586203050591117e-11",
+      "two_photon_events": "0.007442143692091334",
+      "M1_events": "2.2573326838570874e-09",
+      "E1_events": "0.014643468639444214",
+      "emitted_photons": "0.029527758280959566",
+      "atomic_excitation_eV": "9.229591788720969e-06",
+      "escaped_radiation_eV": "0.22536934122991753",
+      "thermal_change_eV": "-0.22537857082170626",
+      "heat_withdrawal_eV": "0.22537857082170626",
+      "raw_event_thermal_change_eV": "-0.22537857082170626",
+      "raw_energy_residual_eV": "-7.65040157960084e-18",
+      "gross_energy_scale_eV": "0.4725840363956519",
+      "normalized_raw_energy_residual": "-1.618844690131651e-17",
+      "event_balance_2s": "-1.4271214759479378e-18",
+      "event_balance_2p": "5.568661750745093e-19",
+      "nuclei_residual": "0.0",
+      "numerical_branch": "separated_roots",
+      "finite_star_only": "True",
+      "prescribed_bath": "True",
+      "atomic_fraction_of_withdrawal_from_saved": 4.095150552721521e-05
+    },
+    {
+      "temperature_K": "10000.0",
+      "electron_density_cm3": "1000000000000.0",
+      "time_s": "1.0",
+      "population_ground": "0.9999928064570173",
+      "population_2s": "7.193309065526987e-06",
+      "population_2p": "2.3391721952871263e-10",
+      "integral_ground_s": "0.9999928070648693",
+      "integral_2s_s": "7.192701213490246e-06",
+      "integral_2p_s": "2.3391721929723514e-10",
+      "excitation_2s_events": "0.08512486593400985",
+      "excitation_2p_events": "0.1464337656898795",
+      "deexcitation_2s_events": "0.08505848386870551",
+      "deexcitation_2p_events": "1.586175893142534e-06",
+      "two_photon_events": "5.918873828581123e-05",
+      "M1_events": "1.7952982228871653e-11",
+      "E1_events": "0.14643217928006919",
+      "emitted_photons": "0.1465505567745938",
+      "atomic_excitation_eV": "7.340543033598941e-05",
+      "escaped_radiation_eV": "1.4948491914212991",
+      "thermal_change_eV": "-1.494922596851635",
+      "heat_withdrawal_eV": "1.494922596851635",
+      "raw_event_thermal_change_eV": "-1.494922596851635",
+      "raw_energy_residual_eV": "2.949029909160572e-17",
+      "gross_energy_scale_eV": "4.725810645222471",
+      "normalized_raw_energy_residual": "6.240262529650602e-18",
+      "event_balance_2s": "1.4654267596411397e-17",
+      "event_balance_2p": "-3.9631497057257676e-17",
+      "nuclei_residual": "0.0",
+      "numerical_branch": "separated_roots",
+      "finite_star_only": "True",
+      "prescribed_bath": "True",
+      "atomic_fraction_of_withdrawal_from_saved": 4.9103164599012745e-05
+    },
+    {
+      "temperature_K": "10000.0",
+      "electron_density_cm3": "1000000000000.0",
+      "time_s": "1000.0",
+      "population_ground": "0.9999928064570173",
+      "population_2s": "7.193309065526987e-06",
+      "population_2p": "2.339172195287126e-10",
+      "integral_ground_s": "999.9928064576251",
+      "integral_2s_s": "0.00719330845767495",
+      "integral_2p_s": "2.3391721952848116e-07",
+      "excitation_2s_events": "85.1248658823179",
+      "excitation_2p_events": "146.43376560095783",
+      "deexcitation_2s_events": "85.06566493575612",
+      "deexcitation_2p_events": "0.0015861758947105966",
+      "two_photon_events": "0.05919373529820716",
+      "M1_events": "1.7954497910356673e-08",
+      "E1_events": "146.4321794248292",
+      "emitted_photons": "146.55056691338012",
+      "atomic_excitation_eV": "7.340543033598941e-05",
+      "escaped_radiation_eV": "1494.8492438897601",
+      "thermal_change_eV": "-1494.8493172951905",
+      "heat_withdrawal_eV": "1494.8493172951905",
+      "raw_event_thermal_change_eV": "-1494.8493172951905",
+      "raw_energy_residual_eV": "-4.882032278441528e-14",
+      "gross_energy_scale_eV": "4725.810642352729",
+      "normalized_raw_energy_residual": "-1.0330571086976572e-17",
+      "event_balance_2s": "1.716446846227065e-14",
+      "event_balance_2p": "-1.822710813391693e-15",
+      "nuclei_residual": "0.0",
+      "numerical_branch": "separated_roots",
+      "finite_star_only": "True",
+      "prescribed_bath": "True",
+      "atomic_fraction_of_withdrawal_from_saved": 4.9105571703247406e-08
+    },
+    {
+      "temperature_K": "25370.66308424773",
+      "electron_density_cm3": "1.0",
+      "time_s": "1.0",
+      "population_ground": "0.9999999999908528",
+      "population_2s": "9.147218461999577e-12",
+      "population_2p": "2.709087532871606e-19",
+      "integral_ground_s": "0.9999999999919619",
+      "integral_2s_s": "8.03807671320016e-12",
+      "integral_2p_s": "2.709087528546995e-19",
+      "excitation_2s_events": "7.529257186237364e-11",
+      "excitation_2p_events": "1.6958887955795065e-10",
+      "deexcitation_2s_events": "6.441048387926258e-20",
+      "deexcitation_2p_events": "1.6298642583860628e-27",
+      "two_photon_events": "6.614533327292411e-11",
+      "M1_events": "2.0063039476147598e-17",
+      "E1_events": "1.695888792870419e-10",
+      "emitted_photons": "3.018795658959296e-10",
+      "atomic_excitation_eV": "9.334142147715311e-11",
+      "escaped_radiation_eV": "2.405514616666566e-09",
+      "thermal_change_eV": "-2.4988560381437194e-09",
+      "heat_withdrawal_eV": "2.4988560381437194e-09",
+      "raw_event_thermal_change_eV": "-2.4988560381437194e-09",
+      "raw_energy_residual_eV": "-1.0339757656912846e-25",
+      "gross_energy_scale_eV": "4.997712077601973e-09",
+      "normalized_raw_energy_residual": "-2.0688982271011738e-17",
+      "event_balance_2s": "-1.80152319962683e-27",
+      "event_balance_2p": "4.277480811759884e-27",
+      "nuclei_residual": "0.0",
+      "numerical_branch": "separated_roots",
+      "finite_star_only": "True",
+      "prescribed_bath": "True",
+      "atomic_fraction_of_withdrawal_from_saved": 0.03735366105623755
+    },
+    {
+      "temperature_K": "25370.66308424773",
+      "electron_density_cm3": "1.0",
+      "time_s": "1000.0",
+      "population_ground": "0.9999999999908503",
+      "population_2s": "9.149659612519357e-12",
+      "population_2p": "2.7090875328716e-19",
+      "integral_ground_s": "999.9999999908515",
+      "integral_2s_s": "9.148547732967981e-09",
+      "integral_2p_s": "2.709087532867275e-16",
+      "excitation_2s_events": "7.529257186229004e-08",
+      "excitation_2p_events": "1.6958887955776234e-07",
+      "deexcitation_2s_events": "7.330887814311469e-17",
+      "deexcitation_2p_events": "1.6298642609852664e-24",
+      "two_photon_events": "7.528339929459351e-08",
+      "M1_events": "2.283477514148808e-14",
+      "E1_events": "1.6958887955749142e-07",
+      "emitted_photons": "3.201557009814536e-07",
+      "atomic_excitation_eV": "9.336633183145964e-11",
+      "escaped_radiation_eV": "2.4987626717183105e-06",
+      "thermal_change_eV": "-2.498856038050142e-06",
+      "heat_withdrawal_eV": "2.498856038050142e-06",
+      "raw_event_thermal_change_eV": "-2.498856038050142e-06",
+      "raw_energy_residual_eV": "-1.3335702438003343e-22",
+      "gross_energy_scale_eV": "4.997712077596423e-06",
+      "normalized_raw_energy_residual": "-2.6683614884067022e-17",
+      "event_balance_2s": "-1.0809112121497077e-23",
+      "event_balance_2p": "7.811071946643779e-24",
+      "nuclei_residual": "0.0",
+      "numerical_branch": "separated_roots",
+      "finite_star_only": "True",
+      "prescribed_bath": "True",
+      "atomic_fraction_of_withdrawal_from_saved": 3.736362976088587e-05
+    },
+    {
+      "temperature_K": "25370.66308424773",
+      "electron_density_cm3": "100000000.0",
+      "time_s": "1.0",
+      "population_ground": "0.9991670182945839",
+      "population_2s": "0.0008329816783477944",
+      "population_2p": "2.706830909941669e-11",
+      "integral_ground_s": "0.9992590852253614",
+      "integral_2s_s": "0.0007409147475677589",
+      "integral_2p_s": "2.7070803229917758e-11",
+      "excitation_2s_events": "0.007523678648406504",
+      "excitation_2p_events": "0.016946322865283393",
+      "deexcitation_2s_events": "0.0005937076630004125",
+      "deexcitation_2p_events": "1.6286566663244506e-11",
+      "two_photon_events": "0.006096987457735087",
+      "M1_events": "1.849323209929126e-09",
+      "E1_events": "0.016946322821928515",
+      "emitted_photons": "0.029140299586721898",
+      "atomic_excitation_eV": "0.008500036865662815",
+      "escaped_radiation_eV": "0.23514202212342655",
+      "thermal_change_eV": "-0.24364205898908936",
+      "heat_withdrawal_eV": "0.24364205898908936",
+      "raw_event_thermal_change_eV": "-0.24364205898908942",
+      "raw_energy_residual_eV": "-4.85722573273506e-17",
+      "gross_energy_scale_eV": "0.49940091989244295",
+      "normalized_raw_energy_residual": "-9.726104897406218e-17",
+      "event_balance_2s": "1.5538629165839253e-19",
+      "event_balance_2p": "2.952212895634032e-18",
+      "nuclei_residual": "0.0",
+      "numerical_branch": "separated_roots",
+      "finite_star_only": "True",
+      "prescribed_bath": "True",
+      "atomic_fraction_of_withdrawal_from_saved": 0.034887395472402646
+    },
+    {
+      "temperature_K": "25370.66308424773",
+      "electron_density_cm3": "100000000.0",
+      "time_s": "1000.0",
+      "population_ground": "0.9991669193027958",
+      "population_2s": "0.0008330806701358636",
+      "population_2p": "2.7068306417642465e-11",
+      "integral_ground_s": "999.1670114796715",
+      "integral_2s_s": "0.8329884932602701",
+      "integral_2p_s": "2.7068308914751465e-08",
+      "excitation_2s_events": "7.522985401495098",
+      "excitation_2p_events": "16.944761396946554",
+      "deexcitation_2s_events": "0.6674879306469218",
+      "deexcitation_2p_events": "1.628506601215965e-08",
+      "two_photon_events": "6.854662311038762",
+      "M1_events": "2.0791392791776342e-06",
+      "E1_events": "16.944761380634418",
+      "emitted_photons": "30.65408808185122",
+      "atomic_excitation_eV": "0.008501047012515372",
+      "escaped_radiation_eV": "242.85767036439012",
+      "thermal_change_eV": "-242.86617141140263",
+      "heat_withdrawal_eV": "242.86617141140263",
+      "raw_event_thermal_change_eV": "-242.86617141140263",
+      "raw_energy_residual_eV": "-1.5612511283791264e-16",
+      "gross_energy_scale_eV": "499.35490408535617",
+      "normalized_raw_energy_residual": "-3.126536088073058e-19",
+      "event_balance_2s": "-1.0867377656131102e-15",
+      "event_balance_2p": "1.3236606991869445e-15",
+      "nuclei_residual": "0.0",
+      "numerical_branch": "separated_roots",
+      "finite_star_only": "True",
+      "prescribed_bath": "True",
+      "atomic_fraction_of_withdrawal_from_saved": 3.50030099421094e-05
+    },
+    {
+      "temperature_K": "25370.66308424773",
+      "electron_density_cm3": "1000000000000.0",
+      "time_s": "1.0",
+      "population_ground": "0.9907005578833203",
+      "population_2s": "0.00929917372980601",
+      "population_2p": "2.6838687363946495e-07",
+      "integral_ground_s": "0.9907017063981067",
+      "integral_2s_s": "0.009298025214708919",
+      "integral_2p_s": "2.683871843504547e-07",
+      "excitation_2s_events": "74.59247942375524",
+      "excitation_2p_events": "168.01199236555522",
+      "deexcitation_2s_events": "74.50666677732572",
+      "deexcitation_2p_events": "0.001614693783689939",
+      "two_photon_events": "0.07651344949183969",
+      "M1_events": "2.320787093591346e-08",
+      "E1_events": "168.01037740338464",
+      "emitted_photons": "168.16340432557618",
+      "atomic_excitation_eV": "0.09489476216333999",
+      "escaped_radiation_eV": "1715.2174649113713",
+      "thermal_change_eV": "-1715.3123596735347",
+      "heat_withdrawal_eV": "1715.3123596735347",
+      "raw_event_thermal_change_eV": "-1715.312359673535",
+      "raw_energy_residual_eV": "-3.3621716521992084e-13",
+      "gross_energy_scale_eV": "4951.2418834065",
+      "normalized_raw_energy_residual": "-6.790562310169349e-17",
+      "event_balance_2s": "1.6639913279718467e-16",
+      "event_balance_2p": "1.4304191816758797e-14",
+      "nuclei_residual": "0.0",
+      "numerical_branch": "separated_roots",
+      "finite_star_only": "True",
+      "prescribed_bath": "True",
+      "atomic_fraction_of_withdrawal_from_saved": 5.532214679628424e-05
+    },
+    {
+      "temperature_K": "25370.66308424773",
+      "electron_density_cm3": "1000000000000.0",
+      "time_s": "1000.0",
+      "population_ground": "0.9907005578833203",
+      "population_2s": "0.009299173729806008",
+      "population_2p": "2.6838687363946495e-07",
+      "integral_ground_s": "990.7005590318352",
+      "integral_2s_s": "9.299172581290913",
+      "integral_2p_s": "0.00026838687395017597",
+      "excitation_2s_events": "74592.39303559778",
+      "excitation_2p_events": "168011.79778499476",
+      "deexcitation_2s_events": "74515.86082204188",
+      "deexcitation_2p_events": "1.6146919162334072",
+      "two_photon_events": "76.52289117144291",
+      "M1_events": "2.321073476290212e-05",
+      "E1_events": "168010.18309281016",
+      "emitted_photons": "168163.22889836377",
+      "atomic_excitation_eV": "0.09489476216333997",
+      "escaped_radiation_eV": "1715215.578444493",
+      "thermal_change_eV": "-1715215.6733392552",
+      "heat_withdrawal_eV": "1715215.6733392552",
+      "raw_event_thermal_change_eV": "-1715215.6733392552",
+      "raw_energy_residual_eV": "1.2396694781813267e-11",
+      "gross_energy_scale_eV": "4951236.149200227",
+      "normalized_raw_energy_residual": "2.503757528070178e-18",
+      "event_balance_2s": "-1.1170852054655364e-11",
+      "event_balance_2p": "-1.1851211973279809e-11",
+      "nuclei_residual": "0.0",
+      "numerical_branch": "separated_roots",
+      "finite_star_only": "True",
+      "prescribed_bath": "True",
+      "atomic_fraction_of_withdrawal_from_saved": 5.532526529366117e-08
+    }
+  ],
+  "rate_trends_from_saved_rows": {
+    "2S": {
+      "stored_up_rate_strictly_increasing": true,
+      "anchor_to_10000_up_rate_ratio": 884.4892671756006,
+      "minimum_stored_down_rate_row": {
+        "upper_level": "2S",
+        "temperature_K": "50000.0",
+        "q_up_cm3_s": "5.446136446053684e-10",
+        "q_down_cm3_s": "5.816232091802038e-09",
+        "log_q_up_cm3_s": "-21.33094448164107",
+        "log_q_down_cm3_s": "-18.962613191768277",
+        "log10_q_up_cm3_s": "-9.263911482161335",
+        "log10_q_down_cm3_s": "-8.235358271650771",
+        "float64_underflow_up": "False",
+        "float64_underflow_down": "False",
+        "M0_eV2_cm2": "7.772760969768403e-16",
+        "M1_eV3_cm2": "3.4410543845395712e-15",
+        "mean_excess_eV": "4.427068319639965",
+        "mean_incoming_up_eV": "14.631418319639966",
+        "mean_incoming_down_eV": "4.427068319639965",
+        "dlogq_up_dT_K_inv": "3.791622361369673e-05",
+        "dlogq_down_dT_K_inv": "-9.450402183759103e-06",
+        "dq_up_dT_cm3_s_K": "2.064969273192751e-14",
+        "dq_down_dT_cm3_s_K": "-5.496573246161575e-14",
+        "finite_source_only": "True"
+      },
+      "maximum_stored_down_rate_row": {
+        "upper_level": "2S",
+        "temperature_K": "255.0",
+        "q_up_cm3_s": "1.2039644274430618e-209",
+        "q_down_cm3_s": "5.724186241510967e-08",
+        "log_q_up_cm3_s": "-481.05466463461846",
+        "log_q_down_cm3_s": "-16.675980345835875",
+        "log10_q_up_cm3_s": "-208.91938634463418",
+        "log10_q_down_cm3_s": "-7.2422862445236005",
+        "float64_underflow_up": "False",
+        "float64_underflow_down": "False",
+        "M0_eV2_cm2": "2.7861378717190427e-18",
+        "M1_eV3_cm2": "6.698299312772335e-20",
+        "mean_excess_eV": "0.024041521350267908",
+        "mean_incoming_up_eV": "10.228391521350268",
+        "mean_incoming_down_eV": "0.024041521350267908",
+        "dlogq_up_dT_K_inv": "1.8195010344301175",
+        "dlogq_down_dT_K_inv": "-0.0015918451337359916",
+        "dq_up_dT_cm3_s_K": "2.1906145211497152e-209",
+        "dq_down_dT_cm3_s_K": "-9.112018013147748e-11",
+        "finite_source_only": "True"
+      }
+    },
+    "2P": {
+      "stored_up_rate_strictly_increasing": true,
+      "anchor_to_10000_up_rate_ratio": 1158.1185453951962,
+      "minimum_stored_down_rate_row": {
+        "upper_level": "2P",
+        "temperature_K": "29493.54811627896",
+        "q_up_cm3_s": "3.250073949782514e-10",
+        "q_down_cm3_s": "6.004320602946893e-09",
+        "log_q_up_cm3_s": "-21.84717318007844",
+        "log_q_down_cm3_s": "-18.930786526375165",
+        "log10_q_up_cm3_s": "-9.488106757292783",
+        "log10_q_down_cm3_s": "-8.221536126493161",
+        "float64_underflow_up": "False",
+        "float64_underflow_down": "False",
+        "M0_eV2_cm2": "1.0905717375723117e-15",
+        "M1_eV3_cm2": "4.169046413502733e-15",
+        "mean_excess_eV": "3.8228080463402794",
+        "mean_incoming_up_eV": "14.02715804634028",
+        "mean_incoming_down_eV": "3.8228080463402794",
+        "dlogq_up_dT_K_inv": "0.00013627113475563955",
+        "dlogq_down_dT_K_inv": "1.3970266947058674e-07",
+        "dq_up_dT_cm3_s_K": "4.428912651766066e-14",
+        "dq_down_dT_cm3_s_K": "8.388196165889239e-16",
+        "finite_source_only": "True"
+      },
+      "maximum_stored_down_rate_row": {
+        "upper_level": "2P",
+        "temperature_K": "255.0",
+        "q_up_cm3_s": "2.4116757886517747e-209",
+        "q_down_cm3_s": "3.822062361566765e-08",
+        "log_q_up_cm3_s": "-480.3599625819071",
+        "log_q_down_cm3_s": "-17.079890581792576",
+        "log10_q_up_cm3_s": "-208.61768107657477",
+        "log10_q_down_cm3_s": "-7.417702231183837",
+        "float64_underflow_up": "False",
+        "float64_underflow_down": "False",
+        "M0_eV2_cm2": "5.580946659147611e-18",
+        "M1_eV3_cm2": "1.4017875896332713e-19",
+        "mean_excess_eV": "0.025117380173050582",
+        "mean_incoming_up_eV": "10.22946738017305",
+        "mean_incoming_down_eV": "0.025117380173050582",
+        "dlogq_up_dT_K_inv": "1.8196930347869835",
+        "dlogq_down_dT_K_inv": "-0.0013998447768700008",
+        "dq_up_dT_cm3_s_K": "4.3885096347740397e-209",
+        "dq_down_dT_cm3_s_K": "-5.3502940337106563e-11",
+        "finite_source_only": "True"
+      }
+    }
+  },
+  "limits": [
+    "ncrit=A/q_down is local finite-star collisional/radiative crossover, not the density of exact coronal half-suppression because ground depletion also contributes",
+    "2gamma photon count=2 per event while total pair energy=Delta; known M1 and E1 counts separate; no spectral profile",
+    "All energy/count outputs per initial H nucleus; counts can exceed1 as recurrent gross events",
+    "Prescribed T/ne bath permits arbitrarily large cumulative energy withdrawal; not a coupled thermal history or finite reservoir bound",
+    "Finite source W-PL model has no established physical interpolation/tail confidence interval",
+    "Sampled conservation readback and finite numerical matrix are not a continuum certificate",
+    "No nuclear rate or fast-product stopping enabled",
+    "Local hash/readback is not final remote backup restoration"
+  ],
+  "visual_inspection": "DELEGATED_TO_ROOT_NOT_CLAIMED_HERE",
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}

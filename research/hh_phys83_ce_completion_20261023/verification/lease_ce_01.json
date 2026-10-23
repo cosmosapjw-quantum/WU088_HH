@@ -1,0 +1,47 @@
+{
+  "label": "independent_ce_01",
+  "command": [
+    "python",
+    "verification/independent_verify.py",
+    "--output",
+    "verification/ce_attempt_01",
+    "--lease-receipt",
+    "verification/lease_ce_01.json"
+  ],
+  "started_utc": "2026-10-23T14:53:52.214024+00:00",
+  "observation": {
+    "site": "local",
+    "cap_cpus": 8,
+    "affinity_cpus": 9,
+    "quota_cpus": 8.0,
+    "sampled_busy_affinity_cpus": 2.003174603174603,
+    "sampled_cgroup_busy_cpus": 2.1766996866164448,
+    "sampled_idle_cpus": 5.823300313383555,
+    "cgroup_quota_headrooms": [
+      5.823300313383555
+    ],
+    "available_gib": 4.678775787353516,
+    "capacity_gib": 8.0,
+    "reserve_gib": 1.5,
+    "reserve_cpus": 1,
+    "job_gib": 0.5,
+    "sample_interval_s": 0.08023523000156274,
+    "admissible_slots": 4,
+    "live_leases": 0
+  },
+  "lease": {
+    "path": "/tmp/rei-bianchi-cooperative-leases",
+    "key": "f28146507488486fb443019485123ad2",
+    "owner": "2-3b21a62a6ea145a7bb99af49c0521589"
+  },
+  "lease_source_SHA256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+  "old_science_runner_called": false,
+  "workers": 1,
+  "threads": 1,
+  "other_processes_terminated": 0,
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/ebcaaaa20861/WU088_HH/research/hh_phys83_ce_completion_20261023/verification/independent_verify.py\", line 651, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/workspace/scratch/ebcaaaa20861/WU088_HH/research/hh_phys83_ce_completion_20261023/verification/independent_verify.py\", line 583, in main\n    import mpmath as mp\nModuleNotFoundError: No module named 'mpmath'\n",
+  "status": "COMMAND_FAILED",
+  "completed_utc": "2026-10-23T14:53:52.315309+00:00"
+}

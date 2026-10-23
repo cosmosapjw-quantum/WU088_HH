@@ -1,0 +1,14 @@
+{
+  "code": "ClearAll[w, mc2, ma2, mb2, gm, b, z, t, kb, ma, mb, v, g, s, mu, sig0, e, n, ndot, tdot, theta, qth, sn];\neg=(w^2-mc2^2)/(2 w); ec=(w^2+mc2^2)/(2 w);\nph=gm eg (1+b z); tc=gm (ec-b eg z)-mc2;\ntin=gm w-ma2-mb2; q=ma2+mb2-mc2;\nrEvent=Factor[ph+tc-tin-q];\nrShell=Factor[ec^2-eg^2-mc2^2];\nva=v+mb/(ma+mb) g; vb=v-ma/(ma+mb) g;\nrPair=Factor[(ma va^2+mb vb^2)/2-((ma+mb) v^2+ma mb/(ma+mb) g^2)/2];\nass={t>0,kb>0,mu>0,sig0>0,s>-2};\ni1=Integrate[sig0 e^(s+1) Exp[-e/(kb t)],{e,0,Infinity},Assumptions->ass];\ni2=Integrate[sig0 e^(s+2) Exp[-e/(kb t)],{e,0,Infinity},Assumptions->ass];\nrate=Sqrt[8/(Pi mu)] (kb t)^(-3/2) i1;\nrMoment=FullSimplify[i2/i1-(s+2) kb t,Assumptions->ass];\nrDerivative=FullSimplify[i2/i1-kb t (3/2+t D[rate,t]/rate),Assumptions->ass];\nuth=3 n kb t/2; p=n kb t;\nenergyEq=3 kb (n tdot+t ndot)/2+theta (uth+p)-qth;\ntempEq=3 n kb tdot/2-qth+3 kb t sn/2+n kb t theta;\nrEOS=Factor[(energyEq/.ndot->sn-theta n)-tempEq];\nExportString[<|\"residuals\"-><|\"same_normal_frame_event\"->rEvent,\"product_mass_shell\"->rShell,\"equal_temperature_pair_factorization\"->rPair,\"powerlaw_event_mean\"->rMoment,\"rate_derivative_event_mean\"->rDerivative,\"temperature_number_source\"->rEOS|>,\"powerlaw_rate\"->ToString[InputForm[FullSimplify[rate,Assumptions->ass]]],\"assumptions\"->\"positive t,kB,mu,sigma0; s>-2; scalar pair factorization applies componentwise; exact two-body event energies w>mc2>0\"|>,\"JSON\"]",
+  "request_time_constraint_s": 50,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Out[1]= \"{\\n\\t\\\"residuals\\\":{\\n\\t\\t\\\"same_normal_frame_event\\\":0,\\n\\t\\t\\\"product_mass_shell\\\":0,\\n\\t\\t\\\"equal_temperature_pair_factorization\\\":0,\\n\\t\\t\\\"powerlaw_event_mean\\\":0,\\n\\t\\t\\\"rate_derivative_event_mean\\\":0,\\n\\t\\t\\\"temperature_number_source\\\":0\\n\\t},\\n\\t\\\"powerlaw_rate\\\":\\\"(2*Sqrt[2\\\\/Pi]*sig0*(kb*t)^(1\\\\/2 + s)*Gamma[2 + s])\\\\/Sqrt[mu]\\\",\\n\\t\\\"assumptions\\\":\\\"positive t,kB,mu,sigma0; s>-2; scalar pair factorization applies componentwise; exact two-body event energies w>mc2>0\\\"\\n}\""
+      }
+    ],
+    "structuredContent": null,
+    "isError": false
+  }
+}

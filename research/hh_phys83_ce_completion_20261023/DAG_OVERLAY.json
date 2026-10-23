@@ -1,0 +1,84 @@
+{
+  "nodes": [
+    {
+      "id": "PHYS82_LI_THRESHOLD_CONDITIONAL",
+      "status": "COMPLETE_SCOPED_REUSED",
+      "identity": "caae042b139373a10c516d759854ad117d807e9f7ace8c365529a1621419b73f"
+    },
+    {
+      "id": "PHYS83_HI_CE_SOURCE_THEORY",
+      "status": "COMPLETE_SCOPED_REUSED",
+      "HEAD": "09289300ec2e500806aa2cb82365f00329e41c8c"
+    },
+    {
+      "id": "PHYS83_HI_CE_IMPLEMENTATION",
+      "depends": [
+        "PHYS83_HI_CE_SOURCE_THEORY"
+      ],
+      "status": "COMPLETE_SCOPED"
+    },
+    {
+      "id": "PHYS83_HI_CE_INDEPENDENT_VERIFICATION",
+      "depends": [
+        "PHYS83_HI_CE_IMPLEMENTATION"
+      ],
+      "status": "COMPLETE_PASS_SCOPED",
+      "assertions": 2111
+    },
+    {
+      "id": "PHYS83_HI_CE_FROZEN_BATH_STUDY",
+      "depends": [
+        "PHYS83_HI_CE_INDEPENDENT_VERIFICATION"
+      ],
+      "status": "COMPLETE_SCOPED",
+      "scientific_identity": "e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c",
+      "evidence": "results/SCIENCE_SUMMARY.json",
+      "new_science_runs": 1
+    },
+    {
+      "id": "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP",
+      "status": "COMPLETE_SCOPED_DERIVED_IMPLEMENTATION_VERIFIED",
+      "evidence": "theory/NUCLEAR_THERMAL_FAST_OWNERSHIP_KO.md",
+      "limits": "Supplied scalar same-frame energies only; physical event provider/on-shell construction/stoichiometry remain OPEN"
+    },
+    {
+      "id": "NUCLEAR_RATES_AND_FAST_PRODUCT_STOPPING",
+      "depends": [
+        "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP",
+        "NUCLEAR_FINITE_T_EVENT_PROVIDER_AND_STOICHIOMETRY"
+      ],
+      "status": "OPEN_INPUT_PROVIDER_REQUIRED"
+    },
+    {
+      "id": "NUCLEAR_FINITE_T_EVENT_PROVIDER_AND_STOICHIOMETRY",
+      "depends": [
+        "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP"
+      ],
+      "status": "OPEN",
+      "required": [
+        "same-normal-frame on-shell event construction",
+        "finite-T reaction measure and angular moment",
+        "isotope stoichiometric ownership",
+        "source identity and validity domain"
+      ]
+    }
+  ],
+  "retained_open": [
+    "BOUND_BOUND_CE_AND_RADIATIVE_COOLING_FULL_SOURCE",
+    "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+    "LI_INSTRUMENT_RESPONSE_DECONVOLUTION_ISOTOPE_TARGET_STATE_UNCERTAINTY",
+    "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT",
+    "D_PI_RR_MATCHED_SOURCE_MOMENTS",
+    "LI_HARD_UV_INNER_SHELL_SPECTRAL_CONTRACT",
+    "FULL_GEOMETRY_SPECTRAL_BACKREACTION"
+  ],
+  "whole_goal_completion_percent": null,
+  "denominator": "not fixed; scoped stages and whole scientific obligations separate",
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "atomic_umbrella_status": "BOUND_BOUND_CE_AND_RADIATIVE_COOLING_PARTIAL: finite H I LS star complete; full-source multilevel/species/transport obligations OPEN",
+  "next_ready_physics_contracts": [
+    "HI_2S_2P_MIXING_AND_SPECTROSCOPIC_ENERGY_MATCH",
+    "NUCLEAR_FINITE_T_EVENT_PROVIDER_AND_STOICHIOMETRY"
+  ]
+}

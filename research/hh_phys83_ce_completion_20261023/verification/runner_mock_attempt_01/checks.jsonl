@@ -1,0 +1,81 @@
+{"case": "runner_new_mock_then_completed_skip", "event": "START", "utc": "2026-10-23T15:01:16.969955+00:00"}
+{"case": "runner_new_mock_then_completed_skip", "check": "new_mock_identity_completed", "pass": true}
+{"case": "runner_new_mock_then_completed_skip", "check": "exact_seven_mock_payloads", "pass": true}
+{"case": "runner_new_mock_then_completed_skip", "check": "one_mock_callback", "pass": true}
+{"case": "runner_new_mock_then_completed_skip", "check": "completed_identity_skip", "pass": true}
+{"case": "runner_new_mock_then_completed_skip", "check": "reported_resume_callbacks_zero", "pass": true}
+{"case": "runner_new_mock_then_completed_skip", "check": "actual_resume_callbacks_zero", "pass": true}
+{"case": "runner_new_mock_then_completed_skip", "check": "resume_preserves_all_mock_bytes", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_new_mock_then_completed_skip", "group": "runner_mock", "status": "PASS", "checks": 7, "elapsed_seconds": 0.005452163997688331, "reason": null}
+{"case": "runner_payload_corruption_rejected", "event": "START", "utc": "2026-10-23T15:01:16.975452+00:00"}
+{"case": "runner_payload_corruption_rejected", "check": "corruption_rejected_before_callback", "pass": true, "rejection": "ValueError", "reason": "COMPLETED_RESULT_CORRUPTED:rate_grid.csv"}
+{"case": "runner_payload_corruption_rejected", "check": "corrupt_mock_evidence_unchanged", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_payload_corruption_rejected", "group": "runner_mock", "status": "PASS", "checks": 2, "elapsed_seconds": 0.0023286380019271746, "reason": null}
+{"case": "runner_completion_certificate_corruption", "event": "START", "utc": "2026-10-23T15:01:16.977814+00:00"}
+{"case": "runner_completion_certificate_corruption", "check": "COMPLETE_hash_bound_to_claim", "pass": true, "rejection": "ValueError", "reason": "COMPLETION_CERTIFICATE_CORRUPTED"}
+{"case": "runner_completion_certificate_corruption", "check": "altered_certificate_preserved", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_completion_certificate_corruption", "group": "runner_mock", "status": "PASS", "checks": 2, "elapsed_seconds": 0.002854630001820624, "reason": null}
+{"case": "runner_empty_and_identity_only_manifests", "event": "START", "utc": "2026-10-23T15:01:16.980702+00:00"}
+{"case": "runner_empty_and_identity_only_manifests", "check": "manifest_has_actual_required_payloads:empty", "pass": true, "rejection": "ValueError", "reason": "INCOMPLETE_RESULT_MANIFEST"}
+{"case": "runner_empty_and_identity_only_manifests", "check": "invalid_manifest_not_repaired_silently", "pass": true}
+{"case": "runner_empty_and_identity_only_manifests", "check": "manifest_has_actual_required_payloads:identity_only", "pass": true, "rejection": "ValueError", "reason": "INCOMPLETE_RESULT_MANIFEST"}
+{"case": "runner_empty_and_identity_only_manifests", "check": "invalid_manifest_not_repaired_silently", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_empty_and_identity_only_manifests", "group": "runner_mock", "status": "PASS", "checks": 4, "elapsed_seconds": 0.005835115000081714, "reason": null}
+{"case": "runner_existing_output_no_overwrite", "event": "START", "utc": "2026-10-23T15:01:16.986633+00:00"}
+{"case": "runner_existing_output_no_overwrite", "check": "existing_output_no_overwrite", "pass": true, "rejection": "FileExistsError", "reason": "OUTPUT_EXISTS_WITHOUT_CLAIM; no overwrite or automatic replay"}
+{"case": "runner_existing_output_no_overwrite", "check": "existing_output_bytes_preserved", "pass": true}
+{"case": "runner_existing_output_no_overwrite", "check": "no_identity_claim_created", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_existing_output_no_overwrite", "group": "runner_mock", "status": "PASS", "checks": 3, "elapsed_seconds": 0.0005866939973202534, "reason": null}
+{"case": "runner_failed_or_incomplete_claim_no_retry", "event": "START", "utc": "2026-10-23T15:01:16.987302+00:00"}
+{"case": "runner_failed_or_incomplete_claim_no_retry", "check": "existing_claim_no_automatic_retry:ADMITTED", "pass": true, "rejection": "RuntimeError", "reason": "CLAIM_EXISTS_WITHOUT_VERIFIED_COMPLETION; inspect preserved attempt; no automatic replay"}
+{"case": "runner_failed_or_incomplete_claim_no_retry", "check": "existing_claim_evidence_preserved", "pass": true}
+{"case": "runner_failed_or_incomplete_claim_no_retry", "check": "existing_claim_no_automatic_retry:FAILED_PRESERVED", "pass": true, "rejection": "RuntimeError", "reason": "CLAIM_EXISTS_WITHOUT_VERIFIED_COMPLETION; inspect preserved attempt; no automatic replay"}
+{"case": "runner_failed_or_incomplete_claim_no_retry", "check": "existing_claim_evidence_preserved", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_failed_or_incomplete_claim_no_retry", "group": "runner_mock", "status": "PASS", "checks": 4, "elapsed_seconds": 0.0018797419979819097, "reason": null}
+{"case": "runner_sequential_exclusive_claim_control", "event": "START", "utc": "2026-10-23T15:01:16.989210+00:00"}
+{"case": "runner_sequential_exclusive_claim_control", "check": "O_EXCL_claim_collision", "pass": true, "rejection": "FileExistsError", "reason": "[Errno 17] File exists: '/workspace/scratch/ebcaaaa20861/WU088_HH/research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01/MOCK_ONLY_cases/exclusive_claim/registry/848b1c88ad2858c13b29d1a2d7c9b7fcafa59c96c2c83fd7083347f479ba0b28.json'"}
+{"case": "runner_sequential_exclusive_claim_control", "check": "exclusive_claim_bytes_unchanged", "pass": true}
+{"case": "runner_sequential_exclusive_claim_control", "check": "simulated_concurrent_duplicate_no_callback", "pass": true, "rejection": "RuntimeError", "reason": "CLAIM_EXISTS_WITHOUT_VERIFIED_COMPLETION; inspect preserved attempt; no automatic replay"}
+{"case": "runner_sequential_exclusive_claim_control", "check": "duplicate_did_not_create_output", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_sequential_exclusive_claim_control", "group": "runner_mock", "status": "PASS", "checks": 4, "elapsed_seconds": 0.000441155003500171, "reason": null}
+{"case": "runner_callback_failure_preservation", "event": "START", "utc": "2026-10-23T15:01:16.989682+00:00"}
+{"case": "runner_callback_failure_preservation", "check": "injected_mock_failure_propagates", "pass": true, "rejection": "RuntimeError", "reason": "INJECTED_MOCK_CALLBACK_FAILURE"}
+{"case": "runner_callback_failure_preservation", "check": "failed_status_preserved", "pass": true}
+{"case": "runner_callback_failure_preservation", "check": "failure_reason_preserved", "pass": true}
+{"case": "runner_callback_failure_preservation", "check": "partial_mock_payload_preserved", "pass": true}
+{"case": "runner_callback_failure_preservation", "check": "failure_not_marked_complete", "pass": true}
+{"case": "runner_callback_failure_preservation", "check": "failed_mock_callback_not_repeated", "pass": true, "rejection": "RuntimeError", "reason": "CLAIM_EXISTS_WITHOUT_VERIFIED_COMPLETION; inspect preserved attempt; no automatic replay"}
+{"case": "runner_callback_failure_preservation", "check": "failure_resume_bytes_unchanged", "pass": true}
+{"case": "runner_callback_failure_preservation", "check": "exactly_one_injected_mock_failure", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_callback_failure_preservation", "group": "runner_mock", "status": "PASS", "checks": 8, "elapsed_seconds": 0.0029055979975964874, "reason": null}
+{"case": "runner_metadata_only_recovery", "event": "START", "utc": "2026-10-23T15:01:16.992619+00:00"}
+{"case": "runner_metadata_only_recovery", "check": "metadata_recovery_skips_science", "pass": true}
+{"case": "runner_metadata_only_recovery", "check": "metadata_recovery_binds_certificate", "pass": true}
+{"case": "runner_metadata_only_recovery", "check": "metadata_recovery_preserves_payload", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_metadata_only_recovery", "group": "runner_mock", "status": "PASS", "checks": 3, "elapsed_seconds": 0.005899837997276336, "reason": null}
+{"case": "runner_runtime_metadata_excluded_from_identity", "event": "START", "utc": "2026-10-23T15:01:16.998553+00:00"}
+{"case": "runner_runtime_metadata_excluded_from_identity", "check": "runtime_metadata_not_in_identity", "pass": true}
+{"case": "runner_runtime_metadata_excluded_from_identity", "check": "runtime_replay_flag_false", "pass": true}
+{"case": "runner_runtime_metadata_excluded_from_identity", "check": "runtime_value_not_hashed", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_runtime_metadata_excluded_from_identity", "group": "runner_mock", "status": "PASS", "checks": 3, "elapsed_seconds": 0.002638284000568092, "reason": null}
+{"case": "runner_restored_mock_bytes_resume", "event": "START", "utc": "2026-10-23T15:01:17.001222+00:00"}
+{"case": "runner_restored_mock_bytes_resume", "check": "restored_bytes_exact", "pass": true}
+{"case": "runner_restored_mock_bytes_resume", "check": "restored_output_resume_zero_callbacks", "pass": true}
+{"case": "runner_restored_mock_bytes_resume", "check": "restored_seven_files_verified", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_restored_mock_bytes_resume", "group": "runner_mock", "status": "PASS", "checks": 3, "elapsed_seconds": 0.0032200909990933724, "reason": null}
+{"case": "runner_identity_summary_accounting_bindings", "event": "START", "utc": "2026-10-23T15:01:17.004476+00:00"}
+{"case": "runner_identity_summary_accounting_bindings", "check": "completion_internal_binding:identity", "pass": true, "rejection": "ValueError", "reason": "RESULT_IDENTITY_PAYLOAD_MISMATCH"}
+{"case": "runner_identity_summary_accounting_bindings", "check": "invalid_binding_evidence_preserved", "pass": true}
+{"case": "runner_identity_summary_accounting_bindings", "check": "completion_internal_binding:summary", "pass": true, "rejection": "ValueError", "reason": "RESULT_SUMMARY_EXECUTION_MISMATCH"}
+{"case": "runner_identity_summary_accounting_bindings", "check": "invalid_binding_evidence_preserved", "pass": true}
+{"case": "runner_identity_summary_accounting_bindings", "check": "completion_internal_binding:accounting", "pass": true, "rejection": "ValueError", "reason": "COMPLETION_EXECUTION_ACCOUNTING_MISMATCH"}
+{"case": "runner_identity_summary_accounting_bindings", "check": "invalid_binding_evidence_preserved", "pass": true}
+{"case": "runner_identity_summary_accounting_bindings", "check": "completion_internal_binding:missing_certificate_hash", "pass": true, "rejection": "ValueError", "reason": "COMPLETED_CLAIM_WITHOUT_CERTIFICATE_HASH"}
+{"case": "runner_identity_summary_accounting_bindings", "check": "invalid_binding_evidence_preserved", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_identity_summary_accounting_bindings", "group": "runner_mock", "status": "PASS", "checks": 8, "elapsed_seconds": 0.010912379999354016, "reason": null}
+{"case": "runner_no_production_science_calls", "event": "START", "utc": "2026-10-23T15:01:17.015427+00:00"}
+{"case": "runner_no_production_science_calls", "check": "production_calculate_never_called", "pass": true}
+{"case": "runner_no_production_science_calls", "check": "all_reject_or_skip_paths_zero_callbacks", "pass": true}
+{"case": "runner_no_production_science_calls", "check": "scientific_modules_never_imported", "pass": true}
+{"event": "CASE_RESULT", "case": "runner_no_production_science_calls", "group": "runner_mock", "status": "PASS", "checks": 3, "elapsed_seconds": 7.270900096045807e-05, "reason": null}
+{"case": "all_controls_real_input_identity", "check": "real_scientific_files_unmodified", "pass": true}

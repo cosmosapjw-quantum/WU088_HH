@@ -1,0 +1,111 @@
+{
+  "schema": "PHYS83_DETACHED_NUCLEAR_INDEPENDENT_VERIFICATION_V1",
+  "utc": "2026-10-23T14:55:34.297071+00:00",
+  "input_sha256": {
+    "source/nuclear_ownership.py": "be0739a0cc63d4f53f06b450b300bce09aa41878cd4462c0753798d6639684d2",
+    "verification/independent_verify_nuclear.py": "d9b3ae43df9a90599428c8c150f794c51d4f5cf3f8c0024b3ecb29e94c15cdc2",
+    "verification/independent_verify.py": "b9b74a5d512ca9a73efc9c12a65f164a308eead4010d2ddceb3dde9c04544d96"
+  },
+  "python": "3.12.14",
+  "workers": 1,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "lease_receipt": "verification/lease_nuclear_01.json",
+  "lease_receipt_sha256": null,
+  "lease_receipt_status": "WRAPPER_WRITES_AFTER_CHILD_EXIT",
+  "new_physical_nuclear_events": 0,
+  "new_nuclear_rates": 0,
+  "new_stopping_laws": 0,
+  "new_ODE": 0,
+  "completed_scientific_identity_reruns": 0,
+  "finished_utc": "2026-10-23T14:55:34.309328+00:00",
+  "status": "PASS_SCOPED",
+  "checks": 171,
+  "cases": [
+    {
+      "case": "nuclear_supplied_events_signed_residual",
+      "group": "nuclear",
+      "status": "PASS",
+      "checks": 47,
+      "elapsed_seconds": 0.0006181410062708892,
+      "reason": null
+    },
+    {
+      "case": "nuclear_weighted_mean_and_zero_measure",
+      "group": "nuclear",
+      "status": "PASS",
+      "checks": 28,
+      "elapsed_seconds": 0.0005210749950492755,
+      "reason": null
+    },
+    {
+      "case": "nuclear_stopping_assimilation_exclusive_composition",
+      "group": "nuclear",
+      "status": "PASS",
+      "checks": 30,
+      "elapsed_seconds": 0.0004825470023206435,
+      "reason": null
+    },
+    {
+      "case": "nuclear_thermal_EOS_and_selected_pair_mean",
+      "group": "nuclear",
+      "status": "PASS",
+      "checks": 9,
+      "elapsed_seconds": 0.00020420800137799233,
+      "reason": null
+    },
+    {
+      "case": "nuclear_scalar_frame_weight_EOS_guards",
+      "group": "nuclear",
+      "status": "PASS",
+      "checks": 57,
+      "elapsed_seconds": 0.0007707010008743964,
+      "reason": null
+    }
+  ],
+  "selected_cases": [
+    "nuclear_supplied_events_signed_residual",
+    "nuclear_weighted_mean_and_zero_measure",
+    "nuclear_stopping_assimilation_exclusive_composition",
+    "nuclear_thermal_EOS_and_selected_pair_mean",
+    "nuclear_scalar_frame_weight_EOS_guards"
+  ],
+  "unfinished_cases": [],
+  "maximum_errors": {
+    "event_signed_residual:abs": 1.0408340902935013e-16,
+    "capture_preserves_signed_residual:abs": 1.0408340902935013e-16,
+    "prompt_capture_energy_ownership:abs": 0.0,
+    "same_measure_energy_average:rel": 2.220446049250313e-16,
+    "weighted_energy_residual:abs": 1.2836953722228372e-16,
+    "exclusive_transfer_energy_composition:abs": 0.0,
+    "stopping_energy_residual:abs": 0.0,
+    "assimilation_energy_residual:abs": 0.0,
+    "thermal_EOS_independent_energy_differential:exact_zero:abs": 0.0,
+    "thermal_EOS_independent_energy_differential:rel": 0.0,
+    "selected_pair_COM_plus_relative_energy:rel": 0.0,
+    "number_source_not_missing_from_EOS:abs": 0.0
+  },
+  "counters": {
+    "valid_supplied_synthetic_event_records": 9,
+    "relative_weighted_event_means": 4,
+    "subnormal_mean_cases": 1,
+    "exclusive_transfer_compositions": 3,
+    "synthetic_EOS_cases": 5,
+    "conditional_NR_mean_cases": 4,
+    "nuclear_rates_or_stopping_law_callbacks": 0,
+    "parent_PHYS81_event_callbacks": 0
+  },
+  "elapsed_seconds": 0.00275701200007461,
+  "reference": "Decimal precision80; independent signed field sums, weighted averages, and EOS energy differential",
+  "limits": [
+    "Synthetic supplied scalar energies only; not on-shell/frame construction",
+    "No empirical rates, physical finite-T quadrature, stopping activation, or nuclear ODE",
+    "Aggregate two-to-one particle pool counts; isotope stoichiometry remains provider-owned",
+    "Finite sampled verification; no continuum certificate; production NOT_ISSUED"
+  ]
+}
