@@ -1,0 +1,82 @@
+{
+  "schema": "PHYS84_IMPLEMENTATION_RECOVERY_V1",
+  "status": "EXACT_V4_FIVE_FILE_HASH_MATCH",
+  "reconstruction_method": "Original literal apply_patch tool-call source inputs plus literal authorized S1/S2/S3/S4/S5 patches preserved in implementer conversation; fixture JSON from original literal contract fixtures with identical sort/indent generation. No contract-based rewrite.",
+  "independent_prior_manifest": "/tmp/wu84_review_recovery/observed/preloss_v4_SHA256.json",
+  "independent_prior_manifest_SHA256": "6d4883b6ec54d8b56b6ca9f80fd2bf7008894eb7660ffc87df41d31c26d1696b",
+  "checks": [
+    {
+      "path": "source/fixtures.json",
+      "prior_SHA256": "6cf2a671e0378d7e03446af9fe766b2d0286e9e69c1e272a1c17b43317833c4f",
+      "recovered_SHA256": "6cf2a671e0378d7e03446af9fe766b2d0286e9e69c1e272a1c17b43317833c4f",
+      "bytes": 1190,
+      "match": true
+    },
+    {
+      "path": "source/leased_call.py",
+      "prior_SHA256": "f15ae64c40dadcee0995344c9d90d3de314e2c9689a303b1b045271878c6a752",
+      "recovered_SHA256": "f15ae64c40dadcee0995344c9d90d3de314e2c9689a303b1b045271878c6a752",
+      "bytes": 4174,
+      "match": true
+    },
+    {
+      "path": "source/run_source.py",
+      "prior_SHA256": "b7931f7f90702805e1d9f79518524eb264ba491752c41379774734f3fe3f7fb8",
+      "recovered_SHA256": "b7931f7f90702805e1d9f79518524eb264ba491752c41379774734f3fe3f7fb8",
+      "bytes": 5427,
+      "match": true
+    },
+    {
+      "path": "source/source_adapter.py",
+      "prior_SHA256": "8e61bab7ebc40d075965b980852d6b2d97f5c7e1421bfe31600ca4e19bfc258d",
+      "recovered_SHA256": "8e61bab7ebc40d075965b980852d6b2d97f5c7e1421bfe31600ca4e19bfc258d",
+      "bytes": 9105,
+      "match": true
+    },
+    {
+      "path": "verification/verify_source.py",
+      "prior_SHA256": "9ab8cad5ef7b91b97decf49cbf934eb353a40acef0fb517ace5409d1368a240d",
+      "recovered_SHA256": "9ab8cad5ef7b91b97decf49cbf934eb353a40acef0fb517ace5409d1368a240d",
+      "bytes": 15776,
+      "match": true
+    }
+  ],
+  "all_five_prior_hashes_match": true,
+  "v4_claim": "exact prior bytes independently hash-matched",
+  "v1_v2_v3_claim": "historical stages reconstructed from original literal tool-call inputs and patches; no independent pre-loss SHA manifest currently available for these stages, so no separate old-byte verification claim",
+  "known_history": [
+    {
+      "stage": "v1",
+      "finding": "S1 completion bytes; S2 tautological callback check",
+      "status": "preserved transcript reconstruction"
+    },
+    {
+      "stage": "v2",
+      "finding": "S1/S2 bounded repairs complete",
+      "status": "preserved transcript reconstruction"
+    },
+    {
+      "stage": "v3",
+      "finding": "S3 no bytecode before parent import; S4 runtime diagnostic separated from scientific identity",
+      "status": "preserved transcript reconstruction"
+    },
+    {
+      "stage": "v4",
+      "finding": "S5 actual fixture-interface count",
+      "status": "independent prior hash match"
+    },
+    {
+      "stage": "pending_v5",
+      "finding": "C9-S1B row_count16.0 equality exact-byte edge",
+      "status": "authorized but not yet applied"
+    }
+  ],
+  "numerical_tests": 0,
+  "source_interface_calls": 0,
+  "real_application_callbacks": 0,
+  "parent_scientific_callbacks": 0,
+  "rate_evaluations": 0,
+  "population_solves": 0,
+  "ODE": 0,
+  "writes_scope": "/tmp/wu84_code_recovery only"
+}
