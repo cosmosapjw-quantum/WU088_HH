@@ -28,3 +28,7 @@ R/C 단계명은 사용자 지정 physmath-research-loop1.0.0의 THEORY_LOOP/COD
 Requested model identities are routing records. Actual runtime identity is recorded only where observed. Agent names or default inheritance do not prove an unobserved runtime backend. No review recursively launches a second scientific campaign.
 
 새 물리 kernel 평가와 저장된 결과의 byte-only 채택을 구분한다. 16행 새 source application은 이번 단원의 새로운 제한된 대수적 계산이며, parent rate evaluation이나 기존 PHYS83 science로 다시 세지 않는다. 기존 PHYS83 numerical matrix와 실제 resume receipt는 재사용한다. 금전 예산 미확인은0이 아니며 heavy launch의 허가도 아니다.
+
+## 최종 전달 시점의 실제 gate
+
+R1–R6와 R9의 계약·유도·검토는 완료했고, R7의 기호 검산19zero는 보존했다. R7의 새 수치 판별 및 C6–C8 runtime 검증은 shared lease 대기다. C5 구현 v5는 작성·정적 검토되었고 C9는 STATIC_REVIEW_PASS_NUMERICAL_ADMISSION_WAIT다. R8은 이 범위에서 판정하며, R10/C10은 prepared artifact의 expected-SHA 게시·백업·인계를 수행한다. 이 workflow 종료 표기가 새로운 수치 완료 또는 consumer admission을 뜻하지 않는다. PHYS83 완료 채택은 과거 science를 재실행하지 않고 유지한다.

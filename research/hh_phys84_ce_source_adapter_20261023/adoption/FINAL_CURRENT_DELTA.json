@@ -1,0 +1,488 @@
+{
+  "schema": "PHYS84_FINAL_BOUNDED_CURRENT_DELTA_V1",
+  "central_pinned_HEAD": "0f9d9df825be1dac9ca9bdf73cdc2e8908bcba17",
+  "central_current_HEAD": "68420637a9ab54ada92afd786c5733bc0764b8c9",
+  "central_AGENTS_blob": "429a5a13ee75b1222bc50627f8d5973d01dd21c4",
+  "central_WU_handoff_blob": "6598d1bd4cbc149259a7f5eb8de55a320569c785",
+  "central_atomic_contracts_blob": "f3d96c21f1f113d832507658a9cbcd5651741fa1",
+  "these_three_blobs_unchanged_from_pinned_intake": true,
+  "central_current_DAG_blob": "87deeb6c65497b8dd5cdf6dbef397293f7d0c492",
+  "current_WU_nodes": [
+    {
+      "status": "OPEN",
+      "execution": "NOT_RUN",
+      "budget": {
+        "inherited_spend": null,
+        "remaining": null,
+        "currency": null,
+        "policy": "unknown is not zero; retain existing campaign receipt; no new heavy launch"
+      },
+      "publication": {
+        "kind": "separate additive draft",
+        "merge": false
+      },
+      "gate_transition": "OPEN -> DERIVED_SCOPED -> IMPLEMENTATION_VERIFIED -> NUMERICALLY_CHECKED_SCOPED -> CONSUMER_ADMITTED only with named consumer and valid source/domain/owner",
+      "no_replay": "completed identities reused, changes verify only affected obligations",
+      "id": "WU_CE83_OWNER_COMPLETION",
+      "depends_on": [],
+      "equations": [
+        "W(eps)=(eps+Delta)*sigma_up(eps+Delta)",
+        "eps*sigma_down=(g0/gi)*W",
+        "dx/dt=a-(diag(c+A)+a*1^T)x",
+        "Qth+DeltaUatom+Egamma=0"
+      ],
+      "domain": "H I LS1s/2s/2p finite native Delta10.20435eV,255<=T<=50000K, fixed ne/T, optically thin",
+      "input": [
+        "PR139 S0 09289300ec2e500806aa2cb82365f00329e41c8c CONTRACT; owner active"
+      ],
+      "output": [
+        "owner-completed matched rates, populations, energy profiles"
+      ],
+      "admission_gate": "132rates+324steady+732transient rows and frozen contract independent gates; confirm current owner result first",
+      "pr_boundary": "Do not duplicate PHYS83; ingest owner completion, then separate consumer PR"
+    },
+    {
+      "status": "OPEN",
+      "execution": "NOT_RUN",
+      "budget": {
+        "inherited_spend": null,
+        "remaining": null,
+        "currency": null,
+        "policy": "unknown is not zero; retain existing campaign receipt; no new heavy launch"
+      },
+      "publication": {
+        "kind": "separate additive draft",
+        "merge": false
+      },
+      "gate_transition": "OPEN -> DERIVED_SCOPED -> IMPLEMENTATION_VERIFIED -> NUMERICALLY_CHECKED_SCOPED -> CONSUMER_ADMITTED only with named consumer and valid source/domain/owner",
+      "no_replay": "completed identities reused, changes verify only affected obligations",
+      "id": "WU_LI_SOURCE_UNCERTAINTY",
+      "depends_on": [],
+      "equations": [
+        "K(T)=sqrt(8/(pi*me))*(kBT)^(-3/2)*integral(E*sigma(E)*exp(-E/kBT)dE)",
+        "sigma_model=sigma6*((E-I)/(6-I))^p*(6/E)^q"
+      ],
+      "domain": "Li7 I=5.39172060034581eV to6eV; measurement response and source tail separated",
+      "input": [
+        "PHYS82 ca9d53983459ea08f9992a8a24663e46b7180344 conditional families",
+        "original experimental instrument response, isotope composition"
+      ],
+      "output": [
+        "admissible source envelope or explicit source-limited conditional rates"
+      ],
+      "admission_gate": "unconvolved source uncertainty justified from data; family spread alone does not satisfy confidence gate",
+      "pr_boundary": "Source analysis PR distinct from coupled trajectory PR"
+    },
+    {
+      "status": "OPEN",
+      "execution": "NOT_RUN",
+      "budget": {
+        "inherited_spend": null,
+        "remaining": null,
+        "currency": null,
+        "policy": "unknown is not zero; retain existing campaign receipt; no new heavy launch"
+      },
+      "publication": {
+        "kind": "separate additive draft",
+        "merge": false
+      },
+      "gate_transition": "OPEN -> DERIVED_SCOPED -> IMPLEMENTATION_VERIFIED -> NUMERICALLY_CHECKED_SCOPED -> CONSUMER_ADMITTED only with named consumer and valid source/domain/owner",
+      "no_replay": "completed identities reused, changes verify only affected obligations",
+      "id": "WU_HE_LI_CX_STATE_ENERGY",
+      "depends_on": [],
+      "equations": [
+        "DeltaEevent=sum(Ebinding_products)-sum(Ebinding_reactants)",
+        "Qthermal+Qphoton+Qrecoil+DeltaEevent=0",
+        "dn/dt=S*r"
+      ],
+      "domain": "state-resolved He/Li CX with explicit projectile/target charge, excited branches, collision energies",
+      "input": [
+        "primary channel cross sections",
+        "branch probabilities, thresholds, photon/recoil owner"
+      ],
+      "output": [
+        "positive incidence columns; level-resolved rates and thermal/photon source"
+      ],
+      "admission_gate": "nuclei and charge exact per event, all included branch energy closure, domain coverage table",
+      "pr_boundary": "One source/branching PR; separate thermal consumer activation"
+    },
+    {
+      "status": "OPEN",
+      "execution": "NOT_RUN",
+      "budget": {
+        "inherited_spend": null,
+        "remaining": null,
+        "currency": null,
+        "policy": "unknown is not zero; retain existing campaign receipt; no new heavy launch"
+      },
+      "publication": {
+        "kind": "separate additive draft",
+        "merge": false
+      },
+      "gate_transition": "OPEN -> DERIVED_SCOPED -> IMPLEMENTATION_VERIFIED -> NUMERICALLY_CHECKED_SCOPED -> CONSUMER_ADMITTED only with named consumer and valid source/domain/owner",
+      "no_replay": "completed identities reused, changes verify only affected obligations",
+      "id": "WU_D_PI_RR_MATCHED",
+      "depends_on": [],
+      "equations": [
+        "R_PI=int(4*pi*Jnu*sigma_nu/(h*nu)dnu)",
+        "H_PI=int(4*pi*Jnu*sigma_nu*(h*nu-I)/(h*nu)dnu)",
+        "dT/dt=2*Q/(3*kB*Nthermal)-T*dNthermal/dt/Nthermal"
+      ],
+      "domain": "D source-qualified PI and Case-A RR using same isotope gap and radiation history",
+      "input": [
+        "PR135 existing event-energy adapter",
+        "D threshold/cross section/RR capture moments"
+      ],
+      "output": [
+        "source-matched event rates and kinetic/binding/photon moments"
+      ],
+      "admission_gate": "same event count in electron source and binding ledger; Milne relation under stated degeneracies/frame; dimensional guard",
+      "pr_boundary": "Preserve event adapter; add source-moment supplier PR then consumer PR"
+    },
+    {
+      "status": "OPEN",
+      "execution": "NOT_RUN",
+      "budget": {
+        "inherited_spend": null,
+        "remaining": null,
+        "currency": null,
+        "policy": "unknown is not zero; retain existing campaign receipt; no new heavy launch"
+      },
+      "publication": {
+        "kind": "separate additive draft",
+        "merge": false
+      },
+      "gate_transition": "OPEN -> DERIVED_SCOPED -> IMPLEMENTATION_VERIFIED -> NUMERICALLY_CHECKED_SCOPED -> CONSUMER_ADMITTED only with named consumer and valid source/domain/owner",
+      "no_replay": "completed identities reused, changes verify only affected obligations",
+      "id": "WU_NUCLEAR_PARTICLE_OWNERSHIP",
+      "depends_on": [],
+      "equations": [
+        "Nth=Nnuc,thermal+Ne,thermal",
+        "dUtotal=dUth+dUnt+dUbind+dUrad+dUescape+work=0",
+        "<rate*Eproduct> differs from <rate>*<Eproduct> unless justified"
+      ],
+      "domain": "thermal finite-T reactants, explicitly tracked fast products and normal-frame photons",
+      "input": [
+        "PHYS81 b3ec271a96cb67e583bffa9b61533802838236f9 photon/recoil kinematics",
+        "C23B boost and clock pins",
+        "HE source moment contracts"
+      ],
+      "output": [
+        "particle transfer incidence and event-weighted thermal/photon/recoil moments"
+      ],
+      "admission_gate": "every product has unique thermal/fast owner; thresholds and recoil kinematics consistent; no rate activation without source",
+      "pr_boundary": "Theory and source-ownership PR before stopping/rate implementation"
+    },
+    {
+      "status": "OPEN",
+      "execution": "NOT_RUN",
+      "budget": {
+        "inherited_spend": null,
+        "remaining": null,
+        "currency": null,
+        "policy": "unknown is not zero; retain existing campaign receipt; no new heavy launch"
+      },
+      "publication": {
+        "kind": "separate additive draft",
+        "merge": false
+      },
+      "gate_transition": "OPEN -> DERIVED_SCOPED -> IMPLEMENTATION_VERIFIED -> NUMERICALLY_CHECKED_SCOPED -> CONSUMER_ADMITTED only with named consumer and valid source/domain/owner",
+      "no_replay": "completed identities reused, changes verify only affected obligations",
+      "id": "WU_SPECTRAL_GEOMETRY_COUPLING",
+      "depends_on": [
+        "WU_CE83_OWNER_COMPLETION",
+        "WU_HE_LI_CX_STATE_ENERGY",
+        "WU_D_PI_RR_MATCHED",
+        "WU_NUCLEAR_PARTICLE_OWNERSHIP"
+      ],
+      "equations": [
+        "n_dot=S*r",
+        "Utotal_dot+expansion_work+shear_work=external_supply-escape",
+        "pi_total=sum signed same-frame tensors before norm"
+      ],
+      "domain": "non-tilted LRS; isotropic reacting gas, separate collisionless dark matter; recombination-to-z20 initial charge pinned",
+      "input": [
+        "closed rate/domain/owner contracts",
+        "REC initial charge/line suppliers",
+        "Li inner-shell/Auger branching"
+      ],
+      "output": [
+        "conservative consumer prototype and distinct small new input validation"
+      ],
+      "admission_gate": "photon reabsorption/escape and initial-charge consistency closed; global/production adoption remains separate",
+      "pr_boundary": "Consumer PR only after dependency delivery; HH_R10 stays OFF until original HH gates independently met"
+    },
+    {
+      "id": "WU_CE83_OWNER_COMPLETION",
+      "repository": "WU088_HH",
+      "authority": "atomic/LONGTERM_CONTRACTS.json",
+      "authority_pointer": "/nodes/WU088_HH/0",
+      "contract": {
+        "status": "OPEN",
+        "execution": "NOT_RUN",
+        "budget": {
+          "inherited_spend": null,
+          "remaining": null,
+          "currency": null,
+          "policy": "unknown is not zero; retain existing campaign receipt; no new heavy launch"
+        },
+        "publication": {
+          "kind": "separate additive draft",
+          "merge": false
+        },
+        "gate_transition": "OPEN -> DERIVED_SCOPED -> IMPLEMENTATION_VERIFIED -> NUMERICALLY_CHECKED_SCOPED -> CONSUMER_ADMITTED only with named consumer and valid source/domain/owner",
+        "no_replay": "completed identities reused, changes verify only affected obligations",
+        "id": "WU_CE83_OWNER_COMPLETION",
+        "depends_on": [],
+        "equations": [
+          "W(eps)=(eps+Delta)*sigma_up(eps+Delta)",
+          "eps*sigma_down=(g0/gi)*W",
+          "dx/dt=a-(diag(c+A)+a*1^T)x",
+          "Qth+DeltaUatom+Egamma=0"
+        ],
+        "domain": "H I LS1s/2s/2p finite native Delta10.20435eV,255<=T<=50000K, fixed ne/T, optically thin",
+        "input": [
+          "PR139 S0 09289300ec2e500806aa2cb82365f00329e41c8c CONTRACT; owner active"
+        ],
+        "output": [
+          "owner-completed matched rates, populations, energy profiles"
+        ],
+        "admission_gate": "132rates+324steady+732transient rows and frozen contract independent gates; confirm current owner result first",
+        "pr_boundary": "Do not duplicate PHYS83; ingest owner completion, then separate consumer PR"
+      },
+      "plan_status": "PROPOSED",
+      "local_dependencies": [],
+      "external_dependencies": [],
+      "conditional_dependencies": []
+    },
+    {
+      "id": "WU_LI_SOURCE_UNCERTAINTY",
+      "repository": "WU088_HH",
+      "authority": "atomic/LONGTERM_CONTRACTS.json",
+      "authority_pointer": "/nodes/WU088_HH/1",
+      "contract": {
+        "status": "OPEN",
+        "execution": "NOT_RUN",
+        "budget": {
+          "inherited_spend": null,
+          "remaining": null,
+          "currency": null,
+          "policy": "unknown is not zero; retain existing campaign receipt; no new heavy launch"
+        },
+        "publication": {
+          "kind": "separate additive draft",
+          "merge": false
+        },
+        "gate_transition": "OPEN -> DERIVED_SCOPED -> IMPLEMENTATION_VERIFIED -> NUMERICALLY_CHECKED_SCOPED -> CONSUMER_ADMITTED only with named consumer and valid source/domain/owner",
+        "no_replay": "completed identities reused, changes verify only affected obligations",
+        "id": "WU_LI_SOURCE_UNCERTAINTY",
+        "depends_on": [],
+        "equations": [
+          "K(T)=sqrt(8/(pi*me))*(kBT)^(-3/2)*integral(E*sigma(E)*exp(-E/kBT)dE)",
+          "sigma_model=sigma6*((E-I)/(6-I))^p*(6/E)^q"
+        ],
+        "domain": "Li7 I=5.39172060034581eV to6eV; measurement response and source tail separated",
+        "input": [
+          "PHYS82 ca9d53983459ea08f9992a8a24663e46b7180344 conditional families",
+          "original experimental instrument response, isotope composition"
+        ],
+        "output": [
+          "admissible source envelope or explicit source-limited conditional rates"
+        ],
+        "admission_gate": "unconvolved source uncertainty justified from data; family spread alone does not satisfy confidence gate",
+        "pr_boundary": "Source analysis PR distinct from coupled trajectory PR"
+      },
+      "plan_status": "PROPOSED",
+      "local_dependencies": [],
+      "external_dependencies": [],
+      "conditional_dependencies": []
+    },
+    {
+      "id": "WU_HE_LI_CX_STATE_ENERGY",
+      "repository": "WU088_HH",
+      "authority": "atomic/LONGTERM_CONTRACTS.json",
+      "authority_pointer": "/nodes/WU088_HH/2",
+      "contract": {
+        "status": "OPEN",
+        "execution": "NOT_RUN",
+        "budget": {
+          "inherited_spend": null,
+          "remaining": null,
+          "currency": null,
+          "policy": "unknown is not zero; retain existing campaign receipt; no new heavy launch"
+        },
+        "publication": {
+          "kind": "separate additive draft",
+          "merge": false
+        },
+        "gate_transition": "OPEN -> DERIVED_SCOPED -> IMPLEMENTATION_VERIFIED -> NUMERICALLY_CHECKED_SCOPED -> CONSUMER_ADMITTED only with named consumer and valid source/domain/owner",
+        "no_replay": "completed identities reused, changes verify only affected obligations",
+        "id": "WU_HE_LI_CX_STATE_ENERGY",
+        "depends_on": [],
+        "equations": [
+          "DeltaEevent=sum(Ebinding_products)-sum(Ebinding_reactants)",
+          "Qthermal+Qphoton+Qrecoil+DeltaEevent=0",
+          "dn/dt=S*r"
+        ],
+        "domain": "state-resolved He/Li CX with explicit projectile/target charge, excited branches, collision energies",
+        "input": [
+          "primary channel cross sections",
+          "branch probabilities, thresholds, photon/recoil owner"
+        ],
+        "output": [
+          "positive incidence columns; level-resolved rates and thermal/photon source"
+        ],
+        "admission_gate": "nuclei and charge exact per event, all included branch energy closure, domain coverage table",
+        "pr_boundary": "One source/branching PR; separate thermal consumer activation"
+      },
+      "plan_status": "PROPOSED",
+      "local_dependencies": [],
+      "external_dependencies": [],
+      "conditional_dependencies": []
+    },
+    {
+      "id": "WU_D_PI_RR_MATCHED",
+      "repository": "WU088_HH",
+      "authority": "atomic/LONGTERM_CONTRACTS.json",
+      "authority_pointer": "/nodes/WU088_HH/3",
+      "contract": {
+        "status": "OPEN",
+        "execution": "NOT_RUN",
+        "budget": {
+          "inherited_spend": null,
+          "remaining": null,
+          "currency": null,
+          "policy": "unknown is not zero; retain existing campaign receipt; no new heavy launch"
+        },
+        "publication": {
+          "kind": "separate additive draft",
+          "merge": false
+        },
+        "gate_transition": "OPEN -> DERIVED_SCOPED -> IMPLEMENTATION_VERIFIED -> NUMERICALLY_CHECKED_SCOPED -> CONSUMER_ADMITTED only with named consumer and valid source/domain/owner",
+        "no_replay": "completed identities reused, changes verify only affected obligations",
+        "id": "WU_D_PI_RR_MATCHED",
+        "depends_on": [],
+        "equations": [
+          "R_PI=int(4*pi*Jnu*sigma_nu/(h*nu)dnu)",
+          "H_PI=int(4*pi*Jnu*sigma_nu*(h*nu-I)/(h*nu)dnu)",
+          "dT/dt=2*Q/(3*kB*Nthermal)-T*dNthermal/dt/Nthermal"
+        ],
+        "domain": "D source-qualified PI and Case-A RR using same isotope gap and radiation history",
+        "input": [
+          "PR135 existing event-energy adapter",
+          "D threshold/cross section/RR capture moments"
+        ],
+        "output": [
+          "source-matched event rates and kinetic/binding/photon moments"
+        ],
+        "admission_gate": "same event count in electron source and binding ledger; Milne relation under stated degeneracies/frame; dimensional guard",
+        "pr_boundary": "Preserve event adapter; add source-moment supplier PR then consumer PR"
+      },
+      "plan_status": "PROPOSED",
+      "local_dependencies": [],
+      "external_dependencies": [],
+      "conditional_dependencies": []
+    },
+    {
+      "id": "WU_NUCLEAR_PARTICLE_OWNERSHIP",
+      "repository": "WU088_HH",
+      "authority": "atomic/LONGTERM_CONTRACTS.json",
+      "authority_pointer": "/nodes/WU088_HH/4",
+      "contract": {
+        "status": "OPEN",
+        "execution": "NOT_RUN",
+        "budget": {
+          "inherited_spend": null,
+          "remaining": null,
+          "currency": null,
+          "policy": "unknown is not zero; retain existing campaign receipt; no new heavy launch"
+        },
+        "publication": {
+          "kind": "separate additive draft",
+          "merge": false
+        },
+        "gate_transition": "OPEN -> DERIVED_SCOPED -> IMPLEMENTATION_VERIFIED -> NUMERICALLY_CHECKED_SCOPED -> CONSUMER_ADMITTED only with named consumer and valid source/domain/owner",
+        "no_replay": "completed identities reused, changes verify only affected obligations",
+        "id": "WU_NUCLEAR_PARTICLE_OWNERSHIP",
+        "depends_on": [],
+        "equations": [
+          "Nth=Nnuc,thermal+Ne,thermal",
+          "dUtotal=dUth+dUnt+dUbind+dUrad+dUescape+work=0",
+          "<rate*Eproduct> differs from <rate>*<Eproduct> unless justified"
+        ],
+        "domain": "thermal finite-T reactants, explicitly tracked fast products and normal-frame photons",
+        "input": [
+          "PHYS81 b3ec271a96cb67e583bffa9b61533802838236f9 photon/recoil kinematics",
+          "C23B boost and clock pins",
+          "HE source moment contracts"
+        ],
+        "output": [
+          "particle transfer incidence and event-weighted thermal/photon/recoil moments"
+        ],
+        "admission_gate": "every product has unique thermal/fast owner; thresholds and recoil kinematics consistent; no rate activation without source",
+        "pr_boundary": "Theory and source-ownership PR before stopping/rate implementation"
+      },
+      "plan_status": "PROPOSED",
+      "local_dependencies": [],
+      "external_dependencies": [],
+      "conditional_dependencies": []
+    },
+    {
+      "id": "WU_SPECTRAL_GEOMETRY_COUPLING",
+      "repository": "WU088_HH",
+      "authority": "atomic/LONGTERM_CONTRACTS.json",
+      "authority_pointer": "/nodes/WU088_HH/5",
+      "contract": {
+        "status": "OPEN",
+        "execution": "NOT_RUN",
+        "budget": {
+          "inherited_spend": null,
+          "remaining": null,
+          "currency": null,
+          "policy": "unknown is not zero; retain existing campaign receipt; no new heavy launch"
+        },
+        "publication": {
+          "kind": "separate additive draft",
+          "merge": false
+        },
+        "gate_transition": "OPEN -> DERIVED_SCOPED -> IMPLEMENTATION_VERIFIED -> NUMERICALLY_CHECKED_SCOPED -> CONSUMER_ADMITTED only with named consumer and valid source/domain/owner",
+        "no_replay": "completed identities reused, changes verify only affected obligations",
+        "id": "WU_SPECTRAL_GEOMETRY_COUPLING",
+        "depends_on": [
+          "WU_CE83_OWNER_COMPLETION",
+          "WU_HE_LI_CX_STATE_ENERGY",
+          "WU_D_PI_RR_MATCHED",
+          "WU_NUCLEAR_PARTICLE_OWNERSHIP"
+        ],
+        "equations": [
+          "n_dot=S*r",
+          "Utotal_dot+expansion_work+shear_work=external_supply-escape",
+          "pi_total=sum signed same-frame tensors before norm"
+        ],
+        "domain": "non-tilted LRS; isotropic reacting gas, separate collisionless dark matter; recombination-to-z20 initial charge pinned",
+        "input": [
+          "closed rate/domain/owner contracts",
+          "REC initial charge/line suppliers",
+          "Li inner-shell/Auger branching"
+        ],
+        "output": [
+          "conservative consumer prototype and distinct small new input validation"
+        ],
+        "admission_gate": "photon reabsorption/escape and initial-charge consistency closed; global/production adoption remains separate",
+        "pr_boundary": "Consumer PR only after dependency delivery; HH_R10 stays OFF until original HH gates independently met"
+      },
+      "plan_status": "PROPOSED",
+      "local_dependencies": [
+        "WU_CE83_OWNER_COMPLETION",
+        "WU_HE_LI_CX_STATE_ENERGY",
+        "WU_D_PI_RR_MATCHED",
+        "WU_NUCLEAR_PARTICLE_OWNERSHIP"
+      ],
+      "external_dependencies": [],
+      "conditional_dependencies": []
+    }
+  ],
+  "WU_actual_parent": "6a2fc5aacb6182a916b9434c316e99e750e8273c",
+  "WU_pre_final_HEAD": "3c04b6eecd6d1f425e8b6aa5d54b81ec56ffe173",
+  "scope": "bounded selected current refs/AGENTS/WU handoff/atomic contracts/DAG nodes only; not an exhaustive private conversation or branch-content survey"
+}
