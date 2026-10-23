@@ -1,0 +1,20 @@
+{
+  "schema": "PHYS82_GIT_TRANSPORT_BYTE_REPAIR_V1",
+  "detected_utc": "2026-10-23T03:07:05.733Z",
+  "candidate_HEAD": "8fb1c93c1018281e77547eabe57e223a996cef5e",
+  "science_result_commit": "6a5c5a48e0ef345ff438941d037c9452453b1fb3",
+  "path": "research/hh_phys82_li_threshold_sensitivity_20261023/source_data/PHYS81_LITERAL.csv",
+  "observed_remote": {
+    "sha": "5512a7861d9b5a59e3d41bc3fc8126a9756361a1",
+    "bytes": 15523
+  },
+  "expected_source": {
+    "sha": "f1ceee51cc62689645fbaff0a24a191bf9055665",
+    "bytes": 15651,
+    "SHA256": "522fd63bd4aead4314d7b4ea87f61e5454b23df0f046b1c8e48b2f2023272dad"
+  },
+  "cause": "S0 text export used Path.read_text(), converting CRLF to LF. Later unchanged-file stages inherited that blob. The local scientific input and all checkpoint archive payloads always retained original bytes.",
+  "impact": "One remote CSV literal byte mismatch; local scientific identity/results unaffected. Source pin prevents running the normalized remote CSV. Restore original bytes as a new additive descendant without rerunning science.",
+  "repair": "Create exact original bytes as base64 Git blob; all 72 final blobs checked after restoration.",
+  "source_or_result_scientific_reexecution": 0
+}

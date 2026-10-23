@@ -1,0 +1,8 @@
+# PHYS82 Li7 threshold-gap sensitivity
+
+Li7physicalthreshold–6eV에대한조건부cross-section5종의양의Maxwellclosure와고정노출민감도연구를완료했다. FINAL_REPORT_KO.md와DAG_OVERLAY.json에서결과와열린의무를읽는다.새study72T/360gap/1080exposure,저장9baseline재사용,ODE0.독립1924assertionsPASS_SCOPED.
+
+PR138:https://github.com/cosmosapjw-quantum/WU088_HH/pull/138
+과학commit:6a5c5a48e0ef345ff438941d037c9452453b1fb3
+
+물리적confidenceinterval및coupledthermaltrajectoryerrorbound는발행하지않았다.HH_R10=OFF.Production admission NOT_ISSUED.최종전달확정은외부PHYS82_FINAL_DELIVERY_20261023.json과PR최종본문이다.
