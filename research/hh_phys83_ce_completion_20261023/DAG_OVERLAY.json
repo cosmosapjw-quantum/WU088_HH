@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "PHYS82_LI_THRESHOLD_CONDITIONAL",
+      "status": "COMPLETE_SCOPED_REUSED",
+      "identity": "caae042b139373a10c516d759854ad117d807e9f7ace8c365529a1621419b73f"
+    },
+    {
+      "id": "PHYS83_HI_CE_SOURCE_THEORY",
+      "status": "COMPLETE_SCOPED_REUSED",
+      "HEAD": "09289300ec2e500806aa2cb82365f00329e41c8c"
+    },
+    {
+      "id": "PHYS83_HI_CE_IMPLEMENTATION",
+      "depends": [
+        "PHYS83_HI_CE_SOURCE_THEORY"
+      ],
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "PHYS83_HI_CE_INDEPENDENT_VERIFICATION",
+      "depends": [
+        "PHYS83_HI_CE_IMPLEMENTATION"
+      ],
+      "status": "PENDING"
+    },
+    {
+      "id": "PHYS83_HI_CE_FROZEN_BATH_STUDY",
+      "depends": [
+        "PHYS83_HI_CE_INDEPENDENT_VERIFICATION"
+      ],
+      "status": "PENDING"
+    },
+    {
+      "id": "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP",
+      "status": "DERIVED_CODE_READY",
+      "evidence": "theory/NUCLEAR_THERMAL_FAST_OWNERSHIP_KO.md"
+    },
+    {
+      "id": "NUCLEAR_RATES_AND_FAST_PRODUCT_STOPPING",
+      "depends": [
+        "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP"
+      ],
+      "status": "OPEN_INPUT_PROVIDER_REQUIRED"
+    }
+  ],
+  "retained_open": [
+    "BOUND_BOUND_CE_AND_RADIATIVE_COOLING_FULL_SOURCE",
+    "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+    "LI_INSTRUMENT_RESPONSE_DECONVOLUTION_ISOTOPE_TARGET_STATE_UNCERTAINTY",
+    "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT",
+    "D_PI_RR_MATCHED_SOURCE_MOMENTS",
+    "LI_HARD_UV_INNER_SHELL_SPECTRAL_CONTRACT",
+    "FULL_GEOMETRY_SPECTRAL_BACKREACTION"
+  ],
+  "whole_goal_completion_percent": null,
+  "denominator": "not fixed; scoped stages and whole scientific obligations separate",
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}

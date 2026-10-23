@@ -1,0 +1,13 @@
+{
+  "code": "ClearAll[aa,bb,dd,ci,cf,q,kin,ph,kout,rate,nth,t,kb,alpha,heat,uf,ur,uth];\nq=ci-cf; ph=(aa-cf^2 bb)/2+dd; kout=(aa+cf^2 bb)/2-dd-cf; kin=aa-ci;\nrMom=Factor[ph+kout-kin-q];\nrFast=Factor[-q-kin+kout+ph];\nrThermal=Factor[-q+(q-ph)+ph];\nrStop=Factor[heat-heat];\nExportString[<|\"residuals\"-><|\"three_moment_energy_closure\"->rMom,\"fast_daughter_ledger\"->rFast,\"prompt_thermal_ledger\"->rThermal,\"internal_stopping_transfer\"->rStop|>,\"number_increments\"-><|\"capture_into_fast\"->{-2,1},\"capture_prompt_thermal\"->{-1,0},\"fast_to_thermal\"->{1,-1}|>,\"definitions\"->\"aa=<Gamma W>rxn; bb=<Gamma/W>rxn; dd=<Gamma E_gamma_star beta_dot_direction>rxn; ci=(ma+mb)c^2; cf=mc c^2\"|>,\"JSON\"]",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Out[1]= \"{\\n\\t\\\"residuals\\\":{\\n\\t\\t\\\"three_moment_energy_closure\\\":0,\\n\\t\\t\\\"fast_daughter_ledger\\\":0,\\n\\t\\t\\\"prompt_thermal_ledger\\\":0,\\n\\t\\t\\\"internal_stopping_transfer\\\":0\\n\\t},\\n\\t\\\"number_increments\\\":{\\n\\t\\t\\\"capture_into_fast\\\":[\\n\\t\\t\\t-2,\\n\\t\\t\\t1\\n\\t\\t],\\n\\t\\t\\\"capture_prompt_thermal\\\":[\\n\\t\\t\\t-1,\\n\\t\\t\\t0\\n\\t\\t],\\n\\t\\t\\\"fast_to_thermal\\\":[\\n\\t\\t\\t1,\\n\\t\\t\\t-1\\n\\t\\t]\\n\\t},\\n\\t\\\"definitions\\\":\\\"aa=<Gamma W>rxn; bb=<Gamma\\\\/W>rxn; dd=<Gamma E_gamma_star beta_dot_direction>rxn; ci=(ma+mb)c^2; cf=mc c^2\\\"\\n}\""
+      }
+    ],
+    "structuredContent": null,
+    "isError": false
+  }
+}
