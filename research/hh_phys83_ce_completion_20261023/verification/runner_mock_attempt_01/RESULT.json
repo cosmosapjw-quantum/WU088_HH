@@ -1,0 +1,163 @@
+{
+  "schema": "PHYS83_INDEPENDENT_RUNNER_MOCK_CONTROLS_V1",
+  "started_utc": "2026-10-23T15:01:16.957090+00:00",
+  "MOCK_ONLY": true,
+  "runner_SHA256": "dee42bcd164fbdfdceedc72200df53e2e687bf5978caddd1f5a40c63bc360f85",
+  "verifier_SHA256": "af5384c9a56cb85ff574ac893c7c8376d2d8176577bc051c015eedd707275f70",
+  "workers": 1,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "lease_receipt": "verification/lease_runner_mock_01.json",
+  "lease_receipt_status": "WRAPPER_WRITES_AFTER_CHILD_EXIT",
+  "science_callbacks": 0,
+  "finished_utc": "2026-10-23T15:01:17.015876+00:00",
+  "status": "PASS_SCOPED",
+  "checks": 55,
+  "cases": [
+    {
+      "case": "runner_new_mock_then_completed_skip",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 7,
+      "elapsed_seconds": 0.005452163997688331,
+      "reason": null
+    },
+    {
+      "case": "runner_payload_corruption_rejected",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 2,
+      "elapsed_seconds": 0.0023286380019271746,
+      "reason": null
+    },
+    {
+      "case": "runner_completion_certificate_corruption",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 2,
+      "elapsed_seconds": 0.002854630001820624,
+      "reason": null
+    },
+    {
+      "case": "runner_empty_and_identity_only_manifests",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 4,
+      "elapsed_seconds": 0.005835115000081714,
+      "reason": null
+    },
+    {
+      "case": "runner_existing_output_no_overwrite",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 3,
+      "elapsed_seconds": 0.0005866939973202534,
+      "reason": null
+    },
+    {
+      "case": "runner_failed_or_incomplete_claim_no_retry",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 4,
+      "elapsed_seconds": 0.0018797419979819097,
+      "reason": null
+    },
+    {
+      "case": "runner_sequential_exclusive_claim_control",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 4,
+      "elapsed_seconds": 0.000441155003500171,
+      "reason": null
+    },
+    {
+      "case": "runner_callback_failure_preservation",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 8,
+      "elapsed_seconds": 0.0029055979975964874,
+      "reason": null
+    },
+    {
+      "case": "runner_metadata_only_recovery",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 3,
+      "elapsed_seconds": 0.005899837997276336,
+      "reason": null
+    },
+    {
+      "case": "runner_runtime_metadata_excluded_from_identity",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 3,
+      "elapsed_seconds": 0.002638284000568092,
+      "reason": null
+    },
+    {
+      "case": "runner_restored_mock_bytes_resume",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 3,
+      "elapsed_seconds": 0.0032200909990933724,
+      "reason": null
+    },
+    {
+      "case": "runner_identity_summary_accounting_bindings",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 8,
+      "elapsed_seconds": 0.010912379999354016,
+      "reason": null
+    },
+    {
+      "case": "runner_no_production_science_calls",
+      "group": "runner_mock",
+      "status": "PASS",
+      "checks": 3,
+      "elapsed_seconds": 7.270900096045807e-05,
+      "reason": null
+    }
+  ],
+  "mock_callback_counts": {
+    "successful_mock_callbacks": 1,
+    "deliberately_failed_mock_callbacks": 1,
+    "forbidden_callbacks": 0,
+    "real_calculate_calls": 0
+  },
+  "counters": {
+    "successful_mock_callbacks": 1,
+    "deliberately_failed_mock_callbacks": 1,
+    "forbidden_callbacks": 0,
+    "real_calculate_calls": 0,
+    "actual_scientific_grid_callbacks": 0,
+    "old_completed_identity_callbacks": 0
+  },
+  "unfinished_cases": [],
+  "real_input_SHA256": {
+    "CONTRACT.json": "d9eb980df5236e2b2ca3da313813c3ca2b21562f90486f1173d0ea509bc4dcc5",
+    "source/run_study.py": "dee42bcd164fbdfdceedc72200df53e2e687bf5978caddd1f5a40c63bc360f85",
+    "source/matched_ce.py": "475ee6f84c5e19945324859a9c4c5e229d8ab5e92e8658ad5b3da39472c1744e",
+    "source/frozen_star.py": "78421356c6b985d845f452f42e6b03c8ea657171ad826df51b3a1dbcf454578f",
+    "source/vendor/ci_finite_c22d.py": "859cdf616ffa165c9fb3c3372d2202f5449e4b9a74a289a725fe456e26eb55b2",
+    "source_data/CCC_1S.2S": "f4afdbdeccc49a58055ab86750b14ce10dd2091da55bd380a19f3d7a13c337d0",
+    "source_data/CCC_1S.2P": "00857e46838c5538da8b047363105b306bc1ba5c827700161749d5d712fa0e5a",
+    "source_data/CCC_2S.1S": "e8e0092e7be97abe4a90ce100e3101d1f6f225eee2d4ad1ba740f57de819997b",
+    "source_data/CCC_2P.1S": "12cf46fa0904a5b227092a0a6a3ae6d8a20c041cf11c2981d3bb8bd1f6ac313d",
+    "source_data/HI_CE_SOURCE_CONTRACT.json": "1983e17f57ab5ab0e9f8c5dde1bc679451ca670440fe79d0fec3de4efb4a812b",
+    "source_data/h_1.elvlc": "f7286ef6837989eba038b7b055c8db9f4e1ce8a6a0b3270ccc399fd0b2f6a75b",
+    "source_data/h_1.wgfa": "f16d0f5033632ce5a3104bfa4dfec9c98fc14bb2e05f682be3468419c9a90179"
+  },
+  "real_inputs_unmodified": true,
+  "scope": "Only mock payloads/claims; synthetic declared callback budget is not physical execution",
+  "scientific_grid_executed": false,
+  "calculate_executed": false,
+  "completed_science_identity_reruns": 0,
+  "production_admission": "NOT_ISSUED"
+}

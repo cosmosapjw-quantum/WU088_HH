@@ -15,14 +15,15 @@
       "depends": [
         "PHYS83_HI_CE_SOURCE_THEORY"
       ],
-      "status": "IN_PROGRESS"
+      "status": "COMPLETE_SCOPED"
     },
     {
       "id": "PHYS83_HI_CE_INDEPENDENT_VERIFICATION",
       "depends": [
         "PHYS83_HI_CE_IMPLEMENTATION"
       ],
-      "status": "PENDING"
+      "status": "COMPLETE_PASS_SCOPED",
+      "assertions": 2111
     },
     {
       "id": "PHYS83_HI_CE_FROZEN_BATH_STUDY",
@@ -33,15 +34,30 @@
     },
     {
       "id": "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP",
-      "status": "DERIVED_CODE_READY",
-      "evidence": "theory/NUCLEAR_THERMAL_FAST_OWNERSHIP_KO.md"
+      "status": "COMPLETE_SCOPED_DERIVED_IMPLEMENTATION_VERIFIED",
+      "evidence": "theory/NUCLEAR_THERMAL_FAST_OWNERSHIP_KO.md",
+      "limits": "Supplied scalar same-frame energies only; physical event provider/on-shell construction/stoichiometry remain OPEN"
     },
     {
       "id": "NUCLEAR_RATES_AND_FAST_PRODUCT_STOPPING",
       "depends": [
-        "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP"
+        "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP",
+        "NUCLEAR_FINITE_T_EVENT_PROVIDER_AND_STOICHIOMETRY"
       ],
       "status": "OPEN_INPUT_PROVIDER_REQUIRED"
+    },
+    {
+      "id": "NUCLEAR_FINITE_T_EVENT_PROVIDER_AND_STOICHIOMETRY",
+      "depends": [
+        "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP"
+      ],
+      "status": "OPEN",
+      "required": [
+        "same-normal-frame on-shell event construction",
+        "finite-T reaction measure and angular moment",
+        "isotope stoichiometric ownership",
+        "source identity and validity domain"
+      ]
     }
   ],
   "retained_open": [

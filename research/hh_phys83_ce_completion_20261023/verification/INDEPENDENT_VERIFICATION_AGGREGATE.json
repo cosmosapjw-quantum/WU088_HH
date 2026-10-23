@@ -1,0 +1,446 @@
+{
+  "schema": "PHYS83_INDEPENDENT_VERIFICATION_AGGREGATE_V1",
+  "created_utc": "2026-10-23T15:05:24.375956+00:00",
+  "status": "PASS_SCOPED",
+  "phase": "S1_PRE_SCIENCE",
+  "unit": "research/hh_phys83_ce_completion_20261023",
+  "parent_PHYS82_HEAD": "ca9d53983459ea08f9992a8a24663e46b7180344",
+  "continuation_parent_HEAD": "09289300ec2e500806aa2cb82365f00329e41c8c",
+  "reviewer": "/root/current_delta",
+  "counts": {
+    "named_cases": 71,
+    "assertions": 2111,
+    "successful_verifier_processes": 3,
+    "environment_prevalidation_failures": 1,
+    "unexpected_numerical_case_failures": 0,
+    "static_guard_findings_corrected_before_corresponding_runtime_tests": 2,
+    "successful_mock_callbacks": 1,
+    "deliberately_failed_mock_callbacks": 1,
+    "forbidden_mock_callbacks": 0,
+    "actual_science_grid_callbacks": 0,
+    "cosmological_ODE_callbacks": 0,
+    "nuclear_rates_or_stopping_law_callbacks": 0,
+    "old_completed_scientific_identity_reruns": 0,
+    "parent_symbolic_checks_reexecuted": 0,
+    "parent_print_rounding_checks_reexecuted": 0
+  },
+  "sections": [
+    {
+      "stage": "CE",
+      "status": "PASS_SCOPED",
+      "result": {
+        "path": "verification/ce_attempt_02/RESULT.json",
+        "bytes": 61712,
+        "sha256": "13a86473a77985e9b125fc58f9a15b09f0aa8e5a324fee29005f643b230e7a97"
+      },
+      "lease": {
+        "path": "verification/lease_ce_02.json",
+        "bytes": 6757,
+        "sha256": "45aabdbad3c2b47e57cde45fad3911d619a5ead235e440db6ba65bce3284c803"
+      },
+      "named_cases": 53,
+      "assertions": 1885,
+      "case_assertions": 1885,
+      "cross_case_assertions": 0,
+      "counters": {
+        "parent_print_rounding_checks_reexecuted": 0,
+        "production_rate_evaluations_in_rate_cases": 12,
+        "independent_rate_reference_pairs": 12,
+        "direct_cell_scalar_quadratures": 10552,
+        "production_rate_evaluations_for_derivative_stencils": 48,
+        "production_rate_evaluations_for_population_inputs": 4,
+        "mp80_augmented_6x6_expm": 28,
+        "production_transient_verification_calls": 28,
+        "mp80_steady_generator_linear_solves": 6,
+        "production_steady_verification_calls": 6,
+        "synthetic_root_limit_cases": 6,
+        "scientific_grid_callbacks": 0,
+        "cosmological_ODE_callbacks": 0,
+        "physical_mutants_discriminated": 2
+      },
+      "maximum_errors": {
+        "finite_support_left:abs": 0.0,
+        "finite_support_right:abs": 0.0,
+        "forward_threshold_zero_W:abs": 0.0,
+        "M0_M1_direct_quadrature:rel": 8.881784197001252e-15,
+        "q_up_direct_quadrature:rel": 0.0,
+        "q_down_direct_quadrature:rel": 7.105427357601002e-15,
+        "log_q_up_reference:abs": 0.0,
+        "log_q_down_reference:abs": 7.105427357601002e-15,
+        "log_detailed_balance:abs": 2.842170943040401e-14,
+        "mean_incoming_up:rel": 0.0,
+        "mean_incoming_down:rel": 7.993605777301127e-15,
+        "derivative_quadrature_scaled": 8.847089727481716e-15,
+        "derivative_fd_scaled": 1.8730107308878585e-10,
+        "dq_scaled": 8.866812374185342e-15,
+        "population_absolute:abs": 1.1102230246251565e-16,
+        "population_resolved_relative:rel": 2.220446049250313e-16,
+        "zero_count_or_ledger:integral_ground_s:abs": 0.0,
+        "zero_count_or_ledger:integral_2s_s:abs": 0.0,
+        "zero_count_or_ledger:integral_2p_s:abs": 0.0,
+        "zero_count_or_ledger:excitation_2s_events:abs": 0.0,
+        "zero_count_or_ledger:excitation_2p_events:abs": 0.0,
+        "zero_count_or_ledger:deexcitation_2s_events:abs": 0.0,
+        "zero_count_or_ledger:deexcitation_2p_events:abs": 0.0,
+        "zero_count_or_ledger:two_photon_events:abs": 0.0,
+        "zero_count_or_ledger:M1_events:abs": 0.0,
+        "zero_count_or_ledger:E1_events:abs": 0.0,
+        "zero_count_or_ledger:emitted_photons:abs": 0.0,
+        "zero_count_or_ledger:atomic_excitation_eV:abs": 0.0,
+        "zero_count_or_ledger:escaped_radiation_eV:abs": 0.0,
+        "zero_count_or_ledger:thermal_change_eV:abs": 0.0,
+        "zero_count_or_ledger:heat_withdrawal_eV:abs": 0.0,
+        "zero_count_or_ledger:raw_event_thermal_change_eV:abs": 0.0,
+        "zero_count_or_ledger:gross_energy_scale_eV:abs": 0.0,
+        "nuclei_residual:abs": 0.0,
+        "raw_energy_normalized:abs": 1.8196173922492507e-16,
+        "thermal_withdrawal_opposite_sign:abs": 0.0,
+        "count_integral_energy_relative:rel": 7.549516567451064e-15,
+        "steady_population_absolute:abs": 1.1102230246251565e-16,
+        "steady_reference_relative:rel": 2.220446049250313e-16,
+        "steady_reference_relative:exact_zero:abs": 0.0,
+        "steady_coronal_ratio:rel": 2.220446049250313e-16,
+        "steady_coronal_overestimate:rel": 1.1102230246251565e-16,
+        "root_limit:h_fast:rel": 0.0,
+        "root_limit:G_fast:rel": 2.220446049250313e-16,
+        "root_limit:H2:rel": 1.1102230246251565e-16,
+        "root_limit:H3:rel": 1.3322676295501878e-15,
+        "branch_boundary_continuity:H2:rel": 3.520850277993759e-12,
+        "branch_boundary_continuity:H3:rel": 5.643596701077058e-12,
+        "two_gamma_number_not_energy:rel": 0.0
+      },
+      "started_utc": "2026-10-23T14:55:17.902884+00:00",
+      "completed_utc": "2026-10-23T14:55:19.877713+00:00",
+      "workers": 1,
+      "threads": 1,
+      "other_processes_terminated": 0,
+      "old_science_runner_called": false,
+      "case_names": [
+        "source_geometry_identity_immutability",
+        "rate_2S_T255",
+        "rate_2S_T777",
+        "rate_2S_T3500",
+        "rate_2S_T12000",
+        "rate_2S_T25370.663084247732",
+        "rate_2S_T50000",
+        "rate_2P_T255",
+        "rate_2P_T777",
+        "rate_2P_T3500",
+        "rate_2P_T12000",
+        "rate_2P_T25370.663084247732",
+        "rate_2P_T50000",
+        "star_T3500_ne0_t0",
+        "star_T3500_ne0_t1000",
+        "star_T3500_ne1_t9.9999999999999995e-21",
+        "star_T3500_ne1_t1e-08",
+        "star_T3500_ne1_t1000",
+        "star_T3500_ne100000000_t9.9999999999999998e-13",
+        "star_T3500_ne100000000_t0.10000000000000001",
+        "star_T3500_ne1000000000000_t1e-08",
+        "star_T3500_ne1000000000000_t0.10000000000000001",
+        "star_T3500_ne1000000000000_t1000",
+        "star_T3500_ne1e18_t9.9999999999999995e-21",
+        "star_T3500_ne1e18_t9.9999999999999998e-13",
+        "star_T3500_ne1e18_t0.10000000000000001",
+        "star_T3500_ne1e18_t1000",
+        "star_T25370.663084247732_ne0_t0",
+        "star_T25370.663084247732_ne0_t1000",
+        "star_T25370.663084247732_ne1_t9.9999999999999995e-21",
+        "star_T25370.663084247732_ne1_t1e-08",
+        "star_T25370.663084247732_ne1_t1000",
+        "star_T25370.663084247732_ne100000000_t9.9999999999999998e-13",
+        "star_T25370.663084247732_ne100000000_t0.10000000000000001",
+        "star_T25370.663084247732_ne1000000000000_t1e-08",
+        "star_T25370.663084247732_ne1000000000000_t0.10000000000000001",
+        "star_T25370.663084247732_ne1000000000000_t1000",
+        "star_T25370.663084247732_ne1e18_t9.9999999999999995e-21",
+        "star_T25370.663084247732_ne1e18_t9.9999999999999998e-13",
+        "star_T25370.663084247732_ne1e18_t0.10000000000000001",
+        "star_T25370.663084247732_ne1e18_t1000",
+        "steady_T3500_ne0",
+        "steady_T3500_ne100000000",
+        "steady_T3500_ne1e18",
+        "steady_T25370.663084247732_ne0",
+        "steady_T25370.663084247732_ne100000000",
+        "steady_T25370.663084247732_ne1e18",
+        "synthetic_root_limit_0",
+        "synthetic_root_limit_1",
+        "synthetic_root_limit_2",
+        "synthetic_root_limit_3",
+        "domain_owner_rate_object_guards",
+        "prompt_cooling_and_double_gap_mutants"
+      ]
+    },
+    {
+      "stage": "NUCLEAR",
+      "status": "PASS_SCOPED",
+      "result": {
+        "path": "verification/nuclear_attempt_01/RESULT.json",
+        "bytes": 4033,
+        "sha256": "735de8c2dfe8b7374303044ffc012a9e20324198f251a9d4085c7e24e06ef1aa"
+      },
+      "lease": {
+        "path": "verification/lease_nuclear_01.json",
+        "bytes": 2333,
+        "sha256": "faed9495d1378c27525ea9cdce9ed8970273f77de12cccda9f9f6f345b138389"
+      },
+      "named_cases": 5,
+      "assertions": 171,
+      "case_assertions": 171,
+      "cross_case_assertions": 0,
+      "counters": {
+        "valid_supplied_synthetic_event_records": 9,
+        "relative_weighted_event_means": 4,
+        "subnormal_mean_cases": 1,
+        "exclusive_transfer_compositions": 3,
+        "synthetic_EOS_cases": 5,
+        "conditional_NR_mean_cases": 4,
+        "nuclear_rates_or_stopping_law_callbacks": 0,
+        "parent_PHYS81_event_callbacks": 0
+      },
+      "maximum_errors": {
+        "event_signed_residual:abs": 1.0408340902935013e-16,
+        "capture_preserves_signed_residual:abs": 1.0408340902935013e-16,
+        "prompt_capture_energy_ownership:abs": 0.0,
+        "same_measure_energy_average:rel": 2.220446049250313e-16,
+        "weighted_energy_residual:abs": 1.2836953722228372e-16,
+        "exclusive_transfer_energy_composition:abs": 0.0,
+        "stopping_energy_residual:abs": 0.0,
+        "assimilation_energy_residual:abs": 0.0,
+        "thermal_EOS_independent_energy_differential:exact_zero:abs": 0.0,
+        "thermal_EOS_independent_energy_differential:rel": 0.0,
+        "selected_pair_COM_plus_relative_energy:rel": 0.0,
+        "number_source_not_missing_from_EOS:abs": 0.0
+      },
+      "started_utc": "2026-10-23T14:55:34.223179+00:00",
+      "completed_utc": "2026-10-23T14:55:34.332080+00:00",
+      "workers": 1,
+      "threads": 1,
+      "other_processes_terminated": 0,
+      "old_science_runner_called": false,
+      "case_names": [
+        "nuclear_supplied_events_signed_residual",
+        "nuclear_weighted_mean_and_zero_measure",
+        "nuclear_stopping_assimilation_exclusive_composition",
+        "nuclear_thermal_EOS_and_selected_pair_mean",
+        "nuclear_scalar_frame_weight_EOS_guards"
+      ]
+    },
+    {
+      "stage": "RUNNER_MOCK",
+      "status": "PASS_SCOPED",
+      "result": {
+        "path": "verification/runner_mock_attempt_01/RESULT.json",
+        "bytes": 5476,
+        "sha256": "4a6fdca445295184d3f3e41fa715b9c9865d9c008ebb8ed1e96b4223fc2564de"
+      },
+      "lease": {
+        "path": "verification/lease_runner_mock_01.json",
+        "bytes": 2943,
+        "sha256": "3c314dcc2caf2096dbb21fb8e1ffbf5b467c96ad1a6c6d89f5b728ca69bfa774"
+      },
+      "named_cases": 13,
+      "assertions": 55,
+      "case_assertions": 54,
+      "cross_case_assertions": 1,
+      "counters": {
+        "successful_mock_callbacks": 1,
+        "deliberately_failed_mock_callbacks": 1,
+        "forbidden_callbacks": 0,
+        "real_calculate_calls": 0,
+        "actual_scientific_grid_callbacks": 0,
+        "old_completed_identity_callbacks": 0
+      },
+      "maximum_errors": {},
+      "started_utc": "2026-10-23T15:01:16.858645+00:00",
+      "completed_utc": "2026-10-23T15:01:17.033844+00:00",
+      "workers": 1,
+      "threads": 1,
+      "other_processes_terminated": 0,
+      "old_science_runner_called": false,
+      "case_names": [
+        "runner_new_mock_then_completed_skip",
+        "runner_payload_corruption_rejected",
+        "runner_completion_certificate_corruption",
+        "runner_empty_and_identity_only_manifests",
+        "runner_existing_output_no_overwrite",
+        "runner_failed_or_incomplete_claim_no_retry",
+        "runner_sequential_exclusive_claim_control",
+        "runner_callback_failure_preservation",
+        "runner_metadata_only_recovery",
+        "runner_runtime_metadata_excluded_from_identity",
+        "runner_restored_mock_bytes_resume",
+        "runner_identity_summary_accounting_bindings",
+        "runner_no_production_science_calls"
+      ]
+    }
+  ],
+  "current_input_bytes_match_verified_receipts": true,
+  "verified_inputs": [
+    {
+      "path": "CONTRACT.json",
+      "bytes": 6315,
+      "sha256": "d9eb980df5236e2b2ca3da313813c3ca2b21562f90486f1173d0ea509bc4dcc5"
+    },
+    {
+      "path": "source/frozen_star.py",
+      "bytes": 12414,
+      "sha256": "78421356c6b985d845f452f42e6b03c8ea657171ad826df51b3a1dbcf454578f"
+    },
+    {
+      "path": "source/matched_ce.py",
+      "bytes": 14892,
+      "sha256": "475ee6f84c5e19945324859a9c4c5e229d8ab5e92e8658ad5b3da39472c1744e"
+    },
+    {
+      "path": "source/nuclear_ownership.py",
+      "bytes": 10033,
+      "sha256": "be0739a0cc63d4f53f06b450b300bce09aa41878cd4462c0753798d6639684d2"
+    },
+    {
+      "path": "source/run_study.py",
+      "bytes": 12713,
+      "sha256": "dee42bcd164fbdfdceedc72200df53e2e687bf5978caddd1f5a40c63bc360f85"
+    },
+    {
+      "path": "source/vendor/ci_finite_c22d.py",
+      "bytes": 8350,
+      "sha256": "859cdf616ffa165c9fb3c3372d2202f5449e4b9a74a289a725fe456e26eb55b2"
+    },
+    {
+      "path": "source_data/CCC_1S.2P",
+      "bytes": 29366,
+      "sha256": "00857e46838c5538da8b047363105b306bc1ba5c827700161749d5d712fa0e5a"
+    },
+    {
+      "path": "source_data/CCC_1S.2S",
+      "bytes": 29366,
+      "sha256": "f4afdbdeccc49a58055ab86750b14ce10dd2091da55bd380a19f3d7a13c337d0"
+    },
+    {
+      "path": "source_data/CCC_2P.1S",
+      "bytes": 29393,
+      "sha256": "12cf46fa0904a5b227092a0a6a3ae6d8a20c041cf11c2981d3bb8bd1f6ac313d"
+    },
+    {
+      "path": "source_data/CCC_2S.1S",
+      "bytes": 29393,
+      "sha256": "e8e0092e7be97abe4a90ce100e3101d1f6f225eee2d4ad1ba740f57de819997b"
+    },
+    {
+      "path": "source_data/HI_CE_SOURCE_CONTRACT.json",
+      "bytes": 16647,
+      "sha256": "1983e17f57ab5ab0e9f8c5dde1bc679451ca670440fe79d0fec3de4efb4a812b"
+    },
+    {
+      "path": "source_data/h_1.elvlc",
+      "bytes": 2423,
+      "sha256": "f7286ef6837989eba038b7b055c8db9f4e1ce8a6a0b3270ccc399fd0b2f6a75b"
+    },
+    {
+      "path": "source_data/h_1.wgfa",
+      "bytes": 6621,
+      "sha256": "f16d0f5033632ce5a3104bfa4dfec9c98fc14bb2e05f682be3468419c9a90179"
+    },
+    {
+      "path": "verification/independent_verify.py",
+      "bytes": 35952,
+      "sha256": "b9b74a5d512ca9a73efc9c12a65f164a308eead4010d2ddceb3dde9c04544d96"
+    },
+    {
+      "path": "verification/independent_verify_nuclear.py",
+      "bytes": 15283,
+      "sha256": "d9b3ae43df9a90599428c8c150f794c51d4f5cf3f8c0024b3ecb29e94c15cdc2"
+    },
+    {
+      "path": "verification/independent_verify_runner.py",
+      "bytes": 19592,
+      "sha256": "af5384c9a56cb85ff574ac893c7c8376d2d8176577bc051c015eedd707275f70"
+    }
+  ],
+  "supporting_evidence": [
+    {
+      "path": "verification/ce_attempt_01/START.json",
+      "bytes": 1594,
+      "sha256": "69a77bab9c18df2e53b3ffaaf249b70bc7365131dc85141b6ce2f3dfe109dc50"
+    },
+    {
+      "path": "verification/ce_attempt_01/ENVIRONMENT_FAILURE.json",
+      "bytes": 500,
+      "sha256": "721ee6a86dafd4745b6537c26bba44049a8aed541c99b11afbefb601e70da1e8"
+    },
+    {
+      "path": "verification/lease_ce_01.json",
+      "bytes": 1790,
+      "sha256": "91e69aeb62569713bd02bc384150668c3441000b5af0a374547f70f6e03fa8ec"
+    },
+    {
+      "path": "verification/MPMATH_DEPENDENCY_RECOVERY.json",
+      "bytes": 517,
+      "sha256": "b3a367cb46e8f7feac00749392dde166224fa5df3ff560df9976761fd1309d37"
+    },
+    {
+      "path": "verification/PREVALIDATION_GUARD_FINDING.json",
+      "bytes": 499,
+      "sha256": "4bd3ad08f585744c931613a99f744506ecd2c7be0acdb35c353c74b6ada82775"
+    },
+    {
+      "path": "verification/prevalidation_frozen_star_v1.py",
+      "bytes": 11642,
+      "sha256": "5778e4fbda80cec51a4064b7b7f434676c2392ee0c339da3d2603000fb45d721"
+    },
+    {
+      "path": "verification/RUNNER_PREVALIDATION_FINDING.json",
+      "bytes": 764,
+      "sha256": "9ab563a9cdcd79aebf0752e66b403c34c734469d66c6f041335c23d0e44260e7"
+    },
+    {
+      "path": "verification/PREVALIDATION_RUNNER_FINDING.json",
+      "bytes": 486,
+      "sha256": "3623a7066261add2fe338c6d02efeee6edd190f0cb351f40c373f05b43dff8ea"
+    },
+    {
+      "path": "verification/prevalidation_run_study_v1.py",
+      "bytes": 11222,
+      "sha256": "6d3d4e3ebe55fe8065a9efb25a5e62c1f95b1b9b29da90b6eb81c3e2644f9040"
+    },
+    {
+      "path": "verification/PRERUN_BOUNDARY_COVERAGE.json",
+      "bytes": 622,
+      "sha256": "11ec1d34427eb43aa9eced33b2320095e52cab5e09d9504b9738bba2e61619c0"
+    },
+    {
+      "path": "verification/PHYSICS_STATIC_REVIEW_KO.md",
+      "bytes": 6713,
+      "sha256": "fc17d417eebea1144054fa3494f6f483ef685faa4a4a6b7e851d310594d741ff"
+    },
+    {
+      "path": "verification/FROZEN_STAR_STATIC_REVIEW_KO.md",
+      "bytes": 11479,
+      "sha256": "eff005b9dc43f13493af9a7438fcd075f923b686e109824e4c1b281df0b5c324"
+    },
+    {
+      "path": "verification/INDEPENDENT_REVIEW_KO.md",
+      "bytes": 17560,
+      "sha256": "0b8b1bbe47bdefffa7e9db8939624194d303e339954b3672231425333250f86c"
+    }
+  ],
+  "lease_intervals_sequential": true,
+  "lease_binding": "Individual child results leave lease SHA pending because wrapper writes after child exit; this aggregate binds final lease bytes without replay.",
+  "environment_failure_classification": "ce_attempt_01 failed import mpmath before production imports or any numerical case; original receipt and stderr preserved; not a scientific failure.",
+  "reused_evidence": {
+    "parent_symbolic_7": "REUSED_NOT_REEXECUTED",
+    "parent_print_rounding_902": "REUSED_NOT_REEXECUTED"
+  },
+  "mock_scope": "Dummy payload declared 132/324/732 EXPECTED budget is schema data only; actual calculate/science callbacks zero.",
+  "identity_scope": "All current verified input bytes matched saved result receipts at aggregation; no computation replay.",
+  "limits": [
+    "Finite sampled implementation verification; not continuum certificate",
+    "Finite W-PL source and prescribed T/ne H I star, not physical source confidence interval or coupled-history bound",
+    "Nuclear supplied scalar ledger only; physical frame/event/finite-T provider and empirical rates/stopping remain OPEN",
+    "Sequential simulated exclusive-claim control, not multi-worker stress test",
+    "No final remote backup restore claim from mock local-byte restoration"
+  ],
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}

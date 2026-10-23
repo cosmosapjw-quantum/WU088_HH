@@ -1,0 +1,47 @@
+{
+  "label": "independent_runner_mock_01",
+  "command": [
+    "python",
+    "verification/independent_verify_runner.py",
+    "--output",
+    "verification/runner_mock_attempt_01",
+    "--lease-receipt",
+    "verification/lease_runner_mock_01.json"
+  ],
+  "started_utc": "2026-10-23T15:01:16.858645+00:00",
+  "observation": {
+    "site": "local",
+    "cap_cpus": 8,
+    "affinity_cpus": 9,
+    "quota_cpus": 8.0,
+    "sampled_busy_affinity_cpus": 0.0,
+    "sampled_cgroup_busy_cpus": 0.026221916340611672,
+    "sampled_idle_cpus": 7.973778083659388,
+    "cgroup_quota_headrooms": [
+      7.973778083659388
+    ],
+    "available_gib": 4.630695343017578,
+    "capacity_gib": 8.0,
+    "reserve_gib": 1.5,
+    "reserve_cpus": 1,
+    "job_gib": 0.5,
+    "sample_interval_s": 0.08012381599837681,
+    "admissible_slots": 6,
+    "live_leases": 0
+  },
+  "lease": {
+    "path": "/tmp/rei-bianchi-cooperative-leases",
+    "key": "d38a9b3dcf7d4f39891064ecf6d73f3c",
+    "owner": "2-c4602a2b668c48edb5be553f280be8a3"
+  },
+  "lease_source_SHA256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+  "old_science_runner_called": false,
+  "workers": 1,
+  "threads": 1,
+  "other_processes_terminated": 0,
+  "exit_code": 0,
+  "stdout": "{\"case\": \"runner_new_mock_then_completed_skip\", \"status\": \"PASS\", \"checks\": 7}\n{\"case\": \"runner_payload_corruption_rejected\", \"status\": \"PASS\", \"checks\": 2}\n{\"case\": \"runner_completion_certificate_corruption\", \"status\": \"PASS\", \"checks\": 2}\n{\"case\": \"runner_empty_and_identity_only_manifests\", \"status\": \"PASS\", \"checks\": 4}\n{\"case\": \"runner_existing_output_no_overwrite\", \"status\": \"PASS\", \"checks\": 3}\n{\"case\": \"runner_failed_or_incomplete_claim_no_retry\", \"status\": \"PASS\", \"checks\": 4}\n{\"case\": \"runner_sequential_exclusive_claim_control\", \"status\": \"PASS\", \"checks\": 4}\n{\"case\": \"runner_callback_failure_preservation\", \"status\": \"PASS\", \"checks\": 8}\n{\"case\": \"runner_metadata_only_recovery\", \"status\": \"PASS\", \"checks\": 3}\n{\"case\": \"runner_runtime_metadata_excluded_from_identity\", \"status\": \"PASS\", \"checks\": 3}\n{\"case\": \"runner_restored_mock_bytes_resume\", \"status\": \"PASS\", \"checks\": 3}\n{\"case\": \"runner_identity_summary_accounting_bindings\", \"status\": \"PASS\", \"checks\": 8}\n{\"case\": \"runner_no_production_science_calls\", \"status\": \"PASS\", \"checks\": 3}\n{\"status\": \"PASS_SCOPED\", \"checks\": 55, \"cases\": 13, \"mock_callback_counts\": {\"successful_mock_callbacks\": 1, \"deliberately_failed_mock_callbacks\": 1, \"forbidden_callbacks\": 0, \"real_calculate_calls\": 0}, \"real_inputs_unmodified\": true, \"output\": \"/workspace/scratch/ebcaaaa20861/WU088_HH/research/hh_phys83_ce_completion_20261023/verification/runner_mock_attempt_01\"}\n",
+  "stderr": "",
+  "status": "COMMAND_COMPLETED",
+  "completed_utc": "2026-10-23T15:01:17.033844+00:00"
+}

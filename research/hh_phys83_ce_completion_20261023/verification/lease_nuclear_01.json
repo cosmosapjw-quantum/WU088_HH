@@ -1,0 +1,47 @@
+{
+  "label": "independent_nuclear_01",
+  "command": [
+    "python",
+    "verification/independent_verify_nuclear.py",
+    "--output",
+    "verification/nuclear_attempt_01",
+    "--lease-receipt",
+    "verification/lease_nuclear_01.json"
+  ],
+  "started_utc": "2026-10-23T14:55:34.223179+00:00",
+  "observation": {
+    "site": "local",
+    "cap_cpus": 8,
+    "affinity_cpus": 9,
+    "quota_cpus": 8.0,
+    "sampled_busy_affinity_cpus": 0.0,
+    "sampled_cgroup_busy_cpus": 0.02468552999889744,
+    "sampled_idle_cpus": 7.975314470001103,
+    "cgroup_quota_headrooms": [
+      7.975314470001103
+    ],
+    "available_gib": 4.649200439453125,
+    "capacity_gib": 8.0,
+    "reserve_gib": 1.5,
+    "reserve_cpus": 1,
+    "job_gib": 0.5,
+    "sample_interval_s": 0.08012791299552191,
+    "admissible_slots": 6,
+    "live_leases": 0
+  },
+  "lease": {
+    "path": "/tmp/rei-bianchi-cooperative-leases",
+    "key": "9130fe6bb3b24494952f9753a935639b",
+    "owner": "2-4d18c096f1c1409ab7345ae1b17b0cc5"
+  },
+  "lease_source_SHA256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+  "old_science_runner_called": false,
+  "workers": 1,
+  "threads": 1,
+  "other_processes_terminated": 0,
+  "exit_code": 0,
+  "stdout": "{\"case\": \"nuclear_supplied_events_signed_residual\", \"status\": \"PASS\", \"checks\": 47}\n{\"case\": \"nuclear_weighted_mean_and_zero_measure\", \"status\": \"PASS\", \"checks\": 28}\n{\"case\": \"nuclear_stopping_assimilation_exclusive_composition\", \"status\": \"PASS\", \"checks\": 30}\n{\"case\": \"nuclear_thermal_EOS_and_selected_pair_mean\", \"status\": \"PASS\", \"checks\": 9}\n{\"case\": \"nuclear_scalar_frame_weight_EOS_guards\", \"status\": \"PASS\", \"checks\": 57}\n{\"status\": \"PASS_SCOPED\", \"checks\": 171, \"cases\": 5, \"output\": \"/workspace/scratch/ebcaaaa20861/WU088_HH/research/hh_phys83_ce_completion_20261023/verification/nuclear_attempt_01\", \"counters\": {\"valid_supplied_synthetic_event_records\": 9, \"relative_weighted_event_means\": 4, \"subnormal_mean_cases\": 1, \"exclusive_transfer_compositions\": 3, \"synthetic_EOS_cases\": 5, \"conditional_NR_mean_cases\": 4, \"nuclear_rates_or_stopping_law_callbacks\": 0, \"parent_PHYS81_event_callbacks\": 0}}\n",
+  "stderr": "",
+  "status": "COMMAND_COMPLETED",
+  "completed_utc": "2026-10-23T14:55:34.332080+00:00"
+}
