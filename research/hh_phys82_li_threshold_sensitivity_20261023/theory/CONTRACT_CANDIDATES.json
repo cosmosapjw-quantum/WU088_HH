@@ -1,0 +1,218 @@
+{
+  "schema": "PHYS82_THRESHOLD_CONSTRUCTION_CANDIDATES_v1",
+  "selected_stage_scope": ["R4", "R5"],
+  "status": "ANALYTIC_DERIVATION_COMPLETE_NUMERICAL_EXECUTION_NOT_PERFORMED_BY_THIS_WORKER",
+  "root_owns": ["model_adoption", "numerical_temperature_domain", "numerical_tolerances", "Wolfram_execution", "rate_execution", "independent_review", "integration_and_preservation"],
+  "skill_context_used": {
+    "name": "PhysMath Research Loop",
+    "version": "1.3.0",
+    "package": "c38/physmath-research-loop",
+    "read": [
+      "SKILL.md",
+      "STAGE_SELECTION.md",
+      "references/POLICY_INTEGRATION.md",
+      "references/THEORY_LOOP.md",
+      "references/SUBAGENT_MODE.md"
+    ],
+    "applied_sections": ["R4 actual candidate equations and maps", "R5 actual constructive derivation", "bounded production pass", "typed evidence and numerical status", "no recursive review"]
+  },
+  "protected_inputs": {
+    "species_project_label": "Li7",
+    "Ichemical_eV_literal": "5.39172060034581",
+    "E0_eV_literal": "6",
+    "sigma0_cm2_literal": "5.18148e-17",
+    "upper_eV_literal": "15",
+    "delta_definition": "E0-I",
+    "existing_table_policy": "All 13 CCC 6..15 eV knots remain unchanged",
+    "isotope_cross_section_shift": "NONE",
+    "source_literal_file": "/tmp/phys81_work_20261023/WU088_HH/research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/PHYS81_CI_FINITE_WINDOW_LITERAL_DATA.csv",
+    "source_literal_sha256_from_existing_registry": "522fd63bd4aead4314d7b4ea87f61e5454b23df0f046b1c8e48b2f2023272dad"
+  },
+  "physical_convention": {
+    "kinetic_closure": "PHYS81 stationary-target/electron-mass Maxwell closure",
+    "threshold_coordinate": "Ichemical is used as incident threshold within that approximation",
+    "finite_mass_laboratory_threshold": "Separate recoil convention; not newly resolved here",
+    "thermal_pool": "all outgoing electron and recoil kinetic energies remain in one common thermal pool",
+    "thermal_loss_per_event_eV": "Ichemical",
+    "particle_count_change": 1,
+    "reaction_weighted_mean_is_additional_heat_loss": false,
+    "outside_selected_window": "zero by finite-operator definition",
+    "full_physical_rate_available": false,
+    "temperature_dependent_parameters_allowed_in_derivative_identity": false
+  },
+  "family": {
+    "gap_definition": "sigma0*((E-I)/(E0-I))**p*(E0/E)**q for I<=E<=E0",
+    "full_definition": "gap on [I,E0), unchanged PL on [E0,15], zero outside selected operator",
+    "analytic_domain": "T>0, I>0, Delta>0, sigma0>0, p>0",
+    "implemented_candidate_q_values": [0, 1],
+    "conditional_envelope_q_domain": [0, 1],
+    "pW_exact": "(sqrt(91/3)-1)/4",
+    "pW_general_primary_formula": "(sqrt((100*Z-9)/(4*Z-1))-1)/4",
+    "pW_charge_convention": "Z=1 is residual Li+ long-range net charge, not nuclear charge 3",
+    "matching_status": "Model hypothesis normalized to the unchanged first CCC knot; not empirical gap data",
+    "join_regularities": ["C0 at E0", "no imposed C1 match"],
+    "candidates": [
+      {"id": "L0", "p": "1", "q": 0, "interpretation": "Exact single added PL cell"},
+      {"id": "L1", "p": "1", "q": 1, "interpretation": "Linear excess numerator with 1/E factor"},
+      {"id": "W0", "p": "pW", "q": 0, "interpretation": "Wannier-power matching hypothesis"},
+      {"id": "W1", "p": "pW", "q": 1, "interpretation": "Wannier-power matching with 1/E factor"}
+    ],
+    "optional_amplitude_construction_not_selected": "multiply by alpha+(1-alpha)*t, alpha>0, retaining sigma(E0)=sigma0",
+    "bare_gap_amplitude_multiplier": "would break first-knot continuity unless multiplier=1"
+  },
+  "moment_contract": {
+    "theta": "k_B*T expressed in eV",
+    "z": "Delta/theta",
+    "C": "100*sqrt(8*EV_J/(pi*m_e))",
+    "M_n": "integral E**n*sigma(E)*exp(-E/theta) dE",
+    "M_n_units": "cm^2 eV^(n+1)",
+    "K": "C*theta**(-3/2)*M_1",
+    "K_units": "cm^3/s",
+    "F_j": "integral_0^1 t**(p+j)*exp(-z*t) dt = gamma_lower(p+j+1,z)/z**(p+j+1)",
+    "q0_M1_gap": "sigma0*Delta*exp(-I/theta)*(I*F0+Delta*F1)",
+    "q0_M2_gap": "sigma0*Delta*exp(-I/theta)*(I**2*F0+2*I*Delta*F1+Delta**2*F2)",
+    "q1_M1_gap": "sigma0*E0*Delta*exp(-I/theta)*F0",
+    "q1_M2_gap": "sigma0*E0*Delta*exp(-I/theta)*(I*F0+Delta*F1)",
+    "ratios": {"r1": "F1/F0", "r2": "F2/F0"},
+    "q0_mean_excess": "Delta*(I*r1+Delta*r2)/(I+Delta*r1)",
+    "q1_mean_excess": "Delta*r1",
+    "mean_incoming": "I+mean_excess",
+    "dlogK_dT": "(mean_incoming/theta-1.5)/T",
+    "dmean_dT": "Var_reaction(E)/(theta*T)",
+    "total_logK": "logaddexp(logK_tab,logK_gap)",
+    "gap_weight": "exp(logK_gap-logK_total)",
+    "total_mean": "(1-gap_weight)*mean_tab+gap_weight*mean_gap",
+    "logarithm_unit_convention": "natural logarithm of numerical value in the named unit"
+  },
+  "stable_evaluation": {
+    "logF_gamma": "lgamma(a)+log(P(a,z))-a*log(z), a=p+j+1",
+    "positive_series": "F=exp(-z)*sum_{k>=0} z**k*Gamma(a)/Gamma(a+k+1)",
+    "positive_series_initial": "v0=1/a",
+    "positive_series_recursion": "v(k+1)=v(k)*z/(a+k+1)",
+    "series_tail_bound": "after k=N, if r=z/(a+N+1)<1, omitted sum<=vN*r/(1-r)",
+    "q0_logK": "log(C)+log(sigma0)+log(Delta)-1.5*log(theta)-I/theta+log(F0)+log(I+Delta*r1)",
+    "q1_logK": "log(C)+log(sigma0)+log(Delta)-1.5*log(theta)-I/theta+log(F0)+log(E0)",
+    "dK_if_K_underflows": "sign(dlogK)*exp(logK+log(abs(dlogK))), with exact zero branch",
+    "use_direct_excess_mean": true,
+    "positive_mathematical_rate_can_underflow_in_binary64": true,
+    "derivative_near_zero_requires_absolute_or_scale_based_comparison": true,
+    "special_function_error_certification": "Not established by analytic identity alone"
+  },
+  "conditional_envelope": {
+    "p_range": ["1", "pW"],
+    "q_range": [0, 1],
+    "rate_lower": "K_tab+K_gap(pW,0)",
+    "rate_upper": "K_tab+K_gap(1,1)",
+    "mean_lower": "mean_total(1,1)",
+    "mean_upper": "mean_total(pW,0)",
+    "physical_confidence_interval": false,
+    "pointwise_assumption": "The candidate belongs to the specified family rectangle",
+    "q_only_gap_ratio": "1<K_gap(p,1)/K_gap(p,0)<E0/I",
+    "amplitude_error_if_supplied": "If abs(delta_sigma)<=eps*sigma_gap, abs(delta_K_total)/K_total<=eps*gap_weight"
+  },
+  "asymptotics": {
+    "q0_lowT_Kgap": "C*sigma0*I*Gamma(p+1)*Delta**(-p)*theta**(p-1/2)*exp(-I/theta)*(1+(p+1)*theta/I)",
+    "q1_lowT_Kgap": "C*sigma0*E0*Gamma(p+1)*Delta**(-p)*theta**(p-1/2)*exp(-I/theta)",
+    "lowT_mean_excess_leading": "(p+1)*theta",
+    "q0_lowT_next_excess": "(p+1)*theta**2/(I+(p+1)*theta)",
+    "q0_exact_relative_truncation_of_auxiliary_infinite_integral": "(I*Gamma_upper(a,z)+theta*Gamma_upper(a+1,z))/(I*Gamma(a)+theta*Gamma(a+1)), a=p+1",
+    "q1_exact_relative_truncation_of_auxiliary_infinite_integral": "Gamma_upper(p+1,z)/Gamma(p+1)",
+    "lowT_Ktab": "C*E0*sigma0*theta**(-1/2)*exp(-E0/theta)",
+    "lowT_gap_over_tab": "Gamma(p+1)*(I/E0)**(1-q)*(theta/Delta)**p*exp(Delta/theta)",
+    "highT_q0_Kgap_times_theta_3_2": "C*sigma0*Delta*(I/(p+1)+Delta/(p+2))",
+    "highT_q1_Kgap_times_theta_3_2": "C*sigma0*E0*Delta/(p+1)",
+    "interpretation": "Relative gap enhancement diverges at low T while each absolute finite-window rate tends to zero"
+  },
+  "exposure_contract": {
+    "conditions": "T and ne fixed externally, or same prescribed histories for both operators",
+    "Lambda": "ne*tau, units cm^-3 s",
+    "P": "1-exp(-Lambda*K)",
+    "deltaP": "exp(-Lambda*K_tab)*(1-exp(-Lambda*K_gap))",
+    "bound": "0<=deltaP<=exp(-Lambda*K_tab)*min(1,Lambda*K_gap)<=min(1,Lambda*K_gap)",
+    "two_model_extension": "replace K_tab by lower K and K_gap by K_upper-K_lower",
+    "small_hazard_evaluation": "-expm1(-Lambda*K)",
+    "coupled_temperature_and_electron_feedback_bound": "NOT_DERIVED; histories differ and need separate stability/comparison analysis or allowed direct integration"
+  },
+  "discriminating_checks_proposed": [
+    {
+      "id": "gamma_vs_transformed_quad",
+      "reference": "u=t**(p+1), E(u)=I+Delta*u**(1/(p+1)); integrate positive transformed kernel without gamma calls",
+      "targets": ["logK_gap", "mean_excess_gap", "q0_and_q1"]
+    },
+    {
+      "id": "p1_q0_exact_PL",
+      "reference": "Add (I,0) before unchanged (E0,sigma0) and compare existing FiniteWindowCI; F0=J1,F1=J2,F2=J3",
+      "targets": ["K_total", "logK_total", "mean_total", "dlogK_dT"]
+    },
+    {
+      "id": "derivative_independent_difference",
+      "reference": "symmetric finite difference of logK with predeclared scale-aware tolerance",
+      "targets": ["dlogK_dT"]
+    },
+    {
+      "id": "physical_shape_invariants",
+      "reference": "endpoint matching, positivity, moment support, p-q rectangle, q-only ratio",
+      "targets": ["source_join", "rate_order", "mean_order"]
+    },
+    {
+      "id": "analytic_limits",
+      "reference": "lowT formulas with upper-gamma truncation correction and highT finite-support constants",
+      "targets": ["exponential_reference", "theta_power", "underflow_status"]
+    },
+    {
+      "id": "exposure_bound",
+      "reference": "exact prescribed-exposure difference and min(1,Lambda*deltaK) bound",
+      "targets": ["absolute_observable_effect", "expm1_stability"]
+    }
+  ],
+  "primary_sources": [
+    {
+      "id": "S1",
+      "doi": "10.1103/PhysRev.90.817",
+      "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.90.817",
+      "read_scope": "public original abstract directly read",
+      "supports": "atomic exponent about1.127 and original nonrigorous-ergodicity qualifier"
+    },
+    {
+      "id": "S2",
+      "doi": "10.1071/PH98091",
+      "url": "https://www.publish.csiro.au/ph/pdf/PH98091",
+      "location": "printed323 Eq2, printed324..325",
+      "read_scope": "primary web-extracted equation and infinitely-heavy-center assumptions preserved by source peer and directly read back by this worker; this worker direct fetch failed; original PDF bytes not obtained",
+      "preserved_primary_extraction": "/tmp/phys82_work_20261023/sources/WEB_WANNIER_FORMULA_PRIMARY_RAW.json",
+      "supports": "general exact radical exponent and Coulomb-center assumptions"
+    },
+    {
+      "id": "S3",
+      "url": "https://jetp.ras.ru/cgi-bin/dn/e_031_02_0374.pdf",
+      "location": "printed375..376",
+      "read_scope": "primary text directly read",
+      "supports": "threshold-validity range and alkali resolution caveat"
+    },
+    {
+      "id": "S4",
+      "url": "https://jetp.ras.ru/cgi-bin/dn/e_028_01_0041.pdf",
+      "read_scope": "primary table and precision verified by source peer; this worker direct fetch timed out",
+      "supports": "resolved Li finite-range linear slope and experiment limitations"
+    },
+    {
+      "id": "S5",
+      "doi": "10.1063/1.555700",
+      "url": "https://srd.nist.gov/jpcrdreprint/1.555700.pdf",
+      "location": "printed910 Eq1/Table5; printed894 uncertainty qualification",
+      "read_scope": "primary extracted text and retained PHYS81 visual transcript directly read",
+      "supports": "Bell analytic formula and Li coefficients; direct local Taylor expansion supplies linear leading power"
+    }
+  ],
+  "execution_receipt": {
+    "scientific_numerical_code_executions": 0,
+    "rate_evaluations": 0,
+    "ODE_executions": 0,
+    "old_test_suite_executions": 0,
+    "immutable_source_mutations": 0,
+    "remote_mutations": 0,
+    "recursive_delegations": 0,
+    "analytical_checks_performed": ["dimensions", "positive-integral signs", "endpoint matching", "support mean bounds", "parameter monotonicity", "low-and-high-temperature limits", "p1-PL termwise identity"],
+    "independence": "constructor self-check; independent review remains parent-owned"
+  }
+}

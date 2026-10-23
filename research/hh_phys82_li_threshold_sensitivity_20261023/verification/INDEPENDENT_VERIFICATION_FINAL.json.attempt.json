@@ -1,0 +1,56 @@
+{
+  "status": "TARGETED_TEST_HARNESS_REPAIR",
+  "started_utc": "2026-10-23T02:57:11.725623+00:00",
+  "defect": "Three repr(b) test labels referenced a lambda-local name; use repr(bad).",
+  "extraction": "Split unfinished API guards into verify_api_guards so completed checks are not replayed.",
+  "numerical_implementation_changed": false,
+  "numerical_test_tolerances_changed": false,
+  "original_script_sha256": "4d9344bbccbcd98a82a88f87e32c7ad686f98ea2418ee272e3d73f922c7cee04",
+  "repaired_script_sha256": "0147018056446e0a91300cec0b1ed0712371d5a53640e897590d5218fdb481e3",
+  "numerical_evidence_sha256": "806bf2554113d94f8554e3fa02bbceaf41246b3c766cc2347e52d4ed9a80c3d4",
+  "first_pass_failures": [
+    {
+      "category": "unexpected_exception",
+      "traceback": "Traceback (most recent call last):\n  File \"/tmp/phys82_work_20261023/WU088_HH/research/hh_phys82_li_threshold_sensitivity_20261023/tests/verify_threshold.py\", line 757, in main\n    verify_guards_and_join(audit, models, base_rate, gap_rate)\n  File \"/tmp/phys82_work_20261023/WU088_HH/research/hh_phys82_li_threshold_sensitivity_20261023/tests/verify_threshold.py\", line 496, in verify_guards_and_join\n    audit.reject(lambda b=bad: models[\"L0\"].evaluate(b), \"temperature:\" + repr(b))\n                                                                               ^\nNameError: name 'b' is not defined\n"
+    },
+    {
+      "category": "callback_accounting",
+      "name": "observed_callback_counts",
+      "detail": {
+        "observed": {
+          "saved_baseline_provenance_copies": 9,
+          "verification_center_saved_baseline_copies": 3,
+          "independent_QAWS_integrals": 108,
+          "new_gap_evaluations": 150,
+          "new_total_combinations": 150,
+          "new_unchanged_baseline_evaluations": 27,
+          "new_single_cell_PL_evaluations": 6,
+          "new_joined_PL_evaluations": 6,
+          "explicit_scaled_moment_evaluations": 12,
+          "fixed_exposure_evaluations": 90,
+          "zero_exposure_evaluations": 30,
+          "cross_section_vector_evaluations": 5,
+          "cross_section_scalar_evaluations": 5
+        },
+        "expected": {
+          "new_gap_evaluations": 150,
+          "new_total_combinations": 150,
+          "new_unchanged_baseline_evaluations": 27,
+          "verification_center_saved_baseline_copies": 3,
+          "new_single_cell_PL_evaluations": 6,
+          "new_joined_PL_evaluations": 6,
+          "independent_QAWS_integrals": 108,
+          "fixed_exposure_evaluations": 90,
+          "zero_exposure_evaluations": 30,
+          "saved_baseline_provenance_copies": 9,
+          "explicit_scaled_moment_evaluations": 12,
+          "cross_section_vector_evaluations": 5,
+          "cross_section_scalar_evaluations": 5,
+          "runner_no_science_skip_invocations": 2,
+          "runner_no_science_rejection_invocations": 5
+        }
+      }
+    }
+  ],
+  "numerical_failures_in_first_pass": 0
+}

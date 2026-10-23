@@ -1,0 +1,46 @@
+{
+  "label": "independent-threshold-verification-01",
+  "command": [
+    "python",
+    "tests/verify_threshold.py",
+    "--output",
+    "verification/INDEPENDENT_VERIFICATION_01.json",
+    "--fixtures",
+    "/tmp/phys82_work_20261023/review/independent_verification_01"
+  ],
+  "started_utc": "2026-10-23T02:55:23.727972+00:00",
+  "observation": {
+    "site": "local",
+    "cap_cpus": 8,
+    "affinity_cpus": 9,
+    "quota_cpus": 8.0,
+    "sampled_busy_affinity_cpus": 0.0,
+    "sampled_cgroup_busy_cpus": 0.0426256246803166,
+    "sampled_idle_cpus": 7.9573743753196835,
+    "cgroup_quota_headrooms": [
+      7.9573743753196835
+    ],
+    "available_gib": 5.209743499755859,
+    "capacity_gib": 8.0,
+    "reserve_gib": 1.5,
+    "reserve_cpus": 1,
+    "job_gib": 0.5,
+    "sample_interval_s": 0.08013958799710963,
+    "admissible_slots": 6,
+    "live_leases": 0
+  },
+  "lease": {
+    "path": "/tmp/rei-bianchi-cooperative-leases",
+    "key": "00d183923f9a47feb48d171e852a36bc",
+    "owner": "2-d762b091a7704cdebca85150e0938497"
+  },
+  "lease_source_SHA256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+  "old_science_runner_called": false,
+  "threads": 1,
+  "other_processes_terminated": 0,
+  "exit_code": 1,
+  "stdout": "{\n  \"status\": \"FAIL_RETAINED_FOR_DIAGNOSIS\",\n  \"output\": \"/tmp/phys82_work_20261023/WU088_HH/research/hh_phys82_li_threshold_sensitivity_20261023/verification/INDEPENDENT_VERIFICATION_01.json\",\n  \"checks\": 1815,\n  \"failures\": 2,\n  \"observed_callbacks\": {\n    \"saved_baseline_provenance_copies\": 9,\n    \"verification_center_saved_baseline_copies\": 3,\n    \"independent_QAWS_integrals\": 108,\n    \"new_gap_evaluations\": 150,\n    \"new_total_combinations\": 150,\n    \"new_unchanged_baseline_evaluations\": 27,\n    \"new_single_cell_PL_evaluations\": 6,\n    \"new_joined_PL_evaluations\": 6,\n    \"explicit_scaled_moment_evaluations\": 12,\n    \"fixed_exposure_evaluations\": 90,\n    \"zero_exposure_evaluations\": 30,\n    \"cross_section_vector_evaluations\": 5,\n    \"cross_section_scalar_evaluations\": 5\n  },\n  \"error_maxima\": {\n    \"quad_reported_relative_error\": {\n      \"value\": 3.051783895863011e-12,\n      \"case\": \"W0@255K:2\",\n      \"gate\": 1e-10\n    },\n    \"gap_quad.K_relative\": {\n      \"value\": 1.4142509577352486e-14,\n      \"case\": \"L1@777K\",\n      \"gate\": 1e-10\n    },\n    \"gap_quad.logK_as_rate_relative\": {\n      \"value\": 1.4210854715201903e-14,\n      \"case\": \"L1@777K\",\n      \"gate\": 1e-10\n    },\n    \"gap_quad.mean_relative\": {\n      \"value\": 4.901945389089508e-16,\n      \"case\": \"L1@255K\",\n      \"gate\": 1e-10\n    },\n    \"gap_quad.excess_relative\": {\n      \"value\": 1.0350907081104759e-15,\n      \"case\": \"W0@255K\",\n      \"gate\": 1e-10\n    },\n    \"gap_quad.dlog_scaled_relative\": {\n      \"value\": 4.605873428392613e-16,\n      \"case\": \"L1@255K\",\n      \"gate\": 1e-10\n    },\n    \"gap_quad.dK_scaled_relative\": {\n      \"value\": 2.073229240079767e-14,\n      \"case\": \"W1@255K\",\n      \"gate\": 1e-10\n    },\n    \"total_reference.K_relative\": {\n      \"value\": 2.1038780101872465e-14,\n      \"case\": \"W0@255K\",\n      \"gate\": 1e-10\n    },\n    \"total_reference.logK_as_rate_relative\": {\n      \"value\": 1.4210854715201903e-14,\n      \"case\": \"L1@777K\",\n      \"gate\": 1e-10\n    },\n    \"total_reference.mean_relative\": {\n      \"value\": 3.384577993255085e-16,\n      \"case\": \"W1@50000K\",\n      \"gate\": 1e-10\n    },\n    \"total_reference.excess_relative\": {\n      \"value\": 1.9381183707620017e-15,\n      \"case\": \"W0@3200K\",\n      \"gate\": 1e-10\n    },\n    \"total_reference.dlog_scaled_relative\": {\n      \"value\": 8.470329472543002e-16,\n      \"case\": \"W1@50000K\",\n      \"gate\": 1e-10\n    },\n    \"total_reference.dK_scaled_relative\": {\n      \"value\": 4.308481565222274e-14,\n      \"case\": \"W0@255K\",\n      \"gate\": 1e-10\n    },\n    \"p1q0_gap_PL.K_relative\": {\n      \"value\": 3.507219292888102e-15,\n      \"case\": \"11000.0\",\n      \"gate\": 1e-10\n    },\n    \"p1q0_gap_PL.logK_as_rate_relative\": {\n      \"value\": 3.5527136788004946e-15,\n      \"case\": \"11000.0\",\n      \"gate\": 1e-10\n    },\n    \"p1q0_gap_PL.mean_relative\": {\n      \"value\": 1.6339283912126371e-16,\n      \"case\": \"255.0\",\n      \"gate\": 1e-10\n    },\n    \"p1q0_gap_PL.excess_relative\": {\n      \"value\": 1.5882410593660997e-14,\n      \"case\": \"255.0\",\n      \"gate\": 1e-10\n    },\n    \"p1q0_gap_PL.dlog_scaled_relative\": {\n      \"value\": 1.1514304928461385e-16,\n      \"case\": \"255.0\",\n      \"gate\": 1e-10\n    },\n    \"p1q0_gap_PL.dK_scaled_relative\": {\n      \"value\": 7.044503120830775e-15,\n      \"case\": \"11000.0\",\n      \"gate\": 1e-10\n    },\n    \"p1q0_joined_PL.K_relative\": {\n      \"value\": 5.697880933875216e-14,\n      \"case\": \"255.0\",\n      \"gate\": 1e-10\n    },\n    \"p1q0_joined_PL.logK_as_rate_relative\": {\n      \"value\": 5.684341886080963e-14,\n      \"case\": \"255.0\",\n      \"gate\": 1e-10\n    },\n    \"p1q0_joined_PL.mean_relative\": {\n      \"value\": 2.412246579138393e-16,\n      \"case\": \"11000.0\",\n      \"gate\": 1e-10\n    },\n    \"p1q0_joined_PL.excess_relative\": {\n      \"value\": 1.4781649457553996e-14,\n      \"case\": \"255.0\",\n      \"gate\": 1e-10\n    },\n    \"p1q0_joined_PL.dlog_scaled_relative\": {\n      \"value\": 5.082197683525802e-16,\n      \"case\": \"50000.0\",\n      \"gate\": 1e-10\n    },\n    \"p1q0_joined_PL.dK_scaled_relative\": {\n      \"value\": 5.6870698036057e-14,\n      \"case\": \"255.0\",\n      \"gate\": 1e-10\n    },\n    \"FD_logK_scaled_relative\": {\n      \"value\": 6.615020692129179e-10,\n      \"case\": \"total:L1@50000K\",\n      \"gate\": 1e-07\n    },\n    \"FD_K_scaled_relative\": {\n      \"value\": 4.2895300314704e-09,\n      \"case\": \"gap:W1@255K\",\n      \"gate\": 1e-07\n    },\n    \"ZA_independent_amplitude_rate_ratio\": {\n      \"value\": 1.1348597504840975e-14,\n      \"case\": \"255.0\",\n      \"gate\": 1e-10\n    },\n    \"exposure_baseline_probability\": {\n      \"value\": 2.923616589475048e-14,\n      \"case\": \"L0@255.0:Lambda=1e+09\",\n      \"gate\": 1e-10\n    },\n    \"exposure_gap_alone_probability\": {\n      \"value\": 1.0532851773458426e-14,\n      \"case\": \"L1@255.0:Lambda=1e+13\",\n      \"gate\": 1e-10\n    },\n    \"exposure_total_probability\": {\n      \"value\": 1.060704407554012e-14,\n      \"case\": \"W0@255.0:Lambda=1e+13\",\n      \"gate\": 1e-10\n    },\n    \"exposure_delta_probability\": {\n      \"value\": 7.93867395428653e-13,\n      \"case\": \"W1@25370.66308424773:Lambda=1e+11\",\n      \"gate\": 1e-10\n    },\n    \"exposure_delta_probability_upper_bound\": {\n      \"value\": 7.937266941468551e-13,\n      \"case\": \"L0@25370.66308424773:Lambda=1e+11\",\n      \"gate\": 1e-10\n    },\n    \"exposure_delta_probability_unattenuated_upper_bound\": {\n      \"value\": 1.0532851773458426e-14,\n      \"case\": \"L1@255.0:Lambda=1e+13\",\n      \"gate\": 1e-10\n    },\n    \"exposure_probability_difference_absolute\": {\n      \"value\": 1.1058862159352145e-16,\n      \"case\": \"ZA1969@25370.66308424773:Lambda=1e+09\",\n      \"gate\": 2e-15\n    }\n  }\n}\n",
+  "stderr": "Traceback (most recent call last):\n  File \"/tmp/phys82_work_20261023/WU088_HH/research/hh_phys82_li_threshold_sensitivity_20261023/tests/verify_threshold.py\", line 757, in main\n    verify_guards_and_join(audit, models, base_rate, gap_rate)\n  File \"/tmp/phys82_work_20261023/WU088_HH/research/hh_phys82_li_threshold_sensitivity_20261023/tests/verify_threshold.py\", line 496, in verify_guards_and_join\n    audit.reject(lambda b=bad: models[\"L0\"].evaluate(b), \"temperature:\" + repr(b))\n                                                                               ^\nNameError: name 'b' is not defined\n\n",
+  "status": "COMMAND_FAILED",
+  "completed_utc": "2026-10-23T02:55:25.215564+00:00"
+}
