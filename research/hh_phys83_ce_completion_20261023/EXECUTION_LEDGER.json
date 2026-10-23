@@ -21,7 +21,8 @@
     "transient_rows": 732,
     "scientific_identity": "e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c",
     "source_checkpoint": "cedf70d886e61fabe4e4f10f5d9cddc1b15ba3dd",
-    "receipt": "verification/science_first.json"
+    "receipt": "verification/science_first.json",
+    "science_result_commit": "1f5b11524abc351027d0f88cea009f0015dd088f"
   },
   "new_empirical_nuclear_rates": 0,
   "new_stopping": 0,
@@ -58,8 +59,9 @@
   },
   "prevalidation_static_findings": {
     "count": 2,
-    "repaired_before_numerical_verification": true,
-    "invalidated_scientific_results": 0
+    "invalidated_scientific_results": 0,
+    "repaired_before_corresponding_runtime_validation": true,
+    "ordering": "Frozen-star guard before CE numerical verification; runner manifest guard after CE/nuclear verification and before first runner mock validation"
   },
   "actual_resume": {
     "attempts": 1,
@@ -92,5 +94,29 @@
     "window_UTC": "2026-10-23T15:00:44.912Z..15:02:50.279Z",
     "duplicate_PHYS83_completion_found": false,
     "evidence": "inventory/PRE_SCIENCE_CURRENT_DELTA_REFRESH.json"
+  },
+  "saved_results_readback": {
+    "groups": 21,
+    "status": "READBACK_PASS_SCOPED",
+    "numerical_verification_repeated": 0,
+    "kernel_imports": 0,
+    "rate_callbacks": 0,
+    "population_solves": 0,
+    "evidence": "verification/SAVED_RESULTS_REVIEW.json",
+    "included_in_2111_assertions": false
+  },
+  "stage_publication": {
+    "S0": "65c6751d363363cfc15eba0c7debf50eb493c1c9",
+    "S1": "cedf70d886e61fabe4e4f10f5d9cddc1b15ba3dd",
+    "S2": "1f5b11524abc351027d0f88cea009f0015dd088f",
+    "final": "external PHYS83_CONT_FINAL_DELIVERY_20261023.json"
+  },
+  "stage_backup": {
+    "S0": "DUAL_UPLOAD_ACK",
+    "S1": "DUAL_UPLOAD_ACK",
+    "S2": "DUAL_UPLOAD_ACK",
+    "S2_Dropbox_transfer_attempts": 2,
+    "S2_Dropbox_transfer_failures": 1,
+    "final_full_restore": "external PHYS83_CONT_FINAL_DELIVERY_20261023.json; not inferred from stage ACKs"
   }
 }
