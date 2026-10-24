@@ -1,0 +1,102 @@
+{
+  "schema": "PHYS85_EXECUTION_REQUEST_V1",
+  "created_utc": "2026-10-24T01:54:11.418718+00:00",
+  "status": "READY_S1_NOT_EXECUTED",
+  "authorization": "GO_IMPLEMENT only; root must publish and back up S1 before GO_CLOUD_REFERENCE",
+  "parent_published_S0_HEAD": "0dec9cc128b8cba8d4a7745d603a808563eb1772",
+  "contract_revision": 2,
+  "contract_sha256": "44f30a1013294689414961a8e456277a41348090a759f0d795a4af77a9ea6dec",
+  "theory_sha256": "2e04242ce09ed7d5c0313b5569a0a1cab36f3b544a0d6daa231a006938467e65",
+  "frozen_inputs_sha256": "2a582b87d6cf14bba733a5d126600b3828f95768e16943878ad77571f9d56bc5",
+  "tool": "mcp__codex_apps__wolfram_wolframlanguageevaluator",
+  "tool_arguments_file": "implementation/WOLFRAM_REQUEST_ARGUMENTS.json",
+  "tool_arguments_sha256": "66dca5133e473e3d57fab309fec0d3a4ec8bb1607ba1cd81680af847d56f177c",
+  "assembled_code_file": "implementation/CLOUD_REFERENCE_CODE.wl",
+  "assembled_code_sha256": "09ee51de19b30d471b105857b2cfd15dc53bfa1b8ac65a7740879dccf14f3592",
+  "assembly": {
+    "ordered_parts": [
+      "PHYS85FrozenJSON = WL-escaped full source_data/FROZEN_INPUTS.json JSON text string;",
+      "source/event_owner.wl",
+      "verification/verify_event_owner.wl",
+      "source/execute_reference.wl"
+    ],
+    "method": "Literal concatenation. ImportString RawJSON reconstructs the input. Production and oracle independently divide validated integer-pair values. No arbitrary string evaluation."
+  },
+  "limits": {
+    "timeConstraint_seconds": 60,
+    "internal_TimeConstrained_seconds": 55,
+    "kernel_count_requested": 1,
+    "Parallel_functions": false,
+    "NDSolve": false,
+    "planned_reference_application_calls": 1,
+    "targeted_repair_calls_if_concrete_failure": 1,
+    "repair_authorization": "Separate root authorization required; preserve first files and failed outcome; repair at fresh path."
+  },
+  "expected_output_schema": {
+    "outer": "PHYS85_CLOUD_REFERENCE_OUTPUT_V1",
+    "reference_report": "PHYS85_EXACT_REFERENCE_REPORT_V1",
+    "rational_encoding": "All Integer and Rational leaves serialized as exact strings, including row counts and discrete particle counts. Rational nonintegers use numerator/denominator. No approximate conversion.",
+    "Null_encoding": "JSON null, preserved by explicit encoder rule; unknown budget is not zero.",
+    "Boolean_encoding": "JSON boolean",
+    "event_rows": "36 constructed non-cold conditional event applications, each with source values and direct four-vector independent oracle; no physical rate interpretation.",
+    "ensemble_rows": "6 constructed conditional same-channel correlated-owner aggregate applications with independently weighted oracle.",
+    "verification": "Raw assertion labels/booleans, count, guard Failure tags, symbolic exact expressions and failures remain separate from application row counts.",
+    "partial_failure": "FAIL_FIRST_ATTEMPT_PRESERVED or TIME_LIMIT_EXCEEDED/ABORTED with partial row and assertion lists; no subsequent automatic execution.",
+    "external_receipt": "Root preserves full raw connector response and independently decoded JSON report, exact request code/hash, observed start/end, result and failure status. No source file overwrite."
+  },
+  "static_inspection": [
+    {
+      "file": "source/event_owner.wl",
+      "bytes": 5763,
+      "sha256": "263c5baa3b740159a480aab4741604e7b041512c7fd62c062405456d011c6943",
+      "balanced_comments_strings_delimiters": true,
+      "forbidden_executable_symbols": []
+    },
+    {
+      "file": "verification/verify_event_owner.wl",
+      "bytes": 12804,
+      "sha256": "880011a74c633f86e4c0afd6ffc23626bc10a2006312a0ab00b93213ec9b45a4",
+      "balanced_comments_strings_delimiters": true,
+      "forbidden_executable_symbols": []
+    },
+    {
+      "file": "source/execute_reference.wl",
+      "bytes": 1777,
+      "sha256": "bb6a3240e492c6b421bc9a5c2465d501a87ca66516922b6e536f0a8bb826123f",
+      "balanced_comments_strings_delimiters": true,
+      "forbidden_executable_symbols": []
+    }
+  ],
+  "serialization_metadata_check": {
+    "explicit_Null_downvalue_present": true,
+    "before_fallback": true,
+    "scope": "Source-level metadata inspection only; no Wolfram evaluation or serializer runtime test performed."
+  },
+  "execution_counts_observed": {
+    "Wolfram_evaluations": 0,
+    "new_constructed_event_rows": 0,
+    "new_constructed_ensemble_rows": 0,
+    "executed_verifier_assertions": 0,
+    "local_numerical_children": 0,
+    "PHYS84_retries": 0,
+    "parent_kernel_calls": 0,
+    "old_cold_case_replays": 0,
+    "new_physical_rates": 0
+  },
+  "model_identity": {
+    "requested": "gpt-6.1-sol",
+    "observed_backend": "UNOBSERVED",
+    "requested_reasoning_effort": "high",
+    "fork_turns": "none",
+    "request_evidence": "Root reports actual spawn request under central tiered policy; backend identity remains unobserved."
+  },
+  "runtime_hardware": "UNOBSERVED",
+  "budget": {
+    "inherited_spend": null,
+    "remaining": null,
+    "currency": null,
+    "reset": false
+  },
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}

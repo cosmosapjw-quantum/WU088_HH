@@ -1,0 +1,79 @@
+{
+  "schema": "PHYS85_ONE_TARGETED_BINDING_REPAIR_V1",
+  "utc": "2026-10-24T02:57:10.539170+00:00",
+  "classification": "IMPLEMENTATION_ENTRYPOINT_NAMESPACE_BINDING_FAILURE",
+  "authority": "Fresh Astra C9 GO_ONE_TARGETED_BINDING_REPAIR; prepare only pending S1R publication/backup",
+  "status": "READY_S1R_NOT_EXECUTED",
+  "first_failure_raw_response_SHA256": "0b0b0bff4361175be326713ed828448f596bfd0989cc554a68f31273d199854a",
+  "first_attempt_receipt_SHA256": "ebafd7c100845158a7f2a5971629d87ab4ed1d062586606fc3eb2a72570ce11a",
+  "original_assembled_code_SHA256": "09ee51de19b30d471b105857b2cfd15dc53bfa1b8ac65a7740879dccf14f3592",
+  "removed_directive_count": 8,
+  "removed_exact_directive_lines": [
+    {
+      "original_assembled_line": 4,
+      "exact_line": "BeginPackage[\"PHYS85`\"];"
+    },
+    {
+      "original_assembled_line": 9,
+      "exact_line": "Begin[\"`Private`\"];"
+    },
+    {
+      "original_assembled_line": 64,
+      "exact_line": "End[];"
+    },
+    {
+      "original_assembled_line": 65,
+      "exact_line": "EndPackage[];"
+    },
+    {
+      "original_assembled_line": 69,
+      "exact_line": "BeginPackage[\"PHYS85Verify`\",{\"PHYS85`\"}];"
+    },
+    {
+      "original_assembled_line": 72,
+      "exact_line": "Begin[\"`Private`\"];"
+    },
+    {
+      "original_assembled_line": 197,
+      "exact_line": "End[];"
+    },
+    {
+      "original_assembled_line": 198,
+      "exact_line": "EndPackage[];"
+    }
+  ],
+  "prefix_replacement_count": 3,
+  "prefix_replacements": [
+    {
+      "old": "PHYS85Verify`PHYS85RunVerification",
+      "new": "PHYS85RunVerification",
+      "count": 1
+    },
+    {
+      "old": "PHYS85Verify`PHYS85VerificationSnapshot",
+      "new": "PHYS85VerificationSnapshot",
+      "count": 2
+    }
+  ],
+  "repaired_assembled_code_SHA256": "4e7562541499c15b8ec64c2818a39180c2ec677adeb2f60ccaadf563ea8a2afd",
+  "repaired_tool_arguments_SHA256": "7bc8551b9b30afd1f91d85ef69933fe1860c4d191541926aa0cc2b5a9dd4d57f",
+  "minimal_diff_SHA256": "9d81ef389ad64f0093cc73a5ecf65914fa3a755fc7257705eb2b02adaa3d5d78",
+  "original_nine_frozen_files_verified_unchanged": true,
+  "first_attempt_files_modified": false,
+  "formulas_inputs_guards_oracle_caps_output_schema_changed": false,
+  "tool": "mcp__codex_apps__wolfram_wolframlanguageevaluator",
+  "timeConstraint_seconds": 60,
+  "internal_TimeConstrained_seconds": 55,
+  "planned_repair_call": 1,
+  "repair_calls_actual": 0,
+  "Wolfram_probes": 0,
+  "local_numerical_children": 0,
+  "PHYS84_retries": 0,
+  "official_documentation": {
+    "url": "https://reference.wolfram.com/language/tutorial/ModularityAndTheNamingOfThings.html",
+    "evidence": "Root-read official context section: symbol names are parsed before Begin executes; this executor did not perform an additional documentation lookup or WL probe."
+  },
+  "requested_model": "gpt-6.1-sol",
+  "requested_reasoning_effort": "high",
+  "observed_backend_identity": "UNOBSERVED"
+}

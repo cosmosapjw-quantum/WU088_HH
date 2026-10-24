@@ -1,0 +1,96 @@
+{
+  "schema": "PHYS85_NUCLEAR_EVENT_OWNERSHIP_V1",
+  "revision": 2,
+  "frozen_date_UTC": "2026-10-24",
+  "authority": "Astra controller; current user selects physmath-research-loop built-in1.0.0",
+  "base_HEAD": "d5c2c8dbbbd77bc81526dda6e74df534fba3c4e5",
+  "base_PR": 141,
+  "node": "WU_NUCLEAR_PARTICLE_OWNERSHIP",
+  "original_obligation": "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP",
+  "scope": "Exact supplied-event normal-frame capture ledger and conditional nonrelativistic Maxwellian selection theorem; executed Wolfram exact reference implementation only. No physical cross-section supplier, thermonuclear rate, stopping or coupled history.",
+  "prior_first_node": "WU_CE83_OWNER_COMPLETION adopted from completed PHYS83; no replay. PHYS84 source application stays separate and awaits unchanged local lease.",
+  "dependency": {
+    "PHYS81_HEAD": "b3ec271a96cb67e583bffa9b61533802838236f9",
+    "mass_path": "research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/NUCLEAR_MASSES_CODATA2022.json",
+    "mass_SHA256": "ee87900f698e59029a1aafce3d4184870ccc6fa16a8ba50326bd13a10de60aaf",
+    "old_kernel_SHA256": "e8b7ad216113932d0844e424ca6e5e17dd644e07ca883e463c0c6c325c4fcf0e",
+    "old_663_assertions": "reuse only; do not call old kernel/verifier or repeat cold-COM cases",
+    "mass_convention": "bare ground-state nuclei; use one pinned displayed mass-energy table; exact rational parsing means exact arithmetic on rounded data, not exact physical masses or confidence intervals",
+    "CR_C23D": "research/cr-c23d-finite-t-source-bridge-20261024 at ec0c2cb8cc9feae64fe028ca2a4ea0eb7d79c8f8 is a reservation; WU scope is nuclear daughter ownership, not CR photoelectron or stopping implementation"
+  },
+  "channels": [
+    {"id":"np_dgamma","a":"n","b":"p","c":"d"},
+    {"id":"nd_tgamma","a":"n","b":"d","c":"t"},
+    {"id":"pd_hgamma","a":"p","b":"d","c":"h"}
+  ],
+  "units": {"rest_energy":"MeV","kinetic_energy":"MeV","event_weight":"dimensionless normalized probability, not a physical rate","source_clock":"same normal-frame local proper seconds when a separately admitted rate R is supplied"},
+  "event_domain": {
+    "K_com": "exact rational >=0; new application uses >0 only",
+    "boost_r": "exact rational 0<=r<1; r=tanh(rapidity/2)",
+    "gamma": "(1+r^2)/(1-r^2)",
+    "beta": "2*r/(1+r^2)",
+    "mu": "exact rational -1<=mu<=1, photon COM direction cosine relative to boost",
+    "daughter_owner": ["thermal_birth_model","fast_birth"],
+    "radiation_route": ["immediate_escape","emissivity_handoff"],
+    "thermal_birth_model": "explicit instantaneous caloric closure; all daughter K enters ideal thermal moment with one thermal particle. This is not derived thermalization or stopping.",
+    "fast_birth": "daughter count and all daughter K enter distinct fast inventory; zero immediate daughter thermal deposition",
+    "zeta_only": "rejected; energy fraction alone cannot set thermal membership"
+  },
+  "equations": {
+    "M": "m_a*c^2+m_b*c^2; all code mass variables are energy equivalents",
+    "W": "M+K_com",
+    "Q": "M-m_c*c^2",
+    "E_gamma_star": "(W-mc)*(W+mc)/(2*W)",
+    "K_c_star": "(W-mc)^2/(2*W)",
+    "E_gamma_normal": "gamma*E_gamma_star*(1+beta*mu)",
+    "K_c_normal": "gamma*(mc+K_c_star-beta*E_gamma_star*mu)-mc",
+    "K_in_normal": "gamma*W-M",
+    "h": "1 for thermal_birth_model; 0 for fast_birth",
+    "particle_counts": "dNthermal=h-2; dNfast=1-h; dNe=0; dNnuclear_total=-1",
+    "six_energy_columns": ["thermal","fast","nuclear_rest","atomic_binding","radiation_injected","radiation_escape"],
+    "columns": "(h*Kc-Kin,(1-h)*Kc,-Q,0,Egamma if handoff else 0,Egamma if escape else 0)",
+    "energy_residual": "sum six columns =0",
+    "temperature_source": "2*R*mean(dUthermal)/(3*kB*Nthermal)-T*R*mean(dNthermal)/Nthermal",
+    "ensemble": "weighted sum of event columns; retain joint mean(h*Kc), not mean(h)*mean(Kc)",
+    "no_double_count": "emitted diagnostic is not a seventh owned energy column; do not add Q again as heat"
+  },
+  "maxwellian_theorem": {
+    "assumptions": "T>0, Nthermal>0; independent isotropic nonrelativistic Maxwellians at the same T; sigma(K)>=0 depends on relative K only, not T or COM; 0<I1<infinity, finite I2 and differentiated integral; fixed domain; no drift. If R=0 all source columns vanish; normalized event means/log(kappa) are not defined at zero kappa.",
+    "kappa": "sqrt(8/(pi*mu_reduced))*theta^(-3/2)*integral(K*sigma(K)*exp(-K/theta),K=0..inf)",
+    "theta": "kB*T",
+    "event_mean_relative_K": "integral(K^2*sigma*exp(-K/theta))/integral(K*sigma*exp(-K/theta))",
+    "incoming_pair_mean": "3*theta/2+event_mean_relative_K",
+    "rate_slope": "event_mean_relative_K=theta*(3/2+dlog(kappa)/dlog(T))",
+    "all_fast_temperature": "Tdot=-(2/3)*(R*T/Nthermal)*dlog(kappa)/dlog(T)",
+    "power_law_witness": "sigma proportional K^s, s>-2, gives event_mean_K=(s+2)*theta and Tdot=-(2*s+1)*R*T/(3*Nthermal)",
+    "separation": "This NR theorem is not an exact relativistic Maxwellian thermal average of the exact event kernel. No finite-T physical rate or relativistic error bound is supplied."
+  },
+  "implementation": {
+    "language": "Wolfram Language, exact Integer/Rational arithmetic; single kernel, no Parallel functions or NDSolve",
+    "portable_Python": "not in this unit; no new local numerical child while PHYS84 admission waits",
+    "source": "source/event_owner.wl",
+    "verification": "verification/verify_event_owner.wl, independent direct four-momentum/mass-shell oracle and algebraic incidence",
+    "input": "source_data/FROZEN_INPUTS.json transcribed mechanically from pinned mass table and contract; exact integer numerator/denominator representation",
+    "guards": ["unknown channel","non-rational K/r/mu","K<0","r<0 or r>=1","abs(mu)>1","missing or conflicting owner","invalid route","empty/negative/non-normalized weights","mixed channels in one ensemble"],
+    "outputs": "JSON-compatible exact rational strings and explicit count/energy owner names, actual residuals, guarded input errors. No forced-zero residuals, no numerical tolerance relaxation."
+  },
+  "verification_plan": {
+    "event_cases": "3 channels x 3 new non-cold event inputs x 2 daughter owners x 2 radiation routes =36 rows",
+    "event_inputs": [
+      {"K_com_MeV":"1/1000000","boost_r":"1/10000","mu":"-1"},
+      {"K_com_MeV":"1/1000","boost_r":"1/1000","mu":"0"},
+      {"K_com_MeV":"1/100","boost_r":"1/1000","mu":"1"}
+    ],
+    "ensemble": "per channel, these 3 events with weights1/2,1/3,1/6 and h=0,1,1; both radiation routes,6 aggregate rows",
+    "checks": ["gamma^2*(1-beta^2)=1","daughter mass shell from boosted four-vector","total energy and boost momentum","six-column energy closure","A and Z incidence zero","thermal+fast nuclear count=-1","electrons unchanged","route energy moved once","joint owner-energy covariance retained","symbolic Maxwellian integral and derivative identities","constant sigma and inverse-speed formal witnesses","guards"],
+    "acceptance": "all exact residuals 0, exact expected discrete counts, Egamma>0 and Kin>=0 and Kc>=0 on valid capture events; strict positive kinetic values are tested only on the listed nondegenerate fixtures. Every planned guard rejects. Independent reviewer reads code and raw result before scoped admission.",
+    "caps": {"Wolfram_per_call_seconds":60,"planned_reference_application_calls":1,"targeted_repair_calls_if_concrete_failure":1,"local_workers":1,"no_parallel_kernels":true},
+    "not_a_continuum_certificate": "finite witnesses do not certify arbitrary input implementation behavior; analytic theorem proof is separately reviewed"
+  },
+  "budget": {"inherited_spend":null,"remaining":null,"currency":null,"reset":false,"new_ODE":0,"new_physical_nuclear_rates":0,"fast_stopping":0,"completed_science_replays":0},
+  "resources": {"local_numerics":"unchanged pinned shared lease reserve1.5GiB+job0.5GiB; PHYS84 waits","cloud_symbolic":"user-authorized Wolfram bounded exact reference, distinct from local numerical admission; remote host hardware/thread scheduler unobserved","other_processes_terminated":0,"cache_policy_changes":0},
+  "claim_gate": "DERIVED_SCOPED -> EXACT_REFERENCE_IMPLEMENTATION_VERIFIED only after independent review. WU_NUCLEAR_PARTICLE_OWNERSHIP remains PARTIAL for physical finite-T supplier. No rates/stopping/consumer activation.",
+  "publication": {"branch":"research/hh-phys85-nuclear-ownership-20261024","base":"research/hh-phys84-ce-source-adapter-20261023","mode":"additive Draft expected-SHA update, no merge","central_files":"unchanged; return overlay only"},
+  "HH_R10":"OFF",
+  "production_admission":"NOT_ISSUED"
+}
