@@ -148,7 +148,7 @@ source/event_owner.wl, verification/verify_event_owner.wl, source/execute_refere
 | S0 | 조사·계약·유도·독립 theory PASS | 0dec9cc128b8cba8d4a7745d603a808563eb1772; 양쪽 upload ACK |
 | S1 | 동결 구현·입력·검증기 | 04be89e24401966770d137b115c73f66b563ef5d; 양쪽 upload ACK |
 | S1R | 첫 실패·원본 보존·binding-only repair | 1a8f98719fd3ec87d3acbfb27aeda9936b0bc613; 양쪽 upload ACK |
-| S2 | 두 번째 raw·최종 독립 판정·최신 delta·DAG·handoff | delivery/PUBLICATION_HISTORY와 S2_BACKUP_ACK에서 actual commit/ACK 확인 |
+| S2 | 두 번째 raw·최종 독립 판정·최신 delta·DAG·handoff | 8623d650d9ef9cb918373bdfe6a3d7834bac702f; 양쪽 upload ACK. ZIP9,722,949bytes/SHA94f6f62a1029af3423adc7fb478ff433e12bb42fb1ed8e0d752422caadeca5b1 |
 | FINAL | S2 ACK를 포함한 최종 전달 checkpoint | 실제 최종 HEAD/tree/ZIP SHA와 provider 전체 다운로드·복원은 외부 PHYS85_FINAL_DELIVERY_20261024.json 및 PR 최종 본문 |
 
 모든 원격 ref 변경은 expected SHA를 사용한 additive Draft PR142이며 base/main을 merge하거나 부모 과학 파일을 수정하지 않는다. 단계별 ZIP의 ACK와 최종 ZIP의 실제 전체 복원을 구분한다. 최종 manifest는 owned Git prefixes, private intake, 원본 PHYS84 ZIP/JSON 전체 bytes를 포함한다. 최종 복원은 각 provider의 실제 전체 GET·reopen SHA·CRC·payload SHA·fresh Git blob·전체 추출을 별도 count로 기록한다. 부모 내부 ZIP의 과거 science를 실행하거나 과거 전체복원을 소급 재수행했다고 하지 않는다.
