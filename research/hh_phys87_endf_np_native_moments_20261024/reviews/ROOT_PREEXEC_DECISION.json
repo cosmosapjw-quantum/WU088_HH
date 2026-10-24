@@ -1,0 +1,41 @@
+{
+  "schema": "PHYS87_ROOT_PREEXEC_DECISION_V1",
+  "decision": "PASS_TO_S1_PUBLICATION_AND_SINGLE_PRIMARY_AFTER_DUAL_ACK",
+  "as_of_utc": "2026-10-24 09:10:51 UTC",
+  "controller": "root Astra authority; actual backend identity not independently observed",
+  "contract_sha256": "464df6f83a7ac8bd64813dc9da3ca34f19398a2f970f3d69c706e3d089f6fd38",
+  "primary_identity": "bc8a07546cab87dc79de5efee1e0d1917f7e88e851cdd8d5e7856f50f8c1c53d",
+  "review": {
+    "path": "reviews/CODE_REVIEW_PREEXEC.json",
+    "sha256": "bacf19515280dbf9c46804d59971c2c391cd80d916145db09c27f2fcc0ff9e70",
+    "status": "PASS_SCOPED_PREEXEC",
+    "open_blockers": 0
+  },
+  "gate_transition": "S1 expected-SHA publication -> both stage ACK -> fresh pinned lease -> one primary001 child; stop on any failure; no automatic retry",
+  "local_science_children_before_decision": 0,
+  "allowed_primary_counts": {
+    "full_moments": 8,
+    "FD_scalar": 4,
+    "thermal_integrations": 12,
+    "angular_cases": 18,
+    "owner_rows": 16
+  },
+  "runtime_caps": {
+    "primary_cpu_s": 12,
+    "primary_wall_s": 60,
+    "workers": 1,
+    "threads": 1,
+    "reserve_GiB": 1.5,
+    "job_GiB": 0.5
+  },
+  "remaining_steps": "Independent reference and saved figures require separate root dispatch after inspecting primary actual outcome; final C9/science admission pending.",
+  "reused": {
+    "PHYS86_HEAD": "f4a6d5505c845a046e3b81d33a2992a239ab4c8b",
+    "old_science_replays": 0,
+    "S0": "b4e606c433bc0d7969227635b62f33e67a56c705",
+    "S0_backup": "both actual ACK+metadata, not whole stage GET"
+  },
+  "claim": "No numerical or consumer admission from static review alone",
+  "HH_R10": "OFF",
+  "production": "NOT_ISSUED"
+}

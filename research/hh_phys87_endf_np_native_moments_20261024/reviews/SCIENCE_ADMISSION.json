@@ -1,0 +1,115 @@
+{
+  "schema": "PHYS87_ROOT_SCIENCE_ADMISSION_V1",
+  "observed_utc": "2026-10-24T09:29:01Z",
+  "decision": "PASS_SCOPED",
+  "claim_gate": "NUMERICALLY_CHECKED_SCOPED_SOURCE_NATIVE_FINITE_WINDOW",
+  "authority": "Root theory/contracts/admission; independent final C9 read and adopted",
+  "primary_identity": "bc8a07546cab87dc79de5efee1e0d1917f7e88e851cdd8d5e7856f50f8c1c53d",
+  "parent_final_head": "f4a6d5505c845a046e3b81d33a2992a239ab4c8b",
+  "source_code_checkpoint": "94d3b35bb66df184cf370035f498effbb4534cc6",
+  "adopted_evidence": [
+    {
+      "path": "results/primary001/RESULT.json",
+      "bytes": 109074,
+      "sha256": "aaf3a145c24a57a467886ad7d6422f04805be50e389c254d2f12d8049a18b874"
+    },
+    {
+      "path": "results/INDEPENDENT_REFERENCE.json",
+      "bytes": 86936,
+      "sha256": "7a5e29167f5f469e32ab0d66fffa0f491fc130f22d7452a68ae4b482c4060fea"
+    },
+    {
+      "path": "reviews/INDEPENDENT_REVIEW.json",
+      "bytes": 13617,
+      "sha256": "0c4abc38807ebd7bfeac484dbb4d890b2554360f3beab0724e8a2d04ee246245"
+    },
+    {
+      "path": "results/SAVED_RESULT_SUMMARY.json",
+      "bytes": 28236,
+      "sha256": "3c2d5894c71377158bbaf62d487f8c7da28f285d85d79bfeaa345d9f7cd78745"
+    },
+    {
+      "path": "results/EXECUTION_LEDGER_FINAL_APPEND.json",
+      "bytes": 3555,
+      "sha256": "bc9a6797799d8a4930739b78830b24abe41c66dec2b632cd043107c3f80fd094"
+    }
+  ],
+  "counts": {
+    "primary_attempts": 1,
+    "primary_successes": 1,
+    "primary_failures": 0,
+    "independent_reference_attempts": 1,
+    "independent_reference_successes": 1,
+    "saved_figure_attempts": 1,
+    "saved_figure_successes": 1,
+    "scalar_assertions": 147,
+    "passed_scalar_assertions": 147,
+    "guard_controls_included_in_assertions": 24,
+    "exact_positive_knot_witnesses_separate": 153,
+    "convex_cell_witnesses_separate": 152,
+    "primary_integrations": 12,
+    "independent_quad_calls": 608,
+    "independent_callbacks": 12810,
+    "actual_resume_skip": 1,
+    "resume_scientific_callbacks": 0,
+    "old_completed_identity_replays": 0
+  },
+  "scope": [
+    "Pinned ENDF/B-VIII.1 n-001_H_001 MF3/102 and MF6/102 source-native atomic mass convention",
+    "Finite lab-energy support [1e-5,2e7] eV with native INT5/INT2 law",
+    "Common-temperature independent isotropic classical Juttner incoming particles",
+    "Four primary temperatures 255,1e4,1e6,1e8 K; no continuum thermal error certificate",
+    "Conditional angular moments, same-event correlated photon/recoil/incident moments and caloric particle-count accounting",
+    "h=0 fast birth and h=1 explicitly instantaneous caloric birth are model ownership choices, not stopping bounds"
+  ],
+  "limits": [
+    "Atomic-to-bare capture energy/mass remap OPEN",
+    "Full-support rate and tails OPEN",
+    "Physical source uncertainty/covariance propagation OPEN",
+    "Named consumer/coupled thermal-charge history OPEN",
+    "Low-temperature independent variance reference NOT_RUN",
+    "No stopping-time or heating prediction; no ODE or physical-network activation"
+  ],
+  "max_residuals": {
+    "GL16_GL32_relative": 1.648189533740267e-16,
+    "FD_slope_absolute": 6.271401387092368e-8,
+    "angular_scaled": 1.3446208630370971e-14,
+    "conditional_event_eV": 7.82310962677002e-8,
+    "thermal_owner_eV": 4.15738887760142e-10,
+    "independent_reference_relative": 7.767841434001767e-13
+  },
+  "cost": {
+    "local_child_cpu_s": 4.364383,
+    "local_child_launch_wall_s": 4.369048669001131,
+    "actual_child_attempts": 3,
+    "successes": 3,
+    "failures": 0,
+    "automatic_retries": 0,
+    "worker_threads": 1,
+    "own_leases_released": 3,
+    "new_cloud_symbolic_calls": 1,
+    "inherited_evaluator_calls": 4,
+    "cumulative_evaluator_calls_in_this_ledger_scope": 5,
+    "monetary_cost": null,
+    "monetary_reset": false,
+    "peak_RSS_bytes": null,
+    "unused_seconds_reallocated": false
+  },
+  "frozen_original_results_rewritten": false,
+  "root_new_scientific_execution": 0,
+  "independent_reviewer_new_scientific_execution": 0,
+  "open_blocking_findings": 0,
+  "publication": "S2_PREPARED_EXPECTED_SHA_PUSH_REQUIRED",
+  "backup": "S0_S1_DUAL_ACK_METADATA; FINAL_WHOLE_RESTORE_PENDING",
+  "DAG": {
+    "child": "ENDF_H1_NATIVE_FINITE_WINDOW_JOINT_MOMENTS",
+    "child_status": "COMPLETE_SCOPED",
+    "parent": "NUCLEAR_PHYSICAL_FINITE_T_EVENT_SUPPLIER",
+    "parent_status": "PARTIAL",
+    "next": "NUCLEAR_ATOMIC_TO_BARE_CAPTURE_REMAP",
+    "next_status": "OPEN"
+  },
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "global_completion_percent": null
+}

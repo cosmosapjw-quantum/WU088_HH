@@ -1,0 +1,76 @@
+{
+  "schema": "PHYS87_INDEPENDENT_REFERENCE_PLAN_V1",
+  "preparation_status": "STATIC_CODE_PREPARED_NOT_EXECUTED",
+  "role": "fresh independent Astra reviewer /root/independent_review_87",
+  "contract_sha256": "464df6f83a7ac8bd64813dc9da3ca34f19398a2f970f3d69c706e3d089f6fd38",
+  "code": "verification/independent_reference.py",
+  "source": "canonical source_data/n-001_H_001.endf read directly by a separate fixed-width Decimal parser; no implementation imports",
+  "source_sha256": "3024d8f0db604b074e33ed8b05027eb9f5a738614041ba44c83f048e0d0bc1af",
+  "transcription_comparison_only": "SOURCE_TABLE JSON is checked against independently parsed raw153x4numeric values; its rows never supply the integrand",
+  "source_guards": [
+    "MAT125, ZA1001, AWR0.9991673, QM=QI2224648eV",
+    "MF3/102 exactly153knots, all152native intervals, INT5throughpoint33 thenINT2through153",
+    "MF6/102 LCT2 NK2, photonLAW2 LANG0 NL2 and yield1, recoilLAW4 and yield1",
+    "all153angular energies agree with MF3; native angular coefficients agree with frozen table",
+    "explicit neutron absolute energy939565421.94eV; target=AWR*neutron; residual=sum-QI; recoilAWP is not substituted"
+  ],
+  "reference": {
+    "T_K": 100000000,
+    "variable": "x=E_lab/theta on each of152native cells; independent of primary logE Gauss rule",
+    "Bessel": "actual scipy.special.kve orders1and2; no asymptotic polynomial from implementation",
+    "integrator": "scipy.integrate.quad (QUADPACK) four scaled integral families on each native cell",
+    "integral_families": [
+      "normalizer",
+      "Kin/theta",
+      "Egamma/QI",
+      "Kd/theta"
+    ],
+    "rate_reduction": "lambda/(4 eps_n^2 eps_H^2)=E_lab*(2eps_n+E_lab)/eps_n^2; dK/dE_lab=eps_H/W; dE_lab=theta dx",
+    "quad_calls": 608,
+    "epsabs_scaled_per_cell": 1e-24,
+    "epsrel": 2e-11,
+    "limit_per_quad": 64,
+    "quadrature_warning_policy": "FAIL_CLOSED preserve output; no automatic retry or tolerance change",
+    "underflow": "record zero exp(-K/theta) callbacks; integrate every native cell; no source-window truncation or extrapolation",
+    "means": "stable K, kStar and highestT kve ratio difference; no subtraction of large rest energies",
+    "variance": "not computed; no lowT G2-G^2 subtraction",
+    "optional_mpmath": "not selected: highestT independent rate/means and separate exact symbolic variance evidence satisfy this frozen scoped reference; no additional check child"
+  },
+  "primary_comparison": {
+    "path": "results/primary001/RESULT.json",
+    "identity": "controller passes actual primary bytes SHA256; mismatch fails before reference integration",
+    "row": "unique thermal_results row where T_K==100000000 and order==32 and rate_only==false",
+    "fields": [
+      "kappa_cm3_per_s",
+      "mean_Kin_eV",
+      "mean_Egamma_eV",
+      "mean_Kd_eV"
+    ],
+    "relative_difference_denominator": "absolute independent reference value",
+    "relative_tolerance": 1e-07,
+    "reference_energy_closure_abs_eV": 2e-07
+  },
+  "dispatch": {
+    "state": "CONTROLLER_POST_PRIMARY_ADMISSION_REQUIRED",
+    "children_max": 1,
+    "CPU_s": 20,
+    "wall_s": 60,
+    "threads": 1,
+    "workers": 1,
+    "shared_lease": "same pinned PHYS78 gate as contract; root owns acquisition and fresh actual resource/affinity checks",
+    "child_enforcement": "RLIMIT_CPU20s, SIGALRM60s, six thread environment variables set1 before SciPy import",
+    "admission_receipt": "required existing JSON retained by SHA; child does not infer lease authorization from arbitrary JSON contents",
+    "outputs": "exclusive creation of requested reference JSON; failed attempt retained; existing output refuses replay",
+    "automatic_retry": 0,
+    "scientific_executions_during_preparation": 0
+  },
+  "claim": "Independent comparison of frozen highestT source-native finite-window rate and means only; adaptive error estimates are not continuum/global error certificates; no full thermal rate/source confidence interval/bare-network/physical activation claim",
+  "production": "NOT_ISSUED",
+  "HH_R10": "OFF",
+  "code_sha256": "9ef89b00dae3d58eb7c77dd7ca22d280b552c201b3ddb645598f1818c6bd77b7",
+  "static_preflight": {
+    "python_ast_parse": "PASS_NO_IMPORT_OR_EXECUTION",
+    "json_parse": "PASS",
+    "scientific_executions": 0
+  }
+}
