@@ -9,7 +9,7 @@
 | R3 | bare/source mass,전자 결합,같은 frame,conditional transfer와 물리 채택을 분리 | theory;SOURCE_CONTRACT | COMPLETE_SCOPED |
 | R4 | LAB_ANCHORED와FIXED_COM_K를 판별 가능한 두 후보로 구성 | theory§5 | COMPLETE_SCOPED |
 | R5 | Q 분해·carrier·bare 사건·Jacobian·finite-T/ownership 유도 | theory§2–7 | COMPLETE_SCOPED |
-| R6 | 독립 source/contract/metric 검토와 한 번의 exact symbolic 검산 | reviews;WOLFRAM_REFERENCE;POSITIVE_BRANCH_CLOSURE | COMPLETE_SCOPED |
+| R6 | 독립 source/contract/metric 검토; symbolic 실제2calls(최초 exporter실패1+진단복구1),18scalarzeros와 별도 양의 branch 증명 | reviews;WOLFRAM_REFERENCE;POSITIVE_BRANCH_CLOSURE | COMPLETE_SCOPED |
 | R7 | 새bare20integrals·cross-convention fixtures·독립reference 실제 판별 | primary/REFERENCE raw;실제 leases | COMPLETE_SCOPED |
 | R8 | raw·residual·source bounds와 독립C9에 근거한 root판정 | SCIENTIFIC_ADMISSION | COMPLETE_SCOPED |
 | R9 | 실제결과와 source/consumer/다음 physical gate 연결 | FINAL_REPORT;SOURCE_CONSUMER_HANDOFF | COMPLETE_SCOPED |
@@ -31,7 +31,7 @@
 |---|---:|---|---|
 | S0 source/theory | R1–R6+C1–C3=9/20 | PR145/0528ca635c12 게시 | 양쪽 실제 upload ACK/metadata PASS; wholeGET 아님 |
 | S1 code freeze | S0+C4/C5=11/20 | PR145/e9b7b78041fb 게시 | 양쪽 실제 upload ACK/metadata PASS; wholeGET 아님 |
-| S2 science/review | R1–R9+C1–C9=18/20 | PENDING | 양쪽ACK PENDING |
+| S2 science/review | R1–R9+C1–C9=18/20 | PR145/a0853f2a3d1a actual 게시 | 양쪽 실제 upload ACK/metadata PASS; wholeGET 아님 |
 | FINAL | 실제 전달 후20/20 | PENDING | 양쪽wholeGET/전체복원/외부JSON readback PENDING |
 
 미래 ACK·미실행 검증을 완료로 쓰지 않는다. S0/S1/S2는 실제 upload ACK와metadata이며 최종 whole restoration은 별도다. 과학 실행1개를 R7/C6/C7 등의 문서에서 중복 실행으로 세지 않는다.
