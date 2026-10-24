@@ -1,13 +1,14 @@
 {
   "schema": "PHYS85_WU_RETURN_OVERLAY_V1",
   "central_fixed_handoff": "rei_bianchi@0f9d9df825be1dac9ca9bdf73cdc2e8908bcba17:research/orchestration_longterm_20261023/assembly/HANDOFF_WU088_HH_KO.md",
-  "central_actual_HEAD": "68420637a9ab54ada92afd786c5733bc0764b8c9",
+  "central_actual_HEAD": "6cf7c53757ce4049046a3463c57f36bece555830",
   "central_authority_files_modified": false,
   "order": [
     {
       "id": "CURRENT_OWNER_REF_BACKUP_CONTEXT_INTAKE",
       "status": "COMPLETE_SCOPED",
-      "new_science": 0
+      "new_science": 0,
+      "late_delta": "intake/final_delta/ADOPTED_CURRENT_DELTA.json"
     },
     {
       "id": "WU_CE83_OWNER_COMPLETION",
@@ -23,12 +24,13 @@
       "status": "DERIVED_STATIC_REVIEWED_NUMERICAL_WAIT",
       "numerical_children": 0,
       "application_rows": 0,
-      "consumer_admission": "NOT_ISSUED"
+      "consumer_admission": "NOT_ISSUED",
+      "latest_resource_receipt": "../hh_phys84_completion_20261024/RESOURCE_WAIT_03.json"
     },
     {
       "id": "WU_NUCLEAR_PARTICLE_OWNERSHIP",
       "depends_on": [],
-      "status": "PARTIAL_DERIVED_SCOPED_IMPLEMENTATION_PREPARED",
+      "status": "PARTIAL_DERIVED_STATIC_PASS_REFERENCE_NOT_VERIFIED",
       "subnodes": [
         {
           "id": "PHYS81_COM_KINEMATICS",
@@ -44,7 +46,12 @@
         },
         {
           "id": "PHYS85_EXACT_REFERENCE_IMPLEMENTATION",
-          "status": "FROZEN_NOT_EXECUTED"
+          "status": "STATIC_PASS_SCOPED_RUNTIME_NOT_VERIFIED",
+          "tool_invocations": 2,
+          "valid_complete_applications": 0,
+          "actual_complete_counts": null,
+          "remaining_current_repair_calls": 0,
+          "evidence_identity": "d78adc5c293c28d2032a8a391ee317988390f504884847e79da4d1635ad024af"
         },
         {
           "id": "NUCLEAR_PHYSICAL_FINITE_T_EVENT_SUPPLIER",
@@ -71,7 +78,15 @@
     {
       "id": "WU_D_PI_RR_MATCHED",
       "alias": "D_PI_RR_MATCHED_SOURCE_MOMENTS",
-      "status": "OPEN"
+      "status": "OPEN_EMPIRICAL_SOURCE_CONDITIONAL_C23E_PRECEDENT_REUSED",
+      "conditional_child": {
+        "repository": "bass_cr",
+        "PR": 100,
+        "HEAD": "8e4e06361d714939513a11f64a27f02822bde2fa",
+        "scope": "threshold-gated H-equality D PI, conditional H-equality RR captured energy, PHYS79 D43K CX common potential",
+        "status": "COMPLETE_SCOPED_REUSED",
+        "physical_D_Milne_qualified": false
+      }
     },
     {
       "id": "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT",
@@ -108,12 +123,14 @@
     "REC126",
     "REI_ANGTHERM01_10_COMPLETE",
     "REC_HISTORY_608_PLUS14",
-    "BASS_G1B18"
+    "BASS_G1B18",
+    "CR_C23D_EE_BRIDGE_SCOPED",
+    "CR_C23E_CONDITIONAL_D43K_SOURCE_SCOPED",
+    "REC_ADM01_INPUT_ADMISSION_SCOPED",
+    "HE_DDCS20_WINDOW_SCOPED",
+    "BASS_B3A_DETACHED_EVENT_ADAPTER_SCOPED"
   ],
-  "new_reservations_not_claimed_complete": [
-    "CR_C23D_FINITE_T_SOURCE_BRIDGE",
-    "REC_HISTORY_INPUT_ADMISSION"
-  ],
+  "new_reservations_not_claimed_complete": [],
   "invariants": {
     "geometry": "non-tilted LRS BianchiI",
     "reacting_gas_pi": 0,
@@ -123,5 +140,81 @@
     "HH_R10": "OFF",
     "production_admission": "NOT_ISSUED"
   },
-  "overall_goal_completion_fraction": null
+  "overall_goal_completion_fraction": null,
+  "central_actual_HEAD_scope": "Last pinned observed PR222, not a latest-state guarantee after observation; separate REC PR223 observation is preserved.",
+  "superseded_reservation_observations": {
+    "CR_C23D_FINITE_T_SOURCE_BRIDGE": "scoped completion now observed; full stopping remains PARTIAL",
+    "REC_HISTORY_INPUT_ADMISSION": "ADM01 scoped completion now observed; H5 calibration and raw detail preservation remain unresolved"
+  },
+  "external_late_observations": [
+    {
+      "repository": "rei_bianchi",
+      "PR": 222,
+      "HEAD": "6cf7c53757ce4049046a3463c57f36bece555830",
+      "claim": "CENTRAL_PARALLEL_RETURNS_OBSERVED",
+      "authority_modified_by_WU": false,
+      "changed_paths": 9,
+      "commits_since_initial_pin": 5,
+      "WU_handoff_and_AGENTS_in_changed_paths": false
+    },
+    {
+      "repository": "bass_cr",
+      "PR": 99,
+      "science_HEAD": "d04b2a56adb4a5d55b901420aa544332b41f6dbb",
+      "identity_type": "PINNED_CENTRAL_RETURN_SCIENCE_COMMIT_NOT_NEW_ACTUAL_BRANCH_QUERY",
+      "claim": "C23D_EE_CHILD_NUMERICALLY_CHECKED_SCOPED",
+      "parent": "N4_STOPPING_PARTIAL_OPEN",
+      "backup": "PUBLISHED_LIBRARY_DROPBOX_R3_PASS_DRIVE_UNKNOWN_NO_ACK",
+      "not_nuclear_fast_stopping": true
+    },
+    {
+      "repository": "bass_cr",
+      "PR": 100,
+      "HEAD": "8e4e06361d714939513a11f64a27f02822bde2fa",
+      "claim": "C23E_CONDITIONAL_D43K_SOURCE_COMPLETE_SCOPED",
+      "WU_adoption": "CONDITIONAL_PRECEDENT_FOR_WU_D_PI_RR_MATCHED",
+      "parent": "N5_PARTIAL",
+      "empirical_D_Milne_admitted": false,
+      "backup": "NEW_FINAL_RECEIPT_NOT_OBSERVED_AT_SELECTED_PIN"
+    },
+    {
+      "repository": "rec_bianchi",
+      "PR": 131,
+      "HEAD": "c7cdabd871ab2ef6f722594ff063b8ce8550e6b4",
+      "claim": "ADM01_COMPLETE_SCOPED_INPUT_ADMISSION",
+      "parent": "REC_HISTORY_PARTIAL_H5_INPUT_DEPENDENT_UNCALIBRATED",
+      "raw_evidence_preservation": "PARTIAL_AFTER_RESET_1252_DETAIL_ROWS_UNRECOVERED",
+      "backup": "PUBLISHED_DROPBOX_WHOLE_BYTE_CRC_PAYLOAD84_PASS_DRIVE_NO_ACK",
+      "separate_central_PR": 223,
+      "separate_central_commit": "44d0a6d8703f50bf3d7548812a1ab13d9b2c3877"
+    },
+    {
+      "repository": "BASS_HE",
+      "PR": 93,
+      "HEAD": "bf3c21a39b1111497ed77667d05b8a853ffe6646",
+      "claim": "HEX_INTAKE_COMPLETE_SCOPED",
+      "parent": "HE_ANG_SOURCE_INPUT_PENDING",
+      "backup": "DUAL_UPLOAD_ACK_NO_NEW_WHOLE_BYTE_RESTORE"
+    },
+    {
+      "repository": "BASS_HE",
+      "PR": 94,
+      "HEAD": "d8bae9f7e24ad3494e399f7ab46c4167a5623d48",
+      "claim": "DDCS20_WINDOW_COMPLETE_SCOPED",
+      "parent": "HE_ANG_SOURCE_INPUT_PENDING",
+      "physical_joint_event_provider_admitted": false,
+      "statistical_CI_admitted": false,
+      "backup": "PR_CHECKPOINT_ACK_CLAIM_ONLY_FINAL_RECEIPT_NOT_READ"
+    },
+    {
+      "repository": "bass",
+      "PR": 185,
+      "HEAD": "c2e6f1f80417e62c95e607c80115e89de1925ca9",
+      "claim": "B3A_DETACHED_REC_EVENT_ADAPTER_PASS_SCOPED",
+      "parent": "B3B_FINITE_STOCK_AND_B3C_COUPLING_OPEN",
+      "backup": "DUAL_UPLOAD_ACK_REMOTE_FULL_BYTE_READBACK_NOT_RUN"
+    }
+  ],
+  "completed_science_identity": null,
+  "WU_replays_of_external_results": 0
 }

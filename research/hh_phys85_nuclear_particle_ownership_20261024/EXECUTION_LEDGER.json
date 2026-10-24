@@ -1,6 +1,6 @@
 {
   "schema": "PHYS85_EXECUTION_LEDGER_V1",
-  "checkpoint": "S1R",
+  "checkpoint": "S2_FINAL_CLASSIFICATION",
   "inherited_budget": {
     "spend": null,
     "remaining": null,
@@ -26,46 +26,59 @@
   "local_current": {
     "PHYS84_prepared_byte_checks": 8,
     "PHYS84_parent_pin_checks": 5,
-    "PHYS84_readonly_resource_observations": 1,
+    "PHYS84_readonly_resource_observations": 2,
     "PHYS84_new_wrapper_attempts": 0,
     "PHYS84_new_numerical_children": 0,
     "PHYS84_applications": 0,
     "PHYS84_actual_resumes": 0,
     "cache_manipulations": 0,
-    "other_processes_terminated": 0
+    "other_processes_terminated": 0,
+    "PHYS84_resource_observation_count_scope": "Formal preserved receipt observations only; incidental diagnostic reads are not wrapper attempts.",
+    "PHYS84_latest_resource_receipt": "../hh_phys84_completion_20261024/RESOURCE_WAIT_03.json",
+    "PHYS84_latest_memory_headroom_GiB": 0.14113616943359375
   },
   "research_calls": {
     "SciSpace_search": 1,
     "Exa_attempt": 1,
     "Exa_status": "402_CREDIT_LIMIT_NO_CONTENT_USED",
     "Wolfram_context": 1,
-    "Wolfram_reference_evaluation": 1
+    "Wolfram_reference_evaluation": 2
   },
   "new": {
     "conditional_exact_reference_applications": 0,
-    "conditional_exact_reference_failed": 0,
+    "conditional_exact_reference_failed": null,
     "physical_nuclear_rates": 0,
     "stopping_kernels": 0,
     "new_ODE": 0,
     "new_baselines": 0,
     "benchmarks": 0,
-    "completed_identity_replays": 0
+    "completed_identity_replays": 0,
+    "conditional_reference_failure_count_scope": "Two charged tool invocations, not two observed complete scientific applications. First entrypoint failure; second complete-result status is unverified.",
+    "cloud_entrypoint_failures": 1,
+    "cloud_output_incomplete": 1,
+    "actual_verified_reference_event_rows": null,
+    "actual_verified_reference_ensemble_rows": null,
+    "actual_verified_assertions": null,
+    "actual_verified_guards": null,
+    "planned_event_rows_not_observed": 36,
+    "planned_ensemble_rows_not_observed": 6
   },
   "review": {
     "theory": "PASS_SCOPED_REVISION2",
-    "code_and_raw": "PENDING"
+    "code_and_raw": "STATIC_IMPLEMENTATION_PASS_SCOPED_REFERENCE_NOT_VERIFIED"
   },
   "counting": "Cloud symbolic/reference evidence is separate from local numerical admission. No not-started attempt is counted as a failed numerical calculation. A source/backup metadata ACK is not a completed restoration.",
   "HH_R10": "OFF",
   "production_admission": "NOT_ISSUED",
   "implementation": {
-    "status": "READY_S1_NOT_EXECUTED",
+    "status": "STATIC_PASS_SCOPED_EXECUTED_OUTPUT_NOT_VERIFIED",
     "requested_model": "gpt-6.1-sol",
     "requested_reasoning_effort": "high",
     "observed_backend": "UNOBSERVED",
     "source_sha256": "263c5baa3b740159a480aab4741604e7b041512c7fd62c062405456d011c6943",
     "verifier_sha256": "880011a74c633f86e4c0afd6ffc23626bc10a2006312a0ab00b93213ec9b45a4",
-    "assembled_toolcode_sha256": "09ee51de19b30d471b105857b2cfd15dc53bfa1b8ac65a7740879dccf14f3592"
+    "assembled_toolcode_sha256": "09ee51de19b30d471b105857b2cfd15dc53bfa1b8ac65a7740879dccf14f3592",
+    "repaired_assembled_toolcode_sha256": "4e7562541499c15b8ec64c2818a39180c2ec677adeb2f60ccaadf563ea8a2afd"
   },
   "cloud_attempts": [
     {
@@ -77,14 +90,77 @@
       "returned_assertions": 0,
       "valid_completion": false,
       "raw": "results/attempt_01/RAW_WOLFRAM_RESPONSE.json"
+    },
+    {
+      "attempt": 2,
+      "status": "TRANSPORT_TRUNCATED_REFERENCE_UNVERIFIED",
+      "returned_text_characters": 10239,
+      "actual_verified_event_rows": null,
+      "actual_verified_ensemble_rows": null,
+      "actual_verified_assertions": null,
+      "actual_verified_guards": null,
+      "visible_fragments": {
+        "status": "PASS",
+        "guard_count": "23",
+        "failures": "[]"
+      },
+      "fragments_are_complete_evidence": false,
+      "valid_completion": false,
+      "raw": "results/attempt_02/RAW_WOLFRAM_RESPONSE.json",
+      "raw_sha256": "51f4408d91e7ac6566639f3ab3c04eedb3f1e4d2f05a0abd68e7d246e1c6c9eb"
     }
   ],
   "binding_repair": {
-    "status": "PREPARED_NOT_EXECUTED",
+    "status": "EXECUTED_ONCE_OUTPUT_NOT_VERIFIED",
     "core_source_inputs_unchanged": true,
     "context_lines_removed": 8,
     "wrapper_prefixes_changed": 3,
-    "permitted_additional_calls": 1,
-    "same_time_caps": true
+    "permitted_additional_calls": 0,
+    "same_time_caps": true,
+    "initial_allowance": 1,
+    "actual_calls": 1
+  },
+  "completed_science_identity": null,
+  "evidence_identity": "d78adc5c293c28d2032a8a391ee317988390f504884847e79da4d1635ad024af",
+  "identity_type": "AUDIT_EVIDENCE_NOT_COMPLETED_SCIENCE",
+  "tool_clock_observations": {
+    "attempt01": [
+      "2026-10-24 02:53:30 UTC",
+      "2026-10-24 02:53:37 UTC"
+    ],
+    "attempt02": [
+      "2026-10-24 02:59:46 UTC",
+      "2026-10-24 02:59:56 UTC"
+    ],
+    "scope": "Tool clock boundaries, not measured remote kernel CPU/wall utilization. Remote CPU and charge unavailable."
+  },
+  "external_late_reuse": {
+    "CR_C23D": {
+      "new_trajectories_in_owner_campaign": 4,
+      "admission_trajectories": 3,
+      "new_WU_replays": 0
+    },
+    "CR_C23E": {
+      "owner_primary_checks": 104,
+      "owner_point_states": 18,
+      "owner_new_D_quadratures": 3,
+      "owner_band_orders": 9,
+      "new_WU_replays": 0
+    },
+    "REC_ADM01": {
+      "owner_primary_checks": 386,
+      "owner_independent_probes": 3,
+      "raw_preservation": "PARTIAL_AFTER_RESET",
+      "new_WU_replays": 0
+    },
+    "HE_DDCS20": {
+      "owner_claim": "COMPLETE_SCOPED_WINDOW_ONLY",
+      "new_WU_replays": 0
+    },
+    "BASS_B3a": {
+      "owner_final_adapter_tests": 15,
+      "owner_independent_exact_fixture_checks": 23,
+      "new_WU_replays": 0
+    }
   }
 }

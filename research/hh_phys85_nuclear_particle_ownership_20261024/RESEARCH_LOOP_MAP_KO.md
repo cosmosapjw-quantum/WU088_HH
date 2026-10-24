@@ -1,5 +1,38 @@
 # PHYS85 연구 루프와 완료 기준
 
+## 최종 판정: 이론·정적 구현 PASS_SCOPED, 실행 결과 NOT_VERIFIED
+
+아래 S0 표는 시작 당시 기록이다. 최종 R/C 상태는 이 절이 우선한다. 절차를 종료하고 인계하는 것과 과학 검증을 통과하는 것은 별도 상태다. 이론은 DERIVED_SCOPED_REVIEW_PASS, 구현은 STATIC_IMPLEMENTATION_PASS_SCOPED, 실행 결과는 SCIENTIFIC_REFERENCE_NOT_VERIFIED다.
+
+| 단계 | 실제 산출물·역할 | 최종 상태와 남은 의무 |
+|---|---|---|
+| R1 연구 위치·계약 | 고정 중앙 인계, actual HEAD/AGENTS, PHYS83 owner 완료, PHYS84 동결 입력·백업 대조 | COMPLETE_SCOPED. PHYS83 재실행0; PHYS84 첫 수치 검증 WAIT |
+| R2 근거·재사용 | 접근 가능한51repo metadata, 관련6repo1106refs, 최근30PR와 마지막 bounded delta; 접근 가능한 대화·백업; SciSpace/LLNL/Cardall | COMPLETE_SCOPED. 모든 비공개 대화·모든 branch 내용 전수 열람 주장은 하지 않음. Exa402 보존 |
+| R3 주장·전제 정렬 | supplied event, NR 공통-T 정리, 물리 supplier, consumer admission을 CONTRACT revision2에서 분리 | FROZEN. 누적 금액 예산 null, reset=false |
+| R4 표현 선택 | 소속 변수 h, 같은 사건 measure, rational half-rapidity, 여섯 energy owner | COMPLETE_SCOPED. 에너지 분율만으로 thermal membership을 정하지 않음 |
+| R5 구성적 유도 | normal-frame 사건 운동학, 입자수·에너지 incidence, 선택 운동에너지와 rate-slope 온도식 | DERIVED_SCOPED. 실제 단면적·율을 공급하는 정리는 아님 |
+| R6 독립 검증 | fresh Astra 식·도메인 검토 후 kinetic nonnegativity·zero-rate domain·기호 정정 | PASS_SCOPED / GO_IMPLEMENT |
+| R7 판별 검증 | 계획36event/6ensemble·guards·독립 four-vector oracle·symbolic witnesses를 구현하여 Wolfram 두 호출 | NOT_VERIFIED. 첫 호출 binding 실패, 수정 호출 transport 생략. 계획 수는 결과 수가 아님 |
+| R8 결과 판정 | 실제 raw/receipt와 fresh C9 판정 대조 | 판정 완료: 전체 출력 부재로 reference admission 불가. PASS 조각을 완료로 승격하지 않음 |
+| R9 정식 결과·코딩 연결 | 열 이름·입자 소속·frame·clock·joint weighting·supplier 의무 | SCOPED 계약 연결 완료; 실행 검증과 physical finite-T supplier OPEN |
+| R10 종료·재개 | additive Draft, 단계 ACK, final 전체 복원, Codex·다음thread handoff | 전달 closure. 최종 HEAD·복원 근거는 외부 final-delivery와 PR 최종 본문 |
+| C1 목표·baseline | PHYS81 kinetics·PHYS83 완료 재사용, PHYS84 prepared 보존 | COMPLETE_SCOPED. 이전 science replay0 |
+| C2 식–입력–코드 | 표시 질량5개 원문 전사, exact rational 입력과 source manifest | FROZEN. 유리수 정확성은 physical mass uncertainty를 제거하지 않음 |
+| C3 설계 | exact WL reference, 독립 matrix boost·incidence oracle | FROZEN. finite cases는 continuum certificate가 아님 |
+| C4 DAG·자원 | PHYS84 reserve1.5GiB+job0.5GiB lease WAIT; 별도 Wolfram60초/내부55초 cap | 기준 불변. local numerical child0, other process termination0; cloud scheduler UNOBSERVED |
+| C5 구현 | lower-tier 요청 gpt-6.1-sol/high, 원본9파일 동결, binding-only repair 별도 보존 | STATIC_IMPLEMENTATION_PASS_SCOPED. 관측 backend identity UNOBSERVED |
+| C6 구현 검증 | guard·four-vector·에너지·입자수·covariance verifier를 실제 두 호출에 포함 | 런타임 미확인. attempt01 complete rows0; attempt02 complete row/assertion/guard counts=null |
+| C7 과학 검증 | supplied-event reference·NR witnesses의 완전한 raw 요구 | NOT_VERIFIED. valid complete application0, physical nuclear rate0, stopping0, ODE0 |
+| C8 재현성·identity | exact request/raw/receipt 보존, source byte 불변 확인, evidence identity | 증거 보존 완료. completed science identity=null; evidence identity는 성공 인증이 아님 |
+| C9 독립 검토 | 구현자와 다른 fresh Astra가 code/diff/raw 검토 | 검토 완료: static PASS_SCOPED / scientific reference NOT_VERIFIED. 남은 repair call0 |
+| C10 판정·인계 | 실패·cap·null counts·열린 의무 보존 | audit closure. 새 실행은 output transport 설계·검토와 별도 budget/admission 갱신 후 판단 |
+
+Wolfram 평가 호출2 = entrypoint failure1 + transport-unverified1이다. 유효한 완료 reference application은0이고, 두 번째 호출의 실제 내부 전체 계산 수는 미관측이다. 누락 결과를0 residual로 채우거나 JSON을 재구성하지 않았다. 현재 계약의 추가 호출 cap0에서 종료한다.
+
+단계별 commit/hash/ACK는 delivery/PUBLICATION_HISTORY.json 및 delivery/S*_BACKUP_ACK.json, 최종 전체 다운로드·복원은 외부 PHYS85_FINAL_DELIVERY_20261024.json을 본다. upload ACK와 실제 복원은 별개다. 자기 자신의 최종 commit/ZIP hash를 Git 문서 안에 넣는 순환 구조를 만들지 않는다. HH_R10=OFF; production admission NOT_ISSUED.
+
+## S0 시작 당시 기록 — 아래 PENDING/NOT_RUN은 역사적 상태
+
 현재 user가 지정한 physmath-research-loop built-in1.0.0의 R1–R10/C1–C10을 적용한다. 단계별 checkpoint가 모든 물리 목표의 완료를 뜻하지 않는다. 아래는 S0의 실제 상태이며 최종 상태는 STAGE_STATUS와 FINAL_REPORT 및 외부 final-delivery에서 갱신한다.
 
 | 단계 | 실제 산출물·역할 | S0 상태 / 다음 action |
