@@ -1,8 +1,8 @@
 {
   "schema":"PHYS86_WU_DAG_OVERLAY_V1",
-  "stage":"S0_THEORY_INTAKE",
+  "stage":"S1_IMPLEMENTATION_FROZEN_PREEXECUTION",
   "central_fixed_authority":"0f9d9df825be1dac9ca9bdf73cdc2e8908bcba17",
-  "central_observed_HEAD":"5182d82c45454a4e8f19f2e5384a04a4ae35ed09",
+  "central_observed_HEAD":"d5aa6c94a77b5687052d3d6902d140e2df9ef798",
   "central_authority_mutated":false,
   "order":[
     {"id":"CURRENT_OWNER_REF_BACKUP_CONTEXT_INTAKE","status":"COMPLETE_SCOPED","repos":51,"branch_refs":2226,"selected_source_blobs_verified":27,"private_conversations":"UNAVAILABLE"},
@@ -12,8 +12,8 @@
       {"id":"PHYS81_COM_KINEMATICS","status":"COMPLETE_SCOPED_REUSED"},
       {"id":"PHYS85_NORMAL_FRAME_EVENT_OWNER_AND_NR_SELECTION","status":"DERIVED_SCOPED_REVIEW_PASS_REUSED"},
       {"id":"PHYS85_EXACT_REFERENCE_IMPLEMENTATION","status":"STATIC_PASS_RUNTIME_NOT_VERIFIED","old_calls":2,"old_complete_applications":0,"old_allowance":0},
-      {"id":"PHYS86_COMPLETE_COMPACT_REFERENCE","depends_on":["PHYS85_EXACT_REFERENCE_IMPLEMENTATION"],"status":"CONTRACT_REVIEWED_IMPLEMENTATION_IN_PROGRESS","additional_calls_permitted_after_S1":1},
-      {"id":"PHYS86_JUTTNER_REACTION_SELECTED_MOMENTS","status":"DERIVED_SCOPED_REVIEW_PASS","reference_execution":"NOT_RUN"},
+      {"id":"PHYS86_COMPLETE_COMPACT_REFERENCE","depends_on":["PHYS85_EXACT_REFERENCE_IMPLEMENTATION"],"status":"STATIC_REVIEW_PASS_RUNTIME_PENDING","additional_calls_permitted_after_S1_dual_ACK_and_root_GO":1},
+      {"id":"PHYS86_JUTTNER_REACTION_SELECTED_MOMENTS","status":"DERIVED_AND_STATIC_REVIEW_SCOPED_PASS","reference_execution":"NOT_RUN","additional_calls_permitted_after_S1_dual_ACK_and_root_GO":1},
       {"id":"NUCLEAR_PHYSICAL_FINITE_T_EVENT_SUPPLIER","depends_on":["PHYS86_COMPLETE_COMPACT_REFERENCE","PHYS86_JUTTNER_REACTION_SELECTED_MOMENTS"],"status":"OPEN"},
       {"id":"NUCLEAR_FAST_STOPPING_AND_ADMISSION","depends_on":["NUCLEAR_PHYSICAL_FINITE_T_EVENT_SUPPLIER"],"status":"OPEN"}
     ]},
