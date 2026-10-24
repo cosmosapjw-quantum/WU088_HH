@@ -1,6 +1,6 @@
 # PHYS88 연구·코딩 루프 — 단계별 실제 상태
 
-현재 S0의 원전·유도·계약과 독립 R6를 완료했다. 실제 symbolic18scalarzeros와 별도의 양의 branch 증명으로 닫았고, 첫 exporter 실패를 보존했다. 코딩 과학 실행은0이다. 아래 단계 수는 이 PHYS88 한정 단위의 의무 수이며 전체 물리 목표 완료율은null이다. Workflow R10과 HH_R10=OFF는 다른 이름공간이다.
+현재 S0 원전·유도·계약과 독립 R6, C4/C5 코드 동결·독립 정적 검토를 완료했다. S0는 실제 게시와 양쪽 upload ACK를 확보했다. 실제 symbolic18scalarzeros와 별도의 양의 branch 증명으로 닫았고, 첫 exporter 실패를 보존했다. 코딩 과학 실행은0이다. 아래 단계 수는 이 PHYS88 한정 단위의 의무 수이며 전체 물리 목표 완료율은null이다. Workflow R10과 HH_R10=OFF는 다른 이름공간이다.
 
 | 단계 | 실제 작업과 완료 조건 | 근거 | 상태 |
 |---|---|---|---|
@@ -17,8 +17,8 @@
 | C1 | exact parent baseline,새 mass/map identity와 완료조건 고정 | CONTRACT;STATIC_DEPENDENCY_MANIFEST | COMPLETE_SCOPED |
 | C2 | 식→nativeEs→bare event/moment→owner의 data mapping 정의 | CONTRACT;IMPLEMENTATION_PLAN | COMPLETE_SCOPED |
 | C3 | 모든152nativecell positiveGL16/32,stableBessel,독립kve법·guards·tolerances | CONTRACT;REFERENCE_PLAN | COMPLETE_SCOPED |
-| C4 | 실제 자원·공유 lease·실행 DAG·child caps를 코드에 결속 | 예정 leased_call/actual admissions | NOT_RUN |
-| C5 | identity 고정 구현과 readonlyresume·sourceguard 검토 | 예정 source/freeze/review | NOT_RUN |
+| C4 | 자원·공유 lease·실행 DAG·child caps를 코드에 결속; 실제 admission은 각 실행 직전 | source/leased_call;CODE_REVIEW_PREEXEC | COMPLETE_SCOPED |
+| C5 | identity 고정 구현과 readonlyresume·sourceguard 독립 정적 검토 | frozen26;CODE_REVIEW_PREEXEC;ROOT_S1_ADOPTION | COMPLETE_SCOPED |
 | C6 | 유의미한 구현·guard·energy/count 검증 | 예정 primary RESULT | NOT_RUN |
 | C7 | 독립 parser/kve/quad의 bare scientific reference | 예정 INDEPENDENT_REFERENCE | NOT_RUN |
 | C8 | 두 quadrature/FD·저장그림·identity/resume 확인 | 예정 saved outputs/figures | NOT_RUN |
@@ -29,7 +29,7 @@
 
 | Checkpoint | 한정 단계 수의 예정 경계 | 게시 | 백업 |
 |---|---:|---|---|
-| S0 source/theory | R1–R6+C1–C3=9/20, 모든 실제 근거 이후 | PENDING | 양쪽ACK PENDING |
+| S0 source/theory | R1–R6+C1–C3=9/20 | PR145/0528ca635c12 게시 | 양쪽 실제 upload ACK/metadata PASS; wholeGET 아님 |
 | S1 code freeze | S0+C4/C5=11/20 | PENDING | 양쪽ACK PENDING |
 | S2 science/review | R1–R9+C1–C9=18/20 | PENDING | 양쪽ACK PENDING |
 | FINAL | 실제 전달 후20/20 | PENDING | 양쪽wholeGET/전체복원/외부JSON readback PENDING |

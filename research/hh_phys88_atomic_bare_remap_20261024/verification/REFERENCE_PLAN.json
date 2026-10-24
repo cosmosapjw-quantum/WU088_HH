@@ -1,0 +1,39 @@
+{
+  "schema": "PHYS88_INDEPENDENT_REFERENCE_PLAN_V1",
+  "status": "ROOT_R6_ADOPTED_STATIC_IMPLEMENTATION_ONLY",
+  "ownership": "implementation_86 writes prescribed independent implementation; fresh Astra reviewer independently inspects actual code/raw before root admission",
+  "independence": {
+    "production_imports": [],
+    "raw_parser": "Separate fixed-width ENDF implementation reading original671232bytes/rawSHA,153rows; literal row/table bindings independently checked",
+    "integration": "scipy.integrate.quad per152nativeEs cells, scipy.special.kve1/2; bare masses/2maps derived directly from root frozen theory",
+    "comparison": "Exactlyoneprimaryorder32rate_onlyfalseT1e8rowpermap; rate/meanKin/meanEgamma/meanKd8fields versusactualprimaryRESULTSHA",
+    "scope": "No lowT centeredvariance oracle or uncertainty/tail claim",
+    "old_reference_replay": 0
+  },
+  "domain": {
+    "maps": [
+      "LAB_ANCHORED",
+      "FIXED_COM_K"
+    ],
+    "T_K": 100000000,
+    "independent_relative_rate_means": 1e-07,
+    "coordinate": "Independent x=Es/theta per originalnativecell; explicitdK/dEs forbothmaps",
+    "support": "Finite declared native source window only"
+  },
+  "outputs": {
+    "result": "results/INDEPENDENT_REFERENCE.json",
+    "raw": "Preserve allactualstdout/stderr/resource/admission/command receipts",
+    "diagnostics": "Actualquad/callback/underflowcounts, parserfieldcomparisons, fieldrelative residuals, exception/failurehistory"
+  },
+  "execution": {
+    "prepare_only_now": true,
+    "children_max": 1,
+    "CPU_s": 30,
+    "wall_s": 60,
+    "workers": 1,
+    "threads": 1,
+    "fresh_gate_required": true,
+    "autoRetry": 0,
+    "dispatch": "Only root explicitGO afterS1andstageACK; actualfresh prelaunchadmissionreceipt required"
+  }
+}
