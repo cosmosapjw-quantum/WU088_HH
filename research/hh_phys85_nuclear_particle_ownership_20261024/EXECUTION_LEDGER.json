@@ -1,6 +1,6 @@
 {
   "schema": "PHYS85_EXECUTION_LEDGER_V1",
-  "checkpoint": "S1",
+  "checkpoint": "S1R",
   "inherited_budget": {
     "spend": null,
     "remaining": null,
@@ -39,7 +39,7 @@
     "Exa_attempt": 1,
     "Exa_status": "402_CREDIT_LIMIT_NO_CONTENT_USED",
     "Wolfram_context": 1,
-    "Wolfram_reference_evaluation": 0
+    "Wolfram_reference_evaluation": 1
   },
   "new": {
     "conditional_exact_reference_applications": 0,
@@ -66,5 +66,25 @@
     "source_sha256": "263c5baa3b740159a480aab4741604e7b041512c7fd62c062405456d011c6943",
     "verifier_sha256": "880011a74c633f86e4c0afd6ffc23626bc10a2006312a0ab00b93213ec9b45a4",
     "assembled_toolcode_sha256": "09ee51de19b30d471b105857b2cfd15dc53bfa1b8ac65a7740879dccf14f3592"
+  },
+  "cloud_attempts": [
+    {
+      "attempt": 1,
+      "status": "FAILED_UNEVALUATED_REFERENCE_REPORT",
+      "classification": "IMPLEMENTATION_ENTRYPOINT_NAMESPACE_BINDING_FAILURE",
+      "returned_event_rows": 0,
+      "returned_ensemble_rows": 0,
+      "returned_assertions": 0,
+      "valid_completion": false,
+      "raw": "results/attempt_01/RAW_WOLFRAM_RESPONSE.json"
+    }
+  ],
+  "binding_repair": {
+    "status": "PREPARED_NOT_EXECUTED",
+    "core_source_inputs_unchanged": true,
+    "context_lines_removed": 8,
+    "wrapper_prefixes_changed": 3,
+    "permitted_additional_calls": 1,
+    "same_time_caps": true
   }
 }
