@@ -164,3 +164,20 @@ Non-tilted LRS Bianchi I, reacting gas pi=0, collisionless DM pi_m 별도를 유
 R1–R10/C1–C10의 단계별 유도·코드·검증·실행·게시·백업 축은 RESEARCH_LOOP_MAP_KO.md와 STAGE_PROGRESS.json에 있다. 최종 사용자는 FINAL HEAD와 외부 delivery receipt를 함께 읽어야 한다. 완료 identity는 복원·reuse하고 새로운 source/consumer 계약만 다음 연구로 진행한다.
 
 최신 HE97/REC133/BASS187/REI pressure 수신의 실제 채택 범위와 발표·백업 상태는 LATE_SURVEY_ADDENDUM_KO.md 및 10/10 Git blob readback으로 보완한다. 이 부록은 원래 조사 시점의 기록을 현재 상태로 오인하지 않게 한다.
+
+
+## 10. 실제 S2·중앙 게시와 문서 생성 시점 전달 경계
+
+이 절은 원래 S2 과학 보고서 전체 bytes 뒤에 추가한 전달 관측이다. §§1–9의 유도·실제 수치·검증·예산·과학 판정은 바꾸지 않았다. 원 S2 보고서 prefix는 16,977bytes, SHA256 `29eb9de3327fb04da183c0b23ce641d112e139d8590b8e67525000e12657f24b`로 보존했다.
+
+| 단계 | 실제 containing HEAD | 채택 archive bytes | 실제 ACK 범위 |
+|---|---|---:|---|
+| S0 | `b4e606c433bc0d7969227635b62f33e67a56c705` | 17,273,566 | Drive·Dropbox upload ACK와 exact metadata |
+| S1 | `94d3b35bb66df184cf370035f498effbb4534cc6` | 17,352,190 | Drive·Dropbox upload ACK와 exact metadata |
+| S2 | `cf48be1b8838a3839fa3c605512c1a5bb4faa8e3` | 18,545,712 | RECOVERY1 Drive·Dropbox actual ACK와 exact metadata |
+
+S2 science tree는 `2c1a36dea9a35c85ec6c685bf083743fc4716813`다. 최초 `PHYS87_S2_20261024_cf48be1b8838.zip`의 현재 짧은 bytes473,509와 pre-upload source-byte mismatch는 원본·영수증을 그대로 보존했다. 이 파일은 업로드하지 않았고 원인은 `UNRESOLVED`다. Root가 승인한 고유 표적 packaging repair1 이후 채택한 완성본은 `PHYS87_S2_RECOVERY1_20261024_cf48be1b8838.zip`, SHA256 `719da3433b912d554110998ee0f1d591214bf733a64dec4a4354e53b9e0db7e4`다. Dropbox `id:BSpOijBcT10AAAAAAD_9dQ`와 Drive `1-hVBvZY3q4VZNvRjgbzQXTJ7ge3ax6hx`의 actual ACK/size metadata를 확인했다. `delivery/S2_BACKUP_ACK.json`은 local473/473CRC를 기록하지만 stage remote wholeGET/restore는 `NOT_RUN_STAGE_ACK_SCOPE`다. Packaging byte 관측에서 과학 유효성 변경을 추론하지 않는다.
+
+중앙 PR222의 WU 관측은 `85f9ba1350c076e8df01f5858342df74c3574215`, tree `4d581f341337e00c5853240b0a10aad0e525cd35`, parent `a814dab41a8f3f543dec71cde59f17e0d497fcda`에 expected-SHA/force=false로 게시됐다. DAG, append-only WU handoff, return3개 경로의 actual base64 원문 bytes readback3/3이 일치했다. 원40contracts·plan_status·dependencies, 다른38nodes,7authorities,17integration edges와 handoff 원11893-byte prefix를 보존했다. 복사한 `reviews/CENTRAL_PUBLICATION_REVIEW.json`의 SHA256은 `20bc53adbc21ba8f538a082d2d4bd2788c9851ab8c2d579c0f83c5e59df68fc6`다. 이 관측은 nuclear supplier 부모PARTIAL/atomic-to-bare remapOPEN을 유지하며 consumer나 production을 활성화하지 않는다.
+
+이 추가절 생성 시 FINAL expected-SHA publication, actual 양쪽 whole ZIP GET/SHA/CRC/모든payload/Git blob/실제 추출, 외부 `PHYS87_FINAL_DELIVERY_20261024.json`의 양쪽 rawreadback 및 후속 terminal receipt는 아직 미래다. 생성 시점에는 workflow18/20 한정 의무가 완료이고 R10/C10은전달IN_PROGRESS다. 실제 작업이 끝난 뒤 PR144 최종 본문과 외부 final-delivery/terminal 영수증이18→20의 전달 완료를 닫는다. Immutable FINAL에 자기 미래 upload/restore ACK를 재귀적으로 넣거나 과학 판정으로 그 성공을 선포하지 않는다. HH_R10=OFF, production NOT_ISSUED, global completion percent=null.

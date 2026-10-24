@@ -51,3 +51,12 @@ R1–R10은 workflow 단계이며 `HH_R10=OFF`와 다른 이름공간이다. 같
 S1 이전 NOT_RUN/zero-child/preexec gate 상태는 S1 commit의 원래 세 파일과 EXECUTION_LEDGER의 historical snapshot/preexecution에 보존했다. 현재 결과를 기록하면서 과거 상태를 실패나 완료로 소급 변경하지 않았다. 현재 actual evidence는 results/SAVED_RESULT_SUMMARY.json, EXECUTION_LEDGER_FINAL_APPEND.json과 개별 raw/lease/figure 영수증을 따른다. `.mpl_config/**`는 runtime cache이고 publication 대상에서 제외한다.
 
 Source-window 밖의 단면적·tail, source covariance/angular uncertainty/physical CI, neutral-population/charge-state validity, named consumer/thermal-fast activation, stopping·photon feedback·coupled history 및 production admission은 남아 있다. HH_R10=OFF, production NOT_ISSUED.
+
+
+## 현재 전달 추가 기록 — S2 및 중앙 실제 게시 이후
+
+앞의 S2 준비 시점 표에서 게시·백업 pending은 역사적 checkpoint다. 현재 S0 `b4e606c433bc0d7969227635b62f33e67a56c705`, S1 `94d3b35bb66df184cf370035f498effbb4534cc6`, S2 `cf48be1b8838a3839fa3c605512c1a5bb4faa8e3`의 actual stage publication과 양쪽 ACK/metadata가 있다. S2는 고유 RECOVERY1 ZIP18,545,712bytes/SHA719da3433b912d554110998ee0f1d591214bf733a64dec4a4354e53b9e0db7e4를 채택했다. 최초 짧은 ZIP의 pre-upload byte mismatch는 업로드 없이 보존했고 원인은UNRESOLVED다. 표적 packaging repair1은 과학 유효성 판단이나 과학 재실행이 아니다. Local473CRC와 stage remoteGET NOT_RUN을 구분한다.
+
+중앙 WU 관측은 `85f9ba1350c076e8df01f5858342df74c3574215`(tree `4d581f341337e00c5853240b0a10aad0e525cd35`, parent `a814dab41a8f3f543dec71cde59f17e0d497fcda`)에 expected-SHA/force=false로 게시됐고3/3 exact base64 원문 byte readback이 일치했다. `delivery/CENTRAL_PUBLICATION.json`, 복사한 독립 `reviews/CENTRAL_PUBLICATION_REVIEW.json` 및 `delivery/CENTRAL_PRESERVATION.json`이 원40contracts/다른38nodes/7authorities/17edges와 원 handoff prefix 보존을 결속한다.
+
+이 문서 생성 시 FINAL publication, 양쪽 whole ZIP GET/restore, 외부JSON raw readback 및 terminal receipt는 아직 미래다. R1–R9/C1–C9의18개 한정 의무는완료, R10/C10은IN_PROGRESS다. 실제 전달 뒤 PR144 최종 본문과 외부 final-delivery/terminal 영수증이18→20을 닫는다. 현재 문서 안에 자기 미래 ACK를 재귀적으로 기입하지 않는다. 과학수치/예산/판정은 변경하지 않았다. HH_R10=OFF, production NOT_ISSUED, global completion=null.
