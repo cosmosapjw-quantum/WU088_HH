@@ -1,0 +1,157 @@
+{
+  "schema": "PHYS89_SOURCE_COVARIANCE_PROVENANCE_FOLLOWUP_V1",
+  "obligation": "Determine what the July2011 COMMARA-2.0 origin can establish about the current H1 MF33 covariance, and seek primary PSD/mass/target-state documentation",
+  "selected_node": "NUCLEAR_BARE_KERNEL_SOURCE_AND_CONSUMER_CONTRACT",
+  "decision": "PROVENANCE_DEPENDENCY_REFINED_PHYSICAL_ADMISSION_NOT_CLOSED",
+  "scope": "Bounded new literature intake; no scientific numerical or symbolic execution",
+  "parent_source": {
+    "sha256": "3024d8f0db604b074e33ed8b05027eb9f5a738614041ba44c83f048e0d0bc1af",
+    "git_blob_sha": "4770d7f18ef275c9a72cc779391a07c1bfc7cbea",
+    "origin_text": "Covariances adopted from COMMARA-2.0 in July2011; LANL full R-matrix analysis",
+    "nominal_header": "EVAL-JUL16; REV1-NOV23; DIST-AUG24",
+    "current_MF33_groups": 153,
+    "current_MF33_boundaries": 154
+  },
+  "sources": [
+    {
+      "id": "COV1",
+      "title": "AFCI-2.0 Neutron Cross Section Covariance Library",
+      "publisher": "OSTI / BNL-LANL",
+      "date": "2011-03-01",
+      "doi": "10.2172/1013530",
+      "url": "https://www.osti.gov/servlets/purl/1013530",
+      "bibliography_url": "https://www.osti.gov/biblio/1013530",
+      "access": "Exa search and actual fetch returned report metadata/abstract/references, not complete PDF text or original PDF bytes",
+      "adopted": [
+        "COMMARA name introduced with2011 release",
+        "Library intended with ENDF/B-VII.0 central values",
+        "33energygroups,1e-5eV to19.6MeV, NJOY processing with1/E flux",
+        "BNL-LANL provenance and QA workflow existence"
+      ],
+      "not_established": [
+        "Exact current153groupMF33 identity/transform",
+        "Current H1 capture covariance PSD certificate",
+        "Current evaluator mass deck or electron-target state",
+        "Full report inspection"
+      ]
+    },
+    {
+      "id": "COV2",
+      "title": "Light Element Covariances",
+      "authors": "Mark Paris and Gerry Hale, LANL",
+      "report": "LA-UR-17-30137",
+      "date": "2017-11-07",
+      "url": "https://indico.bnl.gov/event/3580/contributions/10531/attachments/9392/11489/Paris_Hale-csewg_171107_wNJOY.pdf",
+      "access": "Actual Exa rendered slide extraction; equations/plots partly garbled; no original PDF bytes",
+      "adopted": [
+        "LANL-EDA relativistic R-matrix formalism, nuclear and electromagnetic channels, polarized/unpolarized observables",
+        "Parameter covariance propagated to observable covariance at first order",
+        "H1 capture uncertainty/correlation plots shown"
+      ],
+      "not_established": [
+        "Exact raw current153group file hash",
+        "PSD of current displayed MF33 tokens",
+        "Numerical evaluator masses and input deck",
+        "Electron/charge-state-resolved corrections",
+        "A unique normalization-confidence conversion from garbled slide equations"
+      ]
+    },
+    {
+      "id": "COV3",
+      "title": "Covariance Testing at BNL",
+      "author": "David Brown",
+      "date": "2020-11-30",
+      "url": "https://indico.bnl.gov/event/7233/contributions/43619/attachments/31606/49925/Cov-Testing-dbrown.pdf",
+      "access": "Primary official-host search excerpt only, not separate fetch",
+      "adopted": [
+        "General CSEWG guidance calls for PSD on evaluator original grid subject to numerical precision/format limits",
+        "Implementation includes matrix/eigenvalue checks"
+      ],
+      "not_established": [
+        "H1-specific pass",
+        "Cause of any future PHYS89 negative displayed minor",
+        "Authority to repair current raw data"
+      ]
+    },
+    {
+      "id": "COV4",
+      "title": "Issues in Neutron Cross Section Covariances",
+      "authors": "Caleb M. Mattoon and Pavel Oblozinsky",
+      "date": "2010-04-30",
+      "doi": "10.2172/1013490",
+      "url": "https://doi.org/10.2172/1013490",
+      "access": "Primary report search excerpt only, not separate fetch",
+      "adopted": [
+        "NNDC QA described eigenvalue checks and finite ENDF precision as a possible source of negative processed eigenvalues"
+      ],
+      "not_established": [
+        "Current H1 cause",
+        "Current H1 PSD acceptance",
+        "Physical uncertainty bound"
+      ]
+    }
+  ],
+  "findings": {
+    "provenance_bridge": "OPEN_EXPLICIT_TRANSFER_REQUIRED",
+    "reasoning": "COMMARA report's33group processed product and VII.0 nominal baseline differ from the current153group MF33 and2016/2023 nominal header. MF1 attributes origin but does not specify exact transfer/reprocessing/normalization.",
+    "inference_boundary": "Different provenance does not itself prove invalidity; it creates a source-matching dependency.",
+    "current_matrix_PSD": "NOT_EVALUATED_BY_THIS_TASK",
+    "any_negative_eigenvalue_cause": "NOT_ESTABLISHED",
+    "exact_mass_deck": "NOT_FOUND_IN_RETRIEVED_TEXT",
+    "electron_target_state": "NOT_FOUND_IN_RETRIEVED_TEXT",
+    "current_source_CI": "NOT_ADMITTED",
+    "consumer_ACK": null
+  },
+  "closure_inputs": [
+    "Evaluator-identified current MF33 covariance object with exact identity and relationship to the current nominal MF3/MF6 evaluation",
+    "Documented transfer from original parameter or group covariance: binning, energy map, normalization, relative-versus-absolute covariance treatment, and nominal version",
+    "Original precision covariance or a source-approved corrected PSD object with transformation history if displayed-matrix diagnostics reveal a defect",
+    "Exact masses and input deck defining sourceLAB/invariant-s mapping for n,p,d,gamma plus target/electron-state assumptions and applicable correction bounds",
+    "Joint angular/energy/mass/state uncertainty or an explicit limitation of covariance scope",
+    "Actual thermal/fast/radiation owner contract, state/history/domain and ACK"
+  ],
+  "SciSpace": {
+    "returned_papers": 10,
+    "used_as": "Leads only",
+    "direct_COMMARA_H1_PSD_closure": "NOT_FOUND",
+    "excluded": "Unrelated subjects, alternative theoretical kernels and unverified index metadata cannot close current ENDF source identity"
+  },
+  "ledger": {
+    "authorized_max": {
+      "Exa_search": 1,
+      "SciSpace_search": 1,
+      "primary_sources_fetched": 2
+    },
+    "actual": {
+      "Exa_search": 1,
+      "SciSpace_search": 1,
+      "Exa_fetch_calls": 1,
+      "primary_URLs_fetched": 2,
+      "web_search": 0,
+      "web_open": 0,
+      "Wolfram": 0,
+      "numeric_children": 0,
+      "integrals": 0,
+      "new_ODE": 0,
+      "benchmark": 0,
+      "nuclear_rate_activation": 0,
+      "fast_stopping": 0,
+      "old_science_replay": 0
+    },
+    "all_search_calls_successful": true,
+    "retries": 0,
+    "budget_reset": false,
+    "new_source_query_allowance_remaining": 0,
+    "source_PDF_whole_GET": 0,
+    "remote_service_cost": null,
+    "remote_service_CPU": null,
+    "money": null,
+    "global_remaining_budget": null
+  },
+  "gates": {
+    "physical_node": "PARTIAL_INPUT_DEPENDENCIES",
+    "HH_R10": "OFF",
+    "production_admission": "NOT_ISSUED",
+    "global_physical_completion_percent": null
+  }
+}

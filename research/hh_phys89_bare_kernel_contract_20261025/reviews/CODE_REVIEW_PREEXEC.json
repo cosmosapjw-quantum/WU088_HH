@@ -1,0 +1,96 @@
+{
+  "schema": "PHYS89_STATIC_PREEXEC_INDEPENDENT_REVIEW_V1",
+  "reviewer": "/root/independent_recovered89",
+  "method": "Read all7 frozen Python files, source/fixture algorithms, independent parser, original lease adaptation and mechanical package path; hashes checked with no imports/execution",
+  "observed_utc": "2026-10-24T20:40:07.131726+00:00",
+  "decision": "PASS_SCOPED_PREEXECUTION",
+  "scientific_identity_reviewed": "81d8ee5e488c7dd9070b2fec1fe8130e5e08d25b8b8c63ab33cba61dca30e31c",
+  "contract_sha256": "d737abf473a8ee6ef2c98262d4c6bb463e5ac800aab7eb442ed56d4e56baf663",
+  "frozen_files_verified": {
+    "delivery/package_stage.py": "6c9c345b6fe06dc4c4b56b33c94e8b81359370be0c5907c32fc1cd0cfddadb31",
+    "implementation/freeze.py": "ace01d2bed8631f79bc2e77694cbc57864d9ad35c159d7a6d2de72f0c8f0b82f",
+    "source/evidence.py": "424d885eee6375d7cb5e4c6f4a2cbf9b5c7a0cde23af388045ab986f1962d862",
+    "source/kernel.py": "6ac956701ee3997643363ee5027421d3f55f9fc5b846b9c84d2e480a11097d49",
+    "source/leased_call.py": "70b25ecff5e655c0df85a5e3f04e47a3418844716d51a961880f9c5063623e67",
+    "source/primary.py": "873ab557c396394db2c8f3c13d4378c34658d4520f84c684c11a2c07444abf37",
+    "verification/reference.py": "dde1fe4b4f1ab2391a5e5d4e67d839d679eafb81d57f5088e87bfb21a03c5f86"
+  },
+  "findings": [
+    {
+      "id": "P89-Cpre-01",
+      "target": [
+        "source/primary.py main",
+        "verification/reference.py main",
+        "implementation/COMMANDS.json resume commands"
+      ],
+      "classification": "REPLAY_PREVENTION_CONTROL_FLOW_AND_METADATA_WRITE",
+      "evidence": "publish(output,...,run(...)) evaluates run before publish checks whether output exists. Direct resume Python commands omit -B, so importing evidence can write __pycache__.",
+      "impact": "A duplicate non-resume invocation can repeat science before refusing completed output, and a direct resume can perform cache writes despite zero-rewrite claims.",
+      "minimal_repair": "Check output nonexistence before invoking run, retaining the existing create-only publish guard; add -B to direct/wrapper Python command vectors or disable bytecode before evidence import.",
+      "status": "CLOSED_STATIC_ACTUAL_READBACK",
+      "requires_new_scientific_run": false,
+      "closure": "Both mains now reject existing output before run evaluation; every prepared Python entry has -B. Metadata identity checks precede science without importing kernel."
+    },
+    {
+      "id": "P89-Cpre-02",
+      "target": [
+        "source/kernel.py JointEvent.signed_energy",
+        "source/primary.py guards"
+      ],
+      "classification": "PHYSICAL_OWNERSHIP_DOMAIN_GUARD",
+      "evidence": "signed_energy returns thermal=h*Kd-Kin even if incoming_neutron_thermal or incoming_proton_thermal is False; counts/caloric correctly reject that state.",
+      "impact": "The energy ledger assigns removal from thermal reservoir when its typed inputs deny that ownership.",
+      "minimal_repair": "Apply the same _caloric_ownership guard before emitting signed_energy; include the exact targeted guard in the already scheduled primary, without a new standalone science run.",
+      "status": "CLOSED_STATIC_ACTUAL_READBACK",
+      "requires_new_scientific_run": false,
+      "closure": "signed_energy now calls existing thermal-ownership guard; guard_energy_ownership is included in the sole planned primary."
+    },
+    {
+      "id": "P89-Cpre-03",
+      "target": [
+        "verification/reference.py independent_fixture/run"
+      ],
+      "classification": "FALSE_FAIL_SERIALIZATION_TYPE_VERSUS_EXACT_NUMERIC_IDENTITY",
+      "evidence": "Primary JointEvent.signed_energy atomic column is int0; independent_fixture atomic column is Fraction(0), serialized by encode as string\"0\". observed==encode(fixture) rejects these equal exact numeric leaves.",
+      "impact": "The sole independent reference would fail for a serialization-type difference, not an arithmetic error.",
+      "minimal_repair": "Compare numeric leaves by exact rational value with literal label/key/shape checks, or align only the atomic zero serialization type; do not weaken exact arithmetic comparisons.",
+      "status": "CLOSED_STATIC_ACTUAL_READBACK",
+      "requires_new_scientific_run": false,
+      "closure": "Atomic zero now uses0*self.Qb_eV, preserving exact numeric type in the Fraction fixture; independent arithmetic/comparator remains unchanged."
+    }
+  ],
+  "passed_paths": [
+    "MF33 source identity/section control/count and LS1 upper triangle decoding",
+    "Independent Decimal/Fraction parser has no production parser/kernel imports",
+    "Raw matrix is preserved; one binary64 eigensolve; exact negative witness separately audited",
+    "Exact finite-functional ratio and common-source covariance arithmetic",
+    "Native support/bin and no-roundtrip mapped boundary policy",
+    "Typed caloric/count and positive Cv capture-only interfaces except named signed-energy guard",
+    "Original full lease source pinned; CPUs0/8,1worker/thread,20CPU45wall,thread env, fresh memory and create-only attempt receipt",
+    "Mechanical package selects published Git owned-prefix blobs; fullparentZIP once; restore checks actualGit and allpayload/extraction; no nested parent extraction"
+  ],
+  "new_scientific_execution": 0,
+  "new_Wolfram_calls": 0,
+  "remote_changes": 0,
+  "repair_scope": "One root-authorized targeted lower-tier patch, static readback of changed lines and refreshed identity; no new theory/physical source or numerical budget.",
+  "claim_gate": {
+    "physical_node": "PARTIAL_INPUT_DEPENDENCIES",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED"
+  },
+  "targeted_repair_closure_utc": "2026-10-24T21:30:04.423802+00:00",
+  "accepted_scientific_identity": "c688ab6b06ab1e94781645e174cd555423ba49fc15d6b76c31acef3890f2e8b2",
+  "accepted_frozen_files": {
+    "delivery/package_stage.py": "6c9c345b6fe06dc4c4b56b33c94e8b81359370be0c5907c32fc1cd0cfddadb31",
+    "implementation/freeze.py": "ace01d2bed8631f79bc2e77694cbc57864d9ad35c159d7a6d2de72f0c8f0b82f",
+    "source/evidence.py": "424d885eee6375d7cb5e4c6f4a2cbf9b5c7a0cde23af388045ab986f1962d862",
+    "source/kernel.py": "7a05918b17b850c3d3368ca5bf34b92f63ecf47d0e827f5ed3c8029d679920df",
+    "source/leased_call.py": "70b25ecff5e655c0df85a5e3f04e47a3418844716d51a961880f9c5063623e67",
+    "source/primary.py": "db4c5fa19cdf4bd09b8fbf7bb1f1839338b1fa5f515012e034495085b15fb4c1",
+    "verification/reference.py": "a82920c01e0cd98027c6c7a9990b7a380ee4e4b332f108729e0ef1d783425dcc"
+  },
+  "repair_history": "implementation/history_preexec/HISTORY.json",
+  "preserved_preparation_hashes_verified": true,
+  "prepared_python_commands_B_flag_verified": true,
+  "next_action": "S1 exact publication/dual ACK and fresh root resource/parallel checks, then ROOT_GO single primary and independent reference. Review does not authorize extra runs or issue physical production admission."
+}

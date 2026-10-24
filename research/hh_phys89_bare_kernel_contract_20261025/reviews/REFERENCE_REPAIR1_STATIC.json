@@ -1,0 +1,56 @@
+{
+  "schema": "PHYS89_REFERENCE_REPAIR1_STATIC_REVIEW_V1",
+  "reviewer": "/root/independent_recovered89",
+  "observed_utc": "2026-10-24T22:02:52.608864+00:00",
+  "decision": "PASS_TARGETED_CHECKER_REPAIR_PREEXECUTION",
+  "observed_failure": {
+    "artifact": "verification/reference_ATTEMPT.json",
+    "sha256": "e7fff83a771dbdfa37cbc3a9dddf07b1f994f8d882c68a858671dab94592dce3",
+    "class": "IMPLEMENTATION_RECORD_SELECTION_FAILURE_BEFORE_SCIENTIFIC_COMPARISON",
+    "mechanism": "int(blank control field) evaluated while scanning a non-target tape record",
+    "initial_static_review_limit": "Initial static read missed this blank-control path; actual failure is retained, not reclassified as source corruption or physics failure."
+  },
+  "accepted_checker_identity": {
+    "binding": {
+      "amendment_sha256": "f9d31ab53f8950b9428d284aafe73c8108d15ec2b3a1ab5f6539a4f8165f1aa1",
+      "base_primary_identity": "c688ab6b06ab1e94781645e174cd555423ba49fc15d6b76c31acef3890f2e8b2",
+      "base_primary_manifest_sha256": "a10515fd2cdd5cc816511ab109468707c66126e09583a378cc910ab0fc66d2e6",
+      "repair_source_sha256": "a8a9f47be6904ed78196d94b61677a11c9487a8cc8bc19fe4ca574dd7298ebb6"
+    },
+    "sha256": "0f946ef3e6d2253091e50f4bdfca708ce9900a93677d0793367510b5ee2111b5"
+  },
+  "accepted_amendment_sha256": "f9d31ab53f8950b9428d284aafe73c8108d15ec2b3a1ab5f6539a4f8165f1aa1",
+  "repair_source_sha256": "a8a9f47be6904ed78196d94b61677a11c9487a8cc8bc19fe4ca574dd7298ebb6",
+  "checked_delta": [
+    "Target section selected using stripped control strings, avoiding integer conversion of blank fields",
+    "Actual blank-control record regression assertion is included in this one new decode",
+    "No production parser/kernel import; own numerical parsing, fixture and tolerance functions remain unchanged",
+    "Own source/amendment/primarymanifest hash binding checked before arithmetic",
+    "Original primary complete manifest and all6 payloads checked under unchanged baseidentity",
+    "New output kind/reference_repair1 and distinct admission/attempt/result paths; existing output guard before run",
+    "Prepared Python commands retain -B; original lease caps20CPU45wall,1worker/thread unchanged"
+  ],
+  "unchanged_scientific_function_ASTs": [
+    "parse_number",
+    "independent_fixture",
+    "run"
+  ],
+  "original_frozen_code_files_verified": 7,
+  "primary_payloads_verified_unchanged": 6,
+  "primary_manifest_sha256": "a10515fd2cdd5cc816511ab109468707c66126e09583a378cc910ab0fc66d2e6",
+  "original_reference_failure_preserved": true,
+  "budget": {
+    "old_primary_used": 1,
+    "old_primary_remaining": 0,
+    "old_reference_used": 1,
+    "old_reference_remaining": 0,
+    "additional_affected_checker_max_children": 1,
+    "budget_reset": false,
+    "primary_reexecutions": 0,
+    "eigh_reexecutions": 0,
+    "reviewer_scientific_executions": 0,
+    "reviewer_Wolfram_calls": 0
+  },
+  "open_findings": [],
+  "next_action": "Root explicit GO under the already authorized repair1 budget and original shared lease; actual C9 outcome pending. No re-opening R6 or replaying primary."
+}

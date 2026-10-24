@@ -1,0 +1,156 @@
+{
+  "schema": "PHYS89_R6_RECOVERY_INDEPENDENT_REVIEW_V1",
+  "reviewer": "/root/independent_recovered89",
+  "role": "independent Astra-tier review; not theory or implementation author",
+  "observed_utc": "2026-10-24T20:37:01.995086+00:00",
+  "decision": "PASS_SCOPED_PREIMPLEMENTATION",
+  "reviewed_inputs": [
+    {
+      "path": "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/CONTRACT.json",
+      "bytes": 11928,
+      "sha256": "d737abf473a8ee6ef2c98262d4c6bb463e5ac800aab7eb442ed56d4e56baf663"
+    },
+    {
+      "path": "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/theory/BARE_KERNEL_CONSUMER_KO.md",
+      "bytes": 10364,
+      "sha256": "6b04e9f2f8402821a5718620924ab4baf19064e9f19faefb0df3164110df2806"
+    },
+    {
+      "path": "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/theory/WOLFRAM_TRANSCRIPT_REUSE.json",
+      "bytes": 863,
+      "sha256": "032fc592a3bf36937cdf822ed70d6d4537d6eef6ad4cfaaf0366fa3641357884"
+    },
+    {
+      "path": "/tmp/hh89_recovery/source_evidence/SOURCE_CONTRACT_RECOVERY.json",
+      "bytes": 8969,
+      "sha256": "cee48a474c75bfd238a508fc51663465adea7b70b03d7f5035567e498c19f1f4"
+    },
+    {
+      "path": "/tmp/hh89_recovery/source_evidence/REI_L2_ACTUAL_CONTRACT_EXTRACT.json",
+      "bytes": 2192,
+      "sha256": "5315debb58cdc4d3670eb7bd6031dc7f33c722296dfb25c0f33eee81fe3234a3"
+    }
+  ],
+  "method": "Read-only source/contract comparison and independent algebra/dimensional review; no scientific program execution",
+  "checks": [
+    {
+      "id": "R6-SOURCE",
+      "status": "PASS",
+      "basis": "MF1/nuclear R-matrix provenance and AWR convention are distinguished from electron-resolved target validity; conditional maps preserved."
+    },
+    {
+      "id": "R6-GRID",
+      "status": "PASS",
+      "basis": "154 MF33 boundaries /153 groups and11781 LS1 upper-triangle values are distinct from153 sigma knots /152 cells; no support extension."
+    },
+    {
+      "id": "R6-PULLBACK",
+      "status": "PASS",
+      "basis": "Deterministic source-coordinate pullback carries group indices with no extra sigma/F Jacobian; integration measure alone transforms."
+    },
+    {
+      "id": "R6-BOUNDARY",
+      "status": "PASS",
+      "basis": "Canonical native coordinate or direct mapped boundaries; no floating roundtrip classification or epsilon clip."
+    },
+    {
+      "id": "R6-LINEAR-COV",
+      "status": "PASS",
+      "basis": "For fixed finite coefficients deltaZ=r dot eta and deltaA=a dot eta give L F L^T. Shared source mode is retained across consumers."
+    },
+    {
+      "id": "R6-RATIO",
+      "status": "PASS",
+      "basis": "Exact ratio change=(deltaA-M deltaZ)/(Z+deltaZ); subtracting b dot eta gives -(deltaZ/(Z+deltaZ)) b dot eta and the stated rho bound."
+    },
+    {
+      "id": "R6-RAW-PSD",
+      "status": "PASS",
+      "basis": "Raw displayed F preserved. Exact negative witness supports only failure of displayed-matrix PSD, not physical-model impossibility."
+    },
+    {
+      "id": "R6-MEASURE",
+      "status": "PASS_CONDITIONAL",
+      "basis": "Moller flux with q=(E,c p) and momentum number-density f has event/(physicalvolume propertime) units; distinct n,p has no1/2. Actual differential/state kernel remains open."
+    },
+    {
+      "id": "R6-ENERGY",
+      "status": "PASS",
+      "basis": "Six signed energy columns sum Kd+Egamma-Kin-Qb=0 pointwise; joint h*Kd is retained."
+    },
+    {
+      "id": "R6-CALORIC",
+      "status": "PASS_AFTER_TARGETED_DOMAIN_CLARIFICATION",
+      "basis": "Formula follows from Cv dotT=S_U-sum_s u_s S_n_s only when the incoming n,p are thermal-owned, Cv=sum_s n_s du_s/dT>0, and dotT is capture contribution only."
+    },
+    {
+      "id": "R6-CLOCK",
+      "status": "PASS",
+      "basis": "Y=n/nHref gives S/nHref-Y*(Theta+dotnHref/nHref); conserved reference cancels second term; lapse applied once."
+    },
+    {
+      "id": "R6-TAIL",
+      "status": "PASS_CONDITIONAL",
+      "basis": "For nonnegative event measure 0<=Z_tail<=B0, exact difference=(A_tail-MI Z_tail)/(ZI+Z_tail); bound follows by denominator>=ZI. Actual B0/BA remain absent."
+    },
+    {
+      "id": "R6-CONSUMER",
+      "status": "PASS",
+      "basis": "Actual REI-L2 beta contract remains unchanged; capture extension PROPOSED_UNIMPLEMENTED and ACK null; B3C nuclear consumer NOT_BOUND."
+    },
+    {
+      "id": "R6-BIRTH-STRESS",
+      "status": "PASS",
+      "basis": "q^mu q^nu/q^0 against event intensity is a birth rate, not accumulated state; four-momentum closure does not impose spatial-stress closure."
+    },
+    {
+      "id": "R6-CLAIM-BUDGET",
+      "status": "PASS",
+      "basis": "Selected physical node PARTIAL, HH_R10 OFF, production NOT_ISSUED, global percent null; used Wolfram allowance preserved and no new calls authorized."
+    }
+  ],
+  "findings": [
+    {
+      "id": "P89-R6R-01",
+      "severity": "scoped preimplementation clarification",
+      "target": [
+        "CONTRACT.json common_measure",
+        "theory/BARE_KERNEL_CONSUMER_KO.md section4"
+      ],
+      "evidence": "thermal_count=h-2 and caloric expression assume incoming n,p belong to thermal reservoir; plain Cv*Tdot can be read as total expanding-universe temperature equation. Current text does not explicitly state these domains.",
+      "impact": "Avoid applying the typed caloric interface to nonthermal incoming particles or omitting expansion/work in a total temperature evolution. Algebra and parser/PSD diagnostics are unaffected.",
+      "minimal_repair": "Declare incoming n,p thermal-owned; outgoing h thermal birth fraction; Cv=sum_s n_s du_s/dT>0 at fixed species densities; dotT|capture only, expansion/work/other sources separate. Explicit 0<=Z_tail<=B0 is a harmless domain clarification for tail inequality.",
+      "status": "CLOSED_ACTUAL_READBACK",
+      "requires_new_scientific_execution": false,
+      "closure": "Revision4 and theory explicitly state two incoming thermal owners, positive Cv, capture-only temperature contribution and nonnegative tail; equations unchanged."
+    }
+  ],
+  "execution": {
+    "scientific_children": 0,
+    "Wolfram_calls": 0,
+    "integrals": 0,
+    "old_science_replays": 0,
+    "remote_mutations": 0
+  },
+  "claim_ceiling": {
+    "selected_node": "PARTIAL_INPUT_DEPENDENCIES",
+    "scoped_child_admission": "PENDING_CODE_AND_ACTUAL_PRIMARY_REFERENCE_AND_C9",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "global_physical_completion_percent": null
+  },
+  "next_action": "Lower-tier completion/freeze, independent static preexecution read, then root-authorized single primary/reference after publication/ACK. R6 finding closed; no further theory review without a concrete change.",
+  "closure_utc": "2026-10-24T20:37:28.568665+00:00",
+  "accepted_inputs_after_targeted_repair": [
+    {
+      "path": "CONTRACT.json",
+      "bytes": 11928,
+      "sha256": "d737abf473a8ee6ef2c98262d4c6bb463e5ac800aab7eb442ed56d4e56baf663"
+    },
+    {
+      "path": "theory/BARE_KERNEL_CONSUMER_KO.md",
+      "bytes": 10364,
+      "sha256": "6b04e9f2f8402821a5718620924ab4baf19064e9f19faefb0df3164110df2806"
+    }
+  ]
+}
