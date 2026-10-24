@@ -1,6 +1,6 @@
 {
   "schema": "PHYS87_DAG_OVERLAY_V1",
-  "central_pin": "9f410bf0f4b5d14d1e6b7c17cd2e23a916f241c9",
+  "central_pin": "79c042a15e7e29b894dadc32188e286dade73aad",
   "central_authority_unchanged": true,
   "nodes": [
     {
@@ -24,11 +24,20 @@
     },
     {
       "id": "ENDF_H1_NATIVE_FINITE_WINDOW_JOINT_MOMENTS",
-      "status": "DERIVED_SCOPED_REVIEW_IN_PROGRESS",
+      "status": "COMPLETE_SCOPED",
       "depends_on": [
         "PHYS86_JUTTNER_REACTION_MOMENTS",
         "CANONICAL_ENDF_H1_SOURCE"
-      ]
+      ],
+      "claim_gate": "NUMERICALLY_CHECKED_SCOPED_SOURCE_NATIVE_FINITE_WINDOW",
+      "primary_identity": "bc8a07546cab87dc79de5efee1e0d1917f7e88e851cdd8d5e7856f50f8c1c53d",
+      "evidence": [
+        "reviews/SCIENCE_ADMISSION.json",
+        "reviews/INDEPENDENT_REVIEW.json",
+        "results/primary001/RESULT.json",
+        "results/INDEPENDENT_REFERENCE.json"
+      ],
+      "delivery": "S2_PENDING;FINAL_WHOLE_RESTORE_PENDING"
     },
     {
       "id": "NUCLEAR_ATOMIC_TO_BARE_CAPTURE_REMAP",
@@ -62,5 +71,9 @@
   ],
   "HH_R10": "OFF",
   "production": "NOT_ISSUED",
-  "global_completion_percent": null
+  "global_completion_percent": null,
+  "historical_central_pin": "9f410bf0f4b5d14d1e6b7c17cd2e23a916f241c9",
+  "latest_metadata_head": "a814dab41a8f3f543dec71cde59f17e0d497fcda",
+  "central_publication": "PENDING_FRESH_HEAD_EXPECTED_SHA",
+  "late_delta": "LATE_SURVEY_ADDENDUM_KO.md"
 }
