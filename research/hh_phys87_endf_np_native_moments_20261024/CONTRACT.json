@@ -1,0 +1,198 @@
+{
+  "schema": "PHYS87_ENDF_NP_NATIVE_MOMENTS_V1",
+  "revision": 2,
+  "unit": "PHYS87_SOURCE_NATIVE_ENDF_NP_FINITE_T_MOMENTS",
+  "date_KST": "2026-10-24",
+  "workflow": "physmath-research-loop user-selected 1.0.0",
+  "repository": "cosmosapjw-quantum/WU088_HH",
+  "base_HEAD": "f4a6d5505c845a046e3b81d33a2992a239ab4c8b",
+  "base_tree": "5d084b7b6c2f3b04b4b0d93945f50472c04b7103",
+  "branch": "research/hh-phys87-endf-np-native-moments-20261024",
+  "owned_path": "research/hh_phys87_endf_np_native_moments_20261024",
+  "parent_node": "NUCLEAR_PHYSICAL_FINITE_T_EVENT_SUPPLIER",
+  "scoped_child": "ENDF_H1_NATIVE_FINITE_WINDOW_JOINT_MOMENTS",
+  "source": {
+    "canonical": "NNDC ENDF/B-VIII.1 dataset12940 n-001_H_001.endf",
+    "url": "https://www.nndc.bnl.gov/endf-data/ENDF/ENDF-B-VIII.1/n-001_H_001.endf",
+    "sha256": "3024d8f0db604b074e33ed8b05027eb9f5a738614041ba44c83f048e0d0bc1af",
+    "bytes": 671232,
+    "MF3_MT102_points": 153,
+    "interpolation_ranges": [
+      [
+        33,
+        5
+      ],
+      [
+        153,
+        2
+      ]
+    ],
+    "MF6_MT102": "LCT2; photon yield1 LAW2 LANG0 NL2; recoil LAW4 yield1",
+    "angular_interpolation": 2,
+    "angular_points": 153,
+    "GNDS": "NOT_ADMITTED_CHECKSUM_MISMATCH; heated_000 never used",
+    "covariance": "MF33 MT102 present retained not propagated; angular covariance not supplied; no physical CI"
+  },
+  "physical_model": {
+    "particles": "source-native n + H1 atomic-mass target -> effective H2 residual + gamma; ground-state unpolarized evaluated source; bound electron stays internal; free electron incidence0",
+    "mass_scale": "Explicit CODATA2022 displayed neutron rest energy inherited from PHYS85, not an undocumented ENDF absolute mass",
+    "epsilon_n_eV": "939565421.94",
+    "AWR": "0.9991673",
+    "Q_eV": "2224648",
+    "epsilon_H": "AWR*epsilon_n",
+    "epsilon_D_effective": "epsilon_n+epsilon_H-Q",
+    "photon_AWP_eV": "2223300 (preserved primary-photon metadata; exact event energy from AppendixE mass/Q kinematics)",
+    "bare_project_Q_eV": "2224566.37",
+    "QI_minus_bare_Q_eV": "81.63",
+    "bare_network_remap": "OPEN_EXPLICITLY_REJECTED_BY_CONSUMER_GUARD",
+    "thermal": "Independent common-T isotropic classical Maxwell-Juttner normal-frame reactants, no drift, screening, stimulated emission or internal-state population evolution",
+    "support_E_lab_eV": [
+      "0.00001",
+      "20000000"
+    ],
+    "outside_support": "UNAVAILABLE; finite-window integral only, no zero-extension or full-rate/tail bound",
+    "owners": {
+      "h": [
+        0,
+        1
+      ],
+      "h1": "explicit instantaneous caloric birth model, not stopping",
+      "radiation_routes": [
+        "emissivity_handoff",
+        "immediate_escape"
+      ]
+    },
+    "activation": false,
+    "primary_T_K": [
+      255,
+      10000,
+      1000000,
+      100000000
+    ],
+    "numerical_T_input_domain_K": [
+      255,
+      101000000
+    ],
+    "numerical_T_domain_interpretation": "Guard domain including all finite-difference satellites; actual evidence covers frozen points, no continuum numerical certificate or equilibrium atomic abundance claim."
+  },
+  "equations": {
+    "W": "sqrt((eps_n+eps_H)^2+2 eps_H E_lab)",
+    "K_stable": "2 eps_H E_lab/(W+eps_n+eps_H)",
+    "lambda": "K*(2M+K)*(4 eps_n eps_H+2M K+K^2)",
+    "angular": "f(mu)=1/2*(1+3a1 mu+5a2 P2(mu)); normalized dmu; azimuth uniform",
+    "conditional_nu": "mean=a1*c_axis; second=(1-a2+3a2*c_axis^2)/3",
+    "rotation": "At fixed W and total boost, incoming COM axis is uniform under common-T invariant reaction measure; averaging normalized axial angular law gives uniform absolute photon direction.",
+    "gamma": "density ∝sqrt(gamma^2-1)*exp(-W*gamma/theta); G=K2(z)/K1(z), G2=1+3G/z",
+    "rate": "c/(4 eps_n^2 eps_H^2 theta K2(zn)K2(zH))*integral_source(sigma*lambda*K1(W/theta)dW)",
+    "means": "Kin=WG-M; Egamma=eStar*G; Kd=(W-eStar)*G-epsD",
+    "eStar": "(Q+K)*(2W-Q-K)/(2W)",
+    "stable_Kd": "kStar+(W-eStar)*(G-1), kStar=(Q+K)^2/(2W)",
+    "var_gamma": "G2-G^2; compute coefficient-polynomial cancellation before floating arithmetic",
+    "caloric": "Cv*Tdot/R= -meanKin+un+uH +h*(meanKd-uD); no density or Cv invented",
+    "six_columns": "[h meanKd-meanKin,(1-h)meanKd,-Q,0,Egamma_handoff,Egamma_escape]"
+  },
+  "numerical_plan": {
+    "primary": "positive Gauss-Legendre in log E_lab on all152 native intervals, orders16 and32, all4T; no native knots omitted",
+    "source_dtype": "Decimal strings retained; exact Fraction angular positivity at all153knots; convex lin-lin interpolation proof extends represented-law positivity",
+    "scaled_bessel": "exp(z)Knu(z) approximately sqrt(pi/(2z))*Pnu(1/z), terms0..6; all selected z>=1e5. Differences/variance polynomial coefficients formed exactly before float evaluation. This is scoped tested asymptotic evaluation, no general Bessel production certificate.",
+    "FD": "T=10000 and100000000, hlog=2^-8, rate at T*exp(±hlog), order32;4additional scalar integrals",
+    "conditional_angular_cases": {
+      "E_lab_eV": [
+        0.0253,
+        10000,
+        20000000
+      ],
+      "boost_beta": [
+        0.2,
+        0.6
+      ],
+      "c_axis": [
+        -1,
+        0,
+        1
+      ],
+      "cases": 18,
+      "reference_rule": "4 Gauss mu x8 equispaced azimuth; degree argument and actual arithmetic residual separated"
+    },
+    "independent_reference": "one distinct reference child: SciPy kve and adaptive quadrature at highestT=1e8K for rate/means; source parser independently read from raw ENDF, no production imports; optional small fixed-point mpmath Bessel ratio checks only in this same bounded child",
+    "figures": "one render from saved outputs only; 2PNG+2PDF if useful",
+    "additional_guard": "All single-species and pair z>=1e5 and finite; allowed T255..101000000K."
+  },
+  "acceptance": {
+    "source_sha_exact": true,
+    "source_knots_exact": true,
+    "all153_quadratic_minima_positive": true,
+    "guards": "out-of-domain energies/T/owner/routes/nonfinite/bare-network request rejected; no clipping",
+    "angular_relative_or_scaled_tolerance": 2e-12,
+    "energy_closure_abs_eV": 2e-07,
+    "quadrature_relative_rate_and_means": 1e-08,
+    "FD_log_rate_slope_abs": 5e-07,
+    "independent_relative_rate_and_means": 1e-07,
+    "variance_positive": true,
+    "open_findings": 0,
+    "claim": "NUMERICALLY_CHECKED_SCOPED_SOURCE_NATIVE_FINITE_WINDOW; no continuum/global-error/source-uncertainty certificate"
+  },
+  "budget": {
+    "inherited_money": null,
+    "currency": null,
+    "reset": false,
+    "PHYS85_86_evaluator_calls_preserved": 4,
+    "PHYS85_86_additional_allowance": 0,
+    "new_Wolfram_symbolic_calls_max": 1,
+    "Wolfram_timeConstraint_s": 60,
+    "new_primary_children_max": 1,
+    "new_independent_reference_children_max": 1,
+    "new_saved_figure_children_max": 1,
+    "primary_cpu_s": 12,
+    "primary_wall_s": 60,
+    "reference_cpu_s": 20,
+    "reference_wall_s": 60,
+    "figures_cpu_s": 8,
+    "figures_wall_s": 30,
+    "automatic_retry": 0,
+    "repair": "Controller requires a concrete finding and new affected-input identity; preserve all costs. No automatic reserve.",
+    "threads": 1,
+    "workers": 1,
+    "reserve_GiB": 1.5,
+    "job_GiB": 0.5,
+    "cache_credit": false,
+    "lease": "Pinned shared PHYS78 cooperative gate SHA76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124; /tmp/rei-bianchi-cooperative-leases; no other-process termination",
+    "affinity": "available CPU0 scientific child; CPU8 mechanical coordinator; gate must observe no conflict; no CPU55 assumption",
+    "local_admission": "fresh actual resource+lease gate required before each child",
+    "new_ODE": 0,
+    "old_science_replay": 0,
+    "network_rate_activation": 0,
+    "fast_stopping": 0
+  },
+  "roles": {
+    "controller": "Astra theory/contracts/admission/repair",
+    "implementation": "requested gpt-6.1-sol/high lower tier, actual backend UNOBSERVED",
+    "review": "fresh Astra independent source/equations/code/raw review"
+  },
+  "publication": {
+    "draft": true,
+    "merge": false,
+    "expected_SHA": true,
+    "additive": true,
+    "stages": [
+      "S0 theory/source",
+      "S1 frozen implementation",
+      "S2 results/review",
+      "FINAL handoffs"
+    ],
+    "stage_backup": "Dropbox+Drive actual ACK separate from restore",
+    "final_backup": "both actual whole GET SHA CRC all-payload Git-blob extraction; externalJSON rawreadbacks",
+    "central": "additive observation only after current HEAD and owner delta check"
+  },
+  "protected": {
+    "geometry": "non-tilted LRS Bianchi I",
+    "gas_pi": 0,
+    "DM_pi_m": "separate",
+    "tensor_sum": "signed same normal orthonormal frame before norm",
+    "Frobenius": "sqrt(2)*half-contraction norm",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "source_bare_masses": "UNCHANGED",
+    "completed_PHYS83_86_identities": "REUSE_NO_REPLAY"
+  }
+}

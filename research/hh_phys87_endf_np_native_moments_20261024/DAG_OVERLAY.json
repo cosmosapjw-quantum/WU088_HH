@@ -1,0 +1,66 @@
+{
+  "schema": "PHYS87_DAG_OVERLAY_V1",
+  "central_pin": "9f410bf0f4b5d14d1e6b7c17cd2e23a916f241c9",
+  "central_authority_unchanged": true,
+  "nodes": [
+    {
+      "id": "WU_CE83_OWNER_COMPLETION",
+      "status": "REUSED_COMPLETE_SCOPED",
+      "science_identity": "e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c"
+    },
+    {
+      "id": "PHYS84_CE_SOURCE_ADAPTER",
+      "status": "PREPARED_STATIC_NUMERICAL_WAIT"
+    },
+    {
+      "id": "PHYS86_JUTTNER_REACTION_MOMENTS",
+      "status": "COMPLETE_SCOPED_DUAL_DELIVERY_COMPLETE",
+      "science_identity": "270d59879327809203beb5f272527724ba85ceba7b3a54989b4417d02219eaa7"
+    },
+    {
+      "id": "NUCLEAR_PHYSICAL_FINITE_T_EVENT_SUPPLIER",
+      "status": "PARTIAL",
+      "child": "ENDF_H1_NATIVE_FINITE_WINDOW_JOINT_MOMENTS"
+    },
+    {
+      "id": "ENDF_H1_NATIVE_FINITE_WINDOW_JOINT_MOMENTS",
+      "status": "DERIVED_SCOPED_REVIEW_IN_PROGRESS",
+      "depends_on": [
+        "PHYS86_JUTTNER_REACTION_MOMENTS",
+        "CANONICAL_ENDF_H1_SOURCE"
+      ]
+    },
+    {
+      "id": "NUCLEAR_ATOMIC_TO_BARE_CAPTURE_REMAP",
+      "status": "OPEN",
+      "depends_on": [
+        "ENDF_H1_NATIVE_FINITE_WINDOW_JOINT_MOMENTS"
+      ]
+    },
+    {
+      "id": "NUCLEAR_FULL_SUPPORT_COVARIANCE_AND_CONSUMER",
+      "status": "OPEN",
+      "depends_on": [
+        "NUCLEAR_ATOMIC_TO_BARE_CAPTURE_REMAP"
+      ]
+    },
+    {
+      "id": "NUCLEAR_RATES_AND_FAST_STOPPING_ACTIVATION",
+      "status": "NOT_ISSUED",
+      "depends_on": [
+        "NUCLEAR_FULL_SUPPORT_COVARIANCE_AND_CONSUMER"
+      ]
+    }
+  ],
+  "parallel_open": [
+    "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+    "D_PI_RR_MATCHED_SOURCE_MOMENTS",
+    "LI_PHYSICAL_UNCERTAINTY",
+    "LI_HARD_UV_INNER_SHELL_SPECTRAL_CONTRACT",
+    "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT",
+    "FULL_GEOMETRY_SPECTRAL_BACKREACTION"
+  ],
+  "HH_R10": "OFF",
+  "production": "NOT_ISSUED",
+  "global_completion_percent": null
+}

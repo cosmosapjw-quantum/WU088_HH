@@ -1,0 +1,78 @@
+{
+  "schema": "PHYS87_INDEPENDENT_R6_REVIEW_V1",
+  "reviewer": "fresh independent Astra agent /root/independent_review_87",
+  "status": "PASS_SCOPED_THEORY",
+  "scope": "source-native ENDF H1 finite-window common-T Juttner moments; no physical bare-network admission",
+  "reviewed": {
+    "contract_sha256": "464df6f83a7ac8bd64813dc9da3ca34f19398a2f970f3d69c706e3d089f6fd38",
+    "theory_sha256": "abbcac3cdcf3679d941528460b109c1f4da51eb9180a7c6683b532c83392572b",
+    "source_table_sha256": "b14ad9b4a2379166ec2b2c04b2a77efb4c819498924682072d74a6b4e31c5014",
+    "endf_sha256": "3024d8f0db604b074e33ed8b05027eb9f5a738614041ba44c83f048e0d0bc1af",
+    "prior_contract_sha256": "1fbf8b48c03a1c36f711b95441005ee7841956666e3d636b80fec3d112476fd5",
+    "contract_revision": 2,
+    "preimplementation_repair_sha256": "7da9f28332ac6058c8df5075c4dbdaeee2cf6cd17c47a36d586d64cc2219e9ce",
+    "wolfram_result_sha256": "d79b7551b16eb0651368f25ff1ed2e445ad59d4c055df0dbdebe7949b3e030b0"
+  },
+  "analytical_checks_passed": [
+    "ENDF normalized Legendre law and frame",
+    "AWR/QI/residual mass convention with explicit absolute mass scale",
+    "source-native atomic versus bare-pool guard",
+    "quadratic knot minimum plus convex interpolation proof",
+    "incoming-axis rotation average under common-T invariant measure",
+    "phase-space normalization and rate prefactor",
+    "cm3/s dimensional check",
+    "nonrelativistic unequal-mass rate limit",
+    "boost marginal and G/G2 identities",
+    "conditional photon mean/variance",
+    "rotationally averaged photon/recoil/kinetic moments",
+    "stable centered total variance construction",
+    "pointwise and averaged six-column energy closure",
+    "particle thermal/fast incidence and caloric composition signs",
+    "fixed source-domain rate-slope identity",
+    "scaled Bessel ratio cancellation design"
+  ],
+  "findings": [
+    {
+      "id": "R6-C01",
+      "severity": "preimplementation_contract_clarification",
+      "status": "CLOSED_VERIFIED",
+      "target": "numerical T domain versus upper FD satellite",
+      "required_action": "Label T list primary sample points; explicitly admit FD satellite via z>=1e5 numerical domain or exact allowed set",
+      "resolution_contract_revision": 2,
+      "resolution_contract_sha256": "464df6f83a7ac8bd64813dc9da3ca34f19398a2f970f3d69c706e3d089f6fd38",
+      "resolution": "primary_T_K explicitly labels four sample points; numerical T input guard [255,101000000] K includes the four frozen FD satellites around 10000 and100000000 K; all single-species/pair z finite and>=1e5; sampled evidence distinct from continuous guard domain."
+    },
+    {
+      "id": "R6-C02",
+      "severity": "nonblocking_wording",
+      "status": "CLOSED_VERIFIED",
+      "target": "CONTRACT numerical_plan.scaled_bessel equality",
+      "required_action": "Mark finite6-term polynomial truncated asymptotic approximation",
+      "resolution_contract_revision": 2,
+      "resolution_contract_sha256": "464df6f83a7ac8bd64813dc9da3ca34f19398a2f970f3d69c706e3d089f6fd38",
+      "resolution": "scaled_bessel explicitly says approximately and scoped tested asymptotic evaluation, no general Bessel production certificate."
+    }
+  ],
+  "core_theorem_blockers": 0,
+  "preimplementation_clarifications": 0,
+  "scientific_executions": 0,
+  "Wolfram_calls": 0,
+  "old_science_replays": 0,
+  "independent_numerical_review": "PENDING_ROOT_FROZEN_CODE_AND_RAW_RESULTS",
+  "production": "NOT_ISSUED",
+  "HH_R10": "OFF",
+  "open_blocking_findings": 0,
+  "root_symbolic_evidence_readback": {
+    "source": "theory/WOLFRAM_REFERENCE.wl",
+    "raw": "theory/WOLFRAM_RAW.json",
+    "result": "theory/WOLFRAM_RESULT.json",
+    "calls_by_root": 1,
+    "exact_residuals": 12,
+    "all_zero": true,
+    "body_wall_s": 1.043754,
+    "tool_wall_s": 9.957,
+    "scope": "formal angular normalization/rotation/energy closure/Bessel identities/variance polynomial and photon moment algebra; not a thermal source integration or continuum error certificate",
+    "reviewer_calls": 0
+  },
+  "finalized_utc": "2026-10-24T08:52:30.573090+00:00"
+}
