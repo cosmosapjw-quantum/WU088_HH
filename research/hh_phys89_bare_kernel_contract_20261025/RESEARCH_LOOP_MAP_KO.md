@@ -17,8 +17,8 @@
 | C1 | 목표·baseline | CONTRACTrev4의식·domain·수용조건 완료 |
 | C2 | 식–데이터–코드 | CONTRACTrev4의식·domain·수용조건 완료 |
 | C3 | 수치 설계 | CONTRACTrev4의식·domain·수용조건 완료 |
-| C4 | 실행 DAG·자원 | lower-tier 구현중; source실행0 |
-| C5 | 구현 | lower-tier 구현중; source실행0 |
+| C4 | 실행 DAG·자원 | lower-tier 구현완료·독립staticPASS; source실행0 |
+| C5 | 구현 | lower-tier 구현완료·독립staticPASS; source실행0 |
 | C6 | 구현 검증 | S1게시와dualACK이후 bounded실행 |
 | C7 | 과학 검증 | S1게시와dualACK이후 bounded실행 |
 | C8 | 수치·재현성 | S1게시와dualACK이후 bounded실행 |
@@ -27,3 +27,5 @@
 
 S0 actual9/20=R1–R6+C1–C3; R6 revision4 actualPASS로 채택했다. S1 11/20, S2 18/20, 최종R10/C10 완료20/20은 서로 다른 시점의 불변 snapshot으로 보존한다.
 모든 단계의 completed는 해당 자식 범위이며 nuclear supplier와 named consumer를 물리적으로 완료했다는 뜻이 아니다.
+
+S1 current11/20=R1–R6+C1–C5. Scientificidentity `c688ab6b06ab1e94781645e174cd555423ba49fc15d6b76c31acef3890f2e8b2`; 실제primary/reference는아직0.

@@ -1,0 +1,60 @@
+{
+  "status": "PREPARED_NOT_EXECUTED_REQUIRES_ROOT_GO",
+  "workdir": "/tmp/hh89_recovery/WU088_HH",
+  "commands": {
+    "primary": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/source/leased_call.py",
+      "--kind",
+      "primary",
+      "--label",
+      "PHYS89_V4_ONCE",
+      "--receipt",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/verification/primary_ATTEMPT.json",
+      "--admission-receipt",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/verification/primary_ADMISSION.json",
+      "--",
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/source/primary.py",
+      "--output",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/verification/primary"
+    ],
+    "primary_read_only_resume": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/source/primary.py",
+      "--output",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/verification/primary",
+      "--resume"
+    ],
+    "reference": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/source/leased_call.py",
+      "--kind",
+      "reference",
+      "--label",
+      "PHYS89_V4_ONCE",
+      "--receipt",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/verification/reference_ATTEMPT.json",
+      "--admission-receipt",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/verification/reference_ADMISSION.json",
+      "--",
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/verification/reference.py",
+      "--output",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/verification/reference",
+      "--primary-output",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/verification/primary"
+    ],
+    "reference_read_only_resume": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/verification/reference.py",
+      "--output",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/verification/reference",
+      "--primary-output",
+      "/tmp/hh89_recovery/WU088_HH/research/hh_phys89_bare_kernel_contract_20261025/verification/primary",
+      "--resume"
+    ]
+  },
+  "scientific_identity": "81d8ee5e488c7dd9070b2fec1fe8130e5e08d25b8b8c63ab33cba61dca30e31c",
+  "automatic_retries": 0
+}
