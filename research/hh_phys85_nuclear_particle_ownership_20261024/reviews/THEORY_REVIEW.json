@@ -1,0 +1,41 @@
+{
+  "schema": "PHYS85_INDEPENDENT_THEORY_REVIEW_V1",
+  "reviewer_role": "fresh Astra independent theory reviewer",
+  "base_HEAD": "d5c2c8dbbbd77bc81526dda6e74df534fba3c4e5",
+  "reviewed_contract_revision": 2,
+  "decision": "PASS_SCOPED",
+  "implementation_transition": "GO_IMPLEMENT; T1-T3 resolved in revision2 and read-only checked; no new physical supplier required for exact reference implementation",
+  "reviewed_SHA256": {
+    "CONTRACT.json": "44f30a1013294689414961a8e456277a41348090a759f0d795a4af77a9ea6dec",
+    "theory/FINITE_T_OWNERSHIP_KO.md": "2e04242ce09ed7d5c0313b5569a0a1cab36f3b544a0d6daa231a006938467e65"
+  },
+  "clarifications_status": "ALL_RESOLVED_BY_CONTROLLER",
+  "analytic_checks": {
+    "exact_normal_frame_boost_and_incoming_debit": "PASS",
+    "mass_shell_oracle_design": "PASS",
+    "thermal_fast_count_incidence": "PASS",
+    "same_event_six_energy_columns": "PASS",
+    "joint_owner_energy_covariance": "PASS",
+    "NR_common_T_selected_pair_energy": "PASS",
+    "rate_log_slope_identity": "PASS_ON_POSITIVE_FINITE_RATE_DOMAIN",
+    "all_fast_temperature_source": "PASS",
+    "constant_sigma_and_inverse_speed_formal_limits": "PASS",
+    "exact_event_NR_average_scope_separation": "PASS",
+    "local_lease_cloud_exact_reference_separation": "PASS"
+  },
+  "clarifications": [
+    {"id":"T1","change":"Egamma>0; Kin>=0 and Kc>=0 globally; strict positivity only for nondegenerate listed fixtures if observed","type":"acceptance domain clarification"},
+    {"id":"T2","change":"Require T>0,Nthermal>0,sigma>=0,0<I1<infinity,finite I2 and justified differentiation. At zero rate use zero source, no normalized mean/log evaluation.","type":"mathematical domain clarification"},
+    {"id":"T3","change":"Rename daughter rest-energy c to epsilon_c or mc_energy separately from light speed in mass-shell derivation","type":"notation clarification"}
+  ],
+  "unresolved_physical_supplier_is_not_this_task_blocker": true,
+  "new_numeric_calculations": 0,
+  "old_scientific_callbacks": 0,
+  "leases_acquired": 0,
+  "reviewed_files_modified": 0,
+  "code_implementation_review": "PENDING_ACTUAL_CODE_AND_RAW_OUTCOMES",
+  "scientific_admission": "DERIVED_SCOPED_ONLY",
+  "physical_finite_T_supplier": "OPEN",
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}
