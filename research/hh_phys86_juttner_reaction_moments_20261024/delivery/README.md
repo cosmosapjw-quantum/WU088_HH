@@ -1,0 +1,10 @@
+# PHYS86 mechanical delivery
+
+These helpers read existing bytes. They do not evaluate science, acquire a lease, mutate Git, upload, or fetch URLs.
+
+- `delivery86.py pack --repo REPO --head FULL_COMMIT --stage S0|S1|S2|FINAL --private-root PRIVATE_INTAKE --dependencies-root PARENT_ARTIFACTS --output FRESH_ZIP --receipt FRESH_JSON` packages committed PHYS86 blobs, current private intake, and the two pinned PHYS85 artifacts. Output is create-only. Its receipt is local packaging evidence.
+- `delivery86.py restore --repo REPO --head FULL_COMMIT --stage FINAL --archive ACTUAL_PROVIDER_DOWNLOAD --expected-sha256 ARCHIVE_SHA --output FRESH_EXTRACTION --receipt FRESH_JSON` exhausts CRC and SHA checks, binds every native Git blob, extracts all members and rehashes each file. Run separately on the two actual provider downloads. Parent archives remain whole pinned dependencies; no nested historical restore or science replay occurs.
+- `prepare_tree86.py --repo REPO --base-tree FULL_CURRENT_REMOTE_TREE --output FRESH_JSON` reads the already staged index after root authorization. UTF-8 content passes through bytes/encoding without newline conversion. Binary blobs get separate base64 create-blob arguments and must receive actual matching SHA acknowledgements before root sends tree arguments.
+- `assemble_final86.py --request ACTUAL_INPUT_PATHS_JSON --output FRESH_EXTERNAL_JSON` cross-binds root status/identity, final pack, dual upload ACKs, dual single full GETs, complete actual restores, stage history and freeze checks. The helper preserves controller scientific claims and checks HH_R10=OFF/production=NOT_ISSUED. See the local tool README for request keys.
+
+Target provider folders are the existing WU Drive folder and Dropbox dossier folder selected by root. Root controls mutations and exact PR body readback. Each network request is sequential and each failed attempt remains distinct. The immutable external final JSON excludes its own future upload/readback receipt and future hash; root binds those bytes afterward. No recursive terminal receipt is required.

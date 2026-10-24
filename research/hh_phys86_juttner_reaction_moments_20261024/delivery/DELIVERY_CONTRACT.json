@@ -1,0 +1,19 @@
+{
+  "schema": "PHYS86_MECHANICAL_DELIVERY_CONTRACT_V1",
+  "status": "PREPARED_NOT_UPLOADED",
+  "base_HEAD": "696eca5cf9f1fcbf722370833535f4144af0a54a",
+  "base_tree": "1039ff44dafb131edec1ef58be5128d00493d40c",
+  "public_prefix": "research/hh_phys86_juttner_reaction_moments_20261024",
+  "stages": ["S0", "S1", "S2", "FINAL"],
+  "stage_requirement": "Each S0/S1/S2 frozen current Git snapshot gets separate actual Drive and Dropbox upload acknowledgements.",
+  "final_requirement": "Each provider FINAL ZIP has its own sequential whole raw GET, CRC exhaustion, payload SHA256, native Git blob SHA1, actual extraction and extracted-file rehash receipt. Final external JSON then has two actual raw-byte readbacks.",
+  "payload": ["new-unit committed Git blobs", "current private intake including raw failures and deltas", "two pinned PHYS85 final artifacts", "MANIFEST.json"],
+  "excluded": ["live temporary or signed URL transport files"],
+  "parent_scope": "Pinned whole parent ZIP/JSON bytes and existing restore evidence reused; no nested parent restore or science replay.",
+  "failure_preservation": "Create-only outputs; preserve first failed GET and every attempt separately. No automatic retries or overwrite.",
+  "final_json_policy": "Immutable external JSON contains actual preexisting receipts and controller status; excludes its own future hash, upload ACKs and readback receipt. Root binds those exact bytes after creation, avoiding circular self-reference.",
+  "scientific_admission": "Owned by controller; packaging and upload acknowledgement do not issue scientific PASS.",
+  "remote_mutations_by_preparation": 0,
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}
