@@ -1,0 +1,184 @@
+{
+  "schema": "PHYS86_INDEPENDENT_THEORY_REVIEW_V1",
+  "reviewer": "/root/reference_recovery_review_86",
+  "reviewed_at_utc": "2026-10-24T04:14:22.171566+00:00",
+  "reviewed_at_kst": "2026-10-24T13:14:22.171566+09:00",
+  "workflow": "physmath-research-loop embedded 1.0.0",
+  "stage": "R6",
+  "decision": "GO_IMPLEMENT_REVIEWED_BUDGET",
+  "status": "DERIVED_SCOPED_REVIEW_PASS",
+  "contract_revision": 1,
+  "base_HEAD": "696eca5cf9f1fcbf722370833535f4144af0a54a",
+  "branch": "research/hh-phys86-juttner-reaction-moments-20261024",
+  "source_identity": [
+    {
+      "path": "CONTRACT.json",
+      "bytes": 8074,
+      "sha256": "ed8bb9f3aeef380b8ffcd5f190e9938b19f44bf9726fb87d1523dd423da52abd"
+    },
+    {
+      "path": "theory/JUTTNER_REACTION_MOMENTS_KO.md",
+      "bytes": 12686,
+      "sha256": "1bb5efd6c1e9e92b5fb39148feef0a6da06d7bd636486f3daa6a28b98d9f22a3"
+    }
+  ],
+  "scope": "Analytic same-normal-frame classical common-T reaction-selected moments, variable-species caloric source, kernel correction, finite witness design, and bounded new implementation budget. No runtime verification.",
+  "independence": {
+    "source_or_implementation_authorship": false,
+    "method": "Direct whole-draft reading, independent partition differentiation, EOS chain rule, Bessel recurrence and finite polynomial expansion; primary-source comparison",
+    "numerical_or_CAS_method": false,
+    "role_context": "Inherited parent context and explicit source task; not claimed context-blind",
+    "requested_model": "inherited Astra controller model, no explicit override",
+    "observed_backend": "UNOBSERVED"
+  },
+  "analytic_checks": [
+    {
+      "id": "frame_flux",
+      "result": "pass_scoped",
+      "evidence": "Metric -+++, D positive energy squared, v_flux=D*v_rel/(EaEb), same-normal-frame d3p thermal average."
+    },
+    {
+      "id": "juttner_normalization",
+      "result": "pass_scoped",
+      "evidence": "p=mc sinh chi; Z=pi*m^3*c^3*(K3-K1)=4*pi*m^3*c^3*K2/z; correct dimensions."
+    },
+    {
+      "id": "selection_slope",
+      "result": "pass_scoped",
+      "evidence": "Direct logN-logZa-logZb beta derivative and d beta/dT produce equation 1."
+    },
+    {
+      "id": "species_caloric_source",
+      "result": "pass_scoped",
+      "evidence": "Subtract sum u_i nDot_i from same-event thermal energy source; retain mean(h Kc)."
+    },
+    {
+      "id": "covariance_variance",
+      "result": "pass_scoped",
+      "evidence": "Normalized score and second partition derivatives; corrected integrability conditions."
+    },
+    {
+      "id": "temperature_kernel",
+      "result": "pass_scoped",
+      "evidence": "Direct integral derivative A_T; sign d_T log kappa - A_T; no division by B at zeros."
+    },
+    {
+      "id": "heat_capacity",
+      "result": "pass_scoped",
+      "evidence": "Bessel recurrences and independent Var(E)/(kBT^2) positivity; NR and fixed-species ultrarelativistic limits."
+    },
+    {
+      "id": "identical_pair_counting",
+      "result": "pass_scoped",
+      "evidence": "Rate factor 1/(1+delta_ab), identical species consumption -2R, no duplicated pair factor."
+    },
+    {
+      "id": "finite_witness",
+      "result": "pass_scoped",
+      "evidence": "Direct four pair polynomial expansion matches N; qG leaves event measure fixed and shifts log-rate derivative by one dimensionless unit."
+    },
+    {
+      "id": "zero_source_domain",
+      "result": "pass_scoped",
+      "evidence": "kappa=0 undefined normalized distribution distinct from R=0 at positive kappa; early source return skips evaluation only."
+    }
+  ],
+  "findings": [
+    {
+      "id": "R6-01",
+      "priority": "P2",
+      "object": "Theory section5 zero-rate statement and source API contract",
+      "observation": "Initial prose conflated kappa=0 with density-induced R=0.",
+      "impact": "Could misstate normalized moment domain and zero-rate guards.",
+      "correction": "Root distinguishes N=kappa=0 from kappa>0 and zero density; source API can early-return without claiming means undefined.",
+      "status": "CLOSED",
+      "verification": "Corrected complete theory and CONTRACT caloric_source_witness reread; no science rerun."
+    },
+    {
+      "id": "R6-02",
+      "priority": "P2",
+      "object": "Equation9 arbitrary phi domain",
+      "observation": "Energy second moment alone is insufficient for an arbitrary observable covariance derivative.",
+      "impact": "Missing integrability premise for universal phi statement.",
+      "correction": "Root adds finite mean(abs(phi)), mean(abs(phi*S)) and dominated differentiation immediately before equation9.",
+      "status": "CLOSED",
+      "verification": "Corrected complete theory reread; finite witness has bounded support."
+    }
+  ],
+  "blocking_findings": [],
+  "budget_review": {
+    "decision": "ACCEPTED_FOR_IMPLEMENTATION_PREPARATION",
+    "old_PHYS85_calls": 2,
+    "old_remaining_allowance": 0,
+    "new_recovery_call_max": 1,
+    "new_moment_call_max": 1,
+    "cumulative_planned_call_ceiling": 4,
+    "optional_probes": 0,
+    "per_call_seconds": 60,
+    "inner_seconds": 55,
+    "kernel_count": 1,
+    "parallel_functions": false,
+    "inherited_spend": null,
+    "remaining_money": null,
+    "currency": null,
+    "reset": false,
+    "reason": "New explicit user research/constructive repair scope; observed truncation diagnosis and separate new moment-interface scientific question. Preserve prior attempts and costs.",
+    "execution_GO_issued_by_this_review": false,
+    "execution_order": "Exact request frozen and independently inspected; S1 publication and dual ACK; root exact-request GO; raw retention and strict parse; actual output C9.",
+    "additional_automatic_repair_allowance": 0,
+    "local_lease_changed": false
+  },
+  "claim_gate": {
+    "derived_theory": "PASS_SCOPED",
+    "implementation": "GO_PREPARE",
+    "runtime_reference": "NOT_RUN_IN_THIS_REVIEW",
+    "physical_finite_T_supplier": "OPEN",
+    "physical_nuclear_rates": "NOT_RUN",
+    "stopping": "NOT_RUN",
+    "continuum_quadrature_certificate": "NOT_ISSUED",
+    "stable_production_Bessel_implementation": "NOT_ISSUED",
+    "consumer_admission": "NOT_ISSUED",
+    "full_PHYS85_old_raw_recovered": false
+  },
+  "literature_reads": [
+    {
+      "url": "https://arxiv.org/html/0910.1625v1",
+      "locator": "Equation1 and comoving momentum definition",
+      "read": "actual web open",
+      "supports": "Juttner normalization/frame"
+    },
+    {
+      "url": "https://arxiv.org/html/1506.07475v3",
+      "locator": "AppendixB equations64,66-67,71-75,82-83",
+      "read": "actual web open and find",
+      "supports": "Flux/normalized thermal average/pair factor; no specific annihilation cross section adopted"
+    },
+    {
+      "url": "https://reference.wolfram.com/language/ref/BesselK.html",
+      "locator": "Applications specific heat of relativistic ideal gas",
+      "read": "actual web open and find",
+      "supports": "Heat capacity expression correspondence; no Wolfram evaluation"
+    }
+  ],
+  "no_go": {
+    "new_strong_no_go_claim": false,
+    "NG1_NG7": "NOT_APPLICABLE_NEW_NO_GO_NOT_CLAIMED"
+  },
+  "actual_executions": {
+    "Wolfram_calls": 0,
+    "scientific_numerical_children": 0,
+    "parent_kernel_calls": 0,
+    "completed_identity_replays": 0,
+    "PHYS84_attempts": 0,
+    "remote_mutations": 0,
+    "prior_source_modifications": 0,
+    "other_processes_terminated": 0
+  },
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "report": {
+    "path": "reviews/THEORY_REVIEW_KO.md",
+    "bytes": 11213,
+    "sha256": "2925f2aab484a6b441489e184185fc1c75188407fee7344390e5d05b04c6fdf5"
+  }
+}

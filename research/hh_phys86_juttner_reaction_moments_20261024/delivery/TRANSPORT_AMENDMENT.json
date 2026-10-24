@@ -1,0 +1,37 @@
+{
+  "schema": "PHYS86_PAYLOAD_PRESERVING_TRANSPORT_AMENDMENT_V1",
+  "authority": "Root delivery decision under current user-authorized dual backups; scientific criteria, completed identity and budgets unchanged",
+  "reason": {
+    "observed": "Two whole-archive Drive calls lack ACK after controlled local-await interruption; exact reconciliation returned no matching metadata. Dropbox whole-archive ACK succeeded. Latest HE source records small Drive backup acknowledgements.",
+    "cause": "UNRESOLVED",
+    "api_size_limit_established": false,
+    "parent_recompression_diagnostic": "One metadata compression pass saved96485bytes only; no science or benchmark."
+  },
+  "preserved_whole_archives": [
+    "PHYS86_S0_20261024_560f7c942eee.zip",
+    "PHYS86_S1_20261024_280ef5094dd5.zip"
+  ],
+  "old_call_status": "UNKNOWN_NO_ACK remains; no remote failure or cancellation inferred and no blind original whole-file retry",
+  "new_transport": {
+    "provider": "Drive",
+    "form": "Exact byte parts of the unchanged canonical ZIP",
+    "maximum_part_bytes": 6291456,
+    "order": "contiguous ascending byte offsets starting0",
+    "file_naming": "<original ZIP filename>.part001, .part002, ...",
+    "manifest": "Original whole ZIP name/bytes/SHA256 plus every part ordinal/offset/length/SHA256 and observed provider ID after actual ACK",
+    "first_trial": "First S0 part001 upload only; if no actual response, return to controller before dispatching more parts"
+  },
+  "stage_claim": "Multipart stage backup requires actual ACK for every declared part; original whole-object upload remains UNKNOWN separately",
+  "final_restore": {
+    "Drive": "Each part gets its own sequential complete raw GET. Check each part length/SHA, concatenate exact declared order into a fresh whole ZIP, check full length/SHA against original, then all member CRC, payload SHA, Git blobs, actual extraction and rehash.",
+    "Dropbox": "One complete canonical ZIP raw GET and the same whole restore checks.",
+    "forbidden_claim": "Do not call Drive reconstruction a single whole-ZIP-object GET or original whole-upload ACK. Report exact network operation counts and reconstruction method."
+  },
+  "final_JSON": "Immutable observed external JSON binds actual whole identities, all part IDs/receipts/GETs and reconstructed ZIP restore; its own future upload/readback remains separately bound.",
+  "payload_file_or_input_bytes_changed": false,
+  "new_scientific_executions": 0,
+  "scientific_identity": "270d59879327809203beb5f272527724ba85ceba7b3a54989b4417d02219eaa7",
+  "superseded_procedure": "Single provider object per ZIP was a controller delivery form; complete payload restoration remains mandatory. This amendment changes transport framing only.",
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}

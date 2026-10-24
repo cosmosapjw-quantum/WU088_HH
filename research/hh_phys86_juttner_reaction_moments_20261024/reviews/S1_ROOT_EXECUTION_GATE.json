@@ -1,0 +1,68 @@
+{
+  "schema": "PHYS86_S1_ROOT_PREEXECUTION_GATE_V1",
+  "decision": "PASS_STATIC_SCOPED_GO_AFTER_EXACT_S1_PUBLICATION_AND_DUAL_ACK",
+  "stage": "S1_PREEXECUTION",
+  "observed_WU_PR": 143,
+  "observed_WU_HEAD": "560f7c942eeee26d091e609921b0fc7086ddc87d",
+  "fixed_PHYS85_base": "696eca5cf9f1fcbf722370833535f4144af0a54a",
+  "actual_ref_and_policy_check": {
+    "central_previous": "5182d82c45454a4e8f19f2e5384a04a4ae35ed09",
+    "central_current": "d5aa6c94a77b5687052d3d6902d140e2df9ef798",
+    "new_commits": 2,
+    "changed_files": 5,
+    "AGENTS_blob": "429a5a13ee75b1222bc50627f8d5973d01dd21c4",
+    "WU_handoff_blob": "6598d1bd4cbc149259a7f5eb8de55a320569c785",
+    "both_policies_unchanged": true,
+    "new_WU_owner_conflict_observed": false,
+    "assessment": "Five central changes record HE/CR producer returns only. No changed WU physical premise, owned path, model-role policy or cumulative allowance.",
+    "private_evidence": "private/intake/late_delta; all accessible current content not claimed"
+  },
+  "theory_review": "DERIVED_SCOPED_REVIEW_PASS / GO_IMPLEMENT_REVIEWED_BUDGET",
+  "implementation_review": "PASS_STATIC_SCOPED_GO_EXECUTE_REQUEST",
+  "contract_sha256": "ed8bb9f3aeef380b8ffcd5f190e9938b19f44bf9726fb87d1523dd423da52abd",
+  "implementation_manifest_sha256": "194e948efd03baee8fe28475a222a156fe94e87d13937a8e11e535a43651f8d2",
+  "requests": [
+    {
+      "order": 1,
+      "kind": "recovery",
+      "request_sha256": "3db65d4d22e610b6f8d7b1903ebaf2108a73499de6cdaa44312470cfa4c237e9",
+      "code_sha256": "cb33f678b4ce415951a5c66930967eac4144f3c28b03d5b50659d9867343b128",
+      "max_calls": 1
+    },
+    {
+      "order": 2,
+      "kind": "moments",
+      "request_sha256": "41e06202ad710758187c8f771e460c5b29e28a740c91f86f64ec27e44597230d",
+      "code_sha256": "43fdab26db26ac46b13abd3c1dc594ddda9a0abc51a7f78d36f440ff18f6d542",
+      "max_calls": 1
+    }
+  ],
+  "preserved_limits": {
+    "old_PHYS85_calls": 2,
+    "old_remaining_allowance": 0,
+    "current_max_new_calls": 2,
+    "cumulative_max_calls": 4,
+    "timeConstraint_seconds": 60,
+    "inner_seconds": 55,
+    "extra_probes": 0,
+    "automatic_repair_allowance": 0,
+    "local_scientific_children": 0,
+    "kernels_per_request": 1,
+    "parallel_evaluator_calls": 0,
+    "new_ODE": 0,
+    "physical_nuclear_rates": 0,
+    "fast_stopping": 0,
+    "completed_identity_replays": 0
+  },
+  "prerequisites_for_actual_GO": [
+    "S0 actual Drive and Dropbox upload ACKs",
+    "Exact S1 additive expected-SHA publication",
+    "S1 actual Drive and Dropbox upload ACKs",
+    "Root actual GO receipt binding both request identities"
+  ],
+  "actual_GO_issued": false,
+  "scientific_admission": "PENDING_ACTUAL_COMPLETE_OUTPUTS_AND_CONTINUING_INDEPENDENT_ASTRA_REVIEW",
+  "role_scope": "Lower-tier worker executes only frozen arguments and preserves full raw. Root interprets substantive failures; fresh Astra reviews actual raw before admission.",
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED"
+}

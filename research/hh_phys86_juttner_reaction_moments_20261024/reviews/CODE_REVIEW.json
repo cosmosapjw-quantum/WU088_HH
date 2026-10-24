@@ -1,0 +1,77 @@
+{
+  "schema": "PHYS86_INDEPENDENT_CODE_REVIEW_V1",
+  "reviewer": "/root/code_review_86",
+  "reviewed_at_utc": "2026-10-24T04:26:06.668038+00:00",
+  "stage": "C9_STATIC_PRE_EXECUTION",
+  "decision": "PASS_STATIC_SCOPED_GO_EXECUTE_REQUEST",
+  "findings": [],
+  "blocking_findings": [],
+  "authored_implementation": false,
+  "requested_role": "fresh Astra independent reviewer",
+  "observed_backend": "UNOBSERVED",
+  "method": [
+    "whole source and theory reading",
+    "manual algebraic sign/coefficient tracing",
+    "static assertion and order tracing",
+    "read-only byte/hash/JSON composition comparison"
+  ],
+  "contract_sha256": "ed8bb9f3aeef380b8ffcd5f190e9938b19f44bf9726fb87d1523dd423da52abd",
+  "theory_sha256": "1bb5efd6c1e9e92b5fb39148feef0a6da06d7bd636486f3daa6a28b98d9f22a3",
+  "freeze_manifest_sha256": "194e948efd03baee8fe28475a222a156fe94e87d13937a8e11e535a43651f8d2",
+  "requests": {
+    "recovery": {
+      "path": "implementation/RECOVERY_REQUEST_ARGUMENTS.json",
+      "sha256": "3db65d4d22e610b6f8d7b1903ebaf2108a73499de6cdaa44312470cfa4c237e9"
+    },
+    "moments": {
+      "path": "implementation/MOMENTS_REQUEST_ARGUMENTS.json",
+      "sha256": "41e06202ad710758187c8f771e460c5b29e28a740c91f86f64ec27e44597230d"
+    }
+  },
+  "static_checks": {
+    "manifest_files": 15,
+    "parent_core_unchanged": true,
+    "parent_core_bytes": 25893,
+    "request_composition": "EXACT",
+    "recovery_expected_counts": [
+      36,
+      6,
+      23,
+      1017
+    ],
+    "moments_expected_counts": [
+      3,
+      10,
+      82
+    ],
+    "transport_escaped_limit": 8000,
+    "actual_transport_size": "NOT_OBSERVED"
+  },
+  "execution_transition": "S1 publication and dual provider ACK -> root exact-request GO -> one recovery and one moment call -> continuing actual-raw C9 review",
+  "execution_accounting": {
+    "Wolfram_calls": 0,
+    "scientific_local_calculations": 0,
+    "parent_kernel_calls": 0,
+    "completed_science_replays": 0,
+    "remote_mutations": 0
+  },
+  "budget": {
+    "old_calls": 2,
+    "old_allowance": 0,
+    "new_recovery_max": 1,
+    "new_moments_max": 1,
+    "planned_cumulative_max": 4,
+    "optional_probes": 0,
+    "automatic_repair_calls": 0,
+    "outer_seconds": 60,
+    "inner_seconds": 55
+  },
+  "runtime_science_status": "NOT_RUN",
+  "scientific_implementation_admission": "PENDING_ACTUAL_RAW_REVIEW",
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "report": {
+    "path": "reviews/CODE_REVIEW_KO.md",
+    "sha256": "ffbed28926b51233b759e7c6147635b2b747530f3d8dc15a87c48ca6611ff1f1"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "schema": "PHYS86_WU_DAG_OVERLAY_V1",
+  "stage": "S2_EXACT_REFERENCE_PASS_SCOPED",
+  "central_fixed_authority": "0f9d9df825be1dac9ca9bdf73cdc2e8908bcba17",
+  "central_observed_HEAD": "98ca692b200227c51011bfbbe037daaccfc6f3eb",
+  "central_authority_mutated": false,
+  "order": [
+    {
+      "id": "CURRENT_OWNER_REF_BACKUP_CONTEXT_INTAKE",
+      "status": "COMPLETE_SCOPED",
+      "repos": 51,
+      "branch_refs": 2226,
+      "selected_source_blobs_verified": 27,
+      "private_conversations": "UNAVAILABLE"
+    },
+    {
+      "id": "WU_CE83_OWNER_COMPLETION",
+      "status": "NUMERICALLY_CHECKED_SCOPED_REUSED",
+      "identity": "e09e64848d545d844590c6cc733cc870109d8fa4f3b44bff796afd11c0753d0c",
+      "new_science": 0,
+      "alias": "BOUND_BOUND_CE_AND_RADIATIVE_COOLING"
+    },
+    {
+      "id": "PHYS84_HI_CE_SOURCE_ADAPTER",
+      "depends_on": [
+        "WU_CE83_OWNER_COMPLETION"
+      ],
+      "status": "DERIVED_STATIC_REVIEWED_NUMERICAL_WAIT",
+      "new_children": 0,
+      "lease": "reserve1.5GiB+job0.5GiB unchanged"
+    },
+    {
+      "id": "WU_NUCLEAR_PARTICLE_OWNERSHIP",
+      "status": "PARTIAL",
+      "subnodes": [
+        {
+          "id": "PHYS81_COM_KINEMATICS",
+          "status": "COMPLETE_SCOPED_REUSED"
+        },
+        {
+          "id": "PHYS85_NORMAL_FRAME_EVENT_OWNER_AND_NR_SELECTION",
+          "status": "DERIVED_SCOPED_REVIEW_PASS_REUSED"
+        },
+        {
+          "id": "PHYS85_EXACT_REFERENCE_IMPLEMENTATION",
+          "status": "RUNTIME_CHECKED_VIA_PHYS86_NEW_COMPLETE_PROJECTED_CERTIFICATE",
+          "old_calls": 2,
+          "old_complete_applications": 0,
+          "old_allowance": 0,
+          "previous_status": "STATIC_PASS_RUNTIME_NOT_VERIFIED"
+        },
+        {
+          "id": "PHYS86_COMPLETE_COMPACT_REFERENCE",
+          "depends_on": [
+            "PHYS85_EXACT_REFERENCE_IMPLEMENTATION"
+          ],
+          "status": "EXACT_FINITE_REFERENCE_PASS_SCOPED",
+          "additional_calls_permitted_after_S1_dual_ACK_and_root_GO": 1,
+          "actual_calls": 1,
+          "actual_counts": {
+            "events": 36,
+            "ensembles": 6,
+            "guards": 23,
+            "assertions": 1017
+          },
+          "old_truncated_report_recovered": false
+        },
+        {
+          "id": "PHYS86_JUTTNER_REACTION_SELECTED_MOMENTS",
+          "status": "DERIVED_AND_EXACT_REFERENCE_PASS_SCOPED",
+          "reference_execution": "COMPLETE_SCOPED",
+          "additional_calls_permitted_after_S1_dual_ACK_and_root_GO": 1,
+          "actual_calls": 1,
+          "actual_counts": {
+            "points": 3,
+            "guards": 10,
+            "assertions": 82
+          }
+        },
+        {
+          "id": "NUCLEAR_PHYSICAL_FINITE_T_EVENT_SUPPLIER",
+          "depends_on": [
+            "PHYS86_COMPLETE_COMPACT_REFERENCE",
+            "PHYS86_JUTTNER_REACTION_SELECTED_MOMENTS"
+          ],
+          "status": "OPEN"
+        },
+        {
+          "id": "NUCLEAR_FAST_STOPPING_AND_ADMISSION",
+          "depends_on": [
+            "NUCLEAR_PHYSICAL_FINITE_T_EVENT_SUPPLIER"
+          ],
+          "status": "OPEN"
+        }
+      ],
+      "alias": "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP"
+    },
+    {
+      "id": "WU_LI_SOURCE_UNCERTAINTY",
+      "status": "OPEN",
+      "requirements": [
+        "instrument response",
+        "deconvolution",
+        "isotope",
+        "target state",
+        "physical uncertainty"
+      ]
+    },
+    {
+      "id": "WU_HE_LI_CX_STATE_ENERGY",
+      "alias": "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+      "status": "OPEN"
+    },
+    {
+      "id": "WU_D_PI_RR_MATCHED",
+      "alias": "D_PI_RR_MATCHED_SOURCE_MOMENTS",
+      "status": "OPEN_EMPIRICAL_SOURCE",
+      "conditional_C23E": "REUSED_ONLY"
+    },
+    {
+      "id": "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT",
+      "status": "OPEN",
+      "REC_HISTORY02R": "SCOPED_CHARACTERISTIC_ADAPTER_REUSED; physical history uncertainty unresolved"
+    },
+    {
+      "id": "LI_HARD_UV_INNER_SHELL_SPECTRAL_CONTRACT",
+      "status": "OPEN"
+    },
+    {
+      "id": "WU_SPECTRAL_GEOMETRY_COUPLING",
+      "alias": "FULL_GEOMETRY_SPECTRAL_BACKREACTION",
+      "depends_on": [
+        "WU_CE83_OWNER_COMPLETION",
+        "WU_HE_LI_CX_STATE_ENERGY",
+        "WU_D_PI_RR_MATCHED",
+        "WU_NUCLEAR_PARTICLE_OWNERSHIP",
+        "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT",
+        "LI_HARD_UV_INNER_SHELL_SPECTRAL_CONTRACT"
+      ],
+      "status": "OPEN"
+    }
+  ],
+  "external_parallel_owners": {
+    "BASS_B3B": "S0 backup preparation observed; no WU implementation",
+    "HE_CCC_EXCHANGE": "PR95 scoped child, latest central closeout reports dual upload+metadata, independent remote SHA false; physical provider not admitted",
+    "REI_L0_TRACE": "targeted numerics producer evidence; formal HOLD/fresh review and own budget unresolved",
+    "REI_L0_CLOSED_EXCHANGE": "New central uv_mixed source-exchange/signed-STF finite algebra scoped admission; next elemental HI L1 static only, numeric NOT_RUN/NOT_AUTHORIZED; earlier trace budget hold not erased"
+  },
+  "completed_identity_replays": 0,
+  "global_goal_completion_fraction": null,
+  "fraction_reason": "Open physical supplier, coupled-history, geometry, uncertainty and original HH admission obligations have no agreed weighted denominator. R/C step completion is not global physics completion.",
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "next_physics_node": "NUCLEAR_PHYSICAL_FINITE_T_EVENT_SUPPLIER",
+  "science_current_unit": "PASS_SCOPED",
+  "delivery": "Separate current receipts; not inferred from science PASS",
+  "closeout_delta": "intake/CLOSEOUT_CENTRAL_DELTA.json; additional3commits29files, WU policies/nodes unchanged"
+}
