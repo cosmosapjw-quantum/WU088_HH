@@ -1,0 +1,39 @@
+{
+  "schema": "PHYS88_SYMBOLIC_REFERENCE_RESULT_V1",
+  "calls": 2,
+  "first_call": "FAILED_REPORT_JSON_UNSIMPLIFIED_TIMES",
+  "recovery": "ACTUAL_DIAGNOSTIC_RETURNED",
+  "raw": "WOLFRAM_REPAIR1_RAW.json",
+  "residual_groups": 13,
+  "exact_zero_groups": 12,
+  "exact_zero_scalar_components": 18,
+  "unresolved_by_CAS": [
+    {
+      "key": "COM_inverse_map",
+      "status": "UNSIMPLIFIED_SYMBOLIC_EXPRESSION; not accepted as nonzero and not counted zero",
+      "manual_proof": "For K=Ks(Es)>0 and Mb>0, Eb=K(2Mb+K)/(2b) gives sqrt(Mb^2+2bEb)=sqrt((Mb+K)^2)=Mb+K. Hence inverseKb=K, and K(2Ms+K)/(2h)=Es by Ks definition."
+    }
+  ],
+  "CAS_all_zero_flag": false,
+  "monotonicity": {
+    "CAS": "a*awr + sqrt((a+b)^2+2*b*eb) > b",
+    "status": "CONDITIONAL_PREDICATE_RETURNED; manual positive-branch implication",
+    "proof": "a,b,awr,eb>0 -> sqrt((a+b)^2+2b eb)>a+b>b; adding a*awr>0 preserves >b."
+  },
+  "exact_nominal_eV": {
+    "Q_difference": "81.63",
+    "binding_shift": "0.003700036867",
+    "convention_residual_difference": "81.626299963133",
+    "DeltaH": "510956.383150562",
+    "DeltaD": "510874.753150562",
+    "rhoH": "-28.969104838298",
+    "rhoD": "-110.595404801431"
+  },
+  "scope": "Exact displayed token arithmetic; actual18scalar CASzeros plus independently derived positive-branch inverse/monotonicity. No physical CI or empirical source-transfer proof.",
+  "lineage_calls": 7,
+  "old_additional_allowance": 0,
+  "remaining_new_Wolfram_calls": 0,
+  "physical_uncertainty": null,
+  "independent_branch_proof": "PASS; reviews/R6_SYMBOLIC_RECOVERY_REVIEW.json",
+  "root_adoption": "PASS_SCOPED_PREIMPLEMENTATION_WITH_MANUAL_POSITIVE_BRANCH_CLOSURE"
+}

@@ -1,0 +1,112 @@
+{
+  "schema": "PHYS88_R6_SYMBOLIC_RECOVERY_ADOPTION_V1",
+  "recorded_utc": "2026-10-24T11:31:46.075160+00:00",
+  "reviewer": "independent_review_87; Astra independent source/theory reviewer",
+  "decision": "PASS_SCOPED_PREIMPLEMENTATION_WITH_MANUAL_POSITIVE_BRANCH_CLOSURE",
+  "open_material_findings": 0,
+  "relation_to_original_review": "Addendum only. Original R6 review and historical metric/acceptance repair evidence remain unchanged. CONTRACT revision3 is now the authority; it explicitly amends the originally planned1 symbolic call to total2 for one diagnosed reporting repair.",
+  "reviewed_actual_artifacts": {
+    "CONTRACT.json": {
+      "path": "WU088_HH/research/hh_phys88_atomic_bare_remap_20261024/CONTRACT.json",
+      "bytes": 13214,
+      "sha256": "8f45d6a70d7cf7ffcc556b74636f25087167a3372f781eee4078f5dd00e4154d"
+    },
+    "WOLFRAM_REFERENCE.wl": {
+      "path": "WU088_HH/research/hh_phys88_atomic_bare_remap_20261024/theory/WOLFRAM_REFERENCE.wl",
+      "bytes": 2783,
+      "sha256": "462cc2715ce99cd3614d07fc741e9d820e03ee73e96bc0dc15b9d44e1fa73456"
+    },
+    "WOLFRAM_ATTEMPT1_RAW.json": {
+      "path": "WU088_HH/research/hh_phys88_atomic_bare_remap_20261024/theory/WOLFRAM_ATTEMPT1_RAW.json",
+      "bytes": 460,
+      "sha256": "53b967c3a294898b6119e79fedada31d0961bf9dc8311c4b74b2ddb4b76b70b2"
+    },
+    "WOLFRAM_REFERENCE_REPAIR1.wl": {
+      "path": "WU088_HH/research/hh_phys88_atomic_bare_remap_20261024/theory/WOLFRAM_REFERENCE_REPAIR1.wl",
+      "bytes": 2581,
+      "sha256": "cea74a09638aec9ff9b76619a9fca93d13ed9224c73429128c08d7ac1940c09a"
+    },
+    "WOLFRAM_REPAIR1_RAW.json": {
+      "path": "WU088_HH/research/hh_phys88_atomic_bare_remap_20261024/theory/WOLFRAM_REPAIR1_RAW.json",
+      "bytes": 2386,
+      "sha256": "a18baca939ee0543afbb95cc4b8f242a641d0d84e29b92aef123bcfb2b82fa39"
+    },
+    "WOLFRAM_RESULT.json": {
+      "path": "WU088_HH/research/hh_phys88_atomic_bare_remap_20261024/theory/WOLFRAM_RESULT.json",
+      "bytes": 1574,
+      "sha256": "44241852a0e8001d30da4361de4cb4756bcf96a45d1f7507666b6f67d69cb639"
+    },
+    "POSITIVE_BRANCH_CLOSURE_KO.md": {
+      "path": "WU088_HH/research/hh_phys88_atomic_bare_remap_20261024/theory/POSITIVE_BRANCH_CLOSURE_KO.md",
+      "bytes": 1362,
+      "sha256": "f6a5a4edb75220f1276c326823bd6b55915f70d72f765c713b9bb6fb4ff09c82"
+    },
+    "SYMBOLIC_REPORT_REPAIR_AUTHORIZATION.json": {
+      "path": "WU088_HH/research/hh_phys88_atomic_bare_remap_20261024/reviews/SYMBOLIC_REPORT_REPAIR_AUTHORIZATION.json",
+      "bytes": 981,
+      "sha256": "19d80a84b0bb38430a610780e4e55dc48b629dcf3af6c83e63894b106430a252"
+    },
+    "R6_THEORY_CONTRACT_REVIEW.json": {
+      "path": "wu_phys88_20261024/intake/independent_source_theory/R6_THEORY_CONTRACT_REVIEW.json",
+      "bytes": 15074,
+      "sha256": "d0dd840455843395f0132991eea8fbe9bc32a04688e1eefbe43413d7dd31dea1"
+    },
+    "R6_THEORY_CONTRACT_REVIEW.md": {
+      "path": "wu_phys88_20261024/intake/independent_source_theory/R6_THEORY_CONTRACT_REVIEW.md",
+      "bytes": 8085,
+      "sha256": "43bccb7e993aaa2534f0317d67bedd9ea440b1f597784d0b6c0a3e68df077c7d"
+    }
+  },
+  "finding": {
+    "id": "P88-R6-03",
+    "original_result": "Actual attempt1 returned Export::jsonstrictencoding Expression Times cannot be exported as JSON and $Failed; no numerical zeros were adopted from it.",
+    "repair_authority": "Root explicitly authorized one stateless re-evaluation of the same failed equations for diagnostic InputForm output; CONTRACT revision3. Automatic retries remain0.",
+    "same_defining_expressions_before_output": true,
+    "actual_recovery": "The saved actual recovery contains the first and additionally simplified InputForm residual associations, all_zero=False, a conditional monotonicity predicate and exact/decimal nominal associations.",
+    "exact_zero_groups": 12,
+    "total_residual_groups": 13,
+    "exact_zero_scalar_components": 18,
+    "total_residual_scalar_components": 19,
+    "CAS_unsimplified_group": "COM_inverse_map",
+    "CAS_all_zero_flag": false,
+    "status": "CLOSED_BY_ACTUAL_DIAGNOSTIC_AND_INDEPENDENT_EXACT_POSITIVE_BRANCH_PROOF",
+    "not_claimed": "No assertion of19 CAS zeros, no successful attempt1 report, no numerical counterexample, no new physical uncertainty and no third evaluator call."
+  },
+  "independent_manual_proof": {
+    "domain": "a,b,h,Es>0 with h=a*awr and awr>0; Ms=a+h, Mb=a+b, Ws=sqrt(Ms^2+2hEs), K=Ws-Ms>0.",
+    "mapping": "Eb=K*(2Mb+K)/(2b)>0 gives Mb^2+2bEb=(Mb+K)^2. Since Mb+K>0, principal sqrt(Mb^2+2bEb)=Mb+K, so recovered bare K equals K. Then Es_recovered=K*(2Ms+K)/(2h)=Es.",
+    "actual_returned_expression": "The actual unsimplified residual has prefactor(h-b)/h multiplying h-b-Ws+sqrt(R). Its long returned radicand R equals (Ws+b-h)^2=(Mb+K)^2. Since Ws+b-h=Mb+K>0, the bracket is0. This explicitly closes the actual returned expression as well as the intended inverse-map formula.",
+    "monotonicity": "dEs/dEb=b*(Ms+K)/(h*(Mb+K))>0. The actual CAS predicate h+sqrt((a+b)^2+2bEb)>b follows from sqrt((a+b)^2+2bEb)>a+b>b and h>0.",
+    "methods": "Algebra and the positive principal-square-root branch on the already frozen source domain; no new evaluation or numerical substitution."
+  },
+  "saved_exact_nominal_results": {
+    "Q_difference": "81.63",
+    "binding_shift": "0.003700036867",
+    "convention_residual_difference": "81.626299963133",
+    "DeltaH": "510956.383150562",
+    "DeltaD": "510874.753150562",
+    "rhoH": "-28.969104838298",
+    "rhoD": "-110.595404801431"
+  },
+  "nominal_scope": "Copied from the actually received saved result. Q difference81.63eV includes binding shift0.003700036867eV plus convention-residual difference81.626299963133eV; no source-physical CI or exact physical mass claim.",
+  "budget_accounting": {
+    "root_actual_new_symbolic_calls": 2,
+    "attempt1_report_failure": 1,
+    "diagnostic_recovery_calls": 1,
+    "old_lineage_calls_preserved": 5,
+    "lineage_calls": 7,
+    "remaining_new_symbolic_calls": 0,
+    "old_additional_allowance": 0,
+    "local_primary_children_at_review": 0,
+    "reviewer_evaluator_calls": 0,
+    "reviewer_scientific_executions": 0,
+    "budget_reset": false
+  },
+  "claim_gate": "R6 source/formulas/acceptance may proceed under revision3. Later implementation and actual numerical evidence remain required. Atomic-to-bare and physical-supplier parents remain PARTIAL; physical kernel/electron-state/consumer/stopping OPEN; production NOT_ISSUED.",
+  "activity": "Read actual saved scripts/attempts/result/proof/authorization; compare unchanged symbolic definitions; write only independent intake addendum. No Git/provider/root-file mutation and no CAS/numeric execution.",
+  "review_markdown": {
+    "path": "wu_phys88_20261024/intake/independent_source_theory/R6_SYMBOLIC_RECOVERY_REVIEW.md",
+    "bytes": 3987,
+    "sha256": "24cb9fc6862279f82fc6703678d57fdc022990c4a00349752888363de8785dc0"
+  }
+}

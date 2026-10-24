@@ -1,0 +1,96 @@
+{
+  "schema": "PHYS88_DAG_OVERLAY_V1",
+  "authoritative_base_central": "85f9ba1350c076e8df01f5858342df74c3574215",
+  "fixed_handoff": "0f9d9df825be1dac9ca9bdf73cdc2e8908bcba17",
+  "original_author_contracts": "PRESERVED; overlay only",
+  "nodes": [
+    {
+      "id": "WU_CE83_OWNER_COMPLETION",
+      "state": "COMPLETE_SCOPED_REUSED",
+      "rerun": false
+    },
+    {
+      "id": "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP",
+      "state": "COMPLETE_SCOPED_PHYS85_REUSED",
+      "activation": false
+    },
+    {
+      "id": "NUCLEAR_FINITE_T_REACTION_SELECTED_JUTTNER_MOMENTS",
+      "state": "COMPLETE_SCOPED_PHYS86_REUSED"
+    },
+    {
+      "id": "ENDF_H1_NATIVE_FINITE_WINDOW_JOINT_MOMENTS",
+      "state": "COMPLETE_SCOPED_PHYS87_REUSED",
+      "head": "496670cf39b3c2b5ff5e208c01bb135fe96b3780"
+    },
+    {
+      "id": "NUCLEAR_ATOMIC_TO_BARE_CAPTURE_REMAP",
+      "state": "PARTIAL",
+      "child": "MASS_CONVENTION_COVARIANT_RELABELLING_AND_CONDITIONAL_BARE_KERNEL"
+    },
+    {
+      "id": "MASS_CONVENTION_COVARIANT_RELABELLING_AND_CONDITIONAL_BARE_KERNEL",
+      "state": "COMPLETE_SCOPED_CONDITIONAL_BARE_FINITE_WINDOW",
+      "unit": "PHYS88",
+      "scientific_identity": "2712595494bd9d784539d470c4ad0b178314c1ca55d2b0b9a75cb5dc1e6a2774",
+      "admission": "SCIENTIFIC_ADMISSION.json",
+      "delivery": "S2_PUBLISHED_DUAL_ACK; FINAL_EXTERNAL_RECEIPTS_PENDING"
+    },
+    {
+      "id": "NUCLEAR_BARE_KERNEL_SOURCE_AND_CONSUMER_CONTRACT",
+      "state": "OPEN_NEXT",
+      "needs": [
+        "empirical kernel/source/charge-state validity",
+        "required support/tail and uncertainty",
+        "named thermal/fast/radiation consumer"
+      ],
+      "activation": false
+    },
+    {
+      "id": "NUCLEAR_PHYSICAL_FINITE_T_EVENT_SUPPLIER",
+      "state": "PARTIAL",
+      "network_rates": false,
+      "fast_stopping": false
+    }
+  ],
+  "edges": [
+    [
+      "WU_CE83_OWNER_COMPLETION",
+      "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP"
+    ],
+    [
+      "NUCLEAR_THERMAL_FAST_PARTICLE_OWNERSHIP",
+      "NUCLEAR_FINITE_T_REACTION_SELECTED_JUTTNER_MOMENTS"
+    ],
+    [
+      "NUCLEAR_FINITE_T_REACTION_SELECTED_JUTTNER_MOMENTS",
+      "ENDF_H1_NATIVE_FINITE_WINDOW_JOINT_MOMENTS"
+    ],
+    [
+      "ENDF_H1_NATIVE_FINITE_WINDOW_JOINT_MOMENTS",
+      "MASS_CONVENTION_COVARIANT_RELABELLING_AND_CONDITIONAL_BARE_KERNEL"
+    ],
+    [
+      "MASS_CONVENTION_COVARIANT_RELABELLING_AND_CONDITIONAL_BARE_KERNEL",
+      "NUCLEAR_BARE_KERNEL_SOURCE_AND_CONSUMER_CONTRACT"
+    ],
+    [
+      "NUCLEAR_BARE_KERNEL_SOURCE_AND_CONSUMER_CONTRACT",
+      "NUCLEAR_PHYSICAL_FINITE_T_EVENT_SUPPLIER"
+    ]
+  ],
+  "parallel_OPEN": [
+    "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+    "LI_INSTRUMENT_DECONVOLUTION_ISOTOPE_TARGET_STATE_UNCERTAINTY",
+    "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT",
+    "D_PI_RR_MATCHED_SOURCE_MOMENTS",
+    "LI_HARD_UV_INNER_SHELL_SPECTRAL_CONTRACT",
+    "FULL_GEOMETRY_SPECTRAL_BACKREACTION"
+  ],
+  "global_completion_percent": null,
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "latest_central_observation": "6f73625804772d00060a190a1f3e56b19bc19a84",
+  "latest_parallel_delta": "Actual dbd6 CR EI observation preserved by expected-SHA WU-only central6f736; named nuclearconsumer remainsNOT_BOUND",
+  "central_publication": "delivery/CENTRAL_S2_PUBLICATION.json"
+}

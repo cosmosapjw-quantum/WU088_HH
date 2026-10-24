@@ -1,0 +1,244 @@
+{
+  "schema": "PHYS88_ATOMIC_BARE_CAPTURE_REMAP_V1",
+  "revision": 3,
+  "unit": "PHYS88_CONDITIONAL_ATOMIC_TO_BARE_CAPTURE_REMAP",
+  "date_KST": "2026-10-24",
+  "workflow": "physmath-research-loop user-selected 1.0.0",
+  "repository": "cosmosapjw-quantum/WU088_HH",
+  "base_HEAD": "496670cf39b3c2b5ff5e208c01bb135fe96b3780",
+  "base_tree": "7bf54f2190da29c0804f2becf2683c404046d8ce",
+  "branch": "research/hh-phys88-atomic-bare-remap-20261024",
+  "owned_path": "research/hh_phys88_atomic_bare_remap_20261024",
+  "parent_node": "NUCLEAR_ATOMIC_TO_BARE_CAPTURE_REMAP",
+  "scoped_child": "MASS_CONVENTION_COVARIANT_RELABELLING_AND_CONDITIONAL_BARE_KERNEL",
+  "parent_supplier": "NUCLEAR_PHYSICAL_FINITE_T_EVENT_SUPPLIER",
+  "source": {
+    "native_parent": "PHYS87@496670cf39b3c2b5ff5e208c01bb135fe96b3780",
+    "raw_file": "n-001_H_001.endf",
+    "raw_sha256": "3024d8f0db604b074e33ed8b05027eb9f5a738614041ba44c83f048e0d0bc1af",
+    "raw_bytes": 671232,
+    "table_sha256": "b14ad9b4a2379166ec2b2c04b2a77efb4c819498924682072d74a6b4e31c5014",
+    "native_energy_eV": [
+      "0.00001",
+      "20000000"
+    ],
+    "native_points": 153,
+    "native_intervals": 152,
+    "interpolation": "Preserve original NativeSource.evaluate at native Es: MF3 INT5 through knot33 then INT2; MF6 lin-lin. Never re-interpolate mapped Eb knots under old flags.",
+    "native_positivity": "Reuse PHYS87 exact153knots/152convexcell witness with unchanged SHA. Monotone coordinate composition preserves its positivity; no old positivity campaign replay.",
+    "angular": "LCT2 LAW2 LANG0 NL2, normalized f(mu)=1/2[1+3a1 mu+5a2 P2(mu)], photon yield1; recoil LAW4",
+    "outside_support": "UNAVAILABLE; no extrapolation/zero-extension/full-rate claim",
+    "empirical_bare_equivalence": "OPEN; MF1 n-p R-matrix channel supports choosing LAB_ANCHORED but does not prove charge-state-invariant source transport",
+    "uncertainty": "MF33 retained not propagated; no angular covariance; mapping differences not confidence interval"
+  },
+  "mass_inputs": {
+    "unit": "eV",
+    "epsilon_n": "939565421.94",
+    "epsilon_p": "938272089.43",
+    "epsilon_d": "1875612945.00",
+    "epsilon_e": "510998.95069",
+    "AWR": "0.9991673",
+    "Q_source": "2224648",
+    "Q_bare": "2224566.37",
+    "B_H": "13.598434599702",
+    "B_D": "13.602134636569",
+    "binding_displayed_uncertainty_eV": "0.000000000012 each; no independent-error propagation",
+    "bare_provenance": "unchanged PHYS81/85/87 CODATA2022 displayed values",
+    "binding_provenance": "NIST ASD5.12 1s 2S1/2 H/D HDEL rows actually retrieved as Exa-rendered primary text; original HTTP bytes unavailable (403); saved raw tool response is not server-byte readback",
+    "atomic": "epsH_S=AWR*epsn; epsD_S=epsn+epsH_S-Q_source",
+    "scope": "Exact decimal/rational arithmetic on displayed nominal inputs does not make physical masses exact."
+  },
+  "theory": {
+    "metric": "-+++",
+    "q_vector": "q^mu=(E,c p)=epsilon U^mu, U=(gamma,gamma beta); c,hbar,kB explicit, energies in eV after units conversion",
+    "total_mass_shift": "DeltaH=epsH_S-epsp; DeltaD=epsD_S-epsd",
+    "convention_residual": "rhoH=epsH_S-(epsp+epse-BH); rhoD=epsD_S-(epsd+epse-BD)",
+    "mass_identity": "Q_source-Q_bare=DeltaH-DeltaD=BD-BH+rhoH-rhoD",
+    "relabel_identity": "For the same source event and the same H/D velocities, outgoing-minus-incoming bare q residual C=DeltaH*UH-DeltaD*UD; retained signed convention/internal reservoir changes by -C.",
+    "relabel_scope": "An algebraic relabel ledger, not an on-shell electron, ionization event, heat deposit, stopping model or new physical channel. Do not also add C to a fresh closed bare event.",
+    "bare_event": "Given bare incoming q_n,q_p and a COM photon direction: Wb=sqrt(-(q_n+q_p)^2), Kb=Wb-Mb, qb=Qb+Kb, e*=qb(2Wb-qb)/(2Wb), kd*=qb^2/(2Wb); boost both outputs to the original normal frame.",
+    "maps": {
+      "LAB_ANCHORED": {
+        "assumption": "sigma_b(Eb)=sigma_S(Es), a_l,b(Eb)=a_l,S(Es), Es=Eb at equal neutron target-rest LAB energy; no extra Jacobian on sigma",
+        "K_of_Es": "2 epsp Es/(sqrt(Mb^2+2 epsp Es)+Mb)",
+        "dK_dlogEs": "epsp Es/Wb",
+        "bare_support": "same numeric native LAB endpoints"
+      },
+      "FIXED_COM_K": {
+        "assumption": "sigma_b(Eb)=sigma_S(Es), a_l,b(Eb)=a_l,S(Es), Kb(Eb)=Ks(Es); conditional comparator, no fixed-amplitude claim",
+        "K_of_Es": "2 epsH_S Es/(sqrt(Ms^2+2 epsH_S Es)+Ms)",
+        "dK_dlogEs": "epsH_S Es/Ws",
+        "inverse_to_Eb": "Kb*(2 Mb+Kb)/(2 epsp)",
+        "bare_support": "native Es endpoints mapped through K and Eb; explicitly distinct from LAB_ANCHORED"
+      }
+    },
+    "thermal": "Independent common-T isotropic Maxwell-Juttner bare n,p reactants in same normal frame; no drift/screening/stimulation/charge-state evolution; reuse PHYS86/87 invariant reduction with new bare masses and declared map",
+    "lambda": "Kb*(2Mb+Kb)*(4epsn*epsp+2Mb*Kb+Kb^2)",
+    "rate": "c/(4epsn^2 epsp^2 theta scaledK2(epsn/theta)scaledK2(epsp/theta))* integral_nativeEs sigmaS(Es)*lambda_b*scaledK1(Wb/theta)*exp(-Kb/theta)*(dKb/dlogEs) dlogEs",
+    "moments": "G=K2/K1,G2=1+3G/z; meanKin=Kb+Wb*(G-1),meanEgamma=eStar*G,meanKd=kStar+(Wb-eStar)*(G-1); same positive normalized event measure; variance/covariance centered as PHYS87",
+    "score": "theta*dlog(rate)/dlogT=meanKin-u_n-u_p, with u_i=eps_i*(K1/K2-1)+3theta",
+    "owners": "Bare n+p->d+gamma; h=0/1; net thermal count h-2,fast count1-h,free-electron incidence0; six disjoint energy columns [h<Kd>-<Kin>,(1-h)<Kd>,-Qb,0,Egamma_handoff,Egamma_escape]; sum0; Cv*Tdot/R=-<Kin>+un+up+h*(<Kd>-ud)"
+  },
+  "numerical_plan": {
+    "T_K": [
+      255,
+      10000,
+      1000000,
+      100000000
+    ],
+    "T_guard_K": [
+      255,
+      101000000
+    ],
+    "primary_orders": [
+      16,
+      32
+    ],
+    "primary_full_integrals": 16,
+    "FD": {
+      "T_K": 100000000,
+      "hlog": "2^-8",
+      "order": 32,
+      "maps": 2,
+      "scalar_integrals": 4
+    },
+    "native_integration_coordinate": "log Es over every152nativeinterval for each map; never resample source knots as a new represented function",
+    "bessel": "Reuse frozen ScaledBesselSix utility only; no PHYS87 NativeThermalIntegrator, run_primary, positivity campaign or old science callbacks.",
+    "z_min": 100000,
+    "relabel_and_bare_event_cases": {
+      "native_Es_eV": [
+        0.0253,
+        10000,
+        20000000
+      ],
+      "normal_boost_beta": [
+        0.2,
+        0.6
+      ],
+      "COM_photon_mu": [
+        -1,
+        0,
+        1
+      ],
+      "phi_rad": 0,
+      "source_relabel_cases": 18,
+      "bare_cases_per_map": 18,
+      "boost_direction": "z; target-rest incoming neutron along z then common normal boost. Exact symbolic construction covers arbitrary four-velocity; numerical fixture scope is this finite set."
+    },
+    "owner_rows": 32,
+    "independent_reference": "one new child: separate raw ENDF parser, scipy.special.kve plus adaptive quadrature at1e8K both maps, rate/meanKin/meanEgamma/meanKd (8 fields); no production imports; 152 source cells each. Record actual callbacks.",
+    "figures": "one saved-output-only renderer;2PNG+2PDF; no numerical supplier evaluation",
+    "resume": "one actual terminal identity check must SKIP with scientific callback0 and result rewrite0"
+  },
+  "acceptance": {
+    "source_identity_exact": true,
+    "decimal_mass_identity_exact": true,
+    "monotone_mapping": "Both maps strictly increasing analytic derivative>0; finite endpoint/knot roundtrip relative residual<=3e-15 on selected153sourceknots",
+    "bare_4vector_scaled_residual": 2e-15,
+    "relabel_carrier_abs_eV": 3e-06,
+    "mass_shell_scaled_residual": 3e-15,
+    "owner_energy_closure_abs_eV": 2e-07,
+    "quadrature_relative_rate_means": 1e-08,
+    "FD_log_rate_slope_abs": 5e-07,
+    "independent_relative_rate_means": 1e-07,
+    "nonnegative_variances": true,
+    "guards": "Explicit map token and conditional transport opt-in required; reject nonfinite/out-of-domain source/native/bare energy,T,invalid owner/route,production activation; never clip.",
+    "no_uncertainty_interval": true,
+    "open_material_findings": 0,
+    "claim": "DERIVED_CONDITIONAL_REMAP_AND_NUMERICALLY_CHECKED_BARE_FINITE_WINDOW; empirical source equivalence and production remain OPEN",
+    "scaling_definitions": {
+      "four_vector": "max_mu abs(sum_out q_mu - sum_in q_mu) / S4, S4=sum_over_all_incoming_and_outgoing_particles abs(q0); evaluate in the same normal frame, S4>0",
+      "mass_shell": "abs(-q0^2+sum_i qi^2+epsilon^2)/(q0^2+sum_i qi^2+epsilon^2), denominator>0; photon epsilon=0",
+      "relabel": "max_mu abs(d*UD_mu+k_mu-qn_mu-b*UH_mu-C_mu), eV absolute; C uses exact displayed rest shifts evaluated directly, not a subtraction of two large sector residuals",
+      "mapping_roundtrip": "abs(recovered_native_Es-original_native_Es)/original_native_Es on all153strictlypositive nativeknots",
+      "quadrature_reference": "abs(test-reference)/abs(reference) for positive rate and positive energy means; no post-result denominator choice",
+      "FD": "absolute error between log-rate central difference and analytic dlograte/dlogT",
+      "owner_closure": "absolute sum of the six disjoint energy columns in eV/event"
+    }
+  },
+  "budget": {
+    "reset": false,
+    "inherited_money": null,
+    "currency": null,
+    "spent_total": null,
+    "PHYS85_86_evaluator_calls_preserved": 4,
+    "PHYS87_evaluator_calls_preserved": 1,
+    "old_additional_allowance": 0,
+    "new_Wolfram_symbolic_calls_max": 2,
+    "Wolfram_timeConstraint_s": 60,
+    "new_primary_children_max": 1,
+    "new_independent_reference_children_max": 1,
+    "new_saved_figure_children_max": 1,
+    "primary_cpu_s": 24,
+    "primary_wall_s": 60,
+    "reference_cpu_s": 30,
+    "reference_wall_s": 60,
+    "figures_cpu_s": 8,
+    "figures_wall_s": 30,
+    "reason": "New user-requested affected mass/coordinate identity;20newbareintegrals plus a distinct independent reference. Caps are prospective guards, not historical budget reset or cash allocation.",
+    "automatic_retry": 0,
+    "repair": "Only a concrete diagnosed finding with affected-input identity and explicit controller amendment; preserve original failure and cost; no automatic reserve.",
+    "threads": 1,
+    "workers": 1,
+    "reserve_GiB": 1.5,
+    "job_GiB": 0.5,
+    "cache_credit": false,
+    "lease": "Pinned original PHYS78 shared gate SHA76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124; /tmp/rei-bianchi-cooperative-leases",
+    "affinity": "Scientific CPU0/coordinator CPU8 only if actually available and uncontested; fresh gate each child; no other-process termination.",
+    "new_ODE": 0,
+    "old_science_replay": 0,
+    "benchmark": 0,
+    "network_rate_activation": 0,
+    "fast_stopping": 0,
+    "PHYS87_cost_reused": {
+      "local_children": 3,
+      "cpu_s": 4.364383,
+      "wall_s": 4.369048669001131,
+      "additional_allowance": 0
+    },
+    "Wolfram_repair_amendment": "P88-R6-03: original1call returnedJSONExportfailure without report; preserve it and permit exactly1failed-result output/simplification diagnostic recovery with same equations, 60s cap, no new model. Totalnewcap2; no automatic reserve."
+  },
+  "roles": {
+    "controller": "Astra theory/source/contracts/criteria/admission/repair",
+    "implementation": "existing implementation_86; requested gpt-6.1-sol/high, actual backend UNOBSERVED",
+    "review": "independent_review_87 fresh Astra actual source/theory/code/raw review; no primary implementation",
+    "delivery": "existing delivery_86 mechanical publication assembly/backups; root expected-SHA writes"
+  },
+  "publication": {
+    "draft": true,
+    "merge": false,
+    "expected_SHA": true,
+    "additive": true,
+    "stages": [
+      "S0 theory/source",
+      "S1 frozen implementation",
+      "S2 results/review",
+      "FINAL handoffs"
+    ],
+    "stage_backup": "Dropbox+Drive actual ACK, separate from restoration",
+    "final_backup": "Both actual whole GET/SHA/CRC/all-payload/extracted rehash/authoritative Git tree-byte identity; external JSON dual actual raw readback",
+    "central": "Fresh current authority/parallel owner check then additive WU observation preserving original contracts and other owners"
+  },
+  "protected": {
+    "geometry": "non-tilted LRS Bianchi I",
+    "gas_pi": 0,
+    "DM_pi_m": "separate",
+    "tensor_sum": "signed same normal orthonormal frame before norm",
+    "Frobenius": "sqrt(2)*half-contraction norm",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "global_completion_percent": null,
+    "completed_identities": "PHYS78..87 and all external completed campaigns reused, no replay",
+    "OPEN": [
+      "Empirical bare/atomic kernel equivalence and electron-state-resolved physical source",
+      "Physical covariance/uncertainty and source-window tails",
+      "Named thermal/fast consumer and stopping",
+      "HE_LI_CX_STATE_AND_PHOTON_ENERGY",
+      "Li instrument/deconvolution/isotope/target-state uncertainty",
+      "RECOMBINATION_TO_Z20_INITIAL_CHARGE_CONTRACT",
+      "D_PI_RR_MATCHED_SOURCE_MOMENTS",
+      "LI_HARD_UV_INNER_SHELL_SPECTRAL_CONTRACT",
+      "FULL_GEOMETRY_SPECTRAL_BACKREACTION"
+    ]
+  }
+}

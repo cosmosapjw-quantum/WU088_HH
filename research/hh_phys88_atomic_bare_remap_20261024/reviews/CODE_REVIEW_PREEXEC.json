@@ -1,0 +1,217 @@
+{
+  "schema": "PHYS88_INDEPENDENT_PREEXEC_CODE_REVIEW_V1",
+  "recorded_utc": "2026-10-24T11:50:29.411377+00:00",
+  "reviewer": "independent_review_87; fresh independent Astra static reading; no primary implementation",
+  "decision": "PASS_SCOPED_STATIC_READY_FOR_S1",
+  "open_material_findings": 0,
+  "new_code_findings": [],
+  "contract_revision": 3,
+  "contract_sha256": "8f45d6a70d7cf7ffcc556b74636f25087167a3372f781eee4078f5dd00e4154d",
+  "primary_identity": "2712595494bd9d784539d470c4ad0b178314c1ca55d2b0b9a75cb5dc1e6a2774",
+  "reviewed_artifacts": {
+    "CONTRACT.json": {
+      "path": "CONTRACT.json",
+      "bytes": 13214,
+      "sha256": "8f45d6a70d7cf7ffcc556b74636f25087167a3372f781eee4078f5dd00e4154d"
+    },
+    "theory/ATOMIC_BARE_REMAP_KO.md": {
+      "path": "theory/ATOMIC_BARE_REMAP_KO.md",
+      "bytes": 14642,
+      "sha256": "3d7e5aaf8e29d4755e52d7e33dd6d14ef56579cb2d33252362567368091c739e"
+    },
+    "theory/POSITIVE_BRANCH_CLOSURE_KO.md": {
+      "path": "theory/POSITIVE_BRANCH_CLOSURE_KO.md",
+      "bytes": 1362,
+      "sha256": "f6a5a4edb75220f1276c326823bd6b55915f70d72f765c713b9bb6fb4ff09c82"
+    },
+    "source/atomic_bare_remap.py": {
+      "path": "source/atomic_bare_remap.py",
+      "bytes": 16544,
+      "sha256": "49f9c9a645a569c9d859fec29431f757c1965f664723d692a9f5cc6a06ee778a"
+    },
+    "source/run_primary.py": {
+      "path": "source/run_primary.py",
+      "bytes": 20016,
+      "sha256": "8413dd684d8314d1794b16214ad88b656bfaa48833559a0ffcb51a440d644195"
+    },
+    "source/leased_call.py": {
+      "path": "source/leased_call.py",
+      "bytes": 12721,
+      "sha256": "e58aaf1058d986f5ce1d684b4dae66a580dc1f1ae5b5a64ff591ef8b0ef8c7c3"
+    },
+    "source/plot_saved_results.py": {
+      "path": "source/plot_saved_results.py",
+      "bytes": 5065,
+      "sha256": "5b76f7f4ce85459b845107b11d9111aba7fb37c892d2e5403a8da4999ded8dcd"
+    },
+    "verification/independent_reference.py": {
+      "path": "verification/independent_reference.py",
+      "bytes": 18403,
+      "sha256": "65c566ba0fb6b747b6b2bb9c61d28c8e8d1e75c6061947345f7f28d27f39af52"
+    },
+    "implementation/FROZEN_IMPLEMENTATION_MANIFEST.json": {
+      "path": "implementation/FROZEN_IMPLEMENTATION_MANIFEST.json",
+      "bytes": 4709,
+      "sha256": "9d2c0a45b74dc1e328f537aefa08cb930a2903091db53ff4e26321f710e10873"
+    },
+    "implementation/PRIMARY_IDENTITY.json": {
+      "path": "implementation/PRIMARY_IDENTITY.json",
+      "bytes": 2724,
+      "sha256": "3bb0deb5c41dd4452bc237b5606804480d5a4f59562c0ed3c9cbc041e5756d29"
+    },
+    "implementation/EXECUTION_COMMANDS.json": {
+      "path": "implementation/EXECUTION_COMMANDS.json",
+      "bytes": 7821,
+      "sha256": "9ada7be1f36c497eb55eec9e40687ae468b2b7a007b1d4a18f187e896f5eed60"
+    },
+    "implementation/README.md": {
+      "path": "implementation/README.md",
+      "bytes": 5461,
+      "sha256": "eeaf9f876329198493a483b5b6dba2c4d12d19998c83d09c4981b201dc77d874"
+    },
+    "implementation/freeze_implementation.py": {
+      "path": "implementation/freeze_implementation.py",
+      "bytes": 6193,
+      "sha256": "935b26b72c313c39cbd01d26aa36f0905375f51bdd02a5d7df01fafc9cb8f551"
+    },
+    "implementation/FINAL_STATIC_SYNTAX_RECEIPT.json": {
+      "path": "implementation/FINAL_STATIC_SYNTAX_RECEIPT.json",
+      "bytes": 2237,
+      "sha256": "1455e84050787f179f3f4885e3e3109647604a16df3c84fcda2126ede9632a83"
+    },
+    "verification/REFERENCE_PLAN.json": {
+      "path": "verification/REFERENCE_PLAN.json",
+      "bytes": 1773,
+      "sha256": "78c16145fccb4b329e58f19ff2b4809d925d448c03583d44c9ab5d596c50e2f7"
+    }
+  },
+  "freeze_manifest_verification": {
+    "files": 26,
+    "actual_bytes_and_sha_match": true,
+    "mismatches": [],
+    "canonical_primary_descriptor_match": true,
+    "source_file_set_match": true
+  },
+  "actual_local_HEAD_at_review": "0528ca635c126abbdba3ded46ebb016c47242d72",
+  "HEAD_scope": "Read-only local ref observation. Root owns in-flight actual-remote S0/S1 expected-SHA publication and backup gates; this review does not assert a new remote publication.",
+  "reviewed_paths_and_reasoning": [
+    {
+      "target": "source/atomic_bare_remap.py: MassConvention",
+      "decision": "CONSISTENT",
+      "evidence": "Fraction conversion of all displayed tokens; h=AWR*a, D=a+h-Qs; exact Q and rho/Delta residuals; float conversions follow exact construction. Independent mass decomposition includes BD-BH and does not treat81.63eV entirely as convention residual or heat."
+    },
+    {
+      "target": "ConditionalMap.kinematics/native_from_bare/evaluate_native/evaluate_bare",
+      "decision": "CONSISTENT",
+      "evidence": "Explicit map and exact bool conditional opt-in; LAB uses b,Mb and COM uses h,Ms. Rationalized positive K; J=target*Es/(pair+K) for dK/dlogEs; bare Eb recovered with bare b,Mb. Original NativeSource.evaluate always receives Es. Native/mapped supports refuse outside/nonfinite inputs. Endpoint equality labels are assigned only after support admission; this is no out-of-domain clipping. No extra Jacobian on sigma."
+    },
+    {
+      "target": "BareThermalIntegrator.integrate: native-cell weights and normalization",
+      "decision": "CONSISTENT",
+      "evidence": "GL16/32 positive weights in logEs on all152nativecells; barn→cm² factor1e-24; new bare lambda and scaledK1*exp(-K/theta); c/(4a²b²theta scaledK2a scaledK2b) prefactor. Underflow is recorded and nonnegative finite weights/positive finite normalizer/rate are required. No full-rate zero-extension claim."
+    },
+    {
+      "target": "BareThermalIntegrator.integrate: moments/variances/covariances/score",
+      "decision": "CONSISTENT",
+      "evidence": "Reused exact ScaledBesselSix utility supplies G,G-1,varGamma. Conditional means use stable K+W(G-1), e*G and kd*+(d+kd*)(G-1). Within plus centered-between variance/covariance uses the rotational photon angular term e*²G/z with correct opposite covariance sign. Thermal u_n/u_p/u_d and score (meanKin-un-up)/theta match R6. No direct subtraction of two huge total second moments."
+    },
+    {
+      "target": "boost_z/event_vectors/shell_record/four_vector_record",
+      "decision": "CONSISTENT",
+      "evidence": "Target-rest neutron momentum sqrt(E(2a+E)); bare/source pair COM boost followed by the prescribed common z boost. Metric shell residual -E²+sum(cp)²+epsilon² and frozen positive scale; all4 component conservation and S4 scale match revision3. Photon/recoil COM energy formulas and opposite momenta implement the closed two-body event on the finite beta/mu fixture domain."
+    },
+    {
+      "target": "relabel_event versus bare_event",
+      "decision": "CONSISTENT",
+      "evidence": "Relabel preserves native neutron/photon and UH/UD, computes carrier directly from exact displayed shifts, retains -C and evaluates absolute4component residual. Bare event creates a separate bare pair from mapped Eb and adds no carrier. Transferred angular density is the normalized source law evaluated at native Es. The two event kinds and ownership meanings are explicit."
+    },
+    {
+      "target": "owner_row",
+      "decision": "CONSISTENT",
+      "evidence": "Thermal h-2,fast1-h,electron0; six disjoint energy columns include nuclear_rest=-Qb and no invented atomic deposit. Exactlyone photon route and Cv*Tdot/R=-Kin+un+up+h(Kd-ud). h is integer0/1, route must be one supported token; production activation refused."
+    },
+    {
+      "target": "run_primary.run_primary: frozen campaign and acceptance",
+      "decision": "CONSISTENT_FOR_SELECTED_RUN",
+      "evidence": "Two maps×4T×2orders give16full; two highestT central-difference pairs give4scalar. The fixed fixtures give18relabel and36bare; order32 rows generate32owners. All frozen scales/tolerances are applied to individual records, and failed checks are retained. Invalid guards reject before integration-call append. The parent positivity witness and RESULT are hashed/read, never recalculated;153/152 witnesses are separate from new scalar checks."
+    },
+    {
+      "target": "verification/independent_reference.py: source and independent reduction",
+      "decision": "CONSISTENT_INDEPENDENT_IMPLEMENTATION",
+      "evidence": "Separate Decimal/fixed-width raw MF3/MF6 parser checks source IDs, interpolation and612literal fields without production imports. Scalar rate integrates x=Es/theta using scipy.kve and quad per152cells. Independent lambda/(4a²b²)=Eb(2a+Eb)/a² is correct, and explicit dK/dEs=target/native_w supplies the map derivative. No duplicated sigma Jacobian. Both maps compare positive rate/three means at1e8K, eight fields, with actual primary hash and frozen1e-7 relative denominator."
+    },
+    {
+      "target": "verification/independent_reference.py: admissibility/failure scope",
+      "decision": "CONSISTENT",
+      "evidence": "Exactlyone new create-only output; actual prelaunch admission receipt must exist; outer wrapper owns real lease.30CPU/60wall, threads1 before SciPy import, explicit QUADPACK warning rejection and callback/error records. HighestT kve mean subtraction is limited to the frozen reference scope; no lowT variance or continuum oracle claim. Partial failure records and nonzero exit remain available."
+    },
+    {
+      "target": "run_primary.identity/main/resume",
+      "decision": "CONSISTENT",
+      "evidence": "Contract SHA pinned; identity binds source/theory/input byte hashes without runtime-version triggers. Fixed primary001 path is create-only. Resume branches before importing candidate or numpy, verifies identical frozen binding, completed status, all6expected payload files and their exact byte records, then returns SKIP/callbacks0/rewrites0. Partial failures cannot silently restart."
+    },
+    {
+      "target": "source/leased_call.py and frozen execution argv",
+      "decision": "CONSISTENT_FOR_CONTROLLER_DISPATCH",
+      "evidence": "Pinned unchanged PHYS78 gate; only lease/resource APIs invoked, no old runner callback. Fresh before/after ownlease checks,2GiB available reserve+job test and required CPU0/8 mapping; no peer termination. Prelaunch create-only admission JSON is written after admission but before child. Commands pass that same path to reference. Perkind CPU/wall caps, threads1, subprocess timeout, stdout/stderr/cost records and ownlease release are explicit. No automatic retry."
+    },
+    {
+      "target": "source/plot_saved_results.py",
+      "decision": "SAVED_ONLY",
+      "evidence": "Reads passed RESULT only; renders mapping and thermal/owner figures plus saved native baseline; no supplier/parser import or integration.2PNG+2PDF; labels distinguish conditional maps, support, connecting lines, noCI and instantaneous h1 birth. Figure cache is excluded by documented publication procedure. Actual visual review remains future work."
+    },
+    {
+      "target": "implementation freeze/identity/README/commands",
+      "decision": "STATIC_BINDINGS_MATCH",
+      "evidence": "All26manifest file byte/SHA pairs match. Canonical PRIMARY_IDENTITY descriptor hash matches2712595494bd9d784539d470c4ad0b178314c1ca55d2b0b9a75cb5dc1e6a2774; listed source set matches actual *.py files. Freeze script uses AST literal extraction and hashing, no candidate imports; fixed commands allow only actual completed primary SHA substitution. Prior static syntax receipts are preparation evidence, not numerical validation."
+    }
+  ],
+  "reused_prior_R6": {
+    "metric_finding": "P88-R6-01 CLOSED; original independent note retained",
+    "residual_scaling_finding": "P88-R6-02 CLOSED in revision2; retained in revision3",
+    "symbolic_reporting_finding": "P88-R6-03 CLOSED via actual18scalarzeros plus independent manual positive-branch proof; CAS all_zeroFalse preserved",
+    "theory_scope": "No source-adoption or numerical recheck; R6 derivation/source scope reused unchanged"
+  },
+  "execution_gate": {
+    "next": "Root may publish S1 and its required stage backups, then issue each separate explicit GO after actual fresh resource gate.",
+    "this_review_is_not": [
+      "Scientific run completion",
+      "Numerical acceptance",
+      "Visual figure acceptance",
+      "Physical source equivalence",
+      "Production or stopping admission"
+    ],
+    "prospective_counts": {
+      "full_integrals": 16,
+      "FD_scalar_integrals": 4,
+      "total_primary_integrals": 20,
+      "source_relabel_fixtures": 18,
+      "fresh_bare_fixtures": 36,
+      "owner_rows": 32,
+      "independent_fields_at_highest_T": 8,
+      "primary_children_max": 1,
+      "reference_children_max": 1,
+      "saved_figure_children_max": 1,
+      "read_only_resume": 1
+    },
+    "budget": "Historical costs retained; actual new symboliccalls2 consumed; primary24CPU/60wall, reference30/60, figure8/30;1worker/thread;noautomaticretry/oldreplay/ODE/benchmark/networkactivation/stopping."
+  },
+  "remaining_claim_boundary": "Conditional nominal bare finite-window supplier only. Parent remap/physical supplier remainPARTIAL; empirical bare kernel/electron-state/covariance/tails/consumer/stoppingOPEN. HH_R10OFF;productionNOT_ISSUED.",
+  "review_activity": {
+    "candidate_imports": 0,
+    "numerical_imports": 0,
+    "scientific_executions": 0,
+    "tests_or_probes": 0,
+    "evaluator_calls": 0,
+    "completed_identity_replays": 0,
+    "Git_mutations": 0,
+    "provider_mutations": 0,
+    "source_edits": 0,
+    "operations": "Direct source reading, standard-library byte hashing/canonical JSON and review-file writing only. No candidate compilation or freeze-script execution by reviewer."
+  },
+  "markdown": {
+    "path": "reviews/CODE_REVIEW_PREEXEC.md",
+    "bytes": 7215,
+    "sha256": "6f6152cdd7fe593ae466d4743ee6f11172c4002b8b0d8060615e20aae725a23f"
+  }
+}
