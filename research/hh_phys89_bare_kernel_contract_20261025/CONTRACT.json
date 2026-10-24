@@ -1,0 +1,267 @@
+{
+  "schema": "PHYS89_RECOVERED_BARE_KERNEL_CONTRACT_V4",
+  "revision": 4,
+  "unit": "PHYS89",
+  "selected_node": "NUCLEAR_BARE_KERNEL_SOURCE_AND_CONSUMER_CONTRACT",
+  "selected_node_status": "PARTIAL_INPUT_DEPENDENCIES",
+  "scoped_child": "ENDF_MF33_PULLBACK_AND_TYPED_NUCLEAR_CONSUMER_INTERFACE",
+  "parent_final_head": "92dec7cdc1cf5afeff5bdff8d6234f7f1e3dbbd8",
+  "parent_final_tree": "ce62d9e8c7145d12c06e74c0a3b37d2880c62d09",
+  "parent_scientific_identity": "2712595494bd9d784539d470c4ad0b178314c1ca55d2b0b9a75cb5dc1e6a2774",
+  "branch": "research/hh-phys89-bare-kernel-contract-20261025",
+  "owned_path": "research/hh_phys89_bare_kernel_contract_20261025",
+  "recovery": {
+    "previous_revision2_sha256": "f4ce9a1e057bce2026aafa82de1d78743ccb04c0c0797c8b791bd929db75f007",
+    "previous_theory_sha256": "54c4c495b1512d5ed725ce34713b0dc3e2a4a1d9ac5e2f7371b5495c966a47ad",
+    "previous_bytes": "NOT_RECOVERED_ON_CURRENT_HOST",
+    "relation": "Scientific definitions recovered from retained handoff; new document/code byte identity, no old numerical result recalculation",
+    "last_remote_tree_attempt": "UNKNOWN_OUTCOME_NO_BRANCH_FOUND",
+    "cause": "NOT_ESTABLISHED",
+    "previous_PRIMARY_REFERENCE_execution": 0
+  },
+  "conventions": {
+    "metric": "(-+++)",
+    "geometry": "non-tilted LRS Bianchi I",
+    "frame": "common normal orthonormal",
+    "c_hbar_kB": "explicit",
+    "reacting_gas_pi": 0,
+    "collisionless_DM_pi_m": "separate",
+    "tensor_aggregation": "signed matter+radiation sum before norm",
+    "frobenius": "sqrt(2) times half-contraction",
+    "same_trajectory": "not species-off causality"
+  },
+  "source": {
+    "path": "research/hh_phys88_atomic_bare_remap_20261024/source_data/n-001_H_001.endf",
+    "sha256": "3024d8f0db604b074e33ed8b05027eb9f5a738614041ba44c83f048e0d0bc1af",
+    "bytes": 671232,
+    "MAT": 125,
+    "MF": 33,
+    "MT": 102,
+    "NL": 1,
+    "MAT1": 0,
+    "MT1": 102,
+    "NC": 0,
+    "NI": 1,
+    "LS": 1,
+    "LB": 5,
+    "NT": 11935,
+    "NE": 154,
+    "covariance_groups": 153,
+    "packed_values": 11781,
+    "packed_order": "upper triangular, row-major, diagonal first",
+    "fractional_covariance": true,
+    "covariance_grid_eV": [
+      5e-06,
+      20250000.0
+    ],
+    "cross_section_support_eV": [
+      1e-05,
+      20000000.0
+    ],
+    "native_cross_section_knots": 153,
+    "native_cross_section_cells": 152,
+    "cross_section_and_covariance_grids": "distinct",
+    "raw_covariance_policy": "preserve; do not project, symmetrize beyond specified triangular decoding, jitter, clip, interpolate on native sigma knots, or invent missing covariance",
+    "unpolarized_declaration": "rho_n=I2/2,rho_p=I2/2; evaluated sigma already spin averaged; no additional 1/4 or 3/4 multiplier",
+    "source_character": "nuclear n-p / gamma-d R-matrix evaluation; atomic AWR does not establish an electron-resolved atomic target kernel",
+    "tail": "no continuation outside actual sigma support"
+  },
+  "kernel": {
+    "maps_reused": [
+      "LAB_ANCHORED",
+      "FIXED_COM_K"
+    ],
+    "state": "CONDITIONAL; actual evaluator mass/deck/invariant-s and electron/target binding unresolved",
+    "pullback": "Cov(sigma_b(E),sigma_b(Ep))=sigma_s(phi(E))*sigma_s(phi(Ep))*F[g(phi(E)),g(phi(Ep))]",
+    "jacobian": "integration measure only, not sigma or F",
+    "partition": "common refinement native sigma knots and MF33 boundaries restricted to sigma support",
+    "boundary_rule": "left-closed/right-open bins; final endpoint assigned last bin; reject outside; carry canonical native source energy/bin or compare forward-mapped boundaries; never roundtrip-classify or epsilon-clip"
+  },
+  "finite_functionals": {
+    "inputs": "finite r>=0, Z=sum(r)>0, finite reward group rows a; identical group indices for common source covariance",
+    "Z": "sum r",
+    "A": "sum a",
+    "M": "A/Z",
+    "deltaZ": "r dot eta",
+    "deltaA": "a dot eta",
+    "linear_covariance": "L F L^T",
+    "normalized_sensitivity": "b=(a-M*r)/Z",
+    "delta_covariance": "B F B^T, first order only",
+    "exact_ratio_change": "(deltaA-M*deltaZ)/(Z+deltaZ)",
+    "denominator_domain": "Z+deltaZ>0",
+    "ratio_remainder": "if abs(deltaZ)<=rho*Z,rho<1 then abs(exact_delta-b.dot(eta))<=rho/(1-rho)*abs(b.dot(eta))",
+    "same_event_covariance": "zero sum of signed group reward rows implies zero summed covariance row",
+    "different_consumers": "shared source F, not independent nuisance draws",
+    "no_group_reconstruction": "old scalar thermal integrals do not identify r/a; no old integration replay",
+    "matrix_admission": "negative exact principal minor or rational quadratic witness disallows stochastic covariance interpretation of displayed F; formal bilinear diagnostics may still be reported"
+  },
+  "common_measure": {
+    "event_intensity": "dnu=f_n*f_p*vM*dsigma_dOmega*d3pn*d3pp*dOmega",
+    "vM": "c*sqrt((qn.qp)^2-(mn*c^2)^2*(mp*c^2)^2)/(En*Ep)",
+    "event_measure_units": "events per physical volume per proper time",
+    "identical_pair_factor": 1,
+    "roles": [
+      "thermal",
+      "fast",
+      "rest",
+      "atomic",
+      "photon_handoff",
+      "escape"
+    ],
+    "signed_energy_eV": [
+      "h*Kd-Kin",
+      "(1-h)*Kd",
+      "-Qb",
+      "0",
+      "r_gamma*Egamma",
+      "(1-r_gamma)*Egamma"
+    ],
+    "event_energy_closure": "Kin+Qb=Kd+Egamma",
+    "thermal_count": "h-2",
+    "fast_count": "1-h",
+    "electron_count": 0,
+    "h_range": [
+      0,
+      1
+    ],
+    "r_gamma_range": [
+      0,
+      1
+    ],
+    "conditional_partition": "h may depend on event; use joint mean h*Kd",
+    "h_equal_one": "instant birth caloric bookkeeping, no stopping model",
+    "caloric_numerator": "-Kin+u_n+u_p+h*(Kd-u_d)",
+    "temperature_derivative": "integral caloric_numerator dnu / Cv",
+    "spectra": "pushforward of same joint event measure; scalar means insufficient",
+    "stress_rate": "integral signed q^mu*q^nu/q0 dnu is tensor birth rate, not stored stress; spatial sum need not vanish",
+    "incoming_caloric_ownership": "both incoming neutron and proton belong to the thermal reservoir; generic f_n/f_p measure remains distinct from this caloric subset",
+    "Cv_definition": "sum_s n_s * (partial u_s/partial T), strictly positive in admitted caloric fixture",
+    "temperature_derivative_scope": "dotT|capture only; expansion/work/other processes separately owned",
+    "differential_kernel_coordinate": "must explicitly name scattering coordinate and corresponding angular measure; actual differential supplier remains OPEN"
+  },
+  "clock_density": {
+    "nHref": "conserved reference: dot(nHref)+Theta*nHref=0",
+    "Y_source": "S/nHref",
+    "general_Y_source": "S/nHref-Y*(Theta+dot(nHref)/nHref)",
+    "coordinate_time": "multiply proper-time derivative by lapse alpha exactly once",
+    "packet": "R*Delta_tau/nHref",
+    "energy_density_SI": "energy_eV_per_Href*nHref_m^-3*1.602176634e-19",
+    "density_cm^-3_to_m^-3": 1000000.0
+  },
+  "consumer_requests": [
+    {
+      "id": "WU89_REI_L2_NP_CAPTURE_REQUEST_V1",
+      "target_role": "PROPOSED_CAPTURE_EXTENSION_OF_REI_L2_BOOKKEEPING",
+      "scope_extension_required": true,
+      "existing_REI_L2_scope": "branch-resolved n/T beta daughter and electron/neutrino/recoil/nonthermal energy",
+      "thermal_consumer": "PROPOSED_UNIMPLEMENTED",
+      "fast_consumer": "PROPOSED_UNIMPLEMENTED",
+      "actual_owner_id": null,
+      "ACK": null
+    },
+    {
+      "id": "WU89_BASS_NUCLEAR_PHOTON_REQUEST_V1",
+      "target_role": "PROPOSED_NUCLEAR_PHOTON_MEASURE_RECEIVER",
+      "actual_owner_id": null,
+      "ACK": null,
+      "binding": "NOT_BOUND",
+      "B3C": "manufactured cold H-Lyalpha14cohort; design reference only"
+    }
+  ],
+  "open_physical_dependencies": [
+    "actual evaluator nuclear mass/deck and invariant-s mapping",
+    "electron and target-state scope with physical uncertainty",
+    "full differential kernel and energy/covariance interpretation",
+    "valid full-support tail with mass and energy-moment bounds",
+    "named thermal/fast/radiation consumer implementation and ACK",
+    "capture-specific extension of beta-only REI-L2"
+  ],
+  "validation": {
+    "primary_children_max": 1,
+    "independent_reference_children_max": 1,
+    "cpu_limit_s_each": 20,
+    "wall_limit_s_each": 45,
+    "threads": 1,
+    "workers": 1,
+    "scientific_CPU": 0,
+    "coordinator_CPU": 8,
+    "lease_directory": "/tmp/rei-bianchi-cooperative-leases",
+    "lease_source_path": "research/hh_phys88_atomic_bare_remap_20261024/source/vendor/phys78_run_pilot.py",
+    "lease_source_sha256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+    "memory_reserve_GiB": 1.5,
+    "job_GiB": 0.5,
+    "automatic_retries": 0,
+    "scope": [
+      "decode and independently compare all11781 MF33 tokens and all154 boundaries",
+      "raw matrix symmetry and eigenvalue diagnostic once in primary; exact Fraction negative2x2 minor or rational quadratic witness if available; no silent PSD repair",
+      "finite rational normalization/covariance/owner/clock unit fixtures, explicitly manufactured",
+      "native bin support and boundary guards; no epsilon correction",
+      "actual readonly resume skip and payload hash preservation"
+    ],
+    "numeric_tolerance": {
+      "algebra_abs": 1e-12,
+      "algebra_rel": 5e-12,
+      "reference_float_vs_exact_abs": 5e-15,
+      "reference_float_vs_exact_rel": 5e-13,
+      "exact_Fraction_checks": "exact equality",
+      "source_tokens": "all exact Decimal/Fraction equality"
+    },
+    "reference_independence": "no import of production kernel/parser; own Decimal/Fraction source parser and exact arithmetic fixtures",
+    "token_rounding": "ULP and halfULP only conditional nearest-rounding model, not a formatter guarantee or physical bound",
+    "old_science_calls": 0,
+    "integrals": 0,
+    "new_ODE": 0,
+    "benchmark": 0,
+    "new_figures": 0,
+    "nuclear_rate_activation": 0,
+    "fast_stopping": 0,
+    "other_processes_terminated": 0
+  },
+  "cumulative_budget": {
+    "reset": false,
+    "PHYS88_children": 4,
+    "PHYS88_successes": 3,
+    "PHYS88_preserved_artifact_failures": 1,
+    "PHYS88_child_CPU_s": 7.322937,
+    "PHYS88_child_wall_s": 7.330995100001019,
+    "PHYS88_metadata_CPU_s": 0.0005106,
+    "PHYS88_Wolfram_actual_calls": 2,
+    "PHYS88_Wolfram_exporter_failed": 1,
+    "PHYS88_Wolfram_diagnostic": 1,
+    "PHYS88_scalar_zeros": 18,
+    "PHYS88_all_zero": false,
+    "PHYS88_manual_positive_branch": "REUSED",
+    "prior_symbolic_lineage": 7,
+    "PHYS89_evaluator_already_used": 1,
+    "PHYS89_evaluator_remaining": 0,
+    "PHYS89_context_service_error": 1,
+    "symbolic_lineage_including_PHYS89": 8,
+    "new_recovery_Wolfram_calls": 0,
+    "PHYS89_primary_used": 0,
+    "PHYS89_reference_used": 0,
+    "historical_total_CPU_s": null,
+    "remote_cost": null,
+    "money": null,
+    "remaining_global_budget": null
+  },
+  "publication": {
+    "mode": "additive stacked Draft, expectedSHA/nonforce",
+    "stage_backup": "S0/S1/S2 actual dual ACK and metadata, stagewholeGET0",
+    "FINAL": "dual wholeGET, wholeSHA, allCRC, payloadSHA, actualGitidentity, all extraction and rehash; one whole PHYS88 parent ZIP, no nested extraction",
+    "preserve_central": "40 originalcontracts/planstatus/deps,7authorities,17edges,other39nodes,parallelCR/HE,oldhandoff prefix",
+    "messages_to_people": "not authorized"
+  },
+  "claim_gate": {
+    "scientific_admission": "PENDING_NEW_SCOPED_EXECUTION_AND_INDEPENDENT_REVIEW",
+    "physical_supplier_parents": "PARTIAL",
+    "HH_R10": "OFF",
+    "production_admission": "NOT_ISSUED",
+    "global_physical_completion_percent": null,
+    "strong_no_go": "NOT_CLAIMED; a displayed rounded-matrix counterexample does not exclude an evaluator or physical model"
+  },
+  "tail_bound": {
+    "assumptions": "positive event measure, Z_I>0, 0<=Z_tail<=B0, abs(A_tail)<=BA",
+    "bound": "abs(M_full-M_I)<=(BA+abs(M_I)*B0)/Z_I",
+    "actual_B0_BA": null
+  }
+}

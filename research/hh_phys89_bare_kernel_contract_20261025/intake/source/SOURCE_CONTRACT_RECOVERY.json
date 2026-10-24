@@ -1,0 +1,199 @@
+{
+  "schema": "PHYS89_SOURCE_CONTRACT_RECOVERY_V1",
+  "selected_node": "NUCLEAR_BARE_KERNEL_SOURCE_AND_CONSUMER_CONTRACT",
+  "status": "PARTIAL_INPUT_DEPENDENCIES",
+  "scoped_child": "ENDF_MF33_PULLBACK_AND_TYPED_NUCLEAR_CONSUMER_INTERFACE",
+  "recovery": {
+    "reason": "Previous scratch path absent after interrupted root tool call",
+    "prior_PHYS89_source_report_exact_bytes": "NOT_RECOVERED",
+    "prior_PHYS89_contract_exact_bytes": "NOT_RECOVERED",
+    "method": "Semantic reuse of inherited completion summary plus fresh pinned primary reads",
+    "new_artifact_identity": true,
+    "no_previous_hash_reuse": true
+  },
+  "parent": {
+    "repository": "cosmosapjw-quantum/WU088_HH",
+    "final_head": "92dec7cdc1cf5afeff5bdff8d6234f7f1e3dbbd8",
+    "final_tree": "ce62d9e8c7145d12c06e74c0a3b37d2880c62d09",
+    "science_identity": "2712595494bd9d784539d470c4ad0b178314c1ca55d2b0b9a75cb5dc1e6a2774",
+    "reuse": "No completed science replay"
+  },
+  "raw_source": {
+    "path": "research/hh_phys88_atomic_bare_remap_20261024/source_data/n-001_H_001.endf",
+    "git_blob_sha": "4770d7f18ef275c9a72cc779391a07c1bfc7cbea",
+    "sha256": "3024d8f0db604b074e33ed8b05027eb9f5a738614041ba44c83f048e0d0bc1af",
+    "bytes": 671232,
+    "sha256_bytes_basis": "Current restored parent checkout bytes rehashed by source_recovery: 671232 bytes, SHA256 and Git blob exact match; no source parsing or numerical covariance evaluation",
+    "source_library": "ENDF/B-VIII.1",
+    "MAT": 125,
+    "reaction": "n + p -> d + gamma",
+    "header": "LANL G.M.Hale EVAL-JUL16; NDS148(2018); DIST-AUG24 REV1-NOV23",
+    "MF1_covariance_origin": "COMMARA-2.0 July2011 / LANL full R-matrix analysis; nominal and covariance provenance dates must remain separate"
+  },
+  "source_interpretation": {
+    "documented": "Nuclear n-p capture and inverse deuteron photodisintegration in N-N R-matrix analysis",
+    "AWR_atomic_convention": "ENDF format metadata; not a documented electron-resolved neutral-atom cross section",
+    "nominal_reference_state": "Unpolarized nuclear n,p assumed as explicit use-state; source-specific electron/target correction not supplied",
+    "spin_density": "(I_2/2) tensor (I_2/2); no extra spin multiplicity factor on adopted unpolarized evaluated sigma",
+    "electron_resolved_kernel": "NOT_SUPPLIED",
+    "exact_evaluator_mass_deck": "NOT_BOUND",
+    "LAB_ANCHORED": "CONDITIONAL; preserved PHYS88 model",
+    "FIXED_COM_K": "CONDITIONAL; preserved PHYS88 model",
+    "empirical_atomic_to_bare_equivalence": "OPEN",
+    "signed_carrier": "Internal/convention relabelling reservoir only; neither heat nor actual electron"
+  },
+  "cross_section": {
+    "MF": 3,
+    "MT": 102,
+    "knots": 153,
+    "cells": 152,
+    "energy_coordinate": "native source LAB incident neutron kinetic Es",
+    "support_eV": [
+      "1e-5",
+      "2e7"
+    ],
+    "interpolation": "Preserve exact parent native Es interpolation; no bare regrid"
+  },
+  "covariance": {
+    "MF": 33,
+    "MT": 102,
+    "MAT1": 0,
+    "MT1": 102,
+    "NL": 1,
+    "NC": 0,
+    "NI": 1,
+    "LS": 1,
+    "LB": 5,
+    "NT": 11935,
+    "NE": 154,
+    "groups": 153,
+    "packed_entries": 11781,
+    "packing": "Upper triangle by row, each row starts at its diagonal",
+    "source_records": 1993,
+    "record_range_1_based": [
+      6836,
+      8828
+    ],
+    "boundary_support_eV": [
+      "5e-6",
+      "2.025e7"
+    ],
+    "semantics": "Cov[sigma(E),sigma(E')] = sigma(E)*sigma(E')*F[g(E),g(E')]",
+    "covariance_grid_is_native_sigma_grid": false,
+    "wider_covariance_grid_extends_sigma_support": false,
+    "positive_semidefinite_state": "NOT_COMPUTED_IN_SOURCE_RECOVERY",
+    "repair_policy": "Preserve raw F; no clipping, jitter, or PSD projection. Any displayed-matrix counterexample must remain scoped to those tokens.",
+    "cross_observable_dependence": "Same source fractional field across maps, temperatures, and owner columns; no independent copies",
+    "angular_mass_state_covariances": "NOT_SUPPLIED_OR_BOUND"
+  },
+  "pullback": {
+    "map": "Es=phi(Eb), monotone positive PHYS88 branches reused",
+    "fractional_matrix": "F[g(phi(Eb)),g(phi(Eb'))]; no Jacobian on sigma or F",
+    "integration_measure": "Jacobian only when changing integration variable",
+    "mesh": "Common refinement of native sigma knots and covariance boundaries clipped to sigma support",
+    "boundary_rule": "Use canonical native Es/group or direct mapped covariance boundaries; do not classify via floating roundtrip or epsilon clipping"
+  },
+  "finite_functionals": {
+    "method": "Reuse previous PHYS89 derivation; no new integral",
+    "requirements": [
+      "Z=sum(r)>0",
+      "r_g>=0",
+      "finite arrays and matching dimensions"
+    ],
+    "normalization": "Z=sum_g r_g",
+    "unnormalized_reward": "A_a=sum_g a_ag",
+    "mean": "M_a=A_a/Z",
+    "linear_covariance": "L F L^T",
+    "first_order_ratio_coefficient": "b_ag=(a_ag-M_a*r_g)/Z",
+    "delta_covariance": "B F B^T; first-order propagation only",
+    "finite_change": "Delta M=(Delta A-M Delta Z)/(Z+Delta Z)",
+    "conditional_remainder": "if |Delta Z|<=rho*Z, rho<1: |Delta M-b.eta|<=rho/(1-rho)*|b.eta|",
+    "old_scalar_totals": "Cannot recover group weights from old thermal totals; no old integral replay",
+    "uncertainty_classes": [
+      "source epistemic covariance",
+      "single-event kinematic variance",
+      "event shot noise"
+    ]
+  },
+  "consumer_binding": {
+    "thermal_request_id": "WU89_REI_L2_NP_CAPTURE_REQUEST_V1",
+    "target_role": "PROPOSED_CAPTURE_EXTENSION_OF_REI_L2_BOOKKEEPING",
+    "scope_extension_required": true,
+    "current_REI_L2_scope": "Beta daughter/energy accounting; not a documented existing capture consumer",
+    "thermal_status": "PROPOSED_UNIMPLEMENTED",
+    "fast_status": "PROPOSED_UNIMPLEMENTED",
+    "radiation_status": "NOT_BOUND",
+    "owner_ack": null,
+    "owner_implementation_identity": null,
+    "BASS_B3C": "Cold H-Lyalpha manufactured14cohort design precedent only; no nuclear binding",
+    "actual_REI_authority": {
+      "repository": "cosmosapjw-quantum/rei_bianchi",
+      "head": "9600a605f6380bc2262d0cfce5ff00290e594a5a",
+      "path": "research/orchestration_longterm_20261023/rei/CONTRACTS.json",
+      "git_blob_sha": "4a67820e9d5fee13b7c00c5f51c0d2a2db8118c5",
+      "sha256": "c618a2296eb5a6ad8f4f14ee8e93cd382f3364af1843cb4342489f0a6f407958",
+      "bytes": 16380,
+      "extract": "REI_L2_ACTUAL_CONTRACT_EXTRACT.json",
+      "scope": "Branch-resolved beta with electron/neutrino/recoil and nonthermal accounting",
+      "allowed_paths": [
+        "research/rei_beta_resolved_energy/**"
+      ],
+      "physical_capture_extension_exists": false
+    }
+  },
+  "measure_and_ownership": {
+    "frame": "Same normal orthonormal frame, non-tilted LRS Bianchi I",
+    "metric": "(-+++)",
+    "event_intensity": "dnu=f_n f_p v_M (d sigma/dOmega) d^3p_n d^3p_p dOmega per physicalvolume/propertime",
+    "Moller": "v_M=c*sqrt((q_n dot q_p)^2-a^2*b^2)/(E_n*E_p)",
+    "identical_particle_factor": "None for distinct n,p",
+    "energy_columns": [
+      "h*K_d-K_in",
+      "(1-h)*K_d",
+      "-Q_b",
+      "0",
+      "r_gamma*E_gamma",
+      "(1-r_gamma)*E_gamma"
+    ],
+    "number_columns": {
+      "thermal": "h-2",
+      "fast": "1-h",
+      "free_electron": 0
+    },
+    "caloric": "C_V*Tdot = integral[-K_in+u_n+u_p+h*(K_d-u_d)] dnu",
+    "event_dependent_h": "Use joint mean of h*K_d; no mean-product replacement",
+    "h_equals_one": "Instantaneous caloric birth assumption only, not stopping",
+    "spectral_contract": "Joint event-measure pushforward required for photon/fast spectra; scalar means insufficient",
+    "stress_contract": "Integral of q^mu q^nu/q^0 against dnu is birth RATE, not accumulated STATE; momentum conservation does not imply spatial-stress sum zero",
+    "proper_to_coordinate_clock": "d tau/dt=alpha exactly once",
+    "per_reference_normalization": "For conserved n_Href, dotY=S/n_Href. Otherwise add -Y*(Theta+dotn_Href/n_Href).",
+    "packets": "R*Delta tau/n_Href",
+    "gas_pi": 0,
+    "collisionless_DM_pi_m": "Separate",
+    "tensor_norm": "Sum signed matter/radiation tensors first; Frobenius=sqrt(2)*half-contraction"
+  },
+  "tail_contract": {
+    "status": "INPUT_DEPENDENCY_OPEN",
+    "needed": [
+      "Omitted event mass bound B0",
+      "Omitted absolute reward moment bound BA",
+      "Actual consumer T/history/domain"
+    ],
+    "bound": "|M_full-M_I| <= (B_A+|M_I|*B_0)/Z_I",
+    "exponential_suppression_alone": "Insufficient without source/reward bounds",
+    "fit_domain_vs_distributed_support": "50MeV R-matrix fit is not a supplied source beyond20MeV"
+  },
+  "gates": {
+    "HH_R10": "OFF",
+    "production_admission": "NOT_ISSUED",
+    "global_physical_completion_percent": null,
+    "new_ODE": 0,
+    "benchmark": 0,
+    "nuclear_rate_activation": 0,
+    "fast_stopping": 0,
+    "new_integrals": 0,
+    "completed_identity_replays": 0,
+    "budget_reset": false,
+    "unknown_historical_cost": null
+  }
+}
