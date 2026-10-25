@@ -1,0 +1,64 @@
+# PHYS91 조사·복구 합성
+
+이 문서는 런타임 파일시스템 교체 뒤 작성한 새 metadata 합성이다. 소실된 최초 SURVEY 원bytes의 복구본이라고 주장하지 않는다. 물리 계약·이론·R6는 각각 기존 SHA와 정확히 같은 bytes로 복구됐다.
+
+## 완료 baseline과 source 경계
+
+PHYS90 FINAL9d32d115c0b8c5d5b2ce3a66ebc4a7f277334fcc/tree30e3a281d81e3fbb88d26f290579085475f54235/scientific identitya7107870ad5a66e3bb602115f1068ca7366444b42c539e1a6b4b83da2037513a를 재사용한다. FINAL descendant에서만 작업하며 PHYS82 CRLF 복구와PHYS78–90 ancestry를 보존한다. 원 code/science/nominal integral/rawF eig/pair scan은0회 재실행이다.
+
+전체물리부모 NUCLEAR_BARE_KERNEL_SOURCE_AND_CONSUMER_CONTRACT는PARTIAL_INPUT_DEPENDENCIES다. 신규 실제massdeck/electron-target-state/atomic→bare kernel/currentnominal-bound covariance/formatter/supporttailB0BA/namedthermal-fast-radiation consumerACK는 읽은원문범위에서 공급되지 않았다. 실제nuclear rate/faststopping/ODE/benchmark는0이다.
+
+신규유한자식 CERTIFIED_GLOBAL_PSD_DISTANCE_AND_B1_ADMISSION은 모든153차원의PSDcell과그distance를exactGramprimal/dual로인증한다. Allsingleton/pair결과와strictlo34406736621/68719476736은PHYS90완료증거를재사용한다. ActualB1은실행·reference검증전까지UNRESOLVED다.
+
+## 초기 조사와 현재 actual delta
+
+초기접근범위는51repo/2261branches/65pages/51terminalcollections,관련6repo×최근5PR였다. 이전2254대비추가7/삭제0/changed3/동일2251로관측했다. 초기censusrawpages와일부선택원문의로컬payload는런타임교체로소실됐고완전복구를주장하지않는다. 그사실과관측counts를별도로보존했다. 07시actual시점의새metadata조사는별도receipt로갱신한다.
+
+중앙초기8e946 이후53b2에서HE/CR2commits가추가됐고,현재3ae182311e69fe2d7cb641e7bfe30c18e24dd3d0/tree163f59c6c7e8403f199e52ffb41a73d7be776a77에서추가2commits가있다. 총변경은HE/CR각관측및handoff/return이며WU19·HH30594bytes·AGENTS와40contracts/7authorities/17edges가보존됐다. Actualcurrent원문과compare/claim/backup를읽고PHYS91source영향없음을확인했다. 중앙게시때는다시freshactualHEAD를기준으로다른39와새병렬결과를보존한다.
+
+|Owner|현재채택하는결과|계속열린범위와백업한계|
+|---|---|---|
+|REC136KS01, FINALf9edbfe7b56ad002f1b7fb35d4c5aec4970682a4|same-sourceK_s314×313 norm[1.17562722922718,1.1756272292401908], actual35239470Bhistory/5127prefix/313queries; H7local[Js,Ks]COMPLETE_SCOPED|H5physicalhistoryε/reference/endpoint/curvature/absoluteboundnull;H6/globalH7OPEN. DropboxactualwholePASS;DriveACK+metadata/wholeNOT_RUN|
+|BASS189B3e,6c933f324fe54d1f590bc8ab121032702659e00a|22rows/162gatesPASS,finitepositiveangularcontrol,maxFrobeniusrel2.907450008788106e-12|actualB3chistory/finite receiver/nuclearconsumerNOT_BOUND;dualACK/localverify,remotewholeGETNOT_RUN;private48미복구|
+|HE101,science9fc8185…/actualD28a26f4d…|finite-M CBA scopednumericalPASS;actualprocessPASS/FAIL/FAIL;latest19/20|C8PARTIAL_EXPORT/OPEN,reserve0,physical_providerfalse;B2/B3dualACK,remotewholeGETNOT_RUN|
+|CR105,sciencebdfd344…/actualDb1aed878…/centralM2 3ae|atomicH1groundspontaneousRRfinitechainR6/C9PASS,scoped20/20;canonical18232953B/164payload andfinalauthority38849BLibrary+DropboxwholeGET/R3PASS|N4/N5PARTIAL,N6/N7gated,photonfeedbackOPEN;DriveUNKNOWN/terminalDriveNOT_ATTEMPTED;npnuclearcapture공급아님|
+|HI massive stress|4368nativeatom massive-stress 결과와lateecbbdelivery재사용|heatnull,L4false,physicalCI/nuclearmassdeck아님;Library+DropboxACK,finalremoteGETNOT_RUN/DriveACK미공급|
+
+중앙REC PR228256a152…는canonical과별도sibling이다. 그DAG를그대로덮어써PHYS90및후속owner관측을잃지않는다. HE/LiCX,Li instrument/deconvolution/isotope/target-state/physicaluncertainty,recombinationtoZ20,D_PI_RRmatchedmoments,Li hardUVinner-shell,fullgeometryspectralbackreaction의병렬OPEN을유지한다.
+
+## 외부 문헌과 대화·백업 조사
+
+Exa search2/fetch1(3URLs),SciSpace2,web3의실제호출과관련원전목록은intake/SOURCE_RETRIEVAL.json에기록했다. Vandenberghe–Boyd의PSDduality,Hladík의existential/robustinterval구별,Rump의rounding-awareverification을참고하여새cell의Slater와exactcertificate를직접증명했다. BROND2014의MF33MT2elastic수정이나ORNLtesting/processedNJOY자료는currentMT102fullprecision승인correction이아니다. PHYS90NNDCsource계보는원13group/공개33group/current153group을구분한채재사용한다.
+
+초기knownHHDropboxdirect535terminal,Drivedirect567(top_k1000),Library2026-10-25UTC이후21terminal,local첨부20size및기존smallSHA대조를수행했다. 관련대화검색1은새PHYS91완료를반환하지않았으나전체비공개대화부재를증명하지않는다. Drivecap밖·모든branchcontents·모든archive완독을주장하지않는다. 원privatecontext/accountmetadata는게시하지않는다.
+
+## 파일시스템 손실과 정확한 복원
+
+03:24부근S0게시전작업후다음실행에서/tmp와작업산출물이사라졌고관측시각은07시대로변했다. 원인NOT_ESTABLISHED다. 그시점새branch만PHYS90parent에생성됐으며S0commit/archive/providerACK는아직없었다. Science0이므로완료과학을반복하지않았다.
+
+PHYS90원ZIP33227568B SHA507f7b9d04652fe516673d5c484ef5f37beff10753a3671062c407ff912b6d15,MAIN179452B SHA78ce7f0b1abed366c9648a8a0030fb49bfe37f797a98a6c424335711f2eddc4e,TERMINAL37913B SHA105519ac0e408e9f75965f98e0541d9d9033d56a9ab8734c4d742525ff01ba7d를Dropbox에서각1GET/retry0으로복원했다. ZIPCRC118/payload117/실제추출118PASS,내부parentZIPrestore0이다. 이새recoveryGET는과거PHYS90final양쪽GETreceipt와별개다.
+
+신규contract361826f7940542e05c1461bf879d43808007aad092c58579c762dacce8ca5a39,theoryf2ae715cc01c7489ac5e7c7f687f1a765dbbe835fb892f8f7cf2a81cd68f0b30,R6review4a36492ea1aa36e741e229c4133472a477061f4a9609dc363db11e6e8fcf5a3f가원bytes와일치한다. Independentproof등5파일59998bytes도모두기존SHA와일치한다. 새metadata/helper재작성은원bytes복구와구분한다.
+
+## 주장과 budget
+
+R6PASS는이론·계약의범위다. Floatproposal/정확한certificate/reference/backup복원은각각별도증거다. S0/S1/S2는dualACK+metadata이며stagewholeGET0;최종ZIP/MAIN/TERMINAL의actualGET·CRC·payloadSHA·Gitidentity·실제추출은마지막에별도로실행한다.
+
+과거모든allowance0,budgetresetfalse. PHYS88PDFshortening원인NOT_ESTABLISHED/artifactexit1/exact원bytes복구,PHYS89initialreferencefailure,PHYS90prelaunchWAITchild0을보존한다. 새affectedidentity의primary1/reference1/Wolfram1만사용한다. WholehistoricalCPU/remoteCPU/금액/잔여globalbudget의미관측값은null이다. HH_R10OFF,productionNOT_ISSUED,globalphysicalcompletionnull이다.
+
+
+## 새시점 metadata 완료
+
+07시대의fresh accessible조사는51repos/2264refs/65branchpages/51terminalcollections,관련6repo1144refs및최근5PR씩30rows,GitHub73calls/errors0으로완료됐다. 이전51/2261/65snapshot은관측후raw소실이라는상태로보존하고새시점의원응답을별도로저장했다. 원private재고전체는게시하지않고공개6repo projection과coverage를결속한다. Nonatomicmetadata조사이며모든branch내용완독이나private대화전수확인을주장하지않는다.
+
+## C5 전 중앙 HI delta
+
+Actual HEAD190e283357f49f287ab02442a3751959cc53b4bd/tree70070bcf5dbebd7e87241de2b73c59d814d21156는3ae의 direct child다. HI strain-response 아래57개 파일 추가이며 canonical DAG·HH·returns·AGENTS는 그대로다. 선택9개 원문을 authoritative complete added patches에서 복원했고 Git blob9/9를 대조했다. 별도 raw GET9회로 세지 않는다.
+
+이 owner는 기존4368 HI atoms와 nominal electron mass에서 순간 strain 응답 δP=−(5W−R)[(trB)I+2B]/15를 승인했다. 실제 birth history·density·geometry clock·collision/stopping/photon feedback은 OPEN이다. 준비 README의 NOT_RUN과 admission18/20은 각각 작성 당시 snapshot이다. Commit190e는 science 게시를 결속하지만 최종20/20 또는 remote wholeGET를 결속하지 않는다. 선택근거의 Backup A Library ACK와 Backup B local CRC/readback PASS를 보존하며 B providerACK/C-D final은 pending이다.
+
+PHYS91 frozen F/H/contract와 nuclear mass/state/covariance/tail/consumer ACK에는 변경이 없다. 이 delta의 source-impact 판정은 PASS_CURRENT_SOURCE_AND_CONSUMER_INPUT_UNCHANGED다. 이후 중앙 쓰기에서는 새로운57개 파일까지 최신 parent tree로 보존한다. 상세근거는 intake/central/LATE_190_DELTA_REPORT_KO.md와 LATE_190_PRESERVATION.json이다.
+
+### S1 직전의 HI delivery 게시
+
+그다음 actual b24a9daee54fc0860c4cf299c4ea5f2a977c0fd4/tree210f15423ab8f79f691ae8a1a6cc7128b1094bff는190e의 direct child로, HI delivery 문서12개만 추가했다. 최종전달·단계종료·인계 원문을 읽었다. C811669bytes/SHA ad73dababbde678d440c45ac9dc543b3b7f4e049110d9f21b2cef8350ba9aa12의 Library+Dropbox ACK, local64restore PASS, whole remoteGET NOT_RUN을 보존한다. D 게시를 actual ref로 확인했으나 owner external D final receipt는 이 bounded intake에서 읽지 않았으므로 조건부20/20과18/20불변snapshot을 구분한다. Canonical DAG/HH/returns/AGENTS와 PHYS91 입력은 여전히변경0이다. LATE_B24_SUMMARY.json에 exact identities와근거범위를남겼다.

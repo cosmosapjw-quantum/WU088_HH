@@ -1,0 +1,206 @@
+{
+  "schema": "PHYS91_C9_PREEXEC_INDEPENDENT_REVIEW_V1",
+  "observed_utc": "2026-10-25 07:44:09 UTC",
+  "reviewer": "/root/central_recovery",
+  "reviewer_role": "Independent scientific implementation reviewer; author of neither frozen theory/contract nor any of the five reviewed source files",
+  "runtime_model_identity": "NOT_EXPOSED_BY_EXECUTION_TOOLS",
+  "decision": "PASS_PREEXEC_STATIC_IMPLEMENTATION",
+  "blocking_findings": [],
+  "required_repairs": [],
+  "scientific_C9_status": "PENDING_ACTUAL_PRIMARY_REFERENCE_RESUME_AND_FIGURE_OUTCOMES",
+  "stage_completion_changed": false,
+  "next_action": "Root freezes eight files and publishes S1, then authorizes one primary and one independent reference under the original shared lease and fixed caps. Return actual outcomes to this same C9 pass.",
+  "review_boundary": {
+    "pass": "ONE_INDEPENDENT_C9_PASS_PREEXEC_PHASE",
+    "followup": "Same pass, actual raw outcomes and figures only; no repeated R6, broad source intake, historical science, or recursive review",
+    "completed_R6": "PASS_SCOPED_R6_THEORY_AND_CONTRACT_REUSED",
+    "original_scientific_workflow_version": "1.0.0_UNCHANGED",
+    "selected_review_skill": "PhysMath Research Loop 1.3.0 C9",
+    "skill_context_used": [
+      "skill://plugins_6acdfbba921881919e0c17843706aef4/physmath-research-loop/SKILL.md",
+      "skill://plugins_6acdfbba921881919e0c17843706aef4/physmath-research-loop/references/CODING_LOOP.md (C9)",
+      "skill://plugins_6acdfbba921881919e0c17843706aef4/physmath-research-loop/references/POLICY_INTEGRATION.md",
+      "skill://plugins_6acdfbba921881919e0c17843706aef4/physmath-research-loop/references/SUBAGENT_MODE.md"
+    ]
+  },
+  "frozen_prerequisites": [
+    {
+      "path": "CONTRACT.json",
+      "sha256": "361826f7940542e05c1461bf879d43808007aad092c58579c762dacce8ca5a39",
+      "relation": "BYTE_IDENTITY_WITH_REUSED_R6"
+    },
+    {
+      "path": "theory/GLOBAL_PSD_CERTIFICATE_KO.md",
+      "sha256": "f2ae715cc01c7489ac5e7c7f687f1a765dbbe835fb892f8f7cf2a81cd68f0b30",
+      "relation": "BYTE_IDENTITY_WITH_REUSED_R6"
+    },
+    {
+      "path": "reviews/R6_THEORY.json",
+      "relation": "READ_COMPLETED_DECISION_NOT_REEXECUTED"
+    }
+  ],
+  "reviewed_files": [
+    {
+      "path": "source/kernel.py",
+      "bytes": 20078,
+      "sha256": "8ece9efeea2f42b097dc15a0a087bcfb0d6c4a45fab59e07bb3eb46751eeea9d"
+    },
+    {
+      "path": "source/evidence.py",
+      "bytes": 4627,
+      "sha256": "b8767ee33b5d0d3d0506fc4154cea2cdfb85ca33f378bd8fa6b2e8e7b533eb63"
+    },
+    {
+      "path": "source/primary.py",
+      "bytes": 5300,
+      "sha256": "7a4c9c02e88beb864cae65943855bcc648026120d3a1d52616771e14cacbdb10"
+    },
+    {
+      "path": "source/leased_call.py",
+      "bytes": 12745,
+      "sha256": "89ec2cf6aa12bc8311bc69c7389e66c543c7a47c7dca0fbfb7927102038cd5b7"
+    },
+    {
+      "path": "source/reference.py",
+      "bytes": 21389,
+      "sha256": "c0c5e33a35ed160f48a2815746b15f0c456a11dd8ba151df203c01e389d4736c"
+    }
+  ],
+  "static_checks": [
+    {
+      "id": "C9-SCALE",
+      "status": "PASS_STATIC",
+      "locations": [
+        "kernel.py:309-354"
+      ],
+      "finding": "Primal factor uses forward diag(sqrt(U)); negative-mode general dual factor uses inverse scaling, then one positive global maximum-absolute normalization before dyadic quantization. Exact certificates use original F/H."
+    },
+    {
+      "id": "C9-GRAM-SUPPORT",
+      "status": "PASS_STATIC",
+      "locations": [
+        "kernel.py:77-83",
+        "kernel.py:124-152",
+        "reference.py:122-142"
+      ],
+      "finding": "Full integer Gram is formed before entrywise absolute support. Primary doubles upper offdiagonals; reference independently contracts all ordered i,j entries. No factorwise support substitution."
+    },
+    {
+      "id": "C9-PRIMAL",
+      "status": "PASS_STATIC",
+      "locations": [
+        "kernel.py:85-122",
+        "reference.py:83-120"
+      ],
+      "finding": "Common integer denominator gives exact D=max(U-Gram_diagonal,0), exact final padded C, and all 11781 upper-entry ratios including diagonal overshoot. Reference derives padding from rational diagonal differences and independently recomputes selected alpha and witness."
+    },
+    {
+      "id": "C9-ENDPOINTS",
+      "status": "PASS_STATIC",
+      "locations": [
+        "kernel.py:154-171",
+        "reference.py:144-157"
+      ],
+      "finding": "alpha<=1 is inclusive; beta>1 is strict; beta=1 is not exclusion. Inherited strict lower remains open when beta<=inherited, including equality. beta>alpha or alpha<=inherited stops without tolerance."
+    },
+    {
+      "id": "C9-FROZEN-SEARCH",
+      "status": "PASS_STATIC",
+      "locations": [
+        "kernel.py:239-399"
+      ],
+      "finding": "Two fixed radii, 2048 projections each and 4096 total, denominator2^48, at most18 exact checkpoints, all positive/negative modes, no raw-F eigensolve or parameter enlargement. Floating scores select proposals only; exact alpha/beta update certified endpoints. Exact decisive B1 ends further generation."
+    },
+    {
+      "id": "C9-INDEPENDENT-REFERENCE",
+      "status": "PASS_STATIC",
+      "locations": [
+        "reference.py:33-168",
+        "reference.py:256-359"
+      ],
+      "finding": "Independent standard-library integer/Fraction certificate path; no kernel/primary imports, eigensolve or candidate generation. All selected-primal and selected-dual entries are recomputed; all checkpoint hashes/scalars/indices and saved min/max selection are audited. Output expressly states all_checkpoint_factors_recomputed=false."
+    },
+    {
+      "id": "C9-FIXTURES",
+      "status": "PASS_STATIC_EXECUTION_PENDING",
+      "locations": [
+        "kernel.py:173-237",
+        "reference.py:171-253"
+      ],
+      "finding": "Meaningful source/shape/sign/finite-token/padding/zero-H/zero-factor/endpoint/contradiction guards and full-Gram cancellation fixture are implemented. Rank-one universal statement remains grounded in the reused forest proof; reference's16 sign cases are exact finite identities, not numerical vector sampling. Common consumer map remains manufactured with ACK null."
+    },
+    {
+      "id": "C9-IDENTITY-RESUME",
+      "status": "PASS_STATIC_EXECUTION_PENDING",
+      "locations": [
+        "evidence.py:34-49",
+        "evidence.py:85-105",
+        "primary.py:78-97",
+        "reference.py:20-30",
+        "reference.py:362-385"
+      ],
+      "finding": "Frozen eight paths and three immutable input hashes are checked before compute. Primary resume returns before kernel/numerical imports and output creation. Reference validates primary dependency then its manifest and returns before Fraction checker construction and output writes. Bytecode writing is disabled before shared metadata import."
+    },
+    {
+      "id": "C9-LEASE-CAPS",
+      "status": "PASS_STATIC_ACTUAL_PREFLIGHT_PENDING",
+      "locations": [
+        "leased_call.py:21-26",
+        "leased_call.py:85-172",
+        "leased_call.py:178-200"
+      ],
+      "finding": "Pinned original gate SHA and actual LeasePool/_lease_lock/_live_leases/_cgroups/release_lease API signatures agree. Original shared directory, one worker/thread, CPU0/8, fresh reserve1.5GiB+job0.5GiB, primary60CPU/90wall, reference30CPU/45wall, retry0, peer WAIT and own-lease release are retained. Wrapper only terminates its own timeout child."
+    },
+    {
+      "id": "C9-RAW-PRESERVATION",
+      "status": "PASS_STATIC",
+      "locations": [
+        "kernel.py:269-303",
+        "evidence.py:51-83",
+        "primary.py:84-96",
+        "reference.py:373-384"
+      ],
+      "finding": "Exact checkpoint factor evidence is written create-only before early admission or contradiction check. Failure receipts preserve errors; manifests declare COMPLETE only after successful payload publication. Figure creation uses saved generated certificates and does not launch another scientific computation."
+    },
+    {
+      "id": "C9-PHYSICAL-CEILING",
+      "status": "PASS_STATIC",
+      "locations": [
+        "primary.py:40-46",
+        "reference.py:338-359",
+        "source_data/SOURCE_CONTRACT.json"
+      ],
+      "finding": "Conditional nearest-formatting cell only; no source covariance adoption, formatter guarantee, physical CI, consumer ACK, physical no-go, rate activation, fast stopping or production. Parent stays PARTIAL_INPUT_DEPENDENCIES, HH_R10 OFF."
+    }
+  ],
+  "actual_validation_status": {
+    "author_AST_receipts": "FOUR_FILES_AST_READY_NO_SCIENCE plus independent reference author AST PASS; source hashes independently read by this reviewer",
+    "reviewer_AST_or_compile_execution": 0,
+    "primary_execution": "NOT_RUN",
+    "independent_reference_execution": "NOT_RUN",
+    "actual_resume": "NOT_RUN",
+    "actual_figures": "NOT_YET_PRODUCED",
+    "runtime_success_or_budget_compliance": "NOT_CLAIMED_BEFORE_ACTUAL_OUTCOMES"
+  },
+  "retained_limits": [
+    "Search is bounded and not guaranteed to find a B1 certificate or attain the optimal distance.",
+    "Reference independently certifies selected final endpoints; it does not independently recompute every unselected checkpoint factor.",
+    "Static resource checks establish implemented caps and gates, not future measured CPU/wall success."
+  ],
+  "reviewer_operations": {
+    "source_reads": true,
+    "metadata_SHA256": true,
+    "review_artifact_writes": true,
+    "scientific_imports": 0,
+    "fixtures_executed": 0,
+    "source_calculations": 0,
+    "eigh": 0,
+    "Dykstra": 0,
+    "old_science_reruns": 0,
+    "provider_GET": 0,
+    "remote_mutations": 0,
+    "code_changes": 0,
+    "new_review_children": 0,
+    "budget_reset": false
+  }
+}

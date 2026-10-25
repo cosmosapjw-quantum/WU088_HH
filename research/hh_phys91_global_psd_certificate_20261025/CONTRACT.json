@@ -1,0 +1,241 @@
+{
+  "schema": "PHYS91_GLOBAL_PSD_CERTIFICATE_CONTRACT_V1",
+  "workflow_version": "1.0.0",
+  "revision": 1,
+  "unit_id": "CERTIFIED_GLOBAL_PSD_DISTANCE_AND_B1_ADMISSION",
+  "parent_node": "NUCLEAR_BARE_KERNEL_SOURCE_AND_CONSUMER_CONTRACT",
+  "parent_status": "PARTIAL_INPUT_DEPENDENCIES",
+  "baseline": {
+    "head": "9d32d115c0b8c5d5b2ce3a66ebc4a7f277334fcc",
+    "tree": "30e3a281d81e3fbb88d26f290579085475f54235",
+    "scientific_identity": "a7107870ad5a66e3bb602115f1068ca7366444b42c539e1a6b4b83da2037513a",
+    "PHYS89_FINAL": "480baabc73ebaaba735d285d969e79177f5545ed",
+    "PHYS88_FINAL": "92dec7cdc1cf5afeff5bdff8d6234f7f1e3dbbd8",
+    "central_intake_head": "8e946b46aa44581f09141184f193223277f2ec88"
+  },
+  "inputs": [
+    {
+      "path": "research/hh_phys89_bare_kernel_contract_20261025/verification/primary/SOURCE_TABLE.json",
+      "bytes": 960400,
+      "sha256": "8be5263be692e63720acbf8c9ae5b1abad85bc55c8a641d8080b125979a4a7e7",
+      "role": "EXACT_CACHED_F_NO_ENDF_REDECODE"
+    },
+    {
+      "path": "research/hh_phys89_bare_kernel_contract_20261025/verification/primary/TOKEN_ROUNDING.json",
+      "bytes": 296009,
+      "sha256": "0c7c335054b2408f3cf241fa7acd2ef42ad4243b644fbfd0f22199482546854a",
+      "role": "CONDITIONAL_HALF_ULP_H_NOT_FORMATTER_GUARANTEE"
+    },
+    {
+      "path": "research/hh_phys90_covariance_cell_20261025/verification/primary/PAIR_SCAN.json",
+      "bytes": 18666,
+      "sha256": "5ac976d506c34240f454b2bcd45dfa1787dc6035828ca35ce07e493253c75d33",
+      "role": "REUSE_STRICT_LOWER_BOUND_ONLY_NO_PAIR_RESCAN"
+    }
+  ],
+  "science": {
+    "n": 153,
+    "upper_entries": 11781,
+    "model": "CLOSED_SYMMETRIC_COMPONENTWISE_BOX_B_t={C=C^T:abs(C-F)<=t*H}",
+    "all_H_strict_positive_required_for_actual_distance": true,
+    "target": "t_PSD=min_{C PSD} max_ij abs(Cij-Fij)/Hij",
+    "primary_certificate": "RATIONAL_GRAM_PLUS_NONNEGATIVE_DIAGONAL",
+    "dual_certificate": "GENERAL_RATIONAL_GRAM_PSD_Y; form fullY before entrywise abs in h_H",
+    "primal_upper": "alpha=max_ij abs(Cij-Fij)/Hij exact",
+    "dual_lower": "beta=-tr(FY)/h_H(Y) exact for nonzero PSD Y and h_H>0",
+    "inherited_bound": "t_PSD > PHYS90 bracket.lo; bracket.hi is NOT a fullPSD upper bound",
+    "B1_exists": "alpha<=1 exact inclusive",
+    "B1_excluded": "beta>1 exact strict",
+    "otherwise": "B1_UNRESOLVED_WITH_CERTIFIED_GLOBAL_DISTANCE_ENCLOSURE",
+    "actual_matrix_repair": false,
+    "adopted_source_covariance": null,
+    "formatter_guarantee": false,
+    "physical_CI": false,
+    "actual_consumer_ACK": null,
+    "strong_physical_no_go": "NOT_CLAIMED",
+    "proof": "theory/GLOBAL_PSD_CERTIFICATE_KO.md"
+  },
+  "algorithm": {
+    "candidate_generator": "correlation-scaled Dykstra between PSD cone and symmetric offdiagonal box with fixed upper diagonal",
+    "radii": [
+      "255/256",
+      "1"
+    ],
+    "maximum_projections_each": [
+      2048,
+      2048
+    ],
+    "maximum_projections_total": 4096,
+    "initial_matrix": "F offdiagonals with U_i=Fii+rho*Hii; transformed candidate, never rawF eig",
+    "floating_scaling": "positive sqrt(U_i) only for proposals; exact certificate always in original physical coordinates",
+    "projection": "sym(X+P) -> PSD projection; update P; clip Y+Q offdiagonals into box and set diag1; update Q",
+    "candidate_modes": "retain all positive modes for primal and all negative modes for general dual, rank<=153; no rank1-only restriction",
+    "dual_scaling": "positive global max-absolute factor scaling before quantization, with zero factor handled explicitly",
+    "dyadic_denominator_power": 48,
+    "primal_diagonal": "D_i=max(U_i - sum_k V_ik^2/q^2,0) exactly; C=VV^T/q^2+diag(D), alpha includes all diagonals",
+    "candidate_rounding": "nearest dyadic integers; no epsilon in acceptance",
+    "exact_checkpoints": "each256 projections plus stage end; at most18 checkpoints, at most18 primal and18 generaldual candidates",
+    "selection": "between checkpoints retain best finite floating primal/dual proposals; only exact alpha/beta may certify or update reported certified bounds",
+    "early_stop": "stop further generation immediately when an exact B1 primal or dual certificate is obtained",
+    "soft_process_CPU_s_per_stage": 20,
+    "soft_process_CPU_s_total_generation_and_checkpoint": 40,
+    "reserve": "stop candidate generation at processCPU40; up to15 CPU seconds for final exact serialization/fixtures and5 for plot/IO",
+    "proof_not_solver_status": true,
+    "automatic_parameter_enlargement": false,
+    "zero_H_fixture_policy": "separate explicit boundary guards; no all-positive theorem applied to zero-H inputs",
+    "reference": "independent standard-library exact integer/Fraction path, no kernel/primary imports, no candidate generation/eig"
+  },
+  "validation": {
+    "primary_children_max": 1,
+    "independent_reference_children_max": 1,
+    "primary_CPU_limit_s": 60,
+    "primary_wall_limit_s": 90,
+    "reference_CPU_limit_s": 30,
+    "reference_wall_limit_s": 45,
+    "threads": 1,
+    "workers": 1,
+    "scientific_CPU": 0,
+    "coordinator_CPU": 8,
+    "lease_directory": "/tmp/rei-bianchi-cooperative-leases",
+    "lease_source_path": "research/hh_phys88_atomic_bare_remap_20261024/source/vendor/phys78_run_pilot.py",
+    "lease_source_sha256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+    "memory_reserve_GiB": 1.5,
+    "job_GiB": 0.5,
+    "automatic_retries": 0,
+    "raw_F_eigh_calls": 0,
+    "new_changed_candidate_eigh_cap": 4096,
+    "ENDF_decode_calls": 0,
+    "old_pair_rescan": 0,
+    "old_scientific_callbacks": 0,
+    "integrals": 0,
+    "ODE": 0,
+    "benchmark": 0,
+    "nuclear_rate_activation": 0,
+    "fast_stopping": 0,
+    "other_processes_terminated": 0,
+    "metadata_resume": "one actual primary and one reference SKIP after completed identity; scientific import/callback/write0",
+    "figures": "onePNG+onePDF within primary from saved checkpoint/certificate results; do not rerun numerical science for plots"
+  },
+  "fixtures_and_guards": {
+    "required": [
+      "exact small primal Gram plus diagonal",
+      "exact general PSD dual support with combined-entry cancellation",
+      "independent theory rank-one limitation fixture if supplied with exact proof",
+      "alpha=1 inclusive admission",
+      "beta=1 not exclusion",
+      "beta>1 strict exclusion",
+      "negative diagonal padding rejected",
+      "zero factor dual no bound",
+      "zero H denominator special handling",
+      "negative H rejected",
+      "nonsymmetric F/H rejected",
+      "dimension mismatch rejected",
+      "nonfinite token rejected",
+      "source identity mismatch rejected",
+      "primal/dual contradiction STOP_NO_ADMISSION",
+      "same shared consumer map preserves q^T L=0; physical ACK remains null"
+    ],
+    "scope": "finite meaningful certificate invariants; not old scientific tests",
+    "rank_one_gap": {
+      "S": [
+        [
+          0,
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "F": "I+S",
+      "H_diagonal_and_cycle": "1/10",
+      "H_nonedge": "1",
+      "W": "I-S",
+      "q": 1,
+      "expected_trace": "-4",
+      "expected_support": "14/5",
+      "expected_beta": "10/7",
+      "expected_B1_signed_upper": "-6/5",
+      "separate_factor_support": "54/5",
+      "all_rank_one_failure": "FOREST_PROOF_NOT_FINITE_SAMPLING"
+    }
+  },
+  "tool_budget": {
+    "new_Wolfram_context_max": 1,
+    "new_Wolfram_evaluator_max": 1,
+    "new_Wolfram_time_limit_s": 15,
+    "prior_symbolic_lineage": 9,
+    "old_Wolfram_remaining": 0,
+    "Exa_SciSpace": "actual source calls recorded separately"
+  },
+  "cumulative_budget": {
+    "reset": false,
+    "all_completed_allowances_remaining": 0,
+    "PHYS88_children": 4,
+    "PHYS88_successes": 3,
+    "PHYS88_artifact_failure": 1,
+    "PHYS88_child_CPU_s": 7.322937,
+    "PHYS88_child_wall_s": 7.330995100001019,
+    "PHYS88_metadata_CPU_s": 0.0005106,
+    "PHYS89_children": 3,
+    "PHYS89_successes": 2,
+    "PHYS89_preserved_reference_failure": 1,
+    "PHYS89_child_CPU_s": 0.41658999999999996,
+    "PHYS89_child_wall_s": 0.4201385129999835,
+    "PHYS90_children": 2,
+    "PHYS90_successes": 2,
+    "PHYS90_child_CPU_s": 2.9139999999999997,
+    "PHYS90_child_wall_s": 2.917763527002535,
+    "PHYS90_prelaunch_WAIT_child0": 1,
+    "PHYS90_metadata_CPU_s": 0.063894,
+    "known_PHYS87_90_child_CPU_subset_s": 15.01791,
+    "historical_total_CPU_s": null,
+    "remote_CPU_s": null,
+    "remote_cost": null,
+    "money": null,
+    "remaining_global_budget": null,
+    "new_separate_affected_identity_allowance": {
+      "primary": 1,
+      "reference": 1,
+      "Wolfram": 1
+    }
+  },
+  "invariants": {
+    "geometry": "Non-tilted LRS Bianchi I",
+    "metric": "(-+++)",
+    "reacting_gas_pi": 0,
+    "collisionless_DM_pi_m": "separate",
+    "tensor": "signed matter/radiation in same normal orthonormal frame; sum before norm",
+    "Frobenius": "sqrt(2)*half-contraction",
+    "trajectory_components": "not species-off causal experiment",
+    "sampled_residual": "not continuum certificate",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "global_physical_completion": null
+  },
+  "delivery": {
+    "branch": "research/hh-phys91-global-psd-20261025",
+    "expected_parent": "9d32d115c0b8c5d5b2ce3a66ebc4a7f277334fcc",
+    "force": false,
+    "Draft": true,
+    "stage_backups": "S0/S1/S2 dual ACK andmetadata; stagewholeGET0",
+    "final_backups": "eachproviderZIP wholeGET/CRC/payloadSHA/authoritativeGitidentity/actualextraction; MAINandTERMINALrawGET",
+    "central": "freshactualHEAD additive ownobservation+HHappend+return only; preserve40/7/17,other39,existing19WUkeys andlateownerresults"
+  }
+}

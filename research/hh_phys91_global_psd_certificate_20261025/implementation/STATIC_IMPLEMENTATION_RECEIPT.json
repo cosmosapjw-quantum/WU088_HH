@@ -1,0 +1,140 @@
+{
+  "schema": "PHYS91_STATIC_IMPLEMENTATION_RECEIPT_V1",
+  "status": "FOUR_FILES_AST_READY_NO_SCIENCE",
+  "observed_utc": "2026-10-25T07:41:56.477986+00:00",
+  "implementation_base_head": "4afb530bc02bc4d611bf421eccac6d6b1ba3606e",
+  "files": {
+    "source/evidence.py": {
+      "bytes": 4627,
+      "sha256": "b8767ee33b5d0d3d0506fc4154cea2cdfb85ca33f378bd8fa6b2e8e7b533eb63",
+      "AST": "PASS",
+      "top_level_imports": [
+        "pathlib",
+        "hashlib",
+        "json"
+      ]
+    },
+    "source/kernel.py": {
+      "bytes": 20078,
+      "sha256": "8ece9efeea2f42b097dc15a0a087bcfb0d6c4a45fab59e07bb3eb46751eeea9d",
+      "AST": "PASS",
+      "top_level_imports": [
+        "fractions",
+        "math",
+        "json"
+      ]
+    },
+    "source/primary.py": {
+      "bytes": 5300,
+      "sha256": "7a4c9c02e88beb864cae65943855bcc648026120d3a1d52616771e14cacbdb10",
+      "AST": "PASS",
+      "top_level_imports": [
+        "sys",
+        "json",
+        "evidence"
+      ]
+    },
+    "source/leased_call.py": {
+      "bytes": 12745,
+      "sha256": "89ec2cf6aa12bc8311bc69c7389e66c543c7a47c7dca0fbfb7927102038cd5b7",
+      "AST": "PASS",
+      "top_level_imports": [
+        "pathlib",
+        "argparse",
+        "datetime",
+        "hashlib",
+        "importlib.util",
+        "json",
+        "os",
+        "resource",
+        "subprocess",
+        "sys",
+        "time",
+        "traceback"
+      ]
+    }
+  },
+  "reference_owner": "/root/central_recovery/metadata91",
+  "FROZEN_eight_paths_for_root": [
+    "CONTRACT.json",
+    "theory/GLOBAL_PSD_CERTIFICATE_KO.md",
+    "theory/WOLFRAM_INPUT.wl",
+    "source/kernel.py",
+    "source/primary.py",
+    "source/reference.py",
+    "source/evidence.py",
+    "source/leased_call.py"
+  ],
+  "FROZEN_manifest_status": "ROOT_WRITES_AFTER_REFERENCE_COMPLETION_AND_STATIC_REVIEW",
+  "future_execution_CLI": {
+    "primary": [
+      "python",
+      "research/hh_phys91_global_psd_certificate_20261025/source/leased_call.py",
+      "--kind",
+      "primary",
+      "--label",
+      "phys91-primary1-hostpid",
+      "--receipt",
+      "research/hh_phys91_global_psd_certificate_20261025/execution/PRIMARY_ATTEMPT1.json",
+      "--admission-receipt",
+      "research/hh_phys91_global_psd_certificate_20261025/execution/PRIMARY_ADMISSION1.json",
+      "--",
+      "python",
+      "research/hh_phys91_global_psd_certificate_20261025/source/primary.py",
+      "--output",
+      "research/hh_phys91_global_psd_certificate_20261025/verification/primary"
+    ],
+    "reference": [
+      "python",
+      "research/hh_phys91_global_psd_certificate_20261025/source/leased_call.py",
+      "--kind",
+      "reference",
+      "--label",
+      "phys91-reference1-hostpid",
+      "--receipt",
+      "research/hh_phys91_global_psd_certificate_20261025/execution/REFERENCE_ATTEMPT1.json",
+      "--admission-receipt",
+      "research/hh_phys91_global_psd_certificate_20261025/execution/REFERENCE_ADMISSION1.json",
+      "--",
+      "python",
+      "research/hh_phys91_global_psd_certificate_20261025/source/reference.py",
+      "--output",
+      "research/hh_phys91_global_psd_certificate_20261025/verification/reference",
+      "--primary-output",
+      "research/hh_phys91_global_psd_certificate_20261025/verification/primary"
+    ]
+  },
+  "future_execution_boundary": "HOST_PID require_escalated; unchanged original vendor lease APIs/directory; root must authorize after S1",
+  "future_resume_CLI": {
+    "primary": [
+      "python",
+      "research/hh_phys91_global_psd_certificate_20261025/source/primary.py",
+      "--output",
+      "research/hh_phys91_global_psd_certificate_20261025/verification/primary",
+      "--resume"
+    ],
+    "reference": [
+      "python",
+      "research/hh_phys91_global_psd_certificate_20261025/source/reference.py",
+      "--output",
+      "research/hh_phys91_global_psd_certificate_20261025/verification/reference",
+      "--resume",
+      "--primary-output",
+      "research/hh_phys91_global_psd_certificate_20261025/verification/primary"
+    ]
+  },
+  "scientific_package_imports": 0,
+  "scientific_children": 0,
+  "numerical_previews": 0,
+  "fixtures_executed": 0,
+  "kernel_or_primary_imports": 0,
+  "py_compile_runs": 0,
+  "AST_parse_only": true,
+  "code_recovery_store_keys": [
+    "phys91_kernel",
+    "phys91_evidence",
+    "phys91_primary"
+  ],
+  "external_mutation": false,
+  "next_action": "Root independent static review, finish reference, freeze8 and publishS1; no source edits or scientific run in this turn"
+}

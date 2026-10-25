@@ -1,0 +1,256 @@
+{
+  "schema": "PHYS91_C9_FINAL_INDEPENDENT_REVIEW_V1",
+  "observed_utc": "2026-10-25 07:56:41 UTC",
+  "reviewer": "/root/central_recovery",
+  "reviewer_role": "Independent scientific implementation and actual-outcome reviewer; author of neither frozen theory/contract nor numerical source",
+  "runtime_model_identity": "NOT_EXPOSED_BY_EXECUTION_TOOLS",
+  "decision": "PASS_SCOPED_EXACT_GLOBAL_PSD_DISTANCE_B1_UNRESOLVED",
+  "C9": "COMPLETE_SCOPED",
+  "review_pass": "SAME_SINGLE_C9_PASS_AS_C9_PREEXEC; actual-outcome followup, no new review cycle",
+  "preexecution_review": {
+    "path": "reviews/C9_PREEXEC.json",
+    "sha256": "0d28d18b8121e5327163d1d821a89afa2aad172d6d813262f721ac2fbe372fc3",
+    "decision": "PASS_PREEXEC_STATIC_IMPLEMENTATION",
+    "preserved_immutable": true
+  },
+  "blocking_findings": [],
+  "open_findings": [],
+  "resolved_findings": [
+    {
+      "id": "C9-RANK-FIELD",
+      "classification": "NONBLOCKING_REPRESENTATION_CLARIFIED",
+      "object": "CERTIFICATES selected certificate rank field",
+      "evidence": "kernel.factor_guard and reference.factor assign len(factor[0]); no exact matrix-rank test is performed.",
+      "impact": "No effect on Gram PSD, exact alpha/beta or B1 result. Calling the final padded primal matrix rank65 would overstate the checked fact.",
+      "resolution": "Report dual factor88columns and primal factor65columns. Preserve original rank fields/bytes; no code change or new computation.",
+      "status": "CLOSED_BY_EXPLICIT_INTERPRETATION_IN_THIS_REVIEW"
+    }
+  ],
+  "identity": {
+    "frozen_execution_head": "c9eaf283c227157067d27cecd672033d795bbe68",
+    "frozen_execution_tree": "4e2bd383ce1afecb0bf7669f70bd02340ca11629",
+    "scientific_identity": "4b7e3ce80c6a96373e4f0f214d63c12738d2ab5f71b9f83bc01cfbaf5bb5c376",
+    "frozen_eight_files": {
+      "CONTRACT.json": "361826f7940542e05c1461bf879d43808007aad092c58579c762dacce8ca5a39",
+      "theory/GLOBAL_PSD_CERTIFICATE_KO.md": "f2ae715cc01c7489ac5e7c7f687f1a765dbbe835fb892f8f7cf2a81cd68f0b30",
+      "theory/WOLFRAM_INPUT.wl": "900791958b7ee84f8025a115cd8922d6a2d1b24c98430de613c02510c590e0c9",
+      "source/kernel.py": "8ece9efeea2f42b097dc15a0a087bcfb0d6c4a45fab59e07bb3eb46751eeea9d",
+      "source/evidence.py": "b8767ee33b5d0d3d0506fc4154cea2cdfb85ca33f378bd8fa6b2e8e7b533eb63",
+      "source/primary.py": "7a4c9c02e88beb864cae65943855bcc648026120d3a1d52616771e14cacbdb10",
+      "source/leased_call.py": "89ec2cf6aa12bc8311bc69c7389e66c543c7a47c7dca0fbfb7927102038cd5b7",
+      "source/reference.py": "c0c5e33a35ed160f48a2815746b15f0c456a11dd8ba151df203c01e389d4736c"
+    },
+    "frozen_eight_actual_SHA_readback": "PASS_UNCHANGED",
+    "three_immutable_inputs": "PASS in actual primary/reference/resumes and execution summary; no new decode or pair scan",
+    "R6": "COMPLETED_PROOF_REUSED_NOT_REEXECUTED"
+  },
+  "scientific_result": {
+    "model": "CONDITIONAL_CLOSED_COMPONENTWISE_HALF_ULP_FORMATTING_BOX",
+    "n": 153,
+    "upper_entries_per_selected_certificate": 11781,
+    "lower": "606934757065126340229833497971012560/1044859134592536248071098889705557947",
+    "lower_strict": false,
+    "upper": "1210812737265140594067745/1208925819614629174706176",
+    "upper_inclusive": true,
+    "inherited_pair_lower": "34406736621/68719476736",
+    "inherited_pair_lower_strict": true,
+    "inherited_bound_not_recomputed": true,
+    "selected_dual": {
+      "checkpoint": 4,
+      "factor_columns": 88,
+      "exact_matrix_rank": null
+    },
+    "selected_primal": {
+      "checkpoint": 13,
+      "factor_columns": 65,
+      "exact_Gram_rank": null,
+      "exact_padded_C_rank": null,
+      "alpha_witness_zero_based": [
+        22,
+        74
+      ]
+    },
+    "B1_status": "B1_UNRESOLVED_WITH_CERTIFIED_GLOBAL_DISTANCE_ENCLOSURE",
+    "B1_exists_certified": false,
+    "B1_excluded_certified": false,
+    "interpretation": "beta<1<alpha. Exact global distance enclosure is certified; B1 existence/exclusion remains OPEN. This is the allowed unresolved outcome after a normally completed bounded search, not an algorithm error or physical no-go.",
+    "checkpoint_count": 16,
+    "changed_candidate_eigh_calls": 4096,
+    "raw_F_eigh_calls": 0,
+    "termination": "FROZEN_FINITE_PROJECTION_CAPS",
+    "stage_iterations": [
+      2048,
+      2048
+    ],
+    "dyadic_denominator": 281474976710656,
+    "primal_dual_contradiction": false
+  },
+  "independent_reference": {
+    "status": "PASS_EXACT_SELECTED_CERTIFICATES",
+    "execution_count": 1,
+    "production_kernel_imports": 0,
+    "primary_imports": 0,
+    "candidate_generation": 0,
+    "eigenvalue_calls": 0,
+    "selected_primal_verified": true,
+    "selected_dual_verified": true,
+    "upper_entries_checked_per_selected_certificate": 11781,
+    "all_checkpoint_metadata_and_hashes_audited": 16,
+    "all_checkpoint_factors_recomputed": false,
+    "scope": "Independent integer/Fraction selected factors, padding, alpha/witness, full combined Gram signed trace/support, beta, endpoint openness and B1 state; all16saved scalar min/max selections and hashes audited.",
+    "independent_boolean_fixtures": 20,
+    "all_boolean_fixtures_pass": true,
+    "forest_sign_cases": 16,
+    "all_rank_one_theorem_basis": "REUSED_FOREST_PROOF_WITH_EXACT_SIGN_CASE_IDENTITIES_NOT_FINITE_VECTOR_SAMPLING",
+    "REFERENCE_sha256": "aae010c75ccb9cfa6fca798e71186d6309fd7111f125d8a65f366b949fc1792e",
+    "manifest_sha256": "fd1157dc42ee779b76b245e357a7d6457774c7e289efad9508c384814516375e",
+    "primary_dependency_manifest_sha256": "69ee4557804f2d341bb447b4c862266c3a00ccb7b5cf034ad7ef0355333cfaa0"
+  },
+  "actual_execution": {
+    "primary": {
+      "invocations": 1,
+      "exit": 0,
+      "CPU_s": 13.679209,
+      "wall_s": 13.693714398999873,
+      "CPU_cap_s": 60,
+      "wall_cap_s": 90,
+      "stderr": "",
+      "within_caps": true
+    },
+    "reference": {
+      "invocations": 1,
+      "exit": 0,
+      "CPU_s": 0.571149,
+      "wall_s": 0.5727001010000095,
+      "CPU_cap_s": 30,
+      "wall_cap_s": 45,
+      "stderr": "",
+      "within_caps": true
+    },
+    "successful_scientific_children": 2,
+    "automatic_retries": 0,
+    "prelaunch_WAIT": 0,
+    "scientific_child_CPU_total_s": 14.250358,
+    "scientific_child_wall_total_s": 14.266414499999883,
+    "coordinator_CPU_total_s": 0.05050599999999999,
+    "lease": "ORIGINAL_SHARED_/tmp/rei-bianchi-cooperative-leases",
+    "original_gate_sha256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+    "fresh_memory_reserve_GiB": 1.5,
+    "job_GiB": 0.5,
+    "scientific_CPU": 0,
+    "coordinator_CPU": 8,
+    "workers": 1,
+    "threads": 1,
+    "both_own_leases_released": true,
+    "other_processes_terminated": 0
+  },
+  "actual_resumes": {
+    "primary": {
+      "invocations": 1,
+      "exit": 0,
+      "status": "SKIP_COMPLETE_READ_ONLY",
+      "scientific_imports": 0,
+      "scientific_callbacks": 0,
+      "writes": 0
+    },
+    "reference": {
+      "invocations": 1,
+      "exit": 0,
+      "status": "SKIP_COMPLETE_READ_ONLY",
+      "scientific_imports": 0,
+      "scientific_callbacks": 0,
+      "writes": 0
+    },
+    "payload_and_manifest_files_unchanged": 25,
+    "bytes_before": 9110118,
+    "bytes_after": 9110118,
+    "comparison_status": "PASS",
+    "before_after_snapshot_sha256": "94f774712cfba9daf0c0285f3f8b030dd05ac7bc7185e0dc7f0d0a3f545ffab6",
+    "metadata_CPU_total_s": 0.091248,
+    "metadata_wall_total_s": 0.09206515599998966,
+    "separate_from_scientific_children": true
+  },
+  "figures": {
+    "decision": "PASS_VISUAL_AND_ORIGINAL_BYTE_PRESERVATION",
+    "PNG": {
+      "path": "verification/primary/GLOBAL_PSD_BOUNDS.png",
+      "bytes": 67161,
+      "sha256": "ba2a1ef466af73aaa53aa2ace835ce703b954f069f3220fa56e083fb7dc1175d",
+      "directly_viewed": true
+    },
+    "PDF": {
+      "path": "verification/primary/GLOBAL_PSD_BOUNDS.pdf",
+      "bytes": 17897,
+      "sha256": "9f04af1270d0662b9b5e42ac8d02db3e948cde3d6ffba912c4ea776886fc5c4e",
+      "pages": 1,
+      "page_size_points": [
+        518.4,
+        302.4
+      ],
+      "read_only_page_render_count": 1,
+      "render_visually_viewed": true
+    },
+    "findings": "Title, axes, all16checkpoints, bound curves and B1 legend are visible; no clipping, missing page/content, overlap hiding results or unreadable glyphs.",
+    "interpretation": "Decimal figure is an overview; exact endpoints and OPEN B1 state are determined by certificates, not visual proximity to1.",
+    "original_PNG_PDF_SHA_after_inspection": "PASS_MATCH_PRIMARY_MANIFEST",
+    "scientific_figure_regeneration": 0
+  },
+  "scope_ceiling": {
+    "parent_node": "NUCLEAR_BARE_KERNEL_SOURCE_AND_CONSUMER_CONTRACT",
+    "parent_status": "PARTIAL_INPUT_DEPENDENCIES",
+    "R8_interpretation": "Finite distance result adjudicated; B1 question remains OPEN",
+    "source_covariance_adopted": false,
+    "actual_matrix_repair": false,
+    "formatter_guarantee": false,
+    "physical_CI": false,
+    "actual_consumer_ACK": null,
+    "strong_physical_no_go": "NOT_CLAIMED",
+    "source_defect_cause": "NOT_ESTABLISHED",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "global_physical_completion": null
+  },
+  "budgets": {
+    "primary_allowance_remaining": 0,
+    "reference_allowance_remaining": 0,
+    "old_completed_allowances_remaining": 0,
+    "reset": false,
+    "historical_total_CPU_s": null,
+    "remote_CPU_s": null,
+    "remote_cost": null,
+    "money": null,
+    "remaining_global_budget": null
+  },
+  "source_evidence": [
+    "verification/primary/RESULTS.json",
+    "verification/primary/FIXTURES_AND_GUARDS.json",
+    "execution/PRIMARY_EXECUTION_SUMMARY.json",
+    "execution/PRIMARY_ATTEMPT1.json",
+    "verification/reference/REFERENCE.json",
+    "verification/reference/MANIFEST.json",
+    "execution/REFERENCE_ATTEMPT1.json",
+    "execution/PRIMARY_RESUME1.json",
+    "execution/REFERENCE_RESUME1.json",
+    "execution/RESUME_COMPARISON.json",
+    "execution/EXECUTION_SUMMARY.json",
+    "implementation/FROZEN_FILES.json",
+    "implementation/SCIENTIFIC_IDENTITY.json"
+  ],
+  "reviewer_operations": {
+    "factor_recomputation": 0,
+    "projection": 0,
+    "eigh": 0,
+    "fixtures_or_tests": 0,
+    "scientific_imports": 0,
+    "old_science_rerun": 0,
+    "source_edits": 0,
+    "raw_output_edits": 0,
+    "scientific_figure_generation": 0,
+    "PDF_read_only_render": 1,
+    "metadata_SHA_reads": true,
+    "review_artifact_writes": true,
+    "new_review_layers": 0,
+    "remote_calls": 0
+  },
+  "next_action": "Root may issue scoped scientific admission and publish S2 with unchanged frozen science, then finish authorized delivery. No further scientific execution, projection, reference rerun, resume repeat, or plot generation is requested."
+}

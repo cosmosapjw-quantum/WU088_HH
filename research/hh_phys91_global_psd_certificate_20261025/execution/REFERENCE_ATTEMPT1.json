@@ -1,0 +1,118 @@
+{
+  "schema": "PHYS91_BOUNDED_LEASED_CHILD_ATTEMPT_V1",
+  "kind": "reference",
+  "label": "phys91-reference1-hostpid",
+  "command": [
+    "python",
+    "research/hh_phys91_global_psd_certificate_20261025/source/reference.py",
+    "--output",
+    "research/hh_phys91_global_psd_certificate_20261025/verification/reference",
+    "--primary-output",
+    "research/hh_phys91_global_psd_certificate_20261025/verification/primary"
+  ],
+  "started_utc": "2026-10-25T07:54:29.328899+00:00",
+  "cpu_limit_s": 30,
+  "wall_limit_s": 45,
+  "threads": 1,
+  "workers": 1,
+  "reserve_GiB": 1.5,
+  "job_GiB": 0.5,
+  "scientific_CPU": 0,
+  "coordinator_CPU": 8,
+  "gate_source_sha256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+  "child_invocations": 1,
+  "automatic_retries": 0,
+  "old_PHYS78_87_science_calls": 0,
+  "other_processes_terminated": 0,
+  "cache_manipulation": false,
+  "lease": {
+    "path": "/tmp/rei-bianchi-cooperative-leases",
+    "key": "47cb5d920db842a39fdd7ad54f19f303",
+    "owner": "21780-3577eeddc68a4f08a24fcee6b8a44fc9"
+  },
+  "HH_R10": "OFF",
+  "production_admission": "NOT_ISSUED",
+  "original_allowed_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "live_leases_before_acquire": [],
+  "observation": {
+    "site": "local",
+    "cap_cpus": 8,
+    "affinity_cpus": 9,
+    "quota_cpus": 8.0,
+    "sampled_busy_affinity_cpus": 0.0,
+    "sampled_cgroup_busy_cpus": 0.009507406781482805,
+    "sampled_idle_cpus": 7.990492593218518,
+    "cgroup_quota_headrooms": [
+      7.990492593218518
+    ],
+    "available_gib": 5.652935028076172,
+    "capacity_gib": 8.0,
+    "reserve_gib": 1.5,
+    "reserve_cpus": 1,
+    "job_gib": 0.5,
+    "sample_interval_s": 0.08014803799960646,
+    "admissible_slots": 6,
+    "live_leases": 0
+  },
+  "live_leases_after_acquire": [
+    {
+      "boot": "e4d1ac72-fb39-4e9a-b068-f89687c2cbe1",
+      "cpus": 1,
+      "gib": 0.5,
+      "owner": "21780-3577eeddc68a4f08a24fcee6b8a44fc9",
+      "pid": 21780,
+      "start": "681053",
+      "task": "PHYS91:reference:phys91-reference1-hostpid"
+    }
+  ],
+  "fresh_memory_before_launch": {
+    "observed_utc": "2026-10-25T07:54:29.434584+00:00",
+    "available_bytes": 6069792768,
+    "capacity_bytes": 8589934592,
+    "required_reserve_plus_job_bytes": 2147483648,
+    "reserve_GiB": 1.5,
+    "job_GiB": 0.5,
+    "cgroups": [
+      {
+        "path": "/sys/fs/cgroup",
+        "memory_max_bytes": 8589934592,
+        "memory_current_bytes": 2520141824
+      }
+    ],
+    "memory_admissible": true
+  },
+  "actual_coordinator_affinity": [
+    8
+  ],
+  "prelaunch_admission_receipt": {
+    "path": "/workspace/scratch/1838015530ea/phys91_recovery/WU088_HH/research/hh_phys91_global_psd_certificate_20261025/execution/REFERENCE_ADMISSION1.json",
+    "bytes": 2461,
+    "sha256": "8c803a1ee5dd0b26c63ce02f3410677ffc67aaa2035beb00d9c2fe604bbd0af5"
+  },
+  "child_launch_utc": "2026-10-25T07:54:29.435332+00:00",
+  "exit_code": 0,
+  "stdout": "{\"status\": \"COMPLETE\", \"kind\": \"reference\", \"identity\": \"4b7e3ce80c6a96373e4f0f214d63c12738d2ab5f71b9f83bc01cfbaf5bb5c376\"}\n",
+  "stderr": "",
+  "status": "CHILD_COMPLETED",
+  "launch_inclusive_child_wall_s": 0.5727001010000095,
+  "child_return_utc": "2026-10-25T07:54:30.008050+00:00",
+  "coordinator_affinity_restored": true,
+  "own_lease_released": true,
+  "completed_utc": "2026-10-25T07:54:30.008456+00:00",
+  "wrapper_wall_s": 0.6795492210003431,
+  "child_user_cpu_s": 0.541728,
+  "child_system_cpu_s": 0.029421,
+  "child_cpu_s": 0.571149,
+  "coordinator_cpu_s": 0.027032999999999995,
+  "wrapper_exit_code": 0
+}

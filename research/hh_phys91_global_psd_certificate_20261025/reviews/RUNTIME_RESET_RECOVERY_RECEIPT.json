@@ -1,0 +1,73 @@
+{
+  "schema": "PHYS91_RUNTIME_RESET_EXACT_RECOVERY_RECEIPT_V1",
+  "author": "independent90",
+  "status": "PASS_EXACT_PRIOR_BYTES_RECOVERED",
+  "task": "Restore existing R6 and theory artifacts after runtime reset; do not rerun derivations, review, or science",
+  "source": "Literal original write-tool arguments and read-tool outputs retained in the continuing conversation; compared against independently recorded pre-reset SHA256 pins",
+  "recovery_root": "/workspace/scratch/1838015530ea/phys91_recovery",
+  "artifacts": [
+    {
+      "path": "reviews/R6_THEORY.json",
+      "bytes": 7947,
+      "prior_sha256": "4a36492ea1aa36e741e229c4133472a477061f4a9609dc363db11e6e8fcf5a3f",
+      "actual_sha256": "4a36492ea1aa36e741e229c4133472a477061f4a9609dc363db11e6e8fcf5a3f",
+      "status": "EXACT_MATCH",
+      "store_key": "PHYS91_R6_THEORY_EXACT_BYTES"
+    },
+    {
+      "path": "theory_intake/FULL_PSD_PRIMAL_DUAL_THEORY_KO.md",
+      "bytes": 25066,
+      "prior_sha256": "1f418af1146a260062f01ee82be49e3c4df03a2c500ebdcad42d9c255dde413b",
+      "actual_sha256": "1f418af1146a260062f01ee82be49e3c4df03a2c500ebdcad42d9c255dde413b",
+      "status": "EXACT_MATCH",
+      "store_key": "PHYS91_INDEPENDENT_THEORY_EXACT_BYTES"
+    },
+    {
+      "path": "theory_intake/CERTIFICATE_CONTRACT_PROPOSAL.json",
+      "bytes": 8527,
+      "prior_sha256": "84b083ad78a606b761fd60f51e2effa0369c8448d58fca8edd090d65eebdc312",
+      "actual_sha256": "84b083ad78a606b761fd60f51e2effa0369c8448d58fca8edd090d65eebdc312",
+      "status": "EXACT_MATCH",
+      "store_key": "PHYS91_CERTIFICATE_PROPOSAL_EXACT_BYTES"
+    },
+    {
+      "path": "theory_intake/THEORY_INTAKE_STATUS.json",
+      "bytes": 1972,
+      "prior_sha256": "fc3be0663dfb4fd6fa004f765e5e45f105bbeae0fe5a8a2c044732de97d74acf",
+      "actual_sha256": "fc3be0663dfb4fd6fa004f765e5e45f105bbeae0fe5a8a2c044732de97d74acf",
+      "status": "EXACT_MATCH",
+      "store_key": "PHYS91_THEORY_INTAKE_STATUS_EXACT_BYTES"
+    },
+    {
+      "path": "recovered_root/GLOBAL_PSD_CERTIFICATE_KO.md",
+      "bytes": 16486,
+      "prior_sha256": "f2ae715cc01c7489ac5e7c7f687f1a765dbbe835fb892f8f7cf2a81cd68f0b30",
+      "actual_sha256": "f2ae715cc01c7489ac5e7c7f687f1a765dbbe835fb892f8f7cf2a81cd68f0b30",
+      "status": "EXACT_MATCH",
+      "store_key": "PHYS91_ROOT_THEORY_EXACT_BYTES"
+    }
+  ],
+  "total_restored_files": 5,
+  "total_restored_bytes": 59998,
+  "root_theory_text_recovery": {
+    "source": "Original full theory readback plus final appendix readback and recorded removal of escaped backticks",
+    "first_literal_candidate_sha256": "245896029082c1f0c132e04a6899a6eaa9133c89e3df8c121404aa1c9f1745ee",
+    "first_candidate_status": "NOT_CLAIMED_EXACT",
+    "discrepancy": "Two terminal LF in first copied candidate; original final file has three terminal LF",
+    "correction": "Restored the third terminal LF and obtained exact prior hash",
+    "mathematical_text_change": false,
+    "new_theory_review": false
+  },
+  "json_syntax_readback": "PASS_3_JSON_FILES",
+  "historical_document_paths": "Preserved verbatim in recovered original files; this receipt maps them to current recovery paths",
+  "review_decision": "Existing PASS_SCOPED_R6_THEORY_AND_CONTRACT reused; no new adjudication",
+  "scientific_execution": 0,
+  "old_scientific_reruns": 0,
+  "derivation_reruns": 0,
+  "numerical_fixture_execution": 0,
+  "external_publication_by_reviewer": 0,
+  "budget_reset": false,
+  "root_contract_recovery": "ROOT_RESPONSIBILITY; original pin 361826f7940542e05c1461bf879d43808007aad092c58579c762dacce8ca5a39 retained in exact R6 bytes",
+  "remote_ref_verification": "Not performed by this reviewer during metadata recovery",
+  "unobserved_remote_cost": null
+}

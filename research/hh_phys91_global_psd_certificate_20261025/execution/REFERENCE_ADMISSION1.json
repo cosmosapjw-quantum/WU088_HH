@@ -1,0 +1,79 @@
+{
+  "schema": "PHYS91_ACTUAL_PRELAUNCH_RESOURCE_LEASE_V1",
+  "status": "ADMITTED_FRESH_PINNED_RESOURCE_LEASE",
+  "observed_utc": "2026-10-25T07:54:29.434772+00:00",
+  "kind": "reference",
+  "label": "phys91-reference1-hostpid",
+  "command": [
+    "python",
+    "research/hh_phys91_global_psd_certificate_20261025/source/reference.py",
+    "--output",
+    "research/hh_phys91_global_psd_certificate_20261025/verification/reference",
+    "--primary-output",
+    "research/hh_phys91_global_psd_certificate_20261025/verification/primary"
+  ],
+  "gate_source_sha256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+  "lease": {
+    "path": "/tmp/rei-bianchi-cooperative-leases",
+    "key": "47cb5d920db842a39fdd7ad54f19f303",
+    "owner": "21780-3577eeddc68a4f08a24fcee6b8a44fc9"
+  },
+  "actual_post_acquire_live_leases": [
+    {
+      "boot": "e4d1ac72-fb39-4e9a-b068-f89687c2cbe1",
+      "cpus": 1,
+      "gib": 0.5,
+      "owner": "21780-3577eeddc68a4f08a24fcee6b8a44fc9",
+      "pid": 21780,
+      "start": "681053",
+      "task": "PHYS91:reference:phys91-reference1-hostpid"
+    }
+  ],
+  "other_live_leases_observed": 0,
+  "fresh_memory_before_launch": {
+    "observed_utc": "2026-10-25T07:54:29.434584+00:00",
+    "available_bytes": 6069792768,
+    "capacity_bytes": 8589934592,
+    "required_reserve_plus_job_bytes": 2147483648,
+    "reserve_GiB": 1.5,
+    "job_GiB": 0.5,
+    "cgroups": [
+      {
+        "path": "/sys/fs/cgroup",
+        "memory_max_bytes": 8589934592,
+        "memory_current_bytes": 2520141824
+      }
+    ],
+    "memory_admissible": true
+  },
+  "original_gate_observation": {
+    "site": "local",
+    "cap_cpus": 8,
+    "affinity_cpus": 9,
+    "quota_cpus": 8.0,
+    "sampled_busy_affinity_cpus": 0.0,
+    "sampled_cgroup_busy_cpus": 0.009507406781482805,
+    "sampled_idle_cpus": 7.990492593218518,
+    "cgroup_quota_headrooms": [
+      7.990492593218518
+    ],
+    "available_gib": 5.652935028076172,
+    "capacity_gib": 8.0,
+    "reserve_gib": 1.5,
+    "reserve_cpus": 1,
+    "job_gib": 0.5,
+    "sample_interval_s": 0.08014803799960646,
+    "admissible_slots": 6,
+    "live_leases": 0
+  },
+  "cpu_limit_s": 30,
+  "wall_limit_s": 45,
+  "threads": 1,
+  "workers": 1,
+  "actual_coordinator_affinity": [
+    8
+  ],
+  "scientific_CPU_to_enforce_in_child_preexec": 0,
+  "child_started": false,
+  "scope": "Actual fresh prelaunch observation; child caps/affinity enforced by wrapper preexec, not yet a child outcome"
+}
