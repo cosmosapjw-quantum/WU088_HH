@@ -1,0 +1,88 @@
+{
+  "schema": "PHYS90_EXECUTION_SUMMARY_V1",
+  "status": "WAITING_OBSERVED_LEASE_CONFLICT_NO_CHILD",
+  "observed_utc": "2026-10-25T02:15:32.268731+00:00",
+  "frozen_execution_head": "298aebe3889011d8a7f48a454cf18d1a98c8f54c",
+  "frozen_execution_tree": "e67be32177ec3d64d91b8ad695f0a7fa0676ef4d",
+  "scientific_identity": "a7107870ad5a66e3bb602115f1068ca7366444b42c539e1a6b4b83da2037513a",
+  "prelaunch_owned_paths_dirty": false,
+  "command": [
+    "python",
+    "research/hh_phys90_covariance_cell_20261025/source/leased_call.py",
+    "--kind",
+    "primary",
+    "--label",
+    "phys90-primary1",
+    "--receipt",
+    "research/hh_phys90_covariance_cell_20261025/execution/PRIMARY_ATTEMPT1.json",
+    "--admission-receipt",
+    "research/hh_phys90_covariance_cell_20261025/execution/PRIMARY_ADMISSION1.json",
+    "--",
+    "python",
+    "research/hh_phys90_covariance_cell_20261025/source/primary.py",
+    "--output",
+    "research/hh_phys90_covariance_cell_20261025/verification/primary"
+  ],
+  "primary_wrapper_attempts": 1,
+  "primary_scientific_child_invocations": 0,
+  "reference_wrapper_attempts": 0,
+  "reference_scientific_child_invocations": 0,
+  "primary_resume_invocations": 0,
+  "reference_resume_invocations": 0,
+  "no_automatic_retry": true,
+  "old_allowances_remaining": 0,
+  "cumulative_budget_reset": false,
+  "observed_lease_before_acquire": [],
+  "acquire_returned_lease": {
+    "path": "/tmp/rei-bianchi-cooperative-leases",
+    "key": "ace515bd719f409e9a7997cea9b667df",
+    "owner": "2-b8f0fbc4bf22494b9a4f17989c74fd2a"
+  },
+  "observed_lease_after_acquire": [],
+  "original_gate_observation": {
+    "site": "local",
+    "cap_cpus": 8,
+    "affinity_cpus": 9,
+    "quota_cpus": 8.0,
+    "sampled_busy_affinity_cpus": 0.0,
+    "sampled_cgroup_busy_cpus": 0.03022110162337251,
+    "sampled_idle_cpus": 7.969778898376627,
+    "cgroup_quota_headrooms": [
+      7.969778898376627
+    ],
+    "available_gib": 4.923210144042969,
+    "capacity_gib": 8.0,
+    "reserve_gib": 1.5,
+    "reserve_cpus": 1,
+    "job_gib": 0.5,
+    "sample_interval_s": 0.08010958800150547,
+    "admissible_slots": 6,
+    "live_leases": 0
+  },
+  "fresh_prelaunch_memory_check": "NOT_REACHED_BECAUSE_POST_ACQUIRE_OWN_LEASE_NOT_OBSERVED",
+  "own_lease_released": true,
+  "other_processes_terminated": 0,
+  "cost": {
+    "wrapper_wall_s": 0.10892988200066611,
+    "coordinator_cpu_s": 0.028175,
+    "primary_scientific_cpu_s": 0.0,
+    "reference_scientific_cpu_s": 0
+  },
+  "primary_output_exists": false,
+  "reference_output_exists": false,
+  "payload_before_after_sha": "NOT_APPLICABLE_NO_SCIENTIFIC_OUTPUT_OR_RESUME",
+  "scientific_results": "NONE; SCIENTIFIC_CHILD_NOT_STARTED",
+  "checks": {
+    "frozen_HEAD_observed": true,
+    "owned_paths_clean_before_launch": true,
+    "scientific_launch_through_frozen_wrapper_only": true,
+    "post_acquire_own_live_lease": "NOT_OBSERVED",
+    "reference_conditional_on_primary_success": "NOT_LAUNCHED",
+    "resume_conditional_on_two_successes": "NOT_LAUNCHED"
+  },
+  "raw_receipt": {
+    "path": "research/hh_phys90_covariance_cell_20261025/execution/PRIMARY_ATTEMPT1.json",
+    "sha256": "cd043f317b41f3e157c2db3b5c807c72fcfe4624fed1d57620c27ece0a44d683"
+  },
+  "next_action": "Controller interpretation of original-gate lease observation; no automatic retry or code change authorized"
+}

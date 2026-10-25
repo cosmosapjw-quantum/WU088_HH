@@ -1,0 +1,19 @@
+{
+  "schema": "PHYS90_HOST_PID_ENVIRONMENT_CORRECTION_V1",
+  "old_attempt": "execution/PRIMARY_ATTEMPT1.json",
+  "scientific_child_started": false,
+  "scientific_allowance_consumed": 0,
+  "cause": "Sandbox PID namespace differs from proc mount namespace. Vendor os.getpid()=2 resolves missing outer proc/2; own record is classified DEAD. A current default pid3 aliases outer rsync, so ignoring DEAD is not a correction.",
+  "read_only_evidence": [
+    "PID_NAMESPACE_DIAGNOSTIC_0.json",
+    "PID_NAMESPACE_DIAGNOSTIC_1.json"
+  ],
+  "correction": "Use require_escalated host PID execution, where os.getpid()==proc/self pid; retain exact frozen wrapper and original shared lease API, path, lock, boot/start validation, CPU/memory/thread caps.",
+  "code_changed": false,
+  "new_science_identity": false,
+  "scientific_identity": "a7107870ad5a66e3bb602115f1068ca7366444b42c539e1a6b4b83da2037513a",
+  "other_processes_terminated": 0,
+  "budget_reset": false,
+  "primary_actual_remaining_before_execution": 1,
+  "reference_actual_remaining_before_execution": 1
+}

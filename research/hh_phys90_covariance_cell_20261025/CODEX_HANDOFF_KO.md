@@ -1,0 +1,55 @@
+# PHYS90 Codex 재개 인계
+
+## 시작 identity와 필수 읽기
+
+Repo https://github.com/cosmosapjw-quantum/WU088_HH
+Draft PR147 https://github.com/cosmosapjw-quantum/WU088_HH/pull/147
+Branch research/hh-phys90-covariance-cell-20261025
+Parent PHYS89 FINAL480baabc73ebaaba735d285d969e79177f5545ed/tree10b9ce681428432379ff87c1bf0febdd731a0cae.
+PHYS90 scienceidentitya7107870ad5a66e3bb602115f1068ca7366444b42c539e1a6b4b83da2037513a.
+S0 19509c0f7d275a70326184e009b09d3836e253d4/tree54495cc562089f1cb7677c05c7049046a47ab3ce.
+S1 298aebe3889011d8a7f48a454cf18d1a98c8f54c/treee67be32177ec3d64d91b8ad695f0a7fa0676ef4d.
+
+Git내인계는아직생성되지않은자기FINALSHA를쓰지않는다. 정확한S2/FINAL/tree/최종ZIP·MAIN·TERMINAL/중앙HEAD는외부FINALdelivery와PR147actual최종본문에서읽고FINALdescendant를사용하라. S2만단독checkout하지마라. ParentPHYS88FINAL92dec7cdc1cf5afeff5bdff8d6234f7f1e3dbbd8/treece62d9e8c7145d12c06e74c0a3b37d2880c62d09 및PHYS82CRLF복구ca9d53983459ea08f9992a8a24663e46b7180344 ancestry를보존하라.
+
+필수읽기: FINAL_REPORT_KO.md,CONTRACT.json,SCIENTIFIC_ADMISSION.json,EXECUTION_LEDGER.json,DAG_OVERLAY.json,RESEARCH_LOOP_MAP_KO.md,SURVEY_SYNTHESIS_KO.md,theory/,reviews/,verification/,implementation/SCIENTIFIC_IDENTITY.json,execution/,delivery/,이인계와NEXT_THREAD/POST_PUBLICATION 및외부MAIN/TERMINAL. ParentPHYS89필수묶음과PHYS88필수묶음은그대로재사용한다.
+
+## 이번 finite 결과
+
+원F/H cachedresult만재사용해153singleton/11628pairs를정확히검사했다. t0pairfail74,t1pairfail0/singletonfail0.
+t_pair in (34406736621/68719476736,550507785937/1099511627776],폭2^-40.
+하단witnesspair(10,16),최대det−23113/549755813888000000000000000000.
+t1full153PSDcompatibility와fullPSDthreshold는UNRESOLVED다.
+대칭원소공유sharpboxsupport와K=LCL^T의q^TL=0 보존을유도했다.8manufacturedvertices/9supportentries/15guards,reference42storedcheckpoints PASS_EXACT.
+옛w=e0−e10중심−1e−10은재사용이고새boxradius2e−10만이번결과다. ActualphysicalCI/formatterguarantee/수정F를발행하지않았다.
+
+원VII.1H1capture13groups/current153groups/공개COMMARA33group제품은구별한다.2013/2016/2017H1공식수정이력중currentMT102정확계보는OPEN이다. Actualfullprecisionnominalbinding/mass/electron-targetstate/kernel/tail/consumerACK를그자료없이닫지마라.
+
+## 실행과 예산
+
+새scientificchildren2success:primary1/reference1,CPU2.9139999999999997s,childwall2.917763527002535s. Wrapper3attempts에는첫prelaunchchild0WAIT가포함된다. DefaultPIDnamespace와/procnamespace불일치가원인이다. HostPID환경(require_escalated가필요했던실제환경)에서같은frozenwrapper와원lease를사용했으며code/osproxy변경0이다.
+WrappercoordCPU0.07425899999999999s,wrapperinclusivewall3.232636796994484s;childwall과더하지마라.
+Readonlyresume각1회SKIP,9files98380bytesSHA/size불변,scientificimports/callbacks/writes0. ResumeCPU0.063894s/wall0.06465108200791292s는별도.
+Wolframcontext1/evaluator1,9scalarzeros/all_zeroTrue/positivebranchTrue,기록된symboliclineage9.
+모든이번/이전scientific허용량remaining0,budgetresetfalse. 알려진PHYS87–90childCPU부분합15.01791s;전체역사/원격비용/금액/잔여global미관측값null.
+
+완료PHYS78–90,HH/REI/REC/HE/C22/C23A identity를다시실행하지마라. Runtime변경만으로science를재실행하지마라. 다음affected계약을별도로동결하고의미상변경된부분만검증하라.1worker/thread,원/tmp/rei-bianchi-cooperative-leases,다른process종료금지. PID가proc와다르면원gate를우회/패치하지말고맞는실행경계에서관측하라. 기존output/attemptreceipt는create-only이며실패를덮어쓰지마라.
+
+## 다음 단일 선택과 물리 gate
+
+부모 NUCLEAR_BARE_KERNEL_SOURCE_AND_CONSUMER_CONTRACT는PARTIAL_INPUT_DEPENDENCIES.
+다음은 currentMT102의nominal-bound원precisioncovariance와실제formatter/approvedcorrection을확보해153group표현과결속하는의무다. 조건부box의globalPSD는exactGram/LDL^Tprimal또는exactPSDDualYcertificate로다룬다. Pairpass를globalPSD로승격하지마라.
+
+실제atomic→barekernel,exactmass/electron-targetstate,fullsupporttailB0/BA,namedthermal/fast/radiationmeasure·clock·reference-density·ownershipACK를물리단계에서먼저닫고새codeidentity를구현하라. REI-L2기존scope는beta이고capture제안ACKnull;BASSnuclearconsumerNOT_BOUND. Nuclearactivation0,faststopping0,ODE0,benchmark0,HH_R10OFF,productionNOT_ISSUED,globalphysicalcompletionnull.
+
+## 병렬·중앙·백업
+
+매새node전AGENTS/actualHHHEAD/centralactualHEAD/parallel delta/backup/completion/budget를확인하라. 최신centralHANDOFF/DAG/returns를읽고,고정최초0f9d9df825be1dac9ca9bdf73cdc2e8908bcba17의HANDOFF_WU088_HH_KO.md도보존하라. 원40contracts/planstatus/dependencies,7authorities17edges,다른39nodes,HH기존25081B/최초11893Bprefix와WU기존18관측키를보존하라. 새PHYS90관측이추가된actualHEAD에서는그키도보존한다.
+
+Freshsurvey51repos2254refs65pages/관련6×5PR30,DropboxHH529/DriveHH561,최근Library311metadata다. 모든비공개대화/branch내용/Drive1000cap밖전수열람을주장하지마라. 중앙초기14976이후a28ba343CRdelivery-only가추가됐다. HE100/BASS188/REC135/CR104/HI의claim·backup한계를SURVEY와intake/central/에서읽어라. OwnerACK/wholeGET와이번HH의실제복원을혼동하지마라.
+
+S0/S1/S2는dualACK/별도metadata,stagewholeGET0. FINAL은각providerZIPwholeGET/원bytesSHA/CRC/payloadSHA/authoritativeGitidentity/실제추출을별도로검증한다. ParentPHYS89wholearchive1/nestedrestore0. MAIN/TERMINAL원문도actualGET/SHA/parsedidentity를확인한다. Report/MAIN18/20은snapshot이며laterFINALreadback이한정20/20을결속한다.
+
+PHYS88의원153knots/152cells/nativeEs,LAB_ANCHORED/FIXED_COM_K,Qgap81.63eV=0.003700036867+81.626299963133eV,signedcarrier≠freshbare사건,4T136.189–168.788ppm의범위를유지한다. Carrier를heat/실제electron으로쓰지마라. 원2PNG2PDF/shortening원인NOT_ESTABLISHED/artifactexit1/원bytes복구도보존한다. PHYS89원referenceblankparser실패/별도checker성공/oldprimaryrerun0도보존한다.
+
+Non-tiltedLRSBianchiI metric(-+++),gaspi0/DMpi_m별도,같은normalframe의signedmatter/radiation합후norm,Frobenius=sqrt2×halfcontraction. 같은trajectory분해≠species-off인과,sampledresidual≠continuumcertificate.
