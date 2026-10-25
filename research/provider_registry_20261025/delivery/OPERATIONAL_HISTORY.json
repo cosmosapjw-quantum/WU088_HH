@@ -1,0 +1,26 @@
+{
+  "schema": "WU_REGISTRY_OPERATIONAL_CLOSEOUT_HISTORY_V1",
+  "events": [
+    {
+      "operation": "first source ZIP command after switching to published branch",
+      "exit_code": 2,
+      "classification": "LOCAL_SPARSE_CHECKOUT_PATH_NOT_MATERIALIZED",
+      "effect": "No ZIP created, no source calculation run",
+      "correction": "git sparse-checkout add research/provider_registry_20261025",
+      "corrected_archive_command_exit_code": 0
+    },
+    {
+      "operation": "package whitespace observation",
+      "result": "Nonblocking source padding/CRLF and blank-line diagnostics preserved without changing reviewed source bytes",
+      "evidence": "WHITESPACE_OBSERVATION.json"
+    },
+    {
+      "operation": "two cloud actual-file downloads",
+      "result": "BOTH_SHA256_EQUAL",
+      "evidence": "CLOUD_READBACK.json"
+    }
+  ],
+  "additional_physical_computations": 0,
+  "operational_cpu_total": null,
+  "unknown_is_zero": false
+}

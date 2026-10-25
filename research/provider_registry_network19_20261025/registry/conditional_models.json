@@ -1,0 +1,1159 @@
+{
+  "R1_source_commit": "18a6804d7cbe4879701e83631f7e908bbb84cef1",
+  "context": {
+    "admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+    "electron_and_energy_closure": "no atomic-ion history from this mode; beta electron count balances nuclear Z increase; total Q event ledger, capture photons, beta total energy counted; no immediate heating or Einstein feedback assertion; missing neutrino/kinetic partition stated",
+    "mass_convention": {
+      "D": "scipy.constants.physical_constants deuteron mass",
+      "H1": "scipy.constants.physical_constants proton mass",
+      "He3": "scipy.constants.physical_constants helion mass",
+      "He4": "scipy.constants.physical_constants alpha particle mass",
+      "Li6": "6.0151228874 * atomic_mass_constant - 3 * electron_mass",
+      "Li7": "7.0160034366 * atomic_mass_constant - 3 * electron_mass",
+      "Li_atomic_binding_energy": "neglected; declared small mass convention approximation",
+      "Q_J": "c^2*(sum reactant nuclear masses - sum product nuclear masses); beta additionally subtract electron mass",
+      "T": "scipy.constants.physical_constants triton mass",
+      "n": "scipy.constants.physical_constants neutron mass",
+      "require": "serialize actual masses and constants/version used; all Q values derived from this same mass table"
+    },
+    "mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+    "outside_finite_network": [
+      "pp weak fusion and inverse weak bath reactions",
+      "He3+alpha->Be7 and Be7 electron capture",
+      "other light-nuclear reaction pairs not listed here",
+      "Li6(n,gamma)Li7 branch",
+      "Li7(p,gamma)Be8 effective radiative breakup branch",
+      "nuclear photons secondary reprocessing",
+      "fast daughter transport and stopping",
+      "screening and neutral/molecular fusion"
+    ],
+    "particle_closure": "all reacting nuclei and all produced nuclei/neutrons instantaneously thermalized at gas T; a sensitivity assumption, not a demonstrated transport regime",
+    "radiation_closure": "prescribed soft external UV only; all nuclear capture gamma rays escape and are counted separately; no generated-hard-photon reprocessing",
+    "rate_models": {
+      "binary_inverse": "logk_reverse=logk_forward+log(sym_products/sym_reactants)+log(g_reactants/g_products)+1.5*log(mass_product_reactants/mass_product_products)-Q/(kB*T); sym=product factorial multiplicities",
+      "constant_S": "sigma(E)=S0/E*exp(-sqrt(EG/E)); EG=2*mu*c^2*(pi*alpha*Z1*Z2)^2; log Maxwell integral as PHYSICS_CONTRACT R4, generalized to mu and Z1Z2",
+      "decay": "EVALUATED_DECAY_INPUTS.json; lambda_T=ln2/t_half_T; lambda_n=1/tau_n",
+      "one_over_v": "sigma(v)=sigma2200*2200/v; k=sigma2200*1e-28*2200 m^3/s; conditional continuation for thermalized neutrons",
+      "photo_inverse": "zero from prescribed external 5-60eV support below MeV thresholds; not a thermal detailed-balance rate at gas temperature"
+    },
+    "source_sink_equation": "dY_i/dt=sum_r nu_ir*event_r; forward binary event=nb*k*product(Y_reactant^multiplicity)/product(multiplicity!); decay=lambda*Y; x derivative divides by H",
+    "units": {
+      "S": "keV barn",
+      "decay": "s^-1",
+      "event_density": "m^-3 s^-1",
+      "rate": "m^3/s",
+      "sigma_thermal": "barn at v_relative=2200m/s",
+      "source": "baryon-normalized nuclei/s"
+    }
+  },
+  "rows": {
+    "COND18:d_alpha_gamma": {
+      "additional_closure_only": true,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "d_alpha_gamma",
+      "id": "COND18:d_alpha_gamma",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "S0_keV_b": 2.2e-06,
+        "closure_reason": "Li6 creation",
+        "dossier_ids": [],
+        "id": "d_alpha_gamma",
+        "kind": "radiative_capture",
+        "model": "constant_S",
+        "products": {
+          "Li6": 1
+        },
+        "provider": "NACREII_section3.5",
+        "reactants": {
+          "D": 1,
+          "He4": 1
+        },
+        "reverse": "external_photo_zero"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [],
+      "primary_record_refs": [
+        "NACREII2013_d_alpha_gamma_TABLE6"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"d_alpha_gamma\", \"dossier_ids\":[], \"closure_reason\":\"Li6 creation\", \"reactants\":{\"D\":1,\"He4\":1}, \"products\":{\"Li6\":1}, \"kind\":\"radiative_capture\", \"model\":\"constant_S\", \"S0_keV_b\":0.0000022, \"provider\":\"NACREII_section3.5\", \"reverse\":\"external_photo_zero\"},",
+      "raw_line_number": 54,
+      "raw_numeric_literals": {
+        "S0_keV_b": "0.0000022"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "5e4eb64cf2f03440dc048067fad8315758af74323b414158c19ba11a6049f7b3",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/13; line 54",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:d_d_gamma": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "d_d_gamma",
+      "id": "COND18:d_d_gamma",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "S0_keV_b": 5.8e-06,
+        "dossier_ids": [
+          6
+        ],
+        "id": "d_d_gamma",
+        "kind": "radiative_capture",
+        "model": "constant_S",
+        "products": {
+          "He4": 1
+        },
+        "provider": "NACREII_section3.2",
+        "reactants": {
+          "D": 2
+        },
+        "reverse": "external_photo_zero"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        6
+      ],
+      "primary_record_refs": [
+        "NACREII2013_d_d_gamma_TABLE3"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"d_d_gamma\", \"dossier_ids\":[6], \"reactants\":{\"D\":2}, \"products\":{\"He4\":1}, \"kind\":\"radiative_capture\", \"model\":\"constant_S\", \"S0_keV_b\":0.0000058, \"provider\":\"NACREII_section3.2\", \"reverse\":\"external_photo_zero\"},",
+      "raw_line_number": 43,
+      "raw_numeric_literals": {
+        "S0_keV_b": "0.0000058"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "5d8be1155d3e6e4f5cfdc8f6efd91ec0e80d6fafc6e8147fc64f927ae7f3a7bf",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/2; line 43",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:d_d_n": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "d_d_n",
+      "id": "COND18:d_d_n",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "S0_keV_b": 51.0,
+        "dossier_ids": [
+          15
+        ],
+        "id": "d_d_n",
+        "kind": "binary_transfer",
+        "model": "constant_S",
+        "products": {
+          "He3": 1,
+          "n": 1
+        },
+        "provider": "Viviani2023",
+        "reactants": {
+          "D": 2
+        },
+        "reverse": "binary_detailed_balance"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        15
+      ],
+      "primary_record_refs": [
+        "NACREII2013_d_d_n_TABLE4",
+        "VIVIANI2023_d_d_n_S0"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"d_d_n\", \"dossier_ids\":[15], \"reactants\":{\"D\":2}, \"products\":{\"He3\":1,\"n\":1}, \"kind\":\"binary_transfer\", \"model\":\"constant_S\", \"S0_keV_b\":51.0, \"provider\":\"Viviani2023\", \"reverse\":\"binary_detailed_balance\"},",
+      "raw_line_number": 50,
+      "raw_numeric_literals": {
+        "S0_keV_b": "51.0"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "cce1f95473377a9ace7d05574a5036de26c062ee93b6915980b9f52a1ee3aa20",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/9; line 50",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:d_d_p": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "d_d_p",
+      "id": "COND18:d_d_p",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "S0_keV_b": 50.8,
+        "dossier_ids": [
+          14
+        ],
+        "id": "d_d_p",
+        "kind": "binary_transfer",
+        "model": "constant_S",
+        "products": {
+          "H1": 1,
+          "T": 1
+        },
+        "provider": "Viviani2023",
+        "reactants": {
+          "D": 2
+        },
+        "reverse": "binary_detailed_balance"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        14
+      ],
+      "primary_record_refs": [
+        "LI2015_d_d_p_THM_S0",
+        "NACREII2013_d_d_p_TABLE5",
+        "VIVIANI2023_d_d_p_S0"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"d_d_p\", \"dossier_ids\":[14], \"reactants\":{\"D\":2}, \"products\":{\"H1\":1,\"T\":1}, \"kind\":\"binary_transfer\", \"model\":\"constant_S\", \"S0_keV_b\":50.8, \"provider\":\"Viviani2023\", \"reverse\":\"binary_detailed_balance\"},",
+      "raw_line_number": 49,
+      "raw_numeric_literals": {
+        "S0_keV_b": "50.8"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "1a5a5382c666e03a1807b49babcddf7a1fcd3b526bc77c0657bb05584b2a800c",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/8; line 49",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:d_he3_p": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "d_he3_p",
+      "id": "COND18:d_he3_p",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "S0_keV_b": 5900.0,
+        "dossier_ids": [
+          17
+        ],
+        "id": "d_he3_p",
+        "kind": "binary_transfer",
+        "model": "constant_S",
+        "products": {
+          "H1": 1,
+          "He4": 1
+        },
+        "provider": "NACREII_section3.8",
+        "reactants": {
+          "D": 1,
+          "He3": 1
+        },
+        "reverse": "binary_detailed_balance"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        17
+      ],
+      "primary_record_refs": [
+        "NACREII2013_d_he3_p_TABLE9"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"d_he3_p\", \"dossier_ids\":[17], \"reactants\":{\"D\":1,\"He3\":1}, \"products\":{\"He4\":1,\"H1\":1}, \"kind\":\"binary_transfer\", \"model\":\"constant_S\", \"S0_keV_b\":5900.0, \"provider\":\"NACREII_section3.8\", \"reverse\":\"binary_detailed_balance\"},",
+      "raw_line_number": 52,
+      "raw_numeric_literals": {
+        "S0_keV_b": "5900.0"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "e5e87c64f3b5de28d1e847cf080a9bca46e60e309fb4594b8b2c596cc5c7e4ee",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/11; line 52",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:d_n_gamma": {
+      "additional_closure_only": true,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "d_n_gamma",
+      "id": "COND18:d_n_gamma",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "closure_reason": "direct secondary-neutron T production",
+        "dossier_ids": [],
+        "id": "d_n_gamma",
+        "kind": "radiative_capture",
+        "model": "one_over_v",
+        "products": {
+          "T": 1
+        },
+        "provider": "NIST_D_thermal_absorption_as_capture",
+        "reactants": {
+          "D": 1,
+          "n": 1
+        },
+        "reverse": "external_photo_zero",
+        "sigma2200_b": 0.000519
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [],
+      "primary_record_refs": [
+        "NIST_NCNR_2H_ABSORPTION_2200MS"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"d_n_gamma\", \"dossier_ids\":[], \"closure_reason\":\"direct secondary-neutron T production\", \"reactants\":{\"D\":1,\"n\":1}, \"products\":{\"T\":1}, \"kind\":\"radiative_capture\", \"model\":\"one_over_v\", \"sigma2200_b\":0.000519, \"provider\":\"NIST_D_thermal_absorption_as_capture\", \"reverse\":\"external_photo_zero\"}",
+      "raw_line_number": 58,
+      "raw_numeric_literals": {
+        "sigma2200_b": "0.000519"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "ca9a0c8ba21e5cd0d32a41dd67d376aa1463596be1f66addf1204bba0d31d54e",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/17; line 58",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:d_t_n": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "d_t_n",
+      "id": "COND18:d_t_n",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "S0_keV_b": 11000.0,
+        "dossier_ids": [
+          16
+        ],
+        "id": "d_t_n",
+        "kind": "binary_transfer",
+        "model": "constant_S",
+        "products": {
+          "He4": 1,
+          "n": 1
+        },
+        "provider": "NACREII_section3.6",
+        "reactants": {
+          "D": 1,
+          "T": 1
+        },
+        "reverse": "binary_detailed_balance"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        16
+      ],
+      "primary_record_refs": [
+        "NACREII2013_d_t_n_TABLE7"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"d_t_n\", \"dossier_ids\":[16], \"reactants\":{\"D\":1,\"T\":1}, \"products\":{\"He4\":1,\"n\":1}, \"kind\":\"binary_transfer\", \"model\":\"constant_S\", \"S0_keV_b\":11000.0, \"provider\":\"NACREII_section3.6\", \"reverse\":\"binary_detailed_balance\"},",
+      "raw_line_number": 51,
+      "raw_numeric_literals": {
+        "S0_keV_b": "11000.0"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "eba7257aae64ef61d903a59c433d1e0e004aa3760f823af220414ce893b7e8a0",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/10; line 51",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:he3_n_gamma": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "he3_n_gamma",
+      "id": "COND18:he3_n_gamma",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "dossier_ids": [
+          4
+        ],
+        "id": "he3_n_gamma",
+        "kind": "radiative_capture",
+        "model": "one_over_v",
+        "products": {
+          "He4": 1
+        },
+        "provider": "JENDL5_He3_MT102",
+        "reactants": {
+          "He3": 1,
+          "n": 1
+        },
+        "reverse": "external_photo_zero",
+        "sigma2200_b": 5.402e-05
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        4
+      ],
+      "primary_record_refs": [
+        "JENDL5_He3_MT102_REFERENCE_TABLE"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"he3_n_gamma\", \"dossier_ids\":[4], \"reactants\":{\"He3\":1,\"n\":1}, \"products\":{\"He4\":1}, \"kind\":\"radiative_capture\", \"model\":\"one_over_v\", \"sigma2200_b\":0.00005402, \"provider\":\"JENDL5_He3_MT102\", \"reverse\":\"external_photo_zero\"},",
+      "raw_line_number": 41,
+      "raw_numeric_literals": {
+        "sigma2200_b": "0.00005402"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "35b929df196bd9945f6f1b7ee87f4a31d02a7def0fdddcfb9c90d28749bcea5e",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/0; line 41",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:n_beta": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "n_beta",
+      "id": "COND18:n_beta",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "antineutrinos_created": 1,
+        "dossier_ids": [
+          10
+        ],
+        "electrons_created": 1,
+        "id": "n_beta",
+        "kind": "beta_minus",
+        "model": "decay",
+        "products": {
+          "H1": 1
+        },
+        "provider": "EVALUATED_DECAY_INPUTS.json:neutron",
+        "reactants": {
+          "n": 1
+        },
+        "reverse": "not_in_this_lowT_neutrino_free_model"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        10
+      ],
+      "primary_record_refs": [],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"n_beta\", \"dossier_ids\":[10], \"reactants\":{\"n\":1}, \"products\":{\"H1\":1}, \"kind\":\"beta_minus\", \"model\":\"decay\", \"provider\":\"EVALUATED_DECAY_INPUTS.json:neutron\", \"electrons_created\":1, \"antineutrinos_created\":1, \"reverse\":\"not_in_this_lowT_neutrino_free_model\"},",
+      "raw_line_number": 47,
+      "raw_numeric_literals": {},
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "91547e7b9bb447eab3302130a03b0379e2b05558a601fa30630f928c96809873",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/6; line 47",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:n_he3_p": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "n_he3_p",
+      "id": "COND18:n_he3_p",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "dossier_ids": [
+          18
+        ],
+        "id": "n_he3_p",
+        "kind": "binary_transfer",
+        "model": "one_over_v",
+        "products": {
+          "H1": 1,
+          "T": 1
+        },
+        "provider": "JENDL5_He3_MT103",
+        "reactants": {
+          "He3": 1,
+          "n": 1
+        },
+        "reverse": "binary_detailed_balance",
+        "sigma2200_b": 5328.0
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        18
+      ],
+      "primary_record_refs": [
+        "JENDL5_He3_MT103_REFERENCE_TABLE"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"n_he3_p\", \"dossier_ids\":[18], \"reactants\":{\"n\":1,\"He3\":1}, \"products\":{\"H1\":1,\"T\":1}, \"kind\":\"binary_transfer\", \"model\":\"one_over_v\", \"sigma2200_b\":5328.0, \"provider\":\"JENDL5_He3_MT103\", \"reverse\":\"binary_detailed_balance\"},",
+      "raw_line_number": 53,
+      "raw_numeric_literals": {
+        "sigma2200_b": "5328.0"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "def3897ff720d67222d68ff13769c672e9986153475b198af9f04dc377c6b9a5",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/12; line 53",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:n_li6_alpha": {
+      "additional_closure_only": true,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "n_li6_alpha",
+      "id": "COND18:n_li6_alpha",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "closure_reason": "Li6 neutron conversion into T",
+        "dossier_ids": [],
+        "id": "n_li6_alpha",
+        "kind": "binary_transfer",
+        "model": "one_over_v",
+        "products": {
+          "He4": 1,
+          "T": 1
+        },
+        "provider": "NIST_Li6_absorption_with_dominant_nalpha_channel_approximation",
+        "provider_limitation": "rounded total absorption assigned to dominant nalpha branch; conditional branch approximation, not exact evaluated partial cross section",
+        "reactants": {
+          "Li6": 1,
+          "n": 1
+        },
+        "reverse": "binary_detailed_balance",
+        "sigma2200_b": 940.0
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [],
+      "primary_record_refs": [
+        "NIST_NCNR_6Li_ABSORPTION_2200MS"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"n_li6_alpha\", \"dossier_ids\":[], \"closure_reason\":\"Li6 neutron conversion into T\", \"reactants\":{\"n\":1,\"Li6\":1}, \"products\":{\"T\":1,\"He4\":1}, \"kind\":\"binary_transfer\", \"model\":\"one_over_v\", \"sigma2200_b\":940.0, \"provider\":\"NIST_Li6_absorption_with_dominant_nalpha_channel_approximation\", \"reverse\":\"binary_detailed_balance\", \"provider_limitation\":\"rounded total absorption assigned to dominant nalpha branch; conditional branch approximation, not exact evaluated partial cross section\"},",
+      "raw_line_number": 56,
+      "raw_numeric_literals": {
+        "sigma2200_b": "940.0"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "c003336a49dc90e2d6d29c7cda1f35632b58fb217e423c971fe3c1dbdb6d411c",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/15; line 56",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:p_d_gamma": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "p_d_gamma",
+      "id": "COND18:p_d_gamma",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "S0_keV_b": 0.00021,
+        "dossier_ids": [
+          7,
+          13
+        ],
+        "id": "p_d_gamma",
+        "kind": "radiative_capture",
+        "model": "constant_S",
+        "products": {
+          "He3": 1
+        },
+        "provider": "NACREII_section3.1",
+        "reactants": {
+          "D": 1,
+          "H1": 1
+        },
+        "reverse": "external_photo_zero"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        7,
+        13
+      ],
+      "primary_record_refs": [
+        "NACREII2013_p_d_gamma_TABLE2"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"p_d_gamma\", \"dossier_ids\":[7,13], \"reactants\":{\"H1\":1,\"D\":1}, \"products\":{\"He3\":1}, \"kind\":\"radiative_capture\", \"model\":\"constant_S\", \"S0_keV_b\":0.00021, \"provider\":\"NACREII_section3.1\", \"reverse\":\"external_photo_zero\"},",
+      "raw_line_number": 44,
+      "raw_numeric_literals": {
+        "S0_keV_b": "0.00021"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "a5f1a2fe96745b1ef6dfc6fc6f2440f91b41f77fb4571d68da75a42440c7a461",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/3; line 44",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:p_li6_alpha": {
+      "additional_closure_only": true,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "p_li6_alpha",
+      "id": "COND18:p_li6_alpha",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "S0_keV_b": 3100.0,
+        "closure_reason": "Li6 destruction into represented nuclei",
+        "dossier_ids": [],
+        "id": "p_li6_alpha",
+        "kind": "binary_transfer",
+        "model": "constant_S",
+        "products": {
+          "He3": 1,
+          "He4": 1
+        },
+        "provider": "NACREII_section3.12",
+        "reactants": {
+          "H1": 1,
+          "Li6": 1
+        },
+        "reverse": "binary_detailed_balance"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [],
+      "primary_record_refs": [
+        "NACREII2013_p_li6_alpha_TABLE13"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"p_li6_alpha\", \"dossier_ids\":[], \"closure_reason\":\"Li6 destruction into represented nuclei\", \"reactants\":{\"H1\":1,\"Li6\":1}, \"products\":{\"He3\":1,\"He4\":1}, \"kind\":\"binary_transfer\", \"model\":\"constant_S\", \"S0_keV_b\":3100.0, \"provider\":\"NACREII_section3.12\", \"reverse\":\"binary_detailed_balance\"},",
+      "raw_line_number": 55,
+      "raw_numeric_literals": {
+        "S0_keV_b": "3100.0"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "ff199a6d9957b44624fabea649cc88a18f4c5cfbc22c68ce0632494e86b4ab95",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/14; line 55",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:p_li7_alpha": {
+      "additional_closure_only": true,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "p_li7_alpha",
+      "id": "COND18:p_li7_alpha",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "S0_keV_b": 52.0,
+        "closure_reason": "Li7 destruction into represented nuclei",
+        "dossier_ids": [],
+        "id": "p_li7_alpha",
+        "kind": "binary_transfer",
+        "model": "constant_S",
+        "products": {
+          "He4": 2
+        },
+        "provider": "NACREII_section3.14",
+        "reactants": {
+          "H1": 1,
+          "Li7": 1
+        },
+        "reverse": "binary_detailed_balance"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [],
+      "primary_record_refs": [
+        "NACREII2013_p_li7_alpha_TABLE15"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"p_li7_alpha\", \"dossier_ids\":[], \"closure_reason\":\"Li7 destruction into represented nuclei\", \"reactants\":{\"H1\":1,\"Li7\":1}, \"products\":{\"He4\":2}, \"kind\":\"binary_transfer\", \"model\":\"constant_S\", \"S0_keV_b\":52.0, \"provider\":\"NACREII_section3.14\", \"reverse\":\"binary_detailed_balance\"},",
+      "raw_line_number": 57,
+      "raw_numeric_literals": {
+        "S0_keV_b": "52.0"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "0ff08e10c77e9384d7553baedb8583f9f93218ec7e2ceee986a17ef42d2f7cfc",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/16; line 57",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:p_n_gamma": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "p_n_gamma",
+      "id": "COND18:p_n_gamma",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "dossier_ids": [
+          8,
+          12
+        ],
+        "id": "p_n_gamma",
+        "kind": "radiative_capture",
+        "model": "one_over_v",
+        "products": {
+          "D": 1
+        },
+        "provider": "NIST_1H_thermal_absorption_as_capture",
+        "reactants": {
+          "H1": 1,
+          "n": 1
+        },
+        "reverse": "external_photo_zero",
+        "sigma2200_b": 0.3326
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        8,
+        12
+      ],
+      "primary_record_refs": [
+        "NIST_NCNR_1H_ABSORPTION_2200MS"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"p_n_gamma\", \"dossier_ids\":[8,12], \"reactants\":{\"H1\":1,\"n\":1}, \"products\":{\"D\":1}, \"kind\":\"radiative_capture\", \"model\":\"one_over_v\", \"sigma2200_b\":0.3326, \"provider\":\"NIST_1H_thermal_absorption_as_capture\", \"reverse\":\"external_photo_zero\"},",
+      "raw_line_number": 45,
+      "raw_numeric_literals": {
+        "sigma2200_b": "0.3326"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "da4523deba7b4a2973427932da071526321d57208926630edda9aeeb2b347f69",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/4; line 45",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:p_t_gamma": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "p_t_gamma",
+      "id": "COND18:p_t_gamma",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "S0_keV_b": 0.00095,
+        "dossier_ids": [
+          5
+        ],
+        "id": "p_t_gamma",
+        "kind": "radiative_capture",
+        "model": "constant_S",
+        "products": {
+          "He4": 1
+        },
+        "provider": "Dubovichenko2019_pT_E1_model",
+        "reactants": {
+          "H1": 1,
+          "T": 1
+        },
+        "reverse": "external_photo_zero"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        5
+      ],
+      "primary_record_refs": [
+        "DUBOVICHENKO2019_p_t_gamma_E1_S0"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"p_t_gamma\", \"dossier_ids\":[5], \"reactants\":{\"H1\":1,\"T\":1}, \"products\":{\"He4\":1}, \"kind\":\"radiative_capture\", \"model\":\"constant_S\", \"S0_keV_b\":0.00095, \"provider\":\"Dubovichenko2019_pT_E1_model\", \"reverse\":\"external_photo_zero\"},",
+      "raw_line_number": 42,
+      "raw_numeric_literals": {
+        "S0_keV_b": "0.00095"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "0c5331153e56629166066ceb7caafcf314dac7a6e439b2f4553f2431f3b6bb8b",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/1; line 42",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:t_alpha_gamma": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "t_alpha_gamma",
+      "id": "COND18:t_alpha_gamma",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "S0_keV_b": 0.098,
+        "dossier_ids": [
+          11,
+          19
+        ],
+        "id": "t_alpha_gamma",
+        "kind": "radiative_capture",
+        "model": "constant_S",
+        "products": {
+          "Li7": 1
+        },
+        "provider": "NACREII_section3.7",
+        "reactants": {
+          "He4": 1,
+          "T": 1
+        },
+        "reverse": "external_photo_zero"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        11,
+        19
+      ],
+      "primary_record_refs": [
+        "NACREII2013_t_alpha_gamma_TABLE8"
+      ],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"t_alpha_gamma\", \"dossier_ids\":[11,19], \"reactants\":{\"T\":1,\"He4\":1}, \"products\":{\"Li7\":1}, \"kind\":\"radiative_capture\", \"model\":\"constant_S\", \"S0_keV_b\":0.098, \"provider\":\"NACREII_section3.7\", \"reverse\":\"external_photo_zero\"},",
+      "raw_line_number": 48,
+      "raw_numeric_literals": {
+        "S0_keV_b": "0.098"
+      },
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "e3f25fea4eb763937ec3c9c3374faf2db63c3a81497ab73422786e84d1ffea0c",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/7; line 48",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    },
+    "COND18:t_beta": {
+      "additional_closure_only": false,
+      "conditional_temperature_K": [
+        100.0,
+        10000.0
+      ],
+      "family_id": "t_beta",
+      "id": "COND18:t_beta",
+      "model_admission": "conditional 18-family all-bare passive-reservoir sensitivity only; no empirical all-physics bound or production default change",
+      "model_mode": "instantaneously_thermalized_all_bare_nuclei_passive_reservoir_sensitivity",
+      "native_record": {
+        "antineutrinos_created": 1,
+        "dossier_ids": [
+          9
+        ],
+        "electrons_created": 1,
+        "id": "t_beta",
+        "kind": "beta_minus",
+        "model": "decay",
+        "products": {
+          "He3": 1
+        },
+        "provider": "EVALUATED_DECAY_INPUTS.json:tritium",
+        "reactants": {
+          "T": 1
+        },
+        "reverse": "not_in_this_lowT_neutrino_free_model"
+      },
+      "native_units": {
+        "S": "keV barn",
+        "decay": "s^-1",
+        "event_density": "m^-3 s^-1",
+        "rate": "m^3/s",
+        "sigma_thermal": "barn at v_relative=2200m/s",
+        "source": "baryon-normalized nuclei/s"
+      },
+      "new_Q_admission": false,
+      "new_rate_admission": false,
+      "original_target_ids": [
+        9
+      ],
+      "primary_record_refs": [],
+      "primary_validity_interval_inferred": false,
+      "raw_line": "    {\"id\":\"t_beta\", \"dossier_ids\":[9], \"reactants\":{\"T\":1}, \"products\":{\"He3\":1}, \"kind\":\"beta_minus\", \"model\":\"decay\", \"provider\":\"EVALUATED_DECAY_INPUTS.json:tritium\", \"electrons_created\":1, \"antineutrinos_created\":1, \"reverse\":\"not_in_this_lowT_neutrino_free_model\"},",
+      "raw_line_number": 46,
+      "raw_numeric_literals": {},
+      "record_class": "DECLARED_CONDITIONAL_MODEL_ROW",
+      "record_sha256": "f56178839c33c2bb412295d619b86dec1228449a9e5bdd5c0184bcfc885fbc9c",
+      "source": {
+        "file": "sources/recovered_network/REI18_NUCLEAR_NETWORK_CONTRACT_9620e1f.json",
+        "locator": "/families/5; line 46",
+        "sha256": "68f69ea6288f3ba45abe4ef9416b3d0cbe507f61543a4ff045ad914061acbe3c",
+        "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/blob/9620e1fcc4bdda76e0311206f614234926600381/research/rei_tritium_production_audit_20261022/NUCLEAR_NETWORK_CONTRACT.json"
+      },
+      "source_state_resolution": "all-bare mode explicit; nuclear isomer/product excitation branches not resolved",
+      "uncertainty": null,
+      "uncertainty_absence_means_zero": false
+    }
+  },
+  "unit_id": "WU_TARGET19_PROVIDER_BINDING_R2"
+}

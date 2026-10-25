@@ -1,3 +1,17 @@
+# Current priority: recovered target19 supplier registry, 2026-10-25 UTC
+
+Continue from research/provider_registry_network19_20261025/HANDOFF_KO.md, REPORT_KO.md, SCIENTIFIC_ADMISSION.json, DAG.json, EXECUTION_LEDGER.json, reviews/ and delivery/. The fixed user handoff at34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad is preserved. The prior R1 source18a6804d7cbe4879701e83631f7e908bbb84cef1 and its verified source ZIP remain immutable history. The original PNG/19-target locator gap mentioned below is now closed by actual source recovery.
+
+Keep all19 original IDs and28 listed directions. R2 binds26 new actual primary-source variants and24 new declared integer columns; R1's102 provider variants,125 columns and92 identities are reused. Of28listed directions,27have a primary-source reference and He4(gamma,dd) forward has an explicit numerical-source dependency. Separate native exclusive H2, factorized He3, inclusive Li7 and response-averaged He4 data. Source availability does not admit a physical coefficient, state branch or consumer.
+
+Reuse unchanged finite compiler SHA25660a502895266b6feb96964abc4b24db61c2faed2344db0f7d12f16bb47ed62af and saved249checks without replay or promotion. R2primary13/13 and independent10/10composed groups are source/integer acceptance; retain the two failed checker attempts and their targeted fixes. Keep all new rate/Q/energy/consumer admissions false. The core checks B/q; its R1 adapter checks electron-lepton accounting.
+
+Before each new node refresh actual AGENTS, local/remote HEAD, concurrent owner work and backup receipts. Latest central snapshot observed at a5db4bac9dafadae29685bbea3cec7f43ab990b2 has88nodes; its14WU nodes were semantically unchanged by the concurrent HE/GRID044/CR/BASS returns. Preserve other owner results and refer to exact current receipts before acting. Completed R1,249,PHYS91 and REI18/82-background results are reusable; do not replay unchanged science.
+
+PHYS91 primary/reference/Wolfram remaining remain0; global historical CPU/money/remaining remain null. Current lightweight changed-input checks do not transfer/reset old science budgets. HH_R10 stays OFF, production NOT_ISSUED and L4_ready false. The user's explicit current authorization covers automatic additive publication and Dropbox/Drive backups. Use actual expected-SHA non-force ref updates, preserve main, and keep source publication/ZIP/dual byte-readback receipts distinct. No security or approval exception is introduced by this scheduling priority.
+
+## Preserved R1 and earlier instructions
+
 # Current priority: actual provider registry continuation, 2026-10-25 UTC
 
 The user's fixed handoff at program-expansion HEAD 34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad and the current explicit continuation request set this priority. Read research/provider_registry_20261025/HANDOFF_KO.md, REPORT_KO.md, SCIENTIFIC_ADMISSION.json, DAG.json, EXECUTION_LEDGER.json, reviews/ and delivery/ before a new node. The preserved PHYS71 and earlier priorities below are historical scheduling records; their physical conventions and completed-result protections remain in force.

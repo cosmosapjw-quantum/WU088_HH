@@ -1,0 +1,184 @@
+{
+  "schema": "WU_TARGET19_RELEASE_METADATA_REVIEW_V1",
+  "reviewer": "authority_survey / independent C9 and release reviewer",
+  "reviewed_UTC": "2026-10-25T14:35:18.101393+00:00",
+  "decision": "PASS_SCOPED_RELEASE_METADATA",
+  "blocking_findings": [],
+  "review_scope": "Static consistency, provenance paths, immutable identities, source-only admission, publication plan and previously completed R1 delivery; not a new numerical or physical validation.",
+  "source_parent": "18a6804d7cbe4879701e83631f7e908bbb84cef1",
+  "fixed_handoff_commit": "34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad",
+  "closed_findings": [
+    {
+      "id": "R2_RELEASE_01",
+      "severity_at_discovery": "blocking_provenance",
+      "status": "CLOSED",
+      "finding": "Inherited R1 evidence/snapshot/budget/publication relative paths resolved against R2, including R1 125-column references pointing at R2 24-column files.",
+      "correction": "R1 local paths explicitly rebased to ../provider_registry_20261025/; original central-repository source_file fields remain verbatim with explicit path_resolution.",
+      "verification": "All 22 recorded path-field corrections match current metadata; referenced local paths exist; current DAG and DELTA hashes equal correction receipt. New R2 evidence/budget paths are unchanged.",
+      "receipt": "reviews/RELEASE_METADATA_CORRECTION.json"
+    },
+    {
+      "id": "R2_RELEASE_02",
+      "status": "CLOSED",
+      "finding": "Report did not preserve source native uncertainty notation for the pT E1 S0 value.",
+      "correction": "REPORT_KO.md now states 0.95(5) eV b, equivalent to plus/minus 0.05 eV b. Numerical source data and interpretation unchanged."
+    },
+    {
+      "id": "R2_RELEASE_03",
+      "status": "CLOSED",
+      "finding": "REUSED_CALCULATIONS historical compiler path lacked the sibling ../ prefix.",
+      "correction": "Now ../rei_chem_ledger_20261025/chem_ledger.py."
+    },
+    {
+      "id": "R2_RELEASE_04",
+      "status": "CLOSED",
+      "finding": "WORKFLOW R5 second theory filename lacked its theory/ directory.",
+      "correction": "Both R5 theory paths are now explicit."
+    },
+    {
+      "id": "R2_RELEASE_05",
+      "status": "CLOSED",
+      "finding": "R1 report/handoff continuation prefixes used a bare SCIENTIFIC_ADMISSION.json name for the current R2 admission.",
+      "correction": "Both now point explicitly to ../provider_registry_network19_20261025/SCIENTIFIC_ADMISSION.json."
+    }
+  ],
+  "accepted_scope": {
+    "original_target_ids": 19,
+    "original_listed_directions": 28,
+    "directions_with_primary_source_references": 27,
+    "remaining_no_numeric_primary_source_direction": "target 6 forward: 4He(gamma,d)d",
+    "new_primary_source_variants": 26,
+    "new_declared_integer_columns": 24,
+    "reused_R1_species": 9,
+    "reused_R1_event_references": 24,
+    "recompiled_R1_events": 0,
+    "R1_scope_unchanged": {
+      "source_variants": 102,
+      "event_projections": 125,
+      "material_electronic_state_identities": 92
+    },
+    "source_reference_qualification": "27 references include native exclusive, factorized, inclusive, spectrum/response-averaged and source-model evidence; they are not 27 admitted physical rates.",
+    "primary_validation": "Previously executed first run: 13/13 groups PASS; reused unchanged.",
+    "independent_validation": "Nine passed groups from the original run plus the corrected public-metadata group; two checker failures and every attempt retained. No new all-group rerun claimed."
+  },
+  "DAG_review": {
+    "all_target_parent": "PARTIAL_SOURCE_POPULATED_ORIGINAL_TARGET19_RECOVERED",
+    "provider_binding_child": "PARTIAL_DIRECTION_SOURCE_COVERAGE_ACCEPTED_SCOPED",
+    "source_identity_and_integer_column_children": "Complete only in their explicitly scoped source/structural domains.",
+    "latest_observed_central_HEAD": "a5db4bac9dafadae29685bbea3cec7f43ab990b2",
+    "latest_central_node_count": 88,
+    "original_WU_nodes_semantically_unchanged": 14,
+    "central_ACK_assumed": false,
+    "other_owner_contracts_changed": false
+  },
+  "admission_boundaries": {
+    "actual_rate_admission": false,
+    "new_physical_Q_admission": false,
+    "physical_consumer_binding": false,
+    "historical_249_promoted_to_physical": false,
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4_admitted": false,
+    "global_physical_completion": null,
+    "unresolved_dependencies_retained": [
+      "target 6 numerical primary source",
+      "He4 response-to-consumer mapping",
+      "He3 factorized native-grid consumer",
+      "Li7 exclusive branch",
+      "HD and LiH remaining formation/destruction",
+      "isotope/state/branch/provider domain bindings",
+      "atomic-to-bare mass/Q convention and covariance",
+      "MT102_B1 OPEN",
+      "physical consumers"
+    ]
+  },
+  "identity_preservation": {
+    "root_AGENTS_exact_R1_suffix_preserved": true,
+    "fixed_handoff_exact_pinned_bytes_preserved": true,
+    "fixed_handoff_sha256": "ab7bbfdae268da9bc11f49ed5bc00f794413aaedf9ef55115c3619bb2fb98915",
+    "R2_builder_contract_two_theory_files_eleven_registry_files_C9_and_primary_checker_match_accepted_hashes": true,
+    "R1_existing_tracked_changes_are_metadata_only": true,
+    "R1_existing_tracked_changed_files": [
+      "DAG.json",
+      "DAG_DELTA.json",
+      "EXECUTION_LEDGER.json",
+      "HANDOFF_KO.md",
+      "REPORT_KO.md",
+      "WORKFLOW_RECORD.json"
+    ],
+    "R1_scientific_inputs_outputs_and_admission_unchanged": true
+  },
+  "delivery_review": {
+    "R1_source_commit": "18a6804d7cbe4879701e83631f7e908bbb84cef1",
+    "R1_source_ZIP_bytes": 3073149,
+    "R1_source_ZIP_sha256": "c1ced1cdeb7382064e64d11abd38d52466802a699edf99bd78aa355c0ce17863",
+    "R1_actual_dual_download_receipts": "../provider_registry_20261025/delivery/CLOUD_READBACK.json and FINAL_BACKUP_ACK.json",
+    "R1_package_time_pending_observation": "Retained as historical package-time state, superseded by final ACK; not misrepresented as current failure.",
+    "R2_delivery_state_at_review": "PENDING_SOURCE_PUBLICATION_AND_NEW_DUAL_BACKUP",
+    "R2_R10_C10": "source_scoped_complete_delivery_pending",
+    "R2_published_or_backed_up_claimed": false,
+    "package_source_static_review": "Exact commit/tree blobs, explicit path allowlist, no overwrite, manifest and byte/CRC verification, private non-CC source material outside public packet, post-publication ACK separate; no scientific execution in packager.",
+    "user_explicit_publication_backup_automation_authorization": true,
+    "next_authorized_action": "Publish reviewed source on existing draft PR150 with expected SHA and force=false, produce source ZIP from exact published tree, verify Dropbox and Drive bytes, then record delivery in a metadata child.",
+    "external_actions_performed_by_this_review": 0
+  },
+  "budget_review": {
+    "historical_PHYS91_primary_reference_Wolfram_remaining": 0,
+    "historical_global_CPU_money_remaining": null,
+    "new_light_child_limits": "30 CPU s / 120 wall s / 512 MiB / 1 worker / 1 thread per child; no historical budget reset or transfer.",
+    "previously_recorded_eight_child_CPU_s": 0.737753,
+    "previously_recorded_eight_child_wall_s": 0.861847,
+    "unmeasured_source_fetch_preparation_review_and_wrapper_costs": "null, not zero; totals are not whole-session totals."
+  },
+  "review_method": {
+    "performed": [
+      "Read release metadata and package code",
+      "Inspect R1 metadata diff",
+      "Read existing C9 and operational receipts",
+      "Check metadata SHA256, exact pinned bytes and corrected local paths"
+    ],
+    "scientific_calculations": 0,
+    "numerical_test_replays": 0,
+    "builder_or_compiler_executions": 0,
+    "packager_executions": 0,
+    "writes": [
+      "reviews/RELEASE_METADATA_REVIEW.json",
+      "reviews/RELEASE_METADATA_REVIEW.md"
+    ]
+  },
+  "reviewed_metadata_sha256": {
+    "research/provider_registry_network19_20261025/SCIENTIFIC_ADMISSION.json": "7e80b1d378503e06a029c60c468b5397b96034b9959a168b111e467ab5a38be2",
+    "research/provider_registry_network19_20261025/DAG.json": "bf3db1a87afb5d68b8b85984802c30f45daa70f4ea5878babf6e3ccc91d9830c",
+    "research/provider_registry_network19_20261025/DAG_DELTA.json": "3fc62bb707a7fd1d7263c891b00f28837f371487eec3fe87372cf1f8c57ec74f",
+    "research/provider_registry_network19_20261025/HANDOFF_KO.md": "6a845c3a0dec8f1d94d6e6784e89819be4605c303b478cb9df30fff38beb0366",
+    "research/provider_registry_network19_20261025/WORKFLOW_RECORD.json": "2901380c1b954231cda1540b6a52522704ea086ce717706e99994358152d4c86",
+    "research/provider_registry_network19_20261025/EXECUTION_LEDGER.json": "6d50d2a3c2eb1589ec1c5dba55a421b9a9a7fbd4057a52bdc6566a3baaeeaace",
+    "research/provider_registry_network19_20261025/NEXT_SOURCE_INTAKE_KO.md": "93281957e39cbcaf87b93cd715796bba7ad7d9d2ee575b517a0b3724c6229424",
+    "research/provider_registry_network19_20261025/REPORT_KO.md": "60654517d770d27aa129aa4fa66f5064ef94b36d84dc27f0798f14b5945c98b1",
+    "research/provider_registry_network19_20261025/REUSED_CALCULATIONS.json": "9e7dcad9d743fb5e27f01e247c1d89887075f1812fae9bd640a423a882feb215",
+    "research/provider_registry_network19_20261025/delivery/PUBLICATION_AND_BACKUP.json": "55b0343a3557be6b930daa6b24ac3f2dec86bcbacc7444fae59cb8ff46781e43",
+    "research/provider_registry_network19_20261025/delivery/package_source.py": "1eeb0635ab25a75712d84bd03e46522bd72e3af2739ae366de270e5f616dc485",
+    "research/provider_registry_network19_20261025/authority/PRE_PUBLICATION_REMOTE.json": "0ebfcbeadb88be3e2e3f5f006e758d7d00f2c5267b510c8ba51e670bf6705449",
+    "research/provider_registry_network19_20261025/authority/PRE_PUBLICATION_LOCAL.json": "10a770b818b9b3c20d32e5726097bd09691bdda04b5ea25344b4721f0b5ccfe4",
+    "research/provider_registry_network19_20261025/authority/CENTRAL_CONCURRENCY_OBSERVATION.json": "b840d244bbdf2ffac6ffad0a40a5262f6f10c5e3a213ee32adddd1f14b0851c4",
+    "research/provider_registry_network19_20261025/reviews/C9_FINAL.json": "de646cc00802a2744518f19396c008f572bd49386414f956b24b4cc784a174d5",
+    "research/provider_registry_network19_20261025/reviews/RELEASE_METADATA_CORRECTION.json": "39aad4ec4d78111341974acbc97b373509d2b3a164f5b42caa17c5a3e76774fe",
+    "AGENTS.md": "3136b09cace1f22694bd414cc218d971810b3b380e75b345cd7421cb9ea6f052",
+    "research/program_expansion_20261025/PROVIDER_REGISTRY_R2.json": "035935fdd5b3e98646f496284523068f6d9c9a07e6d3f209beddb4cd47f72323",
+    "research/program_expansion_20261025/HANDOFF_KO.md": "ab7bbfdae268da9bc11f49ed5bc00f794413aaedf9ef55115c3619bb2fb98915",
+    "research/provider_registry_20261025/DAG.json": "42fb203f9cc4dc0997ce97080c85930d2819172e8833fb6395169fa98fe4f028",
+    "research/provider_registry_20261025/DAG_DELTA.json": "4bd7e88be0cfee0c8b8fe73d5e9775e7a6a1f9e8bc44eefd2da7ce61742b37ef",
+    "research/provider_registry_20261025/EXECUTION_LEDGER.json": "ea0406207eedcfe1311be0fb1c858f873f175c73c970c4361b68098c4dc223ec",
+    "research/provider_registry_20261025/HANDOFF_KO.md": "d5bb1ed481a864f2f6c6c537d68e9eed8f838323cfe65ec813d87fbe9930dbcb",
+    "research/provider_registry_20261025/REPORT_KO.md": "4d22cdf40f36a728e36dc2c075ab341555302c108ea66cb325e2f11c4d04f17f",
+    "research/provider_registry_20261025/WORKFLOW_RECORD.json": "0ccb3e76ae917aa386fd19fdc3fe492f0ff6297c0c609a80c59bc97950bed5db",
+    "research/provider_registry_20261025/SCIENTIFIC_ADMISSION.json": "54a1710cc7a5455172c957dd2618d09568f44bd959e9be756a3ea960ac3d27b1",
+    "research/provider_registry_20261025/delivery/FINAL_BACKUP_ACK.json": "f66a8e8854f69070c48186e33fc79ec568e472acbae35aa706ea42bfe3421f61",
+    "research/provider_registry_20261025/delivery/CLOUD_READBACK.json": "9d27ebb2a5fad387027a6024eafe17ea9ba4e9ac2b8fb6a41804e590d969e396",
+    "research/provider_registry_20261025/delivery/PUBLICATION_RECEIPT.json": "c01c89cb76dcaffe3b019812db3ec685e401e45ef3f19200f7f06f9b6d97f775",
+    "research/provider_registry_20261025/delivery/PUBLICATION_AND_BACKUP.json": "c98e23877642155aaa87af545e8b497f89c01c3068dbabe50fdbd848e1ef1001",
+    "research/provider_registry_20261025/delivery/SOURCE_ZIP_MANIFEST.json": "84755aa25b53f6170a2e6035959a3f7cb5ae8d9dbb88d3fa9a91b6ccba7041ac",
+    "research/provider_registry_20261025/delivery/GIT_READBACK.json": "f5f122030ccc50c55d7c1b604bd99f0077f423d9c59459f1dafa2fb01360bbae",
+    "research/provider_registry_20261025/reviews/DELIVERY_SCOPE_REVIEW.json": "ca23b9af2e83224b7d1e6392016e90b0365ca4d4b54ed417e2cdc67c73ae8dfc"
+  }
+}

@@ -68,11 +68,18 @@
     },
     {
       "domain": "storage",
-      "evidence_refs": [],
-      "execution_ref": null,
+      "evidence_refs": [
+        "E_DELIVERY"
+      ],
+      "execution_ref": "delivery/CLOUD_READBACK.json",
       "id": "CURRENT_UNIT_DELIVERY",
-      "reason": "Root is preparing publication and dual backup; await actual delivery receipts.",
-      "result": "not_run"
+      "reason": "Source commit/tree/PR published and read back; both backups downloaded and matched by bytes and SHA256.",
+      "result": "pass",
+      "previous_observation": {
+        "result": "not_run",
+        "reason": "Root is preparing publication and dual backup; await actual delivery receipts.",
+        "phase": "before source publication and backup"
+      }
     }
   ],
   "claims": [
@@ -167,33 +174,28 @@
     }
   ],
   "delivery": {
-    "completion_rule": "Resolve these planned locators to the actual delivery receipts; update C10/R10 only after provider and commit/object acknowledgements exist.",
-    "dual_backup": {
-      "expected_receipt": "delivery/FINAL_BACKUP_ACK.json",
-      "observed_current_unit_ACKs": [],
-      "providers": [
-        "Dropbox",
-        "Google Drive"
-      ],
-      "status": "pending"
+    "status": "complete",
+    "publication": {
+      "status": "complete",
+      "receipt": "delivery/PUBLICATION_RECEIPT.json"
     },
     "git_readback": {
-      "expected_receipt": "delivery/GIT_READBACK.json",
-      "status": "pending"
+      "status": "complete_for_source_commit",
+      "receipt": "delivery/GIT_READBACK.json"
     },
-    "publication": {
-      "expected_parent_SHA": "34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad",
-      "expected_receipt": "delivery/PUBLICATION_RECEIPT.json",
-      "method": "compare current remote ref with expected SHA immediately before non-force push",
-      "observed_new_commit": null,
-      "status": "pending"
+    "source_zip": {
+      "status": "complete",
+      "receipt": "delivery/SOURCE_ZIP_MANIFEST.json"
     },
-    "snapshot_status": "pending; no current-unit remote commit or backup acknowledgement asserted",
-    "source_ZIP": {
-      "expected_receipt": "delivery/SOURCE_ZIP_MANIFEST.json",
-      "observed_sha256": null,
-      "status": "pending"
-    }
+    "dual_backup": {
+      "status": "complete_byte_verified",
+      "receipt": "delivery/FINAL_BACKUP_ACK.json",
+      "actual_byte_readback": "delivery/CLOUD_READBACK.json"
+    },
+    "source_commit": "18a6804d7cbe4879701e83631f7e908bbb84cef1",
+    "source_tree": "4973e1f4293bc6fa002ace339613f747ed987842",
+    "PR": 150,
+    "metadata_followup": "R1 delivery metadata is included in additive reviewed R2 source child; R1 core is unchanged and R2 science has separate C9 acceptance."
   },
   "dependencies": [
     {
@@ -728,6 +730,13 @@
       "kind": "artifact",
       "locator": "raw/primary02/stdout.txt",
       "scope": "Saved execution output for primary02"
+    },
+    {
+      "id": "E_DELIVERY",
+      "kind": "publication_and_backup",
+      "locator": "delivery/PUBLICATION_AND_BACKUP.json",
+      "scope": "Published source commit and independently retrieved actual Dropbox/Drive bytes; same ZIP SHA256, no physical admission change.",
+      "dependency_ids": []
     }
   ],
   "executions": [
@@ -1051,14 +1060,16 @@
   "metadata_validation": "Existing evidence was read to construct this record. No additional tests, scientific executions or workflow-checker execution were run for these two metadata files.",
   "next_actions": [
     {
-      "action": "Root finishes report, DAG and handoff; refreshes authority/expected HEAD and performs authorized non-force publication, source ZIP and Dropbox/Drive backups.",
-      "completion": "Actual provider/commit/object acknowledgements in delivery receipts; then update R10/C10.",
+      "action": "Source publication, source ZIP and two verified backups completed; containing commit binds delivery metadata.",
+      "completion": "Source commit and both actual backup byte acknowledgements are recorded; R10/C10 closed within scope.",
       "evidence_refs": [
         "E_CONTRACT",
         "E_PRIMARY",
-        "E_INDEPENDENT"
+        "E_INDEPENDENT",
+        "E_DELIVERY"
       ],
-      "id": "DELIVER"
+      "id": "DELIVER",
+      "status": "complete"
     },
     {
       "action": "Resume at R2/C2 for newly recovered network or isotope/state source identity, then only affected downstream work.",
@@ -1264,9 +1275,18 @@
       ],
       "id": "R10",
       "name": "종료·재개",
-      "reason": "Current implementation checkpoint exists; final report/DAG/handoff and actual publication/source-ZIP/dual-provider delivery receipts remain root-owned closeout work.",
+      "reason": "Report, scoped DAG and handoff written; source commit/tree/PR read back; reproducible source ZIP and both backup actual-byte checks complete.",
       "reuse": null,
-      "status": "in_progress"
+      "status": "complete",
+      "closeout_evidence": [
+        "REPORT_KO.md",
+        "DAG.json",
+        "HANDOFF_KO.md",
+        "delivery/PUBLICATION_RECEIPT.json",
+        "delivery/SOURCE_ZIP_MANIFEST.json",
+        "delivery/FINAL_BACKUP_ACK.json",
+        "delivery/CLOUD_READBACK.json"
+      ]
     },
     {
       "dependency_ids": [
@@ -1454,14 +1474,31 @@
       ],
       "id": "C10",
       "name": "판정·인계",
-      "reason": "Local package and scoped decisions are ready. Publication and source ZIP/Dropbox/Drive acknowledgements are not yet complete; bind delivery receipts before closing.",
+      "reason": "Report, scoped DAG and handoff written; source commit/tree/PR read back; reproducible source ZIP and both backup actual-byte checks complete.",
       "reuse": null,
-      "status": "in_progress"
+      "status": "complete",
+      "closeout_evidence": [
+        "REPORT_KO.md",
+        "DAG.json",
+        "HANDOFF_KO.md",
+        "delivery/PUBLICATION_RECEIPT.json",
+        "delivery/SOURCE_ZIP_MANIFEST.json",
+        "delivery/FINAL_BACKUP_ACK.json",
+        "delivery/CLOUD_READBACK.json"
+      ]
     }
   ],
-  "status": "in_progress",
+  "status": "complete_scoped",
   "strong_no_go": "not proposed; input retrieval gaps and unadmitted source physics are not impossibility results.",
   "task": "both",
   "unit_id": "WU_REGISTRY_PROVIDER_ROWS_R1",
-  "workflow_version": "1.0.0"
+  "workflow_version": "1.0.0",
+  "closeout_note": "Scientific/source/input check results reused unchanged; only reporting/publication/backup metadata advanced. Package/transfer overhead is UNMEASURED_NOT_ZERO and not added to bounded science/validation receipt totals.",
+  "closeout_UTC": "2026-10-25T13:40:11.874834+00:00",
+  "later_source_continuation": {
+    "unit": "WU_TARGET19_PROVIDER_BINDING_R2",
+    "current_handoff": "../provider_registry_network19_20261025/HANDOFF_KO.md",
+    "former_original_network_locator_gap": "RESOLVED_BY_ACTUAL_R2_RECOVERY",
+    "R1_core_unchanged": true
+  }
 }

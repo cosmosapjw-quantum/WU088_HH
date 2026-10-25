@@ -1,3 +1,5 @@
+> **후속 R2 기록:** 이 R1 문서와 승인 core는 원래 source18a6804d 시점의 결과를 보존합니다. 그 뒤 원 PNG와19개 대상이 실제로 회수됐습니다. 현재 source 상태와 다음 작업은 `../provider_registry_network19_20261025/HANDOFF_KO.md` 및 `../provider_registry_network19_20261025/SCIENTIFIC_ADMISSION.json`을 따르십시오. R1의 원래 network-locator 미회수 기록은 당시 관찰이며, R2의 실제 회수로 해당 입력 공백이 해소됐습니다. R1의 물리 승인 범위와 원자료는 변경되지 않았습니다.
+
 # 실제 공급자 행과 finite event registry — R1 보고
 
 ## 1. 이번 단위의 결과와 승인 범위
@@ -248,3 +250,17 @@ scoped-complete로, 전체 target parent는
 non-force ref update, draft PR, source ZIP, Dropbox/Drive 완료 ACK는
 별도 `delivery/` 영수증에 결속한다.
 
+## 완료된 게시·백업
+
+- Draft PR: https://github.com/cosmosapjw-quantum/WU088_HH/pull/150
+- Source commit: `18a6804d7cbe4879701e83631f7e908bbb84cef1`
+- Source tree: `4973e1f4293bc6fa002ace339613f747ed987842`
+- Source ZIP: `WU_PROVIDER_REGISTRY_R1_SOURCE_20261025_18a6804d7cbe.zip`
+- ZIP bytes: 3,073,149; SHA256: `c1ced1cdeb7382064e64d11abd38d52466802a699edf99bd78aa355c0ce17863`
+- Dropbox: `id:BSpOijBcT10AAAAAAEAb2w`
+- Drive: [완료 백업](https://drive.google.com/file/d/10N1VsPIPPSVzw7qXMQfZ9G1a0hkDZRV5/view?usp=drivesdk)
+
+두 실제 백업을 다시 읽어 각각 3,073,149 bytes와 같은 SHA256을 확인했다.
+ZIP은 위 source commit의 214개 파일과 archive manifest 1개를 포함한다.
+후속 delivery metadata의 identity는 이 인계서를 포함하는 Git commit으로
+읽으며, 과학 source commit과 구분한다. 전체 physical admission 경계는 그대로다.

@@ -1,0 +1,28 @@
+{
+  "schema": "WU_R2_PUBLIC_CHECKER_LOCATOR_CORRECTION_V1",
+  "classification": "checker newline-coordinate defect",
+  "first_targeted_checker": {
+    "path": "check_public_derivative_correction.py",
+    "sha256": "7cfd2a972968d87ddd486e71fc2ec3719fe312d496ba64dad0ac8c9128c91b27"
+  },
+  "corrected_checker": {
+    "path": "check_public_derivative_correction_v2.py",
+    "sha256": "fb8d02eae800fcfc5b8e4ea805eebaad9c76cd5cc4fb33d372ed1e43385905dd"
+  },
+  "one_line_change": {
+    "from": "source=native_path.read_text().splitlines()",
+    "to": "source=native_path.read_text().split('\\n')"
+  },
+  "reason": "rg/source locator counts LF lines; Python splitlines also counts PDF form-feed page breaks",
+  "source_reference": {
+    "file": "network19_intake/derived_text/NACREII_1310.7099.txt",
+    "LF_lines_1based": [
+      1764,
+      1765
+    ],
+    "meaning": "ground and first-excited Li7 transitions included"
+  },
+  "raw_failed_attempt": "raw/r2_independent_publicfix01/",
+  "source_or_registry_changes": 0,
+  "native_table_or_number_column_replays": 0
+}
