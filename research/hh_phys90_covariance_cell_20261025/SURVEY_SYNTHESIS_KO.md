@@ -1,0 +1,40 @@
+# PHYS90 조사 종합과 선택
+
+## 완료 기준 대조
+
+HH actual ref는 PHYS89 FINAL480baabc73ebaaba735d285d969e79177f5545ed/tree10b9ce681428432379ff87c1bf0febdd731a0cae와 동일하다. PR146 actual최종본문을 읽었으며 report/MAIN18/20과 later TERMINAL/central/PR20/20의 시간구분을 유지한다. 로컬 ZIP31435596B/SHA cc9d9d4810c2cd0f8a4084b557a9868fbe65762c89ec0aebb5e0f26e53686fb2, MAIN143138B/SHA627c72d6d5b93d5edef85ff2f8262ec7b685d6147730ffc1e7b8a34aa833cd4a, TERMINAL61269B/SHA7369cbd2cf478fc0f4ba228ff1e90c4741a0f52ed4541734895dd84ce1511a8b를 실제 재hash했다. 이번 parentproviderwholeGET0; 이전 양쪽wholeGET/CRC141/payload140/Git137/extract141을 identity로 재사용한다.
+
+HH AGENTS blob83e41056ef39af8183152f93a32d1285bb1a7f2c/SHA7d21612e3d78d2d849ffa6421ed61cd6b2fa198c832217a129a0aebce2fd0c70와 중앙AGENTS blob429a5a13ee75b1222bc50627f8d5973d01dd21c4/SHAab29a05cac922bd393dc04f7f280a0d4e1d7289ae6ea24291f48fd7cf7b2e8eb는 unchanged다. 오래된 HH priority 문구는 actual완료identity와 현재 사용자 지시로 재개지점을 정한다. 기존 checkout에서 새 branch를 만들었고 oldpaths를 수정하지 않는다.
+
+## 최신 조사 범위
+
+GitHub fresh51repo/2254branchrefs/65pages/terminal51collections, 관련6repo1136refs 및 최근updatedPR각5=30bodies를 조사했다. Parent2241은 역사snapshot이며 순개수차+13을 신규13/삭제0으로 해석하지 않는다. 모든branch내용·비공개대화전수 열람은 아니다. 중앙14976bda37b17e8dd8060f4c89adf6ddf9fbcc6a/tree722c8103ba2d68d6c2b86e2be4d64348c34a3dfc에는 b0f02이후 HE2commits/3paths가 추가됐다. HH25081B와원40/7/17/WU18keys는동일하며새HE와다른39를보존한다.
+
+Dropbox소유HH폴더529entries terminal(has_morefalse), Drive동일폴더561files(<1000cap), 최근ChatGPT Library metadata311items/2pages terminal을 읽었다. 전체Drive1000cap밖이나모든백업내용 전수검증은 아니다. 최초Library rankedsearch는오래된관련파일을반환했으며최신성판정은명시적recentlist로보완했다. Drivekeyword/foldersearch보다list_folder가현재archives를정확히반환해후자를사용했다. Dropbox잘못된trailingpathsearch1 INVALID_PATH, Drive첫metadata잘못된url필드1 missingfileId는correctedmetadata로이어갔고science0이다. ParentZIP/MAIN/TERM 양쪽IDs/bytes는현재폴더목록과결속된다.
+
+첨부20개는로컬index와text/header/archivefilename수준에서관련성을검토했다. CMB일반검토자료는sameframe/tensor/contract방법만현재HH에관련되며Rustinstall/benchmark또는기하부모scope변경을유발하지않는다. 비공개대화전체검색기능은제공되지않았고, 실제handoff/PR본문/연결된artifact만대화기록의대리근거로사용했다.
+
+## 병렬 결과의 의미
+
+- HE100 fixed-centreCBA20/20와최종B3dualACK/metadata를실제본문으로읽었다. finite-Mcouplingfalse,independentwholeGETNOT_RUN을유지한다.
+- BASS188 B3d는onephotoncohortangular28comparisons중22fail(2e-8),computational16/16이다. NuclearconsumerACK가아니다.
+- REC135 fixedincoming313의6primitiveJacobian은동일operatorK와의결속이열려있다. physicaluncertaintynull,H6trace/fullH7OPEN이다.
+- CR104 neutralleadingheavy-targetFP는0<W<10eVconditionalbath전자사슬이다. 핵faststopping공급이아니며neutralR3pending,과거DriveUNKNOWN을보존한다.
+- HI4368nativepositiveatom/JVP는finite support/recoil0/NO_DEPOSITION_SELECTED_MODEL,heatnull,L4readyfalse다.
+각원문·identity·claim·backup한계는intake/central/에보존했다.
+
+## 새 원전이 좁힌 의무
+
+Exa search3/fetch3, SciSpace2, sourceWeb3 실제조사를실행했다. 원VII.1 H1member54513bytes/SHA5bc558ac458face9cea2a1afba7391529df7c136415f1cb5babfab2ced4c97ce의MF33/MT102는NE14=13groups다. 현재153groups와다르며공개COMMARA33group가공제품과nativeMF33를구별한다. NNDC공식changelog는2016Halehigh-fidelity교체,2017nominal교체후MF33미갱신,이후covariancesadded를기록한다. 어느것이currentMT102를생성했는지는OPEN이다. GNDS/JENDL/30group검사논문을원precision공급으로승격하지않는다.
+
+따라서원자료요청을“33→153변환”으로한정하지않고currentMT102의정확한계보/parameter-or-groupcovariance/Jacobian/normalization/formatter/approvedcorrection으로수정한다. 원mass/state/kernel/tail및namedownerACK는아직필요하다. Source의원neutronZIP은range2/memberCRC이며wholearchiveGET0;weakETag/LastModified차이도보존한다.
+
+## 선택과 실행
+
+현재node안의새finitechild는COVARIANCE_FORMATTING_CELL_AND_MATCHED_CONSUMER_ENVELOPE다. 대칭성으로offentry를공유하는sharpboxsupport,2×2정확조건및pairradiusbracket,commonconsumerL과보존nullrow를유도했다. FullPSD교집합에서의sharpness와동시marginalendpoint는주장하지않는다. R6별도Astra검토PASS를받고lower-tier가새정확산술구현을한다. 새source교정행렬은제출하지않는다.
+
+PHYS78–89완료identity/olddecode/eigh/rateintegral은재실행하지않는다. 새ODE0,benchmark0,nuclearactivation0,faststopping0,HH_R10OFF,productionNOT_ISSUED다. 새primary1/reference1/Wolfram1은별도affectedidentity의동결허용량이며oldremaining0,budgetresetfalse를유지한다. 역사총CPU/원격비용/금액/잔여global은null이다.
+
+## workflow source 경계
+
+사용자지정physmath-research-loop1.0.0을원executorpackage에서읽었다. userresource의reference경로실패후cloudreference에나중버전append가보여원1.0references로결속했다. 이경로실패와현재catalog버전은workflowprovenance이며science재실행사유가아니다. 하위intakeagent의현재catalog읽기는read-onlyrouting에만쓰였고root의R/C1.0역할계약을바꾸지않았다.

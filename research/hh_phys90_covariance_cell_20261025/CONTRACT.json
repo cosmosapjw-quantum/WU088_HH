@@ -1,0 +1,215 @@
+{
+  "schema": "PHYS90_COVARIANCE_FORMATTING_CELL_CONTRACT_V1",
+  "workflow_version": "1.0.0",
+  "revision": 1,
+  "unit_id": "COVARIANCE_FORMATTING_CELL_AND_MATCHED_CONSUMER_ENVELOPE",
+  "parent_node": "NUCLEAR_BARE_KERNEL_SOURCE_AND_CONSUMER_CONTRACT",
+  "parent_status": "PARTIAL_INPUT_DEPENDENCIES",
+  "baseline": {
+    "head": "480baabc73ebaaba735d285d969e79177f5545ed",
+    "tree": "10b9ce681428432379ff87c1bf0febdd731a0cae",
+    "primary_identity": "c688ab6b06ab1e94781645e174cd555423ba49fc15d6b76c31acef3890f2e8b2",
+    "checker_identity": "0f946ef3e6d2253091e50f4bdfca708ce9900a93677d0793367510b5ee2111b5",
+    "PHYS88_FINAL": "92dec7cdc1cf5afeff5bdff8d6234f7f1e3dbbd8"
+  },
+  "inputs": [
+    {
+      "path": "research/hh_phys89_bare_kernel_contract_20261025/verification/primary/SOURCE_TABLE.json",
+      "bytes": 960400,
+      "sha256": "8be5263be692e63720acbf8c9ae5b1abad85bc55c8a641d8080b125979a4a7e7"
+    },
+    {
+      "path": "research/hh_phys89_bare_kernel_contract_20261025/verification/primary/TOKEN_ROUNDING.json",
+      "bytes": 296009,
+      "sha256": "0c7c335054b2408f3cf241fa7acd2ef42ad4243b644fbfd0f22199482546854a"
+    }
+  ],
+  "science": {
+    "n": 153,
+    "pairs": 11628,
+    "singletons": 153,
+    "upper_entries": 11781,
+    "source_table_relation": "REUSE_EXACT_DECODED_PARENT_RESULT",
+    "model": "CLOSED_SYMMETRIC_COMPONENTWISE_BOX",
+    "halfULP": "CONDITIONAL_NEAREST_FORMATTING_MODEL_NOT_SOURCE_GUARANTEE",
+    "radius_t_nonnegative": true,
+    "actual_matrix_repair": false,
+    "full_PSD_compatibility": "UNRESOLVED_UNLESS_ACTUAL_CERTIFICATE",
+    "box_support_sharp": true,
+    "PSD_subset_support_sharp": "NOT_CLAIMED",
+    "independent_consumer_draws": false,
+    "actual_consumer_ACK": null,
+    "physical_CI": false,
+    "strong_no_go": "NOT_CLAIMED",
+    "proof": "theory/COVARIANCE_CELL_AND_CONSUMER_KO.md"
+  },
+  "algorithm": {
+    "initial_radius_checks": [
+      0,
+      1
+    ],
+    "maximum_doubling_radius": 4096,
+    "bisection_iterations": 40,
+    "bisection": "exact rational failed lo / allpair-pass hi; hi is not fullPSD upperbound",
+    "exact_predicates": true,
+    "reference": "separate Decimal precision100 or exact integer path; no production imports",
+    "tolerance": "exact equality for all scientific comparisons; decimal presentation only"
+  },
+  "validation": {
+    "primary_children_max": 1,
+    "independent_reference_children_max": 1,
+    "cpu_limit_s_each": 20,
+    "wall_limit_s_each": 45,
+    "threads": 1,
+    "workers": 1,
+    "scientific_CPU": 0,
+    "coordinator_CPU": 8,
+    "lease_directory": "/tmp/rei-bianchi-cooperative-leases",
+    "lease_source_path": "research/hh_phys88_atomic_bare_remap_20261024/source/vendor/phys78_run_pilot.py",
+    "lease_source_sha256": "76ff57ba687fd9830b84c3fcff69eb8ed0e9f6ceab4551e61c67c84d3ea65124",
+    "memory_reserve_GiB": 1.5,
+    "job_GiB": 0.5,
+    "automatic_retries": 0,
+    "eigh_calls": 0,
+    "ENDF_decode_calls": 0,
+    "integrals": 0,
+    "ODE": 0,
+    "benchmark": 0,
+    "old_scientific_callbacks": 0,
+    "nuclear_rate_activation": 0,
+    "fast_stopping": 0,
+    "other_processes_terminated": 0,
+    "source_probes": "fixed algebraic directions only; not actual consumer rate weights",
+    "figures": "one PNG + one PDF within primary from saved new exact result data, no separate science rerun",
+    "metadata_resume": "one actual primary and reference skip; scientific import/callback/write0"
+  },
+  "fixtures": {
+    "sharp_shared_entry": {
+      "F": [
+        [
+          "4",
+          "0"
+        ],
+        [
+          "0",
+          "4"
+        ]
+      ],
+      "H": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "t": "1",
+      "L": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-2",
+          "0"
+        ]
+      ],
+      "q": [
+        "1",
+        "1",
+        "1"
+      ],
+      "vertices": 8
+    },
+    "pair_pass_global_fail": {
+      "n": 3,
+      "diagonal": "1",
+      "off_diagonal": "-1",
+      "H_all": "1/10",
+      "t": "1",
+      "w": [
+        "1",
+        "1",
+        "1"
+      ],
+      "expected_upper_quadratic": "-21/10"
+    },
+    "guards": [
+      "negative radius",
+      "negative H",
+      "nonsymmetric F",
+      "nonsymmetric H",
+      "nonsquare dimension",
+      "nonfinite token",
+      "wrong vector shape",
+      "actual source identity mismatch",
+      "negative singleton",
+      "zero-H unrepairable pair",
+      "t=0 pair pass",
+      "zero-crossing off interval",
+      "zero diagonal boundary",
+      "wrong independent consumer covariance",
+      "unattainable simultaneous marginal endpoints"
+    ]
+  },
+  "tool_budget": {
+    "Exa_SciSpace": "source research recorded by actual calls",
+    "Wolfram_context": "1 recorded",
+    "new_Wolfram_evaluator_max": 1,
+    "new_Wolfram_time_limit_s": 15,
+    "prior_symbolic_lineage": 8,
+    "old_Wolfram_remaining": 0
+  },
+  "cumulative_budget": {
+    "reset": false,
+    "all_completed_allowances_remaining": 0,
+    "PHYS88_children": 4,
+    "PHYS88_CPU_s": 7.322937,
+    "PHYS88_wall_s": 7.330995100001019,
+    "PHYS88_metadata_CPU_s": 0.0005106,
+    "PHYS89_children": 3,
+    "PHYS89_successes": 2,
+    "PHYS89_preserved_reference_failure": 1,
+    "PHYS89_CPU_s": 0.41658999999999996,
+    "PHYS89_wall_s": 0.4201385129999835,
+    "known_PHYS87_89_child_CPU_subset_s": 12.10391,
+    "historical_total_CPU_s": null,
+    "remote_CPU_s": null,
+    "remote_cost": null,
+    "money": null,
+    "remaining_global_budget": null,
+    "new_separate_affected_identity_allowance": {
+      "primary": 1,
+      "reference": 1,
+      "Wolfram": 1
+    }
+  },
+  "invariants": {
+    "geometry": "Non-tilted LRS Bianchi I",
+    "metric": "(-+++)",
+    "reacting_gas_pi": 0,
+    "collisionless_DM_pi_m": "separate",
+    "tensor": "signed matter and radiation in same normal orthonormal frame; sum then norm",
+    "Frobenius": "sqrt(2)*half-contraction",
+    "trajectory_components": "not species-off causal experiment",
+    "sampled_residual": "not continuum certificate",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "global_physical_completion": null
+  },
+  "delivery": {
+    "branch": "research/hh-phys90-covariance-cell-20261025",
+    "expected_parent": "480baabc73ebaaba735d285d969e79177f5545ed",
+    "force": false,
+    "Draft": true,
+    "stage_backups": "S0/S1/S2 dual ACK metadata; stage wholeGET0",
+    "final_backups": "each provider ZIP wholeGET CRC payloadSHA remote Git identity actual extraction; MAIN/TERMINAL rawGET",
+    "central": "fresh actual HEAD base, own return/observation/HH append only; original40/7/17 and other39 preserved"
+  }
+}

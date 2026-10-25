@@ -1,0 +1,37 @@
+{
+  "schema": "PHYS90_PREEXEC_METADATA_FAILURE_LEDGER_V1",
+  "scientific_children": 0,
+  "scientific_allowance_consumed": 0,
+  "budget_reset": false,
+  "events": [
+    {
+      "id": "S0_LOCAL_PACKAGE_1",
+      "class": "environment",
+      "exit": 1,
+      "reason": "Git partial clone diff requested missing promisor blob via sandbox-denied network after local ref/index successfully moved to S0",
+      "correction": "Compared actual local bytes to fetched authoritative S0 tree blob ids; inserted same bytes into local object store; exact diff PASS; package built create-only once",
+      "science": 0,
+      "remote_changes_from_failure": 0
+    },
+    {
+      "id": "S0_FILE_INGRESS_1",
+      "class": "delivery",
+      "providers": [
+        "Dropbox",
+        "Drive"
+      ],
+      "reason": "No-such-file local ingress: packaging command failed before archive creation; no provider file ACK",
+      "correction": "Created valid archive after tree identity check; next uploads ACK; separate metadata PASS",
+      "provider_upload_successes_in_failed_attempt": 0,
+      "stage_archive_wholeGET": 0
+    }
+  ],
+  "other_read_failures": {
+    "Drive_metadata_missing_fileId": 1,
+    "Dropbox_search_invalid_path": 1,
+    "source_default_network_denials": 3,
+    "source_IAEA403": 2,
+    "source_metadata_TypeError": 1,
+    "user_skill_reference_locator_errors": 5
+  }
+}

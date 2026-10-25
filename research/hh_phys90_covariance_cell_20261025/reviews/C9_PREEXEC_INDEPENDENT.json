@@ -1,0 +1,49 @@
+{
+  "schema": "PHYS90_C9_PREEXEC_REVIEW_V1",
+  "reviewer": "/root/independent90",
+  "decision": "PASS_STATIC_READY_FOR_S1_FREEZE",
+  "prior_decision": "PASS_STATIC_MATH_AND_EXECUTION_PATH_PENDING_T1_CLAIM_FIX",
+  "scope": "Static critical review before S1 freeze and first PHYS90 primary/reference",
+  "evidence": "C9_PREEXEC_INDEPENDENT.md",
+  "findings": [
+    {
+      "id": "P90-C9-01",
+      "status": "CLOSED_BY_TARGETED_PREEXEC_FIX_AND_ACTUAL_DIFF_READBACK",
+      "target": "source/primary.py RESULTS full_PSD_compatibility",
+      "observation": "Hardcoded UNRESOLVED loses an exact radius1 global incompatibility certificate when any singleton/pair fails",
+      "correction": "Emit radius-scoped t1 compatibility, exact failure witness when present, and independent reference comparison; retain UNRESOLVED on allpair pass",
+      "origin": "Root initial finding; independent actual code confirmation"
+    }
+  ],
+  "static_verified": [
+    "Exact common integer scaling and all11628pairs/153singletons",
+    "Closed equality, negative diagonal and off-interval-zero boundaries",
+    "Doubling4096 and exact40step failedlo/passedhi invariant",
+    "Shared symmetric entry support and common-source conservation",
+    "Separate exact per-pair Fraction/integer reference path",
+    "Readonly resume before scientific import and dependency-bound reference skip",
+    "Original vendor lease APIs and fixed resources; no peer termination"
+  ],
+  "source_snapshot_sha256": {
+    "source/evidence.py": "9ffae0badb802a02481b8659db89342c6a4e5eead88bd62c92d1c45f7262ed2e",
+    "source/kernel.py": "ae500b266d7ec92e29ae5cf12843f607359bc052c239e53aedb6bdfca649d6ce",
+    "source/leased_call.py": "7e19f09c27a07075089e4d47286aec463e10469ed9bc821549a8332424b22d08",
+    "source/primary.py": "1ff36c2d05750ad70597369dc1176277a4c25a99cf25ef131b424148053eb4a5",
+    "source/reference.py": "635a86dfb419c2b19e9faf60109ff122d09ece57be06e0350d32c2271ebd1713",
+    "implementation/MAP.md": "f289103dffb0533d711081f290d3c27c66c00ea663f750cafbe65cd0d12e4f4d"
+  },
+  "scientific_execution": 0,
+  "remote_mutations": 0,
+  "budget_reset": false,
+  "actual_results_reviewed": false,
+  "post_fix_source_sha256": {
+    "source/evidence.py": "9ffae0badb802a02481b8659db89342c6a4e5eead88bd62c92d1c45f7262ed2e",
+    "source/kernel.py": "8fb7cfb9f8e424c7d71f41c1944a2ed3dde4d459ec764be95fd1f8dadd92ee01",
+    "source/leased_call.py": "7e19f09c27a07075089e4d47286aec463e10469ed9bc821549a8332424b22d08",
+    "source/primary.py": "f0880bedef8363384f6bf5a160ec551000077828aab6253a1bedd68fb2d96e42",
+    "source/reference.py": "f1414559cb71bde7e4976abb5ce0cf5102a625329c10decc6cec7be4c64bee1a",
+    "implementation/MAP.md": "24dd689febda3898cf78950c47eca1ddfa6eb3cbc98efa8d974bc172bde0e420"
+  },
+  "remaining_blocking_findings": [],
+  "next": "Root freezes S1; read actual outputs for final C9 without rerunning science"
+}
