@@ -1,3 +1,15 @@
+# Current priority: actual provider registry continuation, 2026-10-25 UTC
+
+The user's fixed handoff at program-expansion HEAD 34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad and the current explicit continuation request set this priority. Read research/provider_registry_20261025/HANDOFF_KO.md, REPORT_KO.md, SCIENTIFIC_ADMISSION.json, DAG.json, EXECUTION_LEDGER.json, reviews/ and delivery/ before a new node. The preserved PHYS71 and earlier priorities below are historical scheduling records; their physical conventions and completed-result protections remain in force.
+
+This additive unit recovers 102 actual provider/source variants, 125 finite candidate number projections and 92 species/state identities. The historical 21-population / 39-direction view remains explicit; all 39 directions now have a source candidate, while 10 older finite-CI admission gaps remain separate. NUBASE's 5,843 source-state rows are not an active network. Full configured nuclear-network recovery still needs the original image locator. Do not infer physical completeness from these counts.
+
+Reuse the unchanged REI-CHEM-LEDGER-01 compiler and its saved 249-check admission. New PRIMARY 20/20 and independent 448/448 checks establish source-row identities and integer projections only. No new physical rate, nuclear Q, IVP, or named consumer is admitted. Keep isotope/isomer/charge/state/molecule/negative-ion identities, branch and uncertainty, bound/free electrons, neutrino signs, source support and one physical owner explicit. Total RR cascade photon count remains unqualified. Do not replay completed PHYS83 or PHYS91 results.
+
+Before every node refresh actual AGENTS, HEAD, concurrent owner work and backup receipts. Preserve PHYS91 primary/reference/Wolfram remaining=0, global historical CPU/money/remaining=null, HH_R10=OFF, production=NOT_ISSUED and L4_ready=false. The current bounded implementation checks do not reset or transfer old budgets. Preserve first failures and source correction packets. Publication is an additive stacked draft with expected-SHA non-force updates; source ZIP and Dropbox/Drive ACKs have separate receipts. The user's current request explicitly authorizes these publication and backup steps; this priority adds no permission or access-control exception.
+
+## Preserved historical instructions
+
 # Current priority PHYS71: all-angular third Born coefficient, 2026-10-20 UTC
 
 Read research/hh_phys71_20261020/CONTRACT.json, theory/PROOF.md, theory/ANGULAR_D3.md, REPORT_KO.md, EXECUTION_LEDGER.json, NEXT_DAG.json, CODEX_HANDOFF_PROMPT.md and NEW_THREAD_HANDOFF.md. The actual parent is PR120 metadata HEAD31745376ca751e7c925b3b1453ef292436cd30e8, tree2e507880420d3c1017b212f6ddc604878fa1e943. Scientific calculation, numerical acceptance, Git publication and backup have separate receipts.

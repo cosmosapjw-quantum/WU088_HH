@@ -1,0 +1,3129 @@
+{
+  "schema": "WU_SOURCE_REGISTRY_INDEPENDENT_C9_CHECK_V1",
+  "decision": "PASS_SCOPED_SOURCE_ROWS_AND_INTEGER_PROJECTIONS",
+  "checker_sha256": "4d7f6095d92c8ffc4babb183d33ff6ec30a52909a1f883f4d41dc5806a7ccfcf",
+  "frozen_source_manifest": {
+    "provider_registry_20261025/registry/species.json": "a18052f6db432192e1e0d4c75f8f2d49c71f3a5eb7cac206e7bc445fec2e8f80",
+    "provider_registry_20261025/registry/providers.json": "23d5bee7323a083d23a8a811eb7312a35c0eb613381ce28a22a5f989b1077664",
+    "provider_registry_20261025/registry/events.json": "abeea067660b0898315935ffd07bb6a443bbb1bd6111c700215b72be220baa90",
+    "provider_registry_20261025/registry/compiled.json": "d4836befd465ebd8130e5fd1f910b1fea30348c5e5785bfc66f8275735123f8c",
+    "provider_registry_20261025/registry/coverage.json": "67e6757038de2783d7b08f4bc840314a7bb2d04a8839c3a821a6be18be4f27f5",
+    "provider_registry_20261025/registry_adapter.py": "9a093eed42f9ff5858d7bae11c726988ddbde4feeed38888b1c90fe329be816c",
+    "provider_registry_20261025/build_registry.py": "b0f9387fecf18a9e66be9328bee0fb71b3055a1fb6f083cccd891e81269a792f",
+    "provider_registry_20261025/CONTRACT.json": "aa58fd2683b54760bdf2e51165207dac3a96477b261c86923e6fcaca8e880f46",
+    "rei_chem_ledger_20261025/chem_ledger.py": "60a502895266b6feb96964abc4b24db61c2faed2344db0f7d12f16bb47ed62af"
+  },
+  "independent_method": "Direct raw-file/row/column parsing and integer ledgers; saved production output compared without importing assembler/core; adapter imported only for new-input rejection and key controls",
+  "counts": {
+    "provider_variants": 102,
+    "candidate_events": 125,
+    "species_identities": 92,
+    "historical_configured_populations": 21,
+    "nuclear_source_rows": 5843,
+    "checks": 448,
+    "failed": 0,
+    "checks_by_category": {
+      "immutable_reuse": 1,
+      "identity": 2,
+      "phase_counts": 5,
+      "source_locator": 101,
+      "source_identity": 102,
+      "independent_event_columns": 125,
+      "Voronov_raw": 6,
+      "Voronov_scope": 3,
+      "raw_github_file": 22,
+      "HeI_variants": 3,
+      "ownership": 2,
+      "RR_count": 2,
+      "UMIST_raw": 37,
+      "UMIST_domain": 1,
+      "UMIST_source": 2,
+      "HD_raw": 3,
+      "HD_coverage": 1,
+      "HD_spin": 9,
+      "LiH_source": 2,
+      "NUBASE_catalogue": 2,
+      "weak_alternatives": 2,
+      "weak_source": 3,
+      "nuclear_Q_boundary": 1,
+      "blackbox_rejection": 5,
+      "blackbox_identity": 2,
+      "blackbox_owner": 2,
+      "blackbox_domain": 1,
+      "frozen_inputs": 1
+    }
+  },
+  "science_execution": {
+    "rates": 0,
+    "Q_evaluations": 0,
+    "IVPs": 0,
+    "old249_replay": 0,
+    "new_exact_saved_columns": 125
+  },
+  "cpu_s": 0.139999355,
+  "wall_s": 0.1399270800029626,
+  "peak_RSS_KiB": 46524,
+  "checks": [
+    {
+      "category": "immutable_reuse",
+      "name": "compiler_source_sha",
+      "passed": true
+    },
+    {
+      "category": "identity",
+      "name": "unique_event_and_compiled_ids",
+      "passed": true
+    },
+    {
+      "category": "identity",
+      "name": "unique_material_species_keys",
+      "passed": true
+    },
+    {
+      "category": "phase_counts",
+      "name": "historical21_not_extended_material_count",
+      "passed": true
+    },
+    {
+      "category": "phase_counts",
+      "name": "historical39_and_missing_CI10",
+      "passed": true
+    },
+    {
+      "category": "phase_counts",
+      "name": "no_activation_or_global_completion",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "CHIANTI_A_2p1_2_to_ground_per_s",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "CHIANTI_A_2p1_2_to_ground_per_s",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "CHIANTI_A_2p3_2_to_ground_per_s",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "CHIANTI_A_2p3_2_to_ground_per_s",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "CHIANTI_A_2s_two_photon_per_s",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "CHIANTI_A_2s_two_photon_per_s",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "CHIANTI_also_listed_2s_M1_per_s",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "CHIANTI_also_listed_2s_M1_per_s",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "ENDF_B_VIII1_H1_MT102",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "ENDF_B_VIII1_H1_MT102",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_A_1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_A_1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_A_2",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_A_2",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_A_3",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_A_3",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_A_4",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_A_4",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_A_5",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_A_5",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_A_6",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_A_6",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_A_7",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_A_7",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_A_8",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_A_8",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_2_1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_2_1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_2_2",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_2_2",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_2_3",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_2_3",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_2_4",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_2_4",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_2_5",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_2_5",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_2_6",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_2_6",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_2_7",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_2_7",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_2_8",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_2_8",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_2_9",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_2_9",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_3_1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_3_1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_3_2",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_3_2",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_3_3",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_3_3",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_3_4",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_3_4",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_3_5",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_3_5",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_3_6",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_3_6",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_3_7",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_3_7",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_3_8",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_3_8",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LAMDA_HD_C_3_9",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LAMDA_HD_C_3_9",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LEIDEN_LiH_PD",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LiveChart_ENSDF_T_beta_minus",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LiveChart_ENSDF_T_beta_minus",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "LiveChart_ENSDF_n_beta_minus",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "LiveChart_ENSDF_n_beta_minus",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "NUBASE2020_T_beta_minus",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "NUBASE2020_T_beta_minus",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "NUBASE2020_n_beta_minus",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "NUBASE2020_n_beta_minus",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "PHYS81_CI_H1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "PHYS81_CI_H1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "PHYS81_CI_He4",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "PHYS81_CI_He4",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "PHYS81_CI_Li7",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "PHYS81_CI_Li7",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "PHYS81_COLD_nd_t_gamma",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "PHYS81_COLD_nd_t_gamma",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "PHYS81_COLD_np_d_gamma",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "PHYS81_COLD_np_d_gamma",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "PHYS81_COLD_pd_h_gamma",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "PHYS81_COLD_pd_h_gamma",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "PHYS83_CE_1s_to_2p",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "PHYS83_CE_1s_to_2p",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "PHYS83_CE_1s_to_2s",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "PHYS83_CE_1s_to_2s",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "PHYS83_CE_2p_to_1s",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "PHYS83_CE_2p_to_1s",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "PHYS83_CE_2s_to_1s",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "PHYS83_CE_2s_to_1s",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_145",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_145",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_150",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_150",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_152",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_152",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_1524",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_1524",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_1577",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_1577",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_1578",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_1578",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_1711",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_1711",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_3196",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_3196",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_3202",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_3202",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_3272",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_3272",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_3273",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_3273",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_3682",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_3682",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_469",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_469",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_500",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_500",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_502",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_502",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_6353",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_6353",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_6354",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_6354",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_6357",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_6357",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_6364",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_6364",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_74",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_74",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_825",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_825",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_826",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_826",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_8267",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_8267",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_8268",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_8268",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_8269",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_8269",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_827",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_827",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_828",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_828",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_829",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_829",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_830",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_830",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_8622",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_8622",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_8623",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_8623",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_8624",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_8624",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_8742",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_8742",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_8752",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_8752",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_8756",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_8756",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_998",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_998",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "UMIST22_999",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "UMIST22_999",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "V97_CI_Z1_N1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "V97_CI_Z1_N1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "V97_CI_Z2_N1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "V97_CI_Z2_N1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "V97_CI_Z2_N2",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "V97_CI_Z2_N2",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "V97_CI_Z3_N1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "V97_CI_Z3_N1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "V97_CI_Z3_N2",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "V97_CI_Z3_N2",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "V97_CI_Z3_N3",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "V97_CI_Z3_N3",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_PI_Z1_N1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_PI_Z1_N1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_PI_Z2_N1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_PI_Z2_N1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_PI_Z2_N2",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_PI_Z2_N2",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_PI_Z3_N1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_PI_Z3_N1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_PI_Z3_N2",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_PI_Z3_N2",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_PI_Z3_N3",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_PI_Z3_N3",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_RR_Z1_N1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_RR_Z1_N1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_RR_Z2_N1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_RR_Z2_N1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_RR_Z2_N2_fit_a",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_RR_Z2_N2_fit_a",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_RR_Z2_N2_fit_b",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_RR_Z2_N2_fit_b",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_RR_Z3_N1",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_RR_Z3_N1",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_RR_Z3_N2",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_RR_Z3_N2",
+      "passed": true
+    },
+    {
+      "category": "source_locator",
+      "name": "VF96_RR_Z3_N3",
+      "passed": true
+    },
+    {
+      "category": "source_identity",
+      "name": "VF96_RR_Z3_N3",
+      "passed": true
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z1_N1:H1",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z1_N1:D",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z1_N1:T",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z1_N1:H1",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z1_N1:D",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z1_N1:T",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z2_N2:He3",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z2_N2:He4",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z2_N1:He3",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z2_N1:He4",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z2_N1:He3",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z2_N1:He4",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z3_N3:Li6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z3_N3:Li7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z3_N3:Li6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z3_N3:Li7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z3_N2:Li6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z3_N2:Li7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z3_N2:Li6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z3_N2:Li7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z3_N1:Li6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_PI_Z3_N1:Li7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z3_N1:Li6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z3_N1:Li7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z2_N2_fit_a:He3",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z2_N2_fit_a:He4",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z2_N2_fit_b:He3",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "VF96_RR_Z2_N2_fit_b:He4",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "PHYS81_CI_H1",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "PHYS81_CI_He4",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "PHYS81_CI_Li7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "PHYS83_CE_1s_to_2s",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "PHYS83_CE_1s_to_2p",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "PHYS83_CE_2s_to_1s",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "PHYS83_CE_2p_to_1s",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "CHIANTI_A_2s_two_photon_per_s",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "CHIANTI_A_2p1_2_to_ground_per_s",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "CHIANTI_A_2p3_2_to_ground_per_s",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "CHIANTI_also_listed_2s_M1_per_s",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "ENDF_B_VIII1_H1_MT102",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": {
+          "(0, 1, 'ground')": -1,
+          "(1, 1, 'ground')": -1,
+          "(1, 2, 'ground')": 1
+        }
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "NUBASE2020_n_beta_minus",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": {
+          "(0, 1, 'ground')": -1,
+          "(1, 1, 'ground')": 1
+        }
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LiveChart_ENSDF_n_beta_minus",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": {
+          "(0, 1, 'ground')": -1,
+          "(1, 1, 'ground')": 1
+        }
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "NUBASE2020_T_beta_minus",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": {
+          "(1, 3, 'ground')": -1,
+          "(2, 3, 'ground')": 1
+        }
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LiveChart_ENSDF_T_beta_minus",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": {
+          "(1, 3, 'ground')": -1,
+          "(2, 3, 'ground')": 1
+        }
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z1_N1:H1",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z1_N1:D",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z1_N1:T",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z2_N2:He3",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z2_N2:He4",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z2_N1:He3",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z2_N1:He4",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z3_N3:Li6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z3_N3:Li7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z3_N2:Li6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z3_N2:Li7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z3_N1:Li6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "V97_CI_Z3_N1:Li7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "PHYS81_COLD_np_d_gamma",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": {
+          "(0, 1, 'ground')": -1,
+          "(1, 1, 'ground')": -1,
+          "(1, 2, 'ground')": 1
+        }
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "PHYS81_COLD_nd_t_gamma",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": {
+          "(0, 1, 'ground')": -1,
+          "(1, 2, 'ground')": -1,
+          "(1, 3, 'ground')": 1
+        }
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "PHYS81_COLD_pd_h_gamma",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": {
+          "(1, 1, 'ground')": -1,
+          "(1, 2, 'ground')": -1,
+          "(2, 3, 'ground')": 1
+        }
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_74",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_145",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_150",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_152",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_469",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_500",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_502",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_825",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_826",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_827",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_828",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_829",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_830",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_998",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_999",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_1524",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_1577",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_1578",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_1711",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_3196",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_3202",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_3272",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_3273",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_3682",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_6353",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_6354",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_6357",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_6364",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_8267",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_8268",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_8269",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_8622",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_8623",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_8624",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_8742",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_8752",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "UMIST22_8756",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LEIDEN_LiH_PD:Li6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LEIDEN_LiH_PD:Li7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_A_1",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_A_2",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_A_3",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_A_4",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_A_5",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_A_6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_A_7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_A_8",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_2_1",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_2_2",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_2_3",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_2_4",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_2_5",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_2_6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_2_7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_2_8",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_2_9",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_3_1",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_3_2",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_3_3",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_3_4",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_3_5",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_3_6",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_3_7",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_3_8",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "independent_event_columns",
+      "name": "LAMDA_HD_C_3_9",
+      "passed": true,
+      "detail": {
+        "baryon": 0,
+        "charge": 0,
+        "electron_lepton": 0,
+        "nuclear_isotope_changes": null
+      }
+    },
+    {
+      "category": "phase_counts",
+      "name": "provider_set_equals_source_rows",
+      "passed": true,
+      "detail": {
+        "expected_count": 102,
+        "observed": 102,
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "category": "phase_counts",
+      "name": "coverage_phase_counters_match_actual",
+      "passed": true
+    },
+    {
+      "category": "Voronov_raw",
+      "name": "V97_CI_Z1_N1",
+      "passed": true
+    },
+    {
+      "category": "Voronov_raw",
+      "name": "V97_CI_Z2_N2",
+      "passed": true
+    },
+    {
+      "category": "Voronov_raw",
+      "name": "V97_CI_Z2_N1",
+      "passed": true
+    },
+    {
+      "category": "Voronov_raw",
+      "name": "V97_CI_Z3_N3",
+      "passed": true
+    },
+    {
+      "category": "Voronov_raw",
+      "name": "V97_CI_Z3_N2",
+      "passed": true
+    },
+    {
+      "category": "Voronov_raw",
+      "name": "V97_CI_Z3_N1",
+      "passed": true
+    },
+    {
+      "category": "Voronov_scope",
+      "name": "six_elemental_rows_thirteen_inactive_projections",
+      "passed": true
+    },
+    {
+      "category": "Voronov_scope",
+      "name": "native_Fortran_cutoff_described_not_executed",
+      "passed": true
+    },
+    {
+      "category": "Voronov_scope",
+      "name": "all39_have_source_candidate_without_old_admission_rewrite",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys78_sandbox_nuclide_20261021/source/atomic_network.py",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys78_sandbox_nuclide_20261021/vendor/atomic/PROVENANCE.json",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys78_sandbox_nuclide_20261021/vendor/atomic/photo.dat",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys78_sandbox_nuclide_20261021/vendor/atomic/rec_table1.dat",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys81_atomic_nuclear_source_contract_20261023/source/registry.py",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/ADMITTED_FINITE_CI_REGISTRY.json",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/NUCLEAR_MASSES_CODATA2022.json",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/PHYS81_ATOMIC_CI_SOURCE_REGISTRY.json",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/PHYS81_CI_FINITE_WINDOW_LITERAL_DATA.csv",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys81_atomic_nuclear_source_contract_20261023/verification/nuclear/COLD_ROWS_FROM_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys81_atomic_nuclear_source_contract_20261023/verification/nuclear/POST_RUN_DECISION.json",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys83_ce_completion_20261023/source_data/CCC_1S.2P",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys83_ce_completion_20261023/source_data/CCC_1S.2S",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys83_ce_completion_20261023/source_data/CCC_2P.1S",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys83_ce_completion_20261023/source_data/CCC_2S.1S",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys83_ce_completion_20261023/source_data/HI_CE_SOURCE_CONTRACT.json",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys83_ce_completion_20261023/source_data/h_1.elvlc",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys83_ce_completion_20261023/source_data/h_1.wgfa",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys85_nuclear_particle_ownership_20261024/source_data/SOURCE_LEDGER.json",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys87_endf_np_native_moments_20261024/source_data/SOURCE_MASS_AND_FORMAT_AUDIT.json",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys87_endf_np_native_moments_20261024/source_data/SOURCE_TABLE.json",
+      "passed": true
+    },
+    {
+      "category": "raw_github_file",
+      "name": "research/hh_phys87_endf_np_native_moments_20261024/source_data/n-001_H_001.endf",
+      "passed": true
+    },
+    {
+      "category": "HeI_variants",
+      "name": "a",
+      "passed": true
+    },
+    {
+      "category": "HeI_variants",
+      "name": "b",
+      "passed": true
+    },
+    {
+      "category": "HeI_variants",
+      "name": "legacy_alias_is_b",
+      "passed": true
+    },
+    {
+      "category": "ownership",
+      "name": "HeI_alternatives_He3",
+      "passed": true
+    },
+    {
+      "category": "ownership",
+      "name": "HeI_alternatives_He4",
+      "passed": true
+    },
+    {
+      "category": "RR_count",
+      "name": "13_total_RR_directions_remain_unresolved",
+      "passed": true
+    },
+    {
+      "category": "RR_count",
+      "name": "compiled_total_RR_no_escape_count",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "74",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "145",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "150",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "152",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "469",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "500",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "502",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "825",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "826",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "827",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "828",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "829",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "830",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "998",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "999",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "1524",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "1577",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "1578",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "1711",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "3196",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "3202",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "3272",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "3273",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "3682",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "6353",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "6354",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "6357",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "6364",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "8267",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "8268",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "8269",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "8622",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "8623",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "8624",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "8742",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "8752",
+      "passed": true
+    },
+    {
+      "category": "UMIST_raw",
+      "name": "8756",
+      "passed": true
+    },
+    {
+      "category": "UMIST_domain",
+      "name": "reaction74_unfilled_temperature_gap",
+      "passed": true
+    },
+    {
+      "category": "UMIST_source",
+      "name": "isotope_specificity_not_inferred",
+      "passed": true
+    },
+    {
+      "category": "UMIST_source",
+      "name": "gamma_not_Q_and_drivers_preserved",
+      "passed": true
+    },
+    {
+      "category": "HD_raw",
+      "name": "levels",
+      "passed": true,
+      "detail": {
+        "rows": 9
+      }
+    },
+    {
+      "category": "HD_raw",
+      "name": "radiative_lines",
+      "passed": true,
+      "detail": {
+        "rows": 8
+      }
+    },
+    {
+      "category": "HD_raw",
+      "name": "collisions",
+      "passed": true,
+      "detail": {
+        "rows": 18
+      }
+    },
+    {
+      "category": "HD_coverage",
+      "name": "nine_levels_eight_lines_eighteen_pairs",
+      "passed": true
+    },
+    {
+      "category": "HD_spin",
+      "name": "pair_1",
+      "passed": true
+    },
+    {
+      "category": "HD_spin",
+      "name": "pair_2",
+      "passed": true
+    },
+    {
+      "category": "HD_spin",
+      "name": "pair_3",
+      "passed": true
+    },
+    {
+      "category": "HD_spin",
+      "name": "pair_4",
+      "passed": true
+    },
+    {
+      "category": "HD_spin",
+      "name": "pair_5",
+      "passed": true
+    },
+    {
+      "category": "HD_spin",
+      "name": "pair_6",
+      "passed": true
+    },
+    {
+      "category": "HD_spin",
+      "name": "pair_7",
+      "passed": true
+    },
+    {
+      "category": "HD_spin",
+      "name": "pair_8",
+      "passed": true
+    },
+    {
+      "category": "HD_spin",
+      "name": "pair_9",
+      "passed": true
+    },
+    {
+      "category": "LiH_source",
+      "name": "1562_exact_sample_rows",
+      "passed": true
+    },
+    {
+      "category": "LiH_source",
+      "name": "summary_threshold_and_sample_support_separate",
+      "passed": true
+    },
+    {
+      "category": "NUBASE_catalogue",
+      "name": "all5843_fixed_width_rows",
+      "passed": true,
+      "detail": {
+        "ground": 3558,
+        "non_ground": 2285
+      }
+    },
+    {
+      "category": "NUBASE_catalogue",
+      "name": "catalogue_not_active_network",
+      "passed": true
+    },
+    {
+      "category": "weak_alternatives",
+      "name": "n",
+      "passed": true
+    },
+    {
+      "category": "weak_alternatives",
+      "name": "T",
+      "passed": true
+    },
+    {
+      "category": "weak_source",
+      "name": "neutron_lifetime_alternatives_not_averaged",
+      "passed": true
+    },
+    {
+      "category": "weak_source",
+      "name": "duplicate_uncertainty_columns_n",
+      "passed": true
+    },
+    {
+      "category": "weak_source",
+      "name": "duplicate_uncertainty_columns_T",
+      "passed": true
+    },
+    {
+      "category": "nuclear_Q_boundary",
+      "name": "native_MT102_not_bare_Q",
+      "passed": true
+    },
+    {
+      "category": "blackbox_rejection",
+      "name": "weak_missing_antineutrino",
+      "passed": true,
+      "detail": {
+        "observed": "ValueError:ELECTRON_LEPTON_NUMBER_NOT_CONSERVED",
+        "expected_contains": "ELECTRON_LEPTON_NUMBER_NOT_CONSERVED"
+      }
+    },
+    {
+      "category": "blackbox_rejection",
+      "name": "weak_wrong_neutrino_sign",
+      "passed": true,
+      "detail": {
+        "observed": "ValueError:ELECTRON_LEPTON_NUMBER_NOT_CONSERVED",
+        "expected_contains": "ELECTRON_LEPTON_NUMBER_NOT_CONSERVED"
+      }
+    },
+    {
+      "category": "blackbox_rejection",
+      "name": "unknown_actual_species",
+      "passed": true,
+      "detail": {
+        "observed": "LedgerError:UNKNOWN_SPECIES:unknown_actual_species",
+        "expected_contains": "UNKNOWN_SPECIES"
+      }
+    },
+    {
+      "category": "blackbox_rejection",
+      "name": "attempted_activation",
+      "passed": true,
+      "detail": {
+        "observed": "ValueError:SOURCE_INGESTION_CANNOT_ACTIVATE_PROVIDER",
+        "expected_contains": "CANNOT_ACTIVATE"
+      }
+    },
+    {
+      "category": "blackbox_rejection",
+      "name": "attempted_Q_promotion",
+      "passed": true,
+      "detail": {
+        "observed": "ValueError:SOURCE_INGESTION_CANNOT_ISSUE_PHYSICAL_ADMISSION",
+        "expected_contains": "CANNOT_ISSUE_PHYSICAL_ADMISSION"
+      }
+    },
+    {
+      "category": "blackbox_identity",
+      "name": "external_photon_split_representation",
+      "passed": true
+    },
+    {
+      "category": "blackbox_identity",
+      "name": "branch_changes_identity",
+      "passed": true
+    },
+    {
+      "category": "blackbox_owner",
+      "name": "He4_a_b",
+      "passed": true,
+      "detail": "OWNER_OVERLAP_UNRESOLVED:one_physical_event_per_process_state_branch"
+    },
+    {
+      "category": "blackbox_owner",
+      "name": "neutron_evaluations",
+      "passed": true,
+      "detail": "OWNER_OVERLAP_UNRESOLVED:one_physical_event_per_process_state_branch"
+    },
+    {
+      "category": "blackbox_domain",
+      "name": "UMIST74_gap_100_5K_rejected",
+      "passed": true
+    },
+    {
+      "category": "frozen_inputs",
+      "name": "unchanged_after_independent_review",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "admission_limit": "Actual source-row transcription and structural number projection only. No source statistical validation, physical rate/Q, source atomic-to-bare mapping or consumer adoption."
+}
