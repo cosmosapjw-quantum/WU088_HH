@@ -1,4 +1,4 @@
-Module[{s, f, w, y, h, support, trace, fullSupport, separateSupport, g, padding, vec, gramIdentity, checks},
+Module[{s, f, w, y, h, support, trace, fullSupport, separateSupport, g, padding, vec, gramIdentity, checks, a, b, c, d, u, v, x1, x2},
 s = {{0, 1, 0, -1}, {1, 0, 1, 0}, {0, 1, 0, 1}, {-1, 0, 1, 0}};
 f = IdentityMatrix[4] + s; w = IdentityMatrix[4] - s; y = w.Transpose[w];
 h = Table[If[i == j || Abs[s[[i,j]]] == 1, 1/10, 1], {i,4}, {j,4}];
