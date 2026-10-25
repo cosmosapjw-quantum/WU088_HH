@@ -1,0 +1,55 @@
+# Runtime reset 이후 중앙3ae 실제 delta
+
+**판정: PASS_CURRENT_SOURCE_AND_CONSUMER_INPUT_UNCHANGED.** PHYS91의 기존 동결 입력·계약에 따른 S0 진행이 가능하다. 2026-10-25 07:12:59 UTC까지의 새 읽기로 현재 중앙HEAD3ae182311e69fe2d7cb641e7bfe30c18e24dd3d0,tree163f59c6c7e8403f199e52ffb41a73d7be776a77를 확인했다.
+
+## 1. 두 전달 commit과 보존
+
+53b2c135a1203a8784b6cc4acdec1d4fe174f166 이후 두 commit은 HE의38ea3bbccc4f62e5e6d579fd1b6fb8c3453ddd30과 CR의3ae182311e69fe2d7cb641e7bfe30c18e24dd3d0다. 변경5paths는 DAG, HE/CR handoff와각return이다. 새source calculation은 없다.
+
+현재DAG와 복구된53b2원문을 실제대조했다.40nodeIDs/order,40originalcontracts/planstatus/dependencies,7authorities17edges, HE/CR외38wholeobjects, WU전체19keys, HH전체30594bytes와25081/11893prefix, AGENTS가PASS다.5변경파일은 actualcompare의Gitblob과일치한다. HH세prefix SHA는 소실전 알려진 원SHA와직접대조했다.
+
+HE/CR 내부에는23nested differences(12oldvalue changes+11additions)가있다. 기존source/results/resources/budget/physicalclaim의선택12fields는동일하다. 변경은 실제delivery와nextcandidate 정보다. Receipt가unchangedfield의new값을null로줄여표기한것을 실제source값null로읽지 않는다. 원DAG/return에는동일값이유지된다.
+
+근거: [actualcommit](https://github.com/cosmosapjw-quantum/rei_bianchi/commit/3ae182311e69fe2d7cb641e7bfe30c18e24dd3d0), COMPARE_FROM_53b2.json, PRESERVATION.json.
+
+## 2. HE101: actual19/20, C8OPEN 유지
+
+Science9fc8185437f145a6ba4569e1b38aa2e12d15acd9는그대로이며 actualDocumentsD=28a26f4db951ab9085180e2ecc5d600d981a1f71가게시됐다. R10/C10 actualdelivery로19/20이됐으나 C8PARTIAL_EXPORT는열려있다. 원17/20snapshot, PASS/FAIL/FAIL, missingSVG/FIGURE_METADATA/REPAIR01_SUMMARY, repairreserve0, physicalproviderfalse/SOURCE_INPUT_PENDING/globalnull을유지한다.
+
+B2는2732504bytes,SHA2560662cb03fd141886e5c77c1661d2fb5314173f46498c27a878bf6571188d4baf, Drive15RPRyRzRorUuYA4t5MvUMm2np_Nt7rjR/Dropboxid:BSpOijBcT10AAAAAAD_90g다. 현재중앙은실제dualACK를결속한다.
+
+최신PR101외부본문은 B3도actualdualACK로결속했다. B3=HEANG_FINITEMASS_CBA_DELIVERY_20261025_28a26f4d_38ea3bbc.tar.gz,688666bytes,SHA256f86184b3422af7c48a3c006d0d5386e7674ce47d573bbd0dd6235512007607b3,Drive1dQRZYlTslOHE8atau97g4kS6ozaegdB3/Dropboxid:BSpOijBcT10AAAAAAD_90w다. 중앙return의B3pending은그이전enclosing snapshot으로보존한다. 네checkpoint는upload+별도metadataACK/localmemberverification이며새remotewholeGET를수행했다고주장하지않는다.
+
+이finite-M labelleddirectBorn모형은 실제HHnuclear massdeck/state/kernel/uncertainty입력을공급하지않는다. 수치결과·비용·실패도53b2관측과같다. 근거: HE_RETURN.json, [현재PR101](https://github.com/cosmosapjw-quantum/BASS_HE/pull/101), HE_PR101.json.
+
+## 3. CR105: actual20/20와최종dualR3
+
+Sciencebdfd34499153575305871bd68a139e2878f5f49f와 groundH1spontaneousRR finitechain의실제결과는그대로다. ActualDocumentsD=b1aed87852d4f8994494c2ae41a913afd390eccd 및M2=3ae로R10/C10까지20/20을닫았다. 원S18/20과T0준비snapshot은변경하지않는다.
+
+Canonical BASS_CR_N5_RR_MILNE_CANONICAL_20261025_V1.zip은18232953bytes,164payload/165members,SHA256f1afdb40303b28a498a62f9f8d38858b8bea584d0ed8a4e63bd87e4e11d362c5다. Librarylibfile_5fea72030ce881919506c18d10cafd9e와Dropboxid:BSpOijBcT10AAAAAAD_90Q의actualwholeGET/size/SHA/CRC/all164payloadR3PASS를ownerreceipt가보고한다. Drive는prequery0,upload1/noACK50s,postquery0,resend0으로UNKNOWN_NO_ACK/R3NOT_RUN이다.
+
+최신PR105의외부본문은finalauthority도결속한다. N5_RR_MILNE_FINAL_AUTHORITY_20261025T033026Z.json,38849bytes,SHA2565f37395452dea969b9f35ec295b667daadf01928e98c6280dbb56d241d852a94,Librarylibfile_eb884d1791908191baff28dbb5095055/Dropboxid:BSpOijBcT10AAAAAAD_91A다. 양쪽actualwholeGET/size/SHA/JSON/schema/20rows/M2identityR3PASS이며terminalDrive는NOT_ATTEMPTED다. 중앙return의terminalpending은이전snapshot으로유지한다.
+
+다음후보를기존REI151/C23B He4groundRR로구체화했지만 actual새입력admission은아니다. Source/channel/support/isotope/energy/weight계약을먼저동결해야한다. H1groundspontaneouscomponent, photonfeedbackOPEN, fullN4/N5PARTIAL/OPEN,N6/N7gated, globalnull은유지된다. HH physicalCI=false는confidenceinterval의미이며atomiccollisionalionization의존재주장이아니라는문구가추가됐다.
+
+근거: CR_RETURN.json, [현재PR105](https://github.com/cosmosapjw-quantum/bass_cr/pull/105), CR_PR105.json. 이subtask는ownerprovider를새로GET하지않고게시된실제영수증만읽었다.
+
+## 4. Reset 복구의범위
+
+Runtime reset의원인은NOT_ESTABLISHED다. Root가보고한03:24→07:10clockgap도원인을추정하지않는다.
+
+Functionsstore에남은late53b2 actual14responses와APIwrappers2개를workspace에복구했다.5deltafiles+AGENTS+HH의Gitblob7개가원authoritativemetadata와일치했다. lateDELTA_SUMMARY6070bytes/SHA256bf0fe7447ab5e3d301fb50ed4730665ec91a3d86204ae2c755f48cf121afbedc 및lateDELTA_REPORT6051bytes/SHA256c169e0df4a23ce73f32ca770f3f9525d10123dceab0ef497e410dddbc65ca895는소실전SHA와정확히일치하게복구했다.
+
+원latePRESERVATION16304bytes와초기census73responses/65branchpages/2261refs/30PRraw,42-rowidentitymanifest,초기preservation/reuse원bytes는NOT_RECOVERED다. 관측counts와기록된oldSHA는별도재구성metadata로보존했다. 재구성receipt를원bytes복구로부르지않는다. 초기8eintake보고서·summary는이소실gap의일부이며이파일로원래SHA를사칭하지않는다.
+
+이번새3ae응답12개는각toolreturn즉시store와workspace에저장했다. Root는clockgap에따라별도의현재시점metadata census를새로승인했다. 이새시점read와원censusrawloss를구분하며이subtask가중지시키거나원census완전복구로기록하지않는다.
+
+Root가PHYS90originalZIP/MAIN/TERMINAL을Dropbox각1회로복구해SHA/CRC118/payload117/extract118/nested0를확인한것은root소유영수증으로관리한다. 이subtask의providerGET/extract는0이다.
+
+## 5. 다음행동
+
+PHYS91covariance원입력/formatter/실제nuclear mass/state/kernel/tail/namedcaptureconsumerACK에는변화가없다. 물리부모PARTIAL_INPUT_DEPENDENCIES, HH_R10OFF,productionNOT_ISSUED,globalphysicalcompletionnull을유지하고기존승인된finitechild를이어간다.
+
+Root는복구된curatedlate자료와이새DELTA_SUMMARY/REPORT를S0Gitobject및백업에즉시보존할수있다. FullAPIwrapper/손실metadata의공개범위는원보존계약을따른다. 최종중앙additive게시전에는freshactualref를읽고현재HE/CR전달결과를포함한다른39와WU19를보존한다.
+
+추가현재read12/오류0,science0,oldscience0,remote mutation0,providerGET0이다. Source의미판정PASS와기계보존PASS를결합하여유한리뷰를닫는다.

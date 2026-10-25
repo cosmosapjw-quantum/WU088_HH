@@ -1,0 +1,155 @@
+{
+  "schema": "PHYS91_R6_INDEPENDENT_THEORY_REVIEW_V1",
+  "reviewer": "independent90",
+  "role": "Astra independent theory and contract adjudication",
+  "decision": "PASS_SCOPED_R6_THEORY_AND_CONTRACT",
+  "scope": "Exact finite-dimensional PSD formatting-cell certificate theory and one bounded new affected-identity execution contract; no actual numerical outcome reviewed",
+  "review_round": "ONE_ADJUDICATION_WITH_ROOT_FINAL_PRE_FREEZE_APPENDIX_READBACK",
+  "reviewed_bytes": [
+    {
+      "path": "CONTRACT.json",
+      "sha256": "361826f7940542e05c1461bf879d43808007aad092c58579c762dacce8ca5a39"
+    },
+    {
+      "path": "theory/GLOBAL_PSD_CERTIFICATE_KO.md",
+      "sha256": "f2ae715cc01c7489ac5e7c7f687f1a765dbbe835fb892f8f7cf2a81cd68f0b30"
+    }
+  ],
+  "independent_derivation": {
+    "path": "/tmp/hh91_20261025/theory_intake/FULL_PSD_PRIMAL_DUAL_THEORY_KO.md",
+    "sha256": "1f418af1146a260062f01ee82be49e3c4df03a2c500ebdcad42d9c255dde413b",
+    "certificate_schema_proposal": {
+      "path": "/tmp/hh91_20261025/theory_intake/CERTIFICATE_CONTRACT_PROPOSAL.json",
+      "sha256": "84b083ad78a606b761fd60f51e2effa0369c8448d58fca8edd090d65eebdc312"
+    }
+  },
+  "required_parent_reads": [
+    "PHYS90 CONTRACT.json",
+    "PHYS90 theory/COVARIANCE_CELL_AND_CONSUMER_KO.md",
+    "PHYS90 SCIENTIFIC_ADMISSION.json",
+    "PHYS90 NEXT_THREAD_HANDOFF_KO.md",
+    "PHYS90 POST_PUBLICATION_HANDOFF_KO.md",
+    "PHYS88 source_data/SOURCE_CONTRACT.json",
+    "PHYS89 intake/source/SOURCE_CONTRACT_RECOVERY.json",
+    "Repository AGENTS.md previously read in this continuing reviewer session"
+  ],
+  "blocking_findings": [],
+  "mathematical_checks": {
+    "exact_primal_distance": "PASS: finite attained minimum for finite symmetric F and strictly positive entrywise H",
+    "exact_dual": "PASS: maximum over PSD Y with h_H(Y)<=1, including zero dual at threshold zero",
+    "strong_duality": "PASS: explicit Slater point and compact dual; independent separation proof agrees",
+    "fixed_cell_infeasibility": "PASS: compact nonempty box and closed PSD cone permit strict separation when disjoint; no original fixed-cell weak infeasibility",
+    "offdiagonal_factor_two": "PASS: trace and symmetric support use doubled off-diagonal entries",
+    "general_dual_support": "PASS: full Y is assembled before entrywise absolute value; rank-one-only restriction rejected",
+    "primal_Gram_plus_diagonal": "PASS: integer V, positive q and nonnegative rational padding imply exact PSD",
+    "padding_rule": "PASS: max(U-Gram_diagonal,0) keeps PSD; any diagonal overshoot is included in exact alpha",
+    "primal_upper_bound": "PASS: all 11781 independent entries contribute to exact alpha",
+    "dual_lower_bound": "PASS: nonzero rational Gram gives b=h_H(Y)>0 under actual positive-H precondition; beta=-trace(FY)/b",
+    "B1_endpoint_rules": "PASS: alpha<=1 admits the closed cell, beta>1 excludes, beta=1 does not exclude, otherwise UNRESOLVED",
+    "bound_openness": "PASS: inherited strict lower bound remains distinct from new closed beta and PHYS90 pair upper is not used as global upper",
+    "contradiction_rule": "PASS: beta>alpha requires STOP_NO_ADMISSION, no tolerance suppression",
+    "upper_diagonal_fixing": "PASS: raising a feasible diagonal to each upper endpoint preserves PSD and the cell",
+    "zero_upper_diagonal": "PASS: PSD zero diagonal forces zero row; negative upper diagonal supplies singleton separator",
+    "strict_side_rational_certificates": "PASS: strict primal slack or strict dual separation survives sufficiently accurate rational factor approximation",
+    "fixed_denominator_limit": "PASS: q=2^48 is a candidate encoding choice, no completeness guarantee is attached",
+    "equality_boundary": "PASS: bounded rational search does not claim termination or infeasibility at t=t_star",
+    "zero_H_boundary": "PASS: fixed-entry and zero-support dual branches remain separate from the all-positive-H theorem",
+    "Schur_alternative": "PASS: stated sufficient construction is correct and has no additional execution allowance",
+    "consumer_conservation": "PASS: common-source map and a^T L=0 imply both a^T K=0 and K a=0; physical binding remains separately required"
+  },
+  "appendix_A_review": {
+    "status": "PASS_EXACT_ALGEBRA_WITHOUT_EXECUTION",
+    "S_squared": "2I",
+    "W": "I-S",
+    "Y": "W W^T = 3I-2S",
+    "invertibility": "(I-S)(I+S)=-I",
+    "trace": "-4",
+    "full_support": "14/5",
+    "beta": "10/7",
+    "signed_B1_upper": "-6/5",
+    "separate_column_support_sum": "54/5",
+    "all_rank_one_failure": "PASS: negative edges of every sign-switched frustrated four-cycle form a forest; its two-color vector gives A_s-vv^T entrywise nonnegative on x>=0",
+    "scope": "Manufactured four-dimensional algorithmic limitation; not an actual 153-dimensional result",
+    "numerical_fixture_execution_by_reviewer": 0
+  },
+  "bounded_execution_contract_checks": {
+    "projection_caps": "PASS: two stages of at most 2048 each, 4096 total",
+    "targets": [
+      "255/256",
+      "1"
+    ],
+    "exact_checkpoint_pairs_cap": 18,
+    "CPU_soft_generation_and_checkpoint_total_seconds": 40,
+    "primary_hard_CPU_wall_seconds": [
+      60,
+      90
+    ],
+    "reference_hard_CPU_wall_seconds": [
+      30,
+      45
+    ],
+    "automatic_parameter_enlargement": false,
+    "automatic_retry": false,
+    "only_exact_certificates_admit": true,
+    "old_raw_F_eigh": 0,
+    "old_source_decode": 0,
+    "old_pair_rescan": 0,
+    "workers": 1,
+    "threads": 1,
+    "original_shared_lease_preserved": true,
+    "runtime_API_implementation_review": "DEFERRED_TO_C9_STATIC_REVIEW_NOT_CLAIMED_HERE",
+    "finite_budget_success_guaranteed": false
+  },
+  "nonblocking_implementation_notes": [
+    {
+      "id": "I1",
+      "note": "For correlation scaling S=diag(sqrt(U)), primal factors map to original coordinates by S, while a useful dual separator factor maps by S^{-1}. Final exact alpha/beta must always use original F/H. Any exact PSD dual remains a valid bound, but a wrong coordinate map can destroy search quality.",
+      "required_new_theory_edit": false
+    },
+    {
+      "id": "I2",
+      "note": "A reported certified enclosure must be supported by an actually completed exact primal alpha and a valid lower bound. Stage timeout, early stop, or a zero dual must never promote an unverified floating proposal to an endpoint; the inherited strict lower bound remains available.",
+      "required_new_theory_edit": false
+    }
+  ],
+  "claim_gate": {
+    "NG1": "PASS_SCOPED_FIXED_F_H_T",
+    "NG2": "PASS_PROOF_WITH_ACTUAL_CERTIFICATE_CHECK_STILL_PENDING",
+    "NG3": "PASS_NONEMPTY_CELL_AND_PINNED_INPUT_SCOPE",
+    "NG4": "PASS_GENERAL_PSD_SEPARATOR_WITH_STRICT_MARGIN",
+    "NG5": "PASS_CONDITIONAL_CELL_CONSEQUENCE_ONLY",
+    "NG6": "PASS_NO_UNIVERSAL_OR_LITERATURE_FIRST_NO_GO_CLAIM",
+    "NG7": "PASS_INDEPENDENT_THEORY_REVIEW; ACTUAL_REFERENCE_AND_C9_PENDING",
+    "strong_no_go": "NOT_CLAIMED",
+    "physical_source_admission": "NOT_ISSUED"
+  },
+  "preserved_scope": {
+    "parent_node": "NUCLEAR_BARE_KERNEL_SOURCE_AND_CONSUMER_CONTRACT",
+    "parent_status": "PARTIAL_INPUT_DEPENDENCIES",
+    "actual_B1_compatibility": "UNRESOLVED_PENDING_NEW_EXECUTION_AND_REFERENCE",
+    "formatter_guarantee": false,
+    "physical_CI": false,
+    "actual_consumer_ACK": null,
+    "source_defect_cause": "NOT_ESTABLISHED",
+    "source_matrix_repair": false,
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "global_physics_completion": null,
+    "new_ODE": 0,
+    "benchmark": 0,
+    "nuclear_rate_activation": 0,
+    "fast_stopping": 0
+  },
+  "review_execution": {
+    "scientific_callbacks": 0,
+    "eigh": 0,
+    "SDP": 0,
+    "Dykstra": 0,
+    "source_scans": 0,
+    "old_scientific_reruns": 0,
+    "external_tool_source_calls": 0,
+    "external_publication": 0,
+    "metadata_only": "File reads, JSON display/format checks, SHA256, and review-artifact writes",
+    "budget_reset": false
+  }
+}
