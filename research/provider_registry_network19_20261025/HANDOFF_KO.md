@@ -51,8 +51,19 @@ PHYS91 primary/reference/Wolfram remaining은 모두 **0**이다. global histori
 
 ## 게시·백업과 재개
 
-사용자는 필요한 자동 게시와 Dropbox/Drive 백업을 명시적으로 승인했다. 추가 확인 없이 현재 source와 검증 결과를 보존하고 expected-SHA non-force로 기존 draft PR150 branch에 더한다. main을 merge하지 않는다. 이 파일 작성 단계의 새 source 게시와 ZIP/백업 상태는 `delivery/PUBLICATION_AND_BACKUP.json`에 별도로 기록하며, 실제 ACK 뒤 아래 전달 기록과 해당 JSON이 갱신된다.
+사용자는 필요한 자동 게시와 Dropbox/Drive 백업을 명시적으로 승인했다. 추가 확인 없이 현재 source와 검증 결과를 보존하고 expected-SHA non-force로 기존 draft PR150 branch에 더한다. main을 merge하지 않는다. 이 문단은 source snapshot 작성 당시의 이전 관측이다. 그 시점에는 새 source 게시와 ZIP/백업이 진행 중이었으며, 현재 완료 상태는 `delivery/PUBLICATION_AND_BACKUP.json`과 아래 실제 전달 완료 기록에 반영되어 있다.
 
 R1 source ZIP은 이미 양쪽 백업에서 실제로 내려받아 SHA256 `c1ced1cdeb7382064e64d11abd38d52466802a699edf99bd78aa355c0ce17863`과 일치했다. 새 R2 ZIP은 실제 게시된 source commit의 root AGENTS, 고정 expansion 인계, R1/R2 leaf 및 unchanged compiler를 포함한다. 현재 단위의 source ZIP은 후속 metadata commit과 구별한다.
 
 새 노드에서는 최신 AGENTS·HEAD·병렬 작업·실제 backup receipt를 다시 확인하고, 현재 `NEXT_SOURCE_INTAKE_KO.md`에서 변경된 입력이 처음 필요한 단계로 이어간다. 다음 의무는 target6 직접 수치 자료 또는 선택한 기존 source의 state/branch/domain/consumer 연결이다. 원 19개 target ID를 지우거나 기존 synthetic 249-check를 물리 rate/핵 Q 승인으로 확대하지 않는다.
+
+## 실제 전달 완료 기록
+
+- Source commit: **71019bb469c92d1ea665155ed98c472b362d6706**, tree **d91c82fece682b12d34a01db8ae12b4dc55f4c66**.
+- 기대 부모 SHA **18a6804d7cbe4879701e83631f7e908bbb84cef1**에 대한 non-force 게시와 원격 readback이 성공했다. [PR150](https://github.com/cosmosapjw-quantum/WU088_HH/pull/150)은 draft 상태다.
+- Source ZIP: **WU_PROVIDER_REGISTRY_R2_TARGET19_SOURCE_20261025_71019bb469c9.zip**, 7,084,911 bytes, 380개 Git 파일 + manifest = 381 members.
+- ZIP SHA256: **43845ea085797a6d628b722d58197a64a0af6f0a34a708f3dc981a5274faa906**.
+- Dropbox **id:BSpOijBcT10AAAAAAEAfFg**, Drive **1C4NE14swNXTL4GXb-ol8HE8cm57sHaIe**의 완료 ACK 뒤 양쪽 실제 다운로드가 같은 바이트 수와 SHA256으로 확인됐다.
+- 최신 전달 권위: delivery/PUBLICATION_AND_BACKUP.json, FINAL_BACKUP_ACK.json, CLOUD_READBACK.json, GIT_READBACK.json.
+- 이 완료 기록을 담는 metadata child의 정체성은 containing Git commit으로 읽는다. ZIP의 source commit과 혼동하지 않는다.
+- R10/C10의 이번 source 단위 전달은 완료됐다. 27/28 source 참조, target6 입력 공백, 물리 rate/Q/consumer 미승인 상태와 기존 예산은 바뀌지 않았다.

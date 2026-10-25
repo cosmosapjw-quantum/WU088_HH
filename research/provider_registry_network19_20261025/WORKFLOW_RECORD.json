@@ -60,8 +60,8 @@
     {
       "id": "R10",
       "stage": "종료·재개",
-      "status": "source_scoped_complete_delivery_pending",
-      "evidence": "HANDOFF_KO.md; NEXT_SOURCE_INTAKE_KO.md; delivery/ separate receipts"
+      "status": "complete_scoped_source_and_delivery",
+      "evidence": "HANDOFF_KO.md; actual source Git/ZIP/dual backup byte-readback receipts in delivery/; metadata identity is the containing Git commit"
     }
   ],
   "coding_loop": [
@@ -122,8 +122,8 @@
     {
       "id": "C10",
       "stage": "판정·인계",
-      "status": "source_scoped_complete_delivery_pending",
-      "evidence": "Source/number acceptance separate from physical and delivery states"
+      "status": "complete_scoped_source_and_delivery",
+      "evidence": "HANDOFF_KO.md; actual source Git/ZIP/dual backup byte-readback receipts in delivery/; metadata identity is the containing Git commit"
     }
   ],
   "claims": {
@@ -157,15 +157,20 @@
     "production": "NOT_ISSUED"
   },
   "delivery": {
-    "status": "PENDING_SOURCE_PUBLICATION_AND_NEW_DUAL_BACKUP",
-    "source_commit": null,
-    "metadata_commit": "containing commit when published",
+    "status": "SCOPED_SOURCE_PUBLISHED_AND_BOTH_BACKUPS_BYTE_VERIFIED",
+    "source_commit": "71019bb469c92d1ea665155ed98c472b362d6706",
+    "source_tree": "d91c82fece682b12d34a01db8ae12b4dc55f4c66",
+    "source_zip_sha256": "43845ea085797a6d628b722d58197a64a0af6f0a34a708f3dc981a5274faa906",
+    "source_zip_bytes": 7084911,
     "PR": 150,
+    "PR_url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/150",
     "branch": "research/provider-registry-20261025",
-    "expected_source_parent": "18a6804d7cbe4879701e83631f7e908bbb84cef1",
+    "metadata_commit_resolution": "The containing Git commit supplies the delivery metadata identity; the backed source commit is immutable and distinct. Final branch HEAD is verified after expected-SHA non-force publication.",
+    "metadata_expected_parent": "71019bb469c92d1ea665155ed98c472b362d6706",
     "force": false,
-    "user_authorization": "Explicit current user authorization for automatic publication and Dropbox/Drive backups",
-    "prior_R1_backup": "../provider_registry_20261025/delivery/FINAL_BACKUP_ACK.json"
+    "receipt": "delivery/PUBLICATION_AND_BACKUP.json",
+    "both_actual_backup_download_SHA256_match": true,
+    "science_admission_unchanged": true
   },
-  "stop_rule": "Source/native/output checks accepted; stop optional reruns, publish reviewed source then verify dual backups"
+  "stop_rule": "Source/native/output checks accepted and source/dual backups complete. Preserve science and publish only reviewed delivery metadata; next scientific work starts from a changed input."
 }

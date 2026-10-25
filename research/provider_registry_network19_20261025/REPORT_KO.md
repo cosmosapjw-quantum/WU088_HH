@@ -208,7 +208,7 @@ PHYS91 primary, reference, Wolfram의 남은 예산은 모두 **0**이며 변경
 
 공개 packet에는 수치 사실, 구조화한 불확실성·support, 필요한 식의 정의, 원본 URL·SHA·locator를 넣었다. 전체 원문 PDF·HTML의 공개 재배포 허가를 확인하지 못한 경우에는 전체 본문을 source ZIP에 넣지 않는다. 명시적 CC BY 3.0을 확인한 Viviani 자료는 attribution과 함께 취급하고, 나머지 논문의 전체 본문 및 장문의 원문 설명은 공개 derivative에서 제외했다. 숫자·단위·원본 정체성은 유지했으며, 원문이 공개 packet에 들어 있지 않다는 사실도 명시한다. [재배포 범위](sources/primary/SOURCE_REDISTRIBUTION.json), [출처 고지](sources/primary/THIRD_PARTY_NOTICES.md), [공개 subset manifest](sources/primary/PUBLICATION_SUBSET_MANIFEST.json)
 
-본 보고서 작성 시점에는 구현 검증과 C9 독립 검토가 끝났으며, **R2 source 게시 및 새 Dropbox/Drive 이중 백업은 진행 중**이다. 따라서 새 source commit, ZIP SHA, cloud readback 완료를 이 문서에서 미리 선언하지 않는다. 기존 R1 source ZIP과 양쪽 readback 증거는 [R1 최종 백업 확인](../provider_registry_20261025/delivery/FINAL_BACKUP_ACK.json)에 남아 있다. R2의 실제 게시 commit, expected-SHA non-force 결과, source ZIP hash, 양쪽 다운로드 재검증 및 DAG 반영 상태는 게시 후 추가되는 이 leaf의 `delivery/` 영수증과 root가 붙이는 실제 전달 절을 기준으로 확인해야 한다. 사용자의 명시적 게시·백업·자동 실행 권한은 유지되며 새 허가 요청으로 대기하지 않는다. [현재 실행·전달 장부](EXECUTION_LEDGER.json), [workflow 단계](WORKFLOW_RECORD.json)
+**이 문단은 source snapshot 작성 당시의 이전 관측이며, 현재 전달 완료 상태는 아래 11절과 delivery 영수증을 따른다.** 그 snapshot 작성 당시에는 구현 검증과 C9 독립 검토가 끝났고 R2 source 게시 및 새 Dropbox/Drive 이중 백업이 진행 중이었다. 따라서 그 시점의 source 문서에는 새 source commit, ZIP SHA, cloud readback 완료를 미리 선언하지 않았다. 기존 R1 source ZIP과 양쪽 readback 증거는 [R1 최종 백업 확인](../provider_registry_20261025/delivery/FINAL_BACKUP_ACK.json)에 남아 있다. R2의 실제 게시 commit, expected-SHA non-force 결과, source ZIP hash, 양쪽 다운로드 재검증 및 DAG 반영 상태는 이 leaf의 `delivery/` 영수증과 아래 11절의 실제 전달 기록을 기준으로 확인한다. 사용자의 명시적 게시·백업·자동 실행 권한은 유지되며 새 허가 요청으로 대기하지 않는다. [현재 실행·전달 장부](EXECUTION_LEDGER.json), [workflow 단계](WORKFLOW_RECORD.json)
 
 ## 10. 근거 파일 안내
 
@@ -223,3 +223,14 @@ PHYS91 primary, reference, Wolfram의 남은 예산은 모두 **0**이며 변경
 | 최종 scoped 승인 | [primary](raw/PRIMARY_RESULTS.json), [C9_FINAL](reviews/C9_FINAL.json) |
 | 남은 직접 입력과 다음 노드 | [TARGET6_DEPENDENCY](sources/he4_photon/TARGET6_DEPENDENCY.json), [NEXT_SOURCE_INTAKE_KO](NEXT_SOURCE_INTAKE_KO.md) |
 
+## 11. 실제 게시와 이중 백업 완료
+
+독립 과학 검토와 별도 게시 검토 뒤 실제 source commit **71019bb469c92d1ea665155ed98c472b362d6706**을 부모 **18a6804d7cbe4879701e83631f7e908bbb84cef1**의 후속으로 게시했다. 원격 tree **d91c82fece682b12d34a01db8ae12b4dc55f4c66**는 검토된 로컬 staged tree와 정확히 일치했고, expected SHA를 부모로 지정한 non-force ref 갱신이 성공했다. [소스 커밋](https://github.com/cosmosapjw-quantum/WU088_HH/commit/71019bb469c92d1ea665155ed98c472b362d6706), [draft PR150](https://github.com/cosmosapjw-quantum/WU088_HH/pull/150), [실제 게시 영수증](delivery/PUBLICATION_RECEIPT.json)
+
+그 source commit에서 만든 ZIP은 **WU_PROVIDER_REGISTRY_R2_TARGET19_SOURCE_20261025_71019bb469c9.zip**, **7,084,911 bytes**이다. Git 소스 파일 380개와 archive manifest를 합한 381개 멤버를 포함하며, 각 멤버의 원본 바이트와 CRC를 실제로 확인했다. SHA256은 **43845ea085797a6d628b722d58197a64a0af6f0a34a708f3dc981a5274faa906**이다. ZIP은 root AGENTS, 고정 expansion 인계, R1/R2 연구 leaf와 unchanged compiler를 포함한다. [ZIP 영수증](delivery/SOURCE_ZIP_MANIFEST.json)
+
+Dropbox의 완료 ACK는 **id:BSpOijBcT10AAAAAAEAfFg**, Drive의 파일 ID는 **1C4NE14swNXTL4GXb-ol8HE8cm57sHaIe**이다. 두 백업을 각각 실제 HTTP 200 응답으로 내려받아 7,084,911 bytes와 동일한 SHA256을 확인했다. Dropbox provider content hash도 로컬 계산값과 일치했다. [Drive 백업](https://drive.google.com/file/d/1C4NE14swNXTL4GXb-ol8HE8cm57sHaIe/view?usp=drivesdk), [완료 ACK](delivery/FINAL_BACKUP_ACK.json), [양쪽 실제 바이트 검증](delivery/CLOUD_READBACK.json)
+
+이 절과 전달 영수증은 해당 source snapshot 이후의 metadata child에 속한다. source ZIP이 자기 자신의 생성 후 백업 영수증을 포함한다고 주장하지 않는다. metadata commit의 정체성은 이 파일을 담은 실제 Git commit으로 해석하며, source commit과 구분한다. 원래 수치·registry·compiler·과학 C9는 바뀌지 않았다. [최신 전달 상태](delivery/PUBLICATION_AND_BACKUP.json)
+
+게시 검토에서 발견한 R1 근거 경로, source 표기와 후속 문서 경로의 5개 사항도 실제로 교정하고 재검토했다. DAG의 기존 WU 노드와 R1 과학 정체성은 보존된다. 중앙 owner의 반영 ACK는 계속 별도이며, 전체 물리 연구의 rate/Q/consumer 미승인 상태와 target6 입력 공백은 그대로다. [게시 검토](reviews/RELEASE_METADATA_REVIEW.json), [수정 이력](reviews/RELEASE_METADATA_CORRECTION.json)

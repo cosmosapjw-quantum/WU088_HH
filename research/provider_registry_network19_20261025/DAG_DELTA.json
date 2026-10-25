@@ -169,15 +169,20 @@
   "central_repository_write_performed": false,
   "central_return_status": "WU-owned reviewed delta available for central owner intake; no inferred central ACK",
   "delivery": {
-    "status": "PENDING_SOURCE_PUBLICATION_AND_NEW_DUAL_BACKUP",
-    "source_commit": null,
-    "metadata_commit": "containing commit when published",
+    "status": "SCOPED_SOURCE_PUBLISHED_AND_BOTH_BACKUPS_BYTE_VERIFIED",
+    "source_commit": "71019bb469c92d1ea665155ed98c472b362d6706",
+    "source_tree": "d91c82fece682b12d34a01db8ae12b4dc55f4c66",
+    "source_zip_sha256": "43845ea085797a6d628b722d58197a64a0af6f0a34a708f3dc981a5274faa906",
+    "source_zip_bytes": 7084911,
     "PR": 150,
+    "PR_url": "https://github.com/cosmosapjw-quantum/WU088_HH/pull/150",
     "branch": "research/provider-registry-20261025",
-    "expected_source_parent": "18a6804d7cbe4879701e83631f7e908bbb84cef1",
+    "metadata_commit_resolution": "The containing Git commit supplies the delivery metadata identity; the backed source commit is immutable and distinct. Final branch HEAD is verified after expected-SHA non-force publication.",
+    "metadata_expected_parent": "71019bb469c92d1ea665155ed98c472b362d6706",
     "force": false,
-    "user_authorization": "Explicit current user authorization for automatic publication and Dropbox/Drive backups",
-    "prior_R1_backup": "../provider_registry_20261025/delivery/FINAL_BACKUP_ACK.json"
+    "receipt": "delivery/PUBLICATION_AND_BACKUP.json",
+    "both_actual_backup_download_SHA256_match": true,
+    "science_admission_unchanged": true
   },
   "path_resolution": {
     "evidence_budget_publication_and_local_exact_copy": "Relative to this R2 leaf unless an explicit ../ prefix is present",
