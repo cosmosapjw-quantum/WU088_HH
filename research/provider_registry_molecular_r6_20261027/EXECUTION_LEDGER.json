@@ -1,8 +1,38 @@
 {
   "schema": "WU_R6_EXECUTION_LEDGER_V1",
   "created_utc": "2026-10-27T11:11:45.556238+00:00",
-  "new_primary_runs": [],
-  "independent_reference_runs": [],
+  "new_primary_runs": [
+    {
+      "path": "raw/PRIMARY_RESULTS.json",
+      "sha256": "1a3b55f7c14a64a10a651de2df7b7f7d2df24d0b9e809b729f32d73377c90e84",
+      "command": "python3 verification/run_primary.py --input verification/PRIMARY_INPUT.json --output raw/PRIMARY_RESULTS.json",
+      "exit_code": 0,
+      "started_utc": "2026-10-27T12:23:27.459047+00:00",
+      "finished_utc": "2026-10-27T12:23:28.121842+00:00",
+      "CPU_run_window_s": 0.6598248979999999,
+      "total_process_CPU_at_finalize_s": 0.791299421,
+      "wall_run_window_s": 0.6628260060024331,
+      "case_count": 76,
+      "failures": 0,
+      "status": "PASS_SCOPED_EXACT_CERTIFICATES"
+    }
+  ],
+  "independent_reference_runs": [
+    {
+      "path": "raw/INDEPENDENT_RESULTS.json",
+      "sha256": "7e7bbae7ae5285230c14ef8fbb258ef15a92635eebfb0e0ca04df6933859c5ba",
+      "command": "python3 verification/reference_r6.py --input verification/REFERENCE_INPUT.json --output raw/INDEPENDENT_RESULTS.json",
+      "exit_code": 0,
+      "started_utc": "2026-10-27T12:24:13.053044+00:00",
+      "finished_utc": "2026-10-27T12:24:13.816377+00:00",
+      "CPU_run_window_s": 0.6895740779999999,
+      "total_process_CPU_at_finalize_s": 0.822867308,
+      "wall_run_window_s": 0.7633639199993922,
+      "case_count": 109,
+      "failures": 0,
+      "status": "NUMERICAL_CROSSCHECKS_COMPLETED"
+    }
+  ],
   "Wolfram_evaluator_calls": [],
   "targeted_repairs": [],
   "old_science_replay": 0,
@@ -16,5 +46,10 @@
   "global_historical_CPU_s": null,
   "global_remaining": null,
   "old_allowance_reset": false,
-  "metadata_recovery": "Separate source recovery, packaging and transport; not a scientific execution."
+  "metadata_recovery": "Separate source recovery, packaging and transport; not a scientific execution.",
+  "new_allowance_remaining": {
+    "primary_runs": 0,
+    "reference_runs": 0,
+    "Wolfram_evaluator_calls": 1
+  }
 }

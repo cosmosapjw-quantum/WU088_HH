@@ -11,7 +11,7 @@
 | Source downward / (10^{-11}\,\mathrm{cm^3s^{-1}}) | `native_hd_source` | 무차원 (K), (\tau=n_{coll}\kappa_{ref}t); density는 미입력 |
 | Conservative generator diagonals | `GeneratorBox`, `generator_from_offdiagonal` | lower diagonal = minus upper exit; upper diagonal = minus lower exit |
 | (A=K+\pi(v-\kappa1)^T-\mathrm{diag}(v-\kappa1)) | `reset_generator_bounds` | full (A)를 구성; (\pi) simplex enclosure, (v_j^-\ge\kappa\ge0) |
-| (P_-=I+A/\lambda)의 공통 성분별 하한 | `uniformization_lower` | (\lambda\ge\max\mathrm{exit}^+); 기본값은 (2\max\mathrm{exit}^+), zero-exit이면 1 |
+| (P(t)=I+A(t)/\lambda)에 대한 공통 성분별 하한 (P_-\le P(t)) | `uniformization_lower` | (\lambda\ge\max\mathrm{exit}^+); 기본값은 (2\max\mathrm{exit}^+), zero-exit이면 1 |
 | (R_N\le e^{-\lambda H}\sum_{m=0}^N(\lambda H)^mP_-^m/m!\) | `finite_block` | nonnegative fixed-denominator 연산을 모두 아래로 반올림; (R_N) 실제 matrix 반환 |
 | (\beta=\min_{j<k}\sum_i\min(R_{ij},R_{ik}),\rho=1-\beta) | `_overlap_integer` | (n\ge2) 실제 pair overlap; (n=1)은 zero-space 규약 (\beta=1,\rho=0) |
 | (M^*=M+F_+H, G=q_cM^*+g) | `forced_step` | interval-wide coefficient bounds, 정확한 source·clock binding은 caller 책임 |

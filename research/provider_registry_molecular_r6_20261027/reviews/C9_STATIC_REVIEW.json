@@ -1,0 +1,215 @@
+{
+  "schema": "WU_R6_INDEPENDENT_STATIC_CODE_REVIEW_V1",
+  "unit_id": "WU_MOLECULAR_INTERVAL_BLOCK_R6",
+  "reviewer": "/root/r6_inventory",
+  "reviewed_utc": "2026-10-27T12:21:52Z",
+  "decision": "PASS_STATIC_PREEXECUTION_SCOPED",
+  "final_C9": "PENDING_ACTUAL_PRIMARY_AND_INDEPENDENT_REFERENCE_RESULTS",
+  "open_static_blockers": 0,
+  "observed_guard_findings": 2,
+  "closed_by_static_readback": 2,
+  "runtime_correction_tests": "NOT_RUN_YET; scheduled in the single authorized primary",
+  "independence": {
+    "production_code_written": false,
+    "primary_runner_written": false,
+    "reference_code_written": false,
+    "theory_contribution_authored": false,
+    "role": "Read-only independent theory and code reviewer; previously metadata/source recovery only.",
+    "heterogeneous_backend_identity_claimed": false
+  },
+  "artifacts": [
+    {
+      "path": "src/interval_block.py",
+      "sha256": "dbc4767b31775fb6655a92fb20d299f8bea9578f8340bd7bcff4d4f677cab551",
+      "scope": "Entire production core"
+    },
+    {
+      "path": "verification/run_primary.py",
+      "reviewed_original_sha256": "f714ef9bfa96351807911ac13b2524144c7fa52cd0f142bd23834f0edec2c246",
+      "accepted_corrected_sha256": "38cf5268831bbd3d2b17d356817ebae4b68f08e676da1e2cbf2cb313d7c6deb5",
+      "scope": "Entire original runner plus targeted correction readback"
+    },
+    {
+      "path": "verification/PRIMARY_INPUT.json",
+      "sha256": "40c059e324783492254831ca110e8d7d9b5e644fd7565eb0c6ad1eab8f3f2f15",
+      "scope": "Fixed four native blocks, three forced controls and one switched control"
+    },
+    {
+      "path": "CONTRACT.json",
+      "sha256": "1a034fcecd2056d400089e3aa5abe53e067ded5a7625b92970d72da15e9d41a8",
+      "scope": "Current contract with Decimal250 numerical-reference wording"
+    },
+    {
+      "path": "intake/primary_theory/reference_r6.py",
+      "sha256": "11650b677ebbd96f9bab9463d8b14d102185e233f402a26d8170fe3d6c1596a8",
+      "scope": "Independent Decimal250/SciPy reference, source parser, thermal/graph/forcing checks, outputs and limits"
+    },
+    {
+      "path": "research/provider_registry_molecular_r5_20261027/authority/reused/rec_lamda_hd.py",
+      "sha256": "ef10b34e1891755334083340b84ff1e298151df720c13f008b3762505813e275",
+      "scope": "Source structural/identity parser and entry-point boundaries read; old diagnostic functions not executed"
+    },
+    {
+      "path": "research/provider_registry_molecular_r5_20261027/authority/reused/lamda_hd_20261025.dat",
+      "sha256": "0c99fe168235d6d6dac3063093bbbe8b4a2ea15cca53c7e2987763c801fdaefb",
+      "scope": "Entire fixed source text"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "INPUT_CONTRACT_GUARD",
+      "status": "CLOSED_STATIC_PENDING_RUNTIME_CONTROL",
+      "target": "verification/run_primary.py:Primary.source",
+      "evidence": "Original runner accepted a declared source rate_unit_cm3_s different from fixed RATE_SCALE_CM3_S and nevertheless constructed the generator in the fixed1e-11 clock.",
+      "impact": "A modified input could misdeclare its clock normalization while primary source checks succeeded. The frozen input already has the correct1e-11 value, so no observed fixed-input science result was affected.",
+      "minimal_fix": "Require exact Q(settings['rate_unit_cm3_s']) == RATE_SCALE_CM3_S before native source calculation.",
+      "observed_fix": "Corrected runner checks exact scale equality before native_hd_source and schedules reject_mismatched_native_clock_scale.",
+      "runtime_status": "NOT_EXECUTED_BY_REVIEWER; first authorized primary must record actual guard rejection."
+    },
+    {
+      "id": "F02",
+      "severity": "INPUT_CONTRACT_GUARD",
+      "status": "CLOSED_STATIC_PENDING_RUNTIME_CONTROL",
+      "target": "verification/run_primary.py:Primary.switched",
+      "evidence": "Original runner validated only summed H. Segments -1/4 and3/4 could pass positive-total H despite violating chronological positive-duration assumptions.",
+      "impact": "The primary could label an invalid negative-duration switching specification as its synthetic control. The independent reference already rejects nonpositive segment durations. Fixed input durations are both1/4 and were unaffected.",
+      "minimal_fix": "Parse all durations exactly, require a nonempty list with every duration strictly positive, then form H from that validated list.",
+      "observed_fix": "Corrected runner rejects nonpositive durations before any generator/certificate construction and schedules reject_negative_segment_with_positive_total_time.",
+      "runtime_status": "NOT_EXECUTED_BY_REVIEWER; first authorized primary must record actual guard rejection."
+    }
+  ],
+  "static_checks": [
+    {
+      "id": "S01",
+      "area": "Exact input types",
+      "verdict": "PASS_SCOPED",
+      "reason": "Q rejects bool and binary floats, parses bounded signed integer/decimal/rational strings exactly, rejects zero denominator/nonfinite syntax, and bounds decimal exponent. Degree/bits/state-size use exact built-in integer validation."
+    },
+    {
+      "id": "S02",
+      "area": "Directed dyadic rounding",
+      "verdict": "PASS",
+      "reason": "floor_scaled and ceil_scaled implement mathematical floor/ceiling with positive dyadic scale. Repeated positive squaring floors the lower and ceils the upper; clipping upper at1 uses an independent global bound."
+    },
+    {
+      "id": "S03",
+      "area": "Exponential bracket",
+      "verdict": "PASS",
+      "reason": "Range reduction gives y<=1/2. Stopping on an odd Taylor degree retains that odd lower and the previous even upper. Positive exact terms, m>=1 positivity, degree bound and final dyadic squaring match the theorem."
+    },
+    {
+      "id": "S04",
+      "area": "Normalized thermal weights",
+      "verdict": "PASS",
+      "reason": "SI constants are exact Fractions, decimal level literals remain exact, reference energy is minimal, degeneracies/T are positive; coordinate extrema use own lower/other upper and own upper/other lower. Strict positive weight lower guards prevent invalid normalization."
+    },
+    {
+      "id": "S05",
+      "area": "Native source Gibbs construction",
+      "verdict": "PASS",
+      "reason": "Source and reused parser hashes are checked before import/parse; parser enforces ordered IDs and exact source pairs/temperatures. Direct pair ratio avoids normalized-box dependency division. Only selected100K para-H2 graph is constructed."
+    },
+    {
+      "id": "S06",
+      "area": "Generator box diagonals",
+      "verdict": "PASS",
+      "reason": "Offdiagonal bounds are nonnegative/ordered; lower diagonal is minus upper exit and upper diagonal is minus lower exit. Caller-supplied nonzero placeholder diagonals are refused."
+    },
+    {
+      "id": "S07",
+      "area": "Full reset generator",
+      "verdict": "PASS",
+      "reason": "reset_generator_bounds checks simplex intersection and v_lower>=kappa, constructs full offdiagonal K+pi(v-kappa)^T and recalculates diagonal exits. No K-only rho substitution is made by the runner."
+    },
+    {
+      "id": "S08",
+      "area": "Uniformization and Pminus",
+      "verdict": "PASS",
+      "reason": "lambda uses the full generator's upper exits, rejects undersized explicit rates, falls back to positive1 for zero generator, and checks nonnegative substochastic Pminus."
+    },
+    {
+      "id": "S09",
+      "area": "Matrix power rounding",
+      "verdict": "PASS",
+      "reason": "Each nonnegative integer dot product is floored after dividing by scale. Right multiplication of the rounded lower power by rounded Pminus still inductively lower-bounds Pminus^m; no commutativity of time-varying A is assumed."
+    },
+    {
+      "id": "S10",
+      "area": "Poisson recurrence and overlap",
+      "verdict": "PASS",
+      "reason": "Initial weight is a lower exp(-mu), recursion floors w_m*mu/(m+1). Every product/sum stays below the positive series. Exact integer min-pair overlap gives beta_lower and rho_upper=1-beta_lower; column mass is checked."
+    },
+    {
+      "id": "S11",
+      "area": "Singleton and disconnected limits",
+      "verdict": "PASS_WITH_EXPLICIT_CONVENTION",
+      "reason": "n=1 deliberately assigns beta1/rho0 for the trivial zero-sum subspace, not as a claim that a finite truncated scalar propagator has unit mass. n>1 zero generator has zero pair overlap."
+    },
+    {
+      "id": "S12",
+      "area": "Rational serialization",
+      "verdict": "PASS_FOR_DECLARED_PAYLOADS",
+      "reason": "Chunked integer parser/formatter avoid Python's4300-digit decimal conversion limit without changing the global setting. Fraction outputs become exact strings. Independent reference uses its own parser; extremely large generic reference strings beyond its integer limit are not established by this review."
+    },
+    {
+      "id": "S13",
+      "area": "Forced endpoint/whole block",
+      "verdict": "PASS",
+      "reason": "forced_step enforces nonnegative bounds and rho in[0,1], applies common kappa once to the residual endpoint, uses G=q(M+FH)+g and area HU+GH^2/2 for E. Whole-block values remain independent of contracted endpoints."
+    },
+    {
+      "id": "S14",
+      "area": "Constant fixture coefficients",
+      "verdict": "PASS",
+      "reason": "Exact K conservation/simplex/positivity, c=Kpi-v*pi+pi*vbar, Qf=f-piF, min(v),vbar,osc(v)/2 match the admitted finite constant model."
+    },
+    {
+      "id": "S15",
+      "area": "Fixed controls and output",
+      "verdict": "PASS_STATIC_ONLY",
+      "reason": "Four native blocks fit n/N/bits/mu caps; three explicit mathematical forced controls and one positive two-piece switching fixture are declared. Output is create-only, hashes input/core/runner and preserves exceptions/failures; actual passes cannot be inferred statically."
+    },
+    {
+      "id": "S16",
+      "area": "Independent reference",
+      "verdict": "PASS_DESIGN_SCOPE",
+      "reason": "No production import; separate source parser and Decimal250 transcendental calculations, ordered SciPy propagators, full-A killing identity and augmented forced system. Tolerances and unresolved narrow-interval status are explicit; numerical samples do not replace the general proof."
+    },
+    {
+      "id": "S17",
+      "area": "Resource reporting",
+      "verdict": "PENDING_ACTUAL_EXECUTION",
+      "reason": "58CPU-second internal interrupt and60-second resource flag are prepared. The measured flag at finalize is separate from numerical PASS; root must retain resource failures/overruns and final wrapper timing rather than infer success from exit alone."
+    }
+  ],
+  "first_primary_required_observations": [
+    "Actual primary input/core/runner hashes match the accepted static inputs or an explicitly reviewed delta.",
+    "Both new reject controls F01/F02 produce actual DomainError observations in the single primary.",
+    "All declared primitive/source/block/forcing/switching observations are retained with failure counts; source acceptance and runtime cost are assessed from actual results.",
+    "Independent reference consumes the actual saved primary and fixed source, with no production core import, and reports all mismatch/resource flags.",
+    "Keep exact certificate endpoints distinct from Decimal/SciPy numerical corroboration and from unbound physical inputs."
+  ],
+  "conditional_API_boundaries": [
+    "Validity of caller-supplied interval-wide coefficient bounds is a theorem precondition; forced_step does not independently validate a physical provider.",
+    "rho must correspond to the same full A and H. The admitted primary constructs and uses it consistently.",
+    "Coordinate probability boxes retain an underlying simplex/Gibbs dependency; arbitrary box corners are not asserted to be simultaneously physical.",
+    "Source literal precision is not source measurement uncertainty. Physical destruction and consumer remain UNBOUND.",
+    "Static acceptance is readiness for the contracted first run after required publication stage, not final scientific C9."
+  ],
+  "executions_by_reviewer": {
+    "production_imports": 0,
+    "numerical_tests": 0,
+    "primary_runs": 0,
+    "reference_runs": 0,
+    "CAS": 0,
+    "IVP": 0,
+    "old_science_replay": 0,
+    "external_writes": 0
+  },
+  "supporting_correction_records": [
+    "reviews/PREEXECUTION_CORRECTIONS.json",
+    "verification/PREEXECUTION_BUILD.json"
+  ],
+  "static_report": "STATIC_REVIEW_KO.md"
+}
