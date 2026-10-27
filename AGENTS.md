@@ -1,3 +1,15 @@
+# Current priority: R8 causal lag-kernel refinement, registered15/32 — 2026-10-27
+
+Read research/provider_registry_molecular_r8_20261027/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json and delivery/. This is a new concrete estimator obligation grounded in R7 saved conservativeness, not a recovered HD physical input. User explicitly requests supplied physmath1.0.0 fullR1-R10/C1-C10 and stage publication/backup. Preserve the30 inherited node objects; two new theory/code nodes OPEN,15/32 until actual adoption.
+
+R8 composes same-family savedR6 H/rho pairs at steps2,8,32,64 and executes two outward Volterra cell refinements on the four savedR7cases. Reuse old proofs/results and193clock trajectories without ODE replay. Keep signed d damping; do not contract current-cell forcing. Exact saved R7 endpoint caps use certificate.w_next_upper as well as actual saved queries; no interpolation and no reference trajectory as bound.
+
+Local executor is unavailable; Desktop Commander monthly quota explicitly prohibits retry. Authorized GitHub Actions host is the bounded alternative; no secrets, contents:read, run_attempt1 only, request-stage action guard. One new primary60s, one reference60s, one CAS30s; all predecessor budgets remain zero. Source archive and runtime outputs have distinct manifest roles. Do not claim dual backup before actual successful provider receipts/readbacks.
+
+Existing additive expectedSHA force=false publication remains authorized on research/provider-registry-20261025/draftPR150, no main merge or other-owner writes. HH_R10OFF; productionNOT_ISSUED; L4false; physical and centraldelta0.
+
+## Preserved R7 and predecessor instructions
+
 # Current priority: R7 nonlinear feedback adopted15/30 — 2026-10-27
 
 Read research/provider_registry_molecular_r7_20261027/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, delivery/PUBLICATION_INDEX.json and followup/NEXT_INPUT_CONTRACT.json. User requested full theoryR1–R10 and codingC1–C10 under supplied physmath1.0.0; do not silently replace that with another version's default routing. R7 adds two completed scoped conditional nonlinear-feedback theory/code nodes to28 unchanged inherited node objects:15/30. Workflow stage closure is distinct from research DAG completion.

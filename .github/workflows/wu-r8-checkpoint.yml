@@ -1,0 +1,40 @@
+name: WU R8 bounded research checkpoint
+on:
+  push:
+    branches:
+      - research/provider-registry-20261025
+    paths:
+      - 'research/provider_registry_molecular_r8_20261027/RUN_REQUEST.json'
+permissions:
+  contents: read
+jobs:
+  checkpoint:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact authorized research commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /AGENTS.md
+            /.github/workflows/wu-r8-checkpoint.yml
+            /research/provider_registry_molecular_r4_20261027/
+            /research/provider_registry_molecular_r5_20261027/
+            /research/provider_registry_molecular_r6_20261027/
+            /research/provider_registry_molecular_r7_20261027/
+            /research/provider_registry_molecular_r8_20261027/
+      - name: Execute bounded request and package exact tracked source
+        run: python3 research/provider_registry_molecular_r8_20261027/delivery/build_checkpoint.py
+      - name: Preserve actual checkpoint bytes
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          path: out/*.zip
+          archive: false
+          retention-days: 30
+          if-no-files-found: error
+          overwrite: false
