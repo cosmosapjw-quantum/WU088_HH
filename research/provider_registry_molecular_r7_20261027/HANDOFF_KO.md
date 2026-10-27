@@ -1,6 +1,6 @@
 # WU088_HH R7 다음 스레드 handoff
 
-작성 시각: 2026-10-27 23:27:52 KST. 이 문서는 실제 과학 채택과 원본 결과를 결속한다. Final metadata commit은 이 파일을 포함하므로 그 자기 SHA를 본문에 꾸며 넣지 않는다. 최신 metadata HEAD와 그 archive는 PR150의 실제 최종 acknowledgment 및 대화 마지막 handoff에 있다.
+작성 시각: 2026-10-27 23:29:18 KST. 이 문서는 실제 과학 채택과 원본 결과를 결속한다. Final metadata commit은 이 파일을 포함하므로 그 자기 SHA를 본문에 꾸며 넣지 않는다. 최신 metadata HEAD와 그 archive는 PR150의 실제 최종 acknowledgment 및 대화 마지막 handoff에 있다.
 
 ## 복사 가능한 재개 문맥
 
@@ -17,10 +17,14 @@ R7 leaf: research/provider_registry_molecular_r7_20261027
 core SHA256: 002a66a30961b21e566a940462468c9ea8e1bc868d98549d3ea79d164c239957
 Primary result SHA256: 6eaf3c0eed7968cf4023180e15373a180bb5b1bab2e56cd4a8547387ed337a15
 Reference result SHA256: e403c7803c080fd4f26be71a93b782b02d874f80ef11c85a706bea71e2a743cd
-S10 source commit: PENDING_ACTUAL_S10_PUBLICATION
-이 파일 작성 시 마지막 readback commit: 05aba84023630e17ca005df5d5b595c374fa540f
-백업 상태: 9/10 단계, 양 provider 원본 18개 실제 대조 완료
-S10 source/archive는 이 문서를 포함하여 게시되므로 실제 commit/hash는 후속 delivery/S10.json과 최종 metadata에서 확인한다.
+S10 source commit: eab8363f20b6622baea4c2c8be9972f17a7afd40
+이 파일 작성 시 마지막 readback commit: eab8363f20b6622baea4c2c8be9972f17a7afd40
+백업 상태: 10/10 단계, 양 provider 원본 20개 실제 대조 완료
+S10 archive: WU_MOLECULAR_R7_S10_SOURCE_20261027_eab8363f20b6.zip
+S10 archive bytes: 10308984
+S10 archive SHA256: 2951fd5131494e715b4e9ce6c06d36cc81f4f869249370cf10f23a06becd08dc
+S10 Drive: https://drive.google.com/file/d/1EBCRvjf1XfQ6JJlixQbEYGC9AtW7ssmD/view?usp=drivesdk
+S10 Dropbox ID: id:BSpOijBcT10AAAAAAEDH9w
 
 먼저 REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json,
 SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json,

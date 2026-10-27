@@ -1,6 +1,6 @@
 # WU088_HH R7 연구 보고서 — 비선형 반응 피드백과 공유 저장고 오차
 
-작성 기준: 2026-10-27 23:27:52 KST. 연구 브랜치 `research/provider-registry-20261025`, draft PR150.
+작성 기준: 2026-10-27 23:29:18 KST. 연구 브랜치 `research/provider-registry-20261025`, draft PR150.
 
 ## 1. 이번 연구에서 완성한 것
 
@@ -149,13 +149,13 @@ Reference는 고정 tolerance를 적용한 binary64 수치 대조이다. 예를 
 | R7/C7 | reference376/376·qualified CAS | 13/30 | `f6beb6c7ea81` | 확인 완료 |
 | R8/C8 | 이론 채택·정확도/비용 | 14/30 | `77f239583346` | 확인 완료 |
 | R9/C9 | 독립 C9·코드 채택·과학 payload 동결 | 15/30 | `05aba8402363` | 확인 완료 |
-| R10/C10 | 최종 보고서·handoff·전체 scoped source | 15/30 | 실제 게시 후 receipt에 기록 | 이 문서를 포함하는 S10 게시·백업 진행 단계 |
+| R10/C10 | 최종 보고서·handoff·전체 scoped source | 15/30 | `eab8363f20b6` | 확인 완료 |
 
 각 확인된 백업은 Dropbox와 Drive에 업로드한 뒤 실제 원본 ZIP을 다시 읽어 SHA256, ZIP CRC, member 길이·mode·SHA256·Git blob identity를 확인했다. 이전 snapshot의 알려진 입력을 새 결과처럼 재계산하지 않았다. Git 게시에는 expected-SHA와 force=false를 적용했고 main merge는 수행하지 않았다. Final metadata의 자체 archive hash는 그 archive 안에 스스로 기록할 수 없으므로 실제 후속 receipt와 PR 본문에 보존한다.
 
 과학 채택 commit: `05aba84023630e17ca005df5d5b595c374fa540f`.
 과학 payload: `a0da528aa0b6a8870f5e1476306fc9e8e9f4a1fcecd05a1ede6593dde611dae2`.
-S10 source commit: `PENDING_ACTUAL_S10_PUBLICATION`.
+S10 source commit: `eab8363f20b6622baea4c2c8be9972f17a7afd40`.
 
 ## 7. 다음 이론·코딩 연구의 실행 조건
 
