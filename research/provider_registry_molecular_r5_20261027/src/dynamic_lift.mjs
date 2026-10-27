@@ -7,8 +7,10 @@ export const R5 = (() => {
     static of(v){
       if(v instanceof Rat)return v;
       if(typeof v==="bigint")return new Rat(v);
-      if(typeof v!=="string"||v.length>2048)fail("EXACT_STRING_REQUIRED");
+      if(typeof v!=="string")fail("EXACT_STRING_REQUIRED");
+      if(/^[+-]?\d+$/.test(v))return new Rat(BigInt(v));
       if(/^[+-]?\d+\/[+-]?\d+$/.test(v)){const [n,d]=v.split("/");return new Rat(BigInt(n),BigInt(d));}
+      if(v.length>2048)fail("DECIMAL_LITERAL_SIZE");
       const m=/^([+-]?)(\d+)(?:\.(\d*))?(?:[eE]([+-]?\d+))?$/.exec(v);if(!m)fail("INVALID_RATIONAL_LITERAL");
       const ex=Number(m[4]||0)-(m[3]||"").length;if(!Number.isSafeInteger(ex)||Math.abs(ex)>1024)fail("EXPONENT_LIMIT");
       let n=BigInt(m[2]+(m[3]||""));if(m[1]==="-")n=-n;

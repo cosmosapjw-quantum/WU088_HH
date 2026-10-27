@@ -1,0 +1,203 @@
+{
+  "schema": "WU_R5_EXECUTION_LEDGER_V1",
+  "unit": "WU_MOLECULAR_DYNAMIC_LIFT_R5",
+  "executions": [
+    {
+      "status": "PASS",
+      "start_utc": "2026-10-27T10:00:22.955Z",
+      "end_utc": "2026-10-27T10:01:33.388Z",
+      "wall_ms": 70444,
+      "CPU_s": null,
+      "CPU_reason": "not exposed",
+      "runtime": "functions.exec V8 BigInt",
+      "command": "eval exact stored src/dynamic_lift.mjs and tests/primary.mjs; runPrimary(R5)",
+      "code_identity": {
+        "bytes": 6714,
+        "sha256": "06d13ff2e9b66b11e9ccf2d7afa572f683b0022971d5bfaeaa8078f19040a91e",
+        "git_blob_sha1": "9a028b632de75b3d1d61e2ab01801f3dc0ab44a3"
+      },
+      "test_identity": {
+        "bytes": 7597,
+        "sha256": "4deb79f8860c65a8a350e04fd93fc247d3192a43ef0fd39921eec664b772c7ce",
+        "git_blob_sha1": "d55ebad0770cce441eafb645bf815c4e58866ace"
+      }
+    },
+    {
+      "status": "PASS",
+      "start_utc": "2026-10-27T10:03:43.719Z",
+      "end_utc": "2026-10-27T10:03:43.726Z",
+      "wall_ms": 7,
+      "CPU_s": null,
+      "CPU_reason": "not exposed",
+      "code_sha256": "65beb95af81db825d216c0c3d0e0c3e28b672e3ad7b7764ff87ccf1e6c02b5e9",
+      "input_sha256": "3fc0e0b6ac8c284ab5e8d02e1b55eb960e2d22e329a8c90c1a42b89722415cea",
+      "runtime": "functions.exec V8/BigInt",
+      "primary_replays": 0,
+      "physical_IVP": 0
+    },
+    {
+      "kind": "Wolfram reference first attempt",
+      "status": "EXECUTION_FAILED_OUTPUT_SERIALIZATION",
+      "start_utc": "2026-10-27T10:04:34.274Z",
+      "end_utc": "2026-10-27T10:04:44.355Z",
+      "CPU_s": null,
+      "raw": "verification/WOLFRAM_FAILURE_PRESERVED.json"
+    },
+    {
+      "start_utc": "2026-10-27T10:04:59.221Z",
+      "end_utc": "2026-10-27T10:05:09.978Z",
+      "attempt": 2,
+      "repair": "output serialization only",
+      "time_constraint_s": 30,
+      "CPU_s": "inspect successful output if exposed",
+      "status": "PASS",
+      "kernel": "15.0.1 for Linux x86 (64-bit) (July 2, 2026)",
+      "self_CPU_s": 0.038076999999999916,
+      "self_wall_s": 0.038211,
+      "process_transport_cost": "UNKNOWN_NOT_ZERO",
+      "scope": "21exactzeros,80digitfixture and sourcegraphchecks"
+    },
+    {
+      "status": "PASS",
+      "start_utc": "2026-10-27T10:12:42.082Z",
+      "end_utc": "2026-10-27T10:12:42.705Z",
+      "wall_ms": 623,
+      "CPU_s": null,
+      "old_code": {
+        "bytes": 6714,
+        "sha256": "06d13ff2e9b66b11e9ccf2d7afa572f683b0022971d5bfaeaa8078f19040a91e",
+        "git_blob_sha1": "9a028b632de75b3d1d61e2ab01801f3dc0ab44a3"
+      },
+      "new_code": {
+        "bytes": 6809,
+        "sha256": "8c86303793baa1fd01dcdbae93c521c13713c74d6658101f0d77b4ebe4538273",
+        "git_blob_sha1": "ca106fc67526718efec1a70268e5a0172fa7cd75"
+      },
+      "test": {
+        "bytes": 1300,
+        "sha256": "911072454c3110f7f78d4ddbd025df57c0c64affbec8253635ea0e9a6b9a9c07",
+        "git_blob_sha1": "414010a08e4793dea9862ba08e61e647d8d3766d"
+      },
+      "scope": "stored exact outputs rehydrated and zero-step checked; no numerical evolution replay",
+      "finding_author": "recover_backups",
+      "finding": "2048-character parser guard rejected256-step serialized endpoints",
+      "original_failure": "INDEPENDENT_BOUNDARY_CHECK_EXACT_STRING_REQUIRED",
+      "failed_original_science": false
+    }
+  ],
+  "prototype": {
+    "author": "r5_primary_sources",
+    "status": "56checks reported PASS",
+    "scope": "two-state analytic prototype, independent of implementation",
+    "CPU_s": null,
+    "raw": "awaiting original preserved author blob"
+  },
+  "other_failures": {
+    "publication_helper": [
+      {
+        "kind": "implementation",
+        "scope": "publication helper, no external mutation/no scientific run",
+        "message": "Anonymous function eval lacked expression parentheses",
+        "repair": "Wrap stored function text in parentheses",
+        "resolved": true
+      }
+    ],
+    "runtime_initial": {
+      "time_utc": "2026-10-27T09:47:41.001Z",
+      "python": {
+        "status": "rejected",
+        "reason": "No usable execution environment is available. Wait for an environment to become available before using this tool."
+      },
+      "cpp": {
+        "status": "rejected",
+        "reason": "No usable execution environment is available. Wait for an environment to become available before using this tool."
+      },
+      "desktop": {
+        "status": "fulfilled",
+        "value": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Desktop Commander devices\n\n1. cosmosapjw\n   Status: Offline\n   ID: edd1b263-56a0-4391-8a2a-677dd00eabf5\n   Last seen: 48h ago\n   App version: 0.3.0\n\nManage devices: https://mcp.desktopcommander.app/\nYou can view, add, or revoke devices there."
+            }
+          ],
+          "structuredContent": null,
+          "isError": false
+        }
+      },
+      "available_compute": "functions V8 exact BigInt and Wolfram connector",
+      "file_system_creation": "not established this invocation",
+      "old_blocked_status_inherited": false
+    },
+    "runtime_recovery": {
+      "time_utc": "2026-10-27T10:06:55.810Z",
+      "results": [
+        {
+          "status": "rejected",
+          "reason": "No usable execution environment is available. Wait for an environment to become available before using this tool."
+        },
+        {
+          "status": "rejected",
+          "reason": "No usable execution environment is available. Wait for an environment to become available before using this tool."
+        }
+      ]
+    }
+  },
+  "totals": {
+    "primary_runs": 1,
+    "source_graph_applications": 1,
+    "Wolfram_evaluator_attempts": 2,
+    "Wolfram_successes": 1,
+    "Wolfram_targeted_serialization_repairs": 1,
+    "primary_assertions": 188,
+    "source_assertions": 41,
+    "physical_IVP_runs": 0,
+    "new_Q": 0,
+    "old54DB_replays": 0,
+    "old24LTE_replays": 0,
+    "old249compiler_replays": 0,
+    "full_local_CPU_s": null,
+    "source_primary_wall_ms": 70451,
+    "remote_symbolic_known_self_CPU_s": 0.038076999999999916,
+    "targeted_repair_checks": 20,
+    "independent_saved_output_recheck_values": 3,
+    "primary_and_source_and_repair_wall_ms": 71074
+  },
+  "old_allowances": {
+    "PHYS91_remaining": [
+      0,
+      0,
+      0
+    ],
+    "global_remaining": null,
+    "reset": false
+  },
+  "interpretation": "Theoretical exact proof, exact declared-rational implementation, approximate displays, source qualification, physical admission and storage are separate.",
+  "independent_repair_review": {
+    "schema": "WU_R5_INTERIM_REVIEW_TRANSCRIPT_V1",
+    "reviewer": "recover_backups",
+    "source": "Actual agent messages on review candidate54f37... and repaired0a6d...; final original review blob will follow",
+    "participated_in_implementation": false,
+    "initial_finding": {
+      "id": "SERIALIZED_RATIONAL_REHYDRATION",
+      "kind": "implementation",
+      "observed_failure": "EXACT_STRING_REQUIRED on saved256stepU/E rational strings >2048chars",
+      "scientific_formula_error": false
+    },
+    "current_status": "CLOSED_FIXED",
+    "independent_recheck": {
+      "input": "saved zero-formation256endpoint",
+      "operation": "envelopeStep(saved,c,\"0\")",
+      "values": 3,
+      "byte_exact": true,
+      "wall_ms": 257,
+      "CPU_s": null
+    },
+    "code_relation": "Arithmetic/coefficient/envelope/generator body after Rat.of byte-identical",
+    "other_findings": {
+      "source_slice": "actual pinned2289byte text read;9 energies/weights/J and9para100Kdownward rates match",
+      "source_hash_label_guard": "metadata guard only; admission applies to current pinned input, not arbitrary future input"
+    },
+    "blocking_findings_open": 0
+  }
+}
