@@ -1,0 +1,76 @@
+{
+  "schema": "WU_R5_C9_INDEPENDENT_CODE_REVIEW_V1",
+  "reviewer": "/root/recover_backups",
+  "verdict": "PASS_SCOPED_AFTER_TARGETED_REPAIR",
+  "original_candidate": "54f37a18ba644421b839e385dca565ea327757b5",
+  "reviewed_candidate": "0a6d5dfc1e057c2cd6b0d2cc15819d040cc242ef",
+  "current_code_sha256": "8c86303793baa1fd01dcdbae93c521c13713c74d6658101f0d77b4ebe4538273",
+  "current_code_git_blob": "ca106fc67526718efec1a70268e5a0172fa7cd75",
+  "implementation_participation": false,
+  "finding": {
+    "id": "C9-RATIONAL-ROUNDTRIP-001",
+    "severity": "P2",
+    "status": "CLOSED_FIXED",
+    "original_defect": "The generic 2048-character input guard rejected the implementation's own saved 256-step exact endpoint during zero-step continuation.",
+    "original_reproduction": {
+      "saved_case": "zero formation, 256 steps",
+      "serialized_lengths": {
+        "M": 1235,
+        "U": 2310,
+        "E": 3382
+      },
+      "actual_result": "EXACT_STRING_REQUIRED"
+    },
+    "repair": "Canonical integers and fractions are parsed before the decimal/exponent length guard.",
+    "independent_recheck": {
+      "same_formerly_failing_saved_endpoint": true,
+      "zero_length_continuation": true,
+      "M_U_E_byte_exact": true,
+      "result": "PASS",
+      "checks": 3,
+      "start_utc": "2026-10-27T10:13:43.542Z",
+      "end_utc": "2026-10-27T10:13:43.799Z",
+      "wall_ms": 257,
+      "CPU_s": null,
+      "runtime": "functions.exec V8/BigInt"
+    },
+    "additional_targeted_record_read": "ROUNDTRIP_REPAIR.json: 20 PASS, including both saved cases and retained invalid-input guards"
+  },
+  "remaining_blocking_findings": 0,
+  "review_conclusions": [
+    "The projection, prescribed formation forcing and triangular continuous comparison match the implementation.",
+    "The rational endpoint upper bound and separate whole-interval bound are correctly distinguished.",
+    "The HD finite-block rho is not substituted for the instantaneous coefficient; sparse delta(K)=0 is retained.",
+    "Rat.add through the end of the implementation is byte-identical across the repair; previous admitted inputs retain exact rational semantics.",
+    "The original 188-check evidence retains its original code identity; the parser repair has separate targeted evidence."
+  ],
+  "evidence_read": {
+    "primary_assertions": 188,
+    "primary_groups": 8,
+    "source_geometry_assertions": 41,
+    "CAS_exact_zero_entries": 21,
+    "CAS_graph_precision": 80,
+    "original_source_blob": "9d96bfdf6ca4f9acda989a3eb24be37a3a9cd17c",
+    "original_source_actual_read_chars": 2289,
+    "source_slice_agreement": "All 9 energy/weight/J rows and 9 para-H2 100K downward rows agree."
+  },
+  "scope_limits": {
+    "interval_bounds_require_constant_coefficients_or_certified_bounds": true,
+    "thermal_weight_roundoff_enclosure": false,
+    "decimal_displays_are_outward_bounds": false,
+    "source_sha_label_is_generic_body_authentication": false,
+    "current_pinned_source_slice_actually_checked": true,
+    "GL2022_d_j": null,
+    "physical_consumer": null,
+    "physical_IVP_runs": 0,
+    "production_admission": false,
+    "old_science_replays_by_reviewer": 0
+  },
+  "review_blob_preservation": {
+    "create_blob_attempt": "aborted after 207.1 seconds without a success ACK",
+    "stored_successfully": "UNCONFIRMED",
+    "returned_blob_SHA": null,
+    "expected_blob_SHA": null,
+    "branch_ref_mutations_by_reviewer": 0
+  }
+}
