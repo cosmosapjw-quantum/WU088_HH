@@ -1,0 +1,172 @@
+{
+  "schema": "WU_R4_THEORY_CODE_MAP_V1",
+  "path_base": "R4 leaf root; suffix after colon names an evidence group/function",
+  "claims_sha256": "e04353625155ca0f5fab09ef638d63ae96d3ebc84f6ede3b4a2326d3cca634f1",
+  "production_module_sha256": "c11bd7240039050e0a817d698e9a82517770081e56828c7b48b4492ec98ee4c5",
+  "primary_builder_sha256": "5ba9d17f1a6c68f8fec5ac50d256448a2c502cef9114ed1f1dcb0bf285f50ff0",
+  "mappings": [
+    {
+      "claim_id": "C01_MATERIAL_STOICHIOMETRY",
+      "implementation_or_representation": [
+        "build_molecular.py:main",
+        "registry/compiled.json",
+        "registry/projections.json"
+      ],
+      "evidence": [
+        "raw/INDEPENDENT_RESULTS.json:G3",
+        "theory/WOLFRAM_RESULT.json"
+      ],
+      "scope": "Six declared isotope/charge-qualified integer columns; source-to-model mass/state transfer remains false."
+    },
+    {
+      "claim_id": "C02_THERMAL_PARTICLE_COUNT",
+      "implementation_or_representation": [
+        "build_molecular.py:main",
+        "registry/projections.json"
+      ],
+      "evidence": [
+        "verification/IMPLEMENTATION_RESULT.json:thermal_particle_change",
+        "theory/WOLFRAM_RESULT.json"
+      ],
+      "scope": "DeltaNg=-1 for RA,0 for exchanges; material number projection does not assert bath assimilation."
+    },
+    {
+      "claim_id": "C03_EVENT_NORMALIZATION",
+      "implementation_or_representation": [
+        "molecular_operator.py:conditional_event_flux_per_reference",
+        "theory/STATE_LIFT_THEORY_KO.md"
+      ],
+      "evidence": [
+        "theory/THEORY_ADMISSION.json",
+        "theory/WOLFRAM_RESULT.json"
+      ],
+      "scope": "Exact conditional distinct-reactant arithmetic implemented; no physical nref or time consumer is bound. The reference derivative is a theory obligation, not a new IVP solver."
+    },
+    {
+      "claim_id": "C04_POSITIVE_LIFT",
+      "implementation_or_representation": [
+        "molecular_operator.py:positive_lift",
+        "registry/lift_examples.json"
+      ],
+      "evidence": [
+        "reviews/THEORY_REVIEW.json",
+        "verification/IMPLEMENTATION_RESULT.json",
+        "raw/INDEPENDENT_RESULTS.json:G7"
+      ],
+      "scope": "Nonnegative normalized rational lift implemented; no supplier population weights inferred."
+    },
+    {
+      "claim_id": "C05_DEFECT_IDENTITY",
+      "implementation_or_representation": [
+        "molecular_operator.py:destruction_defect",
+        "registry/lift_examples.json"
+      ],
+      "evidence": [
+        "reviews/THEORY_REVIEW.json",
+        "raw/INDEPENDENT_RESULTS.json:G7",
+        "theory/WOLFRAM_RESULT.json"
+      ],
+      "scope": "Exact rational DeltaJ,not an empirical state vector."
+    },
+    {
+      "claim_id": "C06_ZERO_SUM_BOUND",
+      "implementation_or_representation": [
+        "molecular_operator.py:destruction_defect"
+      ],
+      "evidence": [
+        "reviews/THEORY_REVIEW.json",
+        "raw/INDEPENDENT_RESULTS.json:G7"
+      ],
+      "scope": "Half-spread L1 bound implemented for explicit finite rational x,pi,d,h; general proof independent of finite examples."
+    },
+    {
+      "claim_id": "C07_SCALAR_EXACTNESS_IFF",
+      "implementation_or_representation": [
+        "molecular_operator.py:destruction_defect.uniform_scalar_closure"
+      ],
+      "evidence": [
+        "reviews/THEORY_REVIEW.json",
+        "raw/INDEPENDENT_RESULTS.json:G7"
+      ],
+      "scope": "The implemented constant-d or zero-h check has the full-cone/fixed-lift interpretation; restricted-family exactness remains separately allowed."
+    },
+    {
+      "claim_id": "C08_GENERAL_PROJECTION",
+      "implementation_or_representation": [
+        "theory/STATE_LIFT_THEORY_KO.md",
+        "registry/projections.json"
+      ],
+      "evidence": [
+        "reviews/THEORY_REVIEW.json"
+      ],
+      "scope": "General ker(P) criterion is a reviewed theorem. Code supplies the specific material-family projection; a general physical P closure solver is not implemented or claimed."
+    },
+    {
+      "claim_id": "C09_FORMATION_BRANCH_TOTAL",
+      "implementation_or_representation": [
+        "theory/STATE_LIFT_THEORY_KO.md",
+        "registry/events.json"
+      ],
+      "evidence": [
+        "reviews/THEORY_REVIEW.json",
+        "raw/INDEPENDENT_RESULTS.json:G4"
+      ],
+      "scope": "Formation branching total is a conditional theorem. Integer events retain source branch labels; no unknown b vector or physical state-resolved formation runtime is fabricated."
+    },
+    {
+      "claim_id": "C10_RATIONAL_COUNTEREXAMPLE",
+      "implementation_or_representation": [
+        "registry/lift_examples.json"
+      ],
+      "evidence": [
+        "raw/INDEPENDENT_RESULTS.json:G7",
+        "theory/WOLFRAM_RESULT.json"
+      ],
+      "scope": "Four constructed rational examples stored; not native molecular rates."
+    },
+    {
+      "claim_id": "C11_NATIVE_FIT_FUNCTIONS",
+      "implementation_or_representation": [
+        "molecular_operator.py:evaluate_source_fit",
+        "registry/fit_diagnostics.json"
+      ],
+      "evidence": [
+        "raw/INDEPENDENT_RESULTS.json:G5",
+        "raw/INDEPENDENT_RESULTS.json:G6"
+      ],
+      "scope": "Only27 Bennett and2 GL2022 native nodes; independent Decimal80 references; no interpolation, refit or physical admission."
+    },
+    {
+      "claim_id": "C12_SOURCE_WEIGHT_AND_Q_GUARDS",
+      "implementation_or_representation": [
+        "molecular_operator.py:select_source_candidates",
+        "molecular_operator.py:request_physical_rate",
+        "registry/events.json"
+      ],
+      "evidence": [
+        "verification/IMPLEMENTATION_RESULT.json",
+        "raw/INDEPENDENT_RESULTS.json:G4",
+        "reviews/BENNETT500_SOURCE_NOTE.json"
+      ],
+      "scope": "Included weights cannot be re-applied; method/spin mixtures rejected; native Q estimates and missing uncertainties remain separate."
+    },
+    {
+      "claim_id": "C13_ENSEMBLE_COMPATIBILITY",
+      "implementation_or_representation": [
+        "registry/species.json",
+        "registry/compiled.json",
+        "molecular_operator.py:select_source_candidates"
+      ],
+      "evidence": [
+        "verification/IMPLEMENTATION_RESULT.json:HD_ensembles_not_state_reverse_pair",
+        "raw/INDEPENDENT_RESULTS.json:G4"
+      ],
+      "scope": "TIQM/SQM share one physical ownership group; HD forward and thermal reverse ensembles do not become a detailed-balance pair."
+    }
+  ],
+  "claims_mapped": 13,
+  "general_P_runtime_solver": false,
+  "physical_state_branch_runtime": false,
+  "physical_consumer_binding": false,
+  "new_scientific_execution": 0
+}

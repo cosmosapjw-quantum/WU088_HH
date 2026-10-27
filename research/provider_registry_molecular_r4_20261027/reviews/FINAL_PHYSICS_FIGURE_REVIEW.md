@@ -18,7 +18,7 @@ PNG는 original detail로 직접 보았다. SVG는 동결 manifest와 실제 has
 
 500 K의 LiH 잔차 피크와 두 분모의 marker가 모두 보인다. 최대 잔차 설명은 data axes 밖의 panel title로 이동하여 피크를 가리지 않는다. HD residual legend도 비어 있는 center-right 영역에 놓여 205 K와 295 K 점을 가리지 않는다. 제목, 축, 단위, legend와 footer에 clipping 또는 data occlusion을 발견하지 않았다.
 
-상단 panel은 인쇄된 source 값과 출판된 formula sample을 다른 marker로 구분한다. LiH는 27개 원표 node, HD는 두 개의 인쇄 SQM 비교점임을 제목에 명시한다. 실험 측정값이라고 잘못 표시하지 않는다. 온도 단위는 K, coefficient 단위는 \({\rm cm^3\,s^{-1}}\)이다. LiH에는 log 축, HD에는 linear 축이 사용되며 온도별 marker가 명확하다.
+상단 panel은 인쇄된 source 값과 출판된 formula sample을 다른 marker로 구분한다. LiH는 27개 원표 node, HD는 두 개의 인쇄 SQM 비교점임을 제목에 명시한다. 실험 측정값이라고 잘못 표시하지 않는다. 온도 단위는 K, coefficient 단위는 \({\rm cm^3\,s^{-1}}\)이다. LiH의 온도 축은 log, HD의 온도 축은 linear이고, 두 coefficient 축은 모두 log다. 하단 잔차 축은 linear percent이며 온도별 marker가 명확하다.
 
 하단 panel은 signed numerator를 formula minus printed value로 표시하고, printed-value 분모와 formula 분모를 구분한다. 최대 잔차 설명은 table 기준임을 명시한다. 그림은 두 상대오차 정의를 혼합하지 않으며, footer에서 두 값 모두 물리적 불확실성 상계가 아니라고 설명한다. 저장된 27+2 node만 marker로 보여 주며 source curve를 새로 fit하거나 보간한 표현을 만들지 않는다.
 
