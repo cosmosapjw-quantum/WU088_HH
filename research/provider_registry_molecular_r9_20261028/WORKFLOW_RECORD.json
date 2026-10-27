@@ -92,9 +92,13 @@
     },
     "R10": {
       "label": "종료·재개",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "checkpoint": "S10",
-      "evidence": []
+      "evidence": [
+        "REPORT_KO.md",
+        "HANDOFF_KO.md",
+        "followup/NEXT_INPUT_CONTRACT.json"
+      ]
     }
   },
   "coding": {
@@ -190,14 +194,20 @@
     },
     "C10": {
       "label": "판정·인계",
-      "status": "PENDING",
+      "status": "CONTENT_COMPLETE_DELIVERY_PENDING",
       "checkpoint": "S10",
-      "evidence": []
+      "evidence": [
+        "REPORT_KO.md",
+        "HANDOFF_KO.md",
+        "SCIENTIFIC_PAYLOAD_MANIFEST.json",
+        "delivery/PUBLICATION_INDEX.json"
+      ]
     }
   },
-  "workflow_complete": 18,
+  "workflow_complete": 19,
   "workflow_total": 20,
   "DAG_complete": 19,
   "DAG_total": 34,
-  "workflow_is_not_DAG": true
+  "workflow_is_not_DAG": true,
+  "workflow_content_prepared": 20
 }

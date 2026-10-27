@@ -71,8 +71,9 @@
   },
   "metadata_original_byte_pairs": {
     "allowed": 11,
-    "consumed": 8,
-    "remaining": 3
+    "consumed": 9,
+    "remaining": 2,
+    "note": "FINAL archive own receipt is external to its source snapshot; closing PR150 records actual completion"
   },
   "old_remaining": "R8all0;R7/R6/PHYS91each[0,0,0]",
   "global_remaining": null,
@@ -163,6 +164,11 @@
       "id": "S08_DUAL_ORIGINAL_HASH",
       "scientific": false,
       "source": "delivery/S08.json"
+    },
+    {
+      "id": "S09_DUAL_ORIGINAL_HASH",
+      "scientific": false,
+      "source": "delivery/S09.json"
     }
   ],
   "failures": [
@@ -217,5 +223,14 @@
       "repair": "Root directly recovered public35repo/1890heads/47terminalpages at21:44:41-43UTC; older51repo census summary preserved"
     }
   ],
-  "old_science_replay": 0
+  "old_science_replay": 0,
+  "new_Python_scientific_CPU_s": 2.270685,
+  "full_Python_CPU_includes_imports_and_serialization": true,
+  "new_CAS_CPU_s": null,
+  "postprocessing": {
+    "kind": "read-only saved-result exact rational comparisons in functions JavaScript",
+    "scientific_solver_runs": 0,
+    "source": "verification/analyze_saved_results.js",
+    "outputs": "raw/RESULT_ANALYSIS.json"
+  }
 }

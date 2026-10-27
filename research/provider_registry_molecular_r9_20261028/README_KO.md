@@ -1,5 +1,7 @@
-# R9: 인과적 셀별 결합 오차 상계
+# WU R9: causal cell resolvent 완료
 
-R8의 저장된 수축 kernel·비교 계수·인증 상계를 재사용하고 각 시간 셀의 결합 부등식을 양의 2×2 역행렬로 닫는다. 새 이론·코드 의무를 등록한 DAG는 **17/34**다. 이론 R1–R10 및 코딩 C1–C10, 각 단계 게시·이중 백업의 실제 근거를 기록한다.
+**과학 DAG19/34; 이론·코딩20/20.** 양의현재셀소거식과exactoutward구현을채택했다. Primary150/150,independent438/438(34590components),finalC9PASS_SCOPED다. Native9의개선은작고physicalconsumer는열려있다.
 
-현재 계약은 CONTRACT.json, 진행은 DAG.json/WORKFLOW_RECORD.json, 실제 실행은 EXECUTION_LEDGER.json에서 관리한다. 실제 HD reactive source와 물리 소비자 density/clock 입력은 별도 INPUT_PENDING이다.
+[보고서](REPORT_KO.md) · [복사 가능한 handoff](HANDOFF_KO.md) · [증명](theory/PROOF_KO.md) · [실제 결과](RESULTS_KO.md) · [C9](reviews/C9_FINAL_REVIEW.json) · [DAG](DAG.json) · [35-file payload](SCIENTIFIC_PAYLOAD_MANIFEST.json) · [단계별 영수증](delivery/PUBLICATION_INDEX.json) · [다음 입력](followup/NEXT_INPUT_CONTRACT.json)
+
+이 S10 source를 작성하는 시점에는 S01–S09의9개 단계 ZIP과18개 provider 원본 검증이 완료됐다. S10 자체의 게시·archive·양 provider 원본 검증이 다음 동작이다. 최종 metadata source에서 그 실제 영수증을 반영한다.
