@@ -1,0 +1,281 @@
+{
+  "schema": "WU_R6_PRIMARY_THEORY_SOURCE_MANIFEST_V1",
+  "date_utc": "2026-10-27",
+  "contributor": "/root/r6_primary_theory",
+  "role": "derivation_contributor_not_independent_final_reviewer",
+  "predecessor_reads": [
+    {
+      "source": "github",
+      "repository": "cosmosapjw-quantum/WU088_HH",
+      "ref": "35bb7f296abc8ff6c8b38c2c08cc14dd498d4c99",
+      "blob_sha": "2595a7faacc8148b22eac7ed7fd3498ec77faa3d",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/blob/35bb7f296abc8ff6c8b38c2c08cc14dd498d4c99/research/provider_registry_molecular_r5_20261027/theory/DYNAMIC_LIFT.md",
+      "read_level": "complete returned file body",
+      "filename": "DYNAMIC_LIFT.md"
+    },
+    {
+      "source": "github",
+      "repository": "cosmosapjw-quantum/WU088_HH",
+      "ref": "35bb7f296abc8ff6c8b38c2c08cc14dd498d4c99",
+      "blob_sha": "6af704e338639b19a649d07307df84e5948a6b99",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/blob/35bb7f296abc8ff6c8b38c2c08cc14dd498d4c99/research/provider_registry_molecular_r5_20261027/theory/HD_GRAPH_BLOCK.md",
+      "read_level": "complete returned file body",
+      "filename": "HD_GRAPH_BLOCK.md"
+    },
+    {
+      "source": "github",
+      "repository": "cosmosapjw-quantum/WU088_HH",
+      "ref": "35bb7f296abc8ff6c8b38c2c08cc14dd498d4c99",
+      "blob_sha": "c7eeebba776e666431a75c3e745776f3ce7037d0",
+      "url": "https://github.com/cosmosapjw-quantum/WU088_HH/blob/35bb7f296abc8ff6c8b38c2c08cc14dd498d4c99/research/provider_registry_molecular_r5_20261027/followup/NEXT_INPUT_CONTRACT.json",
+      "read_level": "complete returned file body",
+      "filename": "NEXT_INPUT_CONTRACT.json"
+    }
+  ],
+  "sources": [
+    {
+      "id": "BIPM_SI_CONSTANTS",
+      "url": "https://www.bipm.org/en/measurement-units/si-defining-constants",
+      "type": "primary standards publisher HTML",
+      "read_level": "complete returned defining-constants page, including numeric table",
+      "supported_claim": "h_P, c_light, and k_B are exact SI defining constants with the literal values used in the derivation.",
+      "used": true
+    },
+    {
+      "id": "WEI2023",
+      "url": "https://proceedings.mlr.press/v206/wei23c/wei23c.pdf",
+      "doi": null,
+      "title": "Convex Bounds on the Softmax Function with Applications to Robustness Verification",
+      "authors": [
+        "Dennis Wei",
+        "Haoze Wu",
+        "Min Wu",
+        "Pin-Yu Chen",
+        "Clark Barrett",
+        "Eitan Farchi"
+      ],
+      "year": 2023,
+      "type": "primary conference publisher PDF",
+      "read_level": "returned PDF text: section 2/2.1, equations (2), (5a), (5b), (6); portions of later sections",
+      "supported_claim": "Coordinatewise monotonicity gives constant bounds on normalized exponentials over a box; retaining the simplex is useful.",
+      "used": true,
+      "limitation": "No claim of complete-paper verification; no adoption of the paper's stronger nonlinear optimization algorithms."
+    },
+    {
+      "id": "VANDIJK1991",
+      "url": "https://research.vu.nl/ws/portalfiles/portal/73611171/Scanjob%20199100006",
+      "title": "On uniformization for nonhomogeneous Markov chains",
+      "author": "Nico M. van Dijk",
+      "year": 1991,
+      "type": "primary university repository PDF, Research Memorandum 1991-6",
+      "read_level": "returned model section, section 3, Theorem 1, ordered-product Poisson representation; references",
+      "supported_claim": "Uniformization extends to time-inhomogeneous chains through ordered products sampled at Poisson epochs.",
+      "used": true,
+      "limitation": "OCR corrupts parts of equations. Column-vector formula and bounded-measurable finite-dimensional version are derived directly in THEORY_CONTRIBUTION_KO.md; not attributed as verbatim source theorem."
+    },
+    {
+      "id": "GAUBERT_QU2015",
+      "url": "https://www.cmap.polytechnique.fr/~gaubert/PAPERS/GaubertQuIEOTD14QuFinal.pdf",
+      "doi": "10.1007/s00020-014-2193-2",
+      "title": "Dobrushin’s ergodicity coefficient for Markov operators on cones",
+      "authors": [
+        "Stephane Gaubert",
+        "Zheng Qu"
+      ],
+      "year": 2015,
+      "type": "primary author-hosted PDF",
+      "read_level": "introduction, zero-sum norm/common-mass characterization and Theorem 1.1 in returned PDF text",
+      "supported_claim": "The Dobrushin coefficient characterizes stochastic-map contraction on zero-sum vectors by pairwise common mass.",
+      "used": true,
+      "limitation": "Source uses row convention; contribution uses transpose/column convention. No complete-paper verification claimed."
+    },
+    {
+      "id": "GL2022_IFF_CSIC",
+      "url": "https://www.iff.csic.es/a-statistical-investigation-of-the-rate-constants-for-the-h-hd-reaction-at-temperatures-of-astrophysical-interest/",
+      "doi": "10.1063/5.0128598",
+      "title": "A statistical investigation of the rate constants for the H+ + HD reaction at temperatures of astrophysical interest",
+      "type": "primary author-affiliated institutional publication page",
+      "published_date": "2022-12-07",
+      "read_level": "complete returned institutional page body",
+      "supported_claim": "Institutional publication record identifies the ionic H+ + HD work and the D+ + H2 product channel.",
+      "used": true,
+      "limitation": "No original numerical state-to-state destruction array or downloadable array manifest appeared in the returned page. This is a bounded retrieval observation, not a proof that no dataset exists."
+    },
+    {
+      "id": "NIST_PLANCK",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?h",
+      "type": "primary NIST CODATA value page",
+      "read_level": "returned value and exact-uncertainty text",
+      "supported_claim": "Planck constant exact value agrees with BIPM.",
+      "used": false,
+      "reason": "Redundant primary crosscheck; BIPM table binds all three constants."
+    },
+    {
+      "id": "NIST_K_ATTEMPT",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?k",
+      "type": "primary page fetch attempt",
+      "read_level": "only generic CODATA navigation returned",
+      "used": false,
+      "reason": "No numeric value in returned text; no support claim."
+    },
+    {
+      "id": "NIST_C_ATTEMPT",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?c",
+      "type": "primary page fetch attempt",
+      "read_level": "only generic CODATA navigation returned",
+      "used": false,
+      "reason": "No numeric value in returned text; no support claim."
+    }
+  ],
+  "search_records": [
+    {
+      "id": "S01",
+      "tool": "mcp__codex_apps__scispace_search_papers",
+      "query": "Which primary mathematical papers establish explicit Doeblin or Dobrushin contraction bounds for finite time-inhomogeneous continuous-time Markov chains, including uniformization or common-column minorization, and variation-of-constants bounds for zero-sum forced systems when the instantaneous contraction coefficient vanishes?",
+      "kind": "primary-literature discovery",
+      "result_count": 10,
+      "result_status": "success",
+      "followed": [
+        "GAUBERT_QU2015",
+        "VANDIJK1991"
+      ],
+      "read_level": "metadata/abstracts; selected papers subsequently read at primary URLs"
+    },
+    {
+      "id": "S02",
+      "tool": "mcp__codex_apps__exa_web_search_exa",
+      "query": "Find primary research papers or author documentation on rigorous interval computation of exponential functions and normalized Boltzmann or softmax probabilities, with provable lower and upper bounds from interval energies and temperature.",
+      "numResults": 6,
+      "result_status": "success",
+      "followed": [
+        "WEI2023"
+      ],
+      "read_level": "search results; selected publisher PDF subsequently read",
+      "not_followed": [
+        "https://arxiv.org/pdf/1909.03469",
+        "http://expmin.igc.irk.ru/files/conferences/scan2012/139584/HeimlichNehmeierGudenberg1-scan2012.pdf",
+        "https://eprints.maths.manchester.ac.uk/2728/",
+        "https://arxiv.org/pdf/1609.07410",
+        "https://imacm.uni-wuppertal.de/fileadmin/imacm/preprints/2019/imacm_19_43.pdf"
+      ]
+    },
+    {
+      "id": "S03",
+      "tool": "mcp__codex_apps__exa_web_search_exa",
+      "query": "Locate original numerical state-to-state rate coefficient files or a primary institutional dataset for Gonzalez-Lezana Hily-Blant Faure 2022 H+ HD destruction H2 D+, DOI10.1063/5.0128598, including newer author repositories, institutional data records or supplementary file manifests.",
+      "numResults": 6,
+      "result_status": "success",
+      "followed": [
+        "GL2022_IFF_CSIC"
+      ],
+      "read_level": "search results; new author-affiliated institutional page then read",
+      "scope": "A genuinely new institutional primary path; old failed AIP supplemental URLs were not requested.",
+      "outcome": "Original numeric destruction array not recovered. Neighboring neutral-reaction and excitation results were not adopted."
+    },
+    {
+      "id": "S04",
+      "tool": "mcp__codex_apps__exa_web_search_exa",
+      "query": "\"On uniformization for nonhomogeneous Markov chains\" van Dijk 1991 pdf research.vu.nl",
+      "objective": "Locate a primary university author manuscript or repository PDF for the exact 1991 van Dijk paper, not a secondary summary. Need the time-inhomogeneous Poisson uniformization representation.",
+      "numResults": 3,
+      "result_status": "success",
+      "followed": [
+        "VANDIJK1991"
+      ],
+      "read_level": "search metadata and primary VU PDF"
+    }
+  ],
+  "fetch_records": [
+    {
+      "id": "F01",
+      "tool": "mcp__codex_apps__exa_web_fetch_exa",
+      "urls": [
+        "https://proceedings.mlr.press/v206/wei23c/wei23c.pdf",
+        "https://www.iff.csic.es/a-statistical-investigation-of-the-rate-constants-for-the-h-hd-reaction-at-temperatures-of-astrophysical-interest/"
+      ],
+      "maxCharacters": 22000,
+      "result_status": "success",
+      "notes": "Returned combined text inspected later via stored response; first tool display was truncated. Relevant Wei section 2.1 and the whole returned IFF page were subsequently read."
+    },
+    {
+      "id": "F02",
+      "tool": "mcp__codex_apps__exa_web_fetch_exa",
+      "urls": [
+        "https://www.cmap.polytechnique.fr/~gaubert/PAPERS/GaubertQuIEOTD14QuFinal.pdf"
+      ],
+      "maxCharacters": 20000,
+      "result_status": "success",
+      "notes": "Relevant introduction and theorem fragments inspected from stored response; partial PDF text only."
+    },
+    {
+      "id": "F03",
+      "tool": "mcp__codex_apps__exa_web_fetch_exa",
+      "urls": [
+        "https://research.vu.nl/ws/portalfiles/portal/73611171/Scanjob%20199100006"
+      ],
+      "maxCharacters": 14000,
+      "result_status": "success",
+      "notes": "Primary VU PDF returned; OCR equation limitations recorded."
+    },
+    {
+      "id": "F04",
+      "tool": "mcp__codex_apps__exa_web_fetch_exa",
+      "urls": [
+        "https://physics.nist.gov/cgi-bin/cuu/Value?h",
+        "https://physics.nist.gov/cgi-bin/cuu/Value?k",
+        "https://physics.nist.gov/cgi-bin/cuu/Value?c"
+      ],
+      "maxCharacters": 9000,
+      "result_status": "partial",
+      "notes": "Only the Planck value page was returned by the multi-URL request."
+    },
+    {
+      "id": "F05",
+      "tool": "mcp__codex_apps__exa_web_fetch_exa",
+      "urls": [
+        "https://physics.nist.gov/cgi-bin/cuu/Value?k"
+      ],
+      "maxCharacters": 3000,
+      "result_status": "content_insufficient",
+      "notes": "Generic navigation only; not used as numerical evidence."
+    },
+    {
+      "id": "F06",
+      "tool": "mcp__codex_apps__exa_web_fetch_exa",
+      "urls": [
+        "https://physics.nist.gov/cgi-bin/cuu/Value?c"
+      ],
+      "maxCharacters": 3000,
+      "result_status": "content_insufficient",
+      "notes": "Generic navigation only; not used as numerical evidence."
+    },
+    {
+      "id": "F07",
+      "tool": "mcp__codex_apps__exa_web_fetch_exa",
+      "urls": [
+        "https://www.bipm.org/en/measurement-units/si-defining-constants"
+      ],
+      "maxCharacters": 12000,
+      "result_status": "success",
+      "notes": "Exact defining-constants table read in full."
+    }
+  ],
+  "resource_ledger": {
+    "new_scientific_numerical_runs": 0,
+    "new_CAS_runs": 0,
+    "new_physical_IVPs": 0,
+    "old_suite_replays": 0,
+    "external_writes": 0,
+    "cpu_seconds": null,
+    "cpu_seconds_reason": "No scientific compute execution in this contributor; tool-service CPU not reported.",
+    "new_source_array_bytes_recovered": 0
+  },
+  "status": {
+    "theory": "CONDITIONAL_DERIVATIONS_PROVIDED",
+    "implementation": "ROOT_PENDING",
+    "independent_review": "ROOT_SEPARATE_REVIEW_PENDING",
+    "GL2022_numeric_destruction": "INPUT_PENDING",
+    "physical_consumer": "UNBOUND",
+    "new_no_go_claim": false
+  }
+}

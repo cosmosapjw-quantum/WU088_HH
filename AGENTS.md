@@ -1,3 +1,13 @@
+# Current priority: R6 interval thermal and forced finite-block certificate, 2026-10-27
+
+Read research/provider_registry_molecular_r6_20261027/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, theory/, reviews/ and delivery/. The current user requests all R1-R10 and C1-C10 with actual stage backup and publication. R6 starts at11/28: preserve the 26 inherited node objects and11 completed nodes; add exactly two scoped interval/block theory and code obligations. Actual provider survey reached51repos/2354refs/65pages, all terminal, and732 scoped source blobs at35bb were recovered exactly. Prior R4/R5 missing archives are being backfilled at their immutable source commits with actual current timestamps.
+
+New work is literal native100K Gibbs intervals plus robust full-generator uniformization lower polynomials and forced comparison bounds. Follow the finite new allowance in CONTRACT.json. Reuse all original R5 and prior science without replay; PHYS91 remaining[0,0,0], globalremaining/historicalCPU null. GL2022 destruction and named physical consumer remain unbound. Source graph missing transitions retain MISSING_NOT_ZERO and vibrational label UNSPECIFIED.
+
+The host can execute Python; git CLI networking fails at proxy/DNS while the GitHub connector works. POLICY_OVERRIDE.json permits exact API-tree/blob source packaging; no fabricated local commit identity. Existing authorization covers additive expected-SHA force=false PR150 publication and create-only Dropbox/Drive backup, with original-byte readbacks. No main merge or other-owner mutation. HH_R10=OFF,production=NOT_ISSUED,L4_ready=false; central and physical deltas0.
+
+## Preserved predecessor instructions
+
 # Current priority: R5 adopted science, pending archive delivery, 2026-10-27
 
 Read research/provider_registry_molecular_r5_20261027/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json and delivery/PUBLICATION_INDEX.json. R5 scoped scientific DAG is11/26: the inherited24node objects and9completed nodes remain unchanged, two new dynamic-lift theory/code children are adopted. Actual independent general-n proof review and independent code review passed; the observed long-rational serialization defect was fixed with20targeted checks plus3independent saved-value checks. Do not rerun original188, source41, prototype56, CAS21zeros or inherited54DB/24LTE/249science merely to reestablish this status.
