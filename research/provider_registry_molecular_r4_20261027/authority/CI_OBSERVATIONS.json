@@ -1,0 +1,557 @@
+{
+  "schema": "WU_R4_CI_FAILURE_CLASSIFICATION_V1",
+  "observed_heads_only": true,
+  "records": [
+    {
+      "repository": "cosmosapjw-quantum/rei_bianchi",
+      "head": "12f6007a83a40d76f80574e41a5402676e81fc7a",
+      "run_id": 40443802688,
+      "job_id": 121990131758,
+      "run_url": "https://github.com/cosmosapjw-quantum/rei_bianchi/actions/runs/40443802688",
+      "job_url": "https://github.com/cosmosapjw-quantum/rei_bianchi/actions/runs/40443802688/job/121990131758",
+      "workflow_runs_query": [
+        {
+          "id": 40443802688,
+          "name": "verify",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "failure",
+          "attempt": 1,
+          "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/actions/runs/40443802688"
+        },
+        {
+          "id": 40443797015,
+          "name": "verify",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "failure",
+          "attempt": 1,
+          "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/actions/runs/40443797015"
+        }
+      ],
+      "job": {
+        "id": 121990131758,
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "failure",
+        "run_id": 40443802688,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run cargo fmt --manifest-path rust/rei_microphysics/Cargo.toml --all -- --check",
+            "status": "completed",
+            "conclusion": "failure",
+            "number": 3
+          },
+          {
+            "name": "Run cargo test --manifest-path rust/rei_microphysics/Cargo.toml --workspace --locked",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 4
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          }
+        ]
+      },
+      "decoded_log_characters": 380372,
+      "classification": "Rust cargo fmt --check reports formatting diffs, exits1; cargo test skipped. No numerical test failure or cloud backup failure is established by this run.",
+      "excerpts": [
+        {
+          "line": 228,
+          "text": "2026-10-27T03:22:56.5330188Z ##[group]Run cargo fmt --manifest-path rust/rei_microphysics/Cargo.toml --all -- --check"
+        },
+        {
+          "line": 232,
+          "text": "2026-10-27T03:22:58.7117246Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/flrw_three_probe.rs:1:"
+        },
+        {
+          "line": 310,
+          "text": "2026-10-27T03:22:58.7172143Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/flrw_three_probe.rs:28:"
+        },
+        {
+          "line": 468,
+          "text": "2026-10-27T03:22:58.7260794Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/flrw_three_probe.rs:74:"
+        },
+        {
+          "line": 477,
+          "text": "2026-10-27T03:22:58.7263919Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/he_rct_probe.rs:1:"
+        },
+        {
+          "line": 603,
+          "text": "2026-10-27T03:22:58.7314392Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/he_rct_probe.rs:49:"
+        },
+        {
+          "line": 641,
+          "text": "2026-10-27T03:22:58.7331253Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/he_rct_probe.rs:70:"
+        },
+        {
+          "line": 671,
+          "text": "2026-10-27T03:22:58.7881767Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/../src/paired_runtime.rs:1:"
+        },
+        {
+          "line": 4948,
+          "text": "2026-10-27T03:22:59.1777410Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/tests/rux_adapter.rs:21:"
+        },
+        {
+          "line": 4960,
+          "text": "2026-10-27T03:22:59.1779083Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/tests/rux_adapter.rs:33:"
+        },
+        {
+          "line": 4972,
+          "text": "2026-10-27T03:22:59.1913407Z ##[error]Process completed with exit code 1."
+        }
+      ],
+      "full_log_reprinted_or_saved": false,
+      "reruns": 0
+    },
+    {
+      "repository": "cosmosapjw-quantum/rei_bianchi",
+      "head": "fdc782b555885a5a36f68891e943a8d0d498cd35",
+      "run_id": 40444261003,
+      "job_id": 121991632853,
+      "run_url": "https://github.com/cosmosapjw-quantum/rei_bianchi/actions/runs/40444261003",
+      "job_url": "https://github.com/cosmosapjw-quantum/rei_bianchi/actions/runs/40444261003/job/121991632853",
+      "workflow_runs_query": [
+        {
+          "id": 40444261003,
+          "name": "verify",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "failure",
+          "attempt": 1,
+          "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/actions/runs/40444261003"
+        },
+        {
+          "id": 40444257290,
+          "name": "verify",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "failure",
+          "attempt": 1,
+          "url": "https://github.com/cosmosapjw-quantum/rei_bianchi/actions/runs/40444257290"
+        }
+      ],
+      "job": {
+        "id": 121991632853,
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "failure",
+        "run_id": 40444261003,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run cargo fmt --manifest-path rust/rei_microphysics/Cargo.toml --all -- --check",
+            "status": "completed",
+            "conclusion": "failure",
+            "number": 3
+          },
+          {
+            "name": "Run cargo test --manifest-path rust/rei_microphysics/Cargo.toml --workspace --locked",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 4
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          }
+        ]
+      },
+      "decoded_log_characters": 380435,
+      "classification": "Rust cargo fmt --check reports formatting diffs, exits1; cargo test skipped. C5 later remains unexecuted at20b9160.",
+      "excerpts": [
+        {
+          "line": 229,
+          "text": "2026-10-27T03:27:55.8910746Z ##[group]Run cargo fmt --manifest-path rust/rei_microphysics/Cargo.toml --all -- --check"
+        },
+        {
+          "line": 233,
+          "text": "2026-10-27T03:28:03.1787593Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/flrw_three_probe.rs:1:"
+        },
+        {
+          "line": 311,
+          "text": "2026-10-27T03:28:03.1844049Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/flrw_three_probe.rs:28:"
+        },
+        {
+          "line": 469,
+          "text": "2026-10-27T03:28:03.1931260Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/flrw_three_probe.rs:74:"
+        },
+        {
+          "line": 478,
+          "text": "2026-10-27T03:28:03.1933856Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/he_rct_probe.rs:1:"
+        },
+        {
+          "line": 604,
+          "text": "2026-10-27T03:28:03.1980213Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/he_rct_probe.rs:49:"
+        },
+        {
+          "line": 642,
+          "text": "2026-10-27T03:28:03.1997980Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/he_rct_probe.rs:70:"
+        },
+        {
+          "line": 672,
+          "text": "2026-10-27T03:28:03.3481656Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/examples/../src/paired_runtime.rs:1:"
+        },
+        {
+          "line": 4949,
+          "text": "2026-10-27T03:28:04.4937060Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/tests/rux_adapter.rs:21:"
+        },
+        {
+          "line": 4961,
+          "text": "2026-10-27T03:28:04.4938785Z Diff in /home/runner/work/rei_bianchi/rei_bianchi/rust/rei_microphysics/tests/rux_adapter.rs:33:"
+        },
+        {
+          "line": 4973,
+          "text": "2026-10-27T03:28:04.5109965Z ##[error]Process completed with exit code 1."
+        }
+      ],
+      "full_log_reprinted_or_saved": false,
+      "reruns": 0
+    },
+    {
+      "repository": "cosmosapjw-quantum/rec_bianchi",
+      "head": "22fde058e6b7a8a431915cf6f8826b67b2e6f01d",
+      "run_id": 40443051429,
+      "job_id": 121987682751,
+      "run_url": "https://github.com/cosmosapjw-quantum/rec_bianchi/actions/runs/40443051429",
+      "job_url": "https://github.com/cosmosapjw-quantum/rec_bianchi/actions/runs/40443051429/job/121987682751",
+      "workflow_runs_query": [
+        {
+          "id": 40443051429,
+          "name": "verify-durable-backup",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "failure",
+          "attempt": 1,
+          "url": "https://github.com/cosmosapjw-quantum/rec_bianchi/actions/runs/40443051429"
+        }
+      ],
+      "job": {
+        "id": 121987682751,
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "failure",
+        "run_id": 40443051429,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run python -m pip install --upgrade pip",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run python -m pip install -e '.[test]'",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Record numerical runtime dispatch",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Smoke-import every package module from the committed tree",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Run python scripts/verify_repo.py --quick",
+            "status": "completed",
+            "conclusion": "failure",
+            "number": 8
+          },
+          {
+            "name": "Run pytest -q",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 9
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 17
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 18
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 19
+          }
+        ]
+      },
+      "decoded_log_characters": 3574331,
+      "classification": "verify_repo.py --quick fails committed_feature_range whitespace/EOF check; import/runtime steps pass; pytest skipped. Workflow title verify-durable-backup is not evidence of cloud backup loss.",
+      "excerpts": [
+        {
+          "line": 406,
+          "text": "2026-10-27T03:14:58.7537459Z ##[group]Run python scripts/verify_repo.py --quick"
+        },
+        {
+          "line": 407,
+          "text": "2026-10-27T03:14:58.7537787Z \u001b[36;1mpython scripts/verify_repo.py --quick\u001b[0m"
+        },
+        {
+          "line": 445,
+          "text": "2026-10-27T03:15:00.9947501Z research/rec_bianchi_escape_moments_20261022/FROZEN_CONTRACT.md:125: new blank line at EOF."
+        },
+        {
+          "line": 446,
+          "text": "2026-10-27T03:15:00.9947979Z research/rec_bianchi_escape_moments_20261022/HANDOFF_KO.md:83: new blank line at EOF."
+        },
+        {
+          "line": 447,
+          "text": "2026-10-27T03:15:00.9948413Z research/rec_bianchi_escape_moments_20261022/RUN_COMMANDS.md:45: new blank line at EOF."
+        },
+        {
+          "line": 448,
+          "text": "2026-10-27T03:15:00.9948868Z research/rec_bianchi_escape_moments_20261022/THEORY.md:238: new blank line at EOF."
+        },
+        {
+          "line": 449,
+          "text": "2026-10-27T03:15:00.9949352Z research/rec_bianchi_escape_moments_20261022/provenance/BACKUP_SYNTHESIS_KO.md:3: trailing whitespace."
+        },
+        {
+          "line": 451,
+          "text": "2026-10-27T03:15:00.9950374Z research/rec_bianchi_escape_moments_20261022/provenance/BACKUP_SYNTHESIS_KO.md:4: trailing whitespace."
+        },
+        {
+          "line": 10511,
+          "text": "2026-10-27T03:15:01.5045514Z research/rec_line_source_20261023/results/resume001/plot_native_saved_state.csv:81: trailing whitespace."
+        },
+        {
+          "line": 10513,
+          "text": "2026-10-27T03:15:01.5046567Z research/rec_line_source_20261023/results/resume001/plot_native_saved_state.csv:82: trailing whitespace."
+        },
+        {
+          "line": 10521,
+          "text": "2026-10-27T03:15:01.5057006Z ##[error]Process completed with exit code 1."
+        }
+      ],
+      "full_log_reprinted_or_saved": false,
+      "reruns": 0
+    },
+    {
+      "repository": "cosmosapjw-quantum/rec_bianchi",
+      "head": "6d0ddf5f575616babd049638294b28bd5f4d31a5",
+      "run_id": 40444586094,
+      "job_id": 121992707891,
+      "run_url": "https://github.com/cosmosapjw-quantum/rec_bianchi/actions/runs/40444586094",
+      "job_url": "https://github.com/cosmosapjw-quantum/rec_bianchi/actions/runs/40444586094/job/121992707891",
+      "workflow_runs_query": [
+        {
+          "id": 40444586094,
+          "name": "verify-durable-backup",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "failure",
+          "attempt": 1,
+          "url": "https://github.com/cosmosapjw-quantum/rec_bianchi/actions/runs/40444586094"
+        }
+      ],
+      "job": {
+        "id": 121992707891,
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "failure",
+        "run_id": 40444586094,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run python -m pip install --upgrade pip",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run python -m pip install -e '.[test]'",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Record numerical runtime dispatch",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Smoke-import every package module from the committed tree",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Run python scripts/verify_repo.py --quick",
+            "status": "completed",
+            "conclusion": "failure",
+            "number": 8
+          },
+          {
+            "name": "Run pytest -q",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 9
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 17
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 18
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 19
+          }
+        ]
+      },
+      "decoded_log_characters": 3577037,
+      "classification": "Same quick whitespace/EOF gate fails, including inherited files and new source-synthesis survey EOF lines. Do not attribute every reported line to old changes. Pytest skipped.",
+      "excerpts": [
+        {
+          "line": 406,
+          "text": "2026-10-27T03:31:18.7458690Z ##[group]Run python scripts/verify_repo.py --quick"
+        },
+        {
+          "line": 407,
+          "text": "2026-10-27T03:31:18.7458933Z \u001b[36;1mpython scripts/verify_repo.py --quick\u001b[0m"
+        },
+        {
+          "line": 450,
+          "text": "2026-10-27T03:31:20.2577603Z research/rec_bianchi_escape_moments_20261022/FROZEN_CONTRACT.md:125: new blank line at EOF."
+        },
+        {
+          "line": 451,
+          "text": "2026-10-27T03:31:20.2577932Z research/rec_bianchi_escape_moments_20261022/HANDOFF_KO.md:83: new blank line at EOF."
+        },
+        {
+          "line": 452,
+          "text": "2026-10-27T03:31:20.2578241Z research/rec_bianchi_escape_moments_20261022/RUN_COMMANDS.md:45: new blank line at EOF."
+        },
+        {
+          "line": 453,
+          "text": "2026-10-27T03:31:20.2578563Z research/rec_bianchi_escape_moments_20261022/THEORY.md:238: new blank line at EOF."
+        },
+        {
+          "line": 454,
+          "text": "2026-10-27T03:31:20.2578906Z research/rec_bianchi_escape_moments_20261022/provenance/BACKUP_SYNTHESIS_KO.md:3: trailing whitespace."
+        },
+        {
+          "line": 456,
+          "text": "2026-10-27T03:31:20.2579738Z research/rec_bianchi_escape_moments_20261022/provenance/BACKUP_SYNTHESIS_KO.md:4: trailing whitespace."
+        },
+        {
+          "line": 10528,
+          "text": "2026-10-27T03:31:20.6085652Z research/rec_source_synthesis_20261027/survey/literature/SURVEY_FINDINGS_KO.md:94: new blank line at EOF."
+        },
+        {
+          "line": 10529,
+          "text": "2026-10-27T03:31:20.6085853Z research/rec_source_synthesis_20261027/survey/repositories/ROOT_SCOPE_AND_ASSEMBLY_CONTRACT.md:40: new blank line at EOF."
+        },
+        {
+          "line": 10531,
+          "text": "2026-10-27T03:31:20.6095711Z ##[error]Process completed with exit code 1."
+        }
+      ],
+      "full_log_reprinted_or_saved": false,
+      "reruns": 0
+    }
+  ],
+  "scope": "Existing Actions metadata/jobs/logs read-only. No CI repair or execution. Source acceptance, formatting gates and storage delivery remain separate."
+}

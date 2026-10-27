@@ -1,3 +1,15 @@
+# Current priority: molecular provider state lift R4, 2026-10-27 UTC
+
+Continue research/provider_registry_molecular_r4_20261027/CONTRACT.json, README_KO.md, DAG.json, WORKFLOW_RECORD.json, reviews/ and delivery/. The user explicitly requests physmath-research-loop1.0.0 theory R1-R10 plus coding C1-C10 after actual cross-repo/conversation/backup survey, with per-stage publication, dual backup and copyable next-thread handoff. Scope is actual LiH/HD formation/destruction sources, state-aware integer event projections and native source-fit implementation; source and consumer acceptance remain separate.
+
+Preserve R1/R2/R3 inputs, fixed34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad handoff and all completed calculations. R3 target6 remains28/28 original listed directions with primary-source references. Its actual physical normalization, covariance and MeV consumer bindings remain open. Reuse unchanged finite compiler249 evidence and R1 adapter; the new6 candidate columns and source-native fit diagnostics have a separate bounded changed-input contract. Do not infer a physical rate/Q or consumer from source rows, exact integers or fit residuals.
+
+Before each new node refresh AGENTS, local/remote HEAD, parallel owner branches and actual backup receipts. Current R4 DAG adds4explicit scoped child contracts to preserved20nodes: initial5/24strict COMPLETE;2implementation-only PASS nodes remain separate. Central88nodes are separate: strict18/88 versus historic declared scoped27/88 and unmerged working32/88. Never conflate these denominators or physical readiness. Parallel work is owned by its existing author; fresh SHA governs adoption.
+
+PHYS91 primary/reference/Wolfram remaining stay0; historical global CPU/money/remaining staynull. New bounded source checks and one symbolic Wolfram request do not reset or transfer old budgets. HH_R10=OFF, production=NOT_ISSUED and L4_ready=false. Automatic additive publication and Dropbox/Drive backup are explicitly authorized in this session. Use expected-SHA non-force updates to PR150 branch; no main merge. Each R_i/C_i pair has a shared actual checkpoint source ZIP and dual-provider receipt; final full source and subsequent delivery metadata identities remain separate.
+
+## Preserved R3 and earlier instructions
+
 # Current priority: EXFOR target6 source-reference closure R3, 2026-10-27 UTC
 
 Continue from research/provider_registry_exfor_target6_20261027/HANDOFF_KO.md, REPORT_KO.md, SCIENTIFIC_ADMISSION.json, DAG.json, EXECUTION_LEDGER.json, reviews/ and delivery/. The fixed handoff at34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad, R1/R2 scientific payloads and their prior delivery records remain immutable history. The target6 numerical-source dependency described in the preserved R2 priority is now closed by actual official EXFOR TABLE rows.
