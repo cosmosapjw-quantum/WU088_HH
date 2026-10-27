@@ -10,7 +10,7 @@ Primary는 **237/237 PASS**, 최초 독립 reference는 **726/727 PASS·1 FAIL �
 
 이번 변화는 과거 forcing이 거친 혼합을 상계 적분 안에 보존하는 것이다. R6의 네 시간창 인증, R7의 비선형 두 성분 비교식과 저장된 전체 구간 상계를 조합했다. 새 생성자·반응률·Gibbs 인증과 새 ODE 적분은 **0회**다. 실제 HD 소비자·native reactive array·밀도/clock 결속은 아래 §8의 입력 의무로 유지한다.
 
-**전달 상태:** S01–S09의 게시·이중 원본 바이트 검증 완료. 이론 R1–R9 및 코딩 C1–C9는18/20 완료이며, S10 보고서·handoff의 실제 게시와 백업을 마감 중이다. 최종 metadata 갱신은 실제 S10 영수증을 확인한 뒤 이 문장과 §7에 반영한다.
+**전달 상태:** S01–S10의 게시와 Drive·Dropbox 원본 바이트 검증을 모두 완료했다. 이론 R1–R10은10/10, 코딩 C1–C10은10/10이며 workflow20/20이다. 과학 DAG17/32와 이 workflow 완료 수는 별개다. 최종 metadata source에는 실제 S10 영수증을 포함하며, 그 보존본 자신의 전달 영수증은 외부 최종 영수증으로 제공한다.
 
 ## 2. 최신 조사에서 확인한 범위와 연구 방향
 
@@ -196,7 +196,7 @@ Runner SHA256 `219825e3786085951e456cb7408044598bc30166f5decee5669bc27c4147998d`
 
 세 Python 과학 실행의 실제 CPU 합은 **4.320964초**이며 import와 직렬화를 포함한다. 그림 후처리와 CAS는 별도다. CAS wall 시간을 CPU로 대체하지 않는다. 원래 R8 primary/reference 및 이전 R6/R7/PHYS91 예산은 소진 상태를 유지했고, 표적 보완의 별도 1회 allowance도 사용했다. 전체 과거 CPU와 전역 잔여 예산은 `null`이며 추정하지 않는다. [실행 장부][ledger] [보완 영수증][scalarprocess]
 
-S01–S09의 source commit과 단계 ZIP을 게시했으며 Drive·Dropbox에서 실제 원본 바이트를 다시 받아 SHA256과 크기를 대조했다. 최초 reference가 실패한 S07도 원본 실패 결과와 비용을 그대로 보존했다. 각 R_i/C_i 쌍은 하나의 공유 S_i checkpoint로 게시·백업했다. Archive 범위는 R4–R8 분자 leaf, AGENTS와 지정 workflow이며 전체 저장소 이력은 별도다. [전체 게시·백업 색인][delivery]
+S01–S10의 source commit과 단계 ZIP을 게시했으며 Drive·Dropbox에서 실제 원본 바이트를 다시 받아 SHA256과 크기를 대조했다. 최초 reference가 실패한 S07도 원본 실패 결과와 비용을 그대로 보존했다. 각 R_i/C_i 쌍은 하나의 공유 S_i checkpoint로 게시·백업했다. Archive 범위는 R4–R8 분자 leaf, AGENTS와 지정 workflow이며 전체 저장소 이력은 별도다. [전체 게시·백업 색인][delivery]
 
 | 단계 | 고정 source commit | 완료/전체 DAG | 실제 이중 보존 상태 |
 |---|---|---:|---|
@@ -209,7 +209,7 @@ S01–S09의 source commit과 단계 ZIP을 게시했으며 Drive·Dropbox에서
 | S07 | `b87ea61ab2d5` | 15/32 | [Drive 원본](https://drive.google.com/file/d/1RoF5ffwHyFyu00MHPlNBOs3RXFGfaCTE/view) · SHA256/bytes 일치 |
 | S08 | `ade11fe31248` | 15/32 | [Drive 원본](https://drive.google.com/file/d/1JjHuO0ca2XVoskTJxQ_N3Y3wectiod_I/view) · SHA256/bytes 일치 |
 | S09 | `eb437ab5ec60` | 17/32 | [Drive 원본](https://drive.google.com/file/d/118Vg_ppWpIuMQ_VnjsRB7ElIZT1koIPM/view) · SHA256/bytes 일치 |
-| S10 | 해당 source는 실제 delivery/S10.json에 결속 | 17/32 | 보고서·handoff 게시와 이중 보존 처리 중 |
+| S10 | `73f628736df3` | 17/32 | [Drive 원본](https://drive.google.com/file/d/104pqHMeL5lyyOWZQFTCED3E0zUmNRDmF/view) · SHA256/bytes 일치 |
 
 최종 metadata source archive는 S10 영수증을 포함한 별도 snapshot이다. 그 archive 자신의 업로드·readback 영수증은 자기 source에 포함될 수 없으므로 외부 최종 영수증으로 제공한다. 과학 payload, source commit, ZIP SHA256을 서로 대체하지 않는다.
 

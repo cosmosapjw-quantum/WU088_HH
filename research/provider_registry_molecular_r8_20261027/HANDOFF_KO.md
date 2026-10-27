@@ -2,9 +2,9 @@
 
 ## 현재 채택 상태와 문서 시점
 
-이 문서는 **S09 과학 채택과 실제 이중 백업을 마친 시점**에 작성했다. 과학 DAG는 **17/32**, 이론·코딩 workflow는 **18/20**이다. 기존 30개 노드 객체를 그대로 유지하고 `WU_CAUSAL_LAG_KERNEL_THEORY_R8`, `WU_CAUSAL_LAG_KERNEL_CODE_R8` 두 노드를 조건부 범위에서 채택했다. R10/C10 보고·인계·최종 전달은 작성 중이다.
+이 문서는 **S10까지 실제 게시·이중 원본 바이트 검증을 마친 최종 상태**를 반영한다. 과학 DAG는 **17/32**, 이론·코딩 workflow는 **20/20**이다. 기존 30개 노드 객체를 그대로 유지하고 `WU_CAUSAL_LAG_KERNEL_THEORY_R8`, `WU_CAUSAL_LAG_KERNEL_CODE_R8` 두 노드를 조건부 범위에서 채택했다. R1–R10과 C1–C10은 각각10/10 완료했다.
 
-실제 채택 커밋은 `eb437ab5ec60d3b503be115c5560a85172502aba`, tree는 `770b16c1e85aa02a1d0d52b59a8c1fbf1a43cc3f`이다. 48개 파일로 고정한 과학 payload SHA256은 `9fb1e28631426a8e891ae59ee74441e79edb0473b8c78daf51a935627cf37485`다. S10 및 최종 metadata의 정확한 source·전달 상태는 이후의 `delivery/PUBLICATION_INDEX.json`, 실제 단계 영수증과 외부 최종 영수증을 따른다. 이 작성본에는 미래 커밋이나 20/20 완료를 선기입하지 않는다. 최종 archive 자신의 전달 영수증은 그 archive의 source snapshot 외부에 있으며 자기 참조 해시를 만들지 않는다.
+실제 채택 커밋은 `eb437ab5ec60d3b503be115c5560a85172502aba`, tree는 `770b16c1e85aa02a1d0d52b59a8c1fbf1a43cc3f`이다. 48개 파일로 고정한 과학 payload SHA256은 `9fb1e28631426a8e891ae59ee74441e79edb0473b8c78daf51a935627cf37485`다. S10 source는 `73f628736df3d57e2b549c9077c7d0b4d8d5cfe6`이며, 정확한 전달 기록은 `delivery/S10.json`과 `delivery/PUBLICATION_INDEX.json`에 있다. 최종 metadata archive의 source와 전달 식별자는 외부 최종 영수증을 따른다. 최종 archive 자신의 전달 영수증은 그 archive의 source snapshot 외부에 있으며 자기 참조 해시를 만들지 않는다.
 
 ## 재사용할 연구 성과
 
@@ -20,14 +20,14 @@ Python 과학 프로세스 전체 CPU 합계는 import·직렬화를 포함하�
 
 branch-head 조사는 2026-10-27T14:49:08.099Z–14:49:29.871Z에 **51개 repo·2,362개 ref·65페이지**를 열람하여 51개 모두 마지막 페이지에 도달했다. 공개 35개 repo/1,879개 ref, 비공개 16개/483개 ref이며 비공개 개별 식별자는 게시하지 않았다. 공개 baseline 대비 새 ref 5개·변경 head 5개를 실제 source와 종합했다. 모든 branch의 내용·tag·숨은 ref·전체 history를 읽었다는 의미는 아니다. 다른 전체 대화 회수는 **0건**, 당시 첨부 20개의 현재 원본 바이트 검사는 불가했으며 이전 R7의 SHA/PDF 근거를 원래 범위에서 재사용했다.
 
-S01–S09는 단계별 Git 게시와 Drive·Dropbox 원본 ZIP 바이트 검증을 완료했다. S07의 실패 결과도 포함된다. S09 ZIP은 **3,936,526 bytes**, SHA256 `da750dba2355cea91f0053b3684569f6865c7cda1097729000dfe78e84d73dab`다. Drive ID는 `118Vg_ppWpIuMQ_VnjsRB7ElIZT1koIPM`, Dropbox ID는 `id:BSpOijBcT10AAAAAAEDIYw`다. ZIP 범위는 R4–R8 molecular leaves와 AGENTS·workflow이며 전체 저장소 history가 아니다. 현재 metadata 전달 allowance는 9/11 사용, S10과 최종 전달용 2회가 남아 있다. 과학 실행 예산과 구별한다.
+S01–S10은 단계별 Git 게시와 Drive·Dropbox 원본 ZIP 바이트 검증을 완료했다. S07의 실패 결과도 포함된다. S09 ZIP은 **3,936,526 bytes**, SHA256 `da750dba2355cea91f0053b3684569f6865c7cda1097729000dfe78e84d73dab`다. Drive ID는 `118Vg_ppWpIuMQ_VnjsRB7ElIZT1koIPM`, Dropbox ID는 `id:BSpOijBcT10AAAAAAEDIYw`다. ZIP 범위는 R4–R8 molecular leaves와 AGENTS·workflow이며 전체 저장소 history가 아니다. 이 최종 metadata source 작성 시점에 metadata 원본 검증은10/11회 사용했고, 자체 FINAL archive 전달용1회가 예약돼 있다. 실제11번째 결과는 외부 최종 영수증을 따른다. 과학 실행 예산은 모두 소진 상태다.
 
 ## 다음 대화에 복사할 인계문
 
 ```text
 $physmath-research-loop의 사용자 지정 내장 규약 1.0.0으로 cosmosapjw-quantum/WU088_HH를 이어가라. 대상 leaf는 research/provider_registry_molecular_r8_20261027이다.
 
-작성 시점의 실제 채택은 S09이며 DAG17/32, workflow18/20이다. R10/C10 및 이후 최종 metadata 완료 여부는 실제 delivery/PUBLICATION_INDEX.json, 단계 영수증, 외부 최종 영수증을 먼저 확인하라. 완료된 전달을 반복하지 말라. science source, 현재 HEAD, stage ZIP, final metadata archive의 식별자를 구분하라.
+실제 과학 채택은 S09이며 DAG17/32, workflow20/20이다. R1–R10/C1–C10과 S01–S10 이중 원본 백업은 완료됐다. 최종 metadata archive는 실제 delivery/PUBLICATION_INDEX.json, 단계 영수증과 외부 최종 영수증의 식별자를 확인하라. 완료된 전달을 반복하지 말라. science source, 현재 HEAD, stage ZIP, final metadata archive의 식별자를 구분하라.
 
 먼저 AGENTS.md, REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, followup/NEXT_INPUT_CONTRACT.json, delivery/PUBLICATION_INDEX.json을 읽어라. 조사 근거는 authority/INVENTORY_DELTA.json, SYNTHESIS_KO.md, BACKUP_CONTEXT_INTAKE.json, LITERATURE.json이다.
 
@@ -35,6 +35,10 @@ $physmath-research-loop의 사용자 지정 내장 규약 1.0.0으로 cosmosapjw
 R7 baseline commit=c1badb7de44131715a4998d76515506da5573707
 R8 scientific adoption commit=eb437ab5ec60d3b503be115c5560a85172502aba
 R8 adoption tree=770b16c1e85aa02a1d0d52b59a8c1fbf1a43cc3f
+S10 source=73f628736df3d57e2b549c9077c7d0b4d8d5cfe6
+S10 ZIP SHA256=f916abb7b6c69247abae0f486d72eaff3882017ddf6464a0a551e70d45c6e9d9
+S10 Drive=104pqHMeL5lyyOWZQFTCED3E0zUmNRDmF
+S10 Dropbox=id:BSpOijBcT10AAAAAAEDIZg
 48-file scientific payload SHA256=9fb1e28631426a8e891ae59ee74441e79edb0473b8c78daf51a935627cf37485
 core SHA256=3a415e8ccc76669a95bec30aa52fc1f1ad867cff1fd9fcca66734fb71872fba3
 proof SHA256=ad538b788403b425ffbcf5d5b29fe5d4a5ba09603fb36009fc85885e98cba8c2
