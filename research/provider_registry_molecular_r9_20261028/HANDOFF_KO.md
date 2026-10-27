@@ -12,7 +12,7 @@ Draft PR: https://github.com/cosmosapjw-quantum/WU088_HH/pull/150
 Base: research/program-expansion-20261025
 Leaf: research/provider_registry_molecular_r9_20261028
 Scientific admission S09: f8b4ea63381fcdab91577c31005bc85e66789141
-S10 source: S10 source의 containing commit; FINAL metadata에서 실제 값 기록
+S10 source: 771506e72a48ed3b338cf4711da31ddfee36fde1
 Scientific payload: 35 files, SHA256 739f4225be52598eb99e90ddfbc6c749390335c90918add47b6ff3d080f6d1c3
 Core: cc4e31a7dc72ceddb7ebba5f8f6ef64fb2e3325143a6abb9018a6a07c8129e1d
 Primary result: 494fad7b2195dfbf16857901127cdaa676d83cb1beafbf2c081122f99ba2d8d7
@@ -38,6 +38,6 @@ HH_R10=OFF; production=NOT_ISSUED; L4_ready=false; physical/central delta0. Actu
 
 ## 저장 확인
 
-이 S10 source를 작성하는 시점에는 S01–S09의9개 단계 ZIP과18개 provider 원본 검증이 완료됐다. S10 자체의 게시·archive·양 provider 원본 검증이 다음 동작이다. 최종 metadata source에서 그 실제 영수증을 반영한다.
+S01–S10의10개 단계 ZIP과 Drive/Dropbox20개 원본 대조가 완료됐다. 이 최종 metadata source는 S10까지의 실제 영수증을 포함한다. 이 source 자체의 FINAL ZIP·두 provider ACK·원본 SHA는 아카이브 생성 후 PR150과 종료 메시지에 별도로 게시한다. 자기 archive의 SHA/ACK를 그 archive 안에 사후 삽입하지 않는다.
 
 S10과FINAL은전달metadata이며과학node를추가하지않는다. 실제원본bytes/SHA가최종receipt에있으면동일archive를다시다운로드하거나완료과학을다시돌릴필요가없다. 필요시저장된source의35-file manifest를읽고각파일bytes/SHA와canonicalpayloadhash를검사하면된다.

@@ -126,7 +126,7 @@ Local exec-server handshake가 실패해 로컬 접근이 중단됐다. 기존 a
 
 각 checkpoint는 actual expected-parent SHA와force=false로 기존research/provider-registry-20261025에 게시했다. PR150은draft이며base는research/program-expansion-20261025를 유지한다. Mainmerge나other-owner writes는0이다.
 
-이 S10 source를 작성하는 시점에는 S01–S09의9개 단계 ZIP과18개 provider 원본 검증이 완료됐다. S10 자체의 게시·archive·양 provider 원본 검증이 다음 동작이다. 최종 metadata source에서 그 실제 영수증을 반영한다.
+S01–S10의10개 단계 ZIP과 Drive/Dropbox20개 원본 대조가 완료됐다. 이 최종 metadata source는 S10까지의 실제 영수증을 포함한다. 이 source 자체의 FINAL ZIP·두 provider ACK·원본 SHA는 아카이브 생성 후 PR150과 종료 메시지에 별도로 게시한다. 자기 archive의 SHA/ACK를 그 archive 안에 사후 삽입하지 않는다.
 
 | 단계 | 단계 종료 절차 | 과학 DAG | 실제 source commit | Drive ZIP 및 양 원본 확인 |
 |---|---:|---:|---|---|
@@ -139,7 +139,7 @@ Local exec-server handshake가 실패해 로컬 접근이 중단됐다. 기존 a
 | S07 / R7·C7 | 14/20 | 17/34 | [1b026536ef2a](https://github.com/cosmosapjw-quantum/WU088_HH/commit/1b026536ef2af0ecbe31ba83335cca1f2b742d09) | [ed1698aebd4c](https://drive.google.com/file/d/1O6SAt-6GWabdJQedVGNGEGeVqPI2494n/view) · 두 원본 일치 |
 | S08 / R8·C8 | 16/20 | 17/34 | [9617c78f4041](https://github.com/cosmosapjw-quantum/WU088_HH/commit/9617c78f4041f72d394d4625d8481e8a5745bddb) | [25b4e141d71f](https://drive.google.com/file/d/1S_CdFUSxkdk_z8RSQ6NQCFdgHwokKuUp/view) · 두 원본 일치 |
 | S09 / R9·C9 | 18/20 | 19/34 | [f8b4ea63381f](https://github.com/cosmosapjw-quantum/WU088_HH/commit/f8b4ea63381fcdab91577c31005bc85e66789141) | [2492bf821959](https://drive.google.com/file/d/1IPTI-LQ3z3nvjd2azBB1JLrbVoll42Ew/view) · 두 원본 일치 |
-| S10 / R10·C10 | 20/20 | 19/34 | 이 S10 source의 containing commit | S10 게시 후 실행·원본 검증 예정 |
+| S10 / R10·C10 | 20/20 | 19/34 | [771506e72a48](https://github.com/cosmosapjw-quantum/WU088_HH/commit/771506e72a48ed3b338cf4711da31ddfee36fde1) | [296822cfef89](https://drive.google.com/file/d/1Lm0rNRN8EGnekfqYAIpOGyTN1Y9QHrTZ/view) · 두 원본 일치 |
 
 Archive scope는R4–R9 연구 leaf+AGENTS+R9workflow다. 전체 repository/history 백업이라고 부르지 않는다. Actions가 각 tracked source의 실제Git blob을 대조하고 ZIPCRC를 확인했다. 이후 Drive와Dropbox의 원본을 각각GET하여 archive bytes와SHA256을 확인했다. Remote copies를 별도 unzip한 것과 byte-identical 결과를 구분한다. 단계 영수증의 원문은delivery/PUBLICATION_INDEX.json,개별Sxx.json에 있다. 파일명 날짜20261028은KST이고 raw execution timestamp는UTC다.
 
