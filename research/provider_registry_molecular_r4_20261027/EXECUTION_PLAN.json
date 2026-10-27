@@ -1,0 +1,19 @@
+{
+  "schema":"WU_R4_CHANGED_INPUT_EXECUTION_PLAN_V1",
+  "source":"sources/MOLECULAR_SOURCE_PACKET.json@40e2fbd73d451c0c8116b4ca9bd4db4d2e43e4cdf8967988a2fea551f99ce35e",
+  "sequence":[
+    {"id":"S01-S02","scope":"authority, original-source recovery, independent literal review","state":"COMPLETE_SCOPED_AND_DUAL_BACKED"},
+    {"id":"S03-S04","scope":"claim alignment, numerical design, exact conditional state-lift derivation and resource contract","state":"AUTHORING_NO_NUMERIC_EXECUTION"},
+    {"id":"S05","scope":"static complete implementation and primary changed-input build","command":"python verification/run_bounded.py --attempt primary01 --kind source_build -- python build_molecular.py","work":"6 new compiler calls,29 native formula samples; no old249 replay"},
+    {"id":"S06","scope":"changed-input contract guards and independent physics review","command":"python verification/run_bounded.py --attempt implementation01 --kind implementation -- python verification/check_implementation.py"},
+    {"id":"S07","scope":"independent source arithmetic/reference and one Wolfram symbolic matrix/lift check","command":"python verification/run_bounded.py --attempt independent01 --kind independent -- python reviews/independent_check.py","independent_reference":"29 Decimal80 formula samples; no author evaluator import"},
+    {"id":"S08","scope":"source residual figure from saved outputs, view actual figure and adopt conditional theory","command":"python verification/run_bounded.py --attempt plot01 --kind plot -- python verification/plot_diagnostics.py"},
+    {"id":"S09","scope":"fresh completed implementation decision; formal theory-to-code map;4newscoped child completion decision"},
+    {"id":"S10","scope":"report, full portable source ZIP, actual dual-byte readback, owner DAG delta and copyable handoff"}
+  ],
+  "resources":{"cpu_cap_s_per_child":30,"wall_cap_s_per_child":120,"memory_MiB":512,"workers":1,"threads":1,"NCP_jobs":0,"new_IVP":0,"new_physical_Q":0,"historical_replay":0},
+  "cost_accounting":"Actual child CPU/wall and output hashes retained. Source preparation/network/delivery/tool costs are separately unmeasured where not available, never zeroed into the old ledger.",
+  "old_budget_preserved":{"PHYS91_primary_remaining":0,"PHYS91_reference_remaining":0,"PHYS91_Wolfram_remaining":0,"global_history_CPU":null,"global_history_money":null,"global_remaining":null},
+  "parallel_owners":{"source_and_theory_author":"provider_rows","physics_review":"molecule_sources","authority_and_independent_implementation_review":"authority_survey","implementation_publication_and_backup":"root"},
+  "first_failure_policy":"Append-only attempts; do not overwrite a failed receipt. A correction requires a concrete changed implementation/input; reuse completed unchanged scientific artifacts."
+}
