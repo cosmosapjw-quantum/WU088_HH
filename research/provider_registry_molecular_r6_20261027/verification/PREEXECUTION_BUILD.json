@@ -1,0 +1,38 @@
+{
+  "schema": "WU_R6_PREEXECUTION_BUILD_V1",
+  "recorded_utc": "2026-10-27T11:45:26.336478+00:00",
+  "status": "PREPARED_STATIC_SYNTAX_CHECKED",
+  "files": [
+    {
+      "path": "src/interval_block.py",
+      "bytes": 22109,
+      "sha256": "dbc4767b31775fb6655a92fb20d299f8bea9578f8340bd7bcff4d4f677cab551",
+      "static_syntax": "AST"
+    },
+    {
+      "path": "verification/run_primary.py",
+      "bytes": 19339,
+      "sha256": "f714ef9bfa96351807911ac13b2524144c7fa52cd0f142bd23834f0edec2c246",
+      "static_syntax": "AST"
+    },
+    {
+      "path": "verification/PRIMARY_INPUT.json",
+      "bytes": 2112,
+      "sha256": "40c059e324783492254831ca110e8d7d9b5e644fd7565eb0c6ad1eab8f3f2f15",
+      "static_syntax": "JSON"
+    },
+    {
+      "path": "verification/REFERENCE_INPUT.json",
+      "bytes": 472,
+      "sha256": "de0c817c082f158bf6219e1e66a2a281204d8af324b8e5e1e083361a4860440c",
+      "static_syntax": "JSON"
+    }
+  ],
+  "production_module_imports_by_implementer": 0,
+  "primary_science_executions": 0,
+  "reference_science_executions": 0,
+  "required_stage_before_first_primary": "Root S05 checkpoint and execution scheduling",
+  "command": "python3 verification/run_primary.py --input verification/PRIMARY_INPUT.json --output raw/PRIMARY_RESULTS.json",
+  "old_science_replayed": 0,
+  "scientific_acceptance": "Not assessed by static syntax inspection."
+}

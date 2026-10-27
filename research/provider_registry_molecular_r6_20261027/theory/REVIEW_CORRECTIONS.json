@@ -1,0 +1,40 @@
+{
+  "schema": "WU_R6_THEORY_REVIEW_CORRECTIONS_V1",
+  "recorded_utc": "2026-10-27T12:15:52.151441+00:00",
+  "original_draft": {
+    "path": "intake/primary_theory/THEORY_CONTRIBUTION_KO.md",
+    "sha256": "2841a91c6f599b423e0658c5a258a409a01df424f1ca59f128737d4babe3314f"
+  },
+  "review": {
+    "path": "reviews/R6_REVIEW.json",
+    "sha256": "7649fed966232724b9bcfcf85254d23fa90699e454483e8e443041b2522f6a4a",
+    "decision_on_original_core_proof": "PASS_SCOPED_GENERAL_N_THEORY"
+  },
+  "formal_proof": {
+    "path": "theory/INTERVAL_BLOCK_PROOF_KO.md",
+    "sha256": "643e9c918353c068e648e5c74290a608b9993be487d7f4773278880db1a7c51c"
+  },
+  "changes": [
+    {
+      "finding": "R6-N1",
+      "section": "5",
+      "status": "APPLIED",
+      "change": "Explicit inherited x0,f,h,d>=0, simplex pi, same prescribed total F, 0<=k,b, and nonnegative comparison initial/upper bounds; denominators>=1.",
+      "truth_conditions": "Preserves admitted R5 positive-system scope; excludes no formerly admitted case."
+    },
+    {
+      "finding": "R6-N2",
+      "sections": [
+        "4.1",
+        "4.2",
+        "5"
+      ],
+      "status": "APPLIED",
+      "change": "Analytical V_n and stored rational Uhat_n are named separately; constant-forcing geometric formulas use their own q and qhat. Section5 U key is mapped to Uhat.",
+      "truth_conditions": "Both upper-bound the residual. With equal nonnegative inputs V_n<=Uhat_n; the analytic formula is not claimed to bound the larger stored sequence."
+    }
+  ],
+  "implementation_appendices": "Sections8-9 connect the existing equations to the current core; they are not additional review findings or a replacement independent C9 review.",
+  "scientific_execution_count": 0,
+  "core_proof_replayed_numerically": false
+}

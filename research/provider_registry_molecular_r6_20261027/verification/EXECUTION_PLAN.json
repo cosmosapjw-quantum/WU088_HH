@@ -1,0 +1,174 @@
+{
+  "schema": "WU_R6_EXECUTION_PLAN_V1",
+  "created_utc": "2026-10-27T12:17:32.187759+00:00",
+  "contract_path": "CONTRACT.json",
+  "contract_sha256": "d5d7ec0f3877d16c1cb2619f2da6d9a3f2900a23221e9a1fe3b0c2fb1bddcc82",
+  "finite_allowance": {
+    "reason": "new user-authorized changed mathematical obligation; no transfer/reset of old allowance",
+    "primary_runs": 1,
+    "primary_CPU_limit_s": 60,
+    "independent_reference_runs": 1,
+    "reference_CPU_limit_s": 60,
+    "wolfram_evaluator_calls": 1,
+    "wolfram_time_limit_s": 30,
+    "max_n": 9,
+    "max_polynomial_degree": 512,
+    "max_dyadic_bits": 768,
+    "max_uniformization_mu": 256,
+    "max_source_block_cases": 8,
+    "fixture_steps_max": 64,
+    "targeted_repairs": "only for a newly observed concrete failure; retain first failure and affected scope",
+    "no_heavy_or_physical_IVP": true,
+    "no_new_Q": true
+  },
+  "old_budget": {
+    "PHYS91_remaining": [
+      0,
+      0,
+      0
+    ],
+    "global_remaining": null,
+    "global_historical_CPU_s": null,
+    "reset_or_transfer": false
+  },
+  "science_executions_at_preparation": 0,
+  "nodes": [
+    {
+      "id": "D1",
+      "task": "Read fixed source/parser and new PRIMARY_INPUT.json; source/schema guards",
+      "depends_on": [],
+      "executor": "primary Python standard-library process"
+    },
+    {
+      "id": "D2",
+      "task": "Exact thermal intervals and direct pair-ratio generator bounds",
+      "depends_on": [
+        "D1"
+      ],
+      "executor": "primary process"
+    },
+    {
+      "id": "D3",
+      "task": "Four fixed source block polynomials and overlap traces",
+      "depends_on": [
+        "D2"
+      ],
+      "executor": "primary process"
+    },
+    {
+      "id": "D4",
+      "task": "Exact primitive/guard/serialization, three forced fixtures, one switched family",
+      "depends_on": [
+        "D1"
+      ],
+      "executor": "same bounded primary process; not a separate execution allowance"
+    },
+    {
+      "id": "D5",
+      "task": "Write actual create-only primary results and CPU/identity receipt",
+      "depends_on": [
+        "D3",
+        "D4"
+      ],
+      "executor": "primary process"
+    },
+    {
+      "id": "D6",
+      "task": "Independent source/Decimal250/matrix-exponential reference",
+      "depends_on": [
+        "D5"
+      ],
+      "executor": "separate independent reference process, one allowance"
+    },
+    {
+      "id": "D7",
+      "task": "One bounded Wolfram changed-identity check",
+      "depends_on": [
+        "D2"
+      ],
+      "executor": "root schedules one evaluator call under contract; prepared exact expressions required"
+    },
+    {
+      "id": "D8",
+      "task": "Independent theory/code review and new-scope decision",
+      "depends_on": [
+        "D5",
+        "D6",
+        "D7"
+      ],
+      "executor": "root plus separate reviewer; review does not create another numerical allowance"
+    }
+  ],
+  "primary": {
+    "status": "PREPARED_NOT_EXECUTED",
+    "working_directory": "this R6 leaf",
+    "command": "python3 verification/run_primary.py --input verification/PRIMARY_INPUT.json --output raw/PRIMARY_RESULTS.json",
+    "source_cases": [
+      {
+        "mu": "8",
+        "N": 64
+      },
+      {
+        "mu": "32",
+        "N": 128
+      },
+      {
+        "mu": "128",
+        "N": 320
+      },
+      {
+        "mu": "256",
+        "N": 512
+      }
+    ],
+    "thermal_bits": 256,
+    "source_polynomial_bits": 512,
+    "synthetic_polynomial_bits": 256,
+    "forced_fixture_count": 3,
+    "forced_steps_each": 8,
+    "switched_fixture_count": 1,
+    "source_H_selection": "H=mu/lambda; lambda from same complete source generator upper exits",
+    "CPU_interrupt_s": 58,
+    "CPU_limit_s": 60,
+    "output_create_only": true,
+    "scientific_dependencies": "standard library and pinned REC parse_hd only; no old diagnostic suite"
+  },
+  "reference": {
+    "status": "PREPARED_SEPARATELY_NOT_EXECUTED",
+    "input": "verification/REFERENCE_INPUT.json",
+    "method": "independent original-byte parser, Decimal 250-digit thermal reference, SciPy expm/expm_multiply, exact Fraction consistency",
+    "source_H_selection": "reuse the same four supplied source blocks; no added source search",
+    "CPU_interrupt_s": 58,
+    "CPU_limit_s": 60,
+    "producer_imported": false,
+    "script_binding": "root must preserve the independently authored current script identity before execution"
+  },
+  "failure_policy": {
+    "retain_first_attempt": true,
+    "classification": [
+      "theory",
+      "numerical",
+      "implementation",
+      "environment",
+      "input_dependency",
+      "permission_policy"
+    ],
+    "targeted_repairs": "Only a newly observed concrete failure may justify an affected-scope repair; no unchanged replay.",
+    "CPU_interrupt": "Persist partial output/error and actual timing; do not infer mathematical failure.",
+    "missing_source": "Keep missing channels/destruction/consumer states explicit; do not fabricate values."
+  },
+  "acceptance": {
+    "thermal": "all source pi intervals positive and coordinate widths below1e-60 under declared literal input",
+    "source_block": "positive nontrivial overlap on the fixed native graph; actual rational matrix/overlap preserved",
+    "forced": "full A and same H binding plus exact coefficient/clock controls and independent references",
+    "code": "no unresolved material finding after independent review",
+    "physical_consumer": false,
+    "release": {
+      "HH_R10": "OFF",
+      "production": "NOT_ISSUED",
+      "L4_ready": false,
+      "central_completion_delta": 0,
+      "physical_admission_delta": 0
+    }
+  }
+}
