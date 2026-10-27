@@ -3,18 +3,43 @@
   "created_utc": "2026-10-27 15:04:20 UTC",
   "primary": {
     "allowed": 1,
-    "consumed": 0,
-    "reserved": 1,
+    "consumed": 1,
+    "reserved": 0,
     "remaining": 0,
-    "status": "SCHEDULED_FIRST_RUN_S06",
-    "CPU_limit_s": 60,
-    "preflight": "raw/PREEXECUTION_FREEZE.json",
-    "static_review": "reviews/C9_PREFLIGHT_REVIEW.json"
+    "status": "success",
+    "source_commit": "72931db38a5dbfc7b12720455c44109039a8f711",
+    "process": {
+      "schema": "WU_R8_ACTUAL_PROCESS_V1",
+      "stage": "S06",
+      "action": "primary",
+      "source_commit": "72931db38a5dbfc7b12720455c44109039a8f711",
+      "command": [
+        "/usr/bin/python3",
+        "research/provider_registry_molecular_r8_20261027/verification/run_primary.py"
+      ],
+      "started_utc": "2026-10-27T15:44:32.218168+00:00",
+      "finished_utc": "2026-10-27T15:44:36.031275+00:00",
+      "executions": 1,
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 3.786282,
+      "OS_system_CPU_s": 0.020996,
+      "OS_CPU_s": 3.8072779999999997,
+      "wall_s": 3.808825982000002,
+      "CPU_limit_s": 60,
+      "includes_imports_and_serialization": true,
+      "old_science_replay": 0
+    }
   },
   "reference": {
     "allowed": 1,
     "consumed": 0,
-    "remaining": 1
+    "reserved": 1,
+    "remaining": 0,
+    "status": "SCHEDULED_FIRST_REFERENCE_S07",
+    "CPU_limit_s": 60,
+    "primary_sha256": "520110d1cae1677491aecd7216621c25f1098470c939ee027d5df3bde183686b",
+    "new_ODE_runs": 0
   },
   "CAS": {
     "allowed": 1,
@@ -84,13 +109,44 @@
       "provider_downloads": 2,
       "status": "PASS",
       "source": "delivery/S05.json"
+    },
+    {
+      "id": "S06_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "source": "delivery/S06.json"
     }
   ],
-  "scientific_runs": [],
+  "scientific_runs": [
+    {
+      "schema": "WU_R8_ACTUAL_PROCESS_V1",
+      "stage": "S06",
+      "action": "primary",
+      "source_commit": "72931db38a5dbfc7b12720455c44109039a8f711",
+      "command": [
+        "/usr/bin/python3",
+        "research/provider_registry_molecular_r8_20261027/verification/run_primary.py"
+      ],
+      "started_utc": "2026-10-27T15:44:32.218168+00:00",
+      "finished_utc": "2026-10-27T15:44:36.031275+00:00",
+      "executions": 1,
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 3.786282,
+      "OS_system_CPU_s": 0.020996,
+      "OS_CPU_s": 3.8072779999999997,
+      "wall_s": 3.808825982000002,
+      "CPU_limit_s": 60,
+      "includes_imports_and_serialization": true,
+      "old_science_replay": 0
+    }
+  ],
   "metadata_transport_allowance": {
     "total": 11,
-    "used": 5,
-    "remaining": 6
+    "used": 6,
+    "remaining": 5
   },
   "CAS_targeted_export_repair": {
     "allowed": 1,
