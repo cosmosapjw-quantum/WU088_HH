@@ -22,9 +22,9 @@
 `u'=v'=-sum_i(a_i^+-a_i^-)`, `w'=sum_i(a_i^+-a_i^-)`,
 `x_i'=sum_j K_ij*x_j+a_i^+-a_i^-`.
 
-coarse RHS는 `(-1,-1,1,1)*(kf*ubar*vbar-(d·pi)*wbar*Xbar)`다. 생산 residual 식이나 생산 coefficient 함수를 RHS로 복사하지 않는다. 고정 positive pi, 명시적 simplex alpha, 비음수 d, column-conservative Metzler K와 동일 초기 H/D/charge를 exact input 단계에서 검사한다. coarse 초기값을 fine aggregate로 자동 대체하거나 pi/alpha를 자동 정규화하지 않는다.
+coarse RHS는 `(-1,-1,1,1)*((kf+coarse_kf_offset)*ubar*vbar-(d·pi)*wbar*Xbar)`다. offset은 frozen input에 명시되어 있으며 같은-source 사례에서는 0, 별도 source-defect 사례에서는 1/10000이다. 해당 defect의 실제 값 `offset*ubar*vbar`를 공급된 상계와 비교한다. 생산 residual 식이나 생산 coefficient 함수를 RHS로 복사하지 않는다. 고정 positive pi, 명시적 simplex alpha, 비음수 d, column-conservative Metzler K와 동일 초기 H/D/charge를 exact input 단계에서 검사한다. coarse 초기값을 fine aggregate로 자동 대체하거나 pi/alpha를 자동 정규화하지 않는다.
 
-`solve_ivp(method='DOP853', rtol=1e-11, atol=1e-13)`로 fine와 coarse를 각각 푼다. primary가 고정한 3 또는 4 blocks에서 block당 33 또는 65 저장 시각을 평가한다. solver의 adaptive internal steps는 이 고정 시각 출력용이며 tolerance/입력의 사후 튜닝을 하지 않는다.
+`solve_ivp(method='DOP853', rtol=1e-11, atol=1e-13)`로 fine와 coarse를 각각 푼다. primary가 고정한 3 또는 4 blocks에서 block당 65 저장 시각을 평가한다. primary의 pointwise queries는 block당 5개(또는 33/65개)일 수 있다. 모든 65시각에서는 생산 constant whole-block upper 및 독립 expm으로 계산한 pointwise 비교해를 검사하고, primary가 저장한 공통 시각에서는 생산 pointwise upper도 직접 검사한다. solver의 adaptive internal steps는 이 고정 시각 출력용이며 tolerance/입력의 사후 튜닝을 하지 않는다.
 
 각 시각의 `R=||x-pi*sum(x)||_1`, `E=|sum(x)-Xbar|`를 생산 whole-block upper와 비교하고, block 끝에서는 더 강한 endpoint upper도 별도로 비교한다. `||Px-ybar||_1=4E`, H 핵수 `2u+w+X`, D 핵수 `v+X`, 전하 `v+w`의 fine/coarse 보존, 비음수성, 선언한 whole-block density box 포함 여부를 확인한다. positive lower box를 사용하는 경우 그 근거가 입력에 있어야 하며 유한 sample 포함만으로 전체 구간 enclosure를 발급하지 않는다.
 
@@ -40,4 +40,4 @@ coarse RHS는 `(-1,-1,1,1)*(kf*ubar*vbar-(d·pi)*wbar*Xbar)`다. 생산 residual
 
 출력에는 각 analytic/matrix case 결과, HD fixture와 solver diagnostics, 저장 clocks·fine/coarse 상태·R/E·상계, invariants와 density-box 진단, late-forcing 비교, 적용한 허용 오차 및 source/fixture scope를 담는다. 한 case가 실패하면 나머지 허용된 같은 실행의 진단은 저장하되 전체 status를 PASS로 바꾸지 않는다. 첫 결과를 덮어쓰는 자동 repair/run loop는 없다. 명시적 산출 파일 존재 시 기본적으로 덮어쓰지 않는다.
 
-실행 전 최종 primary schema와 fixture 목록을 구현 담당자·root와 맞춘다. 그 후 입력과 코드 identity를 고정한 한 번의 reference 실행만 수행한다.
+고정 primary 입력 SHA256은 `3ff9c2535e5c0ce6ffa5e9671de15aad6649e0996cd9b9e275cc290facd8d330`이다. 5 affine 및 4 HD case를 전부 검사한다. native 9-state에는 saved R6 `native_mu_256` H/rho와 K interval을 사용하며 source값은 재계산하지 않는다. 실행 전 최종 output schema를 맞추고 입력·코드 identity를 고정한 한 번의 reference 실행만 수행한다.

@@ -1,7 +1,7 @@
 {
   "schema": "WU_R7_INDEPENDENT_REFERENCE_INPUT_V1",
   "contract_id": "WU_NONLINEAR_EVENT_FEEDBACK_R7",
-  "status": "PREEXECUTION_SCHEMA_COORDINATION",
+  "status": "FROZEN_LITERAL_INPUT_PENDING_PRIMARY_OUTPUT_SCHEMA",
   "input_role": "Fixed new mathematical controls and explicitly conditional nonlinear HD fixtures; no physical consumer admission",
   "execution": {
     "authorized_runs": 1,
@@ -23,7 +23,8 @@
     "rtol": 1e-11,
     "atol": 1e-13,
     "blocks_allowed": [3, 4],
-    "saved_clocks_per_block_allowed": [33, 65],
+    "saved_ODE_clocks_per_block": 65,
+    "primary_pointwise_clocks_per_block_allowed": [5, 33, 65],
     "adaptive_tolerance_changes": false,
     "scientific_role": "Numerical corroboration of general proof, not rigorous interval IVP enclosure"
   },
@@ -38,6 +39,12 @@
     "interpretation": "Tolerances apply only to binary64 independent corroboration; exact rational production proof and physical uncertainty remain separate"
   },
   "required_matrix_controls": ["zero", "nilpotent", "diagonal_negative_d", "coupled_negative_d"],
+  "primary_input_identity": {
+    "path_relative_to_this_input": "PRIMARY_INPUT.json",
+    "sha256": "3ff9c2535e5c0ce6ffa5e9671de15aad6649e0996cd9b9e275cc290facd8d330",
+    "required_affine_ids": ["zero", "constant_forcing", "nilpotent", "damped_diagonal", "coupled_negative_d"],
+    "required_HD_ids": ["two_state_no_reaction", "two_state_nonlinear", "two_state_coarse_source_defect", "saved_native_nine_state_K_conditional_feedback"]
+  },
   "matrix_control_definition": {
     "zero": "B=0; T=diag(rho,1), q=H*g",
     "nilpotent": "a=c=d=0; T=[[rho,b*H],[0,1]], q=[H*g0+b*H^2*g1/2,H*g1]",
@@ -54,8 +61,14 @@
     "destruction": "explicit nonnegative vector with same state count",
     "initial_compatibility": "Equal H_nuc=2u+w+X, D_nuc=v+X, charge=v+w in fine and coarse",
     "observable_errors": {"R": "sum(abs(x-pi*sum(x)))", "E": "abs(sum(x)-Xbar)", "coarse_l1": "4*E"},
-    "coefficients": "Production B,g use whole-block box with documented input/proof, including negative damping if declared",
+    "coarse_source": "Use exact declared coarse_kf_offset: coarse formation=(kf+offset)*ubar*vbar; its scalar defect bound is explicit",
+    "coefficients": "Production B,g use whole-block box with documented input/proof, including negative damping and nonzero coarse defect where declared",
     "physical_consumer_admitted": false
+  },
+  "native_reference_source": {
+    "path_relative_to_this_input": "../../provider_registry_molecular_r6_20261027/raw/PRIMARY_RESULTS.json",
+    "sha256": "1a3b55f7c14a64a10a651de2df7b7f7d2df24d0b9e809b729f32d73377c90e84",
+    "use": "Read saved K_lo/K_hi and exact H/rho_upper/clock only; no old science replay"
   },
   "late_forcing_control": {
     "gamma": "5",

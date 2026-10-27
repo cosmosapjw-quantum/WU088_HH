@@ -87,6 +87,29 @@ def required(obj: dict, *names: str) -> Any:
     raise ValueError("Required field absent: " + "/".join(names))
 
 
+def frozen_primary_input(config: dict, primary: dict) -> dict:
+    identity = config["primary_input_identity"]
+    path = (Path(config["_input_directory"])/identity["path_relative_to_this_input"]).resolve()
+    if sha256(path) != identity["sha256"]:
+        raise ValueError("Frozen primary input SHA256 mismatch")
+    fixed = json.loads(path.read_text())
+    for collection, required_ids in (("affine_cases", identity["required_affine_ids"]), ("hd_cases", identity["required_HD_ids"])):
+        actual = required(primary, collection)
+        by_id = {str(x["id"]): x for x in actual}
+        if len(by_id) != len(actual) or set(by_id) != set(required_ids):
+            raise ValueError(f"Missing/extra/duplicate frozen {collection} IDs")
+        for expected in fixed[collection]:
+            saved = by_id[expected["id"]]
+            saved = saved.get("fixture", saved.get("inputs", saved))
+            keys = ("B", "g", "H", "rho", "w0") if collection == "affine_cases" else (
+                "K", "pi", "alpha", "kf", "destruction", "coarse_kf_offset", "H", "rho",
+                "initial_fine", "initial_coarse", "density_box", "q_norm_upper", "branch_distance_upper", "coarse_scalar_defect_upper")
+            for key in keys:
+                if required(saved, key) != expected[key]:
+                    raise ValueError(f"Frozen input literal changed: {collection}/{expected['id']}/{key}")
+    return fixed
+
+
 class Recorder:
     def __init__(self, input_data: dict, result: dict, output_file: Any):
         self.config = input_data
@@ -176,8 +199,8 @@ def inspect_block(rec: Recorder, case: dict, label: str, *, require_clocks: bool
     rec.close(label+": only initial residual receives rho", savedT, causal_saved)
     rec.close(label+": saved endpoint arithmetic", saved_endpoint, savedT @ w0 + savedq)
     interior = case.get("interior", out.get("interior", []))
-    if require_clocks and len(interior) not in rec.config["solver"]["saved_clocks_per_block_allowed"]:
-        raise ValueError(f"{label}: expected fixed 33/65 saved clocks")
+    if require_clocks and len(interior) not in rec.config["solver"]["primary_pointwise_clocks_per_block_allowed"]:
+        raise ValueError(f"{label}: expected fixed 5/33/65 primary pointwise clocks")
     point_records = []
     for point in interior:
         u = float(rational(required(point, "u")))
@@ -247,8 +270,8 @@ def invariant_exact(state: list[Fraction], *, fine: bool) -> tuple[Fraction, Fra
     return 2*u+w+X, v+X, v+w
 
 
-def hd_input(case: dict) -> dict:
-    f = case.get("fixture", case.get("inputs", case))
+def hd_input(case: dict, defaults: dict) -> dict:
+    f = {**defaults, **case.get("fixture", case.get("inputs", case))}
     piq = exact_vector(required(f, "pi"))
     n = len(piq)
     if n not in (2, 9) or min(piq) <= 0 or sum(piq) != 1:
@@ -256,10 +279,12 @@ def hd_input(case: dict) -> dict:
     alphaq = exact_vector(required(f, "alpha"), n)
     dq = exact_vector(required(f, "destruction", "d"), n)
     Kq = exact_matrix(required(f, "K"), n, n)
-    fineq = exact_vector(required(f, "fine_initial", "z0", "fine0"), n+3)
-    coarseq = exact_vector(required(f, "coarse_initial", "ybar0", "coarse0"), 4)
+    fineq = exact_vector(required(f, "initial_fine", "fine_initial", "z0", "fine0"), n+3)
+    coarseq = exact_vector(required(f, "initial_coarse", "coarse_initial", "ybar0", "coarse0"), 4)
     kfq = rational(required(f, "kf"))
-    if sum(alphaq) != 1 or min(alphaq+dq+fineq+coarseq+[kfq]) < 0:
+    offsetq = rational(required(f, "coarse_kf_offset"))
+    defectq = rational(required(f, "coarse_scalar_defect_upper"))
+    if sum(alphaq) != 1 or min(alphaq+dq+fineq+coarseq+[kfq, kfq+offsetq, defectq]) < 0:
         raise ValueError("Invalid explicit alpha, destruction, rate or initial state")
     for j in range(n):
         if sum(Kq[i][j] for i in range(n)) != 0:
@@ -276,7 +301,8 @@ def hd_input(case: dict) -> dict:
     return {"raw": f, "n": n, "piq": piq, "Kq": Kq, "invariants_exact": Ifine,
             "K": np.array(Kq, dtype=float), "pi": np.array(piq, dtype=float),
             "alpha": np.array(alphaq, dtype=float), "d": np.array(dq, dtype=float),
-            "kf": float(kfq), "fine0": np.array(fineq, dtype=float), "coarse0": np.array(coarseq, dtype=float),
+            "kf": float(kfq), "coarse_kf_offset": float(offsetq), "coarse_scalar_defect_upper": float(defectq),
+            "fine0": np.array(fineq, dtype=float), "coarse0": np.array(coarseq, dtype=float),
             "box": {key: np.array(bounds, dtype=float) for key, bounds in boxq.items()}}
 
 
@@ -303,22 +329,66 @@ def invariant_values(states: np.ndarray, *, fine: bool) -> np.ndarray:
     return np.column_stack((2*u+w+X, v+X, v+w))
 
 
+def nominal_binding(rec: Recorder, f: dict, blocks: list[dict], label: str) -> dict:
+    """Bind the reused nominal certificate; never recompute old R6 science."""
+    if f["n"] == 2:
+        gamma = float(f["Kq"][0][1]+f["Kq"][1][0])
+        for j, block in enumerate(blocks):
+            _, _, H, rho, _ = block_inputs(block)
+            rec.upper(label+f": exact two-state nominal contraction block{j}", np.array([math.exp(-gamma*H)]), np.array([rho]))
+        return {"kind": "new mathematical two-state fixture", "zero_sum_decay_gamma": gamma,
+                "rho_reference": "exp(-(K01+K10)*H)", "physical_consumer_admitted": False}
+    source = rec.config["native_reference_source"]
+    path = (Path(rec.config["_input_directory"])/source["path_relative_to_this_input"]).resolve()
+    source_sha = sha256(path)
+    if source_sha != source["sha256"]:
+        raise ValueError("Saved native R6 evidence differs from pinned identity")
+    saved = json.loads(path.read_text())
+    lo, hi = saved["graph"]["K_lo"], saved["graph"]["K_hi"]
+    if any(not rational(lo[i][j]) <= f["Kq"][i][j] <= rational(hi[i][j]) for i in range(9) for j in range(9)):
+        raise ValueError("Native fixture K is outside the reused saved interval generator family")
+    reuse = required(f["raw"], "reuse")
+    if reuse["sha256"] != source_sha or reuse["rho_and_H_reused_without_R6_execution"] is not True:
+        raise ValueError("Native reuse provenance does not bind unchanged saved H/rho")
+    matched = []
+    for block in blocks:
+        data = block.get("inputs", block)
+        H, rho = rational(required(data, "H")), rational(required(data, "rho"))
+        identities = [x["id"] for x in saved["graph"]["blocks"] if rational(x["H"]) == H and rational(x["rho_upper"]) == rho]
+        if len(identities) != 1:
+            raise ValueError("Native H/rho does not bind one exact reused R6 source block")
+        if identities[0] != reuse["graph_block_id"]:
+            raise ValueError("Native source block ID disagrees with exact H/rho identity")
+        matched.append(identities[0])
+    rec.check(label+": exact saved native nominal certificate binding", True, source_sha256=source_sha,
+              block_ids=matched, K_family="K_lo <= K <= K_hi with exact zero column sums", clock=saved["graph"]["clock"])
+    return {"kind": "reused saved native excitation family", "source_path": str(path), "source_sha256": source_sha,
+            "block_ids": matched, "inherited_generator_clock": saved["graph"]["clock"],
+            "declared_fixture_clock": required(f["raw"], "clock"), "time_unit": required(f["raw"], "time_unit"),
+            "R6_scientific_reexecution": False,
+            "destruction_and_formation_role": "new declared synthetic fixture; GL2022 consumer unbound"}
+
+
 def independent_hd(rec: Recorder, case: dict, index: int) -> dict:
     label = "HD:"+str(case.get("id", case.get("case_id", index)))
-    f = hd_input(case)
+    f = hd_input(case, rec.config["_primary_metadata_defaults"])
     blocks = required(case, "blocks")
     if len(blocks) not in rec.config["solver"]["blocks_allowed"]:
         raise ValueError("HD fixture must use fixed 3/4 blocks")
+    binding = nominal_binding(rec, f, blocks, label)
     inspected = [inspect_block(rec, b, f"{label}:block{j}", require_clocks=True) for j, b in enumerate(blocks)]
     durations = [x["H"] for x in inspected]
     boundaries = np.concatenate(([0.0], np.cumsum(durations)))
-    local_clocks = [np.array([p["u"] for p in b["points"]]) for b in inspected]
+    clock_count = int(rec.config["solver"]["saved_ODE_clocks_per_block"])
+    if clock_count not in (33, 65):
+        raise ValueError("Fixed independent ODE clocks must be 33 or65 per block")
+    local_clocks = [np.linspace(0, b["H"], clock_count) for b in inspected]
     times = np.concatenate([boundaries[j]+c if j == 0 else boundaries[j]+c[1:] for j, c in enumerate(local_clocks)])
     settings = rec.config["solver"]
     fine = solve_ivp(lambda t, z: fine_rhs(t, z, f["K"], f["alpha"], f["kf"], f["d"]),
                      (0.0, float(boundaries[-1])), f["fine0"], method=settings["method"],
                      rtol=settings["rtol"], atol=settings["atol"], t_eval=times)
-    coarse = solve_ivp(lambda t, y: coarse_rhs(t, y, f["kf"], float(f["d"]@f["pi"])),
+    coarse = solve_ivp(lambda t, y: coarse_rhs(t, y, f["kf"]+f["coarse_kf_offset"], float(f["d"]@f["pi"])),
                        (0.0, float(boundaries[-1])), f["coarse0"], method=settings["method"],
                        rtol=settings["rtol"], atol=settings["atol"], t_eval=times)
     rec.check(label+": independent solvers completed", fine.success and coarse.success,
@@ -331,6 +401,9 @@ def independent_hd(rec: Recorder, case: dict, index: int) -> dict:
     r = z[:, 3:]-X[:, None]*f["pi"][None, :]
     eta = X-ybar[:, 3]
     errors = np.column_stack((np.sum(np.abs(r), axis=1), np.abs(eta)))
+    defect = f["coarse_kf_offset"]*ybar[:, 0]*ybar[:, 1]
+    rec.upper(label+": actual scalar coarse source defect", np.abs(defect),
+              np.full(len(times), f["coarse_scalar_defect_upper"]), trajectory=True)
     invariants = np.array(f["invariants_exact"], dtype=float)
     invfine, invcoarse = invariant_values(z, fine=True), invariant_values(ybar, fine=False)
     inv_allowance = float(rec.config["comparison_tolerances"]["conservation_absolute"])
@@ -354,31 +427,40 @@ def independent_hd(rec: Recorder, case: dict, index: int) -> dict:
     cursor = 0
     block_summaries = []
     for j, (raw, checked) in enumerate(zip(blocks, inspected)):
-        count = len(checked["points"])
+        count = clock_count
         indices = np.arange(cursor, cursor+count)
         actual = errors[indices]
+        point_indices = np.array([round(p["u"]/checked["H"]*(count-1)) for p in checked["points"]], dtype=int)
+        rec.close(label+f": block{j} primary clocks align with independent clocks", local_clocks[j][point_indices], [p["u"] for p in checked["points"]])
         saved = np.array([p["production_upper"] for p in checked["points"]])
-        rec.upper(label+f": block{j} actual R/E at interior clocks", actual, saved, trajectory=True)
+        rec.upper(label+f": block{j} actual R/E at primary interior clocks", actual[point_indices], saved, trajectory=True)
+        dense_comparison = []
+        for u in local_clocks[j]:
+            Wu, qu = augmented_reference(checked["B"], checked["g"], float(u))
+            dense_comparison.append(Wu@checked["w0"]+qu)
+        dense_comparison = np.array(dense_comparison)
+        rec.upper(label+f": block{j} actual R/E versus independent pointwise comparison at65clocks", actual, dense_comparison, trajectory=True)
         rec.upper(label+f": block{j} actual endpoint R/E", actual[-1], checked["production_endpoint_upper"], trajectory=True)
         rec.upper(label+f": block{j} start error enclosed by w0", actual[0], checked["w0"], trajectory=True)
         out = block_output(raw)
-        if "whole_block_upper" in out:
-            whole = array(out["whole_block_upper"])
-            rec.upper(label+f": block{j} constant whole-block enclosure", actual, np.broadcast_to(whole, actual.shape), trajectory=True)
+        whole = array(required(out, "whole_block_upper"))
+        rec.upper(label+f": block{j} constant whole-block enclosure at65clocks", actual, np.broadcast_to(whole, actual.shape), trajectory=True)
         if j:
             rec.upper(label+f": block{j} propagated certified initial error", inspected[j-1]["production_endpoint_upper"], checked["w0"])
         block_summaries.append({"index": j, "t0": boundaries[j], "H": checked["H"], "rho": checked["rho"],
                                 "saved_clock_indices": indices, "actual_endpoint": actual[-1],
                                 "production_endpoint_upper": checked["production_endpoint_upper"],
-                                "production_pointwise_upper": saved})
+                                "primary_pointwise_clock_indices": point_indices, "production_pointwise_upper": saved,
+                                "independent_pointwise_comparison_at_saved_clocks": dense_comparison,
+                                "production_whole_block_upper": whole})
         cursor += count-1
     return {"id": label, "states": f["n"], "scope": required(f["raw"], "source_scope", "scope"),
             "physical_consumer_admitted": False, "invariants_exact": f["invariants_exact"],
             "solver": {"method": settings["method"], "rtol": settings["rtol"], "atol": settings["atol"],
                        "fine_nfev": fine.nfev, "coarse_nfev": coarse.nfev},
             "clock": required(f["raw"], "clock"), "times": times, "fine_states": z, "coarse_states": ybar,
-            "R_E": errors, "fine_invariants": invfine, "coarse_invariants": invcoarse, "blocks": block_summaries,
-            "nominal_certificate": f["raw"].get("nominal_certificate")}
+            "R_E": errors, "actual_coarse_scalar_defect": defect, "fine_invariants": invfine, "coarse_invariants": invcoarse, "blocks": block_summaries,
+            "nominal_certificate": binding}
 
 
 def late_forcing(rec: Recorder, primary: dict) -> dict:
@@ -414,6 +496,7 @@ def main() -> int:
     args = parser.parse_args()
     start_cpu, start_wall = time.process_time(), time.perf_counter()
     config = json.loads(args.input.read_text())
+    config["_input_directory"] = str(args.input.resolve().parent)
     actual_primary_sha = sha256(args.primary)
     if actual_primary_sha != args.primary_sha256:
         raise ValueError("Primary artifact SHA256 differs from frozen command binding")
@@ -439,6 +522,9 @@ def main() -> int:
             consumed = math.ceil(time.process_time())
             resource.setrlimit(resource.RLIMIT_CPU, (consumed+limit, consumed+limit+1))
             primary = json.loads(args.primary.read_text())
+            fixed = frozen_primary_input(config, primary)
+            config["_primary_metadata_defaults"] = fixed["metadata_defaults"]
+            result["frozen_primary_input_sha256"] = config["primary_input_identity"]["sha256"]
             affine = required(primary, "affine_cases", "matrix_controls")
             hd = required(primary, "hd_cases", "hd_fixtures")
             result["affine_cases"] = analytic_controls(rec, affine)
