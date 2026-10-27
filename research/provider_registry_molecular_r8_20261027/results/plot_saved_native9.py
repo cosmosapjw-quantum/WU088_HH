@@ -147,22 +147,22 @@ def main():
     axes[1].text(0.035, 0.055, r"$E(0)=0$ omitted on the log axis", transform=axes[1].transAxes,
                  fontsize=9, color="#505862", bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.92, "pad": 2})
     fig.suptitle("Conditional nominal native 9-state fixture", x=0.085, y=0.955, ha="left", fontsize=19, fontweight="semibold")
-    fig.text(0.085, 0.895, "Three retained macroblocks | two Volterra passes | saved data only", fontsize=11.5, color="#4A5562")
+    fig.text(0.085, 0.895, "Three retained macroblocks | two Volterra passes | conditional method accepted", fontsize=11.5, color="#4A5562")
     fig.text(0.085, 0.845, "Markers certify or sample individual clocks; only the dashed R7 steps bound complete blocks.", fontsize=10, color="#4A5562")
     handles, labels = axes[0].get_legend_handles_labels()
     fig.legend(handles, labels, loc="lower left", bbox_to_anchor=(0.075, 0.115), ncol=3,
                frameon=False, fontsize=9.5, columnspacing=1.7, handletextpad=0.6, labelspacing=0.85)
-    fig.text(0.085, 0.075, "Diagnostic figure: independent precision-closeness repair pending; no final adoption claimed.", fontsize=9.2, color="#5A4553")
+    fig.text(0.085, 0.075, "C9 accepted conditionally; scalar repair 24/24 PASS. Original reference first FAIL preserved.", fontsize=9.2, color="#5A4553")
     fig.text(0.085, 0.038, "No physical time calibration. Saved numerical samples are corroboration, not rigorous ODE enclosures. Full coarse L1 error = 4E.", fontsize=8.9, color="#505862")
     svg_path = RESULTS / "NATIVE9_BOUNDS.svg"
     fig.savefig(svg_path, format="svg", metadata={"Date": None,
         "Title": "Conditional nominal native 9-state: retained error bounds and numerical samples",
-        "Description": "R8 endpoint markers; source R7 query and contracted endpoint markers; saved numerical samples; R7 whole-block steps. Reference precision-closeness repair pending."})
+        "Description": "R8 endpoint markers; source R7 query and contracted endpoint markers; saved numerical samples; R7 whole-block steps. C9 accepts the conditional method after 24/24 exact scalar repair checks; the original reference first FAIL is preserved. No physical consumer admission."})
     plt.close(fig)
     svg = svg_path.read_bytes()
     report = {
         "schema": "WU_R8_SAVED_NATIVE9_PLOT_PROVENANCE_V1",
-        "status": "DIAGNOSTIC_PLOT_REFERENCE_PRECISION_CLOSENESS_REPAIR_PENDING",
+        "status": "C9_ACCEPTED_SCOPED_CONDITIONAL_ORIGINAL_REFERENCE_FAIL_PRESERVED",
         "case_id": CASE,
         "script": {"path": "results/plot_saved_native9.py", "sha256": sha(Path(__file__).read_bytes())},
         "inputs": provenance,
@@ -182,7 +182,18 @@ def main():
             "zero_masks": zero_masks},
         "scope": {"postprocessing_only": True, "new_ODE_runs": 0, "new_bound_evaluations": 0,
                   "scientific_runner_imports": 0, "scientific_core_imports": 0, "physical_consumer_admitted": False,
-                  "final_adoption_claimed": False, "reference_status_at_authoring": "Initial R8 reference precision-closeness failure pending targeted repair"},
+                  "final_adoption_claimed": True, "adoption_scope": "Conditional lag-kernel theory and code only; no physical admission",
+                  "reference_status_at_authoring": "Original 726/727 PASS and 1 FAIL preserved; exact scalar re-adjudication 24/24 PASS; final C9 accepted"},
+        "final_review_binding": {"source_commit": "eb437ab5ec60d3b503be115c5560a85172502aba",
+            "C9": "PASS", "material_findings": 0, "targeted_scalar_checks": "24/24 PASS",
+            "original_reference_status": "FAIL_PRESERVED", "scientific_DAG": {"complete": 17, "total": 32}},
+        "previous_postprocessing_preserved": {
+            "svg_sha256": "1813c529179757e77b8f0bbd7927d3723c1540d755e36bbafbb1d19261a8e007",
+            "script_sha256": "0f6097cfa655db366c3fb93cbf5648a3b7e0c63b781a60d7238a50641cbf5c6c",
+            "provenance_sha256": "8d59bf77c100fd920c0453eaa56fb74248a31981a073e4fbd26ab0a61c1607b6",
+            "actual_postprocess_CPU_s_before_provenance_write": 4.317593619,
+            "preservation": "Original S08/S09 Git source history; prior cost is retained separately",
+            "change": "Final conditional-adoption status text and provenance only; plotted data, styling, and bounds unchanged"},
         "actual_postprocess_CPU_s_before_provenance_write": time.process_time(),
         "CPU_includes_interpreter_and_plotting_imports": True,
         "actual_postprocess_wall_s_before_provenance_write": time.monotonic() - WALL_START,
