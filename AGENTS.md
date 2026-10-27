@@ -1,3 +1,17 @@
+# Current priority: R6 adopted13/28, S10 delivery closeout, 2026-10-27
+
+Read research/provider_registry_molecular_r6_20261027/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json and delivery/PUBLICATION_INDEX.json. R6 adds two adopted interval/block theory and code nodes to unchanged26inherited objects:13/28. Scientific admission S09 is7168ad4807dd1e02aef852bcf428df75b222f0de. Payload SHA256796f399586916847844c7040082a1dce308035d1bce74bf805246574f98b94b4; coreSHA256dbc4767b31775fb6655a92fb20d299f8bea9578f8340bd7bcff4d4f677cab551. Frozen S10source and later metadata HEAD are distinct actual receipts.
+
+Reuse primary76/76, independent109/0, general-n proof review, finalC9 and qualifiedCAS23zeros+warnings. Two input guards were fixed before the first run and their actual runtime rejection passed. exp(0)=[1,1] boundary is exact; no warning-freeCAS claim. No material code finding remains. R6 newprimary/reference/CASremaining=[0,0,0], PHYS91remaining=[0,0,0], globalremaining/fullhistoricalCPU=null. No completed-science replay, budgetreset or transfer.
+
+R4S10+R5S01..S10 legacy11sourceZIPs are now actual dualoriginal-byte verified(22copies), with originalsourcecommit/tree/modes and currentcreationtimes. delivery/LEGACY_RECOVERY_CLOSURE.json closes their former archive delivery dependencies without altering oldscientificpayloads. R6verified stagearchives=9/10 at this snapshot. Metadata and scientific admission remain separate.
+
+Follow followup/NEXT_INPUT_CONTRACT.json: actualGL2022 native reactive array or namedphysicalconsumer x0/pi/piDot/K/d/h/f/density/clock plus interval-wide bounds. Currentnative100K literalgraph usesvUNSPECIFIED and MISSING_NOT_ZERO. rho must bind the fullresetgeneratorA andsameH. Physicalmeasurementuncertainty is not arithmeticroundoff. HH_R10=OFF,production=NOT_ISSUED,L4_ready=false,central/physicaldelta0.
+
+Initialsurvey51repos/2354refs plusfinalREI/BASS/CR changedHEADreadbacks are preserved. Recsource d6dbe39a unchanged; finalownerpins fbb55bcd(REI),6bf4a5d9(BASS),8482ed83(CR) supply no observed newWUmolecular consumer/destruction packet. Preserve their owner results and budgetholds. Originalotherconversationthreads were unavailable; summaries retain that status. Existingadditivepublication/backupauthorization persists:expectedSHA,force=false,draftPR150,no mainmerge. Rootconnector writes and exactAPI-tree source packaging were actual working paths.
+
+## Preserved R6 entry and predecessor instructions
+
 # Current priority: R6 interval thermal and forced finite-block certificate, 2026-10-27
 
 Read research/provider_registry_molecular_r6_20261027/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, theory/, reviews/ and delivery/. The current user requests all R1-R10 and C1-C10 with actual stage backup and publication. R6 starts at11/28: preserve the 26 inherited node objects and11 completed nodes; add exactly two scoped interval/block theory and code obligations. Actual provider survey reached51repos/2354refs/65pages, all terminal, and732 scoped source blobs at35bb were recovered exactly. Prior R4/R5 missing archives are being backfilled at their immutable source commits with actual current timestamps.

@@ -1,7 +1,9 @@
-# R6: 열평형 구간과 유한 블록 동적 인증
+# WU088_HH R6: literal thermal intervals and forced block certificates
 
-이 연구 단위는 고정된 HD 자료의 100 K 열평형 가중치를 유리수 구간으로 둘러싸고, finite-block Markov 수축과 강제항 적분을 결합하는 실행 가능한 오차 상계를 구성한다.
+**Scientific DAG13/28.** The26inherited node objects remain unchanged; two new scoped theory/code nodes are complete. Read [REPORT_KO.md](REPORT_KO.md), [HANDOFF_KO.md](HANDOFF_KO.md), [SCIENTIFIC_ADMISSION.json](SCIENTIFIC_ADMISSION.json), and [delivery/PUBLICATION_INDEX.json](delivery/PUBLICATION_INDEX.json).
 
-기준은 R5 최종 커밋 `35bb7f296abc8ff6c8b38c2c08cc14dd498d4c99`이다. 상속된 26개 DAG 노드는 그대로 유지하며 두 개의 새 의무를 추가해 시작 상태는 **11/28**이다. 작업 단계 R1–R10 및 C1–C10의 20개 완료 수는 연구 DAG와 별도다.
+The callable Python implementation constructs outward Gibbs intervals and positive uniformization lower polynomials, then supplies forced endpoint and whole-block M/U/E bounds. Native100K HD–paraH2 graph:9states,9supplied downward pairs. Primary76/76 and independent109/0; Wolfram23zero residuals with actual warnings preserved. New scientific executions1primary+1reference+1CAS, oldscience replay0.
 
-`CONTRACT.json`은 새 계산의 허용 범위와 수용 기준을, `authority/`는 실제 최신 조사와 원본 복구를 고정한다. 압축된 `.json.gz.b64` 자료는 base64 디코드 후 gzip 해제하면 원래 JSON 바이트를 복원할 수 있다. 물리 파괴율과 named consumer는 후속 입력 계약으로 남는다.
+The raw exact rationals and independent proof/review are authoritative. Source literal arithmetic, physical data uncertainty and actual consumer admission have distinct scopes. Actual GL2022 reactive numbers and named consumer/density inputs remain unbound. The next input contract specifies them.
+
+To inspect saved integrity without a scientific replay, run `python3 verification/verify_saved_manifest.py`. The final source ZIP is checked with `python3 delivery/verify_archive.py ARCHIVE.zip --sha256 EXPECTED_SHA256`. The primary/reference runners are create-only; reuse their saved results unless a new changed-input execution is authorized and contracted.
