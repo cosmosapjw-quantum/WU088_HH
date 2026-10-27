@@ -6,7 +6,7 @@
 
 현재 원시 실행 결과는 primary 144/144 PASS, independent reference 376/376 PASS, CAS 24/24 잔차 0이다. CAS의 Power::infy, Infinity::indet, General::messages 경고와 원인 NOT_ESTABLISHED를 보존한다. 일반 증명·exact production upper·독립 binary64 reference·경고가 있는 CAS는 각각의 근거 범위로 재사용한다. 실제 명령, CPU 측정의 구분과 결과 hash는 EXECUTION_LEDGER.json 및 raw 결과에 있다.
 
-이 후속 문서 작성 시 실제 DAG는 13/30이고 최종 채택은 root/독립 심사자의 결정 대기 상태였다. 최종 게시 시에는 실제 DAG·admission·delivery receipt를 기준으로 이 snapshot을 갱신한다. 문서 작성자가 미래 HEAD나 완료 수를 추정하지 않는다.
+초안의 DAG snapshot은13/30이었다. Root가 독립 일반 정리 심사·실제144/144 및376/376 결과·최종 C9 PASS를 근거로 이론과 코드를 채택하여 현재 DAG는 **15/30**이다. 실제 과학 채택 commit은 `05aba84023630e17ca005df5d5b595c374fa540f`이며, 게시·백업 원본 receipt는 delivery/PUBLICATION_INDEX.json을 따른다. 과학 payload와 물리 입력 대기 상태를 구별한다.
 
 기계가 읽는 필수 입력과 실행 조건은 같은 디렉터리의 NEXT_INPUT_CONTRACT.json에 있다.
 
