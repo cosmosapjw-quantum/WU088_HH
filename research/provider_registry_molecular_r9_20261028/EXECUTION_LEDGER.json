@@ -17,19 +17,32 @@
   },
   "metadata_original_byte_pairs": {
     "allowed": 11,
-    "consumed": 0,
-    "remaining": 11
+    "consumed": 1,
+    "remaining": 10
   },
   "old_remaining": "R8all0;R7/R6/PHYS91each[0,0,0]",
   "global_remaining": null,
   "full_historical_CPU": null,
   "scientific_runs": [],
-  "metadata_actions": [],
+  "metadata_actions": [
+    {
+      "id": "S01_DUAL_ORIGINAL_HASH",
+      "scientific": false,
+      "source": "delivery/S01.json"
+    }
+  ],
   "failures": [
     {
       "class": "environment",
       "status": "fallback_selected",
       "evidence": "exec-server initialize handshake timeout; no usable execution environment; remote ref unchanged"
+    },
+    {
+      "class": "environment/transport",
+      "status": "CLOSED_BY_FRESH_FILE_REFERENCE",
+      "target": "Initial S01 Drive source download",
+      "observed": "HTTP403 with expired transient download URL; refreshed artifact reference then immediately uploaded successfully",
+      "scientific_executions": 0
     }
   ],
   "old_science_replay": 0
