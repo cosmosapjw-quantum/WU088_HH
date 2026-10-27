@@ -17,8 +17,8 @@
   },
   "metadata_original_byte_pairs": {
     "allowed": 11,
-    "consumed": 3,
-    "remaining": 8
+    "consumed": 4,
+    "remaining": 7
   },
   "old_remaining": "R8all0;R7/R6/PHYS91each[0,0,0]",
   "global_remaining": null,
@@ -39,6 +39,11 @@
       "id": "S03_DUAL_ORIGINAL_HASH",
       "scientific": false,
       "source": "delivery/S03.json"
+    },
+    {
+      "id": "S04_DUAL_ORIGINAL_HASH",
+      "scientific": false,
+      "source": "delivery/S04.json"
     }
   ],
   "failures": [
@@ -53,6 +58,33 @@
       "target": "Initial S01 Drive source download",
       "observed": "HTTP403 with expired transient download URL; refreshed artifact reference then immediately uploaded successfully",
       "scientific_executions": 0
+    },
+    {
+      "class": "delegated connector transfer",
+      "status": "OBJECT_CREATION_UNKNOWN_NO_ACK",
+      "observations": [
+        {
+          "agent": "r9_recovery_intake",
+          "attempted_call": "create_tree",
+          "calls": 1,
+          "aborted_after_s": 1037.6
+        },
+        {
+          "agent": "r9_recovery_implementation",
+          "attempted_call": "create_tree",
+          "calls": 1,
+          "aborted_after_s": 1046.6
+        },
+        {
+          "agent": "r9_recovery_review",
+          "attempted_call": "create_tree",
+          "calls": 1,
+          "aborted_after_s": 996.6
+        }
+      ],
+      "commits_refs_PR_by_agents": 0,
+      "scientific_executions": 0,
+      "repair": "Stop stalled child writes; exact source transfer by messages and parent-owned connector publication; do not claim unknown objects absent or successful"
     }
   ],
   "old_science_replay": 0

@@ -1,0 +1,34 @@
+{
+  "schema": "WU_R9_ROOT_DERIVATION_CHECK_V1",
+  "independence": "Parent same-context derivation check; independent subagent review recorded separately",
+  "proof_sha256": "b84da224515cf9ab7d9e39c3766332066c348f304bd2e8d63ddec940123c8ea3",
+  "checked": [
+    {
+      "object": "R9.6 lag indices",
+      "reason": "For t in I_n and s in I_j with j<n, t-s >= (n-j-1)delta; nonincreasing h gives the stated whole-cell past bound."
+    },
+    {
+      "object": "R9.7 signed d",
+      "reason": "Past exponential integral attains its maximum at the current cell left endpoint for d<=0 and right endpoint for d>0; partial current integral grows with elapsed length for either sign."
+    },
+    {
+      "object": "R9.9-R9.11 positive inverse",
+      "reason": "D>0 implies 1-delta*a>delta*b*phi*c>=0. Substitute q<=B+phi*c*r before division; all factors preserve inequality direction."
+    },
+    {
+      "object": "R9.13-R9.15 endpoints",
+      "reason": "At t=(n+1)delta the minimum lag from completed cell j is (n-j)delta; both current closed-cell bounds and same-clock source caps remain valid at the endpoint."
+    },
+    {
+      "object": "R9.16 exact denominator",
+      "reason": "All rounded scalars are monotone numerator/forcing quantities; D remains exact. No discrete supersolution of the rounded vector is required."
+    },
+    {
+      "object": "R9.17 product error",
+      "reason": "(p+ep)(L+eL)-pL = (p+ep)eL+ep*L; min of branches has error bounded by the maximum corresponding branch budget."
+    }
+  ],
+  "result": "No new mathematical blocker found in the stated conditional domain",
+  "execution_evidence": "NOT_RUN in this check",
+  "physical_consumer_admitted": false
+}
