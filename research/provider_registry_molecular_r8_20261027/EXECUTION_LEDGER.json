@@ -13,8 +13,10 @@
   },
   "CAS": {
     "allowed": 1,
-    "consumed": 0,
-    "remaining": 1
+    "consumed": 1,
+    "remaining": 0,
+    "status": "FAILED_JSON_RESULT_EXPORT",
+    "raw": "raw/WOLFRAM_INITIAL_RESPONSE.json"
   },
   "old_science_replay": 0,
   "old_R7_remaining": [
@@ -61,12 +63,40 @@
       "status": "PASS",
       "max_seconds": 30,
       "source": "delivery/S03.json"
+    },
+    {
+      "id": "S04_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "source": "delivery/S04.json"
     }
   ],
   "scientific_runs": [],
   "metadata_transport_allowance": {
     "total": 11,
-    "used": 3,
-    "remaining": 8
-  }
+    "used": 4,
+    "remaining": 7
+  },
+  "CAS_targeted_export_repair": {
+    "allowed": 1,
+    "consumed": 0,
+    "remaining": 1,
+    "contract": "verification/CAS_EXPORT_REPAIR_CONTRACT.json"
+  },
+  "environment_events": [
+    {
+      "utc": "2026-10-27T15:30:31Z",
+      "kind": "LOCAL_EXECUTOR_RECOVERED",
+      "probe": "pwd",
+      "exit_code": 0,
+      "science_runs": 0
+    },
+    {
+      "kind": "GIT_CLI_NETWORK_STILL_UNAVAILABLE",
+      "error": "Failed to connect to browser-proxy port8889",
+      "decision": "RetainGitHubconnectorpublication andActions scientificexecution"
+    }
+  ]
 }
