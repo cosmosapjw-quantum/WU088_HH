@@ -2,49 +2,92 @@
   {
     "id": "T1",
     "claim": "Exact finite projection with general time-varying pi",
-    "status": "DERIVATION_IN_PROGRESS",
-    "premises": "column Metzler K, pi simplex AC, x nonnegative"
+    "status": "ADMITTED_SCOPED_CONDITIONAL_THEORY",
+    "premises": "column Metzler K, pi simplex AC, x nonnegative",
+    "evidence": [
+      "theory/DYNAMIC_LIFT.md",
+      "reviews/R6_FINAL.json"
+    ]
   },
   {
     "id": "T2",
     "claim": "L=K+h(pi d^T-D) is column Markov generator",
-    "status": "DIRECT_ALGEBRA",
-    "premises": "h,d,pi nonnegative"
+    "status": "ADMITTED_SCOPED_CONDITIONAL_THEORY",
+    "premises": "h,d,pi nonnegative",
+    "evidence": [
+      "theory/DYNAMIC_LIFT.md",
+      "reviews/R6_FINAL.json"
+    ]
   },
   {
     "id": "T3",
     "claim": "Dobrushin generator coefficient gives zero-sum L1 contraction",
-    "status": "LITERATURE_REUSE_PLUS_GENERATOR_LIMIT",
-    "premises": "finite locally bounded generator, column transpose convention"
+    "status": "ADMITTED_SCOPED_LITERATURE_REUSE_AND_GENERATOR_LIMIT",
+    "premises": "finite locally bounded generator, column transpose convention",
+    "evidence": [
+      "theory/DYNAMIC_LIFT.md",
+      "reviews/R6_FINAL.json"
+    ]
   },
   {
     "id": "T4",
     "claim": "Triangular M,U,E bounds actual finite-model total, residual and aggregate error",
-    "status": "DERIVATION_IN_PROGRESS",
-    "premises": "prescribed shared f; coefficient input bounds valid over each interval"
+    "status": "ADMITTED_SCOPED_CONDITIONAL_THEORY",
+    "premises": "prescribed shared f; coefficient input bounds valid over each interval",
+    "evidence": [
+      "theory/DYNAMIC_LIFT.md",
+      "reviews/R6_FINAL.json"
+    ]
   },
   {
     "id": "T5",
     "claim": "Rational positive step encloses continuous comparison solution for every nonnegative step",
-    "status": "DERIVATION_IN_PROGRESS",
-    "premises": "constant coefficients within segment; exact arithmetic"
+    "status": "ADMITTED_SCOPED_CONDITIONAL_THEORY",
+    "premises": "constant coefficients within segment; exact arithmetic",
+    "evidence": [
+      "theory/DYNAMIC_LIFT.md",
+      "reviews/R6_FINAL.json"
+    ]
   },
   {
     "id": "T6",
     "claim": "K+hB contraction, common destruction shift and zero-coupling limits",
-    "status": "DERIVATION_IN_PROGRESS",
-    "premises": "same finite model"
+    "status": "ADMITTED_SCOPED_CONDITIONAL_THEORY",
+    "premises": "same finite model",
+    "evidence": [
+      "theory/DYNAMIC_LIFT.md",
+      "reviews/R6_FINAL.json"
+    ]
   },
   {
     "id": "T7",
     "claim": "Native HD supplied-edge operator is conditional input; unlisted rates remain missing",
-    "status": "SOURCE_REUSED_SCOPED",
-    "premises": "pH2 T100K only in new sample, vUNSPECIFIED"
+    "status": "ADMITTED_CONDITIONAL_SUPPLIED_GRAPH",
+    "premises": "pH2 T100K only in new sample, vUNSPECIFIED",
+    "evidence": [
+      "theory/DYNAMIC_LIFT.md",
+      "reviews/R6_FINAL.json"
+    ]
   },
   {
     "id": "T8",
     "claim": "No novel no-go or full physical population solution claimed",
-    "status": "SCOPE",
-    "premises": "GL2022 d_j and consumer not supplied"
+    "status": "SCOPE_RETAINED",
+    "premises": "GL2022 d_j and consumer not supplied",
+    "evidence": [
+      "theory/DYNAMIC_LIFT.md",
+      "reviews/R6_FINAL.json"
+    ]
+  },
+  {
+    "id": "T9",
+    "claim": "Sparse supplied-edge HD graph has delta(K)=0 yet admits a finite-block contraction certificate",
+    "status": "ADMITTED_SCOPED_CONDITIONAL_THEORY",
+    "premises": "Declared rational stationary weights and selected native para-H2 T100K edges only; no instantaneous positive gap inferred",
+    "evidence": [
+      "theory/HD_GRAPH_BLOCK.md",
+      "results/HD_GRAPH.json",
+      "reviews/R6_FINAL.json"
+    ]
   }
 ]
