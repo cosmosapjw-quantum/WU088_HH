@@ -1,3 +1,17 @@
+# Current priority: EXFOR target6 source-reference closure R3, 2026-10-27 UTC
+
+Continue from research/provider_registry_exfor_target6_20261027/HANDOFF_KO.md, REPORT_KO.md, SCIENTIFIC_ADMISSION.json, DAG.json, EXECUTION_LEDGER.json, reviews/ and delivery/. The fixed handoff at34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad, R1/R2 scientific payloads and their prior delivery records remain immutable history. The target6 numerical-source dependency described in the preserved R2 priority is now closed by actual official EXFOR TABLE rows.
+
+R3 imports4supplier variants and36native numerical rows for He4(gamma,d)D, from IAEA-NDS/exfor_master@939a14d7bba1ddce51975cb5e8711ce96b3b0871. Preserve24SIG and12DA rows, energy-bin SIG versus incident-energy INT,7separateE2 auxiliary rows, and CURVE exclusions. All19original target IDs and28listed directions now have primary-source references. This is a source-availability statement; the broader registry parent remains PARTIAL. Do not infer complete isotope/state/molecular/anion coverage or physical rate/Q/consumer readiness.
+
+Reuse R1's125 and R2's24 saved number columns and the unchanged finite compiler249check evidence. R3 makes0compiler calls. The only target-row changes are5source metadata keys for target6forward. Primary8/8 and independently composed9/9 source groups plus separate static implementation review are scoped source acceptance. Preserve the first auxiliary-class checker failure and targeted G6 repair. All rate/Q/state-branch-domain/energy/consumer/activation gates remain false. Source nuclear identity, identical-D counting, ionic/electronic state, beam response, covariance and physical consumer binding stay distinct.
+
+Before each node refresh actual AGENTS, local/remote HEAD, parallel owner work and actual backup receipts. Reuse unchanged R1/R2/R3/249/PHYS91/REI results. Latest observed central REI a5db4bac9dafadae29685bbea3cec7f43ab990b2 remains27/88; working PR236 ee94bef85b56d879dc38f184856a5c613575e9e1 is unmerged32/88. Preserve its completed species projections and native pre-assimilation source; do not substitute its atomic/<=50keV scope for a MeV nuclear photon consumer or assume central ACK.
+
+PHYS91 primary/reference/Wolfram remaining stay0; historical globalCPU/money/remaining staynull. New bounded changed-input checks do not reset or transfer budgets. HH_R10=OFF, production=NOT_ISSUED, L4_ready=false. The user explicitly authorized automatic additive publication and Dropbox/Drive backups. Use expected-SHA non-force updates to the existing draft PR150 branch; keep source commit/ZIP, actual dual byte-readbacks and subsequent delivery metadata identities separate. Continue NEXT_SOURCE_INTAKE_KO.md only at a real changed input; no completed-science replay.
+
+## Preserved R2 and earlier instructions
+
 # Current priority: recovered target19 supplier registry, 2026-10-25 UTC
 
 Continue from research/provider_registry_network19_20261025/HANDOFF_KO.md, REPORT_KO.md, SCIENTIFIC_ADMISSION.json, DAG.json, EXECUTION_LEDGER.json, reviews/ and delivery/. The fixed user handoff at34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad is preserved. The prior R1 source18a6804d7cbe4879701e83631f7e908bbb84cef1 and its verified source ZIP remain immutable history. The original PNG/19-target locator gap mentioned below is now closed by actual source recovery.

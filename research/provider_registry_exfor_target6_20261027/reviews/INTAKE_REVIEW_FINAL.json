@@ -1,0 +1,226 @@
+{
+  "schema": "WU_TARGET6_EXFOR_INDEPENDENT_INTAKE_FINAL_V1",
+  "reviewer": "/root/provider_rows",
+  "source_author": "/root/molecule_sources",
+  "created_UTC": "2026-10-27T02:57:24.782438+00:00",
+  "decision": "PASS_SCOPED_SOURCE_INTAKE",
+  "accepted_groups": 9,
+  "group_count": 9,
+  "composition": "Original eight passing groups plus corrected G6; no full-suite replay",
+  "reused_groups": [
+    {
+      "id": "G1",
+      "name": "Frozen packet and exact provider bytes",
+      "result": "pass_scoped",
+      "assertions": 52
+    },
+    {
+      "id": "G2",
+      "name": "Four selected TABLEs and all native numeric cells",
+      "result": "pass_scoped",
+      "assertions": 179
+    },
+    {
+      "id": "G3",
+      "name": "Row/BIB/COMMON locators and parent inheritance",
+      "result": "pass_scoped",
+      "assertions": 310
+    },
+    {
+      "id": "G4",
+      "name": "Observable, frame, unit and bin distinctions",
+      "result": "pass_scoped",
+      "assertions": 28
+    },
+    {
+      "id": "G5",
+      "name": "Statistical errors and bounded beam systematic",
+      "result": "pass_scoped",
+      "assertions": 22
+    },
+    {
+      "id": "G7",
+      "name": "Identical-product and shared-experiment normalization",
+      "result": "pass_scoped",
+      "assertions": 18
+    },
+    {
+      "id": "G8",
+      "name": "E2 auxiliary and CURVE exclusion boundaries",
+      "result": "pass_scoped",
+      "assertions": 52
+    },
+    {
+      "id": "G9",
+      "name": "Publication provenance and bounded claim scope",
+      "result": "pass_scoped",
+      "assertions": 15
+    }
+  ],
+  "corrected_G6": {
+    "result": "pass_scoped",
+    "main_nonclass_conditions_reused": 24,
+    "new_targeted_conditions": 11,
+    "reuse_identity_guards": 5,
+    "checks": [
+      {
+        "description": "Frozen provider packet is unchanged",
+        "kind": "reuse_identity_guard",
+        "result": "pass"
+      },
+      {
+        "description": "Frozen source manifest is unchanged",
+        "kind": "reuse_identity_guard",
+        "result": "pass"
+      },
+      {
+        "description": "Initial failed review is unchanged",
+        "kind": "reuse_identity_guard",
+        "result": "pass"
+      },
+      {
+        "description": "Exactly the original eight passing groups are reused",
+        "kind": "reuse_identity_guard",
+        "result": "pass"
+      },
+      {
+        "description": "The recorded failure is exactly the diagnosed auxiliary classifier defect",
+        "kind": "reuse_identity_guard",
+        "result": "pass"
+      },
+      {
+        "description": "EXFOR_M0011002 retains the main primary record class",
+        "kind": "targeted_condition",
+        "result": "pass"
+      },
+      {
+        "description": "EXFOR_M0475002 retains the main primary record class",
+        "kind": "targeted_condition",
+        "result": "pass"
+      },
+      {
+        "description": "EXFOR_M0475003 retains the main primary record class",
+        "kind": "targeted_condition",
+        "result": "pass"
+      },
+      {
+        "description": "EXFOR_M0826002 retains the main primary record class",
+        "kind": "targeted_condition",
+        "result": "pass"
+      },
+      {
+        "description": "EXFOR_M0011003 retains the separate auxiliary multipole record class",
+        "kind": "targeted_condition",
+        "result": "pass"
+      },
+      {
+        "description": "Auxiliary source direction is preserved",
+        "kind": "targeted_condition",
+        "result": "pass"
+      },
+      {
+        "description": "Auxiliary source isotope labels are explicit",
+        "kind": "targeted_condition",
+        "result": "pass"
+      },
+      {
+        "description": "Auxiliary atomic and nuclear state binding is not promoted",
+        "kind": "targeted_condition",
+        "result": "pass"
+      },
+      {
+        "description": "Auxiliary identical products remain distinct from a branch probability",
+        "kind": "targeted_condition",
+        "result": "pass"
+      },
+      {
+        "description": "Auxiliary Q remains unresolved",
+        "kind": "targeted_condition",
+        "result": "pass"
+      },
+      {
+        "description": "Auxiliary rate/Q/activation gates remain false",
+        "kind": "targeted_condition",
+        "result": "pass"
+      }
+    ],
+    "scope": "Main-four and auxiliary-one class distinction, then only unfinished auxiliary state/admission conditions"
+  },
+  "source_packet_SHA256": "d8b0b92f0374f73fa7f838db5ca07be45bd448696654b07c6db71c5847235ac2",
+  "source_manifest_SHA256": "a1c5d4009d0bfacc4edcb248a6878eef6cdafa9690b4ea0d0826dd5356052d06",
+  "source_commit": "939a14d7bba1ddce51975cb5e8711ce96b3b0871",
+  "initial_failure": {
+    "classification": "IMPLEMENTATION_CHECKER_EXPECTATION_FAILURE",
+    "cause": "The checker mistakenly required PRIMARY_SOURCE_ROW for the deliberately separate AUXILIARY_MULTIPOLE_SOURCE_ROW",
+    "source_packet_changed": false,
+    "review": "INTAKE_REVIEW.json",
+    "review_SHA256": "eb430e6ddbb0a6688b690b6d553f30a5b0d6e91a9a4e58873988b2fb39f4c654",
+    "receipt": "../raw/independent01/RECEIPT.json",
+    "receipt_SHA256": "1bb229d82a4ccd1bd8821e851ff02614862b262118621935649051396212a4d4",
+    "original_executable_argv": "../raw/independent01/REQUEST.json",
+    "original_request_SHA256": "cf57f1001ae9e6b44bdae41c3cec5a405c9362a654da766a7dc659dce515faf4",
+    "preserved": true
+  },
+  "targeted_execution": {
+    "receipt": "../raw/independent_g6fix01/RECEIPT.json",
+    "script": "check_g6_auxiliary.py",
+    "script_SHA256": "744d61a0efa22e0ec59c6257139bdec7a84e5fdad0f2a0840c139a37cb23d01f",
+    "previous_eight_groups_rerun": false,
+    "main_native_rows_reparsed": 0
+  },
+  "audited_source_counts_reused": {
+    "main_TABLE_subentries": 4,
+    "main_native_rows": 36,
+    "main_native_numeric_cells": 124,
+    "integral_SIG_rows": 24,
+    "angular_differential_DA_rows": 12,
+    "auxiliary_E2_rows_separate": 7,
+    "auxiliary_native_numeric_cells_separate": 21,
+    "excluded_target6_CURVE_subentries": 3
+  },
+  "semantic_review_reused": {
+    "method": "Independent reading of all four raw entries, frozen metadata, and official LEXFOR sections; conditional number/normalization derivation in INTAKE_REVIEW.md.",
+    "official_manual_URL": "https://nds.iaea.org/nrdc/nrdc_doc/iaea-nds-0208-202505.pdf",
+    "sections": [
+      "C.1",
+      "C.8",
+      "D.13",
+      "M.12"
+    ],
+    "manual_full_bytes_or_SHA_verified": false,
+    "pre_freeze_clarifications": [
+      "EP/POLAR=2 is E2, kept separate from total SIG",
+      "energy-bin SIG has area units, not an incident-energy integral",
+      "M0475002/003 share an experiment and do not imply independent covariance",
+      "identical-dd event stoichiometry is separate from angular particle counting"
+    ]
+  },
+  "open_consumer_obligations": [
+    "Native reaction identity is not an atomic-charge or state binding",
+    "Incident-energy response/bin weights and angular acceptance/integration are not supplied in selected entries",
+    "Differential particle/event and full-sphere/half-sphere normalization requires explicit source/consumer convention",
+    "No data-driven interpolation/extrapolation or actual photon-spectrum consumer is admitted",
+    "No covariance, combined confidence interval, new Q or deposition partition is supplied"
+  ],
+  "post_execution_static_theory_review": {
+    "file": "../theory/TARGET6_OBSERVABLE_MAPPING_KO.md",
+    "sha256": "a938cb758499c8912bcd2e21e8cf6ea35010928ff9d967163d2494b5cf38085e",
+    "result": "PASS_SCOPED",
+    "method": "Independent source-semantic reading and algebraic number/normalization review; no additional executable checks",
+    "scope": "Source-table observable, native units, explicit isotope versus unresolved ionic state, same-experiment dependence, identical-dd event counting and open consumer/energy obligations",
+    "closed_wording_clarifications": [
+      "Four TABLE suppliers rather than four independent experiments",
+      "For a complete particle-counted deuteron yield in this exclusive two-D channel, its integral equals twice the event cross section"
+    ],
+    "source_or_registry_changed_for_these_clarifications": false,
+    "added_after_targeted_execution": true,
+    "targeted_executable_output_SHA256_before_this_static_addendum": "cb694d60a5eb11388228d482c9cc108b4c6b32ef6f533e71a3292500870bca78"
+  },
+  "overlay_code_review": "Separate authority_survey static review; this review does not execute the overlay checker",
+  "new_rate_evaluations": 0,
+  "new_Q_evaluations": 0,
+  "new_angular_integrations": 0,
+  "old_science_replays": 0,
+  "old_compiler_calls": 0,
+  "physical_rate_Q_consumer_admission": false
+}

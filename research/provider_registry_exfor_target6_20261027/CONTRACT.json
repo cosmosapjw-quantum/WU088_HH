@@ -1,0 +1,89 @@
+{
+  "schema": "WU_TARGET6_EXFOR_SOURCE_R3_CONTRACT_V1",
+  "unit_id": "WU_TARGET6_EXFOR_SOURCE_R3",
+  "created_UTC": "2026-10-27T02:49:40.669373+00:00",
+  "user_request": "Resume original all-target source registry research; earlier explicit automatic publication and dual backup authority persists",
+  "base_commit": "87933da5654bb2e4d93f7de4341df5e0fa0f8716",
+  "base_tree": "3ff104a588f25f2eab5429cee728e1523e066688",
+  "unchanged_AGENTS_sha256": "3136b09cace1f22694bd414cc218d971810b3b380e75b345cd7421cb9ea6f052",
+  "new_dependency": {
+    "repository": "IAEA-NDS/exfor_master",
+    "commit": "939a14d7bba1ddce51975cb5e8711ce96b3b0871",
+    "direction": "TARGET19:06:target_forward",
+    "reaction": "2-HE-4(G,D)1-H-2",
+    "main_subentries": [
+      "M0011002",
+      "M0475002",
+      "M0475003",
+      "M0826002"
+    ],
+    "expected_main_rows": 36,
+    "auxiliary": [
+      "M0011003 EP/POLAR electric multipole data retained separately"
+    ],
+    "excluded_from_main": [
+      "M0034 CURVE records",
+      "M0826003 CURVE records"
+    ]
+  },
+  "objective": "Recover direct target6 numerical-source rows and bind them additively to existing target19 registry while retaining native observable distinctions",
+  "acceptance": [
+    "Raw official entry bytes and exact table cells/units/COMMON/BIB locators preserved",
+    "24 SIG rows and12 DA rows remain distinct; energy-bin SIG is not energy integral",
+    "Statistical errors, author total-error semantics and beam systematic bound kept as supplied; absent covariance null",
+    "All19 target IDs and28 directions remain; only target6forward primary references added",
+    "Existing R1/R2 species/events/compiled/admissions and249 check remain exact and reused",
+    "Independent source and code review resolves material findings before publication"
+  ],
+  "physical_admission": {
+    "rate": false,
+    "nuclear_Q": false,
+    "energy_deposition": false,
+    "state_branch_domain": false,
+    "consumer": false,
+    "activation": false
+  },
+  "execution_budget": {
+    "inherited_PHYS91_primary_remaining": 0,
+    "inherited_PHYS91_reference_remaining": 0,
+    "inherited_PHYS91_Wolfram_remaining": 0,
+    "historical_global_CPU_s": null,
+    "historical_money": null,
+    "global_remaining": null,
+    "reset_or_transfer": false,
+    "new_allowed_work": "Changed-input deterministic source extraction, additive reference overlay, targeted independent checks and optional native-data QA plot",
+    "per_child_CPU_s": 30,
+    "per_child_wall_s": 120,
+    "memory_MiB": 512,
+    "workers": 1,
+    "threads": 1,
+    "runner": "verification/run_bounded.py exact reused R2 runner",
+    "initial_execution_plan": [
+      "source_extract01",
+      "build01",
+      "primary01",
+      "independent01"
+    ],
+    "rerun_rule": "Only affected code/input after concrete recorded failure; completed identities reused"
+  },
+  "forbidden_in_this_unit": [
+    "Old249/R1/R2/PHYS91/REI science replay",
+    "Newratequadrature",
+    "NewQ or atomic-to-bare calculation",
+    "Inverse-reaction construction",
+    "Unstated interpolation or extrapolation",
+    "CURVE digitization"
+  ],
+  "publication": {
+    "mode": "Additive source and separate delivery metadata",
+    "expected_parent": "87933da5654bb2e4d93f7de4341df5e0fa0f8716",
+    "force": false,
+    "source_ZIP_and_Dropbox_Drive": true
+  },
+  "global_state": {
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4_ready": false,
+    "global_physical_completion": null
+  }
+}
