@@ -1,0 +1,23 @@
+{
+  "schema": "WU_R9_PREEXECUTION_FINDINGS_V1",
+  "items": [
+    {
+      "id": "PRE01_BINDING_ALIAS",
+      "class": "implementation test authoring",
+      "observation": "deepcopy preserves shared references; changing kernel.binding.clock also changed top-level binding",
+      "correction": "Copy kernel binding into a separate dict before changing its clock",
+      "status": "CLOSED_STATIC_BEFORE_FIRST_EXECUTION",
+      "runtime_verification": "PENDING_PRIMARY"
+    },
+    {
+      "id": "PRE02_REFERENCE_FREEZE",
+      "class": "input contract clarification",
+      "observation": "Independent reference had hash checks but explicit PASS/bytes/required4 source membership clarified beforefreeze",
+      "correction": "Require actualS05PASS,bytes+SHA,and core/input/primary/reference members",
+      "status": "CLOSED_STATIC_BEFORE_FIRST_EXECUTION",
+      "runtime_verification": "PENDING_REFERENCE"
+    }
+  ],
+  "scientific_executions": 0,
+  "original_R8_reference_failure": "Preserved unchanged, not part of this new-unit repair list"
+}
