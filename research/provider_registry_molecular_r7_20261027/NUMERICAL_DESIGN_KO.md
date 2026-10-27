@@ -10,7 +10,7 @@
 
 ## 판별 입력
 
-verification/PRIMARY_INPUT.json에는 5개 affine control과 4개 HD 공유 저장고 control을 고정한다. HD control은 반응 없는 2상태, 비선형 2상태, coarse 형성계수 차이를 명시한 2상태, 그리고 저장된 R6 native9state 생성자 구간의 midpoint를 재사용하는 경우다. 각 HD control은 3블록 및 블록 내 0,1/4,1/2,3/4,1 위치의 인증 상계를 저장한다. 별도 reference는 33/65개 시각에서 실제 fine/coarse ODE를 독립 구현하여 비교한다.
+verification/PRIMARY_INPUT.json에는 5개 affine control과 4개 HD 공유 저장고 control을 고정한다. HD control은 반응 없는 2상태, 비선형 2상태, coarse 형성계수 차이를 명시한 2상태, 그리고 저장된 R6 native9state 생성자 구간의 midpoint를 재사용하는 경우다. 각 HD control은 3블록 및 블록 내 0,1/4,1/2,3/4,1 위치의 인증 상계를 저장한다. 별도 reference는 블록당 65개 시각에서 실제 fine/coarse ODE를 독립 구현하여 비교한다.
 
 9상태 입력의 rho와 H는 R6 저장 결과에서 재사용한다. 원 생성자 구간은 그대로이며 새 반응 파라미터·branch·밀도·lift는 명시한 수학 fixture다. 실제 물리 consumer를 구성했다고 판정하지 않는다. 새 rational lift의 K*pi 잔차 상계를 primary에서 직접 확인한다.
 

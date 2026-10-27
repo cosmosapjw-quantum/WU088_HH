@@ -87,6 +87,14 @@ def required(obj: dict, *names: str) -> Any:
     raise ValueError("Required field absent: " + "/".join(names))
 
 
+def exact_numbers_equal(left: Any, right: Any) -> bool:
+    if isinstance(left, dict) and isinstance(right, dict):
+        return left.keys() == right.keys() and all(exact_numbers_equal(left[k], right[k]) for k in left)
+    if isinstance(left, list) and isinstance(right, list):
+        return len(left) == len(right) and all(exact_numbers_equal(a, b) for a, b in zip(left, right))
+    return rational(left) == rational(right)
+
+
 def frozen_primary_input(config: dict, primary: dict) -> dict:
     identity = config["primary_input_identity"]
     path = (Path(config["_input_directory"])/identity["path_relative_to_this_input"]).resolve()
@@ -100,13 +108,15 @@ def frozen_primary_input(config: dict, primary: dict) -> dict:
             raise ValueError(f"Missing/extra/duplicate frozen {collection} IDs")
         for expected in fixed[collection]:
             saved = by_id[expected["id"]]
+            if collection == "hd_cases" and len(required(saved, "blocks")) != expected["blocks"]:
+                raise ValueError("Frozen HD block count changed")
             saved = saved.get("fixture", saved.get("inputs", saved))
             keys = ("B", "g", "H", "rho", "w0") if collection == "affine_cases" else (
                 "K", "pi", "alpha", "kf", "destruction", "coarse_kf_offset", "H", "rho",
                 "initial_fine", "initial_coarse", "density_box", "q_norm_upper", "branch_distance_upper", "coarse_scalar_defect_upper")
             for key in keys:
-                if required(saved, key) != expected[key]:
-                    raise ValueError(f"Frozen input literal changed: {collection}/{expected['id']}/{key}")
+                if not exact_numbers_equal(required(saved, key), expected[key]):
+                    raise ValueError(f"Frozen exact input value changed: {collection}/{expected['id']}/{key}")
     return fixed
 
 
@@ -162,7 +172,7 @@ def augmented_reference(B: np.ndarray, g: np.ndarray, duration: float) -> tuple[
 
 
 def block_inputs(case: dict) -> tuple[np.ndarray, np.ndarray, float, float, np.ndarray]:
-    data = case.get("inputs", case)
+    data = case.get("certificate", case.get("inputs", case))
     Bq = exact_matrix(required(data, "B"), 2, 2)
     gq = exact_vector(required(data, "g"), 2)
     wq = exact_vector(required(data, "w0"), 2)
@@ -175,7 +185,7 @@ def block_inputs(case: dict) -> tuple[np.ndarray, np.ndarray, float, float, np.n
 
 
 def block_output(case: dict) -> dict:
-    return case.get("result", case.get("output", case))
+    return case.get("certificate", case.get("result", case.get("output", case)))
 
 
 def inspect_block(rec: Recorder, case: dict, label: str, *, require_clocks: bool = False) -> dict:
@@ -199,6 +209,8 @@ def inspect_block(rec: Recorder, case: dict, label: str, *, require_clocks: bool
     rec.close(label+": only initial residual receives rho", savedT, causal_saved)
     rec.close(label+": saved endpoint arithmetic", saved_endpoint, savedT @ w0 + savedq)
     interior = case.get("interior", out.get("interior", []))
+    if "queries" in case:
+        interior = [{"u": required(point, "t"), "w_upper": required(point, "bound")} for point in case["queries"]]
     if require_clocks and len(interior) not in rec.config["solver"]["primary_pointwise_clocks_per_block_allowed"]:
         raise ValueError(f"{label}: expected fixed 5/33/65 primary pointwise clocks")
     point_records = []
@@ -298,6 +310,15 @@ def hd_input(case: dict, defaults: dict) -> dict:
     boxq = {key: exact_vector(required(box, key), 2) for key in ("u", "v", "w", "X")}
     if any(lo < 0 or lo > hi for lo, hi in boxq.values()):
         raise ValueError("Invalid whole-block density box")
+    q_exact = [sum(Kq[i][j]*piq[j] for j in range(n)) for i in range(n)]
+    if sum(abs(x) for x in q_exact) > rational(required(f, "q_norm_upper")):
+        raise ValueError("Declared q bound does not cover exact fixed-lift K*pi")
+    if sum(abs(alphaq[i]-piq[i]) for i in range(n)) > rational(required(f, "branch_distance_upper")):
+        raise ValueError("Declared branch distance does not cover explicit alpha-pi")
+    if abs(offsetq)*boxq["u"][1]*boxq["v"][1] > defectq:
+        raise ValueError("Declared coarse source defect does not cover the full density box")
+    if not isinstance(required(f, "positive_box_evidence"), str) or not f["positive_box_evidence"].strip():
+        raise ValueError("Whole-block box proof/provenance is required")
     return {"raw": f, "n": n, "piq": piq, "Kq": Kq, "invariants_exact": Ifine,
             "K": np.array(Kq, dtype=float), "pi": np.array(piq, dtype=float),
             "alpha": np.array(alphaq, dtype=float), "d": np.array(dq, dtype=float),
@@ -352,7 +373,7 @@ def nominal_binding(rec: Recorder, f: dict, blocks: list[dict], label: str) -> d
         raise ValueError("Native reuse provenance does not bind unchanged saved H/rho")
     matched = []
     for block in blocks:
-        data = block.get("inputs", block)
+        data = block.get("certificate", block.get("inputs", block))
         H, rho = rational(required(data, "H")), rational(required(data, "rho"))
         identities = [x["id"] for x in saved["graph"]["blocks"] if rational(x["H"]) == H and rational(x["rho_upper"]) == rho]
         if len(identities) != 1:
@@ -415,6 +436,22 @@ def independent_hd(rec: Recorder, case: dict, index: int) -> dict:
     rec.close(label+": coarse error direction s*eta", aggregated-ybar, eta[:, None]*np.array([-1., -1., 1., 1.]), atol=identity_tol)
     rec.close(label+": coarse l1 observable equals4E", np.sum(np.abs(aggregated-ybar), axis=1), 4*errors[:, 1], atol=identity_tol)
     rec.close(label+": residual has zero HD sum", np.sum(r, axis=1), np.zeros(len(times)), atol=identity_tol)
+    fine_derivatives = np.array([fine_rhs(float(t), state, f["K"], f["alpha"], f["kf"], f["d"]) for t, state in zip(times, z)])
+    coarse_derivatives = np.array([coarse_rhs(float(t), state, f["kf"]+f["coarse_kf_offset"], float(f["d"]@f["pi"])) for t, state in zip(times, ybar)])
+    eta_direct = np.sum(fine_derivatives[:, 3:], axis=1)-coarse_derivatives[:, 3]
+    Um = (z[:, 0]+z[:, 1]+ybar[:, 0]+ybar[:, 1])/2
+    Wm = (z[:, 2]+X+ybar[:, 2]+ybar[:, 3])/2
+    dbar = float(f["d"]@f["pi"])
+    eta_identity = -(f["kf"]*Um+dbar*Wm)*eta-z[:, 2]*(r@f["d"])-defect
+    rec.close(label+": scalar eta differential identity with source defect", eta_direct, eta_identity, atol=identity_tol)
+    r_direct = fine_derivatives[:, 3:]-np.sum(fine_derivatives[:, 3:], axis=1)[:, None]*f["pi"]
+    q0 = f["K"]@f["pi"]
+    QD = np.diag(f["d"])-np.outer(f["pi"], f["d"])
+    vD = f["d"]*f["pi"]-f["pi"]*dbar
+    r_identity = r@f["K"].T-z[:, 2, None]*(r@QD.T)+X[:, None]*q0
+    r_identity += (f["kf"]*z[:, 0]*z[:, 1])[:, None]*(f["alpha"]-f["pi"])
+    r_identity -= (z[:, 2]*X)[:, None]*vD
+    rec.close(label+": residual differential identity from direct event RHS", r_direct, r_identity, atol=identity_tol)
     positivity_allowance = float(rec.config["comparison_tolerances"]["positivity_absolute"])
     rec.check(label+": nonnegative fine/coarse samples", min(float(np.min(z)), float(np.min(ybar))) >= -positivity_allowance,
               min_fine=float(np.min(z)), min_coarse=float(np.min(ybar)))
@@ -474,12 +511,20 @@ def late_forcing(rec: Recorder, primary: dict) -> dict:
     rec.check("late forcing: causal upper covers exact residual", exact <= correct, exact=exact, causal_upper=correct)
     rec.check("late forcing: rho applied to all forcing is violated", exact > wrong, exact=exact, wrong_upper=wrong, strict_gap=exact-wrong)
     saved = primary.get("late_forcing")
-    if saved is not None:
-        for key, value in (("gamma", gamma), ("H", H), ("epsilon", epsilon), ("J", J)):
-            if key in saved:
-                rec.close("late forcing: frozen "+key, float(rational(saved[key])), value)
+    primary_control = None
+    if saved is not None and all(k in saved for k in ("gamma", "H", "epsilon", "J")):
+        pgamma, pH, peps, pJ = [float(rational(saved[k])) for k in ("gamma", "H", "epsilon", "J")]
+        if pgamma <= 0 or not 0 < peps <= pH or pJ <= 0:
+            raise ValueError("Invalid primary late-forcing control")
+        pexact = pJ*(-math.expm1(-pgamma*peps))/(pgamma*peps)
+        pwrong = math.exp(-pgamma*pH)*pJ
+        rec.check("primary late forcing: same causal mechanism independently verified", pwrong < pexact <= pJ,
+                  exact=pexact, correct_upper=pJ, wrong_upper=pwrong)
+        primary_control = {"gamma": pgamma, "H": pH, "epsilon": peps, "J": pJ,
+                           "independent_exact_endpoint_R": pexact, "independent_wrong_upper": pwrong}
     return {"gamma": gamma, "H": H, "epsilon": epsilon, "J": J, "rho": rho, "exact_endpoint_R": exact,
             "correct_forcing_upper": correct, "wrong_forcing_upper": wrong,
+            "primary_control_independently_checked": primary_control,
             "counterexample_scope": "Incorrect causal update only; not a physical impossibility theorem"}
 
 
@@ -495,6 +540,7 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     start_cpu, start_wall = time.process_time(), time.perf_counter()
+    started_utc = utc()
     config = json.loads(args.input.read_text())
     config["_input_directory"] = str(args.input.resolve().parent)
     actual_primary_sha = sha256(args.primary)
@@ -503,7 +549,7 @@ def main() -> int:
     if args.output.exists():
         raise FileExistsError("Preserve first reference result: output already exists")
     result = {"schema": "WU_R7_INDEPENDENT_REFERENCE_RESULT_V1", "run_id": "R7_REFERENCE_01", "status": "RUNNING",
-              "started_utc": utc(), "command": sys.argv, "contract_id": config["contract_id"],
+              "started_utc": started_utc, "command": sys.argv, "contract_id": config["contract_id"],
               "input_sha256": sha256(args.input), "script_sha256": sha256(Path(__file__)),
               "primary_path": str(args.primary.resolve()), "primary_sha256": actual_primary_sha,
               "versions": {"python": platform.python_version(), "numpy": np.__version__, "scipy": scipy.__version__, "platform": platform.platform()},
@@ -519,8 +565,7 @@ def main() -> int:
         try:
             signal.signal(signal.SIGXCPU, cpu_limit_signal)
             limit = int(config["execution"]["CPU_limit_s"])
-            consumed = math.ceil(time.process_time())
-            resource.setrlimit(resource.RLIMIT_CPU, (consumed+limit, consumed+limit+1))
+            resource.setrlimit(resource.RLIMIT_CPU, (limit, limit+1))
             primary = json.loads(args.primary.read_text())
             fixed = frozen_primary_input(config, primary)
             config["_primary_metadata_defaults"] = fixed["metadata_defaults"]
@@ -542,12 +587,15 @@ def main() -> int:
             result["status"] = "FAIL"
             result["first_exception"] = {"type": type(exc).__name__, "message": str(exc), "traceback": traceback.format_exc()}
         finally:
-            elapsed_cpu = time.process_time()-start_cpu
+            total_process_cpu = time.process_time()
+            elapsed_cpu = total_process_cpu-start_cpu
             elapsed_wall = time.perf_counter()-start_wall
             result["finished_utc"] = utc()
-            result["actual_process_CPU_s"] = elapsed_cpu
+            result["actual_process_CPU_s"] = total_process_cpu
+            result["main_entry_CPU_s"] = elapsed_cpu
+            result["CPU_includes_Python_and_library_imports"] = True
             result["actual_wall_s"] = elapsed_wall
-            result["CPU_allowance_satisfied"] = elapsed_cpu <= float(config["execution"]["CPU_limit_s"])
+            result["CPU_allowance_satisfied"] = total_process_cpu <= float(config["execution"]["CPU_limit_s"])
             if not result["CPU_allowance_satisfied"]:
                 result["status"] = "FAIL"
             rec.flush()

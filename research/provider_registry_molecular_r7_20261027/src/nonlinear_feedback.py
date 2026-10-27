@@ -74,6 +74,8 @@ def export(value):
     """JSON-ready exact output, without changing Python's integer-string limit."""
     if isinstance(value, Fraction):
         return rational_text(value)
+    if isinstance(value, Interval):
+        return {"lo": export(value.lo), "hi": export(value.hi)}
     if isinstance(value, Mapping):
         return {str(k): export(v) for k, v in value.items()}
     if isinstance(value, (tuple, list)):
