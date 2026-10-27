@@ -1,0 +1,733 @@
+{
+  "schema": "WU_R9_SAVED_RESULTS_ANALYSIS_V1",
+  "operation": "Read-only exact-rational comparison and approximate display of saved results; no solver, producer, ODE, or scientific replay",
+  "hd_cases": [
+    {
+      "id": "two_state_no_reaction",
+      "cells": 192,
+      "D": 1,
+      "inverse_D": 1,
+      "final": {
+        "R8": [
+          0.06103515625,
+          0
+        ],
+        "raw": [
+          0.06103515625,
+          0
+        ],
+        "capped": [
+          0.06103515625,
+          0
+        ],
+        "R8_exact": [
+          "125/2048",
+          "0"
+        ],
+        "raw_exact": [
+          "125/2048",
+          "0"
+        ],
+        "capped_exact": [
+          "125/2048",
+          "0"
+        ],
+        "capped_reduction_percent": [
+          0,
+          null
+        ],
+        "saved_sample": [
+          0.0557825400373303,
+          0
+        ],
+        "capped_to_saved_sample": [
+          1.0941623706836332,
+          null
+        ]
+      },
+      "exact_comparison": {
+        "raw_whole": {
+          "total": 384,
+          "smaller": 0,
+          "equal": 384,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_whole": {
+          "total": 384,
+          "smaller": 0,
+          "equal": 384,
+          "larger": 0,
+          "first_larger": []
+        },
+        "raw_endpoints": {
+          "total": 386,
+          "smaller": 0,
+          "equal": 386,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_endpoints": {
+          "total": 386,
+          "smaller": 0,
+          "equal": 386,
+          "larger": 0,
+          "first_larger": []
+        }
+      },
+      "reference_max_budget": 5.64237288394698e-37
+    },
+    {
+      "id": "two_state_nonlinear",
+      "cells": 192,
+      "D": 0.9999531241149919,
+      "inverse_D": 1.0000468780824596,
+      "final": {
+        "R8": [
+          0.06780448732764949,
+          0.0005165339428260738
+        ],
+        "raw": [
+          0.06780439932590843,
+          0.0005165084488570771
+        ],
+        "capped": [
+          0.06780439932417824,
+          0.0005165084473956383
+        ],
+        "R8_exact": [
+          "11536335717856671588329832030695425217/170141183460469231731687303715884105728",
+          "43941848164965275342836639165127633/85070591730234615865843651857942052864"
+        ],
+        "raw_exact": [
+          "5768160372568150711758705978941608063/85070591730234615865843651857942052864",
+          "43939679377937172326241783943727881/85070591730234615865843651857942052864"
+        ],
+        "capped_exact": [
+          "23072641489683853206612721840215769145/340282366920938463463374607431768211456",
+          "175758717014446813215642626966657771/340282366920938463463374607431768211456"
+        ],
+        "capped_reduction_percent": [
+          0.00012979004001945643,
+          0.004935867388712399
+        ],
+        "saved_sample": [
+          0.05697202482573821,
+          0.00019400095713395515
+        ],
+        "capped_to_saved_sample": [
+          1.1901349746928127,
+          2.662401541859383
+        ]
+      },
+      "exact_comparison": {
+        "raw_whole": {
+          "total": 384,
+          "smaller": 383,
+          "equal": 0,
+          "larger": 1,
+          "first_larger": [
+            {
+              "cell_or_endpoint": 63,
+              "component": 0,
+              "produced": "86316804023745056922706100909468752479/340282366920938463463374607431768211456",
+              "baseline": "58744151190694319676403116988585530488107599693392628964420155530082384404377/231584178474632390847141970017375815706539969331281128078915168015826259279872"
+            }
+          ]
+        },
+        "capped_whole": {
+          "total": 384,
+          "smaller": 383,
+          "equal": 1,
+          "larger": 0,
+          "first_larger": []
+        },
+        "raw_endpoints": {
+          "total": 386,
+          "smaller": 376,
+          "equal": 2,
+          "larger": 8,
+          "first_larger": [
+            {
+              "cell_or_endpoint": 16,
+              "component": 0,
+              "produced": "85381765301803044990280716496282528897/340282366920938463463374607431768211456",
+              "baseline": "116215626001169480275010592007606400899562123071523638546739709235974360132531/463168356949264781694283940034751631413079938662562256157830336031652518559744"
+            },
+            {
+              "cell_or_endpoint": 16,
+              "component": 1,
+              "produced": "10654152470335377772511151525171611/170141183460469231731687303715884105728",
+              "baseline": "29000051529951598562950029487822596117744925787511807920269066982756375677/463168356949264781694283940034751631413079938662562256157830336031652518559744"
+            },
+            {
+              "cell_or_endpoint": 32,
+              "component": 0,
+              "produced": "10711648962727497972037196778529635865/42535295865117307932921825928971026432",
+              "baseline": "116639506875081090170384744776179551545829044132807684820898174224403630476631/463168356949264781694283940034751631413079938662562256157830336031652518559744"
+            },
+            {
+              "cell_or_endpoint": 32,
+              "component": 1,
+              "produced": "2668318918030138225123759274893855/21267647932558653966460912964485513216",
+              "baseline": "58104214500992457231613975072265984620817486262127197831504334474231906115/463168356949264781694283940034751631413079938662562256157830336031652518559744"
+            }
+          ]
+        },
+        "capped_endpoints": {
+          "total": 386,
+          "smaller": 376,
+          "equal": 10,
+          "larger": 0,
+          "first_larger": []
+        }
+      },
+      "reference_max_budget": 5.640268539123937e-37
+    },
+    {
+      "id": "two_state_coarse_source_defect",
+      "cells": 192,
+      "D": 0.9999531241149919,
+      "inverse_D": 1.0000468780824596,
+      "final": {
+        "R8": [
+          0.06780523434993141,
+          0.0006852219029731864
+        ],
+        "raw": [
+          0.06780514523868224,
+          0.0006851960069722686
+        ],
+        "capped": [
+          0.06780514523692252,
+          0.000685196005485884
+        ],
+        "R8_exact": [
+          "2884115704277947790320623371123892725/42535295865117307932921825928971026432",
+          "233168931009785499951565010711673381/340282366920938463463374607431768211456"
+        ],
+        "raw_exact": [
+          "11536447655618396350828075259829367379/170141183460469231731687303715884105728",
+          "58290029764324852315583431854016739/85070591730234615865843651857942052864"
+        ],
+        "capped_exact": [
+          "23072895310637993499851024501218348891/340282366920938463463374607431768211456",
+          "233160118551508923776883602562239885/340282366920938463463374607431768211456"
+        ],
+        "capped_reduction_percent": [
+          0.00013142496998232587,
+          0.003779430749376442
+        ],
+        "saved_sample": [
+          0.05697202482573821,
+          0.00011962192206960154
+        ],
+        "capped_to_saved_sample": [
+          1.1901480673070661,
+          5.728013675346275
+        ]
+      },
+      "exact_comparison": {
+        "raw_whole": {
+          "total": 384,
+          "smaller": 383,
+          "equal": 0,
+          "larger": 1,
+          "first_larger": [
+            {
+              "cell_or_endpoint": 63,
+              "component": 0,
+              "produced": "43158419646109915073286687727950363857/170141183460469231731687303715884105728",
+              "baseline": "58744174825060606071527389200610642052008332062497102061764120515680050010287/231584178474632390847141970017375815706539969331281128078915168015826259279872"
+            }
+          ]
+        },
+        "capped_whole": {
+          "total": 384,
+          "smaller": 383,
+          "equal": 1,
+          "larger": 0,
+          "first_larger": []
+        },
+        "raw_endpoints": {
+          "total": 386,
+          "smaller": 376,
+          "equal": 2,
+          "larger": 8,
+          "first_larger": [
+            {
+              "cell_or_endpoint": 16,
+              "component": 0,
+              "produced": "21345441901557937468950441812267405855/85070591730234615865843651857942052864",
+              "baseline": "116215628953187349869814986884314821027111305961123469052037971787636051400335/463168356949264781694283940034751631413079938662562256157830336031652518559744"
+            },
+            {
+              "cell_or_endpoint": 16,
+              "component": 1,
+              "produced": "26093376406487213099917839298306229/340282366920938463463374607431768211456",
+              "baseline": "35513153258992687821882731816198027718223807083489236430028967591191100373/463168356949264781694283940034751631413079938662562256157830336031652518559744"
+            },
+            {
+              "cell_or_endpoint": 32,
+              "component": 0,
+              "produced": "85693200650479115607377685947889049377/340282366920938463463374607431768211456",
+              "baseline": "116639518685860167718236724290251225176031402719966930212277273349439174053115/463168356949264781694283940034751631413079938662562256157830336031652518559744"
+            },
+            {
+              "cell_or_endpoint": 32,
+              "component": 1,
+              "produced": "52262947714888925682907695197657135/340282366920938463463374607431768211456",
+              "baseline": "71130012379161515326602873036428771378571948338977859021020477690982414307/463168356949264781694283940034751631413079938662562256157830336031652518559744"
+            }
+          ]
+        },
+        "capped_endpoints": {
+          "total": 386,
+          "smaller": 376,
+          "equal": 10,
+          "larger": 0,
+          "first_larger": []
+        }
+      },
+      "reference_max_budget": 5.640268539123937e-37
+    },
+    {
+      "id": "saved_native_nine_state_K_conditional_feedback",
+      "cells": 192,
+      "D": 0.9999982917215274,
+      "inverse_D": 1.0000017082813908,
+      "final": {
+        "R8": [
+          0.00003644764302052078,
+          6.191540755286869e-7
+        ],
+        "raw": [
+          0.000036447616117818194,
+          6.19120080246264e-7
+        ],
+        "capped": [
+          0.000036447616117818194,
+          6.19120080246264e-7
+        ],
+        "R8_exact": [
+          "12402490235712233823070661500600561/340282366920938463463374607431768211456",
+          "210687214309647086442843879486181/340282366920938463463374607431768211456"
+        ],
+        "raw_exact": [
+          "6201240540598460897698926266281331/170141183460469231731687303715884105728",
+          "26334455789310008718278773289695/42535295865117307932921825928971026432"
+        ],
+        "capped_exact": [
+          "6201240540598460897698926266281331/170141183460469231731687303715884105728",
+          "26334455789310008718278773289695/42535295865117307932921825928971026432"
+        ],
+        "capped_reduction_percent": [
+          0.00007381191307587399,
+          0.005490601413532009
+        ],
+        "saved_sample": [
+          1.1721234642357073e-7,
+          6.825711107438792e-10
+        ],
+        "capped_to_saved_sample": [
+          310.95372825408083,
+          907.041142675281
+        ]
+      },
+      "exact_comparison": {
+        "raw_whole": {
+          "total": 384,
+          "smaller": 384,
+          "equal": 0,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_whole": {
+          "total": 384,
+          "smaller": 384,
+          "equal": 0,
+          "larger": 0,
+          "first_larger": []
+        },
+        "raw_endpoints": {
+          "total": 386,
+          "smaller": 384,
+          "equal": 2,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_endpoints": {
+          "total": 386,
+          "smaller": 384,
+          "equal": 2,
+          "larger": 0,
+          "first_larger": []
+        }
+      },
+      "reference_max_budget": 5.642360099247072e-37
+    }
+  ],
+  "controls": [
+    {
+      "id": "noforcing",
+      "cells": 8,
+      "D": 1,
+      "inverse_D": 1,
+      "final": {
+        "R8": [
+          0.125,
+          3
+        ],
+        "raw": [
+          0.125,
+          3
+        ],
+        "capped": [
+          0.125,
+          3
+        ],
+        "R8_exact": [
+          "1/8",
+          "3"
+        ],
+        "raw_exact": [
+          "1/8",
+          "3"
+        ],
+        "capped_exact": [
+          "1/8",
+          "3"
+        ],
+        "capped_reduction_percent": [
+          0,
+          0
+        ],
+        "saved_sample": null,
+        "capped_to_saved_sample": null
+      },
+      "exact_comparison": {
+        "raw_whole": {
+          "total": 16,
+          "smaller": 0,
+          "equal": 16,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_whole": {
+          "total": 16,
+          "smaller": 0,
+          "equal": 16,
+          "larger": 0,
+          "first_larger": []
+        },
+        "raw_endpoints": {
+          "total": 18,
+          "smaller": 0,
+          "equal": 18,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_endpoints": {
+          "total": 18,
+          "smaller": 0,
+          "equal": 18,
+          "larger": 0,
+          "first_larger": []
+        }
+      },
+      "reference_max_budget": 7.640713280344869e-38
+    },
+    {
+      "id": "constantforcing",
+      "cells": 8,
+      "D": 1,
+      "inverse_D": 1,
+      "final": {
+        "R8": [
+          1,
+          4
+        ],
+        "raw": [
+          1,
+          4
+        ],
+        "capped": [
+          1,
+          4
+        ],
+        "R8_exact": [
+          "1",
+          "4"
+        ],
+        "raw_exact": [
+          "1",
+          "4"
+        ],
+        "capped_exact": [
+          "1",
+          "4"
+        ],
+        "capped_reduction_percent": [
+          0,
+          0
+        ],
+        "saved_sample": null,
+        "capped_to_saved_sample": null
+      },
+      "exact_comparison": {
+        "raw_whole": {
+          "total": 16,
+          "smaller": 0,
+          "equal": 16,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_whole": {
+          "total": 16,
+          "smaller": 0,
+          "equal": 16,
+          "larger": 0,
+          "first_larger": []
+        },
+        "raw_endpoints": {
+          "total": 18,
+          "smaller": 0,
+          "equal": 18,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_endpoints": {
+          "total": 18,
+          "smaller": 0,
+          "equal": 18,
+          "larger": 0,
+          "first_larger": []
+        }
+      },
+      "reference_max_budget": 6.024408547964223e-38
+    },
+    {
+      "id": "nilpotent",
+      "cells": 8,
+      "D": 1,
+      "inverse_D": 1,
+      "final": {
+        "R8": [
+          3,
+          2
+        ],
+        "raw": [
+          3,
+          2
+        ],
+        "capped": [
+          3,
+          2
+        ],
+        "R8_exact": [
+          "3",
+          "2"
+        ],
+        "raw_exact": [
+          "3",
+          "2"
+        ],
+        "capped_exact": [
+          "3",
+          "2"
+        ],
+        "capped_reduction_percent": [
+          0,
+          0
+        ],
+        "saved_sample": null,
+        "capped_to_saved_sample": null
+      },
+      "exact_comparison": {
+        "raw_whole": {
+          "total": 16,
+          "smaller": 0,
+          "equal": 16,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_whole": {
+          "total": 16,
+          "smaller": 0,
+          "equal": 16,
+          "larger": 0,
+          "first_larger": []
+        },
+        "raw_endpoints": {
+          "total": 18,
+          "smaller": 0,
+          "equal": 18,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_endpoints": {
+          "total": 18,
+          "smaller": 0,
+          "equal": 18,
+          "larger": 0,
+          "first_larger": []
+        }
+      },
+      "reference_max_budget": 5.289724578700294e-38
+    },
+    {
+      "id": "negative_d",
+      "cells": 8,
+      "D": 1,
+      "inverse_D": 1,
+      "final": {
+        "R8": [
+          0.125,
+          3.5738773611494663
+        ],
+        "raw": [
+          0.125,
+          3.5738773611494663
+        ],
+        "capped": [
+          0.125,
+          3.5738773611494663
+        ],
+        "R8_exact": [
+          "1/8",
+          "608063723768548999842602411270739350581/170141183460469231731687303715884105728"
+        ],
+        "raw_exact": [
+          "1/8",
+          "608063723768548999842602411270739350575/170141183460469231731687303715884105728"
+        ],
+        "capped_exact": [
+          "1/8",
+          "608063723768548999842602411270739350575/170141183460469231731687303715884105728"
+        ],
+        "capped_reduction_percent": [
+          0,
+          9.867386863360749e-37
+        ],
+        "saved_sample": null,
+        "capped_to_saved_sample": null
+      },
+      "exact_comparison": {
+        "raw_whole": {
+          "total": 16,
+          "smaller": 6,
+          "equal": 10,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_whole": {
+          "total": 16,
+          "smaller": 6,
+          "equal": 10,
+          "larger": 0,
+          "first_larger": []
+        },
+        "raw_endpoints": {
+          "total": 18,
+          "smaller": 7,
+          "equal": 11,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_endpoints": {
+          "total": 18,
+          "smaller": 7,
+          "equal": 11,
+          "larger": 0,
+          "first_larger": []
+        }
+      },
+      "reference_max_budget": 6.997061203246299e-38
+    },
+    {
+      "id": "positive_d",
+      "cells": 8,
+      "D": 1,
+      "inverse_D": 1,
+      "final": {
+        "R8": [
+          0.125,
+          5.541048894900897
+        ],
+        "raw": [
+          0.125,
+          5.541048894900897
+        ],
+        "capped": [
+          0.125,
+          5.541048894900897
+        ],
+        "R8_exact": [
+          "1/8",
+          "1885521233181527631435442340563952329201/340282366920938463463374607431768211456"
+        ],
+        "raw_exact": [
+          "1/8",
+          "471380308295381907858860585140988082297/85070591730234615865843651857942052864"
+        ],
+        "capped_exact": [
+          "1/8",
+          "471380308295381907858860585140988082297/85070591730234615865843651857942052864"
+        ],
+        "capped_reduction_percent": [
+          0,
+          6.894645242506495e-37
+        ],
+        "saved_sample": null,
+        "capped_to_saved_sample": null
+      },
+      "exact_comparison": {
+        "raw_whole": {
+          "total": 16,
+          "smaller": 6,
+          "equal": 10,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_whole": {
+          "total": 16,
+          "smaller": 6,
+          "equal": 10,
+          "larger": 0,
+          "first_larger": []
+        },
+        "raw_endpoints": {
+          "total": 18,
+          "smaller": 6,
+          "equal": 12,
+          "larger": 0,
+          "first_larger": []
+        },
+        "capped_endpoints": {
+          "total": 18,
+          "smaller": 6,
+          "equal": 12,
+          "larger": 0,
+          "first_larger": []
+        }
+      },
+      "reference_max_budget": 7.516804788519709e-38
+    }
+  ],
+  "max_observed_positive_rounding_difference": 2.859409286151958e-37,
+  "min_observed_rounding_difference": -1e-99,
+  "max_propagated_rounding_budget": 5.64237288394698e-37,
+  "display_convention": "Decimals are approximate display values; exact rational certificates remain in raw results.",
+  "limits": [
+    "One fixed delta grid and128bits; no empirical refinement-order study",
+    "Saved binary64 observations are not new continuous enclosures",
+    "Raw no-worse is case-dependent; capped no-worse is source-certified",
+    "Conditional comparison, no physical rate/consumer admission"
+  ],
+  "input_identities": {
+    "R9_primary": "494fad7b2195dfbf16857901127cdaa676d83cb1beafbf2c081122f99ba2d8d7",
+    "R9_reference": "fd10cf04540d05e97e82f3bd38d11d9039771590843479e6c64a85ff05266bbd",
+    "R8_primary": "520110d1cae1677491aecd7216621c25f1098470c939ee027d5df3bde183686b",
+    "R7_saved_reference": "e403c7803c080fd4f26be71a93b782b02d874f80ef11c85a706bea71e2a743cd"
+  }
+}
