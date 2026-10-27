@@ -1,0 +1,264 @@
+{
+  "schema": "WU_R7_INDEPENDENT_C9_FINAL_REVIEW_V1",
+  "unit_id": "WU_NONLINEAR_EVENT_FEEDBACK_R7",
+  "reviewer": "/root/r6_inventory",
+  "decision": "PASS_SCOPED_CONDITIONAL_NONLINEAR_FEEDBACK_CODE",
+  "review_pass": "Single independent review: theory first, production/reference static correspondence next, actual retained-result review last. No recursive extra audit or science rerun.",
+  "independence": {
+    "authored_proof": false,
+    "authored_production": false,
+    "authored_reference": false,
+    "reviewer_scientific_runs": 0,
+    "reviewer_CAS_calls": 0,
+    "old_science_replays": 0,
+    "external_writes": 0,
+    "proof_code_DAG_modified_by_reviewer": false
+  },
+  "actual_method": [
+    "Read the complete frozen theory, equation-code map, production core, primary runner, independent reference and both fixed input contracts.",
+    "Independently reasoned through positive dyadic matrix recurrence, rounded-C norm tail, reciprocal exponential enclosure, exact causal subtraction, coordinate scaling and Bplus whole-block comparison.",
+    "Read original primary/reference outputs, their actual process receipts, the raw Wolfram response and qualified result, and the execution ledger; no imports of production/reference or new numerical evaluation.",
+    "Checked source/result identity bindings against the current preexecution freeze and recorded execution identities. All11 frozen file identities matched."
+  ],
+  "findings": {
+    "open_material_count": 0,
+    "open_findings": [],
+    "closed_before_first_primary_execution": [
+      {
+        "id": "R7_C9_F01",
+        "severity": "LOW",
+        "category": "RESOURCE_ACCOUNTING_LABEL_AND_CHECK",
+        "target": "verification/run_primary.py CPU finalize fields",
+        "observed_defect": "The initially read actual_process_cpu_seconds_at_finalize used time.process_time()-cpu0, excluding interpreter/standard-library/input setup CPU while its name and allowance check described process CPU.",
+        "impact": "Accounting/reporting scope only; OS RLIMIT_CPU already applied process-wide. No primary result or primary upper-bound computation had yet been executed or affected. The separate qualified CAS call is preserved in its own ledger entry.",
+        "exact_minimal_correction": "Store cumulative time.process_time() as actual_process_cpu_seconds_at_finalize, preserve the run-local difference in actual_run_cpu_seconds_at_finalize, and compare the total process value with cpu_limit.",
+        "resolution": "CLOSED_PREEXECUTION_AND_ACTUAL_RUNTIME_CONFIRMED",
+        "corrected_runner_sha256": "9c77f020b82b8bf8b3868c4f91d8a0e8111aa92d579f1505ca1566098cf95a97",
+        "actual_primary_values": {
+          "process_CPU_at_finalize_s": 0.194160618,
+          "run_local_CPU_at_finalize_s": 0.123682181,
+          "OS_child_CPU_including_serialization_s": 0.23964100000000002
+        },
+        "science_repair_runs": 0
+      }
+    ],
+    "separate_author_preexecution_change": {
+      "previous_core_sha256": "e6699d1b9ef6a2d3f744e81ae1c019958c353fa8810961cb81f0182277cada00",
+      "frozen_core_sha256": "002a66a30961b21e566a940462468c9ea8e1bc868d98549d3ea79d164c239957",
+      "observed_change": "export(Interval) now serializes exact lo/hi endpoints. The100-byte addition was read; it changes serialization support, not the scientific upper-bound algorithm.",
+      "status": "ACCEPTED_STATIC; final frozen core used by actual primary"
+    }
+  },
+  "bindings": [
+    {
+      "file": "CONTRACT.json",
+      "sha256": "086da4760daec869f5dcdcb56a6251468f55df8ec5c424354eafd4c1c604dd8f"
+    },
+    {
+      "file": "theory/NONLINEAR_FEEDBACK_PROOF_KO.md",
+      "sha256": "0390132d823cb227a8eeb7f0e8d29157acba5d50a26983d0385e72626a1ea8f3"
+    },
+    {
+      "file": "theory/THEORY_CODE_MAP.json",
+      "sha256": "ebb8a1a17df03d687aeb27cbe6bdcc0fa5138a18c6e3ce381aadf04cbcf5a8b7"
+    },
+    {
+      "file": "src/nonlinear_feedback.py",
+      "sha256": "002a66a30961b21e566a940462468c9ea8e1bc868d98549d3ea79d164c239957"
+    },
+    {
+      "file": "verification/run_primary.py",
+      "sha256": "9c77f020b82b8bf8b3868c4f91d8a0e8111aa92d579f1505ca1566098cf95a97"
+    },
+    {
+      "file": "verification/PRIMARY_INPUT.json",
+      "sha256": "3ff9c2535e5c0ce6ffa5e9671de15aad6649e0996cd9b9e275cc290facd8d330"
+    },
+    {
+      "file": "verification/reference_r7.py",
+      "sha256": "ef5b0ada9edd711551aec27cd43718771114c9908526940dea9df1d706b7f083"
+    },
+    {
+      "file": "verification/REFERENCE_INPUT.json",
+      "sha256": "2039ddf826beb97b875249bd7a66cfe9c7be087ab746ef56f94e78d613046bf1"
+    },
+    {
+      "file": "verification/PREEXECUTION_FREEZE.json",
+      "sha256": "edb9d35ede8a74013fd07edcce8f679328aaf57fcad9b6cd0240920402660d5b"
+    },
+    {
+      "file": "reviews/R6_THEORY_REVIEW.json",
+      "sha256": "2fd643c376736b5e12c6fba9eec1cab7e1ed99a5c977d6473e73c1a470f7dfaa"
+    },
+    {
+      "file": "raw/PRIMARY_RESULTS.json",
+      "sha256": "6eaf3c0eed7968cf4023180e15373a180bb5b1bab2e56cd4a8547387ed337a15"
+    },
+    {
+      "file": "raw/PRIMARY_PROCESS.json",
+      "sha256": "63c04017cc9531777bf52438a4a5210564d6b05d9cbc7e382a48966f94da90c8"
+    },
+    {
+      "file": "raw/REFERENCE_RESULTS.json",
+      "sha256": "e403c7803c080fd4f26be71a93b782b02d874f80ef11c85a706bea71e2a743cd"
+    },
+    {
+      "file": "raw/REFERENCE_PROCESS.json",
+      "sha256": "c7e37c77dc8dc1f2321119e32d026b0f40b60412c0e2c9e67917f3ecb51d1a56"
+    },
+    {
+      "file": "raw/WOLFRAM_RESULT.json",
+      "sha256": "980428eeaef01f49c1dd1c12bd9ef72154b9b10f1997c1e88400ad9b328153af"
+    },
+    {
+      "file": "raw/WOLFRAM_TOOL_RESPONSE.json",
+      "sha256": "6e478ec711d9d704df93ac555814fe6ccb921255780b9c6849a28dce8b5087d0"
+    },
+    {
+      "file": "verification/wolfram_new_checks.wl",
+      "sha256": "addb61ab24b45c372d74f75a6dff2e1cf810aa82d36ee0ef44beda394402b434"
+    }
+  ],
+  "static_correspondence": [
+    {
+      "scope": "Dyadic positive series and tail",
+      "status": "PASS",
+      "reason": "C_up is rounded upward. Each matrix term uses upward integer division; z is computed from C_up itself. The scalar final-term upper and N+2>z geometric denominator bound the omitted exact positive series. Zero next-product termination implies no actual positive tail."
+    },
+    {
+      "scope": "exp(-q) reciprocal enclosure",
+      "status": "PASS",
+      "reason": "Down-rounded positive partial sums are lower bounds for exp(q), so their upward reciprocals are upper bounds for exp(-q). Up-rounded sums plus tail yield the lower reciprocal bound; q=0 retains exactly[1,1]."
+    },
+    {
+      "scope": "Causal endpoint and whole-block separation",
+      "status": "PASS",
+      "reason": "T00=Wupper00-1+rho uses exact rational subtraction. Negative d is kept for endpoint and pointwise values. Bplus changes only d to max(d,0), giving a nonnegative time-monotone comparison that covers every interior time."
+    },
+    {
+      "scope": "Scaled augmented exponential and singular cases",
+      "status": "PASS",
+      "reason": "Positive coordinate scales implement a diagonal similarity and forcing rescaling, then are exactly restored. The matrix norm is dimensionless after H scaling. B^2=0 and u=0 use valid exact formulas; no inverse of B appears."
+    },
+    {
+      "scope": "Mass-action and invariant guards",
+      "status": "PASS",
+      "reason": "Integer stoichiometry, nonnegative rates, exact W*S=0, alpha simplex and matching initial H/D/charge are checked. Zero exponents are handled before powers. Scalar error output retains coarse_l1=4*abs(eta)."
+    },
+    {
+      "scope": "HD interval coefficients",
+      "status": "PASS_CONDITIONAL",
+      "reason": "The formula implements the reviewed whole-box a,b,c,d,g without clipping negative d. q, branch distance, coarse defect and validity evidence are explicit inputs. The fixed runner verifies exact q/theta and the entire nonnegative invariant-class box."
+    },
+    {
+      "scope": "Source and certificate binding",
+      "status": "PASS_CONDITIONAL",
+      "reason": "The HD constructor selects one source variant and requires explicit alpha/source scope. The block API requires matching H/rho, l1_on_kerP, nominal_K and feedback_accounted. It does not pretend metadata strings mechanically prove a physical source or whole-interval enclosure. The actual runner/reference bind saved K/H/rho/source identities."
+    },
+    {
+      "scope": "Runner/reference schema and new work boundary",
+      "status": "PASS",
+      "reason": "The runner preserves fixed input fields, separates requested_blocks from actual block outputs, and stores local query t/bound. The independent code consumes this schema, compares5 affine and4 HD cases, shares endpoints correctly at65 clocks/block, uses direct fine/coarse event RHS and includes the negative coarse_kf_offset defect in eta'. No old scientific core is imported or replayed."
+    }
+  ],
+  "actual_evidence": {
+    "primary": {
+      "runs": 1,
+      "status": "PASS",
+      "checks": 144,
+      "failures": 0,
+      "exit_code": 0,
+      "OS_child_CPU_s": 0.23964100000000002,
+      "wall_s": 0.24029072799748974,
+      "affine_cases": 5,
+      "HD_cases": 4,
+      "blocks_each_HD": 3,
+      "primary_queries_per_block": 5,
+      "physical_IVP": 0
+    },
+    "independent_reference": {
+      "runs": 1,
+      "status": "PASS",
+      "checks": 376,
+      "failures": 0,
+      "exit_code": 0,
+      "OS_child_CPU_s": 4.632575,
+      "wall_s": 2.903543188003823,
+      "method": "independent scipy.linalg.expm plus direct mass-action fine/coarse scipy.integrate.solve_ivp DOP853",
+      "rtol": 1e-11,
+      "atol": 1e-13,
+      "unique_saved_clocks_per_HD": 193,
+      "clocks_per_block_including_shared_endpoints": 65,
+      "production_core_import": false,
+      "R6_core_import": false,
+      "interpretation": "Binary64 numerical corroboration of the already reviewed exact proof/code; finite saved clocks are not a new rigorous interval IVP theorem.",
+      "observed_diagnostics": {
+        "largest_saved_native_fine_H_D_charge_drift": 1.1102230246251565e-14,
+        "native_eta_identity_residual": 3.022692704664142e-16,
+        "native_residual_identity_residual": 2.4511550104410903e-16,
+        "no_reaction_zero_E_floating_difference_example": 1.1102230246251565e-16
+      },
+      "tolerance_policy": "Only independent numerical comparison uses the frozen absolute/relative allowances. Exact rational enclosure proof and physical measurement uncertainty are separate; tiny binary64 discrepancies at exact zero are not claimed to be exact inequality evaluations."
+    },
+    "CAS": {
+      "runs": 1,
+      "status": "COMPLETED_WITH_WARNINGS",
+      "returned_exact_zero_residuals": 24,
+      "returned_residual_count": 24,
+      "late_forcing_strict_violation_returned": true,
+      "kernel_CPU_s": 0.2788859999999995,
+      "warnings": [
+        "Power::infy (1/0)",
+        "Infinity::indet (0*Infinity), twice",
+        "General::messages"
+      ],
+      "warning_cause": "NOT_ESTABLISHED",
+      "warning_free_claim": false,
+      "accepted_role": "QUALIFIED_SYMBOLIC_CORROBORATION_ONLY",
+      "consequence": "No new run requested. The independent general proof and static arithmetic reasoning plus primary/reference evidence carry the scoped result. The warnings and raw response must remain attached; this is not an unqualified CAS proof."
+    },
+    "ledger_remaining": {
+      "primary": 0,
+      "reference": 0,
+      "Wolfram": 0,
+      "old_R6": [
+        0,
+        0,
+        0
+      ],
+      "old_PHYS91": [
+        0,
+        0,
+        0
+      ],
+      "global_remaining": null,
+      "old_science_replay": 0
+    }
+  },
+  "limits_and_retained_conditions": [
+    "The theorem is general finite-state and conditional; this implementation deliberately supports1-16 species, at most64 events, reaction order at most4 and1-13 HD states.",
+    "The positive exponential implementation rejects outside its declared domain: rounded scaled norm<=16, N+2>z, Taylor degree0..256 and dyadic bits128..512. It does not clamp invalid inputs.",
+    "The scalar HD adapter requires matching initial invariant classes, the same prescribed coefficient/lift functions, and a scalar coarse defect in the exchange direction. Other defects use the general vector theorem.",
+    "Full-interval state/lift/rate bounds and the actual nominal-generator certificate must be supplied. Assertions and strings are not physical-source certification.",
+    "The reused nine-state K lies in the saved R6 excitation generator family; its newly declared reaction coefficients, densities and rational lift are synthetic. This supplies no GL2022 state-to-state destruction array and no named physical consumer.",
+    "Native formation and destruction ensembles need a real common-pool/state/branch binding. TIQM/SQM alternatives cannot be summed; source spin factors cannot be reapplied.",
+    "This callable bound API is not itself an invariant-preserving time integrator for the fine physical ODE.",
+    "CAS warnings remain unresolved in cause and must not be hidden or described as warning-free."
+  ],
+  "scoped_adoption_recommendation": {
+    "recommend_root_adopt_conditional_theory": true,
+    "recommend_root_adopt_implemented_conditional_bound_code": true,
+    "basis": "Reviewed general proof, faithful bounded exact-rational/directed-dyadic implementation,144/144 primary and376/376 independent reference; symbolic corroboration explicitly qualified.",
+    "further_science_or_rerun_required": false,
+    "first_failure_or_correction_history_preserved": true,
+    "DAG_mutation_performed": false,
+    "physical_consumer_admission": false,
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4_ready": false,
+    "central_completion_delta": 0,
+    "physical_admission_delta": 0,
+    "root_owns_adoption_and_delivery": true
+  }
+}
+

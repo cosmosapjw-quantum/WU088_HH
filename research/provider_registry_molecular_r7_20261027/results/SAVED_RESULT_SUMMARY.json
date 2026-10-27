@@ -1,0 +1,1373 @@
+{
+  "schema": "WU_R7_C8_SAVED_RESULT_SUMMARY_V1",
+  "created_utc": "2026-10-27T14:23:27.927452+00:00",
+  "method": "Presentation-only postprocessing of four saved JSON artifacts; no scientific execution",
+  "new_scientific_runs": 0,
+  "production_or_reference_imports": false,
+  "solver_or_expm_calls": 0,
+  "trajectory_interpolation": false,
+  "source_files": [
+    {
+      "path": "../raw/PRIMARY_RESULTS.json",
+      "sha256": "6eaf3c0eed7968cf4023180e15373a180bb5b1bab2e56cd4a8547387ed337a15"
+    },
+    {
+      "path": "../raw/REFERENCE_RESULTS.json",
+      "sha256": "e403c7803c080fd4f26be71a93b782b02d874f80ef11c85a706bea71e2a743cd"
+    },
+    {
+      "path": "../raw/PRIMARY_PROCESS.json",
+      "sha256": "63c04017cc9531777bf52438a4a5210564d6b05d9cbc7e382a48966f94da90c8"
+    },
+    {
+      "path": "../raw/REFERENCE_PROCESS.json",
+      "sha256": "c7e37c77dc8dc1f2321119e32d026b0f40b60412c0e2c9e67917f3ecb51d1a56"
+    }
+  ],
+  "definitions": {
+    "R": "l1 norm of HD population residual x_HD-pi*X",
+    "E": "absolute scalar aggregate discrepancy |eta|=|X-Xbar|",
+    "full_coarse_l1": "4E under the common exact H/D/charge invariant class",
+    "endpoint": "valid only at the corresponding certified block end",
+    "whole_block": "one upper vector valid over the entire closed block, using Bplus with d clipped to zero",
+    "reference": "stored binary64 DOP853 values, an independent corroboration rather than a rigorous ODE enclosure",
+    "units": "declared dimensionless fixture coordinates; no physical clock/density binding"
+  },
+  "verification": {
+    "primary": {
+      "status": "PASS",
+      "checks": 144,
+      "failures": 0
+    },
+    "reference": {
+      "status": "PASS",
+      "checks": 376,
+      "failures": 0
+    },
+    "additional_C8_scientific_checks": 0
+  },
+  "cost": {
+    "primary": {
+      "OS_process_CPU_s": 0.23964100000000002,
+      "supervised_wall_s": 0.24029072799748974,
+      "result_finalize_CPU_s": 0.194160618,
+      "CPU_limit_s": 60,
+      "includes_imports_and_serialization": true,
+      "exit_code": 0,
+      "science_runs": 1
+    },
+    "reference": {
+      "OS_process_CPU_s": 4.632575,
+      "supervised_wall_s": 2.903543188003823,
+      "result_finalize_CPU_s": 4.519766046,
+      "CPU_limit_s": 60,
+      "includes_imports_and_serialization": true,
+      "exit_code": 0,
+      "science_runs": 1
+    },
+    "combined_OS_process_CPU_s": 4.872216,
+    "scope": "Only the two saved supervised process records; CAS cost is not included here"
+  },
+  "hd_cases": [
+    {
+      "id": "two_state_no_reaction",
+      "label_ko": "2상태 무반응 대조",
+      "states": 2,
+      "source_scope": "SYNTHETIC_DIMENSIONLESS_HD_RESERVOIR_CONTROL",
+      "physical_consumer_admitted": false,
+      "H_exact": "1/4",
+      "H_display": 0.25,
+      "rho_exact": "5/8",
+      "final_time_saved": 0.75,
+      "reference_clock_count": 193,
+      "solver_saved": {
+        "method": "DOP853",
+        "rtol": 1e-11,
+        "atol": 1e-13,
+        "fine_nfev": 107,
+        "coarse_nfev": 98
+      },
+      "coordinate_scales": [
+        "1",
+        "1"
+      ],
+      "rate_offset_exact": "0",
+      "coarse_scalar_defect_upper_exact": "0",
+      "final": {
+        "reference_R_E": [
+          0.0557825400373303,
+          0.0
+        ],
+        "endpoint_upper_exact_R_E": [
+          "125/2048",
+          "0"
+        ],
+        "endpoint_upper_display_R_E": [
+          0.06103515625,
+          0.0
+        ],
+        "reference_4E": 0.0,
+        "endpoint_upper_exact_4E": "0",
+        "endpoint_upper_display_4E": 0.0,
+        "bound_over_reference_ratio_R_E": [
+          1.0941623706836332,
+          null
+        ],
+        "ratio_note": "Display postprocessing; null when the stored reference value is zero"
+      },
+      "invariants": {
+        "exact_initial": [
+          "7/2",
+          "3/2",
+          "2"
+        ],
+        "fine_max_absolute_drift": 0.0,
+        "coarse_max_absolute_drift": 0.0,
+        "coarse_direction_max_absolute_error": 1.1102230246251565e-16,
+        "coarse_l1_equals_4E_max_absolute_error": 3.3306690738754696e-16,
+        "provenance": "Copied from saved reference check evidence, not recomputed by C8"
+      },
+      "max_stored_reference_E": 1.1102230246251565e-16,
+      "blocks": [
+        {
+          "index": 0,
+          "t0_exact": "0",
+          "H_exact": "1/4",
+          "reference_endpoint_R_E": [
+            0.15163266492535127,
+            5.551115123125783e-17
+          ],
+          "endpoint_upper_exact_R_E": [
+            "5/32",
+            "0"
+          ],
+          "endpoint_upper_display_R_E": [
+            0.15625,
+            0.0
+          ],
+          "whole_block_upper_exact_R_E": [
+            "1/4",
+            "0"
+          ],
+          "whole_block_upper_display_R_E": [
+            0.25,
+            0.0
+          ],
+          "reference_clock_count_inclusive": 65,
+          "production_query_count_inclusive": 5,
+          "endpoint_tail_certificate_saved": {
+            "algorithm": "exact_B_squared_zero",
+            "degree": 48,
+            "bits": 256,
+            "shift": "0",
+            "scaled_norm_upper": "0",
+            "tail_upper": "0"
+          },
+          "whole_block_certificate_saved": {
+            "Bplus": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "reason": "nonnegative comparison is monotone in time and dominates signed-d comparison",
+            "tail_certificate": {
+              "algorithm": "exact_B_squared_zero",
+              "degree": 48,
+              "bits": 256,
+              "shift": "0",
+              "scaled_norm_upper": "0",
+              "tail_upper": "0"
+            }
+          },
+          "actual_endpoint_check_saved": {
+            "name": "HD:two_state_no_reaction: block0 actual endpoint R/E",
+            "status": "PASS",
+            "evidence": {
+              "max_reference_minus_upper": 5.551115123125783e-17,
+              "max_allowed_excess": 5.032653298507025e-10,
+              "max_positive_violation_after_allowance": 0.0,
+              "max_upper_slack": 0.004617335074648732
+            }
+          }
+        },
+        {
+          "index": 1,
+          "t0_exact": "1/4",
+          "H_exact": "1/4",
+          "reference_endpoint_R_E": [
+            0.09196986029678506,
+            5.551115123125783e-17
+          ],
+          "endpoint_upper_exact_R_E": [
+            "25/256",
+            "0"
+          ],
+          "endpoint_upper_display_R_E": [
+            0.09765625,
+            0.0
+          ],
+          "whole_block_upper_exact_R_E": [
+            "5/32",
+            "0"
+          ],
+          "whole_block_upper_display_R_E": [
+            0.15625,
+            0.0
+          ],
+          "reference_clock_count_inclusive": 65,
+          "production_query_count_inclusive": 5,
+          "endpoint_tail_certificate_saved": {
+            "algorithm": "exact_B_squared_zero",
+            "degree": 48,
+            "bits": 256,
+            "shift": "0",
+            "scaled_norm_upper": "0",
+            "tail_upper": "0"
+          },
+          "whole_block_certificate_saved": {
+            "Bplus": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "reason": "nonnegative comparison is monotone in time and dominates signed-d comparison",
+            "tail_certificate": {
+              "algorithm": "exact_B_squared_zero",
+              "degree": 48,
+              "bits": 256,
+              "shift": "0",
+              "scaled_norm_upper": "0",
+              "tail_upper": "0"
+            }
+          },
+          "actual_endpoint_check_saved": {
+            "name": "HD:two_state_no_reaction: block1 actual endpoint R/E",
+            "status": "PASS",
+            "evidence": {
+              "max_reference_minus_upper": 5.551115123125783e-17,
+              "max_allowed_excess": 3.8393972059357014e-10,
+              "max_positive_violation_after_allowance": 0.0,
+              "max_upper_slack": 0.005686389703214945
+            }
+          }
+        },
+        {
+          "index": 2,
+          "t0_exact": "1/2",
+          "H_exact": "1/4",
+          "reference_endpoint_R_E": [
+            0.0557825400373303,
+            0.0
+          ],
+          "endpoint_upper_exact_R_E": [
+            "125/2048",
+            "0"
+          ],
+          "endpoint_upper_display_R_E": [
+            0.06103515625,
+            0.0
+          ],
+          "whole_block_upper_exact_R_E": [
+            "25/256",
+            "0"
+          ],
+          "whole_block_upper_display_R_E": [
+            0.09765625,
+            0.0
+          ],
+          "reference_clock_count_inclusive": 65,
+          "production_query_count_inclusive": 5,
+          "endpoint_tail_certificate_saved": {
+            "algorithm": "exact_B_squared_zero",
+            "degree": 48,
+            "bits": 256,
+            "shift": "0",
+            "scaled_norm_upper": "0",
+            "tail_upper": "0"
+          },
+          "whole_block_certificate_saved": {
+            "Bplus": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "reason": "nonnegative comparison is monotone in time and dominates signed-d comparison",
+            "tail_certificate": {
+              "algorithm": "exact_B_squared_zero",
+              "degree": 48,
+              "bits": 256,
+              "shift": "0",
+              "scaled_norm_upper": "0",
+              "tail_upper": "0"
+            }
+          },
+          "actual_endpoint_check_saved": {
+            "name": "HD:two_state_no_reaction: block2 actual endpoint R/E",
+            "status": "PASS",
+            "evidence": {
+              "max_reference_minus_upper": 0.0,
+              "max_allowed_excess": 3.115650800746606e-10,
+              "max_positive_violation_after_allowance": 0.0,
+              "max_upper_slack": 0.005252616212669703
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "two_state_nonlinear",
+      "label_ko": "2상태 비선형 반응",
+      "states": 2,
+      "source_scope": "SYNTHETIC_DIMENSIONLESS_HD_RESERVOIR_CONTROL",
+      "physical_consumer_admitted": false,
+      "H_exact": "1/4",
+      "H_display": 0.25,
+      "rho_exact": "5/8",
+      "final_time_saved": 0.75,
+      "reference_clock_count": 193,
+      "solver_saved": {
+        "method": "DOP853",
+        "rtol": 1e-11,
+        "atol": 1e-13,
+        "fine_nfev": 107,
+        "coarse_nfev": 47
+      },
+      "coordinate_scales": [
+        "1",
+        "1"
+      ],
+      "rate_offset_exact": "0",
+      "coarse_scalar_defect_upper_exact": "0",
+      "final": {
+        "reference_R_E": [
+          0.05697202482573821,
+          0.00019400095713395515
+        ],
+        "endpoint_upper_exact_R_E": [
+          "52637082338167031840158646594709107369252794438497238414077353403217269716603138762640592400801472016542806989632121885525200565497002831169969717982069636942010392795329005503714294442885958288736107689361573179866380274880968487/776259046150354467574489744231251277628443008558348305569526019013025476343188443165439204414323238975243865348565536603085790022057407195722143637520590569602227488010424952775132642815799222412631499596858234375446423426908028928",
+          "402222240054019843777630557261379991028510744910189708718082707257103843283435983185066017517935121188898752740715851575774884755626255407616760402466338612301671279161318358068438067458932966445720082724329074382494530105525589/776259046150354467574489744231251277628443008558348305569526019013025476343188443165439204414323238975243865348565536603085790022057407195722143637520590569602227488010424952775132642815799222412631499596858234375446423426908028928"
+        ],
+        "endpoint_upper_display_R_E": [
+          0.06780865562753352,
+          0.0005181546573257105
+        ],
+        "reference_4E": 0.0007760038285358206,
+        "endpoint_upper_exact_4E": "402222240054019843777630557261379991028510744910189708718082707257103843283435983185066017517935121188898752740715851575774884755626255407616760402466338612301671279161318358068438067458932966445720082724329074382494530105525589/194064761537588616893622436057812819407110752139587076392381504753256369085797110791359801103580809743810966337141384150771447505514351798930535909380147642400556872002606238193783160703949805603157874899214558593861605856727007232",
+        "endpoint_upper_display_4E": 0.002072618629302842,
+        "bound_over_reference_ratio_R_E": [
+          1.1902096833479519,
+          2.670887118190512
+        ],
+        "ratio_note": "Display postprocessing; null when the stored reference value is zero"
+      },
+      "invariants": {
+        "exact_initial": [
+          "7/2",
+          "3/2",
+          "2"
+        ],
+        "fine_max_absolute_drift": 4.440892098500626e-16,
+        "coarse_max_absolute_drift": 4.440892098500626e-16,
+        "coarse_direction_max_absolute_error": 3.3306690738754696e-16,
+        "coarse_l1_equals_4E_max_absolute_error": 5.551115123125783e-16,
+        "provenance": "Copied from saved reference check evidence, not recomputed by C8"
+      },
+      "max_stored_reference_E": 0.00019400095713395515,
+      "blocks": [
+        {
+          "index": 0,
+          "t0_exact": "0",
+          "H_exact": "1/4",
+          "reference_endpoint_R_E": [
+            0.1521691169809359,
+            9.833427323613364e-05
+          ],
+          "endpoint_upper_exact_R_E": [
+            "9258283612478697373178791377065549928147244925777403623420676014318763488891/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "116625193098086617785457530244826391040719855530422184679417584242461054557/463168356949264781694283940034751631413079938662562256157830336031652518559744"
+          ],
+          "endpoint_upper_display_R_E": [
+            0.15991219561646947,
+            0.0002517987063413783
+          ],
+          "whole_block_upper_exact_R_E": [
+            "58744151190694319676403116988585530488107599693392628964420155530082384404377/231584178474632390847141970017375815706539969331281128078915168015826259279872",
+            "116639736521268253545311678115920595966254976757141891158325461422690689115/463168356949264781694283940034751631413079938662562256157830336031652518559744"
+          ],
+          "whole_block_upper_display_R_E": [
+            0.2536621956543941,
+            0.0002518301062048695
+          ],
+          "reference_clock_count_inclusive": 65,
+          "production_query_count_inclusive": 5,
+          "endpoint_tail_certificate_saved": {
+            "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+            "degree": 48,
+            "bits": 256,
+            "terms_used": 48,
+            "shift": "1/1000",
+            "shift_times_H": "1/4000",
+            "coordinate_scales": [
+              "1",
+              "1"
+            ],
+            "scaled_norm_upper": "283147843213124759121700924279057149672449259377699191752736123394350074823/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+            "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "exp_minus_shift_interval": [
+              "1808799138018877062300267189378079202618196732164535152044670002585605744181/1809251394333065553493296640760748560207343510400633813116524750123642650624",
+              "115763144833208131987217100120197068967564590858530249730858880165478767627635/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+            ],
+            "finite_polynomial_terminated": false,
+            "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+            "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+          },
+          "whole_block_certificate_saved": {
+            "Bplus": [
+              [
+                "3/250",
+                "29/2000"
+              ],
+              [
+                "1/250",
+                "0"
+              ]
+            ],
+            "reason": "nonnegative comparison is monotone in time and dominates signed-d comparison",
+            "tail_certificate": {
+              "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+              "degree": 48,
+              "bits": 256,
+              "terms_used": 48,
+              "shift": "0",
+              "shift_times_H": "0",
+              "coordinate_scales": [
+                "1",
+                "1"
+              ],
+              "scaled_norm_upper": "551821675271584993815455475432028310863239770672193313000540048787711008441/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "exp_minus_shift_interval": [
+                "1",
+                "1"
+              ],
+              "finite_polynomial_terminated": false,
+              "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+              "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+            }
+          },
+          "actual_endpoint_check_saved": {
+            "name": "HD:two_state_nonlinear: block0 actual endpoint R/E",
+            "status": "PASS",
+            "evidence": {
+              "max_reference_minus_upper": -0.00015346443310524467,
+              "max_allowed_excess": 5.043382339618718e-10,
+              "max_positive_violation_after_allowance": 0.0,
+              "max_upper_slack": 0.007743078635533557
+            }
+          }
+        },
+        {
+          "index": 1,
+          "t0_exact": "1/4",
+          "H_exact": "1/4",
+          "reference_endpoint_R_E": [
+            0.09289062156791186,
+            0.00015791778149942814
+          ],
+          "endpoint_upper_exact_R_E": [
+            "1385527999011747501079372442252864212066679603693083072802231798514693195600645817621169934139986342478399727475988329950992623657278881138562451286005061/13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096",
+            "11083512754809438853691289746408202757063385333153152859077187887061315436932447741843067993853847540644993204647175941664060745471077743736045972628583/26815615859885194199148049996411692254958731641184786755447122887443528060147093953603748596333806855380063716372972101707507765623893139892867298012168192"
+          ],
+          "endpoint_upper_display_R_E": [
+            0.10333739909247636,
+            0.00041332307311986124
+          ],
+          "whole_block_upper_exact_R_E": [
+            "4379110005098205742956286776789420256834719901492049122024199148601750210377806982690794445492619257600586865310275252966639740119601827460978253582049931/26815615859885194199148049996411692254958731641184786755447122887443528060147093953603748596333806855380063716372972101707507765623893139892867298012168192",
+            "11085740339694747232754881746571451377453087978875087622218294533609704029665127970351201651633186943311951821891715415622983815943901558436858489273617/26815615859885194199148049996411692254958731641184786755447122887443528060147093953603748596333806855380063716372972101707507765623893139892867298012168192"
+          ],
+          "whole_block_upper_display_R_E": [
+            0.16330447258715147,
+            0.00041340614355527276
+          ],
+          "reference_clock_count_inclusive": 65,
+          "production_query_count_inclusive": 5,
+          "endpoint_tail_certificate_saved": {
+            "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+            "degree": 48,
+            "bits": 256,
+            "terms_used": 48,
+            "shift": "1/1000",
+            "shift_times_H": "1/4000",
+            "coordinate_scales": [
+              "1",
+              "1"
+            ],
+            "scaled_norm_upper": "283147843213124759121700924279057149672449259377699191752736123394350074823/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+            "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "exp_minus_shift_interval": [
+              "1808799138018877062300267189378079202618196732164535152044670002585605744181/1809251394333065553493296640760748560207343510400633813116524750123642650624",
+              "115763144833208131987217100120197068967564590858530249730858880165478767627635/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+            ],
+            "finite_polynomial_terminated": false,
+            "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+            "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+          },
+          "whole_block_certificate_saved": {
+            "Bplus": [
+              [
+                "3/250",
+                "29/2000"
+              ],
+              [
+                "1/250",
+                "0"
+              ]
+            ],
+            "reason": "nonnegative comparison is monotone in time and dominates signed-d comparison",
+            "tail_certificate": {
+              "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+              "degree": 48,
+              "bits": 256,
+              "terms_used": 48,
+              "shift": "0",
+              "shift_times_H": "0",
+              "coordinate_scales": [
+                "1",
+                "1"
+              ],
+              "scaled_norm_upper": "551821675271584993815455475432028310863239770672193313000540048787711008441/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "exp_minus_shift_interval": [
+                "1",
+                "1"
+              ],
+              "finite_polynomial_terminated": false,
+              "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+              "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+            }
+          },
+          "actual_endpoint_check_saved": {
+            "name": "HD:two_state_nonlinear: block1 actual endpoint R/E",
+            "status": "PASS",
+            "evidence": {
+              "max_reference_minus_upper": -0.0002554052916204331,
+              "max_allowed_excess": 3.8578124313582374e-10,
+              "max_positive_violation_after_allowance": 0.0,
+              "max_upper_slack": 0.010446777524564493
+            }
+          }
+        },
+        {
+          "index": 2,
+          "t0_exact": "1/2",
+          "H_exact": "1/4",
+          "reference_endpoint_R_E": [
+            0.05697202482573821,
+            0.00019400095713395515
+          ],
+          "endpoint_upper_exact_R_E": [
+            "52637082338167031840158646594709107369252794438497238414077353403217269716603138762640592400801472016542806989632121885525200565497002831169969717982069636942010392795329005503714294442885958288736107689361573179866380274880968487/776259046150354467574489744231251277628443008558348305569526019013025476343188443165439204414323238975243865348565536603085790022057407195722143637520590569602227488010424952775132642815799222412631499596858234375446423426908028928",
+            "402222240054019843777630557261379991028510744910189708718082707257103843283435983185066017517935121188898752740715851575774884755626255407616760402466338612301671279161318358068438067458932966445720082724329074382494530105525589/776259046150354467574489744231251277628443008558348305569526019013025476343188443165439204414323238975243865348565536603085790022057407195722143637520590569602227488010424952775132642815799222412631499596858234375446423426908028928"
+          ],
+          "endpoint_upper_display_R_E": [
+            0.06780865562753352,
+            0.0005181546573257105
+          ],
+          "whole_block_upper_exact_R_E": [
+            "165436608130193154600878921877046384343256172719526622549120587994615334551290751734202340597994720770984198510111213637319078092496437115060401185480299536736851915047967166539803924470244427735145281982887362364843903427752563191/1552518092300708935148979488462502555256886017116696611139052038026050952686376886330878408828646477950487730697131073206171580044114814391444287275041181139204454976020849905550265285631598444825262999193716468750892846853816057856",
+            "402312571912206458117898216207640207286784796780936483483730373598733394652807090547287958780753762961123046201478203741245109613938717458203791528517950490807360441279989104772874133824444351156607616945274243709735470316305035/776259046150354467574489744231251277628443008558348305569526019013025476343188443165439204414323238975243865348565536603085790022057407195722143637520590569602227488010424952775132642815799222412631499596858234375446423426908028928"
+          ],
+          "whole_block_upper_display_R_E": [
+            0.10656018049041167,
+            0.0005182710255131534
+          ],
+          "reference_clock_count_inclusive": 65,
+          "production_query_count_inclusive": 5,
+          "endpoint_tail_certificate_saved": {
+            "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+            "degree": 48,
+            "bits": 256,
+            "terms_used": 48,
+            "shift": "1/1000",
+            "shift_times_H": "1/4000",
+            "coordinate_scales": [
+              "1",
+              "1"
+            ],
+            "scaled_norm_upper": "283147843213124759121700924279057149672449259377699191752736123394350074823/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+            "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "exp_minus_shift_interval": [
+              "1808799138018877062300267189378079202618196732164535152044670002585605744181/1809251394333065553493296640760748560207343510400633813116524750123642650624",
+              "115763144833208131987217100120197068967564590858530249730858880165478767627635/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+            ],
+            "finite_polynomial_terminated": false,
+            "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+            "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+          },
+          "whole_block_certificate_saved": {
+            "Bplus": [
+              [
+                "3/250",
+                "29/2000"
+              ],
+              [
+                "1/250",
+                "0"
+              ]
+            ],
+            "reason": "nonnegative comparison is monotone in time and dominates signed-d comparison",
+            "tail_certificate": {
+              "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+              "degree": 48,
+              "bits": 256,
+              "terms_used": 48,
+              "shift": "0",
+              "shift_times_H": "0",
+              "coordinate_scales": [
+                "1",
+                "1"
+              ],
+              "scaled_norm_upper": "551821675271584993815455475432028310863239770672193313000540048787711008441/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "exp_minus_shift_interval": [
+                "1",
+                "1"
+              ],
+              "finite_polynomial_terminated": false,
+              "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+              "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+            }
+          },
+          "actual_endpoint_check_saved": {
+            "name": "HD:two_state_nonlinear: block2 actual endpoint R/E",
+            "status": "PASS",
+            "evidence": {
+              "max_reference_minus_upper": -0.00032415370019175536,
+              "max_allowed_excess": 3.1394404965147645e-10,
+              "max_positive_violation_after_allowance": 0.0,
+              "max_upper_slack": 0.01083663080179531
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "two_state_coarse_source_defect",
+      "label_ko": "2상태 coarse source defect",
+      "states": 2,
+      "source_scope": "SYNTHETIC_DIMENSIONLESS_HD_RESERVOIR_CONTROL",
+      "physical_consumer_admitted": false,
+      "H_exact": "1/4",
+      "H_display": 0.25,
+      "rho_exact": "5/8",
+      "final_time_saved": 0.75,
+      "reference_clock_count": 193,
+      "solver_saved": {
+        "method": "DOP853",
+        "rtol": 1e-11,
+        "atol": 1e-13,
+        "fine_nfev": 107,
+        "coarse_nfev": 47
+      },
+      "coordinate_scales": [
+        "1",
+        "1"
+      ],
+      "rate_offset_exact": "1/10000",
+      "coarse_scalar_defect_upper_exact": "9/40000",
+      "final": {
+        "reference_R_E": [
+          0.05697202482573821,
+          0.00011962192206960154
+        ],
+        "endpoint_upper_exact_R_E": [
+          "52637658995236511691488345936111636774289806743013625858153591045025009910361658550333081349340627992239589068903244070701517205698516233189270884787204590848227608723664151515400523661079468314718073867504299244166915937906331177/776259046150354467574489744231251277628443008558348305569526019013025476343188443165439204414323238975243865348565536603085790022057407195722143637520590569602227488010424952775132642815799222412631499596858234375446423426908028928",
+          "266583763799279408368401260762874651466037407030061991476384486473065029783747109602076041762120342690462091720790518229156343518221637345104011419235188997665340881855260046987902042064800823229705835044736706784329841605150661/388129523075177233787244872115625638814221504279174152784763009506512738171594221582719602207161619487621932674282768301542895011028703597861071818760295284801113744005212476387566321407899611206315749798429117187723211713454014464"
+        ],
+        "endpoint_upper_display_R_E": [
+          0.06780939849432822,
+          0.0006868422728761206
+        ],
+        "reference_4E": 0.00047848768827840615,
+        "endpoint_upper_exact_4E": "266583763799279408368401260762874651466037407030061991476384486473065029783747109602076041762120342690462091720790518229156343518221637345104011419235188997665340881855260046987902042064800823229705835044736706784329841605150661/97032380768794308446811218028906409703555376069793538196190752376628184542898555395679900551790404871905483168570692075385723752757175899465267954690073821200278436001303119096891580351974902801578937449607279296930802928363503616",
+        "endpoint_upper_display_4E": 0.0027473690915044823,
+        "bound_over_reference_ratio_R_E": [
+          1.1902227224982536,
+          5.7417759303055185
+        ],
+        "ratio_note": "Display postprocessing; null when the stored reference value is zero"
+      },
+      "invariants": {
+        "exact_initial": [
+          "7/2",
+          "3/2",
+          "2"
+        ],
+        "fine_max_absolute_drift": 4.440892098500626e-16,
+        "coarse_max_absolute_drift": 4.440892098500626e-16,
+        "coarse_direction_max_absolute_error": 3.3306690738754696e-16,
+        "coarse_l1_equals_4E_max_absolute_error": 5.551115123125783e-16,
+        "provenance": "Copied from saved reference check evidence, not recomputed by C8"
+      },
+      "max_stored_reference_E": 0.00011962192206960154,
+      "blocks": [
+        {
+          "index": 0,
+          "t0_exact": "0",
+          "H_exact": "1/4",
+          "reference_endpoint_R_E": [
+            0.1521691169809359,
+            7.34035215779194e-05
+          ],
+          "endpoint_upper_exact_R_E": [
+            "18516579041156080383151567464209665049076508702357020213835728258688629979513/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+            "142675172545677554387708084316515424818508644561468260598904621251628419081/463168356949264781694283940034751631413079938662562256157830336031652518559744"
+          ],
+          "endpoint_upper_display_R_E": [
+            0.15991229766315299,
+            0.0003080417096829137
+          ],
+          "whole_block_upper_exact_R_E": [
+            "58744174825060606071527389200610642052008332062497102061764120515680050010287/231584178474632390847141970017375815706539969331281128078915168015826259279872",
+            "142692972351966836141982750041102524790683919960371065686610530592666722323/463168356949264781694283940034751631413079938662562256157830336031652518559744"
+          ],
+          "whole_block_upper_display_R_E": [
+            0.25366229770957954,
+            0.00030808014021475427
+          ],
+          "reference_clock_count_inclusive": 65,
+          "production_query_count_inclusive": 5,
+          "endpoint_tail_certificate_saved": {
+            "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+            "degree": 48,
+            "bits": 256,
+            "terms_used": 48,
+            "shift": "1/1000",
+            "shift_times_H": "1/4000",
+            "coordinate_scales": [
+              "1",
+              "1"
+            ],
+            "scaled_norm_upper": "283147843213124759121700924279057149672449259377699191752736123394350074823/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+            "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "exp_minus_shift_interval": [
+              "1808799138018877062300267189378079202618196732164535152044670002585605744181/1809251394333065553493296640760748560207343510400633813116524750123642650624",
+              "115763144833208131987217100120197068967564590858530249730858880165478767627635/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+            ],
+            "finite_polynomial_terminated": false,
+            "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+            "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+          },
+          "whole_block_certificate_saved": {
+            "Bplus": [
+              [
+                "3/250",
+                "29/2000"
+              ],
+              [
+                "1/250",
+                "0"
+              ]
+            ],
+            "reason": "nonnegative comparison is monotone in time and dominates signed-d comparison",
+            "tail_certificate": {
+              "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+              "degree": 48,
+              "bits": 256,
+              "terms_used": 48,
+              "shift": "0",
+              "shift_times_H": "0",
+              "coordinate_scales": [
+                "1",
+                "1"
+              ],
+              "scaled_norm_upper": "551821675271584993815455475432028310863239770672193313000540048787711008441/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "exp_minus_shift_interval": [
+                "1",
+                "1"
+              ],
+              "finite_polynomial_terminated": false,
+              "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+              "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+            }
+          },
+          "actual_endpoint_check_saved": {
+            "name": "HD:two_state_coarse_source_defect: block0 actual endpoint R/E",
+            "status": "PASS",
+            "evidence": {
+              "max_reference_minus_upper": -0.00023463818810499427,
+              "max_allowed_excess": 5.043382339618718e-10,
+              "max_positive_violation_after_allowance": 0.0,
+              "max_upper_slack": 0.007743180682217077
+            }
+          }
+        },
+        {
+          "index": 1,
+          "t0_exact": "1/4",
+          "H_exact": "1/4",
+          "reference_endpoint_R_E": [
+            0.09289062156791186,
+            0.0001081942696737892
+          ],
+          "endpoint_upper_exact_R_E": [
+            "1385532963846265903616583294855122477524609257244008141217585587482720999210620669968673997954703949988710152823803733027573272244067455623972453206456065/13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096",
+            "14099522775158149125800597745948749070800827051800895827024086355523617484960915713291760174364102798593244663785731188382329995823765174629868665483449/26815615859885194199148049996411692254958731641184786755447122887443528060147093953603748596333806855380063716372972101707507765623893139892867298012168192"
+          ],
+          "endpoint_upper_display_R_E": [
+            0.10333776938675149,
+            0.000525795225022235
+          ],
+          "whole_block_upper_exact_R_E": [
+            "4379120961846003527045082555736545894947842563630057977664229411890642726880729939035120478720817759053636596084716842460419852174910373042236114376920899/26815615859885194199148049996411692254958731641184786755447122887443528060147093953603748596333806855380063716372972101707507765623893139892867298012168192",
+            "14102315893109490298742336129264671992168412170740534620343910733535705411560161298250826145205899896263757041760192890509387441903184941778550570897775/26815615859885194199148049996411692254958731641184786755447122887443528060147093953603748596333806855380063716372972101707507765623893139892867298012168192"
+          ],
+          "whole_block_upper_display_R_E": [
+            0.16330488118294337,
+            0.0005258993851491526
+          ],
+          "reference_clock_count_inclusive": 65,
+          "production_query_count_inclusive": 5,
+          "endpoint_tail_certificate_saved": {
+            "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+            "degree": 48,
+            "bits": 256,
+            "terms_used": 48,
+            "shift": "1/1000",
+            "shift_times_H": "1/4000",
+            "coordinate_scales": [
+              "1",
+              "1"
+            ],
+            "scaled_norm_upper": "283147843213124759121700924279057149672449259377699191752736123394350074823/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+            "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "exp_minus_shift_interval": [
+              "1808799138018877062300267189378079202618196732164535152044670002585605744181/1809251394333065553493296640760748560207343510400633813116524750123642650624",
+              "115763144833208131987217100120197068967564590858530249730858880165478767627635/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+            ],
+            "finite_polynomial_terminated": false,
+            "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+            "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+          },
+          "whole_block_certificate_saved": {
+            "Bplus": [
+              [
+                "3/250",
+                "29/2000"
+              ],
+              [
+                "1/250",
+                "0"
+              ]
+            ],
+            "reason": "nonnegative comparison is monotone in time and dominates signed-d comparison",
+            "tail_certificate": {
+              "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+              "degree": 48,
+              "bits": 256,
+              "terms_used": 48,
+              "shift": "0",
+              "shift_times_H": "0",
+              "coordinate_scales": [
+                "1",
+                "1"
+              ],
+              "scaled_norm_upper": "551821675271584993815455475432028310863239770672193313000540048787711008441/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "exp_minus_shift_interval": [
+                "1",
+                "1"
+              ],
+              "finite_polynomial_terminated": false,
+              "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+              "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+            }
+          },
+          "actual_endpoint_check_saved": {
+            "name": "HD:two_state_coarse_source_defect: block1 actual endpoint R/E",
+            "status": "PASS",
+            "evidence": {
+              "max_reference_minus_upper": -0.0004176009553484458,
+              "max_allowed_excess": 3.8578124313582374e-10,
+              "max_positive_violation_after_allowance": 0.0,
+              "max_upper_slack": 0.010447147818839625
+            }
+          }
+        },
+        {
+          "index": 2,
+          "t0_exact": "1/2",
+          "H_exact": "1/4",
+          "reference_endpoint_R_E": [
+            0.05697202482573821,
+            0.00011962192206960154
+          ],
+          "endpoint_upper_exact_R_E": [
+            "52637658995236511691488345936111636774289806743013625858153591045025009910361658550333081349340627992239589068903244070701517205698516233189270884787204590848227608723664151515400523661079468314718073867504299244166915937906331177/776259046150354467574489744231251277628443008558348305569526019013025476343188443165439204414323238975243865348565536603085790022057407195722143637520590569602227488010424952775132642815799222412631499596858234375446423426908028928",
+            "266583763799279408368401260762874651466037407030061991476384486473065029783747109602076041762120342690462091720790518229156343518221637345104011419235188997665340881855260046987902042064800823229705835044736706784329841605150661/388129523075177233787244872115625638814221504279174152784763009506512738171594221582719602207161619487621932674282768301542895011028703597861071818760295284801113744005212476387566321407899611206315749798429117187723211713454014464"
+          ],
+          "endpoint_upper_display_R_E": [
+            0.06780939849432822,
+            0.0006868422728761206
+          ],
+          "whole_block_upper_exact_R_E": [
+            "165437977119937296874641445676984771099998011426033996771176125803531045290006244278231953496540538791407117638167868505103525032499278672515139852978063156633236546217126003908460861021433474857108947934937033097220827997762804301/1552518092300708935148979488462502555256886017116696611139052038026050952686376886330878408828646477950487730697131073206171580044114814391444287275041181139204454976020849905550265285631598444825262999193716468750892846853816057856",
+            "266642570646106430999238334609540828878908025771239597445332411413909148191751599238840075053094832543354295591716234177042819609590209323324098997118342867921291158926657851327410348689432066021041189129261498620114946480464463/388129523075177233787244872115625638814221504279174152784763009506512738171594221582719602207161619487621932674282768301542895011028703597861071818760295284801113744005212476387566321407899611206315749798429117187723211713454014464"
+          ],
+          "whole_block_upper_display_R_E": [
+            0.10656106227707228,
+            0.0006869937863357541
+          ],
+          "reference_clock_count_inclusive": 65,
+          "production_query_count_inclusive": 5,
+          "endpoint_tail_certificate_saved": {
+            "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+            "degree": 48,
+            "bits": 256,
+            "terms_used": 48,
+            "shift": "1/1000",
+            "shift_times_H": "1/4000",
+            "coordinate_scales": [
+              "1",
+              "1"
+            ],
+            "scaled_norm_upper": "283147843213124759121700924279057149672449259377699191752736123394350074823/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+            "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "exp_minus_shift_interval": [
+              "1808799138018877062300267189378079202618196732164535152044670002585605744181/1809251394333065553493296640760748560207343510400633813116524750123642650624",
+              "115763144833208131987217100120197068967564590858530249730858880165478767627635/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+            ],
+            "finite_polynomial_terminated": false,
+            "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+            "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+          },
+          "whole_block_certificate_saved": {
+            "Bplus": [
+              [
+                "3/250",
+                "29/2000"
+              ],
+              [
+                "1/250",
+                "0"
+              ]
+            ],
+            "reason": "nonnegative comparison is monotone in time and dominates signed-d comparison",
+            "tail_certificate": {
+              "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+              "degree": 48,
+              "bits": 256,
+              "terms_used": 48,
+              "shift": "0",
+              "shift_times_H": "0",
+              "coordinate_scales": [
+                "1",
+                "1"
+              ],
+              "scaled_norm_upper": "551821675271584993815455475432028310863239770672193313000540048787711008441/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "exp_minus_shift_interval": [
+                "1",
+                "1"
+              ],
+              "finite_polynomial_terminated": false,
+              "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+              "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+            }
+          },
+          "actual_endpoint_check_saved": {
+            "name": "HD:two_state_coarse_source_defect: block2 actual endpoint R/E",
+            "status": "PASS",
+            "evidence": {
+              "max_reference_minus_upper": -0.000567220350806519,
+              "max_allowed_excess": 3.1394404965147645e-10,
+              "max_positive_violation_after_allowance": 0.0,
+              "max_upper_slack": 0.010837373668590014
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "saved_native_nine_state_K_conditional_feedback",
+      "label_ko": "9상태 저장 K + 조건부 합성 반응",
+      "states": 9,
+      "source_scope": "SYNTHETIC_REACTION_CONTROL_ON_REUSED_NATIVE_GENERATOR_BOX",
+      "physical_consumer_admitted": false,
+      "H_exact": "11579208923731619542357098500868790785326998466564056403945758400791312963993600/381278994305842111336547231457422955269255660722928784591943370443365273692999",
+      "H_display": 30.369385926472997,
+      "rho_exact": "55951596752044855706470355885671627990947741407166542766413476716591433446162035097214701346742221753158315254595475109398707156071374285719602399608227/6703903964971298549787012499102923063739682910296196688861780721860882015036773488400937149083451713845015929093243025426876941405973284973216824503042048",
+      "final_time_saved": 91.10815777941899,
+      "reference_clock_count": 193,
+      "solver_saved": {
+        "method": "DOP853",
+        "rtol": 1e-11,
+        "atol": 1e-13,
+        "fine_nfev": 1646,
+        "coarse_nfev": 62
+      },
+      "coordinate_scales": [
+        "1",
+        "1"
+      ],
+      "rate_offset_exact": "0",
+      "coarse_scalar_defect_upper_exact": "0",
+      "final": {
+        "reference_R_E": [
+          1.1721234642357073e-07,
+          6.825711107438792e-10
+        ],
+        "endpoint_upper_exact_R_E": [
+          "105760891341825129508485423201100744798032838222371827743821551526944505280500177849826636789364611511838260468234022001809297733424540057221203006366590369522443057387264202658932305507686707685463952380493756792857207351468022680992879879000987141186470713435629826662427294586384006444689274274682465729098916996460067267544451911603201534856002971568102673118030651634593389359698591866443508627797474432284810800723623216076580681117853716006844672284900710526486216660576290183231501701434661/1506445266825645367862572878767696320570660858072785852746941928567292948273105023730164562304931199799421793273452953792581281867773685465521870309001956158356473941358214505062981201945523630960892267795712793842191036680669794818332578337096539433138034112303414073295786193831535769748620806390201744150887974032083899321511843548218670498892954484684118519057571235175794834100967059775008584737341539475239685344486610648779870421546335743347376184686749452753131460831100308246714251190084829184",
+          "1942053638822570757948874282935449244606443080666367108102176138536904179653813556650469239154260903103193129606811925644298498595418355663380075221851509773328627585539160190652167541782345628672641392270196332463682421331275745971816619892382588787390845078874914864984142322705543244445836870581809242770152854664945882648264197201263801799385030186216744636167660004888649167543079488201952985886515048830714070983/1626239405416312356550818801150638365409285221897589150773731632271024014670126000454866581821008098403528602684085992486029447191408811653449511758009223932193856708732585895583818642547477262309082667554913359273437961013658298794867450805102708783783910368151590659388312747747192329497330901788288010340388060755804972385713269597107707117127637212283975485800843763242374429990724878179358511681294670044409731448045568"
+        ],
+        "endpoint_upper_display_R_E": [
+          7.02055983518622e-05,
+          1.1941991027608944e-06
+        ],
+        "reference_4E": 2.730284442975517e-09,
+        "endpoint_upper_exact_4E": "1942053638822570757948874282935449244606443080666367108102176138536904179653813556650469239154260903103193129606811925644298498595418355663380075221851509773328627585539160190652167541782345628672641392270196332463682421331275745971816619892382588787390845078874914864984142322705543244445836870581809242770152854664945882648264197201263801799385030186216744636167660004888649167543079488201952985886515048830714070983/406559851354078089137704700287659591352321305474397287693432908067756003667531500113716645455252024600882150671021498121507361797852202913362377939502305983048464177183146473895954660636869315577270666888728339818359490253414574698716862701275677195945977592037897664847078186936798082374332725447072002585097015188951243096428317399276926779281909303070993871450210940810593607497681219544839627920323667511102432862011392",
+        "endpoint_upper_display_4E": 4.776796411043578e-06,
+        "bound_over_reference_ratio_R_E": [
+          598.9607792523831,
+          1749.5599857125994
+        ],
+        "ratio_note": "Display postprocessing; null when the stored reference value is zero"
+      },
+      "invariants": {
+        "exact_initial": [
+          "7/2",
+          "3/2",
+          "2"
+        ],
+        "fine_max_absolute_drift": 1.1102230246251565e-14,
+        "coarse_max_absolute_drift": 4.440892098500626e-16,
+        "coarse_direction_max_absolute_error": 1.2323475573339238e-14,
+        "coarse_l1_equals_4E_max_absolute_error": 3.452793606584237e-14,
+        "provenance": "Copied from saved reference check evidence, not recomputed by C8"
+      },
+      "max_stored_reference_E": 6.825711107438792e-10,
+      "blocks": [
+        {
+          "index": 0,
+          "t0_exact": "0",
+          "H_exact": "11579208923731619542357098500868790785326998466564056403945758400791312963993600/381278994305842111336547231457422955269255660722928784591943370443365273692999",
+          "reference_endpoint_R_E": [
+            1.1730489834532594e-07,
+            6.822116205285056e-10
+          ],
+          "endpoint_upper_exact_R_E": [
+            "16076399448216413449732606790882937631466095883836238229690237573944356238844932424861453300375790357049903842377770368899522157178362929012908933502854511802269054901665083611024960657480317/33519519824856492748935062495514615318711822359410926041408477634302615921311346807825278138794982130668801409496288674111186581328033328293774154373396726050853753882811946569946433649006084096",
+            "85329356818725705493948269432696917576007228565339325820749922127571244525464230488262968080124582585205959219/72370055773322622139731865630429942408322688438334681573516882751197878001923317496166410141009864396001978282409984"
+          ],
+          "endpoint_upper_display_R_E": [
+            0.000479613059262708,
+            1.1790699330949003e-06
+          ],
+          "whole_block_upper_exact_R_E": [
+            "28118861823034473144628937521643728479899231026482644279401707484875475124331842740892747512920120513165751983585881/578960446186580977117854925043439539266581507506677452588135062009583024015386539969331281128078915168015826259279872",
+            "682635372696681610857640327171331780310365734029469642528053959797427918278280773681020964713327236933633779581/578960446186580977117854925043439539266581507506677452588135062009583024015386539969331281128078915168015826259279872"
+          ],
+          "whole_block_upper_display_R_E": [
+            0.048567846056227194,
+            1.1790708280556517e-06
+          ],
+          "reference_clock_count_inclusive": 65,
+          "production_query_count_inclusive": 5,
+          "endpoint_tail_certificate_saved": {
+            "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+            "degree": 48,
+            "bits": 256,
+            "terms_used": 48,
+            "shift": "1/20000000",
+            "shift_times_H": "1809251394333065553493296640760748560207343510400633813116524750123642650624/1191496857205756597926710098304446735216423939759152451849823032635516480290621875",
+            "coordinate_scales": [
+              "1",
+              "1"
+            ],
+            "scaled_norm_upper": "30931018372925932222633153103745440226151354597600646531778272533541184835/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+            "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "exp_minus_shift_interval": [
+              "57895956705358712535207593067023984554629806592017082883323472151379637650991/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "115791913410717425070415186134047969109259613184034165766646944302759275302033/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+            ],
+            "finite_polynomial_terminated": false,
+            "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+            "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+          },
+          "whole_block_certificate_saved": {
+            "Bplus": [
+              [
+                "89999999999999999960983035416324981333019/25000000000000000000000000000000000000010000000",
+                "7136972085547229927108412996433070443666400000000000000000000001/2500000000000000000000000000000000000001000000000000000000000000000000"
+              ],
+              [
+                "1/1250000",
+                "0"
+              ]
+            ],
+            "reason": "nonnegative comparison is monotone in time and dominates signed-d comparison",
+            "tail_certificate": {
+              "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+              "degree": 48,
+              "bits": 256,
+              "terms_used": 48,
+              "shift": "0",
+              "shift_times_H": "0",
+              "coordinate_scales": [
+                "1",
+                "1"
+              ],
+              "scaled_norm_upper": "30755191640661899427601091815770242956057574573105731834564433208620439793/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+              "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "exp_minus_shift_interval": [
+                "1",
+                "1"
+              ],
+              "finite_polynomial_terminated": false,
+              "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+              "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+            }
+          },
+          "actual_endpoint_check_saved": {
+            "name": "HD:saved_native_nine_state_K_conditional_feedback: block0 actual endpoint R/E",
+            "status": "PASS",
+            "evidence": {
+              "max_reference_minus_upper": -1.1783877214743717e-06,
+              "max_allowed_excess": 2.000002346097967e-10,
+              "max_positive_violation_after_allowance": 0.0,
+              "max_upper_slack": 0.00047949575436436267
+            }
+          }
+        },
+        {
+          "index": 1,
+          "t0_exact": "11579208923731619542357098500868790785326998466564056403945758400791312963993600/381278994305842111336547231457422955269255660722928784591943370443365273692999",
+          "H_exact": "11579208923731619542357098500868790785326998466564056403945758400791312963993600/381278994305842111336547231457422955269255660722928784591943370443365273692999",
+          "reference_endpoint_R_E": [
+            1.1713294546690864e-07,
+            6.823903664354702e-10
+          ],
+          "endpoint_upper_exact_R_E": [
+            "16547383276123945940672838752728201129131298189461633437563516236394248431996290208981849406690441330456162747962528430874674026873192021878523407078359057890366342332064226311362109835703522799395647761998109471992113110358538873554634611517670169284474058981737385268993626625630618544842034118272120398984550033494482482104574764005635040919/224711641857789488466163148848628091702337007024531437387174066706705295993557102764832711981646135066979008687741992178639841449679224546126619345239278352151039261665489064906624198216877354711505237636818689953685839462728701648902117929652076549338607213696904104240671013978370058999625870667372573320639973622969239858152417678164812112068608",
+            "289051329765239418609848038444261308134827126752166469241458250499959224556037137020875800312333932806227697646849832574541049376436804720936577305400026997670711631576940071085341432488229767694176511777913673524469422712018154526733190360970998206202694224799629/242580951921985771117028045072266024258985472555252639798923692159599367766949943865269544917672202932140336105969628743859989282444730153535075369893755245076081813756014973641694218834627330825147622060019501361423898901260733942801578937449607279296930802928363503616"
+          ],
+          "endpoint_upper_display_R_E": [
+            7.363829990880528e-05,
+            1.1915664749233837e-06
+          ],
+          "whole_block_upper_exact_R_E": [
+            "2131795390743760908470581824806069386150101407482344037266680090886604866988382713841282751164988364816280678082094772977966331120785619216899304933604104726893339941306954686769582950236102702054333214683585177806590852083619993701362404632497787807729155961920316069/3881295230751772337872448721156256388143767560884042236782779074553589884271199101844312718682755246914245377695514059901759828519115682456561205918300083921217309020096239578267107501354037293202361952960312021782782382420171743084825262999193716468750892846853816057856",
+            "4624828261237052620570969982531244165085522570857879307553994884128058604903449746334330944796873544855326335996747616419112771441579186556895045678318458066352954088308974580977282567152100270986449588754765080935740976329178523451232765204787632520642056385538179/3881295230751772337872448721156256388143767560884042236782779074553589884271199101844312718682755246914245377695514059901759828519115682456561205918300083921217309020096239578267107501354037293202361952960312021782782382420171743084825262999193716468750892846853816057856"
+          ],
+          "whole_block_upper_display_R_E": [
+            0.0005492484503248806,
+            1.1915682745786036e-06
+          ],
+          "reference_clock_count_inclusive": 65,
+          "production_query_count_inclusive": 5,
+          "endpoint_tail_certificate_saved": {
+            "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+            "degree": 48,
+            "bits": 256,
+            "terms_used": 48,
+            "shift": "1/20000000",
+            "shift_times_H": "1809251394333065553493296640760748560207343510400633813116524750123642650624/1191496857205756597926710098304446735216423939759152451849823032635516480290621875",
+            "coordinate_scales": [
+              "1",
+              "1"
+            ],
+            "scaled_norm_upper": "30931018372925932222633153103745440226151354597600646531778272533541184835/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+            "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "exp_minus_shift_interval": [
+              "57895956705358712535207593067023984554629806592017082883323472151379637650991/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "115791913410717425070415186134047969109259613184034165766646944302759275302033/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+            ],
+            "finite_polynomial_terminated": false,
+            "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+            "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+          },
+          "whole_block_certificate_saved": {
+            "Bplus": [
+              [
+                "89999999999999999960983035416324981333019/25000000000000000000000000000000000000010000000",
+                "7136972085547229927108412996433070443666400000000000000000000001/2500000000000000000000000000000000000001000000000000000000000000000000"
+              ],
+              [
+                "1/1250000",
+                "0"
+              ]
+            ],
+            "reason": "nonnegative comparison is monotone in time and dominates signed-d comparison",
+            "tail_certificate": {
+              "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+              "degree": 48,
+              "bits": 256,
+              "terms_used": 48,
+              "shift": "0",
+              "shift_times_H": "0",
+              "coordinate_scales": [
+                "1",
+                "1"
+              ],
+              "scaled_norm_upper": "30755191640661899427601091815770242956057574573105731834564433208620439793/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+              "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "exp_minus_shift_interval": [
+                "1",
+                "1"
+              ],
+              "finite_polynomial_terminated": false,
+              "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+              "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+            }
+          },
+          "actual_endpoint_check_saved": {
+            "name": "HD:saved_native_nine_state_K_conditional_feedback: block1 actual endpoint R/E",
+            "status": "PASS",
+            "evidence": {
+              "max_reference_minus_upper": -1.1908840845569483e-06,
+              "max_allowed_excess": 2.0000023426589095e-10,
+              "max_positive_violation_after_allowance": 0.0,
+              "max_upper_slack": 7.352116696333838e-05
+            }
+          }
+        },
+        {
+          "index": 2,
+          "t0_exact": "23158417847463239084714197001737581570653996933128112807891516801582625927987200/381278994305842111336547231457422955269255660722928784591943370443365273692999",
+          "H_exact": "11579208923731619542357098500868790785326998466564056403945758400791312963993600/381278994305842111336547231457422955269255660722928784591943370443365273692999",
+          "reference_endpoint_R_E": [
+            1.1721234642357073e-07,
+            6.825711107438792e-10
+          ],
+          "endpoint_upper_exact_R_E": [
+            "105760891341825129508485423201100744798032838222371827743821551526944505280500177849826636789364611511838260468234022001809297733424540057221203006366590369522443057387264202658932305507686707685463952380493756792857207351468022680992879879000987141186470713435629826662427294586384006444689274274682465729098916996460067267544451911603201534856002971568102673118030651634593389359698591866443508627797474432284810800723623216076580681117853716006844672284900710526486216660576290183231501701434661/1506445266825645367862572878767696320570660858072785852746941928567292948273105023730164562304931199799421793273452953792581281867773685465521870309001956158356473941358214505062981201945523630960892267795712793842191036680669794818332578337096539433138034112303414073295786193831535769748620806390201744150887974032083899321511843548218670498892954484684118519057571235175794834100967059775008584737341539475239685344486610648779870421546335743347376184686749452753131460831100308246714251190084829184",
+            "1942053638822570757948874282935449244606443080666367108102176138536904179653813556650469239154260903103193129606811925644298498595418355663380075221851509773328627585539160190652167541782345628672641392270196332463682421331275745971816619892382588787390845078874914864984142322705543244445836870581809242770152854664945882648264197201263801799385030186216744636167660004888649167543079488201952985886515048830714070983/1626239405416312356550818801150638365409285221897589150773731632271024014670126000454866581821008098403528602684085992486029447191408811653449511758009223932193856708732585895583818642547477262309082667554913359273437961013658298794867450805102708783783910368151590659388312747747192329497330901788288010340388060755804972385713269597107707117127637212283975485800843763242374429990724878179358511681294670044409731448045568"
+          ],
+          "endpoint_upper_display_R_E": [
+            7.02055983518622e-05,
+            1.1941991027608944e-06
+          ],
+          "whole_block_upper_exact_R_E": [
+            "3726802212508109452563350472391282480245328651611195959560247961090216773588509690452711896366437079537551031959879636048833683009043146227343699351783431696112717686596511676516522446563924838250387805352604088630119658348500910108210552019047418174599343240305139383988984913994107790436646649126983452687478545874882794856827298391124965140109542582270280829893852209441732166373858437827300998733347215940205755621391/26019830486660997704813100818410213846548563550361426412379706116336384234722016007277865309136129574456457642945375879776471155062540986455192188128147582915101707339721374329341098280759636196945322680878613748375007376218532780717879212881643340540542565890425450550213003963955077271957294428612608165446208972092879558171412313553723313874042195396543607772813500211877990879851598050869736186900714720710555703168729088",
+            "31072905346767509047798411437067243815790610939212789888061529432698893959790671917900798151098514984735068235739031566941294461264615732683496722577235495489970366433333390091383271118397103491497129095268856682859477262728469619808969245286272646991247819129620051685705137563244741337441990234839697311356880238707439096287241399536601385563718155911874959772233089633746308945943211822741862642934138050655229461097/26019830486660997704813100818410213846548563550361426412379706116336384234722016007277865309136129574456457642945375879776471155062540986455192188128147582915101707339721374329341098280759636196945322680878613748375007376218532780717879212881643340540542565890425450550213003963955077271957294428612608165446208972092879558171412313553723313874042195396543607772813500211877990879851598050869736186900714720710555703168729088"
+          ],
+          "whole_block_upper_display_R_E": [
+            0.00014322930406555283,
+            1.1942009139028388e-06
+          ],
+          "reference_clock_count_inclusive": 65,
+          "production_query_count_inclusive": 5,
+          "endpoint_tail_certificate_saved": {
+            "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+            "degree": 48,
+            "bits": 256,
+            "terms_used": 48,
+            "shift": "1/20000000",
+            "shift_times_H": "1809251394333065553493296640760748560207343510400633813116524750123642650624/1191496857205756597926710098304446735216423939759152451849823032635516480290621875",
+            "coordinate_scales": [
+              "1",
+              "1"
+            ],
+            "scaled_norm_upper": "30931018372925932222633153103745440226151354597600646531778272533541184835/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+            "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "exp_minus_shift_interval": [
+              "57895956705358712535207593067023984554629806592017082883323472151379637650991/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "115791913410717425070415186134047969109259613184034165766646944302759275302033/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+            ],
+            "finite_polynomial_terminated": false,
+            "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+            "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+          },
+          "whole_block_certificate_saved": {
+            "Bplus": [
+              [
+                "89999999999999999960983035416324981333019/25000000000000000000000000000000000000010000000",
+                "7136972085547229927108412996433070443666400000000000000000000001/2500000000000000000000000000000000000001000000000000000000000000000000"
+              ],
+              [
+                "1/1250000",
+                "0"
+              ]
+            ],
+            "reason": "nonnegative comparison is monotone in time and dominates signed-d comparison",
+            "tail_certificate": {
+              "algorithm": "positive_shifted_dyadic_upper_with_geometric_tail",
+              "degree": 48,
+              "bits": 256,
+              "terms_used": 48,
+              "shift": "0",
+              "shift_times_H": "0",
+              "coordinate_scales": [
+                "1",
+                "1"
+              ],
+              "scaled_norm_upper": "30755191640661899427601091815770242956057574573105731834564433208620439793/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+              "tail_upper_before_exp_factor": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+              "exp_minus_shift_interval": [
+                "1",
+                "1"
+              ],
+              "finite_polynomial_terminated": false,
+              "rounding": "C and each positive matrix/Poisson term upward; exp-minus uses reciprocal outward bounds",
+              "norm": "induced infinity norm in explicitly scaled augmented coordinates"
+            }
+          },
+          "actual_endpoint_check_saved": {
+            "name": "HD:saved_native_nine_state_K_conditional_feedback: block2 actual endpoint R/E",
+            "status": "PASS",
+            "evidence": {
+              "max_reference_minus_upper": -1.1935165316501505e-06,
+              "max_allowed_excess": 2.0000023442469285e-10,
+              "max_positive_violation_after_allowance": 0.0,
+              "max_upper_slack": 7.008838600543863e-05
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "late_forcing_saved": {
+    "gamma": "1",
+    "H": "1",
+    "epsilon": "1/4",
+    "J": "1",
+    "rho_interval": [
+      "42597529080697662913911602080600932014987715856510989744817822076425163850885/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+      "21298764540348831456955801040300466007493857928255494872408911051356625393977/57896044618658097711785492504343953926634992332820282019728792003956564819968"
+    ],
+    "rho": "21298764540348831456955801040300466007493857928255494872408911051356625393977/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "correct_forcing_interval": [
+      "6403279866455087683322331046766968172183612783291967194761239451074303162907/7237005577332262213973186563042994240829374041602535252466099000494570602496",
+      "25613119465820350733289324187067872688734451133167868779044957804297212651659/28948022309329048855892746252171976963317496166410141009864396001978282409984"
+    ],
+    "correct_forcing_upper": "25613119465820350733289324187067872688734451133167868779044957804297212651659/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+    "wrong_forcing_upper": "21298764540348831456955801040300466007493857928255494872408911051356625393977/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "strict_gap_lower": "29927474391291870009622847333835279369975044338080242685681004557237799909279/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "scope": "fixed analytic causality control; total forcing is not contracted by full-block rho"
+  },
+  "limitations": [
+    "Exact bounds are conditional on the recorded box, generator certificate, rate/source choices and common invariant class.",
+    "Reference tolerances permit floating-point deviations; the reference is not interval integration.",
+    "The native nine-state case reuses an excitation generator while formation/destruction and reservoirs remain declared synthetic controls.",
+    "No physical IVP, source consumer, density or physical clock is admitted by these controls.",
+    "The geometric Taylor tail is only one contributor to outward arithmetic width and is not the physical reduction error."
+  ]
+}
