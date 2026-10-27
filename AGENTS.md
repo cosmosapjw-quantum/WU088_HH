@@ -1,3 +1,17 @@
+# Current priority: R4 R10/C10 delivery continuation, 2026-10-27
+
+Read research/provider_registry_molecular_r4_20261027/REPORT_KO.md, HANDOFF_KO.md, WORKFLOW_RECORD.json, delivery/S09.json, delivery/S09_RECOVERED_READBACK.json and delivery/R10_PREPARATION_STATUS.json. If delivery/R10_PUBLICATION.json exists, bind the actual publication to that receipt. The previous S09 source is f949c21cca6e2534b725241068bd6c6e06158495. Its reviewed scientific payload SHA256 34765b943cce5a67d49a622f76c0cf9aeceb635c8cd6a3cf58b5cebb8e3c5fde is unchanged.
+
+R4 source/theory/integer/formula work is adopted; local DAG remains 9/24 and fully closed workflow remains 18/20. R10/C10 report, executable handoff and the previously missing followup/NEXT_INPUT_CONTRACT are prepared. Finish the existing package_checkpoint.py --full, actual create-only Dropbox/Drive storage and both original-byte readbacks before marking R10/C10 complete. S09 was recovered from Drive and verified in memory (145 CRC, 144 payload SHA256/Git blob bindings); Dropbox S09 currently has metadata confirmation only. Do not invent a missing original upload ACK or final S10 archive.
+
+The current resume's shell and filesystem probes returned SERVICE_ERROR. That observation applies only to those calls: probe the current runtime in every new turn and use available capabilities. No compiler/package-absence finding or permission blocker was established. Reuse all completed science; do not replay old columns, 249 checks, fit samples, plots, Wolfram or PHYS91. Existing PHYS91 remaining allowances stay 0, global history/remaining stay null, HH_R10=OFF, production=NOT_ISSUED and L4_ready=false.
+
+After delivery, the concrete changed-input successor is the GL2022 HD destruction state block in followup/NEXT_INPUT_CONTRACT.json: original state-to-state numbers and spin/support/energy conventions, then actual consumer x/pi, clock and density. The primary article confirms numerical supplements; current retrieval has not supplied the arrays. EMAA excitation is a distinct channel. Preserve source/consumer and number/energy admission separately. No new central completion or ACK is claimed.
+
+Before further nodes refresh current AGENTS, HEAD, parallel work and provider receipts. Existing automatic additive publication and backup authorization remains in force. Use the actual expected SHA, force=false on PR150's branch, and preserve main.
+
+## Preserved previous priority
+
 # Current priority: molecular provider state lift R4, 2026-10-27 UTC
 
 Continue research/provider_registry_molecular_r4_20261027/CONTRACT.json, README_KO.md, DAG.json, WORKFLOW_RECORD.json, reviews/ and delivery/. The user explicitly requests physmath-research-loop1.0.0 theory R1-R10 plus coding C1-C10 after actual cross-repo/conversation/backup survey, with per-stage publication, dual backup and copyable next-thread handoff. Scope is actual LiH/HD formation/destruction sources, state-aware integer event projections and native source-fit implementation; source and consumer acceptance remain separate.

@@ -1,0 +1,50 @@
+{
+  "schema": "WU_R4_CURRENT_TURN_CAPABILITY_OBSERVATION_V1",
+  "observed_during_resume_utc": "2026-10-27T08:10:13.514Z",
+  "scope": "this invocation only",
+  "probes": [
+    {
+      "tool": "exec_command",
+      "command": "python3 -c <JSON arithmetic capability probe>",
+      "classification": "SERVICE_ERROR",
+      "observed": "No usable execution environment is available. Wait for an environment to become available before using this tool.",
+      "process_started": false
+    },
+    {
+      "tool": "exec_command",
+      "command": "c++ --version",
+      "classification": "SERVICE_ERROR",
+      "observed": "No usable execution environment is available. Wait for an environment to become available before using this tool.",
+      "compiler_capability": "NOT_ESTABLISHED",
+      "process_started": false
+    },
+    {
+      "tool": "apply_patch",
+      "operation": "create task-local capability probe text file",
+      "classification": "SERVICE_ERROR",
+      "observed": "No usable execution environment is available. Wait for an environment to become available before using this tool.",
+      "file_created": false
+    }
+  ],
+  "remote_device_inventory": {
+    "devices_online": 0,
+    "process_execution_attempted": false,
+    "interpretation": "observed offline inventory; not a C++/Python execution verdict"
+  },
+  "available_work_completed": [
+    "GitHub source/commit/tree reads",
+    "provider current metadata reads",
+    "Drive S09 full original byte retrieval",
+    "in-memory archive CRC/SHA/Git-object verification",
+    "R10/C10 report, input-contract and handoff authorship",
+    "GitHub expected-SHA additive publication when its separate receipt exists"
+  ],
+  "pending_due_to_environment": [
+    "create local full S10 source ZIP with existing packager",
+    "new source-file uploads to Dropbox and Drive",
+    "actual final S10 two-provider byte readback"
+  ],
+  "authorization_blocker": false,
+  "permission_reapproval_required": false,
+  "future_turn_rule": "Probe the current runtime again. Do not inherit this failure, assume Python/compiler absence, reset scientific budgets, or replay completed science."
+}

@@ -265,8 +265,9 @@
       ],
       "DAG_completed": 9,
       "DAG_total": 24,
-      "publication": "PENDING_CHECKPOINT_S09",
-      "backup": "PENDING_CHECKPOINT_S09"
+      "publication": "f949c21cca6e2534b725241068bd6c6e06158495",
+      "backup": "CURRENT_DUAL_OBJECTS_CONFIRMED_DRIVE_BYTES_VERIFIED",
+      "delivery": "delivery/S09.json"
     },
     {
       "id": "C9",
@@ -281,19 +282,50 @@
       ],
       "DAG_completed": 9,
       "DAG_total": 24,
-      "publication": "PENDING_CHECKPOINT_S09",
-      "backup": "PENDING_CHECKPOINT_S09"
+      "publication": "f949c21cca6e2534b725241068bd6c6e06158495",
+      "backup": "CURRENT_DUAL_OBJECTS_CONFIRMED_DRIVE_BYTES_VERIFIED",
+      "delivery": "delivery/S09.json"
     },
     {
       "id": "R10",
-      "status": "PENDING",
-      "checkpoint": "S10"
+      "status": "CONTENT_PREPARED_DELIVERY_PENDING",
+      "checkpoint": "S10",
+      "evidence": [
+        "REPORT_KO.md",
+        "HANDOFF_KO.md",
+        "followup/NEXT_INPUT_CONTRACT.json",
+        "delivery/S09_RECOVERED_READBACK.json"
+      ],
+      "DAG_completed": 9,
+      "DAG_total": 24,
+      "publication": "SEE_ACTUAL_R10_PUBLICATION_RECEIPT",
+      "backup": "PENDING_FULL_S10_SOURCE_ZIP_AND_DUAL_BYTE_READBACK",
+      "delivery": "delivery/R10_PREPARATION_STATUS.json"
     },
     {
       "id": "C10",
-      "status": "PENDING",
-      "checkpoint": "S10"
+      "status": "CONTENT_PREPARED_DELIVERY_PENDING",
+      "checkpoint": "S10",
+      "evidence": [
+        "REPORT_KO.md",
+        "HANDOFF_KO.md",
+        "followup/NEXT_INPUT_CONTRACT.json",
+        "delivery/S09_RECOVERED_READBACK.json"
+      ],
+      "DAG_completed": 9,
+      "DAG_total": 24,
+      "publication": "SEE_ACTUAL_R10_PUBLICATION_RECEIPT",
+      "backup": "PENDING_FULL_S10_SOURCE_ZIP_AND_DUAL_BYTE_READBACK",
+      "delivery": "delivery/R10_PREPARATION_STATUS.json"
     }
   ],
-  "completion_semantics": "Stage completion is workflow progress; it is not physical consumer admission or central DAG completion."
+  "completion_semantics": "Stage completion is workflow progress; it is not physical consumer admission or central DAG completion.",
+  "resume_observation": {
+    "fully_complete": 18,
+    "total": 20,
+    "R10_C10_content_prepared": true,
+    "delivery_pending": true,
+    "original_S09_snapshot_commit": "f949c21cca6e2534b725241068bd6c6e06158495",
+    "current_payload_unchanged": true
+  }
 }
