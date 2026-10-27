@@ -1,0 +1,144 @@
+{
+  "schema": "WU_R4_BENNETT500_SOURCE_SEMANTIC_NOTE_V1",
+  "stage": "NARROW_CHANGED_OUTCOME_SOURCE_REVIEW",
+  "reviewer": "/root/molecule_sources",
+  "observed_UTC": "2026-10-27T06:16:58Z",
+  "decision": "SOURCE_LITERALS_MATCH; RATE_FIT_RELATIVE_ERROR_DENOMINATOR_NOT_SPECIFIED_IN_REVIEWED_CONTEXT",
+  "scope": "One native Table 3 row at 500 K, the adjacent published fit, its units and accuracy wording, and targeted error-definition context in an already recovered primary-text representation. No repeat of 77-cell review or numeric fit evaluation.",
+  "preflight": {
+    "AGENTS_current_R4_priority_read": true,
+    "local_HEAD": "7898ef5affbfc654d4a3a8d8acd0d7a899a0d7e0",
+    "latest_receipt_read": "authority/S05_PREFLIGHT.json",
+    "latest_receipt_UTC": "2026-10-27T06:12:33.705Z",
+    "latest_WU_HEAD_in_receipt": "7898ef5affbfc654d4a3a8d8acd0d7a899a0d7e0",
+    "parallel_work": "Root retains first primary result and publication ownership; /root/authority_survey prepares the distinct independent high-precision implementation check.",
+    "actual_backup_receipt_read": "delivery/S04.json",
+    "actual_backup_source_commit": "7898ef5affbfc654d4a3a8d8acd0d7a899a0d7e0",
+    "actual_backup_archive_SHA256": "e61cee4a0b2dc613df562911ccf57fe7de979f56ebfe07ee8af299657f0d941e",
+    "Dropbox_id": "id:BSpOijBcT10AAAAAAEC88Q",
+    "Drive_id": "1GknGGJBJwOrFRPDoXrN2Anj2TfQjQOSg",
+    "backup_qualification": "Actual upload ACK; final full-source byte readback remains a separate receipt."
+  },
+  "inputs": {
+    "source_packet": {
+      "path": "sources/MOLECULAR_SOURCE_PACKET.json",
+      "SHA256": "40e2fbd73d451c0c8116b4ca9bd4db4d2e43e4cdf8967988a2fea551f99ce35e"
+    },
+    "native_public_table": {
+      "path": "sources/public_sources/bennett2003_table3.json",
+      "SHA256": "d17365b148212af17da48c0618581d27a050a5ed4209f2306db7b36e83c87835"
+    },
+    "saved_first_diagnostic": {
+      "path": "registry/fit_diagnostics.json",
+      "SHA256": "5f687fac3c21dc8a9747c45ac6558a4b9d7c107577d6d9eb9285bc13a9c7f599",
+      "action": "READ_ONLY; not rerun or changed"
+    },
+    "retained_private_primary_page_image": {
+      "path": "/tmp/r4_source_review_bennett_p6.png",
+      "SHA256": "daa6e8a313d48de1b85350c65103f0e5b6774b7c1a4027bd6db72e6b3a1db388",
+      "locator": "Bennett et al. 2003, printed p.366 / original PDF page6; Table3 right column and fit paragraph lower left",
+      "provenance": "Retained rendered image from the original PDF read during the completed source review; visually inspected again only for the selected row and fit.",
+      "original_PDF_SHA256_as_recorded": "c3f6276125fd8d61ca91895b474444b5c5afd0d11624fec6ab6456297b4087d0",
+      "original_PDF_bytes_currently_recovered": false,
+      "full_page_image_bundled_publicly": false
+    },
+    "recovered_primary_text_representation": {
+      "path": "/workspace/scratch/3ffa3d77ca37/next_loop_20261027/molecular/raw/EXA_HD2024_BENNETT_FULLTEXT.txt",
+      "SHA256": "d496439a29e7485c7eae2084174161a405c3be106a161bd1199f5e0f2cab3ff4",
+      "container_note": "Combined cached response contains a Faure2024 section and a separate Bennett2003 ADS-PDF section.",
+      "selected_section_marker": "URL: https://articles.adsabs.harvard.edu/pdf/2003MNRAS.341..361B",
+      "selected_section_start_character": 80205,
+      "inspection": "Restricted text lookup for error, relative and fitting context within the Bennett section. Original mathematical symbols were verified against the page image because this representation has OCR artefacts.",
+      "not_identical_to_original_pdftotext_file": true,
+      "original_pdftotext_expected_SHA256": "f23e6a9d0d3dcecc2f9bb5ba3a23a11ee899b3781679251f3aca96ed5ab42224",
+      "fulltext_bundled_publicly": false
+    }
+  },
+  "primary_source": {
+    "DOI": "10.1046/j.1365-8711.2003.06422.x",
+    "original_archive_URL": "https://articles.adsabs.harvard.edu/pdf/2003MNRAS.341..361B",
+    "publisher_article_URL": "https://academic.oup.com/mnras/article/341/1/361/999504",
+    "publisher_alternate_URL": "https://oup.silverchair-cdn.com/article-minimal/999504",
+    "fresh_alternate_open_by_this_reviewer": "FAILED_INTERNAL_ERROR; no new primary bytes recovered through that request; retained primary image and cached text used instead"
+  },
+  "native_literal_observation": {
+    "provider_id": "BENNETT2003_LIH_SPONTANEOUS_RA_TABLE3",
+    "native_row_id": "B03_T500.0",
+    "T_literal": "500.0",
+    "T_unit": "K",
+    "k_mantissa_literal": "4.79",
+    "k_scale_literal": "1e-20",
+    "k_unit": "cm^3 s^-1",
+    "locator": "Table3, printed p.366; prior extracted text line359",
+    "printed_fit_literal": "(3.22+1/(0.0657*(T/(1000 K))^(-2.45)+0.00631*(T/(1000 K))^(0.837)))*1e-20 cm^3 s^-1",
+    "independently_checked_fields": [
+      "3.22",
+      "0.0657",
+      "-2.45",
+      "0.00631",
+      "0.837",
+      "T/(1000 K)",
+      "1e-20 cm^3 s^-1",
+      "500.0",
+      "4.79"
+    ],
+    "transcription_discrepancy_found": false,
+    "missing_sign_or_exponent_found": false,
+    "scale_or_unit_mismatch_found": false,
+    "same_source_scope": "Both the Table3 result and the adjacent fitted coefficient refer to spontaneous association including the stated weighting of quasi-bound radiative decays.",
+    "electronic_or_pair_factor_reapplication_justified": false,
+    "note": "The stimulated-emission subsection and its separate figure are not the Table3 coefficient used here."
+  },
+  "saved_numeric_observation": {
+    "provenance": "Values copied from the saved primary diagnostic; no new numerical evaluation by this reviewer.",
+    "T_K": "500",
+    "table_coefficient_cm3_s": "4.79e-20",
+    "fit_coefficient_cm3_s": "5.978409466723497e-20",
+    "signed_table_normalized_residual": "0.24810218511972792",
+    "predeclared_definition": "r_table=(k_fit-k_table)/k_table",
+    "maximum_over_27_nodes": "Recorded by the saved primary summary; not recomputed in this note.",
+    "numerical_implementation_correctness": "Deferred to the separate independent high-precision checker."
+  },
+  "error_semantics": {
+    "native_accuracy_summary": {
+      "higher_temperature": "Approximate 5 percent fit description above about800 K.",
+      "lower_temperature": "20 percent maximum-error wording for lower temperatures; the reviewed rate-fit paragraph gives no denominator definition."
+    },
+    "fit_error_denominator_explicit_in_rate_paragraph": false,
+    "denominator_definition_found_in_targeted_primary_text_context": false,
+    "relevant_other_error_context": "Other percent-error passages concern vibrational energies/spacings and comparisons with experiment; they do not establish a relative-error denominator for this rate fit.",
+    "source_intended_denominator": "UNRESOLVED",
+    "alternative_definition": "r_fit=(k_fit-k_table)/k_fit",
+    "exact_algebraic_relation": "For positive k_fit,k_table: r_fit=r_table/(1+r_table).",
+    "implication_without_new_fit_evaluation": "At the saved positive r_table=0.24810218511972792<1/4, r_fit<1/5 follows algebraically. Thus the same saved point can be below20percent with a fit denominator.",
+    "source_denominator_inferred_from_that_implication": false,
+    "original_paper_declared_wrong": false,
+    "source_fit_vs_table_difference_present": true,
+    "contradiction_with_source_accuracy_established": false,
+    "predeclared_table_denominator_changed": false,
+    "original_fit_or_table_modified": false,
+    "source_accuracy_threshold_relaxed": false,
+    "physical_uncertainty_or_covariance_inferred": false
+  },
+  "conclusion": [
+    "The selected printed source row, published fit literals and their unit scale match the frozen packet.",
+    "No transcription, normalization or statistical-factor correction is justified by this source inspection.",
+    "Retain the saved table-normalized residual exactly under its predeclared definition.",
+    "Keep the paper's accuracy wording as a separate source statement with unresolved denominator; do not declare a source contradiction solely from the table-normalized24.8102percent result.",
+    "A source-literal check is distinct from implementation validation; the independent checker will assess numerical evaluation separately."
+  ],
+  "execution": {
+    "native_source_rows_rechecked": 1,
+    "old_77_cell_review_replayed": false,
+    "new_numeric_fit_evaluations": 0,
+    "new_numeric_residual_evaluations": 0,
+    "compiler_runs": 0,
+    "Wolfram_calls": 0,
+    "scientific_programs_run": 0,
+    "first_primary_output_modified": false,
+    "source_packet_modified": false,
+    "public_fulltext_or_page_redistribution": false,
+    "new_source_variants_added": 0,
+    "physical_rate_or_Q_admission": false
+  }
+}

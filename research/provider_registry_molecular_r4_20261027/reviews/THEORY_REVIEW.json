@@ -1,0 +1,423 @@
+{
+  "schema": "WU_MOLECULAR_STATE_LIFT_THEORY_REVIEW_V1",
+  "unit_id": "WU_MOLECULAR_PROVIDER_STATE_LIFT_R4",
+  "stage": "R6",
+  "reviewer": "/root/molecule_sources",
+  "independent_of_theory_author": true,
+  "theory_author": "/root/provider_rows",
+  "decision": "ACCEPT_CONDITIONAL_THEORY",
+  "reviewed_claim_count": 13,
+  "blocking_finding_count": 0,
+  "required_theory_corrections": [],
+  "review_time_observation_UTC": "2026-10-27T06:07:07Z",
+  "inputs": [
+    {
+      "path": "theory/STATE_LIFT_THEORY_KO.md",
+      "SHA256": "eb62a104974a278211c77fb5037bffd00ef4f157acd6911b6e2c46f0bd3fef68",
+      "entire_document_read": true
+    },
+    {
+      "path": "theory/CLAIMS.json",
+      "SHA256": "e04353625155ca0f5fab09ef638d63ae96d3ebc84f6ede3b4a2326d3cca634f1",
+      "entire_document_read": true
+    },
+    {
+      "path": "sources/MOLECULAR_SOURCE_PACKET.json",
+      "SHA256": "40e2fbd73d451c0c8116b4ca9bd4db4d2e43e4cdf8967988a2fea551f99ce35e",
+      "current_hash_recomputed": true,
+      "source_literal_review": "REUSED_PRIOR_77_CELL_REVIEW_NO_REPLAY"
+    },
+    {
+      "path": "CONTRACT.json",
+      "SHA256": "6a40c43c04aa4506281f2021a6879e76e94d560ea3cc8af3c7cdfeffb15eb8bc",
+      "entire_document_read": true
+    },
+    {
+      "path": "reviews/SOURCE_REVIEW_RECONSTRUCTED_RECEIPT.json",
+      "SHA256": "53bbf0b8647e7f599863d49e1f74cc1174d1aab7287c8b8d4b335b2e6aea8e5e",
+      "scope": "Historical source review receipt; original review bytes remain unavailable. Current packet hash matches the original reviewed packet."
+    }
+  ],
+  "preflight": {
+    "AGENTS_read": true,
+    "AGENTS_SHA256_from_current_preflight": "f47186296d48f5d3e8ddb2f4bee26664553257c76bd2ebc4da9d1f308b85953f",
+    "local_HEAD_directly_read": "e9276ea2ba8af2d73197a6852931fcafbf39ddf5",
+    "remote_and_parallel_receipt": "authority/S03_PREFLIGHT.json",
+    "remote_and_parallel_observed_UTC": "2026-10-27T06:03:48.748Z",
+    "WU_branch_HEAD_in_receipt": "e9276ea2ba8af2d73197a6852931fcafbf39ddf5",
+    "remote_heads_from_receipt": {
+      "rei_bianchi_orchestration": "5abe0d19df95db730e3e33bae0373c81ba37ce89",
+      "rei_bianchi_thermal": "ee6746ab172f862dddfdec63b59e5e3707b59eaa",
+      "rec_bianchi_source": "09b2230c7735496ccf1516fb8d26e5f854fe203d",
+      "bass_cr": "ec463db0c7e5c7fb5070796071c926caa4db6445",
+      "BASS_HE": "ac6042a6b0610b09d0576538767ee0299389a5eb"
+    },
+    "independent_remote_refetch_by_this_reviewer": false,
+    "parallel_scope": "Root owns implementation/publication and the authority agent owns independent code/design review. The theory author is separate. Unpushed external owner state remains unknown.",
+    "backup_receipt_read": "delivery/S02.json",
+    "backup_source_commit": "e9276ea2ba8af2d73197a6852931fcafbf39ddf5",
+    "backup_archive_SHA256": "91d94753261582fcf03d9f1ef6056c1cd3de180326fb0c608c07776d9adf816f",
+    "backup_archive_bytes": 427248,
+    "Dropbox_id": "id:BSpOijBcT10AAAAAAEC8zA",
+    "Drive_id": "1uzPaxOKdxjboi5p8P3R0jMlkHMX6e8Pe",
+    "backup_status": "ACTUAL_UPLOAD_ACK; final full-source remote byte readback is separate",
+    "no_publication_or_external_branch_mutation_by_reviewer": true
+  },
+  "independent_derivation": {
+    "method": "Analytical reconstruction from the listed reaction directions and elementary finite-dimensional algebra; no scientific program or symbolic engine executed.",
+    "species_order": [
+      "H",
+      "H+",
+      "D+",
+      "Li",
+      "H2",
+      "HD",
+      "LiH"
+    ],
+    "column_order": [
+      "RA",
+      "LiH_destroy_ortho",
+      "LiH_destroy_para",
+      "HD_form_TIQM",
+      "HD_form_SQM",
+      "HD_destroy_thermal"
+    ],
+    "isotope_count_rows": {
+      "H1": [
+        1,
+        1,
+        0,
+        0,
+        2,
+        1,
+        1
+      ],
+      "H2": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "Li7": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    "reconstructed_S": [
+      [
+        -1,
+        -1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        -1,
+        -1,
+        1
+      ],
+      [
+        -1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "independent_channel_balances": [
+      {
+        "channel": "RA",
+        "isotope_changes": [
+          0,
+          0,
+          0
+        ],
+        "baryon_expression": "-1-7+8=0",
+        "charge_change": 0,
+        "bound_electron_expression": "-1-3+4=0",
+        "gas_particle_change": -1
+      },
+      {
+        "channel": "LiH destruction (each spin-labelled variant)",
+        "isotope_changes": [
+          0,
+          0,
+          0
+        ],
+        "baryon_expression": "-1+7+2-8=0",
+        "charge_change": 0,
+        "bound_electron_expression": "-1+3+2-4=0",
+        "gas_particle_change": 0
+      },
+      {
+        "channel": "HD formation (each alternative method)",
+        "isotope_changes": [
+          0,
+          0,
+          0
+        ],
+        "baryon_expression": "1-2-2+3=0",
+        "charge_expression": "1-1=0",
+        "bound_electron_expression": "-2+2=0",
+        "gas_particle_change": 0
+      },
+      {
+        "channel": "HD destruction",
+        "relation": "negative of the material HD-formation column; source ensemble equivalence is not inferred",
+        "gas_particle_change": 0
+      }
+    ],
+    "derived_baryon_row": [
+      1,
+      1,
+      2,
+      7,
+      2,
+      3,
+      8
+    ],
+    "derived_nuclear_charge_row": [
+      1,
+      1,
+      1,
+      3,
+      2,
+      2,
+      4
+    ],
+    "declared_ionic_charge_row": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "derived_bound_electron_row": [
+      1,
+      0,
+      0,
+      3,
+      2,
+      2,
+      4
+    ],
+    "electron_lepton_identity": "N_bound=Z_sum-q; no free-electron or neutrino changes in these six chemical columns.",
+    "delta_Ng": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "source_isotope_vs_model": "H=1H,D=2H,Li=7Li is the declared material model. Source H mass number and nuclear-isomer qualification are not manufactured.",
+    "zero_sum_bound_independent_proof": [
+      "Set r=x-pi*X. Normalization gives sum(r)=0.",
+      "Write r=r_plus-r_minus with disjoint nonnegative parts. M=sum(r_plus)=sum(r_minus)=norm1(r)/2.",
+      "Each weighted sum d^T r_plus and d^T r_minus lies in [dmin*M,dmax*M]. Their difference lies in [-M*(dmax-dmin),M*(dmax-dmin)].",
+      "Multiply by h>=0 to obtain abs(DeltaJ)<=h*(dmax-dmin)*norm1(r)/2.",
+      "Since both x and pi*X are nonnegative and sum to X, norm1(r)<=2X. If X=0 then x=0; division is unnecessary."
+    ],
+    "scalar_exactness_independent_proof": [
+      "For fixed X0>0, compare pure populations X0*e_i and X0*e_j. Exactness against one prescribed scalar coefficient with h>0 implies d_i=d_j.",
+      "Hence all d_i equal c>=0. Conversely, normalized pi gives d^T*pi=c and both fluxes equal h*c*X.",
+      "The vectors e_i-e_j span ker(1^T), giving the equivalent annihilation condition.",
+      "For h=0 no constraint on d follows. On x=pi*X exactness holds for every d. A hidden-state-dependent pi=x/X is not an independently closed scalar model."
+    ],
+    "general_projection_independent_proof": [
+      "For z in ker(P), decompose z into z_plus-z_minus. The full nonnegative cone contains both parts and P*z_plus=P*z_minus.",
+      "If d^T*x depends only on P*x, these two flux observables agree, so d^T*z=0.",
+      "The kernel-annihilating functional descends to im(P). Finite-dimensional linear extension gives d^T=dbar^T*P. The factorization immediately proves sufficiency.",
+      "A restricted physical domain requires only annihilation of admissible same-P differences; full ker(P) necessity is not imported without the full-cone assumption."
+    ],
+    "formation_interpretation": [
+      "Each state-resolved elementary channel has one product molecule and integer stoichiometry.",
+      "With actual nonnegative normalized branches b_i, the averaged flux is sum_i b_i*F*s_i. Its product-state component is b*F and its material projection is F*S_RA.",
+      "Thus dX/dtau=F without knowing individual b_i, conditional on the stated product family and b. This does not recover b or equate it to the later population pi."
+    ],
+    "normalization_check": [
+      "[k]=cm^3 s^-1 and [n_A]=[n_B]=cm^-3 give [R]=events cm^-3 s^-1.",
+      "For n_ref>0, n_A=n_ref*y_A and n_B=n_ref*y_B, so j=R/n_ref=k*n_ref*y_A*y_B.",
+      "The quotient rule gives dy_i/dtau=(dn_i/dtau)/n_ref-y_i*d(log n_ref)/dtau.",
+      "The reaction-only denominator term vanishes only if that reaction does not change n_ref. A gas-particle reference changes during RA; a conserved-nucleus reference has a different reaction derivative.",
+      "Coordinate-time or dimensionless-time conversion needs the consumer's declared clock factor. No identical-incoming-pair 1/2 applies because each listed pair consists of distinct species."
+    ]
+  },
+  "claim_reviews": [
+    {
+      "id": "C01_MATERIAL_STOICHIOMETRY",
+      "decision": "PASS_CONDITIONAL_DECLARED_MODEL",
+      "evidence": "Independent reaction-based S reconstruction and isotope/charge/electron balances agree exactly."
+    },
+    {
+      "id": "C02_THERMAL_PARTICLE_COUNT",
+      "decision": "PASS_COUNTING_IDENTITY_ONLY",
+      "evidence": "Material column sums give (-1,0,0,0,0,0). Primary RA transition count one is separate from unknown cascade, spectrum and thermal assimilation."
+    },
+    {
+      "id": "C03_EVENT_NORMALIZATION",
+      "decision": "PASS_WITH_DECLARED_DENSITY_CLOCK_REFERENCE",
+      "evidence": "Dimensions, reference division and quotient-rule derivative agree; all current incoming pairs are distinct."
+    },
+    {
+      "id": "C04_POSITIVE_LIFT",
+      "decision": "PASS_UNDER_FINITE_NONNEGATIVE_NORMALIZED_INPUTS",
+      "evidence": "pi*X>=0, sum(pi*X)=X, nonnegative d and h give nonnegative coefficient and flux; X=0 handled without division."
+    },
+    {
+      "id": "C05_DEFECT_IDENTITY",
+      "decision": "PASS_EXACT_ALGEBRA",
+      "evidence": "J-J_pi=h*d^T*(x-pi*sum(x))."
+    },
+    {
+      "id": "C06_ZERO_SUM_BOUND",
+      "decision": "PASS_CONDITIONAL_DETERMINISTIC_BOUND",
+      "evidence": "Independent positive/negative-part proof above establishes half-spread factor, secondary bound and zero cases. No physical covariance or numeric source bound is asserted."
+    },
+    {
+      "id": "C07_SCALAR_EXACTNESS_IFF",
+      "decision": "PASS_WITH_H_POSITIVE_FULL_CONE_FIXED_LIFT",
+      "evidence": "Pure-state comparison proves necessity; constant d proves sufficiency. h=0, restricted manifold and hidden-state lift exceptions are correctly retained."
+    },
+    {
+      "id": "C08_GENERAL_PROJECTION",
+      "decision": "PASS_FINITE_DIMENSIONAL_FACTORIZATION",
+      "evidence": "z_plus/z_minus proves necessity on full cone; induced functional on im(P) proves factorization. No universal positive lift for arbitrary P is claimed."
+    },
+    {
+      "id": "C09_FORMATION_BRANCH_TOTAL",
+      "decision": "PASS_CONDITIONAL_MEAN_FLUX_IDENTITY",
+      "evidence": "sum(b)=1 gives total formation F. Fractional b_i are channel weights, not fractional products in an individual event. Actual b remains absent."
+    },
+    {
+      "id": "C10_RATIONAL_COUNTEREXAMPLE",
+      "decision": "PASS_ANALYTICAL_ILLUSTRATION",
+      "evidence": "The two pure populations have fluxes kappa*h*X0 and 3*kappa*h*X0, prescribed flux 2*kappa*h*X0 and defects of opposite sign with magnitude kappa*h*X0; norm1 residual X0 saturates the stated bound.",
+      "source_data": false,
+      "numeric_program_run": false
+    },
+    {
+      "id": "C11_NATIVE_FIT_FUNCTIONS",
+      "decision": "PASS_LITERAL_ALGEBRA_AND_DOMAIN_DEFINITION_ONLY",
+      "evidence": "The decimal-to-rational identities and positive-real-power branch are correct. Mathematical T>0, source support and 27+2 diagnostic nodes are distinguished. No fit value was evaluated."
+    },
+    {
+      "id": "C12_SOURCE_WEIGHT_AND_Q_GUARDS",
+      "decision": "PASS_REUSED_SOURCE_SEMANTICS",
+      "evidence": "Existing electronic/spin weights are not reapplied. Bovino fit-unit issue and 405 K non-Q status remain explicit. Prior 77-cell review is reused by matching packet hash."
+    },
+    {
+      "id": "C13_ENSEMBLE_COMPATIBILITY",
+      "decision": "PASS_EXPLICIT_APPLICATION_DEPENDENCY",
+      "evidence": "Opposite material columns do not bind state ensembles, detailed balance, energy zeros, unknown b/pi or actual consumers."
+    }
+  ],
+  "findings": [
+    {
+      "id": "R6_NOTE_01",
+      "severity": "NONBLOCKING_INTERPRETATION_CLARIFICATION",
+      "location": "theory/STATE_LIFT_THEORY_KO.md section 8",
+      "observation": "The notation (-Li,-H,+b) is correct as an averaged flux column. It must not be passed to an integer event compiler as one event with fractional product counts.",
+      "minimal_clarification": "State explicitly, if editing this passage later, that b_i weights integer state-channel events and that sum_i b_i*s_i is their mean flux coefficient; the material projection is the same integer RA column.",
+      "required_for_current_theory_acceptance": false,
+      "code_review_implication": "Maintain the conditional branch-lift operator separately from integer compiled stoichiometry."
+    }
+  ],
+  "source_reuse": {
+    "restored_packet_hash_matches_original_review": true,
+    "original_77_cell_review_replayed": false,
+    "original_review_bytes_recovered": false,
+    "original_review_expected_SHA256": [
+      "9bb3405fd8b859d3155afe56d50387c22bce32d0d5a4ab0422ba14692944471d",
+      "a7e540cb2c26ea9dbdb9c38ead954e11c80c13624b44e714b466d0631eadc4e8"
+    ],
+    "missing_original_Bennett_raw_bytes_currently": true,
+    "Honvault_original_PDF_previously_unavailable": true,
+    "limitation": "These file-access limitations remain explicit. This theory review reuses the prior source review of the byte-identical packet rather than inventing replacement raw bytes or repeating 77-cell verification."
+  },
+  "execution": {
+    "scientific_programs_run": 0,
+    "native_rate_or_fit_evaluations": 0,
+    "new_native_cell_comparisons": 0,
+    "Q_evaluations": 0,
+    "partition_function_evaluations": 0,
+    "compiler_calls": 0,
+    "Wolfram_calls": 0,
+    "IVP_runs": 0,
+    "old_249_or_R1_R2_R3_PHYS91_REI_replays": 0,
+    "permitted_metadata_operations": [
+      "read current documents and receipts",
+      "SHA256 identity checks",
+      "write reviewer JSON and Markdown",
+      "parse reviewer JSON",
+      "checkpoint exact reviewer text in session storage"
+    ],
+    "preparation_and_tool_CPU_or_cost": "UNMEASURED_NOT_CLAIMED_ZERO",
+    "old_budget_transferred_or_reset": false
+  },
+  "acceptance_ceiling": {
+    "conditional_theory_independently_reviewed": true,
+    "source_literal_review": "REUSED",
+    "implementation_review": false,
+    "numerical_fit_diagnostics": false,
+    "symbolic_engine_verification": false,
+    "physical_rate": false,
+    "state_lift_bound_to_consumer": false,
+    "nuclear_Q": false,
+    "energy_partition": false,
+    "named_runtime_consumer": false,
+    "runtime_activation": false,
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4_ready": false,
+    "strong_no_go_claim": false,
+    "novelty_claim": false
+  }
+}

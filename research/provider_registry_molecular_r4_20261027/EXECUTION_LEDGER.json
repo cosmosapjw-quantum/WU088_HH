@@ -9,10 +9,19 @@
       "cpu_s": 0.12617399999999998,
       "wall_s": 0.16692221000266727,
       "max_RSS_KiB": 13184
+    },
+    {
+      "id": "implementation01",
+      "receipt": "raw/implementation01/RECEIPT.json",
+      "receipt_sha256": "18a2dd5005d343dfd48362d4872211c830ceee607a39692a9eab47204339db59",
+      "exit_code": 0,
+      "cpu_s": 0.336198,
+      "wall_s": 0.36827024100057315,
+      "max_RSS_KiB": 13056
     }
   ],
-  "measured_child_CPU_total_s": 0.12617399999999998,
-  "measured_child_wall_sum_s": 0.16692221000266727,
+  "measured_child_CPU_total_s": 0.462372,
+  "measured_child_wall_sum_s": 0.5351924510032404,
   "new_primary_formula_samples": 29,
   "new_reference_formula_samples": 0,
   "new_compiler_calls": 6,
@@ -32,5 +41,10 @@
     "global_remaining": null
   },
   "unmeasured_costs": "Prior source preparation, network, tools, publication and delivery are separately unmeasured, not zero. Local child timings do not account for the entire project.",
-  "first_failure_policy": "raw attempts append-only; targeted preexecution fixes retained in reviews/PREEXEC_IMPLEMENTATION_REVIEW.json; source preparation loss recorded separately."
+  "first_failure_policy": "raw attempts append-only; targeted preexecution fixes retained in reviews/PREEXEC_IMPLEMENTATION_REVIEW.json; source preparation loss recorded separately.",
+  "implementation_checks": {
+    "pass": 28,
+    "total": 28
+  },
+  "expected_failure_control": "verification/EXPECTED_LAUNCH_FAILURE_RECEIPT.json: missing executable is a deliberate implementation test, not a scientific source execution."
 }
