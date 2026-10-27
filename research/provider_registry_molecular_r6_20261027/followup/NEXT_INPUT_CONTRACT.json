@@ -1,15 +1,15 @@
 {
   "schema": "WU_R6_NEXT_INPUT_CONTRACT_DRAFT_V1",
-  "draft_status": "SCIENCE_ADOPTED_S10_CONTENT_READY_DELIVERY_PENDING",
+  "draft_status": "FINAL_SCIENCE_AND_DELIVERY_CLOSED",
   "predecessor_unit": "WU_MOLECULAR_INTERVAL_BLOCK_R6",
   "prepared_date_utc": "2026-10-27",
   "intended_leaf": "research/provider_registry_molecular_r6_20261027",
   "final_identity": {
-    "source_commit": null,
-    "source_tree": null,
-    "final_publication_receipt": null,
-    "final_archive_sha256": null,
-    "status": "PENDING_S10_ACTUAL_RECEIPT",
+    "source_commit": "4f4e7b6b7bf2b7f684291fb0b1bae6874f39c3ad",
+    "source_tree": "6e0bcc067518c083929cc16995326d8c4567b2ad",
+    "final_publication_receipt": "delivery/S10.json",
+    "final_archive_sha256": "9e8f07122ae55bc852b907b093a31eea414c7b9eed321e7337018b3569414999",
+    "status": "ACTUAL_SOURCE_AND_DUAL_BYTES_VERIFIED",
     "metadata_head_resolution": "Read current branch HEAD and delivery/PUBLICATION_INDEX.json; no self-referential commit hash is fabricated."
   },
   "parent_identity": {
@@ -22,10 +22,10 @@
     "skill": "physmath-research-loop1.0.0",
     "requested": "R1-R10+C1-C10",
     "content_steps": 20,
-    "actual_stage_archives_verified": 9,
+    "actual_stage_archives_verified": 10,
     "total_stage_archives": 10,
     "legacy_archives_verified": 11,
-    "original_byte_copies_verified": 40,
+    "original_byte_copies_verified": 42,
     "source_receipts": "delivery/PUBLICATION_INDEX.json",
     "old_science_replay": 0,
     "next_action": "Use the already admitted science. Bind only actual changed input described below; do not replay closed verification by default."
@@ -208,26 +208,30 @@
     "source_blocks_display": [
       {
         "mu": "8",
-        "H": 0.9490433102022812,
-        "rho_upper": 0.9993574943991823
+        "H_approx": 0.9490433102022812,
+        "rho_upper_decimal_ceiling": "0.999357494399183",
+        "beta_lower_decimal_floor": "0.000642505600817"
       },
       {
         "mu": "32",
-        "H": 3.7961732408091247,
-        "rho_upper": 0.9239960595663439
+        "H_approx": 3.7961732408091247,
+        "rho_upper_decimal_ceiling": "0.923996059566344",
+        "beta_lower_decimal_floor": "0.076003940433656"
       },
       {
         "mu": "128",
-        "H": 15.184692963236499,
-        "rho_upper": 0.16529573096277345
+        "H_approx": 15.184692963236499,
+        "rho_upper_decimal_ceiling": "0.165295730962774",
+        "beta_lower_decimal_floor": "0.834704269037226"
       },
       {
         "mu": "256",
-        "H": 30.369385926472997,
-        "rho_upper": 0.008346121460629307
+        "H_approx": 30.369385926472997,
+        "rho_upper_decimal_ceiling": "0.008346121460630",
+        "beta_lower_decimal_floor": "0.991653878539370"
       }
     ],
-    "scalar_display_note": "Displayed decimals summarize saved exact rationals; raw records are authoritative.",
+    "scalar_display_note": "H_approx is a display approximation. The decimal ceiling/floor strings are directed bounds from saved exact rationals; raw records remain authoritative.",
     "exact_endpoint_annotation": "boltzmann_level_1 has exp(0)=1 and [1,1]. The saved generic strict-interior label is not a precision failure. Preserve first result unchanged.",
     "earlier_evidence": [
       "R5 dynamic residual derivation and source graph",

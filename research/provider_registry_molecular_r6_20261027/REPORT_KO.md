@@ -1,14 +1,14 @@
 # WU088_HH R6 — literal Gibbs 구간과 강제 유한 블록 경계
 
-**R6 이론·코드 과학 채택 완료, local DAG13/28. S10최종source와전달영수증을마감중이다.**
+**R6 이론·코드 채택 완료, 연구 DAG 13/28. R1–R10/C1–C10 및 10단계의 게시·양쪽 원본 백업을 모두 완료했다.**
 
-S09 뒤 다시 읽은 `DAG.json`은 **13/28**이다. 새 이론·코드 노드는 각각 `COMPLETE_SCOPED_INTERVAL_BLOCK_THEORY`, `COMPLETE_SCOPED_OUTWARD_INTERVAL_BLOCK_CERTIFICATE`로 채택되었다. S09 commit은 `7168ad4807dd1e02aef852bcf428df75b222f0de`, scientific payload SHA-256은 `796f399586916847844c7040082a1dce308035d1bce74bf805246574f98b94b4`이다. 선행 R5의 11/26에서 원 26개 객체를 그대로 계승하고 두 scoped 노드를 추가했다. 중앙 DAG 완료 증가량과 물리적 admission 증가량은 모두 0이다. 최종 S10 source HEAD는 이 S09 commit과 구별하여 실제 receipt에서 확정해야 한다.
+S09 뒤 다시 읽은 `DAG.json`은 **13/28**이다. 새 이론·코드 노드는 각각 `COMPLETE_SCOPED_INTERVAL_BLOCK_THEORY`, `COMPLETE_SCOPED_OUTWARD_INTERVAL_BLOCK_CERTIFICATE`로 채택되었다. S09 commit은 `7168ad4807dd1e02aef852bcf428df75b222f0de`, scientific payload SHA-256은 `796f399586916847844c7040082a1dce308035d1bce74bf805246574f98b94b4`이다. 선행 R5의 11/26에서 원 26개 객체를 그대로 계승하고 두 scoped 노드를 추가했다. 중앙 DAG 완료 증가량과 물리적 admission 증가량은 모두 0이다. 최종 S10 source commit은 `4f4e7b6b7bf2b7f684291fb0b1bae6874f39c3ad`이며, 실제 게시와 양쪽 원본 검증을 `delivery/S10.json`에 기록했다.
 
 ## 1. 결과와 연구 기여
 
 이번 단위는 두 가지 남은 수학 의무를 실제 코드와 연결했다. 첫째, R5의 17자리 근사 열확률을 원천 에너지의 decimal literal 및 정확한 SI 정의상수에서 출발하는 외측 구간으로 대체했다. 둘째, 순간 수축 계수가 0인 희소 생성자에도 적용할 수 있도록, 비음수 uniformization 부분합에서 유한 시간 블록의 수축을 인증하고 형성·파괴 강제항을 포함한 잔차와 총량 오차의 경계를 구현했다.
 
-실제 저장된 실행 결과는 primary **76/76**, independent reference **109개 검사·불일치 0개**이다. Wolfram은 **23개의 영 잔차와 경고**를 함께 반환했다. Native 100 K 열확률의 최대 구간 폭은 약 **2.1536847338733093e-76**이다. 고정한 네 블록 중 가장 긴 블록에서는 수축 상계가 **rho = 0.008346121460629307**이다. 이 값들은 선언된 9상태 HD–para-H2 여기 그래프에 대한 결과이다. 실제 반응성 파괴율이나 physical consumer를 새로 확보했다는 뜻은 아니다. 근거 파일은 `raw/PRIMARY_RESULTS.json`, `raw/INDEPENDENT_RESULTS.json`, `raw/WOLFRAM_RESULT.json`이다.
+실제 저장된 실행 결과는 primary **76/76**, independent reference **109개 검사·불일치 0개**이다. Wolfram은 **23개의 영 잔차와 경고**를 함께 반환했다. Native 100 K 열확률의 최대 구간 폭은 약 **2.1536847338733093e-76**이다. 고정한 네 블록 중 가장 긴 블록의 인증된 수축 계수는 **rho ≤ 0.008346121460630**으로 외측 표시한다. 정확한 유리수는 원시 결과에 보존했다. 이 값들은 선언된 9상태 HD–para-H2 여기 그래프에 대한 결과이다. 실제 반응성 파괴율이나 physical consumer를 새로 확보했다는 뜻은 아니다. 근거 파일은 `raw/PRIMARY_RESULTS.json`, `raw/INDEPENDENT_RESULTS.json`, `raw/WOLFRAM_RESULT.json`이다.
 
 기여의 범위는 표준 정규화 단조성, uniformization, Dobrushin 공통 질량 성질을 WU의 명시된 그래프·원천·비교계에 맞게 증명하고 구현한 것이다. 새로운 기본 정리의 발견이나 strong no-go를 주장하지 않는다. 일반 증명과 exact directed arithmetic이 주 근거이고, 독립 수치와 CAS는 서로 다른 수준의 보조 검증이다.
 
@@ -266,7 +266,7 @@ General::messages: Messages were generated which may indicate errors.
 
 ## 8. 단계별 게시와 원본 백업
 
-R_i/C_i를같은순번체크포인트로묶었다. 각루프는10단계이며연구DAG와별도다. 아래의완료는실제Gitref확인및Dropbox/Drive원본GET의전체SHA256·CRC·파일검증에묶인다.
+R_i/C_i를 같은 순번의 체크포인트로 묶었다. 각 루프는 10단계이며 연구 DAG와 구별한다. 아래 완료 표시는 실제 Git ref 확인과 Dropbox·Drive 원본 GET의 전체 SHA256·CRC·각 파일 검증을 모두 통과했다는 뜻이다.
 
 | 단계 | 연구 DAG | 실제 source commit | 양쪽 원본 검증 |
 |---|---:|---|---|
@@ -279,14 +279,16 @@ R_i/C_i를같은순번체크포인트로묶었다. 각루프는10단계이며연
 | R7/C7 | 11/28 | [8582df66ea3d](https://github.com/cosmosapjw-quantum/WU088_HH/commit/8582df66ea3d6d7abee9fead272d2d8bea93bb8d) | PASS |
 | R8/C8 | 12/28 | [3aef8b9efb85](https://github.com/cosmosapjw-quantum/WU088_HH/commit/3aef8b9efb85a19a3d0ea3e86f374069a2599f29) | PASS |
 | R9/C9 | 13/28 | [7168ad4807dd](https://github.com/cosmosapjw-quantum/WU088_HH/commit/7168ad4807dd1e02aef852bcf428df75b222f0de) | PASS |
-| R10/C10 | 13/28 | source publication pending | pending actual receipt |
+| R10/C10 | 13/28 | [4f4e7b6b7bf2](https://github.com/cosmosapjw-quantum/WU088_HH/commit/4f4e7b6b7bf2b7f684291fb0b1bae6874f39c3ad) | PASS |
 
-선행R4S10및R5S01–S10도원래sourcecommit으로복구하여 **11/11ZIP,22/22원본사본** 검증을완료했다. 실제복구ZIP합계는27,866,026bytes,양쪽수신은55,732,052bytes이다. `delivery/LEGACY_RECOVERY_CLOSURE.json`이원본commit/tree·hash·providerID·개별영수증을결속한다. R4의R10/C10전달의무와R5의10단계ZIP전달대기를이기록으로닫으며,고정된과거commit과그당시pending기록은그대로보존한다. 과학재실행은0이다.
+선행 R4 S10 및 R5 S01–S10도 원래 source commit으로 복구하여 **11/11 ZIP, 22/22 원본 사본** 검증을 완료했다. 복구 ZIP의 합계는 27,866,026 bytes이며, 양쪽에서 실제 수신한 원본은 55,732,052 bytes다. `delivery/LEGACY_RECOVERY_CLOSURE.json`은 원본 commit/tree·hash·provider ID와 개별 영수증을 연결한다. R4의 R10/C10 전달 의무와 R5의 10단계 ZIP 전달 대기는 이 기록으로 닫았다. 과거 commit과 당시의 pending 기록은 보존했다. 과학 재실행은 0회다.
 
-최종source는 `PENDING_S10_ACTUAL_PUBLICATION`이며그ZIP SHA256은 `PENDING_S10_ACTUAL_ARCHIVE`이다. 실제metadataHEAD는이source뒤의branchHEAD이며 `delivery/PUBLICATION_INDEX.json`과최종전달영수증에서구별한다. 보관범위는AGENTS와8개provider/program/ledger연구디렉터리이며전체역사저장소의clone이라고주장하지않는다.
+S10 고정 source는 `4f4e7b6b7bf2b7f684291fb0b1bae6874f39c3ad`이며 ZIP SHA256은 `9e8f07122ae55bc852b907b093a31eea414c7b9eed321e7337018b3569414999`다. [S10 원본 ZIP](https://drive.google.com/file/d/1FQdBA8pUtb--Ywv3IZyOEL1ssQAe3RRL/view?usp=drivesdk)은 9,450,177 bytes, payload 921개 파일을 포함한다. 최종 전달 영수증과 편집 정리를 담은 metadata commit은 이 source의 후속 commit이다. 그 실제 identity는 branch HEAD 및 별도의 최종 원본 전달 영수증으로 확인한다. 자기 자신을 포함하는 commit hash를 문서 안에 만들지 않는다.
 
-현재scientificpayload SHA256은`796f399586916847844c7040082a1dce308035d1bce74bf805246574f98b94b4`이고,17개고정파일의metadata검증과상속26개DAG객체불변검사를통과했다. 이무결성확인은새수치실행이아니다. main merge=false,HH_R10=OFF,production=NOT_ISSUED,L4_ready=false,중앙·물리완료delta0을유지한다.
+보관 범위는 AGENTS와 8개 provider/program/ledger 연구 디렉터리다. 이는 복구·채택한 연구 source의 완전한 묶음이며 전체 역사 저장소의 clone을 뜻하지 않는다. 연구 단계의 source archive 10개와 과거 복구 archive 11개, 총 21개에 대한 42개 provider 원본 검증이 완료되었다. 별도의 최종 metadata archive는 연구 단계나 DAG 노드를 추가하지 않는다.
 
-## 9. 재개
+현재 scientific payload SHA256은 `796f399586916847844c7040082a1dce308035d1bce74bf805246574f98b94b4`다. 고정 파일 17개와 상속 DAG 객체 26개의 불변 검사를 통과했다. 이 검사는 저장 파일의 무결성 확인이며 새 수치 실행이 아니다. main merge=false, HH_R10=OFF, production=NOT_ISSUED, L4_ready=false, 중앙·물리 완료 delta=0을 유지한다.
 
-완성된복사문은[HANDOFF_KO.md](HANDOFF_KO.md)에있다. 다음실제입력과최소변경의무는[followup/NEXT_INPUT_CONTRACT.json](followup/NEXT_INPUT_CONTRACT.json)을따른다. 기존성과와원본backups를기본적으로재사용하며,실제identity불일치나새입력이있는부분만검토한다.
+## 9. 다음 스레드에서 재개하기
+
+복사 가능한 지시문은 [HANDOFF_KO.md](HANDOFF_KO.md)에 있다. 다음 실제 입력과 변경 의무는 [followup/NEXT_INPUT_CONTRACT.json](followup/NEXT_INPUT_CONTRACT.json)에 명시했다. 기존 성과와 원본 백업을 재사용하고, 실제 identity 불일치나 새로운 입력이 영향을 주는 부분을 검토한다.
