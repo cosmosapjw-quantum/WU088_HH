@@ -1,3 +1,13 @@
+# Current priority: molecular dynamic lift R5, 2026-10-27
+
+Read research/provider_registry_molecular_r5_20261027/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, authority/ and checkpoints/. This user explicitly requests the next complete theory and coding loop after cross-branch/repo/conversation/backup synthesis. R4 remains scientific DAG9/24 and workflow18/20; its full S10 dual ZIP/readback is still pending. This is a separate changed mathematical obligation, not completion of the missing GL2022 destruction payload.
+
+Reuse REC source synthesis d6dbe39a4923439547c01695d9020ba39367ea90 and the exact LAMDA source/parser identities. Its54DB/24LTE and R4's source/static theorem/249 compiler checks are inherited, not rerun. R5 derives finite dynamic lift/comparison certificates for declared K,d,pi,h,f; source missing pairs remain MISSING_NOT_ZERO, v remains UNSPECIFIED, actual GL2022 d_j and consumer remain unbound. Old PHYS91 remaining stays0; no physical IVP, Q, activation or main merge.
+
+The actual Python and C++ service probes failed before process launch. Available V8/BigInt and Wolfram can execute bounded new mathematics. A service outage is not an authorization barrier or a reason to stop independent research. Every shared R_i/C_i checkpoint is published non-force with expectedSHA and preserved in a native Drive text recovery document. ZIP/Dropbox byte-identical delivery stays pending until actual file materialization; no text receipt substitutes for it. Current R5 DAG contains24 inherited nodes plus2 explicit new children:9/26 at entry. Future turns probe their own runtime afresh.
+
+## Preserved R4 priority and history
+
 # Current priority: R4 R10/C10 delivery continuation, 2026-10-27
 
 Read research/provider_registry_molecular_r4_20261027/REPORT_KO.md, HANDOFF_KO.md, WORKFLOW_RECORD.json, delivery/S09.json, delivery/S09_RECOVERED_READBACK.json and delivery/R10_PREPARATION_STATUS.json. If delivery/R10_PUBLICATION.json exists, bind the actual publication to that receipt. The previous S09 source is f949c21cca6e2534b725241068bd6c6e06158495. Its reviewed scientific payload SHA256 34765b943cce5a67d49a622f76c0cf9aeceb635c8cd6a3cf58b5cebb8e3c5fde is unchanged.
