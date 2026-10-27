@@ -33,13 +33,33 @@
   },
   "reference": {
     "allowed": 1,
-    "consumed": 0,
-    "reserved": 1,
+    "consumed": 1,
+    "reserved": 0,
     "remaining": 0,
-    "status": "SCHEDULED_FIRST_REFERENCE_S07",
-    "CPU_limit_s": 60,
-    "primary_sha256": "520110d1cae1677491aecd7216621c25f1098470c939ee027d5df3bde183686b",
-    "new_ODE_runs": 0
+    "status": "failure",
+    "source_commit": "b87ea61ab2d5e17221a6cf3b710aec074eb1a28e",
+    "process": {
+      "schema": "WU_R8_ACTUAL_PROCESS_V1",
+      "stage": "S07",
+      "action": "reference",
+      "source_commit": "b87ea61ab2d5e17221a6cf3b710aec074eb1a28e",
+      "command": [
+        "/usr/bin/python3",
+        "research/provider_registry_molecular_r8_20261027/verification/run_reference.py"
+      ],
+      "started_utc": "2026-10-27T15:49:30.456822+00:00",
+      "finished_utc": "2026-10-27T15:49:30.903341+00:00",
+      "executions": 1,
+      "returncode": 1,
+      "timeout": false,
+      "OS_user_CPU_s": 0.420857,
+      "OS_system_CPU_s": 0.020041,
+      "OS_CPU_s": 0.44089799999999996,
+      "wall_s": 0.4431670099999998,
+      "CPU_limit_s": 60,
+      "includes_imports_and_serialization": true,
+      "old_science_replay": 0
+    }
   },
   "CAS": {
     "allowed": 1,
@@ -117,6 +137,14 @@
       "provider_downloads": 2,
       "status": "PASS",
       "source": "delivery/S06.json"
+    },
+    {
+      "id": "S07_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "source": "delivery/S07.json"
     }
   ],
   "scientific_runs": [
@@ -141,12 +169,34 @@
       "CPU_limit_s": 60,
       "includes_imports_and_serialization": true,
       "old_science_replay": 0
+    },
+    {
+      "schema": "WU_R8_ACTUAL_PROCESS_V1",
+      "stage": "S07",
+      "action": "reference",
+      "source_commit": "b87ea61ab2d5e17221a6cf3b710aec074eb1a28e",
+      "command": [
+        "/usr/bin/python3",
+        "research/provider_registry_molecular_r8_20261027/verification/run_reference.py"
+      ],
+      "started_utc": "2026-10-27T15:49:30.456822+00:00",
+      "finished_utc": "2026-10-27T15:49:30.903341+00:00",
+      "executions": 1,
+      "returncode": 1,
+      "timeout": false,
+      "OS_user_CPU_s": 0.420857,
+      "OS_system_CPU_s": 0.020041,
+      "OS_CPU_s": 0.44089799999999996,
+      "wall_s": 0.4431670099999998,
+      "CPU_limit_s": 60,
+      "includes_imports_and_serialization": true,
+      "old_science_replay": 0
     }
   ],
   "metadata_transport_allowance": {
     "total": 11,
-    "used": 6,
-    "remaining": 5
+    "used": 7,
+    "remaining": 4
   },
   "CAS_targeted_export_repair": {
     "allowed": 1,
@@ -171,6 +221,26 @@
       "kind": "GIT_CLI_NETWORK_STILL_UNAVAILABLE",
       "error": "Failed to connect to browser-proxy port8889",
       "decision": "RetainGitHubconnectorpublication andActions scientificexecution"
+    }
+  ],
+  "reference_phi_scalar_repair": {
+    "allowed": 1,
+    "consumed": 0,
+    "reserved": 1,
+    "remaining": 0,
+    "status": "S08_RESERVED_NOT_EXECUTED",
+    "contract": "verification/PHI_SCALAR_REPAIR_CONTRACT.json",
+    "reason": "REF01 observed precision-closeness acceptance mismatch; exact scalar bracket, no full reference replay",
+    "original_reference_remaining": 0
+  },
+  "postprocessing": [
+    {
+      "kind": "SAVED_NATIVE9_PLOT",
+      "status": "COMPLETE",
+      "CPU_s": 4.317593619,
+      "source": "results/PLOT_PROVENANCE.json",
+      "new_scientific_evaluations": 0,
+      "new_ODE_runs": 0
     }
   ]
 }

@@ -33,8 +33,8 @@ def json_bytes(value):
     return (json.dumps(value, ensure_ascii=True, indent=2) + "\n").encode()
 def utc():
     return datetime.now(timezone.utc).isoformat()
-def child_limits():
-    resource.setrlimit(resource.RLIMIT_CPU, (60, 61))
+def child_limits(seconds):
+    resource.setrlimit(resource.RLIMIT_CPU, (seconds, seconds + 1))
 def transmit(path, raw):
     label = str(path)
     encoded = base64.b64encode(raw).decode("ascii")
@@ -49,10 +49,10 @@ def main():
     if request.get("schema") != "WU_R8_RUN_REQUEST_V1":
         raise ValueError("Unknown request schema")
     stage = request["stage"]
-    if stage not in [f"S{i:02d}" for i in range(1,11)]:
+    if stage not in [f"S{i:02d}" for i in range(1,11)] + ["FINAL"]:
         raise ValueError("Invalid stage")
     action = request["action"]
-    expected = {"S06":"primary", "S07":"reference"}.get(stage, "archive")
+    expected = {"S06":"primary", "S07":"reference", "S08":"phi_scalar_repair"}.get(stage, "archive")
     if action != expected:
         raise ValueError("Scientific stage/action mismatch")
     if os.environ.get("GITHUB_RUN_ATTEMPT") != "1":
@@ -93,7 +93,7 @@ def main():
         runtime["raw/PREEXECUTION_FREEZE.json"] = json_bytes(freeze)
         if findings:
             exit_code = 1
-    if action in ("primary", "reference"):
+    if action in ("primary", "reference", "phi_scalar_repair"):
         frozen = json.loads((LEAF / "raw/PREEXECUTION_FREEZE.json").read_text())
         if frozen["status"] != "PASS":
             raise ValueError("Scientific execution requires the actual S05 preflight PASS")
@@ -101,7 +101,22 @@ def main():
             if sha256((LEAF/item["path"]).read_bytes()) != item["sha256"]:
                 raise ValueError("Frozen scientific dependency changed: "+item["path"])
         runner = LEAF / "verification" / ("run_" + action + ".py")
-        output = LEAF / "raw" / ("PRIMARY_RESULTS.json" if action=="primary" else "REFERENCE_RESULTS.json")
+        output = LEAF / "raw" / (action.upper() + "_RESULTS.json")
+        cpu_limit, wall_limit = 60, 90
+        if action == "phi_scalar_repair":
+            repair = json.loads((LEAF/"verification/PHI_SCALAR_REPAIR_CONTRACT.json").read_text())
+            if repair.get("schema") != "WU_R8_PHI_SCALAR_REPAIR_CONTRACT_V1":
+                raise ValueError("Unknown targeted scalar repair contract")
+            if repair["new_allowance"] != {"runs":1,"CPU_limit_s":10,"wall_limit_s":30}:
+                raise ValueError("Targeted repair budget changed")
+            if request["request_id"] != "WU_R8_S08_PHI_SCALAR_REPAIR_01_20261027":
+                raise ValueError("Targeted repair request changed")
+            for path, digest in repair["frozen_files"].items():
+                if sha256((LEAF/path).read_bytes()) != digest:
+                    raise ValueError("Targeted repair identity changed: " + path)
+            if sha256(runner.read_bytes()) != repair["runner_sha256"]:
+                raise ValueError("Targeted repair runner changed")
+            cpu_limit, wall_limit = 10, 30
         if output.exists():
             raise ValueError("Result already exists; refuse repeated scientific execution")
         output.parent.mkdir(exist_ok=True)
@@ -109,7 +124,7 @@ def main():
         wall0 = time.monotonic()
         try:
             cp = subprocess.run([sys.executable, str(runner)], cwd=ROOT, capture_output=True,
-                                timeout=90, preexec_fn=child_limits)
+                                timeout=wall_limit, preexec_fn=lambda: child_limits(cpu_limit))
             exit_code = cp.returncode
             stdout, stderr = cp.stdout, cp.stderr
             timed_out = False
@@ -124,7 +139,7 @@ def main():
                    "timeout":timed_out,"OS_user_CPU_s":after.ru_utime-before.ru_utime,
                    "OS_system_CPU_s":after.ru_stime-before.ru_stime,
                    "OS_CPU_s":(after.ru_utime-before.ru_utime)+(after.ru_stime-before.ru_stime),
-                   "wall_s":time.monotonic()-wall0,"CPU_limit_s":60,
+                   "wall_s":time.monotonic()-wall0,"CPU_limit_s":cpu_limit,
                    "includes_imports_and_serialization":True,"old_science_replay":0}
         runtime["raw/"+action.upper()+"_PROCESS.json"] = json_bytes(process)
         runtime["raw/"+action.upper()+"_STDOUT.txt"] = stdout

@@ -1,0 +1,82 @@
+{
+  "schema": "WU_R8_PHI_SCALAR_REPAIR_PREFLIGHT_V1",
+  "reviewed_utc": "2026-10-27T16:00:47.272Z",
+  "reviewer": "independent agent /root/r6_inventory",
+  "review_pass": "Same bounded C9 review, restricted to the diagnosed native phi scalar",
+  "status": "PASS_TARGETED_SCALAR_PREFLIGHT",
+  "material_findings": [],
+  "required_corrections": [],
+  "execution_status": "NOT_EXECUTED_BY_REVIEWER; actual S08 result remains pending",
+  "final_C9": "PENDING",
+  "DAG_before": {
+    "complete": 15,
+    "total": 32
+  },
+  "method": {
+    "source_text": "Read the complete actual 237-line targeted runner, mathematical note, actual repair contract and the relevant changed wrapper action/freeze/budget branches.",
+    "read_only_metadata": "Verified script, math note, contract and wrapper SHA256; selected frozen native B/delta fields and source byte lengths.",
+    "reviewer_scientific_executions": 0,
+    "reviewer_imports": 0,
+    "reviewer_AST_or_test_runs": 0,
+    "reviewer_source_code_edits": 0,
+    "reviewer_external_mutations": 0
+  },
+  "actual_pins": {
+    "original_reference_source_commit": "b87ea61ab2d5e17221a6cf3b710aec074eb1a28e",
+    "S08_source_commit": "Pending root publication; this review binds the actual bytes below.",
+    "sha256": {
+      "verification/run_phi_scalar_repair.py": "219825e3786085951e456cb7408044598bc30166f5decee5669bc27c4147998d",
+      "reviews/PHI_SCALAR_REPAIR_MATH_KO.md": "e67fcda3b744c97b10cfd1ba98a96897b2a05450846e3f23e1779da4532bd34c",
+      "verification/PHI_SCALAR_REPAIR_CONTRACT.json": "fd3fa880f185a06ca2b8af1a7812a5e2e804afb5cf916ba31c2c4ba842f0a9bf",
+      "delivery/build_checkpoint.py": "f0bd0934eef28d48b427e38cb4ea6a08de9ed9d834470d57c70ecfef7100c2f8",
+      "raw/PRIMARY_RESULTS.json": "520110d1cae1677491aecd7216621c25f1098470c939ee027d5df3bde183686b",
+      "raw/REFERENCE_RESULTS.json": "da699b9a8b53389e3d222f34a5a421cd88ce17787bde69cc2e9bed5fb15409df",
+      "reviews/REFERENCE_FAILURE_REVIEW.json": "37cdf9ebf9dba233c0ce7fb82f80dc0ad53618a16affd44e617dd0150eebdef8"
+    }
+  },
+  "mathematical_assessment": [
+    "For the fixed d<0, delta>0, 0<x=(-d)*delta<1, the alternating terms delta*x^k/(k+1)! decrease to zero. Thus S9 <= phi <= S8.",
+    "The code computes the even upper degree8 and odd lower degree9 using exact Fraction arithmetic, and verifies U-L=delta*x^9/10!.",
+    "P>=U directly proves that the saved production phi is an upper; it does not rely on Decimal80 closeness or a production import.",
+    "P-L <= A+(U-L), with A=1020000001/2^128, checks the analytically induced slack scale.",
+    "P-U>1e-30 establishes that the exact true slack exceeds the old reference threshold; original failure is expected under that unchanged threshold.",
+    "The source interval width51/2^128 and original upward phi construction are checked exactly.",
+    "The sole 1e-79 printing comparison binds the saved Decimal operand to P and does not determine scientific acceptance."
+  ],
+  "caller_and_runtime_assessment": [
+    "The runner checks actual primary/reference SHA256 and byte lengths, original runner/core/input/source identities, original single failed group/component, and unchanged tolerance.",
+    "It binds the exact native family/state order/B/delta/factors before the fixed scalar evaluation and re-reads original hashes afterwards.",
+    "No exponential evaluator, production import, ODE, generator or old runner is called.",
+    "Successful control flow contains 24 named checks; failed checks/exceptions remain FAIL, and result creation is exclusive.",
+    "The wrapper verifies the original S05 frozen files before science, restricts S08 to phi_scalar_repair and requires GitHub run attempt1 plus actual checkout/event SHA consistency.",
+    "The wrapper requires request_id WU_R8_S08_PHI_SCALAR_REPAIR_01_20261027, exact new allowance runs1/CPU10s/wall30s, actual repair runner hash and all contract-frozen files.",
+    "The wrapper invokes only the targeted runner with no extra arguments, refuses existing output, applies process limits and records complete child CPU including imports and serialization.",
+    "Runtime enforcement and final source-commit binding are to be confirmed from the actual S08 receipt, not inferred from this static PASS."
+  ],
+  "preservation": {
+    "original_reference_status": "FAIL_PRESERVED",
+    "blanket_tolerance_change": false,
+    "primary_rerun": false,
+    "full_reference_rerun": false,
+    "original_R8_primary_remaining": 0,
+    "original_R8_reference_remaining": 0,
+    "old_R7_R6_PHYS91_remaining": [
+      0,
+      0,
+      0
+    ],
+    "targeted_new_allowance": {
+      "runs": 1,
+      "CPU_limit_s": 10,
+      "wall_limit_s": 30
+    },
+    "no_automatic_retry": true,
+    "physical_consumer_admitted": false
+  },
+  "final_review_obligations": [
+    "Read the original actual S08 scalar result, verify pinned source/contract identities and all 24 assertions' recorded outcomes.",
+    "Read actual S08 process receipt, return code and full CPU; confirm targeted allowance exhausted without an old runner replay.",
+    "Retain the original reference FAIL and actual costs in final C9 while describing the scalar re-adjudication separately.",
+    "Do not claim final C9 or DAG adoption until actual evidence is available."
+  ]
+}
