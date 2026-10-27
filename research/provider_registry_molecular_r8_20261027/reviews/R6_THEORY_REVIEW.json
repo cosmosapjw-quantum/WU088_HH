@@ -1,0 +1,70 @@
+{
+  "schema": "WU_R8_INDEPENDENT_R6_THEORY_REVIEW_V1",
+  "unit": "WU_CAUSAL_LAG_KERNEL_R8",
+  "reviewer": "/root/r6_inventory",
+  "reviewed_utc": "2026-10-27T15:23:13.550Z",
+  "decision": "PASS_SCOPED_CONDITIONAL_LAG_KERNEL_THEORY",
+  "material_findings": 0,
+  "required_corrections": [],
+  "review_commit": "d2c999833ce4ef18cf8d43a1efae3be3cc2f1272",
+  "independence": {
+    "proof_author": false,
+    "core_author": false,
+    "runner_author": false,
+    "review_pass": "Singleboundedpass continueswithrunner/runtimeatC9"
+  },
+  "method": {
+    "generalproof": "Manual independent derivation R8.1-R8.20",
+    "code": "Static equation-to-source correspondence",
+    "scientific_runs": 0,
+    "imports": 0,
+    "CAS_calls": 0,
+    "old_science_replay": 0,
+    "external_writes": 0
+  },
+  "identities": {
+    "proof": {
+      "bytes": 13511,
+      "sha256": "ad538b788403b425ffbcf5d5b29fe5d4a5ba09603fb36009fc85885e98cba8c2",
+      "git_blob": "0b76f13166562086480c03e234ec02748d0d67d5"
+    },
+    "core": {
+      "bytes": 14169,
+      "sha256": "3a415e8ccc76669a95bec30aa52fc1f1ad867cff1fd9fcca66734fb71872fba3",
+      "git_blob": "b03b21fffec3ac6034f17fd8d3cd78430b0a2233"
+    },
+    "input": {
+      "bytes": 2821,
+      "sha256": "b47d561f1dc77c42a16544df0f59066b17d1bf8a50430a3ac5ba25845068e84c"
+    },
+    "map": {
+      "bytes": 2662,
+      "sha256": "fa66da187a4a1261155928eb271bea767445f178a6b0fe89e19ebc2d07238c32"
+    }
+  },
+  "accepted": [
+    "Uniform all-starts same-family composition and nonexpansive remainders",
+    "Correct whole vs endpoint h and forcing indices",
+    "Signed-d extrema and regular d0",
+    "Continuous F(V)<=V separated from discrete baseline",
+    "Previous-only2passes and exactmin preserve wholeupper withoutconvergence",
+    "Pointcaps only at exactsavedclocks; nofinalrerounding",
+    "Positiveupperarithmetic and expintervaldirections",
+    "Lateforcingcounterexample scoped, no no-go"
+  ],
+  "required_hypotheses": [
+    "R7 residual forcing belongs to invariantZ; nominalMarkovfamily preservesZ",
+    "EveryH/rho sameclock/state/norm/family uniformallstarts",
+    "Constantnonnegativea,b,c,g and reald overfullhorizon",
+    "Reactionfeedbackchargedseparately",
+    "Initialwholecellboundsandpointcapsactuallysourcebound",
+    "Caller verifiesoriginalmembership; Booleanmetadataalone insufficient"
+  ],
+  "static_core_status": "PASS_STATIC_CORE_CORRESPONDENCE_PENDING_CALLER_BINDING_AND_RUNTIME",
+  "C9_pending": [
+    "ActualS04runner source/capbinding",
+    "Actualsingleprimary/reference/CASresults"
+  ],
+  "physical_admission": false,
+  "DAG_mutation_by_reviewer": false
+}
