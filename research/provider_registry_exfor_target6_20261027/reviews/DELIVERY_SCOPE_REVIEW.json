@@ -1,0 +1,160 @@
+{
+  "schema": "WU_R3_DELIVERY_SCOPE_REVIEW_V1",
+  "reviewer": "authority_survey independent implementation/release reviewer",
+  "reviewed_UTC": "2026-10-27T03:23:01.138992+00:00",
+  "decision": "PASS_SCOPED_R3_DELIVERY_METADATA",
+  "blocking_findings": [],
+  "review_method": "Focused static read of Git metadata diff and existing delivery receipts; local byte/hash identity reads only. No source audit, numeric calculation, compiler, builder, scientific test, package rerun, ZIP reopening, download or remote mutation.",
+  "published_source": {
+    "commit": "80c0d758a5d5b3c030b20c874b8e1852fcb46f82",
+    "tree": "dcf5af4136b3160a3a4a7488d4ec779b67409c0c",
+    "parent": "87933da5654bb2e4d93f7de4341df5e0fa0f8716",
+    "PR": 150,
+    "branch": "research/provider-registry-20261025",
+    "expected_SHA_nonforce_and_remote_readback": "PASS from GIT_READBACK; local commit object has the same parent/tree",
+    "changed_paths": 78,
+    "changed_paths_meaning": "Delta entries applied to the parent; not total repository file count"
+  },
+  "source_archive": {
+    "name": "WU_PROVIDER_REGISTRY_R3_EXFOR_TARGET6_SOURCE_20261027_80c0d758a5d5.zip",
+    "bytes": 7274563,
+    "sha256": "f83ea212e17318ea80d368f99f56a7e7dc0f908f2578392136acc434e22195ed",
+    "git_source_files": 467,
+    "members_with_manifest": 468,
+    "local_CRC_and_member_identity": "Existing package_source01 receipt PASS; not rerun",
+    "dropbox_content_hash": "da11075788e1e725df757e5f190d6b39b6423dc3fada38f0edf26ae947c9ff2f"
+  },
+  "cloud_receipt_assessment": {
+    "Dropbox_ID": "id:BSpOijBcT10AAAAAAEC3dA",
+    "Drive_ID": "1Glyh10AUFixjz4cTWJPNx6ypm-3ErnuX",
+    "both_actual_GET_HTTP_200_size_SHA_match": true,
+    "evidence": "CLOUD_READBACK.json records separate single GETs at 03:19:07.699036 and 03:19:10.856234 UTC; IDs and whole-byte hashes agree with upload ACKs and archive receipt. Dropbox provider block hash agrees with locally computed archive block hash.",
+    "signed_download_URLs_retained": false
+  },
+  "temporal_interpretation": {
+    "SOURCE_ZIP_MANIFEST_backup_provider_ACKs": "SEPARATE_PENDING is immutable package-time observation, superseded by FINAL_BACKUP_ACK and CLOUD_READBACK.",
+    "FINAL_BACKUP_ACK_actual_byte_readbacks": "PENDING_SEPARATE_RECEIPT is the upload-ACK observation at 03:18:37.751 UTC; later CLOUD_READBACK and current PUBLICATION_AND_BACKUP record actual byte verification.",
+    "report_and_handoff_source_snapshot_plan": "Preserved as historical source-snapshot plan; appended actual delivery record is current.",
+    "current_metadata_in_source_ZIP": false,
+    "metadata_commit_resolution": "Containing later Git commit, separate from source80c0 and immutable source ZIP; final metadata remote HEAD remains to be read back after publication."
+  },
+  "diff_scope": {
+    "modified_tracked_paths": [
+      "research/provider_registry_exfor_target6_20261027/DAG.json",
+      "research/provider_registry_exfor_target6_20261027/DAG_DELTA.json",
+      "research/provider_registry_exfor_target6_20261027/EXECUTION_LEDGER.json",
+      "research/provider_registry_exfor_target6_20261027/HANDOFF_KO.md",
+      "research/provider_registry_exfor_target6_20261027/REPORT_KO.md",
+      "research/provider_registry_exfor_target6_20261027/WORKFLOW_RECORD.json",
+      "research/provider_registry_exfor_target6_20261027/delivery/PUBLICATION_AND_BACKUP.json"
+    ],
+    "new_paths_before_this_review": [
+      "research/provider_registry_exfor_target6_20261027/authority/METADATA_PARALLEL_REFRESH.json",
+      "research/provider_registry_exfor_target6_20261027/authority/PRE_BACKUP.json",
+      "research/provider_registry_exfor_target6_20261027/authority/PRE_METADATA_PUBLICATION.json",
+      "research/provider_registry_exfor_target6_20261027/delivery/CLOUD_READBACK.json",
+      "research/provider_registry_exfor_target6_20261027/delivery/FINAL_BACKUP_ACK.json",
+      "research/provider_registry_exfor_target6_20261027/delivery/GIT_READBACK.json",
+      "research/provider_registry_exfor_target6_20261027/delivery/SOURCE_PUBLISHED_FILES.json",
+      "research/provider_registry_exfor_target6_20261027/delivery/SOURCE_ZIP_MANIFEST.json",
+      "research/provider_registry_exfor_target6_20261027/raw/package_source01/RECEIPT.json",
+      "research/provider_registry_exfor_target6_20261027/raw/package_source01/REQUEST.json",
+      "research/provider_registry_exfor_target6_20261027/raw/package_source01/stderr.txt",
+      "research/provider_registry_exfor_target6_20261027/raw/package_source01/stdout.txt"
+    ],
+    "assessment": "Seven tracked files contain only delivery status, elapsed child accounting and appended delivery prose. New files are authority/receipt/package-attempt records. AGENTS, R1/R2, source raw rows, registry, builder, compiler, admission and C9 remain unchanged."
+  },
+  "immutable_anchors": {
+    "SCIENTIFIC_ADMISSION.json": {
+      "sha256": "9a23a79f9e958cc68aa1d9366829ccd73a0782ca05ebc46127e3ec8d3f46d1cf",
+      "unchanged_from_published_source": true
+    },
+    "sources/exfor/PROVIDER_ROWS.json": {
+      "sha256": "d8b0b92f0374f73fa7f838db5ca07be45bd448696654b07c6db71c5847235ac2",
+      "unchanged_from_published_source": true
+    },
+    "sources/exfor/MANIFEST.json": {
+      "sha256": "a1c5d4009d0bfacc4edcb248a6878eef6cdafa9690b4ea0d0826dd5356052d06",
+      "unchanged_from_published_source": true
+    },
+    "reviews/C9_FINAL.json": {
+      "sha256": "63b3fe6fe1b706b45bab059df78c00049f6684e80f32ab89c1acedd176ecc922",
+      "unchanged_from_published_source": true
+    },
+    "reviews/SOURCE_RELEASE_REVIEW.json": {
+      "sha256": "1d271d854fedd93e8bec2f4bf92ddcfe6a0885242c6721200540414fb58ed24e",
+      "unchanged_from_published_source": true
+    },
+    "delivery/package_source.py": {
+      "sha256": "e2d403970e8f94ed41f17e504f8792da46f63114007ecdfb86293afed8d55f9d",
+      "unchanged_from_published_source": true
+    }
+  },
+  "science_boundary": {
+    "original_targets": 19,
+    "listed_directions_with_source_reference": 28,
+    "R3_provider_variants": 4,
+    "R3_native_rows": 36,
+    "physical_rate_Q_state_branch_energy_consumer_admission": "All remain false; activation false. Source-reference closure is not a physical consumer or synthetic249 expansion.",
+    "overall_registry_parent": "PARTIAL; physical binding gaps remain open",
+    "central_ACK": null,
+    "canonical_vs_working": "Central a5db4bac9dafadae29685bbea3cec7f43ab990b2 remains distinct from unmerged PR236 ee94bef85b56d879dc38f184856a5c613575e9e1; 27/88 vs32/88 unchanged."
+  },
+  "budget_accounting": {
+    "source_phase_children": 5,
+    "source_phase_CPU_s": 0.920505,
+    "source_phase_wall_s": 2.053690392000135,
+    "package_child_count": 1,
+    "package_CPU_s": 3.909058,
+    "package_wall_s": 4.02977022900086,
+    "all_measured_children": 6,
+    "all_measured_child_CPU_s": 4.829563,
+    "all_measured_child_wall_s": 6.083460621000995,
+    "limits": "Existing fresh changed-input runner30CPU/120wall/512MiB/1worker/1thread reused for archive-only child; no historical scientific budget transfer/reset.",
+    "unmeasured_costs": "Retrieval/connector/metadata/static-review and whole-session costs remain unknown, not zero.",
+    "new_science_from_delivery": 0
+  },
+  "resolved_findings": [
+    {
+      "id": "R3_DELIVERY_01",
+      "severity": "wording_precision",
+      "finding": "REPORT/HANDOFF phrased78 changed paths as the whole tree.",
+      "resolution": "Both now distinguish78 delta paths from the resulting full Git tree whose identity matched staged tree.",
+      "status": "CLOSED_STATICALLY_CONFIRMED"
+    }
+  ],
+  "publication_recommendation": {
+    "authorized_by_user": true,
+    "ready_for_metadata_publication": true,
+    "expected_parent": "80c0d758a5d5b3c030b20c874b8e1852fcb46f82",
+    "force": false,
+    "scope": "Only reviewed delivery metadata and these two review files. Preserve source and immutable archive; perform final branch/commit readback after publication."
+  },
+  "reviewed_metadata_sha256": {
+    "DAG.json": "bcc2579a78d10fa8e3bc218c912a5207a4ee1dccec4b82ba291df727d1783dba",
+    "DAG_DELTA.json": "b52c3cac101d87ca2fdff19287c597c65fe5076ab2588beb9bfef49d27f5bad9",
+    "EXECUTION_LEDGER.json": "de1570f019cfd3eadb078225e405e66119e12964c66d0ca8e32311f291a9ab69",
+    "HANDOFF_KO.md": "b33e4f08d98f76fc24eb8af58c9095b1a1e14960c7f4389805a526d40e19886e",
+    "REPORT_KO.md": "3e911f38f0d3c2ee50ea543622360efaa5dd549bc1d969736c60a686fd0b0b65",
+    "WORKFLOW_RECORD.json": "53fed62d74a6bb78983b6162efba09097e43ce1450a1268838f60551af274819",
+    "delivery/PUBLICATION_AND_BACKUP.json": "9c8472616b7b9dfada2fe45d0cfd374c4380f57d3c7c9e746d05705711c835a6",
+    "delivery/GIT_READBACK.json": "2c89393c67c2a78d7b70a905644b50e74867ccad7ad24de73883b63ddea991ec",
+    "delivery/SOURCE_PUBLISHED_FILES.json": "29dfc6ab391f1d46f68d0abe88b1a93b1c9d437fa9dda3c9281e5cb2d00e9794",
+    "delivery/SOURCE_ZIP_MANIFEST.json": "d7d2a72b31aaeca696b2235f732a0209027e13531e51af04f69124d3a8fb258d",
+    "delivery/FINAL_BACKUP_ACK.json": "84560783021cde694eebac85afe40c6c0d80657a77e3b34712142af4febf8518",
+    "delivery/CLOUD_READBACK.json": "1b555a04aca3bfa4252d41149d0c27744eeadaa8f69277ac4158d456e5d2f92b",
+    "authority/PRE_BACKUP.json": "70ddaa4cb46167ae904a1f0d983303cc8cb1d6a80c1acba687557451d379de33",
+    "authority/PRE_METADATA_PUBLICATION.json": "2d541eaebdd70eab20a8f0f1411bfc6a44c32afb3abea832a563f005a02d1adb",
+    "authority/METADATA_PARALLEL_REFRESH.json": "4bee0250c9261be8b03d9b7b781807f674a4711f783b052a48f4595e84e195db",
+    "raw/package_source01/REQUEST.json": "1f7b84cfac9ea3f3271069a53c69cddab69ebba6da1e7272c4c36feed85bf268",
+    "raw/package_source01/RECEIPT.json": "0677a3815de17ac74aa5d5727a2983d91d36e3ae772c6aa9242685a51f5895a3",
+    "raw/package_source01/stdout.txt": "e3a2ed4e8c8616f095c0499b635116a490d53cdc588603a647e2784436324644",
+    "raw/package_source01/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "reviewer_executions": {
+    "scientific_tests": 0,
+    "source_or_compiler_replays": 0,
+    "archive_rebuilds": 0,
+    "remote_downloads": 0
+  }
+}

@@ -73,3 +73,14 @@
 사용자가 승인한 자동 게시·양쪽 백업을 이어서 수행한다. Source snapshot 시점에는 기대 부모 `87933da5654bb2e4d93f7de4341df5e0fa0f8716`에 대한 non-force 게시와 새 ZIP/Dropbox/Drive byte-readback을 준비한 상태다. 실제 성공 후 [delivery/PUBLICATION_AND_BACKUP.json](delivery/PUBLICATION_AND_BACKUP.json)에 source SHA·tree, ZIP SHA, provider ACK와 별도 metadata 자식의 의미를 기록한다. Source ZIP에는 현재 단위의 후속 전달 영수증이 들어 있다고 주장하지 않는다.
 
 다음 과학 단계는 [NEXT_SOURCE_INTAKE_KO.md](NEXT_SOURCE_INTAKE_KO.md)를 따른다. 이 R3의 완료된 추출·빌드·검사를 다시 실행하지 말고 실제 변경된 source 또는 consumer 계약이 처음 필요한 지점에서 이어간다.
+
+## 실제 전달 완료 기록
+
+- Source commit: **80c0d758a5d5b3c030b20c874b8e1852fcb46f82**, tree **dcf5af4136b3160a3a4a7488d4ec779b67409c0c**.
+- 기대 부모 **87933da5654bb2e4d93f7de4341df5e0fa0f8716**에 대한 expected-SHA non-force 게시 및 원격 readback이 성공했다. 78개 변경 경로를 반영한 결과의 전체 Git tree가 staged tree와 정확히 일치한다.
+- Source ZIP: **WU_PROVIDER_REGISTRY_R3_EXFOR_TARGET6_SOURCE_20261027_80c0d758a5d5.zip**, **7,274,563 bytes**, Git 파일 **467개** + manifest = **468 members**. 로컬 CRC 및 모든 파일 바이트 대조 PASS.
+- ZIP SHA256: **f83ea212e17318ea80d368f99f56a7e7dc0f908f2578392136acc434e22195ed**.
+- Dropbox **id:BSpOijBcT10AAAAAAEC3dA**, [Drive](https://drive.google.com/file/d/1Glyh10AUFixjz4cTWJPNx6ypm-3ErnuX/view?usp=drivesdk)의 저장 완료 ACK를 받았다. 양쪽 실제 HTTP200 다운로드가 각각 같은 바이트 수와 SHA256으로 확인됐다.
+- Package child CPU **3.909058s**, wall **4.029770229s**. Source단계5개 child와 합한6개 측정 child는 CPU **4.829563s**, wall **6.083460621s**다. 전체 세션/원격 비용을 뜻하지 않는다. 과거 과학 예산·계산은 그대로다.
+- 현재 전달 권위: delivery/PUBLICATION_AND_BACKUP.json, GIT_READBACK.json, SOURCE_ZIP_MANIFEST.json, FINAL_BACKUP_ACK.json, CLOUD_READBACK.json.
+- 이 완료 기록을 담는 metadata자식은 backed source commit과 다르다. Metadata의 정확한 identity는 이 파일을 포함하는 Git commit으로 해석하고, 기대 부모source **80c0d758a5d5b3c030b20c874b8e1852fcb46f82**에 non-force 게시한 뒤 최종 HEAD를 별도로 확인한다. Source ZIP에 자기 자신의 후속 전달 metadata가 포함돼 있다고 주장하지 않는다.
