@@ -1,3 +1,9 @@
+# Current priority: R9 causal cell resolvent registered17/34 —2026-10-28KST
+
+Read research/provider_registry_molecular_r9_20261028/CONTRACT.json,DAG.json,WORKFLOW_RECORD.json,EXECUTION_LEDGER.json anddelivery/. User supplied physmath1.0.0 fullR1–R10/C1–C10. Preserve32inheritednodes and oldscience identities. ExactD>0; signed d; currentforcingh0=1; onlysamecell/sameclockcertifiedcaps; no trajectorycaps or unsupported rawdominance/rounded supersolution claim. Newprimary/reference60CPU90wall each1, newCAS30wall1; oldbudgets0. Localexecenvironmentfailed beforeS01publication; useauthorizedboundedActions, run_attempt1, no secrets,contentsread,frozen inputs. Root expectedSHA forcefalse publication/dualbackups remain authorized. HH_R10OFF,productionNOT_ISSUED,L4false,central/physicaldelta0.
+
+## Preserved R8 and predecessor instructions
+
 # Current priority: R8 complete: DAG17/32, workflow20/20 — 2026-10-27
 
 Read research/provider_registry_molecular_r8_20261027/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, followup/NEXT_INPUT_CONTRACT.json and delivery/PUBLICATION_INDEX.json. Use the user's supplied physmath-research-loop 1.0.0 full R1–R10/C1–C10; workflow completion and scientific DAG are different counts.
