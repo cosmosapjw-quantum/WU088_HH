@@ -1,0 +1,47 @@
+{
+  "schema": "WU_R8_CAS_QUALIFIED_SUMMARY_V1",
+  "status": "QUALIFIED_PARTIAL_SYMBOLIC_CORROBORATION",
+  "original_calls": 1,
+  "targeted_export_repair_calls": 1,
+  "total_scientific_CAS_calls": 2,
+  "original_remaining": 0,
+  "repair_remaining": 0,
+  "scalar_residuals_zero": 7,
+  "scalar_residuals_total": 7,
+  "kernel_controls_zero": 9,
+  "kernel_controls_total": 9,
+  "inequalities_true": 4,
+  "inequalities_total": 6,
+  "unresolved_inequalities": [
+    {
+      "index": 4,
+      "expression": "damp$83906*E^(damp$83906*delta$83906) > damp$83906"
+    },
+    {
+      "index": 5,
+      "expression": "delta$83906 + delta$83906*j$83906 + t$83906 >= delta$83906*n$83906 + s$83906"
+    }
+  ],
+  "warnings": [
+    "Power::infy",
+    "Infinity::indet"
+  ],
+  "warning_cause": "NOT_ESTABLISHED",
+  "warning_free": false,
+  "first_failed_export_preserved": "raw/WOLFRAM_INITIAL_RESPONSE.json",
+  "repair_disposition": "JSON serialization corrected; unresolvedsigns not labelledCASPASS",
+  "manual_proof_for_unresolved": [
+    {
+      "index": 4,
+      "reason": "phi is the integral of strictlypositive exp(du) overdelta>0; hencephi>0",
+      "proof": "R8.14"
+    },
+    {
+      "index": 5,
+      "reason": "t>=n delta and s<=(j+1)delta implyt-s>=(n-j-1)delta by subtraction",
+      "proof": "R8.12"
+    }
+  ],
+  "general_proof_review": "reviews/R6_THEORY_REVIEW.json",
+  "new_ODE_runs": 0
+}

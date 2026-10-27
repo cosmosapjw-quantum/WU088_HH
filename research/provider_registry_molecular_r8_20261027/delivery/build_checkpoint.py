@@ -2,6 +2,7 @@
 No network, credentials, repository writes, old scientific replay, or implicit retry.
 """
 from __future__ import annotations
+import ast
 import base64
 import hashlib
 import json
@@ -63,6 +64,35 @@ def main():
     runtime = {}
     process = None
     exit_code = 0
+    if stage == "S05":
+        freeze_paths = [
+            "CONTRACT.json", "DECISION_AND_EXECUTION.json", "theory/PROOF_KO.md",
+            "theory/THEORY_CODE_MAP.json", "src/volterra_feedback.py",
+            "verification/PRIMARY_INPUT.json", "verification/REFERENCE_INPUT.json",
+            "verification/run_primary.py", "verification/run_reference.py",
+            "verification/wolfram_new_checks.wl", "verification/wolfram_export_repair.wl",
+            "verification/CAS_EXPORT_REPAIR_CONTRACT.json",
+        ]
+        frozen, findings = [], []
+        for relative in freeze_paths:
+            path = LEAF / relative
+            raw = path.read_bytes()
+            row = {"path":relative,"bytes":len(raw),"sha256":sha256(raw)}
+            if path.suffix == ".py":
+                try:
+                    ast.parse(raw,filename=relative)
+                    row["AST_status"] = "PASS"
+                except SyntaxError as exc:
+                    row["AST_status"] = "FAIL"
+                    findings.append({"path":relative,"kind":"SyntaxError","message":str(exc)})
+            frozen.append(row)
+        freeze = {"schema":"WU_R8_PREEXECUTION_FREEZE_V1","source_commit":commit,
+                  "source_tree":tree,"created_utc":utc(),"files":frozen,"findings":findings,
+                  "status":"PASS" if not findings else "FAIL","scientific_imports":0,
+                  "scientific_executions":0,"old_science_replay":0}
+        runtime["raw/PREEXECUTION_FREEZE.json"] = json_bytes(freeze)
+        if findings:
+            exit_code = 1
     if action in ("primary", "reference"):
         runner = LEAF / "verification" / ("run_" + action + ".py")
         output = LEAF / "raw" / ("PRIMARY_RESULTS.json" if action=="primary" else "REFERENCE_RESULTS.json")
