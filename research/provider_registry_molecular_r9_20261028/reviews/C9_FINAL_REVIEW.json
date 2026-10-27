@@ -1,0 +1,266 @@
+{
+  "schema": "WU_R9_FINAL_C9_REVIEW_V1",
+  "decision": "PASS_SCOPED_FINAL_C9",
+  "reviewer": "/root/r9_recovery_review",
+  "review_pass": "Single bounded independent pass: static preflight, immutable source binding, actual primary/reference/process evidence, and result-scope assessment",
+  "repository": "cosmosapjw-quantum/WU088_HH",
+  "leaf": "research/provider_registry_molecular_r9_20261028",
+  "independence": {
+    "production_core_author": false,
+    "primary_runner_author": false,
+    "independent_reference_author": true,
+    "reference_imports_production": 0,
+    "reference_algorithm": "Decimal100 direct convolution and E-first Gaussian elimination",
+    "production_algorithm": "Exact Fraction sums/products with specified dyadic128 upward rounding and R-first Schur elimination",
+    "shared_inputs": "Identical immutable saved R8 rational certificates and independently retained R7 trajectory observations",
+    "limitation": "The reviewer authored the independent reference; this is not an additional independent review of the reference author"
+  },
+  "theory_binding": {
+    "status": "PASS_SCOPED_CAUSAL_CELL_RESOLVENT_THEORY",
+    "source_commit": "c8031c66f08c17a38238f0d900209a3ef8306954",
+    "path": "theory/PROOF_KO.md",
+    "bytes": 10463,
+    "sha256": "b84da224515cf9ab7d9e39c3766332066c348f304bd2e8d63ddec940123c8ea3",
+    "reviewed": [
+      "Actual finite closed-cell suprema and causal induction",
+      "Signed-d maxima and all past/current-cell lag indices",
+      "Positive exact determinant and positive 2x2 inverse",
+      "Exact source-qualified whole-cell and point cap minima",
+      "Specified upward rounding and inverse-conditioned error propagation",
+      "No universal raw dominance claim",
+      "No discrete supersolution claim for rounded output"
+    ]
+  },
+  "frozen_source_binding": {
+    "source_commit": "c9d8ff41d85dd5e7d31dd78467d561b7a2ab221b",
+    "source_tree": "d211a6dfdea335f47c4b6e52bbbf48fb0c90155e",
+    "files": [
+      {
+        "path": "src/causal_resolvent.py",
+        "bytes": 9660,
+        "sha256": "cc4e31a7dc72ceddb7ebba5f8f6ef64fb2e3325143a6abb9018a6a07c8129e1d"
+      },
+      {
+        "path": "verification/PRIMARY_INPUT.json",
+        "bytes": 1040,
+        "sha256": "9798156bcf32d4f4da41140b5a910ba808f9d3a22a48276fe7c6d141cc44d5cb"
+      },
+      {
+        "path": "verification/run_primary.py",
+        "bytes": 12708,
+        "sha256": "4b7f8f4dacc8150a54c91da1f734b02d18492131ceb2f4b6819e20a51c9b6767"
+      },
+      {
+        "path": "verification/run_reference.py",
+        "bytes": 21118,
+        "sha256": "3f4b38f79de2690dd470b67608c8275b6c1f5149af42247c6dc468e8b33e3dcb"
+      }
+    ]
+  },
+  "actual_freeze": {
+    "read_at_commit": "1b026536ef2af0ecbe31ba83335cca1f2b742d09",
+    "path": "raw/PREEXECUTION_FREEZE.json",
+    "bytes": 2341,
+    "sha256": "f0fdddc98a757a0e664b3f336f8381889b57c77fae296c5c23725f0caef57838",
+    "status": "PASS",
+    "files": 9,
+    "AST_PASS": 3,
+    "findings": 0,
+    "scientific_executions": 0,
+    "reference_verified_all_nine_hashes_and_byte_counts": true
+  },
+  "primary": {
+    "read_at_commit": "1b026536ef2af0ecbe31ba83335cca1f2b742d09",
+    "execution_source_commit": "ce5e4ca5d216e092e6f01e9521add5662b514dd0",
+    "result": {
+      "path": "raw/PRIMARY_RESULTS.json",
+      "bytes": 1276553,
+      "sha256": "494fad7b2195dfbf16857901127cdaa676d83cb1beafbf2c081122f99ba2d8d7",
+      "status": "PASS",
+      "check_count": 150,
+      "failure_count": 0,
+      "first_failure": null
+    },
+    "process": {
+      "path": "raw/PRIMARY_PROCESS.json",
+      "bytes": 660,
+      "sha256": "66f357d8a60c5600cfa83d8e5e2fc540e71f9a92a3c547168f21835f1e7ec47d",
+      "executions": 1,
+      "returncode": 0,
+      "timeout": false,
+      "OS_CPU_s": 1.162604,
+      "wall_s": 1.1634279559999996,
+      "includes_imports_and_serialization": true
+    }
+  },
+  "reference": {
+    "read_at_commit": "9617c78f4041f72d394d4625d8481e8a5745bddb",
+    "execution_source_commit": "1b026536ef2af0ecbe31ba83335cca1f2b742d09",
+    "result": {
+      "path": "raw/REFERENCE_RESULTS.json",
+      "bytes": 174176,
+      "sha256": "fd10cf04540d05e97e82f3bd38d11d9039771590843479e6c64a85ff05266bbd",
+      "status": "PASS",
+      "check_count": 438,
+      "failure_count": 0,
+      "component_comparison_count": 34590,
+      "failed_component_count": 0,
+      "counts_are_not_distinct_physical_scenarios": true
+    },
+    "process": {
+      "path": "raw/REFERENCE_PROCESS.json",
+      "bytes": 652,
+      "sha256": "0b27d4ec9daf6255e0f2aca3d5f93030450f496bc3ad7373b816f7c061c89b39",
+      "executions": 1,
+      "returncode": 0,
+      "timeout": false,
+      "OS_CPU_s": 1.108081,
+      "wall_s": 1.1110224940000109,
+      "includes_imports_and_serialization": true
+    },
+    "source_identity_matches": {
+      "script": true,
+      "primary": true,
+      "freeze": true,
+      "saved_R8_primary": true,
+      "saved_R7_reference": true
+    },
+    "fixed_cases": {
+      "HD_cases": 4,
+      "HD_cells_each": 192,
+      "analytic_controls": 5,
+      "control_cells_each": 8,
+      "modes": [
+        "raw",
+        "capped"
+      ]
+    },
+    "rounding_acceptance": {
+      "unit": "2^-128",
+      "budget": "Per actual rounding site, propagated through exact D and the positive recurrence",
+      "Decimal100_scaled_guard": "1e-80",
+      "max_observed_positive_difference_approx": "2.859409286151958e-37",
+      "min_observed_difference_approx": "-1e-99",
+      "max_propagated_budget_approx": "5.64237288394698e-37",
+      "acceptance_uses_each_component_budget": true,
+      "phi_inputs": "Same immutable outward rational factors, without a fresh exponential producer or fixed phi-closeness test"
+    },
+    "saved_trajectory_use": {
+      "clock_points_per_HD_case": 193,
+      "endpoint_and_both_cell_boundary_checks": "PASS in both modes",
+      "trajectory_atol": "2e-12",
+      "trajectory_rtol": "2e-10",
+      "observations_used_as_caps": false,
+      "new_continuous_time_certificate_from_sampling": false
+    }
+  },
+  "CAS": {
+    "read_at_commit": "1b026536ef2af0ecbe31ba83335cca1f2b742d09",
+    "raw": {
+      "path": "raw/WOLFRAM_NEW_RESULT.json",
+      "bytes": 692,
+      "sha256": "43a159d9b5b2d59b35674a1bc3bf55fdbd3247ffcb017e4b22e3448001a2c0b0"
+    },
+    "assessment": {
+      "path": "raw/WOLFRAM_ASSESSMENT.json",
+      "bytes": 1018,
+      "sha256": "3130ced71ecbb296b7cfac41ce1857a6bb36d1c5a13dfd0b1ff2093340ff2423"
+    },
+    "status": "QUALIFIED_SYMBOLIC_CORROBORATION",
+    "actual_calls": 1,
+    "algebra_zero_residuals": 7,
+    "exact_control_zero_residuals": 4,
+    "positivity_explicit_True": 1,
+    "positivity_unreduced": 3,
+    "direct_elementary_proof_retained": true,
+    "additional_CAS_required_by_this_review": false,
+    "CAS_CPU_measured": false
+  },
+  "result_interpretation": {
+    "read_at_commit": "9617c78f4041f72d394d4625d8481e8a5745bddb",
+    "analysis": {
+      "path": "raw/RESULT_ANALYSIS.json",
+      "bytes": 20441,
+      "sha256": "7d9e7a38b9c20031b5bc2039163b9b21c2f5fd897ed22b7fa06e0ebdad65d9e6"
+    },
+    "narrative": {
+      "path": "RESULTS_KO.md",
+      "bytes": 5773,
+      "sha256": "bb8029373455375b31b41494d5c99a15226af643fe4ae14b4af593209cf3eda2"
+    },
+    "capped_HD_whole_components": {
+      "total": 1536,
+      "strictly_smaller": 1150,
+      "equal": 386,
+      "larger": 0
+    },
+    "capped_HD_endpoint_components": {
+      "total": 1544,
+      "strictly_smaller": 1136,
+      "equal": 408,
+      "larger": 0
+    },
+    "raw_dominance_exception": {
+      "cases": [
+        "two_state_nonlinear",
+        "two_state_coarse_source_defect"
+      ],
+      "larger_whole_components_each": 1,
+      "whole_location_each": {
+        "zero_based_cell": 63,
+        "component": "R"
+      },
+      "larger_endpoint_components_each": 8,
+      "consistent_with_predeclared_scope": true
+    },
+    "native9_final_display": {
+      "R_reduction_percent_approx": 0.00007381191307587399,
+      "E_reduction_percent_approx": 0.005490601413532009,
+      "R_bound_to_saved_sample_approx": 310.95372825408083,
+      "E_bound_to_saved_sample_approx": 907.041142675281
+    },
+    "claims_supported": true,
+    "material_overstatement_found": false
+  },
+  "findings": {
+    "open_material_count": 0,
+    "closed": [
+      {
+        "id": "PRE01_BINDING_ALIAS",
+        "status": "CLOSED_BEFORE_FIRST_EXECUTION_AND_CONFIRMED_BY_ACTUAL_PASS",
+        "description": "The family-clock negative control isolates the kernel binding dictionary before changing the clock, avoiding a shared-reference mutation.",
+        "actual_check": "guard_family_clock",
+        "actual_status": "PASS",
+        "actual_evidence": "DomainError"
+      }
+    ],
+    "preexecution_clarification": "Reference requires freeze PASS, verifies bytes and SHA for all frozen files, and requires core/input/primary/reference paths before execution.",
+    "postexecution_tolerance_changes": 0,
+    "runtime_failures_hidden_or_relabelled": 0
+  },
+  "scope": {
+    "mathematical_status": "Conditional comparison theorem and implementation under identified source-qualified premises",
+    "metadata_checks_prove_external_certificate_inequalities": false,
+    "raw_universal_no_worse_claim": false,
+    "rounded_output_discrete_supersolution_claim": false,
+    "physical_consumer_admitted": false,
+    "new_ODE_runs": 0,
+    "new_source_certificate_runs": 0,
+    "old_science_replay": 0,
+    "mesh_refinement_order_established": false,
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4_ready": false,
+    "physical_delta": 0,
+    "central_delta": 0,
+    "historical_R8_reference_failure_preserved": true
+  },
+  "actions_in_this_final_C9_pass": {
+    "scientific_executions": 0,
+    "AST_or_compile_executions": 0,
+    "external_writes": 0,
+    "additional_review_cycles": 0
+  },
+  "adoption_recommendation": "Accept the scoped R9 theorem/provider nodes after root records this receipt and completes the existing publication and backup stages. No physical or central admission is implied.",
+  "archive_scope": "S08 archive completion was pending when the evidence was supplied; this review does not certify archive delivery."
+}
