@@ -774,32 +774,50 @@
     },
     {
       "id": "WU_CAUSAL_LAG_KERNEL_THEORY_R8",
-      "status": "OPEN",
+      "status": "COMPLETE_SCOPED_CONDITIONAL",
       "dependencies": [
         "WU_NONLINEAR_EVENT_FEEDBACK_THEORY_R7",
         "WU_MOLECULAR_INTERVAL_BLOCK_THEORY_R6"
       ],
       "scope": "Certified lag-kernel composition and signed-d two-component Volterra upper refinement",
       "acceptance": "General proof, explicit family binding and independent review",
-      "physical_consumer_admission": false
+      "physical_consumer_admission": false,
+      "adopted_utc": "2026-10-27 16:08:09 UTC",
+      "evidence": [
+        "theory/PROOF_KO.md",
+        "theory/THEORY_CODE_MAP.json",
+        "reviews/R6_THEORY_REVIEW.json",
+        "reviews/C9_FINAL_REVIEW.json"
+      ],
+      "original_reference_failure_preserved": true
     },
     {
       "id": "WU_CAUSAL_LAG_KERNEL_CODE_R8",
-      "status": "OPEN",
+      "status": "COMPLETE_SCOPED_CONDITIONAL",
       "dependencies": [
         "WU_CAUSAL_LAG_KERNEL_THEORY_R8",
         "WU_NONLINEAR_EVENT_FEEDBACK_CODE_R7"
       ],
       "scope": "Fixed two-pass exact outward cell/endpoint implementation on saved R7 cases",
       "acceptance": "One primary, one independent reference, material findings closed",
-      "physical_consumer_admission": false
+      "physical_consumer_admission": false,
+      "adopted_utc": "2026-10-27 16:08:09 UTC",
+      "evidence": [
+        "src/volterra_feedback.py",
+        "raw/PRIMARY_RESULTS.json",
+        "raw/REFERENCE_RESULTS.json",
+        "raw/PHI_SCALAR_REPAIR_RESULTS.json",
+        "reviews/C9_FINAL_REVIEW.json"
+      ],
+      "original_reference_failure_preserved": true
     }
   ],
   "counts": {
-    "complete": 15,
+    "complete": 17,
     "total": 32
   },
   "inherited_node_objects_unchanged": true,
   "central_completion_delta": 0,
-  "physical_admission_delta": 0
+  "physical_admission_delta": 0,
+  "inherited_node_count": 30
 }

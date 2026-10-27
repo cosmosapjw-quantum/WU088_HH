@@ -59,6 +59,15 @@
       "CPU_limit_s": 60,
       "includes_imports_and_serialization": true,
       "old_science_replay": 0
+    },
+    "adjudication": {
+      "original_status": "failure",
+      "finding": "REF01",
+      "status": "RESOLVED_BY_EXACT_SCALAR_RE_ADJUDICATION",
+      "original_result_unchanged": true,
+      "repair_source_commit": "ade11fe31248d5417902827e5a563ee9a71a065e",
+      "repair_result": "raw/PHI_SCALAR_REPAIR_RESULTS.json",
+      "C9_sha256": "a414c29462cd94089de37131315a591076ec1cc6db1fd85442869b3eb8defa72"
     }
   },
   "CAS": {
@@ -145,6 +154,14 @@
       "provider_downloads": 2,
       "status": "PASS",
       "source": "delivery/S07.json"
+    },
+    {
+      "id": "S08_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "source": "delivery/S08.json"
     }
   ],
   "scientific_runs": [
@@ -191,12 +208,34 @@
       "CPU_limit_s": 60,
       "includes_imports_and_serialization": true,
       "old_science_replay": 0
+    },
+    {
+      "schema": "WU_R8_ACTUAL_PROCESS_V1",
+      "stage": "S08",
+      "action": "phi_scalar_repair",
+      "source_commit": "ade11fe31248d5417902827e5a563ee9a71a065e",
+      "command": [
+        "/usr/bin/python3",
+        "research/provider_registry_molecular_r8_20261027/verification/run_phi_scalar_repair.py"
+      ],
+      "started_utc": "2026-10-27T16:01:23.233158+00:00",
+      "finished_utc": "2026-10-27T16:01:23.315754+00:00",
+      "executions": 1,
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 0.057831999999999995,
+      "OS_system_CPU_s": 0.014956,
+      "OS_CPU_s": 0.07278799999999999,
+      "wall_s": 0.07363234000000318,
+      "CPU_limit_s": 10,
+      "includes_imports_and_serialization": true,
+      "old_science_replay": 0
     }
   ],
   "metadata_transport_allowance": {
     "total": 11,
-    "used": 7,
-    "remaining": 4
+    "used": 8,
+    "remaining": 3
   },
   "CAS_targeted_export_repair": {
     "allowed": 1,
@@ -221,17 +260,42 @@
       "kind": "GIT_CLI_NETWORK_STILL_UNAVAILABLE",
       "error": "Failed to connect to browser-proxy port8889",
       "decision": "RetainGitHubconnectorpublication andActions scientificexecution"
+    },
+    {
+      "kind": "ORCHESTRATOR_VOLATILE_STORE_RESET_RECOVERED_FROM_LOCAL_SOURCE_AND_RECEIPTS",
+      "science_reexecution": 0,
+      "head": "ade11fe31248d5417902827e5a563ee9a71a065e"
     }
   ],
   "reference_phi_scalar_repair": {
     "allowed": 1,
-    "consumed": 0,
-    "reserved": 1,
+    "consumed": 1,
+    "reserved": 0,
     "remaining": 0,
-    "status": "S08_RESERVED_NOT_EXECUTED",
-    "contract": "verification/PHI_SCALAR_REPAIR_CONTRACT.json",
-    "reason": "REF01 observed precision-closeness acceptance mismatch; exact scalar bracket, no full reference replay",
-    "original_reference_remaining": 0
+    "status": "success",
+    "source_commit": "ade11fe31248d5417902827e5a563ee9a71a065e",
+    "process": {
+      "schema": "WU_R8_ACTUAL_PROCESS_V1",
+      "stage": "S08",
+      "action": "phi_scalar_repair",
+      "source_commit": "ade11fe31248d5417902827e5a563ee9a71a065e",
+      "command": [
+        "/usr/bin/python3",
+        "research/provider_registry_molecular_r8_20261027/verification/run_phi_scalar_repair.py"
+      ],
+      "started_utc": "2026-10-27T16:01:23.233158+00:00",
+      "finished_utc": "2026-10-27T16:01:23.315754+00:00",
+      "executions": 1,
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 0.057831999999999995,
+      "OS_system_CPU_s": 0.014956,
+      "OS_CPU_s": 0.07278799999999999,
+      "wall_s": 0.07363234000000318,
+      "CPU_limit_s": 10,
+      "includes_imports_and_serialization": true,
+      "old_science_replay": 0
+    }
   },
   "postprocessing": [
     {
@@ -242,5 +306,33 @@
       "new_scientific_evaluations": 0,
       "new_ODE_runs": 0
     }
-  ]
+  ],
+  "complete_Python_scientific_process_CPU_s": 4.320964,
+  "CAS_CPU_s": null,
+  "local_transport_materialization_correction": {
+    "kind": "EMPTY_TEXT_FILE_NEWLINE_ONLY",
+    "scientific_values_changed": false,
+    "original_remote_outputs_changed": false,
+    "cause": "apply_patch Add File materialized empty transported text as one newline; exact original zero-byte logs restored before payload manifest",
+    "restored": [
+      {
+        "path": "raw/PRIMARY_STDERR.txt",
+        "old_local_bytes": 1,
+        "restored_original_bytes": 0,
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "raw/REFERENCE_STDERR.txt",
+        "old_local_bytes": 1,
+        "restored_original_bytes": 0,
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "raw/PHI_SCALAR_REPAIR_STDERR.txt",
+        "old_local_bytes": 1,
+        "restored_original_bytes": 0,
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  }
 }
