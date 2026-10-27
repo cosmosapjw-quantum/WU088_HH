@@ -1,5 +1,9 @@
-# R5: 분자 상태 집계의 동적 오차
+# WU088_HH R5: 동적 상태 축약의 이론·구현
 
-기존 R4 정적 상태-lift 오차를 시간에 따라 계산 가능한 비교계로 연결한다. REC의 실제 HD 입력과 완료된 상세평형 검증은 재사용한다. 현재 개별 소멸률 d와 소비자 상태는 입력 의존성이며, 이 단위의 수학·코드 증거와 구별한다.
+**Scoped scientific admission: PASS. 로컬 DAG11/26.** 기존24개 노드와9개 완료를 유지하고 이론·코드2개를 채택했습니다. 중앙 및 물리적 admission delta는0입니다.
 
-CONTRACT.json, DAG.json, WORKFLOW_RECORD.json 및 checkpoints/를 현재 근거로 읽는다. 시작 DAG9/26. 단계별 Git 및 Drive 복구 텍스트는 실제 성공 이후 delivery receipt에 결속한다. R4 S10과 R5의 ZIP/Dropbox 전체 전달은 실행환경 의존성으로 남는다.
+[결과 보고서](REPORT_KO.md), [복사 가능한 handoff](HANDOFF_KO.md), [이론 증명](theory/DYNAMIC_LIFT.md), [코드](src/dynamic_lift.mjs), [독립 검토](reviews/C9_FINAL.json), [실행 장부](EXECUTION_LEDGER.json), [게시·백업 실제 영수증](delivery/PUBLICATION_INDEX.json)을 읽으십시오.
+
+이론 R1–R10 및 코딩 C1–C10의 내용은 준비·검토했습니다. 원본 ZIP/Dropbox·Drive 이중 byte-readback은 실행 호스트 장애로 아직 미완료이며, R10/C10의 완전한 delivery 종료를 주장하지 않습니다. 단계별 Git과 native Drive exact-text 백업은 실제 영수증에 결속됩니다.
+
+[전달 재개 절차](delivery/RECOVERY_PROTOCOL.md), [다음 입력 계약](followup/NEXT_INPUT_CONTRACT.json). 새 대화에서는 현재 runtime을 직접 probe하고 이미 완료된 과학을 재실행하지 마십시오.
