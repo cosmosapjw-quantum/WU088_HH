@@ -1,0 +1,24 @@
+{
+  "schema": "WU_R4_R3_CLAIM_ALIGNMENT_V1",
+  "source_packet_sha256": "40e2fbd73d451c0c8116b4ca9bd4db4d2e43e4cdf8967988a2fea551f99ce35e",
+  "definitions": {
+    "x": "finite nonnegative resolved populations of one declared molecular family",
+    "X": "sum(x); aggregate molecular population",
+    "pi": "explicit nonnegative weights with sum one, supplied independently of aggregate source rate",
+    "d": "nonnegative destruction coefficients on the same complete declared state family",
+    "h": "nonnegative collider number density in the matched source convention",
+    "J": "h*d^T*x; per-volume per-proper-time event flux",
+    "S": "integer species change per single declared event",
+    "reference_normalization": "event flux divided by positive reference nucleus number density"
+  },
+  "claims": [
+    {"id":"T1","kind":"PROOF_TARGET","statement":"The six declared chemical columns conserve every explicitly modelled isotope, electric charge, baryon and electron-lepton count; RA has thermal material-particle change -1, other reactions0.","qualification":"integer identity under declared H1/D2/Li7 ground-nuclear model; not isotope-shift or energy/rate admission"},
+    {"id":"T2","kind":"PROOF_TARGET","statement":"For fixed pi, every nonnegative x and h>0, J equals h*(d^T*pi)*X for all x iff d is constant on the full allowed state family.","qualification":"h=0 trivial exception; on restricted x=pi*X manifold equality holds without constant d; not a strong no-go or novelty claim"},
+    {"id":"T3","kind":"PROOF_TARGET","statement":"For explicitly supplied x,pi,d,h, defect=h*d^T*(x-pi*X), bounded in absolute value by h*(max(d)-min(d))*||x-pi*X||_1/2.","qualification":"conditional computable algebra; current total-rate sources do not bind state d or pi"},
+    {"id":"T4","kind":"SOURCE_FACT","statement":"Bennett p=1/4 and GL2022 product spin weights are already included; TIQM/SQM are alternatives; same aggregate reactants do not establish reverse detailed balance.","evidence":"sources/MOLECULAR_SOURCE_PACKET.json and source review"},
+    {"id":"T5","kind":"IMPLEMENTATION_TARGET","statement":"Evaluate the two exact printed formulae at27+2contracted native nodes; retain table values, residuals, source model uncertainty and physical binding as separate fields.","qualification":"Bovino formula excluded by printed-unit conflict; no extrapolation, interpolation, IVP or Q evaluation"}
+  ],
+  "source_unsupplied": ["LiH formation state distribution","Bovino initial v/j and spin-sum normalization","state-resolved Q and photon energy partition","coefficient covariance","named consumer and density/clock/geometry support"],
+  "nuclear_weak_coverage": "Inherited R1/R2/R3 branch, neutrino and Q uncertainties are unchanged; the six new variants are chemical and supply no new nuclear/weak Q.",
+  "negative_ions": "Inherited negative-ion species and UMIST/photoprocess source rows remain reused; the six new variants do not newly complete all anion chemistry."
+}
