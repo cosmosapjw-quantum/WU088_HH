@@ -127,7 +127,9 @@ class Primary:
         settings = configuration["source"]
         source = (base / settings["path"]).resolve()
         parser = (base / settings["parser_path"]).resolve()
-        if settings["sha256"] != ib.SOURCE_SHA256 or settings["temperature_K"] != "100" or settings["collider_id"] != 2:
+        if (settings["sha256"] != ib.SOURCE_SHA256 or settings["temperature_K"] != "100"
+                or settings["collider_id"] != 2
+                or ib.Q(settings["rate_unit_cm3_s"]) != ib.RATE_SCALE_CM3_S):
             raise ib.DomainError("Primary source identity/native-domain contract mismatch")
         K, thermal, exported = ib.native_hd_source(source, parser, configuration["thermal_bits"])
         self.result["thermal"] = exported
@@ -211,6 +213,9 @@ class Primary:
             self.rejects("reject_rho_above_one", lambda: ib.forced_step(endpoints[0], coeff, H, "11/10", kappa))
 
     def switched(self, specification):
+        durations = [ib.Q(piece["duration"]) for piece in specification["segments"]]
+        if not durations or any(dt <= 0 for dt in durations):
+            raise ib.DomainError("Each chronological switched segment must have positive duration")
         generators = [ib.exact_generator(piece["A"]) for piece in specification["segments"]]
         n = generators[0].n
         if any(g.n != n for g in generators):
@@ -218,7 +223,7 @@ class Primary:
         lower = [[0 if i == j else min(g.lower[i][j] for g in generators) for j in range(n)] for i in range(n)]
         upper = [[0 if i == j else max(g.upper[i][j] for g in generators) for j in range(n)] for i in range(n)]
         family = ib.generator_from_offdiagonal(lower, upper)
-        H = sum(ib.Q(piece["duration"]) for piece in specification["segments"])
+        H = sum(durations)
         cert = ib.finite_block(family, H, specification["N"], 256, identifier=specification["id"])
         P, rate = ib.matrix(cert["P_lower"]), ib.Q(cert["lambda"])
         self.check("switched", "common_P_lower_dominated_by_each_generator",
@@ -232,6 +237,8 @@ class Primary:
         if configuration["schema"] != "WU_R6_PRIMARY_INPUT_V1":
             raise ib.DomainError("Unexpected primary input schema")
         self.primitives()
+        bad_scale = dict(configuration, source=dict(configuration["source"], rate_unit_cm3_s="1e-10"))
+        self.rejects("reject_mismatched_native_clock_scale", lambda: self.source(bad_scale, base))
         self.source(configuration, base)
         fixtures = configuration["forced_controls"]
         if len(fixtures) != 3 or sum(x["steps"] for x in fixtures) > 64:
@@ -241,6 +248,11 @@ class Primary:
         switched = configuration["switched_graphs"]
         if len(switched) != 1:
             raise ib.DomainError("Exactly one fixed switched control is contracted")
+        bad_segments = [dict(piece) for piece in switched[0]["segments"]]
+        bad_segments[0]["duration"] = "-1/4"
+        bad_segments[1]["duration"] = "3/4"
+        self.rejects("reject_negative_segment_with_positive_total_time",
+                     lambda: self.switched(dict(switched[0], segments=bad_segments)))
         self.switched(switched[0])
 
 
