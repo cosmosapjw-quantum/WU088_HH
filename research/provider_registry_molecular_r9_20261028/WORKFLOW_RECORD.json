@@ -63,9 +63,13 @@
     },
     "R7": {
       "label": "판별 검증",
-      "status": "PENDING",
+      "status": "COMPLETE_QUALIFIED_SYMBOLIC",
       "checkpoint": "S07",
-      "evidence": []
+      "evidence": [
+        "raw/WOLFRAM_NEW_RESULT.json",
+        "raw/WOLFRAM_ASSESSMENT.json",
+        "reviews/R6_THEORY_REVIEW.json"
+      ]
     },
     "R8": {
       "label": "결과 판정",
@@ -141,18 +145,22 @@
     },
     "C6": {
       "label": "구현 검증",
-      "status": "EXECUTION_REQUESTED",
+      "status": "COMPLETE",
       "checkpoint": "S06",
       "evidence": [
-        "raw/PREEXECUTION_FREEZE.json",
-        "verification/run_primary.py"
+        "raw/PRIMARY_RESULTS.json",
+        "raw/PRIMARY_PROCESS.json",
+        "delivery/S06.json"
       ]
     },
     "C7": {
       "label": "과학 검증",
-      "status": "PENDING",
+      "status": "EXECUTION_REQUESTED",
       "checkpoint": "S07",
-      "evidence": []
+      "evidence": [
+        "verification/run_reference.py",
+        "raw/PRIMARY_RESULTS.json"
+      ]
     },
     "C8": {
       "label": "수치·재현성",
@@ -173,7 +181,7 @@
       "evidence": []
     }
   },
-  "workflow_complete": 11,
+  "workflow_complete": 13,
   "workflow_total": 20,
   "DAG_complete": 17,
   "DAG_total": 34,

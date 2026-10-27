@@ -6,8 +6,8 @@
       "class": "implementation test authoring",
       "observation": "deepcopy preserves shared references; changing kernel.binding.clock also changed top-level binding",
       "correction": "Copy kernel binding into a separate dict before changing its clock",
-      "status": "CLOSED_STATIC_BEFORE_FIRST_EXECUTION",
-      "runtime_verification": "PENDING_PRIMARY"
+      "status": "CLOSED_ACTUAL_PRIMARY",
+      "runtime_verification": "PASS in actual primary guard_family_clock"
     },
     {
       "id": "PRE02_REFERENCE_FREEZE",
@@ -18,6 +18,6 @@
       "runtime_verification": "PENDING_REFERENCE"
     }
   ],
-  "scientific_executions": 0,
+  "scientific_executions": 1,
   "original_R8_reference_failure": "Preserved unchanged, not part of this new-unit repair list"
 }
