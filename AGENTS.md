@@ -1,3 +1,11 @@
+# Current work: WU R7 nonlinear event feedback — 2026-10-27
+
+Read research/provider_registry_molecular_r7_20261027/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json and POLICY_OVERRIDE.json. User explicitly requests full theory and coding research loops under supplied physmath1.0.0. R6 completed evidence remains reusable. R7 closes the actual R6 open obligation for state-dependent formation/coarse-source mismatch using native R4 event stoichiometry and inherited R6 block contraction. Initial DAG13/30,28inherited objects unchanged. Two new scoped theory/code nodes; no physical or central admission by declaration.
+
+New R7 finite primary/reference/CAS allowances are separate from R6/PHYS91 zero remaining budgets. All science must record actual input, command, result and resource evidence. Preserve native excitation/reactive source distinctions and source model alternatives. Current actual GL2022 state-resolved array and named physical consumer are unbound. Publish additively on research/provider-registry-20261025/draftPR150 with expected SHA, force=false, no main merge. Checkpoints use Dropbox and Drive actual ACKs. Root performs external mutations.
+
+## Preserved R6 and predecessor instructions
+
 # Current priority: R6 adopted 13/28; full stage delivery closed — 2026-10-27
 
 Read research/provider_registry_molecular_r6_20261027/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, and delivery/PUBLICATION_INDEX.json. R6 adds two adopted interval/block theory and code nodes to 26 unchanged inherited node objects: 13/28. R1–R10 and C1–C10 are complete. All 10 stage source archives have actual Git publication and both-provider original-byte verification.
