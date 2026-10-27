@@ -1,0 +1,177 @@
+{
+  "schema": "WU_R8_PRIMARY_INPUT_V1",
+  "parent_commit": "c1badb7de44131715a4998d76515506da5573707",
+  "cells_per_macro": 64,
+  "macro_blocks": 3,
+  "cells": 192,
+  "passes": 2,
+  "bits": 128,
+  "source_sha256": {
+    "R6_primary": "1a3b55f7c14a64a10a651de2df7b7f7d2df24d0b9e809b729f32d73377c90e84",
+    "R7_primary": "6eaf3c0eed7968cf4023180e15373a180bb5b1bab2e56cd4a8547387ed337a15",
+    "R7_reference": "e403c7803c080fd4f26be71a93b782b02d874f80ef11c85a706bea71e2a743cd",
+    "R7_core": "002a66a30961b21e566a940462468c9ea8e1bc868d98549d3ea79d164c239957"
+  },
+  "hd_cases": [
+    "two_state_no_reaction",
+    "two_state_nonlinear",
+    "two_state_coarse_source_defect",
+    "saved_native_nine_state_K_conditional_feedback"
+  ],
+  "native_steps": [
+    2,
+    8,
+    32,
+    64
+  ],
+  "controls": [
+    {
+      "id": "noforcing",
+      "B": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "g": [
+        "0",
+        "0"
+      ],
+      "initial": [
+        "2",
+        "3"
+      ],
+      "baseline_pair": [
+        "2",
+        "3"
+      ],
+      "rho": "1/2",
+      "steps": 2
+    },
+    {
+      "id": "constantforcing",
+      "B": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "g": [
+        "2",
+        "3"
+      ],
+      "initial": [
+        "1",
+        "1"
+      ],
+      "baseline_pair": [
+        "5",
+        "5"
+      ],
+      "rho": "1/2",
+      "steps": 2
+    },
+    {
+      "id": "nilpotent",
+      "B": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "g": [
+        "0",
+        "0"
+      ],
+      "initial": [
+        "1",
+        "2"
+      ],
+      "baseline_pair": [
+        "8",
+        "2"
+      ],
+      "rho": "1",
+      "steps": 1
+    },
+    {
+      "id": "negative_d",
+      "B": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/2"
+        ]
+      ],
+      "g": [
+        "0",
+        "3"
+      ],
+      "initial": [
+        "2",
+        "2"
+      ],
+      "baseline_pair": [
+        "2",
+        "5"
+      ],
+      "rho": "1/2",
+      "steps": 2
+    },
+    {
+      "id": "positive_d",
+      "B": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/2"
+        ]
+      ],
+      "g": [
+        "0",
+        "3"
+      ],
+      "initial": [
+        "2",
+        "1"
+      ],
+      "baseline_pair": [
+        "2",
+        "8"
+      ],
+      "rho": "1/2",
+      "steps": 2
+    }
+  ],
+  "control_grid": {
+    "delta": "1/8",
+    "cells": 8,
+    "passes": 2
+  },
+  "late_forcing": {
+    "gamma": "1",
+    "H": "1",
+    "epsilon": "1/4",
+    "J": "1"
+  },
+  "new_ODE_runs": 0,
+  "physical_consumer_admitted": false
+}
