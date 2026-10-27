@@ -1,7 +1,7 @@
 # 다음 대화에 복사할 WU088_HH R5 handoff
 
-다음 블록을 그대로 복사한다. 이 파일의 최종 archive SHA는 후속 실제 delivery receipt에서 결속한다.
-S09 scientific admission pin은 확정됐고 최종 source와 후속 metadata HEAD는 별개다.
+다음 블록을 그대로 복사한다. 최종 S10 source commit은 55ddde069f51e036be93951cbb3f180d7a91c458이다.
+S09 scientific admission pin, S10 archive source, 후속 metadata HEAD는 별개다.
 
 ```text
 $physmath-research-loop, SciSpace, Exa, Wolfram으로 cosmosapjw-quantum/WU088_HH를 이어가라.
@@ -14,7 +14,9 @@ Leaf: research/provider_registry_molecular_r5_20261027
 Scientific admission S09: c9d902f9357cff67b218a1ad967e4a3b3402d854
 R5 scientific payload SHA256: 67fea64825c612522287a774041a5b53a93b4d3a83c6b69e55a0d4cb25ec9fd8
 Current core SHA256: 8c86303793baa1fd01dcdbae93c521c13713c74d6658101f0d77b4ebe4538273
-Final archive source: delivery/PUBLICATION_INDEX.json의 S10.source_commit을 읽어 확정.
+Final archive source: 55ddde069f51e036be93951cbb3f180d7a91c458
+Final archive source tree: 7a9d2aece2eed7d3bbb2961347af884f5b25a792
+Actual10stage Git/Drive text readback: COMPLETE; full ZIP/dualbyte delivery: PENDING.
 Current metadata HEAD: 원격 branch를 실제 읽어 확인; source/archive SHA와 혼동하지 말 것.
 Native exact text checkpoint:
 https://docs.google.com/document/d/1PaWDrK9J9kL28pFItRihuU8YrwSKhWRT7vEm_pIX4ic
@@ -53,7 +55,7 @@ R4 S10 fullZIP과 R5각checkpoint/fullS10 ZIP의 Dropbox+Drive create-only uploa
 R4 source pin4ea08eb3709c90285946dce2cf824f402056d645, payload34765b943cce5a67d49a622f76c0cf9aeceb635c8cd6a3cf58b5cebb8e3c5fde.
 R4 기존 S09 ZIP SHA84e7f59613b26add26c3d8ce4ff64cc49db99782e644345065cdff7c6d9f19ac,
 Drive10lOaImgOzybi_ocAvYlDXGr5JhiB7nGF, Dropboxid:BSpOijBcT10AAAAAAEDApw.
-R5 packager: python3 [최종script경로] --repo [S10detachedcheckout] --commit [실제S10SHA] --stage S10 --full
+R5 packager: python3 [최종script경로] --repo [S10detachedcheckout] --commit 55ddde069f51e036be93951cbb3f180d7a91c458 --stage S10 --full
 --repo로초기stagecheckout도별도archive가능. 초기commit에아직없는packager를있다고가정금지.
 실제ZIP/member SHA256/Gitblob/CRC,uploadACK,providerID,원본download해시를모두기록.
 metadata-only검증을raw readback으로승격금지. 실제나중생성시각사용, 소급완료금지.
