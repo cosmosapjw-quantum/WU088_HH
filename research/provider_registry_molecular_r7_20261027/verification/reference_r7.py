@@ -1,0 +1,474 @@
+#!/usr/bin/env python3
+"""Independent R7 numerical corroboration; no production/reused science imports.
+
+The caller supplies a frozen primary JSON, its SHA256, this fixed input, and a
+new output path.  This entry point is intended for the single authorized R7
+reference run.  It does not fetch sources, rerun R6, or infer physical inputs.
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import math
+import os
+from pathlib import Path
+import platform
+import resource
+import signal
+import sys
+import time
+import traceback
+from datetime import datetime, timezone
+from fractions import Fraction
+from typing import Any
+
+import numpy as np
+import scipy
+from scipy.integrate import solve_ivp
+from scipy.linalg import expm
+
+
+def utc() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def rational(value: Any) -> Fraction:
+    """Read declared exact inputs without silently rounding/renormalizing."""
+    if isinstance(value, bool) or not isinstance(value, (int, str)):
+        raise ValueError(f"Expected exact integer/rational string, got {type(value).__name__}")
+    return Fraction(value)
+
+
+def exact_vector(value: Any, n: int | None = None) -> list[Fraction]:
+    if not isinstance(value, list) or (n is not None and len(value) != n):
+        raise ValueError("Vector dimension mismatch")
+    return [rational(x) for x in value]
+
+
+def exact_matrix(value: Any, n: int, m: int) -> list[list[Fraction]]:
+    if not isinstance(value, list) or len(value) != n:
+        raise ValueError("Matrix dimension mismatch")
+    return [exact_vector(row, m) for row in value]
+
+
+def array(value: Any) -> np.ndarray:
+    if isinstance(value, list):
+        if value and isinstance(value[0], list):
+            return np.array([[float(rational(x)) for x in row] for row in value], dtype=float)
+        return np.array([float(rational(x)) for x in value], dtype=float)
+    raise ValueError("Expected list for numeric reference array")
+
+
+def serial(value: Any) -> Any:
+    if isinstance(value, Fraction):
+        return str(value)
+    if isinstance(value, np.ndarray):
+        return value.tolist()
+    if isinstance(value, np.generic):
+        return value.item()
+    if isinstance(value, dict):
+        return {str(k): serial(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [serial(v) for v in value]
+    return value
+
+
+def required(obj: dict, *names: str) -> Any:
+    """Explicit schema aliases only; absent scientific data are errors."""
+    for name in names:
+        if name in obj:
+            return obj[name]
+    raise ValueError("Required field absent: " + "/".join(names))
+
+
+class Recorder:
+    def __init__(self, input_data: dict, result: dict, output_file: Any):
+        self.config = input_data
+        self.result = result
+        self.output_file = output_file
+        self.checks: list[dict] = result["checks"]
+
+    def check(self, name: str, condition: Any, **evidence: Any) -> None:
+        self.checks.append({"name": name, "status": "PASS" if bool(condition) else "FAIL", "evidence": serial(evidence)})
+
+    def upper(self, name: str, reference: Any, upper: Any, *, trajectory: bool = False) -> None:
+        ref, bound = np.asarray(reference, dtype=float), np.asarray(upper, dtype=float)
+        if ref.shape != bound.shape or not np.all(np.isfinite(ref)) or not np.all(np.isfinite(bound)):
+            raise ValueError(f"Nonfinite/shape mismatch in {name}")
+        tol = self.config["comparison_tolerances"]
+        prefix = "trajectory_bound" if trajectory else "matrix"
+        allowance = float(tol[prefix + "_absolute"]) + float(tol[prefix + "_relative"]) * np.abs(ref)
+        excess = ref - bound
+        self.check(name, np.all(excess <= allowance), max_reference_minus_upper=float(np.max(excess)),
+                   max_allowed_excess=float(np.max(allowance)), max_positive_violation_after_allowance=float(np.max(np.maximum(excess-allowance, 0))),
+                   max_upper_slack=float(np.max(bound-ref)))
+
+    def close(self, name: str, actual: Any, expected: Any, *, atol: float | None = None) -> None:
+        actual, expected = np.asarray(actual, dtype=float), np.asarray(expected, dtype=float)
+        tol = self.config["comparison_tolerances"]
+        if actual.shape != expected.shape:
+            raise ValueError(f"Shape mismatch in {name}")
+        absolute = float(tol["matrix_absolute"] if atol is None else atol)
+        allowance = absolute + float(tol["matrix_relative"]) * np.abs(expected)
+        error = np.abs(actual-expected)
+        self.check(name, np.all(np.isfinite(actual)) and np.all(error <= allowance),
+                   max_absolute_error=float(np.max(error)), max_allowed_error=float(np.max(allowance)))
+
+    def flush(self) -> None:
+        self.result["check_count"] = len(self.checks)
+        self.result["failure_count"] = sum(x["status"] == "FAIL" for x in self.checks)
+        self.output_file.seek(0)
+        json.dump(serial(self.result), self.output_file, ensure_ascii=False, indent=2, allow_nan=False)
+        self.output_file.write("\n")
+        self.output_file.truncate()
+        self.output_file.flush()
+        os.fsync(self.output_file.fileno())
+
+
+def augmented_reference(B: np.ndarray, g: np.ndarray, duration: float) -> tuple[np.ndarray, np.ndarray]:
+    M = np.zeros((3, 3), dtype=float)
+    M[:2, :2], M[:2, 2] = B, g
+    W = expm(duration*M)
+    return W[:2, :2], W[:2, 2]
+
+
+def block_inputs(case: dict) -> tuple[np.ndarray, np.ndarray, float, float, np.ndarray]:
+    data = case.get("inputs", case)
+    Bq = exact_matrix(required(data, "B"), 2, 2)
+    gq = exact_vector(required(data, "g"), 2)
+    wq = exact_vector(required(data, "w0"), 2)
+    Hq, rhoq = rational(required(data, "H")), rational(required(data, "rho"))
+    if not (Bq[0][0] >= 0 and Bq[0][1] >= 0 and Bq[1][0] >= 0):
+        raise ValueError("R7 comparison domain requires a,b,c nonnegative")
+    if Hq <= 0 or not 0 <= rhoq <= 1 or min(gq+wq) < 0:
+        raise ValueError("Invalid H/rho/nonnegative comparison input")
+    return np.array(Bq, dtype=float), np.array(gq, dtype=float), float(Hq), float(rhoq), np.array(wq, dtype=float)
+
+
+def block_output(case: dict) -> dict:
+    return case.get("result", case.get("output", case))
+
+
+def inspect_block(rec: Recorder, case: dict, label: str, *, require_clocks: bool = False) -> dict:
+    B, g, H, rho, w0 = block_inputs(case)
+    out = block_output(case)
+    W, q = augmented_reference(B, g, H)
+    T = W.copy()
+    T[0, 0] -= 1-rho
+    endpoint = T @ w0 + q
+    savedW = array(required(out, "W_upper", "exp_BH_upper", "exp_BH_entrywise_upper"))
+    savedT = array(required(out, "T", "T_upper", "T_entrywise_upper"))
+    savedq = array(required(out, "q", "q_upper", "q_entrywise_upper"))
+    saved_endpoint = array(required(out, "w_next_upper"))
+    rec.upper(label+": exp(BH) enclosure", W, savedW)
+    rec.upper(label+": causal T enclosure", T, savedT)
+    rec.upper(label+": forcing integral enclosure", q, savedq)
+    rec.upper(label+": endpoint enclosure", endpoint, saved_endpoint)
+    rec.check(label+": positive matrices", min(float(np.min(savedT)), float(np.min(savedq)), float(np.min(saved_endpoint))) >= 0)
+    causal_saved = savedW.copy()
+    causal_saved[0, 0] -= 1-rho
+    rec.close(label+": only initial residual receives rho", savedT, causal_saved)
+    rec.close(label+": saved endpoint arithmetic", saved_endpoint, savedT @ w0 + savedq)
+    interior = case.get("interior", out.get("interior", []))
+    if require_clocks and len(interior) not in rec.config["solver"]["saved_clocks_per_block_allowed"]:
+        raise ValueError(f"{label}: expected fixed 33/65 saved clocks")
+    point_records = []
+    for point in interior:
+        u = float(rational(required(point, "u")))
+        if not 0 <= u <= H*(1+1e-14):
+            raise ValueError("Interior query outside declared block")
+        Wu, qu = augmented_reference(B, g, u)
+        vu = Wu @ w0 + qu
+        pu = point.get("result", point.get("output", point))
+        rec.upper(label+f": interior u={u:.16g}", vu, array(required(pu, "w_upper")))
+        if "W_upper" in pu:
+            rec.upper(label+f": interior matrix u={u:.16g}", Wu, array(pu["W_upper"]))
+        if "q" in pu:
+            rec.upper(label+f": interior integral u={u:.16g}", qu, array(pu["q"]))
+        point_records.append({"u": u, "comparison_reference": vu, "production_upper": array(pu["w_upper"])})
+    if require_clocks:
+        clocks = [p["u"] for p in point_records]
+        rec.close(label+": fixed equally spaced clocks", clocks, np.linspace(0, H, len(clocks)))
+    return {"id": label, "B": B, "g": g, "H": H, "rho": rho, "w0": w0,
+            "W_reference": W, "T_reference": T, "q_reference": q, "endpoint_reference": endpoint,
+            "production_endpoint_upper": saved_endpoint, "points": point_records}
+
+
+def classify_analytic(B: np.ndarray) -> str:
+    if np.count_nonzero(B) == 0:
+        return "zero"
+    if B[0, 0] == B[1, 0] == B[1, 1] == 0 and B[0, 1] > 0:
+        return "nilpotent"
+    if B[0, 1] == B[1, 0] == 0 and B[1, 1] < 0:
+        return "diagonal_negative_d"
+    if B[0, 1] > 0 and B[1, 0] > 0 and B[1, 1] < 0:
+        return "coupled_negative_d"
+    return "other"
+
+
+def analytic_controls(rec: Recorder, cases: list[dict]) -> list[dict]:
+    seen, records = set(), []
+    for i, case in enumerate(cases):
+        label = "affine:"+str(case.get("id", case.get("case_id", i)))
+        r = inspect_block(rec, case, label)
+        B, g, H = r["B"], r["g"], r["H"]
+        kind = classify_analytic(B)
+        seen.add(kind)
+        analyticW = analyticq = None
+        if kind == "zero":
+            analyticW, analyticq = np.eye(2), H*g
+        elif kind == "nilpotent":
+            analyticW, analyticq = np.eye(2)+H*B, H*g+(H*H/2)*(B@g)
+        elif kind == "diagonal_negative_d":
+            diag = np.diag(B)
+            analyticW = np.diag(np.exp(H*diag))
+            analyticq = np.array([g[j]*(H if diag[j] == 0 else math.expm1(H*diag[j])/diag[j]) for j in range(2)])
+        if analyticW is not None:
+            rec.close(label+": independent closed-form W", r["W_reference"], analyticW)
+            rec.close(label+": independent closed-form integral", r["q_reference"], analyticq)
+            r["analytic_W"], r["analytic_q"] = analyticW, analyticq
+        r["analytic_class"] = kind
+        records.append(r)
+    required_controls = set(rec.config["required_matrix_controls"])
+    rec.check("All required affine analytic/control classes covered", required_controls <= seen,
+              required=sorted(required_controls), observed=sorted(seen))
+    return records
+
+
+def invariant_exact(state: list[Fraction], *, fine: bool) -> tuple[Fraction, Fraction, Fraction]:
+    u, v, w = state[:3]
+    X = sum(state[3:]) if fine else state[3]
+    return 2*u+w+X, v+X, v+w
+
+
+def hd_input(case: dict) -> dict:
+    f = case.get("fixture", case.get("inputs", case))
+    piq = exact_vector(required(f, "pi"))
+    n = len(piq)
+    if n not in (2, 9) or min(piq) <= 0 or sum(piq) != 1:
+        raise ValueError("HD fixture requires 2/9 states and exact strictly positive fixed simplex pi")
+    alphaq = exact_vector(required(f, "alpha"), n)
+    dq = exact_vector(required(f, "destruction", "d"), n)
+    Kq = exact_matrix(required(f, "K"), n, n)
+    fineq = exact_vector(required(f, "fine_initial", "z0", "fine0"), n+3)
+    coarseq = exact_vector(required(f, "coarse_initial", "ybar0", "coarse0"), 4)
+    kfq = rational(required(f, "kf"))
+    if sum(alphaq) != 1 or min(alphaq+dq+fineq+coarseq+[kfq]) < 0:
+        raise ValueError("Invalid explicit alpha, destruction, rate or initial state")
+    for j in range(n):
+        if sum(Kq[i][j] for i in range(n)) != 0:
+            raise ValueError("Nominal K must have exact zero column sums")
+        if any(Kq[i][j] < 0 for i in range(n) if i != j):
+            raise ValueError("Nominal K must be Metzler")
+    Ifine, Icoarse = invariant_exact(fineq, fine=True), invariant_exact(coarseq, fine=False)
+    if Ifine != Icoarse:
+        raise ValueError("Initial H/D/charge invariants differ; scalar eta theorem does not apply")
+    box = required(f, "density_box", "box")
+    boxq = {key: exact_vector(required(box, key), 2) for key in ("u", "v", "w", "X")}
+    if any(lo < 0 or lo > hi for lo, hi in boxq.values()):
+        raise ValueError("Invalid whole-block density box")
+    return {"raw": f, "n": n, "piq": piq, "Kq": Kq, "invariants_exact": Ifine,
+            "K": np.array(Kq, dtype=float), "pi": np.array(piq, dtype=float),
+            "alpha": np.array(alphaq, dtype=float), "d": np.array(dq, dtype=float),
+            "kf": float(kfq), "fine0": np.array(fineq, dtype=float), "coarse0": np.array(coarseq, dtype=float),
+            "box": {key: np.array(bounds, dtype=float) for key, bounds in boxq.items()}}
+
+
+def fine_rhs(_: float, z: np.ndarray, K: np.ndarray, alpha: np.ndarray, kf: float, destruction: np.ndarray) -> np.ndarray:
+    """Independent direct event propensities, not a residual/bound equation."""
+    u, v, w = z[:3]
+    hd = z[3:]
+    formation = kf*u*v*alpha
+    destruction_events = w*destruction*hd
+    net = formation-destruction_events
+    total = float(np.sum(net))
+    return np.concatenate((np.array([-total, -total, total]), K@hd+net))
+
+
+def coarse_rhs(_: float, y: np.ndarray, kf: float, mean_d: float) -> np.ndarray:
+    u, v, w, X = y
+    net = kf*u*v-mean_d*w*X
+    return np.array([-net, -net, net, net])
+
+
+def invariant_values(states: np.ndarray, *, fine: bool) -> np.ndarray:
+    u, v, w = states[:, 0], states[:, 1], states[:, 2]
+    X = np.sum(states[:, 3:], axis=1) if fine else states[:, 3]
+    return np.column_stack((2*u+w+X, v+X, v+w))
+
+
+def independent_hd(rec: Recorder, case: dict, index: int) -> dict:
+    label = "HD:"+str(case.get("id", case.get("case_id", index)))
+    f = hd_input(case)
+    blocks = required(case, "blocks")
+    if len(blocks) not in rec.config["solver"]["blocks_allowed"]:
+        raise ValueError("HD fixture must use fixed 3/4 blocks")
+    inspected = [inspect_block(rec, b, f"{label}:block{j}", require_clocks=True) for j, b in enumerate(blocks)]
+    durations = [x["H"] for x in inspected]
+    boundaries = np.concatenate(([0.0], np.cumsum(durations)))
+    local_clocks = [np.array([p["u"] for p in b["points"]]) for b in inspected]
+    times = np.concatenate([boundaries[j]+c if j == 0 else boundaries[j]+c[1:] for j, c in enumerate(local_clocks)])
+    settings = rec.config["solver"]
+    fine = solve_ivp(lambda t, z: fine_rhs(t, z, f["K"], f["alpha"], f["kf"], f["d"]),
+                     (0.0, float(boundaries[-1])), f["fine0"], method=settings["method"],
+                     rtol=settings["rtol"], atol=settings["atol"], t_eval=times)
+    coarse = solve_ivp(lambda t, y: coarse_rhs(t, y, f["kf"], float(f["d"]@f["pi"])),
+                       (0.0, float(boundaries[-1])), f["coarse0"], method=settings["method"],
+                       rtol=settings["rtol"], atol=settings["atol"], t_eval=times)
+    rec.check(label+": independent solvers completed", fine.success and coarse.success,
+              fine_status=fine.status, coarse_status=coarse.status, fine_message=fine.message, coarse_message=coarse.message)
+    if not fine.success or not coarse.success or fine.y.shape[1] != len(times) or coarse.y.shape[1] != len(times):
+        raise ValueError("Independent ODE failed; partial solver result cannot validate complete clocks")
+    z, ybar = fine.y.T, coarse.y.T
+    X = np.sum(z[:, 3:], axis=1)
+    aggregated = np.column_stack((z[:, :3], X))
+    r = z[:, 3:]-X[:, None]*f["pi"][None, :]
+    eta = X-ybar[:, 3]
+    errors = np.column_stack((np.sum(np.abs(r), axis=1), np.abs(eta)))
+    invariants = np.array(f["invariants_exact"], dtype=float)
+    invfine, invcoarse = invariant_values(z, fine=True), invariant_values(ybar, fine=False)
+    inv_allowance = float(rec.config["comparison_tolerances"]["conservation_absolute"])
+    rec.check(label+": conserved fine H/D/charge", np.max(np.abs(invfine-invariants)) <= inv_allowance,
+              max_absolute_drift=float(np.max(np.abs(invfine-invariants))), expected=invariants)
+    rec.check(label+": conserved coarse H/D/charge", np.max(np.abs(invcoarse-invariants)) <= inv_allowance,
+              max_absolute_drift=float(np.max(np.abs(invcoarse-invariants))), expected=invariants)
+    identity_tol = float(rec.config["comparison_tolerances"]["identity_absolute"])
+    rec.close(label+": coarse error direction s*eta", aggregated-ybar, eta[:, None]*np.array([-1., -1., 1., 1.]), atol=identity_tol)
+    rec.close(label+": coarse l1 observable equals4E", np.sum(np.abs(aggregated-ybar), axis=1), 4*errors[:, 1], atol=identity_tol)
+    rec.close(label+": residual has zero HD sum", np.sum(r, axis=1), np.zeros(len(times)), atol=identity_tol)
+    positivity_allowance = float(rec.config["comparison_tolerances"]["positivity_absolute"])
+    rec.check(label+": nonnegative fine/coarse samples", min(float(np.min(z)), float(np.min(ybar))) >= -positivity_allowance,
+              min_fine=float(np.min(z)), min_coarse=float(np.min(ybar)))
+    for j, key in enumerate(("u", "v", "w", "X")):
+        values = np.concatenate((aggregated[:, j], ybar[:, j]))
+        lo, hi = f["box"][key]
+        rec.check(label+f": declared {key} box at saved clocks", np.min(values) >= lo-positivity_allowance and np.max(values) <= hi+positivity_allowance,
+                  lower=float(lo), upper=float(hi), observed_min=float(np.min(values)), observed_max=float(np.max(values)),
+                  scope="sample corroboration; whole-interval box follows separately declared invariant/loss proof")
+    cursor = 0
+    block_summaries = []
+    for j, (raw, checked) in enumerate(zip(blocks, inspected)):
+        count = len(checked["points"])
+        indices = np.arange(cursor, cursor+count)
+        actual = errors[indices]
+        saved = np.array([p["production_upper"] for p in checked["points"]])
+        rec.upper(label+f": block{j} actual R/E at interior clocks", actual, saved, trajectory=True)
+        rec.upper(label+f": block{j} actual endpoint R/E", actual[-1], checked["production_endpoint_upper"], trajectory=True)
+        rec.upper(label+f": block{j} start error enclosed by w0", actual[0], checked["w0"], trajectory=True)
+        out = block_output(raw)
+        if "whole_block_upper" in out:
+            whole = array(out["whole_block_upper"])
+            rec.upper(label+f": block{j} constant whole-block enclosure", actual, np.broadcast_to(whole, actual.shape), trajectory=True)
+        if j:
+            rec.upper(label+f": block{j} propagated certified initial error", inspected[j-1]["production_endpoint_upper"], checked["w0"])
+        block_summaries.append({"index": j, "t0": boundaries[j], "H": checked["H"], "rho": checked["rho"],
+                                "saved_clock_indices": indices, "actual_endpoint": actual[-1],
+                                "production_endpoint_upper": checked["production_endpoint_upper"],
+                                "production_pointwise_upper": saved})
+        cursor += count-1
+    return {"id": label, "states": f["n"], "scope": required(f["raw"], "source_scope", "scope"),
+            "physical_consumer_admitted": False, "invariants_exact": f["invariants_exact"],
+            "solver": {"method": settings["method"], "rtol": settings["rtol"], "atol": settings["atol"],
+                       "fine_nfev": fine.nfev, "coarse_nfev": coarse.nfev},
+            "clock": required(f["raw"], "clock"), "times": times, "fine_states": z, "coarse_states": ybar,
+            "R_E": errors, "fine_invariants": invfine, "coarse_invariants": invcoarse, "blocks": block_summaries,
+            "nominal_certificate": f["raw"].get("nominal_certificate")}
+
+
+def late_forcing(rec: Recorder, primary: dict) -> dict:
+    control = rec.config["late_forcing_control"]
+    gamma, H, epsilon, J = [float(rational(control[k])) for k in ("gamma", "H", "epsilon", "J")]
+    if gamma <= 0 or not 0 < epsilon <= H or J <= 0:
+        raise ValueError("Invalid fixed late-forcing control")
+    rho = math.exp(-gamma*H)
+    exact = J*(-math.expm1(-gamma*epsilon))/(gamma*epsilon)
+    correct, wrong = J, rho*J
+    rec.check("late forcing: causal upper covers exact residual", exact <= correct, exact=exact, causal_upper=correct)
+    rec.check("late forcing: rho applied to all forcing is violated", exact > wrong, exact=exact, wrong_upper=wrong, strict_gap=exact-wrong)
+    saved = primary.get("late_forcing")
+    if saved is not None:
+        for key, value in (("gamma", gamma), ("H", H), ("epsilon", epsilon), ("J", J)):
+            if key in saved:
+                rec.close("late forcing: frozen "+key, float(rational(saved[key])), value)
+    return {"gamma": gamma, "H": H, "epsilon": epsilon, "J": J, "rho": rho, "exact_endpoint_R": exact,
+            "correct_forcing_upper": correct, "wrong_forcing_upper": wrong,
+            "counterexample_scope": "Incorrect causal update only; not a physical impossibility theorem"}
+
+
+def cpu_limit_signal(signum: int, frame: Any) -> None:
+    raise RuntimeError("Declared R7 independent-reference CPU limit reached")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path, default=Path(__file__).with_name("REFERENCE_INPUT.json"))
+    parser.add_argument("--primary", type=Path, required=True)
+    parser.add_argument("--primary-sha256", required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    start_cpu, start_wall = time.process_time(), time.perf_counter()
+    config = json.loads(args.input.read_text())
+    actual_primary_sha = sha256(args.primary)
+    if actual_primary_sha != args.primary_sha256:
+        raise ValueError("Primary artifact SHA256 differs from frozen command binding")
+    if args.output.exists():
+        raise FileExistsError("Preserve first reference result: output already exists")
+    result = {"schema": "WU_R7_INDEPENDENT_REFERENCE_RESULT_V1", "run_id": "R7_REFERENCE_01", "status": "RUNNING",
+              "started_utc": utc(), "command": sys.argv, "contract_id": config["contract_id"],
+              "input_sha256": sha256(args.input), "script_sha256": sha256(Path(__file__)),
+              "primary_path": str(args.primary.resolve()), "primary_sha256": actual_primary_sha,
+              "versions": {"python": platform.python_version(), "numpy": np.__version__, "scipy": scipy.__version__, "platform": platform.platform()},
+              "budget": {"new_reference_run_number": 1, "CPU_limit_s": config["execution"]["CPU_limit_s"], "old_science_replay": 0,
+                         "old_R6_remaining": [0, 0, 0], "old_PHYS91_remaining": [0, 0, 0], "global_remaining": None},
+              "checks": [], "affine_cases": [], "hd_cases": [],
+              "scientific_role": "Independent binary64 corroboration of the general R7 proof and saved exact-production bounds",
+              "physical_consumer_admitted": False}
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with args.output.open("x", encoding="utf-8") as output:
+        rec = Recorder(config, result, output)
+        rec.flush()
+        try:
+            signal.signal(signal.SIGXCPU, cpu_limit_signal)
+            limit = int(config["execution"]["CPU_limit_s"])
+            consumed = math.ceil(time.process_time())
+            resource.setrlimit(resource.RLIMIT_CPU, (consumed+limit, consumed+limit+1))
+            primary = json.loads(args.primary.read_text())
+            affine = required(primary, "affine_cases", "matrix_controls")
+            hd = required(primary, "hd_cases", "hd_fixtures")
+            result["affine_cases"] = analytic_controls(rec, affine)
+            rec.flush()
+            sizes = []
+            for i, case in enumerate(hd):
+                result["hd_cases"].append(independent_hd(rec, case, i))
+                sizes.append(result["hd_cases"][-1]["states"])
+                rec.flush()
+            rec.check("Required new two-state HD fixture covered", 2 in sizes, observed_state_counts=sizes)
+            rec.check("At most one native nine-state HD fixture", sizes.count(9) <= 1, observed_state_counts=sizes)
+            result["late_forcing"] = late_forcing(rec, primary)
+            result["status"] = "PASS" if all(c["status"] == "PASS" for c in rec.checks) else "FAIL"
+        except BaseException as exc:
+            result["status"] = "FAIL"
+            result["first_exception"] = {"type": type(exc).__name__, "message": str(exc), "traceback": traceback.format_exc()}
+        finally:
+            elapsed_cpu = time.process_time()-start_cpu
+            elapsed_wall = time.perf_counter()-start_wall
+            result["finished_utc"] = utc()
+            result["actual_process_CPU_s"] = elapsed_cpu
+            result["actual_wall_s"] = elapsed_wall
+            result["CPU_allowance_satisfied"] = elapsed_cpu <= float(config["execution"]["CPU_limit_s"])
+            if not result["CPU_allowance_satisfied"]:
+                result["status"] = "FAIL"
+            rec.flush()
+    print(json.dumps({"status": result["status"], "output": str(args.output), "checks": result["check_count"],
+                      "failures": result["failure_count"], "CPU_s": result["actual_process_CPU_s"], "wall_s": result["actual_wall_s"]}))
+    return 0 if result["status"] == "PASS" else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
