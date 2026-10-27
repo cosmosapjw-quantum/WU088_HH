@@ -45,7 +45,7 @@
       ]
     },
     "R5": {
-      "status": "WORK_DONE_DELIVERY_PENDING",
+      "status": "COMPLETE",
       "checkpoint": "S05",
       "evidence": [
         "src/volterra_feedback.py",
@@ -54,13 +54,20 @@
         "raw/WOLFRAM_QUALIFIED_SUMMARY.json",
         "IMPLEMENTATION_NOTES.md"
       ],
-      "preflight": "PENDING_ACTUAL_S05_AST",
-      "caller_review": "PENDING_ACTUAL_C5_REVIEW"
+      "preflight": "PASS",
+      "caller_review": "PASS_STATIC_CORE_CALLER_AND_REFERENCE_PENDING_ACTUAL_RESULTS",
+      "actual_source_commit": "3f0093c7080fce84c9f96914d9ba8299d82e9764"
     },
     "R6": {
-      "status": "PENDING",
+      "status": "RUNNING_PRIMARY_ONCE",
       "checkpoint": "S06",
-      "evidence": []
+      "evidence": [
+        "reviews/R6_THEORY_REVIEW.json",
+        "reviews/C9_PREFLIGHT_REVIEW.json",
+        "raw/PREEXECUTION_FREEZE.json",
+        "raw/PRIMARY_RESULTS.json",
+        "raw/PRIMARY_PROCESS.json"
+      ]
     },
     "R7": {
       "status": "PENDING",
@@ -127,7 +134,7 @@
       ]
     },
     "C5": {
-      "status": "WORK_DONE_DELIVERY_PENDING",
+      "status": "COMPLETE",
       "checkpoint": "S05",
       "evidence": [
         "src/volterra_feedback.py",
@@ -136,13 +143,20 @@
         "raw/WOLFRAM_QUALIFIED_SUMMARY.json",
         "IMPLEMENTATION_NOTES.md"
       ],
-      "preflight": "PENDING_ACTUAL_S05_AST",
-      "caller_review": "PENDING_ACTUAL_C5_REVIEW"
+      "preflight": "PASS",
+      "caller_review": "PASS_STATIC_CORE_CALLER_AND_REFERENCE_PENDING_ACTUAL_RESULTS",
+      "actual_source_commit": "3f0093c7080fce84c9f96914d9ba8299d82e9764"
     },
     "C6": {
-      "status": "PENDING",
+      "status": "RUNNING_PRIMARY_ONCE",
       "checkpoint": "S06",
-      "evidence": []
+      "evidence": [
+        "reviews/R6_THEORY_REVIEW.json",
+        "reviews/C9_PREFLIGHT_REVIEW.json",
+        "raw/PREEXECUTION_FREEZE.json",
+        "raw/PRIMARY_RESULTS.json",
+        "raw/PRIMARY_PROCESS.json"
+      ]
     },
     "C7": {
       "status": "PENDING",
@@ -165,7 +179,7 @@
       "evidence": []
     }
   },
-  "workflow_complete": 8,
+  "workflow_complete": 10,
   "workflow_total": 20,
   "DAG_complete": 15,
   "DAG_total": 32,

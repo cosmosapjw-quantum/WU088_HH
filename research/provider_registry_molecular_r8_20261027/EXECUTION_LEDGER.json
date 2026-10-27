@@ -4,7 +4,12 @@
   "primary": {
     "allowed": 1,
     "consumed": 0,
-    "remaining": 1
+    "reserved": 1,
+    "remaining": 0,
+    "status": "SCHEDULED_FIRST_RUN_S06",
+    "CPU_limit_s": 60,
+    "preflight": "raw/PREEXECUTION_FREEZE.json",
+    "static_review": "reviews/C9_PREFLIGHT_REVIEW.json"
   },
   "reference": {
     "allowed": 1,
@@ -71,13 +76,21 @@
       "provider_downloads": 2,
       "status": "PASS",
       "source": "delivery/S04.json"
+    },
+    {
+      "id": "S05_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "source": "delivery/S05.json"
     }
   ],
   "scientific_runs": [],
   "metadata_transport_allowance": {
     "total": 11,
-    "used": 4,
-    "remaining": 7
+    "used": 5,
+    "remaining": 6
   },
   "CAS_targeted_export_repair": {
     "allowed": 1,

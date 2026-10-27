@@ -94,6 +94,12 @@ def main():
         if findings:
             exit_code = 1
     if action in ("primary", "reference"):
+        frozen = json.loads((LEAF / "raw/PREEXECUTION_FREEZE.json").read_text())
+        if frozen["status"] != "PASS":
+            raise ValueError("Scientific execution requires the actual S05 preflight PASS")
+        for item in frozen["files"]:
+            if sha256((LEAF/item["path"]).read_bytes()) != item["sha256"]:
+                raise ValueError("Frozen scientific dependency changed: "+item["path"])
         runner = LEAF / "verification" / ("run_" + action + ".py")
         output = LEAF / "raw" / ("PRIMARY_RESULTS.json" if action=="primary" else "REFERENCE_RESULTS.json")
         if output.exists():
