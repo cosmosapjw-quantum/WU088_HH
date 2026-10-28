@@ -353,8 +353,8 @@ def main():
     reference_path = root / "raw" / "REFERENCE_RESULTS.json"
     primary = json.loads(primary_path.read_bytes())
     reference = json.loads(reference_path.read_bytes())
-    if primary.get("status") != "PASS" or reference.get("status") != "PASS":
-        raise ValueError("Figures require completed PASS saved outputs; inspect failed outputs first.")
+    if primary.get("status") != "PASS_SCOPED" or reference.get("status") != "PASS":
+        raise ValueError("Figures require primary PASS_SCOPED and reference PASS saved outputs; inspect failed outputs first.")
     figures = root / "figures"
     analysis = root / "analysis"
     outputs = [
