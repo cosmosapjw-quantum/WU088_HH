@@ -1,0 +1,5 @@
+# Direct visual review of saved-source plots
+
+- `GL2022_PRINTED_TOTAL_RATE.png`: figure at 1296×729 shows two published SQM thermal TOTAL diamonds, two experimental centers with visibly separate printed ±0.2 bars, and one smooth explicitly titled **authors' global fit**. At 295 K the SQM marker lies outside the displayed experimental ±0.2 span. This is descriptive, not probability or disagreement significance. No axes clipped, tick/legend collision with data, or source-vs-fit confusion on visual inspection.
+- `GL2022_PRINTED_HALF_WIDTH.png`: figure at 1170×666 displays 0.55 and 2.55 in units of the **printed** experimental halfwidth; `1` dashed line is expressly **not 1sigma**. This plot does not estimate experimental covariance, causal causes, p or confidence. No overlap or clipping detected.
+- Plot images were **opened and inspected**, not only saved. The underlying two data rows are exact source transcription strings. Smooth curve originates from the author's separately printed fit formula, not 200 additional observations.
