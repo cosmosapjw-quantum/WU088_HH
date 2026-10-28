@@ -1,7 +1,44 @@
 {
   "schema": "WU_R15_PUBLICATION_INDEX_V1",
-  "completed_stage_dual_backups": 0,
-  "actual_provider_ACKs": 0,
-  "stages": [],
+  "completed_stage_dual_backups": 1,
+  "actual_provider_ACKs": 2,
+  "stages": [
+    {
+      "stage": "S01",
+      "source_commit": "9003d45d710ac56497152055d31e2bef55f3f7fa",
+      "source_tree": "fa0be6f5997ff966d8854362e0204117b8f95f74",
+      "expected_parent": "6ca324dbc5d3c4b5c064f7621730eb0d6ee5eb51",
+      "force": false,
+      "archive_name": "WU_MOLECULAR_R15_S01_SOURCE_20261028_9003d45d710a.zip",
+      "archive_path": "/workspace/scratch/753cd7ab5dd1/r15_work/delivery/WU_MOLECULAR_R15_S01_SOURCE_20261028_9003d45d710a.zip",
+      "archive_bytes": 711071,
+      "archive_sha256": "820ef461259f8d5bbba64bb0e2fa409c06e9e6d5f59fa9b6f4532ef33fe6a62a",
+      "source_files": 157,
+      "zip_members": 158,
+      "workflow": "2/20",
+      "scientific_DAG": "29/46",
+      "verification": {
+        "local_ZIP_CRC": "PASS",
+        "all_member_SHA256": "MATCH",
+        "provider_original_GET": "NOT_RUN"
+      },
+      "own_receipt_inserted_into_source": false,
+      "recorded_utc": "2026-10-28T11:05:27.471Z",
+      "Drive": {
+        "id": "1T54VMO2puvYnTfUzJ_BgbeUdZnM-Pj4q",
+        "url": "https://drive.google.com/file/d/1T54VMO2puvYnTfUzJ_BgbeUdZnM-Pj4q/view?usp=drivesdk",
+        "size": 711071,
+        "upload_ACK": true,
+        "metadata_size_readback": true
+      },
+      "Dropbox": {
+        "id": "id:BSpOijBcT10AAAAAAEGl1g",
+        "path": "/BASS_DERIVATION_DOSSIERS_20260912/WU088_HH_R31S_NCP_REDESIGN_20260928/WU_MOLECULAR_R15_S01_SOURCE_20261028_9003d45d710a.zip",
+        "size": 711071,
+        "upload_ACK": true,
+        "status": "completed"
+      }
+    }
+  ],
   "own_receipt_rule": "Actual receipt enters next source; FINAL own receipt stays external in PR and closing response"
 }

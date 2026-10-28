@@ -1,0 +1,26 @@
+{
+  "schema": "WU_R15_C2_EQUATION_CODE_MAP_V1",
+  "status": "AUTHORED_NOT_IMPLEMENTED_NOT_EXECUTED",
+  "unit": "WU_CUBIC_BERNSTEIN_FORCING_R15",
+  "baseline": {
+    "commit": "6ca324dbc5d3c4b5c064f7621730eb0d6ee5eb51",
+    "production_sha256": "74065e6d3a485d37fd980c92fa065ef20fe1897fdf8f505c3c70c7cb34693f99",
+    "mode": "Source structure and unchanged exact parser/binding/dyadic concepts reviewed; no baseline scientific import or execution. Changed quartic formulas and subdivision are new dependent surfaces."
+  },
+  "equations": [
+    {"id":"INPUT","relation":"Per-source-cell g=Sum_i B3_i*binom(3,i)*u^i*(1-u)^(3-i), supplied B3_i>=0","planned_functions":["validate","exact","_quadruplets","canonical_forcing_sha256"],"acceptance":"Strict rational grammar/finite bits/domain; matching source-state-clock and full-A certificate"},
+    {"id":"CLOCK","relation":"base=obs union(source_knots+k*tau),0<=k<=B; original t0 retained","planned_functions":["run_case","precharge_work"],"acceptance":"Exact sorted complete clock; no extrema subdivision clocks; Nbase<=512 before overlap"},
+    {"id":"OVERLAP","relation":"Integral_L^U g=D*(g(L)+4g((L+U)/2)+g(U))/6, cubic exactness","planned_functions":["_split","_restrict","_overlap_bernstein4"],"acceptance":"Positive B1*B3 Bernstein product; exact original-integral reference and q0/q1 controls"},
+    {"id":"R","relation":"R=h(t-t0)R0+Sum_jk q^k overlap_jk; h0=1","planned_functions":["run_case","_power4"],"acceptance":"Global F continuity, actual right endpoint distinct from left limit, model-normalized quartic identity"},
+    {"id":"EXTREMA","relation":"D_i=4(B[i+1]-B[i]); ignore exact zeros in V; bisect positive-V nodes to depth96","planned_functions":["_variation","_quartic_supremum"],"acceptance":"Complete leaf partition, degree/multiplicity/root coverage independently checked; <=288splits/577visits per cell"},
+    {"id":"GAP","relation":"0<=U-L<=M_B*2^-96<=4Cmax*2^-96; dyadic width overhead<=2*2^-128","planned_functions":["_quartic_supremum","down","up"],"acceptance":"Exact gap and work checks including repeated/nonrational roots and rootless mixed derivative coefficients"},
+    {"id":"MOMENTS","relation":"W_i(z)=duration*Integral_0^1 exp(z(1-u))*B4_i(u)du; W_i(-z)=exp(-z)*W_(4-i)(z)","planned_functions":["bernstein4_weights","_tail","down","up"],"acceptance":"Positive Taylor96+tail for |z|<=16; exact z0 and independent Decimal160 phi1..5 for signed d"},
+    {"id":"E","relation":"E_right=exp(d*duration)*E_left+Sum_i forcingB4_i*W_i","planned_functions":["run_case"],"acceptance":"Directed endpoint intervals; E=abs(eta),coarse l1=4E; exact s^3 R1/4,E1/20 control"},
+    {"id":"WHOLE_E","relation":"Qmax=c*Rsup_upper+max geB3; signed-d constant-forcing majorant from left E upper","planned_functions":["run_case"],"acceptance":"Whole-cell supremum upper max(left upper,right majorant upper); propagate separate polynomial endpoint"},
+    {"id":"OUTPUT","relation":"Exact rational reduced strings and intended source/certificate identity preserved","planned_functions":["serializable","main"],"acceptance":"Finite6000 integer-digit policy; derived bits16384; rational output<=10000chars; no float production acceptance"}
+  ],
+  "independent_reference_interface": "API_SCHEMA.md plus INPUT_SCHEMA.json and OUTPUT_SCHEMA.json only; no production implementation supplied to reference author",
+  "scientific_runs": 0,
+  "scientific_imports": 0,
+  "root_owned": ["canonical integration","bounded process wrapper","execution","renderer","publication","backups","admission"]
+}

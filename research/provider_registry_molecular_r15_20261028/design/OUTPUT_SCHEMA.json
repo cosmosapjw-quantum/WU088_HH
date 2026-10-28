@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "WU_R15_OUTPUT_SCHEMA_V1",
+  "title": "WU R15 saved primary results and exact comparison certificate",
+  "description": "C2 shared record contract. All intervals and coefficient values use reduced exact rational strings. Lower endpoints bound ideal supplied-forcing comparison functions; they are not lower bounds on actual physical errors. No universal raw/capped/physical gain is asserted.",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "status", "summary", "valid_cases", "extrema_controls", "guard_cases", "checks", "frozen_files", "arithmetic"],
+  "properties": {
+    "schema": {"const": "WU_R15_PRIMARY_RESULTS_V1"}, "status": {"enum": ["PASS_SCOPED", "FAIL"]},
+    "summary": {"type": "object", "required": ["valid_cases", "extrema_controls", "rejection_guards", "checks", "passed", "failed"], "additionalProperties": {"type": "integer", "minimum": 0}},
+    "valid_cases": {"type": "array", "maxItems": 24, "items": {"type": "object", "required": ["id", "status", "result"], "properties": {"id": {"type": "string"}, "status": {"enum": ["PASS", "FAIL"]}, "result": {"$ref": "#/$defs/result"}}, "additionalProperties": false}},
+    "extrema_controls": {"type": "array", "items": {"type": "object", "required": ["id", "status", "bernstein", "result"], "properties": {"id": {"type": "string"}, "status": {"enum": ["PASS", "FAIL"]}, "bernstein": {"$ref": "#/$defs/five"}, "result": {"type": "object", "required": ["subdivision", "supremum"], "properties": {"subdivision": {"$ref": "#/$defs/subdivision"}, "supremum": {"$ref": "#/$defs/supremum"}}}}}},
+    "guard_cases": {"type": "array", "items": {"type": "object", "required": ["id", "status", "exception_type", "message"], "properties": {"id": {"type": "string"}, "status": {"enum": ["PASS", "FAIL"]}, "exception_type": {"type": ["string", "null"]}, "message": {"type": "string"}}}},
+    "checks": {"type": "array", "items": {"type": "object", "required": ["id", "status"], "properties": {"id": {"type": "string"}, "status": {"enum": ["PASS", "FAIL"]}}}},
+    "frozen_files": {"type": "array", "items": {"type": "object", "required": ["path", "sha256", "bytes"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "bytes": {"type": "integer", "minimum": 0}}}},
+    "arithmetic": {"type": "object"}
+  },
+  "$defs": {
+    "rational": {"type": "string", "minLength": 1, "maxLength": 10000, "pattern": "^-?[0-9]+(/[1-9][0-9]*)?$", "description": "Canonical reduced rational; derived numerator/denominator <=16384bits; no float."},
+    "pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/rational"}},
+    "four": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}},
+    "five": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/rational"}},
+    "rational_list": {"type": "array", "maxItems": 513, "items": {"$ref": "#/$defs/rational"}},
+    "matrix2": {"type": "array", "maxItems": 513, "items": {"$ref": "#/$defs/pair"}},
+    "leaf": {
+      "type": "object", "additionalProperties": false,
+      "required": ["left", "right", "depth", "variation", "kind", "endpoint_values", "lower", "upper"],
+      "properties": {
+        "left": {"$ref": "#/$defs/rational"}, "right": {"$ref": "#/$defs/rational"}, "depth": {"type": "integer", "minimum": 0, "maximum": 96}, "variation": {"type": "integer", "minimum": 0, "maximum": 3},
+        "kind": {"enum": ["CONSTANT", "NONDECREASING", "NONINCREASING", "DEPTH_LIMIT"]}, "endpoint_values": {"$ref": "#/$defs/pair"}, "lower": {"$ref": "#/$defs/rational"}, "upper": {"$ref": "#/$defs/rational"},
+        "midpoint": {"$ref": "#/$defs/rational"}, "midpoint_value": {"$ref": "#/$defs/rational"}, "bernstein": {"$ref": "#/$defs/five"}
+      },
+      "allOf": [{"if": {"properties": {"kind": {"const": "DEPTH_LIMIT"}}}, "then": {"required": ["midpoint", "midpoint_value", "bernstein"], "properties": {"depth": {"const": 96}}}}]
+    },
+    "subdivision": {
+      "type": "object", "additionalProperties": false,
+      "required": ["method", "depth_limit", "derivative_bernstein", "splits_actual", "nodes_visited", "max_depth", "terminal_leaves", "depth_limit_leaves", "max_unresolved_width", "leaves"],
+      "properties": {
+        "method": {"const": "BERNSTEIN_DERIVATIVE_VARIATION_V1"}, "depth_limit": {"const": 96}, "derivative_bernstein": {"$ref": "#/$defs/four"},
+        "splits_actual": {"type": "integer", "minimum": 0, "maximum": 288}, "nodes_visited": {"type": "integer", "minimum": 1, "maximum": 577}, "max_depth": {"type": "integer", "minimum": 0, "maximum": 96}, "terminal_leaves": {"type": "integer", "minimum": 1, "maximum": 289}, "depth_limit_leaves": {"type": "integer", "minimum": 0, "maximum": 3},
+        "max_unresolved_width": {"$ref": "#/$defs/rational"}, "leaves": {"type": "array", "minItems": 1, "maxItems": 289, "items": {"$ref": "#/$defs/leaf"}}
+      }
+    },
+    "supremum": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exact_lower", "exact_upper", "exact_gap", "M_B", "Cmax", "proved_gap_bound", "dyadic_lower", "dyadic_upper"],
+      "properties": {"exact_lower": {"$ref": "#/$defs/rational"}, "exact_upper": {"$ref": "#/$defs/rational"}, "exact_gap": {"$ref": "#/$defs/rational"}, "M_B": {"$ref": "#/$defs/rational"}, "Cmax": {"$ref": "#/$defs/rational"}, "proved_gap_bound": {"$ref": "#/$defs/rational"}, "dyadic_lower": {"$ref": "#/$defs/rational"}, "dyadic_upper": {"$ref": "#/$defs/rational"}}
+    },
+    "cell": {
+      "type": "object", "additionalProperties": false,
+      "required": ["left", "right", "bernstein", "coefficients_normalized", "initial_piece", "F_bernstein", "right_left_limit", "actual_right_endpoint", "ge_bernstein", "forcing_bernstein", "subdivision", "supremum", "whole_E_majorant"],
+      "properties": {
+        "left": {"$ref": "#/$defs/rational"}, "right": {"$ref": "#/$defs/rational"}, "bernstein": {"$ref": "#/$defs/five"}, "coefficients_normalized": {"$ref": "#/$defs/five"}, "initial_piece": {"$ref": "#/$defs/rational"}, "F_bernstein": {"$ref": "#/$defs/five"}, "right_left_limit": {"$ref": "#/$defs/rational"}, "actual_right_endpoint": {"$ref": "#/$defs/rational"}, "ge_bernstein": {"$ref": "#/$defs/four"}, "forcing_bernstein": {"$ref": "#/$defs/five"}, "subdivision": {"$ref": "#/$defs/subdivision"}, "supremum": {"$ref": "#/$defs/supremum"}, "whole_E_majorant": {"type": "object", "required": ["Qmax", "left_E_upper", "right_majorant_upper"], "properties": {"Qmax": {"$ref": "#/$defs/rational"}, "left_E_upper": {"$ref": "#/$defs/rational"}, "right_majorant_upper": {"$ref": "#/$defs/rational"}}}
+      }
+    },
+    "weight": {
+      "type": "object", "additionalProperties": false,
+      "required": ["left", "right", "z", "exp", "phi", "W0", "W1", "W2", "W3", "W4"],
+      "properties": {"left": {"$ref": "#/$defs/rational"}, "right": {"$ref": "#/$defs/rational"}, "z": {"$ref": "#/$defs/rational"}, "exp": {"$ref": "#/$defs/pair"}, "phi": {"$ref": "#/$defs/pair"}, "W0": {"$ref": "#/$defs/pair"}, "W1": {"$ref": "#/$defs/pair"}, "W2": {"$ref": "#/$defs/pair"}, "W3": {"$ref": "#/$defs/pair"}, "W4": {"$ref": "#/$defs/pair"}}
+    },
+    "raw": {
+      "type": "object", "additionalProperties": false,
+      "required": ["endpoints_lower", "endpoints_upper", "whole_cells_lower", "whole_cells_upper", "refined_endpoints_lower", "refined_endpoints_upper", "refined_whole_cells_lower", "refined_whole_cells_upper"],
+      "properties": {"endpoints_lower": {"$ref": "#/$defs/matrix2"}, "endpoints_upper": {"$ref": "#/$defs/matrix2"}, "whole_cells_lower": {"$ref": "#/$defs/matrix2"}, "whole_cells_upper": {"$ref": "#/$defs/matrix2"}, "refined_endpoints_lower": {"$ref": "#/$defs/matrix2"}, "refined_endpoints_upper": {"$ref": "#/$defs/matrix2"}, "refined_whole_cells_lower": {"$ref": "#/$defs/matrix2"}, "refined_whole_cells_upper": {"$ref": "#/$defs/matrix2"}}
+    },
+    "result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parameters", "source", "requested_times", "base_times", "refined_times", "exact", "raw", "weights", "work", "certificate_status", "input_scientific_status", "source_provenance", "R_history", "cap_application", "arithmetic"],
+      "properties": {
+        "parameters": {"type": "object"}, "source": {"type": "object"}, "requested_times": {"$ref": "#/$defs/rational_list"}, "base_times": {"$ref": "#/$defs/rational_list"}, "refined_times": {"$ref": "#/$defs/rational_list"},
+        "exact": {"type": "object", "additionalProperties": false, "required": ["F_at_refined", "R_at_refined", "kernel_at_refined", "R_quartic_cells", "observation_R_suprema"], "properties": {"F_at_refined": {"$ref": "#/$defs/rational_list"}, "R_at_refined": {"$ref": "#/$defs/rational_list"}, "kernel_at_refined": {"$ref": "#/$defs/rational_list"}, "R_quartic_cells": {"type": "array", "minItems": 1, "maxItems": 512, "items": {"$ref": "#/$defs/cell"}}, "observation_R_suprema": {"type": "array", "minItems": 1, "maxItems": 32, "items": {"$ref": "#/$defs/supremum"}}}},
+        "raw": {"$ref": "#/$defs/raw"}, "weights": {"type": "array", "minItems": 1, "maxItems": 512, "items": {"$ref": "#/$defs/weight"}}, "work": {"type": "object"}, "certificate_status": {"type": "string"}, "input_scientific_status": {"enum": ["ARITHMETIC_CONTROL_PREMISE", "CERTIFIED_FULL_A_BLOCK"]}, "source_provenance": {"type": "object"}, "R_history": {"type": "string"}, "cap_application": {"type": "string"}, "arithmetic": {"type": "object"}
+      }
+    }
+  },
+  "x-semantic-validation": ["Every Fraction is canonical reduced; denominator>0; bounded derived bits", "Leaf partition complete on normalized[0,1], interior disjoint, shared boundaries retained", "Nonpositive variation is terminal; DEPTH_LIMIT leaves width2^-96 and depth96", "Nodes=2*splits+1 and leaves=splits+1, with precharged work respected", "Exact supremum gap<=M_B*2^-96<=4*Cmax*2^-96 for model nonnegative B4", "Actual right-continuous endpoint included separately from left limit", "Whole-cell lower is a bound on the supremum, not a pointwise lower envelope", "Independent reference is Decimal160 guarded corroboration, with strict misses retained"]
+}
