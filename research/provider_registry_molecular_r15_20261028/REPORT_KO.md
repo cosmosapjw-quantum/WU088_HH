@@ -1,6 +1,6 @@
-# R15 진행 보고서 — S07
+# R15 진행 보고서 — S08
 
-현재 완료된 워크플로는 **14/20**, 과학 DAG는 **29/46**이다. 이 단계의 실제 게시·백업 영수증은 `delivery/PUBLICATION_INDEX.json`과 PR150을 따른다.
+현재 완료된 워크플로는 **16/20**, 과학 DAG는 **29/46**이다. 이 단계의 실제 게시·백업 영수증은 `delivery/PUBLICATION_INDEX.json`과 PR150을 따른다.
 
 ## 완료된 단계의 근거
 
@@ -18,9 +18,11 @@
 - **C6**: Actual bounded frozen primary process exit0:302/302 semantic checks,21models,68rejectionguards,14depth rows; all30frozen files unchanged; no repair or old-science replay.
 - **R7**: One actual frozen Wolfram batch returned72unique exact-zero residuals matching alltargets; observed warnings0; submitted8361bytes exactly match frozen source.
 - **C7**: Actual separately authored original-integral/Sturm/phi reference passed302/302 records across21models;784guarded comparisons pass with59strict Decimal misses disclosed; no repair or production import.
+- **R8**: All13claims assigned conditional proof/observed verification/input-pending status; strict59misses and fixedguard interpretation retained; no newstrongno-go or physicalpromotion.
+- **C8**: Read actual saved14depth diagnostics and resource records; rendered2PNG/2SVG inoneboundedprocess and actually inspected bothPNGs; no scientific rerun.
 
 ## 실행과 적용 범위
 
-실제 실행 수: {"primary": 1, "reference": 1, "CAS": 1, "renderer": 0, "ODE": 0}. 남은 base allowance: {"primary": 0, "reference": 0, "CAS": 0, "renderer": 1}. 실제 결과는 `raw/`와 실행 장부에 결속한다.
+실제 실행 수: {"primary": 1, "reference": 1, "CAS": 1, "renderer": 1, "ODE": 0}. 남은 base allowance: {"primary": 0, "reference": 0, "CAS": 0, "renderer": 0}. 실제 결과는 `raw/`와 실행 장부에 결속한다.
 
 입력은 원래 비음수 B3 계수로 주어진 forcing이며, full-A·whole-domain·source/state/clock 전제가 유지된다. 이상 비교함수의 하한을 물리 오차 하한으로 해석하지 않는다. 실제 HD 배열과 명명된 physical consumer/state/density/clock는 INPUT_PENDING이다. HH_R10 OFF, production NOT_ISSUED, L4 false, central/physical delta0.

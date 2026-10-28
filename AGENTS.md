@@ -1,8 +1,8 @@
-# Current priority: R15 cubic Bernstein forcing — workflow14/20, DAG29/46 — 2026-10-28
+# Current priority: R15 cubic Bernstein forcing — workflow16/20, DAG29/46 — 2026-10-28
 
 Read research/provider_registry_molecular_r15_20261028/CONTRACT.json, POLICY_DELTA.json, WORKFLOW_RECORD.json, DAG.json, EXECUTION_LEDGER.json, authority/intake/SYNTHESIS_KO.md and delivery/PUBLICATION_INDEX.json. Current user authorizes this one full R1–R10/C1–C10 unit, finite new budget, per-stage publication and dual backups. Preserve all44 inherited node objects, prior results/failures and scoped assumptions. Root-only expectedSHA/forcefalse researchbranch/draftPR150; no mainmerge/other-ownerwrite. Full A=K+wH, original t0 memory, signed dc, E=abs(eta), coarse l1=4E. Positive supplied cubic Bernstein coefficient cone only. Actual HD array/consumer/state/densityclock INPUT_PENDING, nativev UNSPECIFIED, MISSING_NOT_ZERO, TIQM/SQM DISTINCT, HH_R10 OFF, production NOT_ISSUED, L4 false, central/physicaldelta0.
 
-Completed paired step S07; prior actual dual backups6/6 with ACKs12; current step receipt is added only after actual publication. Actual scientific runs: {"CAS": 1, "ODE": 0, "primary": 1, "reference": 1, "renderer": 0}. Remaining base: {"CAS": 0, "primary": 0, "reference": 0, "renderer": 1}. Globalremaining/fullhistoricalCPU null; oldallowanceincrease0. Follow CONTRACT for finite bounds and explicit repairreserve; no implicit replay.
+Completed paired step S08; prior actual dual backups7/7 with ACKs14; current step receipt is added only after actual publication. Actual scientific runs: {"CAS": 1, "ODE": 0, "primary": 1, "reference": 1, "renderer": 1}. Remaining base: {"CAS": 0, "primary": 0, "reference": 0, "renderer": 0}. Globalremaining/fullhistoricalCPU null; oldallowanceincrease0. Follow CONTRACT for finite bounds and explicit repairreserve; no implicit replay.
 
 <!-- WU_R15_CURRENT_END -->
 
