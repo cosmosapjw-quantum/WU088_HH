@@ -1,0 +1,173 @@
+{
+  "schema": "WU_R14_FIGURE_AUTHORING_V1",
+  "status": "AUTHORED_NOT_RENDERED",
+  "created_utc": "2026-10-28T10:14:29.601555+00:00",
+  "files": [
+    {
+      "path": "render_saved.py",
+      "bytes": 26082,
+      "sha256": "a231712fd38a3cc29e06c2db476f89a91d756dc64f191786bddbd7e630d9b042"
+    },
+    {
+      "path": "CAPTIONS_KO.md",
+      "bytes": 4917,
+      "sha256": "610061c4298e03b57061a9aecc30a8f148d343a7ce89921c7315c3af9e222c25"
+    },
+    {
+      "path": "INPUT_SHAPE_READBACK.json",
+      "bytes": 3312,
+      "sha256": "a7a06a030f734ab1331703be9cc81bf56d2fe1f80fb2c5d9939aab53f7412006"
+    }
+  ],
+  "reference_output_contract_read": "r14_work/reference/independent_reference.py actual saved-output construction and main; PASS plus checks_failed/component_failures and primary_sha256 binding",
+  "render_attempts": 0,
+  "imports": 0,
+  "compile": 0,
+  "science": 0,
+  "ODE": 0,
+  "root_primitive_recomputations": 0,
+  "planned_root_render_budget": {
+    "processes": 1,
+    "CPU_s": 10,
+    "wall_s": 30,
+    "AS_bytes": 1073741824
+  },
+  "planned_outputs": [
+    "R14_SOURCE_AND_EXTREMA.png",
+    "R14_SOURCE_AND_EXTREMA.svg",
+    "R14_COMPARISON_AND_RESOURCE.png",
+    "R14_COMPARISON_AND_RESOURCE.svg",
+    "PLOT_DATA.json",
+    "PLOT_MANIFEST.json",
+    "RENDER_RESULT.json"
+  ],
+  "actual_visual_review": "NOT_RUN; root must inspect actual PNGs after the sole render",
+  "manual_source_review": [
+    "No production/reference/old scientific module import; only JSON/hash, Fraction parsing and display libraries.",
+    "Curves only evaluate stored B2/B3; saved rootbox midpoints and supremum certificates are not recomputed.",
+    "E lines use saved endpoint uppers; closed-cell uppers are separate horizontal bars.",
+    "Actual right endpoint and open left limit are separate; finite zero-gap handling is explicit.",
+    "Success gates use the actual authored reference output schema; actual input bytes are hashed and cross-bound at runtime.",
+    "Exclusive preflight refuses existing outputs; failures preserve partial outputs and input/render identities."
+  ],
+  "authoring_draft_adjustments": [
+    "Before execution, increased critical-panel legend headroom and moved input/hash recording ahead of status checks so failure receipts also retain available identities. These are authoring adjustments, not observed render failures."
+  ],
+  "old_R10_readout_modified": false,
+  "native9_physical_plot_reused": false,
+  "actual_primary_reference_results_present_during_initial_authoring": false,
+  "actual_saved_output_metadata_readback": {
+    "read_utc": "2026-10-28T10:14:47.128052+00:00",
+    "primary_sha256": "1e724a855cb3bca0b12c88b595ba561d4399103da65984b1b102cb04cb300907",
+    "reference_sha256": "8f39fc944e11dedda4de41250fb4ac79f142ec042ec0d61b34f0fb01de3010fc",
+    "primary_schema": "WU_R14_PRIMARY_RESULTS_V1",
+    "primary_status": "PASS_SCOPED",
+    "primary_failed": 0,
+    "reference_schema": "WU_R14_INDEPENDENT_REFERENCE_V1",
+    "reference_status": "PASS",
+    "reference_checks_failed": 0,
+    "reference_component_failures": 0,
+    "reference_primary_sha256_matches": true,
+    "selected_case_shape": [
+      {
+        "case": "signed_middle_nonnegative",
+        "saved_result_present": true,
+        "requested_points": 2,
+        "base_cells": 2,
+        "whole_observation_cells": 1
+      },
+      {
+        "case": "one_irrational_maximum",
+        "saved_result_present": true,
+        "requested_points": 3,
+        "base_cells": 2,
+        "whole_observation_cells": 2
+      },
+      {
+        "case": "two_irrational_critical_roots",
+        "saved_result_present": true,
+        "requested_points": 3,
+        "base_cells": 2,
+        "whole_observation_cells": 2
+      },
+      {
+        "case": "initial_downward_jump",
+        "saved_result_present": true,
+        "requested_points": 2,
+        "base_cells": 1,
+        "whole_observation_cells": 1
+      },
+      {
+        "case": "quadratic_q1",
+        "saved_result_present": true,
+        "requested_points": 5,
+        "base_cells": 4,
+        "whole_observation_cells": 4
+      },
+      {
+        "case": "affine_reduction_q1",
+        "saved_result_present": true,
+        "requested_points": 2,
+        "base_cells": 1,
+        "whole_observation_cells": 1
+      },
+      {
+        "case": "constant_reduction_q1",
+        "saved_result_present": true,
+        "requested_points": 2,
+        "base_cells": 1,
+        "whole_observation_cells": 1
+      },
+      {
+        "case": "signed_d_positive",
+        "saved_result_present": true,
+        "requested_points": 3,
+        "base_cells": 2,
+        "whole_observation_cells": 2
+      },
+      {
+        "case": "signed_d_negative",
+        "saved_result_present": true,
+        "requested_points": 3,
+        "base_cells": 2,
+        "whole_observation_cells": 2
+      },
+      {
+        "case": "golden_irrational_maximum",
+        "saved_result_present": true,
+        "requested_points": 3,
+        "base_cells": 2,
+        "whole_observation_cells": 2
+      },
+      {
+        "case": "full_effective48_nonaligned_tau",
+        "saved_result_present": true,
+        "requested_points": 33,
+        "base_cells": 248,
+        "whole_observation_cells": 32
+      }
+    ],
+    "full_capacity_saved_work": {
+      "original_source_cells": 16,
+      "effective_source_cells": 48,
+      "base_cells": 248,
+      "refined_cells": 248,
+      "full_blocks": 8,
+      "overlap_terms_upper": 107136,
+      "overlap_terms_actual": 107136,
+      "nonempty_overlap_terms": 8916,
+      "root_bisections_upper": 47616,
+      "root_bisections_actual": 1536,
+      "coefficient_cell_builds": 248,
+      "guard_applied_before_overlap": true,
+      "guard_applied_before_root_isolation": true,
+      "overlap_limit": 250000,
+      "root_limit": 98304,
+      "formula": "base_cells*effective_source_cells*(full_blocks+1);2*96*base_cells"
+    },
+    "read_scope": "Saved JSON metadata and shape inspection only; no scientific function imported or executed; no polynomial evaluation or render.",
+    "render_runs": 0,
+    "science_runs": 0
+  },
+  "process_thread_policy": "Display-library thread variables set to1 before numpy/matplotlib import, only in the authorized render process."
+}
