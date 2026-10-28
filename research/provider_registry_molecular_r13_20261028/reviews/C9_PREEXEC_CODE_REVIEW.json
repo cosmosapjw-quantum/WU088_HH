@@ -1,0 +1,122 @@
+{
+  "schema": "WU_R13_C9_PREEXEC_CODE_REVIEW_V1",
+  "reviewer": "repo_census",
+  "review_role": "Independent manual review of the new R13 proof, implementation and campaign sources; continuation of the same R6/C9 pass",
+  "decision": "PASS_SCOPED_NEW_R13_CODE_PREEXEC",
+  "execution_status": "AUTHORED_SOURCES_REVIEWED_NOT_EXECUTION_VERIFIED",
+  "open_material_findings": 0,
+  "open_minor_findings": 0,
+  "reviewer_scientific_runs": 0,
+  "reviewer_scientific_imports": 0,
+  "reviewer_compilations": 0,
+  "reviewer_CAS_calls": 0,
+  "administrative_operations": [
+    "Read source text and JSON metadata",
+    "Hash exact local source bytes",
+    "Normalize rational fixture text solely to check the nonaligned-work rejection fixture's canonical metadata hash"
+  ],
+  "independence": {
+    "new_theory_author": false,
+    "production_author": false,
+    "primary_author": false,
+    "reference_author": false,
+    "CAS_source_author": false,
+    "intake_author": true,
+    "intake_independently_reviewed_by_this_reviewer": false,
+    "predecessor_R11_R12_review_repeated": false
+  },
+  "sources": [
+    {
+      "path": "src/affine_convolution.py",
+      "bytes": 20213,
+      "sha256": "bf1c08235f3dbdca1136699d41c9a6ca6b8d8459436911c5e7d4d506d1f168e0"
+    },
+    {
+      "path": "verification/run_primary.py",
+      "bytes": 13635,
+      "sha256": "18dd3a1f421e30f7f3cd94ff36ab1911f3f3a6b1d5499b8043ed303c8986a4cd"
+    },
+    {
+      "path": "verification/CASES.json",
+      "bytes": 181729,
+      "sha256": "9eaa99dd372da9d242fb57891791502929cfeaf0c74841766a9a3ee2f7806daf"
+    },
+    {
+      "path": "verification/FIXTURE_SOURCE.json",
+      "bytes": 41623,
+      "sha256": "51abe631b7b7fb295304efb0687f2abf0a41b5b1547e0f4bd8f2b54c453fe6c4"
+    },
+    {
+      "path": "verification/PRIMARY_AUTHORING_RECORD.json",
+      "bytes": 3287,
+      "sha256": "f19f648db9634473ce1b68953e6ea68c430e5643d8ae5841026d16c938a51dc5"
+    },
+    {
+      "path": "verification/run_reference.py",
+      "sha256": "4525be66370e724bff6aae3f901a92c9a45d69361c1afaa4a0e0301d0f02ec8d"
+    },
+    {
+      "path": "theory/PROOF_KO.md",
+      "sha256": "26587e1156ecff70b1773b7b751dc62e8a7669a3fdee866429c9ad0939abce40"
+    }
+  ],
+  "reused_checks_in_same_pass": [
+    "Exact global residual-history convolution and quadratic cell reconstruction",
+    "Exact rational event and interior vertex refinement, including q=0 triangular interior maximum",
+    "Nonnegative Bernstein coefficients after monotone vertex splitting",
+    "Directed dyadic128/Taylor96 positive weight recurrences, common exponential tail, and negative-argument reversal",
+    "Closed-cell residual supremum and scalar constant-majorant whole-E proof",
+    "Independent monomial/phi reference formulas and J0/J1 kernel primitives",
+    "CAS source residual count 25 and wrapper source resource controls"
+  ],
+  "new_delta_checks": [
+    {
+      "id": "source_and_forcing_binding",
+      "status": "PASS_MANUAL_SOURCE_REVIEW",
+      "evidence": "Production requires equal lower-case SHA-256 identities in binding and certificate, then recomputes WU_R13_WHOLE_FORCING_V1 from canonical exact source knots, affine endpoints, source_id, clock_id, clock_unit and state_order. Primary hashes actual FIXTURE_SOURCE.json bytes and checks its per-case source payload and forcing identity mapping.",
+      "qualification": "A matching identity authenticates the declared conditional input. It does not prove a physical full-A certificate or that sampled values bound a whole fine/coarse domain."
+    },
+    {
+      "id": "singleton_zero_mass",
+      "status": "PASS_MANUAL_SOURCE_REVIEW",
+      "evidence": "states=1 requires R0=0 and every g_r affine endpoint zero before certificate validation. The negative singleton fixture has a positive g_r endpoint and reaches the intended Singleton zero-mass rejection before its deliberately inconsistent two-state binding."
+    },
+    {
+      "id": "explicit_scientific_status",
+      "status": "PASS_MANUAL_SOURCE_REVIEW",
+      "evidence": "Production requires a matching explicit ARITHMETIC_CONTROL_PREMISE or CERTIFIED_FULL_A_BLOCK status. All 24 campaign source fixtures are explicitly ARITHMETIC_CONTROL_PREMISE and SYNTHETIC_CONDITIONAL_FIXTURE, with physical source status NOT_A_PHYSICAL_HD_DATA_RETURN."
+    },
+    {
+      "id": "stale_forcing_rejection",
+      "status": "PASS_MANUAL_SOURCE_REVIEW",
+      "evidence": "The changed_forcing_stale_certificate fixture changes a ramp endpoint from 1 to 2 while retaining the prior matching certificate/binding hashes. Production then recomputes the actual forcing hash and rejects the stale identity."
+    },
+    {
+      "id": "work_guard_hash_precedence",
+      "status": "PASS_METADATA_IDENTITY_CHECK",
+      "evidence": "The nonaligned_work_limit fixture's canonical rational payload hash is 4ca8f824713f1744c689f9aac0e4f17fd961ee9ee303e473fcf977009f0c4140, equal to its binding and certificate. Canonical reduction of e.g. 5/65 is necessary. Thus a stale hash does not mask this fixture's intended Overlap work bound rejection.",
+      "execution_qualification": "Only the fixture metadata hash was recomputed; its scientific run_case was not called."
+    },
+    {
+      "id": "primary_campaign_scope",
+      "status": "PASS_MANUAL_SOURCE_REVIEW",
+      "evidence": "Primary invokes the new solver once per each of 24 valid fixtures, records failed exceptions, checks analytic controls and finite work declarations, and attempts 38 explicit rejection guards. It labels the weaker E enclosure compatibility relation accurately. The independent reference and analytic proof carry the stronger ideal comparison claims.",
+      "execution_qualification": "Counts here are authored campaign sizes, not completed-run PASS totals."
+    },
+    {
+      "id": "primary_artifact_integrity_and_F02",
+      "status": "CLOSED_PREEXECUTION_SOURCE_REVIEW",
+      "evidence": "The current primary accepts --root, requires the exact frozen leaf, rejects an existing result path and uses exclusive open(x). Author record preserves the observed prior source hash and states old_primary_bytes_status=NOT_PRESERVED; no old source bytes were reconstructed.",
+      "old_primary_sha256": "6fbf1266807ce2522a95313d12639012c2b750a168b87d5631176e878a54f9d3",
+      "corrected_primary_sha256": "18dd3a1f421e30f7f3cd94ff36ab1911f3f3a6b1d5499b8043ed303c8986a4cd"
+    }
+  ],
+  "F01": "CLOSED; independent closure and canonical proof/source agreement are recorded in R6_PROOF_REVIEW.json",
+  "remaining_C9_scope": [
+    "Read actual frozen-source execution outputs and complete OS-process receipts after root's one permitted primary and one permitted independent-reference run",
+    "Read actual one permitted CAS result including every returned message and the exact submitted source identity",
+    "Check output-to-frozen-input identities and reported claim scope without repeating any scientific run"
+  ],
+  "admission": "NO_SCIENTIFIC_ADMISSION_BY_THIS_PREEXEC_REVIEW",
+  "physical_status": "INPUT_PENDING; HH_R10=OFF; production=NOT_ISSUED; L4=false; central/physical delta=0"
+}

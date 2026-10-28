@@ -164,17 +164,19 @@ def vertex_figure(plt, cases):
                s=105, linewidths=2.4, zorder=7, label="Excluded left-limit point")
     ax.scatter([final_time], [final_value], color=BLUE, s=65, zorder=7,
                label="Actual value at t = 1")
-    ax.annotate("sup R = 2; not attained", xy=(0.72, left_limit),
+    left_limit_text = jr["exact"]["R_quadratic_cells"][-1]["bernstein"][-1]
+    actual_text = jr["exact"]["R_at_refined"][-1]
+    ax.annotate(f"sup R = {left_limit_text}; not attained", xy=(0.72, left_limit),
                 xytext=(0.18, 2.19), fontsize=10, color=ORANGE,
                 arrowprops={"arrowstyle": "->", "color": ORANGE})
-    ax.annotate("R(1) = 1", xy=(final_time, final_value),
+    ax.annotate(f"R(1) = {actual_text}", xy=(final_time, final_value),
                 xytext=(0.55, 1.16), fontsize=10, color=BLUE,
                 arrowprops={"arrowstyle": "->", "color": BLUE})
-    style_axis(ax, "R comparison", "(d) Downward jump: supremum versus maximum")
+    style_axis(ax, "R comparison", "(d) Downward jump and an unattained supremum")
     ax.set_xlim(-0.04, 1.1)
     ax.set_ylim(0.85, 2.42)
-    ax.legend(loc="upper left", bbox_to_anchor=(0.01, 0.75), fontsize=8.6,
-              frameon=False)
+    ax.text(0.03, 0.96, "Solid: t < 1; open marker: left limit",
+            transform=ax.transAxes, fontsize=9, va="top", color=GRAY)
     fig.supxlabel(
         "SYNTHETIC ARITHMETIC CONTROLS  |  Curves evaluate saved coefficients; "
         "dashed endpoint connectors do not certify interiors.",
@@ -204,11 +206,14 @@ def endpoint_comparison_figure(plt, cases, widths):
         ax.set_title("(a) Residual endpoint" if component == 0 else "(b) Scalar endpoint",
                      loc="left", fontsize=13, fontweight="bold")
         ax.set_ylim(0, float(max(upper)) * 1.35)
-        expected = ["1/2", "1"] if component == 0 else ["1/6", "1/2"]
+        key = "R" if component == 0 else "E"
+        expected = [cases[cid]["input"]["controls"]["endpoint"][key] for cid in ids]
         for i, value in enumerate(upper):
             ax.text(i, float(value) + float(max(upper)) * 0.06, expected[i],
                     ha="center", fontsize=13, fontweight="bold")
-        ratio = "1/2 (50% reduction)" if component == 0 else "1/3 (66.666...% reduction)"
+        ratio_exact = frac(expected[0]) / frac(expected[1])
+        reduction = 100 * (1 - ratio_exact)
+        ratio = str(ratio_exact) + " (" + format(float(reduction), ".6g") + "% reduction)"
         ax.text(0.5, 0.95, "Ideal affine / constant = " + ratio,
                 transform=ax.transAxes, ha="center", va="top", fontsize=10)
         ax.grid(axis="y", alpha=0.2)
