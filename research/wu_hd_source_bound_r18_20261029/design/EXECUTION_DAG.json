@@ -1,0 +1,91 @@
+{
+  "schema": "wu.r18.execution_dag.v1",
+  "scope": "native printed source acquisition/extraction, no physical IVP",
+  "tasks": [
+    {
+      "id": "source_bytes",
+      "status": "complete",
+      "evidence": "source/csic_pdf_receipts.json"
+    },
+    {
+      "id": "independent_source_row",
+      "after": [
+        "source_bytes"
+      ],
+      "status": "complete",
+      "evidence": "reviews/r18_source/INDEPENDENT_SOURCE_REVIEW.json"
+    },
+    {
+      "id": "exact_source_parser",
+      "after": [
+        "source_bytes"
+      ],
+      "status": "ready"
+    },
+    {
+      "id": "primary_source_tests",
+      "after": [
+        "exact_source_parser"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "independent_code_review",
+      "after": [
+        "primary_source_tests",
+        "independent_source_row"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "source_admission",
+      "after": [
+        "independent_code_review"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "named_consumer_binding",
+      "after": [
+        "source_admission"
+      ],
+      "status": "input_pending",
+      "required": [
+        "explicit HD(v0,j2),H2(v0,j1) state order",
+        "density and clock units",
+        "source-grid temperature support or separately validated extension",
+        "same-state mass/energy ledger",
+        "full-A and whole-domain certificate for certified physical response"
+      ]
+    }
+  ],
+  "parallel_execution_actual": {
+    "source_search": "/root/native_source_research",
+    "R17A_review": "/root/r17a_source_review",
+    "R17B_and_native_source_review": "/root/r17b_independent_review",
+    "consumer_survey": "/root/consumer_delta_survey"
+  },
+  "unchanged_runs": {
+    "old_science": 0,
+    "ODE": 0
+  },
+  "decision": "finish finite source node without inventing consumer inputs or repeating exhausted methods",
+  "alternatives": [
+    {
+      "candidate": "publisher original ZIP",
+      "result": "currentHTTP403; failurebodySHA preserved"
+    },
+    {
+      "candidate": "author institutional originalPDF",
+      "result": "currentHTTP200; title/authors/DOI/recordlink/selectedrow independentlyverified; chosen native source"
+    },
+    {
+      "candidate": "EMAA/LAMDA inelastic HD",
+      "result": "different source operator; retain for own internal-state channel"
+    },
+    {
+      "candidate": "printed205K/295K thermal total",
+      "result": "sourceaggregate only; not substitute for selectedrate row"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "WU_R18_FINAL_DISTINCT_AUTHOR_C9_REVIEW_V1",
+  "reviewer": "/root/r17b_independent_review",
+  "date": "2026-10-29",
+  "verdict": "PASS_SCOPED_NATIVE_PRINTED_SOURCE_API",
+  "baseline_source_commit": "8fd7111a1c56dbfeca10893231b16c5ea65543fc",
+  "final_local_delta_commit": "TO_BE_BOUND_BY_ROOT_PUBLICATION",
+  "final_module_sha256": "282ba390836979f051a3e80e502569df8238b2f28c734de9df2da1b88122eb60",
+  "final_module_git_blob": "be2a845263b215b604f255ffe5deabe55be9dd7b",
+  "final_module_bytes": 11636,
+  "final_targeted_checks": 53,
+  "final_path_replacement_probe": "PASS_VERIFIED_BYTES_IMMUNE_TO_PATH_SWAP",
+  "findings": [
+    {
+      "id": "R18-C9-F01",
+      "original_severity": "P2",
+      "class": "implementation/source-provenance coupling",
+      "status": "CLOSED",
+      "original_evidence": "S05_TARGETED_REVIEW.json",
+      "original_module_git_blob": "11c2cda5c5ace5d76c7fcc846095a556d22b3e85",
+      "intermediate_constructor_repair_blob": "f4d826636e38b487761821f6efcaf890c76d74a3",
+      "intermediate_same_root_input_race_evidence": "CONSTRUCTOR_REPAIR_PATH_RACE.json",
+      "correction": "validated loader issuance with exact cell/token/value/source invariants; actual extractor reads same verified raw bytes via stdin",
+      "final_evidence": [
+        "FINAL_TARGETED_REVIEW.json",
+        "FINAL_VERIFIED_BYTES_PATH_RACE.json"
+      ]
+    }
+  ],
+  "open_material_findings": 0,
+  "source_R6": "PASS_SCOPED_NATIVE_PRINTED_TARGET_ROW_REUSED_UNCHANGED",
+  "source_R6_evidence": "../review_r18_source/INDEPENDENT_SOURCE_REVIEW.json",
+  "source_SHA256": "a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754",
+  "independence": "distinct-author subagent, independent PDF extraction frozen before reading author data, source-to-code and targeted independent API checks; code review not blind",
+  "ordinary_API_scope": "supported public API; Python private/reflection abuse outside scope; no security-boundary claim",
+  "scientific_scope": "ten exact decodings of native printed SQM state-to-state decimals, discrete T points only; true-rate intervals and density-clock/full-A consumer remain unissued",
+  "physical_admission": false,
+  "HH_R10": "OFF",
+  "production": "NOT_ISSUED",
+  "L4": false,
+  "WU_DAG_last_observed": "33/49; source node registered, admission root-owned",
+  "old_R17A_R17B_suite_replay": 0,
+  "physical_ODE_runs": 0,
+  "required_further_code_changes": [],
+  "notes": [
+    "Initial and intermediate observed failures preserved; final input-path replacement probe used actual pdftotext on temporary copies only.",
+    "Root primary18/19 checks, pypdf reference and Wolfram outputs are separate evidence, not reexecuted or independently claimed by this reviewer."
+  ]
+}

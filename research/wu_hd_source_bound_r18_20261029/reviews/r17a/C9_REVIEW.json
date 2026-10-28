@@ -1,0 +1,78 @@
+{
+  "schema": "WU_R17A_DISTINCT_AUTHOR_C9_REVIEW_V1",
+  "reviewer": "/root/r17a_source_review",
+  "review_date_KST": "2026-10-29",
+  "frozen_repository": "cosmosapjw-quantum/WU088_HH",
+  "frozen_ref": "d08683a50a57c7bebc8a871e0021c2f8b5520fa9",
+  "scope": "R17A printed thermal aggregate source/math/code only; no native HD row, consumer or physical admission",
+  "independence": {
+    "separate_agent": true,
+    "prior_author": false,
+    "production_primary_replayed": false,
+    "old_suites_replayed": false,
+    "method": "Read 11 immutable Git blobs; independent exact Fraction/Decimal120 arithmetic against saved output; source comparison to indexed original research article; targeted API check."
+  },
+  "sources": [
+    {
+      "url": "https://aip.scitation.org/doi/pdf/10.1063/5.0128598",
+      "retrieval": "primary indexed PDF text via search",
+      "refs": [
+        "turn2search1",
+        "turn5search4"
+      ],
+      "scope": "Sec IIIA Eqs5-7, printed SQM205/295 and global Arrhenius coefficients; current direct PDF fetch403"
+    },
+    {
+      "url": "https://www.researchgate.net/publication/365238304_A_statistical_investigation_of_the_rate_constants_for_the_HHD_reaction_at_temperatures_ofastrophysical_interest",
+      "retrieval": "indexed author article full-text copy",
+      "refs": [
+        "turn0search2"
+      ],
+      "scope": "Introduction prints the two experimental centers and ±0.2; same DOI; no raw PDF byte hash claimed"
+    }
+  ],
+  "reviewed_files_manifest": "SOURCE_IDENTITIES.json",
+  "verified_blobs": 11,
+  "targeted_checks": {
+    "record": "TARGETED_CHECK_RESULTS.json",
+    "passed": 12,
+    "CPU_seconds": 0.0039014789999999994
+  },
+  "findings": [
+    {
+      "id": "R17A-C9-F01",
+      "severity": "P2",
+      "target": "theory/DERIVATION_KO.md 'What the aggregate cannot resolve'; corresponding REPORT_KO.md mathematical result",
+      "observation": "Claimed nonuniqueness from two positive weights omits K>0. With K=0 and all weights positive, nonnegative rates are uniquely zero; stated witnesses coincide.",
+      "impact": "General conditional elementary lemma is false at zero aggregate. Both actual printed source totals are strictly positive, so saved arithmetic and applied non-identification examples are unaffected.",
+      "minimal_correction": "Use K>0 and w_a,w_b>0 for the nonuniqueness statement. At K=0 enforce r_i=0 for all w_i>0; zero-weight entries remain unobservable. See K_ZERO_LEMMA_CORRECTION_KO.md.",
+      "status": "CORRECTION_SUPPLIED_PARENT_INTEGRATION_PENDING"
+    },
+    {
+      "id": "R17A-C9-F02",
+      "severity": "P3",
+      "target": "src/aggregate.py evaluate_transcription(obj,raw_bytes)",
+      "observation": "Public helper accepts validated obj and unrelated raw_bytes, returning SHA of unrelated bytes. read_evaluate and CLI derive both from the same source bytes, and the frozen PRIMARY transcription hash was independently matched.",
+      "impact": "No defect in reviewed read_evaluate/CLI path or stored result. Helper API can misattribute content hash if called directly with inconsistent arguments.",
+      "minimal_correction": "Optional next code change: parse obj from raw_bytes in a single public API, or reject json.loads(raw_bytes)!=obj; keep read_evaluate route as the supported provenance-bound entry.",
+      "status": "NONBLOCKING_SUPPORTED_PATH"
+    }
+  ],
+  "assessment": {
+    "source_transcription": "PASS_SCOPED_INDEXED_PRIMARY_CONTENT_NO_RAW_SOURCE_HASH",
+    "unit_sign_stoichiometry": "PASS_SCOPED",
+    "saved_arithmetic": "PASS_SCOPED",
+    "supported_cli_code": "PASS_SCOPED",
+    "general_nonidentification_as_written": "FAIL_AT_K_ZERO",
+    "C9": "PASS_SCOPED_AFTER_F01_ADDENDUM_INTEGRATION",
+    "new_science_DAG_nodes": 0,
+    "WU_DAG": "33/48",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4": false
+  },
+  "obligations": [
+    "Parent must integrate the supplied K>0/K=0 correction before closing R17A C9 as accepted.",
+    "Current C9 does not certify absent native state rates, experiment sigma/covariance, original supplemental bytes, named REC/CR density-clock/full-A consumer or scientific DAG promotion."
+  ]
+}
