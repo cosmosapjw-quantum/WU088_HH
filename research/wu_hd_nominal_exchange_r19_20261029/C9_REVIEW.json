@@ -1,0 +1,26 @@
+{
+  "schema": "wu.r19.C9.v1",
+  "status": "PARTIAL_NO_DISTINCT_AUTHOR",
+  "native_subagent": "NOT_EXPOSED",
+  "reviewed_surfaces": [
+    "source grid issuance",
+    "T=105 guard",
+    "source spin double count",
+    "expm1 equal and unequal branch",
+    "volume clock consistency",
+    "Jacobian sign",
+    "positive density and input errors",
+    "CLI create-only",
+    "plot units and provenance"
+  ],
+  "observed_defect": {
+    "id": "C9-01",
+    "class": "implementation/presentation",
+    "description": "second CLI write surfaced FileExistsError rather than domain-specific create-only status",
+    "repair": "precheck existing output plus FileExistsError catch, preserve exit2",
+    "regression": "test_22 passed"
+  },
+  "verified_after_repair": "pytest24/24; 160 mpmath; 3 SciPy; Wolfram9",
+  "independent_author_review": "NOT_RUN",
+  "physical_consumer": "NOT_ADMITTED"
+}
