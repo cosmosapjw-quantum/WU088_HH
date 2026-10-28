@@ -1,4 +1,4 @@
-# R5 構成・유도와 source admission의 범위
+# R5 구성·유도와 source admission의 범위
 
 1. Table2의 양의 인쇄 mantissa를 A/10^d로 해독한다. 지수표기 x는 원문 caption에 따라
    음의 지수 −x다. 정수 거듭제곱 연산으로 A/10^(d+x)를 얻으므로 부동소수점 절단이 없다.

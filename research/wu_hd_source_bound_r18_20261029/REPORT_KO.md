@@ -108,3 +108,15 @@ S01은 취득 전 계약이며 S02 이후 ZIP은 원래 논문·보충자료 PDF
 원래48node 결과를 보존한 sourceDAG는34/49이며
 HH_R10=OFF,production=NOT_ISSUED,L4=false,physical/centraldelta0을 유지한다.
 
+
+## 최종 전달 확인
+
+S01–S10 원본 ZIP10개와 provider실제ACK20개가 완료되었다.
+S10 source는2b9c2babde0a052ce4c3147664613a1f7ef83de1이다.
+S10 ZIP5394406bytes,SHA25680d1728dc849c576d3106238d138ea6aec0fc1eeb8206be998d179ac8b3d9f73를
+Drive·Dropbox에서 각각 실제HTTP200으로 내려받았고 CRC와99개source-member SHA가 모두 일치했다.
+과학suite를 재실행하지 않았다. 다른9단계의 provider원본GET은수행하지 않았으며 ACK/size와local검사를 보존한다.
+첫S10Dropbox전송실패는 대상NOT_FOUND 확인 후 동일경로 재전송으로 해소했다.
+최종receipt/restore/index는 S10과학source 이후 별도metadata commit으로 게시한다.
+
+![원본 상태율의 10개 온도점](figures/NATIVE_J2_R1_SOURCE.svg)
