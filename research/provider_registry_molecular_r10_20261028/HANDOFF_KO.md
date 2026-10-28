@@ -1,6 +1,6 @@
 # WU088_HH molecular R10 — 다음 대화 인계
 
-R10 과학 채택은 **DAG 21/36**이며, 종합 보고서와 이 인계 문서를 포함한 이론·코딩 절차는 **20/20**이다. 과학 source는 S09에 고정돼 있다. 단계별 게시·백업은 실제 delivery receipt만 인정한다. 이 source를 준비하는 시점의 S01–S09 전달은 완료됐으며, S10/FINAL의 후속 실제 상태는 아래 10절과 PR150을 기준으로 삼는다.
+R10 과학 채택은 **DAG 21/36**이며, 종합 보고서와 이 인계 문서를 포함한 이론·코딩 절차는 **20/20**이다. 과학 source는 S09에 고정돼 있다. 단계별 게시·백업은 실제 delivery receipt만 인정한다. **S01–S10의 10/10 단계 게시·이중 백업도 완료**됐다. 실제 S10 identity는 아래 10절에 있다. 이 문서를 포함한 FINAL metadata snapshot의 own receipt는 PR150과 종료 응답에서 확인한다.
 
 문서 조립에는 저장된 근거만 사용했고 추가 과학 실행이나 새 검토 pass를 만들지 않았다. 실제 결과의 범위·경고·입력 대기와 종료 조사 cutoff를 유지한다.
 
@@ -144,7 +144,7 @@ CR의 새 `CR_PHYS02_HE_EVENT_UNION_V1`는 고정 He marginal에서 `0 <= C_cros
 
 ## 6. 단계별 게시·백업의 현재 경계
 
-아래는 실제 `delivery/PUBLICATION_INDEX.json`에 기록된 S01–S09의 상태다. 각 단계는 한 쌍의 이론/코딩 단계에 대응한다. Source archive는 해당 단계의 게시 파일과 정확한 inherited input을 담으며, 41-file scientific payload와 전체 archive 파일셋은 서로 다르다.
+아래는 실제 `delivery/PUBLICATION_INDEX.json`에 기록된 S01–S10의 상태다. 각 단계는 한 쌍의 이론/코딩 단계에 대응한다. Source archive는 해당 단계의 게시 파일과 정확한 inherited input을 담으며, 41-file scientific payload와 전체 archive 파일셋은 서로 다르다.
 
 | Source 단계 | Commit 접두어 | Workflow | 과학 DAG | 실제 전달 |
 |---|---|---:|---:|---|
@@ -157,7 +157,8 @@ CR의 새 `CR_PHYS02_HE_EVENT_UNION_V1`는 고정 He marginal에서 `0 <= C_cros
 | S07 | `8792ccaee20d` | 14/20 | 19/36 | Git 게시·dual provider ACK |
 | S08 | `f7a53864aaff` | 16/20 | 19/36 | Git 게시·dual provider ACK |
 | S09 | `a2c62aaad239` | 18/20 | **21/36** | Git 과학 수용·dual provider ACK |
-| S10 / FINAL | 후속 실제 receipt는 아래 10절 참조 | 20/20 | 21/36 | 이 source 준비 시점에는 S10 게시·백업 대기 |
+| S10 | `573dcf25d155` | 20/20 | 21/36 | Git 게시·dual provider ACK·양쪽 크기 일치 |
+| FINAL metadata | own receipt는 PR150 참조 | 20/20 | 21/36 | source 자체에는 S10까지의 실제 receipt 포함 |
 
 S09 archive는 `WU_MOLECULAR_R10_S09_SOURCE_20261028_a2c62aaad239.zip`, **1,683,903 bytes**, source files **90**, SHA256 `c9bcdef224f8bf83927114393ca98958737a6165b436d40b7b27e70af2206673`이다. 로컬 CRC PASS와 모든 member identity 일치, Drive SUCCESS 및 Dropbox COMPLETED, 양쪽 metadata size 일치가 실제 기록돼 있다. Drive ID는 `13Y-dCJNoN0eJe41n9d4xyYyCa1YsGtMk`, Dropbox ID는 `id:BSpOijBcT10AAAAAAEDJAQ`다.
 
@@ -269,9 +270,11 @@ REI e77bc7ec… 9/20 + 10 provider ACK, CR e91a0d19… 새 조건부 event union
 Central 22a99cb9…, HE 307fee38…, REC 6fdf2cca…, Vigil 7eb2dd0f…는 불변.
 이 변화로 고정 WU R7 source가 자동 무효화되지 않는다. 전역 입력 부재를 주장하지 마라.
 
-S01–S09는 실제 Git 게시와 dual provider ACK가 있다. R10 provider original GET은 NOT_RUN.
+S01–S10의10/10단계에 실제 Git 게시와 dual provider ACK 및 양쪽 크기 일치가 있다.
+R10 provider original GET은 NOT_RUN.
 S09 ZIP 1,683,903 bytes / SHA256 c9bcdef224f8bf83927114393ca98958737a6165b436d40b7b27e70af2206673.
-실제 후속 S10/FINAL receipt가 존재하면 그 identity를 읽고 전달 결산만 갱신하라.
+실제 S10 source는 573dcf25d155b50f556c8d0a9b09b2acf0fa31c5이다.
+FINAL metadata own receipt는 PR150과 종료 응답에서 읽고 필요 시 전달 결산만 갱신하라.
 FINAL archive 자신의 ACK를 그 source에 소급 삽입하지 마라.
 
 권한은 root의 expected-SHA/force=false additive branch/PR150 게시 및 Drive+Dropbox 백업에
@@ -291,5 +294,20 @@ rho_A(tau)<=min(1,rho_K(tau)+tau*M_w*||H||_1) 후보를 별도 증명·심사하
 ## 10. 실제 전달 closeout
 
 <!-- FINAL_DELIVERY_BEGIN -->
-이 source 준비 시점의 실제 stage 전달은 S01–S09이며, S10 게시·백업은 다음 작업이다. 실제 S10 완료 후 여기에 source/ZIP/provider identity를 채운다. FINAL metadata의 own receipt는 PR150과 종료 메시지에서 확인한다. S09 과학 payload와 DAG21/36을 유지한다.
+R1–R10/C1–C10은 **20/20**, 단계별 source 게시·이중 백업은 **10/10** 완료다. 과학 DAG는 **21/36**이며 과학 payload41개는 S09 이후 동일하다.
+
+| S10 실제 식별자 | 값 |
+|---|---|
+| source commit | `573dcf25d155b50f556c8d0a9b09b2acf0fa31c5` |
+| source tree | `3835bf6b4ee0c10cb746afba122f976673c252fb` |
+| archive | `WU_MOLECULAR_R10_S10_SOURCE_20261028_573dcf25d155.zip` |
+| bytes | 1,783,725 |
+| SHA-256 | `13669f17318d2f9492a4f6cb45f13789b8eeb5e76f3cc2c8c0a50347e41e1b69` |
+| Drive | [1I1yJYkMTSuZcYy7SjAPSS7zuuquc_6Ba](https://drive.google.com/file/d/1I1yJYkMTSuZcYy7SjAPSS7zuuquc_6Ba/view?usp=drivesdk) |
+| Dropbox ID | `id:BSpOijBcT10AAAAAAEDJBQ` |
+| 검증 | 로컬 CRC 및 모든 member SHA 일치, 양쪽 실제 ACK와 metadata 크기 일치. Provider original GET은 NOT_RUN. |
+
+이 FINAL metadata source에는 S10의 실제 receipt가 포함된다. 그 source의 own commit/ZIP/두 provider receipt는 미래에만 정해지므로 own source 안에 자기 참조로 쓰지 않고 [PR150](https://github.com/cosmosapjw-quantum/WU088_HH/pull/150)과 종료 메시지에 정확히 기록한다. 다음 대화에서는 이 S09 과학 identity, S10 단계 identity, PR150의 FINAL 전달 identity를 각각의 역할로 사용한다.
+
+최종 전달이 끝나도 새 과학 실행이나 물리 채택이 추가되는 것은 아니다. R10 primary/reference/CAS 잔여0/0/0과 physical/central delta0을 유지한다.
 <!-- FINAL_DELIVERY_END -->
