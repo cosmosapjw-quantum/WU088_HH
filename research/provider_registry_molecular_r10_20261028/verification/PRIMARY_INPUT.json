@@ -1,0 +1,166 @@
+{
+  "schema": "WU_R10_FIXED_PRIMARY_INPUT_V1",
+  "unit": "WU_FULL_GENERATOR_TRIANGULAR_R10",
+  "bits": 128,
+  "degree": 96,
+  "hd_cells": 192,
+  "modes": [
+    "raw",
+    "capped"
+  ],
+  "sources": {
+    "R7_input": {
+      "path": "research/provider_registry_molecular_r7_20261027/verification/PRIMARY_INPUT.json",
+      "sha256": "3ff9c2535e5c0ce6ffa5e9671de15aad6649e0996cd9b9e275cc290facd8d330"
+    },
+    "R7_primary": {
+      "path": "research/provider_registry_molecular_r7_20261027/raw/PRIMARY_RESULTS.json",
+      "sha256": "6eaf3c0eed7968cf4023180e15373a180bb5b1bab2e56cd4a8547387ed337a15"
+    },
+    "R9_primary": {
+      "path": "research/provider_registry_molecular_r9_20261028/raw/PRIMARY_RESULTS.json",
+      "sha256": "494fad7b2195dfbf16857901127cdaa676d83cb1beafbf2c081122f99ba2d8d7"
+    }
+  },
+  "hd_case_ids": [
+    "two_state_no_reaction",
+    "two_state_nonlinear",
+    "two_state_coarse_source_defect",
+    "saved_native_nine_state_K_conditional_feedback"
+  ],
+  "controls": [
+    {
+      "id": "zero",
+      "lam": "0",
+      "c": "0",
+      "d": "0",
+      "g_r": "0",
+      "g_e": "0",
+      "delta": "1/8",
+      "initial": [
+        "2",
+        "3"
+      ],
+      "cells": 8
+    },
+    {
+      "id": "constant_forcing",
+      "lam": "0",
+      "c": "0",
+      "d": "0",
+      "g_r": "2",
+      "g_e": "3",
+      "delta": "1/8",
+      "initial": [
+        "1",
+        "2"
+      ],
+      "cells": 8
+    },
+    {
+      "id": "nilpotent",
+      "lam": "0",
+      "c": "2",
+      "d": "0",
+      "g_r": "3",
+      "g_e": "5",
+      "delta": "1/8",
+      "initial": [
+        "1/7",
+        "2/7"
+      ],
+      "cells": 8
+    },
+    {
+      "id": "damped_diagonal",
+      "lam": "1",
+      "c": "0",
+      "d": "-2",
+      "g_r": "1/100",
+      "g_e": "1/50",
+      "delta": "1/8",
+      "initial": [
+        "2/5",
+        "1/10"
+      ],
+      "cells": 8
+    },
+    {
+      "id": "resonance",
+      "lam": "2",
+      "c": "1/3",
+      "d": "-2",
+      "g_r": "1/5",
+      "g_e": "1/7",
+      "delta": "1/8",
+      "initial": [
+        "2/5",
+        "1/10"
+      ],
+      "cells": 8
+    },
+    {
+      "id": "lambda_zero",
+      "lam": "0",
+      "c": "1/4",
+      "d": "-1",
+      "g_r": "1/20",
+      "g_e": "1/25",
+      "delta": "1/8",
+      "initial": [
+        "2/5",
+        "1/10"
+      ],
+      "cells": 8
+    },
+    {
+      "id": "positive_d",
+      "lam": "1/2",
+      "c": "1/5",
+      "d": "1/3",
+      "g_r": "1/10",
+      "g_e": "1/20",
+      "delta": "1/8",
+      "initial": [
+        "2/5",
+        "1/10"
+      ],
+      "cells": 8
+    },
+    {
+      "id": "near_resonance_plus",
+      "lam": "2",
+      "c": "1/3",
+      "d": "-1999999999999999999999999999999/1000000000000000000000000000000",
+      "g_r": "1/5",
+      "g_e": "1/7",
+      "delta": "1/8",
+      "initial": [
+        "2/5",
+        "1/10"
+      ],
+      "cells": 8
+    },
+    {
+      "id": "near_resonance_minus",
+      "lam": "2",
+      "c": "1/3",
+      "d": "-2000000000000000000000000000001/1000000000000000000000000000000",
+      "g_r": "1/5",
+      "g_e": "1/7",
+      "delta": "1/8",
+      "initial": [
+        "2/5",
+        "1/10"
+      ],
+      "cells": 8
+    }
+  ],
+  "source_role": "same saved R7 exact fixtures/whole-box coefficients; R9 certified caps. No new ODE/source data",
+  "budget": {
+    "runs": 1,
+    "CPU_s": 60,
+    "wall_s": 90
+  },
+  "physical_consumer_admitted": false
+}

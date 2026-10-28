@@ -1,0 +1,93 @@
+{
+  "schema": "WU_R10_REFERENCE_INPUT_V1",
+  "unit": "WU_FULL_GENERATOR_TRIANGULAR_R10",
+  "precision_decimal_digits": 160,
+  "numeric_guard": "1e-80*max(1,abs(reference),abs(lower),abs(upper))",
+  "sample_atol": "2e-12",
+  "sample_rtol": "2e-10",
+  "precision_rationale": "Preexecution160digits accommodates exact d+lambda +/-1e-30 divided-difference controls without changing1e-80guard. Equal and zero branches selected with exact Fraction.",
+  "primary_runs": 1,
+  "CPU_limit_s": 60,
+  "wall_limit_s": 90,
+  "old_science_replay": 0,
+  "new_ODE_calls": 0,
+  "physical_consumer_admitted": false,
+  "core_path": "research/provider_registry_molecular_r10_20261028/src/full_generator_triangular.py",
+  "primary_input_path": "research/provider_registry_molecular_r10_20261028/verification/PRIMARY_INPUT.json",
+  "primary_runner_path": "research/provider_registry_molecular_r10_20261028/verification/run_primary.py",
+  "primary_result_path": "research/provider_registry_molecular_r10_20261028/raw/PRIMARY_RESULTS.json",
+  "source_files": [
+    {
+      "path": "research/provider_registry_molecular_r7_20261027/verification/PRIMARY_INPUT.json",
+      "bytes": 18260,
+      "sha256": "3ff9c2535e5c0ce6ffa5e9671de15aad6649e0996cd9b9e275cc290facd8d330"
+    },
+    {
+      "path": "research/provider_registry_molecular_r7_20261027/raw/PRIMARY_RESULTS.json",
+      "bytes": 351734,
+      "sha256": "6eaf3c0eed7968cf4023180e15373a180bb5b1bab2e56cd4a8547387ed337a15"
+    },
+    {
+      "path": "research/provider_registry_molecular_r7_20261027/raw/REFERENCE_RESULTS.json",
+      "bytes": 701155,
+      "sha256": "e403c7803c080fd4f26be71a93b782b02d874f80ef11c85a706bea71e2a743cd"
+    },
+    {
+      "path": "research/provider_registry_molecular_r9_20261028/raw/PRIMARY_RESULTS.json",
+      "bytes": 1276553,
+      "sha256": "494fad7b2195dfbf16857901127cdaa676d83cb1beafbf2c081122f99ba2d8d7"
+    }
+  ],
+  "required_frozen_sources": [
+    "research/provider_registry_molecular_r10_20261028/CONTRACT.json",
+    "research/provider_registry_molecular_r10_20261028/src/full_generator_triangular.py",
+    "research/provider_registry_molecular_r10_20261028/verification/PRIMARY_INPUT.json",
+    "research/provider_registry_molecular_r10_20261028/verification/REFERENCE_INPUT.json",
+    "research/provider_registry_molecular_r10_20261028/verification/run_primary.py",
+    "research/provider_registry_molecular_r10_20261028/verification/run_reference.py",
+    "research/provider_registry_molecular_r7_20261027/verification/PRIMARY_INPUT.json",
+    "research/provider_registry_molecular_r7_20261027/raw/PRIMARY_RESULTS.json",
+    "research/provider_registry_molecular_r7_20261027/raw/REFERENCE_RESULTS.json",
+    "research/provider_registry_molecular_r9_20261028/raw/PRIMARY_RESULTS.json"
+  ],
+  "expected_HD_ids": [
+    "two_state_no_reaction",
+    "two_state_nonlinear",
+    "two_state_coarse_source_defect",
+    "saved_native_nine_state_K_conditional_feedback"
+  ],
+  "expected_HD_cells": 192,
+  "expected_control_count": 9,
+  "source_root": "research/provider_registry_molecular_r7_20261027",
+  "cap_root": "research/provider_registry_molecular_r9_20261028",
+  "reference_construction": {
+    "generator": "Fraction stochastic Euler T=I+hA; delta=half maximum pair-column l1 distance; lambda=(1-delta)/h. K,H,A(wlower),A(wupper) independently.",
+    "matrix": "Unshifted analytic3x3 triangular exponential using Decimal exp and scalar divided differences; no shifted matrix Taylor.",
+    "endpoint": "Decimal160 recurrence; raw analytic semigroup final crosscheck; capped sameR9point/cellminima.",
+    "containment": "All193savedR7clocks; exact clock identity; sample trajectory values are never caps."
+  },
+  "source_hashes_expected": {
+    "R9_primary": "494fad7b2195dfbf16857901127cdaa676d83cb1beafbf2c081122f99ba2d8d7",
+    "R7_reference": "e403c7803c080fd4f26be71a93b782b02d874f80ef11c85a706bea71e2a743cd"
+  },
+  "failure_preservation": "Exclusive output creation; no existing reference result overwrite. Nonzero exit on any FAIL; first_failure and first numericalexamples preserved.",
+  "expected_HD_grids": {
+    "two_state_no_reaction": {
+      "delta": "1/256",
+      "cells": 192
+    },
+    "two_state_nonlinear": {
+      "delta": "1/256",
+      "cells": 192
+    },
+    "two_state_coarse_source_defect": {
+      "delta": "1/256",
+      "cells": 192
+    },
+    "saved_native_nine_state_K_conditional_feedback": {
+      "delta": "180925139433306555349329664076074856020734351040063381311652475012364265062400/381278994305842111336547231457422955269255660722928784591943370443365273692999",
+      "cells": 192
+    }
+  },
+  "saved_clock_identity": "abs(savedbinary64-exact_rational_clock)<=1binary64ULP; rationalgridboundtoR9sourceexactly"
+}
