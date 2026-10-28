@@ -146,6 +146,15 @@
       "action": "publication packet stdout",
       "observation": "large JSON stdout truncation before mutation",
       "resolution": "exact chunked read with length checks; no scientific rerun"
+    },
+    {
+      "class": "postprocessing_artifact",
+      "action": "first endpoint PNG generation",
+      "observation": "incomplete IDAT checksum and size mismatch; cause NOT_ESTABLISHED",
+      "first_evidence": "analysis/failures/FIRST_FIGURE_FAILURE.json",
+      "preserved_bytes": "analysis/failures/BOUND_ENDPOINTS_FIRST_TRUNCATED.png.bin",
+      "resolution": "atomic replacement and saved-output-only regeneration; PNG3/SVG3 valid and final6SHA match; no scientific rerun",
+      "closure": "analysis/PLOT_ARTIFACT_STATUS.json"
     }
   ],
   "execution_environment": {
@@ -161,5 +170,13 @@
   "scientific_execution_complete": true,
   "new_scientific_process_OS_CPU_s": 1.4774349999999998,
   "new_scientific_process_OS_CPU_s_decimal": "1.477435",
-  "new_scientific_process_count": 2
+  "new_scientific_process_count": 2,
+  "saved_output_postprocessing": {
+    "scientific_reruns": 0,
+    "source": "analysis/plot_saved_results.py",
+    "summary": "analysis/SAVED_OUTPUT_SUMMARY.json",
+    "figures": "figures/FIGURE_MANIFEST.json",
+    "C9_F02": "right endpoint approached from left; corrected before publication",
+    "old_temporary_PNG": "removed; identity preserved in artifact-status record"
+  }
 }
