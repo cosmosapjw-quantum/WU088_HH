@@ -3,11 +3,36 @@
   "unit": "WU_FULL_GENERATOR_TRIANGULAR_R10",
   "primary": {
     "allowed": 1,
-    "consumed": 0,
-    "remaining": 1,
-    "status": "NOT_RUN",
+    "consumed": 1,
+    "remaining": 0,
+    "status": "COMPLETED",
     "CPU_limit_s": 60,
-    "wall_limit_s": 90
+    "wall_limit_s": 90,
+    "process": {
+      "schema": "WU_R10_ACTUAL_PROCESS_V1",
+      "lane": "primary",
+      "source_commit": "9d07376c6f0aa151fd9510e234826b9cfa43a1a9",
+      "started_utc": "2026-10-28T00:21:52.380327+00:00",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/16df962c9b4e/WU088_HH/research/provider_registry_molecular_r10_20261028/verification/run_primary.py"
+      ],
+      "CPU_limit_s": 60,
+      "wall_limit_s": 90,
+      "attempt": 1,
+      "finished_utc": "2026-10-28T00:21:52.695210+00:00",
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 0.299607,
+      "OS_system_CPU_s": 0.014372,
+      "OS_CPU_s": 0.313979,
+      "wall_s": 0.31472342899996875,
+      "includes_imports_and_serialization": true,
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+      "old_science_replay": 0,
+      "new_ODE_runs": 0
+    }
   },
   "reference": {
     "allowed": 1,
@@ -19,10 +44,21 @@
   },
   "CAS": {
     "allowed": 1,
-    "consumed": 0,
-    "remaining": 1,
-    "status": "NOT_RUN",
-    "wall_limit_s": 30
+    "consumed": 1,
+    "remaining": 0,
+    "status": "COMPLETED_QUALIFIED",
+    "wall_limit_s": 30,
+    "attempt": {
+      "schema": "WU_R10_CAS_ATTEMPT_V1",
+      "source_commit": "9d07376c6f0aa151fd9510e234826b9cfa43a1a9",
+      "script_sha256": "a2fa0b32df0a00068b538553e7c49635c6a0fe95947f9c1bb71b8cd2837121a7",
+      "script_bytes": 1530,
+      "runs": 1,
+      "wall_limit_s": 30,
+      "created_utc": "2026-10-28T00:21:58.144790+00:00"
+    },
+    "result": "raw/WOLFRAM_ASSESSMENT.json",
+    "CPU_s": null
   },
   "old_remaining": {
     "R9": [
@@ -71,6 +107,13 @@
       "action": "initial materialization",
       "reason": "apply_patch appended final LF; large contentsGET returnedemptycontent",
       "resolution": "Gitblob retrieval for largeJSON; originalSHA/size normalized before science; emptyfiles neverused"
+    },
+    {
+      "class": "symbolic_warning",
+      "status": "PRESERVED_QUALIFIED",
+      "result": "raw/WOLFRAM_TOOL_RESPONSE.json",
+      "observed": "Infinity/Power warnings with15zero residuals; causeNOT_ESTABLISHED",
+      "next_action": "Use direct analytic limit proof and already-planned independent reference; no additional CAS"
     }
   ],
   "execution_environment": {

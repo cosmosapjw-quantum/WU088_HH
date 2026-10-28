@@ -120,7 +120,13 @@
       "observed": "The proof describes an optional scalar max construction, while actual core uses augmented Mplus with first diagonal0 and second max(d,0), followed by raw max(reported point) or capped source minima. Contract already names Mplus.",
       "impact": "The theorem is sound; explicit theorem-to-code description should identify the actually implemented majorant.",
       "smallest_correction": "Add a paragraph proving Mplus>=M entrywise, Mplus>=0, exp(s Mplus)z is componentwise monotone for nonnegative z, and max/min rounding/cap steps preserve coverage.",
-      "status": "OPEN"
+      "status": "CLOSED",
+      "closed_utc": "2026-10-28T00:21:58.472593+00:00",
+      "closure_evidence": {
+        "path": "theory/PROOF_KO.md",
+        "sha256": "73d10567d7b7bc7dea3a27b370934d25abcedc6390ea8854073e88723bb3165c",
+        "inserted_repair_paragraph_exact": true
+      }
     }
   ],
   "material_block_now_findings": 0,
@@ -128,7 +134,6 @@
   "production_imports": 0,
   "old_science_replay": 0,
   "pending_evidence": [
-    "Actual PREEXECUTION_FREEZE and frozen source identities",
     "One actual primary plus independent reference output/process record",
     "Actual bounded CAS output interpreted at its returned scope",
     "Final source/report claim consistency after results"
@@ -161,5 +166,79 @@
     "controls": "zero, constant forcing, nilpotent, damped diagonal, exact resonance, lambda zero, positive d, near resonance +/-1e-30",
     "precision_fixed_before_execution": "Decimal160; guard1e-80 unchanged",
     "scientific_runner_executions": 0
-  }
+  },
+  "freeze_review": {
+    "status": "PASS_SCOPED",
+    "reviewed_utc": "2026-10-28T00:21:58.472643+00:00",
+    "path": "/workspace/scratch/16df962c9b4e/WU088_HH/research/provider_registry_molecular_r10_20261028/raw/PREEXECUTION_FREEZE.json",
+    "bytes": 3507,
+    "sha256": "0572c57346441b25c6f3648191083c7dc20bcf01eeafa32406e2cedfb4c573f0",
+    "source_commit_parent_reported": "9d07376c6f0aa151fd9510e234826b9cfa43a1a9",
+    "frozen_unique_files": 14,
+    "required_reference_membership": "PASS",
+    "files": [
+      {
+        "path": "research/provider_registry_molecular_r10_20261028/CONTRACT.json",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r10_20261028/theory/PROOF_KO.md",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r10_20261028/theory/PREMISES_AND_MAP_KO.md",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r10_20261028/src/full_generator_triangular.py",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r10_20261028/verification/PRIMARY_INPUT.json",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r10_20261028/verification/REFERENCE_INPUT.json",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r10_20261028/verification/run_primary.py",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r10_20261028/verification/run_reference.py",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r10_20261028/verification/execute_once.py",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r10_20261028/verification/wolfram_new_checks.wl",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r7_20261027/verification/PRIMARY_INPUT.json",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r7_20261027/raw/PRIMARY_RESULTS.json",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r7_20261027/raw/REFERENCE_RESULTS.json",
+        "bytes_and_SHA256_match": true
+      },
+      {
+        "path": "research/provider_registry_molecular_r9_20261028/raw/PRIMARY_RESULTS.json",
+        "bytes_and_SHA256_match": true
+      }
+    ],
+    "Python_AST_pass": 4,
+    "scientific_imports": 0,
+    "scientific_runner_executions": 0,
+    "new_supervisor_read": "execute_once.py records exclusive attempts, full child OS CPU and serialization,60CPU90wall limits, frozen source identities, actual sourcecommit provenance; no execution by reviewer",
+    "CAS_script_read": "15 planned algebra residuals; actual CAS output remains pending"
+  },
+  "material_open_findings": 0
 }
