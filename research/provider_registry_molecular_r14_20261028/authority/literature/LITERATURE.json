@@ -1,0 +1,122 @@
+{
+  "status": "PRIMARY_SOURCE_CONTEXT_WITH_MANUAL_NEW_DERIVATION_NOT_INDEPENDENT_REVIEW",
+  "actual_tools": {
+    "SciSpace_searches": 1,
+    "Exa_searches": 1,
+    "Exa_fetch_calls": 1,
+    "Exa_requested_URLs": 3,
+    "Exa_successfully_fetched_URLs": 2,
+    "Exa_failed_URLs": 1,
+    "scientific_python_runs": 0,
+    "CAS_runs": 0,
+    "ODE_runs": 0
+  },
+  "actual_retrieval_scope": "SciSpace returned 10 paper records; Exa search returned 8 results. These counts do not imply full-text reading of all results. A single Exa fetch requested three primary-source URLs.",
+  "sources": [
+    {
+      "id": "LEROY2012",
+      "authors": "Richard Leroy",
+      "title": "Convergence under Subdivision and Complexity of Polynomial Minimization in the Simplicial Bernstein Basis",
+      "journal": "Reliable Computing 17(1), 2012, pp.11–21",
+      "URL": "https://interval.louisiana.edu/reliable-computing-journal/volume-17/reliable-computing-17-pp-11-21.pdf",
+      "SciSpace_unique_id": "2mya8kfws6",
+      "read_scope": "Actual Exa PDF-text fetch, 26000-character request cap per URL. Read Sections 2.1–2.3 and 3.1–3.2 including Proposition 2.7, Algorithm 2.13, Theorem 2.17, Algorithm 3.4 and Theorem 3.6. Do not reconstruct garbled OCR constants.",
+      "supports": "Bernstein coefficient hull encloses polynomial range; subdivision coefficients are convex combinations computed by de Casteljau; subdivision and branch-and-bound give certified polynomial optimization bounds.",
+      "use": "Supports exact rational restriction/hull framework. R14 derivative-vertex partition, 96 bisections and M_B*2^-96 gap are manually derived here, not attributed to this paper."
+    },
+    {
+      "id": "FAROUKI_AUTHOR_SLIDES",
+      "authors": "Rida T. Farouki",
+      "title": "The Bernstein polynomial basis: a centennial retrospective",
+      "format": "Author-hosted lecture slides; distinguish from related journal article",
+      "URL": "https://faculty.engineering.ucdavis.edu/farouki/wp-content/uploads/sites/51/2021/07/Bernstein-polynomial-basis.pdf",
+      "related_journal_DOI": "10.1016/j.cagd.2012.03.001",
+      "read_scope": "Actual Exa PDF-text fetch, 26000-character request cap per URL. Read basis nonnegativity/partition of unity, de Casteljau subdivision, convex hull, derivative coefficient differences, degree elevation, power/Bernstein transformation slides.",
+      "supports": "Classical basis identities and geometric meaning of coefficients.",
+      "use": "Context and formula correspondence. No broad floating-point optimality claim is imported into the exact-rational R14 algorithm. Fetched slides are not represented as the journal full text."
+    },
+    {
+      "id": "FAROUKI_NEFF1990",
+      "authors": "Rida T. Farouki; C. A. Neff",
+      "title": "On the numerical condition of Bernstein–Bézier subdivision processes",
+      "DOI": "10.1090/S0025-5718-1990-1035933-0",
+      "URL": "https://doi.org/10.1090/S0025-5718-1990-1035933-0",
+      "read_scope": "Exa search highlights only. Requested direct DOI fetch failed with CRAWL_HTTP_406; failure remains in the raw response.",
+      "supports": "Search highlights mention Bernstein subdivision conditioning and stochastic subdivision matrices.",
+      "use": "Context only; not required for the new proof. No full-text read or theorem verification claimed."
+    }
+  ],
+  "reused_sources": [
+    {
+      "id": "HO2010",
+      "authors": "Marlis Hochbruck; Alexander Ostermann",
+      "title": "Exponential integrators",
+      "DOI": "10.1017/S0962492910000048",
+      "URL": "https://na.math.kit.edu/download/papers/acta-final.pdf",
+      "read_scope": "Reused R13 actual source record; no fresh R14 fetch. R13 author-hosted manuscript fetch, first19000characters including Section2.2 equations2.8–2.11.",
+      "supports": "Integral phi_k definition and exponential polynomial quadrature.",
+      "source_record": "research/provider_registry_molecular_r13_20261028/authority/literature/LITERATURE.json"
+    },
+    {
+      "id": "AMH2011",
+      "authors": "Awad H. Al-Mohy; Nicholas J. Higham",
+      "title": "Computing the Action of the Matrix Exponential, with an Application to Exponential Integrators",
+      "DOI": "10.1137/100788860",
+      "URL": "https://eprints.maths.manchester.ac.uk/1591/1/alhi11.pdf",
+      "read_scope": "Reused R13 actual source record; no fresh R14 fetch. R13 author-institution manuscript fetch, first19000characters including Section2 equations2.3–2.5 and Theorem2.1.",
+      "supports": "Polynomial inhomogeneity expressed with phi functions.",
+      "source_record": "research/provider_registry_molecular_r13_20261028/authority/literature/LITERATURE.json"
+    }
+  ],
+  "formula_mapping": {
+    "retained_phi": "phi_k(z)=integral_0^1 exp((1-theta)z)*theta^(k-1)/(k-1)! dtheta",
+    "new_positive_B3_beta": "beta_i(n)=binomial(3,i)*i!*(n+3-i)!/(n+4)! for i=0,1,2,3",
+    "production_choice": "Exact source-vertex preprocessing; positive Simpson overlap products; B3 moments from nonnegative beta series and sign reversal.",
+    "independent_reference": "J0/J1/J2 signed primitives, independent power cubic, monomial exponential moments through phi4.",
+    "root_enclosure": "At most two critical roots isolated by rational derivative-vertex monotone branches, 96 bisections each; restricted Bernstein hull upper and midpoint lower give gap <= M_B*2^-96."
+  },
+  "alternatives_considered": [
+    {
+      "method": "Automatically reuse monotone quadratic positivity lemma for cubic",
+      "decision": "Rejected as an intermediate inference",
+      "reason": "Explicit monotone nonnegative cubic has negative B3 coefficient; local counterexample only."
+    },
+    {
+      "method": "Exact algebraic critical roots as E time knots",
+      "decision": "Not selected",
+      "reason": "Would introduce algebraic lengths into propagation; rational root boxes suffice for whole-R and leave E grid rational."
+    },
+    {
+      "method": "Uniform Bernstein subdivision tree",
+      "decision": "Not selected",
+      "reason": "Quadratic derivative permits at most two branches with a small fixed bisection budget."
+    },
+    {
+      "method": "Accept only nonnegative original B2 coefficients",
+      "decision": "Expanded to full nonnegative quadratic cone",
+      "reason": "Exact source-vertex preprocessing costs at most factor3 effective cells and admits signed middle coefficient inputs."
+    }
+  ],
+  "novelty_scope": "Classical Bernstein and exponential-integration tools are reused. New project-level assembly and finite contract are derived for the retained conditional WU staircase-memory comparison. No literature-wide originality or broad strong no-go claim.",
+  "raw_retrieval_files": {
+    "SCISPACE_RESPONSE.json": {
+      "bytes": 42451,
+      "sha256": "14c0e15435d649503c1720b917b2d043d361a07615f001bdc3f3b08e569d0173"
+    },
+    "EXA_SEARCH_RESPONSE.json": {
+      "bytes": 18970,
+      "sha256": "a566024854ad8c548ab464bbd99757e378c56f2f95f77a3c04cafb4a2a61cdd6"
+    },
+    "EXA_PRIMARY_RESPONSE.json": {
+      "bytes": 45140,
+      "sha256": "fe05622f2483b0c4420729fbf3a2f21ce0c68152b8d1354e6fdc3bcdf1f53c3d"
+    }
+  },
+  "copyright_storage": "Actual raw responses are scratch evidence only. Publish short paraphrases, original URLs, read scopes and response hashes; exclude raw full-text response JSON from repository/source ZIP.",
+  "open_obligations": [
+    "Root contract and code/input freeze.",
+    "Actual bounded primary/reference/CAS runs after allowance.",
+    "Independent proof/code review; this author is not the independent reviewer.",
+    "Scoped adoption and actual stage/provider receipts."
+  ]
+}

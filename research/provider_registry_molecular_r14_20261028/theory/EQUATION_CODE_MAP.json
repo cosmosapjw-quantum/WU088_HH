@@ -1,0 +1,61 @@
+{
+  "schema": "WU_R14_EQUATION_CODE_MAP_V1",
+  "status": "ACTUAL_AUTHORED_SOURCE_MAP; execution not yet run",
+  "production_module": "src/quadratic_convolution.py",
+  "reference_module": "verification/run_reference.py",
+  "rows": [
+    {
+      "equation": "g=b0(1-u)^2+2b1u(1-u)+b2u^2",
+      "input": "original g_r/g_e triplets",
+      "implementation": "exact nonnegativity; source vertex union and de Casteljau restriction",
+      "verification": "negative-inner valid, interior-negative reject, function equivalence"
+    },
+    {
+      "equation": "F=sum_j,k q^k*int_L^U g_r(s)ds",
+      "input": "effective source + global original t0",
+      "implementation": "positive Simpson B1 times B2 -> B3 on rational translated base cells, one coefficient build per cell",
+      "verification": "independent J0/J1/J2 primitives; global-memory control"
+    },
+    {
+      "equation": "Pprime=A*u^2+B*u+C",
+      "input": "stored B3 cubic",
+      "implementation": "degree reduction, rational derivative vertex, exact roots and 96-bisection sign boxes",
+      "verification": "independent analytic roots; double/endpoint/two-root cases; exact bracket/gap checks"
+    },
+    {
+      "equation": "sup P in [L,U],U-L<=M_B*2^-96",
+      "input": "stored cubic and complete critical candidates",
+      "implementation": "de Casteljau rootbox hull and midpoint witness; actual endpoint/left limit distinguished",
+      "verification": "analytic extrema and exact coefficient identities"
+    },
+    {
+      "equation": "E_next=exp(z)E_left+sum_i W_i(z,dt)Q_i",
+      "input": "positive cubic Q=cR+g_e; fixed signed d",
+      "implementation": "dyadic128 positive beta Taylor96; sign reversal for negative z",
+      "verification": "independent Decimal160 phi1..phi4 and exact d0 controls"
+    },
+    {
+      "equation": "whole E<=max(E_left,Y(dt))",
+      "input": "exact whole-R upper, g_e hull, left endpoint upper",
+      "implementation": "constant nonnegative forcing majorant and monotone Y",
+      "verification": "reference formula and endpoint coverage"
+    },
+    {
+      "equation": "original source/state/clock identity",
+      "input": "binding/certificate; FIXTURE_SOURCE bytes",
+      "implementation": "canonical WU_R14_WHOLE_FORCING_V1 SHA recomputation and full-A premise guards",
+      "verification": "actual source SHA and mutations reject; metadata is not physical verification"
+    }
+  ],
+  "call_path": "Fixed CASES.json -> primary run_case once each -> saved PRIMARY_RESULTS.json -> independent standalone reference -> saved-output figures.",
+  "unit_conversion": "No implicit rate/density/clock conversion. Arithmetic fixtures have explicit synthetic clock and state labels.",
+  "actual_functions": {
+    "input": "exact,validate,_triplets,_binding,canonical_forcing_sha256",
+    "source": "_source_vertex,_restrict,_preprocess",
+    "convolution": "run_case and stored R_cubic_cells",
+    "critical": "_critical,_supremum",
+    "weights": "bernstein3_weights,_tail",
+    "driver": "verification/run_primary.py; src/cli.py",
+    "reference": "standalone J primitives/power reconstruction/analytic roots/monomial_step"
+  }
+}

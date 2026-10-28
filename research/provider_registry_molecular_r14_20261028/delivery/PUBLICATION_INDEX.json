@@ -1,7 +1,42 @@
 {
   "schema": "WU_R14_PUBLICATION_INDEX_V1",
-  "completed_stage_dual_backups": 0,
-  "actual_provider_ACKs": 0,
-  "stages": [],
+  "completed_stage_dual_backups": 1,
+  "actual_provider_ACKs": 2,
+  "stages": [
+    {
+      "stage": "S01",
+      "source_commit": "bb960c3c293c34b4567873fb4328143b16301e59",
+      "source_tree": "d22de267570ced0158827d786c8d68f04df8e6e7",
+      "archive_name": "WU_MOLECULAR_R14_S01_SOURCE_20261028_bb960c3c293c.zip",
+      "archive_path": "/workspace/scratch/42de23091886/r14_work/delivery/WU_MOLECULAR_R14_S01_SOURCE_20261028_bb960c3c293c.zip",
+      "archive_bytes": 55527,
+      "archive_sha256": "3461a0e509a7396411ca8af43b0af633c6c7b64f23652cb938f0f581c0c42f64",
+      "source_files": 14,
+      "zip_members": 15,
+      "verification": {
+        "local_ZIP_CRC": "PASS",
+        "all_member_SHA256": "MATCH",
+        "provider_original_GET": "NOT_RUN"
+      },
+      "expected_parent": "0e6282010665bc9075e073cfd144c226d29e449b",
+      "force": false,
+      "workflow": "2/20",
+      "scientific_DAG": "27/44",
+      "Drive": {
+        "status": "SUCCESS",
+        "file_id": "1maA4WKqFGOxrVJS5_HWRDopxTbqYCAqi",
+        "url": "https://drive.google.com/file/d/1maA4WKqFGOxrVJS5_HWRDopxTbqYCAqi/view?usp=drivesdk",
+        "size": 55527
+      },
+      "Dropbox": {
+        "status": "COMPLETED",
+        "file_id": "id:BSpOijBcT10AAAAAAEFUvQ",
+        "path_display": "/BASS_DERIVATION_DOSSIERS_20260912/WU088_HH_R31S_NCP_REDESIGN_20260928/WU_MOLECULAR_R14_S01_SOURCE_20261028_bb960c3c293c.zip",
+        "size": 55527
+      },
+      "provider_ACKs": 2,
+      "own_receipt_inserted_into_source": false
+    }
+  ],
   "own_receipt_rule": "Each actual checkpoint receipt enters the next source; FINAL own receipt stays external in PR150 and closing response."
 }
