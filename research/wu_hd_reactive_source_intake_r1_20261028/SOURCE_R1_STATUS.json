@@ -1,0 +1,81 @@
+{
+  "schema": "WU_HD_REACTIVE_R17_R1_PUBLISHED_SOURCE_CHECKPOINT_V1",
+  "source_authority": {
+    "fixed_REI_handoff": "4824eec8526185b6b866a5e7e0dabdc624b5543c",
+    "WU_HLi_head": "ded0fa1590da39efa9ed8a449d93d191aaa0dbf8",
+    "WU_R16_parallel": "40281b24d79afaa3dc7f842ccd92f677bd87977f"
+  },
+  "R1": "COMPLETE_SCOPED_GOAL_SOURCE_PRECONTRACT",
+  "requested_next_node": "WU_HD_REACTIVE_STATE_SOURCE_NEXT",
+  "next_node_state": "PROPOSED_NOT_RUN",
+  "next_budget": "NOT_ALLOCATED",
+  "source_condition": "PUBLISHED_SUPPLEMENT_LOCATOR_ONLY_NO_RAW_BYTES",
+  "source_selection": {
+    "method": "SQM",
+    "doi": "10.1063/5.0128598",
+    "channel": "H+ + HD(v=0,j=2) -> D+ + H2(vprime=0,jprime=1)",
+    "supplement_url": "https://aipp.silverchair-cdn.com/jcp/article-supplement/2842276/zip/214302_1_epaps/",
+    "native_value": null,
+    "native_sha256": null,
+    "raw_row": null,
+    "explicit_consumer": null
+  },
+  "independent_sources": {
+    "alternative_TIQM": "Lepers et al 2019 arxiv:1902.01759; erratum doi:10.1093/mnras/staa3146, thermal spin correction 1/4 even H2 jprime, 3/4 odd H2 jprime",
+    "EMAA_inelastic_only": "10.17178/emaa_hd_rovibration_805a7aa5 H+ + HD -> H+ + HD does NOT supply reactive D+ + H2"
+  },
+  "math": {
+    "nu": [
+      -1,
+      -1,
+      1,
+      1
+    ],
+    "species": [
+      "H+",
+      "HD",
+      "D+",
+      "H2"
+    ],
+    "H1": 0,
+    "D": 0,
+    "charge": 0,
+    "cm3s_to_m3s": "1e-6",
+    "E": "deltaK+deltaUinternal+deltaUphoton=0 (no Q fabricated)"
+  },
+  "test": {
+    "selected_r1_preflight": "15/15_PASS",
+    "reported_initial_check": "14/15 first test expected rounded Decimal28; fixed independent test localcontext precision128",
+    "production_physical_admission": false,
+    "synthetic_only": true,
+    "Wolfram_exact": "3 exact conservation residuals zero; product spin fractions sum1",
+    "source_review": "NOT_RUN"
+  },
+  "backup": {
+    "ZIP_name": "WU_HD_REACTIVE_R17_R1_INTAKE_20261028_SOURCE.zip",
+    "bytes": 15413,
+    "sha256": "282617f8b4e369c5e515db9348a8fa799acedaa69d5a629b75f504a42d27686d",
+    "zip_members": 7,
+    "zip_CRC": "PASS",
+    "drive_url": "https://drive.google.com/file/d/1yP1hNY4sNGXbNdMhSJdcNV4JGP31QshR/view",
+    "drive_original_download_SHA256": "MATCH",
+    "Library_file": "libfile_c652d63ee05081918fe7015a03263a98",
+    "Dropbox_source_original": "NOT_UPLOADED_FOR_THIS_R1"
+  },
+  "DAG": {
+    "WU": "33/48",
+    "central_REI": "28/88",
+    "new_admission": 0
+  },
+  "physical": {
+    "rate_state": "INPUT_PENDING",
+    "named_REC_CR_consumer": "INPUT_PENDING",
+    "production": "NOT_ISSUED",
+    "HH_R10": "OFF",
+    "L4": false,
+    "central_delta": 0,
+    "physical_delta": 0
+  },
+  "stop_rule": "R2 and any native science require raw source bytes/SHA+exact v/j/temperature row+units and named consumer state/clock and new finite cumulative budget and independent source-row/C9 review. No old run replay.",
+  "claim_scope": "R1 readiness/source preflight only. This Git JSON references the verified 7-member complete source ZIP; no native source is asserted."
+}
