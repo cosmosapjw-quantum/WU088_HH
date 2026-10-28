@@ -22,7 +22,7 @@ R11 full-A block certificate와 R12의 exact nonaligned clock을 그대로 쓴�
 6. exact R와 outward E endpoint를 저장하고, whole-E는 같은 initial E upper와 constant forcing c*R_sup+max(g_e)로 계산한다.
 7. observation point는 정확히 같은 knot만 고른다. observation closed cell은 gap-free refined cell upper의 maximum을 반환한다.
 
-Taylor96은 |d_c|*(T-t0)<=16에서 양의 remainder를 포함한다. 128bit는 rounding grid이며 모든 enclosure 폭이2^-128이하라는 뜻이 아니다. 독립 reference는 Decimal160, 실행전 고정1e-80 relative guard이며 interval reference라는 명칭을 쓰지 않는다. 매우작은argument에서 phi closed form의 cancellation은 별도 직접series로 처리한다.
+Taylor96은 |d_c|*(T-t0)<=16에서 양의 remainder를 포함한다. 128bit는 rounding grid이며 모든 enclosure 폭이2^-128이하라는 뜻이 아니다. 독립 reference는 Decimal160, 실행전 고정1e-80 guard이며 scale=max(1,abs(reference),abs(lower),abs(upper))에 곱한다. 이 수치 corroboration을 interval reference라고 부르지 않는다. 매우작은argument에서 phi closed form의 cancellation은 별도 직접series로 처리한다.
 
 ## 입출력 의미
 

@@ -99,7 +99,9 @@ For truncation after n=N=96 and 0<=x<=16, let t_(i,N+1) be the first omitted exa
 sum_(n=0)^N t_(i,n) <= S_i(x)
  <= sum_(n=0)^N t_(i,n)+t_(i,N+1)/(1-x/(N+2)).
 
-The same positive Taylor tail bound applies to exp(x). Exact rational sums and outward dyadic128 conversion give production enclosures. For z<0, reciprocal bounds for exp(-z) and the swapped positive moments give the required enclosure. All interval products and sums have nonnegative inputs after the vertex lemma. This new moment proof extends the existing R11/R12 positive arithmetic pattern; it does not claim the old weight implementation already computes degree-two moments.
+The same positive Taylor tail bound applies to exp(x). The finite implementation encloses these exact rational sums by directed integer recurrences on scale S=2^128. Let x_l=floor(S*x), x_u=ceil(S*x), and start t_l=t_u=S. At step k set t_l=floor(t_l*x_l/(S*k)) and t_u=ceil(t_u*x_u/(S*k)). Induction gives t_l/S <= x^k/k! <= t_u/S. Multiplication by each positive rational beta coefficient followed by floor/ceil preserves that enclosure. The initial beta moment1/3 is also rounded in opposite directions. Add the exponential-tail bound evaluated at x_u/S to each upper moment; every beta multiplier is<=1, so this conservative common tail is valid. Summation and final dyadic conversion preserve the interval. Thus the code need not form a large exact Taylor sum before rounding.
+
+For z<0, reciprocal bounds for exp(-z) and the swapped positive moments give the required enclosure. All interval products and sums have nonnegative inputs after the vertex lemma. This new moment proof extends the existing R11/R12 positive arithmetic pattern; it does not claim the old weight implementation already computes degree-two moments.
 
 ## 7. Closed-cell E certificate
 

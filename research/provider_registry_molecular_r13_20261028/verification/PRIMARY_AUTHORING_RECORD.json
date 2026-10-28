@@ -1,0 +1,62 @@
+{
+  "schema": "WU_R13_PRIMARY_AUTHORING_V1",
+  "status": "AUTHORED_NOT_EXECUTED",
+  "author_role": "production_and_primary_author",
+  "scientific_imports": 0,
+  "scientific_runs": 0,
+  "compilations": 0,
+  "input_generation": "Administrative deterministic fixture serialization only; no production or reference imports.",
+  "valid_cases": 24,
+  "rejection_guards": 38,
+  "work_preflight": "(3*Nbase+1)*source_cells*(blocks+1)<=200000 before any overlap; cache needs2*Nbase+1 base endpoint/midpoint values and at mostNbase extra vertex values.",
+  "fixture_scientific_status": "ARITHMETIC_CONTROL_PREMISE",
+  "actual_input_file_binding": "source_sha256 authenticates actual FIXTURE_SOURCE.json bytes in primary; whole_forcing_source_sha256 is recomputed by production from canonical exact source/state/clock/knots/g_r/g_e payload (WU_R13_WHOLE_FORCING_V1), without proving the declared physical bound.",
+  "copied_arithmetic_sha256": "d9e36393afbee811d5818ca2f8ad2fdddbf8aa18b3a9d8a005adbde846ba63c3",
+  "copied_Q8192_not_used_by_new_path": true,
+  "files": [
+    {
+      "path": "src/affine_convolution.py",
+      "bytes": 20213,
+      "sha256": "bf1c08235f3dbdca1136699d41c9a6ca6b8d8459436911c5e7d4d506d1f168e0"
+    },
+    {
+      "path": "src/positive_arithmetic.py",
+      "bytes": 4247,
+      "sha256": "d9e36393afbee811d5818ca2f8ad2fdddbf8aa18b3a9d8a005adbde846ba63c3"
+    },
+    {
+      "path": "verification/run_primary.py",
+      "bytes": 13635,
+      "sha256": "18dd3a1f421e30f7f3cd94ff36ab1911f3f3a6b1d5499b8043ed303c8986a4cd"
+    },
+    {
+      "path": "verification/CASES.json",
+      "bytes": 181729,
+      "sha256": "9eaa99dd372da9d242fb57891791502929cfeaf0c74841766a9a3ee2f7806daf"
+    },
+    {
+      "path": "verification/FIXTURE_SOURCE.json",
+      "bytes": 41623,
+      "sha256": "51abe631b7b7fb295304efb0687f2abf0a41b5b1547e0f4bd8f2b54c453fe6c4"
+    }
+  ],
+  "preexecution_findings": [
+    {
+      "id": "R13-F02",
+      "class": "implementation_adapter_and_artifact_integrity",
+      "status": "CLOSED_PREEXECUTION",
+      "observed": "Root wrapper supplies --root; initial primary runner lacked that flag and used overwrite-capable write_text.",
+      "old_primary_sha256": "6fbf1266807ce2522a95313d12639012c2b750a168b87d5631176e878a54f9d3",
+      "correction": "Add --root with exact frozenleaf match; select defaults underroot; reject existing output early; use exclusive open(x) for final output.",
+      "resulting_primary_sha256": "18dd3a1f421e30f7f3cd94ff36ab1911f3f3a6b1d5499b8043ed303c8986a4cd",
+      "scientific_execution_before_correction": 0,
+      "old_primary_bytes_status": "NOT_PRESERVED; old hash was actually observed before correction; bytes were not reconstructed"
+    }
+  ],
+  "additional_preexecution_root_requirements": [
+    "Singletonstates1 enforcesR0=0 andeveryg_rendpoint0; positivefixture guard added.",
+    "Source and wholeforcing SHA256 format/equality, source_locator and scientific_status binding; allnewcasesARITHMETIC_CONTROL_PREMISE.",
+    "Result.parameters retains deep copies of binding and certificate for standalone traceability; stale forcing hash mutation is rejected."
+  ],
+  "independence": "Author received only reference schema, not reference implementation; root owns frozen science executions and independent C9."
+}

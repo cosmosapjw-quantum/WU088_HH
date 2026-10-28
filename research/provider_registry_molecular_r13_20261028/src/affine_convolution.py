@@ -8,7 +8,10 @@ to the chosen-rational-q ideal comparison. No predecessor runner or cap API
 is imported. The scalar coupling c is not the speed of light.
 """
 from bisect import bisect_right
+from copy import deepcopy
 from fractions import Fraction
+import hashlib
+import json
 
 from positive_arithmetic import BITS, DEGREE, DomainError, _ceil, _tail, down, up
 
@@ -100,19 +103,50 @@ def _text(value, name):
     return value
 
 
-def _binding(case, q, tau, t0, end, states):
+def canonical_forcing_sha256(source, gr, ge, binding):
+    """Hash canonical exact forcing data plus its source/state/clock identity.
+
+    This authenticates the declared bound function, not its physical validity.
+    The separate source_sha256 names the supplied external source artifact.
+    """
+    payload = {"schema": "WU_R13_WHOLE_FORCING_V1",
+               "source_id": binding["source_id"], "clock_id": binding["clock_id"],
+               "clock_unit": binding["clock_unit"], "state_order": binding["state_order"],
+               "source_knots": [str(x) for x in source],
+               "g_r": [[str(x) for x in pair] for pair in gr],
+               "g_e": [[str(x) for x in pair] for pair in ge]}
+    data = (json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
+    return hashlib.sha256(data).hexdigest()
+
+
+def _binding(case, q, tau, t0, end, states, source, gr, ge):
     binding, cert = case.get("binding"), case.get("certificate")
     if not isinstance(binding, dict) or not isinstance(cert, dict):
         raise DomainError("Explicit binding and full-A certificate required")
-    for key in ("source_id", "clock_id", "clock_unit", "full_A_family_id"):
+    for key in ("source_id", "clock_id", "clock_unit", "full_A_family_id", "source_locator"):
         value = _text(binding.get(key), "binding." + key)
         if cert.get(key) != value:
             raise DomainError("Certificate binding mismatch: " + key)
+    for key in ("source_sha256", "whole_forcing_source_sha256"):
+        value = binding.get(key)
+        if (not isinstance(value, str) or len(value) != 64
+                or any(ch not in "0123456789abcdef" for ch in value)):
+            raise DomainError("Source SHA-256 identity required: " + key)
+        if cert.get(key) != value:
+            raise DomainError("Certificate source SHA-256 mismatch: " + key)
+    status = binding.get("scientific_status")
+    if status not in ("ARITHMETIC_CONTROL_PREMISE", "CERTIFIED_FULL_A_BLOCK") or cert.get("scientific_status") != status:
+        raise DomainError("Explicit scientific_status binding required")
     order = binding.get("state_order")
     if (not isinstance(order, list) or len(order) != states
             or any(not isinstance(x, str) or not x or len(x) > 128 for x in order)
             or len(set(order)) != states or cert.get("state_order") != order):
         raise DomainError("Certificate state order mismatch")
+    if (binding.get("whole_forcing_hash_format") != "WU_R13_WHOLE_FORCING_V1"
+            or cert.get("whole_forcing_hash_format") != "WU_R13_WHOLE_FORCING_V1"):
+        raise DomainError("Canonical whole forcing hash format required")
+    if canonical_forcing_sha256(source, gr, ge, binding) != binding["whole_forcing_source_sha256"]:
+        raise DomainError("Canonical whole forcing SHA-256 mismatch")
     if cert.get("generator") != "A=K+wH;H=pi*d^T-diag(d)":
         raise DomainError("Full-A generator declaration required")
     flags = ("fixed_K_pi_d", "full_w_box", "all_start_times", "zero_mass_residual",
@@ -164,7 +198,9 @@ def validate(case):
         raise DomainError("abs(d)*horizon exceeds16")
     gr = _pairs(case.get("g_r"), len(source) - 1, "g_r")
     ge = _pairs(case.get("g_e"), len(source) - 1, "g_e")
-    binding, cert = _binding(case, q, tau, source[0], source[-1], states)
+    if states == 1 and (r0 != 0 or any(value != 0 for pair in gr for value in pair)):
+        raise DomainError("Singleton zero-mass residual requires R0=0 and all g_r endpoints=0")
+    binding, cert = _binding(case, q, tau, source[0], source[-1], states, source, gr, ge)
     return {"q": q, "tau": tau, "c": c, "d": d, "r0": r0, "e0": e0,
             "source": source, "obs": obs, "gr": gr, "ge": ge,
             "t0": source[0], "T": source[-1], "states": states,
@@ -284,9 +320,6 @@ def run_case(case):
         fcache[time] = total
         return total
 
-    def point_r(time):
-        return add(mul(kernel(time), p["r0"]), forcing(time))
-
     polynomials, vertices = [], []
     for left, right in zip(base, base[1:]):
         duration = sub(right, left)
@@ -365,7 +398,8 @@ def run_case(case):
         observation_whole.append([max(x[0] for x in subset), max(x[1] for x in subset)])
     return {
         "parameters": {"q": q, "tau": tau, "c": c, "d": d, "initial": [p["r0"], p["e0"]],
-                       "t0": t0, "T": end, "states": p["states"], "full_blocks": blocks},
+                       "t0": t0, "T": end, "states": p["states"], "full_blocks": blocks,
+                       "binding": deepcopy(p["binding"]), "certificate": deepcopy(p["certificate"])},
         "source": {"knots": source, "g_r": gr, "g_e": ge},
         "requested_times": obs, "base_times": base, "refined_times": refined,
         "vertex_times": sorted(set(vertices)),
@@ -384,6 +418,9 @@ def run_case(case):
                  "guard_applied_before_overlap": True, "limit": MAX_OVERLAP_TERMS,
                  "formula": "(3*base_cells+1)*source_cells*(full_blocks+1)"},
         "certificate_status": "DECLARED_PREMISES_BOUND_TO_EXACT_INPUT;PHYSICAL_VERIFICATION_NOT_INFERRED",
+        "input_scientific_status": p["binding"]["scientific_status"],
+        "source_provenance": {key: p["binding"][key] for key in
+                              ("source_locator", "source_sha256", "whole_forcing_source_sha256")},
         "R_history": "GLOBAL_FROM_ORIGINAL_T0", "cap_application": "NONE",
         "arithmetic": {"rational_bits": MAX_DERIVED_BITS, "dyadic_bits": BITS, "Taylor_degree": DEGREE},
     }
