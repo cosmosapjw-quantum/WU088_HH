@@ -18,7 +18,7 @@ FINAL 자신의 commit/tree/ZIP·provider 영수증은 PR150의 최신 R11 FINAL
     C9 PASS_SCOPED_FINAL_C9, admissiondelta PASS, 열린중대지적0.
     R11 R1–R10+C1–C10=20/20, 과학 DAG23/38.
     기존36개 노드 객체 변경0, 새 조건부 이론·코드 각1개 채택.
-    이 source 작성시 stage dual backup 9/10; FINAL 외부 영수증으로 10/10+FINAL 확인.
+    이 source 작성시 stage dual backup 10/10; FINAL 외부 영수증으로 10/10+FINAL 확인.
     
     Primary214/214PASS. Reference900/900PASS,19195component comparisons.
     exact11239/Decimal4868/sample3088, failed0.
@@ -90,6 +90,6 @@ FINAL 자신의 commit/tree/ZIP·provider 영수증은 PR150의 최신 R11 FINAL
 
 ## 전달 검증 범위
 
-이 S10 source의 작성 시점에는 S01–S09 실제 영수증9개가 포함된다. S10 자신의 영수증은 게시·백업 후 다음 FINAL metadata source에 싣는다. FINAL 자신의 영수증은 PR150과 종료 응답에만 둔다.
+이 source에는 S01–S10의 실제 영수증이 모두 포함된다. FINAL 자신의 commit/tree/ZIP SHA·bytes·양쪽 ACK는 이 source 밖의 PR150과 종료 응답에 둔다. 이 문서는 FINAL 자신의 사후 영수증을 선행하여 인증하지 않는다.
 
 각 source ZIP의 로컬CRC·모든member SHA와 두 provider 실제ACK·크기를 확인했다. R11 provider original GET은NOT_RUN이다. 물리입력의 빈칸을0으로 채우지 않는다.

@@ -193,7 +193,7 @@ R8 original reference726/727PASS+1FAIL, 별도 exactphi24/24, R10 최초 후처�
 
 ## 8. 실제 게시·이중 백업
 
-아래는 이 source 작성 시점까지 실제 완료된 **9/10 단계**다. Workflow20/20과 전달 완료는 별도로 센다.
+아래는 이 source 작성 시점까지 실제 완료된 **10/10 단계**다. Workflow20/20과 전달 완료는 별도로 센다.
 
 | 단계 | workflow | 과학 DAG | source commit | ZIP bytes | 검증 |
 |---|---:|---:|---|---:|---|
@@ -206,8 +206,9 @@ R8 original reference726/727PASS+1FAIL, 별도 exactphi24/24, R10 최초 후처�
 | S07 | 14/20 | 21/38 | ed8f21a30824 | 2,328,981 | 양쪽 actual ACK·size MATCH |
 | S08 | 16/20 | 21/38 | f98770947a4b | 3,764,225 | 양쪽 actual ACK·size MATCH |
 | S09 | 18/20 | 23/38 | e1db71bade6f | 3,725,863 | 양쪽 actual ACK·size MATCH |
+| S10 | 20/20 | 23/38 | 02bcab3a457a | 3,758,651 | 양쪽 actual ACK·size MATCH |
 
-이 S10 source의 작성 시점에는 S01–S09 실제 영수증9개가 포함된다. S10 자신의 영수증은 게시·백업 후 다음 FINAL metadata source에 싣는다. FINAL 자신의 영수증은 PR150과 종료 응답에만 둔다.
+이 source에는 S01–S10의 실제 영수증이 모두 포함된다. FINAL 자신의 commit/tree/ZIP SHA·bytes·양쪽 ACK는 이 source 밖의 PR150과 종료 응답에 둔다. 이 문서는 FINAL 자신의 사후 영수증을 선행하여 인증하지 않는다.
 
 검증 수준은 각 로컬 ZIP CRC·모든 member SHA-256, Drive와 Dropbox 실제 provider ACK 및 양쪽 크기 일치다. R11 stage/FINAL provider original GET은 NOT_RUN이다. 상세 ID/URL/ZIP SHA는 delivery/PUBLICATION_INDEX.json과 개별 receipt에 있다.
 

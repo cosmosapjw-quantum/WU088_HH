@@ -6,4 +6,4 @@ Primary214/214, independent reference900/900,19195component comparisons,0failure
 
 The full-A Duhamel/minorization block theorem and aligned forcing convolution are proved and implemented. Every capped endpoint on the four saved cases equals R10 exactly; final added improvement0%. Native9 uses a native K and synthetic conditional reaction fixture. Actual reactive array/physical consumer/density/clock remain INPUT_PENDING. HH_R10OFF,productionNOT_ISSUED,L4false,central/physicaldelta0.
 
-Actual source publication and dual-provider ACKs are independently tracked in delivery/PUBLICATION_INDEX.json (9/10 at source writing). FINAL own ACK is never retroactively inserted into its source.
+Actual source publication and dual-provider ACKs are independently tracked in delivery/PUBLICATION_INDEX.json (10/10 at source writing). FINAL own ACK is never retroactively inserted into its source.

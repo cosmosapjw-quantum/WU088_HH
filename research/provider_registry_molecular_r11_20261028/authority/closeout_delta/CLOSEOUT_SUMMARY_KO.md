@@ -16,7 +16,7 @@ Root의 종료문서 생성 스크립트 초안은 JavaScript template delimiter
 
 ## 전달 상태
 
-작성시점 실제stage dual backup9/10. 이 S10 source의 작성 시점에는 S01–S09 실제 영수증9개가 포함된다. S10 자신의 영수증은 게시·백업 후 다음 FINAL metadata source에 싣는다. FINAL 자신의 영수증은 PR150과 종료 응답에만 둔다.
+작성시점 실제stage dual backup10/10. 이 source에는 S01–S10의 실제 영수증이 모두 포함된다. FINAL 자신의 commit/tree/ZIP SHA·bytes·양쪽 ACK는 이 source 밖의 PR150과 종료 응답에 둔다. 이 문서는 FINAL 자신의 사후 영수증을 선행하여 인증하지 않는다.
 검증은로컬ZIPCRC/allmemberSHA+양쪽actualACK/size다. R11 provideroriginalGETNOT_RUN.
 R10source의Drive복구GET은별도R11회복기록이며R10당시GET상태를고치지않는다.
 
