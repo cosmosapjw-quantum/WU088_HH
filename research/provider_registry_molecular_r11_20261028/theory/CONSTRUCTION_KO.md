@@ -4,7 +4,7 @@
 
 먼저 요청된 Duhamel 후보를 직접 증명한다. 이 경계는 perturbation이 크면1이 되어 strict block 정보를 잃는다. 동일한 fixed K/pi/d와 nonnegative w family에서 H+b_H I>=0이라는 구체적인 구조를 사용하면 U_A>=exp(-b_H∫w)exp(Ktau)가 나온다. 따라서 q_minor=1-exp(-epsilon)(1-q_K)는 q_K<1, finite epsilon 아래 strict하다. 이는 K-only rho를 full A에 그대로 대입하는 경로와 구별되는 실제 full-generator 증명이다.
 
-q_minor<=q_K+epsilon(1-q_K)<=q_K+epsilon<=q_K+2epsilon이므로 exact arithmetic에서는 additive 후보보다 강하다. 생산 코드는 사용자가 요청한 후보를 따로 보존하고, 두 outward upper의 min을 선택한다. 특히 epsilon=0인 경우 exact additive 후보가 rounding만의 증가를 막는다. q=1도 valid nonexpansive case로 구현하고, q0은 supplied abstract kernel의 산술 control에서만 쓴다.
+q_minor<=q_K+epsilon(1-q_K)<=q_K+epsilon<=q_K+2epsilon이므로 exact arithmetic에서는 additive 후보보다 강하다. 생산 코드는 사용자가 요청한 후보를 따로 보존하고, 두 outward upper의 min을 선택한다. epsilon=0에서 exact 이론값은 q_K이며, 구현은 이 값을 덮는 dyadic upper로 기록한다. q=1도 valid nonexpansive case로 구현하고, q0은 supplied abstract kernel의 산술 control에서만 쓴다.
 
 ## 블록 기억과 forcing
 

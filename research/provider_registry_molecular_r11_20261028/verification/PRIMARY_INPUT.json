@@ -1,0 +1,45 @@
+{
+  "schema": "WU_R11_FIXED_PRIMARY_INPUT_V1",
+  "unit": "WU_FULL_GENERATOR_BLOCK_R11",
+  "bits": 128,
+  "degree": 96,
+  "hd_cells": 192,
+  "block_steps": 64,
+  "sources": {
+    "R7_input": {
+      "path": "research/provider_registry_molecular_r7_20261027/verification/PRIMARY_INPUT.json",
+      "sha256": "3ff9c2535e5c0ce6ffa5e9671de15aad6649e0996cd9b9e275cc290facd8d330"
+    },
+    "R7_primary": {
+      "path": "research/provider_registry_molecular_r7_20261027/raw/PRIMARY_RESULTS.json",
+      "sha256": "6eaf3c0eed7968cf4023180e15373a180bb5b1bab2e56cd4a8547387ed337a15"
+    },
+    "R10_primary": {
+      "path": "research/provider_registry_molecular_r10_20261028/raw/PRIMARY_RESULTS.json",
+      "sha256": "1713df54bc3653003614f3deba93212735a345e8d7220f053ab9af2d84677fb1"
+    }
+  },
+  "hd_case_ids": [
+    "two_state_no_reaction",
+    "two_state_nonlinear",
+    "two_state_coarse_source_defect",
+    "saved_native_nine_state_K_conditional_feedback"
+  ],
+  "controls": [
+    {"id": "zero", "q": "1", "c": "0", "d": "0", "g_r": "0", "g_e": "0", "delta": "1/8", "initial": ["2", "3"], "cells": 8, "block_steps": 2},
+    {"id": "polynomial_q1", "q": "1", "c": "1/2", "d": "0", "g_r": "2", "g_e": "3", "delta": "1/8", "initial": ["1", "2"], "cells": 8, "block_steps": 2},
+    {"id": "late_forcing_q0", "q": "0", "c": "1", "d": "0", "g_r": ["0", "0", "0", "1"], "g_e": "0", "delta": "1/8", "initial": ["0", "0"], "cells": 4, "block_steps": 2},
+    {"id": "block_jump_left_limit", "q": "1/2", "c": "0", "d": "0", "g_r": "0", "g_e": "0", "delta": "1/8", "initial": ["1", "0"], "cells": 6, "block_steps": 2},
+    {"id": "negative_d_variable_forcing", "q": "1/2", "c": "1/3", "d": "-2", "g_r": ["1/5", "0", "1/7", "2/9", "0", "1/11", "0", "1/13"], "g_e": ["0", "1/17", "0", "1/19", "0", "1/23", "0", "1/29"], "delta": "1/8", "initial": ["2/5", "1/10"], "cells": 8, "block_steps": 2},
+    {"id": "positive_d", "q": "1/3", "c": "1/5", "d": "1/3", "g_r": "1/10", "g_e": "1/20", "delta": "1/8", "initial": ["2/5", "1/10"], "cells": 8, "block_steps": 3},
+    {"id": "near_zero_d", "q": "3/4", "c": "1/3", "d": "1/1000000000000000000000000000000", "g_r": "1/5", "g_e": "1/7", "delta": "1/8", "initial": ["2/5", "1/10"], "cells": 8, "block_steps": 2},
+    {"id": "near_zero_d_negative", "q": "3/4", "c": "1/3", "d": "-1/1000000000000000000000000000000", "g_r": "1/5", "g_e": "1/7", "delta": "1/8", "initial": ["2/5", "1/10"], "cells": 8, "block_steps": 2},
+    {"id": "near_one_q", "q": "340282366920938463463374607431768211455/340282366920938463463374607431768211456", "c": "1/3", "d": "-1", "g_r": "1/5", "g_e": "1/7", "delta": "1/8", "initial": ["2/5", "1/10"], "cells": 8, "block_steps": 1}
+  ],
+  "budget": {"runs": 1, "CPU_s": 60, "wall_s": 90},
+  "source_role": "Unchanged R7 exact fixtures and whole-domain coefficients; R10 same-clock closed-cell and endpoint caps",
+  "lower_arrays": "chosen rational-q ideal comparison only; never a physical-error lower bound",
+  "physical_consumer_admitted": false,
+  "new_ODE_runs": 0,
+  "old_science_replay": 0
+}
