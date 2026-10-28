@@ -5,8 +5,8 @@
 - 과학 채택 소스: [`1ba1b0727cf3d5ba21931b0f3f14a2beae664f67`](https://github.com/cosmosapjw-quantum/WU088_HH/commit/1ba1b0727cf3d5ba21931b0f3f14a2beae664f67)
 - 과학 소스 tree: `0ce9b0de3546bf7ec06782bd70160879fa654827`
 - Scientific payload: **70 files**, SHA256 `828888e952c15bd94d37d7dd30c0676df9470ca316bb1dbb8334c6c218b0e909`
-- 현재 문서 생성 시점의 실제 paired checkpoint 백업: **9/10**, provider ACK **18**
-- 문서 생성: 2026-10-28T12:03:19.574411+00:00; phase `S10`. 자체 commit·archive·provider receipt는 게시 후 다음 source 또는 PR150/최종 응답에 기록한다.
+- 현재 문서 생성 시점의 실제 paired checkpoint 백업: **10/10**, provider ACK **20**
+- 문서 생성: 2026-10-28T12:04:18.838411+00:00; phase `FINAL`. 자체 commit·archive·provider receipt는 게시 후 다음 source 또는 PR150/최종 응답에 기록한다.
 - [Draft PR150](https://github.com/cosmosapjw-quantum/WU088_HH/pull/150), branch `research/provider-registry-20261025`; expected-SHA와 force=false로 게시했다.
 
 현재 상태는 위 과학 채택과 `WORKFLOW_RECORD.json`, `SCIENTIFIC_ADMISSION.json`, `delivery/PUBLICATION_INDEX.json`이 권위다. R1–R8 설계·증명·결과 파일의 당시 OPEN/NOT_RUN 표기는 작성 시점의 증거로 유지한다.
@@ -202,8 +202,9 @@ Canonical tau=1/2의 GLOBAL_MEMORY와 R4에 수록된 별도 tau=1 수동 예제
 | S07 | 14/20 | 29/46 | [`2fd67bbcf51a`](https://github.com/cosmosapjw-quantum/WU088_HH/commit/2fd67bbcf51a86d7f45a21da81f6b06572ba5b63) | [Drive](https://drive.google.com/file/d/1J1wRmp16meNhA0u13ihikzNld9uPA7H-/view?usp=drivesdk) / completed ACK | 1,087,482 |
 | S08 | 16/20 | 29/46 | [`93355d9df88c`](https://github.com/cosmosapjw-quantum/WU088_HH/commit/93355d9df88cb44c1c70778f4bf69ff1d2a2658c) | [Drive](https://drive.google.com/file/d/1PdKEn9aQotvxxMRO0HOv_umsv2Upernh/view?usp=drivesdk) / completed ACK | 1,584,994 |
 | S09 | 18/20 | 31/46 | [`1ba1b0727cf3`](https://github.com/cosmosapjw-quantum/WU088_HH/commit/1ba1b0727cf3d5ba21931b0f3f14a2beae664f67) | [Drive](https://drive.google.com/file/d/1HZY7hb1rNQGwkubSp8kROVKrtJoWYoqw/view?usp=drivesdk) / completed ACK | 1,623,172 |
+| S10 | 20/20 | 31/46 | [`3331e8dcecc2`](https://github.com/cosmosapjw-quantum/WU088_HH/commit/3331e8dcecc250505b642b5c430a63045fa74d81) | [Drive](https://drive.google.com/file/d/1qXaIj8sbRu5GJlF8-2hEo-G3V8Kh3j2_/view?usp=drivesdk) / completed ACK | 1,642,976 |
 
-S10의 문서는 현재 closeout 산출물이다. S10 자체 게시·양쪽 ACK는 아직 위 표에 포함하지 않았고, 실제 완료 후 FINAL 전달 metadata에 추가한다.
+S01–S10의10개 소스 ZIP과20개 provider ACK를 실제 확인했다. FINAL은 동일한 과학 결과에 마지막 전달 metadata를 보존하는 추가 소스팩이다. FINAL 자신의 영수증은 그 내부에 넣을 수 없으므로 PR150과 최종 응답을 따른다.
 
 ### 실제 복원 검증
 
