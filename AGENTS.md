@@ -1,3 +1,13 @@
+# Current WU R18 native source priority — 2026-10-29 KST
+
+Read research/wu_hd_source_bound_r18_20261029/CONTRACT.json, SCIENTIFIC_ADMISSION.json, DAG.json, REPORT_KO.md, HANDOFF_NEXT_THREAD_KO.md and delivery/PUBLICATION_INDEX.json. R18 recovered the original institutional GL2022 supplement PDF SHA256 a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754 and exactly extracted HD(v0,j2)->H2(v0,j1) raw SQM rates at10originalT points. Final module blob be2a845263b215b604f255ffe5deabe55be9dd7b; primary19/19, independentreference10/10, CAS15exactzeros, distinct-authorC9PASS. SourceDAG34/49, inherited48nodeobjectsunchanged, original33/48. This is source admission only; original combined consumer task remains PARTIAL. HH_R10 OFF, production NOT_ISSUED, L4false, physical/centraldelta0.
+
+No interpolation or source uncertainty is supplied. Supplement initialj0..6 differs from mainEq5j0..8; j7/8 remain missing. Raw rates do not have thermal spin3/4 or populations applied. Preserve original failures and parent R17A K>0/K=0 correction; R17A and R17B separate closure overlays are under reviews/PARENT_WORKFLOW_CLOSURE.json.
+
+Current isolated branch research/wu-hd-source-bound-r18-20261029, DraftPR155, parentPR154 frozen31d3270ef210ef6659915105358f8fdbf8dae5a0. Root expectedSHA/forcefalse writes only; no mainmerge or other-owner mutations. Next: bind named REC/CR source-grid state/density/clock and event-energy inputs using NEXT_INPUT_CONTRACT.json. Current consumer candidates are off sourceTgrid and REI17state has noHD/H2. Original exhausted science allowances remain unchanged; fresh user-authorized units require a concrete new obligation and bounded contract.
+
+## Preserved earlier instructions and history
+
 # Current priority: R15 cubic Bernstein forcing — workflow20/20, DAG31/46 — 2026-10-28
 
 Read research/provider_registry_molecular_r15_20261028/CONTRACT.json, POLICY_DELTA.json, WORKFLOW_RECORD.json, DAG.json, EXECUTION_LEDGER.json, authority/intake/SYNTHESIS_KO.md and delivery/PUBLICATION_INDEX.json. Current user authorizes this one full R1–R10/C1–C10 unit, finite new budget, per-stage publication and dual backups. Preserve all44 inherited node objects, prior results/failures and scoped assumptions. Root-only expectedSHA/forcefalse researchbranch/draftPR150; no mainmerge/other-ownerwrite. Full A=K+wH, original t0 memory, signed dc, E=abs(eta), coarse l1=4E. Positive supplied cubic Bernstein coefficient cone only. Actual HD array/consumer/state/densityclock INPUT_PENDING, nativev UNSPECIFIED, MISSING_NOT_ZERO, TIQM/SQM DISTINCT, HH_R10 OFF, production NOT_ISSUED, L4 false, central/physicaldelta0.
