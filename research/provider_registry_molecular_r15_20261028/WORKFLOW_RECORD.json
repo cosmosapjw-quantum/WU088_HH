@@ -396,15 +396,77 @@
     },
     {
       "id": "R7",
-      "status": "pending",
-      "evidence_refs": [],
-      "reason": "Remaining selected stage."
+      "status": "complete",
+      "evidence_refs": [
+        "raw/CAS_RAW_RESPONSE.json",
+        "raw/CAS_SUBMITTED.wl",
+        "raw/CAS_ATTEMPT.json",
+        "verification/CAS_ASSESSMENT.json"
+      ],
+      "reason": "One actual frozen Wolfram batch returned72unique exact-zero residuals matching alltargets; observed warnings0; submitted8361bytes exactly match frozen source.",
+      "completed_utc": "2026-10-28T11:47:22.048579+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "raw/CAS_RAW_RESPONSE.json",
+          "bytes": 5467,
+          "sha256": "79ae6dbe2e17c3a3bc680dbdef908510c3f7e647264f1b91d041181a8a2c9ed2"
+        },
+        {
+          "path": "raw/CAS_SUBMITTED.wl",
+          "bytes": 8361,
+          "sha256": "e423af7b6eadbe37a2205e516e29857ae9bce5e69fc1610d426acbc56af541be"
+        },
+        {
+          "path": "raw/CAS_ATTEMPT.json",
+          "bytes": 450,
+          "sha256": "19ed2a728cbb06a87643d9dbf6e251916bd8dec00887d4ded9dcef4bc6779ee2"
+        },
+        {
+          "path": "verification/CAS_ASSESSMENT.json",
+          "bytes": 799,
+          "sha256": "78b0bc0f48e54f7f39a21423687d774c26591e603537fbc0b3e340c9a57fafec"
+        }
+      ]
     },
     {
       "id": "C7",
-      "status": "pending",
-      "evidence_refs": [],
-      "reason": "Remaining selected stage."
+      "status": "complete",
+      "evidence_refs": [
+        "raw/REFERENCE_RESULTS.json",
+        "raw/REFERENCE_PROCESS.json",
+        "raw/REFERENCE_ATTEMPT.json",
+        "verification/REFERENCE_ASSESSMENT.json",
+        "EXECUTION_LEDGER.json"
+      ],
+      "reason": "Actual separately authored original-integral/Sturm/phi reference passed302/302 records across21models;784guarded comparisons pass with59strict Decimal misses disclosed; no repair or production import.",
+      "completed_utc": "2026-10-28T11:47:22.048579+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "raw/REFERENCE_RESULTS.json",
+          "bytes": 197286,
+          "sha256": "63f58e277acdfa6843f053a293869896605514867dfc9afa576852f2aa2f02b2"
+        },
+        {
+          "path": "raw/REFERENCE_PROCESS.json",
+          "bytes": 1740,
+          "sha256": "8422b06ea136b2bf4d43cec3f6b7289548d5a59af31db38e3a3be883e62714e0"
+        },
+        {
+          "path": "raw/REFERENCE_ATTEMPT.json",
+          "bytes": 1021,
+          "sha256": "eef5b0405d9210cb15be739ea45038dc0de168f275159413b0bc7edcab16b0c2"
+        },
+        {
+          "path": "verification/REFERENCE_ASSESSMENT.json",
+          "bytes": 2175,
+          "sha256": "010a6d2744b6876be22ca59c098ac0bb56e9fad5538acbe24166db4d97391701"
+        },
+        {
+          "path": "EXECUTION_LEDGER.json",
+          "bytes": 5031,
+          "sha256": "badb2dbb0a8292bbd92a70cec2f764326201490afde78219e380d5b5d96db530"
+        }
+      ]
     },
     {
       "id": "R8",
@@ -444,7 +506,7 @@
     }
   ],
   "workflow_counts": {
-    "complete": 12,
+    "complete": 14,
     "total": 20
   },
   "scientific_DAG": {

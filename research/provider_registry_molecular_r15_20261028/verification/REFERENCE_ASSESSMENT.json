@@ -1,0 +1,59 @@
+{
+  "schema": "WU_R15_C7_REFERENCE_ASSESSMENT_V1",
+  "status": "PASS_SCOPED_INDEPENDENT_REFERENCE",
+  "summary": {
+    "cases_failed": 0,
+    "cases_passed": 21,
+    "checks_failed": 0,
+    "checks_passed": 302,
+    "exact_check_records": 238,
+    "guarded_comparisons": 784,
+    "guarded_failures": 0,
+    "mixed_exact_guarded_check_records": 21,
+    "semantic_check_records": 302,
+    "strict_Decimal_misses": 59,
+    "strict_examples_retained": 50,
+    "valid_cases": 21
+  },
+  "arithmetic": {
+    "Decimal_precision": 160,
+    "guard": "1e-80*max(1,abs(reference),abs(lower),abs(upper))",
+    "input_bits": 256,
+    "observed": {
+      "Sturm_chains": 784,
+      "Sturm_counts": 4484,
+      "gcd_calls": 2138,
+      "lower_existence_decisions": 14,
+      "max_internal_denominator_bits": 1302,
+      "max_internal_numerator_bits": 1313,
+      "max_reference_derived_denominator_bits": 1291,
+      "max_reference_derived_numerator_bits": 1291,
+      "nonnegativity_decisions": 903,
+      "original_integral_queries": 771,
+      "original_overlap_evaluations": 48331,
+      "polynomial_divisions": 8751,
+      "polynomial_eliminations": 18907,
+      "root_splits": 1602,
+      "root_visits": 3210,
+      "squarefree_calls": 858
+    },
+    "phi_terms": 512,
+    "reference_unpersisted_squarefree_Sturm_bits": 1048576,
+    "saved_derived_bits": 16384,
+    "saved_derived_text_max_characters": 10000,
+    "strict_membership": "Exact Fraction(Decimal) versus exact saved rational bounds"
+  },
+  "source_commit": "e868564bdfd42df4ecbcf4e020eba700500c0031",
+  "OS_CPU_s": "2.0602710000000000003",
+  "wall_s": 2.0909859919993323,
+  "output_identity": {
+    "path": "raw/REFERENCE_RESULTS.json",
+    "bytes": 197286,
+    "sha256": "63f58e277acdfa6843f053a293869896605514867dfc9afa576852f2aa2f02b2"
+  },
+  "actual_attempts": 1,
+  "repair_attempts": 0,
+  "classification": "EXACT_COMPONENTS_AND_GUARDED_CORROBORATION_NOT_INTERVAL_REFERENCE",
+  "strict_miss_interpretation": "59 strict Decimal misses are retained; all784 fixed1e-80 guarded comparisons pass. Decimal corroboration is not rigorous interval reference. Exact checks use no tolerance.",
+  "physical_admission_delta": 0
+}
