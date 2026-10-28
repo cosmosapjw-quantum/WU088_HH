@@ -1,0 +1,56 @@
+{
+  "schema": "wu.r19.C4.v1",
+  "work_units": [
+    {
+      "id": "C5",
+      "requires": [
+        "R18_verified_grid",
+        "R5_analytic_flow"
+      ],
+      "output": "source-bound module"
+    },
+    {
+      "id": "C6",
+      "requires": [
+        "C5"
+      ],
+      "output": "24 pytest"
+    },
+    {
+      "id": "C7",
+      "requires": [
+        "C6"
+      ],
+      "output": "conservation/Jacobian/clock/CLI scientific checks"
+    },
+    {
+      "id": "C8",
+      "requires": [
+        "C6"
+      ],
+      "output": "160 mpmath+3 scipy+figures"
+    },
+    {
+      "id": "C9",
+      "requires": [
+        "C7",
+        "C8"
+      ],
+      "output": "same-author risk review; nonauthor unavailable"
+    },
+    {
+      "id": "C10",
+      "requires": [
+        "C9"
+      ],
+      "output": "report/source ZIP/handoff"
+    }
+  ],
+  "resource": {
+    "CPU_budget_s": 90,
+    "wall_budget_s": 180,
+    "historical_budget_transfer": 0,
+    "no_full_R18_suite_rerun": true
+  },
+  "canonical_DAG": "34/49"
+}
