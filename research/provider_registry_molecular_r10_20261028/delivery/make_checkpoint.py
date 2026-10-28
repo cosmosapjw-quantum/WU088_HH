@@ -1,6 +1,6 @@
 from pathlib import Path
 import json,hashlib,zipfile,sys,datetime
-ROOT=Path('/workspace/scratch/16df962c9b4e/WU088_HH')
+ROOT=Path(__file__).resolve().parents[3]
 PUB=Path(sys.argv[1]);pub=json.loads(PUB.read_text());stage=pub['stage'];commit=pub['source_commit']
 L=ROOT/'research/provider_registry_molecular_r10_20261028'
 deps=json.loads((L/'authority/INPUT_IDENTITY.json').read_text())['files']

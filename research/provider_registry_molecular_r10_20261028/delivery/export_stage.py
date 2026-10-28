@@ -1,6 +1,6 @@
 from pathlib import Path
 import json,base64,hashlib,sys
-ROOT=Path('/workspace/scratch/16df962c9b4e/WU088_HH');L=ROOT/'research/provider_registry_molecular_r10_20261028';stage=sys.argv[1]
+ROOT=Path(__file__).resolve().parents[3];L=ROOT/'research/provider_registry_molecular_r10_20261028';stage=sys.argv[1]
 n=99 if stage=='FINAL' else int(stage[1:]);state=ROOT.parent/'r10_published_state.json';old=json.loads(state.read_text())['files'] if state.exists() else {}
 base={'CONTRACT.json','DAG.json','WORKFLOW_RECORD.json','EXECUTION_LEDGER.json','RESUME_KO.md'}
 paths=[ROOT/'AGENTS.md']
