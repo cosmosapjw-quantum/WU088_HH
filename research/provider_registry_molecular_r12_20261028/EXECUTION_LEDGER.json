@@ -129,6 +129,14 @@
       "action": "write wrapper/CAS source via JavaScript",
       "observation": "Invalid or unexpected token before any nested call; Wolfram context backtick inside JS raw literal",
       "resolution": "Use explicit symbol ClearAll list without a context backtick; no CAS/process executed or allowance consumed."
+    },
+    {
+      "class": "postprocessing_display",
+      "action": "first saved-output figures",
+      "observation": "stairs default baseline0 added misleading boundary strokes; source-shift annotation overlapped legend. Numerical outputs unchanged.",
+      "first_evidence": "analysis/failures/DISPLAY_FINDING.json",
+      "resolution": "One display-only repair: baseline=None and legend placement. First11artifacts preserved, final4images valid and viewed; no scientific run/source change.",
+      "closure": "analysis/PLOT_ARTIFACT_STATUS.json"
     }
   ],
   "historical_failures_preserved": {
@@ -146,6 +154,12 @@
     "source": "analysis/plot_saved_results.py",
     "summary": "analysis/SAVED_OUTPUT_SUMMARY.json",
     "figures": "figures/FIGURE_MANIFEST.json",
-    "status": "IN_PROGRESS_SAVED_OUTPUT_ONLY"
+    "status": "COMPLETE_SAVED_OUTPUT_ONLY",
+    "administrative_OS_CPU_s_decimal": "9.141018",
+    "scientific_OS_CPU_subtotal_unchanged": "4.202434",
+    "display_repair_passes": 1,
+    "first_artifacts": "analysis/failures/PLOT_DISPLAY_ATTEMPT1",
+    "repair": "analysis/PLOT_ARTIFACT_STATUS.json",
+    "root_visual": "analysis/ROOT_FIGURE_VIEW.json"
   }
 }
