@@ -1,0 +1,27 @@
+{
+  "schema": "wu.r15.github_intake_administrative_diagnostics.v1",
+  "events": [
+    {
+      "type": "local_argument_size",
+      "operation": "serializing raw branch pages via exec_command",
+      "error": "Argument list too long",
+      "correction": "Bound JSON transfer chunks below50000characters; retain canonical head records rather than duplicate raw wrapper JSON; census API requests not repeated."
+    },
+    {
+      "type": "local_partial_chunk_collision",
+      "operation": "assembling saved blocks with glob",
+      "error": "asserted71rows versus51expected because partial first attempt files remained",
+      "correction": "Use explicit successful block manifest0..7;51unique repositories confirmed. Extra partial chunks remain private and unconsumed."
+    },
+    {
+      "type": "local_argument_size_commit_patch",
+      "operation": "serializing HTT full commit patch via exec_command",
+      "error": "Argument list too long",
+      "correction": "Storedcompactcommitidentityandchangedfilemetadatawithoutduplicatepatchbodies;all16headcommitsretained;APIcallsnotrepeated."
+    }
+  ],
+  "scientific_runs": 0,
+  "remote_mutations": 0,
+  "branch_API_errors": 0,
+  "recent_commit_API_errors": 0
+}

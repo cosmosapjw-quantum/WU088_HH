@@ -1,3 +1,9 @@
+# Current priority: R15 authorized cubic Bernstein forcing — workflow2/20, DAG29/46 — 2026-10-28
+
+Read research/provider_registry_molecular_r15_20261028/CONTRACT.json, POLICY_DELTA.json, WORKFLOW_RECORD.json, DAG.json, EXECUTION_LEDGER.json, authority/intake/SYNTHESIS_KO.md and delivery/PUBLICATION_INDEX.json. Current user explicitly approves new budget and the next full theory R1–R10 + coding C1–C10 after current accessible census; per-stage publication/Drive+Dropbox backup, DAG counts and copyable handoff required. This supersedes only the old R14 no-next-unit invocation boundary. All44 inherited nodes unchanged; two new nodes OPEN. Primary/ref/CAS base allowances1/1/1, renderer1, diagnosedrepairreserve1/1/0, oldallowanceincrease0. Finite CPU/memory/work/gap in CONTRACT. No new scientific execution yet. PhysicalHDarray/consumer/state/densityclockINPUT_PENDING,HH_R10OFF,productionNOT_ISSUED,L4false,central/physicaldelta0. Root only expectedSHA/forcefalse researchbranch/draftPR150 and both existing backup folders; no mainmerge/otherownerwrite. R14 source and all prior failures/guards/CAS qualifications preserved.
+
+<!-- WU_R15_CURRENT_END -->
+
 # Current priority: R14 quadratic forcing complete — workflow20/20, DAG29/44 — 2026-10-28 KST
 
 Read research/provider_registry_molecular_r14_20261028/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, reviews/ADMISSION_DELTA_REVIEW.json, authority/closeout_delta/CLOSEOUT_SUMMARY_KO.md, followup/NEXT_INPUT_CONTRACT.json and delivery/PUBLICATION_INDEX.json. Latest user scope: finish only the two R14 nodes already in progress; no next unit. Two conditional nodes admitted, all42 inherited node objects unchanged. C9 PASS_SCOPED_FINAL_C9/18of18/openmaterial0; admission metadata delta PASS_SCOPED_ADMISSION_METADATA_DELTA/8of8/openmaterial0.
