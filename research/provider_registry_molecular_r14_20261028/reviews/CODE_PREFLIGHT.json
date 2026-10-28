@@ -1,0 +1,299 @@
+{
+  "schema": "WU_R14_INDEPENDENT_STATIC_CODE_PREFLIGHT_V1",
+  "unit": "WU_QUADRATIC_FORCING_R14",
+  "reviewer": "/root/repo_census_r14",
+  "verdict": "PASS_SCOPED_STATIC_PREFLIGHT",
+  "open_material_findings": 0,
+  "findings_total": 3,
+  "findings_closed_statically": 3,
+  "execution_status": "NOT_EXECUTION_VERIFIED_BY_THIS_REVIEW",
+  "independence": {
+    "production_author": false,
+    "primary_author": false,
+    "reference_author": false,
+    "proof_author": false,
+    "reviewer_source_edits": 0,
+    "authored_outputs": "Review records only. Findings were sent to root; independent source authors made the authorized minimal revisions after preserving original bytes."
+  },
+  "reviewer_execution": {
+    "science_runs": 0,
+    "scientific_imports": 0,
+    "compile_or_syntax_runs": 0,
+    "CAS": 0,
+    "ODE": 0,
+    "old_science_or_review_replay": 0,
+    "remote_writes": 0,
+    "administrative_only": "Source reading, text diffs, JSON structure/identity comparisons, SHA-256 and saved-byte checks, and stdlib/runtime-policy introspection. No review code evaluated scientific functions or fixture numerical targets."
+  },
+  "findings": [
+    {
+      "id": "R14-F01",
+      "severity": "HIGH",
+      "target": "reference independent_reference.py run(): saved_primary_status adapter; primary run_primary.py output status",
+      "observed_defect": "The reference originally required saved primary status PASS, while the actual primary source writes PASS_SCOPED on zero failures.",
+      "impact": "The planned reference run would necessarily record a metadata FAIL even after a successful primary run.",
+      "minimum_correction": "Require the exact primary API status PASS_SCOPED in the reference, without weakening any numerical or physical check.",
+      "preservation": "Original reference source and author record preserved at reference/revisions/R14_F01_before_status_adapter/ with actual bytes and matching SHA-256.",
+      "closure_evidence": "Reviewed exact one-line source diff PASS -> PASS_SCOPED. Final reference retains PASS_SCOPED. Preserved original source SHA afbaad924e5c38414bde0835c61a515a0952d97a736de49c397c31447ec1a27c; corrected intermediate SHA81b681a9641c3864108a8ec0310b6f71c765bd771833c7c80df474af65c85aba.",
+      "status": "CLOSED_STATIC_BEFORE_FREEZE",
+      "actual_execution_failure": false
+    },
+    {
+      "id": "R14-F02",
+      "severity": "HIGH",
+      "target": "production exact(); independent reference rat()/input_rat()",
+      "observed_defect": "A2048-character limit followed by Fraction(text) did not bound exponent expansion before the256-bit check. A short zero-valued exponent spelling could request a huge10**exp allocation before reduction.",
+      "evidence": "Read actual /usr/lib/python3.12/fractions.py string parser: exponent integer conversion precedes10**exp and the caller's post-conversion bit check. No huge-exponent value was executed.",
+      "impact": "The stated finite input-parser work boundary could be bypassed before an eventual reduced-value/bit-domain decision, including for a mathematically zero scalar.",
+      "minimum_correction": "Check bounded ASCII signed-integer or signed p/q syntax before integer/Fraction conversion. Keep scalar256bit and input2048character bounds; use separate bounded saved-output parsing in the reference.",
+      "actual_correction": "Production uses ASCII fullmatch before bounded int numerator/denominator conversion. Reference independently scans ASCII characters before int conversion, caps saved text at10000characters and parsed components at6000digits, then checks reduced16384bit saved values; public input remains2048characters/256bits. Decimal/exponent/whitespace scientific input spellings are explicitly unsupported.",
+      "metadata_adapter": "The frozen numeric-policy literal1e-80 is checked by exact string equality rather than the scientific rational parser. This narrow adapter was verified in the final diff.",
+      "preservation": "Actual pre-edit production snapshot9/9 files and pre-F02/F03 reference source/author record bytes matched their recorded SHA-256 identities.",
+      "authored_checks": [
+        "huge_zero_exponent_text",
+        "decimal_text",
+        "surrounding_whitespace_text"
+      ],
+      "numerical_input_delta": "None: all31 valid case objects and original FIXTURE_SOURCE bytes are unchanged; all43 original guard objects are retained exactly. Three invalid lexical guards raise the total to46.",
+      "status": "CLOSED_STATIC_BEFORE_FREEZE",
+      "runtime_guard_verification": "PENDING_SINGLE_AUTHORIZED_PRIMARY_AND_REFERENCE_CAMPAIGNS",
+      "actual_execution_failure": false
+    },
+    {
+      "id": "R14-F03",
+      "severity": "MEDIUM_MATERIAL_FINITE_API",
+      "target": "production serializable() and standalone execution conversion policy; reference saved-value parser/output",
+      "observed_defect": "The current Python3.12.14 process default integer-string digit limit was4300, but accepted16384-bit derived numerator/denominator components can need4933decimal digits. The original serializer delegated directly to str(Fraction).",
+      "impact": "Some values inside the declared derived arithmetic domain could fail decimal output conversion. This was a general finite API defect, not a claim that the31 fixed cases had produced such a value.",
+      "minimum_correction": "Use a finite process-local conversion limit large enough for16384-bit components and bounded rational text; preserve separate public input limits. An unlimited zero setting is unnecessary.",
+      "actual_correction": "Dedicated R14 production core configures finite6000 at import, run_case entry and outer serialization; each Fraction is derived-bit checked and output text capped at10000characters. The standalone reference sets6000 in main, bounds saved text and records the effective policy. Neither source disables the limit.",
+      "authored_check": "Primary now serializes and parses a rational whose reduced numerator and denominator both have16384bits, checks the exact roundtrip,10000character bound and runtime6000 policy, and stores only its text length/SHA in the check detail.",
+      "preservation": "Actual pre-edit production snapshot11/11 files and pre-F02/F03 reference source/author record were preserved with matching SHA-256 identities.",
+      "status": "CLOSED_STATIC_BEFORE_FREEZE",
+      "runtime_serialization_verification": "PENDING_SINGLE_AUTHORIZED_PRIMARY_CAMPAIGN",
+      "actual_execution_failure": false
+    }
+  ],
+  "static_checks": [
+    {
+      "id": "CP-01",
+      "target": "validate(), exact(), _triplets(), _binding()",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "Reject bool/float scalar coercion, invalid q/tau/c/initial, malformed or excessive knots/triplets, state dimension outside1..13, negative source endpoint/interior minimum, singleton nonzero zero-mass residual, mismatched source/observation horizon, excess blocks and signed-exponential argument. F02 closes text-expansion work before Fraction construction."
+    },
+    {
+      "id": "CP-02",
+      "target": "source/state/clock/full-A binding and original fixture bytes",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "Canonical forcing SHA is computed from original source triplets, original knots, state order and clock/source identity. Certificate fields and flags bind full A, whole w box, all starts, zero mass and whole fine/coarse forcing. Primary compares actual FIXTURE_SOURCE bytes and all original payload fields. Declared premise binding does not assert a newly verified physical source."
+    },
+    {
+      "id": "CP-03",
+      "target": "_preprocess(), _restrict()",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "Both source vertices are unioned per original cell; exact restriction retains original-cell indices and verifies nonnegative effective coefficients. Source identity remains original. Effective cells are bounded by48 and individual de Casteljau degrees are fixed."
+    },
+    {
+      "id": "CP-04",
+      "target": "event generation, precharge_work(), one-pass cubic assembly",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "All knot translations and observations are exact rationals. Counts are precharged before coefficient or derivative-root work. Each base/effective/age combination is counted once including zero-weight/zero-source geometric overlaps; stored coefficients are reused for all outputs. No separate direct convolution query API silently adds uncharged overlap work."
+    },
+    {
+      "id": "CP-05",
+      "target": "Simpson-positive coefficients and endpoint kernel values",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "The code's B1*B2 coefficients agree with the proof, validates nonnegative overlap endpoint widths and cubic coefficients, uses qpowers[0]=1, retains all original history, and checks F continuity. Actual final kernel jump and preceding left limit are separate fields."
+    },
+    {
+      "id": "CP-06",
+      "target": "_critical()",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "Constant/linear/quadratic derivative, exact endpoint roots, double vertex root, exact bisection hits and at most two strict-sign branches are explicit. Root deduplication, multiplicity, location, opposite endpoint signs and actual bisection counts are preserved; roots never become E propagation knots."
+    },
+    {
+      "id": "CP-07",
+      "target": "_supremum() and observation aggregation",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "Endpoint, right-left-limit and actual-right candidates are distinguished. Restricted rootbox hulls and midpoint witnesses use stored cubic coefficients; exact gap and dyadic expansion are separate. Both local and aggregated exact gap invariants are checked."
+    },
+    {
+      "id": "CP-08",
+      "target": "bernstein3_weights(), _tail(), E recurrence and majorant",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "Positive Taylor96 term/moment floor-ceil updates, conservative exponential tail, negative-z reciprocal-exp/reversed moments and d=0 beta reduction match the proof. The tighter polynomial endpoint propagates onward; whole E separately uses exact R-sup upper and positive ge coefficient hull."
+    },
+    {
+      "id": "CP-09",
+      "target": "rational arithmetic and runtime complexity",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "Scientific rational addition/subtraction/multiplication/division routes through the new16384-bit derived check. No older8192-bit helper is imported. Fixed128-bit dyadic integer loops and degree96 tail arithmetic are bounded separately; work count caps do not replace bit checks. F02/F03 now bound textual input/output conversion explicitly. Successful90CPU/120wall execution still requires the actual run."
+    },
+    {
+      "id": "CP-10",
+      "target": "31 fixed valid cases and46 fixed guards",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "Read all31 original numerical definitions and independent controls. Cases cover degree reductions, valid negative inner coefficients, distinct/coincident vertices, irrational maxima and two roots, double/endpoint/linear roots, constant polynomial, initial jump, global q0/qhalf memory, source/observation refinement, shifted t0, signed/nearzero/boundary16 d, discontinuous nonaligned inputs, near-coalescent/boundary roots and full16/32/48/B8 capacities. All43 original guards map to an actual rejecting path; three added lexical guards target F02. Guards are authored obligations, not executed PASS results."
+    },
+    {
+      "id": "CP-11",
+      "target": "independent reference mathematical path and schema adapter",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "No production or predecessor imports. Original unsplit J primitives, exact four-point Newton power coefficients, discriminant/surd root coverage, power-composed rootbox restrictions and monomial phi1..phi4 provide complementary checks. Saved primary status and case/output fields match after F01. Reference handles all31 cases,46 guards and all declared relations; per-case exceptions remain failures."
+    },
+    {
+      "id": "CP-12",
+      "target": "reference numerical and coverage claims",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "Decimal160, relative guard1e-80, small-z threshold1e-12, series stop1e-150 and512-term cap are fixed. Strict Decimal containment failures are counted separately. Exact root/sign/width/hull/gap and d=0 comparisons do not depend on numerical root bisection replay. Interior E midpoint checks supplement the analytic whole-cell majorant rather than defining whole-cell validity."
+    },
+    {
+      "id": "CP-13",
+      "target": "CLI/primary/reference exclusive output and process envelope",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "Each standalone output uses exclusive-create mode and checks existing output before numerical work. Primary verifies its root path. The outer one-shot envelope validates frozen byte identities, exclusive attempt creation, dependent primary output identity, CPU90/wall120/memory1GiB, complete OS CPU accounting including imports/serialization, and preserves stdout/stderr/return code. No script was invoked by this reviewer."
+    },
+    {
+      "id": "CP-14",
+      "target": "scope, caps and physical meaning",
+      "verdict": "PASS_SCOPED_STATIC",
+      "evidence": "Generic caps are rejected. Raw lower remains a chosen-rational-q ideal-comparison lower; whole bounds are distinguished from endpoint connectors and attained samples. Coarse l1 multiplier4 is retained. Synthetic fixture flags and physical INPUT_PENDING/HH_R10OFF/productionNOT_ISSUED/L4false/central and physical delta0 are not promoted by arithmetic success."
+    }
+  ],
+  "fixture_preservation": {
+    "valid_cases": 31,
+    "original_guard_cases": 43,
+    "current_guard_cases": 46,
+    "all31_valid_case_objects_unchanged": true,
+    "all43_original_guard_objects_unchanged": true,
+    "original_FIXTURE_SOURCE_bytes_unchanged": true,
+    "fixture_source_sha256": "f3e81086f10012aeaf8f390aca22589b8e55172aeb14e840c665592c99e21f0b",
+    "cases_sha256": "030390b2af748fa663fe6992595e5c7a458dbe6a3e11dd3f4e3dafd117755efc",
+    "detailed_administrative_evidence": "PREFLIGHT_IDENTITY_CHECK.json"
+  },
+  "current_science_source_identities": {
+    "production": "74065e6d3a485d37fd980c92fa065ef20fe1897fdf8f505c3c70c7cb34693f99",
+    "primary": "8a2a564e9a01b0c97edb74aeb64ee49f5bceb582e4da9e59d537be1f6a40149c",
+    "reference": "205c8ea4450ffdd7201c9d00b410d847b5f03927c799ff6ddecd085a71535453"
+  },
+  "next_gate": "Root freezes these exact scientific sources and inputs, publishes/backs the prescribed source checkpoint, then uses only the separately authorized single primary/reference/CAS runs. Final C9 must inspect their actual outputs and execution/identity evidence; this static preflight is not that gate.",
+  "read_identities": [
+    {
+      "path": "r14_work/production/src/quadratic_convolution.py",
+      "bytes": 31220,
+      "sha256": "74065e6d3a485d37fd980c92fa065ef20fe1897fdf8f505c3c70c7cb34693f99",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/production/src/cli.py",
+      "bytes": 1170,
+      "sha256": "5b97a4401e09f20c5554dd9e4d4f76dd4d3ca12c088d2dc865a8d68c4c27a325",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/production/verification/run_primary.py",
+      "bytes": 18754,
+      "sha256": "8a2a564e9a01b0c97edb74aeb64ee49f5bceb582e4da9e59d537be1f6a40149c",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/production/verification/CASES.json",
+      "bytes": 196730,
+      "sha256": "030390b2af748fa663fe6992595e5c7a458dbe6a3e11dd3f4e3dafd117755efc",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/production/verification/FIXTURE_SOURCE.json",
+      "bytes": 24018,
+      "sha256": "f3e81086f10012aeaf8f390aca22589b8e55172aeb14e840c665592c99e21f0b",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/production/verification/FIXTURE_DEFINITIONS.json",
+      "bytes": 15831,
+      "sha256": "8f082bbc962ba8f8943d480d5b385abf42d096c707490d849fedc49f5a668f05",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/production/API_SCHEMA.md",
+      "bytes": 7341,
+      "sha256": "2fd261cfe2699368a0e39386c17cbee477f98164839295ca26404447f8c7d7d5",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/production/AUTHORING_STATUS.json",
+      "bytes": 1135,
+      "sha256": "1512cadabc5480a97d8721d5ea2fa4eed259caeb165c14ac39f0580dfb559a25",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/production/F02_PARSER_REPAIR.json",
+      "bytes": 1007,
+      "sha256": "d890c1da3a94f01be865fe559ac78085d39881d7e1606c33c0a9a924eb55f09c",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/production/F03_DIGIT_POLICY_REPAIR.json",
+      "bytes": 1128,
+      "sha256": "32d7301a244dd147b0c5ebc8b69dd3b0a59dec3684c42c478c14beef93155eaa",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/reference/independent_reference.py",
+      "bytes": 75031,
+      "sha256": "205c8ea4450ffdd7201c9d00b410d847b5f03927c799ff6ddecd085a71535453",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/reference/REFERENCE_AUTHORING_RECORD.json",
+      "bytes": 6347,
+      "sha256": "c8d97455e3fd7d4dcfdf0ca6fedc800873894fda97840a6c4fb76d110841600a",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/reference/revisions/R14_F01_STATUS_ADAPTER_CORRECTION.json",
+      "bytes": 1740,
+      "sha256": "1c4f7ea7f663918861e2ce48e154a01a5f5038b5b798f59751a2a9acfd05e6dc",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/reference/revisions/R14_F02_F03_BOUNDED_TEXT_CORRECTION.json",
+      "bytes": 2822,
+      "sha256": "846602812c54339627af7d7c6ae3d0bf7d2830a5a8cdc61c51301fc048f69c46",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/run_bounded.py",
+      "bytes": 3449,
+      "sha256": "31f8da392d68827a8530da4d56642382abf3c8c2603be99bdd1335198e8a3bdd",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/prepare_design_docs.py",
+      "bytes": 14986,
+      "sha256": "68f87671086fa189e1254dc228114fc0212961cdaa8103c1010d8599af3c82f7",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r14_20261028/CONTRACT.json",
+      "bytes": 7688,
+      "sha256": "ee7bda451583ba4b74071ef8d1771808458f980d7d4a13a1422647dafcc8a3d6",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r14_20261028/POLICY_DELTA.json",
+      "bytes": 2731,
+      "sha256": "bb3745dcc26238bc5c84e23edf54f35da682b863265a0e812686ace0c6dd8c46",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    },
+    {
+      "path": "r14_work/review/PREFLIGHT_IDENTITY_CHECK.json",
+      "bytes": 3567,
+      "sha256": "12243d6fb14966b5ce24c93383243063b7a1ae15dd07bde3113e00788e808637",
+      "scope": "Text or administrative identity read; no scientific import/execution"
+    }
+  ],
+  "recorded_utc": "2026-10-28T10:09:56.462049+00:00",
+  "static_obligations_total": 14,
+  "static_obligations_passed": 14
+}
