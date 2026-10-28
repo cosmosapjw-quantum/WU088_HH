@@ -7,7 +7,7 @@ and physical consumer admission are deliberately separate inputs.
 from __future__ import annotations
 
 import argparse
-from dataclasses import dataclass
+from dataclasses import dataclass, InitVar, field
 from fractions import Fraction
 import hashlib
 import json
@@ -22,6 +22,7 @@ PDF_URL = "https://digital.csic.es/bitstream/10261/305186/2/h_hd_rate_supplement
 RECORD_URL = "https://digital.csic.es/handle/10261/305186"
 TEMPERATURES_K = (15, 55, 105, 255, 505, 1005, 1505, 2005, 2505, 3005)
 SOURCE_DOI = "10.1063/5.0128598"
+_SOURCE_ISSUANCE = object()
 
 
 class SourceContractError(ValueError):
@@ -85,6 +86,12 @@ class PrintedCell:
     original_token: str
     nominal_cm3_s: Fraction
 
+    def __post_init__(self) -> None:
+        if type(self.temperature_K) is not int or self.temperature_K not in TEMPERATURES_K:
+            raise SourceContractError("printed cell temperature is outside source grid")
+        if type(self.nominal_cm3_s) is not Fraction or self.nominal_cm3_s != decode_printed_token(self.original_token):
+            raise SourceContractError("printed token and exact nominal value disagree")
+
     @property
     def nominal_m3_s(self) -> Fraction:
         return self.nominal_cm3_s / 10**6
@@ -95,10 +102,34 @@ class NativeGrid:
     cells: tuple[PrintedCell, ...]
     source_sha256: str
     extracted_page_sha256: str
+    _issuance: InitVar[object] = None
+    _source_verified: bool = field(init=False, default=False, repr=False)
+
+    def __post_init__(self, _issuance: object) -> None:
+        # An ordinary-API provenance guard; private/reflection abuse is outside
+        # the supported API. Only the PDF-verified loader issues source grids.
+        if _issuance is not _SOURCE_ISSUANCE:
+            raise SourceContractError("construct native source grids through load_native_grid")
+        if (type(self.cells) is not tuple or len(self.cells) != len(TEMPERATURES_K)
+                or any(type(c) is not PrintedCell for c in self.cells)
+                or tuple(c.temperature_K for c in self.cells) != TEMPERATURES_K
+                or self.source_sha256 != PDF_SHA256
+                or type(self.extracted_page_sha256) is not str
+                or re.fullmatch(r"[0-9a-f]{64}", self.extracted_page_sha256) is None):
+            raise SourceContractError("native grid source/order/identity invariant failed")
+        for c in self.cells:
+            if c.nominal_cm3_s != decode_printed_token(c.original_token):
+                raise SourceContractError("native grid cell exactness invariant failed")
+        object.__setattr__(self, "_source_verified", True)
+
+    def _require_verified(self) -> None:
+        if self._source_verified is not True:
+            raise SourceContractError("unattested grid cannot issue a native source value")
 
     def lookup(self, temperature_K: int, *, initial_v: int = 0,
                initial_j: int = 2, product_v: int = 0, product_j: int = 1,
                method: str = "SQM") -> PrintedCell:
+        self._require_verified()
         labels = (initial_v, initial_j, product_v, product_j)
         if any(type(x) is not int for x in labels) or labels != (0, 2, 0, 1) or method != "SQM":
             raise SourceContractError("only original SQM HD(v0,j2)->H2(v0,j1) is exported")
@@ -107,6 +138,7 @@ class NativeGrid:
         return self.cells[TEMPERATURES_K.index(temperature_K)]
 
     def as_json(self) -> dict:
+        self._require_verified()
         def rational(x: Fraction) -> dict[str, str]:
             return {"numerator": str(x.numerator), "denominator": str(x.denominator)}
         return {
@@ -167,7 +199,8 @@ def load_native_grid(pdf_path: str | Path, *, timeout_seconds: float = 20) -> Na
     tokens = _table2_row(text)
     cells = tuple(PrintedCell(t, token, decode_printed_token(token))
                   for t, token in zip(TEMPERATURES_K, tokens))
-    return NativeGrid(cells, digest, hashlib.sha256(execution.stdout).hexdigest())
+    return NativeGrid(cells, digest, hashlib.sha256(execution.stdout).hexdigest(),
+                      _issuance=_SOURCE_ISSUANCE)
 
 
 def main(argv: list[str] | None = None) -> int:
