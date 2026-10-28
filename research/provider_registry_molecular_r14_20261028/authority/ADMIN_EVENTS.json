@@ -6,5 +6,15 @@
     "scientific_execution": 0,
     "remote_mutation": 0,
     "treatment": "Preserve existing query evidence; agent asked to recover stored results and report outstanding calls rather than repeat inventory."
+  },
+  {
+    "event": "PR_METADATA_DISPLAY_HELPER_ERROR",
+    "recorded_utc": "2026-10-28T10:24:34.264235+00:00",
+    "observation": "Own PR150 GET succeeded and response was stored; subsequent display-only UTF8 byte-count attempt raised ReferenceError: TextEncoder is not defined in functions isolate.",
+    "cause": "TextEncoder global unavailable in functions runtime",
+    "recovery": "Reuse stored successful response and report existing body character count61473; no repeated GET and no remote mutation.",
+    "scientific_execution": 0,
+    "remote_mutation": 0,
+    "failed_publication": false
   }
 ]

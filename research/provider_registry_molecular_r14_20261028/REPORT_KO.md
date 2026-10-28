@@ -1,7 +1,9 @@
-# R14 중간 종합 보고 — S08 준비
+# R14 종합 보고 — S09 과학 채택
 
-R14의 과학 실행은 완료했다. Primary **621/621**, 독립 reference **691/691**, component comparisons **51,547**, 실패0이다. 두 전체 과학 OS process CPU는 **4.420146초**이며 각 실행은1회이다. CAS는32 zero residual, 반환 warning0이다. 남은 primary/reference/CAS는 **0/0/0**이다.
+R14 이론·코딩 workflow **18/20**, 과학 DAG **29/44**이다. 독립 C9는 **PASS_SCOPED_FINAL_C9**,18/18 의무 PASS, 열린 중대 지적0으로 종결했다. 이미 등록된 조건부 이론·코드 각1개만 채택했고, 기존42개 노드 객체 변경은0이다.
 
-과학 본문·전제·수치·한계는 [RESULTS_KO.md](RESULTS_KO.md)에 완결해 기록했다. 저장 결과만 이용한 그림2PNG/2SVG를 한 process에서 만들고 실제 PNG를 확인했다. 렌더링 OS CPU2.567074초, scientific/ODE 추가0이다. 현재 C9 판정 전이며 과학 DAG는 **27/44**이다. 독립 C9가 끝나야 두 진행 중 노드를 채택한다.
+Primary **621/621**, 독립 reference **691/691**, component comparisons **51,547**, 실패0. 두 전체 과학 OS process CPU는 **4.420146초**, 각 과학 실행1회다. CAS32zero/warning0. 남은 primary/reference/CAS **0/0/0**. 저장 결과 그림2PNG/2SVG는 한 process에서 생성·실제 확인했으며 별도 render OSCPU2.567074초다.
 
-사용자 최신 지시에 따라 끊긴 지점에서 진행 중인 두 R14 노드만 마무리한다. 최신 조사·기존 과학을 반복하지 않고 새 연구 노드를 시작하지 않는다. 최종 보고·handoff와 S08–S10·FINAL 게시/양쪽 백업을 이어간다.
+과학 본문은 RESULTS_KO.md, 채택 범위는 SCIENTIFIC_ADMISSION.json, 동결 과학 payload는 SCIENTIFIC_PAYLOAD_MANIFEST.json을 따른다. Payload는105파일/SHA256 b68ab395e4e36ea7a6b49bb6c0b1f44fb75d10522f223d29657907179ac24e4b다. Guard 없는 strict Decimal containmentfalse/83건을 보존했다. Full-A/whole-forcing 전제와 실제HD/namedphysicalconsumerINPUT_PENDING, HH_R10OFF,productionNOT_ISSUED,L4false,central/physicaldelta0을 유지한다.
+
+사용자 최신 지시대로 진행 중 두 노드만 마무리했다. 남은 일은 S09 actual 게시/이중백업, 별도 admission metadata 확인, S10 종합보고/handoff/게시 및 FINAL 백업이다. 새 과학 실행·연구 노드는 없다.
