@@ -149,6 +149,19 @@
       "scientific_solvers_executed": 0,
       "outputs_written_before_failure": 0,
       "next_action": "Use explicit published primary-to-reference case alias map after checking source schema"
+    },
+    {
+      "class": "session_interruption_before_first_publication",
+      "action": "Initial long connector orchestration call",
+      "observed": "Call was interrupted and session state reset before any S01 publication ACK; remote ref remained R9 FINAL.",
+      "resolution": "Recovered existing local files and actual remote ref; rebuilt helpers and published smaller S01 tree. No scientific run or unacknowledged publication counted."
+    },
+    {
+      "class": "adoption_metadata_validator",
+      "exit_code": 1,
+      "observed": "Initial closeout helper compared complete freeze dictionaries; four Python entries additionally carry AST_status.",
+      "resolution": "Compare the declared identity fields path/bytes/sha256. All14 original bytes and hashes match; no scientific source or output changed.",
+      "scientific_runs": 0
     }
   ],
   "execution_environment": {
@@ -174,6 +187,14 @@
       "bound": 0.20888281853531626,
       "excess": 4.0013206434938575e-12,
       "frozen_tolerance": 4.377656370786352e-11
+    },
+    "META02": {
+      "status": "CLOSED_NONBLOCKING_METADATA",
+      "record": "reviews/META02_CLOSED.json",
+      "change": "Read actual generator.separate_sum_lower into lambda_split_lower for four saved cases; core and scientific runner bytes unchanged.",
+      "solver_calls": 0
     }
-  }
+  },
+  "scientific_execution_complete": true,
+  "completion_basis": "Actual process/CAS responses; all remaining runs zero. Delivery metadata actions do not reopen the scientific unit."
 }
