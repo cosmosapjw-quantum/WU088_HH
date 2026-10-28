@@ -1,0 +1,72 @@
+{
+  "schema": "wu.r18.execution_ledger.v1",
+  "classification": {
+    "python": "PYTHON_PASS",
+    "pdftotext": "actually_executed_success",
+    "matplotlib": "actually_executed_success",
+    "CPP": "NOT_REQUIRED_NOT_CLAIMED"
+  },
+  "actual_runs": {
+    "R18_primary": 3,
+    "R18_reference": 2,
+    "Wolfram": 1,
+    "renderer": 1,
+    "source_independent_extraction": "distinct-author actual executed",
+    "C9": "distinct-author pre-fix/intermediate/final targeted probes; final53PASS",
+    "old_R16_R17A_R17B_suites": 0,
+    "physical_ODE": 0
+  },
+  "primary_timeline": [
+    {
+      "id": "prefix",
+      "tests": 17,
+      "status": "PASS_SCOPED_TEST_COVERAGE",
+      "module_blob": "11c2cda5c5ace5d76c7fcc846095a556d22b3e85",
+      "log": "results/PRIMARY_PREFIX_RAW.log",
+      "later_finding": "R18-C9-F01 ordinary construction could relabel synthetic data"
+    },
+    {
+      "id": "issuance_guard",
+      "tests": 18,
+      "status": "PASS_SCOPED_TEST_COVERAGE",
+      "module_blob": "f4d826636e38b487761821f6efcaf890c76d74a3",
+      "log": "results/PRIMARY_ISSUANCE_FIX_RAW.log",
+      "later_finding": "same root verified-hash/extractor mutable path race"
+    },
+    {
+      "id": "final_verified_bytes",
+      "tests": 19,
+      "status": "PASS_SCOPED",
+      "module_blob": "be2a845263b215b604f255ffe5deabe55be9dd7b",
+      "log": "results/PRIMARY_RAW.log",
+      "open_material": 0
+    }
+  ],
+  "failures": [
+    {
+      "class": "environment/source_access",
+      "event": "publisher supplement403 actual currentturn",
+      "preservation": "source/publisher_direct_probe.json; privateoriginalfailurebody",
+      "resolution": "nativeinstitutional authororiginalPDFHTTP200"
+    },
+    {
+      "class": "implementation/source_provenance",
+      "event": "direct constructor source mislabeling",
+      "preservation": "reviews/r18_code/S05_TARGETED_REVIEW.json",
+      "resolution": "loader issuance and exactinvariants"
+    },
+    {
+      "class": "implementation/source_provenance",
+      "event": "mutablepath race",
+      "preservation": "reviews/r18_code/CONSTRUCTOR_REPAIR_PATH_RACE.json",
+      "resolution": "extract same verified raw via stdin; final actualpathswarpprobePASS"
+    },
+    {
+      "class": "tool_service",
+      "event": "visualization shared reference read returned skillenvironment notavailable",
+      "scientific_impact": "none; static scientific Matplotlib mandated by host policy, source/runtime/visualverification successful"
+    }
+  ],
+  "accounting": "time.process_time values report each Python process CPU only; Poppler child/CAS CPU and full historical CPU not claimed; wall timings retained. No completed-source suite replay for reassurance.",
+  "budget_scope": "new R18 base and two diagnosed <=20CPU repair slices only; all ancestor allowances unchanged; unused allowance expires onC10"
+}
