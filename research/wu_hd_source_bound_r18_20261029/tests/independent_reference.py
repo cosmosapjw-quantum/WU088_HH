@@ -1,6 +1,7 @@
 """Independent pypdf/Decimal reference; imports no R18 production module."""
 from decimal import Decimal, localcontext
 import hashlib
+import io
 import json
 import os
 from pathlib import Path
@@ -11,8 +12,9 @@ from pypdf import PdfReader
 leaf=Path(__file__).resolve().parents[1]
 source=Path(os.environ["WU_R18_SOURCE_PDF"])
 start_cpu=time.process_time();start_wall=time.monotonic()
-assert hashlib.sha256(source.read_bytes()).hexdigest()=="a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754"
-page=PdfReader(str(source)).pages[5].extract_text(extraction_mode="layout")
+raw=source.read_bytes()
+assert hashlib.sha256(raw).hexdigest()=="a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754"
+page=PdfReader(io.BytesIO(raw)).pages[5].extract_text(extraction_mode="layout")
 section=page.split("Table 2:",1)[1].split("Table 3:",1)[0]
 rows=[line for line in section.splitlines() if re.match(r"^\s*\(0,\s*2\)",line)]
 assert len(rows)==1
@@ -35,7 +37,7 @@ with localcontext() as context:
         checks.append({"T_K":temps[i],"token":token,"SI_crossmultiplication":"PASS"})
 out={"schema":"wu.r18.independent_reference.v1","algorithm":"pypdf original PDF extraction + Decimal exact scaleb/as_integer_ratio, independent integer crossmultiplication",
      "production_imports":0,"tests":len(checks),"checks":checks,"exit_code":0,
-     "source_pdf_sha256":hashlib.sha256(source.read_bytes()).hexdigest(),
+     "source_pdf_sha256":hashlib.sha256(raw).hexdigest(),
      "cpu_seconds":time.process_time()-start_cpu,"wall_seconds":time.monotonic()-start_wall,
      "pypdf_version":__import__("pypdf").__version__}
 (leaf/"results/REFERENCE.json").write_text(json.dumps(out,indent=2)+"\n")

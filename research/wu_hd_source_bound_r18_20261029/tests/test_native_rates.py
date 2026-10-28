@@ -145,6 +145,22 @@ class TestNativeSource(unittest.TestCase):
             replace(self.grid, cells=synthetic)
         with self.assertRaises(SourceContractError):
             PrintedCell(15,"3.99(14)",F(1))
+
+    def test_verified_bytes_survive_source_path_replacement(self):
+        original_run = subprocess.run
+        raw = self.source_pdf.read_bytes()
+        with tempfile.TemporaryDirectory() as d:
+            copied = Path(d)/"mutable.pdf"
+            copied.write_bytes(raw)
+            def swap_path_then_extract(argv, **kwargs):
+                copied.write_bytes(b"x"*len(raw))
+                self.assertEqual(argv[-2:], ["-", "-"])
+                self.assertEqual(kwargs["input"], raw)
+                return original_run(argv, **kwargs)
+            with patch("native_rates.subprocess.run", side_effect=swap_path_then_extract):
+                verified = load_native_grid(copied)
+            self.assertEqual(verified.lookup(15).original_token, "3.99(14)")
+            self.assertNotEqual(copied.read_bytes(), raw)
         with patch("native_rates.subprocess.run",return_value=subprocess.CompletedProcess([],1,b"",b"injected failure")):
             with self.assertRaises(ExtractionExecutionError):
                 load_native_grid(self.source_pdf)

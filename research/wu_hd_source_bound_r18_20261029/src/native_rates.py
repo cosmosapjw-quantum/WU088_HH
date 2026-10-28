@@ -185,8 +185,8 @@ def load_native_grid(pdf_path: str | Path, *, timeout_seconds: float = 20) -> Na
         raise SourceContractError("extractor timeout must be in (0,30] seconds")
     try:
         execution = subprocess.run(
-            ["pdftotext", "-layout", "-f", "6", "-l", "6", str(path), "-"],
-            capture_output=True, check=False, timeout=timeout_seconds)
+            ["pdftotext", "-layout", "-f", "6", "-l", "6", "-", "-"],
+            input=raw, capture_output=True, check=False, timeout=timeout_seconds)
     except (OSError, subprocess.TimeoutExpired) as exc:
         raise ExtractionExecutionError(f"current pdftotext execution failed: {exc}") from exc
     if execution.returncode != 0:
