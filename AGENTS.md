@@ -1,4 +1,4 @@
-# Current priority: R12 exact nonaligned convolution — workflow16/20, DAG23/40 — 2026-10-28 KST
+# Current priority: R12 exact nonaligned convolution — workflow18/20, DAG25/40 — 2026-10-28 KST
 
 Read research/provider_registry_molecular_r12_20261028/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, authority/intake/SYNTHESIS_KO.md and delivery/PUBLICATION_INDEX.json. R12 is a separate nonaligned-grid/translated-breakpoint forcing-convolution and exact closed-cell refinement unit on unchanged R11 certificates. Latest plugin1.3.0; explicit fullR1-R10/C1-C10 request. Preserve all38 inherited DAG objects. New R12 primary/reference/CAS remaining=0/0/0; R11/R10/R9/R8/R7/R6/PHYS91 remaining unchanged0. Globalremaining/fullhistoricalCPU null. Actual stage publications/backupACK are separate from workflow counts. Do not repeat completed science or ODE.
 
