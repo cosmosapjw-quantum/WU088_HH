@@ -1,6 +1,6 @@
 # R14 종료 handoff — 현재 두 노드 종결, 새 allowance 0
 
-아래 블록은 다음 대화에 복사할 수 있다. S09·C9·payload 항목은 실제 종료 기록으로 채웠으며 S10 항목만 실제 게시 뒤 결속한다. FINAL 자신의 commit/tree/ZIP/양쪽 ACK는 자기 source에 넣지 않으며, PR150과 종료 응답의 실제 외부 영수증을 함께 전달한다. 후속 대화는 완료 과학을 반복하거나 새 단위를 자동으로 시작하는 권한이 아니다.
+아래 블록은 다음 대화에 복사할 수 있다. S09·C9·payload·S10 항목은 실제 종료 기록과 게시·백업 영수증으로 결속했다. FINAL 자신의 commit/tree/ZIP/양쪽 ACK는 자기 source에 넣지 않으며, PR150과 종료 응답의 실제 외부 영수증을 함께 전달한다. 후속 대화는 완료 과학을 반복하거나 새 단위를 자동으로 시작하는 권한이 아니다.
 
 ```text
 $physmath-research-loop로 cosmosapjw-quantum/WU088_HH의 R14 종료 상태를 이어받아라.
@@ -16,8 +16,8 @@ leaf: research/provider_registry_molecular_r14_20261028/
 과학 S09 tree: a0f87622e8ac3eae235968962e704b4ad5f59c6a
 과학 payload file count: 105
 과학 payload SHA-256: b68ab395e4e36ea7a6b49bb6c0b1f44fb75d10522f223d29657907179ac24e4b
-S10 source commit: 게시 후 PR150 및 다음 FINAL source에 결속
-S10 source tree: 게시 후 PR150 및 다음 FINAL source에 결속
+S10 source commit: 75a3bdbcba5113e4a4b94444c4ac6d6b08cc4871
+S10 source tree: fdf43028f7de44b7b46a7ef443708f21b6380bbe
 FINAL 자신의 commit/tree/ZIP/ACK: PR150 및 직전 종료 응답의 실제 외부 영수증을 읽어라.
 자기 source에 자기 FINAL 영수증을 소급 삽입하지 마라.
 
@@ -32,7 +32,13 @@ ADMISSION_DELTA = PASS_SCOPED_ADMISSION_METADATA_DELTA.
 S09 remote Git blob IDs/size105/105match.
 이는content-addressidentity검사이며provideroriginalGET/모든blob본문새GET이아님.
 S09 실제 게시/이중 백업: 실제 게시, Drive+Dropbox ACK 2/2 및 크기 일치
-S10 실제 게시/이중 백업: 이 source 게시 후 실제 ACK를 기록; 현재 이전9단계 ACK18 확인
+S10 실제 게시/이중 백업: 실제 게시, Drive+Dropbox ACK 2/2 및 크기 일치
+S10 ZIP: WU_MOLECULAR_R14_S10_SOURCE_20261028_75a3bdbcba51.zip
+S10 ZIP bytes: 1667476
+S10 ZIP SHA256: 878dc1a89763bcd07797b7abd04d16395a9f1d162177279b3f03cd0c372b473d
+S10 Drive: 1nL3eLnzRpF0NGmmGtyr-xfLsrG4pcg2W
+S10 Dropbox: id:BSpOijBcT10AAAAAAEF8-Q
+S01-S10 실제 게시/이중 백업10/10,현재 source에 결속된 actual ACK20.
 FINAL 포함 전체 ZIP/ACK 개수는 외부 최종 영수증에서 실제 수로 읽어라.
 
 먼저 AGENTS.md 최신 entry, REPORT_KO.md, HANDOFF_KO.md,

@@ -8,7 +8,7 @@ Remaining primary/reference/CAS0/0/0, old allowances unchanged0;globalremaining/
 
 ActualHD/namedphysicalconsumer/state/densityclockINPUT_PENDING_IN_INSPECTED_SCOPE,HH_R10OFF,productionNOT_ISSUED,L4false,central/physicaldelta0,nativevUNSPECIFIED,MISSING_NOT_ZERO,TIQM/SQMdistinct. Preserve R14F01/F02/F03 originalbytes andactualclosure,D01 reconstructed provenance, and all older results/failures/sample/CAS/GET distinctions. Future note PROPOSAL_ONLY,newnodes0,newallowance0.
 
-S01-S09 actual dual backups9/9,ACK18. S10 current report/handoff source is being closed; its actual receipt enters FINAL. FINAL owncommit/tree/ZIP/providerACK remains external inPR150 andclosingresponse, never inside its ownsource. LocalZIPCRC/allmemberSHA/actualACKsize verified;provideroriginalGETNOT_RUN. Root expectedSHA/forcefalse researchbranch/draftPR150 andDrive/Dropbox publication authorized; no mainmerge orother-ownerwrites.
+S01-S10 actual dual backups10/10,ACK20. S10 source=75a3bdbcba5113e4a4b94444c4ac6d6b08cc4871,tree=fdf43028f7de44b7b46a7ef443708f21b6380bbe; actual S10 receipt is included. FINAL owncommit/tree/ZIP/providerACK remains external inPR150 andclosingresponse, never inside its ownsource. LocalZIPCRC/allmemberSHA/actualACKsize verified;provideroriginalGETNOT_RUN. Root expectedSHA/forcefalse researchbranch/draftPR150 andDrive/Dropbox publication authorized; no mainmerge orother-ownerwrites.
 
 <!-- WU_R14_CURRENT_END -->
 

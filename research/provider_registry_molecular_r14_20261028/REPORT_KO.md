@@ -34,7 +34,7 @@ Primary는 S05 `308a1f67e29339df4df1bcf04ae61d24f3984b33`, reference는 S06 `47c
 
 Reference의 PASS는 사전에 고정한 guard 아래의 고정밀 대조 결과다. Decimal160을 interval reference로 표시하지 않으며, strict containment 83건을 숨기거나 tolerance를 사후 확대하지 않았다. Exact rational 검사와 directed-rounding의 수학적 근거는 별개로 보존한다. 이 83건은 R10/R11의 saved physical-sample readout이 아니다.
 
-과학 S09 commit은 `dfdefe47ef0c28ae94f6e6727d3230ceed5c356d`, tree는 `a0f87622e8ac3eae235968962e704b4ad5f59c6a`이다. 과학 payload는 **105개 파일**, SHA-256 **`b68ab395e4e36ea7a6b49bb6c0b1f44fb75d10522f223d29657907179ac24e4b`**로 결속한다. S10 source commit은 `게시 후 PR150 및 다음 FINAL source에 결속`, tree는 `게시 후 PR150 및 다음 FINAL source에 결속`이다. 실제 S09 remote Git tree의 blob IDs·크기는 로컬 Git blob hash·scientific manifest와 **105/105 일치**했다. 이는 content-address identity 검사이며 provider ZIP original GET 또는 모든 remote blob의 새 본문 다운로드가 아니다. **FINAL 자신의 commit/tree/ZIP/ACK는 자신의 source에 삽입하지 않고 PR150과 종료 응답에 외부 영수증으로 보존한다.**
+과학 S09 commit은 `dfdefe47ef0c28ae94f6e6727d3230ceed5c356d`, tree는 `a0f87622e8ac3eae235968962e704b4ad5f59c6a`이다. 과학 payload는 **105개 파일**, SHA-256 **`b68ab395e4e36ea7a6b49bb6c0b1f44fb75d10522f223d29657907179ac24e4b`**로 결속한다. S10 source commit은 `75a3bdbcba5113e4a4b94444c4ac6d6b08cc4871`, tree는 `fdf43028f7de44b7b46a7ef443708f21b6380bbe`이다. 실제 S09 remote Git tree의 blob IDs·크기는 로컬 Git blob hash·scientific manifest와 **105/105 일치**했다. 이는 content-address identity 검사이며 provider ZIP original GET 또는 모든 remote blob의 새 본문 다운로드가 아니다. **FINAL 자신의 commit/tree/ZIP/ACK는 자신의 source에 삽입하지 않고 PR150과 종료 응답에 외부 영수증으로 보존한다.**
 
 근거: [RESULTS_KO.md](RESULTS_KO.md), [EXECUTION_LEDGER.json](EXECUTION_LEDGER.json), [FROZEN_FILES.json](verification/FROZEN_FILES.json), [SCIENTIFIC_PAYLOAD_MANIFEST.json](SCIENTIFIC_PAYLOAD_MANIFEST.json).
 
@@ -220,7 +220,7 @@ SVG 두 개, 표시 data, input identities, renderer source hash와 실제 proce
 
 ## 9. 열 단계 게시·이중 백업
 
-S01–S09는 root가 expected-parent SHA를 확인하고 force=false로 연구 branch 및 draft PR150에 게시한 다음, 그 실제 source로 ZIP을 만들어 Drive와 Dropbox에 백업했다. S10은 현재 보고서·handoff source를 게시한 뒤 같은 절차로 actual ACK를 확보한다. 검증은 **로컬 ZIP CRC, 모든 member SHA-256, 양쪽 실제 upload ACK, 크기 일치**다. Provider archive original GET은 **NOT_RUN**이며 metadata/ACK를 provider 원본 byte 재다운로드 검증이라고 부르지 않는다. 자기 단계의 ACK는 다음 source와 PR150에 보존한다.
+각 단계는 root가 expected-parent SHA를 확인하고 force=false로 연구 branch 및 draft PR150에 게시한 다음, 그 실제 source로 ZIP을 만들어 Drive와 Dropbox에 백업했다. 검증은 **로컬 ZIP CRC, 모든 member SHA-256, 양쪽 실제 upload ACK, 크기 일치**다. Provider archive original GET은 **NOT_RUN**이며 metadata/ACK를 provider 원본 byte 재다운로드 검증이라고 부르지 않는다. 자기 단계의 ACK는 다음 source와 PR150에 보존한다.
 
 | 단계 | 이론·코드 실제 범위 | Workflow | 완료/DAG | Source commit | 게시·백업 |
 |---|---|---|---|---|---|
@@ -233,7 +233,7 @@ S01–S09는 root가 expected-parent SHA를 확인하고 force=false로 연구 b
 | S07 | R7/C7 독립 reference1회·CAS1회 | 14/20 | 27/44 | `f80151577a8cfe6998ff06c594eba13f8b30ef53` | 실제 게시, ACK2 |
 | S08 | R8/C8 saved-output 분석·그림·actual visual review | 16/20 | 27/44 | `17464ac63bae5840390746db855e231595d4bd9d` | 실제 게시, ACK2 |
 | S09 | R9/C9 독립 최종 심사·조건부2노드 채택 | 18/20 | 29/44 | `dfdefe47ef0c28ae94f6e6727d3230ceed5c356d` | 실제 게시, Drive+Dropbox ACK 2/2 및 크기 일치 |
-| S10 | R10/C10 보고서·handoff·전달 종결 | 20/20 | 29/44 | `게시 후 PR150 및 다음 FINAL source에 결속` | 이 source 게시 후 실제 ACK를 기록; 현재 이전9단계 ACK18 확인 |
+| S10 | R10/C10 보고서·handoff·전달 종결 | 20/20 | 29/44 | `75a3bdbcba5113e4a4b94444c4ac6d6b08cc4871` | 실제 게시, Drive+Dropbox ACK 2/2 및 크기 일치 |
 
 S08의 actual ZIP은 `WU_MOLECULAR_R14_S08_SOURCE_20261028_17464ac63bae.zip`, **1,589,134 bytes**, SHA-256 `978b8a7af4f790267bcb0b6874cb00c21906657ffd2c658fca29739fbe9ab05a`다. Drive ID `1xUg481Ui3HqU8_jXQk-QPd8uOqQfeuRM`, Dropbox ID `id:BSpOijBcT10AAAAAAEFU4A`의 실제 ACK와 크기 일치를 확인했다. S09의 actual ZIP은 `WU_MOLECULAR_R14_S09_SOURCE_20261028_dfdefe47ef0c.zip`, **1,621,378 bytes**, SHA-256 `8120edda13336f18f1b14237729299d664cd0d1b55c3c838128ea0f4e7eb2a57`이며 Drive ID `1LnYpfqVpkT7Yuv4zA6auj2ynI4J-eMJ-`, Dropbox ID `id:BSpOijBcT10AAAAAAEFtZw`의 실제 ACK2/2와 크기 일치를 확인했다. 전 단계별 tree/ZIP identity/provider receipt는 [PUBLICATION_INDEX.json](delivery/PUBLICATION_INDEX.json)이 기준이다. FINAL 자신의 영수증은 이 source 밖의 PR150/종료 응답에 기록한다.
 
@@ -256,3 +256,9 @@ R10 원래 sample readout **4.0013206434938575e-12**를 그대로 둔다. R11 �
 R14 primary/reference/CAS remaining은 0/0/0이고 R13/R12/R11/R10/R9/R8/R7/R6/PHYS91 allowance 증가는 모두0이다. Global remaining과 full historical CPU는 null이다. **현재 두 노드의 종결 뒤 새 연구·코드·CAS·ODE·그림 실행을 자동으로 시작하지 않는다.** 향후 실제 새 HD array 또는 named physical consumer가 제공되면 새 사용자 지시와 별도 유한 계약 아래 입력 결속을 우선한다. 재개를 이유로 완료 과학·ODE·독립 심사를 반복하지 않는다.
 
 허용된 게시 권한은 root의 expected-SHA/force=false 연구 branch·draft PR150, Drive+Dropbox 백업이다. Main merge와 다른 owner repo 쓰기는 포함하지 않는다. 다음 대화용 구체적 identity·읽기 순서·중지 조건은 [HANDOFF_KO.md](HANDOFF_KO.md)에 있다.
+
+## 11. 실제 S10 영수증과 최종 source 범위
+
+S01–S10 **10/10 단계 실제 게시·이중 백업**, 실제 provider ACK **20개**를 이 source에 결속했다. S10 ZIP `WU_MOLECULAR_R14_S10_SOURCE_20261028_75a3bdbcba51.zip`, **1,667,476 bytes**, SHA-256 `878dc1a89763bcd07797b7abd04d16395a9f1d162177279b3f03cd0c372b473d`이다. Drive ID `1nL3eLnzRpF0NGmmGtyr-xfLsrG4pcg2W`, Dropbox ID `id:BSpOijBcT10AAAAAAEF8-Q`이며 양쪽 실제 ACK와 크기가 일치했다.
+
+FINAL ZIP은 새 R14 leaf와 현재 AGENTS, 이전 단위의 immutable 참조를 포함한다. 새 R14 과학 코드·입력·결과는 자체 포함하며, 전체 역사 repo의 모든 파일을 복원하는 archive라고 하지 않는다. FINAL 자신의 commit/tree/ZIP/ACK는 생성·업로드 뒤 PR150과 종료 응답에 외부 기록한다. 현재 source의 과학 payload105파일은 S09 이후 변경0이다.

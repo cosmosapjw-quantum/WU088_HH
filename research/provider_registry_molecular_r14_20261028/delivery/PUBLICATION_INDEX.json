@@ -1,7 +1,7 @@
 {
   "schema": "WU_R14_PUBLICATION_INDEX_V1",
-  "completed_stage_dual_backups": 9,
-  "actual_provider_ACKs": 18,
+  "completed_stage_dual_backups": 10,
+  "actual_provider_ACKs": 20,
   "stages": [
     {
       "stage": "S01",
@@ -308,7 +308,44 @@
       },
       "provider_ACKs": 2,
       "own_receipt_inserted_into_source": false
+    },
+    {
+      "stage": "S10",
+      "source_commit": "75a3bdbcba5113e4a4b94444c4ac6d6b08cc4871",
+      "source_tree": "fdf43028f7de44b7b46a7ef443708f21b6380bbe",
+      "archive_name": "WU_MOLECULAR_R14_S10_SOURCE_20261028_75a3bdbcba51.zip",
+      "archive_path": "/workspace/scratch/42de23091886/r14_work/delivery/WU_MOLECULAR_R14_S10_SOURCE_20261028_75a3bdbcba51.zip",
+      "archive_bytes": 1667476,
+      "archive_sha256": "878dc1a89763bcd07797b7abd04d16395a9f1d162177279b3f03cd0c372b473d",
+      "source_files": 182,
+      "zip_members": 183,
+      "verification": {
+        "local_ZIP_CRC": "PASS",
+        "all_member_SHA256": "MATCH",
+        "provider_original_GET": "NOT_RUN"
+      },
+      "expected_parent": "dfdefe47ef0c28ae94f6e6727d3230ceed5c356d",
+      "force": false,
+      "workflow": "20/20",
+      "scientific_DAG": "29/44",
+      "Drive": {
+        "status": "SUCCESS",
+        "file_id": "1nL3eLnzRpF0NGmmGtyr-xfLsrG4pcg2W",
+        "url": "https://drive.google.com/file/d/1nL3eLnzRpF0NGmmGtyr-xfLsrG4pcg2W/view?usp=drivesdk",
+        "size": 1667476
+      },
+      "Dropbox": {
+        "status": "COMPLETED",
+        "file_id": "id:BSpOijBcT10AAAAAAEF8-Q",
+        "path_display": "/BASS_DERIVATION_DOSSIERS_20260912/WU088_HH_R31S_NCP_REDESIGN_20260928/WU_MOLECULAR_R14_S10_SOURCE_20261028_75a3bdbcba51.zip",
+        "size": 1667476
+      },
+      "provider_ACKs": 2,
+      "own_receipt_inserted_into_source": false
     }
   ],
-  "own_receipt_rule": "Each actual checkpoint receipt enters the next source; FINAL own receipt stays external in PR150 and closing response."
+  "own_receipt_rule": "Each actual checkpoint receipt enters the next source; FINAL own receipt stays external in PR150 and closing response.",
+  "workflow": "20/20",
+  "scientific_DAG": "29/44",
+  "FINAL_self_receipt": "External PR150 and closing response; not inserted into own source"
 }

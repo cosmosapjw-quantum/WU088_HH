@@ -40,3 +40,7 @@ S09 source ZIP은1,621,378bytes/SHA256 `8120edda13336f18f1b14237729299d664cd0d1b
 ## 후속 범위
 
 최신지시는끊긴지점에서진행중노드만마무리하는것이다. 새node/새과학실행/새allowance0. followup/NEXT_INPUT_CONTRACT.json은입력결속우선의PROPOSAL_ONLY메모이며R14채택결과가아니다. 별도후속지시전에는새증명·계산·구현·루프를시작하지않는다.
+
+## S10 실제 종료 결속
+
+Workflow20/20, 과학DAG29/44. S10 source `75a3bdbcba5113e4a4b94444c4ac6d6b08cc4871`,tree `fdf43028f7de44b7b46a7ef443708f21b6380bbe`. S01–S10 실제게시·이중백업10/10,actualACK20. S10 ZIP 1667476bytes/SHA256 `878dc1a89763bcd07797b7abd04d16395a9f1d162177279b3f03cd0c372b473d`,Drive `1nL3eLnzRpF0NGmmGtyr-xfLsrG4pcg2W`,Dropbox `id:BSpOijBcT10AAAAAAEF8-Q`,양쪽크기일치. FINAL자기ACK는이source밖PR150·종료응답에기록한다. 새R14leaf와AGENTS 및immutable이전참조가archive범위이며전체역사repo복원본이아니다.
