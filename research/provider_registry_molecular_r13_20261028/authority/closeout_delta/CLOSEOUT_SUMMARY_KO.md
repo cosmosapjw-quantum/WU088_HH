@@ -1,4 +1,4 @@
-# R13 종료 정합성 — S09 준비 상태
+# R13 종료 정합성 — FINAL source
 
 신규 과학의 현재 채택 상태는 조건부 이론·코드 각1개, DAG27/42이며 기존40개 객체 변경0이다. Primary/reference/CAS 각1회 완료, 동결14/14, primary311/311, reference125/125/8408components, 실패0, 두 전체 OS process CPU1.334749초다. 57파일 과학 payload SHA256은 aed8a6d7e58889de248ee88f75c2a46a7418462f4e3908393d72b64e908c6563이다. 후속 과학 실행은 허용하지 않는다.
 
@@ -12,6 +12,10 @@ Root의 지정7ref 종료 GET은 **17:34:26.695–17:34:27.284KST**, 원자적sn
 
 실제HDarray나 namedWUphysicalconsumer/density/clock은 이 변경분에서 공급되지 않았다. Native25·actualREItemperature·physicalradii는null이며 L4false인 source-model 진단을 WU물리결속으로 올리지 않는다. Root의 R13 과학 계약·코드·결과를 바꿀 근거는 이 변경에서 발견되지 않았다. 자세한 변동과 읽기 범위는 dependency/REPORT_KO.md와 SOURCE_IDENTITIES.json을 따른다. 이 한정된 결론은 전역 자료 부재 주장이 아니다.
 
-## 남은 종료 의무
+## 실제 S10 전달과 FINAL 자기 영수증
 
-S09 actual 게시·양쪽ACK, S10 보고·handoff와actual 게시·백업, 최종 admission metadata delta 및 FINAL 외부 receipt를 순차 기록한다. 이 source의 미래 작업을 이미 완료했다고 세지 않는다. FINAL 자기 commit/tree/ZIP/ACK는 자기 source에 넣지 않고 PR150과 종료 응답에 기록한다. Provider original GET은 NOT_RUN이며 검증 범위는 localZIP CRC·all-memberSHA와 actualACK·size다.
+R1–R10/C1–C10=20/20, 과학 DAG27/42다. S01–S10 actual source 게시10/10와 양쪽백업10/10, actual ACK20개를 확인했다. S10 source commit은 5e273a4fe8388ab84882175f662f8be7de640dea, tree는 d74a036d78952b45bf47ac546c9d23731f7ee5b3이다. S10 ZIP WU_MOLECULAR_R13_S10_SOURCE_20261028_5e273a4fe838.zip는 1079009bytes, SHA256 e8d25433a58a1c1c960ffba019994a8b91c508fd7790f3fef1b05e48958cb1b8이고 DriveID 1t0sYTO-cMFvr9XrcsstLQp2VlZPwgFKO, DropboxID id:BSpOijBcT10AAAAAAEDwCg가 실제 반환되었다. Local ZIP CRC·all-memberSHA 및 양쪽 size가 일치했다.
+
+Scientific S09 commit37db6e1fdb915b85d7547b77e3c01fa15218b193, treeacc710c3fd56b1d4897121553174ddf15f0d4fd1의 과학파일57개 remoteGitblobID/size와 localhash는57/57일치한다. 이는 실제 remoteGit tree identity검증이며 모든본문의 새download를뜻하지않는다. Independent C9의 과학판정을 재사용하고 final admission metadata delta는 새문서·DAG·manifest·receiptclaim만검토한다. 최종 판정은 reviews/ADMISSION_DELTA_REVIEW.json을 따른다.
+
+FINAL 자기 commit/tree/ZIP/마지막두ACK는 자기 source에 넣지 않고 PR150과 종료응답에 기록한다. FINAL 실제ACK까지포함하면11ZIP/22actualACK가되며, 이 source의 PUBLICATION_INDEX에는 이미완료한S01–S10 10ZIP/20ACK만들어있다. Provider original GET은NOT_RUN이고검증은localZIP CRC·all-memberSHA와actualACK·size다. ZIP에는현재AGENTS와새R13leaf를담았으며전체역사repo복구archive로주장하지않는다.

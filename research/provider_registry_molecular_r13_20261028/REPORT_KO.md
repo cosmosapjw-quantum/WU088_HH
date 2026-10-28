@@ -80,7 +80,7 @@ R8 original726/727PASS+1FAIL과별도exactphi24/24, R10 primary175/reference469/
 
 R_n/C_n을같은checkpoint로묶어10단계에서20개루프단계를기록했다. 각행에당시과학DAG완료수를남겼다. 실제receipt의archive명·bytes·SHA·양쪽ID는[PUBLICATION_INDEX](delivery/PUBLICATION_INDEX.json)에있다.
 
-S01–S09 **9/9** checkpoint가 실제 게시·이중백업을 마쳤고 actual provider ACK는 **18개**다. S10의 본 문서·handoff를 포함한 source는 게시·백업한 뒤 실제 receipt를 FINAL source에 넣는다.
+S01–S10 **10/10** checkpoint가 실제 게시·이중백업을 마쳤고 actual provider ACK는 **20개**다. 이 FINAL source의 자기 commit/tree/ZIP와 마지막 두 provider ACK는 PR150 및 종료 응답에 외부 기록한다. 그 ACK까지 완료되면 실제 archive는11개, ACK는22개다. 자기 receipt를 자기 source에 삽입하지 않는다.
 
 | 단계 | 실제 작업 | Workflow | 과학 DAG | Source | 백업 |
 |---|---|---:|---:|---|---|
@@ -93,7 +93,7 @@ S01–S09 **9/9** checkpoint가 실제 게시·이중백업을 마쳤고 actual 
 | S07 / R7·C7 | 독립reference·실행원장 | 14/20 | 25/42 | [`2d369aed562a`](https://github.com/cosmosapjw-quantum/WU088_HH/commit/2d369aed562a0776510475bcfebbb6a707178287) | [Drive](https://drive.google.com/file/d/146jY2scG3tUW568wk_69nt_rIm7yPOfP/view?usp=drivesdk) · Dropbox ACK |
 | S08 / R8·C8 | 결과해석·저장그림 | 16/20 | 25/42 | [`58427cc1d7b2`](https://github.com/cosmosapjw-quantum/WU088_HH/commit/58427cc1d7b261ddf0c231d631e4ea65fde13d8f) | [Drive](https://drive.google.com/file/d/1-jc7Hh9bRCbev2P6pLdwfBs0ZNNrm6X6/view?usp=drivesdk) · Dropbox ACK |
 | S09 / R9·C9 | 독립C9·조건부과학채택 | 18/20 | 27/42 | [`37db6e1fdb91`](https://github.com/cosmosapjw-quantum/WU088_HH/commit/37db6e1fdb915b85d7547b77e3c01fa15218b193) | [Drive](https://drive.google.com/file/d/1trjIumjAUYmUlhyJM94kLFT5PfeZroUc/view?usp=drivesdk) · Dropbox ACK |
-| S10 / R10·C10 | 보고·handoff·종료정합성 | 20/20 | 27/42 | 이 source의 실제 commit은 외부 receipt | 게시·ACK 후 FINAL에 편입 |
+| S10 / R10·C10 | 보고·handoff·종료정합성 | 20/20 | 27/42 | [`5e273a4fe838`](https://github.com/cosmosapjw-quantum/WU088_HH/commit/5e273a4fe8388ab84882175f662f8be7de640dea) | [Drive](https://drive.google.com/file/d/1t0sYTO-cMFvr9XrcsstLQp2VlZPwgFKO/view?usp=drivesdk) · Dropbox ACK |
 
 모든게시ref는root의expected-parent SHA와force=false로갱신했다. DraftPR150을유지하고mainmerge·다른ownerrepo쓰기는하지않았다. ZIP범위는현재AGENTS와새R13leaf의self-contained코드·입력·증거다. 전체역사repo복구용archive는아니며이전science는immutablecommit으로연결한다. LocalZIPCRC/all-memberSHA와양쪽actualACK/size를검증했고provideroriginalGET은NOT_RUN이다.
 
