@@ -13,6 +13,8 @@ from fractions import Fraction
 from math import factorial
 import hashlib
 import json
+import re
+import sys
 
 BITS = 128
 DEGREE = 96
@@ -27,10 +29,32 @@ MAX_BLOCKS = 8
 MAX_OVERLAP_TERMS = 250000
 MAX_ROOT_BISECTIONS = 98304
 FORCING_SCHEMA = "WU_R14_WHOLE_FORCING_V1"
+RUNTIME_INT_MAX_STR_DIGITS = 6000
+MAX_OUTPUT_RATIONAL_TEXT = 10000
 
 
 class DomainError(ValueError):
     pass
+
+
+def configure_r14_runtime():
+    """Finite decimal conversion policy for this dedicated R14 process.
+
+    16384-bit numerator/denominator components need at most4933 decimal
+    digits each. A finite6000 limit admits that domain without disabling
+    Python's conversion guard. Public input remains256bit/2048characters.
+    """
+    setter = getattr(sys, "set_int_max_str_digits", None)
+    getter = getattr(sys, "get_int_max_str_digits", None)
+    if setter is None or getter is None:
+        raise DomainError("R14 requires a runtime with finite integer-string digit policy")
+    setter(RUNTIME_INT_MAX_STR_DIGITS)
+    if getter() != RUNTIME_INT_MAX_STR_DIGITS:
+        raise DomainError("R14 integer-string digit policy must equal6000")
+    return RUNTIME_INT_MAX_STR_DIGITS
+
+
+configure_r14_runtime()
 
 
 def _bits(value):
@@ -40,10 +64,20 @@ def _bits(value):
 def exact(value, name="scalar"):
     if isinstance(value, bool) or not isinstance(value, (int, str, Fraction)):
         raise DomainError(name + ": exact int, Fraction or rational text required")
-    if isinstance(value, str) and len(value) > 2048:
-        raise DomainError(name + ": rational text too long")
+    if isinstance(value, str):
+        if len(value) > 2048:
+            raise DomainError(name + ": rational text too long")
+        if re.fullmatch(r"[+-]?[0-9]+(?:/[+-]?[0-9]+)?", value) is None:
+            raise DomainError(name + ": ASCII integer or p/q required; decimal/exponent/whitespace forbidden")
     try:
-        value = Fraction(value)
+        if isinstance(value, str):
+            if "/" in value:
+                numerator, denominator = value.split("/", 1)
+                value = Fraction(int(numerator), int(denominator))
+            else:
+                value = Fraction(int(value))
+        else:
+            value = Fraction(value)
     except (ValueError, TypeError, ZeroDivisionError) as exc:
         raise DomainError(name + ": invalid rational") from exc
     if _bits(value) > MAX_INPUT_BITS:
@@ -450,6 +484,7 @@ def bernstein3_weights(d, duration):
 
 
 def run_case(case):
+    configure_r14_runtime()
     p = validate(case)
     q, tau, c, d = p["q"], p["tau"], p["c"], p["d"]
     effective = _preprocess(p)
@@ -600,14 +635,24 @@ def run_case(case):
             "R_history": "GLOBAL_FROM_ORIGINAL_T0", "cap_application": "NONE",
             "arithmetic": {"rational_bits": MAX_DERIVED_BITS, "dyadic_bits": BITS,
                            "Taylor_degree": DEGREE, "root_bisections": ROOT_BISECTIONS,
+                           "runtime_int_max_str_digits": RUNTIME_INT_MAX_STR_DIGITS,
+                           "output_rational_text_max_characters": MAX_OUTPUT_RATIONAL_TEXT,
                            "root_boxes_are_propagation_clocks": False}}
 
 
-def serializable(value):
+def _serializable(value):
     if isinstance(value, Fraction):
-        return str(value)
+        text = str(derived(value))
+        if len(text) > MAX_OUTPUT_RATIONAL_TEXT:
+            raise DomainError("Serialized rational exceeds10000characters")
+        return text
     if isinstance(value, dict):
-        return {key: serializable(item) for key, item in value.items()}
+        return {key: _serializable(item) for key, item in value.items()}
     if isinstance(value, (list, tuple)):
-        return [serializable(item) for item in value]
+        return [_serializable(item) for item in value]
     return value
+
+
+def serializable(value):
+    configure_r14_runtime()
+    return _serializable(value)

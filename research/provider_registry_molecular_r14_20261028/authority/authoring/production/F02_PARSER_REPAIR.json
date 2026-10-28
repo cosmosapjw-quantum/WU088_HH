@@ -1,0 +1,23 @@
+{
+  "id": "R14-F02",
+  "class": "PRE_EXECUTION_FINITE_PARSER_DEFECT",
+  "cause": "Fraction(text) admitted compact exponent syntax that could allocate huge powers before the256bit guard. No malicious-value execution was attempted.",
+  "change": "ASCII signed integer or signed numerator/denominator grammar before bounded integer conversion; decimal/exponent/whitespace rejected.",
+  "before_snapshot": "drafts/F02_pre_parser_guard/",
+  "current_module_sha256": "0cf586789e80b74a42412a90aeafbc7ab33a2719f75436f43c21cc2d9c2e3cfb",
+  "guards_added": [
+    "huge_zero_exponent_text",
+    "decimal_text",
+    "surrounding_whitespace_text"
+  ],
+  "valid_case_count": 31,
+  "guard_count": 46,
+  "valid_case_payload_unchanged": true,
+  "fixture_source_bytes_unchanged": true,
+  "fixture_source_sha256": "f3e81086f10012aeaf8f390aca22589b8e55172aeb14e840c665592c99e21f0b",
+  "administrative_serializer_total_runs": 2,
+  "science_runs": 0,
+  "imports": 0,
+  "compile": 0,
+  "independent_closure": "PENDING_REVIEWER"
+}

@@ -24,12 +24,16 @@ E endpoint는 polynomial forcing으로 전파한다. Whole E에는 exact R sup u
 
 ## 의미 있는 고정 controls
 
-31valid cases와43guard cases를 고정했다. 독립 수동 exact controls에는 s²/affine/constant reduction, 음의middle 허용, 서로 다른vertex union과동일vertex dedup, 하나/두 개 irrational extrema, golden discriminant, double root, endpoint roots, linear derivative root, constant polynomial, initial jump, 전역 memory 및 fresh q0 forcing이 있다. 정렬을 달리한 source/observation refinement는 exact R 및 E interval overlap으로 비교한다. Signed d의±16·nearzero, shifted t0, discontinuous sources, nearcoalescent/nearboundary roots, full48capacity를 포함한다.
+31valid cases와46guard cases를 고정했다(최초43에서 독립F02교정의lexical3개를추가; 기존31개scientificpayload불변). 독립 수동 exact controls에는 s²/affine/constant reduction, 음의middle 허용, 서로 다른vertex union과동일vertex dedup, 하나/두 개 irrational extrema, golden discriminant, double root, endpoint roots, linear derivative root, constant polynomial, initial jump, 전역 memory 및 fresh q0 forcing이 있다. 정렬을 달리한 source/observation refinement는 exact R 및 E interval overlap으로 비교한다. Signed d의±16·nearzero, shifted t0, discontinuous sources, nearcoalescent/nearboundary roots, full48capacity를 포함한다.
 
 Primary에서 surd sup는 Decimal 근사 대신 고정된 `a+b*sqrt(n)` 기대값을 exact square comparisons로 검사한다. Production coefficients를 복사해 기대값을 만드는 방식은 쓰지 않는다. Guard는 부정 source, 잘못된shape/types, bit/cell/block 한도, source/state/clock/hash/full-A/whole-domain premise mismatch, cap 부착을 거부하도록 고정했다. Code-derived structural invariants와 hand-derived analytic checks는 결과에서 별도 IDs로 남긴다.
 
 ## 초안 교정과 남은 단계
 
 Reference 작성자와 API 조율 중 `nonempty_overlap_terms`를 positive-weight active count 대신 모든 geometric nonempty overlap count로 맞췄다. q^k=0이나 sourcezero도 geometry count에는 포함한다. Full loop precharge/실제 mathematical coefficients/전파 결과의 정의는 바뀌지 않았다. 이 교정 전에 과학 실행은 없었다. 교정 provenance는 `DRAFT_CORRECTIONS.json`과 저장한 source snapshot에 있다.
+
+독립 검토의R14-F02는 짧은exponent문자열이Fraction의bitguard전에큰정수를만들수있음을지적했다. 실제위험입력을실행하지않았다. 변경전9개파일을원바이트로저장한뒤 ASCII signed integer 또는 signed p/q fullmatch를먼저검사하도록고쳤다. Decimal/exponent/whitespace는지원하지않고3개고정rejectguard를추가했다. Metadata-onlyserializer총2회이며원래31validcase와FIXTURE_SOURCE의SHA는불변이다.
+
+R14-F03은Python의기본4300digit변환한도가허용한16384bit출력성분의최대4933decimaldigits보다작다는문제다. 별도변경전11개파일을원바이트로보존하고R14전용process의int_max_str_digits를유한6000으로설정했다. 무제한0은쓰지않는다. Coreimport/run-case/outerserializationentry에같은정책을적용해CLI와primary경로가일치한다. 출력rationaltext는10000characters로제한하며공개입력256bit/2048characters를확대하지않는다. Primary의단1회campaign안에서최대16384bit분자·분모의실제serialize/parse roundtrip을검사하도록추가했다. 이수정도아직실행검증결과가아니다.
 
 남은 단계는 root의 정적 통합·실행 파일 및 입력 freeze·S05 게시/백업 이후 허용된 단1회 primary 및 별도 reference, 독립 proof/code 심사다. 이 저자는 root의 명시 실행 허가 전에는 import/compile/실행하지 않는다. Physical INPUT_PENDING, HH_R10=OFF, production=NOT_ISSUED, L4=false, central/physical delta0은 그대로다.

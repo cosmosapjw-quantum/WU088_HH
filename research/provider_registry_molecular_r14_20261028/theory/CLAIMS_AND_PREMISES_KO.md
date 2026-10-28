@@ -33,3 +33,7 @@ Raw lower는 chosen-rational-q ideal comparison의 lower이다. 물리 error의 
 ## 채택 제한
 
 새 strong no-go는 제안하지 않는다. Cubic monotonicity만으로 coefficient positivity를 옮길 수 없다는 명시 counterexample은 그 한 중간추론만 판별한다. Classical Bernstein 도구의 문헌 전체 신규성을 주장하지 않는다. 실제 HD array와 named physical consumer/density/clock은 검사한 범위에서 INPUT_PENDING이며 central/physical delta0, HH_R10 OFF, production NOT_ISSUED, L4 false를 유지한다.
+
+### 실행 전 finite parser/serialization 보완
+
+R14-F02/F03에 따라 문자열 입력은 ASCII signed integer 또는 signed p/q, 최대2048자로 명시한다. Decimal point/exponent/whitespace 입력은 받지 않는다. 입력256bit, derived16384bit는 유지한다. 전용 실행의 integer-decimal digit limit는 유한6000이며, derived numerator/denominator의최대4933자리와savedrational최대10000자에대응한다. 과학값이나허용오차는변경하지않는다. 교정전계약과source는revisions에보존한다.

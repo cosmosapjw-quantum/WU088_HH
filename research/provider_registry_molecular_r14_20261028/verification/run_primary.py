@@ -251,6 +251,15 @@ def main():
         check('guard:' + guard['id'], passed, row)
     check('input_scalar_256bit_boundary_accepted', exact(1 << 255).numerator.bit_length() == 256)
     check('derived_scalar_16384bit_boundary_accepted', derived(1 << 16383).numerator.bit_length() == 16384)
+    boundary = derived(Fraction((1 << 16384) - 1, (1 << 16384) - 2))
+    boundary_text = serializable(boundary)
+    check('derived_16384bit_serialization_roundtrip',
+          boundary.numerator.bit_length() == boundary.denominator.bit_length() == 16384
+          and len(boundary_text) <= 10000 and Fraction(boundary_text) == boundary
+          and sys.get_int_max_str_digits() == 6000,
+          {'rational_text_characters': len(boundary_text),
+           'rational_text_sha256': hashlib.sha256(boundary_text.encode()).hexdigest(),
+           'scope': 'Derived output serialization/parse; not acceptance through the256bit public input parser.'})
     check('direct_full_work_budget_arithmetic', precharge_work(512, 48, 8) == (221184, 98304),
           'Direct finite work-budget helper check; does not claim a realizable 512-base-cell fixture.')
     passed = sum(row['status'] == 'PASS' for row in checks)

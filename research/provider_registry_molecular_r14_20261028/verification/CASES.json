@@ -2,7 +2,7 @@
   "schema": "WU_R14_FIXED_PRIMARY_CASES_V1",
   "input_kind": "SYNTHETIC_CONDITIONAL_CONTROLS",
   "valid_case_count": 31,
-  "guard_count": 43,
+  "guard_count": 46,
   "execution_status_at_authoring": "NOT_RUN",
   "reference_relative_guard": "1e-80",
   "reference_precision": 160,
@@ -3872,6 +3872,288 @@
       "input": {
         "states": 2,
         "q": "1/0",
+        "tau": "1",
+        "c": "1",
+        "d": "0",
+        "initial": [
+          "0",
+          "0"
+        ],
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "observation_knots": [
+          "0",
+          "1/4",
+          "1/2",
+          "3/4",
+          "1"
+        ],
+        "g_r": [
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "id": "quadratic_q1",
+        "controls": {
+          "endpoint": {
+            "R": "1/3",
+            "E": "1/12"
+          }
+        },
+        "binding": {
+          "source_id": "R14_SYNTHETIC_quadratic_q1",
+          "clock_id": "synthetic-normalized-clock",
+          "clock_unit": "normalized_time",
+          "full_A_family_id": "conditional-full-A-fixture",
+          "state_order": [
+            "s0",
+            "s1"
+          ],
+          "source_locator": "verification/FIXTURE_SOURCE.json",
+          "scientific_status": "ARITHMETIC_CONTROL_PREMISE",
+          "whole_forcing_hash_format": "WU_R14_WHOLE_FORCING_V1",
+          "whole_forcing_source_sha256": "11367cb9a94dde73ba6d7e124654b0249ba57f80f3e839195117f085f428029c",
+          "source_sha256": "f3e81086f10012aeaf8f390aca22589b8e55172aeb14e840c665592c99e21f0b"
+        },
+        "certificate": {
+          "source_id": "R14_SYNTHETIC_quadratic_q1",
+          "clock_id": "synthetic-normalized-clock",
+          "clock_unit": "normalized_time",
+          "full_A_family_id": "conditional-full-A-fixture",
+          "state_order": [
+            "s0",
+            "s1"
+          ],
+          "source_locator": "verification/FIXTURE_SOURCE.json",
+          "scientific_status": "ARITHMETIC_CONTROL_PREMISE",
+          "whole_forcing_hash_format": "WU_R14_WHOLE_FORCING_V1",
+          "whole_forcing_source_sha256": "11367cb9a94dde73ba6d7e124654b0249ba57f80f3e839195117f085f428029c",
+          "source_sha256": "f3e81086f10012aeaf8f390aca22589b8e55172aeb14e840c665592c99e21f0b",
+          "generator": "A=K+wH;H=pi*d^T-diag(d)",
+          "q": "1",
+          "tau": "1",
+          "t0": "0",
+          "T": "1",
+          "w_box": [
+            "0",
+            "1"
+          ],
+          "fixed_K_pi_d": true,
+          "full_w_box": true,
+          "all_start_times": true,
+          "zero_mass_residual": true,
+          "short_remainder_nonexpansive": true,
+          "forcing_whole_fine_coarse_domain": true
+        },
+        "input_kind": "SYNTHETIC_CONDITIONAL_FIXTURE",
+        "physical_source_status": "NOT_A_PHYSICAL_HD_DATA_RETURN"
+      }
+    },
+    {
+      "id": "huge_zero_exponent_text",
+      "expected_error_substring": "ASCII integer or p/q required; decimal/exponent/whitespace forbidden",
+      "input": {
+        "states": 2,
+        "q": "0e1000000000",
+        "tau": "1",
+        "c": "1",
+        "d": "0",
+        "initial": [
+          "0",
+          "0"
+        ],
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "observation_knots": [
+          "0",
+          "1/4",
+          "1/2",
+          "3/4",
+          "1"
+        ],
+        "g_r": [
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "id": "quadratic_q1",
+        "controls": {
+          "endpoint": {
+            "R": "1/3",
+            "E": "1/12"
+          }
+        },
+        "binding": {
+          "source_id": "R14_SYNTHETIC_quadratic_q1",
+          "clock_id": "synthetic-normalized-clock",
+          "clock_unit": "normalized_time",
+          "full_A_family_id": "conditional-full-A-fixture",
+          "state_order": [
+            "s0",
+            "s1"
+          ],
+          "source_locator": "verification/FIXTURE_SOURCE.json",
+          "scientific_status": "ARITHMETIC_CONTROL_PREMISE",
+          "whole_forcing_hash_format": "WU_R14_WHOLE_FORCING_V1",
+          "whole_forcing_source_sha256": "11367cb9a94dde73ba6d7e124654b0249ba57f80f3e839195117f085f428029c",
+          "source_sha256": "f3e81086f10012aeaf8f390aca22589b8e55172aeb14e840c665592c99e21f0b"
+        },
+        "certificate": {
+          "source_id": "R14_SYNTHETIC_quadratic_q1",
+          "clock_id": "synthetic-normalized-clock",
+          "clock_unit": "normalized_time",
+          "full_A_family_id": "conditional-full-A-fixture",
+          "state_order": [
+            "s0",
+            "s1"
+          ],
+          "source_locator": "verification/FIXTURE_SOURCE.json",
+          "scientific_status": "ARITHMETIC_CONTROL_PREMISE",
+          "whole_forcing_hash_format": "WU_R14_WHOLE_FORCING_V1",
+          "whole_forcing_source_sha256": "11367cb9a94dde73ba6d7e124654b0249ba57f80f3e839195117f085f428029c",
+          "source_sha256": "f3e81086f10012aeaf8f390aca22589b8e55172aeb14e840c665592c99e21f0b",
+          "generator": "A=K+wH;H=pi*d^T-diag(d)",
+          "q": "1",
+          "tau": "1",
+          "t0": "0",
+          "T": "1",
+          "w_box": [
+            "0",
+            "1"
+          ],
+          "fixed_K_pi_d": true,
+          "full_w_box": true,
+          "all_start_times": true,
+          "zero_mass_residual": true,
+          "short_remainder_nonexpansive": true,
+          "forcing_whole_fine_coarse_domain": true
+        },
+        "input_kind": "SYNTHETIC_CONDITIONAL_FIXTURE",
+        "physical_source_status": "NOT_A_PHYSICAL_HD_DATA_RETURN"
+      }
+    },
+    {
+      "id": "decimal_text",
+      "expected_error_substring": "ASCII integer or p/q required; decimal/exponent/whitespace forbidden",
+      "input": {
+        "states": 2,
+        "q": "0.5",
+        "tau": "1",
+        "c": "1",
+        "d": "0",
+        "initial": [
+          "0",
+          "0"
+        ],
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "observation_knots": [
+          "0",
+          "1/4",
+          "1/2",
+          "3/4",
+          "1"
+        ],
+        "g_r": [
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "id": "quadratic_q1",
+        "controls": {
+          "endpoint": {
+            "R": "1/3",
+            "E": "1/12"
+          }
+        },
+        "binding": {
+          "source_id": "R14_SYNTHETIC_quadratic_q1",
+          "clock_id": "synthetic-normalized-clock",
+          "clock_unit": "normalized_time",
+          "full_A_family_id": "conditional-full-A-fixture",
+          "state_order": [
+            "s0",
+            "s1"
+          ],
+          "source_locator": "verification/FIXTURE_SOURCE.json",
+          "scientific_status": "ARITHMETIC_CONTROL_PREMISE",
+          "whole_forcing_hash_format": "WU_R14_WHOLE_FORCING_V1",
+          "whole_forcing_source_sha256": "11367cb9a94dde73ba6d7e124654b0249ba57f80f3e839195117f085f428029c",
+          "source_sha256": "f3e81086f10012aeaf8f390aca22589b8e55172aeb14e840c665592c99e21f0b"
+        },
+        "certificate": {
+          "source_id": "R14_SYNTHETIC_quadratic_q1",
+          "clock_id": "synthetic-normalized-clock",
+          "clock_unit": "normalized_time",
+          "full_A_family_id": "conditional-full-A-fixture",
+          "state_order": [
+            "s0",
+            "s1"
+          ],
+          "source_locator": "verification/FIXTURE_SOURCE.json",
+          "scientific_status": "ARITHMETIC_CONTROL_PREMISE",
+          "whole_forcing_hash_format": "WU_R14_WHOLE_FORCING_V1",
+          "whole_forcing_source_sha256": "11367cb9a94dde73ba6d7e124654b0249ba57f80f3e839195117f085f428029c",
+          "source_sha256": "f3e81086f10012aeaf8f390aca22589b8e55172aeb14e840c665592c99e21f0b",
+          "generator": "A=K+wH;H=pi*d^T-diag(d)",
+          "q": "1",
+          "tau": "1",
+          "t0": "0",
+          "T": "1",
+          "w_box": [
+            "0",
+            "1"
+          ],
+          "fixed_K_pi_d": true,
+          "full_w_box": true,
+          "all_start_times": true,
+          "zero_mass_residual": true,
+          "short_remainder_nonexpansive": true,
+          "forcing_whole_fine_coarse_domain": true
+        },
+        "input_kind": "SYNTHETIC_CONDITIONAL_FIXTURE",
+        "physical_source_status": "NOT_A_PHYSICAL_HD_DATA_RETURN"
+      }
+    },
+    {
+      "id": "surrounding_whitespace_text",
+      "expected_error_substring": "ASCII integer or p/q required; decimal/exponent/whitespace forbidden",
+      "input": {
+        "states": 2,
+        "q": " 1 ",
         "tau": "1",
         "c": "1",
         "d": "0",

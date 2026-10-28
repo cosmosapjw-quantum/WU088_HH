@@ -32,3 +32,7 @@ Reference는 J0/J1/J2 primitives와 독립 power polynomial 구성, analytic der
 ## 비용과 비교
 
 Source preprocessing은 original cell당 최대3조각이다. Full overlap charge는 Nbase·Neffective·(B+1)≤221184, root bisection charge≤98304다. Endpoint 또는 그림에서 overlap을 다시 계산하지 않는다. Source refinement는 ideal 함수의 동일성을 보존하지만 directed rounding의 bitwise identity를 자동 주장하지 않는다. Pointwise 더 작은 유효 forcing을 입력하면 positive kernels로 ideal comparison은 작거나 같다. Strict 개선율은 별도 synthetic controls의 값으로만 보고한다.
+
+## 문자열 자원과 직렬화
+
+문자열 문법과 길이는 Fraction 변환 전에 검사한다. Exact 입력값의bit검사는이후별도수행한다. Python integer-decimal conversion은무제한해제없이6000digits로고정하여16,384-bit경계의직렬화·재파싱을지원한다. 허용값경계의roundtrip과 lexical거부는동결primary캠페인의구체적인검증대상이다. Savedreference parser는입력256bit문자열과derived출력16384bit문자열의길이계약을구별한다.

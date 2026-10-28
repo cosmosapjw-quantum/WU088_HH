@@ -51,7 +51,11 @@
     "root_representation": "Exact rational critical points or closed rational sign-certified boxes of normalized width<=2^-96; no algebraic times are used in E propagation.",
     "supremum_gap": "0<=U_exact-L_exact<=M_B*2^-96<=3*Cmax*2^-96, M_B=3*max|B[i+1]-B[i]|, Cmax=maxB. Outward dyadic sup interval adds at most2*2^-128.",
     "dyadic_bits": 128,
-    "Taylor_degree": 96
+    "Taylor_degree": 96,
+    "input_rational_text_grammar": "ASCII signed integer or signed p/q only: [+-]?[0-9]+(?:/[+-]?[0-9]+)?; length<=2048. No whitespace, decimal-point or exponent input syntax.",
+    "runtime_integer_decimal_digit_limit": 6000,
+    "saved_derived_rational_text_max_characters": 10000,
+    "runtime_digit_limit_reason": "16384 bits need at most4933 decimal digits per integer component; finite6000 handles serialization/parsing without unlimited conversion."
   },
   "resource": {
     "primary": {
@@ -75,7 +79,20 @@
     "new_ODE_runs": 0,
     "global_remaining": null,
     "full_historical_CPU_s": null,
-    "postprocessing": "Saved outputs only; no solver rerun."
+    "postprocessing": "Saved outputs only; no solver rerun.",
+    "saved_output_figures": {
+      "runs_planned": 1,
+      "CPU_s": 10,
+      "wall_s": 30,
+      "memory_bytes": 1073741824,
+      "science_or_ODE_calls": 0,
+      "figures": 2,
+      "formats": [
+        "PNG",
+        "SVG"
+      ],
+      "bounded_repair": "Only concrete rendering/label defect; preserve initial bytes and do not rerun science."
+    }
   },
   "reference": {
     "precision": 160,
