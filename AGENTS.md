@@ -1,4 +1,4 @@
-# Current priority: R11 uniform full-A blocks — workflow6/20, DAG21/38 — 2026-10-28 KST
+# Current priority: R11 uniform full-A blocks — workflow8/20, DAG21/38 — 2026-10-28 KST
 
 Read research/provider_registry_molecular_r11_20261028/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, authority/intake/SYNTHESIS_KO.md and delivery/PUBLICATION_INDEX.json. R11 is a separate full-family/all-starts Duhamel+minorization+forcing-convolution unit on unchanged saved inputs. Preserve all36 inherited DAG objects. New R11 primary/reference/CAS remaining=1/1/1; R10/R9/R8/R7/R6/PHYS91 remaining unchanged0. Globalremaining/fullhistoricalCPU null. Actual stage publications/backupACK are separate from workflow counts. Do not repeat completed science or ODE.
 
