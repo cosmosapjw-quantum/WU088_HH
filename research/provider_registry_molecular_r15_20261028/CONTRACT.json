@@ -53,7 +53,8 @@
     "Taylor_degree": 96,
     "input_rational_text_grammar": "ASCII signed integer or signed p/q only; length<=2048; reject whitespace/decimal/exponent before conversion",
     "runtime_integer_decimal_digit_limit": 6000,
-    "saved_derived_rational_text_max_characters": 10000
+    "saved_derived_rational_text_max_characters": 10000,
+    "derived_scalar_bits_scope": "Production arithmetic and persisted derived rational components; independent reference internal Euclid/Sturm arithmetic has a separate finite guard."
   },
   "verification_contract": {
     "primary": "One frozen mathematical/control/guard campaign covering exact limits, memory, sign/normalization/clock mutations and finite-work obligations",
@@ -64,7 +65,16 @@
     "reference_classification": "GUARDED_CORROBORATION_NOT_INTERVAL_REFERENCE for Decimal components; exact components separately counted",
     "CAS": "One exact identity batch, source bytes frozen before call; retain raw warnings and actual result",
     "review": "R6 independent proof/static-code review; final C9 bounded changed-surface review. No recursive review tree.",
-    "plots": "Saved-output plots, actual visual inspection; endpoint connectors distinct from whole-cell certificates; no science rerun for rendering"
+    "plots": "Saved-output plots, actual visual inspection; endpoint connectors distinct from whole-cell certificates; no science rerun for rendering",
+    "reference_internal_arithmetic": {
+      "rational_numerator_denominator_bits_max": 1048576,
+      "polynomial_degree_max": 4,
+      "Euclidean_reductions_per_polynomial_chain_max": 5,
+      "scope": "Unserialized exact squarefree/Sturm intermediates only; production and saved-derived cap16384bits,10000chars unchanged",
+      "failure_semantics": "Exceeding internal guard is explicit reference failure or unresolved, never silently dropped",
+      "CPU_wall_memory": "Unchanged180s CPU/240s wall/1GiB reference base-attempt limit",
+      "chain_guard_note": "Conservative general degree-four Euclidean call may include an initial equal-degree reduction; Sturm polynomial sequence remains at most five entries."
+    }
   },
   "execution_budget": {
     "primary": {

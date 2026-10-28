@@ -1,0 +1,24 @@
+{
+  "schema": "WU_R15_PREEXECUTION_REFERENCE_ARITHMETIC_CLARIFICATION_V1",
+  "recorded_utc": "2026-10-28T11:15:49.412182+00:00",
+  "reason": "Exact polynomial Euclidean/Sturm intermediate rationals may grow beyond the serialized comparison-certificate scalar cap. This is an independent-reference implementation guard before code or campaign freeze.",
+  "change": {
+    "rational_numerator_denominator_bits_max": 1048576,
+    "polynomial_degree_max": 4,
+    "Euclidean_reductions_per_polynomial_chain_max": 5,
+    "scope": "Unserialized exact squarefree/Sturm intermediates only; production and saved-derived cap16384bits,10000chars unchanged",
+    "failure_semantics": "Exceeding internal guard is explicit reference failure or unresolved, never silently dropped",
+    "CPU_wall_memory": "Unchanged180s CPU/240s wall/1GiB reference base-attempt limit",
+    "chain_guard_note": "Conservative general degree-four Euclidean call may include an initial equal-degree reduction; Sturm polynomial sequence remains at most five entries."
+  },
+  "unchanged": [
+    "Original input256bits",
+    "Production and saved-derived16384bits/10000characters",
+    "Decimal160 and fixed1e-80 scaled guard",
+    "All acceptance identities and root coverage obligations",
+    "OS CPU/wall/memory caps and attempt allowances",
+    "Physical and scientific scope"
+  ],
+  "user_authority": "Current approved new budget/full loop; no new paid service or extra campaign",
+  "scientific_runs_at_change": 0
+}

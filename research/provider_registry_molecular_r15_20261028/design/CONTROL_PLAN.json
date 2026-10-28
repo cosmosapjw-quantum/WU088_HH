@@ -1,0 +1,75 @@
+{
+  "schema": "WU_R15_C3_CONTROL_PLAN_V1",
+  "status": "AUTHORED_DESIGN_TARGETS_NOT_EXECUTED",
+  "counts": {"full_models": 21, "base_cells_design": 75, "overlap_precharge_design_total": 4811, "standalone_extrema_cases": 0, "depth_sweep_controls": 2, "depth_sweep_evaluations": 14, "scientific_runs": 0},
+  "defaults": {"states": 2, "q": "1", "tau": "1", "c": "1", "d": "0", "initial": ["0", "0"], "source_knots": ["0", "1"], "observation_knots": ["0", "1"], "g_r": [["0", "0", "0", "0"]], "g_e": [["0", "0", "0", "0"]]},
+  "provenance_plan": {
+    "scientific_status": "ARITHMETIC_CONTROL_PREMISE",
+    "source_file": "verification/ARITHMETIC_SOURCE.json",
+    "source_sha256": "SHA256 of frozen arithmetic source file bytes, computed during authorized C5 authoring, not a physical source claim",
+    "source_locator": "verification/ARITHMETIC_SOURCE.json#<case-id>",
+    "whole_forcing_source_sha256": "Independent per-case canonical WU_R15_WHOLE_FORCING_V1 hash specified in API_SCHEMA.md",
+    "binding": "Case ID/clock ID/state ordering and every input certificate identity are fixed before campaign",
+    "lower_semantics": "Ideal supplied-forcing comparison functions only; not lower bounds on actual physical errors; no universal raw/capped gain"
+  },
+  "cases": [
+    {"id": "ZERO", "input_overrides": {"q": "0"}, "expected": {"R_final": "0", "E_final": "0"}, "base_cells": 1, "purpose": "q0,h0 and all-zero branches"},
+    {"id": "CUBIC", "input_overrides": {"g_r": [["0", "0", "0", "1"]]}, "expected": {"R_final": "1/4", "E_final": "1/20"}, "base_cells": 1, "purpose": "g_r=s^3; fourth/fifth degree normalization"},
+    {"id": "GE_CUBIC", "input_overrides": {"c": "0", "g_e": [["0", "0", "0", "1"]]}, "expected": {"R_final": "0", "E_final": "1/4"}, "base_cells": 1, "purpose": "g_e=s^3 direct scalar forcing; c0"},
+    {"id": "CONSTANT", "input_overrides": {"g_r": [["1", "1", "1", "1"]]}, "expected": {"R_final": "1", "E_final": "1/2"}, "base_cells": 1, "purpose": "constant source degree reduction"},
+    {"id": "AFFINE", "input_overrides": {"g_r": [["0", "1/3", "2/3", "1"]]}, "expected": {"R_final": "1/2", "E_final": "1/6"}, "base_cells": 1, "purpose": "affine degree elevation identity"},
+    {"id": "QUADRATIC", "input_overrides": {"g_r": [["0", "0", "1/3", "1"]]}, "expected": {"R_final": "1/3", "E_final": "1/12"}, "base_cells": 1, "purpose": "quadratic degree elevation identity without replay of R14"},
+    {"id": "Q0_INITIAL_JUMP", "input_overrides": {"q": "0", "initial": ["1", "0"], "g_r": [["0", "0", "0", "1"]]}, "expected": {"R_final": "1/4", "R_final_left_limit": "5/4", "R_last_cell_sup": "5/4", "E_final": "21/20"}, "base_cells": 1, "purpose": "true right endpoint differs from closed-cell left limit; h0 fresh forcing"},
+    {"id": "GLOBAL_MEMORY", "input_overrides": {"q": "1/2", "tau": "1/2", "source_knots": ["0", "5/4"], "observation_knots": ["0", "1/4", "3/4", "5/4"], "g_r": [["0", "0", "0", "125/64"]]}, "expected": {"R_final": "2337/4096", "E_final": "12013/81920"}, "base_cells": 5, "purpose": "retain original t0 memory across observations and full kernel blocks"},
+    {"id": "NONALIGNED_POSITIVE_D", "input_overrides": {"q": "2/5", "tau": "2/5", "d": "3/2", "initial": ["1/7", "2/9"], "source_knots": ["0", "2/7", "1"], "observation_knots": ["0", "1/5", "3/5", "1"], "g_r": [["1", "2", "0", "1"], ["3/2", "1/3", "2", "0"]], "g_e": [["0", "1/4", "1/2", "0"], ["1/3", "0", "2/3", "1/5"]]}, "expected": {"base_times": ["0", "1/5", "2/7", "2/5", "3/5", "24/35", "4/5", "1"]}, "base_cells": 7, "purpose": "nonaligned source/observation/age clocks with signed growth and nonzero initial comparison"},
+    {"id": "NONALIGNED_NEGATIVE_D", "copy_design_from": "NONALIGNED_POSITIVE_D", "input_overrides": {"d": "-3/2"}, "expected": {"base_times": ["0", "1/5", "2/7", "2/5", "3/5", "24/35", "4/5", "1"]}, "base_cells": 7, "purpose": "same exact clock with damping; complementary reversed Bernstein moments"},
+    {"id": "SINGLETON", "input_overrides": {"states": 1, "c": "0", "g_e": [["1", "1", "1", "1"]]}, "expected": {"R_final": "0", "E_final": "1"}, "base_cells": 1, "purpose": "singleton zero-mass constraint with legitimate scalar forcing"},
+    {"id": "MAX_COUNTS_ALIGNED", "input_overrides": {"states": 13}, "expanded_input_recipe": {"source_knots": "j/16 for integers j=0..16", "observation_knots": "j/32 for integers j=0..32", "tau": "1/8", "g_r": "16 rows [1,1,1,1]", "g_e": "16 rows [0,0,0,0]"}, "expected": {"R_final": "1", "E_final": "1/2", "full_blocks": 8, "overlap_precharge": 4608}, "base_cells": 32, "purpose": "states13,source16,observation32,full-block8 accepted boundaries with modest exact work"},
+    {"id": "ROOT_THREE_RATIONAL", "moving_window": {"M": "1", "second_gr": ["35/32", "83/96", "109/96", "29/32"], "p": "-(u-1/4)*(u-1/2)*(u-3/4)"}, "expected": {"R_final": "1", "E_final": "1447/960", "R_last_cell_sup": "1033/1024", "derivative_root_pattern": "three_simple_rational"}, "base_cells": 2, "purpose": "three dyadic critical roots, both interior local maxima"},
+    {"id": "ROOT_THREE_MIXED_ALGEBRAIC", "moving_window": {"M": "1", "second_gr": ["33/32", "29/32", "115/96", "29/32"], "p": "-(u-1/4)*((u-1/2)^2-1/8)"}, "expected": {"R_final": "97/96", "E_final": "1447/960", "derivative_root_pattern": "three_simple_mixed_algebraic"}, "base_cells": 2, "purpose": "non-dyadic algebraic interior maximum; nonzero finite-depth gap"},
+    {"id": "ROOT_SIMPLE_DOUBLE", "moving_window": {"M": "1", "second_gr": ["25/27", "10/9", "23/27", "31/27"], "p": "(u-1/3)^2*(u-2/3)"}, "expected": {"R_final": "109/108", "E_final": "269/180", "derivative_root_pattern": "simple_and_double"}, "base_cells": 2, "purpose": "interior double root is retained despite no sign change"},
+    {"id": "ROOT_TRIPLE", "moving_window": {"M": "4", "second_gr": ["3", "6", "0", "12"], "p": "(3*u-1)^3"}, "expected": {"R_final": "21/4", "E_final": "61/10", "derivative_root_pattern": "triple"}, "base_cells": 2, "purpose": "non-dyadic triple critical root and zero original B3 coefficient"},
+    {"id": "ROOT_ENDPOINT_INTERIOR", "moving_window": {"M": "1", "second_gr": ["1", "7/6", "5/6", "1"], "p": "u*(u-1/2)*(u-1)"}, "expected": {"R_final": "1", "E_final": "181/120", "derivative_root_pattern": "endpoint_and_interior"}, "base_cells": 2, "purpose": "critical roots at both endpoints and a shared dyadic split boundary"},
+    {"id": "ROOTLESS_MIXED_COEFFICIENTS", "moving_window": {"M": "1", "second_gr": ["63/50", "139/150", "139/150", "63/50"], "p": "(u-1/2)^2+1/100"}, "expected": {"R_final": "82/75", "E_final": "116/75", "derivative_root_pattern": "rootless_mixed_coefficients"}, "base_cells": 2, "purpose": "positive derivative despite mixed original derivative Bernstein coefficients"},
+    {"id": "ROOT_CONSTANT", "moving_window": {"M": "1", "second_gr": ["1", "1", "1", "1"], "p": "0"}, "expected": {"R_final": "1", "E_final": "3/2", "derivative_root_pattern": "constant"}, "base_cells": 2, "purpose": "constant moving-window convolution, all-zero derivative"},
+    {"id": "SIGNED_DOMAIN_POS16", "input_overrides": {"c": "0", "d": "16", "initial": ["0", "1"], "g_e": [["1", "1", "1", "1"]]}, "expected": {"R_final": "0", "E_final_symbolic": "exp(16)+(exp(16)-1)/16"}, "base_cells": 1, "purpose": "maximum positive z=16 Taylor remainder boundary"},
+    {"id": "SIGNED_DOMAIN_NEG16", "input_overrides": {"c": "0", "d": "-16", "initial": ["0", "1"], "g_e": [["1", "1", "1", "1"]]}, "expected": {"R_final": "0", "E_final_symbolic": "exp(-16)+(1-exp(-16))/16"}, "base_cells": 1, "purpose": "maximum negative z=-16 reciprocal/reversal boundary"}
+  ],
+  "moving_window_recipe": {"q": "0", "tau": "1", "source_knots": ["0", "1", "2"], "observation_knots": ["0", "1", "2"], "initial": ["0", "0"], "g_r": "first row [M,M,M,M], second row from moving_window.second_gr", "g_e": [["0", "0", "0", "0"], ["0", "0", "0", "0"]], "identity": "For 0<=u<=1, R(1+u)=M+Integral_0^u p(v)dv and R'(1+u)=p(u). E(2)=3M/2+Integral_0^1(1-u)p(u)du."},
+  "primary_acceptance_groups": [
+    "Exact named R/E controls, signed d0 moment normalization and actual endpoint/left-limit distinction",
+    "Exact complete base clock, original-t0 memory, continuous convolution F and shifted-clock covariance if included as a deterministic identity check",
+    "Every B4 cell nonnegative; power/Bernstein identity at original exact rational representation",
+    "Complete leaf partition; terminal sign and endpoint meaning; actual split/visit/depth counters within precharge",
+    "Every cell exact gap and dyadic width overhead satisfy fixed bounds; root fixtures exercise meaningful changed branches",
+    "Observation aggregation uses closed-cell maxima; endpoint connectors never substituted for whole-cell certificate",
+    "Every saved source/certificate/hash and exact output type remains bound to frozen fixture identity"
+  ],
+  "independent_acceptance_groups": [
+    "No production module import; own original unsplit J0..J3 for exact R at endpoints and interior polynomial samples",
+    "Own power quartic from five rational samples, squarefree rational Sturm and exact nonnegativity of saved upper minus polynomial",
+    "Seven derivative-pattern diagnostics and repeated/boundary root coverage, allowing roots at adjacent monotone leaf boundaries",
+    "Every signed exponential/phi/B4 moment and propagated E independently via Decimal160 monomial phi1..5",
+    "Fixed1e-80 scaled guard only for Decimal comparisons; strict misses/count/examples retained; exact checks use no tolerance"
+  ],
+  "guard_families": [
+    {"family": "RATIONAL_LEXICAL", "mutations": ["boolean", "float", "whitespace", "decimal_text", "exponent_text", "unicode_digits", "zero_denominator", "empty_text", "text_over2048", "input_component_over256bits"]},
+    {"family": "FORCING_DOMAIN", "mutations": ["row_length_not4", "row_count_mismatch", "negative_B3", "nonnegative_polynomial_outside_B3_cone", "singleton_nonzero_R0", "singleton_nonzero_gr"]},
+    {"family": "CLOCK_DOMAIN", "mutations": ["unordered_source", "duplicate_observation", "mismatched_horizon", "source_cells_over16", "observation_cells_over32", "full_blocks_over8"]},
+    {"family": "SCALAR_DOMAIN", "mutations": ["q_below0", "q_above1", "tau_nonpositive", "c_negative", "initial_negative", "abs_d_horizon_over16", "states_outside1to13"]},
+    {"family": "PREMISE_BINDING", "mutations": ["each_identity_mismatch", "each_required_true_flag_false", "generator_nominal_K", "certificate_q_tau_t0_T_mismatch", "state_order_mismatch", "whole_forcing_hash_mismatch", "w_box_negative_or_reversed", "unknown_scientific_status", "cap_adapter_present"]},
+    {"family": "FINITE_ARITHMETIC", "mutations": ["work_precharge_over_cap_before_loop", "derived_component_over16384bits"], "qualification": "Direct guard boundary calls are separately labelled; some theoretical base-count defense limits are unreachable from tighter public source/clock counts. The16384bit component cap implies canonical signed rational text<=9868characters; saved strings are checked against10000 and the finite6000 digit conversion policy. No impossible accepted-domain over10000character fixture is claimed."}
+  ],
+  "depth_sweep": {
+    "depths": [0, 4, 8, 16, 32, 64, 96],
+    "controls": [
+      {"id": "DEPTH_SWEEP_RATIONAL", "model": "ROOT_THREE_RATIONAL", "base_cell_index": 1, "bernstein": ["1", "131/128", "95/96", "131/128", "1"], "expected_supremum": "1033/1024"},
+      {"id": "DEPTH_SWEEP_ALGEBRAIC", "model": "ROOT_THREE_MIXED_ALGEBRAIC", "base_cell_index": 1, "bernstein": ["1", "129/128", "63/64", "397/384", "97/96"], "expected_critical_pattern": "three_simple_mixed_algebraic"}
+    ],
+    "combined_precharge": {"splits_max": 1320, "visits_max": 2654},
+    "primary_save": "checks[] item with kind=DEPTH_SWEEP,id,bernstein,rows[{depth,exact_lower,exact_upper,exact_gap,M_B,proved_gap_bound,splits_actual,nodes_visited}]",
+    "semantics": "Same single campaign; run_case remains fixeddepth96. Internal diagnostic uses general-depth proof and saves all convergence evidence before renderer; no scientific rerun. Reference independently relates these B4 to its original-integral model cell."
+  },
+  "not_claimed": ["Full pointwise-nonnegative cubic cone", "Numerical campaign proves the theorem", "Decimal160 is an interval reference", "All maximum-domain inputs finish inside campaign CPU/memory", "Physical source/consumer/density/clock closure", "Universal raw/capped/physical gain"],
+  "resource_semantics": "The fixed campaign is bounded by root OS wrapper. Exact finite work counts and arithmetic limits are separate claims. Any resource interruption is retained as failure/termination, never PASS. No pre-freeze scientific execution or broad scan."
+}
