@@ -1,6 +1,6 @@
-# R15 진행 보고서 — S08
+# R15 진행 보고서 — S09
 
-현재 완료된 워크플로는 **16/20**, 과학 DAG는 **29/46**이다. 이 단계의 실제 게시·백업 영수증은 `delivery/PUBLICATION_INDEX.json`과 PR150을 따른다.
+현재 완료된 워크플로는 **18/20**, 과학 DAG는 **31/46**이다. 이 단계의 실제 게시·백업 영수증은 `delivery/PUBLICATION_INDEX.json`과 PR150을 따른다.
 
 ## 완료된 단계의 근거
 
@@ -20,6 +20,8 @@
 - **C7**: Actual separately authored original-integral/Sturm/phi reference passed302/302 records across21models;784guarded comparisons pass with59strict Decimal misses disclosed; no repair or production import.
 - **R8**: All13claims assigned conditional proof/observed verification/input-pending status; strict59misses and fixedguard interpretation retained; no newstrongno-go or physicalpromotion.
 - **C8**: Read actual saved14depth diagnostics and resource records; rendered2PNG/2SVG inoneboundedprocess and actually inspected bothPNGs; no scientific rerun.
+- **R9**: Reusable conditional theorem and units/IC/domain/algorithm/precision/API contract recorded from unchanged proof and actual saved evidence; two scoped theory/code nodes adopted after independent C9.
+- **C9**: One independent changed-result/admission review passed20/20, zero material findings;70payload/30frozen identities and44inherited nodes preserved; root adopts two conditional nodes to31/46, physical/central delta0.
 
 ## 실행과 적용 범위
 
