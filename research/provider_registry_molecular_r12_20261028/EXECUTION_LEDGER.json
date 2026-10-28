@@ -1,0 +1,82 @@
+{
+  "schema": "WU_R12_EXECUTION_LEDGER_V1",
+  "unit": "WU_NONALIGNED_CONVOLUTION_R12",
+  "created_utc": "2026-10-28T04:49:42.538250+00:00",
+  "primary": {
+    "allowed": 1,
+    "consumed": 0,
+    "remaining": 1,
+    "status": "NOT_RUN",
+    "CPU_limit_s": 60,
+    "wall_limit_s": 90
+  },
+  "reference": {
+    "allowed": 1,
+    "consumed": 0,
+    "remaining": 1,
+    "status": "NOT_RUN",
+    "CPU_limit_s": 60,
+    "wall_limit_s": 90
+  },
+  "CAS": {
+    "allowed": 1,
+    "consumed": 0,
+    "remaining": 1,
+    "status": "NOT_RUN",
+    "wall_limit_s": 30
+  },
+  "old_remaining": {
+    "R11": [
+      0,
+      0,
+      0
+    ],
+    "R10": [
+      0,
+      0,
+      0
+    ],
+    "R9": [
+      0,
+      0,
+      0
+    ],
+    "R8": "all0",
+    "R7": [
+      0,
+      0,
+      0
+    ],
+    "R6": [
+      0,
+      0,
+      0
+    ],
+    "PHYS91": [
+      0,
+      0,
+      0
+    ]
+  },
+  "global_remaining": null,
+  "full_historical_CPU_s": null,
+  "old_science_replay": 0,
+  "new_ODE_runs": 0,
+  "failures": [
+    {
+      "class": "publication_approval",
+      "action": "S01 github_create_tree",
+      "actual_tool_text": "user rejected MCP tool call",
+      "source_commit_created": "NO_ACK",
+      "ref_moved": false,
+      "cause": "NO_ADDITIONAL_REASON_RETURNED",
+      "scope": "Not a scientific execution. User explicitly resumed the same two nodes; root checks branch and narrows own-source publication payload before diagnostic retry."
+    }
+  ],
+  "historical_failures_preserved": {
+    "R8_original_reference": "726/727 PASS +1 FAIL",
+    "R8_separate_exact_phi": "24/24 PASS",
+    "R10": "Original ID failure/DOC01/META02 preserved; qualified CAS and tolerant samples unchanged.",
+    "R11": "All failures and qualified CAS retained in immutable source; no replay."
+  }
+}
