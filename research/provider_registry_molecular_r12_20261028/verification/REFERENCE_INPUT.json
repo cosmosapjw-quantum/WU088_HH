@@ -1,0 +1,103 @@
+{
+  "schema": "WU_R12_FIXED_REFERENCE_INPUT_V1",
+  "unit": "WU_NONALIGNED_CONVOLUTION_R12",
+  "precision_decimal_digits": 160,
+  "relative_guard": "1e-80",
+  "guard_formula": "1e-80*max(1,abs(reference),abs(lower),abs(upper)); fixed before execution",
+  "reference_is_interval_arithmetic": false,
+  "primary_result_path": "research/provider_registry_molecular_r12_20261028/raw/PRIMARY_RESULTS.json",
+  "primary_input_path": "research/provider_registry_molecular_r12_20261028/verification/PRIMARY_INPUT.json",
+  "primary_runner_path": "research/provider_registry_molecular_r12_20261028/verification/run_primary.py",
+  "core_path": "research/provider_registry_molecular_r12_20261028/src/nonaligned_convolution.py",
+  "arithmetic_path": "research/provider_registry_molecular_r12_20261028/src/positive_arithmetic.py",
+  "required_frozen_sources": [
+    "research/provider_registry_molecular_r12_20261028/CONTRACT.json",
+    "research/provider_registry_molecular_r12_20261028/src/nonaligned_convolution.py",
+    "research/provider_registry_molecular_r12_20261028/src/positive_arithmetic.py",
+    "research/provider_registry_molecular_r12_20261028/verification/PRIMARY_INPUT.json",
+    "research/provider_registry_molecular_r12_20261028/verification/run_primary.py",
+    "research/provider_registry_molecular_r12_20261028/verification/REFERENCE_INPUT.json",
+    "research/provider_registry_molecular_r12_20261028/verification/run_reference.py",
+    "research/provider_registry_molecular_r12_20261028/verification/REFERENCE_DESIGN_KO.md"
+  ],
+  "sources": {
+    "R11_primary": {
+      "path": "research/provider_registry_molecular_r11_20261028/raw/PRIMARY_RESULTS.json",
+      "bytes": 2058347,
+      "sha256": "80ed0f8df5c785e47ce737acb8b029485db54b543d57498bf182427093f29b1b",
+      "expected_status": "PASS",
+      "source_role": "Reuse actual chosen-q full-A certificate, exact same-family source/clock coefficients and old closed-cell/point caps; no predecessor module replay"
+    }
+  },
+  "expected_HD_ids": [
+    "two_state_no_reaction",
+    "two_state_nonlinear",
+    "two_state_coarse_source_defect",
+    "saved_native_nine_state_K_conditional_feedback"
+  ],
+  "expected_grid_variants": [
+    "aligned",
+    "nonaligned"
+  ],
+  "expected_saved_cells": 192,
+  "required_controls": [
+    "q1_polynomial_nonaligned",
+    "q0_late_source_nonaligned",
+    "translated_source_breakpoints",
+    "block_jump_left_limit",
+    "positive_d_nonaligned",
+    "near_zero_d_positive",
+    "near_zero_d_negative",
+    "near_one_q",
+    "shifted_clock",
+    "observation_refinement_fine",
+    "singleton_zero_residual"
+  ],
+  "paired_controls": [
+    {
+      "base": "translated_source_breakpoints",
+      "variant": "shifted_clock",
+      "relation": "clock_translation",
+      "shift": "-5/7"
+    },
+    {
+      "base": "translated_source_breakpoints",
+      "variant": "observation_refinement_fine",
+      "relation": "observation_refinement"
+    }
+  ],
+  "reference_method": "Exact Fraction finite kernel primitive J; independent source-shift knot union and cap membership; Decimal160 closed exp/phi1/phi2 affine solution; no production or predecessor imports.",
+  "exact_checks": "All refined F/R/kernel/affine left and right-left-limit values, source/point/cell identities, gap-free coverage, cap source/ordering, q0/q1 limiting solutions, translated-clock identity.",
+  "Decimal_checks": "All raw refined/requested endpoint E, independent constant-R closed-cell scalar envelope, Bernstein moments, monotone capped ideal lower targets, common-time refinement invariance; guarded numerical corroboration only.",
+  "aligned_reduction": "Compare new chosen-q ideal values with pinned saved R11 raw intervals and matching exact clocks; semantic/numerical compatibility, not forced byte identity.",
+  "caps": "Actual pinned R11 capped arrays only; independently prove closed-cell inclusion, exact point equality and outward no-worse relationships. No interpolation and no physical-error lower.",
+  "old_sample_campaign": {
+    "new_runs": 0,
+    "atol_preserved": "2e-12",
+    "rtol_preserved": "2e-10",
+    "strict_containment_preserved": false
+  },
+  "skill_context_used": {
+    "skill": "physmath-research-loop",
+    "version": "1.3.0",
+    "package": "c38/physmath-research-loop",
+    "actual_read": [
+      "SKILL.md",
+      "references/POLICY_INTEGRATION.md",
+      "references/SUBAGENT_MODE.md",
+      "references/THEORY_LOOP.md: R5,R7",
+      "references/CODING_LOOP.md: C7,C8"
+    ],
+    "selected_role": "Complementary independent derivation/reference construction and one frozen verification lane; no recursive delegation/review-of-review"
+  },
+  "resource": {
+    "runs": 1,
+    "CPU_s": 60,
+    "wall_s": 90
+  },
+  "old_science_replay": 0,
+  "new_ODE_calls": 0,
+  "new_native_or_generator_calls": 0,
+  "physical_consumer_admitted": false,
+  "output_count_policy": "Count actual observed checks/components by exact/decimal/coverage/metadata category; no predetermined passing total."
+}
