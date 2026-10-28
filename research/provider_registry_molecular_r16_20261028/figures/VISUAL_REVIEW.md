@@ -1,0 +1,3 @@
+# R16 plot hostile/residual review
+
+Saved PNG actually viewed. One scalar curve p(t)=(t-1/3)^2 is nonnegative. Original B3 controls contain one negative coefficient, while exact rational split at t=1/3 yields two nonnegative control polylines. The controls are *not curve samples*, explicitly labeled. No figure overlays numerical intervals on the same axis, and no physical HD rate claim is made. Caption should say “Bernstein coefficients at control abscissae, not observational samples”; current annotation and legend do so. Print-size: 7.8×4.3 inch, 180dpi, text legible at single/double column with possible caption relocation. No P0 semantic drift found. VERDICT PASS_SCOPED_DIAGNOSTIC, not observational figure.

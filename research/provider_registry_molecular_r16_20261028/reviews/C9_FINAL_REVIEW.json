@@ -1,0 +1,24 @@
+{
+ "schema":"WU_R16_C9_SCOPED_AUDIT_V1",
+ "decision":"PASS_SCOPED_WITH_REVIEW_INDEPENDENCE_LIMIT",
+ "reviewer":"current-session parent + independent-algorithm SymPy oracle + Wolfram exact identities",
+ "native_subagent":"NOT_RUN; native creation/collect interfaces not exposed",
+ "critical_checks":{
+   "exact_nonnegative_derivative_sign":"PASS_SYMPY_RANDOM_220",
+   "rational_double_root_split":"PASS_19_TARGETED_EXACT_CASES",
+   "nonnegative_refined_B3":"PASS",
+   "affine_restriction_equality":"PASS_SYMPY_AND_WOLFRAM_18",
+   "source_original_and_refined_hash":"PASS",
+   "bounded_resource_exhaustion":"PASS_FAIL_CLOSED",
+   "pinned_R15_validate_and_run_case":"PASS_SYNTHETIC",
+   "analytic_R_and_E":"PASS",
+   "create_only_output":"PASS_NEGATIVE_TEST_EXIT1",
+   "physical_source_and_consumer":"NOT_RUN_INPUT_MISSING",
+   "full_max_input_resource_behavior":"NOT_RUN",
+   "independent_native_blind_review":"NOT_RUN"
+ },
+ "observed_fixes":[{"finding":"R16 preprocessor-only CLI used exists()+write_text() with TOCTOU overwrite risk","fix":"open('x') create-only","retest":"220 random+19 targeted pass; no old R15 output rewritten"}],
+ "preserved_failures":["original full 1500 sample independent run timed out; no PASS claim","first Wolfram verification script returned 8/18; corrected formula rechecked 18/18","existing R15 result cannot be overwritten; rerun attempt returned FileExistsError before any new computation"],
+ "material_findings_open":0,
+ "limitations":["same-context source audit is not independent native blind subagent","synthetic fixture and declared certificates are not actual full-A or HD physical qualification","resource caps may reject mathematically valid inputs"]
+}
