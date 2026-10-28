@@ -1,0 +1,1340 @@
+{
+  "classification": "ARITHMETIC_CONTROL_PREMISE",
+  "depth_sweep": {
+    "combined_precharge": {
+      "splits_max": 1320,
+      "visits_max": 2654
+    },
+    "controls": [
+      {
+        "base_cell_index": 1,
+        "bernstein": [
+          "1",
+          "131/128",
+          "95/96",
+          "131/128",
+          "1"
+        ],
+        "expected_supremum": "1033/1024",
+        "id": "DEPTH_SWEEP_RATIONAL",
+        "model": "ROOT_THREE_RATIONAL"
+      },
+      {
+        "base_cell_index": 1,
+        "bernstein": [
+          "1",
+          "129/128",
+          "63/64",
+          "397/384",
+          "97/96"
+        ],
+        "expected_critical_pattern": "three_simple_mixed_algebraic",
+        "id": "DEPTH_SWEEP_ALGEBRAIC",
+        "model": "ROOT_THREE_MIXED_ALGEBRAIC"
+      }
+    ],
+    "depths": [
+      0,
+      4,
+      8,
+      16,
+      32,
+      64,
+      96
+    ],
+    "primary_save": "checks[] item with kind=DEPTH_SWEEP,id,bernstein,rows[{depth,exact_lower,exact_upper,exact_gap,M_B,proved_gap_bound,splits_actual,nodes_visited}]",
+    "semantics": "Same single campaign; run_case remains fixeddepth96. Internal diagnostic uses general-depth proof and saves all convergence evidence before renderer; no scientific rerun. Reference independently relates these B4 to its original-integral model cell."
+  },
+  "models": [
+    {
+      "expected": {
+        "E_final": "0",
+        "R_final": "0"
+      },
+      "id": "ZERO",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1"
+        ],
+        "q": "0",
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "q0,h0 and all-zero branches"
+    },
+    {
+      "expected": {
+        "E_final": "1/20",
+        "R_final": "1/4"
+      },
+      "id": "CUBIC",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1"
+        ],
+        "q": "1",
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "g_r=s^3; fourth/fifth degree normalization"
+    },
+    {
+      "expected": {
+        "E_final": "1/4",
+        "R_final": "0"
+      },
+      "id": "GE_CUBIC",
+      "input": {
+        "c": "0",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "g_r": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1"
+        ],
+        "q": "1",
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "g_e=s^3 direct scalar forcing; c0"
+    },
+    {
+      "expected": {
+        "E_final": "1/2",
+        "R_final": "1"
+      },
+      "id": "CONSTANT",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1"
+        ],
+        "q": "1",
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "constant source degree reduction"
+    },
+    {
+      "expected": {
+        "E_final": "1/6",
+        "R_final": "1/2"
+      },
+      "id": "AFFINE",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "0",
+            "1/3",
+            "2/3",
+            "1"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1"
+        ],
+        "q": "1",
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "affine degree elevation identity"
+    },
+    {
+      "expected": {
+        "E_final": "1/12",
+        "R_final": "1/3"
+      },
+      "id": "QUADRATIC",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "0",
+            "0",
+            "1/3",
+            "1"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1"
+        ],
+        "q": "1",
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "quadratic degree elevation identity without replay of R14"
+    },
+    {
+      "expected": {
+        "E_final": "21/20",
+        "R_final": "1/4",
+        "R_final_left_limit": "5/4",
+        "R_last_cell_sup": "5/4"
+      },
+      "id": "Q0_INITIAL_JUMP",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "initial": [
+          "1",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1"
+        ],
+        "q": "0",
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "true right endpoint differs from closed-cell left limit; h0 fresh forcing"
+    },
+    {
+      "expected": {
+        "E_final": "12013/81920",
+        "R_final": "2337/4096"
+      },
+      "id": "GLOBAL_MEMORY",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "0",
+            "0",
+            "0",
+            "125/64"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1/4",
+          "3/4",
+          "5/4"
+        ],
+        "q": "1/2",
+        "source_knots": [
+          "0",
+          "5/4"
+        ],
+        "states": 2,
+        "tau": "1/2"
+      },
+      "purpose": "retain original t0 memory across observations and full kernel blocks"
+    },
+    {
+      "expected": {
+        "base_times": [
+          "0",
+          "1/5",
+          "2/7",
+          "2/5",
+          "3/5",
+          "24/35",
+          "4/5",
+          "1"
+        ]
+      },
+      "id": "NONALIGNED_POSITIVE_D",
+      "input": {
+        "c": "1",
+        "d": "3/2",
+        "g_e": [
+          [
+            "0",
+            "1/4",
+            "1/2",
+            "0"
+          ],
+          [
+            "1/3",
+            "0",
+            "2/3",
+            "1/5"
+          ]
+        ],
+        "g_r": [
+          [
+            "1",
+            "2",
+            "0",
+            "1"
+          ],
+          [
+            "3/2",
+            "1/3",
+            "2",
+            "0"
+          ]
+        ],
+        "initial": [
+          "1/7",
+          "2/9"
+        ],
+        "observation_knots": [
+          "0",
+          "1/5",
+          "3/5",
+          "1"
+        ],
+        "q": "2/5",
+        "source_knots": [
+          "0",
+          "2/7",
+          "1"
+        ],
+        "states": 2,
+        "tau": "2/5"
+      },
+      "purpose": "nonaligned source/observation/age clocks with signed growth and nonzero initial comparison"
+    },
+    {
+      "expected": {
+        "base_times": [
+          "0",
+          "1/5",
+          "2/7",
+          "2/5",
+          "3/5",
+          "24/35",
+          "4/5",
+          "1"
+        ]
+      },
+      "id": "NONALIGNED_NEGATIVE_D",
+      "input": {
+        "c": "1",
+        "d": "-3/2",
+        "g_e": [
+          [
+            "0",
+            "1/4",
+            "1/2",
+            "0"
+          ],
+          [
+            "1/3",
+            "0",
+            "2/3",
+            "1/5"
+          ]
+        ],
+        "g_r": [
+          [
+            "1",
+            "2",
+            "0",
+            "1"
+          ],
+          [
+            "3/2",
+            "1/3",
+            "2",
+            "0"
+          ]
+        ],
+        "initial": [
+          "1/7",
+          "2/9"
+        ],
+        "observation_knots": [
+          "0",
+          "1/5",
+          "3/5",
+          "1"
+        ],
+        "q": "2/5",
+        "source_knots": [
+          "0",
+          "2/7",
+          "1"
+        ],
+        "states": 2,
+        "tau": "2/5"
+      },
+      "purpose": "same exact clock with damping; complementary reversed Bernstein moments"
+    },
+    {
+      "expected": {
+        "E_final": "1",
+        "R_final": "0"
+      },
+      "id": "SINGLETON",
+      "input": {
+        "c": "0",
+        "d": "0",
+        "g_e": [
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        ],
+        "g_r": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1"
+        ],
+        "q": "1",
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "states": 1,
+        "tau": "1"
+      },
+      "purpose": "singleton zero-mass constraint with legitimate scalar forcing"
+    },
+    {
+      "expected": {
+        "E_final": "1/2",
+        "R_final": "1",
+        "full_blocks": 8,
+        "overlap_precharge": 4608
+      },
+      "id": "MAX_COUNTS_ALIGNED",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1/32",
+          "1/16",
+          "3/32",
+          "1/8",
+          "5/32",
+          "3/16",
+          "7/32",
+          "1/4",
+          "9/32",
+          "5/16",
+          "11/32",
+          "3/8",
+          "13/32",
+          "7/16",
+          "15/32",
+          "1/2",
+          "17/32",
+          "9/16",
+          "19/32",
+          "5/8",
+          "21/32",
+          "11/16",
+          "23/32",
+          "3/4",
+          "25/32",
+          "13/16",
+          "27/32",
+          "7/8",
+          "29/32",
+          "15/16",
+          "31/32",
+          "1"
+        ],
+        "q": "1",
+        "source_knots": [
+          "0",
+          "1/16",
+          "1/8",
+          "3/16",
+          "1/4",
+          "5/16",
+          "3/8",
+          "7/16",
+          "1/2",
+          "9/16",
+          "5/8",
+          "11/16",
+          "3/4",
+          "13/16",
+          "7/8",
+          "15/16",
+          "1"
+        ],
+        "states": 13,
+        "tau": "1/8"
+      },
+      "purpose": "states13,source16,observation32,full-block8 accepted boundaries with modest exact work"
+    },
+    {
+      "expected": {
+        "E_final": "1447/960",
+        "R_final": "1",
+        "R_last_cell_sup": "1033/1024",
+        "derivative_root_pattern": "three_simple_rational"
+      },
+      "id": "ROOT_THREE_RATIONAL",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "35/32",
+            "83/96",
+            "109/96",
+            "29/32"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "q": "0",
+        "source_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "three dyadic critical roots, both interior local maxima"
+    },
+    {
+      "expected": {
+        "E_final": "1447/960",
+        "R_final": "97/96",
+        "derivative_root_pattern": "three_simple_mixed_algebraic"
+      },
+      "id": "ROOT_THREE_MIXED_ALGEBRAIC",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "33/32",
+            "29/32",
+            "115/96",
+            "29/32"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "q": "0",
+        "source_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "non-dyadic algebraic interior maximum; nonzero finite-depth gap"
+    },
+    {
+      "expected": {
+        "E_final": "269/180",
+        "R_final": "109/108",
+        "derivative_root_pattern": "simple_and_double"
+      },
+      "id": "ROOT_SIMPLE_DOUBLE",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "25/27",
+            "10/9",
+            "23/27",
+            "31/27"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "q": "0",
+        "source_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "interior double root is retained despite no sign change"
+    },
+    {
+      "expected": {
+        "E_final": "61/10",
+        "R_final": "21/4",
+        "derivative_root_pattern": "triple"
+      },
+      "id": "ROOT_TRIPLE",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "4",
+            "4",
+            "4",
+            "4"
+          ],
+          [
+            "3",
+            "6",
+            "0",
+            "12"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "q": "0",
+        "source_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "non-dyadic triple critical root and zero original B3 coefficient"
+    },
+    {
+      "expected": {
+        "E_final": "181/120",
+        "R_final": "1",
+        "derivative_root_pattern": "endpoint_and_interior"
+      },
+      "id": "ROOT_ENDPOINT_INTERIOR",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "7/6",
+            "5/6",
+            "1"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "q": "0",
+        "source_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "critical roots at both endpoints and a shared dyadic split boundary"
+    },
+    {
+      "expected": {
+        "E_final": "116/75",
+        "R_final": "82/75",
+        "derivative_root_pattern": "rootless_mixed_coefficients"
+      },
+      "id": "ROOTLESS_MIXED_COEFFICIENTS",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "63/50",
+            "139/150",
+            "139/150",
+            "63/50"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "q": "0",
+        "source_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "positive derivative despite mixed original derivative Bernstein coefficients"
+    },
+    {
+      "expected": {
+        "E_final": "3/2",
+        "R_final": "1",
+        "derivative_root_pattern": "constant"
+      },
+      "id": "ROOT_CONSTANT",
+      "input": {
+        "c": "1",
+        "d": "0",
+        "g_e": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "g_r": [
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        ],
+        "initial": [
+          "0",
+          "0"
+        ],
+        "observation_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "q": "0",
+        "source_knots": [
+          "0",
+          "1",
+          "2"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "constant moving-window convolution, all-zero derivative"
+    },
+    {
+      "expected": {
+        "E_final_symbolic": "exp(16)+(exp(16)-1)/16",
+        "R_final": "0"
+      },
+      "id": "SIGNED_DOMAIN_POS16",
+      "input": {
+        "c": "0",
+        "d": "16",
+        "g_e": [
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        ],
+        "g_r": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "initial": [
+          "0",
+          "1"
+        ],
+        "observation_knots": [
+          "0",
+          "1"
+        ],
+        "q": "1",
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "maximum positive z=16 Taylor remainder boundary"
+    },
+    {
+      "expected": {
+        "E_final_symbolic": "exp(-16)+(1-exp(-16))/16",
+        "R_final": "0"
+      },
+      "id": "SIGNED_DOMAIN_NEG16",
+      "input": {
+        "c": "0",
+        "d": "-16",
+        "g_e": [
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        ],
+        "g_r": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "initial": [
+          "0",
+          "1"
+        ],
+        "observation_knots": [
+          "0",
+          "1"
+        ],
+        "q": "1",
+        "source_knots": [
+          "0",
+          "1"
+        ],
+        "states": 2,
+        "tau": "1"
+      },
+      "purpose": "maximum negative z=-16 reciprocal/reversal boundary"
+    }
+  ],
+  "schema": "WU_R15_ARITHMETIC_SOURCE_V1",
+  "source_of_values": "CONTROL_PLAN.json hand-derived frozen design recipes; rational normalization is authoring serialization only, not scientific validation",
+  "status": "AUTHORED_NOT_EXECUTED"
+}

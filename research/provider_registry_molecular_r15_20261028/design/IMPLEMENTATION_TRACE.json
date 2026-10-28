@@ -1,0 +1,61 @@
+{
+  "schema": "WU_R15_C5_IMPLEMENTATION_TRACE_V1",
+  "status": "AUTHORED_NOT_SCIENTIFICALLY_EXECUTED",
+  "unit": "WU_CUBIC_BERNSTEIN_FORCING_R15",
+  "implementation": "src/cubic_convolution.py",
+  "entry_points": ["src/cli.py:main", "verification/run_primary.py:main"],
+  "baseline_reuse": {
+    "commit": "6ca324dbc5d3c4b5c064f7621730eb0d6ee5eb51",
+    "path": "research/provider_registry_molecular_r14_20261028/src/quadratic_convolution.py",
+    "sha256": "74065e6d3a485d37fd980c92fa065ef20fe1897fdf8f505c3c70c7cb34693f99",
+    "read_scope": "Complete saved source read as text during C5 authorship; no import or execution",
+    "direct_or_close_source_reuse": [
+      {"R14": "_bits,derived,add,sub,mul,div,_ceil,down,up", "R15": "same-named bounded exact/directed arithmetic helpers", "scope": "Same Fraction and finite-bit/dyadic policy; no float conversion"},
+      {"R14": "exact,_nonnegative,_knots,_text", "R15": "same-named strict input helpers", "change": "Raw input numerator/denominator bits also checked before cancellation; ASCII grammar and limits retained"},
+      {"R14": "canonical_forcing_sha256,_binding,validate", "R15": "same identity/full-A binding architecture", "change": "WU_R15_WHOLE_FORCING_V1; four original nonnegative coefficients; exact input/identity/certificate field sets"},
+      {"R14": "_split,_restrict", "R15": "degree-generic de Casteljau split/restriction retained", "change": "Applied to supplied B3 and derived B4 without quadratic source-vertex preprocessing"},
+      {"R14": "run_case original-t0 source/strip sum, actual endpoint handling, signed scalar propagation and aggregation", "R15": "same retained memory and endpoint semantics", "change": "Original source grid only; positive B4 overlap; new finite derivative-variation certificates; five scalar moments"},
+      {"R14": "serializable and finite6000 runtime conversion policy", "R15": "configure_r15_runtime,serializable", "change": "No import-time configure call; explicit process/API entry configuration"}
+    ],
+    "not_reused_as_new_verification": "R14 scientific outputs, old primary/reference runs and old budgets are not rerun or relabelled as B3/B4 verification."
+  },
+  "actual_equation_mapping": [
+    {"equation_id": "INPUT", "functions": ["exact", "_quadruplets", "_binding", "validate", "canonical_forcing_sha256"], "implemented_relation": "Four supplied B3 coefficients>=0 per original cell; exact binding and full-A certificate premise matching", "domain_difference": "No full pointwise-nonnegative cubic cone or source-vertex repair"},
+    {"equation_id": "CLOCK", "functions": ["run_case", "precharge_work"], "implemented_relation": "Observation union original source knots+k*tau; original t0 memory, no extrema clocks; precharge before coefficient loops"},
+    {"equation_id": "OVERLAP", "functions": ["_split", "_restrict", "_overlap_bernstein4"], "implemented_relation": "Exact Simpson cubic primitive; B1*B3 coefficient k=[(4-k)D0*S_k+kD1*S_(k-1)]/24"},
+    {"equation_id": "R", "functions": ["run_case", "_power4"], "implemented_relation": "Sum q^k overlap B4 plus h(left-t0)R0; actual right hR0 endpoint saved separately from left limit"},
+    {"equation_id": "EXTREMA", "functions": ["_variation", "_quartic_supremum", "_evaluate"], "implemented_relation": "Ignore exact zeros; V0 constant/monotone terminal; positive V exact midpoint split to depth96; complete compact leaf partition", "new_proof_required": "Variation-diminishing per-depth degree3 bound; <=288splits/577visits per full cell"},
+    {"equation_id": "GAP", "functions": ["_quartic_supremum", "down", "up"], "implemented_relation": "Unresolved local B4 hull versus endpoint/midpoint values; global exactgap<=M_B*2^-D<=4Cmax*2^-D for nonnegative B4; D96 public or fixed diagnosticD"},
+    {"equation_id": "MOMENTS", "functions": ["_beta", "_tail", "bernstein4_weights"], "implemented_relation": "Exact Fraction positive Taylor0..96; exp tail first97/(1-x/98); beta_i decreasing gives moment-tail<=beta_i(97)*exp_tail; signed negative argument uses reciprocal exp and reversed positive moments", "changed_from_R14": "Five beta moments and exact rational series accumulation instead of the old four dyadic per-term accumulators"},
+    {"equation_id": "E", "functions": ["run_case", "bernstein4_weights"], "implemented_relation": "Positive B4 forcing times five directed moments; exact arithmetic until cell-level outward dyadic endpoint propagation"},
+    {"equation_id": "WHOLE_E", "functions": ["run_case"], "implemented_relation": "Qmax=c*exact_Rsup_upper+max(restricted_ge_B3); same signed-d constant-forcing majorant from left E upper; maximum of endpoints covers whole cell"},
+    {"equation_id": "OUTPUT", "functions": ["serializable", "src/cli.py:main", "verification/run_primary.py:main"], "implemented_relation": "Create-only output; exact bounded rational strings; explicit actual check records; frozen source identities before/after; no manifest writes"}
+  ],
+  "fixtures": {
+    "source": "verification/ARITHMETIC_SOURCE.json",
+    "cases": "verification/CASES.json",
+    "assembly": "Expanded only predeclared CONTROL_PLAN recipes using standard-library JSON/Fraction normalization and SHA256. No scientific production/ref module was imported or called.",
+    "full_models": 21,
+    "design_base_cells": 75,
+    "design_overlap_precharge": 4811,
+    "source_identity": "Every binding.source_sha256 is the actual ARITHMETIC_SOURCE.json byte hash; forcing hash independently specifies exact source/state/clock payload",
+    "classification": "ARITHMETIC_CONTROL_PREMISE, not externally verified physical generator/source",
+    "depth_diagnostics": "Two predeclared positive B4 controls from existing model cells, seven fixed depths each; direct checks[] DEPTH_SWEEP records; same single campaign",
+    "reference_boundary": "Only schemas, fixture/control designs and actual JSON inputs shared. Independent reference author did not receive production implementation."
+  },
+  "primary_acceptance": {
+    "exact_controls": "Predeclared analytic R/E endpoints and extrema, independently hand-expanded moving-window derivatives, maximum finite boundaries, original-memory and actual-point distinction",
+    "certificate_checks": "Complete partition and exact gap/work/positivity/interval invariants; these do not replace the independent original-integral reference",
+    "guards": "Direct strict parser/derived/work boundaries and mutated invalid case validation, with actual expected DomainError versus unexpected exception/acceptance distinction",
+    "signed_boundary_check": "Analytic constant-forcing exponential-interval overlap at d=+/-16 is explicitly labelled an interval crosscheck; independent Decimal reference provides separate guarded numerical corroboration",
+    "no_float_tolerance": true,
+    "no_extra_models_or_scans": true
+  },
+  "known_scope_limits": [
+    "Finite work caps are independent of campaign OS CPU/memory caps; no universal maximum-domain runtime claim",
+    "R/E lower bounds enclose only ideal supplied-forcing comparison functions, not actual physical error",
+    "Full-A q/tau are certified premises; no nominal-K replacement or certification computation",
+    "Resource interruption or any failed check is not PASS",
+    "Proof/static review, immutable source freeze and actual campaign remain outstanding"
+  ]
+}
