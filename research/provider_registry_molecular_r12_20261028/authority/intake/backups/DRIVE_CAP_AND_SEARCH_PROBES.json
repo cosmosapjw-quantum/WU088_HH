@@ -1,0 +1,51 @@
+{
+  "schema": "wu.r12.drive-enumeration-boundary.v1",
+  "list_folder_supported_parameters": [
+    "url",
+    "top_k"
+  ],
+  "list_folder_cursor_supported": false,
+  "list_folder_time_filter_supported": false,
+  "search_raw_q_supported": true,
+  "search_explicit_types": [
+    "image",
+    "document",
+    "folder"
+  ],
+  "initial_over_cap_probe": {
+    "requested_top_k": 10000,
+    "result": "HTTP400 invalidParameter: page_size must not exceed1000",
+    "outcome": "PRESERVED_TOOL_PARAMETER_FAILURE; subsequently used1000"
+  },
+  "known_actual_zip_probe": [
+    {
+      "name": "known_zip_search",
+      "args": {
+        "query": "WU_MOLECULAR_R11_FINAL_SOURCE_20261028_c0b97999b928.zip",
+        "topn": 10,
+        "best_effort_fetch": false
+      },
+      "observed_utc": "2026-10-28T04:46:33.418Z",
+      "result_count": 0,
+      "isError": false
+    },
+    {
+      "name": "parent_zip_time_filter",
+      "args": {
+        "special_filter_query_str": "'1pkohlay5eIfFJsBwPZ_yn2jIZONZjesI' in parents and mimeType = 'application/zip' and modifiedTime >= '2026-10-01T00:00:00Z' and modifiedTime < '2026-11-01T00:00:00Z' and trashed = false",
+        "topn": 1000,
+        "best_effort_fetch": false
+      },
+      "observed_utc": "2026-10-28T04:46:33.418Z",
+      "result_count": 0,
+      "isError": false
+    }
+  ],
+  "existing_WU_folder_comparison": {
+    "direct_list_items": 664,
+    "legacy_search_items": 99,
+    "document_search_items": 99
+  },
+  "inference": "Available search path did not return a known existing ZIP even by exact filename, and time/mime-filtered binary query returned0 despite listed ZIPs. These zero results cannot partition or prove exhaustive absence of ZIPs. Main parent remains partial under the exposed connector. No unsupported parameters or borrowed cross-query page tokens used.",
+  "no_universal_absence_claim": true
+}

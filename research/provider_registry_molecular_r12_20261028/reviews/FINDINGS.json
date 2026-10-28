@@ -1,0 +1,37 @@
+{
+  "schema": "WU_R12_INDEPENDENT_REVIEW_FINDINGS_V1",
+  "review_pass_id": "R12_R6_C9_INDEPENDENT_PASS_01",
+  "findings": [
+    {
+      "id": "R12-C9-F01",
+      "severity": "MEDIUM",
+      "relevance_at_detection": "BLOCK_NOW_BEFORE_FIRST_REFERENCE_RUN",
+      "status": "CLOSED_PREEXECUTION",
+      "object": "verification/run_reference.py arithmetic_control_scope source_pointer",
+      "observed_defect": "Primary emits actual JSON array pointer /controls/<numeric index>; reference originally expected /controls/<control id>, deterministically rejecting all11 controls.",
+      "impact": "Correct scientific output would receive11 metadata FAILs and consume the single reference allowance unnecessarily.",
+      "smallest_repair": "Enumerate the fixed input control list and compare source_pointer to /controls/+str(control_index). Preserve all mathematics, guard, source data and contracts.",
+      "original_sha256": "2692e475473f3e69b339bc42764220574e11e227c87950b7ef2909c62c514ca5",
+      "repaired_sha256": "0999c61c8d576f92c03010d271402c5364f729abf28307d3a76caa73d911f0f3",
+      "repaired_bytes": 53633,
+      "targeted_recheck": "AST PASS; exactly one enumerated loop and one index pointer. Reverse the two exact text edits and SHA256 equals the original source, establishing no other change.",
+      "scientific_execution_used": 0
+    },
+    {
+      "id": "R12-C9-F02",
+      "severity": "LOW",
+      "relevance_at_detection": "FIX_SOON_BEFORE_FORMAL_PROOF_ADMISSION",
+      "status": "OPEN_DOCUMENT_CLARIFICATION",
+      "object": "theory/PROOF_KO.md section7 cap induction wording",
+      "observed_defect": "The sentence after constructing right-point and whole uppers collectively says to intersect with raw whole, old whole and exact right-point cap; its pronoun may apply the point-only cap to a whole-cell upper. Code correctly separates these operations.",
+      "impact": "The proof wording can authorize an invalid whole-cell cap inference even though implemented es/right_e are correct.",
+      "smallest_repair": "State whole E intersection and right-point E intersection separately. Exact old point cap may constrain the right point only; whole E uses raw whole, old whole and max(left_E,scalar_right).",
+      "original_proof_sha256": "6ca5cfceef6a76b723279b25391655e2c166e43991af42b0b6e5c94b588ea8db",
+      "production_code_change_required": false,
+      "scientific_execution_used": 0
+    }
+  ],
+  "open_material_findings": 0,
+  "scope": "Current two R12 nodes only; same complementary review pass.",
+  "open_document_clarifications": 1
+}
