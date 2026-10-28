@@ -1,0 +1,82 @@
+{
+  "schema": "WU_R10_EXECUTION_LEDGER_V1",
+  "unit": "WU_FULL_GENERATOR_TRIANGULAR_R10",
+  "primary": {
+    "allowed": 1,
+    "consumed": 0,
+    "remaining": 1,
+    "status": "NOT_RUN",
+    "CPU_limit_s": 60,
+    "wall_limit_s": 90
+  },
+  "reference": {
+    "allowed": 1,
+    "consumed": 0,
+    "remaining": 1,
+    "status": "NOT_RUN",
+    "CPU_limit_s": 60,
+    "wall_limit_s": 90
+  },
+  "CAS": {
+    "allowed": 1,
+    "consumed": 0,
+    "remaining": 1,
+    "status": "NOT_RUN",
+    "wall_limit_s": 30
+  },
+  "old_remaining": {
+    "R9": [
+      0,
+      0,
+      0
+    ],
+    "R8": "all0",
+    "R7": [
+      0,
+      0,
+      0
+    ],
+    "R6": [
+      0,
+      0,
+      0
+    ],
+    "PHYS91": [
+      0,
+      0,
+      0
+    ]
+  },
+  "global_remaining": null,
+  "full_historical_CPU_s": null,
+  "old_science_replay": 0,
+  "new_ODE_runs": 0,
+  "metadata_actions": [],
+  "failures": [
+    {
+      "class": "environment",
+      "action": "git clone --single-branch --branch research/provider-registry-20261025 https://github.com/cosmosapjw-quantum/WU088_HH.git WU088_HH",
+      "exit_code": 128,
+      "reason": "browser-proxy8889 connection refused",
+      "resolution": "GitHub connectors restore exact immutable files and expectedSHA publish; local scientific runtime works"
+    },
+    {
+      "class": "transport",
+      "action": "full recursive target tree GET",
+      "reason": "Transport closed",
+      "resolution": "smaller directory/file/blob GET; no scientific effect"
+    },
+    {
+      "class": "representation",
+      "action": "initial materialization",
+      "reason": "apply_patch appended final LF; large contentsGET returnedemptycontent",
+      "resolution": "Gitblob retrieval for largeJSON; originalSHA/size normalized before science; emptyfiles neverused"
+    }
+  ],
+  "execution_environment": {
+    "local_python": "available",
+    "Git_CLI_network": "unavailable",
+    "publication": "GitHub connectors",
+    "backup": "local ZIP via Drive/Dropbox connectors"
+  }
+}

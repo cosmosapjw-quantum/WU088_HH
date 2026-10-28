@@ -1,3 +1,9 @@
+# Current priority: molecular R10 full-generator triangular bound, registered19/36 — 2026-10-28KST
+
+Read research/provider_registry_molecular_r10_20261028/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json and delivery/PUBLICATION_INDEX.json. Current explicit user asks full R1-R10/C1-C10 and actual per-stage publication/dual backup. Preserve all34 inherited DAG objects. New work absorbs HD projected sink pi*d^T-diag(d) into full generator, derives instantaneous overlap lambda, and uses fine-domain forcing to obtain triangular error comparison. Fixed saved inputs retain missing native HD reactive data and consumer/density/clock. HH_R10=OFF, production=NOT_ISSUED, L4false, physical/central delta0. Existing units exhausted; one new primary/reference60CPU90wall and oneCAS30wall are separate contract. LocalPython works, GitCLI network fails; connector publication and local ZIP provider upload are selected. Root owns external writes, expectedSHA/forcefalse, no mainmerge orotherownerwrites.
+
+## Preserved R9 and preceding instructions
+
 # Current priority: R9 scientifically complete, DAG19/34 — 2026-10-28KST
 
 Read research/provider_registry_molecular_r9_20261028/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, authority/LATEST_CENSUS_DELTA.json, followup/NEXT_INPUT_CONTRACT.json and delivery/PUBLICATION_INDEX.json. Current skill package1.3.0 was read on recovery; the user's selected fullR1-R10/C1-C10 scope and frozen1.0.0 unit contract are retained.
