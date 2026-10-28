@@ -3,7 +3,7 @@
   "unit": "WU_NONALIGNED_CONVOLUTION_R12",
   "review_pass_id": "R12_R6_C9_INDEPENDENT_PASS_01",
   "reviewer": "/root/dependency_delta",
-  "status": "IN_PROGRESS_AWAITING_WRAPPER_AND_PROOF_CLARIFICATION",
+  "status": "PASS_SCOPED_PREEXECUTION",
   "scientific_execution_authorized_by_this_review": false,
   "scope": "Only the two already-open R12 theory/code nodes; one continuous independent static-to-actual R6/C9 pass. No new research unit, census breadth, old review replay, or recursive review.",
   "independence": {
@@ -41,7 +41,11 @@
     "current AGENTS R11 entry and R12 baseline/input identity",
     "theory/PROOF_KO.md",
     "theory/PREMISES_AND_MAP_KO.md",
-    "theory/CONSTRUCTION_KO.md"
+    "theory/CONSTRUCTION_KO.md",
+    "verification/execute_once.py",
+    "verification/EXECUTION_PLAN.json",
+    "verification/wolfram_new_checks.wl",
+    "current actual r12_publication/STATE.json and NOT_RUN execution ledger"
   ],
   "static_assessments": [
     {
@@ -101,14 +105,20 @@
     {
       "id": "C9-04",
       "object": "Single-run and resource binding",
-      "status": "PARTIAL_PENDING_WRAPPER",
-      "evidence": "Both runners preserve first output and bind fixed source/input files. Internal58CPU/88wall guards supplement planned outer60CPU/90wall wrapper. Actual outer wrapper, source publication/freeze and CAS script are not yet available for this review."
+      "status": "PASS_STATIC_SCOPED",
+      "evidence": "Wrapper refuses an existing lane attempt/process/result, creates exclusive attempt before child execution, checks all freeze bytes, reads actual r12_publication/STATE commit and invokes exactly one lane subprocess with60CPU soft/61hard and90wall timeout. OS RUSAGE_CHILDREN difference includes child imports and serialization; failures consume the one lane and preserve first output. Current root publication state exists; fallback routes are not the intended current execution path. Actual S05/S06 source/backup and ledger/CPU observations remain future evidence."
     },
     {
       "id": "R6-07",
       "object": "Formal proof",
-      "status": "PASS_STATIC_SCOPED_WITH_F02_DOCUMENT_CLARIFICATION_PENDING",
-      "evidence": "Formal sections2-6 derive all-start age kernel, overlap, continuity/translated knots, affine left-limit and signed E; section8 correctly restricts refinement invariance to raw ideal F/R/E. Section7 implementation is safe, but one sentence must distinguish whole-cap and point-cap intersections (F02)."
+      "status": "PASS_STATIC_SCOPED",
+      "evidence": "Formal sections2-6 derive all-start age kernel, positive overlap and independent primitive, all translated knots/continuity, affine right-end left limit and signed E. Section7 now separates whole intersections from exact point-cap intersections; section8 correctly restricts refinement invariance to raw ideal F/R/E. Proof, production and independent reference agree on these semantics."
+    },
+    {
+      "id": "R7-CAS-SOURCE",
+      "object": "Frozen proposed Wolfram check",
+      "status": "PASS_STATIC_SCRIPT_ONLY",
+      "evidence": "24 intended new residuals:12 primitive/moment/whole-derivative algebra entries,2 raw affine refinement identities,1 explicit nonaligned overlap example,9 exact overlap-versus-primitive samples. Positive assumptions avoid x=0 singular closed forms; d=0 moments/derivative are separate. No actual evaluator call or result claimed; return warnings and unreduced forms must be preserved."
     }
   ],
   "findings": [
@@ -131,22 +141,20 @@
       "id": "R12-C9-F02",
       "severity": "LOW",
       "relevance_at_detection": "FIX_SOON_BEFORE_FORMAL_PROOF_ADMISSION",
-      "status": "OPEN_DOCUMENT_CLARIFICATION",
+      "status": "CLOSED_PREEXECUTION",
       "object": "theory/PROOF_KO.md section7 cap induction wording",
       "observed_defect": "The sentence after constructing right-point and whole uppers collectively says to intersect with raw whole, old whole and exact right-point cap; its pronoun may apply the point-only cap to a whole-cell upper. Code correctly separates these operations.",
       "impact": "The proof wording can authorize an invalid whole-cell cap inference even though implemented es/right_e are correct.",
       "smallest_repair": "State whole E intersection and right-point E intersection separately. Exact old point cap may constrain the right point only; whole E uses raw whole, old whole and max(left_E,scalar_right).",
       "original_proof_sha256": "6ca5cfceef6a76b723279b25391655e2c166e43991af42b0b6e5c94b588ea8db",
       "production_code_change_required": false,
-      "scientific_execution_used": 0
+      "scientific_execution_used": 0,
+      "repaired_proof_sha256": "ce5117c2f63c9aa8635320f2dfd8a821ba3793d0edc04cf6971a037834746da2",
+      "targeted_recheck": "Whole E uses rawwhole/oldwhole/scalarwhole only; exact old right-point cap constrains right point only. Reverse the requested paragraph edit and incidental Korean word cleanup and original SHA6ca5cfce... is exactly recovered. Production/reference code unchanged."
     }
   ],
   "open_material_findings": 0,
-  "pending_before_full_preexecution_pass": [
-    "Close F02 cap-target wording with the minimal proof edit",
-    "Inspect execute_once wrapper and frozen CAS input",
-    "Bind final source hashes and preexecution freeze without changing frozen source afterward"
-  ],
+  "pending_before_full_preexecution_pass": [],
   "protected_history": "R11 and predecessors' completed science/reviews/output/allowances unchanged; original R8/R10/R11 failure and warning/sample qualifications retained.",
   "science_execution_this_review": {
     "primary": 0,
@@ -336,5 +344,121 @@
       "sha256": "ca09720b5f068e16653a7e2b0e82ac50d5b808b25187e3a0977189c9159f3b85"
     }
   ],
-  "open_document_clarifications": 1
+  "open_document_clarifications": 0,
+  "ready_for_root_frozen_execution_gate": true,
+  "execution_decision_owner": "Root under the existing user contract; this static review is not an execution or final scientific-admission result.",
+  "final_static_source_snapshot": [
+    {
+      "path": "CONTRACT.json",
+      "bytes": 8366,
+      "sha256": "31a97a566914dc865a92bc35549ed4d7ebf648c4ecbafdada410b07cd2ce79be",
+      "JSON_parse": "PASS"
+    },
+    {
+      "path": "CODE_DESIGN_KO.md",
+      "bytes": 17075,
+      "sha256": "2eceaee97db3f05faa2686b0f5470343a0ce4973c6bf9cf4bdadb5cc1f01a372"
+    },
+    {
+      "path": "src/nonaligned_convolution.py",
+      "bytes": 25108,
+      "sha256": "859dcfc4db53b8af702ec0a1f767a4ac5b223b39421aada390e91b035c3c9704",
+      "AST_parse": "PASS"
+    },
+    {
+      "path": "src/positive_arithmetic.py",
+      "bytes": 4247,
+      "sha256": "d9e36393afbee811d5818ca2f8ad2fdddbf8aa18b3a9d8a005adbde846ba63c3",
+      "AST_parse": "PASS"
+    },
+    {
+      "path": "verification/PRIMARY_INPUT.json",
+      "bytes": 5176,
+      "sha256": "fb5a2719904ec316a480d28ab86e2bed07580a4f6d07607e661e6f3c8641637a",
+      "JSON_parse": "PASS"
+    },
+    {
+      "path": "verification/run_primary.py",
+      "bytes": 32879,
+      "sha256": "c52709d0b6ae97087fe337b34770e2b4d77d1ffe3ee11df53771b1df3d9fab2d",
+      "AST_parse": "PASS"
+    },
+    {
+      "path": "verification/REFERENCE_INPUT.json",
+      "bytes": 4984,
+      "sha256": "4ad5ee1c09eefe86f616a3266eaa6235430efa08cab1eacb4eb59156df2d4c7e",
+      "JSON_parse": "PASS"
+    },
+    {
+      "path": "verification/run_reference.py",
+      "bytes": 53633,
+      "sha256": "0999c61c8d576f92c03010d271402c5364f729abf28307d3a76caa73d911f0f3",
+      "AST_parse": "PASS"
+    },
+    {
+      "path": "verification/REFERENCE_DESIGN_KO.md",
+      "bytes": 6747,
+      "sha256": "b5f694f3e231d6cbb06f3c657871581ae3027e34042052436f1e1ad4da2f9a51"
+    },
+    {
+      "path": "theory/PROOF_KO.md",
+      "bytes": 14687,
+      "sha256": "ce5117c2f63c9aa8635320f2dfd8a821ba3793d0edc04cf6971a037834746da2"
+    },
+    {
+      "path": "theory/PREMISES_AND_MAP_KO.md",
+      "bytes": 1694,
+      "sha256": "5d7b72e48bda42bd05657cc2d00599bae8956f6afc9650d4f6a83535042e6232"
+    },
+    {
+      "path": "theory/CONSTRUCTION_KO.md",
+      "bytes": 1786,
+      "sha256": "ca09720b5f068e16653a7e2b0e82ac50d5b808b25187e3a0977189c9159f3b85"
+    },
+    {
+      "path": "verification/execute_once.py",
+      "bytes": 3494,
+      "sha256": "cf775acb812e3b8c451039ac9d1bb257afd9954cd3f26580fc4c0189d0f8f6aa",
+      "AST_parse": "PASS"
+    },
+    {
+      "path": "verification/EXECUTION_PLAN.json",
+      "bytes": 844,
+      "sha256": "782d227092c7c6e341264da0e544a3866dc42ed7e3fc1e29a3f9582c6cb18d68",
+      "JSON_parse": "PASS"
+    },
+    {
+      "path": "verification/wolfram_new_checks.wl",
+      "bytes": 1710,
+      "sha256": "a42e1b7a5f53bf0a4a4759d3c0076b80ce52d380b137cf38ebe8769fec06a51f"
+    }
+  ],
+  "F02_closure_identity": {
+    "finding": "R12-C9-F02",
+    "new_proof_sha256": "ce5117c2f63c9aa8635320f2dfd8a821ba3793d0edc04cf6971a037834746da2",
+    "original_reconstructed_sha256": "6ca5cfceef6a76b723279b25391655e2c166e43991af42b0b6e5c94b588ea8db",
+    "only_requested_paragraph_and_Korean_word_cleanup": true,
+    "science_code_changes": 0,
+    "scientific_execution": 0
+  },
+  "remaining_existing_execution_conditions": [
+    "Root builds a successful preexecution freeze binding the final reviewed15 files plus actual inherited dependencies; dynamic ledger/results must not be frozen as mutable outputs.",
+    "Root completes the prescribed actual source publication/dual backup gate before each scientific lane and records the current actual source identity.",
+    "Exactly one new primary/reference/CAS allowance each; no old scientific replay. Actual results and figures will be reviewed in the same pass before scoped admission."
+  ],
+  "publication_state_observed_during_static_review": {
+    "commit": "73bd3c662d422a6e14a4df55f10ef1c212cdc1d6",
+    "tree": "313f8205f5efaa9bb1b1026e62cf43003d89434c",
+    "scope": "Actual local root publication state read; not a prediction of future execution source or substitute for provider receipt."
+  },
+  "ledger_observation": {
+    "primary": "NOT_RUN,consumed0,remaining1",
+    "reference": "NOT_RUN,consumed0,remaining1",
+    "CAS": "NOT_RUN,consumed0,remaining1",
+    "old_allowance_increase": 0,
+    "global_remaining": null,
+    "full_historical_CPU_s": null
+  },
+  "review_phase": "Preexecution static part complete; same review_pass_id continues through stored actual outputs and final admission metadata.",
+  "completed_utc": "2026-10-28T05:46:00.855723+00:00"
 }
