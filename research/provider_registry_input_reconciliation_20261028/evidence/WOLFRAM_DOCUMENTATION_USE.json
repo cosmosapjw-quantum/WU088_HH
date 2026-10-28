@@ -1,0 +1,53 @@
+{
+  "schema": "WU_WOLFRAM_DOCUMENTATION_USE_V1",
+  "task": "Nonaligned proposal code-contract documentation; no CAS evaluator execution",
+  "calls": [
+    {
+      "tool": "WolframContext",
+      "purpose": "Exact rational Floor, Piecewise and one-sided limit semantics for the proposal",
+      "result": "SERVICE_ERROR",
+      "observed_error": "Mcp error: -32603: Internal error",
+      "response_local": "recovery/review/WOLFRAM_CONTEXT_FIRST_ERROR.json",
+      "local_response_bytes": 333,
+      "local_response_sha256": "990f393fd482434535d5161dd27e06d53a4d2e6626d23a2038d17ee03cff0229",
+      "full_response_delivery": "LOCAL_ONLY_NOT_INCLUDED"
+    },
+    {
+      "tool": "WolframContext",
+      "actual_context": "Retrieve authoritative Wolfram Language documentation for exact rational Floor, Piecewise endpoint conditions, and Limit Direction when approaching a breakpoint from the left. This is a documentation lookup for a proposal-only proof/code contract about the kernel h(age)=q^Floor[age/tau] with explicit h(0)=1 and q=0 boundary handling. Do not evaluate code or run numerical or symbolic calculations; no CAS execution is authorized.",
+      "result": "SUCCESS_DOCUMENTATION_SNIPPETS",
+      "alpha_search_subresults": "Five No Results Found responses were accompanied by official Wolfram documentation snippets.",
+      "response_local": "recovery/review/WOLFRAM_CONTEXT_DOCUMENTATION.json",
+      "local_response_bytes": 8695,
+      "local_response_sha256": "020e993d61688dddfb349608d7e9a3e38adf797447d91feac363b0a930446ff7",
+      "full_response_delivery": "LOCAL_ONLY_NOT_INCLUDED"
+    }
+  ],
+  "used_documentation": [
+    {
+      "url": "https://reference.wolfram.com/language/ref/Limit.html",
+      "fact": "Direction -> FromBelow corresponds to approaching from smaller real values; Floor examples distinguish one-sided limits.",
+      "contract_use": "Label the right endpoint approached from the left explicitly; point value and left limit remain separate."
+    },
+    {
+      "url": "https://reference.wolfram.com/language/ref/Floor.html",
+      "fact": "Floor returns the greatest integer not exceeding its argument; exact numeric evaluation may use internal numerical approximations.",
+      "contract_use": "The finite rational implementation retains exact rational/integer indexing; the documentation lookup is not numerical verification."
+    },
+    {
+      "url": "https://reference.wolfram.com/language/ref/PiecewiseExpand.html",
+      "fact": "Finite-domain Floor expressions can be represented by explicit piecewise conditions with assumptions.",
+      "contract_use": "Write finite age strips and endpoint conventions explicitly in any future symbolic check."
+    }
+  ],
+  "scientific_execution": {
+    "evaluator_calls": 0,
+    "primary": 0,
+    "reference": 0,
+    "ODE": 0,
+    "new_allowance": 0
+  },
+  "historical_CAS_warning_cause": "NOT_ESTABLISHED; this documentation lookup does not diagnose previous R10/R11/R12 warnings.",
+  "public_evidence_policy": "Only task summaries and source locators are published; full documentation snippets remain local.",
+  "new_no_go_or_scientific_admission": false
+}

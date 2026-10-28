@@ -1,0 +1,363 @@
+{
+  "schema": "WU_HD_ROUTE_DELTA_V1",
+  "recorded_utc": "2026-10-28T06:15:52.582731+00:00",
+  "scope": "Targeted exact-article supplementary asset/source-route search; no global repository or backup census",
+  "baseline": {
+    "commit": "eb431411f6f0c4c9065edb0a5a11ce2c4bccf2fe",
+    "path": "research/provider_registry_molecular_r12_20261028/authority/intake/hd_public_data/HD_ROUTE_SUMMARY.json",
+    "git_blob": "a1c94d82ce3515e4ac0c7f156263d286e8e0d6f6",
+    "byte_exact": true,
+    "sha256": "f9628fff1f8ddf04f26eba5899cb3ffdbbe0722040d27c4d5cc66ee1878b2a12"
+  },
+  "actual_reactive_array_files": 0,
+  "actual_reactive_array_bytes": 0,
+  "actual_reactive_array_sha256": null,
+  "physical_consumer_binding_obtained": false,
+  "newly_followed_in_this_lane": [
+    "Official author publications page",
+    "Faure et al2024 DOI10.1093/mnras/stae994 downstream data-availability route"
+  ],
+  "reused": [
+    "Prior Crossref/HAL/CSIC/legacy-AIP route observations",
+    "GL2022 reaction1/reactive vs reaction2/HD-preserving distinction"
+  ],
+  "findings": [
+    {
+      "id": "HD01",
+      "source": "https://pubs.aip.org/aip/jcp/article/157/21/214302/2842276/A-statistical-investigation-of-the-rate-constants",
+      "relation": "supports",
+      "claim": "Publisher article declares numerical SQM state-to-state data for reactive Eq.(1) and nonreactive Eq.(2) in supplementary material; fetched text supplies no actual reactive asset filename/array bytes.",
+      "evidence": "EXA_PUBLISHER_FULLTEXT_RESPONSE.json"
+    },
+    {
+      "id": "HD02",
+      "source": "https://fama.iff.csic.es/personas/tomas/publications.html",
+      "relation": "contextual",
+      "claim": "Author page indexed exact article entry links abstract; returned author-page content was character-limited and is not an exhaustive website inventory.",
+      "evidence": [
+        "EXA_FILENAME_RESPONSE.json",
+        "EXA_AUTHOR_DOWNSTREAM_RESPONSE.json"
+      ]
+    },
+    {
+      "id": "HD03",
+      "source": "https://academic.oup.com/mnras/article/531/1/340/7644349",
+      "DOI": "10.1093/mnras/stae994",
+      "relation": "limits",
+      "claim": "Downstream primary article says generated data are available on request. Its Section 3 discussion of H2 level populations describes H2 chemical formation/destruction as not state-selective in that model; this sentence makes no finding about HD state-selectivity. Independently, the recorded retrieval obtained no actual original HD reactive-array bytes or named WU state/density/clock binding.",
+      "evidence": "EXA_DOWNSTREAM_DATA_RESPONSE.json"
+    },
+    {
+      "id": "HD04",
+      "relation": "missing",
+      "claim": "SciSpace exact-title query found GL2022 with DOI/HTML only; returned generic figshare/Zenodo supplementary candidates have unrelated author metadata and were not promoted to HD sources.",
+      "evidence": "SCISPACE_EXACT_RESPONSE.json"
+    }
+  ],
+  "calls": [
+    {
+      "provider": "github",
+      "request": {
+        "repository_full_name": "cosmosapjw-quantum/WU088_HH",
+        "ref": "eb431411f6f0c4c9065edb0a5a11ce2c4bccf2fe",
+        "path": "research/provider_registry_molecular_r12_20261028/authority/intake/hd_public_data/HD_ROUTE_SUMMARY.json"
+      },
+      "status": "COMPLETED_BYTE_EXACT_PRIOR_RECORD",
+      "raw_response_local_file": "PRIOR_ROUTE_RESPONSE.json",
+      "raw_response_bytes": 4816,
+      "raw_response_sha256": "62327db32caacd89212500f2350164fbdef6fbf9b81f5004b9a3d05a2e8455a1",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "SciSpace",
+      "request": {
+        "searchQuestion": "Where are the supplementary numerical state-to-state SQM rate coefficient files for H+ + HD -> D+ + H2 published with González-Lezana, Hily-Blant and Faure (2022), DOI 10.1063/5.0128598, and are there later papers or datasets that directly archive those reactive arrays separately from nonreactive HD excitation?"
+      },
+      "status": "COMPLETED_RELATED_PAPERS_NO_ARRAY",
+      "raw_response_local_file": "SCISPACE_RESPONSE.json",
+      "raw_response_bytes": 53589,
+      "raw_response_sha256": "634bf198033cf80ae2686314d7110eb2b53bb759f87c06e9e0d5885995cb1278",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "Exa.search",
+      "request": {
+        "query": "An official publisher supplementary dataset download or repository attachment for González-Lezana Hily-Blant Faure 2022 DOI 10.1063/5.0128598, state-to-state reactive H+ HD D+ H2 SQM rate coefficients",
+        "objective": "Find actual supplemental file URLs, publisher migrated AIP assets, or authors' institutional data attachments for this exact article. Prioritize primary numerical arrays and article supplementary manifests, exclude EMAA nonreactive excitation, abstracts-only pages, and generic reaction-rate models.",
+        "numResults": 8
+      },
+      "status": "COMPLETED_NO_ORIGINAL_ARRAY_URL",
+      "raw_response_local_file": "EXA_SEARCH_RESPONSE.json",
+      "raw_response_bytes": 20187,
+      "raw_response_sha256": "9d20439e74aa5c9b925cfc7daef6f08318d15dc9f17aee02268f636c6d4ce505",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "Exa.fetch",
+      "request": {
+        "urls": [
+          "https://pubs.aip.org/aip/jcp/article/157/21/214302/2842276/A-statistical-investigation-of-the-rate-constants"
+        ],
+        "maxCharacters": 60000
+      },
+      "status": "COMPLETED_ARTICLE_TEXT_NO_ARRAY",
+      "raw_response_local_file": "EXA_PUBLISHER_FULLTEXT_RESPONSE.json",
+      "raw_response_bytes": 43888,
+      "raw_response_sha256": "b51d63636dacaa9c423011242a1373f4a1189552f0e4f2861b9c41ad0d881119",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "web",
+      "request": {
+        "system1_search_query": [
+          {
+            "q": "\"5.0128598\" supplementary zip"
+          },
+          {
+            "q": "\"5.0128598\" site:figshare.com"
+          },
+          {
+            "q": "\"214302\" \"supplemental\" \"2022\" HD"
+          }
+        ],
+        "open": [
+          {
+            "ref_id": "https://pubs.aip.org/aip/jcp/article/157/21/214302/2842276/A-statistical-investigation-of-the-rate-constants"
+          }
+        ],
+        "response_length": "long"
+      },
+      "status": "SEARCH_COMPLETED_AIP_OPEN_SERVICE_ERROR_CDN",
+      "raw_response_local_file": "WEB_PRIMARY_ROUTE_RESPONSE.json",
+      "raw_response_bytes": 19966,
+      "raw_response_sha256": "75d92b34568e061ae97e8feb3d230b5fab478bb4995d79e3de5831fd0aaac8d3",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "Exa.search",
+      "request": {
+        "query": "The supplementary material zip archive or supplementary data filename associated with \"5.0128598\" or \"214302_1\" González-Lezana HD 2022",
+        "objective": "Find direct original ZIP or tabular asset filename from AIP publisher, Silverchair CDN, archive or institutional author copy for the exact article. Exclude bibliographic records lacking downloadable supplemental files.",
+        "numResults": 6
+      },
+      "status": "COMPLETED_AUTHOR_ROUTE_IDENTIFIED_NO_ARRAY",
+      "raw_response_local_file": "EXA_FILENAME_RESPONSE.json",
+      "raw_response_bytes": 14241,
+      "raw_response_sha256": "9242d73e6d5153589e3d543d2ecbd703c5fd01efc51ca86afbf4419415c375b5",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "web",
+      "request": {
+        "system2_search_query": [
+          {
+            "q": "\"5.0128598\" filetype:zip"
+          },
+          {
+            "q": "\"5.0128598\" \"supplementary\" \"zip\""
+          },
+          {
+            "q": "\"214302_1\" HD"
+          },
+          {
+            "q": "site:pubs.aip.org \"A statistical investigation\" \"Supplementary Material\""
+          }
+        ],
+        "response_length": "long"
+      },
+      "status": "COMPLETED_NO_REACTIVE_ASSET",
+      "raw_response_local_file": "WEB_FILENAME_RESPONSE.json",
+      "raw_response_bytes": 27996,
+      "raw_response_sha256": "6ef6ba1987b1545ca9d65c2655f5abf989dc462d219ce277244e11e23a7ac631",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "web",
+      "request": {
+        "open": [
+          {
+            "ref_id": "https://fama.iff.csic.es/personas/tomas/publications.html"
+          },
+          {
+            "ref_id": "https://academic.oup.com/mnras/article/531/1/340/7644349"
+          }
+        ],
+        "response_length": "long"
+      },
+      "status": "AUTHOR_SERVICE_ERROR_TIMEOUT_OUP_TEXT_RETURNED",
+      "raw_response_local_file": "WEB_AUTHOR_DOWNSTREAM_RESPONSE.json",
+      "raw_response_bytes": 21411,
+      "raw_response_sha256": "7c0171a4a933d159ebc29f89786e983c6a2f8edb73ab33e21f758180c89cb217",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "Exa.fetch",
+      "request": {
+        "urls": [
+          "https://fama.iff.csic.es/personas/tomas/publications.html",
+          "https://academic.oup.com/mnras/article/531/1/340/7644349"
+        ],
+        "maxCharacters": 30000
+      },
+      "status": "COMPLETED_CHARACTER_LIMITED_TEXT",
+      "raw_response_local_file": "EXA_AUTHOR_DOWNSTREAM_RESPONSE.json",
+      "raw_response_bytes": 61901,
+      "raw_response_sha256": "9d591c86877d104cf715ecfadd3d648b5b879a90964a0604fdd467a6b9c7ef1c",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "web",
+      "request": {
+        "find": [
+          {
+            "ref_id": "turn2view1",
+            "pattern": "DATA AVAILABILITY"
+          },
+          {
+            "ref_id": "turn2view1",
+            "pattern": "SUPPLEMENTARY"
+          },
+          {
+            "ref_id": "turn2view1",
+            "pattern": "http"
+          },
+          {
+            "ref_id": "turn2view1",
+            "pattern": "state-to-state rate coefficients"
+          }
+        ],
+        "response_length": "long"
+      },
+      "status": "FOUR_SERVICE_ERRORS_CDN_REDIRECT",
+      "raw_response_local_file": "WEB_DOWNSTREAM_FIND_RESPONSE.json",
+      "raw_response_bytes": 1704,
+      "raw_response_sha256": "7aaf5dfd18ec155584bf684ff53f43c4fbdcf7a8e5d4754c3f0df423334b2eb6",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "Exa.search",
+      "request": {
+        "query": "The chemistry and excitation of H2 and HD in the early Universe Faure Hily-Blant Pineau des Forets Flower 2024 stae994 data availability supplementary numerical state-to-state reaction rates code download",
+        "objective": "Find the primary article's data-availability section and any public online datasets or source-code repository that contain González-Lezana 2022 HD reactive state-to-state rates; retrieve concrete URLs only when source supplies them.",
+        "numResults": 5
+      },
+      "status": "COMPLETED_ON_REQUEST_DATA_ROUTE_NO_ARRAY",
+      "raw_response_local_file": "EXA_DOWNSTREAM_DATA_RESPONSE.json",
+      "raw_response_bytes": 12401,
+      "raw_response_sha256": "0bc76c209f4f06a7c760d8e2d5cfe97c2160785dfd9828e314a357e340b34dbb",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "web",
+      "request": {
+        "system2_search_query": [
+          {
+            "q": "\"stae994\" \"DATA AVAILABILITY\""
+          },
+          {
+            "q": "\"5.0128598\" \"suppl_file\""
+          },
+          {
+            "q": "\"5.0128598\" \"figshare\""
+          },
+          {
+            "q": "\"González-Lezana\" \"HD\" \"rates\" \"download\""
+          }
+        ],
+        "response_length": "long"
+      },
+      "status": "COMPLETED_NO_REACTIVE_ARRAY",
+      "raw_response_local_file": "WEB_DOWNSTREAM_DATA_RESPONSE.json",
+      "raw_response_bytes": 30115,
+      "raw_response_sha256": "b1a39bc0dd99b1dc4201e7e610a9dff1784b87792702f28b84e47ffcc5f2cf44",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "web",
+      "request": {
+        "system2_search_query": [
+          {
+            "q": "\"pubs.aip.org\" \"article-supplement\" \"214302\""
+          },
+          {
+            "q": "\"pubs.aip.org\" \"5.0128598\" \"zip\""
+          },
+          {
+            "q": "\"5.0128598\" \"supplementary_material\""
+          },
+          {
+            "q": "\"H++HD\" \"Gonzalez\" \"zip\""
+          }
+        ],
+        "response_length": "long"
+      },
+      "status": "COMPLETED_NO_RELEVANT_ASSET_RETURNED",
+      "raw_response_local_file": "WEB_ASSET_RESPONSE.json",
+      "raw_response_bytes": 29469,
+      "raw_response_sha256": "94f8e3fd839bc0c71e7cce4976d846d4d0e586d96d58f1be990f64c9e3680c4b",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    },
+    {
+      "provider": "SciSpace",
+      "request": {
+        "searchQuestion": "Does the paper titled A statistical investigation of the rate constants for the H+ + HD reaction at temperatures of astrophysical interest by Tomás González-Lezana, Pierre Hily-Blant and Alexandre Faure (J. Chem. Phys. 157, 214302, 2022; DOI 10.1063/5.0128598) have a directly linked supplementary dataset, and which primary paper or archive contains its reactive state-to-state H+ + HD -> D+ + H2 SQM numerical arrays?"
+      },
+      "status": "COMPLETED_EXACT_ARTICLE_DOI_HTML_ONLY",
+      "raw_response_local_file": "SCISPACE_EXACT_RESPONSE.json",
+      "raw_response_bytes": 38096,
+      "raw_response_sha256": "02bc6ab49807cf796b761f1293e8ece8fe6859f49c8135a65fcdbb3cfad4b634",
+      "raw_response_publication": "LOCAL_ONLY_FULL_TEXT_NOT_INCLUDED"
+    }
+  ],
+  "counts": {
+    "SciSpace_search_calls": 2,
+    "Exa_search_calls": 3,
+    "Exa_fetch_calls": 2,
+    "Exa_fetch_URLs": 3,
+    "web_calls": 6,
+    "web_search_queries": 15,
+    "web_open_URLs": 3,
+    "web_find_operations": 4
+  },
+  "scientific_executions": {
+    "primary": 0,
+    "reference": 0,
+    "CAS": 0,
+    "ODE": 0,
+    "allowance_increase": 0
+  },
+  "external_writes": 0,
+  "author_contact": 0,
+  "preserved": {
+    "allowance_increase": 0,
+    "native_v": "UNSPECIFIED",
+    "missingness": "MISSING_NOT_ZERO",
+    "TIQM_SQM": "DISTINCT",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4_ready": false,
+    "physical_delta": 0,
+    "central_delta": 0
+  },
+  "interpretation": "INPUT_PENDING in stated routes only; not a global data-absence assertion. Article scope is not verification of an original array header.",
+  "publication_policy": "Raw full articles and abstracts remain local. Publish this metadata and compact paraphrase only.",
+  "closed_literature_scope_findings": [
+    {
+      "id": "LIT_SCOPE01",
+      "status": "CLOSED",
+      "class": "LITERATURE_SOURCE_SCOPE",
+      "target": "HD03 and downstream-source prose in four derived summaries",
+      "observed_error": "Derived summaries widened the source H2 formation/destruction statement to chemical formation/destruction generally and linked it to an HD consumer assessment.",
+      "source_url": "https://academic.oup.com/mnras/article/531/1/340/7644349",
+      "source_DOI": "10.1093/mnras/stae994",
+      "source_location": "Section 3, paragraph following equations (10)-(12), H2 level-population discussion",
+      "raw_response_file": "EXA_DOWNSTREAM_DATA_RESPONSE.json",
+      "raw_response_sha256": "0bc76c209f4f06a7c760d8e2d5cfe97c2160785dfd9828e314a357e340b34dbb",
+      "corrected_scope": "The paper describes H2 chemical formation/destruction as not state-selective in that model. This sentence makes no finding about HD state-selectivity.",
+      "independent_intake_observation": "No actual original HD reactive-array bytes or named WU state/density/clock binding was obtained by the recorded retrieval. This is the independent basis for INPUT_PENDING.",
+      "correction": "Narrowed all four derived records to H2 only, removed the inference about an HD model assumption, retained data-on-request and actual retrieval scope.",
+      "verification": "Exact saved source text and corrected derived occurrences read; no new search, science, CAS or ODE execution.",
+      "closed_utc": "2026-10-28T06:16:56.382275+00:00"
+    }
+  ]
+}
