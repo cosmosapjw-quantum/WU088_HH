@@ -4,11 +4,36 @@
   "created_utc": "2026-10-28T04:49:42.538250+00:00",
   "primary": {
     "allowed": 1,
-    "consumed": 0,
-    "remaining": 1,
-    "status": "NOT_RUN",
+    "consumed": 1,
+    "remaining": 0,
+    "status": "COMPLETED",
     "CPU_limit_s": 60,
-    "wall_limit_s": 90
+    "wall_limit_s": 90,
+    "process": {
+      "schema": "WU_R12_ACTUAL_PROCESS_V1",
+      "lane": "primary",
+      "source_commit": "9e4ff95efff61278536d4401f307523dd207c260",
+      "started_utc": "2026-10-28T05:49:43.558460+00:00",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/d813e058ed8f/WU088_HH/research/provider_registry_molecular_r12_20261028/verification/run_primary.py"
+      ],
+      "CPU_limit_s": 60,
+      "wall_limit_s": 90,
+      "attempt": 1,
+      "finished_utc": "2026-10-28T05:49:44.663318+00:00",
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 1.038824,
+      "OS_system_CPU_s": 0.064944,
+      "OS_CPU_s": 1.1037679999999999,
+      "wall_s": 1.104506648000097,
+      "includes_imports_and_serialization": true,
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+      "old_science_replay": 0,
+      "new_ODE_runs": 0
+    }
   },
   "reference": {
     "allowed": 1,
@@ -20,10 +45,12 @@
   },
   "CAS": {
     "allowed": 1,
-    "consumed": 0,
-    "remaining": 1,
-    "status": "NOT_RUN",
-    "wall_limit_s": 30
+    "consumed": 1,
+    "remaining": 0,
+    "status": "QUALIFIED_SYMBOLIC_CORROBORATION",
+    "wall_limit_s": 30,
+    "result": "raw/CAS_TOOL_RESPONSE.json",
+    "assessment": "raw/CAS_ASSESSMENT.json"
   },
   "old_remaining": {
     "R11": [
