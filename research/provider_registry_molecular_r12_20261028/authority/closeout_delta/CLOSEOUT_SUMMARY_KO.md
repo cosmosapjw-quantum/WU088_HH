@@ -10,7 +10,7 @@ S09 root → research → R12 leaf Git tree를 실제 조회했다. Leaf tree는
 
 ## 실제 전달
 
-현재 실제 단계 게시·이중 백업은 9/10이고, 마지막 완료 단계는 S09 source `eb431411f6f0c4c9065edb0a5a11ce2c4bccf2fe`이다. Workflow는 20/20이다. 이 source에는 S01–S09의 실제 영수증이 포함된다. FINAL 자신의 commit/tree/ZIP bytes/SHA와 provider ACK는 자기 source 밖인 PR150 및 최종 응답에 둔다. 완료한 FINAL 영수증을 그 source에 소급 삽입하지 않는다.
+현재 실제 단계 게시·이중 백업은 10/10이고, 마지막 완료 단계는 S10 source `cf76cb0c7f7975327bca9801b5a5ded221b85b99`이다. Workflow는 20/20이다. 이 source에는 S01–S10의 실제 영수증이 포함된다. FINAL 자신의 commit/tree/ZIP bytes/SHA와 provider ACK는 자기 source 밖인 PR150 및 최종 응답에 둔다. 완료한 FINAL 영수증을 그 source에 소급 삽입하지 않는다.
 
 각 단계의 검증은 로컬 ZIP CRC·모든 member SHA-256 일치, Drive·Dropbox 실제 ACK 및 양쪽 크기 일치다. R12 단계 ZIP의 provider original GET은 NOT_RUN이다. 이번 intake에서 별도 VigilODE B 원본을 GET한 사실을 R12 단계 백업의 GET으로 바꾸어 쓰지 않는다.
 

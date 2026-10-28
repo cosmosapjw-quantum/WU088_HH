@@ -60,15 +60,15 @@ Raw의 보편적 우위나 실제 물리 closure를 주장하지 않는다.
 Native9은 native K + synthetic conditional reaction fixture다.
 
 [실제 전달과 FINAL 경계]
-현재 포함한 실제 게시·이중 백업: S01–S09, 9/10 stages.
-실제 ZIP 9개, 두 provider 실제 ACK 18개.
-마지막 완료 source S09 commit: eb431411f6f0c4c9065edb0a5a11ce2c4bccf2fe
-그 tree: 55e7edd4daa438fb0838ad5141df0db4ff9464a2
-ZIP: WU_MOLECULAR_R12_S09_SOURCE_20261028_eb431411f6f0.zip
-bytes: 7960113
-SHA-256: 581846273f4e8e8bee86565138cbf972ff5cd5ca1a70cfa3211481cab99e3290
-Drive: https://drive.google.com/file/d/1pYhgLrq-KOjqviut-shv5mcFhlRWfEbW/view?usp=drivesdk
-Dropbox ID: id:BSpOijBcT10AAAAAAEDJsw
+현재 포함한 실제 게시·이중 백업: S01–S10, 10/10 stages.
+실제 ZIP 10개, 두 provider 실제 ACK 20개.
+마지막 완료 source S10 commit: cf76cb0c7f7975327bca9801b5a5ded221b85b99
+그 tree: 5007997b05bcfd8a70cc1deaf72b80e2b02f389c
+ZIP: WU_MOLECULAR_R12_S10_SOURCE_20261028_cf76cb0c7f79.zip
+bytes: 8003184
+SHA-256: afce08815bcc9f0d80500a1e1a61480de5d41dda950cb9831b6bddb44e079e06
+Drive: https://drive.google.com/file/d/1YKBDQNZ7vjqzavdjXq0o9-Vd27nqSJsY/view?usp=drivesdk
+Dropbox ID: id:BSpOijBcT10AAAAAAEDJvQ
 검증: 로컬 ZIP CRC + 모든 member SHA + 실제 양쪽 ACK/크기 일치.
 R12 provider original GET: NOT_RUN.
 FINAL 자신의 commit/tree/ZIP/ACK는 자기 source 밖의 PR150과 최종 응답에서 확인한다.

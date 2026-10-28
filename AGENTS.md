@@ -1,4 +1,4 @@
-# Current priority: R12 complete — workflow20/20, DAG25/40, actual stage delivery9/10 — 2026-10-28 KST
+# Current priority: R12 complete — workflow20/20, DAG25/40, actual stage delivery10/10 — 2026-10-28 KST
 
 Read research/provider_registry_molecular_r12_20261028/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, reviews/ADMISSION_DELTA_REVIEW.json, authority/closeout_delta/CLOSEOUT_SUMMARY_KO.md, followup/NEXT_INPUT_CONTRACT.json and delivery/PUBLICATION_INDEX.json. Scientific S09=eb431411f6f0c4c9065edb0a5a11ce2c4bccf2fe; 64-file payload SHA256=dd66d34c0171ec215fa0e39525cc59f4c23f090b4a7deaa93b397c1f4a4417ba. R12 exact nonaligned forcing convolution and closed-cell refinement adopts only the two already registered theory/code nodes. All38 inherited DAG objects remain unchanged. Latest physmath plugin1.3.0 was used; prior version histories stay unchanged. User boundary: finish current nodes only; no further unit/node/allowance selected.
 
@@ -8,7 +8,7 @@ Reuse R11 all-starts full-A q/tau, fixed K/pi/destruction, whole w box, same sou
 
 R12 primary/reference/CAS remaining0/0/0; R11/R10/R9/R8/R7/R6/PHYS91 allowances unchanged0. Globalremaining/fullhistoricalCPU null. Do not repeat completed science/ODE/independent review/census as routine recovery. Preserve R8 original726/727+1FAIL and separatephi24/24, R10 initial ID failure/DOC01/META02, R10/R11 qualified CAS warnings and original fixed sample tolerances/strictfalse, and all R12 failure/repair records.
 
-Actual S09 source eb431411f6f0c4c9065edb0a5a11ce2c4bccf2fe, tree 55e7edd4daa438fb0838ad5141df0db4ff9464a2; its actual receipt is included. FINAL own commit/tree/ZIP/provider ACK remains outside its source in PR150 and the closing response. Verification is local ZIP CRC/allmemberSHA plus both actual ACK/size; R12 provider originalGET NOT_RUN. Root expected-SHA/force=false researchbranch/draftPR150 publication and Drive+Dropbox backups remain authorized; no main merge or other-owner writes.
+Actual S10 source cf76cb0c7f7975327bca9801b5a5ded221b85b99, tree 5007997b05bcfd8a70cc1deaf72b80e2b02f389c; its actual receipt is included. FINAL own commit/tree/ZIP/provider ACK remains outside its source in PR150 and the closing response. Verification is local ZIP CRC/allmemberSHA plus both actual ACK/size; R12 provider originalGET NOT_RUN. Root expected-SHA/force=false researchbranch/draftPR150 publication and Drive+Dropbox backups remain authorized; no main merge or other-owner writes.
 
 <!-- WU_R12_CURRENT_END -->
 

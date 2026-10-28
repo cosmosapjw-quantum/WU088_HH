@@ -4,7 +4,7 @@ R12는 기존 R11의 모든 시작시각에 유효한 full-A block certificate�
 
 이번 네 저장 사례에서 R11 대비 추가 capped 개선은 **0%**다. 두 격자를 같은 기존 193점과 192개 닫힌 셀에 맞추면 capped R/E가 모두 기존 값과 정확히 같다. 새 성과는 비정렬 source의 실제 위치, 이동한 불연속 경계, 같은 시계의 cap 포함 관계를 보존하는 유한 구현과 그 검증이다. 이 관찰을 모든 입력에서 cap이 같다는 정리로 확대하지 않는다. [저장 출력 분석](RESULTS_KO.md).
 
-이 문서가 읽은 workflow는 **20/20**이며, 실제 게시·이중 백업은 **S01–S09, 9/10단계**다. 과학 채택과 workflow, 실제 전달 완료 수는 각각의 기록으로 구분한다. 현재 문서는 `stage10`용 패키징이며 새 연구 단위나 실행 허용량을 선택하지 않는다.
+이 문서가 읽은 workflow는 **20/20**이며, 실제 게시·이중 백업은 **S01–S10, 10/10단계**다. 과학 채택과 workflow, 실제 전달 완료 수는 각각의 기록으로 구분한다. 현재 문서는 `FINAL`용 패키징이며 새 연구 단위나 실행 허용량을 선택하지 않는다.
 
 ## 1. 채택 근거와 불변 식별값
 
@@ -18,9 +18,9 @@ R12는 기존 R11의 모든 시작시각에 유효한 full-A block certificate�
 | 과학 payload 파일 수 | 64 |
 | 과학 payload SHA-256 | `dd66d34c0171ec215fa0e39525cc59f4c23f090b4a7deaa93b397c1f4a4417ba` |
 | 실행 전 동결 파일 수 | 30 |
-| 현재 포함한 마지막 완료 단계 | S09 |
-| 그 단계의 실제 commit | `eb431411f6f0c4c9065edb0a5a11ce2c4bccf2fe` |
-| 그 단계의 실제 tree | `55e7edd4daa438fb0838ad5141df0db4ff9464a2` |
+| 현재 포함한 마지막 완료 단계 | S10 |
+| 그 단계의 실제 commit | `cf76cb0c7f7975327bca9801b5a5ded221b85b99` |
+| 그 단계의 실제 tree | `5007997b05bcfd8a70cc1deaf72b80e2b02f389c` |
 
 과학 payload의 범위와 제외 항목은 [SCIENTIFIC_PAYLOAD_MANIFEST.json](SCIENTIFIC_PAYLOAD_MANIFEST.json)에 있다. 이 보고서와 handoff는 이미 확정한 과학 근거를 설명하는 종료 문서다. FINAL의 자기 commit·tree·ZIP·provider ACK는 그 source 밖인 [PR150](https://github.com/cosmosapjw-quantum/WU088_HH/pull/150)과 최종 대화 응답에 둔다. 완료 뒤 그 영수증을 FINAL source에 소급 삽입하지 않는다.
 
@@ -168,11 +168,11 @@ Drive folder discovery는 553개/4페이지에서 실제 token terminal이었다
 | S07 · R7/C7 | 독립 reference·실제 실행 기록 | [ea50fe9b044af4e9f86de031cd3370100da8633d](https://github.com/cosmosapjw-quantum/WU088_HH/commit/ea50fe9b044af4e9f86de031cd3370100da8633d) | 5,872,085 | `4371cf13e0efeb70ffe373fd9348d7131a15481f43b937a457acc32aa1b3015b` | [Drive](https://drive.google.com/file/d/1WUfR-7tL7xDCfs_a8LXQhm21WqvtTVD5/view?usp=drivesdk) | `id:BSpOijBcT10AAAAAAEDJmw` | 14/20 | 23/40 |
 | S08 · R8/C8 | 저장 출력 분석·그림 | [f14f2c5588206ba01fb4690971cfa0bd4a4d4ca3](https://github.com/cosmosapjw-quantum/WU088_HH/commit/f14f2c5588206ba01fb4690971cfa0bd4a4d4ca3) | 7,937,576 | `440759d5a95ccfbbcea71402a80f8deffee87c45b2b2c62f38e769eb9a450104` | [Drive](https://drive.google.com/file/d/1fXFkF3ei0kn6ELtgn4HT7-RdwpKdQLix/view?usp=drivesdk) | `id:BSpOijBcT10AAAAAAEDJrQ` | 16/20 | 23/40 |
 | S09 · R9/C9 | 최종 C9·두 노드 과학 채택 | [eb431411f6f0c4c9065edb0a5a11ce2c4bccf2fe](https://github.com/cosmosapjw-quantum/WU088_HH/commit/eb431411f6f0c4c9065edb0a5a11ce2c4bccf2fe) | 7,960,113 | `581846273f4e8e8bee86565138cbf972ff5cd5ca1a70cfa3211481cab99e3290` | [Drive](https://drive.google.com/file/d/1pYhgLrq-KOjqviut-shv5mcFhlRWfEbW/view?usp=drivesdk) | `id:BSpOijBcT10AAAAAAEDJsw` | 18/20 | 25/40 |
-| S10 · R10/C10 | 최종 보고·인수인계 | 이 문서의 후속 실제 게시에서 확정 | 미발행 | 미발행 | 미발행 | 미발행 | 현재 workflow 기록 참조 | 25/40 |
+| S10 · R10/C10 | 최종 보고·인수인계 | [cf76cb0c7f7975327bca9801b5a5ded221b85b99](https://github.com/cosmosapjw-quantum/WU088_HH/commit/cf76cb0c7f7975327bca9801b5a5ded221b85b99) | 8,003,184 | `afce08815bcc9f0d80500a1e1a61480de5d41dda950cb9831b6bddb44e079e06` | [Drive](https://drive.google.com/file/d/1YKBDQNZ7vjqzavdjXq0o9-Vd27nqSJsY/view?usp=drivesdk) | `id:BSpOijBcT10AAAAAAEDJvQ` | 20/20 | 25/40 |
 
-위 표의 완료 행은 9개 ZIP과 두 provider의 실제 ACK 18개에 대응한다. 검증 수준은 로컬 ZIP CRC·모든 member SHA-256 일치, Drive·Dropbox의 실제 ACK 및 양쪽 크기 일치다. 이번 R12 단계 백업의 provider original GET은 NOT_RUN이다. 최신 조사에서 새 V8 원본을 GET한 사실은 R12 단계 ZIP을 provider에서 다시 내려받았다는 뜻이 아니다. 각 source tree·archive 이름과 완전한 영수증은 [PUBLICATION_INDEX.json](delivery/PUBLICATION_INDEX.json)에 있다.
+위 표의 완료 행은 10개 ZIP과 두 provider의 실제 ACK 20개에 대응한다. 검증 수준은 로컬 ZIP CRC·모든 member SHA-256 일치, Drive·Dropbox의 실제 ACK 및 양쪽 크기 일치다. 이번 R12 단계 백업의 provider original GET은 NOT_RUN이다. 최신 조사에서 새 V8 원본을 GET한 사실은 R12 단계 ZIP을 provider에서 다시 내려받았다는 뜻이 아니다. 각 source tree·archive 이름과 완전한 영수증은 [PUBLICATION_INDEX.json](delivery/PUBLICATION_INDEX.json)에 있다.
 
-이 문서에 포함한 마지막 완료 단계는 S09이다. ZIP 이름은 `WU_MOLECULAR_R12_S09_SOURCE_20261028_eb431411f6f0.zip`, 크기는 7,960,113 bytes, SHA-256은 `581846273f4e8e8bee86565138cbf972ff5cd5ca1a70cfa3211481cab99e3290`이다. 실제 저장 위치는 [Drive](https://drive.google.com/file/d/1pYhgLrq-KOjqviut-shv5mcFhlRWfEbW/view?usp=drivesdk)와 Dropbox ID `id:BSpOijBcT10AAAAAAEDJsw`다. FINAL 자신의 발행 결과는 자기 source 밖의 PR150과 최종 응답에서 확인한다.
+이 문서에 포함한 마지막 완료 단계는 S10이다. ZIP 이름은 `WU_MOLECULAR_R12_S10_SOURCE_20261028_cf76cb0c7f79.zip`, 크기는 8,003,184 bytes, SHA-256은 `afce08815bcc9f0d80500a1e1a61480de5d41dda950cb9831b6bddb44e079e06`이다. 실제 저장 위치는 [Drive](https://drive.google.com/file/d/1YKBDQNZ7vjqzavdjXq0o9-Vd27nqSJsY/view?usp=drivesdk)와 Dropbox ID `id:BSpOijBcT10AAAAAAEDJvQ`다. FINAL 자신의 발행 결과는 자기 source 밖의 PR150과 최종 응답에서 확인한다.
 
 ## 8. 범위, 보존 상태와 종료 경계
 
