@@ -1,0 +1,32 @@
+{
+  "schema": "wu.r18.extraction_design.v1",
+  "algorithm": [
+    "verify original PDF SHA256/size before external extractor",
+    "run pdftotext -layout -f6 -l6 with argv list, no shell and bounded walltime",
+    "select Table2 before Table3; validate product caption, exact temperature header, exactly one initial(0,2) row",
+    "decode bounded positive a(x) token to Fraction with exponent−x",
+    "return canonical source-kind, SQM method, raw-spin flag and exact cm3/s,m3/s rational pairs",
+    "strict discrete lookup only; no source-rate fitting or physical consumer call",
+    "exclusive-create JSON CLI output, fail before writing for wrong PDF/state/T"
+  ],
+  "edge_cases": [
+    "duplicate/missing source row",
+    "changed temperature order/count",
+    "wrong product/column/table",
+    "token malformed,zero/negative,huge exponent",
+    "wrong-source or tampered PDF",
+    "off-grid temperature205/295 and bool",
+    "input bytes/provenance object mismatch impossible in supported PDF-to-output route"
+  ],
+  "same_source_reuse": [
+    "institutional deposit PDF SHA",
+    "independent author-blind target-row review"
+  ],
+  "numerical_error": "integer/Fraction exact for printed nominal values; no source uncertainty bound",
+  "dependencies": [
+    "Python>=3.10 standard library",
+    "Poppler pdftotext",
+    "pinned original supplement PDF"
+  ],
+  "validation_oracle": "independent source reviewer JSON and separate pypdf extraction; no import of primary module into reference arithmetic"
+}
