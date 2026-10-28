@@ -1,0 +1,92 @@
+{
+  "schema": "WU_R11_EXECUTION_LEDGER_V1",
+  "unit": "WU_FULL_GENERATOR_BLOCK_R11",
+  "created_utc": "2026-10-28T03:09:30.126495+00:00",
+  "primary": {
+    "allowed": 1,
+    "consumed": 0,
+    "remaining": 1,
+    "status": "NOT_RUN",
+    "CPU_limit_s": 60,
+    "wall_limit_s": 90
+  },
+  "reference": {
+    "allowed": 1,
+    "consumed": 0,
+    "remaining": 1,
+    "status": "NOT_RUN",
+    "CPU_limit_s": 60,
+    "wall_limit_s": 90
+  },
+  "CAS": {
+    "allowed": 1,
+    "consumed": 0,
+    "remaining": 1,
+    "status": "NOT_RUN",
+    "wall_limit_s": 30
+  },
+  "old_remaining": {
+    "R10": [
+      0,
+      0,
+      0
+    ],
+    "R9": [
+      0,
+      0,
+      0
+    ],
+    "R8": "all0",
+    "R7": [
+      0,
+      0,
+      0
+    ],
+    "R6": [
+      0,
+      0,
+      0
+    ],
+    "PHYS91": [
+      0,
+      0,
+      0
+    ]
+  },
+  "global_remaining": null,
+  "full_historical_CPU_s": null,
+  "old_science_replay": 0,
+  "new_ODE_runs": 0,
+  "failures": [
+    {
+      "class": "environment",
+      "action": "git clone",
+      "exit_code": 128,
+      "observation": "browser-proxy8889 connection failed",
+      "resolution": "GitHub connector exact immutable reads and expected-SHA publication"
+    },
+    {
+      "class": "representation",
+      "action": "text hydration",
+      "observation": "apply_patch appended one LF",
+      "resolution": "Removed only transport-added LF; exact hashes matched before use; no scientific execution"
+    },
+    {
+      "class": "environment",
+      "action": "sandbox read-only source ZIP GET",
+      "observation": "URLError Operation not permitted",
+      "resolution": "approved read-only network escalation returned HTTP200 and exact hash"
+    }
+  ],
+  "execution_environment": {
+    "Python": "PYTHON_PASS 3.12.14",
+    "Git_CLI_network": "EXECUTION_FAILED",
+    "source_download": "HTTP200 via approved escalation"
+  },
+  "historical_failures_preserved": {
+    "R8_original_reference": "726/727 PASS +1 FAIL",
+    "R8_separate_exact_phi": "24/24 PASS",
+    "R10": "175/175 primary;469/469reference;9860comparisons;CAS15zero+warnings;causeNOT_ESTABLISHED;QUALIFIED_SYMBOLIC_CORROBORATION;originalpostprocessingIDfailure+DOC01/META02closed"
+  },
+  "scientific_execution_complete": false
+}

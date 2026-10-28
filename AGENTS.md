@@ -1,3 +1,11 @@
+# Current priority: R11 uniform full-A blocks — workflow2/20, DAG21/38 — 2026-10-28 KST
+
+Read research/provider_registry_molecular_r11_20261028/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, authority/intake/SYNTHESIS_KO.md and delivery/PUBLICATION_INDEX.json. R11 is a separate full-family/all-starts Duhamel+minorization+forcing-convolution unit on unchanged saved inputs. Preserve all36 inherited DAG objects. New R11 primary/reference/CAS remaining=1/1/1; R10/R9/R8/R7/R6/PHYS91 remaining unchanged0. Globalremaining/fullhistoricalCPU null. Actual stage publications/backupACK are separate from workflow counts. Do not repeat completed science or ODE.
+
+Fixed K/pi/destruction, whole w box, zero-mass forcing, E=abs(eta), coarse l1=4E, h0=1, exact clock/closed-cell caps remain required. Native9 is native K+synthetic conditional reaction; actualHDarray/namedphysicalconsumer/densityclockINPUT_PENDING. HH_R10OFF,productionNOT_ISSUED,L4false,physical/centraldelta0. Retain R8 original726/727+1FAIL and separate24/24, R10 qualified15CASzeros+warnings/causeNOT_ESTABLISHED, sampletolerance and originalfailures. Root expectedSHA/forcefalse researchbranch+draftPR150 andDrive/Dropbox authorized; no mainmerge/otherownerwrites.
+
+<!-- WU_R11_CURRENT_END -->
+
 # Current priority: R10 complete, DAG21/36, workflow20/20, stage delivery10/10 — 2026-10-28KST
 
 Read research/provider_registry_molecular_r10_20261028/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, authority/closeout_delta/CLOSEOUT_SUMMARY_KO.md, followup/NEXT_INPUT_CONTRACT.json and delivery/PUBLICATION_INDEX.json. Scientific adoption S09 a2c62aaad2396d1720a12e74774e52374baa4c33,41-file payload57ee9ad49afbd1a492914fadba480ed787b51e4bcefc8c0be62c31e196590fff. Primary175/175PASS, independent469/469PASS and9860component comparisons, totalPythonOSCPU0.511886s, finalC9 PASS_SCOPED_FINAL_C9/openmaterial0. All34 inherited node objects unchanged. R10 primary/reference/CAS remaining0/0/0; predecessor allowances remain0. Preserve native9 raw regression, qualifiedCASwarnings, saved-sample tolerance and original R8 failure. ActualHDreactivearray/consumer/density/clockINPUT_PENDING, HH_R10OFF, productionNOT_ISSUED, L4false, physical/centraldelta0.
