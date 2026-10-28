@@ -1,0 +1,536 @@
+{
+  "schema": "WU_R15_R6_STATIC_REVIEW_V1",
+  "unit": "WU_CUBIC_BERNSTEIN_FORCING_R15",
+  "verdict": "PASS_SCOPED_STATIC_R6",
+  "review_state": "COMPLETE_ONE_BOUNDED_STATIC_PASS_WITH_DIRECT_FINAL_DELTA_VERIFICATION",
+  "reviewer": {
+    "agent": "/root/r15_r6_review",
+    "role": "Independent native proof/static-code reviewer",
+    "distinct_from_authors": [
+      "/root/r15_github_census",
+      "/root/r15_pr_census",
+      "/root/r15_backup_census",
+      "/root"
+    ],
+    "independence": "This reviewer authored none of the proof, production, reference, envelope or renderer code. Production-specific implementation details were not supplied by this reviewer to the independent reference author.",
+    "child_reviewers": 0
+  },
+  "scope": {
+    "request": "r15_work/authoring/root/R6_REVIEW_REQUEST.json",
+    "governing_checkpoint": "3dae38e813f0ef952990698910d1481eee78357f",
+    "workflow_at_intake": "8/20",
+    "DAG_at_intake": "29/46",
+    "reviewed": "Current R15 conditional proof, finite CAS source/targets, production API/core/primary/fixed inputs, independently authored reference, root wrapper and saved renderer. No historical science or literature/census replay.",
+    "governing_agents_excerpt": {
+      "path": "WU088_HH/AGENTS.md",
+      "read_scope": "R15 governing preamble through <!-- WU_R15_CURRENT_END --> inclusive",
+      "bytes": 1384,
+      "sha256": "fb9f915f76b7fd72d018cfb278d17f29b3e93510667b1cc1a1524b71da7547e7"
+    },
+    "historical_scope_note": "Only the R15 preamble was applied. An initial bounded AGENTS display also returned older preambles; those histories were not used or revalidated."
+  },
+  "execution_separation": {
+    "scientific_imports": 0,
+    "production_function_calls": 0,
+    "primary_campaigns": 0,
+    "reference_campaigns": 0,
+    "CAS_calls": 0,
+    "renderer_runs": 0,
+    "ODE_runs": 0,
+    "compilation_or_AST_checks_by_this_reviewer": 0,
+    "external_mutations": 0,
+    "actual_administrative_actions": [
+      "Source text reading",
+      "jq JSON parsing and structural equality of fixed source/input objects",
+      "sha256sum and stat byte-identity readbacks",
+      "Direct reading of two final proof edits and two final reference edits"
+    ],
+    "scientific_campaign_verdict": "NOT_RUN_BY_THIS_REVIEWER",
+    "static_verdict_meaning": "No material defect found in the stated conditional theorem, arithmetic implementation or frozen-campaign acceptance paths. This approval is separate from actual primary/reference/CAS results, visual inspection and later admission."
+  },
+  "summary": {
+    "static_checks": 24,
+    "static_verified": 24,
+    "material_findings": 0,
+    "open_material_findings": 0,
+    "unresolved_static_checks": 0
+  },
+  "checks": [
+    {
+      "id": "R6-01",
+      "topic": "Conditional full-A premises and arithmetic input cone",
+      "evidence": [
+        "PROOF_KO.md §§1–2",
+        "CONTRACT.json premises",
+        "cubic_convolution.py validate/_binding",
+        "CASES.json"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "The theorem quantifies the actual full-A evolution operator uniformly over every admitted start and history. Constant-w evidence is restricted to the histories it certifies. Normalized nonnegative pi, nonnegative destruction and w are explicit. Supplied B3 coefficients, rather than the entire nonnegative-cubic cone, define the input domain. Every fixed fixture is ARITHMETIC_CONTROL_PREMISE; q=0 is an arithmetic boundary and no finite-time physical Markov realization is asserted."
+    },
+    {
+      "id": "R6-02",
+      "topic": "Exact event-grid completeness and original-t0 memory",
+      "evidence": [
+        "PROOF_KO.md §§2–3",
+        "cubic_convolution.py run_case",
+        "reference_oracle.py OriginalModel"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "Every switch or appearance/disappearance of max(a,t-(k+1)tau), min(b,t-k tau) occurs at a source knot shifted by k tau or (k+1)tau; the only B+1 shifts lie beyond T. Source t0 contributes every initial-kernel jump. Both implementations retain all original source cells and the original t0; derivative subdivisions do not change propagation clocks."
+    },
+    {
+      "id": "R6-03",
+      "topic": "Positive Simpson B1 times B3 construction",
+      "evidence": [
+        "PROOF_KO.md §§4,9",
+        "cubic_convolution.py _restrict/_overlap_bernstein4/run_case",
+        "CAS_CHECKS.wl geometry identities"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "Cubic Simpson exactness and affine restrictions give nonnegative D and S coefficients. The kth B4 coefficient is ((4-k)D0*S[k]+k*D1*S[k-1])/24 with absent terms omitted. This agrees with the product identity and the source restrictions in code. Empty overlaps and equal restriction endpoints are handled. Degree elevation of ge has the correct 1/4,1/2,3/4 factors."
+    },
+    {
+      "id": "R6-04",
+      "topic": "q0/h0, actual endpoints and left-limit supremum witnesses",
+      "evidence": [
+        "PROOF_KO.md §§1,5",
+        "cubic_convolution.py powers/kernel/run_case",
+        "reference_oracle.py REF04/REF06"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "powers[0]=1 gives h0=1 at q=0. F is continuous, while hR0 may jump down. A cell polynomial uses h(left-t0)R0; the saved actual right value recomputes h(right-t0)R0. The approaching right left limit legitimately contributes to a supremum even when unattained. Observation aggregation uses only base cells inside the requested interval."
+    },
+    {
+      "id": "R6-05",
+      "topic": "Zero-aware variation inequality",
+      "evidence": [
+        "PROOF_KO.md §6 equations14–15",
+        "cubic_convolution.py _variation/_quartic_supremum"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "Inserting each adjacent convex average and deleting entries cannot increase zero-dropped variation. The explicit cubic de Casteljau construction obtains concatenated children. When the shared midpoint coefficient is zero, concatenation may add a transition, so V(left)+V(right)<=V(concat)<=V(parent) still holds. No simple-root or separation assumption is used."
+    },
+    {
+      "id": "R6-06",
+      "topic": "Depth-independent active budget and precharges",
+      "evidence": [
+        "PROOF_KO.md §§7,13",
+        "cubic_convolution.py precharge_work/_quartic_supremum/run_case",
+        "run_primary.py depth_sweep"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "At each depth, positive-variation nodes have total variation at most3, so there are at most3 splits per depth and <=3D splits. Complete traversal has 2*splits+1<=6D+1 visits. Public D96 gives288/577; D0 is a valid one-visit terminal diagnostic. Source/build and global subdivision limits are charged before their loops; actual counters and partition identities are checked. The 14 depth diagnostics separately precharge1320/2654."
+    },
+    {
+      "id": "R6-07",
+      "topic": "Restricted derivative coefficient gap bound",
+      "evidence": [
+        "PROOF_KO.md §8 equations17–19",
+        "cubic_convolution.py _quartic_supremum",
+        "reference_oracle.py check_supremum_record/verify_depth_sweeps"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "For a normalized subinterval of width w, 4(C[i+1]-C[i]) equals w times a convex restriction of the original derivative controls. Thus the restricted coefficient range is <=w*M_B. Depth-D terminal gaps are <=M_B*2^-D; monotone terminal gaps are zero. Max aggregation preserves that bound, nonnegative B4 gives M_B<=4*Cmax, and outward dyadic128 conversion adds at most2*2^-128."
+    },
+    {
+      "id": "R6-08",
+      "topic": "Positive degree-four beta moments and Taylor tail",
+      "evidence": [
+        "PROOF_KO.md §§9–10",
+        "cubic_convolution.py _beta/_tail/bernstein4_weights",
+        "CAS_CHECKS.wl beta/phi groups"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "beta_i(n)=binom(4,i)*i!*(n+4-i)!/(n+5)! matches all five rational formulas, is positive and nonincreasing, and equals1/5 at n0. Code includes terms0..96; first omitted term97 and ratio x/98 bound the exponential tail. Multiplying that tail by beta_i(97) is a valid moment-tail bound for0<=x<=16."
+    },
+    {
+      "id": "R6-09",
+      "topic": "Negative-z reflection and directed arithmetic",
+      "evidence": [
+        "PROOF_KO.md §§9–10",
+        "cubic_convolution.py bernstein4_weights/down/up"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "The identity W_i(-x)=exp(-x)*W_(4-i)(x) has the correct reversed index and unchanged duration. Positive-exp bounds have positive lower endpoints, permitting outward reciprocal bounds. Nonnegative interval products preserve inclusion; the exact zero branch uses duration/5 and exp=1. Floor/ceiling formulas are correct."
+    },
+    {
+      "id": "R6-10",
+      "topic": "Normalized-u scalar scaling and endpoint recurrence",
+      "evidence": [
+        "PROOF_KO.md §§9,12 equations21,31–33",
+        "cubic_convolution.py run_case",
+        "reference_oracle.py DecimalReference.integral/REF14"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "Normalized-u power coefficients require one duration factor Delta*m!*phi_(m+1); physical-time powers require Delta^(m+1). Production B4 moments already include duration. Positive forcing coefficients and incoming E bounds yield the stated recurrence. Reference acceptance next_lower<=unrounded_lower and next_upper>=unrounded_upper has the correct outward orientation and agrees with production's final cell rounding."
+    },
+    {
+      "id": "R6-11",
+      "topic": "Signed whole-E majorant",
+      "evidence": [
+        "PROOF_KO.md §11 equations27–28",
+        "cubic_convolution.py run_case whole_E_majorant",
+        "reference_oracle.py REF15"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "Qmax=c*Rsup_upper+max(restricted geB3) dominates the entire cell forcing. Y'(x)=exp(d*x)*(d*Eleft_upper+Qmax) has constant sign. The whole upper must include the incoming upper, and both implementations use max(left_upper,next_endpoint_upper,right_majorant_upper). The damped Eleft=1,d=-16,Qmax=1 boundary is therefore covered. Polynomial-forcing endpoints, rather than majorant endpoints, propagate onward."
+    },
+    {
+      "id": "R6-12",
+      "topic": "Meaning of lower bounds and protected physical status",
+      "evidence": [
+        "PROOF_KO.md §§1,16",
+        "API_SCHEMA.md",
+        "cubic_convolution.py result arithmetic",
+        "reference_oracle.py result physical_status"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "R/E lower bounds refer to ideal supplied-forcing comparison functions; whole-cell lower bounds refer to suprema. E=abs(eta), coarse l1=4E, original source/state/clock premises and missingness are preserved. HD/consumer/state/densityclock remain pending, native v unspecified, HH_R10 OFF, production NOT_ISSUED and L4 false. No universal raw/capped/physical gain or physical promotion is inferred."
+    },
+    {
+      "id": "R6-13",
+      "topic": "Strict rational parsing and source/certificate binding",
+      "evidence": [
+        "INPUT_SCHEMA.json",
+        "cubic_convolution.py exact/_binding/validate/canonical_forcing_sha256",
+        "reference_oracle.py input_rational/saved_rational/verify_binding"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "Both input parsers reject bool/float, whitespace, decimals, exponent forms and Unicode digits, and bound raw input components before cancellation. Production enforces exact input/binding/certificate key sets and identity equality, fixed full-A flags and q/tau/t0/T. The final reference enforces the certificate key set too. Canonical whole-forcing hashes include exact normalized source, state and clock fields. Saved rational parsing separately enforces canonical reduced positive-denominator text."
+    },
+    {
+      "id": "R6-14",
+      "topic": "Finite arithmetic and serialization",
+      "evidence": [
+        "CONTRACT.json finite_domain/reference_internal_arithmetic",
+        "cubic_convolution.py derived/serializable",
+        "reference_oracle.py Arithmetic/Polynomials/json_ready",
+        "run_reference.py emergency_ready"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "Production arithmetic and persisted rationals use16384-bit components; input components use256 bits. The6000 decimal-digit runtime policy accommodates individual16384-bit components; persisted rational text remains<=10000 chars. Internal Euclid/Sturm operations use the separately authorized1048576-bit cap, degree4 and bounded division/multiplicity chains. Cap failures remain explicit FAIL/unresolved; serialization fallback preserves records with oversize value markers. No maximum-domain runtime guarantee is inferred."
+    },
+    {
+      "id": "R6-15",
+      "topic": "Primary actual-check logic and fixed controls",
+      "evidence": [
+        "run_primary.py main/reject",
+        "CASES.json",
+        "ARITHMETIC_SOURCE.json",
+        "CONTROL_PLAN.json"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "PASS is determined by actual check records, all21 case results, no failed checks and frozen-before/after identities. Guards distinguish expected DomainError from unexpected exceptions or acceptance. Exact cubic/degree-reduction/memory/jump controls, both signed-z16 boundaries, seven derivative patterns, parser/binding/size controls and14 depth rows are actually present in driver paths. The signed analytic overlap is correctly labelled a crosscheck and has independent Decimal corroboration planned."
+    },
+    {
+      "id": "R6-16",
+      "topic": "Independent original-integral reconstruction",
+      "evidence": [
+        "REFERENCE_DESIGN_KO.md §§2–3",
+        "reference_oracle.py OriginalModel.F/cell/Polynomials.interpolate",
+        "run_reference.py imports/manifest policy"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "The reference expands original B3 sources into local power form and integrates J0..J3 directly on exact moving overlaps. Five interior rational samples reconstruct the quartic, with four independent off-stencil checks; actual endpoints are recomputed separately. ge and forcing are obtained by own affine power algebra. No production implementation, Simpson construction, subdivision routine or positive moment routine is imported or used as reference input."
+    },
+    {
+      "id": "R6-17",
+      "topic": "Exact odd-multiplicity Sturm upper and lower decisions",
+      "evidence": [
+        "REFERENCE_DESIGN_KO.md §§4,5.1",
+        "reference_oracle.py Polynomials.squarefree_factors/sturm/nonnegative/some_nonnegative"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "Squarefree reconstruction and multiplicity bookkeeping are checked. An interior odd-multiplicity zero forces a sign change; endpoint zeros are excluded and original sign is retained through independent probes. With no such interior root, a nonzero value among five distinct probes fixes the sign of a degree<=4 polynomial away from even zeros. Lower existence for P-L correctly accepts endpoint/probe nonnegativity or any interior zero, including tangency. Sturm remainders retain their signs."
+    },
+    {
+      "id": "R6-18",
+      "topic": "Reference complete partition and critical-root diagnostics",
+      "evidence": [
+        "reference_oracle.py verify_partition/root_diagnostic",
+        "REFERENCE_ACCEPTANCE_MAP.json REF07–11"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "Every saved leaf is checked on the exact dyadic grid with own restricted power/Bernstein coefficients, exact endpoint/midpoint witnesses and an independent derivative-sign decision. Root counts use one-sided Sturm signs to exclude interval endpoints, retain shared-boundary roots and squarefree multiplicities, and preserve depth320 clusters with their counts. Nonzero V0 Bernstein derivatives are strictly one-signed in the open interval, justifying zero interior roots in monotone leaves. Seven fixed cases alone receive root diagnostics."
+    },
+    {
+      "id": "R6-19",
+      "topic": "Reference Decimal160 guard and strict miss retention",
+      "evidence": [
+        "reference_oracle.py DecimalReference/Audit.contains/REF12–15/run_reference_campaign",
+        "REFERENCE_ACCEPTANCE_MAP.json fixed_arithmetic"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "The independent normalized-power route uses512 fixed phi terms at Decimal precision160 and signed z directly; d0 additionally uses exact integration. Membership compares Fraction(Decimal) against exact saved bounds, avoiding hidden rounding of endpoints. The guard is fixed1e-80*max(1,abs(ref),abs(lo),abs(hi)); strict misses are counted and first50 examples retained even when guarded membership succeeds. Final summary separates exact-only from mixed exact/guarded records."
+    },
+    {
+      "id": "R6-20",
+      "topic": "Reference failure retention and acceptance",
+      "evidence": [
+        "reference_oracle.py Audit.phase/verify_case/run_reference_campaign",
+        "run_reference.py failed_payload/add_failure/serialize_output"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "A failed exact, guarded, schema or arithmetic check marks its phase and case FAIL. Every declared case remains represented, including cases blocked by prerequisites. PASS requires no failed case, failed check, campaign error or guarded failure. Finite root caps and file-stability checks are active. This is an acceptance-code review; no actual reference outcome is asserted."
+    },
+    {
+      "id": "R6-21",
+      "topic": "Freeze, create-only outputs and bounded execution wrapper",
+      "evidence": [
+        "run_primary.py frozen_identities/main",
+        "run_reference.py inspect_manifest/main",
+        "run_bounded.py"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "The root wrapper verifies frozen bytes before launch, records a create-only attempt, consumes the declared base allowance and enforces child CPU, address-space and wall limits. Child CPU includes import and serialization. Drivers reject existing result outputs, primary verifies frozen files before/after, and reference checks own/input bytes plus input/primary stability. There is no automatic rerun; resource termination cannot yield the wrapper success condition."
+    },
+    {
+      "id": "R6-22",
+      "topic": "Frozen CAS target scope",
+      "evidence": [
+        "CAS_CHECKS.wl",
+        "CAS_TARGETS.json"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "The source contains72 named scalar identity residuals:11 geometry,25 beta,5 reflection,21 phi and10 original-source/control targets. All72 target IDs are unique and agree with the source's names/groups. Singular phi formulas receive explicit nonzero assumptions; z0 is a separate branch. The batch has40s internal and45s external bounds, no general Integrate call or warning suppression, and retains warnings/unresolved results. No CAS call was made in this review."
+    },
+    {
+      "id": "R6-23",
+      "topic": "Saved-output renderer semantics",
+      "evidence": [
+        "render_saved.py"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "The renderer reads saved primary/reference JSON and the14 saved depth rows without importing a scientific module or recomputing comparisons. Whole-cell horizontal certificates, dashed endpoint connectors and open left-limit markers are distinct. Zero gaps receive an explicit display convention rather than becoming positive data. Output files are create-only; actual rendering and visual inspection remain later gates."
+    },
+    {
+      "id": "R6-24",
+      "topic": "Fixture structural correspondence and final byte identity",
+      "evidence": [
+        "metadata-only jq comparisons",
+        "sha256sum/stat readbacks",
+        "final-delta source reads"
+      ],
+      "result": "STATIC_VERIFIED",
+      "reasoning": "Structural JSON comparison confirms all21 CASES input/expected objects equal their ARITHMETIC_SOURCE counterparts after removing binding/certificate wrappers; depth plans match, IDs are unique, all statuses arithmetic, and identity fields equal certificates. Final proof and reference deltas were read directly and final SHA256/byte lengths measured. These administrative checks do not execute the scientific algorithms."
+    }
+  ],
+  "findings": [],
+  "source_identity_reconciliation": [
+    {
+      "object": "PROOF_KO.md",
+      "initial_read_bytes": 30064,
+      "initial_read_sha256": null,
+      "initial_hash_status": "NOT_CAPTURED_NOT_INVENTED",
+      "final_bytes": 30142,
+      "final_sha256": "9686bbabbe04dce0539b10c2c6c8baafc861e5887ad68baedaaff050f545704f",
+      "directly_verified_changes": [
+        "Explicit pi>=0,1^T*pi=1,destruction>=0 and nonnegative w box in section1",
+        "Chinese initial character in kernel sentence changed to Korean"
+      ],
+      "unchanged_basis": "Author supplied the exact two-location delta; final section1 and final byte identity were read directly. The full actual-U/all-history clause was already in the earlier full proof read."
+    },
+    {
+      "object": "reference_oracle.py",
+      "initial_read_bytes": 80694,
+      "initial_read_sha256": "549201e0839687d6eea7b043ca8e52415a9adabcd3d9a368b45c4e02e6b61b75",
+      "final_bytes": 81082,
+      "final_sha256": "bf8928ec3629b81563cbe10b7b0fb68cb10a398dcf2028c66207e50e3932e05e",
+      "directly_verified_changes": [
+        "verify_binding now requires exact certificate key set and dict type",
+        "Summary counts exact-only kinds explicitly and reports mixed exact/guarded records separately"
+      ],
+      "mathematical_computation_changed": false
+    },
+    {
+      "object": "Reference recurrence orientation",
+      "status": "CLARIFIED_NO_EDIT_REQUIRED",
+      "verified_relation": "saved next lower <= exact positive lower formula; saved next upper >= exact positive upper formula; majorant right upper >= positive interval upper",
+      "reason": "These are exactly the directions supplied by cell-level downward/upward dyadic rounding."
+    }
+  ],
+  "read_file_identities": [
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r15_20261028/CONTRACT.json",
+      "bytes": 7877,
+      "sha256": "05ed87875370f5ede696ae7c3c150c9d16fea25311428fff2f38e87170466ddc"
+    },
+    {
+      "path": "r15_work/authoring/root/R6_REVIEW_REQUEST.json",
+      "bytes": 2970,
+      "sha256": "47b49c7632dc15d649465aa39c2b8a7717bf27f68778178b929fd5f2aff78d1a"
+    },
+    {
+      "path": "r15_work/skill_context/SKILL_1_0_0.md",
+      "bytes": 5788,
+      "sha256": "4c83608c7b33bd9624a7349cb6c17fa485da41fc9237ea23649a6772aafbc157"
+    },
+    {
+      "path": "r15_work/skill_context/SKILL_1_3_0.md",
+      "bytes": 7060,
+      "sha256": "ccb300f5b871e7e9df2ce289bc4533f4121a335b36a3b67bfa86742ca930d3a5"
+    },
+    {
+      "path": "r15_work/skill_context/references/RESEARCH_POLICY.md",
+      "bytes": 16402,
+      "sha256": "3922b6e44f60cf113ba33d4aa6ee4ebd794f74184417bae84cb00ae89046d4ff"
+    },
+    {
+      "path": "r15_work/skill_context/references/POLICY_INTEGRATION.md",
+      "bytes": 7991,
+      "sha256": "a844f7c6d30bc7075d81bde0595b023d2a824c71250f826ce364f9a54bfc1cd0"
+    },
+    {
+      "path": "r15_work/skill_context/references/CODING_LOOP.md",
+      "bytes": 4458,
+      "sha256": "b9e3d6217c243590683bee2ddfe5bb63293206c188b70137a6380e4765442c60"
+    },
+    {
+      "path": "r15_work/skill_context/references/THEORY_LOOP.md",
+      "bytes": 4590,
+      "sha256": "fdef572bcbe50c2dc0db246a09ff1c6c17ed17050464df5b6514184365801aed"
+    },
+    {
+      "path": "r15_work/skill_context/references/EVIDENCE_AND_HANDOFF.md",
+      "bytes": 4486,
+      "sha256": "8a23e0c5fd29934c05f755ac87cbe23da5ab1380cfa8b48eef60a6b0bde94fbc"
+    },
+    {
+      "path": "r15_work/authoring/production/NUMERICAL_DESIGN_KO.md",
+      "bytes": 8894,
+      "sha256": "2ec9cada0d554d8c82346880b08d870a628a4f4dcb4c58e2c9320471fb0abae5"
+    },
+    {
+      "path": "r15_work/authoring/production/API_SCHEMA.md",
+      "bytes": 9921,
+      "sha256": "e43d88597325a943e5654eff848fcf7254446c2a0a4f361e0d747589b7491bd8"
+    },
+    {
+      "path": "r15_work/authoring/production/API_MAP.json",
+      "bytes": 3548,
+      "sha256": "d112dacc2682112b9c4a0f84265381da1896bb08b2726437c01a1f5961cb8a3d"
+    },
+    {
+      "path": "r15_work/authoring/production/CONTROL_PLAN.json",
+      "bytes": 12697,
+      "sha256": "753f5a0b976210a0d877042a6b12740b75c3436c0a1d69f1440d5243e33e5bc6"
+    },
+    {
+      "path": "r15_work/authoring/production/INPUT_SCHEMA.json",
+      "bytes": 5378,
+      "sha256": "009d989eb50619b25324bae90f9b7607a6d780e060b03936ec0da38746efa3b6"
+    },
+    {
+      "path": "r15_work/authoring/production/OUTPUT_SCHEMA.json",
+      "bytes": 10275,
+      "sha256": "3818ac435326fcdb4318060f39fc576f49b3aa91952c324ac8c2f7a82fced643"
+    },
+    {
+      "path": "r15_work/authoring/production/src/cubic_convolution.py",
+      "bytes": 31001,
+      "sha256": "06367bc5eea0fd826a0d4087bdf3a647cca82e24e31e9a98259fb0ced1619905"
+    },
+    {
+      "path": "r15_work/authoring/production/src/cli.py",
+      "bytes": 1117,
+      "sha256": "b4bd9e079c17be5395e2b46189d5debb9549f015471efab2075981dc1b798033"
+    },
+    {
+      "path": "r15_work/authoring/production/verification/run_primary.py",
+      "bytes": 23539,
+      "sha256": "7a277b90905d10d45bccaa5334695f5dccfa00e3f9c230fc715a587d66ec98c2"
+    },
+    {
+      "path": "r15_work/authoring/production/verification/CASES.json",
+      "bytes": 64835,
+      "sha256": "89b7ebc9f86d2eff58c203e54aa6c370e7259d24f1a9414414e91fd952825619"
+    },
+    {
+      "path": "r15_work/authoring/production/verification/ARITHMETIC_SOURCE.json",
+      "bytes": 24122,
+      "sha256": "15216b85daa09c203ee0a856db5c963e13fd89ebe0f9077f94e5ff2f9dd5b885"
+    },
+    {
+      "path": "r15_work/authoring/production/IMPLEMENTATION_TRACE.json",
+      "bytes": 7353,
+      "sha256": "e19bf292857d0eefc86cb7d0ebcad5c4a74827737950b76f39411c4dd5785d7e"
+    },
+    {
+      "path": "r15_work/authoring/production/C5_AUTHORING_STATUS.json",
+      "bytes": 2260,
+      "sha256": "14e8ac5ae7bc4eadd2d8e50af40260fb91c2dff5e5093085ac1031ff731fd795"
+    },
+    {
+      "path": "r15_work/authoring/production/C5_FILE_MANIFEST.json",
+      "bytes": 2705,
+      "sha256": "bf2ccade71303fac3c489113e4a746c9aa24a2d3b71e3a3cdddcbeb38cdf3191"
+    },
+    {
+      "path": "r15_work/authoring/root/run_bounded.py",
+      "bytes": 5821,
+      "sha256": "d8581b09081ceb4ce618826ff9e8d7693d9b53ff5b4b5393c7d62a382b7f057f"
+    },
+    {
+      "path": "r15_work/authoring/root/render_saved.py",
+      "bytes": 9443,
+      "sha256": "42b09c47e8e4bcd4a900b93ac88c52a6d1f64ee26ab39ca03e16443dbd0b7dfc"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r15_20261028/theory/PROOF_KO.md",
+      "bytes": 30142,
+      "sha256": "9686bbabbe04dce0539b10c2c6c8baafc861e5887ad68baedaaff050f545704f"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r15_20261028/verification/CAS_CHECKS.wl",
+      "bytes": 8361,
+      "sha256": "e423af7b6eadbe37a2205e516e29857ae9bce5e69fc1610d426acbc56af541be"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r15_20261028/verification/CAS_TARGETS.json",
+      "bytes": 21664,
+      "sha256": "3f8b73a152add50dd1a82208ceef46ca7ac1a4c64f086b994babd9013c659f42"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r15_20261028/design/REFERENCE_DESIGN_KO.md",
+      "bytes": 22084,
+      "sha256": "2d3bdd8174db293f0b8136f8ce7e939dc90870b94d2bc2c031e4136acfbd875f"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r15_20261028/design/REFERENCE_ACCEPTANCE_MAP.json",
+      "bytes": 16982,
+      "sha256": "54ccebc374c9635d69a41ae50b469ccc5e815f7d4726f94abad628e037ee3051"
+    },
+    {
+      "path": "r15_work/authoring/reference/verification/reference_oracle.py",
+      "bytes": 81082,
+      "sha256": "bf8928ec3629b81563cbe10b7b0fb68cb10a398dcf2028c66207e50e3932e05e"
+    },
+    {
+      "path": "r15_work/authoring/reference/verification/run_reference.py",
+      "bytes": 14607,
+      "sha256": "79206d468dec7407aac27c29a955d7847aba246ed87e672dfb5ada3bc82f8d2c"
+    }
+  ],
+  "positive_next_action": "Root may complete final integration/freeze and the already authorized paired checkpoint, then execute the bounded frozen campaigns in the contracted order. Preserve actual failures/warnings and fixed acceptance. No additional static review cycle is requested.",
+  "remaining_actual_gates": [
+    "Root final source freeze and paired-stage publication/backups",
+    "Actual bounded primary campaign",
+    "Actual independent reference campaign",
+    "One exact frozen CAS call",
+    "Saved-output rendering and actual visual inspection",
+    "Later changed-result/admission C9 and root admission decision"
+  ],
+  "physical_status": {
+    "actual_HD_reactive_array": "INPUT_PENDING_IN_INSPECTED_SCOPE",
+    "named_physical_consumer_state_density_clock": "INPUT_PENDING",
+    "native_v": "UNSPECIFIED",
+    "missingness": "MISSING_NOT_ZERO",
+    "TIQM_SQM": "DISTINCT",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4": false,
+    "central_delta": 0,
+    "physical_delta": 0
+  }
+}

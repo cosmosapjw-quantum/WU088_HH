@@ -1,0 +1,25 @@
+{
+  "schema": "WU_R9_CAS_ASSESSMENT_V1",
+  "source_commit": "c9d8ff41d85dd5e7d31dd78467d561b7a2ab221b",
+  "script_sha256": "4c9284e8855e7e1e8808b4a30e41c9bedce8bfa21d4e87a69c0b31244385411a",
+  "actual_calls": 1,
+  "wall_limit_s": 30,
+  "tool_error": false,
+  "algebra_zero_residuals": 7,
+  "exact_control_zero_residuals": 4,
+  "positivity_claims": 4,
+  "positivity_explicit_True": 1,
+  "positivity_unreduced": 3,
+  "status": "QUALIFIED_SYMBOLIC_CORROBORATION",
+  "warning_text_returned": false,
+  "unreduced_claims": [
+    "1-delta*a>0",
+    "Rstar>=0",
+    "Estar>=0"
+  ],
+  "direct_proof": "1-delta*a=D+delta*b*phi*c>0; nonnegative A,B and positive D imply Rstar=(A+delta*b*B)/D>=0 and Estar=B+phi*c*Rstar>=0.",
+  "proof_source": "theory/PROOF_KO.md#4",
+  "independent_proof_review": "reviews/R6_THEORY_REVIEW.json",
+  "scope": "CAS confirmed exact algebra; three inequalities were not computationally reduced. Direct proof supplies the corresponding mathematical justification.",
+  "old_kernel_or_exp_replays": 0
+}

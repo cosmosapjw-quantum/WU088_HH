@@ -1,0 +1,428 @@
+{
+  "schema": "WU_MOLECULAR_STATE_LIFT_CLAIMS_V1",
+  "unit_id": "WU_MOLECULAR_PROVIDER_STATE_LIFT_R4",
+  "author_role": "provider_rows; theory author, not independent reviewer",
+  "status": "AUTHOR_DERIVED_CONDITIONAL_AWAITING_R6_REVIEW",
+  "document": "STATE_LIFT_THEORY_KO.md",
+  "source_packet": {
+    "path": "../sources/MOLECULAR_SOURCE_PACKET.json",
+    "sha256": "40e2fbd73d451c0c8116b4ca9bd4db4d2e43e4cdf8967988a2fea551f99ce35e",
+    "provider_variants": 6,
+    "native_rate_cells": 77,
+    "source_review": "../reviews/SOURCE_REVIEW_RECONSTRUCTED_RECEIPT.json"
+  },
+  "authority": {
+    "contract": "../CONTRACT.json",
+    "contract_sha256": "6a40c43c04aa4506281f2021a6879e76e94d560ea3cc8af3c7cdfeffb15eb8bc",
+    "read_local_HEAD": "94ba73928d2e2055cf07ad8801f7e83ccb827818",
+    "preflight": "../authority/S01_PREFLIGHT.json",
+    "backup_read": "../delivery/S01.json",
+    "parallel_owner_scope": "existing authority survey reused; no external consumer implementation adopted",
+    "runtime_recovery": "../authority/RUNTIME_RECOVERY.json"
+  },
+  "stages": {
+    "R3": "Explicit source/native versus declared model identities, units, state domains and admission ceilings specified.",
+    "R4": "State vector, source-native aggregate, and prescribed positive lift compared; implementation should require an explicit lift rather than default LTE.",
+    "R5": "Conditional algebraic proofs and exact rational illustrative counterexample authored; no numerical or symbolic tool execution.",
+    "R6": "Pending independent theory review.",
+    "implementation": "Root-owned future implementation; not executed by this theory author."
+  },
+  "assumptions": [
+    {
+      "id": "A_FINITE",
+      "statement": "Finite nonempty state family I; all quantities finite; fixed temperature/external parameters."
+    },
+    {
+      "id": "A_POPULATION",
+      "statement": "x_i>=0 are physical state number densities in cm^-3; X=sum_i x_i."
+    },
+    {
+      "id": "A_COEFFICIENT",
+      "statement": "Known d_i>=0 in cm^3 s^-1 refer to the same reaction, collider, state labels and normalization."
+    },
+    {
+      "id": "A_COLLIDER",
+      "statement": "h>=0 is the physical collider density in cm^-3; scalar iff theorem additionally requires h>0."
+    },
+    {
+      "id": "A_LIFT",
+      "statement": "pi_i>=0 and sum_i pi_i=1. For all-state scalar closure pi is prescribed independently of hidden x."
+    },
+    {
+      "id": "A_FULL_CONE",
+      "statement": "Scalar iff and full ker(P) necessity use the entire nonnegative state cone. Restricted domains require only their admissible same-projection differences."
+    },
+    {
+      "id": "A_BRANCH",
+      "statement": "Formation theorem requires b_i>=0, sum_i b_i=1 over a specified product family with common isotope/charge/electron composition. Actual b is not supplied by current source."
+    },
+    {
+      "id": "A_MODEL_ISOTOPES",
+      "statement": "Declared number model selects H=1H, D=2H, Li=7Li. Source7Li is explicit; source H mass number and nuclear isomer remain unspecified. Model isomer g is a convention, not source-rate qualification."
+    },
+    {
+      "id": "A_TIME_DENSITY",
+      "statement": "tau is proper time in seconds, densities are physical cm^-3, reference density is positive and its derivative must be included if nonzero."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01_MATERIAL_STOICHIOMETRY",
+      "status": "EXACT_CONDITIONAL_MODEL_DERIVATION",
+      "section": "3",
+      "statement": "The seven-material-species by six-source-variant matrix preserves each modeled isotope nucleus, charge and total bound/free electron-lepton number.",
+      "species_order": [
+        "H",
+        "H+",
+        "D+",
+        "Li",
+        "H2",
+        "HD",
+        "LiH"
+      ],
+      "column_order": [
+        "RA",
+        "LiH_destroy_ortho",
+        "LiH_destroy_para",
+        "HD_form_TIQM",
+        "HD_form_SQM",
+        "HD_destroy_thermal"
+      ],
+      "matrix": [
+        [
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "baryon_row": [
+        1,
+        1,
+        2,
+        7,
+        2,
+        3,
+        8
+      ],
+      "charge_row": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bound_electron_row": [
+        1,
+        0,
+        0,
+        3,
+        2,
+        2,
+        4
+      ],
+      "free_electron_change": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "neutrino_change": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "compiler_executed": false
+    },
+    {
+      "id": "C02_THERMAL_PARTICLE_COUNT",
+      "status": "EXACT_CONDITIONAL_COUNTING_IDENTITY",
+      "section": "3",
+      "delta_Ng": [
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "assumption": "Count each atom, molecule, ion and free electron once; exclude photons. Immediate thermal assimilation is not asserted.",
+      "primary_RA_photon_count": 1,
+      "total_RA_cascade_photon_count": null,
+      "Q": null
+    },
+    {
+      "id": "C03_EVENT_NORMALIZATION",
+      "status": "DERIVED_WITH_UNITS",
+      "section": "4",
+      "formulae": [
+        "R=k*n_A*n_B",
+        "j=R/n_ref=k*n_ref*y_A*y_B",
+        "dy_i/dtau=(dn_i/dtau)/n_ref-y_i*d(log n_ref)/dtau"
+      ],
+      "rate_units": "R:events cm^-3 s^-1; j:s^-1 per reference particle",
+      "clock": "proper time seconds; coordinate clock conversion supplied by consumer",
+      "identical_incoming_factor": "1 for every current variant because reactants are distinct",
+      "reference_derivative_may_be_dropped_only_if": "the relevant contribution to n_ref derivative vanishes"
+    },
+    {
+      "id": "C04_POSITIVE_LIFT",
+      "status": "PROVEN_CONDITIONALLY_BY_AUTHOR",
+      "section": "6, theorem1",
+      "formulae": [
+        "L_pi(X)=pi*X",
+        "1^T L_pi(X)=X",
+        "k_pi=d^T pi>=0",
+        "J=h*d^T x>=0",
+        "J_pi=h*k_pi*X>=0"
+      ],
+      "assumptions": [
+        "A_FINITE",
+        "A_POPULATION",
+        "A_COEFFICIENT",
+        "A_COLLIDER",
+        "A_LIFT"
+      ],
+      "zero_population_case": "X=0 implies x=0, J=J_pi=0; no division by X required"
+    },
+    {
+      "id": "C05_DEFECT_IDENTITY",
+      "status": "PROVEN_CONDITIONALLY_BY_AUTHOR",
+      "section": "6, theorem1",
+      "formula": "DeltaJ=J-J_pi=h*d^T*(x-pi*X)",
+      "proof": "Expand d^T*pi*X=(d^T*pi)*X."
+    },
+    {
+      "id": "C06_ZERO_SUM_BOUND",
+      "status": "PROVEN_CONDITIONALLY_BY_AUTHOR",
+      "section": "6, theorem2",
+      "formula": "abs(DeltaJ)<=h*(dmax-dmin)/2*norm1(x-pi*X)",
+      "proof": "r=x-pi*X satisfies1^T r=0; subtract c1 with c=(dmax+dmin)/2; apply triangle inequality and max norm.",
+      "secondary_bound": "abs(DeltaJ)<=h*X*(dmax-dmin)",
+      "is_physical_uncertainty_bound": false,
+      "actual_source_d_vector_supplied": false,
+      "actual_numeric_bound_evaluated": false
+    },
+    {
+      "id": "C07_SCALAR_EXACTNESS_IFF",
+      "status": "PROVEN_CONDITIONALLY_BY_AUTHOR",
+      "section": "7, theorem3",
+      "equivalent": [
+        "J=J_pi for every x>=0",
+        "d=c*1 for some c>=0",
+        "d annihilates ker(1^T)"
+      ],
+      "requires": [
+        "h>0",
+        "full nonnegative state cone",
+        "prescribed pi independent of hidden x"
+      ],
+      "proof": "Test x=X0*e_i with X0>0 for necessity; substitute constant d for sufficiency; e_i-e_j spans zero-sum directions.",
+      "exceptions": [
+        "h=0 makes both fluxes zero without constraining d",
+        "On x=pi X only, arbitrary d is exact",
+        "Setting pi=x/X requires the hidden population and is not scalar closure"
+      ],
+      "strong_no_go_claim": false,
+      "novelty_claim": false
+    },
+    {
+      "id": "C08_GENERAL_PROJECTION",
+      "status": "PROVEN_CONDITIONALLY_BY_AUTHOR",
+      "section": "7, general P",
+      "formula": "d^T x depends only on P x for all x>=0 iff d annihilates ker(P) iff d^T=dbar^T P",
+      "proof": "For necessity decompose z in ker(P) as zplus-zminus; both are nonnegative and have equal P-image. For sufficiency define the induced linear functional on im(P).",
+      "restriction": "For a restricted admissible domain use only same-P admissible differences; no universal positive lift for arbitrary P asserted."
+    },
+    {
+      "id": "C09_FORMATION_BRANCH_TOTAL",
+      "status": "PROVEN_CONDITIONALLY_BY_AUTHOR",
+      "section": "8",
+      "formula": "dx/dtau|form=b*F; 1^T b=1 => dX/dtau|form=F",
+      "requirements": [
+        "F>=0",
+        "b>=0",
+        "sum(b)=1",
+        "all product states share material conserved composition"
+      ],
+      "actual_source_b_supplied": false,
+      "population_pi_equals_formation_b": false
+    },
+    {
+      "id": "C10_RATIONAL_COUNTEREXAMPLE",
+      "status": "ALGEBRAIC_ILLUSTRATION_NOT_SOURCE_DATA",
+      "section": "9",
+      "data": {
+        "d": [
+          "kappa",
+          "3*kappa"
+        ],
+        "pi": [
+          "1/2",
+          "1/2"
+        ],
+        "x_a": [
+          "X0",
+          "0"
+        ],
+        "x_b": [
+          "0",
+          "X0"
+        ],
+        "J_a": "kappa*h*X0",
+        "J_b": "3*kappa*h*X0",
+        "J_pi": "2*kappa*h*X0",
+        "defects": [
+          "-kappa*h*X0",
+          "+kappa*h*X0"
+        ],
+        "bound": "kappa*h*X0"
+      },
+      "conditions": "kappa,h,X0>0",
+      "source_data": false,
+      "numerical_execution": false
+    },
+    {
+      "id": "C11_NATIVE_FIT_FUNCTIONS",
+      "status": "EXACT_ALGEBRA_DEFINITION_NO_EVALUATION",
+      "section": "10",
+      "Bennett": {
+        "formula": "1e-20*(161/50+1/((657/10000)*theta^(-49/20)+(631/100000)*theta^(837/1000))) cm^3 s^-1",
+        "theta": "T/(1000 K)",
+        "real_power_definition": "theta^r=exp(r*ln(theta)) for theta>0",
+        "mathematical_domain": "T>0",
+        "source_table_support_K": [
+          "50",
+          "10000"
+        ],
+        "contract_diagnostic_node_count": 27
+      },
+      "HD": {
+        "formula": "8.57e-10*exp(-405 K/T) cm^3 s^-1",
+        "mathematical_domain": "T>0",
+        "calculation_T_extent_K": [
+          "5",
+          "3000"
+        ],
+        "separate_fit_validity_interval_explicit": false,
+        "contract_diagnostic_nodes_K": [
+          "205",
+          "295"
+        ]
+      },
+      "positivity_proof": "All coefficient factors and Bennett denominator terms are positive on T>0.",
+      "source_extrapolation_admitted": false,
+      "rate_evaluations": 0
+    },
+    {
+      "id": "C12_SOURCE_WEIGHT_AND_Q_GUARDS",
+      "status": "SOURCE_BOUNDARIES_PRESERVED",
+      "section": "10-11",
+      "Bennett_electronic_factor": "p=1/4 already included; do not multiply again",
+      "HD_thermal_spin_factors": "even1/4 and odd3/4 already included in source aggregate; distinct meaning from Bennett factor",
+      "Bovino_spin_weight": "unresolved",
+      "Bovino_fit_unit_conflict": "printed b unit K versus K^-1 required by b*T; evaluator excluded",
+      "HD_gamma_405K_is_Q": false,
+      "admitted_Q": null
+    },
+    {
+      "id": "C13_ENSEMBLE_COMPATIBILITY",
+      "status": "INPUT_DEPENDENCY_EXPLICIT",
+      "section": "5,8,11",
+      "statement": "Material reverse columns do not establish detailed balance between source ensembles. LiH RA product mixture, Bovino initial states, p-H2 formation input and thermal-HD destruction input remain separately labeled.",
+      "actual_population_lift": null,
+      "actual_formation_branch": null,
+      "named_runtime_consumer": null
+    }
+  ],
+  "execution": {
+    "rate_evaluations": 0,
+    "Q_evaluations": 0,
+    "partition_function_evaluations": 0,
+    "compiler_calls": 0,
+    "IVP_runs": 0,
+    "Wolfram_calls": 0,
+    "old249_reruns": 0,
+    "R1_R2_R3_PHYS91_REI_replays": 0,
+    "theory_written_analytically": true
+  },
+  "admission": {
+    "conditional_theory_author_completion": true,
+    "independent_theory_review": false,
+    "source_fit_implementation": false,
+    "empirical_physical_rate": false,
+    "nuclear_Q": false,
+    "energy_partition": false,
+    "consumer_state_lift": false,
+    "named_runtime_consumer": false,
+    "runtime_activation": false,
+    "production": "NOT_ISSUED",
+    "HH_R10": "OFF",
+    "L4_ready": false
+  },
+  "next_review_obligations": [
+    "Check h>0/full-cone/fixed-pi necessity qualifiers.",
+    "Check zero-sum bound, units and formation-total projection.",
+    "Check source electronic/spin factors are not reapplied.",
+    "Check no state-resolved d, pi or b is fabricated from aggregate sources.",
+    "Check proper-time and reference-density derivative conventions.",
+    "Check native fit diagnostic scope is27+2nodes; no broadened validity or Q."
+  ]
+}

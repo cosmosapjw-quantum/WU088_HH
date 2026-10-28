@@ -1,0 +1,232 @@
+{
+  "schema": "WU_R15_R5_AUTHORING_STATUS_V1",
+  "created_utc": "2026-10-28T11:36:33.546416+00:00",
+  "unit": "WU_CUBIC_BERNSTEIN_FORCING_R15",
+  "author": "/root/r15_github_census",
+  "status": "R5_CONSTRUCTIVE_PROOF_AND_BOUNDED_CAS_SOURCE_AUTHORED",
+  "direct_proof": "COMPLETE_WITH_STATED_CONDITIONAL_PREMISES",
+  "independent_R6_review": "NOT_YET_OBSERVED_BY_AUTHOR",
+  "CAS": "AUTHORED_NOT_EXECUTED",
+  "primary_reference": "NOT_EXECUTED_BY_AUTHOR",
+  "scientific_admission": "PENDING",
+  "write_scope": "r15_work/authoring/theory additive R5 files only",
+  "preserved_prior_R2_R3_R4": true,
+  "latest_parent_checkpoint": {
+    "S04_commit": "3dae38e813f0ef952990698910d1481eee78357f",
+    "workflow": "8/20",
+    "DAG": "29/46",
+    "publication_dual_backup": "Parent reported actual completion; root owns receipts"
+  },
+  "activities": {
+    "manual_derivation": true,
+    "read_only_context": true,
+    "administrative_JSON_hash_and_text_delimiter_checks": true,
+    "scientific_executions": 0,
+    "CAS_calls": 0,
+    "scientific_imports": 0,
+    "compiles": 0,
+    "ODE_runs": 0,
+    "remote_mutations": 0,
+    "subagent_delegations": 0
+  },
+  "artifacts": [
+    {
+      "path": "theory/PROOF_KO.md",
+      "bytes": 30142,
+      "sha256": "9686bbabbe04dce0539b10c2c6c8baafc861e5887ad68baedaaff050f545704f"
+    },
+    {
+      "path": "verification/CAS_CHECKS.wl",
+      "bytes": 8361,
+      "sha256": "e423af7b6eadbe37a2205e516e29857ae9bce5e69fc1610d426acbc56af541be"
+    },
+    {
+      "path": "verification/CAS_TARGETS.json",
+      "bytes": 21664,
+      "sha256": "3f8b73a152add50dd1a82208ceef46ca7ac1a4c64f086b994babd9013c659f42"
+    }
+  ],
+  "claim_evidence_updates": {
+    "C02": "DIRECT_MANUAL_DERIVATION_COMPLETE_AWAITING_INDEPENDENT_REVIEW_AND_EXTERNAL_CORROBORATION",
+    "C03": "DIRECT_MANUAL_DERIVATION_COMPLETE_AWAITING_INDEPENDENT_REVIEW_AND_EXTERNAL_CORROBORATION",
+    "C04": "DIRECT_MANUAL_DERIVATION_COMPLETE_AWAITING_INDEPENDENT_REVIEW_AND_EXTERNAL_CORROBORATION",
+    "C05": "DIRECT_MANUAL_DERIVATION_COMPLETE_AWAITING_INDEPENDENT_REVIEW_AND_EXTERNAL_CORROBORATION",
+    "C06": "DIRECT_MANUAL_DERIVATION_COMPLETE_AWAITING_INDEPENDENT_REVIEW_AND_EXTERNAL_CORROBORATION",
+    "C08": "DIRECT_MANUAL_DERIVATION_COMPLETE_AWAITING_INDEPENDENT_REVIEW_AND_EXTERNAL_CORROBORATION",
+    "C09": "DIRECT_MANUAL_DERIVATION_COMPLETE_AWAITING_INDEPENDENT_REVIEW_AND_EXTERNAL_CORROBORATION",
+    "C12": "DIRECT_MANUAL_DERIVATION_COMPLETE_AWAITING_INDEPENDENT_REVIEW_AND_EXTERNAL_CORROBORATION",
+    "C01": "INHERITED_CONDITIONAL_RESULT_REDERIVED_FROM_ACTUAL_EVOLUTION_OPERATOR_HISTORY_PREMISE",
+    "C07": "ONE_SIDED_SEMANTICS_PROVED_WITH_CONTINUOUS_CONVOLUTION",
+    "C10": "CONSTANT_FORCING_WHOLE_E_COMPARISON_PROVED_WITH_LEFT_ENDPOINT_INCLUDED",
+    "C11": "ORIGINAL_J0_TO_J3_AND_PHI_SCALING_IDENTITIES_PROVED_REFERENCE_IMPLEMENTATION_AND_RUN_PENDING",
+    "C13": "SOURCE_STATUS_UNCHANGED_INPUT_PENDING"
+  },
+  "manual_results": [
+    {
+      "case": "CUBIC",
+      "R": "1/4",
+      "E": "1/20",
+      "scope": "q1,tau1,t0=0,T1,gr=s^3,c1,d0,zero initial"
+    },
+    {
+      "case": "GE_CUBIC",
+      "R": "0",
+      "E": "1/4",
+      "scope": "c0,d0,ge=s^3,T1,zero initial"
+    },
+    {
+      "case": "DEGREE_LIMITS",
+      "R": "1/(k+1)",
+      "E": "1/((k+1)*(k+2))",
+      "scope": "gr=s^k,k=0..3,q1,c1,d0,T1"
+    },
+    {
+      "case": "Q0_INITIAL_JUMP",
+      "actual_R": "1/4",
+      "left_limit_R": "5/4",
+      "sup_R": "5/4",
+      "E": "21/20",
+      "scope": "q0,tau1,T1,R0=1,gr=s^3,c1,d0"
+    },
+    {
+      "case": "GLOBAL_MEMORY_CANONICAL",
+      "R": "2337/4096",
+      "E": "12013/81920",
+      "scope": "q1/2,tau1/2,T5/4,gr=s^3,c1,d0,zero initial"
+    },
+    {
+      "case": "MOVING_THREE_RATIONAL",
+      "R": "1",
+      "E": "1447/960",
+      "sup_R_second_cell": "1033/1024",
+      "scope": "canonical moving-window source with p=-(u-1/4)*(u-1/2)*(u-3/4)"
+    },
+    {
+      "case": "MOVING_THREE_MIXED_ALGEBRAIC",
+      "R": "97/96",
+      "E": "1447/960",
+      "scope": "canonical moving-window source with p=-(u-1/4)*((u-1/2)^2-1/8)"
+    },
+    {
+      "case": "SIGNED_DOMAIN_BOUNDARIES",
+      "E": "exp(d)+(exp(d)-1)/d",
+      "scope": "d=16 or-16,Delta1,E0=1,Q1; whole maximum includes incoming1"
+    }
+  ],
+  "manual_results_status": "HAND_DERIVATION_NOT_CAS_OR_CAMPAIGN_PASS",
+  "shared_campaign_plan": {
+    "full_models": 21,
+    "base_cells": 75,
+    "overlap_precharge": 4811,
+    "depth_diagnostics": 14,
+    "status": "PLANNED_NOT_EXECUTED"
+  },
+  "CAS_plan": {
+    "expected_identity_count": 72,
+    "external_wall_s": 45,
+    "internal_wall_s": 40,
+    "allowed_calls": 1,
+    "repair_reserve": 0,
+    "general_Integrate_calls": 0,
+    "raw_warnings_preserved": true,
+    "submit_exact_frozen_file_bytes": true,
+    "append_LF": false,
+    "source_is_ASCII": true
+  },
+  "source_context": [
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r15_20261028/CONTRACT.json",
+      "bytes": 7877,
+      "sha256": "05ed87875370f5ede696ae7c3c150c9d16fea25311428fff2f38e87170466ddc",
+      "use": "READ_ONLY_SOURCE_CONTEXT_NO_EXECUTION"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r15_20261028/design/CONTROL_PLAN.json",
+      "bytes": 12697,
+      "sha256": "753f5a0b976210a0d877042a6b12740b75c3436c0a1d69f1440d5243e33e5bc6",
+      "use": "READ_ONLY_SOURCE_CONTEXT_NO_EXECUTION"
+    },
+    {
+      "path": "r15_work/authoring/production/API_SCHEMA.md",
+      "bytes": 9921,
+      "sha256": "e43d88597325a943e5654eff848fcf7254446c2a0a4f361e0d747589b7491bd8",
+      "use": "READ_ONLY_SOURCE_CONTEXT_NO_EXECUTION"
+    },
+    {
+      "path": "r15_work/authoring/production/NUMERICAL_DESIGN_KO.md",
+      "bytes": 8894,
+      "sha256": "2ec9cada0d554d8c82346880b08d870a628a4f4dcb4c58e2c9320471fb0abae5",
+      "use": "READ_ONLY_SOURCE_CONTEXT_NO_EXECUTION"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r15_20261028/inputs/R14_theory_PROOF_KO.md",
+      "bytes": 15642,
+      "sha256": "72b8b854f0778fe5ee3bc42313559e99b47d36f8d5a3b9a863dc8bc662418a0a",
+      "use": "READ_ONLY_SOURCE_CONTEXT_NO_EXECUTION"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r14_20261028/raw/CAS_SUBMITTED_CODE.wl",
+      "bytes": 3551,
+      "sha256": "d86c4d2eb3a7a6db8a0331e401a6ee9292a884fb2d5c24b2586986629734acdb",
+      "use": "READ_ONLY_SOURCE_CONTEXT_NO_EXECUTION"
+    }
+  ],
+  "skill_context_used": [
+    {
+      "path": "r15_work/skill_context/SKILL_1_0_0.md",
+      "sha256": "4c83608c7b33bd9624a7349cb6c17fa485da41fc9237ea23649a6772aafbc157",
+      "use": "ACTUALLY_READ_CURRENT_CONTEXT_REUSED"
+    },
+    {
+      "path": "r15_work/skill_context/SKILL_1_3_0.md",
+      "sha256": "ccb300f5b871e7e9df2ce289bc4533f4121a335b36a3b67bfa86742ca930d3a5",
+      "use": "ACTUALLY_READ_CURRENT_CONTEXT_REUSED"
+    },
+    {
+      "path": "r15_work/skill_context/references/THEORY_LOOP.md",
+      "sha256": "fdef572bcbe50c2dc0db246a09ff1c6c17ed17050464df5b6514184365801aed",
+      "use": "ACTUALLY_READ_CURRENT_CONTEXT_REUSED"
+    },
+    {
+      "path": "r15_work/skill_context/references/RESEARCH_POLICY.md",
+      "sha256": "3922b6e44f60cf113ba33d4aa6ee4ebd794f74184417bae84cb00ae89046d4ff",
+      "use": "ACTUALLY_READ_CURRENT_CONTEXT_REUSED"
+    },
+    {
+      "path": "r15_work/skill_context/references/POLICY_INTEGRATION.md",
+      "sha256": "a844f7c6d30bc7075d81bde0595b023d2a824c71250f826ce364f9a54bfc1cd0",
+      "use": "ACTUALLY_READ_CURRENT_CONTEXT_REUSED"
+    },
+    {
+      "path": "r15_work/skill_context/references/EVIDENCE_AND_HANDOFF.md",
+      "sha256": "8a23e0c5fd29934c05f755ac87cbe23da5ab1380cfa8b48eef60a6b0bde94fbc",
+      "use": "ACTUALLY_READ_CURRENT_CONTEXT_REUSED"
+    },
+    {
+      "path": "r15_work/skill_context/references/SUBAGENT_MODE.md",
+      "sha256": "d84fc9c0e6c229e350f2855edff545ee9dac05cd7b7958b0b97e82b92bb0c48e",
+      "use": "ACTUALLY_READ_CURRENT_CONTEXT_REUSED"
+    }
+  ],
+  "important_proof_details": [
+    "Actual full-A evolution-operator block certificate applies to every permitted start and history; a constant-w certificate is not silently promoted to switching histories.",
+    "Original-t0 memory is retained; event coverage includes all affine branch and overlap switches.",
+    "Cubic sign variation proof accounts for zero shared midpoint, repeated roots and rootless mixed coefficients without root separation.",
+    "Coefficient-hull gap follows restricted derivative coefficient differences, with the normalized-u chain factor.",
+    "Scalar whole upper includes the incoming E upper even for a decreasing signed-d majorant.",
+    "Reference normalized-u and elapsed-time phi dimensional factors are explicitly separated.",
+    "All lower endpoints concern the ideal supplied-forcing comparisons, not actual physical error lower bounds."
+  ],
+  "protected_status": {
+    "native_v": "UNSPECIFIED",
+    "missingness": "MISSING_NOT_ZERO",
+    "physical_input": "INPUT_PENDING_IN_INSPECTED_SCOPE",
+    "TIQM_SQM": "DISTINCT",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4": false,
+    "central_delta": 0,
+    "physical_delta": 0
+  },
+  "next": "Root integrates C5, obtains bounded independent R6 proof/static-code review, freezes actual bytes and publishes S05 with dual backups before authorized scientific execution."
+}

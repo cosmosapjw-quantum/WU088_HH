@@ -1,0 +1,7 @@
+# 수치 설계
+
+네R7사례×192cells×2passes를exactFraction/upwarddyadic128로평가한다. R6native증명·source·ODE는재실행하지않는다. 5고정8cell해석control과negative/zero/positive damping, singularB, last-cellforcing, 소스/clock/state/all-starts거부를검사한다. 검증숫자는같은시나리오의다수성분대조와서로다른시나리오수를분리한다.
+
+baseline은R7wholeblockexactvector, cap은15queries+3trueendpoints의실제원문JSONpointer다. 새결과는193endpoint와192wholecells,각2pass및kernelwitness를보존한다. independentreference는Decimal80으로직접합산하고저장193clockstate에서R/E를재구성하며ODE호출은0이다. API입력파싱외반올림/계수/초기값을임의조절하지않는다.
+
+불변예산: primary1회CPU60s,reference1회CPU60s,과학CAS1회30s. OSprocessCPU는외부wrapper가imports/serialization까지포함측정한다. 실행시각/실패/소스SHA를보존한다. Strict개선은결과후기록하며현재약599/1749배가얼마나줄지미리약속하지않는다.

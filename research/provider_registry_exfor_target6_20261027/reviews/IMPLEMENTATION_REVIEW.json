@@ -1,0 +1,141 @@
+{
+  "schema": "WU_TARGET6_R3_STATIC_IMPLEMENTATION_REVIEW_V1",
+  "reviewer": "authority_survey / independent implementation reviewer",
+  "reviewed_UTC": "2026-10-27T02:56:15.151426+00:00",
+  "decision": "PASS_SCOPED_STATIC_SOURCE_REFERENCE_OVERLAY_IMPLEMENTATION",
+  "blocking_findings": [],
+  "scope": "Builder, six actual build01 JSON outputs, source-packet references, unchanged R2 fields and publication identity contract. Independent raw EXFOR source semantics belong to the separate provider_rows intake review.",
+  "base_commit": "87933da5654bb2e4d93f7de4341df5e0fa0f8716",
+  "base_tree": "3ff104a588f25f2eab5429cee728e1523e066688",
+  "actual_build": {
+    "attempt": "build01",
+    "exit_code": 0,
+    "CPU_s": 0.065589,
+    "wall_s": 0.07114883000031114,
+    "max_RSS_KiB": 11084,
+    "receipt": "raw/build01/RECEIPT.json",
+    "first_result_reused": true
+  },
+  "static_observations": [
+    {
+      "id": "SCOPE_DIFF",
+      "result": "PASS",
+      "detail": "The only changes within original targets.rows are five target6 forward source-reference keys. All other direction/target rows and pre-existing physical fields are identical. Root-level differences are unit_id plus two explicit R2/R3 provenance/scope fields."
+    },
+    {
+      "id": "TARGET_IDENTITY",
+      "result": "PASS",
+      "detail": "All19 original target IDs and28 listed directions retained; target6 reverse and conditional inverse reference unchanged. Source-reference coverage becomes28/28 without physical completion."
+    },
+    {
+      "id": "SAVED_COLUMN",
+      "result": "PASS",
+      "detail": "reused_target6_event.saved_row is identical to the R2 compiled TARGET19_PHOTONUCLEAR:06 object, including USER_TARGET19 source identity, compiler SHA, stoichiometry, energy UNQUALIFIED and inactive/Q-unapproved fields. No new compiler import or invocation exists."
+    },
+    {
+      "id": "PINNED_REFERENCES",
+      "result": "PASS",
+      "detail": "All11 registry/inputs.json file references match current SHA256. Four catalog selectors each uniquely resolve the frozen source packet row and its SHA. Six actual output hashes match build01 stdout."
+    },
+    {
+      "id": "OBSERVABLE_PRESERVATION",
+      "result": "PASS",
+      "detail": "Four source variants remain separate: M0011002 SIG14, M0475002 CM DA12, M0475003 SIG6, M0826002 energy-bin SIG4. Catalog carries native observable labels and units and references full packet support/uncertainty. No total/DA merging, energy-bin integration, curve digitization or factor-of-two conversion is performed."
+    },
+    {
+      "id": "NUMBER_VS_SOURCE_BINDING",
+      "result": "PASS",
+      "detail": "The named nuclear reaction identity is present, while exclusive_channel_binding, pointwise_event_rate_binding, state_branch_domain, selected_rate_provider and activation remain unqualified/false/null as appropriate. The inherited exclusive source-binding gap retains target6."
+    },
+    {
+      "id": "UNCHANGED_SCIENCE",
+      "result": "PASS",
+      "detail": "Working tree at review has only the new R3 leaf untracked; prior tracked R1/R2/AGENTS/fixed handoff/compiler unchanged. Builder reads hashes and JSON, creates6 new files with exclusive-create mode and refuses prior outputs. It calls no solver, rate, Q, inverse, interpolation or old test suite."
+    },
+    {
+      "id": "AUTHORITY_AND_DELIVERY",
+      "result": "PASS",
+      "detail": "Current local HEAD and latest pre-build remote receipt agree on87933da. AGENTS, parallel REI236 and priorR2 backup identity are recorded. Contract requires expected-parent non-force source publication and separate metadata delivery; actual publication is not asserted by this implementation review."
+    }
+  ],
+  "allowed_changed_direction_keys": [
+    "experimental_table_provider_refs",
+    "has_primary_source_record_reference",
+    "primary_provider_refs",
+    "source_reaction_identity_matches_target",
+    "supplier_status"
+  ],
+  "observable_rows": [
+    {
+      "provider": "EXFOR_M0011002",
+      "rows": 14,
+      "kind": "ANGLE_AND_SECONDARY_ENERGY_INTEGRATED_SIG_AT_LISTED_EN",
+      "value_unit": "MICRO-B"
+    },
+    {
+      "provider": "EXFOR_M0475002",
+      "rows": 12,
+      "kind": "ANGULAR_DIFFERENTIAL_CROSS_SECTION_CM",
+      "value_unit": "NB/SR",
+      "angle": "ANG-CM / ADEG"
+    },
+    {
+      "provider": "EXFOR_M0475003",
+      "rows": 6,
+      "kind": "ANGLE_AND_SECONDARY_ENERGY_INTEGRATED_SIG_AT_LISTED_EN",
+      "value_unit": "NB"
+    },
+    {
+      "provider": "EXFOR_M0826002",
+      "rows": 4,
+      "kind": "ANGLE_AND_SECONDARY_ENERGY_INTEGRATED_SIG_WITH_INCIDENT_ENERGY_BIN",
+      "value_unit": "MICRO-B",
+      "energy_bin": "EN-MIN / EN-MAX in MEV; not integral sigma dE"
+    }
+  ],
+  "scope_limits": {
+    "raw_cell_and_EXFOR_semantic_independent_acceptance": "Separate INTAKE_REVIEW; not replaced by this static implementation review.",
+    "auxiliary_E2_rows": 7,
+    "auxiliary_in_main_total": false,
+    "CURVE_in_main_total": false,
+    "covariance_imputed": false,
+    "new_species": 0,
+    "new_compiled_columns": 0,
+    "new_rate_Q_thermal_or_consumer_admission": false,
+    "global_physical_completion": null,
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4_ready": false
+  },
+  "review_execution": {
+    "builder_imports": 0,
+    "compiler_invocations": 0,
+    "new_scientific_runs": 0,
+    "old_test_replays": 0,
+    "rate_or_Q_evaluations": 0,
+    "new_downloads": 0,
+    "method": "Static source reading, JSON difference inspection, saved-row equality and file/path SHA identity inspection only. Mechanical review overhead is unmeasured, not zero.",
+    "independent01_name_reserved_for": "provider_rows raw source intake review",
+    "writes": [
+      "reviews/IMPLEMENTATION_REVIEW.json",
+      "reviews/IMPLEMENTATION_REVIEW.md"
+    ]
+  },
+  "reviewed_file_SHA256": {
+    "CONTRACT.json": "08f8bbc53987f6295685179c20a7dcda097923811ca36cd2b14764a85856a5c7",
+    "build_exfor_target6.py": "2478351dba0d6752203b797398394ce30c60de0bbbf91a28a671f1c1ae8cc3d8",
+    "sources/exfor/MANIFEST.json": "a1c5d4009d0bfacc4edcb248a6878eef6cdafa9690b4ea0d0826dd5356052d06",
+    "sources/exfor/PROVIDER_ROWS.json": "d8b0b92f0374f73fa7f838db5ca07be45bd448696654b07c6db71c5847235ac2",
+    "raw/build01/REQUEST.json": "cbe909a52d68e8d7b9dec02058b64d6b22a8c678cd81e55f41608449597a79bf",
+    "raw/build01/RECEIPT.json": "6e1ddece815fe05cf8c0d66619fa5a35c5f7bb84ade6ba4b60381e2226de1b55",
+    "raw/build01/stdout.txt": "f864be3ccb1633bddaa0a13b5601b20693e8a4cc288fd11f2c7605ed6b19fac2",
+    "authority/PRE_BUILD_LOCAL.json": "854ff30d3161e0438c68f905935bc47efebfc9b8d9ab4c0aa827fd5bd7e8e77b",
+    "authority/PRE_BUILD_REMOTE.json": "8a01e81919d7f4b3f7aa8d6b1a0c779215adb0cf452e379edc029002fff1efb1",
+    "registry/targets.json": "6e57533ebfc2fecd271f33e4416949b84ee1a4cf83a70ced0926790df65ba5e1",
+    "registry/coverage.json": "93bfcab672009f0ff9e57c6ab1fd57abaefb0bb7004721a953cc3a9b93779e20",
+    "registry/provider_catalog.json": "e39ce3db6b7facd30a48229047193329ae833838cb429e6d4437e33df87cc86b",
+    "registry/target6_overlay.json": "e0ecdc43465bd972412847e3c1804b49eec86b9edf6cd3615a7bddc1551ac4c6",
+    "registry/reused_target6_event.json": "8a6308460297905a9e553eba8a3155942fd68615578f8e8b972f54a7845e5902",
+    "registry/inputs.json": "0f6c6791124e273db32d3a5810203f7be70bf799ccb24a4acac8f07fe9ba7ea2"
+  }
+}

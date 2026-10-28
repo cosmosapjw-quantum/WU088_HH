@@ -1,0 +1,197 @@
+{
+  "schema": "WU_R4_INDEPENDENT_STATIC_DESIGN_REVIEW_V1",
+  "unit": "WU_MOLECULAR_PROVIDER_STATE_LIFT_R4",
+  "stage": "R3_C3_PRE_PUBLICATION_STATIC_DESIGN",
+  "reviewer": "/root/authority_survey",
+  "reviewed_UTC": "2026-10-27T06:06:56.807Z",
+  "decision": "PASS_SCOPED_STATIC_DESIGN",
+  "blocking_findings": [],
+  "independence": {
+    "source_packet_author": false,
+    "production_module_author": false,
+    "builder_author": false,
+    "reviewer_contribution": "Read-only source/formula/type/conservation review and independently specified future reference-check plan."
+  },
+  "authority": {
+    "observed_local_HEAD": "e9276ea2ba8af2d73197a6852931fcafbf39ddf5",
+    "AGENTS_sha256": "f47186296d48f5d3e8ddb2f4bee26664553257c76bd2ebc4da9d1f308b85953f",
+    "inherited_exact_handoff": "34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad",
+    "source_packet_sha256": "40e2fbd73d451c0c8116b4ca9bd4db4d2e43e4cdf8967988a2fea551f99ce35e",
+    "previous_checkpoint": "delivery/S02.json",
+    "previous_checkpoint_sha256": "fa51020aec4b4237c56040cd1fc2bcb8adc2f731461e2959a2c511de89bc5987",
+    "previous_checkpoint_zip": {
+      "sha256": "91d94753261582fcf03d9f1ef6056c1cd3de180326fb0c608c07776d9adf816f",
+      "bytes": 427248,
+      "Dropbox_id": "id:BSpOijBcT10AAAAAAEC8zA",
+      "Drive_id": "1uzPaxOKdxjboi5p8P3R0jMlkHMX6e8Pe",
+      "scope": "Recorded actual upload completed; no new remote byte download by this reviewer."
+    },
+    "S03_prepublication_refresh": "Root owns the fresh selected-ref preflight and publication receipt; this static review is not a replacement for it.",
+    "REC_fresh_commit": {
+      "sha": "09b2230c7735496ccf1516fb8d26e5f854fe203d",
+      "url": "https://api.github.com/repos/cosmosapjw-quantum/rec_bianchi/commits/09b2230c7735496ccf1516fb8d26e5f854fe203d",
+      "message": "research: C1 REC source synthesis checkpoint; preserve 32/88 scope",
+      "changed_paths": [
+        "research/rec_source_synthesis_20261027/CODING_BASELINE.md",
+        "research/rec_source_synthesis_20261027/delivery/stage_receipts/R10.json",
+        "research/rec_source_synthesis_20261027/stages/C1.json"
+      ],
+      "classification": "Latest commit is a coding baseline/stage/delivery checkpoint, with no new chemical formation provider or consumer artifact in its three changed files.",
+      "scope_limit": "Commit metadata only; no claim of full new ancestor diff or whole-repository resurvey."
+    }
+  },
+  "reviewed_inputs": [
+    {
+      "path": "CONTRACT.json",
+      "sha256": "6a40c43c04aa4506281f2021a6879e76e94d560ea3cc8af3c7cdfeffb15eb8bc"
+    },
+    {
+      "path": "NUMERICAL_DESIGN_KO.md",
+      "sha256": "5ec656388e4c0a479524fb2e20904df1cb0e48b0c6fecc9dfb726a835ab8f43b",
+      "bytes": 3722
+    },
+    {
+      "path": "molecular_operator.py",
+      "sha256": "c11bd7240039050e0a817d698e9a82517770081e56828c7b48b4492ec98ee4c5",
+      "bytes": 6436
+    },
+    {
+      "path": "theory/CLAIM_ALIGNMENT.json",
+      "sha256": "85d105f31719aecd6c33df4b57e6b3fa0fa9238926f3bf2e9add3461365218ca",
+      "bytes": 2983
+    },
+    {
+      "path": "sources/MOLECULAR_SOURCE_PACKET.json",
+      "sha256": "40e2fbd73d451c0c8116b4ca9bd4db4d2e43e4cdf8967988a2fea551f99ce35e",
+      "bytes": 49377
+    },
+    {
+      "path": "reviews/SOURCE_REVIEW_RECONSTRUCTED_RECEIPT.json",
+      "sha256": "53bbf0b8647e7f599863d49e1f74cc1174d1aab7287c8b8d4b335b2e6aea8e5e",
+      "basis": "Historical independent source review reconstructed with explicit original-byte limitation; this code review does not assert a new raw-paper audit."
+    },
+    {
+      "path": "REUSED_CALCULATIONS.json",
+      "sha256": "92abcec183e7a3da21a4a1cd59d25b421129cccde164ca53cfe7fe8782dba051",
+      "basis": "Read-only pins; old compiler/suites not imported or executed."
+    }
+  ],
+  "static_assessments": [
+    {
+      "id": "D1_FORMULAE",
+      "status": "PASS_STATIC",
+      "finding": "Bennett uses (offset+1/[a*(T/1000)^b+c*(T/1000)^d])*scale, with b=-2.45,d=0.837. GL2022 uses alpha*exp(-gamma/T), gamma in K. Numeric constants are read from the frozen packet and each sample remains SOURCE_FORMULA_SAMPLE."
+    },
+    {
+      "id": "D2_SAMPLE_AND_UNITS",
+      "status": "PASS_STATIC",
+      "finding": "Only the exact 27 Bennett and 2 GL2022 printed temperatures can enter the fit path. All six variants and 77 original cells remain catalog obligations; no interpolation or fit-range extension is inferred. Bovino b-unit conflict prevents its evaluation."
+    },
+    {
+      "id": "D3_TYPED_GUARDS",
+      "status": "PASS_STATIC",
+      "finding": "Exact rational conversion rejects bool and binary float, malformed/nonfinite strings; positive temperature/native-node, finite-positive result and explicit extra-spin guards are present. Unknown providers reject, and every physical-rate request rejects."
+    },
+    {
+      "id": "D4_METHOD_AND_STATE",
+      "status": "PASS_STATIC",
+      "finding": "TIQM/SQM simultaneous selection is rejected as alternative methods. Ortho/para simultaneous selection is conservatively rejected while their spin-sum convention remains unbound; this is not a claim that the two product branches are the same physical channel. A catalog may retain all six inactive variants. No source total is silently identified with a fully specified v/j population or inverse detailed balance."
+    },
+    {
+      "id": "D5_LIFT_ALGEBRA",
+      "status": "PASS_STATIC",
+      "finding": "With X=sum(x), pi nonnegative and sum(pi)=1, r=x-pi*X sums to zero. The module computes J=h*d^T*x, lift flux=h*(d^T*pi)*X and defect=h*d^T*r exactly. Subtracting c=(max(d)+min(d))/2 from d proves |defect|<=h*(max(d)-min(d))*||r||_1/2. Nonempty matched dimensions and nonnegative x,d,h are guarded."
+    },
+    {
+      "id": "D6_CLOSURE_SCOPE",
+      "status": "PASS_STATIC",
+      "finding": "For h>0 and all allowed nonnegative population vectors, the fixed-pi scalar closure is exact iff d is constant, as shown by basis-vector choices. The h=0 and x=pi*X cases are explicitly qualified; the returned uniform_scalar_closure flag concerns the full family, not only a zero-total sample. This is a conditional finite algebra statement, not physical state reconstruction or a strong no-go."
+    },
+    {
+      "id": "D7_NORMALIZATION",
+      "status": "PASS_STATIC",
+      "finding": "The declared distinct-reactant identity k*nA*nB/nref has units events per reference nucleus per proper second for cm-based inputs. It asserts neither a particular physical density/clock nor a consumer binding. All six source reactions have distinct incoming species; no identical-pair divisor is invented."
+    },
+    {
+      "id": "D8_ADMISSION_AND_BUDGET",
+      "status": "PASS_STATIC",
+      "finding": "Source-formula implementation, table residuals, method alternatives, physical covariance and rate/Q admission are separate. Six new compiler columns and 29 fit diagnostics have a new bounded contract; old149 columns/249 checks/PHYS91 results and budgets are read-only reused."
+    }
+  ],
+  "independent_check_plan": {
+    "status": "PLANNED_NOT_EXECUTED; freeze concrete output schema/checker before authorized C7-or-later execution",
+    "ordering": "Primary build after C7 authorization; independent result check after actual registry/output files exist. No numerical execution before C7.",
+    "producer_import_boundary": "No builder, finite compiler or R1 adapter imports in independent reference construction. Production module may only be a system under test for minimal new guard cases, never the reference implementation; valid 29-node fit values are consumed from saved primary output rather than rerun.",
+    "groups": [
+      {
+        "id": "I1_IDENTITY_AND_REUSE",
+        "plan": "Check frozen packet and reviewed implementation identities, actual new-child budget receipts, and immutable R1/R2/R3/compiler references. Never recompile saved149 columns or replay249/PHYS91."
+      },
+      {
+        "id": "I2_NATIVE_ROWS",
+        "plan": "Compare all six provider variants and77 cell literals/scales/units/locators to the exact frozen packet and public numerical tables. Preserve null covariance/state/Q and auxiliary exclusions; no new raw-paper extraction."
+      },
+      {
+        "id": "I3_SIX_NEW_COLUMNS",
+        "plan": "Independently sum every declared isotope count, total baryon number, electric charge and bound/free electron-lepton count from saved six new event columns and species. Count material thermal particles separately: RA -1, other five variants0. Inspect aggregate and unresolved state labels; do not merge Bennett/Bovino or forward/reverse aggregates."
+      },
+      {
+        "id": "I4_DECIMAL80_FORMULA",
+        "plan": "Using an independent decimal context of80 digits, evaluate Bennett with decimal ln/exp for its fractional powers and GL2022 with decimal exp at exactly27+2 contracted nodes. Constants come from the reviewed printed formula/packet, not production outputs. Convert saved binary64 values exactly with Decimal.from_float and require abs(k64-k80)/abs(k80)<=2e-14 for every node."
+      },
+      {
+        "id": "I5_RESIDUAL_SEMANTICS",
+        "plan": "Using saved k_fit and exact source table values, independently verify signed (k_fit-k_table)/k_table and metadata. A paper-fit/table discrepancy is retained as a result, not repaired by changing tolerance; it cannot certify physical uncertainty or change a source literal."
+      },
+      {
+        "id": "I6_GUARD_CONTROLS",
+        "plan": "Use minimal changed-input controls for wrong numeric type/nonfinite or nonpositive temperature, an uncontracted node, excluded Bovino or no-fit variant, repeated spin multiplication, duplicate/alternative selections, malformed state dimensions/weights, and physical-rate requests. Each should reject or remain explicitly unbound; do not repeat the29 valid fit calls."
+      },
+      {
+        "id": "I7_CONDITIONAL_EXACT_ALGEBRA",
+        "plan": "Independently calculate small declared rational examples for normalized positive lift, nonzero defect, half-spread saturation, h=0, and constant-d closure. Check returned equality/bound/flags and state_source_binding=false. The examples are constructed mathematics, not measured state populations."
+      },
+      {
+        "id": "I8_OUTPUT_SCOPE",
+        "plan": "Inspect registry, admission and reporting fields for SOURCE_FORMULA_SAMPLE only, inactive candidates, explicit isotope/nuclear-ground projection convention, Q/energy/consumer false, and original network identities unchanged. Source and implementation acceptance must remain separate from physical consumer completion."
+      }
+    ],
+    "tolerance": {
+      "reference_precision_decimal_digits": 80,
+      "source_formula_relative_difference_limit": "2e-14",
+      "criterion_frozen_before_execution": true
+    },
+    "resource_limits": {
+      "per_child_cpu_s": 30,
+      "per_child_wall_s": 120,
+      "memory_MiB": 512,
+      "workers": 1,
+      "threads": 1,
+      "old_budget_transfer": false,
+      "new_IVP": 0,
+      "new_Q": 0
+    },
+    "failure_policy": "Retain first checker/result. If a concrete checker/input defect is established, freeze a targeted correction and unique attempt; do not replay unaffected groups or relax criteria."
+  },
+  "execution_record": {
+    "production_imports": 0,
+    "compiler_calls": 0,
+    "fit_evaluations": 0,
+    "numerical_tests": 0,
+    "old_science_replays": 0,
+    "remote_mutations": 0,
+    "kind": "Static text/data inspection and metadata hash computation only; no mathematical code executed."
+  },
+  "acceptance_boundary": {
+    "design_and_module_static_review": true,
+    "six_column_results": "NOT_YET_AVAILABLE",
+    "fit_diagnostics": "NOT_RUN",
+    "final_independent_C9": "PENDING",
+    "physical_rate": false,
+    "nuclear_Q": false,
+    "state_lift_bound_to_consumer": false,
+    "named_runtime_consumer": false,
+    "L4_ready": false
+  }
+}
+

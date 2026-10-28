@@ -1,0 +1,73 @@
+{
+  "schema": "WU_R13_ADMISSION_DELTA_S09_PRECHECK_V1",
+  "reviewer": "repo_census",
+  "status": "PASS_SCOPED_S09_METADATA_PRECHECK",
+  "final_admission_delta_review": "PENDING_FINAL_S10_REPORT_HANDOFF_AND_RECEIPTS",
+  "open_blocking_findings": 0,
+  "scientific_review_repeated": false,
+  "scientific_execution": 0,
+  "scope": "Only S09 admission, manifest, DAG and workflow metadata, plus narrow F03 documentation/guard delta and S08 result-stage wording",
+  "identities_observed": {
+    "SCIENTIFIC_ADMISSION.json": "33ad5a50a580ab4177d5240fd4718e6ce842ad3b68034bcab09750fd4ddb4efe",
+    "SCIENTIFIC_PAYLOAD_MANIFEST.json": "f1454693ab4b0c727156a8d643768b6174376b653eb531c2b2a1eed803c505f2",
+    "DAG.json": "dc21c56092f99f16c465c4e61a350dc20343956a0b4fdd0229aa398cf0d6371c",
+    "WORKFLOW_RECORD.json": "d6f4601a556c4e98ded06a8c15cb56956d679e1d5f0a9632a6f18ac9cc9cc9ba",
+    "REPORT_KO.md": "de8ebd657884460a13f6c0ba7a533716e0ec11c565ff7dc3f273f04e81abf5fe",
+    "HANDOFF_KO.md": "e9533d3cab118b1cab8ec6a7859d6f6fabb7a732340f3617a91a67d7175331c6"
+  },
+  "payload": {
+    "files": 57,
+    "local_byte_length_and_SHA256_matches": 57,
+    "sorted_unique_paths": true,
+    "recomputed_sha256": "aed8a6d7e58889de248ee88f75c2a46a7418462f4e3908393d72b64e908c6563",
+    "equals_manifest_and_admission": true,
+    "serialization": "UTF-8 json.dumps(files,ensure_ascii=False,sort_keys=True,separators=(',',':')) without final LF",
+    "C9_review_sha256": "fe0628313032a22a782cabf69e27b5629ce2f6b56a645a606563283d258fb1a6",
+    "C9_link_exact": true
+  },
+  "DAG": {
+    "old_count": [25, 40],
+    "new_count": [27, 42],
+    "count_convention": "Existing COMPLETE-prefix convention across status/current_status; unrelated PASS_SCOPED_REUSED and IMPLEMENTATION_CHECKED_SCOPED labels not newly reclassified",
+    "inherited_objects": 40,
+    "inherited_objects_exact_equal": 40,
+    "new_nodes": ["WU_HD_AFFINE_FORCING_THEORY_R13", "WU_HD_AFFINE_FORCING_CODE_R13"],
+    "new_nodes_conditional": true,
+    "new_nodes_physical_admission": false,
+    "unique_IDs": 42,
+    "central_delta": 0,
+    "physical_delta": 0
+  },
+  "workflow": {
+    "complete": 18,
+    "pending": ["R10", "C10"],
+    "total": 20,
+    "all_recorded_evidence_paths_exist": true
+  },
+  "actual_counts_and_scope_match_C9": {
+    "primary": [311, 311],
+    "valid_cases": 24,
+    "guard_cases": [38, 38],
+    "reference": [125, 125],
+    "components": 8408,
+    "component_failures": 0,
+    "whole_Python_OS_CPU_s_6dp": "1.334749",
+    "CAS": "25 zeros with Power::infy three times and General::messages; QUALIFIED_SYMBOLIC_CORROBORATION, cause NOT_ESTABLISHED",
+    "remaining": [0, 0, 0],
+    "physical_inputs": "INPUT_PENDING"
+  },
+  "S08_results_wording": "RESULTS_KO.md explicitly records the writing-stage DAG25/42, two pending nodes and later root adoption; leave its frozen bytes unchanged. Current S09 metadata correctly reports27/42.",
+  "F03_delta": {
+    "actual_diff_read": true,
+    "change": "Only primary PASS→PASS_SCOPED guard and matching error text; reference remains PASS",
+    "first_attempt_failure_and_old_bytes_preserved": true,
+    "first_attempt_outputs_created": 0,
+    "first_attempt_CPU": null,
+    "corrected_attempt_exit_code": 0,
+    "corrected_process_CPU_accounted_separately": true,
+    "temporary_Matplotlib_cache_warning_retained": true,
+    "scientific_frozen_code_changes": 0,
+    "scientific_reexecution": 0
+  },
+  "next": "Read final S10 report/handoff and actual publication/backup receipts, then close the same narrow admission metadata delta review; no reopened scientific review."
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "WU_R6_PREEXECUTION_STATIC_CORRECTIONS_V1",
+  "recorded_utc": "2026-10-27T12:20:59.180403+00:00",
+  "classification": "implementation input contract",
+  "scientific_executions_before_correction": 0,
+  "core_sha256_unchanged": "dbc4767b31775fb6655a92fb20d299f8bea9578f8340bd7bcff4d4f677cab551",
+  "runner_before_sha256": "f714ef9bfa96351807911ac13b2524144c7fa52cd0f142bd23834f0edec2c246",
+  "runner_after_sha256": "38cf5268831bbd3d2b17d356817ebae4b68f08e676da1e2cbf2cb313d7c6deb5",
+  "findings": [
+    {
+      "id": "F01",
+      "observation": "Native source runner accepted declared rate scale different from the fixed core scale.",
+      "correction": "Require exact equality to RATE_SCALE_CM3_S before source calculation; add mismatched-scale reject fixture.",
+      "fixed_input_affected": false
+    },
+    {
+      "id": "F02",
+      "observation": "Switched runner validated total H but not each chronological segment duration.",
+      "correction": "Require each exact duration positive; add a negative-segment positive-total-time reject fixture.",
+      "fixed_input_affected": false
+    }
+  ],
+  "static_AST": "PASS",
+  "actual_semantic_execution": "Scheduled once in the primary run; no fabricated runtime PASS"
+}

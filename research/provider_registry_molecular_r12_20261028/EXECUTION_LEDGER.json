@@ -1,0 +1,165 @@
+{
+  "schema": "WU_R12_EXECUTION_LEDGER_V1",
+  "unit": "WU_NONALIGNED_CONVOLUTION_R12",
+  "created_utc": "2026-10-28T04:49:42.538250+00:00",
+  "primary": {
+    "allowed": 1,
+    "consumed": 1,
+    "remaining": 0,
+    "status": "COMPLETED",
+    "CPU_limit_s": 60,
+    "wall_limit_s": 90,
+    "process": {
+      "schema": "WU_R12_ACTUAL_PROCESS_V1",
+      "lane": "primary",
+      "source_commit": "9e4ff95efff61278536d4401f307523dd207c260",
+      "started_utc": "2026-10-28T05:49:43.558460+00:00",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/d813e058ed8f/WU088_HH/research/provider_registry_molecular_r12_20261028/verification/run_primary.py"
+      ],
+      "CPU_limit_s": 60,
+      "wall_limit_s": 90,
+      "attempt": 1,
+      "finished_utc": "2026-10-28T05:49:44.663318+00:00",
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 1.038824,
+      "OS_system_CPU_s": 0.064944,
+      "OS_CPU_s": 1.1037679999999999,
+      "wall_s": 1.104506648000097,
+      "includes_imports_and_serialization": true,
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+      "old_science_replay": 0,
+      "new_ODE_runs": 0
+    }
+  },
+  "reference": {
+    "allowed": 1,
+    "consumed": 1,
+    "remaining": 0,
+    "status": "COMPLETED",
+    "CPU_limit_s": 60,
+    "wall_limit_s": 90,
+    "process": {
+      "schema": "WU_R12_ACTUAL_PROCESS_V1",
+      "lane": "reference",
+      "source_commit": "85fb1d5224a8ab0abd65880923ed209b691afb47",
+      "started_utc": "2026-10-28T05:52:42.597605+00:00",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/d813e058ed8f/WU088_HH/research/provider_registry_molecular_r12_20261028/verification/run_reference.py"
+      ],
+      "CPU_limit_s": 60,
+      "wall_limit_s": 90,
+      "attempt": 1,
+      "finished_utc": "2026-10-28T05:52:45.702798+00:00",
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 3.057954,
+      "OS_system_CPU_s": 0.040712,
+      "OS_CPU_s": 3.098666,
+      "wall_s": 3.1044842539995443,
+      "includes_imports_and_serialization": true,
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+      "old_science_replay": 0,
+      "new_ODE_runs": 0
+    }
+  },
+  "CAS": {
+    "allowed": 1,
+    "consumed": 1,
+    "remaining": 0,
+    "status": "QUALIFIED_SYMBOLIC_CORROBORATION",
+    "wall_limit_s": 30,
+    "result": "raw/CAS_TOOL_RESPONSE.json",
+    "assessment": "raw/CAS_ASSESSMENT.json"
+  },
+  "old_remaining": {
+    "R11": [
+      0,
+      0,
+      0
+    ],
+    "R10": [
+      0,
+      0,
+      0
+    ],
+    "R9": [
+      0,
+      0,
+      0
+    ],
+    "R8": "all0",
+    "R7": [
+      0,
+      0,
+      0
+    ],
+    "R6": [
+      0,
+      0,
+      0
+    ],
+    "PHYS91": [
+      0,
+      0,
+      0
+    ]
+  },
+  "global_remaining": null,
+  "full_historical_CPU_s": null,
+  "old_science_replay": 0,
+  "new_ODE_runs": 0,
+  "failures": [
+    {
+      "class": "publication_approval",
+      "action": "S01 github_create_tree",
+      "actual_tool_text": "user rejected MCP tool call",
+      "source_commit_created": "NO_ACK",
+      "ref_moved": false,
+      "cause": "NO_ADDITIONAL_REASON_RETURNED",
+      "scope": "Not a scientific execution. User explicitly resumed the same two nodes; root checks branch and narrows own-source publication payload before diagnostic retry."
+    },
+    {
+      "class": "orchestration_syntax",
+      "action": "write wrapper/CAS source via JavaScript",
+      "observation": "Invalid or unexpected token before any nested call; Wolfram context backtick inside JS raw literal",
+      "resolution": "Use explicit symbol ClearAll list without a context backtick; no CAS/process executed or allowance consumed."
+    },
+    {
+      "class": "postprocessing_display",
+      "action": "first saved-output figures",
+      "observation": "stairs default baseline0 added misleading boundary strokes; source-shift annotation overlapped legend. Numerical outputs unchanged.",
+      "first_evidence": "analysis/failures/DISPLAY_FINDING.json",
+      "resolution": "One display-only repair: baseline=None and legend placement. First11artifacts preserved, final4images valid and viewed; no scientific run/source change.",
+      "closure": "analysis/PLOT_ARTIFACT_STATUS.json"
+    }
+  ],
+  "historical_failures_preserved": {
+    "R8_original_reference": "726/727 PASS +1 FAIL",
+    "R8_separate_exact_phi": "24/24 PASS",
+    "R10": "Original ID failure/DOC01/META02 preserved; qualified CAS and tolerant samples unchanged.",
+    "R11": "All failures and qualified CAS retained in immutable source; no replay."
+  },
+  "scientific_execution_complete": true,
+  "new_scientific_process_OS_CPU_s": 4.202434,
+  "new_scientific_process_OS_CPU_s_decimal": "4.202434",
+  "new_scientific_process_count": 2,
+  "saved_output_postprocessing": {
+    "scientific_reruns": 0,
+    "source": "analysis/plot_saved_results.py",
+    "summary": "analysis/SAVED_OUTPUT_SUMMARY.json",
+    "figures": "figures/FIGURE_MANIFEST.json",
+    "status": "COMPLETE_SAVED_OUTPUT_ONLY",
+    "administrative_OS_CPU_s_decimal": "9.141018",
+    "scientific_OS_CPU_subtotal_unchanged": "4.202434",
+    "display_repair_passes": 1,
+    "first_artifacts": "analysis/failures/PLOT_DISPLAY_ATTEMPT1",
+    "repair": "analysis/PLOT_ARTIFACT_STATUS.json",
+    "root_visual": "analysis/ROOT_FIGURE_VIEW.json"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "WU_R6_PRIMARY_INPUT_V1",
+  "contract_id": "WU_MOLECULAR_INTERVAL_BLOCK_R6",
+  "source": {
+    "path": "../../provider_registry_molecular_r5_20261027/authority/reused/lamda_hd_20261025.dat",
+    "parser_path": "../../provider_registry_molecular_r5_20261027/authority/reused/rec_lamda_hd.py",
+    "sha256": "0c99fe168235d6d6dac3063093bbbe8b4a2ea15cca53c7e2987763c801fdaefb",
+    "temperature_K": "100",
+    "collider_id": 2,
+    "rate_unit_cm3_s": "1e-11"
+  },
+  "thermal_bits": 256,
+  "polynomial_bits": 512,
+  "source_blocks": [
+    {"mu": "8", "N": 64},
+    {"mu": "32", "N": 128},
+    {"mu": "128", "N": 320},
+    {"mu": "256", "N": 512}
+  ],
+  "forced_controls": [
+    {
+      "id": "zero_killing_forced",
+      "K": [["-2", "3"], ["2", "-3"]],
+      "pi": ["3/5", "2/5"],
+      "v": ["0", "0"],
+      "f": ["2/7", "3/7"],
+      "x0": ["2/3", "1/3"],
+      "Xbar0": "1",
+      "kappa": "0",
+      "H": "1/4",
+      "steps": 8,
+      "N": 64
+    },
+    {
+      "id": "uniform_killing_forced",
+      "K": [["-2", "3"], ["2", "-3"]],
+      "pi": ["3/5", "2/5"],
+      "v": ["2/5", "2/5"],
+      "f": ["1/3", "2/5"],
+      "x0": ["2/3", "1/3"],
+      "Xbar0": "3/4",
+      "kappa": "2/5",
+      "H": "1/4",
+      "steps": 8,
+      "N": 64
+    },
+    {
+      "id": "noncommuting_state_dependent_killing",
+      "K": [["-6/5", "2", "1/3"], ["1", "-5/2", "3"], ["1/5", "1/2", "-10/3"]],
+      "pi": ["1/2", "1/3", "1/6"],
+      "v": ["1/5", "2/5", "3/5"],
+      "f": ["1/10", "1/5", "1/20"],
+      "x0": ["3/5", "1/4", "3/20"],
+      "Xbar0": "4/5",
+      "kappa": "1/5",
+      "H": "1/2",
+      "steps": 8,
+      "N": 64,
+      "require_noncommuting": true
+    }
+  ],
+  "switched_graphs": [
+    {
+      "id": "two_piece_three_state_family",
+      "N": 64,
+      "segments": [
+        {"duration": "1/4", "A": [["-1", "2", "0"], ["1", "-3", "1"], ["0", "1", "-1"]]},
+        {"duration": "1/4", "A": [["-3", "1", "0"], ["3", "-3", "2"], ["0", "2", "-2"]]}
+      ]
+    }
+  ],
+  "input_role": "fixed native source blocks and declared synthetic mathematical controls; no physical destruction consumer"
+}

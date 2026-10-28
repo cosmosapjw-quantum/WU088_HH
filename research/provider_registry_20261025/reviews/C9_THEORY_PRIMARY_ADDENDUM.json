@@ -1,0 +1,125 @@
+{
+  "schema": "WU_SOURCE_REGISTRY_C9_THEORY_PRIMARY_ADDENDUM_V1",
+  "created_UTC": "2026-10-25T13:11:04.451613+00:00",
+  "reviewer": "/root/authority_survey",
+  "decision": "ACCEPT_SCOPED_SOURCE_ROWS_AND_INTEGER_PROJECTIONS_UNCHANGED",
+  "extends": "reviews/C9_FINAL.json",
+  "extends_sha256": "7666dc1e17af1c3986dfeaea7499774ef4bc4a94a93031d6061bc057db5e2f8e",
+  "blocking_findings": [],
+  "theory": {
+    "reviewed_source_path": "/workspace/scratch/3ffa3d77ca37/molecule_sources_theory/REGISTRY_ENERGY_AND_LEPTONS_KO.md",
+    "destination_path": "theory/REGISTRY_ENERGY_AND_LEPTONS_KO.md",
+    "sha256": "57e8ba1f483d006fa4bb5b6a363eac991b858f46026636adced52cdb087d7304",
+    "method": "Independent manual symbolic derivation and dimensional/sign review; no numerical Q, rate, uncertainty interval or transport calculation.",
+    "equations_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "findings": [
+      {
+        "equations": [
+          1,
+          2,
+          3
+        ],
+        "result": "Stoichiometric multiplicity, collider retention, chemical isotope conservation and nuclear baryon/charge conservation are correctly distinguished."
+      },
+      {
+        "equations": [
+          4
+        ],
+        "result": "For dx/dtau with x=n/n*, the extra term for nonconserved n* has sign -x*(dn*/dtau+theta*n*)/n*; the stated conserved reference density removes it correctly."
+      },
+      {
+        "equations": [
+          5,
+          6,
+          7
+        ],
+        "result": "Bound-electron count Z-q and free-electron/positron/neutrino signs are consistent. Both bare-neutron and atomic-tritium beta-minus examples conserve the selected electron-vertex lepton ledger. Flavor transport and daughter electronic state remain separate."
+      },
+      {
+        "equations": [
+          8,
+          9,
+          10
+        ],
+        "result": "Electron removal raises ionic rest energy relative to M0-q*me by (B0-Bq)/c^2; the bare limit and molecule binding reference are consistent. Isomer/electronic excitation must be included once."
+      },
+      {
+        "equations": [
+          11,
+          12
+        ],
+        "result": "Q=-c^2*nu^T*M and Qbare=Qatom-sum(nu*B0) when sum(nu*Z)=0 have correct signs. The atomic-Q label is not extended to arbitrary charged weak branches."
+      },
+      {
+        "equations": [
+          13
+        ],
+        "result": "Non-rest reservoir increments sum to Q; incoming photon removal contributes negatively to the radiation reservoir. Neutrino rest mass is not counted twice. Heat requires a separate deposition map."
+      },
+      {
+        "equations": [
+          14,
+          15
+        ],
+        "result": "Covariance propagation c^4*nu^T*C_M*nu and the conditional marginal standard-deviation triangle bound are correct. No diagonal-covariance assumption or numerical confidence interval is inferred."
+      },
+      {
+        "equations": [
+          16
+        ],
+        "result": "m-body coefficient dimensions m^(3*(m-1))/s and the binary cm^3-to-m^3 conversion10^-6 are correct. Identical-reactant symmetry factors depend on the provider encounter/loss/event convention."
+      },
+      {
+        "equations": [
+          17,
+          18
+        ],
+        "result": "The total RR coefficient is a sum over unresolved final states; emitted photon source and photon count require state weights/cascade yields. No total escaped photon count is inferred."
+      }
+    ],
+    "interpretation_note": "Equation18 is an emitted photon source. Escape, absorption and case-dependent effective transport need the separate stated radiation/consumer contract; it is not an escaping-photon ledger.",
+    "physical_admission": false
+  },
+  "primary02": {
+    "status": "PASS",
+    "groups": 20,
+    "failed_check_ids": [],
+    "results": "raw/PRIMARY_RESULTS_FINAL.json",
+    "results_sha256": "8cf1923c726ea9ce23081f49b655310c2de7b4e056c586b45356f6d67aaf8250",
+    "receipt": "raw/primary02/RECEIPT.json",
+    "receipt_sha256": "e99814ef0fbd9a391ddb90c73d7c870b890595f041b794574796473a02133a02",
+    "checker_sha256": "2336a811e46a3221e08a311c70db82c59974bf41c70a611fb65a4a9d4a8a7a68",
+    "old_checker_sha256": "078389146ced0d72f65e8d73550e89e6672ff186ba4ccdc03176dcb29cb2985f",
+    "old_failed_result_preserved": "raw/PRIMARY_RESULTS.json",
+    "old_failed_result_sha256": "54a2e21c0cebf2104ced88c064669a968b63fa12e59575aa94722d9512fed8af",
+    "independently_inspected_change": "Exactly one assertion literal replaced ISOTOPE with ISOTOPOLOGUE_CANDIDATE_ONLY. No source, registry, builder or adapter changes.",
+    "exit_code": 0,
+    "timed_out": false,
+    "cpu_s": 0.260768,
+    "wall_s": 0.2663455630026874,
+    "max_RSS_KiB": 40536
+  },
+  "independent_input_hashes_still_match": true,
+  "independent_checks_replayed": false,
+  "new_scientific_numerical_executions_in_addendum": 0,
+  "scope_limit": "C9 source transcription/number projection acceptance only; no newly admitted rate, Q, event normalization, uncertainty model or consumer."
+}

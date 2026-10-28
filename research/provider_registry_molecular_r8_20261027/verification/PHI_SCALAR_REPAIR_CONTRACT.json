@@ -1,0 +1,65 @@
+{
+  "schema": "WU_R8_PHI_SCALAR_REPAIR_CONTRACT_V1",
+  "status": "AUTHORIZED_BOUNDED_NEW_SCALAR_RE_ADJUDICATION_NOT_BUDGET_RESET",
+  "created_utc": "2026-10-27 15:59:28 UTC",
+  "authority": "Existing full research/fix authorization; CONTRACT.json productive_repair; supplied physmath1.0.0 research policy on observed defect and changed acceptance rule",
+  "reason": "REF01: original fixed upper-closeness tolerance 1e-30 omitted 1/abs(d) amplification of outward exponential interval width. Preserve observed original FAIL and validate saved phi by a new exact scalar bracket.",
+  "original_source_commit": "b87ea61ab2d5e17221a6cf3b710aec074eb1a28e",
+  "original_reference_status": "FAIL_PRESERVED",
+  "original_reference_checks": 727,
+  "original_failed_checks": 1,
+  "original_component_comparisons": 22659,
+  "original_failed_components": 1,
+  "preserve_originals": [
+    "raw/REFERENCE_RESULTS.json",
+    "raw/REFERENCE_PROCESS.json",
+    "verification/run_reference.py",
+    "verification/REFERENCE_INPUT.json"
+  ],
+  "change": "Independent fixed exact Fraction integral-series upper S8/lower S9 at native9 d=-1/20000000 and exact saved delta; no blanket tolerance relaxation and no full reference rerun.",
+  "case": "saved_native_nine_state_K_conditional_feedback",
+  "degree_upper": 8,
+  "degree_lower": 9,
+  "new_allowance": {
+    "runs": 1,
+    "CPU_limit_s": 10,
+    "wall_limit_s": 30
+  },
+  "runner_sha256": "219825e3786085951e456cb7408044598bc30166f5decee5669bc27c4147998d",
+  "frozen_files": {
+    "raw/PRIMARY_RESULTS.json": "520110d1cae1677491aecd7216621c25f1098470c939ee027d5df3bde183686b",
+    "raw/REFERENCE_RESULTS.json": "da699b9a8b53389e3d222f34a5a421cd88ce17787bde69cc2e9bed5fb15409df",
+    "reviews/REFERENCE_FAILURE_REVIEW.json": "37cdf9ebf9dba233c0ce7fb82f80dc0ad53618a16affd44e617dd0150eebdef8",
+    "reviews/PHI_SCALAR_REPAIR_MATH_KO.md": "e67fcda3b744c97b10cfd1ba98a96897b2a05450846e3f23e1779da4532bd34c"
+  },
+  "acceptance": [
+    "Original source identities and exactly one original failed phi component are unchanged",
+    "Alternating integral theorem at fixed 0<x<1 gives S9 <= phi <= S8",
+    "Saved phi upper P >= S8",
+    "P-S9 <= (iv.hi-iv.lo)/abs(d)+2^-128+(S8-S9)",
+    "P-S8 > 1e-30 demonstrates genuine original closeness mismatch",
+    "Independent reviewer closes REF01 using actual scalar result"
+  ],
+  "no_changes": [
+    "production core",
+    "primary input and output",
+    "original reference and tolerance",
+    "12 original frozen scientific dependencies",
+    "physical model"
+  ],
+  "original_R8_primary_remaining": 0,
+  "original_R8_reference_remaining": 0,
+  "old_R7_R6_PHYS91_remaining": [
+    0,
+    0,
+    0
+  ],
+  "global_remaining": null,
+  "full_historical_CPU": null,
+  "stop": "One targeted scalar evaluation. Preserve any new failure and cost; do not retry automatically.",
+  "DAG_before": {
+    "complete": 15,
+    "total": 32
+  },
+  "physical_consumer_admitted": false
+}

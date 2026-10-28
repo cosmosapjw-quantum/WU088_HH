@@ -1,0 +1,203 @@
+{
+  "schema": "WU_R13_EXECUTION_LEDGER_V1",
+  "unit": "WU_AFFINE_FORCING_R13",
+  "created_utc": "2026-10-28T07:02:46.765135+00:00",
+  "primary": {
+    "allowed": 1,
+    "consumed": 1,
+    "remaining": 0,
+    "status": "COMPLETED",
+    "runs": 1,
+    "CPU_s": 60,
+    "wall_s": 90,
+    "source_commit": "8d71b38b4470333dbb6a5f2ac85e381a45b4710c",
+    "process": {
+      "schema": "WU_R13_ACTUAL_PROCESS_V1",
+      "lane": "primary",
+      "source_commit": "8d71b38b4470333dbb6a5f2ac85e381a45b4710c",
+      "started_utc": "2026-10-28T08:26:24.275862+00:00",
+      "finished_utc": "2026-10-28T08:26:25.071055+00:00",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/42de23091886/WU088_HH/research/provider_registry_molecular_r13_20261028/verification/run_primary.py",
+        "--root",
+        "/workspace/scratch/42de23091886/WU088_HH/research/provider_registry_molecular_r13_20261028",
+        "--output",
+        "/workspace/scratch/42de23091886/WU088_HH/research/provider_registry_molecular_r13_20261028/raw/PRIMARY_RESULTS.json"
+      ],
+      "attempt": 1,
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": "0.776431",
+      "OS_system_CPU_s": "0.01688",
+      "OS_CPU_s": "0.793311",
+      "wall_s": 0.7944830429987633,
+      "max_rss_KiB": 18432,
+      "includes_imports_and_serialization": true,
+      "CPU_limit_s": 60,
+      "wall_limit_s": 90,
+      "memory_limit_bytes": 1073741824,
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+      "old_science_replay": 0,
+      "new_ODE_runs": 0
+    },
+    "results": "raw/PRIMARY_RESULTS.json",
+    "summary": {
+      "valid_cases": 24,
+      "valid_case_executions_completed": 24,
+      "guard_cases": 38,
+      "checks": 311,
+      "passed": 311,
+      "failed": 0
+    }
+  },
+  "reference": {
+    "allowed": 1,
+    "consumed": 1,
+    "remaining": 0,
+    "status": "COMPLETED",
+    "runs": 1,
+    "CPU_s": 60,
+    "wall_s": 90,
+    "source_commit": "bac56f7d5bc16dd8a6a9dbb1e0b7035400c20db8",
+    "process": {
+      "schema": "WU_R13_ACTUAL_PROCESS_V1",
+      "lane": "reference",
+      "source_commit": "bac56f7d5bc16dd8a6a9dbb1e0b7035400c20db8",
+      "started_utc": "2026-10-28T08:27:51.745521+00:00",
+      "finished_utc": "2026-10-28T08:27:52.291469+00:00",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/42de23091886/WU088_HH/research/provider_registry_molecular_r13_20261028/verification/run_reference.py",
+        "--root",
+        "/workspace/scratch/42de23091886/WU088_HH/research/provider_registry_molecular_r13_20261028",
+        "--output",
+        "/workspace/scratch/42de23091886/WU088_HH/research/provider_registry_molecular_r13_20261028/raw/REFERENCE_RESULTS.json"
+      ],
+      "attempt": 1,
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": "0.5332690000000000003",
+      "OS_system_CPU_s": "0.008169",
+      "OS_CPU_s": "0.5414380000000000003",
+      "wall_s": 0.5450793569980306,
+      "max_rss_KiB": 17152,
+      "includes_imports_and_serialization": true,
+      "CPU_limit_s": 60,
+      "wall_limit_s": 90,
+      "memory_limit_bytes": 1073741824,
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+      "old_science_replay": 0,
+      "new_ODE_runs": 0
+    },
+    "results": "raw/REFERENCE_RESULTS.json",
+    "summary": {
+      "checks_total": 125,
+      "checks_passed": 125,
+      "checks_failed": 0,
+      "component_comparisons": 8408,
+      "component_counts": {
+        "metadata": 1590,
+        "exact": 4525,
+        "decimal": 350,
+        "coverage": 1943
+      },
+      "component_failures": 0
+    }
+  },
+  "CAS": {
+    "allowed": 1,
+    "consumed": 1,
+    "remaining": 0,
+    "status": "QUALIFIED_SYMBOLIC_CORROBORATION",
+    "runs": 1,
+    "wall_s": 30,
+    "source_commit": "8d71b38b4470333dbb6a5f2ac85e381a45b4710c",
+    "result": "raw/CAS_TOOL_RESPONSE.json",
+    "assessment": "raw/CAS_ASSESSMENT.json",
+    "zero_count": 25,
+    "warning_cause": "NOT_ESTABLISHED"
+  },
+  "old_remaining": {
+    "R12": [
+      0,
+      0,
+      0
+    ],
+    "R11": [
+      0,
+      0,
+      0
+    ],
+    "R10": [
+      0,
+      0,
+      0
+    ],
+    "R9": [
+      0,
+      0,
+      0
+    ],
+    "R8": [
+      0,
+      0,
+      0
+    ],
+    "R7": [
+      0,
+      0,
+      0
+    ],
+    "R6": [
+      0,
+      0,
+      0
+    ],
+    "PHYS91": [
+      0,
+      0,
+      0
+    ]
+  },
+  "global_remaining": null,
+  "full_historical_CPU_s": null,
+  "old_science_replay": 0,
+  "new_ODE_runs": 0,
+  "failures": [],
+  "historical_failures_preserved": {
+    "R8": "726/727PASS+1FAIL; separateexactphi24/24",
+    "R10": "175/469/9860/0.511886s/frozen14; initialIDfailure/DOC01/META02; originalsample4.0013206434938575e-12 andfixedtolerance; originalGETNOT_RUN",
+    "R11": "214/900/19195/1.477435s/frozen18; F01/F02/firstPNGbytescauseunknown/S08temporary/S09deletion; qualifiedCAS; strictsamplefalse349",
+    "R12": "531/317/133502/4.202434s/frozen30; qualified24CASzeros+messagescauseunknown; displayrepairhistory; provideroriginalGETNOT_RUN"
+  },
+  "new_scientific_process_count": 2,
+  "new_scientific_process_OS_CPU_s_decimal": "1.3347490000000000003",
+  "new_scientific_process_OS_CPU_s_6dp": "1.334749",
+  "scientific_execution_complete": true,
+  "postprocessing": {
+    "actual_attempts": 2,
+    "first_attempt": {
+      "exit_code": 1,
+      "images_created": 0,
+      "whole_OS_process_CPU_s": null,
+      "finding": "reviews/F03_POSTPROCESS_CORRECTION.json"
+    },
+    "corrected_attempt": {
+      "scope": "Saved-output postprocessing only; separate from scientific computation subtotal",
+      "actual_attempt": 2,
+      "exit_code": 0,
+      "wall_s": 3.9864176049959497,
+      "whole_OS_process_CPU_s": 4.7715749999999995,
+      "user_s": 4.571698,
+      "system_s": 0.199877,
+      "max_rss_KiB": 131704,
+      "scientific_reexecutions": 0
+    },
+    "scientific_reexecution": 0,
+    "excluded_from_scientific_OS_CPU_subtotal": true
+  },
+  "failures_scope": "Scientific execution crash/failure list only; CAS warnings and administrative/postprocessing findings are preserved separately."
+}

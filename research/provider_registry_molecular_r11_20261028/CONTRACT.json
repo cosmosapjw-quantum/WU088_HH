@@ -1,0 +1,124 @@
+{
+  "schema": "WU_R11_CONTRACT_V1",
+  "unit": "WU_FULL_GENERATOR_BLOCK_R11",
+  "workflow_version": "1.0.0",
+  "created_utc": "2026-10-28T03:09:30.126495+00:00",
+  "objective": "Prove and implement uniform full-A finite-block certificates and causal forcing convolution on unchanged saved inputs; preserve all-starts/full-family and exact closed-cell semantics.",
+  "base": {
+    "repository": "cosmosapjw-quantum/WU088_HH",
+    "branch": "research/provider-registry-20261025",
+    "PR": 150,
+    "commit": "c92e63787ed7f6b50cbec06dd0b8dd2a00ace518",
+    "tree": "56f0c7b558ac24e683a8b95713b3cbc068f1f38b",
+    "R10_admission": "a2c62aaad2396d1720a12e74774e52374baa4c33",
+    "scientific_payload_sha256": "57ee9ad49afbd1a492914fadba480ed787b51e4bcefc8c0be62c31e196590fff",
+    "DAG": [
+      21,
+      36
+    ]
+  },
+  "premises": {
+    "matrix": "column-conservative Metzler K; fixed exact K, pi, destruction on entire family",
+    "pi": "fixed simplex probability; zero components permitted",
+    "destruction": "fixed nonnegative d; H=pi*d^T-diag(d)",
+    "w": "all measurable paths in certified 0<=m_w<=w(t)<=M_w over same declared clock",
+    "all_starts": "every [s,s+tau] within certified interval; fixed homogeneous K certificate extends to all starts",
+    "forcing": "zero-mass residual forcing with whole-fine-domain bound g_r; c>=0,d_c signed,g_e>=0 on whole fine/coarse domain",
+    "normalization": "R=||r||_1; E=abs(eta); coarse l1=4E",
+    "initial": "same source family, state ordering, clock, initial invariants; no sample cap",
+    "K_certificate": "actual saved exact K/tau/rho identity; certified rho_K<=q_K input premise, never directly transplant to full A"
+  },
+  "construction": {
+    "duhamel": "q_add=min(1,q_K+tau*M_w*||H||_1)",
+    "minorization": "b_H=max_j d_j(1-pi_j)=||H||_1/2; q_minor=1-exp(-b_H*M_w*tau)*(1-q_K)",
+    "chosen_q": "minimum of outward certified q_add and q_minor; q=1 permitted; implementation strictness only if rational q<1",
+    "kernel": "h(u)=q^floor(u/tau),h(0)=1,0^0=1; global age retained",
+    "grid": "exact uniform delta, tau=block_steps*delta; piecewise constant forcing on same grid; block_steps integer",
+    "forcing_convolution": "F_n=delta*sum_{j=0}^{n-1}h_{n-1-j}g_r,j; R_n=h_n*R0+F_n",
+    "closed_R_cell": "affine between L_n=h_n R0+F_n and V_n=h_n R0+F_(n+1), include V_n left limit before block jump",
+    "E_endpoint": "positive Bernstein moments integrate affine R, signed d_c; fresh forcing has h0=1",
+    "caps": "same exact source family/state/clock/delta/cells and actual R10 cap SHA+pointer; point vs whole distinct; capped E may use capped Rwhole as constant forcing; global R convolution never restarts"
+  },
+  "finite_domain": {
+    "states": [
+      1,
+      13
+    ],
+    "cells": [
+      1,
+      192
+    ],
+    "block_steps": [
+      1,
+      192
+    ],
+    "exact_scalar_bits_max": 8192,
+    "dyadic_bits": 128,
+    "Taylor_degree": 96,
+    "absolute_scaled_exp_argument_max": 16,
+    "forcing": "scalar or length-cells nonnegative array; c,d_c fixed over sweep",
+    "saved_cases": 4,
+    "saved_cells": 192,
+    "saved_block_steps": 64,
+    "extra_ODE_runs": 0
+  },
+  "resource": {
+    "primary": {
+      "runs": 1,
+      "CPU_s": 60,
+      "wall_s": 90
+    },
+    "reference": {
+      "runs": 1,
+      "CPU_s": 60,
+      "wall_s": 90
+    },
+    "CAS": {
+      "runs": 1,
+      "wall_s": 30
+    },
+    "old_R10_R9_R8_R7_R6_PHYS91_allowance_increase": 0,
+    "global_remaining": null,
+    "full_historical_CPU_s": null,
+    "old_science_replay": 0,
+    "new_ODE_or_native_source_runs": 0,
+    "postprocessing": "saved-output only; no solver calls"
+  },
+  "reference": {
+    "arithmetic": "independent Decimal160 and exact Fraction analytic controls; no production import",
+    "guard": "1e-80 relative, fixed before execution",
+    "sample_validation": "reuse R7 saved samples only with original atol2e-12+rtol2e-10 if compared; strictness separately reported"
+  },
+  "acceptance": [
+    "Complete Duhamel and positive minorization proofs with all starts/full family",
+    "Exact causal convolution, fresh h0 and block-jump closed-cell proof",
+    "One primary bounded run on four saved cases and discriminating controls/guards",
+    "One independent bounded reference comparing chosen ideal scalar convolution and actual generator formulas",
+    "One new Wolfram algebra/moment check with real warnings preserved",
+    "Independent R6/C9 pass; material findings closed before adoption",
+    "Preserve all36 inherited DAG objects, original R8 failure and all R10 warning/tolerance/failure records",
+    "Ten paired R_i/C_i actual source publications and two provider ACKs each; FINAL own receipt external"
+  ],
+  "physical_status": {
+    "actual_HD_reactive_array": "INPUT_PENDING",
+    "named_consumer_density_clock": "INPUT_PENDING",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4_ready": false,
+    "central_delta": 0,
+    "physical_delta": 0,
+    "native_v": "UNSPECIFIED",
+    "missingness": "MISSING_NOT_ZERO",
+    "TIQM_SQM": "DISTINCT"
+  },
+  "strong_no_go": {
+    "new_no_go_proposed": false,
+    "NG1_NG7": "screen all claims; no universal impossibility or novelty assertion"
+  },
+  "authorization": "root expected-SHA force=false research branch/draft PR150 and existing Drive+Dropbox folders; no main merge or other-owner writes",
+  "conventions": {
+    "metric_signature": "(-,+,+,+)",
+    "c_hbar_kB": "retained where applicable; no spacetime or thermal-unit conversion in this unit",
+    "clock_origin": "same saved source t0=0, exact t_n=n*delta"
+  }
+}

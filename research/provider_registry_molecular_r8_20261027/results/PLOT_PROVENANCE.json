@@ -1,0 +1,134 @@
+{
+  "schema": "WU_R8_SAVED_NATIVE9_PLOT_PROVENANCE_V1",
+  "status": "C9_ACCEPTED_SCOPED_CONDITIONAL_ORIGINAL_REFERENCE_FAIL_PRESERVED",
+  "case_id": "saved_native_nine_state_K_conditional_feedback",
+  "script": {
+    "path": "results/plot_saved_native9.py",
+    "sha256": "088e171cd83f3d80b5e26f792cff1d45b70b786e4ee1b24c518370a87b948e3e"
+  },
+  "inputs": {
+    "R8_primary": {
+      "path": "provider_registry_molecular_r8_20261027/raw/PRIMARY_RESULTS.json",
+      "sha256": "520110d1cae1677491aecd7216621c25f1098470c939ee027d5df3bde183686b",
+      "bytes": 2194159
+    },
+    "R7_primary": {
+      "path": "provider_registry_molecular_r7_20261027/raw/PRIMARY_RESULTS.json",
+      "sha256": "6eaf3c0eed7968cf4023180e15373a180bb5b1bab2e56cd4a8547387ed337a15",
+      "bytes": 351734
+    },
+    "R7_reference": {
+      "path": "provider_registry_molecular_r7_20261027/raw/REFERENCE_RESULTS.json",
+      "sha256": "e403c7803c080fd4f26be71a93b782b02d874f80ef11c85a706bea71e2a743cd",
+      "bytes": 701155
+    }
+  },
+  "outputs": {
+    "results/NATIVE9_BOUNDS.svg": {
+      "sha256": "6f58defc465ab4c61a9ac8f7188f1f24c11bb55d830724a656c6a33a7dd2217f",
+      "bytes": 133678
+    }
+  },
+  "source_pointers": {
+    "R8_endpoints": "/hd_cases/3/certificate/endpoints",
+    "R7_blocks_and_original_caps": "/hd_cases/3/blocks",
+    "R7_saved_numeric_clocks": "/hd_cases/3/times",
+    "R7_saved_numeric_errors": "/hd_cases/3/R_E"
+  },
+  "rendering": {
+    "backend": "Matplotlib Agg to text SVG",
+    "matplotlib_version": "3.10.8",
+    "endpoint_interpolation": false,
+    "query_cap_interpolation": false,
+    "numeric_sample_interpolation": false,
+    "whole_block_steps": "Exact saved R7 whole_block_upper for each of three blocks",
+    "x_axis": "tau/H dimensionless normalized saved clock; no physical seconds",
+    "y_axes": [
+      "R = l1 residual",
+      "E = abs eta"
+    ],
+    "full_coarse_l1": "4E",
+    "rational_display_conversion": "Fraction parsed exactly, then float(Fraction); no separately converted large integers",
+    "zero_masks": {
+      "R/R8 endpoint upper": {
+        "saved_count": 193,
+        "drawn_count": 193,
+        "masked_zero_indices": []
+      },
+      "R/R7 saved query upper": {
+        "saved_count": 15,
+        "drawn_count": 15,
+        "masked_zero_indices": []
+      },
+      "R/R7 contracted macro endpoint": {
+        "saved_count": 3,
+        "drawn_count": 3,
+        "masked_zero_indices": []
+      },
+      "R/Saved R7 numerical samples": {
+        "saved_count": 193,
+        "drawn_count": 193,
+        "masked_zero_indices": []
+      },
+      "E/R8 endpoint upper": {
+        "saved_count": 193,
+        "drawn_count": 192,
+        "masked_zero_indices": [
+          0
+        ]
+      },
+      "E/R7 saved query upper": {
+        "saved_count": 15,
+        "drawn_count": 14,
+        "masked_zero_indices": [
+          0
+        ]
+      },
+      "E/R7 contracted macro endpoint": {
+        "saved_count": 3,
+        "drawn_count": 3,
+        "masked_zero_indices": []
+      },
+      "E/Saved R7 numerical samples": {
+        "saved_count": 193,
+        "drawn_count": 192,
+        "masked_zero_indices": [
+          0
+        ]
+      }
+    }
+  },
+  "scope": {
+    "postprocessing_only": true,
+    "new_ODE_runs": 0,
+    "new_bound_evaluations": 0,
+    "scientific_runner_imports": 0,
+    "scientific_core_imports": 0,
+    "physical_consumer_admitted": false,
+    "final_adoption_claimed": true,
+    "adoption_scope": "Conditional lag-kernel theory and code only; no physical admission",
+    "reference_status_at_authoring": "Original 726/727 PASS and 1 FAIL preserved; exact scalar re-adjudication 24/24 PASS; final C9 accepted"
+  },
+  "final_review_binding": {
+    "source_commit": "eb437ab5ec60d3b503be115c5560a85172502aba",
+    "C9": "PASS",
+    "material_findings": 0,
+    "targeted_scalar_checks": "24/24 PASS",
+    "original_reference_status": "FAIL_PRESERVED",
+    "scientific_DAG": {
+      "complete": 17,
+      "total": 32
+    }
+  },
+  "previous_postprocessing_preserved": {
+    "svg_sha256": "1813c529179757e77b8f0bbd7927d3723c1540d755e36bbafbb1d19261a8e007",
+    "script_sha256": "0f6097cfa655db366c3fb93cbf5648a3b7e0c63b781a60d7238a50641cbf5c6c",
+    "provenance_sha256": "8d59bf77c100fd920c0453eaa56fb74248a31981a073e4fbd26ab0a61c1607b6",
+    "actual_postprocess_CPU_s_before_provenance_write": 4.317593619,
+    "preservation": "Original S08/S09 Git source history; prior cost is retained separately",
+    "change": "Final conditional-adoption status text and provenance only; plotted data, styling, and bounds unchanged"
+  },
+  "actual_postprocess_CPU_s_before_provenance_write": 26.291498047,
+  "CPU_includes_interpreter_and_plotting_imports": true,
+  "actual_postprocess_wall_s_before_provenance_write": 37.26543387299898
+}

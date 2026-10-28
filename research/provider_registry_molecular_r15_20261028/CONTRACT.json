@@ -1,0 +1,143 @@
+{
+  "schema": "WU_R15_CONTRACT_V1",
+  "unit": "WU_CUBIC_BERNSTEIN_FORCING_R15",
+  "created_utc": "2026-10-28T10:54:28.774098+00:00",
+  "workflow_version": "1.0.0",
+  "policy_integration_version": "1.3.0",
+  "objective": "Exact rational nonaligned nonnegative Bernstein-B3 cubic forcing; positive Bernstein-B4 global-memory convolution; finite derivative-variation subdivision with explicit quartic whole-cell gap and work bound; directed signed scalar propagation and independent original-integral reference.",
+  "scope": "One next conditional theory node and one finite code node after current accessible source synthesis. Exact source identity and physical binding remain separate premises.",
+  "parent_HEAD": "6ca324dbc5d3c4b5c064f7621730eb0d6ee5eb51",
+  "parent_tree": "1bcbb222a5d5c0791b46015116287917d9b84923",
+  "parent_science": {
+    "R14_S09": "dfdefe47ef0c28ae94f6e6727d3230ceed5c356d",
+    "payload_files": 105,
+    "payload_sha256": "b68ab395e4e36ea7a6b49bb6c0b1f44fb75d10522f223d29657907179ac24e4b",
+    "DAG": "29/44"
+  },
+  "user_authorization": {
+    "new_budget_and_full_next_loops": true,
+    "current_source_census_before_selection": true,
+    "per_stage_publication_and_dual_backup": true,
+    "DAG_count_each_checkpoint": true,
+    "copyable_next_thread_handoff": true
+  },
+  "premises": {
+    "generator": "H=pi*d^T-diag(d),A=K+wH; fixed K/pi/destruction, whole certified w box, all start times, zero-mass residual, nonexpansive Markov remainders; full-A q/tau is source-bound.",
+    "kernel": "h(age)=q^floor(age/tau),0<=q<=1,tau>0,h0=1 includingq0; retain original-t0 memory.",
+    "forcing": "Per exact source cell four rational Bernstein-B3 coefficients for each g_r/g_e, all nonnegative; supplied functions are whole fine/coarse-domain bounds. This input cone is explicit, not the full nonnegative cubic cone.",
+    "scalar": "E=abs(eta),coarse l1=4E; fixed coupling c>=0 and signed d_c. c denotes comparison coupling, not the speed-of-light symbol.",
+    "clock": "Exact rational t0/source/observation; actual right-continuous endpoint distinguished from left-limit closed-cell supremum.",
+    "caps": "No generic cap adapter; changed forcing does not inherit old physical or closed-cell cap identity."
+  },
+  "finite_domain": {
+    "states_min": 1,
+    "states_max": 13,
+    "source_cells_max": 16,
+    "observation_cells_max": 32,
+    "base_cells_max": 512,
+    "full_blocks_max": 8,
+    "input_scalar_bits_max": 256,
+    "derived_scalar_bits_max": 16384,
+    "abs_d_times_horizon_max": 16,
+    "Bernstein_overlap_terms_max": 100000,
+    "overlap_precharge": "Nbase*Nsource*(B+1)<=73728; form each quartic cell once",
+    "subdivision_depth": 96,
+    "derivative_degree_max": 3,
+    "subdivision_splits_per_cell_bound": 288,
+    "subdivision_nodes_per_cell_bound": 577,
+    "subdivision_splits_max": 147456,
+    "subdivision_nodes_max": 295424,
+    "subdivision_precharge": "3*96*Nbase split cap and (6*96+1)*Nbase visit cap, before traversal; proof required before execution",
+    "supremum_gap_target": "0<=U_exact-L_exact<=M_B*2^-96<=4*Cmax*2^-96, M_B=4*max|B[i+1]-B[i]|; dyadic conversion adds at most2*2^-128",
+    "dyadic_bits": 128,
+    "Taylor_degree": 96,
+    "input_rational_text_grammar": "ASCII signed integer or signed p/q only; length<=2048; reject whitespace/decimal/exponent before conversion",
+    "runtime_integer_decimal_digit_limit": 6000,
+    "saved_derived_rational_text_max_characters": 10000,
+    "derived_scalar_bits_scope": "Production arithmetic and persisted derived rational components; independent reference internal Euclid/Sturm arithmetic has a separate finite guard."
+  },
+  "verification_contract": {
+    "primary": "One frozen mathematical/control/guard campaign covering exact limits, memory, sign/normalization/clock mutations and finite-work obligations",
+    "reference": "One separately authored reference using original unsplit monomial primitives J0..J3, independent power quartic and critical-root/extremum route, Decimal160 monomial phi1..phi5; no production import",
+    "reference_precision": 160,
+    "reference_guard": "1e-80*max(1,abs(reference),abs(lower),abs(upper)), fixed before execution; retain strict no-guard misses/count/examples",
+    "primary_tolerance": "Exact rational identities and directed enclosures; no floating acceptance in production",
+    "reference_classification": "GUARDED_CORROBORATION_NOT_INTERVAL_REFERENCE for Decimal components; exact components separately counted",
+    "CAS": "One exact identity batch, source bytes frozen before call; retain raw warnings and actual result",
+    "review": "R6 independent proof/static-code review; final C9 bounded changed-surface review. No recursive review tree.",
+    "plots": "Saved-output plots, actual visual inspection; endpoint connectors distinct from whole-cell certificates; no science rerun for rendering",
+    "reference_internal_arithmetic": {
+      "rational_numerator_denominator_bits_max": 1048576,
+      "polynomial_degree_max": 4,
+      "Euclidean_reductions_per_polynomial_chain_max": 5,
+      "scope": "Unserialized exact squarefree/Sturm intermediates only; production and saved-derived cap16384bits,10000chars unchanged",
+      "failure_semantics": "Exceeding internal guard is explicit reference failure or unresolved, never silently dropped",
+      "CPU_wall_memory": "Unchanged180s CPU/240s wall/1GiB reference base-attempt limit",
+      "chain_guard_note": "Conservative general degree-four Euclidean call may include an initial equal-degree reduction; Sturm polynomial sequence remains at most five entries."
+    }
+  },
+  "execution_budget": {
+    "primary": {
+      "base_runs": 1,
+      "CPU_s_per_attempt": 120,
+      "wall_s_per_attempt": 180,
+      "memory_bytes": 1073741824
+    },
+    "reference": {
+      "base_runs": 1,
+      "CPU_s_per_attempt": 180,
+      "wall_s_per_attempt": 240,
+      "memory_bytes": 1073741824
+    },
+    "CAS": {
+      "base_runs": 1,
+      "wall_s": 45,
+      "CPU_s": null
+    },
+    "renderer": {
+      "base_runs": 1,
+      "CPU_s": 15,
+      "wall_s": 45,
+      "memory_bytes": 1073741824
+    },
+    "diagnosed_repair_reserve": {
+      "primary_attempts_max": 1,
+      "reference_attempts_max": 1,
+      "CAS_attempts_max": 0,
+      "condition": "Only after preserved actual failure and a substantive diagnosed correction within this fixed objective; same acceptance unchanged; reserve expires on closeout"
+    },
+    "max_scientific_Python_CPU_including_repair_reserve_s": 600,
+    "ODE_runs": 0,
+    "old_allowance_increase": 0,
+    "global_remaining": null,
+    "full_historical_CPU": null
+  },
+  "physical_status": {
+    "actual_HD_reactive_array": "INPUT_PENDING_IN_INSPECTED_SCOPE",
+    "named_physical_consumer_state_density_clock": "INPUT_PENDING",
+    "native_v": "UNSPECIFIED",
+    "missingness": "MISSING_NOT_ZERO",
+    "TIQM_SQM": "DISTINCT",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4": false,
+    "central_delta": 0,
+    "physical_delta": 0
+  },
+  "publication": {
+    "repository": "cosmosapjw-quantum/WU088_HH",
+    "branch": "research/provider-registry-20261025",
+    "draft_PR": 150,
+    "write_owner": "root",
+    "expected_SHA_required": true,
+    "force": false,
+    "main_merge": false,
+    "other_owner_writes": false,
+    "paired_checkpoints": "S01=(R1,C1),...,S10=(R10,C10); each completed pair actually published and backed before next checkpoint",
+    "archive_scope": "Current AGENTS plus this self-contained R15 leaf",
+    "own_receipt_rule": "Actual receipt enters next source; FINAL own receipt stays external in PR and closing response",
+    "Drive_folder": "1074Hr5msnAMgIXWU-PmgdMrQvrdV6emM",
+    "Dropbox_folder": "/BASS_DERIVATION_DOSSIERS_20260912/WU088_HH_R31S_NCP_REDESIGN_20260928"
+  },
+  "proof_and_code_status_at_contract": "NOT_YET_EXECUTED; candidate proof obligations explicit, no prospective PASS"
+}

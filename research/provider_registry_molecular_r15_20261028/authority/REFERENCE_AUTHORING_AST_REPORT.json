@@ -1,0 +1,90 @@
+{
+  "schema": "WU_R15_REFERENCE_AUTHORING_STATIC_V1",
+  "created_utc": "2026-10-28T11:40:34.657304+00:00",
+  "method": "AST parsing and JSON parsing/hash metadata only; no reference or production module imported/executed",
+  "scientific_runs": 0,
+  "files": [
+    {
+      "path": "verification/reference_oracle.py",
+      "bytes": 81082,
+      "sha256": "bf8928ec3629b81563cbe10b7b0fb68cb10a398dcf2028c66207e50e3932e05e",
+      "AST": "PARSE_ONLY_OK",
+      "top_level_functions": [
+        "need",
+        "exact_int",
+        "input_rational",
+        "saved_rational",
+        "qlist",
+        "qmatrix",
+        "canonical_bytes",
+        "file_fingerprint",
+        "rational_text",
+        "json_ready",
+        "dyadic_pair",
+        "check_supremum_record",
+        "verify_partition",
+        "root_diagnostic",
+        "verify_binding",
+        "parse_raw",
+        "verify_work",
+        "verify_depth_sweeps",
+        "verify_case",
+        "index_unique",
+        "verify_primary_records",
+        "run_reference_campaign"
+      ],
+      "imports": [
+        "from contextlib import contextmanager",
+        "from decimal import Decimal, localcontext, ROUND_HALF_EVEN",
+        "from fractions import Fraction",
+        "import hashlib",
+        "import json",
+        "from math import comb, factorial",
+        "from pathlib import Path",
+        "import re"
+      ]
+    },
+    {
+      "path": "verification/run_reference.py",
+      "bytes": 14607,
+      "sha256": "79206d468dec7407aac27c29a955d7847aba246ed87e672dfb5ada3bc82f8d2c",
+      "AST": "PARSE_ONLY_OK",
+      "top_level_functions": [
+        "fingerprint",
+        "read_json",
+        "relative_path",
+        "inspect_manifest",
+        "check_contract",
+        "check_primary_freeze_metadata",
+        "failed_payload",
+        "add_failure",
+        "progress",
+        "serialize_output",
+        "emergency_ready",
+        "main"
+      ],
+      "imports": [
+        "import argparse",
+        "import hashlib",
+        "import json",
+        "from pathlib import Path",
+        "import sys",
+        "import reference_oracle as oracle"
+      ]
+    }
+  ],
+  "shared_fixtures": [
+    {
+      "path": "r15_work/authoring/production/verification/CASES.json",
+      "bytes": 64835,
+      "sha256": "89b7ebc9f86d2eff58c203e54aa6c370e7259d24f1a9414414e91fd952825619",
+      "JSON": "PARSE_ONLY_OK"
+    },
+    {
+      "path": "r15_work/authoring/production/verification/ARITHMETIC_SOURCE.json",
+      "bytes": 24122,
+      "sha256": "15216b85daa09c203ee0a856db5c963e13fd89ebe0f9077f94e5ff2f9dd5b885",
+      "JSON": "PARSE_ONLY_OK"
+    }
+  ]
+}

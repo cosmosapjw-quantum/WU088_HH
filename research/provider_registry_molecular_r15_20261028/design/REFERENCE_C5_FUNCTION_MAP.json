@@ -1,0 +1,45 @@
+{
+  "schema": "WU_R15_C5_REFERENCE_EQUATION_FUNCTION_MAP_V1",
+  "status": "AUTHORED_AST_PARSED_NOT_EXECUTED",
+  "unit": "WU_CUBIC_BERNSTEIN_FORCING_R15",
+  "code": {
+    "verification/reference_oracle.py": {"bytes": 81082, "sha256": "bf8928ec3629b81563cbe10b7b0fb68cb10a398dcf2028c66207e50e3932e05e"},
+    "verification/run_reference.py": {"bytes": 14607, "sha256": "79206d468dec7407aac27c29a955d7847aba246ed87e672dfb5ada3bc82f8d2c"}
+  },
+  "equation_map": [
+    {"id": "ORIGINAL_CUBIC", "equation": "g(x)=sum a_m*x^m, x=(s-a)/(b-a), m<=3", "functions": ["Polynomials.bernstein_to_power", "OriginalModel.__init__"]},
+    {"id": "ORIGINAL_PRIMITIVE", "equation": "J_m(L,U)=ell*((U-a)/ell)^(m+1)/(m+1)-ell*((L-a)/ell)^(m+1)/(m+1)", "functions": ["OriginalModel.F"], "independence": "Direct original source primitive at exact moving overlap endpoints; no Simpson or production overlap function"},
+    {"id": "GLOBAL_MEMORY", "equation": "R(t)=q^floor((t-t0)/tau)*R0+sum_jk q^k sum_m a_jm*J_m", "functions": ["OriginalModel.kernel", "OriginalModel.F", "OriginalModel.R", "OriginalModel.__init__"], "boundary": "h0=1 includingq0; original t0 and translated exact source clock retained"},
+    {"id": "OWN_QUARTIC", "equation": "P is exact degree<=4 interpolation through u=1/6,1/3,1/2,2/3,5/6; off-stencil1/7,2/7,4/7,6/7", "functions": ["Polynomials.interpolate", "OriginalModel.cell"], "independence": "Values come from OriginalModel.R; reported production coefficients only compared afterward"},
+    {"id": "EXACT_NONNEGATIVITY", "equation": "Q>=0 on[0,1] iff endpoint signs, absence of odd-multiplicity interior sign-changing roots, and a positive nonroot interior probe; zero/constant separately", "functions": ["Polynomials.squarefree_factors", "Polynomials.sturm", "Polynomials.count_open", "Polynomials.nonnegative"], "limits": "degree4, chain5, Euclid5, multiplicity4, internal1048576bits"},
+    {"id": "EXACT_LOWER_EXISTENCE", "equation": "sup(P)>=L iff P-L is nonnegative at a checked point or has a root in(0,1); zero/constant separately", "functions": ["Polynomials.some_nonnegative", "verify_depth_sweeps"], "scope": "Compact depth rows have no full leaf-witness list"},
+    {"id": "SUPREMUM_CERTIFICATE", "equation": "L=max independent leaf witnesses and actualright; U=max leaf upper andactualright; ownU-P>=0", "functions": ["verify_partition", "verify_case", "check_supremum_record"], "boundary": "u1 polynomial witness is a left limit, distinct from actual right endpoint"},
+    {"id": "CRITICAL_ROOTS", "equation": "Distinct-root count via squarefree Sturm; multiplicities via exact factors; one-sided endpoint signs give open-interval counts", "functions": ["Polynomials.sign_side", "Polynomials.count_open", "root_diagnostic"], "scope": "Seven predeclared model cells; depth320 count-preserving clusters; no unique-root claim for unresolved multiple-root clusters"},
+    {"id": "SCALAR_ENDPOINT", "equation": "Eright=exp(z)*Eleft+Delta*sum_m f_m*m!*phi_(m+1)(z), z=d*Delta, normalized-u f_m", "functions": ["DecimalReference.functions", "DecimalReference.integral", "verify_case"], "coordinate": "Exactly one Delta factor for normalized-u coefficients"},
+    {"id": "EXACT_ZERO_D", "equation": "Eright=Eleft+Delta*sum_m f_m/(m+1)", "functions": ["verify_case REF12_ZERO_D_E"], "tolerance": "None"},
+    {"id": "MOMENTS", "equation": "Each B4 moment is independently expanded into monomial phi1..phi5; 512 fixed terms j0..511", "functions": ["DecimalReference.functions", "DecimalReference.weights"], "classification": "Decimal160 guarded corroboration; not interval reference"},
+    {"id": "STRICT_MEMBERSHIP", "equation": "Compare exact Fraction(Decimalvalue) to exact saved rational bounds; fixedguard=1e-80*max(1,abs(value),abs(lo),abs(hi))", "functions": ["Audit.contains"], "evidence": "All strict misses counted, first50retained even when fixedguard passes"},
+    {"id": "WHOLE_E", "equation": "Qmax=c*exact_Rsup_upper+max(ownrestrictedgeB3); exactQmax-f>=0; same-signed-d majorant fromleftEupper", "functions": ["verify_case REF15_WHOLE_E"], "semantics": "whole lower bounds supremum; polynomial endpoint propagated separately"}
+  ],
+  "acceptance_map": [
+    {"criterion": "REF01_SCHEMA_IDENTITY", "functions": ["input_rational", "saved_rational", "parse_raw", "index_unique", "run_reference_campaign", "run_reference.inspect_manifest", "run_reference.check_primary_freeze_metadata"]},
+    {"criterion": "REF02_BINDING", "functions": ["verify_binding", "canonical_bytes"]},
+    {"criterion": "REF03_CLOCK_MEMORY", "functions": ["OriginalModel.__init__", "verify_case REF03_CLOCK_MEMORY"]},
+    {"criterion": "REF04_ORIGINAL_ENDPOINTS", "functions": ["OriginalModel.F", "OriginalModel.R", "OriginalModel.kernel", "verify_case REF04_ORIGINAL_ENDPOINTS"]},
+    {"criterion": "REF05_QUARTIC_IDENTITY", "functions": ["OriginalModel.cell", "Polynomials.interpolate", "Polynomials.affine", "Polynomials.power_to_bernstein", "verify_case REF05_QUARTIC_IDENTITY"]},
+    {"criterion": "REF06_ONE_SIDED", "functions": ["verify_case REF06_ONE_SIDED"]},
+    {"criterion": "REF07_PARTITION", "functions": ["verify_partition", "Polynomials.nonnegative"]},
+    {"criterion": "REF08_SUPREMUM_EXACT", "functions": ["verify_case REF08_SUPREMUM_EXACT", "Polynomials.nonnegative"]},
+    {"criterion": "REF09_GAP_DYADIC", "functions": ["dyadic_pair", "check_supremum_record", "verify_case REF09_GAP_DYADIC"]},
+    {"criterion": "REF10_WORK", "functions": ["verify_work", "OriginalModel.nonempty_overlap_count"]},
+    {"criterion": "REF11_ROOT_PATTERNS", "functions": ["root_diagnostic", "Polynomials.squarefree_factors", "Polynomials.sturm", "Polynomials.count_open", "Polynomials.interval_evaluate"]},
+    {"criterion": "REF12_ZERO_D_E", "functions": ["verify_case REF12_ZERO_D_E"]},
+    {"criterion": "REF13_MOMENTS", "functions": ["DecimalReference.functions", "DecimalReference.weights", "Audit.contains", "verify_case REF13_MOMENTS"]},
+    {"criterion": "REF14_SCALAR_ENDPOINTS", "functions": ["DecimalReference.integral", "Audit.contains", "verify_case REF14_SCALAR_ENDPOINTS"]},
+    {"criterion": "REF15_WHOLE_E", "functions": ["Polynomials.nonnegative", "Audit.contains", "verify_case REF15_WHOLE_E"], "counting": "Mixed exact/guarded semantic records counted separately from pure exact records"},
+    {"criterion": "REF16_PRIMARY_GUARD_RECORDS", "functions": ["verify_primary_records"], "limitation": "Saved rejection metadata only; no independent production guard reexecution"},
+    {"criterion": "REF17_RESOURCE_AND_SCOPE", "functions": ["Arithmetic.guard", "run_reference_campaign", "run_reference.main", "run_reference.serialize_output", "run_reference.emergency_ready"], "external_enforcement": "Root OS wrapper owns CPU180/wall240/1GiB across imports through serialization"},
+    {"criterion": "REF18_DEPTH_SWEEP", "functions": ["verify_depth_sweeps", "Polynomials.nonnegative", "Polynomials.some_nonnegative"]}
+  ],
+  "not_executed": ["All authored Python functions", "Scientific module imports", "CLI campaign", "CAS", "Production code"]
+}

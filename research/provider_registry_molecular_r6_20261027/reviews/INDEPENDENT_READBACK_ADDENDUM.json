@@ -1,0 +1,90 @@
+{
+  "schema": "WU_R6_INDEPENDENT_REFERENCE_SAVED_RESULT_REVIEW_V1",
+  "reviewer": "/root/r6_inventory",
+  "decision": "INDEPENDENT_SAVED_RESULT_ACCEPTED_PENDING_CAS",
+  "source": {
+    "path": "raw/INDEPENDENT_RESULTS.json",
+    "bytes": 73402,
+    "sha256": "7e7bbae7ae5285230c14ef8fbb258ef15a92635eebfb0e0ca04df6933859c5ba"
+  },
+  "observed": {
+    "status": "NUMERICAL_CROSSCHECKS_COMPLETED",
+    "case_count": 109,
+    "mismatch_count": 0,
+    "scope_completeness": "SOURCE_GRAPH_AND_FORCED_PRIMARY_CHECKED",
+    "forced_primary_fixture_count": 3,
+    "switched_graph_fixture_count": 1
+  },
+  "binding": {
+    "primary_result_sha256": "1a3b55f7c14a64a10a651de2df7b7f7d2df24d0b9e809b729f32d73377c90e84",
+    "primary_run_id": "WU_R6_PRIMARY_01",
+    "reference_script_sha256": "11650b677ebbd96f9bab9463d8b14d102185e233f402a26d8170fe3d6c1596a8",
+    "reference_input_sha256": "de0c817c082f158bf6219e1e66a2a281204d8af324b8e5e1e083361a4860440c",
+    "matches_freeze": true,
+    "independent_source_parser": true,
+    "production_core_imports": false
+  },
+  "precision": {
+    "backend": "decimal.Decimal/libmpdec",
+    "decimal_digits": 250,
+    "guard_digits": 15,
+    "scipy_atol": 2e-12,
+    "scipy_rtol": 2e-11,
+    "formal_interval_proof_by_reference": false
+  },
+  "thermal_resolution": {
+    "total_scalar_interval_comparisons": 35,
+    "interior_resolved": 34,
+    "zero_margin": 1,
+    "zero_margin_case": {
+      "case": "boltzmann_level_1",
+      "reference": "1",
+      "lower": "1",
+      "upper": "1",
+      "strict_margin": "0",
+      "stored_resolution": "NUMERICALLY_COMPATIBLE_BUT_NOT_RESOLVED_AT_250_DPS",
+      "interpretation": "Exact exp(0)=1 boundary case, not an observed mismatch; numerical strict-interior label is intentionally not asserted."
+    },
+    "source_Kpi_max_abs_high_precision": "1.20000000000e-250"
+  },
+  "forcing_observations": {
+    "samples_per_fixture": 33,
+    "interior_fractions": [
+      "1/4",
+      "1/2",
+      "3/4"
+    ],
+    "worst_saved_positive_U_excess": 2.7755575615628914e-17,
+    "worst_saved_positive_E_excess": 1.3322676295501878e-15,
+    "declared_tolerance_pass": true,
+    "strict_all_component_nonpositive_slack_claimed": false,
+    "continuous_time_proof_from_samples": false,
+    "noncommuting_reset_fixture": {
+      "commutator_norm": 0.6133333333333331,
+      "propagator_split_error": 4.440892098500626e-16
+    }
+  },
+  "resource": {
+    "actual_cpu_seconds_at_finalize": 0.6895740779999999,
+    "actual_process_cpu_seconds_at_finalize": 0.822867308,
+    "actual_wall_seconds_at_finalize": 0.7633639199993922,
+    "cpu_allowance_satisfied_at_finalize": true,
+    "allowance_seconds": 60,
+    "measurement_boundary": "Stored finalize checkpoint; final process/wrapper tail accounting is separate."
+  },
+  "status_boundaries": {
+    "actual_primary_runs_by_owner": 1,
+    "actual_reference_runs_by_owner": 1,
+    "reviewer_numerical_runs": 0,
+    "old_science_replay": 0,
+    "physical_IVP": 0,
+    "physical_destruction": "UNBOUND",
+    "physical_production": "NOT_RUN",
+    "final_C9": "WAITING_CONTRACTED_CAS_SAVED_RESULT"
+  },
+  "notes": [
+    "Original saved result read only; no primary/reference numerical replay.",
+    "Native Decimal and double-precision matrix references provide corroboration with explicit resolution/tolerances, not a replacement for exact directed arithmetic and general-n proof.",
+    "Historical pre-execution freeze says NOT_EXECUTED_YET at its original time; subsequent raw results supply actual later execution."
+  ]
+}

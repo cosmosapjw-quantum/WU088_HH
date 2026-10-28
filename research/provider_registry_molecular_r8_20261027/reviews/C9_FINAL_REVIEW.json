@@ -1,0 +1,307 @@
+{
+  "schema": "WU_R8_INDEPENDENT_C9_FINAL_REVIEW_V1",
+  "unit": "WU_CAUSAL_LAG_KERNEL_R8",
+  "reviewed_utc": "2026-10-27T16:06:12.440Z",
+  "reviewer": "independent agent /root/r6_inventory",
+  "decision": "PASS_SCOPED_CONDITIONAL_CAUSAL_LAG_KERNEL_CODE",
+  "disposition": "Scoped theory/code adoption is supported by the reviewed proof, frozen production implementation, actual primary, preserved first reference with all other checks passing, and separately authorized exact scalar resolution of REF01.",
+  "open_material_findings": [],
+  "open_material_finding_count": 0,
+  "required_corrections": [],
+  "review_scope": {
+    "pass": "One bounded R8 theory/code review continued through actual evidence and the single observed scalar failure.",
+    "reviewer_authored_original_proof": false,
+    "reviewer_authored_production_core": false,
+    "reviewer_authored_primary_or_reference_runner": false,
+    "reviewer_proposed_targeted_scalar_math_after_failure": true,
+    "scalar_repair_code_author": "Separate agent /root/r8_phi_scalar_repair",
+    "method": "Manual independent proof and static equation/source review; read actual immutable result records, source identities, process receipts and failure-specific exact scalar evidence.",
+    "reviewer_scientific_runs": 0,
+    "reviewer_imports": 0,
+    "reviewer_AST_or_test_runs": 0,
+    "reviewer_CAS_calls": 0,
+    "reviewer_old_science_replay": 0,
+    "reviewer_external_writes": 0,
+    "reviewer_DAG_mutation": false
+  },
+  "current_adoption_authority": {
+    "root_owned": true,
+    "DAG_at_review": {
+      "complete": 15,
+      "total": 32
+    },
+    "reviewer_recommendation": "Adopt only the scoped R8 conditional method and implementation nodes under root-owned S09 admission.",
+    "no_claim_of_already_published_adoption": true,
+    "physical_completion_delta": 0,
+    "central_completion_delta": 0
+  },
+  "source_commits": {
+    "baseline": "c1badb7de44131715a4998d76515506da5573707",
+    "proof_and_core_S03": "d2c999833ce4ef18cf8d43a1efae3be3cc2f1272",
+    "reference_S04": "30b11c5502aab334faa1d8ee797beffadb2e93a6",
+    "actual_primary_S06": "72931db38a5dbfc7b12720455c44109039a8f711",
+    "actual_reference_S07": "b87ea61ab2d5e17221a6cf3b710aec074eb1a28e",
+    "actual_scalar_S08": "ade11fe31248d5417902827e5a563ee9a71a065e"
+  },
+  "source_sha256": {
+    "theory/PROOF_KO.md": "ad538b788403b425ffbcf5d5b29fe5d4a5ba09603fb36009fc85885e98cba8c2",
+    "theory/THEORY_CODE_MAP.json": "fa66da187a4a1261155928eb271bea767445f178a6b0fe89e19ebc2d07238c32",
+    "src/volterra_feedback.py": "3a415e8ccc76669a95bec30aa52fc1f1ad867cff1fd9fcca66734fb71872fba3",
+    "verification/PRIMARY_INPUT.json": "b47d561f1dc77c42a16544df0f59066b17d1bf8a50430a3ac5ba25845068e84c",
+    "verification/run_primary.py": "19aa784543bf75343e70ba76f9696cca0ecce7396e03d2c5c4206827dcf8250a",
+    "verification/run_reference.py": "e0d4d88e367413b1e72a88c2d25b223f69ea0c37a916b7b40c610df78e0c4c2f",
+    "verification/run_phi_scalar_repair.py": "219825e3786085951e456cb7408044598bc30166f5decee5669bc27c4147998d",
+    "verification/PHI_SCALAR_REPAIR_CONTRACT.json": "fd3fa880f185a06ca2b8af1a7812a5e2e804afb5cf916ba31c2c4ba842f0a9bf",
+    "reviews/PHI_SCALAR_REPAIR_MATH_KO.md": "e67fcda3b744c97b10cfd1ba98a96897b2a05450846e3f23e1779da4532bd34c",
+    "delivery/build_checkpoint.py_at_S08": "f0bd0934eef28d48b427e38cb4ea6a08de9ed9d834470d57c70ecfef7100c2f8"
+  },
+  "reused_frozen_evidence_sha256": {
+    "R6_primary": "1a3b55f7c14a64a10a651de2df7b7f7d2df24d0b9e809b729f32d73377c90e84",
+    "R6_all_starts_proof": "643e9c918353c068e648e5c74290a608b9993be487d7f4773278880db1a7c51c",
+    "R7_primary": "6eaf3c0eed7968cf4023180e15373a180bb5b1bab2e56cd4a8547387ed337a15",
+    "R7_reference": "e403c7803c080fd4f26be71a93b782b02d874f80ef11c85a706bea71e2a743cd",
+    "R7_core": "002a66a30961b21e566a940462468c9ea8e1bc868d98549d3ea79d164c239957"
+  },
+  "proof_and_code_assessment": {
+    "inherited_theory_decision": "PASS_SCOPED_CONDITIONAL_LAG_KERNEL_THEORY",
+    "preserved_hypotheses": [
+      "Residual forcing lies in the invariant zero-sum space Z and nominal Markov propagation preserves Z.",
+      "Every reused H/rho certificate is uniform over all starts and belongs to the same clock, ordered state space, norm and nominal family.",
+      "Nonnegative a,b,c,g and real d are valid constant bounds across the full three-block horizon; reaction/reset feedback remains in those coefficients.",
+      "Initial whole-cell bounds and point caps are genuine source-bound upper certificates; metadata booleans alone are insufficient."
+    ],
+    "accepted_correspondence": [
+      "All-starts lag composition and nonexpansive remainders justify the monotone kernel ladder.",
+      "Whole-cell and endpoint h indices are distinct and correct; current-cell forcing uses h0=1.",
+      "Signed-d extrema, regular d=0 and nilpotent/singular controls are consistent with the proof.",
+      "Exactly two passes read the previous complete cell array; final exact minima preserve original Fraction bounds.",
+      "Upward dyadic128 positive arithmetic and signed exponential-factor directions provide upper enclosures.",
+      "Native K midpoint, shared R6 lambda/P_lower, H/rho, state order, exact time-grid membership and source identities are bound by the primary caller.",
+      "The 192-cell baseline and 18 per-case saved point caps have actual original source membership.",
+      "Independent Decimal80 reference has no production import and uses separate direct convolution and closed controls.",
+      "Sampled saved binary64 trajectories corroborate the bound without serving as caps or continuous ODE certificates."
+    ],
+    "finite_runtime_domain": "Core admits at most192 cells, at most8 certificates, exactly2 passes,128 bits, bounded8192-bit exact scalars and |d*delta|<=16. The actual reference cases are the fixed narrower inputs |d*delta|<=1/4; runtime checks do not claim exhaustive testing of the entire domain."
+  },
+  "actual_runs": {
+    "primary": {
+      "status": "PASS",
+      "runs": 1,
+      "named_checks_passed": 237,
+      "named_checks_total": 237,
+      "failures": 0,
+      "result_path": "raw/PRIMARY_RESULTS.json",
+      "result_sha256": "520110d1cae1677491aecd7216621c25f1098470c939ee027d5df3bde183686b",
+      "result_bytes": 2194159,
+      "process_path": "raw/PRIMARY_PROCESS.json",
+      "process_sha256": "3484372d5fab9e697d08753f37ed2e2330794c8e434f4416033df76e5830bdc1",
+      "returncode": 0,
+      "OS_CPU_s": 3.807278,
+      "CPU_limit_s": 60
+    },
+    "first_reference": {
+      "original_status": "FAIL",
+      "original_status_preserved": true,
+      "runs": 1,
+      "named_checks_passed": 726,
+      "named_checks_total": 727,
+      "failed_checks": 1,
+      "component_comparisons_passed": 22658,
+      "component_comparisons_total": 22659,
+      "failed_components": 1,
+      "sole_failed_check": "saved_native_nine_state_K_conditional_feedback: phi factor",
+      "result_path": "raw/REFERENCE_RESULTS.json",
+      "result_sha256": "da699b9a8b53389e3d222f34a5a421cd88ce17787bde69cc2e9bed5fb15409df",
+      "result_bytes": 1739360,
+      "process_path": "raw/REFERENCE_PROCESS.json",
+      "process_sha256": "3aa8eed5243810dec2699ac5227921079e719047185332af7f25b55743d64174",
+      "returncode": 1,
+      "OS_CPU_s": 0.440898,
+      "CPU_limit_s": 60,
+      "separately_adjudicated_failure": "REF01 resolved below; the original result is not relabelled PASS.",
+      "cap_checks": {
+        "passed": 144,
+        "total": 144
+      },
+      "saved_sample_corroboration": "All four cases' 193 endpoint rows and both boundaries of 192 closed cells passed the predeclared tolerances; these are not independent physical scenarios."
+    },
+    "targeted_phi_scalar": {
+      "status": "PASS",
+      "runs": 1,
+      "named_checks_passed": 24,
+      "named_checks_total": 24,
+      "failures": 0,
+      "result_path": "raw/PHI_SCALAR_REPAIR_RESULTS.json",
+      "result_sha256": "0ea2399efd86657703a826e01b2c71528e994b990ae6ab9ffdab8c84653f2dcc",
+      "result_bytes": 30508,
+      "process_path": "raw/PHI_SCALAR_REPAIR_PROCESS.json",
+      "process_sha256": "262cec601e172056eb3b7d996d4c9ff3f434186a7887b207a9c14d62c3cb1f13",
+      "returncode": 0,
+      "timeout": false,
+      "OS_CPU_s": 0.072788,
+      "CPU_limit_s": 10,
+      "wall_limit_s": 30,
+      "actual_wall_s": 0.07363234000000318,
+      "GITHUB_RUN_ID": "40536762714",
+      "runner_and_contract_match_reviewed_hashes": true,
+      "original_raw_hashes_unchanged_after_scalar": true,
+      "production_imports": 0,
+      "exponential_evaluations": 0,
+      "new_ODE_runs": 0,
+      "prior_primary_reruns": 0,
+      "prior_reference_reruns": 0
+    },
+    "accounting": {
+      "complete_python_process_CPU_s": 4.320964,
+      "includes_imports_and_serialization": true,
+      "original_failed_reference_cost_included": true,
+      "CAS_CPU_s": null,
+      "CAS_CPU_status": "NOT_AVAILABLE; not included in the Python process total.",
+      "backup_transport_and_metadata_CPU_included": false,
+      "full_historical_CPU": null,
+      "counts_are_distinct_physical_scenarios": false
+    }
+  },
+  "closed_findings": [
+    {
+      "id": "PRE01",
+      "disposition": "RESOLVED",
+      "origin": "Root preexecution integration review found an exact no-worse check using Decimal80-rounded caps.",
+      "resolution": "The reference compares original verified cap_provenance.upper as exact Fractions.",
+      "actual_closure": "All144 retained exact cap groups passed in the sole actual reference run.",
+      "original_fix_record": "reviews/PREEXECUTION_FINDINGS.json"
+    },
+    {
+      "id": "REF01",
+      "disposition": "RESOLVED_BY_EXACT_SCALAR_RE_ADJUDICATION",
+      "original_failure_preserved": true,
+      "diagnosis": "The fixed1e-30 upper-closeness tolerance omitted1/abs(d) amplification of the exp interval width at d=-1/20000000.",
+      "original_positive_Decimal_gap": "2.91082879488003260494168072896889699597324659550784E-30",
+      "old_threshold": "1e-30",
+      "exact_interval_width": "51/2^128",
+      "analytic_slack_budget": "1020000001/2^128",
+      "independent_enclosure": "With x=(-d)*delta in(0,1), fixed odd S9=L and even S8=U satisfy L<=phi<=U by the alternating integral-series theorem; U-L=delta*x^9/10!.",
+      "actual_required_checks": [
+        {
+          "name": "19 saved phi dominates exact upper partial sum",
+          "result": "PASS",
+          "meaning": "phi<=U<=saved P, a direct rigorous upper certificate."
+        },
+        {
+          "name": "20 saved phi slack is within source-induced analytic budget",
+          "result": "PASS",
+          "meaning": "P-L<=A+(U-L), with exact source-induced A."
+        },
+        {
+          "name": "21 exact positive slack explains original closeness failure",
+          "result": "PASS",
+          "meaning": "P-U>1e-30 proves the old threshold is genuinely exceeded by conservative slack."
+        },
+        {
+          "name": "23 original raw identities unchanged after scalar evaluation",
+          "result": "PASS",
+          "meaning": "The first primary/reference bytes remain unchanged."
+        }
+      ],
+      "source_core_input_or_original_tolerance_changed": false,
+      "full_reference_retry": false,
+      "original_preflight_limitation": "The initial static review did not flag the fixed tolerance's missing small-|d| dependence; the observed failure and this correction remain in the record.",
+      "evidence": "raw/PHI_SCALAR_REPAIR_RESULTS.json",
+      "further_science_required": false
+    }
+  ],
+  "observed_improvement": {
+    "source": "Recorded fields in raw/PRIMARY_RESULTS.json; no reviewer reevaluation.",
+    "final_saved_R7_endpoint_strict_components": {
+      "two_state_no_reaction": [
+        false,
+        false
+      ],
+      "two_state_nonlinear": [
+        true,
+        true
+      ],
+      "two_state_coarse_source_defect": [
+        true,
+        true
+      ],
+      "saved_native_nine_state_K_conditional_feedback": [
+        true,
+        true
+      ]
+    },
+    "whole_cell_components_strict_vs_previous_pass": {
+      "two_state_no_reaction": [
+        0,
+        0
+      ],
+      "two_state_nonlinear": [
+        376,
+        382
+      ],
+      "two_state_coarse_source_defect": [
+        379,
+        383
+      ],
+      "saved_native_nine_state_K_conditional_feedback": [
+        326,
+        384
+      ]
+    },
+    "per_pass_total_components": 384,
+    "interpretation": "Strict improvement is observed in the three reactive fixtures and is not claimed universally; the no-reaction fixture remains unchanged."
+  },
+  "CAS": {
+    "status": "QUALIFIED_PARTIAL_SYMBOLIC_CORROBORATION",
+    "original_calls": 1,
+    "export_only_repair_calls": 1,
+    "total_actual_calls": 2,
+    "initial_status": "FAILED_JSON_RESULT_EXPORT; actual Out[1]=$Failed preserved.",
+    "scalar_residuals_zero": 7,
+    "scalar_residuals_total": 7,
+    "kernel_controls_zero": 9,
+    "kernel_controls_total": 9,
+    "boolean_inequalities_true": 4,
+    "boolean_inequalities_total": 6,
+    "unresolved_symbolic_inequalities": 2,
+    "unresolved_disposition": "Manual positivity proof R8.14 and cell-lag proof R8.12 were independently reviewed; unresolved CAS expressions are not labelled CAS PASS.",
+    "warnings": [
+      "Power::infy",
+      "Infinity::indet"
+    ],
+    "warning_cause": "NOT_ESTABLISHED",
+    "warning_free": false,
+    "general_proof_replaced_by_CAS": false,
+    "CPU_s": null,
+    "sha256": {
+      "raw/WOLFRAM_INITIAL_RESPONSE.json": "fd02f0c1545fa7ebdbbfdab2e7b764a87d6a3cc85e81258deaab46e575826c5d",
+      "raw/WOLFRAM_REPAIR_RESPONSE.json": "f14887dabfe6cbcd59286b5e0bd266bebd307e444af18905c8b0cea43d7051e0",
+      "raw/WOLFRAM_REPAIR_RESULTS.json": "d04de5028989db7b0a5a322d5f10a5ab8da06d37010e7cdf0c58f174cd118d2d",
+      "raw/WOLFRAM_QUALIFIED_SUMMARY.json": "68dd9fc032e398426e90ae5fc6450ef41fb2a8ff4555d8faeed698de7863638c"
+    }
+  },
+  "budget_disposition": {
+    "original_R8_primary_remaining": 0,
+    "original_R8_reference_remaining": 0,
+    "original_R8_CAS_remaining": 0,
+    "targeted_CAS_export_repair_remaining": 0,
+    "targeted_phi_scalar_remaining": 0,
+    "old_R7_R6_PHYS91_remaining": [
+      0,
+      0,
+      0
+    ],
+    "old_budget_reset_or_transfer": false,
+    "global_remaining": null,
+    "no_additional_run_requested": true
+  },
+  "material_limitations": [
+    "The result is a conditional finite estimator and its implementation; no named physical HD consumer, new reactive rate/state array or collider density/physical-clock binding is admitted.",
+    "Literal native HD vibrational labels remain v=UNSPECIFIED; the nominal excitation generator and synthetic reaction feedback are distinct.",
+    "Certificates from another family, clock, state order or without all-starts validity require new binding and cannot use this decision automatically.",
+    "All-horizon coefficient and initial-envelope assumptions must be valid; the API does not turn arbitrary caller-supplied arrays into physical evidence.",
+    "The first reference retains one failed historical closeness check, closed scientifically by separate exact scalar evidence. It must not be reported as an originally flawless727/727 run.",
+    "CAS warnings and two unresolved symbolic signs remain qualified historical evidence; no global warning-free claim is supported.",
+    "No fundamental-new-theorem, strong-no-go, new continuous ODE enclosure or production-physics readiness claim is made."
+  ]
+}

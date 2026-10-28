@@ -1,0 +1,14 @@
+{
+  "schema": "WU_R6_CLAIM_ASSUMPTION_ALIGNMENT_V1",
+  "convention": "Finite column vectors; Z={z:sum(z)=0}; all coefficient bounds apply throughout the specified time window.",
+  "claims": [
+    {"id":"T1","input":"Exact rational z in [0,256]; bounded arithmetic precision","output":"An outward rational interval containing exp(-z)","proof":"INTERVAL_BLOCK_PROOF_KO.md sections1 and8","code":"exp_neg"},
+    {"id":"T2","input":"Strictly positive lower and upper weights; supplied simplex normalization","output":"Coordinate enclosures for the same exact Gibbs probability and direct upward/downward pair ratio","proof":"INTERVAL_BLOCK_PROOF_KO.md sections1-2","code":"normalize_weights, thermal_from_levels, pair_ratio"},
+    {"id":"T3","input":"Locally bounded measurable Markov generator family A(t), common lambda bounding all exits, common nonnegative Pminus","output":"Time-ordered propagator lower bound from a finite positive uniformization polynomial; zero-sum contraction rho for every H window","proof":"INTERVAL_BLOCK_PROOF_KO.md section3","code":"GeneratorBox, uniformization_lower, finite_block"},
+    {"id":"T4","input":"0<=kappa<=min_j v_j(t), simplex pi(t), full reset generator A","output":"Residual homogeneous kernel bounded by exp(-kappa age) rho^floor(age/H)","proof":"INTERVAL_BLOCK_PROOF_KO.md section4","code":"reset_generator_bounds"},
+    {"id":"T5","input":"x0,f,v nonnegative; same prescribed F in coarse model; nonnegative initial envelopes; valid interval-wide lower damping and upper forcing/coupling coefficients","output":"Rational endpoint and whole-block M,U,E bounds","proof":"INTERVAL_BLOCK_PROOF_KO.md section5","code":"forced_step"}
+  ],
+  "source_application": "Literal native 100K HD + para-H2 supplied graph; kappa=0, A=K, density and physical consumer unbound.",
+  "roundoff_and_input_uncertainty": "Arithmetic outwardness applies to declared decimal literals. Unspecified source measurement uncertainty, missing channels and actual reactive data remain separate inputs.",
+  "status": "Definitions and proof obligations aligned; numerical execution and final adoption recorded later."
+}

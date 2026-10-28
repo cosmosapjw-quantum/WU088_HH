@@ -1,0 +1,73 @@
+{
+  "schema": "WU_R6_REFERENCE_RUN_RECEIPT_V1",
+  "contributor": "/root/r6_primary_theory",
+  "role": "independent_reference_implementation_and_execution_not_final_C9_reviewer",
+  "command": "python verification/reference_r6.py --input verification/REFERENCE_INPUT.json --output raw/INDEPENDENT_RESULTS.json",
+  "cwd": "/workspace/scratch/16df962c9b4e/wu_resume_20261027/r6_worktree/research/provider_registry_molecular_r6_20261027",
+  "result_path": "/workspace/scratch/16df962c9b4e/wu_resume_20261027/r6_worktree/research/provider_registry_molecular_r6_20261027/raw/INDEPENDENT_RESULTS.json",
+  "result_sha256": "7e7bbae7ae5285230c14ef8fbb258ef15a92635eebfb0e0ca04df6933859c5ba",
+  "script_sha256": "11650b677ebbd96f9bab9463d8b14d102185e233f402a26d8170fe3d6c1596a8",
+  "input_sha256": "de0c817c082f158bf6219e1e66a2a281204d8af324b8e5e1e083361a4860440c",
+  "primary_result_sha256": "1a3b55f7c14a64a10a651de2df7b7f7d2df24d0b9e809b729f32d73377c90e84",
+  "started_utc": "2026-10-27T12:24:13.053044+00:00",
+  "finished_utc": "2026-10-27T12:24:13.816377+00:00",
+  "exit_code": 0,
+  "status": "NUMERICAL_CROSSCHECKS_COMPLETED",
+  "case_count": 109,
+  "mismatch_count": 0,
+  "tool_wall_seconds": 1.023403557,
+  "recorded_run_window_cpu_seconds": 0.6895740779999999,
+  "recorded_total_process_cpu_seconds": 0.822867308,
+  "recorded_internal_wall_seconds": 0.7633639199993922,
+  "cpu_allowance_seconds": 60,
+  "cpu_allowance_satisfied_at_finalize": true,
+  "allowance_consumed": {
+    "new_R6_independent_reference_runs": 1,
+    "reference_reruns": 0,
+    "PHYS91_new_runs": 0,
+    "old_scope_replays": 0
+  },
+  "production_core_imports": false,
+  "external_writes": 0,
+  "precision": {
+    "backend": "decimal.Decimal",
+    "decimal_digits": 250,
+    "rounding": "ROUND_HALF_EVEN",
+    "guard_digits": 15,
+    "scipy_atol": 2e-12,
+    "scipy_rtol": 2e-11
+  },
+  "versions": {
+    "python": "3.12.14",
+    "decimal_module": "1.70",
+    "libmpdec": "4.0.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "exact_endpoint_annotation": {
+    "case": "boltzmann_level_1",
+    "reference": "1",
+    "lower": "1",
+    "upper": "1",
+    "raw_label": "NUMERICALLY_COMPATIBLE_BUT_NOT_RESOLVED_AT_250_DPS",
+    "interpretation": "The generic strict-interior classifier labels the exact zero-width identity exp(0)=1 as not interior-resolved. This is not a transcendental precision failure. Raw result and script were preserved unchanged; no rerun."
+  },
+  "scope": {
+    "source": "native100K_paraH2_n9_provided_graph",
+    "source_blocks": 4,
+    "forced_primary_fixtures": 3,
+    "forced_sample_clocks_per_fixture": 33,
+    "switched_fixtures": 1,
+    "analytic_clock_controls": 6,
+    "physical_destruction": "INPUT_PENDING",
+    "physical_density": "UNBOUND",
+    "production": "NOT_ISSUED",
+    "final_independent_C9_review": "SEPARATE_PENDING"
+  },
+  "limitations": [
+    "SciPy entrywise comparisons are numerical checks with explicit tolerance, not outward certificates.",
+    "The whole-time theorem depends on the rational certificate and proof; 33 sampled clocks per forced fixture are corroboration.",
+    "The exact endpoint classifier limitation is annotated without overwriting the first result.",
+    "Reported postprocessing only reads and formats saved scalars; it does not rerun scientific calculations."
+  ]
+}

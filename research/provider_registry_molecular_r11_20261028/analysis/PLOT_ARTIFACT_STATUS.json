@@ -1,0 +1,131 @@
+{
+  "schema": "WU_R11_POSTPROCESSING_ARTIFACT_STATUS_V1",
+  "status": "PASS_FINAL_ARTIFACTS_FIXED",
+  "created_utc": "2026-10-28T04:18:19.280257+00:00",
+  "scope": "saved-output JSON postprocessing and figure integrity only; no scientific module import, solver, ODE, native exponential, or reference rerun",
+  "scientific_reruns": 0,
+  "frozen_scientific_files_matching": 18,
+  "frozen_scientific_files_total": 18,
+  "first_failure": {
+    "record": "analysis/failures/FIRST_FIGURE_FAILURE.json",
+    "preserved_failed_bytes": "analysis/failures/BOUND_ENDPOINTS_FIRST_TRUNCATED.png.bin",
+    "status": "CLOSED_ARTIFACT_REGENERATED",
+    "cause": "NOT_ESTABLISHED",
+    "observation": "first BOUND_ENDPOINTS PNG had incomplete IDAT checksum and fewer bytes than initial manifest; observation followed attempted image inspection, causation is not established"
+  },
+  "repair": [
+    "write temporary PNG/SVG, verify PNG checksum before atomic replace",
+    "regenerate plots only from unchanged saved scientific outputs",
+    "set stairs baseline=None to avoid closure lines from certificate values to zero at plot borders",
+    "correct C9-F02 prose: approach the right endpoint from the left"
+  ],
+  "postprocessing_validation_note": "An initial ad-hoc pixel-size assertion expected diagnostic height 1566; Matplotlib output is 1565 pixels for 8.7 inches at 180 dpi. The incorrect expectation was corrected to the actual rendered size. No scientific or plotted data changed.",
+  "verification": {
+    "PNG_integrity": "3/3 PASS",
+    "SVG_parse": "3/3 PASS",
+    "figure_manifest_size_and_SHA256": "6/6 MATCH after preview inspection",
+    "visual_inspection": "3/3 final PNG JPEG previews legible; captions, axis labels, legends, and endpoints/whole-cell distinction reviewed",
+    "C9_F02_exact_phrase": "셀의 오른쪽 끝점에 왼쪽에서 접근한 극한을 whole-cell 인증에 포함했다.",
+    "C9_F02_status": "CORRECTED; independent reviewer to close"
+  },
+  "files": [
+    {
+      "path": "figures/BOUND_ENDPOINTS.png",
+      "bytes": 456080,
+      "sha256": "cd4be2346b2861a2b2f894a6230e0cdf72e61042205a609cf4c92edb3a52027a",
+      "manifest_match": true,
+      "PNG_integrity": "PASS",
+      "width": 2304,
+      "height": 2484,
+      "visual_inspection": "PASS via JPEG preview of final PNG"
+    },
+    {
+      "path": "figures/BOUND_ENDPOINTS.svg",
+      "bytes": 208538,
+      "sha256": "19819f7f4eb7ad018efd58080660a705a3563b35d5c7f94c1e1846e786427901",
+      "manifest_match": true,
+      "SVG_parse": "PASS"
+    },
+    {
+      "path": "figures/WHOLE_CELL_CERTIFICATES.png",
+      "bytes": 345490,
+      "sha256": "e6811c0daa3116d7d00c73df896ad06044d4da4b27d8bce6c471fdc972ffe575",
+      "manifest_match": true,
+      "PNG_integrity": "PASS",
+      "width": 2304,
+      "height": 2484,
+      "visual_inspection": "PASS via JPEG preview of final PNG"
+    },
+    {
+      "path": "figures/WHOLE_CELL_CERTIFICATES.svg",
+      "bytes": 327678,
+      "sha256": "f0741c4ba63f5316bf76cfbae24fc2a4d506d3fe912559d624a54d1658e105d5",
+      "manifest_match": true,
+      "SVG_parse": "PASS"
+    },
+    {
+      "path": "figures/KERNEL_CONTROL_DIAGNOSTICS.png",
+      "bytes": 222611,
+      "sha256": "bbc3c815ffac0be71a85146df697f5659cb7e8c06dbe6c160dd815ca64e649e1",
+      "manifest_match": true,
+      "PNG_integrity": "PASS",
+      "width": 2304,
+      "height": 1565,
+      "visual_inspection": "PASS via JPEG preview of final PNG"
+    },
+    {
+      "path": "figures/KERNEL_CONTROL_DIAGNOSTICS.svg",
+      "bytes": 160848,
+      "sha256": "7e3f6065d249b9d27e2ced17618e75a4266e65e8642561a2d3d66cd33e5ab912",
+      "manifest_match": true,
+      "SVG_parse": "PASS"
+    }
+  ],
+  "analysis_files": [
+    {
+      "path": "analysis/plot_saved_results.py",
+      "bytes": 22690,
+      "sha256": "9b188ac73682bcf45ad46917ab8a211d30bc88b51140e8d25af1de29e14708f3"
+    },
+    {
+      "path": "analysis/SAVED_OUTPUT_SUMMARY.json",
+      "bytes": 42821,
+      "sha256": "78da029190b070e43fdfb8a8eef6552f4dd9dd22c6e525fb51897bc8e8cc2ba1"
+    },
+    {
+      "path": "RESULTS_KO.md",
+      "bytes": 6937,
+      "sha256": "b8bec5e1f554b33c1374b8a42e851bd1c0f44c992edf2c85ac2b9fbb5f545aca"
+    },
+    {
+      "path": "figures/FIGURE_MANIFEST.json",
+      "bytes": 1349,
+      "sha256": "89ad475f9dac929c75ef0d912c4c2a235afbe67517e070eb551d536c7d9343fd"
+    }
+  ],
+  "all_capped_endpoint_values_equal_R10": true,
+  "new_scientific_python_OS_CPU_sum_s": 1.477435,
+  "temporary_artifact_cleanup": {
+    "path": "figures/WHOLE_CELL_CERTIFICATES.temporary.png",
+    "bytes": 65653,
+    "sha256": "6d97b0f50c2e26046cd678aeef6b010f587d16cf5f14e378737f056e9c7cb776",
+    "mtime_utc": "2026-10-28T04:15:53.781285+00:00",
+    "action": "removed obsolete temporary postprocessing artifact after successful final-file verification",
+    "scientific_files_changed": false
+  },
+  "temporary_artifacts_remaining": 0,
+  "root_observed_temporary_cleanup_delta": {
+    "observed_utc": "2026-10-28T04:20:41.571331+00:00",
+    "path": "figures/WHOLE_CELL_CERTIFICATES.temporary.png",
+    "observed_after_author_reported_cleanup": true,
+    "cause": "NOT_ESTABLISHED",
+    "scientific_files_affected": 0,
+    "final_figure_files_affected": 0,
+    "S08_source_commit": "f98770947a4b20a8c8121edbf2d140992dfebc92",
+    "S08_archive_preserves_incidental_temporary_bytes": true,
+    "bytes": 65653,
+    "sha256": "6d97b0f50c2e26046cd678aeef6b010f587d16cf5f14e378737f056e9c7cb776",
+    "immediate_root_cleanup_exists": false,
+    "publication_correction": "Explicitly exclude .temporary. files from source snapshot and delete any previously published temporary path in S09 tree; retain observed failure and cleanup history."
+  }
+}

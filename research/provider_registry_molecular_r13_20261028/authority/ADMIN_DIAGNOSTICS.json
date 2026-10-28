@@ -1,0 +1,13 @@
+{
+  "schema": "WU_R13_ADMIN_DIAGNOSTICS_V1",
+  "scope": "Metadata retrieval and publication transport; scientific runs and source equations unchanged.",
+  "events": [
+    {"id":"ADM01","phase":"baseline_restore","observation":"exec-server rejected request: Argument list too long (os error7) before process creation","cause":"Attempted passing all large initial GitHub responses as one shell argument","correction":"Retain tool results in orchestration state and write bounded selected source files; no scientific process launched"},
+    {"id":"ADM02","phase":"baseline_parse","observation":"SyntaxError Unexpected token # while JSON.parse of AGENTS contents","cause":"GitHub fetch returns file text directly for this URL, while ref/PR endpoints return serialized JSON","correction":"Parse response according to observed content type; raw AGENTS text preserved"},
+    {"id":"ADM03","phase":"baseline_summary","observation":"KeyError current_status in administrative DAG summary","cause":"Inherited DAG nodes use both current_status and status fields","correction":"Reuse actual DAG counts and preserve complete node objects; no scientific count reclassification"},
+    {"id":"PUB01","phase":"S02_transport","observation":"SyntaxError Unexpected token W, Warning: t... is not valid JSON","cause":"Single executor output of1073044byte tree-entry packet was truncated","correction":"Read independently chunked12000character JSON fragments, reassemble exact content before create_tree; same immutable S02snapshot retained","remote_mutation_from_failed_parse":false},
+    {"id":"DRIVE_QUERY01","phase":"backup_census","observation":"top_k5000 API400","correction":"Used supported1000 folder listing, then traversed all discovered child folders; finalselectedscopequeue0/cap0","evidence":"authority/intake/backups/BACKUP_CONTEXT_CENSUS.json"}
+  ],
+  "new_scientific_executions_caused_by_these_events":0,
+  "historical_R8_R10_R11_R12_failures":"Unchanged immutable sources, explicitly retained in EXECUTION_LEDGER.json"
+}

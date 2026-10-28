@@ -1,0 +1,31 @@
+{
+  "source_read_end": "2026-10-28T10:49:20.441Z",
+  "private_summary": {
+    "repositories": 16,
+    "open_rows": 54,
+    "open_pages": 17,
+    "closed_pages": 16,
+    "all_terminal": true
+  },
+  "duplicate_keys": 0,
+  "schema": "WU_R15_PR_INTAKE_DIAGNOSTICS_V1",
+  "scientific_runs": 0,
+  "scientific_imports": 0,
+  "CAS_calls": 0,
+  "external_writes": 0,
+  "administrative_events": [
+    {
+      "kind": "output_serialization",
+      "event": "First attempt to bring the entire old PR baseline into tool output was truncated; JSON parsing failed. Replaced with metadata-only read; comparison performed locally without rerunning census."
+    },
+    {
+      "kind": "schema_adapter",
+      "event": "First local delta helper expected repo inside each old PR row, but old rows bind repository at outer scope. Corrected by exact enclosing repo identity; unchanged acceptance fields and data."
+    },
+    {
+      "kind": "source_locator",
+      "event": "CR sum REPORT_KO.md returned actual missing-path error. Current immutable commit changed-file list identified REPORT_SCIENCE_KO.md, which was read and blob-verified."
+    }
+  ],
+  "source_interpretation": "No census API errors, no scientific execution failure. Administrative read/format issues separately retained."
+}

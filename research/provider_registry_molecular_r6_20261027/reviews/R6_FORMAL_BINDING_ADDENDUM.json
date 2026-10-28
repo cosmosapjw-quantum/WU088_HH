@@ -1,0 +1,86 @@
+{
+  "schema": "WU_R6_FORMAL_THEORY_REVIEW_BINDING_ADDENDUM_V1",
+  "reviewer": "/root/r6_inventory",
+  "decision": "PASS_SCOPED_GENERAL_N_THEORY_RECONFIRMED",
+  "original_review": {
+    "path": "independent_theory/R6_REVIEW.json",
+    "sha256": "7649fed966232724b9bcfcf85254d23fa90699e454483e8e443041b2522f6a4a"
+  },
+  "original_draft_sha256": "2841a91c6f599b423e0658c5a258a409a01df424f1ca59f128737d4babe3314f",
+  "formal_proof": {
+    "path": "theory/INTERVAL_BLOCK_PROOF_KO.md",
+    "sha256": "643e9c918353c068e648e5c74290a608b9993be487d7f4773278880db1a7c51c"
+  },
+  "comparison": "Read actual full text diff against the reviewed contribution, plus new equation/code map and representation choice. No numerical evaluation or proof-suite replay.",
+  "corrections": [
+    {
+      "id": "R6-N1",
+      "status": "CLOSED_ACTUAL_TEXT_READBACK",
+      "reason": "Section5 now explicitly declares x0,f,h,d>=0, simplex pi, same prescribed F, nonnegative initial/upper bounds,0<=k,b and denominators>=1."
+    },
+    {
+      "id": "R6-N2",
+      "status": "CLOSED_ACTUAL_TEXT_READBACK",
+      "reason": "Analytical V_n and stored rational Uhat_n are distinct, using q=rho exp(-kappa H) versus qhat=rho/(1+kappa H); their geometric forms and whole-block meanings are separate. The equality formula in constant-G subsection is interpreted with the chosen constant upper sequence G_n=G."
+    }
+  ],
+  "appendix_checks": [
+    {
+      "section": "8",
+      "decision": "PASS",
+      "reason": "M_{m+1}=down(M_m Ptilde), w_{m+1}=down(w_m mu/(m+1)) preserve nonnegative entrywise lower directions by induction; termwise floor and nonnegative sum preserve Rhat<=RN<=Phi. Partial overlaps are monotone because stored entries only increase."
+    },
+    {
+      "section": "8 exponential",
+      "decision": "PASS",
+      "reason": "Positive odd/even bracket plus directed squaring matches core. Initial Taylor threshold is correctly distinct from final interval width; zero lower values at insufficient precision are allowed only for exp enclosure, while normalization rejects them."
+    },
+    {
+      "section": "8 singleton",
+      "decision": "PASS",
+      "reason": "beta1/rho0 is explicitly restricted to Z={0}, not a claim of unit scalar truncated-propagator mass."
+    },
+    {
+      "section": "9",
+      "decision": "PASS",
+      "reason": "Exact SI unit conversion, immutable source/parser use, direct Gibbs pair ratio, native dimensionless clock, conservative full-A exits and caller-owned coefficient/identity obligations match inspected core."
+    },
+    {
+      "path": "theory/REPRESENTATION_CHOICE.md",
+      "sha256": "5683721731e3713ca52264b89e27500eec1422b3d2d2c4236e3bac6595e5a1c9",
+      "decision": "PASS_SYMBOLIC_REVIEW",
+      "reason": "For the stated3-state chain, P² has all columns e3; pair1/3 gives minimum overlap exp(-H)H²/2. The exact difference norm2exp(-t)(1+t) has zero initial decay slope. This is a finite-chain illustration, not a new no-go."
+    }
+  ],
+  "minor_map_clarification": {
+    "path": "theory/EQUATION_CODE_MAP.md",
+    "reviewed_sha256": "9300b7414ff72427161c190fab1b7b05a244c08d8c55a2490700bcca8ae62a1d",
+    "target": "Uniformization row label",
+    "observation": "The map labels P_-=I+A/lambda, whereas the proof and code use actual P(t)=I+A(t)/lambda and a common P_-<=P(t).",
+    "minimal_text": "Write P(t)=I+A(t)/lambda, P_-<=P(t).",
+    "blocking": false,
+    "core_or_formal_proof_error": false,
+    "status": "REPORTED_TO_ROOT"
+  },
+  "core_binding": {
+    "path": "src/interval_block.py",
+    "sha256": "dbc4767b31775fb6655a92fb20d299f8bea9578f8340bd7bcff4d4f677cab551",
+    "static_review": "independent_code/C9_STATIC_REVIEW.json",
+    "code_numerics": "FinalC9 remains separate"
+  },
+  "executions_by_reviewer": {
+    "numerical": 0,
+    "CAS": 0,
+    "IVP": 0,
+    "old_science": 0,
+    "external_writes": 0
+  },
+  "original_scope_retained": {
+    "physical_consumer": "UNBOUND",
+    "reactive_destruction": "UNBOUND",
+    "L4_ready": false,
+    "production": "NOT_ISSUED",
+    "new_fundamental_theorem_claim": false,
+    "strong_no_go_claim": false
+  }
+}

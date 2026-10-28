@@ -1,0 +1,99 @@
+{
+  "schema": "WU_R4_FIGURE_REVIEW_AXIS_CORRECTION_V1",
+  "stage": "S09_R9_C9_TARGETED_METADATA_REPAIR",
+  "corrected_UTC": "2026-10-27T06:33:53Z",
+  "finding_author": "/root/authority_survey",
+  "repair_author": "/root/molecule_sources",
+  "status": "RESOLVED_METADATA_ONLY",
+  "error": "The S08 review incorrectly described the HD coefficient axis as linear. The plotted HD temperature axis is linear, but its coefficient axis is logarithmic.",
+  "evidence": {
+    "code_path": "verification/plot_diagnostics.py",
+    "coefficient_axis_statement": "a.set_yscale(\"log\") is applied to both columns.",
+    "temperature_axis_statement": "axis.set_xscale(\"log\") is applied only when column==0 (LiH); the HD temperature axes retain linear scale.",
+    "residual_axis_statement": "Both residual ordinate axes remain linear and their displayed unit is percent.",
+    "C9_actual_PNG_inspection_reported": true,
+    "repair_author_code_context_read": true,
+    "new_figure_generation": false,
+    "new_figure_inspection_required": false
+  },
+  "original_published_history": {
+    "source_commit": "3b0f1748edeae1dd49c6557ef0d443d54ef1ea6a",
+    "source_commit_verified_locally": true,
+    "checkpoint": "S08",
+    "decision": "ACCEPT_V2_FIGURE_AND_CONDITIONAL_CLAIM_PRESENTATION",
+    "original_files": [
+      {
+        "path": "reviews/FINAL_PHYSICS_FIGURE_REVIEW.json",
+        "SHA256": "bdef07773620a9cfeaece274ea0f88a3521feb0f5c518aecc9a8ddae5502ec70"
+      },
+      {
+        "path": "reviews/FINAL_PHYSICS_FIGURE_REVIEW.md",
+        "SHA256": "a08250fc362aa5daf1d8c198c2c661a1d8720398768b02bd5682853d37ec82db"
+      }
+    ],
+    "source_archive": "WU_MOLECULAR_R4_S08_20261027_3b0f1748edea.zip",
+    "source_archive_SHA256": "0694b2be1c8503190700d0d9e40cf4c54761142c0b4d7233560a7dbe5c4c5be4",
+    "Dropbox_id": "id:BSpOijBcT10AAAAAAEDApA",
+    "Drive_id": "1-Jm4oWDVZ_buW5Lupkn-EFz4Z6Hloi2w",
+    "history_preservation": "Original S08 Git commit and archive remain immutable. This correction is additive and does not replace or rewrite the original checkpoint."
+  },
+  "corrected_files": [
+    {
+      "path": "reviews/FINAL_PHYSICS_FIGURE_REVIEW.json",
+      "SHA256": "59ad289c8d4b3ef3f5439992ceda9a41c0fc2ed01589e7eac3d2f85291ba23f8",
+      "changed_field": "visual_checks[id=V5_AXES_UNITS_AND_SCALE].observation",
+      "before": "Kinetic temperature is labelled K and coefficients cm^3 s^-1. LiH temperature/coefficients use log axes; HD temperature/coefficients use linear axes. Residual axes explicitly report percent.",
+      "after": "Kinetic temperature is labelled K and coefficients cm^3 s^-1. LiH temperature is logarithmic; HD temperature is linear; both coefficient axes are logarithmic. Residual axes are linear and explicitly report percent."
+    },
+    {
+      "path": "reviews/FINAL_PHYSICS_FIGURE_REVIEW.md",
+      "SHA256": "3b5edcb5b090e9970b0b2b1d8a47f2c4078a51eb8747c336dedb8214c5203bbc",
+      "changed_passage": "Section1 axis description",
+      "before": "LiH에는 log 축, HD에는 linear 축이 사용되며 온도별 marker가 명확하다.",
+      "after": "LiH의 온도 축은 log, HD의 온도 축은 linear이고, 두 coefficient 축은 모두 log다. 하단 잔차 축은 linear percent이며 온도별 marker가 명확하다."
+    }
+  ],
+  "exact_axis_map": {
+    "LiH": {
+      "temperature": "logarithmic",
+      "coefficient": "logarithmic",
+      "residual_ordinate": "linear_percent"
+    },
+    "HD": {
+      "temperature": "linear",
+      "coefficient": "logarithmic",
+      "residual_ordinate": "linear_percent"
+    }
+  },
+  "preflight": {
+    "AGENTS_current_R4_priority_read": true,
+    "local_HEAD": "3b0f1748edeae1dd49c6557ef0d443d54ef1ea6a",
+    "latest_remote_parallel_receipt": "authority/S09_PREFLIGHT.json",
+    "latest_receipt_UTC": "2026-10-27T06:30:51.856Z",
+    "actual_backup_receipt_read": "delivery/S08.json",
+    "backup_qualification": "Actual upload ACK; final full-source byte readback separate."
+  },
+  "unchanged_scope": {
+    "final_review_decision": "ACCEPT_V2_FIGURE_AND_CONDITIONAL_CLAIM_PRESENTATION",
+    "scientific_admission_changed": false,
+    "source_semantics_changed": false,
+    "source_data_changed": false,
+    "plotting_code_changed": false,
+    "selected_PNG_changed": false,
+    "selected_SVG_changed": false,
+    "selected_PNG_SHA256": "5c837359c5a6c045ffd5e458471bff4790c2c565696fdb1ffcdc71b9dbcb44db",
+    "selected_SVG_SHA256": "ec12aec6cdd32caa9e33c5c56926ad7e95d41e01eb6617a2b5a9402f71ce94d8",
+    "existing_theory_and_reference_results_reused": true,
+    "physical_rate_Q_consumer_activation": false,
+    "conditional_theory_presentation_accepted": true
+  },
+  "execution": {
+    "native_fit_or_residual_evaluations": 0,
+    "source_or_native_cell_rechecks": 0,
+    "compiler_runs": 0,
+    "Wolfram_calls": 0,
+    "plot_generations": 0,
+    "old_science_replays": 0,
+    "operations": "Read reported axis context and current preflight; replace only two review-wording passages; record new review hashes and this additive correction history."
+  }
+}

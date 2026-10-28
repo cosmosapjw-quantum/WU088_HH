@@ -1,0 +1,140 @@
+{
+  "schema": "WU_SOURCE_REGISTRY_DAG_DELTA_V1",
+  "parent": {
+    "repository": "cosmosapjw-quantum/rei_bianchi",
+    "commit": "641a725ada4be27473069c2c35005a94c2ab0248",
+    "observed_metadata_HEAD": "78f7ac5864d5817ceb79b48cb5e298cc30006510",
+    "decoded_DAG_sha256": "2fd13e63bda782142b5a93703fe7050697c829844276ce298e7873751459ad7d"
+  },
+  "status_updates": [
+    {
+      "id": "WU_ALL_TARGET_SPECIES_REACTION_REGISTRY",
+      "inherited_status": "PROPOSED_EXPANDED_SCOPE",
+      "current_status": "PARTIAL_SOURCE_POPULATED",
+      "new_evidence_scope": "102 actual source variants / 125 exact finite candidate columns; original configured nuclear-network locator and full source closure remain open.",
+      "evidence": [
+        "registry/coverage.json",
+        "SCIENTIFIC_ADMISSION.json",
+        "reviews/C9_FINAL.json",
+        "reviews/C9_THEORY_PRIMARY_ADDENDUM.json"
+      ]
+    },
+    {
+      "id": "WU_ALL_ISOTOPE_ATOMIC_SOURCE_COVERAGE",
+      "inherited_status": "PROPOSED_EXPANDED_SCOPE",
+      "current_status": "PARTIAL_SOURCE_CANDIDATES_POPULATED",
+      "new_evidence_scope": "39/39 historical directions have actual candidates; source isotope/state/support/uncertainty and consumer qualification remain per direction; old10finiteCIadmission gaps retained.",
+      "evidence": [
+        "registry/coverage.json",
+        "SCIENTIFIC_ADMISSION.json",
+        "reviews/C9_FINAL.json",
+        "reviews/C9_THEORY_PRIMARY_ADDENDUM.json"
+      ]
+    },
+    {
+      "id": "WU_MOLECULAR_NEGATIVE_ION_SOURCE_REGISTRY",
+      "inherited_status": "PROPOSED_EXPANDED_SCOPE",
+      "current_status": "PARTIAL_SOURCE_ROWS_POPULATED",
+      "new_evidence_scope": "37UMIST + LiH table + 26HD records; native isotope/state/driver qualifications and missing formation/destruction cells explicit.",
+      "evidence": [
+        "registry/coverage.json",
+        "SCIENTIFIC_ADMISSION.json",
+        "reviews/C9_FINAL.json",
+        "reviews/C9_THEORY_PRIMARY_ADDENDUM.json"
+      ]
+    }
+  ],
+  "new_children": [
+    {
+      "lead_repo": "cosmosapjw-quantum/WU088_HH",
+      "claim_ceiling": "SOURCE_ROWS_AND_EXACT_NUMBER_PROJECTIONS",
+      "physical_rate_admission": false,
+      "nuclear_Q_admission": false,
+      "consumer_admission": false,
+      "budget": "CONTRACT.json",
+      "publication": "delivery/PUBLICATION_AND_BACKUP.json",
+      "id": "WU_REGISTRY_PROVIDER_ROWS_R1",
+      "current_status": "COMPLETE_SCOPED_SOURCE_RECOVERY",
+      "containment_parent": "WU_ALL_TARGET_SPECIES_REACTION_REGISTRY",
+      "dependencies": [],
+      "evidence": [
+        "registry/providers.json",
+        "sources/",
+        "reviews/C9_FINAL.json"
+      ],
+      "counts": {
+        "source_variants": 102,
+        "NUBASE_source_states": 5843
+      },
+      "pass_next_action": "Reuse immutable payloads; acquire only missing isotope/state/reaction sources."
+    },
+    {
+      "lead_repo": "cosmosapjw-quantum/WU088_HH",
+      "claim_ceiling": "SOURCE_ROWS_AND_EXACT_NUMBER_PROJECTIONS",
+      "physical_rate_admission": false,
+      "nuclear_Q_admission": false,
+      "consumer_admission": false,
+      "budget": "CONTRACT.json",
+      "publication": "delivery/PUBLICATION_AND_BACKUP.json",
+      "id": "WU_REGISTRY_COMPILER_PROJECTION_R1",
+      "current_status": "IMPLEMENTATION_CHECKED_SCOPED",
+      "containment_parent": "WU_ALL_TARGET_SPECIES_REACTION_REGISTRY",
+      "dependencies": [
+        {
+          "type": "internal",
+          "id": "WU_REGISTRY_PROVIDER_ROWS_R1"
+        },
+        {
+          "type": "internal",
+          "id": "REI-CHEM-LEDGER-01"
+        }
+      ],
+      "evidence": [
+        "registry/compiled.json",
+        "raw/PRIMARY_RESULTS_FINAL.json",
+        "raw/INDEPENDENT_RESULTS.json",
+        "theory/REGISTRY_ENERGY_AND_LEPTONS_KO.md"
+      ],
+      "counts": {
+        "candidate_columns": 125,
+        "species_identities": 92,
+        "primary_check_groups": 20,
+        "independent_checks": 448
+      },
+      "pass_next_action": "Reuse exact columns; qualify native rate, branch, energy and consumer before any activation."
+    }
+  ],
+  "unrelated_contracts_changed": false,
+  "physical_admission_changed": false,
+  "global_physical_completion": null,
+  "delivery": {
+    "status": "complete",
+    "publication": {
+      "status": "complete",
+      "receipt": "delivery/PUBLICATION_RECEIPT.json"
+    },
+    "git_readback": {
+      "status": "complete_for_source_commit",
+      "receipt": "delivery/GIT_READBACK.json"
+    },
+    "source_zip": {
+      "status": "complete",
+      "receipt": "delivery/SOURCE_ZIP_MANIFEST.json"
+    },
+    "dual_backup": {
+      "status": "complete_byte_verified",
+      "receipt": "delivery/FINAL_BACKUP_ACK.json",
+      "actual_byte_readback": "delivery/CLOUD_READBACK.json"
+    },
+    "source_commit": "18a6804d7cbe4879701e83631f7e908bbb84cef1",
+    "source_tree": "4973e1f4293bc6fa002ace339613f747ed987842",
+    "PR": 150,
+    "metadata_followup": "R1 delivery metadata is included in additive reviewed R2 source child; R1 core is unchanged and R2 science has separate C9 acceptance."
+  },
+  "later_source_continuation": {
+    "unit": "WU_TARGET19_PROVIDER_BINDING_R2",
+    "current_handoff": "../provider_registry_network19_20261025/HANDOFF_KO.md",
+    "former_original_network_locator_gap": "RESOLVED_BY_ACTUAL_R2_RECOVERY",
+    "R1_core_unchanged": true
+  }
+}

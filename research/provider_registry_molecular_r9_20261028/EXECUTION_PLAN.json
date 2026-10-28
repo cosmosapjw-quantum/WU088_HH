@@ -1,0 +1,85 @@
+{
+  "schema": "WU_R9_EXECUTION_PLAN_V1",
+  "objective": "Complete one new causal-cell theory/code unit on immutable saved inputs",
+  "dependency_edges": [
+    [
+      "S04 candidate/domain design",
+      "S05 source AST and SHA freeze"
+    ],
+    [
+      "S05 actual freeze PASS",
+      "S06 primary 1 run"
+    ],
+    [
+      "S06 preserved raw result",
+      "S07 independent reference 1 run"
+    ],
+    [
+      "S05 frozen CAS script",
+      "R7 new symbolic check 1 call"
+    ],
+    [
+      "S06 primary",
+      "S08 measured error/cost analysis"
+    ],
+    [
+      "S07 reference",
+      "S08 measured error/cost analysis"
+    ],
+    [
+      "R7 CAS",
+      "S09 scoped claim admission"
+    ],
+    [
+      "S08 actual results",
+      "S09 independent final review"
+    ],
+    [
+      "S09 admission",
+      "S10 report and executable handoff"
+    ],
+    [
+      "S10 dual backup",
+      "FINAL metadata preservation"
+    ]
+  ],
+  "stage_actions": {
+    "S04": "archive",
+    "S05": "AST/hash only, archive",
+    "S06": "primary",
+    "S07": "reference",
+    "S08": "archive",
+    "S09": "archive",
+    "S10": "archive",
+    "FINAL": "archive"
+  },
+  "actual_platform": "Existing GitHub Actions ubuntu-latest with pinned checkout/upload actions",
+  "limits": {
+    "primary": {
+      "runs": 1,
+      "CPU_s": 60,
+      "wall_s": 90
+    },
+    "reference": {
+      "runs": 1,
+      "CPU_s": 60,
+      "wall_s": 90
+    },
+    "new_CAS": {
+      "calls": 1,
+      "wall_s": 30
+    },
+    "old_replays": 0
+  },
+  "guardrails": [
+    "run_attempt==1",
+    "event SHA equals actual checkout",
+    "exact frozen source bytes",
+    "create-only scientific results",
+    "complete child OS CPU including import and serialization",
+    "source and runtime archive entries distinguished"
+  ],
+  "provenance": "R8 primary 520110d1cae1677491aecd7216621c25f1098470c939ee027d5df3bde183686b; saved R7 reference e403c7803c080fd4f26be71a93b782b02d874f80ef11c85a706bea71e2a743cd",
+  "mutation_scope": "Root publishes expected-SHA, force=false commits on existing research branch; no main merge or other-owner write",
+  "physical_consumer_admitted": false
+}

@@ -1,0 +1,216 @@
+{
+  "schema": "WU_R4_INDEPENDENT_PREEXECUTION_IMPLEMENTATION_REVIEW_V1",
+  "unit": "WU_MOLECULAR_PROVIDER_STATE_LIFT_R4",
+  "reviewer": "/root/authority_survey",
+  "reviewed_UTC": "2026-10-27T06:13:44.274Z",
+  "decision": "PASS_SCOPED_PREEXECUTION_AFTER_TARGETED_STATIC_REPAIRS",
+  "open_blocking_findings": [],
+  "scope": "Static review of root-owned build_molecular.py and bounded runner against frozen molecular packet, unchanged source-fit module, preserved compiler/adapter and13 theory claims. No numerical execution.",
+  "authority": {
+    "observed_local_HEAD": "d87207367eda15990c34aa2db4eff69256953771",
+    "AGENTS_sha256": "f47186296d48f5d3e8ddb2f4bee26664553257c76bd2ebc4da9d1f308b85953f",
+    "preflight": "authority/S03_PREFLIGHT.json",
+    "preflight_sha256": "47073e4a7c54e964f14cacc3abb48bbe2c884f96a139a30918b8c821d0e238a8",
+    "delivery": "delivery/S03.json",
+    "delivery_sha256": "8d3940530c8fb7233db841df4fff941708c8e55714d3e7ba04455200b1280bff",
+    "source_zip_sha256": "7a5b14a1285e9210c2a3a2f8707244faae25d2c200c85c2303ba090251453fe1",
+    "source_zip_bytes": 457609,
+    "source_backup_scope": "Recorded actual Dropbox/Drive upload completed; no new byte downloads by this reviewer. New publication/node preflight remains root-owned."
+  },
+  "reviewed_inputs": [
+    {
+      "path": "build_molecular.py",
+      "sha256": "5ba9d17f1a6c68f8fec5ac50d256448a2c502cef9114ed1f1dcb0bf285f50ff0"
+    },
+    {
+      "path": "verification/run_bounded.py",
+      "sha256": "b362521e75319816498cc0e3dd9382891bfb771cf988a963dadad83d0e616bdc"
+    },
+    {
+      "path": "molecular_operator.py",
+      "sha256": "c11bd7240039050e0a817d698e9a82517770081e56828c7b48b4492ec98ee4c5"
+    },
+    {
+      "path": "sources/MOLECULAR_SOURCE_PACKET.json",
+      "sha256": "40e2fbd73d451c0c8116b4ca9bd4db4d2e43e4cdf8967988a2fea551f99ce35e"
+    },
+    {
+      "path": "CONTRACT.json",
+      "sha256": "6a40c43c04aa4506281f2021a6879e76e94d560ea3cc8af3c7cdfeffb15eb8bc"
+    },
+    {
+      "path": "theory/CLAIMS.json",
+      "sha256": "e04353625155ca0f5fab09ef638d63ae96d3ebc84f6ede3b4a2326d3cca634f1"
+    },
+    {
+      "path": "theory/STATE_LIFT_THEORY_KO.md",
+      "sha256": "eb62a104974a278211c77fb5037bffd00ef4f157acd6911b6e2c46f0bd3fef68"
+    },
+    {
+      "path": "../provider_registry_20261025/registry_adapter.py",
+      "sha256": "9a093eed42f9ff5858d7bae11c726988ddbde4feeed38888b1c90fe329be816c",
+      "action": "read and hash only"
+    },
+    {
+      "path": "../rei_chem_ledger_20261025/chem_ledger.py",
+      "sha256": "60a502895266b6feb96964abc4b24db61c2faed2344db0f7d12f16bb47ed62af",
+      "action": "read and hash only"
+    }
+  ],
+  "retained_first_review_identities": {
+    "initial_builder_sha256": "aa529c357d7f07310e52712d0ad177251180285ddc09252d13977d924c2a95a0",
+    "initial_runner_sha256": "8fd49ea00a5cf29cd66802c1d71c591d62fec029b579b17a7f459a85a4ea85e2",
+    "intermediate_builder_sha256": "8043048582863de10aca20f6b058684db2e4baea273031c4e62255974834fad7",
+    "first_scientific_execution_before_repairs": 0,
+    "photon_corrected_pre_locator_builder_sha256": "0429c1a4f3137cdcc3aa93a961f9fe2e602a0bc0532011b0873076d0633808d3"
+  },
+  "findings": [
+    {
+      "id": "P01_PARTIAL_OUTPUT_REPLAY",
+      "severity": "blocking_before_execution",
+      "status": "CLOSED_STATIC",
+      "initial_problem": "Only compiled.json was checked before computation. A retained species/events-only partial output could allow six compiler calls and29 fit evaluations again before open('x') rejected a write; compiled.json alone could also be miscalled complete.",
+      "repair": "Any existing file under registry is rejected before packet loading or adapter/compiler import. Exclusive output creation remains. COMPLETE.json is written after all seven payloads and binds their actual SHA256 values.",
+      "verification": "Targeted static reading of entry guard, write_new and final completion block; no execution.",
+      "remaining_runtime_check": "A root-owned isolated partial-output control must confirm rejection without compiler/fit calls. C9 will validate completion marker and all seven members, not merely file existence."
+    },
+    {
+      "id": "P02_FAILED_LAUNCH_RECEIPT",
+      "severity": "blocking_before_execution",
+      "status": "CLOSED_STATIC",
+      "initial_problem": "Empty-command validation followed attempt creation, and Popen/preexec/launch errors could leave no measured RECEIPT.json.",
+      "repair": "Empty command and attempt identifier are validated before attempt creation. OSError/SubprocessError from launch are recorded; finally reaps any running child; RUSAGE_CHILDREN delta, elapsed wall, explicit launch_error and coordinator execution-window CPU are serialized.",
+      "verification": "Targeted static reading of validation, exception/finally and receipt code; no execution.",
+      "remaining_runtime_check": "A root-owned isolated missing-executable control must inspect the actual failed-launch receipt. Generic filesystem/power failures are not represented as guaranteed recoverable."
+    },
+    {
+      "id": "P03_CASCADE_UNKNOWN",
+      "severity": "blocking_source_semantics_before_execution",
+      "status": "CLOSED_STATIC",
+      "initial_problem": "An intermediate metadata addition set total_cascade_photon_yield=0 for nonradiative exchange, although unresolved excited product states do not supply a total subsequent cascade yield.",
+      "repair": "total_cascade_photon_yield is None for all six variants. Primary emission remains RA1 and other immediate events0. Escaped-photon count and energy remain None.",
+      "verification": "Final one-line correction and final builder SHA read directly; no source or rate evaluation."
+    }
+  ],
+  "accepted_static_properties": [
+    {
+      "id": "SOURCE_IDENTITY",
+      "result": "The packet is byte-hash pinned by mo.load_packet; per-event canonical source-record identity is retained. The adapter hash is checked before loading, and its own loader checks the immutable compiler hash. Parent catalog is referenced with observed bytes/hash; saved source rows and149 columns are not rewritten."
+    },
+    {
+      "id": "BOUNDED_NEW_WORK",
+      "result": "One loop over six frozen source variants contains exactly one compile_event call per variant. Only Bennett27 and GL2022 two native rows enter the fit loop. No old suite,249 check, parent-column compilation, IVP or physical-Q path is invoked."
+    },
+    {
+      "id": "STATE_AND_ISOTOPE",
+      "result": "Fourteen source-qualified material identities retain Bennett/Bovino and Honvault/GL ensembles separately. H1/D2/Li7 and ground nuclear state are explicit integer-model conventions; per-source unresolved isotope/state qualification remains attached. Co-evolution is not admitted."
+    },
+    {
+      "id": "NUMBER_AND_THERMAL",
+      "result": "The six projected family columns agree algebraically with the declared7x6 matrix. The adapter checks chemical isotope/charge/baryon and electron-lepton bookkeeping; material particle sum excludes external photons and predicts RA -1, others0."
+    },
+    {
+      "id": "OWNERSHIP",
+      "result": "TIQM and SQM share identical species/state sides, process and branch, hence the adapter's provider-independent ownership group. Ortho/para keep distinct product states and unbound spin-sum labels. Reverse material projection does not infer detailed balance or compatible ensembles."
+    },
+    {
+      "id": "RADIATION_AND_ENERGY",
+      "result": "RA external gamma:escaping is explicitly a legacy bookkeeping label, not an escape-fraction or transport binding. Primary emission1 is separate from unknown total cascade/escaped yield and energy. The unchanged adapter forces PROVIDER_SOURCE_ONLY_NOT_EVENT_ENERGY and asserts internal energy None/UNQUALIFIED:ENERGY; builder preserves energy:null explicitly. Bovino2.258eV remains native_Q_record with admission false."
+    },
+    {
+      "id": "FIT_DIAGNOSTICS",
+      "result": "Separate SOURCE_FORMULA_SAMPLE outputs retain native row IDs, T literals, exact rational table values, signed residuals and original uncertainty semantics. The adapter's native_rate_evaluated=false is explicitly scoped to finite operator binding, not a denial of offline samples. No physical covariance is fabricated."
+    },
+    {
+      "id": "EXACT_EXAMPLES",
+      "result": "Four exact rational examples instantiate the conditional lift/defect theorem and are typed as constructed theory examples. They do not substitute a measured state coefficient vector or population."
+    },
+    {
+      "id": "WRITE_ONCE",
+      "result": "Existing full or partial output files stop before new scientific work. New files use exclusive create; incomplete files remain evidence. Last-written COMPLETE.json hashes the seven preceding output payloads and has a false physical admission flag. Success still requires actual exit status and valid member hashes."
+    },
+    {
+      "id": "RESOURCES",
+      "result": "The reviewed commands are single-process standard-library source algebra. RLIMIT_CPU30s, address-space512MiB and wall120s bound the child. OMP/OpenBLAS thread environment is1. Child CPU is an actual RUSAGE_CHILDREN delta; coordinator CPU covers the recorded execution window only. Preparation/receipt-tail/tool/prior cost is not claimed to be zero or included in that subtotal."
+    }
+  ],
+  "theory_claim_map": [
+    {
+      "claims": [
+        "C01_MATERIAL_STOICHIOMETRY",
+        "C02_THERMAL_PARTICLE_COUNT"
+      ],
+      "implementation": "six state-labelled events, adapter conservation, coarse family projection and material count"
+    },
+    {
+      "claims": [
+        "C03_EVENT_NORMALIZATION"
+      ],
+      "implementation": "conditional distinct-reactant per-reference helper only; no full consumer clock/reference derivative RHS is claimed"
+    },
+    {
+      "claims": [
+        "C04_POSITIVE_LIFT",
+        "C05_DEFECT_IDENTITY",
+        "C06_ZERO_SUM_BOUND",
+        "C07_SCALAR_EXACTNESS_IFF"
+      ],
+      "implementation": "molecular_operator exact rational helpers and declared examples; actual source d/pi remain unbound"
+    },
+    {
+      "claims": [
+        "C08_GENERAL_PROJECTION",
+        "C09_FORMATION_BRANCH_TOTAL"
+      ],
+      "implementation": "theory results only; no arbitrary-P API, actual branch vector or physical state lift is claimed"
+    },
+    {
+      "claims": [
+        "C10_RATIONAL_COUNTEREXAMPLE"
+      ],
+      "implementation": "constructed examples in lift_examples.json"
+    },
+    {
+      "claims": [
+        "C11_NATIVE_FIT_FUNCTIONS",
+        "C12_SOURCE_WEIGHT_AND_Q_GUARDS",
+        "C13_ENSEMBLE_COMPATIBILITY"
+      ],
+      "implementation": "two restricted formula paths, source-only Q/energy guards and distinct ensemble identities"
+    }
+  ],
+  "execution": {
+    "producer_imports": 0,
+    "compiler_calls": 0,
+    "fit_evaluations": 0,
+    "numerical_tests": 0,
+    "old_scientific_replays": 0,
+    "remote_mutations": 0,
+    "static_file_and_hash_reads": true
+  },
+  "independent_check_followup": {
+    "plan": "reviews/DESIGN_REVIEW.json#independent_check_plan",
+    "status": "WAITING_FOR_ACTUAL_PRIMARY_OUTPUTS",
+    "reference": "Independent Decimal80 at exactly29 nodes and fixed2e-14 formula criterion; never use producer as reference.",
+    "scope": "Inspect source rows, six new ledgers, ownership, radiation/energy qualification, completion/member hashes and actual runner receipts. Reuse root's passed operational controls unless a concrete remaining defect requires a targeted additional control."
+  },
+  "not_admitted": {
+    "actual_numerical_pass": false,
+    "physical_rate": false,
+    "nuclear_Q": false,
+    "energy_partition": false,
+    "actual_state_population_lift": false,
+    "named_runtime_consumer": false,
+    "activation": false,
+    "L4_ready": false
+  },
+  "conclusion_KO": "P01/P02/P03은 첫 과학 실행 전에 정적으로 교정되었다. 이 hash의 builder와 runner는 고정된 새6열·29표본 범위의 bounded 실행 전 검토를 통과한다. 실제 수치 출력과 실행 영수증의 합격은 별도 C7/C9 증거로 판정한다.",
+  "locator_clarification": {
+    "author": "root",
+    "status": "ACCEPTED_STATIC",
+    "final_parent_catalog": "../provider_registry_exfor_target6_20261027/registry/provider_catalog.json",
+    "path_base": "R4 leaf root, not registry subdirectory",
+    "meaning": "Output locator now resolves unambiguously from the R4 leaf. Actual parent file read, numeric code and source packet unchanged.",
+    "final_builder_sha256": "5ba9d17f1a6c68f8fec5ac50d256448a2c502cef9114ed1f1dcb0bf285f50ff0"
+  }
+}

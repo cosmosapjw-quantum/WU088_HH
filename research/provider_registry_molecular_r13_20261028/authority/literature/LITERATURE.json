@@ -1,0 +1,71 @@
+{
+  "status": "PRIMARY_SOURCE_SUPPORTED_CONTEXT_MANUAL_NEW_DERIVATION",
+  "actual_tools": {
+    "SciSpace_searches": 1,
+    "Exa_searches": 1,
+    "Exa_fetch_calls": 1,
+    "Exa_fetched_URLs": 3,
+    "scientific_python_runs": 0,
+    "CAS_runs": 0,
+    "ODE_runs": 0
+  },
+  "sources": [
+    {
+      "id": "HO2010",
+      "authors": "Marlis Hochbruck; Alexander Ostermann",
+      "title": "Exponential integrators",
+      "DOI": "10.1017/S0962492910000048",
+      "URL": "https://na.math.kit.edu/download/papers/acta-final.pdf",
+      "read_scope": "Author-hosted manuscript actual Exa fetch, first19000characters including Section2.2 equations2.8-2.11",
+      "supports": "Variation-of-constants, exponential quadrature for polynomial forcing, integral definition of phi_k and zero limit1/k!",
+      "use": "Context and exact formula correspondence; no need to import their PDE semigroup error theory."
+    },
+    {
+      "id": "AMH2011",
+      "authors": "Awad H. Al-Mohy; Nicholas J. Higham",
+      "title": "Computing the Action of the Matrix Exponential, with an Application to Exponential Integrators",
+      "DOI": "10.1137/100788860",
+      "URL": "https://eprints.maths.manchester.ac.uk/1591/1/alhi11.pdf",
+      "read_scope": "Author institution manuscript actual Exa fetch, first19000characters including Section2 equations2.3-2.5 and Theorem2.1",
+      "supports": "Polynomial inhomogeneity expressed using phi functions, integral definition and Taylor expansion; augmented-matrix representation",
+      "use": "Independent closed-form reference organization; does not establish WU staircase memory kernel or physical premise."
+    },
+    {
+      "id": "BIM2022",
+      "authors": "Sergio Blanes; Arieh Iserles; Shev Macnamara",
+      "title": "Positivity-preserving methods for population models (arXiv title); Positivity-preserving methods for ordinary differential equations (journal title)",
+      "DOI": "10.1051/m2an/2022042",
+      "URL": "https://arxiv.org/abs/2102.08242",
+      "read_scope": "SciSpace metadata plus actual arXiv abstract page fetched by Exa",
+      "supports": "Motivation that positivity and graph-Laplacian structure matter for population/chemical ODEs",
+      "use": "Context only; no proof theorem imported and no general order-barrier claim adopted."
+    }
+  ],
+  "formula_mapping": {
+    "HO_phi": "phi_k(z)=integral_0^1 exp((1-theta)z)*theta^(k-1)/(k-1)! dtheta",
+    "new_B2_weights": "W0=D*(phi1-2phi2+2phi3); W1=2D*(phi2-2phi3); W2=2D*phi3",
+    "production_choice": "Use directly positive beta-moment series, avoiding subtraction of phi functions nearzero. Negative z reverses Bernstein indices and multipliesexp(z).",
+    "reference_choice": "Independent Decimal160 phi functions or monomial moments plus exact primitive J0/J1; fixed relativeguard1e-80 to be frozen by root."
+  },
+  "novelty_scope": "Known polynomial-exponential integration is reused. New project-level construction is positive exact overlap first moments with translated knots and rational vertex refinement for retained WU block memory, plus finite outward implementation. No literature-wide originality or strong no-go claim.",
+  "raw_retrieval_files": {
+    "SCISPACE_RESPONSE.json": {
+      "bytes": 47670,
+      "sha256": "5f1eca7259c629067bbe7a09150e03d8988e2910d010df04908cc8159e16b091"
+    },
+    "EXA_SEARCH_RESPONSE.json": {
+      "bytes": 13510,
+      "sha256": "5f106b68569c6d17475fa4434d9a4af9ab574ea50a2366149a32bef828409e16"
+    },
+    "EXA_PRIMARY_RESPONSE.json": {
+      "bytes": 42058,
+      "sha256": "457745d1e4bf409f1d70cf7cb0d564737790f60ca7f5db4d7d07c7a8cab8a38c"
+    }
+  },
+  "copyright_storage": "Raw retrieved text is scratch evidence only. Publish this short paraphrase and source URLs/hashes; exclude raw full-text responses from repository/source ZIP.",
+  "open_obligations": [
+    "Root freezes finite allowance and code/input identities.",
+    "Independent proof and code review.",
+    "Actual scientific validation not performed by this author."
+  ]
+}

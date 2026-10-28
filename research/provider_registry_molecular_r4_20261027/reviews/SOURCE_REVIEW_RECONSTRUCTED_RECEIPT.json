@@ -1,0 +1,180 @@
+{
+  "schema": "wu.independent_source_review_reconstructed_receipt.v1",
+  "unit": "WU_MOLECULAR_PROVIDER_STATE_LIFT_R4",
+  "record_type": "HISTORICAL_REVIEW_RECEIPT_RECONSTRUCTED_FROM_CONVERSATION",
+  "reconstruction_utc": "2026-10-27T05:55:44Z",
+  "reviewer": "/root/molecule_sources",
+  "reason": "The parent reported loss of scratch files after publication of S01. The original SOURCE_REVIEW files were created after S01 and were not published. Their completion messages and expected hashes remain in the conversation, but their exact serialization is not available to this agent.",
+  "original_artifacts": [
+    {
+      "path": "reviews/SOURCE_REVIEW.json",
+      "expected_SHA256": "9bb3405fd8b859d3155afe56d50387c22bce32d0d5a4ab0422ba14692944471d",
+      "exact_bytes_recovered": false,
+      "original_creation_utc": null
+    },
+    {
+      "path": "reviews/SOURCE_REVIEW.md",
+      "expected_SHA256": "a7e540cb2c26ea9dbdb9c38ead954e11c80c13624b44e714b466d0631eadc4e8",
+      "exact_bytes_recovered": false,
+      "original_creation_utc": null
+    }
+  ],
+  "original_review_input": {
+    "path": "next_loop_20261027/molecular/MOLECULAR_SOURCE_PACKET.json",
+    "SHA256": "40e2fbd73d451c0c8116b4ca9bd4db4d2e43e4cdf8967988a2fea551f99ce35e",
+    "hash_status": "RECORDED_AT_ORIGINAL_REVIEW_NOT_RECOMPUTED_DURING_RECOVERY",
+    "source_manifest_SHA256": "4132f6ec60f1994875a7429e13d0734cbe7c5941ebcf481f8e61544d21ae4f38",
+    "source_findings_SHA256": "ebd8641a10fa607887d5fd107c6c7d49dafacf0e7a730ad8eda4c343d7f0dad9",
+    "auxiliary_issues_SHA256": "ae217f0a7a074d4b7b842a7d043a48cff3002c11d41f748db7bac293d785d713"
+  },
+  "historical_review_report": {
+    "decision": "ACCEPT_SCOPED_NATIVE_SOURCE_ROWS_AND_SEMANTICS",
+    "provider_variants": 6,
+    "native_rate_cells_directly_compared": 77,
+    "literal_column_scale_unit_mismatches": 0,
+    "blocking_findings": [],
+    "count_status": "PRIOR_COMPLETED_REVIEW_REPORTED_IN_CONVERSATION_NOT_A_NEW_REVIEW",
+    "independence": "The reviewer did not author the molecular packet and did not import or execute the source author's parser.",
+    "groups": [
+      {
+        "source": "Bennett et al. 2003, Table 3",
+        "variant_ids": ["BENNETT2003_LIH_SPONTANEOUS_RA_TABLE3"],
+        "native_rate_cells": 27,
+        "review_basis": "Direct reading of the retrieved original publisher PDF and text; visual comparison of PDF pages 2 and 6.",
+        "source_URL": "https://articles.adsabs.harvard.edu/pdf/2003MNRAS.341..361B",
+        "primary_DOI": "10.1046/j.1365-8711.2003.06422.x",
+        "raw_PDF_SHA256": "c3f6276125fd8d61ca91895b474444b5c5afd0d11624fec6ab6456297b4087d0",
+        "raw_text_SHA256": "f23e6a9d0d3dcecc2f9bb5ba3a23a11ee899b3781679251f3aca96ed5ab42224",
+        "public_table_SHA256": "d17365b148212af17da48c0618581d27a050a5ed4209f2306db7b36e83c87835",
+        "preserved_semantics": [
+          "The tabulated scale is 10^-20 cm3 s^-1.",
+          "The electronic symmetry factor p=1/4 is already included in the source coefficient and must not be multiplied again.",
+          "The source explicitly identifies 7LiH; the hydrogen mass number was not independently printed in the reviewed material and remains unresolved.",
+          "Bound and survival-weighted quasi-bound final states are aggregated; a unique v=0,j=0 product assignment is not supplied.",
+          "The source is spontaneous radiative association. Subsequent cascade photon count and energy are not fixed by the aggregate coefficient.",
+          "Reported analytic-fit residuals are not a physical covariance or a general uncertainty bound."
+        ]
+      },
+      {
+        "source": "Bovino et al. 2009, Table 1",
+        "variant_ids": ["BOVINO2009_LIH_H_TO_LI_ORTHO_H2_TABLE1", "BOVINO2009_LIH_H_TO_LI_PARA_H2_TABLE1"],
+        "native_rate_cells": 28,
+        "review_basis": "Direct reading of arXiv:0911.1281v1 original PDF and text; visual comparison of PDF Table 1 page 14 and auxiliary Table 3 page 16.",
+        "source_URL": "https://arxiv.org/abs/0911.1281v1",
+        "raw_PDF_SHA256": "644430478362678561c96e991f672d013ddf7c7fc9201629a16f5bce6436e358",
+        "raw_text_SHA256": "b1e158d7a2e30b4870c9ee64bc66be3e3a3a2af52e2c0a34cc5afe67747bbb8c",
+        "public_table_SHA256": "5f950aecbcf8a5bb9d4180b607dd567ca5eb8fa4654870590acedc2f19f14648",
+        "preserved_semantics": [
+          "Fourteen temperatures have separate ortho-H2 and para-H2 columns, in cm3 s^-1.",
+          "The calculation explicitly uses 7LiH. Total angular momentum J=0 must not be identified with an initial molecular rotational quantum number j=0.",
+          "The initial Table 1 v/j assignment and aggregate nuclear-spin weighting remain unresolved; the variants are not automatically combined into an activated rate.",
+          "The printed fit b unit is dimensionally problematic and is preserved as a source issue rather than silently repaired or evaluated.",
+          "The auxiliary Table 3 value 1.92e-09 at T=1000 K was visually confirmed and excluded from the principal 77 cells; no exponent correction or branch-fraction interpretation was made.",
+          "Numerical convergence statements are not complete rate/PES covariance, and the source exothermicity is not admitted as state-qualified or nuclear Q."
+        ]
+      },
+      {
+        "source": "Honvault and Scribano 2013 correction, corrected Table 1",
+        "variant_ids": ["HONVAULT2013_CORRECTED_HD_FORMATION_TIQM", "HONVAULT2013_CORRECTED_HD_FORMATION_SQM"],
+        "native_rate_cells": 20,
+        "review_basis": "Direct reading of the correction fulltext representation retrieved from the primary DOI through Exa; the original ACS PDF was not recovered.",
+        "source_URL": "https://doi.org/10.1021/jp4113377",
+        "original_PDF_SHA256": null,
+        "retrieved_fulltext_representation_SHA256": "08943ae9d984636a11d7a4fe65d559afba709b0578c52a814e01893705e63c7e",
+        "public_table_SHA256": "c0f6b65193a71132b7815eda3f1f3cdf99472e7773b486e21ae4fd4ab623a7d7",
+        "preserved_semantics": [
+          "The corrected table has columns T, SQM, TIQM and scale 10^-9 cm3 molecule^-1 s^-1.",
+          "Initial H2 is v=0,j=0; unresolved product-state totals remain explicit.",
+          "TIQM and SQM are alternative methods and must not be added.",
+          "The correction supersedes the original insufficient-matching calculation for this intake.",
+          "This acceptance is limited to the retrieved representation; it does not assert original-PDF byte verification, covariance, additional spin weighting, or interpolation approval."
+        ]
+      },
+      {
+        "source": "Gonzalez-Lezana et al. 2022, two printed SQM values and native fit semantics",
+        "variant_ids": ["GONZALEZ_LEZANA2022_HD_HPLUS_DESTRUCTION_THERMAL"],
+        "native_rate_cells": 2,
+        "review_basis": "Direct reading of the publisher's retrieved article-minimal HTML, using a standard-library HTML reader rather than the source author's parser.",
+        "source_URL": "https://aipp.silverchair-cdn.com/article-minimal/2842276",
+        "primary_DOI": "10.1063/5.0128598",
+        "raw_HTML_SHA256": "dbe76254e01a4683f3362456235c104bcf0d3fda558797fa42c75d0c7c1ca24d",
+        "public_native_points_SHA256": "6a370ba76d6079d3d6b702d267c5f62d9f250130cdf5115103fceee1b1e010a2",
+        "preserved_semantics": [
+          "The retained values are SQM 1.21e-10 at 205 K and 2.21e-10 cm3 s^-1 at 295 K, not the adjacent EQM or experimental values.",
+          "The source performs an HD rotational thermal average and H2 product sums; even/odd product factors 1/4 and 3/4 already occur in the aggregate definition.",
+          "The native fit has alpha=8.57e-10 cm3 s^-1 and gamma=405 K; gamma is a fit activation parameter, not an admitted state Q or nuclear Q.",
+          "The unavailable supplementary archive is not treated as imported data; no extra table cells or state rows are inferred from it.",
+          "The original calculation domain, fit support qualification, later fit assessments, and physical covariance remain distinct."
+        ]
+      }
+    ],
+    "excluded_admissions": [
+      "physical rate activation",
+      "state-population or consumer binding",
+      "physical or nuclear Q",
+      "energy closure",
+      "validation of the original paper's model dynamics",
+      "new evaluator correctness",
+      "new theorem proof",
+      "runtime activation"
+    ]
+  },
+  "conversation_evidence": [
+    {
+      "kind": "PRELOSS_COMPLETION_MESSAGE_TO_PARENT",
+      "sender": "/root/molecule_sources",
+      "recipient": "/root",
+      "reported_decision": "ACCEPT_SCOPED_NATIVE_SOURCE_ROWS_AND_SEMANTICS",
+      "reported_count": "6 variants; 77/77 native rate cells; 0 literal/column/scale/unit mismatches",
+      "reported_artifact_hashes": ["9bb3405fd8b859d3155afe56d50387c22bce32d0d5a4ab0422ba14692944471d", "a7e540cb2c26ea9dbdb9c38ead954e11c80c13624b44e714b466d0631eadc4e8"],
+      "message_timestamp": null
+    },
+    {
+      "kind": "PRELOSS_FINAL_REPORT",
+      "sender": "/root/molecule_sources",
+      "reported_group_counts": {"Bennett": 27, "Bovino": 28, "Honvault_correction": 20, "Gonzalez_Lezana": 2},
+      "reported_executions": "No author-parser execution, fit/rate evaluation, physical unit conversion, compiler execution or prior-science replay.",
+      "message_timestamp": null
+    },
+    {
+      "kind": "PARENT_RECOVERY_TASK",
+      "sender": "/root",
+      "instruction": "Recover exact original review bytes if available; otherwise create an explicit reconstructed receipt referring to the original review messages/hashes without redoing the 77-cell review.",
+      "S01_remote_commit_reported": "94ba73928d2e2055cf07ad8801f7e83ccb827818"
+    }
+  ],
+  "recovery_observations": {
+    "exact_filename_search_roots": ["/workspace/scratch/3ffa3d77ca37", "/tmp"],
+    "original_review_files_found": false,
+    "search_limit": "The filename search reported permission denied for /tmp/codex-daemon-0; no claim is made about that inaccessible subtree.",
+    "attempted_session_store_keys": ["SOURCE_REVIEW", "source_review", "SOURCE_REVIEW.json", "SOURCE_REVIEW.md", "r4_source_review", "r4_source_review_json", "r4_source_review_md", "sourceReview", "sourceReviewJson", "sourceReviewMarkdown"],
+    "session_store_value_recovered": false,
+    "surviving_visual_review_paths_observed": ["/tmp/r4_source_review_bennett_p2.png", "/tmp/r4_source_review_bennett_p6.png", "/tmp/r4_source_review_bovino_p14.png", "/tmp/r4_source_review_bovino_p16.png"],
+    "visual_images_rereviewed_during_recovery": false,
+    "local_git_status_at_recovery": "The WU088_HH directory was not a git repository while the parent was restoring S01; no git mutation was attempted.",
+    "published_checkpoint_manifest_read": "next_loop_20261027/S01_PUBLICATION.json",
+    "published_checkpoint_commit": "94ba73928d2e2055cf07ad8801f7e83ccb827818",
+    "published_checkpoint_manifest_observed_UTC": "2026-10-27T05:54:04.753Z",
+    "checkpoint_manifest_scope": "The manifest includes the contract review but does not include the original SOURCE_REVIEW files. Its branch observation was read as an existing publication receipt, not independently refreshed remotely by this recovery."
+  },
+  "recovery_execution_boundary": {
+    "new_literal_cell_review_count": 0,
+    "new_fit_or_rate_evaluations": 0,
+    "new_compiler_executions": 0,
+    "old_scientific_suite_replays": 0,
+    "new_Wolfram_calls": 0,
+    "new_source_downloads": 0,
+    "operations": ["bounded file-name lookup", "read existing S01 publication receipt", "query named session-store keys", "write reconstructed metadata receipt", "hash reconstructed receipt files"],
+    "budget_note": "This is recovery metadata, not a new scientific review, calculation node, or additional physical admission."
+  },
+  "validity_boundary": {
+    "reconstructed_receipt_is_original_bytes": false,
+    "reconstructed_receipt_may_use_original_artifact_hash_as_its_own_hash": false,
+    "historical_acceptance_applies_to_packet_SHA256": "40e2fbd73d451c0c8116b4ca9bd4db4d2e43e4cdf8967988a2fea551f99ce35e",
+    "restored_packet_verified_during_this_recovery": false,
+    "changed_packet_automatically_covered": false,
+    "new_review_decision_issued": false,
+    "new_numerical_review_performed": false,
+    "publication_note": "Keep this receipt distinct from the lost originals. If original bytes are later recovered, verify them against the expected hashes and retain this recovery history. A restored or changed source packet is not silently declared byte-identical by this receipt."
+  }
+}

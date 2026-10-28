@@ -1,0 +1,45 @@
+{
+  "schema": "WU_TARGET19_DELIVERY_OPERATIONAL_HISTORY_V1",
+  "scientific_executions": 0,
+  "completed_science_replays": 0,
+  "scope": "Git/source packaging/backup readback only; not part of the eight measured scientific/source child ledger totals",
+  "unmeasured_operational_CPU_s": null,
+  "events": [
+    {
+      "operation": "prepublication branch endpoint read",
+      "first_result": "four percent-encoded branch paths rejected HTTP400 INVALID_ARGUMENT without mutation",
+      "correction": "supported git/ref/heads endpoints read actual identities",
+      "evidence": "../authority/PRE_PUBLICATION_REMOTE.json"
+    },
+    {
+      "operation": "prepublication receipt read",
+      "first_result": "release review receipt absent while independent reviewer was still writing; read-only cat exit1",
+      "resolution": "Waited for reviewer completion; actual PASS_SCOPED_RELEASE_METADATA receipt included before staging final tree"
+    },
+    {
+      "operation": "source publication",
+      "result": "11 large/binary blob identities verified; 173 changed entries applied; resulting full Git tree identity matched; actual expected-SHA non-force branch update accepted",
+      "evidence": "PUBLICATION_RECEIPT.json"
+    },
+    {
+      "operation": "source ZIP",
+      "result": "380 exact Git source files plus manifest, all member bytes and CRC verified",
+      "evidence": "SOURCE_ZIP_MANIFEST.json"
+    },
+    {
+      "operation": "dual backup",
+      "result": "Dropbox async completion ACK and Drive upload success, both actual HTTP200 raw downloads SHA256/size match",
+      "evidence": "FINAL_BACKUP_ACK.json"
+    },
+    {
+      "operation": "signed download URLs",
+      "result": "Only ephemeral private config used; removed after reads; no signed URLs in published receipts"
+    },
+    {
+      "operation": "release metadata review",
+      "result": "Five provenance/notation/path findings corrected without science modification",
+      "evidence": "../reviews/RELEASE_METADATA_REVIEW.json"
+    }
+  ],
+  "count_semantics": "173 is the parent-to-source changed Git entry count; 380 is the source ZIP file count within declared archive scope; neither is a count of unique physical reactions."
+}

@@ -1,0 +1,77 @@
+{
+  "schema": "WU_R5_LATE_PARALLEL_DELTA_V1",
+  "observation": "2026-10-27T10:15:24.557Z",
+  "refs": [
+    {
+      "repo": "rec_bianchi",
+      "branch": "research/rec-source-synthesis-20261027",
+      "result": "d6dbe39a4923439547c01695d9020ba39367ea90"
+    },
+    {
+      "repo": "rei_bianchi",
+      "branch": "research/rei-causal-prefix-consumer-20261027",
+      "result": "4a82442ce5476ac10a6417f209fc74f1ff7c43ab"
+    },
+    {
+      "repo": "bass",
+      "branch": "research/bass-b3h-native-tube-20261027",
+      "result": "29dcf5ab94ae8b84bf8e3f31dddb31ce719929b1"
+    },
+    {
+      "repo": "bass_cr",
+      "branch": "research/cr-rr-causal-clock-20261027",
+      "result": "2776752de6952f60d8d690a128f33fec4df2c57b"
+    },
+    {
+      "repo": "BASS_HE",
+      "branch": "research/program-expansion-20261025",
+      "result": "ac6042a6b0610b09d0576538767ee0299389a5eb"
+    },
+    {
+      "repo": "vigilode",
+      "branch": "research/adapter-checkpoint-followup-20261027",
+      "result": "3064d453091af1dec7f99f0c8afabd98b447ea34"
+    }
+  ],
+  "comparisons": {
+    "REI": {
+      "from": "b09e4e0a9aa55497d08953b391292d70c1106654",
+      "to": "4a82442ce5476ac10a6417f209fc74f1ff7c43ab",
+      "ahead_by": 15,
+      "read_evidence": "STAGE_LEDGER.json and reviews/ROOT_RESOURCE_HOLD.json",
+      "status": "R1-R10 completed;C6 numerical3189/3189PASS with resourceHOLD;C7-C10 not established by this snapshot",
+      "physical_state_update": false,
+      "GL2022_input": false
+    },
+    "BASS": {
+      "from": "786585caeb17ac9b8546da06b29c1f8dcfeaf896",
+      "to": "29dcf5ab94ae8b84bf8e3f31dddb31ce719929b1",
+      "ahead_by": 3,
+      "status": "B3h finite native incoming photon tube and uncollided transport admitted scoped; atomic stock input open",
+      "read_evidence": "ADMISSION.json",
+      "GL2022_input": false
+    },
+    "VigilODE": {
+      "from": "46939bbec73738585789490b53175be1d100c107",
+      "to": "3064d453091af1dec7f99f0c8afabd98b447ea34",
+      "ahead_by": 1,
+      "change": "external adapter profile audit report",
+      "comparison_files_returned": 300,
+      "full_diff_completeness_not_assumed": true,
+      "read_evidence": "external_reports/adapter_profile_audit_20261027/README_KO.md"
+    }
+  },
+  "unchanged_current_dependencies": [
+    "REC source/parser exact pinned bytes",
+    "CR source branch",
+    "HE scope"
+  ],
+  "scientific_reexecution": 0,
+  "decision": "Preserve parallel owner work. These returns do not supply WU GL2022 state destruction or named molecular consumer; R5 mathematical admission unchanged.",
+  "central": {
+    "working": 32,
+    "declared_central": 27,
+    "total": 88,
+    "WU_completion_delta": 0
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schema": "WU_R9_CAUSAL_CELL_RESOLVENT_CONTRACT_V1",
+  "workflow_version": "1.0.0",
+  "unit_id": "WU_CAUSAL_CELL_RESOLVENT_R9",
+  "client_date": "2026-10-28",
+  "client_timezone": "Asia/Seoul",
+  "objective": "Close the existing positive lag-kernel feedback bounds cell by cell through a positive2x2 inverse, with raw and certified-intersection variants.",
+  "changed_obligation": "Actual R8 native9 R/E endpoint bounds remain311x/907x saved reference; global two-pass refinement does not directly close same-cell coupling. A causal cell solve is a concrete new estimator proof/code obligation.",
+  "baseline": {
+    "commit": "b3ba2e4aff1f237a2835b2f3a1b07de81133e9f7",
+    "tree": "58da039413ad37defa7f2ea8a169d11b827953a5",
+    "DAG": {
+      "complete": 17,
+      "total": 32
+    },
+    "R8_payload_sha256": "9fb1e28631426a8e891ae59ee74441e79edb0473b8c78daf51a935627cf37485",
+    "R8_primary_sha256": "520110d1cae1677491aecd7216621c25f1098470c939ee027d5df3bde183686b",
+    "R8_original_reference": "726/727 pass plus1 failure; preserve",
+    "R8_phi_repair": "24/24pass; preserve"
+  },
+  "formula": {
+    "D": "1-delta*a-delta*b*phi_upper*c > 0 exactly",
+    "R": "(A+delta*b*B)/D",
+    "E": "B+phi_upper*c*R",
+    "current_forcing": "h0=1",
+    "d": "signed; whole-cell past maxima depend on d<=0 versus d>0"
+  },
+  "scope": {
+    "saved_HD_cases": 4,
+    "HD_cells": 192,
+    "saved_controls": 5,
+    "control_cells": 8,
+    "bits": 128,
+    "old_science_replay": 0,
+    "new_ODE": 0,
+    "new_generator_construction": 0,
+    "new_source_certificate": 0,
+    "physical_consumer_admitted": false
+  },
+  "assumptions": [
+    "Identical R8 generator family/state order/clock/l1 residual binding; saved uniform-all-starts h and outward e/phi are certified inputs.",
+    "a,b,c,g and initial nonnegative; d signed; coefficients valid throughout selected horizon.",
+    "D strictly positive exact rational; no automatic discretization retry.",
+    "Optional whole caps valid on same closed cell; point caps exact same clock; no reference trajectory caps.",
+    "Raw dominance over every R8 envelope and rounded-vector discrete supersolution are not assumed."
+  ],
+  "acceptance": [
+    "Constructive proof and independent review of all indices/signs/denominator.",
+    "Complete source-bound implementation and finite guards.",
+    "One new bounded primary and independent reference, actual results and material findings closed.",
+    "Raw/capped numerical results and preservation of original failures.",
+    "Ten paired stages published and dual source backups with actual identities."
+  ],
+  "execution": {
+    "primary": {
+      "runs": 1,
+      "CPU_s": 60,
+      "wall_s": 90
+    },
+    "reference": {
+      "runs": 1,
+      "CPU_s": 60,
+      "wall_s": 90
+    },
+    "new_scientific_CAS": {
+      "calls": 1,
+      "wall_s": 30
+    },
+    "metadata_original_byte_pairs": {
+      "calls": 11,
+      "per_call_wall_s": 30,
+      "scientific": false
+    },
+    "old_R8_all_remaining": 0,
+    "old_R7": [
+      0,
+      0,
+      0
+    ],
+    "old_R6": [
+      0,
+      0,
+      0
+    ],
+    "PHYS91": [
+      0,
+      0,
+      0
+    ],
+    "global_remaining": null,
+    "full_historical_CPU": null
+  },
+  "environment": {
+    "initial_local": "Worked;661tracked blobs matched.2localR8metadata files recovered to pinned Git bytes.",
+    "interruption": "exec-server initialize handshake timeout; no usable execution environment. S01 publish attempt did not reach remote ref; actual head stayedb3ba2e4.",
+    "fallback": "Existing authorized GitHub Actions: contents read, no secrets, bounded action guard, run_attempt1, frozen source, complete processCPU.",
+    "unpublished_drafts": "Local drafts inaccessible; recovered new authoring identities. No previous scientific execution lost or repeated."
+  },
+  "publication": {
+    "branch": "research/provider-registry-20261025",
+    "draft_PR": 150,
+    "root_external_writes": true,
+    "expected_SHA": true,
+    "force": false,
+    "archive_scope": "R4-R9 molecular leaves+AGENTS+R9workflow; not full repo/history",
+    "main_merge": false,
+    "other_owner_writes": false
+  },
+  "release": {
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4_ready": false,
+    "central_completion_delta": 0,
+    "physical_admission_delta": 0
+  },
+  "conventions": {
+    "metric_signature": "(-,+,+,+) when relevant",
+    "constants": "c,hbar,k_B maintained",
+    "native_v": "UNSPECIFIED",
+    "absent_channels": "MISSING_NOT_ZERO",
+    "current_cases": "Explicit conditional dimensionless reaction cases; physical HD source/density/clock INPUT_PENDING"
+  }
+}

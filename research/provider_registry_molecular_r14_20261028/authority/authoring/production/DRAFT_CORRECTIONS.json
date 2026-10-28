@@ -1,0 +1,63 @@
+{
+  "schema": "WU_R14_PRODUCTION_DRAFT_CORRECTIONS_V1",
+  "corrections": [
+    {
+      "id": "D01",
+      "class": "PRE_EXECUTION_OUTPUT_COUNTER_SCHEMA_ALIGNMENT",
+      "reason": "Reference and production agree to count all geometric nonempty overlaps including zero kernel-power or zero source contributions.",
+      "before_file": "drafts/D01_counter_scope_before.txt",
+      "before_sha256": "b73feb98b8c215a7b25678778b0556068280bd08c745a0da1a76efee9b942b0f",
+      "after_file": "src/quadratic_convolution.py",
+      "after_sha256": "2e7e17cd71ad776beae604c3251b4f08e7092bcf55b0db19fddb1ce7f4b1696d",
+      "initial_edit_snapshot_written_at_edit_time": false,
+      "before_snapshot_provenance": "Reconstructed exactly from the recorded initial Add File and single subsequent counter-scope patch; not an original-time independently captured file.",
+      "scientific_execution_before_or_after_correction": 0,
+      "mathematical_output_definition_changed": false,
+      "old_scientific_failure": false
+    },
+    {
+      "id": "R14-F02",
+      "class": "PRE_EXECUTION_FINITE_PARSER_DEFECT",
+      "cause": "Fraction(text) admitted compact exponent syntax that could allocate huge powers before the256bit guard. No malicious-value execution was attempted.",
+      "change": "ASCII signed integer or signed numerator/denominator grammar before bounded integer conversion; decimal/exponent/whitespace rejected.",
+      "before_snapshot": "drafts/F02_pre_parser_guard/",
+      "current_module_sha256": "0cf586789e80b74a42412a90aeafbc7ab33a2719f75436f43c21cc2d9c2e3cfb",
+      "guards_added": [
+        "huge_zero_exponent_text",
+        "decimal_text",
+        "surrounding_whitespace_text"
+      ],
+      "valid_case_count": 31,
+      "guard_count": 46,
+      "valid_case_payload_unchanged": true,
+      "fixture_source_bytes_unchanged": true,
+      "fixture_source_sha256": "f3e81086f10012aeaf8f390aca22589b8e55172aeb14e840c665592c99e21f0b",
+      "administrative_serializer_total_runs": 2,
+      "science_runs": 0,
+      "imports": 0,
+      "compile": 0,
+      "independent_closure": "PENDING_REVIEWER"
+    },
+    {
+      "id": "R14-F03",
+      "class": "PRE_EXECUTION_DERIVED_OUTPUT_SERIALIZATION_DOMAIN_DEFECT",
+      "cause": "Default Python4300 integer decimal digits is less than the4933-digit maximum of an accepted16384bit derived component.",
+      "before_snapshot": "drafts/F03_pre_digit_limit/",
+      "change": "configure_r14_runtime sets finite int_max_str_digits6000 at core import/run_case/outer serializable entry; output rational text<=10000; no unlimited0 policy.",
+      "module_after_sha256": "74065e6d3a485d37fd980c92fa065ef20fe1897fdf8f505c3c70c7cb34693f99",
+      "primary_after_sha256": "8a2a564e9a01b0c97edb74aeb64ee49f5bceb582e4da9e59d537be1f6a40149c",
+      "new_campaign_check": "derived_16384bit_serialization_roundtrip",
+      "public_input_bits_unchanged": 256,
+      "input_text_characters_unchanged": 2048,
+      "valid_case_count": 31,
+      "guard_case_count": 46,
+      "fixture_source_sha256": "f3e81086f10012aeaf8f390aca22589b8e55172aeb14e840c665592c99e21f0b",
+      "fixture_source_bytes_unchanged": true,
+      "science_runs": 0,
+      "imports": 0,
+      "compile": 0,
+      "independent_closure": "PENDING_REVIEWER",
+      "repaired_utc": "2026-10-28T10:06:19.350614+00:00"
+    }
+  ]
+}

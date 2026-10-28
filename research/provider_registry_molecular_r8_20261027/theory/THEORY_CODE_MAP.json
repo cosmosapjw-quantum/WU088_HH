@@ -1,0 +1,87 @@
+{
+  "schema": "WU_R8_THEORY_CODE_MAP_V1",
+  "proof": "theory/PROOF_KO.md",
+  "core": "src/volterra_feedback.py",
+  "status": "PENDING_INDEPENDENT_REVIEW",
+  "operations": [
+    {
+      "equations": [
+        "R8.1",
+        "R8.2"
+      ],
+      "owner": "primary runner",
+      "obligation": "Frozen R6 hashes, same lambda/P_lower, R7 K midpointmembership, exact H/delta steps, R7 B/g constant across3blocks"
+    },
+    {
+      "equations": [
+        "R8.6",
+        "R8.7"
+      ],
+      "function": "kernel_ladder",
+      "inputs": "delta,cells,certificates,binding,bits128",
+      "outputs": "h[0..192], exactsourcepairs, witness",
+      "guards": "sameclock/state/family,norml1_on_kerP,nominal_K,allstarts,nonexpansive,composition"
+    },
+    {
+      "equations": [
+        "R8.10"
+      ],
+      "owner": "primary runner",
+      "operation": "actualsavedwhole_block_upper repeated64; initialR/Eexact; referencevaluesexcluded"
+    },
+    {
+      "equations": [
+        "R8.14"
+      ],
+      "function": "coarse_step_factors",
+      "operation": "signedd, exp_neg_enclosure dependencyhash, safephiendpoint for dnegative/zero/positive"
+    },
+    {
+      "equations": [
+        "R8.11",
+        "R8.12",
+        "R8.13",
+        "R8.15",
+        "R8.16",
+        "R8.17",
+        "R8.18"
+      ],
+      "function": "volterra_two_pass",
+      "operation": "previous-passF/L, correctwhole/endpointlag, exact2passes, finalexactmin"
+    },
+    {
+      "equations": [
+        "R8.20"
+      ],
+      "owner": "primaryrunner + core_point_caps",
+      "operation": "15actualquerycaps+3trueendpointcaps perHD, exactglobalclock, originalJSONpointer, SHA256membership; nolooseinterpolation"
+    },
+    {
+      "equations": [
+        "R8.19"
+      ],
+      "owner": "primary/refreview",
+      "operation": "actualwholevalidity proved; U2<=U1<=U0, point<=oldcommoncaps checked exactly"
+    },
+    {
+      "equations": [
+        "R8.8"
+      ],
+      "scope": "Continuous mathematical explanation; do not confuse with actual discrete initialarray"
+    }
+  ],
+  "reference": {
+    "arithmetic": "independentDecimal80",
+    "saved_R7_clocks": 193,
+    "new_ODE_calls": 0,
+    "role": "numericcorroborationseparatefromproof"
+  },
+  "source_hashes": {
+    "R6_primary": "1a3b55f7c14a64a10a651de2df7b7f7d2df24d0b9e809b729f32d73377c90e84",
+    "R7_primary": "6eaf3c0eed7968cf4023180e15373a180bb5b1bab2e56cd4a8547387ed337a15",
+    "R7_reference": "e403c7803c080fd4f26be71a93b782b02d874f80ef11c85a706bea71e2a743cd",
+    "R7_core": "002a66a30961b21e566a940462468c9ea8e1bc868d98549d3ea79d164c239957"
+  },
+  "literature": "authority/LITERATURE.json",
+  "physical_admission": false
+}

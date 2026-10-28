@@ -1,0 +1,119 @@
+{
+  "schema": "WU_TARGET6_EXFOR_INDEPENDENT_INTAKE_REVIEW_V1",
+  "reviewer": "/root/provider_rows",
+  "source_author": "/root/molecule_sources",
+  "created_UTC": "2026-10-27T02:55:14.098393+00:00",
+  "decision": "FAIL",
+  "execution_scope": "Single bounded independent read of the changed EXFOR packet; no source-author parser imported; no old suite or compiler called.",
+  "source_commit": "939a14d7bba1ddce51975cb5e8711ce96b3b0871",
+  "packet_SHA256": "d8b0b92f0374f73fa7f838db5ca07be45bd448696654b07c6db71c5847235ac2",
+  "expected_packet_SHA256": "d8b0b92f0374f73fa7f838db5ca07be45bd448696654b07c6db71c5847235ac2",
+  "manifest_SHA256": "a1c5d4009d0bfacc4edcb248a6878eef6cdafa9690b4ea0d0826dd5356052d06",
+  "expected_manifest_SHA256": "a1c5d4009d0bfacc4edcb248a6878eef6cdafa9690b4ea0d0826dd5356052d06",
+  "contract_SHA256": "08f8bbc53987f6295685179c20a7dcda097923811ca36cd2b14764a85856a5c7",
+  "groups": [
+    {
+      "id": "G1",
+      "name": "Frozen packet and exact provider bytes",
+      "result": "pass_scoped",
+      "assertions": 52
+    },
+    {
+      "id": "G2",
+      "name": "Four selected TABLEs and all native numeric cells",
+      "result": "pass_scoped",
+      "assertions": 179
+    },
+    {
+      "id": "G3",
+      "name": "Row/BIB/COMMON locators and parent inheritance",
+      "result": "pass_scoped",
+      "assertions": 310
+    },
+    {
+      "id": "G4",
+      "name": "Observable, frame, unit and bin distinctions",
+      "result": "pass_scoped",
+      "assertions": 28
+    },
+    {
+      "id": "G5",
+      "name": "Statistical errors and bounded beam systematic",
+      "result": "pass_scoped",
+      "assertions": 22
+    },
+    {
+      "id": "G6",
+      "name": "Isotope/direction/state/Q/admission separation",
+      "result": "fail",
+      "assertions": 29,
+      "error_class": "AssertionError",
+      "error": "record source class EXFOR_M0011003"
+    },
+    {
+      "id": "G7",
+      "name": "Identical-product and shared-experiment normalization",
+      "result": "pass_scoped",
+      "assertions": 18
+    },
+    {
+      "id": "G8",
+      "name": "E2 auxiliary and CURVE exclusion boundaries",
+      "result": "pass_scoped",
+      "assertions": 52
+    },
+    {
+      "id": "G9",
+      "name": "Publication provenance and bounded claim scope",
+      "result": "pass_scoped",
+      "assertions": 15
+    }
+  ],
+  "passed_groups": 8,
+  "group_count": 9,
+  "assertions": 705,
+  "audited_source_counts": {
+    "main_TABLE_subentries": 4,
+    "main_native_rows": 36,
+    "main_native_numeric_cells": 124,
+    "integral_SIG_rows": 24,
+    "angular_differential_DA_rows": 12,
+    "auxiliary_E2_rows_separate": 7,
+    "auxiliary_native_numeric_cells_separate": 21,
+    "excluded_target6_CURVE_subentries": 3
+  },
+  "count_qualification": "TABLE records are not independent-experiment counts; native-cell comparisons are implementation evidence, not physical approvals.",
+  "semantic_review": {
+    "method": "Independent reading of all four raw entries, frozen metadata, and official LEXFOR sections; conditional number/normalization derivation in INTAKE_REVIEW.md.",
+    "official_manual_URL": "https://nds.iaea.org/nrdc/nrdc_doc/iaea-nds-0208-202505.pdf",
+    "sections": [
+      "C.1",
+      "C.8",
+      "D.13",
+      "M.12"
+    ],
+    "manual_full_bytes_or_SHA_verified": false,
+    "pre_freeze_clarifications": [
+      "EP/POLAR=2 is E2, kept separate from total SIG",
+      "energy-bin SIG has area units, not an incident-energy integral",
+      "M0475002/003 share an experiment and do not imply independent covariance",
+      "identical-dd event stoichiometry is separate from angular particle counting"
+    ]
+  },
+  "open_consumer_obligations": [
+    "Native reaction identity is not an atomic-charge or state binding",
+    "Incident-energy response/bin weights and angular acceptance/integration are not supplied in selected entries",
+    "Differential particle/event and full-sphere/half-sphere normalization requires explicit source/consumer convention",
+    "No data-driven interpolation/extrapolation or actual photon-spectrum consumer is admitted",
+    "No covariance, combined confidence interval, new Q or deposition partition is supplied"
+  ],
+  "execution_receipt": "../raw/independent01/RECEIPT.json",
+  "executable_source_identity": "Exact python -c program is preserved in raw/independent01/REQUEST.json and RECEIPT.json command argv",
+  "overlay_code_review": "Separate authority_survey static review; this result does not claim execution of overlay checker",
+  "new_rate_evaluations": 0,
+  "new_Q_evaluations": 0,
+  "new_angular_integrations": 0,
+  "old_science_replays": 0,
+  "old_compiler_calls": 0,
+  "physical_rate_Q_consumer_admission": false
+}

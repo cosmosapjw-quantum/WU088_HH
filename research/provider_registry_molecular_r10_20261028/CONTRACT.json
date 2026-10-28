@@ -1,0 +1,98 @@
+{
+  "schema": "WU_R10_CONTRACT_V1",
+  "unit": "WU_FULL_GENERATOR_TRIANGULAR_R10",
+  "workflow_version": "1.0.0",
+  "user_scope": "full theory R1-R10 and coding C1-C10, changed-source synthesis, per-stage publish and dual backup, copyable handoff",
+  "objective": "Use HD projected-sink Markov geometry to derive and implement a full-generator triangular residual/coarse-error bound on unchanged saved inputs.",
+  "base": {
+    "repository": "cosmosapjw-quantum/WU088_HH",
+    "branch": "research/provider-registry-20261025",
+    "commit": "7a1430afb21736804286ca5284e0d8243016f2f4",
+    "PR": 150,
+    "DAG": [
+      19,
+      34
+    ]
+  },
+  "construction": {
+    "H": "pi*d^T-diag(d)",
+    "A": "K+w*H",
+    "lambda": "min_i<j(A_ij+A_ji+sum_k_not_i_j min(A_ki,A_kj))",
+    "uniform_lambda": "lambda(K+w_min*H) for fixed K,pi,d; w in certified [w_min,w_max]",
+    "comparison": "Rprime <= -lambda R + g_r; Eprime <= c R + d E + g_e",
+    "g_c_d": "reuse exact R7 whole-fine/coarse-domain coefficients unchanged",
+    "point": "positive shifted augmented 3x3 exponential enclosure",
+    "whole_cell": "nonnegative comparison with first diagonal0 and second diagonal max(d,0)",
+    "caps": "same-family/same-state/same-clock R9 certified point or closed-cell cap only"
+  },
+  "domain": {
+    "HD_states": [
+      1,
+      13
+    ],
+    "cells": [
+      1,
+      192
+    ],
+    "exact_rational_bits_max": 8192,
+    "dyadic_bits": 128,
+    "Taylor_degree": 96,
+    "shifted_scaled_infinity_norm_max": 16,
+    "lambda_nonnegative": true,
+    "d_signed": true,
+    "K_pi_d": "fixed exact saved coefficients",
+    "w": "variable in certified invariant box",
+    "whole_fine_and_coarse_box_required": true,
+    "physical_consumer_admitted": false
+  },
+  "acceptance": [
+    "Complete proof from exact HD residual equation through generator overlap contraction and triangular closure",
+    "New implementation accepts exact inputs; rejects broken generator/simplex/clock/cap identities",
+    "One primary pass on4savedHDcases at192cells plus analytic/guard controls",
+    "One independent Decimal160 reference pass checks generator identity, augmented matrix enclosures and saved193clock containment",
+    "Actual first failures preserved; targeted diagnosed repair only",
+    "One independent R6/C9 review closes current material findings",
+    "Ten paired stage source publications plus dual backups and final handoff"
+  ],
+  "claim_limits": [
+    "Fixed-input whole-domain conditional theorem; actual reactive data/physical consumer remain INPUT_PENDING",
+    "R9 nominal K block rho is not reused as a full A propagator certificate",
+    "Instantaneous lambda can be weak for sparse K; raw dominance is an empirical comparison only",
+    "Physical HH_R10 gate remains OFF, distinct from this molecular R10 method unit"
+  ],
+  "resource": {
+    "primary": {
+      "runs": 1,
+      "CPU_s": 60,
+      "wall_s": 90
+    },
+    "reference": {
+      "runs": 1,
+      "CPU_s": 60,
+      "wall_s": 90
+    },
+    "CAS": {
+      "runs": 1,
+      "wall_s": 30
+    },
+    "old_science_replay": 0,
+    "new_ODE_or_native_source_runs": 0,
+    "plotting": "saved-output read-only postprocessing",
+    "old_R9_R8_R7_R6_PHYS91_remaining": 0,
+    "global_remaining": null
+  },
+  "conventions": {
+    "norm": "l1 on zero-sum residual; E=abs(eta), coarse l1=4E",
+    "matrix": "column-conservative generator",
+    "time_density": "inherited declared dimensionless conditional fixture clock; no foreign density transfer",
+    "metric_signature": "(-,+,+,+)",
+    "c_hbar_kB": "retained where applicable; no spacetime formula in this unit"
+  },
+  "authorization": "Current explicit user request + preserved AGENTS permits additive expectedSHA/forcefalse researchbranch and Drive/Dropbox; no main merge or other-owner writes",
+  "created_utc": "2026-10-27T23:51:23.553721+00:00",
+  "reference_precision": {
+    "decimal_digits": 160,
+    "relative_guard": "1e-80",
+    "reason": "before-execution near-coalescence ±1e-30 may amplify closed-form cancellation by1e60"
+  }
+}

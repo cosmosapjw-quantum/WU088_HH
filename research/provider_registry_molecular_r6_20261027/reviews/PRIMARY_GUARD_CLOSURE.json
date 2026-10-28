@@ -1,0 +1,26 @@
+{
+  "scope": "Actual first primary; static findings F01/F02",
+  "source_result_sha256": "1a3b55f7c14a64a10a651de2df7b7f7d2df24d0b9e809b729f32d73377c90e84",
+  "observations": [
+    {
+      "group": "guards",
+      "case": "reject_mismatched_native_clock_scale",
+      "status": "PASS",
+      "evidence": {
+        "observed_exception": "DomainError",
+        "message": "Primary source identity/native-domain contract mismatch"
+      }
+    },
+    {
+      "group": "guards",
+      "case": "reject_negative_segment_with_positive_total_time",
+      "status": "PASS",
+      "evidence": {
+        "observed_exception": "DomainError",
+        "message": "Each chronological switched segment must have positive duration"
+      }
+    }
+  ],
+  "closed": true,
+  "scientific_replay_for_closure": 0
+}

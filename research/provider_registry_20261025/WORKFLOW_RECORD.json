@@ -1,0 +1,1504 @@
+{
+  "checks": [
+    {
+      "domain": "implementation",
+      "evidence_refs": [
+        "E_PRIMARY_FAILURE",
+        "E_RUN_primary01"
+      ],
+      "execution_ref": "primary01",
+      "id": "PRIMARY_FIRST",
+      "reason": "Checker substring mismatch only; first failure preserved.",
+      "result": "fail"
+    },
+    {
+      "domain": "implementation",
+      "evidence_refs": [
+        "E_PRIMARY",
+        "E_RUN_primary02"
+      ],
+      "execution_ref": "primary02",
+      "id": "PRIMARY_FINAL",
+      "reason": "20 finite implementation check groups pass.",
+      "result": "pass_scoped"
+    },
+    {
+      "domain": "implementation",
+      "evidence_refs": [
+        "E_INDEPENDENT",
+        "E_RUN_independent01"
+      ],
+      "execution_ref": "independent01",
+      "id": "INDEPENDENT_FINAL",
+      "reason": "448 source/number/guard checks pass; independent raw parsing.",
+      "result": "pass_scoped"
+    },
+    {
+      "domain": "implementation",
+      "evidence_refs": [
+        "E_OUT_data_driven_identity_equivalence"
+      ],
+      "execution_ref": "data_driven_identity_equivalence",
+      "id": "IDENTITY_EQUIVALENCE",
+      "reason": "All five registry output files reused unchanged after data-driven identity refactor.",
+      "result": "pass_scoped"
+    },
+    {
+      "domain": "physics",
+      "evidence_refs": [
+        "E_CONSTRUCTION",
+        "E_PRIMARY",
+        "E_INDEPENDENT"
+      ],
+      "execution_ref": "independent01",
+      "id": "FINITE_CONSERVATION",
+      "reason": "Exact finite number columns only; no source energy or physical rate approval.",
+      "result": "pass_scoped"
+    },
+    {
+      "domain": "physics",
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_COVERAGE"
+      ],
+      "execution_ref": null,
+      "id": "PHYSICAL_RATE_Q_ADMISSION",
+      "reason": "This intake evaluates no physical coefficient/Q and has no consumer-binding authority from the synthetic compiler approval.",
+      "result": "not_run"
+    },
+    {
+      "domain": "storage",
+      "evidence_refs": [
+        "E_DELIVERY"
+      ],
+      "execution_ref": "delivery/CLOUD_READBACK.json",
+      "id": "CURRENT_UNIT_DELIVERY",
+      "reason": "Source commit/tree/PR published and read back; both backups downloaded and matched by bytes and SHA256.",
+      "result": "pass",
+      "previous_observation": {
+        "result": "not_run",
+        "reason": "Root is preparing publication and dual backup; await actual delivery receipts.",
+        "phase": "before source publication and backup"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "basis": [
+        "implementation-verified",
+        "literature-supported"
+      ],
+      "evidence_refs": [
+        "E_SOURCES",
+        "E_REGISTRY",
+        "E_PRIMARY",
+        "E_INDEPENDENT"
+      ],
+      "id": "SOURCE_ROWS",
+      "obligations": [
+        "Preserve native source uncertainties, isotope/state qualifications and unresolved reaction-network locator."
+      ],
+      "scope": "Recovered configured source intake; catalogue and projections are separate inventories.",
+      "statement": "The registry materializes 102 actual source-provider variants with unique original payload selectors."
+    },
+    {
+      "basis": [
+        "derived",
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_THEORY",
+        "E_CONSTRUCTION",
+        "E_PRIMARY",
+        "E_INDEPENDENT"
+      ],
+      "id": "FINITE_COLUMNS",
+      "obligations": [
+        "Bind physical rate normalization, energy/Q, branch support and one named consumer before activation."
+      ],
+      "scope": "Finite supplied species and declared external-particle catalog only.",
+      "statement": "125 candidate event projections have known participants and exact declared charge/baryon/electron-lepton ledgers; chemical isotope counts are preserved."
+    },
+    {
+      "basis": [
+        "implementation-verified"
+      ],
+      "evidence_refs": [
+        "E_COVERAGE",
+        "E_PRIMARY",
+        "E_INDEPENDENT"
+      ],
+      "id": "HISTORICAL_SCOPE",
+      "obligations": [
+        "Source-specific isotope/state and domain admission remains per cell."
+      ],
+      "scope": "Legacy admissions retain their original meaning.",
+      "statement": "The 21-population and 39-direction baseline is retained; 10 historical CI nulls carry separate inactive Voronov source candidates."
+    },
+    {
+      "basis": [
+        "unresolved"
+      ],
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_COVERAGE",
+        "E_NETWORK"
+      ],
+      "id": "PHYSICAL_COMPLETENESS",
+      "obligations": [
+        "Recover the exact original nuclear-network object or source-backed configured reaction list.",
+        "Resolve physical source, mass convention/covariance, branching/energy and consumer obligations in their owners."
+      ],
+      "scope": "No promotion from historical synthetic 249 checks or current source-row checks.",
+      "statement": "Full physical rate/Q and all configured nuclear-network completion remain unresolved."
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "pass_scoped",
+      "evidence_refs": [
+        "E_PRIMARY",
+        "E_INDEPENDENT"
+      ],
+      "id": "ADOPT_SOURCE_REGISTRY",
+      "scope": "Actual source rows and exact finite number projections only; no new physical rate/Q approval."
+    },
+    {
+      "decision": "reuse completed source/compiler and validation evidence unless a relevant dependency changes",
+      "evidence_refs": [
+        "E_PRIMARY",
+        "E_INDEPENDENT",
+        "E_OLD_ADMISSION"
+      ],
+      "id": "STOP_OPTIONAL_REVALIDATION"
+    }
+  ],
+  "delivery": {
+    "status": "complete",
+    "publication": {
+      "status": "complete",
+      "receipt": "delivery/PUBLICATION_RECEIPT.json"
+    },
+    "git_readback": {
+      "status": "complete_for_source_commit",
+      "receipt": "delivery/GIT_READBACK.json"
+    },
+    "source_zip": {
+      "status": "complete",
+      "receipt": "delivery/SOURCE_ZIP_MANIFEST.json"
+    },
+    "dual_backup": {
+      "status": "complete_byte_verified",
+      "receipt": "delivery/FINAL_BACKUP_ACK.json",
+      "actual_byte_readback": "delivery/CLOUD_READBACK.json"
+    },
+    "source_commit": "18a6804d7cbe4879701e83631f7e908bbb84cef1",
+    "source_tree": "4973e1f4293bc6fa002ace339613f747ed987842",
+    "PR": 150,
+    "metadata_followup": "R1 delivery metadata is included in additive reviewed R2 source child; R1 core is unchanged and R2 science has separate C9 acceptance."
+  },
+  "dependencies": [
+    {
+      "description": "Fixed user handoff and source baseline.",
+      "id": "D_BASE_COMMIT",
+      "identity": "git:34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad"
+    },
+    {
+      "description": "Pinned central expansion authority; observed later head does not replace this pin.",
+      "id": "D_CENTRAL_COMMIT",
+      "identity": "git:641a725ada4be27473069c2c35005a94c2ab0248"
+    },
+    {
+      "description": "Current scope, acceptance and bounded-resource authority.",
+      "id": "D_CONTRACT",
+      "identity": "sha256:aa58fd2683b54760bdf2e51165207dac3a96477b261c86923e6fcaca8e880f46",
+      "locator": "CONTRACT.json"
+    },
+    {
+      "description": "Observed source-branch HEAD snapshot.",
+      "id": "D_HEAD",
+      "identity": "sha256:309d98aefbbe5a3c7cdc24a5a010f2d1f53f1046e7a14c6816ede51c20756d05",
+      "locator": "authority/head.json"
+    },
+    {
+      "description": "Observed AGENTS snapshot; current user task controls scheduling.",
+      "id": "D_AGENTS",
+      "identity": "sha256:d531451c8507d4e72631fa88c7f3b8bfc0b768d0e4cc524e314973f1eb8cd0e6",
+      "locator": "authority/agents.md"
+    },
+    {
+      "description": "Observed parallel PR snapshot.",
+      "id": "D_PARALLEL",
+      "identity": "sha256:fbcb03abfdbecebe3523efbb3770c8a220ab8b76a31195a673613e46868e09d1",
+      "locator": "authority/parallel_prs.json"
+    },
+    {
+      "description": "Central owner and scope assignment.",
+      "id": "D_TASKS",
+      "identity": "sha256:76135bc48264cac8a595c7757fbf2d8e552e05170693c88b91d4f82fdd1a5a6a",
+      "locator": "authority/tasks.json"
+    },
+    {
+      "description": "Immutable admitted finite compiler.",
+      "id": "D_COMPILER",
+      "identity": "sha256:60a502895266b6feb96964abc4b24db61c2faed2344db0f7d12f16bb47ed62af",
+      "locator": "../rei_chem_ledger_20261025/chem_ledger.py"
+    },
+    {
+      "description": "Inherited finite conservation and event identity derivation.",
+      "id": "D_THEORY",
+      "identity": "sha256:ae1d5e5669c465d1548d4edc079991b28bff393613224e1c4b065560bc77a0e8",
+      "locator": "../rei_chem_ledger_20261025/authority/THEORY.md"
+    },
+    {
+      "description": "Inherited finite synthetic compiler contract.",
+      "id": "D_CORE_CONTRACT",
+      "identity": "sha256:098b807f972f807b08fa3860635d5b03a5cedd9e91487743453b9a9ee4f9d9ef",
+      "locator": "../rei_chem_ledger_20261025/authority/FROZEN_COMPILER_CONTRACT.md"
+    },
+    {
+      "description": "Historical scoped 249-check admission; no physical rate/Q admission.",
+      "id": "D_CORE_ADMISSION",
+      "identity": "sha256:6132c4d5f86ec3104e4a14bd5f315ba23cf86c7d53d951b23d6832fc242b5b30",
+      "locator": "../rei_chem_ledger_20261025/authority/ROOT_COMPILER_ADMISSION.json"
+    },
+    {
+      "description": "Frozen atomic/nuclear source packet manifest.",
+      "id": "D_ATOMIC",
+      "identity": "sha256:0ddf6523eac7340f4aa136c59cc634a7a6a966f28c83a8f200b3f4604f19a8c6",
+      "locator": "sources/atomic_nuclear/PACKET_MANIFEST.json"
+    },
+    {
+      "description": "Additive HeI and RR correction packet.",
+      "id": "D_CORRECTION",
+      "identity": "sha256:aa606bb3f5f0f78b524982b5e9bc4d2609a47bc8dcfb37e7e7d45fe70538fb7f",
+      "locator": "sources/atomic_nuclear_correction/MANIFEST.json"
+    },
+    {
+      "description": "Stored molecular original-source identities.",
+      "id": "D_MOLECULAR",
+      "identity": "sha256:34c1d705edd82ce50839a122afe9e1292e89638c62c0cc6294d9183fb5d1e062",
+      "locator": "sources/molecular/STORAGE_INDEX.json"
+    },
+    {
+      "description": "Original Voronov six selected elemental rows.",
+      "id": "D_V97",
+      "identity": "sha256:0fbb81b59635148b55912647d830d704d7402275c5fdc0ecc50c34578a255fea",
+      "locator": "sources/voronov1997/SELECTED_ROWS.json"
+    },
+    {
+      "description": "Source-only adapter and explicit external-particle ledger.",
+      "id": "D_ADAPTER",
+      "identity": "sha256:9a093eed42f9ff5858d7bae11c726988ddbde4feeed38888b1c90fe329be816c",
+      "locator": "registry_adapter.py"
+    },
+    {
+      "description": "Deterministic provider/species/event assembly.",
+      "id": "D_BUILDER",
+      "identity": "sha256:b0f9387fecf18a9e66be9328bee0fb71b3055a1fb6f083cccd891e81269a792f",
+      "locator": "build_registry.py"
+    },
+    {
+      "description": "Final primary validation output.",
+      "id": "D_PRIMARY",
+      "identity": "sha256:8cf1923c726ea9ce23081f49b655310c2de7b4e056c586b45356f6d67aaf8250",
+      "locator": "raw/PRIMARY_RESULTS_FINAL.json"
+    },
+    {
+      "description": "Independent 448-check source/number review.",
+      "id": "D_INDEPENDENT",
+      "identity": "sha256:d03ed4769cd580fb573c100f9f6392f81193f500d9dd0feb860354d504ec8034",
+      "locator": "raw/INDEPENDENT_RESULTS.json"
+    },
+    {
+      "description": "Configured coverage and explicit unresolved dependencies.",
+      "id": "D_COVERAGE",
+      "identity": "sha256:67e6757038de2783d7b08f4bc840314a7bb2d04a8839c3a821a6be18be4f27f5",
+      "locator": "registry/coverage.json"
+    },
+    {
+      "description": "Bounded original network locator recovery result.",
+      "id": "D_NETWORK",
+      "identity": "sha256:74bcfc8aa1b8fd1e22ee6c50801789519b943451f760821ea3afb191748aa865",
+      "locator": "sources/atomic_nuclear/NETWORK_LOCATOR_STATUS.json"
+    },
+    {
+      "description": "Five exact registry JSON byte identities.",
+      "id": "D_REGISTRY",
+      "identity": "sha256:bdb376477a932c76c4fe2fec280a84dad2879f8b407a9997ece3ea6f729c11b2",
+      "members_sha256": {
+        "compiled": "d4836befd465ebd8130e5fd1f910b1fea30348c5e5785bfc66f8275735123f8c",
+        "coverage": "67e6757038de2783d7b08f4bc840314a7bb2d04a8839c3a821a6be18be4f27f5",
+        "events": "abeea067660b0898315935ffd07bb6a443bbb1bd6111c700215b72be220baa90",
+        "providers": "23d5bee7323a083d23a8a811eb7312a35c0eb613381ce28a22a5f989b1077664",
+        "species": "a18052f6db432192e1e0d4c75f8f2d49c71f3a5eb7cac206e7bc445fec2e8f80"
+      }
+    },
+    {
+      "description": "Measured receipt ledger snapshot.",
+      "id": "D_LEDGER",
+      "identity": "sha256:136699df7d74e780d13b594187353bc47cb25990c548f7ed682e7c7ec5960e94",
+      "locator": "EXECUTION_LEDGER.json"
+    },
+    {
+      "description": "Read built-in 1.0.0 theory/coding/evidence stage definitions.",
+      "id": "D_POLICY",
+      "identity": "sha256:12be4f2784bbb01c9e660b15e35dcab03e3b8f472f55412b49842ca9026b5999",
+      "member_sha256": {
+        "CODING_LOOP.md": "d27431851a7bcce2de77657d932abaad2ea0a4d1d4f10bc61d98140ea3f624be",
+        "EVIDENCE_AND_HANDOFF.md": "660d571f135bbac943b678764d23ad6b9df61b40d0ca4043affd08859d7f2bd4",
+        "THEORY_LOOP.md": "a95362652bc0b0295e818dfbdff44d0b5f14c197a5aaf030659b6900ea7b1ae1"
+      },
+      "source_root": "/workspace/scratch/3ffa3d77ca37/work/policy",
+      "workflow_definition": "skill://flora-user-skills/root/.codex/skills/remote-skills/skill-6aa0657100b08191b7d67482d1f97c1d/references/WORKFLOW.json"
+    },
+    {
+      "description": "Actual outer bounded execution receipt for build01",
+      "id": "D_RUN_build01",
+      "identity": "sha256:9d634663665d3e2e6910d9b0eed8d658f27ded68c4b2f204213f030e1b090004",
+      "locator": "raw/build01/RECEIPT.json"
+    },
+    {
+      "description": "Actual outer bounded execution receipt for build02",
+      "id": "D_RUN_build02",
+      "identity": "sha256:0bc8e137540ec4ef5289af89d0f870b9e7a1c4b291f017699eef624bf4d78f91",
+      "locator": "raw/build02/RECEIPT.json"
+    },
+    {
+      "description": "Actual outer bounded execution receipt for build03",
+      "id": "D_RUN_build03",
+      "identity": "sha256:68a6526f0e819122b122d5ea8a72a0ea8358f023f42064a5cd1cd01087fdb211",
+      "locator": "raw/build03/RECEIPT.json"
+    },
+    {
+      "description": "Actual outer bounded execution receipt for data_driven_identity_equivalence",
+      "id": "D_RUN_data_driven_identity_equivalence",
+      "identity": "sha256:77515ab1276b897d9466ee3cc7c9bfc3a46950c05a5d6c0a9903dcdf9629d7de",
+      "locator": "raw/data_driven_identity_equivalence/RECEIPT.json"
+    },
+    {
+      "description": "Actual outer bounded execution receipt for extract_v97",
+      "id": "D_RUN_extract_v97",
+      "identity": "sha256:dabae33692aaaf906264f8ff81ac16ee65a0b53e4f7605067506bf7f7bc95d9b",
+      "locator": "raw/extract_v97/RECEIPT.json"
+    },
+    {
+      "description": "Actual outer bounded execution receipt for independent01",
+      "id": "D_RUN_independent01",
+      "identity": "sha256:b282e9ac01a495001fb7572d324df985ccc47edd19d63b10d7a548093297255a",
+      "locator": "raw/independent01/RECEIPT.json"
+    },
+    {
+      "description": "Actual outer bounded execution receipt for primary01",
+      "id": "D_RUN_primary01",
+      "identity": "sha256:697c095a396dd8400300af611a42f7860ad6a62ef145cf80d6a591800be1793f",
+      "locator": "raw/primary01/RECEIPT.json"
+    },
+    {
+      "description": "Actual outer bounded execution receipt for primary02",
+      "id": "D_RUN_primary02",
+      "identity": "sha256:e99814ef0fbd9a391ddb90c73d7c870b890595f041b794574796473a02133a02",
+      "locator": "raw/primary02/RECEIPT.json"
+    }
+  ],
+  "evidence": [
+    {
+      "dependency_ids": [
+        "D_CONTRACT"
+      ],
+      "id": "E_CONTRACT",
+      "kind": "decision",
+      "locator": "CONTRACT.json",
+      "scope": "Current source-registry and finite-number scope; excluded scientific runs and preserved budgets."
+    },
+    {
+      "dependency_ids": [
+        "D_HEAD",
+        "D_AGENTS",
+        "D_PARALLEL",
+        "D_TASKS",
+        "D_BASE_COMMIT",
+        "D_CENTRAL_COMMIT"
+      ],
+      "id": "E_AUTHORITY",
+      "kind": "source",
+      "locator": "authority/",
+      "scope": "Observed AGENTS, HEAD, parallel work, owner assignments and prior backup receipts."
+    },
+    {
+      "dependency_ids": [
+        "D_THEORY",
+        "D_BASE_COMMIT"
+      ],
+      "id": "E_THEORY",
+      "kind": "derivation",
+      "locator": "../rei_chem_ledger_20261025/authority/THEORY.md",
+      "scope": "Finite supplied catalog, L/R event identity, exact conservation algebra and source-energy boundary."
+    },
+    {
+      "dependency_ids": [
+        "D_COMPILER",
+        "D_CORE_CONTRACT"
+      ],
+      "id": "E_COMPILER",
+      "kind": "implementation",
+      "locator": "../rei_chem_ledger_20261025/chem_ledger.py",
+      "scope": "Immutable finite number compiler implementation."
+    },
+    {
+      "dependency_ids": [
+        "D_CORE_ADMISSION",
+        "D_COMPILER"
+      ],
+      "id": "E_OLD_ADMISSION",
+      "kind": "review",
+      "locator": "../rei_chem_ledger_20261025/authority/ROOT_COMPILER_ADMISSION.json",
+      "scope": "Historical finite synthetic 249-check approval reused without rerunning or physical promotion."
+    },
+    {
+      "dependency_ids": [
+        "D_ATOMIC",
+        "D_CORRECTION",
+        "D_MOLECULAR",
+        "D_V97"
+      ],
+      "id": "E_SOURCES",
+      "kind": "source",
+      "locator": "sources/",
+      "scope": "Original atomic/nuclear/molecular/Voronov bytes, source tables and explicit native metadata."
+    },
+    {
+      "dependency_ids": [
+        "D_CORRECTION"
+      ],
+      "id": "E_HEI_CORRECTION",
+      "kind": "review",
+      "locator": "sources/atomic_nuclear_correction/CORRECTION_V1.json",
+      "scope": "First extraction coverage failure retained; both HeI rows and unresolved total RR photon count restored."
+    },
+    {
+      "dependency_ids": [
+        "D_BUILDER"
+      ],
+      "id": "E_LOCATOR_CORRECTION",
+      "kind": "review",
+      "locator": "raw/build01/LOCATOR_CORRECTION.json",
+      "scope": "Raw build01 snapshot retained; file/container/match selector correction."
+    },
+    {
+      "dependency_ids": [
+        "D_ADAPTER",
+        "D_COMPILER"
+      ],
+      "id": "E_ADAPTER",
+      "kind": "implementation",
+      "locator": "registry_adapter.py",
+      "scope": "Exact material and external-particle number ledger; source-only activation and ownership guards."
+    },
+    {
+      "dependency_ids": [
+        "D_BUILDER",
+        "D_ATOMIC",
+        "D_CORRECTION",
+        "D_MOLECULAR",
+        "D_V97"
+      ],
+      "id": "E_BUILDER",
+      "kind": "implementation",
+      "locator": "build_registry.py",
+      "scope": "Source-specific deterministic assembly; native coefficients are carried without evaluation."
+    },
+    {
+      "dependency_ids": [
+        "D_THEORY",
+        "D_ADAPTER",
+        "D_REGISTRY"
+      ],
+      "id": "E_CONSTRUCTION",
+      "kind": "derivation",
+      "locator": "WORKFLOW_RECORD.json#/finite_number_construction",
+      "scope": "Explicit finite count equations implemented and checked for supplied candidate projections."
+    },
+    {
+      "dependency_ids": [
+        "D_REGISTRY"
+      ],
+      "id": "E_REGISTRY",
+      "kind": "artifact",
+      "locator": "registry/",
+      "scope": "102 provider variants, 125 candidate events, 92 declared species keys; source identities and gaps preserved."
+    },
+    {
+      "dependency_ids": [
+        "D_PRIMARY",
+        "D_ADAPTER",
+        "D_REGISTRY"
+      ],
+      "id": "E_PRIMARY",
+      "kind": "implementation",
+      "locator": "raw/PRIMARY_RESULTS_FINAL.json",
+      "scope": "20 primary implementation check groups PASS; no physical rate/Q inference."
+    },
+    {
+      "dependency_ids": [
+        "D_PRIMARY"
+      ],
+      "id": "E_PRIMARY_FAILURE",
+      "kind": "implementation",
+      "locator": "raw/primary01/FAILED_CHECKER_MANIFEST.json",
+      "scope": "Exact failed checker/result/log preservation and one-line predicate correction."
+    },
+    {
+      "dependency_ids": [
+        "D_INDEPENDENT",
+        "D_REGISTRY",
+        "D_ADAPTER"
+      ],
+      "id": "E_INDEPENDENT",
+      "kind": "review",
+      "locator": "raw/INDEPENDENT_RESULTS.json",
+      "scope": "448 independent raw-source and integer projection checks with zero failures."
+    },
+    {
+      "dependency_ids": [
+        "D_COVERAGE",
+        "D_REGISTRY"
+      ],
+      "id": "E_COVERAGE",
+      "kind": "decision",
+      "locator": "registry/coverage.json",
+      "scope": "21/39 baseline retained; 10 legacy CI nulls keep separate new candidates; physical completeness remains unresolved."
+    },
+    {
+      "dependency_ids": [
+        "D_NETWORK"
+      ],
+      "id": "E_NETWORK",
+      "kind": "source",
+      "locator": "sources/atomic_nuclear/NETWORK_LOCATOR_STATUS.json",
+      "scope": "Original nuclear-network object locator unresolved in inspected exact links."
+    },
+    {
+      "dependency_ids": [
+        "D_LEDGER"
+      ],
+      "id": "E_COST",
+      "kind": "resource",
+      "locator": "EXECUTION_LEDGER.json",
+      "scope": "Eight distinct outer execution receipts; measured subtotal distinct from unmeasured work."
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_build01"
+      ],
+      "id": "E_RUN_build01",
+      "kind": "resource",
+      "locator": "raw/build01/RECEIPT.json",
+      "scope": "initial deterministic assembly; later selector defect preserved and corrected"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_build01"
+      ],
+      "id": "E_OUT_build01",
+      "kind": "artifact",
+      "locator": "raw/build01/stdout.txt",
+      "scope": "Saved execution output for build01"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_build02"
+      ],
+      "id": "E_RUN_build02",
+      "kind": "resource",
+      "locator": "raw/build02/RECEIPT.json",
+      "scope": "assembly after explicit file/container/match locator correction"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_build02"
+      ],
+      "id": "E_OUT_build02",
+      "kind": "artifact",
+      "locator": "raw/build02/stdout.txt",
+      "scope": "Saved execution output for build02"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_build03"
+      ],
+      "id": "E_RUN_build03",
+      "kind": "resource",
+      "locator": "raw/build03/RECEIPT.json",
+      "scope": "assembly after six original Voronov CI rows and thirteen source-only projections"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_build03"
+      ],
+      "id": "E_OUT_build03",
+      "kind": "artifact",
+      "locator": "raw/build03/stdout.txt",
+      "scope": "Saved execution output for build03"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_data_driven_identity_equivalence"
+      ],
+      "id": "E_RUN_data_driven_identity_equivalence",
+      "kind": "resource",
+      "locator": "raw/data_driven_identity_equivalence/RECEIPT.json",
+      "scope": "changed configured identity lookup; all five registry JSONs reused byte-unchanged"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_data_driven_identity_equivalence"
+      ],
+      "id": "E_OUT_data_driven_identity_equivalence",
+      "kind": "artifact",
+      "locator": "raw/data_driven_identity_equivalence/stdout.txt",
+      "scope": "Saved execution output for data_driven_identity_equivalence"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_extract_v97"
+      ],
+      "id": "E_RUN_extract_v97",
+      "kind": "resource",
+      "locator": "raw/extract_v97/RECEIPT.json",
+      "scope": "mechanical extraction of original Voronov coefficient rows; no coefficient evaluation"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_extract_v97"
+      ],
+      "id": "E_OUT_extract_v97",
+      "kind": "artifact",
+      "locator": "raw/extract_v97/stdout.txt",
+      "scope": "Saved execution output for extract_v97"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_independent01"
+      ],
+      "id": "E_RUN_independent01",
+      "kind": "resource",
+      "locator": "raw/independent01/RECEIPT.json",
+      "scope": "independent raw-file parsing and finite number-ledger review"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_independent01"
+      ],
+      "id": "E_OUT_independent01",
+      "kind": "artifact",
+      "locator": "raw/independent01/stdout.txt",
+      "scope": "Saved execution output for independent01"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_primary01"
+      ],
+      "id": "E_RUN_primary01",
+      "kind": "resource",
+      "locator": "raw/primary01/RECEIPT.json",
+      "scope": "first primary check; failed LiH qualification substring predicate in checker"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_primary01"
+      ],
+      "id": "E_OUT_primary01",
+      "kind": "artifact",
+      "locator": "raw/primary01/stdout.txt",
+      "scope": "Saved execution output for primary01"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_primary02"
+      ],
+      "id": "E_RUN_primary02",
+      "kind": "resource",
+      "locator": "raw/primary02/RECEIPT.json",
+      "scope": "corrected LiH predicate; final primary implementation validation"
+    },
+    {
+      "dependency_ids": [
+        "D_RUN_primary02"
+      ],
+      "id": "E_OUT_primary02",
+      "kind": "artifact",
+      "locator": "raw/primary02/stdout.txt",
+      "scope": "Saved execution output for primary02"
+    },
+    {
+      "id": "E_DELIVERY",
+      "kind": "publication_and_backup",
+      "locator": "delivery/PUBLICATION_AND_BACKUP.json",
+      "scope": "Published source commit and independently retrieved actual Dropbox/Drive bytes; same ZIP SHA256, no physical admission change.",
+      "dependency_ids": []
+    }
+  ],
+  "executions": [
+    {
+      "command": [
+        "python3",
+        "build_registry.py"
+      ],
+      "environment": {
+        "cwd": "/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025",
+        "host": {
+          "cgroup_cpu": "800000 100000",
+          "cgroup_memory": "8589934592",
+          "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "limits": {
+          "cpu_cap_s": 30,
+          "memory_MiB": 512,
+          "threads": 1,
+          "wall_cap_s": 120,
+          "workers": 1
+        },
+        "python": "3.12.14"
+      },
+      "evidence_refs": [
+        "E_RUN_build01",
+        "E_OUT_build01"
+      ],
+      "exit_code": 0,
+      "id": "build01",
+      "reason": "initial deterministic assembly; later selector defect preserved and corrected",
+      "receipt": "raw/build01/RECEIPT.json",
+      "status": "completed"
+    },
+    {
+      "command": [
+        "python3",
+        "build_registry.py"
+      ],
+      "environment": {
+        "cwd": "/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025",
+        "host": {
+          "cgroup_cpu": "800000 100000",
+          "cgroup_memory": "8589934592",
+          "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "limits": {
+          "cpu_cap_s": 30,
+          "memory_MiB": 512,
+          "threads": 1,
+          "wall_cap_s": 120,
+          "workers": 1
+        },
+        "python": "3.12.14"
+      },
+      "evidence_refs": [
+        "E_RUN_build02",
+        "E_OUT_build02"
+      ],
+      "exit_code": 0,
+      "id": "build02",
+      "reason": "assembly after explicit file/container/match locator correction",
+      "receipt": "raw/build02/RECEIPT.json",
+      "status": "completed"
+    },
+    {
+      "command": [
+        "python3",
+        "build_registry.py"
+      ],
+      "environment": {
+        "cwd": "/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025",
+        "host": {
+          "cgroup_cpu": "800000 100000",
+          "cgroup_memory": "8589934592",
+          "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "limits": {
+          "cpu_cap_s": 30,
+          "memory_MiB": 512,
+          "threads": 1,
+          "wall_cap_s": 120,
+          "workers": 1
+        },
+        "python": "3.12.14"
+      },
+      "evidence_refs": [
+        "E_RUN_build03",
+        "E_OUT_build03"
+      ],
+      "exit_code": 0,
+      "id": "build03",
+      "reason": "assembly after six original Voronov CI rows and thirteen source-only projections",
+      "receipt": "raw/build03/RECEIPT.json",
+      "status": "completed"
+    },
+    {
+      "command": [
+        "python3",
+        "build_registry.py"
+      ],
+      "environment": {
+        "cwd": "/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025",
+        "host": {
+          "cgroup_cpu": "800000 100000",
+          "cgroup_memory": "8589934592",
+          "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "limits": {
+          "cpu_cap_s": 30,
+          "memory_MiB": 512,
+          "threads": 1,
+          "wall_cap_s": 120,
+          "workers": 1
+        },
+        "python": "3.12.14"
+      },
+      "evidence_refs": [
+        "E_RUN_data_driven_identity_equivalence",
+        "E_OUT_data_driven_identity_equivalence"
+      ],
+      "exit_code": 0,
+      "id": "data_driven_identity_equivalence",
+      "reason": "changed configured identity lookup; all five registry JSONs reused byte-unchanged",
+      "receipt": "raw/data_driven_identity_equivalence/RECEIPT.json",
+      "status": "completed"
+    },
+    {
+      "command": [
+        "python3",
+        "sources/voronov1997/extract_rows.py"
+      ],
+      "environment": {
+        "cwd": "/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025",
+        "host": {
+          "cgroup_cpu": "800000 100000",
+          "cgroup_memory": "8589934592",
+          "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "limits": {
+          "cpu_cap_s": 30,
+          "memory_MiB": 512,
+          "threads": 1,
+          "wall_cap_s": 120,
+          "workers": 1
+        },
+        "python": "3.12.14"
+      },
+      "evidence_refs": [
+        "E_RUN_extract_v97",
+        "E_OUT_extract_v97"
+      ],
+      "exit_code": 0,
+      "id": "extract_v97",
+      "reason": "mechanical extraction of original Voronov coefficient rows; no coefficient evaluation",
+      "receipt": "raw/extract_v97/RECEIPT.json",
+      "status": "completed"
+    },
+    {
+      "command": [
+        "python3",
+        "/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025/verification/independent_check.py",
+        "--registry-root",
+        "/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025",
+        "--output",
+        "/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025/raw/INDEPENDENT_RESULTS.json"
+      ],
+      "environment": {
+        "cwd": "/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025",
+        "host": {
+          "cgroup_cpu": "800000 100000",
+          "cgroup_memory": "8589934592",
+          "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "limits": {
+          "cpu_cap_s": 30,
+          "memory_MiB": 512,
+          "threads": 1,
+          "wall_cap_s": 120,
+          "workers": 1
+        },
+        "python": "3.12.14"
+      },
+      "evidence_refs": [
+        "E_RUN_independent01",
+        "E_OUT_independent01"
+      ],
+      "exit_code": 0,
+      "id": "independent01",
+      "reason": "independent raw-file parsing and finite number-ledger review",
+      "receipt": "raw/independent01/RECEIPT.json",
+      "status": "completed"
+    },
+    {
+      "command": [
+        "python3",
+        "verification/check_registry.py"
+      ],
+      "environment": {
+        "cwd": "/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025",
+        "host": {
+          "cgroup_cpu": "800000 100000",
+          "cgroup_memory": "8589934592",
+          "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "limits": {
+          "cpu_cap_s": 30,
+          "memory_MiB": 512,
+          "threads": 1,
+          "wall_cap_s": 120,
+          "workers": 1
+        },
+        "python": "3.12.14"
+      },
+      "evidence_refs": [
+        "E_RUN_primary01",
+        "E_OUT_primary01"
+      ],
+      "exit_code": 1,
+      "id": "primary01",
+      "reason": "first primary check; failed LiH qualification substring predicate in checker",
+      "receipt": "raw/primary01/RECEIPT.json",
+      "status": "failed"
+    },
+    {
+      "command": [
+        "python3",
+        "verification/check_registry.py",
+        "--output",
+        "raw/PRIMARY_RESULTS_FINAL.json"
+      ],
+      "environment": {
+        "cwd": "/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025",
+        "host": {
+          "cgroup_cpu": "800000 100000",
+          "cgroup_memory": "8589934592",
+          "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "limits": {
+          "cpu_cap_s": 30,
+          "memory_MiB": 512,
+          "threads": 1,
+          "wall_cap_s": 120,
+          "workers": 1
+        },
+        "python": "3.12.14"
+      },
+      "evidence_refs": [
+        "E_RUN_primary02",
+        "E_OUT_primary02"
+      ],
+      "exit_code": 0,
+      "id": "primary02",
+      "reason": "corrected LiH predicate; final primary implementation validation",
+      "receipt": "raw/primary02/RECEIPT.json",
+      "status": "completed"
+    }
+  ],
+  "failures": [
+    {
+      "class": "implementation",
+      "evidence_refs": [
+        "E_HEI_CORRECTION"
+      ],
+      "id": "HEI_ROW_OMISSION",
+      "next_action": "Closed by separate fit a/b identities and final source/ownership checks; original packet remains frozen."
+    },
+    {
+      "class": "implementation",
+      "evidence_refs": [
+        "E_LOCATOR_CORRECTION",
+        "E_PRIMARY",
+        "E_INDEPENDENT"
+      ],
+      "id": "PAYLOAD_SELECTOR",
+      "next_action": "Closed by explicit file/container/match resolution; initial build ZIP preserved."
+    },
+    {
+      "class": "implementation",
+      "evidence_refs": [
+        "E_PRIMARY_FAILURE",
+        "E_PRIMARY",
+        "E_RUN_primary01",
+        "E_RUN_primary02"
+      ],
+      "execution_ref": "primary01",
+      "id": "PRIMARY01_PREDICATE",
+      "next_action": "Closed by one-line predicate correction and primary02; do not overwrite failed output."
+    },
+    {
+      "class": "input_dependency",
+      "evidence_refs": [
+        "E_NETWORK"
+      ],
+      "id": "ORIGINAL_NETWORK_INPUT",
+      "next_action": "Obtain exact original nuclear-network object identity or source-backed configured reaction list; continue independent approved work."
+    }
+  ],
+  "finite_number_construction": {
+    "event_identity": "Keep L and R, source state/domain, branch and canonical external particle counts. Equal net N does not erase colliders; duplicate external labels add exactly.",
+    "external_ledger": "escaping electron antineutrino contributes -1; electron neutrino +1; photons and the declared radiation drivers contribute zero baryon/charge/lepton number.",
+    "finite_conditions": [
+      "chemical: sum_s a_is*N_sr=0 for each supplied nucleus identity",
+      "all declared events: sum_s q_s*N_sr + external_charge_delta=0",
+      "all declared events: sum_s(sum_i A_i*a_is)*N_sr + external_baryon_delta=0",
+      "all declared events: sum_s ell_s*N_sr + external_lepton_delta=0"
+    ],
+    "finite_evidence": "All 125 saved candidate columns checked with independent integer arithmetic; 20 primary groups and 448 independent checks separately retained.",
+    "inherited_representation": "For species s and nucleus i=(Z,A,isomer), a_is is integer multiplicity, q_s integer charge, L_sr/R_sr ordered-side multiplicities and N_sr=R_sr-L_sr.",
+    "material_electron_lepton_count": "ell_s = sum_i Z_i*a_is - q_s; empty-composition free electron with q=-1 contributes +1.",
+    "physical_limit": "Integer bookkeeping does not establish bound-state existence, physical source mapping, empirical-rate validity, nuclear/chemical Q, source uncertainty covariance or consumer adoption."
+  },
+  "metadata_validation": "Existing evidence was read to construct this record. No additional tests, scientific executions or workflow-checker execution were run for these two metadata files.",
+  "next_actions": [
+    {
+      "action": "Source publication, source ZIP and two verified backups completed; containing commit binds delivery metadata.",
+      "completion": "Source commit and both actual backup byte acknowledgements are recorded; R10/C10 closed within scope.",
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_PRIMARY",
+        "E_INDEPENDENT",
+        "E_DELIVERY"
+      ],
+      "id": "DELIVER",
+      "status": "complete"
+    },
+    {
+      "action": "Resume at R2/C2 for newly recovered network or isotope/state source identity, then only affected downstream work.",
+      "completion": "Exact configured target list and corresponding source-qualified reactions; missing values remain null.",
+      "evidence_refs": [
+        "E_NETWORK",
+        "E_COVERAGE"
+      ],
+      "id": "NEXT_SOURCE_DEPENDENCY"
+    }
+  ],
+  "objective": "Recover actual provider rows for the configured species/reaction registry and reuse the immutable finite compiler while preserving scientific-admission boundaries.",
+  "overrides": [],
+  "schema_version": 1,
+  "scope": "Actual source bytes and source-native metadata; declared finite number projections; implementation verification and independent review. Delivery remains in progress; physical all-target rate/Q completion is not asserted.",
+  "snapshot_UTC": "2026-10-25T13:14:14.479035+00:00",
+  "stage_mapping_note": "Stage names follow built-in 1.0.0 exactly. Complete stages refer only to the stated source-intake/finite-number obligations; no independent new physical theorem, quadrature, IVP or global model completion is implied.",
+  "stages": [
+    {
+      "dependency_ids": [
+        "D_CONTRACT",
+        "D_HEAD",
+        "D_AGENTS",
+        "D_PARALLEL",
+        "D_TASKS",
+        "D_BASE_COMMIT",
+        "D_CENTRAL_COMMIT"
+      ],
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_AUTHORITY"
+      ],
+      "id": "R1",
+      "name": "연구 위치·계약",
+      "reason": "Scope fixed to actual provider-row recovery and finite projections, with current user authorization and zero remaining PHYS91 budgets.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_ATOMIC",
+        "D_CORRECTION",
+        "D_MOLECULAR",
+        "D_V97",
+        "D_THEORY",
+        "D_CORE_ADMISSION",
+        "D_NETWORK"
+      ],
+      "evidence_refs": [
+        "E_SOURCES",
+        "E_THEORY",
+        "E_OLD_ADMISSION",
+        "E_NETWORK"
+      ],
+      "id": "R2",
+      "name": "근거·재사용",
+      "reason": "Recovered linked original rows; reused compiler and completed scientific data; preserved unresolved original network input.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_CONTRACT",
+        "D_COVERAGE",
+        "D_REGISTRY"
+      ],
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_COVERAGE",
+        "E_REGISTRY"
+      ],
+      "id": "R3",
+      "name": "주장·전제 정렬",
+      "reason": "Provider-native isotope/state/rate/Q metadata distinguished from candidate material projections and historical admissions.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_THEORY",
+        "D_COMPILER",
+        "D_CORE_CONTRACT",
+        "D_BASE_COMMIT"
+      ],
+      "evidence_refs": [
+        "E_THEORY",
+        "E_COMPILER"
+      ],
+      "id": "R4",
+      "name": "가설·표현 탐색",
+      "reason": "The already-derived finite composition/charge/state and ordered-side representation is reused; no new physical hypothesis search is claimed.",
+      "reuse": {
+        "condition": "Identities and finite-catalog premises retained; changed source-facing obligations checked separately.",
+        "dependency_identities": {
+          "D_BASE_COMMIT": "git:34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad",
+          "D_COMPILER": "sha256:60a502895266b6feb96964abc4b24db61c2faed2344db0f7d12f16bb47ed62af",
+          "D_CORE_CONTRACT": "sha256:098b807f972f807b08fa3860635d5b03a5cedd9e91487743453b9a9ee4f9d9ef",
+          "D_THEORY": "sha256:ae1d5e5669c465d1548d4edc079991b28bff393613224e1c4b065560bc77a0e8"
+        }
+      },
+      "status": "reused"
+    },
+    {
+      "dependency_ids": [
+        "D_THEORY",
+        "D_ADAPTER",
+        "D_REGISTRY"
+      ],
+      "evidence_refs": [
+        "E_CONSTRUCTION",
+        "E_THEORY",
+        "E_ADAPTER",
+        "E_REGISTRY"
+      ],
+      "id": "R5",
+      "name": "구성적 유도",
+      "reason": "Constructed finite source projections and explicit material-plus-external electron-lepton identity below. This closes finite integer bookkeeping, not physical source-energy derivation.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_INDEPENDENT",
+        "D_REGISTRY",
+        "D_ADAPTER",
+        "D_CORRECTION"
+      ],
+      "evidence_refs": [
+        "E_INDEPENDENT",
+        "E_HEI_CORRECTION"
+      ],
+      "id": "R6",
+      "name": "독립 검증",
+      "reason": "Independent raw parsing and direct integer ledgers; HeI/RR source-intake findings repaired and retained.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_PRIMARY",
+        "D_INDEPENDENT",
+        "D_RUN_primary02",
+        "D_RUN_independent01"
+      ],
+      "evidence_refs": [
+        "E_PRIMARY",
+        "E_INDEPENDENT",
+        "E_RUN_primary02",
+        "E_RUN_independent01"
+      ],
+      "id": "R7",
+      "name": "판별 검증",
+      "reason": "Actually executed bounded discrimination of malformed particles, branch/ownership, canonical identity, native support and preserved source gaps.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_INDEPENDENT",
+        "D_PRIMARY",
+        "D_COVERAGE"
+      ],
+      "evidence_refs": [
+        "E_INDEPENDENT",
+        "E_PRIMARY",
+        "E_COVERAGE"
+      ],
+      "id": "R8",
+      "name": "결과 판정",
+      "reason": "PASS_SCOPED_SOURCE_ROWS_AND_INTEGER_PROJECTIONS; full rates/Q and configured nuclear network remain unadmitted or unresolved. No strong no-go proposed.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_CONTRACT",
+        "D_REGISTRY",
+        "D_ADAPTER",
+        "D_BUILDER"
+      ],
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_REGISTRY",
+        "E_ADAPTER",
+        "E_BUILDER"
+      ],
+      "id": "R9",
+      "name": "정식 결과·코딩 연결",
+      "reason": "Structured source records, explicit units/states, source selectors, number operator and acceptance guards are materialized in reusable code/JSON contracts.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_LEDGER",
+        "D_COVERAGE",
+        "D_NETWORK"
+      ],
+      "evidence_refs": [
+        "E_COST",
+        "E_COVERAGE",
+        "E_NETWORK"
+      ],
+      "id": "R10",
+      "name": "종료·재개",
+      "reason": "Report, scoped DAG and handoff written; source commit/tree/PR read back; reproducible source ZIP and both backup actual-byte checks complete.",
+      "reuse": null,
+      "status": "complete",
+      "closeout_evidence": [
+        "REPORT_KO.md",
+        "DAG.json",
+        "HANDOFF_KO.md",
+        "delivery/PUBLICATION_RECEIPT.json",
+        "delivery/SOURCE_ZIP_MANIFEST.json",
+        "delivery/FINAL_BACKUP_ACK.json",
+        "delivery/CLOUD_READBACK.json"
+      ]
+    },
+    {
+      "dependency_ids": [
+        "D_CONTRACT",
+        "D_HEAD",
+        "D_AGENTS",
+        "D_PARALLEL",
+        "D_COMPILER"
+      ],
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_AUTHORITY",
+        "E_COMPILER"
+      ],
+      "id": "C1",
+      "name": "목표·baseline",
+      "reason": "Fixed source HEAD, current scoped acceptance, actual code and original input bytes inspected.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_ATOMIC",
+        "D_CORRECTION",
+        "D_MOLECULAR",
+        "D_V97",
+        "D_BUILDER",
+        "D_ADAPTER"
+      ],
+      "evidence_refs": [
+        "E_SOURCES",
+        "E_BUILDER",
+        "E_ADAPTER",
+        "E_LOCATOR_CORRECTION"
+      ],
+      "id": "C2",
+      "name": "식–데이터–코드",
+      "reason": "Traced source row to native record to declared species/event and finite column; corrected payload locators without altering physical inputs.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_THEORY",
+        "D_ADAPTER",
+        "D_REGISTRY"
+      ],
+      "evidence_refs": [
+        "E_THEORY",
+        "E_ADAPTER",
+        "E_CONSTRUCTION"
+      ],
+      "id": "C3",
+      "name": "수치 설계",
+      "reason": "Exact integer columns and source decimal-string retention require no rate approximation, interpolation or new ODE solver. Event identity retains multiplicity and colliders.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_CONTRACT",
+        "D_TASKS",
+        "D_PARALLEL",
+        "D_LEDGER"
+      ],
+      "evidence_refs": [
+        "E_CONTRACT",
+        "E_AUTHORITY",
+        "E_COST"
+      ],
+      "id": "C4",
+      "name": "실행 DAG·자원",
+      "reason": "Atomic/nuclear and molecular recovery, root assembly, primary validation and independent review were assigned separately; bounded limits and actual receipts retained.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_BUILDER",
+        "D_ADAPTER",
+        "D_REGISTRY",
+        "D_RUN_build03",
+        "D_RUN_data_driven_identity_equivalence"
+      ],
+      "evidence_refs": [
+        "E_BUILDER",
+        "E_ADAPTER",
+        "E_REGISTRY",
+        "E_RUN_build03",
+        "E_RUN_data_driven_identity_equivalence"
+      ],
+      "id": "C5",
+      "name": "구현",
+      "reason": "Final 102-provider/125-event implementation exists. Data-driven configured-identity change reproduced all five saved JSONs byte-unchanged.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_PRIMARY",
+        "D_RUN_primary01",
+        "D_RUN_primary02"
+      ],
+      "evidence_refs": [
+        "E_PRIMARY",
+        "E_PRIMARY_FAILURE",
+        "E_RUN_primary01",
+        "E_RUN_primary02"
+      ],
+      "id": "C6",
+      "name": "구현 검증",
+      "reason": "First predicate failure preserved; the specific one-line correction was validated in the single subsequent primary02 attempt.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_ADAPTER",
+        "D_REGISTRY",
+        "D_PRIMARY",
+        "D_INDEPENDENT",
+        "D_COVERAGE"
+      ],
+      "evidence_refs": [
+        "E_CONSTRUCTION",
+        "E_PRIMARY",
+        "E_INDEPENDENT",
+        "E_COVERAGE"
+      ],
+      "id": "C7",
+      "name": "과학 검증",
+      "reason": "Scientific checks are limited to exact isotope/charge/baryon/lepton accounting, native units and faithful source qualification; empirical rate validity and physical Q closure are outside this completed check.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_LEDGER",
+        "D_PRIMARY",
+        "D_INDEPENDENT",
+        "D_RUN_data_driven_identity_equivalence"
+      ],
+      "evidence_refs": [
+        "E_COST",
+        "E_PRIMARY",
+        "E_INDEPENDENT",
+        "E_RUN_data_driven_identity_equivalence"
+      ],
+      "id": "C8",
+      "name": "수치·재현성",
+      "reason": "Immutable compiler/source hashes, commands, process limits, exact columns, native precision and unchanged-byte reuse are recorded. Floating rate convergence or performance superiority is not claimed.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_INDEPENDENT",
+        "D_REGISTRY",
+        "D_CORRECTION",
+        "D_BUILDER"
+      ],
+      "evidence_refs": [
+        "E_INDEPENDENT",
+        "E_HEI_CORRECTION",
+        "E_LOCATOR_CORRECTION"
+      ],
+      "id": "C9",
+      "name": "독립 검토",
+      "reason": "Independent checker directly parsed original rows and counts; 448 checks passed with source-only decision. Findings have explicit preserved causes and corrections.",
+      "reuse": null,
+      "status": "complete"
+    },
+    {
+      "dependency_ids": [
+        "D_PRIMARY",
+        "D_INDEPENDENT",
+        "D_LEDGER",
+        "D_COVERAGE"
+      ],
+      "evidence_refs": [
+        "E_PRIMARY",
+        "E_INDEPENDENT",
+        "E_COST",
+        "E_COVERAGE"
+      ],
+      "id": "C10",
+      "name": "판정·인계",
+      "reason": "Report, scoped DAG and handoff written; source commit/tree/PR read back; reproducible source ZIP and both backup actual-byte checks complete.",
+      "reuse": null,
+      "status": "complete",
+      "closeout_evidence": [
+        "REPORT_KO.md",
+        "DAG.json",
+        "HANDOFF_KO.md",
+        "delivery/PUBLICATION_RECEIPT.json",
+        "delivery/SOURCE_ZIP_MANIFEST.json",
+        "delivery/FINAL_BACKUP_ACK.json",
+        "delivery/CLOUD_READBACK.json"
+      ]
+    }
+  ],
+  "status": "complete_scoped",
+  "strong_no_go": "not proposed; input retrieval gaps and unadmitted source physics are not impossibility results.",
+  "task": "both",
+  "unit_id": "WU_REGISTRY_PROVIDER_ROWS_R1",
+  "workflow_version": "1.0.0",
+  "closeout_note": "Scientific/source/input check results reused unchanged; only reporting/publication/backup metadata advanced. Package/transfer overhead is UNMEASURED_NOT_ZERO and not added to bounded science/validation receipt totals.",
+  "closeout_UTC": "2026-10-25T13:40:11.874834+00:00",
+  "later_source_continuation": {
+    "unit": "WU_TARGET19_PROVIDER_BINDING_R2",
+    "current_handoff": "../provider_registry_network19_20261025/HANDOFF_KO.md",
+    "former_original_network_locator_gap": "RESOLVED_BY_ACTUAL_R2_RECOVERY",
+    "R1_core_unchanged": true
+  }
+}

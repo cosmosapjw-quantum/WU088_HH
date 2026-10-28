@@ -1,0 +1,83 @@
+{
+  "schema": "WU_R13_INDEPENDENT_PROOF_REVIEW_CONTINUATION_V1",
+  "unit": "WU_AFFINE_FORCING_R13",
+  "reviewer": "/root/repo_census",
+  "decision": "PASS_SCOPED_R6_PROOF",
+  "scope": "New R13 affine-forcing derivation, exact nonaligned event and vertex partition, signed positive exponential Bernstein2 arithmetic proof and closed-cell certificate. Same separate-agent review pass continued after a wording correction.",
+  "previous_review": "R6_PRE_REVIEW.json",
+  "previous_review_scope_reused": "R6-P01 through R6-P12 manual derivations and independent triangular control; unchanged equations and premises were not re-executed.",
+  "source_identities": {
+    "corrected_PROOF_KO_sha256": "26587e1156ecff70b1773b7b751dc62e8a7669a3fdee866429c9ad0939abce40",
+    "author_F01_derivation_sha256": "2704f3aa4a70807845810c6dac75da10a953df69e94eb99faa36f1d2716c007b",
+    "source_delta": "Root subsequently replaced the exact-Taylor-sum implementation description with the explicit directed integer recurrence lemma. That new paragraph was separately checked against production code; author F01 draft remains preserved.",
+    "CONTRACT_sha256": "ffeb45a838ab2cb12bf16b4826bb8e086f32f32c0b102f32cb154ea181c6d67f",
+    "check_affine_moments_wl_sha256": "d5a342330d34a015e9617c3054f1c14d3ffa82af294df5a4005bc747f0d8ed4e",
+    "run_bounded_py_sha256": "c3926480fca630d63b9d1fdca57d272bc27b651558b40d15f916092b26b56491",
+    "FINITE_RESOURCE_AND_CONTROLS_KO_sha256": "6e9614d1240bf7d1e77f8a4ca6872871e99218de2862d514599ae8a3c4422a8b"
+  },
+  "finding_closure": {
+    "id": "R13-R6-F01",
+    "status": "CLOSED_INDEPENDENTLY_CONFIRMED",
+    "original_source_sha256": "29f42424a0787ccca383fdeb317cebdaaf40ffec2556e63655b35faf6a95fdbf",
+    "corrected_source_sha256": "2704f3aa4a70807845810c6dac75da10a953df69e94eb99faa36f1d2716c007b",
+    "read_evidence": "Section5 now says exact closed-cell R supremum, explicitly states the left limit may be unattained after an initial-term downward jump, and aggregates observation-cell suprema. The attained triangular maximum remains correctly described.",
+    "original_preserved_by_author": "revisions/AFFINE_FORCING_DERIVATION_BEFORE_F01.md",
+    "effect": "Terminology correction only. Exact upper formula, input, equations, code and execution count unchanged."
+  },
+  "implementation_lemma_continuation": {
+    "status": "PASS_SCOPED_MANUAL_DELTA_REVIEW",
+    "source_sha256": "26587e1156ecff70b1773b7b751dc62e8a7669a3fdee866429c9ad0939abce40",
+    "checked": "Starting t_l=t_u=S and directed multiplication by x_l/(S*k),x_u/(S*k) gives the stated Taylor term enclosure by induction. Positive rational beta factors with opposite floor/ceil preserve it, including initial1/3. The conservative common exponential tail at x_u/S bounds every moment tail because all beta factors are<=1. This matches the actual bernstein2_weights implementation read in this pass.",
+    "F01_preserved": true,
+    "new_execution": 0
+  },
+  "preexecution_reference_source_check": {
+    "status": "PASS_SCOPED_MANUAL_CODE_READ",
+    "run_reference_py_sha256": "4525be66370e724bff6aae3f901a92c9a45d69361c1afaa4a0e0301d0f02ec8d",
+    "source_lines_read": 623,
+    "independent_methods": [
+      "Exact J0/J1 primitive convolution instead of production positive overlap integration",
+      "Independent translated event enumeration, quadratic reconstruction and rational vertex generation",
+      "Decimal160 monomial convolution q0*D*phi1+q1*D^2*phi2+2*q2*D^3*phi3 instead of production Bernstein moment arithmetic",
+      "Exact Fraction E propagation for d=0, whole-R suprema, constant E majorant and observation aggregation"
+    ],
+    "near_zero_handling": "Closed phi forms used only for |z|>=1e-12; smaller arguments use a separate signed series with frozen1e-150 term cutoff and512-term limit. The threshold keeps cubic cancellation far below the fixed comparison guard in the proposed finite control set.",
+    "guard_formula": "1e-80*max(1,abs(reference),abs(lower),abs(upper)); pairwise checks use the corresponding arguments. This is numerical corroboration, not an interval reference.",
+    "actual_execution_and_outputs": "PENDING_ROOT_SINGLE_AUTHORIZED_EXECUTION"
+  },
+  "preexecution_CAS_source_check": {
+    "status": "PASS_SCOPED_MANUAL_CODE_READ",
+    "evaluator_calls_by_reviewer": 0,
+    "actual_add_count": 25,
+    "count_decomposition": "2 reconstruction/overlap +4*3 beta moments +3 reversal +3 limits +1 moment sum +4 triangular controls",
+    "checked": [
+      "Closed-form w0=[(z^2-2z+2)e^z-2]/z^3 follows from integral e^(zv)*v^2.",
+      "Closed-form w1=2[(z-2)e^z+z+2]/z^3 follows from integral e^(zv)*2v(1-v).",
+      "Closed-form w2=[2e^z-z^2-2z-2]/z^3 follows from integral e^(zv)*(1-v)^2.",
+      "For 1-based Wolfram indices, swapped index4-ii is correct. Reversal assumes z!=0 and three separate limits cover zero.",
+      "Each zero limit is1/3; Total[w]=(exp(z)-1)/z.",
+      "The four triangle residuals use directly integrated polynomial, vertex R3/4, endpoint E5/6 and vertex E1/2.",
+      "All symbols used in the integrands are localized by Module. The intended output reports literal zero count and preserves nonzero/unreduced results."
+    ],
+    "interpretation": "Source inspection only; actual execution outcome and messages remain to be read after root's authorized single invocation."
+  },
+  "preexecution_wrapper_check": {
+    "status": "PASS_SCOPED_SERIAL_ONE_SHOT_DESIGN",
+    "source_check": "Verifies every frozen file SHA before spawning a scientific process.",
+    "attempt_boundary": "Exclusive creation of lane ATTEMPT file prevents an ordinary second execution under the same lane record.",
+    "limits": "RLIMIT_CPU60seconds, RLIMIT_AS1GiB, communicate wall timeout90seconds; timeout kills and reaps the one child.",
+    "accounting": "RUSAGE_CHILDREN difference surrounds the complete scientific child process and includes its imports and serialization. Parent metadata/provenance work is separate, not asserted zero.",
+    "caveat": "This scope assumes reviewed scientific lanes do not spawn further worker processes. The wrapper is not a machine-wide CPU/memory budget proof. Actual receipt returncodes, timeout flags and measured costs remain C9 obligations.",
+    "combined_work_plan": "The stated pre-overlap guard (3N+1)*Ns*(B+1)<=200000 covers at most N+1 base endpoints, N midpoints and N vertices under exact caching. Production implementation must be checked against this count."
+  },
+  "open_material_findings": 0,
+  "open_minor_findings": 0,
+  "C9_status": "PENDING_NEW_PRODUCTION_PRIMARY_REFERENCE_RESULTS",
+  "executions_by_reviewer": {
+    "scientific_Python": 0,
+    "ODE": 0,
+    "CAS": 0,
+    "old_science_replay": 0
+  },
+  "independence_scope": "Reviewer did not author new proof, production or independent reference. Reviewer authored GitHub intake; this review neither independently reviews nor scientifically admits that intake. No existing R11/R12 review is repeated."
+}

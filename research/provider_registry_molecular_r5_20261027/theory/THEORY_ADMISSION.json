@@ -1,0 +1,123 @@
+{
+  "schema": "WU_R5_THEORY_ADMISSION_V1",
+  "status": "COMPLETE_SCOPED_CONDITIONAL_THEORY",
+  "node": "WU_MOLECULAR_DYNAMIC_LIFT_THEORY_R5",
+  "review": "PASS_SCOPED_GENERAL_N_THEORY",
+  "review_evidence": "reviews/R6_FINAL.json",
+  "reviewed_commit": "5293371425f383c2d329d0ef85472c5820bc5361",
+  "proof_files": [
+    {
+      "path": "theory/DYNAMIC_LIFT.md",
+      "git_blob_sha1": "2595a7faacc8148b22eac7ed7fd3498ec77faa3d"
+    },
+    {
+      "path": "theory/HD_GRAPH_BLOCK.md",
+      "git_blob_sha1": "6af704e338639b19a649d07307df84e5948a6b99"
+    }
+  ],
+  "claims": [
+    {
+      "id": "T1",
+      "claim": "Exact finite projection with general time-varying pi",
+      "status": "ADMITTED_SCOPED_CONDITIONAL_THEORY",
+      "premises": "column Metzler K, pi simplex AC, x nonnegative",
+      "evidence": [
+        "theory/DYNAMIC_LIFT.md",
+        "reviews/R6_FINAL.json"
+      ]
+    },
+    {
+      "id": "T2",
+      "claim": "L=K+h(pi d^T-D) is column Markov generator",
+      "status": "ADMITTED_SCOPED_CONDITIONAL_THEORY",
+      "premises": "h,d,pi nonnegative",
+      "evidence": [
+        "theory/DYNAMIC_LIFT.md",
+        "reviews/R6_FINAL.json"
+      ]
+    },
+    {
+      "id": "T3",
+      "claim": "Dobrushin generator coefficient gives zero-sum L1 contraction",
+      "status": "ADMITTED_SCOPED_LITERATURE_REUSE_AND_GENERATOR_LIMIT",
+      "premises": "finite locally bounded generator, column transpose convention",
+      "evidence": [
+        "theory/DYNAMIC_LIFT.md",
+        "reviews/R6_FINAL.json"
+      ]
+    },
+    {
+      "id": "T4",
+      "claim": "Triangular M,U,E bounds actual finite-model total, residual and aggregate error",
+      "status": "ADMITTED_SCOPED_CONDITIONAL_THEORY",
+      "premises": "prescribed shared f; coefficient input bounds valid over each interval",
+      "evidence": [
+        "theory/DYNAMIC_LIFT.md",
+        "reviews/R6_FINAL.json"
+      ]
+    },
+    {
+      "id": "T5",
+      "claim": "Rational positive step encloses continuous comparison solution for every nonnegative step",
+      "status": "ADMITTED_SCOPED_CONDITIONAL_THEORY",
+      "premises": "constant coefficients within segment; exact arithmetic",
+      "evidence": [
+        "theory/DYNAMIC_LIFT.md",
+        "reviews/R6_FINAL.json"
+      ]
+    },
+    {
+      "id": "T6",
+      "claim": "K+hB contraction, common destruction shift and zero-coupling limits",
+      "status": "ADMITTED_SCOPED_CONDITIONAL_THEORY",
+      "premises": "same finite model",
+      "evidence": [
+        "theory/DYNAMIC_LIFT.md",
+        "reviews/R6_FINAL.json"
+      ]
+    },
+    {
+      "id": "T7",
+      "claim": "Native HD supplied-edge operator is conditional input; unlisted rates remain missing",
+      "status": "ADMITTED_CONDITIONAL_SUPPLIED_GRAPH",
+      "premises": "pH2 T100K only in new sample, vUNSPECIFIED",
+      "evidence": [
+        "theory/DYNAMIC_LIFT.md",
+        "reviews/R6_FINAL.json"
+      ]
+    },
+    {
+      "id": "T8",
+      "claim": "No novel no-go or full physical population solution claimed",
+      "status": "SCOPE_RETAINED",
+      "premises": "GL2022 d_j and consumer not supplied",
+      "evidence": [
+        "theory/DYNAMIC_LIFT.md",
+        "reviews/R6_FINAL.json"
+      ]
+    },
+    {
+      "id": "T9",
+      "claim": "Sparse supplied-edge HD graph has delta(K)=0 yet admits a finite-block contraction certificate",
+      "status": "ADMITTED_SCOPED_CONDITIONAL_THEORY",
+      "premises": "Declared rational stationary weights and selected native para-H2 T100K edges only; no instantaneous positive gap inferred",
+      "evidence": [
+        "theory/HD_GRAPH_BLOCK.md",
+        "results/HD_GRAPH.json",
+        "reviews/R6_FINAL.json"
+      ]
+    }
+  ],
+  "scope": "Finite prescribed-source model with valid coefficient bounds; source graph is conditional",
+  "excludes": [
+    "GL2022 destruction vector",
+    "missing channels as physical zeros",
+    "physical collider density or relaxation time",
+    "physical molecular consumer",
+    "production"
+  ],
+  "central_completion_delta": 0,
+  "physical_admission_delta": 0,
+  "new_theory_node_delta": 1,
+  "proof_computations": "Exact algebra and independent general-n proof review; finite fixtures/CAS are corroborating controls."
+}

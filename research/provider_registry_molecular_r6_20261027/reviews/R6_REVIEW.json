@@ -1,0 +1,189 @@
+{
+  "schema": "WU_R6_INDEPENDENT_GENERAL_N_THEORY_REVIEW_V1",
+  "unit_id": "WU_MOLECULAR_INTERVAL_BLOCK_R6",
+  "reviewer": "/root/r6_inventory",
+  "reviewed_utc": "2026-10-27T11:14:54Z",
+  "decision": "PASS_SCOPED_GENERAL_N_THEORY",
+  "blocking_findings": 0,
+  "nonblocking_clarifications": 2,
+  "independence": {
+    "contribution_draft_authorship": false,
+    "production_core_authorship": false,
+    "prior_participation": "Read-only repository inventory and exact source/backup metadata recovery only.",
+    "review_method": "Independent symbolic reasoning for arbitrary finite n; no finite-fixture execution.",
+    "runtime_identity": "Inherited parent runtime; exact backend model identity not independently measured.",
+    "heterogeneous_model_review_claimed": false
+  },
+  "reviewed_inputs": [
+    {
+      "path": "intake/primary_theory/THEORY_CONTRIBUTION_KO.md",
+      "sha256": "2841a91c6f599b423e0658c5a258a409a01df424f1ca59f128737d4babe3314f",
+      "scope": "Entire sections0–7"
+    },
+    {
+      "path": "r6_worktree/research/provider_registry_molecular_r6_20261027/CONTRACT.json",
+      "sha256": "d5d7ec0f3877d16c1cb2619f2da6d9a3f2900a23221e9a1fe3b0c2fb1bddcc82",
+      "scope": "Entire contract"
+    },
+    {
+      "path": "research/provider_registry_molecular_r5_20261027/theory/DYNAMIC_LIFT.md",
+      "source_commit": "35bb7f296abc8ff6c8b38c2c08cc14dd498d4c99",
+      "sha256": "4cd89e3e1e557acdff6c3187db38facbb08aa5f4fc3a7e0c673a74f86121fad5",
+      "scope": "Entire inherited model/projection/comparison proof"
+    },
+    {
+      "path": "research/provider_registry_molecular_r5_20261027/theory/HD_GRAPH_BLOCK.md",
+      "source_commit": "35bb7f296abc8ff6c8b38c2c08cc14dd498d4c99",
+      "sha256": "f225ed11a1cd35e4e8e7957c36b93d00028e9e710cd8d715297ef65380b72735",
+      "scope": "Entire inherited finite-block proof"
+    },
+    {
+      "path": "research/provider_registry_molecular_r5_20261027/theory/THEORY_ADMISSION.json",
+      "source_commit": "35bb7f296abc8ff6c8b38c2c08cc14dd498d4c99",
+      "sha256": "4b6871383c88580cd3d23d80193ba3140288a71d344f950dd26d2f9891fd2853",
+      "scope": "Entire admission"
+    },
+    {
+      "path": "research/provider_registry_molecular_r5_20261027/theory/CLAIMS.json",
+      "source_commit": "35bb7f296abc8ff6c8b38c2c08cc14dd498d4c99",
+      "sha256": "5469bd5ecaad178e1e80a04b5fe0c8b184112e0927750423e5420dabd428733b",
+      "scope": "Entire inherited claim list"
+    }
+  ],
+  "admission_conditions": [
+    "Finite n; K has nonnegative off-diagonal entries and exact zero column sums; all actual state vectors are columns.",
+    "Inherited R5 positive model: x0>=0; prescribed f>=0 locally integrable; h,d>=0; pi is a simplex vector and locally absolutely continuous.",
+    "Coarse total equation uses exactly the same prescribed F=1^T f. State-dependent formation needs an additional coupling theorem.",
+    "Literal-energy exactness is mathematical input exactness, not zero physical measurement uncertainty; temperature/state/spin/source scope remains declared.",
+    "Normalized coordinate intervals retain the simplex and shared Gibbs dependencies. Coordinate extrema need not be simultaneously realizable.",
+    "All coefficient bounds hold almost everywhere over the entire needed interval; sampled endpoint data alone do not meet this condition.",
+    "Uniformization uses a constant lambda>0 dominating the actual complete A exit rates; Pminus is nonnegative and dominated by the actual stochastic P(t).",
+    "Sliding-window rho^floor bound requires the same valid family bounds on every length-H window concerned; otherwise use only individually certified block recurrences.",
+    "Common kappa>=0 is bounded by every actual v_j; rho is computed for full A after removing this common term, not for K alone.",
+    "Endpoint and full-block bounds are different outputs. Recent forcing receives no premature full-block rho.",
+    "Rational comparison uses 0<=k,b,kappa and nonnegative initial/forcing/coupling upper bounds; H>0 for a block certificate.",
+    "The exact-exponential transient expression denotes an analytical bound; it is not an upper bound on every more conservative rational bookkeeping sequence.",
+    "Mathematical acceptance does not validate dyadic rounding/source parsing/production code or establish an actual molecular physical consumer."
+  ],
+  "checks": [
+    {
+      "id": "P1",
+      "target": "0 / inherited R5 projection",
+      "verdict": "PASS",
+      "reason": "Direct differentiation of r=x-piX yields stated L,c,Qf. Their column sums vanish; Z is a fixed invariant subspace even for moving pi."
+    },
+    {
+      "id": "P2",
+      "target": "1.1 exponential enclosure",
+      "verdict": "PASS",
+      "reason": "Alternating terms decrease on[0,1]; odd sum positive for m>=1. Monotone positive repeated squaring preserves both endpoint directions. Final width must be checked after squaring."
+    },
+    {
+      "id": "P3",
+      "target": "1.2 normalized weight boxes",
+      "verdict": "PASS",
+      "reason": "Own-weight monotonicity and other-weight antitonicity give coordinate sharp extrema for an independent weight box, while preserving Gibbs correlation only as an outer enclosure."
+    },
+    {
+      "id": "P4",
+      "target": "1.2 reverse pair ratios",
+      "verdict": "PASS",
+      "reason": "Direct unnormalized Gibbs ratios cancel the normalization and give exact pairwise balance. Interval dependency width is not a genuine Kpi defect."
+    },
+    {
+      "id": "P5",
+      "target": "2.1 Pminus construction",
+      "verdict": "PASS",
+      "reason": "Column off-diagonal lower rates and an exit upper bound give entrywise Pminus<=P(t); lambda domination gives nonnegative diagonals."
+    },
+    {
+      "id": "P6",
+      "target": "2.2 ordered uniformization",
+      "verdict": "PASS",
+      "reason": "For column evolution the later factor acts on the left. Nonnegative ordered products dominate Pminus^m; simplex volume gives H^m/m!. The omitted infinite tail is nonnegative."
+    },
+    {
+      "id": "P7",
+      "target": "2.3 pair overlap",
+      "verdict": "PASS",
+      "reason": "Positive/negative zero-sum decomposition establishes the Dobrushin induced-norm identity; entrywise lower columns give a lower overlap and hence an upper contraction factor."
+    },
+    {
+      "id": "P8",
+      "target": "2.3 arbitrary-time remainder",
+      "verdict": "PASS",
+      "reason": "Submultiplicativity for full blocks and Markov nonexpansiveness for the remainder give the floor exponent, with no instantaneous-gap substitution."
+    },
+    {
+      "id": "P9",
+      "target": "3 common killing",
+      "verdict": "PASS",
+      "reason": "L-A=kappa(pi1^T-I), whose restriction to fixed Z is -kappa I. This scalar factor commutes on Z with the full time-dependent A evolution."
+    },
+    {
+      "id": "P10",
+      "target": "4 forced block recurrence",
+      "verdict": "PASS",
+      "reason": "Duhamel integration gives qU_n+G_n Psi(H); the source is integrated over its own age. Whole-block envelope is U_n+G_n H, not the contracted endpoint."
+    },
+    {
+      "id": "P11",
+      "target": "4.2 constant-forcing kernel",
+      "verdict": "PASS",
+      "reason": "Partitioning the lag integral into full H intervals yields Psi(H)sum(q^k)+q^n Psi(theta). Noncontractive/zero cases use explicit limiting conventions."
+    },
+    {
+      "id": "P12",
+      "target": "5 M,U,E coupling",
+      "verdict": "PASS_WITH_INHERITED_NONNEGATIVITY",
+      "reason": "Positivity supplies X<=M; G_n=q_c(M_n+Fplus H)+g bounds residual forcing. Integrating the linear within-block envelope gives H U_n+G_n H^2/2 for the E forcing contribution."
+    },
+    {
+      "id": "P13",
+      "target": "5 optional thermal q_c",
+      "verdict": "PASS",
+      "reason": "For exact fixed Gibbs balance c=-h(Dpi-pi dbar); a variable in a finite interval has mean absolute deviation at most half its range."
+    },
+    {
+      "id": "P14",
+      "target": "physical and novelty scope",
+      "verdict": "PASS_SCOPE",
+      "reason": "Native application is the supplied100K para-H2 graph with A=K,kappa=0. No reactive destruction, collider density, physical consumer, production, field-wide novelty or strong no-go is inferred."
+    }
+  ],
+  "findings": [
+    {
+      "id": "R6-N1",
+      "severity": "NONBLOCKING_SPECIFICATION_CLARIFICATION",
+      "target": "THEORY_CONTRIBUTION_KO.md sections0 and5",
+      "evidence": "The inherited R5 theorem explicitly requires nonnegative x0,f,h,d and nonnegative comparison coefficients. R6 section5 writes k<=h min(d), b<=h dbar without restating their nonnegative lower endpoints.",
+      "impact": "If read without the explicitly reused R5 premises, a negative k or b would invalidate e^-a<=1/(1+a) as the positive comparison update and can make the denominator nonpositive. This is excluded by the admitted inherited scope.",
+      "minimal_change": "Add x0,f,h,d>=0, shared prescribed F, 0<=k<=h min(d), 0<=b<=h dbar, and nonnegative upper/initial bounds immediately before the section5 recurrence.",
+      "admission_effect": "No core proof failure under the inherited R5 conditions; explicit conditions are required in any standalone implementation contract."
+    },
+    {
+      "id": "R6-N2",
+      "severity": "NONBLOCKING_NOTATION_CLARIFICATION",
+      "target": "THEORY_CONTRIBUTION_KO.md sections4.1–4.2",
+      "evidence": "The exact recurrence uses q=rho exp(-kappa H) and Psi_kappa(H), while its rational implementation upper replacement uses rho/(1+kappa H) and H.",
+      "impact": "The exact q-transient formula bounds the analytical envelope and actual residual; it generally does not upper-bound a more conservative rational bookkeeping sequence with a larger multiplier/source increment.",
+      "minimal_change": "Name the analytical sequence U_n^exp and rational sequence Uhat_n separately, or state explicitly that4.2 is a direct analytical residual bound independent of the rational stored endpoint values.",
+      "admission_effect": "No error in Duhamel/kernel formulas; prevent an unsupported comparison of two different upper-bound sequences."
+    }
+  ],
+  "not_reviewed": [
+    "Root production core, dyadic rounding code, numerical acceptance results and reference implementations; finalC9 is separate.",
+    "Original full literature texts; this review independently checked the displayed direct proofs and scope, not every cited paper.",
+    "An actual physical HD reactive destruction input or REC/REI molecular consumer, because neither is supplied.",
+    "New fundamental-theorem discovery or strong-no-go claim."
+  ],
+  "executions": {
+    "numerical": 0,
+    "symbolic_CAS": 0,
+    "IVP": 0,
+    "source_replay": 0,
+    "external_writes": 0
+  },
+  "dag_effect": "Theory review only; root owns scoped node admission and original DAG accounting.",
+  "proof_note": "PROOF_REVIEW_KO.md"
+}

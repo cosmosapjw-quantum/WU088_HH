@@ -1,0 +1,50 @@
+{
+  "schema": "WU_R9_INDEPENDENT_THEORY_REVIEW_V1",
+  "reviewer": "/root/r9_recovery_review",
+  "author_of_production_core": false,
+  "author_of_primary_runner": false,
+  "method": "Independent elimination proof from actual finite cell suprema; signed-d lag and endpoint-index derivation",
+  "decision": "PASS_SCOPED_CAUSAL_CELL_RESOLVENT_THEORY",
+  "proof_binding": {
+    "source_commit": "c8031c66f08c17a38238f0d900209a3ef8306954",
+    "path": "research/provider_registry_molecular_r9_20261028/theory/PROOF_KO.md",
+    "actual_read": true,
+    "bytes": 10463,
+    "sha256": "b84da224515cf9ab7d9e39c3766332066c348f304bd2e8d63ddec940123c8ea3",
+    "equations": "R9.6-R9.17",
+    "new_findings_on_binding": 0
+  },
+  "scientific_execution": "NOT_RUN",
+  "open_material_findings": 0,
+  "checked": [
+    "Actual cell suprema are finite under the inherited compact-horizon regularity and bounded-domain assumptions.",
+    "Substitute q<=B+phi*c*r into r<=A+delta*a*r+delta*b*q; exactD>0 gives r<=(A+delta*b*B)/D and the stated q bound.",
+    "All past forcing weights are nonnegative, so the construction closes by induction without an initial whole-trajectory envelope.",
+    "For d<=0 the coarse whole-cell powers are n and n-j-1; for d>0 they are n+1 and n-j.",
+    "Residual whole-cell past lag is h[n-j-1], endpoint lag is h[n-j], and current forcing uses h[0]=1.",
+    "Same-closed-cell valid caps can be intersected exactly. A closed-cell bound covers its right endpoint; same-clock point caps can also be intersected.",
+    "Use exactD or a verified positive lower denominator. Upward rounding of D before division is not permitted.",
+    "No generic raw-sweep dominance over a valid older envelope is inferred without a discrete-supersolution premise.",
+    "Coordinatewise upper rounding preserves the trajectory bound but does not imply a discrete supersolution.",
+    "D<=0 invalidates this closure premise; no physical divergence or impossibility follows."
+  ],
+  "roundoff_budget_derivation": {
+    "epsilon": "2^-128",
+    "powers": "dp[n+1] <= e*dp[n]+epsilon",
+    "A": "dA <= delta*sum(h*dF)+epsilon",
+    "B": "dB <= dp[k]*E0+phi*sum((p_ref+dp)*dL+dp*L_ref)+epsilon",
+    "raw_R": "dR <= (dA+delta*b*dB)/D+epsilon",
+    "raw_E": "dE <= dB+phi*c*dR+epsilon",
+    "F": "dF <= a*dR+b*dE+epsilon",
+    "L": "dL <= c*dR+epsilon",
+    "endpoint": "Apply corresponding past-forcing sums; final minimum budget=max(raw-endpoint budget,whole-cell budget)",
+    "cap": "Identical exact-cap minimum is monotone and1-Lipschitz"
+  },
+  "strong_no_go": {
+    "new_claim": false,
+    "NG1_through_NG7": "Reviewed for applicability; no new exclusion theorem is proposed"
+  },
+  "remaining": [
+    "Inspect actual bounded implementation and independent-reference outputs before scientific code adoption"
+  ]
+}

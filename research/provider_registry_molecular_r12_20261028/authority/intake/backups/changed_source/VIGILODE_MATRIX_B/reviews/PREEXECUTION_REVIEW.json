@@ -1,0 +1,105 @@
+{
+  "schema": "vigilode.independent-preexecution-review.v1",
+  "unit_id": "V8_FIXED_METRIC_JACOBIAN_LOGNORM_20261028",
+  "reviewer_role": "Fresh independent nonauthor Astra review requested by root",
+  "requested_model": "Astra",
+  "observed_runtime_model": "UNOBSERVED_RUNTIME_METADATA",
+  "status": "PASS_SOURCE_REVIEW_READY_FOR_ROOT_EXECUTION_GATE",
+  "R6": "PASS_CONDITIONAL_FINITE_MATRIX_THEORY",
+  "C9": "PREEXECUTION_SOURCE_PASS; actual first outputs and image pending",
+  "execution_GO_issued": false,
+  "scientific_modules_imported": false,
+  "scientific_tests_or_CAS_executed": false,
+  "physical_or_native_calls": 0,
+  "review_method": "Independent analytic derivation, actual source reading and source hash inspection; no numerical campaign, no old tests, no scientific imports, no recursive reviewers",
+  "source_hashes_sha256": {
+    "SCIENTIFIC_CONTRACT.json": "9fb523a39c0a56dbeb0d7abce101596704180914340201961bc4bfe8d33dda30",
+    "EXECUTION_BUDGET_FROZEN.json": "9ebafd6de9147b100dbdbc620c10c4374818a1997ae9dbd9b477b58e30d295ef",
+    "theory/THEORY_KO.md": "6dfd4afc0b4845ed550b980c8d454ae799cf493cd52baca518c2d9d659f86b5e",
+    "theory/EXACT_CHECKS.wl": "0f748cd5f9c0739321df6f55de0e88620dd28727c8b465f591121032869f9357",
+    "code/matrix_bounds.py": "03c754bc4bc2c00e14725533ea921d9352b0d96f375b4a1bf59947115bef6548",
+    "code/test_matrix_bounds.py": "31e8333d60ecfdd4070c67948ebbb7ea50f865883c02cba81c7d7b4d01c50f91",
+    "code/run_bounded.py": "29e1b074bf3c21bd065b2c9cacbf62e5ae82046538c9b9e85179b4c9fd071510",
+    "code/plot_saved_results.py": "89d2c225e5025ab6eac0c26e075fec45c37f8a4046d5b3873ecd0a66d807c224",
+    "deps/PRIOR_COPY_IDENTITY.json": "7a31311655a1d0389099a7629319458d5efa38c06c8f4d1ea8de76306fef8d4f"
+  },
+  "sources_read": [
+    "Frozen contract and execution budget in full",
+    "policy/RESEARCH_POLICY.md; THEORY_LOOP.md R6; CODING_LOOP.md C9; intake/CENTRAL_AGENTS.json",
+    "Actual full theory/THEORY_KO.md and theory/EXACT_CHECKS.wl",
+    "Actual full code/matrix_bounds.py, test_matrix_bounds.py, run_bounded.py, plot_saved_results.py, IMPLEMENTATION_MAP.md and execution proposal",
+    "Inherited native_metric_bounds.py, reused_piecewise_barrier.py and native_norm_corridor.py support_core",
+    "intake/vigilode_deep/sources/AUDIT_THEORY.tex fixed-Hilbert PR90 proof, drift, scaled residual; POLY_GEOMETRY_THEORY.md G11-G13 and CAYLEY_REUSE.rs",
+    "literature primary JMLR and web-open raw excerpts for logarithmic norm definition and signed properties"
+  ],
+  "substantive_checks": [
+    {
+      "topic": "Fixed native metric reuse and source binding",
+      "conclusion": "PASS",
+      "reason": "G assembles existing row terms with factor 1/33. Inverse columns are exactly 33 times inherited support_core w=A^-1 e_i. Full rank and positive scales imply SPD; exact inverse check plus PSD check also exclude singularity. No new point norm/lift evaluator or metric optimization is introduced."
+    },
+    {
+      "topic": "Exact PSD and singular pivots",
+      "conclusion": "PASS",
+      "reason": "Positive-pivot Schur updates preserve completed squares; zero row is retained without tolerance; zero pivot with nonzero h gives tail quadratic -1. Reverse elimination sets prior squares to zero, and code reevaluates original quadratic. Singular rank-one controls reconstruct the factor."
+    },
+    {
+      "topic": "Generalized eigenvalue bracket",
+      "conclusion": "PASS",
+      "reason": "Diagonal generalized Rayleigh quotients are lower bounds. Ginv*M is similar to a real symmetric matrix, so its real Gershgorin right endpoints bound the largest eigenvalue. Initial and retained uppers carry exact PSD evidence; failed midpoint witnesses justify lower updates. k=4 reference brackets and finite factor-of-two width reduction are algebraically correct."
+    },
+    {
+      "topic": "Interval perturbation beta and norm distinction",
+      "conclusion": "PASS",
+      "reason": "Trace expansion gives E_ij G_ik E_kl Ginv_lj; symmetry justifies implemented Ginv_jl. Absolute-value radius sum bounds Frobenius squared and hence operator squared. Center-plus-beta yields signed lognorm upper without clipping to zero. Rank-one weighted and chemical controls, skew norm-square 13 and negative lognorm, and nonnormal spectral/lognorm separation are correct."
+    },
+    {
+      "topic": "PR90 source-clock bridge",
+      "conclusion": "PASS",
+      "reason": "P=a0^-1 I-J0 and W=a^-1 I-J use inverse source-clock units. Perturbed iteration T=Tstar+omega P^-1 Delta needs no commutation. q=4/9, cached alpha=2, current alpha_prime=3/2, scaled factor 2/7 and normalized 4/7 are exact prescribed controls. q>=1 remains inconclusive; native inverse/relaxation errors stay external."
+    },
+    {
+      "topic": "External family/domain premises and inherited integration",
+      "conclusion": "PASS",
+      "reason": "Theory explicitly integrates along straight state segments p+theta(q-p). Family source/metric/clock/cell/capsule and global continuation corridor identities are checked before certificate construction. Each cell enclosure identity remains independent. Generated Jop and signed mu feed unchanged residual and barrier consumers; collisions are refused. The two affine pieces yield outgoing 1/16000, not an exponential endpoint or actual ODE error. 19 physical and 62 finite guards stay separate."
+    },
+    {
+      "topic": "Prepared controls, output and execution bounds",
+      "conclusion": "PASS_SOURCE_ONLY",
+      "reason": "Ten new Python control groups cover the prescribed claims and refusals. WL has 25 exact scalar/at-most-2x2 controls under internal 17-second limit, including a separate noncommuting identity fixture. Runner preserves first code/raw outputs with caps and exclusive invocation markers. Figure reads saved JSON only; actual rational dict writer matches parser. Actual runtime, measured costs and image quality remain pending."
+    }
+  ],
+  "findings": [
+    {
+      "id": "R6-THEORY-PLUS",
+      "target": "theory/THEORY_KO.md section 3.2 squared norm expansion",
+      "observation": "Initial authored equation omitted + before h^2 term",
+      "impact": "Displayed identity had incorrect literal notation; proof and implementation used intended sum",
+      "minimal_correction": "Author restored +h^2",
+      "status": "CLOSED_SOURCE_RECHECKED"
+    },
+    {
+      "id": "R6-SERIALIZER-STALE-READ",
+      "target": "plot_saved_results.number versus matrix_bounds.jsonable",
+      "observation": "Reviewer initially compared plot to an earlier in-progress serializer emitting n/d strings. Actual frozen serializer emits rational dictionaries already accepted by original plot",
+      "impact": "FALSE_POSITIVE_PREEXECUTION_REVIEW; no scientific failure or failed invocation occurred",
+      "minimal_correction": "Reviewer reread frozen writer and withdrew blocker; root authorized optional rational-string compatibility branch, preserving initial plot and proposal",
+      "status": "CLOSED_FALSE_POSITIVE; compatibility branch inspected"
+    }
+  ],
+  "open_blocking_findings": [],
+  "next_action": "Root may complete existing checkpoint ACK and fresh execution-state gate then issue the already scoped GO. After actual first suite/CAS/figure outputs, this same reviewer inspects results and actual image for final C9 decision; no automatic retry or extra campaign.",
+  "claim_scope": "Exact finite supplied rational interval matrices in frozen physical33 metric, conditional nonlinear/PR90 joins",
+  "actual_model_enclosure_verified": false,
+  "owner_provenance_verified": false,
+  "whole_domain_certificate": false,
+  "actual_ode_solution_enclosure": false,
+  "VerifiedModelProvider": null,
+  "production": "HOLD",
+  "L4": false,
+  "strong_no_go": "NOT_CLAIMED",
+  "prior_campaigns": "CLOSED_NO_REPLAY",
+  "unknown_owner_dirty_and_reserved_budget": "UNKNOWN_PRESERVED",
+  "central": {"completed": 28, "total": 88, "own_delta": 0},
+  "publication": "HOLD_TOOL_CALL_REJECTED_NO_ACK until actual route recovery evidence"
+}

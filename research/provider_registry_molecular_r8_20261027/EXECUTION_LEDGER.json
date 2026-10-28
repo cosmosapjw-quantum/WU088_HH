@@ -1,0 +1,367 @@
+{
+  "schema": "WU_R8_EXECUTION_LEDGER_V1",
+  "created_utc": "2026-10-27 15:04:20 UTC",
+  "primary": {
+    "allowed": 1,
+    "consumed": 1,
+    "reserved": 0,
+    "remaining": 0,
+    "status": "success",
+    "source_commit": "72931db38a5dbfc7b12720455c44109039a8f711",
+    "process": {
+      "schema": "WU_R8_ACTUAL_PROCESS_V1",
+      "stage": "S06",
+      "action": "primary",
+      "source_commit": "72931db38a5dbfc7b12720455c44109039a8f711",
+      "command": [
+        "/usr/bin/python3",
+        "research/provider_registry_molecular_r8_20261027/verification/run_primary.py"
+      ],
+      "started_utc": "2026-10-27T15:44:32.218168+00:00",
+      "finished_utc": "2026-10-27T15:44:36.031275+00:00",
+      "executions": 1,
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 3.786282,
+      "OS_system_CPU_s": 0.020996,
+      "OS_CPU_s": 3.8072779999999997,
+      "wall_s": 3.808825982000002,
+      "CPU_limit_s": 60,
+      "includes_imports_and_serialization": true,
+      "old_science_replay": 0
+    }
+  },
+  "reference": {
+    "allowed": 1,
+    "consumed": 1,
+    "reserved": 0,
+    "remaining": 0,
+    "status": "failure",
+    "source_commit": "b87ea61ab2d5e17221a6cf3b710aec074eb1a28e",
+    "process": {
+      "schema": "WU_R8_ACTUAL_PROCESS_V1",
+      "stage": "S07",
+      "action": "reference",
+      "source_commit": "b87ea61ab2d5e17221a6cf3b710aec074eb1a28e",
+      "command": [
+        "/usr/bin/python3",
+        "research/provider_registry_molecular_r8_20261027/verification/run_reference.py"
+      ],
+      "started_utc": "2026-10-27T15:49:30.456822+00:00",
+      "finished_utc": "2026-10-27T15:49:30.903341+00:00",
+      "executions": 1,
+      "returncode": 1,
+      "timeout": false,
+      "OS_user_CPU_s": 0.420857,
+      "OS_system_CPU_s": 0.020041,
+      "OS_CPU_s": 0.44089799999999996,
+      "wall_s": 0.4431670099999998,
+      "CPU_limit_s": 60,
+      "includes_imports_and_serialization": true,
+      "old_science_replay": 0
+    },
+    "adjudication": {
+      "original_status": "failure",
+      "finding": "REF01",
+      "status": "RESOLVED_BY_EXACT_SCALAR_RE_ADJUDICATION",
+      "original_result_unchanged": true,
+      "repair_source_commit": "ade11fe31248d5417902827e5a563ee9a71a065e",
+      "repair_result": "raw/PHI_SCALAR_REPAIR_RESULTS.json",
+      "C9_sha256": "a414c29462cd94089de37131315a591076ec1cc6db1fd85442869b3eb8defa72"
+    }
+  },
+  "CAS": {
+    "allowed": 1,
+    "consumed": 1,
+    "remaining": 0,
+    "status": "FAILED_JSON_RESULT_EXPORT",
+    "raw": "raw/WOLFRAM_INITIAL_RESPONSE.json"
+  },
+  "old_science_replay": 0,
+  "old_R7_remaining": [
+    0,
+    0,
+    0
+  ],
+  "old_R6_remaining": [
+    0,
+    0,
+    0
+  ],
+  "old_PHYS91_remaining": [
+    0,
+    0,
+    0
+  ],
+  "global_remaining": null,
+  "full_historical_CPU": null,
+  "metadata_actions": [
+    {
+      "id": "S01_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "max_seconds": 30,
+      "source": "delivery/S01.json"
+    },
+    {
+      "id": "S02_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "max_seconds": 30,
+      "source": "delivery/S02.json"
+    },
+    {
+      "id": "S03_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "max_seconds": 30,
+      "source": "delivery/S03.json"
+    },
+    {
+      "id": "S04_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "source": "delivery/S04.json"
+    },
+    {
+      "id": "S05_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "source": "delivery/S05.json"
+    },
+    {
+      "id": "S06_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "source": "delivery/S06.json"
+    },
+    {
+      "id": "S07_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "source": "delivery/S07.json"
+    },
+    {
+      "id": "S08_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "source": "delivery/S08.json"
+    },
+    {
+      "id": "S09_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "source": "delivery/S09.json"
+    },
+    {
+      "id": "S10_TRANSPORT_HASH",
+      "kind": "NON_SCIENTIFIC_ORIGINAL_BYTE_VERIFICATION",
+      "Wolfram_calls": 1,
+      "provider_downloads": 2,
+      "status": "PASS",
+      "source": "delivery/S10.json"
+    }
+  ],
+  "scientific_runs": [
+    {
+      "schema": "WU_R8_ACTUAL_PROCESS_V1",
+      "stage": "S06",
+      "action": "primary",
+      "source_commit": "72931db38a5dbfc7b12720455c44109039a8f711",
+      "command": [
+        "/usr/bin/python3",
+        "research/provider_registry_molecular_r8_20261027/verification/run_primary.py"
+      ],
+      "started_utc": "2026-10-27T15:44:32.218168+00:00",
+      "finished_utc": "2026-10-27T15:44:36.031275+00:00",
+      "executions": 1,
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 3.786282,
+      "OS_system_CPU_s": 0.020996,
+      "OS_CPU_s": 3.8072779999999997,
+      "wall_s": 3.808825982000002,
+      "CPU_limit_s": 60,
+      "includes_imports_and_serialization": true,
+      "old_science_replay": 0
+    },
+    {
+      "schema": "WU_R8_ACTUAL_PROCESS_V1",
+      "stage": "S07",
+      "action": "reference",
+      "source_commit": "b87ea61ab2d5e17221a6cf3b710aec074eb1a28e",
+      "command": [
+        "/usr/bin/python3",
+        "research/provider_registry_molecular_r8_20261027/verification/run_reference.py"
+      ],
+      "started_utc": "2026-10-27T15:49:30.456822+00:00",
+      "finished_utc": "2026-10-27T15:49:30.903341+00:00",
+      "executions": 1,
+      "returncode": 1,
+      "timeout": false,
+      "OS_user_CPU_s": 0.420857,
+      "OS_system_CPU_s": 0.020041,
+      "OS_CPU_s": 0.44089799999999996,
+      "wall_s": 0.4431670099999998,
+      "CPU_limit_s": 60,
+      "includes_imports_and_serialization": true,
+      "old_science_replay": 0
+    },
+    {
+      "schema": "WU_R8_ACTUAL_PROCESS_V1",
+      "stage": "S08",
+      "action": "phi_scalar_repair",
+      "source_commit": "ade11fe31248d5417902827e5a563ee9a71a065e",
+      "command": [
+        "/usr/bin/python3",
+        "research/provider_registry_molecular_r8_20261027/verification/run_phi_scalar_repair.py"
+      ],
+      "started_utc": "2026-10-27T16:01:23.233158+00:00",
+      "finished_utc": "2026-10-27T16:01:23.315754+00:00",
+      "executions": 1,
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 0.057831999999999995,
+      "OS_system_CPU_s": 0.014956,
+      "OS_CPU_s": 0.07278799999999999,
+      "wall_s": 0.07363234000000318,
+      "CPU_limit_s": 10,
+      "includes_imports_and_serialization": true,
+      "old_science_replay": 0
+    }
+  ],
+  "metadata_transport_allowance": {
+    "total": 11,
+    "used": 10,
+    "remaining": 1
+  },
+  "CAS_targeted_export_repair": {
+    "allowed": 1,
+    "consumed": 1,
+    "remaining": 0,
+    "contract": "verification/CAS_EXPORT_REPAIR_CONTRACT.json",
+    "source_commit": "090938d5114da3b906dd2e04ab23c780f7cb9829",
+    "status": "QUALIFIED_PARTIAL_SYMBOLIC_CORROBORATION",
+    "raw": "raw/WOLFRAM_REPAIR_RESPONSE.json",
+    "tool_wall_s": 14.2,
+    "actual_CPU_s": null
+  },
+  "environment_events": [
+    {
+      "utc": "2026-10-27T15:30:31Z",
+      "kind": "LOCAL_EXECUTOR_RECOVERED",
+      "probe": "pwd",
+      "exit_code": 0,
+      "science_runs": 0
+    },
+    {
+      "kind": "GIT_CLI_NETWORK_STILL_UNAVAILABLE",
+      "error": "Failed to connect to browser-proxy port8889",
+      "decision": "RetainGitHubconnectorpublication andActions scientificexecution"
+    },
+    {
+      "kind": "ORCHESTRATOR_VOLATILE_STORE_RESET_RECOVERED_FROM_LOCAL_SOURCE_AND_RECEIPTS",
+      "science_reexecution": 0,
+      "head": "ade11fe31248d5417902827e5a563ee9a71a065e"
+    }
+  ],
+  "reference_phi_scalar_repair": {
+    "allowed": 1,
+    "consumed": 1,
+    "reserved": 0,
+    "remaining": 0,
+    "status": "success",
+    "source_commit": "ade11fe31248d5417902827e5a563ee9a71a065e",
+    "process": {
+      "schema": "WU_R8_ACTUAL_PROCESS_V1",
+      "stage": "S08",
+      "action": "phi_scalar_repair",
+      "source_commit": "ade11fe31248d5417902827e5a563ee9a71a065e",
+      "command": [
+        "/usr/bin/python3",
+        "research/provider_registry_molecular_r8_20261027/verification/run_phi_scalar_repair.py"
+      ],
+      "started_utc": "2026-10-27T16:01:23.233158+00:00",
+      "finished_utc": "2026-10-27T16:01:23.315754+00:00",
+      "executions": 1,
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 0.057831999999999995,
+      "OS_system_CPU_s": 0.014956,
+      "OS_CPU_s": 0.07278799999999999,
+      "wall_s": 0.07363234000000318,
+      "CPU_limit_s": 10,
+      "includes_imports_and_serialization": true,
+      "old_science_replay": 0
+    }
+  },
+  "postprocessing": [
+    {
+      "kind": "SAVED_NATIVE9_PLOT",
+      "status": "COMPLETE",
+      "CPU_s": 4.317593619,
+      "source": "results/PLOT_PROVENANCE.json",
+      "new_scientific_evaluations": 0,
+      "new_ODE_runs": 0
+    },
+    {
+      "kind": "SAVED_NATIVE9_FINAL_STATUS_PLOT",
+      "reason": "Replace obsolete pending label with actual C9 accepted status",
+      "status": "COMPLETE",
+      "CPU_s": 26.291498047,
+      "wall_s": 37.265433873,
+      "source": "results/PLOT_PROVENANCE.json",
+      "SVG_sha256": "6f58defc465ab4c61a9ac8f7188f1f24c11bb55d830724a656c6a33a7dd2217f",
+      "previous_CPU_preserved": 4.317593619,
+      "new_scientific_evaluations": 0,
+      "new_ODE_runs": 0
+    }
+  ],
+  "complete_Python_scientific_process_CPU_s": 4.320964,
+  "CAS_CPU_s": null,
+  "local_transport_materialization_correction": {
+    "kind": "EMPTY_TEXT_FILE_NEWLINE_ONLY",
+    "scientific_values_changed": false,
+    "original_remote_outputs_changed": false,
+    "cause": "apply_patch Add File materialized empty transported text as one newline; exact original zero-byte logs restored before payload manifest",
+    "restored": [
+      {
+        "path": "raw/PRIMARY_STDERR.txt",
+        "old_local_bytes": 1,
+        "restored_original_bytes": 0,
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "raw/REFERENCE_STDERR.txt",
+        "old_local_bytes": 1,
+        "restored_original_bytes": 0,
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "raw/PHI_SCALAR_REPAIR_STDERR.txt",
+        "old_local_bytes": 1,
+        "restored_original_bytes": 0,
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  "plot_postprocessing_CPU_s": 30.609091666
+}

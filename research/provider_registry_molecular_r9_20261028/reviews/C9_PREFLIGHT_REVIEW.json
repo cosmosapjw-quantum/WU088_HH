@@ -1,0 +1,132 @@
+{
+  "schema": "WU_R9_C9_STATIC_PREFLIGHT_REVIEW_V1",
+  "reviewer": "/root/r9_recovery_review",
+  "decision": "PASS_SCOPED_STATIC_PREFLIGHT",
+  "production_author_distinct": true,
+  "primary_author_distinct": true,
+  "reference_author_is_reviewer": true,
+  "reviewed_drafts": [
+    {
+      "path": "src/causal_resolvent.py",
+      "state": "Exact full recovery draft supplied by author and statically read",
+      "immutable_published_sha256": null
+    },
+    {
+      "path": "verification/PRIMARY_INPUT.json",
+      "state": "Exact full recovery draft supplied by author and statically read",
+      "immutable_published_sha256": null
+    },
+    {
+      "path": "verification/run_primary.py",
+      "state": "Exact full recovery draft including guard_family_clock alias correction",
+      "immutable_published_sha256": null
+    }
+  ],
+  "proof_binding": {
+    "source_commit": "c8031c66f08c17a38238f0d900209a3ef8306954",
+    "path": "research/provider_registry_molecular_r9_20261028/theory/PROOF_KO.md",
+    "actual_read": true,
+    "bytes": 10463,
+    "sha256": "b84da224515cf9ab7d9e39c3766332066c348f304bd2e8d63ddec940123c8ea3"
+  },
+  "actual_immutable_reads": [
+    {
+      "source_commit": "b3ba2e4aff1f237a2835b2f3a1b07de81133e9f7",
+      "path": "research/provider_registry_molecular_r8_20261027/src/volterra_feedback.py"
+    },
+    {
+      "source_commit": "b3ba2e4aff1f237a2835b2f3a1b07de81133e9f7",
+      "path": "research/provider_registry_molecular_r8_20261027/verification/run_reference.py"
+    },
+    {
+      "source_commit": "b3ba2e4aff1f237a2835b2f3a1b07de81133e9f7",
+      "path": "research/provider_registry_molecular_r7_20261027/raw/REFERENCE_RESULTS.json",
+      "schema": "WU_R7_INDEPENDENT_REFERENCE_RESULT_V1",
+      "status": "PASS",
+      "failure_count": 0,
+      "cases": 4,
+      "each_times": 193,
+      "each_R_E": 193
+    }
+  ],
+  "method": [
+    "Independent elimination proof",
+    "Static arithmetic/lag/sign/rounding correspondence",
+    "Independent exact derivation of primary closed controls",
+    "Source/cap/freeze and create-only-result review",
+    "Reference roundoff budget derivation"
+  ],
+  "checks": {
+    "exact_denominator": "PASS_STATIC: D exact and not rounded upward",
+    "signed_d_and_lags": "PASS_STATIC",
+    "causal_order_and_fresh_forcing": "PASS_STATIC",
+    "whole_and_endpoint_cap_intersection": "PASS_DERIVED_AND_STATIC",
+    "raw_dominance_and_rounded_supersolution_scope": "PASS_SCOPE: neither unsupported property is claimed",
+    "finite_domain_and_binding_guards": "PASS_STATIC",
+    "source_caps": "PASS_STATIC: primary constructs wrappers directly from the hash-verified same-case R8 arrays",
+    "certificate_validity": "PASS_SCOPE: actual inequalities are caller-established source premises; metadata checks are not described as proof",
+    "freeze_before_import": "PASS_STATIC: source bytes and mandatory core/input/self runner checked before importing core",
+    "create_only_and_failure_preservation": "PASS_STATIC",
+    "CPU_accounting": "PASS_STATIC: complete process CPU belongs to outer wrapper, including imports and serialization",
+    "independent_reference": "PASS_STATIC: Decimal100/Gaussian, no production import or old producer/exp call",
+    "reference_error_budget": "PASS_DERIVED: actual rounding sites, exact determinant conditioning and minimum-branch maxima included"
+  },
+  "independent_closed_controls": [
+    {
+      "id": "noforcing",
+      "result": "R_n=2*2^(-floor(n/2)),E_n=3"
+    },
+    {
+      "id": "nilpotent",
+      "result": "R(t)=1+2t,E(t)=2; endpoint1+n/4,whole1+(n+1)/4"
+    },
+    {
+      "id": "constantforcing",
+      "result": "R_even=1;R_odd=1+2^(-floor(n/2))/4;E_n=1+3n/8"
+    },
+    {
+      "id": "coupled_cell",
+      "result": "D=7/8,R=8/7,E=2/7; upper errors <epsilon and5epsilon/4"
+    },
+    {
+      "id": "near_singular_positive_D",
+      "result": "D=1/1000,R=1000 detects upward-rounded denominator"
+    },
+    {
+      "id": "signed_d",
+      "result": "At delta1/2, negative e2/3 phi1/2 and positive e2 phi1 are valid loose elementary bounds; initial whole maxima1 and2"
+    },
+    {
+      "id": "fresh_forcing",
+      "result": "Zero initial residual/unit fresh forcing gives endpoint1 even with h1=1/2"
+    }
+  ],
+  "findings": [
+    {
+      "id": "PRE01_BINDING_ALIAS",
+      "class": "implementation test authoring",
+      "observation": "deepcopy preserves alias relationships, so changing kernel.binding.clock could also change the top-level binding",
+      "correction": "Copy bad['kernel']['binding'] with dict(...) before changing clock",
+      "status": "CLOSED_STATIC_BEFORE_FIRST_EXECUTION",
+      "runtime_result": "NOT_RUN"
+    }
+  ],
+  "reference_preexecution_clarification": "check_freeze requires actual PASS status, exact byte count and SHA for each row, and presence of core/input/primary/reference four files; applied before first execution",
+  "reference_authored_identity": {
+    "bytes": 21118,
+    "sha256": "3f4b38f79de2690dd470b67608c8275b6c1f5149af42247c6dc468e8b33e3dcb"
+  },
+  "open_material_findings": 0,
+  "executions_by_reviewer": {
+    "scientific_runs": 0,
+    "production_imports": 0,
+    "AST_or_compile_checks": 0,
+    "CAS": 0,
+    "old_science_replay": 0
+  },
+  "remaining": [
+    "Bind actual immutable core/input/primary source hashes",
+    "Inspect S05 syntax/hash evidence",
+    "Inspect actual primary and independent reference before final C9 adoption"
+  ]
+}

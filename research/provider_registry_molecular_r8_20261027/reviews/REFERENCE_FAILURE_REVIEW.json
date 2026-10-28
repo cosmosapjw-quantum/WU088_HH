@@ -1,0 +1,110 @@
+{
+  "schema": "WU_R8_REFERENCE_FAILURE_REVIEW_V1",
+  "reviewed_utc": "2026-10-27T15:56:46.269Z",
+  "reviewer": "independent agent /root/r6_inventory",
+  "review_pass": "Continuation of the same bounded R8 C9 review after the first actual reference result",
+  "status": "REFERENCE_ACCURACY_CONTRACT_MISMATCH_CONFIRMED_TARGETED_SCALAR_REPAIR_RECOMMENDED",
+  "final_C9": "PENDING",
+  "method": {
+    "source_reading": "Read the one actual failed check, its comparator and phi formulas, the exact saved native coarse_factors, the inherited exponential enclosure definition, original contracts, and actual process receipts.",
+    "metadata_operations": "Read-only JSON selection and SHA256 hashing.",
+    "mathematical_method": "Symbolic error propagation and the alternating-series enclosure theorem; no numerical execution.",
+    "reviewer_scientific_runs": 0,
+    "reviewer_runner_imports_or_AST": 0,
+    "reviewer_code_edits": 0,
+    "reviewer_external_writes": 0
+  },
+  "actual_evidence": {
+    "primary": {
+      "source_commit": "72931db38a5dbfc7b12720455c44109039a8f711",
+      "result": "raw/PRIMARY_RESULTS.json",
+      "sha256": "520110d1cae1677491aecd7216621c25f1098470c939ee027d5df3bde183686b",
+      "status": "PASS",
+      "checks": 237,
+      "failures": 0,
+      "runner_sha256": "19aa784543bf75343e70ba76f9696cca0ecce7396e03d2c5c4206827dcf8250a",
+      "OS_CPU_s": 3.807278,
+      "process_sha256": "3484372d5fab9e697d08753f37ed2e2330794c8e434f4416033df76e5830bdc1"
+    },
+    "first_reference": {
+      "source_commit": "b87ea61ab2d5e17221a6cf3b710aec074eb1a28e",
+      "result": "raw/REFERENCE_RESULTS.json",
+      "sha256": "da699b9a8b53389e3d222f34a5a421cd88ce17787bde69cc2e9bed5fb15409df",
+      "script_sha256": "e0d4d88e367413b1e72a88c2d25b223f69ea0c37a916b7b40c610df78e0c4c2f",
+      "status": "FAIL",
+      "checks": 727,
+      "failed_checks": 1,
+      "component_comparisons": 22659,
+      "failed_components": 1,
+      "OS_CPU_s": 0.440898,
+      "process_sha256": "3aa8eed5243810dec2699ac5227921079e719047185332af7f25b55743d64174",
+      "original_status_and_bytes_must_remain": true
+    }
+  },
+  "findings": [
+    {
+      "id": "REF01",
+      "severity": "MEDIUM",
+      "category": "Parameter-dependent reference accuracy contract mismatch",
+      "target": "verification/run_reference.py: compare(..., kind='arithmetic') and check_certificate's phi factor comparison",
+      "observed_failure": "saved_native_nine_state_K_conditional_feedback: phi factor",
+      "produced_Decimal80": "0.47452164947187060046147689126064563721498123474366440964115969363932860379550784",
+      "reference_Decimal80": "0.4745216494718706004614768912577348084201012021387227289121907966433553572",
+      "observed_positive_difference": "2.91082879488003260494168072896889699597324659550784E-30",
+      "original_upper_allowance": "1e-30 * max(1, abs(production), abs(reference)); here the scale equals one",
+      "diagnosis": "The directed exponential bracket is transformed into phi=(1-exp(d*delta))/(-d). Its additive width is amplified by 1/abs(d). A blanket 1e-30 arithmetic-gap ceiling does not account for this amplification at d=-1/20000000.",
+      "exact_static_derivation": {
+        "S": "2^128 = 340282366920938463463374607431768211456",
+        "d": "-1/20000000",
+        "exp_lo_on_denominator_S": "340282358847370961587573751651638012542/S",
+        "exp_hi_on_denominator_S": "340282358847370961587573751651638012593/S",
+        "width": "51/S",
+        "production_rule": "P = ceil_S((1-ell)/abs(d))",
+        "proof": "If ell <= z=exp(d*delta) <= u, then 0 <= P-phi <= (u-ell)/abs(d)+1/S.",
+        "justified_slack": "(1020000001)/S",
+        "scope": "This is a mathematical upper-gap budget, not a retroactive replacement of the original measured FAIL."
+      },
+      "scientific_impact": [
+        "The observed discrepancy is positive; this failed comparison did not detect an under-bound.",
+        "The existing directed-arithmetic proof explains a valid phi upper with this larger parameter-dependent gap.",
+        "The other 726 reference checks and 22658 component comparisons passed in the preserved run; the failed group contains one scalar.",
+        "No core, primary input, family binding, or physical-source change is indicated by this evidence.",
+        "The earlier preflight did not identify the missing 1/abs(d) dependence in the uniform reference closeness threshold. That specific static-review limitation is now recorded.",
+        "Final C9 remains pending until a separately authorized scalar re-adjudication is actually completed."
+      ]
+    }
+  ],
+  "recommended_minimal_repair": {
+    "disposition": "Preserve the first reference FAIL and all original source/results. Do not rerun the full primary/reference and do not loosen blanket tolerances.",
+    "changed_obligation": "Add one independently authored exact-rational scalar enclosure check for the saved native phi value under a separate bounded productive-repair contract.",
+    "immutable_inputs": [
+      "Saved native coarse_factors from PRIMARY_RESULTS.json with SHA256 520110d1cae1677491aecd7216621c25f1098470c939ee027d5df3bde183686b.",
+      "Preserved first reference result and script identities above.",
+      "No new ODE, generator, R6/R7 execution, production import, or primary reevaluation."
+    ],
+    "exact_construction": {
+      "kappa": "-d > 0",
+      "x": "kappa*delta; require exactly 0 < x <= 1",
+      "function": "phi = delta * sum_{k=0}^infinity (-x)^k/(k+1)!",
+      "proposed_fixed_upper": "U = delta * sum_{k=0}^8 (-x)^k/(k+1)!",
+      "proposed_fixed_lower": "L = delta * sum_{k=0}^9 (-x)^k/(k+1)!",
+      "proof": "Terms decrease in magnitude because the ratio is x/(k+2) <= 1. Alternating-series remainder gives L <= phi <= U.",
+      "exact_bracket_width": "U-L = delta*x^9/10!",
+      "required_safety_check": "Saved P >= U. This directly certifies that the saved production value is an upper bound.",
+      "required_gap_check": "Saved P-L <= ((u-ell)/kappa + 1/S) + (U-L). This checks the analytically justified gap scale without a fit to the observed Decimal error.",
+      "arithmetic": "Fractions and integer factorials only; no decimal acceptance tolerance is required."
+    },
+    "finite_policy": "Fix the degree, input hash, assertions and run allowance before execution. If this single scalar repair fails, retain failure and stop; do not increase degree or retry automatically.",
+    "output_policy": "Create a distinct targeted result and process receipt; keep original REFERENCE_RESULTS.json and its FAIL unchanged. Adoption must explicitly distinguish the original reference failure from the successful or failed scalar repair.",
+    "reviewer_executed_proposal": false
+  },
+  "unchanged_scope": {
+    "general_proof_status": "Existing scoped conditional proof decision is unchanged.",
+    "physical_consumer_admitted": false,
+    "new_reactive_source_or_density_binding": false,
+    "CAS": "Qualified partial symbolic corroboration with preserved initial failure, unresolved expressions and warnings remains unchanged.",
+    "original_primary_allowance_remaining": 0,
+    "original_reference_allowance_remaining": 0,
+    "new_repair_allowance": "Must be explicitly recorded by root before any targeted execution; this review does not execute or silently reset any allowance."
+  }
+}

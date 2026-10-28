@@ -1,0 +1,119 @@
+{
+  "schema": "WU_R13_CONTRACT_V1",
+  "unit": "WU_AFFINE_FORCING_R13",
+  "created_utc": "2026-10-28T07:02:46.765135+00:00",
+  "workflow_version": "1.0.0",
+  "objective": "Extend the adopted all-starts full-A step-kernel comparison to nonnegative piecewise-affine whole-domain forcing on exact nonaligned clocks; implement exact overlap moments, quadratic vertex refinement, positive signed exponential Bernstein2 propagation, and closed-cell bounds.",
+  "scope": "One conditional theory node and one finite code node; no new physical source or consumer is assumed.",
+  "parent_HEAD": "fa42ec5e35d68452685ce447906401cf7a14d1b3",
+  "parent_science": {
+    "R12_FINAL": "7f841fe643d0ab8cb6c90d1068f459fe6321aba9",
+    "R12_science": "eb431411f6f0c4c9065edb0a5a11ce2c4bccf2fe",
+    "payload_files": 64,
+    "payload_sha256": "dd66d34c0171ec215fa0e39525cc59f4c23f090b4a7deaa93b397c1f4a4417ba",
+    "DAG": "25/40"
+  },
+  "premises": {
+    "generator": "H=pi*d^T-diag(d), A=K+wH with fixed K/pi/destruction, whole certified w box, all start times, zero-mass residual and nonexpansive Markov remainders. R11 full-A q/tau certificate is a premise; no nominal K rho transplantation.",
+    "kernel": "h(age)=q^floor(age/tau), 0<=q<=1, tau>0, h0=1 including q=0.",
+    "forcing": "g_r and g_e nonnegative affine functions on each exact rational source cell, supplied by two nonnegative one-sided endpoint bounds. Whole fine/coarse-state-domain validity is an explicit source premise, not established by interpolating samples.",
+    "scalar": "E=abs(eta); fixed c>=0 and signed d_c over whole horizon; coarse l1=4E. R memory remains global.",
+    "clock": "Exact rational t0/source/observation, closed-cell upper bounds, one-sided initial-term jumps.",
+    "caps": "No new generic physical cap adapter. Inherited source/state/clock/closed-cell cap premises remain unchanged. New affine inputs do not acquire old saved cap identity."
+  },
+  "finite_domain": {
+    "states": [
+      1,
+      13
+    ],
+    "source_cells": [
+      1,
+      64
+    ],
+    "observation_cells": [
+      1,
+      64
+    ],
+    "max_base_cells": 2048,
+    "max_vertex_refined_cells": 4096,
+    "max_full_blocks": 8,
+    "max_overlap_terms": 200000,
+    "max_input_scalar_bits": 256,
+    "max_derived_scalar_bits": 16384,
+    "max_abs_d_times_horizon": 16,
+    "dyadic_bits": 128,
+    "Taylor_degree": 96
+  },
+  "resource": {
+    "primary": {
+      "runs": 1,
+      "CPU_s": 60,
+      "wall_s": 90
+    },
+    "reference": {
+      "runs": 1,
+      "CPU_s": 60,
+      "wall_s": 90
+    },
+    "CAS": {
+      "runs": 1,
+      "wall_s": 30
+    },
+    "old_R12_R11_R10_R9_R8_R7_R6_PHYS91_allowance_increase": 0,
+    "global_remaining": null,
+    "full_historical_CPU_s": null,
+    "new_ODE_runs": 0,
+    "old_science_replay": 0,
+    "postprocessing": "Saved outputs only; no solver calls."
+  },
+  "reference": {
+    "precision": 160,
+    "relative_guard": "1e-80",
+    "fixed_before_execution": true,
+    "independence": "Separate exact primitive/moment calculation and event generation; independent Decimal exponential monomial integration, no production/predecessor imports.",
+    "meaning": "Numerical corroboration under frozen guard; not an interval reference."
+  },
+  "acceptance": [
+    "Constructive proof from forcing overlap to quadratic R and exact vertex refinement",
+    "Nonnegative Bernstein2 coefficients and signed exponential weights with explicit outward bounds",
+    "Primary controls, domain rejection, exact analytic values, source refinement and constant-forcing reduction",
+    "Independent reference checks exact R/F/grid, ideal E enclosure and closed-cell coverage",
+    "New frozen CAS symbolic checks with actual messages retained",
+    "R6/C9 independent review without open material findings",
+    "All40 inherited DAG node objects unchanged; only2 scoped conditional nodes admitted",
+    "Each paired Rn/Cn checkpoint published and backed to both authorized providers with actual receipts"
+  ],
+  "physical_status": {
+    "actual_HD_reactive_array": "INPUT_PENDING",
+    "named_consumer_density_clock": "INPUT_PENDING",
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4_ready": false,
+    "central_delta": 0,
+    "physical_delta": 0,
+    "native_v": "UNSPECIFIED",
+    "missingness": "MISSING_NOT_ZERO",
+    "TIQM_SQM": "DISTINCT"
+  },
+  "authorization": {
+    "source": "Current user explicitly requests census followed by next full theory and coding loops and per-stage publication/backups.",
+    "root_only": true,
+    "repository": "cosmosapjw-quantum/WU088_HH",
+    "branch": "research/provider-registry-20261025",
+    "draft_PR": 150,
+    "expected_SHA_required": true,
+    "force": false,
+    "Drive_Dropbox": "existing authorized folders",
+    "main_merge": false,
+    "other_owner_writes": false
+  },
+  "strong_no_go": {
+    "new_no_go_proposed": false,
+    "NG1_NG7": "Screen scope, quantification, proof, mechanism, importance, literature and independent review for any negative theorem; none inferred from missing input."
+  },
+  "conventions": {
+    "metric_signature": "(-,+,+,+)",
+    "c_hbar_kB": "Retained where relevant; c in this comparison is its coupling coefficient, not a redefinition of speed of light.",
+    "units": "tau/time knots use one source clock; g_r has residual/time units, g_e scalar-error/time, c and d_c inverse-time in normalized variables."
+  }
+}

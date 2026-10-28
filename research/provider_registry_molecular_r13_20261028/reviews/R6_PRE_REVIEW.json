@@ -1,0 +1,161 @@
+{
+  "schema": "WU_R13_INDEPENDENT_PREEXECUTION_PROOF_REVIEW_V1",
+  "unit": "WU_AFFINE_FORCING_R13",
+  "reviewer": "/root/repo_census",
+  "review_kind": "Separate-agent manual independent derivation and adversarial boundary check of new R13 proof and input/resource contract",
+  "status": "PASS_SCOPED_SUBJECT_TO_MINOR_SUPREMUM_WORDING_CORRECTION",
+  "open_material_findings": 0,
+  "open_minor_findings": 1,
+  "reviewed_sources": [
+    {
+      "path": "r13_work/theory/AFFINE_FORCING_DERIVATION.md",
+      "sha256": "29f42424a0787ccca383fdeb317cebdaaf40ffec2556e63655b35faf6a95fdbf"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r13_20261028/CONTRACT.json",
+      "sha256": "ffeb45a838ab2cb12bf16b4826bb8e086f32f32c0b102f32cb154ea181c6d67f"
+    }
+  ],
+  "independence": {
+    "new_proof_authored_by_reviewer": false,
+    "production_code_authored_by_reviewer": false,
+    "reference_code_authored_by_reviewer": false,
+    "method": "Derive overlap integral and transformed primitive directly; calculate degree-two Bernstein moments by beta integrals; prove monotonic vertex-cell coefficient positivity; construct independent q=0 triangular and jump examples by hand.",
+    "intake_caveat": "This agent authored GitHub census documents. This review does not independently assess or admit its own census; its independent scope is the new proof/contract authored by other agents.",
+    "old_R11_R12_independent_reviews": "Reused by identity and scope; not repeated",
+    "new_scientific_Python_runs": 0,
+    "new_ODE_runs": 0,
+    "new_CAS_runs": 0,
+    "administrative_operations": "Read source and compute source hashes only."
+  },
+  "checks": [
+    {
+      "id": "R6-P01",
+      "claim": "Full-A staircase propagator and nonnegative affine whole-domain forcing are explicit unchanged/source premises.",
+      "result": "PASS_SCOPED",
+      "basis": "No nominal-K contraction is transferred. Affine endpoint pairs are declared bound functions valid on the whole fine/coarse state domain; two samples alone do not establish the premise. New proof changes the forcing input class, not the generator or physical closure."
+    },
+    {
+      "id": "R6-P02",
+      "claim": "Positive exact overlap formula.",
+      "result": "PASS_SCOPED",
+      "basis": "Intersect each source interval with age strip [t-(k+1)tau,t-k tau]. Integrating a linear function on nonempty [L,U] is exactly (U-L)(g(L)+g(U))/2. Disjoint strips cover all causal history, modulo measure-zero boundaries. q=0 retains k=0 with q^0=1."
+    },
+    {
+      "id": "R6-P03",
+      "claim": "Independent J0/J1 primitive expression.",
+      "result": "PASS_SCOPED",
+      "basis": "The change v=t-s gives alpha+beta(t-a)-beta*v. Integrate h and v*h between max(t-b,0) and max(t-a,0). The stated finite strip sums reproduce these two primitives and have no division by q or 1-q."
+    },
+    {
+      "id": "R6-P04",
+      "claim": "Exact event set and quadratic reconstruction.",
+      "result": "PASS_SCOPED",
+      "basis": "An overlap branch switches only when t=a_j+k*tau or t=a_(j+1)+k*tau. Between these events its endpoints are affine in t, so the integral of affine g has degree at most two. Initial h is fixed on the open event cell. Three rational samples give C=p0, A=2(p0+p1-2pm), B=4pm-3p0-p1 exactly. Use actual right-continuous left endpoint and left-limit right endpoint."
+    },
+    {
+      "id": "R6-P05",
+      "claim": "Vertex split proves nonnegative Bernstein2 coefficients.",
+      "result": "PASS_SCOPED",
+      "basis": "A quadratic derivative is affine and has at most one interior root. After exact vertex insertion each subcell is monotone. If increasing, B1=B0+D*P'(0)/2>=B0>=0. If decreasing, B1=B2-D*P'(D)/2>=B2>=0. This stronger argument is needed: polynomial nonnegativity alone would not prove coefficient nonnegativity."
+    },
+    {
+      "id": "R6-P06",
+      "claim": "R closed-cell certificate.",
+      "result": "PASS_SCOPED_WITH_WORDING_FINDING",
+      "basis": "The supremum equals the maximum of the monotone polynomial's endpoint/left-limit candidates; actual right endpoint has only a nonnegative initial term removed for 0<=q<=1. The upper is correct, but a left-limit value need not be attained. See R13-R6-F01."
+    },
+    {
+      "id": "R6-P07",
+      "claim": "Positive signed exponential Bernstein2 moments.",
+      "result": "PASS_SCOPED",
+      "basis": "Beta integrals give moment coefficients 1/[n!(n+3)], 2/[n!(n+2)(n+3)], 2/(n+3)! for i=0,1,2. Substitution x->1-x yields W_i(z,D)=exp(z)*W_(2-i)(-z,D). At z=0 all three moments are D/3; summing bases yields D*phi1(z)."
+    },
+    {
+      "id": "R6-P08",
+      "claim": "Taylor96 outward tail bound on |z|<=16.",
+      "result": "PASS_SCOPED",
+      "basis": "For every moment, the beta coefficient decreases with n; thus after first omitted n=97 all successive ratios are bounded by |z|/98<1. First-omitted/(1-|z|/98) bounds the remaining nonnegative tail. The exp series uses the same ratio argument. Negative arguments require reciprocal endpoint reversal and swapped moment index. Actual rounding implementation remains a C9 obligation."
+    },
+    {
+      "id": "R6-P09",
+      "claim": "Whole-cell E for signed d_c.",
+      "result": "PASS_SCOPED",
+      "basis": "Nonnegative c and exact R supremum give forcing<=Qmax=c*Rsup+max(g_e endpoints). The positive scalar kernel compares E with constant-forcing Y. Y'=exp(d_c*u)(d_c*Eleft_upper+Qmax) has constant sign, so max(Y(0),Y(D)) is a closed-cell upper. This does not assert endpoint extremality for the true time-dependent E."
+    },
+    {
+      "id": "R6-P10",
+      "claim": "Memory, refinement and supremum-source comparison.",
+      "result": "PASS_SCOPED",
+      "basis": "Overlap sums always start at original t0; source or observation subdivision changes a finite partition of the same integral. h>=0 and exp>=0 imply pointwise R/E order under g_affine<=g_sup. Rounded recurrence identity is not inferred from exact ideal identity."
+    },
+    {
+      "id": "R6-P11",
+      "claim": "Independent triangular vertex discriminator.",
+      "result": "PASS_SCOPED_MANUAL",
+      "basis": "Direct integration without production/reference code gives the exact expected values recorded below, including interior maximum and ideal E endpoints."
+    },
+    {
+      "id": "R6-P12",
+      "claim": "Claim scope and finite resource authority.",
+      "result": "PASS_SCOPED_CONTRACT_ONLY",
+      "basis": "The new user request selects one next conditional theory/code pair and finite new executions. Old allowances remain unchanged. No actual source binding, physical closure, native rate improvement, broad novelty or strong no-go is claimed. Resource enforcement and negative-domain rejection are implementation obligations, not proven by the metadata contract."
+    }
+  ],
+  "findings": [
+    {
+      "id": "R13-R6-F01",
+      "severity": "minor",
+      "class": "mathematical_claim_wording",
+      "target": "AFFINE_FORCING_DERIVATION.md section5: exact closed-cell R maximum",
+      "observation": "The inclusion of a right-endpoint left limit yields a supremum, which may not be attained after a downward initial-term jump.",
+      "counterexample": {
+        "t0": "0",
+        "T": "1",
+        "tau": "1",
+        "q": "0",
+        "R0": "1",
+        "g_r": "1",
+        "R_for_0_le_t_lt_1": "1+t",
+        "R_at_1": "1",
+        "supremum": "2",
+        "maximum_attained": false
+      },
+      "impact": "The enclosure algorithm and whole-cell upper remain valid. The phrase maximum over the actual closed-cell function would additionally assert attainment and is false in this example.",
+      "minimum_correction": "Use exact closed-cell supremum and explain that it is computed as a finite maximum over endpoint and one-sided-limit candidates.",
+      "status": "OPEN_AWAITING_AUTHOR_CORRECTION"
+    }
+  ],
+  "manual_independent_control": {
+    "input": "t0=0,T=2,tau=1,q=0,R0=E0=0,c=1,d_c=0,g_e=0;g_r(s)=s on[0,1] and2-s on[1,2]",
+    "R_0_1": "t^2/2",
+    "R_1_2": "3t-t^2-3/2",
+    "R_at_1": "1/2",
+    "R_at_3_over_2": "3/4",
+    "R_at_2": "1/2",
+    "vertex": "3/2",
+    "E_0_1": "t^3/6",
+    "E_1_2": "3t^2/2-t^3/3-3t/2+1/2",
+    "E_at_1": "1/6",
+    "E_at_3_over_2": "1/2",
+    "E_at_2": "5/6",
+    "Bernstein_R_1_to_3_over_2": ["1/2","3/4","3/4"],
+    "Bernstein_R_3_over_2_to_2": ["3/4","3/4","1/2"],
+    "exact_arithmetic_whole_E_cell_1_to_3_over_2": "13/24",
+    "exact_arithmetic_whole_E_cell_3_over_2_to_2": "7/8",
+    "exact_arithmetic_horizon_whole_E_upper": "7/8",
+    "meaning": "Manual analytic reference, no executed test. Outward dyadic production may exceed the ideal rational bounds by its documented rounding."
+  },
+  "remaining_C9_obligations": [
+    "Read frozen production code and exact inputs; ensure right/left source-cell and kernel endpoint conventions match the proof.",
+    "Check every dyadic conversion, positive interval product/sum and exp reciprocal reversal for outward containment.",
+    "Check combined overlap work, exact rational bit limits, source/observation/refined-cell limits and signed exponential range before expensive work.",
+    "Read actual primary/reference/CAS outputs and frozen source identity without rerunning completed science.",
+    "Check independent reference does not import production code and handles near-zero signed d_c without destructive Decimal cancellation.",
+    "Check no old R11 caps are applied to new affine forcing identity and all40 inherited DAG objects remain unchanged at adoption."
+  ],
+  "strong_no_go": {
+    "proposed": false,
+    "reviewed_scope": "Constructive conditional extension; local wording counterexample only. No global impossibility or new no-go admission."
+  }
+}

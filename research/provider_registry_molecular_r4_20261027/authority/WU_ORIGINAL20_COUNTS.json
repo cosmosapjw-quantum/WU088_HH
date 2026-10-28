@@ -1,0 +1,112 @@
+{
+  "schema": "WU_R4_ORIGINAL20_STATUS_CLASSIFICATION_V1",
+  "source_commit": "bfdeed676617c8b75ed81ac5e79e800fa69f83db",
+  "path": "research/provider_registry_exfor_target6_20261027/DAG.json",
+  "sha256": "bcc2579a78d10fa8e3bc218c912a5207a4ee1dccec4b82ba291df727d1783dba",
+  "denominator": 20,
+  "strict_COMPLETE_count": 5,
+  "nonphysical_implementation_pass_count": 2,
+  "counts": {
+    "complete": 5,
+    "partial": 8,
+    "open": 1,
+    "ready_design": 2,
+    "source_pending": 2,
+    "implementation_pass_only": 2
+  },
+  "groups": {
+    "complete": [
+      {
+        "id": "WU_CE83_OWNER_COMPLETION",
+        "status": "COMPLETE_SCOPED_REUSED"
+      },
+      {
+        "id": "WU_REGISTRY_PROVIDER_ROWS_R1",
+        "status": "COMPLETE_SCOPED_SOURCE_RECOVERY"
+      },
+      {
+        "id": "WU_ORIGINAL_TARGET19_SOURCE_IDENTITY_R2",
+        "status": "COMPLETE_SCOPED_SOURCE_RECOVERY"
+      },
+      {
+        "id": "WU_TARGET19_NUMBER_PROJECTIONS_R2",
+        "status": "COMPLETE_SCOPED_DECLARED_INTEGER_COLUMNS"
+      },
+      {
+        "id": "WU_TARGET6_EXFOR_SOURCE_R3",
+        "status": "COMPLETE_SCOPED_DIRECT_NUMERIC_SOURCE_REFERENCES"
+      }
+    ],
+    "partial": [
+      {
+        "id": "WU_LI_SOURCE_UNCERTAINTY",
+        "status": "PARTIAL_CONDITIONAL_MODELS"
+      },
+      {
+        "id": "WU_D_PI_RR_MATCHED",
+        "status": "PARTIAL_CONDITIONAL_C23E_REUSED"
+      },
+      {
+        "id": "WU_NUCLEAR_PARTICLE_OWNERSHIP",
+        "status": "PARTIAL_INPUT_DEPENDENCIES"
+      },
+      {
+        "id": "WU_SPECTRAL_GEOMETRY_COUPLING",
+        "status": "PARTIAL_REASSIGNED_INTERFACES"
+      },
+      {
+        "id": "WU_ALL_TARGET_SPECIES_REACTION_REGISTRY",
+        "status": "PARTIAL_ORIGINAL_19_TARGET_SOURCE_REFERENCES_COMPLETE"
+      },
+      {
+        "id": "WU_ALL_ISOTOPE_ATOMIC_SOURCE_COVERAGE",
+        "status": "PARTIAL_SOURCE_CANDIDATES_POPULATED"
+      },
+      {
+        "id": "WU_MOLECULAR_NEGATIVE_ION_SOURCE_REGISTRY",
+        "status": "PARTIAL_SOURCE_ROWS_POPULATED"
+      },
+      {
+        "id": "WU_TARGET19_PROVIDER_BINDING_R2",
+        "status": "PARTIAL_DIRECTION_SOURCE_COVERAGE_ACCEPTED_SCOPED"
+      }
+    ],
+    "open": [
+      {
+        "id": "WU_HE_LI_CX_STATE_ENERGY",
+        "status": "OPEN_SOURCE_DEPENDENCIES"
+      }
+    ],
+    "ready_design": [
+      {
+        "id": "HE-EXP-SPECIES",
+        "status": "READY_DESIGN"
+      },
+      {
+        "id": "REC-EXP-SPECIES",
+        "status": "ALL_TARGET_REGISTRY_READY_DESIGN"
+      }
+    ],
+    "source_pending": [
+      {
+        "id": "HE-EXP-NUCLEAR",
+        "status": "SOURCE_INPUT_PENDING"
+      },
+      {
+        "id": "REC-EXP-THERMONUCLEAR",
+        "status": "SOURCE_INPUT_PENDING"
+      }
+    ],
+    "implementation_pass_only": [
+      {
+        "id": "REI-CHEM-LEDGER-01",
+        "status": "PASS_SCOPED_REUSED"
+      },
+      {
+        "id": "WU_REGISTRY_COMPILER_PROJECTION_R1",
+        "status": "IMPLEMENTATION_CHECKED_SCOPED"
+      }
+    ]
+  },
+  "recommendation": "Report strict scoped-contract completions5/20 and implementation-only passes2/20 separately. Do not count READY_DESIGN/PARTIAL/PENDING as complete. The5completed nodes include source and integer-artifact subcontracts and do not imply5physicalconsumer completions. R4 loop20stage progress and publication/backups are separate axes; preserve original20node denominator."
+}

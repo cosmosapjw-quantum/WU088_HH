@@ -1,0 +1,81 @@
+{
+  "schema": "WU_R11_FIXED_REFERENCE_INPUT_V1",
+  "unit": "WU_FULL_GENERATOR_BLOCK_R11",
+  "precision_decimal_digits": 160,
+  "relative_guard": "1e-80",
+  "sample_atol": "2e-12",
+  "sample_rtol": "2e-10",
+  "sample_clock_max_ULP": 1,
+  "primary_result_path": "research/provider_registry_molecular_r11_20261028/raw/PRIMARY_RESULTS.json",
+  "primary_input_path": "research/provider_registry_molecular_r11_20261028/verification/PRIMARY_INPUT.json",
+  "primary_runner_path": "research/provider_registry_molecular_r11_20261028/verification/run_primary.py",
+  "core_path": "research/provider_registry_molecular_r11_20261028/src/full_generator_blocks.py",
+  "required_frozen_sources": [
+    "research/provider_registry_molecular_r11_20261028/CONTRACT.json",
+    "research/provider_registry_molecular_r11_20261028/src/full_generator_blocks.py",
+    "research/provider_registry_molecular_r11_20261028/verification/PRIMARY_INPUT.json",
+    "research/provider_registry_molecular_r11_20261028/verification/run_primary.py",
+    "research/provider_registry_molecular_r11_20261028/verification/REFERENCE_INPUT.json",
+    "research/provider_registry_molecular_r11_20261028/verification/run_reference.py"
+  ],
+  "sources": {
+    "R6_primary": {
+      "path": "research/provider_registry_molecular_r6_20261027/raw/PRIMARY_RESULTS.json",
+      "bytes": 253885,
+      "sha256": "1a3b55f7c14a64a10a651de2df7b7f7d2df24d0b9e809b729f32d73377c90e84"
+    },
+    "R7_input": {
+      "path": "research/provider_registry_molecular_r7_20261027/verification/PRIMARY_INPUT.json",
+      "bytes": 18260,
+      "sha256": "3ff9c2535e5c0ce6ffa5e9671de15aad6649e0996cd9b9e275cc290facd8d330"
+    },
+    "R7_primary": {
+      "path": "research/provider_registry_molecular_r7_20261027/raw/PRIMARY_RESULTS.json",
+      "bytes": 351734,
+      "sha256": "6eaf3c0eed7968cf4023180e15373a180bb5b1bab2e56cd4a8547387ed337a15"
+    },
+    "R7_reference": {
+      "path": "research/provider_registry_molecular_r7_20261027/raw/REFERENCE_RESULTS.json",
+      "bytes": 701155,
+      "sha256": "e403c7803c080fd4f26be71a93b782b02d874f80ef11c85a706bea71e2a743cd"
+    },
+    "R10_primary": {
+      "path": "research/provider_registry_molecular_r10_20261028/raw/PRIMARY_RESULTS.json",
+      "bytes": 833555,
+      "sha256": "1713df54bc3653003614f3deba93212735a345e8d7220f053ab9af2d84677fb1"
+    }
+  },
+  "expected_HD_ids": [
+    "two_state_no_reaction",
+    "two_state_nonlinear",
+    "two_state_coarse_source_defect",
+    "saved_native_nine_state_K_conditional_feedback"
+  ],
+  "expected_HD_cells": 192,
+  "expected_block_steps": 64,
+  "expected_native_block_id": "native_mu_256",
+  "expected_source_status": {
+    "R6_primary": "PASS_SCOPED_EXACT_CERTIFICATES",
+    "R7_primary": "PASS",
+    "R7_reference": "PASS",
+    "R10_primary": "PASS"
+  },
+  "required_controls": [
+    "zero",
+    "polynomial_q1",
+    "late_forcing_q0",
+    "block_jump_left_limit",
+    "negative_d_variable_forcing",
+    "positive_d",
+    "near_zero_d",
+    "near_zero_d_negative",
+    "near_one_q"
+  ],
+  "reference_method": "Exact Fraction powers and finite convolution for the actual selected rational q; independent Decimal160 closed-form exp/phi1/phi2 Bernstein moments; signed scalar whole-cell comparison; no production import or source exponential replay.",
+  "cap_semantics": "Independent ideal capped construction is a monotone lower target for outward upper arithmetic; cap order itself is checked in exact Fraction arithmetic against the actual R10 arrays.",
+  "lower_semantics": "Raw lower encloses the ideal chosen-rational-q comparison, never the physical error.",
+  "resource": {"runs": 1, "CPU_s": 60, "wall_s": 90},
+  "new_ODE_calls": 0,
+  "old_science_replay": 0,
+  "physical_consumer_admitted": false
+}

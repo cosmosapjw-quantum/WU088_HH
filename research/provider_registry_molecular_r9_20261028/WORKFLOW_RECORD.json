@@ -1,0 +1,216 @@
+{
+  "schema": "WU_R9_FULL_DUAL_LOOP_V1",
+  "skill_version": "1.0.0",
+  "theory": {
+    "R1": {
+      "label": "연구 위치·계약",
+      "status": "COMPLETE",
+      "checkpoint": "S01",
+      "evidence": [
+        "CONTRACT.json",
+        "DAG.json",
+        "POLICY_OVERRIDE.json"
+      ]
+    },
+    "R2": {
+      "label": "근거·재사용",
+      "status": "COMPLETE",
+      "checkpoint": "S02",
+      "evidence": [
+        "authority/RECOVERY_INTAKE.json",
+        "authority/SYNTHESIS_KO.md",
+        "authority/LITERATURE.json",
+        "delivery/S01.json"
+      ]
+    },
+    "R3": {
+      "label": "주장·전제 정렬",
+      "status": "COMPLETE",
+      "checkpoint": "S03",
+      "evidence": [
+        "theory/PROOF_KO.md",
+        "theory/THEORY_CODE_MAP.json",
+        "NUMERICAL_DESIGN_KO.md"
+      ]
+    },
+    "R4": {
+      "label": "가설·표현 탐색",
+      "status": "COMPLETE",
+      "checkpoint": "S04",
+      "evidence": [
+        "theory/CANDIDATES_AND_CONTROLS_KO.md",
+        "DECISION_AND_EXECUTION.json",
+        "EXECUTION_PLAN.json"
+      ]
+    },
+    "R5": {
+      "label": "구성적 유도",
+      "status": "COMPLETE",
+      "checkpoint": "S05",
+      "evidence": [
+        "theory/PROOF_KO.md",
+        "reviews/R6_THEORY_REVIEW.json"
+      ]
+    },
+    "R6": {
+      "label": "독립 검증",
+      "status": "COMPLETE",
+      "checkpoint": "S06",
+      "evidence": [
+        "reviews/R6_THEORY_REVIEW.json",
+        "reviews/PREFLIGHT_SOURCE_BINDING.json"
+      ]
+    },
+    "R7": {
+      "label": "판별 검증",
+      "status": "COMPLETE_QUALIFIED_SYMBOLIC",
+      "checkpoint": "S07",
+      "evidence": [
+        "raw/WOLFRAM_NEW_RESULT.json",
+        "raw/WOLFRAM_ASSESSMENT.json",
+        "reviews/R6_THEORY_REVIEW.json"
+      ]
+    },
+    "R8": {
+      "label": "결과 판정",
+      "status": "COMPLETE",
+      "checkpoint": "S08",
+      "evidence": [
+        "RESULTS_KO.md",
+        "raw/RESULT_ANALYSIS.json",
+        "raw/WOLFRAM_ASSESSMENT.json"
+      ]
+    },
+    "R9": {
+      "label": "정식 결과·코딩 연결",
+      "status": "COMPLETE",
+      "checkpoint": "S09",
+      "evidence": [
+        "theory/THEOREM_AND_API_KO.md",
+        "SCIENTIFIC_ADMISSION.json"
+      ]
+    },
+    "R10": {
+      "label": "종료·재개",
+      "status": "COMPLETE",
+      "checkpoint": "S10",
+      "evidence": [
+        "REPORT_KO.md",
+        "HANDOFF_KO.md",
+        "followup/NEXT_INPUT_CONTRACT.json"
+      ]
+    }
+  },
+  "coding": {
+    "C1": {
+      "label": "목표·baseline",
+      "status": "COMPLETE",
+      "checkpoint": "S01",
+      "evidence": [
+        "CONTRACT.json",
+        "DAG.json",
+        "POLICY_OVERRIDE.json"
+      ]
+    },
+    "C2": {
+      "label": "식–데이터–코드",
+      "status": "COMPLETE",
+      "checkpoint": "S02",
+      "evidence": [
+        "authority/RECOVERY_INTAKE.json",
+        "authority/SYNTHESIS_KO.md",
+        "authority/LITERATURE.json",
+        "delivery/S01.json"
+      ]
+    },
+    "C3": {
+      "label": "수치 설계",
+      "status": "COMPLETE",
+      "checkpoint": "S03",
+      "evidence": [
+        "theory/PROOF_KO.md",
+        "theory/THEORY_CODE_MAP.json",
+        "NUMERICAL_DESIGN_KO.md"
+      ]
+    },
+    "C4": {
+      "label": "실행 DAG·자원",
+      "status": "COMPLETE",
+      "checkpoint": "S04",
+      "evidence": [
+        "theory/CANDIDATES_AND_CONTROLS_KO.md",
+        "DECISION_AND_EXECUTION.json",
+        "EXECUTION_PLAN.json"
+      ]
+    },
+    "C5": {
+      "label": "구현",
+      "status": "COMPLETE",
+      "checkpoint": "S05",
+      "evidence": [
+        "src/causal_resolvent.py",
+        "verification/run_primary.py",
+        "verification/run_reference.py",
+        "IMPLEMENTATION_KO.md"
+      ]
+    },
+    "C6": {
+      "label": "구현 검증",
+      "status": "COMPLETE",
+      "checkpoint": "S06",
+      "evidence": [
+        "raw/PRIMARY_RESULTS.json",
+        "raw/PRIMARY_PROCESS.json",
+        "delivery/S06.json"
+      ]
+    },
+    "C7": {
+      "label": "과학 검증",
+      "status": "COMPLETE",
+      "checkpoint": "S07",
+      "evidence": [
+        "raw/REFERENCE_RESULTS.json",
+        "raw/REFERENCE_PROCESS.json"
+      ]
+    },
+    "C8": {
+      "label": "수치·재현성",
+      "status": "COMPLETE",
+      "checkpoint": "S08",
+      "evidence": [
+        "RESULTS_KO.md",
+        "raw/RESULT_ANALYSIS.json",
+        "raw/WOLFRAM_ASSESSMENT.json"
+      ]
+    },
+    "C9": {
+      "label": "독립 검토",
+      "status": "COMPLETE",
+      "checkpoint": "S09",
+      "evidence": [
+        "reviews/C9_FINAL_REVIEW.json",
+        "SCIENTIFIC_ADMISSION.json"
+      ]
+    },
+    "C10": {
+      "label": "판정·인계",
+      "status": "COMPLETE",
+      "checkpoint": "S10",
+      "evidence": [
+        "REPORT_KO.md",
+        "HANDOFF_KO.md",
+        "SCIENTIFIC_PAYLOAD_MANIFEST.json",
+        "delivery/S10.json",
+        "delivery/PUBLICATION_INDEX.json"
+      ]
+    }
+  },
+  "workflow_complete": 20,
+  "workflow_total": 20,
+  "DAG_complete": 19,
+  "DAG_total": 34,
+  "workflow_is_not_DAG": true,
+  "workflow_content_prepared": 20,
+  "stage_delivery_verified": 10,
+  "final_metadata_delivery": "Own receipt external to this source; see PR150"
+}

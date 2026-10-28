@@ -1,0 +1,22 @@
+{
+  "schema": "WU_R5_CODE_EQUIVALENCE_V1",
+  "old_code_commit": "a49104da1491f20d087ddfafcdf60347aaeca16a",
+  "old_code_sha256": "06d13ff2e9b66b11e9ccf2d7afa572f683b0022971d5bfaeaa8078f19040a91e",
+  "new_code_sha256": "8c86303793baa1fd01dcdbae93c521c13713c74d6658101f0d77b4ebe4538273",
+  "required_relation": "same exact numeric semantics on all previously admitted inputs; newly support canonical serialization output lengths",
+  "change": "Rat.of recognizes canonical integer and fraction strings before decimal/exponent length guard. All algebra, comparison and source-generator code unchanged.",
+  "prior_primary_reused": {
+    "assertions": 188,
+    "source_code_identity_preserved": "results/PRIMARY_EXECUTION.json",
+    "reason": "Old successful inputs have identical rational values under the corrected parser, the rest of the code is byte-identical."
+  },
+  "source_geometry_reused": {
+    "assertions": 41,
+    "reason": "Original selected inputs have unchanged parse semantics; arithmetic/generator unchanged."
+  },
+  "new_evidence": "results/ROUNDTRIP_REPAIR.json",
+  "current_repair_checks": 20,
+  "no_replay": true,
+  "independent_final_review": "PASS_SCOPED_AFTER_TARGETED_REPAIR",
+  "evidence": "reviews/C9_FINAL.json"
+}

@@ -1,0 +1,126 @@
+{
+  "schema": "WU_TARGET19_DELIVERY_SCOPE_REVIEW_V1",
+  "reviewer": "authority_survey / independent reviewer",
+  "reviewed_UTC": "2026-10-25T14:42:25.893483+00:00",
+  "phase": "Before delivery metadata child ref update; source and both source backups already completed.",
+  "decision": "PASS_SCOPED_DELIVERY_METADATA",
+  "blocking_findings": [],
+  "method": "Static git diff, local Git commit/tree/parent metadata, existing operational receipts and document consistency only.",
+  "source": {
+    "commit": "71019bb469c92d1ea665155ed98c472b362d6706",
+    "tree": "d91c82fece682b12d34a01db8ae12b4dc55f4c66",
+    "parent": "18a6804d7cbe4879701e83631f7e908bbb84cef1",
+    "branch": "research/provider-registry-20261025",
+    "PR": 150,
+    "draft": true,
+    "expected_SHA_update_recorded_success": true,
+    "force": false,
+    "main_merge": false,
+    "owner_branch_changed": false
+  },
+  "source_archive": {
+    "name": "WU_PROVIDER_REGISTRY_R2_TARGET19_SOURCE_20261025_71019bb469c9.zip",
+    "bytes": 7084911,
+    "sha256": "43845ea085797a6d628b722d58197a64a0af6f0a34a708f3dc981a5274faa906",
+    "source_files": 380,
+    "archive_members_including_manifest": 381,
+    "zip_crc_and_member_bytes": "Existing packaging receipt PASS; not rerun by reviewer."
+  },
+  "dual_backup": {
+    "decision": "Both actual recorded HTTP 200 downloads match source ZIP bytes and SHA256.",
+    "dropbox_id": "id:BSpOijBcT10AAAAAAEAfFg",
+    "drive_id": "1C4NE14swNXTL4GXb-ol8HE8cm57sHaIe",
+    "dropbox_content_hash": "55420e7cf91faff77dd5438e4ccf48827c19a46bc468aa82603c485da3544b93",
+    "dropbox_content_hash_match": true,
+    "receipt": "delivery/CLOUD_READBACK.json",
+    "ACK": "delivery/FINAL_BACKUP_ACK.json",
+    "reviewer_downloads": 0
+  },
+  "metadata_identity": {
+    "metadata_expected_parent": "71019bb469c92d1ea665155ed98c472b362d6706",
+    "metadata_force": false,
+    "metadata_commit": "Resolved by the actual containing Git commit when published; not invented in advance.",
+    "backed_source_snapshot_distinct": true,
+    "current_metadata_receipts_claimed_inside_source_ZIP": false,
+    "final_metadata_ref_update_observed_by_this_review": false,
+    "next_action": "Authorized expected-SHA non-force publication of this delivery-only metadata child, followed by actual branch readback."
+  },
+  "closed_findings": [
+    {
+      "id": "R2_DELIVERY_01",
+      "status": "CLOSED",
+      "finding": "Operational history described 173 changed entries as a complete 173-file Git tree.",
+      "correction": "Now states 173 changed entries applied and resulting full tree identity matched; publication receipt includes delta_entry_count and explicit tree_elements_meaning.",
+      "basis": "Local Git metadata confirms 173 added/modified entries between source parent and source, distinct from ZIP scope and full repository tree."
+    },
+    {
+      "id": "R2_DELIVERY_02",
+      "status": "CLOSED",
+      "finding": "Preserved prepublication report/handoff language could be read as current pending status.",
+      "correction": "REPORT section 9 and HANDOFF explicitly mark source-snapshot prior observations and point to current completed delivery section and receipts."
+    }
+  ],
+  "path_clarification": "PUBLICATION_AND_BACKUP uses same-delivery receipt basenames with explicit receipt_path_base.",
+  "unchanged_scope": {
+    "tracked_diff": "Eight delivery/continuation metadata files only; added files are authority/operational receipts and this review.",
+    "science_core_AGENTS_and_fixed_handoff_changed": false,
+    "numerical_validation_basis": "Accepted C9 and source finalizer identity evidence reused; no numerical or hash-suite replay.",
+    "original_target_ids": 19,
+    "original_listed_directions": 28,
+    "directions_with_primary_source_references": 27,
+    "remaining_no_numeric_primary_source": "target 6 forward",
+    "new_primary_source_variants": 26,
+    "new_declared_integer_columns": 24,
+    "actual_rate_admission": false,
+    "new_physical_Q_admission": false,
+    "physical_consumer_binding": false,
+    "L4_ready": false,
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "global_physical_completion": null,
+    "DAG_parent_partial_and_remaining_input_dependencies_preserved": true,
+    "central_ACK_assumed": false,
+    "budgets_and_eight_measured_child_execution_totals_unchanged": true,
+    "R10_C10": "complete_scoped_source_and_delivery; this is not global physical completion."
+  },
+  "authority": {
+    "latest_record": "authority/PRE_METADATA_PUBLICATION.json",
+    "remote_and_local_HEAD": "71019bb469c92d1ea665155ed98c472b362d6706",
+    "base_HEAD": "34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad",
+    "owner_HEAD": "2912a315aa39e7293000b7b2b8c7cc7a706fea9e",
+    "central_HEAD": "a5db4bac9dafadae29685bbea3cec7f43ab990b2",
+    "latest_AGENTS_exact_match_recorded": true,
+    "user_automatic_publication_and_backup_authorization": true
+  },
+  "execution_limits": {
+    "scientific_executions": 0,
+    "completed_test_replays": 0,
+    "packager_runs": 0,
+    "downloads": 0,
+    "external_mutations": 0,
+    "writes": [
+      "reviews/DELIVERY_SCOPE_REVIEW.json",
+      "reviews/DELIVERY_SCOPE_REVIEW.md"
+    ]
+  },
+  "reviewed_metadata_sha256": {
+    "research/provider_registry_network19_20261025/delivery/PUBLICATION_RECEIPT.json": "7f84c38a266086393afb2980b8d27f3cd2c64885bc9286f31a50b8778d8aea87",
+    "research/provider_registry_network19_20261025/delivery/SOURCE_ZIP_MANIFEST.json": "2f25232ebcf85476bec3e16d6ac72a0604729b697fec35fed2083dcac2d7cf95",
+    "research/provider_registry_network19_20261025/delivery/CLOUD_READBACK.json": "c0f07f120eb8481062b8e6fce09084e3c868900d5cd9f952e85408f7472bcc92",
+    "research/provider_registry_network19_20261025/delivery/FINAL_BACKUP_ACK.json": "67c6181949991aa963258ac18ea6a5b3c88c61a8cca5b9aa8d0d987321d325ce",
+    "research/provider_registry_network19_20261025/delivery/GIT_READBACK.json": "280648268fc610e89bb22343ad272cf374b47ae8a2705d4d39dadfe996bee467",
+    "research/provider_registry_network19_20261025/delivery/PUBLICATION_AND_BACKUP.json": "eb6715cf7aaac8fdc03c702be054c444bcb22febf9a83a6e6577fb4595552c1b",
+    "research/provider_registry_network19_20261025/delivery/OPERATIONAL_HISTORY.json": "9bed51c4d14f265bc816452e4910c55cbc08c5c2f1c9f79c8217ce61dd6e49cb",
+    "research/provider_registry_network19_20261025/authority/PRE_BACKUP.json": "c5fca984eb73b73bd3c767a178c71d247cd4a05ba78b4bd19ff5812fd1fdebd8",
+    "research/provider_registry_network19_20261025/authority/PRE_METADATA_PUBLICATION.json": "3f41bab98b1026dcb4131a5ce6a3b945965eaab89883a9e23e3f8c5473c0abba",
+    "research/provider_registry_network19_20261025/REPORT_KO.md": "978b8f67364da7ac448429cfb7e41a6ff04487490ad6a40c50fb5d14ca174d17",
+    "research/provider_registry_network19_20261025/HANDOFF_KO.md": "c0fc1a74495156edf16af67aaf8fe8baee0f474264aa00a8c9cc57602de49718",
+    "research/provider_registry_network19_20261025/DAG.json": "e8f4d747bf64478c257db725658292c4039c88290083516b398eeaacda4f01d8",
+    "research/provider_registry_network19_20261025/DAG_DELTA.json": "788d3c10cb2f7c0b1b7eb063f50a62d84dfec3a4637269894990099062018ead",
+    "research/provider_registry_network19_20261025/WORKFLOW_RECORD.json": "4e35679081ca893430fee408ca3a2bad8a227dcedfef56563381637f4ab5e887",
+    "research/provider_registry_network19_20261025/EXECUTION_LEDGER.json": "74bb69d80cfe3073d989fc39b94cf7c3782e98d3b45a4f83724c39dc7e7e96f7",
+    "research/provider_registry_network19_20261025/reviews/C9_FINAL.json": "de646cc00802a2744518f19396c008f572bd49386414f956b24b4cc784a174d5",
+    "research/provider_registry_network19_20261025/reviews/RELEASE_METADATA_REVIEW.json": "339a4c372bd5351dcaed2c2bc519af2edf760efee20eadd5e5f289d6d7465b37",
+    "research/program_expansion_20261025/PROVIDER_REGISTRY_R2.json": "80d2734f4e3a2bfacd26a4d29f7270883eae33d2ac41503afdb416c8eb63329e"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "WU_R8_PREEXECUTION_FINDINGS_V1",
+  "science_runs_before_fixes": 0,
+  "items": [
+    {
+      "id": "PRE01",
+      "finder": "root static integration review",
+      "file": "verification/run_reference.py",
+      "issue": "An exact no-worse comparison used the independently rounded Decimal80 cap, which can be below an original exact rational by a reference rounding unit.",
+      "resolution": "Compare endpoint to original verified cap_provenance.upper as Fraction; retain Decimal80 caps only for numerical corroboration.",
+      "status": "FIXED_BEFORE_FIRST_RUN",
+      "regression_obligation": "Existing common-clock exact-cap groups in the single reference run"
+    }
+  ]
+}

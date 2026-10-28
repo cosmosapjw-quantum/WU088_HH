@@ -1,3 +1,266 @@
+# Current priority: R15 cubic Bernstein forcing — workflow20/20, DAG31/46 — 2026-10-28
+
+Read research/provider_registry_molecular_r15_20261028/CONTRACT.json, POLICY_DELTA.json, WORKFLOW_RECORD.json, DAG.json, EXECUTION_LEDGER.json, authority/intake/SYNTHESIS_KO.md and delivery/PUBLICATION_INDEX.json. Current user authorizes this one full R1–R10/C1–C10 unit, finite new budget, per-stage publication and dual backups. Preserve all44 inherited node objects, prior results/failures and scoped assumptions. Root-only expectedSHA/forcefalse researchbranch/draftPR150; no mainmerge/other-ownerwrite. Full A=K+wH, original t0 memory, signed dc, E=abs(eta), coarse l1=4E. Positive supplied cubic Bernstein coefficient cone only. Actual HD array/consumer/state/densityclock INPUT_PENDING, nativev UNSPECIFIED, MISSING_NOT_ZERO, TIQM/SQM DISTINCT, HH_R10 OFF, production NOT_ISSUED, L4 false, central/physicaldelta0.
+
+Completed paired step S10; actual dual backups10/10 with ACKs20 confirmed. FINAL delivery metadata follows below; its own receipt remains external. Actual scientific runs: {"CAS": 1, "ODE": 0, "primary": 1, "reference": 1, "renderer": 1}. Remaining base: {"CAS": 0, "primary": 0, "reference": 0, "renderer": 0}. Globalremaining/fullhistoricalCPU null; oldallowanceincrease0. Follow CONTRACT for finite bounds and explicit repairreserve; no implicit replay.
+
+<!-- WU_R15_DELIVERY_FINAL_METADATA -->
+R15 C10 CLOSED: workflow20/20,DAG31/46. S01-S10 actually published and dual-backed:10 ZIPs/20providerACKs. Science S09=1ba1b0727cf3d5ba21931b0f3f14a2beae664f67,70-file payload=828888e952c15bd94d37d7dd30c0676df9470ca316bb1dbb8334c6c218b0e909. Actual S09 Dropbox original GET/CRC/all243source-member SHA/Git-blob restoration PASS; remote70payload Git-blob/size MATCH. All remaining base and repair allowances0; unused primary/reference repairs expired, future allowance0. Read REPORT_KO.md,HANDOFF_KO.md,CLOSEOUT.json. Current FINAL own receipt remains external in PR150/closing response. Scientific counts and pending physical state above remain unchanged.
+
+<!-- WU_R15_CURRENT_END -->
+
+# Current priority: R14 quadratic forcing complete — workflow20/20, DAG29/44 — 2026-10-28 KST
+
+Read research/provider_registry_molecular_r14_20261028/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, reviews/ADMISSION_DELTA_REVIEW.json, authority/closeout_delta/CLOSEOUT_SUMMARY_KO.md, followup/NEXT_INPUT_CONTRACT.json and delivery/PUBLICATION_INDEX.json. Latest user scope: finish only the two R14 nodes already in progress; no next unit. Two conditional nodes admitted, all42 inherited node objects unchanged. C9 PASS_SCOPED_FINAL_C9/18of18/openmaterial0; admission metadata delta PASS_SCOPED_ADMISSION_METADATA_DELTA/8of8/openmaterial0.
+
+Scientific S09=dfdefe47ef0c28ae94f6e6727d3230ceed5c356d,tree=a0f87622e8ac3eae235968962e704b4ad5f59c6a;105-file payload=b68ab395e4e36ea7a6b49bb6c0b1f44fb75d10522f223d29657907179ac24e4b. Actual remoteGitblobID/size105/105match;frozen20/20. Primary621/621 valid31/guards46;reference691/691 and51547components(metadata11296/exact27094/coverage8026/Decimal5131),fail0. Each Python scientificprocess1/OSCPU4.420146s includes imports/serialization. CAS1actual32zero/warning0,submitted3551bytes=frozen/extraLF0,CASCPUunknown; historical CAS warning causes remain NOT_ESTABLISHED. Guardless strictDecimalcontainmentfalse83,first50examples;fixedrelative1e-80 unchanged. Saved renderer1process/OSCPU2.567074s/2PNG2SVG/actualviewsPASS,no science/ODE rerun.
+
+Remaining primary/reference/CAS0/0/0, old allowances unchanged0;globalremaining/fullhistoricalCPU null. No routine completed science/ODE/independent-review/census replay. Full pointwise-nonnegative quadratic source preprocessing, exact Simpson/positive cubic Bernstein overlap,96-step rational rootboxes,explicit supremum gap and signed scalar propagation are conditional. Preserve H=pi*d^T-diag(d),A=K+wH,fixedK/pi/destruction,fullw/allstarts/zero-mass/wholefine-coarseforcing,h0=1,globalRmemory,E=abs(eta),coarsel1=4E and source/state/clock/closed-cell cap premises. NominalKrho cannot be transplanted to fullA;rawlower is idealcomparisonlower only;no universal raw/capped/physical gain.
+
+ActualHD/namedphysicalconsumer/state/densityclockINPUT_PENDING_IN_INSPECTED_SCOPE,HH_R10OFF,productionNOT_ISSUED,L4false,central/physicaldelta0,nativevUNSPECIFIED,MISSING_NOT_ZERO,TIQM/SQMdistinct. Preserve R14F01/F02/F03 originalbytes andactualclosure,D01 reconstructed provenance, and all older results/failures/sample/CAS/GET distinctions. Future note PROPOSAL_ONLY,newnodes0,newallowance0.
+
+S01-S10 actual dual backups10/10,ACK20. S10 source=75a3bdbcba5113e4a4b94444c4ac6d6b08cc4871,tree=fdf43028f7de44b7b46a7ef443708f21b6380bbe; actual S10 receipt is included. FINAL owncommit/tree/ZIP/providerACK remains external inPR150 andclosingresponse, never inside its ownsource. LocalZIPCRC/allmemberSHA/actualACKsize verified;provideroriginalGETNOT_RUN. Root expectedSHA/forcefalse researchbranch/draftPR150 andDrive/Dropbox publication authorized; no mainmerge orother-ownerwrites.
+
+<!-- WU_R14_CURRENT_END -->
+
+# Current priority: R13 affine forcing complete — workflow20/20, DAG27/42, actual stage delivery10/10 — 2026-10-28 KST
+
+Read research/provider_registry_molecular_r13_20261028/REPORT_KO.md, CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json and delivery/PUBLICATION_INDEX.json. Current R13 primary311/311, independentreference125/125/8408components pass, failures0. One primary and one reference actual OS process each; CPU subtotal1.334749s includes imports/serialization. All14 frozen source identities unchanged. CAS1actual:25zero plus Power::infy3 and General::messages, causeNOT_ESTABLISHED, QUALIFIED_SYMBOLIC_CORROBORATION. Remaining primary/reference/CAS0/0/0; old allowances unchanged0. No routine scientific/ODE/review replay. Final scoped C9pass/openmaterial0; S09admission complete:2 scoped conditional nodes, DAG27/42; all40 inherited objects unchanged. Scientific S09=37db6e1fdb915b85d7547b77e3c01fa15218b193,tree=acc710c3fd56b1d4897121553174ddf15f0d4fd1;57-file payload=aed8a6d7e58889de248ee88f75c2a46a7418462f4e3908393d72b64e908c6563. Source remoteGitblobID/size57/57match. Read HANDOFF_KO,SCIENTIFIC_ADMISSION,SCIENTIFIC_PAYLOAD_MANIFEST and closeout_delta too. Futurepiecewisequadraticproposal-only/newallowance0.
+
+Exact nonnegative affine forcing, globalRmemory, quadraticvertex refinement and nonnegativeBernstein2 signedpropagation are conditional on unchanged full-A/all-starts q/tau, fixed K/pi/destruction/wbox, zero-mass residual and whole-domain forcing. Rawlower is idealcomparisonlower only. Saved-output figures distinguish endpoint connectors and whole-cell bounds. Preserve F01 supremum/F02 originalbytesNOT_PRESERVED/F03 postprocessing firstfailure+bytes+correction. ActualHDarray/namedphysicalconsumer/state/densityclock INPUT_PENDING, HH_R10OFF,productionNOT_ISSUED,L4false,central/physicaldelta0. Root expectedSHA/forcefalse researchbranch/draftPR150 andDrive/Dropbox authorized; no mainmerge orotherownerwrites.
+
+Actual S01–S10 dual backups10/10, ACK20. FINAL owncommit/tree/ZIP/ACK is external inPR150 andclosingresponse, not inownsource. Read reviews/ADMISSION_DELTA_REVIEW.json forfinalmetadata verdict. ProvideroriginalGETNOT_RUN; localZIPCRC/allmemberSHA andactualACK/size verified. S10 source=5e273a4fe8388ab84882175f662f8be7de640dea,tree=d74a036d78952b45bf47ac546c9d23731f7ee5b3.
+
+<!-- WU_R13_CURRENT_END -->
+
+# Current priority: R12 complete — workflow20/20, DAG25/40, actual stage delivery10/10 — 2026-10-28 KST
+
+Read research/provider_registry_molecular_r12_20261028/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, reviews/ADMISSION_DELTA_REVIEW.json, authority/closeout_delta/CLOSEOUT_SUMMARY_KO.md, followup/NEXT_INPUT_CONTRACT.json and delivery/PUBLICATION_INDEX.json. Scientific S09=eb431411f6f0c4c9065edb0a5a11ce2c4bccf2fe; 64-file payload SHA256=dd66d34c0171ec215fa0e39525cc59f4c23f090b4a7deaa93b397c1f4a4417ba. R12 exact nonaligned forcing convolution and closed-cell refinement adopts only the two already registered theory/code nodes. All38 inherited DAG objects remain unchanged. Latest physmath plugin1.3.0 was used; prior version histories stay unchanged. User boundary: finish current nodes only; no further unit/node/allowance selected.
+
+Primary531/531 and independent reference317/317 PASS,133502 component comparisons/failure0; complete Python OS CPU4.202434s; frozen30 files unchanged. C9 PASS_SCOPED_FINAL_C9/open material0. CAS24zero with Symbol::undefined2(L/V) and General::messages, causeNOT_ESTABLISHED: QUALIFIED_SYMBOLIC_CORROBORATION. Decimal160 fixed1e-80 guard is numerical corroboration, not interval reference. Matched old193points/192closedcells on both grids retain exactly equal R11 capped values: added improvement0%; zero denominator ratio null. No universal raw superiority or physical closure. Raw lower is only ideal-comparison lower; endpoint connectors are not whole-cell certificates.
+
+Reuse R11 all-starts full-A q/tau, fixed K/pi/destruction, whole w box, same source/state/clock, whole-domain forcing, h0=1 and exact closed-cell cap inclusion. E=abs(eta), coarse l1=4E. Global forcing memory never restarts at cap knots. Native9 remains native K+synthetic conditional reaction; actualHDarray/namedphysicalconsumer/densityclockINPUT_PENDING, nativevUNSPECIFIED, MISSING_NOT_ZERO,TIQM/SQMdistinct. HH_R10OFF,productionNOT_ISSUED,L4false,central/physicaldelta0.
+
+R12 primary/reference/CAS remaining0/0/0; R11/R10/R9/R8/R7/R6/PHYS91 allowances unchanged0. Globalremaining/fullhistoricalCPU null. Do not repeat completed science/ODE/independent review/census as routine recovery. Preserve R8 original726/727+1FAIL and separatephi24/24, R10 initial ID failure/DOC01/META02, R10/R11 qualified CAS warnings and original fixed sample tolerances/strictfalse, and all R12 failure/repair records.
+
+Actual S10 source cf76cb0c7f7975327bca9801b5a5ded221b85b99, tree 5007997b05bcfd8a70cc1deaf72b80e2b02f389c; its actual receipt is included. FINAL own commit/tree/ZIP/provider ACK remains outside its source in PR150 and the closing response. Verification is local ZIP CRC/allmemberSHA plus both actual ACK/size; R12 provider originalGET NOT_RUN. Root expected-SHA/force=false researchbranch/draftPR150 publication and Drive+Dropbox backups remain authorized; no main merge or other-owner writes.
+
+<!-- WU_R12_CURRENT_END -->
+
+# Current priority: R11 uniform full-A blocks — workflow20/20, DAG23/38 — 2026-10-28 KST
+
+Read research/provider_registry_molecular_r11_20261028/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, reviews/ADMISSION_DELTA_REVIEW.json, authority/closeout_delta/CLOSEOUT_SUMMARY_KO.md, followup/NEXT_INPUT_CONTRACT.json and delivery/PUBLICATION_INDEX.json. Scientific S09=e1db71bade6ff94959a74d8f297ad2568c247056;50-file payload=e7e345e26142522394bc1e7b3eeccfaacf5347cf4f802bcfd344f9fbbcbfdae0. FINAL own commit/tree/archive/provider receipt is external in draft PR150 and final response. R11 is a separate full-family/all-starts Duhamel+minorization+forcing-convolution unit on unchanged saved inputs. Preserve all36 inherited DAG objects. New R11 primary/reference/CAS remaining=0/0/0; R10/R9/R8/R7/R6/PHYS91 remaining unchanged0. Globalremaining/fullhistoricalCPU null. Actual stage publications/backupACK are separate from workflow counts. Do not repeat completed science or ODE.
+
+Fixed K/pi/destruction, whole w box, zero-mass forcing, E=abs(eta), coarse l1=4E, h0=1, exact clock/closed-cell caps remain required. Native9 is native K+synthetic conditional reaction; actualHDarray/namedphysicalconsumer/densityclockINPUT_PENDING. HH_R10OFF,productionNOT_ISSUED,L4false,physical/centraldelta0. Retain R8 original726/727+1FAIL and separate24/24, R10 qualified15CASzeros+warnings/causeNOT_ESTABLISHED, sampletolerance and originalfailures. Root expectedSHA/forcefalse researchbranch+draftPR150 andDrive/Dropbox authorized; no mainmerge/otherownerwrites.
+
+<!-- WU_R11_CURRENT_END -->
+
+# Current priority: R10 complete, DAG21/36, workflow20/20, stage delivery10/10 — 2026-10-28KST
+
+Read research/provider_registry_molecular_r10_20261028/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, authority/closeout_delta/CLOSEOUT_SUMMARY_KO.md, followup/NEXT_INPUT_CONTRACT.json and delivery/PUBLICATION_INDEX.json. Scientific adoption S09 a2c62aaad2396d1720a12e74774e52374baa4c33,41-file payload57ee9ad49afbd1a492914fadba480ed787b51e4bcefc8c0be62c31e196590fff. Primary175/175PASS, independent469/469PASS and9860component comparisons, totalPythonOSCPU0.511886s, finalC9 PASS_SCOPED_FINAL_C9/openmaterial0. All34 inherited node objects unchanged. R10 primary/reference/CAS remaining0/0/0; predecessor allowances remain0. Preserve native9 raw regression, qualifiedCASwarnings, saved-sample tolerance and original R8 failure. ActualHDreactivearray/consumer/density/clockINPUT_PENDING, HH_R10OFF, productionNOT_ISSUED, L4false, physical/centraldelta0.
+
+R1-R10/C1-C10 and10/10stage publications/dualbackups are complete. S10 source573dcf25d155b50f556c8d0a9b09b2acf0fa31c5, tree3835bf6b4ee0c10cb746afba122f976673c252fb, ZIP1783725bytes/SHA25613669f17318d2f9492a4f6cb45f13789b8eeb5e76f3cc2c8c0a50347e41e1b69. This FINAL metadata source contains actualS10receipt. Its own FINAL archive receipt is external in PR150/closing response to avoid circular identity. R10 backups have localCRC/allmemberSHA and actualDrive/DropboxACK+bothsizes; providerOriginalGET NOT_RUN. No routine prior science/review/recovery replay. Next full-A finite-block work is a separately bounded proposal, not adopted. Root expectedSHA/forcefalse branch/draftPR150 andDrive/Dropbox remain authorized; no mainmerge/other-ownerwrites.
+
+## Preserved R10 stage closeout and preceding instructions
+
+# Current priority: R10 complete, scientific DAG21/36, workflow20/20 — 2026-10-28KST
+
+Read research/provider_registry_molecular_r10_20261028/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, authority/closeout_delta/CLOSEOUT_SUMMARY_KO.md, followup/NEXT_INPUT_CONTRACT.json and delivery/PUBLICATION_INDEX.json. Scientific adoption S09 a2c62aaad2396d1720a12e74774e52374baa4c33,41-file payload57ee9ad49afbd1a492914fadba480ed787b51e4bcefc8c0be62c31e196590fff. All34 inherited node objects remain unchanged; two scoped conditional method nodes adopted. Primary175/175PASS, independent469/469PASS with9860component comparisons, totalPythonOSCPU0.511886s. FinalC9 PASS_SCOPED_FINAL_C9/openmaterial0. Preserve native9 raw regression, tolerance-qualified sample containment, Wolfram15zero+warnings/causeNOT_ESTABLISHED, all original failures and closed DOC01/META02. R10 primary/reference/CAS remaining0/0/0; predecessor allowances remain0; globalremaining/fullhistoricalCPU null. Physical/centraldelta0, actualHDreactivearray/consumer/density/clockINPUT_PENDING, HH_R10OFF, productionNOT_ISSUED, L4false.
+
+R1-R10/C1-C10 documentation/scientific workflow is20/20. Actual stage delivery is independently recorded; S10/FINAL source and backup receipts must be actual, not inferred from workflow completion. This source includes completed S01-S09 receipts; final metadata will include S10. FINAL own receipt stays outside its source in PR150 and the closing response. R10 verification is local ZIP CRC/all-member SHA plus actual provider ACK/both sizes, with provider-originalGET NOT_RUN. No routine old science or completed review replay. A next full-A finite-block method is only a separately bounded proposal, not current admission. Root expectedSHA/forcefalse researchbranch and draftPR150/Drive/Dropbox writes remain authorized; no mainmerge or other-owner writes.
+
+## Preserved R10 adoption entry and prior instructions
+
+# Current priority: R10 scientific adoption complete, DAG21/36, workflow18/20 — 2026-10-28KST
+
+Read research/provider_registry_molecular_r10_20261028/SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, reviews/C9_FINAL_REVIEW.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json and delivery/PUBLICATION_INDEX.json. One scoped theory node and one code node are adopted; all34 inherited node objects are unchanged. Primary175/175 and independent469/469 with9860component checks PASS; finalC9 PASS_SCOPED_FINAL_C9/openmaterial0. FullPythonCPU0.511886s; primary/reference/CAS remaining0/0/0. Preserve qualifiedCASwarnings, saved-sample tolerance, native9 raw regression, initial postprocessingfailure and metadata corrections. No old science or ODE replay. Physical/centraldelta0, actualHDreactivearray/consumer/density/clockINPUT_PENDING, HH_R10OFF, productionNOT_ISSUED, L4false. Complete R10/C10 report/handoff, S09/S10 dualbackup and finalmetadata publication using actual receipts. Root owns expectedSHA/forcefalse branch writes and PR150; no mainmerge or other-owner writes.
+
+## Preserved R10 entry and prior instructions
+
+# Current priority: molecular R10 full-generator triangular bound, registered19/36 — 2026-10-28KST
+
+Read research/provider_registry_molecular_r10_20261028/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json and delivery/PUBLICATION_INDEX.json. Current explicit user asks full R1-R10/C1-C10 and actual per-stage publication/dual backup. Preserve all34 inherited DAG objects. New work absorbs HD projected sink pi*d^T-diag(d) into full generator, derives instantaneous overlap lambda, and uses fine-domain forcing to obtain triangular error comparison. Fixed saved inputs retain missing native HD reactive data and consumer/density/clock. HH_R10=OFF, production=NOT_ISSUED, L4false, physical/central delta0. Existing units exhausted; one new primary/reference60CPU90wall and oneCAS30wall are separate contract. LocalPython works, GitCLI network fails; connector publication and local ZIP provider upload are selected. Root owns external writes, expectedSHA/forcefalse, no mainmerge orotherownerwrites.
+
+## Preserved R9 and preceding instructions
+
+# Current priority: R9 scientifically complete, DAG19/34 — 2026-10-28KST
+
+Read research/provider_registry_molecular_r9_20261028/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, authority/LATEST_CENSUS_DELTA.json, followup/NEXT_INPUT_CONTRACT.json and delivery/PUBLICATION_INDEX.json. Current skill package1.3.0 was read on recovery; the user's selected fullR1-R10/C1-C10 scope and frozen1.0.0 unit contract are retained.
+
+R9 admission S09 f8b4ea63381fcdab91577c31005bc85e66789141. Scientific35-file payload739f4225be52598eb99e90ddfbc6c749390335c90918add47b6ff3d080f6d1c3. Preserve32inheritednodeobjects;2conditionaltheory/code nodes adopted. Primary150/150PASS, independent438/438PASS with34590component comparisons, fullPythonCPU2.270685s, finalC9PASS_SCOPED/openmaterial0. CAS7algebra+4controlzeros,1True/3unreduced; qualified only. R9 primary/reference/CAS remaining0/0/0; oldR8all0,R7/R6/PHYS91each[0,0,0], globalremaining/fullhistoricalCPU null. No old science replay.
+
+Exact positive D, signed d, h0freshforcing, samefamily/state/clock/all-starts certification and exactclosedcell/pointcaps remain premises. Raw requires no initialwholetrajectoryerrorenvelope; B/g whole-domain validity remains a premise. Raw is not universallyno-worse: two2statecases each have1largerwhole and8largerendpoint components versusR8. Cappedallno-worse. Native9finalimprovementR0.000073811913%,E0.005490601414%; bounds remain310.954/907.041times saved sample. PhysicalHDreactivearray/namedconsumer/densityclock remainINPUT_PENDING. HH_R10OFF,productionNOT_ISSUED,L4false,central/physicaldelta0.
+
+R1-R10/C1-C10 are20/20 and S01-S10 dualoriginalbyte verification is complete. S10 source771506e72a48ed3b338cf4711da31ddfee36fde1 has ZIP4517257bytes SHA256296822cfef89fdf47d58b90067cd1e79f39e08104a9a6765e3bdaf65a142d6f9. This finalmetadata source contains actual S10 receipts; its own FINAL archive receipt is published externally in PR150 and the closing message. FINAL archive's ownACK is external to its source to avoid a circularidentity. Localexec host failed; bounded existingActions produced actualscience and archives. Childtree/blob transfers returnednoACK; root connector publication and read-only census recovery worked. Recheck current capabilities in a new session. Existing authorization covers root expectedSHA/forcefalse writes on research/provider-registry-20261025, draftPR150 and Drive+Dropbox; no mainmerge orotherownerwrites. Continue against changedactualinput or a concrete separatelyboundednewproof/code obligation; do not reset completed-unit allowances.
+
+## Preserved R9 entry and preceding instructions
+
+# Current priority: R9 causal cell resolvent registered17/34 —2026-10-28KST
+
+Read research/provider_registry_molecular_r9_20261028/CONTRACT.json,DAG.json,WORKFLOW_RECORD.json,EXECUTION_LEDGER.json anddelivery/. User supplied physmath1.0.0 fullR1–R10/C1–C10. Preserve32inheritednodes and oldscience identities. ExactD>0; signed d; currentforcingh0=1; onlysamecell/sameclockcertifiedcaps; no trajectorycaps or unsupported rawdominance/rounded supersolution claim. Newprimary/reference60CPU90wall each1, newCAS30wall1; oldbudgets0. Localexecenvironmentfailed beforeS01publication; useauthorizedboundedActions, run_attempt1, no secrets,contentsread,frozen inputs. Root expectedSHA forcefalse publication/dualbackups remain authorized. HH_R10OFF,productionNOT_ISSUED,L4false,central/physicaldelta0.
+
+## Preserved R8 and predecessor instructions
+
+# Current priority: R8 complete: DAG17/32, workflow20/20 — 2026-10-27
+
+Read research/provider_registry_molecular_r8_20261027/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, reviews/C9_FINAL_REVIEW.json, followup/NEXT_INPUT_CONTRACT.json and delivery/PUBLICATION_INDEX.json. Use the user's supplied physmath-research-loop 1.0.0 full R1–R10/C1–C10; workflow completion and scientific DAG are different counts.
+
+Actual scientific adoption is S09 eb437ab5ec60d3b503be115c5560a85172502aba, tree770b16c1e85aa02a1d0d52b59a8c1fbf1a43cc3f. The48-file scientific payload SHA256 is9fb1e28631426a8e891ae59ee74441e79edb0473b8c78daf51a935627cf37485. Two R8 nodes complete; the30 inherited node objects remain unchanged. Core3a415e8ccc76669a95bec30aa52fc1f1ad867cff1fd9fcca66734fb71872fba3 and proofad538b788403b425ffbcf5d5b29fe5d4a5ba09603fb36009fc85885e98cba8c2 are unchanged after execution.
+
+Reuse primary237/237PASS, original reference726/727PASS plus1FAIL, and exact scalar24/24PASS. REF01's fixed phi-closeness tolerance omitted1/abs(d) amplification; independent S8/S9 exact enclosure closes it. Do not relabel the original run727/727PASS. Final C9a414c29462cd94089de37131315a591076ec1cc6db1fd85442869b3eb8defa72 is PASS_SCOPED_CONDITIONAL_CAUSAL_LAG_KERNEL_CODE with0open material findings. Python scientific CPU4.320964s includes the first failure, imports and serialization. CAS retains initial export$Failed,16zeros,4/6True,2symbolic and Power/Infinity warnings with causeNOT_ESTABLISHED.
+
+The method requires same-family uniform-all-starts H/rho, clock/state order/norm, valid full-horizon B/g and genuine initial whole-cell upper bounds. Preserve signed d, current-cell forcing h0=1 and source-backed exact-clock point caps. No interpolation of point caps or reference samples into whole-cell bounds. New ODE/source-certificate replay0. Native v=UNSPECIFIED, MISSING_NOT_ZERO; actual HD reactive array and physical consumer/density/clock remain inputs. HH_R10=OFF, production=NOT_ISSUED, L4_ready=false; central/physical delta0.
+
+S01–S10 dual original-byte verification is complete and R1–R10/C1–C10 are20/20. S10 source is73f628736df3d57e2b549c9077c7d0b4d8d5cfe6; its ZIP is3959058bytes SHA256f916abb7b6c69247abae0f486d72eaff3882017ddf6464a0a551e70d45c6e9d9. Follow actual receipts, not preserved old status below. The final metadata archive's own delivery receipt is external to its source snapshot. Scientific remaining: R8 primary/reference/targeted-phi/original-CAS/export-repair all0; R7/R6/PHYS91 each[0,0,0]; global remaining and full historical CPU unknown. No routine old science or archive recovery replay. New work requires a real changed input or concrete new proof/code obligation and a finite contract.
+
+Existing authorization covers additive expected-SHA force=false publication on research/provider-registry-20261025/draftPR150 and Dropbox+Drive backups; root owns external writes. No main merge or other-owner writes. The local runtime recovered during R8, while Git CLI network remained unavailable; GitHub connectors plus bounded Actions provided actual execution/publication. The2026-10-27T14:49:29.871Z survey covered51repos/2362branchrefs/65pages; whole other conversations0 and unavailable current attachment bytes stay qualified. Compare actual new owner/source changes against that snapshot.
+
+## Preserved R8 entry and predecessor instructions
+
+# Current priority: R8 causal lag-kernel refinement, registered15/32 — 2026-10-27
+
+Read research/provider_registry_molecular_r8_20261027/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json and delivery/. This is a new concrete estimator obligation grounded in R7 saved conservativeness, not a recovered HD physical input. User explicitly requests supplied physmath1.0.0 fullR1-R10/C1-C10 and stage publication/backup. Preserve the30 inherited node objects; two new theory/code nodes OPEN,15/32 until actual adoption.
+
+R8 composes same-family savedR6 H/rho pairs at steps2,8,32,64 and executes two outward Volterra cell refinements on the four savedR7cases. Reuse old proofs/results and193clock trajectories without ODE replay. Keep signed d damping; do not contract current-cell forcing. Exact saved R7 endpoint caps use certificate.w_next_upper as well as actual saved queries; no interpolation and no reference trajectory as bound.
+
+Local executor is unavailable; Desktop Commander monthly quota explicitly prohibits retry. Authorized GitHub Actions host is the bounded alternative; no secrets, contents:read, run_attempt1 only, request-stage action guard. One new primary60s, one reference60s, one CAS30s; all predecessor budgets remain zero. Source archive and runtime outputs have distinct manifest roles. Do not claim dual backup before actual successful provider receipts/readbacks.
+
+Existing additive expectedSHA force=false publication remains authorized on research/provider-registry-20261025/draftPR150, no main merge or other-owner writes. HH_R10OFF; productionNOT_ISSUED; L4false; physical and centraldelta0.
+
+## Preserved R7 and predecessor instructions
+
+# Current priority: R7 nonlinear feedback adopted15/30 — 2026-10-27
+
+Read research/provider_registry_molecular_r7_20261027/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, delivery/PUBLICATION_INDEX.json and followup/NEXT_INPUT_CONTRACT.json. User requested full theoryR1–R10 and codingC1–C10 under supplied physmath1.0.0; do not silently replace that with another version's default routing. R7 adds two completed scoped conditional nonlinear-feedback theory/code nodes to28 unchanged inherited node objects:15/30. Workflow stage closure is distinct from research DAG completion.
+
+Actual scientific adoption S09=05aba84023630e17ca005df5d5b595c374fa540f. Frozen30file scientific payloadSHA256=a0da528aa0b6a8870f5e1476306fc9e8e9f4a1fcecd05a1ede6593dde611dae2. CoreSHA256=002a66a30961b21e566a940462468c9ea8e1bc868d98549d3ea79d164c239957. S10 scoped source commit=eab8363f20b6622baea4c2c8be9972f17a7afd40. Delivery at this metadata snapshot: 10/10stage ZIPs with dual original-byte verification. The subsequent final metadata archive's own receipt is external to its own source snapshot; do not fabricate self-reference.
+
+Reuse actual primary144/144, independentreference376/376, general-theory review and C9PASS. CAS24zero carries actual Power/Infinity warnings with causeNOT_ESTABLISHED; qualified corroboration only. One preexecution CPU-accounting issue closed before first run. OSCPU including imports/serialization=0.239641/4.632575s. RemainingR7/R6/PHYS91 each[0,0,0], globalremaining/fullhistoricalCPUunknown. No old science replay or repeated backup recovery as routine continuation.
+
+R7's nominalK contraction is valid because all reaction/reset residual feedback is explicitly accounted in aR and the coupled comparison. Do not transfer the prior R6 full-generator requirement without its distinct hypotheses, or use nominalK rho while omitting feedback. T=exp(BH)-(1-rho)e1e1^T applies rho only to initial residual; Bplus covers interior time. HD E=abs(eta), coarseL1=4E. Physical commonpool/state/spin/branch/density/clock and full-interval box remain inputs. A state-dependent K requires explicit added feedback bounds or a whole-family certificate.
+
+Next work binds a native reactive payload or named consumer, preserving original missingness and TIQM/SQM alternatives. GL2022nativearrayINPUT_PENDING. Conditional native9fixture does not admit a physical consumer. HH_R10OFF; productionNOT_ISSUED; L4false; central/physicaldelta0. Preserve latest owner updates and resource holds. Survey coverage/limits are in authority/INTAKE_DECISIONS_KO.md; full other conversations were unavailable.
+
+Existing authorization covers additive expected-SHA force=false publication on research/provider-registry-20261025/draftPR150 and Dropbox+Drive backups. No main merge or other-owner writes. Root performs external mutations. New work must identify an actual input change or concrete new mathematical/code obligation and a bounded decision-linked contract; completed evidence is reused.
+
+## Preserved R6 and predecessor instructions
+
+# Current priority: R6 adopted 13/28; full stage delivery closed — 2026-10-27
+
+Read research/provider_registry_molecular_r6_20261027/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, SCIENTIFIC_PAYLOAD_MANIFEST.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, and delivery/PUBLICATION_INDEX.json. R6 adds two adopted interval/block theory and code nodes to 26 unchanged inherited node objects: 13/28. R1–R10 and C1–C10 are complete. All 10 stage source archives have actual Git publication and both-provider original-byte verification.
+
+Scientific admission S09: 7168ad4807dd1e02aef852bcf428df75b222f0de. Frozen S10 source: 4f4e7b6b7bf2b7f684291fb0b1bae6874f39c3ad. Subsequent metadata HEAD is distinct. Scientific payload SHA256: 796f399586916847844c7040082a1dce308035d1bce74bf805246574f98b94b4. Core SHA256: dbc4767b31775fb6655a92fb20d299f8bea9578f8340bd7bcff4d4f677cab551.
+
+Reuse primary 76/76, independent reference 109/0, the general-n proof review, final C9, and qualified CAS 23 zeros with actual warnings. Two input guards were fixed before the first run; their runtime rejection checks passed. exp(0)=[1,1] is an exact endpoint, not a precision deficit. No material code finding remains. R6 primary/reference/CAS remaining=[0,0,0]; PHYS91 remaining=[0,0,0]; global remaining/full historical CPU=null. Do not reset or transfer these budgets or replay completed science for routine continuation.
+
+R4 S10 and R5 S01..S10: all 11 original-source ZIPs now have actual dual-provider original-byte verification (22 copies). delivery/LEGACY_RECOVERY_CLOSURE.json closes their previous delivery obligations while retaining original commits, trees, modes, source payloads and actual current creation timestamps. R6 stage archives: 10/10 verified. Final metadata publication adds no scientific node or physical admission.
+
+Follow followup/NEXT_INPUT_CONTRACT.json. Bind actual GL2022 native reactive arrays or a named physical consumer with x0/pi/piDot/K/d/h/f/density/clock and interval-wide coefficient bounds. Current native 100 K literal graph uses v=UNSPECIFIED and MISSING_NOT_ZERO. rho must bind the full reset generator A and the same H. Physical measurement uncertainty is distinct from arithmetic roundoff. HH_R10=OFF; production=NOT_ISSUED; L4_ready=false; central/physical completion delta=0.
+
+The initial survey covered 51 repositories/2354 refs. Final changed REI/BASS/CR heads and actual scoped files were subsequently read. REC d6dbe39a is unchanged; final REI fbb55bcd, BASS 6bf4a5d9 and CR 8482ed83 supply no observed new WU molecular consumer/destruction packet. Preserve their results and budget holds. Other complete conversation threads were unavailable; supplied summaries retain that status.
+
+Existing additive publication and backup authorization persists: expected SHA, force=false, draft PR150, no main merge. Root connector writes and exact provider-API tree packaging were the working publication/recovery path. The final metadata archive acknowledgment is external to its own Git snapshot; do not fabricate self-referential commit hashes.
+
+## Preserved R6 entry and predecessor instructions
+
+# Current priority: R6 interval thermal and forced finite-block certificate, 2026-10-27
+
+Read research/provider_registry_molecular_r6_20261027/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json, theory/, reviews/ and delivery/. The current user requests all R1-R10 and C1-C10 with actual stage backup and publication. R6 starts at11/28: preserve the 26 inherited node objects and11 completed nodes; add exactly two scoped interval/block theory and code obligations. Actual provider survey reached51repos/2354refs/65pages, all terminal, and732 scoped source blobs at35bb were recovered exactly. Prior R4/R5 missing archives are being backfilled at their immutable source commits with actual current timestamps.
+
+New work is literal native100K Gibbs intervals plus robust full-generator uniformization lower polynomials and forced comparison bounds. Follow the finite new allowance in CONTRACT.json. Reuse all original R5 and prior science without replay; PHYS91 remaining[0,0,0], globalremaining/historicalCPU null. GL2022 destruction and named physical consumer remain unbound. Source graph missing transitions retain MISSING_NOT_ZERO and vibrational label UNSPECIFIED.
+
+The host can execute Python; git CLI networking fails at proxy/DNS while the GitHub connector works. POLICY_OVERRIDE.json permits exact API-tree/blob source packaging; no fabricated local commit identity. Existing authorization covers additive expected-SHA force=false PR150 publication and create-only Dropbox/Drive backup, with original-byte readbacks. No main merge or other-owner mutation. HH_R10=OFF,production=NOT_ISSUED,L4_ready=false; central and physical deltas0.
+
+## Preserved predecessor instructions
+
+# Current priority: R5 adopted science, pending archive delivery, 2026-10-27
+
+Read research/provider_registry_molecular_r5_20261027/REPORT_KO.md, HANDOFF_KO.md, SCIENTIFIC_ADMISSION.json, DAG.json, WORKFLOW_RECORD.json, EXECUTION_LEDGER.json and delivery/PUBLICATION_INDEX.json. R5 scoped scientific DAG is11/26: the inherited24node objects and9completed nodes remain unchanged, two new dynamic-lift theory/code children are adopted. Actual independent general-n proof review and independent code review passed; the observed long-rational serialization defect was fixed with20targeted checks plus3independent saved-value checks. Do not rerun original188, source41, prototype56, CAS21zeros or inherited54DB/24LTE/249science merely to reestablish this status.
+
+Scientific admission S09 is c9d902f9357cff67b218a1ad967e4a3b3402d854; R5 payload SHA256 67fea64825c612522287a774041a5b53a93b4d3a83c6b69e55a0d4cb25ec9fd8; current core SHA2568c86303793baa1fd01dcdbae93c521c13713c74d6658101f0d77b4ebe4538273. Final S10 source and later metadata HEAD are distinct and must be obtained from actual receipts. The current root owner metadata survey reached51repos/2352refs/65pages with all51terminal; public35/1869refs are preserved and private16/483refs only aggregate. Actual new BASSDV2-B/DV2-C and CRproper-injection scope was read. No cross-owner completion or physical promotion follows.
+
+Git and native Drive exact-text checkpoints are actual success paths. Full R4S10 and R5 per-stage/fullS10 source ZIPs, create-only Dropbox/Drive uploads and both original-byte readbacks remain PENDING because this invocation's execution host could not launch a process. Always probe a new invocation afresh. Use delivery/RECOVERY_PROTOCOL.md and prepared packager with --repo to archive fixed detached commits; do not pretend the scripts have run. Native text capsules are verified overlays, not dual ZIP delivery. Existing additive publication/backup authorization persists; expectedSHA/force=false on draftPR150, no main merge.
+
+The scientific successor requires actual GL2022 destruction numbers and named consumer x/pi/piDot,K,d,h,f,density,clock and valid interval bounds. Approximate17digit thermal pi is not an outward physical certificate; missing channels stayMISSING_NOT_ZERO and vUNSPECIFIED. HH_R10=OFF,production=NOT_ISSUED,L4_ready=false; PHYS91 remaining[0,0,0],globalremaining/fullCPU null; no budget reset or transfer. Read followup/NEXT_INPUT_CONTRACT.json before any changed scientific unit. R4DAG9/24 and workflow18/20 stay separate until its own delivery closes.
+
+## Preserved R5 intake and earlier priorities
+
+# Current priority: molecular dynamic lift R5, 2026-10-27
+
+Read research/provider_registry_molecular_r5_20261027/CONTRACT.json, DAG.json, WORKFLOW_RECORD.json, authority/ and checkpoints/. This user explicitly requests the next complete theory and coding loop after cross-branch/repo/conversation/backup synthesis. R4 remains scientific DAG9/24 and workflow18/20; its full S10 dual ZIP/readback is still pending. This is a separate changed mathematical obligation, not completion of the missing GL2022 destruction payload.
+
+Reuse REC source synthesis d6dbe39a4923439547c01695d9020ba39367ea90 and the exact LAMDA source/parser identities. Its54DB/24LTE and R4's source/static theorem/249 compiler checks are inherited, not rerun. R5 derives finite dynamic lift/comparison certificates for declared K,d,pi,h,f; source missing pairs remain MISSING_NOT_ZERO, v remains UNSPECIFIED, actual GL2022 d_j and consumer remain unbound. Old PHYS91 remaining stays0; no physical IVP, Q, activation or main merge.
+
+The actual Python and C++ service probes failed before process launch. Available V8/BigInt and Wolfram can execute bounded new mathematics. A service outage is not an authorization barrier or a reason to stop independent research. Every shared R_i/C_i checkpoint is published non-force with expectedSHA and preserved in a native Drive text recovery document. ZIP/Dropbox byte-identical delivery stays pending until actual file materialization; no text receipt substitutes for it. Current R5 DAG contains24 inherited nodes plus2 explicit new children:9/26 at entry. Future turns probe their own runtime afresh.
+
+## Preserved R4 priority and history
+
+# Current priority: R4 R10/C10 delivery continuation, 2026-10-27
+
+Read research/provider_registry_molecular_r4_20261027/REPORT_KO.md, HANDOFF_KO.md, WORKFLOW_RECORD.json, delivery/S09.json, delivery/S09_RECOVERED_READBACK.json and delivery/R10_PREPARATION_STATUS.json. If delivery/R10_PUBLICATION.json exists, bind the actual publication to that receipt. The previous S09 source is f949c21cca6e2534b725241068bd6c6e06158495. Its reviewed scientific payload SHA256 34765b943cce5a67d49a622f76c0cf9aeceb635c8cd6a3cf58b5cebb8e3c5fde is unchanged.
+
+R4 source/theory/integer/formula work is adopted; local DAG remains 9/24 and fully closed workflow remains 18/20. R10/C10 report, executable handoff and the previously missing followup/NEXT_INPUT_CONTRACT are prepared. Finish the existing package_checkpoint.py --full, actual create-only Dropbox/Drive storage and both original-byte readbacks before marking R10/C10 complete. S09 was recovered from Drive and verified in memory (145 CRC, 144 payload SHA256/Git blob bindings); Dropbox S09 currently has metadata confirmation only. Do not invent a missing original upload ACK or final S10 archive.
+
+The current resume's shell and filesystem probes returned SERVICE_ERROR. That observation applies only to those calls: probe the current runtime in every new turn and use available capabilities. No compiler/package-absence finding or permission blocker was established. Reuse all completed science; do not replay old columns, 249 checks, fit samples, plots, Wolfram or PHYS91. Existing PHYS91 remaining allowances stay 0, global history/remaining stay null, HH_R10=OFF, production=NOT_ISSUED and L4_ready=false.
+
+After delivery, the concrete changed-input successor is the GL2022 HD destruction state block in followup/NEXT_INPUT_CONTRACT.json: original state-to-state numbers and spin/support/energy conventions, then actual consumer x/pi, clock and density. The primary article confirms numerical supplements; current retrieval has not supplied the arrays. EMAA excitation is a distinct channel. Preserve source/consumer and number/energy admission separately. No new central completion or ACK is claimed.
+
+Before further nodes refresh current AGENTS, HEAD, parallel work and provider receipts. Existing automatic additive publication and backup authorization remains in force. Use the actual expected SHA, force=false on PR150's branch, and preserve main.
+
+## Preserved previous priority
+
+# Current priority: molecular provider state lift R4, 2026-10-27 UTC
+
+Continue research/provider_registry_molecular_r4_20261027/CONTRACT.json, README_KO.md, DAG.json, WORKFLOW_RECORD.json, reviews/ and delivery/. The user explicitly requests physmath-research-loop1.0.0 theory R1-R10 plus coding C1-C10 after actual cross-repo/conversation/backup survey, with per-stage publication, dual backup and copyable next-thread handoff. Scope is actual LiH/HD formation/destruction sources, state-aware integer event projections and native source-fit implementation; source and consumer acceptance remain separate.
+
+Preserve R1/R2/R3 inputs, fixed34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad handoff and all completed calculations. R3 target6 remains28/28 original listed directions with primary-source references. Its actual physical normalization, covariance and MeV consumer bindings remain open. Reuse unchanged finite compiler249 evidence and R1 adapter; the new6 candidate columns and source-native fit diagnostics have a separate bounded changed-input contract. Do not infer a physical rate/Q or consumer from source rows, exact integers or fit residuals.
+
+Before each new node refresh AGENTS, local/remote HEAD, parallel owner branches and actual backup receipts. Current R4 DAG adds4explicit scoped child contracts to preserved20nodes: initial5/24strict COMPLETE;2implementation-only PASS nodes remain separate. Central88nodes are separate: strict18/88 versus historic declared scoped27/88 and unmerged working32/88. Never conflate these denominators or physical readiness. Parallel work is owned by its existing author; fresh SHA governs adoption.
+
+PHYS91 primary/reference/Wolfram remaining stay0; historical global CPU/money/remaining staynull. New bounded source checks and one symbolic Wolfram request do not reset or transfer old budgets. HH_R10=OFF, production=NOT_ISSUED and L4_ready=false. Automatic additive publication and Dropbox/Drive backup are explicitly authorized in this session. Use expected-SHA non-force updates to PR150 branch; no main merge. Each R_i/C_i pair has a shared actual checkpoint source ZIP and dual-provider receipt; final full source and subsequent delivery metadata identities remain separate.
+
+## Preserved R3 and earlier instructions
+
+# Current priority: EXFOR target6 source-reference closure R3, 2026-10-27 UTC
+
+Continue from research/provider_registry_exfor_target6_20261027/HANDOFF_KO.md, REPORT_KO.md, SCIENTIFIC_ADMISSION.json, DAG.json, EXECUTION_LEDGER.json, reviews/ and delivery/. The fixed handoff at34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad, R1/R2 scientific payloads and their prior delivery records remain immutable history. The target6 numerical-source dependency described in the preserved R2 priority is now closed by actual official EXFOR TABLE rows.
+
+R3 imports4supplier variants and36native numerical rows for He4(gamma,d)D, from IAEA-NDS/exfor_master@939a14d7bba1ddce51975cb5e8711ce96b3b0871. Preserve24SIG and12DA rows, energy-bin SIG versus incident-energy INT,7separateE2 auxiliary rows, and CURVE exclusions. All19original target IDs and28listed directions now have primary-source references. This is a source-availability statement; the broader registry parent remains PARTIAL. Do not infer complete isotope/state/molecular/anion coverage or physical rate/Q/consumer readiness.
+
+Reuse R1's125 and R2's24 saved number columns and the unchanged finite compiler249check evidence. R3 makes0compiler calls. The only target-row changes are5source metadata keys for target6forward. Primary8/8 and independently composed9/9 source groups plus separate static implementation review are scoped source acceptance. Preserve the first auxiliary-class checker failure and targeted G6 repair. All rate/Q/state-branch-domain/energy/consumer/activation gates remain false. Source nuclear identity, identical-D counting, ionic/electronic state, beam response, covariance and physical consumer binding stay distinct.
+
+Before each node refresh actual AGENTS, local/remote HEAD, parallel owner work and actual backup receipts. Reuse unchanged R1/R2/R3/249/PHYS91/REI results. Latest observed central REI a5db4bac9dafadae29685bbea3cec7f43ab990b2 remains27/88; working PR236 ee94bef85b56d879dc38f184856a5c613575e9e1 is unmerged32/88. Preserve its completed species projections and native pre-assimilation source; do not substitute its atomic/<=50keV scope for a MeV nuclear photon consumer or assume central ACK.
+
+PHYS91 primary/reference/Wolfram remaining stay0; historical globalCPU/money/remaining staynull. New bounded changed-input checks do not reset or transfer budgets. HH_R10=OFF, production=NOT_ISSUED, L4_ready=false. The user explicitly authorized automatic additive publication and Dropbox/Drive backups. Use expected-SHA non-force updates to the existing draft PR150 branch; keep source commit/ZIP, actual dual byte-readbacks and subsequent delivery metadata identities separate. Continue NEXT_SOURCE_INTAKE_KO.md only at a real changed input; no completed-science replay.
+
+## Preserved R2 and earlier instructions
+
+# Current priority: recovered target19 supplier registry, 2026-10-25 UTC
+
+Continue from research/provider_registry_network19_20261025/HANDOFF_KO.md, REPORT_KO.md, SCIENTIFIC_ADMISSION.json, DAG.json, EXECUTION_LEDGER.json, reviews/ and delivery/. The fixed user handoff at34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad is preserved. The prior R1 source18a6804d7cbe4879701e83631f7e908bbb84cef1 and its verified source ZIP remain immutable history. The original PNG/19-target locator gap mentioned below is now closed by actual source recovery.
+
+Keep all19 original IDs and28 listed directions. R2 binds26 new actual primary-source variants and24 new declared integer columns; R1's102 provider variants,125 columns and92 identities are reused. Of28listed directions,27have a primary-source reference and He4(gamma,dd) forward has an explicit numerical-source dependency. Separate native exclusive H2, factorized He3, inclusive Li7 and response-averaged He4 data. Source availability does not admit a physical coefficient, state branch or consumer.
+
+Reuse unchanged finite compiler SHA25660a502895266b6feb96964abc4b24db61c2faed2344db0f7d12f16bb47ed62af and saved249checks without replay or promotion. R2primary13/13 and independent10/10composed groups are source/integer acceptance; retain the two failed checker attempts and their targeted fixes. Keep all new rate/Q/energy/consumer admissions false. The core checks B/q; its R1 adapter checks electron-lepton accounting.
+
+Before each new node refresh actual AGENTS, local/remote HEAD, concurrent owner work and backup receipts. Latest central snapshot observed at a5db4bac9dafadae29685bbea3cec7f43ab990b2 has88nodes; its14WU nodes were semantically unchanged by the concurrent HE/GRID044/CR/BASS returns. Preserve other owner results and refer to exact current receipts before acting. Completed R1,249,PHYS91 and REI18/82-background results are reusable; do not replay unchanged science.
+
+PHYS91 primary/reference/Wolfram remaining remain0; global historical CPU/money/remaining remain null. Current lightweight changed-input checks do not transfer/reset old science budgets. HH_R10 stays OFF, production NOT_ISSUED and L4_ready false. The user's explicit current authorization covers automatic additive publication and Dropbox/Drive backups. Use actual expected-SHA non-force ref updates, preserve main, and keep source publication/ZIP/dual byte-readback receipts distinct. No security or approval exception is introduced by this scheduling priority.
+
+## Preserved R1 and earlier instructions
+
+# Current priority: actual provider registry continuation, 2026-10-25 UTC
+
+The user's fixed handoff at program-expansion HEAD 34dd7d1d018abff8a0a4ebd1d3f3579ac46d2fad and the current explicit continuation request set this priority. Read research/provider_registry_20261025/HANDOFF_KO.md, REPORT_KO.md, SCIENTIFIC_ADMISSION.json, DAG.json, EXECUTION_LEDGER.json, reviews/ and delivery/ before a new node. The preserved PHYS71 and earlier priorities below are historical scheduling records; their physical conventions and completed-result protections remain in force.
+
+This additive unit recovers 102 actual provider/source variants, 125 finite candidate number projections and 92 species/state identities. The historical 21-population / 39-direction view remains explicit; all 39 directions now have a source candidate, while 10 older finite-CI admission gaps remain separate. NUBASE's 5,843 source-state rows are not an active network. Full configured nuclear-network recovery still needs the original image locator. Do not infer physical completeness from these counts.
+
+Reuse the unchanged REI-CHEM-LEDGER-01 compiler and its saved 249-check admission. New PRIMARY 20/20 and independent 448/448 checks establish source-row identities and integer projections only. No new physical rate, nuclear Q, IVP, or named consumer is admitted. Keep isotope/isomer/charge/state/molecule/negative-ion identities, branch and uncertainty, bound/free electrons, neutrino signs, source support and one physical owner explicit. Total RR cascade photon count remains unqualified. Do not replay completed PHYS83 or PHYS91 results.
+
+Before every node refresh actual AGENTS, HEAD, concurrent owner work and backup receipts. Preserve PHYS91 primary/reference/Wolfram remaining=0, global historical CPU/money/remaining=null, HH_R10=OFF, production=NOT_ISSUED and L4_ready=false. The current bounded implementation checks do not reset or transfer old budgets. Preserve first failures and source correction packets. Publication is an additive stacked draft with expected-SHA non-force updates; source ZIP and Dropbox/Drive ACKs have separate receipts. The user's current request explicitly authorizes these publication and backup steps; this priority adds no permission or access-control exception.
+
+## Preserved historical instructions
+
 # Current priority PHYS71: all-angular third Born coefficient, 2026-10-20 UTC
 
 Read research/hh_phys71_20261020/CONTRACT.json, theory/PROOF.md, theory/ANGULAR_D3.md, REPORT_KO.md, EXECUTION_LEDGER.json, NEXT_DAG.json, CODEX_HANDOFF_PROMPT.md and NEW_THREAD_HANDOFF.md. The actual parent is PR120 metadata HEAD31745376ca751e7c925b3b1453ef292436cd30e8, tree2e507880420d3c1017b212f6ddc604878fa1e943. Scientific calculation, numerical acceptance, Git publication and backup have separate receipts.

@@ -1,0 +1,107 @@
+{
+  "input_source": {
+    "PR": 150,
+    "branch": "research/provider-registry-20261025",
+    "frozen_R15_commit": "ec352ac1328d59e7525530f3fc300bcf22f60f33",
+    "frozen_R15_engine_blob": "0a95d907790cbf87207deb32c9a9ab1ae24aa3a1",
+    "pretest_receipt_commit": "8a48df2b29d157cf460d716845e8997bb647d5e7",
+    "repo": "cosmosapjw-quantum/WU088_HH",
+    "science_commit": "8d6c9a4947e7120887615e40bc1542b013d89584"
+  },
+  "local_execution": {
+    "compile": {
+      "command": "python3 -m py_compile src/r16_nonnegative_cubic.py src/r16_cli.py tests/test_r16.py tests/quick_run.py",
+      "exit_code": 0
+    },
+    "create_only": {
+      "expected_exception": "FileExistsError",
+      "file_unchanged_sha256": "ff8bc4f7350ec77ced45d6dac4efebae1af42b62401480c9d5dde74df004240a",
+      "second_same_output_attempt_exit_code": 1
+    },
+    "focused": {
+      "command": "python3 -m pytest -q tests/test_r16.py -k \"boundary_examples or adapter\" --tb=short",
+      "deselected": 1,
+      "exit_code": 0,
+      "passed": 2,
+      "warnings": 2
+    },
+    "integration": {
+      "command": "python3 src/r16_cli.py --input results/R16_INTEGRATION_INPUT.json --output results/final_checks/R16_END_TO_END_FRESH.json --r15-core parent/research/provider_registry_molecular_r15_20261028/src/cubic_convolution.py",
+      "exit_code": 0,
+      "output_bytes": 16677,
+      "output_sha256": "ff8bc4f7350ec77ced45d6dac4efebae1af42b62401480c9d5dde74df004240a",
+      "refined_source_cells": 2,
+      "status": "COMPUTED_CONDITIONAL_FROM_R16_EXACT_PREPROCESSING"
+    },
+    "manifest_identity": {
+      "entries": 28,
+      "size_SHA256_Gitblob_mismatches": 0
+    },
+    "pytest": {
+      "OS_system_CPU_s": 0.89,
+      "OS_user_CPU_s": 65.71,
+      "command": "python3 -m pytest -q tests/test_r16.py --tb=short",
+      "exit_code": 0,
+      "log_sha256": "13c62a1e8ebf15040199dfa18239f240f4658c0280807d05c03bf408a6179edf",
+      "peak_RSS_kB": 191780,
+      "pytest_reported_s": 62.16,
+      "random_inputs": 1500,
+      "tests_failed": 0,
+      "tests_passed": 3,
+      "warnings": 3,
+      "warnings_all": "PytestReturnNotNoneWarning",
+      "wrapper_elapsed_s": 66.22
+    },
+    "runtime_cpp": "CPP_PASS",
+    "runtime_python": "PYTHON_PASS"
+  },
+  "physical": {
+    "HH_R10": "OFF",
+    "L4": false,
+    "central_delta": 0,
+    "named_consumer_state_density_clock": "INPUT_PENDING",
+    "native_HD_array": "INPUT_PENDING_IN_INSPECTED_SCOPE",
+    "physical_delta": 0,
+    "production": "NOT_ISSUED"
+  },
+  "preserved_prior_findings": {
+    "corrected_Wolfram_exact_18_of_18": "PREVIOUS_TURN_PASS",
+    "earlier_1500_case_timeout": "HISTORICAL_EXECUTION_FAILED_TIMEOUT; NOT_ERASED",
+    "first_Wolfram_script_8_of_18": "HISTORICAL_VERIFIER_SCRIPT_ERROR",
+    "new_pytest_1500": "CURRENT_TURN_PASS",
+    "pytest_warnings": "P3_nonblocking_do_not_relabel_zero_warnings"
+  },
+  "remaining": {
+    "nonstrict_issue": "pytest return-not-none warnings3; source unchanged to preserve 28/28 frozen payload",
+    "physical_input": "GL2022/EMAA HD-H+ native array; source/state/clock/consumer binding",
+    "required_cloud_backup": "Dropbox same ZIP upload + original-byte SHA check"
+  },
+  "review": {
+    "fresh_pytest": "CURRENT_TURN_PASS",
+    "independent_Sympy": "PREVIOUS_TURN_239_CHECKS",
+    "native_blind_subagent": "NOT_RUN",
+    "same_context_source_review": "PREVIOUS_TURN_SCOPED"
+  },
+  "schema": "WU_R16_20261028_FINAL_TEST_CLOSEOUT_V1",
+  "scientific_DAG": {
+    "complete": 33,
+    "conditional_method_nodes": 2,
+    "inherited_nodes_unchanged": 46,
+    "total": 48
+  },
+  "scientific_frozen_archive": {
+    "CRC": "PASS",
+    "bytes": 185075,
+    "dropbox_original_archive": "NOT_UPLOADED_FILE_PARAMETER_BLOCKER",
+    "dropbox_text_handoff": "REVISION_1_VERIFIED",
+    "filename": "WU_R16_EXACT_NONNEGATIVE_CUBIC_20261028_SOURCE.zip",
+    "google_drive_id": "1xGnknI73flLuUYDJYK-v9KIkiBTCGDht",
+    "google_drive_original_readback": "VERIFIED",
+    "per_stage_original_Drive_Dropbox_pairs": 0,
+    "sha256": "4adb13aa6cf1765ebc5f1c4f93302f98d33de45264258990b8f8cc154d278e31",
+    "stages": 10,
+    "zip_members": 29
+  },
+  "status": "IMPLEMENTATION_VERIFIED_SCOPED_NO_PHYSICAL_ADMISSION",
+  "unit": "WU_R16_EXACT_NONNEGATIVE_CUBIC"
+}

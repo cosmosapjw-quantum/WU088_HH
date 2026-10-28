@@ -1,0 +1,319 @@
+{
+  "automatic_retry": false,
+  "checks": [
+    {
+      "detail": {
+        "builder_imported": false,
+        "registry_files": 5
+      },
+      "id": "initialize_frozen_inputs",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "Voronov_retrieval_files": 3,
+        "correction_files": 5,
+        "indexed_files_by_packet": {
+          "atomic_nuclear": 46,
+          "molecular": 24
+        },
+        "interpretation": "byte identity only"
+      },
+      "id": "source_storage_raw_and_gzip_identity",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "candidate_projections": 125,
+        "counts_are_not_physical_results": true,
+        "provider_variants": 102,
+        "species_keys_observed": 92
+      },
+      "id": "registry_counts_and_explicit_species",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "selector_results_sha256": "be23cefe335f0fbdc675cc88cfef0a9be8d364342b572ae9b3e7c2722165dcc5",
+        "unique_provider_payloads": 102
+      },
+      "id": "every_provider_payload_resolves_uniquely",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "electron_lepton_ledger": "bound electrons + free electrons + external neutrinos",
+        "exact_integer_projections_checked": 125,
+        "includes_frozen_core": true,
+        "physical_rate_or_Q_certificate": false
+      },
+      "id": "all_events_independent_integer_ledgers_and_frozen_core",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "activation": "SOURCE_INGESTION_CANNOT_ACTIVATE_PROVIDER",
+        "branch_id": "EXPLICIT_BRANCH_ID_REQUIRED",
+        "empirical_rate_admitted": "SOURCE_INGESTION_CANNOT_ISSUE_PHYSICAL_ADMISSION",
+        "external_count_'1'": "INVALID_EXTERNAL_MULTIPLICITY",
+        "external_count_-1": "INVALID_EXTERNAL_MULTIPLICITY",
+        "external_count_0": "INVALID_EXTERNAL_MULTIPLICITY",
+        "external_count_True": "INVALID_EXTERNAL_MULTIPLICITY",
+        "missing_antineutrino": "ELECTRON_LEPTON_NUMBER_NOT_CONSERVED",
+        "missing_electron": "CHARGE_NOT_CONSERVED",
+        "nuclear_Q_admitted": "SOURCE_INGESTION_CANNOT_ISSUE_PHYSICAL_ADMISSION",
+        "source_identity": "SOURCE_IDENTITY_REQUIRED",
+        "unknown_external": "UNSUPPORTED_EXTERNAL_PARTICLE:unknown_external",
+        "unknown_species": "UNKNOWN_SPECIES:unknown_species_key"
+      },
+      "id": "malformed_particles_branch_and_admission_fail_closed",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "distinct_branch_distinct_identity": true,
+        "split_and_aggregate_identical": true
+      },
+      "id": "external_canonical_identity_and_branch_separation",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "HeI_source_rows": 2,
+        "atomic_nuclear_source_variants": 29,
+        "historical_selection": "b",
+        "joint_owner_rejected": true,
+        "registry_mutated": false
+      },
+      "id": "all_atomic_variants_and_HeI_alternative_ownership",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "direction_cells": 39,
+        "legacy_null_cells_with_new_inactive_candidates": 10,
+        "legacy_source_cells": 29,
+        "population": 21
+      },
+      "id": "historical_21_39_and_new_CI_candidates",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "candidate_RR_projections_with_alternatives": 15,
+        "historical_RR_cells": 13,
+        "total_emitted_photon_multiplicity": null
+      },
+      "id": "total_recombination_photon_count_unresolved",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "candidate_isotope_projections": 13,
+        "configured_elemental_fit_rows": 6,
+        "fit_evaluation": false,
+        "source_rows": 406,
+        "temperature_limit_units": [
+          "eV",
+          "keV"
+        ]
+      },
+      "id": "Voronov_native_source_units_and_missing_uncertainty",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "T_100_5_K_supported": false,
+        "gap_filled_or_rate_evaluated": false,
+        "native_rows": 37
+      },
+      "id": "UMIST_native_support_gap_and_source_fields",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "common_collider_present_in_identity": true,
+        "repeated_participants_retained": true
+      },
+      "id": "multiplicity_and_common_collider_identity",
+      "status": "PASS"
+    },
+    {
+      "error": "LiH candidate mapping",
+      "error_type": "AssertionError",
+      "id": "native_molecular_isotopes_not_fabricated",
+      "status": "FAIL",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025/verification/check_registry.py\", line 66, in run\n    detail = function()\n             ^^^^^^^^^^\n  File \"/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025/verification/check_registry.py\", line 426, in molecular_isotope_labels\n    require(len(projections) == 2 and all(\"ISOTOPE\" in e[\"projection_qualification\"] for e in projections), \"LiH candidate mapping\")\n  File \"/workspace/scratch/3ffa3d77ca37/WU088_HH/research/provider_registry_20261025/verification/check_registry.py\", line 30, in require\n    raise AssertionError(message)\nAssertionError: LiH candidate mapping\n"
+    },
+    {
+      "detail": {
+        "catalyst_states": [
+          "ortho_H2;source_state_as_tabulated",
+          "para_H2;source_state_as_tabulated"
+        ],
+        "collision_rows": 18,
+        "equal_rate_literals_do_not_merge_events": true
+      },
+      "id": "HD_para_ortho_catalysts_remain_distinct",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "all_non_ground_are_isomers": false,
+        "catalogue_is_active_network": false,
+        "configured_ground_nuclides": 8,
+        "source_catalogue_rows": 5843
+      },
+      "id": "NUBASE_catalogue_not_configured_reaction_network",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "alternative_selected_or_Q_converted": false,
+        "neutral_T_daughter_charge": 1,
+        "neutron_half_life_literals_preserved_s": [
+          "609.8",
+          "613.9"
+        ]
+      },
+      "id": "weak_bound_electron_and_source_alternatives",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "ENDF_knots": 153,
+        "Q_recomputed": false,
+        "stored_cold_rows_reused": 3
+      },
+      "id": "ENDF_native_knots_and_reused_cold_results",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "historical_249_replay": 0,
+        "new_IVP": 0,
+        "new_Q_evaluations": 0,
+        "new_rate_evaluations": 0,
+        "physical_admission_issued": false
+      },
+      "id": "no_physical_activation_or_old_budget_transfer",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "input_files_unchanged": 91
+      },
+      "id": "validation_inputs_unchanged",
+      "status": "PASS"
+    }
+  ],
+  "counting_policy": "provider variants, candidate projections and validation groups are distinct; never sum as physical results",
+  "failed_check_ids": [
+    "native_molecular_isotopes_not_fabricated"
+  ],
+  "finished_UTC": "2026-10-25T13:07:03.352504+00:00",
+  "frozen_compiler_sha256": "60a502895266b6feb96964abc4b24db61c2faed2344db0f7d12f16bb47ed62af",
+  "implementation_check_groups": 20,
+  "input_storage_sha256": {
+    "CONTRACT.json": "aa58fd2683b54760bdf2e51165207dac3a96477b261c86923e6fcaca8e880f46",
+    "registry/compiled.json": "d4836befd465ebd8130e5fd1f910b1fea30348c5e5785bfc66f8275735123f8c",
+    "registry/coverage.json": "67e6757038de2783d7b08f4bc840314a7bb2d04a8839c3a821a6be18be4f27f5",
+    "registry/events.json": "abeea067660b0898315935ffd07bb6a443bbb1bd6111c700215b72be220baa90",
+    "registry/providers.json": "23d5bee7323a083d23a8a811eb7312a35c0eb613381ce28a22a5f989b1077664",
+    "registry/species.json": "a18052f6db432192e1e0d4c75f8f2d49c71f3a5eb7cac206e7bc445fec2e8f80",
+    "registry_adapter.py": "9a093eed42f9ff5858d7bae11c726988ddbde4feeed38888b1c90fe329be816c",
+    "sources/atomic_nuclear/EXTRACTION_HISTORY.json": "beb0595bfe52ea5e3f15c576b27ad34031fafdcf0d47ca9793d5f919bc8974ea",
+    "sources/atomic_nuclear/EXTRACTION_RECEIPT.json": "890dcfae6bd71c2e639ce1383cca7d8a88a9adeaec49c5ce4a701c7efdfb0faa",
+    "sources/atomic_nuclear/GITHUB_INPUT_BLOB_CHECK.json": "9bdd97508b79648e4ccc195b4b164a4339919d5239b0fdf4581dbde0d894efdc",
+    "sources/atomic_nuclear/GITHUB_INPUT_MANIFEST.json": "760770ed288e4d0fc3d14cbc9d71e976456177200784eb491d2f7bfe1e5bda82",
+    "sources/atomic_nuclear/NETWORK_LOCATOR_STATUS.json": "74bcfc8aa1b8fd1e22ee6c50801789519b943451f760821ea3afb191748aa865",
+    "sources/atomic_nuclear/PACKET_MANIFEST.json": "0ddf6523eac7340f4aa136c59cc634a7a6a966f28c83a8f200b3f4604f19a8c6",
+    "sources/atomic_nuclear/PROVIDER_FINDINGS_KO.md": "0e461bd2fea84e794ce630d2145c0c9c7a3c42cf140e2dc9fba77e50e7dd557c",
+    "sources/atomic_nuclear/SOURCE_CHECKS.json": "4ad4a670d8fd48a4f782f760c6890f6bafc9da2ef58e4f8202351e8286472aca",
+    "sources/atomic_nuclear/STORAGE_INDEX.json": "6a2dd5c4a7472c4e2a5251579b5a5e0f76f455476307cad4b4ebcbffe2d737e1",
+    "sources/atomic_nuclear/SUPPLEMENTAL_FETCH_RECEIPTS.json": "6a90829cabc3b0d1d7dbe49dbc549efc1c96955d931b896d688ca51b4d75743c",
+    "sources/atomic_nuclear/configured_targets.json": "648d96ba7bd53625097d5c777cbf04061eda93d8c3220615c0d3e03a5cb8b797",
+    "sources/atomic_nuclear/extract_provider_rows.py": "b10675cc00951c4be4d9752623066b673b1ba9531995e41aad027e32f4baa576",
+    "sources/atomic_nuclear/mass_provider_rows.json": "276dfb78a70c3082ae53fb8849926f5ba8a76504a6489dc7b7e7f38b0795a11a",
+    "sources/atomic_nuclear/nuclear_catalogue.jsonl.gz": "9ee0c31618caeb702492f83c9d7030aca9dd63ac178c5586122ed1a1eb40df5f",
+    "sources/atomic_nuclear/nuclear_catalogue_manifest.json": "2d4fca2018c78e6c711adc2f3ee4337c302ae5f358ba6a19f8a9845ac4130877",
+    "sources/atomic_nuclear/provider_rows.json.gz": "302dbf5c3382e944a82f016d963a9feb2ea02381b70345382d5a6febe2d74c54",
+    "sources/atomic_nuclear/raw/research/hh_phys78_sandbox_nuclide_20261021/source/atomic_network.py": "2e8b5f892961ebf60fb21fe90895c961fde423689634684305c58ba34830bab6",
+    "sources/atomic_nuclear/raw/research/hh_phys78_sandbox_nuclide_20261021/vendor/atomic/PROVENANCE.json": "b84fd59cb2ac5229e5d1770b6e6194aa03ce0b6b14a6c2fe719ad9aff2d36632",
+    "sources/atomic_nuclear/raw/research/hh_phys78_sandbox_nuclide_20261021/vendor/atomic/photo.dat": "a53e73b0af4cc6b801aef67b84bd964e3ed8c9c4992f214e4a69dc7e4443f389",
+    "sources/atomic_nuclear/raw/research/hh_phys78_sandbox_nuclide_20261021/vendor/atomic/rec_table1.dat": "2382f6896fe58ee1da58c9bd563fd7d02c0d94410dbd4150767eed26a54f5091",
+    "sources/atomic_nuclear/raw/research/hh_phys81_atomic_nuclear_source_contract_20261023/source/registry.py": "280925bc250252da29e159dc9ca99f893c39d7fccbaace252a276f086fdcdd5f",
+    "sources/atomic_nuclear/raw/research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/ADMITTED_FINITE_CI_REGISTRY.json": "2415d357c318f1ff1307239f4f39c8009e6a7005b140c3ec67b492f631097641",
+    "sources/atomic_nuclear/raw/research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/NUCLEAR_MASSES_CODATA2022.json": "ee87900f698e59029a1aafce3d4184870ccc6fa16a8ba50326bd13a10de60aaf",
+    "sources/atomic_nuclear/raw/research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/PHYS81_ATOMIC_CI_SOURCE_REGISTRY.json": "bca14bfb596e29f478ef50fb1aab2b721eae3a2cff5ab8746f0e511a68a31aec",
+    "sources/atomic_nuclear/raw/research/hh_phys81_atomic_nuclear_source_contract_20261023/source_data/PHYS81_CI_FINITE_WINDOW_LITERAL_DATA.csv": "522fd63bd4aead4314d7b4ea87f61e5454b23df0f046b1c8e48b2f2023272dad",
+    "sources/atomic_nuclear/raw/research/hh_phys81_atomic_nuclear_source_contract_20261023/verification/nuclear/COLD_ROWS_FROM_RECEIPT.json": "9d6094abc96f340a093d744c6618da82bae57d49ddb8a1e7e774154a3e9f45f3",
+    "sources/atomic_nuclear/raw/research/hh_phys81_atomic_nuclear_source_contract_20261023/verification/nuclear/POST_RUN_DECISION.json": "ed30a1e0a5b20d9ef4f4f5c67b21eb25a67456d35148c13fcfd049df8c0f7ae7",
+    "sources/atomic_nuclear/raw/research/hh_phys83_ce_completion_20261023/source_data/CCC_1S.2P": "00857e46838c5538da8b047363105b306bc1ba5c827700161749d5d712fa0e5a",
+    "sources/atomic_nuclear/raw/research/hh_phys83_ce_completion_20261023/source_data/CCC_1S.2S": "f4afdbdeccc49a58055ab86750b14ce10dd2091da55bd380a19f3d7a13c337d0",
+    "sources/atomic_nuclear/raw/research/hh_phys83_ce_completion_20261023/source_data/CCC_2P.1S": "12cf46fa0904a5b227092a0a6a3ae6d8a20c041cf11c2981d3bb8bd1f6ac313d",
+    "sources/atomic_nuclear/raw/research/hh_phys83_ce_completion_20261023/source_data/CCC_2S.1S": "e8e0092e7be97abe4a90ce100e3101d1f6f225eee2d4ad1ba740f57de819997b",
+    "sources/atomic_nuclear/raw/research/hh_phys83_ce_completion_20261023/source_data/HI_CE_SOURCE_CONTRACT.json": "1983e17f57ab5ab0e9f8c5dde1bc679451ca670440fe79d0fec3de4efb4a812b",
+    "sources/atomic_nuclear/raw/research/hh_phys83_ce_completion_20261023/source_data/h_1.elvlc": "f7286ef6837989eba038b7b055c8db9f4e1ce8a6a0b3270ccc399fd0b2f6a75b",
+    "sources/atomic_nuclear/raw/research/hh_phys83_ce_completion_20261023/source_data/h_1.wgfa": "f16d0f5033632ce5a3104bfa4dfec9c98fc14bb2e05f682be3468419c9a90179",
+    "sources/atomic_nuclear/raw/research/hh_phys85_nuclear_particle_ownership_20261024/source_data/SOURCE_LEDGER.json": "e267f34e19368b678548de34001facc0bfaa00a6d296cc7ab1f0382229866aca",
+    "sources/atomic_nuclear/raw/research/hh_phys87_endf_np_native_moments_20261024/source_data/SOURCE_MASS_AND_FORMAT_AUDIT.json": "6d95ceb98561f12438c535c4b94b764fb0b2384cfbf2d40cafa1f603e7380adc",
+    "sources/atomic_nuclear/raw/research/hh_phys87_endf_np_native_moments_20261024/source_data/SOURCE_TABLE.json": "b14ad9b4a2379166ec2b2c04b2a77efb4c819498924682072d74a6b4e31c5014",
+    "sources/atomic_nuclear/raw/research/hh_phys87_endf_np_native_moments_20261024/source_data/n-001_H_001.endf.gz": "eb69238d3db4e5468eae05e3a8fbec1bb965502dd0986b641418fb1f45ef15c9",
+    "sources/atomic_nuclear/raw_external/RECEIPTS.json": "3dce656eb128cd20b572da25137fabbc80b1c1f2218eb54bac2de14777f9e4e2",
+    "sources/atomic_nuclear/raw_external/livechart_1n.csv": "71b641c7bd4ee65d688d9cac4925719c0992000f86acf12c87dfee721eac988d",
+    "sources/atomic_nuclear/raw_external/livechart_1n_beta.csv": "9cb5c6e719a59d4d298acf51a6c4e8d59c444fa28380dcc7839f8a4842a9cb74",
+    "sources/atomic_nuclear/raw_external/livechart_3h.csv": "1ef1a6af8bd271c4776b7ca59f53755447f6ddafecf7625ad77776aea0c6b016",
+    "sources/atomic_nuclear/raw_external/livechart_3h_beta.csv": "8a4d10faf62aedfbb74dc6c7f9df8292364518b3925ec8d6a460c7c1faf94f21",
+    "sources/atomic_nuclear/raw_external/livechart_api_guide.html": "da3b4ac951dc716514f462328885217af214e8cf4c519180fc51bb2c57bcbc27",
+    "sources/atomic_nuclear/raw_external/livechart_api_guide_text.txt": "a8cc8e1a5a2130b7cec7f0ca1717f1db34e8b3e9ce9c8abcf9c482a4ae477ce8",
+    "sources/atomic_nuclear/raw_external/nubase_4.mas20.txt.gz": "5a3fc999d2f530e03695a5b7a2dc11904ce0475ab55b21f24d15103924713912",
+    "sources/atomic_nuclear/reused_cold_kinematic_rows.json": "256abc6fb5fb6b3f9c886a261cb5778c9042d3d8b4e769c676c1d9954163fe17",
+    "sources/atomic_nuclear_correction/CORRECTION_V1.json": "3e46d7a8a82aa1c0ff4f90db05da62269a1cfcfc46c5d5a85308500e8a2adffd",
+    "sources/atomic_nuclear_correction/MANIFEST.json": "aa606bb3f5f0f78b524982b5e9bc4d2609a47bc8dcfb37e7e7d45fe70538fb7f",
+    "sources/atomic_nuclear_correction/RECEIPTS.json": "7049c612fd7294e8bca4a63a938966a927f38933c46f5d0ff227f17aaf307084",
+    "sources/atomic_nuclear_correction/rec.html": "a662e00b46a5a8f3425585b31b69b65025753232e14db21b22701b14e8498939",
+    "sources/atomic_nuclear_correction/rec_table1.dat": "2382f6896fe58ee1da58c9bd563fd7d02c0d94410dbd4150767eed26a54f5091",
+    "sources/atomic_nuclear_correction/table.txt": "fa24b34f734f8d346163df77f6c277af848b799daa693387251c892f86c14ca4",
+    "sources/molecular/README_MOLECULAR_RECOVERY_KO.md": "dc55bb21d4aedfd78f1a9ee9a63476d4afcdee3424511bc10ba9e8bf85158d18",
+    "sources/molecular/SOURCE_MANIFEST.json": "2426b218dde8f1bb100aec8ac91761251af497af2b56323243fe9040400a738e",
+    "sources/molecular/STORAGE_INDEX.json": "34c1d705edd82ce50839a122afe9e1292e89638c62c0cc6294d9183fb5d1e062",
+    "sources/molecular/extract_supplemental.py": "d64276f10f818c60459616cdd2fe6fd0ea6db8d233a58d970a3f0f5dfbdea2af",
+    "sources/molecular/extract_umist.py": "0da6f34f9eb49387178be92297f1761e7761d1a3198ab3c5bc5a95f1c58ad8b4",
+    "sources/molecular/hd_provider_rows.json": "67ffe87c96fe3e81d303b1335692df8fabe7fe25bfc9986589028af06e88cfa8",
+    "sources/molecular/lih_photoprocess_provider.json.gz": "44aec06cece728daae01cf3216e018c146526ffef3bb3e5872503767b3041420",
+    "sources/molecular/raw/LiH.txt": "2463084effc5ad46f7553f9a94789d68d01af18b7591aa1c6370fa6057d5641f",
+    "sources/molecular/raw/cross_section_properties.csv": "1dd7270d622055a65264fc1419be11cb0755221f62845d77dd59c385f7f14670",
+    "sources/molecular/raw/jpl_catdir.html": "7ae7e47933c3fe45c2f76d7883162b78c04e734492437116c981409e11d631dd",
+    "sources/molecular/raw/lamda_hd_20261025.dat": "0c99fe168235d6d6dac3063093bbbe8b4a2ea15cca53c7e2987763c801fdaefb",
+    "sources/molecular/raw/leiden_by_species.html": "4542c276d8923cfe73f856d0ea30383dfb3516217ec83f82d966213487eec752",
+    "sources/molecular/raw/leiden_lih.html": "50e6ffc7f644e39b357c780a81d765543764e4aa548e48883772b6e48b8dd562",
+    "sources/molecular/raw/leiden_species.html": "3d342cbcfcabc5fd079312d8a86e7028fa520c61771fc3fd0adcb80618818599",
+    "sources/molecular/raw/lih.pd": "9e57e4dbf104f042d4249fc85414770ed2717675256d9cda4d1a044d4255b43d",
+    "sources/molecular/raw/rate22_final.rates.gz": "7d9b3bfb2dc1db3e3de7e2c1ae4e293a098eb375512ffb7ed1cf97f765ebed7f",
+    "sources/molecular/raw/rate22_revised_CtoO_0.44.specs": "e460bd58e6bcb40eefd67fb71d26b77399c0bee87dae53979a5ccd3eb8b4a3c1",
+    "sources/molecular/raw/umist_paper_2024.pdf.gz": "c1a4e7bb8d9e0585f3c3b4a9370c33e22b78f851ec1d3d88b1da23774c3e851a",
+    "sources/molecular/raw/umist_paper_2024.txt": "2c294417e3869a41af3ba5517ec4b71479587dfddd960e82c63070a5c6323c38",
+    "sources/molecular/raw/umist_react_6353.html": "bce5c9827a76476c8680f41d224db5f8e8032596840962ed3de7ce2ea896fc24",
+    "sources/molecular/raw/umist_react_74.html": "a975d31ae2f5ce3a0741266696e8a0c78c38568fba050977190377d6088a8bef",
+    "sources/molecular/raw/umist_react_8267.html": "6b988efd1984535a4e2e12db63d62d08a473c9b46ec7027def31c86ddbbb03c3",
+    "sources/molecular/raw/umist_react_998.html": "5a6c64da091d350b2c6858f0772137ae0903af8461a30b7caa855dc3744f4e2e",
+    "sources/molecular/raw/umist_selected_rows_exact.rates": "af274f180b43ef9c799454f3d6cf6f743c0195826b1bb6fdd59e5547625937f8",
+    "sources/molecular/umist_light_provider_rows.json": "bd12cd217cd1bd488afae7d1960bc6a15dbced2a0cb3ca54727d9020ea473c77",
+    "sources/voronov1997/RETRIEVAL.json": "4e3453d150d6562a14dbef87c26e84237e8a73f5a7d70d66944cf293e42458df",
+    "sources/voronov1997/SELECTED_ROWS.json": "0fbb81b59635148b55912647d830d704d7402275c5fdc0ecc50c34578a255fea",
+    "sources/voronov1997/cfit.dat": "470ea3078c64159eece6a469314dde2356e2d6ccaf618f4eaecb46649d61a5cd",
+    "sources/voronov1997/cfit.f": "7fe7d78c25166084041bea58bb55c2fcc6ad724fba8432c167cf044e6eb1bcc1",
+    "sources/voronov1997/cfit.txt": "5b12dc3b4b546ef863216d57df7d64c81a553cc5eb32a8cf2d3d275d4158f9ef",
+    "verification/check_registry.py": "078389146ced0d72f65e8d73550e89e6672ff186ba4ccdc03176dcb29cb2985f"
+  },
+  "new_IVP": 0,
+  "new_physical_Q_evaluations": 0,
+  "new_scientific_rate_evaluations": 0,
+  "old_249_checks_replayed": 0,
+  "physical_rate_or_nuclear_Q_admission": false,
+  "role": "PRIMARY; independent review is a separate receipt",
+  "schema": "WU_PROVIDER_REGISTRY_PRIMARY_IMPLEMENTATION_CHECK_V1",
+  "scope": "source-byte integrity, provenance, finite integer projections and guards only",
+  "status": "FAIL"
+}

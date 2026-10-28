@@ -1,0 +1,101 @@
+{
+  "schema": "WU_R5_SCIENTIFIC_ADMISSION_V1",
+  "unit": "WU_MOLECULAR_DYNAMIC_LIFT_R5",
+  "status": "PASS_SCOPED_THEORY_AND_EXACT_DECLARED_MODEL_IMPLEMENTATION",
+  "theory": {
+    "node": "WU_MOLECULAR_DYNAMIC_LIFT_THEORY_R5",
+    "status": "COMPLETE_SCOPED_CONDITIONAL_THEORY",
+    "review": "PASS_SCOPED_GENERAL_N_THEORY",
+    "evidence": "theory/THEORY_ADMISSION.json"
+  },
+  "implementation": {
+    "node": "WU_MOLECULAR_DYNAMIC_CERTIFICATE_CODE_R5",
+    "status": "COMPLETE_SCOPED_EXACT_RATIONAL_CERTIFICATE",
+    "review": "PASS_SCOPED_AFTER_TARGETED_REPAIR",
+    "code": {
+      "path": "src/dynamic_lift.mjs",
+      "bytes": 6809,
+      "sha256": "8c86303793baa1fd01dcdbae93c521c13713c74d6658101f0d77b4ebe4538273",
+      "git_blob_sha1": "ca106fc67526718efec1a70268e5a0172fa7cd75"
+    },
+    "domain": "1..9states, exact declared rational inputs, constant or valid interval-bounded comparison coefficients",
+    "scope": "coefficients, projection, rational endpoint and whole-interval envelopes; source-conditioned supplied-edge graph"
+  },
+  "source": {
+    "native_source_reused": true,
+    "REC_commit": "d6dbe39a4923439547c01695d9020ba39367ea90",
+    "source_sha256": "0c99fe168235d6d6dac3063093bbbe8b4a2ea15cca53c7e2987763c801fdaefb",
+    "parser_sha256": "ef10b34e1891755334083340b84ff1e298151df720c13f008b3762505813e275",
+    "selected": "9levels and9para-H2 downward rates at100K",
+    "v": "UNSPECIFIED",
+    "missing_pairs": "MISSING_NOT_ZERO",
+    "stationary_weights": "17-significant-digit approximate thermal weights normalized as exact rational inputs; not outward-certified thermal weights",
+    "physical_rate_admission": false
+  },
+  "evidence": {
+    "original_primary_assertions": 188,
+    "original_primary_groups": 8,
+    "source_graph_checks": 41,
+    "independent_analytic_prototype_checks": 56,
+    "Wolfram_exact_zero_entries": 21,
+    "Wolfram_precision_digits": 80,
+    "targeted_parser_repair_checks": 20,
+    "independent_saved_endpoint_values": 3,
+    "blocking_code_findings": 0,
+    "blocking_theory_findings": 0,
+    "physical_IVP_runs": 0,
+    "old54_DB_replays": 0,
+    "old24_LTE_replays": 0,
+    "old249_compiler_replays": 0
+  },
+  "result_interpretation": "Fixtures and CAS corroborate the all-n proof; rational enclosures bound the declared comparison ODE. Source, projection, continuous comparison, time-discretization excess and physical-model uncertainty remain separate.",
+  "not_admitted": [
+    "GL2022 state-resolved destruction array",
+    "actual molecular consumer",
+    "physical density or time",
+    "chemical/nuclear Q",
+    "global physical coupling",
+    "production release"
+  ],
+  "DAG": {
+    "complete": 11,
+    "total": 26,
+    "inherited_complete": 9,
+    "inherited_total": 24,
+    "new_scoped_complete": 2,
+    "old24_objects_unchanged": true,
+    "central_completion_delta": 0,
+    "physical_admission_delta": 0
+  },
+  "resource": {
+    "PHYS91_remaining": [
+      0,
+      0,
+      0
+    ],
+    "global_remaining": null,
+    "full_local_CPU_s": null,
+    "known_Wolfram_self_CPU_s": 0.038076999999999916,
+    "unknown_is_not_zero": true,
+    "reset": false
+  },
+  "release": {
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4_ready": false,
+    "main_merge": false
+  },
+  "delivery": {
+    "scientific_admission_and_archive_delivery_separate": true,
+    "Git_and_Drive_text": "actual per-stage receipts",
+    "dual_archive": "PENDING_RUNTIME_FILE_MATERIALIZATION",
+    "old_R4_S10": "PENDING"
+  },
+  "next_input": "followup/NEXT_INPUT_CONTRACT.json",
+  "payload_manifest": "SCIENTIFIC_PAYLOAD_MANIFEST.json",
+  "scientific_payload_sha256": "67fea64825c612522287a774041a5b53a93b4d3a83c6b69e55a0d4cb25ec9fd8",
+  "reviewed_before_publication": {
+    "theory_commit": "5293371425f383c2d329d0ef85472c5820bc5361",
+    "code_commit": "0a6d5dfc1e057c2cd6b0d2cc15819d040cc242ef"
+  }
+}

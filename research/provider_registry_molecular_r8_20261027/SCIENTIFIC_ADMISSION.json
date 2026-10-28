@@ -1,0 +1,89 @@
+{
+  "schema": "WU_R8_SCIENTIFIC_ADMISSION_V1",
+  "adopted_utc": "2026-10-27 16:08:09 UTC",
+  "theory": "ADOPTED_SCOPED_CONDITIONAL_CAUSAL_LAG_KERNEL",
+  "code": "ADOPTED_SCOPED_CONDITIONAL_EXACT_OUTWARD_TWO_PASS_IMPLEMENTATION",
+  "DAG": {
+    "complete": 17,
+    "total": 32
+  },
+  "newly_completed_nodes": [
+    "WU_CAUSAL_LAG_KERNEL_THEORY_R8",
+    "WU_CAUSAL_LAG_KERNEL_CODE_R8"
+  ],
+  "inherited_node_objects_unchanged": 30,
+  "general_claim": "For one same-clock/state/norm nominal family with uniform-all-starts finite-block certificates and valid full-horizon comparison coefficients, the composed lag ladder and two outward Volterra refinements give nonincreasing valid whole-cell bounds, plus separately capped exact-clock endpoints.",
+  "numerical_scope": "4 saved conditional HD cases,192 cells,2passes;5analyticcontrols; original193clock trajectories reused for sample corroboration.",
+  "proof": "theory/PROOF_KO.md",
+  "core": "src/volterra_feedback.py",
+  "evidence": {
+    "primary": "237/237 PASS",
+    "first_reference": "726/727 PASS; one original FAIL preserved;22658/22659 components passed",
+    "targeted_scalar": "24/24 PASS; REF01 resolved by independent exact S8/S9 enclosure",
+    "proof_review": "PASS_SCOPED_CONDITIONAL_LAG_KERNEL_THEORY",
+    "C9": "PASS_SCOPED_CONDITIONAL_CAUSAL_LAG_KERNEL_CODE",
+    "C9_sha256": "a414c29462cd94089de37131315a591076ec1cc6db1fd85442869b3eb8defa72",
+    "CAS": "QUALIFIED_PARTIAL_SYMBOLIC_CORROBORATION; initialexport$Failed preserved;16zeros;4/6True,2symbolic; Power/InfinitywarningcauseNOT_ESTABLISHED"
+  },
+  "open_material_findings": 0,
+  "scientific_source_commits": {
+    "baseline": "c1badb7de44131715a4998d76515506da5573707",
+    "primary": "72931db38a5dbfc7b12720455c44109039a8f711",
+    "first_reference": "b87ea61ab2d5e17221a6cf3b710aec074eb1a28e",
+    "targeted_scalar": "ade11fe31248d5417902827e5a563ee9a71a065e"
+  },
+  "observed_native9_improvement": {
+    "R_percent": 48.084420792413894,
+    "E_percent": 48.15319538448393,
+    "R8_R_bound": 0.00003644764302052078,
+    "R8_E_bound": 6.191540755286869e-7,
+    "R8_bound_over_saved_actual_R": 310.95395777514585,
+    "R8_bound_over_saved_actual_E": 907.0909474236623
+  },
+  "required_hypotheses": [
+    "Residual forcing lies in the invariant zero-sum space Z and nominal Markov propagation preserves Z.",
+    "Every reused H/rho certificate is uniform over all starts and belongs to the same clock, ordered state space, norm and nominal family.",
+    "Nonnegative a,b,c,g and real d are valid constant bounds across the full three-block horizon; reaction/reset feedback remains in those coefficients.",
+    "Initial whole-cell bounds and point caps are genuine source-bound upper certificates; metadata booleans alone are insufficient."
+  ],
+  "closed_findings": [
+    {
+      "id": "PRE01",
+      "disposition": "RESOLVED"
+    },
+    {
+      "id": "REF01",
+      "disposition": "RESOLVED_BY_EXACT_SCALAR_RE_ADJUDICATION"
+    }
+  ],
+  "no_new_no_go_claim": true,
+  "strong_no_go_scope_check": {
+    "NG1": "Positive bound theorem has explicit finite-state, clock, norm and whole-domain hypotheses; no universal impossibility asserted.",
+    "NG2": "Constructive proof R8.1-R8.20 independently reviewed; exact scalar supplement closes actual reference finding.",
+    "NG3": "Saved native9 strict improvements provide concrete new estimator content; a no-reaction case remains unchanged.",
+    "NG4": "Late-forcing counterexample targets an invalid whole-block contraction of fresh forcing only; input absence and runtime failure are not impossibility mechanisms.",
+    "NG5": "Measured reduction in certified bounds supports selected estimator strategy while retaining actual physical input obligations.",
+    "NG6": "Mitrophanov2005 primary§2 equations2.5-2.7 establishes general lag-convolution principle; WU-specific retained-certificate implementation is the contribution.",
+    "NG7": "Independent proof/code review and separately authored scalar checker match the conditional claim; no global sharpness claim."
+  },
+  "Python_scientific_process_CPU_s": 4.320964,
+  "new_ODE_runs": 0,
+  "inherited_science_reexecution": 0,
+  "new_native_reactive_rows": 0,
+  "physical_IVP": 0,
+  "physical_consumer_admission": false,
+  "central_completion_delta": 0,
+  "physical_admission_delta": 0,
+  "HH_R10": "OFF",
+  "production": "NOT_ISSUED",
+  "L4_ready": false,
+  "main_merge": false,
+  "next_input_contract": "followup/NEXT_INPUT_CONTRACT.json",
+  "remaining_inputs": [
+    "GL2022 original state-resolved reactive arrays or a named explicit consumer",
+    "State/spin/common-pool and formation/destruction variant binding",
+    "Actual collider density and physical clock",
+    "Initial invariant-compatible errors and positive full-interval boxes",
+    "Observable and required accuracy; any additional state-dependent nominal-K feedback"
+  ]
+}

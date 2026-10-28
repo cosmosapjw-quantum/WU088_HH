@@ -1,0 +1,86 @@
+{
+  "schema": "WU_R6_PRIMARY_SAVED_RESULT_REVIEW_ADDENDUM_V1",
+  "reviewer": "/root/r6_inventory",
+  "decision": "PRIMARY_SAVED_RESULTS_ACCEPTED_PENDING_INDEPENDENT_AND_CAS",
+  "source": {
+    "path": "raw/PRIMARY_RESULTS.json",
+    "bytes": 253885,
+    "sha256": "1a3b55f7c14a64a10a651de2df7b7f7d2df24d0b9e809b729f32d73377c90e84"
+  },
+  "observed": {
+    "status": "PASS_SCOPED_EXACT_CERTIFICATES",
+    "run_id": "WU_R6_PRIMARY_01",
+    "case_count": 76,
+    "failure_count": 0,
+    "groups": {
+      "exact_primitives": 16,
+      "serialization": 2,
+      "matrix_controls": 3,
+      "guards": 23,
+      "source": 6,
+      "source_blocks": 8,
+      "forced": 10,
+      "clock_covariance": 6,
+      "switched": 2
+    },
+    "actual_cpu_seconds_at_finalize": 0.6598248979999999,
+    "actual_process_cpu_seconds_at_finalize": 0.791299421,
+    "actual_wall_seconds_at_finalize": 0.6628260060024331,
+    "CPU_allowance_satisfied_at_finalize": true
+  },
+  "identity": {
+    "core": "dbc4767b31775fb6655a92fb20d299f8bea9578f8340bd7bcff4d4f677cab551",
+    "runner": "38cf5268831bbd3d2b17d356817ebae4b68f08e676da1e2cbf2cb313d7c6deb5",
+    "input": "40c059e324783492254831ca110e8d7d9b5e644fd7565eb0c6ad1eab8f3f2f15",
+    "matches_static_freeze": true
+  },
+  "findings": [
+    {
+      "id": "F01",
+      "status": "CLOSED_STATIC_AND_ACTUAL_RUNTIME",
+      "case": "reject_mismatched_native_clock_scale",
+      "observed_status": "PASS",
+      "observed_exception": "DomainError",
+      "message": "Primary source identity/native-domain contract mismatch"
+    },
+    {
+      "id": "F02",
+      "status": "CLOSED_STATIC_AND_ACTUAL_RUNTIME",
+      "case": "reject_negative_segment_with_positive_total_time",
+      "observed_status": "PASS",
+      "observed_exception": "DomainError",
+      "message": "Each chronological switched segment must have positive duration"
+    }
+  ],
+  "actual_scope": {
+    "source_blocks": 4,
+    "source_mu": [
+      "8",
+      "32",
+      "128",
+      "256"
+    ],
+    "positive_source_block_cases_observed": 4,
+    "forced_fixtures": 3,
+    "switched_fixtures": 1,
+    "physical_IVP": 0,
+    "new_Q": 0,
+    "old_science_replay": 0,
+    "physical_source_clock_density": "UNBOUND",
+    "reactive_destruction": "UNBOUND"
+  },
+  "limitations": [
+    "This is an original saved-result read, not a new primary or numerical verification run.",
+    "Primary numerical/semantic success alone is not finalC9; independent reference and contracted CAS must be read.",
+    "Resource numbers are the stored process measurements at finalize; complete wrapper receipt remains a distinct accounting item.",
+    "The general-n proof and directed-arithmetic static reasoning remain separate from finite observed checks."
+  ],
+  "executions_by_reviewer": {
+    "primary_runs": 0,
+    "reference_runs": 0,
+    "CAS": 0,
+    "IVP": 0,
+    "numerical_replay": 0,
+    "external_writes": 0
+  }
+}

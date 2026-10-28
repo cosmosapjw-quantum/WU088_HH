@@ -1,0 +1,100 @@
+{
+  "schema": "WU_R10_BACKUP_ATTACHMENT_INTAKE_V1",
+  "client_date": "2026-10-28",
+  "observed_at_utc": "2026-10-27T23:50:52.770Z",
+  "baseline_R9_final_commit": "7a1430afb21736804286ca5284e0d8243016f2f4",
+  "scope": "Read-only relevant dossiers subtree, WU and CR backup folders, current20 supplied attachments, targeted primary literature. Other conversation coverage owned by source_intake agent.",
+  "dropbox": {
+    "root": "/BASS_DERIVATION_DOSSIERS_20260912",
+    "recursive_rows": 5193,
+    "unique_paths": 5193,
+    "pages": 9,
+    "page_sizes": [
+      600,
+      600,
+      600,
+      600,
+      600,
+      600,
+      600,
+      600,
+      393
+    ],
+    "terminal": true,
+    "direct_children": 3475,
+    "WU_folder_rows": 610,
+    "CR_folder_rows": 206,
+    "post_R9_final_cutoff": "2026-10-27T22:06:16Z",
+    "post_R9_final_new_rows": 0
+  },
+  "drive": {
+    "WU_folder_id": "1074Hr5msnAMgIXWU-PmgdMrQvrdV6emM",
+    "WU_rows": 642,
+    "CR_folder_id": "1V4ZQza59dWVC7apeRz9P1TL66eaVYyJy",
+    "CR_rows": 188,
+    "dossiers_id": "1pkohlay5eIfFJsBwPZ_yn2jIZONZjesI",
+    "dossiers_rows": 1000,
+    "dossiers_history": "PARTIAL_TOOL_LIMIT_1000",
+    "dossiers_documents_pagination": {
+      "pages": 3,
+      "rows": 927,
+      "terminal": true,
+      "zip_coverage": false
+    },
+    "dossiers_folder_search": {
+      "rows": 27,
+      "terminal": true
+    },
+    "latest_WU_name": "WU_MOLECULAR_R9_FINAL_SOURCE_20261028_7a1430afb217.zip",
+    "latest_WU_bytes": 4519806
+  },
+  "delta_early_R9": {
+    "baseline_cutoff_utc": "2026-10-27T21:00:24Z",
+    "paired_new_files": 23,
+    "WU_R9": 11,
+    "HE_AZIMUTH09": 11,
+    "CR_parent_event_closeout": 1,
+    "names_sizes_equal": 23,
+    "archive_original_bytes_read": 0,
+    "scope_note": "Paired files include R9 ownstageoutputs and otherowners’ lateR9 delivery, not23 newly discovered scientificinputs. Source-intake handles exactownercommitcontent."
+  },
+  "attachments": {
+    "count": 20,
+    "matching_R7_names_sizes_SHA256": 20,
+    "required_relation": "BYTE_IDENTITY",
+    "prior_archive_member_metadata_reused": 60882,
+    "prior_literature_PDF_text_reused": 15,
+    "new_extractions": 0,
+    "new_OCR": 0,
+    "report_PDF_bytes": 404026,
+    "report_PDF_SHA256": "9f47da1383205ae8112648d2626fc2712ec913aa5f591ec76a738e234efa9418"
+  },
+  "original_backups": {
+    "R9_11_archives_22_original_GET_hashes": "REUSED_R9_VERIFIED_EVIDENCE",
+    "new_restore_or_download": 0,
+    "metadata_not_promoted_to_new_BYTE_IDENTITY": true
+  },
+  "failures": [
+    {
+      "class": "tool_argument",
+      "action": "Drive get_file_metadata called withurlinsteadfileId",
+      "result": "INVALID_ARGUMENT",
+      "repair": "Corrected to documented fileId and actualmetadataread succeeded",
+      "scientific_impact": 0
+    },
+    {
+      "class": "provider_limit",
+      "action": "Drive list_folder top_k5000",
+      "result": "HTTP400 maximum1000",
+      "repair": "Actual1000listing plus explicitlydocument-only paginatedsearch; historicalZIPcoverage remainsPARTIAL",
+      "scientific_impact": 0
+    }
+  ],
+  "input_decision": {
+    "GL2022_reactive_array": "INPUT_PENDING",
+    "named_physical_HD_consumer_density_clock": "INPUT_PENDING",
+    "no_global_absence_claim": true,
+    "new_strong_no_go": false
+  },
+  "public_payload": "public/ only; local_only/search responses and third-party fulltexts excluded"
+}

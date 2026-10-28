@@ -1,0 +1,23 @@
+{
+  "schema": "WU_R11_POSTPROCESSING_FAILURE_V1",
+  "class": "artifact_integrity",
+  "status": "CLOSED_ARTIFACT_REGENERATED",
+  "expected": {
+    "path": "figures/BOUND_ENDPOINTS.png",
+    "bytes": 456080,
+    "sha256": "cd4be2346b2861a2b2f894a6230e0cdf72e61042205a609cf4c92edb3a52027a"
+  },
+  "observed_bytes": 393393,
+  "observed_sha256": "474a397ff8bb49a462a16c000be41e9e80576caebcf315ef797fa8f68fc554f6",
+  "observation": "PNG incomplete IDAT checksum; existing manifest size/hash differs; observed after attempted view_image inspection",
+  "cause": "NOT_ESTABLISHED",
+  "science_outputs_changed": false,
+  "scientific_reruns": 0,
+  "repair": "atomic temporary-file save and PNG verify before final replace; regenerate saved-output figures only",
+  "repair_verification": {
+    "PNG_decode_and_checksum": "3/3 PASS",
+    "all_six_figure_manifest_sizes_and_SHA256": "MATCH",
+    "visual_inspection": "three JPEG preview copies, all legible; originals not used by preview tool after repair",
+    "scientific_reruns": 0
+  }
+}

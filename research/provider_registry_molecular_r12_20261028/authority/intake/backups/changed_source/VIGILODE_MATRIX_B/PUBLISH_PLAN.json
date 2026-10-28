@@ -1,0 +1,102 @@
+{
+  "schema": "vigilode.publication-plan.v3",
+  "unit": "V8_FIXED_METRIC_JACOBIAN_LOGNORM_20261028",
+  "updated_utc": "2026-10-28T04:03:58.868296+00:00",
+  "status": "HOLD_TOOL_CALL_REJECTED_NO_ACK",
+  "authorized_by_user": true,
+  "permission_reask_required": false,
+  "current_canonical": {
+    "repo": "cosmosapjw-quantum/rei_bianchi",
+    "branch": "research/orchestration-sandbox-20261022",
+    "sha": "3d8bcdb79a7062459adaad9be6d7fe951f86a17a",
+    "AGENTS_blob": "429a5a13ee75b1222bc50627f8d5973d01dd21c4",
+    "completed": 28,
+    "total": 88,
+    "unit_completion_delta": 0,
+    "HEAD_evidence": "intake/CENTRAL_HEAD_PLAIN.json",
+    "AGENTS_evidence": "intake/CENTRAL_AGENTS.json"
+  },
+  "target": {
+    "repo": "cosmosapjw-quantum/rei_bianchi",
+    "branch": "research/vigilode-v6-return-20261025",
+    "expected_sha": "78f7ac5864d5817ceb79b48cb5e298cc30006510",
+    "force": false,
+    "latest_read": "intake/PUBLICATION_TARGET_PLAIN.json"
+  },
+  "candidate": {
+    "status": "NOT_YET_PREPARED",
+    "root": null,
+    "files": 0,
+    "completion_delta": 0
+  },
+  "attempts_this_unit": [],
+  "new_Git_mutations": 0,
+  "commit_created": false,
+  "ref_updated": false,
+  "PR_created": false,
+  "prior_unknown_writes": [
+    {
+      "kind": "create_blob",
+      "wall_seconds": 45,
+      "status": "UNKNOWN_NO_ACK",
+      "subsequent_object": "404"
+    },
+    {
+      "kind": "inline_create_tree",
+      "wall_seconds": 45,
+      "status": "UNKNOWN_NO_ACK"
+    },
+    {
+      "kind": "same_SHA_guarded_update_ref",
+      "wall_seconds": 45.001,
+      "status": "UNKNOWN_NO_ACK",
+      "target_unchanged": true
+    }
+  ],
+  "prior_unit_attempt": [
+    {
+      "operation": "create_tree",
+      "purpose": "Prior admitted14filepayload",
+      "result": "TOOL_CALL_REJECTED",
+      "error": "user rejected MCP tool call",
+      "elapsed_wall_s": 343.389,
+      "declared_wait_cap_s": 180,
+      "wait_cap_exceeded": true,
+      "commit_created_observed": false,
+      "ref_updated_observed": false
+    }
+  ],
+  "historical_write_state": "Prior rejection/no-ACK preserved. Other-provider storage ACK and source reads do not prove Git write-route recovery.",
+  "write_route_recovered_proven": false,
+  "guarded_future_commit_plan": {
+    "state": "NOT_EXECUTED_WAIT_CONCRETE_WRITE_ROUTE_RECOVERY",
+    "parent_sha": "3d8bcdb79a7062459adaad9be6d7fe951f86a17a",
+    "ref_update": {
+      "branch": "research/vigilode-v6-return-20261025",
+      "expected_sha": "78f7ac5864d5817ceb79b48cb5e298cc30006510",
+      "force": false,
+      "new_sha": null
+    },
+    "before_any_mutation": "Fresh AGENTS/HEAD/parallel/target; root-reviewed exact candidate bytes and concrete write-route recovery evidence; actual ACK at each step"
+  },
+  "routing_evidence": "policy/CURRENT_ROUTING_DECISION.md",
+  "unit_intake": "UNIT_INTAKE.json",
+  "closed_science": "Prior campaigns CLOSED_NO_REPLAY",
+  "unknown_owner_budget": "UNKNOWN_PRESERVED",
+  "scientific_admission": "PENDING_NOT_RUN",
+  "strong_no_go": "NOT_CLAIMED",
+  "latest_preflight": {
+    "HEAD": "intake/EXECUTION_PREFLIGHT_CENTRAL_HEAD.json",
+    "AGENTS": "intake/EXECUTION_PREFLIGHT_AGENTS.json",
+    "target": "intake/EXECUTION_PREFLIGHT_TARGET.json",
+    "result_branch": "intake/EXECUTION_PREFLIGHT_VIGILODE_RESULT_BRANCH.json",
+    "parallel_workers": {
+      "observed_utc": "2026-10-28T04:04:00+00:00",
+      "source": "Root actual observation",
+      "implementation": "code and packaging",
+      "review": "read-only",
+      "theory": "complete",
+      "external_mutations": 0
+    }
+  }
+}

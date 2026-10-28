@@ -1,0 +1,726 @@
+{
+  "schema_version": 1,
+  "workflow_version": "1.0.0",
+  "policy_integration_version": "1.3.0",
+  "task": "both",
+  "unit_id": "WU_CUBIC_BERNSTEIN_FORCING_R15",
+  "objective": "Exact rational nonaligned nonnegative Bernstein-B3 cubic forcing; positive Bernstein-B4 global-memory convolution; finite derivative-variation subdivision with explicit quartic whole-cell gap and work bound; directed signed scalar propagation and independent original-integral reference.",
+  "scope": "One next conditional theory node and one finite code node after current accessible source synthesis. Exact source identity and physical binding remain separate premises.",
+  "status": "complete",
+  "stages": [
+    {
+      "id": "R1",
+      "status": "complete",
+      "evidence_refs": [
+        "CONTRACT.json",
+        "POLICY_DELTA.json",
+        "DAG.json",
+        "authority/intake/SYNTHESIS_KO.md"
+      ],
+      "reason": "User authorization, current sources and a calculable bounded contract fixed."
+    },
+    {
+      "id": "C1",
+      "status": "complete",
+      "evidence_refs": [
+        "CONTRACT.json",
+        "POLICY_DELTA.json",
+        "DAG.json",
+        "authority/intake/SYNTHESIS_KO.md"
+      ],
+      "reason": "User authorization, current sources and a calculable bounded contract fixed."
+    },
+    {
+      "id": "R2",
+      "status": "complete",
+      "evidence_refs": [
+        "theory/R2_LITERATURE_AND_REUSE_KO.md",
+        "authority/literature/SOURCE_SCOPE.json",
+        "authority/BASELINE_REUSE.json",
+        "authority/intake/SYNTHESIS_KO.md"
+      ],
+      "reason": "Primary passages and preserved R14 formulas read; exact applicability and current cross-project source synthesis recorded.",
+      "completed_utc": "2026-10-28T11:14:50.176134+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "theory/R2_LITERATURE_AND_REUSE_KO.md",
+          "bytes": 11218,
+          "sha256": "87e413f80c6c6b5ad5935ed40bc2064efb1dfb75e9f1c9c4e4705f832f235b47"
+        },
+        {
+          "path": "authority/literature/SOURCE_SCOPE.json",
+          "bytes": 4282,
+          "sha256": "3c7e5a70c33519b04330c2a44baff45d8e2c249d318b3ea6f596796b232205ee"
+        },
+        {
+          "path": "authority/BASELINE_REUSE.json",
+          "bytes": 1979,
+          "sha256": "bac8734b8521871194e0ac6e39b1c67baddee9de3f33b3218a21654d5ab65b62"
+        },
+        {
+          "path": "authority/intake/SYNTHESIS_KO.md",
+          "bytes": 4124,
+          "sha256": "54a57dc5901dda0c304caf2d26e178c1858d971acc36855448834ba481c52d9c"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "status": "complete",
+      "evidence_refs": [
+        "design/API_MAP.json",
+        "design/API_SCHEMA.md",
+        "design/INPUT_SCHEMA.json",
+        "design/OUTPUT_SCHEMA.json"
+      ],
+      "reason": "Complete equation-input-output-code mapping, signed scalar and clock/normalization, full-A/source binding and independent-reference interface specified before implementation.",
+      "completed_utc": "2026-10-28T11:14:50.176134+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "design/API_MAP.json",
+          "bytes": 3548,
+          "sha256": "d112dacc2682112b9c4a0f84265381da1896bb08b2726437c01a1f5961cb8a3d"
+        },
+        {
+          "path": "design/API_SCHEMA.md",
+          "bytes": 9921,
+          "sha256": "e43d88597325a943e5654eff848fcf7254446c2a0a4f361e0d747589b7491bd8"
+        },
+        {
+          "path": "design/INPUT_SCHEMA.json",
+          "bytes": 5378,
+          "sha256": "009d989eb50619b25324bae90f9b7607a6d780e060b03936ec0da38746efa3b6"
+        },
+        {
+          "path": "design/OUTPUT_SCHEMA.json",
+          "bytes": 10275,
+          "sha256": "3818ac435326fcdb4318060f39fc576f49b3aa91952c324ac8c2f7a82fced643"
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "status": "complete",
+      "evidence_refs": [
+        "theory/R3_CLAIM_LEDGER.json",
+        "authority/literature/MIDPOINT_CONVENTION_CHECK.json",
+        "CONTRACT.json"
+      ],
+      "reason": "Definitions, explicit input cone, full-A/source/clock premises, classical tools, direct derivations and pending numerical evidence separated; comparison lower semantics preserved.",
+      "completed_utc": "2026-10-28T11:20:54.684226+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "theory/R3_CLAIM_LEDGER.json",
+          "bytes": 14375,
+          "sha256": "90a5e75ed9d50e2b74edf10c18eed6e0862031b6e8f73d649dde8e8f04331624"
+        },
+        {
+          "path": "authority/literature/MIDPOINT_CONVENTION_CHECK.json",
+          "bytes": 864,
+          "sha256": "7094a872232f38f9fcbbfa90b872e11d2429513d3cac0dd467986de6f2dcf4b4"
+        },
+        {
+          "path": "CONTRACT.json",
+          "bytes": 7877,
+          "sha256": "05ed87875370f5ede696ae7c3c150c9d16fea25311428fff2f38e87170466ddc"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "status": "complete",
+      "evidence_refs": [
+        "design/NUMERICAL_DESIGN_KO.md",
+        "design/CONTROL_PLAN.json",
+        "design/REFERENCE_DESIGN_KO.md",
+        "design/REFERENCE_ARITHMETIC_CLARIFICATION.json"
+      ],
+      "reason": "Positive quartic construction, finite work and gap target, signed moment tails, exact independent Sturm route and predeclared Decimal guard fixed;21model/75cell and14depth-diagnostic design bounded before execution.",
+      "completed_utc": "2026-10-28T11:20:54.684226+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "design/NUMERICAL_DESIGN_KO.md",
+          "bytes": 8894,
+          "sha256": "2ec9cada0d554d8c82346880b08d870a628a4f4dcb4c58e2c9320471fb0abae5"
+        },
+        {
+          "path": "design/CONTROL_PLAN.json",
+          "bytes": 12697,
+          "sha256": "753f5a0b976210a0d877042a6b12740b75c3436c0a1d69f1440d5243e33e5bc6"
+        },
+        {
+          "path": "design/REFERENCE_DESIGN_KO.md",
+          "bytes": 22084,
+          "sha256": "2d3bdd8174db293f0b8136f8ce7e939dc90870b94d2bc2c031e4136acfbd875f"
+        },
+        {
+          "path": "design/REFERENCE_ARITHMETIC_CLARIFICATION.json",
+          "bytes": 1482,
+          "sha256": "f0f423704b77a391fb3715e82bd5889c12fe7ea825dfa562a50b84970906955d"
+        }
+      ]
+    },
+    {
+      "id": "R4",
+      "status": "complete",
+      "evidence_refs": [
+        "theory/R4_CONSTRUCTION_CHOICES_KO.md",
+        "theory/R3_CLAIM_LEDGER.json"
+      ],
+      "reason": "Constructed explicit positive B1xB3 coefficients, direct zero-aware variation map, fixed-depth gap/work candidate proof and signed moments; competing paths compared; representative exact examples manually derived.",
+      "completed_utc": "2026-10-28T11:22:04.063662+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "theory/R4_CONSTRUCTION_CHOICES_KO.md",
+          "bytes": 16137,
+          "sha256": "53bf6d12f75fc89ad8f1e6d2092d285255ffd325a527931fb1b35bfa12a69d99"
+        },
+        {
+          "path": "theory/R3_CLAIM_LEDGER.json",
+          "bytes": 14375,
+          "sha256": "90a5e75ed9d50e2b74edf10c18eed6e0862031b6e8f73d649dde8e8f04331624"
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "status": "complete",
+      "evidence_refs": [
+        "design/IMPLEMENTATION_EXECUTION_PLAN.json",
+        "design/REFERENCE_ACCEPTANCE_MAP.json",
+        "design/CONTROL_PLAN.json",
+        "CONTRACT.json"
+      ],
+      "reason": "Finite execution dependencies, single-owner publication, isolated production/reference authors, source freeze, independent audit and exact process resource limits fixed; diagnostic count and immutable acceptance declared.",
+      "completed_utc": "2026-10-28T11:22:04.063662+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "design/IMPLEMENTATION_EXECUTION_PLAN.json",
+          "bytes": 8683,
+          "sha256": "e611968f00f9d9bd30ff8dd240c28586d0ca88f481969d1e2d396c3d755c25f4"
+        },
+        {
+          "path": "design/REFERENCE_ACCEPTANCE_MAP.json",
+          "bytes": 16982,
+          "sha256": "54ccebc374c9635d69a41ae50b469ccc5e815f7d4726f94abad628e037ee3051"
+        },
+        {
+          "path": "design/CONTROL_PLAN.json",
+          "bytes": 12697,
+          "sha256": "753f5a0b976210a0d877042a6b12740b75c3436c0a1d69f1440d5243e33e5bc6"
+        },
+        {
+          "path": "CONTRACT.json",
+          "bytes": 7877,
+          "sha256": "05ed87875370f5ede696ae7c3c150c9d16fea25311428fff2f38e87170466ddc"
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "status": "complete",
+      "evidence_refs": [
+        "theory/PROOF_KO.md",
+        "verification/CAS_CHECKS.wl",
+        "verification/CAS_TARGETS.json",
+        "authority/THEORY_R5_AUTHORING_STATUS.json"
+      ],
+      "reason": "Full constructive conditional theorem proved: positive quartic memory, exact clock/endpoint semantics, direct variation/work/gap and signed scalar outward propagation;72symbolic targets authored before execution.",
+      "completed_utc": "2026-10-28T11:44:41.322294+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "theory/PROOF_KO.md",
+          "bytes": 30142,
+          "sha256": "9686bbabbe04dce0539b10c2c6c8baafc861e5887ad68baedaaff050f545704f"
+        },
+        {
+          "path": "verification/CAS_CHECKS.wl",
+          "bytes": 8361,
+          "sha256": "e423af7b6eadbe37a2205e516e29857ae9bce5e69fc1610d426acbc56af541be"
+        },
+        {
+          "path": "verification/CAS_TARGETS.json",
+          "bytes": 21664,
+          "sha256": "3f8b73a152add50dd1a82208ceef46ca7ac1a4c64f086b994babd9013c659f42"
+        },
+        {
+          "path": "authority/THEORY_R5_AUTHORING_STATUS.json",
+          "bytes": 9317,
+          "sha256": "5ca97fd55b5b8b41faa6c83a0acf8cb0c9913ba4c6e884835c07c0665381da07"
+        }
+      ]
+    },
+    {
+      "id": "C5",
+      "status": "complete",
+      "evidence_refs": [
+        "src/cubic_convolution.py",
+        "src/cli.py",
+        "verification/run_primary.py",
+        "verification/reference_oracle.py",
+        "verification/run_reference.py",
+        "verification/CASES.json",
+        "verification/ARITHMETIC_SOURCE.json",
+        "verification/run_bounded.py",
+        "figures/render_saved.py",
+        "verification/FROZEN_FILES.json",
+        "reviews/R6_STATIC_REVIEW.json",
+        "authority/C5_INTEGRATION_MAP.json"
+      ],
+      "reason": "Complete runnable production and independently authored reference paths, fixed21model inputs, guarded wrappers and saved renderer integrated; static review24/24, source frozen before campaigns.",
+      "completed_utc": "2026-10-28T11:44:41.322294+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "src/cubic_convolution.py",
+          "bytes": 31001,
+          "sha256": "06367bc5eea0fd826a0d4087bdf3a647cca82e24e31e9a98259fb0ced1619905"
+        },
+        {
+          "path": "src/cli.py",
+          "bytes": 1117,
+          "sha256": "b4bd9e079c17be5395e2b46189d5debb9549f015471efab2075981dc1b798033"
+        },
+        {
+          "path": "verification/run_primary.py",
+          "bytes": 23539,
+          "sha256": "7a277b90905d10d45bccaa5334695f5dccfa00e3f9c230fc715a587d66ec98c2"
+        },
+        {
+          "path": "verification/reference_oracle.py",
+          "bytes": 81082,
+          "sha256": "bf8928ec3629b81563cbe10b7b0fb68cb10a398dcf2028c66207e50e3932e05e"
+        },
+        {
+          "path": "verification/run_reference.py",
+          "bytes": 14607,
+          "sha256": "79206d468dec7407aac27c29a955d7847aba246ed87e672dfb5ada3bc82f8d2c"
+        },
+        {
+          "path": "verification/CASES.json",
+          "bytes": 64835,
+          "sha256": "89b7ebc9f86d2eff58c203e54aa6c370e7259d24f1a9414414e91fd952825619"
+        },
+        {
+          "path": "verification/ARITHMETIC_SOURCE.json",
+          "bytes": 24122,
+          "sha256": "15216b85daa09c203ee0a856db5c963e13fd89ebe0f9077f94e5ff2f9dd5b885"
+        },
+        {
+          "path": "verification/run_bounded.py",
+          "bytes": 5821,
+          "sha256": "d8581b09081ceb4ce618826ff9e8d7693d9b53ff5b4b5393c7d62a382b7f057f"
+        },
+        {
+          "path": "figures/render_saved.py",
+          "bytes": 9443,
+          "sha256": "42b09c47e8e4bcd4a900b93ac88c52a6d1f64ee26ab39ca03e16443dbd0b7dfc"
+        },
+        {
+          "path": "verification/FROZEN_FILES.json",
+          "bytes": 5481,
+          "sha256": "5243f3ba03f2a685123025041d644563652007148a13c3117663e7425d27d6f7"
+        },
+        {
+          "path": "reviews/R6_STATIC_REVIEW.json",
+          "bytes": 29450,
+          "sha256": "3e46ac6c7c9f37d7500de31285b0399dec909e4796917a95b1f616d7284ba801"
+        },
+        {
+          "path": "authority/C5_INTEGRATION_MAP.json",
+          "bytes": 6739,
+          "sha256": "cafa430ba7f4e0457514fb82fb75755ebce019c9edc9ea1054ce4950328de006"
+        }
+      ]
+    },
+    {
+      "id": "R6",
+      "status": "complete",
+      "evidence_refs": [
+        "reviews/R6_STATIC_REVIEW.json",
+        "reviews/R6_STATIC_REVIEW_NOTE.md"
+      ],
+      "reason": "Independent proof/static-code audit completed24/24 with0material findings; actual final source deltas and72CAS targets reconciled.",
+      "completed_utc": "2026-10-28T11:45:37.737375+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "reviews/R6_STATIC_REVIEW.json",
+          "bytes": 29450,
+          "sha256": "3e46ac6c7c9f37d7500de31285b0399dec909e4796917a95b1f616d7284ba801"
+        },
+        {
+          "path": "reviews/R6_STATIC_REVIEW_NOTE.md",
+          "bytes": 5149,
+          "sha256": "3f725cb0fa6a9525a353ba80e70f68cc880d4a902ed852a7cb820a09d74ce9bb"
+        }
+      ]
+    },
+    {
+      "id": "C6",
+      "status": "complete",
+      "evidence_refs": [
+        "raw/PRIMARY_RESULTS.json",
+        "raw/PRIMARY_PROCESS.json",
+        "raw/PRIMARY_ATTEMPT.json",
+        "verification/PRIMARY_ASSESSMENT.json",
+        "EXECUTION_LEDGER.json"
+      ],
+      "reason": "Actual bounded frozen primary process exit0:302/302 semantic checks,21models,68rejectionguards,14depth rows; all30frozen files unchanged; no repair or old-science replay.",
+      "completed_utc": "2026-10-28T11:45:37.737375+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "raw/PRIMARY_RESULTS.json",
+          "bytes": 1240432,
+          "sha256": "320249d8339736ae502730d33c8d7fbea53f17f3d8846196ea819da59951a8f9"
+        },
+        {
+          "path": "raw/PRIMARY_PROCESS.json",
+          "bytes": 1563,
+          "sha256": "e5f6a965449a1316365a8d86330f2fda02230f7c30be08939540d86a124c8d69"
+        },
+        {
+          "path": "raw/PRIMARY_ATTEMPT.json",
+          "bytes": 871,
+          "sha256": "0c34881bf5bf608d8df455ec77da822ba4625c8ed0ddd762d2ffa829ef4315e9"
+        },
+        {
+          "path": "verification/PRIMARY_ASSESSMENT.json",
+          "bytes": 774,
+          "sha256": "d55dd80fc865c16639aec095c76f8aef2146cb857f52f25171ab362b46bbb652"
+        },
+        {
+          "path": "EXECUTION_LEDGER.json",
+          "bytes": 2378,
+          "sha256": "69792debacb2e43939b261fd3631f5a7ef59f5253219f9130f0040310c945b8d"
+        }
+      ]
+    },
+    {
+      "id": "R7",
+      "status": "complete",
+      "evidence_refs": [
+        "raw/CAS_RAW_RESPONSE.json",
+        "raw/CAS_SUBMITTED.wl",
+        "raw/CAS_ATTEMPT.json",
+        "verification/CAS_ASSESSMENT.json"
+      ],
+      "reason": "One actual frozen Wolfram batch returned72unique exact-zero residuals matching alltargets; observed warnings0; submitted8361bytes exactly match frozen source.",
+      "completed_utc": "2026-10-28T11:47:22.048579+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "raw/CAS_RAW_RESPONSE.json",
+          "bytes": 5467,
+          "sha256": "79ae6dbe2e17c3a3bc680dbdef908510c3f7e647264f1b91d041181a8a2c9ed2"
+        },
+        {
+          "path": "raw/CAS_SUBMITTED.wl",
+          "bytes": 8361,
+          "sha256": "e423af7b6eadbe37a2205e516e29857ae9bce5e69fc1610d426acbc56af541be"
+        },
+        {
+          "path": "raw/CAS_ATTEMPT.json",
+          "bytes": 450,
+          "sha256": "19ed2a728cbb06a87643d9dbf6e251916bd8dec00887d4ded9dcef4bc6779ee2"
+        },
+        {
+          "path": "verification/CAS_ASSESSMENT.json",
+          "bytes": 799,
+          "sha256": "78b0bc0f48e54f7f39a21423687d774c26591e603537fbc0b3e340c9a57fafec"
+        }
+      ]
+    },
+    {
+      "id": "C7",
+      "status": "complete",
+      "evidence_refs": [
+        "raw/REFERENCE_RESULTS.json",
+        "raw/REFERENCE_PROCESS.json",
+        "raw/REFERENCE_ATTEMPT.json",
+        "verification/REFERENCE_ASSESSMENT.json",
+        "EXECUTION_LEDGER.json"
+      ],
+      "reason": "Actual separately authored original-integral/Sturm/phi reference passed302/302 records across21models;784guarded comparisons pass with59strict Decimal misses disclosed; no repair or production import.",
+      "completed_utc": "2026-10-28T11:47:22.048579+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "raw/REFERENCE_RESULTS.json",
+          "bytes": 197286,
+          "sha256": "63f58e277acdfa6843f053a293869896605514867dfc9afa576852f2aa2f02b2"
+        },
+        {
+          "path": "raw/REFERENCE_PROCESS.json",
+          "bytes": 1740,
+          "sha256": "8422b06ea136b2bf4d43cec3f6b7289548d5a59af31db38e3a3be883e62714e0"
+        },
+        {
+          "path": "raw/REFERENCE_ATTEMPT.json",
+          "bytes": 1021,
+          "sha256": "eef5b0405d9210cb15be739ea45038dc0de168f275159413b0bc7edcab16b0c2"
+        },
+        {
+          "path": "verification/REFERENCE_ASSESSMENT.json",
+          "bytes": 2175,
+          "sha256": "010a6d2744b6876be22ca59c098ac0bb56e9fad5538acbe24166db4d97391701"
+        },
+        {
+          "path": "EXECUTION_LEDGER.json",
+          "bytes": 5031,
+          "sha256": "badb2dbb0a8292bbd92a70cec2f764326201490afde78219e380d5b5d96db530"
+        }
+      ]
+    },
+    {
+      "id": "R8",
+      "status": "complete",
+      "evidence_refs": [
+        "theory/CLAIM_DECISIONS.json",
+        "RESULTS_KO.md",
+        "verification/CAS_ASSESSMENT.json",
+        "verification/REFERENCE_ASSESSMENT.json"
+      ],
+      "reason": "All13claims assigned conditional proof/observed verification/input-pending status; strict59misses and fixedguard interpretation retained; no newstrongno-go or physicalpromotion.",
+      "completed_utc": "2026-10-28T11:50:02.951079+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "theory/CLAIM_DECISIONS.json",
+          "bytes": 8612,
+          "sha256": "36b458867d7cb6df997db6f4370f5da59cecf30b310880a6fa0bb687e45be38c"
+        },
+        {
+          "path": "RESULTS_KO.md",
+          "bytes": 7949,
+          "sha256": "6e735453694b42941d09ae0de4489c55f0a93a4de4aba55a76880d5ecac13318"
+        },
+        {
+          "path": "verification/CAS_ASSESSMENT.json",
+          "bytes": 799,
+          "sha256": "78b0bc0f48e54f7f39a21423687d774c26591e603537fbc0b3e340c9a57fafec"
+        },
+        {
+          "path": "verification/REFERENCE_ASSESSMENT.json",
+          "bytes": 2175,
+          "sha256": "010a6d2744b6876be22ca59c098ac0bb56e9fad5538acbe24166db4d97391701"
+        }
+      ]
+    },
+    {
+      "id": "C8",
+      "status": "complete",
+      "evidence_refs": [
+        "verification/SAVED_RESULT_SUMMARY.json",
+        "figures/PLOT_DATA.json",
+        "figures/PLOT_MANIFEST.json",
+        "figures/RENDERER_PROCESS.json",
+        "figures/VISUAL_REVIEW.json",
+        "RESULTS_KO.md"
+      ],
+      "reason": "Read actual saved14depth diagnostics and resource records; rendered2PNG/2SVG inoneboundedprocess and actually inspected bothPNGs; no scientific rerun.",
+      "completed_utc": "2026-10-28T11:50:02.951079+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "verification/SAVED_RESULT_SUMMARY.json",
+          "bytes": 780,
+          "sha256": "4160a26e1f9f9bcb8764f726313ea629f675e70eb1548c77b91552e8df428f8a"
+        },
+        {
+          "path": "figures/PLOT_DATA.json",
+          "bytes": 161222,
+          "sha256": "82d3a6303176f798c03f3cb19fe36c76cae946809ecfc1689423d852920bb09f"
+        },
+        {
+          "path": "figures/PLOT_MANIFEST.json",
+          "bytes": 1687,
+          "sha256": "13f83de3f4d50210503b7d341d79e6049259105d11eff3701319bb155a635a19"
+        },
+        {
+          "path": "figures/RENDERER_PROCESS.json",
+          "bytes": 1926,
+          "sha256": "b37f142416fefd0ce36110c3c141c41fd6083792f8f9cf910c2c17c830cc80ea"
+        },
+        {
+          "path": "figures/VISUAL_REVIEW.json",
+          "bytes": 1183,
+          "sha256": "ac20246e5e9654e7d60c7d1200ca337a92cc9c83284febd93cda36163f8855c1"
+        },
+        {
+          "path": "RESULTS_KO.md",
+          "bytes": 7949,
+          "sha256": "6e735453694b42941d09ae0de4489c55f0a93a4de4aba55a76880d5ecac13318"
+        }
+      ]
+    },
+    {
+      "id": "R9",
+      "status": "complete",
+      "evidence_refs": [
+        "theory/REUSABLE_STATEMENT_KO.md",
+        "design/R9_COMPUTATIONAL_CONTRACT_KO.md",
+        "SCIENTIFIC_ADMISSION.json"
+      ],
+      "reason": "Reusable conditional theorem and units/IC/domain/algorithm/precision/API contract recorded from unchanged proof and actual saved evidence; two scoped theory/code nodes adopted after independent C9.",
+      "completed_utc": "2026-10-28T11:58:43.822623+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "theory/REUSABLE_STATEMENT_KO.md",
+          "bytes": 8076,
+          "sha256": "6b0a30b432e4163f3fa6c5cd212392b35a9cc3601b7e0385bf6edbea666ef178"
+        },
+        {
+          "path": "design/R9_COMPUTATIONAL_CONTRACT_KO.md",
+          "bytes": 5983,
+          "sha256": "1e1e9a1f3673230c37c171b9644a38f1fd5c6dfea71a32bb3f7acea0d818ae76"
+        },
+        {
+          "path": "SCIENTIFIC_ADMISSION.json",
+          "bytes": 4098,
+          "sha256": "d3cf5cbabae3bd090960c14f459b152318241243faf147db500c35fa2e2270a9"
+        }
+      ]
+    },
+    {
+      "id": "C9",
+      "status": "complete",
+      "evidence_refs": [
+        "reviews/C9_FINAL_REVIEW.json",
+        "reviews/C9_FINAL_REVIEW_NOTE.md",
+        "SCIENTIFIC_PAYLOAD_MANIFEST.json",
+        "SCIENTIFIC_ADMISSION.json",
+        "DAG.json"
+      ],
+      "reason": "One independent changed-result/admission review passed20/20, zero material findings;70payload/30frozen identities and44inherited nodes preserved; root adopts two conditional nodes to31/46, physical/central delta0.",
+      "completed_utc": "2026-10-28T11:58:43.822623+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "reviews/C9_FINAL_REVIEW.json",
+          "bytes": 45364,
+          "sha256": "1dc288b133f48ee5c2f39c086c2f4bb8f5a8ce0dd1640332616b260ac82e5991"
+        },
+        {
+          "path": "reviews/C9_FINAL_REVIEW_NOTE.md",
+          "bytes": 4905,
+          "sha256": "494bc758c5b6a6104685a0cd24b31328d6d90ff2a62ae5683e7cdaa39d7bc59e"
+        },
+        {
+          "path": "SCIENTIFIC_PAYLOAD_MANIFEST.json",
+          "bytes": 16435,
+          "sha256": "68be77c73f33a6ce5893a014f71218c57f523d20f86c0b7f348f8ce5f43fc748"
+        },
+        {
+          "path": "SCIENTIFIC_ADMISSION.json",
+          "bytes": 4098,
+          "sha256": "d3cf5cbabae3bd090960c14f459b152318241243faf147db500c35fa2e2270a9"
+        },
+        {
+          "path": "DAG.json",
+          "bytes": 46684,
+          "sha256": "e2389081fdf54f92e188915b86525730993f0ecf87ba27b5e8eeba11a273696b"
+        }
+      ]
+    },
+    {
+      "id": "R10",
+      "status": "complete",
+      "evidence_refs": [
+        "REPORT_KO.md",
+        "HANDOFF_KO.md",
+        "NEXT_INPUT_CONTRACT.json",
+        "POLICY_DELTA.json",
+        "CLOSEOUT.json",
+        "verification/REMOTE_SOURCE_IDENTITY_CHECK.json",
+        "delivery/S09_RESTORE_VERIFICATION.json"
+      ],
+      "reason": "Full source synthesis, scoped theorem/consequence/limits and next input preserved; science S09 remote70-file identity and actual243-source-member backup restore completed; no new science.",
+      "completed_utc": "2026-10-28T12:03:19.968434+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "REPORT_KO.md",
+          "bytes": 24961,
+          "sha256": "c24d91239a2b0fe85938e1e3705d7f40c69f241c58ba664a0d6184525bc9742d"
+        },
+        {
+          "path": "HANDOFF_KO.md",
+          "bytes": 5680,
+          "sha256": "06ede64a6b4dc553fa5747a4fec06956f00ede029e1d8c71169373129cfd055a"
+        },
+        {
+          "path": "NEXT_INPUT_CONTRACT.json",
+          "bytes": 2654,
+          "sha256": "a1471bf945359eb4dcb3f994514f67122d35b2fd0b58c78a0b0a31f16901932c"
+        },
+        {
+          "path": "POLICY_DELTA.json",
+          "bytes": 1940,
+          "sha256": "6946d6451abc430d749e4b8d8856f3399177c0e0f369837ae336115160006546"
+        },
+        {
+          "path": "CLOSEOUT.json",
+          "bytes": 1396,
+          "sha256": "72212a0e49e012f52113af9ea3b62d282d34ef95baaf4721d340ce6398d53c07"
+        },
+        {
+          "path": "verification/REMOTE_SOURCE_IDENTITY_CHECK.json",
+          "bytes": 10682,
+          "sha256": "53ab2136bdd6425168694ec059ad174ffe106f492ed17e41b59cf760968bb67f"
+        },
+        {
+          "path": "delivery/S09_RESTORE_VERIFICATION.json",
+          "bytes": 1206,
+          "sha256": "961ea8f7cc5854e9c47ab66810612a5481ea9f82343e5fa09ecee30cb2685f52"
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "status": "complete",
+      "evidence_refs": [
+        "REPORT_KO.md",
+        "HANDOFF_KO.md",
+        "EXECUTION_LEDGER.json",
+        "CLOSEOUT.json",
+        "SCIENTIFIC_ADMISSION.json",
+        "delivery/S09_RESTORE_VERIFICATION.json"
+      ],
+      "reason": "Authorized full unit closed20/20, DAG31/46; reusable commands/input/resource/output/acceptance handoff complete; actual primary/reference/CAS/renderer1each,repair0,unusedreserves expired,allremaining0.",
+      "completed_utc": "2026-10-28T12:03:19.968434+00:00",
+      "evidence_identities_at_completion": [
+        {
+          "path": "REPORT_KO.md",
+          "bytes": 24961,
+          "sha256": "c24d91239a2b0fe85938e1e3705d7f40c69f241c58ba664a0d6184525bc9742d"
+        },
+        {
+          "path": "HANDOFF_KO.md",
+          "bytes": 5680,
+          "sha256": "06ede64a6b4dc553fa5747a4fec06956f00ede029e1d8c71169373129cfd055a"
+        },
+        {
+          "path": "EXECUTION_LEDGER.json",
+          "bytes": 7666,
+          "sha256": "99d246f4ee37c1bcd3d33cbb8d5031f6e936838d114f3bcd9246af82d4d873b9"
+        },
+        {
+          "path": "CLOSEOUT.json",
+          "bytes": 1396,
+          "sha256": "72212a0e49e012f52113af9ea3b62d282d34ef95baaf4721d340ce6398d53c07"
+        },
+        {
+          "path": "SCIENTIFIC_ADMISSION.json",
+          "bytes": 4098,
+          "sha256": "d3cf5cbabae3bd090960c14f459b152318241243faf147db500c35fa2e2270a9"
+        },
+        {
+          "path": "delivery/S09_RESTORE_VERIFICATION.json",
+          "bytes": 1206,
+          "sha256": "961ea8f7cc5854e9c47ab66810612a5481ea9f82343e5fa09ecee30cb2685f52"
+        }
+      ]
+    }
+  ],
+  "workflow_counts": {
+    "complete": 20,
+    "total": 20
+  },
+  "scientific_DAG": {
+    "complete": 31,
+    "total": 46
+  }
+}

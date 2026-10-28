@@ -1,0 +1,167 @@
+{
+  "schema": "WU_R15_THEORY_R3_CLAIM_LEDGER_V1",
+  "unit": "WU_CUBIC_BERNSTEIN_FORCING_R15",
+  "stage": "R3",
+  "authoring_status": "CLAIMS_PREMISES_AND_PROOF_OBLIGATIONS_ALIGNED",
+  "scientific_admission": "PENDING_R5_R6_R7_R8_R9_AND_CODING_WORK",
+  "scientific_execution_by_author": 0,
+  "DAG_at_this_authoring_checkpoint": "29/46",
+  "contract_path": "research/provider_registry_molecular_r15_20261028/CONTRACT.json",
+  "R2_path": "R2_LITERATURE_AND_REUSE_KO.md",
+  "definitions": [
+    {"id": "D01", "symbol": "B_i^n(u)", "definition": "binomial(n,i)*u^i*(1-u)^(n-i), u in [0,1]"},
+    {"id": "D02", "symbol": "h(a)", "definition": "q^floor(a/tau), a>=0, tau>0, 0<=q<=1, h(0)=1, including 0^0=1 in this kernel definition"},
+    {"id": "D03", "symbol": "Rcal(t)", "definition": "h(t-t0)*R0 + integral_{t0}^t h(t-s)*g_r(s) ds; original-t0 history retained"},
+    {"id": "D04", "symbol": "Ecal(t)", "definition": "exp(d_c*(t-t0))*E0 + integral_{t0}^t exp(d_c*(t-s))*(c*Rcal(s)+g_e(s)) ds"},
+    {"id": "D05", "symbol": "V(v)", "definition": "Number of strict sign changes after every zero coefficient is removed; all-zero and empty lists have V=0"},
+    {"id": "D06", "symbol": "P(u)", "definition": "Stored Bernstein-B4 ideal Rcal polynomial on an exact base cell; actual at its left endpoint, left limit at its right endpoint"},
+    {"id": "D07", "symbol": "M_B", "definition": "4*max_{i=0..3}|B[i+1]-B[i]| for the original base-cell normalized-u Bernstein-B4 coefficients; not a derivative per physical time"},
+    {"id": "D08", "symbol": "Cmax", "definition": "max_{i=0..4} B[i] for nonnegative original base-cell coefficients"},
+    {"id": "D09", "symbol": "lower_enclosure", "definition": "A lower endpoint encloses the chosen ideal comparison function built from the supplied forcing bounds. For a supremum, witnesses are marked point-value or left-limit. Rcal and Ecal lower endpoints are not lower bounds on unknown physical errors."}
+  ],
+  "premises": [
+    {"id": "P01", "statement": "Fixed column-conservative Metzler K, fixed pi/destruction d, H=pi*d^T-diag(d), A_w=K+wH on the whole certified w box.", "origin": "R14 inherited conditional full-A premise", "binding": "Same source family, state order, norm and clock"},
+    {"id": "P02", "statement": "Every start time has a full-A zero-mass l1 propagator block bound q over tau and nonexpansive shorter remainders.", "origin": "R14 inherited conditional premise", "binding": "A nominal-K q is insufficient unless the stated full-A premise is independently met"},
+    {"id": "P03", "statement": "R0>=0 and E0>=0 are valid initial comparison values; residual forcing is zero-mass and g_r/g_e bound the relevant whole fine/coarse domains.", "origin": "R15 contract physical-to-comparison premise", "binding": "Polynomial positivity alone does not supply the forcing-bound source certificate"},
+    {"id": "P04", "statement": "Each original source cell supplies four exact rational nonnegative Bernstein-B3 coefficients for each g_r and g_e; adjacent one-sided source values may differ.", "origin": "R15 selected finite input cone", "binding": "No conversion of every pointwise-nonnegative cubic into this cone is claimed"},
+    {"id": "P05", "statement": "t0, source knots, observation knots, tau and comparison parameters are exact rationals in consistent units, with tau>0 and 0<=q<=1.", "origin": "R15 contract", "binding": "No floating event merging or source/observation-clock identification"},
+    {"id": "P06", "statement": "c>=0 is a fixed comparison coupling, d_c is a fixed signed scalar, E=abs(eta), coarse l1=4E.", "origin": "R14 inherited normalization and R15 contract", "binding": "c is not the speed-of-light symbol; sign(d_c) is retained"},
+    {"id": "P07", "statement": "Every base polynomial is assembled once from original-t0 memory; subdivision is only for supremum certification.", "origin": "R15 work contract", "binding": "No kernel-age reset, memory reset, or scalar propagation on root-subdivision clocks"},
+    {"id": "P08", "statement": "Source/state/clock and whole-interval cap provenance remain explicit; no generic cap adapter is admitted.", "origin": "R15 contract", "binding": "A changed forcing polynomial does not inherit a prior cap identity"},
+    {"id": "P09", "statement": "Finite counts, input and derived bit caps, rational grammar, depth96, dyadic128 and Taylor96 apply as written in CONTRACT.json.", "origin": "R15 finite-domain contract", "binding": "Derived-cap rejection is a defined guarded outcome; no theorem here asserts every input within the initial bit cap survives every derived cap"},
+    {"id": "P10", "statement": "abs(d_c)*(T-t0)<=16; c, d_c and generator entries have units consistent with the shared physical-time coordinate.", "origin": "R15 moment and clock contract", "binding": "z=d_c*Delta is dimensionless; coefficient derivative is with respect to normalized u"}
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "The chosen ideal Rcal/Ecal comparison controls the residual/scalar error under P01-P06.",
+      "category": "INHERITED_CONDITIONAL_RESULT",
+      "evidence": "R14 proof sections1,6,7 and frozen scientific payload",
+      "dependencies": ["P01", "P02", "P03", "P05", "P06"],
+      "R15_obligation": "Maintain premises and normalization when changing source representation; no new full-A physical certificate is created."
+    },
+    {
+      "id": "C02",
+      "statement": "On each exact event cell, every cubic source overlap has the exact Simpson expression D/6*(g(L)+4*g((L+U)/2)+g(U)); its Bernstein-B4 coefficients are nonnegative.",
+      "category": "R15_DIRECT_CONSTRUCTION_CANDIDATE",
+      "evidence": "Classical Simpson cubic exactness, Bernstein restriction/product, R14 overlap design; R5 direct coefficient derivation pending",
+      "dependencies": ["P04", "P05"],
+      "R15_obligation": "Prove fixed branch choices, source-domain affine restrictions, degenerate D=0 handling, and B1*B3 coefficients."
+    },
+    {
+      "id": "C03",
+      "statement": "Summing q^k times the stored overlap quartics and the constant initial-memory term gives exact global-memory Rcal on each base-cell interior and its required one-sided endpoints.",
+      "category": "R15_DIRECT_CONSTRUCTION_CANDIDATE",
+      "evidence": "R14 event-grid/global-memory identity, new B4 assembly awaiting R5",
+      "dependencies": ["C02", "D02", "D03", "P07"],
+      "R15_obligation": "Show translated events cover every L/U switch, no missing age strip, and no extra overlap assembly per query."
+    },
+    {
+      "id": "C04",
+      "statement": "For the derivative-B3 midpoint subdivision, V(left)+V(right)<=V(parent), with zeros dropped and no square-free or root-separation assumption.",
+      "category": "CLASSICAL_PROPERTY_WITH_DIRECT_CUBIC_ARGUMENT",
+      "evidence": "Sagraloff Theorem2(P4), MRR Prop2.3, and R4 insertion/deletion argument to be completed in R5",
+      "dependencies": ["D05"],
+      "R15_obligation": "Account explicitly for a zero shared midpoint; parity equality is not required."
+    },
+    {
+      "id": "C05",
+      "statement": "Mixed-sign-only midpoint traversal to depth D has at most3 mixed nodes per depth, at most3D splits and at most6D+1 visited nodes per B4 cell.",
+      "category": "R15_DIRECT_FINITE_WORK_CANDIDATE",
+      "evidence": "R4 candidate counting argument; full R5 proof pending",
+      "dependencies": ["C04", "P07", "P09"],
+      "R15_obligation": "Use derivative degree3 and charge a full binary tree including terminal children; mixed leaves certify function bounds rather than isolated roots."
+    },
+    {
+      "id": "C06",
+      "statement": "Exact endpoint maxima on monotone leaves plus Bernstein-hull/sample bounds on depth-D mixed leaves give 0<=U-L<=M_B*2^-D<=4*Cmax*2^-D; outward dyadic128 conversion adds at most2*2^-128.",
+      "category": "R15_DIRECT_SUPREMUM_GAP_CANDIDATE",
+      "evidence": "MRR convex-hull/restriction tools plus R4 direct restricted-coefficient gap route; full R5 proof pending",
+      "dependencies": ["C03", "C05", "D07", "D08", "D09"],
+      "R15_obligation": "Bound restricted adjacent coefficient differences through the original derivative coefficients; a value Lipschitz bound alone is not used to bound the control hull."
+    },
+    {
+      "id": "C07",
+      "statement": "The convolution is continuous while only the initial staircase term may jump downward. Stored right polynomial values represent left limits; actual right endpoints use the right-continuous h definition.",
+      "category": "INHERITED_SEMANTICS_WITH_R15_IMPLEMENTATION_OBLIGATION",
+      "evidence": "R14 proof section3 and bounded piecewise-polynomial convolution",
+      "dependencies": ["D02", "D03", "P03", "P04", "P05"],
+      "R15_obligation": "Preserve q=0 first block, final T jump, one-sided witnesses, and closed observation-cell supremum semantics."
+    },
+    {
+      "id": "C08",
+      "statement": "For B4 forcing, W_i(z,Delta)=Delta*integral_0^1 exp(z*(1-u))*B_i^4(u)du has beta_i(n)=choose(4,i)*i!*(n+4-i)!/(n+5)! for z>=0 and W_i(z)=exp(z)*W_(4-i)(-z) for z<0.",
+      "category": "R15_DIRECT_MOMENT_EXTENSION_CANDIDATE",
+      "evidence": "Beta integral and exponential series; R14 degree3 pattern; degree4 derivation pending R5",
+      "dependencies": ["P06", "P10"],
+      "R15_obligation": "Establish positivity, beta_i(0)=1/5, sum_i W_i=Delta*phi1(z), reflection, and normalized-coordinate factors."
+    },
+    {
+      "id": "C09",
+      "statement": "A Taylor96 positive sum with a geometric omitted-tail bound on |z|<=16 and outward dyadic128 operations encloses each B4 moment and exp(z), including signed damping through reciprocal/reflection.",
+      "category": "R15_DIRECT_ARITHMETIC_EXTENSION_CANDIDATE",
+      "evidence": "R14 directed arithmetic proof pattern; new beta factors and code review pending",
+      "dependencies": ["C08", "P09", "P10"],
+      "R15_obligation": "Fix first omitted index97 and ratio<=16/98, reciprocal interval orientation, and positive products; retain each actual numerical validation separately."
+    },
+    {
+      "id": "C10",
+      "statement": "With Qmax=c*U_R+U_e and a valid incoming E upper, the constant-forcing signed scalar solution provides whole-E upper=max(incoming,Y(Delta)); a separate polynomial endpoint recurrence propagates to the next cell.",
+      "category": "INHERITED_COMPARISON_WITH_R15_INPUT_EXTENSION",
+      "evidence": "R14 proof section7 and constant-sign derivative of the constant-forcing solution",
+      "dependencies": ["C06", "C08", "C09", "P06"],
+      "R15_obligation": "Keep exact rational base-cell propagation clocks and distinguish endpoint certificates from whole-cell certificates."
+    },
+    {
+      "id": "C11",
+      "statement": "An independently authored reference can compute original unsplit cubic source memory using J0..J3, exact power quartics and a critical-point route, and scalar endpoints using monomial phi1..phi5.",
+      "category": "REFERENCE_DESIGN",
+      "evidence": "R14 original-integral substitution extends algebraically to degree3; implementation and run pending",
+      "dependencies": ["D03", "D04", "P04", "P05", "P06"],
+      "R15_obligation": "No production import; freeze Decimal160 and the declared1e-80 guard; record exact vs guarded checks and strict no-guard misses. Root's C3 reference-only prefreeze exact-Sturm Euclid cap is1,048,576bits, separate from production/saved-derived16,384bits and input256bits; CPU/memory and acceptance remain unchanged."
+    },
+    {
+      "id": "C12",
+      "statement": "Precharged overlap and subdivision counts bound admitted production work: <=73728 overlaps, <=147456 splits and <=295424 visits across at most512 base cells.",
+      "category": "R15_CONTRACT_BOUND_CANDIDATE",
+      "evidence": "16source*(8+1)strips*512base and C05; implementation guard and full proof pending",
+      "dependencies": ["C03", "C05", "P09"],
+      "R15_obligation": "Reject count/bit/text excess under the declared finite contract; do not silently resize the scientific budget."
+    },
+    {
+      "id": "C13",
+      "statement": "Actual HD reactive arrays and named physical consumer/state/density/clock remain pending in the inspected scope; native v is unspecified.",
+      "category": "SOURCE_SCOPE_OBSERVATION",
+      "evidence": "R15 actual accessible census, selected immutable sources and root literature/source retrieval",
+      "dependencies": [],
+      "R15_obligation": "Retain MISSING_NOT_ZERO, distinct TIQM/SQM, HH_R10 OFF, production NOT_ISSUED, L4false, central/physicaldelta0 until a separately adequate binding is acquired."
+    }
+  ],
+  "evidence_categories": {
+    "established_literature": "Bernstein hull/restriction/degree elevation and product, Descartes variation subdivision, Simpson cubic exactness, beta-integral identities",
+    "inherited_conditional_science": "Source-bound full-A comparison, original-t0 staircase memory, normalization and scalar majorant",
+    "R15_direct_derivation": "B3-to-B4 construction; cubic direct variation argument; finite visits/splits; hull-gap proof; degree4 beta/reflection/tail extension",
+    "numerical_observations_new": [],
+    "manual_R4_examples": "Exact identities derived on paper; no CAS or campaign execution by this author",
+    "global_novelty_claim": false,
+    "strong_no_go_claim": false
+  },
+  "units": {
+    "time": "All knots, tau and Delta share the source clock unit",
+    "generator": "K+wH has inverse-time units under its supplied parameter conventions",
+    "g_r": "R comparison units / time",
+    "g_e": "E comparison units / time",
+    "c": "E comparison units / (R comparison units * time)",
+    "d_c": "inverse time",
+    "B_i_and_M_B": "R comparison units; M_B differentiates normalized u",
+    "W_i": "time",
+    "z": "dimensionless"
+  },
+  "no_pre_admission_relabelling": [
+    "No theorem/code DAG node is completed by R2/R3/R4 authoring alone.",
+    "No old execution allowance or historical result is changed.",
+    "A theory proof, independent review, CAS observation, numerical comparison and physical source certificate keep distinct evidence labels.",
+    "S02/S03/S04 publication and dual-backup claims require root's actual receipts.",
+    "No universal raw/capped gain or strict physical gain is claimed; positive comparison monotonicity is a different conditional statement."
+  ]
+}

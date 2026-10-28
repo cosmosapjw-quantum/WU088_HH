@@ -1,0 +1,200 @@
+{
+  "schema": "WU_R10_EXECUTION_LEDGER_V1",
+  "unit": "WU_FULL_GENERATOR_TRIANGULAR_R10",
+  "primary": {
+    "allowed": 1,
+    "consumed": 1,
+    "remaining": 0,
+    "status": "COMPLETED",
+    "CPU_limit_s": 60,
+    "wall_limit_s": 90,
+    "process": {
+      "schema": "WU_R10_ACTUAL_PROCESS_V1",
+      "lane": "primary",
+      "source_commit": "9d07376c6f0aa151fd9510e234826b9cfa43a1a9",
+      "started_utc": "2026-10-28T00:21:52.380327+00:00",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/16df962c9b4e/WU088_HH/research/provider_registry_molecular_r10_20261028/verification/run_primary.py"
+      ],
+      "CPU_limit_s": 60,
+      "wall_limit_s": 90,
+      "attempt": 1,
+      "finished_utc": "2026-10-28T00:21:52.695210+00:00",
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 0.299607,
+      "OS_system_CPU_s": 0.014372,
+      "OS_CPU_s": 0.313979,
+      "wall_s": 0.31472342899996875,
+      "includes_imports_and_serialization": true,
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+      "old_science_replay": 0,
+      "new_ODE_runs": 0
+    }
+  },
+  "reference": {
+    "allowed": 1,
+    "consumed": 1,
+    "remaining": 0,
+    "status": "COMPLETED",
+    "CPU_limit_s": 60,
+    "wall_limit_s": 90,
+    "process": {
+      "schema": "WU_R10_ACTUAL_PROCESS_V1",
+      "lane": "reference",
+      "source_commit": "770a13555011472ffcc3a42909ce58df54b4779e",
+      "started_utc": "2026-10-28T00:23:40.777354+00:00",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/16df962c9b4e/WU088_HH/research/provider_registry_molecular_r10_20261028/verification/run_reference.py"
+      ],
+      "CPU_limit_s": 60,
+      "wall_limit_s": 90,
+      "attempt": 1,
+      "finished_utc": "2026-10-28T00:23:40.976260+00:00",
+      "returncode": 0,
+      "timeout": false,
+      "OS_user_CPU_s": 0.18958,
+      "OS_system_CPU_s": 0.008327,
+      "OS_CPU_s": 0.197907,
+      "wall_s": 0.19872282199958136,
+      "includes_imports_and_serialization": true,
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+      "old_science_replay": 0,
+      "new_ODE_runs": 0
+    }
+  },
+  "CAS": {
+    "allowed": 1,
+    "consumed": 1,
+    "remaining": 0,
+    "status": "COMPLETED_QUALIFIED",
+    "wall_limit_s": 30,
+    "attempt": {
+      "schema": "WU_R10_CAS_ATTEMPT_V1",
+      "source_commit": "9d07376c6f0aa151fd9510e234826b9cfa43a1a9",
+      "script_sha256": "a2fa0b32df0a00068b538553e7c49635c6a0fe95947f9c1bb71b8cd2837121a7",
+      "script_bytes": 1530,
+      "runs": 1,
+      "wall_limit_s": 30,
+      "created_utc": "2026-10-28T00:21:58.144790+00:00"
+    },
+    "result": "raw/WOLFRAM_ASSESSMENT.json",
+    "CPU_s": null
+  },
+  "old_remaining": {
+    "R9": [
+      0,
+      0,
+      0
+    ],
+    "R8": "all0",
+    "R7": [
+      0,
+      0,
+      0
+    ],
+    "R6": [
+      0,
+      0,
+      0
+    ],
+    "PHYS91": [
+      0,
+      0,
+      0
+    ]
+  },
+  "global_remaining": null,
+  "full_historical_CPU_s": null,
+  "old_science_replay": 0,
+  "new_ODE_runs": 0,
+  "metadata_actions": [],
+  "failures": [
+    {
+      "class": "environment",
+      "action": "git clone --single-branch --branch research/provider-registry-20261025 https://github.com/cosmosapjw-quantum/WU088_HH.git WU088_HH",
+      "exit_code": 128,
+      "reason": "browser-proxy8889 connection refused",
+      "resolution": "GitHub connectors restore exact immutable files and expectedSHA publish; local scientific runtime works"
+    },
+    {
+      "class": "transport",
+      "action": "full recursive target tree GET",
+      "reason": "Transport closed",
+      "resolution": "smaller directory/file/blob GET; no scientific effect"
+    },
+    {
+      "class": "representation",
+      "action": "initial materialization",
+      "reason": "apply_patch appended final LF; large contentsGET returnedemptycontent",
+      "resolution": "Gitblob retrieval for largeJSON; originalSHA/size normalized before science; emptyfiles neverused"
+    },
+    {
+      "class": "symbolic_warning",
+      "status": "PRESERVED_QUALIFIED",
+      "result": "raw/WOLFRAM_TOOL_RESPONSE.json",
+      "observed": "Infinity/Power warnings with15zero residuals; causeNOT_ESTABLISHED",
+      "next_action": "Use direct analytic limit proof and already-planned independent reference; no additional CAS"
+    },
+    {
+      "class": "postprocessing_schema_binding",
+      "exit_code": 1,
+      "script_sha256": "91c99ca65f0febfcc07f522ea10777e66c968c2dff27ca1b15d8d7493dd33ea6",
+      "message": "AssertionError comparing R7 saved reference id with R7/R9 production id",
+      "line": 20,
+      "scientific_solvers_executed": 0,
+      "outputs_written_before_failure": 0,
+      "next_action": "Use explicit published primary-to-reference case alias map after checking source schema"
+    },
+    {
+      "class": "session_interruption_before_first_publication",
+      "action": "Initial long connector orchestration call",
+      "observed": "Call was interrupted and session state reset before any S01 publication ACK; remote ref remained R9 FINAL.",
+      "resolution": "Recovered existing local files and actual remote ref; rebuilt helpers and published smaller S01 tree. No scientific run or unacknowledged publication counted."
+    },
+    {
+      "class": "adoption_metadata_validator",
+      "exit_code": 1,
+      "observed": "Initial closeout helper compared complete freeze dictionaries; four Python entries additionally carry AST_status.",
+      "resolution": "Compare the declared identity fields path/bytes/sha256. All14 original bytes and hashes match; no scientific source or output changed.",
+      "scientific_runs": 0
+    }
+  ],
+  "execution_environment": {
+    "local_python": "available",
+    "Git_CLI_network": "unavailable",
+    "publication": "GitHub connectors",
+    "backup": "local ZIP via Drive/Dropbox connectors"
+  },
+  "postprocessing": {
+    "saved_analysis_initial_exit": 1,
+    "failure_record": "raw/ANALYSIS_FIRST_FAILURE.json",
+    "diagnosed_repair_exit": 0,
+    "solver_calls": 0,
+    "matplotlib_cache": "Default /root cache read-only; library automatically used writable /tmp cache and figure generation completed",
+    "final_reproducible_analysis_exit": 0,
+    "figure_caption": "Endpoint lines are visual guides; whole-cell bound stored separately",
+    "max_sample_excess": {
+      "case": "two_state_no_reaction",
+      "mode": "raw",
+      "n": 23,
+      "component": 0,
+      "saved_sample": 0.2088828185393176,
+      "bound": 0.20888281853531626,
+      "excess": 4.0013206434938575e-12,
+      "frozen_tolerance": 4.377656370786352e-11
+    },
+    "META02": {
+      "status": "CLOSED_NONBLOCKING_METADATA",
+      "record": "reviews/META02_CLOSED.json",
+      "change": "Read actual generator.separate_sum_lower into lambda_split_lower for four saved cases; core and scientific runner bytes unchanged.",
+      "solver_calls": 0
+    }
+  },
+  "scientific_execution_complete": true,
+  "completion_basis": "Actual process/CAS responses; all remaining runs zero. Delivery metadata actions do not reopen the scientific unit."
+}

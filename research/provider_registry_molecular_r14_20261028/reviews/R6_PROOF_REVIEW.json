@@ -1,0 +1,193 @@
+{
+  "schema": "WU_R14_INDEPENDENT_PROOF_REVIEW_V1",
+  "unit": "WU_QUADRATIC_FORCING_R14",
+  "reviewer": "/root/repo_census_r14",
+  "independence": {
+    "new_theory_author": false,
+    "new_production_author": false,
+    "new_reference_author": false,
+    "other_task_authorship": "GitHub census/intake packet; that packet is not self-reviewed here",
+    "scope": "One independent manual R6 review of the new R14 proof and its implementation map; no replay of accepted R13 or older reviews"
+  },
+  "verdict": "PASS_SCOPED_THEORY_R6",
+  "open_material_theory_findings": 0,
+  "scientific_execution_by_reviewer": {
+    "Python_science": 0,
+    "scientific_import": 0,
+    "compile_or_syntax_execution": 0,
+    "CAS": 0,
+    "ODE": 0,
+    "old_science_or_review_replay": 0
+  },
+  "evidence_method": "Full source-text reading, independent manual algebra, explicit limiting/degenerate-case reasoning, and equation-to-implementation comparison. No computational PASS is inferred.",
+  "selected_policy": {
+    "contract_workflow_version": "1.0.0",
+    "authority": "User/root-selected full R14 loop and current R14 CONTRACT/POLICY_DELTA/AGENTS entry",
+    "cloud_skill_observation": "A read during this review returned current cloud skill 1.3.0. This was reported to root; it did not replace the explicitly pinned 1.0.0 scope or authorize another unit."
+  },
+  "obligations": [
+    {
+      "id": "R6-01",
+      "target": "PROOF_KO.md section 1; CONTRACT premises",
+      "verdict": "PASS_SCOPED",
+      "reason": "The construction explicitly assumes the same full A=K+wH family, fixed K/pi/destruction, whole w box, all-start block q/tau, zero-mass residual and nonexpansive remainder. Nominal K rho is not transferred to A. E=abs(eta), coarse l1=4E and fixed signed scalar d_c are preserved."
+    },
+    {
+      "id": "R6-02",
+      "target": "PROOF_KO.md section 2; quadratic source validation",
+      "verdict": "PASS_SCOPED",
+      "reason": "Endpoint minima suffice for linear/concave quadratics. A convex quadratic additionally needs its strict-interior vertex value. The exact rational endpoint/vertex criterion is necessary and sufficient for interval nonnegativity and permits negative inner Bernstein coefficients. It is distinct from the physical whole-domain forcing-bound premise."
+    },
+    {
+      "id": "R6-03",
+      "target": "PROOF_KO.md section 2; source preprocessing",
+      "verdict": "PASS_SCOPED",
+      "reason": "Splitting at the union of both source quadratics' strict-interior vertices makes each restriction monotone and nonnegative. For a quadratic, the middle coefficient is P(0)+D P'(0)/2=P(D)-D P'(D)/2 and is nonnegative using the appropriate monotonicity sign. At most two extra knots per original cell gives Neffective<=3Noriginal. Coincident vertices are deduplicated."
+    },
+    {
+      "id": "R6-04",
+      "target": "PROOF_KO.md section 2.1",
+      "verdict": "PASS_SCOPED",
+      "reason": "The primitive of (s-1/4)^2 has cubic Bernstein coefficients (0,1/48,-1/24,7/48). Thus the quadratic monotonicity argument cannot be applied automatically to a cubic. This exact counterexample only rejects that intermediate inference; it does not assert a broad no-go theorem."
+    },
+    {
+      "id": "R6-05",
+      "target": "PROOF_KO.md section 3; event grid",
+      "verdict": "PASS_SCOPED",
+      "reason": "The union of effective source knots shifted by k*tau and observation knots fixes every max/min overlap branch and empty/nonempty transition in each base-cell interior. Initial kernel jumps are present because t0 is an effective knot. A shift by Bmax+1 is outside the horizon. No derivative root is used as a propagation clock."
+    },
+    {
+      "id": "R6-06",
+      "target": "PROOF_KO.md section 3; positive cubic overlap",
+      "verdict": "PASS_SCOPED",
+      "reason": "Simpson's identity is exact for the already supplied quadratic g_r. Each g_r(L), g_r(M), g_r(U) is a source restriction with nonnegative quadratic coefficients. Multiplying its weighted sum by the nonnegative affine overlap width yields exactly the four displayed B1*B2/6 cubic coefficients, including the denominators 6/18/18/6. This is not sampling an unknown forcing."
+    },
+    {
+      "id": "R6-07",
+      "target": "PROOF_KO.md sections 1,3,4; global memory",
+      "verdict": "PASS_SCOPED",
+      "reason": "All original source cells remain in the convolution sum from original t0. q=0 keeps h0=1 and fresh age-strip-zero forcing; q=1 has no singular denominator. Source/observation refinement does not reset the memory. The J0/J1/J2 primitive follows independently from v=t-s and agrees algebraically with the original unsplit quadratic."
+    },
+    {
+      "id": "R6-08",
+      "target": "PROOF_KO.md sections 3,5; endpoints and left limits",
+      "verdict": "PASS_SCOPED",
+      "reason": "F is continuous for bounded finite piecewise-polynomial forcing; only the initial hR0 term can jump downward. Stored base-cell polynomials have the actual left value and right left limit. Actual right endpoints use the new kernel coefficient. A left-limit witness is a valid supremum lower bound even if unattained and is labelled separately from an actual sample."
+    },
+    {
+      "id": "R6-09",
+      "target": "PROOF_KO.md section 5; derivative degree reductions",
+      "verdict": "PASS_SCOPED",
+      "reason": "All-zero derivative gives a constant polynomial without a continuum root list; a nonzero constant derivative has no roots; a linear derivative has its exact rational root. The quadratic derivative is split at its rational strict-interior vertex, making each branch strictly monotone. Endpoint roots, vertex double roots and strict sign-changing branches are handled separately."
+    },
+    {
+      "id": "R6-10",
+      "target": "PROOF_KO.md section 5; root coverage and width",
+      "verdict": "PASS_SCOPED",
+      "reason": "A monotone branch with a zero endpoint has no further root in its interior. A branch with strictly opposite endpoint signs has exactly one root. At most two branches require bisection; each exact midpoint zero ends early, otherwise 96 halvings give width<=2^-96. Roots near endpoints or each other and double roots remain covered by exact sign and zero tests."
+    },
+    {
+      "id": "R6-11",
+      "target": "PROOF_KO.md section 5; rootbox gap",
+      "verdict": "PASS_SCOPED",
+      "reason": "For rootbox width w, the chain factor in dP(a+w*y)/dy is w. Restricting the quadratic derivative gives 3|c[i+1]-c[i]|<=w*M_B and hence max(c)-min(c)<=w*M_B. The midpoint is inside that coefficient hull. Taking maxima of exact candidates and midpoint/hull pairs gives 0<=U-L<=M_B*2^-96<=3*Cmax*2^-96. The latter inequality uses B_i>=0."
+    },
+    {
+      "id": "R6-12",
+      "target": "PROOF_KO.md sections 5,7; observation coverage",
+      "verdict": "PASS_SCOPED",
+      "reason": "Endpoints and all interior derivative roots cover the maximum of each continuous cubic extension. Downward actual right jumps cannot exceed its left limit. The maximum of local lower/upper pairs encloses the observation-cell supremum and its gap is at most the maximum local gap. Outward dyadic conversion adds at most 2*2^-128 to the total width."
+    },
+    {
+      "id": "R6-13",
+      "target": "PROOF_KO.md section 6; positive degree-three weights",
+      "verdict": "PASS_SCOPED",
+      "reason": "Quadratic degree elevation produces the stated four nonnegative coefficients. Direct beta integrals give beta0=1/(n+4), beta1=3/((n+3)(n+4)), beta2=6/((n+2)(n+3)(n+4)), beta3=6/((n+1)(n+2)(n+3)(n+4)). At n=0 each equals1/4, so d=0 gives duration/4."
+    },
+    {
+      "id": "R6-14",
+      "target": "PROOF_KO.md section 6; signed exponential arithmetic",
+      "verdict": "PASS_SCOPED",
+      "reason": "Changing u to 1-u gives W_i(z)=exp(z)W_(3-i)(-z). Positive integer floor/ceil recurrences bound each nonnegative exponential term at rounded argument bounds. The omitted term x_hi^97/97! and ratio x_hi/98<1 give the displayed geometric tail. beta_i<=1 permits the same conservative tail for all moments. Positive products, reciprocal positive exp and outward rounding preserve inclusion."
+    },
+    {
+      "id": "R6-15",
+      "target": "PROOF_KO.md sections 6,7; E endpoint and whole-cell propagation",
+      "verdict": "PASS_SCOPED",
+      "reason": "Variation of constants gives E_next=exp(z)E_left+sum(W_i Q_i) with nonnegative Q_i. A constant forcing bound cU_R+U_e dominates on the entire base cell. The comparison Y has derivative exp(d_c*u)(d_c E_left+Qmax), of constant sign even for negative d_c, so max(left,Y(right)) bounds its whole cell. The tighter polynomial endpoint is passed forward separately."
+    },
+    {
+      "id": "R6-16",
+      "target": "PROOF_KO.md sections 4,6; reference mathematical separation",
+      "verdict": "PASS_SCOPED",
+      "reason": "The original-source J primitives and four exact sample interpolation values construct the cubic independently of Simpson assembly. Monomial moments m!*duration^(m+1)*phi_(m+1) produce an independent endpoint recurrence, and analytic discriminant roots provide independent critical coverage. Decimal160 with the frozen1e-80 guard is numerical corroboration, not an interval proof."
+    },
+    {
+      "id": "R6-17",
+      "target": "PROOF_KO.md section 8; finite counts and resource distinction",
+      "verdict": "PASS_SCOPED",
+      "reason": "Neffective<=48 and Bmax<=8 imply the conservative base count<=49*9+33-1=473, below the512 guard. Precharged overlap<=512*48*9=221184 and root steps<=2*96*512=98304 are finite. Coefficients are built once and reused. These counts do not prove a bit bound or successful90-second execution; explicit arithmetic checks and actual bounded execution remain separate obligations."
+    },
+    {
+      "id": "R6-18",
+      "target": "EXACT_CONTROLS_KO.md; scope and observable interpretation",
+      "verdict": "PASS_SCOPED",
+      "reason": "The hand-derived s^2, signed-middle, two-vertex, one/two irrational critical, golden-root, downward-jump and q=0/q=1/2 memory controls are consistent by manual polynomial integration and differentiation. Ideal reductions are conditional arithmetic fixtures, zero-denominator ratios are null, and there is no universal raw improvement, speedup or physical-closure claim. Actual HD and named physical binding stay INPUT_PENDING."
+    }
+  ],
+  "separate_code_findings": [
+    "R14-F01 primary/reference status schema mismatch: narrow adapter correction required and reviewed separately.",
+    "R14-F02 unbounded decimal exponent parsing before input bit check: lexical finite-domain correction reviewed separately.",
+    "R14-F03 Python decimal-conversion digit limit versus16384-bit serialization: finite process conversion-policy correction reviewed separately."
+  ],
+  "strong_no_go": {
+    "new_strong_no_go_claim": false,
+    "NG1_NG7": "Not an admission of a strong no-go. The explicit cubic counterexample only invalidates one proposed inference, and scoped input pending is not a global absence theorem."
+  },
+  "remaining_obligations": [
+    "Close the separate code preflight findings on preserved exact source revisions before freeze.",
+    "Run the separately contracted primary/reference and new frozen CAS once, with actual process evidence and messages preserved.",
+    "Conduct final C9 on the new results and exact admitted source identities; this proof review is not scientific admission or a completed execution claim."
+  ],
+  "read_identities": [
+    {
+      "path": "r14_work/theory/PROOF_KO.md",
+      "bytes": 15642,
+      "sha256": "72b8b854f0778fe5ee3bc42313559e99b47d36f8d5a3b9a863dc8bc662418a0a",
+      "scope": "Full text read; administrative byte identity only"
+    },
+    {
+      "path": "r14_work/theory/EXACT_CONTROLS_KO.md",
+      "bytes": 4898,
+      "sha256": "4885afd0ca80aea080e6ecaf197d96b7ca47f8b171dd2f427836af9d509f76b2",
+      "scope": "Full text read; administrative byte identity only"
+    },
+    {
+      "path": "r14_work/production/API_SCHEMA.md",
+      "bytes": 7341,
+      "sha256": "2fd261cfe2699368a0e39386c17cbee477f98164839295ca26404447f8c7d7d5",
+      "scope": "Full text read; administrative byte identity only"
+    },
+    {
+      "path": "r14_work/prepare_design_docs.py",
+      "bytes": 14986,
+      "sha256": "68f87671086fa189e1254dc228114fc0212961cdaa8103c1010d8599af3c82f7",
+      "scope": "Full text read; administrative byte identity only"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r14_20261028/CONTRACT.json",
+      "bytes": 6872,
+      "sha256": "b20b07941d0dc2ccfe51926322b82224ebfb4ad588df9c223ca325bffcb1a6e0",
+      "scope": "Full text read; administrative byte identity only"
+    },
+    {
+      "path": "WU088_HH/research/provider_registry_molecular_r14_20261028/POLICY_DELTA.json",
+      "bytes": 1345,
+      "sha256": "a1df0b665be3be6c08519a5aabee997130a90430688f7dc307a494fca735e7dd",
+      "scope": "Full text read; administrative byte identity only"
+    }
+  ],
+  "recorded_utc": "2026-10-28T10:06:21.008482+00:00",
+  "review_obligations_passed": 18,
+  "review_obligations_total": 18
+}

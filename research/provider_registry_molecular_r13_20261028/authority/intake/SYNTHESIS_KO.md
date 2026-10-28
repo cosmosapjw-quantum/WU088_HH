@@ -1,0 +1,11 @@
+# R13 최신 자료 종합과 연구 선택
+
+GitHub는2026-10-28 15:58:58.660KST에 접근 가능한51repos/2398heads/66branchpages를 terminal까지 열거했다. 공개35repos/1915heads와 비공개16repos/483heads를 구분하며 비공개 식별자는 게시하지 않는다. R12 공개 기준 대비 신규13/이동7/삭제0/불변1895, 선별19변경의존성에서18원문 Gitblob18/18이 일치했다. 전체head의metadata 열거와 선별본문 읽기의 범위는 서로 다르다. 원자적snapshot이 아니다.
+
+Drive14개WU root에서167folder목록,1235고유항목(1082files)을 끝까지 읽었다. Dropbox관련WU트리1121고유항목(995files),상위dossiers3509항목6pages,현재WU644항목2pages가terminal이다. R11/R12/reconciliation의23ZIP쌍은 크기23/23일치이며 이는새uploadACK나originalGET검증이아니다. R12FINAL8004713bytes의양쪽객체와PR의SHA/ACK를확인했다. 별도대화PersonalContext실제UNAVAILABLE이며보이지않는대화나전역자료부재를주장하지않는다. Backup조회종료16:06:54KST. 첨부는정확한제한범위와archivecentral-directory검사를기록했다.
+
+구체적인새근거는RECthermal-path313queries/89cells(18/20,physical0/313), BASSnative residual/jump/initial-error분리(18/20reviewheld), Vigilchemicalquadraticremainder와entryextrema, HEQUARTIC12fullnonnegativequartic와기존sufficientBernsteincone의차이등이다. REIcentral7937ed4a842eb1ef6cec562a4224fb0add63d0d6의9WU객체는이전정합성source와JSONexactequal,central28/88이다. 다른repo의조건부consumer는WUphysicalbinding으로채택하지않는다.
+
+현재읽은source와backup에서실제HDreactivearray및namedWUconsumer/state/density/clock결속은INPUT_PENDING이다. R12nonaligned상수forcing은이미완성되어있으므로재실행하지않는다. 새R13은source함수의정당한시간의존성을표현할수있도록piecewise-affine forcing을허용하고,exactpositiveoverlap→quadraticR→rationalvertex→positiveBernstein2→signedE→closed-cellupper를연결한다. HE의fullpositivity와coefficientcone구별은비음수다항식만보고Bernstein계수를가정하지않도록하는구체적설계동기다. WU의차수2에서는직접vertex분할정리로계수양성을구성하며HE결과를증명대신사용하지않는다.
+
+문헌의phi함수/다항forcing지수적분은알려진결과로재사용한다. 새프로젝트기여는staircase-memory/translatedknots/vertex/positiveoutwardmoment의연결이다. SciSpace1,Exa검색1/fetch1(3URLs)를실제사용했고Wolfram문서context도읽었다. 원문전체는공개산출물에넣지않고짧은대응요약·URL·응답해시만보존한다. 새학문적보편신규성이나strongno-go를주장하지않는다.
