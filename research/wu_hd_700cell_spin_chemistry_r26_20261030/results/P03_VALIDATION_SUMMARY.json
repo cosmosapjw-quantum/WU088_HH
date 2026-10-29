@@ -1,0 +1,44 @@
+{
+  "schema": "wu.r26.p03_validation_summary.v1",
+  "reference": {
+    "project": "cosmosapjw-quantum/WU088_HH",
+    "source": "Gonzalez-Lezana, Hily-Blant and Faure (2022), JCP 157, 214302, DOI 10.1063/5.0128598",
+    "original_supplement_pdf_sha256": "a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754",
+    "R25_parent_sha": "24302ab37ecc3b1220fb90a705ed375fe431b54e",
+    "sibling_R22_PR160": "9db6f91debf54af1cc129538cfd6f6a716a78a56"
+  },
+  "source_atlas": {
+    "original_printed_cells": 700,
+    "positive_printed": 678,
+    "unqualified_printed_zeros": 22,
+    "source_suspect_positive": 21,
+    "source_text_engine_crosscheck": "700/700 same literal; pdftotext-layout versus PyMuPDF; not OCR",
+    "original_Table11_thermal": "HELD_AS_DISTINCT_SOURCE_10_CELLS_REQUIRES_INITIAL_J7_J8"
+  },
+  "mathematics": {
+    "two_initial_states": [2,4],
+    "policies": ["RAW_SQM", "EQ6_EQ7_SPIN_WEIGHTED"],
+    "exact_chemistry_conservation": ["H_nuclei", "D_nuclei", "charge", "total_particle_count"],
+    "exact_symbolic_bracket": "p*y2*y4*(KA2*KB4-KA4*KB2)*(0,1,-1)",
+    "wolfram_sympy": "exact algebra, same-author validation; distinct-author NOT_RUN",
+    "initial_and_temperature_history": "synthetic externally specified fixed-volume 105K/255K, two 5e9s segments",
+    "exogenous_density_initial_m_minus3": {"H_plus":1300000, "HD_J2":600000, "HD_J4":400000}
+  },
+  "raw_SQM_extent_m_minus3": {"T105_T255":933144.0064547455,"T255_T105":936568.2358469048,"difference":-3424.2293921593},
+  "EQ6_EQ7_spin_weighted_extent_m_minus3": {"T105_T255":831246.2991579813,"T255_T105":836068.6688582008,"difference":-4822.3697002195},
+  "validation": {
+    "python_normal": "38/38 PASS",
+    "python_optimized": "38/38 PASS",
+    "compileall": "PASS",
+    "original_pdf_token_crosscheck": "700/700 PASS",
+    "source_mutation": "tamper with recomputed self-hash rejected",
+    "independent_numerical_algorithm": "full-state solve_ivp DOP853 versus analytic collision clock, 4 scenarios PASS",
+    "conservation_max_abs_residual_m_minus3": "below 1e-6",
+    "full_state_ODE_max_abs_error_m_minus3": "below 2e-4",
+    "plots": "3 source/synthetic diagnostic figures generated, viewed, one presentation repair",
+    "historical_first_test_failure": "Decimal context arithmetic precision issue, diagnosed and fixed; original failure retained",
+    "actual_distinct_author_R6_C9": "NOT_RUN"
+  },
+  "claim_gates": {"WU_DAG":"34/49_UNCHANGED", "R23_historical_workflow":"18/20", "source_native_PES_threshold":null,"physical_Q":null,"physical_bath":null,"reverse_rate":null,"owner_ACK":null,"production":"NOT_ISSUED","HH_R10":"OFF","full_A":null,"L4":false},
+  "decision": "PASS_SCOPED_SOURCE_BASED_MULTI_J_SQM_DATA_AND_SYNTHETIC_FORWARD_CHEMISTRY; HOLD_PHYSICAL_PES_Q_OWNER_AND_PRODUCTION"
+}
