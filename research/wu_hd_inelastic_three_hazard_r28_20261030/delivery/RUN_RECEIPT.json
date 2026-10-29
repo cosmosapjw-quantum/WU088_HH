@@ -1,0 +1,49 @@
+{
+  "schema": "wu.r28.actual_execution.v1",
+  "parent_pr": 166,
+  "parent_sha": "0505e978b31f976015d7ed8d12c4a5dc4fe42989",
+  "DAG": "34/49_UNCHANGED",
+  "source_literals": 1560,
+  "three_event_admitted": 43,
+  "commands": [
+    {
+      "cmd": "PYTHONPATH=. python -m unittest discover -s tests -p test_r28.py -q",
+      "exit": 0,
+      "tests": 15,
+      "log": "delivery/UNITTEST.log"
+    },
+    {
+      "cmd": "PYTHONPATH=. python -O -m unittest discover -s tests -p test_r28.py -q",
+      "exit": 0,
+      "tests": 15,
+      "log": "delivery/UNITTEST_O.log"
+    },
+    {
+      "cmd": "python -m compileall -q src tests",
+      "exit": 0,
+      "log": "delivery/COMPILEALL.log"
+    },
+    {
+      "cmd": "PYTHONPATH=. python tests/independent_mpmath.py",
+      "exit": 0,
+      "checked_rows": 43,
+      "max_relative_error": "5.237143532336417936842465086e-80",
+      "log": "delivery/INDEPENDENT_MPMATH.log"
+    },
+    {
+      "cmd": "Wolfram symbolic three hazard sum, R27 density identity, half crossover",
+      "outputs": [
+        "True",
+        "True",
+        "True"
+      ],
+      "independent_actor": "CAS only not different author"
+    }
+  ],
+  "first_failed_test": "Initial test harness used default Decimal precision=28 when asserting 1e-70. Failure 1e-28 due test context, repaired by explicitly 90-digit test context. Scientific inputs, actual physics, tolerance remained unchanged.",
+  "native_subagent": "NOT_RUN",
+  "R6": "NOT_RUN",
+  "C9": "NOT_RUN",
+  "physical_Q": null,
+  "production": "NOT_ISSUED"
+}
