@@ -1,0 +1,40 @@
+{
+  "schema": "wu.r19.implementation_contract.v1",
+  "source_import": "research.wu_hd_source_bound_r18_20261029.src.native_rates.load_native_grid",
+  "source_identity": "a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754",
+  "temperature_K": 105,
+  "state_order": [
+    "H+",
+    "HD(v0,j2)",
+    "D+",
+    "H2(v0,j1)"
+  ],
+  "proper_time_unit": "s",
+  "physical_density_unit": "m^-3",
+  "rate_unit": "m^3/s",
+  "entrypoint": "research.wu_hd_nominal_exchange_r19_20261029.src.nominal_exchange",
+  "functions": [
+    "flow_nominal",
+    "flow_constant_expansion",
+    "source_rhs",
+    "source_jacobian",
+    "conserved_totals",
+    "nominal_rate_sensitivity",
+    "conditional_event_energy"
+  ],
+  "float_accuracy": "float64 with expm1, source rate exact Fraction",
+  "acceptance": {
+    "pytest": 24,
+    "mpmath80_cases": 160,
+    "scipy_IVP_cases": 3,
+    "CAS": 9,
+    "source_identity": true
+  },
+  "unimplemented": [
+    "actual REC/CR owner adapter",
+    "source uncertainty",
+    "reverse reaction",
+    "temperature interpolation",
+    "energy Q source"
+  ]
+}

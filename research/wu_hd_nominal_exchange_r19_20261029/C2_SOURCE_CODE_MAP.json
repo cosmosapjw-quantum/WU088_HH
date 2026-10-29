@@ -1,0 +1,18 @@
+{
+  "schema": "wu.r19.C2.v1",
+  "source_module": "research/wu_hd_source_bound_r18_20261029/src/native_rates.py",
+  "source_git_blob": "be2a845263b215b604f255ffe5deabe55be9dd7b",
+  "pdf_sha256": "a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754",
+  "entrypoint": "src/nominal_exchange.py",
+  "function_map": {
+    "k_source": "_rate_si_from_verified_grid -> NativeGrid.lookup(105)",
+    "extent_solution": "_extent_and_remainders",
+    "physical_volume": "flow_nominal,flow_constant_expansion",
+    "chemical_source": "source_rhs",
+    "linearization": "source_jacobian",
+    "invariants": "conserved_totals",
+    "conditional_Q": "conditional_event_energy",
+    "sensitivity": "nominal_rate_sensitivity"
+  },
+  "full_A": "NOT_IMPLEMENTED"
+}

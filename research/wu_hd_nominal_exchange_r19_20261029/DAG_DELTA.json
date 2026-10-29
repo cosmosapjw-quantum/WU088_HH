@@ -1,0 +1,27 @@
+{
+  "schema": "wu.r19.dag_delta.v1",
+  "parent_pr": 155,
+  "parent_head": "f7371c7c389cac9c1b504f6e741b80ea80d776f1",
+  "canonical_WU_before": {"complete": 34, "total": 49},
+  "canonical_WU_after": {"complete": 34, "total": 49},
+  "existing_49_node_objects_modified": 0,
+  "science_delta": 0,
+  "physical_consumer_delta": 0,
+  "auxiliary_R19": {
+    "id": "WU_HD_105K_SOURCE_NOMINAL_EXACT_FLOW_R19",
+    "status": "PASS_SCOPED_NOMINAL_MODEL_WITH_REVIEW_PENDING",
+    "source_dependency": "WU_HD_GL2022_J2_R1_NATIVE_PRINTED_SOURCE_R18",
+    "workflow_complete": 18,
+    "workflow_total": 20,
+    "R6_distinct_author": "NOT_RUN",
+    "C9_distinct_author": "NOT_RUN",
+    "canonical_admission": false
+  },
+  "next_nodes_proposed_not_added": [
+    {"id": "WU_HD_105K_OWNER_CONSUMER_BINDING", "depends_on": ["WU_HD_GL2022_J2_R1_NATIVE_PRINTED_SOURCE_R18"], "requires": ["named REC/CR function commit", "state order", "density", "proper-time/clock", "actual temperature/volume", "owner ACK"]},
+    {"id": "WU_HD_REACTIVE_STATE_ENERGY_LEDGER", "requires": ["source-matched Q event", "bath and photon/thermal ledger"]},
+    {"id": "WU_HD_REACTIVE_RATE_UNCERTAINTY", "requires": ["source SQM error model", "full-A impact"]}
+  ],
+  "invariants": {"HH_R10": "OFF", "production": "NOT_ISSUED", "L4": false},
+  "rationale": "A source-nominal WU-owned isolated model is verified, but no real named REC/CR consumer, full physical network, or distinct-author R6/C9; do not inflate canonical completion."
+}
