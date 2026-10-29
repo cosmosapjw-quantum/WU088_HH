@@ -1,0 +1,77 @@
+{
+  "schema": "wu.r29.actual_execution_v1",
+  "tests_normal": "20/20_PASS",
+  "tests_optimized": "20/20_PASS",
+  "mpmath_independent_same_author": {
+    "rows": 210,
+    "mp_dps": 75,
+    "maximum_relative": "5.265842777305878819186072e-14",
+    "max_abs_mixed_units_not_a_physics_metric": "0.0001560538466724341848884945",
+    "validation": "numerically independent mpmath formula and data parser, same author; no different-author R6/C9"
+  },
+  "source_input_cells_used": {
+    "reactive": 350,
+    "inelastic_down": 70
+  },
+  "outputs": {
+    "conditional_case_rows": 210,
+    "H2_product_branching_rows": 2100,
+    "upward_counterfactual_rows": 14
+  },
+  "actual_commands": [
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_r29.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "log": "delivery/TEST_NORMAL.log"
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_r29.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "log": "delivery/TEST_OPTIMIZED.log"
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests"
+      ],
+      "exit_code": 0,
+      "log": "delivery/COMPILEALL.log"
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "tests/independent_mpmath.py"
+      ],
+      "exit_code": 0,
+      "log": "delivery/INDEPENDENT_MPMATH.log"
+    }
+  ],
+  "independent_different_author_R6_C9": "NOT_RUN",
+  "original_PDF_identity": "TEST_NORMAL_via_R28_zip_payload_hash",
+  "initial_failed_run": "Regex originally assumed two-digit exponents, source also contains valid one-digit exponent; repaired parser and tests WITHOUT changing source bytes"
+}
