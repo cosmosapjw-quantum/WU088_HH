@@ -1,0 +1,41 @@
+{
+  "schema": "wu.r24.verification.v1",
+  "runtime_probe": "PYTHON_PASS",
+  "python_version": "3.13.5",
+  "native_subagent": "NOT_RUN",
+  "cpp_run": "NOT_RUN",
+  "new_tests": {
+    "normal": {
+      "command": "python -m unittest discover -s tests -q",
+      "passed": 35,
+      "total": 35,
+      "exit_code": 0
+    },
+    "optimized": {
+      "command": "python -O -m unittest discover -s tests -q",
+      "passed": 35,
+      "total": 35,
+      "exit_code": 0
+    }
+  },
+  "CAS": {
+    "Wolfram": "support ratio/15K-55K bound independently numerically evaluated",
+    "mpmath": "85 digits independently computed, absolute error <5.2e-67 meV"
+  },
+  "source_typed": "original R18 GitHub row fetched, PDF SHA inherited R18; main 2022 original PDF byte readback not run",
+  "figure_visual_audit": "three synthetic/source diagnostic figures inspected",
+  "gl2022_PES_native_threshold": null,
+  "physical_Q": null,
+  "physical_bath": null,
+  "next_obligation": "authenticate GL2022 collision-vs-total E mapping from original SQM computational input",
+  "DAG": {
+    "completed": 34,
+    "total": 49
+  },
+  "scoped": {
+    "completed": 18,
+    "total": 20
+  },
+  "R6_distinct_author": "NOT_RUN",
+  "C9_distinct_author": "NOT_RUN"
+}
