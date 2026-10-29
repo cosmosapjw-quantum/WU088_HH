@@ -1,0 +1,62 @@
+{
+  "schema": "wu.r27.executed_verification.v1",
+  "execution_date_KST": "2026-10-30",
+  "commands": [
+    {
+      "name": "unit_normal",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_reactive_radiative.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "output_file": "delivery/unit_normal.log"
+    },
+    {
+      "name": "unit_optimized",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_reactive_radiative.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "output_file": "delivery/unit_optimized.log"
+    },
+    {
+      "name": "compileall",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests"
+      ],
+      "exit_code": 0,
+      "output_file": "delivery/compileall.log"
+    },
+    {
+      "name": "numeric_independent",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "tests/independent_mpmath.py"
+      ],
+      "exit_code": 0,
+      "output_file": "delivery/numeric_independent.log"
+    }
+  ],
+  "separate_author_review": "NOT_RUN"
+}
