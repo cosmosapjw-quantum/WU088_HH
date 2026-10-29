@@ -1,0 +1,21 @@
+setUpClass (test_thermal_ledger.LedgerTests) ... ERROR
+
+======================================================================
+ERROR: setUpClass (test_thermal_ledger.LedgerTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/WU_R21_20261029/research/wu_hd_thermal_mechanical_ledger_r21_20261029/tests/test_thermal_ledger.py", line 27, in setUpClass
+    cls.grid=load_native_grid(SOURCE)
+             ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/mnt/data/WU_R21_SEED/research/wu_hd_source_bound_r18_20261029/src/native_rates.py", line 178, in load_native_grid
+    if path.stat().st_size != PDF_SIZE:
+       ~~~~~~~~~^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 517, in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/ORIGINAL_SOURCES/GL2022_CSIC_supplement.pdf'
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.001s
+
+FAILED (errors=1)
