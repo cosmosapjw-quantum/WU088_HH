@@ -1,0 +1,67 @@
+{
+  "schema": "wu.r22.verification_record.v1",
+  "date_KST": "2026-10-29",
+  "live_original": {
+    "source": "Google Drive WU_R21_SOURCE_ORIGINAL_20261029.zip",
+    "drive_id": "1o-XG_XzXHpzCbRSIvvHagQnN5lwzXMAc",
+    "size_bytes": 432135,
+    "sha256": "5ace176fdba1b1ed01cedbd11e381b98ee242475ef1a401d89dcfcf0b7a3d220",
+    "source_pdf_sha256": "a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754"
+  },
+  "new_tests": {
+    "cmd": "python -m unittest discover -s tests -v",
+    "status": "PASS",
+    "passed": 22,
+    "total": 22,
+    "optimized": "python -O -m unittest discover -s tests -v",
+    "optimized_passed": 22,
+    "optimized_total": 22,
+    "cli_replay_semantic_equality": "PASS"
+  },
+  "inherited_source_tests": {
+    "suite": "R21 clean restored source",
+    "unittest": "18/18 PASS"
+  },
+  "cross_method": {
+    "mpmath_digits": 90,
+    "mpmath_vs_Decimal60": "numerically matched",
+    "Wolfram": "exact rational numeric evaluation and atomic-zero symbolic cancellation matched",
+    "distinct_author": "NOT_RUN"
+  },
+  "plot": {
+    "path": "figures/R22_STATE_ENERGY_COMPONENTS.png",
+    "kind": "synthetic spectroscopy decomposition",
+    "visually_read": true,
+    "annotation_overlap_after_fix": false,
+    "observational_claim": false
+  },
+  "energy": {
+    "release_meV_candidate": "-20.9500211513003896007318284857723121681725886410599095030867",
+    "release_J_candidate": "-0.00000000000000000000335656343704192629333891249000000000000000000000000000000000",
+    "native_source_PES_Q": null,
+    "physical_Q": null,
+    "physical_bath": null,
+    "quoted_uncertainty_sum_not_interval_meV": "0.0000219374251782535904970013437357369424724739806684760327118839"
+  },
+  "cross_repo": {
+    "REC": "8806a4f757d916b6cf040625be931a66e2f0f6fe",
+    "CR": "f152e28fd4e9a727b23e068603c0359c5e0d1303",
+    "owner_ACK": "NOT_OBTAINED",
+    "foreign_writes": false,
+    "dynamic_callgraph": "NOT_RUN"
+  },
+  "gates": {
+    "WU_DAG": "34/49",
+    "R21_workflow": "18/20",
+    "HH_R10": "OFF",
+    "L4": false,
+    "production": "NOT_ISSUED"
+  },
+  "limitations": [
+    "PES source-native threshold not authenticated",
+    "uncertainty covariance unknown",
+    "distinct author R6/C9 not run",
+    "no receiver/owner chemistry code executed",
+    "no reverse, real bath, production, full-A"
+  ]
+}
