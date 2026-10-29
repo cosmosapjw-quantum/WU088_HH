@@ -1,0 +1,60 @@
+{
+  "schema": "wu.r20.owner_consumer_contract.v1",
+  "unit": "WU_HD_105K_OWNER_CONSUMER_BINDING",
+  "source": {
+    "owner": "cosmosapjw-quantum/WU088_HH",
+    "r19_commit": "218f353e67ac533b9fb6d54156ec3db6e8827db6",
+    "source_pdf_sha256": "a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754",
+    "temperature_K": 105,
+    "method": "SQM",
+    "rate_value_kind": "SOURCE_NATIVE_PRINTED_NOMINAL",
+    "rate_m3_s_fraction": [23, 200000000000000000],
+    "state_order": ["H+", "HD(v=0,j=2)", "D+", "H2(v=0,j=1)"],
+    "nu": [-1,-1,1,1],
+    "reverse_rate": null,
+    "physical_source_uncertainty": null,
+    "event_energy_Q_J": null
+  },
+  "target_contract": {
+    "owner_explicit_ACK": "REQUIRED_NOT_OBTAINED",
+    "exact_repo_path_function_commit_blob": "REQUIRED",
+    "states": "EXACT_MATCH_AFTER_PERMUTATION_WITH_ROVIBRATIONAL_LABELS",
+    "density_units": ["m^-3","cm^-3"],
+    "number_density_only": true,
+    "proper_clock": "g(s) = dt_proper/ds > 0 THROUGHOUT_DOMAIN",
+    "volume_ratio": "v(s)>0 THROUGHOUT_DOMAIN, v(s0)=1",
+    "effective_clock": "tau(s) = int_{s0}^s g(u)/v(u) du",
+    "temperature_history": "105 K CONSTANT THROUGHOUT_REACTION_INTERVAL",
+    "cosmological_history": "OWNER_SUPPLIED_NOT_INFERRED",
+    "state_energy_convention": "OWNER_SUPPLIED_NOT_ASSUMED",
+    "bath_full_A": "OPEN"
+  },
+  "inspected_candidates": [
+    {
+      "repo":"cosmosapjw-quantum/rec_bianchi",
+      "head":"8806a4f757d916b6cf040625be931a66e2f0f6fe",
+      "path":"research/rec_hd_multichannel_affinity_20261029/code/multichannel.py",
+      "function":"generate",
+      "blob":"029255494bf0a63b93bf8b2715327a8585afb5f3",
+      "decision":"NOT_A_REACTIVE_FOUR_SPECIES_CONSUMER",
+      "reason":"HD rotational radiative/collision network at 50/100/200 K"
+    },
+    {
+      "repo":"cosmosapjw-quantum/bass_cr",
+      "head":"6c3c91f9fd6261b6d79383ef7c5c8de7b6004fb6",
+      "path":"research/cr_generic_budget_ssp_20261029/generic_budget_flow.py",
+      "function":"ExactBudgetFlow",
+      "blob":"fdde86ca6d57dcd5fcdbd8356825153a5fb65db6",
+      "decision":"NOT_A_REACTIVE_FOUR_SPECIES_CONSUMER",
+      "reason":"Exact finite He event budget optimizer, not ODE kinetics"
+    }
+  ],
+  "callgraph_coverage":"SELECTED_FILES_ONLY_NOT_EXHAUSTIVE",
+  "physical_consumer_admitted": false,
+  "foreign_owner_mutation": false,
+  "canonical_science_DAG": "34/49_UNCHANGED",
+  "r19_workflow": "18/20_UNCHANGED",
+  "R6_nonauthor": "NOT_RUN",
+  "C9_nonauthor": "NOT_RUN",
+  "HH_R10":"OFF", "production":"NOT_ISSUED", "L4":false
+}
