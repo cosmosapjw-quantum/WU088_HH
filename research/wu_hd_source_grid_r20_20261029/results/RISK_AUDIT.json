@@ -1,0 +1,14 @@
+{
+  "schema":"wu.r20.same_author_risk_audit.v1",
+  "date":"2026-10-29",
+  "independent_author_R6":"NOT_RUN",
+  "independent_author_C9":"NOT_RUN",
+  "alternate_method":"Wolfram 9/9, independent survivor-ratio mpmath80 160/160, SciPy DOP853 4/4",
+  "findings":[
+    {"id":"R20-F01","class":"runtime/path","observed":"initial pytest 19 errors/1 failure from test PDF path pointing to /mnt/data/parent rather than R20/parent","correction":"tests resolve R20 parent or explicit WU_R20_SOURCE_PDF","final":"25/25 PASS"},
+    {"id":"R20-F02","class":"implementation/syntax","observed":"initial independent_reference.py had import os before future import; SyntaxError","correction":"moved import os after future import","final":"160/160 PASS"},
+    {"id":"R20-F03","class":"implementation/provenance","observed":"public dataclass GridFlow/LogScaleClock constructors could forge source-labelled output","correction":"issuance-token guard; negative constructor test","final":"PASS_SCOPED_ORDINARY_API"}
+  ],
+  "remaining":["No distinct-author review","Only sampled-node positivity for owner clock quadrature; not whole-domain","No source true-rate uncertainty or Q-event","No actual REC/CR 4-species owner state binding","Local wall timing not whole-solver speed"],
+  "status":"SELF_AUDITED_REVIEW_PENDING"
+}

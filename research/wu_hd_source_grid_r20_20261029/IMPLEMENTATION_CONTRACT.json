@@ -1,0 +1,10 @@
+{
+  "schema":"wu.r20.implementation_contract.v1",
+  "entrypoint":"src.grid_exposure",
+  "api":["Segment","evolve_source_grid","rate_sensitivities","clock_from_hubble","cr_gl2_formula"],
+  "requires":["R18 NativeGrid issued by SHA-verified PDF loader","R19 _extent_and_remainders analytic helper","positive prescribed volume","source-grid-only piecewise constant temperature"],
+  "state_order":["H+","HD(v0,j2)","D+","H2(v0,j1)"],
+  "units":{"n":"m^-3","t":"s proper","k":"m^3/s","exposure":"m^3","v":"dimensionless","theta":"s^-1"},
+  "failure_modes":["unsupported temperature/state/method","forged NativeGrid/GridFlow","negative or nonfinite density/time/volume","clock H<=0 at quadrature node","overflow or underflow","existing output create-only"],
+  "claim_gates":{"mathematical_model":"scoped","actual_owner_HD_chemistry":"open","source_uncertainty":"open","HH_R10":"OFF","production":"NOT_ISSUED","L4":false}
+}

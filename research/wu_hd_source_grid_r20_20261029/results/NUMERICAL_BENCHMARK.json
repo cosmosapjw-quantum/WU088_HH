@@ -1,0 +1,81 @@
+{
+  "schema": "wu.r20.numerical_benchmark.v1",
+  "method": "DOP853 independent time-dependent comoving IVP vs exact exposure; source PDF parsed once",
+  "rtol": 2e-12,
+  "atol_density_m_minus3": 1e-07,
+  "comparison_threshold": "abs<=1e-4 OR rel<=2e-10",
+  "cases": [
+    {
+      "segments": 2,
+      "nfev": 256,
+      "max_abs_density_m_minus3": 1.7462298274040222e-09,
+      "max_rel_density_floor_1": 6.166792336657288e-15,
+      "exact_median_wall_s": 1.0987314999511e-05,
+      "DOP853_median_wall_s": 0.001526204000015241,
+      "wall_speed_ratio": 138.90600206539688
+    },
+    {
+      "segments": 8,
+      "nfev": 1000,
+      "max_abs_density_m_minus3": 4.307366907596588e-09,
+      "max_rel_density_floor_1": 7.473146928599166e-15,
+      "exact_median_wall_s": 2.990851000049588e-05,
+      "DOP853_median_wall_s": 0.006082838999986961,
+      "wall_speed_ratio": 203.38154591740306
+    },
+    {
+      "segments": 24,
+      "nfev": 2952,
+      "max_abs_density_m_minus3": 2.3283064365386963e-09,
+      "max_rel_density_floor_1": 5.7364568614248626e-15,
+      "exact_median_wall_s": 7.750095000005785e-05,
+      "DOP853_median_wall_s": 0.016958927500013488,
+      "wall_speed_ratio": 218.8221886312468
+    },
+    {
+      "segments": 48,
+      "nfev": 5880,
+      "max_abs_density_m_minus3": 1.6298145055770874e-09,
+      "max_rel_density_floor_1": 4.950739473495582e-15,
+      "exact_median_wall_s": 0.00015677371000037964,
+      "DOP853_median_wall_s": 0.03370975749999161,
+      "wall_speed_ratio": 215.02175013852755
+    }
+  ],
+  "clock_quadrature": [
+    {
+      "nodes": 2,
+      "exposure_m3": 16.70718042587883,
+      "absolute_error_m3": 0.0636529074545038,
+      "relative_error": 0.003795452866852401
+    },
+    {
+      "nodes": 4,
+      "exposure_m3": 16.77083048799807,
+      "absolute_error_m3": 2.8453352634016937e-06,
+      "relative_error": 1.6965974241401405e-07
+    },
+    {
+      "nodes": 8,
+      "exposure_m3": 16.770833333333314,
+      "absolute_error_m3": 1.7763568394002505e-14,
+      "relative_error": 1.0591941402635034e-15
+    },
+    {
+      "nodes": 16,
+      "exposure_m3": 16.770833333333314,
+      "absolute_error_m3": 1.7763568394002505e-14,
+      "relative_error": 1.0591941402635034e-15
+    },
+    {
+      "nodes": 32,
+      "exposure_m3": 16.770833333333314,
+      "absolute_error_m3": 1.7763568394002505e-14,
+      "relative_error": 1.0591941402635034e-15
+    }
+  ],
+  "clock_analytic_exposure_m3": 16.770833333333332,
+  "benchmark_scope": "local Python wall only; no whole-solver production claim",
+  "physical_source_uncertainty": null,
+  "actual_owner_state_bound": false
+}
