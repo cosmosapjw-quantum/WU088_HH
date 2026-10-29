@@ -1,0 +1,36 @@
+# WU088_HH R24 → R25 | 복사용 실행 인계 (2026-10-29)
+
+$physmath-research-loop $scispace $exa $wolfram
+PROJECT=cosmosapjw-quantum/WU088_HH
+PARENT_DRAFT_PR=https://github.com/cosmosapjw-quantum/WU088_HH/pull/163
+PARENT_BRANCH=research/wu-hd-laplace-threshold-r24-20261029
+PARENT_HEAD=CHECK_FINAL_HEAD_FROM_PR163_AND_FINAL_COMMENT
+PARENT_R23_HEAD=2f214319ca8600475b1d4e85d1ca21a0249136a8
+SIBLING_R22_PR160_HEAD=9db6f91debf54af1cc129538cfd6f6a716a78a56
+UNIT=WU_HD_GL2022_NATIVE_ENERGY_AXIS_RECONCILIATION_R25
+CANONICAL_DAG=34/49_UNCHANGED
+SCOPED_WORKFLOW=18/20
+R6_DISTINCT_AUTHOR=NOT_RUN
+C9_DISTINCT_AUTHOR=NOT_RUN
+HH_R10=OFF
+L4=false
+PRODUCTION=NOT_ISSUED
+GL2022_PES_NATIVE_THRESHOLD=NULL
+PHYSICAL_Q_EVENT=NULL
+ACTUAL_BATH_HEAT=NULL
+REC_CR_OWNER_ACK=NULL
+
+Read first research/wu_hd_laplace_threshold_r24_20261029/{THEORY_KO.md,REPORT_KO.md,DAG_DELTA.json,sources/GL2022_R18_EXACT_ROW.json,src/threshold_bound.py,src/positive_witness.py,tests/,results/,figures/,stages/} at PR163 exact HEAD. Also read R24 detached FINAL_DELIVERY_RECEIPT and final pinned PR comment. Preserve source lock supplement SHA256 a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754.
+
+New proof: if GL2022 Eq4 k(T)=C beta^(3/2) int_sigma(E) E exp(-beta E)dE uses entrance-relative nonnegative collision kinetic E, sigma>=0 T-independent, sigma(E)=0 below theta>=0, then theta <= [log(kj/ki)+1.5 log(beta_i/beta_j)]/(beta_i-beta_j). Original source state H+ + HD(v0,j2)->D+ + H2(v0,j1), raw Table2: 15K 3.99e-14 and 55K 2.92e-11 cm^3/s, theta_nominal <=15.186303821758897 meV. R23 independently derived spectroscopy threshold candidate 20.95002099384 meV; 5.763717meV gap is a conditional energy-axis/source-normalization diagnostic, **NOT a claim GL2022 is wrong**. One cannot infer physical Q or a unique threshold from ten printed rates alone. Positive synthetic (not real source) counterexample 12 vs 20 meV supports demonstrates noninjectivity.
+
+Priority R25: obtain exact original GL2022 Sec II Eq3/4 energy convention, Fig 1 numerical channel energies, Velilla2008 PES nuclear masses, source grid cross sections if available. Distinguish E_total vs E_coll and E_HD0j baseline vs H2(v0,j1) threshold, isotope ionization shift; compute SOURCE-native theta with 0.1 cm^-1 convention precision and check conditional inequality. Then, only if authenticated, consider physical event heat and reverse chemical statistics as separate gates. In parallel read REC/CR actual dynamic four-species molecular reaction call graph and seek explicit owner ACK, no other repo mutation without ACK.
+
+Current-turn replay: Python 3.13.5, commands from package root:
+  python -m unittest discover -s tests -q
+  python -O -m unittest discover -s tests -q
+  python tests/independent_high_precision.py
+
+Actual 35/35 normal and -O PASS; mpmath85 vs Decimal70 <=5.2e-67 meV; Wolfram exact constants agree; source all45 pairs plus log-convex diagnostic; figures visually read. No actual GL2022 PES-native cross-section integration or full production suite. Foreign WU parents and REC/CR/REI/BASS/HE remain unchanged. Native subagent NOT_RUN.
+
+Original frozen R24 SOURCE ZIP 291372 B SHA256 650e19abe7499508cedce8f3abc6712d6cb220a2538be8753679711efed890a8, 29/29 inner SHA PASS, Library restore and 35/35 normal/-O PASS. Four individual phase ZIPs uploaded to Library and Git commits at 34/49 each; Dropbox connector egress BLOCKED_FILE_REFERENCE; Google Drive not newly uploaded. Find full receipts in the detached file and PR163. Do NOT promote 34/49, source-native Q, actual physical bath, HH_R10, L4, or production without separate affirmative evidence. No merge.
