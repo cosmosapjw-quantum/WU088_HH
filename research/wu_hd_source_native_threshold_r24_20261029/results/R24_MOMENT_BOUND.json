@@ -1,0 +1,299 @@
+{
+  "schema": "wu.r24.threshold_convention_stress.v1",
+  "source_contract_sha256": "dfefae89fb27f2a397832a4c7b3290538ea6340e0aefbccdeb44ee3d16c86dde",
+  "source_original": {
+    "pdf_sha256": "a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754",
+    "r18_git_blob": "be2a845263b215b604f255ffe5deabe55be9dd7b",
+    "page_text_sha256": "8fe6742ea53405efa72cae1f0a4fd134f787cd50e4cc822e1b2aae1d1a1b2524",
+    "rate_interpolation": false,
+    "uncertainty": null
+  },
+  "state_target": "H+ + HD(X,v=0,j=2) -> D+ + H2(X,v'=0,j'=1,ortho)",
+  "reference_categories": {
+    "Velilla2008_37170_cm1": "ELECTRONIC_PES_GEOMETRY_ABOVE_H3PLUS_MINIMUM_NOT_ISOTOPIC_02_TO_01",
+    "Lepers2019_3p4_meV": "BO_TIQM_APPROXIMATE_02_TO_00_DIFFERENT_OUTPUT_STATE",
+    "R23_20p950_meV": "EXTERNAL_SPECTROSCOPY_CYCLE_NOT_GL2022_PES"
+  },
+  "conditional_literature_cross_path": {
+    "j2_to_j0_2019_BO_printed_approx_meV": "3.4",
+    "H2_j1_from_external_spectroscopy_meV": "14.69049588228285015972265140398995483041103943599267345200841319971466",
+    "mixed_j2_to_j1_threshold_meV_NOT_PES": "18.09049588228285015972265140398995483041103943599267345200841319971466",
+    "external_R23_candidate_meV": "20.95002099384045759056749544382632657967",
+    "cross_model_difference_meV_NOT_UNCERTAINTY": "2.85952511155760743084484403983637174925896056400732654799158680028534",
+    "qualified_PES_native": false,
+    "uncertainty": null
+  },
+  "source_grid": [
+    {
+      "T_K": 15,
+      "native_token": "3.99(14)",
+      "k_m3_per_s_exact": {
+        "numerator": "399",
+        "denominator": "10000000000000000000000"
+      }
+    },
+    {
+      "T_K": 55,
+      "native_token": "2.92(11)",
+      "k_m3_per_s_exact": {
+        "numerator": "73",
+        "denominator": "2500000000000000000"
+      }
+    },
+    {
+      "T_K": 105,
+      "native_token": "1.15(10)",
+      "k_m3_per_s_exact": {
+        "numerator": "23",
+        "denominator": "200000000000000000"
+      }
+    },
+    {
+      "T_K": 255,
+      "native_token": "2.74(10)",
+      "k_m3_per_s_exact": {
+        "numerator": "137",
+        "denominator": "500000000000000000"
+      }
+    },
+    {
+      "T_K": 505,
+      "native_token": "3.33(10)",
+      "k_m3_per_s_exact": {
+        "numerator": "333",
+        "denominator": "1000000000000000000"
+      }
+    },
+    {
+      "T_K": 1005,
+      "native_token": "3.18(10)",
+      "k_m3_per_s_exact": {
+        "numerator": "159",
+        "denominator": "500000000000000000"
+      }
+    },
+    {
+      "T_K": 1505,
+      "native_token": "2.85(10)",
+      "k_m3_per_s_exact": {
+        "numerator": "57",
+        "denominator": "200000000000000000"
+      }
+    },
+    {
+      "T_K": 2005,
+      "native_token": "2.55(10)",
+      "k_m3_per_s_exact": {
+        "numerator": "51",
+        "denominator": "200000000000000000"
+      }
+    },
+    {
+      "T_K": 2505,
+      "native_token": "2.30(10)",
+      "k_m3_per_s_exact": {
+        "numerator": "23",
+        "denominator": "100000000000000000"
+      }
+    },
+    {
+      "T_K": 3005,
+      "native_token": "2.08(10)",
+      "k_m3_per_s_exact": {
+        "numerator": "13",
+        "denominator": "62500000000000000"
+      }
+    }
+  ],
+  "positive_Laplace_support_test": {
+    "scope": "NECESSARY_CONDITION_FOR_SINGLE_T_INDEPENDENT_NONNEGATIVE_SIGMA_WITH_STRICT_ENDOTHERMIC_THRESHOLD",
+    "thermal_formula": "k(T)=C*beta^(3/2)*integral_Delta^inf[E*sigma(E)*exp(-beta*E)]dE, beta=1/(k_B*T)",
+    "proof": "F(beta)=k(T)/beta^(3/2)/C; for beta_c>beta_h: F_c/F_h<=exp[-Delta*(beta_c-beta_h)]",
+    "adjacent_nominal_threshold_upper_meV": [
+      {
+        "start_K": 15,
+        "end_K": 55,
+        "max_threshold_meV_from_positive_Laplace_support": "15.18630382175889727368776395345305292273671143140260497724493084805187"
+      },
+      {
+        "start_K": 55,
+        "end_K": 105,
+        "max_threshold_meV_from_positive_Laplace_support": "23.29707519056672932600129564328338969990205893832963642966498193629836"
+      },
+      {
+        "start_K": 105,
+        "end_K": 255,
+        "max_threshold_meV_from_positive_Laplace_support": "33.82720492373940595129181784569206990331366785863097396549685392852676"
+      },
+      {
+        "start_K": 255,
+        "end_K": 505,
+        "max_threshold_meV_from_positive_Laplace_support": "54.15129647084746566951633060572702716133404341160944518881296004575784"
+      },
+      {
+        "start_K": 505,
+        "end_K": 1005,
+        "max_threshold_meV_from_positive_Laplace_support": "86.26188184719923555042286705526103536698993413191345327443705336697185"
+      },
+      {
+        "start_K": 1005,
+        "end_K": 1505,
+        "max_threshold_meV_from_positive_Laplace_support": "129.3346207876615497086461654801195447510078175335253745380574576196919"
+      },
+      {
+        "start_K": 1505,
+        "end_K": 2005,
+        "max_threshold_meV_from_positive_Laplace_support": "165.9258379840035486577262507750400934497661465655968866957966144341453"
+      },
+      {
+        "start_K": 2005,
+        "end_K": 2505,
+        "max_threshold_meV_from_positive_Laplace_support": "199.7691316458247730707066828794692900217521864458652547897725415033069"
+      },
+      {
+        "start_K": 2505,
+        "end_K": 3005,
+        "max_threshold_meV_from_positive_Laplace_support": "223.7165921381033660177822234417904735548396053901243380159174268979981"
+      }
+    ],
+    "global_nominal_upper_meV": "15.18630382175889727368776395345305292273671143140260497724493084805187",
+    "15_55_last_digit_rounding_only_conservative_upper_meV": "15.19157320477320978458021085433240459964674755947372266400821449742874",
+    "last_digit_rounding_assumption": "source mantissas 3.99 and 2.92 rounded to nearest 0.01; not source rate uncertainty",
+    "candidate_15_55_violation_factors": {
+      "mixed_BO2019_plus_spectroscopy": "5.124455180254732739671884085272664536838150480283408465558920481241306",
+      "external_R23_spectroscopy": "25.60830893167420068365006022165353612008784176480257411857986417898342"
+    },
+    "conditional_rejections": {
+      "mixed_BO2019_plus_spectroscopy": true,
+      "external_R23_spectroscopy": true
+    },
+    "GL2022_algorithm_inconsistent_certified": false,
+    "PES_threshold_certified": false,
+    "unknowns": [
+      "verify GL2022 Eq4 E reference and input cross sections",
+      "resolve isotope and rovibrational channel opening",
+      "check source-native cross-section and quadrature at 15/55K"
+    ],
+    "source_rate_uncertainty": null
+  },
+  "model_rejection": {
+    "assumed_toy_sigma": "E*sigma_D(E)=g(E-D)*indicator(E>=D), g independent of D",
+    "rigid_shift_factor_toy_only_vs_T": [
+      {
+        "T_K": 15,
+        "exp_minus_delta_over_kBT": "0.1094565733929942830178894014333040816318626851035905809036788191256717"
+      },
+      {
+        "T_K": 55,
+        "exp_minus_delta_over_kBT": "0.5469845373710407391030835899670453696254843801136750463541340661652739"
+      },
+      {
+        "T_K": 105,
+        "exp_minus_delta_over_kBT": "0.7290357667012781524346335800600560228001648809505852911409090651819042"
+      },
+      {
+        "T_K": 255,
+        "exp_minus_delta_over_kBT": "0.8779803873772140786804719564573936506691577357685746273603514954837911"
+      },
+      {
+        "T_K": 505,
+        "exp_minus_delta_over_kBT": "0.9364026393971659304261570941344325016087478538110664974163293074428801"
+      },
+      {
+        "T_K": 1005,
+        "exp_minus_delta_over_kBT": "0.9675208350456183768798734444160933182577834986272346734508075397138006"
+      },
+      {
+        "T_K": 1505,
+        "exp_minus_delta_over_kBT": "0.9781925195568057395255459460194132201219575339981717308564684825785330"
+      },
+      {
+        "T_K": 2005,
+        "exp_minus_delta_over_kBT": "0.9835858745984283924345668857594061970239730325598471580265446712994052"
+      },
+      {
+        "T_K": 2505,
+        "exp_minus_delta_over_kBT": "0.9868404829956227077563271550553439226505227270144189053726400424837905"
+      },
+      {
+        "T_K": 3005,
+        "exp_minus_delta_over_kBT": "0.9890180147213874852002967779346646233911540284102094086879719371607563"
+      }
+    ],
+    "p0_effective_barriers": [
+      {
+        "start_K": 15,
+        "end_K": 55,
+        "effective_barrier_p0_meV": "12.87705571106637807783286558486865480397131285942640113636393190742423",
+        "is_PES_threshold": false
+      },
+      {
+        "start_K": 55,
+        "end_K": 105,
+        "effective_barrier_p0_meV": "16.86118213869156948245150508296839161843659993097561640649034294525420",
+        "is_PES_threshold": false
+      },
+      {
+        "start_K": 105,
+        "end_K": 255,
+        "effective_barrier_p0_meV": "20.17876052917759806234921443022839478254701567959796877544239923043022",
+        "is_PES_threshold": false
+      },
+      {
+        "start_K": 255,
+        "end_K": 505,
+        "effective_barrier_p0_meV": "23.82128266742910267268922328418232139321550846491071338646520009487051",
+        "is_PES_threshold": false
+      },
+      {
+        "start_K": 505,
+        "end_K": 1005,
+        "effective_barrier_p0_meV": "26.06622710403302830769231405885974083721879189377996327097808766053436",
+        "is_PES_threshold": false
+      },
+      {
+        "start_K": 1005,
+        "end_K": 1505,
+        "effective_barrier_p0_meV": "24.07118964302454962424600264847554941514946257166139645037759488884390",
+        "is_PES_threshold": false
+      },
+      {
+        "start_K": 1505,
+        "end_K": 2005,
+        "effective_barrier_p0_meV": "16.74591595182814480786380343402115093916896064159790749056933231147500",
+        "is_PES_threshold": false
+      },
+      {
+        "start_K": 2005,
+        "end_K": 2505,
+        "effective_barrier_p0_meV": "7.044465536386254420573269149521861729301409583863735777794341483295633",
+        "is_PES_threshold": false
+      },
+      {
+        "start_K": 2505,
+        "end_K": 3005,
+        "effective_barrier_p0_meV": "-12.38549830101306113600553490835674785921160824928893628078977364539230",
+        "is_PES_threshold": false
+      }
+    ],
+    "single_p0_arrhenius_threshold_fits_all_source_nodes": false,
+    "reason": "the nine adjacent p=0 inverse-temperature secants are not constant",
+    "actual_Gl2022_cross_section_shape_known": false,
+    "measured_or_source_rate_changed": false
+  },
+  "claims": {
+    "GL2022_native_PES_threshold_meV": null,
+    "physical_Q_J_per_event": null,
+    "physical_bath_heat_J_per_ref_m3": null,
+    "source_rate_uncertainty": null,
+    "reverse_rate": null,
+    "REC_CR_owner_ACK": null,
+    "full_A": null,
+    "HH_R10": "OFF",
+    "production": "NOT_ISSUED",
+    "L4": false,
+    "canonical_DAG": "34/49_UNCHANGED",
+    "R6_distinct_author": "NOT_RUN",
+    "C9_distinct_author": "NOT_RUN"
+  }
+}
