@@ -1,0 +1,39 @@
+{
+  "schema": "wu.r31.stage_record.v1",
+  "stage": "C5",
+  "process_status": "EXECUTED_SCOPED",
+  "objective": "Generate new physical CSV 210/2100/1050/840/35",
+  "canonical_DAG": {
+    "completed": 34,
+    "total": 49,
+    "delta": 0
+  },
+  "auxiliary_R31": {
+    "completed": 1,
+    "total": 1,
+    "noncanonical": true
+  },
+  "evidence_paths": [
+    "src/energy_ledger.py",
+    "results/R31_ROTATIONAL_ENERGY_210.csv",
+    "results/R31_COLLISION_ENERGY_2100.csv",
+    "results/R31_TERMINAL_STATE_1050.csv",
+    "results/R31_PHOTON_ENERGY_840.csv",
+    "results/R31_POLICY_FIXED_DENSITY_35.csv"
+  ],
+  "source_R30_original_SHA256": "d1aa63fedb6527d6aab59df447f1f2b4aa557fab98789b962464a2b86bb5bf16",
+  "physical_data_produced": {
+    "source_printed_collision_cells": 70,
+    "source_printed_reactive_cells": 350,
+    "new_energy_atlas_rows": 210,
+    "new_matched_density_pairs": 35
+  },
+  "important_limits": {
+    "different_author_R6": "NOT_RUN",
+    "different_author_C9": "NOT_RUN",
+    "native_subagent": "NOT_EXPOSED",
+    "canonical_promotions": 0,
+    "production": "NOT_ISSUED"
+  },
+  "provenance_note": "This record is a retrospective stage-specific evidence snapshot, not proof of a separately timed scientific run or independent agent dispatch."
+}
