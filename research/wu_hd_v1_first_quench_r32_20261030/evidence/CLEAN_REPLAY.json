@@ -1,0 +1,75 @@
+{
+  "schema": "wu.r32.clean_restore.v1",
+  "source_zip_size": 4841263,
+  "source_zip_sha256": "01482fdefef303b8cc00bd0efe9b20c23d1886a69679d76eec9d67434fe643e7",
+  "clean_commands": [
+    {
+      "cmd": "/opt/pyvenv/bin/python -m src.quench --out results",
+      "returncode": 0,
+      "stdout_tail": "red values, not byte-identical original\",\n  \"source_pdf_sha256\": \"a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754\",\n  \"source_inelastic_sha256\": \"58c252a1c3f62995ed748c7620e342bc98d8aabb307271bff48f7711e4f1cd7c\",\n  \"immutable_parent_R31_sha256\": \"3286e22a7663ab3114685698e7653b00ac3ea1ec439af466b5c4ae5483e42078\",\n  \"physical_Q\": null,\n  \"PES_native_threshold\": null,\n  \"EMAA_raw_171x25\": null,\n  \"full_gas_heating\": false,\n  \"new_canonical_DAG_nodes\": 0,\n  \"central_DAG\": \"34/49\",\n  \"radiative_v1_loss\": \"NOT_INCLUDED_SOURCE_MISSING\",\n  \"reactive_v1_loss\": \"NOT_INCLUDED_SOURCE_MISSING\",\n  \"v0_reverse_reexcitation\": \"EXCLUDED_FIRST_PASSAGE_POLICY\",\n  \"no_2005K_imputation\": true,\n  \"distinct_author_R6\": \"NOT_RUN\",\n  \"distinct_author_C9\": \"NOT_RUN\",\n  \"production\": \"NOT_ISSUED\"\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python -m unittest discover -s tests -p test_r32.py -q",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": "----------------------------------------------------------------------\nRan 14 tests in 0.066s\n\nOK\n"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python -O -m unittest discover -s tests -p test_r32.py -q",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": "----------------------------------------------------------------------\nRan 14 tests in 0.059s\n\nOK\n"
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python tests/independent_mp.py",
+      "returncode": 0,
+      "stdout_tail": "{\n  \"algorithm\": \"independently parsed source; MP85 explicit absorbing Markov inverse, rows convention\",\n  \"same_author\": true,\n  \"distinct_author_R6\": \"NOT_RUN\",\n  \"distinct_author_C9\": \"NOT_RUN\",\n  \"test_rows\": 126,\n  \"compared_total_metrics\": 1764,\n  \"max_scaled_difference\": 4.785338306447596e-16,\n  \"max_abs_p_diff\": 8.987856437392545e-17\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "cmd": "/opt/pyvenv/bin/python -m compileall -q src tests",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    }
+  ],
+  "byte_identical_generated_outputs": [
+    {
+      "file": "SOURCE_V1_890.csv",
+      "same_SHA256": true,
+      "sha256": "b1022f6d4464dc02769feb10fd32ca3c91d2c1cefd014405c79d4dd635fb214f"
+    },
+    {
+      "file": "DERIVED_V1_UPWARD_189.csv",
+      "same_SHA256": true,
+      "sha256": "a803ea2207680d1a0e62b25574d566695c954574ae8c13c9dec68eef570f1998"
+    },
+    {
+      "file": "ATLAS_QUENCH_126.csv",
+      "same_SHA256": true,
+      "sha256": "7b00fb8634f239a0b5cdd24df1c343a7d1f9a8bc675226a07b454532dd54d719"
+    },
+    {
+      "file": "TERMINAL_V0_BRANCHES_1386.csv",
+      "same_SHA256": true,
+      "sha256": "43d4fdcb103d867254437945bda0101015d987f1069acd5bd9c01d4d86ef9ade"
+    },
+    {
+      "file": "ROTATIONAL_EVENTS_3969.csv",
+      "same_SHA256": true,
+      "sha256": "b5c468a3656139d83cefdafd84166a9a62bc244cd5e13c079cc4dedb06686286"
+    },
+    {
+      "file": "SUMMARY.json",
+      "same_SHA256": true,
+      "sha256": "5bc32f073ea9d87da1ee52fd872a8444f03191ed726c519cf10a6436b72c1f96"
+    },
+    {
+      "file": "INDEPENDENT_MP85.json",
+      "same_SHA256": true,
+      "sha256": "533428537fee148285dbd1674b54b19e315937341957c8e17b08518c83db1f67"
+    }
+  ],
+  "valid": true
+}
