@@ -1,0 +1,19 @@
+{
+  "schema": "wu.r35.execution.v1",
+  "python_version": "3.13.5",
+  "NumPy": "2.3.5",
+  "SciPy": "1.17.0",
+  "command_science": "PYTHONPATH=. python -m src.fcs --out results",
+  "command_normal": "PYTHONPATH=. python -m unittest discover -s tests -p test_*.py -v",
+  "command_optimized": "PYTHONPATH=. python -O -m unittest discover -s tests -p test_*.py -q",
+  "actual_tests_normal": "9/9 PASS (after one unit scale repair)",
+  "actual_tests_optimized": "9/9 PASS",
+  "compileall": "EXIT_0",
+  "wolfram_two_state_symbolic": "exact p and p(1-p), PASS",
+  "native_subagents": "NOT_EXPOSED",
+  "distinct_author_R6_C9": "NOT_RUN",
+  "energy_scale_repair": "E0 uses 100*100*h*c = 100 cm^-1; parent physical J moments unchanged",
+  "direct_MGF_h": "1e-4 dimensionless after repair",
+  "no_main_merge": true,
+  "no_foreign_repo_mutation": true
+}
