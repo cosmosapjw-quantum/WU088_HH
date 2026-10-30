@@ -1,0 +1,6 @@
+Initial R36 test run before test-code repair: 11 passed, 1 ERROR (unittest test_hybrid_preserves_unprinted_data_and_not_full_gl_model).
+Observed exception: ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all().
+Root cause: Python `max(abs(C-C2))` applied to 2D NumPy array; a TEST ASSERTION IMPLEMENTATION error, not a physical solver failure.
+Repair: replace with scalar `float(np.max(np.abs(C-C2)))` and analogous column residual checks.
+Subsequent fresh run: 12/12 normal PASS, 12/12 optimized PASS, compileall PASS.
+No source or physics input changed during this targeted test repair.
