@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
 """Source-exact post-analysis of frozen R37 first-exit probabilities (no interpolation)."""
 from pathlib import Path
-import csv, json, hashlib, statistics, sys
-from collections import defaultdict
+import csv, json, hashlib, statistics, argparse
 
-DATA_ROOT=Path(__file__).parent/'R37_CLEAN'
-OUT=Path(__file__).parent/'fresh_physics'
-SOURCE=DATA_ROOT/'results'/'R37_CHEM_VS_EXIT_1920.csv'
+argp=argparse.ArgumentParser(description='Recompute source-exact R37 first-exit dominance')
+argp.add_argument('--source', type=Path, help='Path to frozen R37_CHEM_VS_EXIT_1920.csv')
+argp.add_argument('--out', type=Path, help='Output folder (default beside script)')
+args=argp.parse_args()
+here=Path(__file__).resolve().parent
+candidates=[here/'R37_CLEAN'/'results'/'R37_CHEM_VS_EXIT_1920.csv',
+            here.parent/'R37_CLEAN'/'results'/'R37_CHEM_VS_EXIT_1920.csv',
+            Path.cwd()/'results'/'R37_CHEM_VS_EXIT_1920.csv']
+SOURCE=args.source or next((p for p in candidates if p.is_file()),candidates[0])
+OUT=args.out or (here if here.name=='fresh_physics' else here/'fresh_physics')
 EXPECTED='83f4678316df964faf32d2dcf8a168261059deced1669414fd54bb3e2f1650cd'
 assert hashlib.sha256(SOURCE.read_bytes()).hexdigest()==EXPECTED, 'R37 source provenance changed'
 OUT.mkdir(parents=True,exist_ok=True)
