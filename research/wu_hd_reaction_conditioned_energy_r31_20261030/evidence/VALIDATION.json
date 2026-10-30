@@ -1,0 +1,31 @@
+{
+  "schema": "wu.r31.validation.v1",
+  "status": "IMPLEMENTATION_VERIFIED_SCOPED",
+  "executed": {
+    "normal_unittest": "16/16 PASS",
+    "optimized_unittest": "16/16 PASS",
+    "compileall": "PASS",
+    "all_cases_energy_balance": "210/210 PASS",
+    "matched_density_pairs": "35/35 PASS",
+    "same_author_mp75": "210 cases x 3 physical energies = 630/630 PASS",
+    "wolfram_symbolic": "2-state x both initial conditions: True True (same-author check)"
+  },
+  "results": {
+    "worst_energy_balance_abs_J": 2.02373107437565e-34,
+    "max_mp75_scaled_delta": "9.9581495611029228e-13",
+    "max_mp75_absolute_delta_J": "3.03224101172864869e-33"
+  },
+  "commands": [
+    "PYTHONPATH=. python -m src.energy_ledger",
+    "PYTHONPATH=. python -m unittest discover -s tests -p test_r31.py -v",
+    "PYTHONPATH=. python -O -m unittest discover -s tests -p test_r31.py -v",
+    "PYTHONPATH=. python tests/independent_mp.py",
+    "python -m compileall -q src tests"
+  ],
+  "stage_status": {
+    "R6_distinct_author": "NOT_RUN",
+    "C9_distinct_author": "NOT_RUN",
+    "native_subagent": "NOT_EXPOSED"
+  },
+  "limits": "Mathematical source model verification not native sigma, source equivalence, experimental covariance or production"
+}
