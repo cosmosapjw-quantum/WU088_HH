@@ -1,0 +1,6 @@
+2026-10-30 R37 fresh unit test initial run FAILED 1/12:
+  test_spinweights_eq6_eq7 incorrectly demanded atol=rtol=0 for binary
+  floating ratios; 1/25 ratios showed 1.11e-16 rounding on 0.75.
+  This is a test implementation issue, not a change in physical rate tables.
+  Targeted repair: permit 4 ulps (~6e-16) on derived floating ratio and
+  preserve exact source token and 1/4,3/4 policy values in model.

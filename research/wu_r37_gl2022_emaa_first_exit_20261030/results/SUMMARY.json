@@ -1,0 +1,278 @@
+{
+  "scheme": "R37_RESTRICTED_SOURCE_GRAPH_CHEMISTRY_FIRST_EXIT",
+  "input_source_SHA256": {
+    "EMAA": "b0db1613425e403889c3a74f6cd9e142c562a552f1ebf05e61cbf509cd429c94",
+    "GL700": "f49312061552513ffdef5aa6d144f7edb9727f8b8cb3ce6e29bd262f15845db9",
+    "GL_main": "1eb1a42d0ef9148d86e6e39119f270e2adbcd3bab8926ec7077bf160c2575362",
+    "Velilla_main": "ed6f0c7ab5af334b217f450b6cf90f6eaaf1afe34d4523e4cd08a09228c07dcd"
+  },
+  "science_bound": "Initial HD(v=0,J0..4), terminate at original GL2022 restricted H2 production or first exit via documented EMAA H+ inelastic or HITRAN A radiation; no physics after first exit. Missing other physical channels remain unknown.",
+  "Tgrid": [
+    55,
+    105,
+    255,
+    505,
+    1005,
+    1505,
+    2005,
+    3005
+  ],
+  "densities_cm3": [
+    0.01,
+    1.0,
+    1000.0,
+    1000000.0
+  ],
+  "radiation_boundaries": [
+    "OFF",
+    0,
+    10,
+    30,
+    100,
+    300
+  ],
+  "spin_policies": [
+    "eq6_7_spin_weighted",
+    "unweighted_source_counterfactual"
+  ],
+  "rows": {
+    "first_termination_cases": 1920,
+    "H2_product_rows": 19200,
+    "Eq5_partial_rows": 8
+  },
+  "max_abs_mass_defect": 2.0735060368142087e-16,
+  "min_pchem": 1.0367998467242782e-06,
+  "max_pchem": 0.9999999999972595,
+  "min_p_escape_coll": 2.740416487012387e-12,
+  "max_p_escape_coll": 0.5630721119877884,
+  "min_p_escape_rad": 0.0,
+  "max_p_escape_rad": 0.9999989631917894,
+  "by_T_spin_effective": {
+    "55": {
+      "pchem_min": 1.0367998467242782e-06,
+      "pchem_max": 0.9999999999899055,
+      "max_P_radiative_exit": 0.9999989631917894,
+      "max_P_collision_exit": 4.273680198106409e-06
+    },
+    "105": {
+      "pchem_min": 1.2277919428431842e-06,
+      "pchem_max": 0.9999977477896763,
+      "max_P_radiative_exit": 0.9999987704131762,
+      "max_P_collision_exit": 0.000936064232265297
+    },
+    "255": {
+      "pchem_min": 1.7827169810759488e-06,
+      "pchem_max": 0.9953420133533233,
+      "max_P_radiative_exit": 0.9999981456232971,
+      "max_P_collision_exit": 0.03756262375116097
+    },
+    "505": {
+      "pchem_min": 2.437304654251792e-06,
+      "pchem_max": 0.9372369853150476,
+      "max_P_radiative_exit": 0.9999971441938459,
+      "max_P_collision_exit": 0.17255927990950973
+    },
+    "1005": {
+      "pchem_min": 3.2370000674697827e-06,
+      "pchem_max": 0.7753134454380726,
+      "max_P_radiative_exit": 0.9999952536715172,
+      "max_P_collision_exit": 0.3651155208077803
+    },
+    "1505": {
+      "pchem_min": 3.7210397992308657e-06,
+      "pchem_max": 0.663578819586019,
+      "max_P_radiative_exit": 0.9999936571404243,
+      "max_P_collision_exit": 0.45793083110564414
+    },
+    "2005": {
+      "pchem_min": 4.023410901283102e-06,
+      "pchem_max": 0.5920815804199315,
+      "max_P_radiative_exit": 0.9999924058818875,
+      "max_P_collision_exit": 0.5092718865777179
+    },
+    "3005": {
+      "pchem_min": 4.28598664063545e-06,
+      "pchem_max": 0.5102368025513613,
+      "max_P_radiative_exit": 0.9999908339841703,
+      "max_P_collision_exit": 0.5630721119877884
+    }
+  },
+  "example_105_n1e3_z30": {
+    "matrix_G_s_inv": [
+      [
+        -6.138235623122389e-07,
+        6.706777439983851e-07,
+        2.520071123165065e-07,
+        1.2099999999999998e-07,
+        8.03e-08
+      ],
+      [
+        5.766305043572116e-07,
+        -8.601012872764277e-07,
+        1.4333447869277966e-06,
+        4.141145605632253e-07,
+        2.66e-07
+      ],
+      [
+        3.2437862199922624e-08,
+        1.7357772323622224e-07,
+        -1.8696393238366353e-06,
+        2.535190778907527e-06,
+        4.366679185516457e-07
+      ],
+      [
+        5.7560110918171e-10,
+        2.229647858023891e-09,
+        5.3656134400643775e-08,
+        -3.4661063798631915e-06,
+        4.971131185804908e-06
+      ],
+      [
+        4.011226806594274e-12,
+        1.5042342355224974e-11,
+        1.6923384583347642e-10,
+        2.0538542521882217e-08,
+        -6.1790483029877045e-06
+      ]
+    ],
+    "residence_s": [
+      [
+        34317055.96460864,
+        33038331.78551625,
+        30754253.748500977,
+        27796093.54614125,
+        26403949.490370315
+      ],
+      [
+        28641035.414372254,
+        28958911.54411205,
+        26757257.31222957,
+        24166606.110981643,
+        22952134.990752555
+      ],
+      [
+        3358600.369615167,
+        3366073.763121972,
+        3660677.977726032,
+        3214891.2573476885,
+        3033673.979049644
+      ],
+      [
+        76744.49714864389,
+        76853.0459269359,
+        79633.03067147985,
+        360391.6911379879,
+        299873.53507399576
+      ],
+      [
+        439.07906154148475,
+        439.58828780637657,
+        450.05492347528525,
+        1362.832408763074,
+        162990.07264292263
+      ]
+    ],
+    "cases": [
+      {
+        "Tgas_K": 105,
+        "n_Hplus_cm_minus3": 1000.0,
+        "z_boundary": 30,
+        "T_rad_K": 84.4905,
+        "spin_policy": "eq6_7_spin_weighted",
+        "initial_v0_J": 0,
+        "P_H2_before_first_exit": 0.9999927809669975,
+        "P_collision_exit_first": 4.437960028728382e-06,
+        "P_radiative_exit_first": 2.781072973648351e-06,
+        "P_total_exit_first": 7.219033002376733e-06,
+        "P_collision_exit_v0_highJ": 4.437960028728382e-06,
+        "P_collision_exit_v1": 3.4386560822906183e-22,
+        "P_radiative_exit_v0_highJ": 2.781072973648351e-06,
+        "P_radiative_exit_vib_or_higher": 1.886928389377875e-25,
+        "mean_time_to_first_termination_s": 66393875.324806236,
+        "max_probability_defect": 2.1275152380902808e-17
+      },
+      {
+        "Tgas_K": 105,
+        "n_Hplus_cm_minus3": 1000.0,
+        "z_boundary": 30,
+        "T_rad_K": 84.4905,
+        "spin_policy": "eq6_7_spin_weighted",
+        "initial_v0_J": 1,
+        "P_H2_before_first_exit": 0.9999927734213296,
+        "P_collision_exit_first": 4.442280203951554e-06,
+        "P_radiative_exit_first": 2.784298466284906e-06,
+        "P_total_exit_first": 7.226578670236461e-06,
+        "P_collision_exit_v0_highJ": 4.4422802039515535e-06,
+        "P_collision_exit_v1": 3.4238049763424285e-22,
+        "P_radiative_exit_v0_highJ": 2.784298466284906e-06,
+        "P_radiative_exit_vib_or_higher": 1.8987098552956274e-25,
+        "mean_time_to_first_termination_s": 65440609.72696502,
+        "max_probability_defect": 2.1275152380902808e-17
+      },
+      {
+        "Tgas_K": 105,
+        "n_Hplus_cm_minus3": 1000.0,
+        "z_boundary": 30,
+        "T_rad_K": 84.4905,
+        "spin_policy": "eq6_7_spin_weighted",
+        "initial_v0_J": 2,
+        "P_H2_before_first_exit": 0.9999926345924086,
+        "P_collision_exit_first": 4.514809101390478e-06,
+        "P_radiative_exit_first": 2.850598489955173e-06,
+        "P_total_exit_first": 7.365407591345651e-06,
+        "P_collision_exit_v0_highJ": 4.514809101390477e-06,
+        "P_collision_exit_v1": 3.4392944045084164e-22,
+        "P_radiative_exit_v0_highJ": 2.850598489955173e-06,
+        "P_radiative_exit_vib_or_higher": 1.860674627183498e-25,
+        "mean_time_to_first_termination_s": 61252272.12405153,
+        "max_probability_defect": 2.1275152380902808e-17
+      },
+      {
+        "Tgas_K": 105,
+        "n_Hplus_cm_minus3": 1000.0,
+        "z_boundary": 30,
+        "T_rad_K": 84.4905,
+        "spin_policy": "eq6_7_spin_weighted",
+        "initial_v0_J": 3,
+        "P_H2_before_first_exit": 0.9999816405122208,
+        "P_collision_exit_first": 9.726749848358029e-06,
+        "P_radiative_exit_first": 8.63273793095134e-06,
+        "P_total_exit_first": 1.8359487779309367e-05,
+        "P_collision_exit_v0_highJ": 9.726749848358029e-06,
+        "P_collision_exit_v1": 6.8535071969315615e-22,
+        "P_radiative_exit_v0_highJ": 8.63273793095134e-06,
+        "P_radiative_exit_vib_or_higher": 4.967114304595082e-25,
+        "mean_time_to_first_termination_s": 55539345.43801733,
+        "max_probability_defect": 2.1275152380902808e-17
+      },
+      {
+        "Tgas_K": 105,
+        "n_Hplus_cm_minus3": 1000.0,
+        "z_boundary": 30,
+        "T_rad_K": 84.4905,
+        "spin_policy": "eq6_7_spin_weighted",
+        "initial_v0_J": 4,
+        "P_H2_before_first_exit": 0.9986893557315462,
+        "P_collision_exit_first": 0.0002784522466425974,
+        "P_radiative_exit_first": 0.0010321920218111583,
+        "P_total_exit_first": 0.0013106442684537557,
+        "P_collision_exit_v0_highJ": 0.0002784522466425974,
+        "P_collision_exit_v1": 1.8538968927667682e-20,
+        "P_radiative_exit_v0_highJ": 0.0010321920218111583,
+        "P_radiative_exit_vib_or_higher": 1.8682230986432812e-24,
+        "mean_time_to_first_termination_s": 52852622.06788943,
+        "max_probability_defect": 2.1275152380902808e-17
+      }
+    ]
+  },
+  "canonical_DAG": "34/49_UNCHANGED",
+  "auxiliary": "1/1_SCOPED",
+  "R6_distinct_author": "NOT_RUN",
+  "C9_distinct_author": "NOT_RUN",
+  "PES_native_threshold": null,
+  "PHYSICAL_Q": null,
+  "OWNER_ACK": "NOT_OBTAINED",
+  "FULL_A": null,
+  "L4": false,
+  "PRODUCTION": "NOT_ISSUED"
+}
