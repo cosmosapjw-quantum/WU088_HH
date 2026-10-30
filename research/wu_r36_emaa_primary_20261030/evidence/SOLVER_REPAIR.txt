@@ -1,0 +1,5 @@
+Initial row-replacement normalized stationary solution emitted tiny negative populations of order -3.8e-17 for source-defined high-energy states with exponentially tiny true positive populations.
+Consequence: unphysical sign in extremely suppressed v1 entries and reason to avoid any output-based clipping.
+Constructive correction: select ground state 0 as scale p0=1, solve (-G_rr)x=G_r0 on 18 nonreference states (transient grounded M-matrix), then normalize (1,x). This preserves nonnegative p for the source generator and yields row residual >0 only at machine epsilon scale.
+Evidence: 500-case regenerated atlas p_min>=0, 12/12 source tests, 4 mpmath80 independently assembled matrices.
+Physical caveat: underflow to exactly zero at Tgas=5K for extremely small Boltzmann factors is representational, not an exact physical selection rule.
