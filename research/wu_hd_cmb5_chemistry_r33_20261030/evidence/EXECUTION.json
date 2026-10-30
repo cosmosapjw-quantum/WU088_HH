@@ -1,0 +1,54 @@
+{
+  "schema": "wu.r33.execution.v1",
+  "date_KST": "2026-10-30",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "mpmath": "1.3.0",
+  "OS": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "commands": {
+    "compute": "PYTHONPATH=. python -m src.cmb5 --out results",
+    "test_normal": "PYTHONPATH=. python -m unittest discover -s tests -p test_r33.py -v",
+    "test_optimized": "PYTHONPATH=. python -O -m unittest discover -s tests -p test_r33.py -v",
+    "mp85": "PYTHONPATH=. python tests/independent_mp85.py",
+    "compile": "python -m compileall -q src tests"
+  },
+  "exits": {
+    "compute": 0,
+    "test_normal": 0,
+    "test_optimized": 0,
+    "mp85": 0,
+    "compile": 0
+  },
+  "new_science": {
+    "n_cases": 1470,
+    "line_rows": 5880,
+    "product_rows": 14700,
+    "fixed_density_pairs": 735,
+    "radiative_balance_root_count": 163,
+    "max_energy_residual_J": 3.4832248603566023e-34,
+    "max_first_event_probability_defect": 3.597122599785507e-14,
+    "max_balance_residual_J": 1.9063619965792517e-30
+  },
+  "output_sha256": {
+    "results/R33_CMB_CASES_1470.csv": "69e04edf70949e861279bf97d8f0960a8069795fbb0af7416f2f0452947226f1",
+    "results/R33_CMB_LINES_5880.csv": "9b935ec5beecfd4f6784378e5ad28d3d84ca70339c204bc9336ad496e2315f59",
+    "results/R33_H2_PRODUCTS_14700.csv": "dfbbc692fffebdea5f1a985a4c047f5ef6d5c0b76c7c0b3ae80efbf1edab05f7",
+    "results/R33_FIXED_DENSITY_POLICY_735.csv": "7d4985bc4a2aafaea005ff92c4f141197f33930953bbc15077ac1e0e6eb9b896",
+    "results/R33_RADIATIVE_BALANCE_Z_210.csv": "23c5013fb6437cf2e5b1bd22285bf0a4bbcd39803de7e6511c774f1dda00c3e7",
+    "results/SUMMARY.json": "f39296047e320f22bf8414da61bf20d48d08ce1dafb83cadd3e8320371fc224a",
+    "results/INDEPENDENT_MP85.json": "ccf2390a848f18bd24ee5f202c19467215b43d75d7b7145c8aff368d61a5a592"
+  },
+  "source_sha256": {
+    "R29_NETWORK_ORIGINAL.py": "f042717e6dfe76f2570ec6204ec6c1f025e64a149bbe93a14e684bd4e6544dac",
+    "GL2022_700_SOURCE.json": "f49312061552513ffdef5aa6d144f7edb9727f8b8cb3ce6e29bd262f15845db9",
+    "REC164_SUNG2022_PRIMARY_TABLE4_LOCK.json": "50d4e6af5cc63afee44177cb0f46838f654f9ff127efe140014ade1e0c2d854f",
+    "GL2022_1560_INELASTIC_SOURCE_TOKENS.csv": "58c252a1c3f62995ed748c7620e342bc98d8aabb307271bff48f7711e4f1cd7c",
+    "REC161_LAMDA_A_TRANSCRIPTION_REF.json": "887383f3978de55ed82079feeff13361ff3910d9a1c384fa2d3b9c982bdb5ef8",
+    "REC162_CDMS2011V2_PRINTED_LEVELS.json": "769834947ec6630887ad3b9eae2f4d487c0dffecc268a0512521ee2a79127cca"
+  },
+  "parent_original_zip_sha256": "01482fdefef303b8cc00bd0efe9b20c23d1886a69679d76eec9d67434fe643e7",
+  "claimed_R6_different_author": "NOT_RUN",
+  "claimed_C9_different_author": "NOT_RUN",
+  "native_subagent": "NOT_EXPOSED"
+}
