@@ -1,0 +1,60 @@
+{
+  "bytes_equal": 5,
+  "clean_replay": "PASS",
+  "expected": 5,
+  "files": {
+    "R43_CASES_324.csv": true,
+    "R43_GRACKLE_REFERENCE_15.csv": true,
+    "R43_POPULATIONS_16848.csv": true,
+    "R43_SIGNED_PHOTONS_119232.csv": true,
+    "SUMMARY.json": true
+  },
+  "numpy_version": "2.3.5",
+  "python_version": "3.13.5",
+  "runs": {
+    "generate": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "generate.py"
+      ],
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"rows\": {\n    \"cases\": 324,\n    \"populations\": 16848,\n    \"photons\": 119232,\n    \"Grackle\": 15\n  },\n  \"signs\": {\n    \"cooling\": 224,\n    \"heating\": 100,\n    \"balance\": 0\n  },\n  \"probes\": {\n    \"T70_nH10000_zOFF\": \"2.89011448433220428e-29\",\n    \"T70_nH10000_z30\": \"-1.49355035599876869e-29\",\n    \"T100_nH10000_z30\": \"1.93081506923182274e-29\",\n    \"T200_nH10000_z30\": \"2.11290624823343013e-28\"\n  },\n  \"grackle_70_ratio\": \"1.00739692779953671e+00\",\n  \"grackle_100_ratio\": \"9.36727617043932925e-01\"\n}\n"
+    },
+    "normal": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "test_science",
+        "-q"
+      ],
+      "exit_code": 0,
+      "stderr_tail": "----------------------------------------------------------------------\nRan 27 tests in 1.392s\n\nOK\n",
+      "stdout_tail": ""
+    },
+    "opt": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-O",
+        "-m",
+        "unittest",
+        "test_science",
+        "-q"
+      ],
+      "exit_code": 0,
+      "stderr_tail": "----------------------------------------------------------------------\nRan 27 tests in 1.050s\n\nOK\n",
+      "stdout_tail": ""
+    },
+    "plots": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "plot_science.py"
+      ],
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_tail": "Four source-derived figures PNG+SVG written\n"
+    }
+  },
+  "scipy_version": "1.17.0"
+}
