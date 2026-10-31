@@ -43,10 +43,10 @@
         "RUX03",
         "RUX04"
       ],
-      "goal": "Select one source-qualified EoR H/He scenario with actual source/absorber, proper clock, n/T, radiation, Einstein/Bianchi-owner background or explicit absence; use existing provider contracts and report exactly one missing item if not ready.",
+      "goal": "Select one source-qualified REIONIZATION-ERA H/He scenario (redshift and source support jointly established), with source/absorber, proper clock, n/T, radiation, and Bianchi-owner geometry or explicit absence. Do not mistake low-z calibration for EoR.",
       "deliverable": "SCENARIO.json and unique source/energy/opacity ownership table bound to immutable versions",
       "status": "SELECTED_FOR_NEXT_WORK_NOT_EXECUTED",
-      "physical_domain": "candidate 2.4<=z<=4.75 where Puchwein UVB/Becker-Bolton calibration exists; do not claim BASS geometric provider is already matched"
+      "physical_domain": "PRIMARY: source-qualified reionization-era first interval; 6<=z<=10 only a provisional search range, not an admitted source/geometry overlap. SECONDARY: 2.4<=z<=4.75 Becker-Bolton/Puchwein is POST-REIONIZATION Ly-alpha calibration/control, not the EoR interval."
     },
     {
       "order": 1,
@@ -123,5 +123,20 @@
     "no_main_merge": true,
     "no_production": true,
     "auto_next_node": false
+  },
+  "epoch_separation": {
+    "primary_science": "FIRST_REIONIZATION_COUPLED_HISTORY",
+    "primary_redshift_candidate": [
+      6,
+      10
+    ],
+    "primary_domain_status": "UNVERIFIED_CANDIDATE_SOURCE_GEOMETRY_AND_CLOCK_MATCH_REQUIRED",
+    "calibration_control": "POST_REIONIZATION_LYA_UVB",
+    "calibration_redshift_range": [
+      2.4,
+      4.75
+    ],
+    "calibration_data": "Becker-Bolton 2013 Gamma_HI with covariance, matched Puchwein 2019 UVB; cannot be called reionization-era first history",
+    "admission_rule": "Low-z calibration and high-z EoR scenario are distinct physical domains and cannot be silently transported across redshift, IC, n/T, photon spectrum or Bianchi clock"
   }
 }
