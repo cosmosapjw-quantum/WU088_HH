@@ -1,0 +1,13 @@
+# WU R41 same-context blind referee (distinct-author NOT_RUN)
+
+1. **원본 분광 범위:** 처음 작성한 closed HD19 모델은 `v1 -> high (>19) HD` 흑체 흡수 전이 62개를 누락할 위험이 있었다. Source EMAA 전체 52준위 368 A_ul를 확인해 `source_owned_external_radiative_exit`를 추가하고 최초 outside 입장을 명시적으로 분리했다. 55K, n(H+)=1e3cm^-3, z300, v1J6에서 EMAA 외부 첫 이탈 ≈0.147623으로 실제 영향이 무시할 수 없다. 원래 closed 결과는 역사적 조건부 진단으로 보존하며 물리적 전체 확률이라 주장하지 않는다.
+2. **소스 미제공 외부 충돌:** RADEX proton 171 rates는 HD19에만 공급된다. HD19 밖으로의 proton collisions는 모델에서 미지원이지 0으로 확정되지 않았다. `P_out`도 **known radiative exit only**, 전체 밖으로 이탈하는 확률의 물리적 총합이 아니다.
+3. **방사 OFF 정의:** OFF에서도 원전 A_ul spontaneous 방출은 계속, stimulated emission/absorption만 0. Test 검산 PASS.
+4. **이벤트 분류:** `B^(collision)`, `B^(spontaneous)`, `B^(stimulated)`는 **최종 첫 도달 기작**. 그 이전에 한 충돌이나 광자 교환의 총횟수/총 에너지는 별도 적분점유수에서 계산. 이 둘을 혼동하면 안 된다.
+5. **상세평형:** source proton collision upward rates는 thermal detailed balance `g_u/g_l exp(-ΔE/kBT)`를 사용한다. C and R separate thermodynamic baths fixed T_gas vs T_rad; combined stationary distribution은 두 bath가 다르면 일반적으로 Gibbs가 아니다. Source original 19-level restricted first-hit, no full cosmology.
+6. **전자/스핀/화학:** v0를 최초 도달 absorbing으로 정의했을 뿐 v0 return이나 H2 product chemistry를 계산하지 않는다. GL valid hybrid source-values(1548) do not reconcile 50 mismatch in seven pairs; owner ACK remains NOT_OBTAINED. 2021 Lepers nuclear-spin erratum affects thermal reactive rates, not directly HD19 pure inelastic first-hit event labels. No arbitrary Maxwell-tail added.
+7. **에너지와 광자 해석:** gross photon count emitted/absorbed is not observed spectrum, optical transfer, volume emissivity or independent H2 heat. Net radiative energy includes absorption to known outside source boundary, so negative event energies are correctly allowed. Equality Qcoll+Qrad=ΔE_HD checked within numerical roundoff.
+8. **오류 기록:** preliminary test comparing two equivalent R36 radiative generators failed with max 1.355e-20 s^-1 from different IEEE-754 addition order. Replaced unsupported absolute 5e-21 tolerance with 16 ε_machine × actual matrix magnitude. It is rounding rather than physical discrepancy. Initial photon event count expected 2352 while actual 4704; corrected combinatorial count, no input manipulation.
+9. **장기 물리적 blocker:** no reaction S-matrix, no owner raw SQM correction, no full missing-state collision source, no distinct-author R6/C9. Closest productive steps: source-authentic outside HD19 collision data or source-owned original GL 50-cell values; do not raise canonical 34/49 on these auxiliary data alone.
+
+Review type: same-author/same-context self-adversarial; separate Python 80-digit mpmath and Wolfram exact two-state check are independent *numerical/formula* paths, not independently authored review.
