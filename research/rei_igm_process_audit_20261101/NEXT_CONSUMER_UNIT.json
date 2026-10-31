@@ -14,13 +14,13 @@
   "existing_science_node": "REI-EXP-SCENARIO",
   "next_primary_output": "One genuinely source-qualified H/He+photon+thermal scenario and exact consumer/clock/geometry source map for first EoR interval; not a new WU species atlas.",
   "physically_motivated_candidate": {
-    "model": "CR_OFF_HHE_FIRST_PAIRED_EOR",
-    "redshift_low": 2.4,
-    "redshift_high": 4.75,
-    "domain_status": "CANDIDATE_ONLY",
-    "observed_input": "Becker and Bolton 2013 Ly-alpha inferred HI photoionization rates and their published covariance, original DOI 10.1093/mnras/stt1937; valid data range must match",
-    "radiation_candidate": "Puchwein et al 2019 UVB HI/HeI/HeII rate and heating moments; available 0<=z<=15.1; already reused in REI physical fast research",
-    "required_history": "Source-consistent H/He ionization and physical electron number/thermal history with proper-time conversion; named BASS Bianchi I geometry/observer coverage has not yet been verified",
+    "model": "CR_OFF_HHE_FIRST_REIONIZATION_CANDIDATE",
+    "redshift_low": 6,
+    "redshift_high": 10,
+    "domain_status": "REIONIZATION_ERA_SEARCH_WINDOW_ONLY_NOT_SOURCE_QUALIFIED",
+    "observed_input": "Becker-Bolton 2013 HI photoionization-rate data at 2.4<=z<=4.75 belong to the POST-reionization calibration/control window. They do not directly supply high-z first-reionization constraints.",
+    "radiation_candidate": "Puchwein 2019 published UVB rates and heating moments have table domain 0<=z<=15.1; source spectral/escape and actual high-z geometry-epoch matching remain to be qualified, not inferred from table range.",
+    "required_history": "For primary high-z EoR scenario: physically matched H/He ionization, n_H,n_e,T_gas, emitted/absorbed photon spectrum, proper-time conversion and Bianchi geometry. Refuse to transport low-z calibration coefficients as high-z observations without model and uncertainty.",
     "control": "Matched FLRW with the same radiation/IC/thermal/chemistry definition",
     "eligible_observables": [
       "tau(z)",
@@ -38,7 +38,7 @@
       "matched photon spectrum and energy ownership",
       "Bianchi directional observer normalization"
     ],
-    "first_falsification": "A claimed same-state source that lacks matching redshift frame, proper clock, n/T or photon/energy ownership fails semantic intake; preserve this exactly without calling an unavailable datum zero"
+    "first_falsification": "Fail the EoR input if only lower-z Becker-Bolton data and no source/geometry-matched high-z history are available. This is not a physics no-go: select an original source or explicitly record high-z scope missing."
   },
   "deliverable_contract": {
     "science": [
@@ -71,5 +71,12 @@
     "rei_total": 88,
     "current_delta": 0
   },
-  "next_action": "Read pinned REI-EXP-SCENARIO / RUX-P0 source contract and already-saved UVB/Puchwein tables, choose one source/geometry overlap if any; create actual owner-bound H/He scenario. Do not start another WU molecular source enumeration by default."
+  "next_action": "Read pinned REI-EXP-SCENARIO / RUX-P0 source contract and already-saved UVB/Puchwein tables, choose one source/geometry overlap if any; create actual owner-bound H/He scenario. Do not start another WU molecular source enumeration by default.",
+  "secondary_calibration_control": {
+    "model": "POST_REIONIZATION_HI_UVB_LYA_CALIBRATION_ONLY",
+    "redshift_low": 2.4,
+    "redshift_high": 4.75,
+    "status": "SUPPORTED_OBSERVATIONAL_CALIBRATION_WINDOW_NOT_FIRST_REIONIZATION",
+    "purpose": "Hold-out or control validation of source/thermochemistry model with explicit calibration covariance; no EoR main-node completion from this window alone."
+  }
 }
