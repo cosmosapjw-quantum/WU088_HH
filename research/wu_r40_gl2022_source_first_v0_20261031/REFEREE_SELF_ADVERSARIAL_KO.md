@@ -1,0 +1,13 @@
+# R40 한 번의 자기 적대적 검증, 다른 저자 아님
+
+1. **Original-source novelty:** newly uploaded EPAPS PDF is byte-identical to R36. No novel input source; new object is the 7-transient first-passage observable. `SOURCE_NEW=false`, `OBJECT_NEW=true`. Do not claim author-authenticated correction.
+2. **Absorption construction:** v0 is only *first hitting event*, no physical no-return statement. Full HD nonreactive stationary cycle is a different object. After v0 is reached, the Markov chain is stopped by definition; this is not an HD destruction rate.
+3. **Source lanes:** GL printed hybrid swaps known valid printed 1548 entries and leaves EMAA-only or source-problem cells unchanged. Source owner ACK missing; no amount of sensitivity analysis selects a correct rate.
+4. **Conditional first-step language repaired:** `Q_AU/sum_a Q_AU` is the relative v0 destination **conditioned on an immediate v0 step**, not the unconditional first collision (which might be v1→v1). Output columns and labels corrected accordingly.
+5. **Censored numbers:** original PDF displays zeros `0.00(00)` at 22 chemical cells; these are not certified physical zeros. PDF rate CSV leaves numerical field blank for these tokens and thermal restricted audit treats them as unknown nonnegative contributions with a zero lower bound. Does not affect the 19-state inelastic first-passage dataset.
+6. **Table 11 mismatch attribution:** main JCP Eq(5) sums initial j<=8, supplementary description says j<=6. Reconstructing with provided printed j<=6 can differ from original printed Table11, and spectral level source convention also matters. Not a proof of scientific error or amendment.
+7. **Linear algebra:** equation B=K_AU(-K_UU)^{-1}; columns mass one and nonnegative over all original T. NumPy and mpmath80 independent solve validate 216 branch elements. Wolfram two-state rational illustrative identity is not a proof of arbitrary physical input.
+8. **Units/heat:** rates cm3/s and n[cm-3] give s-1; times are reported only at n=1cm-3 and scale 1/n. Net HD internal-energy release is a state telescoping expectation over collision-only path; not a gas heating prediction, full isotope Q or chemical production energy.
+9. **Origin preservation:** user-supplied sources and protected R36/R39 parent immutable; copies in private backup. No third-party primary PDF/source contents in public Git. Distinct-author R6/C9 = NOT_RUN; same-author blind-referee mode is a documented self-check, not a second author.
+
+Decision: scoped physical result has new observable and data; retain canonical DAG=34/49, production=HOLD, owner ACK not obtained. No strong no-go claimed.

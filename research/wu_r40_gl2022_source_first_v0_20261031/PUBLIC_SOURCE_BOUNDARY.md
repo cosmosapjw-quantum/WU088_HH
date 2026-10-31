@@ -1,0 +1,3 @@
+# Public and private boundary
+
+The user-provided 2022 14-page GL2022 supplementary PDF (also present in R36 source archives), 2019/2021 MNRAS PDFs, and raw EMAA RADEX/GL table token source files are retained in private, SHA-locked source master and protected prior archives. They are not re-uploaded or redistributed in a public GitHub PR. Git may include our new executable generator/test code, analysis report, new first-passage summary and branch probabilities, source-choice sensitivity, verified small thermal audit and provenance SHA (not the original 700 verbatim printed table). Retain DOI/attribution in readme. No author approved GL/EMAA corrections; no source default changed in R36/parent. All new Git paths add-only beneath the isolated R40 research prefix.
