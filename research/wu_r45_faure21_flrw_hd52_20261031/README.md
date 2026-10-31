@@ -26,3 +26,7 @@ This Draft PR is a **thin Git research checkpoint** containing report, checkable
 The R43 historical sign-grid 236/88 vs recovered 224/100 remains an unrelated **UNRESOLVED_GRID_IDENTITY**. No revision of protected R44 source or canonical DAG counts.
 
 Positive next science: run actual pinned public Gracklepy 12-species one-zone history and compare nH, Tgas, xHD and emission for the same *explicit physical initial condition*. Then couple chemical Q/thermal feedback and time-dependent HD52 master if source-qualified. Do not block on unpublished author data or correspondence.
+
+## Backup status update (2026-11-01)
+
+The earlier section above records the original PR-creation status. Subsequently the immutable R45 source master and aggregate stage/phase archive were uploaded to both ChatGPT Library and Google Drive. **Both archives were downloaded back from both providers; all 4/4 copies were SHA-256 byte exact and ZIP CRC PASS.** Nested 20/20 stage ZIP member SHA-256 also passed after Google Drive restore. For exact hashes, sizes, scope and claim boundaries see [BACKUP_RESTORATION_RECEIPT_20261101.md](BACKUP_RESTORATION_RECEIPT_20261101.md). No raw EMAA source was added to public Git and no production/DAG gate changed.
