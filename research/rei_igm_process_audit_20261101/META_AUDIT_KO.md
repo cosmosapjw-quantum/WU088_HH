@@ -19,7 +19,7 @@ WU PR #173–#184, R34–R45 12개 연속 Draft에서 최신 WU 34/49 (+0); 특�
 *반론:* 이 중에는 미시물리와 미분/보존·photon bookkeeping에서 실제 성과가 있다. 고품질 source 확보와 불확실성 제거는 응용의 전제다. 문제는 연구의 가치 부재가 아니라 그 성과를 원래 **누가, 어느 상태와 clock에서 소비할지** 계속 미루는 자동 연구 선택이다. **최소 수정:** 신규 분자를 추가하지 말고 기존 REI-EXP-SCENARIO/RUX05를 다음 default로 하고 WU source lane을 조건부 호출한다.
 
 ### MA-02 (CRITICAL, scientific semantic mismatch): R45 우주론 이력은 IGM/Bianchi physical consumer가 아니다
-R45는 출판 Faure21 rate를 바탕으로 가정된 초기 이온화·Compton 배경의 균질 FLRW (z=1500\to30)를 적분하고, 임의 생성준위와 고정배경의 52상태 molecule을 연결했다. 이력은 (2.4\le z\le4.75) Ly-alpha/UVB 보정 구간을 포함하지 않고, Bianchi I 광선 방향/광자 수송·완전한 thermo-chemical Q·실제 REC/REI state를 소모하지 않았다. 'real physical data rows'라는 구어는 관측값 또는 실제 공진화 production output으로 읽힐 위험이 있다. H+ 충돌 grid 및 gas Q의 부재를 추가한다.
+R45는 출판 Faure21 rate를 바탕으로 가정된 초기 이온화·Compton 배경의 균질 FLRW (z=1500→30)를 적분하고, 임의 생성준위와 고정배경의 52상태 molecule을 연결했다. 이 이력은 잠정 재이온화 시대 후보 (6≤z≤10)도, 별도의 재이온화 이후 Lyα/UVB 보정 구간 (2.4≤z≤4.75)도 포함하지 않는다. 따라서 Bianchi I 시선 방향·광자 수송·완전한 thermo-chemical Q·실제 REC/REI state의 소비를 입증하지 않는다. 'real physical data rows'라는 구어는 관측값 또는 실제 공진화 production output으로 읽힐 위험이 있다. H+ 충돌 grid와 gas Q의 부재도 구분한다.
 
 *최소 수정:* 출처있는 수치 결과는 **conditional model**로 보존한다. 동일 관측량에의 영향/소스 지원/도메인 정합성이 확인되기 전까지 HH/HD는 REI 기본 시나리오의 필수 dependency로 만들지 않는다. 필요하면 materiality 검산으로 재호출한다.
 
@@ -48,9 +48,14 @@ WU root `AGENTS.md` 최상단 priority는 여전히 R18(2026-10-29), root `CURRE
 
 *최소 수정:* source 소비자 계약에 표기와 conserved ledger를 함께 박고, 없는 term을 0으로 대체하지 않는다. **예상 falsifier**는 same-source matched FLRW/Bianchi one-interval residual과 observer tau/visibility, not coefficient atlas.
 
+### MA-08 (CRITICAL, discovered during fresh hostile review): 관측 보정 구간을 EoR로 오인하는 시간축 드리프트
+최초 개정안은 Becker–Bolton Lyα forest 관측 (2.4≤z≤4.75)을 '첫 EoR interval'의 주 구간으로 제시했다. 그러나 이것은 **재이온화 이후의 IGM**이고, REI의 최초 재이온화 물리 이력을 직접 대체하지 못한다. 이 혼동을 그대로 두면 미시물리 → 관측 보정이라는 또 다른 측면 경로로 central science target이 바뀐다.
+
+*구성적 수정:* 재이온화 시대 우선 구간(예시로 6≤z≤10, 단 원전·기하·clock 지원이 확인되기 전까지 미승인)과 2.4≤z≤4.75의 후기 Lyα 검증·보정을 **두 별개 모델/자료 도메인**으로 명시했다. Puchwein 표의 범위가 넓다는 것만으로 고적색편이 실제 물리/관측 source가 확보된 것은 아니다. WU/REI/BASS 등 소유자끼리 범위를 먼저 맞추고 동일 조건의 paired history를 생성해야 한다. 새 과학 DAG node나 행정 승인 gate를 추가하지 않는다.
+
 ## 정제된 우선순위: 이 문서의 산출물이지 새 중앙 DAG의 승인 아님
 
-1. **CORE** REI-EXP-SCENARIO + RUX-P0: 공개 Puchwein UVB 및 Becker–Bolton Γ_HI가 실제로 겹치는 (2.4\le z\le4.75)에서 H/He/photons/thermal source, n_e/T, clock/frame, possible original BASS donor를 먼저 정확히 매칭. Geometry donor 연결은 아직 UNVERIFIED다.
+1. **CORE** REI-EXP-SCENARIO + RUX-P0: 첫 재이온화 시대 물리 입력을 별도로 선택한다. 6≤z≤10은 **탐색 후보**일 뿐 원전이 확정된 계산 구간이 아니며, UVB source/escape, IC, H/He photon/thermal state, n_e/T, proper clock/frame, 실제 BASS geometry의 정의역이 공통으로 일치해야 한다. Becker–Bolton 및 Puchwein이 겹치는 **2.4≤z≤4.75는 재이온화 이후 Lyα 보정·대조 구간**으로 따로 둔다. Low-z 보정의 성공은 고적색편이 EoR 결과를 증명하지 않는다.
 2. **CORE** REI-L0/L1, RUX05: 하나의 physical source-qualified H/He thermal+photon FLRW interval, 한 번의 보존/검산. 해당 데이터가 없으면 source-matched interval의 구체 missing field만 보고하고 다른 ready science와 병행.
 3. **CORE** RUX06–11, REI-L4와 observable: 동일 IC/source에서 Bianchi–FLRW 차이, angular photon transport, optical depth/visibility.
 4. **CONDITIONAL** WU/HD·REC/CR/He precision은 source/consumer overlap과 observable 물질성 materiality가 확인되거나 사용자가 명시적으로 요청하면 재개. 과거 미시물리 신뢰성은 유지한다.
