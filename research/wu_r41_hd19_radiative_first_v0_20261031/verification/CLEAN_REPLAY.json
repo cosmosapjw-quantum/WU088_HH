@@ -1,0 +1,73 @@
+{
+  "clean_replay": "PASS",
+  "files_byte_identical": 10,
+  "files_expected": 10,
+  "numpy": "2.3.5",
+  "output_identity": {
+    "R41_19LEVEL_RADIATIVE_LINES_63.csv": true,
+    "R41_FIRST_V0_MECHANISM_SUMMARY_3500.csv": true,
+    "R41_FIRST_V0_TERMINAL_BRANCHES_126000.csv": true,
+    "R41_HALF_DENSITY_SOURCE_CONTRAST_350.csv": true,
+    "R41_HALF_RADIATIVE_DENSITY_700.csv": true,
+    "R41_KNOWN_RADIATIVE_OUTSIDE_EXIT_3500.csv": true,
+    "R41_OUTSIDE_RADIATIVE_ESCAPE_LINES_124.csv": true,
+    "R41_PHOTON_LINE_EVENTS_4704.csv": true,
+    "R41_SOURCE_CONTRAST_1750.csv": true,
+    "SUMMARY.json": true
+  },
+  "python": "3.13.5",
+  "runs": {
+    "generate": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "generate.py"
+      ],
+      "exit": 0,
+      "stderr_tail": "",
+      "stdout_tail": "to outside HD19 treated as separate absorbing first-exit, no outside post-exit kinetics\",\n    \"other outside HD19 proton collisional processes unknown and omitted, not physical zero\",\n    \"collision rates source choices, no author correction\",\n    \"first arrival into v0 only, no post-arrival return, no chemical reactions or H2 product\",\n    \"gross emitted and absorbed path counts not net observed spectrum, no transfer/opacity\",\n    \"no full reaction scattering S matrix or gas heating per volume\"\n  ],\n  \"owner_ack\": \"NOT_OBTAINED\",\n  \"R6_distinct_author\": \"NOT_RUN\",\n  \"C9_distinct_author\": \"NOT_RUN\",\n  \"HH_R10\": \"OFF\",\n  \"L4\": false,\n  \"production\": \"NOT_ISSUED\",\n  \"new_canonical_nodes\": 0\n}\n"
+    },
+    "plots": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "plot_physics.py"
+      ],
+      "exit": 0,
+      "stderr_tail": "",
+      "stdout_tail": "Generated 4 real-data PNG and 4 SVG\n"
+    },
+    "plots_external": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "plot_external.py"
+      ],
+      "exit": 0,
+      "stderr_tail": "",
+      "stdout_tail": "2 additional real source-data PNG + SVG\n"
+    },
+    "test_normal": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "test_science"
+      ],
+      "exit": 0,
+      "stderr_tail": ".........................\n----------------------------------------------------------------------\nRan 25 tests in 0.492s\n\nOK\n",
+      "stdout_tail": ""
+    },
+    "test_optimized": {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-O",
+        "-m",
+        "unittest",
+        "test_science"
+      ],
+      "exit": 0,
+      "stderr_tail": ".........................\n----------------------------------------------------------------------\nRan 25 tests in 0.655s\n\nOK\n",
+      "stdout_tail": ""
+    }
+  },
+  "scipy": "1.17.0",
+  "source_only_no_parent_external_zip_required": true
+}

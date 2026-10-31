@@ -1,0 +1,3 @@
+# Public/private source boundary
+
+The following originals are not to be published to GitHub: the complete EMAA `HD.Rovibration.805a7aa5.radex` (owner dataset DOI `10.17178/EMAA_HD_Rovibration_805a7aa5`), GL2022 original inelastic token table, protected earlier R36 code, original publisher PDFs, Velilla h3plus.f. These are source-locked only inside user private Library/Drive master. Public Git branch may contain **new** R41 generator/test/plot source, source-qualified newly computed observable CSV files and explanatory reports; it must include exact DOI/source hashes, not third-party source file contents. No corrected rate ownership claim, no global source switch.
