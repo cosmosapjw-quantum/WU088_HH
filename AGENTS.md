@@ -1,3 +1,15 @@
+# ACTIVE SCIENTIFIC MISSION ROUTING | REI Bianchi IGM | 2026-11-01
+
+**Read `CURRENT_MISSION_DAG.json` first.** It is the current *execution-priority routing* overlay, not a replacement for the immutable 49-node WU scientific DAG or the REI-owned 88-node central DAG. Read `research/rei_igm_process_audit_20261101/DEVELOPMENT_POLICY.md` and `NEXT_CONSUMER_UNIT.json` for the next bounded, physically testable step.
+
+**Default next: REI-EXP-SCENARIO / existing RUX-P0**. Identify one named source-qualified H/He reionization state, physical density and electron/thermal history, photon/opacity/energy owner, source clock/observer and compatible Bianchi geometry, then advance a matched FLRW/Bianchi interval and optical-depth/visibility when source- and budget-qualified. Do not automatically start WU R46/HD refinement, reuse synthetic FLRW z1500→30 data as a reionization consumer, or treat an optional molecule as an obligatory central prerequisite.
+
+**Frozen accounting:** WU **34/49**, REI central **28/88**, REI working **33/88**, progress delta **0**; original 2026-10-04 **31-task** plan and 2026-10-25 **87-node** compiler are *different snapshots*. Stage passes, model rows, backups, and Draft PRs do not promote science nodes. WU R43–R45 remain useful conditional source results; the WU named receiver/state/density/clock obligation remains open. R6/C9 distinct-author pending; production=HOLD; no main merge; existing budgets untouched.
+
+**Historical content begins below.** The previous R18-first instructions and PHYS19 root development plan are retained as documented scientific history, NOT the default route when the user requests central REI IGM progress or future WU development.
+
+---
+
 # Current WU R18 native source priority — 2026-10-29 KST
 
 Read research/wu_hd_source_bound_r18_20261029/CONTRACT.json, SCIENTIFIC_ADMISSION.json, DAG.json, REPORT_KO.md, HANDOFF_NEXT_THREAD_KO.md and delivery/PUBLICATION_INDEX.json. R18 recovered the original institutional GL2022 supplement PDF SHA256 a65b1cba4208552e7eac6341b462487b23c5afe79f3ba0d2ca009fdee7dd1754 and exactly extracted HD(v0,j2)->H2(v0,j1) raw SQM rates at10originalT points. Final module blob be2a845263b215b604f255ffe5deabe55be9dd7b; primary19/19, independentreference10/10, CAS15exactzeros, distinct-authorC9PASS. SourceDAG34/49, inherited48nodeobjectsunchanged, original33/48. This is source admission only; original combined consumer task remains PARTIAL. HH_R10 OFF, production NOT_ISSUED, L4false, physical/centraldelta0.

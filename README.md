@@ -1,3 +1,11 @@
+# Current REI Bianchi IGM mission routing (2026-11-01)
+
+The active **research-selection** map is [CURRENT_MISSION_DAG.json](CURRENT_MISSION_DAG.json); read the [adversarial meta-audit](research/rei_igm_process_audit_20261101/META_AUDIT_KO.md) and [development policy](research/rei_igm_process_audit_20261101/DEVELOPMENT_POLICY.md). The next eligible science is a named REI-EXP-SCENARIO / RUX-P0 physical H/He+photon+thermal consumer, not an automatic next WU molecular atlas. [Next bounded source/consumer task](research/rei_igm_process_audit_20261101/NEXT_CONSUMER_UNIT.json).
+
+**Frozen scientific counts:** WU **34/49**, REI central **28/88**, REI working **33/88**, no newly admitted canonical science nodes. The original DAG, root PHYS19 historical plan, WU R18 source lock and R43–R45 science remain preserved. Main merge and production are not authorized. This top section changes routing only; archived scientific records below are historical.
+
+---
+
 # WU088_HH — PHYS67 original first-Born numerical certificate
 
 PHYS67 encloses the original **D1(ell21,ell20), m0** at B27 and E49/200 Hartree. Exact elementary angular integration and validated Coulomb/radial ball arithmetic give a numerical complex radius below **2.328e-41 a0^-1**, with a separately proved omitted radial tail below **4.973e-53 a0^-1**. The stored earlier PHYS66 pilot is reused; its actual D1 error is between **1.514e-36 and 1.516e-36 a0^-1**. The source-driven xi and physical rates remain separate obligations; **HH_R10=OFF**.
