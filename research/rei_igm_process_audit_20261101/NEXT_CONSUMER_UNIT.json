@@ -1,0 +1,75 @@
+{
+  "schema": "WU_TO_REI_IGM_NEXT_CONSUMER_UNIT_V1",
+  "date": "2026-11-01",
+  "status": "NEXT_ELIGIBLE_RESEARCH_NOT_EXECUTED",
+  "authority": {
+    "routing": "CURRENT_MISSION_DAG.json",
+    "wu_source": "research/wu_hd_source_bound_r18_20261029/DAG.json",
+    "wu_source_git_blob": "8428fcc97ab47376882175fba094973982a6da88",
+    "rei_owner": "cosmosapjw-quantum/rei_bianchi",
+    "rei_reference_pr": 317,
+    "protected_wu_parent_pr": 184,
+    "protected_wu_parent_head": "bad4fc9bfe7ce16fcf359841ef5db8452b2b4338"
+  },
+  "existing_science_node": "REI-EXP-SCENARIO",
+  "next_primary_output": "One genuinely source-qualified H/He+photon+thermal scenario and exact consumer/clock/geometry source map for first EoR interval; not a new WU species atlas.",
+  "physically_motivated_candidate": {
+    "model": "CR_OFF_HHE_FIRST_PAIRED_EOR",
+    "redshift_low": 2.4,
+    "redshift_high": 4.75,
+    "domain_status": "CANDIDATE_ONLY",
+    "observed_input": "Becker and Bolton 2013 Ly-alpha inferred HI photoionization rates and their published covariance, original DOI 10.1093/mnras/stt1937; valid data range must match",
+    "radiation_candidate": "Puchwein et al 2019 UVB HI/HeI/HeII rate and heating moments; available 0<=z<=15.1; already reused in REI physical fast research",
+    "required_history": "Source-consistent H/He ionization and physical electron number/thermal history with proper-time conversion; named BASS Bianchi I geometry/observer coverage has not yet been verified",
+    "control": "Matched FLRW with the same radiation/IC/thermal/chemistry definition",
+    "eligible_observables": [
+      "tau(z)",
+      "visibility_g(z)",
+      "Bianchi_vs_FLRW_directional_absorption_or_polarization_if_source-supported"
+    ],
+    "explicit_exclusions": [
+      "HD and Li precision are not baseline blockers without demonstrated observable materiality",
+      "CR_ON requires separately qualified source spectrum and thermalization",
+      "No arbitrary substitution of global median ion fraction for local cell"
+    ],
+    "source_unknowns": [
+      "actual BASS geometry grid in source redshift/time domain",
+      "actual REI native F/J combined evolution initial state",
+      "matched photon spectrum and energy ownership",
+      "Bianchi directional observer normalization"
+    ],
+    "first_falsification": "A claimed same-state source that lacks matching redshift frame, proper clock, n/T or photon/energy ownership fails semantic intake; preserve this exactly without calling an unavailable datum zero"
+  },
+  "deliverable_contract": {
+    "science": [
+      "SCENARIO.json",
+      "SOURCE_ABSORBER_OWNER_MATRIX.json",
+      "MATCHED_INPUT_IDENTITY.json"
+    ],
+    "run_if_available": "One supported FLRW first interval; then one matched Bianchi interval in separate approved physical unit and exact tau/visibility readout",
+    "no_new_ivp_automatically": true,
+    "owner_admission_required_for_canonical_increment": true
+  },
+  "wu_hd_status": {
+    "existing_task": "WU_HD_REACTIVE_STATE_SOURCE_NEXT",
+    "current": "PARTIAL_SOURCE_RECOVERED_CONSUMER_OPEN",
+    "R43_R45": "DERIVED_CONDITIONAL_MODEL_ROWS_NO_REI_EOR_CONSUMER",
+    "activation": "MATCHED_EOR_T_N_STATE_CLOCK_PLUS_UNIQUE_EVENT_AND_PHOTON_ENERGY_OWNER_PLUS_PREDECLARED_MATERIALITY",
+    "auto_run": false
+  },
+  "budget_policy": {
+    "old_allowances_unchanged": true,
+    "new_HPC_jobs": 0,
+    "new_IVP_jobs": 0,
+    "central_numeric_authorization": false
+  },
+  "progress": {
+    "wu_completed": 34,
+    "wu_total": 49,
+    "rei_completed": 28,
+    "rei_working": 33,
+    "rei_total": 88,
+    "current_delta": 0
+  },
+  "next_action": "Read pinned REI-EXP-SCENARIO / RUX-P0 source contract and already-saved UVB/Puchwein tables, choose one source/geometry overlap if any; create actual owner-bound H/He scenario. Do not start another WU molecular source enumeration by default."
+}
