@@ -195,8 +195,7 @@ def evaluate_case(r43,data, s:Scenario, T:float, policy:str):
 def writecsv(path,rows):
     path.parent.mkdir(parents=True,exist_ok=True)
     with path.open('w',encoding='utf-8',newline='') as f:
-        wr=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='
-')
+        wr=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n')
         wr.writeheader()
         for r in rows:
             wr.writerow({k:('' if v is None else format(v,'.17g') if isinstance(v,float) else v) for k,v in r.items()})
@@ -230,8 +229,7 @@ def run(out:Path,source_dir:Path,s:Scenario=Scenario()):
              'not_claimed':['no state-resolved chemistry source distribution','no chemical Q','no self-consistent Tgas',
                  'no cosmological expanding-cell trajectory','not full 12-species Grackle','not an observation',
                  'not first discovery of primordial HD nonLTE dynamical chemical rates']}
-    (out/'R44_SUMMARY.json').write_text(json.dumps(summary,indent=2,sort_keys=True)+'
-')
+    (out/'R44_SUMMARY.json').write_text(json.dumps(summary,indent=2,sort_keys=True)+'\n')
     return summary
 
 
