@@ -1,0 +1,58 @@
+name: "WU R50 | Original REI F08 S0 deuterium-electron Thomson science"
+
+on:
+  push:
+    branches:
+      - research/wu-r50-rei-f08-d-electron-opacity-20261101
+  pull_request:
+    paths:
+      - "research/wu_r50_rei_f08_deuterium_thomson_20261101/**"
+      - ".github/workflows/wu-r50-rei-f08-d-electron.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  physical-source-replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore exact original REI F08 source-owned public model inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          WORK="research/wu_r50_rei_f08_deuterium_thomson_20261101"
+          SRC="$WORK/source_inputs"
+          mkdir -p "$SRC"
+          BASE="https://raw.githubusercontent.com/cosmosapjw-quantum/rei_bianchi/58f7ffb685c3758f1fed1113ff8134a24478c3df/research/rei_f08_s0_bianchi_thomson_20261101"
+          for name in S0_BI-electron_density.csv.gz S0_FLRW-electron_density.csv.gz science_scenario_v1.json; do
+            curl --fail --location --retry 2 --silent --show-error "$BASE/source_inputs/$name" -o "$SRC/$name"
+          done
+          for name in ORIGINAL_F08_S0_BIANCHI_THOMSON_SKY.csv.gz SOURCE_F08_THOMSON_SKY_SUMMARY_12.csv; do
+            curl --fail --location --retry 2 --silent --show-error "$BASE/results/$name" -o "$SRC/$name"
+          done
+      - name: Run original-source R50 photon observer isotope physics and own tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/wu_r50_rei_f08_deuterium_thomson_20261101
+          python r50_deuterium_observer_screen.py --out results
+          python -m unittest test_r50 -q
+          python -O -m unittest test_r50 -q
+          python audit_r50.py
+      - name: Retain actual source-derived physical-model rows and scientific receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: wu-r50-rei-f08-d-electron-source-science
+          path: |
+            research/wu_r50_rei_f08_deuterium_thomson_20261101/results/R50_ORIGINAL_F08_S0_D_ELECTRON_THOMSON_CAP_10752.csv.gz
+            research/wu_r50_rei_f08_deuterium_thomson_20261101/results/R50_SOURCE_SKY_SUMMARY_12.csv
+            research/wu_r50_rei_f08_deuterium_thomson_20261101/results/R50_REI_OBSERVER_WITNESS_12.csv
+            research/wu_r50_rei_f08_deuterium_thomson_20261101/results/R50_RESULTS.json
+            research/wu_r50_rei_f08_deuterium_thomson_20261101/results/R50_SELF_ADVERSARIAL_AUDIT.json
+          if-no-files-found: error
